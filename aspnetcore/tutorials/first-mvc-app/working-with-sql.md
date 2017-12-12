@@ -11,11 +11,11 @@ ms.assetid: ff8fd9b8-7c98-424d-8641-7524e23bf541
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: e44b6de13540d93337bf9a128d287808cffbfb46
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
-ms.translationtype: HT
+ms.openlocfilehash: 67894d05bfd44b0406d10cbbe30ddfdaf0d66636
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="working-with-sql-server-localdb"></a>Práce s LocalDB serveru SQL
 
@@ -25,11 +25,11 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
 
-ASP.NET Core [konfigurace](xref:fundamentals/configuration) systému čtení `ConnectionString`. Pro místní vývoj, získá připojovací řetězec z *appSettings.JSON určený* souboru:
+ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čtení `ConnectionString`. Pro místní vývoj, získá připojovací řetězec z *appSettings.JSON určený* souboru:
 
-[!code-javascript[Main](start-mvc/sample/MvcMovie/appsettings.json?highlight=2&range=8-10)]
+[!code-json[Main](start-mvc/sample/MvcMovie/appsettings.json?highlight=2&range=8-10)]
 
-Když nasadíte aplikaci k testu nebo produkčním serveru, můžete použít proměnné prostředí nebo jiný přístup k nastavení připojovacího řetězce k skutečné systému SQL Server. V tématu [konfigurace](xref:fundamentals/configuration) Další informace.
+Když nasadíte aplikaci k testu nebo produkčním serveru, můžete použít proměnné prostředí nebo jiný přístup k nastavení připojovacího řetězce k skutečné systému SQL Server. V tématu [konfigurace](xref:fundamentals/configuration/index) Další informace.
 
 ## <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
 

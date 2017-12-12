@@ -27,7 +27,11 @@ Poznámka: Na technologii ASP.NET 2.0 základní verzi se mírně liší. Neobsa
 >[!WARNING]
 > Implementovali jsme nebyly `Movies` ještě řadiče, takže když kliknete na tento odkaz, získáte chybu 404 (nebyl nalezen).
 
-Uložte změny a klepněte **o** odkaz. Všimněte si, jak teď zobrazuje název na kartě prohlížeče **o - filmová aplikace** místo **o - Mvc film**. Klepněte **kontaktujte** propojení a Všimněte si, že také zobrazuje **filmová aplikace**. Jsme byli schopni jednou proveďte změny v šabloně rozložení a mít všechny stránky webu odrážet nový text odkazu a nový název.
+Uložte změny a klepněte **o** odkaz. Všimněte si, jak teď zobrazuje název na kartě prohlížeče **o - filmová aplikace** místo **o - Mvc film**: 
+
+![O karta](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+
+Klepněte **kontaktujte** propojení a Všimněte si, že také zobrazuje **filmová aplikace**. Jsme byli schopni jednou proveďte změny v šabloně rozložení a mít všechny stránky webu odrážet nový text odkazu a nový název.
 
 Zkontrolujte *Views/_ViewStart.cshtml* souboru:
 

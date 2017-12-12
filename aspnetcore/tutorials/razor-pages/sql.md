@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 1e35ce49980bf026de35359cdf413961051e3bee
-ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
-ms.translationtype: HT
+ms.openlocfilehash: 1e6ea093317527eecd5909449ac1973ca13cfc32
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="working-with-sql-server-localdb-and-aspnet-core"></a>Práce s SQL Server LocalDB a ASP.NET Core
 
@@ -24,11 +24,11 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Audette Jan](https://t
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=6-7)]
 
-ASP.NET Core [konfigurace](xref:fundamentals/configuration) systému čtení `ConnectionString`. Pro místní vývoj, získá připojovací řetězec z *appSettings.JSON určený* souboru:
+ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čtení `ConnectionString`. Pro místní vývoj, získá připojovací řetězec z *appSettings.JSON určený* souboru:
 
 [!code-json[Main](razor-pages-start/sample/RazorPagesMovie/appsettings.json?highlight=2&range=8-10)]
 
-Když nasadíte aplikaci k testu nebo produkčním serveru, můžete použít proměnné prostředí nebo jiný přístup k nastavení připojovacího řetězce k skutečné systému SQL Server. V tématu [konfigurace](xref:fundamentals/configuration) Další informace.
+Když nasadíte aplikaci k testu nebo produkčním serveru, můžete použít proměnné prostředí nebo jiný přístup k nastavení připojovacího řetězce k skutečné systému SQL Server. V tématu [konfigurace](xref:fundamentals/configuration/index) Další informace.
 
 ## <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
 

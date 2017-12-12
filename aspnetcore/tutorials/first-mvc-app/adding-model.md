@@ -11,11 +11,11 @@ ms.assetid: 8dc28498-00ee-4d66-b903-b593059e9f39
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 7469546494ec54bfe36bc5bd2f5f9702889ddf4a
-ms.sourcegitcommit: 2e61e287e220eddd5f3f4cd9147aa6417cfd9236
-ms.translationtype: HT
+ms.openlocfilehash: a29bab9cf0712936fa9c3f2b4bb3b275a46fe6f6
+ms.sourcegitcommit: e641c5794525f983485621860926d8ab4e7360c8
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/23/2017
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
@@ -110,7 +110,7 @@ Update-Database
 
 `Add-Migration` Příkaz vytvoří kód k vytvoření schématu počáteční databáze. Schéma je založena na zadaný ve model `DbContext`(v *Data/MvcMovieContext.cs* souboru). `Initial` Argument se používá k pojmenování byla migrace. Můžete použít libovolný název, ale podle konvence zvolte název, který popisuje migraci. V tématu [Úvod do migrace](xref:data/ef-mvc/migrations#introduction-to-migrations) Další informace.
 
-`Update-Database` Příkaz spustí `Up` metoda v *migrace nebo\<časové razítko > _InitialCreate.cs* souboru, který vytvoří databázi.
+`Update-Database` Příkaz spustí `Up` metoda v *migrace nebo\<časové razítko > _Initial.cs* souboru, který vytvoří databázi.
 
 <a name="cli"></a>Místo pomocí PMC můžete provést kroky předcházející pomocí rozhraní příkazového řádku (CLI):
 
@@ -118,7 +118,7 @@ Update-Database
 * Spusťte následující příkazy z konzoly (v adresáři projektu):
 
   ```console
-  dotnet ef migrations add InitialCreate
+  dotnet ef migrations add Initial
   dotnet ef database update
   ```     
   

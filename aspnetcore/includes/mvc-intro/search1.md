@@ -22,7 +22,7 @@ Dotaz je *pouze* definované v tomto okamžiku, má **není** byly spuštěny s 
 
 Pokud `searchString` parametr obsahuje řetězec, filmy dotazu je změněno na filtrování na základě hodnoty řetězec pro hledání:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchNull)]
+[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchNull2)]
 
 `s => s.Title.Contains()` Je výše uvedený kód [výrazu Lambda](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions). Lambdas se používají v na základě metod [LINQ](https://docs.microsoft.com/dotnet/standard/using-linq) dotazuje jako argumenty pro standardní dotaz operátor metody, jako [kde](https://docs.microsoft.com//dotnet/api/system.linq.enumerable.where) metoda nebo `Contains` (používá se ve výše uvedeném kódu). Dotazy LINQ nebudou provedeny, když jsou definovány nebo když jsou upraveny voláním metody `Where`, `Contains` nebo `OrderBy`. Místo toho je odložen spuštění dotazu.  To znamená, že je zpožděno vyhodnocení výrazu, dokud jeho zjištěné hodnota je ve skutečnosti vstupní přes nebo `ToListAsync` metoda je volána. Další informace o provádění odložené dotazů najdete v tématu [provádění dotazu](https://docs.microsoft.com/dotnet/framework/data/adonet/ef/language-reference/query-execution).
 

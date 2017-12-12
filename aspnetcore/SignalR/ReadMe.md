@@ -1,0 +1,1 @@
+Tato složka Pokud pro obsah SignalR. Odstranění tohoto souboru, když je první soubor přidán do tohoto adresáře.

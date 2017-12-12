@@ -1,0 +1,1 @@
+Webové aplikace Contoso univerzity ukazuje, jak vytvářet stránky Razor webové aplikace pomocí EF jádra a sady Visual Studio. Informace o kurzu řady najdete v tématu [první kurz](xref:data/ef-rp/intro).

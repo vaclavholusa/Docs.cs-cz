@@ -1,0 +1,1 @@
+Tento projekt se používá pro zajištění fragmenty k [EF MVC základní kurz řady](https://docs.microsoft.com/aspnet/core/data/ef-mvc/intro). Ukázkový projekt, který je vytvořen pomocí následujících kurzů k je na https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final.

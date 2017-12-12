@@ -1,0 +1,60 @@
+---
+uid: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb
+title: "Pomocí ovládacích prvků pro ověřování (VB) TextBoxWatermark | Microsoft Docs"
+author: wenz
+description: "TextBoxWatermark ovládacího prvku Toolkitu AJAX rozšiřuje textové pole tak, aby text se zobrazí v rámci pole. Když uživatel klikne do pole, je možné..."
+ms.author: aspnetcontent
+manager: wpickett
+ms.date: 06/02/2008
+ms.topic: article
+ms.assetid: e6c2cb98-f745-4bc8-973a-813879c8a891
+ms.technology: dotnet-webforms
+ms.prod: .net-framework
+msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb
+msc.type: authoredcontent
+ms.openlocfilehash: 09236481b6e51cc22a4034aa22e7c491ce27a510
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/10/2017
+---
+<a name="using-textboxwatermark-with-validation-controls-vb"></a>Pomocí TextBoxWatermark ovládací prvky pro ověřování (VB)
+====================
+podle [Christian Wenz](https://github.com/wenz)
+
+[Stáhněte si kód](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/TextBoxWatermark2.vb.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/textboxwatermark2VB.pdf)
+
+> TextBoxWatermark ovládacího prvku Toolkitu AJAX rozšiřuje textové pole tak, aby text se zobrazí v rámci pole. Když uživatel klikne do pole, je vyprázdnit. Pokud uživatel ponechá bez nutnosti zadávat text do pole, zobrazí se předem vyplněných text znovu. To může dojít ke konfliktu s ovládacími prvky ověřování ASP.NET na stejné stránce, ale mohou být tyto problémy překonat.
+
+
+## <a name="overview"></a>Přehled
+
+`TextBoxWatermark` Ovládacího prvku Toolkitu AJAX rozšiřuje textové pole tak, aby text se zobrazí v rámci pole. Když uživatel klikne do pole, je vyprázdnit. Pokud uživatel ponechá bez nutnosti zadávat text do pole, zobrazí se předem vyplněných text znovu. To může dojít ke konfliktu s ovládacími prvky ověřování ASP.NET na stejné stránce, ale mohou být tyto problémy překonat.
+
+## <a name="steps"></a>Kroky
+
+Základní nastavení vzorku je následující: `TextBox` ovládací prvek je vodoznakem pomocí `TextBoxWatermarkExtender` ovládacího prvku. Tlačítko zpětné volání se aktivuje a bude možné později použít k aktivaci ověřovací ovládací prvky na stránce. Navíc `ScriptManager` řízení se vyžaduje k chybě při inicializaci prvku ASP.NET AJAX:
+
+[!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample1.aspx)]
+
+Nyní přidejte `RequiredFieldValidator` ovládací prvek, který kontroluje, zda je text v poli při odeslání formuláře. `InitialValue` Validátoru musí být nastavena na stejnou hodnotu, která se používá v `TextBoxWatermarkExtender` ovládacího prvku: po odeslání formuláře hodnota beze změny textové pole je hodnota vodoznaku v něm:
+
+[!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample2.aspx)]
+
+Ale je jedním z problémů s tímto přístupem: Jestliže klient zakáže JavaScript, není pole text předem s vodoznakového textu, proto `RequiredFieldValidator` neaktivuje chybovou zprávu. Proto druhý `RequiredFieldValidator` ovládací prvek je vyžadován, která vyhledává prázdné textové pole (vynechání `InitialValue` atribut).
+
+[!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample3.aspx)]
+
+Vzhledem k tomu použít i validátory `Display` = `"Dynamic"`, koncový uživatel nemůže odlišit od vzhled, které ze dvou validátory byla aktivována; místo toho to vypadá, došlo jenom jeden z nich.
+
+Nakonec přidejte některé kódu na straně serveru k vypsání text v poli, pokud žádné program pro ověření objeví chybová zpráva:
+
+[!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample4.aspx)]
+
+
+[![Validátor complains, že neexistuje žádný text v poli](using-textboxwatermark-with-validation-controls-vb/_static/image2.png)](using-textboxwatermark-with-validation-controls-vb/_static/image1.png)
+
+Validátor complains, že neexistuje žádný text v poli ([Kliknutím zobrazit obrázek v plné velikosti](using-textboxwatermark-with-validation-controls-vb/_static/image3.png))
+
+>[!div class="step-by-step"]
+[Předchozí](using-textboxwatermark-in-a-formview-vb.md)

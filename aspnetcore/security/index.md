@@ -1,0 +1,109 @@
+---
+title: "Přehled zabezpečení jádra ASP.NET | Microsoft Docs"
+author: rachelappel
+description: "Další informace o ověřování, autorizaci a zabezpečení základy v ASP.NET Core"
+ms.author: rachelap
+manager: wpickett
+ms.date: 11/01/2017
+ms.topic: article
+ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe012345
+ms.technology: aspnet
+ms.prod: asp.net-core
+uid: security/index
+ms.openlocfilehash: 4f3a74d67ce3453499ea9785cc80bee183dc1aff
+ms.sourcegitcommit: e4fb6b13be56a0fb2f2778623740a047d6489227
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/16/2017
+---
+# <a name="aspnet-core-security-overview"></a><span data-ttu-id="e46da-103">Přehled zabezpečení ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="e46da-103">ASP.NET Core Security Overview</span></span>
+
+<span data-ttu-id="e46da-104">ASP.NET Core umožňuje vývojářům snadno konfigurovat a spravovat zabezpečení pro svoje aplikace.</span><span class="sxs-lookup"><span data-stu-id="e46da-104">ASP.NET Core enables developers to easily configure and manage security for their apps.</span></span> <span data-ttu-id="e46da-105">ASP.NET Core obsahuje funkce pro správu ověřování, autorizace, ochrany dat, SSL vynucení, tajné klíče aplikace, žádost proti padělání ochrana a správa CORS.</span><span class="sxs-lookup"><span data-stu-id="e46da-105">ASP.NET Core contains features for managing authentication, authorization, data protection, SSL enforcement, app secrets, anti-request forgery protection, and CORS management.</span></span> <span data-ttu-id="e46da-106">Tyto funkce zabezpečení umožňují vytvářet robustní ještě zabezpečení aplikace ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="e46da-106">These security features allow you to build robust yet secure ASP.NET Core apps.</span></span> 
+
+## <a name="aspnet-core-security-features"></a><span data-ttu-id="e46da-107">Funkce ASP.NET Core zabezpečení</span><span class="sxs-lookup"><span data-stu-id="e46da-107">ASP.NET Core security features</span></span>
+
+<span data-ttu-id="e46da-108">ASP.NET Core poskytuje řadu nástrojů a knihovny k zabezpečení aplikací včetně předdefinované zprostředkovatele Identity, ale můžete použít 3. stran identity služby jako je Facebook, Twitter a LinkedIn.</span><span class="sxs-lookup"><span data-stu-id="e46da-108">ASP.NET Core provides many tools and libraries to secure your apps including built-in Identity providers but you can use 3rd party identity services such as Facebook, Twitter, or LinkedIn.</span></span> <span data-ttu-id="e46da-109">Pomocí ASP.NET Core můžete snadno spravovat tajné klíče aplikace, které představují způsob, jak ukládat a používat důvěrné informace bez nutnosti vystavit v kódu.</span><span class="sxs-lookup"><span data-stu-id="e46da-109">With ASP.NET Core, you can easily manage app secrets, which are a way to store and use confidential information without having to expose it in the code.</span></span> 
+
+## <a name="authentication-vs-authorization"></a><span data-ttu-id="e46da-110">Ověřování vs. Autorizace</span><span class="sxs-lookup"><span data-stu-id="e46da-110">Authentication vs. Authorization</span></span>
+
+<span data-ttu-id="e46da-111">Ověřování je proces, ve kterém uživatel poskytuje pověření, které se pak porovnávají s údajů uložených v operační systém, databáze, aplikace nebo prostředku.</span><span class="sxs-lookup"><span data-stu-id="e46da-111">Authentication is a process in which a user provides credentials that are then compared to those stored in an operating system, database, app or resource.</span></span> <span data-ttu-id="e46da-112">Pokud se shodují, uživatelé úspěšně ověřit a potom může provést akce, které mají oprávnění, během autorizačního procesu.</span><span class="sxs-lookup"><span data-stu-id="e46da-112">If they match, users authenticate successfully, and can then perform actions that they are authorized for, during an authorization process.</span></span> <span data-ttu-id="e46da-113">Povolení odkazuje na proces, který určuje, co uživatel může provádět.</span><span class="sxs-lookup"><span data-stu-id="e46da-113">The authorization refers to the process that determines what a user is allowed to do.</span></span> 
+
+<span data-ttu-id="e46da-114">Dalším způsobem zamyslet nad ověřování je vzít v úvahu jako způsob, jak při autorizaci akce, které můžete uživatel provádět, abyste objektů, které uvnitř toto místo (server, databázi nebo aplikace) zadejte prostor, například server, databáze, aplikace nebo prostředku.</span><span class="sxs-lookup"><span data-stu-id="e46da-114">Another way to think of authentication is to consider it as a way to enter a space, such as a server, database, app or resource, while authorization is which actions the user can perform to which objects inside that space (server, database, or app).</span></span>
+
+## <a name="common-vulnerabilities-in-software"></a><span data-ttu-id="e46da-115">Běžné chyby zabezpečení v softwaru</span><span class="sxs-lookup"><span data-stu-id="e46da-115">Common Vulnerabilities in software</span></span>
+
+<span data-ttu-id="e46da-116">ASP.NET Core a EF obsahují funkce, které vám pomohou zabezpečit vaše aplikace a zabránit porušení zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="e46da-116">ASP.NET Core and EF contain features that help you secure your apps and prevent security breaches.</span></span> <span data-ttu-id="e46da-117">Následující seznam odkazů přejdete k dokumentaci s podrobnostmi o techniky předejdete nejběžnějších chyb zabezpečení ve službě web apps:</span><span class="sxs-lookup"><span data-stu-id="e46da-117">The following list of links takes you to documentation detailing techniques to avoid the most common security vulnerabilities in web apps:</span></span>
+
+* [<span data-ttu-id="e46da-118">Útoky skriptováním mezi</span><span class="sxs-lookup"><span data-stu-id="e46da-118">Cross site scripting attacks</span></span>](https://docs.microsoft.com/aspnet/core/security/cross-site-scripting)
+* [<span data-ttu-id="e46da-119">Útok prostřednictvím injektáže SQL</span><span class="sxs-lookup"><span data-stu-id="e46da-119">SQL Injection attacks</span></span>](https://docs.microsoft.com/ef/core/querying/raw-sql)
+* [<span data-ttu-id="e46da-120">Padělání požadavku posílaného mezi weby (proti útokům CSRF)</span><span class="sxs-lookup"><span data-stu-id="e46da-120">Cross-Site Request Forgery (CSRF)</span></span>](https://docs.microsoft.com/aspnet/core/security/anti-request-forgery)
+* [<span data-ttu-id="e46da-121">Otevřete přesměrování útoky</span><span class="sxs-lookup"><span data-stu-id="e46da-121">Open redirect attacks</span></span>](https://docs.microsoft.com/aspnet/core/security/preventing-open-redirects)
+
+<span data-ttu-id="e46da-122">Existují další chyby zabezpečení, které byste měli vědět.</span><span class="sxs-lookup"><span data-stu-id="e46da-122">There are more vulnerabilities that you should be aware of.</span></span> <span data-ttu-id="e46da-123">Další informace najdete v části v tomto dokumentu na *ASP.NET zabezpečení dokumentaci*.</span><span class="sxs-lookup"><span data-stu-id="e46da-123">For more information, see the section in this document on *ASP.NET Security Documentation*.</span></span> 
+
+## <a name="aspnet-security-documentation"></a><span data-ttu-id="e46da-124">Dokumentace k technologii ASP.NET zabezpečení</span><span class="sxs-lookup"><span data-stu-id="e46da-124">ASP.NET Security Documentation</span></span>
+
+*   [<span data-ttu-id="e46da-125">Ověřování</span><span class="sxs-lookup"><span data-stu-id="e46da-125">Authentication</span></span>](authentication/index.md)
+    *   [<span data-ttu-id="e46da-126">Úvod do Identity</span><span class="sxs-lookup"><span data-stu-id="e46da-126">Introduction to Identity</span></span>](authentication/identity.md)
+    *   [<span data-ttu-id="e46da-127">Povolení ověřování pomocí služby Facebook, Google a dalších externích zprostředkovatelů</span><span class="sxs-lookup"><span data-stu-id="e46da-127">Enabling authentication using Facebook, Google and other external providers</span></span>](authentication/social/index.md)
+    * [<span data-ttu-id="e46da-128">Konfigurovat ověřování systému Windows</span><span class="sxs-lookup"><span data-stu-id="e46da-128">Configure Windows Authentication</span></span>](authentication/windowsauth.md)
+    *   [<span data-ttu-id="e46da-129">Potvrzení účtu a heslo pro obnovení</span><span class="sxs-lookup"><span data-stu-id="e46da-129">Account Confirmation and Password Recovery</span></span>](authentication/accconfirm.md)
+    *   [<span data-ttu-id="e46da-130">Dvoufaktorové ověřování pomocí serveru SMS</span><span class="sxs-lookup"><span data-stu-id="e46da-130">Two-factor authentication with SMS</span></span>](authentication/2fa.md) 
+    *   [<span data-ttu-id="e46da-131">Pomocí souboru Cookie ověřování bez ASP.NET Core Identity</span><span class="sxs-lookup"><span data-stu-id="e46da-131">Using Cookie Authentication without ASP.NET Core Identity</span></span>](authentication/cookie.md)
+    *   [<span data-ttu-id="e46da-132">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="e46da-132">Azure Active Directory</span></span>](authentication/azure-active-directory/index.md)
+        *   [<span data-ttu-id="e46da-133">Integrace Azure AD do webové aplikace ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="e46da-133">Integrating Azure AD Into an ASP.NET Core Web App</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+        *   [<span data-ttu-id="e46da-134">Volání webového rozhraní API ASP.NET Core z grafického subsystému WPF aplikace pomocí služby Azure AD</span><span class="sxs-lookup"><span data-stu-id="e46da-134">Calling a ASP.NET Core Web API From a WPF Application Using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
+        *   [<span data-ttu-id="e46da-135">Volání webového rozhraní API ve webové aplikaci ASP.NET Core pomocí služby Azure AD</span><span class="sxs-lookup"><span data-stu-id="e46da-135">Calling a Web API in an ASP.NET Core Web Application Using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
+        *   [<span data-ttu-id="e46da-136">Webové aplikace ASP.NET Core s Azure AD B2C</span><span class="sxs-lookup"><span data-stu-id="e46da-136">An ASP.NET Core web app with Azure AD B2C</span></span>](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
+    *   [<span data-ttu-id="e46da-137">Zabezpečení aplikací s IdentityServer4 ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="e46da-137">Securing ASP.NET Core apps with IdentityServer4</span></span>](https://identityserver4.readthedocs.io)
+*   [<span data-ttu-id="e46da-138">Autorizace</span><span class="sxs-lookup"><span data-stu-id="e46da-138">Authorization</span></span>](authorization/index.md)
+    *   [<span data-ttu-id="e46da-139">Úvod</span><span class="sxs-lookup"><span data-stu-id="e46da-139">Introduction</span></span>](authorization/introduction.md)
+    *   [<span data-ttu-id="e46da-140">Vytvoření aplikace s uživatelskými daty chráněn autorizace</span><span class="sxs-lookup"><span data-stu-id="e46da-140">Create an app with user data protected by authorization</span></span>](xref:security/authorization/secure-data)
+    *   [<span data-ttu-id="e46da-141">Jednoduché autorizace</span><span class="sxs-lookup"><span data-stu-id="e46da-141">Simple Authorization</span></span>](authorization/simple.md)
+    *   [<span data-ttu-id="e46da-142">Autorizace podle rolí</span><span class="sxs-lookup"><span data-stu-id="e46da-142">Role based Authorization</span></span>](authorization/roles.md)
+    *   [<span data-ttu-id="e46da-143">Ověření na základě deklarace identity</span><span class="sxs-lookup"><span data-stu-id="e46da-143">Claims-Based Authorization</span></span>](authorization/claims.md)
+    *   [<span data-ttu-id="e46da-144">Autorizace uživatele na základě zásad</span><span class="sxs-lookup"><span data-stu-id="e46da-144">Custom Policy-Based Authorization</span></span>](authorization/policies.md)
+    *   [<span data-ttu-id="e46da-145">Vkládání závislostí v obslužné rutiny požadavku</span><span class="sxs-lookup"><span data-stu-id="e46da-145">Dependency Injection in requirement handlers</span></span>](authorization/dependencyinjection.md)
+    *   [<span data-ttu-id="e46da-146">Ověření na základě prostředků</span><span class="sxs-lookup"><span data-stu-id="e46da-146">Resource-based authorization</span></span>](authorization/resourcebased.md)
+    *   [<span data-ttu-id="e46da-147">Ověření na základě zobrazení</span><span class="sxs-lookup"><span data-stu-id="e46da-147">View-based authorization</span></span>](authorization/views.md)
+    *   [<span data-ttu-id="e46da-148">Omezení identity s schéma</span><span class="sxs-lookup"><span data-stu-id="e46da-148">Limiting identity by scheme</span></span>](authorization/limitingidentitybyscheme.md)
+*   [<span data-ttu-id="e46da-149">Ochrana dat</span><span class="sxs-lookup"><span data-stu-id="e46da-149">Data Protection</span></span>](data-protection/index.md)
+    *   [<span data-ttu-id="e46da-150">Úvod do ochrany dat</span><span class="sxs-lookup"><span data-stu-id="e46da-150">Introduction to Data Protection</span></span>](data-protection/introduction.md)
+    *   [<span data-ttu-id="e46da-151">Začínáme s rozhraními API ochrany dat.</span><span class="sxs-lookup"><span data-stu-id="e46da-151">Getting Started with the Data Protection APIs</span></span>](data-protection/using-data-protection.md)
+    *   [<span data-ttu-id="e46da-152">Rozhraní API příjemce</span><span class="sxs-lookup"><span data-stu-id="e46da-152">Consumer APIs</span></span>](data-protection/consumer-apis/index.md)
+        *   [<span data-ttu-id="e46da-153">Přehled rozhraní API příjemce</span><span class="sxs-lookup"><span data-stu-id="e46da-153">Consumer APIs Overview</span></span>](data-protection/consumer-apis/overview.md)
+        *   [<span data-ttu-id="e46da-154">Účel řetězce</span><span class="sxs-lookup"><span data-stu-id="e46da-154">Purpose Strings</span></span>](data-protection/consumer-apis/purpose-strings.md)
+        *   [<span data-ttu-id="e46da-155">Účel hierarchie a víceklientské prostředí</span><span class="sxs-lookup"><span data-stu-id="e46da-155">Purpose hierarchy and multi-tenancy</span></span>](data-protection/consumer-apis/purpose-strings-multitenancy.md)
+        *   [<span data-ttu-id="e46da-156">Hashování hesel</span><span class="sxs-lookup"><span data-stu-id="e46da-156">Password Hashing</span></span>](data-protection/consumer-apis/password-hashing.md)
+        *   [<span data-ttu-id="e46da-157">Omezení délky trvání chráněných datových částí</span><span class="sxs-lookup"><span data-stu-id="e46da-157">Limiting the lifetime of protected payloads</span></span>](data-protection/consumer-apis/limited-lifetime-payloads.md)
+        *   [<span data-ttu-id="e46da-158">Probíhá rušení ochrany datových částí, které byly odvolány jejíž klíče</span><span class="sxs-lookup"><span data-stu-id="e46da-158">Unprotecting payloads whose keys have been revoked</span></span>](data-protection/consumer-apis/dangerous-unprotect.md)
+    *   [<span data-ttu-id="e46da-159">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="e46da-159">Configuration</span></span>](data-protection/configuration/index.md)
+        *   [<span data-ttu-id="e46da-160">Konfigurace ochrany dat</span><span class="sxs-lookup"><span data-stu-id="e46da-160">Configuring Data Protection</span></span>](data-protection/configuration/overview.md)
+        *   [<span data-ttu-id="e46da-161">Výchozí nastavení</span><span class="sxs-lookup"><span data-stu-id="e46da-161">Default Settings</span></span>](data-protection/configuration/default-settings.md)
+        *   [<span data-ttu-id="e46da-162">Široké zásady počítače</span><span class="sxs-lookup"><span data-stu-id="e46da-162">Machine Wide Policy</span></span>](data-protection/configuration/machine-wide-policy.md)
+        *   [<span data-ttu-id="e46da-163">Scénáře využívající bez DI</span><span class="sxs-lookup"><span data-stu-id="e46da-163">Non DI Aware Scenarios</span></span>](data-protection/configuration/non-di-scenarios.md)
+    *   [<span data-ttu-id="e46da-164">Rozšiřitelnost rozhraní API</span><span class="sxs-lookup"><span data-stu-id="e46da-164">Extensibility APIs</span></span>](data-protection/extensibility/index.md)
+        *   [<span data-ttu-id="e46da-165">Rozšiřitelnost kryptografie jádra</span><span class="sxs-lookup"><span data-stu-id="e46da-165">Core cryptography extensibility</span></span>](data-protection/extensibility/core-crypto.md)
+        *   [<span data-ttu-id="e46da-166">Rozšíření správy klíčů</span><span class="sxs-lookup"><span data-stu-id="e46da-166">Key management extensibility</span></span>](data-protection/extensibility/key-management.md)
+        *   [<span data-ttu-id="e46da-167">Ostatní rozhraní API</span><span class="sxs-lookup"><span data-stu-id="e46da-167">Miscellaneous APIs</span></span>](data-protection/extensibility/misc-apis.md)
+    *   [<span data-ttu-id="e46da-168">Implementace</span><span class="sxs-lookup"><span data-stu-id="e46da-168">Implementation</span></span>](data-protection/implementation/index.md)
+        *   [<span data-ttu-id="e46da-169">Podrobnosti o ověřené šifrování</span><span class="sxs-lookup"><span data-stu-id="e46da-169">Authenticated encryption details</span></span>](data-protection/implementation/authenticated-encryption-details.md)
+        *   [<span data-ttu-id="e46da-170">Odvození podklíčů a ověřené šifrování</span><span class="sxs-lookup"><span data-stu-id="e46da-170">Subkey Derivation and Authenticated Encryption</span></span>](data-protection/implementation/subkeyderivation.md)
+        *   [<span data-ttu-id="e46da-171">Kontext hlavičky</span><span class="sxs-lookup"><span data-stu-id="e46da-171">Context headers</span></span>](data-protection/implementation/context-headers.md)
+        *   [<span data-ttu-id="e46da-172">Správa klíčů</span><span class="sxs-lookup"><span data-stu-id="e46da-172">Key Management</span></span>](data-protection/implementation/key-management.md)
+        *   [<span data-ttu-id="e46da-173">Poskytovatelé úložiště klíčů</span><span class="sxs-lookup"><span data-stu-id="e46da-173">Key Storage Providers</span></span>](data-protection/implementation/key-storage-providers.md)
+        *   [<span data-ttu-id="e46da-174">Klíče šifrování v klidovém stavu</span><span class="sxs-lookup"><span data-stu-id="e46da-174">Key Encryption At Rest</span></span>](data-protection/implementation/key-encryption-at-rest.md)
+        *   [<span data-ttu-id="e46da-175">Klíče neměnitelnosti a změna nastavení</span><span class="sxs-lookup"><span data-stu-id="e46da-175">Key Immutability and Changing Settings</span></span>](data-protection/implementation/key-immutability.md)
+        *   [<span data-ttu-id="e46da-176">Formát úložiště klíčů</span><span class="sxs-lookup"><span data-stu-id="e46da-176">Key Storage Format</span></span>](data-protection/implementation/key-storage-format.md)
+        *   [<span data-ttu-id="e46da-177">Zprostředkovatelé ochrany dočasných dat</span><span class="sxs-lookup"><span data-stu-id="e46da-177">Ephemeral data protection providers</span></span>](data-protection/implementation/key-storage-ephemeral.md)
+    *   [<span data-ttu-id="e46da-178">Kompatibilita</span><span class="sxs-lookup"><span data-stu-id="e46da-178">Compatibility</span></span>](data-protection/compatibility/index.md)
+        *   [<span data-ttu-id="e46da-179">Sdílení souborů cookie mezi aplikacemi</span><span class="sxs-lookup"><span data-stu-id="e46da-179">Sharing cookies between applications</span></span>](data-protection/compatibility/cookie-sharing.md)
+        *   [<span data-ttu-id="e46da-180">Nahrazení <machineKey> technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="e46da-180">Replacing <machineKey> in ASP.NET</span></span>](data-protection/compatibility/replacing-machinekey.md)
+*   [<span data-ttu-id="e46da-181">Vytvoření aplikace s uživatelskými daty chráněn autorizace</span><span class="sxs-lookup"><span data-stu-id="e46da-181">Create an app with user data protected by authorization</span></span>](xref:security/authorization/secure-data)
+*   [<span data-ttu-id="e46da-182">Bezpečné úložiště tajné klíče aplikace během vývoje</span><span class="sxs-lookup"><span data-stu-id="e46da-182">Safe storage of app secrets during development</span></span>](app-secrets.md)
+*   [<span data-ttu-id="e46da-183">Poskytovatel konfigurace služby Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="e46da-183">Azure Key Vault configuration provider</span></span>](key-vault-configuration.md)
+*   [<span data-ttu-id="e46da-184">Vynucování SSL</span><span class="sxs-lookup"><span data-stu-id="e46da-184">Enforcing SSL</span></span>](enforcing-ssl.md)
+*   [<span data-ttu-id="e46da-185">Žádost o proti padělání</span><span class="sxs-lookup"><span data-stu-id="e46da-185">Anti-Request Forgery</span></span>](anti-request-forgery.md)
+*   [<span data-ttu-id="e46da-186">Prevence útoků otevřete přesměrování</span><span class="sxs-lookup"><span data-stu-id="e46da-186">Preventing Open Redirect Attacks</span></span>](preventing-open-redirects.md)
+*   [<span data-ttu-id="e46da-187">Brání skriptování mezi servery</span><span class="sxs-lookup"><span data-stu-id="e46da-187">Preventing Cross-Site Scripting</span></span>](cross-site-scripting.md)
+*   [<span data-ttu-id="e46da-188">Povolení žádostí napříč zdroji (CORS)</span><span class="sxs-lookup"><span data-stu-id="e46da-188">Enabling Cross-Origin Requests (CORS)</span></span>](cors.md)

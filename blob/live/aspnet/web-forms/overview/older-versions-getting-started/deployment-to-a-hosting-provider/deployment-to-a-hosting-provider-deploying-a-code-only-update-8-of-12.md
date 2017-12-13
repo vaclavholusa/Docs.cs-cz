@@ -1,0 +1,143 @@
+---
+uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12
+title: "Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení aktualizace Code-Only – 8 12 | Microsoft Docs"
+author: tdykstra
+description: "Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného..."
+ms.author: aspnetcontent
+manager: wpickett
+ms.date: 11/17/2011
+ms.topic: article
+ms.assetid: ddf6252f-9413-4c0c-a360-2cef8d231717
+ms.technology: dotnet-webforms
+ms.prod: .net-framework
+msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12
+msc.type: authoredcontent
+ms.openlocfilehash: a07ac968482866ba9a4eca25722d99fd641080e6
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 11/10/2017
+---
+<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-code-only-update---8-of-12"></a><span data-ttu-id="402ca-103">Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení aktualizace Code-Only – 8 12</span><span class="sxs-lookup"><span data-stu-id="402ca-103">Deploying an ASP.NET Web Application with SQL Server Compact using Visual Studio or Visual Web Developer: Deploying a Code-Only Update - 8 of 12</span></span>
+====================
+<span data-ttu-id="402ca-104">podle [tní Dykstra](https://github.com/tdykstra)</span><span class="sxs-lookup"><span data-stu-id="402ca-104">by [Tom Dykstra](https://github.com/tdykstra)</span></span>
+
+[<span data-ttu-id="402ca-105">Stáhněte si úvodní projekt</span><span class="sxs-lookup"><span data-stu-id="402ca-105">Download Starter Project</span></span>](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
+
+> <span data-ttu-id="402ca-106">Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí sady Visual Studio 2012 RC nebo Visual Studio Express 2012 RC pro Web.</span><span class="sxs-lookup"><span data-stu-id="402ca-106">This series of tutorials shows you how to deploy (publish) an ASP.NET web application project that includes a SQL Server Compact database by using Visual Studio 2012 RC or Visual Studio Express 2012 RC for Web.</span></span> <span data-ttu-id="402ca-107">Visual Studio 2010 můžete také použít při instalaci aktualizace Publikovat Web.</span><span class="sxs-lookup"><span data-stu-id="402ca-107">You can also use Visual Studio 2010 if you install the Web Publish Update.</span></span> <span data-ttu-id="402ca-108">Úvod do řady, najdete v části [z prvního kurzu řady](deployment-to-a-hosting-provider-introduction-1-of-12.md).</span><span class="sxs-lookup"><span data-stu-id="402ca-108">For an introduction to the series, see [the first tutorial in the series](deployment-to-a-hosting-provider-introduction-1-of-12.md).</span></span>
+> 
+> <span data-ttu-id="402ca-109">Kurz, který ukazuje nasazení funkce zavedená po vydání sady Visual Studio 2012 RC, ukazuje, jak nasadit edicích systému SQL Server než SQL Server Compact a ukazuje, jak nasadit do Azure App Service Web Apps, naleznete v části [nasazení webu ASP.NET pomocí sady Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="402ca-109">For a tutorial that shows deployment features introduced after the RC release of Visual Studio 2012, shows how to deploy SQL Server editions other than SQL Server Compact, and shows how to deploy to Azure App Service Web Apps, see [ASP.NET Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).</span></span>
+
+
+## <a name="overview"></a><span data-ttu-id="402ca-110">Přehled</span><span class="sxs-lookup"><span data-stu-id="402ca-110">Overview</span></span>
+
+<span data-ttu-id="402ca-111">Po počátečním nasazení pokračuje v práci údržbu a vývoj vašeho webu a před dlouho bude chtít nasadit aktualizace.</span><span class="sxs-lookup"><span data-stu-id="402ca-111">After the initial deployment, your work of maintaining and developing your web site continues, and before long you will want to deploy an update.</span></span> <span data-ttu-id="402ca-112">Tento kurz vás provede procesem nasazení aktualizace do kódu aplikace.</span><span class="sxs-lookup"><span data-stu-id="402ca-112">This tutorial takes you through the process of deploying an update to your application code.</span></span> <span data-ttu-id="402ca-113">Tato aktualizace nezahrnuje změnu databáze; Zobrazí se, co se liší o nasazení změn databáze v dalším kurzu.</span><span class="sxs-lookup"><span data-stu-id="402ca-113">This update does not involve a database change; you'll see what's different about deploying a database change in the next tutorial.</span></span>
+
+<span data-ttu-id="402ca-114">Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, jak absolvovat kurz, nezapomeňte se podívat [řešení potíží s stránky](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md).</span><span class="sxs-lookup"><span data-stu-id="402ca-114">Reminder: If you get an error message or something doesn't work as you go through the tutorial, be sure to check the [troubleshooting page](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md).</span></span>
+
+## <a name="making-a-code-change"></a><span data-ttu-id="402ca-115">Změna kódu</span><span class="sxs-lookup"><span data-stu-id="402ca-115">Making a Code Change</span></span>
+
+<span data-ttu-id="402ca-116">Jako jednoduchý příklad aktualizace do vaší aplikace, přidáte do **vyučující** stránky Seznam kurzů výukové podle vybrané lektorem.</span><span class="sxs-lookup"><span data-stu-id="402ca-116">As a simple example of an update to your application, you'll add to the **Instructors** page a list of courses taught by the selected instructor.</span></span>
+
+<span data-ttu-id="402ca-117">Pokud spustíte **vyučující** stránky, můžete si všimnout, že existují **vyberte** odkazy v mřížce, ale přitom nedělají nic jakoukoli jinou hodnotu než zkontrolujte šedá řádek pozadí zapnout.</span><span class="sxs-lookup"><span data-stu-id="402ca-117">If you run the **Instructors** page, you'll notice that there are **Select** links in the grid, but they don't do anything other than make the row background turn gray.</span></span>
+
+<span data-ttu-id="402ca-118">[![Instructors_page](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image2.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="402ca-118">[![Instructors_page](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image2.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image1.png)</span></span>
+
+<span data-ttu-id="402ca-119">Nyní přidáte kód, který běží, když **vyberte** po kliknutí na odkaz a zobrazí seznam kurzů výukové podle vybrané lektorem.</span><span class="sxs-lookup"><span data-stu-id="402ca-119">Now you'll add code that runs when the **Select** link is clicked and displays a list of courses taught by the selected instructor .</span></span>
+
+<span data-ttu-id="402ca-120">V *Instructors.aspx*, přidejte následující kód bezprostředně po **ErrorMessageLabel** `Label` ovládacího prvku:</span><span class="sxs-lookup"><span data-stu-id="402ca-120">In *Instructors.aspx*, add the following markup immediately after the **ErrorMessageLabel** `Label` control:</span></span>
+
+[!code-aspx[Main](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/samples/sample1.aspx)]
+
+<span data-ttu-id="402ca-121">Spuštění stránky a vyberte lektorem.</span><span class="sxs-lookup"><span data-stu-id="402ca-121">Run the page and select an instructor.</span></span> <span data-ttu-id="402ca-122">Zobrazí seznam kurzů výukové podle této lektorem.</span><span class="sxs-lookup"><span data-stu-id="402ca-122">You see a list of courses taught by that instructor.</span></span>
+
+<span data-ttu-id="402ca-123">[![Instructors_page_with_courses](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image4.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image3.png)</span><span class="sxs-lookup"><span data-stu-id="402ca-123">[![Instructors_page_with_courses](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image4.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image3.png)</span></span>
+
+## <a name="deploying-the-code-update-to-the-test-environment"></a><span data-ttu-id="402ca-124">Nasazení aktualizace kódu do testovacího prostředí</span><span class="sxs-lookup"><span data-stu-id="402ca-124">Deploying the Code Update to the Test Environment</span></span>
+
+<span data-ttu-id="402ca-125">Nasazení do testovacího prostředí je jednoduché spuštění jedním kliknutím znovu publikovat.</span><span class="sxs-lookup"><span data-stu-id="402ca-125">Deploying to the test environment is a simple matter of running one-click publish again.</span></span> <span data-ttu-id="402ca-126">Chcete-li tento proces rychlejší, můžete použít **publikování webu jedním kliknutím** panelu nástrojů.</span><span class="sxs-lookup"><span data-stu-id="402ca-126">To make this process quicker, you can use the **Web One Click Publish** toolbar.</span></span>
+
+<span data-ttu-id="402ca-127">V **zobrazení** nabídce zvolte **panely nástrojů** a pak vyberte **publikování webu jedním kliknutím**.</span><span class="sxs-lookup"><span data-stu-id="402ca-127">In the **View** menu, choose **Toolbars** and then select **Web One Click Publish**.</span></span>
+
+![Selecting_One_Click_Publish_toolbar](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image5.png)
+
+<span data-ttu-id="402ca-129">V **Průzkumníku**, vyberte ContosoUniversity projekt.</span><span class="sxs-lookup"><span data-stu-id="402ca-129">In **Solution Explorer**, select the ContosoUniversity project.</span></span>
+
+<span data-ttu-id="402ca-130">**publikování webu jedním kliknutím** nástrojů, vyberte **Test** profil publikování a pak klikněte na **Publikovat Web** (ikona s dvojice šipek, které ukazují doleva a doprava).</span><span class="sxs-lookup"><span data-stu-id="402ca-130">the **Web One Click Publish** toolbar, choose the **Test** publish profile and then click **Publish Web** (the icon with arrows pointing left and right).</span></span>
+
+![Web_One_Click_Publish_toolbar](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image6.png)
+
+<span data-ttu-id="402ca-132">Visual Studio nasadí aktualizovanou aplikaci a prohlížeč se automaticky otevře na domovskou stránku.</span><span class="sxs-lookup"><span data-stu-id="402ca-132">Visual Studio deploys the updated application, and the browser automatically opens to the home page.</span></span> <span data-ttu-id="402ca-133">Spuštění stránky vyučující a vyberte lektorem k ověření, že aktualizace byla úspěšně nasazena.</span><span class="sxs-lookup"><span data-stu-id="402ca-133">Run the Instructors page and select an instructor to verify that the update was successfully deployed.</span></span>
+
+<span data-ttu-id="402ca-134">[![Instructors_page_with_courses_Test](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image8.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image7.png)</span><span class="sxs-lookup"><span data-stu-id="402ca-134">[![Instructors_page_with_courses_Test](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image8.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image7.png)</span></span>
+
+<span data-ttu-id="402ca-135">Za normálních okolností byste také provést testování regrese (tedy testovací zbytek lokality a ujistěte se, že nové změny nebyla rozdělit žádné existující funkce).</span><span class="sxs-lookup"><span data-stu-id="402ca-135">You would normally also do regression testing (that is, test the rest of the site to make sure that the new change didn't break any existing functionality).</span></span> <span data-ttu-id="402ca-136">Ale pro účely tohoto kurzu budete tento krok přeskočit a přejít k aktualizace nasadit do produkčního prostředí.</span><span class="sxs-lookup"><span data-stu-id="402ca-136">But for this tutorial you'll skip that step and proceed to deploy the update to production.</span></span>
+
+## <a name="preventing-redeployment-of-the-initial-database-state-to-production"></a><span data-ttu-id="402ca-137">Brání opakované nasazení počáteční stav databáze do produkčního prostředí</span><span class="sxs-lookup"><span data-stu-id="402ca-137">Preventing Redeployment of the Initial Database State to Production</span></span>
+
+<span data-ttu-id="402ca-138">V reálné aplikaci uživatelé komunikovat s produkční lokality po počátečním nasazení a databáze se naplní dynamická data.</span><span class="sxs-lookup"><span data-stu-id="402ca-138">In a real application, users interact with your production site after your initial deployment, and the databases are populated with live data.</span></span> <span data-ttu-id="402ca-139">Proto si chcete znovu zavést databázi členství v jeho počáteční stav, který by vymažou všechna data za provozu.</span><span class="sxs-lookup"><span data-stu-id="402ca-139">Therefore, you don't want to redeploy the membership database in its initial state, which would wipe out all of the live data.</span></span> <span data-ttu-id="402ca-140">Vzhledem k tomu, že jsou soubory v systému SQL Server Compact databáze *aplikace\_Data* složky, budete muset předejít změnou nastavení nasazení, která soubory *aplikace\_Data* složky se nenasadí.</span><span class="sxs-lookup"><span data-stu-id="402ca-140">Since SQL Server Compact databases are files in the *App\_Data* folder, you have to prevent this by changing deployment settings so that files in the *App\_Data* folder aren't deployed.</span></span>
+
+<span data-ttu-id="402ca-141">Otevřete **vlastnosti projektu** okna pro ContosoUniversity projekt a vyberte **balení/publikování webu** kartě. Ujistěte se, že **konfigurace** rozevíracího seznamu má buď **aktivní (verze)** nebo **verze** vybrána, vyberte **vyloučit soubory z aplikace\_Složky dat**.</span><span class="sxs-lookup"><span data-stu-id="402ca-141">Open the **Project Properties** window for the ContosoUniversity project, and select the **Package/Publish Web** tab. Make sure that the **Configuration** drop-down box has either **Active (Release)** or **Release** selected, select **Exclude files from the App\_Data folder**.</span></span>
+
+![Exclude_files_from_the_App_Data_folder](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image9.png)
+
+<span data-ttu-id="402ca-143">V případě, že se rozhodnete nasadit sestavení ladicí verze v budoucnu, je vhodné provést stejnou změnu pro konfiguraci ladění sestavení: změnit **konfigurace** k **ladění** a pak vyberte **vyloučit soubory z aplikace\_složky dat**.</span><span class="sxs-lookup"><span data-stu-id="402ca-143">In case you decide to deploy a debug build in the future, it's a good idea to make the same change for the Debug build configuration: change **Configuration** to **Debug** and then select **Exclude files from the App\_Data folder**.</span></span>
+
+<span data-ttu-id="402ca-144">Uložte a zavřete **balení/publikování webu** kartě.</span><span class="sxs-lookup"><span data-stu-id="402ca-144">Save and close the **Package/Publish Web** tab.</span></span>
+
+> [!NOTE] 
+> 
+> [!IMPORTANT]
+> <span data-ttu-id="402ca-145">Ujistěte se, že nemáte **odebrat další soubory v cílovém umístění** vybraný v profilech publikovat.</span><span class="sxs-lookup"><span data-stu-id="402ca-145">Make sure that you don't have **Remove additional files at destination** selected in your publish profiles.</span></span> <span data-ttu-id="402ca-146">Pokud vyberete tuto možnost, proces nasazení databáze, které máte v aplikaci odstraní\_dat v nasazené lokality a odstraní aplikaci\_samotné složce Data.</span><span class="sxs-lookup"><span data-stu-id="402ca-146">If you select that option, the deployment process will delete the databases that you have in App\_Data in the deployed site, and it will delete the App\_Data folder itself.</span></span>
+
+
+## <a name="preventing-user-access-to-the-production-site-during-update"></a><span data-ttu-id="402ca-147">Během aktualizace brání přístupu uživatelů k pracoviště</span><span class="sxs-lookup"><span data-stu-id="402ca-147">Preventing User Access to the Production Site During Update</span></span>
+
+<span data-ttu-id="402ca-148">Změna, kterou nasazujete nyní je jednoduchá změna na jednu stránku.</span><span class="sxs-lookup"><span data-stu-id="402ca-148">The change you're deploying now is a simple change to a single page.</span></span> <span data-ttu-id="402ca-149">Ale někdy nasadit větší změny, a v takovém případě webu můžete způsobeno nestandardní chování Pokud uživatel požádá o na stránce před dokončení nasazení.</span><span class="sxs-lookup"><span data-stu-id="402ca-149">But sometimes you deploy larger changes, and in that case the site can behave strangely if a user requests a page before deployment is finished.</span></span> <span data-ttu-id="402ca-150">Chcete-li tomu zabránit, můžete použít *aplikace\_offline.htm* souboru.</span><span class="sxs-lookup"><span data-stu-id="402ca-150">To prevent this, you can use an *app\_offline.htm* file.</span></span> <span data-ttu-id="402ca-151">Když vložíte soubor s názvem *aplikace\_offline.htm* kořenové složky vaší aplikace, služba IIS automaticky zobrazí tento soubor namísto spuštění vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="402ca-151">When you put a file named *app\_offline.htm* in the root folder of your application, IIS automatically displays that file instead of running your application.</span></span> <span data-ttu-id="402ca-152">Tak, aby se zabránilo přístup při nasazení, můžete zadat *aplikace\_offline.htm* v kořenové složce, spustí proces nasazení a potom odeberte *aplikace\_offline.htm*.</span><span class="sxs-lookup"><span data-stu-id="402ca-152">So to prevent access during deployment, you put *app\_offline.htm* in the root folder, run the deployment process, and then remove *app\_offline.htm*.</span></span>
+
+<span data-ttu-id="402ca-153">V **Průzkumníku řešení**, klikněte pravým tlačítkem myši řešení (ne z projektů) a vyberte **novou složku řešení**.</span><span class="sxs-lookup"><span data-stu-id="402ca-153">In **Solution Explorer**, right-click the solution (not one of the projects) and select **New Solution Folder**.</span></span>
+
+![Creating_a_solution_folder](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image10.png)
+
+<span data-ttu-id="402ca-155">Název složky *SolutionFiles*.</span><span class="sxs-lookup"><span data-stu-id="402ca-155">Name the folder *SolutionFiles*.</span></span>
+
+<span data-ttu-id="402ca-156">V této nové složky vytvořit stránku HTML s názvem *aplikace\_offline.htm*.</span><span class="sxs-lookup"><span data-stu-id="402ca-156">In the new folder create an HTML page named *app\_offline.htm*.</span></span> <span data-ttu-id="402ca-157">Nahradíte existující obsah následující kód:</span><span class="sxs-lookup"><span data-stu-id="402ca-157">Replace the existing contents with the following markup:</span></span>
+
+[!code-html[Main](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/samples/sample2.html)]
+
+<span data-ttu-id="402ca-158">Můžete zkopírovat *aplikace\_offline.htm* do složky lokality pomocí připojení k serveru FTP nebo **Správce souborů** nástroj v Ovládacích panelech poskytovatele hostingu.</span><span class="sxs-lookup"><span data-stu-id="402ca-158">You can copy the *app\_offline.htm* file to the site by using an FTP connection or the **File Manager** utility in the hosting provider's control panel.</span></span> <span data-ttu-id="402ca-159">V tomto kurzu budete používat **Správce souborů**.</span><span class="sxs-lookup"><span data-stu-id="402ca-159">For this tutorial, you'll use the **File Manager**.</span></span>
+
+<span data-ttu-id="402ca-160">Otevřete ovládací panely a vyberte **Správce souborů** stejně jako v [nasazení do produkčního prostředí](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) kurzu.</span><span class="sxs-lookup"><span data-stu-id="402ca-160">Open the control panel and select **File Manager** as you did in the [Deploying to the Production Environment](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) tutorial.</span></span> <span data-ttu-id="402ca-161">Vyberte **contosouniversity.com** a potom **wwwroot** získat do kořenové složky vaší aplikace a pak klikněte na tlačítko **nahrát**.</span><span class="sxs-lookup"><span data-stu-id="402ca-161">Select **contosouniversity.com** and then **wwwroot** to get to your application's root folder, and then click **Upload**.</span></span>
+
+<span data-ttu-id="402ca-162">[![Upload_button_in_File_Manager](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image12.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image11.png)</span><span class="sxs-lookup"><span data-stu-id="402ca-162">[![Upload_button_in_File_Manager](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image12.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image11.png)</span></span>
+
+<span data-ttu-id="402ca-163">V **nahrát soubor** dialogové okno, vyberte *aplikace\_offline.htm* souboru a pak klikněte na **nahrát**.</span><span class="sxs-lookup"><span data-stu-id="402ca-163">In the **Upload File** dialog box, select the *app\_offline.htm* file and then click **Upload**.</span></span>
+
+<span data-ttu-id="402ca-164">[![Upload_dialog_box_in_File_Manager](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image14.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image13.png)</span><span class="sxs-lookup"><span data-stu-id="402ca-164">[![Upload_dialog_box_in_File_Manager](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image14.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image13.png)</span></span>
+
+<span data-ttu-id="402ca-165">Přejděte na adresu URL vašeho webu.</span><span class="sxs-lookup"><span data-stu-id="402ca-165">Browse to your site's URL.</span></span> <span data-ttu-id="402ca-166">Uvidíte, že *aplikace\_offline.htm* stránky se nyní zobrazí namísto domovské stránky.</span><span class="sxs-lookup"><span data-stu-id="402ca-166">You see that the *app\_offline.htm* page is now displayed instead of your home page.</span></span>
+
+<span data-ttu-id="402ca-167">[![App_offline.htm_page_in_production](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image16.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image15.png)</span><span class="sxs-lookup"><span data-stu-id="402ca-167">[![App_offline.htm_page_in_production](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image16.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image15.png)</span></span>
+
+<span data-ttu-id="402ca-168">Nyní jste připraveni k nasazení do produkčního prostředí.</span><span class="sxs-lookup"><span data-stu-id="402ca-168">You are now ready to deploy to production.</span></span>
+
+## <a name="deploying-the-code-update-to-the-production-environment"></a><span data-ttu-id="402ca-169">Nasazení aktualizace kódu do produkčního prostředí</span><span class="sxs-lookup"><span data-stu-id="402ca-169">Deploying the Code Update to the Production Environment</span></span>
+
+<span data-ttu-id="402ca-170">V **publikování webu jedním kliknutím** nástrojů, vyberte **produkční** profil publikování a pak klikněte na **Publikovat Web**.</span><span class="sxs-lookup"><span data-stu-id="402ca-170">In the **Web One Click Publish** toolbar, choose the **Production** publish profile and then click **Publish Web**.</span></span>
+
+<span data-ttu-id="402ca-171">Visual Studio nasadí aktualizovanou aplikaci a otevře prohlížeč na domovskou stránku.</span><span class="sxs-lookup"><span data-stu-id="402ca-171">Visual Studio deploys the updated application and opens the browser to the site's home page.</span></span> <span data-ttu-id="402ca-172">*Aplikace\_offline.htm* souboru se zobrazí.</span><span class="sxs-lookup"><span data-stu-id="402ca-172">The *app\_offline.htm* file is displayed.</span></span> <span data-ttu-id="402ca-173">Než můžete otestovat a ověřit úspěšné nasazení, je třeba odstranit *aplikace\_offline.htm* souboru.</span><span class="sxs-lookup"><span data-stu-id="402ca-173">Before you can test to verify successful deployment, you must remove the *app\_offline.htm* file.</span></span>
+
+<span data-ttu-id="402ca-174">Vraťte se na **Správce souborů** aplikace v Ovládacích panelech.</span><span class="sxs-lookup"><span data-stu-id="402ca-174">Return to the **File Manager** application in the control panel.</span></span> <span data-ttu-id="402ca-175">Vyberte **contosouniversity.com** a **wwwroot**, vyberte **aplikace\_offline.htm**a potom klikněte na **odstranit**.</span><span class="sxs-lookup"><span data-stu-id="402ca-175">Select **contosouniversity.com** and **wwwroot**, select **app\_offline.htm**, and then click **Delete**.</span></span>
+
+<span data-ttu-id="402ca-176">[![Deleting_app_offline.htm](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image18.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image17.png)</span><span class="sxs-lookup"><span data-stu-id="402ca-176">[![Deleting_app_offline.htm](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image18.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image17.png)</span></span>
+
+<span data-ttu-id="402ca-177">V prohlížeči otevřít stránku vyučující ve veřejné síti a vyberte lektorem k ověření, že aktualizace byla úspěšně nasazena.</span><span class="sxs-lookup"><span data-stu-id="402ca-177">In the browser, open the Instructors page in the public site, and select an instructor to verify that the update was successfully deployed.</span></span>
+
+<span data-ttu-id="402ca-178">[![Instructors_page_with_courses_Prod](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image20.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image19.png)</span><span class="sxs-lookup"><span data-stu-id="402ca-178">[![Instructors_page_with_courses_Prod](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image20.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image19.png)</span></span>
+
+<span data-ttu-id="402ca-179">Nyní jste nasadili aktualizaci aplikace, která neobsahovala změnu databáze.</span><span class="sxs-lookup"><span data-stu-id="402ca-179">You've now deployed an application update that did not involve a database change.</span></span> <span data-ttu-id="402ca-180">V dalším kurzu se dozvíte, jak nasadit změnu databáze.</span><span class="sxs-lookup"><span data-stu-id="402ca-180">The next tutorial shows you how to deploy a database change.</span></span>
+
+>[!div class="step-by-step"]
+<span data-ttu-id="402ca-181">[Předchozí](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)
+[další](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)</span><span class="sxs-lookup"><span data-stu-id="402ca-181">[Previous](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)
+[Next](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)</span></span>

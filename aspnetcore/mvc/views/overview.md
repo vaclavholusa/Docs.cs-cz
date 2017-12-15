@@ -5,21 +5,22 @@ description: "Zjistěte, jak pracovat zobrazení prezentace dat aplikace a inter
 keywords: "ASP.NET Core zobrazení MVC razor, viewmodel, viewdata, viewbag"
 ms.author: riande
 manager: wpickett
-ms.date: 09/26/2017
+ms.date: 12/12/2017
 ms.topic: article
-ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 4530d2f500dd887bf649a753283fb3e4af995322
-ms.sourcegitcommit: c2f6c593d81fbd90e6ddd672fe0a5636d06b615a
+ms.openlocfilehash: 2562d4e5fb85159e6ccb47990f54448ddc188077
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Zobrazení v jádro ASP.NET MVC
 
 Podle [Steve Smith](https://ardalis.com/) a [Luke Latham](https://github.com/guardrex)
+
+Tento dokument popisuje zobrazení použitých v aplikacích ASP.NET MVC jádra. Informace na stránkách Razor najdete v tématu [Úvod do stránky Razor](xref:mvc/razor-pages/index).
 
 V **M**odelu -**V**obrazit -**C**vzor ontroller (MVC), *zobrazení* zpracovává data aplikace prezentace a uživatelské interakce. Zobrazení je šablony HTML s vložených [kódu Razor](xref:mvc/views/razor). Značka Razor je kód, který komunikuje s kódu HTML, který vytvoří webovou stránku, která je odeslána do klienta.
 

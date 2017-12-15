@@ -11,11 +11,11 @@ ms.assetid: 8c65179b-688c-4af1-8f5e-1862920cda95
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 826ac826c22dae81e5dbea08a11a62cac0b1068a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 058670b4f699288e1acbe76bae08dcebf69346b8
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="configuring-facebook-authentication"></a>Konfigurace ověřování Facebook
 
@@ -25,9 +25,9 @@ V tomto kurzu se dozvíte, jak povolit uživatelům se přihlásit pomocí účt
 
 ## <a name="create-the-app-in-facebook"></a>Vytvoření aplikace ve službě Facebook.
 
-*  Přejděte na [Facebook pro vývojáře](https://developers.facebook.com) stránce a přihlaste se. Pokud nemáte účet Facebook, použijte **zaregistrovat pro Facebook** odkaz na přihlašovací stránku k jeho vytvoření.
+*  Přejděte na [Facebook vývojáři aplikace](https://developers.facebook.com/apps/) stránce a přihlaste se. Pokud nemáte účet Facebook, použijte **zaregistrovat pro Facebook** odkaz na přihlašovací stránku k jeho vytvoření.
 
-* Klepněte **vytvořit aplikaci** tlačítko v pravém horním rohu k vytvoření nového ID aplikace.
+* Klepněte **přidejte novou aplikaci** tlačítko v pravém horním rohu k vytvoření nového ID aplikace.
 
    ![Facebook pro portál pro vývojáře otevřít v Microsoft Edge](index/_static/FBMyApps.png)
 
@@ -35,10 +35,10 @@ V tomto kurzu se dozvíte, jak povolit uživatelům se přihlásit pomocí účt
 
    ![Vytvoření nové aplikace ID formuláře](index/_static/FBNewAppId.png)
 
-* Při s **vybrat produkt** řádku, klikněte na tlačítko **nastavit až** na **Facebook přihlášení** karty.
+* Na **vybrat produkt** klikněte na tlačítko **nastavit až** na **Facebook přihlášení** karty.
 
    ![Stránka instalační program produktu](index/_static/FBProductSetup.png)
-
+  
 * **Rychlý Start** průvodce se spustí s **vybrat platformu** jako první stránka. Vynechat Průvodce prozatím kliknutím **nastavení** odkaz v nabídce na levé straně:
 
    ![Přeskočit rychlý Start](index/_static/FBSkipQuickStart.png)
@@ -72,13 +72,6 @@ dotnet user-secrets set Authentication:Facebook:AppSecret <app-secret>
 
 ## <a name="configure-facebook-authentication"></a>Konfigurace ověřování Facebook
 
-Šablona projektu použili v tomto kurzu zajistí, že [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) balíček je již nainstalován.
-
-* Chcete-li nainstalovat tento balíček s Visual Studio 2017, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**.
-* Chcete-li nainstalovat s .NET Core rozhraní příkazového řádku, spusťte následující v adresáři projektu:
-
-   `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
-
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
 Přidání služby Facebook `ConfigureServices` metoda v *Startup.cs* souboru:
@@ -98,6 +91,13 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 [!INCLUDE[default settings configuration](includes/default-settings.md)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+
+Nainstalujte [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) balíčku.
+
+* Chcete-li nainstalovat tento balíček s Visual Studio 2017, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**.
+* Chcete-li nainstalovat s .NET Core rozhraní příkazového řádku, spusťte následující v adresáři projektu:
+
+   `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
 
 Přidat middlewaru Facebook v `Configure` metoda v *Startup.cs* souboru:
 

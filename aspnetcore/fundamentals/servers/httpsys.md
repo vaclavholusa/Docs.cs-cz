@@ -11,11 +11,11 @@ ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: d3f9eb4943ed62b674d6bb2ab1b275b0a3c02343
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8d46862af44379d8592efdf214a80214dce2d69d
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Ovladač HTTP.sys webového serveru implementace v ASP.NET Core
 
@@ -24,7 +24,7 @@ Podle [tní Dykstra](https://github.com/tdykstra) a [Ross Jan](https://github.co
 > [!NOTE]
 > Toto téma se vztahuje pouze na technologii ASP.NET 2.0 jádra a novější. V dřívějších verzích ASP.NET Core, ovladač HTTP.sys jmenuje [WebListener](xref:fundamentals/servers/weblistener).
 
-Je ovladač HTTP.sys [webového serveru pro ASP.NET Core](index.md) používající pouze v systému Windows. Je založen na [ovladač režimu jádra Http.Sys](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx). Ovladač HTTP.sys je alternativa k [Kestrel](kestrel.md) , nabízí některé funkce, které není Kestel. **Ovladač HTTP.sys nelze použít s služby IIS nebo IIS Express, protože není kompatibilní s [ASP.NET Core modulu](aspnet-core-module.md).**
+Je ovladač HTTP.sys [webového serveru pro ASP.NET Core](index.md) používající pouze v systému Windows. Je založen na [ovladač režimu jádra Http.Sys](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx). Ovladač HTTP.sys je alternativa k [Kestrel](kestrel.md) , nabízí některé funkce, které není Kestel. **Ovladač HTTP.sys nelze použít s služby IIS nebo IIS Express, jako je nekompatibilní s [ASP.NET Core modulu](aspnet-core-module.md).**
 
 Ovladač HTTP.sys podporuje následující funkce:
 
@@ -166,7 +166,7 @@ Tady je referenční dokumentaci k nástroji pro *netsh.exe*:
 
 Následující prostředky poskytují podrobné pokyny pro několik scénářů. Články, které odkazují na HttpListener použít ovladače HTTP.sys, stejně jako obě jsou založené na ovladače Http.Sys.
 
-* [Postupy: Konfigurace portu certifikát protokolu SSL](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
+* [Postupy: Konfigurace portu s certifikátem SSL](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
 * [Hostitelský a certifikát klienta na základě komunikaci pomocí protokolu HTTPS - HttpListener](http://sunshaking.blogspot.com/2012/11/https-communication-httplistener-based.html) to je blog třetí strany a je docela v minulosti, ale má stále užitečné informace.
 * [Postupy: Použití HttpListener návod nebo Http Server nespravovaného kódu (C++) jako Server jednoduché SSL](https://blogs.msdn.microsoft.com/jpsanders/2009/09/29/how-to-walkthrough-using-httplistener-or-http-server-unmanaged-code-c-as-an-ssl-simple-server/) příliš jde starší blog s užitečné informace.
 

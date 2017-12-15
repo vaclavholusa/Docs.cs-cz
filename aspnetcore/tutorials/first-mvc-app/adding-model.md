@@ -5,25 +5,22 @@ description: "Přidáte model do jednoduchou aplikaci ASP.NET Core."
 keywords: "Jádro ASP.NET"
 ms.author: riande
 manager: wpickett
-ms.date: 03/30/2017
+ms.date: 12/8/2017
 ms.topic: get-started-article
-ms.assetid: 8dc28498-00ee-4d66-b903-b593059e9f39
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: a29bab9cf0712936fa9c3f2b4bb3b275a46fe6f6
-ms.sourcegitcommit: e641c5794525f983485621860926d8ab4e7360c8
+ms.openlocfilehash: 03c16e523fe2f91cae5c71357835684d813e3a1f
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/14/2017
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 Poznámka: Šablony ASP.NET 2.0 základní obsahují *modely* složky.
 
-V Průzkumníku řešení klikněte pravým tlačítkem **MvcMovie** Projekt > **přidat** > **novou složku**. Název složky *modely*.
-
-Klikněte pravým tlačítkem *modely* složky > **přidat** > **třída**. Název třídy **film** a přidejte následující vlastnosti:
+Klikněte pravým tlačítkem myši *modely* složky > **přidat** > **třída**. Název třídy **film** a přidejte následující vlastnosti:
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
@@ -37,15 +34,10 @@ V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *řadiče* sl
 
 ![zobrazení výše krok](adding-model/_static/add_controller.png)
 
-V **přidat závislosti MVC** dialogovém okně, vyberte **minimální závislosti**a vyberte **přidat**.
+Pokud **přidat závislosti MVC** otevře se dialogové okno:
 
-![zobrazení výše krok](adding-model/_static/add_depend.png)
-
-Visual Studio přidává závislosti nutné chcete vygenerovat řadič, ale samotný řadič není vytvořena. Další vyvolat z **> Přidat > řadiče** vytvoří kontroler. 
-
-V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *řadiče* složky **> Přidat > řadiče**.
-
-![zobrazení výše krok](adding-model/_static/add_controller.png)
+* [Aktualizovat na nejnovější verzi sady Visual Studio](https://www.visualstudio.com/downloads/). Visual Studio verze starší než 15,5 zobrazit tento dialog.
+* Pokud nelze aktualizovat, vyberte **přidat**a pak postupujte podle kroků řadiče přidat.
 
 V **přidat vygenerované uživatelské rozhraní** dialogové okno, klepněte na **kontroler MVC se zobrazeními s využitím nástroje Entity Framework > Přidat**.
 
@@ -68,11 +60,11 @@ Visual Studio vytvoří:
 
 * Entity Framework Core [databáze třída kontextu](xref:data/ef-mvc/intro#create-the-database-context) (*Data/MvcMovieContext.cs*)
 * Řadič filmy (*Controllers/MoviesController.cs*)
-* Zobrazení syntaxe Razor soubory vytvořit, odstranit, podrobnosti, úpravy a Index stránky (*zobrazení nebo filmy nebo&ast;.cshtml*)
+* Zobrazení syntaxe Razor soubory vytvořit, odstranit, podrobnosti, Edit a Index stránky (*zobrazení nebo filmy nebo&ast;.cshtml*)
 
 Automatické vytváření kontext databáze a [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (vytvářet, číst, aktualizovat a odstranit) metody akce a zobrazení se označuje jako *generování uživatelského rozhraní*. Brzy budete mít funkční webovou aplikaci, která vám umožní spravovat film databáze.
 
-Pokud spustíte aplikaci a klikněte na **Mvc film** odkazu, který budete dojde k chybě podobný následujícímu:
+Pokud spustíte aplikaci a klikněte na **Mvc film** odkaz, dojde k chybě podobný následujícímu:
 
 ```
 An unhandled exception occurred while processing the request.

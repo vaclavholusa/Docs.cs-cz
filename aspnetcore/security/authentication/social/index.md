@@ -11,11 +11,11 @@ ms.assetid: eda7ee17-f38c-462e-8d1d-63f459901cf3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/social/index
-ms.openlocfilehash: 9fc0d6c3e9691f8c3fa0d769ac53c3337d822fc5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9cc637f469dcb7097ee1b3996fde8a4ebac8d7ff
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="enabling-authentication-using-facebook-google-and-other-external-providers"></a>Povolení ověřování pomocí Facebook, Google a dalších externích zprostředkovatelů
 
@@ -46,6 +46,13 @@ Poznámka: Balíčky uvedené v této abstraktní značnou část složitosti to
 ![Dialogové okno nové webové aplikace](index/_static/select-project.png)
 
 Poznámka: V tomto kurzu platí pro verze sady SDK technologie ASP.NET Core 2.0, které lze vybrat v horní části průvodce.
+
+## <a name="apply-migrations"></a>Použijte migrace
+
+* Spusťte aplikaci a vyberte **přihlásit** odkaz.
+* Vyberte **zaregistrujte se jako nový uživatel** odkaz.
+* Zadejte e-mailu a heslo pro nový účet a potom vyberte **zaregistrovat**.
+* Postupujte podle pokynů pro použití migrace.
 
 ## <a name="require-ssl"></a>Požadovat protokol SSL
 

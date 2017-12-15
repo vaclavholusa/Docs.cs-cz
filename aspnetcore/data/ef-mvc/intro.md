@@ -11,11 +11,11 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 5095def776f79d0bb76d5a8e94a4228ef0abed75
-ms.sourcegitcommit: a80d35647aff66323160b2cb413b65d79d98f7a6
+ms.openlocfilehash: 2b21c7fb35c65d9374723faac5b812289023a0f6
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Začínáme s ASP.NET MVC jádra a Entity Framework Core pomocí sady Visual Studio (1 10)
 
@@ -244,15 +244,10 @@ Automatické vytváření metody akce CRUD a zobrazení se označuje jako genero
 
 * Klikněte pravým tlačítkem myši **řadiče** složky v **Průzkumníku řešení** a vyberte **Přidat > novou vygenerovanou položku**.
 
-* V **přidat závislosti MVC** dialogovém okně, vyberte **minimální závislosti**a vyberte **přidat**.
+Pokud **přidat závislosti MVC** otevře se dialogové okno:
 
-  ![Přidat závislosti](intro/_static/add-depend.png)
-
-  Visual Studio přidá závislosti nutné chcete vygenerovat řadiči. Jedinou změnou v souboru projektu je přidání `Microsoft.VisualStudio.Web.CodeGeneration.Design` balíčku.
-
-  A *ScaffoldingReadMe.txt* se vytvoří soubor, který můžete odstranit.
-
-* Znovu klikněte pravým tlačítkem **řadiče** složky v **Průzkumníku řešení** a vyberte **Přidat > novou vygenerovanou položku**.
+* [Aktualizovat na nejnovější verzi sady Visual Studio](https://www.visualstudio.com/downloads/). Visual Studio verze starší než 15,5 zobrazit tento dialog.
+* Pokud nelze aktualizovat, vyberte **přidat**a pak postupujte podle kroků řadiče přidat.
 
 * V **přidat vygenerované uživatelské rozhraní** dialogové okno:
 
@@ -371,4 +366,4 @@ Další informace o asynchronní programování v rozhraní .NET najdete v téma
 Nyní jste vytvořili jednoduchou aplikaci, která se používá k uložení a zobrazení data Entity Framework Core a SQL Server Express LocalDB. V následujícím kurzu se dozvíte jak provádět základní CRUD (vytvořit, číst, aktualizovat, odstraňovat) operace.
 
 >[!div class="step-by-step"]
-[Další](crud.md)  
+[Next](crud.md)  

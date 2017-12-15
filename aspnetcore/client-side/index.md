@@ -1,5 +1,5 @@
 ---
-title: "Vývoj pro klientské v ASP.NET Core"
+title: "Vývoj pro klienta v ASP.NET Core"
 author: rick-anderson
 description: 
 keywords: "Jádro ASP.NET"
@@ -11,23 +11,24 @@ ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe0ba2e4
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/index
-ms.openlocfilehash: 875dfda8794aff69ea3d13c43d21ae805a199ed2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b4770a91a735cf9c7304e03b848f9593bacb1455
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
-# <a name="client-side-development-in-aspnet-core"></a>Vývoj pro klientské v ASP.NET Core
+# <a name="client-side-development-in-aspnet-core"></a>Vývoj pro klienta v ASP.NET Core
 
-- [Pomocí Gulp](using-gulp.md)
-- [Pomocí Grunt](using-grunt.md)
-- [Spravovat balíčky klienta s Bower](bower.md)
-- [Vytváření Krásný přizpůsobivý weby s Bootstrap](bootstrap.md)
-- [Rozhraní MVVM Knockout.js Framework](knockout.md)
-- [Použití AngularJS pro jednostránkové aplikace (SPA)](angular.md)
-- [Použití JavaScriptServices pro jednostránkové aplikace (SPA)](spa-services.md)
-- [Práce se styly aplikace s méně, Sass a úžasné písma](less-sass-fa.md)
-- [Sdružování a minimalizace](bundling-and-minification.md)
+- [Pomocí Gulp](xref:client-side/using-gulp)
+- [Pomocí Grunt](xref:client-side/using-grunt)
+- [Spravovat balíčky klienta s Bower](xref:client-side/bower)
+- [Vytváření Krásný přizpůsobivý weby s Bootstrap](xref:client-side/bootstrap)
+- [Práce se styly aplikace s méně, Sass a úžasné písma](xref:client-side/less-sass-fa)
+- [Sdružování a minimalizace](xref:client-side/bundling-and-minification)
 - [TypeScript](https://www.typescriptlang.org/docs/handbook/asp-net-core.html)
-- [Sestavení projektů s Yeoman](yeoman.md)
-- [Pomocí odkazů prohlížeče](using-browserlink.md)
+- [Pomocí odkazů prohlížeče](xref:client-side/using-browserlink)
+- [Pomocí JavaScriptServices pro SPA](xref:client-side/spa-services)
+- [Pomocí šablony projektu SPA (preview)](xref:spa/index)
+    - [Šablona úhlová projektu](xref:spa/angular)
+    - [Šablona projektu reagovat](xref:spa/react)
+    - [Reagovat s šablona – obnovení projektu](xref:spa/react-with-redux)

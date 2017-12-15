@@ -13,7 +13,7 @@ Další informace o tom, jak ukázku funguje, najdete v článku [poskytovatele 
       * `SecretName`: `secret_value_1`
       * `Section--SecretName`: `secret_value_2`
   * Ukázková aplikace zaregistrujte v Azure Active Directory.
-  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToKeys list,get`.
+  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
 2. Aktualizace aplikace služby *appSettings.JSON určený* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
 3. Spuštění ukázkové aplikace, která získává jeho hodnoty konfigurace z `IConfigurationRoot` se stejným názvem jako tajný název.
   * Hierarchická bez hodnoty: hodnota `SecretName` se získávají pomocí `config["SecretName"]`.

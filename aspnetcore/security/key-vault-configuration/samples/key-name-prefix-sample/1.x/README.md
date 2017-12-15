@@ -15,7 +15,7 @@ Další informace o tom, jak ukázku funguje, najdete v článku [poskytovatele 
       * `5000-AppSecret`: `5.0.0.0_secret_value`
       * `5100-AppSecret`: `5.1.0.0_secret_value`
   * Ukázková aplikace zaregistrujte v Azure Active Directory.
-  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToKeys list,get`.
+  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
 2. Aktualizace aplikace služby *appSettings.JSON určený* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
 3. Spuštění ukázkové aplikace, která získává jeho hodnoty konfigurace z `IConfigurationRoot` se stejným názvem jako předponou tajný název. V této ukázce předponu je verze aplikace, která jste zadali na `PrefixKeyVaultSecretManager` když jste přidali poskytovatel konfigurace Azure Key Vault. Hodnota `AppSecret` se získávají pomocí `config["AppSecret"]`.
 4. Změna verze sestavení aplikace v souboru projektu z `5.0.0.0` k `5.1.0.0` a znovu spusťte aplikaci. Tato doba tajná hodnota vrácená je `5.1.0.0_secret_value`.

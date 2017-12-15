@@ -11,11 +11,11 @@ ms.assetid: 1c33e576-33de-481a-8ad3-896b94fde0e3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/linuxproduction
-ms.openlocfilehash: 01768263fe82dc75a7da0e113b1850c8d788bfd3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c7401657486a8e5dbc8213d79dcfd5e0ec76585
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="set-up-a-hosting-environment-for-aspnet-core-on-linux-with-nginx-and-deploy-to-it"></a>Nastavení hostitelského prostředí pro ASP.NET Core v systému Linux s Nginx a nasazení do ní
 
@@ -45,8 +45,6 @@ Zkopírujte aplikace ASP.NET Core k serveru pomocí ať nástroj (spojovací bod
  - Z příkazového řádku, spusťte`dotnet yourapp.dll`
  - V prohlížeči přejděte na `http://<serveraddress>:<port>` k ověření, že aplikace funguje v systému Linux. 
  
-**Poznámka:** použití [Yeoman](xref:client-side/yeoman) k vytvoření nové aplikace ASP.NET Core pro nový projekt.
-
 ## <a name="configure-a-reverse-proxy-server"></a>Konfigurace serveru reverzní proxy server
 
 Reverzní proxy server je běžné instalační program pro obsluhující dynamické webové aplikace. Reverzní proxy server ukončí požadavek HTTP a předává do aplikace ASP.NET Core.

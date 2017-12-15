@@ -5,17 +5,17 @@ description: "Pomocí Identity aplikace ASP.NET Core"
 keywords: "ASP.NET Core, Identity, autorizaci zabezpečení"
 ms.author: riande
 manager: wpickett
-ms.date: 07/07/2017
+ms.date: 12/15/2017
 ms.topic: article
 ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 0679663b3b3b66f9935d0fb24360be2954fcdee1
-ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
+ms.openlocfilehash: 7daf0267a6dc659afbd188ce87e35ca40816a31d
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity na jádro ASP.NET
 
@@ -38,10 +38,10 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
  
     ![Dialogové okno Nový projekt](identity/_static/01-mvc_2.png)
     
-    # <a name="net-core-clitabnetcore-cli"></a>[.NET core rozhraní příkazového řádku](#tab/netcore-cli)
-    Pokud používáte rozhraní příkazového řádku .NET Core, vytvořte nový projekt pomocí ``dotnet new mvc --auth Individual``. Tím se vytvoří nový projekt se stejným kódem šablony Identity, které sada Visual Studio vytvoří.
+    # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+    Pokud používáte rozhraní příkazového řádku .NET Core, vytvořte nový projekt pomocí ``dotnet new mvc --auth Individual``. Tento příkaz vytvoří nový projekt se stejným kódem šablony Identity, které sada Visual Studio vytvoří.
  
-    Vytvořený projekt obsahuje `Microsoft.AspNetCore.Identity.EntityFrameworkCore` balíček, který se uchová Identity dat a schématu na SQL Server pomocí [Entity Framework Core](https://docs.microsoft.com/ef/).
+    Vytvořený projekt obsahuje `Microsoft.AspNetCore.Identity.EntityFrameworkCore` balíček, která ukládá data identit a schématu na SQL Server pomocí [Entity Framework Core](https://docs.microsoft.com/ef/).
     
     ---
  

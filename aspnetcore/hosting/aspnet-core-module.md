@@ -11,11 +11,11 @@ ms.assetid: 5de0c8f7-50ce-4e2c-b3d4-a1bd9fdfcff5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/aspnet-core-module
-ms.openlocfilehash: ac52b791e02ce52da35fe8d599465076d251b4da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0759f16ada531774a3945f67495e5f634e6154e
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Odkaz na konfiguraci základní modul ASP.NET
 
@@ -66,7 +66,7 @@ Základní modul ASP.NET je nakonfigurovat přes web nebo aplikaci *web.config* 
 | startupTimeLimit | <p>Atribut volitelné celé číslo.</p><p>Doba v sekundách, které vyčká, modul pro spuštění procesu naslouchání na portu spustitelný soubor. Pokud je tento časový limit překročen, modul se ukončit proces. Modul se pokusí znovu spusťte proces, při přijetí nového požadavku a bude dále pokoušet pro restartování procesu na následné příchozí žádosti, pokud aplikace se nepodaří spustit **rapidFailsPerMinute** číslo kolikrát za poslední minutu postupného.</p><p>Výchozí hodnota je 120.</p> |
 | shutdownTimeLimit | <p>Atribut volitelné celé číslo.</p><p>Doba v sekundách, pro které modul vyčká pro spustitelný soubor řádně vypnutí při *app_offline.htm* je detekován soubor.</p><p>Výchozí hodnota je 10.</p> |
 | rapidFailsPerMinute | <p>Atribut volitelné celé číslo.</p><p>Určuje, kolikrát proces zadaný v **processPath** je dovoleno havárií za minutu. Pokud je tento limit překročen, modul se zastaví spuštění procesu pro zbytek minutu.</p><p>Výchozí hodnota je 10.</p> |
-| RequestTimeout | <p>Atribut volitelné časový interval.</p><p>Určuje dobu, pro který modul ASP.NET Core bude čekat na odpověď z procesu naslouchání na ASPNETCORE_PORT %.</p><p>Výchozí hodnota je "00: 02:00".</p> |
+| RequestTimeout | <p>Atribut volitelné časový interval.</p><p>Určuje dobu, pro který modul ASP.NET Core bude čekat na odpověď z procesu naslouchání na ASPNETCORE_PORT %.</p><p>Výchozí hodnota je "00: 02:00".</p><p>`requestTimeout` Musí být zadaná v celé minut, v opačném případě výchozí hodnota 2 minuty.</p> |
 | stdoutLogEnabled | <p>Volitelný logický atribut.</p><p>V případě hodnoty true **stdout** a **stderr** pro proces zadaný v **processPath** bude přesměrován na soubor zadaný v **stdoutLogFile**.</p><p>Výchozí hodnota je False.</p> |
 | stdoutLogFile | <p>Volitelný řetězec atributu.</p><p>Určuje cestu k souboru relativní nebo absolutní, pro kterou **stdout** a **stderr** z procesu zadaný v **processPath** bude do protokolu. Relativní cesty jsou relativní vůči kořenovému adresáři webu. Jakoukoli cestu, počínaje '. ", budou relativní vůči kořenovému adresáři webu a všechny ostatní cesty bude považována za absolutní cesty. Všechny složky zadaná v cestě musí existovat v pořadí pro modul pro vytvoření souboru protokolu. ID procesu je časové razítko (*yyyyMdhms*) a příponu souboru (*.log*) s podtržítka oddělovače přidají na poslední segment **stdoutLogFile** zadat.</p><p>Výchozí hodnota je `aspnetcore-stdout`.</p> |
 | forwardWindowsAuthToken | Hodnota true nebo false</p><p>V případě hodnoty true token se předají do podřízeného procesu naslouchání na ASPNETCORE_PORT % jako hlavičku, MS-ASPNETCORE-WINAUTHTOKEN' každý požadavek. Je zodpovědností procesu pro volání funkce CloseHandle na tento token na základě požadavku.</p><p>Výchozí hodnota je true.</p> |

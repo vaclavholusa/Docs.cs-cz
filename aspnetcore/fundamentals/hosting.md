@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 7deccf135ddd21729206ebed58ddc8aca52c1deb
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: dfec2a67112d40b528b97c847da3dda8ef1e63bd
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="hosting-in-aspnet-core"></a>Hostování v ASP.NET Core
 
@@ -254,7 +254,7 @@ Tato funkce není k dispozici v ASP.NET Core 1.x.
 
 ### <a name="prevent-hosting-startup"></a>Zabránit spuštění hostování
 
-Brání automatické načítání hostování spuštění sestavení, a to včetně sestavení aplikace.
+Brání automatické načítání hostování spuštění sestavení, a to včetně hostování spuštění sestavení nakonfiguroval sestavení aplikace. V tématu [přidat funkce aplikací z externí sestavení pomocí IHostingStartup](xref:hosting/ihostingstartup) Další informace.
 
 **Klíč**: preventHostingStartup  
 **Typ**: *bool* (`true` nebo `1`)  

@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: 44eaac4f3f4ad55cbc9b5ca9fae6e406ceff3d3c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 66f6e4542dd208a986b256acd4bd1d0381aa46c6
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
 
@@ -38,7 +38,6 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
    * [Webové aplikace pomocí kódu v sadě Visual Studio na Mac nebo Linux](first-mvc-app-xplat/index.md)
 
 * [Začínáme s ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](../data/ef-mvc/index.md)
-* [Sestavení projektů s Yeoman](../client-side/yeoman.md)
 * [Vytváření Pomocníci značky](../mvc/views/tag-helpers/authoring.md)
 * [Vytvoření jednoduchého zobrazení komponenty](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
 * [Vývoj aplikací ASP.NET Core pomocí sledování dotnet.](dotnet-watch.md)

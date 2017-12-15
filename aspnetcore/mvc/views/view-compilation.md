@@ -5,17 +5,17 @@ description: "Odkaz na dokument vysvětlením, jak povolit kompilace MVC Razor z
 keywords: "ASP.NET Core, kompilace zobrazení syntaxe Razor, Razor pre kompilace, předkompilaci Razor"
 ms.author: riande
 manager: wpickett
-ms.date: 12/05/2017
+ms.date: 12/13/2017
 ms.topic: article
 ms.assetid: ab4705b7-1638-1638-bc97-ea7f292fe92a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 873f6203f9e7b5bb14968dcec3f8d8e5548bd834
-ms.sourcegitcommit: 282f69e8dd63c39bde97a6d72783af2970d92040
+ms.openlocfilehash: 6839892c104673af0fd0fd074d368f3f42259d76
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="razor-view-compilation-and-precompilation-in-aspnet-core"></a>Kompilace zobrazení syntaxe Razor a předkompilaci v ASP.NET Core
 
@@ -23,7 +23,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Při vyvolání zobrazení zobrazení syntaxe Razor kompilované za běhu. ASP.NET základní 1.1.0 a vyšší můžete volitelně zkompilovat zobrazení syntaxe Razor a nasadit je do aplikace&mdash;tento proces se označuje jako předkompilaci. Šablony projektů ASP.NET Core 2.x povolit předkompilaci ve výchozím nastavení.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Předkompilace zobrazení syntaxe Razor není momentálně k dispozici při provádění [samostatná nasazení (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) v technologii ASP.NET 2.0 jádra. Tato funkce bude k dispozici pro SCDs po vydání 2.1. Další informace najdete v tématu [zobrazení kompilace selže, když mezi kompilace pro Linux v systému Windows](https://github.com/aspnet/MvcPrecompilation/issues/102).
 
 Předkompilace aspekty:
@@ -54,6 +54,12 @@ Nastavit `MvcRazorCompileOnPublish` k `true`a obsahovat odkaz na balíček `Micr
 [!code-xml[Main](view-compilation\sample\MvcRazorCompileOnPublish.csproj?highlight=5,12)]
 
 ---
+
+Příprava aplikace pro [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd) spuštěním příkazu například následující v kořenovém adresáři projektu:
+
+```console
+dotnet publish -c Release
+```
 
 A *< název_projektu >. PrecompiledViews.dll* obsahující kompilované zobrazení syntaxe Razor vytváří při předkompilaci úspěšné. Například následující snímek obrazovky znázorňuje obsah *Index.cshtml* uvnitř *WebApplication1.PrecompiledViews.dll*:
 

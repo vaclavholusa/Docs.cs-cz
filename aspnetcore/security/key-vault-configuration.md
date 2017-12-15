@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: 352d125b9042c603b59ed9bda0e99b6a49c7ab9f
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 19cab22176c732c5cb8e337d7635bddc54107921
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Poskytovatel konfigurace služby Azure Key Vault
 
@@ -63,7 +63,7 @@ Zprostředkovatel je přidán do `ConfigurationBuilder` s `AddAzureKeyVault` roz
       * `SecretName`: `secret_value_1`
       * `Section--SecretName`: `secret_value_2`
   * Ukázková aplikace zaregistrujte v Azure Active Directory.
-  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToKeys list,get`.
+  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
 2. Aktualizace aplikace služby *appSettings.JSON určený* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
 3. Spuštění ukázkové aplikace, která získává jeho hodnoty konfigurace z `IConfigurationRoot` se stejným názvem jako tajný název.
   * Hierarchická bez hodnoty: hodnota `SecretName` se získávají pomocí `config["SecretName"]`.
@@ -105,7 +105,7 @@ Při implementaci tohoto přístupu:
       * `5000-AppSecret`: `5.0.0.0_secret_value`
       * `5100-AppSecret`: `5.1.0.0_secret_value`
   * Ukázková aplikace zaregistrujte v Azure Active Directory.
-  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToKeys list,get`.
+  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
 2. Aktualizace aplikace služby *appSettings.JSON určený* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
 3. Spuštění ukázkové aplikace, která získává jeho hodnoty konfigurace z `IConfigurationRoot` se stejným názvem jako předponou tajný název. V této ukázce předponu je verze aplikace, která jste zadali na `PrefixKeyVaultSecretManager` když jste přidali poskytovatel konfigurace Azure Key Vault. Hodnota `AppSecret` se získávají pomocí `config["AppSecret"]`. Webová stránka generované aplikace zobrazuje načíst hodnotu:
 

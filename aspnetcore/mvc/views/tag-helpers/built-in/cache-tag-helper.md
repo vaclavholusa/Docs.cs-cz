@@ -11,16 +11,15 @@ ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a012
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 1710a5781fb69aaa6101270d6b4fd44f92c7f06c
-ms.sourcegitcommit: a33737ea24e1ea9642e461d1bc90d6701f889436
+ms.openlocfilehash: 74080d089dc7a72da96f9f18d613cb313cd930db
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Značka Pomocník jádro ASP.NET MVC do mezipaměti
 
 Podle [Petr Kellner](http://peterkellner.net) 
-
 
 Pomocník značky mezipaměti umožňuje výrazně zlepšit výkon vaší aplikace ASP.NET Core pomocí ukládání do mezipaměti jeho obsah do vnitřní mezipaměti poskytovatele ASP.NET Core.
 
@@ -29,7 +28,7 @@ Nastaví výchozí zobrazovací modul Razor `expires-after` než 20 minut.
 Následující kód Razor ukládá do mezipaměti data a času:
 
 ```cshtml
-<Cache>@DateTime.Now<Cache>
+<cache>@DateTime.Now</cache>
 ```
 
 První požadavek na stránku, který obsahuje `CacheTagHelper` se zobrazí aktuální datum a čas. Další požadavky se zobrazí hodnota uložená v mezipaměti, dokud mezipaměti vyprší platnost (výchozí nastavení 20 minut) nebo vyřazování podle přetížení paměti.
@@ -54,9 +53,9 @@ Určuje, zda je ukládat do mezipaměti obsah uzavřené do pomocné rutiny zna�
 Příklad:
 
 ```cshtml
-<Cache enabled="true">
+<cache enabled="true">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -73,9 +72,9 @@ Nastaví datum vypršení platnosti absolutní. V následujícím příkladu bud
 Příklad:
 
 ```cshtml
-<Cache expires-on="@new DateTime(2025,1,29,17,02,0)">
+<cache expires-on="@new DateTime(2025,1,29,17,02,0)">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -92,9 +91,9 @@ Nastaví dobu od prvního požadavku pro ukládání do mezipaměti obsah.
 Příklad:
 
 ```cshtml
-<Cache expires-after="@TimeSpan.FromSeconds(120)">
+<cache expires-after="@TimeSpan.FromSeconds(120)">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -111,9 +110,9 @@ Nastaví dobu, která by měla být vyřazena položku mezipaměti, pokud není 
 Příklad:
 
 ```cshtml
-<Cache expires-sliding="@TimeSpan.FromSeconds(60)">
+<cache expires-sliding="@TimeSpan.FromSeconds(60)">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -130,9 +129,9 @@ Přijme hodnotu jedné hlavičky nebo seznam hodnot hlavičky, které aktivují 
 Příklad:
 
 ```cshtml
-<Cache vary-by-header="User-Agent">
+<cache vary-by-header="User-Agent">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -149,9 +148,9 @@ Přijme jeden záhlaví hodnotu nebo seznam hodnot hlavičky, které aktivují a
 Příklad:
 
 ```cshtml
-<Cache vary-by-query="Make,Model">
+<cache vary-by-query="Make,Model">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -176,9 +175,9 @@ routes.MapRoute(
 *Index.cshtml*
 
 ```cshtml
-<Cache vary-by-route="Make,Model">
+<cache vary-by-route="Make,Model">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -195,9 +194,9 @@ Přijme jeden záhlaví hodnotu nebo seznam hodnot hlavičky, které aktivují a
 Příklad:
 
 ```cshtml
-<Cache vary-by-cookie=".AspNetCore.Identity.Application">
+<cache vary-by-cookie=".AspNetCore.Identity.Application">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -216,9 +215,9 @@ Následující příklad hledána v aktuálně přihlášeného uživatele.
 Příklad:
 
 ```cshtml
-<Cache vary-by-user="true">
+<cache vary-by-user="true">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 Pomocí tohoto atributu udržuje obsah v mezipaměti prostřednictvím cyklus přihlášení a odhlášení.  Při použití `vary-by-user="true"`, přihlášení a odhlášení akce zruší platnost mezipaměti pro ověřené uživatele.  Mezipaměti je neplatná, protože byl vygenerován novou hodnotu jedinečný soubor cookie na přihlášení. Mezipaměti bude zachována pro anonymní stavu, pokud žádný soubor cookie je k dispozici nebo vypršela platnost. To znamená, že pokud je přihlášen žádný uživatel, se zachová mezipaměti.
@@ -254,9 +253,9 @@ public IActionResult Index(string myParam1,string myParam2,string myParam3)
 *Index.cshtml*
 
 ```cshtml
-<Cache vary-by="@Model"">
+<cache vary-by="@Model"">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -275,9 +274,9 @@ Obsahuje mezipaměti vyřazení pokyny k poskytovateli předdefinované mezipam�
 Příklad:
 
 ```cshtml
-<Cache priority="High">
+<cache priority="High">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 `priority` Atribut nezaručí konkrétní úroveň mezipaměti uchování. `CacheItemPriority`je pouze návrhu. Nastavení tohoto atributu na `NeverRemove` není zaručeno, že budou vždy zachována mezipaměti. V tématu [další prostředky](#additional-resources) Další informace.

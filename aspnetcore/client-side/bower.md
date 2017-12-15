@@ -12,15 +12,18 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bower
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 183e748cbf87b1973941eacb3fb1008f4041bb2a
-ms.sourcegitcommit: 532a323f99a37c4d7894c95cee3f7a04b594dcec
+ms.openlocfilehash: 0258315e0e24d662086a3171b58112e08b9a40ab
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Spravovat balíčky klienta s Bower v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel rýže](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/), a [Scott Addie](https://scottaddie.com) 
+
+> [!IMPORTANT]
+> A udržovat Bower se doporučuje použít jiné řešení. Yarn s Webpack je jeden oblíbenou alternativu, pro kterou [pokyny k migraci](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) jsou k dispozici.
 
 [Bower](https://bower.io/) volá sám sebe "Správce balíčků pro web." V ekosystému .NET zaplňování void zanechaný NuGet neschopnost poskytovat statické soubory obsahu. Pro projekty ASP.NET Core, jsou tyto statické soubory systému na straně klienta knihovny jako [jQuery](http://jquery.com/) a [Bootstrap](http://getbootstrap.com/). Pro knihovny .NET, můžete dál používat [NuGet](https://www.nuget.org/) Správce balíčků.
 

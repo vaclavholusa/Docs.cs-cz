@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 8fcc5e7c6bc39f961931589128a7a5863482aa4e
-ms.sourcegitcommit: b38796ea3806bf39b89806adfa681b2a33762907
+ms.openlocfilehash: 41f014e1d23d46ed28c8c1be5ee92f1a6d878ad9
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/15/2017
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>Volání webového rozhraní API z klienta .NET (C#)
 ====================
@@ -167,7 +167,7 @@ Následující kód odešle požadavek DELETE k odstranění produktu:
 
 K testování aplikace klienta:
 
-1. [Stáhněte si](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/samples/server) a spuštění aplikace serveru. [Pokyny ke stahování](https://docs.microsoft.com/en-us/aspnet/core/tutorials/#how-to-download-a-sample). Ověřte, zda že je funkční aplikace serveru. Pro exaxmple `http://localhost:64195/api/products` by měla vrátit seznam produktů.
+1. [Stáhněte si](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) a spuštění aplikace serveru. [Pokyny ke stahování](https://docs.microsoft.com/en-us/aspnet/core/tutorials/#how-to-download-a-sample). Ověřte, zda že je funkční aplikace serveru. Pro exaxmple `http://localhost:64195/api/products` by měla vrátit seznam produktů.
 2. Nastaví základní identifikátor URI pro požadavky HTTP. Změňte číslo portu na port použitý při aplikace serveru.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

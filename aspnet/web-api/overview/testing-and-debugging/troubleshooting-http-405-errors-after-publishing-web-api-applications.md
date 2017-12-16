@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
-ms.openlocfilehash: 2455bbed891179466de8fb6ade3b0a8e66eadee6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b87ae7420e1295030e90c30e97b1e331413ce263
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/15/2017
 ---
 <a name="troubleshooting-http-405-errors-after-publishing-web-api-2-applications"></a>Řešení potíží s HTTP 405 chyby po publikování webové rozhraní API 2 aplikace
 ====================
@@ -44,7 +44,7 @@ Jako stručný přehled Zde jsou některé z nejčastěji používané metody HT
 | **GET** | Tato metoda se používá k načtení dat z identifikátoru URI ale pravděpodobně metodu nejpoužívanějším protokolu HTTP. |
 | **HEAD** | Tato metoda je podobné jako metodu GET s tím rozdílem, že ve skutečnosti není načíst z identifikátoru URI požadavku – jednoduše načte stav protokolu HTTP. |
 | **POST** | Tato metoda se obvykle používá k odesílání nová data k identifikátoru URI; POST se často používá k odesílání dat formuláře. |
-| **PUT** | Tato metoda se obvykle používá nezpracovaná data na identifikátor URI; PUT se často používá k odesílání dat XML nebo JSON do aplikace webového rozhraní API. |
+| **PUT** | Tato metoda se obvykle používá k odesílání dat ve formátu raw k identifikátoru URI; PUT se často používá k odesílání dat XML nebo JSON do aplikace webového rozhraní API. |
 | **ODSTRANIT** | Tato metoda se používá k odebrání dat z identifikátoru URI. |
 | **MOŽNOSTI** | Tato metoda se obvykle používá k načtení seznamu metod HTTP, které jsou podporovány pro identifikátor URI. |
 | **KOPÍROVÁNÍ PŘESUNUTÍ** | Tyto dvě metody se používají s WebDAV a jejich účelem je není potřeba vysvětlovat. |

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 24c6a35a6b663ebb0f8d0e3e7988322fa5d9018c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6790cd0deb36c9fb297ccd4df371f763dba17844
+ms.sourcegitcommit: 17b025bd33f4474f0deaafc6d0447a4e72bcad87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/27/2017
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>Postup není v technologii ASP.NET a co dělat, místo toho
 ====================
@@ -49,7 +49,7 @@ Toto téma obsahuje následující oddíly:
     - [UrlPathEncode](#urlpathencode)
 - [Spolehlivost a výkon](#performance)
 
-    - [PreSendRequestHeaders a PreSendRequestContext](#presend)
+    - [PreSendRequestHeaders a PreSendRequestContent](#presend)
     - [Události asynchronní stránky s webovými formuláři](#asyncevents)
     - [Ještě efektivněji a zapomněli pracovní](#fire)
     - [Obsah Entity žádosti](#requestentity)
@@ -200,11 +200,13 @@ Následující příklad ukazuje, jak předat kódovaného adresu URL jako param
 
 <a id="presend"></a>
 
-### <a name="presendrequestheaders-and-presendrequestcontext"></a>PreSendRequestHeaders a PreSendRequestContext
+### <a name="presendrequestheaders-and-presendrequestcontent"></a>PreSendRequestHeaders a PreSendRequestContent
 
 Doporučení: Nepoužívejte tyto události s spravované moduly. Místo toho zápisu nativní modul služby IIS k provedení požadované úlohy. V tématu [vytváření modulů HTTP v nativním kódu](https://msdn.microsoft.com/en-us/library/ms693629.aspx).
 
-Můžete použít [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestheaders.aspx) a [PreSendRequestContext](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestcontent.aspx) události s nativní moduly služby IIS, ale nemohou používat s spravované moduly, které implementují IHttpModule. Nastavení těchto vlastností může způsobit problémy s asynchronní požadavky.
+Můžete použít [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestheaders.aspx) a [PreSendRequestContent](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestcontent.aspx) události s nativní moduly služby IIS.
+> [!WARNING]
+> Nepoužívejte `PreSendRequestHeaders` a `PreSendRequestContent` s spravované moduly, které implementují `IHttpModule`. Nastavení těchto vlastností může způsobit problémy s asynchronní požadavky. Kombinace požadovaný směrování aplikace (ARR) a websockets může vést k výjimkám porušení přístupu, které můžou způsobit w3wp chyby. Například iiscore! W3_CONTEXT_BASE::GetIsLastNotification + 68 v iiscore.dll způsobila výjimku porušení přístupu (0xC0000005).
 
 <a id="asyncevents"></a>
 

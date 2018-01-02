@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6858b6b8ec89a5e5ffa9e5f8dddb905f38e16603
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cbe46ee1d3cd9f7a30a87d364074f1302f9af7ab
+ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Vytváření Pomocníci značky v ASP.NET Core, návod s ukázky
 
@@ -76,9 +76,18 @@ To znamená značku ukotvení pak tento odkaz e-mailu. Můžete to udělat, poku
     
     Výše uvedený kód používá syntaxi zástupný znak můžete určit že všechny značky nápovědy v našem sestavení bude k dispozici. První řetězec po `@addTagHelper` určuje značky pomocná načíst (použijte "*" pro všechny značky pomocníky), a druhý řetězec "AuthoringTagHelpers" Určuje sestavení Pomocník značky. Všimněte si také, že na druhém řádku přináší v ASP.NET MVC základní pomocníky značky pomocí syntaxe zástupný znak (tyto pomocné rutiny, které jsou popsané v [Úvod do pomocné rutiny značky](intro.md).) Je `@addTagHelper` direktiva, která zpřístupňuje značky pomocné rutiny do zobrazení Razor. Alternativně můžete zadat plně kvalifikovaný název (FQN) značky Helper, jak je uvedeno níže:
     
-    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
+```csharp
+@using AuthoringTagHelpers
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.EmailTagHelper, AuthoringTagHelpers
+```
     
-    Přidání značka pomocné rutiny zobrazení pomocí FQN, je nejprve přidat FQN (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`) a potom název sestavení (*AuthoringTagHelpers*). Většina vývojářů bude radši chtěli použít zástupný znak syntaxe. [Úvod do pomocné rutiny značky](intro.md) přejde do podrobností na přidání, odebrání, hierarchie a zástupný znak syntaxe pomocná značek.
+<!--
+the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
+    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
+-->
+    
+Přidání značka pomocné rutiny zobrazení pomocí FQN, je nejprve přidat FQN (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`) a potom název sestavení (*AuthoringTagHelpers*). Většina vývojářů bude radši chtěli použít zástupný znak syntaxe. [Úvod do pomocné rutiny značky](intro.md) přejde do podrobností na přidání, odebrání, hierarchie a zástupný znak syntaxe pomocná značek.
     
 3.  Aktualizovat kód v *Views/Home/Contact.cshtml* souboru se tyto změny:
 

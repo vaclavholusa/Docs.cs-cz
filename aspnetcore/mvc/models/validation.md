@@ -5,18 +5,17 @@ description: "Další informace o ověření modelu v aplikaci ASP.NET MVC jádr
 keywords: "Jádro ASP.NET, MVC, ověření"
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 12/18/2016
 ms.topic: article
 ms.assetid: 3a8676dd-7ed8-4a05-bca2-44e288ab99ee
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a3f3f7010d7744d59ce2dd88b323418423b3ae08
-ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
+ms.openlocfilehash: 7f641c247cb672934e76fa13bc7b7beb3990dd82
+ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Úvod k ověření modelu v aplikaci ASP.NET MVC jádra
 
@@ -84,7 +83,7 @@ MVC bude pokračovat až dosáhnou ověřování polí maximálního počtu chyb
 
 ## <a name="handling-model-state-errors"></a>Stav modelu zpracování chyb
 
-Před každou akci kontroleru volané dojde k ověření modelu a metoda akce odpovídá kontrola `ModelState.IsValid` a náležitě reagovat. V mnoha případech je vhodné reakce vrátit určitého druhu odpovědi na chybu, ideálně s podrobnostmi o důvod, proč se nezdařilo ověření modelu.
+Před každou akci kontroleru volané dojde k ověření modelu a metoda akce odpovídá kontrola `ModelState.IsValid` a náležitě reagovat. V mnoha případech je vhodné reakce vrátit chybnou odpověď, ideálně s podrobnostmi o důvod, proč se nezdařilo ověření modelu.
 
 Některé aplikace vybere podle standardní konvence pro řešení chyb při ověřování modelu, ve kterých může být případ filtr příslušné místo pro implementaci tato zásada. Měli byste otestovat chování vaše akce s stavů modelu platný a je neplatný.
 
@@ -98,7 +97,7 @@ Musíte ručně spusťte ověření. Chcete-li tak učinit, zavolejte `TryValida
 
 ## <a name="custom-validation"></a>Vlastního ověřování
 
-Atributy ověření fungovat pro většinu potřeb ověření. Některé ověřovací pravidla jsou však specifické pro vaše podnikání, jako není právě se vyžaduje ověřování obecných datových například zajistíte pole nebo zda vyhovuje rozsah hodnot. Atributy vlastního ověřování pro tyto scénáře jsou vynikající řešení. Vytváření vlastních atributů vlastní ověření v MVC je snadné. Právě dědí `ValidationAttribute`a přepsat `IsValid` metoda. `IsValid` Metoda přijímá dva parametry, je první objekt s názvem *hodnotu* a druhá `ValidationContext` objekt s názvem *validationContext*. *Hodnota* odkazuje na skutečnou hodnotu z pole, které je vlastní validátor ověřování.
+Atributy ověření fungovat pro většinu potřeb ověření. Některé ověřovací pravidla jsou však specifické pro vaši firmu. Pravidla nemusí být běžné techniky ověření dat, jako je zajištění pole je vyžadován, nebo že vyhovuje rozsah hodnot. Atributy vlastního ověřování pro tyto scénáře jsou vynikající řešení. Vytváření vlastních atributů vlastní ověření v MVC je snadné. Právě dědí `ValidationAttribute`a přepsat `IsValid` metoda. `IsValid` Metoda přijímá dva parametry, je první objekt s názvem *hodnotu* a druhá `ValidationContext` objekt s názvem *validationContext*. *Hodnota* odkazuje na skutečnou hodnotu z pole, které je vlastní validátor ověřování.
 
 V následující ukázce stavy obchodní pravidlo, že uživatelé nemusí nastavená genre na *Classic* pro film vydanou po 1960. `[ClassicMovie]` Atribut nejprve hledá genre, a pokud je klasický, pak zkontroluje datum vydání a zkontrolujte, že je novější než 1960. Pokud vydání po 1960, ověření se nezdaří. Atribut přijme parametrem celé číslo představující rok, můžete ověřit data. Hodnota parametru v konstruktoru atributu můžete zaznamenat, jak je vidět tady:
 
@@ -145,11 +144,11 @@ Výše uvedené značky Pomocníci vykreslení HTML níže. Všimněte si, že `
 </form>
 ```
 
-Ověřování na straně klienta proto brání odeslání, dokud formulář je platný. Tlačítko pro odeslání spustí JavaScript, která buď formulář odešle, nebo zobrazí chybové zprávy.
+Ověřování na straně klienta brání odeslání, dokud formulář je platný. Tlačítko pro odeslání spustí JavaScript, která buď formulář odešle, nebo zobrazí chybové zprávy.
 
 MVC určuje na základě typu dat .NET vlastnosti, které by mohly mít přepsat pomocí hodnoty atributu typu `[DataType]` atributy. Základní `[DataType]` atribut nemá žádné skutečných serverovou ověření. Prohlížeče zvolte vlastní chybové zprávy a zobrazit tyto chyby, ale chtějí, ale ověření Nerušivého balíček jQuery můžete přepsat zprávy a zobrazit konzistentní s ostatními. To se stane, když uživatelé nejvíce samozřejmě použít `[DataType]` podtřídy jako `[EmailAddress]`.
 
-### <a name="adding-validation-to-dynamic-forms"></a>Přidání ověřování pro dynamické formuláře:
+### <a name="add-validation-to-dynamic-forms"></a>Přidávání ověření do dynamické formulářů
 
 Protože jQuery Nerušivý ověření předá logiku ověření a parametry jQuery ověřením při prvním načtení stránky, nebude dynamicky generovaném forms automaticky vykazovat ověření. Místo toho se musí zjistit jQuery Nerušivý ověření analyzovat dynamické formuláře ihned po jeho vytvoření. Například následující kód ukazuje, jak může nastavit ověřování na straně klienta ve formuláři přidané prostřednictvím AJAX.
 
@@ -172,7 +171,7 @@ $.get({
 
 `$.validator.unobtrusive.parse()` Metoda přijímá jQuery selektor pro jeho jeden argument. Tato metoda informuje jQuery Nerušivý ověření analyzovat `data-` atributy formulářů v rámci tohoto selektoru. Hodnoty těchto atributů jsou předána do modulu plug-in jQuery ověřit tak, aby formuláře jádro vykazuje ověřovací pravidla klienta požadované straně.
 
-### <a name="adding-validation-to-dynamic-controls"></a>Přidávání ověření do dynamických ovládacích prvků:
+### <a name="add-validation-to-dynamic-controls"></a>Přidání ověření do dynamických ovládacích prvků
 
 Můžete také aktualizovat pravidla ověřování ve formuláři, pokud jednotlivé prvky, jako například `<input/>`s a `<select/>`s, jsou generována dynamicky. Nelze předat selektory pro tyto prvky, aby `parse()` metoda přímo protože okolního formulář již byla analyzovat a nebude aktualizovat.  Místo toho nejprve odstranit existující data ověření, pak rozboru celý formulář, jak je uvedeno níže:
 

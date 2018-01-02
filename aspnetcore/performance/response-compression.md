@@ -11,11 +11,11 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: fdb396d8857dc9c118cc19da1f7d1d498dfaacd5
-ms.sourcegitcommit: 8ab9d0065fad23400757e4e08033787e42c97d41
+ms.openlocfilehash: 68e8c89f6e5485f25d1a551ab3e524f0e9c53d0d
+ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware komprese odpovědi pro ASP.NET Core
 
@@ -183,7 +183,7 @@ Při kompresi odpovědí na základě `Accept-Encoding` záhlaví, existují pot
 
 [!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet1)]
 
-## <a name="middlware-issue-when-behind-an-nginx-reverse-proxy"></a>Middlware problém při za zpětného proxy služby Nginx
+## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Middleware problém při za zpětného proxy služby Nginx
 Pokud je požadavek směrovány přes proxy server pomocí Nginx, `Accept-Encoding` záhlaví se odebere. Middleware zabrání kompresi odpovědi. Další informace najdete v tématu [NGINX: komprese a dekomprese](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Tento problém je sledovanými [zjistěte průchozí komprese nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123).
 
 ## <a name="working-with-iis-dynamic-compression"></a>Práce s dynamické komprese služby IIS

@@ -5,18 +5,18 @@ description: "Začínáme s stránky Razor v ASP.NET Core"
 keywords: "ASP.NET Core, stránky Razor, Razor, MVC"
 ms.author: riande
 manager: wpickett
-ms.date: 08/27/2017
+ms.date: 12/22/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: d76f993a9843de6ecb6e90c411e46bf7eff0672c
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 12685d6a391c127d78399408291c26caa0192ee2
+ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="getting-started-with-razor-pages-in-aspnet-core"></a>Začínáme s stránky Razor v ASP.NET Core
+# <a name="get-started-with-razor-pages-in-aspnet-core"></a>Začínáme s stránky Razor v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -40,7 +40,11 @@ Existují tři verze tohoto kurzu:
 * Vytvořte novou webovou aplikaci ASP.NET Core. Název projektu **RazorPagesMovie**. Je třeba název projektu *RazorPagesMovie* , obory názvů bude případy, kdy je zkopírujte a vložte kód.
   ![nové webové aplikace ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
 * Vyberte **technologii ASP.NET 2.0 základní** v rozevírací nabídce a potom vyberte **webové aplikace**.
-  ![Webové aplikace (stránky Razor)](../../mvc/razor-pages/index/_static/np2.png)
+
+> [!NOTE]
+> Pokud chcete použít ASP.NET Core na rozhraní .NET Framework, musíte nejdřív vybrat **rozhraní .NET Framework** krajní levé rozevíracího seznamu v dialogovém okně, pak můžete vybrat požadovanou verzi ASP.NET Core.
+
+  ![Webové aplikace (stránky Razor)](razor-pages-start/_static/np2.png)
 
 Šablony sady Visual Studio vytvoří projekt starter:
 

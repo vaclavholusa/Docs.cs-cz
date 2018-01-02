@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: dfec2a67112d40b528b97c847da3dda8ef1e63bd
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 14e48adf5671a41ad6e135caeb4a87fdf7292aa6
+ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="hosting-in-aspnet-core"></a>Hostování v ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*, která je zodpovědná za spuštění a životního cyklu správy aplikací. Minimálně hostitele nakonfiguruje server a kanálu zpracování požadavků.
+Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*. Hostitel je zodpovědná za spuštění a životního cyklu správy aplikací. Minimálně hostitele nakonfiguruje server a kanálu zpracování požadavků.
 
 ## <a name="setting-up-a-host"></a>Nastavení hostitele
 
@@ -40,19 +40,19 @@ Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspn
   * [Tajné klíče uživatele](xref:security/app-secrets) při spuštění aplikace `Development` prostředí.
   * Proměnné prostředí.
   * Argumenty příkazového řádku.
-* Nakonfiguruje [protokolování](xref:fundamentals/logging/index) konzoly a ladění výstupu s [filtrování protokolu](xref:fundamentals/logging/index#log-filtering) pravidla stanovená v části Konfigurace protokolování *appSettings.JSON určený* nebo *appsettings. {Prostředí} .json* souboru.
+* Nakonfiguruje [protokolování](xref:fundamentals/logging/index) konzoly a ladění výstupu. Zahrnuje protokolování [filtrování protokolu](xref:fundamentals/logging/index#log-filtering) pravidla stanovená v části Konfigurace protokolování *appSettings.JSON určený* nebo *appsettings. { Prostředí} .json* souboru.
 * Při spuštění za služby IIS, umožňuje [integrační služby IIS](xref:publishing/iis) nakonfigurováním základní cesta a port serveru naslouchat požadavkům na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří proxy zpětného mezi službou IIS a Kestrel. Nakonfiguruje aplikaci taky [zaznamenat chyby při spuštění](#capture-startup-errors). Výchozí možnosti služby IIS najdete v tématu [IIS možnosti oddílu hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:publishing/iis#iis-options).
 
-*Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC. Výchozí kořen obsahu je [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory). Výsledkem je použití webového projektu kořenové složky jako kořenu obsahu při spuštění aplikace z kořenové složky (například volání [dotnet spustit](/dotnet/core/tools/dotnet-run) ze složky projektu). Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).
+*Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC. Výchozí kořen obsahu je [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory). Výchozí obsahu kořen (`Directory.GetCurrentDirectory`) výsledkem použití webového projektu kořenové složky jako kořenu obsahu při spuštění aplikace z kořenové složky (například volání [dotnet spustit](/dotnet/core/tools/dotnet-run) ze složky projektu). Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).
 
-V tématu [konfigurace v ASP.NET Core](xref:fundamentals/configuration/index) pro další informace o konfiguraci aplikace.
+Další informace o konfiguraci aplikace, najdete v části [konfigurace v ASP.NET Core](xref:fundamentals/configuration/index).
 
 > [!NOTE]
-> Jako alternativu k použití statických `CreateDefaultBuilder` metody vytvoření hostitele z [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) je podporované přístup pomocí ASP.NET Core 2.x. V tématu kartě ASP.NET Core 1.x pro další informace.
+> Jako alternativu k použití statických `CreateDefaultBuilder` metody vytvoření hostitele z [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) je podporované přístup pomocí ASP.NET Core 2.x. Další informace najdete v tématu kartě 1.x ASP.NET Core.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder). To se obvykle provádí ve vstupním bodě vaší aplikace, `Main` metoda. V rámci šablon projektu `Main` se nachází v *Program.cs*. Následující *Program.cs* ukazuje, jak používat `WebHostBuilder` k sestavení hostitele:
+Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder). Vytvoření hostitele se obvykle provádí v vstupní bod aplikace, `Main` metoda. V rámci šablon projektu `Main` se nachází v *Program.cs*. Typické *Program.cs* volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) zahájíte nastavení hostitele:
 
 [!code-csharp[Main](../common/samples/WebApplication1/Program.cs)]
 
@@ -82,7 +82,11 @@ Při nastavení na hostitele, je možné poskytnout [konfigurace](/dotnet/api/mi
 
 ## <a name="host-configuration-values"></a>Hodnoty konfigurace hostitele
 
-[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) poskytuje metody pro nastavení většinu hodnoty dostupné konfigurace pro hostitele, které lze nastavit také přímo s [UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) a přidružené klíče. Při nastavení hodnoty s `UseSetting`, je hodnota nastavena jako bez ohledu na typ řetězec (v uvozovkách).
+[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) poskytuje následujících dvou přístupů pro většinu hodnoty dostupné konfigurace nastavení pro hostitele:
+
+* Proměnné prostředí ve formátu `ASPNETCORE_{configurationKey}`. Například `ASPNETCORE_DETAILEDERRORS`.
+* Explicitní metody, jako například `CaptureStartupErrors`.
+* [UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) a přidružené klíče. Při nastavení hodnoty s `UseSetting`, je hodnota nastavena jako bez ohledu na typ řetězec.
 
 ### <a name="capture-startup-errors"></a>Zaznamenat chyby při spuštění
 
@@ -91,7 +95,8 @@ Toto nastavení řídí zaznamenávání chyby při spuštění.
 **Klíč**: captureStartupErrors  
 **Typ**: *bool* (`true` nebo `1`)  
 **Výchozí**: použije se výchozí hodnota `false` Pokud aplikace běží s Kestrel za služby IIS, kde výchozí hodnota je `true`.  
-**Nastavit pomocí**:`CaptureStartupErrors`
+**Nastavit pomocí**:`CaptureStartupErrors`  
+**Proměnné prostředí**:`ASPNETCORE_CAPTURESTARTUPERRORS`
 
 Když `false`, chyb během spuštění výsledek v hostiteli. operace bude ukončena. Když `true`, hostitel zachytí výjimky během spouštění a pokusí o spuštění serveru.
 
@@ -120,7 +125,8 @@ Toto nastavení určuje, kde začíná ASP.NET Core hledání obsahu souborů, j
 **Klíč**: contentRoot  
 **Typ**: *řetězec*  
 **Výchozí**: výchozí složce, kde se nachází sestavení aplikace.  
-**Nastavit pomocí**:`UseContentRoot`
+**Nastavit pomocí**:`UseContentRoot`  
+**Proměnné prostředí**:`ASPNETCORE_CONTENTROOT`
 
 Kořenu obsahu se používá jako základní cesta pro [kořenový Web nastavení](#web-root). Pokud cesta neexistuje, hostitel se nepodaří spustit.
 
@@ -149,7 +155,8 @@ Určuje, zda podrobné chyby, které mají být zaznamenány.
 **Klíč**: detailedErrors  
 **Typ**: *bool* (`true` nebo `1`)  
 **Výchozí**: false  
-**Nastavit pomocí**:`UseSetting`
+**Nastavit pomocí**:`UseSetting`  
+**Proměnné prostředí**:`ASPNETCORE_DETAILEDERRORS`
 
 Když povolené (nebo když <a href="#environment">prostředí</a> je nastaven na `Development`), aplikace zaznamená podrobné výjimky.
 
@@ -178,7 +185,8 @@ Nastaví prostředí aplikace.
 **Klíč**: prostředí  
 **Typ**: *řetězec*  
 **Výchozí**: produkční  
-**Nastavit pomocí**:`UseEnvironment`
+**Nastavit pomocí**:`UseEnvironment`  
+**Proměnné prostředí**:`ASPNETCORE_ENVIRONMENT`
 
 Můžete nastavit *prostředí* na jakoukoli hodnotu. Framework definované hodnoty zahrnují `Development`, `Staging`, a `Production`. Hodnoty nejsou velká a malá písmena. Ve výchozím nastavení *prostředí* je pro čtení z `ASPNETCORE_ENVIRONMENT` proměnné prostředí. Při použití [Visual Studio](https://www.visualstudio.com/), proměnné prostředí může být nastavena v *launchSettings.json* souboru. Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).
 
@@ -207,7 +215,8 @@ Nastaví hostování spuštění sestavení aplikace.
 **Klíč**: hostingStartupAssemblies  
 **Typ**: *řetězec*  
 **Výchozí**: prázdný řetězec  
-**Nastavit pomocí**:`UseSetting`
+**Nastavit pomocí**:`UseSetting`  
+**Proměnné prostředí**:`ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`
 
 Řetězec oddělený středníkem hostování spuštění sestavení načíst při spuštění. Tato funkce je nového v technologii ASP.NET 2.0 jádra.
 
@@ -234,7 +243,8 @@ Určuje, zda hostitel naslouchat požadavkům na adresy URL nakonfigurované `We
 **Klíč**: preferHostingUrls  
 **Typ**: *bool* (`true` nebo `1`)  
 **Výchozí**: true  
-**Nastavit pomocí**:`PreferHostingUrls`
+**Nastavit pomocí**:`PreferHostingUrls`  
+**Proměnné prostředí**:`ASPNETCORE_PREFERHOSTINGURLS`
 
 Tato funkce je nového v technologii ASP.NET 2.0 jádra.
 
@@ -259,7 +269,8 @@ Brání automatické načítání hostování spuštění sestavení, a to včet
 **Klíč**: preventHostingStartup  
 **Typ**: *bool* (`true` nebo `1`)  
 **Výchozí**: false  
-**Nastavit pomocí**:`UseSetting`
+**Nastavit pomocí**:`UseSetting`  
+**Proměnné prostředí**:`ASPNETCORE_PREVENTHOSTINGSTARTUP`
 
 Tato funkce je nového v technologii ASP.NET 2.0 jádra.
 
@@ -284,7 +295,8 @@ Určuje IP adres nebo adres hostitele s porty a protokoly, které server naslouc
 **Klíč**: adresy URL  
 **Typ**: *řetězec*  
 **Výchozí**: http://localhost: 5000  
-**Nastavit pomocí**:`UseUrls`
+**Nastavit pomocí**:`UseUrls`  
+**Proměnné prostředí**:`ASPNETCORE_URLS`
 
 Nastavte na oddělených středníkem (;) seznam URL předpony serveru by měl odpovídat. Například `http://localhost:123`. Použití "\*" k označení, že by měl server přijímat požadavky na všechny IP adresy nebo názvu hostitele pomocí zadaný port a protokol (například `http://*:5000`). Protokol (`http://` nebo `https://`) musí být součástí každou adresu URL. Podporované formáty liší mezi servery.
 
@@ -315,7 +327,8 @@ Určuje dobu čekání na webového hostitele vypnutí.
 **Klíč**: shutdownTimeoutSeconds  
 **Typ**: *int*  
 **Výchozí**: 5  
-**Nastavit pomocí**:`UseShutdownTimeout`
+**Nastavit pomocí**:`UseShutdownTimeout`  
+**Proměnné prostředí**:`ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`
 
 I když přijme klíč *int* s `UseSetting` (například `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), `UseShutdownTimeout` rozšíření metoda přebírá `TimeSpan`. Tato funkce je nového v technologii ASP.NET 2.0 jádra.
 
@@ -340,7 +353,8 @@ Určuje sestavení pro vyhledávání `Startup` třídy.
 **Klíč**: startupAssembly  
 **Typ**: *řetězec*  
 **Výchozí**: sestavení aplikace  
-**Nastavit pomocí**:`UseStartup`
+**Nastavit pomocí**:`UseStartup`  
+**Proměnné prostředí**:`ASPNETCORE_STARTUPASSEMBLY`
 
 Sestavení, můžete odkazovat podle názvu (`string`) nebo typ (`TStartup`). Pokud je to více `UseStartup` metody jsou volány, poslední změny mají přednost.
 
@@ -381,7 +395,8 @@ Nastaví relativní cestu na statické prostředky aplikace.
 **Klíč**: webroot  
 **Typ**: *řetězec*  
 **Výchozí**: Pokud není zadáno, výchozí hodnota je "(Content Root)/wwwroot", pokud cesta existuje. Pokud cesta neexistuje, je použít soubor no-op zprostředkovatele.  
-**Nastavit pomocí**:`UseWebRoot`
+**Nastavit pomocí**:`UseWebRoot`  
+**Proměnné prostředí**:`ASPNETCORE_WEBROOT`
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -679,7 +694,7 @@ Stejný výsledek jako **StartWith (akce<IApplicationBuilder> aplikace)**, s vý
 
 **Spustit**
 
-`Run` Metoda spuštění webové aplikace a blokuje volající vlákno, dokud hostitel vypnutí:
+`Run` Metoda spustí webovou aplikaci a blokuje volající vlákno, dokud se vypne hostitele:
 
 ```csharp
 host.Run();
@@ -819,7 +834,7 @@ public async Task Invoke(HttpContext context, IHostingEnvironment env)
 | --------------------- | --------------------- |
 | `ApplicationStarted`  | Hostitele plně byla spuštěna. |
 | `ApplicationStopping` | Hostitel provádí řádné vypnutí. Může být stále aktivní žádosti. Vypnutí bloky až po dokončení této události. |
-| `ApplicationStopped`  | Hostitel je dokončení řádné vypnutí. Všechny požadavky, měla by být zcela zpracována. Vypnutí bloky až po dokončení této události. |
+| `ApplicationStopped`  | Hostitel je dokončení řádné vypnutí. Všechny požadavky, měla by být zpracována. Vypnutí bloky až po dokončení této události. |
 
 | Metoda            | Akce                                           |
 | ----------------- | ------------------------------------------------ |

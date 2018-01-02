@@ -11,11 +11,11 @@ ms.assetid: a4449ad3-5bad-410c-afa7-dc32d832b552
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/iis
-ms.openlocfilehash: 7eb1537df47fcf0b24db2a7d843b655a6f6f8f21
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 3dd2a744d2272e7ce01fbfed218d70a83cea46d1
+ms.sourcegitcommit: 019e5a0342fd49a94056d14fc7a1a1d0f81d2a39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Jádro ASP.NET hostitele v systému Windows pomocí služby IIS
 
@@ -131,14 +131,7 @@ Pokud nemáte *web.config* v projektu při publikování s *dotnet publikování
 
 1. V cílovém systému služby IIS, vytvořte složku tak, aby obsahovala aplikace publikované složek a souborů, které jsou popsány v [adresářovou strukturu](xref:hosting/directory-structure).
 
-2. Ve složce vytvoříte, vytvoření *protokoly* složku pro uložení protokoly stdout (Pokud budete chtít povolit protokolování pro řešení problémů spuštění). Pokud máte v úmyslu nasadit aplikaci s *protokoly* složku v datové části, může tento krok přeskočit. Došlo [otevřete problém automaticky vytvořit složku](https://github.com/aspnet/AspNetCoreModule/issues/30). Pokud chcete nástroje MSBuild vytvořit *protokolu* složky, přidejte následující `Target` se v souboru projektu:
-
-   ```xml
-   <Target Name="CreateLogsFolder" AfterTargets="AfterPublish">
-     <MakeDir Directories="$(PublishDir)logs" Condition="!Exists('$(PublishDir)logs')" />
-     <MakeDir Directories="$(PublishUrl)logs" Condition="!Exists('$(PublishUrl)logs')" />
-   </Target>
-   ```
+2. Ve složce, vytvoření *protokoly* složku pro uložení protokoly stdout, pokud je povoleno protokolování stdout. Pokud je aplikace nasazena pomocí *protokoly* složku v datové části, tento krok přeskočit. Pokyny pro provádění MSBuild vytvořit *protokoly* složky, najdete v článku [adresářovou strukturu](xref:hosting/directory-structure) tématu.
 
 3. V **Správce služby IIS**, vytvoření nového webu. Zadejte **název lokality** a nastavte **fyzická cesta** do složky pro nasazení aplikace, kterou jste vytvořili. Zadejte **vazby** konfigurace a vytvořit web.
 

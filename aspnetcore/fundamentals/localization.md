@@ -11,11 +11,11 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 1922037245a33f49c17f1c361003260462d96264
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a3fdbf8a1ab4ca397824a46da445fa34ddd35204
+ms.sourcegitcommit: 4be61844141d3cfb6f263636a36aebd26e90fb28
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -124,7 +124,7 @@ V kódu, který předchází `SharedResource` je třída odpovídající resx, k
 
 ASP.NET Core můžete zadat hodnoty dvou jazykové verze, `SupportedCultures` a `SupportedUICultures`. [CultureInfo](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo) objekt pro `SupportedCultures` určuje výsledky funkcí závislých na jazykové verzi, jako je například datum, čas, číslo a formátování měny. `SupportedCultures`také určuje pořadí řazení textu, konvence velká a malá písmena a porovnání řetězců. V tématu [CultureInfo.CurrentCulture](https://docs.microsoft.com/dotnet/api/system.stringcomparer.currentculture#System_StringComparer_CurrentCulture) Další informace o tom, jak server získá jazykovou verzi. `SupportedUICultures` Určuje, který překládá řetězce (z *RESX* soubory) jsou vyhledávat pomocí [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager). `ResourceManager` Jednoduše vyhledá specifické pro jazykovou verzi řetězce, které je dáno `CurrentUICulture`. Každé vlákno v rozhraní .NET má `CurrentCulture` a `CurrentUICulture` objekty. ASP.NET Core zkontroluje tyto hodnoty při vykreslování funkcí závislých na jazykové verzi. Pokud jazykové verze aktuálního vlákna je nastavena na "en US" (angličtina, USA), například `DateTime.Now.ToLongDateString()` zobrazí "Čtvrtek, února 18 2016", ale pokud `CurrentCulture` je nastaven na "es-ES" (španělština, Španělsko) bude výstup "jueves, de smluvních 18 de 2016".
 
-## <a name="working-with-resource-files"></a>Práce se zdrojovými soubory
+## <a name="resource-files"></a>Soubory prostředků
 
 Soubor prostředků je užitečné mechanismus pro oddělení lokalizovatelný řetězce z kódu. Přeložené řetězce pro jiné než výchozí jazyk izolují *RESX* soubory prostředků. Například můžete chtít vytvořit španělské zdrojový soubor s názvem *Welcome.es.resx* obsahující přeložit řetězce. "es" je kód jazyka pro španělštinu. K vytvoření tohoto souboru prostředků v sadě Visual Studio:
 
@@ -172,19 +172,21 @@ Soubory prostředků pomocí `@inject IViewLocalizer` v zobrazení syntaxe Razor
 
 Pokud nepoužijete `ResourcesPath` možnost, *RESX* soubor pro zobrazení by nacházet ve stejné složce jako zobrazení.
 
-Pokud odeberete označení culture ".fr" a budete mít jazykové verze nastavte francouzština (prostřednictvím soubor cookie nebo jinému kontrolnímu mechanismu.), výchozí soubor prostředků je pro čtení a jsou lokalizované řetězce. Správce prostředků označí výchozí nebo záložního prostředku, pokud nic splňuje vaše požadovanou jazykovou verzi se zpracovat soubor *.resx bez označení jazykovou verzi. Pokud chcete právě vracet klíč chybí prostředek pro požadovanou jazykovou verzi můžete nesmí mít výchozí soubor prostředků.
+## <a name="culture-fallback-behavior"></a>Chování záložní jazykovou verzi
 
-### <a name="generating-resource-files-with-visual-studio"></a>Generování souborů prostředků pomocí sady Visual Studio
+Jako příklad Pokud odeberete označení culture ".fr" a budete mít jazykové verze nastavte na francouzštinu, výchozí soubor prostředků je pro čtení a jsou lokalizované řetězce. Správce prostředků označí výchozí nebo záložní prostředku pro Pokud nic splňuje vaše požadovanou jazykovou verzi. Pokud chcete právě vracet klíč chybí prostředek pro požadovanou jazykovou verzi můžete nesmí mít výchozí soubor prostředků.
+
+### <a name="generate-resource-files-with-visual-studio"></a>Generovat soubory prostředků pomocí sady Visual Studio
 
 Pokud vytvoříte soubor prostředků v sadě Visual Studio bez jazykové verzi v názvu souboru (například *Welcome.resx*), s vlastností pro každý řetězec třída C# vytvoří sada Visual Studio. Který je obvykle není co chcete s ASP.NET Core; Obvykle nebudete mít výchozí *RESX* souboru prostředků (A *RESX* soubor bez název jazykové verze). Doporučujeme vám vytvořit *RESX* soubor s názvem jazykové verze (například *Welcome.fr.resx*). Při vytváření *RESX* soubor s názvem jazykovou verzi sady Visual Studio nebude generovat soubor třídy. Očekáváme, že se celá řada vývojářů **není** vytvořte soubor výchozí jazyk prostředků.
 
-### <a name="adding-other-cultures"></a>Přidání dalších jazykových verzí
+### <a name="add-other-cultures"></a>Přidání nových jazykových verzí
 
 Každá kombinace jazyka a jazykovou verzi (jiné než výchozí jazyk) vyžaduje jedinečný soubor prostředků. Soubory prostředků jiných jazykových verzí a národní prostředí vytvoříte tak, že vytvoříte nové soubory prostředků, ve kterých jsou ISO kód jazyka součástí názvu souboru (například **en-us**, **fr-ca**, a  **en-gb**). Tyto kódy ISO jsou umístěny mezi název souboru a *RESX* souboru příponu názvu, jako v *Welcome.es MX.resx* (španělština/Mexico). Chcete-li zadat neutrální jazyk, odeberte kód země (`MX` v předchozím příkladu). Název souboru jazykově neutrální španělské prostředku je *Welcome.es.resx*.
 
 ## <a name="implement-a-strategy-to-select-the-languageculture-for-each-request"></a>Implementace strategie pro vyberte jazyk nebo jazykovou verzi pro každý požadavek  
 
-### <a name="configuring-localization"></a>Konfigurace lokalizace
+### <a name="configure-localization"></a>Konfigurace lokalizace
 
 Lokalizace je nakonfigurovaný v `ConfigureServices` metoda:
 
@@ -236,7 +238,7 @@ Pokud zadáte jenom jeden z informace o jazykové a jazyková verze uživatelsk�
 
 [Hlavičky Accept-Language](https://www.w3.org/International/questions/qa-accept-lang-locales) je možné nastavit v většina prohlížečů a byl původně určený k zadejte jazyk pro uživatele. Toto nastavení určuje, co prohlížeče byla nastavena k odeslání, nebo dědí ze základního operačního systému. Hlavičku Accept-Language HTTP z prohlížeče požadavku není spolehlivý způsob zjistit upřednostňovaný jazyk uživatele (viz [nastavení jazykové předvolby v prohlížeči](https://www.w3.org/International/questions/qa-lang-priorities.en.php)). Produkční aplikace by měla obsahovat způsob, jak uživatelům přizpůsobit si sami vyberou jazykové verze.
 
-### <a name="setting-the-accept-language-http-header-in-ie"></a>Nastavení hlavičky Accept-Language HTTP v aplikaci Internet Explorer
+### <a name="set-the-accept-language-http-header-in-ie"></a>Nastavit hlavičku Accept-Language HTTP v aplikaci Internet Explorer
 
 1. V zařízeních ikonu, klepněte na **Možnosti Internetu**.
 
@@ -252,7 +254,7 @@ Pokud zadáte jenom jeden z informace o jazykové a jazyková verze uživatelsk�
 
 6. Klepněte na jazyk a potom klepněte na **nahoru**.
 
-### <a name="using-a-custom-provider"></a>Pomocí vlastního zprostředkovatele
+### <a name="use-a-custom-provider"></a>Použití vlastního zprostředkovatele
 
 Předpokládejme, že chcete zákazníkům ukládat jejich jazyce a jazykové verzi v databázích máte. Můžete napsat zprostředkovatele k vyhledání tyto hodnoty pro uživatele. Následující kód ukazuje, jak přidat vlastního zprostředkovatele:
 
@@ -281,7 +283,7 @@ services.Configure<RequestLocalizationOptions>(options =>
 
 Použití `RequestLocalizationOptions` chcete přidat nebo odebrat lokalizace zprostředkovatele.
 
-### <a name="setting-the-culture-programmatically"></a>Nastavení jazykové verze prostřednictvím kódu programu
+### <a name="set-the-culture-programmatically"></a>Nastavit jazykovou verzi prostřednictvím kódu programu
 
 Tato ukázka **Localization.StarterWeb** projektu na [Githubu](https://github.com/aspnet/entropy) obsahuje uživatelského rozhraní nastavit `Culture`. *Views/Shared/_SelectLanguagePartial.cshtml* souboru můžete vybrat ze seznamu podporovaných jazykových verzí jazyková verze:
 

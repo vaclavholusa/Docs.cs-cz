@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: a66b5ea32c2090b9944cd61f90f7fe011a823e82
-ms.sourcegitcommit: 3511552becb081fb860a23d6c9b6c4efcab74577
+ms.openlocfilehash: 31d8b1f662d3d5e7dad8f459d951c7b8181148b8
+ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -55,7 +55,7 @@ Otevřete vygenerovaného *.csproj* soubor ze sady Visual Studio for Mac.
 
 Spustit `dotnet new razor` z příkazového řádku.
 
-#   <a name="net-core-clitabnetcore-cli"></a>[.NET core rozhraní příkazového řádku](#tab/netcore-cli) 
+#   <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli) 
 
 Spustit `dotnet new razor` z příkazového řádku.
 
@@ -165,7 +165,7 @@ Kódu *Index.cshtml.cs* souboru:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=21)]
 
-[Pomocná značka ukotvení](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) použít [asp - trasy-{value}](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#route) atribut pro vygenerování odkazu na stránku upravit. Odkaz obsahuje data trasy s kontakt ID. Například `http://localhost:5000/Edit/1`.
+[Pomocná značka ukotvení](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) použít `asp-route-{value}` atribut pro vygenerování odkazu na stránku upravit. Odkaz obsahuje data trasy s kontakt ID. Například `http://localhost:5000/Edit/1`.
 
 *Pages/Edit.cshtml* souboru:
 
@@ -415,7 +415,7 @@ services.AddMvc()
 
 ## <a name="see-also"></a>Viz také
 
-* [Začínáme s stránky Razor](xref:tutorials/razor-pages/razor-pages-start)
+* [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Konvence autorizace stránky Razor](xref:security/authorization/razor-pages-authorization)
 * [Syntaxe Razor stránky vlastní trasy a stránka zprostředkovatele modelu](xref:mvc/razor-pages/razor-pages-convention-features)
 * [Jednotka stránky Razor a testování integrace](xref:testing/razor-pages-testing)

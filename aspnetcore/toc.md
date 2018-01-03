@@ -37,6 +37,18 @@
 ### [Aktualizace souvisejících dat](xref:data/ef-rp/update-related-data)
 ### [Zpracování konfliktů souběžnosti](xref:data/ef-rp/concurrency)
 
+## [Přístup k datům – MVC s EF Core](data/ef-mvc/index.md)
+### [Začínáme](data/ef-mvc/intro.md)
+### [Operace vytvoření, čtení, aktualizace a odstranění](data/ef-mvc/crud.md)
+### [Řazení, filtrování, stránkování a seskupení](data/ef-mvc/sort-filter-page.md)
+### [Migrace](data/ef-mvc/migrations.md)
+### [Vytvoření složitého datového modelu](data/ef-mvc/complex-data-model.md)
+### [Čtení souvisejících dat](data/ef-mvc/read-related-data.md)
+### [Aktualizace souvisejících dat](data/ef-mvc/update-related-data.md)
+### [Zpracování konfliktů souběžnosti](data/ef-mvc/concurrency.md)
+### [Dědičnost](data/ef-mvc/inheritance.md)
+### [Pokročilá témata](data/ef-mvc/advanced.md)
+
 ## [Vytváření back-endových služeb pro mobilní aplikace](mobile/native-mobile-backend.md)
 ## [Vytváření webových rozhraní API](mvc/web-api/index.md)
 ## [Vytvoření webového rozhraní API](xref:tutorials/first-web-api-mac)

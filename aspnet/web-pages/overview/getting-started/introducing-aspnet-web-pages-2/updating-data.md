@@ -5,24 +5,24 @@ author: tfitzmac
 description: "V tomto kurzu se dozvíte, jak aktualizovat položku (změnit) existující databáze při použití technologie ASP.NET Web Pages (Razor). Předpokládá, že jste dokončili řady tý..."
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 05/28/2015
+ms.date: 01/02/2018
 ms.topic: article
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 6fdb365c1449e6c54dfdbe492211700211f61005
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aabf572e254de9861719fdc502340353482919b4
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/03/2018
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>Představení technologie ASP.NET Web Pages – aktualizace dat databáze
 ====================
 podle [tní FitzMacken](https://github.com/tfitzmac)
 
-> V tomto kurzu se dozvíte, jak aktualizovat položku (změnit) existující databáze při použití technologie ASP.NET Web Pages (Razor). Předpokládá, že jste dokončili řady prostřednictvím [zadávání dat pomocí pomocí formulářů pomocí rozhraní ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251582).
+> V tomto kurzu se dozvíte, jak aktualizovat položku (změnit) existující databáze při použití technologie ASP.NET Web Pages (Razor). Předpokládá, že jste dokončili řady prostřednictvím [zadávání dat pomocí pomocí formulářů pomocí rozhraní ASP.NET Web Pages](entering-data.md).
 > 
 > Získáte informace:
 > 
@@ -143,7 +143,7 @@ Vytvoření stránky s názvem *EditMovie.cshtml* a nahraďte, co je v souboru s
 
 Tento kód a kód je podobná máte ve *AddMovie* stránky. Je malý rozdíl v text pro tlačítko pro odeslání. Stejně jako u *AddMovie* stránky, dojde `Html.ValidationSummary` volání, které se zobrazí chyby ověření, pokud jsou k dispozici. Tentokrát jsme se vynechala volání `Validation.Message`, protože se zobrazí chyby v souhrnu ověření. Jak jsme uvedli v předchozím kurzu, můžete použít v různých kombinacích souhrnu ověření a jednotlivé chybové zprávy.
 
-Všimněte si znovu, že `method` atribut `<form>` element je nastaven na hodnotu `post`. Stejně jako u *AddMovie.cshtml* stránky, tato stránka umožňuje změny do databáze. Proto by měla provést tento formulář `POST` operaci. (Další informace o rozdílu mezi `GET` a `POST` operací, najdete v článku [GET, POST a zabezpečení protokolu HTTP příkaz](https://go.microsoft.com/fwlink/?LinkId=251581#GET,_POST,_and_HTTP_Verb_Safety) bočním panelu v tomto kurzu ve formulářích HTML.)
+Všimněte si znovu, že `method` atribut `<form>` element je nastaven na hodnotu `post`. Stejně jako u *AddMovie.cshtml* stránky, tato stránka umožňuje změny do databáze. Proto by měla provést tento formulář `POST` operaci. (Další informace o rozdílu mezi `GET` a `POST` operací, najdete v článku [GET, POST a zabezpečení protokolu HTTP příkaz](form-basics.md#GET,_POST,_and_HTTP_Verb_Safety) bočním panelu v tomto kurzu ve formulářích HTML.)
 
 Jak už jste viděli v dřívější kurzu, `value` atributy do textových polí se se nastavují s kódu Razor, aby bylo možné přednačtení je. Tentokrát, když používáte proměnné jako `title` a `genre` pro tuto úlohu místo `Request.Form["title"]`:
 
@@ -224,7 +224,7 @@ Po kód používá `db.Execute` ke spuštění `Update` prohlášení, je přesm
 > 
 > Samozřejmě `Query` metoda může vrátit pouze jeden řádek databáze. Ale technologie ASP.NET vždy zpracuje výsledky `Query` metoda jako kolekce. I v případě, že metoda vrátí pouze jeden řádek, budete muset tento jeden řádek extrahovat z kolekce. Proto v situacích, kde jste *vědět* získáte zpět pouze jeden řádek, je bit pohodlnější použití `QuerySingle`.
 > 
-> Existuje několik metod, které provádějí konkrétní typy databázových operací. Můžete najít v seznamu metod databáze v [Stručná referenční příručka aplikace ASP.NET Web Pages rozhraní API](https://go.microsoft.com/fwlink/?LinkID=202907#Data).
+> Existuje několik metod, které provádějí konkrétní typy databázových operací. Můžete najít v seznamu metod databáze v [Stručná referenční příručka aplikace ASP.NET Web Pages rozhraní API](../../api-reference/asp-net-web-pages-api-reference.md#Data).
 
 
 ## <a name="making-validation-for-the-id-more-robust"></a>Provedení ověření informace ID robustní
@@ -308,7 +308,7 @@ V dalším kurzu se zobrazí, jak odstranit záznam film.
 
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](introducing-razor-syntax-c.md)
 - [Prohlášení aktualizace SQL](http://www.w3schools.com/sql/sql_update.asp) na webu W3Schools
 
 >[!div class="step-by-step"]

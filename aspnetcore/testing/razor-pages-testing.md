@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 7a3f1bfa8bec830216af37d89aa588a921485e6b
-ms.sourcegitcommit: 4925a91ef4130ddb333f187ab13defe66f2c6cef
+ms.openlocfilehash: 1ecdf010f7c283a0a08b224d570a5bc5cdf536df
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Jednotka stránky Razor testování a integrace v ASP.NET Core
 
@@ -30,7 +30,7 @@ Jádro ASP.NET podporuje jednotky a integrace testování aplikací pro stránky
 Toto téma předpokládá, že máte základní znalosti o aplikace stránky Razor, testování částí a integrace testování. Pokud jste obeznámeni s stránky Razor aplikace nebo testování koncepty, najdete v následujících tématech:
 
 * [Úvod do stránky Razor](xref:mvc/razor-pages/index)
-* [Začínáme s stránky Razor](xref:tutorials/razor-pages/razor-pages-start)
+* [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Testování C# v .NET Core pomocí testovacích dotnet a xUnit částí](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [Testování integrace](xref:testing/integration-testing)
 
@@ -57,7 +57,7 @@ Zprávy aplikace je jednoduchý systém stránky Razor zpráv s následujícími
 * Zpráva je popsán `Message` – třída (*Data/Message.cs*) s dvě vlastnosti: `Id` (klíč) a `Text` (zprávy). `Text` Vlastnost je nutné a omezena na 200 znaků.
 * Zprávy jsou uloženy pomocí [databáze v paměti rozhraní Entity Framework](/ef/core/providers/in-memory/)&#8224;.
 * Aplikace obsahuje vrstva přístupu k datům (DAL) v kontextu své databáze třídy `AppDbContext` (*Data/AppDbContext.cs*). DAL metody jsou označeny `virtual`, což umožňuje mocking metody pro použití v testech.
-* Ve vývojovém prostředí je úložiště zpráv inicializován tři zprávy. Tyto *nasadí zprávy* se také používají při testování.
+* Pokud se databáze nachází prázdný při spuštění aplikace, se inicializuje tři zprávy úložiště zpráv. Tyto *nasadí zprávy* se také používají při testování.
 
 &#8224; V tématu EF [testování pomocí InMemory](/ef/core/miscellaneous/testing/in-memory), vysvětluje, jak používat databázi v paměti pro testování pomocí Mstestu. Toto téma používá [xUnit](https://xunit.github.io/) testování framework. Testování koncepce a testovací implementace mezi různé testování architektury jsou podobné, ale nejsou identické.
 
@@ -232,7 +232,7 @@ Integrace testy můžete také předat aplikace k testování aplikace odpovědi
 
 * [Testování C# v .NET Core pomocí testovacích dotnet a xUnit částí](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [Testování integrace](xref:testing/integration-testing)
-* [Testování řadiče](xref:mvc/controllers/testing)
+* [Testování kontrolerů](xref:mvc/controllers/testing)
 * [Testování částí kódu](/visualstudio/test/unit-test-your-code) (Visual Studio)
 * [xUnit.net](https://xunit.github.io/)
 * [Začínáme s xUnit.net (.NET Core/ASP.NET Core)](https://xunit.github.io/docs/getting-started-dotnet-core)

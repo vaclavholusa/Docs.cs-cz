@@ -11,11 +11,11 @@ ms.assetid: 0e4881a3-a94d-4e35-9c1c-f025d65dcff0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 4713c2bed04af784e74586daa10ec847262a1345
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 20e3d974e7790cd01f78f8db09225b5887f1772a
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="configuring-data-protection-in-aspnet-core"></a>Konfigurace ochrany dat v ASP.NET Core
 
@@ -193,7 +193,6 @@ serviceCollection.AddDataProtection()
 Obecně \*typ vlastnosti musí odkazovat na konkrétní, instantiable (prostřednictvím veřejného konstruktoru bez parametrů) implementace [SymmetricAlgorithm](/dotnet/api/system.security.cryptography.symmetricalgorithm) a [KeyedHashAlgorithm](/dotnet/api/system.security.cryptography.keyedhashalgorithm), ačkoli systém některé hodnoty jako na případy zvláštní `typeof(Aes)` ke zvýšení pohodlí.
 
 > [!NOTE]
-> `SymmetricAlgorithm` Musí mít délku klíče > = 128 bitů, velikost bloku > = 64 bitů, a musí podporovat režimu CBC šifrování s odsazení PKCS #7. `KeyedHashAlgorithm` Digest velikost musí být > = 128 bitů, a musí podporovat klíče délce délku digest algoritmus hash. `KeyedHashAlgorithm` Není nezbytně nutné být HMAC s klíčem.
 > SymmetricAlgorithm musí mít délku klíče ≥ 128 bitů a velikost bloku ≥ 64bitová verze a musí podporovat režimu CBC šifrování s odsazení PKCS #7. KeyedHashAlgorithm musí mít velikost digest > = 128 bitů, a musí podporovat klíče délce délku digest algoritmus hash. KeyedHashAlgorithm není nezbytně nutné být HMAC s klíčem.
 
 ### <a name="specifying-custom-windows-cng-algorithms"></a>Určení vlastních algoritmy Windows CNG

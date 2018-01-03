@@ -18,7 +18,7 @@ Klepněte na nabídku odkazy (**MvcMovie**, **Domů**, **o**). Každé stránce,
 
 ## <a name="change-the-title-and-menu-link-in-the-layout-file"></a>Změnit název a nabídky odkaz v souboru rozložení
 
-Změňte obsah elementu název. Změňte text ukotvení v šabloně rozložení "Filmová aplikace" a kontroler, z `Home` k `Movies` jako zvýrazněná níže:
+Název elementu, změňte `MvcMovie` k `Movie App`. Změňte text ukotvení v šabloně rozložení z `MvcMovie` k `Mvc Movie` a kontroler, z `Home` k `Movies` jako zvýrazněná níže:
 
 Poznámka: Na technologii ASP.NET 2.0 základní verzi se mírně liší. Neobsahuje `@inject ApplicationInsights` a `@Html.Raw(JavaScriptSnippet.FullScript)`.
 
@@ -29,9 +29,9 @@ Poznámka: Na technologii ASP.NET 2.0 základní verzi se mírně liší. Neobsa
 
 Uložte změny a klepněte **o** odkaz. Všimněte si, jak teď zobrazuje název na kartě prohlížeče **o - filmová aplikace** místo **o - Mvc film**: 
 
-![O karta](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+![O karta](../../tutorials/first-mvc-app/adding-view/_static/about2.png)
 
-Klepněte **kontaktujte** propojení a Všimněte si, že také zobrazuje **filmová aplikace**. Jsme byli schopni jednou proveďte změny v šabloně rozložení a mít všechny stránky webu odrážet nový text odkazu a nový název.
+Klepněte **obraťte se na** propojení a Všimněte si také zobrazit text nadpisu a ukotvení **filmová aplikace**. Jsme byli schopni jednou proveďte změny v šabloně rozložení a mít všechny stránky webu odrážet nový text odkazu a nový název.
 
 Zkontrolujte *Views/_ViewStart.cshtml* souboru:
 
@@ -105,7 +105,7 @@ Uložte změny a přejděte na následující adresu URL:
 
 Data jsou převzaty z adresy URL a předaný pomocí řadiče [vazač modelu MVC](xref:mvc/models/model-binding) . Balíčky data do kontroleru `ViewData` slovníku a předává, které objektu do zobrazení. Zobrazení pak vykreslí data ve formátu HTML v prohlížeči.
 
-![O zobrazení úvodní štítky a frázi Hello Rick zobrazí čtyřikrát](../../tutorials/first-mvc-app/adding-view/_static/rick.png)
+![O zobrazení úvodní štítky a frázi Hello Rick zobrazí čtyřikrát](../../tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
 V ukázce výše jsme použili `ViewData` slovník k předávání dat z řadiče zobrazení. Později v tomto kurzu budeme používat model zobrazení k předávání dat z řadiče zobrazení. Přístup modelu zobrazení k předávání dat je obvykle mnohem upřednostňované přes `ViewData` slovníku přístup. V tématu [ViewModel vs ViewData vs ViewBag vs TempData vs relace v MVC](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc) Další informace.
 

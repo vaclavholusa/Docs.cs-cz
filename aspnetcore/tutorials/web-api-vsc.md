@@ -11,11 +11,11 @@ keywords: "ASP.NET Core, WebAPI, webové rozhraní API, REST, Mac, Linux, HTTP, 
 manager: wpickett
 ms.assetid: 830b4bf5-dd14-423e-9f59-764a6f13a8f6
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: caf40ee1c2d45d2fbf33b07d707fa4f1be98d31c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 40f9259101e5d006378562a27e97948641e29450
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-code-on-linux-macos-and-windows"></a>Vytvoření webového rozhraní API s ASP.NET MVC jádra a Visual Studio Code v systému Windows, Linux a systému macOS
 
@@ -57,7 +57,7 @@ Otevřete *TodoApi* složky v kódu pro Visual Studio (VS kódu) a vyberte *Star
 
 <!-- uid: tutorials/first-mvc-app-xplat/start-mvc uses the pic below. If you change it, make sure it's consistent -->
 
-!['TodoApi' chybí VS Code s varování požadované prostředky pro sestavení a ladění. Je přidat? Nezobrazovat dotaz dalších, teď ne Ano a také informace o – neexistují nevyřešené závislosti - Restore - zavřít](web-api-vsc/_static/vsc_restore.png)
+!['TodoApi' chybí VS Code s varování požadované prostředky pro sestavení a ladění. Je přidat? Nezobrazovat dotaz dalších, teď ne Ano](web-api-vsc/_static/vsc_restore.png)
 
 Stiskněte klávesu **ladění** (F5) sestavení a spuštění programu. V prohlížeči přejděte na http://localhost: 5000/api/hodnoty. Zobrazí se:
 
@@ -67,11 +67,9 @@ V tématu [Visual Studio Code nápovědy](#visual-studio-code-help) tipy pro pou
 
 ## <a name="add-support-for-entity-framework-core"></a>Přidání podpory pro Entity Framework Core
 
-Upravit *TodoApi.csproj* k instalaci [Entity Framework Core InMemory](https://docs.microsoft.com/ef/core/providers/in-memory/) zprostředkovatel databáze. Tento poskytovatel databáze umožňuje Entity Framework Core pro použití s databázi v paměti.
+Vytvoření nového projektu v rozhraní .NET 2.0 základní přidá poskytovatele 'Microsoft.AspNetCore.All' v *TodoApi.csproj* souboru. Není nutné k instalaci [Entity Framework Core InMemory](https://docs.microsoft.com/ef/core/providers/in-memory/) databáze zprostředkovatele samostatně. Tento poskytovatel databáze umožňuje Entity Framework Core pro použití s databázi v paměti.
 
 [!code-xml[Main](web-api-vsc/sample/TodoApi/TodoApi.csproj?highlight=12)]
-
-Spustit `dotnet restore` ke stažení a instalaci zprostředkovatele EF DB InMemory jádra. Můžete spustit `dotnet restore` z terminálu nebo zadejte `⌘⇧P` (macOS) nebo `Ctrl+Shift+P` (Linux) v VS Code a pak zadejte **.NET**. Vyberte **.NET: obnovení balíčků**.
 
 ## <a name="add-a-model-class"></a>Přidejte třídu modelu
 

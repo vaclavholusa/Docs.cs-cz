@@ -11,11 +11,11 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: a3fdbf8a1ab4ca397824a46da445fa34ddd35204
-ms.sourcegitcommit: 4be61844141d3cfb6f263636a36aebd26e90fb28
+ms.openlocfilehash: d1f8cf5607fdd08bf0dadc224ae0fdba7ec696bc
+ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -25,7 +25,7 @@ Vytvoření vícejazyčné webu pomocí ASP.NET Core vám umožní vaší lokali
 
 Internacionalizace zahrnuje [globalizace](https://docs.microsoft.com/dotnet/api/system.globalization) a [lokalizace](https://docs.microsoft.com/dotnet/standard/globalization-localization/localization). Globalizace je proces návrhu aplikace, které podporují různé jazykové verze. Globalizace přidává podporu pro vstup, zobrazení a výstupní sada skripty jazyka, které se vztahují k určité geografické oblasti.
 
-Lokalizace je proces přizpůsobení globalizovaná aplikaci, která již byl zpracován lokalizovatelnosti na konkrétní jazykové verze nebo národní prostředí.  Další informace najdete v části **globalizace a lokalizace podmínky** téměř na konci tohoto dokumentu.
+Lokalizace je proces přizpůsobení globalizovaná aplikaci, která již byl zpracován lokalizovatelnosti na konkrétní jazykové verze nebo národní prostředí. Další informace najdete v části **globalizace a lokalizace podmínky** téměř na konci tohoto dokumentu.
 
 Lokalizace aplikací zahrnuje následující:
 
@@ -305,7 +305,7 @@ Proces lokalizace aplikace taky vyžaduje základní znalost relevantní znakov�
 
 [Lokalizovatelnost](https://docs.microsoft.com/dotnet/standard/globalization-localization/localizability-review) je dílčí proces pro ověření, že globalizovaná aplikace je připravena k lokalizaci.
 
-[RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) formátu pro název jazykové verze je "<languagecode2>-< země/regioncode2 >", kde <languagecode2> je kód jazyka a < země/regioncode2 > je kód subkulturu. Například `es-CL` pro španělština (základě), `en-US` pro angličtinu (Spojené státy), a `en-AU` pro angličtinu (Austrálie). [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) je kombinací ISO 639 malá jazykovou verzi dvoupísmenným kódem související s jazykem a ISO 3166 velká subkulturu dvoupísmenným kódem přidružené zemi či oblasti.  V tématu [název jazykové verze jazyka](https://msdn.microsoft.com/library/ee825488(v=cs.20).aspx).
+[RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) formátu pro název jazykové verze je `<languagecode2>-<country/regioncode2>`, kde `<languagecode2>` je kód jazyka a `<country/regioncode2>` je subkulturu kód. Například `es-CL` pro španělština (základě), `en-US` pro angličtinu (Spojené státy), a `en-AU` pro angličtinu (Austrálie). [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) je kombinací ISO 639 malá jazykovou verzi dvoupísmenným kódem související s jazykem a ISO 3166 velká subkulturu dvoupísmenným kódem přidružené zemi či oblasti. V tématu [název jazykové verze jazyka](https://msdn.microsoft.com/library/ee825488(v=cs.20).aspx).
 
 Internacionalizace často zkratka "I18N". Zkratka přebírá první a poslední písmena a počet písmena mezi nimi, takže 18 znamená počet písmena mezi první "I" a poslední "N". Totéž platí i pro (G11N) globalizace a lokalizace (L10N).
 

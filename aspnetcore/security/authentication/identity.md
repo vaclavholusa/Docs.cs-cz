@@ -5,17 +5,17 @@ description: "Pomocí Identity aplikace ASP.NET Core"
 keywords: "ASP.NET Core, Identity, autorizaci zabezpečení"
 ms.author: riande
 manager: wpickett
-ms.date: 12/15/2017
+ms.date: 01/02/2018
 ms.topic: article
 ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 7daf0267a6dc659afbd188ce87e35ca40816a31d
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 7af53bfad2b77558a06003cbc6534236235054c4
+ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity na jádro ASP.NET
 
@@ -32,11 +32,20 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 1.  Vytvoření projektu webové aplikace ASP.NET Core s jednotlivé uživatelské účty.
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-    V sadě Visual Studio, vyberte **soubor** -> **nový** -> **projektu**. Vyberte **webové aplikace ASP.NET** z **nový projekt** dialogové okno. Výběr ASP.NET Core **webové Application(Model-View-Controller)** pro ASP.NET Core 2.x s **jednotlivé uživatelské účty** jako metodu ověřování.
+    V sadě Visual Studio, vyberte **soubor** -> **nový** -> **projektu**. Vyberte **webové aplikace ASP.NET Core** a klikněte na tlačítko **OK**. 
 
-    Poznámka: Je nutné vybrat **jednotlivé uživatelské účty**.
+    ![Dialogové okno Nový projekt](identity/_static/01-new-project.png)
+
+    Vyberte ASP.NET Core **webové aplikace (Model-View-Controller)** pro technologii ASP.NET základní 2.x a pak vyberte **změna ověřování**. 
+
+    ![Dialogové okno Nový projekt](identity/_static/02-new-project.png)
+
+    Zobrazí se dialogové okno se zobrazí nabízení možnosti ověřování. Vyberte **jednotlivé uživatelské účty** a klikněte na tlačítko **OK** se vrátíte do předchozího dialogového okna.
+
+    ![Dialogové okno Nový projekt](identity/_static/03-new-project-auth.png)
+    
+    Výběr **jednotlivé uživatelské účty** přesměruje Chcete-li vytvořit modely, ViewModels, zobrazení, řadiče a další prostředky požadované pro ověřování v rámci šablony projektů Visual Studio.
  
-    ![Dialogové okno Nový projekt](identity/_static/01-mvc_2.png)
     
     # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
     Pokud používáte rozhraní příkazového řádku .NET Core, vytvořte nový projekt pomocí ``dotnet new mvc --auth Individual``. Tento příkaz vytvoří nový projekt se stejným kódem šablony Identity, které sada Visual Studio vytvoří.
@@ -77,7 +86,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
     Spuštění aplikace a potom klikněte na **zaregistrovat** odkaz.
 
-    Pokud je při prvním provedení této akce, může být potřeba spustit migrace. Aplikace vás vyzve, abyste **použít migrace**:
+    Pokud je při prvním provedení této akce, může být potřeba spustit migrace. Aplikace vás vyzve, abyste **použít migrace**. V případě potřeby aktualizujte stránku.
     
     ![Použití migrace webové stránky](identity/_static/apply-migrations.png)
     
@@ -100,9 +109,9 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
  
     Uživatelé se mohou přihlásit kliknutím **přihlásit** odkaz v horní části webu, nebo se může přesměrováni na stránku přihlášení Pokud pokus o přístup k součástí lokality, která vyžaduje ověření. Když uživatel odešle formulář na přihlašovací stránku, ``AccountController`` ``Login`` akce je volána.
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
- 
     ``Login`` Volání akce ``PasswordSignInAsync`` na ``_signInManager`` objektu (poskytované ``AccountController`` pomocí vkládání závislostí).
+
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
  
     Základní ``Controller`` třídy zpřístupňuje ``User`` vlastnost, která je přístupné z metody kontroleru. Například můžete vytvořit výčet `User.Claims` a autorizační rozhodnutí. Další informace najdete v tématu [autorizace](xref:security/authorization/index).
  
@@ -140,6 +149,35 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
     
     Rozbalte databázi a její **tabulky**, klikněte pravým tlačítkem **dbo. AspNetUsers** tabulky a vyberte **Data zobrazení**.
 
+8. Ověření Identity funguje
+
+    Výchozí hodnota *webové aplikace ASP.NET Core* šablona projektu umožňuje uživatelům přístup k veškeré akce v aplikaci bez nutnosti k přihlášení. Chcete-li ověřit, že ASP.NET Identity funguje, přidejte`[Authorize]` atribut `About` akce `Home` řadiče.
+ 
+    ```cs
+    [Authorize]
+    public IActionResult About()
+    {
+        ViewData["Message"] = "Your application description page.";
+        return View();
+    }
+    ```
+    
+    # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)     
+
+    Spusťte projekt pomocí **Ctrl** + **F5** a přejděte do **o** stránky. Může používat pouze ověření uživatelé **o** stránka nyní, takže ASP.NET vás přesměruje na přihlašovací stránku pro přihlášení nebo registraci.
+
+    # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+
+    Otevřete okno příkazového řádku a přejděte do projektu kořenový adresář obsahující `.csproj` souboru. Spustit `dotnet run` příkaz ke spuštění aplikace:
+
+    ```cs
+    dotnet run 
+    ```
+
+    Vyhledejte ve výstupu zadanou adresu URL `dotnet run` příkaz. Adresa URL by měla odkazovat na `localhost` s číslem generovaného portu. Přejděte na **o** stránky. Může používat pouze ověření uživatelé **o** stránka nyní, takže ASP.NET vás přesměruje na přihlašovací stránku pro přihlášení nebo registraci.
+
+    ---
+
 ## <a name="identity-components"></a>Komponent identity
 
 Je primární referenční sestavení pro systém identit `Microsoft.AspNetCore.Identity`. Tento balíček obsahuje sadu základní rozhraní pro ASP.NET Core Identity a je začleněn sám v `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.
@@ -159,6 +197,6 @@ Pro další informace a pokyny k migraci stávající identitu úložiště najd
 ## <a name="next-steps"></a>Další kroky
 
 * [Migrace ověřování a identita](xref:migration/identity)
-* [Potvrzení účtu a heslo pro obnovení](xref:security/authentication/accconfirm)
-* [Dvoufaktorové ověřování pomocí serveru SMS](xref:security/authentication/2fa)
-* [Povolení ověřování pomocí služby Facebook, Google a dalších externích zprostředkovatelů](xref:security/authentication/social/index)
+* [Potvrzení účtu a obnovení hesla](xref:security/authentication/accconfirm)
+* [Dvoufaktorové ověřování přes SMS](xref:security/authentication/2fa)
+* [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](xref:security/authentication/social/index)

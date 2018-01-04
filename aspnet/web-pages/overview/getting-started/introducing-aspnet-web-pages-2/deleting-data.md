@@ -5,24 +5,24 @@ author: tfitzmac
 description: "V tomto kurzu se dozvíte, jak odstranit položku jednotlivé databáze. Předpokládá se, že jste dokončili řady prostřednictvím aktualizace dat databáze v adrese poskytovatele. technologie ASP.NET..."
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 05/28/2015
+ms.date: 01/02/2018
 ms.topic: article
 ms.assetid: 75b5c1cf-84bd-434f-8a86-85c568eb5b09
 ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: aef31b6170cc3bba2421eb8c2c41e83aadc129c5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5bc92b5d40e7a55dcd730d552c71031d913b277e
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/03/2018
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Představení technologie ASP.NET Web Pages – odstranění dat z databáze
 ====================
 podle [tní FitzMacken](https://github.com/tfitzmac)
 
-> V tomto kurzu se dozvíte, jak odstranit položku jednotlivé databáze. Předpokládá, že jste dokončili řady prostřednictvím [aktualizace dat databáze na webových stránkách ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251583).
+> V tomto kurzu se dozvíte, jak odstranit položku jednotlivé databáze. Předpokládá, že jste dokončili řady prostřednictvím [aktualizace dat databáze na webových stránkách ASP.NET](updating-data.md).
 > 
 > Získáte informace:
 > 
@@ -76,7 +76,7 @@ Nové sloupci se zobrazuje odkaz (`<a>` element) jejíž text říká "Odstranit
 
 Tento odkaz bude vyvolat stránku s názvem *DeleteMovie* a předejte ji ID film jste vybrali.
 
-V tomto kurzu nepřejde do podrobnosti o tom, jak je vytvořený tento odkaz, protože je téměř identický **upravit** odkaz z předchozí kurzu ([aktualizace dat databáze na webových stránkách ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251583)).
+V tomto kurzu nepřejde do podrobnosti o tom, jak je vytvořený tento odkaz, protože je téměř identický **upravit** odkaz z předchozí kurzu ([aktualizace dat databáze na webových stránkách ASP.NET](updating-data.md)).
 
 ## <a name="creating-the-delete-page"></a>Vytvoření stránky odstranění
 
@@ -137,7 +137,7 @@ Druhou podmínku, která je `!Request["buttonDelete"].IsEmpty()`, což znamená,
   
  AND  
   
-** `buttonDelete` *Tlačítko byl tlačítko odeslání formuláře.*
+*Tlačítko* `buttonDelete` *byl tlačítko odeslání formuláře.*
 
 Tento formulář (v faktu, tato stránka) obsahuje pouze jedno tlačítko, takže další test pro `buttonDelete` není technicky povinný. Stále Chystáte se provést operaci, která bude trvale odebrat data. Chcete proto ujistěte se, co nejblíže se jenom v případě, že uživatel ji explicitně vyžaduje provedení operace. Předpokládejme například, rozšířit tuto stránku později a do ní přidat další tlačítka. Dokonce i pak kód, který odstraní videa se spustí pouze v případě `buttonDelete` bylo stisknuto tlačítko.
 
@@ -169,7 +169,7 @@ V dalším kurzu se dozvíte, jak poskytnout všechny stránky na svém webu bě
 
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](../introducing-razor-syntax-c.md)
 - [Příkaz DELETE SQL](http://www.w3schools.com/sql/sql_delete.asp) na webu W3Schools
 
 >[!div class="step-by-step"]

@@ -153,7 +153,7 @@
 ## [Vytváření sady a minifikace](xref:client-side/bundling-and-minification)
 ## [Použití funkce Browser Link](xref:client-side/using-browserlink)
 ## [Použití služeb JavaScriptServices pro jednostránkové aplikace (SPA)](xref:client-side/spa-services)
-## [Použití projektových šablon SPA (verze preview)](xref:spa/index)
+## [Použití projektových šablon SPA (verze RC)](xref:spa/index)
 ### [Šablona projektu Angular](xref:spa/angular)
 ### [Šablona projektu React](xref:spa/react)
 ### [Šablona projektu React with Redux](xref:spa/react-with-redux)

@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 7af53bfad2b77558a06003cbc6534236235054c4
-ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
+ms.openlocfilehash: 4a5d3622a22b70daa22333cafe58f8831bf0918e
+ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity na jádro ASP.NET
 
@@ -32,28 +32,29 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 1.  Vytvoření projektu webové aplikace ASP.NET Core s jednotlivé uživatelské účty.
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-    V sadě Visual Studio, vyberte **soubor** -> **nový** -> **projektu**. Vyberte **webové aplikace ASP.NET Core** a klikněte na tlačítko **OK**. 
+
+    V sadě Visual Studio, vyberte **soubor** -> **nový** -> **projektu**. Vyberte **webové aplikace ASP.NET Core** a klikněte na tlačítko **OK**.
 
     ![Dialogové okno Nový projekt](identity/_static/01-new-project.png)
 
-    Vyberte ASP.NET Core **webové aplikace (Model-View-Controller)** pro technologii ASP.NET základní 2.x a pak vyberte **změna ověřování**. 
+    Vyberte ASP.NET Core **webové aplikace (Model-View-Controller)** pro technologii ASP.NET základní 2.x a pak vyberte **změna ověřování**.
 
     ![Dialogové okno Nový projekt](identity/_static/02-new-project.png)
 
     Zobrazí se dialogové okno se zobrazí nabízení možnosti ověřování. Vyberte **jednotlivé uživatelské účty** a klikněte na tlačítko **OK** se vrátíte do předchozího dialogového okna.
 
     ![Dialogové okno Nový projekt](identity/_static/03-new-project-auth.png)
-    
+
     Výběr **jednotlivé uživatelské účty** přesměruje Chcete-li vytvořit modely, ViewModels, zobrazení, řadiče a další prostředky požadované pro ověřování v rámci šablony projektů Visual Studio.
- 
-    
+
     # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+
     Pokud používáte rozhraní příkazového řádku .NET Core, vytvořte nový projekt pomocí ``dotnet new mvc --auth Individual``. Tento příkaz vytvoří nový projekt se stejným kódem šablony Identity, které sada Visual Studio vytvoří.
- 
+
     Vytvořený projekt obsahuje `Microsoft.AspNetCore.Identity.EntityFrameworkCore` balíček, která ukládá data identit a schématu na SQL Server pomocí [Entity Framework Core](https://docs.microsoft.com/ef/).
-    
+
     ---
- 
+
 2.  Nakonfigurujte identitu služby a přidejte middleware v `Startup`.
 
     Identita služby jsou přidány do aplikace `ConfigureServices` metoda v `Startup` – třída:
@@ -162,7 +163,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
     }
     ```
     
-    # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)     
+    # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
     Spusťte projekt pomocí **Ctrl** + **F5** a přejděte do **o** stránky. Může používat pouze ověření uživatelé **o** stránka nyní, takže ASP.NET vás přesměruje na přihlašovací stránku pro přihlášení nebo registraci.
 

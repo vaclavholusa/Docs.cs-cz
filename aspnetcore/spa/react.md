@@ -1,7 +1,7 @@
 ---
 title: "Pomocí šablony projektu reagují"
 author: SteveSandersonMS
-description: "Zjistěte, jak začít pracovat s v šabloně projektů ASP.NET Core jednostránkové aplikace (SPA) preview reagují a vytvořit aplikaci reagují."
+description: "Zjistěte, jak začít pracovat s v šabloně projektů ASP.NET Core jednostránkové aplikace (SPA) release candidate reagují a vytvořit aplikaci reagují."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,16 +11,16 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: 1e1e48491acb904c1c8fc6c8286d3b152c382daa
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 6a0de008979823baae17eb66df2d991300c197f2
+ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
-# <a name="use-the-react-project-template-preview"></a>Pomocí šablony projektu reagují (preview)
+# <a name="use-the-react-project-template-release-candidate"></a>Pomocí šablony projektu reagují (verze release candidate)
 
 > [!NOTE]
-> Tato dokumentace není o vydaných v šabloně projektů reagují. **Tato dokumentace je o verze preview reagují šablony.** Věříme, že pro odeslání v časná 2018 vydaná verze.
+> Tato dokumentace není o vydaných v šabloně projektů reagují. **Tato dokumentace je o na verzi release candidate reagují šablony.** Věříme, že pro odeslání v časná 2018 vydaná verze.
 
 Aktualizovanou šablonu projektu reagují poskytuje příhodný výchozí bod pro ASP.NET Core aplikací pomocí reagují a [vytvořit aplikaci reagují](https://github.com/facebookincubator/create-react-app) konvence (CRA) k implementaci bohatou a klientské uživatelské rozhraní (UI).
 

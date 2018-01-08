@@ -1,7 +1,7 @@
 ---
 title: "Použijte šablonu úhlová projektu"
 author: SteveSandersonMS
-description: "Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jednostránkové aplikace (SPA) preview pro úhlová a úhlová příkazového řádku."
+description: "Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jednostránkové aplikace (SPA) release candidate pro úhlová a úhlová příkazového řádku."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,16 +11,16 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: de7b32099f225e838ec40ce4f04bf67bffb9c260
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: ebe40015cc2e6b5947e844a0ce7db9efd867266b
+ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
-# <a name="use-the-angular-project-template-preview"></a>Použijte šablonu úhlová projektu (preview)
+# <a name="use-the-angular-project-template-release-candidate"></a>Použijte šablonu úhlová projektu (verze release candidate)
 
 > [!NOTE]
-> Tato dokumentace není o vydaných úhlová projektu šablony. **Tato dokumentace je o verze preview úhlová šablony.** Věříme, že pro odeslání v časná 2018 vydaná verze.
+> Tato dokumentace není o vydaných úhlová projektu šablony. **Tato dokumentace je o na verzi release candidate úhlová šablony.** Věříme, že pro odeslání v časná 2018 vydaná verze.
 
 Šablona aktualizované úhlová projektu poskytuje příhodný výchozí bod pro ASP.NET Core použití úhlová 5 a úhlová příkazového řádku k implementaci bohatou a klientské uživatelské rozhraní (UI) aplikace.
 

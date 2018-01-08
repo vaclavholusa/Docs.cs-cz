@@ -10,15 +10,15 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages-vsc/index
-ms.openlocfilehash: 2ffa2361077c4c2719a458c59bebecf1cb0e9879
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f27bfaf49dac3ca9eccf8e968606c0264564b1fa
+ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core-and-visual-studio-code"></a>Vytvoření stránky Razor webové aplikace s ASP.NET Core a Visual Studio Code
 
-Toto je pracuje. Věříme, že má řady dokončeno během dvou týdnů.
+Toto je pracuje.
 
 Tato řada vysvětluje základy vytváření stránky Razor webové aplikace s ASP.NET Core pomocí Visual Studio Code.
 
@@ -28,9 +28,9 @@ Tato řada vysvětluje základy vytváření stránky Razor webové aplikace s A
 Až do dokončení další části, postupujte podle verze Visual Studio pro Windows.
 
 
-1. [Stránky vygenerované Razor](xref:tutorials/razor-pages/page)
-1. [Práce s LocalDB serveru SQL](xref:tutorials/razor-pages/sql)
+1. [Vygenerované stránky Razor](xref:tutorials/razor-pages/page)
+1. [Práce s verzí SQL Server LocalDB](xref:tutorials/razor-pages/sql)
 1. [Aktualizace stránek](xref:tutorials/razor-pages/da1)
-1. [Přidání vyhledávání](xref:tutorials/razor-pages/search)
-1. [Přidání nové pole](xref:tutorials/razor-pages/new-field)
-1. [Přidání ověřování](xref:tutorials/razor-pages/validation)
+1. [Přidání vyhledávací funkce](xref:tutorials/razor-pages/search)
+1. [Přidání nového pole](xref:tutorials/razor-pages/new-field)
+1. [Přidání ověření](xref:tutorials/razor-pages/validation)

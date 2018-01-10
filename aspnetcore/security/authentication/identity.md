@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 4a5d3622a22b70daa22333cafe58f8831bf0918e
-ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
+ms.openlocfilehash: fc8e076af92bd8f9a95e73abb66ce32cae8ab9cf
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity na jádro ASP.NET
 
@@ -25,6 +25,8 @@ Identita ASP.NET Core je systém členství, který umožňuje přidat funkce p�
 
 Můžete nakonfigurovat ASP.NET Identity Core ukládat uživatelská jména, hesla a data profilu do databáze serveru SQL Server. Alternativně můžete použít vlastní trvalého úložiště, například Azure Table Storage. Tento dokument obsahuje pokyny pro sadu Visual Studio a pro používání rozhraní příkazového řádku.
 
+[Zobrazení nebo stažení ukázkového kódu.](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(Postup stažení)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/index#how-to-download-a-sample)
+
 ## <a name="overview-of-identity"></a>Přehled identity
 
 V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání funkcí registrace, přihlášení a odhlášení uživatele. Podrobnější pokyny k vytváření aplikací pomocí ASP.NET Core Identity najdete v části Další kroky na konci tohoto článku.
@@ -33,7 +35,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-    V sadě Visual Studio, vyberte **soubor** -> **nový** -> **projektu**. Vyberte **webové aplikace ASP.NET Core** a klikněte na tlačítko **OK**.
+    V sadě Visual Studio, vyberte **soubor** > **nový** > **projektu**. Vyberte **webové aplikace ASP.NET Core** a klikněte na tlačítko **OK**.
 
     ![Dialogové okno Nový projekt](identity/_static/01-new-project.png)
 
@@ -144,7 +146,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
  
 7.  Zobrazte databázi.
 
-    Pokud vaše aplikace používá databázi systému SQL Server (výchozí možnost v systému Windows a pro uživatele v sadě Visual Studio), můžete zobrazit databázi aplikace vytvořená. Můžete použít **SQL Server Management Studio**. Případně ze sady Visual Studio, vyberte možnost **zobrazení** -> **Průzkumník objektů systému SQL Server**. Připojení k **\MSSQLLocalDB (localdb)**. Databáze s odpovídajícím názvem  **aspnet - <*název projektu*>-<*datum řetězec*> ** se zobrazí.
+    Pokud vaše aplikace používá databázi systému SQL Server (výchozí možnost v systému Windows a pro uživatele v sadě Visual Studio), můžete zobrazit databázi aplikace vytvořená. Můžete použít **SQL Server Management Studio**. Případně ze sady Visual Studio, vyberte možnost **zobrazení** > **Průzkumník objektů systému SQL Server**. Připojení k **\MSSQLLocalDB (localdb)**. Databáze s odpovídajícím názvem  **aspnet - <*název projektu*>-<*datum řetězec*> ** se zobrazí.
 
     ![Kontextové nabídky na AspNetUsers databázové tabulky](identity/_static/04-db.png)
     

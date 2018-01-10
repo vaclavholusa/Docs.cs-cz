@@ -11,11 +11,11 @@ ms.assetid: 54bb961d-29d9-4dee-8e2c-a93fc33c16f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 630378510f4182034735cb4c306dfc5a761543ab
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 08503b724aaea64ad2d32eaa710378ec77b9a1fe
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="aspnet-core-web-api-help-pages-using-swagger"></a>Základní webové rozhraní API pomůže stránky ASP.NET pomocí Swagger
 
@@ -227,6 +227,8 @@ Ručně přidejte následující fragment k *.csproj* souboru:
 Najdete v sadě Visual Studio Code.
 
 ---
+
+Povolení komentáře XML poskytuje informace o ladění pro nedokumentovanými veřejných typů a členů. Nezdokumentovaný typy a členy indikován upozornění: *komentář chybí XML pro veřejně viditelný typ nebo člen*.
 
 Nakonfigurujte Swagger používat generovaný soubor XML. Pro operační systémy jiný systém než Windows nebo Linux může být malá a velká písmena názvů a cest souborů. Například *ToDoApi.XML* soubor by v systému Windows, ale není CentOS nalezen.
 

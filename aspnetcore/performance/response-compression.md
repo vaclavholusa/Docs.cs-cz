@@ -11,11 +11,11 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 68e8c89f6e5485f25d1a551ab3e524f0e9c53d0d
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 86244179115fe6a7d0f7298495086a96ee9570d9
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware komprese odpovědi pro ASP.NET Core
 
@@ -183,11 +183,11 @@ Při kompresi odpovědí na základě `Accept-Encoding` záhlaví, existují pot
 
 [!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet1)]
 
-## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Middleware problém při za zpětného proxy služby Nginx
+## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Middleware problém při za Nginx reverzní proxy server
 Pokud je požadavek směrovány přes proxy server pomocí Nginx, `Accept-Encoding` záhlaví se odebere. Middleware zabrání kompresi odpovědi. Další informace najdete v tématu [NGINX: komprese a dekomprese](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Tento problém je sledovanými [zjistěte průchozí komprese nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123).
 
 ## <a name="working-with-iis-dynamic-compression"></a>Práce s dynamické komprese služby IIS
-Pokud máte aktivní IIS dynamické komprese modul nakonfigurována na úrovni serveru, který chcete zakázat pro aplikaci, můžete tak učinit s doplňkem k vaší *web.config* souboru. Další informace najdete v tématu [moduly IIS zakázání](xref:hosting/iis-modules#disabling-iis-modules).
+Pokud máte aktivní IIS dynamické komprese modul nakonfigurována na úrovni serveru, který chcete zakázat pro aplikaci, můžete tak učinit s doplňkem k vaší *web.config* souboru. Další informace najdete v tématu [moduly IIS zakázání](xref:host-and-deploy/iis/modules#disabling-iis-modules).
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 Pomocí některého nástroje, například [Fiddler](http://www.telerik.com/fiddler), [Firebug](http://getfirebug.com/), nebo [Postman](https://www.getpostman.com/), které umožňují nastavit `Accept-Encoding` hlavička požadavku a prostudovali hlavičky odpovědi, velikost a text. Middleware komprese odpovědi komprimaci odpovědi, které splňují následující podmínky:

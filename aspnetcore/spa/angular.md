@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: ebe40015cc2e6b5947e844a0ce7db9efd867266b
-ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
+ms.openlocfilehash: b54798a43f6a448c2e2aad0613ee60805a61f303
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="use-the-angular-project-template-release-candidate"></a>Použijte šablonu úhlová projektu (verze release candidate)
 
@@ -98,7 +98,7 @@ Ve vývoji aplikace běží v režimu optimalizovaná pro vývojáře pohodlí. 
 
 V produkčním prostředí sloužit verzi vaší aplikace, která je optimalizovaná pro výkon. Ta se nakonfiguruje automaticky provést. Když publikujete, je konfigurace sestavení vysílá minifikovaný, napřed předčasné (AoT) zkompilovat sestavení kódu na straně klienta. Na rozdíl od sestavení vývoj nevyžaduje produkční build Node.js k instalaci na serveru (Pokud jste povolili [dokončení fáze před vykreslením serverové](#server-side-rendering)).
 
-Můžete použít standardní [ASP.NET Core publikování a metody nasazení](xref:publishing/index).
+Můžete použít standardní [metody nasazení a hostování ASP.NET Core](xref:host-and-deploy/index).
 
 ## <a name="run-ng-serve-independently"></a>Spustit nezávisle "ng používat"
 

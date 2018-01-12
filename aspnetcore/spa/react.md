@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: 6a0de008979823baae17eb66df2d991300c197f2
-ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
+ms.openlocfilehash: a63d81633a0f37d24ad5e05de293e3c41004eba1
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="use-the-react-project-template-release-candidate"></a>Pomocí šablony projektu reagují (verze release candidate)
 
@@ -78,7 +78,7 @@ Ve vývoji aplikace běží v režimu optimalizovaná pro vývojáře pohodlí. 
 
 V produkčním prostředí sloužit verzi vaší aplikace, která je optimalizovaná pro výkon. Ta se nakonfiguruje automaticky provést. Když publikujete, je konfigurace sestavení vysílá minifikovaný, sestavení transpiled kódu na straně klienta. Na rozdíl od sestavení vývoj nevyžaduje produkční build Node.js k instalaci na serveru.
 
-Můžete použít standardní [ASP.NET Core publikování a metody nasazení](xref:publishing/index).
+Můžete použít standardní [metody nasazení a hostování ASP.NET Core](xref:host-and-deploy/index).
 
 ## <a name="run-the-cra-server-independently"></a>Spusťte CRA server nezávisle
 

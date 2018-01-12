@@ -1,23 +1,23 @@
 ---
-title: "Přehled jádra ASP.NET MVC"
+title: "Přehled ASP.NET Core MVC"
 author: ardalis
 description: "Zjistěte, jak je bohaté rozhraní pro vytváření webových aplikací ASP.NET MVC jádra a rozhraní API pomocí Model-View-Controller návrh vzor."
-keywords: "Jádro ASP.NET"
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 01/08/2018
 ms.topic: article
 ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 2492b6aa4602dbbf3b9cd3dca00d40690c640cab
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 33c293e15c0a7f18bbace9dc564fe11d93a7d509
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="overview-of-aspnet-core-mvc"></a>Přehled jádra ASP.NET MVC
+# <a name="overview-of-aspnet-core-mvc"></a>Přehled ASP.NET Core MVC
 
 Podle [Steve Smith](https://ardalis.com/)
 
@@ -38,7 +38,7 @@ Tato vymezení odpovědnosti umožňuje škálovat aplikaci z hlediska složitos
 
 ### <a name="model-responsibilities"></a>Model odpovědnosti
 
-Modelu v aplikaci MVC představuje stav aplikace a veškeré obchodní logiky nebo operace, které by měli provádět ho. Obchodní logika by měl zapouzdřený v modelu, společně s žádné implementační logika pro uchování stavu aplikace. Zobrazení silného typu obvykle využije ViewModel typy určená speciálně pro obsahují data k zobrazení v tomto zobrazení; řadičem vytvoříte a naplnění těchto instancí ViewModel z modelu.
+Modelu v aplikaci MVC představuje stav aplikace a veškeré obchodní logiky nebo operace, které by měli provádět ho. Obchodní logika by měl zapouzdřený v modelu, společně s žádné implementační logika pro uchování stavu aplikace. Zobrazení silného typu obvykle používat typy ViewModel navržený tak, aby obsahují data pro zobrazení v tomto zobrazení. Správce vytvoří a naplní tyto instance ViewModel z modelu.
 
 > [!NOTE]
 > K uspořádání modelu v aplikaci, která používá architekturní vzor MVC mnoha způsoby. Další informace o některých [různé druhy modelu typy](http://deviq.com/kinds-of-models/).
@@ -142,12 +142,12 @@ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = 
     {
       // work with the model
     }
-    // If we got this far, something failed, redisplay form
+    // At this point, something failed, redisplay form
     return View(model);
 }
 ```
 
-Rozhraní framework, bude zpracovávat ověřování data požadavku na klientovi i na serveru. Ověření logiku určenou na typech modelu, přidá se do vykreslené zobrazení jako nerušivý poznámky a je požadováno v prohlížeči s [jQuery ověření](https://jqueryvalidation.org/).
+Rozhraní framework zpracovává ověřování data požadavku na klientovi i na serveru. Ověření logiku určenou na typech modelu, přidá se do vykreslené zobrazení jako nerušivý poznámky a je požadováno v prohlížeči s [jQuery ověření](https://jqueryvalidation.org/).
 
 ### <a name="dependency-injection"></a>Vkládání závislostí
 
@@ -181,11 +181,11 @@ Můžete také použít aplikaci [vkládání závislostí v zobrazení souborů
 
 ### <a name="areas"></a>Oblasti
 
-[Oblasti](controllers/areas.md) poskytnout způsob, jak oddílu velké ASP.NET Core MVC webové aplikace do menších funkční seskupení. Oblast je efektivně strukturu MVC uvnitř aplikace. V projektu MVC logické součásti jako Model, Kontroleru a zobrazení jsou uchovány v různých složkách a konvence pojmenování aplikace MVC používá k vytvoření vztahu mezi těmito součástmi. Pro velké aplikace může být výhodné oddílu aplikace na samostatné vysoké úrovni oblasti funkcí. Pro instanci elektronické obchodování aplikace s více organizačních jednotek, jako je například checkout, fakturace a vyhledávání atd. Každý z těchto jednotek mají své vlastní logickou součástí zobrazení, řadiče a modely.
+[Oblasti](controllers/areas.md) poskytnout způsob, jak oddílu velké ASP.NET Core MVC webové aplikace do menších funkční seskupení. Oblast je strukturu MVC uvnitř aplikace. V projektu MVC logické součásti jako Model, Kontroleru a zobrazení jsou uchovány v různých složkách a konvence pojmenování aplikace MVC používá k vytvoření vztahu mezi těmito součástmi. Pro velké aplikace může být výhodné oddílu aplikace na samostatné vysoké úrovni oblasti funkcí. Pro instanci elektronické obchodování aplikace s více organizačních jednotek, jako je například checkout, fakturace a vyhledávání atd. Každý z těchto jednotek mají své vlastní logickou součástí zobrazení, řadiče a modely.
 
 ### <a name="web-apis"></a>Webová rozhraní API
 
-Kromě toho, představuje vynikající platformu pro tvorbu webů, má technologie ASP.NET MVC základní podpory pro vytváření webových rozhraní API. Můžete vytvářet služby, které mohou být využity širokou škálou klientů včetně prohlížečů a mobilních zařízení.
+Kromě toho, představuje vynikající platformu pro tvorbu webů, má technologie ASP.NET MVC základní podpory pro vytváření webových rozhraní API. Můžete vytvářet služby, které využity širokou škálou klientů včetně prohlížečů a mobilních zařízení.
 
 Rozhraní framework zahrnuje podporu pro vyjednávání obsahu HTTP s integrovanou podporu pro [formátování dat](models/formatting.md) jako XML nebo JSON. Zápis [vlastní formátování](advanced/custom-formatters.md) přidání podpory pro vlastní formáty.
 
@@ -213,7 +213,7 @@ Pomocí zobrazovací modul Razor můžete definovat [rozložení](views/layout.m
 
 Zobrazení MVC Razor můžete být silného typu podle modelu. Řadiče můžete předat povolení zobrazení tak, aby měl kontrolu typu a podporu technologie IntelliSense zobrazení silného typu modelu.
 
-Například následující zobrazení definuje model typu `IEnumerable<Product>`:
+Například následující zobrazení vykreslí modelu typu `IEnumerable<Product>`:
 
 ```cshtml
 @model IEnumerable<Product>

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 054b60206cafc3d6dd5775436995638d7f5700cf
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 8adc58d67f103e8d1fc8fe197cf392752bdaf660
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>Hostování v ASP.NET Core
 
@@ -41,7 +41,7 @@ Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspn
   * Proměnné prostředí.
   * Argumenty příkazového řádku.
 * Nakonfiguruje [protokolování](xref:fundamentals/logging/index) konzoly a ladění výstupu. Zahrnuje protokolování [filtrování protokolu](xref:fundamentals/logging/index#log-filtering) pravidla stanovená v části Konfigurace protokolování *appSettings.JSON určený* nebo *appsettings. { Prostředí} .json* souboru.
-* Když spustíte za služby IIS, umožňuje [integrační služby IIS](xref:publishing/iis). Konfiguruje základní cesta a portu server musí naslouchat na portu při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří proxy zpětného mezi službou IIS a Kestrel. Nakonfiguruje aplikaci taky [zaznamenat chyby při spuštění](#capture-startup-errors). Výchozí možnosti služby IIS najdete v tématu [IIS možnosti oddílu hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:publishing/iis#iis-options).
+* Když spustíte za služby IIS, umožňuje [integrační služby IIS](xref:host-and-deploy/iis/index). Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel. Nakonfiguruje aplikaci taky [zaznamenat chyby při spuštění](#capture-startup-errors). Výchozí možnosti služby IIS najdete v tématu [IIS možnosti oddílu hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#iis-options).
 
 *Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC. Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu. Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).
 
@@ -60,7 +60,7 @@ Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspn
 
 *Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC. Výchozí kořen obsahu se získávají pro `UseContentRoot` podle [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1). Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu. Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).
 
-Chcete-li použít jako reverzní proxy server služby IIS, volejte [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) jako součást sestavení hostitele. `UseIISIntegration`neprovede konfiguraci *server*, například [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) nepodporuje. `UseIISIntegration`Konfiguruje základní cesta a portu server musí naslouchat na portu při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) vytvořit proxy zpětného mezi Kestrel a služby IIS. Použití služby IIS s ASP.NET Core `UseKestrel` a `UseIISIntegration` musí být zadán. `UseIISIntegration`aktivuje pouze při spuštění za služby IIS nebo IIS Express. Další informace najdete v tématu [Úvod k modulu jádra ASP.NET](xref:fundamentals/servers/aspnet-core-module) a [odkazu na modul jádro ASP.NET konfigurace](xref:hosting/aspnet-core-module).
+Chcete-li použít jako reverzní proxy server služby IIS, volejte [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) jako součást sestavení hostitele. `UseIISIntegration`neprovede konfiguraci *server*, například [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) nepodporuje. `UseIISIntegration`Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) vytvořit reverzní proxy server mezi Kestrel a služby IIS. Použití služby IIS s ASP.NET Core `UseKestrel` a `UseIISIntegration` musí být zadán. `UseIISIntegration`aktivuje pouze při spuštění za služby IIS nebo IIS Express. Další informace najdete v tématu [Úvod k modulu jádra ASP.NET](xref:fundamentals/servers/aspnet-core-module) a [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module).
 
 Minimální implementace, které konfiguruje hostitele (a aplikace ASP.NET Core) zahrnuje určení serveru a konfiguraci kanálu žádostí aplikace:
 
@@ -266,7 +266,7 @@ Tato funkce není k dispozici v ASP.NET Core 1.x.
 
 ### <a name="prevent-hosting-startup"></a>Zabránit spuštění hostování
 
-Brání automatické načítání hostování spuštění sestavení, a to včetně hostování spuštění sestavení nakonfiguroval sestavení aplikace. V tématu [přidat funkce aplikací z externí sestavení pomocí IHostingStartup](xref:hosting/ihostingstartup) Další informace.
+Brání automatické načítání hostování spuštění sestavení, a to včetně hostování spuštění sestavení nakonfiguroval sestavení aplikace. V tématu [přidat funkce aplikací z externí sestavení pomocí IHostingStartup](xref:host-and-deploy/ihostingstartup) Další informace.
 
 **Klíč**: preventHostingStartup  
 **Typ**: *bool* (`true` nebo `1`)  
@@ -908,7 +908,7 @@ Další informace najdete v tématu [oznámení: Microsoft.Extensions.PlatformAb
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Publikovat do systému Windows pomocí služby IIS](../publishing/iis.md)
-* [Publikování do systému Linux pomocí Nginx](../publishing/linuxproduction.md)
-* [Publikování do systému Linux pomocí Apache](../publishing/apache-proxy.md)
-* [Hostitele ve službě Windows](xref:hosting/windows-service)
+* [Hostování ve Windows se službou IIS](xref:host-and-deploy/iis/index)
+* [Hostování v Linuxu na serveru Nginx](xref:host-and-deploy/linux-nginx)
+* [Hostování v Linuxu na serveru Apache](xref:host-and-deploy/linux-apache)
+* [Hostitele ve službě Windows](xref:host-and-deploy/windows-service)

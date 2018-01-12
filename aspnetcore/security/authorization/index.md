@@ -11,28 +11,30 @@ ms.assetid: 1abd456b-2199-4ba3-9698-3241e0bd4afc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/index
-ms.openlocfilehash: d74254c8f2cc3ee55f6842f9f952d7ab93fe7a03
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 13b4e1db7e3ae73a0cba49d214c5ffdb31601e5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="authorization-in-aspnet-core-simple-role-claims-based-and-custom"></a>Autorizace v ASP.NET Core: jednoduchý, na základě deklarace a vlastní role
 
 * [Úvod](introduction.md)
 
+* [Autorizace stránek Razor](xref:security/authorization/razor-pages-authorization)
+
 * [Jednoduché autorizace](simple.md)
 
-* [Autorizace podle rolí](roles.md)
+* [Ověřování na základě rolí](roles.md)
 
 * [Ověření na základě deklarace identity](claims.md)
 
-* [Autorizace uživatele na základě zásad](policies.md)
+* [Na základě zásad autorizace](policies.md)
 
 * [Vkládání závislostí v obslužné rutiny požadavku](dependencyinjection.md)
 
-* [Ověření na základě prostředků](resourcebased.md)
+* [Autorizace na základě prostředků](resourcebased.md)
 
-* [Ověření na základě zobrazení](views.md)
+* [Autorizace na základě zobrazení](views.md)
 
-* [Omezení identity s schéma](limitingidentitybyscheme.md)
+* [Omezení identity schématem](limitingidentitybyscheme.md)

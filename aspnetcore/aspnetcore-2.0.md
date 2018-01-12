@@ -11,11 +11,11 @@ ms.assetid: 08c9f457-9c24-40f9-a08b-47dc251e4cec
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-2.0
-ms.openlocfilehash: 98af3788652e87f6222551cb4a8e5427b312660c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f01f047f809e4eaa055a4204611b152c5db87f74
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Co je nového v technologii ASP.NET 2.0 jádra
 
@@ -28,7 +28,7 @@ Stránky Razor je nová funkce rozhraní ASP.NET MVC jádra, která vytváří k
 Další informace najdete v tématu Úvod a kurzu:
 
 * [Úvod do stránky Razor](xref:mvc/razor-pages/index)
-* [Začínáme s stránky Razor](xref:tutorials/razor-pages/razor-pages-start)
+* [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 
 ## <a name="aspnet-core-metapackage"></a>Metapackage ASP.NET Core
 
@@ -142,7 +142,7 @@ Informace o stavu funkcí jazyka C# 7.1 najdete v tématu [úložiště Roslyn G
 
 ## <a name="other-documentation-updates-for-20"></a>Další aktualizace dokumentace pro 2.0
 
-* [Vytvoření publikační profily pro Visual Studio a nástroje MSBuild, jak nasadit aplikace ASP.NET Core](xref:publishing/web-publishing-vs)
+* [Visual Studio publikační profily pro nasazení aplikace ASP.NET Core](xref:host-and-deploy/visual-studio-publish-profiles)
 * [Správa klíčů](xref:security/data-protection/implementation/key-management)
 * [Konfigurace ověřování Facebook](xref:security/authentication/facebook-logins)
 * [Konfigurace ověřování služby Twitter.](xref:security/authentication/twitter-logins)

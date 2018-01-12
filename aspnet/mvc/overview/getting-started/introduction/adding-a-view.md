@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: cf0bb7984ad3460f8784193f7bb407c9b0ad50db
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: d273eb5e99da6c6b7678e03b1a8973041113744c
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/09/2018
 ---
 <a name="adding-a-view"></a>Přidání zobrazení
 ====================
@@ -31,7 +31,7 @@ Aktuálně `Index` metoda vrátí řetězec s zprávu, která je pevně zakódov
 
 `Index` Metody popsané výše používá šablonu zobrazení pro generování odpovědi HTML do prohlížeče. Metody kontroleru (také označované jako [metody akce](http://rachelappel.com/asp.net-mvc-actionresults-explained)), například `Index` metody popsané výše, obecně vrátit [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (nebo třídy odvozené od [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx)), není primitivní typy, jako řetězec.
 
-Klikněte pravým tlačítkem *Views\HelloWorld* složky a klikněte na tlačítko **přidat**, pak klikněte na tlačítko **stránka zobrazení MVC 5 s (rozložení Razor)**.
+Klikněte pravým tlačítkem *Views\HelloWorld* složky a klikněte na tlačítko **přidat**, pak klikněte na tlačítko **stránka zobrazení MVC 5 s rozložením (Razor)**.
   
 ![](adding-a-view/_static/image1.png)   
   

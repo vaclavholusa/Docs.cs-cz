@@ -11,11 +11,11 @@ helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Serv
 ms.technology: aspnet
 keywords: "Jádro ASP.NET WebAPI, webového rozhraní API, REST, mac, systému macOS, HTTP, služby, služba HTTP"
 manager: wpickett
-ms.openlocfilehash: 6bbd5e332e395928d8f79888ecf190f7f59a4bbc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f84fa55baf6d808185a28db290d9e6d3c46bdac
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Vytvoření webové rozhraní API s jádro ASP.NET MVC a Visual Studio pro Mac
 
@@ -197,7 +197,7 @@ Odpověď [204 (ne obsahu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm
 ## <a name="next-steps"></a>Další kroky
 
 * [Směrování do akce Kontroleru](xref:mvc/controllers/routing)
-* Informace o nasazení rozhraní API najdete v tématu [publikování a nasazení](../publishing/index.md).
+* Informace o nasazení rozhraní API najdete v tématu [hostitele a nasazení](xref:host-and-deploy/index).
 * [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 * [Postman](https://www.getpostman.com/)
 * [Fiddler](https://www.telerik.com/download/fiddler)

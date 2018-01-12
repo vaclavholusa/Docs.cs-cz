@@ -11,11 +11,11 @@ ms.assetid: 50922cf1-ca58-4006-9236-99b7ff2dd0cf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/nano-server
-ms.openlocfilehash: 337cc69ef522452c17cdd6ea4a5e71cd122035dc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f30e911703d5c36d076872f91d4b2fafeefb91f5
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>Jádro ASP.NET se službou IIS na Nano Server
 
@@ -37,7 +37,7 @@ Existují tři způsoby snadno můžete vyzkoušet Nano Server. Pokud jste se p�
 
 V tomto kurzu použijeme 2. možnost předdefinovaných VHD Nano Server ze systému Windows Server 2016.
 
-Než budete pokračovat v tomto kurzu, budete potřebovat [publikovaná výstup](xref:hosting/directory-structure) stávající aplikace ASP.NET Core. Ujistěte se, vaše aplikace je sestavena pro běh **64-bit** procesu.
+Než budete pokračovat v tomto kurzu, budete potřebovat [publikovaná výstup](xref:host-and-deploy/directory-structure) stávající aplikace ASP.NET Core. Ujistěte se, vaše aplikace je sestavena pro běh **64-bit** procesu.
 
 ## <a name="setting-up-the-nano-server-instance"></a>Nastavení instance Nano Server
 
@@ -191,7 +191,7 @@ Příklad, jak *web.config* může vypadat, pokud *dotnet.exe* je **není** na C
 </configuration>
 ```
 
-Spusťte následující příkazy v této relaci vzdálené k vytvoření nového webu ve službě IIS pro publikovanou aplikaci na jiný port než výchozí web. Také budete muset otevřít tento port pro přístup k webu. Tento skript používá `DefaultAppPool` pro jednoduchost. Další požadavky na spuštění pod fond aplikací, najdete v části [fondy aplikací](xref:publishing/iis#application-pools).
+Spusťte následující příkazy v této relaci vzdálené k vytvoření nového webu ve službě IIS pro publikovanou aplikaci na jiný port než výchozí web. Také budete muset otevřít tento port pro přístup k webu. Tento skript používá `DefaultAppPool` pro jednoduchost. Další požadavky na spuštění pod fond aplikací, najdete v části [fondy aplikací](xref:host-and-deploy/iis/index#application-pools).
 
 ```PowerShell
 Import-module IISAdministration
@@ -205,4 +205,4 @@ New-NetFirewallRule -Name "AspNetCore Port 81 IIS" -DisplayName "Allow HTTP on T
 
 ## <a name="running-the-application"></a>Spuštění aplikace
 
-Publikovaná webová aplikace je dostupný v prohlížeči na `http://192.168.1.10:8000`. Pokud jste si nastavili protokolování, jak je popsáno v [vytvoření a přesměrování protokolu](xref:hosting/aspnet-core-module#log-creation-and-redirection), můžete zobrazit protokoly na *C:\PublishedApps\AspNetCoreSampleForNano\logs*.
+Publikovaná webová aplikace je dostupný v prohlížeči na `http://192.168.1.10:8000`. Pokud jste si nastavili protokolování, jak je popsáno v [vytvoření a přesměrování protokolu](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection), můžete zobrazit protokoly na *C:\PublishedApps\AspNetCoreSampleForNano\logs*.

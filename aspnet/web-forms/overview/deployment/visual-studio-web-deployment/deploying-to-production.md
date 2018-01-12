@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 2a8b165c149ceacba49a193c25e4a66a701ea0d6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c49e7f6925b1ca172642747c5052ba97d70d036
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do produkčního prostředí
 ====================
@@ -42,7 +42,7 @@ Pokud účet Azure nemáte, můžete si během několika minut vytvořit Bezplat
 ## <a name="create-a-staging-environment"></a>Vytvořit pracovní prostředí
 
 > [!NOTE]
-> Vzhledem k tomu, že byla zapsána v tomto kurzu, Azure App Service přidat novou funkci k automatizaci mnoha procesy kolem s pracovní a provozní prostředí. V tématu [nastavení přípravných prostředí pro webové aplikace v Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-staged-publishing/).
+> Vzhledem k tomu, že byla zapsána v tomto kurzu, Azure App Service přidat novou funkci k automatizaci mnoha procesy pro vytvoření pracovní a provozní prostředí. V tématu [nastavení přípravných prostředí pro webové aplikace v Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/).
 
 
 Jak je popsáno v [nasadit do tohoto kurzu testovací prostředí](deploying-to-iis.md), nejvíce spolehlivé testovací prostředí je webová stránka u poskytovatele hostingu, který má stejně jako webové pracoviště. V mnoha poskytovatelům hostingu museli byste zvážit výhody tohoto proti významné další náklady, ale v Azure můžete vytvořit další volné webové aplikace jako pracovní aplikace. Musíte taky databázi a další náklady pro tento přes nákladů na vaši produkční databázi bude mít buď none nebo minimální. V Azure platíte pro velikost úložiště databáze, které používáte, nikoli pro každou databázi, a množství dalšího úložiště, který budete používat při přípravě bude minimální.

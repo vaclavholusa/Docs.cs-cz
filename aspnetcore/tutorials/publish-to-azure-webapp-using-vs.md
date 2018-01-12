@@ -1,7 +1,7 @@
 ---
 title: "Publikování aplikace ASP.NET Core do Azure pomocí sady Visual Studio"
 author: rick-anderson
-description: 
+description: "Zjistěte, jak publikovat aplikaci ASP.NET Core Azure App Service pomocí sady Visual Studio."
 keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: fdd439a5e4fd41e72fd7a3c602183d4a4e9e0aa5
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: e8de630c4fa8cff5395f7246b91384d4725e4ca6
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/11/2018
 ---
 /en-nám
 
@@ -181,8 +181,7 @@ Po dokončení testování aplikace, přejděte na [portál Azure](https://porta
 
 ### <a name="next-steps"></a>Další kroky
 
-* [Průběžné nasazování do Azure pomocí sady Visual Studio a Git](../publishing/azure-continuous-deployment.md)
-
+* [Průběžné nasazování do Azure pomocí sady Visual Studio a Git](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
 
 ## <a name="additonal-resources"></a>Dalších prostředků
 

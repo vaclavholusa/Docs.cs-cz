@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1d1f551dbde5f3dd6e71808154c2e5885d588d7c
-ms.sourcegitcommit: 282f69e8dd63c39bde97a6d72783af2970d92040
+ms.openlocfilehash: 5eef9405c0c3d219755d7cffa5d45c3df45ddb5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="introduction-to-aspnet-core-module"></a>Úvod do modulu ASP.NET Core
 
@@ -54,7 +54,7 @@ ANCM má několik dalších funkcí také:
 
 ## <a name="how-to-use-ancm-in-aspnet-core-apps"></a>Jak používat ANCM v aplikacích ASP.NET Core
 
-Tato část obsahuje přehled procesu pro nastavení serveru služby IIS a ASP.NET Core aplikace. Podrobné pokyny najdete v tématu [publikování do služby IIS](../../publishing/iis.md).
+Tato část obsahuje přehled procesu pro nastavení serveru služby IIS a ASP.NET Core aplikace. Podrobné pokyny najdete v tématu [hostitele v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index).
 
 ### <a name="install-ancm"></a>Nainstalujte ANCM
 
@@ -107,7 +107,7 @@ V technologii ASP.NET Core 1.0, když zavoláte `UseUrls`, volání **před** za
 
 ### <a name="configure-ancm-options-in-webconfig"></a>Konfigurace možností ANCM v souboru Web.config.
 
-Konfigurace modulu jádra ASP.NET je uložená v *Web.config* soubor, který se nachází v kořenové složce aplikace. Nastavení v tomto souboru, přejděte na spuštění příkaz i jeho argumenty, které spustí vaše aplikace ASP.NET Core. Ukázkový kód Web.config a informace o možnostech konfigurace naleznete v tématu [odkazu na modul Konfigurace ASP.NET Core](../../hosting/aspnet-core-module.md).
+Konfigurace modulu jádra ASP.NET je uložená v *web.config* soubor, který se nachází v kořenové složce aplikace. Nastavení v tomto souboru, přejděte na spuštění příkaz i jeho argumenty, které spustí vaše aplikace ASP.NET Core. Pro ukázku *web.config* kód a pokyny k možnosti konfigurace, najdete v části [odkazu na modul Konfigurace ASP.NET Core](xref:host-and-deploy/aspnet-core-module).
 
 ### <a name="run-with-iis-express-in-development"></a>Spustit v vývoj službou IIS Express
 
@@ -125,5 +125,5 @@ Další informace naleznete v následujících materiálech:
 
 * [Ukázková aplikace pro tohoto článku](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample)
 * [ASP.NET Core modulu zdrojového kódu](https://github.com/aspnet/AspNetCoreModule)
-* [Konfigurace odkaz k modulu jádra ASP.NET](../../hosting/aspnet-core-module.md)
-* [Publikování do služby IIS](../../publishing/iis.md)
+* [Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
+* [Hostování ve Windows se službou IIS](xref:host-and-deploy/iis/index)

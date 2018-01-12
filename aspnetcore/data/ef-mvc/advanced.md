@@ -11,11 +11,11 @@ ms.assetid: 92a2986a-d005-4ff6-9559-6657fd466bb7
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: d63502a32e38eb192b40f21f5cd57d20048154e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c20ed37e1e54273929593dddc9fe1180f1492d6
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Pokročilá témata – Základní EF s kurz k ASP.NET MVC jádra (10 10)
 
@@ -192,7 +192,7 @@ Dokončení této série kurzů na použití Entity Framework Core v aplikaci AS
 
 Další informace o základní EF najdete v tématu [Entity Framework základní dokumentace](https://docs.microsoft.com/ef/core). Knihy je také k dispozici: [Entity Framework Core v akci](https://www.manning.com/books/entity-framework-core-in-action).
 
-Informace o tom, jak nasadit webovou aplikaci, až když jste sestavili najdete v tématu [publikování a nasazení](../../publishing/index.md).
+Informace o tom, jak nasadit webovou aplikaci najdete v tématu [hostitele a nasazení](xref:host-and-deploy/index).
 
 Informace o dalších témat souvisejících s ASP.NET MVC jádra, jako je například ověřování a autorizaci, najdete v článku [ASP.NET Core dokumentaci](https://docs.microsoft.com/aspnet/core/).
 

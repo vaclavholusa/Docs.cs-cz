@@ -11,11 +11,11 @@ ms.assetid: 1f402da8-1052-4970-9835-9f9f16a02dbc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/index
-ms.openlocfilehash: 8b42e65bb6121355120a6f4fbe8cd4d1fea153de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cbf18c6ec867fefec22980f3e3493562594ef72d
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="data-protection-in-aspnet-core-consumer-apis-configuration-extensibility-apis-and-implementation"></a>Ochrana dat v ASP.NET Core: rozhraní API pro příjemce, konfiguraci, rozšiřitelnost rozhraní API a implementace
 
@@ -23,19 +23,19 @@ ms.lasthandoff: 11/10/2017
 
 * [Začínáme s rozhraními API ochrany dat.](using-data-protection.md)
 
-* [Rozhraní API příjemce](consumer-apis/index.md)
+* [Rozhraní API příjemců](consumer-apis/index.md)
 
   * [Přehled rozhraní API příjemce](consumer-apis/overview.md)
 
   * [Účel řetězce](consumer-apis/purpose-strings.md)
 
-  * [Účel hierarchie a víceklientské prostředí](consumer-apis/purpose-strings-multitenancy.md)
+  * [Hierarchie účelů a víceklientská architektura](consumer-apis/purpose-strings-multitenancy.md)
 
   * [Hashování hesel](consumer-apis/password-hashing.md)
 
-  * [Omezení délky trvání chráněných datových částí](consumer-apis/limited-lifetime-payloads.md)
+  * [Omezení životnosti chráněných datových částí](consumer-apis/limited-lifetime-payloads.md)
 
-  * [Probíhá rušení ochrany datových částí, které byly odvolány jejíž klíče](consumer-apis/dangerous-unprotect.md)
+  * [Zrušení ochrany datových částí s odvolanými klíči](consumer-apis/dangerous-unprotect.md)
 
 * [Konfigurace](configuration/index.md)
 
@@ -43,25 +43,25 @@ ms.lasthandoff: 11/10/2017
 
   * [Výchozí nastavení](configuration/default-settings.md)
 
-  * [Široké zásady počítače](configuration/machine-wide-policy.md)
+  * [Zásady pro celý počítač](configuration/machine-wide-policy.md)
 
-  * [Scénáře využívající bez DI](configuration/non-di-scenarios.md)
+  * [Scénáře využívající DI](configuration/non-di-scenarios.md)
 
-* [Rozšiřitelnost rozhraní API](extensibility/index.md)
+* [Rozšiřující rozhraní API](extensibility/index.md)
 
-  * [Rozšiřitelnost kryptografie jádra](extensibility/core-crypto.md)
+  * [Rozšiřitelnost základní kryptografie](extensibility/core-crypto.md)
 
-  * [Rozšíření správy klíčů](extensibility/key-management.md)
+  * [Rozšiřitelnost správy klíčů](extensibility/key-management.md)
 
   * [Ostatní rozhraní API](extensibility/misc-apis.md)
 
 * [Implementace](implementation/index.md)
 
-  * [Podrobnosti o ověřené šifrování](implementation/authenticated-encryption-details.md)
+  * [Podrobnosti ověřeného šifrování](implementation/authenticated-encryption-details.md)
 
   * [Odvození podklíčů a ověřené šifrování](implementation/subkeyderivation.md)
 
-  * [Kontext hlavičky](implementation/context-headers.md)
+  * [Kontextová záhlaví](implementation/context-headers.md)
 
   * [Správa klíčů](implementation/key-management.md)
 
@@ -73,10 +73,10 @@ ms.lasthandoff: 11/10/2017
 
   * [Formát úložiště klíčů](implementation/key-storage-format.md)
 
-  * [Zprostředkovatelé ochrany dočasných dat](implementation/key-storage-ephemeral.md)
+  * [Zprostředkovatelé dočasné ochrany dat](implementation/key-storage-ephemeral.md)
 
 * [Kompatibilita](compatibility/index.md)
 
   * [Sdílení souborů cookie mezi aplikacemi](compatibility/cookie-sharing.md)
 
-  * [Nahrazení <machineKey> technologie ASP.NET](compatibility/replacing-machinekey.md)
+  * [Nahrazení <machineKey> v ASP.NET](compatibility/replacing-machinekey.md)

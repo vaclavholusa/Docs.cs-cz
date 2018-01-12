@@ -11,11 +11,11 @@ ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: dde0b5673c9885db2fecbb24b384752e5ddf70eb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e07634a6d7ad97bf8735029b5c28d6935b71eb52
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware v ASP.NET Core přepisování adres URL
 
@@ -120,7 +120,7 @@ Původní žádosti o pomocí `AddRedirectToHttpsPermanent`:`/secure`
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_redirect_to_https_permanent.png)
 
 ### <a name="url-rewrite"></a>Přepisování adres URL
-Použití `AddRewrite` k vytvoření pravidel pro přepisování adres URL. První parametr obsahuje vaše regulární výraz k porovnání na příchozí cestě adresy URL. Druhý parametr je náhradní řetězec. Třetí parametr `skipRemainingRules: {true|false}`, určuje pro middleware, zda se má vynechat přepisování další pravidla, pokud aktuální pravidlo se použije.
+Použití `AddRewrite` k vytvoření pravidla pro přepisování adres URL. První parametr obsahuje vaše regulární výraz k porovnání na příchozí cestě adresy URL. Druhý parametr je náhradní řetězec. Třetí parametr `skipRemainingRules: {true|false}`, určuje pro middleware, zda se má vynechat přepisování další pravidla, pokud aktuální pravidlo se použije.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -245,7 +245,7 @@ Původní žádost:`/iis-rules-rewrite/1234`
 
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_iis_url_rewrite.png)
 
-Pokud máte aktivní přepisování modulu IIS s nakonfigurovaná pravidla úrovni serveru, které by ovlivnit aplikace nežádoucího způsoby, můžete zakázat modul přepisování služby IIS pro aplikaci. Další informace najdete v tématu [moduly IIS zakázání](xref:hosting/iis-modules#disabling-iis-modules).
+Pokud máte aktivní přepisování modulu IIS s nakonfigurovaná pravidla úrovni serveru, které by ovlivnit aplikace nežádoucího způsoby, můžete zakázat modul přepisování služby IIS pro aplikaci. Další informace najdete v tématu [moduly IIS zakázání](xref:host-and-deploy/iis/modules#disabling-iis-modules).
 
 #### <a name="unsupported-features"></a>Nepodporované funkce
 

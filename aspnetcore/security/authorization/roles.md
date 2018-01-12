@@ -11,11 +11,11 @@ ms.assetid: 5e014da1-8bc0-409b-951a-88b92c661fdf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/roles
-ms.openlocfilehash: 649b21d99c742843534748b0ba9d7b7b22483a62
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 26babef1a296aaa1fa11f36d30c4d911d73808ce
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="role-based-authorization"></a>Autorizace podle rolí
 
@@ -27,7 +27,7 @@ Při vytvoření identity může patřit do jedné nebo více rolí. Například
 
 Kontroly autorizace na základě rolí jsou deklarativní&mdash;vývojář vloží je v rámci svůj kód proti kontroler nebo akce v kontroleru, určení rolí, které má aktuální uživatel musí být členem skupiny k přístupu k požadovanému zdroji.
 
-Například následující kód omezí přístup pro všechny akce na `AdministrationController` uživatelům, kteří jsou členy `Administrator` skupiny.
+Například následující kód omezuje přístup na všechny akce na `AdministrationController` uživatelům, kteří jsou členy `Administrator` role:
 
 ```csharp
 [Authorize(Roles = "Administrator")]

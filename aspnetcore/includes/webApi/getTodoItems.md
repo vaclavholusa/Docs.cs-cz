@@ -39,7 +39,7 @@ Později v tomto kurzu I zobrazí, jak lze zobrazit odpověď HTTP s [Postman](h
 
 [!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=TodoController&highlight=3)]
 
-* Nahraďte název kontroleru, což je název třídy kontroleru minus příponou "Controller" "[Controller]". Tato ukázka je název třídy kontroleru **Todo**řadiče a názvu kořenové je "úkolů". ASP.NET Core [směrování](xref:mvc/controllers/routing) není velká a malá písmena.
+* Nahraďte `[controller]` název kontroleru, což je název třídy kontroleru minus příponou "Controller". Tato ukázka je název třídy kontroleru **Todo**řadiče a názvu kořenové je "úkolů". ASP.NET Core [směrování](xref:mvc/controllers/routing) není velká a malá písmena.
 * Pokud `[HttpGet]` atribut má šablonu trasy (například `[HttpGet("/products")]`, která připojení k cestě. Tato ukázka nepoužívá šablony. V tématu [atribut směrování s atributy Http [akce]](xref:mvc/controllers/routing#attribute-routing-with-httpverb-attributes) Další informace.
 
 V `GetById` metoda:

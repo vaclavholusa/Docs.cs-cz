@@ -10,23 +10,23 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/index
-ms.openlocfilehash: 4c653d83569bcd218710ad276e154c6b8f89963c
-ms.sourcegitcommit: 747a7fddf7a4c7ef5f3e2a0912c411ee647ee203
+ms.openlocfilehash: 955634b9c3d207a7b0026de76e37b527607f4775
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="migration-to-aspnet-core-including-aspnet-4x-aspnet-core-2"></a>Migrace na jádro ASP.NET, včetně ASP.NET 4.x, ASP.NET Core 2
 
 ### <a name="aspnet-to-aspnet-core-1x"></a>ASP.NET na ASP.NET základní 1.x
 *   [Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC](xref:migration/mvc)
-*   [Migrace konfigurace](xref:migration/configuration)
+*   [Migruje konfiguraci](xref:migration/configuration)
 *   [Migrace ověřování a identita](xref:migration/identity)
 *   [Migrace z rozhraní ASP.NET Web API](xref:migration/webapi)
-*   [Migrace modulů HTTP k middlewaru.](xref:migration/http-modules)
+*   [Migrovat vytváření modulů HTTP v middlewaru.](xref:migration/http-modules)
 
 ### <a name="aspnet-to-aspnet-core-20"></a>Jádro ASP.NET na technologii ASP.NET 2.0
-* [Jádro ASP.NET na technologii ASP.NET 2.0](xref:migration/proper-to-2x/index)
+* [Z ASP.NET do ASP.NET Core 2.0.x](xref:migration/proper-to-2x/index)
 
 ### <a name="aspnet-core-1x-to-20"></a>ASP.NET základní 1.x na 2.0
 *   [Migrace z ASP.NET Core 1.x na 2.0](xref:migration/1x-to-2x/index)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 6fc8631c323dbb82f4f33b78128ba8de8bc9bfdd
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: b016231975bf8d359f4c390b0b478edc383117d4
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/10/2018
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>Představení technologie ASP.NET Web Pages – aktualizace dat databáze
 ====================
@@ -308,7 +308,7 @@ V dalším kurzu se zobrazí, jak odstranit záznam film.
 
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](../introducing-razor-syntax-c.md)
+- [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](../../getting-started/introducing-razor-syntax-c.md)
 - [Prohlášení aktualizace SQL](http://www.w3schools.com/sql/sql_update.asp) na webu W3Schools
 
 >[!div class="step-by-step"]

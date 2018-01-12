@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 6281d6ba254670b111964715410fc0694ae4d149
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: b662e66ab5b4c46d1a8d10eb7c38bf4064b5b927
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Konfigurace aplikace ASP.NET Core
 
@@ -375,7 +375,7 @@ Left: 1988
 
 ## <a name="the-webconfig-file"></a>V souboru web.config
 
-A *web.config* soubor je povinný, pokud je hostitelem aplikace v IIS a služby IIS Express. *soubor Web.config* zapne AspNetCoreModule ve službě IIS spusťte aplikaci. Nastavení v *web.config* povolit AspNetCoreModule ve službě IIS spusťte aplikaci a nakonfigurovat další nastavení služby IIS a modulů. Pokud používáte Visual Studio a odstranit *web.config*, Visual Studio vytvoří novou.
+A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Express. Nastavení v *web.config* povolit [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) spusťte aplikaci a nakonfigurovat další nastavení služby IIS a modulů. Pokud *web.config* soubor není přítomen a zahrnuje soubor projektu `<Project Sdk="Microsoft.NET.Sdk.Web">`, publikování projektu vytvoří *web.config* souboru v publikované výstup ( *publikování* složku). Další informace najdete v tématu [hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#webconfig).
 
 ## <a name="additional-notes"></a>Další poznámky
 
@@ -389,7 +389,7 @@ A *web.config* soubor je povinný, pokud je hostitelem aplikace v IIS a služby 
 
 * [Možnosti](xref:fundamentals/configuration/options)
 * [Práce s několika prostředí](xref:fundamentals/environments)
-* [Bezpečné úložiště tajné klíče aplikace během vývoje](xref:security/app-secrets)
+* [Bezpečné úložiště tajných částí aplikace při vývoji](xref:security/app-secrets)
 * [Hostování v ASP.NET Core](xref:fundamentals/hosting)
 * [Vkládání závislostí](xref:fundamentals/dependency-injection)
-* [Poskytovatel konfigurace služby Azure Key Vault](xref:security/key-vault-configuration)
+* [Zprostředkovatel konfigurace služby Azure Key Vault](xref:security/key-vault-configuration)

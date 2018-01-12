@@ -5,17 +5,17 @@ description: "Informace o optimalizaci statické prostředky ve webové aplikaci
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/01/2017
+ms.date: 01/10/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: c271b7ef386bacedbd45fbe9f62c9c486db55b36
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: ac8e7fee7600dabb8f4970b5bf87ad7a57ebf17f
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="bundling-and-minification"></a>Sdružování a minimalizace
 
@@ -75,7 +75,7 @@ Projektu šablony MVC a stránky syntaxe Razor poskytují *bundleconfig.json* ko
 
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig.json)]
 
-Možnosti sady:
+Možnosti konfigurace patří:
 
 * `outputFileName`: Název souboru kompletu na výstup. Může obsahovat relativní cestu z *bundleconfig.json* souboru. **požadované**
 * `inputFiles`: Pole soubory sady společně. Jedná se o relativní cesty k souboru konfigurace. **volitelné**, * prázdnou hodnotu výsledkem prázdná výstupního souboru. [režim expanze](http://www.tldp.org/LDP/abs/html/globbingref.html) vzory jsou podporovány.
@@ -91,6 +91,9 @@ Možnosti sady:
 ## <a name="build-time-execution-of-bundling-and-minification"></a>Sestavení – doba provádění sdružování a minimalizace
 
 [BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) balíček NuGet umožňuje provádění sdružování a minimalizace v čase vytvoření buildu. Vloží balíček [cíle MSBuild](/visualstudio/msbuild/msbuild-targets) kterého spouští v sestavení a vyčištění čas. *Bundleconfig.json* analýzy souboru procesem sestavení nevytvořila výstupní soubory na základě definovaných konfigurace.
+
+> [!NOTE]
+> BuildBundlerMinifier patří do komunitou vytvářený projektu na Githubu, pro které společnost Microsoft poskytuje bez podpory. Podává problémy by měl být [zde](https://github.com/madskristensen/BundlerMinifier/issues).
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
@@ -119,7 +122,7 @@ Vyčistěte projekt. Tímto se zobrazí v okně výstupu:
 ========== Clean: 1 succeeded, 0 failed, 0 skipped ==========
 ```
 
-# <a name="net-core-clitabnetcore-cli"></a>[.NET core rozhraní příkazového řádku](#tab/netcore-cli) 
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli) 
 
 Přidat *BuildBundlerMinifier* balíčku do projektu:
 
@@ -175,6 +178,9 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 Je možné spustit úlohy sdružování a minimalizace na základě ad hoc bez vytváření projektu. Přidat [BundlerMinifier.Core](https://www.nuget.org/packages/BundlerMinifier.Core/) balíček NuGet do projektu:
 
 [!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=10)]
+
+> [!NOTE]
+> BundlerMinifier.Core patří do komunitou vytvářený projektu na Githubu, pro které společnost Microsoft poskytuje bez podpory. Podává problémy by měl být [zde](https://github.com/madskristensen/BundlerMinifier/issues).
 
 Tento balíček rozšiřuje rozhraní příkazového řádku .NET Core zahrnout *dotnet sady* nástroj. V okně konzoly Správce balíčků (PMC) nebo v příkazovém řádku, mohou být provedeny následující příkaz:
 
@@ -244,6 +250,9 @@ Existují případy, ve kterých aplikace sdružování a minimalizace pracovní
 
 Visual Studio [instalující další produkty & Minifikátor](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier) rozšíření zpracovává převod Gulp.
 
+> [!NOTE]
+> Rozšíření instalující další produkty & Minifikátor patří do komunitou vytvářený projektu na Githubu, pro které společnost Microsoft poskytuje bez podpory. Podává problémy by měl být [zde](https://github.com/madskristensen/BundlerMinifier/issues).
+
 Klikněte pravým tlačítkem myši *bundleconfig.json* soubor v Průzkumníku řešení a vyberte **instalující další produkty & Minifikátor** > **převést na Gulp...** :
 
 ![Převést na Gulp položky kontextové nabídky](../client-side/bundling-and-minification/_static/convert-to-gulp.png)
@@ -308,7 +317,7 @@ Průzkumník Spouštěče úloh sady Visual Studio lze případně vázat Gulp �
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Pomocí Gulp](xref:client-side/using-gulp)
-* [Pomocí Grunt](xref:client-side/using-grunt)
+* [Použití nástroje Gulp](xref:client-side/using-gulp)
+* [Použití nástroje Grunt](xref:client-side/using-grunt)
 * [Práce s několika prostředí](xref:fundamentals/environments)
 * [Pomocníci značky](xref:mvc/views/tag-helpers/intro)

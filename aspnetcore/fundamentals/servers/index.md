@@ -11,11 +11,11 @@ ms.assetid: dba74f39-58cd-4dee-a061-6d15f7346959
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/index
-ms.openlocfilehash: 04dee100dff91f7868175ff4be01156787e13e81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b149cb316e4266e67d846b8ef8c2c7f2a25ded5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implementace webového serveru v ASP.NET Core
 
@@ -79,11 +79,11 @@ Při použití služby IIS nebo IIS Express jako reverzní proxy server pro ASP.
 
 ### <a name="nginx-with-kestrel"></a>Nginx s Kestrel
 
-Informace o tom, jak používat Nginx v systému Linux jako reverzní proxy server pro Kestrel najdete v tématu [publikovat do provozního prostředí Linux](../../publishing/linuxproduction.md).
+Informace o tom, jak používat Nginx v systému Linux jako reverzní proxy server pro Kestrel najdete v tématu [hostitele v systému Linux s Nginx](xref:host-and-deploy/linux-nginx).
 
 ### <a name="apache-with-kestrel"></a>Apache s Kestrel
 
-Informace o tom, jak používat Apache v systému Linux jako reverzní proxy server pro Kestrel najdete v tématu [pomocí Apache Webový Server jako reverzní proxy server](../../publishing/apache-proxy.md).
+Informace o tom, jak používat Apache v systému Linux jako reverzní proxy server pro Kestrel najdete v tématu [hostitele v systému Linux s Apache](xref:host-and-deploy/linux-apache).
 
 ## <a name="httpsys"></a>Ovladač HTTP.sys
 
@@ -131,16 +131,16 @@ Další informace naleznete v následujících materiálech:
 
 - [Kestrel](kestrel.md)
 - [Kestrel službou IIS](aspnet-core-module.md)
-- [Kestrel s Nginx](../../publishing/linuxproduction.md)
-- [Kestrel s Apache](../../publishing/apache-proxy.md)
-- [Ovladač HTTP.sys](httpsys.md)
+- [Hostování v Linuxu na serveru Nginx](xref:host-and-deploy/linux-nginx)
+- [Hostování v Linuxu na serveru Apache](xref:host-and-deploy/linux-apache)
+- [HTTP.sys](httpsys.md)
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
 - [Kestrel](kestrel.md)
 - [Kestrel službou IIS](aspnet-core-module.md)
-- [Kestrel s Nginx](../../publishing/linuxproduction.md)
-- [Kestrel s Apache](../../publishing/apache-proxy.md)
+- [Hostování v Linuxu na serveru Nginx](xref:host-and-deploy/linux-nginx)
+- [Hostování v Linuxu na serveru Apache](xref:host-and-deploy/linux-apache)
 - [WebListener](weblistener.md)
 
 ---

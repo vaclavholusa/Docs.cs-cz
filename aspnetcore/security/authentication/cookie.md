@@ -11,11 +11,11 @@ ms.assetid: 2bdcbf95-8d9d-4537-a4a0-a5ee439dcb62
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/cookie
-ms.openlocfilehash: 6279d3b4ac3be102449089dc66eeeb0495cfc4c0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee660667251ec4a64f2b3e83f39214e9defcea03
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>Pomocí souboru Cookie ověřování bez ASP.NET Core Identity
 
@@ -39,7 +39,7 @@ V `ConfigureServices` metoda, vytvořit službu Middleware ověřování s `AddA
 
 `AuthenticationScheme`Předaný `AddAuthentication` nastaví výchozí schéma ověřování pro aplikaci. `AuthenticationScheme`je užitečné, když je spuštěno více instancí ověřování souborů cookie a vy chcete [autorizaci s konkrétní schéma](xref:security/authorization/limitingidentitybyscheme). Nastavení `AuthenticationScheme` k `CookieAuthenticationDefaults.AuthenticationScheme` poskytuje hodnotu "Soubory cookie" pro schéma. Můžete zadat libovolnou hodnotu řetězce, která rozlišuje schéma.
 
-V `Configure` metoda, použijte `UseAuthentication` metoda k vyvolání Middleware ověřování, který nastaví `HttpContext.User` vlastnost. Volání `UseAuthentication` metoda před voláním `AddMvcWithDefaultRoute` v aplikaci MVC nebo `AddMvc` v aplikaci pro stránky Razor:
+V `Configure` metoda, použijte `UseAuthentication` metoda k vyvolání Middleware ověřování, který nastaví `HttpContext.User` vlastnost. Volání `UseAuthentication` metoda před voláním `UseMvcWithDefaultRoute` nebo `UseMvc`:
 
 [!code-csharp[Main](cookie/sample/Startup.cs?name=snippet2)]
 
@@ -434,4 +434,4 @@ await HttpContext.Authentication.SignInAsync(
 ## <a name="see-also"></a>Viz také
 
 * [Změny auth 2.0 nebo migrace oznámení](https://github.com/aspnet/Announcements/issues/262)
-* [Omezení identity s schéma](xref:security/authorization/limitingidentitybyscheme)
+* [Omezení identity schématem](xref:security/authorization/limitingidentitybyscheme)

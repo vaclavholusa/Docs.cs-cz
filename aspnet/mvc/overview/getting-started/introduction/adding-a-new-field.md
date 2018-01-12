@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: c10eb343259b58052fd1f2411dbdc2196eafc858
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 7427b4f7c6b7a00fe795053aac0f612471a163cd
+ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/12/2018
 ---
 <a name="adding-a-new-field"></a>Přidání nové pole
 ====================
@@ -161,7 +161,7 @@ Sestavte řešení a pak otevřete **Konzola správce balíčků** okna a zadejt
 
 `add-migration` Příkaz zjistí migraci framework sloužící ke zkoumání aktuálního modelu film s aktuální schéma film databáze a vytvořit nezbytného kódu migrace databáze do nového modelu. Název *hodnocení* libovolný a slouží k názvu souboru migrace. Je užitečné pro krok migrace smysluplný název.
 
-Po dokončení tohoto příkazu Visual Studio otevře soubor třídy, který definuje nový `DbMIgration` odvozené třídy a v `Up` metoda vidíte kód, který vytvoří nový sloupec.
+Po dokončení tohoto příkazu Visual Studio otevře soubor třídy, který definuje nový `DbMigration` odvozené třídy a v `Up` metoda vidíte kód, který vytvoří nový sloupec.
 
 [!code-csharp[Main](adding-a-new-field/samples/sample11.cs)]
 

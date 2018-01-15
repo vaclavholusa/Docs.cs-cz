@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: 6bd10376520a55c316a54172a70d5ae7e74db5b4
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: ccde4209d121918e0160368806095111505835b9
+ms.sourcegitcommit: 77b8025c30ec2fd46d85ee2a2b497c44435d3009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-Následující není úplný seznam chyb. Podrobná chybová zpráva by dojít k chybě, není zde uvedeny, nechejte prosím komentáře níže v části.
+Následující není úplný seznam chyb. Pokud dojde k chybě, zde nejsou uvedeny [otevřete nový problém](https://github.com/aspnet/Docs/issues/new) s podrobné pokyny k tomu chybu reprodukovat.
 
 ## <a name="installer-unable-to-obtain-vc-redistributable"></a>Instalační program nemohl získat VC ++ Redistributable
 

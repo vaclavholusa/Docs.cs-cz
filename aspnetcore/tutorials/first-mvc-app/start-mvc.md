@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 4b86eb22e367d2305b7995421aec6f37008c5637
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72852678a296107e6a2a146ed2324335a6e870ee
+ms.sourcegitcommit: 77b8025c30ec2fd46d85ee2a2b497c44435d3009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-visual-studio"></a>Začínáme s ASP.NET MVC jádra a sady Visual Studio
 
@@ -96,7 +96,7 @@ Klepněte na **F5** a spusťte aplikaci v režimu ladění nebo **Ctrl + F5** v 
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->
 ![spuštění aplikace](start-mvc/_static/1.png)
 
-* Visual Studio spustí [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) a spustí aplikace. Všimněte si, že se zobrazí na panelu Adresa `localhost:port#` a není něco jako `example.com`. Je to způsobeno `localhost` je standardní název hostitele místního počítače. Když Visual Studio vytvoří webový projekt, náhodný port se používá pro webový server. Na obrázku výše je číslo portu 5 000. Při spuštění aplikace se zobrazí jiné číslo portu.
+* Visual Studio spustí [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) a spustí aplikace. Všimněte si, že se zobrazí na panelu Adresa `localhost:port#` a není něco jako `example.com`. Je to způsobeno `localhost` je standardní název hostitele místního počítače. Když Visual Studio vytvoří webový projekt, náhodný port se používá pro webový server. Na obrázku výše je číslo portu 5 000. Adresu URL v prohlížeči zobrazí `localhost:5000`. Při spuštění aplikace se zobrazí jiné číslo portu.
 * Spuštění aplikace s **Ctrl + F5** (režim bez ladění) umožňuje provádět změny kódu, uložte soubor, aktualizujte stránku prohlížeče a podívejte se změny kódu. Celá řada vývojářů dávají přednost používání režimu bez ladění k rychlému spusťte aplikaci a zobrazit změny.
 * Můžete spustit aplikaci v ladění nebo režim bez ladění z **ladění** položky nabídky:
 
@@ -115,4 +115,4 @@ Pokud byla spuštěna v režimu ladění, klepněte na **Shift + F5** Zastavit l
 V další části tohoto kurzu jsme vám další informace o MVC a zahájit zápis nějaký kód.
 
 >[!div class="step-by-step"]
-[Další](adding-controller.md)  
+[Next](adding-controller.md)  

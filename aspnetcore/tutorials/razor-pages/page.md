@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/page
-ms.openlocfilehash: e42e7e469e411d2d4bc1bd1b3a3995a77c355ebd
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 599894c301db3412d7ff23c0fb58fd8799a9588f
+ms.sourcegitcommit: bc723b483182fbcbf8c4c7098f70443662076905
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="scaffolded-razor-pages-in-aspnet-core"></a>Vygenerované Razor stránky v ASP.NET Core
 
@@ -26,12 +26,32 @@ V tomto kurzu prozkoumá stránky Razor vytvořené generování uživatelského
 
 ## <a name="the-create-delete-details-and-edit-pages"></a>Vytvořit, odstranit, podrobnosti a upravit stránky.
 
-Zkontrolujte *Pages/Movies/Index.cshtml.cs* souboru kódu na pozadí:[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs)]
+Zkontrolujte *Pages/Movies/Index.cshtml.cs* Model stránky:[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs)]
 
 Stránky Razor jsou odvozeny od `PageModel`. Podle konvence `PageModel`-odvozené třídy se nazývá `<PageName>Model`. Používá konstruktoru [vkládání závislostí](xref:fundamentals/dependency-injection) přidat `MovieContext` na stránku. Všechny vygenerované stránky postupujte podle tohoto vzoru. V tématu [asynchronní kód](xref:data/ef-rp/intro#asynchronous-code) Další informace o asynchronní programing s platformou Entity Framework.
 
-Po odeslání žádosti pro stránku, `OnGetAsync` metoda vrátí seznam hodnot filmy na stránku Razor. `OnGetAsync`nebo `OnGet` nazývá na stránce Razor k chybě při inicializaci stavu pro stránku. V takovém případě `OnGetAsync` získá seznam filmy k zobrazení.
+Po odeslání žádosti pro stránku, `OnGetAsync` metoda vrátí seznam hodnot filmy na stránku Razor. `OnGetAsync`nebo `OnGet` nazývá na stránce Razor k chybě při inicializaci stavu pro stránku. V takovém případě `OnGetAsync` získá seznam filmy a zobrazí je. 
 
+Když `OnGet` vrátí `void` nebo `OnGetAsync` vrátí`Task`, žádný návratový metoda se používá. Pokud je návratový typ `IActionResult` nebo `Task<IActionResult>`, je třeba zadat příkaz return. Například *Pages/Movies/Create.cshtml.cs* `OnPostAsync` metoda:
+
+<!-- TODO - replace with snippet
+[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
+ -->
+
+```csharp
+public async Task<IActionResult> OnPostAsync()
+{
+    if (!ModelState.IsValid)
+    {
+        return Page();
+    }
+
+    _context.Movie.Add(Movie);
+    await _context.SaveChangesAsync();
+
+    return RedirectToPage("./Index");
+}
+```
 Zkontrolujte *Pages/Movies/Index.cshtml* Razor stránky:
 
 [!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml)]

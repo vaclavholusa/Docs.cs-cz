@@ -2,7 +2,7 @@
 title: "Práce s SQL Server LocalDB a ASP.NET Core"
 author: rick-anderson
 description: "Vysvětluje práci s SQL Server LocalDB a ASP.NET Core."
-keywords: "ASP.NET Core, stránky Razor, Razor, MVC, SQL, databáze LocalDB"
+keywords: ASP.NET Core,Razor Pages,Razor,MVC,SQL,LocalDB
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 1e6ea093317527eecd5909449ac1973ca13cfc32
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: a807e4c8395a5cdd93544ca08816df3441969c03
+ms.sourcegitcommit: bc723b483182fbcbf8c4c7098f70443662076905
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="working-with-sql-server-localdb-and-aspnet-core"></a>Práce s SQL Server LocalDB a ASP.NET Core
 
@@ -22,7 +22,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Audette Jan](https://t
 
 `MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi. Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=6-7)]
+[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=7-8)]
 
 ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čtení `ConnectionString`. Pro místní vývoj, získá připojovací řetězec z *appSettings.JSON určený* souboru:
 
@@ -30,7 +30,7 @@ ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čten
 
 Když nasadíte aplikaci k testu nebo produkčním serveru, můžete použít proměnné prostředí nebo jiný přístup k nastavení připojovacího řetězce k skutečné systému SQL Server. V tématu [konfigurace](xref:fundamentals/configuration/index) Další informace.
 
-## <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
+## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
 LocalDB je Odlehčená verze SQL serveru Express databázového stroje je cílová pro vývoj programu. LocalDB spustí na vyžádání a běží v uživatelském režimu, takže není žádná komplexní konfigurace. Ve výchozím nastavení, vytvoří databáze LocalDB "\*.mdf" soubory *C: či uživatelů nebo\<uživatele\>*  adresáře.
 

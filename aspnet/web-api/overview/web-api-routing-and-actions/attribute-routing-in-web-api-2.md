@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: ad44ee525601f308498967159e964aa41a2ce00c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c563f566b8456b63ffe0a3c4876432c60a19e89
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/17/2018
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Atribut směrování v rozhraní ASP.NET Web API 2
 ====================
@@ -130,12 +130,12 @@ Všechny metody kontroleru, které nemají atribut trasy používat založené n
 
 Webové rozhraní API také vybere akce založené na metodě HTTP požadavku (GET, POST atd.). Ve výchozím nastavení hledá webového rozhraní API velká a malá písmena shody s začátek metoda názvu kontroleru. Například metoda kontroleru s názvem `PutCustomers` odpovídá požadavek HTTP PUT.
 
-Touto konvencí můžete přepsat pomocí architekturu – metoda s jakoukoli následující atributy:
+Touto konvencí můžete přepsat pomocí architekturu metodu s jakoukoli následující atributy:
 
 - **[HttpDelete]**
-- **Třídy [MetadataExchangeClientMode]**
+- **[HttpGet]**
 - **[HttpHead]**
-- **[Httpoptions měl]**
+- **[HttpOptions]**
 - **[HttpPatch]**
 - **[HttpPost]**
 - **[HttpPut]**
@@ -182,8 +182,8 @@ Následující tabulka uvádí omezení, které jsou podporovány.
 | --- | --- | --- |
 | Alpha | Odpovídá velká nebo malá písmena latinky znaky (a-z, A-Z) | {x: alpha} |
 | bool | Odpovídá logickou hodnotu. | {x: bool} |
-| Data a času | Odpovídá **data a času** hodnotu. | {x: datetime} |
-| decimal | Odpovídá desítkovou hodnotu. | {x: decimal} |
+| Data a času | Odpovídá **data a času** hodnotu. | {x:datetime} |
+| decimal | Odpovídá desítkovou hodnotu. | {x:decimal} |
 | double | Odpovídá 64bitová hodnota s plovoucí desetinnou čárkou. | {x: double} |
 | float | Odpovídá 32bitovou hodnotu s plovoucí desetinnou čárkou. | {x: float} |
 | Identifikátor GUID | Odpovídá hodnota identifikátoru GUID. | {x: guid} |
@@ -192,10 +192,10 @@ Následující tabulka uvádí omezení, které jsou podporovány.
 | long | Odpovídá hodnotě 64bitové celé číslo. | {x: dlouho} |
 | max | Odpovídá celé číslo s maximální hodnotou. | {x: max(10)} |
 | hodnota MaxLength | Odpovídá řetězec s maximální délkou. | {x: maxlength(10)} |
-| min | Odpovídá celé číslo s minimální hodnotou. | {x: min(10)} |
+| min | Odpovídá celé číslo s minimální hodnotou. | {x:min(10)} |
 | MinLength | Odpovídá řetězci s minimální délkou. | {x: minlength(10)} |
 | range | Odpovídá celé číslo v rozsahu hodnot. | {x: range(10,50)} |
-| regulární výraz | Odpovídá regulárnímu výrazu. | {x: regex(^\d{3}-\d{3}-\d{4}$)} |
+| regex | Odpovídá regulárnímu výrazu. | {x:regex(^\d{3}-\d{3}-\d{4}$)} |
 
 Všimněte si některá omezení, jako například &quot;min&quot;, trvat argumenty v závorkách. Můžete použít více omezení pro parametr oddělené dvojtečkou.
 
@@ -272,7 +272,7 @@ Tyto trasy seřazeni následujícím způsobem.
 1. objednávky nebo podrobnosti
 2. objednávky nebo {id}
 3. objednávky nebo {JménoZákazníka}
-4. objednávky nebo {\*datum}
+4. orders/{\*date}
 5. objednávky / čekající na vyřízení
 
 Všimněte si, že "Podrobnosti" je literál segment a se zobrazuje před "{id}, ale"čekající na vyřízení"zobrazí poslední, protože **RouteOrder** vlastnost je 1. (Tento příklad předpokládá existuje jsou odběratelé s názvem "Podrobnosti" nebo "čeká na vyřízení". Obecně platí pokuste se vyhnout nejednoznačný trasy. V tomto příkladu lepší šablona trasy pro `GetByCustomer` je "zákazníkům / {JménoZákazníka}")

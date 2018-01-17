@@ -5,22 +5,22 @@ description: "Použijte rozhraní API konfigurace pro konfiguraci aplikace ASP.N
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/01/2017
+ms.date: 1/11/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: b662e66ab5b4c46d1a8d10eb7c38bf4064b5b927
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 0f8618898089418f709506aee5eb013f983dc294
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Konfigurace aplikace ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [označit Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [ADAM Roth](https://github.com/danroth27), a [Luke Latham](https://github.com/guardrex)
 
-Rozhraní API konfigurace poskytuje způsob, jak nakonfigurovat ASP.NET Core webové aplikace založené na seznam dvojic název hodnota. Konfigurace je pro čtení, v době běhu z více zdrojů. Tyto páry název hodnota můžete seskupovat do víceúrovňovou hierarchii. 
+Rozhraní API konfigurace poskytuje způsob, jak nakonfigurovat ASP.NET Core webové aplikace založené na seznam dvojic název hodnota. Konfigurace je pro čtení, v době běhu z více zdrojů. Tyto páry název hodnota můžete seskupovat do víceúrovňovou hierarchii.
 
 Existují zprostředkovatelé konfigurace pro:
 
@@ -50,38 +50,50 @@ Aplikace načte a zobrazí následující nastavení:
 
 Konfigurace se skládá z hierarchický seznam dvojic název hodnota, ve kterých jsou uzly oddělené dvojtečkou. Pokud chcete načíst hodnotu, přístup k `Configuration` indexer klíčem odpovídající položky:
 
-```csharp
-Console.WriteLine($"option1 = {Configuration["subsection:suboption1"]}");
-```
+[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=24-24)]
 
 Pro práci s pole ve formátu JSON konfigurace zdrojů, použijte pole indexu jako součást řetězce oddělené dvojtečkou. Následující příklad načte název první položky v předchozím `wizards` pole:
 
 ```csharp
-Console.Write($"{Configuration["wizards:0:Name"]}, ");
+Console.Write($"{Configuration["wizards:0:Name"]}");
+// Output: Gandalf
 ```
 
-Dvojice název hodnota, které jsou zapsány do vestavěné `Configuration` poskytovatelé jsou **není** nastavené jako trvalé. Můžete však vytvořit vlastní zprostředkovatele, který uloží hodnoty. V tématu [vlastního poskytovatele konfigurace](xref:fundamentals/configuration/index#custom-config-providers).
+Dvojice název hodnota, které jsou zapsány do vestavěné [konfigurace](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration) poskytovatelé jsou **není** nastavené jako trvalé. Můžete však vytvořit vlastní zprostředkovatele, který uloží hodnoty. V tématu [vlastního poskytovatele konfigurace](xref:fundamentals/configuration/index#custom-config-providers).
 
 V předchozím příkladu používá konfigurace indexeru načíst hodnoty. Získat přístup ke konfiguraci mimo `Startup`, použijte *možnosti vzor*. Další informace najdete v tématu [možnosti](xref:fundamentals/configuration/options) tématu.
 
+
+## <a name="configuration-by-environment"></a>Konfigurace prostředí
+
 Je typické jinou konfiguraci nastavení pro různá prostředí, například vývoj, testování a provozním. `CreateDefaultBuilder` v aplikaci ASP.NET Core 2.x – metoda rozšíření (nebo pomocí `AddJsonFile` a `AddEnvironmentVariables` přímo v aplikaci ASP.NET Core 1.x) přidá zprostředkovatele konfigurace pro čtení soubory JSON a systému konfigurace zdrojů:
 
-* *appSettings.JSON určený*
-* *appSettings. \<EnvironmentName > .json*
+* *appsettings.json*
+* *appsettings.\<EnvironmentName>.json*
 * Proměnné prostředí
 
-V tématu [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions) vysvětlení parametrů. `reloadOnChange`je podporován pouze v ASP.NET Core 1.1 nebo novější. 
+Aplikace ASP.NET Core 1.x muset volat `AddJsonFile` a [AddEnvironmentVariables](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables #Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_).
 
-Konfigurace zdroje se čtou v pořadí, zda jste zadali. Ve výše uvedeném kódu se čtou poslední proměnné prostředí. Všechny hodnoty konfigurace nastavit prostřednictvím prostředí nahradit nastavené v dva poskytovatelé předchozí.
+V tématu [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions) vysvětlení parametrů. `reloadOnChange`je podporován pouze v ASP.NET Core 1.1 nebo novější.
 
-V prostředí se obvykle nastavuje na `Development`, `Staging`, nebo `Production`. V tématu [práce s několika prostředí](xref:fundamentals/environments) Další informace.
+Konfigurace zdroje se čtou v pořadí, zda jste zadali. V předchozím kódu se čtou poslední proměnné prostředí. Všechny hodnoty konfigurace nastavit prostřednictvím prostředí nahradit nastavené v dva poskytovatelé předchozí.
+
+Vezměte v úvahu následující *appsettings. Staging.JSON* souboru:
+
+[!code-json[Main](index/sample/appsettings.Staging.json)]
+
+Pokud se nastaví prostředí `Staging`, následující `Configure` metoda přečte hodnotu `MyConfig`:
+
+[!code-csharp[Main](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
+
+
+V prostředí se obvykle nastavuje na `Development`, `Staging`, nebo `Production`. Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).
 
 Požadavky na konfiguraci:
 
-* `IOptionsSnapshot`můžete znovu načíst konfigurační data, kdy se změní. V tématu [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot) Další informace.
-* Konfigurace klíče jsou malá a velká písmena.
-* Zadejte proměnné prostředí poslední tak, aby místní prostředí můžete přepsat nastavení v nasazené konfigurační soubory.
-* **Nikdy** ukládání hesel nebo jiných citlivých dat. kód zprostředkovatele konfigurace nebo v konfiguračních souborech na prostý text. Nechcete používat produkční tajných klíčů ve vývojovém nebo testovacím prostředí. Místo toho zadejte tajné klíče mimo projekt tak, že nemohou být omylem zaměřuje na úložiště. Další informace o [práce s několika prostředí](xref:fundamentals/environments) a správu [bezpečného úložiště tajné klíče aplikace během vývoje](xref:security/app-secrets).
+* `IOptionsSnapshot`můžete znovu načíst konfigurační data, kdy se změní. Další informace najdete v tématu [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot).,
+* Konfigurace klíče jsou **není** malá a velká písmena.
+* **Nikdy** ukládání hesel nebo jiných citlivých dat. kód zprostředkovatele konfigurace nebo v konfiguračních souborech na prostý text. Nechcete používat produkční tajných klíčů ve vývojovém nebo testovacím prostředí. Zadejte tajné klíče mimo projekt tak, že nemohou být omylem zaměřuje na úložiště. Další informace o [práce s několika prostředí](xref:fundamentals/environments) a správu [bezpečného úložiště tajné klíče aplikace během vývoje](xref:security/app-secrets).
 * Pokud dvojtečkou (`:`) nelze použít v seznamu proměnných prostředí systému, nahraďte dvojtečkou (`:`) s dvojité podtržítko (`__`).
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>Zprostředkovatel v paměti a vazbu na třídu objektů POCO
@@ -96,7 +108,7 @@ Hodnoty konfigurace se vrátí jako řetězce, ale vazba umožňuje konstrukce o
 
 Následující příklad ukazuje [GetValue&lt;T&gt; ](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationbinder#Microsoft_Extensions_Configuration_ConfigurationBinder_GetValue_Microsoft_Extensions_Configuration_IConfiguration_System_Type_System_String_System_Object_) metoda rozšíření:
 
-[!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=27-29)]
+[!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
 ConfigurationBinder `GetValue<T>` metoda umožňuje zadat výchozí hodnotu (80 v ukázce). `GetValue<T>`je pro jednoduché scénáře a nemá vazbu na celý části. `GetValue<T>`Získá skalárních hodnot z `GetSection(key).Value` převést na konkrétního typu.
 
@@ -110,7 +122,7 @@ Následující příklad vytvoří vazbu `AppSettings` třídy:
 
 [!code-csharp[Main](index/sample/ObjectGraph/Program.cs?highlight=15-16)]
 
-**ASP.NET Core 1.1** a vyšší můžete použít `Get<T>`, který pracuje s celé oddíly. `Get<T>`může být vhodnější než použití `Bind`. Následující kód ukazuje, jak používat `Get<T>` s ukázkou výše:
+**ASP.NET Core 1.1** a vyšší můžete použít `Get<T>`, který pracuje s celé oddíly. `Get<T>`může být vhodnější než použití `Bind`. Následující kód ukazuje, jak používat `Get<T>` s v předchozím příkladu:
 
 ```csharp
 var appConfig = config.GetSection("App").Get<AppSettings>();
@@ -153,7 +165,7 @@ public void CanBindObjectTree()
 
 ## <a name="create-an-entity-framework-custom-provider"></a>Vytvoření vlastního zprostředkovatele Entity Framework
 
-V této části se vytvoří základní konfiguraci poskytovatele, který čte dvojice název hodnota v databázi pomocí EF. 
+V této části se vytvoří základní konfiguraci poskytovatele, který čte dvojice název hodnota v databázi pomocí EF.
 
 Definování `ConfigurationValue` entity pro ukládání hodnoty konfigurace v databázi:
 
@@ -167,7 +179,7 @@ Vytvořte třídu, která implementuje [IConfigurationSource](https://docs.micro
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
 
-Vytvoření vlastního poskytovatele konfigurace dědění ze [ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider).  Poskytovatel konfigurace inicializuje databázi, pokud je prázdné:
+Vytvoření vlastního poskytovatele konfigurace dědění ze [ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider). Poskytovatel konfigurace inicializuje databázi, pokud je prázdné:
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
 
@@ -187,7 +199,7 @@ Pomocí následujících *appSettings.JSON určený* souboru:
 
 [!code-json[Main](index/sample/CustomConfigurationProvider/appsettings.json)]
 
-Zobrazí se:
+Zobrazí se následující výstup:
 
 ```console
 key1=value_from_ef_1
@@ -241,10 +253,15 @@ Typická aplikace ASP.NET Core 2.x použít metodu statické pohodlí `CreateDef
 
 `CreateDefaultBuilder`načte volitelné konfiguraci z *appSettings.JSON určený*, *appsettings. { Prostředí} .json*, [tajné klíče uživatele](xref:security/app-secrets) (v `Development` prostředí), proměnné prostředí a argumenty příkazového řádku. Poskytovatel konfigurace příkazového řádku se označuje jako poslední. Poslední volání zprostředkovatele umožňuje dříve názvem argumenty příkazového řádku předaný běhu přepsat konfiguraci nastavit pomocí jiných poskytovatelů konfigurace.
 
-Všimněte si, že pro *appsettings* soubory, které `reloadOnChange` je povoleno. Argumenty příkazového řádku jsou přepsat, pokud odpovídající hodnotu konfigurace v *appsettings* dojde ke změně souboru po spuštění aplikace.
+Pro *appsettings* soubory kde:
 
-> [!NOTE]
-> Jako alternativu k použití `CreateDefaultBuilder` metody vytvoření hostitele pomocí [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) a ručně vytváření konfigurací s [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) je podporována v ASP.NET Core 2.x. V tématu kartě ASP.NET Core 1.x pro další informace.
+* `reloadOnChange`je povolené.
+* Obsahovat stejnému nastavení v argumenty příkazového řádku a *appsettings* souboru.
+* *Appsettings* souboru, který obsahuje odpovídající argument příkazového řádku je změnit po spuštění aplikace.
+
+Pokud jsou splněny všechny předchozí podmínky, se přepíšou argumenty příkazového řádku.
+
+Aplikace ASP.NET Core 2.x může použít WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) místo '' CreateDefaultBuilder`. When using `WebHostBuilder', je nutné ručně nastavit konfiguraci s [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder). V tématu kartě ASP.NET Core 1.x pro další informace.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
@@ -256,7 +273,7 @@ Vytvoření [ConfigurationBuilder](/api/microsoft.extensions.configuration.confi
 
 ### <a name="arguments"></a>Arguments
 
-Argumenty předávané na příkazovém řádku musí odpovídat jednomu ze dvou formátů uvedené v následující tabulce.
+Argumenty předávané na příkazovém řádku musí odpovídat jednomu ze dvou formátů uvedené v následující tabulce:
 
 | Argument formátu                                                     | Příklad        |
 | ------------------------------------------------------------------- | :------------: |
@@ -353,7 +370,7 @@ MachineName: DahliaPC
 Left: 1984
 ```
 
-Po vytvoření slovníku mapování přepínač obsahuje data zobrazená v následující tabulce.
+Po vytvoření slovníku mapování přepínač obsahuje data zobrazená v následující tabulce:
 
 | Key            | Hodnota                 |
 | -------------- | --------------------- |
@@ -384,6 +401,7 @@ A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Ex
 * `IConfiguration`má dva specializací:
   * `IConfigurationRoot`Používá se pro kořenový uzel. Můžete aktivovat znovu načíst.
   * `IConfigurationSection`Reprezentuje oddíl hodnoty konfigurace. `GetSection` a `GetChildren` metody vrací `IConfigurationSection`.
+  * Použití [IConfigurationRoot](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.iconfigurationroot) při opětovném načtení konfigurace nebo potřebují přístup pro každého zprostředkovatele. Ani jeden z těchto situacích jsou běžné.
 
 ## <a name="additional-resources"></a>Další zdroje
 

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: bad84b8c68bd0bc63bcd125e1873bc99a2ed2afd
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: cc15efc25abbfb5bfc9b748b49802afebc75bfb2
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Hostitel s nginx ASP.NET Core v systému Linux
 
@@ -164,6 +164,7 @@ WantedBy=multi-user.target
 ```
 
 **Poznámka:** Pokud uživatel *www-data* nepoužívá konfigurace, uživatelsky definované v tomto poli musí být nejprve a pro soubory zadané správné vlastnictví.
+**Poznámka:** Linux má systém souborů malá a velká písmena. Nastavení ASPNETCORE_ENVIRONMENT "Výroba" hledání konfiguračního souboru *appsettings. Production.JSON*, nikoli *appsettings.production.json*.
 
 Uložte tento soubor a povolení služby.
 
@@ -246,7 +247,7 @@ tar zxf nginx-1.10.0.tar.gz
 
 #### <a name="change-the-nginx-response-name"></a>Změňte název nginx odpovědi
 
-Upravit *src/http/ngx_http_header_filter_module.c*:
+Edit *src/http/ngx_http_header_filter_module.c*:
 
 ```c
 static char ngx_http_server_string[] = "Server: Web Server" CRLF;

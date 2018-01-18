@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: b52327523467600ff62289022434a77af5d8fa22
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 405297bdd1ceac390b995ed6e15ae8d95bb8501f
+ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>Moduly služby IIS pomocí ASP.NET Core
 
@@ -33,15 +33,15 @@ Modul | Aktivní základní rozhraní .NET | ASP.NET jádra
 **Ověření konfigurace**<br>`ConfigurationValidationModule` | Ano | 
 **Chyby protokolu HTTP**<br>`CustomErrorModule` | Ne | [Middleware stránky kódu stavu](xref:fundamentals/error-handling#configuring-status-code-pages)
 **Vlastní protokolování**<br>`CustomLoggingModule` | Ano | 
-**Výchozí dokument**<br>`DefaultDocumentModule` | Ne | [Výchozí soubory middlewaru](xref:fundamentals/static-files#serving-a-default-document)
+**Výchozí dokument**<br>`DefaultDocumentModule` | Ne | [Výchozí soubory middlewaru](xref:fundamentals/static-files#serve-a-default-document)
 **Ověřování hodnotou hash**<br>`DigestAuthenticationModule` | Ano | 
-**Procházení adresářů**<br>`DirectoryListingModule` | Ne | [Middleware procházení adresáře](xref:fundamentals/static-files#enabling-directory-browsing)
+**Procházení adresářů**<br>`DirectoryListingModule` | Ne | [Middleware procházení adresáře](xref:fundamentals/static-files#enable-directory-browsing)
 **Komprese dynamického**<br>`DynamicCompressionModule` | Ano | [Middleware pro kompresi odpovědí](xref:performance/response-compression)
 **Trasování**<br>`FailedRequestsTracingModule` | Ano | [ASP.NET Core protokolování](xref:fundamentals/logging/index#the-tracesource-provider)
 **Ukládání souborů do mezipaměti**<br>`FileCacheModule` | Ne | [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
 **Ukládání do mezipaměti HTTP**<br>`HttpCacheModule` | Ne | [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
-**Funkce protokolování HTTP**<br>`HttpLoggingModule` | Ano | [ASP.NET Core protokolování](xref:fundamentals/logging/index)<br>Implementace: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
-**Přesměrování protokolu HTTP**<br>`HttpRedirectionModule` | Ano | [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting)
+**HTTP Logging**<br>`HttpLoggingModule` | Ano | [ASP.NET Core protokolování](xref:fundamentals/logging/index)<br>Implementace: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
+**HTTP Redirection**<br>`HttpRedirectionModule` | Ano | [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting)
 **Ověřování pomocí mapování certifikátu klienta služby IIS**<br>`IISCertificateMappingAuthenticationModule` | Ano | 
 **Omezení domény a IP**<br>`IpRestrictionModule` | Ano | 
 **Filtry ISAPI**<br>`IsapiFilterModule` | Ano | [Middleware](xref:fundamentals/middleware)
@@ -71,11 +71,11 @@ Ověřování pomocí formulářů | Ne | [Middleware ověřování souborů coo
 OutputCache | Ne | [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
 Profil | Ne | 
 RoleManager | Ne | 
-ScriptModule 4.0 | Ne | 
+ScriptModule-4.0 | Ne | 
 Relace | Ne | [Middleware relace](xref:fundamentals/app-state)
 UrlAuthorization | Ne | 
 UrlMappingsModule | Ne | [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting)
-UrlRoutingModule 4.0 | Ne | [Jádro ASP.NET Identity](xref:security/authentication/identity)
+UrlRoutingModule-4.0 | Ne | [Jádro ASP.NET Identity](xref:security/authentication/identity)
 WindowsAuthentication | Ne | 
 
 ## <a name="iis-manager-application-changes"></a>Změny aplikace Správce služby IIS
@@ -159,4 +159,4 @@ Pouze moduly potřebnými pro spuštění aplikace ASP.NET Core jsou modul anony
 * [Hostování ve Windows se službou IIS](xref:host-and-deploy/iis/index)
 * [Přehled moduly služby IIS](https://docs.microsoft.com/iis/get-started/introduction-to-iis/iis-modules-overview)
 * [Přizpůsobení služby IIS 7.0 role a moduly](https://technet.microsoft.com/library/cc627313.aspx)
-* [SLUŽBY IIS`<system.webServer>`](https://docs.microsoft.com/iis/configuration/system.webServer/)
+* [IIS `<system.webServer>`](https://docs.microsoft.com/iis/configuration/system.webServer/)

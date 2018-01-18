@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: e3c3149254d602db1fcc6d42360690be026189a5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6df769069fce52755a57d8404f88203a652a1ab9
+ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pro ASP.NET Core
 
@@ -76,7 +76,7 @@ Předchozí kód vygeneruje chybu kompilátoru podobně jako jednu z těchto mo�
  * Element "int" nebyla uzavřena.  Všechny elementy musí být buď samoobslužné zavírání nebo koncová značka.
  *  Metoda skupiny 'GenericMethod' bez delegátem typu 'objekt' nelze převést. Opravdu chcete vyvolat metodu? " 
  
-Volání obecné metody musí být uzavřen do [explicitní výraz Razor](#explicit-razor-expressions) nebo [blok kódu Razor](#razor-code-blocks). Toto omezení se nevztahuje na *.vbhtml* Razor soubory, protože syntaxe jazyka Visual Basic umístí parametry obecného typu místo závorky v závorkách.
+Volání obecné metody musí být uzavřen do [explicitní výraz Razor](#explicit-razor-expressions) nebo [blok kódu Razor](#razor-code-blocks).
 
 ## <a name="explicit-razor-expressions"></a>Explicitní výrazy Razor
 
@@ -127,8 +127,6 @@ Předchozí kód vygeneruje chybu kompilátoru podobně jako jednu z těchto mo�
 ```cshtml
 <p>@(GenericMethod<int>())</p>
 ```
-
-Poznámka: Toto omezení se nevztahuje na *.vbhtml* soubory Razor.  S *.vbhtml* soubory Razor, syntaxe jazyka Visual Basic umístí parametry obecného typu místo závorky v závorkách.
 
 ## <a name="expression-encoding"></a>Výraz kódování
 

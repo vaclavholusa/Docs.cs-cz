@@ -2,25 +2,23 @@
 title: "Přidání ověřování"
 author: rick-anderson
 description: "Postup přidání ověření do jednoduchou aplikaci ASP.NET Core."
-keywords: "ASP.NET Core, ověření, DataAnnotations"
 ms.author: riande
 manager: wpickett
 ms.date: 04/13/2017
 ms.topic: get-started-article
-ms.assetid: edbed483-6858-4f19-8082-3ac7d2752999
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-xplat/validation
-ms.openlocfilehash: cbca251ea1ac987036f86054425e3ddcf09bacb2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f871a9eeeba38ff7e8097b5ffa6d0936b75d61b7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 [!INCLUDE[validation](../../includes/mvc-intro/validation.md)]
 
 >[!div class="step-by-step"]
-<span data-ttu-id="f0843-104">[Předchozí – přidání pole](new-field.md)
-[další – zkontrolujte podrobnosti a odstraňte metody](xref:tutorials/first-mvc-app/details)</span><span class="sxs-lookup"><span data-stu-id="f0843-104">[Previous - Add a field](new-field.md)
+<span data-ttu-id="96d2d-103">[Předchozí – přidání pole](new-field.md)
+[další – zkontrolujte podrobnosti a odstraňte metody](xref:tutorials/first-mvc-app/details)</span><span class="sxs-lookup"><span data-stu-id="96d2d-103">[Previous - Add a field](new-field.md)
 [Next - Examine the Details and Delete methods](xref:tutorials/first-mvc-app/details)</span></span>  
 

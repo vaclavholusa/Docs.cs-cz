@@ -2,21 +2,19 @@
 title: "Kestrel webového serveru implementace v ASP.NET Core"
 author: tdykstra
 description: "Představuje Kestrel, a platformy webového serveru pro ASP.NET Core podle libuv."
-keywords: "ASP.NET Core, Kestrel, libuv, předpony adres url"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 08/02/2017
 ms.topic: article
-ms.assetid: 560bd66f-7dd0-4e68-b5fb-f31477e4b785
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/kestrel
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 451c36fc9095b6e076e5287c992b6163205c523b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3695a6a127f77bd90538d72af6112ccf507f3482
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-kestrel-web-server-implementation-in-aspnet-core"></a>Úvod k implementaci serveru webové Kestrel v ASP.NET Core
 
@@ -26,7 +24,7 @@ Kestrel je napříč platformami [webového serveru pro ASP.NET Core](index.md) 
 
 Kestrel podporuje následující funkce:
 
-  * PROTOKOL HTTPS
+  * HTTPS
   * Neprůhledné upgrade používaným pro povolení [objekty WebSockets](https://github.com/aspnet/websockets)
   * Sokety UNIX pro vysoký výkon za Nginx 
 

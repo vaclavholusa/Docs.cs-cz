@@ -2,7 +2,6 @@
 title: "Přidání modelu do aplikace ASP.NET MVC jádra"
 author: rick-anderson
 description: "Přidáte model do jednoduchou aplikaci ASP.NET Core."
-keywords: "Jádro ASP.NET"
 ms.author: riande
 manager: wpickett
 ms.date: 12/8/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 03c16e523fe2f91cae5c71357835684d813e3a1f
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: c2cd3cc81221c146dec70e487a17b33360eb6112
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
@@ -125,7 +124,7 @@ Update-Database
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Pomocníci značky](xref:mvc/views/tag-helpers/intro)
+* [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)
 * [Globalizace a lokalizace](xref:fundamentals/localization)
 
 >[!div class="step-by-step"]

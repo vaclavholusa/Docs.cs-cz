@@ -2,21 +2,19 @@
 title: "Přidat model do aplikace ASP.NET MVC jádra"
 author: rick-anderson
 description: "Přidáte model do jednoduchou aplikaci ASP.NET Core."
-keywords: "Jádro ASP.NET, MVC, vygenerovat, generování uživatelského rozhraní"
 ms.author: riande
 manager: wpickett
 ms.devlang: csharp
 ms.date: 09/22/2017
 ms.topic: get-started-article
-ms.assetid: 8dc28498-eeee-1638-b903-b593059e9f39
 ms.technology: aspnet
 ms.prod: .net-core
 uid: tutorials/first-mvc-app-mac/adding-model
-ms.openlocfilehash: ff0b262bdf2685bd1bc410c30c12aa2d16f6dcda
-ms.sourcegitcommit: 7d092cd99057bad9246c472a8a0a8cbc7ab9fa9b
+ms.openlocfilehash: 3a7db5e435fe72150feb1e0ec905b6f6adc16f2c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 01/19/2018
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
@@ -106,7 +104,7 @@ Nyní máte databázi a stránkami zobrazit, upravit, aktualizovat a odstranit d
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Pomocníci značky](xref:mvc/views/tag-helpers/intro)
+* [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)
 * [Globalizace a lokalizace](xref:fundamentals/localization)
 
 >[!div class="step-by-step"]

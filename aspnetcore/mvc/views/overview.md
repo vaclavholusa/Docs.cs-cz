@@ -2,7 +2,6 @@
 title: "Zobrazení v jádro ASP.NET MVC"
 author: ardalis
 description: "Zjistěte, jak pracovat zobrazení prezentace dat aplikace a interakce uživatelů v aplikaci ASP.NET MVC jádra."
-keywords: "ASP.NET Core zobrazení MVC razor, viewmodel, viewdata, viewbag"
 ms.author: riande
 manager: wpickett
 ms.date: 12/12/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 2562d4e5fb85159e6ccb47990f54448ddc188077
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: c0a1f475941f3389e9aa1f5bb7819bef491b2cae
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Zobrazení v jádro ASP.NET MVC
 
@@ -93,8 +92,8 @@ Výchozí chování `View` – metoda (`return View();`) je lze vrátit zobrazen
 
 Není důležité, pokud se implicitně vrátíte `ViewResult` s `return View();` nebo explicitně předat název zobrazení má `View` metoda s `return View("<ViewName>");`. V obou případech zobrazení zjišťování hledá odpovídající soubor zobrazení v tomto pořadí:
 
-   1. *Zobrazení nebo\[ControllerName]\[ViewName] .cshtml*
-   1. *Zobrazení nebo sdílené nebo\[ViewName] .cshtml*
+   1. *Views/\[ControllerName]\[ViewName].cshtml*
+   1. *Views/Shared/\[ViewName].cshtml*
 
 Místo názvu zobrazení se dá zadat cestu k zobrazení souboru. Pokud používáte absolutní cestu spouštění v kořenovém adresáři aplikace (volitelně od verze "/" nebo "~ /"), *.cshtml* musí být zadán rozšíření:
 

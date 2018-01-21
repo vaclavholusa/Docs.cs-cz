@@ -1,8 +1,8 @@
 ---
 uid: visual-studio/overview/2012/index
-title: Visual Studio 2012 | Microsoft Docs
+title: ASP.NET a Visual Studio 2012 | Microsoft Docs
 author: rick-anderson
-description: Visual Studio 2012
+description: "Vývoj webové aplikace ASP.NET pomocí sady Visual Studio 2012"
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/25/2013
@@ -12,28 +12,28 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012
 msc.type: chapter
-ms.openlocfilehash: 6c43524b3e33f94afb7896d16813dc047302a662
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 21f7800b2a5d396b040fe5a04b70214469e74392
+ms.sourcegitcommit: 3625e4f7a667641b058d23126f0d9d1844fee886
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/20/2018
 ---
-<a name="visual-studio-2012"></a>Visual Studio 2012
+<a name="aspnet-and-visual-studio-2012"></a>ASP.NET a Visual Studio 2012
 ====================
-> Visual Studio 2012
+> Vývoj webové aplikace ASP.NET pomocí sady Visual Studio 2012
 
 
-- [Visual Studio 2012 HTML úpravy funkce](visual-studio-2012-html-editing-features.md)
-- [Visual Studio 2012 šablon stylů CSS editoru](visual-studio-2012-css-editor.md)
-- [Visual Studio 2012 JavaScript editoru](visual-studio-2012-javascript-editor.md)
-- [Visual Studio 2012 Page Inspector](visual-studio-2012-page-inspector.md)
-- [Visual Studio 2012 Web publikování vylepšení](visual-studio-2012-web-publishing-improvements.md)
-- [Poznámky k verzi pro ASP.NET a nástroje pro Web 2013.1 pro sadu Visual Studio 2012](aspnet-and-web-tools-20131-for-visual-studio-2012.md)
-- [HTML Editor čipové úlohy a generování obslužné rutiny událostí](visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation.md)
-- [Hierarchická odsazení Editor šablon stylů CSS](visual-studio-vnext-videos-css-editor-hierarchical-indentation.md)
-- [Fragmenty kódu Editor šablon stylů CSS](visual-studio-vnext-videos-css-editor-snippets.md)
-- [Výběr barvy Editor šablon stylů CSS](visual-studio-vnext-videos-css-editor-color-picker.md)
-- [Nástroj Page Inspector – Úvod](visual-studio-vnext-videos-page-inspector-introduction.md)
-- [Nástroj Page Inspector - Decomposing webové aplikace](visual-studio-vnext-videos-page-inspector-decomposing-your-web-application.md)
-- [Windows Azure ověřování](windows-azure-authentication.md)
-- [Technologie ASP.NET a webové nástroje 2012.2 poznámky k verzi](aspnet-and-web-tools-20122-release-notes-rtw.md)
+- [Visual Studio 2012 – funkce pro úpravu kódu HTML](visual-studio-2012-html-editing-features.md)
+- [Visual Studio 2012 – editor CSS](visual-studio-2012-css-editor.md)
+- [Visual Studio 2012 – editor jazyka JavaScript](visual-studio-2012-javascript-editor.md)
+- [Visual Studio 2012 – Page Inspector](visual-studio-2012-page-inspector.md)
+- [Visual Studio 2012 – vylepšení webového publikování](visual-studio-2012-web-publishing-improvements.md)
+- [Poznámky k verzi pro ASP.NET a webové nástroje 2013.1 pro Visual Studio 2012](aspnet-and-web-tools-20131-for-visual-studio-2012.md)
+- [Editor HTML – chytré úkoly a generování obslužné rutiny události](visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation.md)
+- [Editor CSS – hierarchické odsazení](visual-studio-vnext-videos-css-editor-hierarchical-indentation.md)
+- [Editor CSS – fragmenty kódu](visual-studio-vnext-videos-css-editor-snippets.md)
+- [Editor CSS – výběr barvy](visual-studio-vnext-videos-css-editor-color-picker.md)
+- [Page Inspector – úvod](visual-studio-vnext-videos-page-inspector-introduction.md)
+- [Page Inspector – rozložení webové aplikace](visual-studio-vnext-videos-page-inspector-decomposing-your-web-application.md)
+- [Ověřování Windows Azure](windows-azure-authentication.md)
+- [ASP.NET a webové nástroje – poznámky k verzi 2012.2](aspnet-and-web-tools-20122-release-notes-rtw.md)

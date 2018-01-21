@@ -2,20 +2,18 @@
 title: "Migrace obslužné rutiny HTTP a moduly, které middleware ASP.NET Core"
 author: rick-anderson
 description: 
-keywords: "Jádro ASP.NET"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 12/07/2016
 ms.topic: article
-ms.assetid: 9c826a76-fbd2-46b5-978d-6ca6df53531a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: f217e5264742826f285444dcbaea4b28b97c4d7e
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 44b2b38c284e678344432d4473162404b4bb75a5
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrace obslužné rutiny HTTP a moduly, které middleware ASP.NET Core 
 
@@ -247,7 +245,7 @@ public async Task Invoke(HttpContext context)
 
 `HttpContext`výrazně se změnilo v ASP.NET Core. V této části ukazuje, jak převede nejčastěji používané vlastnosti [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) do nového `Microsoft.AspNetCore.Http.HttpContext`.
 
-### <a name="httpcontext"></a>Položka HttpContext
+### <a name="httpcontext"></a>HttpContext
 
 **HttpContext.Items** přeloží na:
 
@@ -265,7 +263,7 @@ Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do p
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Method)]
 
-**HttpContext.Request.QueryString** přeloží na:
+**HttpContext.Request.QueryString** translates to:
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Query)]
 
@@ -273,11 +271,11 @@ Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do p
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Url)]
 
-**HttpContext.Request.IsSecureConnection** přeloží na:
+**HttpContext.Request.IsSecureConnection** translates to:
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Secure)]
 
-**HttpContext.Request.UserHostAddress** přeloží na:
+**HttpContext.Request.UserHostAddress** translates to:
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Host)]
 
@@ -285,23 +283,23 @@ Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do p
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Cookies)]
 
-**HttpContext.Request.RequestContext.RouteData** přeloží na:
+**HttpContext.Request.RequestContext.RouteData** translates to:
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Route)]
 
-**HttpContext.Request.Headers** přeloží na:
+**HttpContext.Request.Headers** translates to:
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Headers)]
 
-**HttpContext.Request.UserAgent** přeloží na:
+**HttpContext.Request.UserAgent** translates to:
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Agent)]
 
-**HttpContext.Request.UrlReferrer** přeloží na:
+**HttpContext.Request.UrlReferrer** translates to:
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Referrer)]
 
-**HttpContext.Request.ContentType** přeloží na:
+**HttpContext.Request.ContentType** translates to:
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Type)]
 
@@ -312,7 +310,7 @@ Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do p
 > [!WARNING]
 > Čtení hodnot formuláře, pouze v případě, že je typ obsahu dílčí *x--www-form-urlencoded* nebo *data formuláře*.
 
-**HttpContext.Request.InputStream** přeloží na:
+**HttpContext.Request.InputStream** translates to:
 
 [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Input)]
 

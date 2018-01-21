@@ -2,20 +2,18 @@
 title: "Zobrazení součásti"
 author: rick-anderson
 description: "Zobrazení součásti jsou určeny kdekoli, že máte opakovaně použitelné vykreslování logiku."
-keywords: "ASP.NET Core, součásti zobrazení částečného zobrazení"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: ab4705b7-59d7-4f31-bc97-ea7f292fe926
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2cf82df78c250cdfdd808d49acfc06dc2ea82f5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2d93dcee102009661af708b9a9066e8af0bdbb17
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="view-components"></a>Zobrazení součásti
 
@@ -78,8 +76,8 @@ Součást zobrazení definuje svou logikou v `InvokeAsync` metodu, která vrát�
 
 Modul runtime prohledá zobrazení do následující cesty:
 
-   * Zobrazení nebo\<controller_name > /Components/\<view_component_name > /\<view_name >
-   * Zobrazení nebo sdílené nebo součástí nebo\<view_component_name > /\<view_name >
+   * Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
+   * Views/Shared/Components/\<view_component_name>/\<view_name>
 
 Výchozí název zobrazení pro součást zobrazení je *výchozí*, což znamená, že váš soubor zobrazení se obvykle nazývá *Default.cshtml*. Můžete zadat název jiné zobrazení, při vytváření komponenty výsledný objekt zobrazení, nebo při volání metody `View` metoda.
 
@@ -204,7 +202,7 @@ Kopírování *Views/Shared/Components/PriorityList/Default.cshtml* soubor k zob
 
 [!code-cshtml[Main](../../mvc/views/view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/PVC.cshtml?highlight=3)]
 
-Aktualizace *Views/TodoList/Index.cshtml*:
+Update *Views/TodoList/Index.cshtml*:
 
 <!-- Views/TodoList/Index.cshtml is never imported, so change to test tutorial -->
 
@@ -248,4 +246,4 @@ Přidat `using` příkaz, který má vaše Razor zobrazení souboru a použít `
 
 ## <a name="additional-resources"></a>Další prostředky
 
-* [Vkládání závislostí do zobrazení](dependency-injection.md)
+* [Injektáž závislostí do zobrazení](dependency-injection.md)

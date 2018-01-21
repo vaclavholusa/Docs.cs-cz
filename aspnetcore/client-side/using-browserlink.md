@@ -2,21 +2,19 @@
 title: Browser Link v ASP.NET Core
 author: ncarandini
 description: "Vysvětluje, jak Browser Link je funkce sady Visual Studio, který odkazuje vývojového prostředí s jeden nebo více webových prohlížečů."
-keywords: "ASP.NET Core, browser link a synchronizace šablon stylů CSS"
 ms.author: riande
 manager: wpickett
 ms.date: 09/22/2017
 ms.topic: article
-ms.assetid: 11813d4c-3f8a-445a-b23b-e4a57d001abc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-browserlink
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b69d085e8bee4cdac2dff08b46a95a8869e263b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d5db65c268923e96c45b034639437fc3496ccac1
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="browser-link-in-aspnet-core"></a>Browser Link v ASP.NET Core 
 
@@ -106,7 +104,7 @@ Najeďte myší na ovládací prvek Browser Link panelu nástrojů zobrazíte pr
 
 Změnit zobrazení indexu a všechny připojené prohlížeče aktualizují po kliknutí na tlačítko Aktualizovat Browser Link:
 
-![prohlížeče synchronizace pro změny](using-browserlink/_static/browsers-sync-to-changes.png)
+![browsers-sync-to-changes](using-browserlink/_static/browsers-sync-to-changes.png)
 
 Browser Link funguje taky s prohlížeče, které spusťte mimo aplikaci Visual Studio a přejděte na adresu URL aplikace.
 
@@ -114,15 +112,15 @@ Browser Link funguje taky s prohlížeče, které spusťte mimo aplikaci Visual 
 
 Z rozevírací nabídky ke správě připojení pomocí prohlížeče otevřete Browser Link otevřete řídicím panelu odkazů prohlížeče:
 
-![Otevřete browserslink-řídicí panel](using-browserlink/_static/open-browserlink-dashboard.png)
+![open-browserslink-dashboard](using-browserlink/_static/open-browserlink-dashboard.png)
 
 Pokud je připojený žádný prohlížeč, můžete spustit relaci – ladění výběrem *zobrazit v prohlížeči* odkaz:
 
-![browserlink řídicí panel žádné připojení](using-browserlink/_static/browserlink-dashboard-no-connections.png)
+![browserlink-dashboard-no-connections](using-browserlink/_static/browserlink-dashboard-no-connections.png)
 
 Jinak hodnota cesta ke stránce, který se zobrazuje každým prohlížečem, který zobrazuje připojené prohlížeče:
 
-![browserlink řídicí panel dvě připojení](using-browserlink/_static/browserlink-dashboard-two-connections.png)
+![browserlink-dashboard-two-connections](using-browserlink/_static/browserlink-dashboard-two-connections.png)
 
 Pokud chcete, můžete kliknutím na název uvedené prohlížeče aktualizujte tohoto jednoho prohlížeče.
 

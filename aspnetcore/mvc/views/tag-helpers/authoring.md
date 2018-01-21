@@ -2,29 +2,27 @@
 title: "Vytváření Pomocníci značky v ASP.NET Core"
 author: rick-anderson
 description: "Naučte se vytvářet značky pomocné rutiny v ASP.NET Core."
-keywords: "ASP.NET Core, značka pomocné rutiny"
 ms.author: riande
 manager: wpickett
-ms.date: 06/14/2017
+ms.date: 01/19/2018
 ms.topic: article
-ms.assetid: 4f16d978-5695-4abf-a785-fdaabf3bbcb9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cbe46ee1d3cd9f7a30a87d364074f1302f9af7ab
-ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
+ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Vytváření Pomocníci značky v ASP.NET Core, návod s ukázky
+# <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Autor značky pomocné rutiny v ASP.NET Core, návod s ukázky
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="getting-started-with-tag-helpers"></a>Začínáme s značky pomocné rutiny
+## <a name="get-started-with-tag-helpers"></a>Začínáme s značky pomocné rutiny
 
 Tento kurz obsahuje úvod do pomocné rutiny programování značky. [Úvod do pomocné rutiny značky](intro.md) popisuje výhody, které poskytují pomocné rutiny značky.
 
@@ -46,7 +44,7 @@ Server bude používat naše pomocná značky e-mailu k převedení tohoto kódu
 
 ```html
 <a href="mailto:Support@contoso.com">Support@contoso.com</a>
-   ```
+```
 
 To znamená značku ukotvení pak tento odkaz e-mailu. Můžete to udělat, pokud jsou psaní modul blog a potřebovat k odeslání e-mailu pro marketing, podpory a další kontakty, všechny ke stejné doméně.
 
@@ -188,7 +186,7 @@ Můžete také `[HtmlTargetElement]` Chcete-li změnit název cílové elementu.
 [HtmlTargetElement("MyBold")]
    ```
 
-## <a name="passing-a-model-to-a-tag-helper"></a>Předání modelu do pomocné rutiny značky
+## <a name="pass-a-model-to-a-tag-helper"></a>Model předat značky pomocné rutiny
 
 1.  Přidat *modely* složky.
 
@@ -285,7 +283,7 @@ Pomocník značky podmínku vykreslí výstup, když uplyne hodnotu true.
 >
 >[Nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) operátor bude chránit kód by se někdy být rozdělili (chceme změnit název, který má `RedCondition`).
 
-### <a name="avoiding-tag-helper-conflicts"></a>Vyhnutí se konfliktům značky pomocné rutiny
+### <a name="avoid-tag-helper-conflicts"></a>Nedocházelo ke konfliktům značky pomocné rutiny
 
 V této části napíšete pár automatické propojení Pomocníci značky. První nahradí značek, který obsahuje adresu URL začínající HTTP na HTML anchor značky obsahující stejnou adresu URL (a proto je odkaz na adresu URL). Druhý bude totéž proveďte pro adresu URL začínající WWW.
 
@@ -329,7 +327,7 @@ Protože tyto dvě pomocné rutiny jsou úzce související a je může v budouc
     
     Výše uvedený kód bude zaručit, pomocná značky HTTP spuštěná před pomocná značky WWW. Změna `Order` k `MaxValue` a ověřte, zda kód vygeneruje pro značku WWW je nesprávný.
 
-## <a name="inspecting-and-retrieving-child-content"></a>Kontroly a načítá se obsah podřízené
+## <a name="inspect-and-retrieve-child-content"></a>Zkontrolujte a načítat obsah podřízené
 
 Pomocníci značky poskytují několik vlastností, které k načtení obsahu.
 

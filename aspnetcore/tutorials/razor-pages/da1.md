@@ -2,7 +2,6 @@
 title: "Aktualizace generovaného stránek"
 author: rick-anderson
 description: "Aktualizace generovaného stránek s lepší zobrazení."
-keywords: "ASP.NET Core, stránky Razor"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: c66bb3a9d766e02c7775906cdd547a0e12c15336
-ms.sourcegitcommit: b38796ea3806bf39b89806adfa681b2a33762907
+ms.openlocfilehash: 201e8d9c77d8e022bc56ffcf46456fada6fcfe25
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="updating-the-generated-pages"></a>Aktualizace generovaného stránek
 
@@ -50,7 +49,7 @@ Přejděte na stránkách nebo filmy a najeďte myší **upravit** odkaz zobraz�
 
 [!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
 
-[Značka pomocné rutiny](xref:mvc/views/tag-helpers/intro) povolit kódu na straně serveru k účasti ve vytváření a vykreslení elementů HTML v souborech Razor. V předchozí kód `AnchorTagHelper` dynamicky vygeneruje HTML `href` hodnotu atributu ze stránky Razor (trasy, která je relativní), `asp-page`a id trasy (`asp-route-id`). V tématu [generování adresy URL pro stránky](xref:mvc/razor-pages/index#url-generation-for-pages) Další informace.
+[Pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) umožňují, aby se kód na straně serveru v souborech Razor podílel na vytváření a vykreslování prvků HTML. V předchozí kód `AnchorTagHelper` dynamicky vygeneruje HTML `href` hodnotu atributu ze stránky Razor (trasy, která je relativní), `asp-page`a id trasy (`asp-route-id`). V tématu [generování adresy URL pro stránky](xref:mvc/razor-pages/index#url-generation-for-pages) Další informace.
 
 Použití **zobrazit zdroj** z oblíbeném prohlížeči prozkoumat vygenerovaný kód. Část generovaný kód jazyka HTML, je zobrazena níže:
 

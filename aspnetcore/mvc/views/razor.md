@@ -2,7 +2,6 @@
 title: Reference syntaxe Razor pro ASP.NET Core
 author: rick-anderson
 description: "Další informace o syntaxi Razor kód pro vložení kódu na serveru do webové stránky."
-keywords: Direktivy Razor ASP.NET Core, Razor,
 ms.author: riande
 manager: wpickett
 ms.date: 10/18/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: 6df769069fce52755a57d8404f88203a652a1ab9
-ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
+ms.openlocfilehash: d932e28246998c60e2b3f9c77a2521fe55991e85
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pro ASP.NET Core
 
@@ -24,7 +23,7 @@ Syntaxe Razor je syntaxe kód pro vložení kódu na serveru do webové stránky
 
 ## <a name="rendering-html"></a>Vykreslování HTML
 
-Výchozí jazyk Razor jsou ve formátu HTML. Vykreslování HTML z kódu Razor je nejsou jiné než vykreslování protokolu HTML ze souboru HTML.  Značka jazyka HTML v *.cshtml* soubory Razor je vykreslen metodou serveru beze změny.
+Výchozí jazyk Razor jsou ve formátu HTML. Vykreslování HTML z kódu Razor je nejsou jiné než vykreslování protokolu HTML ze souboru HTML. Značka jazyka HTML v *.cshtml* soubory Razor je vykreslen metodou serveru beze změny.
 
 ## <a name="razor-syntax"></a>Syntaxe Razor
 
@@ -73,8 +72,8 @@ Implicitní výrazy **nelze** obsahovat obecnými typy C#, jako znaků v závork
 
 Předchozí kód vygeneruje chybu kompilátoru podobně jako jednu z těchto možností:
 
- * Element "int" nebyla uzavřena.  Všechny elementy musí být buď samoobslužné zavírání nebo koncová značka.
- *  Metoda skupiny 'GenericMethod' bez delegátem typu 'objekt' nelze převést. Opravdu chcete vyvolat metodu? " 
+ * Element "int" nebyla uzavřena. Všechny elementy musí být buď samoobslužné zavírání nebo koncová značka.
+ * Metoda skupiny 'GenericMethod' bez delegátem typu 'objekt' nelze převést. Opravdu chcete vyvolat metodu? " 
  
 Volání obecné metody musí být uzavřen do [explicitní výraz Razor](#explicit-razor-expressions) nebo [blok kódu Razor](#razor-code-blocks).
 
@@ -119,10 +118,10 @@ Explicitní výrazy můžete použít k vykreslení výstupu z obecné metody v 
 
 Předchozí kód vygeneruje chybu kompilátoru podobně jako jednu z těchto možností:
 
- * Element "int" nebyla uzavřena.  Všechny elementy musí být buď samoobslužné zavírání nebo koncová značka.
- *  Metoda skupiny 'GenericMethod' bez delegátem typu 'objekt' nelze převést. Opravdu chcete vyvolat metodu? " 
+ * Element "int" nebyla uzavřena. Všechny elementy musí být buď samoobslužné zavírání nebo koncová značka.
+ * Metoda skupiny 'GenericMethod' bez delegátem typu 'objekt' nelze převést. Opravdu chcete vyvolat metodu? " 
  
- Následující kód ukazuje zápisu správný způsob, jak tento kód.  Kód je zapsána jako explicitní výrazu:
+ Následující kód ukazuje zápisu správný způsob, jak tento kód. Kód je zapsána jako explicitní výrazu:
 
 ```cshtml
 <p>@(GenericMethod<int>())</p>
@@ -213,7 +212,7 @@ K definování část bloku kódu, který by měl vykreslení HTML, uzavřete zn
 
 Tuto metodu použijte k vykreslení HTML, který není obklopená značky jazyka HTML. Bez značku HTML nebo Razor nastane běhová chyba syntaxe Razor.
 
- **\<Text >** značka je vhodné pro řízení prázdných znaků při vykreslování obsahu:
+**\<Text >** značka je vhodné pro řízení prázdných znaků při vykreslování obsahu:
 
 * Pouze obsah, mezi  **\<text >** je vykreslen. 
 * Žádné prázdné před nebo po  **\<text >** značky se zobrazí ve výstupu protokolu HTML.
@@ -232,7 +231,7 @@ K vykreslení zbytek celý řádek jako kód HTML uvnitř bloku kódu, použijte
 
 Bez `@:` v kódu, je generována chyba runtime Razor.
 
-Upozornění: Navíc `@` znaky v souboru nástroje Razor mohou způsobit chyby kompilátoru příčina na příkazy v bloku později. Tyto chyby kompilátoru může být obtížné zjistit, protože dojde k chybě skutečné před ohlášené chyby.  Tato chyba je běžné po kombinování více implicitního nebo explicitního výrazů do jednoho kód bloku.
+Upozornění: Navíc `@` znaky v souboru nástroje Razor mohou způsobit chyby kompilátoru příčina na příkazy v bloku později. Tyto chyby kompilátoru může být obtížné zjistit, protože dojde k chybě skutečné před ohlášené chyby. Tato chyba je běžné po kombinování více implicitního nebo explicitního výrazů do jednoho kód bloku.
 
 ## <a name="control-structures"></a>Řídicí struktury
 
@@ -285,7 +284,7 @@ Následující kód ukazuje, jak používat příkaz switch:
 
 ### <a name="looping-for-foreach-while-and-do-while"></a>Ve smyčce @for, @foreach, @while, a @do při
 
-Použitím šablon HTML, které lze vykreslit s opakování ve smyčce řídicí příkazy.  K vykreslení seznam lidí, kteří:
+Použitím šablon HTML, které lze vykreslit s opakování ve smyčce řídicí příkazy. K vykreslení seznam lidí, kteří:
 
 ```cshtml
 @{
@@ -496,7 +495,7 @@ Vykreslí kód HTML následující:
 <div>Custom text: Gardyloo! - A Scottish warning yelled from a window before dumping a slop bucket on the street below.</div>
 ```
 
- `@model`a `@inherits` lze použít ve stejném zobrazení.  `@inherits`může být v *_ViewImports.cshtml* soubor, který importuje zobrazení:
+ `@model`a `@inherits` lze použít ve stejném zobrazení. `@inherits`může být v *_ViewImports.cshtml* soubor, který importuje zobrazení:
 
 [!code-cshtml[Main](razor/sample/Views/_ViewImportsModel.cshtml)]
 

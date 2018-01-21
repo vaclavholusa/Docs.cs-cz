@@ -2,20 +2,18 @@
 title: "Přehled ASP.NET Core MVC"
 author: ardalis
 description: "Zjistěte, jak je bohaté rozhraní pro vytváření webových aplikací ASP.NET MVC jádra a rozhraní API pomocí Model-View-Controller návrh vzor."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 01/08/2018
 ms.topic: article
-ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 33c293e15c0a7f18bbace9dc564fe11d93a7d509
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: ad8a1dfae89a7ecd5573c16ba70d7d12216b4c57
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Přehled ASP.NET Core MVC
 
@@ -77,7 +75,7 @@ Jádro ASP.NET MVC zahrnuje následující položky:
 * [Možnosti testování](#testability)
 * [Zobrazovací modul Razor](#razor-view-engine)
 * [Zobrazení se silnými typy](#strongly-typed-views)
-* [Pomocníci značky](#tag-helpers)
+* [Pomocné rutiny značek](#tag-helpers)
 * [Zobrazení součásti](#view-components)
 
 ### <a name="routing"></a>Směrování

@@ -2,20 +2,18 @@
 title: "Ověřování"
 author: rick-anderson
 description: "Tento dokument slouží jako tabulku obsahu v různých oblastech ověřování ASP.NET Core."
-keywords: "ASP.NET Core, ověřování"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 981852c9-78f9-4590-aaee-9d50a2838dfe
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: 182d3b5d567a46bb0f7d7c5864ebbc252782d8a3
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: e8d9a8b36b4f7b6392d1dde42532caec51b140ee
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="authentication"></a>Ověřování
 
@@ -23,13 +21,13 @@ ms.lasthandoff: 01/11/2018
 
 * [Úvod do systému Identity](identity.md)
 
-* [Povolit ověřování pomocí Facebook, Google a dalších externích zprostředkovatelů](social/index.md)
+* [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](social/index.md)
 
-* [Povolit generování kódu QR v identitě](identity-enable-qrcodes.md)
+* [Zapnutí generování kódu QR v systému Identity](identity-enable-qrcodes.md)
 
 * [Konfigurace ověřování systému Windows](windowsauth.md)
 
-* [Potvrzení účtu a heslo pro obnovení](accconfirm.md)
+* [Potvrzení účtu a obnovení hesla](accconfirm.md)
 
 * [Dvoufaktorové ověřování přes SMS](2fa.md)
 
@@ -41,9 +39,9 @@ ms.lasthandoff: 01/11/2018
 
   * [Volání rozhraní API webové jádro ASP.NET z grafického subsystému WPF aplikace pomocí služby Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 
-  * [Volání webového rozhraní API ve webové aplikaci ASP.NET Core pomocí služby Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
+  * [Volání webového rozhraní API webové aplikace ASP.NET Core pomocí Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 
-* [Zabezpečení aplikací s IdentityServer4 ASP.NET Core](http://docs.identityserver.io/en/release/)
+* [Zabezpečení aplikací ASP.NET serverem IdentityServer4](http://docs.identityserver.io/en/release/)
 
 * [Zabezpečení ASP.NET Core aplikací pomocí ověřování služby Azure App Service (snadno Auth)](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
 

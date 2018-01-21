@@ -2,19 +2,17 @@
 title: "Jádro ASP.NET MVC s EF Core - řazení, filtru, stránkování - 3 10"
 author: tdykstra
 description: "V tomto kurzu přidáte třídění, filtrování a stránkování funkce na stránku pomocí ASP.NET Core a Entity Framework Core."
-keywords: "ASP.NET Core, Entity Framework Core, řazení, filtru, stránkování, seskupování"
 ms.author: tdykstra
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 59fff4dbf4736f0776aac4072f3f4e2d40119842
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6da2073b18f6fff9738808c84441e59240caefe3
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>Řazení, filtrování, stránkování a seskupení – základní EF s kurz k ASP.NET MVC jádra (3 10)
 
@@ -114,7 +112,7 @@ V této fázi, pokud kliknete na odkaz řazení záhlaví sloupce ztratíte hodn
 
 Pokud chcete přidat stránkování studenty indexovou stránku, vytvoříte `PaginatedList` třídu, která využívá `Skip` a `Take` příkazy k filtrování dat na serveru, místo vždy načítání všechny řádky v tabulce. Pak budete udělat další změny v `Index` metoda a přidejte stránkování tlačítek `Index` zobrazení. Následující obrázek znázorňuje tlačítka stránkování.
 
-![Studenti, kteří indexu stránka s odkazy stránkování](sort-filter-page/_static/paging.png)
+![studenti, kteří indexovou stránku s odkazy stránkování](sort-filter-page/_static/paging.png)
 
 Ve složce projektu vytvořte `PaginatedList.cs`a pak nahraďte kód šablony s následujícím kódem.
 
@@ -195,7 +193,7 @@ Tlačítka stránkování se zobrazí podle značky pomocné rutiny:
 
 Spusťte aplikaci a přejděte na stránku studenty.
 
-![Studenti, kteří indexu stránka s odkazy stránkování](sort-filter-page/_static/paging.png)
+![studenti, kteří indexovou stránku s odkazy stránkování](sort-filter-page/_static/paging.png)
 
 Kliknutím na odkazy stránkování v jiné pořadí řazení do Ujistěte se, že funguje stránkování. Pak zadejte hledaný řetězec a zkuste to znovu a ověřte, že stránkování také funguje správně s řazení a filtrování stránkování.
 

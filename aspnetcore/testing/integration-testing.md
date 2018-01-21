@@ -2,20 +2,18 @@
 title: "Integrace testování v ASP.NET Core"
 author: ardalis
 description: "Jak používat ASP.NET Core integrace testování pro zajištění, že součásti aplikace fungovat správně."
-keywords: "ASP.NET Core, integrace testování, Razor"
 ms.author: riande
 manager: wpickett
 ms.date: 09/25/2017
 ms.topic: article
-ms.assetid: 40d534f2-89b3-4b09-9c2c-3494bf9991c9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: testing/integration-testing
-ms.openlocfilehash: 155fd2f0663c6225531a4df6f323ebb30ab1ee73
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b0d741c05a723ad80fe812254c9a500a9fd9204
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>Integrace testování v ASP.NET Core
 
@@ -151,6 +149,6 @@ Následující tento refaktoring jste jisti, že webové aplikace stále funguje
 
 ## <a name="resources"></a>Prostředky
 
-* [Testování částí](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [Testování jednotek](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [Middleware](xref:fundamentals/middleware)
-* [Testování řadiče](xref:mvc/controllers/testing)
+* [Testování kontrolerů](xref:mvc/controllers/testing)

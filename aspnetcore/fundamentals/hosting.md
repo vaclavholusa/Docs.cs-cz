@@ -2,7 +2,6 @@
 title: "Hostování v ASP.NET Core"
 author: guardrex
 description: "Další informace o webového hostitele v ASP.NET Core, která je zodpovědná za spuštění a životního cyklu správy aplikací."
-keywords: Web ASP.NET Core hostitele, IWebHost, WebHostBuilder, IHostingEnvironment, IApplicationLifetime
 ms.author: riande
 manager: wpickett
 ms.date: 09/21/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 8adc58d67f103e8d1fc8fe197cf392752bdaf660
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 7f6712073002b73ca4ddd7586718c81e62cacbc2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>Hostování v ASP.NET Core
 
@@ -35,8 +34,8 @@ Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspn
 * Nakonfiguruje [Kestrel](servers/kestrel.md) jako webový server. Výchozí možnosti Kestrel najdete v tématu [Kestrel možnosti části Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).
 * Nastaví obsahu kořenovou cestu vrácený [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).
 * Načítání z volitelné konfigurace:
-  * *appSettings.JSON určený*.
-  * *appSettings. {Prostředí} .json*.
+  * *appsettings.json*.
+  * *appsettings.{Environment}.json*.
   * [Tajné klíče uživatele](xref:security/app-secrets) při spuštění aplikace `Development` prostředí.
   * Proměnné prostředí.
   * Argumenty příkazového řádku.
@@ -238,7 +237,7 @@ Tato funkce není k dispozici v ASP.NET Core 1.x.
 
 ---
 
-### <a name="prefer-hosting-urls"></a>Dáváte přednost hostování adresy URL
+### <a name="prefer-hosting-urls"></a>Prefer Hosting URLs
 
 Určuje, zda hostitel naslouchat požadavkům na adresy URL nakonfigurované `WebHostBuilder` místo nastavení nakonfigurovaného pomocí `IServer` implementace.
 
@@ -424,7 +423,7 @@ Použití [konfigurace](xref:fundamentals/configuration/index) konfigurace hosti
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-*Hosting.JSON*:
+*hosting.json*:
 
 ```json
 {
@@ -465,7 +464,7 @@ public class Program
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-*Hosting.JSON*:
+*hosting.json*:
 
 ```json
 {

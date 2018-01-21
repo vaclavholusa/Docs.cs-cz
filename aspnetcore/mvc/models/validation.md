@@ -2,20 +2,18 @@
 title: "Ověření modelu v aplikaci ASP.NET MVC jádra"
 author: rachelappel
 description: "Další informace o ověření modelu v aplikaci ASP.NET MVC jádra."
-keywords: "Jádro ASP.NET, MVC, ověření"
 ms.author: riande
 manager: wpickett
 ms.date: 12/18/2016
 ms.topic: article
-ms.assetid: 3a8676dd-7ed8-4a05-bca2-44e288ab99ee
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.openlocfilehash: 7f641c247cb672934e76fa13bc7b7beb3990dd82
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 91db17e103723ac411a2ad4f3f9549860f250cce
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Úvod k ověření modelu v aplikaci ASP.NET MVC jádra
 
@@ -173,7 +171,7 @@ $.get({
 
 ### <a name="add-validation-to-dynamic-controls"></a>Přidání ověření do dynamických ovládacích prvků
 
-Můžete také aktualizovat pravidla ověřování ve formuláři, pokud jednotlivé prvky, jako například `<input/>`s a `<select/>`s, jsou generována dynamicky. Nelze předat selektory pro tyto prvky, aby `parse()` metoda přímo protože okolního formulář již byla analyzovat a nebude aktualizovat.  Místo toho nejprve odstranit existující data ověření, pak rozboru celý formulář, jak je uvedeno níže:
+Můžete také aktualizovat pravidla ověřování ve formuláři, pokud jednotlivé prvky, jako například `<input/>`s a `<select/>`s, jsou generována dynamicky. Nelze předat selektory pro tyto prvky, aby `parse()` metoda přímo protože okolního formulář již byla analyzovat a nebude aktualizovat. Místo toho nejprve odstranit existující data ověření, pak rozboru celý formulář, jak je uvedeno níže:
 
 ```js
 $.get({
@@ -233,11 +231,11 @@ Definice `VerifyEmail()` metoda řídí následujícími pravidly, jak je uveden
 
 Nyní když uživatelé zadají e-mailu, JavaScript v zobrazení umožňuje vzdálené volání zda že e-mailové byla přijata, a pokud ano, zobrazí se chybová zpráva. Uživatel, jinak můžete odeslat formuláře jako obvykle.
 
-`AdditionalFields` Vlastnost `[Remote]` atribut je užitečný pro ověření kombinace pole s daty na serveru.  Například pokud `User` modelu z výše měl dva další vlastnosti názvem `FirstName` a `LastName`, můžete chtít ověřit, že žádné stávající uživatelé již mají tuto dvojici názvy.  Můžete definovat nové vlastnosti, jak je znázorněno v následujícím kódu:
+`AdditionalFields` Vlastnost `[Remote]` atribut je užitečný pro ověření kombinace pole s daty na serveru. Například pokud `User` modelu z výše měl dva další vlastnosti názvem `FirstName` a `LastName`, můžete chtít ověřit, že žádné stávající uživatelé již mají tuto dvojici názvy. Můžete definovat nové vlastnosti, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`může mít explicitně nastavena na řetězce `"FirstName"` a `"LastName"`, ale pomocí [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operátor takto zjednodušuje refaktoring později.  Metody akce k provedení ověření musí přijměte dva argumenty, jeden pro hodnotu `FirstName` a jeden pro hodnotu `LastName`.
+`AdditionalFields`může mít explicitně nastavena na řetězce `"FirstName"` a `"LastName"`, ale pomocí [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operátor takto zjednodušuje refaktoring později. Metody akce k provedení ověření musí přijměte dva argumenty, jeden pro hodnotu `FirstName` a jeden pro hodnotu `LastName`.
 
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
@@ -248,11 +246,11 @@ Nyní když uživatelé zadat název první a poslední, JavaScript:
 * Pokud byly převzaty dvojici, se zobrazí chybová zpráva. 
 * Pokud nebyla provedena, uživatel odešle formulář.
 
-Pokud budete muset ověřit minimálně dva další pole s `[Remote]` atribut jim poskytujete jako seznam oddělený čárkami.  Chcete-li například přidat `MiddleName` nastavena pro model `[Remote]` atributu, jak je znázorněno v následujícím kódu:
+Pokud budete muset ověřit minimálně dva další pole s `[Remote]` atribut jim poskytujete jako seznam oddělený čárkami. Chcete-li například přidat `MiddleName` nastavena pro model `[Remote]` atributu, jak je znázorněno v následujícím kódu:
 
 ```cs
 [Remote(action: "VerifyName", controller: "Users", AdditionalFields = nameof(FirstName) + "," + nameof(LastName))]
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`, jako jsou všechny argumenty atributu musí být konstantní výraz.  Proto nesmí používat [interpolované řetězce](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) nebo volání [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) k chybě při inicializaci `AdditionalFields`. Pro každý další pole, která přidáte do `[Remote]` atribut, musíte přidat jiné argument odpovídající metoda akce kontroleru.
+`AdditionalFields`, jako jsou všechny argumenty atributu musí být konstantní výraz. Proto nesmí používat [interpolované řetězce](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) nebo volání [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) k chybě při inicializaci `AdditionalFields`. Pro každý další pole, která přidáte do `[Remote]` atribut, musíte přidat jiné argument odpovídající metoda akce kontroleru.

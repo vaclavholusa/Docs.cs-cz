@@ -2,7 +2,6 @@
 title: Kurzy ASP.NET Core
 author: rick-anderson
 description: "Seznam podrobné návody pro naučit vyvíjet aplikace ASP.NET Core."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: acedebaa9b89a0e00602b497d11d5612fce99a5f
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: dc81edce2b54683b20520babeed8ddb78073e709
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
 
@@ -37,8 +36,8 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
    * [Webovou aplikaci pomocí sady Visual Studio pro Mac](first-mvc-app-mac/index.md)
    * [Webové aplikace pomocí kódu v sadě Visual Studio na Mac nebo Linux](first-mvc-app-xplat/index.md)
 
-* [Začínáme s ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](../data/ef-mvc/index.md)
-* [Vytváření Pomocníci značky](../mvc/views/tag-helpers/authoring.md)
+* [Začínáme s technologiemi ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](../data/ef-mvc/index.md)
+* [Vytváření pomocných rutin značek](../mvc/views/tag-helpers/authoring.md)
 * [Vytvoření jednoduchého zobrazení komponenty](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
 * [Vývoj aplikací ASP.NET Core sledovat dotnet.](dotnet-watch.md)
 
@@ -49,24 +48,24 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
   * [Webové rozhraní API pomocí sady Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
   * [Webové rozhraní API pomocí kódu v sadě Visual Studio](web-api-vsc.md)
   
-* [Jádro ASP.NET Web API pomůže stránky pomocí Swagger](web-api-help-pages-using-swagger.md)
+* [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](web-api-help-pages-using-swagger.md)
 * [Vytvoření back-endu webové služby pro nativní mobilní aplikace](../mobile/native-mobile-backend.md)
 
 ## <a name="data-access-and-storage"></a>Přístup k datům a úložiště
-* [Začínáme s ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](../data/ef-mvc/index.md)
+* [Začínáme s technologiemi ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](../data/ef-mvc/index.md)
 * [ASP.NET Core s EF Core – nová databáze](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
 * [ASP.NET Core s EF Core – stávající databáze](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
 
 ## <a name="authentication-and-authorization"></a>Ověřování a autorizace
-* [Povolit ověřování pomocí Facebook, Google a dalších externích zprostředkovatelů](../security/authentication/social/index.md)
-* [Potvrzení účtu a heslo pro obnovení](../security/authentication/accconfirm.md)
+* [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](../security/authentication/social/index.md)
+* [Potvrzení účtu a obnovení hesla](../security/authentication/accconfirm.md)
 * [Dvoufaktorové ověřování přes SMS](../security/authentication/2fa.md)
 
 ## <a name="client-side-development"></a>Vývoj klientské strany
-* [Použití Gulp](../client-side/using-gulp.md)
-* [Použití Grunt](../client-side/using-grunt.md)
+* [Použití nástroje Gulp](../client-side/using-gulp.md)
+* [Použití nástroje Grunt](../client-side/using-grunt.md)
 * [Správa balíčků na straně klienta nástrojem Bower](../client-side/bower.md)
-* [Vytvořit přizpůsobivý weby s Bootstrap](../client-side/bootstrap.md)
+* [Tvorba interaktivních webů pomocí sady nástrojů Bootstrap](../client-side/bootstrap.md)
 
 ## <a name="test"></a>Test
 * [Testování v .NET Core pomocí dotnet testů jednotek](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)

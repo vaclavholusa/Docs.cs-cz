@@ -2,7 +2,6 @@
 title: "Vytvoření webové aplikace s ASP.NET MVC jádra v systému Windows"
 author: rick-anderson
 description: "Tabulka obsahu Úvod do architektury ASP.NET MVC základní pomocí sady Visual Studio v systému Windows."
-keywords: "Jádro ASP.NET, MVC, kurz, úvod"
 ms.author: riande
 manager: wpickett
 ms.date: 10/26/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/index
-ms.openlocfilehash: 9b4525d64b4d5bb309cb0708e36a152863a51ae8
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: 427c6140171d88dc0efa577b9d2940f3741de35a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-using-visual-studio"></a>Vytvoření webové aplikace s ASP.NET MVC základní pomocí sady Visual Studio
 
@@ -30,9 +29,9 @@ Existují 3 verze tohoto kurzu:
 1. [Přidání kontroleru](adding-controller.md)
 1. [Přidání zobrazení](adding-view.md)
 1. [Přidání modelu](adding-model.md)
-1. [Práce s LocalDB serveru SQL](working-with-sql.md)
-1. [Metody kontroleru a zobrazení](controller-methods-views.md)
-1. [Přidání vyhledávání](search.md)
-1. [Přidání nové pole](new-field.md)
-1. [Přidání ověřování](validation.md)
-1. [Zkoumání podrobnosti a odstraňte metody](details.md)
+1. [Práce s verzí SQL Server LocalDB](working-with-sql.md)
+1. [Metody a zobrazení kontroleru](controller-methods-views.md)
+1. [Přidání vyhledávací funkce](search.md)
+1. [Přidání nového pole](new-field.md)
+1. [Přidání ověření](validation.md)
+1. [Zkoumání metod Details a Delete](details.md)

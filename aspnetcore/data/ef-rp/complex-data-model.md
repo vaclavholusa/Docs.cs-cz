@@ -2,7 +2,6 @@
 title: "Stránky Razor EF základní - Model dat – 5 8"
 author: rick-anderson
 description: "V tomto kurzu přidáte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověřování a pravidla mapování databáze."
-keywords: "ASP.NET Core Entity Framework Core, datových poznámek"
 ms.author: riande
 manager: wpickett
 ms.date: 10/25/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: c2761f79fa4836d29541526782969bb0fd47778b
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: c375fe6ea98c621012eb55589c8b174c2a95b697
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>Vytvoření modelu komplexní data - základní EF s stránky Razor kurzu (5 8)
 
@@ -84,7 +83,7 @@ Aktualizace `Student` modelu s následujícím kódem:
 Předchozí kód omezuje názvy k více než 50 znaků. `StringLength` Atribut nemá uživatel zabránit v přechodu do prázdných znaků pro název. [Regulární výraz](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) atribut se používá k aplikování omezení na vstup. Například následující kód vyžaduje první znak, který má být velkými písmeny a zbývající znaků, které mají být abecední:
 
 ```csharp
-[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
 ```
 
 Spuštění aplikace:
@@ -573,7 +572,7 @@ Kód v aktualizaci `DbInitializer` přidá počáteční hodnoty dat pro nové e
 
 * Můžete taky odstraňte pomocí DB:
 
-    * **Průzkumník objektů systému SQL Server** (SSOX).
+    * **SQL Server Object Explorer** (SSOX).
     * `database drop` Rozhraní příkazového řádku příkaz:
 
    ```console

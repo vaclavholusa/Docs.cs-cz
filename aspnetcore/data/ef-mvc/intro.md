@@ -2,20 +2,18 @@
 title: "Jádro ASP.NET MVC s Entity Framework Core - kurz 1 10"
 author: tdykstra
 description: 
-keywords: Kurz ASP.NET Core Entity Framework Core,
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 2b21c7fb35c65d9374723faac5b812289023a0f6
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: df13726689c430ab19786e104ea7404051107aa9
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Začínáme s ASP.NET MVC jádra a Entity Framework Core pomocí sady Visual Studio (1 10)
 
@@ -44,7 +42,7 @@ Základní EF 2.0 je nejnovější verzi EF, ale ještě nemá všechny funkce E
 Pokud narazíte na problém nevyřešíte, obvykle můžete najít řešení tak, že porovnáte svůj kód [dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final). Seznam běžných chyb a jak je vyřešit, najdete v části [části Poradce při potížích s poslední kurz v této sérii](advanced.md#common-errors). Pokud se nepodařilo najít, co potřebujete existuje, můžete odeslat dotaz na StackOverflow.com pro [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) nebo [EF základní](https://stackoverflow.com/questions/tagged/entity-framework-core).
 
 > [!TIP] 
-> Toto je řadu 10 kurzy, z nichž každý je založený na co se provádí v dřívější kurzy.  Zvažte možnost uložení kopie projektu po každém úspěšném dokončení kurzu.  Pak pokud narazíte na problémy, můžete spustit přes z předchozí kurzu místo přejdete zpět na začátek celé řady.
+> Toto je řadu 10 kurzy, z nichž každý je založený na co se provádí v dřívější kurzy. Zvažte možnost uložení kopie projektu po každém úspěšném dokončení kurzu. Pak pokud narazíte na problémy, můžete spustit přes z předchozí kurzu místo přejdete zpět na začátek celé řady.
 
 ## <a name="the-contoso-university-web-application"></a>Contoso univerzity webové aplikace
 
@@ -136,7 +134,7 @@ V *modely* složky, vytvořte soubor třídy s názvem *Student.cs* a nahraďte 
 
 `Enrollments` Je navigační vlastnost. Navigační vlastnosti podržte dalšími subjekty, které se vztahují k této entity. V takovém případě `Enrollments` vlastnost `Student entity` bude obsahovat všechny `Enrollment` entit, které se vztahují k které `Student` entity. Jinými slovy, pokud daný řádek Student v databázi existují dvě související registrace řádky (řádky, které obsahují hodnotu primárního klíče tohoto Studentova v jejich StudentID sloupec cizího klíče), který `Student` entity `Enrollments` navigační vlastnost těch, které bude obsahovat dva `Enrollment` entity.
 
-Pokud vlastnost navigace mohou být uloženy více entit (jako relace m: n nebo na více), jeho typ musí být seznam, ve kterém položky možné ji přidat, odstranit nebo aktualizovat, například `ICollection<T>`.  Můžete zadat `ICollection<T>` , nebo typu, jako `List<T>` nebo `HashSet<T>`. Pokud zadáte `ICollection<T>`, vytvoří EF `HashSet<T>` kolekce ve výchozím nastavení.
+Pokud vlastnost navigace mohou být uloženy více entit (jako relace m: n nebo na více), jeho typ musí být seznam, ve kterém položky možné ji přidat, odstranit nebo aktualizovat, například `ICollection<T>`. Můžete zadat `ICollection<T>` , nebo typu, jako `List<T>` nebo `HashSet<T>`. Pokud zadáte `ICollection<T>`, vytvoří EF `HashSet<T>` kolekce ve výchozím nastavení.
 
 ### <a name="the-enrollment-entity"></a>Registrace entity
 
@@ -204,13 +202,13 @@ Otevřete *appSettings.JSON určený* souboru a přidat připojovací řetězec,
 
 [!code-json[](./intro/samples/cu/appsettings1.json?highlight=2-4)]
 
-### <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
+### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
 Připojovací řetězec Určuje databázi SQL serveru LocalDB. LocalDB je Odlehčená verze SQL Server Express Database Engine a je určena pro vývoj aplikací, není použití v provozním prostředí. LocalDB spustí na vyžádání a běží v uživatelském režimu, takže není žádná komplexní konfigurace. Ve výchozím nastavení, vytvoří instanci LocalDB *.mdf* soubory v databáze `C:/Users/<user>` adresáře.
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>Přidat kód pro inicializaci databáze s testovací data
 
-Rozhraní Entity Framework pro vytvoření prázdnou databázi.  V této části napíšete metodu, která je volána po vytvoření databáze k naplnění testovacích datech.
+Rozhraní Entity Framework pro vytvoření prázdnou databázi. V této části napíšete metodu, která je volána po vytvoření databáze k naplnění testovacích datech.
 
 Tady budete používat `EnsureCreated` metoda automaticky vytvořit databázi. V [novější kurzu](migrations.md) uvidíte, jak zpracovat změny modelu s použitím migrace Code First, chcete-li změnit schéma databáze místo vyřadit a znovu vytvořit databázi.
 
@@ -218,7 +216,7 @@ V *Data* složky, vytvořte nový soubor třídy s názvem *DbInitializer.cs* a 
 
 [!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
-Kód ověří, zda existují jakékoli studenty v databázi, a pokud ne, předpokládá, databáze je nový a musí být vyplněn testovacích datech.  Načte testovací data do pole místo `List<T>` kolekce za účelem optimalizace výkonu.
+Kód ověří, zda existují jakékoli studenty v databázi, a pokud ne, předpokládá, databáze je nový a musí být vyplněn testovacích datech. Načte testovací data do pole místo `List<T>` kolekce za účelem optimalizace výkonu.
 
 V *Program.cs*, změnit `Main` metodu na spuštění aplikace, postupujte takto:
 
@@ -353,7 +351,7 @@ V následujícím kódu `async` – klíčové slovo, `Task<T>` vrátit hodnotu,
 
 Některé věci zajímat, když píšete asynchronní kód, který používá rozhraní Entity Framework:
 
-* Pouze příkazy, které způsobily dotazy nebo příkazy k odeslání do databáze se spustí asynchronně. Například zahrnující `ToListAsync`, `SingleOrDefaultAsync`, a `SaveChangesAsync`.  Neobsahuje, například příkazy, které právě změnit `IQueryable`, jako například `var students = context.Students.Where(s => s.LastName == "Davolio")`.
+* Pouze příkazy, které způsobily dotazy nebo příkazy k odeslání do databáze se spustí asynchronně. Například zahrnující `ToListAsync`, `SingleOrDefaultAsync`, a `SaveChangesAsync`. Neobsahuje, například příkazy, které právě změnit `IQueryable`, jako například `var students = context.Students.Where(s => s.LastName == "Davolio")`.
 
 * Kontextu EF není zaručeno bezpečné používání vláken: nemáte pokusí provést více operací paralelně. Při volání metody EF všechny asynchronní, vždy nutné použít `await` – klíčové slovo.
 
@@ -366,4 +364,4 @@ Další informace o asynchronní programování v rozhraní .NET najdete v téma
 Nyní jste vytvořili jednoduchou aplikaci, která se používá k uložení a zobrazení data Entity Framework Core a SQL Server Express LocalDB. V následujícím kurzu se dozvíte jak provádět základní CRUD (vytvořit, číst, aktualizovat, odstraňovat) operace.
 
 >[!div class="step-by-step"]
-[Next](crud.md)  
+[Next](crud.md)

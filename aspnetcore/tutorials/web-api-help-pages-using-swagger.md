@@ -2,20 +2,18 @@
 title: "Základní webové rozhraní API pomůže stránky ASP.NET pomocí Swagger"
 author: spboyer
 description: "V tomto kurzu poskytuje návod k přidávání Swagger ke generování dokumentaci, abyste stránky pro aplikaci webového rozhraní API."
-keywords: "ASP.NET Core, Swagger, Swashbuckle, pomůže stránky webového rozhraní API"
 ms.author: spboyer
 manager: wpickett
 ms.date: 09/01/2017
 ms.topic: article
-ms.assetid: 54bb961d-29d9-4dee-8e2c-a93fc33c16f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 08503b724aaea64ad2d32eaa710378ec77b9a1fe
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: d044c820057dba762d3a0f621855a8f4e298ab23
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-web-api-help-pages-using-swagger"></a>Základní webové rozhraní API pomůže stránky ASP.NET pomocí Swagger
 
@@ -62,7 +60,7 @@ Swashbuckle lze přidat pomocí následujících postupů:
      * Do vyhledávacího pole zadejte "Swashbuckle.AspNetCore"
      * Vyberte balíček "Swashbuckle.AspNetCore" z **Procházet** a klikněte na **instalace**
 
-# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio pro Mac](#tab/visual-studio-mac)
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * Klikněte pravým tlačítkem myši *balíčky* složky v **řešení Pad** > **přidat balíčky...**
 * Nastavte **přidat balíčky** uživatele systému Windows **zdroj** rozevírací seznam pro "nuget.org"
@@ -209,7 +207,7 @@ XML – komentáře lze je aktivovat pomocí následujících postupů:
 
 ![Sestavení projektu vlastností](web-api-help-pages-using-swagger/_static/swagger-xml-comments.png)
 
-# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio pro Mac](#tab/visual-studio-mac)
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * Otevřete **možnosti projektu** dialogové okno > **sestavení** > **kompilátoru**
 * Zkontrolujte **generování dokumentace xml** pole v části **Obecné možnosti** části:

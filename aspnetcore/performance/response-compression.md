@@ -2,20 +2,18 @@
 title: "Middleware komprese odpovědi pro ASP.NET Core"
 author: guardrex
 description: "Další informace o odpovědi komprese a jak používat Middleware komprese odpovědi v aplikacích ASP.NET Core."
-keywords: "ASP.NET Core, výkon, komprese odpovědi, gzip, přijměte encoding, middleware"
 ms.author: riande
 manager: wpickett
 ms.date: 08/20/2017
 ms.topic: article
-ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 86244179115fe6a7d0f7298495086a96ee9570d9
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 9270287b62f91ddb81d6a347dd583e1cbb32f3c3
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware komprese odpovědi pro ASP.NET Core
 
@@ -33,7 +31,7 @@ Middleware komprese odpovědi použijte, pokud jste:
 * Nelze použít následující technologie komprese na serveru:
   * [Modul pro kompresi dynamického služby IIS](https://www.iis.net/overview/reliability/dynamiccachingandcompression)
   * [Apache mod_deflate modulu](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
-  * [NGINX komprese a dekomprese](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
+  * [Nginx komprese a dekomprese](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
 * Hostování přímo na:
   * [Ovladač HTTP.sys serveru](xref:fundamentals/servers/httpsys) (dříve se označovaly jako [WebListener](xref:fundamentals/servers/weblistener))
   * [Kestrel](xref:fundamentals/servers/kestrel)
@@ -184,7 +182,7 @@ Při kompresi odpovědí na základě `Accept-Encoding` záhlaví, existují pot
 [!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet1)]
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Middleware problém při za Nginx reverzní proxy server
-Pokud je požadavek směrovány přes proxy server pomocí Nginx, `Accept-Encoding` záhlaví se odebere. Middleware zabrání kompresi odpovědi. Další informace najdete v tématu [NGINX: komprese a dekomprese](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Tento problém je sledovanými [zjistěte průchozí komprese nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123).
+Pokud je požadavek směrovány přes proxy server pomocí Nginx, `Accept-Encoding` záhlaví se odebere. Middleware zabrání kompresi odpovědi. Další informace najdete v tématu [NGINX: komprese a dekomprese](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Tento problém je sledovanými [zjistěte průchozí komprese Nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123).
 
 ## <a name="working-with-iis-dynamic-compression"></a>Práce s dynamické komprese služby IIS
 Pokud máte aktivní IIS dynamické komprese modul nakonfigurována na úrovni serveru, který chcete zakázat pro aplikaci, můžete tak učinit s doplňkem k vaší *web.config* souboru. Další informace najdete v tématu [moduly IIS zakázání](xref:host-and-deploy/iis/modules#disabling-iis-modules).

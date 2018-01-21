@@ -2,20 +2,18 @@
 title: "Poskytovatelé vlastní úložiště pro ASP.NET Core Identity | Microsoft Docs"
 author: ardalis
 description: "Postup konfigurace zprostředkovatele vlastního úložiště pro ASP.NET Core Identity."
-keywords: "Poskytovatelé ASP.NET Core, Identity, vlastní úložiště"
 ms.author: riande
 manager: wpickett
 ms.date: 05/24/2017
 ms.topic: article
-ms.assetid: b2ace545-ecf6-4664-b31e-b65bd4a6b025
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 687ca96be5121502e816bdc856e17dcd5923fe05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6a5feb9039c5b0e9823e5f22f4d55a70830dd3e6
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Poskytovatelé vlastní úložiště pro ASP.NET Core Identity
 
@@ -106,7 +104,7 @@ Ukládá a načte informace o deklaraci identity uživatele (například typ dek
 
 Ukládá a načte přihlašovací informace uživatele (například externí zprostředkovatel ověřování). [Příklad](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
-### <a name="userrole-storage"></a>Položka UserRole úložiště
+### <a name="userrole-storage"></a>UserRole Storage
 
 Ukládá a načte role, které jsou přiřazeny k uživatelů, kteří. [Příklad](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
@@ -151,7 +149,7 @@ V rámci `UserStore` třídy, použijte přístupové třídy dat, které jste v
 
 ### <a name="interfaces-to-implement-when-customizing-user-store"></a>Rozhraní k implementaci při přizpůsobení úložiště uživatele
 
-- **Úložiště IUserStore**  
+- **IUserStore**  
  [IUserStore&lt;TUser&gt; ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserstore-1) rozhraní je pouze rozhraní musí implementovat v úložišti uživatele. Definuje metody pro vytváření, aktualizaci, odstranění a načítání uživatelů.
 - **IUserClaimStore**  
  [IUserClaimStore&lt;TUser&gt; ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserclaimstore-1) rozhraní definuje metody, implementovat povolující deklarace identity uživatele. Obsahuje metody pro přidání, odebrání a načítání deklarace identity uživatelů.
@@ -204,9 +202,9 @@ Toto je ukázková třída role:
 
 Můžete vytvořit ``RoleStore`` třídu, která poskytuje metody pro všechny operace data na rolích. Tato třída je ekvivalentní [úložiště RoleStore<TRole> ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1) třídy. V `RoleStore` implementovat třídu, ``IRoleStore<TRole>`` a volitelně ``IQueryableRoleStore<TRole>`` rozhraní.
 
-- **Úložiště IRoleStore&lt;TRole&gt;**  
+- **IRoleStore&lt;TRole&gt;**  
  [Úložiště IRoleStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.irolestore-1) rozhraní definuje metody k implementaci ve třídě roli úložiště. Obsahuje metody pro vytváření, aktualizaci, odstranění a načítání rolí.
-- **Úložiště RoleStore&lt;TRole&gt;**  
+- **RoleStore&lt;TRole&gt;**  
  Chcete-li přizpůsobit `RoleStore`, vytvořte třídu, která implementuje `IRoleStore` rozhraní. 
 
 ## <a name="reconfigure-app-to-use-new-storage-provider"></a>Znovu nakonfigurujte aplikaci pro použití nového poskytovatele úložiště

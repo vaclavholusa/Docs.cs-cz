@@ -6,15 +6,14 @@ ms.author: rachelap
 manager: wpickett
 ms.date: 11/01/2017
 ms.topic: article
-ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe012345
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: f6a1f32c1edd098b0782fd066d8e32f09952a9b7
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 71bde77e0bc5698b670b560455301cae642165a6
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-security-overview"></a>Přehled zabezpečení ASP.NET Core
 
@@ -45,40 +44,40 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
 
 *   [Ověřování](authentication/index.md)
     *   [Úvod do systému Identity](authentication/identity.md)
-    *   [Povolit ověřování pomocí Facebook, Google a dalších externích zprostředkovatelů](authentication/social/index.md)
+    *   [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](authentication/social/index.md)
     * [Konfigurace ověřování systému Windows](authentication/windowsauth.md)
-    *   [Potvrzení účtu a heslo pro obnovení](authentication/accconfirm.md)
+    *   [Potvrzení účtu a obnovení hesla](authentication/accconfirm.md)
     *   [Dvoufaktorové ověřování přes SMS](authentication/2fa.md) 
     *   [Používala ověřování souborů cookie bez Identity](authentication/cookie.md)
     *   [Azure Active Directory](authentication/azure-active-directory/index.md)
         *   [Integrace Azure AD do webové aplikace ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
         *   [Volání rozhraní API webové jádro ASP.NET z grafického subsystému WPF aplikace pomocí služby Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
-        *   [Volání webového rozhraní API ve webové aplikaci ASP.NET Core pomocí služby Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
+        *   [Volání webového rozhraní API webové aplikace ASP.NET Core pomocí Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
         *   [Webové aplikace ASP.NET Core s Azure AD B2C](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
-    *   [Zabezpečení aplikací s IdentityServer4 ASP.NET Core](https://identityserver4.readthedocs.io)
+    *   [Zabezpečení aplikací ASP.NET serverem IdentityServer4](https://identityserver4.readthedocs.io)
 *   [Autorizace](authorization/index.md)
     *   [Úvod](authorization/introduction.md)
     *   [Vytvoření aplikace s uživatelskými daty chráněnými autorizací](xref:security/authorization/secure-data)
-    *   [Jednoduché autorizace](authorization/simple.md)
-    *   [Ověřování na základě rolí](authorization/roles.md)
-    *   [Ověření na základě deklarace identity](authorization/claims.md)
-    *   [Na základě zásad autorizace](authorization/policies.md)
-    *   [Vkládání závislostí v obslužné rutiny požadavku](authorization/dependencyinjection.md)
+    *   [Jednoduchá autorizace](authorization/simple.md)
+    *   [Ověřování založené na rolích](authorization/roles.md)
+    *   [Autorizace na základě deklarace identity](authorization/claims.md)
+    *   [Autorizace na základě zásad](authorization/policies.md)
+    *   [Injektáž závislostí v obslužných rutinách požadavků](authorization/dependencyinjection.md)
     *   [Autorizace na základě prostředků](authorization/resourcebased.md)
     *   [Autorizace na základě zobrazení](authorization/views.md)
-    *   [Limit identity podle schématu](authorization/limitingidentitybyscheme.md)
+    *   [Omezení identity schématem](authorization/limitingidentitybyscheme.md)
 *   [Ochrana dat](data-protection/index.md)
     *   [Úvod do ochrany dat](data-protection/introduction.md)
-    *   [Začínáme s rozhraními API ochrany dat.](data-protection/using-data-protection.md)
+    *   [Začínáme s rozhraními API na ochranu dat](data-protection/using-data-protection.md)
     *   [Rozhraní API příjemců](data-protection/consumer-apis/index.md)
         *   [Přehled rozhraní API příjemců](data-protection/consumer-apis/overview.md)
-        *   [Účel řetězce](data-protection/consumer-apis/purpose-strings.md)
+        *   [Účelové řetězce](data-protection/consumer-apis/purpose-strings.md)
         *   [Hierarchie účelů a víceklientská architektura](data-protection/consumer-apis/purpose-strings-multitenancy.md)
-        *   [Hashování hesel](data-protection/consumer-apis/password-hashing.md)
-        *   [Omezení doby trvání chráněných datových částí](data-protection/consumer-apis/limited-lifetime-payloads.md)
-        *   [Zrušte ochranu datových částí, které byly odvolány jejíž klíče](data-protection/consumer-apis/dangerous-unprotect.md)
+        *   [Použití funkce hash u hesla](data-protection/consumer-apis/password-hashing.md)
+        *   [Omezení životnosti chráněných datových částí](data-protection/consumer-apis/limited-lifetime-payloads.md)
+        *   [Zrušení ochrany datových částí s odvolanými klíči](data-protection/consumer-apis/dangerous-unprotect.md)
     *   [Konfigurace](data-protection/configuration/index.md)
-        *   [Konfigurovat ochranu dat](data-protection/configuration/overview.md)
+        *   [Konfigurace ochrany dat](data-protection/configuration/overview.md)
         *   [Výchozí nastavení](data-protection/configuration/default-settings.md)
         *   [Zásady pro celý počítač](data-protection/configuration/machine-wide-policy.md)
         *   [Scénáře využívající DI](data-protection/configuration/non-di-scenarios.md)
@@ -88,22 +87,22 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
         *   [Ostatní rozhraní API](data-protection/extensibility/misc-apis.md)
     *   [Implementace](data-protection/implementation/index.md)
         *   [Podrobnosti ověřeného šifrování](data-protection/implementation/authenticated-encryption-details.md)
-        *   [Odvození podklíčů a ověřené šifrování](data-protection/implementation/subkeyderivation.md)
+        *   [Odvozování podklíčů a ověřené šifrování](data-protection/implementation/subkeyderivation.md)
         *   [Kontextová záhlaví](data-protection/implementation/context-headers.md)
         *   [Správa klíčů](data-protection/implementation/key-management.md)
-        *   [Poskytovatelé úložiště klíčů](data-protection/implementation/key-storage-providers.md)
-        *   [Klíče šifrování v klidovém stavu](data-protection/implementation/key-encryption-at-rest.md)
-        *   [Klíče neměnitelnosti a změna nastavení](data-protection/implementation/key-immutability.md)
-        *   [Formát úložiště klíčů](data-protection/implementation/key-storage-format.md)
+        *   [Zprostředkovatelé úložiště klíčů](data-protection/implementation/key-storage-providers.md)
+        *   [Šifrování klíčů v klidovém stavu](data-protection/implementation/key-encryption-at-rest.md)
+        *   [Neměnnost klíče a změna nastavení](data-protection/implementation/key-immutability.md)
+        *   [Formát ukládání klíčů](data-protection/implementation/key-storage-format.md)
         *   [Zprostředkovatelé dočasné ochrany dat](data-protection/implementation/key-storage-ephemeral.md)
     *   [Kompatibilita](data-protection/compatibility/index.md)
-        *   [Soubory cookie sdílení mezi aplikacemi](data-protection/compatibility/cookie-sharing.md)
-        *   [Nahraďte <machineKey> technologie ASP.NET](data-protection/compatibility/replacing-machinekey.md)
+        *   [Sdílení souborů cookie mezi aplikacemi](data-protection/compatibility/cookie-sharing.md)
+        *   [Nahrazení <machineKey> v ASP.NET](data-protection/compatibility/replacing-machinekey.md)
 *   [Vytvoření aplikace s uživatelskými daty chráněnými autorizací](xref:security/authorization/secure-data)
 *   [Bezpečné úložiště tajných částí aplikace při vývoji](app-secrets.md)
 *   [Zprostředkovatel konfigurace služby Azure Key Vault](key-vault-configuration.md)
-*   [Vynutit SSL](enforcing-ssl.md)
+*   [Vynucení SSL](enforcing-ssl.md)
 *   [Ochrana proti padělání požadavků](anti-request-forgery.md)
-*   [Zabránit útokům otevřete přesměrování](preventing-open-redirects.md)
-*   [Zabránit skriptování mezi servery](cross-site-scripting.md)
-*   [Povolení žádostí napříč zdroji (CORS)](cors.md)
+*   [Prevence útoků založených na otevřeném přesměrování](preventing-open-redirects.md)
+*   [Obrana proti skriptování mezi weby](cross-site-scripting.md)
+*   [Povolení žádostí nepůvodního zdroje (CORS)](cors.md)

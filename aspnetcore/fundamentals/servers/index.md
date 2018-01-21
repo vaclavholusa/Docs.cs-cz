@@ -2,20 +2,18 @@
 title: "Implementace webového serveru v ASP.NET Core"
 author: tdykstra
 description: "Zavádí webové servery Kestrel a WebListener pro ASP.NET Core. Poskytuje pokyny o tom, jak vyberte jeden a jeho použití s reverzní proxy server."
-keywords: "ASP.NET Core, IServer, webový server, Kestrel, WebListener, reverzní proxy server"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 08/03/2017
 ms.topic: article
-ms.assetid: dba74f39-58cd-4dee-a061-6d15f7346959
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/index
-ms.openlocfilehash: b149cb316e4266e67d846b8ef8c2c7f2a25ded5c
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 807e60e61d4ce4d5755987cffe65d130c9bbbd42
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implementace webového serveru v ASP.NET Core
 
@@ -39,7 +37,7 @@ ASP.NET Core dodává dvě implementace serveru:
 
 ---
 
-## <a name="kestrel"></a>kestrel
+## <a name="kestrel"></a>Kestrel
 
 Kestrel je webový server, který je zahrnut ve výchozím nastavení v šablonách nový projekt ASP.NET Core. 
 
@@ -85,7 +83,7 @@ Informace o tom, jak používat Nginx v systému Linux jako reverzní proxy serv
 
 Informace o tom, jak používat Apache v systému Linux jako reverzní proxy server pro Kestrel najdete v tématu [hostitele v systému Linux s Apache](xref:host-and-deploy/linux-apache).
 
-## <a name="httpsys"></a>Ovladač HTTP.sys
+## <a name="httpsys"></a>HTTP.sys
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 

@@ -2,20 +2,18 @@
 title: "Povolení žádostí napříč zdroji (CORS)"
 author: rick-anderson
 description: "Toto téma představuje CORS jako standard pro povolení nebo odmítnutí žádostí napříč zdroji v aplikaci ASP.NET Core."
-keywords: "ASP.NET Core, CORS, křížové počátek"
 ms.author: riande
 manager: wpickett
 ms.date: 05/17/2017
 ms.topic: article
-ms.assetid: f9d95e88-4d7e-4d0c-a8e1-47de1128d505
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: 5398b6ad6531710de2b8000cb368e5fa607ae7ff
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: e6b49b9dde94cc7d035ea91b992a13df8cb8caf2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Povolení žádostí napříč zdroji (CORS)
 
@@ -268,7 +266,7 @@ U některých požadavků CORS prohlížeč odešle požadavek další, nazývá
 
   * Application/x--www-form-urlencoded
 
-  * multipart/formulář data
+  * multipart/form-data
 
   * text/plain
 

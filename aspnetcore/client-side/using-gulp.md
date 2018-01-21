@@ -2,7 +2,6 @@
 title: "Použití Gulp v ASP.NET Core"
 author: rick-anderson
 description: "Další informace o použití Gulp v ASP.NET Core."
-keywords: ASP.NET Core, Gulp
 ms.author: riande
 manager: wpickett
 ms.date: 02/28/2017
@@ -11,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-gulp
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 68f6838889cfb830f2c5a1976b3140ae5d94ac25
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 11f7254a2f3d3d132f2f6af6d5ddab23f896cf63
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>Úvod do používání Gulp v ASP.NET Core 
 
@@ -30,7 +29,7 @@ V typické moderní webové aplikace může procesu sestavení:
 
 A *Spouštěče úloh* je nástroj, který automatizuje tyto rutiny vývoj a další úkoly. Visual Studio poskytuje integrovanou podporu pro dvě oblíbených úloh založená na JavaScript závodníky: [Gulp](https://gulpjs.com/) a [Grunt](using-grunt.md).
 
-## <a name="gulp"></a>Gulp
+## <a name="gulp"></a>gulp
 
 Gulp je bázi jazyka JavaScript streamování sestavení nástrojů pro kódu na straně klienta. Běžně slouží k vysílání datového proudu klientské soubory pomocí několika procesů, když na konkrétní událost se aktivuje v prostředí sestavení. Gulp můžete například použít k automatizaci [sdružování a minimalizace](bundling-and-minification.md) nebo čištění prostředí pro vývoj než nové sestavení.
 
@@ -106,7 +105,7 @@ Následující tabulka obsahuje vysvětlení úloh, zadaný ve výše uvedeném 
 |vyčištění: šablon stylů css|Úloha, která používá modul rimraf uzlu odstranění k odebrání minifikovaný verze souboru site.css.|
 |Vyčištění|Úloha, která volá `clean:js` úkolu, a `clean:css` úloh.|
 |min:js|Úloha, která minifikuje a zřetězí všechny .js soubory ve složce js. . Min.js soubory jsou vyloučeny.|
-|min:CSS|Úloha, která minifikuje a zřetězí všechny .css soubory ve složce šablon stylů css. . Min.css soubory jsou vyloučeny.|
+|min:css|Úloha, která minifikuje a zřetězí všechny .css soubory ve složce šablon stylů css. . Min.css soubory jsou vyloučeny.|
 |min|Úloha, která volá `min:js` úkolu, a `min:css` úloh.|
 
 ## <a name="running-default-tasks"></a>Spuštěné úlohy výchozí
@@ -249,7 +248,7 @@ Při spuštění několika úloh úlohy spouštět souběžně ve výchozím nas
     gulp.task("series", ["series:first", "series:second"], function () {});
     ```
  
-    Nyní máte tři úkoly: `series:first`, `series:second`, a `series`. `series:second` Úloh obsahuje druhý parametr, který určuje pole úlohy ke spuštění a dokončení před `series:second` úloha spustí.  Jak je uvedeno v kód výše, jenom `series:first` úloha se musí dokončit před `series:second` úloha spustí.
+    Nyní máte tři úkoly: `series:first`, `series:second`, a `series`. `series:second` Úloh obsahuje druhý parametr, který určuje pole úlohy ke spuštění a dokončení před `series:second` úloha spustí. Jak je uvedeno v kód výše, jenom `series:first` úloha se musí dokončit před `series:second` úloha spustí.
 
 2.  Uložit *gulpfile.js*.
 
@@ -328,7 +327,7 @@ Další informace související s prostředím v ASP.NET Core najdete v tématu 
 
 ## <a name="task-and-module-details"></a>Podrobnosti úlohy a modulu
 
-Úloha Gulp není zaregistrována název funkce.  Závislosti můžete zadat, pokud jiné úlohy musí být spuštěny před aktuální úlohy. Další funkce umožňují spouštět a sledovat Gulp úlohy, a také nastavit zdroj (*src*) a cíl (*cíle*) souborů upravována. Toto jsou primární funkce Gulp rozhraní API:
+Úloha Gulp není zaregistrována název funkce. Závislosti můžete zadat, pokud jiné úlohy musí být spuštěny před aktuální úlohy. Další funkce umožňují spouštět a sledovat Gulp úlohy, a také nastavit zdroj (*src*) a cíl (*cíle*) souborů upravována. Toto jsou primární funkce Gulp rozhraní API:
 
 |Gulp – funkce|Syntaxe|Popis|
 |---   |--- |--- |

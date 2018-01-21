@@ -2,7 +2,6 @@
 title: "Konfigurace přenosné objekt lokalizace"
 author: sebastienros
 description: "Tento článek představuje soubory přenosné objektů a popisuje kroky pro jejich používání v aplikaci ASP.NET Core s framework Orchard jádra."
-keywords: "ASP.NET Core, lokalizace, jazykovou verzi, jazyka, přenosné objektu"
 ms.author: scaddie
 manager: wpickett
 ms.date: 09/26/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: 4fa73ae08b10217de657681a27f6097fc3443737
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dfdd86b4706a1fb8e313c24ba830ec996fe09225
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configure-portable-object-localization-with-orchard-core"></a>Lokalizace přenosné objekt nakonfigurovat Orchard jádra
 
@@ -37,7 +36,7 @@ Soubory SP distribuují jako textové soubory s přeloženými řetězci pro dan
 
 Tady je ukázkový soubor SP obsahující překlad pro dva řetězce ve francouzštině, včetně s jeho množném čísle:
 
-*FR.po*
+*fr.po*
 
 ```text
 #: Services/EmailService.cs:29

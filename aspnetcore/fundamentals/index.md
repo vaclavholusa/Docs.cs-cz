@@ -2,21 +2,19 @@
 title: "Základy ASP.NET Core"
 author: rick-anderson
 description: "Zjistit základní koncepty pro vytváření aplikací ASP.NET Core."
-keywords: "ASP.NET Core, základy, – přehled"
 ms.author: riande
 manager: wpickett
 ms.date: 09/30/2017
 ms.topic: get-started-article
-ms.assetid: a19b7836-63e4-44e8-8250-50d426dd1070
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/index
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 83bed4676be3ca752442da3fe560f1f2a4d728a1
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 0d977c13eb5f4cbe8bac261733bdc747e6c19b2a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
@@ -100,8 +98,8 @@ ASP.NET Core se dodává s bohatou sadu předdefinovaných middleware:
 * [Statické soubory](xref:fundamentals/static-files)
 * [Směrování](xref:fundamentals/routing)
 * [Ověřování](xref:security/authentication/index)
-* [Middleware komprese odpovědi](xref:performance/response-compression)
-* [Adresa URL přepisování middlewaru](xref:fundamentals/url-rewriting)
+* [Middleware pro kompresi odpovědí](xref:performance/response-compression)
+* [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting)
 
 [OWIN](http://owin.org)– na základě middlewaru je k dispozici pro aplikace ASP.NET Core a můžete napsat vlastní vlastní middleware.
 
@@ -163,7 +161,7 @@ Další informace najdete v tématu [relace a stav aplikace](xref:fundamentals/a
 
 ## <a name="servers"></a>Servery
 
-Model hostování základní technologie ASP.NET není přímo naslouchat požadavkům. Model hostování závisí na implementaci serveru HTTP k předání požadavku do aplikace. Předaný požadavek je zabalená jako sada objektů funkce, které je přístupné prostřednictvím rozhraní. ASP.NET Core zahrnuje spravovaná, a platformy webového serveru, nazývá [Kestrel](xref:fundamentals/servers/kestrel). Kestrel je často spouštět za produkční webového serveru, jako například [IIS](https://www.iis.net/) nebo [nginx](http://nginx.org). Kestrel můžete spouštět jako hraniční server.
+Model hostování základní technologie ASP.NET není přímo naslouchat požadavkům. Model hostování závisí na implementaci serveru HTTP k předání požadavku do aplikace. Předaný požadavek je zabalená jako sada objektů funkce, které je přístupné prostřednictvím rozhraní. ASP.NET Core zahrnuje spravovaná, a platformy webového serveru, nazývá [Kestrel](xref:fundamentals/servers/kestrel). Kestrel je často spouštět za produkční webového serveru, jako například [IIS](https://www.iis.net/) nebo [Nginx](http://nginx.org). Kestrel můžete spouštět jako hraniční server.
 
 Další informace najdete v tématu [servery](xref:fundamentals/servers/index) a v následujících tématech:
 

@@ -2,7 +2,6 @@
 title: "Publikování aplikace ASP.NET Core do Azure pomocí sady Visual Studio"
 author: rick-anderson
 description: "Zjistěte, jak publikovat aplikaci ASP.NET Core Azure App Service pomocí sady Visual Studio."
-keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 12/16/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: e8de630c4fa8cff5395f7246b91384d4725e4ca6
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: dd31e3a9583a0c152e97ae7cf6b215389298a20c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 /en-nám
 
@@ -185,6 +184,6 @@ Po dokončení testování aplikace, přejděte na [portál Azure](https://porta
 
 ## <a name="additonal-resources"></a>Dalších prostředků
 
-* [Aplikační služba Azure](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-overview)
+* [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-overview)
 * [Skupiny prostředků Azure.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups)
 * [Databáze Azure SQL](https://docs.microsoft.com/en-us/azure/sql-database/)

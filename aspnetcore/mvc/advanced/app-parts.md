@@ -2,20 +2,18 @@
 title: "Částí aplikace v ASP.NET Core"
 author: ardalis
 description: "Další informace o použití částí aplikace, které jsou abstrations přes prostředky aplikace, ke konfiguraci vaší aplikace na zjišťování nebo předejít přetížení funkce ze sestavení."
-keywords: "ASP.NET Core, část aplikace, součást aplikace"
 ms.author: riande
 manager: wpickett
 ms.date: 01/04/2017
 ms.topic: article
-ms.assetid: b355a48e-a15c-4d58-b69c-899963613a98
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: a260675e7461105d4f6a0c61fd13971663c268f2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12c34b7a9521835533998c5609870bc712a6d48c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="application-parts-in-aspnet-core"></a>Částí aplikace v ASP.NET Core
 
@@ -66,9 +64,9 @@ Kromě sestavení projektu a jeho závislá sestavení `ApplicationPartManager` 
 
 Zprostředkovatele funkce aplikace zkontrolujte částí aplikace a poskytují funkce pro ty části. Existuje poskytovatelů integrované funkce pro následující funkce MVC:
 
-* [Řadiče](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
+* [Kontrolery](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
 * [Odkaz na metadata](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
-* [Pomocníci značky](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
+* [Pomocné rutiny značek](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
 * [Zobrazení součásti](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
 
 Zprostředkovatelé funkce dědit z `IApplicationFeatureProvider<T>`, kde `T` je typ funkce. Můžete implementovat vlastní funkce, kterou zprostředkovatele pro jakýkoli z typů funkce MVC uvedené výše. Pořadí poskytovatelů funkce v `ApplicationPartManager.FeatureProviders` kolekce může být důležité, protože novější zprostředkovatelé může reagovat na akce provedené předchozí poskytovatelů.

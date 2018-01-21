@@ -2,20 +2,18 @@
 title: "Kontext hlavičky"
 author: rick-anderson
 description: "Tento dokument popisuje podrobnosti implementace hlaviček kontextu ochrany dat ASP.NET Core."
-keywords: "ASP.NET Core, ochrany dat, kontext hlavičky"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: d026a58c-67f4-411e-a410-c35f29c2c517
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: eb8e4c9ad67d3046648aea1b45f4a675b41b3ec0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5ed2e48a55e23d73bccd01a731b35ea68f8944e
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="context-headers"></a>Kontext hlavičky
 
@@ -72,11 +70,11 @@ B7 92 3D BF 59 90 00 A9
 
 V dalším kroku výpočetní Enc_CBC (K_E, IV, "") pro AES-192-CBC zadané IV = 0 * a K_E, jak je uvedeno výše.
 
-výsledek: = F474B1872B3B53E4721DE19C0841DB6F
+result := F474B1872B3B53E4721DE19C0841DB6F
 
 V dalším kroku výpočetní MAC (K_H, "") pro HMACSHA256 zadané K_H jako výše.
 
-výsledek: = D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
+result := D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
 
 Tímto se vytvoří hlavičku úplné kontextu níže:
 
@@ -123,7 +121,7 @@ výsledek: = ABB100F81E53E10E
 
 V dalším kroku výpočetní MAC (K_H, "") pro HMACSHA1 zadané K_H jako výše.
 
-výsledek: = 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
+result := 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
 
 Tímto se vytvoří hlavičku úplné kontextu, což je kryptografický otisk ověřený šifrovací pár algoritmus (šifrování 3DES. 192 CBC + HMACSHA1 ověření), vidíte níže:
 
@@ -173,11 +171,11 @@ K_E = SP800_108_CTR (prf = HMACSHA512, key = "", popisek = "", kontext = "")
 
 Nejprve umožní K_E = SP800_108_CTR (prf = HMACSHA512, key = "", popisek = "", kontext = ""), kde | K_E | = 256 bitů.
 
-K_E: = 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
+K_E := 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
 
 V dalším kroku výpočetní ověřování značky Enc_GCM (K_E nonce, "") pro AES-256-GCM danou hodnotu nonce = 096 a K_E jak je uvedeno výše.
 
-výsledek: = E7DCCE66DF855A323A6BB7BD7A59BE45
+result := E7DCCE66DF855A323A6BB7BD7A59BE45
 
 Tímto se vytvoří hlavičku úplné kontextu níže:
 

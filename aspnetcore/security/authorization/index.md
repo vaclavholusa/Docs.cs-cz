@@ -2,20 +2,18 @@
 title: Autorizace v ASP.NET Core
 author: rick-anderson
 description: "Tento dokument slouží jako obsah v různých oblastech autorizace ASP.NET Core."
-keywords: ASP.NET Core, autorizace
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 1abd456b-2199-4ba3-9698-3241e0bd4afc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/index
-ms.openlocfilehash: 13b4e1db7e3ae73a0cba49d214c5ffdb31601e5c
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 3aa690138730ec45f4b6c6fad8ff534e0c11f888
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="authorization-in-aspnet-core-simple-role-claims-based-and-custom"></a>Autorizace v ASP.NET Core: jednoduchý, na základě deklarace a vlastní role
 
@@ -23,15 +21,15 @@ ms.lasthandoff: 01/11/2018
 
 * [Autorizace stránek Razor](xref:security/authorization/razor-pages-authorization)
 
-* [Jednoduché autorizace](simple.md)
+* [Jednoduchá autorizace](simple.md)
 
-* [Ověřování na základě rolí](roles.md)
+* [Ověřování založené na rolích](roles.md)
 
-* [Ověření na základě deklarace identity](claims.md)
+* [Autorizace na základě deklarace identity](claims.md)
 
-* [Na základě zásad autorizace](policies.md)
+* [Autorizace na základě zásad](policies.md)
 
-* [Vkládání závislostí v obslužné rutiny požadavku](dependencyinjection.md)
+* [Injektáž závislostí v obslužných rutinách požadavků](dependencyinjection.md)
 
 * [Autorizace na základě prostředků](resourcebased.md)
 

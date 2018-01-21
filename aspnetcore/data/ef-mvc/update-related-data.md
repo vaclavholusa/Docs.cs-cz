@@ -2,20 +2,18 @@
 title: "Jádro ASP.NET MVC s EF Core - aktualizace související Data – 10 7"
 author: tdykstra
 description: "V tomto kurzu aktualizujete souvisejících dat tím, že aktualizuje polí cizího klíče a navigační vlastnosti."
-keywords: "Spojí ASP.NET Core Entity Framework Core, související data"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: b59782bccce00f3940da4ec8bcff768aff8fa4ef
-ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
+ms.openlocfilehash: 0e4df407a1ca15aa5baa2b7226be1cf91902a583
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Aktualizace souvisejících dat – základní EF s kurz k ASP.NET MVC jádra (7 10)
 

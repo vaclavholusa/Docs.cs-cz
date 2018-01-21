@@ -2,20 +2,18 @@
 title: Middleware ASP.NET Core
 author: rick-anderson
 description: "Další informace o ASP.NET Core middleware a kanál požadavku."
-keywords: "ASP.NET Core, Middleware, kanál, delegát"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2017
 ms.topic: article
-ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ad8d207b1e6de396f16d098fb07ddc89bea2c520
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af16046c97964e8e1c16a4f5989fcfa794741c4d
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Základy Middleware ASP.NET Core
 
@@ -153,9 +151,9 @@ V následující tabulce jsou uvedeny požadavky a odpovědi z `http://localhost
 | Požadavek | Odpověď |
 | --- | --- |
 | localhost:1234 | Hello z jiných mapy delegáta.  |
-| localhost:1234 / map1 | Mapa Test 1 |
-| localhost:1234 / map2 – | Mapa testu 2 |
-| localhost:1234 / map3 – | Hello z jiných mapy delegáta.  |
+| localhost:1234/map1 | Mapa Test 1 |
+| localhost:1234/map2 | Mapa testu 2 |
+| localhost:1234/map3 | Hello z jiných mapy delegáta.  |
 
 Když `Map` se používá, segment(s) odpovídající cesta se odeberou z `HttpRequest.Path` a připojením k `HttpRequest.PathBase` pro každý požadavek.
 
@@ -168,7 +166,7 @@ V následující tabulce jsou uvedeny požadavky a odpovědi z `http://localhost
 | Požadavek | Odpověď |
 | --- | --- |
 | localhost:1234 | Hello z jiných mapy delegáta.  |
-| localhost:1234 /? větve = hlavní | Větev použít = hlavní|
+| localhost:1234/?branch=master | Větev použít = hlavní|
 
 `Map`podporuje vnoření, například:
 
@@ -204,7 +202,7 @@ ASP.NET Core se dodává s následujícími součástmi middleware:
 | [Směrování](xref:fundamentals/routing) | Definuje a omezí požadavek trasy. |
 | [Relace](xref:fundamentals/app-state) | Poskytuje podporu pro správu uživatelských relací. |
 | [Statické soubory](xref:fundamentals/static-files) | Poskytuje podporu pro obsluhující statické soubory a procházení adresářů. |
-| [Adresa URL přepisování middlewaru](xref:fundamentals/url-rewriting) | Poskytuje podporu pro přepisování adres URL a přesměrování požadavků. |
+| [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting) | Poskytuje podporu pro přepisování adres URL a přesměrování požadavků. |
 
 <a name="middleware-writing-middleware"></a>
 
@@ -261,4 +259,4 @@ public class MyMiddleware
 * [Ukázkový kód používá v této dokumentace](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample)
 * [Migrace modulů HTTP k middlewaru.](../migration/http-modules.md)
 * [Spuštění aplikace](startup.md)
-* [Požadavky na funkce](request-features.md)
+* [Funkce požadavků](request-features.md)

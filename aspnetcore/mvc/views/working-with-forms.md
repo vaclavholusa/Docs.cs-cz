@@ -2,21 +2,19 @@
 title: "Pomocníci značky ve formulářích v ASP.NET Core"
 author: rick-anderson
 description: "Popisuje předdefinované značky Pomocníci použít s formuláři."
-keywords: "Forms ASP.NET Core, značka pomocné rutiny, TagHelper, formuláře HTML"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 25595059-4fac-4785-8152-f88590e3169b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: da36985206521798d3bfe71f6372dc5cc4fca09a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9fbe2c5cb495aabee0e1f0bdb3871641efa03599
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Základní informace o použití značky Pomocníci ve formulářích v ASP.NET Core
 
@@ -111,9 +109,9 @@ Type expected
 
 |Typ formátu .NET|Typ vstupu|
 |---|---|
-|BOOL|typ = "checkbox"|
-|String|typ = "text"|
-|DateTime|typ = "datum a čas"|
+|BOOL|type=”checkbox”|
+|String|type=”text”|
+|DateTime|type=”datetime”|
 |Byte|typ = "number"|
 |celá čísla|typ = "number"|
 |Jednoduché, Double|typ = "number"|
@@ -124,12 +122,12 @@ Následující tabulka uvádí některé běžné [datových poznámek](https://
 
 |Atribut|Typ vstupu|
 |---|---|
-|[EmailAddress]|typ = "e-mailu"|
-|[Url]|typ = "url"|
-|[HiddenInput]|typ = "skrytá"|
-|[Phone]|typ = "Telefon"|
+|[EmailAddress]|type=”email”|
+|[Url]|type=”url”|
+|[HiddenInput]|type=”hidden”|
+|[Phone]|type=”tel”|
 |[DataType(DataType.Password)]| typ = "password"|
-|[DataType(DataType.Date)]| typ = "data"|
+|[DataType(DataType.Date)]| type=”date”|
 |[DataType(DataType.Time)]| typ = "čas"|
 
 
@@ -241,7 +239,7 @@ Následující syntaxe Razor ukazuje, jak iterace v kolekci:
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Demo/Edit.cshtml)]
 
-*Views/Shared/EditorTemplates/ToDoItem.cshtml* šablony:
+The *Views/Shared/EditorTemplates/ToDoItem.cshtml* template:
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
 
@@ -320,7 +318,7 @@ Existují dvě značky Pomocníci ověření. `Validation Message Tag Helper` (K
 
 ### <a name="the-validation-message-tag-helper"></a>Pomocná rutina pro ověření zprávy značky
 
-* Přidá [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` atribut [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element, který připojí chybové zprávy ověření na vlastnosti zadaného modelu vstupní pole.   Když dojde k chybě ověření straně klienta, [jQuery](https://jquery.com/) zobrazí chybovou zprávu ve `<span>` elementu.
+* Přidá [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` atribut [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element, který připojí chybové zprávy ověření na vlastnosti zadaného modelu vstupní pole. Když dojde k chybě ověření straně klienta, [jQuery](https://jquery.com/) zobrazí chybovou zprávu ve `<span>` elementu.
 
 * Ověření také probíhá na serveru. Klienti mohou mít JavaScript zakázán a některé ověření provést pouze na straně serveru.
 
@@ -574,7 +572,7 @@ Správný `<option>` element bude vybrána (obsahovat `selected="selected"` atri
 
 ## <a name="additional-resources"></a>Další prostředky
 
-* [Pomocníci značky](tag-helpers/intro.md)
+* [Pomocné rutiny značek](tag-helpers/intro.md)
 
 * [Element formuláře HTML](https://www.w3.org/TR/html401/interact/forms.html)
 

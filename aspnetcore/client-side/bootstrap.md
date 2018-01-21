@@ -2,20 +2,18 @@
 title: "Vytváření Krásný přizpůsobivý weby s Bootstrap"
 author: ardalis
 description: 
-keywords: "Jádro ASP.NET"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: bd27832c-2877-4b7b-9337-e009361d845f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bootstrap
-ms.openlocfilehash: f89ad584600c3f12a936599de27f931aff0cd4b5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aee3304515686fc8e45e8e2aafb79d957219f94a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Vytváření Krásný přizpůsobivý weby s Bootstrap
 
@@ -73,7 +71,7 @@ Nejzákladnější Bootstrap šablony vypadá hodně podobá *_Layout.cshtml* so
 
 ### <a name="basic-navigation"></a>Základní navigaci
 
-Výchozí šablona používá sadu `<div>` elementy pro vykreslení horní navigační panel a hlavní část stránky. Pokud používáte HTML5, můžete nahradit první `<div>` značku s `<nav>` značky získat stejného efektu, ale s přesnější sémantiku.  V rámci této první `<div>` se zobrazí několik i další. První, `<div>` s třídou "kontejneru" a pak v rámci této, dva další `<div>` elementy: "navbar záhlaví" a "navbar sbalit".  Navigační panel záhlaví div obsahuje tlačítko, které se zobrazí, pokud je na obrazovce níže určité minimální šířky, zobrazující 3 vodorovné čáry (takzvané "hamburger ikonu"). Ikona je vykreslen pomocí čistý HTML a CSS; je vyžadován žádný obrázek. Toto je kód, který se zobrazí ikona s jednotlivými <span> značky vykreslování mezi bílé řádky:
+Výchozí šablona používá sadu `<div>` elementy pro vykreslení horní navigační panel a hlavní část stránky. Pokud používáte HTML5, můžete nahradit první `<div>` značku s `<nav>` značky získat stejného efektu, ale s přesnější sémantiku. V rámci této první `<div>` se zobrazí několik i další. První, `<div>` s třídou "kontejneru" a pak v rámci této, dva další `<div>` elementy: "navbar záhlaví" a "navbar sbalit". Navigační panel záhlaví div obsahuje tlačítko, které se zobrazí, pokud je na obrazovce níže určité minimální šířky, zobrazující 3 vodorovné čáry (takzvané "hamburger ikonu"). Ikona je vykreslen pomocí čistý HTML a CSS; je vyžadován žádný obrázek. Toto je kód, který se zobrazí ikona s jednotlivými <span> značky vykreslování mezi bílé řádky:
 
 ```html
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -83,7 +81,7 @@ Výchozí šablona používá sadu `<div>` elementy pro vykreslení horní navig
 </button>
 ```
 
-Zahrnuje také název aplikace, která se zobrazí v levé horní části.  Hlavní navigační nabídce je vykreslen metodou `<ul>` v rámci druhého div a obsahuje odkazy na Domů, o a obraťte se na. Další odkazy pro registrace a přihlášení se přidá řádek _LoginPartial v řádku 29. Níže navigaci, hlavní části každé stránce vykreslením v jiném `<div>`označené jako s třídami "kontejner" a "obsah". V souboru _Layout jednoduché výchozí vidět tady jsou obsahu stránce vykreslen zobrazením konkrétní přidružené stránce a pak jednoduchou `<footer>` se přidá na konec `<div>` elementu.  Uvidíte, jak zobrazuje integrované o stránku pomocí této šablony:
+Zahrnuje také název aplikace, která se zobrazí v levé horní části. Hlavní navigační nabídce je vykreslen metodou `<ul>` v rámci druhého div a obsahuje odkazy na Domů, o a obraťte se na. Další odkazy pro registrace a přihlášení se přidá řádek _LoginPartial v řádku 29. Níže navigaci, hlavní části každé stránce vykreslením v jiném `<div>`označené jako s třídami "kontejner" a "obsah". V souboru _Layout jednoduché výchozí vidět tady jsou obsahu stránce vykreslen zobrazením konkrétní přidružené stránce a pak jednoduchou `<footer>` se přidá na konec `<div>` elementu. Uvidíte, jak zobrazuje integrované o stránku pomocí této šablony:
 
 ![O stránku](bootstrap/_static/about-page-wide.png)
 
@@ -117,10 +115,10 @@ V dalším kroku přidejte další `<div>` prvky pro každý sloupec a zadat po�
 
 Předpona šablon stylů CSS – třída | Vrstva zařízení | Šířka
 :---: | :---: | :---:
-sloupec-xs - | Telefony | < 768px
-sloupec-sm - | Tablety | > = 768px
-sloupec-md – | Stolní počítače | > = 992px
-sloupec-kontaktní skupina - | Zobrazí větší plochy | > = 1200px
+col-xs- | Telefony | < 768px
+col-sm- | Tablety | >= 768px
+col-md- | Stolní počítače | >= 992px
+sloupec-kontaktní skupina - | Zobrazí větší plochy | >= 1200px
 
 Při zadávání dva sloupce obou se "sloupec md – 6" výsledné rozložení bude dva sloupce plochy rozlišení, ale tyto dva sloupce se svisle zásobníku při vykreslení v menší zařízení (nebo užší okno prohlížeče na ploše), což umožňuje uživatelům snadno zobrazit obsah, aniž by bylo nutné vodorovný posun.
 
@@ -136,7 +134,7 @@ V tomto příkladu pouze jeden řádek `<div>` byl použit, a zavedení stále v
 
 ### <a name="jumbotron"></a>Jumbotron
 
-Pokud jste použili výchozí šablony ASP.NET MVC v sadě Visual Studio 2012 nebo 2013, pravděpodobně vidíte Jumbotron v akci. Odkazuje na velká část stránky, který umožňuje zobrazit obrázek na pozadí velké volání akce, rotator nebo podobným elementům plnou šířkou. Přidat jumbotron na stránku, jednoduše přidat `<div>` a pojmenujte ho třídu "jumbotron", pak umístit kontejner `<div>` uvnitř a přidejte svůj obsah.  Jsme můžete snadno upravit standardní o stránce sloužící jumbotron pro hlavní názvy sloupců, které se zobrazí:
+Pokud jste použili výchozí šablony ASP.NET MVC v sadě Visual Studio 2012 nebo 2013, pravděpodobně vidíte Jumbotron v akci. Odkazuje na velká část stránky, který umožňuje zobrazit obrázek na pozadí velké volání akce, rotator nebo podobným elementům plnou šířkou. Přidat jumbotron na stránku, jednoduše přidat `<div>` a pojmenujte ho třídu "jumbotron", pak umístit kontejner `<div>` uvnitř a přidejte svůj obsah. Jsme můžete snadno upravit standardní o stránce sloužící jumbotron pro hlavní názvy sloupců, které se zobrazí:
 
 ![Příklad jumbotron](bootstrap/_static/jumbotron.png)
 
@@ -154,7 +152,7 @@ Odznaky naleznete malé, obvykle číselné popisky vedle položky navigace. Mů
 
 ### <a name="alerts"></a>Upozornění
 
-Potřebujete zobrazí nějaké oznámení, upozornění nebo chybovou zprávu uživatelům vaší aplikace. To je, kde jsou užitečné standardní třídy výstrahy.  Existují čtyři různé úrovně závažnosti s přidružené barevná schémata:
+Potřebujete zobrazí nějaké oznámení, upozornění nebo chybovou zprávu uživatelům vaší aplikace. To je, kde jsou užitečné standardní třídy výstrahy. Existují čtyři různé úrovně závažnosti s přidružené barevná schémata:
 
 ![motivu výstrahy](bootstrap/_static/theme-alerts.png)
 
@@ -164,23 +162,23 @@ Naše rozložení už obsahuje standardní navigační panel, ale motivu spušt�
 
 ![motivu tabstrips](bootstrap/_static/theme-tabstrips.png)
 
-Navbars jsou vytvořeny podobně, ale trochu složitější.  Jsou při spuštění systému `<nav>` nebo `<div>` s třídou "navbar", ve kterém div kontejner obsahuje zbytek elementy. Naše stránka obsahuje navigační panel v hlavičce již – následující jednoduše rozbalí na to, přidání podpory pro rozevírací nabídce:
+Navbars jsou vytvořeny podobně, ale trochu složitější. Jsou při spuštění systému `<nav>` nebo `<div>` s třídou "navbar", ve kterém div kontejner obsahuje zbytek elementy. Naše stránka obsahuje navigační panel v hlavičce již – následující jednoduše rozbalí na to, přidání podpory pro rozevírací nabídce:
 
 ![motivu navbars](bootstrap/_static/theme-navbars.png)
 
 ### <a name="additional-elements"></a>Další prvky
 
-Výchozí motiv lze také k dispozici ve stylu vhodně formátovaná, včetně podpory pro prokládané zobrazení tabulek HTML. Existují popisky se styly, které jsou podobné jako u tlačítka. Můžete vytvořit vlastní rozevírací nabídky, které podporují dalšími styly možnosti nad rámec standardních HTML `<select>` element společně s Navbars stejný, jako je naše výchozí úvodní lokality již používá. Pokud potřebujete indikátor průběhu, existuje několik styly můžete vybírat, a také seznam skupin a panely, které obsahují název a obsahu.  Prozkoumejte další možnosti v standardní Bootstrap motivu, který zde:
+Výchozí motiv lze také k dispozici ve stylu vhodně formátovaná, včetně podpory pro prokládané zobrazení tabulek HTML. Existují popisky se styly, které jsou podobné jako u tlačítka. Můžete vytvořit vlastní rozevírací nabídky, které podporují dalšími styly možnosti nad rámec standardních HTML `<select>` element společně s Navbars stejný, jako je naše výchozí úvodní lokality již používá. Pokud potřebujete indikátor průběhu, existuje několik styly můžete vybírat, a také seznam skupin a panely, které obsahují název a obsahu. Prozkoumejte další možnosti v standardní Bootstrap motivu, který zde:
 
-[http://getbootstrap.com/Examples/Theme/](http://getbootstrap.com/examples/theme/)
+[http://getbootstrap.com/examples/theme/](http://getbootstrap.com/examples/theme/)
 
 ## <a name="more-themes"></a>Další motivy
 
-Standardní motivu spuštění, který můžete rozšířit přepsáním některé nebo všechny jeho CSS, jak přizpůsobit barvy a styly, aby odpovídaly potřebám vaší vlastní aplikaci. Pokud chcete spustit z připravených motiv, existuje několik motiv galerie dostupných online, specializují na Bootstrap motivy, jako je například WrapBootstrap.com (což je mnoho motivů komerční) a Bootswatch.com (který nabízí bezplatné motivy).  Některé placené šablony dostupné poskytují značnou část funkce nad rámec základní motivu spuštění, který, jako je například bohatou podporu pro správu nabídek a řídicích panelů s bohatou grafů a ukazatelů. Příklad oblíbených placené šablony Inspinia, je aktuálně pro prodej pro $18, který obsahuje šablonu ASP.NET MVC5 kromě AngularJS a statické verze HTML. Snímek obrazovky ukázkové jsou uvedeny níže.
+Standardní motivu spuštění, který můžete rozšířit přepsáním některé nebo všechny jeho CSS, jak přizpůsobit barvy a styly, aby odpovídaly potřebám vaší vlastní aplikaci. Pokud chcete spustit z připravených motiv, existuje několik motiv galerie dostupných online, specializují na Bootstrap motivy, jako je například WrapBootstrap.com (což je mnoho motivů komerční) a Bootswatch.com (který nabízí bezplatné motivy). Některé placené šablony dostupné poskytují značnou část funkce nad rámec základní motivu spuštění, který, jako je například bohatou podporu pro správu nabídek a řídicích panelů s bohatou grafů a ukazatelů. Příklad oblíbených placené šablony Inspinia, je aktuálně pro prodej pro $18, který obsahuje šablonu ASP.NET MVC5 kromě AngularJS a statické verze HTML. Snímek obrazovky ukázkové jsou uvedeny níže.
 
 ![Příklad motiv inspinia](bootstrap/_static/theme-inspinia.png)
 
-Pokud chcete Změna motivu spuštění, umístí *bootstrap.css* soubor pro motiv, který chcete v **wwwroot/css** složky a změňte odkazy v *_Layout.cshtml* a nasměrovat ho.  Změna odkazy pro všechna prostředí:
+Pokud chcete Změna motivu spuštění, umístí *bootstrap.css* soubor pro motiv, který chcete v **wwwroot/css** složky a změňte odkazy v *_Layout.cshtml* a nasměrovat ho. Změna odkazy pro všechna prostředí:
 
 ```html
 <environment names="Development">
@@ -204,7 +202,7 @@ Bootstrap obsahuje ikonu sady z Glyphicons ([http://glyphicons.com](http://glyph
 
 ![Glyphicons](bootstrap/_static/theme-glyphicons.png)
 
-### <a name="input-groups"></a>Vstupní skupiny
+### <a name="input-groups"></a>vstupní skupiny
 
 Vstupní skupin povolit sdružování další text nebo tlačítka s input element tak uživatelům více intuitivní prostředí:
 

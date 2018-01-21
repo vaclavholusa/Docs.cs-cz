@@ -2,20 +2,18 @@
 title: "WebListener webového serveru implementace v ASP.NET Core"
 author: rick-anderson
 description: "Představuje WebListener, webový server pro ASP.NET Core v systému Windows. Postavená na ovladač Http.Sys v režimu jádra, WebListener je alternativa k Kestrel, který lze použít pro přímé připojení k Internetu bez služby IIS."
-keywords: "ASP.NET Core, WebListener, HttpListener, předpony adres url, protokol SSL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
 ms.topic: article
-ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: f1abb3558546cd907c78b44d9353d9c9f1f5aff1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f1bdbc723e4602c2e53723aff91ec5d254f4bd93
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>WebListener webového serveru implementace v ASP.NET Core
 
@@ -157,7 +155,7 @@ Zde je odkaz na oficiální dokumentaci:
 
 Následující prostředky poskytují podrobné pokyny pro několik scénářů. Články, které odkazují na `HttpListener` platí jak pro `WebListener`, protože obě jsou založené na ovladače Http.Sys.
 
-* [Postupy: Konfigurace portu certifikát protokolu SSL](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
+* [Postupy: Konfigurace portu s certifikátem SSL](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
 * [Hostitelský a certifikát klienta na základě komunikaci pomocí protokolu HTTPS - HttpListener](http://sunshaking.blogspot.com/2012/11/https-communication-httplistener-based.html) to je blog třetí strany a je docela v minulosti, ale má stále užitečné informace.
 * [Postupy: Použití HttpListener návod nebo Http Server nespravovaného kódu (C++) jako Server jednoduché SSL](https://blogs.msdn.microsoft.com/jpsanders/2009/09/29/how-to-walkthrough-using-httplistener-or-http-server-unmanaged-code-c-as-an-ssl-simple-server/) příliš jde starší blog s užitečné informace.
 * [Jak mám nastavit .NET Core WebListener pomocí protokolu SSL?](https://blogs.msdn.microsoft.com/timomta/2016/11/04/how-do-i-set-up-a-net-core-weblistener-with-ssl/)
@@ -169,7 +167,7 @@ Tady jsou některé nástroje třetích stran, které se dají použít jednodu�
 
 Pro generování certifikátů SSL podepsaných svým držitelem, společnost Microsoft poskytuje nástroje pro příkazový řádek: [MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/aa386968) a rutiny prostředí PowerShell [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pki/new-selfsignedcertificate). Existují také uživatelského rozhraní nástroje třetích stran, které bylo snazší pro vygenerování certifikáty podepsané svým držitelem SSL:
 
-* [Nástroje SelfCert](https://www.pluralsight.com/blog/software-development/selfcert-create-a-self-signed-certificate-interactively-gui-or-programmatically-in-net)
+* [SelfCert](https://www.pluralsight.com/blog/software-development/selfcert-create-a-self-signed-certificate-interactively-gui-or-programmatically-in-net)
 * [MakeCert uživatelského rozhraní](http://makecertui.codeplex.com/)
 
 ## <a name="next-steps"></a>Další kroky

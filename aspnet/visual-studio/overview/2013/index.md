@@ -1,6 +1,6 @@
 ---
 uid: visual-studio/overview/2013/index
-title: Visual Studio 2013 | Microsoft Docs
+title: ASP.NET a Visual Studio 2013 | Microsoft Docs
 author: rick-anderson
 description: Visual Studio 2013
 ms.author: aspnetcontent
@@ -12,28 +12,28 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013
 msc.type: chapter
-ms.openlocfilehash: c45622f8521b2a109a6954bd0ee1b525f4a753c2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fad379374814c794754605a2aab193ec625e2182
+ms.sourcegitcommit: 3625e4f7a667641b058d23126f0d9d1844fee886
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/20/2018
 ---
-<a name="visual-studio-2013"></a>Visual Studio 2013
+<a name="aspnet-and-visual-studio-2013"></a>ASP.NET a Visual Studio 2013
 ====================
-> Visual Studio 2013
+> Vývoj webových aplikací ASP.NET s Visual Studio 2013
 
 
-- [Vytváření webové projekty ASP.NET v sadě Visual Studio 2013](creating-web-projects-in-visual-studio.md)
-- [Visual Studio 2013 webové Editor funkce – Browser Link](visual-studio-2013-web-editor-features-browser-link.md)
-- [Visual Studio 2013 webové Editor funkce – šablon stylů CSS](visual-studio-2013-web-editor-features-css.md)
-- [Visual Studio 2013 Editor funkce webových - JavaScript](visual-studio-2013-web-editor-features-javascript.md)
-- [Funkce Editor webové aplikace Visual Studio 2013 – publikování](visual-studio-2013-web-editor-features-publishing.md)
-- [Visual Studio 2013 webové Editor funkce – nástroj Page Inspector](visual-studio-2013-web-editor-features-page-inspector.md)
-- [Visual Studio 2013 webové Editor funkce – HTML Editor](visual-studio-2013-web-editor-features-html-editor.md)
-- [Visual Studio 2013 webové Editor funkce – HTML5](visual-studio-2013-web-editor-features-html5.md)
-- [Generování uživatelského rozhraní ASP.NET v sadě Visual Studio 2013](aspnet-scaffolding-overview.md)
+- [Vytváření webových projektů ASP.NET v sadě Visual Studio 2013](creating-web-projects-in-visual-studio.md)
+- [Funkce webového editoru sady Visual Studio 2013 – Browser Link](visual-studio-2013-web-editor-features-browser-link.md)
+- [Funkce webového editoru sady Visual Studio 2013 – šablony stylů CSS](visual-studio-2013-web-editor-features-css.md)
+- [Funkce webového editoru sady Visual Studio 2013 – JavaScript](visual-studio-2013-web-editor-features-javascript.md)
+- [Funkce webového editoru sady Visual Studio 2013 – publikování](visual-studio-2013-web-editor-features-publishing.md)
+- [Funkce webového editoru sady Visual Studio 2013 – Page Inspector](visual-studio-2013-web-editor-features-page-inspector.md)
+- [Funkce webového editoru sady Visual Studio 2013 – editor HTML](visual-studio-2013-web-editor-features-html-editor.md)
+- [Funkce webového editoru sady Visual Studio 2013 – HTML5](visual-studio-2013-web-editor-features-html5.md)
+- [Vygenerování uživatelského rozhraní ASP.NET v sadě Visual Studio 2013](aspnet-scaffolding-overview.md)
 - [Browser Link](using-browser-link.md)
-- [Technologie ASP.NET a webové nástroje pro poznámky k verzi 2013 Visual Studio](release-notes.md)
+- [ASP.NET a webové nástroje pro Visual Studio 2013 – poznámky k verzi](release-notes.md)
 - [Technologie ASP.NET a webové nástroje 2013.2 poznámky k verzi 2013 Visual Studio](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes.md)
-- [Rukou na testovacího prostředí: Visual Studio 2013 nástroje pro Web](visual-studio-2013-web-tools.md)
-- [Rukou na testovacím: Jeden ASP.NET: integrace webové formuláře ASP.NET, MVC a webových rozhraní API](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api.md)
+- [Praktické cvičení: Webové nástroje v sadě Visual Studio 2013](visual-studio-2013-web-tools.md)
+- [Praktické cvičení: jeden ASP.NET: Integrace webových formulářů ASP.NET, MVC a webového rozhraní API](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api.md)

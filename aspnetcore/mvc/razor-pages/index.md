@@ -1,20 +1,7 @@
 ---
-title: "Úvod do stránky Razor v ASP.NET Core"
-author: Rick-Anderson
-description: "Tato dokumentace poskytuje přehled používání stránky Razor v ASP.NET Core k usnadnění vývoje zaměřené na stránce scénáře."
-keywords: "ASP.NET Core, stránky Razor"
-ms.author: riande
-manager: wpickett
-ms.date: 09/12/2017
-ms.topic: get-started-article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: mvc/razor-pages/index
-ms.openlocfilehash: 31d8b1f662d3d5e7dad8f459d951c7b8181148b8
-ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2017
+Title: Úvod do stránky Razor v ASP.NET Core Autor: popis Rick Anderson: kurz ASP.NET Core na stránky Razor. Obsahuje základní MVC, ASP.NET Core 2.x, pro vývoj webů a Visual Studio 2017.
+je doc poskytuje přehled používání stránky Razor v ASP.NET Core k usnadnění vývoje zaměřené na stránce scénáře.
+MS.Author: riande manager: wpickett ms.date: 12/09/2017 ms.topic: get-started-article ms.technology: aspnet ms.prod: asp.net core uid: mvc nebo razor stránky nebo index
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -45,7 +32,7 @@ Pokud používáte Visual Studio, nainstalujte [Visual Studio](https://www.visua
 
 V tématu [Začínáme s stránky Razor](xref:tutorials/razor-pages/razor-pages-start) podrobné pokyny o tom, jak vytvářet stránky Razor projektu pomocí sady Visual Studio.
 
-#   <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio pro Mac](#tab/visual-studio-mac)
+#   <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 Spustit `dotnet new razor` z příkazového řádku.
 
@@ -87,10 +74,10 @@ Přidružení cesty adresy URL na stránky určuje umístění stránky v systé
 
 | Název souboru a cesty               | odpovídající adresy URL |
 | ----------------- | ------------ |
-| */Pages/index.cshtml* | `/`nebo`/Index` |
+| */Pages/Index.cshtml* | `/`nebo`/Index` |
 | */Pages/Contact.cshtml* | `/Contact` |
 | */Pages/Store/Contact.cshtml* | `/Store/Contact` |
-| */Pages/Store/index.cshtml* | `/Store`nebo`/Store/Index` |
+| */Pages/Store/Index.cshtml* | `/Store`nebo`/Store/Index` |
 
 Poznámky:
 
@@ -308,10 +295,10 @@ Generování adresy URL pro stránky podporuje relativních názvů. Následují
 
 | RedirectToPage(x)| Stránka |
 | ----------------- | ------------ |
-| RedirectToPage("/Index") | *Stránky/indexu* |
-| RedirectToPage("./Index"); | *Stránky nebo zákazníků nebo indexu* |
-| RedirectToPage(".. / Indexu) | *Stránky/indexu* |
-| RedirectToPage("Index")  | *Stránky nebo zákazníků nebo indexu* |
+| RedirectToPage("/Index") | *Pages/Index* |
+| RedirectToPage("./Index"); | *Pages/Customers/Index* |
+| RedirectToPage("../Index") | *Pages/Index* |
+| RedirectToPage("Index")  | *Pages/Customers/Index* |
 
 `RedirectToPage("Index")`, `RedirectToPage("./Index")`, a `RedirectToPage("../Index")` jsou *relativních názvů*. `RedirectToPage` Parametr *kombinaci* cestou k aktuální stránce k výpočtu název cílové stránky.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page. -- page name, not page path -->
 

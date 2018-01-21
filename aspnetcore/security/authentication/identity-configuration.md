@@ -2,7 +2,6 @@
 title: Nakonfigurujte identitu ASP.NET Core
 author: AdrienTorris
 description: "Výchozí hodnoty ASP.NET Core Identity a nakonfigurovat různé vlastnosti Identity, které chcete použít vlastní hodnoty."
-keywords: "ASP.NET Core, Identity, ověřování, zabezpečení"
 ms.author: scaddie
 manager: wpickett
 ms.date: 01/11/2018
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: ac204cb89aac1f90adc64c4f0bec4e946cb8c4d9
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: d3a13d1cef3417522460b44c52c1361c3e9d1162
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configure-identity"></a>Konfigurace Identity
 
@@ -103,7 +102,7 @@ V části `ConfigureServices` v `Startup` třídu, můžete nakonfigurovat soubo
 
 | Vlastnost                | Popis                       | Výchozí |
 | ----------------------- | --------------------------------- | ------- |
-| `Cookie.Name`  | Název souboru cookie.  | . AspNetCore.Cookies.  |
+| `Cookie.Name`  | Název souboru cookie.  | .AspNetCore.Cookies.  |
 | `Cookie.HttpOnly`  | V případě hodnoty true, není soubor cookie přístupný z skripty na straně klienta.  |  true |
 | `ExpireTimeSpan`  | Určuje, jak dlouho lístek ověřování uložené v souboru cookie, který zůstane platný od okamžiku, je vytvořena.  | 14 dnů  |
 | `LoginPath`  | Pokud uživatel není autorizovaný, bude přesměrován na tuto cestu k přihlášení. | / Účet nebo přihlášení  |

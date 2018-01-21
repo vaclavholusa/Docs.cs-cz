@@ -2,18 +2,17 @@
 title: "Stránky Razor EF základní - řazení, filtru, stránkování - 3 8"
 author: rick-anderson
 description: "V tomto kurzu přidáte třídění, filtrování a stránkování funkce na stránku pomocí ASP.NET Core a Entity Framework Core."
-keywords: "ASP.NET Core, Entity Framework Core, řazení, filtru, stránkování, seskupování"
 ms.author: riande
 ms.date: 10/22/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 5e17663b88a622101245228e9372db55e4e874be
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 08f00e183dd8a8daa883d0b9ff15698b3a39f625
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>Řazení, filtrování, stránkování a seskupení – základní EF s stránky Razor (3 8)
 
@@ -161,7 +160,7 @@ Teď, když je vybraný odkaz řazení záhlaví sloupce, filtr z hodnoty **vyhl
 
 V této části `PaginatedList` třída se vytvoří pro podporu stránkování. `PaginatedList` Třídy používá `Skip` a `Take` příkazy k filtrování dat na serveru, místo načítání všechny řádky v tabulce. Následující obrázek znázorňuje tlačítka stránkování.
 
-![Studenti, kteří indexu stránka s odkazy stránkování](sort-filter-page/_static/paging.png)
+![studenti, kteří indexovou stránku s odkazy stránkování](sort-filter-page/_static/paging.png)
 
 Ve složce projektu vytvořte `PaginatedList.cs` následujícím kódem:
 

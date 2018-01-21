@@ -2,21 +2,19 @@
 title: "Vkládání závislostí v ASP.NET Core"
 author: ardalis
 description: "Zjistěte, jak ASP.NET Core implementuje vkládání závislostí a způsobu jeho použití."
-keywords: "ASP.NET Core, vkládání závislostí, di"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: fccd69be-7ad1-47fb-b203-b3633b6b9a9b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d12960708f9d9bf2bc7c5997f82096d93087d13
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 1da3d557c48921747634b08cedb518184fb5f963
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Úvod do vkládání závislostí v ASP.NET Core
 
@@ -149,7 +147,7 @@ Služby, které mají závislosti na jejich měli zaregistrovat v kontejneru. Po
 
 ASP.NET – služby můžete nakonfigurovat následující životnosti:
 
-**Dočasná**
+**Transient**
 
 Přechodný životního cyklu služeb jsou vytvořeny při každém vyžádání. Tato doba platnosti je nejvhodnější pro prosté, bezstavové služby.
 

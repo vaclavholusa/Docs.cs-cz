@@ -2,20 +2,18 @@
 title: "Pomocník značka ukotvení | Microsoft Docs"
 author: pkellner
 description: "Ukazuje, jak pracovat s pomocná značka ukotvení"
-keywords: "ASP.NET Core, značka pomocné rutiny"
 ms.author: riande
 manager: wpickett
 ms.date: 12/20/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a011
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 86756a1d09e6e55ca79aed6e5b718088b82b782c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 7923876c792544ac4d559eb8de29475d8a4b37e0
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="anchor-tag-helper"></a>Pomocník značka ukotvení
 
@@ -99,7 +97,7 @@ https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 > [!NOTE]
 > Použít `asp-page` atribut v stránky Razor, adresy URL musí být relativní cesta, například `"./Speaker"`. Relativní cesty v `asp-page` atribut nejsou k dispozici v zobrazení MVC. Místo toho použijte syntaxi "/" pro zobrazení MVC.
 
-### <a name="asp-route-value"></a>ASP - trasy-{value}
+### <a name="asp-route-value"></a>asp-route-{value}
 
 `asp-route-`je předponu trasy zástupnému znaku. Libovolná hodnota, která jste uložili po konci dash, bude vyhodnocen jako potenciální parametr trasy. Pokud není nalezen výchozí trasu, připojí se k vygenerovaný odkaz href jako parametr žádosti a hodnota tuto předponu trasy. V opačném případě se bude nahrazena v šabloně trasy.
 
@@ -168,7 +166,7 @@ Pokud má jedna `asp-controller` nebo `asp-action` nejsou zadané, pak stejné z
 
 `Name = "speakerevals"`informuje pomocná značka ukotvení ke generování trasu přímo k dané metody kontroleru pomocí adresy URL `/Speaker/Evaluations`. Pokud `asp-controller` nebo `asp-action` je zadán kromě `asp-route`, postupu generované nemusí být očekávat. `asp-route`Nepoužívejte pomocí atributů `asp-controller` nebo `asp-action` aby nedošlo ke konfliktu trasy.
 
-### <a name="asp-all-route-data"></a>ASP všechny trasy dat
+### <a name="asp-all-route-data"></a>asp-all-route-data
 
 `asp-all-route-data`Umožňuje vytváření slovník párů klíčových hodnot, kde klíč je název parametru a hodnota je hodnota přidružená k tomuto klíči.
 
@@ -193,7 +191,7 @@ Pokud po kliknutí na odkaz, metoda kontroleru `EvaluationsCurrent` je volána. 
 
 Pokud žádné klíče ve slovníku shody směrovat parametry, tyto hodnoty bude nahrazena v postupu podle potřeby a ostatní neodpovídající hodnoty se budou generovat jako parametry žádosti.
 
-### <a name="asp-fragment"></a>ASP fragment
+### <a name="asp-fragment"></a>asp-fragment
 
 `asp-fragment`Definuje fragment adresy URL pro připojení k adrese URL. Pomocník značka ukotvení přidá znak hash (#). Pokud jste vytvořit značku:
 
@@ -206,7 +204,7 @@ Vygenerovaná adresa URL bude: http://localhost/Speaker/Evaluations#SpeakerEvalu
 
 Hodnota hash značky jsou užitečné při sestavování aplikací na straně klienta. Mohou být použity pro snadné označování a hledání v jazyce JavaScript, třeba.
 
-### <a name="asp-area"></a>oblasti ASP
+### <a name="asp-area"></a>asp-area
 
 `asp-area`Nastaví název oblasti, který používá ASP.NET Core nastavit odpovídající trasy. Níže jsou příklady jak atribut oblasti způsobí přemapování trasy. Nastavení `asp-area` pro blogy předpony adresáři `Areas/Blogs` pro trasy přidružené kontrolery a zobrazení pro tuto značku ukotvení.
 
@@ -237,7 +235,7 @@ Generovaný kód HTML bude obsahovat segmentu oblasti a bude takto:
 > [!TIP]
 > Pro MVC oblasti pro práci ve webové aplikaci musí šablona trasy obsahovat odkaz na oblasti, pokud existuje. Šablony, které je druhý parametr z `routes.MapRoute` volání metody, se zobrazí jako:`template: '"{area:exists}/{controller=Home}/{action=Index}"'`
 
-### <a name="asp-protocol"></a>protokol ASP
+### <a name="asp-protocol"></a>asp-protocol
 
 `asp-protocol` Je pro zadání protokol (například `https`) v svoji adresu URL. Příklad značky pomocné rutiny ukotvení s uvedením protokolu bude vypadat takto:
 

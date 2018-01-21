@@ -2,20 +2,18 @@
 title: "Práce s LocalDB serveru SQL"
 author: rick-anderson
 description: "Použití SQL serveru LocalDB s jednoduchou aplikaci MVC"
-keywords: ASP.NET Core, LocalDB LocalDB, SQL Server, SQL Server
 ms.author: riande
 manager: wpickett
 ms.date: 03/07/2017
 ms.topic: get-started-article
-ms.assetid: ff8fd9b8-7c98-424d-8641-7524e23bf541
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 67894d05bfd44b0406d10cbbe30ddfdaf0d66636
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 14b0f04ce904b34a03b3c5160e189e2e6d045734
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="working-with-sql-server-localdb"></a>Práce s LocalDB serveru SQL
 
@@ -31,7 +29,7 @@ ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čten
 
 Když nasadíte aplikaci k testu nebo produkčním serveru, můžete použít proměnné prostředí nebo jiný přístup k nastavení připojovacího řetězce k skutečné systému SQL Server. V tématu [konfigurace](xref:fundamentals/configuration/index) Další informace.
 
-## <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
+## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
 LocalDB je Odlehčená verze SQL serveru Express databázového stroje je cílová pro vývoj programu. LocalDB spustí na vyžádání a běží v uživatelském režimu, takže není žádná komplexní konfigurace. Ve výchozím nastavení, vytvoří databáze LocalDB "\*.mdf" soubory *C: či uživatelů nebo\<uživatele\>*  adresáře.
 

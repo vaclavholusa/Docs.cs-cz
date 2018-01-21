@@ -2,21 +2,19 @@
 title: "Použití JavaScriptServices pro vytváření aplikací pro jednu stránku"
 author: scottaddie
 description: "Seznamte se s výhodami JavaScriptServices vytvořit jedné stránce aplikace (SPA) zajišťoval ASP.NET Core."
-keywords: "Úhlová ASP.NET Core, SPA, JavaScriptServices, SpaServices"
 ms.author: scaddie
 manager: wpickett
 ms.date: 08/02/2017
 ms.topic: article
-ms.assetid: 4b30576b-2718-4c39-9253-a59966747893
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d47910beef9195295c8da6ac81b83b3ffe20124
-ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
+ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>Použití JavaScriptServices pro vytvoření jednostránkové aplikace pomocí ASP.NET Core
 
@@ -239,12 +237,12 @@ Zobrazí se seznam dostupných šablon SPA:
 
 | Šablony                                 | Krátký název | Jazyk | Značky        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| Jádro ASP.NET MVC s úhlová             | úhlová    | [C#]     | Web nebo MVC nebo SPA |
-| Jádro ASP.NET MVC s Aurelia             | aurelia    | [C#]     | Web nebo MVC nebo SPA |
-| Jádro ASP.NET MVC s Knockout.js         | Knockout   | [C#]     | Web nebo MVC nebo SPA |
-| Jádro ASP.NET MVC s React.js            | Reagovat      | [C#]     | Web nebo MVC nebo SPA |
-| Jádro ASP.NET MVC s React.js a – obnovení  | reactredux | [C#]     | Web nebo MVC nebo SPA |
-| Jádro ASP.NET MVC s Vue.js              | VUE        | [C#]     | Web nebo MVC nebo SPA | 
+| Jádro ASP.NET MVC s úhlová             | úhlová    | [C#]     | Web/MVC/SPA |
+| Jádro ASP.NET MVC s Aurelia             | aurelia    | [C#]     | Web/MVC/SPA |
+| Jádro ASP.NET MVC s Knockout.js         | Knockout   | [C#]     | Web/MVC/SPA |
+| Jádro ASP.NET MVC s React.js            | Reagovat      | [C#]     | Web/MVC/SPA |
+| Jádro ASP.NET MVC s React.js a – obnovení  | reactredux | [C#]     | Web/MVC/SPA |
+| Jádro ASP.NET MVC s Vue.js              | VUE        | [C#]     | Web/MVC/SPA | 
 
 Pokud chcete vytvořit nový projekt pomocí jedné z šablon SPA, obsahovat **krátký název** šablony ve `dotnet new` příkaz. Následující příkaz vytvoří úhlová aplikace s ASP.NET MVC základní nakonfigurovaná na straně serveru:
 

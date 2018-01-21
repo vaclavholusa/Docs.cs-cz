@@ -2,20 +2,18 @@
 title: "Směrování v ASP.NET Core"
 author: ardalis
 description: "Zjistit, jak je zodpovědná za mapování příchozího požadavku na obslužnou rutinu trasy funkci směrování ASP.NET Core."
-keywords: "Jádro ASP.NET"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 58388f674ed5d353c1c7208a67fb338e49fdb592
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ffa3178dc4e3aac3ba51c29b7efa3f71eb56bcfe
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -238,7 +236,7 @@ Následující tabulka obsahuje odpovědi s danou identifikátory URI.
 | /Package/sledovat / | \<Přejít, nebyla zjištěna shoda > |
 | ZÍSKAT /hello/Joe | Dobrý den, Jan! |
 | POST /hello/Joe | \<Přejít, odpovídá jenom metody GET protokolu HTTP > |
-| ZÍSKAT /hello/Joe/Smith | \<Přejít, nebyla zjištěna shoda > |
+| GET /hello/Joe/Smith | \<Přejít, nebyla zjištěna shoda > |
 
 Pokud konfigurujete jednu trasu, zavolejte `app.UseRouter` předávání v `IRouter` instance. Nebudete muset volat `RouteBuilder`.
 
@@ -281,8 +279,8 @@ Následující tabulka ukazuje některé šablony trasy a jejich chování.
 | {Stránky = Domů} | / | Odpovídá a nastaví `Page` na`Home` |
 | {Stránky = Domů}  | / Kontakt  | Odpovídá a nastaví `Page` na`Contact` |
 | {controller} / {action} / {id}? | / / Seznam produktů | Se mapuje na `Products` řadiče a `List` akce |
-| {controller} / {action} / {id}? | / Produkty/podrobnosti/123  |  Se mapuje na `Products` řadiče a `Details` akce.  `id`Nastavte na 123 |
-| {řadiče = Domů} / {akci = Index} / {id}? | /  |  Se mapuje na `Home` řadiče a `Index` metoda; `id` je ignorována. |
+| {controller} / {action} / {id}? | /Products/Details/123  |  Se mapuje na `Products` řadiče a `Details` akce.  `id`Nastavte na 123 |
+| {controller=Home}/{action=Index}/{id?} | /  |  Se mapuje na `Home` řadiče a `Index` metoda; `id` je ignorována. |
 
 Pomocí šablony je obecně nejjednodušším přístupem při směrování. Omezení a výchozí nastavení můžete také uvést mimo šablonu trasy.
 
@@ -340,7 +338,7 @@ Regulární výrazy použité ve směrování se často začínat `^` znak (odpo
 | ----------------- | ------------ |  ------------ |  ------------ | 
 | `[a-z]{2}` | Dobrý den | Ano | shody podřetězců |
 | `[a-z]{2}` | 123abc456 | Ano | shody podřetězců |
-| `[a-z]{2}` | MZ | Ano | odpovídá výrazu |
+| `[a-z]{2}` | mz | Ano | odpovídá výrazu |
 | `[a-z]{2}` | MZ | Ano | není malá a velká písmena |
 | `^[a-z]{2}$` |  Dobrý den | Ne | v tématu `^` a `$` výše |
 | `^[a-z]{2}$` |  123abc456 | Ne | v tématu `^` a `$` výše |
@@ -365,10 +363,10 @@ Hodnoty explicitně nezadá, ale které se neshodují. nic se přidají do řet�
 
 | Vedlejším hodnoty | Explicitní hodnoty | Výsledek |
 | -------------   | -------------- | ------ |
-| Řadič = "Domů" | akce = "O" | `/Home/About` |
-| Řadič = "Domů" | Řadič = "Order", akce = "O" | `/Order/About` |
-| Řadič = "Domů", color = "Red" | akce = "O" | `/Home/About` |
-| Řadič = "Domů" | akce = "O", barva = "Red" | `/Home/About?color=Red`
+| controller="Home" | akce = "O" | `/Home/About` |
+| controller="Home" | Řadič = "Order", akce = "O" | `/Order/About` |
+| controller="Home",color="Red" | akce = "O" | `/Home/About` |
+| controller="Home" | akce = "O", barva = "Red" | `/Home/About?color=Red`
 
 Pokud trasa má výchozí hodnotu, která neodpovídá parametr a explicitně zadat tuto hodnotu, musí se shodovat výchozí hodnota. Příklad:
 

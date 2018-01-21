@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 350c2e4e92c8a53d22dd2500330281b4003a05e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5283da2786d41c0ae06607185dd416aeb7d2b62a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>Vytváření složitějších datový Model pro aplikaci ASP.NET MVC (4 10)
 ====================
@@ -81,7 +81,7 @@ Můžete také zadat pravidla ověření dat a zprávy pomocí atributů. Předp
 
 [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut nebude uživatel zabránit v přechodu do prázdných znaků pro název. Můžete použít [regulární výraz](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut použít omezení na vstup. Například následující kód vyžaduje první znak, který má být velkými písmeny a zbývající znaků, které mají být abecední:
 
-`[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]`
+`[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]`
 
 [MaxLength](https://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) atribut poskytuje podobné funkce jako [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut, ale neposkytuje na straně klienta ověření.
 
@@ -295,17 +295,17 @@ Je vztah m: n mezi `Student` a `Course` entity a `Enrollment` entity funguje jak
 
 Následující obrázek znázorňuje, jak tyto relace vypadat v diagramu entity. (Tento diagram byla generována pomocí [výkonné nástroje Entity Framework](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d)vytváření diagramu není součástí tohoto kurzu, je právě používán sem jako obrázek.)
 
-![Student Course_many k many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image11.png)
+![Student-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image11.png)
 
 Každý řádek vztahů je 1 na jeden element end a znak hvězdičky (\*) jiných, která určuje vztah jeden mnoho.
 
 Pokud `Enrollment` tabulky nezahrnuli úrovni informace, jenom třeba, aby obsahovat dvě cizí klíče `CourseID` a `StudentID`. V takovém případě by odpovídat na tabulku spojení m: n *bez datové části* (nebo *čistý spojení tabulky*) v databázi, a máte nebude vůbec vytvářet třídu modelu pro ni. `Instructor` a `Course` entity mají tento druh relace m: n, a jak můžete vidět, neexistuje žádná třída entity mezi nimi:
 
-![Lektorem Course_many k many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
+![Instructor-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
 
 Připojení k tabulku je nutné v databázi, ale, jak je znázorněno v následujícím diagramu databáze:
 
-![Lektorem Course_many k many_relationship_tables](https://asp.net/media/2577802/Windows-Live-Writer_Creating-a.NET-MVC-Application-4-of-10h1_B662_Instructor-Course_many-to-many_relationship_tables_03e042cf-db89-4b4c-985a-e458351ada76.png)
+![Instructor-Course_many-to-many_relationship_tables](https://asp.net/media/2577802/Windows-Live-Writer_Creating-a.NET-MVC-Application-4-of-10h1_B662_Instructor-Course_many-to-many_relationship_tables_03e042cf-db89-4b4c-985a-e458351ada76.png)
 
 Rozhraní Entity Framework vytvoří automaticky `CourseInstructor` tabulky a můžete číst a aktualizovat ji nepřímo čtení a aktualizaci `Instructor.Courses` a `Course.Instructors` navigační vlastnosti.
 

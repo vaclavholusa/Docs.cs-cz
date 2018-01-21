@@ -1,6 +1,6 @@
 ---
-title: "Hostitel s nginx ASP.NET Core v systému Linux"
-description: "Popisuje, jak nastavit jako reverzní proxy server na Ubuntu 16.04 pro přenos dat protokolu HTTP do webové aplikace ASP.NET Core systémem Kestrel nginx."
+title: "Hostování v systému Linux s Nginx ASP.NET Core"
+description: "Popisuje, jak nastavit jako reverzní proxy server na Ubuntu 16.04 pro přenos dat protokolu HTTP do webové aplikace ASP.NET Core systémem Kestrel Nginx."
 author: rick-anderson
 ms.author: riande
 manager: wpickett
@@ -10,13 +10,13 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: cc15efc25abbfb5bfc9b748b49802afebc75bfb2
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: db437b5a17f54f039b3af82dfd8b450df42a9e8d
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="host-aspnet-core-on-linux-with-nginx"></a>Hostitel s nginx ASP.NET Core v systému Linux
+# <a name="host-aspnet-core-on-linux-with-nginx"></a>Hostování v systému Linux s Nginx ASP.NET Core
 
 Podle [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
@@ -51,9 +51,9 @@ Reverzní proxy server je běžné instalační program pro obsluhující dynami
 
 ### <a name="why-use-a-reverse-proxy-server"></a>Proč používat reverzní proxy server?
 
-Kestrel je skvělá pro obsluhující dynamický obsah z ASP.NET Core; však nejsou webové části slouží jako bohaté funkce jako servery jako služby IIS, Apache nebo nginx. Reverzní proxy server můžete přesměrovat pracovní obsluhující statický obsah, ukládání do mezipaměti požadavky, komprese požadavků a ukončení protokolu SSL ze serveru HTTP. Reverzní proxy server může být na vyhrazeném počítači nebo může být nasazeny společně se HTTP server.
+Kestrel je skvělá pro obsluhující dynamický obsah z ASP.NET Core; však nejsou webové části slouží jako bohaté funkce jako servery jako služby IIS, Apache nebo Nginx. Reverzní proxy server můžete přesměrovat pracovní obsluhující statický obsah, ukládání do mezipaměti požadavky, komprese požadavků a ukončení protokolu SSL ze serveru HTTP. Reverzní proxy server může být na vyhrazeném počítači nebo může být nasazeny společně se HTTP server.
 
-Pro účely tohoto průvodce se používá jednu instanci nginx. Běží na stejném serveru, spolu s HTTP server. Na základě požadavků, různé instalační může být zvolené.
+Pro účely tohoto průvodce se používá jednu instanci Nginx. Běží na stejném serveru, spolu s HTTP server. Na základě požadavků, různé instalační může být zvolené.
 
 Protože požadavky jsou předávány podle reverzní proxy server, použijte `ForwardedHeaders` middleware z `Microsoft.AspNetCore.HttpOverrides` balíčku. Tento middleware aktualizace `Request.Scheme`pomocí `X-Forwarded-Proto` záhlaví, tak, že přesměrování identifikátory URI a jiné zásady zabezpečení pracovat správně.
 
@@ -92,28 +92,28 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 ---
 
-### <a name="install-nginx"></a>Nainstalujte nginx
+### <a name="install-nginx"></a>Nainstalujte Nginx
 
 ```bash
 sudo apt-get install nginx
 ```
 
 > [!NOTE]
-> Pokud se nainstalují volitelné nginx moduly, může být potřeba vytváření nginx ze zdroje.
+> Pokud se nainstalují volitelné moduly Nginx, může být potřeba vytváření Nginx ze zdroje.
 
-Použití `apt-get` k instalaci nginx. Instalační program vytvoří skript init V systému, který spouští nginx jako démon na spuštění systému. Vzhledem k tomu, že nginx byla nainstalována poprvé, explicitně spusťte ji spuštěním:
+Použití `apt-get` k instalaci Nginx. Instalační program vytvoří skript init V systému, který spouští Nginx jako démon na spuštění systému. Vzhledem k tomu, že Nginx byla nainstalována poprvé, explicitně spusťte ji spuštěním:
 
 ```bash
 sudo service nginx start
 ```
 
-Ověřte, zda že prohlížeč zobrazí výchozí úvodní stránka pro nginx.
+Ověřte, zda že prohlížeč zobrazí výchozí úvodní stránka pro Nginx.
 
-### <a name="configure-nginx"></a>Konfigurace nginx
+### <a name="configure-nginx"></a>Konfigurace Nginx
 
-Pokud chcete konfigurovat nginx jako reverzní proxy server pro směrování požadavků do vaší aplikace ASP.NET Core, upravte `/etc/nginx/sites-available/default`. Otevřete v textovém editoru a nahraďte jeho obsah následujícím textem:
+Pokud chcete konfigurovat Nginx jako reverzní proxy server pro směrování požadavků do vaší aplikace ASP.NET Core, upravte `/etc/nginx/sites-available/default`. Otevřete v textovém editoru a nahraďte jeho obsah následujícím textem:
 
-```nginx
+```
 server {
     listen 80;
     location / {
@@ -127,9 +127,9 @@ server {
 }
 ```
 
-Tento konfigurační soubor nginx předává veřejné příchozí provoz z portu `80` na port `5000`.
+Tento konfigurační soubor Nginx předává veřejné příchozí provoz z portu `80` na port `5000`.
 
-Po vytvoření konfigurace nginx spustit `sudo nginx -t` syntaxi konfigurační soubory. Pokud se test souboru konfigurace je úspěšné, vynutit nginx mohla vybrat změny spuštěním `sudo nginx -s reload`.
+Po vytvoření konfigurace Nginx spustit `sudo nginx -t` syntaxi konfigurační soubory. Pokud se test souboru konfigurace je úspěšné, vynutit Nginx mohla vybrat změny spuštěním `sudo nginx -s reload`.
 
 ## <a name="monitoring-the-app"></a>Monitorování aplikace
 
@@ -229,9 +229,9 @@ sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 ```
 
-### <a name="securing-nginx"></a>Zabezpečení nginx
+### <a name="securing-nginx"></a>Zabezpečení Nginx
 
-Výchozí distribuci nginx není povolit protokol SSL. Pokud chcete povolit další funkce zabezpečení, sestavení ze zdroje.
+Výchozí distribuci Nginx není povolit protokol SSL. Pokud chcete povolit další funkce zabezpečení, sestavení ze zdroje.
 
 #### <a name="download-the-source-and-install-the-build-dependencies"></a>Stáhnout zdrojovou verzi a instalaci závislostí sestavení
 
@@ -240,12 +240,12 @@ Výchozí distribuci nginx není povolit protokol SSL. Pokud chcete povolit dal�
 sudo apt-get update
 sudo apt-get install build-essential zlib1g-dev libpcre3-dev libssl-dev libxslt1-dev libxml2-dev libgd2-xpm-dev libgeoip-dev libgoogle-perftools-dev libperl-dev
 
-# Download nginx 1.10.0 or latest
+# Download Nginx 1.10.0 or latest
 wget http://www.nginx.org/download/nginx-1.10.0.tar.gz
 tar zxf nginx-1.10.0.tar.gz
 ```
 
-#### <a name="change-the-nginx-response-name"></a>Změňte název nginx odpovědi
+#### <a name="change-the-nginx-response-name"></a>Změňte název Nginx odpovědi
 
 Edit *src/http/ngx_http_header_filter_module.c*:
 
@@ -287,7 +287,7 @@ Upravit */etc/nginx/nginx.conf* konfigurační soubor. V příkladu obsahuje oba
 
 [!code-nginx[Main](linux-nginx/nginx.conf?highlight=2)]
 
-#### <a name="secure-nginx-from-clickjacking"></a>Zabezpečené nginx z útoků typu clickjacking
+#### <a name="secure-nginx-from-clickjacking"></a>Zabezpečený Nginx z útoků typu clickjacking
 Útoků typu Clickjacking je škodlivý technika ke shromažďování nakažené uživatel klikne na. Útoků typu Clickjacking triky postižené (návštěvníka) do kliknutím na nakažené lokality. Použití X-FRAME-OPTIONS k zabezpečení webu.
 
 Upravit *nginx.conf* souboru:
@@ -296,7 +296,7 @@ Upravit *nginx.conf* souboru:
 sudo nano /etc/nginx/nginx.conf
 ```
 
-Přidejte řádek `add_header X-Frame-Options "SAMEORIGIN";` a uložte soubor a pak znovu spusťte nginx.
+Přidejte řádek `add_header X-Frame-Options "SAMEORIGIN";` a uložte soubor a pak znovu spusťte Nginx.
 
 #### <a name="mime-type-sniffing"></a>Sledování toku dat typ MIME
 
@@ -308,4 +308,4 @@ Upravit *nginx.conf* souboru:
 sudo nano /etc/nginx/nginx.conf
 ```
 
-Přidejte řádek `add_header X-Content-Type-Options "nosniff";` a uložte soubor a pak znovu spusťte nginx.
+Přidejte řádek `add_header X-Content-Type-Options "nosniff";` a uložte soubor a pak znovu spusťte Nginx.

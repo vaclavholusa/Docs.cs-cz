@@ -130,7 +130,7 @@
 ## [Testovací kontrolery](xref:mvc/controllers/testing)
 ## [Vzdálené ladění](/visualstudio/debugger/remote-debugging-azure)
 ## [Ladění snímků](/azure/application-insights/app-insights-snapshot-debugger)
-## [Pořízení snímku ladění v sadě Visual Studio](/visualstudio/debugger/debug-live-azure-applications)
+## [Ladění snímků v sadě Visual Studio](/visualstudio/debugger/debug-live-azure-applications)
 
 # [Přístup k datům a úložišti](data/index.md)
 ## [Začínáme se stránkami Razor a technologií Entity Framework Core pomocí sady Visual Studio](xref:data/ef-rp/intro)
@@ -205,6 +205,7 @@
 ### [Ověřování souborem cookie bez systému Identity](xref:security/authentication/cookie)
 ### [Azure Active Directory](xref:security/authentication/azure-active-directory/index)
 #### [Integrace Azure AD do webové aplikace ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+#### [Integrace Azure AD B2C do webové aplikace ASP.NET Core určené pro zákazníky](xref:security/authentication/azure-ad-b2c)
 #### [Volání webového rozhraní API aplikace ASP.NET Core z aplikace WPF pomocí Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 #### [Volání webového rozhraní API webové aplikace ASP.NET Core pomocí Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 ### [Zabezpečení aplikací ASP.NET serverem IdentityServer4](https://identityserver4.readthedocs.io/)

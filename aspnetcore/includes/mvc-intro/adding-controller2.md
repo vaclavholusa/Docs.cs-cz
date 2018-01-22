@@ -16,7 +16,7 @@ Rozhraní MVC volá třídy controller (a metody akce v nich), v závislosti na 
 
 `/[Controller]/[ActionName]/[Parameters]`
 
-Nastavení formátu pro směrování v *Startup.cs* souboru.
+Nastavení formátu pro směrování v `Configure` metoda v *Startup.cs* souboru.
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/bson-support-in-web-api-21
 msc.type: authoredcontent
-ms.openlocfilehash: 08ef1564b2f8f11294c3bb1ec0ff9a3d063895b6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 53ad705fad6d2225cecca4d73355bd6ebfcf56d5
+ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/22/2018
 ---
 <a name="bson-support-in-aspnet-web-api-21"></a>BSON podpora v rozhraní ASP.NET Web API 2.1
 ====================
@@ -30,7 +30,7 @@ Webové rozhraní API 2.1 zavádí podporu pro BSON. Toto téma ukazuje, jak pou
 
 BSON byla navržená tak, aby byly lightweight, proletět a rychlé kódování nebo dekódování.
 
-- BSON je srovnatelná velikost do formátu JSON. V závislosti na data může být datovou část BSON menší nebo větší než datové části JSON. Pro serializaci binárních dat, jako soubor obrázku BSON je menší než JSON, protože neobsahuje binární data není kódováním base64.
+- BSON je srovnatelná velikost do formátu JSON. V závislosti na data může být datovou část BSON menší nebo větší než datové části JSON. Pro serializaci binárních dat, jako je soubor bitové kopie je menší než formát JSON, BSON, protože binární data není kódováním base64.
 - BSON dokumenty lze snadno kontrolu, protože elementy mají předponu pole Délka, takže analyzátor, můžete přeskočit elementy bez dekódování je.
 - Kódování a dekódování jsou efektivní, protože číselné datové typy jsou uloženy jako čísla, řetězce není.
 

@@ -1,7 +1,19 @@
 ---
-Title: Úvod do stránky Razor v ASP.NET Core Autor: popis Rick Anderson: kurz ASP.NET Core na stránky Razor. Obsahuje základní MVC, ASP.NET Core 2.x, pro vývoj webů a Visual Studio 2017.
-je doc poskytuje přehled používání stránky Razor v ASP.NET Core k usnadnění vývoje zaměřené na stránce scénáře.
-MS.Author: riande manager: wpickett ms.date: 12/09/2017 ms.topic: get-started-article ms.technology: aspnet ms.prod: asp.net core uid: mvc nebo razor stránky nebo index
+title: "Úvod do stránky Razor v ASP.NET Core"
+author: Rick-Anderson
+description: "Kurz ASP.NET Core na stránky Razor. Obsahuje základní MVC, ASP.NET Core 2.x, pro vývoj webů a Visual Studio 2017. Tato dokumentace poskytuje přehled používání stránky Razor v ASP.NET Core k usnadnění vývoje zaměřené na stránce scénáře."
+ms.author: riande
+manager: wpickett
+ms.date: 09/12/2017
+ms.topic: get-started-article
+ms.technology: aspnet
+ms.prod: asp.net-core
+uid: mvc/razor-pages/index
+ms.openlocfilehash: 059dc3a163c646877da40a73bcc9a75eb38fb345
+ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 

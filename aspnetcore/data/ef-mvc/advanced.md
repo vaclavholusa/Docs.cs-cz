@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: ea83e5b17df80e5615dda49335247340d1cfb016
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c5c06e61239c65cb1ff501a57777363a047a8db5
+ms.sourcegitcommit: f8ecf3d8f5b15f1e84ec86de3835b49ebe89fa1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Pokročilá témata – Základní EF s kurz k ASP.NET MVC jádra (10 10)
 
@@ -169,7 +169,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a>Plány Entity Framework Core zdrojového kódu a vývoj
 
-Zdrojový kód pro Entity Framework Core je k dispozici na [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). Kromě zdrojového kódu, můžete získat noční sestavení, sledování problémů, funkci specifikace, návrh poznámky ze schůzky, [plán pro budoucí vývoj](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)a další. Můžete soubor chyby, a můžete přispívat vlastní vylepšení EF zdrojovém kódu.
+Zdroj Entity Framework Core je v [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). Úložiště EF základní obsahuje noční sestavení, sledování problémů, funkce specifikace, návrh poznámky, ze schůzky a [plán pro budoucí vývoj](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap). Můžete soubor nebo najít chyby a přispívat.
 
 I když zdrojový kód je otevřená, Entity Framework Core je plně podporovaný jako produkt společnosti Microsoft. Týmem Microsoft Entity Framework udržuje řízení, po kterou jsou přijímány příspěvky a otestuje všechny změny kódu k zajištění kvality jednotlivými verzemi.
 

@@ -1,19 +1,20 @@
 ---
 title: Vazby modelu
-author: rick-anderson
-description: 
-ms.author: riande
+author: rachelappel
+description: "Informace o vazbě modelu v aplikaci ASP.NET MVC jádra"
+ms.author: rachelap
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 01/22/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
+ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 uid: mvc/models/model-binding
-ms.openlocfilehash: 84b9c5dc3a87b739affaeaecaa180d1b01f49b8e
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8fc6ff66d05164c1040f8cc77886357a633a0472
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="model-binding"></a>Vazby modelu
 
@@ -41,7 +42,7 @@ MVC se pokusí vytvořit vazbu data žádosti k parametrům akce podle názvu. M
 
 1. `Form values`: Toto jsou hodnot formuláře, které přejděte v požadavku HTTP využívající metodu POST. (včetně požadavků jQuery POST).
 
-2. `Route values`: Sada hodnot trasy poskytované [směrování](../../fundamentals/routing.md)
+2. `Route values`: Sada hodnot trasy poskytované [směrování](xref:fundamentals/routing)
 
 3. `Query strings`: Část řetězec dotazu identifikátoru URI.
 
@@ -101,7 +102,7 @@ MVC obsahuje několik atributů, které můžete použít k přímé jeho výcho
 
 Atributy jsou velmi užitečné nástroje, když potřebujete přepsat výchozí chování vazby modelu.
 
-## <a name="binding-formatted-data-from-the-request-body"></a>Vazba formátovaných dat z textu žádosti
+## <a name="bind-formatted-data-from-the-request-body"></a>Vytvoření vazby formátovaných dat z textu žádosti
 
 Žádost o data mohou pocházet v různých formátech, včetně JSON, XML a mnohé další. Při použití atributu [FromBody] k označení, že chcete vazby parametru na data v textu požadavku, aplikace MVC používá nakonfigurované sadu formátovacích modulů pro zpracování dat požadavku na základě jeho obsahu typu. Ve výchozím nastavení aplikace MVC zahrnuje `JsonInputFormatter` třídy pro zpracování dat JSON, ale můžete přidat další formátovacích modulů pro zpracování XML a dalších vlastních formátů.
 

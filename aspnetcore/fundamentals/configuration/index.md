@@ -5,16 +5,16 @@ description: "Použijte rozhraní API konfigurace pro konfiguraci aplikace ASP.N
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 1/11/2018
+ms.date: 01/11/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 0f8618898089418f709506aee5eb013f983dc294
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: c4f57d1e02ad5f4e235039999af9df9d236756a7
+ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Konfigurace aplikace ASP.NET Core
 
@@ -50,7 +50,7 @@ Aplikace načte a zobrazí následující nastavení:
 
 Konfigurace se skládá z hierarchický seznam dvojic název hodnota, ve kterých jsou uzly oddělené dvojtečkou. Pokud chcete načíst hodnotu, přístup k `Configuration` indexer klíčem odpovídající položky:
 
-[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=24-24)]
+[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=21-22)]
 
 Pro práci s pole ve formátu JSON konfigurace zdrojů, použijte pole indexu jako součást řetězce oddělené dvojtečkou. Následující příklad načte název první položky v předchozím `wizards` pole:
 
@@ -59,7 +59,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 // Output: Gandalf
 ```
 
-Dvojice název hodnota, které jsou zapsány do vestavěné [konfigurace](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration) poskytovatelé jsou **není** nastavené jako trvalé. Můžete však vytvořit vlastní zprostředkovatele, který uloží hodnoty. V tématu [vlastního poskytovatele konfigurace](xref:fundamentals/configuration/index#custom-config-providers).
+Dvojice název hodnota, které jsou zapsány do vestavěné [konfigurace](/dotnet/api/microsoft.extensions.configuration) poskytovatelé jsou **není** nastavené jako trvalé. Můžete však vytvořit vlastní zprostředkovatele, který uloží hodnoty. V tématu [vlastního poskytovatele konfigurace](xref:fundamentals/configuration/index#custom-config-providers).
 
 V předchozím příkladu používá konfigurace indexeru načíst hodnoty. Získat přístup ke konfiguraci mimo `Startup`, použijte *možnosti vzor*. Další informace najdete v tématu [možnosti](xref:fundamentals/configuration/options) tématu.
 
@@ -72,7 +72,7 @@ Je typické jinou konfiguraci nastavení pro různá prostředí, například v�
 * *appsettings.\<EnvironmentName>.json*
 * Proměnné prostředí
 
-Aplikace ASP.NET Core 1.x muset volat `AddJsonFile` a [AddEnvironmentVariables](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables #Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_).
+Aplikace ASP.NET Core 1.x muset volat `AddJsonFile` a [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables#Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_).
 
 V tématu [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions) vysvětlení parametrů. `reloadOnChange`je podporován pouze v ASP.NET Core 1.1 nebo novější.
 
@@ -106,7 +106,7 @@ Hodnoty konfigurace se vrátí jako řetězce, ale vazba umožňuje konstrukce o
 
 ### <a name="getvalue"></a>GetValue
 
-Následující příklad ukazuje [GetValue&lt;T&gt; ](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationbinder#Microsoft_Extensions_Configuration_ConfigurationBinder_GetValue_Microsoft_Extensions_Configuration_IConfiguration_System_Type_System_String_System_Object_) metoda rozšíření:
+Následující příklad ukazuje [GetValue&lt;T&gt; ](/dotnet/api/microsoft.extensions.configuration.configurationbinder.get?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_ConfigurationBinder_Get__1_Microsoft_Extensions_Configuration_IConfiguration_) metoda rozšíření:
 
 [!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
@@ -175,11 +175,11 @@ Přidat `ConfigurationContext` ukládání a přístup k nakonfigurované hodnot
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/ConfigurationContext.cs?name=snippet1)]
 
-Vytvořte třídu, která implementuje [IConfigurationSource](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.iconfigurationsource):
+Vytvořte třídu, která implementuje [IConfigurationSource](/dotnet/api/Microsoft.Extensions.Configuration.IConfigurationSource):
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
 
-Vytvoření vlastního poskytovatele konfigurace dědění ze [ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider). Poskytovatel konfigurace inicializuje databázi, pokud je prázdné:
+Vytvoření vlastního poskytovatele konfigurace dědění ze [ConfigurationProvider](/dotnet/api/Microsoft.Extensions.Configuration.ConfigurationProvider). Poskytovatel konfigurace inicializuje databázi, pokud je prázdné:
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
 
@@ -401,7 +401,7 @@ A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Ex
 * `IConfiguration`má dva specializací:
   * `IConfigurationRoot`Používá se pro kořenový uzel. Můžete aktivovat znovu načíst.
   * `IConfigurationSection`Reprezentuje oddíl hodnoty konfigurace. `GetSection` a `GetChildren` metody vrací `IConfigurationSection`.
-  * Použití [IConfigurationRoot](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.iconfigurationroot) při opětovném načtení konfigurace nebo potřebují přístup pro každého zprostředkovatele. Ani jeden z těchto situacích jsou běžné.
+  * Použití [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot) při opětovném načtení konfigurace nebo potřebují přístup pro každého zprostředkovatele. Ani jeden z těchto situacích jsou běžné.
 
 ## <a name="additional-resources"></a>Další zdroje
 

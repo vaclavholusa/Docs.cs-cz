@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: 71bde77e0bc5698b670b560455301cae642165a6
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3f0f1c402aeac388c2fcabb509aa8aa3a46e95f5
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="aspnet-core-security-overview"></a>Přehled zabezpečení ASP.NET Core
 
@@ -96,7 +96,7 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
         *   [Formát ukládání klíčů](data-protection/implementation/key-storage-format.md)
         *   [Zprostředkovatelé dočasné ochrany dat](data-protection/implementation/key-storage-ephemeral.md)
     *   [Kompatibilita](data-protection/compatibility/index.md)
-        *   [Sdílení souborů cookie mezi aplikacemi](data-protection/compatibility/cookie-sharing.md)
+        *   [Sdílení souborů cookie mezi aplikací](data-protection/compatibility/cookie-sharing.md)
         *   [Nahrazení <machineKey> v ASP.NET](data-protection/compatibility/replacing-machinekey.md)
 *   [Vytvoření aplikace s uživatelskými daty chráněnými autorizací](xref:security/authorization/secure-data)
 *   [Bezpečné úložiště tajných částí aplikace při vývoji](app-secrets.md)

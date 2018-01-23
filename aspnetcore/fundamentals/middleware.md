@@ -4,16 +4,16 @@ author: rick-anderson
 description: "Další informace o ASP.NET Core middleware a kanál požadavku."
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: af16046c97964e8e1c16a4f5989fcfa794741c4d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ef130e736e2f32fa134156d979ce5bfbedcae828
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Základy Middleware ASP.NET Core
 
@@ -23,7 +23,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Steve Smith](https://a
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-middleware"></a>Co je middleware
+## <a name="what-is-middleware"></a>Co je middleware?
 
 Middleware je software, který je sestavit do kanálu určité aplikace pro zpracování požadavků a odpovědí. Jednotlivé komponenty:
 
@@ -191,18 +191,22 @@ app.Map("/level1/level2", HandleMultiSeg);
 
 ## <a name="built-in-middleware"></a>Předdefinované middlewaru
 
-ASP.NET Core se dodává s následujícími součástmi middleware:
+ASP.NET Core se dodává s následující komponenty middlewaru, jakož i popis pořadí, ve kterém se má přidat:
 
-| Middleware | Popis |
-| ----- | ------- |
-| [Ověřování](xref:security/authentication/identity) | Poskytuje podporu ověřování. |
-| [CORS](xref:security/cors) | Konfiguruje sdílení prostředků různého původu. |
-| [Ukládání odpovědí do mezipaměti](xref:performance/caching/middleware) | Poskytuje podporu pro ukládání do mezipaměti odpovědi. |
-| [Komprese odpovědi](xref:performance/response-compression) | Poskytuje podporu pro kompresi odpovědí. |
-| [Směrování](xref:fundamentals/routing) | Definuje a omezí požadavek trasy. |
-| [Relace](xref:fundamentals/app-state) | Poskytuje podporu pro správu uživatelských relací. |
-| [Statické soubory](xref:fundamentals/static-files) | Poskytuje podporu pro obsluhující statické soubory a procházení adresářů. |
-| [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting) | Poskytuje podporu pro přepisování adres URL a přesměrování požadavků. |
+| Middleware | Popis | Pořadí |
+| ---------- | ----------- | ----- |
+| [Ověřování](xref:security/authentication/identity) | Poskytuje podporu ověřování. | Před `HttpContext.User` je potřeba. Terminálu zpětná volání OAuth. |
+| [CORS](xref:security/cors) | Konfiguruje sdílení prostředků různého původu. | Před provedením komponent, které používají CORS. |
+| [Diagnostika](xref:fundamentals/error-handling) | Nakonfiguruje diagnostiky. | Před provedením komponent, které generují chyby. |
+| [ForwardedHeaders/HttpOverrides](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | Předává směrovány přes proxy server hlavičky do aktuálního požadavku. | Před provedením komponent, které využívají aktualizovaná pole (příklady: schéma, hostitele, když, metoda). |
+| [Ukládání odpovědí do mezipaměti](xref:performance/caching/middleware) | Poskytuje podporu pro ukládání do mezipaměti odpovědi. | Před provedením komponent, které vyžadují ukládání do mezipaměti. |
+| [Komprese odpovědi](xref:performance/response-compression) | Poskytuje podporu pro kompresi odpovědí. | Před provedením komponent, které vyžadují komprese. |
+| [RequestLocalization](xref:fundamentals/localization) | Poskytuje podporu lokalizace. | Před provedením komponent citlivé lokalizace. |
+| [Směrování](xref:fundamentals/routing) | Definuje a omezí požadavek trasy. | Terminálu odpovídající trasy. |
+| [Relace](xref:fundamentals/app-state) | Poskytuje podporu pro správu uživatelských relací. | Před provedením komponent, které vyžadují relace. |
+| [Statické soubory](xref:fundamentals/static-files) | Poskytuje podporu pro obsluhující statické soubory a procházení adresářů. | Terminál, pokud požadavek odpovídá soubory. |
+| [Přepisování adres URL](xref:fundamentals/url-rewriting) | Poskytuje podporu pro přepisování adres URL a přesměrování požadavků. | Před provedením komponent, které využívají adresu URL. |
+| [Webové sokety](xref:fundamentals/websockets) | Umožňuje protokol Websocket. | Před provedením komponent, které jsou nutné k přijímání požadavků protokolu WebSocket. |
 
 <a name="middleware-writing-middleware"></a>
 

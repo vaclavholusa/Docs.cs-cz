@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 769696931498605bd3cf3459279939afb86a4ee8
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 99f8d1cc73fdcbd99cffe595ae89f3c61a6f9a53
+ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware v ASP.NET Core přepisování adres URL
 
@@ -38,7 +38,9 @@ Můžete definovat pravidla pro změny adresy URL několika způsoby, včetně r
 ## <a name="url-redirect-and-url-rewrite"></a>Adresa URL přesměrování a adresy URL přepisování
 Rozdíl ve slov mezi *adresa URL přesměrování* a *přepisování adres URL* se může zdát jemně na první, ale nemá důležité zvážit celkové důsledky pro poskytování prostředků klientům. Middleware přepisování ASP.NET Core adresa URL je schopen splňuje potřeby pro obě.
 
-A *adresa URL přesměrování* je operace na straně klienta, kde je pro přístup k prostředkům na jiné adrese pokyn klientovi. To vyžaduje, aby mít odezvu na server a adresa URL pro přesměrování vrácen do klienta se zobrazí v panelu Adresa prohlížeče, když klient podá nová žádost o prostředek. Pokud `/resource` je *přesměrováno* k `/different-resource`, požadavky klientů `/resource`, a server odpoví, že klient musí získat prostředek na `/different-resource` s stav kód označující, že je přesměrování dočasné nebo trvalé. Klient spustí nová žádost o prostředek na adrese URL pro přesměrování.
+A *adresa URL přesměrování* je operace na straně klienta, kde je pro přístup k prostředkům na jiné adrese pokyn klientovi. To vyžaduje round-trip k serveru. Adresa URL pro přesměrování vrácen do klienta se zobrazí v panelu Adresa prohlížeče, když klient podá nová žádost o prostředek. 
+
+Pokud `/resource` je *přesměrováno* k `/different-resource`, požadavky klientů `/resource`. Server odpoví, že klient musí získat prostředek na `/different-resource` s stav kód označující, že přesměrování je dočasné nebo trvalé. Klient spustí nová žádost o prostředek na adrese URL pro přesměrování.
 
 ![Koncový bod služby WebAPI dočasně změnil z verze 1 (v1) na verze 2 (v2) na serveru. Klient odešle požadavek na službu na /v1/api cesta verze 1. Server odesílá zpět 302 odpověď (Found) se novou, dočasná cesta pro službu na /v2/api verze 2. Klient podá žádost o druhou na službu na adrese URL pro přesměrování. Server odpoví 200 stavový kód (OK).](url-rewriting/_static/url_redirect.png)
 
@@ -369,7 +371,7 @@ Původní žádost:`/image.jpg`
 | Přepište cestu do řetězce dotazu | `^path/(.*)/(.*)`<br>`/path/abc/123` | `path?var1=$1&var2=$2`<br>`/path?var1=abc&var2=123` |
 | Pruhu koncové lomítko. | `(.*)/$`<br>`/path/` | `$1`<br>`/path` |
 | Vynutit koncové lomítko | `(.*[^/])$`<br>`/path` | `$1/`<br>`/path/` |
-| Vyhněte se přepisování konkrétní požadavky | `(.*[^(\.axd)])$`<br>Ano:`/resource.htm`<br>Ne:`/resource.axd` | `rewritten/$1`<br>`/rewritten/resource.htm`<br>`/resource.axd` |
+| Vyhněte se přepisování konkrétní požadavky | `^(.*)(?<!\.axd)$`nebo`^(?!.*\.axd$)(.*)$`<br>Ano:`/resource.htm`<br>Ne:`/resource.axd` | `rewritten/$1`<br>`/rewritten/resource.htm`<br>`/resource.axd` |
 | Změna uspořádání segmenty adres URL | `path/(.*)/(.*)/(.*)`<br>`path/1/2/3` | `path/$3/$2/$1`<br>`path/3/2/1` |
 | Nahraďte segment adresy URL | `^(.*)/segment2/(.*)`<br>`/segment1/segment2/segment3` | `$1/replaced/$2`<br>`/segment1/replaced/segment3` |
 

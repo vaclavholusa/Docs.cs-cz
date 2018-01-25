@@ -27,6 +27,43 @@
 ### [Přidání ověřování](tutorials/first-mvc-app/validation.md)
 ### [Zkoumání metod Details a Delete](tutorials/first-mvc-app/details.md)
 
+## [Kurzy pro vývoj pro různé platformy](xref:tutorials/xplat)
+
+### [Webová aplikace MVC s použitím sady Visual Studio pro Mac](xref:tutorials/first-mvc-app-mac/index)
+#### [Začínáme](xref:tutorials/first-mvc-app-mac/start-mvc)
+#### [Přidání kontroleru](xref:tutorials/first-mvc-app-mac/adding-controller)
+#### [Přidání zobrazení](xref:tutorials/first-mvc-app-mac/adding-view)
+#### [Přidání modelu](xref:tutorials/first-mvc-app-mac/adding-model)
+#### [Práce s SQLite](xref:tutorials/first-mvc-app-mac/working-with-sql)
+#### [Metody a zobrazení kontroleru](xref:tutorials/first-mvc-app-mac/controller-methods-views)
+#### [Přidání vyhledávací funkce](xref:tutorials/first-mvc-app-mac/search)
+#### [Přidání nového pole](xref:tutorials/first-mvc-app-mac/new-field)
+#### [Přidání ověření](xref:tutorials/first-mvc-app-mac/validation)
+#### [Zkoumání metod Details a Delete](xref:tutorials/first-mvc-app/details)
+
+### [Webová aplikace s použitím editoru Visual Studio Code pro Mac nebo Linux](xref:tutorials/first-mvc-app-xplat/index)
+#### [Začínáme](tutorials/first-mvc-app-xplat/start-mvc.md)
+#### [Přidání kontroleru](tutorials/first-mvc-app-xplat/adding-controller.md)
+#### [Přidání zobrazení](tutorials/first-mvc-app-xplat/adding-view.md)
+#### [Přidání modelu](tutorials/first-mvc-app-xplat/adding-model.md)
+#### [Práce s SQLite](tutorials/first-mvc-app-xplat/working-with-sql.md)
+#### [Metody a zobrazení kontroleru](tutorials/first-mvc-app-xplat/controller-methods-views.md)
+#### [Přidání vyhledávací funkce](tutorials/first-mvc-app-xplat/search.md)
+#### [Přidání nového pole](tutorials/first-mvc-app-xplat/new-field.md)
+#### [Přidání ověření](tutorials/first-mvc-app-xplat/validation.md)
+#### [Zkoumání metod Details a Delete](tutorials/first-mvc-app/details.md)
+
+
+### [Webová aplikace Razor Pages na Macu](xref:tutorials/razor-pages-mac/index)
+#### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-mac/razor-pages-start)
+#### [Přidání modelu](xref:tutorials/razor-pages-mac/model)
+### [Webová aplikace Razor Pages s editorem VS Code](xref:tutorials/razor-pages-vsc/index)
+#### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-vsc/razor-pages-start)
+#### [Přidání modelu](xref:tutorials/razor-pages-vsc/model)
+
+### [Web API se sadou Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
+### [Web API s editorem Visual Studio Code](xref:tutorials/web-api-vsc)
+
 ## [Zpracování dat – stránky Razor s EF Core](xref:data/index)
 ### [Začínáme](xref:data/ef-rp/intro)
 ### [Operace vytvoření, čtení, aktualizace a odstranění](xref:data/ef-rp/crud)

@@ -9,25 +9,25 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-mac/controller-methods-views
-ms.openlocfilehash: 1c58a3bbac227e06a36df0b0d3ed6c2455eb46c4
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 71cdf9f0a4a72f375af094c7c0a446278f8aeeb5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
-# <a name="controller-methods-and-views-in-an-aspnet-core-mvc-app"></a><span data-ttu-id="62695-103">Metody kontroleru a zobrazení v aplikaci ASP.NET MVC jádra</span><span class="sxs-lookup"><span data-stu-id="62695-103">Controller methods and views in an ASP.NET Core MVC app</span></span>
+# <a name="controller-methods-and-views-in-an-aspnet-core-mvc-app"></a><span data-ttu-id="d9cd5-103">Metody kontroleru a zobrazení v aplikaci ASP.NET MVC jádra</span><span class="sxs-lookup"><span data-stu-id="d9cd5-103">Controller methods and views in an ASP.NET Core MVC app</span></span>
 
-<span data-ttu-id="62695-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="62695-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="d9cd5-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="d9cd5-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="62695-105">Máme správné spuštění na filmová aplikace, ale prezentaci není ideální.</span><span class="sxs-lookup"><span data-stu-id="62695-105">We have a good start to the movie app, but the presentation is not ideal.</span></span> <span data-ttu-id="62695-106">Neradi najdete v části času (12:00:00 AM na následujícím obrázku) a **ReleaseDate** by měla být dva slova.</span><span class="sxs-lookup"><span data-stu-id="62695-106">We don't want to see the time (12:00:00 AM in the following image) and **ReleaseDate** should be two words.</span></span>
+<span data-ttu-id="d9cd5-105">Máme správné spuštění na filmová aplikace, ale není ideální prezentaci.</span><span class="sxs-lookup"><span data-stu-id="d9cd5-105">We have a good start to the movie app, but the presentation isn't ideal.</span></span> <span data-ttu-id="d9cd5-106">Neradi najdete v části času (12:00:00 AM na následujícím obrázku) a **ReleaseDate** by měla být dva slova.</span><span class="sxs-lookup"><span data-stu-id="d9cd5-106">We don't want to see the time (12:00:00 AM in the following image) and **ReleaseDate** should be two words.</span></span>
 
 ![Index zobrazení: Datum vydání je jedno slovo (bez mezery) a každý datum vydání film zobrazuje čas 12: 00](../../tutorials/first-mvc-app/working-with-sql/_static/m55.png)
 
-<span data-ttu-id="62695-108">Otevřete *Models/Movie.cs* souboru a přidejte zvýrazněné řádky vidíte níže:</span><span class="sxs-lookup"><span data-stu-id="62695-108">Open the *Models/Movie.cs* file and add the highlighted lines shown below:</span></span>
+<span data-ttu-id="d9cd5-108">Otevřete *Models/Movie.cs* souboru a přidejte zvýrazněné řádky vidíte níže:</span><span class="sxs-lookup"><span data-stu-id="d9cd5-108">Open the *Models/Movie.cs* file and add the highlighted lines shown below:</span></span>
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1&highlight=2,11-12)]
 
-<span data-ttu-id="62695-109">Sestavte a spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="62695-109">Build and run the app.</span></span>
+<span data-ttu-id="d9cd5-109">Sestavte a spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="d9cd5-109">Build and run the app.</span></span>
 
 <!-- include start
 ![MVC Movie application open browser showing movie data](../../tutorials/first-mvc-app/working-with-sql/_static/m55.png)
@@ -37,6 +37,6 @@ ms.lasthandoff: 01/19/2018
 [!INCLUDE[adding-model](../../includes/mvc-intro/controller-methods-views.md)]
 
 >[!div class="step-by-step"]
-<span data-ttu-id="62695-110">[Předchozí - práce s SQLite](working-with-sql.md)
-[další – přidání vyhledávání](search.md)</span><span class="sxs-lookup"><span data-stu-id="62695-110">[Previous - Working with SQLite](working-with-sql.md)
+<span data-ttu-id="d9cd5-110">[Předchozí - práce s SQLite](working-with-sql.md)
+[další – přidání vyhledávání](search.md)</span><span class="sxs-lookup"><span data-stu-id="d9cd5-110">[Previous - Working with SQLite](working-with-sql.md)
 [Next - Add search](search.md)</span></span>

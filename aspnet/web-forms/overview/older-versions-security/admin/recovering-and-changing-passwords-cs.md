@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ef10d5140073d28589c0be80a3a3bb4d3a554e35
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 76c02a3da7dffad25a7bee03efff6b693f261d85
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="recovering-and-changing-passwords-c"></a>Obnovení a změna hesel (C#)
 ====================
@@ -83,7 +83,7 @@ Pokud uživatel navštíví Tato stránka se bude zadejte svoje uživatelské jm
 
 Před zahájením testovacího této stránce, je poslední část konfigurace do mají tendenci: je potřeba zadat nastavení doručení e-mailu v `Web.config`. Ovládací prvek PasswordRecovery závisí na těchto nastavení pro odesílání e-mailu.
 
-Konfigurace doručování e-mailu se specifikuje prostřednictvím [ `<system.net>` element](https://msdn.microsoft.com/en-us/library/6484zdc1.aspx)na [ `<mailSettings>` element](https://msdn.microsoft.com/en-us/library/w355a94k.aspx). Použití [ `<smtp>` element](https://msdn.microsoft.com/en-us/library/ms164240.aspx) udávajících metodu doručení a ve výchozím nastavení z adresy. Následující kód konfiguruje nastavení e-mailu, síti SMTP serveru s názvem `smtp.example.com` na port 25 a s uživatelským jménem a heslem přihlašovací údaje uživatelského jména a hesla.
+Konfigurace doručování e-mailu se specifikuje prostřednictvím [ `<system.net>` element](https://msdn.microsoft.com/library/6484zdc1.aspx)na [ `<mailSettings>` element](https://msdn.microsoft.com/library/w355a94k.aspx). Použití [ `<smtp>` element](https://msdn.microsoft.com/library/ms164240.aspx) udávajících metodu doručení a ve výchozím nastavení z adresy. Následující kód konfiguruje nastavení e-mailu, síti SMTP serveru s názvem `smtp.example.com` na port 25 a s uživatelským jménem a heslem přihlašovací údaje uživatelského jména a hesla.
 
 > [!NOTE]
 > `<system.net>`je podřízený prvek kořenového `<configuration>` elementu a na stejné úrovni jako `<system.web>`. Proto nevkládejte `<system.net>` v rámci `<system.web>` element; namísto toho uložte na stejné úrovni.
@@ -93,7 +93,7 @@ Konfigurace doručování e-mailu se specifikuje prostřednictvím [ `<system.ne
 
 Kromě používání SMTP server v síti, můžete alternativně zadat výstupního adresáře, kde má e-mailové zprávy zasílat uloží.
 
-Po konfiguraci nastavení SMTP, přejděte `RecoverPassword.aspx` stránku prostřednictvím prohlížeče. Zkuste je napřed zadáním uživatelského jména, která neexistuje v úložišti uživatele. Jak je vidět na obrázku 2, ovládacího prvku PasswordRecovery zobrazí zprávu s upozorněním, že informace o uživateli nelze získat přístup. Text zprávy lze přizpůsobit prostřednictvím ovládacího prvku [ `UserNameFailureText` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx).
+Po konfiguraci nastavení SMTP, přejděte `RecoverPassword.aspx` stránku prostřednictvím prohlížeče. Zkuste je napřed zadáním uživatelského jména, která neexistuje v úložišti uživatele. Jak je vidět na obrázku 2, ovládacího prvku PasswordRecovery zobrazí zprávu s upozorněním, že informace o uživateli nelze získat přístup. Text zprávy lze přizpůsobit prostřednictvím ovládacího prvku [ `UserNameFailureText` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx).
 
 
 [![Pokud je zadáno neplatné uživatelské jméno se zobrazí chybová zpráva](recovering-and-changing-passwords-cs/_static/image5.png)](recovering-and-changing-passwords-cs/_static/image4.png)
@@ -101,7 +101,7 @@ Po konfiguraci nastavení SMTP, přejděte `RecoverPassword.aspx` stránku prost
 **Obrázek 2**: chybová zpráva se zobrazí, pokud je zadáno neplatné uživatelské jméno ([Kliknutím zobrazit obrázek v plné velikosti](recovering-and-changing-passwords-cs/_static/image6.png))
 
 
-Nyní zadejte uživatelské jméno. Použití uživatelské jméno účtu v systému s e-mailovou adresu, můžete přístup a jejichž zabezpečení zodpovědět vám vědět. Po zadání uživatelského jména a kliknutí na tlačítko Odeslat, zobrazí ovládací prvek PasswordRecovery jeho zobrazení otázku. Jako s zobrazení uživatelské jméno, pokud zadáte nesprávné odpovězte PasswordRecovery ovládací prvek zobrazí chybové zprávy (viz obrázek 3). Použití [ `QuestionFailureText` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx) přizpůsobit tato chybová zpráva.
+Nyní zadejte uživatelské jméno. Použití uživatelské jméno účtu v systému s e-mailovou adresu, můžete přístup a jejichž zabezpečení zodpovědět vám vědět. Po zadání uživatelského jména a kliknutí na tlačítko Odeslat, zobrazí ovládací prvek PasswordRecovery jeho zobrazení otázku. Jako s zobrazení uživatelské jméno, pokud zadáte nesprávné odpovězte PasswordRecovery ovládací prvek zobrazí chybové zprávy (viz obrázek 3). Použití [ `QuestionFailureText` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx) přizpůsobit tato chybová zpráva.
 
 
 [![Pokud uživatel zadá neplatná odpověď zabezpečení, zobrazí se chybová zpráva](recovering-and-changing-passwords-cs/_static/image8.png)](recovering-and-changing-passwords-cs/_static/image7.png)
@@ -127,15 +127,15 @@ Uživatelské jméno: *uživatelské jméno*
 
 heslo: *heslo*
 
-Tuto zprávu lze přizpůsobit prostřednictvím kódu programu prostřednictvím obslužné rutiny události pro ovládací prvek PasswordRecovery [ `SendingMail` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.sendingmail.aspx), nebo deklarativně pomocí [ `MailDefinition` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.maildefinition.aspx). Podíváme se na obě tyto možnosti.
+Tuto zprávu lze přizpůsobit prostřednictvím kódu programu prostřednictvím obslužné rutiny události pro ovládací prvek PasswordRecovery [ `SendingMail` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.sendingmail.aspx), nebo deklarativně pomocí [ `MailDefinition` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.maildefinition.aspx). Podíváme se na obě tyto možnosti.
 
-`SendingMail` Událost je aktivována například právo předtím, než se odesílají e-mailové zprávy a je naše poslední možnost, aby prostřednictvím kódu programu upravit e-mailové zprávy. Pokud tato událost je aktivována, obslužné rutiny události je předán objekt typu [ `MailMessageEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.mailmessageeventargs.aspx), jejichž `Message` vlastnost obsahuje odkaz na e-mailu odeslány.
+`SendingMail` Událost je aktivována například právo předtím, než se odesílají e-mailové zprávy a je naše poslední možnost, aby prostřednictvím kódu programu upravit e-mailové zprávy. Pokud tato událost je aktivována, obslužné rutiny události je předán objekt typu [ `MailMessageEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.mailmessageeventargs.aspx), jejichž `Message` vlastnost obsahuje odkaz na e-mailu odeslány.
 
 Vytvoření obslužné rutiny událostí `SendingMail` událostí a přidejte následující kód, který přidá prostřednictvím kódu programu `webmaster@example.com` do seznamu kopie.
 
 [!code-csharp[Main](recovering-and-changing-passwords-cs/samples/sample2.cs)]
 
-E-mailové zprávě můžete nakonfigurovat taky přes deklarativní způsobem. PasswordRecovery `MailDefinition` vlastnost je objekt typu [ `MailDefinition` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.aspx). `MailDefinition` Třída nabízí hostitel vlastnosti související s e-mailu, včetně `From`, `CC`, `Priority`, `Subject`, `IsBodyHtml`, `BodyFileName`a další. Pro začátek se nastavit [ `Subject` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.subject.aspx) něco srozumitelnější než ten, který je ve výchozím nastavení (heslo), používá, jako je vaše heslo bylo resetováno...
+E-mailové zprávě můžete nakonfigurovat taky přes deklarativní způsobem. PasswordRecovery `MailDefinition` vlastnost je objekt typu [ `MailDefinition` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.aspx). `MailDefinition` Třída nabízí hostitel vlastnosti související s e-mailu, včetně `From`, `CC`, `Priority`, `Subject`, `IsBodyHtml`, `BodyFileName`a další. Pro začátek se nastavit [ `Subject` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.subject.aspx) něco srozumitelnější než ten, který je ve výchozím nastavení (heslo), používá, jako je vaše heslo bylo resetováno...
 
 Chcete-li přizpůsobit text e-mailovou zprávu, kterou je potřeba vytvořit soubor samostatné e-mailové šablony, která obsahuje obsah textu. Začněte vytvořením novou složku na webu s názvem `EmailTemplates`. Dál přidejte nový textový soubor do této složky s názvem `PasswordRecovery.txt` a přidejte následující obsah:
 
@@ -143,7 +143,7 @@ Chcete-li přizpůsobit text e-mailovou zprávu, kterou je potřeba vytvořit so
 
 Všimněte si použití zástupné symboly `<%UserName%>` a `<%Password%>`. Ovládací prvek PasswordRecovery automaticky uživatelské jméno a heslo obnovené před odesláním e-mailu uživatele nahradí tyto dva zástupné znaky.
 
-A konečně, přejděte `MailDefinition`na [ `BodyFileName` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.bodyfilename.aspx) k e-mailovou šablonu, kterou jsme právě vytvořili (`~/EmailTemplates/PasswordRecovery.txt`).
+A konečně, přejděte `MailDefinition`na [ `BodyFileName` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.bodyfilename.aspx) k e-mailovou šablonu, kterou jsme právě vytvořili (`~/EmailTemplates/PasswordRecovery.txt`).
 
 Po provedení těchto změn pokroku `RecoverPassword.aspx` stránky a zadejte vaše uživatelské jméno a zabezpečení odpovědí. Obdržíte e-mailu, který vypadá jako jeden z obrázku 5, by měl. Všimněte si, že `webmaster@example.com` bylo by kopie a zda byly aktualizovány předmět a text.
 
@@ -153,7 +153,7 @@ Po provedení těchto změn pokroku `RecoverPassword.aspx` stránky a zadejte va
 **Obrázek 5**: předmětu, textu a byly aktualizovány kopie seznamu ([Kliknutím zobrazit obrázek v plné velikosti](recovering-and-changing-passwords-cs/_static/image15.png))
 
 
-Odeslat e-mail ve formátu HTML nastavit [ `IsBodyHtml` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.isbodyhtml.aspx) na hodnotu True (výchozí hodnota je False) a aktualizace šablony e-mailu, zahrnout HTML.
+Odeslat e-mail ve formátu HTML nastavit [ `IsBodyHtml` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.isbodyhtml.aspx) na hodnotu True (výchozí hodnota je False) a aktualizace šablony e-mailu, zahrnout HTML.
 
 `MailDefinition` Vlastnost není pro třídu PasswordRecovery jedinečné. Jak jsme uvidí v kroku 2, změna hesla byla ovládací prvek také nabízí `MailDefinition` vlastnost. Kromě toho zahrnuje ovládacího prvku CreateUserWizard taková vlastnost lze nastavit automaticky odeslat zprávu Uvítacího e-mailu pro nové uživatele.
 
@@ -163,10 +163,10 @@ Odeslat e-mail ve formátu HTML nastavit [ `IsBodyHtml` ](https://msdn.microsoft
 
 ### <a name="programmatically-resetting-a-users-password"></a>Prostřednictvím kódu programu resetuje heslo uživatele
 
-Při resetování hesla uživatele PasswordRecovery řízení volání `MembershipUser` objektu [ `ResetPassword` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.resetpassword.aspx). Tato metoda má dva přetížení:
+Při resetování hesla uživatele PasswordRecovery řízení volání `MembershipUser` objektu [ `ResetPassword` metoda](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx). Tato metoda má dva přetížení:
 
-- **[`ResetPassword`](https://msdn.microsoft.com/en-us/library/d94bdzz2.aspx)**-Resetuje heslo uživatele. Toto přetížení použijte, pokud `RequiresQuestionAndAnswer` je False.
-- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/en-us/library/d90zte4w.aspx)**-Obnoví jenom Pokud heslo uživatele zadaných *securityAnswer* je správný. Toto přetížení použijte, pokud `RequiresQuestionAndAnswer` má hodnotu True.
+- **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)**-Resetuje heslo uživatele. Toto přetížení použijte, pokud `RequiresQuestionAndAnswer` je False.
+- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)**-Obnoví jenom Pokud heslo uživatele zadaných *securityAnswer* je správný. Toto přetížení použijte, pokud `RequiresQuestionAndAnswer` má hodnotu True.
 
 Obě přetížení vrátí nové, náhodně vygenerované heslo.
 
@@ -179,7 +179,7 @@ Několik poznámky k implementaci nižší úrovně:
 
 ### <a name="a-word-on-how-the-random-passwords-are-generated"></a>Word na tom, jak náhodných hesla jsou generovány.
 
-Náhodně generovaný hesla v e-mailové zprávy v útvarů 4 a 5 jsou vytvořené pomocí třídy členství [ `GeneratePassword` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.membership.generatepassword.aspx). Tato metoda přijímá dva vstupní datového celé číslo - *délka* a *numberOfNonAlphanumericCharacters* - a vrátí řetězec alespoň *délka* znaků dlouhé a obsahují v nejméně *numberOfNonAlphanumericCharacters* počet jiných než alfanumerických znaků. Když tato metoda je volána z v rámci třídy členství nebo ovládací prvky webového související s přihlášením, hodnoty pro tyto dva parametry jsou určeny konfigurace členství `MinRequiredPasswordLength` a `MinRequiredNonalphanumericCharacters` vlastnosti, které se nastaví na 7 a 1, v uvedeném pořadí.
+Náhodně generovaný hesla v e-mailové zprávy v útvarů 4 a 5 jsou vytvořené pomocí třídy členství [ `GeneratePassword` metoda](https://msdn.microsoft.com/library/system.web.security.membership.generatepassword.aspx). Tato metoda přijímá dva vstupní datového celé číslo - *délka* a *numberOfNonAlphanumericCharacters* - a vrátí řetězec alespoň *délka* znaků dlouhé a obsahují v nejméně *numberOfNonAlphanumericCharacters* počet jiných než alfanumerických znaků. Když tato metoda je volána z v rámci třídy členství nebo ovládací prvky webového související s přihlášením, hodnoty pro tyto dva parametry jsou určeny konfigurace členství `MinRequiredPasswordLength` a `MinRequiredNonalphanumericCharacters` vlastnosti, které se nastaví na 7 a 1, v uvedeném pořadí.
 
 `GeneratePassword` Metoda používá k zajištění, že je v jaké náhodných znaků nejsou vybrány žádné odchylka kryptograficky silnou generátoru náhodných čísel. Kromě toho `GeneratePassword` je `public`, což znamená, můžete ho přímo z vaší aplikace ASP.NET Pokud je potřeba generovat řetězců náhodných nebo hesla.
 
@@ -194,7 +194,7 @@ Hesla náhodně generované obtížně mějte na paměti. Vezměte v úvahu hesl
 Použití ovládacího prvku Změna hesla byla k vytvoření rozhraní pro uživatele Chcete-li změnit své heslo. Mnohem jako prvek PasswordRecovery ovládacího prvku Změna hesla byla se skládá ze dvou zobrazení: Změna hesla a úspěch. Zobrazení změnit heslo vyzve uživatele k jejich staré a nové heslo. Při zadávání správné staré heslo a nové heslo, které splňuje minimální délku a požadavky na jiných než alfanumerických znaků, ovládacího prvku Změna hesla byla aktualizace hesla a zobrazení úspěch.
 
 > [!NOTE]
-> Změna hesla byla řízení změní heslo uživatele vyvoláním `MembershipUser` objektu [ `ChangePassword` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.changepassword.aspx). Změna hesla byla metoda přijímá dva `string` vstupní parametry - *Původní_heslo* a *nové_heslo*- a aktualizuje uživatelský účet s *nové_heslo*, za předpokladu, že zadaných *Původní_heslo* je správný.
+> Změna hesla byla řízení změní heslo uživatele vyvoláním `MembershipUser` objektu [ `ChangePassword` metoda](https://msdn.microsoft.com/library/system.web.security.membershipuser.changepassword.aspx). Změna hesla byla metoda přijímá dva `string` vstupní parametry - *Původní_heslo* a *nové_heslo*- a aktualizuje uživatelský účet s *nové_heslo*, za předpokladu, že zadaných *Původní_heslo* je správný.
 
 
 Otevřete `ChangePassword.aspx` stránky a přidání ovládacího prvku Změna hesla byla na stránku pojmenování ho `ChangePwd`. V tomto okamžiku by měl zobrazení návrhu zobrazení změnit heslo zobrazení (viz obrázek 6). Jako pomocí ovládacího prvku PasswordRecovery můžete přepínat mezi zobrazeními pomocí inteligentních značek ovládacího prvku. Kromě toho tato zobrazení objevuje se přizpůsobitelné prostřednictvím vlastnosti různé stylu nebo převedením na šablonu.
@@ -207,7 +207,7 @@ Otevřete `ChangePassword.aspx` stránky a přidání ovládacího prvku Změna 
 
 Změna hesla byla řízení můžete aktualizovat heslo aktuálně přihlášeného uživatele *nebo* hesla jiný, zadaného uživatele. Jak je vidět na obrázku 6, výchozí zobrazení změnit heslo vykreslí jenom tři ovládacích prvcích TextBox: jeden pro staré heslo a dva jsou pro nové heslo. Toto rozhraní výchozí se používá k aktualizaci hesla aktuálně přihlášeného uživatele.
 
-Použití ovládacího prvku Změna hesla byla aktualizace hesla jiného uživatele, nastavte ovládacího prvku [ `DisplayUserName` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.changepassword.displayusername.aspx) na hodnotu True. Díky tomu přidá čtvrtý textové pole na stránku, dotaz na uživatelské jméno uživatele, jehož heslo chcete změnit.
+Použití ovládacího prvku Změna hesla byla aktualizace hesla jiného uživatele, nastavte ovládacího prvku [ `DisplayUserName` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.changepassword.displayusername.aspx) na hodnotu True. Díky tomu přidá čtvrtý textové pole na stránku, dotaz na uživatelské jméno uživatele, jehož heslo chcete změnit.
 
 Nastavení `DisplayUserName` na True je užitečné, pokud chcete, aby mohl zaznamenané si uživatel změnit svoje heslo bez nutnosti k přihlášení. Osobně je pravděpodobné, že není nic se nutnosti uživateli přihlášení před povolením jí chcete-li změnit své heslo. Proto nechte `DisplayUserName` nastavena na hodnotu False (výchozí). Při vytvoření toto rozhodnutí, ale jsme v podstatě se blokování anonymní uživatelé z dosažení této stránky. Aktualizovat autorizačních pravidel adres URL lokality tak, aby anonymní uživatelé z navštívíte Odepřít `ChangePassword.aspx`. Pokud bude nutné aktualizovat vaše paměti v syntaxi adresy URL autorizační pravidlo, přečtěte si téma zpět <a id="_msoanchor_4"> </a> [ *autorizace na základě uživatele* ](../membership/user-based-authorization-cs.md) kurzu.
 

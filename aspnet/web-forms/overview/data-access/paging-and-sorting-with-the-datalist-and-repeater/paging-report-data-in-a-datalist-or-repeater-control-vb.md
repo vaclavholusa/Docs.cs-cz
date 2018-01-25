@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5cb469252dc36ced98357dd984d36668af1c430b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 66f1065c41352f355dd5f1be43443165df909b93
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>Data sestavy stránkování v DataList nebo prvku Repeater (VB)
 ====================
@@ -80,7 +80,7 @@ Vzhledem k tomu, že výchozí stránkování znovu požaduje všechny záznamy 
 
 *Vlastní stránkování* nedostatečnému výkonu výchozí stránkování řeší tím, že metodou jenom přesné podmnožinu záznamů zobrazíte na požadovanou stránku. Při implementaci vlastní stránkování, jsme musíte napsat dotaz SQL, který vrátí efektivně právě správnou sadu záznamů. Jsme viděli, jak vytvořit dotaz, pomocí systému SQL Server 2005 s novou [ `ROW_NUMBER()` – klíčové slovo](http://www.4guysfromrolla.com/webtech/010406-1.shtml) zpět v [efektivně stránkování prostřednictvím velké objemy dat](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb.md) kurzu.
 
-K implementaci stránkování na výchozím nastavení v ovládacích prvcích DataList nebo opakovače, můžeme použít [ `PagedDataSource` třída](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.aspx) jako obálku kolem `ProductsDataTable` jejichž obsah se stránkování. `PagedDataSource` Třída má `DataSource` vlastnost, která lze přiřadit k žádné vyčíslitelný objekt a [ `PageSize` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.pagesize.aspx) a [ `CurrentPageIndex` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.currentpageindex.aspx) označují, kolik záznamů do Zobrazit na stránce a index aktuální stránky. Jakmile tyto vlastnosti byly nastaveny, `PagedDataSource` lze použít jako zdroj dat o všech datech ovládací prvek webu. `PagedDataSource`, Když ve výčtu, bude pouze vrátit odpovídající podmnožinu záznamů jeho vnitřní `DataSource` na základě `PageSize` a `CurrentPageIndex` vlastnosti. Obrázek 4 znázorňuje funkce `PagedDataSource` třídy.
+K implementaci stránkování na výchozím nastavení v ovládacích prvcích DataList nebo opakovače, můžeme použít [ `PagedDataSource` třída](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.aspx) jako obálku kolem `ProductsDataTable` jejichž obsah se stránkování. `PagedDataSource` Třída má `DataSource` vlastnost, která lze přiřadit k žádné vyčíslitelný objekt a [ `PageSize` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.pagesize.aspx) a [ `CurrentPageIndex` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.currentpageindex.aspx) označují, kolik záznamů do Zobrazit na stránce a index aktuální stránky. Jakmile tyto vlastnosti byly nastaveny, `PagedDataSource` lze použít jako zdroj dat o všech datech ovládací prvek webu. `PagedDataSource`, Když ve výčtu, bude pouze vrátit odpovídající podmnožinu záznamů jeho vnitřní `DataSource` na základě `PageSize` a `CurrentPageIndex` vlastnosti. Obrázek 4 znázorňuje funkce `PagedDataSource` třídy.
 
 
 ![PagedDataSource zabalí vyčíslitelný objekt stránkovatelné rozhraní](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image6.png)
@@ -204,7 +204,7 @@ Kromě `TotalRowCount`trvat několik minut pro vytvoření jen pro čtení vlast
 
 ## <a name="determining-the-total-number-of-records-being-paged-through"></a>Určení celkový počet záznamů stránkování prostřednictvím
 
-`PagedDataSource` Objekt byl vrácen ze ObjectDataSource s `Select()` metoda má v něm *všechny* záznamů produktu, i když jenom některé z nich se zobrazují v prvku DataList. `PagedDataSource` s [ `Count` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.count.aspx) vrátí počet položek, které se zobrazí v DataList; [ `DataSourceCount` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.datasourcecount.aspx) vrátí celkový počet položek v rámci `PagedDataSource`. Proto je potřeba přiřadit ASP.NET stránky s `TotalRowCount` hodnotu vlastnosti o `PagedDataSource` s `DataSourceCount` vlastnost.
+`PagedDataSource` Objekt byl vrácen ze ObjectDataSource s `Select()` metoda má v něm *všechny* záznamů produktu, i když jenom některé z nich se zobrazují v prvku DataList. `PagedDataSource` s [ `Count` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.count.aspx) vrátí počet položek, které se zobrazí v DataList; [ `DataSourceCount` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.datasourcecount.aspx) vrátí celkový počet položek v rámci `PagedDataSource`. Proto je potřeba přiřadit ASP.NET stránky s `TotalRowCount` hodnotu vlastnosti o `PagedDataSource` s `DataSourceCount` vlastnost.
 
 K tomu, vytvoření obslužné rutiny události pro ObjectDataSource s `Selected` událostí. V `Selected` obslužné rutiny události budeme mít přístup k vrácenou hodnotu ObjectDataSource s `Select()` metoda v tomto případě `PagedDataSource`.
 
@@ -224,7 +224,7 @@ Pomocí `Click` dokončit obslužné rutiny událostí, záznamy DataList s mož
 
 ## <a name="disabling-paging-interface-controls"></a>Zakázání stránkování ovládací prvky rozhraní
 
-Všechny čtyři tlačítka v současné době jsou povolena bez ohledu na stránku zobrazení. Chceme zakázat tlačítka první a předchozí až na první stránku dat a tlačítka Další a poslední při poslední stránkou. `PagedDataSource` Objekt vrácený ObjectDataSource s `Select()` metoda má vlastnosti [ `IsFirstPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.isfirstpage.aspx) a [ `IsLastPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.islastpage.aspx) , jsme zkontrolovat, určete, pokud jsme prohlížíte na první nebo poslední stránku data.
+Všechny čtyři tlačítka v současné době jsou povolena bez ohledu na stránku zobrazení. Chceme zakázat tlačítka první a předchozí až na první stránku dat a tlačítka Další a poslední při poslední stránkou. `PagedDataSource` Objekt vrácený ObjectDataSource s `Select()` metoda má vlastnosti [ `IsFirstPage` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.isfirstpage.aspx) a [ `IsLastPage` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.islastpage.aspx) , jsme zkontrolovat, určete, pokud jsme prohlížíte na první nebo poslední stránku data.
 
 Přidejte následující ObjectDataSource s `Selected` obslužné rutiny události:
 

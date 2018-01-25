@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1ff76d08b6de20be7263ae134b102883fc8d99a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 43edf6745627e92d20c26377404e44f07e649a75
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="security-basics-and-aspnet-support-vb"></a>Základy zabezpečení a podpora technologie ASP.NET (VB)
 ====================
@@ -102,7 +102,7 @@ Jakmile se uživatel úspěšně přihlášen, zahrnují následné žádosti HT
 **Obrázek 2**: pracovní postup ověřování formulářů
 
 
-Jsme se proniknout do ověřování pomocí formulářů mnohem podrobněji v následujících dvou kurzech[Přehled ověřování založené na formulářích](an-overview-of-forms-authentication-vb.md) a [konfiguraci ověřování formulářů a rozšířené témata](forms-authentication-configuration-and-advanced-topics-vb.md). Další informace o ASP. Možnosti ověřování pro NET, najdete v části [ověřování pomocí technologie ASP.NET](https://msdn.microsoft.com/en-us/library/eeyk640h.aspx).
+Jsme se proniknout do ověřování pomocí formulářů mnohem podrobněji v následujících dvou kurzech[Přehled ověřování založené na formulářích](an-overview-of-forms-authentication-vb.md) a [konfiguraci ověřování formulářů a rozšířené témata](forms-authentication-configuration-and-advanced-topics-vb.md). Další informace o ASP. Možnosti ověřování pro NET, najdete v části [ověřování pomocí technologie ASP.NET](https://msdn.microsoft.com/library/eeyk640h.aspx).
 
 ## <a name="limiting-access-to-web-pages-directories-and-page-functionality"></a>Omezení přístupu k webové stránky, adresářů a stránky funkce
 
@@ -113,9 +113,9 @@ Technologie ASP.NET obsahuje dva způsoby, jak určit, zda konkrétní uživatel
 
 Soubor ověřování a autorizace adres URL definujte autorizační pravidla pro přístup ke konkrétní stránky ASP.NET nebo pro všechny stránky ASP.NET v jednom adresáři. Pomocí těchto postupů jsme určit, aby ASP.NET odmítnout požadavky na konkrétní stránku pro konkrétní uživatele, nebo povolit přístup pro sadu uživatelů a odepřít přístup k ostatních uživatelů. Co o scénářích, kde všichni uživatelé přístup ke stránce, ale funkce stránky závisí na uživatele? Například mnoho webů, které podporují uživatelské účty mají stránky zobrazující jiný obsah nebo data pro ověřené uživatele a anonymní uživatelé. Anonymní uživatel může zobrazit odkaz pro přihlášení k webu, že ověřený uživatel bude místo toho zobrazí zpráva jako, Vítejte zpět, *uživatelské jméno* spolu s odkazem na odhlášení. Jiný příklad: při zobrazení položky na stránku aukce zobrazí různé informace v závislosti na tom, zda jste uchazeči nebo jeden dražeb položky.
 
-Tyto úpravy na úrovni stránky, můžete to udělat deklarativně nebo prostřednictvím kódu programu. K zobrazení různých obsahu pro anonymní než ověřené uživatele, jednoduše přetažení [ovládací prvek LoginView](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx) na stránku a zadejte odpovídající obsah do jeho AnonymousTemplate a LoggedInTemplate šablony. Alternativně můžete prostřednictvím kódu programu zjistíte, zda je aktuální požadavek ověřen, kdo je uživatel a jaké role náleží do (pokud existuje). Tyto informace můžete následně zobrazit nebo skrýt sloupce v mřížce nebo panelů na stránce.
+Tyto úpravy na úrovni stránky, můžete to udělat deklarativně nebo prostřednictvím kódu programu. K zobrazení různých obsahu pro anonymní než ověřené uživatele, jednoduše přetažení [ovládací prvek LoginView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) na stránku a zadejte odpovídající obsah do jeho AnonymousTemplate a LoggedInTemplate šablony. Alternativně můžete prostřednictvím kódu programu zjistíte, zda je aktuální požadavek ověřen, kdo je uživatel a jaké role náleží do (pokud existuje). Tyto informace můžete následně zobrazit nebo skrýt sloupce v mřížce nebo panelů na stránce.
 
-Tato řada obsahuje tři návodů, které soustředit na autorizaci. ***Autorizace uživatele na základě***prozkoumá jak omezit přístup na stránku nebo stránky v adresáři pro konkrétní uživatelské účty; ***Autorizace podle role*** zjistí zadávání autorizační pravidla v roli úroveň; nakonec ***zobrazení obsahu na základě aktuálně zaznamenána v uživatele*** tento kurz popisuje úpravy konkrétní stránky obsahu a funkcí na základě uživatele, kteří navštěvují stránky. Další informace o ASP. Možnosti pro NET autorizace, najdete v části [autorizaci ASP.NET](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx).
+Tato řada obsahuje tři návodů, které soustředit na autorizaci. ***Autorizace uživatele na základě***prozkoumá jak omezit přístup na stránku nebo stránky v adresáři pro konkrétní uživatelské účty; ***Autorizace podle role*** zjistí zadávání autorizační pravidla v roli úroveň; nakonec ***zobrazení obsahu na základě aktuálně zaznamenána v uživatele*** tento kurz popisuje úpravy konkrétní stránky obsahu a funkcí na základě uživatele, kteří navštěvují stránky. Další informace o ASP. Možnosti pro NET autorizace, najdete v části [autorizaci ASP.NET](https://msdn.microsoft.com/library/wce3kxhd.aspx).
 
 ## <a name="user-accounts-and-roles"></a>Uživatelské účty a rolí
 
@@ -123,7 +123,7 @@ SOUBOR ASP. Ověřování pomocí formulářů je NET poskytuje infrastrukturu p
 
 Před aplikaci ASP.NET 2.0 se vývojáři slouží k vytváření vlastních úložiště uživatele a role. Byly také na hák pro návrh uživatelského rozhraní a psaní kódu pro základní uživatele souvisejícím s účtem stránky jako přihlašovací stránku a vytvořit nový účet, mimo jiné stránky. Bez žádné předdefinované uživatelské účet framework technologie ASP.NET, každý vývojář implementující uživatelské účty museli přicházejí na své vlastní rozhodnutí o návrhu na otázky, jako je, jak lze uložit hesel a dalších citlivých údajů? a co pokyny by měly I stanovit týkající se délku hesla a síly?
 
-V současné době implementace uživatelské účty v aplikaci ASP.NET je mnohem jednodušší díky *členství framework* a integrované ovládací prvky webového přihlášení. Rozhraní členství je několik tříd v [obor názvů System.Web.Security](https://msdn.microsoft.com/en-us/library/system.web.security.aspx) , poskytovat funkce pro provádění úloh souvisejících s účtem základní uživatel. Třída klíče v rámci členství je [třída členství](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx), která obsahuje metody, třeba:
+V současné době implementace uživatelské účty v aplikaci ASP.NET je mnohem jednodušší díky *členství framework* a integrované ovládací prvky webového přihlášení. Rozhraní členství je několik tříd v [obor názvů System.Web.Security](https://msdn.microsoft.com/library/system.web.security.aspx) , poskytovat funkce pro provádění úloh souvisejících s účtem základní uživatel. Třída klíče v rámci členství je [třída členství](https://msdn.microsoft.com/library/system.web.security.membership.aspx), která obsahuje metody, třeba:
 
 - CreateUser
 - DeleteUser
@@ -136,8 +136,8 @@ Používá rozhraní členství [modelu poskytovatelů](http://aspnet.4guysfromr
 
 Microsoft dodává dvě třídy zprostředkovatele členství v rozhraní .NET Framework:
 
-- [ActiveDirectoryMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.activedirectorymembershipprovider.aspx) -implementuje rozhraní API členství v servery služby Active Directory a Active Directory Application Mode (ADAM).
-- [SqlMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlmembershipprovider.aspx) -implementuje rozhraní API členství v databázi systému SQL Server.
+- [ActiveDirectoryMembershipProvider](https://msdn.microsoft.com/library/system.web.security.activedirectorymembershipprovider.aspx) -implementuje rozhraní API členství v servery služby Active Directory a Active Directory Application Mode (ADAM).
+- [SqlMembershipProvider](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx) -implementuje rozhraní API členství v databázi systému SQL Server.
 
 Tato řada kurz se zaměřuje výhradně na SqlMembershipProvider.
 
@@ -147,17 +147,17 @@ Tato řada kurz se zaměřuje výhradně na SqlMembershipProvider.
 **Obrázek 03**: zprostředkovatele modelu umožňuje různými implementacemi být bezproblémově zapojen do Framework ([Kliknutím zobrazit obrázek v plné velikosti](security-basics-and-asp-net-support-vb/_static/image5.png))
 
 
-Výhodou modelu poskytovatelů je, že alternativní implementace může být vyvinuty společností Microsoft, jiných dodavatelů nebo jednotlivé vývojáři a bezproblémově připojovány rozhraní členství. Například společnost Microsoft vydala [zprostředkovatel členství pro databáze aplikace Microsoft Access](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi). Další informace o zprostředkovateli členství, najdete v části [zprostředkovatele Toolkit](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx), což zahrnuje návod zprostředkovatele členství, ukázka vlastních poskytovatelů, více než 100 stránky dokumentace na zprostředkovatele modelu a dokončení zdrojového kódu pro předdefinované zprostředkovatele členství (konkrétně, ActiveDirectoryMembershipProvider a SqlMembershipProvider).
+Výhodou modelu poskytovatelů je, že alternativní implementace může být vyvinuty společností Microsoft, jiných dodavatelů nebo jednotlivé vývojáři a bezproblémově připojovány rozhraní členství. Například společnost Microsoft vydala [zprostředkovatel členství pro databáze aplikace Microsoft Access](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi). Další informace o zprostředkovateli členství, najdete v části [zprostředkovatele Toolkit](https://msdn.microsoft.com/asp.net/aa336558.aspx), což zahrnuje návod zprostředkovatele členství, ukázka vlastních poskytovatelů, více než 100 stránky dokumentace na zprostředkovatele modelu a dokončení zdrojového kódu pro předdefinované zprostředkovatele členství (konkrétně, ActiveDirectoryMembershipProvider a SqlMembershipProvider).
 
-ASP.NET 2.0 zavedli taky rozhraní role. Jako rozhraní členství je rozhraní role vytvořené na modelu poskytovatelů. Jejího rozhraní API je vystaven prostřednictvím [role třídy](https://msdn.microsoft.com/en-us/library/system.web.security.roles.aspx) a rozhraní .NET Framework se dodává s tři třídy zprostředkovatele:
+ASP.NET 2.0 zavedli taky rozhraní role. Jako rozhraní členství je rozhraní role vytvořené na modelu poskytovatelů. Jejího rozhraní API je vystaven prostřednictvím [role třídy](https://msdn.microsoft.com/library/system.web.security.roles.aspx) a rozhraní .NET Framework se dodává s tři třídy zprostředkovatele:
 
-- [Zprostředkovatel AuthorizationStoreRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.authorizationstoreroleprovider.aspx) -spravuje informace o rolích v úložišti zásad Správce autorizací, například služby Active Directory nebo ADAM.
-- [SqlRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlroleprovider.aspx) -implementuje role v databázi systému SQL Server.
-- [WindowsTokenRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.windowstokenroleprovider.aspx) – přidruží informace o rolích na základě skupiny Windows návštěvníka. Tato metoda se obvykle používá s ověřováním systému Windows.
+- [Zprostředkovatel AuthorizationStoreRoleProvider](https://msdn.microsoft.com/library/system.web.security.authorizationstoreroleprovider.aspx) -spravuje informace o rolích v úložišti zásad Správce autorizací, například služby Active Directory nebo ADAM.
+- [SqlRoleProvider](https://msdn.microsoft.com/library/system.web.security.sqlroleprovider.aspx) -implementuje role v databázi systému SQL Server.
+- [WindowsTokenRoleProvider](https://msdn.microsoft.com/library/system.web.security.windowstokenroleprovider.aspx) – přidruží informace o rolích na základě skupiny Windows návštěvníka. Tato metoda se obvykle používá s ověřováním systému Windows.
 
 Tato řada kurz se zaměřuje výhradně na SqlRoleProvider.
 
-Vzhledem k tomu, že zprostředkovatel modelu zahrnuje jediného rozhraní API dopředu směřujících (třídy členství a rolí), je možné vytvořit funkce kolem tohoto rozhraní API bez nutnosti starat o podrobnosti implementace – těch, které jsou zpracovávány vybrané stránkou zprostředkovatele Developer. Toto jednotné rozhraní API umožňuje společnosti Microsoft a jiných dodavatelů, jak sestavit ovládací prvky webového tohoto rozhraní s architektury členství a rolí. ASP.NET se dodává s řadou [ovládací prvky webového přihlášení](https://msdn.microsoft.com/en-us/library/ms178329.aspx) pro implementaci běžných uživatelská účet uživatelské rozhraní. Například [přihlášení řízení](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.aspx) vyzve uživatele k zadání přihlašovacích údajů, ověřuje je a pak je do protokolů prostřednictvím ověřování pomocí formulářů. [Ovládací prvek LoginView](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx) nabízí šablon pro zobrazení různých značek pro anonymní uživatele a ověřené uživatele nebo různých značek na základě role uživatele. A [prvku CreateUserWizard](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.aspx) poskytuje podrobné uživatelské rozhraní pro vytvoření nového uživatelského účtu.
+Vzhledem k tomu, že zprostředkovatel modelu zahrnuje jediného rozhraní API dopředu směřujících (třídy členství a rolí), je možné vytvořit funkce kolem tohoto rozhraní API bez nutnosti starat o podrobnosti implementace – těch, které jsou zpracovávány vybrané stránkou zprostředkovatele Developer. Toto jednotné rozhraní API umožňuje společnosti Microsoft a jiných dodavatelů, jak sestavit ovládací prvky webového tohoto rozhraní s architektury členství a rolí. ASP.NET se dodává s řadou [ovládací prvky webového přihlášení](https://msdn.microsoft.com/library/ms178329.aspx) pro implementaci běžných uživatelská účet uživatelské rozhraní. Například [přihlášení řízení](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.aspx) vyzve uživatele k zadání přihlašovacích údajů, ověřuje je a pak je do protokolů prostřednictvím ověřování pomocí formulářů. [Ovládací prvek LoginView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) nabízí šablon pro zobrazení různých značek pro anonymní uživatele a ověřené uživatele nebo různých značek na základě role uživatele. A [prvku CreateUserWizard](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.aspx) poskytuje podrobné uživatelské rozhraní pro vytvoření nového uživatelského účtu.
 
 Pod pozadí různé ovládací prvky přihlášení komunikovat s architektury členství a rolí. Většina ovládacích prvků přihlášení se dá implementovat bez nutnosti napsat jediný řádek kódu. Tyto ovládací prvky podrobněji vyzkoušíme v budoucnu kurzy, včetně techniky pro rozšíření a přizpůsobení jejich funkce.
 
@@ -174,16 +174,16 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [ASP.NET 2.0 členství, role, ověřování pomocí formulářů a zdroje informací o zabezpečení](https://weblogs.asp.net/scottgu/ASP.NET-2.0-Membership_2C00_-Roles_2C00_-Forms-Authentication_2C00_-and-Security-Resources-)
-- [Pokyny pro technologii ASP.NET 2.0 zabezpečení](https://msdn.microsoft.com/en-us/library/ms998258.aspx)
-- [Ověřování pomocí technologie ASP.NET](https://msdn.microsoft.com/en-us/library/eeyk640h.aspx)
-- [Autorizaci ASP.NET](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx)
-- [Přehled ovládacích prvků ASP.NET přihlášení](https://msdn.microsoft.com/en-us/library/ms178329.aspx)
+- [Pokyny pro technologii ASP.NET 2.0 zabezpečení](https://msdn.microsoft.com/library/ms998258.aspx)
+- [Ověřování pomocí technologie ASP.NET](https://msdn.microsoft.com/library/eeyk640h.aspx)
+- [Autorizaci ASP.NET](https://msdn.microsoft.com/library/wce3kxhd.aspx)
+- [Přehled ovládacích prvků ASP.NET přihlášení](https://msdn.microsoft.com/library/ms178329.aspx)
 - [Zkoumání ASP.NET 2.0 je členství, role a profil](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [Postupy: zabezpečení mé lokality pomocí členství a rolí?](https://asp.net/learn/videos/video-45.aspx) (Video)
-- [Úvod do členství](https://msdn.microsoft.com/en-us/library/yh26yfzy.aspx)
-- [Středisko pro vývojáře MSDN zabezpečení](https://msdn.microsoft.com/en-us/security/default.aspx)
+- [Úvod do členství](https://msdn.microsoft.com/library/yh26yfzy.aspx)
+- [Středisko pro vývojáře MSDN zabezpečení](https://msdn.microsoft.com/security/default.aspx)
 - [Professional ASP.NET 2.0 zabezpečení, členství a Role správy](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
-- [Zprostředkovatel Toolkit](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx)
+- [Zprostředkovatel Toolkit](https://msdn.microsoft.com/asp.net/aa336558.aspx)
 
 ## <a name="about-the-author"></a>O autorovi
 

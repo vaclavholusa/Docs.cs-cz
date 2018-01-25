@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 243bd8a30a84d3a57d418da7b2b55cfe132bf0e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b01f0ac780121c4e0941df6016220a1cb1ed2d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="urls-in-master-pages-c"></a>Adresy URL v hlavní stránky (C#)
 ====================
@@ -108,7 +108,7 @@ Dobrá zpráva je, že technologie ASP.NET nabízí metody pro generování plat
 
 Spíše než pevného code absolutní adresu URL, ASP.NET umožňuje vývojářům stránky používat tilda (`~`) k označení kořenové webové aplikace. V tomto kurzu lze použít, například notace `~/Admin/Default.aspx` v textu, který bude odkazovat na `Default.aspx` stránky v `Admin` složky. `~` Znamená, že `Admin` složka je podsložkou kořenový adresář webové aplikace.
 
-`Control` Třídy [ `ResolveClientUrl` metoda](https://msdn.microsoft.com/en-us/library/system.web.ui.control.resolveclienturl.aspx) přebírá adresu URL a upraví relativní adresy URL vhodné pro webovou stránku, na kterém se ovládací prvek nachází. Například volání `ResolveClientUrl("~/Images/PoweredByASPNET.gif")` z `About.aspx` vrátí `Images/PoweredByASPNET.gif`. Volání z `~/Admin/Default.aspx`, ale vrátí `../Images/PoweredByASPNET.gif`.
+`Control` Třídy [ `ResolveClientUrl` metoda](https://msdn.microsoft.com/library/system.web.ui.control.resolveclienturl.aspx) přebírá adresu URL a upraví relativní adresy URL vhodné pro webovou stránku, na kterém se ovládací prvek nachází. Například volání `ResolveClientUrl("~/Images/PoweredByASPNET.gif")` z `About.aspx` vrátí `Images/PoweredByASPNET.gif`. Volání z `~/Admin/Default.aspx`, ale vrátí `../Images/PoweredByASPNET.gif`.
 
 > [!NOTE]
 > Vzhledem k tomu, že jsou odvozeny od všech serverových ovládacích prvků ASP.NET `Control` třída, všechny ovládací prvky serveru mají přístup k `ResolveClientUrl` metoda. I v `Page` třída odvozená z `Control` třídy, což znamená, že můžete použít tuto metodu přímo z třídy kódu stránky ASP.NET.

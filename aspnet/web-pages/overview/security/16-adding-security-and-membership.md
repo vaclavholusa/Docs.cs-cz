@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: f0cee96005416bd9ef8befaf34890f415cf5ff3c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af2eeb128cff554e7ae3d903e2117861087344e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>Přidání členství a zabezpečení na web rozhraní ASP.NET Web Pages (Razor)
 ====================
@@ -100,7 +100,7 @@ Následující postup popisuje, jak vytvořit webu a nakonfigurovat ho.
 7. Uložte a zavřete  *\_AppStart.cshtml*.
 8. Spustit *Default.cshtml* stránku v prohlížeči.
 
-    ![zabezpečení členství-2](16-adding-security-and-membership/_static/image1.png)
+    ![security-membership-2](16-adding-security-and-membership/_static/image1.png)
 
     > [!NOTE]
     > Pokud se zobrazí chyba oznamující, že vlastnost musí být instance `ExtendedMembershipProvider`, nemusí být konfigurována webu použít systém členství technologie ASP.NET Web Pages (SimpleMembership). Někdy může dojít v případě poskytovatele hostingu server je nakonfigurován jinak než místní server. Pokud chcete odstranit tento problém, přidejte následující element do lokality *Web.config* souboru:
@@ -111,20 +111,20 @@ Následující postup popisuje, jak vytvořit webu a nakonfigurovat ho.
 9. V pravém horním rohu stránky, klikněte na **zaregistrovat** odkaz. *Register.cshtml* zobrazí se stránka.
 10. Zadejte uživatelské jméno a heslo a potom klikněte na **zaregistrovat**.
 
-    ![zabezpečení členství-3](16-adding-security-and-membership/_static/image2.png)
+    ![security-membership-3](16-adding-security-and-membership/_static/image2.png)
 
     Při vytváření webu z **Starter Site** šablony, databáze s názvem *StarterSite.sdf* byl vytvořen na webu *aplikace\_Data* složky. Informace o uživateli se při registraci, přidá do databáze. Pokud nastavíte hodnoty SMTP, je odeslána zpráva e-mailovou adresu, které že jste použili, můžete dokončit registraci.
 
-    ![zabezpečení členství-4](16-adding-security-and-membership/_static/image3.png)
+    ![security-membership-4](16-adding-security-and-membership/_static/image3.png)
 11. Přejděte do programu vaše e-mailu a vyhledejte zpráva, což bude mít potvrzovací kód a hypertextový odkaz na web.
 12. Klikněte na odkaz aktivovat svůj účet. Potvrzení hypertextový odkaz otevře potvrzovací stránku registrace.
 
-    ![zabezpečení členství-5](16-adding-security-and-membership/_static/image4.png)
+    ![security-membership-5](16-adding-security-and-membership/_static/image4.png)
 - Klikněte **přihlášení** propojit a pak se přihlaste pomocí účtu, který je zaregistrovaný.
 
     Po přihlášení se **přihlášení** a **zaregistrovat** se nahrazují odkazy **odhlášení** odkaz. Vaše přihlašovací jméno se zobrazí jako odkaz. (Tento odkaz umožňuje přejděte na stránku, kde můžete změnit heslo.)
 
-    ![zabezpečení členství-6](16-adding-security-and-membership/_static/image5.png)
+    ![security-membership-6](16-adding-security-and-membership/_static/image5.png)
 
     > [!NOTE]
     > Ve výchozím nastavení rozhraní ASP.NET web pages poslat přihlašovací údaje serveru ve formátu prostého textu (jako čitelný text). Produkční lokality by měl používat zabezpečený protokol HTTP (https://, také známé jako *zabezpečení SSL* nebo SSL) k šifrování citlivých informací, které se vyměňují se serverem. Můžete požadované e-mailu odesílání zpráv pomocí protokolu SSL nastavením `WebMail.EnableSsl=true` jako v předchozím příkladu. Další informace o SSL najdete v tématu [zabezpečení komunikace webových: certifikáty SSL a https://](https://go.microsoft.com/fwlink/?LinkId=208660).
@@ -170,7 +170,7 @@ V tomto postupu vytvoříte složku, která bude obsahovat stránky, které jsou
 Zabezpečený přístup k více stránek, můžete to udělat:
 
 - Kontrola zabezpečení přidáte na každou stránku.
-- Vytvoření  *\_PageStart.cshtml* stránku ve složce, kde můžete ponechat chráněné stránky a přidat kontrola zabezpečení existuje.  *\_PageStart.cshtml* stránky funguje jako globální stránky pro všechny stránky ve složce. Tento postup je vysvětlené podrobněji v [přizpůsobení chování na webu pro webové stránky ASP.NET](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access).
+- Vytvoření  *\_PageStart.cshtml* stránku ve složce, kde můžete ponechat chráněné stránky a přidat kontrola zabezpečení existuje. *\_PageStart.cshtml* stránky funguje jako globální stránky pro všechny stránky ve složce. Tento postup je vysvětlené podrobněji v [přizpůsobení chování na webu pro webové stránky ASP.NET](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access).
 
 ## <a name="creating-security-for-groups-of-users-roles"></a>Vytváření zabezpečení pro skupiny uživatelů (role)
 
@@ -181,17 +181,17 @@ K podpoře rolí je nastavený systém členství technologie ASP.NET. Ale na ro
 1. Ve službě WebMatrix, klikněte **databáze** selektor pracovního prostoru.
 2. V levém podokně, otevřete *StarterSite.sdf* uzlu, otevřete **tabulky** uzel a poté dvojitým kliknutím *webové stránky\_role* tabulky.
 
-    ![zabezpečení členství-7](16-adding-security-and-membership/_static/image6.png)
+    ![security-membership-7](16-adding-security-and-membership/_static/image6.png)
 3. Přidání role s názvem &quot;správce&quot;. *RoleId* pole se vyplní automaticky. (Je primární klíč a byla nastavena na být pole zjistěte, jak je popsáno v [Úvod k práci s databází v lokalitách webové stránky ASP.NET](https://go.microsoft.com/fwlink/?LinkId=202893).)
 4. Poznamenejte si hodnotu Novinky pro *RoleId* pole. (Pokud je to první role, které definujete, bude 1.)
 
-    ![zabezpečení členství-8](16-adding-security-and-membership/_static/image7.png)
+    ![security-membership-8](16-adding-security-and-membership/_static/image7.png)
 5. Zavřít *webové stránky\_role* tabulky.
 6. Otevřete *UserProfile* tabulky.
 7. Poznamenejte si *UserId* hodnota jednoho nebo více uživatelů v tabulce a pak zavřete v tabulce.
 8. Otevřete *webové stránky\_UserInRoles* tabulku a zadejte *UserID* a *RoleID* hodnotu do tabulky. Například put uživatel 2 do &quot;správce&quot; role, zadejte tyto hodnoty:
 
-    ![zabezpečení členství-9](16-adding-security-and-membership/_static/image8.png)
+    ![security-membership-9](16-adding-security-and-membership/_static/image8.png)
 9. Zavřít *webové stránky\_UsersInRoles* tabulky.
 
     Teď, když máte role, které definují, můžete nakonfigurovat na stránce, který je přístupný pro uživatele, kteří jsou v dané roli.
@@ -212,7 +212,7 @@ K podpoře rolí je nastavený systém členství technologie ASP.NET. Ale na ro
 
 Na přihlašovací stránku neukončí automatizovaným programům (někdy označovány jako *webové roboti* nebo *robotů*) registraci vašeho webu. Tento postup popisuje, jak povolit nástroje ReCaptcha testu na stránce registrace.
 
-![/Media/38777/ch16securitymembership-18.jpg](16-adding-security-and-membership/_static/image1.jpg)
+![/media/38777/ch16securitymembership-18.jpg](16-adding-security-and-membership/_static/image1.jpg)
 
 1. Zaregistrovat váš web v ReCaptcha.Net ([http://recaptcha.net](http://recaptcha.net)). Po dokončení registrace budete získat veřejný klíč a soukromý klíč.
 2. Přidejte knihovnu ASP.NET Web Helpers na váš web, jak je popsáno v [instalaci pomocné rutiny v stránku ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=252372), pokud jste tak ještě neučinili.
@@ -230,7 +230,7 @@ Na přihlašovací stránku neukončí automatizovaným programům (někdy ozna�
 1. Spustit *Default.cshtml* v prohlížeči. Pokud jste se přihlásili do lokality, klikněte **odhlášení** odkaz.
 2. Klikněte **zaregistrovat** propojení a testování registraci pomocí testu CAPTCHA.
 
-    ![zabezpečení členství-10](16-adding-security-and-membership/_static/image9.png)
+    ![security-membership-10](16-adding-security-and-membership/_static/image9.png)
 
 Další informace o `ReCaptcha` pomocné rutiny, najdete v části [pomocí CATPCHA zabránit automatizované programy (robotů) z pomocí vašeho webu ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251967).
 
@@ -254,20 +254,20 @@ Využívá pomocí postupu v tomto článku výše **Starter Site** šablony jak
 
 Základní proces je popsaný v příspěvku na blogu [nejzákladnější možnost pro implementaci zabezpečení ASP.NET Razor](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240). Většinu práce se provádí pomocí následujících metod a vlastností `WebSecurity` pomocné rutiny:
 
-- [WebSecurty.UserExists](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx), [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx). Tyto metody umožňují určit, zda uživatel je již zaregistrován a jejich registrace.
-- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx). Tato vlastnost umožňuje určit, zda má aktuální uživatel je přihlášen. To je užitečné přesměrovat uživatele na přihlašovací stránku, pokud již uživatel není přihlášený.
-- [WebSecurity.Login](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx), [WebSecurity.Logout](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx). Tyto metody se uživatel přihlásil příchozí nebo odchozí.
-- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx). Tato vlastnost je užitečná pro zobrazení aktuálního uživatele přihlášeného název (Pokud je uživatel přihlášen).
-- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/en-us/library/gg569286(v=vs.99).aspx). Tato metoda je užitečná, pokud jste nastavili potvrzení e-mailu pro registraci. (Podrobnosti jsou popsány v příspěvku na blogu [používá funkci potvrzení pro zabezpečení rozhraní ASP.NET Web Pages](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267).)
+- [WebSecurty.UserExists](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx), [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx). Tyto metody umožňují určit, zda uživatel je již zaregistrován a jejich registrace.
+- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx). Tato vlastnost umožňuje určit, zda má aktuální uživatel je přihlášen. To je užitečné přesměrovat uživatele na přihlašovací stránku, pokud již uživatel není přihlášený.
+- [WebSecurity.Login](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx), [WebSecurity.Logout](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx). Tyto metody se uživatel přihlásil příchozí nebo odchozí.
+- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx). Tato vlastnost je užitečná pro zobrazení aktuálního uživatele přihlášeného název (Pokud je uživatel přihlášen).
+- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/library/gg569286(v=vs.99).aspx). Tato metoda je užitečná, pokud jste nastavili potvrzení e-mailu pro registraci. (Podrobnosti jsou popsány v příspěvku na blogu [používá funkci potvrzení pro zabezpečení rozhraní ASP.NET Web Pages](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267).)
 
-Ke správě rolí, můžete použít [role](https://msdn.microsoft.com/en-us/library/gg538398(v=vs.99).aspx) a [členství](https://msdn.microsoft.com/en-us/library/gg569035(v=vs.99).aspx) třídy, jak je popsáno v položkách blogu.
+Ke správě rolí, můžete použít [role](https://msdn.microsoft.com/library/gg538398(v=vs.99).aspx) a [členství](https://msdn.microsoft.com/library/gg569035(v=vs.99).aspx) třídy, jak je popsáno v položkách blogu.
 
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Přizpůsobení chování na webu](https://go.microsoft.com/fwlink/?LinkId=202906)
+- [Přizpůsobení chování v celém webu](https://go.microsoft.com/fwlink/?LinkId=202906)
 - [Zabezpečení komunikace webových: Certifikáty, SSL a https://](https://go.microsoft.com/fwlink/?LinkId=208660)
 - [Nejzákladnější možnost pro implementaci zabezpečení ASP.NET Razor](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240) a [používá funkci potvrzení pro zabezpečení rozhraní ASP.NET Web Pages](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267). Toto jsou příspěvky blogu, které popisují, jak implementovat funkce členství technologie ASP.NET bez použití **Starter Site** šablony.
-- [Povolení přihlášení z externích serverů v stránky webu technologie ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251969)
-- [Referenční dokumentace rozhraní API třídy WebSecurity](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity(v=vs.99)) (MSDN)
-- [Referenční dokumentace rozhraní API třídy SimpleRoleProvider](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simpleroleprovider(v=vs.99)) (MSDN)
-- [Referenční dokumentace rozhraní API třídy SimpleMembershipProvider](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simplemembershipprovider(v=vs.99)) (MSDN)
+- [Povolení přihlášení z externích webů na webu s webovými stránkami ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251969)
+- [Referenční dokumentace rozhraní API třídy WebSecurity](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity(v=vs.99)) (MSDN)
+- [Referenční dokumentace rozhraní API třídy SimpleRoleProvider](https://msdn.microsoft.com/library/webmatrix.webdata.simpleroleprovider(v=vs.99)) (MSDN)
+- [Referenční dokumentace rozhraní API třídy SimpleMembershipProvider](https://msdn.microsoft.com/library/webmatrix.webdata.simplemembershipprovider(v=vs.99)) (MSDN)

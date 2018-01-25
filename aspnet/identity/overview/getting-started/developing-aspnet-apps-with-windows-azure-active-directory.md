@@ -12,28 +12,28 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 425f8edff41588db363055d166995d5f563c5a23
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1ef0468d5f5c17480b23ac88983f30fe6f4979c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>Vývoj aplikací ASP.NET se službou Azure Active Directory
 ====================
 Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Nástroje Microsoft ASP.NET pro Azure Active Directory usnadňuje povolení ověřování pro webové aplikace hostované na [Azure](https://www.windowsazure.com/en-us/home/features/web-sites/). Ověřování Azure můžete použít k ověření uživatele služeb Office 365 z vaší organizace, podnikové účty synchronizované z vaší místní službou Active Directory nebo uživatelé vytvoření ve vlastní domény Azure Active Directory. Povolení ověřování systému Windows Azure nakonfiguruje aplikace k ověření uživatelů pomocí jedné [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) klienta.
+> Nástroje Microsoft ASP.NET pro Azure Active Directory usnadňuje povolení ověřování pro webové aplikace hostované na [Azure](https://www.windowsazure.com/home/features/web-sites/). Ověřování Azure můžete použít k ověření uživatele služeb Office 365 z vaší organizace, podnikové účty synchronizované z vaší místní službou Active Directory nebo uživatelé vytvoření ve vlastní domény Azure Active Directory. Povolení ověřování systému Windows Azure nakonfiguruje aplikace k ověření uživatelů pomocí jedné [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) klienta.
 > 
 >  V tomto kurzu napsal Rick Anderson[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 
 
-Tento kurz vám ukáže, jak vytvořit aplikaci ASP.NET, který je nakonfigurován pro přihlašování pomocí [Azure Active Directory](https://msdn.microsoft.com/en-us/library/azure/mt168838.aspx) (Azure AD). Také se naučíte, jak zavolat rozhraní Graph API k načtení informací o aktuálně přihlášeného uživatele a jak nasadit aplikaci do Azure.
+Tento kurz vám ukáže, jak vytvořit aplikaci ASP.NET, který je nakonfigurován pro přihlašování pomocí [Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (Azure AD). Také se naučíte, jak zavolat rozhraní Graph API k načtení informací o aktuálně přihlášeného uživatele a jak nasadit aplikaci do Azure.
 
 ## <a name="prerequisites"></a>Požadavky
 
 1. [Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/eng/2013-downloads#d-2013-express) nebo [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads).
-2. [Visual Studio 2013 Update 4](https://www.microsoft.com/en-us/download/details.aspx?id=44921) -je požadována aktualizace 3 nebo vyšší.
-3. Účet Azure. [Kliknutím sem](https://azure.microsoft.com/en-us/pricing/free-trial/) bezplatnou zkušební verzi, pokud již nemáte účet.
+2. [Visual Studio 2013 Update 4](https://www.microsoft.com/download/details.aspx?id=44921) -je požadována aktualizace 3 nebo vyšší.
+3. Účet Azure. [Kliknutím sem](https://azure.microsoft.com/pricing/free-trial/) bezplatnou zkušební verzi, pokud již nemáte účet.
 
 ## <a name="add-a-global-administrator-to-your-active-directory"></a>Přidejte globální správce do služby Active Directory
 
@@ -58,7 +58,7 @@ Tento kurz vám ukáže, jak vytvořit aplikaci ASP.NET, který je nakonfigurov�
 
 ## <a name="create-an-aspnet-application"></a>Vytvoření aplikace ASP.NET
 
-Následující postup použijte [Visual Studio Express 2013 pro Web](https://www.microsoft.com/en-us/download/details.aspx?id=40747)a vyžaduje [Visual Studio 2013 Update 3](https://www.microsoft.com/en-us/download/details.aspx?id=43721).
+Následující postup použijte [Visual Studio Express 2013 pro Web](https://www.microsoft.com/download/details.aspx?id=40747)a vyžaduje [Visual Studio 2013 Update 3](https://www.microsoft.com/download/details.aspx?id=43721).
 
 1. V sadě Visual Studio, klikněte na tlačítko **soubor** a potom **nový projekt**. Na **nový projekt** dialogové okno, vyberte v levé nabídce projektu Visual C# webovou a klikněte na tlačítko **OK**. Můžete také zrušte zaškrtnutí políčka **přidat službu Application Insights do projektu** Pokud nechcete, aby funkce pro vaši aplikaci.
 2. V **nový projekt ASP.NET** dialogovém okně, vyberte **MVC**a potom klikněte na **změna ověřování**.   
@@ -74,7 +74,7 @@ Následující postup použijte [Visual Studio Express 2013 pro Web](https://www
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image8.png)  
 
     > [!NOTE]
-    > Volitelně můžete nakonfigurovat identifikátor ID URI aplikace, které se zaregistruje ve službě Azure AD kliknutím **další možnosti**. Identifikátor ID URI aplikace je jedinečný identifikátor pro aplikaci, která je registrovaná v Azure AD a používá je aplikace identifikovat při komunikaci se službou Azure AD. Další informace o identifikátor ID URI aplikace a další vlastnosti registrovaných aplikací najdete v tématu [v tomto tématu](https://msdn.microsoft.com/en-us/library/azure/dn499820.aspx#BKMK_Registering). Kliknutím na zaškrtávací políčko níže pole identifikátor ID URI aplikace také můžete přepsat existující registraci ve službě Azure AD, který používá stejný identifikátor ID URI aplikace.
+    > Volitelně můžete nakonfigurovat identifikátor ID URI aplikace, které se zaregistruje ve službě Azure AD kliknutím **další možnosti**. Identifikátor ID URI aplikace je jedinečný identifikátor pro aplikaci, která je registrovaná v Azure AD a používá je aplikace identifikovat při komunikaci se službou Azure AD. Další informace o identifikátor ID URI aplikace a další vlastnosti registrovaných aplikací najdete v tématu [v tomto tématu](https://msdn.microsoft.com/library/azure/dn499820.aspx#BKMK_Registering). Kliknutím na zaškrtávací políčko níže pole identifikátor ID URI aplikace také můžete přepsat existující registraci ve službě Azure AD, který používá stejný identifikátor ID URI aplikace.
 4. Po kliknutí na **OK**, zobrazí se dialogové okno přihlášení a budete se muset přihlásit pomocí účtu globálního správce (není účet Microsoft spojené s vaším předplatným). Pokud jste dříve vytvořili nový účet správce, bude nutné změnit heslo a potom znovu přihlásit pomocí nového hesla.   
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image9.png)
@@ -102,7 +102,7 @@ Následující postup použijte [Visual Studio Express 2013 pro Web](https://www
 
 ## <a name="basics-of-the-graph-api"></a>Základní informace o Graph API
 
-[Rozhraní Graph API](https://msdn.microsoft.com/en-us/library/azure/hh974476.aspx) je programovací rozhraní používá k provádění CRUD a další operace na objektech v adresáři služby Azure AD. Pokud vyberete možnost účtu organizace pro ověřování při vytváření nového projektu v sadě Visual Studio 2013, vaše aplikace už nakonfigurovaná k volání rozhraní Graph API. Tato část stručně ukazuje, jak funguje rozhraní Graph API.
+[Rozhraní Graph API](https://msdn.microsoft.com/library/azure/hh974476.aspx) je programovací rozhraní používá k provádění CRUD a další operace na objektech v adresáři služby Azure AD. Pokud vyberete možnost účtu organizace pro ověřování při vytváření nového projektu v sadě Visual Studio 2013, vaše aplikace už nakonfigurovaná k volání rozhraní Graph API. Tato část stručně ukazuje, jak funguje rozhraní Graph API.
 
 1. V běžící aplikaci, klikněte na název přihlášeného uživatele v horní pravé části stránky. Tím přejdete na stránku profilu uživatele, který je akce na řadiči Domů. Můžete si všimnout, že tabulka obsahuje informace o uživateli o účet správce, že jste vytvořili dříve. Tyto informace jsou uloženy ve vašem adresáři a rozhraní Graph API je volána pro načtení těchto informací při načtení stránky.   
   
@@ -151,6 +151,6 @@ Vynikající kurz a postupujte podle je Rick Rainey [podrobné informace: weby A
 ## <a name="more-information"></a>Další informace
 
 - [Podrobné informace: Weby Azure a organizační ověřování pomocí služby Azure AD](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
-- [Přehled rozhraní API služby Azure AD Graph](https://msdn.microsoft.com/en-us/library/azure/hh974476.aspx)
-- [Scénáře ověřování ve službě Azure AD](https://msdn.microsoft.com/en-us/library/azure/dn499820.aspx)
+- [Přehled rozhraní API služby Azure AD Graph](https://msdn.microsoft.com/library/azure/hh974476.aspx)
+- [Scénáře ověřování ve službě Azure AD](https://msdn.microsoft.com/library/azure/dn499820.aspx)
 - [Ukázky kódu Azure AD na Githubu](https://github.com/AzureADSamples)

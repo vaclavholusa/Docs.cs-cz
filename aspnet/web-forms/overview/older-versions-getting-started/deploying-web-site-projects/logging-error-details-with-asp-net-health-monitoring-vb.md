@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6a1533b80828532b756940d0b08fe4c6dab2d5dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95c0b72e3811dc23f8bdea180be5b20800ab3bd8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>Podrobnosti o chybě protokolování s stav ASP.NET (VB)
 ====================
@@ -43,13 +43,13 @@ Události protokoluje stav monitorování systému, společně s protokolu zdroj
 
 ## <a name="exploring-the-health-monitoring-systems-configuration"></a>Prohlížení stavu monitorování konfigurace systému
 
-Stav monitorování chování systému je definované informace o konfiguraci, který je umístěný ve [ `<healthMonitoring>` element](https://msdn.microsoft.com/en-us/library/2fwh2ss9.aspx) v `Web.config`. Tento konfigurační oddíl definuje mimo jiné, tři důležité následující informace:
+Stav monitorování chování systému je definované informace o konfiguraci, který je umístěný ve [ `<healthMonitoring>` element](https://msdn.microsoft.com/library/2fwh2ss9.aspx) v `Web.config`. Tento konfigurační oddíl definuje mimo jiné, tři důležité následující informace:
 
 1. Sledování události stavu, je-li vyvolána, by se mělo protokolovat,
 2. Protokol zdrojů, a
 3. Jak každý stav monitorování událostí, které jsou definované v (1) je namapována na zdroji protokolu definované v (2).
 
-Tyto informace se specifikuje prostřednictvím tři podřízené položky konfigurace – elementy: [ `<eventMappings>` ](https://msdn.microsoft.com/en-us/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/en-us/library/zaa41kz1.aspx), a [ `<rules>` ](https://msdn.microsoft.com/en-us/library/fe5wyxa0.aspx), v uvedeném pořadí.
+Tyto informace se specifikuje prostřednictvím tři podřízené položky konfigurace – elementy: [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx), a [ `<rules>` ](https://msdn.microsoft.com/library/fe5wyxa0.aspx), v uvedeném pořadí.
 
 Výchozí stav monitorování informace o konfiguraci systému najdete v `Web.config` souboru v `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` složky. Tyto informace o konfiguraci výchozí s některé značek odebrat jako stručný výtah je zobrazena níže:
 
@@ -114,7 +114,7 @@ Umožňuje aktualizovat recenze kniha konfiguraci příslušného webu tak, aby 
 2. Zaregistrujte poskytovatele správy zdrojového protokolu e-mailu v `<providers>` elementu a
 3. Přidání položky do `<rules>` element, který mapuje událostí "Všechny chyby" poskytovatele správy zdrojového protokolu přidali v kroku (2).
 
-Sledování systému stavu zahrnuje dvě třídy zprostředkovatele zdroj e-mailu protokolu: `SimpleMailWebEventProvider` a `TemplatedMailWebEventProvider`. [ `SimpleMailWebEventProvider` Třída](https://msdn.microsoft.com/en-us/library/system.web.management.simplemailwebeventprovider.aspx) odesílá prostého textu e-mailovou zprávu, která zahrnuje události, podrobnosti a poskytuje málo přizpůsobení text e-mailu. S [ `TemplatedMailWebEventProvider` třída](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) zadáte stránku ASP.NET, jejichž vykreslované značky se používá jako text zprávy pro e-mailová zpráva. [ `TemplatedMailWebEventProvider` Třída](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) vám dává mnohem větší kontrolu nad obsah a formát e-mailová zpráva, ale vyžaduje trochu další předem práci, jako je nutné vytvořit stránku ASP.NET, který generuje tělo e-mailové zprávy. Tento kurz se zaměřuje na pomocí `SimpleMailWebEventProvider` třídy.
+Sledování systému stavu zahrnuje dvě třídy zprostředkovatele zdroj e-mailu protokolu: `SimpleMailWebEventProvider` a `TemplatedMailWebEventProvider`. [ `SimpleMailWebEventProvider` Třída](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) odesílá prostého textu e-mailovou zprávu, která zahrnuje události, podrobnosti a poskytuje málo přizpůsobení text e-mailu. S [ `TemplatedMailWebEventProvider` třída](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) zadáte stránku ASP.NET, jejichž vykreslované značky se používá jako text zprávy pro e-mailová zpráva. [ `TemplatedMailWebEventProvider` Třída](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vám dává mnohem větší kontrolu nad obsah a formát e-mailová zpráva, ale vyžaduje trochu další předem práci, jako je nutné vytvořit stránku ASP.NET, který generuje tělo e-mailové zprávy. Tento kurz se zaměřuje na pomocí `SimpleMailWebEventProvider` třídy.
 
 Aktualizovat stav monitorování systému `<providers>` element v `Web.config` souboru protokolu zdroj pro `SimpleMailWebEventProvider` třídy:
 
@@ -139,7 +139,7 @@ Se zdrojem e-mailu protokolu definované zbývá dáte pokyn, aby stav systému 
 
 Systém monitorování stavu ASP.NET je navržena k umožnění správci sledovat stav nasazených webových aplikací. Události monitorování stavu se vyvolá, když unfold určité akce, například při zastavení aplikace, pokud uživatel úspěšně přihlásí webu, nebo když dojde k neošetřené výjimce. Tyto události může být protokolovány libovolný počet zdrojů protokolu. Tento kurz vám ukázal, jak k databázi a prostřednictvím e-mailová zpráva protokolu podrobnosti o neošetřených výjimek.
 
-Tento kurz se zaměřuje na použití k protokolování neošetřených výjimek, ale mějte na paměti, že monitorování stavu slouží k měření celkového stavu nasazené aplikace ASP.NET a obsahuje celou řadu událostí sledování stavu a protokolu zdroje není sledování stavu prozkoumali sem. Co je více, můžete vytvořit vlastní sledování událostí a protokolu zdrojů, stavu potřeby nastat. Pokud vás zajímá dozvědět další informace o sledování stavu, dobrý prvním krokem je pročtěte [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)na [sledování nejčastější dotazy týkající se stavu](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Následující, poraďte se [postupy: použití sledování stavu v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998306.aspx).
+Tento kurz se zaměřuje na použití k protokolování neošetřených výjimek, ale mějte na paměti, že monitorování stavu slouží k měření celkového stavu nasazené aplikace ASP.NET a obsahuje celou řadu událostí sledování stavu a protokolu zdroje není sledování stavu prozkoumali sem. Co je více, můžete vytvořit vlastní sledování událostí a protokolu zdrojů, stavu potřeby nastat. Pokud vás zajímá dozvědět další informace o sledování stavu, dobrý prvním krokem je pročtěte [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)na [sledování nejčastější dotazy týkající se stavu](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Následující, poraďte se [postupy: použití sledování stavu v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998306.aspx).
 
 Radostí programování!
 
@@ -147,11 +147,11 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Přehled monitorování stavu technologie ASP.NET](https://msdn.microsoft.com/en-us/library/bb398933.aspx)
+- [Přehled monitorování stavu technologie ASP.NET](https://msdn.microsoft.com/library/bb398933.aspx)
 - [Konfigurace a přizpůsobení stav monitorování systému technologie ASP.NET](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
 - [Časté otázky – stavu monitorování v technologii ASP.NET 2.0](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [Postupy: Odeslání e-mailové oznámení o sledování stavu](https://msdn.microsoft.com/en-us/library/ms227553.aspx)
-- [Postupy: Použití sledování stavu technologie ASP.NET](https://msdn.microsoft.com/en-us/library/ms998306.aspx)
+- [Postupy: Odeslání e-mailové oznámení o sledování stavu](https://msdn.microsoft.com/library/ms227553.aspx)
+- [Postupy: Použití sledování stavu technologie ASP.NET](https://msdn.microsoft.com/library/ms998306.aspx)
 - [Stav monitorování technologie ASP.NET](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 >[!div class="step-by-step"]

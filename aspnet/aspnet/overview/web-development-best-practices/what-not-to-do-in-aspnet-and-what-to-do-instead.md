@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 6790cd0deb36c9fb297ccd4df371f763dba17844
-ms.sourcegitcommit: 17b025bd33f4474f0deaafc6d0447a4e72bcad87
+ms.openlocfilehash: 829f3a024bc15bec8b60b91193ba9bca37b78009
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/27/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>Postup není v technologii ASP.NET a co dělat, místo toho
 ====================
@@ -94,7 +94,7 @@ Další příklad ukazuje, jak dynamicky použít třídu CSS.
 
 Doporučení: Přestat používat stránky a ovládací prvek zpětná volání a místo toho použít některou z následujících: AJAX, UpdatePanel, metody akce MVC, webového rozhraní API nebo SignalR.
 
-V předchozích verzích technologie ASP.NET metody zpětného volání stránky a ovládací prvek umožňují část webové stránky aktualizovat bez obnovení celou stránku. Nyní můžete provést částečné aktualizace stránky prostřednictvím [AJAX](../../../ajax/index.md), [UpdatePanel](https://msdn.microsoft.com/en-US/library/bb386454.aspx), [MVC](../../../mvc/index.md), [webového rozhraní API](../../../web-api/index.md) nebo [SignalR](../../../signalr/index.md). Byste měli zastavit pomocí metody zpětného volání, protože se může způsobit problémy s přátelské adresy URL a směrování. Ve výchozím nastavení ovládací prvky nepovolujte metody zpětného volání, ale pokud jste povolili tato funkce v ovládacím prvku, měli byste zakázat ho.
+V předchozích verzích technologie ASP.NET metody zpětného volání stránky a ovládací prvek umožňují část webové stránky aktualizovat bez obnovení celou stránku. Nyní můžete provést částečné aktualizace stránky prostřednictvím [AJAX](../../../ajax/index.md), [UpdatePanel](https://msdn.microsoft.com/library/bb386454.aspx), [MVC](../../../mvc/index.md), [webového rozhraní API](../../../web-api/index.md) nebo [SignalR](../../../signalr/index.md). Byste měli zastavit pomocí metody zpětného volání, protože se může způsobit problémy s přátelské adresy URL a směrování. Ve výchozím nastavení ovládací prvky nepovolujte metody zpětného volání, ale pokud jste povolili tato funkce v ovládacím prvku, měli byste zakázat ho.
 
 <a id="browsercap"></a>
 
@@ -138,7 +138,7 @@ Další příklad ukazuje způsob do formátu HTML kódování hodnotu v kódu.
 
 [!code-csharp[Main](what-not-to-do-in-aspnet-and-what-to-do-instead/samples/sample7.cs)]
 
-Ke kódování bezpečně hodnotu pro příkazy SQL, použijte parametry příkazu, jako [SqlParameter](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlparameter.aspx). <a id="cookieless"></a>
+Ke kódování bezpečně hodnotu pro příkazy SQL, použijte parametry příkazu, jako [SqlParameter](https://msdn.microsoft.com/library/system.data.sqlclient.sqlparameter.aspx). <a id="cookieless"></a>
 
 ### <a name="cookieless-forms-authentication-and-session"></a>Ověřování pomocí formulářů bez souborů cookie a relace
 
@@ -180,15 +180,15 @@ Doporučení: Nezakazujte nastavení zabezpečení v &lt;appSettings&gt; element
 
 AppSettings element obsahuje hodně hodnot, které jsou požadovány pro aktualizace zabezpečení. Nesmí změnit nebo zakázat tyto hodnoty. Pokud při nasazení aktualizace, je nutné zakázat tyto hodnoty, okamžitě znovu povolte po dokončení nasazení.
 
-Podrobnosti najdete v tématu [ASP.NET appSettings Element](https://msdn.microsoft.com/en-us/library/hh975440.aspx).
+Podrobnosti najdete v tématu [ASP.NET appSettings Element](https://msdn.microsoft.com/library/hh975440.aspx).
 
 <a id="urlpathencode"></a>
 
 ### <a name="urlpathencode"></a>UrlPathEncode
 
-Doporučení: Použijte [UrlEncode](https://msdn.microsoft.com/en-us/library/zttxte6w.aspx) místo.
+Doporučení: Použijte [UrlEncode](https://msdn.microsoft.com/library/zttxte6w.aspx) místo.
 
-Metoda UrlPathEncode byla přidána do rozhraní .NET Framework, chcete-li vyřešit potíže s kompatibilitou velmi konkrétní prohlížeče. Neprovádí adekvátní kódování adresu URL a nechrání aplikace z skriptování mezi servery. Nikdy používejte ji v aplikaci. Místo toho použijte [UrlEncode](https://msdn.microsoft.com/en-us/library/zttxte6w.aspx).
+Metoda UrlPathEncode byla přidána do rozhraní .NET Framework, chcete-li vyřešit potíže s kompatibilitou velmi konkrétní prohlížeče. Neprovádí adekvátní kódování adresu URL a nechrání aplikace z skriptování mezi servery. Nikdy používejte ji v aplikaci. Místo toho použijte [UrlEncode](https://msdn.microsoft.com/library/zttxte6w.aspx).
 
 Následující příklad ukazuje, jak předat kódovaného adresu URL jako parametr řetězce dotazu pro ovládacího prvku hypertextový odkaz.
 
@@ -202,9 +202,9 @@ Následující příklad ukazuje, jak předat kódovaného adresu URL jako param
 
 ### <a name="presendrequestheaders-and-presendrequestcontent"></a>PreSendRequestHeaders a PreSendRequestContent
 
-Doporučení: Nepoužívejte tyto události s spravované moduly. Místo toho zápisu nativní modul služby IIS k provedení požadované úlohy. V tématu [vytváření modulů HTTP v nativním kódu](https://msdn.microsoft.com/en-us/library/ms693629.aspx).
+Doporučení: Nepoužívejte tyto události s spravované moduly. Místo toho zápisu nativní modul služby IIS k provedení požadované úlohy. V tématu [vytváření modulů HTTP v nativním kódu](https://msdn.microsoft.com/library/ms693629.aspx).
 
-Můžete použít [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestheaders.aspx) a [PreSendRequestContent](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestcontent.aspx) události s nativní moduly služby IIS.
+Můžete použít [PreSendRequestHeaders](https://msdn.microsoft.com/library/system.web.httpapplication.presendrequestheaders.aspx) a [PreSendRequestContent](https://msdn.microsoft.com/library/system.web.httpapplication.presendrequestcontent.aspx) události s nativní moduly služby IIS.
 > [!WARNING]
 > Nepoužívejte `PreSendRequestHeaders` a `PreSendRequestContent` s spravované moduly, které implementují `IHttpModule`. Nastavení těchto vlastností může způsobit problémy s asynchronní požadavky. Kombinace požadovaný směrování aplikace (ARR) a websockets může vést k výjimkám porušení přístupu, které můžou způsobit w3wp chyby. Například iiscore! W3_CONTEXT_BASE::GetIsLastNotification + 68 v iiscore.dll způsobila výjimku porušení přístupu (0xC0000005).
 
@@ -212,7 +212,7 @@ Můžete použít [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/libra
 
 ### <a name="asynchronous-page-events-with-web-forms"></a>Události asynchronní stránky s webovými formuláři
 
-Doporučení: V webových formulářů, vyhněte se asynchronní zápis void metod pro události životního cyklu stránky a použijte [Page.RegisterAsyncTask](https://msdn.microsoft.com/en-us/library/system.web.ui.page.registerasynctask.aspx) pro asynchronní kód.
+Doporučení: V webových formulářů, vyhněte se asynchronní zápis void metod pro události životního cyklu stránky a použijte [Page.RegisterAsyncTask](https://msdn.microsoft.com/library/system.web.ui.page.registerasynctask.aspx) pro asynchronní kód.
 
 Pokud označíte událostí stránky s **asynchronní** a **void**, nelze určit dokončení asynchronní kódu. Místo toho použijte Page.RegisterAsyncTask spustit kód asynchronní způsobem, který umožňuje sledovat její dokončení.
 
@@ -244,15 +244,15 @@ Doporučení: Vyhněte se čtení Request.Form nebo Request.InputStream před sp
 
 Nejdřívější, které byste si měli přečíst z Request.Form nebo Request.InputStream je během této obslužné rutiny spustit událostí. V MVC Kontroleru je obslužná rutina a spouštění událostí je při spuštění metody akce. V webových formulářů stránka je obslužná rutina a spouštění událostí je při aktivuje událost Page.Init. Pokud číst obsah entity žádosti starší než spouštění událostí, narušovat zpracování požadavku.
 
-Pokud je třeba číst obsah entity žádosti před událostí spouštění, použijte buď [Request.GetBufferlessInputStream](https://msdn.microsoft.com/en-us/library/ff406798.aspx) nebo [Request.GetBufferedInputStream](https://msdn.microsoft.com/en-us/library/system.web.httprequest.getbufferedinputstream.aspx). Při použití GetBufferlessInputStream získat nezpracovaná datový proud z požadavku a převzít odpovědnost za celý požadavek na zpracování. Po volání GetBufferlessInputStream, Request.Form a Request.InputStream nejsou k dispozici, protože nebyly vyplněna technologií ASP.NET. Při použití GetBufferedInputStream získat kopii datového proudu z požadavku. Request.Form a Request.InputStream jsou stále k dispozici novější v žádosti, protože ASP.NET naplní jiné kopie.
+Pokud je třeba číst obsah entity žádosti před událostí spouštění, použijte buď [Request.GetBufferlessInputStream](https://msdn.microsoft.com/library/ff406798.aspx) nebo [Request.GetBufferedInputStream](https://msdn.microsoft.com/library/system.web.httprequest.getbufferedinputstream.aspx). Při použití GetBufferlessInputStream získat nezpracovaná datový proud z požadavku a převzít odpovědnost za celý požadavek na zpracování. Po volání GetBufferlessInputStream, Request.Form a Request.InputStream nejsou k dispozici, protože nebyly vyplněna technologií ASP.NET. Při použití GetBufferedInputStream získat kopii datového proudu z požadavku. Request.Form a Request.InputStream jsou stále k dispozici novější v žádosti, protože ASP.NET naplní jiné kopie.
 
 <a id="redirect"></a>
 
 ### <a name="responseredirect-and-responseend"></a>Metoda Response.Redirect a metody Response.End
 
-Doporučení: Znát rozdíly ve zpracování vláken po volání [Response.Redirect(String)](https://msdn.microsoft.com/en-us/library/t9dwyts4.aspx).
+Doporučení: Znát rozdíly ve zpracování vláken po volání [Response.Redirect(String)](https://msdn.microsoft.com/library/t9dwyts4.aspx).
 
-[Response.Redirect(String)](https://msdn.microsoft.com/en-us/library/t9dwyts4.aspx) metoda volá metodu metody Response.End. Probíhající synchronní volání Request.Redirect způsobí, že aktuální vlákno k okamžitě přerušení. Ale v asynchronního procesu, volání Response.Redirect není přerušit aktuální vlákno, pokračuje v provádění kódu pro daný požadavek. V asynchronní proces musí vrátit úlohu z metody zastavit provádění kódu.
+[Response.Redirect(String)](https://msdn.microsoft.com/library/t9dwyts4.aspx) metoda volá metodu metody Response.End. Probíhající synchronní volání Request.Redirect způsobí, že aktuální vlákno k okamžitě přerušení. Ale v asynchronního procesu, volání Response.Redirect není přerušit aktuální vlákno, pokračuje v provádění kódu pro daný požadavek. V asynchronní proces musí vrátit úlohu z metody zastavit provádění kódu.
 
 V projektu MVC nesmí volání Response.Redirect. Místo toho vrátí RedirectResult.
 
@@ -286,7 +286,7 @@ Další informace najdete v tématu [představení balíčku ASP.NET Universal P
 
 ### <a name="long-running-requests-110-seconds"></a>Dlouhodobé požadavky (> 110 sekund)
 
-Doporučení: Použijte [Websocket](https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket.aspx) nebo [SignalR](../../../signalr/index.md) pro připojené klienty a použití asynchronní vstupně-výstupních operací.
+Doporučení: Použijte [Websocket](https://msdn.microsoft.com/library/system.net.websockets.websocket.aspx) nebo [SignalR](../../../signalr/index.md) pro připojené klienty a použití asynchronní vstupně-výstupních operací.
 
 Dlouhodobé požadavky může způsobit nepředvídatelné výsledky a nízký výkon ve webové aplikaci. Výchozí nastavení časového limitu pro žádost je 110 sekund. Pokud používáte stav relace se dlouho běžící žádostí, ASP.NET se uvolní zámek na objektu Session po 110 sekund. Aplikace však může být uprostřed operace na objektu relace, pokud se uvolní zámek, operace se nemusí dokončit úspěšně. Pokud druhý žádost od uživatele je blokovaný, při prvním požadavku, může druhá žádost o přístup k objektu Session v nekonzistentním stavu.
 

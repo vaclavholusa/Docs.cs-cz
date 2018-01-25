@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: 8842f57df84d841df77b34e9645dbf4909f82d85
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5968f8d19191c3f44e9bd58f8e22a39d8d8faff
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-oauth-20-authorization-server"></a>Server ověřování OWIN OAuth 2.0
 ====================
@@ -57,12 +57,12 @@ V tomto kurzu bude zahrnovat:
 ## <a name="prerequisites"></a>Požadavky
 
 - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-editions) nebo bezplatnou [Visual Studio Express 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-express), jak je uvedeno v **verze softwaru** v horní části stránky.
-- Znalost OWIN. V tématu [Začínáme s projektem Katana](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx) a [co je nového v OWIN a Katana](index.md).
+- Znalost OWIN. V tématu [Začínáme s projektem Katana](https://msdn.microsoft.com/magazine/dn451439.aspx) a [co je nového v OWIN a Katana](index.md).
 - Znalost [OAuth](http://tools.ietf.org/html/rfc6749) terminologie, včetně [role](http://tools.ietf.org/html/rfc6749#section-1.1), [toku protokol](http://tools.ietf.org/html/rfc6749#section-1.2), a [Authorization Grant](http://tools.ietf.org/html/rfc6749#section-1.3). [Úvod OAuth 2.0](http://tools.ietf.org/html/rfc6749#section-1) úvodem funkční.
 
 ## <a name="create-an-authorization-server"></a>Vytvoření serveru autorizace
 
-V tomto kurzu jsme se zhruba načrtnout použití [OWIN](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx) a architektura ASP.NET MVC k vytvoření serveru autorizace. Věříme, že brzy zajistit stahování pro je hotová ukázka jako tento kurz neobsahuje každý krok. Nejprve vytvořte prázdnou webovou aplikaci s názvem *AuthorizationServer* a nainstalujte následující balíčky:
+V tomto kurzu jsme se zhruba načrtnout použití [OWIN](https://msdn.microsoft.com/magazine/dn451439.aspx) a architektura ASP.NET MVC k vytvoření serveru autorizace. Věříme, že brzy zajistit stahování pro je hotová ukázka jako tento kurz neobsahuje každý krok. Nejprve vytvořte prázdnou webovou aplikaci s názvem *AuthorizationServer* a nainstalujte následující balíčky:
 
 - Microsoft.AspNet.Mvc
 - Microsoft.Owin.Host.SystemWeb
@@ -112,7 +112,7 @@ Přihlašovací stránky je zobrazena níže:
 
 Zkontrolujte IETF OAuth 2 [udělení autorizačního kódu](http://tools.ietf.org/html/rfc6749#section-4.1) části nyní. 
 
-**Zprostředkovatel** (v následující tabulce) je [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx). Zprostředkovatel, který je typu `OAuthAuthorizationServerProvider`, která obsahuje všechny události serveru OAuth. 
+**Zprostředkovatel** (v následující tabulce) je [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx). Zprostředkovatel, který je typu `OAuthAuthorizationServerProvider`, která obsahuje všechny události serveru OAuth. 
 
 | Tok postup z části udělení autorizačního kódu | Stažení ukázkové provádí tyto kroky: |
 | --- | --- |

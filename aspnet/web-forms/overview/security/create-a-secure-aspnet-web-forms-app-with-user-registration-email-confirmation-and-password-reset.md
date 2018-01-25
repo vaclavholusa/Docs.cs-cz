@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: b6f3821a8022daa26f5efcc009ab3e6283a76a19
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed39295ed1bcaa924336a1faf52049e291abeadb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>Vytvoření zabezpečeného aplikace webových formulářů ASP.NET s registrací uživatele, e-mailem potvrzení a heslo resetovat (C#)
 ====================
@@ -53,7 +53,7 @@ Začněte tím, že instalace a spuštění [Visual Studio Express 2013 pro Web]
  Potom klikněte na **OK** k vytvoření nového projektu.  
     ![Dialogové okno Nový projekt ASP.NET](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/_static/image1.png)
 3. Povolte Secure Sockets Layer (SSL) pro projekt. Postupujte podle kroků v k dispozici **povolit šifrování SSL pro projekt** části [Začínáme s webovými formuláři kurz řadou](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#SSLWebForms).
-4. Spuštění aplikace, klikněte na tlačítko **zaregistrovat** propojit a registraci nového uživatele. V tomto okamžiku je pouze ověření na e-mailu na základě [[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) atribut pro zajištění ve správném formátu e-mailovou adresu. Slouží k úpravě kódu k přidání potvrzení e-mailu. Zavřete okno prohlížeče.
+4. Spuštění aplikace, klikněte na tlačítko **zaregistrovat** propojit a registraci nového uživatele. V tomto okamžiku je pouze ověření na e-mailu na základě [[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) atribut pro zajištění ve správném formátu e-mailovou adresu. Slouží k úpravě kódu k přidání potvrzení e-mailu. Zavřete okno prohlížeče.
 5. V **Průzkumníka serveru** sady Visual Studio (**zobrazení**  - &gt; **Průzkumníka serveru**), přejděte na **Connections\ dat DefaultConnection\Tables\AspNetUsers**, klikněte pravým tlačítkem a vyberte **otevřete definici tabulky**. 
 
     Na následujícím obrázku `AspNetUsers` schématu tabulky:
@@ -78,7 +78,7 @@ I když tento kurz ukazuje jenom postup přidání e-mailové oznámení prostř
 
 1. V sadě Visual Studio, otevřete **Konzola správce balíčků** (**nástroje**  - &gt; **Manager balíček NuGet**  - &gt; **Konzola správce balíčků**) a zadejte následující příkaz:  
     `Install-Package SendGrid`
-2. Přejděte na [stránku pro přihlášení sendgrid vám umožňuje Azure](https://azure.microsoft.com/en-us/gallery/store/sendgrid/sendgrid-azure/) a ZDARMA zaregistrovat účet sendgrid vám umožňuje. Můžete také zaregistrovat bezplatný účet sendgrid vám umožňuje přímo na [sendgrid vám umožňuje na webu](http://www.sendgrid.com).
+2. Přejděte na [stránku pro přihlášení sendgrid vám umožňuje Azure](https://azure.microsoft.com/gallery/store/sendgrid/sendgrid-azure/) a ZDARMA zaregistrovat účet sendgrid vám umožňuje. Můžete také zaregistrovat bezplatný účet sendgrid vám umožňuje přímo na [sendgrid vám umožňuje na webu](http://www.sendgrid.com).
 3. Z **Průzkumníku řešení** otevřete *IdentityConfig.cs* v soubor *aplikace\_spustit* složky a přidejte následující kód zvýrazněných v žlutý k `EmailService` třída ke konfiguraci **sendgrid vám umožňuje**:
 
     [!code-csharp[Main](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/samples/sample1.cs?highlight=3,5,8-37)]
@@ -186,5 +186,5 @@ Pokud jste neobdrželi e-mail, který obsahuje odkaz na ověřit vaše přihlaš
 - [Odkazy na identitě ASP.NET Identity doporučené prostředky](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)
 - [Potvrzení účtu a heslo pro obnovení s ASP.NET Identity](../../../identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
 - [Kurz řady webových formulářů ASP.NET – přidání poskytovatele OAuth 2.0](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#OAuthWebForms)
-- [Nasazení aplikace zabezpečení rozhraní ASP.NET Web Forms členství, OAuth a databáze SQL Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
+- [Nasazení aplikace zabezpečení rozhraní ASP.NET Web Forms členství, OAuth a databáze SQL Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
 - [ASP.NET řady kurz webové formuláře – povolit šifrování SSL pro projekt](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#SSLWebForms)

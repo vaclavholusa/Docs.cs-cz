@@ -10,17 +10,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/app-state
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 13b4d759ae574cdf9899ca148f0ffd3d9df6f9ae
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: e00960370fbe87ac0f81f8455526221fa992decd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Úvod do stavu relace a aplikace v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), a [Diana LaRose](https://github.com/DianaLaRose)
 
-HTTP je bezstavový. Webový server zpracovává každý požadavek HTTP jako požadavek nezávislé a hodnoty uživatele z předchozích žádostech není zachována. Tento článek popisuje různé způsoby, jak zachovat aplikace a stav relace mezi požadavky. 
+HTTP je bezstavový. Webový server zpracovává každý požadavek HTTP jako požadavek nezávislé a nezachová hodnoty uživatele z předchozích žádostech. Tento článek popisuje různé způsoby, jak zachovat aplikace a stav relace mezi požadavky. 
 
 ## <a name="session-state"></a>Stav relace
 
@@ -28,10 +28,10 @@ Stav relace je funkce v ASP.NET Core, který můžete použít k ukládání a u
 
 ASP.NET Core Udržovat stav relace tím, že klient soubor cookie, který obsahuje Identifikátor relace, která je odeslána na server s každou žádostí. Tento server využívá ID relace k načtení dat relace. Soubor cookie relace je prohlížeč, a proto nelze sdílet relací mezi prohlížeče. Soubory cookie relace se odstraní pouze při ukončení relace prohlížeče. Pokud není soubor cookie pro relaci s ukončenou platností, je vytvořit novou relaci, který používá stejný soubor cookie relace. 
 
-Server uchovává relace po omezenou dobu od poslední žádosti. Můžete nastavit časový limit relace nebo použijte výchozí hodnotu 20 minut. Je ideální pro ukládání uživatelských dat, která je specifická pro konkrétní relace, ale nemusí být trvale jako trvalý stav relace. Data odstranit z úložiště zálohování buď při volání `Session.Clear` nebo vypršení platnosti relace v úložišti. Server nebude vědět při zavření prohlížeče nebo když se odstraní soubor cookie relace.
+Server uchovává relace po omezenou dobu od poslední žádosti. Můžete nastavit časový limit relace nebo použijte výchozí hodnotu 20 minut. Je ideální pro ukládání uživatelských dat, která je specifická pro konkrétní relace, ale nemusí být trvale jako trvalý stav relace. Data odstranit z úložiště zálohování buď při volání `Session.Clear` nebo vypršení platnosti relace v úložišti. Server není známo, při zavření prohlížeče nebo když se odstraní soubor cookie relace.
 
 > [!WARNING]
-> Neukládejte citlivá data v relaci. Klient nemusí zavřete prohlížeč a vymazat souboru cookie relace (a některé prohlížeče zachování souborů cookie relací připojení mezi windows). Navíc nemusí být relaci omezen na jednoho uživatele; Další uživatel může pokračovat ve stejné relaci.
+> Citlivá data neukládejte v relaci. Klient nemusí zavřete prohlížeč a vymazat souboru cookie relace (a některé prohlížeče zachování souborů cookie relací připojení mezi windows). Navíc nemusí být relaci omezen na jednoho uživatele; Další uživatel může pokračovat ve stejné relaci.
 
 Zprostředkovatel relací v paměti ukládá data relace na místním serveru. Pokud máte v plánu ke spouštění vaší webové aplikace na serverové farmě, musíte použít trvalé relace ke svázání každou relaci k určitému serveru. Platforma Windows Azure webů výchozí trvalé relace (směrování žádostí na aplikace nebo směrování žádostí na aplikace). Trvalé relace však může mít vliv na škálovatelnost a zkomplikovat aktualizace webové aplikace. Lepší možností je používat Redis nebo SQL Server distribuované ukládá do mezipaměti, které nevyžadují trvalé relace. Další informace najdete v tématu [práce s distribuované mezipaměti](xref:performance/caching/distributed). Podrobnosti o nastavení poskytovatelé služeb najdete v tématu [konfigurace relace](#configuring-session) dále v tomto článku.
 
@@ -47,7 +47,7 @@ ASP.NET MVC základní zpřístupní [TempData](https://docs.microsoft.com/dotne
 
 V technologii ASP.NET Core 2.0 nebo novější TempData zprostředkovatele na základě souborů cookie se používá ve výchozím nastavení pro ukládání TempData v souborech cookie.
 
-Cookie data je zakódovaných pomocí [Base64UrlTextEncoder](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0). Vzhledem k tomu, že soubor cookie je šifrovaný a blokové, velikost jednoho souboru cookie limit v ASP.NET Core 1.x doporučení se netýká nalezen. Není komprimována cookie data, protože kompresi šifrovaná data může způsobit problémy se zabezpečením, jako [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) a [porušení](https://wikipedia.org/wiki/BREACH_(security_exploit)) útoky. Další informace o poskytovateli TempData na základě souborů cookie najdete v tématu [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
+Cookie data je zakódovaných pomocí [Base64UrlTextEncoder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0). Vzhledem k tomu, že soubor cookie je šifrovaný a blokové, velikost jednoho souboru cookie limit v ASP.NET Core 1.x doporučení se netýká nalezen. Není komprimována cookie data, protože kompresi šifrovaná data může způsobit problémy se zabezpečením, jako [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) a [porušení](https://wikipedia.org/wiki/BREACH_(security_exploit)) útoky. Další informace o poskytovateli TempData na základě souborů cookie najdete v tématu [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
@@ -107,7 +107,7 @@ Soubory cookie se často používají pro přizpůsobení, kde je obsah přizpů
 
 ## <a name="httpcontextitems"></a>HttpContext.Items
 
-`Items` Kolekce je dobré umístění pro uložení dat, která je potřeba při jenom jednoho konkrétního požadavku na zpracování. Obsah kolekce jsou zahozeny po každé žádosti. `Items` Kolekce je nejvhodnější jako způsob, jak součásti nebo middleware pro komunikaci, když budou fungovat v různých okamžicích v době žádost a mají přímý způsob, jak předat parametry. Další informace najdete v tématu [práce s HttpContext.Items](#working-with-httpcontextitems)dál v tomto článku.
+`Items` Kolekce je dobré umístění pro uložení dat, která je potřeba pouze při zpracování jednoho konkrétního požadavku. Obsah kolekce jsou zahozeny po každé žádosti. `Items` Kolekce je nejvhodnější jako způsob, jak součásti nebo middleware pro komunikaci, když budou fungovat v různých okamžicích v době žádost a mají přímý způsob, jak předat parametry. Další informace najdete v tématu [práce s HttpContext.Items](#working-with-httpcontextitems)dál v tomto článku.
 
 ## <a name="cache"></a>Mezipaměti
 
@@ -136,7 +136,7 @@ Následující kód ukazuje, jak nastavit Zprostředkovatel relací v paměti.
 
 ---
 
-Relace, můžete odkazovat `HttpContext` po je nainstalovaný a nakonfigurovaný.
+Relace, můžete odkazovat `HttpContext` po je nainstalovaná a nakonfigurovaná.
 
 Pokud se pokusíte přístup `Session` před `UseSession` byla volána, výjimka `InvalidOperationException: Session has not been configured for this application or request` je vyvolána výjimka.
 
@@ -146,11 +146,11 @@ Pokud se pokusíte vytvořit novou `Session` (tedy bez souboru cookie relace byl
 
 Výchozí zprostředkovatel relace v ASP.NET Core načte záznam relace ze základní [IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache) asynchronně jenom Pokud úložiště [ISession.LoadAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) metoda je explicitně volána před provedením  `TryGetValue`, `Set`, nebo `Remove` metody. Pokud `LoadAsync` není jako první, základní záznam relace je načtena synchronně, což může potenciálně ovlivnit aplikace škálování.
 
-Pokud chcete, aby aplikace vynutit tento vzor, zabalení [DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore) a [DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession) implementace s verzemi, které způsobí výjimku, pokud `LoadAsync` metoda není volá se před `TryGetValue`, `Set`, nebo `Remove`. Zaregistrujte zabalené verze v kontejneru služby.
+Pokud chcete, aby aplikace vynutit tento vzor, zabalení [DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore) a [DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession) implementace s verzemi, které způsobí výjimku, pokud `LoadAsync` není – metoda volá se před `TryGetValue`, `Set`, nebo `Remove`. Zaregistrujte zabalené verze v kontejneru služby.
 
 ### <a name="implementation-details"></a>Podrobnosti implementace
 
-Relace používá ke sledování a identifikaci požadavků z jednoho prohlížeče do souboru cookie. Ve výchozím nastavení, je tento soubor cookie s názvem ". AspNet.Session"a používá cestu"/". Protože výchozí soubor cookie neurčuje doménu, se nebude zpřístupněn pro skript na straně klienta na stránce (protože `CookieHttpOnly` výchozí `true`).
+Relace používá ke sledování a identifikaci požadavků z jednoho prohlížeče do souboru cookie. Ve výchozím nastavení, je tento soubor cookie s názvem ". AspNet.Session"a používá cestu"/". Protože výchozí soubor cookie není zadejte doménu, neprovede klientský skript k dispozici na stránce (protože `CookieHttpOnly` výchozí `true`).
 
 Chcete-li přepsat výchozí hodnoty relace, použijte `SessionOptions`:
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 1c007c4c327b7cde6ff52c6b0022acdff3c9b137
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f9b471fe2afdce278869a2e4d9b693a78030324b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-aspnet-web-api-2"></a>Konfigurace rozhraní ASP.NET Web API 2
 ====================
@@ -33,14 +33,14 @@ Toto téma popisuje postup konfigurace webového rozhraní API ASP.NET.
 <a id="settings"></a>
 ## <a name="configuration-settings"></a>Nastavení konfigurace
 
-Nastavení konfigurace webového rozhraní API jsou definovány v [HttpConfiguration](https://msdn.microsoft.com/en-us/library/system.web.http.httpconfiguration.aspx) třídy.
+Nastavení konfigurace webového rozhraní API jsou definovány v [HttpConfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx) třídy.
 
 | Člen | Popis |
 | --- | --- |
 | **Překladače závislostí** | Umožňuje vkládání závislostí pro řadiče. V tématu [pomocí překladače závislostí webového rozhraní API](dependency-injection.md). |
 | **Filtry** | Filtry akcí. |
 | **Formátovací moduly** | [Formátovací moduly typu média](../formats-and-model-binding/media-formatters.md). |
-| **IncludeErrorDetailPolicy** | Určuje, zda server by měla obsahovat podrobnosti o chybě, například zprávy o výjimkách nebo trasování zásobníku zpráv odpovědí HTTP. V tématu [IncludeErrorDetailPolicy](https://msdn.microsoft.com/en-us/library/system.web.http.includeerrordetailpolicy(v=vs.108)). |
+| **IncludeErrorDetailPolicy** | Určuje, zda server by měla obsahovat podrobnosti o chybě, například zprávy o výjimkách nebo trasování zásobníku zpráv odpovědí HTTP. V tématu [IncludeErrorDetailPolicy](https://msdn.microsoft.com/library/system.web.http.includeerrordetailpolicy(v=vs.108)). |
 | **Inicializátor** | Funkci, která provede konečnou inicializaci **HttpConfiguration**. |
 | **MessageHandlers** | [Obslužné rutiny zpráv HTTP](http-message-handlers.md). |
 | **ParameterBindingRules** | Kolekce pravidel pro vazby parametrů na akce kontroleru. |
@@ -56,7 +56,7 @@ Nastavení konfigurace webového rozhraní API jsou definovány v [HttpConfigura
 <a id="webhost"></a>
 ## <a name="configuring-web-api-with-aspnet-hosting"></a>Konfigurace webového rozhraní API s hostování prostředí ASP.NET
 
-V aplikaci ASP.NET, nakonfigurujte rozhraní Web API voláním [GlobalConfiguration.Configure](https://msdn.microsoft.com/en-us/library/system.web.http.globalconfiguration.configure.aspx) v **aplikace\_spustit** metoda. **Konfigurace** metoda přebírá delegáta pomocí jediného parametru typu **HttpConfiguration**. Všechny vaše konfiguračním uvnitř delegát proveďte.
+V aplikaci ASP.NET, nakonfigurujte rozhraní Web API voláním [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx) v **aplikace\_spustit** metoda. **Konfigurace** metoda přebírá delegáta pomocí jediného parametru typu **HttpConfiguration**. Všechny vaše konfiguračním uvnitř delegát proveďte.
 
 Tady je příklad použití delegáta anonymní:
 

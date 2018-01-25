@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 48e0f2bad8c048e943ec2a3ce72cc0f7ca4d34d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 460fc36062f3338ffd178aceda2b3b224752a089
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a>Formátování DataList a opakovače na základě údajů o (VB)
 ====================
@@ -40,25 +40,25 @@ Obě tyto formátování techniky jsou k dispozici s ovládacími prvky DataList
 
 ## <a name="using-theitemdataboundevent-handler"></a>Pomocí`ItemDataBound`obslužné rutiny události
 
-Data je vázána k DataList, buď z prvku zdroje dat, nebo prostřednictvím prostřednictvím kódu programu přiřazování dat k ovládacímu prvku s `DataSource` vlastnost a volání jeho `DataBind()` metoda DataList s `DataBinding` aktivuje událost, výčet, zdroj dat a každý záznam dat je vázána DataList. Pro každý záznam ve zdroji dat prvku DataList vytvoří [ `DataListItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistitem.aspx) objektu, který je pak vázána na aktuální záznam. Během tohoto procesu DataList vyvolává dvě události:
+Data je vázána k DataList, buď z prvku zdroje dat, nebo prostřednictvím prostřednictvím kódu programu přiřazování dat k ovládacímu prvku s `DataSource` vlastnost a volání jeho `DataBind()` metoda DataList s `DataBinding` aktivuje událost, výčet, zdroj dat a každý záznam dat je vázána DataList. Pro každý záznam ve zdroji dat prvku DataList vytvoří [ `DataListItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.aspx) objektu, který je pak vázána na aktuální záznam. Během tohoto procesu DataList vyvolává dvě události:
 
 - **`ItemCreated`**Aktivuje se po `DataListItem` byla vytvořena
 - **`ItemDataBound`**Aktivuje se po záznam na aktuální záznam byla svázána se`DataListItem`
 
 Následující kroky popisují proces vytváření vazby dat pro ovládací prvek DataList.
 
-1. DataList s [ `DataBinding` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.control.databinding.aspx) aktivuje
+1. DataList s [ `DataBinding` událostí](https://msdn.microsoft.com/library/system.web.ui.control.databinding.aspx) aktivuje
 2. Data je vázána DataList  
   
  Pro každý záznam ve zdroji dat. 
 
     1. Vytvoření `DataListItem` objektu
-    2. Ještě efektivněji [ `ItemCreated` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
+    2. Ještě efektivněji [ `ItemCreated` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
     3. Záznam, který chcete vytvořit vazbu`DataListItem`
-    4. Ještě efektivněji [ `ItemDataBound` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
+    4. Ještě efektivněji [ `ItemDataBound` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
     5. Přidat `DataListItem` k `Items` kolekce
 
-Při vytváření vazby dat k ovládacím prvku Repeater, prochází přesné stejné pořadí kroků. Jediným rozdílem je, že místo `DataListItem` vytváří instance, používá opakovače [ `RepeaterItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeateritem(VS.80).aspx)s.
+Při vytváření vazby dat k ovládacím prvku Repeater, prochází přesné stejné pořadí kroků. Jediným rozdílem je, že místo `DataListItem` vytváří instance, používá opakovače [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem(VS.80).aspx)s.
 
 > [!NOTE]
 > Astute čtečky jste si nejspíše všimli mírné anomálií mezi pořadí kroků, které transpire při DataList a opakovače je vázána na data a když GridView vázané na data. Na konci procesu vázání dat tail GridView vyvolá `DataBound` událostí; ale ovládací prvek DataList ani opakovače mít takové události. Je to proto, že ovládací prvky DataList a opakovače byly vytvořeny zpět v určeném časovém rozmezí ASP.NET 1.x před vzoru obslužná rutina události před a po úrovně stalo běžné.
@@ -93,7 +93,7 @@ Vytvoření `ItemDataBound` událost pro prvku DataList a přidejte následujíc
 
 [!code-vb[Main](formatting-the-datalist-and-repeater-based-upon-data-vb/samples/sample1.vb)]
 
-Při koncept a sémantiku za DataList s `ItemDataBound` obslužné rutiny události jsou stejné jako v případě rutina GridView s `RowDataBound` obslužné rutiny událostí v *vlastní formátování dat na základě při* se liší syntaxe kurzu mírně. Při `ItemDataBound` aktivuje událost `DataListItem` jenom vazby na data je předána do odpovídající obslužné rutiny události prostřednictvím `e.Item` (místo `e.Row`, stejně jako u GridView s `RowDataBound` obslužné rutiny události). DataList s `ItemDataBound` aktivuje obslužné rutiny události pro *každý* řádek přidán do DataList, včetně řádky záhlaví, zápatí řádků a Oddělovač řádků. Informace o produktu je však vázaný jenom na řádky data. Proto při použití `ItemDataBound` událost a kontrolovat data vázaná na prvku DataList, je potřeba nejdřív zkontrolujte, zda jsme re práce s datovou položku. To lze provést pomocí kontroly `DataListItem` s [ `ItemType` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistitem.itemtype.aspx), která může mít jednu z [následující hodnoty osm](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.listitemtype.aspx):
+Při koncept a sémantiku za DataList s `ItemDataBound` obslužné rutiny události jsou stejné jako v případě rutina GridView s `RowDataBound` obslužné rutiny událostí v *vlastní formátování dat na základě při* se liší syntaxe kurzu mírně. Při `ItemDataBound` aktivuje událost `DataListItem` jenom vazby na data je předána do odpovídající obslužné rutiny události prostřednictvím `e.Item` (místo `e.Row`, stejně jako u GridView s `RowDataBound` obslužné rutiny události). DataList s `ItemDataBound` aktivuje obslužné rutiny události pro *každý* řádek přidán do DataList, včetně řádky záhlaví, zápatí řádků a Oddělovač řádků. Informace o produktu je však vázaný jenom na řádky data. Proto při použití `ItemDataBound` událost a kontrolovat data vázaná na prvku DataList, je potřeba nejdřív zkontrolujte, zda jsme re práce s datovou položku. To lze provést pomocí kontroly `DataListItem` s [ `ItemType` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.itemtype.aspx), která může mít jednu z [následující hodnoty osm](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listitemtype.aspx):
 
 - `AlternatingItem`
 - `EditItem`
@@ -104,7 +104,7 @@ Při koncept a sémantiku za DataList s `ItemDataBound` obslužné rutiny událo
 - `SelectedItem`
 - `Separator`
 
-Obě `Item` a `AlternatingItem``DataListItem` s způsob vytvoření DataList s datových položek. Za předpokladu, že jsme re práce `Item` nebo `AlternatingItem`, jsme získat přístup skutečnou `ProductsRow` instance, která byla vázána na aktuální `DataListItem`. `DataListItem` s [ `DataItem` vlastnost](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalistitem.dataitem.aspx) obsahuje odkaz na `DataRowView` objekt, jehož `Row` vlastnost poskytuje odkaz na skutečnou `ProductsRow` objektu.
+Obě `Item` a `AlternatingItem``DataListItem` s způsob vytvoření DataList s datových položek. Za předpokladu, že jsme re práce `Item` nebo `AlternatingItem`, jsme získat přístup skutečnou `ProductsRow` instance, která byla vázána na aktuální `DataListItem`. `DataListItem` s [ `DataItem` vlastnost](https://msdn.microsoft.com/system.web.ui.webcontrols.datalistitem.dataitem.aspx) obsahuje odkaz na `DataRowView` objekt, jehož `Row` vlastnost poskytuje odkaz na skutečnou `ProductsRow` objektu.
 
 Dále zkontrolujte jsme `ProductsRow` instance s `UnitPrice` vlastnost. Od tabulky produktů s `UnitPrice` pole umožňuje `NULL` hodnoty, před pokusem o přístup `UnitPrice` vlastnost jsme měli nejdřív zkontrolovat, zjistěte, zda má `NULL` hodnotu pomocí `IsUnitPriceNull()` metoda. Pokud `UnitPrice` hodnota není `NULL`, jsme potom zkontrolujte, zda ji s menší než 20,00. Pokud je skutečně v části 20,00, potřebujeme poté použijte vlastní formátování.
 

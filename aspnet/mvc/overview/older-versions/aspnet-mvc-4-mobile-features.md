@@ -12,28 +12,28 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: e660595d66d81069fa47b77387509e73b1ec834e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d47d8f61dc7af6e1dc5887338be862ea81d7bb17
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>Funkce mobilní architektury ASP.NET MVC 4
 ====================
 Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Je nyní verze MVC 5 s ukázky kódu v tomto kurzu [nasazení ASP.NET MVC 5 mobilní webové aplikace na weby Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/).
+> Je nyní verze MVC 5 s ukázky kódu v tomto kurzu [nasazení ASP.NET MVC 5 mobilní webové aplikace na weby Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/).
 
 
-V tomto kurzu naučit základní informace o tom, jak pracovat s mobilní funkce v aplikaci ASP.NET MVC 4 Web. V tomto kurzu můžete použít [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express) nebo Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer nebo VWD&quot;). Pokud již máte, můžete professional verze sady Visual Studio.
+V tomto kurzu naučit základní informace o tom, jak pracovat s mobilní funkce v aplikaci ASP.NET MVC 4 Web. V tomto kurzu můžete použít [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) nebo Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer nebo VWD&quot;). Pokud již máte, můžete professional verze sady Visual Studio.
 
 Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže.
 
-- [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express) (doporučeno) nebo Visual Studio Web Developer Express SP1. Visual Studio 2012 obsahuje ASP.NET MVC 4. Pokud používáte Visual Web Developer 2010, je nutné nainstalovat [ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392).
+- [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) (doporučeno) nebo Visual Studio Web Developer Express SP1. Visual Studio 2012 obsahuje ASP.NET MVC 4. Pokud používáte Visual Web Developer 2010, je nutné nainstalovat [ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392).
 
 Budete také potřebovat emulátoru prohlížeč pro mobilní zařízení. Bude fungovat některé z následujících:
 
-- [Emulátor Windows 7 Phone](https://msdn.microsoft.com/en-us/library/ff402563(VS.92).aspx). (Toto je emulátor, který se používá ve většině snímky obrazovky v tomto kurzu).
+- [Emulátor Windows 7 Phone](https://msdn.microsoft.com/library/ff402563(VS.92).aspx). (Toto je emulátor, který se používá ve většině snímky obrazovky v tomto kurzu).
 - Změňte řetězec uživatelského agenta emulovat zařízení typu iPhone. V tématu [to](http://www.howtogeek.com/113439/how-to-change-your-browsers-user-agent-without-installing-any-extensions/) položku blogu.
 - [Emulátoru mobilního Opera](http://www.opera.com/developer/tools/mobile/)
 - [Apple Safari](http://www.apple.com/safari/download/) s uživatelský agent nastavena na zařízení iPhone. Pokyny, jak nastavit uživatelský agent v prohlížeči Safari na "iPhone", najdete v části [jak umožníte Safari předstírají, že je aplikace Internet Explorer](http://www.davidalison.com/2008/05/how-to-let-safari-pretend-its-ie.html) na blogu David Alison.
@@ -45,7 +45,7 @@ Projekty Visual Studio se zdrojovým kódem C# jsou k dispozici v tomto tématu:
 
 ### <a name="what-youll-build"></a>Co budete sestavení
 
-V tomto kurzu přidáte mobilní funkce pro jednoduchou aplikaci seznamu konference, která je součástí [starter projektu](https://go.microsoft.com/fwlink/?LinkId=228307). Následující snímek obrazovky ukazuje na stránku značky hotová aplikace, jak je vidět [emulátor Windows Phone 7](https://msdn.microsoft.com/en-us/library/ff402563(VS.92).aspx). V tématu [klávesnice mapování pro Windows Phone emulátoru](https://msdn.microsoft.com/en-us/library/ff754352(v=vs.92).aspx) zjednodušit vstup z klávesnice.
+V tomto kurzu přidáte mobilní funkce pro jednoduchou aplikaci seznamu konference, která je součástí [starter projektu](https://go.microsoft.com/fwlink/?LinkId=228307). Následující snímek obrazovky ukazuje na stránku značky hotová aplikace, jak je vidět [emulátor Windows Phone 7](https://msdn.microsoft.com/library/ff402563(VS.92).aspx). V tématu [klávesnice mapování pro Windows Phone emulátoru](https://msdn.microsoft.com/library/ff754352(v=vs.92).aspx) zjednodušit vstup z klávesnice.
 
 [![p1_Tags_CompletedProj](aspnet-mvc-4-mobile-features/_static/image2.png)](aspnet-mvc-4-mobile-features/_static/image1.png)
 
@@ -137,7 +137,7 @@ Kopírování *Views\Home\AllTags.cshtml* do souboru *Views\Home\AllTags.Mobile.
 
 Přejděte na stránku značky pomocí prohlížeč pro stolní počítač a pomocí emulátoru prohlížeč pro mobilní zařízení. Emulátor mobilní prohlížeče ukazuje dva provedené změny.
 
-[![p2m_layoutTags.Mobile](aspnet-mvc-4-mobile-features/_static/image12.png)](aspnet-mvc-4-mobile-features/_static/image11.png)
+[![p2m_layoutTags.mobile](aspnet-mvc-4-mobile-features/_static/image12.png)](aspnet-mvc-4-mobile-features/_static/image11.png)
 
 Naproti tomu nebylo změněno zobrazení plochy.
 
@@ -215,7 +215,7 @@ Následující kód ukazuje kompletní *Global.asax* souboru.
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample11.cs?highlight=26)]
 
 > [!NOTE]
-> Pokud používáte Internet Explorer 9 a nevidíte `BundleMobileConfig` řádek výše v žlutý zvýraznění, klikněte na tlačítko [kompatibilního zobrazení tlačítka](https://windows.microsoft.com/en-US/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![obrázek kompatibilního zobrazení tlačítka (vypnuto)] (http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " Obrázek tlačítka kompatibilního zobrazení (vypnuto)") v aplikaci Internet Explorer, chcete-li změnit z přehledu ikonu ![obrázek kompatibilního zobrazení tlačítka (vypnuto)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "obrázek kompatibilního zobrazení tlačítka (vypnuto) ") na plnou barvou ![obrázek kompatibilního zobrazení tlačítka (na)](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "obrázek kompatibilního zobrazení tlačítka (na)"). Případně můžete zobrazit v tomto kurzu v FireFox nebo Chrome.
+> Pokud používáte Internet Explorer 9 a nevidíte `BundleMobileConfig` řádek výše v žlutý zvýraznění, klikněte na tlačítko [kompatibilního zobrazení tlačítka](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![obrázek kompatibilního zobrazení tlačítka (vypnuto)] (http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " Obrázek tlačítka kompatibilního zobrazení (vypnuto)") v aplikaci Internet Explorer, chcete-li změnit z přehledu ikonu ![obrázek kompatibilního zobrazení tlačítka (vypnuto)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "obrázek kompatibilního zobrazení tlačítka (vypnuto) ") na plnou barvou ![obrázek kompatibilního zobrazení tlačítka (na)](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "obrázek kompatibilního zobrazení tlačítka (na)"). Případně můžete zobrazit v tomto kurzu v FireFox nebo Chrome.
 
 
 Otevřete *MvcMobile\Views\Shared\\_Layout.Mobile.cshtml* souboru a přidejte následující kód přímo po `Html.Partial` volání:
@@ -270,7 +270,7 @@ Výchozí zobrazení (jiných než mobilních) z vykreslování uvnitř mobilní
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample17.cshtml)]
 
-Když `RequireConsistentDisplayMode` je nastaven na `true`, mobilní rozložení (*\_Layout.Mobile.cshtml*) se používá pouze pro mobilní zobrazení. (To znamená, je soubor zobrazení formuláře  ***ViewName**. Mobile.cshtml*.) Můžete chtít nastavit `RequireConsistentDisplayMode` k `true` Pokud vaše mobilní rozložení nebude fungovat dobře u jiných než mobilních zobrazení. Na snímku obrazovky níže znázorňuje jak *Řečníci* stránka vykresluje při `RequireConsistentDisplayMode` je nastaven na `true`.
+Když `RequireConsistentDisplayMode` je nastaven na `true`, mobilní rozložení (*\_Layout.Mobile.cshtml*) se používá pouze pro mobilní zobrazení. (To znamená, je soubor zobrazení formuláře ***ViewName**. Mobile.cshtml*.) Můžete chtít nastavit `RequireConsistentDisplayMode` k `true` Pokud vaše mobilní rozložení nebude fungovat dobře u jiných než mobilních zobrazení. Na snímku obrazovky níže znázorňuje jak *Řečníci* stránka vykresluje při `RequireConsistentDisplayMode` je nastaven na `true`.
 
 [![p3_speakersConsistent](aspnet-mvc-4-mobile-features/_static/image33.png)](aspnet-mvc-4-mobile-features/_static/image32.png)
 

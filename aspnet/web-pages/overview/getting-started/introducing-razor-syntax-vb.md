@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 42beb4ffcff9974230ba0c4a2f243020bcd4f99d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f5d223a5944d8adb9fe65c89e87829d18d1c7ee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor (Visual Basic)
 ====================
@@ -58,11 +58,11 @@ Tato část obsahuje několik tipy, které je nezbytně nutné znát jako počá
 
 Výsledek zobrazí v prohlížeči:
 
-![Razor Img1](introducing-razor-syntax-vb/_static/image1.jpg)
+![Razor-Img1](introducing-razor-syntax-vb/_static/image1.jpg)
 
 > [!TIP] 
 > 
-> **Kódování HTML**
+> **HTML Encoding**
 > 
 > Při zobrazení obsahu stránce pomocí `@` znak, jako v předchozích příkladech ASP.NET umístí kódování HTML výstup. Tím se nahradí vyhrazené znaky HTML (například `<` a `>` a `&`) s kódy, které umožňují znaků, který má být zobrazen jako znaků na webové stránce nebude interpretován jako značky HTML nebo entity. Bez kódování HTML výstup z vašeho kódu serveru se nemusí zobrazit správně a mohla vystavit stránky na bezpečnostní rizika.
 > 
@@ -79,7 +79,7 @@ Blok kódu obsahuje jeden nebo více příkazů kódu a je spolu s klíčovými 
 
 Výsledek zobrazí v prohlížeči:
 
-![Razor Img2](introducing-razor-syntax-vb/_static/image2.jpg)
+![Razor-Img2](introducing-razor-syntax-vb/_static/image2.jpg)
 
 ### <a name="3-inside-a-block-you-end-each-code-statement-with-a-line-break"></a>3. Uvnitř bloku vám stát, že každý příkaz kódu s konec řádku
 
@@ -95,7 +95,7 @@ Hodnoty v lze ukládat *proměnná*, včetně řetězce, čísla a kalendářní
 
 Výsledek zobrazí v prohlížeči:
 
-![Razor Img3](introducing-razor-syntax-vb/_static/image3.jpg)
+![Razor-Img3](introducing-razor-syntax-vb/_static/image3.jpg)
 
 ### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5. Uzavřete řetězcového literálu hodnoty v uvozovkách
 
@@ -121,7 +121,7 @@ Následující řádky kódu přiřadit hodnotu proměnné `lastname` pomocí je
 
 Výsledek zobrazí v prohlížeči:
 
-![VB – syntaxe-5](introducing-razor-syntax-vb/_static/image5.jpg)
+![vb-syntax-5](introducing-razor-syntax-vb/_static/image5.jpg)
 
 ### <a name="7-much-of-your-coding-involves-working-with-objects"></a>7. Velká část kódování zahrnuje pracovat s objekty
 
@@ -133,7 +133,7 @@ Představuje objekt věcí, kterou můžete programu s &#8212; na stránce texto
 
 Výsledek zobrazí v prohlížeči:
 
-![Razor Img5](introducing-razor-syntax-vb/_static/image6.jpg)
+![Razor-Img5](introducing-razor-syntax-vb/_static/image6.jpg)
 
 ### <a name="8-you-can-write-code-that-makes-decisions"></a>8. Můžete napsat kód, který uskutečňuje rozhodnutí
 
@@ -176,7 +176,7 @@ Tento postup ukazuje, jak vytvořit stránku, která ukazuje základní programo
     - `<form>` Zahrnuje značky `method="post"` atribut. To určuje, že když uživatel klikne **přidat**, stránky odešle na server pomocí metody POST protokolu HTTP. Při odeslání stránky, kód `If IsPost` vyhodnocena jako true a podmínku kód běží, zobrazení výsledkem přidání čísla.
 3. Uložit stránky a spusťte ji v prohlížeči. (Ujistěte se, že je vybraný stránky v **soubory** pracovního prostoru, než ji spustit.) Zadejte dvě celá čísla a poté klikněte **přidat** tlačítko.
 
-    ![Razor Img7](introducing-razor-syntax-vb/_static/image8.jpg)
+    ![Razor-Img7](introducing-razor-syntax-vb/_static/image8.jpg)
 
 ## <a name="visual-basic-language-and-syntax"></a>Jazyk Visual Basic a syntaxe
 
@@ -209,7 +209,7 @@ V blocích kód serveru budete často chtít výstup text a značku na stránku.
     > [!NOTE]
     > Pokud výstupní text jak je znázorněno v této části &#8212; pomocí prvku HTML `@:` operátor, nebo `<text>` element &#8212; Technologie ASP.NET není kódování HTML výstup. (Jak je uvedeno výše, ASP.NET kódování výstup výrazy kódu serveru a bloky kódu serveru, které jsou označeny `@`, s výjimkou ve zvláštních případech uvedených v této části.)
 
-### <a name="whitespace"></a>Prázdné znaky
+### <a name="whitespace"></a>Whitespace
 
 Mezery v příkazu (a mimo řetězcový literál) není ovlivňují příkaz:
 
@@ -257,7 +257,7 @@ Následující příklad ukazuje některé vložené výrazy, které používaj�
 
 Výsledek zobrazí v prohlížeči:
 
-![Razor Img9](introducing-razor-syntax-vb/_static/image9.jpg)
+![Razor-Img9](introducing-razor-syntax-vb/_static/image9.jpg)
 
 ### <a name="converting-and-testing-data-types"></a>Převod a testování datové typy
 
@@ -384,7 +384,7 @@ Hodnota k testování je v závorkách (v příkladu proměnnou den v týdnu). P
 
 Výsledek posledních dvou podmíněné bloky zobrazený v prohlížeči:
 
-![Razor Img10](introducing-razor-syntax-vb/_static/image10.jpg)
+![Razor-Img10](introducing-razor-syntax-vb/_static/image10.jpg)
 
 ### <a name="looping-code"></a>Ve smyčce kódu
 
@@ -400,7 +400,7 @@ Smyčky začíná `For` – klíčové slovo, za nímž následuje tři prvky:
 
 Řádek kódu mezi `For` a `Next` řádky obsahuje kód, který spouští pro každou iteraci smyčky. Kód vytvoří nový odstavec (`<p>` element) každou čas a přidá řádek do výstupu zobrazení hodnotu i (Čítač). Při spuštění této stránce v příkladu se vytváří 11 řádky zobrazení výstupu s textem do každého řádku, která určuje počet položek.
 
-![Razor Img11](introducing-razor-syntax-vb/_static/image11.jpg)
+![Razor-Img11](introducing-razor-syntax-vb/_static/image11.jpg)
 
 Pokud pracujete s kolekce nebo pole, často používají `For Each` smyčky. Kolekce je skupina podobné objekty a `For Each` cykly umožňuje provádět úlohy na každou položku v kolekci. Tento typ smyčky je vhodné pro kolekce, protože na rozdíl od `For` smyčky, nemusíte zvýší čítače nebo nastavit limit. Místo toho `For Each` smyčky kód jednoduše pokračuje prostřednictvím kolekce, dokud se nedokončí jeho.
 
@@ -410,7 +410,7 @@ Vrátí položky v tomto příkladu `Request.ServerVariables` kolekce (která ob
 
 `For Each` – Klíčové slovo následuje proměnné, která představuje jednu položku v kolekci (v příkladu `myItem`), za nímž následují `In` – klíčové slovo, za nímž následuje kolekce, kterou chcete projít. V textu `For Each` smyčky, dostanete s aktuální položkou použitím proměnné, kterou jste předtím deklarován.
 
-![Razor Img12](introducing-razor-syntax-vb/_static/image12.jpg)
+![Razor-Img12](introducing-razor-syntax-vb/_static/image12.jpg)
 
 Chcete-li vytvořit více pro obecné účely smyčku, použijte `Do While` příkaz:
 
@@ -451,7 +451,7 @@ Můžete určit počet položek v matici získáním jeho `Length` vlastnost. Z�
 
 Výstupní kód pole řetězec, který je zobrazený v prohlížeči:
 
-![Razor Img13](introducing-razor-syntax-vb/_static/image13.jpg)
+![Razor-Img13](introducing-razor-syntax-vb/_static/image13.jpg)
 
 Slovník je kolekce dvojic klíč/hodnota, kde zadáte klíč (nebo název) nastavit nebo načíst s odpovídající hodnotou:
 
@@ -500,7 +500,7 @@ Příkazy často budete mít ve svém kódu, který může selhat z důvodů mim
 
 Programovací podmínky, se nazývají těchto situacích *výjimky*. Pokud váš kód zjistí výjimku, generuje (vyvolává) chybové zprávy na nejvyšší, který je obtěžování uživatelům.
 
-![Razor Img14](introducing-razor-syntax-vb/_static/image14.jpg)
+![Razor-Img14](introducing-razor-syntax-vb/_static/image14.jpg)
 
 V situacích, kde kódu setkat výjimky a aby se zabránilo chybové zprávy tohoto typu, můžete použít `Try/Catch` příkazy. V `Try` prohlášení, můžete spustit kód, který při kontrole. V jedné nebo více `Catch` příkazy, můžete vyhledat konkrétní chyby (konkrétní typy výjimek), jež mohly nastat. Můžete zahrnout tolik `Catch` příkazy, jako je třeba vyhledejte chyby, které se očekává.
 
@@ -518,5 +518,5 @@ Pokud váš kód nebyl zpracovat výjimku, zobrazí se chybová stránka jako p�
 
 ### <a name="reference-documentation"></a>Referenční dokumentace
 
-- [TECHNOLOGIE ASP.NET](https://msdn.microsoft.com/en-us/library/ee532866.aspx)
-- [Jazyk Visual Basic](https://msdn.microsoft.com/en-us/library/2x7h1hfk.aspx)
+- [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
+- [Jazyk Visual Basic](https://msdn.microsoft.com/library/2x7h1hfk.aspx)

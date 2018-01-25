@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: b1e95c9d0aa8195aa73fddfb97a4079e67a351bf
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 181d2ae85f38051ea12c7b7ac79198ec05f36bec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="purpose-strings"></a>Účel řetězce
 
@@ -34,7 +34,7 @@ V diagramu výše `IDataProtector` instancí A a B **nelze** číst vzájemně d
 >
 >Komponenta vytvořené Contoso, která je zodpovědná za minting nosné tokeny může použít Contoso.Security.BearerToken jako řetězec jeho účel. Nebo – i lépe - může použít Contoso.Security.BearerToken.v1 jako řetězec jeho účel. Připojování číslo verze umožňuje budoucí verze se má použít Contoso.Security.BearerToken.v2 jako její účel a různé verze by naprosto izolované od sebe navzájem, pokud jde o datové části přejděte.
 
-Od parametru účely `CreateProtector` je pole řetězců, výše může místo toho zadáno jako `[ "Contoso.Security.BearerToken", "v1" ]`. To umožňuje vytvoření hierarchie pro účely a otevře možnost výskytu nekonzistentních víceklientský scénáře ochrany systémem data.
+Od parametru účely `CreateProtector` je pole řetězců, výše může místo toho určeny jako `[ "Contoso.Security.BearerToken", "v1" ]`. To umožňuje vytvoření hierarchie pro účely a otevře možnost výskytu nekonzistentních víceklientský scénáře ochrany systémem data.
 
 <a name="data-protection-contoso-purpose"></a>
 
@@ -53,7 +53,7 @@ Izolace poskytované a chování `IDataProtectionProvider`, `IDataProtector`, a 
 
 * Dva účely argumenty jsou ekvivalentní a pouze v případě obsahují stejné řetězce (s použitím pořadí porovnávače) ve stejném pořadí. Jednoúčelové argument je stejná jako odpovídající pole pro účely jeden element.
 
-* Dva `IDataProtector` jsou ekvivalentní objekty, pokud jsou vytvořené pomocí ekvivalentní `IDataProtectionProvider` objekty s parametry ekvivalentní účely.
+* Dva `IDataProtector` jsou ekvivalentní objekty, pokud jste vytvořili z ekvivalentní `IDataProtectionProvider` objekty s parametry ekvivalentní účely.
 
 * Pro danou `IDataProtector` objektu, volání `Unprotect(protectedData)` vrátí původní `unprotectedData` jenom v případě `protectedData := Protect(unprotectedData)` pro ekvivalentní `IDataProtector` objektu.
 

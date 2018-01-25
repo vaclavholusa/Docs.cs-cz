@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/preventing-open-redirects
-ms.openlocfilehash: e57ae429e9af54ade74485361ba591cb75c16752
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6ecf2440ac7073bdad098f6fe48f6c788ba7795a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>Prevence útoků přesměrování otevřít v aplikaci ASP.NET Core
 
@@ -23,7 +23,7 @@ Vždy, když vaše aplikace logiky přesměruje na zadané adrese URL, je nutné
 
 ## <a name="what-is-an-open-redirect-attack"></a>Co je útok otevřete přesměrování?
 
-Při přístupu k prostředkům, které vyžadují ověřování webových aplikací často přesměrovat uživatele na přihlašovací stránku. Zahrnuje typlically přesměrování `returnUrl` parametr řetězce dotazu tak, aby uživatel se může vracet na původně požadovanou URL adresu po jejich úspěšně přihlášeni. Jakmile se uživatel ověřuje, bude přesměrován na adresu URL, který měl původně požadovali.
+Při přístupu k prostředkům, které vyžadují ověřování webových aplikací často přesměrovat uživatele na přihlašovací stránku. Zahrnuje typlically přesměrování `returnUrl` parametr řetězce dotazu tak, aby uživatel se může vracet na původně požadovanou URL adresu po jejich úspěšně přihlášeni. Poté, co se uživatel ověřuje, že přesměrováni na měl původně požadovanou adresu URL.
 
 Vzhledem k tomu, že cílová adresa URL je zadána v řetězci dotazu požadavku, uživatel se zlými úmysly může manipulovat s řetězci dotazu. Zmanipulovanou řetězce dotazu by se mohl lokality tak, aby přesměruje uživatele na stránku externí, škodlivý. Tento postup se nazývá útok otevřete přesměrování (nebo přesměrování).
 
@@ -36,7 +36,7 @@ Uživatel se zlými úmysly může vyvíjet útok díky uživatel se zlými úmy
 3. Uživatel je přesměrován (lokalitou) na ``http://nerddiner.com/Account/LogOn`` (škodlivé weby, které vypadá skutečné lokality).
 4. Uživatel znovu přihlásí (poskytnutí škodlivý lokality své přihlašovací údaje) a je přesměrován zpět na web skutečné.
 
-Uživatel se pravděpodobně domníváte jejich první pokus o přihlášení se nezdařilo a jejich druhý byla úspěšná. Pravděpodobně budete zůstanou nebere v úvahu ohrožený přihlašovacích údajů.
+Uživatel se pravděpodobně domníváte jejich první pokus o přihlášení se nezdařilo a jejich druhý byla úspěšná. S největší pravděpodobností zůstanou nebere v úvahu ohrožený přihlašovacích údajů.
 
 ![Proces útoku otevřete přesměrování](preventing-open-redirects/_static/open-redirection-attack-process.png)
 

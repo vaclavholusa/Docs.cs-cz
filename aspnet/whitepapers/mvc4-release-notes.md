@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: fb9d2eaa83fe7486279815c21aec204bdfdf122d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 399fbe3fa1e71a9ffa7c5e6dfeca7ccab7294d1b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 - [Požadavky na software](#_Toc303253805)
 - [Nové funkce v architektuře ASP.NET MVC 4](#_Toc303253807)
 
-    - [Rozhraní ASP.NET Web API](#_Toc317096197)
+    - [Webové rozhraní API v ASP.NET](#_Toc317096197)
     - [Vylepšení výchozí šablony projektů](#_Toc303253808)
     - [Šablona projektu mobilní](#_Toc303253809)
     - [Režimy zobrazení](#_Toc303253810)
@@ -39,7 +39,7 @@ ms.lasthandoff: 11/10/2017
     - [Migrace databáze](#_Toc303253818)
     - [Prázdná šablona projektu](#_Toc303253819)
     - [Přidat řadič do libovolné složky projektu](#_Toc303253820)
-    - [Sdružování a minimalizace](#_Toc303253821)
+    - [Vytváření sady a minifikace](#_Toc303253821)
     - [Povolení přihlášení ze sítě Facebook a jiných lokalitách pomocí OAuth a OpenID](#_Toc303253822)
 - [Upgrade projektu aplikace ASP.NET MVC 3 na rozhraní ASP.NET MVC 4](#_Toc303253806)
 - [Změny z verze Release Candidate architektury ASP.NET MVC 4](#_Toc303253817)
@@ -61,7 +61,7 @@ ASP.NET MVC 4 může být nainstalovaná a spustit-souběžného v architektuře
 
 Dokumentace k rozhraní ASP.NET MVC je k dispozici na webu MSDN na následující adrese URL:
 
-[https://go.microsoft.com/fwlink/?LinkId=243043](https://go.microsoft.com/fwlink/?LinkID=243043)
+[https://go.microsoft.com/fwlink/?LinkID=243043](https://go.microsoft.com/fwlink/?LinkID=243043)
 
 Kurzy a další informace o architektuře ASP.NET MVC jsou dostupné na stránce webu ASP.NET MVC 4 ([https://www.asp.net/mvc/mvc4](../mvc/mvc4.md)).
 
@@ -271,7 +271,7 @@ Hlavní změny z Release Candidate. ASP.NET MVC 4 v této verzi jsou shrnuté n�
     [!code-xml[Main](mvc4-release-notes/samples/sample6.xml)]
 - **Správce balíčků NuGet se nepodaří nainstalovat při pokusu o instalaci ASP.NET MVC 4 pro souběžné instalace sady Visual Studio 2010 a program Visual Web Developer 2010.** Ke spuštění sady Visual Studio 2010 a program Visual Web Developer 2010 node souběžně s ASP.NET MVC 4 je nutné nainstalovat ASP.NET MVC 4 po obě verze sady Visual Studio již byl nainstalován.
 - **Odinstalace ASP.NET MVC 4 selže, pokud již byl odinstalován požadavky.** Chcete-li řádně odinstalovat ASP.NET MVC musí 4you odinstalovat ASP.NET MVC 4 před odinstalací nástroje Visual Studio.
-- **Instalace technologie ASP.NET MVC 4 dělí aplikace ASP.NET MVC 3 RTM.** Verze aplikací ASP.NET MVC 3, které se vytvořily s verzi RTM (s [ASP.NET MVC 3 nástroje aktualizace](https://www.microsoft.com/en-us/download/details.aspx?id=1491) vydání) vyžaduje následující změny fungování souběžného s ASP.NET MVC 4. Vytváření projektu bez provedení těchto výsledků aktualizací k chybám kompilace. 
+- **Instalace technologie ASP.NET MVC 4 dělí aplikace ASP.NET MVC 3 RTM.** Verze aplikací ASP.NET MVC 3, které se vytvořily s verzi RTM (s [ASP.NET MVC 3 nástroje aktualizace](https://www.microsoft.com/download/details.aspx?id=1491) vydání) vyžaduje následující změny fungování souběžného s ASP.NET MVC 4. Vytváření projektu bez provedení těchto výsledků aktualizací k chybám kompilace. 
 
     **Požadované aktualizace**
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
 msc.type: authoredcontent
-ms.openlocfilehash: 551e31a7a2d0a4e6259f74977c2f8e21cb694e42
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3efcefc40dc135ff42f55911036f8b38b5aa13b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-the-build-process"></a>Principy procesu sestavení
 ====================
@@ -77,7 +77,7 @@ K nasazení řešení. Obraťte se na správce v testovacím prostředí develop
 
 
 > [!NOTE]
-> **/Fl** přepínače (zkratka pro **/fileLogger**) protokoluje jeho výstup do souboru s názvem *msbuild.log* v aktuálním adresáři. Další informace najdete v tématu [příkazového řádku MSBuild – Reference](https://msdn.microsoft.com/en-us/library/ms164311.aspx).
+> **/Fl** přepínače (zkratka pro **/fileLogger**) protokoluje jeho výstup do souboru s názvem *msbuild.log* v aktuálním adresáři. Další informace najdete v tématu [příkazového řádku MSBuild – Reference](https://msdn.microsoft.com/library/ms164311.aspx).
 
 
 V tomto okamžiku MSBuild spuštění, načte *Publish.proj* soubor a spustí zpracování podle pokynů v něm. První pokyn informuje MSBuild Importovat projekt souboru, který **TargetEnvPropsFile** parametrem.
@@ -178,7 +178,7 @@ Nepoužívají se položky v rámci této cílové & #x 2014; tento cíl jednodu
 **DbPublishPackages** položka bude obsahovat jednu hodnotu, cesta k *ContactManager.Database.deploymanifest* souboru.
 
 > [!NOTE]
-> Soubor .deploymanifest se vygeneruje, když vytváříte projekt databáze a jako soubor projektu nástroje MSBuild používá stejné schéma. Obsahuje všechny informace potřebné k nasazení databáze, včetně umístění schéma databáze (.dbschema) a podrobnosti o všech skriptů, před nasazením a po nasazení. Další informace najdete v tématu [přehled z databáze sestavení a nasazení](https://msdn.microsoft.com/en-us/library/aa833165.aspx).
+> Soubor .deploymanifest se vygeneruje, když vytváříte projekt databáze a jako soubor projektu nástroje MSBuild používá stejné schéma. Obsahuje všechny informace potřebné k nasazení databáze, včetně umístění schéma databáze (.dbschema) a podrobnosti o všech skriptů, před nasazením a po nasazení. Další informace najdete v tématu [přehled z databáze sestavení a nasazení](https://msdn.microsoft.com/library/aa833165.aspx).
 
 
 Dozvíte informace o tom, jak balíčky pro nasazení a manifesty nasazení databáze vytvořit a použít v [budova a projekty webových aplikací balení](building-and-packaging-web-application-projects.md) a [nasazení databázové projekty](deploying-database-projects.md).
@@ -193,13 +193,13 @@ První, Všimněte si, že počáteční značka obsahuje **výstupy** atribut.
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
 
 
-Toto je příklad *dávkování cíle*. V souborech projektu nástroje MSBuild dávkování je technika pro iterování přes kolekce. Hodnota **výstupy** atribut, **"% (DbPublishPackages.Identity)"**, odkazuje **Identity** metadata vlastnosti **DbPublishPackages**  seznamu položek. Tento zápis **výstupy = %***(ItemList.ItemMetadataName)*, je přeložená jako:
+Toto je příklad *dávkování cíle*. V souborech projektu nástroje MSBuild dávkování je technika pro iterování přes kolekce. Hodnota **výstupy** atribut, **"% (DbPublishPackages.Identity)"**, odkazuje **Identity** metadata vlastnosti **DbPublishPackages**  seznamu položek. Tento zápis **Outputs=%***(ItemList.ItemMetadataName)*, je přeložená jako:
 
 - Rozdělit položky v **DbPublishPackages** do dávek položek, které obsahují stejné **Identity** hodnota metadat.
 - Spusťte cíl jednou na jednu dávku.
 
 > [!NOTE]
-> **Identity** je jedním z [hodnoty předdefinovaných metadat](https://msdn.microsoft.com/en-us/library/ms164313.aspx) přiřazené každá položka na vytvoření. Odkazuje na hodnotu **zahrnout** atribut **položky** element & #x 2014; jinými slovy, cestu a název položky.
+> **Identity** je jedním z [hodnoty předdefinovaných metadat](https://msdn.microsoft.com/library/ms164313.aspx) přiřazené každá položka na vytvoření. Odkazuje na hodnotu **zahrnout** atribut **položky** element & #x 2014; jinými slovy, cestu a název položky.
 
 
 V takovém případě nikdy by měl být více než jednu položku se stejným cesta a název souboru, v podstatě Pracujeme s velikostí batch jedné. Cíl se spustí jednou pro každý balíček databáze.
@@ -210,7 +210,7 @@ Zobrazí se podobné zápis ve  **\_Cmd** vlastnosti, která vytvoří příkaz 
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
 
-V takovém případě **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, a **%(DbPublishPackages.FullPath)** všechny odkazovat na metadata hodnoty **DbPublishPackages** kolekce položek.  **\_Cmd** vlastnost je používána **Exec** úkol, který volá příkaz.
+V takovém případě **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, a **%(DbPublishPackages.FullPath)** všechny odkazovat na metadata hodnoty **DbPublishPackages** kolekce položek. **\_Cmd** vlastnost je používána **Exec** úkol, který volá příkaz.
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]
@@ -219,7 +219,7 @@ V takovém případě **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbP
 V důsledku tohoto zápisu **Exec** úloh vytvoří dávek podle jedinečných kombinací **DatabaseConnectionString**, **TargetDatabase**a **FullPath** hodnoty metadat a tato úloha spustí jednou pro každou dávku. Toto je příklad *dávkování úloh*. Nicméně, protože cílové úrovni dávkování má již rozdělen naše kolekce položek do jedné položky dávek, **Exec** úloha spustí jednou a jen jednou u každé iteraci cíle. Jinými slovy tato úloha vyvolá nástroj VSDBCMD jednou pro každý balíček databáze v řešení.
 
 > [!NOTE]
-> Další informace o cíle a dávkování úloh najdete v tématu MSBuild [Batching](https://msdn.microsoft.com/en-us/library/ms171473.aspx), [Metadata položek v dávkování cíle](https://msdn.microsoft.com/en-US/library/ms228229.aspx), a [Metadata položek v dávkování úloh](https://msdn.microsoft.com/en-us/library/ms171474.aspx).
+> Další informace o cíle a dávkování úloh najdete v tématu MSBuild [Batching](https://msdn.microsoft.com/library/ms171473.aspx), [Metadata položek v dávkování cíle](https://msdn.microsoft.com/library/ms228229.aspx), a [Metadata položek v dávkování úloh](https://msdn.microsoft.com/library/ms171474.aspx).
 
 
 ### <a name="the-publishwebpackages-target"></a>Cíl PublishWebPackages

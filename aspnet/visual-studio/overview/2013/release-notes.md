@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 10835c39d3bca752ed3068a23fecaaab56449e41
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f38a0f2693aeb2a4884b9c03719b583423957a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>Technologie ASP.NET a webové nástroje pro poznámky k verzi 2013 Visual Studio
 ====================
@@ -33,7 +33,7 @@ podle [Microsoft](https://github.com/microsoft)
 
 ### <a name="new-features-in-aspnet-and-web-tools-for-visual-studio-2013"></a>Nové funkce v technologii ASP.NET a nástroje Web Tools pro sadu Visual Studio 2013
 
-- [Jeden ASP.NET](#TOC6)
+- [One ASP.NET](#TOC6)
 - [Nové prostředí webového projektu](#newproj)
 - [ASP.NET generování uživatelského rozhraní](#scaffold)
 - [Browser Link](#browser-link)
@@ -137,8 +137,8 @@ Ve Visual Studiu 2013 se sadou Azure SDK pro .NET 2.2, můžete použít **Průz
 
 Další informace naleznete v následujících materiálech:
 
-- [Vytvoření webové aplikace ASP.NET ve službě Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)
-- [Řešení potíží s webovou aplikaci v Azure App Service pomocí sady Visual Studio](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [Vytvoření webové aplikace ASP.NET ve službě Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
+- [Řešení potíží s webovou aplikaci v Azure App Service pomocí sady Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Vylepšení publikování webu
@@ -185,7 +185,7 @@ Informace týkající se upgradu projekty MVC 4 až MVC 5 najdete v tématu [pos
 
 ### <a name="aspnet-identity"></a>ASP.NET Identity
 
-Šablon projektu MVC byly aktualizovány na používání technologie ASP.NET Identity pro ověřování a správu identit. Kurz poskytuje funkci ověřování sítě Facebook a Google a členství v nové rozhraní API naleznete na adrese [vytvořit aplikaci ASP.NET MVC 5 s použitím Facebook a Google OAuth2 a přihlašování OpenID](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) a [vytvoření aplikace ASP.NET MVC pomocí ověřování a Databáze SQL a nasazení do Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
+Šablon projektu MVC byly aktualizovány na používání technologie ASP.NET Identity pro ověřování a správu identit. Kurz poskytuje funkci ověřování sítě Facebook a Google a členství v nové rozhraní API naleznete na adrese [vytvořit aplikaci ASP.NET MVC 5 s použitím Facebook a Google OAuth2 a přihlašování OpenID](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) a [vytvoření aplikace ASP.NET MVC pomocí ověřování a Databáze SQL a nasazení do Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
 
 ### <a name="bootstrap"></a>Bootstrap
 
@@ -309,7 +309,7 @@ Následující části popisují funkce SignalR 2.0.
 
 - [Založený na OWIN](#builtonowin)
 - [MapHubs a MapConnection jsou nyní MapSignalR](#MapSignalR)
-- [Podpora napříč doménami](#crossdomain)
+- [Cross-Domain Support](#crossdomain)
 - [iOS a Android, podporují prostřednictvím MonoTouch a MonoDroid](#mobile)
 - [Klient přenosné .NET](#portable)
 - [Nový balíček pro hostování na vlastním serveru](#selfhost)
@@ -358,7 +358,7 @@ V **samoobslužně hostované aplikace**, třída při spuštění se předá ja
 
 <a id="crossdomain"></a>
 
-### <a name="cross-domain-support"></a>Podpora napříč doménami
+### <a name="cross-domain-support"></a>Cross-Domain Support
 
 V systému SignalR 1.x napříč požadavky domény kontrolovala jeden příznak EnableCrossDomain. Tento příznak řídí požadavky JSONP a CORS. Pro větší flexibilitu, podpora všechny CORS byla odebrána z komponenty serveru SignalR (JavaScript lients i nadále používat CORS normálně když se zjistí, zda prohlížeč podporuje), a nové middlewaru OWIN, který má je k dispozici pro tyto scénáře podporovat.
 
@@ -396,7 +396,7 @@ Byla přidána podpora pro iOS a Android klienty, kteří používají MonoTouch
 
 Pro lepší usnadňují vývoj pro různé platformy, Silverlight, WinRT a klienti Windows Phone nahradil jeden přenosný klient .NET, který podporuje tyto platformy:
 
-- ASP.NET 4.5
+- NET 4.5
 - Silverlight 5
 - WinRT (.NET pro aplikace Windows Store)
 - Windows Phone 8
@@ -666,7 +666,7 @@ Tato část popisuje známé problémy a nejnovějších změn v ASP.NET a webov
     Do:
 
     `@Html.TextBoxFor(person => person.Age)`
-4. ASP.NET MVC 5 nepodporuje částečnou důvěryhodností. Odstraňte projekty propojení s MVC nebo WebAPI binární soubory [SecurityTransparent](https://msdn.microsoft.com/en-us/library/system.security.securitytransparentattribute.aspx) atribut a [AllowPartiallyTrustedCallers](https://msdn.microsoft.com/en-us/library/system.security.allowpartiallytrustedcallersattribute.aspx) atribut. Odebrat tyto atributy se eliminovat chyby kompilátoru podobně jako tento.
+4. ASP.NET MVC 5 nepodporuje částečnou důvěryhodností. Odstraňte projekty propojení s MVC nebo WebAPI binární soubory [SecurityTransparent](https://msdn.microsoft.com/library/system.security.securitytransparentattribute.aspx) atribut a [AllowPartiallyTrustedCallers](https://msdn.microsoft.com/library/system.security.allowpartiallytrustedcallersattribute.aspx) atribut. Odebrat tyto atributy se eliminovat chyby kompilátoru podobně jako tento.
 
     `Attempt by security transparent method ‘MyComponent' to access security critical type 'System.Web.Mvc.MvcHtmlString' failed. Assembly 'PagedList.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1' is marked with the AllowPartiallyTrustedCallersAttribute, and uses the level 2 security transparency model. Level 2 transparency causes all methods in AllowPartiallyTrustedCallers assemblies to become security transparent by default, which may be the cause of this exception.`
 

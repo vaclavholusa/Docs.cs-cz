@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: a03c8c42622a768d706acf5ac1f23b37a830d426
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c52a02291e18b1dd8a9d95b33fe466d17aae835f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---net-client-c"></a>Funkce SignalR technologie ASP.NET centra API Průvodce – klient .NET (C#)
 ====================
@@ -85,7 +85,7 @@ Pro dokumentaci o tom, jak program server nebo klientů JavaScript, najdete v n�
 - [Rozhraní API Průvodce pro rozbočovače SignalR – Server](hubs-api-guide-server.md)
 - [Rozhraní API Průvodce pro rozbočovače SignalR – JavaScript klienta](hubs-api-guide-javascript-client.md)
 
-Odkazy na témata referenční dokumentace rozhraní API jsou na rozhraní .NET 4.5 verzi rozhraní API. Pokud používáte rozhraní .NET 4, přečtěte si téma [verze .NET 4 témat rozhraní API](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx).
+Odkazy na témata referenční dokumentace rozhraní API jsou na rozhraní .NET 4.5 verzi rozhraní API. Pokud používáte rozhraní .NET 4, přečtěte si téma [verze .NET 4 témat rozhraní API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="clientsetup"></a>
 
@@ -119,7 +119,7 @@ Ukázkový kód používá výchozí "/ signalr" adresa URL k připojení k slu�
 
 ### <a name="cross-domain-connections-from-silverlight-clients"></a>Připojení mezi doménami z klienty prostředí Silverlight
 
-Informace o tom, jak povolit připojení mezi doménami z klienty prostředí Silverlight naleznete v tématu [provádění služby k dispozici za domény hranicemi](https://msdn.microsoft.com/en-us/library/cc197955(v=vs.95).aspx).
+Informace o tom, jak povolit připojení mezi doménami z klienty prostředí Silverlight naleznete v tématu [provádění služby k dispozici za domény hranicemi](https://msdn.microsoft.com/library/cc197955(v=vs.95).aspx).
 
 <a id="configureconnection"></a>
 
@@ -141,7 +141,7 @@ V klientech WPF možná muset zvýšit maximální počet souběžných připoje
 
 [!code-csharp[Main](hubs-api-guide-net-client/samples/sample4.cs?highlight=4)]
 
-Další informace najdete v tématu [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/en-us/library/system.net.servicepointmanager.defaultconnectionlimit.aspx).
+Další informace najdete v tématu [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit.aspx).
 
 <a id="querystring"></a>
 
@@ -163,12 +163,12 @@ Jako součást procesu připojení klienta SignalR normálně vyjedná se server
 
 [!code-csharp[Main](hubs-api-guide-net-client/samples/sample7.cs?highlight=4)]
 
-[Microsoft.AspNet.SignalR.Client.Transports](https://msdn.microsoft.com/en-us/library/jj918090(v=vs.111).aspx) obor názvů zahrnuje následující třídy, které můžete použít k určení přenosu.
+[Microsoft.AspNet.SignalR.Client.Transports](https://msdn.microsoft.com/library/jj918090(v=vs.111).aspx) obor názvů zahrnuje následující třídy, které můžete použít k určení přenosu.
 
-- [LongPollingTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.longpollingtransport(v=vs.111).aspx)
-- [ServerSentEventsTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.serversenteventstransport(v=vs.111).aspx)
-- [WebSocketTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.websockettransport(v=vs.111).aspx) (dostupné jenom v případě, že server i klienta pomocí rozhraní .NET 4.5.)
-- [AutoTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.autotransport(v=vs.111).aspx) (automaticky vybere nejlepší přenosu, který podporuje klient a server. Toto je výchozí přenos. To k předání `Start` metoda má stejný účinek jako není předávání v nic.)
+- [LongPollingTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.longpollingtransport(v=vs.111).aspx)
+- [ServerSentEventsTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.serversenteventstransport(v=vs.111).aspx)
+- [WebSocketTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.websockettransport(v=vs.111).aspx) (dostupné jenom v případě, že server i klienta pomocí rozhraní .NET 4.5.)
+- [AutoTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.autotransport(v=vs.111).aspx) (automaticky vybere nejlepší přenosu, který podporuje klient a server. Toto je výchozí přenos. To k předání `Start` metoda má stejný účinek jako není předávání v nic.)
 
 Přenos ForeverFrame není součástí tohoto seznamu, protože se používá pouze pomocí prohlížeče.
 
@@ -336,7 +336,7 @@ Funkce SignalR poskytuje následující připojení životnost události, které
 - `ConnectionSlow`: Vyvolá, když klient zjistí pomalé nebo často vyřazení připojení.
 - `Reconnecting`: Vyvolá, když základní přenos začne znovu obnovovat.
 - `Reconnected`: Vyvolá, když opětovně připojil základní přenos.
-- `StateChanged`: Vyvolána při změně stavu připojení. Poskytuje stav starý a nový stav. Informace o připojení najdete v části hodnot stavu [ConnectionState výčtu](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx).
+- `StateChanged`: Vyvolána při změně stavu připojení. Poskytuje stav starý a nový stav. Informace o připojení najdete v části hodnot stavu [ConnectionState výčtu](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx).
 - `Closed`: Vyvolá, když připojení byl odpojen.
 
 Například pokud chcete zobrazit zprávy upozornění pro chyby, které nejsou závažné, ale způsobit problémy s nepřerušované připojení, například jako pomalost nebo častému vyřazení připojení, zpracování `ConnectionSlow` událostí.

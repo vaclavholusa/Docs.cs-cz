@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 53adb067751917a9539a310bb7d91e599696f213
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9c4d293355e26d8bf5ba1360b070a7b9809bfe56
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-management"></a>Správa klíčů
 
@@ -48,9 +48,9 @@ Dojde k výjimce. Pokud má vývojář aplikace [zakázáno automatické generov
 
 ## <a name="key-expiration-and-rolling"></a>Vypršení platnosti klíče a vrácení
 
-Při vytváření klíče, jsou automaticky přiděleny datum aktivace {nyní + 2 dny} a datum vypršení platnosti {nyní + 90 dnů}. 2 dny zpoždění před aktivace poskytuje klíče čas potřebný k šíření prostřednictvím systému. To znamená umožňuje sledovat klíč v jejich další období automatického obnovení, proto maximalizace pravděpodobnost, že pokud klíč prstenec nemá stane aktivní, který má rozšířen na všechny aplikace, které mohou vyžadovat ho použít jiné aplikace jednotka ukazovat na úložiště zálohování.
+Když klíč je vytvořen, se automaticky přiděluje datum aktivace {nyní + 2 dny} a datum vypršení platnosti {nyní + 90 dnů}. 2 dny zpoždění před aktivace poskytuje klíče čas potřebný k šíření prostřednictvím systému. To znamená umožňuje sledovat klíč v jejich další období automatického obnovení, proto maximalizace pravděpodobnost, že pokud klíč prstenec nemá stane aktivní, který má rozšířen na všechny aplikace, které mohou vyžadovat ho použít jiné aplikace jednotka ukazovat na úložiště zálohování.
 
-Pokud výchozí klíč vyprší v rámci dvou dnů a prstenec klíč již nemá klíč, který bude aktivní po vypršení platnosti klíče výchozí, pak v systému ochrany dat automaticky zachovat nový klíč na klíč prstenec. Tento nový klíč má datum aktivace {datum vypršení platnosti výchozí klíč} a datum vypršení platnosti {nyní + 90 dnů}. To umožňuje systému automaticky vrátit klíče v pravidelných intervalech bez přerušení služby.
+Pokud výchozí klíč vyprší v rámci dvou dnů a prstenec klíč ještě nemá klíč, který bude aktivní po vypršení platnosti klíče výchozí, pak v systému ochrany dat automaticky zachovat nový klíč na klíč prstenec. Tento nový klíč má datum aktivace {datum vypršení platnosti výchozí klíč} a datum vypršení platnosti {nyní + 90 dnů}. To umožňuje systému automaticky vrátit klíče v pravidelných intervalech bez přerušení služby.
 
 Je možné okolností kde klíč bude vytvořen s okamžitou aktivaci. Příkladem může být, kdy aplikace nebyla spuštěna na dobu a všechny klíče v řetězci klíč platnosti. V takovém případě je klíč zadané datum aktivace z {nyní} bez prodlevy normální aktivace 2 dny.
 

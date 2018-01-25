@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 090d0777b9d541003c3115d0da7cd974820c2939
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 191de7546e2ba913fda0c8c8a8bfd3531b53336e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="specifying-the-master-page-programmatically-vb"></a>Určení stránky předlohy prostřednictvím kódu programu (VB)
 ====================
@@ -34,7 +34,7 @@ Od zahajovací příklad v [ *vytváření celém webu rozložení pomocí strá
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample1.aspx)]
 
-[ `Page` Třída](https://msdn.microsoft.com/en-us/library/system.web.ui.page.aspx) v `System.Web.UI` obor názvů zahrnuje [ `MasterPageFile` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.page.masterpagefile.aspx) , vrací cestu k obsahu stránce stránky předlohy, je tato vlastnost, kterou je nastavit `@Page` – direktiva. Tuto vlastnost lze použít také prostřednictvím kódu programu určit hlavní stránku obsahu stránce. Tento přístup je užitečné, pokud chcete dynamicky přiřadit na základě na externí faktorech, například uživatele, kteří navštěvují stránce stránky předlohy.
+[ `Page` Třída](https://msdn.microsoft.com/library/system.web.ui.page.aspx) v `System.Web.UI` obor názvů zahrnuje [ `MasterPageFile` vlastnost](https://msdn.microsoft.com/library/system.web.ui.page.masterpagefile.aspx) , vrací cestu k obsahu stránce stránky předlohy, je tato vlastnost, kterou je nastavit `@Page` – direktiva. Tuto vlastnost lze použít také prostřednictvím kódu programu určit hlavní stránku obsahu stránce. Tento přístup je užitečné, pokud chcete dynamicky přiřadit na základě na externí faktorech, například uživatele, kteří navštěvují stránce stránky předlohy.
 
 V tomto kurzu jsme přidejte druhou stránku předlohy pro náš web a dynamicky rozhodnout, které stránky předlohy pro použití v době běhu.
 
@@ -54,7 +54,7 @@ Obrázek 1 ukazuje tento fusion. Krok 1 na obrázku 1 obsahuje původní obsah a
 
 Jaké stránky předlohy partakes v této fusion závisí na hodnotu `Page` objektu `MasterPageFile` vlastnost. Nastavení `MasterPageFile` atribut `@Page` – direktiva má projeví přiřazování `Page`na `MasterPageFile` vlastnost během fáze inicializace, což je velmi první fáze životního cyklu stránky. Tuto vlastnost jsme případně lze nastavit prostřednictvím kódu programu. Je však nutné, aby tuto vlastnost nastavit před provedením fusion na obrázku 1.
 
-Na začátku fázi PreInit `Page` objektu vyvolá jeho [ `PreInit` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.page.preinit.aspx) a volá jeho [ `OnPreInit` metoda](https://msdn.microsoft.com/en-us/library/system.web.ui.page.onpreinit.aspx). Nastavení stránky předlohy prostřednictvím kódu programu, potom můžeme buď vytvořit obslužnou rutinu události pro `PreInit` události nebo přepsání `OnPreInit` metoda. Podívejme se na obou přístupů.
+Na začátku fázi PreInit `Page` objektu vyvolá jeho [ `PreInit` událostí](https://msdn.microsoft.com/library/system.web.ui.page.preinit.aspx) a volá jeho [ `OnPreInit` metoda](https://msdn.microsoft.com/library/system.web.ui.page.onpreinit.aspx). Nastavení stránky předlohy prostřednictvím kódu programu, potom můžeme buď vytvořit obslužnou rutinu události pro `PreInit` události nebo přepsání `OnPreInit` metoda. Podívejme se na obou přístupů.
 
 Začněte otevřením `Default.aspx.vb`, soubor třídy kódu pro náš web domovské stránky. Přidání obslužné rutiny pro stránky `PreInit` událostí zadáním následujícího kódu:
 
@@ -275,8 +275,8 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Diagram životního cyklu stránky ASP.NET](http://emanish.googlepages.com/Asp.Net2.0Lifecycle.PNG)
-- [Přehled životního cyklu stránky ASP.NET](https://msdn.microsoft.com/en-us/library/ms178472.aspx)
-- [Motivy ASP.NET a vzhledy – přehled](https://msdn.microsoft.com/en-us/library/ykzx33wh.aspx)
+- [Přehled životního cyklu stránky ASP.NET](https://msdn.microsoft.com/library/ms178472.aspx)
+- [Motivy ASP.NET a vzhledy – přehled](https://msdn.microsoft.com/library/ykzx33wh.aspx)
 - [Hlavní stránky: Tipy, triky a depeše](http://www.odetocode.com/articles/450.aspx)
 - [Motivy technologie ASP.NET](http://www.odetocode.com/articles/423.aspx)
 

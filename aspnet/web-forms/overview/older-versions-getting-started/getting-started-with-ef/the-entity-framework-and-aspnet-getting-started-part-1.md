@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 5a852ec2301e63bde9a5ce99db80224dad7fb258
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ae2fddc81f6f4da866ec0719a0e74516bdd2a4d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 – webové formuláře
 ====================
@@ -28,7 +28,7 @@ podle [tní Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="database-first"></a>První databáze
 > 
-> Existují tři způsoby, můžete pracovat s daty v Entity Framework: *Database First*, *Model First*, a *Code First*. Tento kurz je určen pro první databáze. Informace o rozdílech mezi tyto pracovní postupy a pokyny o tom, jak zvolit tu nejvhodnější pro váš scénář najdete v tématu [Entity Framework vývoj pracovních](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+> Existují tři způsoby, můžete pracovat s daty v Entity Framework: *Database First*, *Model First*, a *Code First*. Tento kurz je určen pro první databáze. Informace o rozdílech mezi tyto pracovní postupy a pokyny o tom, jak zvolit tu nejvhodnější pro váš scénář najdete v tématu [Entity Framework vývoj pracovních](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 > 
 > ## <a name="web-forms"></a>webové formuláře
 > 
@@ -40,12 +40,12 @@ podle [tní Dykstra](https://github.com/tdykstra)
 > | --- | --- |
 > | Windows 7 | Windows 8 |
 > | Visual Studio 2010 | Visual Studio 2010 Express pro Web. Tento kurz nebyl testován s novější verzí sady Visual Studio. Existuje mnoho rozdílů v nabídce Možnosti, dialogová okna a šablony. |
-> | ROZHRANÍ .NET 4 | Rozhraní .NET 4.5 je zpětně kompatibilní s .NET 4, ale tento kurz nebyl testován s .NET 4.5. |
+> | .NET 4 | Rozhraní .NET 4.5 je zpětně kompatibilní s .NET 4, ale tento kurz nebyl testován s .NET 4.5. |
 > | Rozhraní Entity Framework 4 | Tento kurz nebyl testován pomocí novější verze Entity Framework. Od verze Entity Framework 5, EF používá ve výchozím nastavení `DbContext API` která byla zavedená s EF 4.1. Ovládací prvek EntityDataSource byla navržená tak, aby použít `ObjectContext` rozhraní API. Informace o tom, jak používat EntityDataSource řízení s `DbContext` rozhraní API, najdete v části [tomto příspěvku na blogu](https://blogs.msdn.com/b/webdev/archive/2012/09/13/how-to-use-the-entitydatasource-control-with-entity-framework-code-first.aspx). |
 > 
 > ## <a name="questions"></a>Otázky
 > 
-> Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx), [Entity Framework a technologie LINQ to Entities fórum](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), nebo [ StackOverflow.com](http://stackoverflow.com/).
+> Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx), [Entity Framework a technologie LINQ to Entities fórum](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), nebo [ StackOverflow.com](http://stackoverflow.com/).
 
 
 ## <a name="overview"></a>Přehled
@@ -96,7 +96,7 @@ Tyto kurzy použijete návrháře model dat Entity Framework pro automatické vy
 
 Pro první databáze metodu použitou v tomto kurzu dalším krokem je přidání databáze do lokality. Nejjednodušším způsobem je nejdřív si stáhněte projekt, který přejde v tomto kurzu. Klikněte pravým tlačítkem *aplikace\_Data* složky, vyberte **přidat existující položku**a vyberte *School.mdf* soubor databáze ze staženého projektu.
 
-Alternativou je podle pokynů v [vytváření ukázkovou databázi školy](https://msdn.microsoft.com/en-us/library/bb399731.aspx). Ať už stáhnout databázi nebo ji vytvořit, zkopírujte *School.mdf* soubor ve složce následující do vaší aplikace *aplikace\_Data* složky:
+Alternativou je podle pokynů v [vytváření ukázkovou databázi školy](https://msdn.microsoft.com/library/bb399731.aspx). Ať už stáhnout databázi nebo ji vytvořit, zkopírujte *School.mdf* soubor ve složce následující do vaší aplikace *aplikace\_Data* složky:
 
 `%PROGRAMFILES%\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA`
 
@@ -215,4 +215,4 @@ Rozhraní Entity Framework se používá k ukládání informací o databázi, v
 Nyní jste vytvořili web, databázi a datový model. V další návodu budete začnete pracovat s daty pomocí v datovém modelu a ASP.NET `EntityDataSource` ovládacího prvku.
 
 >[!div class="step-by-step"]
-[Další](the-entity-framework-and-aspnet-getting-started-part-2.md)
+[Next](the-entity-framework-and-aspnet-getting-started-part-2.md)

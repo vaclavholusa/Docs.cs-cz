@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c610f84cfb82f38f9c67b757aa341c7a1497369c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>Vytváření Data Access Layer (C#)
 ====================
@@ -79,17 +79,17 @@ Všechny kódu, které jsou specifické pro daný zdroj dat. například vytvoř
 
 - **GetCategories(),** které vrátí informace o všech kategorií
 - **GetProducts()**, který vrátí informace o všech produktů
-- **GetProductsByCategoryID (*categoryID*) **, která vrátí všechny produkty, které patří do zadané kategorii
-- **GetProductByProductID (*productID*) **, který vrátí informace o konkrétním produktu
+- **GetProductsByCategoryID (*categoryID*)**, která vrátí všechny produkty, které patří do zadané kategorii
+- **GetProductByProductID (*productID*)**, který vrátí informace o konkrétním produktu
 
 Tyto metody, a to po vyvolání bude připojení k databázi, vydávání odpovídající dotaz a vrátí výsledky. Jak vrátíme těchto výsledků je důležité. Tyto metody může vrátit jednoduše datové sady nebo DataReader nenaplnil databázový dotaz, ale v ideálním případě tyto výsledky má být vrácen pomocí *objektů se silným typem*. Objekt silného typu je jejichž schématu je pevně definovaná při kompilaci, zatímco opak, objekt volného typu, je jedním jejichž schématu není znám, dokud modulu runtime.
 
-Například objektu DataReader a datové sady (ve výchozím nastavení) jsou objekty volného typu vzhledem k tomu, že je jejich schéma definované sloupců vrácených dotazem databáze používaných k naplnění je. Pro přístup k určité sloupce z DataTable volného typu musíme použijte syntaxi jako:   ***DataTable*. Řádky [*index*] ["*columnName*"]**. Přijít zadáním DataTable v tomto příkladu je vykazují skutečnost, že musíme přístup pomocí řetězec nebo index pořadových název sloupce. DataTable silného typu, na druhé straně, bude mít každý z jeho sloupců implementovaná jako vlastnosti, výsledkem je kód, který vypadá takto:   ***DataTable*. Řádky [*index*].* columnName***.
+Například objektu DataReader a datové sady (ve výchozím nastavení) jsou objekty volného typu vzhledem k tomu, že je jejich schéma definované sloupců vrácených dotazem databáze používaných k naplnění je. Pro přístup k určité sloupce z DataTable volného typu musíme použijte syntaxi jako: ***DataTable*. Řádky [*index*] ["*columnName *"]**. Přijít zadáním DataTable v tomto příkladu je vykazují skutečnost, že musíme přístup pomocí řetězec nebo index pořadových název sloupce. DataTable silného typu, na druhé straně, bude mít každý z jeho sloupců implementovaná jako vlastnosti, výsledkem je kód, který vypadá takto: ***DataTable*. Řádky [*index*].* columnName***.
 
 Pokud chcete vrátit objektů se silným typem, vývojáři můžete vytvořit své vlastní objekty vlastní obchodní nebo použít typové datové sady. Objekt obchodní je implementoval vývojář jako představuje třídu, jejíž vlastnosti obvykle podle sloupce základní tabulky databáze objekt firmy. Typové datové sady je třída vygenerovány pro vás Visual Studio na základě schématu databáze a jejíž členové jsou silného typu podle tohoto schématu. Datová sada zadali, samotné se skládá z třídy, které rozšiřují třídy sady dat ADO.NET, DataTable a DataRow. Kromě silného typu DataTables typové datové sady teď také zahrnovat TableAdapters, které jsou tříd pomocí metody pro naplnění DataTables datovou sadu a šíření úpravy v rámci DataTables zpět do databáze.
 
 > [!NOTE]
-> Další informace o výhody a nevýhody použití typové datové sady a vlastní obchodní objekty, najdete v části [navrhování komponenty datové vrstvy a předávání dat prostřednictvím vrstvy](https://msdn.microsoft.com/en-us/library/ms978496.aspx).
+> Další informace o výhody a nevýhody použití typové datové sady a vlastní obchodní objekty, najdete v části [navrhování komponenty datové vrstvy a předávání dat prostřednictvím vrstvy](https://msdn.microsoft.com/library/ms978496.aspx).
 
 
 Pro tyto kurzy architekturu použijeme silného typu datové sady. Obrázek 3 znázorňuje pracovní postup mezi různých úrovní aplikaci, která používá typové datové sady.
@@ -114,7 +114,7 @@ Po kliknutí na tlačítko Přidat, při zobrazení výzvy k přidání datovou 
 
 Typové datové sady slouží jako silného typu kolekce dat; skládá se instancí silného typu DataTable, z nichž každý se skládá zase instancí DataRow silného typu. Pro každou základní tabulky databáze, které potřebujeme pro práci s této série kurzů vytvoříme DataTable silného typu. Začneme vytvořením DataTable pro **produkty** tabulky.
 
-Uvědomte si, že silného typu DataTables neobsahují žádné informace o tom, jak přistupovat k datům z jejich základní tabulky databáze. Aby bylo možné získat data k naplnění DataTable, použijeme TableAdapter třídy, která funguje jako naše Data Access Layer. Pro naše **produkty** DataTable, TableAdapter bude obsahovat metody **GetProducts()**,  **GetProductByCategoryID (*categoryID*) ** a tak dále, který jsme vám vyvolat od prezentační vrstvy. Role DataTable je sloužit jako objekty silného typu sloužící k předávání dat mezi vrstvami.
+Uvědomte si, že silného typu DataTables neobsahují žádné informace o tom, jak přistupovat k datům z jejich základní tabulky databáze. Aby bylo možné získat data k naplnění DataTable, použijeme TableAdapter třídy, která funguje jako naše Data Access Layer. Pro naše **produkty** DataTable, TableAdapter bude obsahovat metody **GetProducts()**, **GetProductByCategoryID (*categoryID*)**a tak dále, který jsme vám vyvolat od prezentační vrstvy. Role DataTable je sloužit jako objekty silného typu sloužící k předávání dat mezi vrstvami.
 
 Průvodce nastavením TableAdapter začíná požadavkem, abyste vyberte databázi, ke které pracovat. V rozevíracím seznamu uvedena tyto databáze v Průzkumníku serveru. Pokud databázi Northwind nebyla přidána do Průzkumníka serveru, můžete kliknutím na tlačítko nové připojení v tuto chvíli to udělat.
 
@@ -217,7 +217,7 @@ Tento příklad vyžadují jsme zapisovat tři řádky kódu v našem stránku A
 
 V tomto okamžiku naše **ProductsTableAdapter** třída má ale jednu metodu **GetProducts()**, která vrací všechny produkty v databázi. Při výborný užitečné schopnost pracovat s všechny produkty, které jsou časy, kdy budete chceme načíst informace o konkrétní produkt nebo všechny produkty, které patří do určité kategorie. Přidat tyto další funkce naše Data Access Layer jsme můžete přidat do TableAdapter parametrizované metody.
 
-Umožňuje přidat  **GetProductsByCategoryID (*categoryID*) ** metoda. Pro přidání nové metody vrstvy Dal, vraťte se do návrháře DataSet, klikněte pravým tlačítkem **ProductsTableAdapter** části a vyberte Přidat dotazu.
+Umožňuje přidat **GetProductsByCategoryID (*categoryID*)** metoda. Pro přidání nové metody vrstvy Dal, vraťte se do návrháře DataSet, klikněte pravým tlačítkem **ProductsTableAdapter** části a vyberte Přidat dotazu.
 
 
 ![Klikněte pravým tlačítkem na TableAdapter a zvolte Přidat dotazu](creating-a-data-access-layer-cs/_static/image38.png)
@@ -233,7 +233,7 @@ Nejprve jsme výzva o tom, jestli chceme pro přístup k databázi pomocí pří
 **Obrázek 15**: rozhodnete vytvořit **vyberte** řádky vrátí v příkazu který ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image41.png))
 
 
-Dalším krokem je dotaz SQL, používaný pro přístup k datům. Vzhledem k tomu, že chceme vrátit pouze produkty, které patří do určité kategorie, použít stejné **vyberte** příkaz z **GetProducts()**, ale přidejte následující **kde** klauzule: **kde CategoryID = @CategoryID** .  **@CategoryID**  Parametr do Průvodce nastavením TableAdapter označuje, že metoda vytváříme se vyžadují vstupní parametr příslušného typu (integer konkrétně, s možnou hodnotou Null).
+Dalším krokem je dotaz SQL, používaný pro přístup k datům. Vzhledem k tomu, že chceme vrátit pouze produkty, které patří do určité kategorie, použít stejné **vyberte** příkaz z **GetProducts()**, ale přidejte následující **kde** klauzule: **kde CategoryID = @CategoryID** . **@CategoryID**  Parametr do Průvodce nastavením TableAdapter označuje, že metoda vytváříme se vyžadují vstupní parametr příslušného typu (integer konkrétně, s možnou hodnotou Null).
 
 
 [![Zadejte dotaz vrátit pouze produkty v zadané kategorii.](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
@@ -241,7 +241,7 @@ Dalším krokem je dotaz SQL, používaný pro přístup k datům. Vzhledem k to
 **Obrázek 16**: Zadejte dotaz na pouze vrátit produktů v kategorii zadaný ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image44.png))
 
 
-V posledním kroku, který jsme můžete zvolit který vzory použít, a také přizpůsobit názvy metod generované přístup k datům. Vzorek výplně, změňte název, který má **FillByCategoryID** a pro návratový DataTable vrátit vzoru (  **získat*X*** metody), použijeme  **GetProductsByCategoryID**.
+V posledním kroku, který jsme můžete zvolit který vzory použít, a také přizpůsobit názvy metod generované přístup k datům. Vzorek výplně, změňte název, který má **FillByCategoryID** a pro návratový DataTable vrátit vzoru ( **získat * X*** metody), použijeme **GetProductsByCategoryID**.
 
 
 [![Zvolte názvy metod TableAdapter](creating-a-data-access-layer-cs/_static/image46.png)](creating-a-data-access-layer-cs/_static/image45.png)
@@ -257,7 +257,7 @@ Po dokončení průvodce, zahrnuje návrháře DataSet nových metod TableAdapte
 **Obrázek 18**: produktů můžete nyní dotaz podle kategorie
 
 
-Za chvíli přidat  **GetProductByProductID (*productID*) ** metodu pomocí stejným způsobem.
+Za chvíli přidat **GetProductByProductID (*productID*)** metodu pomocí stejným způsobem.
 
 Tyto parametrizované dotazy můžete otestovat přímo z Návrháře datovou sadu. Klikněte pravým tlačítkem na metodu v TableAdapter a zvolte náhledu dat. Potom zadejte hodnoty, které mají použít pro parametry a klikněte na verzi Preview.
 
@@ -267,7 +267,7 @@ Tyto parametrizované dotazy můžete otestovat přímo z Návrháře datovou sa
 **Obrázek 19**: jsou uvedené ty produkty patřící do kategorie nápoje ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image51.png))
 
 
-Pomocí  **GetProductsByCategoryID (*categoryID*) ** metoda v našem DAL jsme teď vytvořit stránku ASP.NET, které se zobrazí jenom tyto produkty v zadané kategorii. Následující příklad ukazuje všechny produkty, které jsou v kategorii Nápoje, které mají **CategoryID** 1.
+Pomocí **GetProductsByCategoryID (*categoryID*)** metoda v našem DAL jsme teď vytvořit stránku ASP.NET, které se zobrazí jenom tyto produkty v zadané kategorii. Následující příklad ukazuje všechny produkty, které jsou v kategorii Nápoje, které mají **CategoryID** 1.
 
 Beverages.ASP
 
@@ -293,7 +293,7 @@ Existují dva vzory běžně používá pro vkládání, aktualizaci a odstraňo
 **Obrázek 21**: každý vložení, aktualizace a odstranění požadavku posílá databáze okamžitě ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image57.png))
 
 
-Další vzorek, který označovány jako dávky aktualizace vzor, je aktualizovat celou datovou sadu, DataTable nebo kolekce DataRows ve volání jednu metodu. Pomocí tohoto vzoru vývojář odstraní, vloží, upraví DataRows v DataTable a pak předá tyto DataRows nebo DataTable do metodu aktualizace. Tato metoda pak vytvoří výčet DataRows předaná, určuje, zda budou jste byl změněn, přidat nebo odstraněn (prostřednictvím DataRow [RowState vlastnost](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) hodnotu) a vydá požadavek příslušné databáze pro každý záznam.
+Další vzorek, který označovány jako dávky aktualizace vzor, je aktualizovat celou datovou sadu, DataTable nebo kolekce DataRows ve volání jednu metodu. Pomocí tohoto vzoru vývojář odstraní, vloží, upraví DataRows v DataTable a pak předá tyto DataRows nebo DataTable do metodu aktualizace. Tato metoda pak vytvoří výčet DataRows předaná, určuje, zda budou jste byl změněn, přidat nebo odstraněn (prostřednictvím DataRow [RowState vlastnost](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) hodnotu) a vydá požadavek příslušné databáze pro každý záznam.
 
 
 [![Všechny změny jsou synchronizovány s databází, když je volána metoda aktualizace](creating-a-data-access-layer-cs/_static/image59.png)](creating-a-data-access-layer-cs/_static/image58.png)
@@ -339,7 +339,7 @@ Pokud chcete vytvořit vlastní metodu, vrátíte do návrháře datovou sadu. K
 **Obrázek 25**: vytvoření metody, chcete-li přidat nový řádek, abyste **produkty** tabulky ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image69.png))
 
 
-Na další obrazovce **událost InsertCommand**na **CommandText** se zobrazí. Posílení tento dotaz přidáním **vyberte oboru\_IDENTITY()** na konci tohoto dotazu, který vrátí poslední hodnotu identity, které jsou vloženy do **IDENTITY** sloupec ve stejném oboru. (Najdete v článku [technické dokumentace](https://msdn.microsoft.com/en-us/library/ms190315.aspx) Další informace o **oboru\_IDENTITY()** a důvody, budete pravděpodobně chtít [použít OBOR\_IDENTITY() lieu z @ @IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Ujistěte se, že se vám stát **vložit** příkaz s středníkem před přidáním **vyberte** příkaz.
+Na další obrazovce **událost InsertCommand**na **CommandText** se zobrazí. Posílení tento dotaz přidáním **vyberte oboru\_IDENTITY()** na konci tohoto dotazu, který vrátí poslední hodnotu identity, které jsou vloženy do **IDENTITY** sloupec ve stejném oboru. (Najdete v článku [technické dokumentace](https://msdn.microsoft.com/library/ms190315.aspx) Další informace o **oboru\_IDENTITY()** a důvody, budete pravděpodobně chtít [použít OBOR\_IDENTITY() lieu z @ @IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Ujistěte se, že se vám stát **vložit** příkaz s středníkem před přidáním **vyberte** příkaz.
 
 
 [![Posílení dotaz vrátil hodnoty SCOPE_IDENTITY()](creating-a-data-access-layer-cs/_static/image71.png)](creating-a-data-access-layer-cs/_static/image70.png)
@@ -391,7 +391,7 @@ Po aktualizaci **GetProducts()** metoda používat tento nový dotaz DataTable b
 **Obrázek 30**: **produkty** DataTable obsahuje dva nové sloupce
 
 
-Za chvíli aktualizovat **vyberte** klauzuli v  **GetProductsByCategoryID (*categoryID*) ** metoda také.
+Za chvíli aktualizovat **vyberte** klauzuli v **GetProductsByCategoryID (*categoryID*)** metoda také.
 
 Při aktualizaci **GetProducts()** **vyberte** pomocí **připojení** syntaxe návrháře DataSet nebude možné automaticky generovat metody pro vložení, aktualizace a odstranění použití vzoru přímé DB data databáze. Místo toho budete muset ručně vytvořit je mnohem jako jsme to udělali s **InsertProduct** metoda dříve v tomto kurzu. Kromě toho ručně musíte poskytnout **událost InsertCommand**, **UpdateCommand**, a **DeleteCommand** hodnoty vlastnosti, pokud chcete použít aktualizace vzor dávky.
 
@@ -399,7 +399,7 @@ Při aktualizaci **GetProducts()** **vyberte** pomocí **připojení** syntaxe n
 
 Záloh jsme si prohlédli pouze práce jeden TableAdapter pro tabulku jedné databáze. Databáze Northwind však obsahuje několik související tabulky, které potřebujeme pro práci s naše webové aplikaci. Typové datové sady mohou obsahovat více souvisejících DataTables. Proto dokončení naše DAL je potřeba přidat DataTables pro jiné tabulky, které budeme používat v těchto kurzech. Pokud chcete přidat nový TableAdapter typové datové sady, otevřete návrháře DataSet, klikněte pravým tlačítkem myši v návrháři a zvolte možnost Přidat nebo TableAdapter. Tato akce vytvoří novou DataTable a TableAdapter a vás provede průvodce, které jsme se zaměřili na dříve v tomto kurzu.
 
-Trvat několik minut pro vytvoření následující TableAdapters a metod pomocí následující dotazy. Všimněte si, že dotazy v **ProductsTableAdapter** zahrnují poddotazy se získat názvy kategorií a dodavatele každý produkt. Kromě toho, pokud jste se podle, jste již přidali **ProductsTableAdapter** třídy **GetProducts()** a  **GetProductsByCategoryID (*categoryID*) ** metody.
+Trvat několik minut pro vytvoření následující TableAdapters a metod pomocí následující dotazy. Všimněte si, že dotazy v **ProductsTableAdapter** zahrnují poddotazy se získat názvy kategorií a dodavatele každý produkt. Kromě toho, pokud jste se podle, jste již přidali **ProductsTableAdapter** třídy **GetProducts()** a **GetProductsByCategoryID (*categoryID* )** metody.
 
 - **ProductsTableAdapter**
 
@@ -520,18 +520,18 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Vytváření DAL, použitím silného typu TableAdapters a DataTables v VS 2005 a technologii ASP.NET 2.0](https://weblogs.asp.net/scottgu/435498)
-- [Navrhování komponenty datové vrstvy a předávání dat prostřednictvím vrstev](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [Navrhování komponenty datové vrstvy a předávání dat prostřednictvím vrstev](https://msdn.microsoft.com/library/ms978496.aspx)
 - [Sestavení Data Access Layer pomocí návrháře DataSet Visual Studio 2005](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [Šifrování informací o konfiguraci technologie ASP.NET 2.0 aplikace](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [TableAdapter – přehled](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [Práce s typové datové sady](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [TableAdapter – přehled](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [Práce s typové datové sady](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [Pomocí přístup k datům silného typu v sadě Visual Studio 2005 a technologií ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [Postup rozšíření metod TableAdapter](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [Načítání skalární dat z uložené procedury](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Video školení na témata, které jsou obsažené v tomto kurzu
 
-- [Datové vrstvy přístupu v aplikacích ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
+- [Vrstvy přístupu k datům v aplikacích ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
 - [Jak ručně vytvořit vazbu datovou sadu Datagrid](../../../videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid.md)
 - [Jak pracovat s datových sad a filtry z aplikace ASP](../../../videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 
@@ -544,4 +544,4 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu bylo Ron zelený, Hilton Giesenow, společnosti Dennis Patterson, Liz Shulok, opisek Gomez a Carlos Santos. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 >[!div class="step-by-step"]
-[Další](creating-a-business-logic-layer-cs.md)
+[Next](creating-a-business-logic-layer-cs.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cc7b90c06b2d99b6c540e9650bb4d8515f5c3702
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df22a7c4aedb5e5fef183817e9d2b1e4c4a919ee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="performing-batch-updates-vb"></a>Provádění dávkové aktualizace (VB)
 ====================
@@ -116,7 +116,7 @@ Obrázek 6 zobrazuje stránku po přidání tlačítka Aktualizovat vše.
 
 S všechny položky s DataList zobrazení úpravy rozhraní a přidání tlačítka Aktualizovat všechny všechno, co zůstane zapisuje kód k provedení aktualizace dávky. Konkrétně budeme muset projít DataList s položky a volání `SuppliersBLL` třídu s `UpdateSupplierAddress` metoda pro každé z nich.
 
-Kolekce `DataListItem` instance tento způsob vytvoření prvku DataList je přístupná prostřednictvím DataList s [ `Items` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.items.aspx). S odkazem na `DataListItem`, jsme můžete získat odpovídající `SupplierID` z `DataKeys` kolekce a programově TextBox webové ovládací prvky v rámci odkaz `ItemTemplate` jak ukazuje následující kód:
+Kolekce `DataListItem` instance tento způsob vytvoření prvku DataList je přístupná prostřednictvím DataList s [ `Items` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.items.aspx). S odkazem na `DataListItem`, jsme můžete získat odpovídající `SupplierID` z `DataKeys` kolekce a programově TextBox webové ovládací prvky v rámci odkaz `ItemTemplate` jak ukazuje následující kód:
 
 
 [!code-vb[Main](performing-batch-updates-vb/samples/sample4.vb)]
@@ -131,7 +131,7 @@ Po klepnutí na Aktualizovat vše tlačítka `UpdateAllSupplierAddresses` metoda
 
 Algoritmus aktualizace batch použít pro tento kurz volání `UpdateSupplierAddress` metodu pro *každých* dodavatele v DataList, bez ohledu na to, jestli se změnil informace o jejich adres. Při takové blind aktualizací t nejsou obvykle problémy výkonem, mohou vést nadbytečné záznamy li níž auditování změn do databázové tabulky. Například, pokud používáte k zaznamenání všechny aktivační události `UPDATE` s k `Suppliers` tabulka, která se auditování tabulka pokaždé, když uživatel klikne na tlačítko Aktualizovat vše nový záznam auditu budou vytvořeny pro každého dodavatele v systému, bez ohledu na to, jestli uživatel provedeny žádné změny.
 
-Třídy ADO.NET DataTable a DataAdapter jsou navrženy pro podporu dávková aktualizace kde pouze změny, odstraněných a nové záznamy výsledkem komunikace žádné databáze. Každý řádek v DataTable má [ `RowState` vlastnost](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) určující, zda řádek byl přidán do DataTable, z ho změnit, odstranit nebo zůstává beze změny. Pokud původně naplnění DataTable všechny řádky jsou označeny beze změny. Změna hodnoty sloupce s řádků označí řádek, jako je upravit.
+Třídy ADO.NET DataTable a DataAdapter jsou navrženy pro podporu dávková aktualizace kde pouze změny, odstraněných a nové záznamy výsledkem komunikace žádné databáze. Každý řádek v DataTable má [ `RowState` vlastnost](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) určující, zda řádek byl přidán do DataTable, z ho změnit, odstranit nebo zůstává beze změny. Pokud původně naplnění DataTable všechny řádky jsou označeny beze změny. Změna hodnoty sloupce s řádků označí řádek, jako je upravit.
 
 V `SuppliersBLL` jsme aktualizovat informace o adrese zadané dodavatele s první čtení v záznamu o jediného poskytovatele do třídy `SuppliersDataTable` a poté nastavte `Address`, `City`, a `Country` hodnoty ve sloupcích pomocí následujícího kódu:
 

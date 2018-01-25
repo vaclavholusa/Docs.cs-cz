@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 62be7c9636fb74c40bec812e9ac76b360995da50
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cea805c86f0764c7443ccc5c9f89248860a6a842
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="performing-a-what-if-deployment"></a>Provádění nasazení "Co když"
 ====================
@@ -52,7 +52,7 @@ Pokud používáte MSDeploy.exe přímo, můžete spustit nasazení "Co když" t
 Až budete spokojeni s výsledky nasazení "Co když", můžete odebrat **– whatif** příznak pro spuštění nasazení za provozu.
 
 > [!NOTE]
-> Další informace o parametrech příkazového řádku pro MSDeploy.exe najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx).
+> Další informace o parametrech příkazového řádku pro MSDeploy.exe najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
 
 
 Pokud používáte *. deploy.cmd* souboru, můžete spustit nasazení "Co když" zahrnutím **/t** příznak příznak (zkušební režim) místo **/y** příznak ("Ano" nebo režim aktualizace) v váš příkaz. Například k vyhodnocení, co by mohlo dojít, pokud jste nasadili balíček ContactManager.Mvc.zip spuštěním *. deploy.cmd* souboru příkazu by měl vypadat takto:
@@ -68,7 +68,7 @@ Až budete spokojeni s výsledky nasazení "zkušební režim", můžete nahradi
 
 
 > [!NOTE]
-> Další informace o parametrech příkazového řádku pro *. deploy.cmd* soubory, najdete v části [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx). Pokud spustíte *. deploy.cmd* souboru bez zadání žádné příznaky, příkazovém řádku se zobrazí seznam dostupných příznaků.
+> Další informace o parametrech příkazového řádku pro *. deploy.cmd* soubory, najdete v části [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx). Pokud spustíte *. deploy.cmd* souboru bez zadání žádné příznaky, příkazovém řádku se zobrazí seznam dostupných příznaků.
 
 
 ## <a name="performing-a-what-if-deployment-for-databases"></a>Provádění nasazení "Co když" pro databáze
@@ -142,7 +142,7 @@ Toto téma popisuje postup spouštět "Co když" nasazení pomocí nástroje nas
 
 ## <a name="further-reading"></a>Další čtení
 
-Další informace o nasazení webu syntaxe příkazového řádku najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx). Pokyny k možnosti příkazového řádku při použití *. deploy.cmd* souborů najdete v tématu [postup: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx). Pokyny v VSDBCMD syntaxe příkazového řádku najdete v tématu [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/en-us/library/dd193283.aspx).
+Další informace o nasazení webu syntaxe příkazového řádku najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Pokyny k možnosti příkazového řádku při použití *. deploy.cmd* souborů najdete v tématu [postup: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx). Pokyny v VSDBCMD syntaxe příkazového řádku najdete v tématu [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/library/dd193283.aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](advanced-enterprise-web-deployment.md)

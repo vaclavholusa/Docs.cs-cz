@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f626731e79d83785057498c53cdf49aecb90261
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 42203bdd7c22f3885eecab36dbd710d371107285
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-c"></a>Zobrazení dat s DataList a Repeater (C#)
 ====================
@@ -163,7 +163,7 @@ Kromě `ItemTemplate`, prvku DataList podporuje šesti další volitelné šablo
 
 - `HeaderTemplate`Pokud je zadán, přidá do výstupu řádek záhlaví a slouží k vykreslení tento řádek
 - `AlternatingItemTemplate`použít k vykreslení střídání položek
-- `SelectedItemTemplate`použít k vykreslení vybrané položce. Vybraná položka je položek, jejichž index odpovídá DataList s [ `SelectedIndex` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `SelectedItemTemplate`použít k vykreslení vybrané položce. Vybraná položka je položek, jejichž index odpovídá DataList s [ `SelectedIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
 - `EditItemTemplate`použít k vykreslení upravované položky
 - `SeparatorTemplate`Pokud je zadán, přidá oddělovač mezi každou položku a slouží k vykreslení tento oddělovače
 - `FooterTemplate`-Pokud je zadán, přidá do výstupu řádek zápatí a slouží k vykreslení tento řádek
@@ -222,7 +222,7 @@ V technologii ASP.NET 1.x, opakovače kontrolu byl nejčastěji používaných k
 - V `SectionLevelTutorialListing.ascx`, prvku Repeater byl použit k zobrazení seznamu s odrážkami v částech podřízené objekty aktuálního oddílu mapy webu
 
 > [!NOTE]
-> Technologie ASP.NET 2.0 přináší nové [ovládací prvek BulletedList](https://msdn.microsoft.com/en-us/library/ms228101.aspx), které mohou být vázány na ovládací prvek zdroje dat aby bylo možné zobrazit seznam s odrážkami jednoduché. Pomocí ovládacího prvku BulletedList jsme není nutné zadávat žádné související seznamu HTML; Místo toho jsme jednoduše znamenat pole dat zobrazuje jako text pro každou položku seznamu.
+> Technologie ASP.NET 2.0 přináší nové [ovládací prvek BulletedList](https://msdn.microsoft.com/library/ms228101.aspx), které mohou být vázány na ovládací prvek zdroje dat aby bylo možné zobrazit seznam s odrážkami jednoduché. Pomocí ovládacího prvku BulletedList jsme není nutné zadávat žádné související seznamu HTML; Místo toho jsme jednoduše znamenat pole dat zobrazuje jako text pro každou položku seznamu.
 
 
 Opakovače slouží jako catch všechna data ovládací prvek webu. Pokud není ovládací prvek existující, který generuje potřebné značky, lze použít ovládacím prvku opakovače. Pro ilustraci použití opakovače, umožní s mít seznamu kategorie zobrazuje nad DataList informace o produktu, vytvořili v kroku 2. Zejména umožňují s mít kategorie zobrazuje ve formátu HTML jednoho řádku `<table>` s každou kategorii zobrazen jako sloupec v tabulce.
@@ -319,4 +319,4 @@ Radostí programování!
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Yaakov Ellis, Liz Shulok, Randy Schmidt a Stacy parku. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 >[!div class="step-by-step"]
-[Další](formatting-the-datalist-and-repeater-based-upon-data-cs.md)
+[Next](formatting-the-datalist-and-repeater-based-upon-data-cs.md)

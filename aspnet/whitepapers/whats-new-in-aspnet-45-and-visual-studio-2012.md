@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 93fdc7ca241198dc1d7c4c1f6be0a61b15790039
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4487eb7436c0b6241505f41621a7f31b89c38b28
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>Co je nového v technologii ASP.NET 4.5 a Visual Studio 2012
 ====================
@@ -34,9 +34,9 @@ ms.lasthandoff: 11/10/2017
     - [Nové funkce ověření požadavku ASP.NET](#_Toc318097379)
     - [Odložení ověření požadavku ("opožděné")](#_Toc318097380)
     - [Podpora pro neověřené požadavky](#_Toc318097381)
-    - [Knihovna AntiXSS](#_Toc318097382)
+    - [AntiXSS Library](#_Toc318097382)
     - [Podpora pro protokol Websocket](#_Toc318097383)
-    - [Sdružování a minimalizace](#_Toc318097384)
+    - [Vytváření sady a minifikace](#_Toc318097384)
     - [Vylepšení výkonu pro hostování webů](#_Toc_perf)
 
         - [Klíčové faktory](#_Toc_perf_1)
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
         - [Prefetching pro webové aplikace](#_Toc_perf_6)
 - [ASP.NET – webové formuláře](#_Toc318097385)
 
-    - [Ovládací prvky Data silného typu](#_Toc318097386)
+    - [Ovládací prvky dat silného typu](#_Toc318097386)
     - [Vazby modelu](#_Toc318097387)
 
         - [Výběr dat](#_Toc318097388)
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/10/2017
         - [Filtrování podle hodnoty z ovládacího prvku](#_Toc318097390)
     - [Výrazy datové vazby kódovaný jazykem HTML](#_Toc318097391)
     - [Ověření nerušivého](#_Toc318097392)
-    - [HTML5 aktualizace](#_Toc318097393)
+    - [HTML5 Updates](#_Toc318097393)
 - [ASP.NET MVC 4](#_Toc318097394)
 - [Rozhraní ASP.NET Web Pages 2](#_Toc318097395)
 - [Visual Studio 2012 Release Candidate](#_Toc318097396)
@@ -74,7 +74,7 @@ ms.lasthandoff: 11/10/2017
         - [Generování obslužné rutiny událostí](#_Toc318097404)
         - [Inteligentní odsazení](#_Toc318097405)
         - [Snižte automatické dokončování](#_Toc318097406)
-    - [JavaScript – Editor](#_Toc318097407)
+    - [JavaScript Editor](#_Toc318097407)
 
         - [Osnova kódu](#_Toc318097408)
         - [Související závorky](#_Toc318097409)
@@ -98,7 +98,7 @@ ms.lasthandoff: 11/10/2017
 
         - [Publikační profily](#_Toc318097426)
         - [Předkompilace ASP.NET a sloučení](#_Toc318097427)
-- [Služby IIS Express](#_Toc318097428)
+- [IIS Express](#_Toc318097428)
 - [Právní omezení](#_Toc318097429)
 
 <a id="_Toc318097372"></a>
@@ -199,7 +199,7 @@ Pak můžete použít *HttpRequest.Unvalidated* vlastnost načíst hodnotu neov�
 
 
 <a id="_Toc318097382"></a>
-### <a name="antixss-library"></a>Knihovna AntiXSS
+### <a name="antixss-library"></a>AntiXSS Library
 
 Z důvodu v době Oblíbené Microsoft AntiXSS Library technologie ASP.NET 4.5 nyní zahrnuje rutiny kódování základní z verze 4.0 této knihovny.
 
@@ -266,19 +266,19 @@ Kromě toho povolení nebo zakázání optimalizace můžete nastavit přímo p�
 
 Když jsou seskupeny soubory, se nejprve řadí abecedně (způsob, jak jsou zobrazeny v **Průzkumníku řešení**). Jsou pak uspořádány tak, aby známé knihovny a jejich vlastní rozšíření (například jQuery, MooTools a Dojo) se nejdřív načíst. Například konečné pořadí pro sdružování složky skriptů jako v příkladu nahoře, bude:
 
-1. jQuery 1.6.2.js
-2. jQuery ui.js
-3. jQuery.Tools.js
+1. jquery-1.6.2.js
+2. jquery-ui.js
+3. jquery.tools.js
 4. a.js
 
 Soubory šablon stylů CSS jsou také seřazené podle abecedy a pak znovu uspořádat tak, aby reset.css a normalize.css dřívější než jakýkoli jiný soubor. Provedení konečné řazení sdružování výše uvedenou složku styly, bude toto:
 
-1. Reset.CSS
-2. Content.CSS
-3. Forms.CSS
-4. Globals.CSS
-5. Menu.CSS
-6. Styles.CSS
+1. reset.css
+2. content.css
+3. forms.css
+4. globals.css
+5. menu.css
+6. styles.css
 
 <a id="_Toc_perf"></a>
 ### <a name="performance-improvements-for-web-hosting"></a>Vylepšení výkonu pro hostování webů
@@ -330,7 +330,7 @@ Pokud chcete zobrazit všechny možnosti, spusťte nástroj bez argumentů.
 
 **Požadavek**: rozhraní .NET Framework 4.5
 
-Pro spuštění studené webu nejen sestavení by měly být čtení z disku, ale webu musí být kompilována. Pro lokalitu komplexní to můžete přidat velkým prodlevám. Se nová pro obecné účely metoda v rozhraní .NET Framework 4.5 snižuje tyto zpoždění JIT – kompilace rozloží mezi jader procesoru k dispozici. Dělá to co nejvíc a co nejdříve pomocí informace shromážděné během předchozího spuštění webu. Tato funkce implementované [System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/en-us/library/system.runtime.profileoptimization.startprofile(VS.110).aspx) metoda.
+Pro spuštění studené webu nejen sestavení by měly být čtení z disku, ale webu musí být kompilována. Pro lokalitu komplexní to můžete přidat velkým prodlevám. Se nová pro obecné účely metoda v rozhraní .NET Framework 4.5 snižuje tyto zpoždění JIT – kompilace rozloží mezi jader procesoru k dispozici. Dělá to co nejvíc a co nejdříve pomocí informace shromážděné během předchozího spuštění webu. Tato funkce implementované [System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/library/system.runtime.profileoptimization.startprofile(VS.110).aspx) metoda.
 
 JIT – kompilace pomocí více jader je zapnutá ve výchozím nastavení v technologii ASP.NET, takže nemusíte dělat nic využít této funkce. Pokud chcete tuto funkci zakázat, proveďte následující nastavení v souboru Web.config:
 
@@ -499,7 +499,7 @@ Teď můžete konfigurovat ovládacích prvků pro integrované ověřování po
 - Jednotlivě pro stránku nastavením nové *UnobtrusiveValidationMode* vlastnost *stránky* třídy k *UnobtrusiveValidationMode.WebForms*.
 
 <a id="_Toc318097393"></a>
-### <a name="html5-updates"></a>HTML5 aktualizace
+### <a name="html5-updates"></a>HTML5 Updates
 
 Některé vylepšení byla provedena pro webové formuláře ovládací prvky serveru, abyste mohli využívat nové funkce HTML5:
 

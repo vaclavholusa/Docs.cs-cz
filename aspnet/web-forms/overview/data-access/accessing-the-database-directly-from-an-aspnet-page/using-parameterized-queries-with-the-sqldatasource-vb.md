@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1a56990c87c1faa93612dcca0732ee789078dfe2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1cda18620a970c45b05039dd380c393e3854889
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>Parametrizované dotazy pomocí SqlDataSource (VB)
 ====================
@@ -209,7 +209,7 @@ Vzhledem k tomu, že přijímá vstupní parametr uložené procedury (`@Categor
 **Obrázek 11**: použít Hard-Coded hodnotu 1, který vrátí produktů v kategorii nápoje ([Kliknutím zobrazit obrázek v plné velikosti](using-parameterized-queries-with-the-sqldatasource-vb/_static/image22.png))
 
 
-Jak ukazuje následující deklarativní značky, pokud pomocí uložené procedury SqlDataSource s `SelectCommand` je nastavena na název uložené procedury a [ `SelectCommandType` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx) je nastaven na `StoredProcedure`, která udává která `SelectCommand` je název uložené procedury místo příkazu SQL ad hoc.
+Jak ukazuje následující deklarativní značky, pokud pomocí uložené procedury SqlDataSource s `SelectCommand` je nastavena na název uložené procedury a [ `SelectCommandType` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx) je nastaven na `StoredProcedure`, která udává která `SelectCommand` je název uložené procedury místo příkazu SQL ad hoc.
 
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample9.aspx)]
@@ -237,9 +237,9 @@ Začněte přidáním SqlDataSource k `ParameterizedQueries.aspx` a nastavit jeh
 
 `ORDER BY NEWID()`Vrátí náhodné řazení záznamů (v tématu [pomocí `NEWID()` náhodně řazení záznamů](http://www.sqlteam.com/item.asp?ItemID=8747)). `SELECT TOP 1`Vrátí první záznam ze sady výsledků. V kostce řečeno, tento dotaz vrací `CategoryID` a `CategoryName` hodnoty sloupců z jedné, náhodně vybrané kategorie.
 
-K zobrazení kategorie s `CategoryName` hodnotu, přidání ovládacího prvku popisek na stránku, nastavte jeho `ID` vlastnost `CategoryNameLabel`a vymažte jeho `Text` vlastnost. Prostřednictvím kódu programu načíst data z ovládacího prvku SqlDataSource, musíme vyvolání jeho `Select()` metoda. [ `Select()` Metoda](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.select.aspx) očekává, že jeden vstupní parametr typu [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx), která určuje, jak by měla být data messaged před vrácením. To může obsahovat pokyny, řazení a filtrování dat a data, která webové ovládací prvky při řazení nebo procházení dat z ovládacího prvku SqlDataSource používá. Pro náš příklad, ale jsme nejsou zobrazeny t potřeba data před vrácením upravit a proto bude předávat `DataSourceSelectArguments.Empty` objektu.
+K zobrazení kategorie s `CategoryName` hodnotu, přidání ovládacího prvku popisek na stránku, nastavte jeho `ID` vlastnost `CategoryNameLabel`a vymažte jeho `Text` vlastnost. Prostřednictvím kódu programu načíst data z ovládacího prvku SqlDataSource, musíme vyvolání jeho `Select()` metoda. [ `Select()` Metoda](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx) očekává, že jeden vstupní parametr typu [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx), která určuje, jak by měla být data messaged před vrácením. To může obsahovat pokyny, řazení a filtrování dat a data, která webové ovládací prvky při řazení nebo procházení dat z ovládacího prvku SqlDataSource používá. Pro náš příklad, ale jsme nejsou zobrazeny t potřeba data před vrácením upravit a proto bude předávat `DataSourceSelectArguments.Empty` objektu.
 
-`Select()` Metoda vrátí objekt, který implementuje `IEnumerable`. Vrátí typ přesné závisí na hodnotě ovládacího prvku SqlDataSource s [ `DataSourceMode` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx). Jak je popsáno v předchozí kurzu, tuto vlastnost lze nastavit na hodnotu buď `DataSet` nebo `DataReader`. Pokud nastavena na `DataSet`, `Select()` metoda vrátí [DataView](https://msdn.microsoft.com/en-us/library/01s96x0z.aspx) objekt; je-li nastavena na `DataReader`, vrátí objekt, který implementuje [ `IDataReader` ](https://msdn.microsoft.com/en-us/library/system.data.idatareader.aspx). Vzhledem k tomu `RandomCategoryDataSource` SqlDataSource má jeho `DataSourceMode` vlastnost nastavena na hodnotu `DataSet` (výchozí), budeme pracovat s objektem DataView.
+`Select()` Metoda vrátí objekt, který implementuje `IEnumerable`. Vrátí typ přesné závisí na hodnotě ovládacího prvku SqlDataSource s [ `DataSourceMode` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx). Jak je popsáno v předchozí kurzu, tuto vlastnost lze nastavit na hodnotu buď `DataSet` nebo `DataReader`. Pokud nastavena na `DataSet`, `Select()` metoda vrátí [DataView](https://msdn.microsoft.com/library/01s96x0z.aspx) objekt; je-li nastavena na `DataReader`, vrátí objekt, který implementuje [ `IDataReader` ](https://msdn.microsoft.com/library/system.data.idatareader.aspx). Vzhledem k tomu `RandomCategoryDataSource` SqlDataSource má jeho `DataSourceMode` vlastnost nastavena na hodnotu `DataSet` (výchozí), budeme pracovat s objektem DataView.
 
 Následující kód ukazuje, jak načíst záznamy ze `RandomCategoryDataSource` SqlDataSource jako v zobrazení DataView a také jak číst `CategoryName` hodnota sloupce z prvního řádku DataView:
 

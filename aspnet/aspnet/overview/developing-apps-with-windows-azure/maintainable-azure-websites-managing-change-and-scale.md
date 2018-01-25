@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 1d6d9265d93fbd32e2d9c22e2ac3db9b5ffd9776
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3d24c633368abc14efcd9fcf200a4d05c5b182c9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Předá na testovacím: udržovatelný weby Azure: Správa změn a škálování
 ====================
@@ -251,7 +251,7 @@ V této úloze budete používat **migrace Entity Framework Code First** zjistí
 V tomto cvičení budete nasazovat **Geek kvízu** aplikace pracovní prostředí vaší webové aplikace pomocí Git zdrojového kódu. K tomuto účelu bude vytvoření webové aplikace a zřídit požadované součásti v portálu pro správu, konfiguraci **Git** úložiště a nabízenými aplikace zdrojový kód z místního počítače pro přípravný slot. Je také aktualizovat vaši produkční databázi s **migrace Code First** jste vytvořili v předchozím cvičení. Aplikace pak provede v tomto prostředí test ověřit jeho funkci. Jakmile budete spokojeni to funguje podle vašim požadavkům, bude podporovat aplikace do produkčního prostředí.
 
 > [!NOTE]
-> Chcete-li povolit publikování v dvoufázové instalace, musí být webové aplikace v **standardní režim**. Všimněte si, že další poplatky budou vám být účtovány Pokud změníte vaší webové aplikace do standardního režimu. Další informace o cenách najdete v tématu [App Service – ceny](https://azure.microsoft.com/en-us/pricing/details/app-service/).
+> Chcete-li povolit publikování v dvoufázové instalace, musí být webové aplikace v **standardní režim**. Všimněte si, že další poplatky budou vám být účtovány Pokud změníte vaší webové aplikace do standardního režimu. Další informace o cenách najdete v tématu [App Service – ceny](https://azure.microsoft.com/pricing/details/app-service/).
 
 
 <a id="Ex2Task1"></a>
@@ -544,7 +544,7 @@ Nyní jste předá změny, které jste provedli v předchozí úloze úložišt�
 
     ![HTTP 500 Chyba](maintainable-azure-websites-managing-change-and-scale/_static/image52.png)
 
-    *HTTP 500 Chyba*
+    *HTTP 500 error*
 7. Vyberte **konzoly** kartě. Podrobnosti o příčině je zaznamenána chyba.
 
     ![Chyba protokolu](maintainable-azure-websites-managing-change-and-scale/_static/image53.png)
@@ -695,7 +695,7 @@ V této úloze nakonfigurujete **GeekQuiz** řešení využívat image nahrané 
     [!code-xml[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample17.xml)]
 
     > [!NOTE]
-    > Přepisování adres URL je proces zachycení příchozí webové žádosti a požadavek přesměrování na jiný prostředek. Přepisování pravidel adres URL informuje třeba přepisovat modul, když potřebuje žádost o přesměrování a kde by měl být přesměrován. Třeba přepisovat pravidlo se skládá ze dvou řetězců: vzor hledání v požadovanou adresu URL (obvykle s použitím regulárních výrazů), a řetězec, který má nahradit vzor, pokud nalezen. Další informace najdete v tématu [přepisování adres URL technologie ASP.NET](https://msdn.microsoft.com/en-us/library/ms972974.aspx).
+    > Přepisování adres URL je proces zachycení příchozí webové žádosti a požadavek přesměrování na jiný prostředek. Přepisování pravidel adres URL informuje třeba přepisovat modul, když potřebuje žádost o přesměrování a kde by měl být přesměrován. Třeba přepisovat pravidlo se skládá ze dvou řetězců: vzor hledání v požadovanou adresu URL (obvykle s použitím regulárních výrazů), a řetězec, který má nahradit vzor, pokud nalezen. Další informace najdete v tématu [přepisování adres URL technologie ASP.NET](https://msdn.microsoft.com/library/ms972974.aspx).
 3. Stiskněte klávesu **kombinaci kláves CTRL + S** a uložte změny.
 4. Otevřete nový **Git Bash** konzolu k nasazení aktualizované aplikace do služby Azure App Service.
 5. Spuštěním následujících příkazů pro uložení změn do Azure. Aktualizace *[YOUR cesta aplikace]* zástupný symbol cestu k **GeekQuiz** řešení. Zobrazí se výzva k zadání hesla nasazení.
@@ -885,7 +885,7 @@ Nyní se provést zátěžový test, který jste vytvořili v předchozí úloze
 
     ![Otevírání LoadTest1.loadtest](maintainable-azure-websites-managing-change-and-scale/_static/image99.png "otevírání LoadTest1.loadtest")
 
-    *Otevírání LoadTest1.loadtest*
+    *Opening LoadTest1.loadtest*
 2. V **LoadTest1.loadtest** okně klikněte na první tlačítko panelu nástrojů ke spuštění zátěžového testu.
 
     ![Spuštění zátěžového testu](maintainable-azure-websites-managing-change-and-scale/_static/image100.png "spuštění zátěžového testu")
@@ -910,7 +910,7 @@ Nyní se provést zátěžový test, který jste vytvořili v předchozí úloze
     > 
     > - Prodloužit dobu trvání testu zatížení (například k **10 minut**)
     > - Omezit maximální a minimální hodnoty **cílový procesor** rozsah v konfiguraci automatického škálování webové aplikace
-    > - Spuštění zátěžového testu v cloudu s **Visual Studio Online**. Další informace [sem](https://www.visualstudio.com/en-us/get-started/load-test-your-app-vs.aspx)
+    > - Spuštění zátěžového testu v cloudu s **Visual Studio Online**. Další informace [sem](https://www.visualstudio.com/get-started/load-test-your-app-vs.aspx)
 
 * * *
 

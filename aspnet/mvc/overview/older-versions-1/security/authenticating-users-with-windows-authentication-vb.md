@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d4b83d99fcf1247d08ce83364cc00e738b6a16c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63b1266e03041c4261e71fd25e988c63932b503e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a>Ověřování uživatelů pomocí ověřování systému Windows (VB)
 ====================
@@ -51,7 +51,7 @@ Pro provozní webové aplikace na straně, použijete službu IIS jako webový s
 
 > [!NOTE] 
 > 
-> Podrobnější přehled tyto různé typy ověřování, najdete v tématu [https://msdn.microsoft.com/en-us/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/en-us/library/aa292114(VS.71).aspx).
+> Podrobnější přehled tyto různé typy ověřování, najdete v tématu [https://msdn.microsoft.com/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
 
 
 Chcete-li povolit konkrétní typ ověřování můžete použít Správce Internetové informační služby. Upozorňujeme, že všechny typy ověřování nejsou k dispozici v případě každý operační systém. Kromě toho pokud používáte službu IIS 7.0 se systémem Windows Vista, musíte povolit různé typy ověřování systému Windows, než se objeví v Správce Internetové informační služby. Otevřete **ovládacích panelů, programů, programy a funkce, nebo vypnout funkce systému Windows**a rozbalte uzel Internetová informační služba (viz obrázek 2).

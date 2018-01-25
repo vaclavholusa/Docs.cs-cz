@@ -12,28 +12,28 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 1cb38d66bd0373159e54abf822fba9c5829774ac
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4deb3536699f1ef3025f8858ee71a76a1c2def18
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="windows-azure-authentication"></a>Windows Azure ověřování
 ====================
 Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Nástroje Microsoft ASP.NET pro Windows Azure Active Directory usnadňuje povolení ověřování pro webové aplikace hostované na [weby systému Windows Azure](https://www.windowsazure.com/en-us/home/features/web-sites/). Ověřování systému Windows Azure můžete použít k ověření uživatele služeb Office 365 z vaší organizace, podnikové účty synchronizované z vaší místní službou Active Directory nebo uživatelé vytvoření ve vlastní domény systému Windows Azure Active Directory. Povolení ověřování systému Windows Azure nakonfiguruje aplikace k ověření uživatelů pomocí jedné [Windows Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) klienta.
+> Nástroje Microsoft ASP.NET pro Windows Azure Active Directory usnadňuje povolení ověřování pro webové aplikace hostované na [weby systému Windows Azure](https://www.windowsazure.com/home/features/web-sites/). Ověřování systému Windows Azure můžete použít k ověření uživatele služeb Office 365 z vaší organizace, podnikové účty synchronizované z vaší místní službou Active Directory nebo uživatelé vytvoření ve vlastní domény systému Windows Azure Active Directory. Povolení ověřování systému Windows Azure nakonfiguruje aplikace k ověření uživatelů pomocí jedné [Windows Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) klienta.
 > 
-> Nástroj ASP.NET ověřování systému Windows Azure se nepodporuje pro webové role v cloudové službě ale plánujeme Uděláte to tak v budoucí verzi. [Technologie Windows Identity Foundation](https://msdn.microsoft.com/en-us/library/hh291066(v=VS.110).aspx) (WIF) je podporována v systému Windows Azure webové role.
+> Nástroj ASP.NET ověřování systému Windows Azure se nepodporuje pro webové role v cloudové službě ale plánujeme Uděláte to tak v budoucí verzi. [Technologie Windows Identity Foundation](https://msdn.microsoft.com/library/hh291066(v=VS.110).aspx) (WIF) je podporována v systému Windows Azure webové role.
 > 
-> Další informace o tom, jak nastavit synchronizaci mezi vaší místní službou Active Directory a klienta služby Windows Azure Active Directory naleznete [pomocí služby AD FS 2.0 k implementaci a správě jednotného přihlašování](https://technet.microsoft.com/en-us/library/jj205462.aspx).
+> Další informace o tom, jak nastavit synchronizaci mezi vaší místní službou Active Directory a klienta služby Windows Azure Active Directory naleznete [pomocí služby AD FS 2.0 k implementaci a správě jednotného přihlašování](https://technet.microsoft.com/library/jj205462.aspx).
 > 
 > Windows Azure Active Directory je momentálně k dispozici jako [preview služba úrovně free](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
 
 
 ## <a name="requirements"></a>Požadavky:
 
-- Visual Studio 2012 nebo [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express)
+- Visual Studio 2012 nebo [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express)
 - [Rozšíření pro sadu Visual Studio 2012 nástrojů Web](https://go.microsoft.com/fwlink/?LinkID=282228&amp;clcid=0x409) nebo [Web Tools Extensions pro sadu Visual Studio Express 2012](https://go.microsoft.com/fwlink/?LinkID=282231&amp;clcid=0x409)
 - [Nástroje Microsoft ASP.NET pro systém Windows Azure Active Directory – Visual Studio 2012](https://go.microsoft.com/fwlink/?LinkID=282306) nebo [nástroje Microsoft ASP.NET pro systém Windows Azure Active Directory – Visual Studio Express 2012 pro Web](https://go.microsoft.com/fwlink/?LinkId=282652)
 
@@ -157,15 +157,15 @@ Tato chyba může zobrazit, když jste dříve úspěšně přihlásí pomocí j
 
 ## <a name="acs20012-the-request-is-not-a-valid-ws-federation-protocol-message-opop"></a>ACS20012: Žádost není platný zprávy protokolu WS-Federation < o: p >< / o: p >
 
-To může nastat, když jste se už přihlásili některé jiné ID společnosti Microsoft na jednu z služeb Azure. Okno prohlížeče použití privátního jako InPrivate v aplikaci Internet Explorer nebo Incognito v prohlížeči Chrome nebo zrušte všechny soubory cookie. < o: p >< / o: p >
+To může nastat, když jste se už přihlásili některé jiné ID společnosti Microsoft na jednu z služeb Azure. Okno prohlížeče použití privátního jako InPrivate v aplikaci Internet Explorer nebo Incognito v prohlížeči Chrome nebo zrušte všechny soubory cookie. <o:p></o:p>
 
 ## <a name="additional-resources"></a>Další prostředky
 
 - [Nástroje Microsoft ASP.NET pro systém Windows Azure Active Directory – Visual Studio 2012](https://blogs.msdn.com/b/vbertocci/archive/2013/02/18/microsoft-asp-net-tools-for-windows-azure-active-directory-visual-studio-2012.aspx) – Vittorio Bertocci
 - [Windows Azure funkce: Identity](https://docs.microsoft.com/azure/active-directory/)
-- [TechNet: Windows Azure Active Directory](https://technet.microsoft.com/en-us/library/hh967619.aspx)
+- [TechNet: Windows Azure Active Directory](https://technet.microsoft.com/library/hh967619.aspx)
 - [Windows Azure Active Directory: vývoj aplikací pro vaši organizaci](https://activedirectory.windowsazure.com/Develop/Single-Tenant.aspx)
 - [Windows Azure Active Directory: vývoj aplikací pro několik organizací](https://activedirectory.windowsazure.com/Develop/Multi-Tenant.aspx)
 - [Implementaci jednotného přihlašování pomocí služby Windows Azure Active Directory](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect)
 - [Jednotné přihlašování se službou Windows Azure Active Directory: podrobné informace](https://blogs.msdn.com/b/vbertocci/archive/2012/07/05/single-sign-on-with-windows-azure-active-directory-a-deep-dive.aspx) – Vittorio Bertocci
-- [Používání AD FS 2.0 k implementaci a správě jednotného přihlašování](https://technet.microsoft.com/en-us/library/jj205462.aspx)
+- [Používání AD FS 2.0 k implementaci a správě jednotného přihlašování](https://technet.microsoft.com/library/jj205462.aspx)

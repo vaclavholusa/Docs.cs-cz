@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/mapping-users-to-connections
 msc.type: authoredcontent
-ms.openlocfilehash: 9b50d8805beabbc48467e20331c7593de9bc4254
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c4f95a3b65c57dd7cb7c5c7f1ee09daa17fa9616
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="mapping-signalr-users-to-connections"></a>Mapování uživatelů SignalR na připojení
 ====================
@@ -140,7 +140,7 @@ Potom z centra, můžete sledovat stav každé připojení kódem vidíte níže
 <a id="azure"></a>
 ### <a name="azure-table-storage"></a>Úložiště tabulek Azure
 
-Následující příklad Azure table storage je podobné jako v příkladu databáze. Neobsahuje všechny informace, které by bylo nutné Začínáme s Azure Table Storage Service. Informace najdete v tématu [postup používání úložiště Table z .NET](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/).
+Následující příklad Azure table storage je podobné jako v příkladu databáze. Neobsahuje všechny informace, které by bylo nutné Začínáme s Azure Table Storage Service. Informace najdete v tématu [postup používání úložiště Table z .NET](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/).
 
 Následující příklad ukazuje tabulka entity pro ukládání informací o připojení. Oddíly data podle uživatelského jména a identifikuje každé entity podle id připojení, takže uživatel může mít víc připojení kdykoli.
 

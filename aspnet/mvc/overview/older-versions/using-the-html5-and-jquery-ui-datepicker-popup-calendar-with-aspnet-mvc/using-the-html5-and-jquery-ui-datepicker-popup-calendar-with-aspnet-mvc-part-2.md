@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 271c244ab0b9e2524a33ea6ff4d41893ce22472f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69fbaa7761c97895ffee770f6feb9ce6b745d186
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-2"></a>Použití jazyka HTML5 a kalendáře jQuery UI DatePicker s architekturou ASP.NET MVC – část 2
 ====================
@@ -27,15 +27,15 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 ## <a name="adding-an-automatic-datetime-template"></a>Přidání šablonu automatické data a času
 
-V první části tohoto kurzu jste viděli, jak můžete přidat atributů do modelu k explicitnímu zadání formátování a jak explicitně zadat šablonu, která je použita k vykreslení modelu. Například [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) formátování pro Určuje atribut v následujícím kódu výslovně `ReleaseDate` vlastnost.
+V první části tohoto kurzu jste viděli, jak můžete přidat atributů do modelu k explicitnímu zadání formátování a jak explicitně zadat šablonu, která je použita k vykreslení modelu. Například [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) formátování pro Určuje atribut v následujícím kódu výslovně `ReleaseDate` vlastnost.
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample1.cs)]
 
-V následujícím příkladu [datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) atribut, pomocí `Date` výčtu, určuje, že šablona datum měli používat k vykreslení modelu. Pokud neexistuje žádná šablona data ve vašem projektu, se používá integrované datum šablony.
+V následujícím příkladu [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut, pomocí `Date` výčtu, určuje, že šablona datum měli používat k vykreslení modelu. Pokud neexistuje žádná šablona data ve vašem projektu, se používá integrované datum šablony.
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample2.cs)]
 
-Ale ASP. MVC můžete provádět typ odpovídající pomocí konvencí over konfigurace, tak, že vyhledá šablonu, která odpovídá názvu typu. To vám umožní vytvořit šablonu, která automaticky formáty dat bez použití všechny atributy nebo kód vůbec. Pro tuto část kurzu vytvoříte šablonu, která je automaticky použita pro vlastnosti modelu typu [data a času](https://msdn.microsoft.com/en-us/library/system.datetime.aspx). Nebudete muset použít atribut nebo další konfiguraci k určení, že šablona by měla sloužit k vykreslení všechny vlastnosti modelu typu [data a času](https://msdn.microsoft.com/en-us/library/system.datetime.aspx).
+Ale ASP. MVC můžete provádět typ odpovídající pomocí konvencí over konfigurace, tak, že vyhledá šablonu, která odpovídá názvu typu. To vám umožní vytvořit šablonu, která automaticky formáty dat bez použití všechny atributy nebo kód vůbec. Pro tuto část kurzu vytvoříte šablonu, která je automaticky použita pro vlastnosti modelu typu [data a času](https://msdn.microsoft.com/library/system.datetime.aspx). Nebudete muset použít atribut nebo další konfiguraci k určení, že šablona by měla sloužit k vykreslení všechny vlastnosti modelu typu [data a času](https://msdn.microsoft.com/library/system.datetime.aspx).
 
 Taky poznáte způsob, jak přizpůsobit zobrazení jednotlivých vlastností či i jednotlivých polí.
 
@@ -83,7 +83,7 @@ Na následujícím obrázku *zobrazení* složky v **Průzkumníku řešení** p
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/_static/image3.png)
 
-Otevřete *Views\Shared\DisplayTemplates\DateTime.cshtml* souboru a přidejte následující kód, který používá [String.Format](https://msdn.microsoft.com/en-us/library/system.string.format.aspx) metoda k formátování vlastnost jako datum bez čas. ( `{0:d}` Formát Určuje formát krátkého data.)
+Otevřete *Views\Shared\DisplayTemplates\DateTime.cshtml* souboru a přidejte následující kód, který používá [String.Format](https://msdn.microsoft.com/library/system.string.format.aspx) metoda k formátování vlastnost jako datum bez čas. ( `{0:d}` Formát Určuje formát krátkého data.)
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample5.cs)]
 
@@ -113,7 +113,7 @@ Chcete-li zkontrolovat: v tomto okamžiku `ReleaseDate` pole se zobrazuje pomoc�
 
 ### <a name="using-uihint-to-specify-a-display-template"></a>Pomocí UIHint zadat šablonu zobrazení
 
-Pokud webová aplikace obsahuje hodně `DateTime` pole a ve výchozím nastavení, které chcete zobrazit všechny nebo většinu z nich ve formátu pouze data, *DateTime.cshtml* šablony je dobré přístup. Ale co když máte pár data, ve které chcete zobrazit úplný datum a čas? Žádný problém. Můžete vytvořit další šablonu a použít [UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atribut k určení formátování pro úplné datum a čas. Pak můžete selektivně použít dané šablony. Můžete použít [UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atribut na úrovni modelu, nebo můžete zadat šablonu uvnitř zobrazení. V této části najdete postup použití `UIHint` atribut selektivně Změna formátování pro některé instance pole data a času.
+Pokud webová aplikace obsahuje hodně `DateTime` pole a ve výchozím nastavení, které chcete zobrazit všechny nebo většinu z nich ve formátu pouze data, *DateTime.cshtml* šablony je dobré přístup. Ale co když máte pár data, ve které chcete zobrazit úplný datum a čas? Žádný problém. Můžete vytvořit další šablonu a použít [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atribut k určení formátování pro úplné datum a čas. Pak můžete selektivně použít dané šablony. Můžete použít [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atribut na úrovni modelu, nebo můžete zadat šablonu uvnitř zobrazení. V této části najdete postup použití `UIHint` atribut selektivně Změna formátování pro některé instance pole data a času.
 
 Otevřete *Views\Movies\DisplayTemplates\LoudDateTime.cshtml* souborů a existujícího kódu nahraďte následujícím kódem:
 
@@ -121,7 +121,7 @@ Otevřete *Views\Movies\DisplayTemplates\LoudDateTime.cshtml* souborů a existuj
 
 To způsobí, že úplné datum a čas, který se má zobrazit a přidá třídu CSS, která lze text zelená a velké.
 
-Otevřete *Movie.cs* souboru a přidejte [UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atribut `ReleaseDate` vlastnost, jak je znázorněno v následujícím příkladu:
+Otevřete *Movie.cs* souboru a přidejte [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atribut `ReleaseDate` vlastnost, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample8.cs)]
 
@@ -133,7 +133,7 @@ Všimněte si, že `ReleaseDate` vlastnost teď zobrazuje datum a čas zelená v
 
 Vraťte se do `UIHint` atribut *Movie.cs* souborů a nastavte komentář u ho proto *LoudDateTime.cshtml* šablony se nepoužijí. Spusťte aplikaci znovu. Datum vydání se nezobrazí, velký a zelená. To ověřuje, že *Views\Shared\DisplayTemplates\DateTime.cshtml* šablona se používá v zobrazení indexu a podrobnosti.
 
-Jak už bylo zmíněno dříve, můžete taky použít šablonu v zobrazení, který vám umožňuje použít šablonu na jednotlivé instance některá data. Otevřete *Views\Movies\Details.cshtml* zobrazení. Přidat `"LoudDateTime"` jako druhý parametr [Html.DisplayFor](https://msdn.microsoft.com/en-us/library/ee407420.aspx) zavolat `ReleaseDate` pole. Dokončený kód v vypadá takto:
+Jak už bylo zmíněno dříve, můžete taky použít šablonu v zobrazení, který vám umožňuje použít šablonu na jednotlivé instance některá data. Otevřete *Views\Movies\Details.cshtml* zobrazení. Přidat `"LoudDateTime"` jako druhý parametr [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) zavolat `ReleaseDate` pole. Dokončený kód v vypadá takto:
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample9.cshtml)]
 

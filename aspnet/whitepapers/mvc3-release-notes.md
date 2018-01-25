@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: a86fae5698c54a71cb598f508aa91e7d96d1b409
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c1fa5d31f68b44bfdfda61c870a6825eeba18647
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -107,18 +107,18 @@ Tento dokument popisuje verzi RTM, ASP.NET MVC 3 pro Visual Studio 2010. ASP.NET
 
 Kompletní poznámky k verzi pro každou předběžné verzi ASP.NET MVC 3 najdete na webu ASP.NET na následující adrese URL:
 
-https://www.ASP.NET/Learn/whitepapers/mvc3-Release-Notes
+https://www.asp.net/learn/whitepapers/mvc3-release-notes
 
 <a id="installation-notes"></a>
 ## <a name="installation-notes"></a>Poznámky k instalaci
 
 Pokud chcete nainstalovat, ASP.NET MVC 3 RTM pomocí instalačního programu webové platformy (instalace webové platformy), naleznete na následující stránce:
 
-[https://www.microsoft.com/web/gallery/install.aspx?AppID=MVC3](https://www.microsoft.com/web/gallery/install.aspx?appid=MVC3)
+[https://www.microsoft.com/web/gallery/install.aspx?appid=MVC3](https://www.microsoft.com/web/gallery/install.aspx?appid=MVC3)
 
 Alternativně můžete stáhnout instalační program pro ASP.NET MVC 3 RTM pro Visual Studio 2010 na následující stránce:
 
-https://go.microsoft.com/fwlink/?LinkId=208140
+https://go.microsoft.com/fwlink/?LinkID=208140
 
 ASP.NET MVC 3 je možné nainstalovat a spustit souběžně sdílená s ASP.NET MVC 2.
 
@@ -141,7 +141,7 @@ Dokumentace k rozhraní ASP.NET MVC je k dispozici na webu MSDN na následujíc�
 
 Kurzy a další informace o architektuře ASP.NET MVC jsou k dispozici na stránce MVC webu ASP.NET na následující adrese URL:
 
-[https://www.ASP.NET/MVC/](../mvc/index.md)
+[https://www.asp.net/mvc/](../mvc/index.md)
 
 <a id="support"></a>
 ## <a name="support"></a>Podpora
@@ -150,7 +150,7 @@ Toto je plně podporované verze. Informace o získání technické podpory nale
 
 Klidně také odeslání dotazy týkající se této verze na fóru ASP.NET MVC, kde jsou často schopen poskytnout neformální podporu členové komunity služby ASP.NET:
 
-[https://forums.ASP.NET/1146.aspx](https://forums.asp.net/1146.aspx)
+[https://forums.asp.net/1146.aspx](https://forums.asp.net/1146.aspx)
 
 <a id="upgrading"></a>
 ## <a name="upgrading-an-aspnet-mvc-2-project-to-aspnet-mvc-3-tools-update"></a>Upgrade projektu aplikace ASP.NET MVC 2 do architektury ASP.NET MVC 3 nástroje aktualizace
@@ -163,8 +163,8 @@ Pokud chcete ručně upgradovat stávající aplikace ASP.NET MVC 2 do verze 3, 
 2. Zkopírujte následující soubory z projektu ASP.NET MVC 3 do odpovídající umístění projektu ASP.NET MVC 2. Budete muset aktualizovat všechny odkazy na knihovny jQuery, aby se zohlednily nový název souboru (jQuery-1.5.1.js): 
 
     - /Views/Web.config
-    - /Packages.config
-    - adresu /scripts/\*.js
+    - /packages.config
+    - /scripts/\*.js
     - / Obsah nebomotivy/\*.\*
 3. Kopírování *balíčky* složku v kořenovém prázdný projekt ASP.NET MVC 3 řešení do kořenové řešení, která je v adresáři, kde je umístěn soubor .sln na řešení.
 4. Pokud projektu ASP.NET MVC 2 obsahuje všechny oblasti, zkopírujte soubor /Views/Web.config *zobrazení* složky každou oblast.
@@ -251,7 +251,7 @@ Dialogové okno, které použijete k vytvoření nové projekty ASP.NET MVC 3 ob
 
 Šablona projektu seznam obsahuje novou šablonu aplikace intranetu. Tato šablona obsahuje nastavení pro vytváření webovou aplikaci pomocí ověřování systému Windows místo ověřování pomocí formulářů. Protože aplikace sítě intranet vyžaduje některá nastavení služby IIS, která nemůže být zapouzdřené v šabloně projektu, šablona obsahuje soubor readme s pokyny, jak zajistit, že šablona projektu fungovat ve službě IIS. Dokumentace pro novou šablonu intranetu aplikace je k dispozici na webu MSDN na následující adrese URL:
 
-[https://msdn.microsoft.com/en-us/library/gg703322 (VS.98).aspx](https://msdn.microsoft.com/en-us/library/gg703322(VS.98).aspx)
+[https://msdn.microsoft.com/library/gg703322(VS.98).aspx](https://msdn.microsoft.com/library/gg703322(VS.98).aspx)
 
 #### <a name="project-templates-are-now-html5-enabled"></a>Šablony projektů jsou nyní HTML5 povoleno
 
@@ -284,7 +284,7 @@ Kód nejprve se zaměřuje kolem definování model pomocí třídy objektů POC
 
 Dokumentace pro použití kódu Firstwith ASP.NET MVC je k dispozici na webu ASP.NET na následující adresy URL:
 
-[https://www.ASP.NET/MVC/tutorials/Getting-Started-with-mvc3-part1-cs](../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) [https://www.asp.net/entity-framework/tutorials/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application](../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
+[https://www.asp.net/mvc/tutorials/getting-started-with-mvc3-part1-cs](../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) [https://www.asp.net/entity-framework/tutorials/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application](../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
 
 <a id="tu-JavaScriptLibsNuget"></a>
 ### <a name="project-templates-include-javascript-libraries-as-pre-installed-nuget-packages"></a>Šablony projektů zahrnují knihovny JavaScript jako předem nainstalované balíčky NuGet
@@ -465,7 +465,7 @@ V dřívějších verzích, explicitní hodnoty, které byly předány *RenderAc
 - V předchozích verzích rozhraní ASP.NET MVC byly filtry akce vytvořeny každý požadavek s výjimkou v několika případech. Toto chování bylo nikdy zaručenou chování, ale jenom podrobností implementace a smlouvu pro filtry vzít v úvahu je bezstavové. V architektuře ASP.NET MVC 3 filtry jsou uložené v mezipaměti důkladnějšímu. Proto všechny filtry vlastní akce, které nesprávně ukládají stav instance může být poškozený.
 - Došlo ke změně pořadí zpracování pro filtry výjimek pro filtry výjimek, které mají stejnou *pořadí* hodnotu. ASP.NET MVC 2 a starší, filtry výjimky na řadiči, který měl stejné *pořadí* hodnoty jako na metodu akce byly spuštěny před filtry výjimek na metodu akce. To může obvykle být tento případ, kdy byly použity filtry výjimek bez zadané *pořadí* hodnotu. V architektuře ASP.NET MVC 3 Tento pořadí změněno tak, aby se nejprve provede nejvíce konkrétní obslužná rutina výjimky. Jako v předchozích verzích Pokud *pořadí* explicitně zadána vlastnost, filtry jsou spuštěny v uvedeném pořadí.
 - Novou vlastnost s názvem *FileExtensions* byl přidán do *VirtualPathProviderViewEngine* základní třídy. Pokud technologie ASP.NET vyhledá zobrazení cestou (ne podle názvu), jsou považovány za jenom zobrazení s příponou souboru obsažené v této nové vlastnosti seznamu. Toto je narušující změně v aplikacích, kde vlastní sestavovací zprostředkovatel registroval Chcete-li povolit vlastní příponu souboru pro zobrazení webové formuláře a kde zprostředkovatele odkazuje na tato zobrazeními pomocí úplnou cestu, nikoli název. Řešením je změnit hodnotu *FileExtensions* vlastnost, aby zahrnovala vlastního souboru rozšíření.
-- Implementace objektu pro vytváření vlastní zařízení, které přímo implementovat *IControllerFactory* rozhraní musí poskytnout implementaci nového *GetControllerSessionBehavior*  *Metoda, která byla přidána do rozhraní v této verzi*. Obecně je doporučeno, není toto rozhraní implementovat přímo a místo toho jsou odvozeny třídě z *DefaultControllerFactory*.
+- Implementace objektu pro vytváření vlastní zařízení, které přímo implementovat *IControllerFactory* rozhraní musí poskytnout implementaci nového *GetControllerSessionBehavior ** metoda, která byla přidána do v této verzi rozhraní*. Obecně je doporučeno, není toto rozhraní implementovat přímo a místo toho jsou odvozeny třídě z *DefaultControllerFactory*.
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>Známé problémy
@@ -519,7 +519,7 @@ Seznam šablon projektu, který se zobrazí v dialogovém okně je uvedený v re
 <a id="_Toc276711788"></a>
 ### <a name="sessionless-controllers"></a>Nerelační řadiče
 
-Nové *ControllerSessionStateAttribute* vám dává větší kontrolu nad chování stavu relace pro řadiče zadáním [System.Web.SessionState.SessionStateBehavior](https://msdn.microsoft.com/en-us/library/system.web.sessionstate.sessionstatebehavior.aspx) hodnota výčtu.
+Nové *ControllerSessionStateAttribute* vám dává větší kontrolu nad chování stavu relace pro řadiče zadáním [System.Web.SessionState.SessionStateBehavior](https://msdn.microsoft.com/library/system.web.sessionstate.sessionstatebehavior.aspx) hodnota výčtu.
 
 Následující příklad ukazuje, jak chcete-li vypnout stavu relace pro všechny požadavky na řadič.
 
@@ -577,11 +577,11 @@ Když tento kód běží, je výsledkem volání Html.Action("GetDate") uložen�
 
 Když přidáte zobrazení se silnými typy, dialogové okno Přidat zobrazení nyní filtruje více nepoužitelné typy než v předchozích verzích, jako je například mnoho typů rozhraní .NET Framework core. Navíc tento seznam je řazen nyní, pomocí názvu třídy a ne plně kvalifikovaný název typu, takže je snazší najít typy. Název typu se nyní zobrazí jako v následujícím příkladu:
 
-Název třídy (obor názvů)
+ClassName (namespace)
 
 V dřívějších verzích to by byla zobrazena jako následující:
 
-OborNázvů.NázevTřídy
+Namespace.ClassName
 
 <a id="_Toc276711793"></a>
 ### <a name="granular-request-validation"></a>Ověření granulární žádosti
@@ -672,14 +672,14 @@ Nové technologie ASP.NET Web Pages zahrnuje sadu pomocné metody, které jsou u
 | **Pomocné rutiny** | **Popis** |
 | --- | --- |
 | Graf | Vykreslí grafu v rámci zobrazení. Obsahuje metody, jako je například Chart.ToWebImage, Chart.Save a Chart.Write. |
-| Šifrování | Používá k vytvoření správně algoritmy hash řetězce Salt a použita hodnota hash hesla. |
+| Crypto | Používá k vytvoření správně algoritmy hash řetězce Salt a použita hodnota hash hesla. |
 | WebGrid | Vykreslí na kolekci objektů (většinou data z databáze) jako mřížka. Podporuje stránkování a řazení. |
 | Objekt WebImage | Vykreslí bitovou kopii. |
 | Webové pošty | Odešle e-mailovou zprávu. |
 
 Stručná referenční příručka téma, které obsahuje pomocné rutiny a základní syntaxe je k dispozici jako součást v dokumentaci k syntaxi ASP.NET Razor na následující adresu URL:
 
-[https://www.ASP.NET/WebMatrix/tutorials/ASP-NET-Web-Pages-API-Reference](../web-pages/overview/api-reference/asp-net-web-pages-api-reference.md)
+[https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-api-reference](../web-pages/overview/api-reference/asp-net-web-pages-api-reference.md)
 
 ### <a id="0.1__Toc274034220"></a>Podpora vkládání Další závislosti
 
@@ -743,8 +743,8 @@ ASP.NET MVC zahrnuje Ajax pomocné metody například následující:
 
 Tyto metody vyvolání metody akce na serveru, nikoli pomocí úplný postback pomocí jazyka JavaScript. Tato funkce byla aktualizována využívat výhod jQuery nerušivý způsobem. Místo intrusively emitování vložené skripty klienta, tyto pomocné metody oddělte chování z kód generování atributů jazyka HTML5 pomocí *data-ajax* předponu. Chování se potom použije kód pod položkou příslušné soubory JavaScript. Ujistěte se, že následující soubory JavaScript se odkazuje:
 
-- jQuery 1.4.1.js
-- jQuery.unobtrusive.AJAX.js
+- jquery-1.4.1.js
+- jquery.unobtrusive.ajax.js
 
 Tato funkce je povoleno ve výchozím nastavení v souboru Web.config v nové šablony projektu ASP.NET MVC 3, ale je zakázán ve výchozím nastavení pro existující projekty. Další informace najdete v tématu [přidat příznaky celou aplikaci pro ověření klienta a nerušivý JavaScript](#0.1_AddedApplicationWideFlagsForClientValida) dále v tomto dokumentu.
 
@@ -760,9 +760,9 @@ To vyžaduje, aby ViewContext.UnobtrusiveJavaScriptEnabled vlastnost nastavena n
 
 Také zkontrolujte, zda že odkazují následující soubory JavaScript.
 
-- jQuery 1.4.1.js
-- jQuery.Validate.js
-- jQuery.Validate.unobtrusive.js
+- jquery-1.4.1.js
+- jquery.validate.js
+- jquery.validate.unobtrusive.js
 
 Tato funkce je zapnuta ve výchozím nastavení v souboru Web.config v nové šablony projektu ASP.NET MVC 3, ale je zakázán ve výchozím nastavení pro existující projekty. Další informace najdete v tématu [nové příznaky celou aplikaci pro ověření klienta a nerušivý JavaScript](#0.1_AddedApplicationWideFlagsForClientValida) dále v tomto dokumentu.
 
@@ -800,7 +800,7 @@ Předchozí verze preview ASP.NET MVC zahrnuta podpora pro zobrazení pomocí sy
 
 Úvod do pomocí syntaxe jazyka Visual Basic v VBHTML stránky naleznete v kurzu na následující adrese URL:
 
-[https://www.ASP.NET/WebMatrix/tutorials/ASP-NET-Web-Pages-Visual-Basic](../web-pages/overview/getting-started/introducing-razor-syntax-vb.md)
+[https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-visual-basic](../web-pages/overview/getting-started/introducing-razor-syntax-vb.md)
 
 ### <a id="0.1__Toc274034226"></a>Podrobnější kontrolu nad atribut ValidateInputAttribute
 
@@ -864,6 +864,6 @@ Je známý problém, který způsobuje, že ověřování pomocí formulářů p
 
 ## <a id="0.1__Toc274034231"></a>Právní omezení
 
-© Microsoft Corporation. 2011. Všechna práva vyhrazena. Tento dokument je poskytován "jako-je." Informace a názory vyjádřené v tomto dokumentu včetně adres URL a dalších odkazů na internetové weby, mohou změnit bez předchozího upozornění. Můžete na sebe rizika spojená s jejím používáním.
+© 2011 Microsoft Corporation. Všechna práva vyhrazena. Tento dokument je poskytován "jako-je." Informace a názory vyjádřené v tomto dokumentu včetně adres URL a dalších odkazů na internetové weby, mohou změnit bez předchozího upozornění. Můžete na sebe rizika spojená s jejím používáním.
 
 Tento dokument neposkytuje jste žádná zákonná práva duševního vlastnictví produktů společnosti Microsoft. Můžete kopírovat a tento dokument použít pro interní referenční účely.

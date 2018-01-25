@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4122f55c09f94d41f7caa3f86d1fbd5870417a20
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 43aed94fe5b1095af37abdae2cb4c9e67b7d7f6f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-formatting-based-upon-data-vb"></a>Vlastní formátování na základě údajů o (VB)
 ====================
@@ -97,7 +97,7 @@ Následující kód ukazuje, jak určit, zda `UnitPrice` vázána na ovládací 
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample3.vb)]
 
 > [!NOTE]
-> Vzhledem k tomu `UnitPrice` může mít `NULL` hodnota v databázi, nejprve zkontrolujte a ujistěte se, že jsme nejsou zabývajících se `NULL` hodnotu před přístupem k `ProductsRow`na `UnitPrice` vlastnost. Tato kontrola je důležité, protože pokud jsme pokusí o přístup k `UnitPrice` vlastnost, pokud má `NULL` hodnotu `ProductsRow` objekt vyvolá výjimku [StrongTypingException výjimka](https://msdn.microsoft.com/en-us/library/system.data.strongtypingexception.aspx).
+> Vzhledem k tomu `UnitPrice` může mít `NULL` hodnota v databázi, nejprve zkontrolujte a ujistěte se, že jsme nejsou zabývajících se `NULL` hodnotu před přístupem k `ProductsRow`na `UnitPrice` vlastnost. Tato kontrola je důležité, protože pokud jsme pokusí o přístup k `UnitPrice` vlastnost, pokud má `NULL` hodnotu `ProductsRow` objekt vyvolá výjimku [StrongTypingException výjimka](https://msdn.microsoft.com/library/system.data.strongtypingexception.aspx).
 
 
 ## <a name="step-3-formatting-the-unitprice-value-in-the-detailsview"></a>Krok 3: Formátování hodnotu UnitPrice v ovládacím prvku DetailsView
@@ -193,7 +193,7 @@ Jakmile jsme programový odkaz na ovládací prvek webu, jsme podle potřeby zm�
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample12.vb)]
 
 > [!NOTE]
-> Syntaxe pro formátování šablonu prostřednictvím kódu programu přístup k ovládacímu prvku pomocí webové `FindControl("controlID")` a pak nastavení jeho vlastnosti související se styly lze také při použití [TemplateFields](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) v DetailsView nebo GridView ovládací prvky. V našem kurzu další podíváme TemplateFields.
+> Syntaxe pro formátování šablonu prostřednictvím kódu programu přístup k ovládacímu prvku pomocí webové `FindControl("controlID")` a pak nastavení jeho vlastnosti související se styly lze také při použití [TemplateFields](https://msdn.microsoft.com/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) v DetailsView nebo GridView ovládací prvky. V našem kurzu další podíváme TemplateFields.
 
 
 Následující obrázky 7 vidíte FormView při prohlížení produktu jejichž `UnitsInStock` hodnota je větší než 10, zatímco v produktu na obrázku 8 je jeho hodnota menší než 10.

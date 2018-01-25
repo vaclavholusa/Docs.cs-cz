@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 42851cb9b8046ca4f70894b9ec5b671b269da04c
-ms.sourcegitcommit: 97432cbf9b8673bc4ad7012d5b6f2ed273420295
+ms.openlocfilehash: 4e1270f9fb58032d22380117f4ec18b00bd725fc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>Middleware OWIN v integrovaném kanálu služby IIS
 ====================
@@ -36,9 +36,9 @@ To znamená, že všechny aplikace rozhraní, i ty, které ještě nejsou možn�
 
 ## <a name="how-owin-middleware-executes-in-the-iis-integrated-pipeline"></a>Jak middlewaru OWIN, který spouští v integrovaném kanálu služby IIS
 
-Pro konzolové aplikace OWIN, vytvořený kanál aplikací pomocí [konfiguraci spuštění](owin-startup-class-detection.md) je nastaven podle pořadí součásti jsou přidány pomocí `IAppBuilder.Use` metoda. To znamená, kanál OWIN v [Katana](an-overview-of-project-katana.md) runtime zpracuje OMCs v pořadí, by měla zaregistrováno pomocí `IAppBuilder.Use`. V integrovaném kanálu IIS kanál požadavku se skládá z [HttpModules](https://msdn.microsoft.com/en-us/library/ms178468(v=vs.85).aspx) předplatné předem definované sadě událostí kanálu jako [BeginRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.beginrequest.aspx), [AuthenticateRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx), [AuthorizeRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authorizerequest.aspx)atd.
+Pro konzolové aplikace OWIN, vytvořený kanál aplikací pomocí [konfiguraci spuštění](owin-startup-class-detection.md) je nastaven podle pořadí součásti jsou přidány pomocí `IAppBuilder.Use` metoda. To znamená, kanál OWIN v [Katana](an-overview-of-project-katana.md) runtime zpracuje OMCs v pořadí, by měla zaregistrováno pomocí `IAppBuilder.Use`. V integrovaném kanálu IIS kanál požadavku se skládá z [HttpModules](https://msdn.microsoft.com/library/ms178468(v=vs.85).aspx) předplatné předem definované sadě událostí kanálu jako [BeginRequest](https://msdn.microsoft.com/library/system.web.httpapplication.beginrequest.aspx), [AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx), [AuthorizeRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx)atd.
 
-Pokud jsme porovnávat OMC k u [modulu HTTP](https://msdn.microsoft.com/en-us/library/zec9k340(v=vs.85).aspx) na světě ASP.NET, musí být zaregistrovaný OMC správné předem definované kanál události. Například modulu HTTP `MyModule` bude získat volána, když požadavek je teď dostupná [AuthenticateRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx) fáze v kanálu:
+Pokud jsme porovnávat OMC k u [modulu HTTP](https://msdn.microsoft.com/library/zec9k340(v=vs.85).aspx) na světě ASP.NET, musí být zaregistrovaný OMC správné předem definované kanál události. Například modulu HTTP `MyModule` bude získat volána, když požadavek je teď dostupná [AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx) fáze v kanálu:
 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample2.cs?highlight=10)]
 
@@ -57,7 +57,7 @@ Konfigurace spuštění nastaví kanál pomocí komponenty tři middlewaru, prvn
 
 [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample5.cmd)]
 
-Modul runtime Katana namapované všechny komponenty middlewaru OWIN k [PreExecuteRequestHandler](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.prerequesthandlerexecute.aspx) ve výchozím nastavení, která odpovídá událostí kanálu IIS [PreRequestHandlerExecute](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.prerequesthandlerexecute.aspx).
+Modul runtime Katana namapované všechny komponenty middlewaru OWIN k [PreExecuteRequestHandler](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx) ve výchozím nastavení, která odpovídá událostí kanálu IIS [PreRequestHandlerExecute](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx).
 
 ## <a name="stage-markers"></a>Fáze značek
 
@@ -65,7 +65,7 @@ Můžete označit OMCs provést na konkrétní fázemi kanálu pomocí `IAppBuil
 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample6.cs?highlight=13,19)]
 
-`app.UseStageMarker(PipelineStage.Authenticate)` Volání nakonfiguruje všechny komponenty middlewaru dříve zaregistrovaný (v tomto případě naše dvě diagnostiky součásti) ke spuštění na fázi ověřování kanálu. Poslední komponenta middlewaru, (která zobrazí diagnostiky a reaguje na požadavky) se spustí na `ResolveCache` fázi ( [ResolveRequestCache](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.resolverequestcache.aspx) událostí).
+`app.UseStageMarker(PipelineStage.Authenticate)` Volání nakonfiguruje všechny komponenty middlewaru dříve zaregistrovaný (v tomto případě naše dvě diagnostiky součásti) ke spuštění na fázi ověřování kanálu. Poslední komponenta middlewaru, (která zobrazí diagnostiky a reaguje na požadavky) se spustí na `ResolveCache` fázi ( [ResolveRequestCache](https://msdn.microsoft.com/library/system.web.httpapplication.resolverequestcache.aspx) událostí).
 
 Stiskněte F5 a spusťte aplikaci. Ve výstupním okně zobrazí následující:
 

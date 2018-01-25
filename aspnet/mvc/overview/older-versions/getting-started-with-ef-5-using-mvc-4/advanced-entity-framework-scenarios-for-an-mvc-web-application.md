@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: d58a745896b29317c1d1049e3bf1a5ec2e628820
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 148a1aa33f6f713ae471ab14c7180f6c08a8679a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>Pokročilé Entity Framework scénáře pro webové aplikace MVC (10 10)
 ====================
@@ -55,7 +55,7 @@ První rozhraní API sady Entity Framework kód obsahuje metody, které vám umo
 
 - Použití `DbSet.SqlQuery` metoda pro dotazy, které vracejí typy entit. Vrácených objektů musí být na typ očekávaný `DbSet` objektu a jsou automaticky sledovány objektem kontext databáze není-li vypnout sledování. (Najdete v následující části `AsNoTracking` metoda.)
 - Použití `Database.SqlQuery` metoda pro dotazy, které návratové typy, které nejsou entity. Vrácená data není sledována kontext databáze, i když používáte tuto metodu pro načtení typů entit.
-- Použití [Database.ExecuteSqlCommand](https://msdn.microsoft.com/en-us/library/gg679456(v=vs.103).aspx) pro příkazy nejsou dotazem.
+- Použití [Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456(v=vs.103).aspx) pro příkazy nejsou dotazem.
 
 Jednou z výhod použití rozhraní Entity Framework je, že zabraňuje příkazů kódu příliš úzce na konkrétní metodu ukládání dat. Dělá to pomocí generování SQL dotazy a příkazy, které také s není pro zápis sami. Ale existují výjimečných scénáře, kdy budete muset spustit konkrétní dotazy SQL, které jste vytvořili ručně a tyto metody umožňují vám zpracovávat takové výjimky.
 
@@ -255,17 +255,17 @@ Rozhraní Entity Framework Určuje, jak došlo ke změně entity (a proto aktual
 - `DbContext.Entry`
 - `DbChangeTracker.Entries`
 
-Pokud sledujete velký počet entit a jednu z těchto metod zavoláte mnohokrát ve smyčce, můžete dosáhnout výrazné vylepšení výkonu dočasně vypnout pomocí zjišťování automatické změny [AutoDetectChangesEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled(VS.103).aspx) vlastnost. Další informace najdete v tématu [automaticky detekovat změny](https://blogs.msdn.com/b/adonet/archive/2011/02/06/using-dbcontext-in-ef-feature-ctp5-part-12-automatically-detecting-changes.aspx).
+Pokud sledujete velký počet entit a jednu z těchto metod zavoláte mnohokrát ve smyčce, můžete dosáhnout výrazné vylepšení výkonu dočasně vypnout pomocí zjišťování automatické změny [AutoDetectChangesEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled(VS.103).aspx) vlastnost. Další informace najdete v tématu [automaticky detekovat změny](https://blogs.msdn.com/b/adonet/archive/2011/02/06/using-dbcontext-in-ef-feature-ctp5-part-12-automatically-detecting-changes.aspx).
 
 ## <a name="disabling-validation-when-saving-changes"></a>Zakázání ověřování při ukládání změny
 
-Při volání `SaveChanges` metoda, ve výchozím nastavení rozhraní Entity Framework ověří data v všechny vlastnosti všech změněných entit před aktualizací databáze. Pokud jste aktualizovali velký počet entit a jste již zkontrolujete, data, tento pracovní není nutný, a můžete dokonce vytvářet proces ukládání změn trvat méně času můžete dočasně vypnout ověření. Můžete to, že pomocí [ValidateOnSaveEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx) vlastnost. Další informace najdete v tématu [ověření](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx).
+Při volání `SaveChanges` metoda, ve výchozím nastavení rozhraní Entity Framework ověří data v všechny vlastnosti všech změněných entit před aktualizací databáze. Pokud jste aktualizovali velký počet entit a jste již zkontrolujete, data, tento pracovní není nutný, a můžete dokonce vytvářet proces ukládání změn trvat méně času můžete dočasně vypnout ověření. Můžete to, že pomocí [ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx) vlastnost. Další informace najdete v tématu [ověření](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx).
 
 ## <a name="summary"></a>Souhrn
 
 Dokončení této série kurzů na používající rozhraní Entity Framework v aplikaci ASP.NET MVC. Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
-Další informace o tom, jak nasadit webovou aplikaci, až když jste sestavili najdete v tématu [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/en-us/library/bb386521.aspx) v knihovně MSDN.
+Další informace o tom, jak nasadit webovou aplikaci, až když jste sestavili najdete v tématu [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx) v knihovně MSDN.
 
 Informace o dalších témat souvisejících s MVC, jako je například ověřování a autorizaci, najdete v článku [doporučené prostředky aplikace MVC](../../getting-started/recommended-resources-for-mvc.md).
 
@@ -277,7 +277,7 @@ Informace o dalších témat souvisejících s MVC, jako je například ověřov
 - [Rick Anderson](https://blogs.msdn.com/b/rickandy/) (twitter [ @RickAndMSFT ](http://twitter.com/RickAndMSFT)) společně vytvořené v tomto kurzu a nebyla většinu práce aktualizace pro EF 5 a MVC 4. Rick je senior programovací zapisovač pro Microsoft zaměřením na Azure a MVC.
 - [Rowan Lukeš](http://www.romiller.com) a ostatní členové týmu rozhraní Entity Framework asistované s recenze kódu a pomohl ladění mnohé problémy s migrací, které vznikly při byly aktualizujeme kurz pro EF 5.
 
-## <a name="vb"></a>JAZYKA VISUAL BASIC
+## <a name="vb"></a>VB
 
 Při tomto kurzu bylo původně vytvořeno, jsme k dispozici jak C# a VB verzích dokončené stažení projektu. Pomocí této aktualizace poskytujeme projekt C# ke stažení pro každou kapitolu, aby bylo snazší začít pracovat kdekoli v řadě, ale z důvodu omezení čas a dalších priority není to pro VB. Pokud sestavení projektu jazyka Visual Basic, pomocí tyto kurzy a by chtěl který sdílet s ostatními, dejte nám vědět.
 

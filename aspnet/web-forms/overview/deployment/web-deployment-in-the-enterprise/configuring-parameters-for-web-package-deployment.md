@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: dd1ae266740ea4728c0624b1833a98ac262e0e5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12a4ba8ad30df43e7192500ad4514dfa9679f899
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>Konfigurace parametrů pro nasazení webového balíčku
 ====================
@@ -88,7 +88,7 @@ Kromě Parametrizace adresu URL koncového bodu v balíčku pro nasazení, jako 
 
 Pokud ručně nainstalovat balíček pro nasazení, Správce služby IIS zobrazí výzvu pro adresa koncového bodu služby spolu s vlastností, které byly automaticky parametry. Při instalaci balíčku pro nasazení tak, že spustíte *. deploy.cmd* souboru, můžete upravit *SetParameters.xml* souboru k zadání hodnoty pro adresa koncového bodu služby společně s hodnoty pro vlastnosti, které byly automaticky parametry.
 
-Úplné podrobnosti o tom, jak vytvořit *parameters.xml* souborů najdete v tématu [postupy: použití parametrů ke konfiguraci nastavení při balíček pro nasazení je nainstalován](https://msdn.microsoft.com/en-us/library/ff398068.aspx). Proces s názvem **chcete používat parametry nasazení pro nastavení souboru Web.config** poskytuje podrobné pokyny.
+Úplné podrobnosti o tom, jak vytvořit *parameters.xml* souborů najdete v tématu [postupy: použití parametrů ke konfiguraci nastavení při balíček pro nasazení je nainstalován](https://msdn.microsoft.com/library/ff398068.aspx). Proces s názvem **chcete používat parametry nasazení pro nastavení souboru Web.config** poskytuje podrobné pokyny.
 
 ## <a name="modifying-the-setparametersxml-file"></a>Úprava souboru SetParameters.xml
 
@@ -144,7 +144,7 @@ Dalším tématu [nasazení webových balíčků](deploying-web-packages.md), po
 
 ## <a name="further-reading"></a>Další čtení
 
-Informace o tom, jak vytvořit webových balíčků najdete v tématu [budova a projekty webových aplikací balení](building-and-packaging-web-application-projects.md). Pokyny o tom, jak ve skutečnosti nasazení webového balíčku najdete v tématu [nasazení webových balíčků](deploying-web-packages.md). Podrobný návod k vytvoření *parameters.xml* souborů najdete v tématu [postupy: použití parametrů ke konfiguraci nastavení při balíček pro nasazení je nainstalován](https://msdn.microsoft.com/en-us/library/ff398068.aspx).
+Informace o tom, jak vytvořit webových balíčků najdete v tématu [budova a projekty webových aplikací balení](building-and-packaging-web-application-projects.md). Pokyny o tom, jak ve skutečnosti nasazení webového balíčku najdete v tématu [nasazení webových balíčků](deploying-web-packages.md). Podrobný návod k vytvoření *parameters.xml* souborů najdete v tématu [postupy: použití parametrů ke konfiguraci nastavení při balíček pro nasazení je nainstalován](https://msdn.microsoft.com/library/ff398068.aspx).
 
 Další obecné informace o Parametrizace v nasazení webu, najdete v části [Parametrizace webového nasazení v akci](https://go.microsoft.com/?linkid=9805119) (příspěvek na blogu).
 

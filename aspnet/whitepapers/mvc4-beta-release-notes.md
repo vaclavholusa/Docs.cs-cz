@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: 4af2df61ab4507b1f100d6bb75777da1168c5a75
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 58ae178a0e6578d8353e1a4e9d67fc1026e99f55
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 - [Upgrade projektu aplikace ASP.NET MVC 3 na rozhraní ASP.NET MVC 4](#_Toc303253806)
 - [Nové funkce ve verzi Beta architektury ASP.NET MVC 4](#_Toc303253807)
 
-    - [Rozhraní ASP.NET Web API](#_Toc317096197)
+    - [Webové rozhraní API v ASP.NET](#_Toc317096197)
     - [Aplikace ASP.NET jedné stránky](#_Toc317096198)
     - [Vylepšení výchozí šablony projektů](#_Toc303253808)
     - [Šablona projektu mobilní](#_Toc303253809)
@@ -60,7 +60,7 @@ ASP.NET MVC 4 lze nainstalovat a spustit vedle sebe v architektuře ASP.NET MVC 
 
 Dokumentace k rozhraní ASP.NET MVC je k dispozici na webu MSDN na následující adrese URL:
 
-[https://go.microsoft.com/fwlink/?LinkId=243043](https://go.microsoft.com/fwlink/?LinkID=243043)
+[https://go.microsoft.com/fwlink/?LinkID=243043](https://go.microsoft.com/fwlink/?LinkID=243043)
 
 Kurzy a další informace o architektuře ASP.NET MVC jsou dostupné na stránce webu ASP.NET MVC 4 ([https://www.asp.net/mvc/mvc4](../mvc/mvc4.md)).
 
@@ -245,7 +245,7 @@ Nová funkce recepty umožňuje sadě Visual Studio pro generování kódu pro k
 
 Nyní můžete napsat metody asynchronní akce v jedné metody, které vracejí objekt typu *úloh* nebo *úloh&lt;ActionResult&gt;*.
 
-Například, pokud používáte Visual C# 5 (nebo pomocí [asynchronní CTP](https://msdn.microsoft.com/en-us/vstudio/async.aspx)), můžete vytvořit metody asynchronní akce, která vypadá třeba takto:
+Například, pokud používáte Visual C# 5 (nebo pomocí [asynchronní CTP](https://msdn.microsoft.com/vstudio/async.aspx)), můžete vytvořit metody asynchronní akce, která vypadá třeba takto:
 
 [!code-csharp[Main](mvc4-beta-release-notes/samples/sample8.cs)]
 

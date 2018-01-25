@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 874b8b32c5a7cfd19156f276bd5367ef9412aa9b
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 7bb7e5b9c821f87e73763f5f5c4f9fbcd751235f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Odkaz na konfiguraci základní modul ASP.NET
 
@@ -60,7 +60,7 @@ Základní modul ASP.NET je nakonfigurovat přes web nebo aplikaci *web.config* 
 
 | Atribut | Popis |
 | --- | --- |
-| processPath | <p>Požadovaný atribut typu string.</p><p>Cesta ke spustitelnému souboru, který se spustí proces naslouchání požadavkům HTTP. Jsou podporovány relativní cesty. Pokud cesta začíná '.', cesta se považuje za relativní vůči kořenovému adresáři webu.</p><p>Není k dispozici žádná výchozí hodnota.</p> |
+| processPath | <p>Požadovaný atribut typu string.</p><p>Cesta ke spustitelnému souboru, který se spustí proces naslouchání požadavkům HTTP. Jsou podporovány relativní cesty. Pokud cesta začíná '.', cesta se považuje za relativní vůči kořenovému adresáři webu.</p><p>Výchozí hodnota neexistuje.</p> |
 | argumenty | <p>Volitelný řetězec atributu.</p><p>Argumenty pro spustitelný soubor určený v **processPath**.</p><p>Výchozí hodnota je prázdný řetězec.</p> |
 | startupTimeLimit | <p>Atribut volitelné celé číslo.</p><p>Doba v sekundách, které vyčká, modul pro spuštění procesu naslouchání na portu spustitelný soubor. Pokud je tento časový limit překročen, modul se ukončit proces. Modul se pokusí znovu spusťte proces, při přijetí nového požadavku a bude dále pokoušet pro restartování procesu na následné příchozí žádosti, pokud aplikace se nepodaří spustit **rapidFailsPerMinute** číslo kolikrát za poslední minutu postupného.</p><p>Výchozí hodnota je 120.</p> |
 | shutdownTimeLimit | <p>Atribut volitelné celé číslo.</p><p>Doba v sekundách, pro které modul vyčká pro spustitelný soubor řádně vypnutí při *app_offline.htm* je detekován soubor.</p><p>Výchozí hodnota je 10.</p> |
@@ -89,7 +89,7 @@ Následující příklad nastaví dvou proměnných prostředí. `ASPNETCORE_ENV
 </aspNetCore>
 ```
 
-## <a name="appofflinehtm"></a>App_offline.htm
+## <a name="appofflinehtm"></a>app_offline.htm
 
 Pokud umístit soubor s názvem *app_offline.htm* v kořenovém adresáři adresář webové aplikace, bude modul základní technologie ASP.NET pokusí řádně vypnutí aplikace a zastavit zpracování příchozích požadavků. Pokud aplikace stále běží `shutdownTimeLimit` počet sekund, bude modul ASP.NET Core kill běžící proces.
 
@@ -120,7 +120,7 @@ V tématu [konfigurace prostřednictvím web.config](#configuration-via-webconfi
 
 ## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>Modul ASP.NET Core s službu IIS sdílenou konfiguraci
 
-Základní modul ASP.NET instalační program spustí s oprávněními **systému** účtu. Vzhledem k tomu, že místní systémový účet neobsahuje oprávnění k provádění oprávnění pro cestu ke sdílené složce, kterou používá sdílené konfiguraci IIS, instalační program, se setkají chybu při pokusu o konfiguraci nastavení modulu v odepření přístupu  *applicationHost.config* ve sdílené složce.
+Základní modul ASP.NET instalační program spustí s oprávněními **systému** účtu. Vzhledem k tomu, že místní systémový účet nemá změnit oprávnění pro cestu ke sdílené složce, kterou používá sdílené konfiguraci IIS, instalační program, se setkají chybu při pokusu o konfiguraci nastavení modulu v odepření přístupu  *applicationHost.config* ve sdílené složce.
 
 Nepodporované řešením je zakázat sdílené konfiguraci IIS, spusťte instalační program, exportovat aktualizovaný *applicationHost.config* souborů do sdílené složky a znovu povolit sdílenou konfiguraci IIS.
 
@@ -128,35 +128,35 @@ Nepodporované řešením je zakázat sdílené konfiguraci IIS, spusťte instal
 
 ### <a name="module"></a>Modul
 
-**Služba IIS (x86 nebo amd64):**
+**IIS (x86/amd64):**
 
    * %windir%\System32\inetsrv\aspnetcore.dll
 
    * %windir%\SysWOW64\inetsrv\aspnetcore.dll
 
-**Služba IIS Express (x86 nebo amd64):**
+**IIS Express (x86/amd64):**
 
    * %ProgramFiles%\IIS Express\aspnetcore.dll
 
-   * % ProgramFiles (x86) %\IIS Express\aspnetcore.dll
+   * %ProgramFiles(x86)%\IIS Express\aspnetcore.dll
 
 ### <a name="schema"></a>Schéma
 
-**SLUŽBY IIS**
+**IIS**
 
-   * %windir%\System32\inetsrv\config\schema\aspnetcore_schema.XML
+   * %windir%\System32\inetsrv\config\schema\aspnetcore_schema.xml
 
-**Služby IIS Express**
+**IIS Express**
 
    * %ProgramFiles%\IIS Express\config\schema\aspnetcore_schema.xml
 
 ### <a name="configuration"></a>Konfigurace
 
-**SLUŽBY IIS**
+**IIS**
 
    * %windir%\System32\inetsrv\config\applicationHost.config
 
-**Služby IIS Express**
+**IIS Express**
 
    * .vs\config\applicationHost.config
 

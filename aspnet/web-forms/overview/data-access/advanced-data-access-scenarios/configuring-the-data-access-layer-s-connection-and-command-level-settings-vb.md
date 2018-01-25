@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f2da69ba1b7511e8659ab7212785e8148b438a4b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ab392f2a7d9b6cf97da920f899aea23379209f96
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>Konfigurace nastavení připojení a příkaz úrovně Data Access Layer (VB)
 ====================
@@ -37,7 +37,7 @@ V tomto kurzu vyzkoušíme jak získat přístup k nastavení připojení a př�
 
 ## <a name="working-with-data-using-adonet"></a>Práce s daty pomocí ADO.NET
 
-Rozhraní Microsoft .NET Framework obsahuje nadbytku třídy vytvořena speciálně pro práci s daty. Tyto třídy, v rámci nalezen [ `System.Data` obor názvů](https://msdn.microsoft.com/en-us/library/system.data.aspx), se označují jako *ADO.NET* třídy. Některé třídy pod pojmem ADO.NET, jsou svázané s konkrétní *zprostředkovatele dat*. Zprostředkovatele dat si můžete představit jako komunikační kanál, který umožňuje informací mezi třídy ADO.NET a příslušné úložiště data. Existuje zobecněný poskytovatelů, jako je OleDb a rozhraní ODBC, jakož i poskytovatelé, které jsou speciálně určené pro konkrétní databázi systému. Například i když je možné se připojit k databázi systému Microsoft SQL Server pomocí zprostředkovatele služeb OleDb, poskytovatel Sqlclienta je mnohem efektivnější jako byl navržen a optimalizované speciálně pro SQL Server.
+Rozhraní Microsoft .NET Framework obsahuje nadbytku třídy vytvořena speciálně pro práci s daty. Tyto třídy, v rámci nalezen [ `System.Data` obor názvů](https://msdn.microsoft.com/library/system.data.aspx), se označují jako *ADO.NET* třídy. Některé třídy pod pojmem ADO.NET, jsou svázané s konkrétní *zprostředkovatele dat*. Zprostředkovatele dat si můžete představit jako komunikační kanál, který umožňuje informací mezi třídy ADO.NET a příslušné úložiště data. Existuje zobecněný poskytovatelů, jako je OleDb a rozhraní ODBC, jakož i poskytovatelé, které jsou speciálně určené pro konkrétní databázi systému. Například i když je možné se připojit k databázi systému Microsoft SQL Server pomocí zprostředkovatele služeb OleDb, poskytovatel Sqlclienta je mnohem efektivnější jako byl navržen a optimalizované speciálně pro SQL Server.
 
 Při prostřednictvím kódu programu přístupu k datům, se obvykle používá vzoru následující:
 
@@ -45,7 +45,7 @@ Při prostřednictvím kódu programu přístupu k datům, se obvykle používá
 2. Příkaz.
 3. Pro `SELECT` dotazy, pracovat s výsledné záznamy.
 
-Existují samostatné třídy ADO.NET pro provádění jednotlivých kroků. Pro připojení k databázi pomocí poskytovatel Sqlclienta, například použít [ `SqlConnection` třída](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnection(VS.80).aspx). K problému `INSERT`, `UPDATE`, `DELETE`, nebo `SELECT` příkaz k databázi, použijte [ `SqlCommand` – třída](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.aspx).
+Existují samostatné třídy ADO.NET pro provádění jednotlivých kroků. Pro připojení k databázi pomocí poskytovatel Sqlclienta, například použít [ `SqlConnection` třída](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(VS.80).aspx). K problému `INSERT`, `UPDATE`, `DELETE`, nebo `SELECT` příkaz k databázi, použijte [ `SqlCommand` – třída](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx).
 
 S výjimkou [zabalení změny databáze v rámci transakce](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb.md) kurzu jsme nebyly museli vytvářet žádná označována nízké úrovně ADO.NET kódu, protože TableAdapters automaticky generovaný kód obsahuje funkce, které jsou potřebné k připojení k databázi, vydávání příkazů, načtení dat a naplnění dat do DataTables. Může však nastat situace, když je potřeba upravit tyto nízké úrovně nastavení. Prostřednictvím několika dalších krocích vyzkoušíme postup klepněte na do objektů ADO.NET interně používané TableAdapters.
 
@@ -121,7 +121,7 @@ Uložte datovou sadu a pak se vraťte do `ProductsBLL` třídy. Jako dříve, p�
 
 ## <a name="step-3-examining-the-command-related-properties"></a>Krok 3: Prozkoumání vlastností souvisejících s příkaz
 
-TableAdapter se skládá z hlavní dotaz, který ve výchozím nastavení, je automaticky generovaný `INSERT`, `UPDATE`, a `DELETE` příkazy. Tento hlavní dotaz s `INSERT`, `UPDATE`, a `DELETE` příkazy jsou implementované v kódu TableAdapter s jako objekt adaptér dat ADO.NET pomocí `Adapter` vlastnost. Jako s jeho `Connection` vlastnost, `Adapter` vlastnosti s datový typ je dáno poskytovatel dat použít. Vzhledem k tomu, že tyto kurzy použít poskytovatel Sqlclienta `Adapter` vlastnost je typu [ `SqlDataAdapter` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqldataadapter(VS.80).aspx).
+TableAdapter se skládá z hlavní dotaz, který ve výchozím nastavení, je automaticky generovaný `INSERT`, `UPDATE`, a `DELETE` příkazy. Tento hlavní dotaz s `INSERT`, `UPDATE`, a `DELETE` příkazy jsou implementované v kódu TableAdapter s jako objekt adaptér dat ADO.NET pomocí `Adapter` vlastnost. Jako s jeho `Connection` vlastnost, `Adapter` vlastnosti s datový typ je dáno poskytovatel dat použít. Vzhledem k tomu, že tyto kurzy použít poskytovatel Sqlclienta `Adapter` vlastnost je typu [ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter(VS.80).aspx).
 
 TableAdapter s `Adapter` vlastnost má tři vlastnosti typu `SqlCommand` využívající na problém `INSERT`, `UPDATE`, a `DELETE` příkazy:
 
@@ -129,7 +129,7 @@ TableAdapter s `Adapter` vlastnost má tři vlastnosti typu `SqlCommand` využí
 - `UpdateCommand`
 - `DeleteCommand`
 
-A `SqlCommand` objekt je odpovědná za zasílání konkrétní dotaz do databáze a obsahuje vlastnosti, například: [ `CommandText` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtext.aspx), která obsahuje příkaz ad-hoc SQL nebo uloženou proceduru provést; a [ `Parameters` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.parameters.aspx), což je kolekce `SqlParameter` objekty. Jak jsme viděli zpět v [vytváření Data Access Layer](../introduction/creating-a-data-access-layer-vb.md) kurzu těchto příkazů objekty lze přizpůsobit prostřednictvím okna Vlastnosti.
+A `SqlCommand` objekt je odpovědná za zasílání konkrétní dotaz do databáze a obsahuje vlastnosti, například: [ `CommandText` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtext.aspx), která obsahuje příkaz ad-hoc SQL nebo uloženou proceduru provést; a [ `Parameters` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.parameters.aspx), což je kolekce `SqlParameter` objekty. Jak jsme viděli zpět v [vytváření Data Access Layer](../introduction/creating-a-data-access-layer-vb.md) kurzu těchto příkazů objekty lze přizpůsobit prostřednictvím okna Vlastnosti.
 
 Kromě jeho hlavní dotazů TableAdapter může obsahovat proměnné několik metod, která při vyvolání, odesílání zadaný příkaz k databázi. Objekt příkazu hlavní dotazu s a objekty příkaz pro všechny další metody jsou uloženy v TableAdapter s `CommandCollection` vlastnost.
 
@@ -146,7 +146,7 @@ V ideálním případě by měla zůstat informace na úrovni příkaz zapouzdř
 
 Vzhledem k tomu, že TableAdapter má jenom jeden `Connection` vlastnost kód pro vystavení nastavení úroveň připojení je přímočará. Si trochu složitější při úpravě nastavení úrovně příkaz, protože TableAdapter může mít více objektů příkaz – `InsertCommand`, `UpdateCommand`, a `DeleteCommand`, společně s proměnlivým počtem příkaz objekty v `CommandCollection` Vlastnost. Při aktualizaci nastavení příkaz úrovně se tato nastavení bude nutné rozšíří do všech objektů příkaz.
 
-Představte si například, že byly v TableAdapter, kterou trvala mimořádná dlouhou dobu spuštění některých dotazů. Při použití provést jednu z těchto dotazů TableAdapter, budeme chtít zvýšit objekt příkazu s [ `CommandTimeout` vlastnost](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx). Tato vlastnost určuje počet sekund pro čekání na spuštění příkazu a výchozí nastavení je 30.
+Představte si například, že byly v TableAdapter, kterou trvala mimořádná dlouhou dobu spuštění některých dotazů. Při použití provést jednu z těchto dotazů TableAdapter, budeme chtít zvýšit objekt příkazu s [ `CommandTimeout` vlastnost](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx). Tato vlastnost určuje počet sekund pro čekání na spuštění příkazu a výchozí nastavení je 30.
 
 Povolit `CommandTimeout` vlastnost, která má být upraven BLL, přidejte následující `Public` metodu `ProductsDataTable` pomocí souboru třídu vytvořili v kroku 2 (`ProductsTableAdapter.ConnectionAndCommandSettings.vb`):
 

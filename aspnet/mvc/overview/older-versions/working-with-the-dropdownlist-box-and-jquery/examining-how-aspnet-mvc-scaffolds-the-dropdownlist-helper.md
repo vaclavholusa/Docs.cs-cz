@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: b5210f9a29f82fbadd0e6dd2d81bd85e7f23ae7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 737773ab424b3ec3b6139b8c238a60ca23de2e69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Prozkoumání, jak rozhraní ASP.NET MVC scaffolds pomocná rozevírací seznam
 ====================
@@ -60,7 +60,7 @@ Stisknutím kombinace kláves CTRL + F5 a spusťte aplikaci. Vyberte k **správc
 
 ### <a name="the-html-select-tag"></a>Značka HTML vyberte
 
-HTML `<select>` – element (vytvořený HTML [rozevírací seznam](https://msdn.microsoft.com/en-us/library/dd492948.aspx) pomocné rutiny) se používá k zobrazení úplný seznam hodnot (například seznam žánry). Pro úpravy formulářů Pokud se aktuální hodnota označuje, můžete seznamu výběru zobrazit aktuální hodnota. Jsme viděli dříve tomto při Nastaví vybrané hodnoty **komedie**. Seznam select je ideální pro zobrazení kategorie nebo dat cizího klíče. `<select>` Element pro cizí klíč Genre zobrazí seznam názvů možné genre, ale při ukládání formuláře je vlastnost Genre aktualizovat hodnotou Genre cizího klíče, nikoli název zobrazený genre. Na následujícím obrázku je genre vybrané **Disco** a umělce **Donna letní**.
+HTML `<select>` – element (vytvořený HTML [rozevírací seznam](https://msdn.microsoft.com/library/dd492948.aspx) pomocné rutiny) se používá k zobrazení úplný seznam hodnot (například seznam žánry). Pro úpravy formulářů Pokud se aktuální hodnota označuje, můžete seznamu výběru zobrazit aktuální hodnota. Jsme viděli dříve tomto při Nastaví vybrané hodnoty **komedie**. Seznam select je ideální pro zobrazení kategorie nebo dat cizího klíče. `<select>` Element pro cizí klíč Genre zobrazí seznam názvů možné genre, ale při ukládání formuláře je vlastnost Genre aktualizovat hodnotou Genre cizího klíče, nikoli název zobrazený genre. Na následujícím obrázku je genre vybrané **Disco** a umělce **Donna letní**.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image4.png)
 
@@ -70,11 +70,11 @@ Otevřete *Controllers\StoreManagerController.cs* souboru a najděte `HTTP GET C
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample5.cs)]
 
-`Create` Metoda přidá dva [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist.aspx) objekty ke `ViewBag`, jeden, který bude obsahovat informace genre a jeden, který bude obsahovat umělcem informace. [SelectList](https://msdn.microsoft.com/en-us/library/dd505286.aspx) přetížení konstruktoru používá výše má tři argumenty:
+`Create` Metoda přidá dva [SelectList](https://msdn.microsoft.com/library/system.web.mvc.selectlist.aspx) objekty ke `ViewBag`, jeden, který bude obsahovat informace genre a jeden, který bude obsahovat umělcem informace. [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) přetížení konstruktoru používá výše má tři argumenty:
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample6.cs)]
 
-1. *položky*: [rozhraní IEnumerable](https://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx) obsahující položky v seznamu. V příkladu nahoře, vrácený seznam žánry `db.Genres`.
+1. *položky*: [rozhraní IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) obsahující položky v seznamu. V příkladu nahoře, vrácený seznam žánry `db.Genres`.
 2. *dataValueField*: název vlastnosti v **rozhraní IEnumerable** seznamu, který obsahuje hodnotu klíče. V příkladu nahoře `GenreId` a `ArtistId`.
 3. *dataTextField*: název vlastnosti v **rozhraní IEnumerable** seznamu, který obsahuje informace k zobrazení. V umělci a tabulka genre `name` pole se používá.
 
@@ -84,7 +84,7 @@ Otevřete *Views\StoreManager\Create.cshtml* soubor a zkontrolujte `Html.DropDow
 
 První řádek ukazuje, že zobrazení pro vytváření trvá `Album` modelu. V `Create` výše uvedená metoda, byl předán žádný model, tak získá zobrazení **null** `Album` modelu. V tomto okamžiku se vytváří nové album proto nemáme žádné `Album` data pro ni.
 
-[Html.DropDownList](https://msdn.microsoft.com/en-us/library/dd492948.aspx) přetížení výše uvedeném převezme název pole, které chcete vytvořit vazbu k modelu. Tento název se používá také k Hledat **ViewBag** objekt obsahující [SelectList](https://msdn.microsoft.com/en-us/library/dd505286.aspx) objektu. Pomocí této přetížení, je nutné na název **ViewBag SelectList** objekt `GenreId`. Druhý parametr (`String.Empty`) je text, který se zobrazí, pokud je vybrána žádná položka. Toto je přesně co chceme, při vytváření nové album. Je-li druhý parametr odebrat a použít následující kód:
+[Html.DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) přetížení výše uvedeném převezme název pole, které chcete vytvořit vazbu k modelu. Tento název se používá také k Hledat **ViewBag** objekt obsahující [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) objektu. Pomocí této přetížení, je nutné na název **ViewBag SelectList** objekt `GenreId`. Druhý parametr (`String.Empty`) je text, který se zobrazí, pokud je vybrána žádná položka. Toto je přesně co chceme, při vytváření nové album. Je-li druhý parametr odebrat a použít následující kód:
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample8.cshtml)]
 

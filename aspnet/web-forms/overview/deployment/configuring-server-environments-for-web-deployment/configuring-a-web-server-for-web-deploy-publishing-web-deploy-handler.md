@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: 2127a98a0abf2c94e32b907d945c9b4d36fb2360
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 81848c683fb9ddaa8942f030a520847a3c89fde0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>Konfigurace webového serveru pro Web nasazení publikování (Web Deploy obslužné rutiny)
 ====================
@@ -67,7 +67,7 @@ Toto téma vám ukáže, jak provést všechny tyto postupy. Úlohy a postupy v 
 - Server má statickou IP adresu.
 
 > [!NOTE]
-> Další informace o připojení počítače k doméně, najdete v části [připojení počítače k doméně a protokolování na](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx). Další informace o konfiguraci statických IP adres najdete v tématu [nakonfigurovat statickou IP adresu](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx).
+> Další informace o připojení počítače k doméně, najdete v části [připojení počítače k doméně a protokolování na](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Další informace o konfiguraci statických IP adres najdete v tématu [nakonfigurovat statickou IP adresu](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx).
 
 
 ## <a name="install-products-and-components"></a>Nainstalujte produkty a součásti
@@ -114,7 +114,7 @@ V takovém případě musíte nainstalovat tyto věci:
 13. Přečtěte si licenční podmínky a pokud vyjadřujete svůj souhlas s podmínkami, klikněte na **souhlasím**.
 14. Po dokončení instalace klikněte na tlačítko **Dokončit**a pak zavřete **webové platformy verze 3.0** okno.
 
-Pokud jste nainstalovali rozhraní .NET Framework 4.0, před instalací služby IIS, budete muset spustit [registrační nástroj](https://msdn.microsoft.com/en-us/library/k6h9cz8h(v=VS.100).aspx) (aspnet\_regiis.exe) pro službu IIS zaregistrovat nejnovější verzi technologie ASP.NET. Pokud to neuděláte, zjistíte, že služba IIS bude poskytovat statický obsah (jako jsou soubory HTML) bez problémů, ale vrátí **HTTP Chyba 404.0 – nenalezeno** při pokusu přejděte do obsahu ASP.NET. Následující postup vám pomůže zajistit, aby je zaregistrovány technologii ASP.NET 4.0.
+Pokud jste nainstalovali rozhraní .NET Framework 4.0, před instalací služby IIS, budete muset spustit [registrační nástroj](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx) (aspnet\_regiis.exe) pro službu IIS zaregistrovat nejnovější verzi technologie ASP.NET. Pokud to neuděláte, zjistíte, že služba IIS bude poskytovat statický obsah (jako jsou soubory HTML) bez problémů, ale vrátí **HTTP Chyba 404.0 – nenalezeno** při pokusu přejděte do obsahu ASP.NET. Následující postup vám pomůže zajistit, aby je zaregistrovány technologii ASP.NET 4.0.
 
 **Chcete-li službu IIS zaregistrovat technologii ASP.NET 4.0**
 
@@ -210,7 +210,7 @@ I když není co můžete zastavit z nasazení obsahu na výchozí web ve služb
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image11.png)
 
     > [!NOTE]
-    > V produkčním prostředí budete pravděpodobně chtít hostování vašeho webu na portu 80 a Konfigurace hlavičky hostitele, společně s odpovídající záznamy DNS. Další informace o konfiguraci hlavičky hostitele ve službě IIS 7 najdete v tématu [konfigurace hlavičku hostitele pro webový server (IIS 7)](https://technet.microsoft.com/en-us/library/cc753195(WS.10).aspx). Další informace o roli serveru DNS v systému Windows Server 2008 R2 najdete v tématu [přehled systému DNS Server](https://technet.microsoft.com/en-gb/library/cc770392.aspx) a [DNS Server](https://technet.microsoft.com/en-us/windowsserver/dd448607).
+    > V produkčním prostředí budete pravděpodobně chtít hostování vašeho webu na portu 80 a Konfigurace hlavičky hostitele, společně s odpovídající záznamy DNS. Další informace o konfiguraci hlavičky hostitele ve službě IIS 7 najdete v tématu [konfigurace hlavičku hostitele pro webový server (IIS 7)](https://technet.microsoft.com/library/cc753195(WS.10).aspx). Další informace o roli serveru DNS v systému Windows Server 2008 R2 najdete v tématu [přehled systému DNS Server](https://technet.microsoft.com/en-gb/library/cc770392.aspx) a [DNS Server](https://technet.microsoft.com/windowsserver/dd448607).
 9. V **akce** podokně v části **upravit web**, klikněte na tlačítko **vazby**.
 10. V **vazby webu** dialogové okno, klikněte na tlačítko **přidat**.
 
@@ -254,8 +254,8 @@ Většina běžný postup je přiřadit oprávnění k místní **IIS\_IUSRS** s
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image15.png)
 5. V **vybrat uživatele nebo skupiny** dialogové okno, typ **IIS\_IUSRS**, klikněte na tlačítko **Kontrola názvů**a potom klikněte na **OK**.
-6. V **oprávnění pro***[název složky]* dialogové okno, Všimněte si, že byl přiřazen do nové skupiny **čtení &amp; provést**, **složku seznamu obsah**, a **čtení** oprávnění ve výchozím nastavení. Nechte beze změny a klikněte na tlačítko **OK**.
-7. Klikněte na tlačítko **OK** zavřete *[název složky]***vlastnosti** dialogové okno.
+6. V **oprávnění pro *** [název složky]* dialogové okno, Všimněte si, že byl přiřazen do nové skupiny **čtení &amp; provést**, **zobrazovat obsah složky**, a **Čtení** oprávnění ve výchozím nastavení. Nechte beze změny a klikněte na tlačítko **OK**.
+7. Klikněte na tlačítko **OK** zavřete *[název složky] *** vlastnosti** dialogové okno.
 
 Jako poslední úlohy je nutné udělit příslušná oprávnění k uživatel není správcem, jehož pověření, které použijete k nasazení obsahu. Tento uživatel vyžaduje oprávnění pro nasazení obsahu vzdáleně na váš web.
 
@@ -288,7 +288,7 @@ Ve výchozím nastavení služba správy webové služby IIS naslouchá na portu
 | Odchozí | 8172 | všechny | TCP |
   
 
-Další informace o konfiguraci pravidla v bráně Windows Firewall najdete v tématu [konfigurace pravidel brány Firewall](https://technet.microsoft.com/en-us/library/dd448559(WS.10).aspx). Brány firewall třetích stran najdete v dokumentaci k produktu.
+Další informace o konfiguraci pravidla v bráně Windows Firewall najdete v tématu [konfigurace pravidel brány Firewall](https://technet.microsoft.com/library/dd448559(WS.10).aspx). Brány firewall třetích stran najdete v dokumentaci k produktu.
 
 ## <a name="conclusion"></a>Závěr
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 245e381eca2aca61be5f860d1ec9994b482a9863
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2bd2ccb13c44d104e8945840705a21738d8abd5c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-vb"></a>Zpracování výjimek úrovni BLL a DAL (VB)
 ====================
@@ -101,7 +101,7 @@ Když dojde k chybě, chceme jenom štítek, který chcete se zobrazují jen jed
 
 Pokud je vyvolána výjimka, jsme budete přiřadit podrobnosti výjimky k `ExceptionDetails` popisku ovládacího prvku s `Text` vlastnost. Protože je zakázán svůj stav zobrazení na následné postback `Text` vlastnosti s programové změny budou ztraceny, vrácení zpět na výchozí text (prázdný řetězec), a tím skrytí upozornění.
 
-Pokud chcete zjistit, kdy bylo vyvoláno chybu mohla zobrazit užitečné zpráva na stránce, je potřeba přidat `Try ... Catch` zablokujte `UpdateCommand` obslužné rutiny události. `Try` Část obsahuje kód, který může způsobit výjimku, zatímco `Catch` blok obsahuje kód, který se spustí při krátkodobém výjimku. Podívejte se [Základy zpracování výjimek](https://msdn.microsoft.com/en-us/library/2w8f0bss.aspx) části v dokumentaci k rozhraní .NET Framework pro další informace na `Try ... Catch` bloku.
+Pokud chcete zjistit, kdy bylo vyvoláno chybu mohla zobrazit užitečné zpráva na stránce, je potřeba přidat `Try ... Catch` zablokujte `UpdateCommand` obslužné rutiny události. `Try` Část obsahuje kód, který může způsobit výjimku, zatímco `Catch` blok obsahuje kód, který se spustí při krátkodobém výjimku. Podívejte se [Základy zpracování výjimek](https://msdn.microsoft.com/library/2w8f0bss.aspx) části v dokumentaci k rozhraní .NET Framework pro další informace na `Try ... Catch` bloku.
 
 
 [!code-vb[Main](handling-bll-and-dal-level-exceptions-vb/samples/sample5.vb)]
@@ -142,7 +142,7 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Pokyny pro návrh pro výjimky](https://msdn.microsoft.com/en-us/library/ms298399.aspx)
+- [Pokyny k návrhu pro výjimky](https://msdn.microsoft.com/library/ms298399.aspx)
 - [Moduly protokolování chyb a obslužné rutiny (ELMAH)](http://workspaces.gotdotnet.com/elmah) (knihovny open source pro protokolování chyb)
 - [Knihovna Enterprise pro rozhraní .NET Framework 2.0](https://www.microsoft.com/downloads/details.aspx?familyid=5A14E870-406B-4F2A-B723-97BA84AE80B5&amp;displaylang=en) (zahrnuje bloku výjimky správy aplikace)
 

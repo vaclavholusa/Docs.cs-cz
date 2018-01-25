@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: c4f57d1e02ad5f4e235039999af9df9d236756a7
-ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
+ms.openlocfilehash: f8847a70b24a2f25ff2e73a5cb2244d62c4f4c29
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Konfigurace aplikace ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [označit Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [ADAM Roth](https://github.com/danroth27), a [Luke Latham](https://github.com/guardrex)
 
-Rozhraní API konfigurace poskytuje způsob, jak nakonfigurovat ASP.NET Core webové aplikace založené na seznam dvojic název hodnota. Konfigurace je pro čtení, v době běhu z více zdrojů. Tyto páry název hodnota můžete seskupovat do víceúrovňovou hierarchii.
+Rozhraní API konfigurace poskytuje způsob, jak nakonfigurovat ASP.NET Core webové aplikace založené na seznam dvojic název hodnota. Konfigurace je pro čtení, v době běhu z více zdrojů. Dvojice název hodnota, je možné seskupit do víceúrovňovou hierarchii.
 
 Existují zprostředkovatelé konfigurace pro:
 
@@ -59,7 +59,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 // Output: Gandalf
 ```
 
-Dvojice název hodnota, které jsou zapsány do vestavěné [konfigurace](/dotnet/api/microsoft.extensions.configuration) poskytovatelé jsou **není** nastavené jako trvalé. Můžete však vytvořit vlastní zprostředkovatele, který uloží hodnoty. V tématu [vlastního poskytovatele konfigurace](xref:fundamentals/configuration/index#custom-config-providers).
+Dvojice název hodnota, které jsou zapsány do vestavěné [konfigurace](/dotnet/api/microsoft.extensions.configuration) poskytovatelé jsou **není** nastavené jako trvalé. Však lze vytvořit vlastní zprostředkovatele, který uloží hodnoty. V tématu [vlastního poskytovatele konfigurace](xref:fundamentals/configuration/index#custom-config-providers).
 
 V předchozím příkladu používá konfigurace indexeru načíst hodnoty. Získat přístup ke konfiguraci mimo `Startup`, použijte *možnosti vzor*. Další informace najdete v tématu [možnosti](xref:fundamentals/configuration/options) tématu.
 
@@ -93,8 +93,8 @@ Požadavky na konfiguraci:
 
 * `IOptionsSnapshot`můžete znovu načíst konfigurační data, kdy se změní. Další informace najdete v tématu [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot).,
 * Konfigurace klíče jsou **není** malá a velká písmena.
-* **Nikdy** ukládání hesel nebo jiných citlivých dat. kód zprostředkovatele konfigurace nebo v konfiguračních souborech na prostý text. Nechcete používat produkční tajných klíčů ve vývojovém nebo testovacím prostředí. Zadejte tajné klíče mimo projekt tak, že nemohou být omylem zaměřuje na úložiště. Další informace o [práce s několika prostředí](xref:fundamentals/environments) a správu [bezpečného úložiště tajné klíče aplikace během vývoje](xref:security/app-secrets).
-* Pokud dvojtečkou (`:`) nelze použít v seznamu proměnných prostředí systému, nahraďte dvojtečkou (`:`) s dvojité podtržítko (`__`).
+* **Nikdy** ukládání hesel nebo jiných citlivých dat. kód zprostředkovatele konfigurace nebo v konfiguračních souborech na prostý text. Nechcete používat produkční tajných klíčů v vývoj nebo testovací prostředí. Zadejte tajné klíče mimo projekt tak, že nemohou být omylem zavazuje úložiště zdrojového kódu. Další informace o [práce s několika prostředí](xref:fundamentals/environments) a správu [bezpečného úložiště tajné klíče aplikace během vývoje](xref:security/app-secrets).
+* Pokud dvojtečkou (`:`) nelze použít v seznamu proměnných prostředí v systému, nahraďte dvojtečkou (`:`) s dvojité podtržítko (`__`).
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>Zprostředkovatel v paměti a vazbu na třídu objektů POCO
 
@@ -102,7 +102,7 @@ Následující příklad ukazuje, jak použít poskytovatele v paměti a vytvoř
 
 [!code-csharp[Main](index/sample/InMemory/Program.cs)]
 
-Hodnoty konfigurace se vrátí jako řetězce, ale vazba umožňuje konstrukce objektů. Vazba umožňuje načíst objektů POCO nebo grafy i celý objekt.
+Hodnoty konfigurace se vrátí jako řetězce, ale vazba umožňuje konstrukce objektů. Vazba umožňuje načtení objektů POCO nebo grafy i celý objekt.
 
 ### <a name="getvalue"></a>GetValue
 
@@ -110,11 +110,11 @@ Následující příklad ukazuje [GetValue&lt;T&gt; ](/dotnet/api/microsoft.exte
 
 [!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
-ConfigurationBinder `GetValue<T>` metoda umožňuje zadat výchozí hodnotu (80 v ukázce). `GetValue<T>`je pro jednoduché scénáře a nemá vazbu na celý části. `GetValue<T>`Získá skalárních hodnot z `GetSection(key).Value` převést na konkrétního typu.
+ConfigurationBinder `GetValue<T>` metoda umožňuje specifikaci výchozí hodnotu (80 v ukázce). `GetValue<T>`je pro jednoduché scénáře a bez vazby na celý části. `GetValue<T>`Získá skalárních hodnot z `GetSection(key).Value` převést na konkrétního typu.
 
 ## <a name="bind-to-an-object-graph"></a>Vytvořit vazbu na grafu objektu
 
-Můžete rekurzivně vazby pro každý objekt v třídě. Vezměte v úvahu následující `AppSettings` třídy:
+Každý objekt v třídě může být rekurzivně vázána. Vezměte v úvahu následující `AppSettings` třídy:
 
 [!code-csharp[Main](index/sample/ObjectGraph/AppSettings.cs)]
 
@@ -185,7 +185,7 @@ Vytvoření vlastního poskytovatele konfigurace dědění ze [ConfigurationProv
 
 Při spuštění ukázky, zobrazí se zvýrazněné hodnoty z databáze ("value_from_ef_1" a "value_from_ef_2").
 
-Můžete přidat `EFConfigSource` rozšiřující metodu pro přidání zdroj konfigurace:
+`EFConfigSource` Rozšíření metodu pro přidání zdroj konfigurace je možné použít:
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkExtensions.cs?highlight=12)]
 
@@ -331,7 +331,7 @@ Pokud duplicitní klíče jsou k dispozici, použije se poslední dvojice klíč
 
 ### <a name="switch-mappings"></a>Mapování přepínače
 
-Při ruční vytváření konfigurací s `ConfigurationBuilder`, Volitelně můžete zadat slovníku mapování přepínače k `AddCommandLine` metoda. Mapování přepínače umožňují poskytovat logiku nahrazení název klíče.
+Při ruční vytváření konfigurací s `ConfigurationBuilder`, slovník mapování přepínače lze přidat do `AddCommandLine` metoda. Mapování přepínač Povolit logiku nahrazení název klíče.
 
 Když se používá slovník mapování přepínače, se kontroluje slovníku pro klíč, který se shoduje s klíčem poskytované argument příkazového řádku. Pokud je nalezen příkazového řádku klíč ve slovníku, hodnota slovníku (klíče nahrazení) je předán zpět k nastavení konfigurace. Mapování přepínač je vyžadována pro všechny klíč příkazového řádku s předponou jeden pomlčkou (`-`).
 
@@ -340,7 +340,7 @@ Přepínač pravidla klíče slovníku mapování:
 * Přepínače musí začínat pomlčkou (`-`) nebo dvojitou pomlčkou (`--`).
 * Slovník mapování přepínač nesmí obsahovat duplicitní klíče.
 
-V následujícím příkladu `GetSwitchMappings` metoda umožňuje vaší argumenty příkazového řádku používat jeden pomlčkou (`-`) klíče předponu a vyhnout se počáteční podklíčů předpony.
+V následujícím příkladu `GetSwitchMappings` metoda umožňuje argumentů příkazového řádku pro použití jedné pomlčkou (`-`) klíče předponu a vyhnout se počáteční podklíčů předpony.
 
 [!code-csharp[Main](index/sample/CommandLine/Program.cs?highlight=10-19,32)]
 
@@ -394,6 +394,10 @@ Left: 1988
 
 A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Express. Nastavení v *web.config* povolit [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) spusťte aplikaci a nakonfigurovat další nastavení služby IIS a modulů. Pokud *web.config* soubor není přítomen a zahrnuje soubor projektu `<Project Sdk="Microsoft.NET.Sdk.Web">`, publikování projektu vytvoří *web.config* souboru v publikované výstup ( *publikování* složku). Další informace najdete v tématu [hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#webconfig).
 
+## <a name="accessing-configuration-during-startup"></a>Přístup k konfigurace při spuštění
+
+Získat přístup ke konfiguraci v rámci `ConfigureServices` nebo `Configure` během spouštění, podívejte se na příklady v [spuštění aplikace](xref:fundamentals/startup) tématu.
+
 ## <a name="additional-notes"></a>Další poznámky
 
 * Vkládání závislostí (DI) není nastavená až do doby, po `ConfigureServices` je volána.
@@ -401,7 +405,7 @@ A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Ex
 * `IConfiguration`má dva specializací:
   * `IConfigurationRoot`Používá se pro kořenový uzel. Můžete aktivovat znovu načíst.
   * `IConfigurationSection`Reprezentuje oddíl hodnoty konfigurace. `GetSection` a `GetChildren` metody vrací `IConfigurationSection`.
-  * Použití [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot) při opětovném načtení konfigurace nebo potřebují přístup pro každého zprostředkovatele. Ani jeden z těchto situacích jsou běžné.
+  * Použití [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot) při opětovném načtení konfigurace nebo pro přístup do každého poskytovatele. Ani jeden z těchto situacích jsou běžné.
 
 ## <a name="additional-resources"></a>Další zdroje
 

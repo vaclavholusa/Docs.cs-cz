@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: dec2602e47fbcb838643a506a7e3feebda9d9c81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4468ee8031afccca847db67bd4b5b263f0a2c5ac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-performance"></a>SignalR výkonu
 ====================
@@ -87,7 +87,7 @@ Vzhledem k tomu, že zprávy jsou uloženy ve sběrnici zpráv v paměti serveru
 
 ### <a name="tuning-your-signalr-server-for-performance"></a>Optimalizace výkonu serveru SignalR
 
-Následující nastavení konfigurace slouží k vyladění vašeho serveru pro lepší výkon v aplikaci SignalR. Obecné informace o tom, jak zlepšit výkon v aplikaci ASP.NET najdete v tématu [zlepšení výkonu technologie ASP.NET](https://msdn.microsoft.com/en-us/library/ff647787.aspx).
+Následující nastavení konfigurace slouží k vyladění vašeho serveru pro lepší výkon v aplikaci SignalR. Obecné informace o tom, jak zlepšit výkon v aplikaci ASP.NET najdete v tématu [zlepšení výkonu technologie ASP.NET](https://msdn.microsoft.com/library/ff647787.aspx).
 
 **Nastavení konfigurace SignalR**
 
@@ -104,7 +104,7 @@ Následující nastavení konfigurace slouží k vyladění vašeho serveru pro 
     [!code-console[Main](signalr-performance/samples/sample4.cmd)]
 - **ApplicationPool QueueLength**: Toto je maximální počet požadavků, ovladač Http.sys zařadí do fronty pro fond aplikací. Při zaplnění fronty, nové požadavky obdrží odpověď 503 "Služba není k dispozici". Výchozí hodnota je 1 000.
 
-    Zkrátit délku fronty pracovního procesu ve fondu aplikací, který je hostitelem vaší aplikace bude šetřit prostředky paměti. Další informace najdete v tématu [pro správu, optimalizaci a konfigurace fondů aplikací](https://technet.microsoft.com/en-us/library/cc745955.aspx).
+    Zkrátit délku fronty pracovního procesu ve fondu aplikací, který je hostitelem vaší aplikace bude šetřit prostředky paměti. Další informace najdete v tématu [pro správu, optimalizaci a konfigurace fondů aplikací](https://technet.microsoft.com/library/cc745955.aspx).
 
 **Nastavení konfigurace ASP.NET**
 
@@ -215,7 +215,7 @@ Následující metriky měření chybách vygenerovaných provoz zpráv SignalR.
 
 Následující metriky měření provoz a chyby vygenerované zprostředkovatelem škálování. A **datového proudu** v tomto kontextu je jednotka škálování používá zprostředkovatel škálování; jde tabulky, pokud se používá SQL Server, téma, pokud se používá Service Bus a předplatné, pokud se používá Redis. Každý datový proud zajišťuje uspořádaný operací čtení a zápisu; jeden datový proud je potenciální problémová místa škálování, takže snížit této kritický bod je možné zvýšit počet datových proudů. Pokud používáte víc datových proudů, SignalR automaticky distribuovat zprávy (horizontálních) v těchto datových proudů způsobem, který zajistí, že zpráv odeslaných z daného připojení jsou v pořadí.
 
-[MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) nastavení ovládacích prvků délka fronty pro odesílání dat o škálování udržované SignalR. Jeho nastavení na hodnotu větší než 0 umístí všechny zprávy ve frontě odeslání k odeslání po jednom nakonfigurovaných propojovací rozhraní systému zasílání zpráv. Pokud velikost fronty překročí nakonfigurovaná délka, následných výzev k odeslání bude okamžitě nezdaří s [InvalidOperationException](https://msdn.microsoft.com/en-us/library/system.invalidoperationexception(v=vs.118).aspx) dokud počet zpráv ve frontě je menší než nastavení znovu. Služby Řízení front je ve výchozím nastavení zakázáno, protože implementované backplanes obvykle mají své vlastní služby Řízení front nebo řízení toku na místě. V případě systému SQL Server sdružování připojení efektivně omezí počet zasílá děje v daném okamžiku.
+[MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) nastavení ovládacích prvků délka fronty pro odesílání dat o škálování udržované SignalR. Jeho nastavení na hodnotu větší než 0 umístí všechny zprávy ve frontě odeslání k odeslání po jednom nakonfigurovaných propojovací rozhraní systému zasílání zpráv. Pokud velikost fronty překročí nakonfigurovaná délka, následných výzev k odeslání bude okamžitě nezdaří s [InvalidOperationException](https://msdn.microsoft.com/library/system.invalidoperationexception(v=vs.118).aspx) dokud počet zpráv ve frontě je menší než nastavení znovu. Služby Řízení front je ve výchozím nastavení zakázáno, protože implementované backplanes obvykle mají své vlastní služby Řízení front nebo řízení toku na místě. V případě systému SQL Server sdružování připojení efektivně omezí počet zasílá děje v daném okamžiku.
 
 Ve výchozím nastavení, je použít pouze jeden datový proud pro SQL Server a Redis, pět datových proudů se používají pro Service Bus a služby Řízení front je zakázaná, ale tato nastavení lze změnit prostřednictvím konfigurace na serveru SQL a sběrnice:
 
@@ -249,13 +249,13 @@ Následující čítače výkonu může být taky užitečný v monitorování v
 
 - Využívání paměti rozhraním .NET CLR\\# bajtů ve všech haldách (pro w3wp)
 
-**TECHNOLOGIE ASP.NET**
+**ASP.NET**
 
 - Aktuální ASP.NET\Requests
 - ASP.NET\Queued
 - ASP.NET\Rejected
 
-**VYUŽITÍ PROCESORU**
+**CPU**
 
 - Information\Processor času procesoru
 
@@ -264,7 +264,7 @@ Následující čítače výkonu může být taky užitečný v monitorování v
 - TCPv6 nebo připojení
 - TCPv4 nebo připojení
 
-**Webové služby**
+**Web Service**
 
 - Webová Service\Current připojení
 - Webová Service\Maximum připojení
@@ -280,6 +280,6 @@ Následující čítače výkonu může být taky užitečný v monitorování v
 
 Další informace o výkonu technologie ASP.NET, sledování a ladění najdete v následujících tématech:
 
-- [Přehled výkonnostní ASP.NET](https://msdn.microsoft.com/en-us/library/cc668225(v=vs.100).aspx)
+- [Přehled výkonnostní ASP.NET](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [Využití vlákno ASP.NET na IIS 7.5, IIS 7.0 a IIS 6.0.](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt; – Element (webové nastavení)](https://msdn.microsoft.com/en-us/library/dd560842.aspx)
+- [&lt;applicationPool&gt; – Element (webové nastavení)](https://msdn.microsoft.com/library/dd560842.aspx)

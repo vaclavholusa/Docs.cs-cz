@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: a2ac8334e62e6ab7af7042572cfd5950c687001b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ca8a3c194577766e56d0604323fef567d539316c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>Díky nástroji Page Inspector pro sadu Visual Studio 2012 v webové formuláře ASP.NET
 ====================
@@ -51,7 +51,7 @@ podle Tim Ammann
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us) nebo [Visual Studio Express 2012 pro Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web).
+- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) nebo [Visual Studio Express 2012 pro Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
 
 > [!NOTE]
 > Chcete-li získat nejnovější verzi nástroje Page Inspector, použijte [instalačního programu webové platformy](https://go.microsoft.com/fwlink/?LinkId=255386) nainstalovat sadu Azure SDK pro rozhraní .NET 2.0.
@@ -91,7 +91,7 @@ Pokud uvolníte okno nástroj Page Inspector, můžete umístit ji mimo Visual S
 
 ![Zrušením zaškrtnutí plovoucí windows nástroj ALT + TAB mezi odpojenou okno nástroj Page Inspector a Visual Studio](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image5.png)
 
-Horní podokno okna nástroje Page Inspector ukazuje aktuální stránky v okně prohlížeče. V dolním podokně zobrazí stránku v značka jazyka HTML na levé straně a některé karty na pravé straně, která umožňují kontrolovat různé aspekty stránky. Dolní podokno je podobná [F12 Developer Tools](https://msdn.microsoft.com/en-us/ie/aa740478) v aplikaci Internet Explorer. (Ale na rozdíl od nástrojů pro vývojáře, můžete nástroj Page Inspector přímo v sadě Visual Studio.)
+Horní podokno okna nástroje Page Inspector ukazuje aktuální stránky v okně prohlížeče. V dolním podokně zobrazí stránku v značka jazyka HTML na levé straně a některé karty na pravé straně, která umožňují kontrolovat různé aspekty stránky. Dolní podokno je podobná [F12 Developer Tools](https://msdn.microsoft.com/ie/aa740478) v aplikaci Internet Explorer. (Ale na rozdíl od nástrojů pro vývojáře, můžete nástroj Page Inspector přímo v sadě Visual Studio.)
 
 ![Inspektor stránek](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image6.png)
 
@@ -158,7 +158,7 @@ Klikněte na horní část stránky, která říká "zde bude vaše logo". Jsou 
 
 Nyní přesunutí ukazatele myši **HTML** okno. Jako ukazatel myši přesunete, nástroj Page Inspector popisuje element v rámci **HTML** okno a zvýrazňuje odpovídající element v okně prohlížeče.
 
-![Okno HTML](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image13.png)
+![HTML Window](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image13.png)
 
 Jak před, otevře se nástroj Page Inspector *Site.Master* souboru můžete na kartě dočasné. Klikněte na kartu Site.Master a zvýrazní se odpovídající kód v &lt;záhlaví&gt; části:
 

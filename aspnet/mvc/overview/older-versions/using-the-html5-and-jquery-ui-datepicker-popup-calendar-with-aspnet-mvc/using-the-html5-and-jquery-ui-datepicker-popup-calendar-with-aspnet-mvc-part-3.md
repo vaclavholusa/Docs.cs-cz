@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: dc81961094928025e25cf62ce4d51d12bc67b80c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7d4ed67254c2b0fc2aef748cfab1c8f628b25641
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>Použití jazyka HTML5 a kalendáře jQuery UI DatePicker s architekturou ASP.NET MVC – část 3
 ====================
@@ -86,14 +86,14 @@ Už víte, že je možné zadat formát nebo šablonu pro vlastnosti modelu pomo
 - Použití `DisplayFormat` atribut na vlastnost v modelu. Například následující kód způsobí, že data budou zobrazeny bez čas:
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample8.cs)]
-- Použití [datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) na vlastnost v modelu a zadání datový typ atributu. Například následující kód způsobí, že data budou zobrazeny bez čas.
+- Použití [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) na vlastnost v modelu a zadání datový typ atributu. Například následující kód způsobí, že data budou zobrazeny bez čas.
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample9.cs)]
 
     Pokud aplikace obsahuje *date.cshtml* šablonu *Views\Shared\DisplayTemplates* složky nebo *Views\Movies\DisplayTemplates* složku, že šablona slouží k vykreslení `DateTime` vlastnost. V opačném případě předdefinovaného systémového ukázka ASP.NET zobrazí vlastnost jako datum.
 - Vytvoření šablony v zobrazení *Views\Shared\DisplayTemplates* složku nebo *Views\Movies\DisplayTemplates* složku, jejíž název odpovídá typu dat, který chcete formátovat. Například, který jste viděli *Views\Shared\DisplayTemplates\DateTime.cshtml* byla použita k vykreslení `DateTime` vlastnosti v modelu, bez přidání atributu do modelu a bez přidání jakékoli značek k zobrazení.
-- Pomocí [UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atributů v modelu, který má zadejte šablonu, kterou chcete zobrazit vlastnosti modelu.
-- Přidání explicitně zobrazovaný název šablony na [Html.DisplayFor](https://msdn.microsoft.com/en-us/library/ee407420.aspx) volání v zobrazení.
+- Pomocí [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atributů v modelu, který má zadejte šablonu, kterou chcete zobrazit vlastnosti modelu.
+- Přidání explicitně zobrazovaný název šablony na [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) volání v zobrazení.
 
 Přístupů, které použijete, závisí na co musíte udělat v aplikaci. Není kombinovat tyto přístupy k získání přesně druh formátování, které potřebujete.
 

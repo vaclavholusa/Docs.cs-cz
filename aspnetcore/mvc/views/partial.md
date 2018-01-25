@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/partial
-ms.openlocfilehash: e5c8aac855a1f4ec4c6f08087dbe77f6820cc506
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 5919c273de2a298c3e407f118ac478e6a6031332
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="partial-views"></a>Částečná zobrazení
 
@@ -37,7 +37,7 @@ Tip: Použijte [nemáte opakujte sami Princip](http://deviq.com/don-t-repeat-you
 
 ## <a name="declaring-partial-views"></a>Deklarování částečné zobrazení
 
-Částečná zobrazení vzniknou podobně jako ostatní zobrazení: vytváření *.cshtml* souboru v rámci *zobrazení* složky. Není žádný sémantického rozdíl mezi částečné zobrazení a zobrazení regulární – se pouze vykreslují odlišně. Máte zobrazení, které se vrátí přímo před vytvořením řadiče `ViewResult`, a stejnou zobrazení lze použít jako částečné zobrazení. Hlavní rozdíl mezi způsobu vykreslení zobrazení a částečné zobrazení je, že částečná zobrazení se nespustí *soubor _ViewStart.cshtml* (při zobrazení - další informace o *soubor _ViewStart.cshtml* v [rozložení ](layout.md)).
+Částečná zobrazení vzniknou podobně jako ostatní zobrazení: vytváření *.cshtml* souboru v rámci *zobrazení* složky. Není žádný sémantického rozdíl mezi částečné zobrazení a zobrazení regulární – se pouze vykreslují odlišně. Máte zobrazení, které se vrátí přímo před vytvořením řadiče `ViewResult`, a stejnou zobrazení lze použít jako částečné zobrazení. Hlavní rozdíl mezi způsobu vykreslení zobrazení a částečné zobrazení je, že částečná zobrazení nespouštět *soubor _ViewStart.cshtml* (při zobrazení - další informace o *soubor _ViewStart.cshtml* v [rozložení ](layout.md)).
 
 ## <a name="referencing-a-partial-view"></a>Odkazování na částečné zobrazení
 

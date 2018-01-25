@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 7d85b995cd577d0ff90fe96bce508c7fbdc6ebbb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9103574597df126a22e21a2f51815f608e46f47f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>Formátovací moduly pro média v rozhraní ASP.NET Web API 2
 ====================
@@ -29,7 +29,7 @@ Tento kurz ukazuje jak podporují formátů médií s další v rozhraní ASP.NE
 Typ média, označované taky jako typ MIME, identifikuje formát část data. V protokolu HTTP popisují typy médií formátu textu zprávy. Typ média se skládá z dva řetězce, typ a podtyp. Příklad:
 
 - text/html
-- bitové kopie nebo png
+- image/png
 - Application/json
 
 Když zprávy HTTP obsahuje obsah entity, určuje hlavičku Content-Type formát textu zprávy. Tato hodnota informuje příjemce jak analyzovat obsah textu zprávy.
@@ -48,8 +48,8 @@ Typ média určuje, jak webové rozhraní API serializuje a deserializuje obsah 
 
 Pokud chcete vytvořit formátovací modul médií, odvozena od jedné z těchto tříd:
 
-- [Objekt MediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.mediatypeformatter.aspx). Tato třída používá asynchronního čtení a zápisu metody.
-- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). Tato třída odvozená z **objekt MediaTypeFormatter** ale používá sychronous metody pro čtení a zápis.
+- [Objekt MediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.mediatypeformatter.aspx). Tato třída používá asynchronního čtení a zápisu metody.
+- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). Tato třída odvozená z **objekt MediaTypeFormatter** ale používá sychronous metody pro čtení a zápis.
 
 Odvozování z **BufferedMediaTypeFormatter** je jednodušší, protože neexistuje žádný asynchronní kód, ale také znamená to během vstupně-výstupních operací můžete blokovat volající vlákno.
 
@@ -91,10 +91,10 @@ Přidat typy médií formátovacího modulu do kanálu webové rozhraní API, po
 
 Formátovací modul média může volitelně podporovat více kódování znaků, jako je například UTF-8 nebo ISO 8859-1.
 
-V konstruktoru, přidejte jeden nebo více [System.Text.Encoding](https://msdn.microsoft.com/en-us/library/system.text.encoding.aspx) typů, který **SupportedEncodings** kolekce. Uveďte výchozí kódování první.
+V konstruktoru, přidejte jeden nebo více [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) typů, který **SupportedEncodings** kolekce. Uveďte výchozí kódování první.
 
 [!code-csharp[Main](media-formatters/samples/sample10.cs?highlight=6-7)]
 
-V **WriteToStream** a **ReadFromStream** volání metody, [MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/en-us/library/hh969054.aspx) vyberte kódování upřednostňované znaků. Tato metoda odpovídá hlavičky žádosti podle seznamu podporovaných kódování. Pomocí vráceného **kódování** při čtení nebo zápisu do datového proudu:
+V **WriteToStream** a **ReadFromStream** volání metody, [MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/library/hh969054.aspx) vyberte kódování upřednostňované znaků. Tato metoda odpovídá hlavičky žádosti podle seznamu podporovaných kódování. Pomocí vráceného **kódování** při čtení nebo zápisu do datového proudu:
 
 [!code-csharp[Main](media-formatters/samples/sample11.cs?highlight=3,5)]

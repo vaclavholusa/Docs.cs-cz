@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/mvc3
 msc.type: content
-ms.openlocfilehash: 1aa059e92b5637b9ba7ce488da4b44322dab6d8e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c7eee987b28a5d7f8b40fe89a7bf7517ec06646f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -165,7 +165,7 @@ Další informace o syntaxi Razor najdete v následujících zdrojích informac�
 Někdy budete chtít provést logiku před spuštěním metody akce nebo po spuštění metody akce. Za tímto účelem k dispozici ASP.NET MVC 2 filtrů akce. Filtry akce jsou vlastní atributy, které poskytují deklarativní způsob přidání chování akce před a po akce na konkrétní řadič metody akce. Ale v některých případech můžete chtít zadat akce před nebo po akce chování, které platí pro všechny metody akce. MVC 3 umožňuje určit jejich přidáním do globální filtry `GlobalFilters` kolekce. Další informace o globální filtry akce najdete v následujících zdrojích informací:
 
 - [Scott Guthrie blog na ve verzi Preview 3 MVC](https://weblogs.asp.net/scottgu/archive/2010/07/27/introducing-asp-net-mvc-3-preview-1.aspx)
-- [Filtrování v architektuře ASP.NET MVC](https://msdn.microsoft.com/en-us/library/gg416513(VS.98).aspx)
+- [Filtrování v architektuře ASP.NET MVC](https://msdn.microsoft.com/library/gg416513(VS.98).aspx)
 
 ### <a name="new-viewbag-property"></a>Nové vlastnosti "ViewBag"
 
@@ -175,9 +175,9 @@ Podpora řadiče MVC 2 `ViewData` vlastnost, která umožňuje předat data do z
 
 Následující `ActionResult` typy a odpovídající pomocné metody jsou nové nebo rozšířené v MVC 3:
 
-- [HttpNotFoundResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.httpnotfoundresult(v=vs.98).aspx). Vrátí stavový kód 404 HTTP do klienta.
-- [RedirectResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.redirectresult(v=VS.98).aspx). Vrátí dočasné přesměrování (kód stavu HTTP 302) nebo trvalé přesměrování (kód stavu protokolu HTTP 301), v závislosti na parametr typu Boolean. Ve spojení s touto změnou [řadič](https://msdn.microsoft.com/en-us/library/system.web.mvc.controller(v=VS.98).aspx) třída teď má tři metody pro provádění trvalé přesměrování: `RedirectPermanent`, `RedirectToRoutePermanent`, a `RedirectToActionPermanent`. Tyto metody vrací instanci třídy `RedirectResult` s `Permanent` vlastnost nastavena na hodnotu `true`.
-- [HttpStatusCodeResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.httpstatuscoderesult(v=VS.98).aspx). Vrátí stavový kód HTTP zadaného uživatelem.
+- [HttpNotFoundResult](https://msdn.microsoft.com/library/system.web.mvc.httpnotfoundresult(v=vs.98).aspx). Vrátí stavový kód 404 HTTP do klienta.
+- [RedirectResult](https://msdn.microsoft.com/library/system.web.mvc.redirectresult(v=VS.98).aspx). Vrátí dočasné přesměrování (kód stavu HTTP 302) nebo trvalé přesměrování (kód stavu protokolu HTTP 301), v závislosti na parametr typu Boolean. Ve spojení s touto změnou [řadič](https://msdn.microsoft.com/library/system.web.mvc.controller(v=VS.98).aspx) třída teď má tři metody pro provádění trvalé přesměrování: `RedirectPermanent`, `RedirectToRoutePermanent`, a `RedirectToActionPermanent`. Tyto metody vrací instanci třídy `RedirectResult` s `Permanent` vlastnost nastavena na hodnotu `true`.
+- [HttpStatusCodeResult](https://msdn.microsoft.com/library/system.web.mvc.httpstatuscoderesult(v=VS.98).aspx). Vrátí stavový kód HTTP zadaného uživatelem.
 
 <a id="BM_JavaScript_and_Ajax_Improvements"></a>
 
@@ -199,7 +199,7 @@ Aby ověřování na straně klienta pro práci budete muset stále odkazovat na
 
 ### <a name="remote-validator"></a>Vzdáleného validátoru
 
-ASP.NET MVC 3 podporuje nové [RemoteAttribute](https://msdn.microsoft.com/en-us/library/system.web.mvc.remoteattribute(v=VS.98).aspx) třídu, která umožňuje využít výhod jQuery ověření plug v je podpora vzdáleného validátoru. To umožňuje knihovnu ověřování na straně klienta, která má automaticky volání vlastní metody, které definujete, aby bylo možné provést ověření logiky, která lze provést pouze na serveru na straně serveru.
+ASP.NET MVC 3 podporuje nové [RemoteAttribute](https://msdn.microsoft.com/library/system.web.mvc.remoteattribute(v=VS.98).aspx) třídu, která umožňuje využít výhod jQuery ověření plug v je podpora vzdáleného validátoru. To umožňuje knihovnu ověřování na straně klienta, která má automaticky volání vlastní metody, které definujete, aby bylo možné provést ověření logiky, která lze provést pouze na serveru na straně serveru.
 
 V následujícím příkladu `Remote` atribut určuje, že ověření klienta zavolá akci s názvem `UserNameAvailable` na `UsersController` třída k ověřování `UserName` pole.
 
@@ -209,7 +209,7 @@ Následující příklad ukazuje odpovídající kontroler.
 
 [!code-csharp[Main](mvc3/samples/sample2.cs)]
 
-Další informace o tom, jak používat `Remote` atributů najdete v tématu [postupy: implementace vzdáleného ověření v architektuře ASP.NET MVC](https://msdn.microsoft.com/en-us/library/gg508808(VS.98).aspx) v knihovně MSDN.
+Další informace o tom, jak používat `Remote` atributů najdete v tématu [postupy: implementace vzdáleného ověření v architektuře ASP.NET MVC](https://msdn.microsoft.com/library/gg508808(VS.98).aspx) v knihovně MSDN.
 
 ### <a name="json-binding-support"></a>Podpora formátu JSON vazby
 
@@ -231,9 +231,9 @@ ASP.NET MVC 3 podporuje `DataAnnotations` metadata atributy, jako `DisplayAttrib
 
 ### <a name="validation-interfaces"></a>Ověřování rozhraní
 
-[IValidatableObject](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.ivalidatableobject.aspx) rozhraní umožňuje provádět ověření na úrovni modelu a umožňuje ověřování chybové zprávy, které jsou specifické pro stav celkové modelu, nebo mezi dvě vlastnosti v modelu . MVC 3 nyní načte chyby `IValidatableObject` rozhraní při vazby modelu a automaticky příznaky nebo označuje vliv na pole v rámci zobrazení pomocí integrované Pomocníci formuláře HTML.
+[IValidatableObject](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.ivalidatableobject.aspx) rozhraní umožňuje provádět ověření na úrovni modelu a umožňuje ověřování chybové zprávy, které jsou specifické pro stav celkové modelu, nebo mezi dvě vlastnosti v modelu . MVC 3 nyní načte chyby `IValidatableObject` rozhraní při vazby modelu a automaticky příznaky nebo označuje vliv na pole v rámci zobrazení pomocí integrované Pomocníci formuláře HTML.
 
-[IClientValidatable](https://msdn.microsoft.com/en-us/library/system.web.mvc.iclientvalidatable(v=VS.98).aspx) umožňuje rozhraní ASP.NET MVC zjistilo za běhu zda validátor podporu pro ověření klienta. Toto rozhraní byl navržen tak, aby se dá integrovat celou řadu architektur ověření.
+[IClientValidatable](https://msdn.microsoft.com/library/system.web.mvc.iclientvalidatable(v=VS.98).aspx) umožňuje rozhraní ASP.NET MVC zjistilo za běhu zda validátor podporu pro ověření klienta. Toto rozhraní byl navržen tak, aby se dá integrovat celou řadu architektur ověření.
 
 Další informace o ověření rozhraní najdete v tématu **vylepšení ověření modelu** části [Scott Guthrie MVC 3 Preview příspěvku na blogu](https://weblogs.asp.net/scottgu/archive/2010/07/27/introducing-asp-net-mvc-3-preview-1.aspx). (Upozorňujeme však, že odkaz na "IValidateObject" v blogu měl být "IValidatableObject".)
 
@@ -278,7 +278,7 @@ ASP.NET MVC je podporována ukládání výstupu do mezipaměti celou stránku o
 
 ### <a name="granular-control-over-request-validation"></a>Podrobnou kontrolu nad ověření žádosti
 
-ASP.NET MVC je integrované ověření, který automaticky pomáhá chránit před útoky XSS a HTML vkládání. Ale někdy chcete explicitně zakázat žádosti o ověření, například pokud chcete uživatelům post HTML obsahu (například v položkách blogu nebo obsah CMS). Nyní můžete přidat [AllowHtml](https://msdn.microsoft.com/en-us/library/system.web.mvc.allowhtmlattribute(v=VS.98).aspx) atribut modely nebo Zobrazit modely zakážete ověření požadavku na jednotlivých vlastností během vazby modelu. Další informace o ověření žádosti najdete v následujících zdrojích informací:
+ASP.NET MVC je integrované ověření, který automaticky pomáhá chránit před útoky XSS a HTML vkládání. Ale někdy chcete explicitně zakázat žádosti o ověření, například pokud chcete uživatelům post HTML obsahu (například v položkách blogu nebo obsah CMS). Nyní můžete přidat [AllowHtml](https://msdn.microsoft.com/library/system.web.mvc.allowhtmlattribute(v=VS.98).aspx) atribut modely nebo Zobrazit modely zakážete ověření požadavku na jednotlivých vlastností během vazby modelu. Další informace o ověření žádosti najdete v následujících zdrojích informací:
 
 - **Nerušivý JavaScript a ověření** kapitoly [Scott Guthrie příspěvku na blogu na verzi release candidate MVC 3](https://weblogs.asp.net/scottgu/archive/2010/11/09/announcing-the-asp-net-mvc-3-release-candidate.aspx).
 - [Poznámky k verzi MVC 3](../whitepapers/mvc3-release-notes.md)
@@ -303,7 +303,7 @@ ASP.NET MVC 3, můžete určit, zda chcete třídy kontroleru se používání s
 
 ### <a name="new-additionalmetadataattribute-class"></a>Nová třída "AdditionalMetadataAttribute"
 
-Můžete použít [AdditionalMetadata](https://msdn.microsoft.com/en-us/library/system.web.mvc.additionalmetadataattribute(v=VS.98).aspx) atribut naplnit `ModelMetadata.AdditionalValues` slovník pro vlastnosti modelu. Například pokud model zobrazení má vlastnost, která má být zobrazena pouze pro správce, musíte označit vlastnosti jak je znázorněno v následujícím příkladu:
+Můžete použít [AdditionalMetadata](https://msdn.microsoft.com/library/system.web.mvc.additionalmetadataattribute(v=VS.98).aspx) atribut naplnit `ModelMetadata.AdditionalValues` slovník pro vlastnosti modelu. Například pokud model zobrazení má vlastnost, která má být zobrazena pouze pro správce, musíte označit vlastnosti jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Main](mvc3/samples/sample4.cs)]
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: ffa3178dc4e3aac3ba51c29b7efa3f71eb56bcfe
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8f6f4fac89afe14d83d629128fc3e4632ae95510
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -98,7 +98,7 @@ routes.MapRoute(
     template: "{controller=Home}/{action=Index}/{id?}");
 ```
 
-Tato šablona bude shodovat s cestu adresy URL jako `/Products/Details/17` a hodnoty trasy pro extrahování `{ controller = Products, action = Details, id = 17 }`. Hodnoty trasy jsou určeny rozdělení do segmentů cesty URL a odpovídající každý segment se *směrovat parametr* název v šabloně trasy. Jsou pojmenované parametry trasy. Jsou definovány uzavřením název parametru do složených závorek `{ }`.
+Tato šablona bude shodovat s cestu adresy URL jako `/Products/Details/17` a hodnoty trasy pro extrahování `{ controller = Products, action = Details, id = 17 }`. Hodnoty trasy jsou určeny rozdělení do segmentů cesty URL a odpovídající každý segment se *směrovat parametr* název v šabloně trasy. Jsou pojmenované parametry trasy. Jste definované uzavřením název parametru do složených závorek `{ }`.
 
 Výše uvedené šablony může také odpovídat cesty URL `/` a vytvoří hodnoty `{ controller = Home, action = Index }`. K tomu dojde, protože `{controller}` a `{action}` parametry trasy mají výchozí hodnoty a `id` je volitelný parametr trasy. Je rovno `=` přihlašovací následuje hodnotu po parametr název trasy, která definuje výchozí hodnotu pro parametr. Otazník `?` po parametr název trasy, která definuje jako volitelný parametr. Parametry s hodnotou výchozí směrování *vždy* vytvoření hodnoty trasy, pokud trasa odpovídá – volitelné parametry nebude vytvoření hodnoty trasy, pokud se žádné odpovídající segment cesty adresy URL.
 
@@ -317,7 +317,7 @@ Následující tabulka ukazuje některé omezení trasy a jejich očekávané ch
 | `required`  | `{name:required}` | `Rick` |  Slouží k vynucení, že hodnota bez parametru je dostupný při generování adresy URL |
 
 >[!WARNING]
-> Omezení trasy, které Ověřte adresu URL můžete převést na typ CLR (například `int` nebo `DateTime`) vždy používat neutrální jazykovou verzi – se předpokládá, že adresa URL je nepřekládá. Omezení trasy zadaný framework neměňte hodnotami uloženými v hodnoty trasy. Všechny hodnoty trasy, které jsou analyzovány z adresy URL se uloží jako řetězce. Například [omezení trasy Float](https://github.com/aspnet/Routing/blob/1.0.0/src/Microsoft.AspNetCore.Routing/Constraints/FloatRouteConstraint.cs#L44-L60) se pokusí převést hodnotu trasy na typ float, ale převedenou hodnotu slouží pouze k ověření, je možné ji převést na typ float.
+> Omezení trasy, které Ověřte adresu URL můžete převést na typ CLR (například `int` nebo `DateTime`) vždy používat neutrální jazykovou verzi – se předpokládá, že adresa URL je nepřekládá. Omezení trasy zadaný framework neupravujte hodnotami uloženými v hodnoty trasy. Všechny hodnoty trasy, které jsou analyzovány z adresy URL se uloží jako řetězce. Například [omezení trasy Float](https://github.com/aspnet/Routing/blob/1.0.0/src/Microsoft.AspNetCore.Routing/Constraints/FloatRouteConstraint.cs#L44-L60) se pokusí převést hodnotu trasy na typ float, ale převedenou hodnotu slouží pouze k ověření, je možné ji převést na typ float.
 
 ## <a name="regular-expressions"></a>Regulární výrazy 
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fd365ca3ae8e832e368fa4c29c33af8a42cf41d2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d5cf45e391a2b32e1d22e160fd2757b754753875
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="paging-and-sorting-report-data-c"></a>Stránkování a řazení dat sestavy (C#)
 ====================
@@ -101,7 +101,7 @@ Obrázek 6 zobrazuje naše průběh doposud, když zobrazit pomocí prohlížeč
 
 ## <a name="step-3-adding-paging-support"></a>Krok 3: Přidání podpory stránkování
 
-Výpis *všechny* produktů na jednu obrazovku, může dojít k přetížení informace pro uživatele perusing data. Pomáhat udržitelnější výsledky, jsme můžete rozdělit data do menší stránky dat a umožnit uživatelům procházet jednu stránku dat najednou. Provedete to stačí zaškrtnout políčko Povolit stránkování z GridView s inteligentním (nastaví Tato rutina GridView s [ `AllowPaging` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.allowpaging.aspx) k `true`).
+Výpis *všechny* produktů na jednu obrazovku, může dojít k přetížení informace pro uživatele perusing data. Pomáhat udržitelnější výsledky, jsme můžete rozdělit data do menší stránky dat a umožnit uživatelům procházet jednu stránku dat najednou. Provedete to stačí zaškrtnout políčko Povolit stránkování z GridView s inteligentním (nastaví Tato rutina GridView s [ `AllowPaging` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx) k `true`).
 
 
 [![Zaškrtnutím políčka Povolit stránkování pro přidání podpory stránkování](paging-and-sorting-report-data-cs/_static/image10.png)](paging-and-sorting-report-data-cs/_static/image9.png)
@@ -111,12 +111,12 @@ Výpis *všechny* produktů na jednu obrazovku, může dojít k přetížení in
 
 Povolení stránkování omezuje počet záznamů zobrazených na stránce a přidá *rozhraní stránkování* k GridView. Výchozí rozhraní stránkování, vidět na obrázku 7, je řada čísel stránek, které uživateli umožňují rychle přecházejí z jedné stránky dat na jiný. Toto rozhraní stránkování by měla vypadat povědomě, jako jsme jste ji viděli při přidání podpory stránkování pro ovládací prvky DetailsView a FormView v posledních kurzy.
 
-Ovládací prvky DetailsView i FormView zobrazit pouze jeden záznam na stránce. Rutina GridView, ale zajímají jeho [ `PageSize` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.pagesize.aspx) k určení, kolik zaznamenává zobrazíte na stránce (Tato vlastnost má výchozí hodnotu 10).
+Ovládací prvky DetailsView i FormView zobrazit pouze jeden záznam na stránce. Rutina GridView, ale zajímají jeho [ `PageSize` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.pagesize.aspx) k určení, kolik zaznamenává zobrazíte na stránce (Tato vlastnost má výchozí hodnotu 10).
 
 Tato rutina GridView DetailsView a FormView rozhraní stránkování s lze přizpůsobit pomocí následujících vlastností:
 
 - `PagerStyle`Určuje styl informace o rozhraní stránkování; můžete zadat nastavení jako `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`a tak dále.
-- `PagerSettings`obsahuje bevy vlastností, které můžete přizpůsobit funkce rozhraní stránkování; `PageButtonCount` určuje maximální počet v stránkování rozhraní (výchozí hodnota je 10) čísla číselné stránek; [ `Mode` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.pagersettings.mode.aspx) Určuje, jak funguje rozhraní stránkování a může být nastaven na: 
+- `PagerSettings`obsahuje bevy vlastností, které můžete přizpůsobit funkce rozhraní stránkování; `PageButtonCount` určuje maximální počet v stránkování rozhraní (výchozí hodnota je 10) čísla číselné stránek; [ `Mode` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) Určuje, jak funguje rozhraní stránkování a může být nastaven na: 
 
     - `NextPrevious`Zobrazí se další a předchozí tlačítka, které uživateli umožňují krok dopředný nebo zpětné jednu stránku současně
     - `NextPreviousFirstLast`kromě tlačítka Další a předchozí první a poslední tlačítka jsou taky součástí, které uživateli umožňují rychle přesunout na první nebo poslední stránku dat
@@ -216,7 +216,7 @@ Jak ukazuje obrázek 11, změna jenom GridView s `PageIndex` vlastnost způsobí
 
 ## <a name="step-5-adding-bi-directional-sorting-support"></a>Krok 5: Přidání řazení obousměrná podpora
 
-Přidání obousměrná podpora řazení je jednoduché, přidání podpory stránkování jednoduše zaškrtnutí políčka Povolit řazení z GridView s inteligentním (který nastaví GridView s [ `AllowSorting` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.allowsorting.aspx) k `true`). To vykreslí každý záhlaví pole s GridView jako LinkButtons, při kliknutí na, způsobí zpětné volání a vrátit data seřazené podle kliknutelnou sloupce ve vzestupném pořadí. Kliknutím na tlačítko hlavičku stejné LinkButton znovu seřadí data v sestupném pořadí.
+Přidání obousměrná podpora řazení je jednoduché, přidání podpory stránkování jednoduše zaškrtnutí políčka Povolit řazení z GridView s inteligentním (který nastaví GridView s [ `AllowSorting` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowsorting.aspx) k `true`). To vykreslí každý záhlaví pole s GridView jako LinkButtons, při kliknutí na, způsobí zpětné volání a vrátit data seřazené podle kliknutelnou sloupce ve vzestupném pořadí. Kliknutím na tlačítko hlavičku stejné LinkButton znovu seřadí data v sestupném pořadí.
 
 > [!NOTE]
 > Pokud používáte vlastní Data Access Layer spíše než typové datové sady, nemusí mít možnost Povolit řazení v GridView s inteligentním. Pouze GridViews vázán ke zdrojům dat, které nativně podporují řazení mít toto políčko, které jsou k dispozici. Typové datové sady poskytuje podporu řazení se na pole, vzhledem k tomu, že poskytuje ADO.NET DataTable `Sort` metoda, která při vyvolání, seřadí DataTable s DataRows pomocí na zadaných kritériích.
@@ -243,11 +243,11 @@ Po přidání šablon stylů CSS Pokud na stránce prostřednictvím prohlíže�
 
 Všechny GridView polí BoundField, vlastnost CheckBoxField, TemplateField a tak dále mít `SortExpression` vlastnost, která určuje výraz, který se má použít k řazení dat. po klepnutí na tento pole s řazení záhlaví odkaz. GridView má také `SortExpression` vlastnost. Při řazení záhlaví po kliknutí na LinkButton, GridView přiřadí tohoto pole s `SortExpression` hodnoty na jeho `SortExpression` vlastnost. Data jsou v dalším kroku znovu načíst z ObjectDataSource a seřazené podle GridView s `SortExpression` vlastnost. Následující seznam popisuje, o pořadí kroků, které ukáže Pokud koncový uživatel seřadí data v GridView:
 
-1. Rutina GridView s [událost Sorting](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) aktivuje
-2. Rutina GridView s [ `SortExpression` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) je nastaven na `SortExpression` pole jejíž řazení hlavička LinkButton označeného kliknutím
+1. Rutina GridView s [událost Sorting](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) aktivuje
+2. Rutina GridView s [ `SortExpression` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) je nastaven na `SortExpression` pole jejíž řazení hlavička LinkButton označeného kliknutím
 3. ObjectDataSource znovu načte všechna data z BLL a potom seřadí data pomocí GridView s`SortExpression`
 4. Rutina GridView s `PageIndex` vlastnost nastaven na hodnotu 0, znamená to, že při řazení uživatele se vrátí na první stránku dat (za předpokladu, že byl implementován podporu stránkování)
-5. Rutina GridView s [ `Sorted` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) aktivuje
+5. Rutina GridView s [ `Sorted` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) aktivuje
 
 Jako s výchozí stránkování, výchozí řazení možnost znovu načte *všechny* záznamy z BLL. Při použití řazení bez stránkování, nebo při použití řazení s výchozí stránkování, zde s žádný způsob, jak obejít tento výkon přenosů (souborem ukládání do mezipaměti databázových dat). Ale, jak vidíte budete v budoucnu kurzu ji s efektivně řadit data při použití vlastní stránkování.
 
@@ -274,7 +274,7 @@ Jednou `SortExpression` bylo odebrané vlastnost `UnitPrice` BoundField, záhlav
 
 ## <a name="programmatically-sorting-the-gridview"></a>Prostřednictvím kódu programu řazení GridView
 
-Můžete také řadit obsah GridView programově pomocí GridView s [ `Sort` metoda](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sort.aspx). Jednoduše předat `SortExpression` hodnotu seřadit podle spolu s [ `SortDirection` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending` nebo `Descending`), a GridView s data budou znovu seřazená.
+Můžete také řadit obsah GridView programově pomocí GridView s [ `Sort` metoda](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sort.aspx). Jednoduše předat `SortExpression` hodnotu seřadit podle spolu s [ `SortDirection` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending` nebo `Descending`), a GridView s data budou znovu seřazená.
 
 Představte si, že z důvodu jsme vypnuto řazení podle `UnitPrice` byl, protože nám obavy, že naše zákazníky by jednoduše koupit jenom nejlevnější produkty. Chceme motivovat je koupit nejnákladnější produkty, takže d chceme, aby mohli seřadit podle ceny, ale pouze z nejnákladnější cena produkty k nejmenší.
 
@@ -309,4 +309,4 @@ Radostí programování!
 [Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 >[!div class="step-by-step"]
-[Další](efficiently-paging-through-large-amounts-of-data-cs.md)
+[Next](efficiently-paging-through-large-amounts-of-data-cs.md)

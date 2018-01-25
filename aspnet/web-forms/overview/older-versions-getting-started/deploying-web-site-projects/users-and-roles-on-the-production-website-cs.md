@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0825b6bd6ca8d75f90cb7c4079e3af0213c5c4e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 68f3a45b6a393f7b6a12b7c296a374536b0d66d6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="users-and-roles-on-the-production-website-c"></a>Uživatelé a role na webu produkční (C#)
 ====================
@@ -37,7 +37,7 @@ Běžné výzvu pro vývojáře, kteří používají služby členství a role 
 
 ## <a name="using-the-aspnet-web-site-administration-tool"></a>Pomocí nástroje Správa webu ASP.NET
 
-Technologie ASP.NET obsahuje [nástroj Správa webu](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx) (WSAT) umožňující snadno vytvořit a spravovat uživatelské účty a role a určit pravidla autorizace na základě uživatelů a rolí. Pokud chcete použít WSAT, klikněte na ikonu konfigurace ASP.NET v Průzkumníku řešení, nebo přejděte do nabídky webu nebo produktu Project a vyberte možnost konfigurace ASP.NET. Buď přístup spustí webový prohlížeč a odkazuje na WSAT na adresu jako:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
+Technologie ASP.NET obsahuje [nástroj Správa webu](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT) umožňující snadno vytvořit a spravovat uživatelské účty a role a určit pravidla autorizace na základě uživatelů a rolí. Pokud chcete použít WSAT, klikněte na ikonu konfigurace ASP.NET v Průzkumníku řešení, nebo přejděte do nabídky webu nebo produktu Project a vyberte možnost konfigurace ASP.NET. Buď přístup spustí webový prohlížeč a odkazuje na WSAT na adresu jako:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
 
 WSAT je rozdělené do tří částí:
 
@@ -116,7 +116,7 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 - [Zkoumání ASP. Členství, role a profil pro NET](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [Vrácení vlastní nástroj Správa webu](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
-- [Přehled nástroje pro správu webu](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)
+- [Přehled nástroje pro správu webu](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 - [Kurzy zabezpečení webu](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 >[!div class="step-by-step"]

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: db2b39fab9c0701c8792d48f2ed0a059b9e450ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a933324b48d4117d5d4c806920f1691a7ef7849
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-vb"></a>Zkoumání upravit metody a zobrazení (VB)
 ====================
@@ -65,7 +65,7 @@ Všimněte si, druhý `Edit` předchází metody akce `HttpPost` atribut. Tento 
 
 Všimněte si, jak se má zobrazit šablonu `@ModelType MvcMovie.Models.Movie` příkaz v horní části souboru – tato hodnota určuje, že zobrazení očekává, že model pro zobrazení šablony být typu `Movie`.
 
-Automaticky generovaný kód používá několik *pomocné metody* zefektivnění kód HTML. [ `Html.LabelFor` ](https://msdn.microsoft.com/en-us/library/gg401864(VS.98).aspx) Pomocné rutiny zobrazuje název pole (&quot;název&quot;, &quot;ReleaseDate&quot;, &quot;Genre&quot;, nebo &quot;cena &quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) Zobrazí pomocné rutiny HTML `<input>` elementu. [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) Pomocník zobrazí všechny zprávy ověření přidružené k této vlastnosti.
+Automaticky generovaný kód používá několik *pomocné metody* zefektivnění kód HTML. [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx) Pomocné rutiny zobrazuje název pole (&quot;název&quot;, &quot;ReleaseDate&quot;, &quot;Genre&quot;, nebo &quot;cena &quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) Zobrazí pomocné rutiny HTML `<input>` elementu. [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) Pomocník zobrazí všechny zprávy ověření přidružené k této vlastnosti.
 
 Spusťte aplikaci a přejděte do */Movies* adresy URL. Klikněte na tlačítko **upravit** odkaz. V prohlížeči zobrazte zdroj pro stránku. Na stránce HTML vypadá jako v následujícím příkladu. (Kód nabídky se vyloučila pro přehlednost).
 
@@ -85,7 +85,7 @@ Pokud odeslaných hodnot nejsou platné, se zobrazí znovu ve formuláři. `Html
 
 [![abcNotValid](examining-the-edit-methods-and-edit-view/_static/image7.png)](examining-the-edit-methods-and-edit-view/_static/image6.png)
 
-> **Poznámka o národních prostředích** Pokud pracujete s národní prostředí než angličtiny, přečtěte si téma [podpora ASP.NET MVC 3 ověřování pomocí jiné než anglické národní prostředí.](https://msdn.microsoft.com/en-us/library/gg674880(VS.98).aspx)
+> **Poznámka o národních prostředích** Pokud pracujete s národní prostředí než angličtiny, přečtěte si téma [podpora ASP.NET MVC 3 ověřování pomocí jiné než anglické národní prostředí.](https://msdn.microsoft.com/library/gg674880(VS.98).aspx)
 
 
 ## <a name="making-the-edit-method-more-robust"></a>Provedení větší odolnost metoda úprav
@@ -114,7 +114,7 @@ Začněte přidáním `SearchIndex` metoda akce ke stávající `MoviesControlle
 
 [!code-vb[Main](examining-the-edit-methods-and-edit-view/samples/sample8.vb)]
 
-První řádek `SearchIndex` metoda vytvoří následující [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) dotazu a vyberte filmy:
+První řádek `SearchIndex` metoda vytvoří následující [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) dotazu a vyberte filmy:
 
 [!code-vb[Main](examining-the-edit-methods-and-edit-view/samples/sample9.vb)]
 
@@ -126,7 +126,7 @@ Pokud není String.IsNullOrEmpty(searchString) pak
  filmy = filmy. Kde (byly funkce s.Title.Contains(searchString))   
  Ukončení, pokud
 
-Dotazy LINQ nebudou provedeny, když jsou definovány nebo když jsou upraveny voláním metody `Where` nebo `OrderBy`. Místo toho při provádění dotazu je odložení, což znamená, že je zpožděno vyhodnocení výrazu, dokud jeho zjištěné hodnota je ve skutečnosti vstupní přes nebo [ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx) metoda je volána. V `SearchIndex` ukázku, je dotaz proveden v SearchIndex zobrazení. Další informace o provádění odložené dotazů najdete v tématu [provádění dotazu](https://msdn.microsoft.com/en-us/library/bb738633.aspx).
+Dotazy LINQ nebudou provedeny, když jsou definovány nebo když jsou upraveny voláním metody `Where` nebo `OrderBy`. Místo toho při provádění dotazu je odložení, což znamená, že je zpožděno vyhodnocení výrazu, dokud jeho zjištěné hodnota je ve skutečnosti vstupní přes nebo [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) metoda je volána. V `SearchIndex` ukázku, je dotaz proveden v SearchIndex zobrazení. Další informace o provádění odložené dotazů najdete v tématu [provádění dotazu](https://msdn.microsoft.com/library/bb738633.aspx).
 
 Teď můžete implementovat `SearchIndex` zobrazení, které se uživateli zobrazí formulář. Klepněte pravým tlačítkem myši `SearchIndex` metoda a pak klikněte na tlačítko **přidat zobrazení**. V **přidat zobrazení** dialogovém okně zadejte, že budete předávat `Movie` objekt, který chcete zobrazit šablonu jako jeho třídu modelu. V **vygenerované uživatelské rozhraní šablony** vyberte **seznamu**, pak klikněte na tlačítko **přidat**.
 

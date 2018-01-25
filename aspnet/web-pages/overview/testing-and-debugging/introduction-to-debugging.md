@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 2bc1f096540d17095ef760eed67b458fcd4e1372
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b6b5a886efe515b434948dade1ae840ddaecd42
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>Úvod do ladění rozhraní ASP.NET Web Pages lokalit (Razor)
 ====================
@@ -62,7 +62,7 @@ Důležitou součást řešení potíží s chybami a problémy ve vašem kódu 
     > **Důležité** byste měli odebrat všechny diagnostický kód z webových stránek před přesunutím webové stránky na provozním serveru. To se týká `ServerInfo` pomocné rutiny, jakož i jiné diagnostické postupy v tomto článku zahrnujících přidání kódu na stránku. Nechcete návštěvníci vašeho webu zobrazíte informace o název serveru, uživatelská jména, cesty na serveru a podobné podrobnosti, protože tento typ informací může být vhodné, když uživatelé se zlými úmysly.
 3. Uložit stránky a spusťte ji v prohlížeči.
 
-    ![Ladění-1](introduction-to-debugging/_static/image1.jpg)
+    ![Debugging-1](introduction-to-debugging/_static/image1.jpg)
 
     `ServerInfo` Pomocník zobrazí čtyři tabulky informace na stránce:
 
@@ -71,7 +71,7 @@ Důležitou součást řešení potíží s chybami a problémy ve vašem kódu 
     - Informace o běhu programu HTTP. Tato část obsahuje podrobnosti o která verze rozhraní Microsoft .NET Framework je spuštěno webové stránky, cesta, údaje o mezipaměti a tak dále. (Vytvořeným v [Úvod do ASP.NET webové programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkId=202890), pomocí syntaxe jsou postaveny na společnosti Microsoft ASP.NET technologii webového serveru, který je sám založený na rozsáhlé softwaru syntaxi Razor rozhraní ASP.NET Web Pages. vývoj knihovny volá rozhraní .NET Framework).
     - Proměnné prostředí. Tato část obsahuje seznam všech proměnných v místním prostředí a jejich hodnoty na webovém serveru.
 
-    Úplný popis všech informací serveru a požadavek je nad rámec tohoto článku, ale můžete uvidíte, že `ServerInfo` helper vrátí spoustu diagnostické informace. Další informace o hodnotách který `ServerInfo` vrátí, najdete v části [rozpoznána proměnné prostředí](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx) na webu Microsoft TechNet a [proměnné serveru IIS](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx) na webu MSDN.
+    Úplný popis všech informací serveru a požadavek je nad rámec tohoto článku, ale můžete uvidíte, že `ServerInfo` helper vrátí spoustu diagnostické informace. Další informace o hodnotách který `ServerInfo` vrátí, najdete v části [rozpoznána proměnné prostředí](https://technet.microsoft.com/library/dd560744(WS.10).aspx) na webu Microsoft TechNet a [proměnné serveru IIS](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) na webu MSDN.
 
 ## <a name="embedding-output-expressions-to-display-page-values"></a>Vnoření výstup výrazy k zobrazení hodnot stránky
 
@@ -93,7 +93,7 @@ Jiný způsob, jak zobrazit, co se děje ve vašem kódu je vložení výrazů v
 
     Na stránce se zobrazuje skutečné den v týdnu nejprve pak aktualizované den v týdnu, který výsledkem přidání jeden den a výsledný zprávu od `switch` příkaz. Výstup ze dvou výrazů proměnné (`@weekday`) nemá žádné mezery mezi dny, protože jste nepřidali žádné HTML `<p>` značek k výstupu; výrazy jsou pouze pro testování.
 
-    ![Ladění 2](introduction-to-debugging/_static/image2.jpg)
+    ![Debugging-2](introduction-to-debugging/_static/image2.jpg)
 
     Nyní můžete zobrazit, kde je chyba. Při první zobrazení `weekday` proměnných v kódu, se zobrazí správný den. Při zobrazení ji ještě jednou po `if` blokovat v kódu, dne je vypnutý o jednu. Abyste věděli, že něco došlo mezi prvním a druhém vzhled proměnnou den v týdnu. Pokud to byly skutečné chyb, by vám zúžit umístění kód, který je příčinou problému pomoct tento druh přístup.
 6. Opravte kód na stránce odebráním dvě výstup výrazy, které jste přidali, a odebrání kód, který změní den v týdnu. Zbývající, kompletní blok kódu vypadá jako v následujícím příkladu:
@@ -111,7 +111,7 @@ Jiný způsob, jak zobrazit, co se děje ve vašem kódu je vložení výrazů v
     [!code-html[Main](introduction-to-debugging/samples/sample5.html)]
 3. Uložte a spusťte stránku v prohlížeči.
 
-    ![Ladění 4](introduction-to-debugging/_static/image3.jpg)
+    ![Debugging-4](introduction-to-debugging/_static/image3.jpg)
 
     V tomto příkladu `ObjectInfo` Pomocník zobrazí dvě položky:
 
@@ -139,5 +139,5 @@ Informace o ladění stránek ASP.NET Razor pomocí integrované ladicí program
 ## <a name="additional-resources"></a>Další prostředky
 
 - [Programování webových stránek ASP.NET (Razor) pomocí sady Visual Studio](https://go.microsoft.com/fwlink/?LinkId=205854)
-- [Proměnné serveru IIS](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx) (MSDN)
-- [Rozpoznat proměnné prostředí](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx) (TechNet)
+- [Proměnné serveru IIS](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) (MSDN)
+- [Rozpoznat proměnné prostředí](https://technet.microsoft.com/library/dd560744(WS.10).aspx) (TechNet)

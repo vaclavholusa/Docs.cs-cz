@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 965d2e740cc76838b1b4e1c618a2a6d784672fcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0d053cecbf9a59f258470ee370852e3f112908c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-oauth-providers-with-mvc-4"></a>Pomocí poskytovatelů OAuth MVC 4
 ====================
@@ -84,7 +84,7 @@ V tomto kurzu nezobrazuje všechny kroky, které musíte provést pro registraci
 - [Facebook](https://developers.facebook.com/)
 - [Google](https://developers.google.com/)
 - [Microsoft](http://manage.dev.live.com/)
-- [Služby Twitter.](https://dev.twitter.com/)
+- [Twitter](https://dev.twitter.com/)
 
 Při registraci vaší lokality se sítí Facebook, můžete zadat &quot;localhost&quot; domény, lokality a `&quot;http://localhost/&quot;` pro adresu URL, jak je znázorněno na obrázku níže. Pomocí localhost funguje s většinu poskytovatelů, ale aktuálně nefunguje s zprostředkovatele služby Microsoft. Pro zprostředkovatele služby Microsoft musí obsahovat adresu URL webu platný.
 
@@ -148,7 +148,7 @@ Pokud chcete povolit externího ověřování, budete mít. Však můžete dalš
 
 Protože jste si všimli v předchozích částech, není potřeba načíst žádné další informace o registraci předdefinovaný účet pro práci. Většina externí zprostředkovatelé však předat zpět Další informace o uživateli. Následující části ukazují, jak tyto informace uchovat a uložte ho do databáze. Konkrétně si ponechají hodnoty pro uživatele úplný název, identifikátor URI uživatele osobní webové stránky a hodnotu, která určuje, zda má Facebook ověřit účet.
 
-Budete používat [migrace Code First](https://msdn.microsoft.com/en-us/data/jj591621) přidat tabulku pro ukládání informací o další uživatele. Existující databázi, přidáváte tabulky, proto musíte nejprve vytvořit snímek aktuální databázi. Vytvořením snímek aktuální databázi, můžete vytvořit později migrace, který obsahuje pouze novou tabulku. Chcete-li vytvořit snímek aktuální databáze:
+Budete používat [migrace Code First](https://msdn.microsoft.com/data/jj591621) přidat tabulku pro ukládání informací o další uživatele. Existující databázi, přidáváte tabulky, proto musíte nejprve vytvořit snímek aktuální databázi. Vytvořením snímek aktuální databázi, můžete vytvořit později migrace, který obsahuje pouze novou tabulku. Chcete-li vytvořit snímek aktuální databáze:
 
 1. Otevřete **Konzola správce balíčků**
 2. Spusťte příkaz **enable-migrations se**

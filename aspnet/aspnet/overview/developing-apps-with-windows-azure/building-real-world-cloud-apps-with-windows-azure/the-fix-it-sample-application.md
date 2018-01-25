@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 470b8a5f4a004c85f603c9c5d0766e5826c96e38
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c98e79bf8e9a1fe0899ed6d952c3e411ca472f7e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Dodatek: Opravu ho ukázkovou aplikaci (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -62,10 +62,10 @@ Správce by měl být moct změnit vlastnictví na stávající úlohy. Napřík
 
 Zpracování v aplikaci opravte fronty zpráv byla navržená tak, že byly jednoduché k objasnění vzoru fronty způsob práce s minimální velikostí kódu. Tento jednoduchý kód by stačit pro skutečné produkční aplikaci.
 
-- Kód není zaručeno, že každá zpráva fronty budou zpracovány maximálně jednou. Pokud dostanete zprávu z fronty, je časový limit, během které je zpráva neviditelná pro další moduly pro naslouchání fronty. Pokud vyprší časový limit před odstraněním zprávy, se zpráva zobrazí znovu. Proto pokud instanci role pracovního procesu stráví dlouhou dobu zpracování zprávy, je teoreticky může pro stejnou zprávu zpracovat dvakrát, výsledkem je duplicitní úloh v databázi. Další informace o tomto problému najdete v tématu [pomocí fronty úložiště Azure](https://msdn.microsoft.com/en-us/library/ff803365.aspx#sec7).
-- Logika dotazování fronty může být cenově výhodnější podle dávkování načítání zpráv. Pokaždé, když zavoláte [CloudQueue.GetMessageAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx), a náklady transakce. Místo toho můžete volat [CloudQueue.GetMessagesAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (Poznámka: množném čísle '), který získá více zpráv v rámci jedné transakce. Transakce náklady na úložiště front Azure jsou velmi nízké, takže dopad na náklady není podstatný ve většině scénářů.
+- Kód není zaručeno, že každá zpráva fronty budou zpracovány maximálně jednou. Pokud dostanete zprávu z fronty, je časový limit, během které je zpráva neviditelná pro další moduly pro naslouchání fronty. Pokud vyprší časový limit před odstraněním zprávy, se zpráva zobrazí znovu. Proto pokud instanci role pracovního procesu stráví dlouhou dobu zpracování zprávy, je teoreticky může pro stejnou zprávu zpracovat dvakrát, výsledkem je duplicitní úloh v databázi. Další informace o tomto problému najdete v tématu [pomocí fronty úložiště Azure](https://msdn.microsoft.com/library/ff803365.aspx#sec7).
+- Logika dotazování fronty může být cenově výhodnější podle dávkování načítání zpráv. Pokaždé, když zavoláte [CloudQueue.GetMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx), a náklady transakce. Místo toho můžete volat [CloudQueue.GetMessagesAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (Poznámka: množném čísle '), který získá více zpráv v rámci jedné transakce. Transakce náklady na úložiště front Azure jsou velmi nízké, takže dopad na náklady není podstatný ve většině scénářů.
 - Úzkou smyčky v kódu zpracování zprávy fronty způsobí, že spřažení procesoru, který nevyužívá efektivně vícejádrových virtuálních počítačů. Návrh s lepší využije paralelismus spustit několik úloh s modifikátorem async paralelně.
-- Zpracování zpráv fronty má pouze elementární výjimek. Například nemůže pracovat s kód [škodlivých zpráv](https://msdn.microsoft.com/en-us/library/ms789028.aspx). (Při zpracování zprávy způsobí výjimku, budete muset přihlásit k chybě a odstranění zprávy, nebo roli pracovního procesu se pokusí znovu zpracovat, a že opakování ve smyčce bude pokračovat po neomezenou dobu.)
+- Zpracování zpráv fronty má pouze elementární výjimek. Například nemůže pracovat s kód [škodlivých zpráv](https://msdn.microsoft.com/library/ms789028.aspx). (Při zpracování zprávy způsobí výjimku, budete muset přihlásit k chybě a odstranění zprávy, nebo roli pracovního procesu se pokusí znovu zpracovat, a že opakování ve smyčce bude pokračovat po neomezenou dobu.)
 
 ### <a name="sql-queries-are-unbounded"></a>Dotazy SQL jsou bez vazby
 
@@ -85,7 +85,7 @@ Ukázkové skripty pro automatizaci prostředí PowerShell byly napsány pouze p
 
 ### <a name="special-handling-for-html-codes-in-user-input"></a>Zvláštní zpracování pro kódy HTML vstup uživatele
 
-ASP.NET automaticky brání mnoho způsobů, ve kterých uživatelé se zlými úmysly může pokus útoky skriptování mezi weby zadáním skriptu do polí vstupu uživatele. A MVC `DisplayFor` pomocné rutiny, které slouží k zobrazení úloh produkty a poznámky k automaticky umístí kódování HTML hodnoty, které odešle do prohlížeče. Ale v produkční aplikace můžete chtít použít další opatření. Další informace najdete v tématu [žádosti o ověření v technologii ASP.NET](https://msdn.microsoft.com/en-us/library/hh882339.aspx).
+ASP.NET automaticky brání mnoho způsobů, ve kterých uživatelé se zlými úmysly může pokus útoky skriptování mezi weby zadáním skriptu do polí vstupu uživatele. A MVC `DisplayFor` pomocné rutiny, které slouží k zobrazení úloh produkty a poznámky k automaticky umístí kódování HTML hodnoty, které odešle do prohlížeče. Ale v produkční aplikace můžete chtít použít další opatření. Další informace najdete v tématu [žádosti o ověření v technologii ASP.NET](https://msdn.microsoft.com/library/hh882339.aspx).
 
 <a id="bestpractices"></a>
 ## <a name="best-practices"></a>Doporučené postupy
@@ -146,13 +146,13 @@ Aby bylo možné zobrazit jednoduchého kódu, původní verze aplikace opravte 
 
 ### <a name="mark-private-members-as-readonly-when-they-arent-expected-to-change"></a>Soukromé členy označit jako jen pro čtení, když nejsou očekávané změnit
 
-Například v `DashboardController` třídy instanci `FixItTaskRepository` je vytvořen a neočekává se, změnit, takže jsme definovali jej jako [jen pro čtení](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx).
+Například v `DashboardController` třídy instanci `FixItTaskRepository` je vytvořen a neočekává se, změnit, takže jsme definovali jej jako [jen pro čtení](https://msdn.microsoft.com/library/acdd6hb7.aspx).
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample9.cs?highlight=3)]
 
 ### <a name="use-listany-instead-of-listcount-gt-0"></a>Pomocí seznamu. Any() místo seznamu. Count() &gt; 0
 
-Pokud jste se zajímáte o tom, zda jeden nebo více položek v seznamu podle zadaným kritériím, použijte [žádné](https://msdn.microsoft.com/en-us/library/bb534972.aspx) metoda, protože vrátí také položku hodí kritéria nenajde, zatímco `Count` metoda má vždy k iteraci v prostřednictvím každá položka. Řídicí panel *Index.cshtml* soubor původně měl tento kód:
+Pokud jste se zajímáte o tom, zda jeden nebo více položek v seznamu podle zadaným kritériím, použijte [žádné](https://msdn.microsoft.com/library/bb534972.aspx) metoda, protože vrátí také položku hodí kritéria nenajde, zatímco `Count` metoda má vždy k iteraci v prostřednictvím každá položka. Řídicí panel *Index.cshtml* soubor původně měl tento kód:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample10.cshtml)]
 
@@ -166,13 +166,13 @@ Pro **opravte ji vytvořit** tlačítko na domovské stránce, opravte ji aplika
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample12.cshtml)]
 
-Pro zobrazení nebo akce odkazy takto je vhodnější použít [Url.Action](https://msdn.microsoft.com/en-us/library/system.web.mvc.urlhelper.action.aspx) pomocné rutiny HTML, například:
+Pro zobrazení nebo akce odkazy takto je vhodnější použít [Url.Action](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.action.aspx) pomocné rutiny HTML, například:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample13.cshtml)]
 
 ### <a name="use-taskdelay-instead-of-threadsleep-in-worker-role"></a>Použití Task.Delay místo Thread.Sleep v roli pracovního procesu
 
-Vloží nový projekt šablony `Thread.Sleep` v ukázce kód pro roli pracovního procesu, ale způsobuje vlákno do režimu spánku, může způsobit fondu vláken vytváření další nepotřebné vlákna. Se můžete vyhnout pomocí [Task.Delay](https://msdn.microsoft.com/en-us/library/hh139096.aspx) místo.
+Vloží nový projekt šablony `Thread.Sleep` v ukázce kód pro roli pracovního procesu, ale způsobuje vlákno do režimu spánku, může způsobit fondu vláken vytváření další nepotřebné vlákna. Se můžete vyhnout pomocí [Task.Delay](https://msdn.microsoft.com/library/hh139096.aspx) místo.
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample14.cs?highlight=11)]
 
@@ -184,11 +184,11 @@ V tomto příkladu je z `FixItQueueManager` třídy:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample15.cs)]
 
-Měli byste použít `async void` pouze pro obslužné rutiny událostí nejvyšší úrovně. Pokud definujete jako metodu `async void`, volající nelze **await** metodu nebo catch jakékoli výjimky, vyvolá metoda. Další informace najdete v tématu [osvědčené postupy v asynchronní programování](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx). 
+Měli byste použít `async void` pouze pro obslužné rutiny událostí nejvyšší úrovně. Pokud definujete jako metodu `async void`, volající nelze **await** metodu nebo catch jakékoli výjimky, vyvolá metoda. Další informace najdete v tématu [osvědčené postupy v asynchronní programování](https://msdn.microsoft.com/magazine/jj991977.aspx). 
 
 ### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>Použít token zrušení pro přerušení smyčky role pracovního procesu
 
-Obvykle **spustit** metoda na roli pracovního procesu obsahuje nekonečné smyčce. Při zastavení role pracovního procesu [RoleEntryPoint.OnStop](https://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) metoda je volána. By měl použít tuto metodu zrušit práci, kterou provádí uvnitř **spustit** metoda a ukončete řádně. Proces, jinak hodnota může být ukončen uprostřed operace.
+Obvykle **spustit** metoda na roli pracovního procesu obsahuje nekonečné smyčce. Při zastavení role pracovního procesu [RoleEntryPoint.OnStop](https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) metoda je volána. By měl použít tuto metodu zrušit práci, kterou provádí uvnitř **spustit** metoda a ukončete řádně. Proces, jinak hodnota může být ukončen uprostřed operace.
 
 ### <a name="opt-out-of-automatic-mime-sniffing-procedure"></a>Zamítnutí automatického MIME postup sledování toku dat
 
@@ -219,7 +219,7 @@ Spuštění aplikace vyřešit dvěma způsoby:
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>Spustit základní aplikace
 
-1. Nainstalujte [Visual Studio 2013 nebo Visual Studio 2013 Express pro Web](https://www.visualstudio.com/en-us/downloads).
+1. Nainstalujte [Visual Studio 2013 nebo Visual Studio 2013 Express pro Web](https://www.visualstudio.com/downloads).
 2. Nainstalujte [Azure SDK pro .NET pro Visual Studio 2013.](https://go.microsoft.com/fwlink/p/?linkid=323510&amp;clcid=0x409)
 3. Stáhněte si soubor .zip z [galerie kódů MSDN](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4).
 4. V Průzkumníku souborů klikněte pravým tlačítkem na soubor .zip a klikněte na tlačítko Vlastnosti a v okně vlastností klikněte na odblokovat.
@@ -228,7 +228,7 @@ Spuštění aplikace vyřešit dvěma způsoby:
 7. V nabídce Nástroje klikněte na tlačítko Správce balíčků knihoven a potom konzola Správce balíčků.
 8. V balíček správce konzoly (pomocí PMC), kliknutím na tlačítko Obnovit.
 9. Ukončete aplikaci Visual Studio.
-10. Spuštění [emulátoru úložiště Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh403989.aspx).
+10. Spuštění [emulátoru úložiště Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx).
 11. Restartujte Visual Studio, otevřete soubor řešení uzavřený v předchozím kroku.
 12. Ujistěte se, že projekt automatickou je nastavit jako spouštěný projekt a potom stiskněte klávesu CTRL + F5 a spusťte projekt.
 
@@ -240,7 +240,7 @@ Spuštění aplikace vyřešit dvěma způsoby:
 3. V aplikaci *Web.config* v soubor *MyFixIt* projektu (webový projekt), změňte hodnotu `appSettings/UseQueues` hodnotu "true": 
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample19.cmd?highlight=3)]
-4. Pokud [emulátoru úložiště Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh403989.aspx) není stále spuštěná, spusťte ji znovu.
+4. Pokud [emulátoru úložiště Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx) není stále spuštěná, spusťte ji znovu.
 5. Spusťte automatickou webový projekt a projekt MyFixItCloudService současně.
 
     Pomocí sady Visual Studio 2013:
@@ -397,7 +397,7 @@ V MyFixItCloudService\ServiceConfiguration.Cloud.cscfg nahraďte stejné dvě ho
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample34.xml?highlight=3)]
 
-Nyní jste připraveni k nasazení cloudové služby. V řešení prozkoumat, klikněte pravým tlačítkem na projekt MyFixItCloudService a vyberte **publikovat**. Další informace najdete v tématu "[Nasaďte aplikaci do Azure](https://www.windowsazure.com/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", což je v rámci 2 [v tomto kurzu](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
+Nyní jste připraveni k nasazení cloudové služby. V řešení prozkoumat, klikněte pravým tlačítkem na projekt MyFixItCloudService a vyberte **publikovat**. Další informace najdete v tématu "[Nasaďte aplikaci do Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", což je v rámci 2 [v tomto kurzu](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
 
 >[!div class="step-by-step"]
 [Předchozí](more-patterns-and-guidance.md)

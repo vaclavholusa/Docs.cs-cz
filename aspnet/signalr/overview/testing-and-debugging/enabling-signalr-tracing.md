@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: 2f01ab5d66e44cd82634f1b3df1ca6c78b7fd9d5
-ms.sourcegitcommit: c07fb5cb5df0a12f9fe6735fcbc90964608fa687
+ms.openlocfilehash: ac979acf162084a195bb769f842e77ad2498c7f3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="enabling-signalr-tracing"></a>Povolení trasování SignalR
 ====================
@@ -61,7 +61,7 @@ Pokud je povoleno sledování, vytvoří aplikace SignalR položky protokolu ud�
 <a id="server"></a>
 ## <a name="enabling-tracing-on-the-server"></a>Povolení trasování na serveru
 
-Povolení trasování na serveru v rámci konfiguračního souboru aplikace (App.config nebo Web.config v závislosti na typu projektu.) Zadáte, které kategorie události do protokolu. V konfiguračním souboru, můžete také určit, zda chcete protokolovat události do textového souboru, protokol událostí systému Windows nebo vlastního protokolu pomocí implementace [TraceListener](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracelistener(v=vs.110).aspx).
+Povolení trasování na serveru v rámci konfiguračního souboru aplikace (App.config nebo Web.config v závislosti na typu projektu.) Zadáte, které kategorie události do protokolu. V konfiguračním souboru, můžete také určit, zda chcete protokolovat události do textového souboru, protokol událostí systému Windows nebo vlastního protokolu pomocí implementace [TraceListener](https://msdn.microsoft.com/library/system.diagnostics.tracelistener(v=vs.110).aspx).
 
 Kategorie události serveru zahrnují následující řazení zpráv:
 
@@ -87,7 +87,7 @@ Následující kód ukazuje, jak povolit trasování pro každou kategorii udál
 
 [!code-html[Main](enabling-signalr-tracing/samples/sample1.html)]
 
-Ve výše, kódu `SignalRSwitch` položka určuje [TraceLevel](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracelevel(v=vs.110).aspx) používá pro událostí odeslaných do zadaného protokolu. V takovém případě je nastavený na `Verbose` to znamená, všechny ladění a trasování zprávy se zaznamenávají.
+Ve výše, kódu `SignalRSwitch` položka určuje [TraceLevel](https://msdn.microsoft.com/library/system.diagnostics.tracelevel(v=vs.110).aspx) používá pro událostí odeslaných do zadaného protokolu. V takovém případě je nastavený na `Verbose` to znamená, všechny ladění a trasování zprávy se zaznamenávají.
 
 Následující výstup zobrazuje záznamy z `transports.log.txt` soubor pro aplikaci pomocí konfiguračního souboru výše. Zobrazuje nové připojení, odebrané připojení a přenosu prezenční signál události.
 
@@ -112,9 +112,9 @@ Události se zaznamenávají v protokolu aplikace a jsou k dispozici prostředni
 <a id="net_client"></a>
 ## <a name="enabling-tracing-in-the-net-client-windows-desktop-apps"></a>Povolení trasování v rozhraní .NET klienta (aplikace Windows Desktop)
 
-Klient .NET může protokolovat události konzole, s textovým souborem, nebo vlastní protokol pomocí implementace [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter.aspx).
+Klient .NET může protokolovat události konzole, s textovým souborem, nebo vlastní protokol pomocí implementace [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter.aspx).
 
-Povolení protokolování v rozhraní .NET klienta, nastavte jiné připojení `TraceLevel` vlastnosti [TraceLevels](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.tracelevels(v=vs.118).aspx) hodnotu a `TraceWriter` vlastnost, která má platnou [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter.aspx) instance.
+Povolení protokolování v rozhraní .NET klienta, nastavte jiné připojení `TraceLevel` vlastnosti [TraceLevels](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.tracelevels(v=vs.118).aspx) hodnotu a `TraceWriter` vlastnost, která má platnou [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter.aspx) instance.
 
 <a id="desktop_console"></a>
 ### <a name="logging-desktop-client-events-to-the-console"></a>Protokolování událostí klienta pro stolní počítače do konzoly nástroje
@@ -137,23 +137,23 @@ Následující výstup zobrazuje záznamy z `ClientLog.txt` soubor pro aplikaci 
 <a id="phone"></a>
 ## <a name="enabling-tracing-in-windows-phone-8-clients"></a>Povolení trasování v klientech Windows Phone 8
 
-SignalR aplikací pro aplikace Windows Phone pomocí stejného klienta rozhraní .NET jako desktopové aplikace, ale [Console.Out](https://msdn.microsoft.com/en-us/library/system.console.out(v=vs.110).aspx) a zápis do souboru s [StreamWriter](https://msdn.microsoft.com/en-us/library/system.io.streamwriter(v=vs.110).aspx) nejsou k dispozici. Místo toho je potřeba vytvořit vlastní provádění [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter(v=vs.110).aspx) pro trasování. 
+SignalR aplikací pro aplikace Windows Phone pomocí stejného klienta rozhraní .NET jako desktopové aplikace, ale [Console.Out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx) a zápis do souboru s [StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx) nejsou k dispozici. Místo toho je potřeba vytvořit vlastní provádění [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) pro trasování. 
 
 <a id="phone_ui"></a>
 ### <a name="logging-windows-phone-client-events-to-the-ui"></a>Protokolování událostí pro Windows Phone klienta do uživatelského rozhraní
 
-[Základu kódu SignalR](https://github.com/SignalR/SignalR/archive/master.zip) zahrnuje Windows Phone vzorku, který zapíše výstup trasování do [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) pomocí vlastní [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter(v=vs.110).aspx) implementace volá `TextBlockWriter`. Tato třída lze nalézt v **samples/Microsoft.AspNet.SignalR.Client.WP8.Samples** projektu. Při vytváření instance `TextBlockWriter`, předejte aktuální [SynchronizationContext](https://msdn.microsoft.com/en-us/library/system.threading.synchronizationcontext(v=vs.110).aspx)a [StackPanel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) kde se vytvoří [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) pro trasování výstup:
+[Základu kódu SignalR](https://github.com/SignalR/SignalR/archive/master.zip) zahrnuje Windows Phone vzorku, který zapíše výstup trasování do [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) pomocí vlastní [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) implementace volá `TextBlockWriter`. Tato třída lze nalézt v **samples/Microsoft.AspNet.SignalR.Client.WP8.Samples** projektu. Při vytváření instance `TextBlockWriter`, předejte aktuální [SynchronizationContext](https://msdn.microsoft.com/library/system.threading.synchronizationcontext(v=vs.110).aspx)a [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) kde se vytvoří [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) pro trasování výstup:
 
 [!code-csharp[Main](enabling-signalr-tracing/samples/sample7.cs)]
 
-Výstup trasování budou zapsány do nového [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) vytvořené v [StackPanel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) předán v:
+Výstup trasování budou zapsány do nového [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) vytvořené v [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) předán v:
 
 ![](enabling-signalr-tracing/_static/image2.png)
 
 <a id="phone_debug"></a>
 ### <a name="logging-windows-phone-client-events-to-the-debug-console"></a>Protokolování událostí pro Windows Phone klienta ke konzole ladění
 
-K odeslání výstupu konzoly ladění, místo uživatelského rozhraní, vytvořte implementaci [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter(v=vs.110).aspx) , zapíše se do okna ladění a přiřaďte ji k připojení k [TraceWriter](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.connection.tracewriter(v=vs.118).aspx) vlastnost:
+K odeslání výstupu konzoly ladění, místo uživatelského rozhraní, vytvořte implementaci [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) , zapíše se do okna ladění a přiřaďte ji k připojení k [TraceWriter](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connection.tracewriter(v=vs.118).aspx) vlastnost:
 
 [!code-csharp[Main](enabling-signalr-tracing/samples/sample8.cs)]
 

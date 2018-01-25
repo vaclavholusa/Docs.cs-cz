@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: 125d555a9e170ef35dd99e0409a2442d5f9ae34a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ccfbaa26cbf610f847811e6f3c612458277046ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>Fronty způsob práce zaměřený (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -91,7 +91,7 @@ Implementace vzoru fronty, musíme mít dvě změny do aplikace opravit.
 - Když uživatel odešle nové úlohy opravte ji, uveďte úlohu ve frontě, místo zápis do databáze.
 - Vytvoření služby back-end, který zpracovává zprávy ve frontě.
 
-Do fronty, použijeme [Azure Queue Storage Service](https://www.windowsazure.com/en-us/develop/net/how-to-guides/queue-service/). Další možností je použít [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/).
+Do fronty, použijeme [Azure Queue Storage Service](https://www.windowsazure.com/develop/net/how-to-guides/queue-service/). Další možností je použít [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/).
 
 Při rozhodování, služby, která fronty používat, zvažte, jak vaše aplikace musí odesílat a přijímat zprávy ve frontě:
 
@@ -106,10 +106,10 @@ Je potřeba zamyslet se dostupnosti aplikace. Služba fronty úložiště je sou
 
 Do úlohy opravte ji umístit fronty, má front-end webový provede následující kroky:
 
-1. Vytvoření [CloudQueueClient](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) instance. `CloudQueueClient` Instance se používá k provedení požadavků na službu fronty.
+1. Vytvoření [CloudQueueClient](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) instance. `CloudQueueClient` Instance se používá k provedení požadavků na službu fronty.
 2. Vytvořte frontu, pokud ještě neexistuje.
 3. Serializuje úloha opravit.
-4. Volání [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) uvést zprávy do fronty.
+4. Volání [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) uvést zprávy do fronty.
 
 Provedeme tato práce v konstruktoru a `SendMessageAsync` metoda nové `FixItQueueManager` třídy.
 
@@ -117,7 +117,7 @@ Provedeme tato práce v konstruktoru a `SendMessageAsync` metoda nové `FixItQue
 
 Tady se používá [Json.NET](https://github.com/JamesNK/Newtonsoft.Json) knihovny určená k serializaci automatickou do formátu JSON. Můžete použít libovolnou metodu serializace dáváte přednost. JSON má výhodu v podobě se čitelný, aniž by byly míň podrobné než XML.
 
-Kód produkční kvality by přidat logiku zpracování chyb, pozastavení, pokud jsou databáze není k dispozici, více řádně zpracovávat obnovení, vytvořit frontu na spuštění aplikace a spravovat "[poškozených" zprávy](https://msdn.microsoft.com/en-us/library/ms789028(v=vs.110).aspx). (Zprávu, která nelze zpracovat z nějakého důvodu je poškozená zpráva. Nechcete, aby poškozených zprávy a pokuste se nacházejí ve frontě, kde role pracovního procesu průběžně pokusí zpracovat, nezdaří, zkuste to znovu, nezdaří atd.)
+Kód produkční kvality by přidat logiku zpracování chyb, pozastavení, pokud jsou databáze není k dispozici, více řádně zpracovávat obnovení, vytvořit frontu na spuštění aplikace a spravovat "[poškozených" zprávy](https://msdn.microsoft.com/library/ms789028(v=vs.110).aspx). (Zprávu, která nelze zpracovat z nějakého důvodu je poškozená zpráva. Nechcete, aby poškozených zprávy a pokuste se nacházejí ve frontě, kde role pracovního procesu průběžně pokusí zpracovat, nezdaří, zkuste to znovu, nezdaří atd.)
 
 Ve front-endu aplikace MVC musíme aktualizovat kód, který vytvoří novou úlohu. Místo uvedení úlohu do úložiště, volání `SendMessageAsync` metoda uvedené výše.
 
@@ -156,7 +156,7 @@ Klikněte na tlačítko **OK** k dokončení dialogové okno. Tento postup přid
 
 ![](queue-centric-work-pattern/_static/image8.png)
 
-Další informace najdete v tématu [vytvoření projektu Azure pomocí sady Visual Studio.](https://msdn.microsoft.com/en-us/library/windowsazure/ee405487.aspx)
+Další informace najdete v tématu [vytvoření projektu Azure pomocí sady Visual Studio.](https://msdn.microsoft.com/library/windowsazure/ee405487.aspx)
 
 V roli pracovního procesu, jsme dotazování pro zprávy voláním `ProcessMessageAsync` metodu `FixItQueueManager` třídu, která jsme viděli dříve.
 
@@ -168,7 +168,7 @@ V roli pracovního procesu, jsme dotazování pro zprávy voláním `ProcessMess
 
 Dotazování pro zprávy fronty způsobuje malé transakce účtují, takže pokud není žádná zpráva čeká na zpracování, role pracovního procesu `RunAsync` druhý před dotazování metoda znovu čeká voláním `Task.Delay(1000)`.
 
-Ve webovém projektu přidání asynchronní kódu automaticky zlepšit výkon, protože služba IIS spravuje fondu vláken omezené. To není případ v projektu role pracovního procesu. Pokud chcete zlepšit škálovatelnost role pracovního procesu, můžete zapsat Vícevláknová kódu nebo použít asynchronní kód pro implementaci [paralelní programování](https://msdn.microsoft.com/en-us/library/ff963553.aspx). Ukázka neimplementuje paralelní programování ale ukazuje, jak chcete-li kód asynchronní, takže můžete implementovat paralelní programování.
+Ve webovém projektu přidání asynchronní kódu automaticky zlepšit výkon, protože služba IIS spravuje fondu vláken omezené. To není případ v projektu role pracovního procesu. Pokud chcete zlepšit škálovatelnost role pracovního procesu, můžete zapsat Vícevláknová kódu nebo použít asynchronní kód pro implementaci [paralelní programování](https://msdn.microsoft.com/library/ff963553.aspx). Ukázka neimplementuje paralelní programování ale ukazuje, jak chcete-li kód asynchronní, takže můžete implementovat paralelní programování.
 
 ## <a name="summary"></a>Souhrn
 
@@ -184,11 +184,11 @@ Další informace o frontách najdete v následujících zdrojích informací.
 Dokumentace:
 
 - [Microsoft Azure Storage fronty část 1: Začínáme](http://justazure.com/microsoft-azure-storage-queues-part-1-getting-started/). Článek podle římské Schacherl.
-- [Provádění úlohy na pozadí](https://msdn.microsoft.com/en-us/library/ff803365.aspx), kapitoly 5 z [přesunutí aplikace do cloudu, 3. vydání](https://msdn.microsoft.com/en-us/library/ff728592.aspx) z Microsoft Patterns and Practices. (Zejména v části ["Pomocí Azure úložiště fronty"](https://msdn.microsoft.com/en-us/library/ff803365.aspx#sec7).)
-- [Osvědčené postupy pro maximalizaci škálovatelnost a finanční efektivita na základě fronty zasílání zpráv řešení v Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh697709.aspx). Dokument White paper podle Valery Mizonov.
-- [Porovnání Azure fronty a fronty služby Service Bus](https://msdn.microsoft.com/en-us/magazine/jj159884.aspx). Článek v časopise MSDN, poskytuje další informace, které vám pomohou vybrat fronty služby, která chcete použít. Článek uvádí, že Service Bus je závislá na služby ACS pro ověřování, což znamená, že vaše SB fronty nebude k dispozici, když není k dispozici služby ACS. Ale vzhledem k tomu, že byl článek napsán, SB byl změněn na umožňují používat [tokeny SAS](https://msdn.microsoft.com/en-us/library/windowsazure/dn170477.aspx) jako alternativu k služby ACS.
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Viz Úvod do asynchronního zasílání zpráv, kanály a filtry vzor, kompenzace transakce vzor, neslučitelných příjemci vzor, CQRS vzor.
-- [Cesty CQRS](https://msdn.microsoft.com/en-us/library/jj554200). Elektronická kniha o CQRS podle Microsoft Patterns and Practices.
+- [Provádění úlohy na pozadí](https://msdn.microsoft.com/library/ff803365.aspx), kapitoly 5 z [přesunutí aplikace do cloudu, 3. vydání](https://msdn.microsoft.com/library/ff728592.aspx) z Microsoft Patterns and Practices. (Zejména v části ["Pomocí Azure úložiště fronty"](https://msdn.microsoft.com/library/ff803365.aspx#sec7).)
+- [Osvědčené postupy pro maximalizaci škálovatelnost a finanční efektivita na základě fronty zasílání zpráv řešení v Azure](https://msdn.microsoft.com/library/windowsazure/hh697709.aspx). Dokument White paper podle Valery Mizonov.
+- [Porovnání Azure fronty a fronty služby Service Bus](https://msdn.microsoft.com/magazine/jj159884.aspx). Článek v časopise MSDN, poskytuje další informace, které vám pomohou vybrat fronty služby, která chcete použít. Článek uvádí, že Service Bus je závislá na služby ACS pro ověřování, což znamená, že vaše SB fronty nebude k dispozici, když není k dispozici služby ACS. Ale vzhledem k tomu, že byl článek napsán, SB byl změněn na umožňují používat [tokeny SAS](https://msdn.microsoft.com/library/windowsazure/dn170477.aspx) jako alternativu k služby ACS.
+- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Viz Úvod do asynchronního zasílání zpráv, kanály a filtry vzor, kompenzace transakce vzor, neslučitelných příjemci vzor, CQRS vzor.
+- [Cesty CQRS](https://msdn.microsoft.com/library/jj554200). Elektronická kniha o CQRS podle Microsoft Patterns and Practices.
 
 Video:
 

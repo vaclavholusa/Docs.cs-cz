@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: badf9da0e9a26d185e7532b02f53a8acea60ea91
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f0d380ee411116844f42a542c12050513721eb1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>Vybrat hlavní GridView pomocí podrobnosti DetailView (C#) podrobností
 ====================
@@ -39,7 +39,7 @@ V [předchozí kurzu](master-detail-filtering-across-two-pages-cs.md) jsme vidě
 
 ## <a name="step-1-creating-a-selectable-gridview"></a>Krok 1: Vytvoření volitelný GridView
 
-Odvolání, že v dvě stránky hlavního a podrobného sestavy, aby každý záznam hlavní zahrnuta hypertextový odkaz, který po kliknutí na odeslané uživatele na stránku podrobností předávání kliknutelnou řádek `SupplierID` hodnota v řetězci dotazu. Na hypertextový odkaz byla přidána na každý řádek GridView pomocí HyperLinkField. Jednostránkové hlavní/podrobnosti sestavy, je nutné zadat tlačítka pro každý GridView řádek, který, po kliknutí na zobrazuje podrobnosti. Ovládací prvek GridView lze nakonfigurovat zahrnout vyberte tlačítko pro každý řádek, který způsobí, že zpětné volání a označí tento řádek prvku GridView [SelectedRow](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedrow.aspx).
+Odvolání, že v dvě stránky hlavního a podrobného sestavy, aby každý záznam hlavní zahrnuta hypertextový odkaz, který po kliknutí na odeslané uživatele na stránku podrobností předávání kliknutelnou řádek `SupplierID` hodnota v řetězci dotazu. Na hypertextový odkaz byla přidána na každý řádek GridView pomocí HyperLinkField. Jednostránkové hlavní/podrobnosti sestavy, je nutné zadat tlačítka pro každý GridView řádek, který, po kliknutí na zobrazuje podrobnosti. Ovládací prvek GridView lze nakonfigurovat zahrnout vyberte tlačítko pro každý řádek, který způsobí, že zpětné volání a označí tento řádek prvku GridView [SelectedRow](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedrow.aspx).
 
 Začněte přidáním ovládacího prvku GridView k `DetailsBySelecting.aspx` stránku `Filtering` složku, nastavení jeho `ID` vlastnost, která má `ProductsGrid`. Dál přidejte nové ObjectDataSource s názvem `AllProductsDataSource` , který spustí `ProductsBLL` třídy `GetProducts()` metoda.
 
@@ -85,7 +85,7 @@ Kontrola povolení výběru možnost přidá CommandField k `ProductsGrid` GridV
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/samples/sample2.aspx)]
 
-Při kliknutí na tlačítko Vybrat řádek GridView vyplývá zpětné volání a prvku GridView `SelectedRow` vlastnosti. Kromě `SelectedRow` vlastnost, poskytuje GridView [SelectedIndex](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx), a [SelectedDataKey](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) vlastnosti. `SelectedIndex` Vlastnost vrátí index vybraného řádku vzhledem k tomu `SelectedValue` a `SelectedDataKey` vlastnosti návratové hodnoty na základě prvku GridView [vlastnost DataKeyNames](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx).
+Při kliknutí na tlačítko Vybrat řádek GridView vyplývá zpětné volání a prvku GridView `SelectedRow` vlastnosti. Kromě `SelectedRow` vlastnost, poskytuje GridView [SelectedIndex](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx), a [SelectedDataKey](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) vlastnosti. `SelectedIndex` Vlastnost vrátí index vybraného řádku vzhledem k tomu `SelectedValue` a `SelectedDataKey` vlastnosti návratové hodnoty na základě prvku GridView [vlastnost DataKeyNames](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx).
 
 `DataKeyNames` Vlastnosti lze přidružit jeden nebo více datové pole hodnoty s každým řádkem a se často používá ke atribut jedinečné identifikační informace ze zadaných dat s každým řádkem GridView. `SelectedValue` Vlastnost vrací hodnotu první `DataKeyNames` datové pole pro vybraný řádek where jako `SelectedDataKey` vlastnost vrací vybraného řádku `DataKey` objekt, který obsahuje všechny hodnoty pro klíčová pole zadaných dat pro Tento řádek.
 

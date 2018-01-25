@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 6aa9f16f166ecf5529ae33a17951eb5ea425e7af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b443963a089f96a9dab11b7db4a25451075d6be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>Díky nástroji Page Inspector v architektuře ASP.NET MVC
 ====================
@@ -46,7 +46,7 @@ podle Tim Ammann
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us) nebo [Visual Studio Express 2012 pro Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web).
+- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) nebo [Visual Studio Express 2012 pro Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
 
 > [!NOTE]
 > Chcete-li získat nejnovější verzi nástroje Page Inspector, použijte [instalačního programu webové platformy](https://go.microsoft.com/fwlink/?LinkId=255386) nainstalovat sadu Windows Azure SDK pro rozhraní .NET 2.0.
@@ -84,9 +84,9 @@ V **Průzkumníku řešení**, rozbalte **zobrazení** složku a potom **Domů**
 
 ![Zobrazení Index.cshtml v nástroj Page Inspector](using-page-inspector-in-aspnet-mvc/_static/image8.png)
 
-Ve výchozím nastavení nástroj Page Inspector ukotven jako okno na levé straně prostředí Visual Studio. Pokud dáváte přednost, můžete ho jinde ukotvení nebo zrušení okna ukotvení. V tématu [postupy: rozvržení a dokování oken](https://msdn.microsoft.com/en-us/library/z4y0hsax.aspx).
+Ve výchozím nastavení nástroj Page Inspector ukotven jako okno na levé straně prostředí Visual Studio. Pokud dáváte přednost, můžete ho jinde ukotvení nebo zrušení okna ukotvení. V tématu [postupy: rozvržení a dokování oken](https://msdn.microsoft.com/library/z4y0hsax.aspx).
 
-Horní podokno okna nástroje Page Inspector ukazuje aktuální stránky v okně prohlížeče. V dolním podokně zobrazí stránku v značka jazyka HTML, společně s některé karty, která umožňují kontrolovat různé aspekty stránky. Dolní podokno je podobná [F12 Developer Tools](https://msdn.microsoft.com/en-us/ie/aa740478) v aplikaci Internet Explorer.
+Horní podokno okna nástroje Page Inspector ukazuje aktuální stránky v okně prohlížeče. V dolním podokně zobrazí stránku v značka jazyka HTML, společně s některé karty, která umožňují kontrolovat různé aspekty stránky. Dolní podokno je podobná [F12 Developer Tools](https://msdn.microsoft.com/ie/aa740478) v aplikaci Internet Explorer.
 
 ![Aplikace ASP.NET MVC v nástroj Page Inspector](using-page-inspector-in-aspnet-mvc/_static/image10.png)
 

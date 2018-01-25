@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 06c7fc31e138e9009640d20202e4745a61b68eeb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 120c35755784ba5a08a9592fdc58f17879848631
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="iteration-3--add-form-validation-c"></a>Iterace #3 – přidat ověřování formuláře (C#)
 ====================
@@ -63,13 +63,13 @@ V této iteraci přidáme logiku ověření přímo k akce kontroleru. Obecně t
 
 V této iteraci účelem zjednodušení, jsme zapisovat všechny ověřovacího kódu ručně. Místo psaní kódu ověření sebe, jsme může využít výhod rozhraní ověřování. Například můžete použít Microsoft Enterprise knihovny ověřování aplikace blok (VAB) implementovat logiku ověření pro vaši aplikaci ASP.NET MVC. Další informace o ověření bloku aplikace naleznete v tématu:
 
-[*http://msdn.microsoft.com/en-us/library/dd203099.aspx*](https://msdn.microsoft.com/en-us/library/dd203099.aspx)
+[*http://msdn.microsoft.com/library/dd203099.aspx*](https://msdn.microsoft.com/library/dd203099.aspx)
 
 ## <a name="adding-validation-to-the-create-view"></a>Přidání ověření do zobrazení pro vytváření
 
 Umožní s Začněte přidáním logiku ověření pro zobrazení pro vytváření. Naštěstí protože jsme vygenerován zobrazení vytvořit pomocí sady Visual Studio, zobrazení pro vytváření již obsahuje všechny logika potřebné uživatelské rozhraní pro zobrazení ověřovacích zpráv. Zobrazení pro vytváření je obsažený v výpis 1.
 
-**Výpis 1 - \Views\Contact\Create.aspx**
+**Listing 1 - \Views\Contact\Create.aspx**
 
 [!code-aspx[Main](iteration-3-add-form-validation-cs/samples/sample1.aspx)]
 

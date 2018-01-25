@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: 10da2b5013ae1348b69ea4f456d81bb4c4b73df6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f6861c702c1ccb19e5a4eee484a622079e205f86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení aktualizace kódu
 ====================
@@ -79,7 +79,7 @@ Nasazení do testovacího prostředí se nyní znovu publikovat jednoduché spu�
 
 Za normálních okolností byste také provést testování regrese (tedy testovací zbytek lokality a ujistěte se, že nové změny nebyla rozdělit žádné existující funkce). Ale pro účely tohoto kurzu budete tento krok přeskočit a přejít k aktualizace nasadit do pracovní a provozní.
 
-Při opětovném, Web Deploy automaticky určuje, které soubory se změnili a změnit pouze kopie souborů na server. Ve výchozím nastavení nasazení webu pomocí poslední změny dat na soubory určuje ty, které se změnily. Některé systémy správy zdrojového souboru data změnit i když neměnit obsah souboru. V takovém případě můžete chtít nakonfigurovat nasazení webu použít kontrolní součty souborů k určení, které soubory se změnily. Další informace najdete v tématu [Proč všechny soubory získat znovu nasazena i když nebyla je změnit?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#use_checksum) v části Nejčastější dotazy pro nasazení technologie ASP.NET.
+Při opětovném, Web Deploy automaticky určuje, které soubory se změnili a změnit pouze kopie souborů na server. Ve výchozím nastavení nasazení webu pomocí poslední změny dat na soubory určuje ty, které se změnily. Některé systémy správy zdrojového souboru data změnit i když neměnit obsah souboru. V takovém případě můžete chtít nakonfigurovat nasazení webu použít kontrolní součty souborů k určení, které soubory se změnily. Další informace najdete v tématu [Proč všechny soubory získat znovu nasazena i když nebyla je změnit?](https://msdn.microsoft.com/library/ee942158.aspx#use_checksum) v části Nejčastější dotazy pro nasazení technologie ASP.NET.
 
 ## <a name="take-the-application-offline-during-deployment"></a>Trvat aplikace do režimu offline během nasazení
 
@@ -188,7 +188,7 @@ Předpokládejme, že nemáte jako modré pozadí a chcete obnovit původní bar
 
     Otevře se okno zobrazíte rozdíly mezi místního souboru a verze se v cílovém prostředí.
 
-    ![Diff – obsah nebo Site.css](deploying-a-code-update/_static/image13.png)
+    ![Diff-Content/Site.css](deploying-a-code-update/_static/image13.png)
 4. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Site.css** znovu a klikněte na tlačítko **publikování Site.css**.
 
     **Aktivity publikování webového** ukazuje, že soubor byl publikován.

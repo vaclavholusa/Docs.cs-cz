@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 1c93a53ea23ec13ca3d6fc138024ba38ec4883ee
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 5f1579b5682b2f0b3f8227f0cf6b4c0361eb1e67
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -41,7 +41,7 @@ Byla zavedená v ASP.NET Core `IStringLocalizer` a `IStringLocalizer<T>` byly na
 
 Ve výše, kódu `IStringLocalizer<T>` implementace pochází z [vkládání závislostí](dependency-injection.md). Pokud lokalizované hodnoty "Title o" nebyl nalezen, pak klíč indexeru je vrácen, tedy řetězec "Title o". Můžete ponechat výchozí nastavení literálu řetězce jazyků v aplikaci a zabalení v lokalizátora, tak, aby se mohli zaměřit na vývoj aplikace. Vývoj aplikace s výchozí jazyk a jeho přípravu pro lokalizaci bez vytvoření první výchozí soubor prostředků. Alternativně můžete použít tradiční přístup a zadejte klíč k získání řetězce výchozí jazyk. Pro mnoho vývojáře nový pracovní postup nemá výchozí jazyk *RESX* souborové služby a jednoduše zabalení textové literály můžete snížit režii lokalizace aplikace. Jinými vývojáři bude upřednostňovat tradiční pracovní postup, jak ho můžete bylo snazší práce s delší textové literály a usnadňují aktualizovat lokalizované řetězce.
 
-Použití `IHtmlLocalizer<T>` implementace pro prostředky, které obsahují HTML. `IHtmlLocalizer`Argumenty, které jsou ve formátu v řetězec prostředku kóduje HTML, ale nemá použije kódování HTML řetězec prostředku sám sebe. V ukázce zvýrazněná níže pouze hodnota `name` parametr není kódován jazykem HTML.
+Použití `IHtmlLocalizer<T>` implementace pro prostředky, které obsahují HTML. `IHtmlLocalizer`Argumenty, které jsou ve formátu v řetězec prostředku kóduje HTML, ale nepodporuje kódování HTML řetězec prostředku sám sebe. V ukázce zvýrazněná níže pouze hodnota `name` parametr není kódován jazykem HTML.
 
 [!code-csharp[Main](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
 
@@ -152,7 +152,7 @@ Alternativně můžete tuto chybu ignorovat. Věříme, chcete-li v příští v
 
 ## <a name="resource-file-naming"></a>Pojmenovávání souborů prostředků
 
-Prostředky jsou pojmenované pro název úplné typu jejich třídy minus název sestavení. Například francouzštině prostředků v projektu, jehož hlavní sestavení `LocalizationWebsite.Web.dll` pro třídu `LocalizationWebsite.Web.Startup` by se jmenovala *Startup.fr.resx*. Prostředek pro třídu `LocalizationWebsite.Web.Controllers.HomeController` by se jmenovala *Controllers.HomeController.fr.resx*. Pokud obor názvů cílové třídy není stejný jako název sestavení je nutné název úplné typu. Například v ukázkovém projektu prostředků pro typ `ExtraNamespace.Tools` by se jmenovala *ExtraNamespace.Tools.fr.resx*.
+Prostředky jsou pojmenované pro název úplné typu jejich třídy minus název sestavení. Například francouzštině prostředků v projektu, jehož hlavní sestavení `LocalizationWebsite.Web.dll` pro třídu `LocalizationWebsite.Web.Startup` by se jmenovala *Startup.fr.resx*. Prostředek pro třídu `LocalizationWebsite.Web.Controllers.HomeController` by se jmenovala *Controllers.HomeController.fr.resx*. Pokud cílovou třídu oboru názvů není stejný jako název sestavení je nutné název úplné typu. Například v ukázkovém projektu prostředků pro typ `ExtraNamespace.Tools` by se jmenovala *ExtraNamespace.Tools.fr.resx*.
 
 V ukázkovém projektu `ConfigureServices` metoda nastaví `ResourcesPath` "Zdroje", takže projektu relativní cesta k souboru francouzštině prostředek domovské řadičem je *Resources/Controllers.HomeController.fr.resx*. Složky můžete alternativně použít k uspořádání souborů prostředků. Pro domácí řadič, cesta bude *Resources/Controllers/HomeController.fr.resx*. Pokud nepoužijete `ResourcesPath` možnost, *RESX* by se dostala soubor v adresáři základní projektu. Soubor prostředků pro `HomeController` by se jmenovala *Controllers.HomeController.fr.resx*. Možnost použití tečky nebo cesta zásady vytváření názvů závisí na tom, jak chcete uspořádání souborů prostředků.
 

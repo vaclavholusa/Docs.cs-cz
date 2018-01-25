@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d6e6e7dd3ee11876b5237fc69f3b5b2818a88de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d386a3b6328675fe21f989f8fd36bfc91fc08b32
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-forms-authentication-c"></a>Přehled ověřování pomocí formulářů (C#)
 ====================
@@ -39,12 +39,12 @@ Principy formulářů, pracovních postupů ověřování, povolení ve webové 
 
 ## <a name="understanding-the-forms-authentication-workflow"></a>Seznámení s pracovním postupem ověřování formulářů
 
-Když modulem runtime ASP.NET zpracovává žádost o prostředek ASP.NET, například stránky ASP.NET nebo webové služby ASP.NET, vyvolá požadavek určitý počet událostí během životního cyklu. Nejsou k dispozici události vyvolané na konci velmi začátku a na velmi požadavku, ty, které vyvolá, když požadavek při ověřování a autorizaci, událost vyvolána v případě neošetřené výjimky a tak dále. Pokud chcete zobrazit úplný seznam událostí, naleznete [třídě HttpApplication objekt události](https://msdn.microsoft.com/en-us/library/system.web.httpapplication_events.aspx).
+Když modulem runtime ASP.NET zpracovává žádost o prostředek ASP.NET, například stránky ASP.NET nebo webové služby ASP.NET, vyvolá požadavek určitý počet událostí během životního cyklu. Nejsou k dispozici události vyvolané na konci velmi začátku a na velmi požadavku, ty, které vyvolá, když požadavek při ověřování a autorizaci, událost vyvolána v případě neošetřené výjimky a tak dále. Pokud chcete zobrazit úplný seznam událostí, naleznete [třídě HttpApplication objekt události](https://msdn.microsoft.com/library/system.web.httpapplication_events.aspx).
 
 *Vytváření modulů HTTP v* jsou spravované třídy, jejichž kód se spustí v reakci na určité události v průběhu životního cyklu požadavku. ASP.NET se dodává s počtem modulů HTTP, který provádění základních úloh na pozadí. Dva integrované moduly HTTP, které jsou obzvláště důležité pro tato diskuse se:
 
-- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx)**– ověřuje uživatele zkontrolováním lístek ověřování pomocí formulářů, který je obvykle součástí kolekce souborů cookie uživatele. Pokud je k dispozici žádné ověřovací lístek, je anonymní uživatel.
-- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/en-us/library/system.web.security.urlauthorizationmodule.aspx)**– Určuje, zda je aktuální uživatel oprávnění pro přístup k požadované adresy URL. Tento modul určuje oprávnění na základě konzultace ohledně autorizační pravidla, zadaný v konfiguračních souborech aplikace. Technologie ASP.NET obsahuje také [ `FileAuthorizationModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.fileauthorizationmodule.aspx) který určuje autoritu podle konzultace ohledně požadované soubory seznamy ACL.
+- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)**– ověřuje uživatele zkontrolováním lístek ověřování pomocí formulářů, který je obvykle součástí kolekce souborů cookie uživatele. Pokud je k dispozici žádné ověřovací lístek, je anonymní uživatel.
+- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)**– Určuje, zda je aktuální uživatel oprávnění pro přístup k požadované adresy URL. Tento modul určuje oprávnění na základě konzultace ohledně autorizační pravidla, zadaný v konfiguračních souborech aplikace. Technologie ASP.NET obsahuje také [ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) který určuje autoritu podle konzultace ohledně požadované soubory seznamy ACL.
 
 `FormsAuthenticationModule` Pokus o ověření uživatelů před verzí `UrlAuthorizationModule` (a `FileAuthorizationModule`) provádění. Pokud uživatel zadal žádost nemá oprávnění k přístupu k požadovanému zdroji, modul autorizace ukončí požadavek a vrátí [HTTP 401 neoprávněný](http://www.checkupdown.com/status/E401.html) stavu. Ve scénářích ověřování systému Windows je vrácen stav HTTP 401 do prohlížeče. Tento kód stavu způsobí, že prohlížeč zobrazí výzva k zadání přihlašovacích údajů prostřednictvím modální dialogové okno. Ověřování pomocí formulářů, ale HTTP 401 Unauthorized status je nikdy odeslán do prohlížeče vzhledem k tomu, že FormsAuthenticationModule zjistí tento stav a upraví ho přesměruje uživatele na přihlašovací stránku místo (prostřednictvím [HTTP 302 přesměrování](http://www.checkupdown.com/status/E302.html) stav).
 
@@ -76,7 +76,7 @@ Dlouhý text krátké verze starší než IIS 7, můžete použít pouze ověřo
 
 ## <a name="step-1-creating-an-aspnet-website-for-this-tutorial-series"></a>Krok 1: Vytvoření webu ASP.NET pro tento kurz řady
 
-Aby bylo dosaženo nejširší možnou cílovou skupinou, bude vytvořen webu ASP.NET jsme se sestavení v rámci této série s bezplatnou verzi společnosti Microsoft Visual Studio 2008, [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/). Bude implementaci `SqlMembershipProvider` úložiště uživatele v [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/en-us/sql/Aa336346.aspx) databáze. Pokud používáte Visual Studio 2005 nebo na jinou edici Visual Studio 2008 nebo SQL Server, nemusíte si dělat starosti – kroky budou skoro stejné a případné rozdíly netriviální zdůraznit.
+Aby bylo dosaženo nejširší možnou cílovou skupinou, bude vytvořen webu ASP.NET jsme se sestavení v rámci této série s bezplatnou verzi společnosti Microsoft Visual Studio 2008, [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/). Bude implementaci `SqlMembershipProvider` úložiště uživatele v [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/sql/Aa336346.aspx) databáze. Pokud používáte Visual Studio 2005 nebo na jinou edici Visual Studio 2008 nebo SQL Server, nemusíte si dělat starosti – kroky budou skoro stejné a případné rozdíly netriviální zdůraznit.
 
 > [!NOTE]
 > Použít v každém kurzu ukázkové webové aplikace je k dispozici ke stažení. Tato aplikace ke stažení byl vytvořen s Visual Web Developer 2008 určený pro rozhraní .NET Framework verze 3.5. Vzhledem k tomu, že aplikace je určená pro rozhraní .NET 3.5, jeho soubor Web.config obsahuje další, 3.5 konkrétní konfigurační prvky. Dlouhý text short, pokud máte ještě instalace rozhraní .NET 3.5 v počítači pak ke stažení webové aplikace nebude fungovat bez první odebrání značek 3.5 konkrétní ze souboru Web.config.
@@ -85,7 +85,7 @@ Aby bylo dosaženo nejširší možnou cílovou skupinou, bude vytvořen webu AS
 Než budeme moct nakonfigurovat ověřování pomocí formulářů, potřebujeme nejprve webu ASP.NET. Začněte vytvořením webu ASP.NET na základě systému nový soubor. K tomu, spusťte aplikaci Visual Web Developer a přejděte do nabídky soubor a vyberte nový web zobrazení dialogového okna Nový web. Výběr šablony webu ASP.NET, nastavte rozevírací seznam umístění do systému souborů, vyberte složku pro umístění na webu a nastavení jazyka C#. Tím se vytvoří nový web s stránku Default.aspx ASP.NET, aplikace\_složky dat a v souboru Web.config.
 
 > [!NOTE]
-> Visual Studio podporuje dva režimy řízení projektu: webové projekty a projekty webových aplikací. Webové projekty chybí soubor projektu, zatímco projekty webových aplikací napodobovat architektuře projektu ve Visual Studio .NET 2002 nebo 2003 – se můžete zahrnout soubor projektu a kompilaci zdrojového kódu projektu do jednoho sestavení, které je umístěn ve složce/Bin. Visual Studio 2005 původně pouze podporované webu projekty, i když modelu projektu webové aplikace byla znovu zavedena s aktualizací Service Pack 1; Visual Studio 2008 nabízí obou modelů projektu. Visual Web Developer 2005 a edice 2008, ale podporují pouze webové projekty. Bude možné používat webový projekt modelu. Pokud používáte jiný Express edition a chcete použít [modelu projektu webové aplikace](https://msdn.microsoft.com/en-us/library/aa730880%28vs.80%29.aspx) místo toho zaregistrované, můžete tak učinit, ale uvědomte si, že mohou být některé rozdíly mezi zobrazené na obrazovce a kroky je nutné provést porovnání snímek obrazovky ukazuje a pokynů v těchto kurzech.
+> Visual Studio podporuje dva režimy řízení projektu: webové projekty a projekty webových aplikací. Webové projekty chybí soubor projektu, zatímco projekty webových aplikací napodobovat architektuře projektu ve Visual Studio .NET 2002 nebo 2003 – se můžete zahrnout soubor projektu a kompilaci zdrojového kódu projektu do jednoho sestavení, které je umístěn ve složce/Bin. Visual Studio 2005 původně pouze podporované webu projekty, i když modelu projektu webové aplikace byla znovu zavedena s aktualizací Service Pack 1; Visual Studio 2008 nabízí obou modelů projektu. Visual Web Developer 2005 a edice 2008, ale podporují pouze webové projekty. Bude možné používat webový projekt modelu. Pokud používáte jiný Express edition a chcete použít [modelu projektu webové aplikace](https://msdn.microsoft.com/library/aa730880%28vs.80%29.aspx) místo toho zaregistrované, můžete tak učinit, ale uvědomte si, že mohou být některé rozdíly mezi zobrazené na obrazovce a kroky je nutné provést porovnání snímek obrazovky ukazuje a pokynů v těchto kurzech.
 
 
 [![Vytvoření nového souboru na základě systému webového serveru](an-overview-of-forms-authentication-cs/_static/image3.png)](an-overview-of-forms-authentication-cs/_static/image2.png)
@@ -95,7 +95,7 @@ Než budeme moct nakonfigurovat ověřování pomocí formulářů, potřebujeme
 
 ### <a name="adding-a-master-page"></a>Přidání stránky předlohy
 
-Do lokality v kořenovém adresáři s názvem Site.master přidáte další, nové stránky předlohy. [Hlavní stránky](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx) povolit vývojáři stránky definovat šablonu na webu, který lze použít na stránky ASP.NET. Hlavní výhodou hlavní stránky je, že celkový vzhled lokality lze definovat na jednom místě, a díky snadno aktualizovat nebo upravit rozložení v lokalitě.
+Do lokality v kořenovém adresáři s názvem Site.master přidáte další, nové stránky předlohy. [Hlavní stránky](https://msdn.microsoft.com/library/wtxbf3hh.aspx) povolit vývojáři stránky definovat šablonu na webu, který lze použít na stránky ASP.NET. Hlavní výhodou hlavní stránky je, že celkový vzhled lokality lze definovat na jednom místě, a díky snadno aktualizovat nebo upravit rozložení v lokalitě.
 
 
 [![Přidat stránku předlohy Site.master na web s názvem](an-overview-of-forms-authentication-cs/_static/image6.png)](an-overview-of-forms-authentication-cs/_static/image5.png)
@@ -149,7 +149,7 @@ Teď ponechte Default.aspx prázdné. Vrátíme se k němu později v tomto kurz
 
 ## <a name="step-2-enabling-forms-authentication"></a>Krok 2: Povolení ověřování pomocí formulářů
 
-S vytvoření webu ASP.NET naše dalším krokem je povolit ověřování pomocí formulářů. Konfigurace ověřování aplikace se specifikuje prostřednictvím [ `<authentication>` element](https://msdn.microsoft.com/en-us/library/532aee0e.aspx) v souboru Web.config. `<authentication>` Element obsahuje jeden atribut s názvem režim, který určuje model ověřování používá aplikace. Tento atribut může mít jednu z následujících čtyř hodnot:
+S vytvoření webu ASP.NET naše dalším krokem je povolit ověřování pomocí formulářů. Konfigurace ověřování aplikace se specifikuje prostřednictvím [ `<authentication>` element](https://msdn.microsoft.com/library/532aee0e.aspx) v souboru Web.config. `<authentication>` Element obsahuje jeden atribut s názvem režim, který určuje model ověřování používá aplikace. Tento atribut může mít jednu z následujících čtyř hodnot:
 
 - **Windows** – jak je popsáno v předchozí kurzu, pokud aplikace používá ověřování systému Windows je webový server zodpovědnost za ověření návštěvníka, a to se obvykle provádí pomocí základní ověřování, hodnotou hash nebo integrované ověřování systému Windows ověřování.
 - **Forms**– ověření pomocí formuláře na webové stránce.
@@ -220,7 +220,7 @@ Nyní potřebujeme implementovat úloha 2 kliknutím na tlačítko obslužná ru
 
 Před aplikaci ASP.NET 2.0 se vývojáři zodpovědná za implementace i vlastní úložiště uživatele a psaní kódu k ověření zadané přihlašovací údaje pro Windows store. Většina vývojářů by implementovat úložiště uživatele v databázi, vytvoření tabulky s názvem uživatelé s sloupce jako uživatelské jméno, heslo, e-mailu, LastLoginDate a tak dále. Tuto tabulku, pak by mít jeden záznam na uživatelský účet. Ověření zadané přihlašovací údaje uživatele by zahrnovat dotaz na databázi k vyhledání uživatelského jména a pak zajistit, aby odpovídaly hesla v databázi zadané heslo.
 
-S prostředím ASP.NET 2.0 vývojáři měli jednoho z poskytovatelů členství ke správě používat úložiště uživatele. Tento kurz série použijeme SqlMembershipProvider, která používá databázi systému SQL Server pro úložiště uživatelů. Při použití SqlMembershipProvider musíme implementovat schéma konkrétní databáze, které obsahuje tabulky, zobrazení a uložených procedur očekává zprostředkovatelem. Vyzkoušíme jak implementovat v tomto schématu ***vytváření schématu členství v systému SQL Server*** kurzu. S zprostředkovatel členství v místní ověřování přihlašovacích údajů uživatele je jednoduché, volání [třída členství](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx)na [ValidateUser (*uživatelské jméno*, *heslo*) Metoda](https://msdn.microsoft.com/en-us/library/system.web.security.membership.validateuser.aspx), která vrací logickou hodnotu, která určuje zda platnost *uživatelské jméno* a *heslo* kombinaci. Zjistíte, jak jsme nebyla ještě implementována úložiště uživatele SqlMembershipProvider, nemůžeme použít metoda ValidateUser třída členství v tuto chvíli.
+S prostředím ASP.NET 2.0 vývojáři měli jednoho z poskytovatelů členství ke správě používat úložiště uživatele. Tento kurz série použijeme SqlMembershipProvider, která používá databázi systému SQL Server pro úložiště uživatelů. Při použití SqlMembershipProvider musíme implementovat schéma konkrétní databáze, které obsahuje tabulky, zobrazení a uložených procedur očekává zprostředkovatelem. Vyzkoušíme jak implementovat v tomto schématu ***vytváření schématu členství v systému SQL Server*** kurzu. S zprostředkovatel členství v místní ověřování přihlašovacích údajů uživatele je jednoduché, volání [třída členství](https://msdn.microsoft.com/library/system.web.security.membership.aspx)na [ValidateUser (*uživatelské jméno*, *heslo*) Metoda](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx), která vrací logickou hodnotu, která určuje zda platnost *uživatelské jméno* a *heslo* kombinaci. Zjistíte, jak jsme nebyla ještě implementována úložiště uživatele SqlMembershipProvider, nemůžeme použít metoda ValidateUser třída členství v tuto chvíli.
 
 Místo čekat na sestavení vlastní vlastní uživatelé databázové tabulky (to by být zastaralé, jakmile implementovali jsme SqlMembershipProvider), můžeme místo pevně stránky platné přihlašovací údaje v rámci přihlášení sám sebe. V LoginButton klikněte na obslužnou rutinu události, přidejte následující kód:
 
@@ -230,17 +230,17 @@ Jak vidíte, existují tři platné uživatelské účty – Scott, Jisun a Sam 
 
 Když uživatel zadá platné přihlašovací údaje, I uvedeno, zda se pak přesměrují na "příslušnou stránku." Co když je na příslušnou stránku? Odvolat, že když uživatel navštíví stránku, kterou uživatel nemá oprávnění k zobrazení, FormsAuthenticationModule automaticky přesměrován na přihlašovací stránku. Při tom obsahuje požadovanou adresu URL v řetězci dotazu pomocí parametru ReturnUrl. To znamená pokud uživatel se pokusil k navštívení ProtectedPage.aspx a nebyly autorizovány Uděláte to tak, FormsAuthenticationModule by přesměruje je na:
 
-Login.aspx? ReturnUrl=ProtectedPage.aspx
+Login.aspx?ReturnUrl=ProtectedPage.aspx
 
 Po úspěšném přihlášení by měl být uživatel přesměrován zpět na ProtectedPage.aspx. Alternativně může uživatelé navštívit stránku pro přihlášení na své vlastní vůle. V takovém případě po přihlášení uživatele se by měly být odeslány na stránku Default.aspx kořenové složce.
 
 ### <a name="logging-in-the-user"></a>Přihlášení uživatele
 
-Za předpokladu, že zadané přihlašovací údaje jsou platné, je potřeba vytvořit lístek ověřování formulářů tím přihlášení uživatele k webu. [FormsAuthentication třída](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.aspx) v [obor názvů System.Web.Security](https://msdn.microsoft.com/en-us/library/system.web.security.aspx) poskytuje různé metody pro protokolování v a odhlašování uživatelů prostřednictvím formuláře ověřování systému. Existuje několik metod ve třídě, ověřování pomocí formulářů, jsou tři, které jsme zajímají v této situaci řešit:
+Za předpokladu, že zadané přihlašovací údaje jsou platné, je potřeba vytvořit lístek ověřování formulářů tím přihlášení uživatele k webu. [FormsAuthentication třída](https://msdn.microsoft.com/library/system.web.security.formsauthentication.aspx) v [obor názvů System.Web.Security](https://msdn.microsoft.com/library/system.web.security.aspx) poskytuje různé metody pro protokolování v a odhlašování uživatelů prostřednictvím formuláře ověřování systému. Existuje několik metod ve třídě, ověřování pomocí formulářů, jsou tři, které jsme zajímají v této situaci řešit:
 
-- [GetAuthCookie (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.getauthcookie.aspx) – vytvoří ověřovací lístek pro zadaný název *uživatelské jméno*. Dále tato metoda vytvoří a vrátí objekt HttpCookie, který obsahuje obsah lístek ověřování. Pokud *persistCookie* má hodnotu true, je vytvoření trvalého souboru cookie.
-- [SetAuthCookie (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx) – volá GetAuthCookie (*uživatelské jméno*, *persistCookie*) Metoda pro generování souboru cookie ověřování pomocí formulářů. Tato metoda pak přidá soubor cookie vrácený GetAuthCookie ke kolekci souborů cookie (za předpokladu, že ověřování pomocí formulářů na základě souborů cookie se použít; jinak, tato metoda volá interní třída, která zpracovává logiku bez souborů cookie lístku).
-- [RedirectFromLoginPage (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) – tato metoda volá SetAuthCookie (*uživatelské jméno*, *persistCookie* ) a pak přesměruje uživatele na příslušnou stránku.
+- [GetAuthCookie (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.getauthcookie.aspx) – vytvoří ověřovací lístek pro zadaný název *uživatelské jméno*. Dále tato metoda vytvoří a vrátí objekt HttpCookie, který obsahuje obsah lístek ověřování. Pokud *persistCookie* má hodnotu true, je vytvoření trvalého souboru cookie.
+- [SetAuthCookie (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) – volá GetAuthCookie (*uživatelské jméno*, *persistCookie*) Metoda pro generování souboru cookie ověřování pomocí formulářů. Tato metoda pak přidá soubor cookie vrácený GetAuthCookie ke kolekci souborů cookie (za předpokladu, že ověřování pomocí formulářů na základě souborů cookie se použít; jinak, tato metoda volá interní třída, která zpracovává logiku bez souborů cookie lístku).
+- [RedirectFromLoginPage (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) – tato metoda volá SetAuthCookie (*uživatelské jméno*, *persistCookie* ) a pak přesměruje uživatele na příslušnou stránku.
 
 GetAuthCookie je užitečné, když budete muset upravit lístek ověřování před zápisem soubor cookie ke kolekci souborů cookie. SetAuthCookie je užitečné, pokud chcete vytvořit lístek pro ověřování formuláře a přidat jej do kolekce souborů cookie, ale nechcete přesměruje uživatele na příslušnou stránku. Možná budete chtít zachovat jejich na přihlašovací stránku nebo poslat některé alternativní stránku.
 
@@ -282,7 +282,7 @@ Umožňuje rozšířit existující stránku Default.aspx k objasnění těchto 
 
 Mít pravděpodobně uhádnout nyní, nápad sem je zobrazíte právě AuthenticatedMessagePanel ověřené návštěvníky a právě AnonymousMessagePanel pro anonymní návštěvníky. K tomu je potřeba nastavit tyto panely vlastnosti viditelné v závislosti na tom, zda uživatel je přihlášen nebo ne.
 
-[Request.IsAuthenticated vlastnost](https://msdn.microsoft.com/en-us/library/system.web.httprequest.isauthenticated.aspx) vrací logickou hodnotu udávající, zda byl požadavek ověřen. Zadejte následující kód na stránku\_načíst kód obslužné rutiny událostí:
+[Request.IsAuthenticated vlastnost](https://msdn.microsoft.com/library/system.web.httprequest.isauthenticated.aspx) vrací logickou hodnotu udávající, zda byl požadavek ověřen. Zadejte následující kód na stránku\_načíst kód obslužné rutiny událostí:
 
 [!code-csharp[Main](an-overview-of-forms-authentication-cs/samples/sample7.cs)]
 
@@ -299,20 +299,20 @@ S tímto kódem na místě navštivte Default.aspx prostřednictvím prohlíže�
 **Obrázek 12**: Authenticated Users se zobrazují "Vítejte zpět!" Zpráva
 
 
-Můžeme určit identitu aktuálně přihlášeného uživatele prostřednictvím [HttpContext objekt](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx)na [vlastnost uživatele](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.user.aspx). Objekt HttpContext představuje informace o aktuálním požadavku a je domovská stránka pro tyto objekty běžné ASP.NET jako odpověď, žádost a relace, mimo jiné. Představuje kontext zabezpečení aktuálního požadavku HTTP a implementuje vlastnost uživatele [rozhraní IPrincipal](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.aspx).
+Můžeme určit identitu aktuálně přihlášeného uživatele prostřednictvím [HttpContext objekt](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)na [vlastnost uživatele](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx). Objekt HttpContext představuje informace o aktuálním požadavku a je domovská stránka pro tyto objekty běžné ASP.NET jako odpověď, žádost a relace, mimo jiné. Představuje kontext zabezpečení aktuálního požadavku HTTP a implementuje vlastnost uživatele [rozhraní IPrincipal](https://msdn.microsoft.com/library/system.security.principal.iprincipal.aspx).
 
 Pomocí FormsAuthenticationModule nastavena vlastnost uživatele. Konkrétně když FormsAuthenticationModule vyhledá lístek ověřování formulářů v příchozím požadavku, se vytvoří nový objekt GenericPrincipal a přiřadí ji k vlastnost uživatele.
 
 Hlavní objekty (např. GenericPrincipal) poskytují informace o identitu uživatele a role, do kterých patří. Rozhraní IPrincipal definuje dva členy:
 
-- [IsInRole (*roleName*)](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.isinrole.aspx) – metodu, která vrací logickou hodnotu udávající, pokud objekt patří do zadané roli.
-- [Identity](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.identity.aspx) – vlastnosti, která vrátí objekt, který implementuje [identita rozhraní](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.aspx). Definuje rozhraní IIdentity tři vlastnosti: [AuthenticationType](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.authenticationtype.aspx), [IsAuthenticated](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.isauthenticated.aspx), a [název](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.name.aspx).
+- [IsInRole (*roleName*)](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole.aspx) – metodu, která vrací logickou hodnotu udávající, pokud objekt patří do zadané roli.
+- [Identity](https://msdn.microsoft.com/library/system.security.principal.iprincipal.identity.aspx) – vlastnosti, která vrátí objekt, který implementuje [identita rozhraní](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx). Definuje rozhraní IIdentity tři vlastnosti: [AuthenticationType](https://msdn.microsoft.com/library/system.security.principal.iidentity.authenticationtype.aspx), [IsAuthenticated](https://msdn.microsoft.com/library/system.security.principal.iidentity.isauthenticated.aspx), a [název](https://msdn.microsoft.com/library/system.security.principal.iidentity.name.aspx).
 
 Můžeme určit název aktuální návštěvníka pomocí následujícího kódu:
 
 řetězec currentUsersName = User.Identity.Name;
 
-Při ověřování pomocí formulářů [FormsIdentity objekt](https://msdn.microsoft.com/en-us/library/system.web.security.formsidentity.aspx) je pro vlastnost Identity GenericPrincipal vytvořena. Třída FormsIdentity vždy vrátí řetězec "Forms" pro jeho vlastnost AuthenticationType a hodnotu true pro vlastnost jeho IsAuthenticated. Vlastnost názvu vrátí zadané uživatelské jméno při vytváření formuláře lístek ověřování. Kromě těchto tří vlastností FormsIdentity zahrnuje přístup k podkladové lístek ověřování přes jeho [lístku vlastnost](https://msdn.microsoft.com/en-us/library/system.web.security.formsidentity.ticket.aspx). Vlastnosti Ticket vrátí objekt typu [FormsAuthenticationTicket](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.aspx), který má vlastnosti, například vypršení platnosti, IsPersistent, IssueDate, název a tak dále.
+Při ověřování pomocí formulářů [FormsIdentity objekt](https://msdn.microsoft.com/library/system.web.security.formsidentity.aspx) je pro vlastnost Identity GenericPrincipal vytvořena. Třída FormsIdentity vždy vrátí řetězec "Forms" pro jeho vlastnost AuthenticationType a hodnotu true pro vlastnost jeho IsAuthenticated. Vlastnost názvu vrátí zadané uživatelské jméno při vytváření formuláře lístek ověřování. Kromě těchto tří vlastností FormsIdentity zahrnuje přístup k podkladové lístek ověřování přes jeho [lístku vlastnost](https://msdn.microsoft.com/library/system.web.security.formsidentity.ticket.aspx). Vlastnosti Ticket vrátí objekt typu [FormsAuthenticationTicket](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.aspx), který má vlastnosti, například vypršení platnosti, IsPersistent, IssueDate, název a tak dále.
 
 Důležité vzít v ulici, zde je, že *uživatelské jméno* parametr zadaný v FormsAuthentication.GetAuthCookie (*uživatelské jméno*, *persistCookie*), FormsAuthentication.SetAuthCookie (*uživatelské jméno*, *persistCookie*) a FormsAuthentication.RedirectFromLoginPage (*uživatelské jméno*, *persistCookie*) metody je stejné hodnoty vrácené User.Identity.Name. Lístek ověřování vytvořené tyto metody je navíc k dispozici přetypování User.Identity na FormsIdentity objekt a poté přístup k vlastnosti Ticket.:
 
@@ -334,7 +334,7 @@ Obrázek 13 ukazuje účinek této změny (při přihlášení se jako uživatel
 
 Zobrazení jiný obsah ověřený a anonymním uživatelům je běžné požadavek; Proto je zobrazení jméno aktuálně přihlášeného uživatele. Z tohoto důvodu technologie ASP.NET obsahuje dva webové ovládací prvky, které nabízí stejnou funkčnost zobrazí obrázek 13, ale bez nutnosti napsat jediný řádek kódu.
 
-[Ovládací prvek LoginView](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx) je založené na šablonách webové ovládací prvek, který lze snadno zobrazit různé datové ověřený a anonymním uživatelům. LoginView obsahuje dvě předdefinované šablony:
+[Ovládací prvek LoginView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) je založené na šablonách webové ovládací prvek, který lze snadno zobrazit různé datové ověřený a anonymním uživatelům. LoginView obsahuje dvě předdefinované šablony:
 
 - AnonymousTemplate – všechny značky, přidat do této šablony se zobrazí pouze anonymní návštěvníky.
 - LoggedInTemplate – značek této šablony se zobrazí pouze ověřeným uživatelům.
@@ -365,7 +365,7 @@ Dál přidejte dva &lt;Brazílie /&gt; elementy ihned po ovládacího prvku Logi
 
 Z Návrháře nebo deklarativní lze definovat LoginView šablony. V sadě Visual Studio Designer rozbalte LoginView inteligentních značek, které jsou uvedeny nakonfigurované šablony v rozevíracím seznamu. Zadejte text "Hello, stranger" do AnonymousTemplate; v dalším kroku přidání ovládacího prvku hypertextový odkaz a jeho Text a nastavit NavigateUrl "Přihlášení" a "~ / Login.aspx", v uvedeném pořadí.
 
-Po dokončení konfigurace AnonymousTemplate, přepněte do LoggedInTemplate a zadejte text, "Vás vítá zpět,". Pak přetáhněte ovládací prvek LoginName z panelu nástrojů do LoggedInTemplate, jeho umístění ihned po "Vítá zpět," text. [Ovládací prvek LoginName](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginname.aspx), jako její název znamená, zobrazí se název aktuálně přihlášeného uživatele. Interně ovládací prvek LoginName jednoduše výstupy vlastnost User.Identity.Name
+Po dokončení konfigurace AnonymousTemplate, přepněte do LoggedInTemplate a zadejte text, "Vás vítá zpět,". Pak přetáhněte ovládací prvek LoginName z panelu nástrojů do LoggedInTemplate, jeho umístění ihned po "Vítá zpět," text. [Ovládací prvek LoginName](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginname.aspx), jako její název znamená, zobrazí se název aktuálně přihlášeného uživatele. Interně ovládací prvek LoginName jednoduše výstupy vlastnost User.Identity.Name
 
 Po provedení těchto dodatky LoginView šablon, by měl vypadat podobně jako následující kód:
 
@@ -403,9 +403,9 @@ Obrázek 17 ukazuje na stránku Login.aspx při navštívené z prohlížeče po
 
 ## <a name="step-5-logging-out"></a>Krok 5: Protokolování
 
-V kroku 3 jsme se podívali na vytváření přihlašovací stránku k přihlášení uživatele v lokalitě, ale máme ještě chcete zjistit, jak se odhlásit uživatele. Kromě metod pro protokolování uživatel ve třídě ověřování pomocí formulářů také poskytuje [odhlášení metoda](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx). Metoda odhlášení jednoduše zničí lístek ověřování pomocí formulářů, tak protokolování uživatele mimo lokalitu.
+V kroku 3 jsme se podívali na vytváření přihlašovací stránku k přihlášení uživatele v lokalitě, ale máme ještě chcete zjistit, jak se odhlásit uživatele. Kromě metod pro protokolování uživatel ve třídě ověřování pomocí formulářů také poskytuje [odhlášení metoda](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx). Metoda odhlášení jednoduše zničí lístek ověřování pomocí formulářů, tak protokolování uživatele mimo lokalitu.
 
-Nabídka odhlášení odkaz je běžnou funkcí této technologie ASP.NET obsahuje ovládací prvek určená speciálně pro odhlášení uživatele. [Ovládací prvek LoginStatus](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginstatus.aspx) zobrazí LinkButton "Přihlášení" nebo "Odhlášení" LinkButton, v závislosti na stavu ověřování uživatele. "Login" LinkButton vykreslením pro anonymní uživatele, zatímco LinkButton "Odhlášení" se zobrazí ověřeným uživatelům. Text pro "Login" a "Odhlášení" LinkButtons je možné nakonfigurovat přes LoginStatus LoginText a LogoutText vlastnosti.
+Nabídka odhlášení odkaz je běžnou funkcí této technologie ASP.NET obsahuje ovládací prvek určená speciálně pro odhlášení uživatele. [Ovládací prvek LoginStatus](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginstatus.aspx) zobrazí LinkButton "Přihlášení" nebo "Odhlášení" LinkButton, v závislosti na stavu ověřování uživatele. "Login" LinkButton vykreslením pro anonymní uživatele, zatímco LinkButton "Odhlášení" se zobrazí ověřeným uživatelům. Text pro "Login" a "Odhlášení" LinkButtons je možné nakonfigurovat přes LoginStatus LoginText a LogoutText vlastnosti.
 
 Kliknutím na tlačítko "Login" LinkButton způsobí, že zpětné volání, ze kterého se objeví přesměrování na stránku přihlášení. Kliknutím na tlačítko "Odhlášení" LinkButton způsobí, že ovládací prvek LoginStatus k vyvolání metody FormsAuthentication.SignOff a pak přesměruje uživatele na stránku. Stránka přihlášeného vypnout uživatele přesměruje na závisí na vlastnost LogoutAction, která lze přiřadit k jednu ze tří následujících hodnot:
 
@@ -432,7 +432,7 @@ Obrázek 18 zobrazuje Default.aspx, když navštíví Jisun. Všimněte si, že 
 **Obrázek 18**: Default.aspx ukazuje "Vítejte zpět, Jisun" spolu s LinkButton "Odhlášení" ([Kliknutím zobrazit obrázek v plné velikosti](an-overview-of-forms-authentication-cs/_static/image40.png))
 
 
-[![Zobrazuje logout.aspx](an-overview-of-forms-authentication-cs/_static/image42.png)](an-overview-of-forms-authentication-cs/_static/image41.png)
+[![Logout.aspx Shows](an-overview-of-forms-authentication-cs/_static/image42.png)](an-overview-of-forms-authentication-cs/_static/image41.png)
 
 **Obrázek 19**: Logout.aspx ukazuje "Vítejte, stranger" spolu s LinkButton "Přihlášení" ([Kliknutím zobrazit obrázek v plné velikosti](an-overview-of-forms-authentication-cs/_static/image43.png))
 
@@ -456,14 +456,14 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Změny mezi služby IIS 6 a službu IIS7 zabezpečení](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
-- [Ovládací prvky ASP.NET přihlášení](https://msdn.microsoft.com/en-us/library/d51ttbhx.aspx)
+- [Ovládací prvky ASP.NET přihlášení](https://msdn.microsoft.com/library/d51ttbhx.aspx)
 - [Professional ASP.NET 2.0 zabezpečení, členství a Role správy](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
-- [`<authentication>` – Element](https://msdn.microsoft.com/en-us/library/532aee0e.aspx)
-- [`<forms>` Element pro`<authentication>`](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx)
+- [`<authentication>` – Element](https://msdn.microsoft.com/library/532aee0e.aspx)
+- [`<forms>` Element pro`<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Video školení na témata, které jsou obsažené v tomto kurzu
 
-- [Základní ověřování pomocí formulářů technologie ASP.NET](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)
+- [Použití ověřování založeného na základních formulářích v ASP.NET](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)
 
 ## <a name="about-the-author"></a>O autorovi
 

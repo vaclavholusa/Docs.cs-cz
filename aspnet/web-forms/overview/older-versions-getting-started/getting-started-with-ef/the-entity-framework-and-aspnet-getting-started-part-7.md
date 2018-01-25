@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 7697763b97e36304d686c77e8cedd060d630c530
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aeea122636f5235364e6a40cb6e041b1fe221317
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Začínáme s databáze Entity Framework 4.0 nejprve a 4 webových formulářů ASP.NET - část 7
 ====================
@@ -135,7 +135,7 @@ Nahraďte ho následujícím kódem:
 
 Stránka teď používá `GetCourses` uložené procedury načíst seznam všech kurzů. Spusťte stránku a ověřte, že funguje jako předtím.
 
-(Vlastnosti navigace entit získaných pomocí uložené procedury nemusí být automaticky naplněna data související s těmito entitami, v závislosti na `ObjectContext` výchozí nastavení. Další informace najdete v tématu [načítání související objekty](https://msdn.microsoft.com/en-us/library/bb896272.aspx) v knihovně MSDN.)
+(Vlastnosti navigace entit získaných pomocí uložené procedury nemusí být automaticky naplněna data související s těmito entitami, v závislosti na `ObjectContext` výchozí nastavení. Další informace najdete v tématu [načítání související objekty](https://msdn.microsoft.com/library/bb896272.aspx) v knihovně MSDN.)
 
 V dalším kurzu dozvíte, jak bylo snazší program a testování pravidla formátování a ověření dat pomocí funkce Dynamická Data. Místo zadání na každý pravidla webové stránky, jako jsou třeba řetězce formátu data a zda pole je požadováno, tato pravidla můžete zadat v metadatech datového modelu a automaticky se použijí na každé stránce.
 

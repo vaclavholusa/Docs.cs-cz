@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: f0d465b363652c691c203d608f2cb9d139e72fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b3640c94a8ae9ede330c0fe6a392acb5843cb65c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Jednotné přihlašování (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -31,12 +31,12 @@ Existuje mnoho problémy se zabezpečením myslet, když vyvíjíte cloudové ap
 
 ## <a name="introduction-to-azure-ad"></a>Úvod do služby Azure AD
 
-[Azure AD](https://docs.microsoft.com/azure/active-directory/) poskytuje [služby Active Directory](https://msdn.microsoft.com/en-us/library/windows/desktop/aa746492.aspx) v cloudu. Klíčové funkce patří:
+[Azure AD](https://docs.microsoft.com/azure/active-directory/) poskytuje [služby Active Directory](https://msdn.microsoft.com/library/windows/desktop/aa746492.aspx) v cloudu. Klíčové funkce patří:
 
 - Se integruje s místní služby Active Directory.
 - Umožňuje jednotné přihlašování s vaší aplikací.
 - Podporuje otevřený standardy, jako [SAML](http://en.wikipedia.org/wiki/SAML_2.0), [WS-Fed](http://en.wikipedia.org/wiki/WS-Federation), a [OAuth 2.0](http://oauth.net/2/).
-- Podporuje Enterprise [grafu REST API](https://msdn.microsoft.com/en-us/library/hh974476.aspx).
+- Podporuje Enterprise [grafu REST API](https://msdn.microsoft.com/library/hh974476.aspx).
 
 Předpokládejme, že máte místní prostředí Windows Server Active Directory, které používáte k povolení zaměstnanci k přihlášení do intranetu aplikací:
 
@@ -64,7 +64,7 @@ Pokud vaše společnost používá nebo přesun do služeb Office 365 je dobrá 
 
 ## <a name="set-up-an-azure-ad-tenant"></a>Nastavení klienta služby Azure AD
 
-adresář služby Azure AD se nazývá na Azure AD [klienta](https://technet.microsoft.com/en-us/library/jj573650.aspx), a nastavení klienta je velmi snadné. Ukážeme vám jak se provádí v portálu pro správu Azure k objasnění konceptů, ale samozřejmě jako dalších funkcí portálu můžete provést také ho pomocí skriptu nebo rozhraní API pro správu.
+adresář služby Azure AD se nazývá na Azure AD [klienta](https://technet.microsoft.com/library/jj573650.aspx), a nastavení klienta je velmi snadné. Ukážeme vám jak se provádí v portálu pro správu Azure k objasnění konceptů, ale samozřejmě jako dalších funkcí portálu můžete provést také ho pomocí skriptu nebo rozhraní API pro správu.
 
 V portálu pro správu klikněte na kartu služby Active Directory.
 
@@ -118,7 +118,7 @@ Klikněte na tlačítko **Další**a pak vyberte, pokud chcete ukládání klí�
 
 ![Průvodce konfigurací nástroje synchronizace službou WAAD](single-sign-on/_static/image17.png)
 
-Hodnota hash hesla, který chcete uložit v cloudu je jednosměrná hodnota hash; skutečných hesel nikdy ukládají ve službě Azure AD. Pokud se rozhodnete pro ukládání hodnot hash v cloudu, budete muset použít [Active Directory Federation Services](https://technet.microsoft.com/en-us/library/hh831502.aspx) (ADFS). Existují také [dalších faktorů, které je třeba zvážit při výběru, zda se má používat služba AD FS](https://technet.microsoft.com/en-us/library/jj573653.aspx). Možnosti služby AD FS vyžaduje několik další konfigurační kroky.
+Hodnota hash hesla, který chcete uložit v cloudu je jednosměrná hodnota hash; skutečných hesel nikdy ukládají ve službě Azure AD. Pokud se rozhodnete pro ukládání hodnot hash v cloudu, budete muset použít [Active Directory Federation Services](https://technet.microsoft.com/library/hh831502.aspx) (ADFS). Existují také [dalších faktorů, které je třeba zvážit při výběru, zda se má používat služba AD FS](https://technet.microsoft.com/library/jj573653.aspx). Možnosti služby AD FS vyžaduje několik další konfigurační kroky.
 
 Pokud se rozhodnete ukládat hodnoty hash v cloudu, s tím budete hotovi a spustí nástroj pro synchronizaci adresářů, po kliknutí na tlačítko **Další**.
 
@@ -156,7 +156,7 @@ Vyberte účty organizace, zadejte název domény a pak vybrat jednotné přihla
 
 ![Konfigurace ověřování dialogové okno](single-sign-on/_static/image24.png)
 
-Můžete také číst aplikace nebo pro čtení a zápis oprávnění pro adresář data. Pokud tak učiníte, můžete použít [REST API služby Azure Graph](https://msdn.microsoft.com/en-us/library/windowsazure/hh974476.aspx) k vyhledání uživatelů telefonní číslo, zjistěte, pokud jsou v kanceláři, při posledním přihlášení na atd.
+Můžete také číst aplikace nebo pro čtení a zápis oprávnění pro adresář data. Pokud tak učiníte, můžete použít [REST API služby Azure Graph](https://msdn.microsoft.com/library/windowsazure/hh974476.aspx) k vyhledání uživatelů telefonní číslo, zjistěte, pokud jsou v kanceláři, při posledním přihlášení na atd.
 
 Který je všechno, co musíte udělat – Visual Studio vyzve k zadání pověření pro správce pro vašeho tenanta Azure AD, a poté konfiguruje váš projekt a klientovi Azure AD pro novou aplikaci.
 
@@ -186,7 +186,7 @@ Další informace naleznete v následujících materiálech:
 - [Dokumentaci ke službě Azure Active Directory](https://docs.microsoft.com/azure/active-directory/). Stránky portálu pro Azure AD dokumentaci na webu windowsazure.com. Podrobné pokyny krok za krokem, najdete v článku **vývoj** části.
 - [Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/). Stránky portálu pro dokumentaci o službě Multi-Factor authentication v Azure.
 - [Možnosti ověřování účtu organizace](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauthoptions). Vysvětlení možností ověřování Azure AD v dialogu Nový projekt Visual Studio 2013.
-- [Microsoft Patterns and Practices - federované Identity vzor](https://msdn.microsoft.com/en-us/library/dn589790.aspx).
+- [Microsoft Patterns and Practices - federované Identity vzor](https://msdn.microsoft.com/library/dn589790.aspx).
 - [Postupy: Instalace nástroje Azure Active Directory Sync](https://social.technet.microsoft.com/wiki/contents/articles/19098.howto-install-the-windows-azure-active-directory-sync-tool-now-with-pictures.aspx).
 - [Active Directory Federation Services 2.0 mapa obsahu](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx). Odkazy na dokumentaci o služby AD FS 2.0.
 - [Ověřování na základě rolí a na základě seznamu ACL v aplikaci Windows Azure AD](https://code.msdn.microsoft.com/Role-Based-and-ACL-Based-86ad71a1). Ukázkovou aplikaci.

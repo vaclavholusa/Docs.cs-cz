@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fdd024aba399f26e9ef7d01a00078cd3d5750d94
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f2b98d5e5ae677fdac32336d542202a40290e21
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>Pomocí technologie ASP.NET MVC s různými verzemi služby IIS (C#)
 ====================
@@ -33,7 +33,7 @@ Zde je souhrn různé verze služby IIS:
 - Služba IIS 7.0 (klasickém režimu) -, budete muset provést speciální konfigurace, pokud chcete používat směrování ASP.NET.
 - Služby IIS 6.0 nebo níže – je potřeba provést zvláštní konfiguraci chcete používat směrování ASP.NET.
 
-Nejnovější verze služby IIS je verze 7.5 (na Win7). Služby IIS 7 IIS je součástí s Windows Server 2008 a VISTA/SP1 a vyšší. Také můžete nainstalovat službu IIS 7.0 na žádné verze operačního systému Vista kromě Home Basic (viz [https://technet.microsoft.com/en-us/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/en-us/library/cc731179%28WS.10%29.aspx)).
+Nejnovější verze služby IIS je verze 7.5 (na Win7). Služby IIS 7 IIS je součástí s Windows Server 2008 a VISTA/SP1 a vyšší. Také můžete nainstalovat službu IIS 7.0 na žádné verze operačního systému Vista kromě Home Basic (viz [https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
 
 IIS 7.0 podporuje dva režimy pro zpracování požadavků. Můžete použít integrovaného režimu nebo v klasickém režimu. Nemusíte provádět žádné kroky speciální konfigurace, při použití služby IIS 7.0 v integrovaném režimu. Však nutné provést další konfigurace, při použití služby IIS 7.0 v klasickém režimu.
 
@@ -81,7 +81,7 @@ Jsme prozkoumejte jednotlivé možnosti podrobně v následujících částech.
 
 Nejjednodušší způsob, jak získat směrování ASP.NET pro starší verze služby IIS je upravit tabulky tras v souboru Global.asax. Výchozí hodnota a beze změny souboru Global.asax v výpis 1 nakonfiguruje jeden postup s názvem výchozí trasu.
 
-**Výpis 1 - Global.asax (ponechat beze změny)**
+**Listing 1 - Global.asax (unmodified)**
 
 [!code-csharp[Main](using-asp-net-mvc-with-different-versions-of-iis-cs/samples/sample1.cs)]
 
@@ -121,11 +121,11 @@ Existují dvě důležité změny v souboru Global.asax v výpis 2. Existují dv
 
 Přidání rozšíření .mvc změní typ souborů, které zabrání modul Směrování ASP.NET. Díky této změně aplikace ASP.NET MVC směruje požadavky takto:
 
-/Home.MVC/index/
+/Home.mvc/Index/
 
-/Product.MVC/details/3
+/Product.mvc/Details/3
 
-/Product.MVC/
+/Product.mvc/
 
 Druhý postup, kořenové trasy, je nová. Tento vzor adresy URL pro trasu kořenovou je řetězec prázdný. Tato trasa je nezbytné pro párování požadavky na kořenovém adresáři aplikace. Například kořenový trasy, která bude shodovat s požadavek, který vypadá takto:
 
@@ -213,4 +213,4 @@ První možnost vyžaduje, abyste upravili adres URL používaných ve vaší ap
 Druhou možností je vytvořit mapu skriptů se zástupnými znaky. Výhodou této druhé možnosti je, že není potřeba změnit vaší adresy URL. Nevýhodou této druhé možnosti je, že může mít dopad na výkon vaší aplikace ASP.NET MVC.
 
 >[!div class="step-by-step"]
-[Další](using-asp-net-mvc-with-different-versions-of-iis-vb.md)
+[Next](using-asp-net-mvc-with-different-versions-of-iis-vb.md)

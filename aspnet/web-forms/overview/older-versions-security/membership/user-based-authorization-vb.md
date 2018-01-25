@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 152b9a4b12f55bd999960568b11d08c96d342c03
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5579292930da97b142ff6db5d34d33be77aeea4b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="user-based-authorization-vb"></a>Ověření na základě uživatele (VB)
 ====================
@@ -39,9 +39,9 @@ V tomto kurzu se podíváme na omezení přístupu na stránky a omezení funkce
 
 Jak je popsáno v [ *Přehled ověřování založené na formulářích* ](../introduction/an-overview-of-forms-authentication-vb.md) kurzu, když modulem runtime ASP.NET zpracovává žádost pro prostředek ASP.NET požadavku vyvolá určitý počet událostí během životního cyklu. *Vytváření modulů HTTP v* jsou spravované třídy, jejichž kód se spustí v reakci na určité události v průběhu životního cyklu požadavku. ASP.NET se dodává s počtem modulů HTTP, který provádění základních úloh na pozadí.
 
-Jeden takový modul HTTP je [ `FormsAuthenticationModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx). Jak je popsáno v předchozí kurzy, primárních funkcí `FormsAuthenticationModule` je určit identitu aktuální žádosti. To se provádí kontroly lístek ověřování pomocí formulářů, který se buď nachází v souboru cookie, nebo vložené v rámci adresy URL. Toto identifikační probíhá během [ `AuthenticateRequest` událostí](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx).
+Jeden takový modul HTTP je [ `FormsAuthenticationModule` ](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx). Jak je popsáno v předchozí kurzy, primárních funkcí `FormsAuthenticationModule` je určit identitu aktuální žádosti. To se provádí kontroly lístek ověřování pomocí formulářů, který se buď nachází v souboru cookie, nebo vložené v rámci adresy URL. Toto identifikační probíhá během [ `AuthenticateRequest` událostí](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx).
 
-Bude další důležité modul HTTP [ `UrlAuthorizationModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.urlauthorizationmodule.aspx), která se vyvolá v reakci na [ `AuthorizeRequest` událostí](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authorizerequest.aspx) (který se stane po `AuthenticateRequest` událostí). `UrlAuthorizationModule` Prozkoumá značek konfigurace v `Web.config` k určení, zda má aktuální identitu oprávněni naleznete na stránce zadaný. Tento proces se označuje jako *autorizace adres URL*.
+Bude další důležité modul HTTP [ `UrlAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx), která se vyvolá v reakci na [ `AuthorizeRequest` událostí](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx) (který se stane po `AuthenticateRequest` událostí). `UrlAuthorizationModule` Prozkoumá značek konfigurace v `Web.config` k určení, zda má aktuální identitu oprávněni naleznete na stránce zadaný. Tento proces se označuje jako *autorizace adres URL*.
 
 Podíváme syntaxe autorizačních pravidel adres URL v kroku 1, ale nejdřív umožňuje podívejte se na co `UrlAuthorizationModule` nemá v závislosti na tom, zda je požadavek autorizován nebo ne. Pokud `UrlAuthorizationModule` zjistí, že je požadavek autorizován, pak se neprovede žádnou akci a požadavek pokračuje prostřednictvím životního cyklu. Ale je-li žádost *není* oprávnění, pak se `UrlAuthorizationModule` zruší životní cyklus a dává pokyn `Response` objekt, který chcete vrátit [HTTP 401 neoprávněný](http://www.checkupdown.com/status/E401.html) stav. Při použití ověřování pomocí formulářů tento stav HTTP 401 je nikdy vrácen do klienta vzhledem k tomu, pokud `FormsAuthenticationModule` zjistí HTTP 401 je stav změní jeho [přesměrování HTTP 302](http://www.checkupdown.com/status/E302.html) na přihlašovací stránku.
 
@@ -70,7 +70,7 @@ Obrázek 2 znázorňuje tento pracovní postup matoucí.
 Pracovní postup vidíte na obrázku 2 můžete rychle befuddle i většině počítače koumák návštěvníka. Podíváme se na způsoby, jak tomu zabránit, složitá cyklu v kroku 2.
 
 > [!NOTE]
-> ASP.NET používá k určení, zda má aktuální uživatel přístup konkrétní webové stránky dvou mechanismů: ověřování adresy URL a souborů. Soubor autorizace je implementováno modulem [ `FileAuthorizationModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.fileauthorizationmodule.aspx), která určuje autoritu podle konzultace ohledně požadované soubory seznamy ACL. Soubor autorizace se nejčastěji používá pomocí ověřování systému Windows, protože seznamy ACL jsou oprávnění, které se vztahují na účty systému Windows. Pokud používáte ověřování pomocí formulářů, jsou všechny požadavky na úrovni systému operačního systému a soubor provedený stejný účet systému Windows, bez ohledu na uživatele, kteří navštěvují webu. Vzhledem k tomu, že tato řada kurz se zaměřuje na ověřování pomocí formulářů, jsme nebude možné hovoříte o souboru autorizace.
+> ASP.NET používá k určení, zda má aktuální uživatel přístup konkrétní webové stránky dvou mechanismů: ověřování adresy URL a souborů. Soubor autorizace je implementováno modulem [ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx), která určuje autoritu podle konzultace ohledně požadované soubory seznamy ACL. Soubor autorizace se nejčastěji používá pomocí ověřování systému Windows, protože seznamy ACL jsou oprávnění, které se vztahují na účty systému Windows. Pokud používáte ověřování pomocí formulářů, jsou všechny požadavky na úrovni systému operačního systému a soubor provedený stejný účet systému Windows, bez ohledu na uživatele, kteří navštěvují webu. Vzhledem k tomu, že tato řada kurz se zaměřuje na ověřování pomocí formulářů, jsme nebude možné hovoříte o souboru autorizace.
 
 
 ### <a name="the-scope-of-url-authorization"></a>Rozsah autorizace adres URL
@@ -87,7 +87,7 @@ Stručně řečeno v verze starší než IIS 7, autorizačních pravidel adres U
 
 ## <a name="step-1-defining-url-authorization-rules-inwebconfig"></a>Krok 1: Definování autorizačních pravidel adres URL v`Web.config`
 
-`UrlAuthorizationModule` Určuje, jestli se mají udělit nebo odepřít přístup k požadovanému prostředku pro konkrétní identity podle autorizačních pravidel adres URL definované v konfiguraci aplikace. Autorizační pravidla jsou vypsány v [ `<authorization>` element](https://msdn.microsoft.com/en-us/library/8d82143t.aspx) ve formě `<allow>` a `<deny>` podřízené elementy. Každý `<allow>` a `<deny>` podřízený element můžete zadat:
+`UrlAuthorizationModule` Určuje, jestli se mají udělit nebo odepřít přístup k požadovanému prostředku pro konkrétní identity podle autorizačních pravidel adres URL definované v konfiguraci aplikace. Autorizační pravidla jsou vypsány v [ `<authorization>` element](https://msdn.microsoft.com/library/8d82143t.aspx) ve formě `<allow>` a `<deny>` podřízené elementy. Každý `<allow>` a `<deny>` podřízený element můžete zadat:
 
 - Určitého uživatele
 - Čárkami oddělený seznam uživatelů
@@ -230,10 +230,10 @@ S prvku GridView značek vytvořen jsme připravení psát kód, který bude na�
 
 [!code-vb[Main](user-based-authorization-vb/samples/sample10.vb)]
 
-Výše uvedený kód používá [ `DirectoryInfo` třída](https://msdn.microsoft.com/en-us/library/system.io.directoryinfo.aspx) získat seznam souborů v kořenové složce aplikace. [ `GetFiles()` Metoda](https://msdn.microsoft.com/en-us/library/system.io.directoryinfo.getfiles.aspx) vrátí všechny soubory v adresáři jako pole [ `FileInfo` objekty](https://msdn.microsoft.com/en-us/library/system.io.fileinfo.aspx), který je pak vázána GridView. `FileInfo` Objekt má širokou vlastnosti, jako například `Name`, `Length`, a `IsReadOnly`, mimo jiné. Jak je vidět z jeho deklarativní GridView zobrazí jenom `Name` a `Length` vlastnosti.
+Výše uvedený kód používá [ `DirectoryInfo` třída](https://msdn.microsoft.com/library/system.io.directoryinfo.aspx) získat seznam souborů v kořenové složce aplikace. [ `GetFiles()` Metoda](https://msdn.microsoft.com/library/system.io.directoryinfo.getfiles.aspx) vrátí všechny soubory v adresáři jako pole [ `FileInfo` objekty](https://msdn.microsoft.com/library/system.io.fileinfo.aspx), který je pak vázána GridView. `FileInfo` Objekt má širokou vlastnosti, jako například `Name`, `Length`, a `IsReadOnly`, mimo jiné. Jak je vidět z jeho deklarativní GridView zobrazí jenom `Name` a `Length` vlastnosti.
 
 > [!NOTE]
-> `DirectoryInfo` a `FileInfo` třídy se nacházejí v [ `System.IO` obor názvů](https://msdn.microsoft.com/en-us/library/system.io.aspx). Proto bude buď potřeba adresa tyto názvy tříd s jejich názvy oborů názvů nebo obor názvů importovat soubor třídy (prostřednictvím `Imports System.IO`).
+> `DirectoryInfo` a `FileInfo` třídy se nacházejí v [ `System.IO` obor názvů](https://msdn.microsoft.com/library/system.io.aspx). Proto bude buď potřeba adresa tyto názvy tříd s jejich názvy oborů názvů nebo obor názvů importovat soubor třídy (prostřednictvím `Imports System.IO`).
 
 
 Za chvíli najdete na této stránce prostřednictvím prohlížeče. Zobrazí seznam souborů, které se nacházejí v kořenovém adresáři aplikace. Kliknutím na tlačítko Zobrazit nebo odstranit LinkButtons způsobí, že zpětné volání, ale žádná akce dojde, protože jsme ještě k vytváření obslužných rutin událostí nezbytné.
@@ -248,11 +248,11 @@ Potřebujeme prostředky k zobrazení obsahu vybraného souboru. Vraťte se na V
 
 [!code-aspx[Main](user-based-authorization-vb/samples/sample11.aspx)]
 
-Dále vytvořte obslužnou rutinu události pro prvku GridView [ `SelectedIndexChanged` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedindexchanged.aspx) a přidejte následující kód:
+Dále vytvořte obslužnou rutinu události pro prvku GridView [ `SelectedIndexChanged` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindexchanged.aspx) a přidejte následující kód:
 
 [!code-vb[Main](user-based-authorization-vb/samples/sample12.vb)]
 
-Tento kód používá prvku GridView `SelectedValue` vlastnosti k určení názvu celého souboru vybraného souboru. Interně `DataKeys` kolekce se odkazuje, aby bylo možné získat `SelectedValue`, takže je nutné nastavit GridView `DataKeyNames` vlastnost, která má název, jak je popsáno výše v tomto kroku. [ `File` Třída](https://msdn.microsoft.com/en-us/library/system.io.file.aspx) slouží k načtení obsah vybraného souboru na řetězec, který byl přiřazen k `FileContents` textové pole na `Text` vlastnost, a tím zobrazení obsahu vybraného souboru na stránce.
+Tento kód používá prvku GridView `SelectedValue` vlastnosti k určení názvu celého souboru vybraného souboru. Interně `DataKeys` kolekce se odkazuje, aby bylo možné získat `SelectedValue`, takže je nutné nastavit GridView `DataKeyNames` vlastnost, která má název, jak je popsáno výše v tomto kroku. [ `File` Třída](https://msdn.microsoft.com/library/system.io.file.aspx) slouží k načtení obsah vybraného souboru na řetězec, který byl přiřazen k `FileContents` textové pole na `Text` vlastnost, a tím zobrazení obsahu vybraného souboru na stránce.
 
 
 [![Do textového pole se zobrazí obsah souboru vybrané](user-based-authorization-vb/_static/image23.png)](user-based-authorization-vb/_static/image22.png)
@@ -264,7 +264,7 @@ Tento kód používá prvku GridView `SelectedValue` vlastnosti k určení názv
 > Pokud zobrazit obsah souboru, který obsahuje kód HTML a pak se pokusíte zobrazit nebo odstranit soubor, dojde `HttpRequestValidationException` chyby. K tomu dochází, protože na zpětné volání obsahu textového pole jsou odeslána zpět do webového serveru. Ve výchozím nastavení, ASP.NET vyvolá `HttpRequestValidationException` chyba vždy, když se zjistí potenciálně nebezpečný obsah zpětného volání, jako je například značka jazyka HTML. Zakázat výskytu této chyby, vypněte ověření žádosti pro stránku přidáním `ValidateRequest="false"` k `@Page` – direktiva. Další informace o výhodách ověření žádosti jako a taky jaká opatření byste měli vzít při zakázání, přečtěte si [ověření žádosti - prevence útoků skriptu](https://asp.net/learn/whitepapers/request-validation/).
 
 
-Nakonec přidejte obslužné rutiny události s následujícím kódem pro prvku GridView [ `RowDeleting` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx):
+Nakonec přidejte obslužné rutiny události s následujícím kódem pro prvku GridView [ `RowDeleting` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx):
 
 [!code-vb[Main](user-based-authorization-vb/samples/sample13.vb)]
 
@@ -358,7 +358,7 @@ Jak již bylo zmíněno [ *Přehled ověřování založené na formulářích* 
 
 V kroku 3 jsme nepovolené anonymní uživatelé ze zobrazení obsahu souboru a nesmějí všechny uživatele, ale Tito odstraňování souborů. Toho dosáhlo tím skrytí prvky přidružené uživatelského rozhraní pro neoprávněné návštěvníky prostřednictvím deklarativní a programové techniky. Pro naše jednoduchý příklad správně skrytí prvky uživatelského rozhraní se jednoznačné, ale co o složitější lokality tam, kde může být mnoha různými způsoby provádět stejné funkce? V omezení, které tuto funkci neoprávněným uživatelům, co se stane, pokud jsme nezapomněli skrytí nebo zakažte všechny prvky odpovídající uživatelské rozhraní?
 
-Snadný způsob, jak Ujistěte se, že konkrétní funkce nelze získat přístup, neoprávněný uživatel je pro uspořádání třídy nebo metoda s [ `PrincipalPermission` atribut](https://msdn.microsoft.com/en-us/library/system.security.permissions.principalpermissionattribute.aspx). Pokud modul runtime rozhraní .NET používá třídu nebo spustí jeden z jeho metody, zkontroluje, ujistěte se, zda aktuální kontext zabezpečení má oprávnění k použití třídy nebo spuštění metody. `PrincipalPermission` Atribut poskytuje mechanismus, pomocí kterého definujeme tato pravidla.
+Snadný způsob, jak Ujistěte se, že konkrétní funkce nelze získat přístup, neoprávněný uživatel je pro uspořádání třídy nebo metoda s [ `PrincipalPermission` atribut](https://msdn.microsoft.com/library/system.security.permissions.principalpermissionattribute.aspx). Pokud modul runtime rozhraní .NET používá třídu nebo spustí jeden z jeho metody, zkontroluje, ujistěte se, zda aktuální kontext zabezpečení má oprávnění k použití třídy nebo spuštění metody. `PrincipalPermission` Atribut poskytuje mechanismus, pomocí kterého definujeme tato pravidla.
 
 Pojďme demonstruje použití `PrincipalPermission` atribut v prvku GridView `SelectedIndexChanged` a `RowDeleting` obslužné rutiny událostí zakázat spouštění anonymní uživatelé a uživatelé než Tito, v uvedeném pořadí. Je budeme muset udělat přidat atribut příslušné na každý definice funkce:
 
@@ -401,13 +401,13 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Přidávání do obchodní a datové vrstvy pomocí autorizačních pravidel`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
-- [Autorizaci ASP.NET](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx)
+- [Autorizaci ASP.NET](https://msdn.microsoft.com/library/wce3kxhd.aspx)
 - [Změny mezi služby IIS 6 a službu IIS7 zabezpečení](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
-- [Konfigurace konkrétní soubory a podadresáře](https://msdn.microsoft.com/en-us/library/6hbkh9s7.aspx)
+- [Konfigurace konkrétní soubory a podadresáře](https://msdn.microsoft.com/library/6hbkh9s7.aspx)
 - [Omezení funkce změny dat na základě uživatele](../../data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb.md)
 - [Ovládací prvek LoginView – elementy QuickStart](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/loginview.aspx)
 - [Principy IIS7 autorizace adres URL](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/URL-Authorization/Understanding-IIS7-URL-Authorization)
-- [`UrlAuthorizationModule`Technická dokumentace](https://msdn.microsoft.com/en-us/library/system.web.security.urlauthorizationmodule.aspx)
+- [`UrlAuthorizationModule`Technická dokumentace](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
 - [Práce s daty v technologii ASP.NET 2.0](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>O autorovi

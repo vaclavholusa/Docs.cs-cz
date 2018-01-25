@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6ee3e244c4ed29384d11c7acc1440692d3f9b23e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>Začínáme s 4.5 webových formulářů ASP.NET a Visual Studio 2013
 ====================
@@ -60,7 +60,7 @@ Předpokládanou cílovou skupinou série tento kurz je zkušeného vývojáře,
 Pokud vás zajímá kontrola oblasti uvedené výše, vezměte v úvahu kontrola následující obsah:
 
 - [Začínáme s jazykem Visual C#](https://msdn.microsoft.com/library/a72418yk.aspx)
-- [Vývoj webových](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
+- [Web Development](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
 - [Relační databáze](http://en.wikipedia.org/wiki/Relational_database)
 - [Třívrstvá architektura](http://en.wikipedia.org/wiki/Multitier_architecture)
 
@@ -150,7 +150,7 @@ Po návratu z PayPal, můžete zkontrolovat a dokončit vaši objednávku.
 
 Než začnete, ujistěte se, že máte v počítači nainstalován následující software:
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) nebo [sady Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). Rozhraní .NET Framework se instaluje automaticky.
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) nebo [sady Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Rozhraní .NET Framework se instaluje automaticky.
 
 Tento kurz řady používá Microsoft Visual Studio Express 2013 pro Web. K dokončení tohoto kurzu řady můžete použít buď Microsoft Visual Studio Express 2013 pro Web nebo Microsoft Visual Studio 2013.
 
@@ -163,7 +163,7 @@ Pokud již máte nainstalované verze sady Visual Studio, proces instalace vedle
 
 > [!NOTE] 
 > 
-> Tento návod předpokládá, že jste vybrali *vývoj webů* kolekce nastavení při prvním spuštění sady Visual Studio. Další informace najdete v tématu [postupy: nastavení prostředí vyberte vývoj webové](https://msdn.microsoft.com/en-us/library/ff521558.aspx).
+> Tento návod předpokládá, že jste vybrali *vývoj webů* kolekce nastavení při prvním spuštění sady Visual Studio. Další informace najdete v tématu [postupy: nastavení prostředí vyberte vývoj webové](https://msdn.microsoft.com/library/ff521558.aspx).
 
 
 ## <a name="download-the-sample-application"></a>Stažení ukázkové aplikace
@@ -179,7 +179,7 @@ Po instalaci požadavky, jste připraveni se začne vytvářet nový webový pro
 
 Stažení *.zip* souboru. Zobrazíte dokončený projekt, který vytvoří tento kurz řady, vyhledejte a vyberte *C#*složku *.zip* souboru. Uložit *C#* folderto složky použijete při práci s projekty sady Visual Studio 2013. Ve výchozím nastavení složka projektů Visual Studio 2013 je následující:
 
-**C:\Users\*****&lt;uživatelské jméno&gt;*** \Documents\Visual Studio 2013\Projects**
+**C:\Users\*****&lt;username&gt;*****\Documents\Visual Studio 2013\Projects**
 
 Přejmenujte ***C#*** složku pro ***Northwind***.
 
@@ -198,4 +198,4 @@ Komentáře k tento kurz řady jsou úvodní a při aktualizaci tento kurz řady
 Když dojde k chybě během vývoje nebo na webu nefunguje správně, chybové zprávy, které může poskytnout komplexní různá vodítka na zdroj problému nebo nemusí vysvětlují, jak ji odstranit. Abychom vám pomohli s některé běžné scénáře problém, můžete také použít [ASP.NET fóra](https://forums.asp.net/) nebo části otázky a A součástí [Začínáme s webovými formuláři ASP.NET 4.5 a Visual Studio 2013 – adresář Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) () C#) ukázka. Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, jak projděte následující kurzy, nezapomeňte zkontrolovat výše uvedené umístění.
 
 >[!div class="step-by-step"]
-[Další](create-the-project.md)
+[Next](create-the-project.md)

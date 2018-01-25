@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/distributed
-ms.openlocfilehash: a00937e8c47e73fa8e29af883f44f6e1f4d4b1b4
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: a0af4887143f6ed37a1af982ec21a2ad5eae9515
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>Práce s distribuované mezipaměti ASP.NET Core
 
@@ -44,11 +44,11 @@ Konfigurace mezipaměti je konkrétní implementace. Tento článek popisuje, ja
 
 `IDistributedCache` Rozhraní zahrnuje synchronní a asynchronní metody. Rozhraní umožňuje položky přidat, načíst a odebrat z implementace distribuované mezipaměti. `IDistributedCache` Rozhraní zahrnuje následující metody:
 
-**GET, GetAsync**
+**Get, GetAsync**
 
 Přebírá řetězec klíč a načte jako položka v mezipaměti `byte[]` Pokud nalezen v mezipaměti.
 
-**Sada, SetAsync**
+**Set, SetAsync**
 
 Přidá položku (jako `byte[]`) do mezipaměti pomocí klíče řetězec.
 
@@ -121,7 +121,7 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 Vytvoření tabulky má následující schéma:
 
-![Tabulka mezipaměti SqlServer](distributed/_static/SqlServerCacheTable.png)
+![SqlServer Cache Table](distributed/_static/SqlServerCacheTable.png)
 
 Podobně jako všechny implementace mezipaměti, musí aplikace získávat a nastavovat hodnoty mezipaměti pomocí instance `IDistributedCache`, nikoli `SqlServerCache`. Ukázka implementuje `SqlServerCache` v `Production` prostředí (tak, že je nakonfigurovaný v `ConfigureProductionServices`).
 
@@ -138,9 +138,9 @@ Při rozhodování, kdy zavedení `IDistributedCache` je pro aplikace, vyberte m
 
 * [Redis Cache v Azure](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [Databáze SQL v Azure](https://azure.microsoft.com/documentation/services/sql-database/)
-* [Ukládání do mezipaměti v paměti](xref:performance/caching/memory)
+* [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
 * [Detekovat změny s tokeny změn](xref:fundamentals/primitives/change-tokens)
 * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
-* [Middleware ukládání do mezipaměti odpovědi](xref:performance/caching/middleware)
-* [Pomocník značky mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Pomocník značky distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
+* [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

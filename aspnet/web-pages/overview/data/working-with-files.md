@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: b3497ee17809070227115db197093c9cd0ca6c70
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0f119f8fb4873e55292203f21a2efd8f26793ae4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>Práce se soubory v Web Pages (Razor) technologie ASP.NET
 ====================
@@ -262,4 +262,4 @@ V předchozím příkladu umožníte uživatelům odeslat jeden soubor. Ale mů�
 
 [Práce s obrázky v stránky webu technologie ASP.NET](https://go.microsoft.com/fwlink/?LinkId=202897)
 
-[Export do souboru CSV](https://msdn.microsoft.com/en-us/library/ms155919.aspx)
+[Export do souboru CSV](https://msdn.microsoft.com/library/ms155919.aspx)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-3
 msc.type: authoredcontent
-ms.openlocfilehash: df75a69644033cc76fee86b5a9692ab65beb4d01
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1ca627397f0f100d13388f9afc27ff481886e098
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="use-code-first-migrations-to-seed-the-database"></a>Použití migrace Code First počáteční hodnoty databáze
 ====================
@@ -24,7 +24,7 @@ podle [Wasson Jan](https://github.com/MikeWasson)
 
 [Stáhněte si dokončený projekt](https://github.com/MikeWasson/BookService)
 
-V této části budete používat [migrace Code First](https://msdn.microsoft.com/en-us/data/jj591621) v EF počáteční hodnoty databáze s testovacích datech.
+V této části budete používat [migrace Code First](https://msdn.microsoft.com/data/jj591621) v EF počáteční hodnoty databáze s testovacích datech.
 
 Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**, pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
@@ -46,7 +46,7 @@ V okně konzoly Správce balíčků zadejte následující příkazy:
 
 [!code-console[Main](part-3/samples/sample4.cmd)]
 
-První příkaz vygeneruje kód, který vytvoří databázi a v druhém příkazu spustí tento kód. Databáze je vytvořená místně, pomocí [LocalDB](https://msdn.microsoft.com/en-us/library/hh510202.aspx).
+První příkaz vygeneruje kód, který vytvoří databázi a v druhém příkazu spustí tento kód. Databáze je vytvořená místně, pomocí [LocalDB](https://msdn.microsoft.com/library/hh510202.aspx).
 
 ![](part-3/_static/image2.png)
 

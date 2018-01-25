@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/persistent-connection-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 4c036ddf1e20e3a3be7b043d90b594292013f6c2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2e97dfd03c61b110325c41a992b4af490fcd17de
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-for-signalr-persistent-connections-signalr-1x"></a>Ověřování a autorizace pro trvalé připojení SignalR (SignalR 1.x)
 ====================
@@ -27,7 +27,7 @@ podle [Patrik Fletcher](https://github.com/pfletcher), [tní FitzMacken](https:/
 
 ## <a name="enforce-authorization"></a>Vynutit autorizaci
 
-K vynucení pravidel autorizace při použití [připojení PersistentConnection](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.persistentconnection(v=vs.111).aspx) je nutné přepsat `AuthorizeRequest` metoda. Nelze použít `Authorize` atribut s trvalým připojením. `AuthorizeRequest` Metoda je volána rámcem SignalR před každým požadavkem k ověření, že uživatel má oprávnění provést požadovanou akci. `AuthorizeRequest` Metoda není volána z klienta; místo toho ověření uživatele prostřednictvím mechanismu standardní ověřování vaší aplikace.
+K vynucení pravidel autorizace při použití [připojení PersistentConnection](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.persistentconnection(v=vs.111).aspx) je nutné přepsat `AuthorizeRequest` metoda. Nelze použít `Authorize` atribut s trvalým připojením. `AuthorizeRequest` Metoda je volána rámcem SignalR před každým požadavkem k ověření, že uživatel má oprávnění provést požadovanou akci. `AuthorizeRequest` Metoda není volána z klienta; místo toho ověření uživatele prostřednictvím mechanismu standardní ověřování vaší aplikace.
 
 Následující příklad ukazuje, jak omezit požadavky na ověření uživatelé.
 

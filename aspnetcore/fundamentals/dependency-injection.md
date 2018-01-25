@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1da3d557c48921747634b08cedb518184fb5f963
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7a5a0991694b2c7caa79dbc09f6471d614f67dac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Úvod do vkládání závislostí v ASP.NET Core
 
@@ -30,7 +30,7 @@ ASP.NET Core slouží od základů se na podporu a využít vkládání závislo
 
 Vkládání závislostí (DI) je technika k dosažení volné párování mezi objekty a jejich spolupracovníci nebo závislosti. Ne přímo vytváření instancí spolupracovníci, nebo pomocí statické odkazy jsou uvedené objekty třídy musí za účelem provádění akcí k třídě nějakým způsobem. Nejčastěji se třídy deklarovat závislé prostřednictvím jejich konstruktoru, což jim umožní postupujte podle [explicitní závislosti Princip](http://deviq.com/explicit-dependencies-principle/). Tento postup se označuje jako "konstruktor vkládání".
 
-Když třídy jsou navrženy s DI pamatovat, jsou jejich více volně vázány protože nemají přímé, pevně zakódované závislosti na jejich spolupracovníci. To odpovídá [závislostí inverzi Princip](http://deviq.com/dependency-inversion-principle/), která uvádí, že *"by neměl vysokou úroveň moduly závisí na nízkou úroveň moduly; obě by měl záviset na abstrakce."* Místo odkazující na konkrétní implementace, třídy požadavku abstrakce (obvykle `interfaces`) které jsou poskytovány k nim-li třída je vytvořená. Extrahování závislosti do rozhraní a poskytování implementace tato rozhraní jako parametry je také příklad [vzoru návrhu strategie](http://deviq.com/strategy-design-pattern/).
+Když třídy jsou navrženy s DI pamatovat, budou se více volně vázány protože nemají přímé, pevně zakódované závislosti na jejich spolupracovníci. To odpovídá [závislostí inverzi Princip](http://deviq.com/dependency-inversion-principle/), která uvádí, že *"by neměl vysokou úroveň moduly závisí na nízkou úroveň moduly; obě by měl záviset na abstrakce."* Místo odkazující na konkrétní implementace, třídy požadavku abstrakce (obvykle `interfaces`) které jsou poskytovány k nim-li třída je vytvořená. Extrahování závislosti do rozhraní a poskytování implementace tato rozhraní jako parametry je také příklad [vzoru návrhu strategie](http://deviq.com/strategy-design-pattern/).
 
 Při systému je navržen pro použití DI, s mnoho tříd, které žádají o jejich závislosti prostřednictvím jejich – konstruktor (nebo vlastnosti), je vhodné mít třídu vyhrazený pro vytváření těchto tříd s jejich přidružené závislosti. Tyto třídy jsou označovány jako *kontejnery*, nebo přesněji řečeno, [inverzi řízení (IoC)](http://deviq.com/inversion-of-control/) kontejnery nebo kontejnerů vkládání závislostí (DI). Kontejner je v podstatě objekt factory, který zodpovídá za poskytování instancí typů, které jsou požadovány z něj. Pokud daný typ deklaruje, že má závislosti a kontejneru byl nakonfigurován pro zadejte typy závislostí, vytvoří závislosti v rámci vytváření požadovaný instance. Tímto způsobem lze zadat grafy složitých závislostí na třídy bez nutnosti jakékoli konstrukce pevně objektu. Kromě vytváření objektů pomocí jejich závislosti, Spravovat kontejnery obvykle životnosti objektů v aplikaci.
 
@@ -112,7 +112,7 @@ Takto můžete zaregistrovat vlastní aplikačních služeb. První obecný typ 
 
 `AddTransient` Metoda se používá k mapování abstraktní typy na konkrétní služby, které jsou vytvářeny samostatně instance pro každý objekt, který vyžaduje. To se označuje jako služby *životnost*, a další životnost možnosti jsou popsané níže. Je důležité, abyste zvolili příslušné doba platnosti pro jednotlivé služby, které je zaregistrovat. Novou instanci třídy služby poskytovat pro různé třídy, která požaduje? Má být použita jedna instance v rámci dané webové žádosti? Nebo se jedna instance mají použít pro životního cyklu aplikace?
 
-V ukázce pro tento článek je jednoduchý kontroler, který se zobrazí názvy znaků, názvem `CharactersController`. Jeho `Index` metoda zobrazí aktuální seznam znaků, které byly uloženy v aplikaci a inicializuje kolekci pár znaků, pokud žádný neexistuje. Všimněte si, že i když tato aplikace používá Entity Framework Core a `ApplicationDbContext` třídu pro jeho trvalost žádná které, je třeba v kontroleru. Místo toho má byla abstrahované mechanismus přístupu konkrétním data za rozhraní, `ICharacterRepository`, které způsobem [použitému vzoru](http://deviq.com/repository-pattern/). Instance `ICharacterRepository` je požadována prostřednictvím konstruktoru a přiřazená privátní pole, které se pak použije k přístup ke znakům podle potřeby.
+V ukázce pro tento článek je jednoduchý kontroler, který se zobrazí názvy znaků, názvem `CharactersController`. Jeho `Index` metoda zobrazí aktuální seznam znaků, které byly uloženy v aplikaci a inicializuje kolekci pár znaků, pokud žádný neexistuje. Všimněte si, že i když tato aplikace používá Entity Framework Core a `ApplicationDbContext` třídy pro jeho stálost, žádná které je zřejmá v řadiči. Místo toho má byla abstrahované mechanismus přístupu konkrétním data za rozhraní, `ICharacterRepository`, které způsobem [použitému vzoru](http://deviq.com/repository-pattern/). Instance `ICharacterRepository` je požadována prostřednictvím konstruktoru a přiřazená privátní pole, které se pak použije k přístup ke znakům podle potřeby.
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
 
@@ -120,7 +120,7 @@ V ukázce pro tento článek je jednoduchý kontroler, který se zobrazí názvy
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
 
-Toto rozhraní je implementováno zase podle konkrétního typu, `CharacterRepository`, který používá za běhu.
+Toto rozhraní je implementováno zase podle konkrétního typu, `CharacterRepository`, který se používá za běhu.
 
 > [!NOTE]
 > Způsob DI se používá s `CharacterRepository` obecné modelu, můžete provést u všech aplikačních služeb, ne jenom při "úložiště" nebo data přístupové třídy je třída.
@@ -149,7 +149,7 @@ ASP.NET – služby můžete nakonfigurovat následující životnosti:
 
 **Transient**
 
-Přechodný životního cyklu služeb jsou vytvořeny při každém vyžádání. Tato doba platnosti je nejvhodnější pro prosté, bezstavové služby.
+Přechodný životního cyklu služeb vytvářejí pokaždé, když, kterou jste požadovali. Tato doba platnosti je nejvhodnější pro prosté, bezstavové služby.
 
 **Obor**
 
@@ -157,7 +157,7 @@ Vymezená životního cyklu služeb se vytvoří jednou na základě požadavku.
 
 **Singleton**
 
-Singleton životního cyklu služeb se vytvoří při prvním vyžádání (nebo když `ConfigureServices` se spustí, pokud existuje instance zadáte) a potom budou všechny následné žádosti o použít stejnou instanci. Pokud vaše aplikace vyžaduje chování typu singleton, povolení kontejneru služby pro správu životního cyklu služby se doporučuje namísto singleton vzor návrhu implementace a správa životního cyklu vaší objekt ve třídě sami.
+Singleton životního cyklu služeb se vytvoří při prvním jste požadovali (nebo když `ConfigureServices` se spustí, pokud existuje instance zadáte) a potom budou všechny následné žádosti o použít stejnou instanci. Pokud vaše aplikace vyžaduje chování typu singleton, povolení kontejneru služby pro správu životního cyklu služby se doporučuje namísto singleton vzor návrhu implementace a správa životního cyklu vaší objekt ve třídě sami.
 
 Služby lze dokument zaregistrovat u kontejneru několika způsoby. Jsme už viděli, jak zaregistrovat implementace služby daného typu zadáním konkrétní typ, který má použít. Kromě toho objekt lze zadat, který bude použit k vytvoření instance na vyžádání. Třetí přístup je přímo zadat instanci typu, který chcete použít, ve kterém případ kontejneru se nebude pokoušet vytvořit instanci (ani se dispose instance).
 
@@ -237,14 +237,14 @@ public void ConfigureServices(IServiceCollection services)
     services.AddSingleton<Service2>();
     services.AddSingleton<ISomeService>(sp => new SomeServiceImplementation());
 
-    // container did not create instance so it will NOT dispose it
+    // container didn't create instance so it will NOT dispose it
     services.AddSingleton<Service3>(new Service3());
     services.AddSingleton(new Service3());
 }
 ```
 
 > [!NOTE]
-> Ve verzi 1.0, kontejner s názvem uvolnění na *všechny* `IDisposable` objekty, včetně těch, které se nevytvořil.
+> Ve verzi 1.0, kontejner s názvem uvolnění na *všechny* `IDisposable` objekty, včetně těch, které ji vytvořit.
 
 ## <a name="replacing-the-default-services-container"></a>Nahrazení výchozího kontejneru služby
 

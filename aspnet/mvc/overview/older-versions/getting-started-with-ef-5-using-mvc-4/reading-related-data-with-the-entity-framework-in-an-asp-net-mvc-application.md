@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f455c3656c9120f4d7e6fccdba8f705e0a1c7d35
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9093fb90a52b297f173c5cddb6f332d2d1a25135
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>Čtení související Data pomocí rozhraní Entity Framework v aplikaci ASP.NET MVC (5 10)
 ====================
@@ -68,7 +68,7 @@ Třídy kontextu databáze provádí opožděného načítání ve výchozím na
 
     [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-Opožděného načítání maskovat kód, který způsobuje problémy s výkonem. Kód, který neurčuje přes nebo explicitní načítání ale zpracovává velký objem entity a používá několik navigačních vlastností v každé iteraci například může být velmi neefektivní (z důvodu velký počet zpátečních cest k databázi). Aplikace, která provádí i v vývoj pomocí na místním serveru SQL může mít problémy s výkonem při přesunu do Azure SQL Database z důvodu vyšší latence a opožděného načítání. Profilace databázové dotazy s realistické testu zatížení vám pomůže určit, zda je příslušná opožděného načítání. Další informace najdete v části [Demystifying Entity Framework strategie: načítání souvisejících dat](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx) a [pomocí rozhraní Entity Framework snížit latenci sítě do SQL Azure](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx).
+Opožděného načítání maskovat kód, který způsobuje problémy s výkonem. Kód, který neurčuje přes nebo explicitní načítání ale zpracovává velký objem entity a používá několik navigačních vlastností v každé iteraci například může být velmi neefektivní (z důvodu velký počet zpátečních cest k databázi). Aplikace, která provádí i v vývoj pomocí na místním serveru SQL může mít problémy s výkonem při přesunu do Azure SQL Database z důvodu vyšší latence a opožděného načítání. Profilace databázové dotazy s realistické testu zatížení vám pomůže určit, zda je příslušná opožděného načítání. Další informace najdete v části [Demystifying Entity Framework strategie: načítání souvisejících dat](https://msdn.microsoft.com/magazine/hh205756.aspx) a [pomocí rozhraní Entity Framework snížit latenci sítě do SQL Azure](https://msdn.microsoft.com/magazine/gg309181.aspx).
 
 ## <a name="create-a-courses-index-page-that-displays-department-name"></a>Vytvoření stránky indexu kurzy tento název zobrazí oddělení
 
@@ -155,7 +155,7 @@ Metoda přijímá data volitelné trasy (`id`) a parametr řetězce dotazu (`cou
 > 
 > Data trasy, která jsou data, která v segment adresy URL zadané ve směrovací tabulce nalezena vazač modelu. Například výchozí trasa určuje `controller`, `action`, a `id` segmenty:
 > 
-> trasy. MapRoute (  
+> routes.MapRoute(  
 >  Název: "Výchozí",  
 >  Adresa URL: "{controller} / {action} / {id}",  
 >  Výchozí nastavení: nové {řadiče = "Domů", akce = "Index", id = UrlParameter.Optional}  
@@ -194,7 +194,7 @@ Pokud jste vybrali ID lektorem, vybrané lektorem se načítají ze seznamu vyu�
 
 `Where` Metoda vrátí kolekci, ale v takovém případě kritéria předaný výsledek této metody pouze do jedné `Instructor` nevrátila entity. `Single` Metoda převede kolekci do jednoho `Instructor` entity, která umožňuje přístup k dané entity `Courses` vlastnost.
 
-Můžete použít [jeden](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx) metoda na kolekci, když víte kolekce budou mít jen jednu položku. `Single` Metoda vyvolá výjimku, pokud je kolekce do ní předán prázdný nebo pokud existuje více než jednu položku. Alternativou je [SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx), která vrací výchozí hodnotu (`null` v tomto případě) Pokud je kolekce prázdná. Ale v takovém případě stále vznikly by výjimku (z pokusu o vyhledání `Courses` vlastnost `null` odkaz), a zpráva o výjimce by méně jasně ukazovat na příčinu problému. Při volání `Single` metodu, můžete také předat v `Where` podmínku namísto volání `Where` metoda samostatně:
+Můžete použít [jeden](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx) metoda na kolekci, když víte kolekce budou mít jen jednu položku. `Single` Metoda vyvolá výjimku, pokud je kolekce do ní předán prázdný nebo pokud existuje více než jednu položku. Alternativou je [SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx), která vrací výchozí hodnotu (`null` v tomto případě) Pokud je kolekce prázdná. Ale v takovém případě stále vznikly by výjimku (z pokusu o vyhledání `Courses` vlastnost `null` odkaz), a zpráva o výjimce by méně jasně ukazovat na příčinu problému. Při volání `Single` metodu, můžete také předat v `Where` podmínku namísto volání `Where` metoda samostatně:
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs)]
 

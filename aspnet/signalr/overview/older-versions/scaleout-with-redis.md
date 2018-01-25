@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: c0d6fd421dad02298326d1975ae68d1e7cc78d8c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8376c6537d693841a621158358cc8f69cda0a1d6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-redis-signalr-1x"></a>Škálování SignalR s Redisem (SignalR 1.x)
 ====================
@@ -132,7 +132,7 @@ Zahrnují taky službu správy (uvedené v části "Nástroje pro správu").
 
 Zkontrolujte, zda je spuštěna služba webové správy. V opačném případě spusťte službu. (Pokud nevidíte v seznamu služeb systému Windows služby webové správy, ujistěte se, že jste nainstalovali službu správy při přidání IIS role.)
 
-Ve výchozím nastavení služba webové správy naslouchá na portu TCP 8172. V bráně Windows Firewall vytvořte nové příchozí pravidlo umožňující přenos TCP na portu 8172. Další informace najdete v tématu [konfigurace pravidel brány Firewall](https://technet.microsoft.com/en-us/library/dd448559(WS.10).aspx). (Pokud jsou hostiteli virtuálních počítačů v Azure, musíte přímo na portálu Azure. V tématu [jak nastavit koncové body k virtuálnímu počítači](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-set-up-endpoints/).)
+Ve výchozím nastavení služba webové správy naslouchá na portu TCP 8172. V bráně Windows Firewall vytvořte nové příchozí pravidlo umožňující přenos TCP na portu 8172. Další informace najdete v tématu [konfigurace pravidel brány Firewall](https://technet.microsoft.com/library/dd448559(WS.10).aspx). (Pokud jsou hostiteli virtuálních počítačů v Azure, musíte přímo na portálu Azure. V tématu [jak nastavit koncové body k virtuálnímu počítači](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/).)
 
 Nyní jste připraveni k nasazení projektu sady Visual Studio v počítači pro vývoj na server. V Průzkumníku řešení klikněte pravým tlačítkem na řešení a klikněte na tlačítko **publikovat**.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: bf4bb5c6f9ad8339c3597b0d6666c7077ac476e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 076fa87eff140a3e7ff6855e4876abac40419c57
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 modely a přístup k datům
 ====================
@@ -27,7 +27,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > Tato laboratoř vás provede procesem vylepšení a nových funkcí popsaných výše použitím malých změn na ukázkové webové aplikaci ve zdrojové složce zadané.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 V **ASP.NET MVC Základy** Hands-on testovací prostředí, můžete mít byla předávání pevně dat z řadičů šablon zobrazení. Ale, aby bylo možné vytvořit skutečné webové aplikace, můžete chtít použít skutečné databázi.
@@ -235,7 +235,7 @@ V této úloze tak, aby místo použití pevně zakódované data, se bude dotaz
     > [!NOTE]
     > Používáte funkce .NET názvem **LINQ** (language-integrated query) pro zápis výrazy silného typu dotazů vůči tyto kolekce – které bude spouštění kódu v databázi a vrátit objekty, které můžete naprogramovat proti.
     > 
-    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/en-us/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
+    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
 3. Aktualizace **Index** metody akce k načtení všech žánry.
 
     (Code fragment kódu - *modely a Data Access – Index úložiště Ex1*)
@@ -351,7 +351,7 @@ Teď, když už jste nakonfigurovali připojení k databázi, propojíte model s
     > [!NOTE]
     > Pro práci s Code First názvů, třídy Genre musí mít vlastnost primárního klíče, který bude automaticky zjistit.
     > 
-    > Další informace o první pravidla týkající se kódu v tomto [článku na webu msdn](https://msdn.microsoft.com/en-us/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
+    > Další informace o první pravidla týkající se kódu v tomto [článku na webu msdn](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
 2. Nyní otevřete třídu modelu objektů POCO **Album** z **modely** projektu složky a zahrnují cizí klíče, vytvoření vlastností s názvy **GenreId** a  **ArtistId**. Tato třída už máte **GenreId** pro primární klíč.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 kód prvního alba*)
@@ -385,7 +385,7 @@ Teď, když už jste nakonfigurovali připojení k databázi, propojíte model s
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
     > [!NOTE]
-    > S platformou Entity Framework **DbContext** a **DBSet** bude moci dotazovat třídu objektů POCO Genre. Tím, že rozšíří **OnModelCreating** metoda, určíte v **kód** mapovány Genre do databázové tabulky. Další informace o DBContext a DBSet najdete v tomto článku msdn: [odkaz](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx)
+    > S platformou Entity Framework **DbContext** a **DBSet** bude moci dotazovat třídu objektů POCO Genre. Tím, že rozšíří **OnModelCreating** metoda, určíte v **kód** mapovány Genre do databázové tabulky. Další informace o DBContext a DBSet najdete v tomto článku msdn: [odkaz](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
 
 <a id="Ex2Task4"></a>
 
@@ -416,7 +416,7 @@ V této úloze bude aktualizace třídy pro StoreController tak, aby místo pou�
     > [!NOTE]
     > Používáte funkce .NET názvem **LINQ** (language-integrated query) pro zápis výrazy silného typu dotazů vůči tyto kolekce – které bude spouštění kódu v databázi a vrátit objekty, které můžete naprogramovat proti.
     > 
-    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/en-us/library/bb397926(v=vs.110).aspx).
+    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
 3. Aktualizace **Index** metody akce k načtení všech žánry.
 
     (Code fragment kódu - *modely a Data Access – Index úložiště Ex2*)
@@ -457,7 +457,7 @@ V této úloze zkontroluje se, že na stránce Index úložiště se nyní zobra
 V tomto cvičení se dozvíte, jak k dotazování databáze pomocí parametrů a jak používat službu Shaping výsledků dotazu, funkce, která snižuje počet databáze přistupuje k načítání dat v efektivnější.
 
 > [!NOTE]
-> Další informace o Shaping výsledek dotazu naleznete na následujícím [článku na webu msdn](https://msdn.microsoft.com/en-us/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
+> Další informace o Shaping výsledek dotazu naleznete na následujícím [článku na webu msdn](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
 
 
 <a id="Ex3Task1"></a>
@@ -502,7 +502,7 @@ V této úloze se spustit aplikaci a načtení alb konkrétní genre z databáze
 
     ![Procházení podle genre](aspnet-mvc-4-models-and-data-access/_static/image24.png "procházení podle genre")
 
-    *Procházení/úložiště/procházet? genre = Pop*
+    *Browsing /Store/Browse?genre=Pop*
 
 <a id="Ex3Task3"></a>
 

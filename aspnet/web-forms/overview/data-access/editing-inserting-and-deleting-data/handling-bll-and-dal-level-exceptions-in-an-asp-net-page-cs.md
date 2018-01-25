@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17157d595e8283628371ff6ad39fe71879e96a56
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5a0ffde90aa85383d87bd48e16a1c16433465cbf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>Zpracování výjimek BLL a DAL úroveň na stránku ASP.NET (C#)
 ====================
@@ -101,9 +101,9 @@ V tomto okamžiku máme seznam všech tyto produkty `ProductName`, `QuantityPerU
 
 ## <a name="step-2-gracefully-handling-dal-level-exceptions"></a>Krok 2: Pohodlné zpracování výjimky na úrovni DAL
 
-Při našich upravitelné GridView nádherně funguje, když uživatelé zadat platné hodnoty pro název, ceny a jednotky v stock upravená produktu, zadávání neplatné hodnoty mít za následek výjimku. Například vynechání `ProductName` hodnotu příčiny [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) vyvolání od `ProductName` vlastnost v `ProdcutsRow` třída má jeho `AllowDBNull` vlastnost nastavena na hodnotu `false`; Pokud databáze je vypnutý, `SqlException` bude vyvolané TableAdapter při pokusu o připojení k databázi. Bez provedení akce, tyto výjimky vyvolat z Data Access Layer vrstvu obchodní logiky a potom na stránku ASP.NET a nakonec na modulem runtime ASP.NET.
+Při našich upravitelné GridView nádherně funguje, když uživatelé zadat platné hodnoty pro název, ceny a jednotky v stock upravená produktu, zadávání neplatné hodnoty mít za následek výjimku. Například vynechání `ProductName` hodnotu příčiny [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) vyvolání od `ProductName` vlastnost v `ProdcutsRow` třída má jeho `AllowDBNull` vlastnost nastavena na hodnotu `false`; Pokud databáze je vypnutý, `SqlException` bude vyvolané TableAdapter při pokusu o připojení k databázi. Bez provedení akce, tyto výjimky vyvolat z Data Access Layer vrstvu obchodní logiky a potom na stránku ASP.NET a nakonec na modulem runtime ASP.NET.
 
-V závislosti na konfiguraci webové aplikace a zda právě navštíveného aplikace z `localhost`, neošetřené výjimky může způsobit na stránce Obecná chyba serveru, sestava podrobnosti o chybě nebo uživatelsky přívětivý webové stránky. V tématu [webové zpracování chyb aplikace technologie ASP.NET](http://www.15seconds.com/issue/030102.htm) a [customErrors Element](https://msdn.microsoft.com/en-US/library/h0hfz6fc(VS.80).aspx) Další informace o odpovědí modulem runtime ASP.NET na nezachycenou výjimku.
+V závislosti na konfiguraci webové aplikace a zda právě navštíveného aplikace z `localhost`, neošetřené výjimky může způsobit na stránce Obecná chyba serveru, sestava podrobnosti o chybě nebo uživatelsky přívětivý webové stránky. V tématu [webové zpracování chyb aplikace technologie ASP.NET](http://www.15seconds.com/issue/030102.htm) a [customErrors Element](https://msdn.microsoft.com/library/h0hfz6fc(VS.80).aspx) Další informace o odpovědí modulem runtime ASP.NET na nezachycenou výjimku.
 
 Obrázek 6 ukazuje na obrazovce došlo při pokusu o aktualizaci produktu bez zadání `ProductName` hodnotu. Toto je výchozí podrobné informace o chybě sestava zobrazí, když procházejícího `localhost`.
 
@@ -153,7 +153,7 @@ Vytvoření této obslužné rutiny události bude do třídy kódu stránky ASP
 
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/samples/sample4.cs)]
 
-Druhý vstupní parametr této obslužné rutiny události je objekt typu [GridViewUpdatedEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx), který má tři vlastnosti týkající se zpracování výjimky:
+Druhý vstupní parametr této obslužné rutiny události je objekt typu [GridViewUpdatedEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx), který má tři vlastnosti týkající se zpracování výjimky:
 
 - `Exception`odkaz na vyvolaná výjimka; Pokud žádné došlo k výjimce, tato vlastnost bude mít hodnotu`null`
 - `ExceptionHandled`Logická hodnota, která označuje, zda bylo zpracováno výjimka v `RowUpdated` obslužné rutiny události; Pokud `false` (výchozí), výjimka je znovu vyvolána, percolating až modulem runtime ASP.NET

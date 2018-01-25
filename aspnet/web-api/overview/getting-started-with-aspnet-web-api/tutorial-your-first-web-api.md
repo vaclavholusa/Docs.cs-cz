@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: fa1cd068a7466e0b6b6fe7716090c8a7afd2a4d5
-ms.sourcegitcommit: ec9371e2fbfcb8d62e7e7cae69e7752f3f205385
+ms.openlocfilehash: 6ff9fd279a03197f761454bba3f180d7428b1b1f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-aspnet-web-api-2-c"></a>Začínáme s rozhraním ASP.NET Web API 2 (C#)
 ====================
@@ -112,7 +112,7 @@ Je to! Máte pracovní webového rozhraní API. Každá metoda v řadiči odpov�
 | Metoda kontroleru | Identifikátor URI |
 | --- | --- |
 | GetAllProducts | / api/produkty |
-| GetProduct | /API/produkty/*id* |
+| GetProduct | /api/products/*id* |
 
 Pro `GetProduct` metody *id* v identifikátoru URI je zástupný symbol. Například pokud chcete získat produktu s ID 5, je identifikátor URI `api/products/5`.
 
@@ -186,11 +186,11 @@ Chcete zobrazit dokončení web spuštěný jako živou webovou aplikaci? Úplno
 
 Potřebujete účet Azure k nasazení tohoto řešení do Azure. Pokud již účet nemáte, máte následující možnosti:
 
-- [Zdarma otevřít účet Azure](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604) -získáte kredity, můžete použít k vyzkoušení placených služeb Azure a i po jejich použití až můžete účet ponechat a používat bezplatné služby Azure.
-- [Aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -vaše předplatné MSDN vám dává kredity každý měsíc, které můžete použít pro placené služby Azure.
+- [Zdarma otevřít účet Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -získáte kredity, můžete použít k vyzkoušení placených služeb Azure a i po jejich použití až můžete účet ponechat a používat bezplatné služby Azure.
+- [Aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -vaše předplatné MSDN vám dává kredity každý měsíc, které můžete použít pro placené služby Azure.
 
 ## <a name="next-steps"></a>Další kroky
 
 - Více kompletní příklad, jak služby protokolu HTTP, který podporuje akce POST, PUT a DELETE a zapisuje do databáze, najdete v části [pomocí webového rozhraní API 2 s Entity Framework 6](../data/using-web-api-with-entity-framework/part-1.md).
 - Další informace o vytváření plynulá práce a rychlé reakce webových aplikací na základě služby HTTP najdete v tématu [jedné stránky aplikace ASP.NET](../../../single-page-application/index.md).
-- Informace o tom, jak nasadit webový projekt sady Visual Studio do služby Azure App Service najdete v tématu [vytvoření webové aplikace ASP.NET ve službě Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/).
+- Informace o tom, jak nasadit webový projekt sady Visual Studio do služby Azure App Service najdete v tématu [vytvoření webové aplikace ASP.NET ve službě Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 752882b16fe80cc99c9f333bcc2067e677e6670b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 15d2b427e6fccfc82eab535200ba6878ab41b72e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="assigning-roles-to-users-c"></a>Přiřazení rolí pro uživatele (C#)
 ====================
@@ -81,13 +81,13 @@ Teď připravení psát kód pro vazbu sadu uživatelské účty rozevírací se
 
 [!code-csharp[Main](assigning-roles-to-users-cs/samples/sample5.cs)]
 
-`BindUsersToUserList` Metoda načte všechny uživatelské účty v systému prostřednictvím [ `Membership.GetAllUsers` metoda](https://msdn.microsoft.com/en-us/library/dy8swhya.aspx). Tento příkaz vrátí [ `MembershipUserCollection` objekt](https://msdn.microsoft.com/en-us/library/system.web.security.membershipusercollection.aspx), což je kolekce [ `MembershipUser` instance](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx). Tato kolekce je pak vázána `UserList` rozevírací seznam. `MembershipUser` Instance tento způsob vytvoření kolekce obsahovat celou řadu vlastností, jako je `UserName`, `Email`, `CreationDate`, a `IsOnline`. Chcete-li pokyn rozevírací seznam zobrazíte hodnotu `UserName` vlastnost, ujistěte se, že `UserList` na rozevírací seznam `DataTextField` a `DataValueField` vlastnosti byly nastaveny jako "UserName".
+`BindUsersToUserList` Metoda načte všechny uživatelské účty v systému prostřednictvím [ `Membership.GetAllUsers` metoda](https://msdn.microsoft.com/library/dy8swhya.aspx). Tento příkaz vrátí [ `MembershipUserCollection` objekt](https://msdn.microsoft.com/library/system.web.security.membershipusercollection.aspx), což je kolekce [ `MembershipUser` instance](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx). Tato kolekce je pak vázána `UserList` rozevírací seznam. `MembershipUser` Instance tento způsob vytvoření kolekce obsahovat celou řadu vlastností, jako je `UserName`, `Email`, `CreationDate`, a `IsOnline`. Chcete-li pokyn rozevírací seznam zobrazíte hodnotu `UserName` vlastnost, ujistěte se, že `UserList` na rozevírací seznam `DataTextField` a `DataValueField` vlastnosti byly nastaveny jako "UserName".
 
 > [!NOTE]
 > `Membership.GetAllUsers` Metoda má dva přetížení: jeden, který přijímá žádné vstupní parametry a vrátí všechny uživatele a ten, který přebírá celočíselné hodnoty pro index stránky a velikost stránky a vrátí pouze zadané podmnožině uživatelů. Po velkých objemů uživatelské účty, které se zobrazuje v element stránkovatelné uživatelského rozhraní se druhý přetížení umožňuje efektivněji stránky do uživatele od vrátí jen přesné dílčí uživatelské účty a ne všechny z nich.
 
 
-`BindRolesToList` Metoda spustí voláním `Roles` třídy [ `GetAllRoles` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getallroles.aspx), která vrací pole řetězců obsahující role v systému. Toto pole řetězce je pak vázána opakovače.
+`BindRolesToList` Metoda spustí voláním `Roles` třídy [ `GetAllRoles` metoda](https://msdn.microsoft.com/library/system.web.security.roles.getallroles.aspx), která vrací pole řetězců obsahující role v systému. Toto pole řetězce je pak vázána opakovače.
 
 Nakonec je potřeba volat tyto dvě metody při prvním načtení stránky. Přidejte následující kód, který `Page_Load` obslužné rutiny události:
 
@@ -107,10 +107,10 @@ Při prvním načtení stránky, nebo vždy, když návštěvníka vybere novéh
 
 [!code-csharp[Main](assigning-roles-to-users-cs/samples/sample7.cs)]
 
-Výše uvedený kód spustí tak, že určíte, který je vybraný uživatel. Poté používá třídu role [ `GetRolesForUser(userName)` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getrolesforuser.aspx) vrátit zadaný uživatel sadu role jako pole řetězců. Dále jsou uvedené položky Opakovači a každá položka `RoleCheckBox` zaškrtávací políčko se odkazuje prostřednictvím kódu programu. Zaškrtávací políčko je zaškrtnuté, jenom v případě, že je součástí role odpovídá `selectedUsersRoles` pole řetězců.
+Výše uvedený kód spustí tak, že určíte, který je vybraný uživatel. Poté používá třídu role [ `GetRolesForUser(userName)` metoda](https://msdn.microsoft.com/library/system.web.security.roles.getrolesforuser.aspx) vrátit zadaný uživatel sadu role jako pole řetězců. Dále jsou uvedené položky Opakovači a každá položka `RoleCheckBox` zaškrtávací políčko se odkazuje prostřednictvím kódu programu. Zaškrtávací políčko je zaškrtnuté, jenom v případě, že je součástí role odpovídá `selectedUsersRoles` pole řetězců.
 
 > [!NOTE]
-> `selectedUserRoles.Contains<string>(...)` Syntaxe nebude kompilovat, pokud používáte technologii ASP.NET verze 2.0. `Contains<string>` Metoda je součástí [LINQ knihovny](http://en.wikipedia.org/wiki/Language_Integrated_Query), což je nová technologie ASP.NET 3.5. Pokud stále používáte technologii ASP.NET verze 2.0, použijte [ `Array.IndexOf<string>` metoda](https://msdn.microsoft.com/en-us/library/eha9t187.aspx) místo.
+> `selectedUserRoles.Contains<string>(...)` Syntaxe nebude kompilovat, pokud používáte technologii ASP.NET verze 2.0. `Contains<string>` Metoda je součástí [LINQ knihovny](http://en.wikipedia.org/wiki/Language_Integrated_Query), což je nová technologie ASP.NET 3.5. Pokud stále používáte technologii ASP.NET verze 2.0, použijte [ `Array.IndexOf<string>` metoda](https://msdn.microsoft.com/library/eha9t187.aspx) místo.
 
 
 `CheckRolesForSelectedUser` Metoda musí být volána ve dvou případech: při prvním načtení stránky a vždy, když `UserList` vybraného indexu na rozevírací seznam se změnilo. Proto volat tuto metodu z `Page_Load` obslužné rutiny události (po volání `BindUsersToUserList` a `BindRolesToList`). Navíc vytvoření obslužné rutiny události pro rozevírací seznam `SelectedIndexChanged` událostí a volání této metody odtud.
@@ -129,7 +129,7 @@ Vrátí jsme napsat kód pro této obslužné rutiny události za chvíli. Prvn�
 
 [!code-aspx[Main](assigning-roles-to-users-cs/samples/sample10.aspx)]
 
-Naše poslední, je k dokončení `RoleCheckBox_CheckChanged` obslužné rutiny události. Je potřeba spustit tak, že odkazující na ovládací prvek zaškrtávací políčko, který vyvolá událost, protože tato instance políčko víme, jakou roli bylo zaškrtnuté nebo nezaškrtnuté prostřednictvím jeho `Text` a `Checked` vlastnosti. Na základě těchto informací společně s uživatelské jméno vybraného uživatele nemůžeme přidat nebo odebrat uživatele z role prostřednictvím `Roles` třídy [ `AddUserToRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.addusertorole.aspx) nebo [ `RemoveUserFromRole` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.roles.removeuserfromrole.aspx).
+Naše poslední, je k dokončení `RoleCheckBox_CheckChanged` obslužné rutiny události. Je potřeba spustit tak, že odkazující na ovládací prvek zaškrtávací políčko, který vyvolá událost, protože tato instance políčko víme, jakou roli bylo zaškrtnuté nebo nezaškrtnuté prostřednictvím jeho `Text` a `Checked` vlastnosti. Na základě těchto informací společně s uživatelské jméno vybraného uživatele nemůžeme přidat nebo odebrat uživatele z role prostřednictvím `Roles` třídy [ `AddUserToRole` ](https://msdn.microsoft.com/library/system.web.security.roles.addusertorole.aspx) nebo [ `RemoveUserFromRole` metoda](https://msdn.microsoft.com/library/system.web.security.roles.removeuserfromrole.aspx).
 
 [!code-csharp[Main](assigning-roles-to-users-cs/samples/sample11.cs)]
 
@@ -181,7 +181,7 @@ Při prvním načtení stránky, nebo když je vybrána novou roli z `RoleList` 
 
 [!code-csharp[Main](assigning-roles-to-users-cs/samples/sample14.cs)]
 
-Tato metoda začíná získáním vybranou roli z `RoleList` rozevírací seznam. Poté použije [ `Roles.GetUsersInRole(roleName)` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getusersinrole.aspx) k načtení pole řetězců uživatelských jmen uživatelů, které patří do této role. Toto pole je pak vázána `RolesUserList` GridView.
+Tato metoda začíná získáním vybranou roli z `RoleList` rozevírací seznam. Poté použije [ `Roles.GetUsersInRole(roleName)` metoda](https://msdn.microsoft.com/library/system.web.security.roles.getusersinrole.aspx) k načtení pole řetězců uživatelských jmen uživatelů, které patří do této role. Toto pole je pak vázána `RolesUserList` GridView.
 
 Tato metoda musí být volána dvěma způsoby: při počátečním načtení stránky a při vybranou roli v `RoleList` změny rozevírací seznam. Proto aktualizovat `Page_Load` obslužné rutiny události tak, aby tato metoda je volána po volání `CheckRolesForSelectedUser`. Dále vytvořte obslužnou rutinu události pro `RoleList`na `SelectedIndexChanged` událostí a příliš volat tuto metodu odtud.
 
@@ -242,7 +242,7 @@ Dále vytvořte `Click` obslužné rutiny události pro `AddUserToRoleButton` a 
 Většina kód `Click` obslužné rutiny události provádí různé ověřovací kontroly. Zajišťuje, že návštěvníka zadané uživatelské jméno v `UserNameToAddToRole` textovému poli, zda uživatel existuje v systému, a zda již nepatří do vybrané role. Pokud některý z těchto kontrol selže, zobrazí se příslušná zpráva v `ActionStatus` a obslužné rutiny události je byl ukončen. Pokud všechny kontroly úspěšně, uživatel je přidán k roli prostřednictvím `Roles.AddUserToRole` metoda. Následující tedy textové pole na `Text` je vlastnost bylo vymazáno, GridView aktualizaci a `ActionStatus` popisek zobrazí zprávu s upozorněním, že zadaný uživatel byl úspěšně přidán do vybrané role.
 
 > [!NOTE]
-> Aby se zajistilo, že zadaný uživatel již nepatří do vybrané role, používáme [ `Roles.IsUserInRole(userName, roleName)` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.roles.isuserinrole.aspx), která vrací logickou hodnotu, která určuje zda *uživatelské jméno* je členem *roleName*. Budeme používat tuto metodu znovu v <a id="_msoanchor_2"> </a> [další kurz](role-based-authorization-cs.md) při se podíváme na ověření na základě role.
+> Aby se zajistilo, že zadaný uživatel již nepatří do vybrané role, používáme [ `Roles.IsUserInRole(userName, roleName)` metoda](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx), která vrací logickou hodnotu, která určuje zda *uživatelské jméno* je členem *roleName*. Budeme používat tuto metodu znovu v <a id="_msoanchor_2"> </a> [další kurz](role-based-authorization-cs.md) při se podíváme na ověření na základě role.
 
 
 Navštívit stránku prostřednictvím prohlížeče a vyberte roli dohledu z `RoleList` rozevírací seznam. Zkuste zadat neplatného uživatelského jména – se měla zobrazit zpráva, která vysvětluje, že uživatel neexistuje v systému.
@@ -356,7 +356,7 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Přehled nástroje pro správu webu ASP.NET](https://msdn.microsoft.com/en-us/library/ms228053.aspx)
+- [Přehled nástroje pro správu webu ASP.NET](https://msdn.microsoft.com/library/ms228053.aspx)
 - [Zkoumání ASP. Členství, role a profil pro NET](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [Vrácení vlastní nástroj pro správu webu](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 

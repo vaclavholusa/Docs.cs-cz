@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d4d1a5795f5edabc51b578ecc45676490711c1a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 79f06707cadf027baa03652dc722cab31f494b09
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>Základní rozdíly mezi službou IIS a ASP.NET Development Server (C#)
 ====================
@@ -47,7 +47,7 @@ K zobrazení tohoto typu chyby v akci, vytvořili jste na stránce na webu knihy
 [!code-csharp[Main](core-differences-between-iis-and-the-asp-net-development-server-cs/samples/sample1.cs)]
 
 > [!NOTE]
-> [ `File.WriteAllText` Metoda](https://msdn.microsoft.com/en-us/library/system.io.file.writealltext.aspx) vytvoří nový soubor, pokud neexistuje a pak zapíše zadaný obsah do něj. Pokud soubor již existuje, se přepíše existující obsah.
+> [ `File.WriteAllText` Metoda](https://msdn.microsoft.com/library/system.io.file.writealltext.aspx) vytvoří nový soubor, pokud neexistuje a pak zapíše zadaný obsah do něj. Pokud soubor již existuje, se přepíše existující obsah.
 
 
 Potom přejděte *naučit sami technologie ASP.NET 3.5 za 24 hodin* kniha kontrolní stránku ve vývojovém prostředí pomocí vývojový Server ASP.NET. Za předpokladu, že jste se přihlásili k počítači pomocí účtu, který má odpovídající oprávnění k vytvoření a změna textového souboru na webu zobrazí kořenového adresáře aplikace recenze knihy stejná jako předtím, ale pokaždé, když je stránky navštívili, datum a čas a uživatele  IP adresa je uložen v `LastTYASP35Access.txt` souboru. Přejděte v prohlížeči do tohoto souboru; měli byste vidět zprávu podobnou té na obrázku 1.
@@ -58,7 +58,7 @@ Potom přejděte *naučit sami technologie ASP.NET 3.5 za 24 hodin* kniha kontro
 **Obrázek 1**: textový soubor obsahuje poslední datum a čas byl navštívené recenze knihy ([Kliknutím zobrazit obrázek v plné velikosti](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image3.png))
 
 
-Nasazení webové aplikace do produkčního prostředí a potom navštivte hostované *naučit sami technologie ASP.NET 3.5 za 24 hodin* kniha kontrolní stránku. V tomto okamžiku by měl buď naleznete na stránce Kontrola kniha jako normální nebo chybovou zprávu na obrázku 2. Někteří poskytovatelé webového hostitele udělit oprávnění k zápisu do anonymní účet počítače ASP.NET, ve kterém bude fungovat stránce – případ typu bez chyby. Pokud ale poskytovatel webového hostitele zakáže oprávnění k zápisu pro anonymní účet pak [ `UnauthorizedAccessException` výjimka](https://msdn.microsoft.com/en-us/library/system.unauthorizedaccessexception.aspx) se vyvolá, když `TYASP35.aspx` stránku pokusí se zapsat aktuální datum a čas `LastTYASP35Access.txt` souboru.
+Nasazení webové aplikace do produkčního prostředí a potom navštivte hostované *naučit sami technologie ASP.NET 3.5 za 24 hodin* kniha kontrolní stránku. V tomto okamžiku by měl buď naleznete na stránce Kontrola kniha jako normální nebo chybovou zprávu na obrázku 2. Někteří poskytovatelé webového hostitele udělit oprávnění k zápisu do anonymní účet počítače ASP.NET, ve kterém bude fungovat stránce – případ typu bez chyby. Pokud ale poskytovatel webového hostitele zakáže oprávnění k zápisu pro anonymní účet pak [ `UnauthorizedAccessException` výjimka](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx) se vyvolá, když `TYASP35.aspx` stránku pokusí se zapsat aktuální datum a čas `LastTYASP35Access.txt` souboru.
 
 
 [![Výchozí účet počítače používaný službou IIS, nemá oprávnění k zápisu do systému souborů](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image4.png)
@@ -123,7 +123,7 @@ Jakmile služby IIS byl nakonfigurován pro použití integrovaného kanálu př
 Tento kód dá pokyn k použití ověřování a autorizace moduly založený na technologii ASP.NET IIS 7. Znovu nasaďte aplikaci a potom znovu navštivte soubor PDF. Tuto chvíli, kdy služba IIS zpracuje požadavek nabízí logiku ověřování a autorizace modulem runtime ASP.NET příležitost ke kontrole žádosti. Protože pouze ověření uživatelé mají oprávnění k zobrazení obsahu v `PrivateDocs` složky, anonymní návštěvníka se automaticky přesměruje na přihlašovací stránku (odkazuje zpět na obrázku 3).
 
 > [!NOTE]
-> Pokud váš poskytovatel hostitele webu používá aplikace služby IIS 6 nelze použít funkci integrovaného kanálu. Jeden alternativní řešení je uvést soukromé dokumenty ve složce, která zakáže přístup protokolu HTTP (například `App_Data`) a pak vytvořit stránku k obsluze tyto dokumenty. Tato stránka může být například `GetPDF.aspx`a je předána název PDF prostřednictvím parametru řetězce dotazu. `GetPDF.aspx` Stránky by nejdříve ověřte, zda uživatel má oprávnění k zobrazení souboru a pokud ano, využije [ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/en-us/library/system.web.httpresponse.writefile.aspx) metodu pro odeslání zpět do klienta, který obsah požadovaný soubor PDF. Tento postup by také fungovat pro službu IIS 7, pokud není chcete povolit integrovaného kanálu.
+> Pokud váš poskytovatel hostitele webu používá aplikace služby IIS 6 nelze použít funkci integrovaného kanálu. Jeden alternativní řešení je uvést soukromé dokumenty ve složce, která zakáže přístup protokolu HTTP (například `App_Data`) a pak vytvořit stránku k obsluze tyto dokumenty. Tato stránka může být například `GetPDF.aspx`a je předána název PDF prostřednictvím parametru řetězce dotazu. `GetPDF.aspx` Stránky by nejdříve ověřte, zda uživatel má oprávnění k zobrazení souboru a pokud ano, využije [ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx) metodu pro odeslání zpět do klienta, který obsah požadovaný soubor PDF. Tento postup by také fungovat pro službu IIS 7, pokud není chcete povolit integrovaného kanálu.
 
 
 ## <a name="summary"></a>Souhrn
@@ -138,7 +138,7 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 - [Integrace technologie ASP.NET se službou IIS 7.0](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
 - [Fóra ověřování ASP.NET pomocí všech typů obsahu ve službě IIS 7](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx) (Video)
-- [Webové servery v aplikaci Visual Web Developer](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)
+- [Webové servery v aplikaci Visual Web Developer](https://msdn.microsoft.com/library/58wxa9w5.aspx)
 
 >[!div class="step-by-step"]
 [Předchozí](common-configuration-differences-between-development-and-production-cs.md)

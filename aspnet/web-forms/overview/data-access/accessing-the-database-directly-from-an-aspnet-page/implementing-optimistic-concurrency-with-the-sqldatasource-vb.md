@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 603aaa35a533fc8853ea72fc9be05ca82b213049
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 974ea50a0d12aae09107470815214b20068ea553
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>Implementace optimistickou metodu souběžného s SqlDataSource (VB)
 ====================
@@ -116,8 +116,8 @@ Podobně `DeleteCommand` vlastnost a `DeleteParameters` kolekce by měla vypadat
 
 Kromě rozšířit `WHERE` klauzulích `UpdateCommand` a `DeleteCommand` vlastnosti (a přidání dalších parametrů do kolekce příslušných parametrů), výběr použít optimistickou metodu souběžného zpracování možnost upraví dva další vlastnosti:
 
-- Změny [ `ConflictDetection` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) z `OverwriteChanges` (výchozí) na`CompareAllValues`
-- Změny [ `OldValuesParameterFormatString` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx) z {0} (výchozí) na původní\_{0}.
+- Změny [ `ConflictDetection` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) z `OverwriteChanges` (výchozí) na`CompareAllValues`
+- Změny [ `OldValuesParameterFormatString` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx) z {0} (výchozí) na původní\_{0}.
 
 Pokud data ovládací prvek webu vyvolá SqlDataSource s `Update()` nebo `Delete()` metoda, předává v původní hodnoty. Pokud SqlDataSource s `ConflictDetection` je nastavena na `CompareAllValues`, tyto původní hodnoty se přidají do příkazu. `OldValuesParameterFormatString` Vlastnost poskytuje vzoru pro pojmenovávání použít pro tyto parametry s původní hodnotou. Průvodce konfigurace zdroje dat používá původní\_{0} a názvy jednotlivých původní parametrů v `UpdateCommand` a `DeleteCommand` vlastnosti a `UpdateParameters` a `DeleteParameters` kolekce odpovídajícím způsobem.
 

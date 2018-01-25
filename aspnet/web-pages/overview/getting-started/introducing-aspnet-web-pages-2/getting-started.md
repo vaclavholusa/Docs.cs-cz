@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 615ddc31d0d857e5bf9a7f372b7efcf67d185905
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a6789ee75b4ca6e9443681cc7ec0bd3ab94cedcd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>Představení technologie ASP.NET Web Pages – Začínáme
 ====================
@@ -124,8 +124,8 @@ Chcete zobrazit dokončení web spuštěný jako živou webovou aplikaci? Úplno
 
 Potřebujete účet Azure k nasazení tohoto řešení do Azure. Pokud již účet nemáte, máte následující možnosti:
 
-- [Zdarma otevřít účet Azure](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604) -získáte kredity, můžete použít k vyzkoušení placených služeb Azure a i po jejich použití až můžete účet ponechat a používat bezplatné služby Azure.
-- [Aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -vaše předplatné MSDN vám dává kredity každý měsíc, které můžete použít pro placené služby Azure.
+- [Zdarma otevřít účet Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -získáte kredity, můžete použít k vyzkoušení placených služeb Azure a i po jejich použití až můžete účet ponechat a používat bezplatné služby Azure.
+- [Aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -vaše předplatné MSDN vám dává kredity každý měsíc, které můžete použít pro placené služby Azure.
 
 ## <a name="installing-everything"></a>Instalace vše
 
@@ -151,11 +151,11 @@ Instalace webové platformy se zobrazí, je připravena k instalaci služby WebM
 
 Proces instalace obrázky na co se má nainstalovat do počítače a zahájí proces. V závislosti na tom, co přesně musí být nainstalovaná proces může trvat od chvíli několik minut. Vyberte **souhlasím** přijmout licenční podmínky.
 
-## <a name="hello-webmatrix"></a>Hello, služba WebMatrix
+## <a name="hello-webmatrix"></a>Hello, WebMatrix
 
 Až skončíte, proces instalace můžete spustit službu WebMatrix. Pokud tomu tak není, v systému Windows, z **spustit** nabídky, spusťte **Microsoft WebMatrix**.
 
-Při prvním spuštění služby WebMatrix, budete mít možnost se přihlásit do služby Microsoft Azure pomocí účtu Microsoft. Po přihlášení, obdržíte 10 bezplatných webových aplikací prostřednictvím Azure. Tyto aplikace bezplatných webových poskytnout vhodný způsob k testování aplikace. Pokud ještě nemáte účet Azure, ale máte předplatné MSDN, můžete [aktivovat výhody pro předplatné MSDN](https://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604). Jinak můžete vytvořit Bezplatný zkušební účet si během několika minut. Podrobnosti najdete v tématu [bezplatná zkušební verze Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+Při prvním spuštění služby WebMatrix, budete mít možnost se přihlásit do služby Microsoft Azure pomocí účtu Microsoft. Po přihlášení, obdržíte 10 bezplatných webových aplikací prostřednictvím Azure. Tyto aplikace bezplatných webových poskytnout vhodný způsob k testování aplikace. Pokud ještě nemáte účet Azure, ale máte předplatné MSDN, můžete [aktivovat výhody pro předplatné MSDN](https://www.windowsazure.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604). Jinak můžete vytvořit Bezplatný zkušební účet si během několika minut. Podrobnosti najdete v tématu [bezplatná zkušební verze Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
 
 Nemáte nyní přihlásit a pokračujte v tomto kurzu. Není-li není nyní, bude stále mít možnost se přihlásit později. Poslední [tématu](publishing.md) v tomto kurzu řady vysvětluje postup nasazení webu do Azure, proto by potřeba Přihlaste se k dokončení tohoto tématu.
 
@@ -290,4 +290,4 @@ V dalším kurzu této série prozkoumejte další programování technologie AS
 [Vytvoření webu ASP.NET od začátku](https://www.microsoft.com/web/post/create-an-aspnet-website-from-scratch). Kurz, který je konkrétně se jedná o pomocí služby WebMatrix (ne webové stránky ASP.NET). Přejde do trochu další podrobnosti o některých dalších funkcí služby WebMatrix, který nebude nabídneme v tomto kurzu.
 
 >[!div class="step-by-step"]
-[Další](intro-to-web-pages-programming.md)
+[Next](intro-to-web-pages-programming.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: e52e39bf9c66419e18bf78036138d1f15376f2be
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d73ab6c9091556a62e5d9475baf67a18e305585f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-for-signalr-hubs-signalr-1x"></a>Ověřování a autorizace pro rozbočovače SignalR (SignalR 1.x)
 ====================
@@ -44,7 +44,7 @@ Toto téma obsahuje následující oddíly:
 
 ## <a name="authorize-attribute"></a>Autorizovat atribut
 
-Funkce SignalR poskytuje [Autorizovat](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) atribut k určení, které uživatele nebo role mají přístup do rozbočovače nebo metoda. Tento atribut je umístěn ve `Microsoft.AspNet.SignalR` oboru názvů. Můžete použít `Authorize` atribut rozbočovač nebo konkrétní metody v rozbočovači. Pokud použijete `Authorize` atribut třídy rozbočovače, požadavek na autorizaci zadaný platí pro všechny metody v rozbočovači. Níže jsou zobrazena různé typy autorizace požadavky, které můžete provést. Bez `Authorize` atribut všechny veřejné metody v rozbočovači jsou k dispozici pro klienta, který je připojený k rozbočovači.
+Funkce SignalR poskytuje [Autorizovat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) atribut k určení, které uživatele nebo role mají přístup do rozbočovače nebo metoda. Tento atribut je umístěn ve `Microsoft.AspNet.SignalR` oboru názvů. Můžete použít `Authorize` atribut rozbočovač nebo konkrétní metody v rozbočovači. Pokud použijete `Authorize` atribut třídy rozbočovače, požadavek na autorizaci zadaný platí pro všechny metody v rozbočovači. Níže jsou zobrazena různé typy autorizace požadavky, které můžete provést. Bez `Authorize` atribut všechny veřejné metody v rozbočovači jsou k dispozici pro klienta, který je připojený k rozbočovači.
 
 Pokud jste definovali role ve vaší webové aplikaci s názvem "Admin", můžete zadat jenom uživatelé v dané roli můžete získat přístup k rozbočovači následujícím kódem.
 
@@ -65,7 +65,7 @@ Následující příklady adres autorizace různé scénáře:
 
 ## <a name="require-authentication-for-all-hubs"></a>Vyžadovat ověřování pro všechny rozbočovače
 
-Můžete vyžadovat jeho ověření pro všechny rozbočovače a metody rozbočovačů ve vaší aplikaci pomocí volání [RequireAuthentication](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx) metoda při spuštění aplikace. Tuto metodu můžete použít, když máte více rozbočovače a chcete vynutit požadavku na ověřování pro všechny z nich. Pomocí této metody nelze zadat role, uživatele nebo odchozí autorizace. Můžete pouze zadat, že přístup k metody rozbočovače, je omezený ověřeným uživatelům. Ale můžete také použít atribut autorizovat centra nebo metody k určení požadavků na další. Kromě požadavek na základní ověřování je použité žádné požadavky, které zadáte v atributech.
+Můžete vyžadovat jeho ověření pro všechny rozbočovače a metody rozbočovačů ve vaší aplikaci pomocí volání [RequireAuthentication](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx) metoda při spuštění aplikace. Tuto metodu můžete použít, když máte více rozbočovače a chcete vynutit požadavku na ověřování pro všechny z nich. Pomocí této metody nelze zadat role, uživatele nebo odchozí autorizace. Můžete pouze zadat, že přístup k metody rozbočovače, je omezený ověřeným uživatelům. Ale můžete také použít atribut autorizovat centra nebo metody k určení požadavků na další. Kromě požadavek na základní ověřování je použité žádné požadavky, které zadáte v atributech.
 
 Následující příklad ukazuje soubor Global.asax, který omezuje všechny metody rozbočovače ověřeným uživatelům.
 
@@ -77,7 +77,7 @@ Když zavoláte `RequireAuthentication()` metoda po zpracování žádost Signal
 
 ## <a name="customized-authorization"></a>Vlastní autorizace
 
-Pokud potřebujete přizpůsobit, jakým způsobem je určován autorizace, můžete vytvořit třídu, která pochází z `AuthorizeAttribute` a přepsat [UserAuthorized](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx) metoda. Tato metoda je volána pro každý požadavek k určení, zda je uživatel oprávnění pro dokončení požadavku. V metodě přepsaného zadejte pomocí potřebné logiky pro váš scénář autorizace. Následující příklad ukazuje, jak vynutit autorizaci u prostřednictvím založené na deklaracích identity.
+Pokud potřebujete přizpůsobit, jakým způsobem je určován autorizace, můžete vytvořit třídu, která pochází z `AuthorizeAttribute` a přepsat [UserAuthorized](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx) metoda. Tato metoda je volána pro každý požadavek k určení, zda je uživatel oprávnění pro dokončení požadavku. V metodě přepsaného zadejte pomocí potřebné logiky pro váš scénář autorizace. Následující příklad ukazuje, jak vynutit autorizaci u prostřednictvím založené na deklaracích identity.
 
 [!code-csharp[Main](hub-authorization/samples/sample4.cs)]
 
@@ -105,7 +105,7 @@ Pokud máte klienta .NET, jako je například konzolovou aplikaci, která komuni
 
 ### <a name="cookie"></a>Soubor cookie
 
-Když váš klient .NET pracuje s rozbočovači, který používá ověřování ASP.NET pomocí formulářů, musíte ručně nastavit ověřovacího souboru cookie pro připojení. Přidejte k danému souboru cookie `CookieContainer` vlastnost [HubConnection](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx) objektu. Následující příklad ukazuje konzolovou aplikaci, která načte soubor cookie ověřování z webové stránky a přidá tento soubor cookie k připojení. Adresa URL `https://www.contoso.com/RemoteLogin` v příkladu odkazuje na webovou stránku, která je potřeba vytvořit. Stránka by načíst odeslané uživatelské jméno a heslo a pokus o přihlášení uživatele s přihlašovacími údaji.
+Když váš klient .NET pracuje s rozbočovači, který používá ověřování ASP.NET pomocí formulářů, musíte ručně nastavit ověřovacího souboru cookie pro připojení. Přidejte k danému souboru cookie `CookieContainer` vlastnost [HubConnection](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx) objektu. Následující příklad ukazuje konzolovou aplikaci, která načte soubor cookie ověřování z webové stránky a přidá tento soubor cookie k připojení. Adresa URL `https://www.contoso.com/RemoteLogin` v příkladu odkazuje na webovou stránku, která je potřeba vytvořit. Stránka by načíst odeslané uživatelské jméno a heslo a pokus o přihlášení uživatele s přihlašovacími údaji.
 
 [!code-csharp[Main](hub-authorization/samples/sample7.cs)]
 
@@ -117,7 +117,7 @@ Konzolové aplikace odešle pověření www.contoso.com/RemoteLogin kterého mů
 
 ### <a name="windows-authentication"></a>Ověřování systému Windows
 
-Pokud používáte ověřování systému Windows, můžete předat pověření aktuálního uživatele pomocí [DefaultCredentials](https://msdn.microsoft.com/en-us/library/system.net.credentialcache.defaultcredentials.aspx) vlastnost. Nastavte pověření pro připojení na hodnotu DefaultCredentials.
+Pokud používáte ověřování systému Windows, můžete předat pověření aktuálního uživatele pomocí [DefaultCredentials](https://msdn.microsoft.com/library/system.net.credentialcache.defaultcredentials.aspx) vlastnost. Nastavte pověření pro připojení na hodnotu DefaultCredentials.
 
 [!code-csharp[Main](hub-authorization/samples/sample9.cs?highlight=6)]
 
@@ -135,6 +135,6 @@ V centru, pak by ověřit token uživatele.
 
 ### <a name="certificate"></a>certifikát
 
-Můžete předat klientský certifikát k ověření uživatele. Při vytváření připojení, přidání certifikátu. Následující příklad ukazuje jenom postup přidání klientský certifikát na připojení; úplné konzolové aplikace nejsou zobrazeny. Použije [certifikátu x 509](https://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.x509certificate.aspx) třída, která poskytuje několika různými způsoby, abyste mohli vytvořit certifikát.
+Můžete předat klientský certifikát k ověření uživatele. Při vytváření připojení, přidání certifikátu. Následující příklad ukazuje jenom postup přidání klientský certifikát na připojení; úplné konzolové aplikace nejsou zobrazeny. Použije [certifikátu x 509](https://msdn.microsoft.com/library/system.security.cryptography.x509certificates.x509certificate.aspx) třída, která poskytuje několika různými způsoby, abyste mohli vytvořit certifikát.
 
 [!code-csharp[Main](hub-authorization/samples/sample11.cs?highlight=6)]

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 014fb9fe5fb9fc1a7fe56441bd70e65cfe05862d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 337765988cc6ec92384bec09a72fd00505d9a039
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-templatefields-in-the-gridview-control-vb"></a>Pomocí TemplateFields v ovládacím prvku GridView (VB)
 ====================
@@ -158,7 +158,7 @@ Chcete-li dokončit tento první krok, odeberte `LastName` BoundField a přejmen
 
 ## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>Krok 3: Použití ovládacího prvku kalendář pro zobrazení`HiredDate`pole
 
-Zobrazení dat pole hodnotu jako text v GridView je jednoduché, použití BoundField. Pro určité scénáře ale data se nejlépe vyjádřit pomocí konkrétní ovládací prvek webu místo pouze text. Takové přizpůsobení zobrazení dat je možné s TemplateFields. Například spíš než jako text zobrazit datum přijetí zaměstnance, může ukážeme kalendáře (pomocí [ovládacího prvku Kalendář](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) s jejich datum přijetí zvýrazněná.
+Zobrazení dat pole hodnotu jako text v GridView je jednoduché, použití BoundField. Pro určité scénáře ale data se nejlépe vyjádřit pomocí konkrétní ovládací prvek webu místo pouze text. Takové přizpůsobení zobrazení dat je možné s TemplateFields. Například spíš než jako text zobrazit datum přijetí zaměstnance, může ukážeme kalendáře (pomocí [ovládacího prvku Kalendář](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) s jejich datum přijetí zvýrazněná.
 
 Chcete-li dosáhnout, spusťte převod `HiredDate` BoundField do TemplateField. Jednoduše přejděte do prvku GridView inteligentních značek a klikněte na odkaz Upravit sloupce, přináší dialogové okno pole. Vyberte `HiredDate` BoundField a klikněte na tlačítko "převést toto pole TemplateField."
 
@@ -178,7 +178,7 @@ Nahraďte text pomocí ovládacího prvku kalendář, úpravě šablony odebrán
 **Obrázek 12**: Přidání ovládacího prvku Kalendář `HireDate` na TemplateField `ItemTemplate` ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-vb/_static/image36.png))
 
 
-V tomto okamžiku každý řádek v GridView bude obsahovat ovládacího prvku kalendář v jeho `HiredDate` TemplateField. Ale je skutečný zaměstnanec `HiredDate` hodnota není nastavená, kdekoli v ovládacím prvku Kalendář způsobuje každý ovládací prvek kalendáře výchozí zobrazí aktuální měsíc a den. Chcete-li to opravit, je potřeba přiřadit každý zaměstnanec `HiredDate` do ovládacího prvku Kalendář [SelectedDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) a [VisibleDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) vlastnosti.
+V tomto okamžiku každý řádek v GridView bude obsahovat ovládacího prvku kalendář v jeho `HiredDate` TemplateField. Ale je skutečný zaměstnanec `HiredDate` hodnota není nastavená, kdekoli v ovládacím prvku Kalendář způsobuje každý ovládací prvek kalendáře výchozí zobrazí aktuální měsíc a den. Chcete-li to opravit, je potřeba přiřadit každý zaměstnanec `HiredDate` do ovládacího prvku Kalendář [SelectedDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) a [VisibleDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) vlastnosti.
 
 Z ovládacího prvku inteligentních značek zvolte Upravit datové vazby. V dalším kroku vazby obě `SelectedDate` a `VisibleDate` vlastnosti, které chcete `HiredDate` datové pole.
 

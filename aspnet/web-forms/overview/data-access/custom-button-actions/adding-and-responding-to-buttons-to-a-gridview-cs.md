@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dadc1641e427b025d71ef567a626fa7c37c9fc08
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4f2a31f406bb1ed98e3620e216b4ad14fe59b32f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>Přidání a reagovat na tlačítka na GridView (C#)
 ====================
@@ -194,7 +194,7 @@ Pomocí `DiscontinueAllProductsForSupplier(supplierID)` metoda BLL a DAL dokonč
 **Obrázek 15**: Přidání ukončí všechny produkty tlačítko ovládacího prvku do třídy FormView `ItemTemplate` ([Kliknutím zobrazit obrázek v plné velikosti](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image41.png))
 
 
-Když je stisknuto tlačítko tak, že uživatel navštívíte, vyplývá stránce zpětné volání a FormView [ `ItemCommand` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formview.itemcommand.aspx) aktivuje. Spuštění vlastního kódu v reakci na toto tlačítko se klikli, můžeme vytvořit obslužnou rutinu události pro tuto událost. Pochopení, ale který `ItemCommand` událost se aktivuje vždy, když *žádné* ve třídě FormView kliknutí na tlačítko, LinkButton nebo ImageButton webové ovládací prvek. To znamená, že když se uživatel přesune z jedné stránky na druhou v FormView, `ItemCommand` aktivuje událost; samé, když uživatel klikne na tlačítko Nový, upravit, nebo odstranit v FormView, který podporuje vkládání, aktualizaci nebo odstranění.
+Když je stisknuto tlačítko tak, že uživatel navštívíte, vyplývá stránce zpětné volání a FormView [ `ItemCommand` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.itemcommand.aspx) aktivuje. Spuštění vlastního kódu v reakci na toto tlačítko se klikli, můžeme vytvořit obslužnou rutinu události pro tuto událost. Pochopení, ale který `ItemCommand` událost se aktivuje vždy, když *žádné* ve třídě FormView kliknutí na tlačítko, LinkButton nebo ImageButton webové ovládací prvek. To znamená, že když se uživatel přesune z jedné stránky na druhou v FormView, `ItemCommand` aktivuje událost; samé, když uživatel klikne na tlačítko Nový, upravit, nebo odstranit v FormView, který podporuje vkládání, aktualizaci nebo odstranění.
 
 Vzhledem k tomu `ItemCommand` aktivuje se bez ohledu na to, jaké po kliknutí na tlačítko, v případě, že obslužná rutina budeme potřebovat způsob, jak určit, pokud bylo stisknuto tlačítko ukončí všechny produkty, nebo pokud se jednalo o některé další tlačítko. K tomu, jsme můžete nastavit ovládací prvek tlačítko webu `CommandName` vlastnost některé identifikační hodnotu. Pokud po kliknutí na tlačítko, to `CommandName` do byla předána hodnota `ItemCommand` obslužné rutiny události, povolení ke zjištění, zda byla tlačítko ukončí všechny produkty kliknutí na tlačítko. Nastavit ukončí všechny produkty tlačítka `CommandName` vlastnost DiscontinueProducts.
 
@@ -208,7 +208,7 @@ Dále vytvořte obslužnou rutinu události pro třídy FormView `ItemCommand` u
 
 [!code-csharp[Main](adding-and-responding-to-buttons-to-a-gridview-cs/samples/sample7.cs)]
 
-Všimněte si, že `SupplierID` aktuální vybrané dodavatele ve třídě FormView lze přistupovat pomocí třídy FormView [ `SelectedValue` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.formview.selectedvalue.aspx). `SelectedValue` Vlastnost vrací hodnotu pro záznam se zobrazuje ve třídě FormView klíče první data. FormView [ `DataKeyNames` vlastnost](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.formview.datakeynames.aspx), což naznačuje data pole, ze kterých data hodnoty klíče načítána, byla automaticky nastavena na `SupplierID` Visual Studio při vazbě ObjectDataSource k třídě FormView zpět v kroku 2.
+Všimněte si, že `SupplierID` aktuální vybrané dodavatele ve třídě FormView lze přistupovat pomocí třídy FormView [ `SelectedValue` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.selectedvalue.aspx). `SelectedValue` Vlastnost vrací hodnotu pro záznam se zobrazuje ve třídě FormView klíče první data. FormView [ `DataKeyNames` vlastnost](https://msdn.microsoft.com/system.web.ui.webcontrols.formview.datakeynames.aspx), což naznačuje data pole, ze kterých data hodnoty klíče načítána, byla automaticky nastavena na `SupplierID` Visual Studio při vazbě ObjectDataSource k třídě FormView zpět v kroku 2.
 
 Pomocí `ItemCommand` vytvoření obslužné rutiny události za chvíli k otestování stránky. Přejděte do Cooperativa de Quesos, Las Cabras' dodavatele (je pátý dodavatele v FormView pro mě nejlepší). Tato dodavatele poskytuje dva produkty, Queso Cabrales a Queso Manchego La Pastora, obě tyto položky jsou *není* zastaveny.
 
@@ -244,7 +244,7 @@ Toto přetížení načte informace o zadaného produktu pomocí DAL `GetProduct
 
 ## <a name="step-7-adding-the-increase-and-decrease-buttons-to-the-gridview"></a>Krok 7: Přidání tlačítka snížení a zvýšení do GridView
 
-Rutina GridView (a DetailsView) i vytvořené v kolekci polí. Kromě BoundFields, CheckBoxFields a TemplateFields technologie ASP.NET obsahuje ButtonField, který jak již název napovídá, vykreslí jako sloupec s tlačítko, LinkButton nebo ImageButton pro každý řádek. Podobně jako FormView, kliknutím na tlačítko *žádné* tlačítko GridView stránkování tlačítka, upravit nebo odstranit tlačítka, řazení tlačítka a tak dále způsobí, že zpětné volání a vyvolá prvku GridView [ `RowCommand` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowcommand.aspx).
+Rutina GridView (a DetailsView) i vytvořené v kolekci polí. Kromě BoundFields, CheckBoxFields a TemplateFields technologie ASP.NET obsahuje ButtonField, který jak již název napovídá, vykreslí jako sloupec s tlačítko, LinkButton nebo ImageButton pro každý řádek. Podobně jako FormView, kliknutím na tlačítko *žádné* tlačítko GridView stránkování tlačítka, upravit nebo odstranit tlačítka, řazení tlačítka a tak dále způsobí, že zpětné volání a vyvolá prvku GridView [ `RowCommand` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowcommand.aspx).
 
 Má ButtonField `CommandName` vlastnost, která přiřadí zadaná hodnota pro každý z jeho tlačítka `CommandName` vlastnosti. S FormView, jako `CommandName` hodnota používá `RowCommand` obslužné rutiny události k určení, které tlačítko bylo kliknuto.
 
@@ -256,7 +256,7 @@ Umožňuje přidat dva nové ButtonFields do GridView, jeden s text tlačítka c
 **Obrázek 18**: Přidejte dva ButtonFields do GridView
 
 
-Přesuňte dva ButtonFields, aby se zobrazily jako první dvě pole GridView. Dále nastavte `Text` vlastnosti těchto dvou ButtonFields k cena + 10 % a ceny -10 % a `CommandName` vlastností IncreasePrice a DecreasePrice, v uvedeném pořadí. Ve výchozím nastavení ButtonField vykreslí jeho sloupec tlačítek jako LinkButtons. To se dá změnit, ale prostřednictvím ButtonField [ `ButtonType` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx). Pojďme mají tyto dva ButtonFields se vykresluje jako regulární tlačítek; proto nastavit `ButtonType` vlastnost `Button`. Obrázek 19 zobrazí pole dialogové po tyto změny byly provedeny; Následující, která je GridView deklarativní značky.
+Přesuňte dva ButtonFields, aby se zobrazily jako první dvě pole GridView. Dále nastavte `Text` vlastnosti těchto dvou ButtonFields k cena + 10 % a ceny -10 % a `CommandName` vlastností IncreasePrice a DecreasePrice, v uvedeném pořadí. Ve výchozím nastavení ButtonField vykreslí jeho sloupec tlačítek jako LinkButtons. To se dá změnit, ale prostřednictvím ButtonField [ `ButtonType` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx). Pojďme mají tyto dva ButtonFields se vykresluje jako regulární tlačítek; proto nastavit `ButtonType` vlastnost `Button`. Obrázek 19 zobrazí pole dialogové po tyto změny byly provedeny; Následující, která je GridView deklarativní značky.
 
 
 ![Konfigurovat ButtonFields Text, CommandName a ButtonType vlastnosti](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image49.png)
@@ -307,4 +307,4 @@ Radostí programování!
 [Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 >[!div class="step-by-step"]
-[Další](adding-and-responding-to-buttons-to-a-gridview-vb.md)
+[Next](adding-and-responding-to-buttons-to-a-gridview-vb.md)

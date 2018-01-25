@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/less-sass-fa
-ms.openlocfilehash: c3a53d6118a72c00d61d9139b05325fd1cbd53da
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 764b11bbd301c0116488265d32f7d46dfc5bce27
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Úvod do stylů aplikace s méně, Sass a písma Super v ASP.NET Core
 
@@ -97,7 +97,7 @@ body {
 .bgDark2    {color:@darker2}
 ```
 
-`@base`objekt a druhá @-prefixed položky jsou proměnné. Každý z nich představuje barvu. S výjimkou `@base`, jsou nastavená pomocí funkcí barev: zjednodušit ztmavení a číselníku. Zjednodušit a ztmavení provést podstatě by očekávat; Otočení upraví odstín barvy se o počet stupňů (kolem barevné kolo). Menší procesoru je dostatečně inteligentní ignorovat proměnné, které se nepoužívají, takže ukazují, jak tyto proměnné fungují, potřebujeme používat místo. Třídy `.baseColor`, popisuje počítané hodnoty těchto proměnných v souboru CSS, která je vytvořena atd.
+`@base`objekt a druhá @-prefixed položky jsou proměnné. Každý z nich představuje barvu. S výjimkou `@base`, je nastavena pomocí funkcí barev: zjednodušit ztmavení a číselníku. Zjednodušit a ztmavení provést podstatě by očekávat; Otočení upraví odstín barvy se o počet stupňů (kolem barevné kolo). Menší procesoru je dostatečně inteligentní ignorovat proměnné, které se nepoužívají, takže ukazují, jak tyto proměnné fungují, potřebujeme používat místo. Třídy `.baseColor`, popisuje počítané hodnoty těchto proměnných v souboru CSS, která je vytvořena atd.
 
 ### <a name="getting-started"></a>Začínáme
 
@@ -246,7 +246,7 @@ nav {
 }
 ```
 
-Všimněte si, že se v tomto případě všechny podřízené elementy `nav` jsou obsaženy v rámci svého oboru. Již není žádné opakování nadřazené elementy (`nav`, `li`, `a`), a počet celkový počet řádků má také vyřadit (i když některé z které je výsledkem vložení hodnoty na stejné řádky v druhém příkladu). Může být velmi užitečná, organizací, pokud chcete zobrazit všechna pravidla pro daný prvek uživatelského rozhraní v rámci explicitně ohraničené oboru, v takovém případě nastavte ze zbytek souboru ve složených závorkách.
+Všimněte si, že se v tomto případě všechny podřízené elementy `nav` jsou obsaženy v rámci svého oboru. Již není žádné opakování nadřazené elementy (`nav`, `li`, `a`), a také klesla počet celkový počet řádků (i když některé, je výsledkem vložení hodnoty na stejné řádky v druhém příkladu). Může být velmi užitečná, organizací, pokud chcete zobrazit všechna pravidla pro daný prvek uživatelského rozhraní v rámci explicitně ohraničené oboru, v takovém případě nastavte ze zbytek souboru ve složených závorkách.
 
 `&` Syntaxe je menší selektor funkce, s & představující aktuální nadřazené selektor. Ano, v rámci {...} blok, `&` představuje `a` značky a proto `&:link` je ekvivalentní `a:link`.
 

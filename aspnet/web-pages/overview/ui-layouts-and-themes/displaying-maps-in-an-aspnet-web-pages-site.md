@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: a802e4fed81fadca195c8aa83c37c7100ac5cbec
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f3e6a0cfb8c08cd971e88986d0f059dd8237aab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>Zobrazení mapy v Web Pages (Razor) technologie ASP.NET
 ====================
@@ -70,7 +70,7 @@ Nakonec pokud chcete použít mapy Bing, musíte nejprve vytvořit účet (zdarm
     Můžete zadat, že chcete použít klíč pro **vyhodnocení a testovací**. Pokud testujete mapování funkce ve vašem počítači pomocí nástroje WebMatrix a služby IIS Express, přejděte **lokality** prostoru a poznamenejte si adresu URL vašeho webu (například `http://localhost:50408`, i když vaše číslo portu bude pravděpodobně lišit). Můžete to použít *localhost* adresu jako lokalita při registraci.
 2. Po registraci pro účet, přejděte na účet Center pro mapy Bing a klikněte na tlačítko **vytvořit nebo zobrazení klíče**:
 
-    ![mapování-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
+    ![mapping-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
 3. Záznam klíč, který vytvoří Bing.
 
 ## <a name="creating-a-map-based-on-an-address-using-google"></a>Vytváření mapy založené na adresu (pomocí Google)
@@ -91,7 +91,7 @@ Následující příklad ukazuje, jak vytvořit stránku, která vykreslí mapu 
     - Volání `@Maps.GetGoogleHtml` v těle stránky. Chcete-li mapování adresy, musíte zadat řetězec adresy. Metody pro jiné moduly mapy fungovat podobným způsobem (`@Maps.GetYahooHtml`, `@Maps.GetMapQuestHtml`).
 - Spuštění stránky a zadejte adresu. Na stránce zobrazuje mapě, podle Google Maps, který ukazuje umístění, které jste zadali.
 
-    ![mapování 1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
+    ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
 
 ## <a name="creating-a-map-based-on-latitude-and-longitude-coordinates-using-bing"></a>Vytváření mapy podle zeměpisnou šířku a délku koordinuje (pomocí Bing)
 
@@ -108,10 +108,10 @@ Tento příklad ukazuje postup vytvoření mapy podle souřadnice. Tento příkl
 
     Stránka se zobrazí pomocí souřadnice, které jste zadali.
 
-    ![mapování 3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
+    ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Další prostředky
 
 
-[Referenční dokumentace rozhraní API Microsoft.Maps](https://msdn.microsoft.com/en-us/library/gg427611.aspx)
+[Referenční dokumentace rozhraní API Microsoft.Maps](https://msdn.microsoft.com/library/gg427611.aspx)

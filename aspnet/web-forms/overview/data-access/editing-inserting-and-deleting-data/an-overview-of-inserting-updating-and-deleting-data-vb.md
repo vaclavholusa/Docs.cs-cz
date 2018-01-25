@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 99d6b98bb7efa2f63e0c19b8623fd42ed92bdbaf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e7552abb30aa26d3aaceb3312c00661c6d4d6cf8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>Přehled vkládání, aktualizaci a odstraňování dat (VB)
 ====================
@@ -140,7 +140,7 @@ Po dokončení konfigurace ObjectDataSource pomocí jeho průvodce, přejděte d
 
 ObjectDataSource zahrnuje parametr pro každý vstupní parametry pro jeho související metody, stejně jako seznam `SelectParameter` je přítomen, pokud je nakonfigurován ObjectDataSource k volání vyberte metodu, která očekává, že vstupní parametr (například `GetProductsByCategoryID(categoryID)`). Jak jsme krátce, zobrazí hodnoty pro tyto `DeleteParameters`, `UpdateParameters`, a `InsertParameters` automaticky nastaveny tak, že rutina GridView, DetailsView a FormView před vyvoláním ObjectDataSource `Insert()`, `Update()`, nebo `Delete()` Metoda. Tyto hodnoty lze také nastavit prostřednictvím kódu programu, podle potřeby jako probereme v budoucnu kurzu.
 
-Pomocí Průvodce nakonfigurovat tak, aby ObjectDataSource jeden vedlejším účinkem je, že nastaví Visual Studio [OldValuesParameterFormatString vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx) k `original_{0}`. Hodnota této vlastnosti se používá k obsahovat původní hodnoty dat Upravovaný a je užitečná ve dvou scénářích:
+Pomocí Průvodce nakonfigurovat tak, aby ObjectDataSource jeden vedlejším účinkem je, že nastaví Visual Studio [OldValuesParameterFormatString vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx) k `original_{0}`. Hodnota této vlastnosti se používá k obsahovat původní hodnoty dat Upravovaný a je užitečná ve dvou scénářích:
 
 - Pokud při úpravě záznam, mohou uživatelé změnit hodnotu primárního klíče. V takovém případě novou hodnotu primárního klíče a původní hodnotu primárního klíče je třeba zadat tak, aby záznam s původní hodnotu primárního klíče můžete najít a jeho hodnota příslušným způsobem aktualizuje.
 - Při použití optimistickou metodu souběžného. Optimistickou metodu souběžného zpracování je technika zajistit, aby dva současně připojených uživatelů není přepsat své změny a je v tématu pro budoucí kurz.
@@ -168,8 +168,8 @@ Spustit tak, že přetáhnete GridView z panelu nástrojů na návrháře. V dal
 
 Vytvoření vazby GridView ObjectDataSource prostřednictvím jeho inteligentních značek má dvě výhody:
 
-- BoundFields a CheckBoxFields se vytvářejí automaticky pro každé pole vrácené ObjectDataSource. Kromě toho BoundField a pro vlastnost CheckBoxField vlastnosti jsou nastaveny na základě pole podkladové metadat. Například `ProductID`, `CategoryName`, a `SupplierName` pole jsou označeny jako jen pro čtení v `ProductsDataTable` a proto by nemělo být aktualizovat při úpravě. Aby bylo možné ošetřit tento, tyto BoundFields' [vlastnosti jen pro čtení](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx) jsou nastaveny na `True`.
-- [Vlastnost DataKeyNames](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx) je přiřazena k primárního klíče podkladového objektu. To je nezbytné při použití GridView pro úpravy nebo odstranění dat, protože tato vlastnost určuje pole (nebo sady polí) to jedinečný identifikuje každý záznam. Další informace o `DataKeyNames` vlastnost odkazovat zpět [hlavní/podrobností volitelný GridView hlavní pomocí DetailView podrobnosti](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) kurzu.
+- BoundFields a CheckBoxFields se vytvářejí automaticky pro každé pole vrácené ObjectDataSource. Kromě toho BoundField a pro vlastnost CheckBoxField vlastnosti jsou nastaveny na základě pole podkladové metadat. Například `ProductID`, `CategoryName`, a `SupplierName` pole jsou označeny jako jen pro čtení v `ProductsDataTable` a proto by nemělo být aktualizovat při úpravě. Aby bylo možné ošetřit tento, tyto BoundFields' [vlastnosti jen pro čtení](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx) jsou nastaveny na `True`.
+- [Vlastnost DataKeyNames](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx) je přiřazena k primárního klíče podkladového objektu. To je nezbytné při použití GridView pro úpravy nebo odstranění dat, protože tato vlastnost určuje pole (nebo sady polí) to jedinečný identifikuje každý záznam. Další informace o `DataKeyNames` vlastnost odkazovat zpět [hlavní/podrobností volitelný GridView hlavní pomocí DetailView podrobnosti](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) kurzu.
 
 Při GridView mohou být vázány na ObjectDataSource prostřednictvím vlastnosti – okno nebo deklarativní syntaxe, tak vyžaduje, abyste ručně přidejte příslušné BoundField a `DataKeyNames` značek.
 
@@ -327,7 +327,7 @@ Všimněte si, že pro DetailsView CommandField se zobrazuje na konec kolekce sl
 
 Kliknutím na tlačítko Odstranit spustí stejný posloupnost událostí stejně jako u GridView: a postback; Následuje DetailsView naplnění jeho ObjectDataSource `DeleteParameters` na základě `DataKeyNames` hodnoty a bylo dokončeno s volání jeho ObjectDataSource `Delete()` metodu, která ve skutečnosti odebere produktu z databáze. Úpravy v ovládacím prvku DetailsView funguje taky způsobem, který je stejná jako prvku GridView.
 
-Pro vkládání, koncový uživatel předloží nová tlačítka, která po kliknutí na vykreslí DetailsView v "režimu vkládání." S "insert režim" na tlačítko Nový nahrazuje tlačítka Vložit a Storno a pouze ty BoundFields jejichž `InsertVisible` je nastavena na `True` (výchozí) jsou zobrazeny. Tato datová pole identifikovat jako automatického přírůstku pole, jako například `ProductID`, mají jejich [InsertVisible vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx) nastavena na `False` při vytváření vazby DetailsView ke zdroji dat pomocí inteligentních značek.
+Pro vkládání, koncový uživatel předloží nová tlačítka, která po kliknutí na vykreslí DetailsView v "režimu vkládání." S "insert režim" na tlačítko Nový nahrazuje tlačítka Vložit a Storno a pouze ty BoundFields jejichž `InsertVisible` je nastavena na `True` (výchozí) jsou zobrazeny. Tato datová pole identifikovat jako automatického přírůstku pole, jako například `ProductID`, mají jejich [InsertVisible vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx) nastavena na `False` při vytváření vazby DetailsView ke zdroji dat pomocí inteligentních značek.
 
 Při vytváření vazby zdroje dat pro DetailsView pomocí inteligentních značek, Visual Studio nastaví `InsertVisible` vlastnost `False` pouze u polí s automatickým krokem. Pole jen pro čtení, například `CategoryName` a `SupplierName`, se zobrazí v uživatelském rozhraní "insert režim", pokud jejich `InsertVisible` je explicitně nastavena na `False`. Za chvíli nastavit tyto dvě pole `InsertVisible` vlastnosti, které chcete `False`, buď pomocí deklarativní syntaxe prvku DetailsView nebo upravit pole na odkaz v inteligentní značky. 19 obrázek ukazuje nastavení `InsertVisible` vlastnosti, které chcete `False` kliknutím na Upravit pole na odkaz.
 
@@ -354,7 +354,7 @@ Po zadání podrobností pokusná čaj a kliknutím na tlačítko Vložit, zpět
 
 
 > [!NOTE]
-> DetailsView [CurrentMode vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx) znamená rozhraní zobrazení a může být jedna z následujících hodnot: `Edit`, `Insert`, nebo `ReadOnly`. [Vlastnost DefaultMode](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx) Určuje režim DetailsView vrátí po upravíte nebo vložit byla dokončena a jsou užitečné pro zobrazení DetailsView, trvale v upravit nebo vložit režimu.
+> DetailsView [CurrentMode vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx) znamená rozhraní zobrazení a může být jedna z následujících hodnot: `Edit`, `Insert`, nebo `ReadOnly`. [Vlastnost DefaultMode](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx) Určuje režim DetailsView vrátí po upravíte nebo vložit byla dokončena a jsou užitečné pro zobrazení DetailsView, trvale v upravit nebo vložit režimu.
 
 
 Bod a klikněte na tlačítko vkládání a úpravy funkce DetailsView trpí stejná omezení jako GridView: uživatel musí zadat existující `CategoryID` a `SupplierID` hodnoty prostřednictvím textové pole; chybí rozhraní žádné ověřovací logiku; všechny pole produktu, které neumožňují `NULL` hodnoty nebo nemají výchozí hodnota zadaná na úrovni databáze musí být součástí vkládání rozhraní a tak dále.

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: 10457d154f5fda875f7d1054d48daeeba3a50b7c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 116f681e14af0a09a4eb1502ef9f057c5db2f97d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="search"></a>Hledat
 ====================
@@ -34,7 +34,7 @@ Začněte tím, že aktualizace `Index` metoda akce ke stávající `MoviesContr
 
 [!code-csharp[Main](adding-search/samples/sample1.cs?highlight=1,6-9)]
 
-První řádek `Index` metoda vytvoří následující [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) dotazu a vyberte filmy:
+První řádek `Index` metoda vytvoří následující [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) dotazu a vyberte filmy:
 
 [!code-csharp[Main](adding-search/samples/sample2.cs)]
 
@@ -44,10 +44,10 @@ Pokud `searchString` parametr obsahuje řetězec, filmy dotazu je změněno na f
 
 [!code-csharp[Main](adding-search/samples/sample3.cs)]
 
-`s => s.Title` Je výše uvedený kód [výrazu Lambda](https://msdn.microsoft.com/en-us/library/bb397687.aspx). Lambdas se používají v na základě metod [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) dotazuje jako argumenty pro standardní dotaz operátor metody, jako [kde](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.where.aspx) metoda použitá ve výše uvedeném kódu. Dotazy LINQ nebudou provedeny, když jsou definovány nebo když jsou upraveny voláním metody `Where` nebo `OrderBy`. Místo toho při provádění dotazu je odložení, což znamená, že je zpožděno vyhodnocení výrazu, dokud jeho zjištěné hodnota je ve skutečnosti vstupní přes nebo [ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx) metoda je volána. V `Search` ukázce dotaz se spouštějí v tom *Index.cshtml* zobrazení. Další informace o provádění odložené dotazů najdete v tématu [provádění dotazu](https://msdn.microsoft.com/en-us/library/bb738633.aspx).
+`s => s.Title` Je výše uvedený kód [výrazu Lambda](https://msdn.microsoft.com/library/bb397687.aspx). Lambdas se používají v na základě metod [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) dotazuje jako argumenty pro standardní dotaz operátor metody, jako [kde](https://msdn.microsoft.com/library/system.linq.enumerable.where.aspx) metoda použitá ve výše uvedeném kódu. Dotazy LINQ nebudou provedeny, když jsou definovány nebo když jsou upraveny voláním metody `Where` nebo `OrderBy`. Místo toho při provádění dotazu je odložení, což znamená, že je zpožděno vyhodnocení výrazu, dokud jeho zjištěné hodnota je ve skutečnosti vstupní přes nebo [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) metoda je volána. V `Search` ukázce dotaz se spouštějí v tom *Index.cshtml* zobrazení. Další informace o provádění odložené dotazů najdete v tématu [provádění dotazu](https://msdn.microsoft.com/library/bb738633.aspx).
 
 > [!NOTE]
-> [Obsahuje](https://msdn.microsoft.com/en-us/library/bb155125.aspx) metoda běží v databázi, není c# výše uvedený kód. V databázi [obsahuje](https://msdn.microsoft.com/en-us/library/bb155125.aspx) mapuje [SQL LIKE](https://msdn.microsoft.com/en-us/library/ms179859.aspx), což je malá a velká písmena.
+> [Obsahuje](https://msdn.microsoft.com/library/bb155125.aspx) metoda běží v databázi, není c# výše uvedený kód. V databázi [obsahuje](https://msdn.microsoft.com/library/bb155125.aspx) mapuje [SQL LIKE](https://msdn.microsoft.com/library/ms179859.aspx), což je malá a velká písmena.
 
 Teď můžete aktualizovat `Index` zobrazení, které se uživateli zobrazí formulář.
 
@@ -123,7 +123,7 @@ Následující kód je dotaz LINQ, který načte všechny žánry z databáze.
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-Kód používá `AddRange` metoda obecná `List` kolekce odlišné žánry přidat do seznamu. (Bez `Distinct` modifikátor, by byl přidán duplicitní žánry – například komedie by byl přidán dvakrát v naše ukázka). Kód pak uloží seznam žánry v `ViewBag.MovieGenre` objektu. Ukládání dat kategorie (takové film genre společnosti) jako [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) objekt v `ViewBag`, pak se typické postup pro aplikace MVC, přístup k datům kategorii v rozevírací pole se seznamem.
+Kód používá `AddRange` metoda obecná `List` kolekce odlišné žánry přidat do seznamu. (Bez `Distinct` modifikátor, by byl přidán duplicitní žánry – například komedie by byl přidán dvakrát v naše ukázka). Kód pak uloží seznam žánry v `ViewBag.MovieGenre` objektu. Ukládání dat kategorie (takové film genre společnosti) jako [SelectList](https://msdn.microsoft.cus/library/system.web.mvc.selectlist(v=vs.108).aspx) objekt v `ViewBag`, pak se typické postup pro aplikace MVC, přístup k datům kategorii v rozevírací pole se seznamem.
 
 Následující kód ukazuje, jak zkontrolovat `movieGenre` parametr. Pokud není prázdná, omezí kód další dotaz filmy omezit vybrané filmy k zadané genre.
 

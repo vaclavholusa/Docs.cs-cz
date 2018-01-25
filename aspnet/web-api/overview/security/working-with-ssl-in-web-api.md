@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/working-with-ssl-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 8c631900c8c5ab6097e0cb9fd4a71abbcba1c88b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 127b336cb628e55bd59481ecb1c4df83960dc25b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-ssl-in-web-api"></a>Práce s protokolem SSL v rozhraní Web API
 ====================
@@ -72,7 +72,7 @@ V souboru ApplicationHost.config můžete také nastavit tyto možnosti:
 
 ### <a name="creating-a-client-certificate-for-testing"></a>Vytvoření certifikátu klienta pro testování
 
-Pro účely testování můžete použít [MakeCert.exe](https://msdn.microsoft.com/en-US/library/bfsktky3.aspx) vytvořit certifikát klienta. Nejprve vytvořte certifikát testovací kořenové autority:
+Pro účely testování můžete použít [MakeCert.exe](https://msdn.microsoft.com/library/bfsktky3.aspx) vytvořit certifikát klienta. Nejprve vytvořte certifikát testovací kořenové autority:
 
 [!code-console[Main](working-with-ssl-in-web-api/samples/sample4.cmd)]
 
@@ -95,6 +95,6 @@ Nyní vytvoří klientský certifikát, který je podepsaný první certifikát:
 
 ### <a name="using-client-certificates-in-web-api"></a>Pomocí klientských certifikátů v rozhraní Web API
 
-Na straně serveru, můžete získat certifikát klienta voláním [GetClientCertificate](https://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessageextensions.getclientcertificate.aspx) na zprávu požadavku. Metoda vrátí hodnotu null, pokud neexistuje žádný certifikát klienta. Funkce **X509Certificate2** instance. Tento objekt použijte k získání informací ze certifikát, jako je například vystavitele a předmět. Pak můžete tyto informace použít pro ověřování a autorizace.
+Na straně serveru, můžete získat certifikát klienta voláním [GetClientCertificate](https://msdn.microsoft.com/library/system.net.http.httprequestmessageextensions.getclientcertificate.aspx) na zprávu požadavku. Metoda vrátí hodnotu null, pokud neexistuje žádný certifikát klienta. Funkce **X509Certificate2** instance. Tento objekt použijte k získání informací ze certifikát, jako je například vystavitele a předmět. Pak můžete tyto informace použít pro ověřování a autorizace.
 
 [!code-csharp[Main](working-with-ssl-in-web-api/samples/sample6.cs)]

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f84558bcc59068f2c6cab390c303ebd97953aaa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aa4afbf2200e1167c9f66aeaddb4273e710394b4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a>Prostřednictvím kódu programu nastavování hodnot parametrů ObjectDataSource (VB)
 ====================
@@ -33,7 +33,7 @@ Jak jsme viděli v [předchozí kurzu](declarative-parameters-vb.md), jsou k dis
 
 Může se stát, ale pokud hodnota parametru pocházejí z některé zdroje ještě není pozornost pomocí jedné z předdefinované datové zdroje `Parameter` objekty. Pokud náš web podporován uživatelské účty jsme chtít nastavit parametr podle aktuálně přihlášeného v návštěvníka ID uživatele. Nebo může potřebujeme upravit hodnotu parametru před odesláním podél metodě ObjectDataSource podkladového objektu.
 
-Vždy, když ObjectDataSource `Select` metoda je volána ObjectDataSource nejprve vyvolá jeho [zvolíte událostí](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx). Potom je volána metoda ObjectDataSource podkladového objektu. Poté, která se dokončí ObjectDataSource [vybrané události](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx) aktivuje (Tato posloupnost událostí, které znázorňuje obrázek 1). Hodnoty parametru předána do metody ObjectDataSource podkladového objektu můžete nastavit nebo upravit v obslužné rutiny události pro `Selecting` událostí.
+Vždy, když ObjectDataSource `Select` metoda je volána ObjectDataSource nejprve vyvolá jeho [zvolíte událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx). Potom je volána metoda ObjectDataSource podkladového objektu. Poté, která se dokončí ObjectDataSource [vybrané události](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx) aktivuje (Tato posloupnost událostí, které znázorňuje obrázek 1). Hodnoty parametru předána do metody ObjectDataSource podkladového objektu můžete nastavit nebo upravit v obslužné rutiny události pro `Selecting` událostí.
 
 
 [![Je volána vybrané a metodu výběru ještě efektivněji události před a po její podkladového objektu ObjectDataSource](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image1.png)
@@ -55,7 +55,7 @@ Pro našeho prvního příkladu budeme muset přidat prostředek k načtení tě
 **Obrázek 2**: přidejte nový dotaz, který `EmployeesTableAdapter` ([Kliknutím zobrazit obrázek v plné velikosti](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image6.png))
 
 
-Vyberte Přidat příkazu SQL, která vrací řádky. Když se dostanete určení `SELECT` příkaz obrazovky výchozí `SELECT` příkaz pro `EmployeesTableAdapter` již bude načten. Jednoduše přidejte do `WHERE` klauzule: `WHERE DATEPART(m, HireDate) = @Month`. [DATEPART](https://msdn.microsoft.com/en-us/library/ms174420.aspx) je funkce T-SQL, která vrátí část konkrétní datum `datetime` typ; v tomto případě používáme `DATEPART` vrátit měsíc `HireDate` sloupce.
+Vyberte Přidat příkazu SQL, která vrací řádky. Když se dostanete určení `SELECT` příkaz obrazovky výchozí `SELECT` příkaz pro `EmployeesTableAdapter` již bude načten. Jednoduše přidejte do `WHERE` klauzule: `WHERE DATEPART(m, HireDate) = @Month`. [DATEPART](https://msdn.microsoft.com/library/ms174420.aspx) je funkce T-SQL, která vrátí část konkrétní datum `datetime` typ; v tomto případě používáme `DATEPART` vrátit měsíc `HireDate` sloupce.
 
 
 [![Návratový pouze ty řádky kde HireDate sloupec je menší než nebo rovno @HiredBeforeDate parametr](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image7.png)

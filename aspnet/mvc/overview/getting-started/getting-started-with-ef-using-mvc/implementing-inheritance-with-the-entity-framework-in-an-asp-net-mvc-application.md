@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e6ee3f9c055a15b13c27f94675006b9a7e804f1b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 118233338112a71216b909b1dabed2333bfa235e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-inheritance-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-11-of-12"></a>Implementace dědičnosti s rozhraní Entity Framework 6 v aplikaci ASP.NET MVC 5 (11 12)
 ====================
@@ -43,13 +43,13 @@ Předpokládejme, že chcete odstranit redundantní kód pro vlastnosti, které 
 
 Existuje několik způsobů, které tato struktura dědičnosti může být reprezentován v databázi. Můžete mít `Person` tabulku, která obsahuje informace o studenty a vyučující v jediné tabulce. Některé sloupce může použít pouze pro vyučující (`HireDate`), některé jenom pro studenty (`EnrollmentDate`), některé na obojí (`LastName`, `FirstName`). Obvykle byste měli *diskriminátoru* sloupce k určení, který typ každý řádek představuje. Například možná sloupce diskriminátoru pro vyučující a "Student" pro studenty, "Lektorem".
 
-![Tabulka za hierarchy_example](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
+![Table-per-hierarchy_example](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
 Tento vzor generování strukturu dědičnosti entity z jedné tabulky databáze se nazývá *tabulky na hierarchii* dědičnost (TPH).
 
 Alternativou je ke změně databáze vzhled strukturu dědičnosti. Například můžete mít jenom pole název `Person` tabulky a mít samostatné `Instructor` a `Student` tabulky s poli datum.
 
-![Tabulka za type_inheritance](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
+![Table-per-type_inheritance](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 
 Tento vzor vytvoření databázové tabulky, pro každou třídu entity se nazývá *tabulky podle typu* dědičnosti (TPT).
 
@@ -57,7 +57,7 @@ Další možností je ještě mapování všechny typy neabstraktní na jednotli
 
 TPC a vzory dědičnosti TPH obecně poskytovat lepší výkon v rozhraní Entity Framework než TPT vzory dědičnosti, protože TPT vzory může mít za následek komplexní spojení dotazy.
 
-Tento kurz ukazuje, jak implementovat dědičnost TPH. TPH je vzor dědičnosti výchozí v Entity Framework, tak, aby všechny stačí vytvořit `Person` třídy, změňte `Instructor` a `Student` odvozovat ze tříd `Person`, přidejte novou třídu do `DbContext`a vytvořte migrace. (Informace o tom, jak implementovat dalšími dědičnosti vzory najdete v tématu [mapování dědění za typ tabulky (TPT)](https://msdn.microsoft.com/en-us/data/jj591617#2.5) a [mapování dědičnosti tabulky na konkrétní třídy (TPC)](https://msdn.microsoft.com/en-us/data/jj591617#2.6) v webu MSDN Dokumentace Entity Framework.)
+Tento kurz ukazuje, jak implementovat dědičnost TPH. TPH je vzor dědičnosti výchozí v Entity Framework, tak, aby všechny stačí vytvořit `Person` třídy, změňte `Instructor` a `Student` odvozovat ze tříd `Person`, přidejte novou třídu do `DbContext`a vytvořte migrace. (Informace o tom, jak implementovat dalšími dědičnosti vzory najdete v tématu [mapování dědění za typ tabulky (TPT)](https://msdn.microsoft.com/data/jj591617#2.5) a [mapování dědičnosti tabulky na konkrétní třídy (TPC)](https://msdn.microsoft.com/data/jj591617#2.6) v webu MSDN Dokumentace Entity Framework.)
 
 ## <a name="create-the-person-class"></a>Vytvořte třídu osoba
 
@@ -159,7 +159,7 @@ V této části vyžaduje, abyste dokončili nepovinný **nasazení aplikace do 
 
 ## <a name="summary"></a>Souhrn
 
-Jste implementovali tabulky za hierarchie dědičnosti pro `Person`, `Student`, a `Instructor` třídy. Další informace o tomto a dalších dědičnosti struktury najdete v tématu [TPT dědičnosti vzor](https://msdn.microsoft.com/en-us/data/jj618293) a [vzor dědičnosti TPH](https://msdn.microsoft.com/en-us/data/jj618292) na webu MSDN. V dalším kurzu se zobrazí, jak bude zpracováván celou řadu relativně pokročilých scénářích rozhraní Entity Framework.
+Jste implementovali tabulky za hierarchie dědičnosti pro `Person`, `Student`, a `Instructor` třídy. Další informace o tomto a dalších dědičnosti struktury najdete v tématu [TPT dědičnosti vzor](https://msdn.microsoft.com/data/jj618293) a [vzor dědičnosti TPH](https://msdn.microsoft.com/data/jj618292) na webu MSDN. V dalším kurzu se zobrazí, jak bude zpracováván celou řadu relativně pokročilých scénářích rozhraní Entity Framework.
 
 Odkazy na další zdroje Entity Framework najdete v [přístup k datům ASP.NET - doporučené prostředky](../../../../whitepapers/aspnet-data-access-content-map.md).
 

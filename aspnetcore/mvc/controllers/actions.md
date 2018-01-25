@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/actions
-ms.openlocfilehash: cef493fc2010d1c82e5c1dfec85864539252b817
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 99dcf1bd4f0dc4fcb6169f48bd398c9e40c21a35
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Zpracování žádostí s řadiči v ASP.NET MVC jádra
 
@@ -42,7 +42,7 @@ V rámci **M**odelu -**V**obrazit -**C**ontroller vzor řadič je odpovědná za
 
 Řadičem trvá výsledek zpracování modelu (pokud existuje) a vrátí správné zobrazení a jeho přidružené zobrazení dat nebo výsledek volání rozhraní API. Další informace na [přehled ASP.NET Core MVC](xref:mvc/overview) a [Začínáme s ASP.NET MVC jádra a sady Visual Studio](xref:tutorials/first-mvc-app/start-mvc).
 
-Je řadič *uživatelského rozhraní úrovni* abstrakce. Jsou jeho zodpovědnosti zajistit data požadavku jsou platné a vybrat, které zobrazení (nebo výsledek rozhraní API) má být vrácen. V dobře započítané aplikace nebude obsahovat přímo data přístupu nebo obchodní logiku. Místo toho řadičem deleguje zpracování těchto odpovědnosti Services.
+Je řadič *uživatelského rozhraní úrovni* abstrakce. Jsou jeho zodpovědnosti zajistit data požadavku jsou platné a vybrat, které zobrazení (nebo výsledek rozhraní API) má být vrácen. V dobře započítané aplikace neobsahuje přímo data přístupu nebo obchodní logiku. Místo toho řadičem deleguje zpracování těchto odpovědnosti Services.
 
 ## <a name="defining-actions"></a>Definování akcí
 
@@ -54,7 +54,7 @@ Akce vrátí nic, ale často vrátit instanci třídy `IActionResult` (nebo `Tas
 
 ### <a name="controller-helper-methods"></a>Metody Helper kontroleru
 
-Řadiče obvykle dědí [řadič](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller), i když to není potřeba. Odvozování z `Controller` poskytuje přístup k tří kategorií pomocné metody:
+Řadiče obvykle dědí [řadič](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller), i když to není nutné. Odvozování z `Controller` poskytuje přístup k tří kategorií pomocné metody:
 
 #### <a name="1-methods-resulting-in-an-empty-response-body"></a>1. Metody, což vede prázdný odpovědi
 

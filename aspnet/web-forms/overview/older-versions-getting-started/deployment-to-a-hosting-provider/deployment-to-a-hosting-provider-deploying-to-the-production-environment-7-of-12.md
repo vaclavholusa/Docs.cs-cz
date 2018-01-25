@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: ad44968975b7929f5b0f70334deabc7238797402
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4aa6766c2c7765f499f5c5380962a5fe443e8c9d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení do produkčního prostředí - 7 12
 ====================
@@ -246,7 +246,7 @@ První z těchto metod je samozřejmě nejbezpečnější, ale pro tento postup 
 
 `User-agent` Řádek říká vyhledávací weby, které pravidla v souboru platí pro všechny vyhledávací modul webové prohledávací moduly (robotů), a `Disallow` řádku určuje, že žádné stránky na webu Procházet.
 
-Budete ho zřejmě chtít vyhledávací weby snadněji katalogu provozního webu, takže je třeba vyloučit tento soubor z produkčního nasazení. To lze provést, najdete v části **můžete vyloučit konkrétní soubory nebo složky z nasazení?** v [ASP.NET webové aplikace projektu nasazení – nejčastější dotazy](https://msdn.microsoft.com/en-us/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment). Zajistěte, aby zadat vyloučení pouze provozní profilu publikování.
+Budete ho zřejmě chtít vyhledávací weby snadněji katalogu provozního webu, takže je třeba vyloučit tento soubor z produkčního nasazení. To lze provést, najdete v části **můžete vyloučit konkrétní soubory nebo složky z nasazení?** v [ASP.NET webové aplikace projektu nasazení – nejčastější dotazy](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment). Zajistěte, aby zadat vyloučení pouze provozní profilu publikování.
 
 Vytvoření druhého hostování účtu je přístup k práci s testovacím prostředí, která není povinný, ale může být vhodné vytvářet. V následujících kurzech můžete pokračovat v používání služby IIS jako testovacího prostředí.
 

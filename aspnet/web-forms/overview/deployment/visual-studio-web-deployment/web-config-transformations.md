@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
-ms.openlocfilehash: a88d8f35c770b362b74f787fee2c60a7577bccb2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a526275d76618c325a6b00f33cc550f28ab0cc00
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: transformace souboru Web.config
 ====================
@@ -35,7 +35,7 @@ Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, j
 
 ## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Transformace Web.config versus parametry nasazení webu
 
-Existují dva způsoby, jak automatizovat proces změny *Web.config* nastavení souboru: [transformace Web.config](https://msdn.microsoft.com/en-us/library/dd465326.aspx) a [Web Deploy parametry](https://msdn.microsoft.com/en-us/library/ff398068.aspx). A *Web.config* transformace soubor obsahuje kód XML, který určuje, jak změnit *Web.config* souboru při nasazení. Můžete zadat různé změny pro konkrétní konfigurace sestavení a pro určité publikační profily. Výchozí konfigurace sestavení jsou ladění a vydání, a můžete vytvořit vlastní konfigurace sestavení. Profil publikování se obvykle odpovídá cílové prostředí. (Se dozvíte další informace o publikování profily v nástroji [nasazení do IIS jako testovacím prostředí](deploying-to-iis.md) kurzu.)
+Existují dva způsoby, jak automatizovat proces změny *Web.config* nastavení souboru: [transformace Web.config](https://msdn.microsoft.com/library/dd465326.aspx) a [Web Deploy parametry](https://msdn.microsoft.com/library/ff398068.aspx). A *Web.config* transformace soubor obsahuje kód XML, který určuje, jak změnit *Web.config* souboru při nasazení. Můžete zadat různé změny pro konkrétní konfigurace sestavení a pro určité publikační profily. Výchozí konfigurace sestavení jsou ladění a vydání, a můžete vytvořit vlastní konfigurace sestavení. Profil publikování se obvykle odpovídá cílové prostředí. (Se dozvíte další informace o publikování profily v nástroji [nasazení do IIS jako testovacím prostředí](deploying-to-iis.md) kurzu.)
 
 Parametry nasazení webové lze použít k určení různých druhů nastavení, které musí být nakonfigurované během nasazení, včetně nastavení, které se nacházejí v *Web.config* soubory. Pokud se používá k určení *Web.config* změny souborů, nasazení webu parametry jsou složitější nastavit, ale jsou užitečné v případě, že si nejste jisti, hodnota k nastavení, dokud nasazení. Například v podnikovém prostředí, může vytvořit *balíček pro nasazení* a poskytnout osobě v oddělení IT k instalaci v produkčním prostředí, a tento uživatel má být schopni zadejte připojovací řetězce nebo hesla, které nechcete znáte.
 

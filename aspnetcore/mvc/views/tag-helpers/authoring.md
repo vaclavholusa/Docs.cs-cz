@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a1f1b2c2e60a1337c15f019185c764d0a9ada1b5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Autor značky pomocné rutiny v ASP.NET Core, návod s ukázky
 
@@ -214,7 +214,7 @@ Můžete také `[HtmlTargetElement]` Chcete-li změnit název cílové elementu.
     [HtmlTargetElement("Website-Information")]
     ```
     
-    * Prvky, které jsou samouzavírací nemají žádný obsah. V tomto příkladu kódu Razor používat samouzavírací značky, ale bude vytvářet pomocná značky [části](http://www.w3.org/TR/html5/sections.html#the-section-element) – element (což není samouzavírací a jsou zápisu obsahu uvnitř `section` element). Proto je nutné nastavit `TagMode` k `StartTagAndEndTag` k zápisu výstupu. Alternativně můžete Zakomentovat řádek nastavení `TagMode` a zapsat značku s ukončovací značku. (Příklad značek je zadáno později v tomto kurzu).
+    * Prvky, které jsou samouzavírací nemají žádný obsah. V tomto příkladu kódu Razor používat samouzavírací značky, ale bude vytvářet pomocná značky [části](http://www.w3.org/TR/html5/sections.html#the-section-element) element (který není samouzavírací a jsou zápisu obsahu uvnitř `section` element). Proto je nutné nastavit `TagMode` k `StartTagAndEndTag` k zápisu výstupu. Alternativně můžete Zakomentovat řádek nastavení `TagMode` a zapsat značku s ukončovací značku. (Příklad značek je zadáno později v tomto kurzu).
     
     * `$` (Dolaru) na následujícím řádku používá [interpolované řetězce](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings):
     
@@ -306,7 +306,7 @@ Protože tyto dvě pomocné rutiny jsou úzce související a je může v budouc
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?highlight=15-34&range=7-34)]
 
-5.  Spusťte aplikaci. Všimněte si www text je vykreslen jako odkaz ale HTTP text není. Když vložíte přerušení v obou třídy, se zobrazí pomocná třída značky HTTP nejprve spustí. Problém je, že pomocná výstup značky se uloží do mezipaměti a při spuštění Pomocníka značky WWW přepíše uložené v mezipaměti výstup z pomocníka značky HTTP. Později v tomto kurzu vidíte postup řízení značky Pomocníci spustit v pořadí. Kód jsme budete oprava s následujícími službami:
+5.  Spusťte aplikaci. Všimněte si www text je vykreslen jako odkaz, ale nemá HTTP text. Když vložíte přerušení v obou třídy, se zobrazí pomocná třída značky HTTP nejprve spustí. Problém je, že pomocná výstup značky se uloží do mezipaměti a při spuštění Pomocníka značky WWW přepíše uložené v mezipaměti výstup z pomocníka značky HTTP. Později v tomto kurzu vidíte postup řízení značky Pomocníci spustit v pořadí. Kód jsme budete oprava s následujícími službami:
 
     [!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10,21,22,26&range=8-37)]
 
@@ -337,4 +337,4 @@ Pomocníci značky poskytují několik vlastností, které k načtení obsahu.
 
 [!code-csharp[Main](../../views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10&range=8-21)]
 
--  Více volá, aby se `GetChildContentAsync` vrátí stejnou hodnotu a nebude znovu spustit `TagHelper` body Pokud předáte hodnotu false parametr určující nepoužije výsledky uložené v mezipaměti.
+-  Více volá, aby se `GetChildContentAsync` vrací stejnou hodnotu a nebude znovu spustit `TagHelper` body Pokud předáte hodnotu false parametr označující nepoužívat výsledky uložené v mezipaměti.

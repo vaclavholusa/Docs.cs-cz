@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0784afb83a8974d514e20261f0f520992a630e9b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b2b13a2a3b242877060aaec2257b2a742ac8d674
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-and-managing-roles-c"></a>Vytvoření a správy rolí (C#)
 ====================
@@ -78,13 +78,13 @@ S mapy webu aktualizovat přejděte na web prostřednictvím prohlížeče. Jak 
 
 ## <a name="step-2-specifying-and-configuring-the-roles-framework-provider"></a>Krok 2: Zadání a konfiguraci Framework zprostředkovatel rolí
 
-Jako rozhraní členství je rozhraní role vytvořené na modelu poskytovatelů. Jak je popsáno v <a id="_msoanchor_5"> </a> [ *Základy zabezpečení a podporu ASP.NET* ](../introduction/security-basics-and-asp-net-support-cs.md) kurzu rozhraní .NET Framework se dodává s tři předdefinované role zprostředkovatele: [ `AuthorizationStoreRoleProvider` ](https://msdn.microsoft.com/en-us/library/system.web.security.authorizationstoreroleprovider.aspx) , [ `WindowsTokenRoleProvider` ](https://msdn.microsoft.com/en-us/library/system.web.security.windowstokenroleprovider.aspx), a [ `SqlRoleProvider` ](https://msdn.microsoft.com/en-us/library/system.web.security.sqlroleprovider.aspx). Tato řada kurz se zaměřuje na `SqlRoleProvider`, který používá databázi systému Microsoft SQL Server jako úložiště rolí.
+Jako rozhraní členství je rozhraní role vytvořené na modelu poskytovatelů. Jak je popsáno v <a id="_msoanchor_5"> </a> [ *Základy zabezpečení a podporu ASP.NET* ](../introduction/security-basics-and-asp-net-support-cs.md) kurzu rozhraní .NET Framework se dodává s tři předdefinované role zprostředkovatele: [ `AuthorizationStoreRoleProvider` ](https://msdn.microsoft.com/library/system.web.security.authorizationstoreroleprovider.aspx) , [ `WindowsTokenRoleProvider` ](https://msdn.microsoft.com/library/system.web.security.windowstokenroleprovider.aspx), a [ `SqlRoleProvider` ](https://msdn.microsoft.com/library/system.web.security.sqlroleprovider.aspx). Tato řada kurz se zaměřuje na `SqlRoleProvider`, který používá databázi systému Microsoft SQL Server jako úložiště rolí.
 
 Pod pozadí rozhraní role a `SqlRoleProvider` pracovní stejně jako rozhraní členství a `SqlMembershipProvider`. Obsahuje rozhraní .NET Framework `Roles` třídu, která slouží jako rozhraní API, abyste rozhraní role. `Roles` Třída má statické metody jako `CreateRole`, `DeleteRole`, `GetAllRoles`, `AddUserToRole`, `IsUserInRole`, a tak dále. Po vyvolání jednu z těchto metod `Roles` deleguje třída volání nakonfigurovaného zprostředkovatele. `SqlRoleProvider` Pracuje s tabulkami specifickou rolí (`aspnet_Roles` a `aspnet_UsersInRoles`) v odpovědi.
 
-Chcete-li použít `SqlRoleProvider` poskytovatele v naší aplikaci, musíme určit, co Pokud chcete použít jako úložiště databáze. `SqlRoleProvider` Očekává úložišti roli tak, aby měl určité databázových tabulek, zobrazení a uložených procedur. Tyto objekty požadavků databázi lze přidat pomocí [ `aspnet_regsql.exe` nástroj](https://msdn.microsoft.com/en-us/library/ms229862.aspx). V tuto chvíli jsme už máte databázi se schématem potřebné pro `SqlRoleProvider`. Zpět v <a id="_msoanchor_6"> </a> [ *vytváření schématu členství v systému SQL Server* ](../membership/creating-the-membership-schema-in-sql-server-cs.md) kurzu jsme vytvořili databázi s názvem `SecurityTutorials.mdf` a použít `aspnet_regsql.exe` přidat aplikaci služby, které jsou zahrnuty databázové objekty nezbytné pomocí `SqlRoleProvider`. Proto potřebujeme říct rozhraní role podporu role a používat `SqlRoleProvider` s `SecurityTutorials.mdf` databáze jako úložiště rolí.
+Chcete-li použít `SqlRoleProvider` poskytovatele v naší aplikaci, musíme určit, co Pokud chcete použít jako úložiště databáze. `SqlRoleProvider` Očekává úložišti roli tak, aby měl určité databázových tabulek, zobrazení a uložených procedur. Tyto objekty požadavků databázi lze přidat pomocí [ `aspnet_regsql.exe` nástroj](https://msdn.microsoft.com/library/ms229862.aspx). V tuto chvíli jsme už máte databázi se schématem potřebné pro `SqlRoleProvider`. Zpět v <a id="_msoanchor_6"> </a> [ *vytváření schématu členství v systému SQL Server* ](../membership/creating-the-membership-schema-in-sql-server-cs.md) kurzu jsme vytvořili databázi s názvem `SecurityTutorials.mdf` a použít `aspnet_regsql.exe` přidat aplikaci služby, které jsou zahrnuty databázové objekty nezbytné pomocí `SqlRoleProvider`. Proto potřebujeme říct rozhraní role podporu role a používat `SqlRoleProvider` s `SecurityTutorials.mdf` databáze jako úložiště rolí.
 
-Rozhraní framework role je nakonfigurovaný pomocí &lt; `roleManager` &gt; element do aplikace `Web.config` souboru. Podpora role je ve výchozím nastavení zakázána. Chcete-li ji povolit, musíte nastavit [ &lt; `roleManager` &gt; ](https://msdn.microsoft.com/en-us/library/ms164660.aspx) elementu `enabled` atribut `true` takto:
+Rozhraní framework role je nakonfigurovaný pomocí &lt; `roleManager` &gt; element do aplikace `Web.config` souboru. Podpora role je ve výchozím nastavení zakázána. Chcete-li ji povolit, musíte nastavit [ &lt; `roleManager` &gt; ](https://msdn.microsoft.com/library/ms164660.aspx) elementu `enabled` atribut `true` takto:
 
 [!code-xml[Main](creating-and-managing-roles-cs/samples/sample3.xml)]
 
@@ -103,7 +103,7 @@ Přidejte následující značku konfiguraci role na `Web.config` souboru. Tento
 
 [!code-xml[Main](creating-and-managing-roles-cs/samples/sample5.xml)]
 
-Výše uvedený kód definuje `SecurityTutorialsSqlRoleProvider` jako výchozí zprostředkovatel (prostřednictvím `defaultProvider` atribut `<roleManager>` element). Nastaví taky `SecurityTutorialsSqlRoleProvider`na `applicationName` nastavení `SecurityTutorials`, což je stejný `applicationName` nastavení používá zprostředkovatel členství (`SecurityTutorialsSqlMembershipProvider`). Při není tady, zobrazené [ `<add>` element](https://msdn.microsoft.com/en-us/library/ms164662.aspx) pro `SqlRoleProvider` může obsahovat také `commandTimeout` atribut a určit dobu trvání databáze časového limitu v sekundách. Výchozí hodnota je 30.
+Výše uvedený kód definuje `SecurityTutorialsSqlRoleProvider` jako výchozí zprostředkovatel (prostřednictvím `defaultProvider` atribut `<roleManager>` element). Nastaví taky `SecurityTutorialsSqlRoleProvider`na `applicationName` nastavení `SecurityTutorials`, což je stejný `applicationName` nastavení používá zprostředkovatel členství (`SecurityTutorialsSqlMembershipProvider`). Při není tady, zobrazené [ `<add>` element](https://msdn.microsoft.com/library/ms164662.aspx) pro `SqlRoleProvider` může obsahovat také `commandTimeout` atribut a určit dobu trvání databáze časového limitu v sekundách. Výchozí hodnota je 30.
 
 Pomocí této konfigurace značek na místě jsou připravení začít používat funkce role v rámci naší aplikace.
 
@@ -113,13 +113,13 @@ Pomocí této konfigurace značek na místě jsou připravení začít používa
 
 ## <a name="step-3-examining-the-roles-api"></a>Krok 3: Prozkoumání rozhraní API rolí
 
-Funkce rolí rozhraní je zveřejněna prostřednictvím [ `Roles` – třída](https://msdn.microsoft.com/en-us/library/system.web.security.roles.aspx), který obsahuje třináct statické metody pro provádění operací na základě rolí. Když se podíváme na vytvoření nebo odstranění rolí v kroky 4 a 6 budeme používat [ `CreateRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.createrole.aspx) a [ `DeleteRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.deleterole.aspx) metody, které přidat nebo odebrat roli ze systému.
+Funkce rolí rozhraní je zveřejněna prostřednictvím [ `Roles` – třída](https://msdn.microsoft.com/library/system.web.security.roles.aspx), který obsahuje třináct statické metody pro provádění operací na základě rolí. Když se podíváme na vytvoření nebo odstranění rolí v kroky 4 a 6 budeme používat [ `CreateRole` ](https://msdn.microsoft.com/library/system.web.security.roles.createrole.aspx) a [ `DeleteRole` ](https://msdn.microsoft.com/library/system.web.security.roles.deleterole.aspx) metody, které přidat nebo odebrat roli ze systému.
 
-Chcete-li získat seznam všech rolí v systému, použijte [ `GetAllRoles` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getallroles.aspx) (viz krok 5). [ `RoleExists` Metoda](https://msdn.microsoft.com/en-us/library/system.web.security.roles.roleexists.aspx) vrací logickou hodnotu udávající, zda zadaná role existuje.
+Chcete-li získat seznam všech rolí v systému, použijte [ `GetAllRoles` metoda](https://msdn.microsoft.com/library/system.web.security.roles.getallroles.aspx) (viz krok 5). [ `RoleExists` Metoda](https://msdn.microsoft.com/library/system.web.security.roles.roleexists.aspx) vrací logickou hodnotu udávající, zda zadaná role existuje.
 
-V dalším kurzu vyzkoušíme jak spojovat uživatele s rolí. `Roles` Třídy [ `AddUserToRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.addusertorole.aspx), [ `AddUserToRoles` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.addusertoroles.aspx), [ `AddUsersToRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.adduserstorole.aspx), a [ `AddUsersToRoles` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.adduserstoroles.aspx) metody přidat jeden nebo více uživatelů k jedné nebo více rolí. Chcete-li odebrat uživatele z role, použijte [ `RemoveUserFromRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.removeuserfromrole.aspx), [ `RemoveUserFromRoles` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.removeuserfromroles.aspx), [ `RemoveUsersFromRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.removeusersfromrole.aspx), nebo [ `RemoveUsersFromRoles` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.removeusersfromroles.aspx) metody.
+V dalším kurzu vyzkoušíme jak spojovat uživatele s rolí. `Roles` Třídy [ `AddUserToRole` ](https://msdn.microsoft.com/library/system.web.security.roles.addusertorole.aspx), [ `AddUserToRoles` ](https://msdn.microsoft.com/library/system.web.security.roles.addusertoroles.aspx), [ `AddUsersToRole` ](https://msdn.microsoft.com/library/system.web.security.roles.adduserstorole.aspx), a [ `AddUsersToRoles` ](https://msdn.microsoft.com/library/system.web.security.roles.adduserstoroles.aspx) metody přidat jeden nebo více uživatelů k jedné nebo více rolí. Chcete-li odebrat uživatele z role, použijte [ `RemoveUserFromRole` ](https://msdn.microsoft.com/library/system.web.security.roles.removeuserfromrole.aspx), [ `RemoveUserFromRoles` ](https://msdn.microsoft.com/library/system.web.security.roles.removeuserfromroles.aspx), [ `RemoveUsersFromRole` ](https://msdn.microsoft.com/library/system.web.security.roles.removeusersfromrole.aspx), nebo [ `RemoveUsersFromRoles` ](https://msdn.microsoft.com/library/system.web.security.roles.removeusersfromroles.aspx) metody.
 
-V <a id="_msoanchor_9"> </a> [ *autorizace na základě rolí* ](role-based-authorization-cs.md) kurzu se podíváme na způsoby, jak programově zobrazit nebo skrýt funkce na základě role aktuálně přihlášeného uživatele. K tomu můžeme použít `Role` třídy [ `FindUsersInRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.findusersinrole.aspx), [ `GetRolesForUser` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getrolesforuser.aspx), [ `GetUsersInRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getusersinrole.aspx), nebo [ `IsUserInRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.isuserinrole.aspx) metody.
+V <a id="_msoanchor_9"> </a> [ *autorizace na základě rolí* ](role-based-authorization-cs.md) kurzu se podíváme na způsoby, jak programově zobrazit nebo skrýt funkce na základě role aktuálně přihlášeného uživatele. K tomu můžeme použít `Role` třídy [ `FindUsersInRole` ](https://msdn.microsoft.com/library/system.web.security.roles.findusersinrole.aspx), [ `GetRolesForUser` ](https://msdn.microsoft.com/library/system.web.security.roles.getrolesforuser.aspx), [ `GetUsersInRole` ](https://msdn.microsoft.com/library/system.web.security.roles.getusersinrole.aspx), nebo [ `IsUserInRole` ](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx) metody.
 
 > [!NOTE]
 > Mějte na paměti, která je volána, kdykoli, jednu z těchto metod, `Roles` deleguje třída volání nakonfigurovaného zprostředkovatele. V našem případě to znamená, že volání je odesílána `SqlRoleProvider`. `SqlRoleProvider` Pak provede operaci příslušné databáze založené na vyvolanou metodu. Například kód `Roles.CreateRole("Administrators")` výsledkem `SqlRoleProvider` provádění `aspnet_Roles_CreateRole` uložené procedury, která vloží nový záznam do `aspnet_Roles` tabulku s názvem Správci.
@@ -132,7 +132,7 @@ Zbývající část tohoto kurzu zjistí pomocí `Roles` třídy `CreateRole`, `
 Role nabízejí způsob, jak nahodile skupiny uživatelů a nejčastěji toto seskupení se používá pro více pohodlný způsob, jak použít autorizačních pravidel. Ale pokud chcete používat jako mechanismus autorizace role musíme nejprve definovat, jaké role existovat v aplikaci. ASP.NET bohužel neobsahuje CreateRoleWizard ovládacího prvku. Chcete-li přidat nové role je potřeba vytvořit vhodné uživatelské rozhraní a volat rozhraní API rolí označována. Dobrá zpráva je, že se jedná o velmi snadno dosáhnout.
 
 > [!NOTE]
-> Když neexistuje žádné CreateRoleWizard webové ovládací prvek, je [nástroj Správa webu ASP.NET](https://msdn.microsoft.com/en-us/library/ms228053.aspx), což je místní aplikace ASP.NET pomoct s zobrazování a správu konfigurace webové aplikace. Ale nejsem big ventilátor nástroje pro správu webu ASP.NET dvou důvodů. Nejprve je trochu buggy a činnost koncového uživatele opustí mnoho k být potřeby. Druhý nástroj Správa webu ASP.NET je určena pro pouze místně, což znamená, že bude nutné vytvářet vlastní role správy webové stránky, pokud potřebujete ke vzdálené správě rolí na živý web. Dva z těchto důvodů v tomto kurzu a další se soustředí na vytváření potřebné role nástroje pro správu na webové stránce, namísto spoléhání na nástroj Správa webu ASP.NET.
+> Když neexistuje žádné CreateRoleWizard webové ovládací prvek, je [nástroj Správa webu ASP.NET](https://msdn.microsoft.com/library/ms228053.aspx), což je místní aplikace ASP.NET pomoct s zobrazování a správu konfigurace webové aplikace. Ale nejsem big ventilátor nástroje pro správu webu ASP.NET dvou důvodů. Nejprve je trochu buggy a činnost koncového uživatele opustí mnoho k být potřeby. Druhý nástroj Správa webu ASP.NET je určena pro pouze místně, což znamená, že bude nutné vytvářet vlastní role správy webové stránky, pokud potřebujete ke vzdálené správě rolí na živý web. Dva z těchto důvodů v tomto kurzu a další se soustředí na vytváření potřebné role nástroje pro správu na webové stránce, namísto spoléhání na nástroj Správa webu ASP.NET.
 
 
 Otevřete `ManageRoles.aspx` stránku `Roles` složky a přidat textové pole a tlačítko webový ovládací prvek na stránku. Nastavení ovládacího prvku TextBox `ID` vlastnost `RoleName` a na tlačítko `ID` a `Text` vlastnosti, které chcete `CreateRoleButton` a vytvořit roli, v uvedeném pořadí. V tomto okamžiku vaší stránky deklarativní by měl vypadat takto:
@@ -215,8 +215,8 @@ Teď, když uživatel přidá novou roli `RoleList` GridView zobrazuje roli prá
 
 V tomto okamžiku může uživatel vytvořit novou roli a zobrazit všechny existující role z `ManageRoles.aspx` stránky. Umožňuje povolit uživatelům taky odstranění rolí. `Roles.DeleteRole` Metoda má dva přetížení:
 
-- [`DeleteRole(roleName)`](https://msdn.microsoft.com/en-us/library/ek4sywc0.aspx)-Odstraní roli *roleName*. Pokud role obsahuje jeden nebo více členů, je vyvolána výjimka.
-- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/en-us/library/38h6wf59.aspx)-Odstraní roli *roleName*. Pokud *throwOnPopulateRole* je `true`, pak je vyvolána výjimka, pokud role obsahuje jeden nebo více členů. Pokud *throwOnPopulateRole* je `false`, role je odstraněn, zda obsahuje žádné členy, nebo ne. Interně `DeleteRole(roleName)` volání metod `DeleteRole(roleName, true)`.
+- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx)-Odstraní roli *roleName*. Pokud role obsahuje jeden nebo více členů, je vyvolána výjimka.
+- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx)-Odstraní roli *roleName*. Pokud *throwOnPopulateRole* je `true`, pak je vyvolána výjimka, pokud role obsahuje jeden nebo více členů. Pokud *throwOnPopulateRole* je `false`, role je odstraněn, zda obsahuje žádné členy, nebo ne. Interně `DeleteRole(roleName)` volání metod `DeleteRole(roleName, true)`.
 
 `DeleteRole` Metoda také vyvolá výjimku, pokud se *roleName* je `null` nebo prázdný řetězec nebo, pokud *roleName* obsahuje čárkami. Pokud *roleName* neexistuje v systému, `DeleteRole` selže tiše, bez vyvolání k výjimce.
 
@@ -255,10 +255,10 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Zkoumání ASP.NET 2.0 je členství, role a profil](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
-- [Postupy: Použití správce rolí technologie ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998314.aspx)
-- [Zprostředkovateli rolí](https://msdn.microsoft.com/en-us/library/aa478950.aspx)
+- [Postupy: Použití správce rolí technologie ASP.NET 2.0](https://msdn.microsoft.com/library/ms998314.aspx)
+- [Zprostředkovateli rolí](https://msdn.microsoft.com/library/aa478950.aspx)
 - [Vrácení vlastní nástroj pro správu webu](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
-- [Technická dokumentace k `<roleManager>` – Element](https://msdn.microsoft.com/en-us/library/ms164660.aspx)
+- [Technická dokumentace k `<roleManager>` – Element](https://msdn.microsoft.com/library/ms164660.aspx)
 - [Pomocí členství a Role Správce rozhraní API](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/security/membership.aspx)
 
 ### <a name="about-the-author"></a>O autorovi
@@ -270,4 +270,4 @@ Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu zahrnují Alicja Maziarz, Suchi Banerjee a Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 >[!div class="step-by-step"]
-[Další](assigning-roles-to-users-cs.md)
+[Next](assigning-roles-to-users-cs.md)

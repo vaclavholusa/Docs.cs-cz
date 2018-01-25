@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8d11bf47f8c43040ef30d7132f0bb756748dbacd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d54c0e133bc2f6f2021821dc16cdf86cc23a5667
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Řazení, filtrování a stránkování s platformou Entity Framework v aplikaci ASP.NET MVC
 ====================
@@ -60,7 +60,7 @@ Jedná se o Ternární příkazy. První z nich určuje, že pokud `sortOrder` p
 | Datum vzestupné | ascending | descending |
 | Datum sestupném | ascending | ascending |
 
-Používá metodu [technologie LINQ to Entities](https://msdn.microsoft.com/en-us/library/bb386964.aspx) zadat Tento sloupec seřadit podle. Kód vytvoří [IQueryable](https://msdn.microsoft.com/en-us/library/bb351562.aspx) proměnné před `switch` ho v příkazu, změní `switch` prohlášení a volání `ToList` metoda po `switch` příkaz. Při vytváření a úprava `IQueryable` proměnné, bude odeslán žádný dotaz do databáze. Dotaz není provést, dokud je převést `IQueryable` objektu do kolekce voláním metody `ToList`. Proto tento kód výsledkem jeden dotaz, který není provést, dokud `return View` příkaz.
+Používá metodu [technologie LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx) zadat Tento sloupec seřadit podle. Kód vytvoří [IQueryable](https://msdn.microsoft.com/library/bb351562.aspx) proměnné před `switch` ho v příkazu, změní `switch` prohlášení a volání `ToList` metoda po `switch` příkaz. Při vytváření a úprava `IQueryable` proměnné, bude odeslán žádný dotaz do databáze. Dotaz není provést, dokud je převést `IQueryable` objektu do kolekce voláním metody `ToList`. Proto tento kód výsledkem jeden dotaz, který není provést, dokud `return View` příkaz.
 
 Jako alternativu k zápisu jiný LINQ příkazy pro každé pořadí řazení můžete dynamicky vytvořit dotaz LINQ. Informace o dynamické LINQ najdete v tématu [dynamické LINQ](https://go.microsoft.com/fwlink/?LinkID=323957).
 
@@ -90,7 +90,7 @@ V *Controllers\StudentController.cs*, nahraďte `Index` metoda následujícím k
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-Přidali jste `searchString` parametru `Index` metoda. Hodnota řetězce vyhledávání byl přijat z textové pole, které přidáte do zobrazení indexu. Jste také přidali do příkazu LINQ `where` klauzuli, která vybere pouze studenty, jejichž křestní jméno nebo příjmení obsahuje řetězec pro hledání. Příkaz, který přidá [kde](https://msdn.microsoft.com/en-us/library/bb535040.aspx) klauzule se spustí pouze v případě, že je hodnota pro vyhledávání.
+Přidali jste `searchString` parametru `Index` metoda. Hodnota řetězce vyhledávání byl přijat z textové pole, které přidáte do zobrazení indexu. Jste také přidali do příkazu LINQ `where` klauzuli, která vybere pouze studenty, jejichž křestní jméno nebo příjmení obsahuje řetězec pro hledání. Příkaz, který přidá [kde](https://msdn.microsoft.com/library/bb535040.aspx) klauzule se spustí pouze v případě, že je hodnota pro vyhledávání.
 
 > [!NOTE]
 > V mnoha případech můžete volat stejnou metodu na sadu entit Entity Framework nebo jako metody rozšíření na kolekci v paměti. Výsledky jsou obvykle stejné, ale v některých případech může být odlišné.
@@ -160,7 +160,7 @@ Na konci metody `ToPagedList` rozšiřující metody na na studentů `IQueryable
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-`ToPagedList` Metoda přebírá číslo stránky. Představují dva otazníky [slučování null operátor](https://msdn.microsoft.com/en-us/library/ms173224.aspx). Operátor slučování null definuje výchozí hodnotu pro typ s možnou hodnotou Null; výraz `(page ?? 1)` znamená vrátí hodnotu `page` Pokud má hodnotu, nebo 1-li vrátit `page` má hodnotu null.
+`ToPagedList` Metoda přebírá číslo stránky. Představují dva otazníky [slučování null operátor](https://msdn.microsoft.com/library/ms173224.aspx). Operátor slučování null definuje výchozí hodnotu pro typ s možnou hodnotou Null; výraz `(page ?? 1)` znamená vrátí hodnotu `page` Pokud má hodnotu, nebo 1-li vrátit `page` má hodnotu null.
 
 ### <a name="add-paging-links-to-the-student-index-view"></a>Přidat stránkování odkazy na zobrazení indexu studenty
 
@@ -172,11 +172,11 @@ V *Views\Student\Index.cshtml*, existujícího kódu nahraďte následujícím k
 
 `using` Příkaz pro `PagedList.Mvc` dává přístup do pomocné rutiny MVC tlačítka stránkování.
 
-Kódu používá přetížení [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) který umožňuje zadat [FormMethod.Get](https://msdn.microsoft.com/en-us/library/system.web.mvc.formmethod(v=vs.100).aspx/css).
+Kódu používá přetížení [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) který umožňuje zadat [FormMethod.Get](https://msdn.microsoft.com/library/system.web.mvc.formmethod(v=vs.100).aspx/css).
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-Výchozí hodnota [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) odesílat data formuláře s POST, což znamená, že jsou parametry předány v textu zprávy HTTP a není v adrese URL jako řetězce dotazu. Když zadáte GET protokolu HTTP, data formuláře je předán v adrese URL jako řetězce dotazu, který uživatelům umožňuje bookmark adresu URL. [W3C pokyny pro použití metody GET protokolu HTTP](http://www.w3.org/2001/tag/doc/whenToUseGet.html) , abyste měli při akci nevede aktualizaci použít GET.
+Výchozí hodnota [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) odesílat data formuláře s POST, což znamená, že jsou parametry předány v textu zprávy HTTP a není v adrese URL jako řetězce dotazu. Když zadáte GET protokolu HTTP, data formuláře je předán v adrese URL jako řetězce dotazu, který uživatelům umožňuje bookmark adresu URL. [W3C pokyny pro použití metody GET protokolu HTTP](http://www.w3.org/2001/tag/doc/whenToUseGet.html) , abyste měli při akci nevede aktualizaci použít GET.
 
 Textové pole je inicializován aktuální řetězec pro hledání, po kliknutí na tlačítko Nová stránka se zobrazí aktuální hledaný řetězec.
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: a0ee790da07c99cdb1279a6bca637a4ce8076e84
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 62a16e9a99cd1298b0db5f8099092212f9f6850b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>Návrh při selhání (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -117,14 +117,14 @@ Další informace najdete v dalších kapitolách v této e knihy a následujíc
 
 Dokumentace:
 
-- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze série videí bezporuchový.
-- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy.
-- [Azure obchodní kontinuity technické pokyny](https://msdn.microsoft.com/en-us/library/windowsazure/hh873027.aspx). Dokument White paper Patrik Wickline a Jason Roth.
-- [Zotavení po havárii a vysoká dostupnost pro aplikace Azure](https://msdn.microsoft.com/en-us/library/windowsazure/dn251004.aspx). Dokument White paper Michael McKeown, Hanu Kommalapati a Jason Roth.
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Viz příručka nasazení více datového centra, jistič vzor.
+- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze série videí bezporuchový.
+- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy.
+- [Azure obchodní kontinuity technické pokyny](https://msdn.microsoft.com/library/windowsazure/hh873027.aspx). Dokument White paper Patrik Wickline a Jason Roth.
+- [Zotavení po havárii a vysoká dostupnost pro aplikace Azure](https://msdn.microsoft.com/library/windowsazure/dn251004.aspx). Dokument White paper Michael McKeown, Hanu Kommalapati a Jason Roth.
+- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Viz příručka nasazení více datového centra, jistič vzor.
 - [Podpora Azure - smlouvy o úrovni služeb](https://azure.microsoft.com/support/legal/sla/).
-- [Kontinuita podnikových procesů v Azure SQL Database](https://msdn.microsoft.com/en-us/library/windowsazure/hh852669.aspx). Dokumentaci k SQL Database vysokou dostupnost a po havárii funkce obnovení.
-- [Vysoká dostupnost a zotavení po havárii pro SQL Server na virtuálních počítačích Azure](https://msdn.microsoft.com/en-us/library/windowsazure/jj870962.aspx).
+- [Kontinuita podnikových procesů v Azure SQL Database](https://msdn.microsoft.com/library/windowsazure/hh852669.aspx). Dokumentaci k SQL Database vysokou dostupnost a po havárii funkce obnovení.
+- [Vysoká dostupnost a zotavení po havárii pro SQL Server na virtuálních počítačích Azure](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx).
 
 Videa:
 

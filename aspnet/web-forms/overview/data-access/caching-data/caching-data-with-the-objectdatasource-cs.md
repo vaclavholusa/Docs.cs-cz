@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5ce0bd1d3302ee68c9c65584686172a07143e4a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8cd4fd2afb16772baf45618ccee2c3c3caea5b64
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-with-the-objectdatasource-c"></a>Ukládání dat do mezipaměti s ObjectDataSource (C#)
 ====================
@@ -44,7 +44,7 @@ Ukládání do mezipaměti může výrazně zlepšit aplikaci s celkový výkon 
 
 Bez ohledu na zadaných kritériích vyřazení, může být položky v mezipaměti *úklid* předtím, než byla splněna kritéria založené na čase nebo na základě závislostí. Pokud mezipaměti již dosáhl maximálního, musíte před přidáním nové odstranit existující položky. V důsledku toho při prostřednictvím kódu programu práci se službou data uložená v mezipaměti ho s důležitých, že jste vždy předpokládáme, že data uložená v mezipaměti nemohou být obsaženy. Podíváme vzor při přístupu k datům z mezipaměti prostřednictvím kódu programu v našem kurzu Další *ukládání dat v architektuře*.
 
-Ukládání do mezipaměti poskytuje ekonomické prostředky pro stlačení další výkonu z aplikace. Jako [Steven Smith](http://aspadvice.com/blogs/ssmith/) articulates v jeho článku [ukládání do mezipaměti ASP.NET: technik a nejlepších postupů](https://msdn.microsoft.com/en-us/library/aa478965.aspx):
+Ukládání do mezipaměti poskytuje ekonomické prostředky pro stlačení další výkonu z aplikace. Jako [Steven Smith](http://aspadvice.com/blogs/ssmith/) articulates v jeho článku [ukládání do mezipaměti ASP.NET: technik a nejlepších postupů](https://msdn.microsoft.com/library/aa478965.aspx):
 
 Ukládání do mezipaměti, může být dobrým způsobem, jak získat dobrý dostatečný výkon bez náročné na čas a analýzy. Paměť je levných, takže pokud získáte výkonu, je nutné pomocí ukládání výstupu do mezipaměti pro 30 sekund místo výdaje denně nebo týdně pokusu optimalizovat kód nebo databáze, proveďte řešení ukládání do mezipaměti (za předpokladu, že 30 - stará sekundu data je ok) a přesunutí na. Nakonec nízký návrhu bude pravděpodobně nezaznamenaly, takže kurzu, že byste měli zkusit návrhu aplikace správně. Ale pokud potřebujete získat dobrý dnes dostatečný výkon, ukládání do mezipaměti může být vynikající [přístup], kdybyste kupovali času na Refaktorovat aplikace později, kdy máte čas Uděláte to tak.
 
@@ -175,10 +175,10 @@ To nemusí připadat plýtvání k načtení dat databáze pokaždé, když je s
 
 Nastavením jednoduše několik vlastností, můžete nakonfigurovat ObjectDataSource automaticky data do mezipaměti na jeho načtené v datové mezipaměti technologie ASP.NET. Následující seznam shrnuje vlastnosti související s mezipamětí ObjectDataSource:
 
-- [EnableCaching](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx) musí být nastavena na `true` povolení ukládání do mezipaměti. Výchozí hodnota je `false`.
-- [CacheDuration](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx) množství času v sekundách, který je uložen v mezipaměti. Výchozí hodnota je 0. ObjectDataSource bude pouze mezipaměti dat, pokud `EnableCaching` je `true` a `CacheDuration` je nastaven na hodnotu větší než nula.
-- [CacheExpirationPolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx) může být nastaven na `Absolute` nebo `Sliding`. Pokud `Absolute`, ObjectDataSource ukládá do mezipaměti jeho načtená data pro `CacheDuration` sekund; Pokud `Sliding`, vyprší platnost dat pouze po nebyl byly přístupné pro `CacheDuration` sekund. Výchozí hodnota je `Absolute`.
-- [CacheKeyDependency](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx) pomocí této vlastnosti můžete přidružit existující závislost mezipaměti položky mezipaměti s ObjectDataSource. Položky dat s ObjectDataSource můžete předčasně vyloučena z mezipaměti zneplatněním přidružené `CacheKeyDependency`. Tato vlastnost se nejčastěji používá přidružit mezipaměti s ObjectDataSource mezipaměti závislost SQL, téma jsme budete prozkoumat v budoucnu [pomocí závislosti mezipaměti SQL](using-sql-cache-dependencies-cs.md) kurzu.
+- [EnableCaching](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx) musí být nastavena na `true` povolení ukládání do mezipaměti. Výchozí hodnota je `false`.
+- [CacheDuration](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx) množství času v sekundách, který je uložen v mezipaměti. Výchozí hodnota je 0. ObjectDataSource bude pouze mezipaměti dat, pokud `EnableCaching` je `true` a `CacheDuration` je nastaven na hodnotu větší než nula.
+- [CacheExpirationPolicy](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx) může být nastaven na `Absolute` nebo `Sliding`. Pokud `Absolute`, ObjectDataSource ukládá do mezipaměti jeho načtená data pro `CacheDuration` sekund; Pokud `Sliding`, vyprší platnost dat pouze po nebyl byly přístupné pro `CacheDuration` sekund. Výchozí hodnota je `Absolute`.
+- [CacheKeyDependency](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx) pomocí této vlastnosti můžete přidružit existující závislost mezipaměti položky mezipaměti s ObjectDataSource. Položky dat s ObjectDataSource můžete předčasně vyloučena z mezipaměti zneplatněním přidružené `CacheKeyDependency`. Tato vlastnost se nejčastěji používá přidružit mezipaměti s ObjectDataSource mezipaměti závislost SQL, téma jsme budete prozkoumat v budoucnu [pomocí závislosti mezipaměti SQL](using-sql-cache-dependencies-cs.md) kurzu.
 
 Umožní s nakonfigurovat `ProductsDataSource` ObjectDataSource pro ukládání do mezipaměti po dobu 30 sekund v měřítku absolutní jeho data. Nastavit ObjectDataSource s `EnableCaching` vlastnost `true` a jeho `CacheDuration` vlastnost do 30. Ponechte `CacheExpirationPolicy` vlastností nastavenou na výchozí `Absolute`.
 
@@ -206,7 +206,7 @@ Obrázek 12 znázorňuje s ObjectDataSource ukládání do mezipaměti pracovní
 
 Každá aplikace technologie ASP.NET má svou vlastní datové mezipaměti instance této s sdílet všech stránek a návštěvníky. To znamená, že data uložená v mezipaměti dat pomocí ObjectDataSource podobně sdílet všichni uživatelé, kteří najdete na stránce. Chcete-li to ověřit, otevřete `ObjectDataSource.aspx` stránku v prohlížeči. Při první návštěvě stránky se zobrazí výběr textu událost je aktivována (za předpokladu, že data přidány do mezipaměti podle předchozích testů, nyní by byla odebrána). Otevřít druhou instanci prohlížeče a zkopírujte a vložte adresu URL z první instance prohlížeče na druhý. Ve druhé instance prohlížeč není zobrazen výběr textu událostí aktivováno, protože ho používají stejné mezipaměti data jako první.
 
-Při vkládání jeho načtená data do mezipaměti, ObjectDataSource používá hodnotu klíče mezipaměti, která zahrnuje: `CacheDuration` a `CacheExpirationPolicy` hodnoty vlastností; typ podkladového objektu obchodní používá ObjectDataSource, který je určený prostřednictvím [ `TypeName` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.typename.aspx) (`ProductsBLL`, v tomto příkladu); hodnota `SelectMethod` vlastnost a názvu a hodnot parametrů v `SelectParameters` kolekce; a hodnoty jeho `StartRowIndex`a `MaximumRows` vlastnosti, které se používají při implementaci [vlastní stránkování.](../paging-and-sorting/paging-and-sorting-report-data-cs.md)
+Při vkládání jeho načtená data do mezipaměti, ObjectDataSource používá hodnotu klíče mezipaměti, která zahrnuje: `CacheDuration` a `CacheExpirationPolicy` hodnoty vlastností; typ podkladového objektu obchodní používá ObjectDataSource, který je určený prostřednictvím [ `TypeName` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.typename.aspx) (`ProductsBLL`, v tomto příkladu); hodnota `SelectMethod` vlastnost a názvu a hodnot parametrů v `SelectParameters` kolekce; a hodnoty jeho `StartRowIndex`a `MaximumRows` vlastnosti, které se používají při implementaci [vlastní stránkování.](../paging-and-sorting/paging-and-sorting-report-data-cs.md)
 
 Položka jedinečný mezipaměti věnujte hodnota klíče mezipaměti jako kombinaci těchto vlastností zajišťuje, jak tyto hodnoty změnit. Například v posledních kurzy jsme sunout hledá pomocí `ProductsBLL` třídu s `GetProductsByCategoryID(categoryID)`, která vrací všechny produkty, pro zadané kategorii. Jeden uživatel by mohl pocházet na stránku a zobrazení nápoje, který má `CategoryID` 1. Pokud ObjectDataSource mezipaměti své výsledky bez ohledu na `SelectParameters` hodnoty, když byla přijata jiného uživatele na stránku zobrazíte přísady při produkty nápoje byly v mezipaměti, zobrazí se jim d přísady produktů uloženou v mezipaměti nápoj spíše než. Pomocí různých klíče mezipaměti podle těchto vlastností, které obsahují hodnoty `SelectParameters`, ObjectDataSource udržuje samostatné položky v mezipaměti pro nápoje a přísady.
 
@@ -230,8 +230,8 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Ukládání do mezipaměti ASP.NET: Technik a nejlepších postupů](https://msdn.microsoft.com/en-us/library/aa478965.aspx)
-- [Ukládání do mezipaměti Průvodce architekturou pro aplikace .NET Framework](https://msdn.microsoft.com/en-us/library/ee817645.aspx)
+- [Ukládání do mezipaměti ASP.NET: Technik a nejlepších postupů](https://msdn.microsoft.com/library/aa478965.aspx)
+- [Ukládání do mezipaměti Průvodce architekturou pro aplikace .NET Framework](https://msdn.microsoft.com/library/ee817645.aspx)
 - [Výstupní mezipaměti technologie ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/121306-1.aspx)
 
 ## <a name="about-the-author"></a>O autorovi
@@ -243,4 +243,4 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 >[!div class="step-by-step"]
-[Další](caching-data-in-the-architecture-cs.md)
+[Next](caching-data-in-the-architecture-cs.md)

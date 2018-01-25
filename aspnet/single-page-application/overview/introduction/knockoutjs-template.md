@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 6e84dcc16345e33fcd3a3f83c4b35bc993c03ca6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e6c0c45bed098a8a1160ff11e4f77244bf55ffd3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-page-application-knockoutjs-template"></a>Jedné stránky aplikací: Šablona kódem KnockoutJS
 ====================
@@ -92,7 +92,7 @@ V projektu sady Visual Studio obsahuje složku modely modely, které se použív
 
 ![](knockoutjs-template/_static/image9.png)
 
-**TodoItem seznamu úkolů**
+**TodoItem, TodoList**
 
 Jsou to databáze modely pro Entity Framework Code First. Všimněte si, že tyto modely mají vlastnosti, které odkazují na sebe navzájem. `ToDoList`obsahuje kolekci ToDoItems a každý `ToDoItem` odkazuje zpět na nadřazené seznamu úkolů. Tyto vlastnosti se nazývají navigačních vlastností a seznam úkolů a jeho položky představují vztah jeden mnoho.
 
@@ -100,7 +100,7 @@ Jsou to databáze modely pro Entity Framework Code First. Všimněte si, že tyt
 
 [!code-csharp[Main](knockoutjs-template/samples/sample1.cs)]
 
-**TodoItemDto TodoListDto**
+**TodoItemDto, TodoListDto**
 
 Tyto třídy zadat data, která bude odeslána do klienta. "DTO" znamená "objekt pro přenos dat." DTO definuje, jak budou serializovány entity do formátu JSON. Obecně platí tady je několik důvodů používat DTOs:
 
@@ -117,7 +117,7 @@ Tento soubor obsahuje modely pro členství webu. `UserProfile` Třída definuje
 
 ## <a name="entity-framework"></a>Entity Framework
 
-Šablona SPA používá EF Code First. Vývojem Code First můžete definovat modely, nejprve v kódu a pak EF používá model k vytvoření databáze. Můžete také použít EF s existující databázi ([Database First](https://msdn.microsoft.com/en-us/data/jj206878.aspx)).
+Šablona SPA používá EF Code First. Vývojem Code First můžete definovat modely, nejprve v kódu a pak EF používá model k vytvoření databáze. Můžete také použít EF s existující databázi ([Database First](https://msdn.microsoft.com/data/jj206878.aspx)).
 
 `TodoItemContext` Je odvozena od třídy ve složce modely **DbContext**. Tato třída poskytuje "spojovací" mezi modely a EF. `TodoItemContext` Obsahuje `ToDoItem` kolekce a `TodoList` kolekce. K dotazování databáze, jednoduše napsat dotaz LINQ proti těchto kolekcí. Můžete zde je ukázka, jak můžete vybrat všechny seznamy úkolů pro uživatele "Alice":
 
@@ -180,7 +180,7 @@ Zobrazení je vázané na data do modelu zobrazení. Aktualizace do modelu zobra
 
 Šablona SPA uspořádává JavaScript na straně klienta do tři vrstvy:
 
-- TODO.DataContext.js: odešle požadavky AJAX.
+- todo.datacontext.js: Sends AJAX requests.
 - TODO.model.js: definuje modely.
 - TODO.ViewModel.js: definuje model zobrazení.
 
@@ -229,7 +229,7 @@ Proti útokům webů padělání požadavku (CSRF) je útok, při kterém škodl
 
 Tokeny proti zfalšování fungovat, protože škodlivý stránky nelze přečíst tokeny uživatele z důvodu zásad stejného původu. (Stejného původu zásady zabránit dokumenty, které jsou hostované na dvou různých lokalit v přístupu k obsahu vzájemně.)
 
-ASP.NET MVC poskytuje integrovanou podporu pro tokeny proti zfalšování, prostřednictvím [AntiForgery](https://msdn.microsoft.com/en-us/library/system.web.helpers.antiforgery.aspx) třídy a [[ValidateAntiForgeryToken]](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute.aspx) atribut. Tato funkce není v současné době součástí webového rozhraní API. Šablona SPA však obsahuje vlastní implementaci pro webového rozhraní API. Tento kód je definovaný v `ValidateHttpAntiForgeryTokenAttribute` třídy, který je umístěný ve složce filtry řešení. Další informace o anti-proti v rozhraní Web API útokům CSRF najdete v tématu [útoky brání webů požadavku padělání (proti útokům CSRF)](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md).
+ASP.NET MVC poskytuje integrovanou podporu pro tokeny proti zfalšování, prostřednictvím [AntiForgery](https://msdn.microsoft.com/library/system.web.helpers.antiforgery.aspx) třídy a [[ValidateAntiForgeryToken]](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute.aspx) atribut. Tato funkce není v současné době součástí webového rozhraní API. Šablona SPA však obsahuje vlastní implementaci pro webového rozhraní API. Tento kód je definovaný v `ValidateHttpAntiForgeryTokenAttribute` třídy, který je umístěný ve složce filtry řešení. Další informace o anti-proti v rozhraní Web API útokům CSRF najdete v tématu [útoky brání webů požadavku padělání (proti útokům CSRF)](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md).
 
 ## <a name="conclusion"></a>Závěr
 

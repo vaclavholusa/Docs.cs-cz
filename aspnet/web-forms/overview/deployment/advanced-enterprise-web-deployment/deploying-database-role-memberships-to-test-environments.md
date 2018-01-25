@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: ac780c6cd522f9216cafe3b5f23772ef6ebf5d11
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 226c28622f76e866fba1fc33cf9b9b7a01e5295b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a>Nasazení databáze členství v rolích do testovacího prostředí
 ====================
@@ -87,7 +87,7 @@ V ideálním případě by spustit všechny požadované skripty jazyka Transact
 
 
 > [!NOTE]
-> Další informace o možnostech příkazového řádku sqlcmd najdete v tématu [Nástroj sqlcmd](https://msdn.microsoft.com/en-us/library/ms162773.aspx).
+> Další informace o možnostech příkazového řádku sqlcmd najdete v tématu [Nástroj sqlcmd](https://msdn.microsoft.com/library/ms162773.aspx).
 
 
 Před cíl MSBuild vložíte tento příkaz, je třeba vzít v úvahu, za jakých podmínek chcete spuštění skriptu:
@@ -130,7 +130,7 @@ Toto téma popisuje jeden ze způsobů, ve kterém můžete přidat uživatele d
 
 ## <a name="further-reading"></a>Další čtení
 
-Další informace o použití VSDBCMD pro databázové projekty nasazení najdete v tématu [nasazení databázové projekty](../web-deployment-in-the-enterprise/deploying-database-projects.md). Pokyny k přizpůsobení nasazení databáze pro různé cílové prostředí najdete v tématu [přizpůsobení nasazení databáze pro prostředí s více](customizing-database-deployments-for-multiple-environments.md). Další informace o používání vlastních souborů projektu nástroje MSBuild k řízení procesu nasazení najdete v tématu [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md) a [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Další informace o možnostech příkazového řádku sqlcmd najdete v tématu [Nástroj sqlcmd](https://msdn.microsoft.com/en-us/library/ms162773.aspx).
+Další informace o použití VSDBCMD pro databázové projekty nasazení najdete v tématu [nasazení databázové projekty](../web-deployment-in-the-enterprise/deploying-database-projects.md). Pokyny k přizpůsobení nasazení databáze pro různé cílové prostředí najdete v tématu [přizpůsobení nasazení databáze pro prostředí s více](customizing-database-deployments-for-multiple-environments.md). Další informace o používání vlastních souborů projektu nástroje MSBuild k řízení procesu nasazení najdete v tématu [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md) a [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Další informace o možnostech příkazového řádku sqlcmd najdete v tématu [Nástroj sqlcmd](https://msdn.microsoft.com/library/ms162773.aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](customizing-database-deployments-for-multiple-environments.md)

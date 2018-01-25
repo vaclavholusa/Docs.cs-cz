@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: f6266045ebf55fb7ae691bfb55e9c90cd4edcc96
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 497102cfa98680f2156a56ff9e36d84b7c820020
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="calling-an-odata-service-from-a-net-client-c"></a>Volání služby OData z klienta .NET (C#)
 ====================
@@ -30,8 +30,8 @@ podle [Wasson Jan](https://github.com/MikeWasson)
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) (funguje s Visual Studio 2012)
-> - [Klientská knihovna pro WCF Data Services](https://msdn.microsoft.com/en-us/library/cc668772.aspx)
-> - Webové rozhraní API 2. (V příkladu služby OData je sestaven pomocí webového rozhraní API 2, ale klientské aplikace není závislá na webové rozhraní API.)
+> - [Klientská knihovna pro WCF Data Services](https://msdn.microsoft.com/library/cc668772.aspx)
+> - Web API 2. (V příkladu služby OData je sestaven pomocí webového rozhraní API 2, ale klientské aplikace není závislá na webové rozhraní API.)
 
 
 V tomto kurzu budete I provede procesem vytvoření klientskou aplikaci, která volá služby OData. Služba OData zveřejňuje následující entity:
@@ -46,7 +46,7 @@ Na následující články popisují, jak implementovat službu OData v rozhran�
 
 - [Vytváření koncový bod OData v rozhraní Web API 2](creating-an-odata-endpoint.md)
 - [Vztahy entit OData v rozhraní Web API 2](working-with-entity-relations.md)
-- [Akce OData v rozhraní Web API 2](odata-actions.md)
+- [Akce OData ve webovém rozhraní API 2](odata-actions.md)
 
 ## <a name="generate-the-service-proxy"></a>Generovat Proxy služby
 
@@ -118,7 +118,7 @@ Pro zbývající část tohoto tématu, nebude zobrazit celý `Main` fungovat po
 
 Definuje OData [možnosti dotazu](../supporting-odata-query-options.md) který slouží k filtrování, řazení, data stránky a tak dále. V proxy služby můžete použít tyto možnosti s využitím různých LINQ – výrazy.
 
-V této části budete zobrazit stručný příklady. Další podrobnosti naleznete v tématu [aspekty LINQ (služby WCF Data Services)](https://msdn.microsoft.com/en-us/library/ee622463.aspx) na webu MSDN.
+V této části budete zobrazit stručný příklady. Další podrobnosti naleznete v tématu [aspekty LINQ (služby WCF Data Services)](https://msdn.microsoft.com/library/ee622463.aspx) na webu MSDN.
 
 ### <a name="filtering-filter"></a>Filtrování ($filter)
 
@@ -226,7 +226,7 @@ Například `RateProduct` akce má parametr s názvem "Hodnocení" typu `Int32` 
 
 [!code-csharp[Main](calling-an-odata-service-from-a-net-client/samples/sample24.cs)]
 
-Další informace najdete v tématu[volání operací služby a akce](https://msdn.microsoft.com/en-us/library/hh230677.aspx).
+Další informace najdete v tématu[volání operací služby a akce](https://msdn.microsoft.com/library/hh230677.aspx).
 
 Jednou z možností je rozšířit **kontejneru** třída zajistit silného typu metodu, která vyvolá akci:
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: d273eb5e99da6c6b7678e03b1a8973041113744c
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 86887f0dafa31ff3eb6597284c469c4b3053b6b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-view"></a>Přidání zobrazení
 ====================
@@ -29,7 +29,7 @@ Aktuálně `Index` metoda vrátí řetězec s zprávu, která je pevně zakódov
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs?highlight=1,3)]
 
-`Index` Metody popsané výše používá šablonu zobrazení pro generování odpovědi HTML do prohlížeče. Metody kontroleru (také označované jako [metody akce](http://rachelappel.com/asp.net-mvc-actionresults-explained)), například `Index` metody popsané výše, obecně vrátit [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (nebo třídy odvozené od [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx)), není primitivní typy, jako řetězec.
+`Index` Metody popsané výše používá šablonu zobrazení pro generování odpovědi HTML do prohlížeče. Metody kontroleru (také označované jako [metody akce](http://rachelappel.com/asp.net-mvc-actionresults-explained)), například `Index` metody popsané výše, obecně vrátit [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (nebo třídy odvozené od [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx)), není primitivní typy, jako řetězec.
 
 Klikněte pravým tlačítkem *Views\HelloWorld* složky a klikněte na tlačítko **přidat**, pak klikněte na tlačítko **stránka zobrazení MVC 5 s rozložením (Razor)**.
   
@@ -73,7 +73,7 @@ První, kterou chcete změnit &quot;název aplikace&quot; odkaz v horní části
 
 Šablony rozložení umožňují zadat rozložení kontejneru HTML vašeho webu na jednom místě a pak ho použít na více stránkách ve vaší lokalitě. Najít `@RenderBody()` řádku. `RenderBody`je zástupný symbol kde všechny na zobrazení konkrétní stránky, můžete vytvořit zobrazení, &quot;zabalené&quot; na stránce rozložení. Například, pokud jste vybrali **o** odkaz, *Views\Home\About.cshtml* zobrazení vykresleno uvnitř `RenderBody` metoda.
 
-Změňte obsah elementu název. Změna [ActionLink](https://msdn.microsoft.com/en-us/library/dd504972(v=vs.108).aspx) v šabloně rozložení z &quot;název aplikace&quot; k &quot;MVC film&quot; a kontroler, z `Home` k `Movies`. Dokončení rozložení souboru je zobrazena níže:
+Změňte obsah elementu název. Změna [ActionLink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx) v šabloně rozložení z &quot;název aplikace&quot; k &quot;MVC film&quot; a kontroler, z `Home` k `Movies`. Dokončení rozložení souboru je zobrazena níže:
 
 [!code-cshtml[Main](adding-a-view/samples/sample3.cshtml?highlight=6,20)]
 
@@ -85,7 +85,7 @@ Když jsme nejdřív vytvořili *Views\HelloWorld\Index.cshtml* souboru obsahuje
 
 [!code-cshtml[Main](adding-a-view/samples/sample4.cshtml)]
 
-Kódu Razor výše je výslovně nastavení ke stránce rozložení. Zkontrolujte *zobrazení\\soubor _ViewStart.cshtml* souboru, obsahuje kód přesně stejnou Razor.  *[Zobrazení\\soubor _ViewStart.cshtml](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)*  soubor definuje běžné rozložení, který bude používat všechna zobrazení, proto můžete okomentovat out nebo odeberte tento kód z *Views\HelloWorld\ Index.cshtml* souboru.
+Kódu Razor výše je výslovně nastavení ke stránce rozložení. Zkontrolujte *zobrazení\\soubor _ViewStart.cshtml* souboru, obsahuje kód přesně stejnou Razor. *[Zobrazení\\soubor _ViewStart.cshtml](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)*  soubor definuje běžné rozložení, který bude používat všechna zobrazení, proto můžete okomentovat out nebo odeberte tento kód z *Views\HelloWorld\ Index.cshtml* souboru.
 
 [!code-cshtml[Main](adding-a-view/samples/sample5.cshtml?highlight=1-3)]
 
@@ -93,7 +93,7 @@ Můžete použít `Layout` vlastnost nastavit různé rozložení zobrazení, ne
 
 Nyní změňte název zobrazení pro Index.
 
-Otevřete *MvcMovie\Views\HelloWorld\Index.cshtml*. Existují dvě místa změnit: nejdřív, zobrazí se text v názvu prohlížeče a pak v hlavičce sekundární ( `<h2>` element). Budete je provedete mírně lišit, abyste viděli, které bit kódu změní kterou částí aplikace.
+Open *MvcMovie\Views\HelloWorld\Index.cshtml*. Existují dvě místa změnit: nejdřív, zobrazí se text v názvu prohlížeče a pak v hlavičce sekundární ( `<h2>` element). Budete je provedete mírně lišit, abyste viděli, které bit kódu změní kterou částí aplikace.
 
 [!code-cshtml[Main](adding-a-view/samples/sample6.cshtml?highlight=2,5)]
 

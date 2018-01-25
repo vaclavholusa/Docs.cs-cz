@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 3d6cc52f7fa3089f30f1a6bbd76593f1eca95009
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 85276377671b96e65406639c8584d9ebf8d77ff7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>Pokročilé Entity Framework 6 scénáře pro aplikaci MVC 5 Web (12 12)
 ====================
@@ -44,7 +44,7 @@ Kurz představuje několik témat s stručné úvodní informace a odkazy na pro
 
 Tento kurz obsahuje následující oddíly:
 
-- [Souhrn](#summary)
+- [Shrnutí](#summary)
 - [Potvrzování](#acknowledgments)
 - [Poznámka o jazyka Visual Basic](#vb)
 - [Běžné chyby a řešení či alternativní řešení pro ně](#errors)
@@ -58,9 +58,9 @@ Pro většinu těchto témat bude fungovat s stránek, které jste už vytvořil
 
 První rozhraní API sady Entity Framework kód obsahuje metody, které vám umožní předat příkazy SQL přímo do databáze. Máte následující možnosti:
 
-- Použití [DbSet.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset.sqlquery.aspx) metoda pro dotazy, které vracejí typy entit. Vrácených objektů musí být na typ očekávaný `DbSet` objektu a jsou automaticky sledovány objektem kontext databáze není-li vypnout sledování. (Najdete v následující části [AsNoTracking](https://msdn.microsoft.com/en-us/library/system.data.entity.dbextensions.asnotracking.aspx) metoda.)
-- Použití [Database.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.database.sqlquery.aspx) metoda pro dotazy, které návratové typy, které nejsou entity. Vrácená data není sledována kontext databáze, i když používáte tuto metodu pro načtení typů entit.
-- Použití [Database.ExecuteSqlCommand](https://msdn.microsoft.com/en-us/library/gg679456.aspx) pro příkazy nejsou dotazem.
+- Použití [DbSet.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.dbset.sqlquery.aspx) metoda pro dotazy, které vracejí typy entit. Vrácených objektů musí být na typ očekávaný `DbSet` objektu a jsou automaticky sledovány objektem kontext databáze není-li vypnout sledování. (Najdete v následující části [AsNoTracking](https://msdn.microsoft.com/library/system.data.entity.dbextensions.asnotracking.aspx) metoda.)
+- Použití [Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery.aspx) metoda pro dotazy, které návratové typy, které nejsou entity. Vrácená data není sledována kontext databáze, i když používáte tuto metodu pro načtení typů entit.
+- Použití [Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456.aspx) pro příkazy nejsou dotazem.
 
 Jednou z výhod použití rozhraní Entity Framework je, že zabraňuje příkazů kódu příliš úzce na konkrétní metodu ukládání dat. Dělá to pomocí generování SQL dotazy a příkazy, které také s není pro zápis sami. Ale existují výjimečných scénáře, kdy budete muset spustit konkrétní dotazy SQL, které jste vytvořili ručně a tyto metody umožňují vám zpracovávat takové výjimky.
 
@@ -68,7 +68,7 @@ Jak platí vždy při spuštění příkazů SQL ve webové aplikaci, je nutné 
 
 ### <a name="calling-a-query-that-returns-entities"></a>Volání metody dotazu, který vrací entity
 
-[DbSet&lt;TEntity&gt; ](https://msdn.microsoft.com/en-us/library/gg696460.aspx) třída poskytuje metodu, která můžete použít k provedení dotazu, který vrací entity typu `TEntity`. Pokud chcete zobrazit, jak to funguje můžete budete změnit kód v `Details` metodu `Department` řadiče.
+[DbSet&lt;TEntity&gt; ](https://msdn.microsoft.com/library/gg696460.aspx) třída poskytuje metodu, která můžete použít k provedení dotazu, který vrací entity typu `TEntity`. Pokud chcete zobrazit, jak to funguje můžete budete změnit kód v `Details` metodu `Department` řadiče.
 
 V *DepartmentController.cs*v `Details` metoda, nahraďte `db.Departments.FindAsync` volání metody s `db.Departments.SqlQuery` volání metody, jak je znázorněno v následující zvýrazněný kód:
 
@@ -84,7 +84,7 @@ Dříve jste vytvořili mřížka student statistiky o stránky, která vám uk�
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample2.cs)]
 
-Předpokládejme, že chcete napsat kód, který načte tato data přímo v SQL, nikoli pomocí LINQ. Pokud chcete provést, že budete muset spustit dotaz, který vrátí něco jiného než entity objektů, což znamená, že musíte použít [Database.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.database.sqlquery(v=VS.103).aspx) metoda.
+Předpokládejme, že chcete napsat kód, který načte tato data přímo v SQL, nikoli pomocí LINQ. Pokud chcete provést, že budete muset spustit dotaz, který vrátí něco jiného než entity objektů, což znamená, že musíte použít [Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery(v=VS.103).aspx) metoda.
 
 V *HomeController.cs*, nahraďte příkaz LINQ v `About` metoda s příkazem SQL, jak je znázorněno v následující zvýrazněný kód:
 
@@ -130,19 +130,19 @@ Klikněte na tlačítko **zpět do seznamu** zobrazíte seznam kurzy revidovaný
 
 ![Courses_Index_page_showing_revised_credits](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image9.png)
 
-Další informace o nezpracovanou dotazy SQL najdete v tématu [nezpracovaná dotazy SQL](https://msdn.microsoft.com/en-us/data/jj592907) na webu MSDN.
+Další informace o nezpracovanou dotazy SQL najdete v tématu [nezpracovaná dotazy SQL](https://msdn.microsoft.com/data/jj592907) na webu MSDN.
 
 <a id="notracking"></a>
 ## <a name="no-tracking-queries"></a>Ne sledování dotazy
 
 Když kontext databáze načítá řádky tabulky, vytvoří objekty entity, které představují je ve výchozím nastavení se uchovává informace o jestli entity v paměti jsou synchronizované s co je v databázi. Data v paměti funguje jako mezipaměť a používá se při aktualizaci entity. Toto použití mezipaměti se často nepotřebné ve webové aplikaci protože kontextu instance jsou obvykle krátkodobou (nový jeden se vytvoří a uvolnění pro každý požadavek) a objektem context, který čte entitu je obvykle zveřejněn. před použitím dané entity znovu.
 
-Sledování objekty entity v paměti můžete zakázat pomocí [AsNoTracking](https://msdn.microsoft.com/en-us/library/gg679352(v=vs.103).aspx) metoda. Typické scénáře, ve kterých můžete chtít udělat, patří:
+Sledování objekty entity v paměti můžete zakázat pomocí [AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx) metoda. Typické scénáře, ve kterých můžete chtít udělat, patří:
 
 - Dotaz načte velkého objemu dat, která vypnutí sledování může výrazně zvýšit výkon.
 - Chcete připojit entity aktualizujte ji, ale jste dříve získali stejné entity pro jiný účel. Vzhledem k tomu, že entita je již sledován kontext databáze, nemůžete připojit entity, který chcete změnit. Jedním ze způsobů ke zpracování této situace je použít `AsNoTracking` možnost s dřívější dotazu.
 
-Pro příklad, který ukazuje, jak používat [AsNoTracking](https://msdn.microsoft.com/en-us/library/gg679352(v=vs.103).aspx) metodu, najdete v části [starší verze tohoto kurzu](../../older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md). Tato verze kurzu nenastavil příznak změněné u entity vytvořené vazače modelu v metodě úpravy, nepotřebuje `AsNoTracking`.
+Pro příklad, který ukazuje, jak používat [AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx) metodu, najdete v části [starší verze tohoto kurzu](../../older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md). Tato verze kurzu nenastavil příznak změněné u entity vytvořené vazače modelu v metodě úpravy, nepotřebuje `AsNoTracking`.
 
 <a id="sql"></a>
 ## <a name="examining-sql-sent-to-the-database"></a>Zkoumání SQL odeslal do databáze
@@ -204,8 +204,8 @@ Celá řada vývojářů napsat kód pro implementaci úložiště a jednotky pr
 Další informace o tom, jak implementovat úložiště a jednotky pracovních vzorů najdete v tématu [verze Entity Framework 5 tohoto kurzu řady](../../older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md). Informace o způsoby, jak implementovat TDD na Entity Framework 6 najdete v následujících zdrojích informací:
 
 - [Jak EF6 umožňuje Mocking DbSets snadněji](http://thedatafarm.com/data-access/how-ef6-enables-mocking-dbsets-more-easily/)
-- [Testování s mocking framework](https://msdn.microsoft.com/en-us/data/dn314429)
-- [Testování s vlastními testovací hodnoty Double](https://msdn.microsoft.com/en-us/data/dn314431)
+- [Testování s mocking framework](https://msdn.microsoft.com/data/dn314429)
+- [Testování s vlastními testovací hodnoty Double](https://msdn.microsoft.com/data/dn314431)
 
 <a id="proxies"></a>
 ## <a name="proxy-classes"></a>Třídy proxy
@@ -220,11 +220,11 @@ Tato třída proxy serveru přepíše některé virtuální vlastnosti entity, k
 
 Ve většině případů nemusíte mít na paměti toto použití proxy, ale existují výjimky:
 
-- V některých případech můžete chtít zabránit ve vytváření instancí proxy rozhraní Entity Framework. Například pokud jste serializaci entity obecně chcete třídy objektů POCO, není třídy proxy serveru. Jedním ze způsobů se chcete vyhnout potížím serializace je serializovat objekty přenos dat (DTOs) namísto objekty entity, jak je znázorněno [pomocí webového rozhraní API s platformou Entity Framework](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-1.md) kurzu. Dalším způsobem je [zakázat vytvoření proxy](https://msdn.microsoft.com/en-US/data/jj592886.aspx).
-- Když vytváříte instance třídy entity pomocí `new` operátor, neobdržíte její instance. To znamená, že funkce není dostupná, jako je opožděného načítání a automatické sledování změn. Obvykle je to v pořádku; obecně nepotřebujete opožděného načítání, protože vytváříte nové entity, který není v databázi, a obecně nepotřebujete sledování, pokud jste explicitní označení entity jako změn `Added`. Ale pokud potřebujete opožděného načítání a potřebujete sledování změn, můžete vytvořit nové instance entity s proxy pomocí [vytvořit](https://msdn.microsoft.com/en-us/library/gg679504.aspx) metodu `DbSet` – třída.
-- Můžete chtít získat skutečný typ entity z typu proxy serveru. Můžete použít [Metoda GetObjectType](https://msdn.microsoft.com/en-us/library/system.data.objects.objectcontext.getobjecttype.aspx) metodu `ObjectContext` třídy pro získání skutečný typ entity instance typu proxy serveru.
+- V některých případech můžete chtít zabránit ve vytváření instancí proxy rozhraní Entity Framework. Například pokud jste serializaci entity obecně chcete třídy objektů POCO, není třídy proxy serveru. Jedním ze způsobů se chcete vyhnout potížím serializace je serializovat objekty přenos dat (DTOs) namísto objekty entity, jak je znázorněno [pomocí webového rozhraní API s platformou Entity Framework](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-1.md) kurzu. Dalším způsobem je [zakázat vytvoření proxy](https://msdn.microsoft.com/data/jj592886.aspx).
+- Když vytváříte instance třídy entity pomocí `new` operátor, neobdržíte její instance. To znamená, že funkce není dostupná, jako je opožděného načítání a automatické sledování změn. Obvykle je to v pořádku; obecně nepotřebujete opožděného načítání, protože vytváříte nové entity, který není v databázi, a obecně nepotřebujete sledování, pokud jste explicitní označení entity jako změn `Added`. Ale pokud potřebujete opožděného načítání a potřebujete sledování změn, můžete vytvořit nové instance entity s proxy pomocí [vytvořit](https://msdn.microsoft.com/library/gg679504.aspx) metodu `DbSet` – třída.
+- Můžete chtít získat skutečný typ entity z typu proxy serveru. Můžete použít [Metoda GetObjectType](https://msdn.microsoft.com/library/system.data.objects.objectcontext.getobjecttype.aspx) metodu `ObjectContext` třídy pro získání skutečný typ entity instance typu proxy serveru.
 
-Další informace najdete v tématu [práce s proxy](https://msdn.microsoft.com/en-us/data/JJ592886.aspx) na webu MSDN.
+Další informace najdete v tématu [práce s proxy](https://msdn.microsoft.com/data/JJ592886.aspx) na webu MSDN.
 
 <a id="changedetection"></a>
 ## <a name="automatic-change-detection"></a>Detekce automatických změn
@@ -241,12 +241,12 @@ Rozhraní Entity Framework Určuje, jak došlo ke změně entity (a proto aktual
 - `DbContext.Entry`
 - `DbChangeTracker.Entries`
 
-Pokud sledujete velký počet entit a jednu z těchto metod zavoláte mnohokrát ve smyčce, můžete dosáhnout výrazné vylepšení výkonu dočasně vypnout pomocí zjišťování automatické změny [AutoDetectChangesEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled.aspx) vlastnost. Další informace najdete v tématu [automaticky detekovat změny](https://msdn.microsoft.com/en-us/data/jj556205) na webu MSDN.
+Pokud sledujete velký počet entit a jednu z těchto metod zavoláte mnohokrát ve smyčce, můžete dosáhnout výrazné vylepšení výkonu dočasně vypnout pomocí zjišťování automatické změny [AutoDetectChangesEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled.aspx) vlastnost. Další informace najdete v tématu [automaticky detekovat změny](https://msdn.microsoft.com/data/jj556205) na webu MSDN.
 
 <a id="validation"></a>
 ## <a name="automatic-validation"></a>Automatické ověření
 
-Při volání `SaveChanges` metoda, ve výchozím nastavení rozhraní Entity Framework ověří data v všechny vlastnosti všech změněných entit před aktualizací databáze. Pokud jste aktualizovali velký počet entit a jste již zkontrolujete, data, tento pracovní není nutný, a můžete dokonce vytvářet proces ukládání změn trvat méně času můžete dočasně vypnout ověření. Můžete to, že pomocí [ValidateOnSaveEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled.aspx) vlastnost. Další informace najdete v tématu [ověření](https://msdn.microsoft.com/en-us/data/gg193959) na webu MSDN.
+Při volání `SaveChanges` metoda, ve výchozím nastavení rozhraní Entity Framework ověří data v všechny vlastnosti všech změněných entit před aktualizací databáze. Pokud jste aktualizovali velký počet entit a jste již zkontrolujete, data, tento pracovní není nutný, a můžete dokonce vytvářet proces ukládání změn trvat méně času můžete dočasně vypnout ověření. Můžete to, že pomocí [ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled.aspx) vlastnost. Další informace najdete v tématu [ověření](https://msdn.microsoft.com/data/gg193959) na webu MSDN.
 
 <a id="tools"></a>
 ## <a name="entity-framework-power-tools"></a>Výkonné nástroje Entity Framework
@@ -267,7 +267,7 @@ I když zdrojový kód je otevřená, rozhraní Entity Framework plně podporova
 <a id="summary"></a>
 ## <a name="summary"></a>Souhrn
 
-Dokončení této série kurzů na používající rozhraní Entity Framework v aplikaci ASP.NET MVC. Další informace o tom, jak pracovat s daty pomocí rozhraní Entity Framework najdete v tématu [EF stránky dokumentace na webu MSDN](https://msdn.microsoft.com/en-us/data/ee712907) a [přístup k datům ASP.NET - doporučené prostředky](../../../../whitepapers/aspnet-data-access-content-map.md).
+Dokončení této série kurzů na používající rozhraní Entity Framework v aplikaci ASP.NET MVC. Další informace o tom, jak pracovat s daty pomocí rozhraní Entity Framework najdete v tématu [EF stránky dokumentace na webu MSDN](https://msdn.microsoft.com/data/ee712907) a [přístup k datům ASP.NET - doporučené prostředky](../../../../whitepapers/aspnet-data-access-content-map.md).
 
 Další informace o tom, jak nasadit webovou aplikaci, až když jste sestavili najdete v tématu [nasazení webu ASP.NET - doporučené prostředky](../../../../whitepapers/aspnet-web-deployment-content-map.md) v knihovně MSDN.
 
@@ -281,7 +281,7 @@ Informace o dalších témat souvisejících s MVC, jako je například ověřov
 - [Rowan Lukeš](http://www.romiller.com) a ostatní členové týmu rozhraní Entity Framework asistované s recenze kódu a pomohl ladění mnohé problémy s migrací, které vznikly při byly aktualizujeme kurz pro EF 5 a EF 6.
 
 <a id="vb"></a>
-## <a name="vb"></a>JAZYKA VISUAL BASIC
+## <a name="vb"></a>VB
 
 Tento kurz bylo původně vytvořeno pro EF 4.1, jsme k dispozici jak C# a VB verzích dokončené stažení projektu. Z důvodu omezení čas a dalších priority jsme neučinili, pro tuto verzi. Pokud sestavení projektu jazyka Visual Basic, pomocí tyto kurzy a by chtěl který sdílet s ostatními, dejte nám vědět.
 
@@ -325,7 +325,7 @@ Jednou z příčin tohoto problému je chyby ověření při `Seed` metoda spust
 
 Chybová zpráva:
 
-> Chyba protokolu HTTP 500.19 – vnitřní chyba serveru  
+> HTTP Error 500.19 - Internal Server Error  
 > K požadované stránce nelze přistupovat, protože související konfigurační data pro stránku nejsou platná.
 
 

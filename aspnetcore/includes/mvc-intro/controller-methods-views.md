@@ -9,7 +9,7 @@ Vyhledejte `Movies` řadiče a podržte ukazatel myši nad **upravit** odkaz zob
 
 [!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexOriginal.cshtml?highlight=1-3&range=46-50)]
 
-[Značka pomocné rutiny](xref:mvc/views/tag-helpers/intro) povolit kódu na straně serveru k účasti ve vytváření a vykreslení elementů HTML v souborech Razor. Ve výše, kódu `AnchorTagHelper` dynamicky vygeneruje HTML `href` hodnota atributu z id metoda a směrování akce kontroleru. Používáte **zobrazit zdroj** z oblíbeném prohlížeči nebo použijte nástrojů pro vývojáře prozkoumat vygenerovaný kód. Část generovaný kód jazyka HTML, je zobrazena níže:
+[Pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) umožňují, aby se kód na straně serveru v souborech Razor podílel na vytváření a vykreslování prvků HTML. Ve výše, kódu `AnchorTagHelper` dynamicky vygeneruje HTML `href` hodnota atributu z id metoda a směrování akce kontroleru. Používáte **zobrazit zdroj** z oblíbeném prohlížeči nebo použijte nástrojů pro vývojáře prozkoumat vygenerovaný kód. Část generovaný kód jazyka HTML, je zobrazena níže:
 
 ```html
  <td>
@@ -88,7 +88,7 @@ Všechny `HttpGet` metody v kontroleru film podle podobný Princip. Získají ob
 * [Globalizace a lokalizace](xref:fundamentals/localization)
 * [Úvod do pomocné rutiny značky](xref:mvc/views/tag-helpers/intro)
 * [Vytváření Pomocníci značky](xref:mvc/views/tag-helpers/authoring)
-* [Žádost o proti padělání](xref:security/anti-request-forgery)
+* [Ochrana proti padělání požadavků](xref:security/anti-request-forgery)
 * Chránit řadiči z [typu overpost](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application)
 * [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/)
 * [Pomocník značku formuláře](xref:mvc/views/working-with-forms)

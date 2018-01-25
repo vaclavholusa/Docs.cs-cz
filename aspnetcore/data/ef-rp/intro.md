@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: bea3b12ebe476c4b59abe117393b0ec8bb7f0306
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6d36c0f0cabaf99195470a212091bd5e35c8eb30
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Začínáme s stránky Razor a Entity Framework Core pomocí sady Visual Studio (1 8)
 
@@ -271,7 +271,7 @@ Sestavte projekt. Sestavení generuje chyby takto:
  <a name="test"></a>
 ### <a name="test-the-app"></a>Testování aplikace
 
-Spusťte aplikaci a vyberte **studenty** odkaz. V závislosti na šířku prohlížeče **studenty** se zobrazí v horní části stránky. Pokud **studenty** odkaz se nezobrazuje, klikněte na ikonu Navigace v pravém horním rohu.
+Spusťte aplikaci a vyberte **studenty** odkaz. V závislosti na šířku prohlížeče **studenty** se zobrazí v horní části stránky. Pokud **studenty** odkaz není viditelný, klikněte na ikonu Navigace v pravém horním rohu.
 
 ![Domovská stránka Contoso univerzity úzké](intro/_static/home-page-narrow.png)
 
@@ -337,9 +337,9 @@ V následujícím kódu `async` – klíčové slovo, `Task<T>` vrátit hodnotu,
 
 Třeba mít na paměti při zápisu asynchronní kód, který používá základní EF několik věcí:
 
-* Pouze příkazy, které způsobily dotazy nebo příkazy k odeslání do databáze se spustí asynchronně. Zahrnující, `ToListAsync`, `SingleOrDefaultAsync`, `FirstOrDefaultAsync`, a `SaveChangesAsync`. Nezahrnuje příkazy, které právě změnit `IQueryable`, jako například `var students = context.Students.Where(s => s.LastName == "Davolio")`.
+* Pouze příkazy, které způsobily dotazy nebo příkazy k odeslání do databáze se spustí asynchronně. Zahrnující, `ToListAsync`, `SingleOrDefaultAsync`, `FirstOrDefaultAsync`, a `SaveChangesAsync`. Neobsahuje příkazy, které právě změnit `IQueryable`, jako například `var students = context.Students.Where(s => s.LastName == "Davolio")`.
 
-* Kontextu EF jádra není zařazování bezpečné: nemáte pokusí provést více operací paralelně. 
+* Kontextu EF jádra není zaručeno bezpečné používání vláken: nemáte pokusí provést více operací paralelně. 
 
 * Abyste mohli využívat výhod výkonu asynchronní kódu, ověřte, že knihovna balíčky (například pro stránkování) používat asynchronní, pokud volají EF základní metody, které odesílají dotazy do databáze.
 

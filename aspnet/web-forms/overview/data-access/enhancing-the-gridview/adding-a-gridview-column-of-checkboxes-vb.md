@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 326201f9fe9ba5f482308dc8bfd7d2decb9fbd8f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4468f7e0c142fa432e58d4c686dd79d3b38612ad
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-gridview-column-of-checkboxes-vb"></a>Přidat sloupec GridView všech políček (VB)
 ====================
@@ -100,7 +100,7 @@ Každý řádek s TemplateField a zaškrtávací políčko webové ovládací pr
 
 V tuto chvíli nemáme sloupec zaškrtávací políčka, ale žádný způsob, jak zjistit, jaké zaškrtávací políčka zaškrtnuty na zpětné volání. Při kliknutí na tlačítko Odstranit vybrané produkty, ale je potřeba vědět, jaké zaškrtávací políčka zaškrtnuty Chcete-li odstranit tyto produkty.
 
-Rutina GridView s [ `Rows` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows.aspx) poskytuje přístup k řádky dat v GridView. Jsme iterace tyto řádky prostřednictvím kódu programu přistupovat ovládacího prvku CheckBox a poté se podívejte jeho `Checked` vlastnosti k určení, zda bylo zaškrtnuto políčko.
+Rutina GridView s [ `Rows` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows.aspx) poskytuje přístup k řádky dat v GridView. Jsme iterace tyto řádky prostřednictvím kódu programu přistupovat ovládacího prvku CheckBox a poté se podívejte jeho `Checked` vlastnosti k určení, zda bylo zaškrtnuto políčko.
 
 Vytvoření obslužné rutiny událostí `DeleteSelectedProducts` ovládací prvek tlačítko webu s `Click` událostí a přidejte následující kód:
 

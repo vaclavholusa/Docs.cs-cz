@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 2c49e7f6925b1ca172642747c5052ba97d70d036
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: abd3f3f78dd9a9e6394e2f61aa9bd692810ca875
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do produkčního prostředí
 ====================
@@ -150,7 +150,7 @@ Teď, když jste vytvořili webovou aplikaci a databázi pro pracovní prostřed
     5. Zavřít **konfigurovat aktualizace databáze** dialogové okno.
 10. V části **SchoolContext** v **databáze** vyberte **spustit migrace Code First (spuštěno při spuštění aplikace)**.
 
-    Visual Studio zobrazí **spustit migrace Code First** místo **aktualizace databáze** pro `DbContext` třídy. Pokud chcete použít poskytovatele dbDacFx místo migrace nasazení databáze, které máte přístup k pomocí `DbContext` třídy najdete v tématu [jak nasadit Code First databáze bez migrace?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) v nejčastějších Dotazech webové nasazení pro Visual Studio a ASP.NET na webu MSDN.
+    Visual Studio zobrazí **spustit migrace Code First** místo **aktualizace databáze** pro `DbContext` třídy. Pokud chcete použít poskytovatele dbDacFx místo migrace nasazení databáze, které máte přístup k pomocí `DbContext` třídy najdete v tématu [jak nasadit Code First databáze bez migrace?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) v nejčastějších Dotazech webové nasazení pro Visual Studio a ASP.NET na webu MSDN.
 
     **Nastavení** kartě teď vypadá jako v následujícím příkladu:
 
@@ -193,7 +193,7 @@ Důležitá poznámka pro pracovní aplikace je, že bude za provozu v síti Int
 - Použijte zkomolené adresu URL, které by bylo možné snadno uhodnout.
 - Vytvoření *robots.txt* souboru zajistit, že nebude být z vyhledávacích webů Procházet k němu testovací aplikace a sestava odkazy ve výsledcích hledání.
 
-První z těchto metod je co nejúčinnější, ale není zahrnutý v tomto kurzu, protože by vyžadovaly, která můžete nasadit na cloudové služby Azure místo Azure App Service. Další informace o službách Cloud Services a omezení IP adres v Azure najdete v tématu [možnosti hostování výpočtů poskytované platformou Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) a [bloku IP adres v přístupu k webové Role](https://msdn.microsoft.com/en-us/library/windowsazure/jj154098.aspx). Pokud provádíte nasazení do hostujícího zprostředkovatele třetí strany, obraťte se na poskytovatele a zjistěte, jak implementovat omezení IP adres.
+První z těchto metod je co nejúčinnější, ale není zahrnutý v tomto kurzu, protože by vyžadovaly, která můžete nasadit na cloudové služby Azure místo Azure App Service. Další informace o službách Cloud Services a omezení IP adres v Azure najdete v tématu [možnosti hostování výpočtů poskytované platformou Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) a [bloku IP adres v přístupu k webové Role](https://msdn.microsoft.com/library/windowsazure/jj154098.aspx). Pokud provádíte nasazení do hostujícího zprostředkovatele třetí strany, obraťte se na poskytovatele a zjistěte, jak implementovat omezení IP adres.
 
 V tomto kurzu vytvoříte *robots.txt* souboru.
 
@@ -256,7 +256,7 @@ Ve výchozím nastavení *.pubxml* soubory jsou zahrnuty v projektu, když vytvo
 
 Pro každou *.pubxml* soubor existuje *. pubxml.user* souboru. *. Pubxml.user* soubor obsahuje zašifrované heslo, pokud jste vybrali **uložit heslo** možnost a ve výchozím nastavení je vyloučena z projektu.
 
-A *.pubxml* soubor obsahuje nastavení, které se týkají profil konkrétní publikování. Pokud chcete nakonfigurovat nastavení, které se vztahují na všechny profily, můžete vytvořit *. wpp.targets* souboru. Proces sestavení importuje tyto soubory do *.csproj* nebo *.vbproj* soubor projektu, takže většina nastavení, které můžete nakonfigurovat v souboru projektu se dá nakonfigurovat v těchto souborů. Další informace o *.pubxml* soubory a *. wpp.targets* soubory, najdete v části [postup: Upravit nastavení nasazení v souborech profil publikování (.pubxml) a. wpp.targets souborů v sadě Visual Studio Webové projekty](https://msdn.microsoft.com/en-us/library/ff398069.aspx).
+A *.pubxml* soubor obsahuje nastavení, které se týkají profil konkrétní publikování. Pokud chcete nakonfigurovat nastavení, které se vztahují na všechny profily, můžete vytvořit *. wpp.targets* souboru. Proces sestavení importuje tyto soubory do *.csproj* nebo *.vbproj* soubor projektu, takže většina nastavení, které můžete nakonfigurovat v souboru projektu se dá nakonfigurovat v těchto souborů. Další informace o *.pubxml* soubory a *. wpp.targets* soubory, najdete v části [postup: Upravit nastavení nasazení v souborech profil publikování (.pubxml) a. wpp.targets souborů v sadě Visual Studio Webové projekty](https://msdn.microsoft.com/library/ff398069.aspx).
 
 1. V **Průzkumníku řešení**, rozbalte položku **vlastnosti** a rozbalte **PublishProfiles**.
 2. Klikněte pravým tlačítkem na *Production.pubxml* a klikněte na tlačítko **otevřete**.
@@ -271,7 +271,7 @@ A *.pubxml* soubor obsahuje nastavení, které se týkají profil konkrétní pu
 
     [!code-xml[Main](deploying-to-production/samples/sample4.xml?highlight=18-20)]
 
-    Další informace o tom, jak vyloučit soubory a složky najdete v tématu [můžete vyloučit konkrétní soubory nebo složky z nasazení?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) v **webové nasazení – nejčastější dotazy pro Visual Studio a ASP.NET** na webu MSDN.
+    Další informace o tom, jak vyloučit soubory a složky najdete v tématu [můžete vyloučit konkrétní soubory nebo složky z nasazení?](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) v **webové nasazení – nejčastější dotazy pro Visual Studio a ASP.NET** na webu MSDN.
 
 ### <a name="deploy-to-production"></a>Nasazení do produkčního prostředí
 
@@ -295,7 +295,7 @@ Teď úspěšně nasadit a otestovat vaší webové aplikace a je k dispozici ve
 V dalším kurzu budete aktualizovat kód aplikace a nasazení změn do prostředí testovací, přípravné nebo produkční prostředí.
 
 > [!NOTE]
-> Když aplikaci právě používá v produkčním prostředí by měla implementace plánu obnovení. To znamená můžete by měl být pravidelně zálohování databází z na produkční aplikaci do umístění zabezpečeného úložiště a musí zachovat několika generací takové záloh. Při aktualizaci databáze byste měli vytvořit záložní kopii z bezprostředně před provedením změny. Poté Pokud došlo k chybě a nebudete zjistit až po jeho nasazení do produkčního prostředí, bude stále budete moci obnovit databázi do stavu, ve kterém se nacházel před jeho poškozením. Další informace najdete v tématu [zálohy databáze SQL Azure a obnovení](https://msdn.microsoft.com/en-us/library/windowsazure/jj650016.aspx).
+> Když aplikaci právě používá v produkčním prostředí by měla implementace plánu obnovení. To znamená můžete by měl být pravidelně zálohování databází z na produkční aplikaci do umístění zabezpečeného úložiště a musí zachovat několika generací takové záloh. Při aktualizaci databáze byste měli vytvořit záložní kopii z bezprostředně před provedením změny. Poté Pokud došlo k chybě a nebudete zjistit až po jeho nasazení do produkčního prostředí, bude stále budete moci obnovit databázi do stavu, ve kterém se nacházel před jeho poškozením. Další informace najdete v tématu [zálohy databáze SQL Azure a obnovení](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx).
 
 
 > [!NOTE]

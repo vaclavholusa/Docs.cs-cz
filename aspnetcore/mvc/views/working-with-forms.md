@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9fbe2c5cb495aabee0e1f0bdb3871641efa03599
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9fd51755e1dc9a1dfb9ab5cc4558f7da9475ce32
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Základní informace o použití značky Pomocníci ve formulářích v ASP.NET Core
 
@@ -22,7 +22,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Dave Paquette](https://
 
 Tento dokument ukazuje práci s formuláři a elementů HTML běžně používají na formuláři. HTML [formuláře](https://www.w3.org/TR/html401/interact/forms.html) element poskytuje primární mechanismus webové aplikace využívají k odesílání dat zpět na server. Většina tento dokument popisuje [značky Pomocníci](tag-helpers/intro.md) a jak se vám může pomoct efektivní vytvořit robustní formuláře HTML. Doporučujeme, abyste si přečetli [Úvod do pomocné rutiny značky](tag-helpers/intro.md) před čtením tohoto dokumentu.
 
-V mnoha případech pomocné objekty HTML poskytnout alternativní způsob konkrétní pomocné rutiny značky, ale je důležité vědět, že značka Pomocníci nenahrazují pomocné rutiny HTML a neexistuje žádná značka Pomocník pro každý pomocné rutiny HTML. Pokud existuje alternativu pomocné rutiny HTML, je uvedený.
+V mnoha případech pomocné objekty HTML poskytnout alternativní způsob konkrétní pomocné rutiny značky, ale je důležité vědět, že pomocné rutiny značky není nahradit pomocné rutiny HTML a neexistuje žádná značka Pomocník pro každý pomocné rutiny HTML. Pokud existuje alternativu pomocné rutiny HTML, je uvedený.
 
 <a name="my-asp-route-param-ref-label"></a>
 
@@ -159,7 +159,7 @@ U anotací dat `Email` a `Password` vlastnosti generovat metadata na modelu. Pom
 
 ### <a name="html-helper-alternatives-to-input-tag-helper"></a>Pomocné rutiny HTML alternativy vstupní značka pomocné rutiny
 
-`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` a `Html.EditorFor` překrývajících se funkce s pomocnou rutinou vstupní značka. Pomocné rutiny vstupní značka automaticky nastaví `type` atribut; `Html.TextBox` a `Html.TextBoxFor` nikoli. `Html.Editor`a `Html.EditorFor` zpracování kolekcí, komplexní objekty a šablony; pomocné rutiny vstupní značka neexistuje. Pomocné rutiny vstupní značka, `Html.EditorFor` a `Html.TextBoxFor` jsou silného typu (jejich použití výrazů lambda); `Html.TextBox` a `Html.Editor` nejsou (používají názvy výrazů).
+`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` a `Html.EditorFor` překrývajících se funkce s pomocnou rutinou vstupní značka. Pomocné rutiny vstupní značka automaticky nastaví `type` atribut; `Html.TextBox` a `Html.TextBoxFor` nebude. `Html.Editor`a `Html.EditorFor` zpracování kolekcí, komplexní objekty a šablony; není pomocný vstupní značka. Pomocné rutiny vstupní značka, `Html.EditorFor` a `Html.TextBoxFor` jsou silného typu (jejich použití výrazů lambda); `Html.TextBox` a `Html.Editor` nejsou (používají názvy výrazů).
 
 ### <a name="htmlattributes"></a>HtmlAttributes
 
@@ -436,7 +436,7 @@ Které generuje následující HTML (písmeny "CA" vybraná):
 ```
 
 > [!NOTE]
-> Nedoporučujeme použití `ViewBag` nebo `ViewData` Pomocník vyberte značky. Model zobrazení je robustnější na poskytování metadat MVC a obecně menší problém.
+> Nedoporučujeme používat `ViewBag` nebo `ViewData` Pomocník vyberte značky. Model zobrazení je robustnější na poskytování metadat MVC a obecně menší problém.
 
 `asp-for` Hodnota atributu je zvláštní případ a nevyžaduje `Model` předpony, další atributy do pomocné rutiny značky (například `asp-items`)
 
@@ -549,7 +549,7 @@ Pokud se přistihnete pomocí možnosti "nebyl zadán" na více stránkách, mů
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/CountryViewModel.cshtml)]
 
-Přidání HTML [ \<možnost >](https://www.w3.org/wiki/HTML/Elements/option) elementy není omezeno na *žádná výběru* případu. Například následující metodu zobrazení a akce se generují kód HTML podobně jako výše uvedený kód:
+Přidání HTML [ \<možnost >](https://www.w3.org/wiki/HTML/Elements/option) není omezen na elementy *žádná výběru* případu. Například následující metodu zobrazení a akce se generují kód HTML podobně jako výše uvedený kód:
 
 [!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
 

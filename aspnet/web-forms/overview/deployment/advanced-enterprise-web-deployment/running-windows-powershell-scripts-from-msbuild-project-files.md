@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: 5f6ba0655f5dc1d043b905428a3797ed141b0fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: afee7b0621df42a8bc70fc6f7c4a8fd0383fa83a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>Spuštěné skripty prostředí PowerShell systému Windows ze souborů projektu nástroje MSBuild
 ====================
@@ -137,10 +137,10 @@ Pokud tento cíl je spuštěn jako součást procesu sestavení, spustí příka
 
 ## <a name="executing-a-windows-powershell-script-on-a-remote-computer"></a>Provádění skriptu prostředí Windows PowerShell ve vzdáleném počítači
 
-Prostředí Windows PowerShell je schopen spuštění skriptů na vzdálených počítačích prostřednictvím [Vzdálená správa systému Windows](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx) (WinRM). K tomuto účelu, budete muset použít [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) rutiny. Díky tomu můžete spustit skript na jeden nebo více vzdálených počítačů bez kopírování skript do vzdálených počítačů. Výsledky jsou vráceny do místního počítače, z níž jste spustili skript.
+Prostředí Windows PowerShell je schopen spuštění skriptů na vzdálených počítačích prostřednictvím [Vzdálená správa systému Windows](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx) (WinRM). K tomuto účelu, budete muset použít [Invoke-Command](https://technet.microsoft.com/library/dd347578.aspx) rutiny. Díky tomu můžete spustit skript na jeden nebo více vzdálených počítačů bez kopírování skript do vzdálených počítačů. Výsledky jsou vráceny do místního počítače, z níž jste spustili skript.
 
 > [!NOTE]
-> Před použitím **Invoke-Command** rutiny prostředí Windows PowerShell spuštění skriptů ve vzdáleném počítači, je nutné nakonfigurovat naslouchací proces služby WinRM tak, aby přijímal vzdálená zprávy. To provedete spuštěním příkazu **rychlou konfiguraci winrm** na vzdáleném počítači. Další informace najdete v tématu [instalace a konfigurace pro vzdálenou správu systému Windows](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384372(v=vs.85).aspx).
+> Před použitím **Invoke-Command** rutiny prostředí Windows PowerShell spuštění skriptů ve vzdáleném počítači, je nutné nakonfigurovat naslouchací proces služby WinRM tak, aby přijímal vzdálená zprávy. To provedete spuštěním příkazu **rychlou konfiguraci winrm** na vzdáleném počítači. Další informace najdete v tématu [instalace a konfigurace pro vzdálenou správu systému Windows](https://msdn.microsoft.com/library/windows/desktop/aa384372(v=vs.85).aspx).
 
 
 V okně prostředí Windows PowerShell by tuto syntaxi používají ke spuštění **LogDeploy.ps1** skriptu ve vzdáleném počítači:
@@ -179,7 +179,7 @@ Toto téma popisuje, jak spustit skript prostředí Windows PowerShell ze soubor
 
 ## <a name="further-reading"></a>Další čtení
 
-Informace o podepisování skriptů prostředí Windows PowerShell a správě zásad spouštění, najdete v části [spuštění skriptů prostředí PowerShell systému Windows](https://technet.microsoft.com/en-us/library/ee176949.aspx). Informace o spouštění příkazů prostředí Windows PowerShell ze vzdáleného počítače, najdete v části [spuštění vzdálené příkazy](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+Informace o podepisování skriptů prostředí Windows PowerShell a správě zásad spouštění, najdete v části [spuštění skriptů prostředí PowerShell systému Windows](https://technet.microsoft.com/library/ee176949.aspx). Informace o spouštění příkazů prostředí Windows PowerShell ze vzdáleného počítače, najdete v části [spuštění vzdálené příkazy](https://technet.microsoft.com/library/dd819505.aspx).
 
 Další informace o používání vlastních souborů projektu nástroje MSBuild k řízení procesu nasazení najdete v tématu [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md) a [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md).
 

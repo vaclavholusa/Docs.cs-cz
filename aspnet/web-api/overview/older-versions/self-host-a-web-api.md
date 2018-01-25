@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: b308ee9ec209ba8bbb021827655c83443dd149e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 564f859e73a88ac9c5f27e9b8f7409ec126642f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="self-host-aspnet-web-api-1-c"></a>Hostování na vlastním rozhraní ASP.NET Web API 1 (C#)
 ====================
@@ -43,7 +43,7 @@ V **šablony** podokně, vyberte **nainstalovaných šablonách** a rozbalte **V
 
 ## <a name="set-the-target-framework-visual-studio-2010"></a>Nastavení rozhraní Target Framework (Visual Studio 2010)
 
-Pokud používáte Visual Studio 2010, změňte cílový framework rozhraní .NET Framework 4.0. (Ve výchozím nastavení šablona cíle projektu [profilu rozhraní .net Framework klienta](https://msdn.microsoft.com/en-us/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile).)
+Pokud používáte Visual Studio 2010, změňte cílový framework rozhraní .NET Framework 4.0. (Ve výchozím nastavení šablona cíle projektu [profilu rozhraní .net Framework klienta](https://msdn.microsoft.com/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile).)
 
 V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**. V **cílové rozhraní** rozevíracího seznamu, změňte cílový framework na .NET Framework 4.0. Po zobrazení výzvy na použití změny, klikněte na tlačítko **Ano**.
 
@@ -101,8 +101,8 @@ Další informace o kódu v tomto kontroleru, najdete v článku [Začínáme](.
 | Identifikátor URI | Popis |
 | --- | --- |
 | / api/produkty | Získání seznamu všech produktů. |
-| /API/produkty/*id* | Získání produktu podle ID. |
-| /API/produkty /? kategorie =*kategorie* | Získáte seznam produktů podle kategorie. |
+| /api/products/*id* | Získání produktu podle ID. |
+| /api/products/?category=*category* | Získáte seznam produktů podle kategorie. |
 
 ## <a name="host-the-web-api"></a>Hostitel webové rozhraní API
 

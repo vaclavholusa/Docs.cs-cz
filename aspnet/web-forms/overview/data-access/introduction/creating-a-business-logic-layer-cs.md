@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d117456521442972f1bfcfc15a4e8e7253e07e53
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7518ddd11a05a9e3d5df85e3cf6ceffa09a25060
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-business-logic-layer-c"></a>Vytvoření vrstvy obchodní logiky (C#)
 ====================
@@ -56,7 +56,7 @@ Dále vytvořte čtyři soubory třídy BLL v `BLL` podsložky. K tomu, kliknět
 Dále umožňuje přidání metody do jednotlivých tříd jednoduše zabalit metody definované pro TableAdapters z první kurz. Teď budou tyto metody stačí zavolat přímo do vrstvy DAL; se vrátíme později přidat veškeré potřebné obchodní logiky.
 
 > [!NOTE]
-> Pokud používáte Visual Studio Standard Edition nebo vyšší (to znamená, že *není* pomocí Visual Web Developer), Volitelně můžete navrhnout vaše třídy vizuálně pomocí [návrhář tříd](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dv_vstechart/html/clssdsgnr.asp). Odkazovat [třídu návrháře Blog](https://blogs.msdn.com/classdesigner/default.aspx) Další informace o této nové funkce v sadě Visual Studio.
+> Pokud používáte Visual Studio Standard Edition nebo vyšší (to znamená, že *není* pomocí Visual Web Developer), Volitelně můžete navrhnout vaše třídy vizuálně pomocí [návrhář tříd](https://msdn.microsoft.com/library/default.asp?url=/library/dv_vstechart/html/clssdsgnr.asp). Odkazovat [třídu návrháře Blog](https://blogs.msdn.com/classdesigner/default.aspx) Další informace o této nové funkce v sadě Visual Studio.
 
 
 Pro `ProductsBLL` třída je potřeba přidat celkem sedm metody:
@@ -76,7 +76,7 @@ ProductsBLL.cs
 
 Metody, které jednoduše vrátit data `GetProducts`, `GetProductByProductID`, `GetProductsByCategoryID`, a `GetProductBySuppliersID` jsou přímočará jednoduše volají do vrstvy DAL. Když v některých případech může být obchodní pravidla, které potřebují k implementaci na této úrovni (například na základě aktuálně přihlášeného uživatele nebo roli, do které uživatel patří autorizační pravidla), jednoduše Ponecháme tyto metody jako-je. Pro tyto metody pak BLL slouží pouze jako proxy server, pomocí kterého se přistupuje prezentační vrstvy podkladová data z Data Access Layer.
 
-`AddProduct` a `UpdateProduct` metody jak využít jako parametry hodnoty pro různá pole produktu a přidání nového produktu nebo aktualizaci existující, v uvedeném pořadí. Od řadu `Product` sloupce tabulky může přijmout `NULL` hodnoty (`CategoryID`, `SupplierID`, a `UnitPrice`, a další), ty vstupní parametry pro `AddProduct` a `UpdateProduct` které jsou namapovány na tyto sloupce použijte [typy s možnou hodnotou Null](https://msdn.microsoft.com/en-us/library/1t3y8s4s(v=vs.80).aspx). Typy s možnou hodnotou Null jsou nové pro rozhraní .NET 2.0 a zadejte techniku, pro která udává, zda hodnota typ měli, místo toho se `null`. V jazyce C# můžete příznak typ hodnoty jako typ s možnou hodnotou Null přidáním `?` po typ (například `int? x;`). Odkazovat [typy s možnou hodnotou Null](https://msdn.microsoft.com/en-us/library/1t3y8s4s.aspx) tématu [Průvodce programováním v C#](https://msdn.microsoft.com/en-us/library/67ef8sbd%28VS.80%29.aspx) Další informace.
+`AddProduct` a `UpdateProduct` metody jak využít jako parametry hodnoty pro různá pole produktu a přidání nového produktu nebo aktualizaci existující, v uvedeném pořadí. Od řadu `Product` sloupce tabulky může přijmout `NULL` hodnoty (`CategoryID`, `SupplierID`, a `UnitPrice`, a další), ty vstupní parametry pro `AddProduct` a `UpdateProduct` které jsou namapovány na tyto sloupce použijte [typy s možnou hodnotou Null](https://msdn.microsoft.com/library/1t3y8s4s(v=vs.80).aspx). Typy s možnou hodnotou Null jsou nové pro rozhraní .NET 2.0 a zadejte techniku, pro která udává, zda hodnota typ měli, místo toho se `null`. V jazyce C# můžete příznak typ hodnoty jako typ s možnou hodnotou Null přidáním `?` po typ (například `int? x;`). Odkazovat [typy s možnou hodnotou Null](https://msdn.microsoft.com/library/1t3y8s4s.aspx) tématu [Průvodce programováním v C#](https://msdn.microsoft.com/library/67ef8sbd%28VS.80%29.aspx) Další informace.
 
 Všechny tři metody vrací logickou hodnotu udávající, zda byl řádek vložit, aktualizovat nebo odstranit, protože operaci nemusí mít za následek ovlivněných řádků. Vývojář stránky volá-li například `DeleteProduct` předávání v `ProductID` pro neexistující produkt, `DELETE` prohlášení vydané do databáze bude mít žádný vliv a proto `DeleteProduct` metoda vrátí `false`.
 
@@ -86,7 +86,7 @@ Dále v obou `AddProduct` a `UpdateProduct`, vytvoří kód `ProductsRow` instan
 
 V `UpdateProduct` nám nejdřív načíst v rámci produktu aktualizovat pomocí `GetProductByProductID(productID)`. Když toto se může zdát jako nepotřebné cesty k databázi, bude prokázat smysl v budoucnu návodů, které prozkoumat optimistickou metodu souběžného tuto Navíc cestu. Optimistickou metodu souběžného je technika zajistit, že dva uživatelé, kteří pracují současně na stejná data náhodnému přepsání své změny. Metodou celý záznam také usnadňuje vytvoření metody aktualizace v BLL, který změnit, jenom podmnožinu sloupců DataRow. Když jsme prozkoumat `SuppliersBLL` třída jsme tyto příklady najdete.
 
-Nakonec, Všimněte si, že `ProductsBLL` třída má [DataObject atribut](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataobjectattribute.aspx) na něho použít ( `[System.ComponentModel.DataObject]` syntaxe bezprostředně před Class – příkaz v horní části souboru) a metody mají [ Atributy DataObjectMethodAttribute](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataobjectmethodattribute.aspx). `DataObject` Atribut určí třída jako vhodný pro vytvoření vazby na objekt [ovládacího prvku ObjectDataSource](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx), zatímco `DataObjectMethodAttribute` označuje cílem této metody. Jak jsme budete vidět v budoucích kurzy, technologii ASP.NET 2.0 ObjectDataSource usnadňuje deklarativně přístup k datům z třídy. Chcete-li filtrovat seznam možných třídy k vytvoření vazby ObjectDataSource průvodce, ve výchozím nastavení pouze tyto třídy, které jsou označeny jako `DataObjects` se zobrazují v rozevíracím seznamu v průvodci. `ProductsBLL` Třída bude fungovat stejně dobře bez těchto atributů, ale jejich přidáním usnadňuje práci s v Průvodci ObjectDataSource.
+Nakonec, Všimněte si, že `ProductsBLL` třída má [DataObject atribut](https://msdn.microsoft.com/library/system.componentmodel.dataobjectattribute.aspx) na něho použít ( `[System.ComponentModel.DataObject]` syntaxe bezprostředně před Class – příkaz v horní části souboru) a metody mají [ Atributy DataObjectMethodAttribute](https://msdn.microsoft.com/library/system.componentmodel.dataobjectmethodattribute.aspx). `DataObject` Atribut určí třída jako vhodný pro vytvoření vazby na objekt [ovládacího prvku ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx), zatímco `DataObjectMethodAttribute` označuje cílem této metody. Jak jsme budete vidět v budoucích kurzy, technologii ASP.NET 2.0 ObjectDataSource usnadňuje deklarativně přístup k datům z třídy. Chcete-li filtrovat seznam možných třídy k vytvoření vazby ObjectDataSource průvodce, ve výchozím nastavení pouze tyto třídy, které jsou označeny jako `DataObjects` se zobrazují v rozevíracím seznamu v průvodci. `ProductsBLL` Třída bude fungovat stejně dobře bez těchto atributů, ale jejich přidáním usnadňuje práci s v Průvodci ObjectDataSource.
 
 ## <a name="adding-the-other-classes"></a>Přidávání dalších tříd
 
@@ -144,7 +144,7 @@ Ověření na úrovni pole jsou kontroly, které se vztahují na hodnoty vlastno
 - `ProductID`, `ProductName`, A `Discontinued` jsou povinná pole, ale všechny ostatní pole jsou volitelná
 - `UnitPrice`, `UnitsInStock`, `UnitsOnOrder`, A `ReorderLevel` pole musí být větší než nebo rovna hodnotě nula.
 
-Tato pravidla můžete a by měla být vyjádřena na úrovni databáze. Limitu znak `ProductName` a `QuantityPerUnit` pole jsou zachyceny datové typy těchto sloupců `Products` tabulky (`nvarchar(40)` a `nvarchar(20)`, v uvedeném pořadí). Zda jsou povinné a nepovinné pole jsou vyjádřeny ve sloupci tabulky databáze umožňuje `NULL` s. Čtyři [omezení check](https://msdn.microsoft.com/en-us/library/ms188258.aspx) existují, ujistěte se, že pouze hodnoty větší než nebo rovna hodnotě nula provádět ji do `UnitPrice`, `UnitsInStock`, `UnitsOnOrder`, nebo `ReorderLevel` sloupce.
+Tato pravidla můžete a by měla být vyjádřena na úrovni databáze. Limitu znak `ProductName` a `QuantityPerUnit` pole jsou zachyceny datové typy těchto sloupců `Products` tabulky (`nvarchar(40)` a `nvarchar(20)`, v uvedeném pořadí). Zda jsou povinné a nepovinné pole jsou vyjádřeny ve sloupci tabulky databáze umožňuje `NULL` s. Čtyři [omezení check](https://msdn.microsoft.com/library/ms188258.aspx) existují, ujistěte se, že pouze hodnoty větší než nebo rovna hodnotě nula provádět ji do `UnitPrice`, `UnitsInStock`, `UnitsOnOrder`, nebo `ReorderLevel` sloupce.
 
 Kromě vynucování tato pravidla na databázi by také měly být vynucovat na úrovni datové sady. Ve skutečnosti se pro každý DataTable sadu objektů DataColumns zachytit již délka pole a zda je hodnota požadované nebo volitelné. Pokud chcete zobrazit stávající ověření na úrovni pole automaticky poskytnuty, přejděte na návrháře DataSet, vyberte pole z jednoho z DataTables a potom přejděte do okna vlastností. Jak ukazuje obrázek 4, `QuantityPerUnit` DataColumn v `ProductsDataTable` má maximální délku 20 znaků a povolit `NULL` hodnoty. Pokud jsme pokus o nastavení `ProductsDataRow`na `QuantityPerUnit` vlastnost na hodnotu řetězce, který je delší než 20 znaků `ArgumentException` bude vyvolána.
 
@@ -154,7 +154,7 @@ Kromě vynucování tato pravidla na databázi by také měly být vynucovat na 
 **Obrázek 4**: DataColumn poskytuje základní ověření na úrovni pole ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-business-logic-layer-cs/_static/image8.png))
 
 
-Bohužel jsme nelze zadat rozsah kontroly, jako `UnitPrice` hodnota musí být větší než nebo rovna hodnotě nula prostřednictvím okna Vlastnosti. Chcete-li provést tento typ ověření na úrovni pole, je potřeba vytvořit obslužnou rutinu události pro element DataTable na [columnchanging –](https://msdn.microsoft.com/en-us/library/system.data.datatable.columnchanging%28VS.80%29.aspx) událostí. Jak je uvedeno v [předchozí kurzu](creating-a-data-access-layer-cs.md), datové sady, DataTables a DataRow objekty vytvořené typové datové sady je možné rozšířit pomocí částečné třídy. Touto technikou, můžeme vytvořit `ColumnChanging` obslužné rutiny události pro `ProductsDataTable` třídy. Začněte vytvořením třídy v `App_Code` složku s názvem `ProductsDataTable.ColumnChanging.cs`.
+Bohužel jsme nelze zadat rozsah kontroly, jako `UnitPrice` hodnota musí být větší než nebo rovna hodnotě nula prostřednictvím okna Vlastnosti. Chcete-li provést tento typ ověření na úrovni pole, je potřeba vytvořit obslužnou rutinu události pro element DataTable na [columnchanging –](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx) událostí. Jak je uvedeno v [předchozí kurzu](creating-a-data-access-layer-cs.md), datové sady, DataTables a DataRow objekty vytvořené typové datové sady je možné rozšířit pomocí částečné třídy. Touto technikou, můžeme vytvořit `ColumnChanging` obslužné rutiny události pro `ProductsDataTable` třídy. Začněte vytvořením třídy v `App_Code` složku s názvem `ProductsDataTable.ColumnChanging.cs`.
 
 
 [![Přidejte novou třídu do složky App_Code](creating-a-business-logic-layer-cs/_static/image10.png)](creating-a-business-logic-layer-cs/_static/image9.png)
@@ -188,7 +188,7 @@ K vynucení toto obchodní pravidlo v `UpdateProducts` jsme by měl začínat ko
 
 ## <a name="responding-to-validation-errors-in-the-presentation-tier"></a>Zpracování chyb při ověřování v prezentační vrstvě
 
-Při volání BLL z prezentační vrstvou jsme rozhodnout, zda chcete pokus o zpracování všech výjimek, které může být vyvolána, nebo nechte je bublinový až ASP.NET (který vyvolá `HttpApplication`na `Error` událostí). Ke zpracování výjimky při práci s BLL prostřednictvím kódu programu, můžeme použít [try... catch](https://msdn.microsoft.com/en-us/library/0yd65esw.aspx) bloku, jak ukazuje následující příklad:
+Při volání BLL z prezentační vrstvou jsme rozhodnout, zda chcete pokus o zpracování všech výjimek, které může být vyvolána, nebo nechte je bublinový až ASP.NET (který vyvolá `HttpApplication`na `Error` událostí). Ke zpracování výjimky při práci s BLL prostřednictvím kódu programu, můžeme použít [try... catch](https://msdn.microsoft.com/library/0yd65esw.aspx) bloku, jak ukazuje následující příklad:
 
 
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample7.cs)]

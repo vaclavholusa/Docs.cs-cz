@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e9f2e2d71815a2e8f17d3c505b48b69a23bceb1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7cc487aa5276c601fed632e82d7b6d32d1b53b58
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="precompiling-your-website-vb"></a>Předkompilace webu (VB)
 ====================
@@ -66,12 +66,12 @@ Je možné použít explicitní kompilace s modelem WSP. Části zdrojového kó
 
 ## <a name="precompilation-options"></a>Možnosti předkompilace
 
-Rozhraní .NET Framework se dodává s [nástroje kompilace technologie ASP.NET (`aspnet_compiler.exe`)](https://msdn.microsoft.com/en-us/library/ms229863.aspx) , umožňuje kompilovat zdrojový kód (a i obsah) vytvořené pomocí modelu WSP aplikace ASP.NET. Tento nástroj byla vydána v rozhraní .NET Framework verze 2.0 a je umístěn ve `%WINDIR%\Microsoft.NET\Framework\v2.0.50727` složky; můžete použít z příkazového řádku nebo spustí z Visual Studia prostřednictvím v nabídce sestavení možnost Publikovat Web.
+Rozhraní .NET Framework se dodává s [nástroje kompilace technologie ASP.NET (`aspnet_compiler.exe`)](https://msdn.microsoft.com/library/ms229863.aspx) , umožňuje kompilovat zdrojový kód (a i obsah) vytvořené pomocí modelu WSP aplikace ASP.NET. Tento nástroj byla vydána v rozhraní .NET Framework verze 2.0 a je umístěn ve `%WINDIR%\Microsoft.NET\Framework\v2.0.50727` složky; můžete použít z příkazového řádku nebo spustí z Visual Studia prostřednictvím v nabídce sestavení možnost Publikovat Web.
 
 Kompilace nástroj poskytuje dvě obecné formy kompilace: předkompilaci a předkompilaci pro nasazení na místě. S místní předkompilaci spustíte `aspnet_compiler.exe` nástroj z příkazového řádku a zadejte cestu k virtuálnímu adresáři nebo fyzická cesta webu, který se nachází ve vašem počítači. Nástroj kompilace pak zkompiluje každou stránku ASP.NET v projektu ukládání kompilované verze v `%WINDIR%\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files` složky stejně jako Pokud stránky měl každý byla navštívené poprvé z prohlížeče. Předkompilace v místě urychlit první požadavek provést na nově nasazené stránky ASP.NET na váš web, protože ho nebude runtime z museli provést tento krok. Předkompilace v místě však není užitečná pro většinu hostované weby, protože vyžaduje, že budete moci spouštět programy z webového serveru příkazového řádku. Ve sdíleném hostování prostředí není povolena, tato úroveň přístupu.
 
 > [!NOTE]
-> Další informace o předkompilaci v místě, podívejte se na [postupy: předkompilovat weby technologie ASP.NET](https://msdn.microsoft.com/en-us/library/ms227972.aspx) a [předkompilaci v technologii ASP.NET 2.0](http://www.odetocode.com/Articles/417.aspx).
+> Další informace o předkompilaci v místě, podívejte se na [postupy: předkompilovat weby technologie ASP.NET](https://msdn.microsoft.com/library/ms227972.aspx) a [předkompilaci v technologii ASP.NET 2.0](http://www.odetocode.com/Articles/417.aspx).
 
 
 Místo kompilace stránky na webu na `Temporary ASP.NET Files` složce zkompiluje předkompilaci pro nasazení na stránkách k adresáři dle vlastního výběru a to ve formátu, který lze nasadit do produkčního prostředí.
@@ -107,10 +107,10 @@ Po předkompilace web, přejděte do cílového umístění, které jste zadali 
 **Obrázek 3**: cílové umístění složky pro nasazení obsahuje soubory  
  ([Kliknutím zobrazit obrázek v plné velikosti](precompiling-your-website-vb/_static/image9.png))
 
-Na rozdíl od explicitní kompilace v WAP nevytváří předkompilaci pro proces nasazení jednoho sestavení pro celou lokalitu. Místo toho ji dávek společně několik stránek do každé sestavení. Také zkompiluje `Global.asax` do vlastního sestavení a také všechny třídy v souboru (pokud existuje) `App_Code` složky. Soubory, které mají deklarativní pro technologii ASP.NET webové stránky a uživatelské ovládací prvky, hlavní stránky (`.aspx`, `.ascx`, a `.master` souborů, v uvedeném pořadí) jsou kopírovány jako-je do cílového umístění adresáře. Podobně `Web.config` soubor zkopírován přes, společně s všechny statické soubory, například bitové kopie, tříd CSS a soubory PDF. Více formální popis toho, jak Nástroj kompilace zpracovává různé typy souborů, použijte [souboru zpracování během ASP.NET předkompilaci](https://msdn.microsoft.com/en-us/library/e22s60h9.aspx).
+Na rozdíl od explicitní kompilace v WAP nevytváří předkompilaci pro proces nasazení jednoho sestavení pro celou lokalitu. Místo toho ji dávek společně několik stránek do každé sestavení. Také zkompiluje `Global.asax` do vlastního sestavení a také všechny třídy v souboru (pokud existuje) `App_Code` složky. Soubory, které mají deklarativní pro technologii ASP.NET webové stránky a uživatelské ovládací prvky, hlavní stránky (`.aspx`, `.ascx`, a `.master` souborů, v uvedeném pořadí) jsou kopírovány jako-je do cílového umístění adresáře. Podobně `Web.config` soubor zkopírován přes, společně s všechny statické soubory, například bitové kopie, tříd CSS a soubory PDF. Více formální popis toho, jak Nástroj kompilace zpracovává různé typy souborů, použijte [souboru zpracování během ASP.NET předkompilaci](https://msdn.microsoft.com/library/e22s60h9.aspx).
 
 > [!NOTE]
-> Můžete určit, aby nástroj kompilace vytvořit jedno sestavení na stránky ASP.NET, uživatelský ovládací prvek nebo stránky předlohy zaškrtnutím políčka "Používá fixní pojmenování a jednostránkové sestavení" z dialogového okna Publikovat Web. S každou stránku ASP.NET kompilovat do vlastního sestavení umožňuje jemně odstupňovanou kontrolu nad nasazení. Například pokud aktualizovat jednu webovou stránku ASP.NET a potřebné pro nasazení tato změna, můžete potřebovat pouze nasazení této stránce `.aspx` souborů a přidružené sestavení do produkčního prostředí. Poraďte se [postupy: generování pevných názvů nástrojem kompilace ASP.NET](https://msdn.microsoft.com/en-us/library/ms228040.aspx) Další informace.
+> Můžete určit, aby nástroj kompilace vytvořit jedno sestavení na stránky ASP.NET, uživatelský ovládací prvek nebo stránky předlohy zaškrtnutím políčka "Používá fixní pojmenování a jednostránkové sestavení" z dialogového okna Publikovat Web. S každou stránku ASP.NET kompilovat do vlastního sestavení umožňuje jemně odstupňovanou kontrolu nad nasazení. Například pokud aktualizovat jednu webovou stránku ASP.NET a potřebné pro nasazení tato změna, můžete potřebovat pouze nasazení této stránce `.aspx` souborů a přidružené sestavení do produkčního prostředí. Poraďte se [postupy: generování pevných názvů nástrojem kompilace ASP.NET](https://msdn.microsoft.com/library/ms228040.aspx) Další informace.
 
 
 Cílový adresář umístění také obsahuje soubor, který nebyl součástí předkompilovaných webový projekt, a to `PrecompiledApp.config`. Tento soubor informuje modulem runtime ASP.NET, aby byl předkompilované aplikace a jestli byl předkompilovaných aktualizovat nebo poledne aktualizovat v uživatelském rozhraní.
@@ -185,8 +185,8 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Předkompilace webové stránky ASP.NET](https://msdn.microsoft.com/en-us/library/ms228015.aspx)
-- [CodeBehind a kompilace technologie ASP.NET 2.0](https://msdn.microsoft.com/en-us/magazine/cc163675.aspx)
+- [Předkompilace webové stránky ASP.NET](https://msdn.microsoft.com/library/ms228015.aspx)
+- [CodeBehind a kompilace technologie ASP.NET 2.0](https://msdn.microsoft.com/magazine/cc163675.aspx)
 - [Předkompilaci technologie ASP.NET](http://www.odetocode.com/Articles/417.aspx)
 - [Možnosti předkompilovaných webů technologie ASP.NET](http://www.dotnetperls.com/precompiled)
 

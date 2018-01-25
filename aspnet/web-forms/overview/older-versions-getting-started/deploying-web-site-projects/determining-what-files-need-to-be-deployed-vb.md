@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 44349b09fdc0de8ad6bd241a4c158d6a198e5d01
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aad0d4d4f7db5942c51255c34f36be73ed0e1f2d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="determining-what-files-need-to-be-deployed-vb"></a>Určení soubory musí být nasazené (VB)
 ====================
@@ -43,7 +43,7 @@ Vezměte v úvahu stránku ASP.NET s názvem `Clock.aspx` obsahující ovládac�
 
 Aby modul ASP.NET pro zpracování požadavku pro tuto stránku, část kódu stránky (  *`WebPage`*  `.aspx.vb` souboru) musí být nejprve kompilovány. Tato kompilace může dojít, explicitně nebo automaticky.
 
-Pokud kompilace se stane explicitně pak bude celá aplikace zdrojový kód je zkompilovat do jednoho nebo více sestavení (`.dll` soubory) nachází v aplikačním `Bin` adresáře. Pokud kompilace se stane automaticky pak výsledná automaticky generovaný je sestavení, ve výchozím nastavení, umístit do `Temporary ASP.NET Files` složky, kterou najdete na `%WINDOWS%\Microsoft.NET\Framework\<version>`, i když toto umístění je lze nakonfigurovat [ &lt; kompilace&gt; element](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) v `Web.config`. Explicitní kompilace je nutné provést některé akce pro kompilaci kódu aplikace ASP.NET na sestavení, a tento krok dojde před jejich nasazením. S automatickou kompilaci proces kompilace dojde na webovém serveru při prvním přístupu k prostředku.
+Pokud kompilace se stane explicitně pak bude celá aplikace zdrojový kód je zkompilovat do jednoho nebo více sestavení (`.dll` soubory) nachází v aplikačním `Bin` adresáře. Pokud kompilace se stane automaticky pak výsledná automaticky generovaný je sestavení, ve výchozím nastavení, umístit do `Temporary ASP.NET Files` složky, kterou najdete na `%WINDOWS%\Microsoft.NET\Framework\<version>`, i když toto umístění je lze nakonfigurovat [ &lt; kompilace&gt; element](https://msdn.microsoft.com/library/s10awwz0.aspx) v `Web.config`. Explicitní kompilace je nutné provést některé akce pro kompilaci kódu aplikace ASP.NET na sestavení, a tento krok dojde před jejich nasazením. S automatickou kompilaci proces kompilace dojde na webovém serveru při prvním přístupu k prostředku.
 
 Bez ohledu na to, jaký model kompilace použijete, část značek všech stránek ASP.NET ( `WebPage.aspx` souborů) je nutné zkopírovat do produkčního prostředí. S explicitní kompilace je nutné zkopírovat do sestavení v `Bin` složka, ale není potřeba kopírovat do části kódu na stránkách ASP.NET ( `WebPage.aspx.vb` soubory). S automatickou kompilaci musíte zkopírovat soubory část kódu, aby kód je k dispozici a mohou být zkompilovány automaticky, když je navštívené stránky. Obsahuje části značek každé webové stránky ASP.NET `@Page` direktivy s atributy, které označuje, zda byl již explicitně kompilovat přidružené kódu stránky, nebo jestli vyžaduje sestavují automaticky. V důsledku toho provozním prostředí můžete bezproblémově pracovat se buď kompilace modelu a není potřeba použít speciální nastavení indikující, že se používá explicitní nebo automatické kompilace.
 
@@ -69,7 +69,7 @@ Společnost Microsoft vydala Visual Studio 2005 vyřadit podporu pro model proje
 - Sestavení projektu v sadě Visual Studio nevytváří sestavení v `Bin` adresáře. Místo toho sestavení projektu webu hlásí chyby kompilace.
 - Podpora pro automatickou kompilaci. Webové projekty jsou obvykle nasazují zkopírováním značkami a zdrojový kód do produkčního prostředí, i když kód může být předkompilovaných (explicitní kompilace).
 
-Microsoft obnovená modelu projektu webové aplikace po jeho vydání Visual Studio 2005 Service Pack 1. Visual Web Developer dál však pouze podporovat model webový projekt. Dobrá zpráva je, že toto omezení byl vyřazen s Visual Web Developer 2008 Service Pack 1. Dnes můžete vytvořit aplikace ASP.NET v sadě Visual Studio (a aplikace Visual Web Developer) pomocí modelu projektu webové aplikace nebo model webový projekt. Oba modely mají jejich výhody a nevýhody. Odkazovat na [Úvod do projekty webových aplikací: projekty webových aplikací a porovnávání projekty webů](https://msdn.microsoft.com/en-us/library/aa730880.aspx#wapp_topic5) porovnání obou modelů a se můžete rozhodnout, jaký model projektu nejvhodnější pro vaši situaci.
+Microsoft obnovená modelu projektu webové aplikace po jeho vydání Visual Studio 2005 Service Pack 1. Visual Web Developer dál však pouze podporovat model webový projekt. Dobrá zpráva je, že toto omezení byl vyřazen s Visual Web Developer 2008 Service Pack 1. Dnes můžete vytvořit aplikace ASP.NET v sadě Visual Studio (a aplikace Visual Web Developer) pomocí modelu projektu webové aplikace nebo model webový projekt. Oba modely mají jejich výhody a nevýhody. Odkazovat na [Úvod do projekty webových aplikací: projekty webových aplikací a porovnávání projekty webů](https://msdn.microsoft.com/library/aa730880.aspx#wapp_topic5) porovnání obou modelů a se můžete rozhodnout, jaký model projektu nejvhodnější pro vaši situaci.
 
 ## <a name="exploring-the-sample-web-application"></a>Zkoumání ukázkovou webovou aplikaci
 
@@ -179,15 +179,15 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Přehled kompilace technologie ASP.NET](https://msdn.microsoft.com/en-us/library/ms178466.aspx)
-- [Uživatelské ovládací prvky ASP.NET](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)
+- [Přehled kompilace technologie ASP.NET](https://msdn.microsoft.com/library/ms178466.aspx)
+- [Uživatelské ovládací prvky ASP.NET](https://msdn.microsoft.com/library/y6wb1a0e.aspx)
 - [Zkoumání ASP. Navigace na webu na NET](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
-- [Úvod do projekty webových aplikací](https://msdn.microsoft.com/en-us/library/aa730880.aspx)
+- [Úvod do projekty webových aplikací](https://msdn.microsoft.com/library/aa730880.aspx)
 - [Hlavní stránka kurzy](../master-pages/creating-a-site-wide-layout-using-master-pages-cs.md)
 - [Sdílení kódu mezi stránkami](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/pages/code.aspx)
 - [Použití vlastní základní třída pro třídy kódu stránky ASP.NET](http://aspnet.4guysfromrolla.com/articles/041305-1.aspx)
 - [Systém projektu webu Visual Studio 2005: co je to a proč jsme to udělali?](https://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx)
-- [Návod: Převádění webový projekt na projekt webové aplikace v sadě Visual Studio](https://msdn.microsoft.com/en-us/library/aa983476.aspx)
+- [Návod: Převádění webový projekt na projekt webové aplikace v sadě Visual Studio](https://msdn.microsoft.com/library/aa983476.aspx)
 
 >[!div class="step-by-step"]
 [Předchozí](asp-net-hosting-options-vb.md)

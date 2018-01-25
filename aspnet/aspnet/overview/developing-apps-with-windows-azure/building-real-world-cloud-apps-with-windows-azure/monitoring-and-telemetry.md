@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: dfb0158ec05c890ecf80571d95b22d8c791ba7fc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9baddd1836323385239206a3cf49e5938bbaff58
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Monitorování a Telemetrie (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -41,7 +41,7 @@ Jednou z věcí, které je skvělým o cloudovém prostředí je, že je opravdu
 - [AppDynamics](http://www.appdynamics.com/)
 - [Dynatrace](https://datamarket.azure.com/application/b4011de2-1212-4375-9211-e882766121ff)
 
-Od verze března 2015 [Microsoft Application Insights pro Visual Studio Online](https://azure.microsoft.com/en-us/documentation/articles/app-insights-get-started/) se ještě neuvolní, ale je k dispozici ve verzi preview pro vyzkoušení. [Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) také zahrnuje monitorovací funkce.
+Od verze března 2015 [Microsoft Application Insights pro Visual Studio Online](https://azure.microsoft.com/documentation/articles/app-insights-get-started/) se ještě neuvolní, ale je k dispozici ve verzi preview pro vyzkoušení. [Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) také zahrnuje monitorovací funkce.
 
 Rychle projdeme nastavení zobrazit, jak snadno může být použít systém telemetrie New Relic.
 
@@ -156,13 +156,13 @@ Důrazně doporučujeme, že napíšete protokolu pokaždé, když vaše aplikac
 
 Co doporučujeme, abyste ve chvíli, kdy vytvořit produkční aplikace je vytvořit jednoduchou *objektu ILogger* rozhraní a přilepit některé metody v ní. To usnadňuje implementace protokolování později změnit a nemusí být absolvovat celý kód to udělat. Může být používáme `System.Diagnostics.Trace` třídy v celé aplikaci opravit, ale místo toho jsme se používá v pozadí v třídě protokolování, který implementuje *objektu ILogger*, a ujistěte se, jsme *objektu ILogger* metoda volá v průběhu aplikace.
 
-Tímto způsobem, pokud někdy budete chtít zkontrolujte vaše protokolování bohatší, můžete nahradit [ `System.Diagnostics.Trace` ](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio#apptracelogs) s jakýmkoli protokolování chcete. Například s růstem aplikace můžete se rozhodnout, kterou chcete použít komplexnější balíček protokolování, jako [NLog](http://nlog-project.org/) nebo [blokem protokolování aplikace aplikace Enterprise knihovny](https://msdn.microsoft.com/en-us/library/dn440731(v=pandp.60).aspx). ([Log4Net](http://logging.apache.org/log4net/) je jiný oblíbených protokolování framework, ale neprovádí asynchronní protokolování.)
+Tímto způsobem, pokud někdy budete chtít zkontrolujte vaše protokolování bohatší, můžete nahradit [ `System.Diagnostics.Trace` ](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio#apptracelogs) s jakýmkoli protokolování chcete. Například s růstem aplikace můžete se rozhodnout, kterou chcete použít komplexnější balíček protokolování, jako [NLog](http://nlog-project.org/) nebo [blokem protokolování aplikace aplikace Enterprise knihovny](https://msdn.microsoft.com/library/dn440731(v=pandp.60).aspx). ([Log4Net](http://logging.apache.org/log4net/) je jiný oblíbených protokolování framework, ale neprovádí asynchronní protokolování.)
 
 Jedním z možných důvodů pro používání rozhraní například NLog je usnadnit dělení protokolování výstup do samostatné vysoký počet a citlivých dat úložiště. Který umožňuje efektivně ukládat velké objemy dat INFORMUJTE, který nemusíte spouštět rychlé dotazy na, při zachování rychlý přístup k datům Application Compatibility Toolkit.
 
 ### <a name="semantic-logging"></a>Sémantické protokolování
 
-Relativně nové způsob, jak provést protokolování, jejichž výsledkem mohou být užitečnější diagnostické informace, najdete v části [Enterprise knihovny sémantické protokolování aplikace blok (SLAB)](http://convective.wordpress.com/2013/08/12/semantic-logging-application-block-slab/). Používá SLAB [trasování událostí pro Windows](https://msdn.microsoft.com/en-us/library/windows/desktop/bb968803.aspx) (ETW) a [EventSource](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracing.eventsource.aspx) podpora v rozhraní .NET 4.5 na vám umožní vytvořit další protokoly strukturovaných a dotazovatelnosti. Můžete definovat jinou metodu pro každý typ událost, která přihlášení, která umožňuje přizpůsobit informace, které můžete psát. Například protokolu databáze SQL chyba, může zavolat `LogSQLDatabaseError` metoda. Pro tento typ výjimky víte, že je klíčovou součástí informace je číslo chyby tak, aby může zahrnout číslo parametru chyba podpis metody a poznamenejte si číslo chyby jako samostatné pole v záznamu protokolu, kterou píšete. Protože číslo je do samostatných polí můžete snadno a spolehlivě získat sestavy založené na čísla chyby SQL, než může Pokud číslo chyby byly právě zřetězení do řetězec zprávy.
+Relativně nové způsob, jak provést protokolování, jejichž výsledkem mohou být užitečnější diagnostické informace, najdete v části [Enterprise knihovny sémantické protokolování aplikace blok (SLAB)](http://convective.wordpress.com/2013/08/12/semantic-logging-application-block-slab/). Používá SLAB [trasování událostí pro Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx) (ETW) a [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) podpora v rozhraní .NET 4.5 na vám umožní vytvořit další protokoly strukturovaných a dotazovatelnosti. Můžete definovat jinou metodu pro každý typ událost, která přihlášení, která umožňuje přizpůsobit informace, které můžete psát. Například protokolu databáze SQL chyba, může zavolat `LogSQLDatabaseError` metoda. Pro tento typ výjimky víte, že je klíčovou součástí informace je číslo chyby tak, aby může zahrnout číslo parametru chyba podpis metody a poznamenejte si číslo chyby jako samostatné pole v záznamu protokolu, kterou píšete. Protože číslo je do samostatných polí můžete snadno a spolehlivě získat sestavy založené na čísla chyby SQL, než může Pokud číslo chyby byly právě zřetězení do řetězec zprávy.
 
 ## <a name="logging-in-the-fix-it-app"></a>Protokolování v opravě aplikace
 
@@ -227,14 +227,14 @@ Tento kód v podstatě říká, že kamkoli konstruktor potřebuje *objektu ILog
 Azure podporuje následující typy z [protokolování pro Web Apps v Azure App Service](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio):
 
 - System.Diagnostics trasování (můžete zapnout a vypnout a nastavit úrovně za chodu bez restartování webu).
-- Události systému Windows.
+- Windows Events.
 - Protokoly služby IIS (HTTP/FREB).
 
 Azure podporuje následující typy z [protokolování v cloudové služby](https://docs.microsoft.com/azure/cloud-services/cloud-services-dotnet-diagnostics):
 
 - System.Diagnostics trasování.
 - Čítače výkonu.
-- Události systému Windows.
+- Windows Events.
 - Protokoly služby IIS (HTTP/FREB).
 - Vlastní directory monitorování.
 
@@ -244,13 +244,13 @@ Aplikace opravte ji používá System.Diagnostics trasování. Všechny, které 
 
 Po povolení protokolování v Azure, uvidíte protokolů v okně výstupu Visual Studio, při jejich vytvoření.
 
-![Streamování protokoly nabídky](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-viewlogsmenu.png)
+![Streamování protokoly nabídky](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-viewlogsmenu.png)
 
-![Streamování protokoly nabídky](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-nologsyet.png)
+![Streamování protokoly nabídky](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-nologsyet.png)
 
 Můžete si taky protokoly zapisují do účtu úložiště a zobrazení je veškeré nástroje, které mají přístup ke službě Azure Storage Table, jako **Průzkumníka serveru** v sadě Visual Studio nebo [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/).
 
-![Protokoly v Průzkumníku serveru](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
+![Protokoly v Průzkumníku serveru](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
 
 ## <a name="summary"></a>Souhrn
 
@@ -264,10 +264,10 @@ Další informace najdete v následujících zdrojích informací.
 
 Dokumentace hlavně o telemetrická data:
 
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Zobrazit instrumentace a Telemetrie pokyny, pokyny pro monitorování míry využívání služby, vzor monitorování stavu koncového bodu a Runtime Rekonfigurace vzor.
+- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Zobrazit instrumentace a Telemetrie pokyny, pokyny pro monitorování míry využívání služby, vzor monitorování stavu koncového bodu a Runtime Rekonfigurace vzor.
 - [Hodnotu ve formátu Měna roztáhnout v cloudu: povolení na weby Azure monitorování výkonu aplikací New Relic](http://www.hanselman.com/blog/PennyPinchingInTheCloudEnablingNewRelicPerformanceMonitoringOnWindowsAzureWebsites.aspx).
-- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy. Najdete v části Telemetrie a Diagnostika.
-- [Vývoj generace s Application Insights](https://msdn.microsoft.com/en-us/magazine/dn683794.aspx). Článek v časopise MSDN.
+- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy. Najdete v části Telemetrie a Diagnostika.
+- [Vývoj generace s Application Insights](https://msdn.microsoft.com/magazine/dn683794.aspx). Článek v časopise MSDN.
 
 Dokumentace hlavně o protokolování:
 

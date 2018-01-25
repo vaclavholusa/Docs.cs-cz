@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: b88cd54040c02c977a83e20d7af7fda4fff969c1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3638c6779a0fcedaaa49623126b28ecf09a4954f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrace existující web z členství SQL na identitě ASP.NET Identity
 ====================
@@ -51,7 +51,7 @@ V tomto kurzu jsme bude trvat šablony webové aplikace (webových formulářů)
 
 ### <a name="migrating-to-visual-studio-2013"></a>Migrace na Visual Studio 2013
 
-1. Instalace Visual Studio Express 2013 pro Web nebo Visual Studio 2013 spolu s [nejnovější aktualizace](https://www.microsoft.com/en-us/download/details.aspx?id=44921).
+1. Instalace Visual Studio Express 2013 pro Web nebo Visual Studio 2013 spolu s [nejnovější aktualizace](https://www.microsoft.com/download/details.aspx?id=44921).
 2. Otevřete projekt výše v nainstalované verzi sady Visual Studio. Pokud na počítači není nainstalována SQL Server Express, se zobrazí výzva, otevřete projekt, protože používá připojovací řetězec SQL Express. Buď můžete nainstalovat SQL Express nebo jako obejít změnit připojovací řetězec na instanci LocalDb. V tomto článku jsme budete ho změnit na instanci LocalDb.
 3. Otevřete soubor web.config a změnit připojovací řetězec z. SQLExpess k v11.0 (LocalDb). Odebrat ' uživatelské Instance = true "z připojovacího řetězce.
 
@@ -89,26 +89,26 @@ Pro ASP.NET Identity třídy pracovat předinstalované s daty stávajících u�
 | **IdentityUser** | **Typ** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | ID | odkazy řetězců | ID | RoleId | ProviderKey | ID |
-| Uživatelské jméno | odkazy řetězců | Název | ID uživatele | ID uživatele | Typ claimType |
+| Uživatelské jméno | odkazy řetězců | Název | ID uživatele | ID uživatele | ClaimType |
 | PasswordHash | odkazy řetězců |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | odkazy řetězců |  |  |  | Uživatel\_Id |
 | E-mailu | odkazy řetězců |  |  |  |  |
 | EmailConfirmed | bool |  |  |  |  |
-| Telefonní číslo | odkazy řetězců |  |  |  |  |
+| PhoneNumber | odkazy řetězců |  |  |  |  |
 | PhoneNumberConfirmed | bool |  |  |  |  |
 | LockoutEnabled | bool |  |  |  |  |
 | LockoutEndDate | DateTime |  |  |  |  |
 | AccessFailedCount | int |  |  |  |  |
 
-Je potřeba mít tabulky se sloupci odpovídající vlastnosti pro každou z těchto modelů. Mapování mezi třídami a tabulek je definována v `OnModelCreating` metodu `IdentityDBContext`. To se označuje jako metodu fluent API konfigurace a další informace naleznete [zde](https://msdn.microsoft.com/en-us/data/jj591617.aspx). Konfigurace pro třídy je, jak je uvedeno níže
+Je potřeba mít tabulky se sloupci odpovídající vlastnosti pro každou z těchto modelů. Mapování mezi třídami a tabulek je definována v `OnModelCreating` metodu `IdentityDBContext`. To se označuje jako metodu fluent API konfigurace a další informace naleznete [zde](https://msdn.microsoft.com/data/jj591617.aspx). Konfigurace pro třídy je, jak je uvedeno níže
 
 | **– Třída** | **Tabulka** | **Primární klíč** | **Cizí klíč** |
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | ID |  |
 | IdentityRole | AspnetRoles | ID |  |
-| IdentityUserRole | AspnetUserRole | ID uživatele + RoleId | Uživatel\_Id -&gt;AspnetUsers RoleId -&gt;AspnetRoles |
-| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId -&gt;AspnetUsers |
-| IdentityUserClaim | AspnetUserClaims | ID | Uživatel\_Id -&gt;AspnetUsers |
+| IdentityUserRole | AspnetUserRole | ID uživatele + RoleId | User\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
+| IdentityUserLogin | AspnetUserLogins | ProviderKey+UserId + LoginProvider | UserId-&gt;AspnetUsers |
+| IdentityUserClaim | AspnetUserClaims | ID | User\_Id-&gt;AspnetUsers |
 
 Tyto informace můžeme vytvořit příkazy SQL k vytvoření nové tabulky. Nemůžeme zápisu každý příkaz samostatně nebo generovat celý skript pomocí příkazů prostředí PowerShell objektu EntityFramework, které jsme pak můžete upravit podle potřeby. To uděláte, v VS otevřete **Konzola správce balíčků** z **zobrazení** nebo **nástroje** nabídky
 
@@ -122,7 +122,7 @@ Informace o členství uživatele v SQL měl další vlastnosti kromě těm, kte
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample1.sql)]
 
-Další musíme zkopírovat informace z databáze SQL členství nově přidané tabulky pro identitu. To lze provést prostřednictvím SQL tak, že zkopírujete data přímo z jedné tabulky do jiné. Přidání dat do řádky tabulky, použijeme `INSERT INTO [Table]` vytvořit. Zkopírovat z jiné tabulky, můžeme použít `INSERT INTO` příkaz spolu s `SELECT` příkaz. Získat všechny informace o uživateli je potřeba zadat dotaz *aspnet\_uživatelé* a *aspnet\_členství* tabulky a zkopírujte data, která mají *AspNetUsers*tabulky. Používáme `INSERT INTO` a `SELECT` spolu s `JOIN` a `LEFT OUTER JOIN` příkazy. Další informace o dotazování a kopírování dat mezi tabulkami, najdete v části [to](https://technet.microsoft.com/en-us/library/ms190750%28v=sql.105%29.aspx) odkaz. Kromě AspnetUserLogins a AspnetUserClaims tabulky jsou prázdné na začátku vzhledem k tomu, že nejsou žádné informace v členství SQL, který se mapuje na to, ve výchozím nastavení. Veškeré informace zkopírovat je pro uživatele a role. Pro projekt vytvořili v předchozím kroku bude příkaz jazyka SQL pro kopírování informace do tabulky uživatelů
+Další musíme zkopírovat informace z databáze SQL členství nově přidané tabulky pro identitu. To lze provést prostřednictvím SQL tak, že zkopírujete data přímo z jedné tabulky do jiné. Přidání dat do řádky tabulky, použijeme `INSERT INTO [Table]` vytvořit. Zkopírovat z jiné tabulky, můžeme použít `INSERT INTO` příkaz spolu s `SELECT` příkaz. Získat všechny informace o uživateli je potřeba zadat dotaz *aspnet\_uživatelé* a *aspnet\_členství* tabulky a zkopírujte data, která mají *AspNetUsers*tabulky. Používáme `INSERT INTO` a `SELECT` spolu s `JOIN` a `LEFT OUTER JOIN` příkazy. Další informace o dotazování a kopírování dat mezi tabulkami, najdete v části [to](https://technet.microsoft.com/library/ms190750%28v=sql.105%29.aspx) odkaz. Kromě AspnetUserLogins a AspnetUserClaims tabulky jsou prázdné na začátku vzhledem k tomu, že nejsou žádné informace v členství SQL, který se mapuje na to, ve výchozím nastavení. Veškeré informace zkopírovat je pro uživatele a role. Pro projekt vytvořili v předchozím kroku bude příkaz jazyka SQL pro kopírování informace do tabulky uživatelů
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample2.sql)]
 
@@ -145,11 +145,11 @@ Tento soubor skriptu je specifická pro tuto ukázku. Pro aplikace, které mají
 
     Níže je, jak jsou informace v tabulky členství SQL mapované na nový systém identit.
 
-    ASPNET\_role –&gt; AspNetRoles
+    aspnet\_Roles --&gt; AspNetRoles
 
     ASP\_netUsers a asp\_netMembership –&gt; AspNetUsers
 
-    ASPNET\_UserInRoles –&gt; AspNetUserRoles
+    aspnet\_UserInRoles --&gt; AspNetUserRoles
 
     Jak je popsáno v části výše, AspNetUserClaims a AspNetUserLogins tabulky jsou prázdné. Pole 'Diskriminátoru' v tabulce AspNetUser by měl odpovídat názvu třídy modelu, která je definována jako další krok. Také PasswordHash sloupec je ve formátu ' zašifrované heslo | salt hesla | formát hesla '. To umožňuje použít speciální SQL členství kryptografických logiku, takže můžete znovu použít původní hesla. Později v článku, který je vysvětleno v.
 

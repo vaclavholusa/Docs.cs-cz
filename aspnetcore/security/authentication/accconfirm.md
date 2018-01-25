@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/accconfirm
-ms.openlocfilehash: b004a8e7680b203416552e5a7a2809799e657759
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: bc9febc41d0637be9f83a02799d360489f257849
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Potvrzení účtu a obnovení hesla v ASP.NET Core
 
@@ -110,7 +110,7 @@ Aktualizace `ConfigureServices` tak, aby vyžadovala potvrzen e-mailu:
 ```csharp
 config.SignIn.RequireConfirmedEmail = true;
 ```
-Předchozí řádek zabrání registrovaní uživatelé protokolována, dokud je potvrzen e-mailu. Daného řádku však nezabrání noví uživatelé se přihlášení po jejich registraci. Ve výchozím kódu přihlásí uživatel po jejich registraci. Po odhlášení se nebudou moct přihlásit znovu dokud jejich registraci. Později v tomto kurzu Změníme kódu, takže nově zaregistrovaný uživatele jsou **není** přihlášení.
+Předchozí řádek zabrání registrovaní uživatelé protokolována, dokud je potvrzen e-mailu. Ale daného řádku nezabrání noví uživatelé se přihlášení po jejich registraci. Ve výchozím kódu přihlásí uživatel po jejich registraci. Po odhlášení se nebudou moct přihlásit znovu dokud jejich registraci. Později v tomto kurzu Změníme kódu, takže nově zaregistrovaný uživatele jsou **není** přihlášení.
 
 ### <a name="configure-email-provider"></a>Nakonfigurujte poskytovatele tak e-mailu
 
@@ -277,7 +277,7 @@ Pokud nelze získat pracovní e-mailu:
 
 ## <a name="prevent-login-at-registration"></a>Zakázat přihlášení při registraci
 
-Aktuální šablonami po dokončení registrace formuláře, uživatel se přihlásí (ověřený). Chcete obecně potvrzení e-mailu před jejich protokolování. V následující části jsme se změnit kód tak, aby vyžadovala noví uživatelé mít potvrzené e-mailu předtím, než se přihlásí. Aktualizace `[HttpPost] Login` akce v *AccountController.cs* soubor s následující zvýrazněný změny.
+S aktuální šablony, jakmile uživatel dokončí registračním formuláři se přihlášeni (ověřený). Chcete obecně potvrzení e-mailu před jejich protokolování. V následující části jsme se změnit kód tak, aby vyžadovala noví uživatelé mít potvrzené e-mailu předtím, než jste přihlášeni. Aktualizace `[HttpPost] Login` akce v *AccountController.cs* soubor s následující zvýrazněný změny.
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=11-21&name=snippet_Login)]
 
@@ -302,4 +302,4 @@ Klikněte na odkaz na jinou službu přihlášení a přijímat žádosti o apli
 
 ![Spravovat seznam Facebook zobrazení externích přihlášení.](accconfirm/_static/fb.png)
 
-Dva účty jsou spojena. Bude moct přihlásit pomocí buď účtu. Můžete chtít uživatelům v případě, že jejich sociální přihlášení ověřovací služby, jsou vypnuty nebo jejich více pravděpodobně ztratili přístup k účtu mají sociálních přidat místní účty.
+Dva účty jsou spojena. Bude moct přihlásit pomocí buď účtu. Můžete chtít uživatelům v případě, že jejich sociální přihlášení ověřovací služby, jsou vypnuty nebo více pravděpodobně ztrátu přístupu k účtu mají sociálních přidat místní účty.

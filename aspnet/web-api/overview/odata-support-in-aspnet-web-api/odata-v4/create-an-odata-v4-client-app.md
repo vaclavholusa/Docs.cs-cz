@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app
 msc.type: authoredcontent
-ms.openlocfilehash: daa39fbbb4ff17d61f71bf2a642a9c2260b353e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51a3c7b9c5b6525d6d82b9a45910f58b71268b7f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-an-odata-v4-client-app-c"></a>Vytvoření aplikace OData v4 klienta (C#)
 ====================
@@ -50,7 +50,7 @@ Spusťte projekt ProductService ze sady Visual Studio. Ve výchozím nastavení 
 
 ## <a name="generate-the-service-proxy"></a>Generovat Proxy služby
 
-Proxy server služby je třída rozhraní .NET, která definuje metody pro přístup ke službě OData. Proxy server přeloží volání metod na požadavky HTTP. Vytvoří třídu proxy spuštěním [šablony T4](https://msdn.microsoft.com/en-us/library/bb126445.aspx).
+Proxy server služby je třída rozhraní .NET, která definuje metody pro přístup ke službě OData. Proxy server přeloží volání metod na požadavky HTTP. Vytvoří třídu proxy spuštěním [šablony T4](https://msdn.microsoft.com/library/bb126445.aspx).
 
 Klikněte pravým tlačítkem na projekt. Vyberte **přidat** &gt; **novou položku**.
 

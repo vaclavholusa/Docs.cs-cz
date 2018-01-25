@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: c375fe6ea98c621012eb55589c8b174c2a95b697
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2446f4734e9bb1ab6829001f6e7888c4c14ee1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>Vytvoření modelu komplexní data - základní EF s stránky Razor kurzu (5 8)
 
@@ -49,9 +49,9 @@ Aktualizace *Models/Student.cs* s následujícími službami zvýrazněná kódu
 * `mailto:` Propojení se automaticky vytvoří pro `DataType.EmailAddress`.
 * Je k dispozici pro výběr data `DataType.Date` ve většině prohlížečů.
 
-`DataType` Atribut vysílá standardu HTML 5 `data-` (výrazný data dash) atributy, které využívají standardu HTML 5 prohlížeče. `DataType` Atributů neposkytuje ověření.
+`DataType` Atribut vysílá standardu HTML 5 `data-` (výrazný data dash) atributy, které využívají standardu HTML 5 prohlížeče. `DataType` Atributy neposkytují ověření.
 
-`DataType.Date`neurčuje formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole datum podle výchozích formátů podle serveru [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
+`DataType.Date`neuvádí formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole datum podle výchozích formátů podle serveru [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
 
 `DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
 
@@ -284,7 +284,7 @@ Aktualizace *Models/Course.cs* následujícím kódem:
 
 Základní EF nevyžaduje vlastnosti cizího klíče u datového modelu, když model má navigační vlastnost pro související entity.
 
-FKs EF základní automaticky vytvoří v databázi, kde jsou potřeba. Vytvoří základní EF [stínové vlastnosti](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pro automaticky vytvořené FKs. S cizího klíče v datovém modelu, můžete provést aktualizace teď jednodušší a efektivnější. Představte si třeba model kde vlastnost cizího klíče `DepartmentID` je *není* zahrnuty. Pokud je během entity načtených upravit:
+FKs EF základní automaticky vytvoří v databázi, bez ohledu na jejich jste potřeby. Vytvoří základní EF [stínové vlastnosti](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pro automaticky vytvořené FKs. S cizího klíče v datovém modelu, můžete provést aktualizace teď jednodušší a efektivnější. Představte si třeba model kde vlastnost cizího klíče `DepartmentID` je *není* zahrnuty. Pokud je během entity načtených upravit:
 
 * `Department` Entity má hodnotu null, pokud není výslovně načtení.
 * K aktualizaci entity kurzu `Department` nejprve musí být získána entity.
@@ -376,7 +376,7 @@ Poznámka: Pomocí konvence, umožňuje EF základní kaskádové odstranění p
 Například pokud `Department.InstructorID` vlastnost nebyla definována jako s možnou hodnotou NULL:
 
 * Základní EF nakonfiguruje kaskádové odstranění pravidlo můžete odstranit lektorem, když je odstraněn z oddělení.
-* Odstraňování lektorem při odstranění tohoto oddělení není zamýšlené chování.
+* Odstraňování lektorem při odstranění tohoto oddělení nejde o záměrné chování.
 
 V případě potřeby obchodní pravidla `InstructorID` vlastnost mít hodnotu Null, použijte následující příkaz fluent API:
 
@@ -431,7 +431,7 @@ Pokud `Enrollment` tabulky nezahrnuli úrovni informace, jenom třeba, aby obsah
 
 `Instructor` a `Course` entit mít vztah m: n pomocí čistou vazební tabulku.
 
-Poznámka: EF 6.x podporuje implicitní spojení tabulky pro relace m: n, ale základní EF neexistuje. Další informace najdete v tématu [m: n vztahy v EF základní 2.0](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/).
+Poznámka: EF 6.x podporuje implicitní spojení tabulky pro relace m: n, ale základní EF nepodporuje. Další informace najdete v tématu [m: n vztahy v EF základní 2.0](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/).
 
 ## <a name="the-courseassignment-entity"></a>CourseAssignment entity
 
@@ -638,7 +638,7 @@ S předchozí změny, existující `Course` řádky budou související s odděl
 Produkční aplikace bude:
 
 * Přidat kód nebo skripty, které chcete přidat `Department` řádky a související `Course` řádky do nového `Department` řádků.
-* Nepoužívejte oddělení "Temp" nebo výchozí hodnotu pro `Course.DepartmentID `.
+* Nepoužívat oddělení "Temp" nebo výchozí hodnotu pro `Course.DepartmentID`.
 
 Další kurz se zaměřuje na související data.
 

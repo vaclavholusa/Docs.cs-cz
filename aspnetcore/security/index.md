@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: 3f0f1c402aeac388c2fcabb509aa8aa3a46e95f5
-ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
+ms.openlocfilehash: a4558162158ddb6746aa45a29310b42224d6e7fe
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-security-overview"></a>Přehled zabezpečení ASP.NET Core
 
@@ -25,7 +25,7 @@ ASP.NET Core poskytuje řadu nástrojů a knihovny k zabezpečení aplikací vč
 
 ## <a name="authentication-vs-authorization"></a>Ověřování vs. Autorizace
 
-Ověřování je proces, ve kterém uživatel poskytuje pověření, které se pak porovnávají s údajů uložených v operační systém, databáze, aplikace nebo prostředku. Pokud se shodují, uživatelé úspěšně ověřit a potom může provést akce, které mají oprávnění, během autorizačního procesu. Povolení odkazuje na proces, který určuje, co uživatel může provádět. 
+Ověřování je proces, ve kterém uživatel poskytuje pověření, které se pak porovnávají s údajů uložených v operační systém, databáze, aplikace nebo prostředku. Pokud se shodují, uživatelé úspěšně ověřit a potom může provést akce, které mají autorizaci, během autorizačního procesu. Povolení odkazuje na proces, který určuje, co uživatel může provádět. 
 
 Dalším způsobem zamyslet nad ověřování je vzít v úvahu jako způsob, jak při autorizaci akce, které můžete uživatel provádět, abyste objektů, které uvnitř toto místo (server, databázi nebo aplikace) zadejte prostor, například server, databáze, aplikace nebo prostředku.
 
@@ -96,7 +96,7 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
         *   [Formát ukládání klíčů](data-protection/implementation/key-storage-format.md)
         *   [Zprostředkovatelé dočasné ochrany dat](data-protection/implementation/key-storage-ephemeral.md)
     *   [Kompatibilita](data-protection/compatibility/index.md)
-        *   [Sdílení souborů cookie mezi aplikací](data-protection/compatibility/cookie-sharing.md)
+        *   [Sdílení souborů cookie mezi aplikacemi](data-protection/compatibility/cookie-sharing.md)
         *   [Nahrazení <machineKey> v ASP.NET](data-protection/compatibility/replacing-machinekey.md)
 *   [Vytvoření aplikace s uživatelskými daty chráněnými autorizací](xref:security/authorization/secure-data)
 *   [Bezpečné úložiště tajných částí aplikace při vývoji](app-secrets.md)

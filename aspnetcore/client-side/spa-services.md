@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 514efcdd78957f999e46c521d0266f092f742538
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>Použití JavaScriptServices pro vytvoření jednostránkové aplikace pomocí ASP.NET Core
 
@@ -200,7 +200,7 @@ Po načtení aplikace v prohlížeči, karta konzoly nástroje developer tools p
 
 ## <a name="routing-helpers"></a>Směrování pomocné rutiny
 
-Ve většině SPA založené na ASP.NET Core budete muset klienta směrování kromě směrování na straně serveru. Systémy směrování SPA a MVC může nezávisle pracovat bez narušení. Existuje, ale jeden okraj případ autority výzvy: Identifikace odpovědi HTTP 404.
+Ve většině SPA založené na ASP.NET Core budete muset klienta směrování kromě směrování na straně serveru. Systémy směrování SPA a MVC může nezávisle pracovat bez narušení. Existuje, ale jeden okraj případu autority vyzve: Identifikace odpovědi HTTP 404.
 
 Představte si situaci, ve kterém bez přípony trasa `/some/page` se používá. Předpokládejme, požadavek nebude vzor match trasy na straně serveru, ale jeho vzor odpovídat trasy na straně klienta. Teď se podíváme příchozí žádosti pro `/images/user-512.png`, které se obecně očekává najít soubor obrázku na serveru. Pokud této cestě požadovaný prostředek se neshoduje se všechny serverové trasy nebo statický soubor, není pravděpodobné, že aplikace na straně klienta by zpracovat – obecně chcete vrátit 404 stavový kód HTTP.
 

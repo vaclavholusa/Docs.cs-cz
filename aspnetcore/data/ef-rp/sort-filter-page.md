@@ -8,11 +8,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 08f00e183dd8a8daa883d0b9ff15698b3a39f625
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 24649374b71da39d638d943617a219d45f064846
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>Řazení, filtrování, stránkování a seskupení – základní EF s stránky Razor (3 8)
 
@@ -139,7 +139,7 @@ V *Views/Student/Index.cshtml*, přidejte následující zvýrazněný kód k vy
 
 [!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
-Předchozí kód používá `<form>` [značky pomocná](xref:mvc/views/tag-helpers/intro) do textového pole pro vyhledávání a tlačítko Přidat. Ve výchozím nastavení `<form>` značky pomocná odesílat data formuláře s příspěvku na. S POST jsou předávány parametry v textu zprávy HTTP a není v adrese URL. Pokud se používá HTTP GET, data formuláře je předán v adrese URL jako řetězce dotazu. Předání dat pomocí řetězce dotazu umožňuje uživatelům bookmark adresu URL. [W3C pokyny](https://www.w3.org/2001/tag/doc/whenToUseGet.html) doporučujeme, aby GET se mají použít při akci nevede aktualizaci.
+Předchozí kód používá `<form>` [značky pomocná](xref:mvc/views/tag-helpers/intro) do textového pole pro vyhledávání a tlačítko Přidat. Ve výchozím nastavení `<form>` značky pomocná odesílat data formuláře s příspěvku na. S POST jsou předávány parametry v textu zprávy HTTP a není v adrese URL. Pokud se používá HTTP GET, data formuláře je předán v adrese URL jako řetězce dotazu. Předání dat pomocí řetězce dotazu umožňuje uživatelům bookmark adresu URL. [W3C pokyny](https://www.w3.org/2001/tag/doc/whenToUseGet.html) doporučujeme, aby GET se mají použít při akci nevede k aktualizaci.
 
 Testovací aplikace:
 
@@ -201,7 +201,7 @@ Při kliknutí na odkaz stránkování index proměnné stránky obsahuje čísl
 Pokud řetězec pro hledání se změní při stránkování, stránky se resetuje na hodnotu 1. Stránce musí obnovit na 1, protože nový filtr může mít za následek různé data k zobrazení. Pokud je zadána hodnota vyhledávání a **odeslání** je vybrán:
 
 * Řetězec pro hledání se změní.
-* `searchString` Parametr není null.
+* `searchString` Není parametr hodnotu null.
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bootstrap
-ms.openlocfilehash: aee3304515686fc8e45e8e2aafb79d957219f94a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 4332dce4c341cb8e5c241a67547048301ae9a8b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Vytváření Krásný přizpůsobivý weby s Bootstrap
 
@@ -214,8 +214,8 @@ Cesta ke stránce jsou běžné součást uživatelského rozhraní používá k
 
 ## <a name="javascript-support"></a>Podpora jazyka JavaScript
 
-Knihovna JavaScript Bootstrap na zahrnuje podporu rozhraní API pro zahrnuté součásti, vám umožní ovládat jejich chování prostřednictvím kódu programu v rámci vaší aplikace. Kromě toho *bootstrap.js* obsahuje více než tucet detekce (aktualizace styly, podle které má uživatel přešli v dokumentu), posuňte se vlastní jQuery modulů plug-in, že poskytuje další funkce, například přechody, modálních dialogových oken Sbalit chování, karusely a vyznačení nabídky do okna, takže není přejděte z obrazovky. Není dostatek místa na všechny doplňky JavaScript součástí Bootstrap – Další informace naleznete [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/).
+Knihovna JavaScript Bootstrap na zahrnuje podporu rozhraní API pro zahrnuté součásti, vám umožní ovládat jejich chování prostřednictvím kódu programu v rámci vaší aplikace. Kromě toho *bootstrap.js* obsahuje více než tucet detekce (aktualizace styly, podle které má uživatel přešli v dokumentu), posuňte se vlastní jQuery modulů plug-in, že poskytuje další funkce, například přechody, modálních dialogových oken sbalte chování, karusely a vyznačení nabídek do okna, takže nemáte přejděte z obrazovky. Není dostatek místa na všechny doplňky JavaScript součástí Bootstrap – Další informace naleznete [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/).
 
 ## <a name="summary"></a>Souhrn
 
-Bootstrap poskytuje webové rozhraní, které lze použít k rychlé a efektivní rozvržení a stylu širokou škálu webům a aplikacím. Její základní typografii a styly poskytují příjemný vzhled a chování, která lze snadno manipulovat prostřednictvím podpory vlastní motiv, který můžete ručně vytvořené nebo komerčně zakoupili. Podporuje hostitel webové komponenty, které v minulosti by vyžadovaly nákladné ovládací prvky třetích stran k dosažení, spolu s podporou moderní a otevřete webové standardy.
+Bootstrap poskytuje webové rozhraní, které lze použít k rychlé a efektivní rozvržení a stylu širokou škálu webům a aplikacím. Její základní typografii a styly poskytují příjemný vzhled a chování, která lze snadno manipulovat prostřednictvím podpory vlastní motiv, který můžete ručně vytvořené nebo komerčně zakoupili. Podporuje hostitel webové komponenty, které v minulosti by jste požadovali nákladné ovládací prvky třetích stran k dosažení, spolu s podporou moderní a otevřete webové standardy.

@@ -8,11 +8,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: 861ac619c7f5fb19a56c59536e20724d96bbddca
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7404b8ec20ed6a00554c8a7ade9a282362b9a186
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace
 
@@ -53,7 +53,7 @@ A `ContactIsOwnerAuthorizationHandler` obslužná rutina ověřování zajišťu
 
 ## <a name="prerequisites"></a>Požadavky
 
-Toto není začátku kurzu. Měli byste se seznámit s:
+Tato akce není začátku kurzu. Měli byste se seznámit s:
 
 * [Jádro ASP.NET MVC](xref:tutorials/first-mvc-app/start-mvc)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
@@ -221,11 +221,11 @@ Aktualizace *Views/Contacts/Index.cshtml* zobrazení syntaxe Razor pouze zobraze
 
 Přidat`@using ContactManager.Authorization;`
 
-Aktualizace `Edit` a `Delete` odkazy tak vykresleny pouze pro uživatele s oprávnění upravovat a odstraňovat kontakt.
+Aktualizace `Edit` a `Delete` odkazy, takže se jenom vykresluje pro uživatele s oprávnění upravovat a odstraňovat kontakt.
 
 [!code-html[Main](secure-data/samples/final/Views/Contacts/Index.cshtml?range=63-84)]
 
-Upozornění: Skrytí odkazy z uživatelů, kteří nemají oprávnění k úpravě nebo odstranění dat nezabezpečuje aplikace. Skrytí odkazy díky aplikaci další uživatele popisný zobrazením pouze platné odkazy. Uživatelé mohou zabezpečení generované adresy URL pro vyvolání upravit a odstranit operací na data, která budou nevlastníte.  Kontroler nutné opakovat, že přístup kontroly zabezpečená.
+Upozornění: Skrytí odkazy z uživatelů, kteří nemají oprávnění k úpravě nebo odstranění dat nepodporuje zabezpečit aplikace. Skrytí odkazy díky aplikaci další uživatele popisný zobrazením pouze platné odkazy. Uživatelé mohou zabezpečení generované adresy URL pro vyvolání upravit a odstranit operací na data, která budou nevlastníte.  Kontroler nutné opakovat, že přístup kontroly zabezpečená.
 
 ### <a name="update-the-details-view"></a>Aktualizace zobrazení podrobností
 
@@ -304,7 +304,7 @@ Zvýrazněný kód přidejte na konec `Configure` metoda v *Startup.cs* souboru:
 
 [!code-csharp[Main](secure-data/samples/starter/Startup.cs?name=Configure&highlight=28-)]
 
-Otestujte, že aplikace nasadí databázi. Metoda počáteční hodnoty nejde spustit, pokud jsou všechny řádky v kontakt DB.
+Otestujte, že aplikace nasadí databázi. Metoda počáteční hodnoty nefunguje, pokud jsou všechny řádky v kontakt DB.
 
 ### <a name="create-a-class-used-in-the-tutorial"></a>Vytvoření třídy v tomto kurzu použili
 

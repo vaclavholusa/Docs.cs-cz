@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment/using-signalr-with-azure-web-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 414701159b4e1fa3da9597503b14281a1e9991de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8386441690a3fb479ffb941ebd7c0b2f83870781
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-signalr-with-web-apps-in-azure-app-service"></a>Pomocí funkce SignalR webové aplikace v Azure App Service
 ====================
@@ -36,7 +36,7 @@ podle [Patrik Fletcher](https://github.com/pfletcher)
 > 
 > ## <a name="questions-and-comments"></a>Dotazy a připomínky
 > 
-> Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může zlepšit v komentářích v dolní části stránky. Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [fórum pro ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR), [StackOverflow.com](http://stackoverflow.com/), nebo [fóra Microsoft Azure](https://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?category=windowsazureplatform).
+> Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může zlepšit v komentářích v dolní části stránky. Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [fórum pro ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR), [StackOverflow.com](http://stackoverflow.com/), nebo [fóra Microsoft Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?category=windowsazureplatform).
 
 
 ## <a name="table-of-contents"></a>Obsah
@@ -61,7 +61,7 @@ SignalR nepřidá žádné konkrétní komplikace k nasazení aplikace do Azure 
 
 - Visual Studio 2013. Pokud nemáte Visual Studio, Visual Studio 2013 Express pro Web je součástí instalace sady Azure SDK.
 - [2.3 Azure SDK pro Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) nebo [2.3 Azure SDK pro sadu Visual Studio 2012](https://go.microsoft.com/fwlink/p/?linkid=323511).
-- K dokončení tohoto kurzu, potřebujete předplatné Azure. Můžete [aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/), nebo [si zaregistrovat zkušební předplatné](https://azure.microsoft.com/en-us/pricing/free-trial/).
+- K dokončení tohoto kurzu, potřebujete předplatné Azure. Můžete [aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), nebo [si zaregistrovat zkušební předplatné](https://azure.microsoft.com/pricing/free-trial/).
 
 ### <a name="deploying-a-signalr-web-app-to-azure"></a>Nasazení funkce SignalR webové aplikace do Azure
 
@@ -115,4 +115,4 @@ Pokud používáte více instancí pro vaši webovou aplikaci a uživatele těch
 <a id="nextsteps"></a>
 ## <a name="next-steps"></a>Další kroky
 
-Další informace o webových aplikací ve službě Azure App Service naleznete v tématu [přehled Web Apps](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/).
+Další informace o webových aplikací ve službě Azure App Service naleznete v tématu [přehled Web Apps](https://azure.microsoft.com/documentation/articles/app-service-web-overview/).

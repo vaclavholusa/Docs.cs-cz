@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 8f68a85e44389ed17576436a9210c0ca3f414403
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed78b55d2b0315cf428f137c56ad85b29a95e1c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: transformace souboru Web.Config - 3 12
 ====================
@@ -37,7 +37,7 @@ Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, j
 
 ## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Transformace Web.config versus webové nasazení parametry
 
-Existují dva způsoby, jak automatizovat proces změny *Web.config* nastavení souboru: [transformace Web.config](https://msdn.microsoft.com/en-us/library/dd465326.aspx) a [Web Deploy parametry](https://msdn.microsoft.com/en-us/library/ff398068.aspx). A *Web.config* transformace soubor obsahuje kód XML, který určuje, jak změnit *Web.config* souboru při nasazení. Můžete zadat různé změny pro konkrétní konfigurace sestavení a pro určité publikační profily. Výchozí konfigurace sestavení jsou ladění a vydání, a můžete vytvořit vlastní konfigurace sestavení. Profil publikování se obvykle odpovídá cílové prostředí. (Se dozvíte další informace o publikování profily v nástroji [nasazení do IIS jako testovacím prostředí](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) kurzu.)
+Existují dva způsoby, jak automatizovat proces změny *Web.config* nastavení souboru: [transformace Web.config](https://msdn.microsoft.com/library/dd465326.aspx) a [Web Deploy parametry](https://msdn.microsoft.com/library/ff398068.aspx). A *Web.config* transformace soubor obsahuje kód XML, který určuje, jak změnit *Web.config* souboru při nasazení. Můžete zadat různé změny pro konkrétní konfigurace sestavení a pro určité publikační profily. Výchozí konfigurace sestavení jsou ladění a vydání, a můžete vytvořit vlastní konfigurace sestavení. Profil publikování se obvykle odpovídá cílové prostředí. (Se dozvíte další informace o publikování profily v nástroji [nasazení do IIS jako testovacím prostředí](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) kurzu.)
 
 Parametry nasazení webové lze použít k určení různých druhů nastavení, které musí být nakonfigurované během nasazení, včetně nastavení, které se nacházejí v *Web.config* soubory. Pokud se používá k určení *Web.config* změny souborů, nasazení webu parametry jsou složitější nastavit, ale jsou užitečné v případě, že si nejste jisti, hodnota k nastavení, dokud nasazení. Například v podnikovém prostředí, může vytvořit *balíček pro nasazení* a poskytnout osobě v oddělení IT k instalaci v produkčním prostředí, a tento uživatel má být schopni zadejte připojovací řetězce nebo hesla, které nechcete znáte.
 
@@ -146,7 +146,7 @@ Jste nyní zadali všechny *Web.config* transformace, které potřebujete pro na
 
 ## <a name="more-information"></a>Další informace
 
-Další informace o tématech, které jsou zahrnuté v tomto kurzu, najdete v části scénář transformaci Web.config v [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/en-us/library/bb386521.aspx).
+Další informace o tématech, které jsou zahrnuté v tomto kurzu, najdete v části scénář transformaci Web.config v [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 97e4a2a1794dbdccf80f0b44c1246c743fa23019
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 68056759b2e80230e5fd2c0f9b2d2a89b549cf37
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>Představení technologie ASP.NET Web Pages – základy formuláře HTML
 ====================
@@ -220,7 +220,7 @@ Pokud jste v kostce řečeno tyto prvky, získáte následující kód:
 > 
 > **Důležité!** Pomocí zástupné symboly (například `@0`) mají být předány hodnoty příkaz SQL je *velmi důležité* pro zabezpečení. Způsob, jakým jste ji tady vidíte, se zástupnými symboly pro různá data, je jediným způsobem, jak je potřeba vytvořit příkazy SQL.
 > 
-> Nikdy vytvoření příkazu SQL umístěním společně (spojováním) literálu text a hodnoty, které můžete získat z uživatele. Zřetězení uživatelský vstup do příkazu SQL otevře váš web, *útok prostřednictvím injektáže SQL* kde uživatel se zlými úmysly odešle hodnoty na stránku, které zabezpečení vaší databáze. (Další informace v článku [Injektáž SQL](https://msdn.microsoft.com/en-us/library/ms161953.aspx) webu MSDN.)
+> Nikdy vytvoření příkazu SQL umístěním společně (spojováním) literálu text a hodnoty, které můžete získat z uživatele. Zřetězení uživatelský vstup do příkazu SQL otevře váš web, *útok prostřednictvím injektáže SQL* kde uživatel se zlými úmysly odešle hodnoty na stránku, které zabezpečení vaší databáze. (Další informace v článku [Injektáž SQL](https://msdn.microsoft.com/library/ms161953.aspx) webu MSDN.)
 
 
 ## <a name="updating-the-movies-page-with-search-code"></a>Aktualizací stránky filmy vyhledávání kódu
@@ -327,7 +327,7 @@ Zde je souhrn jaké tento kód:
 
 ## <a name="testing-the-title-search-feature"></a>Testování funkce hledání názvu
 
-Nyní můžete otestovat stránku dokončené vyhledávání. Spustit *Movies.cshtml*.
+Nyní můžete otestovat stránku dokončené vyhledávání. Run *Movies.cshtml*.
 
 Zadejte genre a klikněte na **vyhledávání Genre**. V mřížce zobrazené filmy genre, jako je před.
 

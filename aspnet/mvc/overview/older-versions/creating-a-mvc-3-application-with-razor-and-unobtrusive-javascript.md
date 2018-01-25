@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 68870caf1608e596962650cf653e5b455b82382a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29b45c07b5498542abbf22c4c3001b1cee41edc9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>Vytváření MVC 3 aplikace s Razor a Nerušivý JavaScript
 ====================
@@ -68,7 +68,7 @@ Název třídy `UserModel`. Nahraďte obsah *UserModel* soubor s následujícím
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample2.cs)]
 
-`UserModel` Třída reprezentuje uživatele. Každý člen třídy je opatřen poznámkou [požadované](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) atribut z [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) oboru názvů. Atributy v [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) obor názvů ověřování automatické a server straně klienta pro webové aplikace.
+`UserModel` Třída reprezentuje uživatele. Každý člen třídy je opatřen poznámkou [požadované](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) atribut z [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) oboru názvů. Atributy v [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů ověřování automatické a server straně klienta pro webové aplikace.
 
 Otevřete `HomeController` třídu a přidejte `using` direktivy, takže může získat přístup `UserModel` a `Users` třídy:
 
@@ -172,7 +172,7 @@ Musíte taky zahrnout několik souborů JavaScript ve vykresleném zobrazení. S
 
 První dva skripty jQuery jsou hostované pomocí Microsoft Ajax Content Delivery Network (CDN). Využitím Microsoft Ajax CDN, může výrazně zlepšit výkon první podle aplikací.
 
-Spusťte aplikaci a klikněte na odkaz pro úpravy. Zobrazení zdrojového kódu stránky v prohlížeči. Zdroj prohlížeče ukazuje počet atributů formuláře `data-val` (pro ověření dat). Pokud je povoleno ověření klienta a nerušivý JavaScript, obsahovat vstupní pole s pravidlem ověření klienta `data-val="true"` atributů ověření nerušivého klienta aktivovat. Například `City` pole v modelu byla označených pomocí [požadované](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) atributů, což vede k HTML vidět v následujícím příkladu:
+Spusťte aplikaci a klikněte na odkaz pro úpravy. Zobrazení zdrojového kódu stránky v prohlížeči. Zdroj prohlížeče ukazuje počet atributů formuláře `data-val` (pro ověření dat). Pokud je povoleno ověření klienta a nerušivý JavaScript, obsahovat vstupní pole s pravidlem ověření klienta `data-val="true"` atributů ověření nerušivého klienta aktivovat. Například `City` pole v modelu byla označených pomocí [požadované](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) atributů, což vede k HTML vidět v následujícím příkladu:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample15.cshtml)]
 
@@ -180,7 +180,7 @@ Pro každé pravidlo ověření klienta se přidá atribut, který má formulá�
 
 ![Požadované města](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image14.png)
 
-Podobně, pro každý parametr v pravidle ověření klienta, přidání atributu má formuláře `data-val-rulename-paramname=paramvalue`. Například `FirstName` vlastnost je opatřen poznámkou [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut a určuje minimální délku 3 a maximální délku 8. Pravidlo ověření dat s názvem `length` má název parametru `max` a hodnota parametru 8. Následující příklad zobrazuje HTML, který se vygeneruje pro `FirstName` pole při úpravách jeden z uživatelů:
+Podobně, pro každý parametr v pravidle ověření klienta, přidání atributu má formuláře `data-val-rulename-paramname=paramvalue`. Například `FirstName` vlastnost je opatřen poznámkou [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut a určuje minimální délku 3 a maximální délku 8. Pravidlo ověření dat s názvem `length` má název parametru `max` a hodnota parametru 8. Následující příklad zobrazuje HTML, který se vygeneruje pro `FirstName` pole při úpravách jeden z uživatelů:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample16.cshtml)]
 

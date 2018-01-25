@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 50d02e8da7b7ab489e662b42d8f08ad3a99e66eb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a19e6c320838849e10d2aa397a23a0ee906bac22
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-optimistic-concurrency-c"></a>Implementace optimistickou metodu souběžného (C#)
 ====================
@@ -257,7 +257,7 @@ Pro tyto předchozí návodů, které se podílejí úprava dat, doporučujeme o
 > Hodnota `OldValuesParameterFormatString` vlastnost musí být mapována na vstupní parametr názvy v BLL, které očekávají původní hodnoty. Vzhledem k tomu, že jsme pojmenovali tyto parametry `original_productName`, `original_supplierID`a tak dále můžete nechat `OldValuesParameterFormatString` hodnotu vlastnosti jako `original_{0}`. Pokud však tyto metody BLL vstupní parametry měl názvy jako `old_productName`, `old_supplierID`a tak dále, je potřeba aktualizovat `OldValuesParameterFormatString` vlastnost `old_{0}`.
 
 
-Neexistuje jeden nastavení konečné vlastnosti, které musí být provedeny v pořadí pro ObjectDataSource správně metody BLL předat původní hodnoty. Má ObjectDataSource [vlastnost ConflictDetection](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) lze přiřadit k [jednu ze dvou hodnot](https://msdn.microsoft.com/en-US/library/system.web.ui.conflictoptions.aspx):
+Neexistuje jeden nastavení konečné vlastnosti, které musí být provedeny v pořadí pro ObjectDataSource správně metody BLL předat původní hodnoty. Má ObjectDataSource [vlastnost ConflictDetection](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) lze přiřadit k [jednu ze dvou hodnot](https://msdn.microsoft.com/library/system.web.ui.conflictoptions.aspx):
 
 - `OverwriteChanges`-Výchozí hodnota. Tyto metody BLL původní vstupní parametry neodesílá původní hodnoty
 - `CompareAllValues`-odesílat původní hodnoty na BLL metody; Tuto možnost zvolte, pokud používáte optimistickou metodu souběžného zpracování
@@ -342,7 +342,7 @@ Tyto změny se nám, teď moct úspěšně odstranit a upravit informace o produ
 
 Chcete-li ověřit, že porušení souběžnosti probíhá zjištěné (nikoli výsledné v datech slepě přepsáním), je potřeba otevřít dvě okna prohlížeče na tuto stránku. V obou případech prohlížeče klikněte na tlačítko Upravit pro Chai. V právě jeden z prohlížečů, změňte název na "Chai čaj" a kliknutím na tlačítko Aktualizovat. Aktualizace by měla být úspěšné a vrátit GridView do předem úpravy stavu, s "Chai čaj" jako nový název produktu.
 
-V jiných okno instance prohlížeče ale textového pole název produktu stále zobrazuje "Chai". V této druhé okno prohlížeče, aktualizovat `UnitPrice` k `25.00`. Bez podpory optimistickou metodu souběžného kliknutím na tlačítko Aktualizovat v druhé instance prohlížeče by změnit název produktu zpět na "Chai", čímž přepsání změny provedené při první instance prohlížeče. S optimistickou metodu souběžného těmto nekompatibilitám, ale kliknutím na tlačítko Aktualizovat na druhou instanci prohlížeče výsledkem [dbconcurrencyexception –](https://msdn.microsoft.com/en-us/library/system.data.dbconcurrencyexception.aspx).
+V jiných okno instance prohlížeče ale textového pole název produktu stále zobrazuje "Chai". V této druhé okno prohlížeče, aktualizovat `UnitPrice` k `25.00`. Bez podpory optimistickou metodu souběžného kliknutím na tlačítko Aktualizovat v druhé instance prohlížeče by změnit název produktu zpět na "Chai", čímž přepsání změny provedené při první instance prohlížeče. S optimistickou metodu souběžného těmto nekompatibilitám, ale kliknutím na tlačítko Aktualizovat na druhou instanci prohlížeče výsledkem [dbconcurrencyexception –](https://msdn.microsoft.com/library/system.data.dbconcurrencyexception.aspx).
 
 
 [![Když se detekuje narušení souběžného zpracování, je vyvolána dbconcurrencyexception –](implementing-optimistic-concurrency-cs/_static/image48.png)](implementing-optimistic-concurrency-cs/_static/image47.png)

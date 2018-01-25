@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/introduction
-ms.openlocfilehash: b98027ee0e7c63bac23054d7623f28294388dede
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b02ef9121e50ab9d9f24032d32f1e65fe73049c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-data-protection"></a>Úvod do ochrany dat
 
@@ -31,7 +31,7 @@ Vzhledem k tomu, že trvalého stavu je důvěryhodný pro server, Očekáváme,
 
 Nakonec od moderní aplikace jsou komponentizované, co jste viděli je, budou jednotlivé komponenty chcete využít tento systém bez ohledu na ostatní součásti v systému. Například pokud součást tokenu nosiče používá tento zásobníku, ho pracovat bez rušení mechanismus anti-proti útokům CSRF, která by mohla využívat se stejným zásobníkem. Proto požadavek na konečné: izolace.
 
-Můžeme poskytnout další omezení chcete-li zúžit rozsah naše požadavky. Předpokládáme, že jsou všechny služby, které pracují v rámci cryptosystem stejně důvěryhodné a že data nemusí generovat ani spotřebováno mimo služby v našem přímou kontrolu. Kromě toho je nutné, operace jsou tak rychlý jako možné vzhledem k tomu, že každý požadavek pro webovou službu projít cryptosystem jeden či více krát. Díky tomu symetrické šifrování ideální pro náš scénář a jsme slevy asymetrické šifrování, dokud například čas, kdy je potřeba.
+Můžeme poskytnout další omezení chcete-li zúžit rozsah naše požadavky. Předpokládáme, že jsou všechny služby, které pracují v rámci cryptosystem stejně důvěryhodné a že data nemusí být generována nebo využívat mimo služby v našem přímou kontrolu. Kromě toho je nutné, operace jsou tak rychlý jako možné vzhledem k tomu, že každý požadavek pro webovou službu projít cryptosystem jeden či více krát. Díky tomu symetrické šifrování ideální pro náš scénář a jsme slevy asymetrické šifrování, dokud například čas, který je potřeba.
 
 ## <a name="design-philosophy"></a>Filosofie návrhu tříd
 

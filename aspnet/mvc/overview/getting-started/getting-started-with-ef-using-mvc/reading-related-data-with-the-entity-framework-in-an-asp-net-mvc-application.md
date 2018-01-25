@@ -2,7 +2,7 @@
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 title: "Čtení dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC | Microsoft Docs"
 author: tdykstra
-description: /AJAX/tutorials/Using-AJAX-Control-Toolkit-Controls-and-Control-Extenders-VB
+description: /ajax/tutorials/using-ajax-control-toolkit-controls-and-control-extenders-vb
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1f4912bb3113a8f9cdae4211e055a7e317ab2aff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7a74d01f306abeeac5ac28c942f03001e0fe00f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Čtení související Data pomocí rozhraní Entity Framework v aplikaci ASP.NET MVC
 ====================
@@ -45,7 +45,7 @@ Aby rozhraní Entity Framework můžete načíst související data do navigačn
 - *Přes načítání*. Při čtení je entita, související data načtena společně s jeho. To obvykle vede jednoho připojení dotaz, který načte všechna data, která je potřeba. Zadejte přes načítání pomocí `Include` metoda.
 
     ![Eager_loading_example](https://asp.net/media/2577856/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Eager_loading_example_33f907ff-f0b0-4057-8e75-05a8cacac807.png)
-- *Explicitní načítání*. Toto je podobná opožděného načítání, s tím rozdílem, že je explicitně načíst související data v kódu; není provedena automaticky při přístupu k navigační vlastnosti. Ručně načíst související data tím, že získáme položka správce stavu objektu entity a volání [Collection.Load](https://msdn.microsoft.com/en-us/library/gg696220(v=vs.103).aspx) metoda pro kolekce nebo [Reference.Load](https://msdn.microsoft.com/en-us/library/gg679166(v=vs.103).aspx) metoda pro vlastnosti, které mají jedna entita. (V následujícím příkladu, pokud chcete načíst správce navigační vlastnost, měli byste nahradit `Collection(x => x.Courses)` s `Reference(x => x.Administrator)`.) Obvykle byste použili explicitní načítání jenom v případě, že jste zapnuté opožděného načítání vypnout.
+- *Explicitní načítání*. Toto je podobná opožděného načítání, s tím rozdílem, že je explicitně načíst související data v kódu; není provedena automaticky při přístupu k navigační vlastnosti. Ručně načíst související data tím, že získáme položka správce stavu objektu entity a volání [Collection.Load](https://msdn.microsoft.com/library/gg696220(v=vs.103).aspx) metoda pro kolekce nebo [Reference.Load](https://msdn.microsoft.com/library/gg679166(v=vs.103).aspx) metoda pro vlastnosti, které mají jedna entita. (V následujícím příkladu, pokud chcete načíst správce navigační vlastnost, měli byste nahradit `Collection(x => x.Courses)` s `Reference(x => x.Administrator)`.) Obvykle byste použili explicitní načítání jenom v případě, že jste zapnuté opožděného načítání vypnout.
 
     ![Explicit_loading_example](https://asp.net/media/2577862/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Explicit_loading_example_79d8c368-6d82-426f-be9a-2b443644ab15.png)
 
@@ -57,7 +57,7 @@ Pokud víte, že potřebujete souvisejících dat pro každou entitu, načíst, 
 
 Na druhé straně v některých případech je opožděného načítání efektivnější. Přes načítání může způsobit velmi složité spojení má být vygenerován, který SQL Server nemůže zpracovat efektivně. Nebo pokud budete potřebovat pro přístup k navigační vlastnosti entity jenom pro podmnožinu sadu entit se zpracování, opožděného načítání může lépe provést, protože přes načítání by načíst více dat, než budete potřebovat. Pokud je důležité výkon, je nejvhodnější pro testování výkonu obou směrech, aby bylo možné nejlepší volbou.
 
-Opožděného načítání maskovat kód, který způsobuje problémy s výkonem. Kód, který neurčuje přes nebo explicitní načítání ale zpracovává velký objem entity a používá několik navigačních vlastností v každé iteraci například může být velmi neefektivní (z důvodu velký počet zpátečních cest k databázi). Aplikace, která provádí i v vývoj pomocí na místním serveru SQL může mít problémy s výkonem při přesunu do Azure SQL Database z důvodu vyšší latence a opožděného načítání. Profilace databázové dotazy s realistické testu zatížení vám pomůže určit, zda je příslušná opožděného načítání. Další informace najdete v části [Demystifying Entity Framework strategie: načítání souvisejících dat](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx) a [pomocí rozhraní Entity Framework snížit latenci sítě do SQL Azure](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx).
+Opožděného načítání maskovat kód, který způsobuje problémy s výkonem. Kód, který neurčuje přes nebo explicitní načítání ale zpracovává velký objem entity a používá několik navigačních vlastností v každé iteraci například může být velmi neefektivní (z důvodu velký počet zpátečních cest k databázi). Aplikace, která provádí i v vývoj pomocí na místním serveru SQL může mít problémy s výkonem při přesunu do Azure SQL Database z důvodu vyšší latence a opožděného načítání. Profilace databázové dotazy s realistické testu zatížení vám pomůže určit, zda je příslušná opožděného načítání. Další informace najdete v části [Demystifying Entity Framework strategie: načítání souvisejících dat](https://msdn.microsoft.com/magazine/hh205756.aspx) a [pomocí rozhraní Entity Framework snížit latenci sítě do SQL Azure](https://msdn.microsoft.com/magazine/gg309181.aspx).
 
 ### <a name="disable-lazy-loading-before-serialization"></a>Zakázat opožděného načítání před serializace
 
@@ -67,9 +67,9 @@ Serializace můžete také být ztěžuje třídy proxy, které používá rozhr
 
 Jedním ze způsobů se chcete vyhnout potížím serializace je serializovat objekty přenos dat (DTOs) namísto objekty entity, jak je znázorněno [pomocí webového rozhraní API s platformou Entity Framework](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-5.md) kurzu.
 
-Pokud nepoužijete DTOs, můžete zakázat opožděného načítání a předešli problémům s proxy podle [zakázání vytváření proxy](https://msdn.microsoft.com/en-US/data/jj592886.aspx).
+Pokud nepoužijete DTOs, můžete zakázat opožděného načítání a předešli problémům s proxy podle [zakázání vytváření proxy](https://msdn.microsoft.com/data/jj592886.aspx).
 
-Tady jsou některé jiné [způsoby, jak zakázat opožděného načítání](https://msdn.microsoft.com/en-US/data/jj574232):
+Tady jsou některé jiné [způsoby, jak zakázat opožděného načítání](https://msdn.microsoft.com/data/jj574232):
 
 - Pro konkrétní navigační vlastnosti, vynechejte `virtual` – klíčové slovo deklarovat vlastnost.
 - Pro všechny vlastnosti navigace, nastavte `LazyLoadingEnabled` k `false`, vložte následující kód v konstruktoru vaší třídy kontextu: 
@@ -164,7 +164,7 @@ Pokud jste vybrali ID lektorem, vybrané lektorem se načítají ze seznamu vyu�
 
 `Where` Metoda vrátí kolekci, ale v takovém případě kritéria předaný výsledek této metody pouze do jedné `Instructor` nevrátila entity. `Single` Metoda převede kolekci do jednoho `Instructor` entity, která umožňuje přístup k dané entity `Courses` vlastnost.
 
-Můžete použít [jeden](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx) metoda na kolekci, když víte kolekce budou mít jen jednu položku. `Single` Metoda vyvolá výjimku, pokud je kolekce do ní předán prázdný nebo pokud existuje více než jednu položku. Alternativou je [SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx), která vrací výchozí hodnotu (`null` v tomto případě) Pokud je kolekce prázdná. Ale v takovém případě stále vznikly by výjimku (z pokusu o vyhledání `Courses` vlastnost `null` odkaz), a zpráva o výjimce by méně jasně ukazovat na příčinu problému. Při volání `Single` metodu, můžete také předat v `Where` podmínku namísto volání `Where` metoda samostatně:
+Můžete použít [jeden](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx) metoda na kolekci, když víte kolekce budou mít jen jednu položku. `Single` Metoda vyvolá výjimku, pokud je kolekce do ní předán prázdný nebo pokud existuje více než jednu položku. Alternativou je [SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx), která vrací výchozí hodnotu (`null` v tomto případě) Pokud je kolekce prázdná. Ale v takovém případě stále vznikly by výjimku (z pokusu o vyhledání `Courses` vlastnost `null` odkaz), a zpráva o výjimce by méně jasně ukazovat na příčinu problému. Při volání `Single` metodu, můžete také předat v `Where` podmínku namísto volání `Where` metoda samostatně:
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs)]
 

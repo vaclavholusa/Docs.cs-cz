@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 06f3e59d0e6fd59a83934084422816360e915bd7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b80b25933679d5c5b465af24cf6ff5d3b824b401
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>Přidání ovládacích prvků ověření na rozhraní DataList úpravy (C#)
 ====================
@@ -71,11 +71,11 @@ Po přesunutí nad obsah a kód z `ErrorHandling.aspx` k `UIValidation.aspx`, za
 
 Při vytváření formuláře pro zadávání dat, je důležité, že uživatelé zadají všechna povinná pole a zda jejich zadané vstupy jsou hodnoty právní, správně naformátován. Chcete-li vám mohou pomoci zajistit, že vstupy uživatele s platnou, technologie ASP.NET poskytuje pět integrované ověření ovládacích prvků, které slouží k ověření hodnoty jeden vstupní ovládací prvek webu:
 
-- [RequiredFieldValidator](https://msdn.microsoft.com/en-us/library/5hbw267h(VS.80).aspx) zajistí, že byla zadána hodnota
-- [CompareValidator](https://msdn.microsoft.com/en-us/library/db330ayw(VS.80).aspx) ověří hodnotu s jinou hodnotou webové ovládací prvek nebo konstantní hodnotu nebo zajišťuje, že formátu hodnot s právní pro zadaný datový typ
-- [RangeValidator](https://msdn.microsoft.com/en-us/library/f70d09xt.aspx) zajistí, že je hodnota v rozsahu hodnot
-- [RegularExpressionValidator](https://msdn.microsoft.com/en-US/library/eahwtc9e.aspx) hodnotu porovnává [regulární výraz](http://en.wikipedia.org/wiki/Regular_expression)
-- [CustomValidator](https://msdn.microsoft.com/en-us/library/9eee01cx(VS.80).aspx) hodnotu porovnává vlastní, uživatelsky definované metoda
+- [RequiredFieldValidator](https://msdn.microsoft.com/library/5hbw267h(VS.80).aspx) zajistí, že byla zadána hodnota
+- [CompareValidator](https://msdn.microsoft.com/library/db330ayw(VS.80).aspx) ověří hodnotu s jinou hodnotou webové ovládací prvek nebo konstantní hodnotu nebo zajišťuje, že formátu hodnot s právní pro zadaný datový typ
+- [RangeValidator](https://msdn.microsoft.com/library/f70d09xt.aspx) zajistí, že je hodnota v rozsahu hodnot
+- [RegularExpressionValidator](https://msdn.microsoft.com/library/eahwtc9e.aspx) hodnotu porovnává [regulární výraz](http://en.wikipedia.org/wiki/Regular_expression)
+- [CustomValidator](https://msdn.microsoft.com/library/9eee01cx(VS.80).aspx) hodnotu porovnává vlastní, uživatelsky definované metoda
 
 Další informace o těchto pět ovládacích prvků odkazuje zpět na [přidání ověřovací ovládací prvky pro úpravy a vkládání rozhraní](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md) kurzu nebo rezervaci [část ovládací prvky pro ověřování](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/validation/default.aspx) z [ASP.NET Quickstart kurzy](https://quickstarts.asp.net).
 
@@ -93,7 +93,7 @@ Umožní s začněte tím, že přidání ovládacích prvků potřeby ověřen�
 **Obrázek 3**: přidejte RequiredFieldValidator k `EditItemTemplate After` `ProductName` textové pole ([Kliknutím zobrazit obrázek v plné velikosti](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image9.png))
 
 
-Všechny ovládací prvky ověřování práci ověření vstupu jeden ovládací prvek ASP.NET Web. Proto potřebujeme k označení, že by měl RequiredFieldValidator, kterou jsme právě přidali vyhodnotit proti `ProductName` textové pole; to se provádí nastavením prvku ověřování s [ `ControlToValidate` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) k `ID` z vhodný ovládací prvek webové (`ProductName`, u této instance). Dále nastavte [ `ErrorMessage` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) chcete je nutné zadat název produktu s a [ `Text` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) k \*. `Text` Hodnota vlastnosti, pokud je zadán, je text, který se zobrazí ověření ovládacím prvkem, pokud se ověření nezdaří. `ErrorMessage` Hodnotu vlastnosti, který je vyžadován, je používán ovládacího prvku ValidationSummary; Pokud `Text` hodnota vlastnosti je vynechán, `ErrorMessage` hodnotu vlastnosti se zobrazí ovládací prvek ověřování v neplatný vstup.
+Všechny ovládací prvky ověřování práci ověření vstupu jeden ovládací prvek ASP.NET Web. Proto potřebujeme k označení, že by měl RequiredFieldValidator, kterou jsme právě přidali vyhodnotit proti `ProductName` textové pole; to se provádí nastavením prvku ověřování s [ `ControlToValidate` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) k `ID` z vhodný ovládací prvek webové (`ProductName`, u této instance). Dále nastavte [ `ErrorMessage` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) chcete je nutné zadat název produktu s a [ `Text` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) k \*. `Text` Hodnota vlastnosti, pokud je zadán, je text, který se zobrazí ověření ovládacím prvkem, pokud se ověření nezdaří. `ErrorMessage` Hodnotu vlastnosti, který je vyžadován, je používán ovládacího prvku ValidationSummary; Pokud `Text` hodnota vlastnosti je vynechán, `ErrorMessage` hodnotu vlastnosti se zobrazí ovládací prvek ověřování v neplatný vstup.
 
 Po nastavení tyto tři vlastnosti RequiredFieldValidator, by měla vypadat podobně jako na obrázku 4 obrazovky.
 
@@ -105,7 +105,7 @@ Po nastavení tyto tři vlastnosti RequiredFieldValidator, by měla vypadat podo
 
 S RequiredFieldValidator přidán do `EditItemTemplate`, všechny, že zůstanou je přidání potřeby ověření za cenu produktu s textové pole. Vzhledem k tomu `UnitPrice` je volitelný při úpravě záznam, jsme nejsou zobrazeny t potřeba přidat RequiredFieldValidator. , Ale potřebujete přidat CompareValidator zajistit, aby `UnitPrice`, pokud je zadaný, správně naformátován jako měny a je větší než nebo rovna 0.
 
-Přidat CompareValidator do `EditItemTemplate` a nastavit jeho `ControlToValidate` vlastnost `UnitPrice`, jeho `ErrorMessage` vlastnost, která má za cenu musí být větší než nebo roven nule a nesmí obsahovat symbolu měny a jeho `Text` vlastnost \*. Označuje, zda `UnitPrice` hodnota musí být větší než nebo rovna 0, nastavte CompareValidator s [ `Operator` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) k `GreaterThanEqual`, jeho [ `ValueToCompare` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) na hodnotu 0, a jeho [ `Type` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) k `Currency`.
+Přidat CompareValidator do `EditItemTemplate` a nastavit jeho `ControlToValidate` vlastnost `UnitPrice`, jeho `ErrorMessage` vlastnost, která má za cenu musí být větší než nebo roven nule a nesmí obsahovat symbolu měny a jeho `Text` vlastnost \*. Označuje, zda `UnitPrice` hodnota musí být větší než nebo rovna 0, nastavte CompareValidator s [ `Operator` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) k `GreaterThanEqual`, jeho [ `ValueToCompare` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) na hodnotu 0, a jeho [ `Type` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) k `Currency`.
 
 Po přidání ovládacích prvků tyto dvě ověření, DataList s `EditItemTemplate` s deklarativní syntaxe by měl vypadat podobně jako následující:
 
@@ -144,13 +144,13 @@ Ve výchozím nastavení ovládací prvky webového ověření emitování JavaS
 
 Tlačítko Zrušit je takový příklad. Představte si, že uživatel zadá neplatná data, jako je například vynechání název produktu s rozhodne she nemá t chcete uložit produktu po všech a přístupy na tlačítko Storno. V současné době se aktivuje tlačítko Zrušit ověření ovládací prvky na stránce, které ohlásit že chybí název produktu a zabránit zpětné volání. Zadejte text do našich uživatel musí `ProductName` TextBox jenom k zrušit mimo proces úpravy.
 
-Naštěstí tlačítko, LinkButton a ImageButton mají [ `CausesValidation` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.causesvalidation.aspx) , můžete určit, zda kliknutím na tlačítko by měla iniciovat logiku ověření (výchozí nastavení `True`). Nastavit s tlačítkem Storno `CausesValidation` vlastnost `False`.
+Naštěstí tlačítko, LinkButton a ImageButton mají [ `CausesValidation` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.causesvalidation.aspx) , můžete určit, zda kliknutím na tlačítko by měla iniciovat logiku ověření (výchozí nastavení `True`). Nastavit s tlačítkem Storno `CausesValidation` vlastnost `False`.
 
 ## <a name="ensuring-the-inputs-are-valid-in-the-updatecommand-event-handler"></a>Zajištění vstupní hodnoty jsou platné v UpdateCommand obslužnou rutinu události
 
 Z důvodu klientský skript vygenerované v ovládacích prvcích ověření, pokud uživatel zadá neplatný vstup ovládací prvky ověřování zrušte všechny postback iniciovaná tlačítko LinkButton, nebo ImageButton ovládací prvky, jejichž `CausesValidation` vlastnosti jsou `True` (na Výchozí nastavení). Pokud návštěvy s antiquated prohlížeč nebo některá jejichž JavaScript podpora byla zakázána, nebude provést kontroly ověřování na straně klienta.
 
-Všechny ovládací prvky ASP.NET ověření zopakujte jejich logiku ověření okamžitě po zpětné volání a sestav celkové platnost vstupy stránky s prostřednictvím [ `Page.IsValid` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.page.isvalid.aspx). Však není tok stránky přeruší nebo byla zastavena v žádném způsobem na základě hodnoty z `Page.IsValid`. Jako vývojáři, je zajistit, aby naše odpovědnost `Page.IsValid` vlastnost má hodnotu `True` před pokračováním kód, který se předpokládá, platné vstupní data.
+Všechny ovládací prvky ASP.NET ověření zopakujte jejich logiku ověření okamžitě po zpětné volání a sestav celkové platnost vstupy stránky s prostřednictvím [ `Page.IsValid` vlastnost](https://msdn.microsoft.com/library/system.web.ui.page.isvalid.aspx). Však není tok stránky přeruší nebo byla zastavena v žádném způsobem na základě hodnoty z `Page.IsValid`. Jako vývojáři, je zajistit, aby naše odpovědnost `Page.IsValid` vlastnost má hodnotu `True` před pokračováním kód, který se předpokládá, platné vstupní data.
 
 Pokud má uživatel zakázán JavaScript, navštíví naši stránku, upraví produktu, zadá hodnotu ceny příliš nákladné a kliknutím na tlačítko Aktualizovat, bude možné obejít ověřování straně klienta a výsledkem by měla být zpětné volání. Na zpětné volání, ASP.NET stránky s `UpdateCommand` spustí obslužnou rutinu události a dojde k výjimce při pokusu o analýzu příliš nákladné `Decimal`. Vzhledem k tomu, že máme výjimek, budou řádně zpracovávat takové výjimky, ale jsme může zabránit neplatná data uklouznutí prostřednictvím na prvním místě ve pouze budete pokračovat s `UpdateCommand` obslužné rutiny události Pokud `Page.IsValid` má hodnotu `True`.
 
@@ -167,9 +167,9 @@ Pomocí tohoto přidání produktu se pokusí aktualizovat pouze v případě, �
 
 ## <a name="step-3-summarizing-data-entry-problems"></a>Krok 3: Shrnutí problémů položka dat
 
-Kromě pěti ověřovací ovládací prvky, technologie ASP.NET obsahuje [ovládací prvek ValidationSummary](https://msdn.microsoft.com/en-US/library/f9h59855(VS.80).aspx), které zobrazuje `ErrorMessage` s kontrolní mechanismy ověřování, které zjištěna neplatná data. Tato souhrnná data mohou být zobrazeny jako text na webové stránce nebo prostřednictvím messagebox modální, na straně klienta. Umožní s vylepšit tento kurz a zahrnují klienta messagebox shrnutí problémy ověření.
+Kromě pěti ověřovací ovládací prvky, technologie ASP.NET obsahuje [ovládací prvek ValidationSummary](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx), které zobrazuje `ErrorMessage` s kontrolní mechanismy ověřování, které zjištěna neplatná data. Tato souhrnná data mohou být zobrazeny jako text na webové stránce nebo prostřednictvím messagebox modální, na straně klienta. Umožní s vylepšit tento kurz a zahrnují klienta messagebox shrnutí problémy ověření.
 
-K tomu, přetáhněte ovládací prvek ValidationSummary z panelu nástrojů na návrháře. Umístění t ValidationSummary ovládací prvek nemá opravdu důležité, protože jsme níž chcete konfigurovat jenom zobrazit souhrn jako messagebox. Po přidání ovládacího prvku, nastavte jeho [ `ShowSummary` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) k `False` a jeho [ `ShowMessageBox` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) k `True`. Pomocí tohoto přidání všechny chyby ověřování, jsou shrnuty v messagebox klienta (viz obrázek 6).
+K tomu, přetáhněte ovládací prvek ValidationSummary z panelu nástrojů na návrháře. Umístění t ValidationSummary ovládací prvek nemá opravdu důležité, protože jsme níž chcete konfigurovat jenom zobrazit souhrn jako messagebox. Po přidání ovládacího prvku, nastavte jeho [ `ShowSummary` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) k `False` a jeho [ `ShowMessageBox` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) k `True`. Pomocí tohoto přidání všechny chyby ověřování, jsou shrnuty v messagebox klienta (viz obrázek 6).
 
 
 [![Chyby ověření jsou shrnuty v Messagebox na straně klienta](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image16.png)

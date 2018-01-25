@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/working-with-groups
 msc.type: authoredcontent
-ms.openlocfilehash: 04da74f23663313e70e54fd4f2f9e5f005791cff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7bc0ff73ade72729cc5e1217b3fe704ac0d8cab8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-groups-in-signalr-1x"></a>Práce se skupinami v systému SignalR 1.x
 ====================
@@ -47,7 +47,7 @@ Toto téma obsahuje následující části:
 
 ## <a name="adding-and-removing-users"></a>Přidávání a odebírání uživatelů
 
-Chcete-li přidat nebo odebrat uživatele ze skupiny, zavolejte [přidat](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) nebo [odebrat](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) metody a předejte jí id uživatele připojení a názvu skupiny jako parametry. Nemusíte ručně odeberte uživatele ze skupiny po ukončení připojení.
+Chcete-li přidat nebo odebrat uživatele ze skupiny, zavolejte [přidat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) nebo [odebrat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) metody a předejte jí id uživatele připojení a názvu skupiny jako parametry. Nemusíte ručně odeberte uživatele ze skupiny po ukončení připojení.
 
 Následující příklad ukazuje `Groups.Add` a `Groups.Remove` metody používané v metodách rozbočovače.
 

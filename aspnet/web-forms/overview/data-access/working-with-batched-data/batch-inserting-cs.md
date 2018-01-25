@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9eb65b99a955770c72b28713d8daa66bcd1d5344
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9dc18e259da24d71464a156a70a85cfc9a1745ce
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-inserting-c"></a>Dávkové vložení (C#)
 ====================
@@ -96,7 +96,7 @@ Spuštění přetažením panelu z panelu nástrojů na návrháře jeho umíst�
 Dále je potřeba vytvořit vkládání rozhraní, které se zobrazí zpět na obrázku 1. Toto rozhraní se může vytvořit prostřednictvím řady různých způsobů HTML, ale budeme používat přímočará jeden: čtyři sloupce, sedm řádek tabulky.
 
 > [!NOTE]
-> Při zadávání kódu pro kód HTML `<table>` elementy, chci raději použít zobrazení zdroje. Když Visual Studio jsou nástroje pro přidání `<table>` prvků prostřednictvím návrháře návrháře zdá se, že všechny příliš ochotni vložit nevyžádaný pro `style` nastavení do kódu. Jakmile mám vytvořené `<table>` značek, I obvykle vrátíte do návrháře přidat ovládací prvky webového a nastavte jejich vlastnosti. Při vytváření tabulky pomocí předem určené sloupců a řádků nechci pomocí statické HTML místo [ovládací prvek webu tabulky](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.table.aspx) vzhledem k tomu, že všechny ovládací prvky webového umístit do ovládacího prvku Web tabulky lze přistupovat pouze pomocí `FindControl("controlID")` vzor. , Ale používám ovládacích prvků tabulka pro dynamicky velikost tabulky (ty, jejichž řádky nebo sloupce jsou založené na některé databáze nebo definované uživatelem kritérií), od Web tabulky řízení konstruovat prostřednictvím kódu programu.
+> Při zadávání kódu pro kód HTML `<table>` elementy, chci raději použít zobrazení zdroje. Když Visual Studio jsou nástroje pro přidání `<table>` prvků prostřednictvím návrháře návrháře zdá se, že všechny příliš ochotni vložit nevyžádaný pro `style` nastavení do kódu. Jakmile mám vytvořené `<table>` značek, I obvykle vrátíte do návrháře přidat ovládací prvky webového a nastavte jejich vlastnosti. Při vytváření tabulky pomocí předem určené sloupců a řádků nechci pomocí statické HTML místo [ovládací prvek webu tabulky](https://msdn.microsoft.com/library/system.web.ui.webcontrols.table.aspx) vzhledem k tomu, že všechny ovládací prvky webového umístit do ovládacího prvku Web tabulky lze přistupovat pouze pomocí `FindControl("controlID")` vzor. , Ale používám ovládacích prvků tabulka pro dynamicky velikost tabulky (ty, jejichž řádky nebo sloupce jsou založené na některé databáze nebo definované uživatelem kritérií), od Web tabulky řízení konstruovat prostřednictvím kódu programu.
 
 
 Zadejte následující kód v rámci `<asp:Panel>` značek `InsertingInterface` panelu:

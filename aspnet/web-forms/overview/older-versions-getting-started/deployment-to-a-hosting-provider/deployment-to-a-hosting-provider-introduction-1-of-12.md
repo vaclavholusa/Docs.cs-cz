@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 7c03453e64cfc065d9f424702cc5af373e9bf536
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9c0edb301de85d15b9a3527382b72211f6f3d3ec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio: Úvod - 1 12
 ====================
@@ -63,7 +63,7 @@ Poskytovatel hostingu používá pro účely tohoto kurzu, Cytanium.com, je jedn
 
 ## <a name="deploying-web-site-projects"></a>Nasazení webové projekty
 
-Contoso univerzity je projekt webové aplikace Visual Studio. Většina metody nasazení a nástroje ukázáno v tomto kurzu se nevztahují na [webové projekty](https://msdn.microsoft.com/en-us/library/dd547590.aspx). Informace o tom, jak nasadit webové projekty najdete v tématu [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/en-us/library/bb386521.aspx#deployment_for_web_site_projects).
+Contoso univerzity je projekt webové aplikace Visual Studio. Většina metody nasazení a nástroje ukázáno v tomto kurzu se nevztahují na [webové projekty](https://msdn.microsoft.com/library/dd547590.aspx). Informace o tom, jak nasadit webové projekty najdete v tématu [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx#deployment_for_web_site_projects).
 
 ## <a name="deploying-aspnet-mvc-projects"></a>Nasazení projekty ASP.NET MVC
 
@@ -87,7 +87,7 @@ Než začnete, ujistěte se, že máte Windows 7 nebo novější a ve vašem po�
 
 - [Visual Studio 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
 - [Visual Web Developer Express 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VWD2010SP1Pack)
-- [Visual Studio 2012 RC a Visual Studio Express 2012 RC pro Web](https://go.microsoft.com/fwlink/?LinkId=240162)
+- [Visual Studio 2012 RC or Visual Studio Express 2012 RC for Web](https://go.microsoft.com/fwlink/?LinkId=240162)
 
 Pokud máte Visual Studio 2010 SP1 nebo Visual Web Developer Express 2010 SP1, nainstalujte také následující produkty:
 
@@ -110,7 +110,7 @@ Pokud chcete připravit na kurz kroky spolupracovat, uložte ContosoUniversity B
 
 Spuštění sady Visual Studio, otevřete projekt a stiskněte klávesu CTRL + F5 ji spustit.
 
-[![Home_Page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image2.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image1.png)
+[![Home_page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image2.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image1.png)
 
 Webových stránek jsou přístupné z řádku nabídek a umožňují provádět následující funkce:
 
@@ -143,4 +143,4 @@ Následující funkce aplikace budou mít vliv nasazení nebo co musíte udělat
 V tomto prvním kurzu v řadě byly staženy ukázkový projekt sady Visual Studio a zkontrolovat lokality funkce, které ovlivňují nasazení aplikace. V následujících kurzech připravíte nasazení nastavením některé z těchto věcí automaticky zpracovávat. Ostatní můžete postará o ručně.
 
 >[!div class="step-by-step"]
-[Další](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+[Next](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

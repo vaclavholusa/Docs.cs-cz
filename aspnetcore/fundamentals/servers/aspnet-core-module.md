@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 153c40f0e825ff5826e916c7ea877a25d81954f1
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9dc2183ebbdf8b74106fe57a1dd191a57ba5d1bc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-aspnet-core-module"></a>Úvod do modulu ASP.NET Core
 
@@ -38,7 +38,7 @@ Zde je diagram, který ukazuje vztah mezi aplikací služby IIS, ANCM a ASP.NET 
 
 ![Modul ASP.NET Core](aspnet-core-module/_static/ancm.png)
 
-Požadavky přichází z webu a stiskněte tlačítko ovladač Http.Sys režimu jádra, který směruje je do služby IIS na primární port (80) nebo SSL port (443). ANCM předává požadavky na aplikace ASP.NET Core na port HTTP, který je nakonfigurovaný pro aplikaci, které není portu 80/443.
+Požadavky přichází z webu a stiskněte tlačítko ovladač Http.Sys režimu jádra, který směruje je do služby IIS na primární port (80) nebo SSL port (443). ANCM předá požadavky na aplikace ASP.NET Core přes HTTP port nakonfigurovaný pro aplikaci, která není portu 80/443.
 
 Kestrel naslouchá pro provoz přicházející ze ANCM.  ANCM Určuje port, přes proměnné prostředí při spuštění a [UseIISIntegration](#call-useiisintegration) metoda nakonfiguruje server tak, aby naslouchala na `http://localhost:{port}`. Existují další kontroly, aby zamítal požadavky, nikoli z ANCM. (ANCM nepodporuje předávání protokolu HTTPS, takže jsou předávány požadavky prostřednictvím protokolu HTTP i v případě, že přijatých službou IIS prostřednictvím protokolu HTTPS.)
 

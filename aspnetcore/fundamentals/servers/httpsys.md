@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 60301e1e3eb96f51e86ef9f8be61f5fd8a4c009c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6fc356d8ecc1b699269286f244000b493e48a2c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Ovladač HTTP.sys webového serveru implementace v ASP.NET Core
 
@@ -140,7 +140,7 @@ V sadě Visual Studio je výchozí profil spuštění pro službu IIS Express. C
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>Preregister předpony adres URL a konfigurace protokolu SSL
 
-Služba IIS a ovladač HTTP.sys závisí na základní ovladač režimu jádra Http.Sys naslouchat požadavkům a počáteční zpracování. Ve službě IIS uživatelské rozhraní pro správu poskytuje relativně snadný způsob, jak nakonfigurovat vše, co. Však musíte nakonfigurovat Http.Sys sami. Integrované nástroje způsobem, který je *netsh.exe*. 
+Služba IIS a ovladač HTTP.sys závisí na základní ovladač režimu jádra Http.Sys naslouchat požadavkům a počáteční zpracování. Ve službě IIS uživatelské rozhraní pro správu poskytuje relativně snadný způsob, jak nakonfigurovat vše, co. Však musíte nakonfigurovat Http.Sys sami. Integrované nástroje učinit na *netsh.exe*. 
 
 S *netsh.exe* můžete vyhradit předpony adres URL a přiřadit certifikáty SSL. Tento nástroj vyžaduje oprávnění správce.
 

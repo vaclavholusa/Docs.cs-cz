@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: ad052570fb2f168da657cd1263d8342a59d4cab0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5aa532137436922519c86246ebfa834910ac0d86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="parameter-binding-in-aspnet-web-api"></a>Parametr vazby v rozhraní ASP.NET Web API
 ====================
@@ -26,7 +26,7 @@ Když webového rozhraní API volá metodu na řadič, je nutné nastavit hodnot
 
 Ve výchozím nastavení používá webového rozhraní API pro svázání parametrů následující pravidla:
 
-- Pokud má parametr hodnotu typu "jednoduché", se pokusí získat hodnotu z identifikátoru URI webového rozhraní API. Jednoduché typy patří .NET [primitivní typy](https://msdn.microsoft.com/en-us/library/system.type.isprimitive.aspx) (**int**, **bool**, **dvojité**, a tak dále), plus **časový interval**, **Data a času**, **Guid**, **decimal**, a **řetězec**, *plus* žádné Zadejte pomocí převaděče typu, který můžete převést na řetězec. (Další informace o převaděče typů později.)
+- Pokud má parametr hodnotu typu "jednoduché", se pokusí získat hodnotu z identifikátoru URI webového rozhraní API. Jednoduché typy patří .NET [primitivní typy](https://msdn.microsoft.com/library/system.type.isprimitive.aspx) (**int**, **bool**, **dvojité**, a tak dále), plus **časový interval**, **Data a času**, **Guid**, **decimal**, a **řetězec**, *plus* žádné Zadejte pomocí převaděče typu, který můžete převést na řetězec. (Další informace o převaděče typů později.)
 - Pro komplexní typy, webové rozhraní API se pokusí načíst hodnotu z textu zprávy, použití [formátovací modul typu média](media-formatters.md).
 
 Tady je příklad typické metoda kontroleru webového rozhraní API:
@@ -102,7 +102,7 @@ Získá vazač modelu nezpracované vstupní hodnoty z *zprostředkovatele hodno
 
 Výchozí zprostředkovatele hodnot v rozhraní Web API získá hodnoty z data trasy a řetězce dotazu. Například pokud je identifikátor URI `http://localhost/api/values/1?location=48,-122`, zprostředkovatele hodnot vytvoří následující páry klíč hodnota:
 
-- ID = &quot;1&quot;
+- id = &quot;1&quot;
 - umístění = &quot;48,122&quot;
 
 (I mě za předpokladu, že výchozí šablonu trasy, která je &quot;rozhraní api nebo {controller} / {id}&quot;.)
@@ -121,7 +121,7 @@ Můžete také přidat **[ModelBinder]** atributu typu. Webové rozhraní API po
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample11.cs)]
 
-Nakonec můžete přidat zprostředkovatele vazače modelu, aby **HttpConfiguration**. Zprostředkovatele vazače modelu je jednoduše objekt pro vytváření třídy, která vytvoří vazač modelu. Můžete vytvořit poskytovatele odvozování z [ModelBinderProvider](https://msdn.microsoft.com/en-us/library/system.web.http.modelbinding.modelbinderprovider.aspx) třídy. Pokud vaše vazač modelu zpracovává jeden typ, je však jednodušší použít integrované **SimpleModelBinderProvider**, která je určená pro tento účel. Následující kód ukazuje, jak to udělat.
+Nakonec můžete přidat zprostředkovatele vazače modelu, aby **HttpConfiguration**. Zprostředkovatele vazače modelu je jednoduše objekt pro vytváření třídy, která vytvoří vazač modelu. Můžete vytvořit poskytovatele odvozování z [ModelBinderProvider](https://msdn.microsoft.com/library/system.web.http.modelbinding.modelbinderprovider.aspx) třídy. Pokud vaše vazač modelu zpracovává jeden typ, je však jednodušší použít integrované **SimpleModelBinderProvider**, která je určená pro tento účel. Následující kód ukazuje, jak to udělat.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample12.cs)]
 

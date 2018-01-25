@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/what-is-new-in-aspnet-mvc
 msc.type: content
-ms.openlocfilehash: e7f92dd7a09d1986ad775203effcbce76fb0e6f4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29692b380f0ad1673459681042610876d152a76f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-2"></a>Co je nového v architektuře ASP.NET MVC 2
 ====================
@@ -88,7 +88,7 @@ Pokud nezadáte žádný obor názvů v metodě RegisterArea voláním kontextu.
 
 ### <a id="_TOC3_3"></a>Podpora pro asynchronní řadiče
 
-ASP.NET MVC 2 teď umožňuje řadiče k asynchronnímu zpracování požadavků. To může vést k větší zvýšení výkonu tím, že servery, které často místo toho volat neblokující svými protějšky volání blokování operací (jako jsou síťové požadavky). Další informace najdete v tématu [pomocí asynchronní kontroler v architektuře ASP.NET MVC](https://msdn.microsoft.com/en-us/library/ee728598(v=VS.100).aspx) tématu na webu MSDN.
+ASP.NET MVC 2 teď umožňuje řadiče k asynchronnímu zpracování požadavků. To může vést k větší zvýšení výkonu tím, že servery, které často místo toho volat neblokující svými protějšky volání blokování operací (jako jsou síťové požadavky). Další informace najdete v tématu [pomocí asynchronní kontroler v architektuře ASP.NET MVC](https://msdn.microsoft.com/library/ee728598(v=VS.100).aspx) tématu na webu MSDN.
 
 ### <a id="_TOC3_4"></a>Podpora pro DefaultValueAttribute – v parametrů metody akce
 
@@ -142,7 +142,7 @@ Třída ModelMetadataProvider poskytuje abstrakci pro získání metadat pro mod
 
 Třída objektu ViewDataDictionary zpřístupňuje objekt ModelMetadata, který obsahuje metadata, která je v třídě ModelMetadataProvider extrahovat z modelu. To umožňuje objekty se šablonami za využívání těchto metadat a odpovídajícím způsobem upravit jejich výstup.
 
-Další informace najdete v dokumentaci pro [ModelMetadata](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) a [ModelMetadataProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) třídy.
+Další informace najdete v dokumentaci pro [ModelMetadata](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) a [ModelMetadataProvider](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) třídy.
 
 ### <a id="_TOC3_7"></a>Podpora pro DataAnnotations atributy
 
@@ -152,7 +152,7 @@ Další informace najdete v tématu [postupy: ověření modelu dat pomocí Data
 
 ### <a id="_TOC3_8"></a>Zprostředkovatele ověření modelu
 
-Třída zprostředkovatele ověření modelu představuje abstrakci, která poskytuje logiku ověření pro model. ASP.NET MVC zahrnuje výchozí poskytovatel na základě atributů ověření, které jsou zahrnuty v oboru názvů System.ComponentModel.DataAnnotations. Můžete také vytvořit vlastní zprostředkovatele ověřování, které definují vlastní pravidla ověřování a mapování vlastních ověřovacích pravidel do modelu. Další informace najdete v dokumentaci pro [ModelValidatorProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) třídy.
+Třída zprostředkovatele ověření modelu představuje abstrakci, která poskytuje logiku ověření pro model. ASP.NET MVC zahrnuje výchozí poskytovatel na základě atributů ověření, které jsou zahrnuty v oboru názvů System.ComponentModel.DataAnnotations. Můžete také vytvořit vlastní zprostředkovatele ověřování, které definují vlastní pravidla ověřování a mapování vlastních ověřovacích pravidel do modelu. Další informace najdete v dokumentaci pro [ModelValidatorProvider](https://msdn.microsoft.com/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) třídy.
 
 ### <a id="_TOC3_9"></a>Ověřování na straně klienta
 

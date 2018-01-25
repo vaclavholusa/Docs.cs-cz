@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 4309290294b28d4c177e0193719bcff4b3f2a8cf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 60374ddc6754f7e312ad08b420268308a9935bb4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-view"></a>Přidání zobrazení
 ====================
@@ -34,7 +34,7 @@ Aktuálně `Index` metoda vrátí řetězec s zprávu, která je pevně zakódov
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs)]
 
-`Index` Metody popsané výše používá šablonu zobrazení pro generování odpovědi HTML do prohlížeče. Metody kontroleru (také označované jako [metody akce](http://rachelappel.com/asp.net-mvc-actionresults-explained)), například `Index` metody popsané výše, obecně vrátit [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (nebo třídy odvozené od [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx)), není primitivní typy, jako řetězec.
+`Index` Metody popsané výše používá šablonu zobrazení pro generování odpovědi HTML do prohlížeče. Metody kontroleru (také označované jako [metody akce](http://rachelappel.com/asp.net-mvc-actionresults-explained)), například `Index` metody popsané výše, obecně vrátit [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (nebo třídy odvozené od [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx)), není primitivní typy, jako řetězec.
 
 V projektu přidejte šablonu a zobrazení, můžete použít s `Index` metoda. Chcete-li to provést, klikněte pravým tlačítkem uvnitř `Index` metoda a klikněte na tlačítko **přidat zobrazení**.
 
@@ -94,7 +94,7 @@ Spusťte aplikaci a Všimněte si, že teď uvádí &quot;MVC film &quot;. Klikn
 
 Nyní změňte název zobrazení pro Index.
 
-Otevřete *MvcMovie\Views\HelloWorld\Index.cshtml*. Existují dvě místa změnit: nejdřív, zobrazí se text v názvu prohlížeče a pak v hlavičce sekundární ( `<h2>` element). Budete je provedete mírně lišit, abyste viděli, které bit kódu změní kterou částí aplikace.
+Open *MvcMovie\Views\HelloWorld\Index.cshtml*. Existují dvě místa změnit: nejdřív, zobrazí se text v názvu prohlížeče a pak v hlavičce sekundární ( `<h2>` element). Budete je provedete mírně lišit, abyste viděli, které bit kódu změní kterou částí aplikace.
 
 [!code-cshtml[Main](adding-a-view/samples/sample6.cshtml)]
 

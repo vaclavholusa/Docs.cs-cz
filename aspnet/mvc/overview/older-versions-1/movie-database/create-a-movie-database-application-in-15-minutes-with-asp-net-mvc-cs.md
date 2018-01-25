@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8294b5a8824c6a27e958e1ea78b7909a134447d2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a67ca5422d4353b8c23b3fd804246906b8b6d717
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-c"></a>Vytvoření databáze aplikace film za 15 minut s architekturou ASP.NET MVC (C#)
 ====================
@@ -59,21 +59,21 @@ Budete potřebovat buď Visual Studio 2008 nebo Visual Web Developer 2008 Expres
 
 Pokud nevlastníte Visual Studio 2008, můžete stáhnout 90denní zkušební verzi sady Visual Studio 2008 z tohoto webu:
 
-[https://msdn.microsoft.com/en-us/vs2008/Products/cc268305.aspx](https://msdn.microsoft.com/en-us/vs2008/products/cc268305.aspx)
+[https://msdn.microsoft.com/vs2008/products/cc268305.aspx](https://msdn.microsoft.com/vs2008/products/cc268305.aspx)
 
 Alternativně můžete vytvořit rozhraní ASP.NET MVC aplikace s Visual Web Developer Express 2008. Pokud se rozhodnete použít Visual Web Developer Express musí mít nainstalovanou aktualizaci Service Pack 1. Visual Web Developer 2008 Express s aktualizací Service Pack 1 si můžete stáhnout z tohoto webu:
 
-[https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
+[https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
 
 Po instalaci Visual Studio 2008 nebo Visual Web Developer 2008, musíte nainstalovat rozhraní ASP.NET MVC. Rozhraní ASP.NET MVC můžete stáhnout z následujícího webu:
 
-[https://www.ASP.NET/MVC/](../../../index.md)
+[https://www.asp.net/mvc/](../../../index.md)
 
 > [!NOTE] 
 > 
 > Místo stažení rozhraní ASP.NET a rozhraní ASP.NET MVC jednotlivě, můžete využít výhod služby instalace webové platformy. Instalace webové platformy je aplikace, která umožňuje snadno spravovat nainstalované aplikace jsou v počítači:
 > 
-> [https://www.microsoft.com/web/gallery/install.aspx](https://www.microsoft.com/web/gallery/Install.aspx)
+> [https://www.microsoft.com/web/gallery/Install.aspx](https://www.microsoft.com/web/gallery/Install.aspx)
 
 
 ## <a name="creating-an-aspnet-mvc-web-application-project"></a>Vytvoření projektu webové aplikace ASP.NET MVC
@@ -261,7 +261,7 @@ Po dokončení těchto kroků nové zobrazení s názvem Index.aspx přidán do 
 **Obrázek 10**: vytvoření nové zobrazení pomocí dialogu přidat zobrazení ([Kliknutím zobrazit obrázek v plné velikosti](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image20.png))
 
 
-**Výpis 3 – Views\Home\Index.aspx**
+**Listing 3 – Views\Home\Index.aspx**
 
 [!code-aspx[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/samples/sample3.aspx)]
 
@@ -308,7 +308,7 @@ Visual Studio usnadňuje vytvoření formuláře pro vytvoření nové databáze
 
 Visual Studio automaticky generuje zobrazení v výpis 5. Toto zobrazení obsahuje formuláře HTML, která obsahuje pole, které odpovídají každé z vlastností třídy film.
 
-**Výpis 5 – Views\Home\Create.aspx**
+**Listing 5 – Views\Home\Create.aspx**
 
 [!code-aspx[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/samples/sample5.aspx)]
 
@@ -369,4 +369,4 @@ Všimněte si, že je nutné získat původní film a pak zavolají ApplyPropert
 V tomto kurzu jsme se zaměřili pouze nejzákladnější funkce rozhraní ASP.NET MVC. V budoucích kurzech jsme podrobně hlubší oblastech, jako je řadiče, akce kontroleru, zobrazení, data zobrazení a pomocné rutiny HTML.
 
 >[!div class="step-by-step"]
-[Další](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)
+[Next](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 6362f0506934ca3b3cc86e1a927af75e7bc4e1d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 103cd68c576463d87d0077cc149f9b89c6e028e8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-custom-action-filters"></a>Vlastní akce filtrech rozhraní ASP.NET MVC 4
 ====================
@@ -96,7 +96,7 @@ Filtr se rozšířit **ActionFilterAttributeClass** a přepsání **OnActionExec
 > - **Výsledek** filtr, který zabalí provádění objektu ActionResult. Tento filtr můžete provést další zpracování výsledku, jako je například úprava odpověď HTTP.
 > - **Výjimka** filtr, který provede, pokud dojde k neošetřené výjimce vyvolána někde v metodě akce, počínaje filtry autorizace a konče provádění výsledku. Filtry výjimek lze použít pro úlohy, jako je protokolování nebo zobrazení chybovou stránku.
 > 
-> Další informace o poskytovatelích filtry navštivte tento odkaz MSDN: ([https://msdn.microsoft.com/en-us/library/dd410209.aspx](https://msdn.microsoft.com/en-us/library/dd410209.aspx)).
+> Další informace o poskytovatelích filtry navštivte tento odkaz MSDN: ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx)).
 
 
 <a id="AboutLoggingFeature"></a>
@@ -164,7 +164,7 @@ V této úloze vytvoříte třídu atributu vlastního filtru, která bude obsah
     > [!NOTE]
     > **OnActionExecuting** používá metoda **Entity Framework** přidat nové ActionLog registrace. Vytvoří a vyplní novou instanci entity kontextové informace z **filterContext**.
     > 
-    > Další informace o **parametrem ControllerContext** třídy v [msdn](https://msdn.microsoft.com/en-us/library/system.web.mvc.controllercontext.aspx).
+    > Další informace o **parametrem ControllerContext** třídy v [msdn](https://msdn.microsoft.com/library/system.web.mvc.controllercontext.aspx).
 
 <a id="Ex1Task2"></a>
 
@@ -231,7 +231,7 @@ Můžete definovat **oboru** pro každou z filtrů, například může oboru vš
 
 Kromě toho každý filtr akce má vlastnost pořadí sloužící k určení pořadí spouštění v oboru filtru.
 
-Další informace o pořadí spuštění filtrů Akce vlastní, navštivte tohoto článku na webu MSDN: ([https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx)).
+Další informace o pořadí spuštění filtrů Akce vlastní, navštivte tohoto článku na webu MSDN: ([https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx)).
 
 <a id="Ex2Task1"></a>
 

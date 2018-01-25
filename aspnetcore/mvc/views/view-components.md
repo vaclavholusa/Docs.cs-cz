@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2d93dcee102009661af708b9a9066e8af0bdbb17
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 65074ca02a1365db278d348d4e024121a6eb4634
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="view-components"></a>Zobrazení součásti
 
@@ -60,7 +60,7 @@ Třídy zobrazení komponenty:
 
 * Plně podporuje konstruktor [vkládání závislostí](../../fundamentals/dependency-injection.md)
 
-* Nevyžaduje část v životním cyklu řadiče, což znamená, nemůžete použít [filtry](../controllers/filters.md) v komponentě zobrazení
+* Neberou v rámci v životním cyklu řadiče, což znamená, nemůžete použít [filtry](../controllers/filters.md) v komponentě zobrazení
 
 ### <a name="view-component-methods"></a>Zobrazení metody součásti
 
@@ -69,7 +69,7 @@ Součást zobrazení definuje svou logikou v `InvokeAsync` metodu, která vrát�
 * Definování `InvokeAsync` metodu, která vrátí`IViewComponentResult`
 * Obvykle inicializuje modelu a předává je pro zobrazení pomocí volání `ViewComponent` `View` – metoda
 * Parametry pocházejí z volání metoda HTTP není, neexistuje žádná vazba modelu
-* Jsou přímo jako koncový bod HTTP není dostupná, jsou vyvolány z vašeho kódu (obvykle v zobrazení). Součást zobrazení nikdy zpracovává žádost
+* Jsou přímo jako koncový bod HTTP není dostupná, budou se volat z kódu (obvykle v zobrazení). Součást zobrazení nikdy zpracovává žádost
 * Jsou přetížené na podpis a nikoli na všechny podrobnosti, z aktuální žádosti HTTP
 
 ### <a name="view-search-path"></a>Zobrazení – cesta hledání
@@ -130,7 +130,7 @@ V ukázce výše `PriorityList` zobrazení součást se změní na `priority-lis
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>Vyvolání komponentu zobrazení přímo z řadiče
 
-Zobrazení součásti jsou obvykle vyvolány ze zobrazení, ale je přímo z metody kontroleru můžete vyvolat. Při zobrazení součásti nedefinují koncové body, jako jsou řadiče, můžete snadno implementovat akce kontroleru, který vrátí obsah `ViewComponentResult`.
+Zobrazení součásti jsou obvykle vyvolány ze zobrazení, ale je přímo z metody kontroleru můžete vyvolat. Při zobrazení součásti nemusíte definovat koncové body, jako jsou řadiče, můžete snadno implementovat akce kontroleru, který vrátí obsah `ViewComponentResult`.
 
 V tomto příkladu je přímo z řadiče volá komponentu zobrazení:
 
@@ -152,7 +152,7 @@ Poznámky k kód:
 
 * Třídy součásti zobrazení mohou být obsaženy v **žádné** složky v projektu.
 * Protože třída název PriorityList**ViewComponent** končí příponou **ViewComponent**, modul runtime použije řetězec "PriorityList" při odkazování na komponenty třídy ze zobrazení. I objasníme, který podrobněji později.
-* `[ViewComponent]` Atributu můžete změnit název slouží k odkazování komponentu zobrazení. Například můžeme může mít s názvem třídy `XYZ` a použít `ViewComponent` atribut:
+* `[ViewComponent]` Atributu můžete změnit název slouží k odkazování komponentu zobrazení. Například můžeme může jste s názvem třídy `XYZ` a použít `ViewComponent` atribut:
 
   ```csharp
   [ViewComponent(Name = "PriorityList")]
@@ -222,7 +222,7 @@ Pokud není PVC zobrazení vykresleno, ověřte, zda že jsou volání komponent
 
    ```
    An unhandled exception occurred while processing the request.
-   InvalidOperationException: The view 'Components/PriorityList/Default' was not found. The following locations were searched:
+   InvalidOperationException: The view 'Components/PriorityList/Default' wasn't found. The following locations were searched:
    /Views/ToDo/Components/PriorityList/Default.cshtml
    /Views/Shared/Components/PriorityList/Default.cshtml
    EnsureSuccessful

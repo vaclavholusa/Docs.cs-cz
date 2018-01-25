@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 96960ef56b1206374458dbbba4befffaa83c1624
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aacae7a9ccf483b21d3c6796c0411d558fa3c75b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Vytváření webové projekty ASP.NET v sadě Visual Studio 2013
 ====================
@@ -31,7 +31,7 @@ podle [tní Dykstra](https://github.com/tdykstra)
 > - Použití [Bootstrap](#bootstrap) zajistit přizpůsobivý možnosti návrhu a motivů.
 > - Nové funkce pro webové formuláře, který používá k budou k dispozici pouze na MVC, jako například [test automatického vytváření projektu](#testproj) a [šablona stránky intranetu](#winauth).
 > 
-> Informace o tom, jak vytvořit webové projekty pro Azure Cloud Services nebo Azure Mobile Services najdete v tématu [Začínáme s Azure Cloud Services a technologií ASP.NET](https://azure.microsoft.com/en-us/documentation/articles/cloud-services-dotnet-get-started/) a [vytvoření žebříček aplikace pomocí Azure Mobile Services .NET Back-end](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/).
+> Informace o tom, jak vytvořit webové projekty pro Azure Cloud Services nebo Azure Mobile Services najdete v tématu [Začínáme s Azure Cloud Services a technologií ASP.NET](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/) a [vytvoření žebříček aplikace pomocí Azure Mobile Services .NET Back-end](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/).
 
 
 <a id="prerequisites"></a>
@@ -42,7 +42,7 @@ Tento článek se týká [Visual Studio 2013](https://go.microsoft.com/fwlink/?L
 <a id="wap"></a>
 ## <a name="web-application-projects-versus-web-site-projects"></a>Projekty webových aplikací versus webové projekty
 
-ASP.NET vám dává na výběr mezi dva druhy webové projekty: *webové projekty aplikací* a *webové projekty*. Doporučujeme, abyste projekty webových aplikací pro nový vývoj a tento článek se týká pouze na projekty webových aplikací. Další informace najdete v tématu [projekty webových aplikací a webových projektů v sadě Visual Studio](https://msdn.microsoft.com/en-us/library/dd547590(v=vs.120).aspx) na webu MSDN.
+ASP.NET vám dává na výběr mezi dva druhy webové projekty: *webové projekty aplikací* a *webové projekty*. Doporučujeme, abyste projekty webových aplikací pro nový vývoj a tento článek se týká pouze na projekty webových aplikací. Další informace najdete v tématu [projekty webových aplikací a webových projektů v sadě Visual Studio](https://msdn.microsoft.com/library/dd547590(v=vs.120).aspx) na webu MSDN.
 
 <a id="overview"></a>
 ## <a name="overview-of-web-application-project-creation"></a>Přehled vytváření projektu webové aplikace
@@ -54,8 +54,8 @@ Následující kroky ukazují, jak vytvořit webového projektu:
 
     ![Dialogové okno Nový projekt](creating-web-projects-in-visual-studio/_static/image1.png)
 
-    Můžete zvolit **cloudu** v levém podokně vytvořit [Azure Cloud Service](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy), [Azure Mobile Service](https://msdn.microsoft.com/en-us/library/windows/apps/dn629482.aspx), nebo [webové úlohy Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-webjobs). Toto téma nezahrnuje tyto šablony.
-3. V pravém podokně klikněte na **přidat službu Application Insights do projektu** zaškrtávací políčko, pokud chcete stav a sledování využití pro vaši aplikaci. Další informace najdete v tématu [sledování výkonu ve webových aplikacích](https://azure.microsoft.com/en-us/documentation/articles/app-insights-web-monitor-performance/).
+    Můžete zvolit **cloudu** v levém podokně vytvořit [Azure Cloud Service](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy), [Azure Mobile Service](https://msdn.microsoft.com/library/windows/apps/dn629482.aspx), nebo [webové úlohy Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-webjobs). Toto téma nezahrnuje tyto šablony.
+3. V pravém podokně klikněte na **přidat službu Application Insights do projektu** zaškrtávací políčko, pokud chcete stav a sledování využití pro vaši aplikaci. Další informace najdete v tématu [sledování výkonu ve webových aplikacích](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/).
 4. Zadejte projektu **název**, **umístění**a další možnosti a pak klikněte na tlačítko **OK**.
 
     **Nový projekt ASP.NET** otevře se dialogové okno.
@@ -86,7 +86,7 @@ Visual Studio obsahuje funkce, které usnadňují pracovat s Azure services pro 
 - Spusťte v režimu ladění vzdáleně, když aplikace běží v cloudu.
 - Viiew a spravovat jinými službami Azure, jako jsou třeba databáze SQL.
 
-Můžete [vytvoření účtu Azure](https://www.windowsazure.com/en-us/pricing/free-trial/) zdarma obsahující základní služby, jako jsou webové aplikace, a pokud jste odběratel MSDN můžete [aktivovat výhody](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) , získáte měsíční kredity směrem k další Azure služby. 
+Můžete [vytvoření účtu Azure](https://www.windowsazure.com/pricing/free-trial/) zdarma obsahující základní služby, jako jsou webové aplikace, a pokud jste odběratel MSDN můžete [aktivovat výhody](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) , získáte měsíční kredity směrem k další Azure služby. 
 
 Ve výchozím nastavení **nový projekt ASP.NET** dialogové okno můžete vytvořit webovou aplikaci nebo virtuální počítač pro nového webového projektu. Pokud nechcete vytvořit novou webovou aplikaci nebo virtuální počítač, zrušte **hostitel v cloudu** zaškrtávací políčko.
 
@@ -96,12 +96,12 @@ Zaškrtněte políčko popisek může být **hostitel v cloudu** nebo **vytvoři
 
 ![Konfigurace nastavení aplikace Azure](creating-web-projects-in-visual-studio/_static/image9.png)
 
-Další informace o tom, jak používat tento proces pro vytváření prostředků Azure najdete v tématu [Začínáme s Azure a ASP.NET](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) a [vytvoření virtuálního počítače pro webový server pomocí sady Visual Studio](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/).
+Další informace o tom, jak používat tento proces pro vytváření prostředků Azure najdete v tématu [Začínáme s Azure a ASP.NET](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) a [vytvoření virtuálního počítače pro webový server pomocí sady Visual Studio](https://azure.microsoft.com/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/).
 
 Zbývající část tohoto článku poskytuje další informace o dostupných šablon a jejich možnosti. V článku také zavádí Bootstrap, rozložení a motivů framework se používá v šablonách.
 
 <a id="vs2013"></a>
-## <a name="visual-studio-2013-web-project-templates"></a>Šablony webových projektů Visual Studio 2013
+## <a name="visual-studio-2013-web-project-templates"></a>Visual Studio 2013 Web Project Templates
 
 Visual Studio využívá šablony k vytvoření webové projekty. Šablona projektu můžete vytvořit soubory a složky v novém projektu, instalace balíčků NuGet a zadejte ukázkový kód pro základní funkční aplikaci. Šablony implementovat nejnovější webové standardy a jsou určeny k předvedení osvědčené postupy, jak používat technologie ASP.NET a také získáte přechod spustit na vytvoření vlastní aplikace.
 
@@ -112,8 +112,8 @@ Visual Studio 2013 poskytuje následující možnosti pro šablony webových pro
 - [Šablony MVC](#mvc)
 - [Šablona webového rozhraní API](#webapi)
 - [Šablona pro jednu stránku aplikace](#spa)
-- [Šablony Azure Mobile Service](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
-- [Šablony sady Visual Studio 2012](#vs2012)
+- [Šablony Azure Mobile Service](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
+- [Visual Studio 2012 Templates](#vs2012)
 
 Můžete taky nainstalovat rozšíření sady Visual Studio, který poskytuje [šablona pro síť Facebook](#facebook).
 
@@ -198,7 +198,7 @@ Další informace o jednostránkové aplikace ASP.NET a o další SPA šablony, 
 
 - [ASP.NET jedné stránky aplikace](../../../single-page-application/index.md).
 - [Princip funkce zabezpečení v šabloně SPA pro VS2013 RC](https://blogs.msdn.com/b/webdev/archive/2013/09/20/understanding-security-features-in-spa-template.aspx)
-- [Jednostránkové aplikace: Vytvářet moderní a pohotově reagujících webové aplikace s technologií ASP.NET](https://msdn.microsoft.com/en-us/magazine/dn463786.aspx)
+- [Jednostránkové aplikace: Vytvářet moderní a pohotově reagujících webové aplikace s technologií ASP.NET](https://msdn.microsoft.com/magazine/dn463786.aspx)
 
 <a id="facebook"></a>
 ### <a name="facebook-template"></a>Šablona pro síť Facebook
@@ -210,7 +210,7 @@ Můžete nainstalovat [rozšíření sady Visual Studio, poskytující šablonu 
 Další informace o aplikacích ASP.NET Facebook najdete v tématu [aktualizace rozhraní API sítě Facebook MVC](https://blogs.msdn.com/b/webdev/archive/2014/06/10/updating-the-mvc-facebook-api.aspx).
 
 <a id="vs2012"></a>
-### <a name="visual-studio-2012-templates"></a>Šablony sady Visual Studio 2012
+### <a name="visual-studio-2012-templates"></a>Visual Studio 2012 Templates
 
 Dialogové okno Visual Studio 2013 webový projekt vytvoření neposkytuje přístup k některé šablony, které byly k dispozici v sadě Visual Studio 2012. Pokud chcete použít jednu z těchto šablon, můžete kliknout na Visual Studio 2012 uzlu v levém podokně dialogového okna Nový projekt sady Visual Studio.
 
@@ -321,7 +321,7 @@ ASP.NET Identity je vhodné použít, pokud vytváříte webovou stránku Intern
 
 Další informace o možnosti jednotlivé uživatelské účty najdete v následujících zdrojích informací:
 
-- [www.ASP.NET/identity](../../../identity/index.md). Dokumentaci o ASP.NET Identity na webu technologie ASP.NET.
+- [www.asp.net/identity](../../../identity/index.md). Dokumentaci o ASP.NET Identity na webu technologie ASP.NET.
 - [Vytvoření aplikace ASP.NET MVC 5 s použitím Facebook a Google OAuth2 a přihlašování OpenID](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md). Také ukazuje, jak přizpůsobit data uživatelského profilu.
 - [Webové rozhraní API - externí ověřovací služby](../../../web-api/overview/security/external-authentication-services.md)
 - [Přidávání externích přihlášení do aplikace ASP.NET v sadě Visual Studio 2013](https://blogs.msdn.com/b/webdev/archive/2013/06/27/adding-external-logins-to-your-asp-net-application-in-visual-studio-2013.aspx)
@@ -360,15 +360,15 @@ Pokud chcete vyzkoušet jednu z možností Azure AD, ale ještě nemáte účet 
 
 ![Jedna organizace ověřování](creating-web-projects-in-visual-studio/_static/image24.png)
 
-Tuto možnost zvolte, pokud chcete povolit ověřování pro uživatelské účty, které jsou definovány v jedné službě Azure AD [klienta](https://technet.microsoft.com/en-us/library/jj573650.aspx). Například web je contoso.com a ho bude k dispozici na zaměstnance společnosti Contoso, kteří jsou v klientovi contoso.onmicrosoft.com. Nebudete moci konfigurovat Azure AD, aby uživatelé z jiných klientů pro přístup k aplikaci.
+Tuto možnost zvolte, pokud chcete povolit ověřování pro uživatelské účty, které jsou definovány v jedné službě Azure AD [klienta](https://technet.microsoft.com/library/jj573650.aspx). Například web je contoso.com a ho bude k dispozici na zaměstnance společnosti Contoso, kteří jsou v klientovi contoso.onmicrosoft.com. Nebudete moci konfigurovat Azure AD, aby uživatelé z jiných klientů pro přístup k aplikaci.
 
-#### <a name="domain"></a>Domény
+#### <a name="domain"></a>Domain
 
 Zadejte doménu služby Azure AD, který chcete nastavit aplikaci, například: `contoso.onmicrosoft.com`. Pokud máte [vlastní domény](http://www.cloudidentity.com/blog/2013/04/14/adding-a-custom-domain-to-your-windows-azure-ad/), například `contoso.com` místo `contoso.onmicrosoft.com`, který sem můžete zadat.
 
 #### <a name="access-level"></a>Úroveň přístupu
 
-Pokud aplikace potřebuje k dotazu nebo aktualizovat informace o adresář pomocí rozhraní Graph API, zvolte **jednotné přihlašování, čtení dat adresáře** nebo **jednotné přihlašování, čtení a zápis dat adresáře**. Jinak, vyberte **jednotné přihlašování**. Další informace najdete v tématu [úrovně přístupu aplikace](https://msdn.microsoft.com/en-us/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels) a [pomocí rozhraní Graph API k dotazu služby Azure AD](https://msdn.microsoft.com/en-US/library/windowsazure/dn151791.aspx).
+Pokud aplikace potřebuje k dotazu nebo aktualizovat informace o adresář pomocí rozhraní Graph API, zvolte **jednotné přihlašování, čtení dat adresáře** nebo **jednotné přihlašování, čtení a zápis dat adresáře**. Jinak, vyberte **jednotné přihlašování**. Další informace najdete v tématu [úrovně přístupu aplikace](https://msdn.microsoft.com/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels) a [pomocí rozhraní Graph API k dotazu služby Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151791.aspx).
 
 #### <a name="application-id-uri"></a>Identifikátor ID URI aplikace
 
@@ -386,8 +386,8 @@ Informace o tom, jak vytvářet aplikace, které používají **cloudu – jedno
 
 - [Ověřování Azure](../2012/windows-azure-authentication.md)
 - [Přidání přihlašování do webové aplikace pomocí služby Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151790.aspx)
-- [Vývoj aplikací ASP.NET se službou Azure Active Directory](../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
-- [Zabezpečení rozhraní ASP.NET Web API s Azure AD a komponenty Microsoft OWIN](https://msdn.microsoft.com/en-us/magazine/dn463788.aspx)
+- [Vývoj aplikací ASP.NET s použitím Azure Active Directory](../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
+- [Zabezpečení rozhraní ASP.NET Web API s Azure AD a komponenty Microsoft OWIN](https://msdn.microsoft.com/magazine/dn463788.aspx)
 
 Kurzů k ještě nebyly aktualizovány pro Visual Studio 2013; v sadě Visual Studio 2013 je automatizované některé jaké kurzů k přímé lze provádět ručně.
 
@@ -396,14 +396,14 @@ Kurzů k ještě nebyly aktualizovány pro Visual Studio 2013; v sadě Visual St
 
 ![Více ověřování organizace](creating-web-projects-in-visual-studio/_static/image25.png)
 
-Tuto možnost zvolte, pokud chcete povolit ověřování pro uživatelské účty, které jsou definovány v několika Azure AD [klienty](https://technet.microsoft.com/en-us/library/jj573650.aspx). Například web je contoso.com a ho zpřístupní zaměstnanci společnosti Contoso, kteří jsou v klientovi contoso.onmicrosoft.com a zaměstnanci společnosti Fabrikam, kteří jsou v klientovi fabrikam.onmicrosoft.com.
+Tuto možnost zvolte, pokud chcete povolit ověřování pro uživatelské účty, které jsou definovány v několika Azure AD [klienty](https://technet.microsoft.com/library/jj573650.aspx). Například web je contoso.com a ho zpřístupní zaměstnanci společnosti Contoso, kteří jsou v klientovi contoso.onmicrosoft.com a zaměstnanci společnosti Fabrikam, kteří jsou v klientovi fabrikam.onmicrosoft.com.
 
 Nastavení, která zadáte a aplikací, zřizování kroku jsou podobné [jednotný ověřování](#orgauthsingle).
 
 Informace o tom, jak vytvářet aplikace, které používají **cloudu - organizace více** ověřování, naleznete v následujících zdrojích:
 
 - [Snadná integrace webové aplikace s Azure Active Directory, ASP.NET &amp; Visual Studio](https://blogs.msdn.com/b/active_directory_team_blog/archive/2013/06/26/improved-windows-azure-active-directory-integration-with-asp-net-amp-visual-studio.aspx) na blogu týmu pro službu Active Directory.
-- [Vývoj víceklientské webových aplikací s Azure AD](https://msdn.microsoft.com/en-us/library/windowsazure/dn151789.aspx) kurzu. Tento kurz nebyla aktualizována pro Visual Studio 2013; v sadě Visual Studio 2013 je automatizovat některé co kurzu přesměruje, lze provádět ručně.
+- [Vývoj víceklientské webových aplikací s Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151789.aspx) kurzu. Tento kurz nebyla aktualizována pro Visual Studio 2013; v sadě Visual Studio 2013 je automatizovat některé co kurzu přesměruje, lze provádět ručně.
 - [Budete muset zaregistrovat s vlastní několik organizací aplikace ASP.NET, než se můžete přihlásit](http://www.cloudidentity.com/blog/2013/10/26/you-have-to-sign-up-with-your-own-multiple-organizations-asp-net-app-before-you-can-sign-in/). Blog podle Vittorio Bertocci, která vysvětluje, jak vyřešit společné osoby problém dojde při vytvoření projektu, který používá ověřování více organizace.
 
 <a id="orgauthonprem"></a>

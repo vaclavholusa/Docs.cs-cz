@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: 0e1849fb780908b55520d8108e2227d046759987
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a14659997d86d1b5cf5381e21e997c1a03a3f57c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>Zobrazení Video v Web Pages (Razor) technologie ASP.NET
 ====================
@@ -118,7 +118,7 @@ Tento postup ukazuje, jak k přehrávání videa Flash s názvem *sample.swf*. P
     [!code-cshtml[Main](10-working-with-video/samples/sample2.cshtml)]
 4. Spusťte stránku v prohlížeči. (Ujistěte se, že je vybraný stránky v **soubory** pracovního prostoru, než ji spustit.) Stránka se zobrazí a video hraje automaticky. 
 
-    ![[Obrázek] ] (10-working-with-video/_static/image1.jpg "ch08_video 1.jpg")
+    ![[image]](10-working-with-video/_static/image1.jpg "ch08_video-1.jpg")
 
 Můžete nastavit `quality` parametr Flash Video k `low`, `autolow`, `autohigh`, `medium`, `high`, a `best`:
 
@@ -148,7 +148,7 @@ Následující postup ukazuje, jak přehrát video média okno s názvem *sample
     [!code-cshtml[Main](10-working-with-video/samples/sample5.cshtml)]
 4. Spusťte stránku v prohlížeči. Video načte a hraje automaticky. 
 
-    ![[Obrázek] ] (10-working-with-video/_static/image2.jpg "ch08_video 2.jpg")
+    ![[image]](10-working-with-video/_static/image2.jpg "ch08_video-2.jpg")
 
 Můžete nastavit `playCount` na celé číslo, která určuje, jak často má přehrát video, automaticky:
 
@@ -178,14 +178,14 @@ Tento postup ukazuje, jak přehrát video, které jsou součástí Silverlight *
     [!code-cshtml[Main](10-working-with-video/samples/sample10.cshtml)]
 4. Spusťte stránku v prohlížeči. 
 
-    ![[Obrázek] ] (10-working-with-video/_static/image3.jpg "ch08_video 3.jpg")
+    ![[image]](10-working-with-video/_static/image3.jpg "ch08_video-3.jpg")
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Další prostředky
 
 
-[Přehled technologie Silverlight](https://msdn.microsoft.com/en-us/library/bb404700(VS.95).aspx)
+[Přehled technologie Silverlight](https://msdn.microsoft.com/library/bb404700(VS.95).aspx)
 
 [Flash OBJEKT a vložení atributů značky](http://kb2.adobe.com/cps/127/tn_12701.html)
 
-[Windows Media Player 11 SDK PARAM značky](https://msdn.microsoft.com/en-us/library/aa392321(VS.85).aspx)
+[Windows Media Player 11 SDK PARAM značky](https://msdn.microsoft.com/library/aa392321(VS.85).aspx)

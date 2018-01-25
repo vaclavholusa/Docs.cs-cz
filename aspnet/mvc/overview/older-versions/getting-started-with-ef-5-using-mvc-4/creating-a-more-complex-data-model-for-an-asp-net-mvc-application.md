@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5283da2786d41c0ae06607185dd416aeb7d2b62a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: accb5ddab8df67dfa29038541dc0cd72eaac173c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>Vytváření složitějších datový Model pro aplikaci ASP.NET MVC (4 10)
 ====================
@@ -49,9 +49,9 @@ V *Models\Student.cs*, přidejte `using` příkaz pro `System.ComponentModel.Dat
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample1.cs?highlight=3,13-14)]
 
-[Datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atribut slouží k určení datový typ, který je specifičtější než vnitřní typ databáze. V tomto případě chceme jenom udržování přehledu o datum, není datum a čas. [Datový typ výčtu](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) poskytuje pro mnoho typů dat, jako například *datum, čas, telefonní číslo, měny, EmailAddress* a další. `DataType` Atributu můžete také povolit aplikace automaticky poskytnout konkrétní typ funkce. Například `mailto:` může vytvořit odkaz pro [DataType.EmailAddress](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx), a datum selektor lze zadat pro [DataType.Date](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) v prohlížečích podporujících [HTML5](http://html5.org/). [Datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy vysílá standardu HTML 5 [data -](http://ejohn.org/blog/html-5-data-attributes/) (vyslovováno *data dash*) atributy, které můžete porozumět standardu HTML 5 prohlížeče. [Datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy neposkytují žádné ověření.
+[Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atribut slouží k určení datový typ, který je specifičtější než vnitřní typ databáze. V tomto případě chceme jenom udržování přehledu o datum, není datum a čas. [Datový typ výčtu](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) poskytuje pro mnoho typů dat, jako například *datum, čas, telefonní číslo, měny, EmailAddress* a další. `DataType` Atributu můžete také povolit aplikace automaticky poskytnout konkrétní typ funkce. Například `mailto:` může vytvořit odkaz pro [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), a datum selektor lze zadat pro [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) v prohlížečích podporujících [HTML5](http://html5.org/). [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy vysílá standardu HTML 5 [data -](http://ejohn.org/blog/html-5-data-attributes/) (vyslovováno *data dash*) atributy, které můžete porozumět standardu HTML 5 prohlížeče. [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy neposkytují žádné ověření.
 
-`DataType.Date`neurčuje formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole dat podle výchozích formátů podle serveru [CultureInfo](https://msdn.microsoft.com/en-us/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
+`DataType.Date`neurčuje formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole dat podle výchozích formátů podle serveru [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
 
 `DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
 
@@ -61,11 +61,11 @@ V *Models\Student.cs*, přidejte `using` příkaz pro `System.ComponentModel.Dat
 
 `ApplyFormatInEditMode` Nastavení určuje, že zadané formátování také bude použito při hodnota je zobrazena v textovém poli pro úpravy. (Který není vhodné pro některá pole – například pro hodnoty měny, nemusí chcete symbolu měny do textového pole pro úpravy.)
 
-Můžete použít [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut podle sám sebe, ale obecně je vhodné používat [datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) také atribut. `DataType` Přenese tak atribut *sémantiku* dat, jako byl proti na tom, jak vykreslit ho na obrazovce a nabízí následující výhody, které není dostupná s `DisplayFormat`:
+Můžete použít [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut podle sám sebe, ale obecně je vhodné používat [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) také atribut. `DataType` Přenese tak atribut *sémantiku* dat, jako byl proti na tom, jak vykreslit ho na obrazovce a nabízí následující výhody, které není dostupná s `DisplayFormat`:
 
 - V prohlížeči můžete povolit funkce HTML5 (např. k zobrazení ovládacího prvku kalendář, symbolu měny vhodné národního prostředí, e-mailu odkazy, atd.).
-- Ve výchozím nastavení, prohlížeč bude vykreslovat data správný formát na základě vaší [národního prostředí](https://msdn.microsoft.com/en-us/library/vstudio/wyzd2bce.aspx).
-- [Datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributu můžete povolit MVC na výběr šablony pravé pole k poskytnutí dat ( [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) pokud používá samotné používá šablonu řetězec). Další informace najdete v tématu Brad Wilson [ASP.NET MVC 2 šablony](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (I když napsané pro MVC 2, tento článek stále platí pro aktuální verzi ASP.NET MVC.)
+- Ve výchozím nastavení, prohlížeč bude vykreslovat data správný formát na základě vaší [národního prostředí](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx).
+- [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributu můžete povolit MVC na výběr šablony pravé pole k poskytnutí dat ( [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) pokud používá samotné používá šablonu řetězec). Další informace najdete v tématu Brad Wilson [ASP.NET MVC 2 šablony](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (I když napsané pro MVC 2, tento článek stále platí pro aktuální verzi ASP.NET MVC.)
 
 Pokud použijete `DataType` atribut s poli data, budete muset určit `DisplayFormat` atribut také, aby se zajistilo, že pole správně vykreslení v prohlížeči Chrome. Další informace najdete v tématu [tohoto podprocesu StackOverflow](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie).
 
@@ -75,21 +75,21 @@ Znovu spustit Student indexovou stránku a Všimněte si, že časy se už nezob
 
 ### <a name="the-stringlengthattribute"></a>StringLengthAttribute
 
-Můžete také zadat pravidla ověření dat a zprávy pomocí atributů. Předpokládejme, že chcete zajistit, že uživatelé nezadávejte víc než 50 znaků pro název. Chcete-li přidat toto omezení, přidejte [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atributů k `LastName` a `FirstMidName` vlastnosti, jak je znázorněno v následujícím příkladu:
+Můžete také zadat pravidla ověření dat a zprávy pomocí atributů. Předpokládejme, že chcete zajistit, že uživatelé nezadávejte víc než 50 znaků pro název. Chcete-li přidat toto omezení, přidejte [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atributů k `LastName` a `FirstMidName` vlastnosti, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample3.cs?highlight=10,12)]
 
-[StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut nebude uživatel zabránit v přechodu do prázdných znaků pro název. Můžete použít [regulární výraz](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut použít omezení na vstup. Například následující kód vyžaduje první znak, který má být velkými písmeny a zbývající znaků, které mají být abecední:
+[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut nebude uživatel zabránit v přechodu do prázdných znaků pro název. Můžete použít [regulární výraz](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut použít omezení na vstup. Například následující kód vyžaduje první znak, který má být velkými písmeny a zbývající znaků, které mají být abecední:
 
 `[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]`
 
-[MaxLength](https://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) atribut poskytuje podobné funkce jako [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut, ale neposkytuje na straně klienta ověření.
+[MaxLength](https://msdn.microsoft.com/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) atribut poskytuje podobné funkce jako [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut, ale neposkytuje na straně klienta ověření.
 
 Spusťte aplikaci a klikněte na tlačítko **studenty** kartě. Dojde k následující chybě:
 
 *Model zálohování kontext 'SchoolContext' se od vytvoření databáze změnil. Zvažte použití migrace Code First k aktualizaci databáze ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269)).*
 
-Model databáze byl změněn způsobem, který vyžaduje změnu schématu databáze a Entity Framework zjistil, že. Migrace budete používat k aktualizaci schématu bez ztráty dat, který jste přidali do databáze pomocí uživatelského rozhraní. Pokud jste změnili data, která byla vytvořená `Seed` metoda, která bude změněna zpět do původního stavu z důvodu [AddOrUpdate](https://msdn.microsoft.com/en-us/library/hh846520(v=vs.103).aspx) metoda, která používáte v `Seed` metoda. ([AddOrUpdate](https://msdn.microsoft.com/en-us/library/hh846520(v=vs.103).aspx) je ekvivalentní operace "upsert", z databáze terminologie.)
+Model databáze byl změněn způsobem, který vyžaduje změnu schématu databáze a Entity Framework zjistil, že. Migrace budete používat k aktualizaci schématu bez ztráty dat, který jste přidali do databáze pomocí uživatelského rozhraní. Pokud jste změnili data, která byla vytvořená `Seed` metoda, která bude změněna zpět do původního stavu z důvodu [AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx) metoda, která používáte v `Seed` metoda. ([AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx) je ekvivalentní operace "upsert", z databáze terminologie.)
 
 V balíček správce konzoly (pomocí PMC), zadejte následující příkazy:
 
@@ -107,11 +107,11 @@ Atributy můžete taky řídit, jak jsou mapovány třídy a vlastnosti do datab
 
 `Column` Atribut určuje, že při vytvoření databáze, sloupec `Student` tabulku, která se mapuje `FirstMidName` vlastnost bude mít název `FirstName`. Jinými slovy, pokud váš kód odkazuje na `Student.FirstMidName`, data budou pocházet z nebo aktualizovány v `FirstName` sloupec `Student` tabulky. Pokud nezadáte názvy sloupců, jsou uvedené stejný název jako název vlastnosti.
 
-Přidat pomocí příkazu pro [System.ComponentModel.DataAnnotations.Schema](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.aspx) a atribut název sloupce, který se `FirstMidName` vlastnost, jak je znázorněno v následující zvýrazněný kód:
+Přidat pomocí příkazu pro [System.ComponentModel.DataAnnotations.Schema](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.aspx) a atribut název sloupce, který se `FirstMidName` vlastnost, jak je znázorněno v následující zvýrazněný kód:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample5.cs?highlight=4,14)]
 
-Přidání [atribut sloupce](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) změní model zálohování SchoolContext, takže nebude odpovídat databázi. Zadejte následující příkazy v pomocí PMC vytvořit další migraci:
+Přidání [atribut sloupce](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) změní model zálohování SchoolContext, takže nebude odpovídat databázi. Zadejte následující příkazy v pomocí PMC vytvořit další migraci:
 
 [!code-console[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample6.cmd)]
 
@@ -123,7 +123,7 @@ Následující obrázek znázorňuje původní název sloupce jako před použí
 
 ![](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image5.png)
 
-Můžete také provést databáze mapování změny pomocí [rozhraní Fluent API](https://msdn.microsoft.com/en-us/data/jj591617), jak uvidíte později v tomto kurzu.
+Můžete také provést databáze mapování změny pomocí [rozhraní Fluent API](https://msdn.microsoft.com/data/jj591617), jak uvidíte později v tomto kurzu.
 
 > [!NOTE]
 > Pokud se pokusíte zkompilovat před dokončení vytváření všech těchto tříd entit, může docházet k chybám kompilátoru.
@@ -145,7 +145,7 @@ Atributy na `LastName` vlastnost určovat, zda je povinné pole, že titulek pro
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample8.cs)]
 
-[StringLength atribut](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) Nastaví maximální délku v databázi a poskytuje na straně klienta a na straně serveru ověřování pro architekturu ASP.NET MVC. Minimální délka řetězce. můžete také zadat v tomto atributu, ale minimální hodnota nemá žádný vliv na schéma databáze. [Požadovaný atribut](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) není u typů hodnot, jako je například datum a čas, int, double, třeba a float. Typy hodnot nelze přiřadit hodnotu null, proto jsou ze své podstaty povinné. Je vhodné odebrat [požadovaný atribut](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) a nahraďte parametr minimální délku `StringLength` atribut:
+[StringLength atribut](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) Nastaví maximální délku v databázi a poskytuje na straně klienta a na straně serveru ověřování pro architekturu ASP.NET MVC. Minimální délka řetězce. můžete také zadat v tomto atributu, ale minimální hodnota nemá žádný vliv na schéma databáze. [Požadovaný atribut](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) není u typů hodnot, jako je například datum a čas, int, double, třeba a float. Typy hodnot nelze přiřadit hodnotu null, proto jsou ze své podstaty povinné. Je vhodné odebrat [požadovaný atribut](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) a nahraďte parametr minimální délku `StringLength` atribut:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample9.cs?highlight=2)]
 
@@ -161,7 +161,7 @@ Více atributů můžete umístit na jeden řádek, můžete také napsat tříd
 
 ### <a name="the-courses-and-officeassignment-navigation-properties"></a>Kurzy a OfficeAssignment navigační vlastnosti
 
-`Courses` a `OfficeAssignment` vlastnosti jsou navigační vlastnosti. Jak bylo popsáno dříve, jsou obvykle definovány jako [virtuální](https://msdn.microsoft.com/en-us/library/9fkccyh4(v=vs.110).aspx) tak, aby můžete využít rozhraní Entity Framework funkci [opožděného načítání](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx). Kromě toho, pokud navigační vlastnost může obsahovat více entit, její typ musí implementovat [ICollection&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/92t2ye13.aspx) rozhraní. (Například [IList&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/5y536ey6.aspx) vyfiltrování ale není [rozhraní IEnumerable&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/9eekhta0.aspx) protože `IEnumerable<T>` neimplementuje [přidat ](https://msdn.microsoft.com/en-us/library/63ywd54z.aspx).
+`Courses` a `OfficeAssignment` vlastnosti jsou navigační vlastnosti. Jak bylo popsáno dříve, jsou obvykle definovány jako [virtuální](https://msdn.microsoft.com/library/9fkccyh4(v=vs.110).aspx) tak, aby můžete využít rozhraní Entity Framework funkci [opožděného načítání](https://msdn.microsoft.com/magazine/hh205756.aspx). Kromě toho, pokud navigační vlastnost může obsahovat více entit, její typ musí implementovat [ICollection&lt;T&gt; ](https://msdn.microsoft.com/library/92t2ye13.aspx) rozhraní. (Například [IList&lt;T&gt; ](https://msdn.microsoft.com/library/5y536ey6.aspx) vyfiltrování ale není [rozhraní IEnumerable&lt;T&gt; ](https://msdn.microsoft.com/library/9eekhta0.aspx) protože `IEnumerable<T>` neimplementuje [přidat ](https://msdn.microsoft.com/library/63ywd54z.aspx).
 
 Lektorem můžete naučit libovolný počet kurzy, takže `Courses` je definována jako kolekce `Course` entity. Naše obchodní pravidla o stavu lektorem může mít pouze maximálně jeden office, takže `OfficeAssignment` je definován jako jeden `OfficeAssignment` entity (která může být `null` Pokud není přiřazena žádná office).
 
@@ -187,7 +187,7 @@ Můžete také `Key` atribut Pokud entity mít svůj vlastní primární klíč,
 
 ### <a name="the-foreignkey-attribute"></a>Atribut cizí klíč
 
-Když je vztah jeden pro žádná nebo jedna nebo relaci mezi dvěma entitami (takové jako mezi `OfficeAssignment` a `Instructor`), EF nemůže pracovat a které konci relace se objekt end, které je závislá. Relace 1: 1 mají vlastnost navigační odkaz v každé třídě k jiné třídě. [ForeignKey atribut](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx) závislé třídy k navázání vztahu můžete použít. V případě vynechání [ForeignKey atribut](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx), při pokusu o vytvoření migrace se zobrazí následující chyba:
+Když je vztah jeden pro žádná nebo jedna nebo relaci mezi dvěma entitami (takové jako mezi `OfficeAssignment` a `Instructor`), EF nemůže pracovat a které konci relace se objekt end, které je závislá. Relace 1: 1 mají vlastnost navigační odkaz v každé třídě k jiné třídě. [ForeignKey atribut](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx) závislé třídy k navázání vztahu můžete použít. V případě vynechání [ForeignKey atribut](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx), při pokusu o vytvoření migrace se zobrazí následující chyba:
 
 Nelze určit hlavní konec přidružení mezi typy 'ContosoUniversity.Models.OfficeAssignment' a 'ContosoUniversity.Models.Instructor'. Hlavní konec tohoto přidružení musí být explicitně nakonfigurovaný buď pomocí rozhraní fluent API relace nebo pomocí datových poznámek.
 
@@ -211,7 +211,7 @@ Během entita má vlastností cizího klíče `DepartmentID` který odkazuje na 
 
 ### <a name="the-databasegenerated-attribute"></a>Atribut DatabaseGenerated
 
-[DatabaseGenerated atribut](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute.aspx) s [žádné](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.110).aspx) parametr na `CourseID` vlastnost určuje, že hodnot primárního klíče jsou zadané uživatelem, nikoli generované databáze.
+[DatabaseGenerated atribut](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute.aspx) s [žádné](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.110).aspx) parametr na `CourseID` vlastnost určuje, že hodnot primárního klíče jsou zadané uživatelem, nikoli generované databáze.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
 
@@ -241,11 +241,11 @@ Vytvoření *Models\Department.cs* následujícím kódem:
 
 ### <a name="the-column-attribute"></a>Atribut sloupce
 
-Dříve jste použili [atribut sloupce](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) změnit mapování název sloupce. V kódu pro `Department` entity, `Column` ke změnit SQL mapování datového typu, aby sloupec bude nutné definovat pomocí systému SQL Server používá atribut [peníze](https://msdn.microsoft.com/en-us/library/ms179882.aspx) typ v databázi:
+Dříve jste použili [atribut sloupce](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) změnit mapování název sloupce. V kódu pro `Department` entity, `Column` ke změnit SQL mapování datového typu, aby sloupec bude nutné definovat pomocí systému SQL Server používá atribut [peníze](https://msdn.microsoft.com/library/ms179882.aspx) typ v databázi:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample21.cs)]
 
-Mapování sloupce není povinné, protože rozhraní Entity Framework obvykle vybere odpovídající typ dat systému SQL Server na základě typu CLR, které definujete pro vlastnost. Modul CLR `decimal` zadejte map k systému SQL Server `decimal` typu. Ale v takovém případě víte, že sloupec bude stisknuta částky měny a [peníze](https://msdn.microsoft.com/en-us/library/ms179882.aspx) datový typ je vhodnější, pro který.
+Mapování sloupce není povinné, protože rozhraní Entity Framework obvykle vybere odpovídající typ dat systému SQL Server na základě typu CLR, které definujete pro vlastnost. Modul CLR `decimal` zadejte map k systému SQL Server `decimal` typu. Ale v takovém případě víte, že sloupec bude stisknuta částky měny a [peníze](https://msdn.microsoft.com/library/ms179882.aspx) datový typ je vhodnější, pro který.
 
 ### <a name="foreign-key-and-navigation-properties"></a>Cizí klíč a navigační vlastnosti
 
@@ -319,7 +319,7 @@ Kromě relace m: n řádků (\* k \*) a řádky, vztah jeden mnoho (1 \*), Zde u
 
 ## <a name="customize-the-data-model-by-adding-code-to-the-database-context"></a>Přidání kódu do kontextu databáze přizpůsobit datový Model
 
-Dále přidáte nové entity k `SchoolContext` třídy a přizpůsobit některé mapování pomocí [rozhraní fluent API](https://msdn.microsoft.com/en-us/data/jj591617) volání. (Rozhraní API se "fluent", protože se často používají v rozvádět řadu volání metod společně do jednoho příkazu.)
+Dále přidáte nové entity k `SchoolContext` třídy a přizpůsobit některé mapování pomocí [rozhraní fluent API](https://msdn.microsoft.com/data/jj591617) volání. (Rozhraní API se "fluent", protože se často používají v rozvádět řadu volání metod společně do jednoho příkazu.)
 
 V tomto kurzu použijete rozhraní fluent API jenom pro mapování databáze, které nemůžete dělat s atributy. Rozhraní fluent API však můžete také použít k určení většinu formátování, ověření a pravidla mapování, které můžete provést pomocí atributů. Některé atributy, jako `MinimumLength` nelze použít s rozhraní fluent API. Jak je uvedeno nahoře, `MinimumLength` nemění schématu, vztahuje se pouze klientské a serverové straně ověřovacího pravidla
 
@@ -329,7 +329,7 @@ Pokud chcete přidat nové entity dat modelu a proveďte mapování databáze, k
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample29.cs)]
 
-Nové prohlášení v [OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) metoda nakonfiguruje v tabulce m: n připojení:
+Nové prohlášení v [OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) metoda nakonfiguruje v tabulce m: n připojení:
 
 - Pro relaci n: n mezi `Instructor` a `Course` entity, kód určuje názvy tabulek a sloupců pro tabulku spojení. Kód nejprve můžete nakonfigurovat relace m: n pro vás bez tento kód, ale pokud nemáte volat ji, zobrazí se výchozí názvy, jako `InstructorInstructorID` pro `InstructorID` sloupce.
 

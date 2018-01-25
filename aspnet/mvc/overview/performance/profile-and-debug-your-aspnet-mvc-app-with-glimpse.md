@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 98b21a54ba00a8c82c3be7ba4e39d44041ed42c6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9cfdced21251b482ca527dda9c3a698de77cc8ca
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Profil a ladění aplikace ASP.NET MVC pomocí balíčku Glimpse
 ====================
 Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Balíčku glimpse je neúspěchu a rozšiřujících se řadu balíčky NuGet s otevřeným zdrojem, který poskytuje podrobné výkon, ladění a diagnostické informace pro aplikace ASP.NET. Je trivial k instalaci, lightweight, ultrarychlého a zobrazí klíčové metriky výkonu v dolní části každé stránky. Umožňuje rozbalit vaší aplikace, když potřebujete zjistit, co se děje na serveru. Balíčku glimpse poskytuje mnohem cenné informace, doporučujeme, že můžete ji použít v celé vaší cyklu vývoje, včetně Azure testovacího prostředí. Při [Fiddler](http://www.telerik.com/fiddler) a [nástroje pro vývoj F-12](https://msdn.microsoft.com/en-us/library/ie/gg589512(v=vs.85).aspx) poskytují straně klienta zobrazení balíčku Glimpse poskytuje podrobný pohled ze serveru. V tomto kurzu se soustředí na pomocí balíčku Glimpse ASP.NET MVC a EF balíčků, ale jsou k dispozici mnoho dalších balíčků. Kde to bude možné I odkaz na příslušné [balíčku Glimpse dokumentace](http://getglimpse.com/Docs/) který I pomáhají udržovat. Balíčku glimpse je opensourcový projekt, příliš se může přispívat k zdrojový kód a dokumentaci.
+> Balíčku glimpse je neúspěchu a rozšiřujících se řadu balíčky NuGet s otevřeným zdrojem, který poskytuje podrobné výkon, ladění a diagnostické informace pro aplikace ASP.NET. Je trivial k instalaci, lightweight, ultrarychlého a zobrazí klíčové metriky výkonu v dolní části každé stránky. Umožňuje rozbalit vaší aplikace, když potřebujete zjistit, co se děje na serveru. Balíčku glimpse poskytuje mnohem cenné informace, doporučujeme, že můžete ji použít v celé vaší cyklu vývoje, včetně Azure testovacího prostředí. Při [Fiddler](http://www.telerik.com/fiddler) a [nástroje pro vývoj F-12](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) poskytují straně klienta zobrazení balíčku Glimpse poskytuje podrobný pohled ze serveru. V tomto kurzu se soustředí na pomocí balíčku Glimpse ASP.NET MVC a EF balíčků, ale jsou k dispozici mnoho dalších balíčků. Kde to bude možné I odkaz na příslušné [balíčku Glimpse dokumentace](http://getglimpse.com/Docs/) který I pomáhají udržovat. Balíčku glimpse je opensourcový projekt, příliš se může přispívat k zdrojový kód a dokumentaci.
 
 
 - [Instalace balíčku Glimpse](#ig)
@@ -113,7 +113,7 @@ Výchozí zásady zabezpečení balíčku Glimpse umožňuje pouze data balíčk
 
 V této změně samostatně může každý uživatel zobrazit vaše data balíčku Glimpse na vzdálený web. Zvažte přidání značka výše k profil publikování, je nasazena pouze použité při použití tohoto profilu publikování (například vaše Azure testovací proifle.) Chcete-li omezit data balíčku Glimpse, přidáme `canViewGlimpseData` role a povolit pouze uživatelé v této roli k zobrazení dat balíčku Glimpse.
 
-Odebere komentáře z *GlimpseSecurityPolicy.cs* soubor a změňte [IsInRole](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) volat z `Administrator` k `canViewGlimpseData` role:
+Odebere komentáře z *GlimpseSecurityPolicy.cs* soubor a změňte [IsInRole](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) volat z `Administrator` k `canViewGlimpseData` role:
 
 [!code-csharp[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample4.cs?highlight=6)]
 
@@ -121,10 +121,10 @@ Odebere komentáře z *GlimpseSecurityPolicy.cs* soubor a změňte [IsInRole](ht
 > Zabezpečení – bohaté údaje poskytnuté balíčku Glimpse mohla vystavit zabezpečení vaší aplikace. Microsoft neprovedl auditu zabezpečení balíčku glimpse pro použití v aplikacích výroby.
 
 
-Informace o přidávání rolí, najdete v části Moje [nasazení webové aplikace zabezpečené ASP.NET MVC 5 s členství, OAuth a databáze SQL Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) kurzu.
+Informace o přidávání rolí, najdete v části Moje [nasazení webové aplikace zabezpečené ASP.NET MVC 5 s členství, OAuth a databáze SQL Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) kurzu.
 
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Nasazení aplikace zabezpečené ASP.NET MVC 5 s členství, OAuth a databáze SQL Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
+- [Nasazení aplikace zabezpečené ASP.NET MVC 5 s členství, OAuth a databáze SQL Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
 - [Konfigurace balíčku glimpse](http://getglimpse.com/Docs/Configuration) -stránka dokumentace týkající se konfigurace karty, zásady modulu runtime, protokolování a další.

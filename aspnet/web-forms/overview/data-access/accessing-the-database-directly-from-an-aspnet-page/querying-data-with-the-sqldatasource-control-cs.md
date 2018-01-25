@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e1e9950619dc9d0c8aa2911eb05911cf008989e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4652e5820e621a7b2ad3b03bb5a1d2cb4968fadd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="querying-data-with-the-sqldatasource-control-c"></a>Dotazování na Data pomocí ovládacího prvku SqlDataSource (C#)
 ====================
@@ -33,7 +33,7 @@ Všechny z kurzů jsme zkontrolován, pokud jste použili vrstvené architektura
 
 Při práci s daty všechny kurzy, pokud jste použili architekturu, je také možné přístup, vložit, aktualizovat a odstranit databázi data přímo ze stránky ASP.NET, obcházení architekturu. Díky tomu umístí konkrétní databázové dotazy a obchodní logiku přímo na webové stránce. Pro aplikace dostatečně velká nebo složitá je životně důležitá pro úspěch, aktualizační a jeho udržovatelnost aplikace návrh, implementaci a použití vrstvené architektury. Vývoj robustní architektura, však může být zbytečné při vytváření mimořádně jednoduché jednorázové aplikací.
 
-ASP.NET 2.0 obsahuje pět předdefinovaných datového zdroje ovládací prvky [SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/en-us/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx), [prvku](https://msdn.microsoft.com/en-us/library/e8d8587a%28en-US,VS.80%29.aspx), a [SiteMapDataSource](https://msdn.microsoft.com/en-us/library/5ex9t96x%28en-US,VS.80%29.aspx). Ve třídě SqlDataSource slouží pro přístup a měnit data přímo z relační databáze, včetně Microsoft SQL Server, Microsoft Access, Oracle, MySQL a dalších. V tomto kurzu a další tři podíváme, jak pracovat s ovládacím prvkem SqlDataSource, prohlížení postup dotazování a data databáze filtru, jakož i způsob použití SqlDataSource k vložit, aktualizovat a odstranit data.
+ASP.NET 2.0 obsahuje pět předdefinovaných datového zdroje ovládací prvky [SqlDataSource](https://msdn.microsoft.com/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx), [prvku](https://msdn.microsoft.com/library/e8d8587a%28en-US,VS.80%29.aspx), a [SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x%28en-US,VS.80%29.aspx). Ve třídě SqlDataSource slouží pro přístup a měnit data přímo z relační databáze, včetně Microsoft SQL Server, Microsoft Access, Oracle, MySQL a dalších. V tomto kurzu a další tři podíváme, jak pracovat s ovládacím prvkem SqlDataSource, prohlížení postup dotazování a data databáze filtru, jakož i způsob použití SqlDataSource k vložit, aktualizovat a odstranit data.
 
 
 ![ASP.NET 2.0 obsahuje pět předdefinovaných dat zdroje ovládacích prvků](querying-data-with-the-sqldatasource-control-cs/_static/image1.gif)
@@ -144,12 +144,12 @@ Jakmile jste nakonfigurovali v Průvodci se vrátíte `ProductID`, `ProductName`
 
 Dokončete průvodce, klikněte na tlačítko Dokončit.
 
-Jako s ObjectDataSource, průvodce s SqlDataSource jenom přiřazuje hodnoty vlastnosti ovládacích prvků s konkrétně [ `ConnectionString` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx) a [ `SelectCommand` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx) vlastnosti. Po dokončení průvodce se SqlDataSource deklarativní značky ovládacího prvku s vaší by měl vypadat takto:
+Jako s ObjectDataSource, průvodce s SqlDataSource jenom přiřazuje hodnoty vlastnosti ovládacích prvků s konkrétně [ `ConnectionString` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx) a [ `SelectCommand` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx) vlastnosti. Po dokončení průvodce se SqlDataSource deklarativní značky ovládacího prvku s vaší by měl vypadat takto:
 
 
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-cs/samples/sample2.aspx)]
 
-`ConnectionString` Vlastnost obsahuje informace o tom, jak připojit k databázi. Tuto vlastnost lze přiřadit hodnotu řetězce dokončení, pevně připojení nebo může ukazovat na připojovací řetězec v `Web.config`. Chcete-li hodnota připojovacího řetězce v souboru Web.config, použijte syntaxi `<%$ expressionPrefix:expressionValue %>`. Obvykle *expressionPrefix* je ConnectionStrings a *expressionValue* je název připojovacího řetězce v `Web.config` [ `<connectionStrings>` části](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx). Syntaxe však lze použít k odkazu `<appSettings>` elementy nebo obsah ze zdrojových souborů. V tématu [ASP.NET: Přehled výrazy](https://msdn.microsoft.com/en-us/library/d5bd1tad.aspx) Další informace o této syntaxe.
+`ConnectionString` Vlastnost obsahuje informace o tom, jak připojit k databázi. Tuto vlastnost lze přiřadit hodnotu řetězce dokončení, pevně připojení nebo může ukazovat na připojovací řetězec v `Web.config`. Chcete-li hodnota připojovacího řetězce v souboru Web.config, použijte syntaxi `<%$ expressionPrefix:expressionValue %>`. Obvykle *expressionPrefix* je ConnectionStrings a *expressionValue* je název připojovacího řetězce v `Web.config` [ `<connectionStrings>` části](https://msdn.microsoft.com/library/bf7sd233.aspx). Syntaxe však lze použít k odkazu `<appSettings>` elementy nebo obsah ze zdrojových souborů. V tématu [ASP.NET: Přehled výrazy](https://msdn.microsoft.com/library/d5bd1tad.aspx) Další informace o této syntaxe.
 
 `SelectCommand` Vlastnost určuje ad-hoc příkazu SQL nebo uloženou proceduru provést vrátit data.
 
@@ -190,7 +190,7 @@ Ve třídě SqlDataSource stane jiné subtlety s stránkování a řazení. Ve v
 
 Řazení a stránkování funguje, protože ve třídě SqlDataSource načte dat databáze do volného typu datové sady. Celkový počet záznamů vrácených dotazem zásadní aspekt pro implementaci stránkování lze zjistit z datové sady. Kromě toho lze seřadit výsledky datovou sadu s prostřednictvím v zobrazení DataView. Tyto možnosti jsou automaticky použije SqlDataSource při žádosti o GridView stránkovaného nebo seřazená data.
 
-Ve třídě SqlDataSource lze nakonfigurovat, aby vrátit DataReader – místo datovou sadu změnou jeho [ `DataSourceMode` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx) z `DataSet` (výchozí) na `DataReader`. Pomocí DataReader může být upřednostňovaná v situacích, při předávání s výsledky SqlDataSource existující kód, který očekává DataReader. Navíc vzhledem k tomu, že DataReaders jsou objekty výrazně jednodušší než datové sady, nabízí lepší výkon. Pokud provedete tuto změnu, ale ovládací prvek webu dat ani seřadit ani stránce vzhledem k tomu, že SqlDataSource nelze zjistit počet záznamů, jsou vrácených dotazem, stejně jako objektu DataReader nabízejí všechny techniky pro řazení vrácená data.
+Ve třídě SqlDataSource lze nakonfigurovat, aby vrátit DataReader – místo datovou sadu změnou jeho [ `DataSourceMode` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx) z `DataSet` (výchozí) na `DataReader`. Pomocí DataReader může být upřednostňovaná v situacích, při předávání s výsledky SqlDataSource existující kód, který očekává DataReader. Navíc vzhledem k tomu, že DataReaders jsou objekty výrazně jednodušší než datové sady, nabízí lepší výkon. Pokud provedete tuto změnu, ale ovládací prvek webu dat ani seřadit ani stránce vzhledem k tomu, že SqlDataSource nelze zjistit počet záznamů, jsou vrácených dotazem, stejně jako objektu DataReader nabízejí všechny techniky pro řazení vrácená data.
 
 ## <a name="step-4-using-a-custom-sql-statement-or-stored-procedure"></a>Krok 4: Použití příkazu vlastní SQL nebo uloženou proceduru
 
@@ -249,9 +249,9 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Přístup k datům relační databáze](http://aspnet.4guysfromrolla.com/articles/022206-1.aspx)
-- [Přehled ovládacího prvku SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w.aspx)
+- [Přehled ovládacího prvku SqlDataSource](https://msdn.microsoft.com/library/dz12d98w.aspx)
 - [Rychlý start ASP.NET kurzy: SqlDataSource ovládacího prvku](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/data/sqldatasource.aspx)
-- [Soubor Web.config `<connectionStrings>` – Element](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)
+- [The Web.config `<connectionStrings>` Element](https://msdn.microsoft.com/library/bf7sd233.aspx)
 - [Odkaz na řetězec připojení databáze.](http://www.connectionstrings.com/)
 
 ## <a name="about-the-author"></a>O autorovi
@@ -263,4 +263,4 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Susan Connery Bernadette Leigh a David Suru. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 >[!div class="step-by-step"]
-[Další](using-parameterized-queries-with-the-sqldatasource-cs.md)
+[Next](using-parameterized-queries-with-the-sqldatasource-cs.md)

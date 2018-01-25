@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-2.0
-ms.openlocfilehash: 992afc2766e817ef007e20ade44e3ddd1d404f90
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ca02de7954002dcbc125898c9f570438f88db818
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Co je nového v technologii ASP.NET 2.0 jádra
 
@@ -108,7 +108,7 @@ return File(data, "text/plain", "downloadName.txt", lastModified: DateTime.UtcNo
 
 Soubor vrátil návštěvnících bude označených pomocí příslušné hlavičky protokolu HTTP pro `ETag` a `LastModified` hodnoty.
 
-Pokud aplikaci návštěvníka vyžádá obsah s hlavičku požadavku rozsahu, ASP.NET, rozpozná a zpracování této hlavičky. Pokud je požadovaný obsah mohou být zajišťovány částečně, ASP.NET správně přeskočit a vrátit pouze požadovanou sadu bajtů.  Není nutné k zápisu do vaší metody přizpůsobit nebo zpracování této funkce; všechny speciální obslužné rutiny prováděno automaticky za vás.
+Pokud aplikaci návštěvníka vyžádá obsah s hlavičku požadavku rozsahu, ASP.NET, rozpozná a zpracování této hlavičky. Pokud je požadovaný obsah mohou být zajišťovány částečně, ASP.NET správně přeskočit a vrátit pouze požadovanou sadu bajtů.  Nepotřebujete k zápisu do vaší metody přizpůsobit nebo zpracování této funkce; všechny speciální obslužné rutiny prováděno automaticky za vás.
 
 ## <a name="hosting-startup-and-application-insights"></a>Hostování spuštění a Application Insights
 

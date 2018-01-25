@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4632d3939204a954ed4fac88a04b0fea9bb15c83
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cf3058ac095bc2ed728a716e70f962e260eef5a2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Seznam podrobnosti filtrování s rozevírací seznam (C#)
 ====================
@@ -31,7 +31,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
 Běžný typ sestavy je *a podrobností sestavy*, v sestavě začínající zobrazením některé sady záznamů "hlavní". Uživatele můžete pak rozbalit soubor jeden hlavní záznamy, a tím zobrazení daného záznamu hlavní "podrobností." Seznam podrobnosti sestavy jsou ideálním řešením pro vizualizaci na více vztahů, jako je například sestavy zobrazující všechny kategorie a potom umožní uživatelům vybrat určité kategorie a zobrazit její přidružené produkty. Kromě toho a podrobností sestavy jsou vhodné k zobrazení podrobných informací z zvlášť "širokou" tabulek (ta, která mají mnoho sloupců). Například "hlavní" úroveň a podrobností sestav může zobrazovat jenom název a jednotka cena produktu produkty v databázi a procházení k podrobnostem na konkrétní produkt by zobrazit pole Další produktu (kategorie, dodavatele, množství na jednotku, a atd).
 
-Existuje mnoho způsobů, pomocí kterých se dají implementovat sestavy a podrobností. Přes toto a následující tři kurzy podíváme řadu sestav, a podrobností. V tomto kurzu ukážeme, jak zobrazit hlavní záznamy v [ovládací prvek rozevírací seznam](https://msdn.microsoft.com/en-us/library/dtx91y0z.aspx) a podrobnosti vybrané položky seznamu v GridView. Konkrétně tento kurz a podrobností sestavy se zobrazí seznam kategorie a informace o produktu.
+Existuje mnoho způsobů, pomocí kterých se dají implementovat sestavy a podrobností. Přes toto a následující tři kurzy podíváme řadu sestav, a podrobností. V tomto kurzu ukážeme, jak zobrazit hlavní záznamy v [ovládací prvek rozevírací seznam](https://msdn.microsoft.com/library/dtx91y0z.aspx) a podrobnosti vybrané položky seznamu v GridView. Konkrétně tento kurz a podrobností sestavy se zobrazí seznam kategorie a informace o produktu.
 
 ## <a name="step-1-displaying-the-categories-in-a-dropdownlist"></a>Krok 1: Zobrazení kategorií v rozevírací seznam
 
@@ -97,7 +97,7 @@ Po výběru této metody, Průvodce ObjectDataSource k zadání nám hodnota met
 
 Podívejte se na naše průběh v prohlížeči chvíli trvat. Při první návštěvě stránky, tyto produkty patří do vybrané kategorie (nápoje) jsou zobrazeny (jak je znázorněno na obrázku 9), ale změna rozevírací seznam neaktualizuje data. To je proto zpětné volání, musí dojít k GridView aktualizovat. K tomu můžeme mít dvě možnosti (ani z nich vyžaduje psaní jakéhokoli kódu):
 
-- **Nastavit kategorie rozevírací seznam**[automatické odeslání vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**na hodnotu True.** (Toho lze dosáhnout kontrolou možnost Povolit automatické odeslání v inteligentních značek rozevírací seznam.) To se spustily vždy, když rozevírací seznam vybraná položka je změněna uživatelem. Proto když si uživatel vybere ze rozevírací seznam novou kategorii výsledkem by měla být zpětné volání a GridView bude aktualizována produktů pro nově zvolené kategorii. (Toto je přístupů, které jste použitý v tomto kurzu).
+- **Nastavit kategorie rozevírací seznam**[automatické odeslání vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**na hodnotu True.** (Toho lze dosáhnout kontrolou možnost Povolit automatické odeslání v inteligentních značek rozevírací seznam.) To se spustily vždy, když rozevírací seznam vybraná položka je změněna uživatelem. Proto když si uživatel vybere ze rozevírací seznam novou kategorii výsledkem by měla být zpětné volání a GridView bude aktualizována produktů pro nově zvolené kategorii. (Toto je přístupů, které jste použitý v tomto kurzu).
 - **Přidání ovládacího prvku tlačítko webové vedle rozevírací seznam.** Nastavte její `Text` vlastnost na aktualizaci nebo něco podobného. S tímto přístupem uživatel bude muset vyberte novou kategorii a potom klikněte na tlačítko. Kliknutím na tlačítko způsobit zpětné volání a aktualizovat GridView seznam těchto produktů vybrané kategorie.
 
 Následující obrázky 9 a 10 znázorňují, sestavy a podrobností v akci.
@@ -172,4 +172,4 @@ Radostí programování!
 [Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 >[!div class="step-by-step"]
-[Další](master-detail-filtering-with-two-dropdownlists-cs.md)
+[Next](master-detail-filtering-with-two-dropdownlists-cs.md)

@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 20e920ff63444c0d69cecb972619b07fe6d23097
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6b699cc939292b7ab0167dba7cfa6a00b681ef3a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>Vytvoření základní technologie ASP.NET 4.5 webové stránky formuláře v sadě Visual Studio 2013
 ====================
 Podle [Erik Reitan](https://github.com/Erikre)
 
-Tento návod vám poskytne úvod do vývojového prostředí webu v [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) a v [Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). Tento návod provede vás procesem vytvoření jednoduché stránky webových formulářů ASP.NET a znázorňuje základní postupy při vytváření nové stránky, přidání ovládacích prvků a psaní kódu.
+Tento návod vám poskytne úvod do vývojového prostředí webu v [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) a v [Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Tento návod provede vás procesem vytvoření jednoduché stránky webových formulářů ASP.NET a znázorňuje základní postupy při vytváření nové stránky, přidání ovládacích prvků a psaní kódu.
 
 Úkoly v tomto návodu zahrnují:
 
@@ -38,7 +38,7 @@ Tento návod vám poskytne úvod do vývojového prostředí webu v [Microsoft V
 
 K dokončení tohoto návodu, budete potřebovat:
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) nebo [sady Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). Rozhraní .NET Framework se instaluje automaticky. 
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) nebo [sady Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Rozhraní .NET Framework se instaluje automaticky. 
 
     > [!NOTE] 
     > 
@@ -55,7 +55,7 @@ V této části průvodce vytvoříte projekt webové aplikace a do ní přidejt
 
 ### <a name="to-create-a-web-application-project"></a>Chcete-li vytvořit projekt webové aplikace
 
-1. Otevřete sadu Microsoft Visual Studio.
+1. Open Microsoft Visual Studio.
 2. Na **soubor** nabídce vyberte možnost **nový projekt**.  
     ![Nabídka Soubor](creating-a-basic-web-forms-page/_static/image1.png)
 
@@ -83,7 +83,7 @@ Před pokračováním úpravou stránky, je vhodné se seznámit s vývojovém p
 
  Prostředí sady Visual Studio
 
-![Prostředí sady Visual Studio](creating-a-basic-web-forms-page/_static/image5.png)
+![Visual Studio Environment](creating-a-basic-web-forms-page/_static/image5.png)
 
 ### <a name="familiarize-yourself-with-the-web-designer"></a>Seznamte se s návrhářem webu
 

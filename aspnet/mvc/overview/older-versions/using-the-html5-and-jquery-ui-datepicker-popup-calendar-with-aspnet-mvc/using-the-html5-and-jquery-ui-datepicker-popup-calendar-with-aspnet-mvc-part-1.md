@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 9320c8a2aadb3b3c5bd6cd90b59d8a72db384c0c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4b5507021af47d96c29809c9830d0558f5501f87
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>Použití jazyka HTML5 a kalendáře jQuery UI DatePicker s architekturou ASP.NET MVC – část 1
 ====================
@@ -51,7 +51,7 @@ Bude potřeba přidat šablony (konkrétně upravit a zobrazit šablony) pro jed
 
 Zde je, co se dozvíte:
 
-- Použití atributů z [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) obor názvů řízení formátu dat, jakmile se zobrazí a pokud je v režimu úprav.
+- Použití atributů z [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů řízení formátu dat, jakmile se zobrazí a pokud je v režimu úprav.
 - Postup vytvoření šablon (Upravit a zobrazit šablony) k řízení formátování data.
 - Postup přidání [ovládací prvek datepicker uživatelského rozhraní jQuery](http://jqueryui.com/demos/datepicker/) jako způsob, jak zadejte datová pole.
 
@@ -67,7 +67,7 @@ V **Průzkumníku řešení**, dvakrát klikněte *Views\Shared\\_Layout.cshtml*
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image3.png)
 
-Formátování kalendářního data a cenu je výsledkem použití [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut u vlastnosti `Movie` třídy.
+Formátování kalendářního data a cenu je výsledkem použití [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut u vlastnosti `Movie` třídy.
 
 Otevřete *Movie.cs* souborů a komentář `DisplayFormat` atributu u `ReleaseDate` a `Price` vlastnosti. Výsledná `Movie` třída vypadá takto:
 
@@ -79,13 +79,13 @@ Stisknutím kláves CTRL + F5 znovu spusťte aplikaci a vyberte **Domů** k zobr
 
 ### <a name="using-the-dataannotations-datatype-attribute-to-specify-the-data-type"></a>Pomocí atributu DataAnnotations DataType zadat datový typ
 
-Nahraďte komentované `DisplayFormat` atribut pro `ReleaseDate` vlastnost s [datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) atribut, pomocí `Date` – výčet. Nahradit `DisplayFormat` atribut pro `Price` vlastnost s [datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) atribut znovu, tento současně pomocí `Currency` – výčet. Toto je dokončený kód v vypadá takto:
+Nahraďte komentované `DisplayFormat` atribut pro `ReleaseDate` vlastnost s [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut, pomocí `Date` – výčet. Nahradit `DisplayFormat` atribut pro `Price` vlastnost s [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut znovu, tento současně pomocí `Currency` – výčet. Toto je dokončený kód v vypadá takto:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample2.cs)]
 
-Spusťte aplikaci. Nyní datum vydání a vlastnosti ceny jsou správně formátovány (které používá odpovídající formáty data a měna). [Datový typ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) atribut poskytuje typ metadat pro předdefinované ASP.NET MVC šablony tak, aby pole vykreslení ve správném formátu. Pomocí `DataType` atribut je vhodnější než použít `DisplayFormat` atribut, který byl původně v kódu, protože `DataType` atribut díky modelu čisticí a flexibilnější pro účely jako mezinárodní prostředí.
+Spusťte aplikaci. Nyní datum vydání a vlastnosti ceny jsou správně formátovány (které používá odpovídající formáty data a měna). [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut poskytuje typ metadat pro předdefinované ASP.NET MVC šablony tak, aby pole vykreslení ve správném formátu. Pomocí `DataType` atribut je vhodnější než použít `DisplayFormat` atribut, který byl původně v kódu, protože `DataType` atribut díky modelu čisticí a flexibilnější pro účely jako mezinárodní prostředí.
 
 V další části se zobrazí, jak vytvořit vlastní šablony zobrazíte datová pole.
 
 >[!div class="step-by-step"]
-[Další](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)
+[Next](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)

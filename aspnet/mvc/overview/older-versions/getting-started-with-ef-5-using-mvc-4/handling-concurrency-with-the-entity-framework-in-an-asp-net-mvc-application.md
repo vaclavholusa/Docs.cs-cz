@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: b072134043ceda809bfeca98447a132ed407b323
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 87bb08a4d16965a10112a42c4e9318c32f192c04
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>Zpracování souběžnosti s platformou Entity Framework v aplikaci ASP.NET MVC (7 10)
 ====================
@@ -67,18 +67,18 @@ Jan klikne **Uložit** první a klikne na jeho změna po návratu prohlížeč n
 
 ### <a name="detecting-concurrency-conflicts"></a>Zjišťování konfliktů souběžnosti
 
-Můžete vyřešit konflikty zpracování [OptimisticConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.optimisticconcurrencyexception.aspx) výjimky, které vyvolá rozhraní Entity Framework. Chcete-li vědět, kdy má být vyvolána tyto výjimky, musí být schopna zjistit konflikty rozhraní Entity Framework. Proto musíte nakonfigurovat databázi a datový model správně. Některé možnosti aktivace zjišťování konfliktů, patří:
+Můžete vyřešit konflikty zpracování [OptimisticConcurrencyException](https://msdn.microsoft.com/library/system.data.optimisticconcurrencyexception.aspx) výjimky, které vyvolá rozhraní Entity Framework. Chcete-li vědět, kdy má být vyvolána tyto výjimky, musí být schopna zjistit konflikty rozhraní Entity Framework. Proto musíte nakonfigurovat databázi a datový model správně. Některé možnosti aktivace zjišťování konfliktů, patří:
 
 - V tabulce databáze patří sledování sloupec, který slouží k určení, kdy se změnil na řádek. Potom můžete nakonfigurovat rozhraní Entity Framework zahrnovat tento sloupec v `Where` klauzuli SQL `Update` nebo `Delete` příkazy.
 
-    Datový typ sloupce sledování je obvykle [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx). [Rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) hodnota je pořadové číslo, které se zvýší pokaždé, když se aktualizuje na řádek. V `Update` nebo `Delete` příkaz, `Where` klauzule obsahuje původní hodnota sloupce sledování (původní verze řádku). Došlo ke změně řádek aktualizován jiným uživatelem, hodnota v `rowversion` sloupec je jiná než původní hodnota, proto `Update` nebo `Delete` příkaz nelze najít řádek, abyste aktualizovat z důvodu `Where` klauzule. Při rozhraní Entity Framework zjistí, že žádné řádky bylo aktualizováno správcem `Update` nebo `Delete` příkazů (to znamená, když počet ovlivněných řádků je nulová), který interpretuje jako konflikt souběžnosti.
+    Datový typ sloupce sledování je obvykle [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx). [Rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) hodnota je pořadové číslo, které se zvýší pokaždé, když se aktualizuje na řádek. V `Update` nebo `Delete` příkaz, `Where` klauzule obsahuje původní hodnota sloupce sledování (původní verze řádku). Došlo ke změně řádek aktualizován jiným uživatelem, hodnota v `rowversion` sloupec je jiná než původní hodnota, proto `Update` nebo `Delete` příkaz nelze najít řádek, abyste aktualizovat z důvodu `Where` klauzule. Při rozhraní Entity Framework zjistí, že žádné řádky bylo aktualizováno správcem `Update` nebo `Delete` příkazů (to znamená, když počet ovlivněných řádků je nulová), který interpretuje jako konflikt souběžnosti.
 - Nakonfigurujte rozhraní Entity Framework zahrnují původní hodnoty každý sloupec v tabulce v `Where` klauzuli `Update` a `Delete` příkazy.
 
     Jako první možnost, pokud nic v řádku od řádek byl nejdřív přečíst, změnila `Where` klauzule nevrátí řádek aktualizace, které rozhraní Entity Framework interpretuje jako konflikt souběžnosti. Pro tabulky databáze, které mají mnoho sloupců, tento přístup může mít za následek velké `Where` klauzule a může vyžadovat udržovat velkých objemů stavu. Jak již bylo uvedeno dříve, může ovlivnit zachování velkých objemů stav výkonu aplikace protože ji vyžaduje prostředky serveru nebo musí být součástí webové stránky. Proto tento přístup obecně nedoporučuje, a není to metoda použitá v tomto kurzu.
 
-    Pokud chcete implementovat tento přístup k concurrency, je nutné označit všechny vlastnosti primárního klíče entity, kterou chcete sledovat souběžnosti pro přidáním [ConcurrencyCheck](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx) je atribut. Aby změna umožňuje rozhraní Entity Framework zahrňte všechny sloupce v SQL `WHERE` klauzuli `UPDATE` příkazy.
+    Pokud chcete implementovat tento přístup k concurrency, je nutné označit všechny vlastnosti primárního klíče entity, kterou chcete sledovat souběžnosti pro přidáním [ConcurrencyCheck](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx) je atribut. Aby změna umožňuje rozhraní Entity Framework zahrňte všechny sloupce v SQL `WHERE` klauzuli `UPDATE` příkazy.
 
-Ve zbývající části tohoto kurzu přidáte [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) sledování vlastnost, která má `Department` entity, vytvořte řadič a zobrazení a otestovat a ověřit, že všechno funguje správně.
+Ve zbývající části tohoto kurzu přidáte [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) sledování vlastnost, která má `Department` entity, vytvořte řadič a zobrazení a otestovat a ověřit, že všechno funguje správně.
 
 ## <a name="add-an-optimistic-concurrency-property-to-the-department-entity"></a>Přidat do Entity oddělení ve vlastnosti optimistickou metodu souběžného zpracování
 
@@ -86,7 +86,7 @@ V *Models\Department.cs*, přidejte sledování vlastnost s názvem `RowVersion`
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs?highlight=18-19)]
 
-[Časové razítko](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) atribut určuje, že tento sloupec bude součástí `Where` klauzuli `Update` a `Delete` příkazy, odeslané do databáze. Atribut se nazývá [časové razítko](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) protože předchozí verze systému SQL Server používá SQL [časové razítko](https://msdn.microsoft.com/en-us/library/ms182776(v=SQL.90).aspx) datového typu než SQL [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) jej nahradit. Typ formátu .net pro `rowversion` je bajtové pole. Pokud dáváte přednost použijte rozhraní fluent API, můžete použít [IsConcurrencyToken](https://msdn.microsoft.com/en-us/library/gg679501(v=VS.103).aspx) metoda k určení vlastnosti, sledování, jak je znázorněno v následujícím příkladu:
+[Časové razítko](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) atribut určuje, že tento sloupec bude součástí `Where` klauzuli `Update` a `Delete` příkazy, odeslané do databáze. Atribut se nazývá [časové razítko](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) protože předchozí verze systému SQL Server používá SQL [časové razítko](https://msdn.microsoft.com/library/ms182776(v=SQL.90).aspx) datového typu než SQL [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) jej nahradit. Typ formátu .net pro `rowversion` je bajtové pole. Pokud dáváte přednost použijte rozhraní fluent API, můžete použít [IsConcurrencyToken](https://msdn.microsoft.com/library/gg679501(v=VS.103).aspx) metoda k určení vlastnosti, sledování, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 

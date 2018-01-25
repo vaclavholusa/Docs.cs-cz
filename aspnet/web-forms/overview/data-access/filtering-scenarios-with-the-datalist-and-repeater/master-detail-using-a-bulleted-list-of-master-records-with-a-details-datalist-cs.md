@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 91b8139f082704c5b5964087cc1887454c081f09
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb943941ea4dbfbdc9230df4598ad406d4dee0b6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-c"></a>Seznam podrobnosti s odrážkami seznam záznamů hlavní pomocí podrobnosti DataList (C#)
 ====================
@@ -210,7 +210,7 @@ Výstup poskytnutý aktualizace DAL zahrnout `NumberOfProducts` sloupec je stejn
 
 V tomto okamžiku máme `Categories` opakovače zobrazení seznamu kategorií spolu s počtem produkty v každé kategorii. Opakovače používá LinkButton pro každou kategorii, že po kliknutí na příčiny a zpětné volání, ve kterém bodu budeme potřebovat zobrazit tyto produkty pro vybrané kategorie v `CategoryProducts` DataList.
 
-Problémy čelí nám je jak vám má DataList zobrazit právě produkty pro vybrané kategorie. V [hlavní/podrobností volitelný GridView hlavní pomocí DetailsView podrobnosti](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) kurzu jsme viděli, jak sestavit GridView jejichž řádky může vybrat, s vybraný řádek s podrobností se zobrazí v DetailsView na stejné stránce. Rutina GridView s ObjectDataSource vrátí informace o všech produktů pomocí `ProductsBLL` s `GetProducts()` metoda při DetailsView s ObjectDataSource načíst informace o používání vybrané produktu `GetProductsByProductID(productID)` metoda.  *`productID`*  Hodnota parametru zadaná deklarativně tím, že přidružíte s hodnotou GridView s `SelectedValue` vlastnost. Bohužel opakovače nemá `SelectedValue` vlastnost a nemůže sloužit jako zdroj parametru.
+Problémy čelí nám je jak vám má DataList zobrazit právě produkty pro vybrané kategorie. V [hlavní/podrobností volitelný GridView hlavní pomocí DetailsView podrobnosti](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) kurzu jsme viděli, jak sestavit GridView jejichž řádky může vybrat, s vybraný řádek s podrobností se zobrazí v DetailsView na stejné stránce. Rutina GridView s ObjectDataSource vrátí informace o všech produktů pomocí `ProductsBLL` s `GetProducts()` metoda při DetailsView s ObjectDataSource načíst informace o používání vybrané produktu `GetProductsByProductID(productID)` metoda. *`productID`*  Hodnota parametru zadaná deklarativně tím, že přidružíte s hodnotou GridView s `SelectedValue` vlastnost. Bohužel opakovače nemá `SelectedValue` vlastnost a nemůže sloužit jako zdroj parametru.
 
 > [!NOTE]
 > Toto je jedna z těchto problémů, které se zobrazí při použití LinkButton v prvku Repeater. Měli jsme použili hypertextový odkaz předávat `CategoryID` prostřednictvím řetězec dotazu místo toho jsme může použít toto pole řetězce dotazu jako zdroj pro s hodnotu parametru.
@@ -243,9 +243,9 @@ Po dokončení průvodce Konfigurace zdroje dat, Visual Studio automaticky gener
 
 V současné době `CategoryProductsDataSource` ObjectDataSource s  *`categoryID`*  parametr nikdy nastaven, tak při prohlížení stránky, se nezobrazí žádné produkty. Co je potřeba udělat je mít tento parametr hodnotu nastavit na základě `CategoryID` kliknutelnou kategorie v Opakovači. Vzniká dva problémy: nejdřív, jak jsme je zjistit při LinkButton v opakovače s `ItemTemplate` kliknutelnou; a druhé, jak jsme zjistit `CategoryID` odpovídající kategorie, jejichž LinkButton označeného?
 
-Má LinkButton jako a ImageButton ovládacích prvků `Click` událostí a [ `Command` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.command.aspx). `Click` Událostí slouží k jednoduše Všimněte si, že LinkButton klepnutí na. V některých případech ale kromě poznamenat, že bylo stisknuto LinkButton také potřebujeme předat některé doplňující informace k obslužné rutině událostí. Pokud ano, LinkButton s [ `CommandName` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.commandname.aspx) a [ `CommandArgument` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx) vlastnosti lze přiřadit tyto doplňující informace. Potom po kliknutí LinkButton jeho `Command` aktivuje událost (místo jeho `Click` událostí) a obslužné rutiny události je předána hodnoty `CommandName` a `CommandArgument` vlastnosti.
+Má LinkButton jako a ImageButton ovládacích prvků `Click` událostí a [ `Command` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx). `Click` Událostí slouží k jednoduše Všimněte si, že LinkButton klepnutí na. V některých případech ale kromě poznamenat, že bylo stisknuto LinkButton také potřebujeme předat některé doplňující informace k obslužné rutině událostí. Pokud ano, LinkButton s [ `CommandName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx) a [ `CommandArgument` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx) vlastnosti lze přiřadit tyto doplňující informace. Potom po kliknutí LinkButton jeho `Command` aktivuje událost (místo jeho `Click` událostí) a obslužné rutiny události je předána hodnoty `CommandName` a `CommandArgument` vlastnosti.
 
-Když `Command` událost se vyvolá z v rámci šablonu opakovače s opakovače [ `ItemCommand` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeater.itemcommand.aspx) aktivuje a je předána `CommandName` a `CommandArgument` hodnoty kliknutelnou LinkButton (nebo tlačítko nebo ImageButton). Proto pokud chcete zjistit, kdy bylo stisknuto kategorii LinkButton v Opakovači, potřebujeme postupujte takto:
+Když `Command` událost se vyvolá z v rámci šablonu opakovače s opakovače [ `ItemCommand` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeater.itemcommand.aspx) aktivuje a je předána `CommandName` a `CommandArgument` hodnoty kliknutelnou LinkButton (nebo tlačítko nebo ImageButton). Proto pokud chcete zjistit, kdy bylo stisknuto kategorii LinkButton v Opakovači, potřebujeme postupujte takto:
 
 1. Nastavte `CommandName` vlastnost LinkButton v opakovače s `ItemTemplate` na určitou hodnotu (I sunout používá ListProducts). Pomocí tohoto nastavení `CommandName` hodnoty, LinkButton s `Command` událost aktivuje se při kliknutí na LinkButton.
 2. Nastavit LinkButton s `CommandArgument` vlastnost na hodnotu aktuální položky s `CategoryID`.

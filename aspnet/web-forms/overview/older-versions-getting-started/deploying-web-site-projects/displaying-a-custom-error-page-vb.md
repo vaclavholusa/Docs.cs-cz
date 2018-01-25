@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e6931f9d14461456cc8461b0a6b194079b7654c6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 28f4c95e1578c5c91cfa1a21af2b4720ba7b286c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-a-custom-error-page-vb"></a>Zobrazení vlastní chybovou stránku (VB)
 ====================
@@ -31,7 +31,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
 V ideálním by existovat žádné chyby. Programátory byste měli psát kód s nary chyby a ověření vstupu uživatele robustní a externí prostředky jako databázové servery a servery e-mailu přejde nikdy offline. Ve skutečnosti jsou samozřejmě nevyhnutelné chyby. Třídy v rozhraní .NET Framework signál chybu podle došlo k výjimce. Například volání SqlConnection otevřete metody objektu naváže připojení k do databáze určené parametrem připojovací řetězec. Ale pokud se databáze nachází mimo provoz nebo pokud neplatných přihlašovacích údajů v připojovacím řetězci potom otevřete vyvolá metoda `SqlException`. Může být ke zpracování výjimek pomocí `Try/Catch/Finally` bloky. Pokud kódu v rámci `Try` bloku vyvolá výjimku, ovládací prvek je přenesen na blok catch odpovídající, kde může vývojář pokusí o zotavení z chyby. Pokud neexistuje žádný odpovídající blok catch, nebo pokud není kód, který vyvolal výjimku do bloku try, výjimka percolates zásobníkem volání search z `Try/Catch/Finally` bloky.
 
-Pokud výjimka bubliny až modulem runtime ASP.NET bez zpracování, [ `HttpApplication` třída](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.aspx)na [ `Error` událostí](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.error.aspx) se vyvolá a nakonfigurované *chybovou stránku*  se zobrazí. Ve výchozím nastavení, rozhraní ASP.NET zobrazí chybovou stránku s affectionately odkazuje jako [žlutý obrazovka smrti](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow) (YSOD). Existují dvě verze YSOD: jeden zobrazuje podrobnosti o výjimce, trasování zásobníku a další informace užitečné pro vývojáře ladění aplikace (najdete v části **obrázek 1**); dalších jednoduše stavy, že došlo k chybě spuštění (viz  **Obrázek 2**).
+Pokud výjimka bubliny až modulem runtime ASP.NET bez zpracování, [ `HttpApplication` třída](https://msdn.microsoft.com/library/system.web.httpapplication.aspx)na [ `Error` událostí](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx) se vyvolá a nakonfigurované *chybovou stránku*  se zobrazí. Ve výchozím nastavení, rozhraní ASP.NET zobrazí chybovou stránku s affectionately odkazuje jako [žlutý obrazovka smrti](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow) (YSOD). Existují dvě verze YSOD: jeden zobrazuje podrobnosti o výjimce, trasování zásobníku a další informace užitečné pro vývojáře ladění aplikace (najdete v části **obrázek 1**); dalších jednoduše stavy, že došlo k chybě spuštění (viz  **Obrázek 2**).
 
 Podrobnosti o výjimce YSOD je velmi užitečné pro vývojáře ladění aplikace, ale zobrazuje YSOD koncovým uživatelům je tacky a sobě podáváte neprofesionální. Místo toho koncoví uživatelé měli přesměrováni na chybovou stránku, která udržuje lokality vzhled a chování s přívětivější prose popisující situaci. Dobrá zpráva je, že je poměrně snadné vytváření vlastní chybovou stránku. V tomto kurzu začíná podívejte se na ASP. NET na různé chybové stránky. Potom ukazuje, jak nakonfigurovat webovou aplikaci zobrazit uživatelům vlastní chybovou stránku při krátkodobém k chybě.
 
@@ -87,7 +87,7 @@ Které tři možné chybové stránky se zobrazí je založena na dvě proměnn�
 - Informace o konfiguraci v `<customErrors>` části, a
 - Jestli návštěvy webu místně nebo vzdáleně.
 
-[ `<customErrors>` Části](https://msdn.microsoft.com/en-us/library/h0hfz6fc.aspx) v `Web.config` má dva atributy, které ovlivňují, jaké chybová stránka se zobrazí: `defaultRedirect` a `mode`. `defaultRedirect` Atribut je volitelný. Pokud je zadán, určuje adresu URL vlastní chybové stránky a určuje, že má být zobrazena vlastní chybovou stránku místo YSOD chyba modulu Runtime. `mode` Atribut je povinný a přijímá jednu ze tří hodnot: `On`, `Off`, nebo `RemoteOnly`. Tyto hodnoty mají následující chování:
+[ `<customErrors>` Části](https://msdn.microsoft.com/library/h0hfz6fc.aspx) v `Web.config` má dva atributy, které ovlivňují, jaké chybová stránka se zobrazí: `defaultRedirect` a `mode`. `defaultRedirect` Atribut je volitelný. Pokud je zadán, určuje adresu URL vlastní chybové stránky a určuje, že má být zobrazena vlastní chybovou stránku místo YSOD chyba modulu Runtime. `mode` Atribut je povinný a přijímá jednu ze tří hodnot: `On`, `Off`, nebo `RemoteOnly`. Tyto hodnoty mají následující chování:
 
 - `On`-Určuje, že vlastní chybovou stránku nebo YSOD chyba Runtime se zobrazí všechny návštěvníky, bez ohledu na to, zda jsou místní nebo vzdálené.
 - `Off`-Určuje, že je pro všechny návštěvníky, bez ohledu na to, zda jsou místní nebo vzdálené zobrazí YSOD podrobnosti o výjimce.
@@ -167,9 +167,9 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Chybové stránky, ještě jednou](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/)
-- [Pokyny pro návrh pro výjimky](https://msdn.microsoft.com/en-us/library/ms229014.aspx)
+- [Pokyny k návrhu pro výjimky](https://msdn.microsoft.com/library/ms229014.aspx)
 - [Uživatelsky přívětivý chybové stránky](http://aspnet.4guysfromrolla.com/articles/090606-1.aspx)
-- [Zpracování a generování výjimek](https://msdn.microsoft.com/en-us/library/5b2yeyab.aspx)
+- [Zpracování a generování výjimek](https://msdn.microsoft.com/library/5b2yeyab.aspx)
 - [Správně pomocí vlastní chybové stránky technologie ASP.NET](http://professionalaspnet.com/archive/2007/09/30/Properly-Using-Custom-Error-Pages-in-ASP.NET.aspx)
 
 >[!div class="step-by-step"]

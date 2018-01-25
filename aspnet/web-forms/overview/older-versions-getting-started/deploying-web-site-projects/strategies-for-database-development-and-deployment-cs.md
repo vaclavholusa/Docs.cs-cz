@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 title: "Strategie pro vývoj databází a nasazení (C#) | Microsoft Docs"
 author: rick-anderson
-description: "Při nasazení aplikace datové poprvé můžete zkopírovat databázi slepě ve vývojovém prostředí do produkčního prostředí. B...."
+description: "Při nasazení aplikace datové poprvé můžete zkopírovat databázi slepě ve vývojovém prostředí do produkčního prostředí. B..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 21d63b175eb52838ac9a12e33efc59fded4ed87d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 551a04296ff92e174a14bd9d2636714e823397e1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="strategies-for-database-development-and-deployment-c"></a>Strategie pro vývoj databází a nasazení (C#)
 ====================
@@ -79,7 +79,7 @@ Zachování změnu přihlášení prose není, admittedly, velmi sofistikované 
 
 Primární navracení zachování protokol změn v souvislém textu je nedostatek automatizace. V ideálním případě implementace změn databáze do provozní databáze v době nasazení může být stejně snadná jako kliknutím na tlačítko pro spuštění skriptu, namísto nutnosti ručně provést seznam pokyny. Tato automatizace je možné zachování protokol změn, která obsahuje tyto příkazy SQL, které používají pro úpravu datový model.
 
-Syntaxe SQL obsahuje počet příkazů pro vytvoření a úprava různé objekty databáze. Například [ *příkazu CREATE TABLE*](https://msdn.microsoft.com/en-us/library/ms174979.aspx), je-li provést, vytvoří novou tabulku s použitím zadaných sloupců a omezení. [ *Příkaz ALTER TABLE* ](https://msdn.microsoft.com/en-us/library/ms190273.aspx) upraví existující tabulky, přidání, odebrání nebo změna jeho sloupce nebo omezení. Existují také příkazy k vytvoření, úpravě a vyřadit indexy, zobrazení, uživatelem definované funkce, uložené procedury, aktivační události a dalších databázové objekty.
+Syntaxe SQL obsahuje počet příkazů pro vytvoření a úprava různé objekty databáze. Například [ *příkazu CREATE TABLE*](https://msdn.microsoft.com/library/ms174979.aspx), je-li provést, vytvoří novou tabulku s použitím zadaných sloupců a omezení. [ *Příkaz ALTER TABLE* ](https://msdn.microsoft.com/library/ms190273.aspx) upraví existující tabulky, přidání, odebrání nebo změna jeho sloupce nebo omezení. Existují také příkazy k vytvoření, úpravě a vyřadit indexy, zobrazení, uživatelem definované funkce, uložené procedury, aktivační události a dalších databázové objekty.
 
 Vrácení k naší předchozího příkladu bitové kopie, kterou během vývoje aplikace už nasazená přidat nový sloupec na `Employees` tabulky, odeberte sloupce z `Orders` tabulky a přidejte novou tabulku (`ProductCategories`). Taková akce by způsobilo soubor protokolu změnit pomocí následujících příkazů SQL:
 

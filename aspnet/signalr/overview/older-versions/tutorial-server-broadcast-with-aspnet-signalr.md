@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: afb2fa9b3dfd80a2aa49fffae71965fc2098442f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f641b53a9ed568132909114c6cceaa957064fa2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Kurz: Server všesměrového vysílání pomocí funkce SignalR technologie ASP.NET 1.x
 ====================
@@ -118,12 +118,12 @@ Chcete pouze jedna instance třídy StockTicker ke spuštění na serveru, takž
 2. Pokud máte Visual Studio 2012 s [ASP.NET a webové nástroje 2012.2 aktualizace](https://go.microsoft.com/fwlink/?LinkId=279941), klikněte na tlačítko **webové** pod **Visual C#** a vyberte **třídy rozbočovače SignalR** šablony položky. Jinak vyberte možnost **třída** šablony.
 3. Pojmenujte novou třídu *StockTickerHub.cs*a potom klikněte na **přidat**.
 
-    ![Přidat StockTickerHub.cs](tutorial-server-broadcast-with-aspnet-signalr/_static/image5.png)
+    ![Add StockTickerHub.cs](tutorial-server-broadcast-with-aspnet-signalr/_static/image5.png)
 4. Kód šablony nahraďte následujícím kódem:
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample3.cs)]
 
-    [Rozbočovače](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) třída se používá k definování metody klienty můžete volat na serveru. Definování jednu metodu: `GetAllStocks()`. Když se klient původně připojí k serveru, se bude volat tuto metodu za účelem získání seznamu všech sledovaných akcií s jejich aktuální ceny. Můžete provést synchronně a vrátí metodu `IEnumerable<Stock>` vzhledem k tomu, že ji vrací data z paměti. Pokud metoda museli získat data pomocí tohoto postupu něco, co by zahrnovat čekání, jako je vyhledávání v databázi nebo volání webové služby, zadali byste `Task<IEnumerable<Stock>>` jako návratová hodnota Povolit asynchronní zpracování. Další informace najdete v tématu [ASP.NET SignalR centra API Průvodce - Server - při spuštění asynchronně](index.md).
+    [Rozbočovače](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) třída se používá k definování metody klienty můžete volat na serveru. Definování jednu metodu: `GetAllStocks()`. Když se klient původně připojí k serveru, se bude volat tuto metodu za účelem získání seznamu všech sledovaných akcií s jejich aktuální ceny. Můžete provést synchronně a vrátí metodu `IEnumerable<Stock>` vzhledem k tomu, že ji vrací data z paměti. Pokud metoda museli získat data pomocí tohoto postupu něco, co by zahrnovat čekání, jako je vyhledávání v databázi nebo volání webové služby, zadali byste `Task<IEnumerable<Stock>>` jako návratová hodnota Povolit asynchronní zpracování. Další informace najdete v tématu [ASP.NET SignalR centra API Průvodce - Server - při spuštění asynchronně](index.md).
 
     HubName atribut určuje, jak se bude odkazovat rozbočovače v kódu jazyka JavaScript na straně klienta. Výchozí název na straně klienta, pokud nepoužijete tento atribut je ve formátu camelCase verzi název třídy, které by v tomto případě stockTickerHub.
 
@@ -136,7 +136,7 @@ Chcete pouze jedna instance třídy StockTicker ke spuštění na serveru, takž
 
     ### <a name="storing-the-singleton-instance-in-a-static-field"></a>Instanci typu singleton ukládání do statických polí
 
-    Kód inicializuje statických \_pole instance, která zálohuje vlastnost Instance s instancí třídy, a to je pouze instance třídy, která se dají vytvořit, protože konstruktoru je označen jako soukromé. [Opožděná inicializace](https://msdn.microsoft.com/en-us/library/dd997286.aspx) se používá pro \_pole instance, není z důvodů výkonu ale a zkontrolujte, zda je vytvoření instance threadsafe.
+    Kód inicializuje statických \_pole instance, která zálohuje vlastnost Instance s instancí třídy, a to je pouze instance třídy, která se dají vytvořit, protože konstruktoru je označen jako soukromé. [Opožděná inicializace](https://msdn.microsoft.com/library/dd997286.aspx) se používá pro \_pole instance, není z důvodů výkonu ale a zkontrolujte, zda je vytvoření instance threadsafe.
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample5.cs)]
 
@@ -150,7 +150,7 @@ Chcete pouze jedna instance třídy StockTicker ke spuštění na serveru, takž
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample7.cs)]
 
-    Kolekce akcií je definován jako [ConcurrentDictionary](https://msdn.microsoft.com/en-us/library/dd287191.aspx) typ pro bezpečný přístup z více vláken. Jako alternativu, můžete použít [slovník](https://msdn.microsoft.com/en-us/library/xfhwa508.aspx) objektu a explicitně zamknout slovníku, když provedete změny.
+    Kolekce akcií je definován jako [ConcurrentDictionary](https://msdn.microsoft.com/library/dd287191.aspx) typ pro bezpečný přístup z více vláken. Jako alternativu, můžete použít [slovník](https://msdn.microsoft.com/library/xfhwa508.aspx) objektu a explicitně zamknout slovníku, když provedete změny.
 
     Tato ukázková aplikace je OK pro uložení dat aplikace v paměti a ke ztrátě dat při zrušení StockTicker instance. V reálné aplikaci byste pracovat s back-end data store například do databáze.
 
@@ -162,7 +162,7 @@ Chcete pouze jedna instance třídy StockTicker ke spuštění na serveru, takž
 
     UpdateStockPrices je volána službou časovač, která předá hodnotu null v parametru state. Před aktualizací ceny, zámek pořízené \_updateStockPricesLock objektu. Kód zkontroluje, zda jiné vlákno je už aktualizace ceny, a pak zavolá TryUpdateStockPrice na každý stock v seznamu. Metoda TryUpdateStockPrice rozhodne, zda se změní uložených cena a kolik ho změnit. Pokud dojde ke změně cenu akcií, BroadcastStockPrice je volána pro všesměrové vysílání změna uložených ceny pro všechny připojené klienty.
 
-    \_UpdatingStockPrices příznak je označena jako [volatile](https://msdn.microsoft.com/en-us/library/x13ttww7.aspx) zajistit, že je přístup k němu threadsafe.
+    \_UpdatingStockPrices příznak je označena jako [volatile](https://msdn.microsoft.com/library/x13ttww7.aspx) zajistit, že je přístup k němu threadsafe.
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample9.cs)]
 
@@ -182,7 +182,7 @@ Chcete pouze jedna instance třídy StockTicker ke spuštění na serveru, takž
 
     UpdateStockPrice metoda, která jsou volání v BroadcastStockPrice ještě; neexistuje přidáte ho později při psaní kódu, který běží na klientovi. Najdete zde updateStockPrice protože Clients.All je dynamický, což znamená, že se vyhodnotí výraz v době běhu. Při volání této metody se provede, bude SignalR posílat název metody a hodnota parametru do klienta a pokud má klient metodu s názvem updateStockPrice, volání této metody a hodnota parametru se předá ho.
 
-    Clients.All znamená odeslat na všechny klienty. Funkce SignalR poskytuje dalších možností, které určují, které klienti nebo skupiny klientů k odeslání do. Další informace najdete v tématu [HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx).
+    Clients.All znamená odeslat na všechny klienty. Funkce SignalR poskytuje dalších možností, které určují, které klienti nebo skupiny klientů k odeslání do. Další informace najdete v tématu [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx).
 
 ### <a name="register-the-signalr-route"></a>Zaregistrovat trasy SignalR
 
@@ -191,12 +191,12 @@ Server musí znát adresu URL, která je zachytí a přesměrování na SignalR.
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt a pak klikněte na tlačítko **přidat novou položku**.
 2. Vyberte **globální třídy aplikace** šablony položky a potom klikněte na **přidat**.
 
-    ![Přidání souboru global.asax](tutorial-server-broadcast-with-aspnet-signalr/_static/image6.png)
+    ![Add global.asax](tutorial-server-broadcast-with-aspnet-signalr/_static/image6.png)
 3. Přidat kód SignalR postupu registrace k aplikaci\_Start – metoda:
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample11.cs)]
 
-    Ve výchozím nastavení, je základní adresu URL pro všechny přenosy SignalR "/ signalr", a "/ signalr/hubs" se používá k načtení soubor dynamicky generovaném JavaScript, který definuje proxy pro všechny rozbočovače máte ve vaší aplikaci. Metoda MapHubs zahrnuje přetížení, které umožňují určit jinou základní adresu URL a některé možnosti SignalR v instanci systému [HubConfiguration](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubconfiguration(v=vs.111).aspx) třídy.
+    Ve výchozím nastavení, je základní adresu URL pro všechny přenosy SignalR "/ signalr", a "/ signalr/hubs" se používá k načtení soubor dynamicky generovaném JavaScript, který definuje proxy pro všechny rozbočovače máte ve vaší aplikaci. Metoda MapHubs zahrnuje přetížení, které umožňují určit jinou základní adresu URL a některé možnosti SignalR v instanci systému [HubConfiguration](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubconfiguration(v=vs.111).aspx) třídy.
 4. Přidat pomocí příkazu v horní části souboru:
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample12.cs)]

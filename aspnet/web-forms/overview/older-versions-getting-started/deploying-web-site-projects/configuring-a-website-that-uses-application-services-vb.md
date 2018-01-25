@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7fb212638765589b998c4eca8265dfeb2910082f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f908eb6c6b2d18c6c41870a38bb618737949b0a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>Konfigurace webu, který používá aplikačních služeb (VB)
 ====================
@@ -35,7 +35,7 @@ Verze technologie ASP.NET 2.0 zavedl řadu *aplikačních služeb*, které jsou 
 - **Role** – rozhraní API pro zařazení do skupin uživatelů.
 - **Profil** – rozhraní API pro ukládání obsahu vlastní, specifický pro uživatele.
 - **Lokality mapy** – rozhraní API pro definování logické struktury lokality s ve formě hierarchii, což pak lze zobrazit pomocí ovládací prvky pro navigaci, jako jsou nabídky a cesta ke stránce.
-- **Přizpůsobení** – rozhraní API pro údržbu vlastní předvolby, nejčastěji používá u [ *webové části*](https://msdn.microsoft.com/en-us/library/e0s9t4ck.aspx).
+- **Přizpůsobení** – rozhraní API pro údržbu vlastní předvolby, nejčastěji používá u [ *webové části*](https://msdn.microsoft.com/library/e0s9t4ck.aspx).
 - **Monitorování stavu** – rozhraní API pro sledování výkonu, zabezpečení, chyb a další metriky stavu systému pro spuštěné webovou aplikaci.
   
 
@@ -71,7 +71,7 @@ K použití služby pro aplikace s databází systému SQL Server je nejprve nut
 
 Je možné, a obvykle ideální, chcete-li vytvořit aplikaci služby databázové objekty ve stejné databázi se uloží data webové stránky s konkrétní aplikace. Rozhraní .NET Framework se dodává s verzí nástroje s názvem `aspnet_regsql.exe` instalující databázové objekty zadanou databází. Mám zmizel dopředu a použít tento nástroj pro přidání tyto objekty `Reviews.mdf` databáze `App_Data` složky (vývoj databáze). Uvidíme použití tohoto nástroje později v tomto kurzu při přidáme tyto objekty k provozní databázi.
 
-Pokud přidáte aplikace služby databázové objekty do databáze jiné než `ASPNETDB` budete muset přizpůsobit `SqlMembershipProvider` a `SqlRoleProvider` zprostředkovatele třídy konfigurace tak, aby využívaly příslušné databáze. Chcete-li přizpůsobit přidat zprostředkovatele členství [  *&lt;členství&gt; element* ](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx) v rámci `<system.web>` v tématu `Web.config`; použít [  *&lt;roleManager&gt; element* ](https://msdn.microsoft.com/en-us/library/ms164660.aspx) konfigurace zprostředkovatele rolí. Následující fragment kódu jsou převzaty z s aplikací kniha recenze `Web.config` a zobrazuje nastavení konfigurace pro členství a rolí rozhraní API. Všimněte si, že oba registraci nového poskytovatele - `ReviewMembership` a `ReviewRole` -využívající `SqlMembershipProvider` a `SqlRoleProvider` poskytovatelů, v uvedeném pořadí.
+Pokud přidáte aplikace služby databázové objekty do databáze jiné než `ASPNETDB` budete muset přizpůsobit `SqlMembershipProvider` a `SqlRoleProvider` zprostředkovatele třídy konfigurace tak, aby využívaly příslušné databáze. Chcete-li přizpůsobit přidat zprostředkovatele členství [  *&lt;členství&gt; element* ](https://msdn.microsoft.com/library/1b9hw62f.aspx) v rámci `<system.web>` v tématu `Web.config`; použít [  *&lt;roleManager&gt; element* ](https://msdn.microsoft.com/library/ms164660.aspx) konfigurace zprostředkovatele rolí. Následující fragment kódu jsou převzaty z s aplikací kniha recenze `Web.config` a zobrazuje nastavení konfigurace pro členství a rolí rozhraní API. Všimněte si, že oba registraci nového poskytovatele - `ReviewMembership` a `ReviewRole` -využívající `SqlMembershipProvider` a `SqlRoleProvider` poskytovatelů, v uvedeném pořadí.
 
 [!code-xml[Main](configuring-a-website-that-uses-application-services-vb/samples/sample1.xml)]
 
@@ -94,7 +94,7 @@ Při nasazování webu, který používá aplikace služby a zprostředkovatele,
 
 Dalším problémem mohou nastat při nasazování webu, který používá aplikační služby, pokud chcete replikovat uživatelské účty vytvořené ve vývojovém prostředí do produkčního prostředí. V závislosti na konfiguraci členství a role je možné, že i v případě, že zkopírujete úspěšně uživatelské účty, které byly vytvořeny ve vývojovém prostředí do provozní databáze, tito uživatelé nemůžete se přihlásit do webové aplikace v produkčním prostředí. Jsme budete podívejte se na příčinou tohoto problému a popisují postup situaci zabránit, aby ji.
 
-ASP.NET se dodává s dobrý [ *webu správy nástroj (WSAT)* ](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx) , může být spuštěn ze sady Visual Studio a umožňuje uživateli účtu, rolí a autorizační pravidla ke správě přes webové rozhraní. Bohužel WSAT funguje pouze pro místní weby, znamená, že nelze použít ke vzdálené správě uživatelských účtů, rolí a autorizační pravidla pro webovou aplikaci v produkčním prostředí. Podíváme různé způsoby, jak implementovat WSAT jako chování z provozního webu.
+ASP.NET se dodává s dobrý [ *webu správy nástroj (WSAT)* ](https://msdn.microsoft.com/library/yy40ytx0.aspx) , může být spuštěn ze sady Visual Studio a umožňuje uživateli účtu, rolí a autorizační pravidla ke správě přes webové rozhraní. Bohužel WSAT funguje pouze pro místní weby, znamená, že nelze použít ke vzdálené správě uživatelských účtů, rolí a autorizační pravidla pro webovou aplikaci v produkčním prostředí. Podíváme různé způsoby, jak implementovat WSAT jako chování z provozního webu.
 
 ### <a name="adding-the-database-objects-using-aspnetregsqlexe"></a>Přidání aspnet databázi objekty pomocí\_regsql.exe
 
@@ -192,13 +192,13 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [*Nástroj pro registraci serveru SQL technologie ASP.NET (aspnet_regsql.exe)*](https://msdn.microsoft.com/en-us/library/ms229862.aspx)
-- [*Vytvoření databáze aplikace služby systému SQL Server*](https://msdn.microsoft.com/en-us/library/x28wfk74.aspx)
+- [*ASP.NET SQL Server Registration Tool (aspnet_regsql.exe)*](https://msdn.microsoft.com/library/ms229862.aspx)
+- [*Vytvoření databáze aplikace služby systému SQL Server*](https://msdn.microsoft.com/library/x28wfk74.aspx)
 - [*Vytvoření schématu členství v systému SQL Server*](../../older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb.md)
 - [*Zkoumání s členství technologie ASP.NET, role a profil*](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [*Vrácení vlastní nástroj Správa webu*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 - [*Kurzy zabezpečení webu*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
-- [*Přehled nástroje pro správu webu*](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)
+- [*Přehled nástroje pro správu webu*](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 
 >[!div class="step-by-step"]
 [Předchozí](configuring-the-production-web-application-to-use-the-production-database-vb.md)

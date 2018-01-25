@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a5855d5624360e955d5bcbcdd44e745fa54f8bd8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8b05705629b5e8a9acfc5d23517ef1b3cfa7cd6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-c"></a>Přidání ovládacích prvků ověření pro úpravu a vkládání rozhraní (C#)
 ====================
@@ -103,11 +103,11 @@ Kliknutím na tlačítko "Převést toto pole do TemplateField" sady Visual Stud
 
 Při vytváření formuláře pro zadávání dat, je důležité, že uživatelé zadají všechna požadovaná pole a zda jsou všechny zadané vstupy právní, správně naformátován hodnoty. Aby bylo zajištěno, že vstupy uživatele jsou platné, technologie ASP.NET poskytuje pět integrované ověření ovládacích prvků, které jsou navržené tak, který se má použít k ověření hodnoty jednoho vstupního ovládacího prvku:
 
-- [RequiredFieldValidator](https://msdn.microsoft.com/en-us/library/5hbw267h(VS.80).aspx) zajistí, že byla zadána hodnota
-- [CompareValidator](https://msdn.microsoft.com/en-us/library/db330ayw(VS.80).aspx) ověří hodnotu s jinou hodnotou webové ovládací prvek nebo konstantní hodnotu nebo zajišťuje, že hodnota formátu právní pro zadaný datový typ
-- [RangeValidator](https://msdn.microsoft.com/en-us/library/f70d09xt.aspx) zajistí, že je hodnota v rozsahu hodnot
-- [RegularExpressionValidator](https://msdn.microsoft.com/en-US/library/eahwtc9e.aspx) hodnotu porovnává [regulární výraz](http://en.wikipedia.org/wiki/Regular_expression)
-- [CustomValidator](https://msdn.microsoft.com/en-us/library/9eee01cx(VS.80).aspx) hodnotu porovnává vlastní, uživatelsky definované metoda
+- [RequiredFieldValidator](https://msdn.microsoft.com/library/5hbw267h(VS.80).aspx) zajistí, že byla zadána hodnota
+- [CompareValidator](https://msdn.microsoft.com/library/db330ayw(VS.80).aspx) ověří hodnotu s jinou hodnotou webové ovládací prvek nebo konstantní hodnotu nebo zajišťuje, že hodnota formátu právní pro zadaný datový typ
+- [RangeValidator](https://msdn.microsoft.com/library/f70d09xt.aspx) zajistí, že je hodnota v rozsahu hodnot
+- [RegularExpressionValidator](https://msdn.microsoft.com/library/eahwtc9e.aspx) hodnotu porovnává [regulární výraz](http://en.wikipedia.org/wiki/Regular_expression)
+- [CustomValidator](https://msdn.microsoft.com/library/9eee01cx(VS.80).aspx) hodnotu porovnává vlastní, uživatelsky definované metoda
 
 Další informace o těchto pět ovládacích prvků, podívejte se [část ovládací prvky pro ověřování](https://quickstarts.asp.net/quickstartv20/aspnet/doc/ctrlref/validation/default.aspx) z [ASP.NET rychlý start kurzy](https://asp.net/QuickStart/aspnet/).
 
@@ -133,7 +133,7 @@ V `ProductName` `EditItemTemplate`, přidejte RequiredFieldValidator přetažen�
 **Obrázek 5**: přidejte RequiredFieldValidator k `ProductName` `EditItemTemplate` ([Kliknutím zobrazit obrázek v plné velikosti](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image15.png))
 
 
-Všechny ovládací prvky ověřování práci ověření vstupu jeden ovládací prvek ASP.NET Web. Proto je potřeba znamenat, že by měl RequiredFieldValidator, kterou jsme právě přidali vyhodnotit proti textového pole v `EditItemTemplate`; to provádí nastavení ovládacího prvku ověření [vlastnost ControlToValidate](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) k `ID` ovládacího prvku příslušný Web. Do textového pole v současnosti má místo nondescript `ID` z `TextBox1`, ale můžeme ho změnit na něco vhodnější. Klikněte na textové pole v šabloně a poté v okně vlastností změňte `ID` z `TextBox1` k `EditProductName`.
+Všechny ovládací prvky ověřování práci ověření vstupu jeden ovládací prvek ASP.NET Web. Proto je potřeba znamenat, že by měl RequiredFieldValidator, kterou jsme právě přidali vyhodnotit proti textového pole v `EditItemTemplate`; to provádí nastavení ovládacího prvku ověření [vlastnost ControlToValidate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) k `ID` ovládacího prvku příslušný Web. Do textového pole v současnosti má místo nondescript `ID` z `TextBox1`, ale můžeme ho změnit na něco vhodnější. Klikněte na textové pole v šabloně a poté v okně vlastností změňte `ID` z `TextBox1` k `EditProductName`.
 
 
 [![Změňte ID textového pole na EditProductName](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image17.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image16.png)
@@ -141,7 +141,7 @@ Všechny ovládací prvky ověřování práci ověření vstupu jeden ovládac�
 **Obrázek 6**: Změna textového pole `ID` k `EditProductName` ([Kliknutím zobrazit obrázek v plné velikosti](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image18.png))
 
 
-Dále nastavte RequiredFieldValidator `ControlToValidate` vlastnost `EditProductName`. Nakonec nastavte [ErrorMessage vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) k "Je nutné zadat název produktu" a [vlastnost Text](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) na "\*". `Text` Hodnota vlastnosti, pokud je zadán, je text, který se zobrazí ověření ovládacím prvkem, pokud se ověření nezdaří. `ErrorMessage` Hodnotu vlastnosti, který je vyžadován, je používán ovládacího prvku ValidationSummary; Pokud `Text` hodnota vlastnosti je vynechán, `ErrorMessage` hodnota vlastnosti je také textu zobrazovaného ovládací prvek ověřování v neplatný vstup.
+Dále nastavte RequiredFieldValidator `ControlToValidate` vlastnost `EditProductName`. Nakonec nastavte [ErrorMessage vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) k "Je nutné zadat název produktu" a [vlastnost Text](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) na "\*". `Text` Hodnota vlastnosti, pokud je zadán, je text, který se zobrazí ověření ovládacím prvkem, pokud se ověření nezdaří. `ErrorMessage` Hodnotu vlastnosti, který je vyžadován, je používán ovládacího prvku ValidationSummary; Pokud `Text` hodnota vlastnosti je vynechán, `ErrorMessage` hodnota vlastnosti je také textu zobrazovaného ovládací prvek ověřování v neplatný vstup.
 
 Po nastavení tyto tři vlastnosti RequiredFieldValidator, by měla vypadat podobně jako na obrázku 7 obrazovky.
 
@@ -155,7 +155,7 @@ S RequiredFieldValidator přidán do `ProductName` `EditItemTemplate`, všechny,
 
 Před přidáme CompareValidator k `UnitPrice` `EditItemTemplate`, nejprve změňte ID ovládacího prvku TextBox webového z `TextBox2` k `EditUnitPrice`. Po provedení této změny, přidejte CompareValidator, nastavení jeho `ControlToValidate` vlastnost `EditUnitPrice`, jeho `ErrorMessage` vlastnost "cenu musí být větší než nebo roven nule a nemůže obsahovat symbolu měny" a jeho `Text` vlastnosti "\*".
 
-Označuje, zda `UnitPrice` hodnota musí být větší než nebo rovna 0, nastavte CompareValidator [operátor vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) k `GreaterThanEqual`, jeho [ValueToCompare vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) "0" a jeho [ Type – vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) k `Currency`. Následující deklarativní syntaxe ukazuje `UnitPrice` na TemplateField `EditItemTemplate` po provedly tyto změny:
+Označuje, zda `UnitPrice` hodnota musí být větší než nebo rovna 0, nastavte CompareValidator [operátor vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) k `GreaterThanEqual`, jeho [ValueToCompare vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) "0" a jeho [ Type – vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) k `Currency`. Následující deklarativní syntaxe ukazuje `UnitPrice` na TemplateField `EditItemTemplate` po provedly tyto změny:
 
 [!code-aspx[Main](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/samples/sample3.aspx)]
 
@@ -197,9 +197,9 @@ Díky této změně formátovaný cenu v úpravy rozhraní zahrnuje čárky jako
 
 ## <a name="step-4-summarizing-data-entry-problems"></a>Krok 4: Shrnutí problémů položka dat
 
-Kromě pěti ověřovací ovládací prvky, technologie ASP.NET obsahuje [ovládací prvek ValidationSummary](https://msdn.microsoft.com/en-US/library/f9h59855(VS.80).aspx), které zobrazuje `ErrorMessage` s kontrolní mechanismy ověřování, které zjištěna neplatná data. Tato souhrnná data mohou být zobrazeny jako text na webové stránce nebo prostřednictvím messagebox modální, na straně klienta. Umožňuje zvýšit tento kurz a zahrnují klienta messagebox shrnutí problémy ověření.
+Kromě pěti ověřovací ovládací prvky, technologie ASP.NET obsahuje [ovládací prvek ValidationSummary](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx), které zobrazuje `ErrorMessage` s kontrolní mechanismy ověřování, které zjištěna neplatná data. Tato souhrnná data mohou být zobrazeny jako text na webové stránce nebo prostřednictvím messagebox modální, na straně klienta. Umožňuje zvýšit tento kurz a zahrnují klienta messagebox shrnutí problémy ověření.
 
-K tomu, přetáhněte ovládací prvek ValidationSummary z panelu nástrojů na návrháře. Umístění ovládacího prvku ověření není důležité skutečnosti, vzhledem k tomu, že vytvoříme a nakonfigurujte ho na jenom zobrazit souhrn jako messagebox. Po přidání ovládacího prvku, nastavte jeho [ShowSummary vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) k `false` a jeho [ShowMessageBox vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) k `true`. Pomocí tohoto přidání všechny chyby ověřování, jsou shrnuté v messagebox na straně klienta.
+K tomu, přetáhněte ovládací prvek ValidationSummary z panelu nástrojů na návrháře. Umístění ovládacího prvku ověření není důležité skutečnosti, vzhledem k tomu, že vytvoříme a nakonfigurujte ho na jenom zobrazit souhrn jako messagebox. Po přidání ovládacího prvku, nastavte jeho [ShowSummary vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) k `false` a jeho [ShowMessageBox vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) k `true`. Pomocí tohoto přidání všechny chyby ověřování, jsou shrnuté v messagebox na straně klienta.
 
 
 [![Chyby ověření jsou shrnuty v Messagebox na straně klienta](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image32.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image31.png)

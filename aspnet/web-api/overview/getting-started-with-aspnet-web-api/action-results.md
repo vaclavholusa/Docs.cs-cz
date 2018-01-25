@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
-ms.openlocfilehash: 68b82661b97434795e1c306b168033dfcde529bc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d0db5c6d45020861d7295ab1db989caee525fff9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="action-results-in-web-api-2"></a>Výsledky akce v rozhraní Web API 2
 ====================
@@ -27,7 +27,7 @@ Toto téma popisuje, jak rozhraní ASP.NET Web API převádí návratovou hodnot
 Akce kontroleru webového rozhraní API se můžete vrátit některé z následujících:
 
 1. void
-2. **Objekt HttpResponseMessage**
+2. **HttpResponseMessage**
 3. **IHttpActionResult**
 4. Jiný typ
 
@@ -36,7 +36,7 @@ V závislosti na tom, které z nich se vrátí, webového rozhraní API použív
 | Návratový typ | Jak webového rozhraní API vytvoří odpovědi |
 | --- | --- |
 | void | Vrátí prázdný 204 (ne obsahu) |
-| **Objekt HttpResponseMessage** | Převeďte přímo na zprávu odpovědi HTTP. |
+| **HttpResponseMessage** | Převeďte přímo na zprávu odpovědi HTTP. |
 | **IHttpActionResult** | Volání **ExecuteAsync** vytvořit **objekt HttpResponseMessage**, pak převést na zprávu odpovědi HTTP. |
 | Jiný typ | Zápis serializovaných návratovou hodnotu do odpovědi; Vrátí 200 (OK). |
 
@@ -56,7 +56,7 @@ Odpověď HTTP:
 
 ## <a name="httpresponsemessage"></a>Objekt HttpResponseMessage
 
-Akce vrátí-li [objekt HttpResponseMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.aspx), webového rozhraní API převede návratovou hodnotu přímo do zprávu odpovědi HTTP pomocí vlastnosti **objekt HttpResponseMessage** objektu k naplnění odpověď.
+Akce vrátí-li [objekt HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx), webového rozhraní API převede návratovou hodnotu přímo do zprávu odpovědi HTTP pomocí vlastnosti **objekt HttpResponseMessage** objektu k naplnění odpověď.
 
 Tato možnost vám přináší značnou kontroly nad zprávu odpovědi. Například následující akce kontroleru nastaví hlavičku Cache-Control.
 
@@ -98,9 +98,9 @@ Odpověď:
 
 [!code-console[Main](action-results/samples/sample9.cmd)]
 
-Více často, bude používat **IHttpActionResult** implementace, které jsou definované v  **[System.Web.Http.Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx)**  oboru názvů. **Objektu ApiController** třída definuje pomocné metody, které vracejí výsledky těchto vestavěná akce.
+Více často, bude používat **IHttpActionResult** implementace, které jsou definované v  **[System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)**  oboru názvů. **Objektu ApiController** třída definuje pomocné metody, které vracejí výsledky těchto vestavěná akce.
 
-V následujícím příkladu, pokud požadavek neodpovídá stávající ID produktu, zavolá řadičem [ApiController.NotFound](https://msdn.microsoft.com/en-us/library/system.web.http.apicontroller.notfound.aspx) k vytvoření odpovědi 404 (není nalezena). Jinak hodnota řadičem volá [ApiController.OK](https://msdn.microsoft.com/en-us/library/dn314591.aspx), která vytvoří odpovědi 200 (OK), obsahuje produktu.
+V následujícím příkladu, pokud požadavek neodpovídá stávající ID produktu, zavolá řadičem [ApiController.NotFound](https://msdn.microsoft.com/library/system.web.http.apicontroller.notfound.aspx) k vytvoření odpovědi 404 (není nalezena). Jinak hodnota řadičem volá [ApiController.OK](https://msdn.microsoft.com/library/dn314591.aspx), která vytvoří odpovědi 200 (OK), obsahuje produktu.
 
 [!code-csharp[Main](action-results/samples/sample10.cs)]
 

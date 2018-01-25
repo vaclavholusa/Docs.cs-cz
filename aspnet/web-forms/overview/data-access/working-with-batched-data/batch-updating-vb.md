@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 02df858a7ad2ccefce4717e9bb7b08fc4c8d6ace
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bcfdf734de0b4a4aa0a11f35bd6e40d6b97719cf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-updating-vb"></a>Dávkové aktualizace (VB)
 ====================
@@ -47,7 +47,7 @@ Umožňují s začít!
 
 ## <a name="examining-the-steps-for-making-all-gridview-rows-editable"></a>Zkoumání kroky pro vytváření upravovat všechny řádky GridView
 
-Jak je popsáno v [přehled o vložení, aktualizace a odstranění dat](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md) kurzu GridView má integrovanou podporu pro úpravy podkladová data na základě na řádek. Interně GridView poznámky, jaké řádek je upravovat pomocí jeho [ `EditIndex` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx). Jako GridView je vázán na zdroj dat, zkontroluje každý řádek pro zobrazení, je-li index řádku rovná hodnotě `EditIndex`. Pokud ano, tento řádek s, který pole jsou vykreslovány pomocí jejich úpravy rozhraní. Textové pole je rozhraní úpravy BoundFields, jejichž `Text` vlastnost přiřazena hodnota pole dat určeného BoundField s `DataField` vlastnost. Pro TemplateFields `EditItemTemplate` slouží místě `ItemTemplate`.
+Jak je popsáno v [přehled o vložení, aktualizace a odstranění dat](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md) kurzu GridView má integrovanou podporu pro úpravy podkladová data na základě na řádek. Interně GridView poznámky, jaké řádek je upravovat pomocí jeho [ `EditIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx). Jako GridView je vázán na zdroj dat, zkontroluje každý řádek pro zobrazení, je-li index řádku rovná hodnotě `EditIndex`. Pokud ano, tento řádek s, který pole jsou vykreslovány pomocí jejich úpravy rozhraní. Textové pole je rozhraní úpravy BoundFields, jejichž `Text` vlastnost přiřazena hodnota pole dat určeného BoundField s `DataField` vlastnost. Pro TemplateFields `EditItemTemplate` slouží místě `ItemTemplate`.
 
 Odvolat, aby úpravy pracovní postup spustí, když uživatel klikne tlačítko Upravit řádek s. To způsobí, že zpětné volání, nastaví GridView s `EditIndex` vlastnost index kliknutelnou řádku s a znovu připojí data k mřížce. Při stisknutí tlačítka Storno řádek s, na zpětné volání `EditIndex` je nastaven na hodnotu `-1` před obnovení vazby dat k mřížce. Vzhledem k tomu, že řádky s GridView Spustit indexování od nuly, nastavení `EditIndex` k `-1` má za následek zobrazení GridView v režimu jen pro čtení.
 
@@ -240,7 +240,7 @@ Vytvořit metodu s názvem `BatchUpdate` v `BatchUpdate.aspx.vb` a přidejte ná
 
 [!code-vb[Main](batch-updating-vb/samples/sample5.vb)]
 
-Tato metoda začíná získáním na všechny produkty zpět v `ProductsDataTable` prostřednictvím volání BLL s `GetProducts` metoda. Pak zobrazí `ProductGrid` GridView s [ `Rows` kolekce](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx). `Rows` Kolekce obsahuje [ `GridViewRow` instance](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewrow.aspx) pro každý řádek v GridView zobrazí. Vzhledem k tomu, že jsme zobrazují maximálně deset řádků na každé stránce, rutina GridView s `Rows` kolekce bude obsahovat více než deset položky.
+Tato metoda začíná získáním na všechny produkty zpět v `ProductsDataTable` prostřednictvím volání BLL s `GetProducts` metoda. Pak zobrazí `ProductGrid` GridView s [ `Rows` kolekce](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx). `Rows` Kolekce obsahuje [ `GridViewRow` instance](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewrow.aspx) pro každý řádek v GridView zobrazí. Vzhledem k tomu, že jsme zobrazují maximálně deset řádků na každé stránce, rutina GridView s `Rows` kolekce bude obsahovat více než deset položky.
 
 Pro každý řádek `ProductID` bude převzat z `DataKeys` kolekce a odpovídající `ProductsRow` je vybraný `ProductsDataTable`. Čtyři vstupní ovládací prvky TemplateField se odkazuje prostřednictvím kódu programu a jejich hodnoty přiřazené `ProductsRow` s vlastnosti instance. Po každé GridView hodnoty řádků s použily aktualizace `ProductsDataTable`, ho s předaný BLL s `UpdateWithTransaction` metodu, která jako jsme viděli v tomto kurzu předchozí jednoduše volá do DAL s `UpdateWithTransaction` metoda.
 
@@ -257,7 +257,7 @@ K dokončení tohoto kurzu, je potřeba mít `BatchUpdate` metoda volána, když
 
 [!code-vb[Main](batch-updating-vb/samples/sample6.vb)]
 
-Nejprve je volána k `BatchUpdate`. Dále [ `ClientScript` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.page.clientscript(VS.80).aspx) slouží k vložení JavaScript, který se zobrazí messagebox, který čte produkty byly aktualizovány.
+Nejprve je volána k `BatchUpdate`. Dále [ `ClientScript` vlastnost](https://msdn.microsoft.com/library/system.web.ui.page.clientscript(VS.80).aspx) slouží k vložení JavaScript, který se zobrazí messagebox, který čte produkty byly aktualizovány.
 
 Trvat několik minut k otestování tohoto kódu. Navštivte `BatchUpdate.aspx` prostřednictvím prohlížeče, upravit počet řádků a klikněte na jednu z tlačítka aktualizace produktů. Za předpokladu, že nejsou žádné chyby ověření vstupu, měli byste vidět messagebox, který čte, že byly aktualizovány produkty. Chcete-li ověřit nedělitelnost aktualizace, zvažte přidání náhodnou `CHECK` omezení, jako je ten, který zakáže `UnitPrice` hodnoty 1234.56. Potom z `BatchUpdate.aspx`, upravit počet záznamů, a zkontrolujte, zda nastavte jednu z produktu s `UnitPrice` hodnotu zakázané hodnotou (1234.56). Výsledkem by mělo chybu při kliknutí na aktualizace produktů s další změny během této operace batch vrátit zpět na původní hodnoty.
 
@@ -270,7 +270,7 @@ Pro tyto typy situacích zvažte použití následujících `BatchUpdateAlternat
 
 [!code-vb[Main](batch-updating-vb/samples/sample7.vb)]
 
-`BatchMethodAlternate`začne tím, že vytvoříte nový prázdný `ProductsDataTable` s názvem `products`. Následně kroky prostřednictvím GridView s `Rows` kolekce a pro každý řádek získá informace o konkrétním produktu pomocí BLL s `GetProductByProductID(productID)` metoda. Načtený `ProductsRow` instance má jeho vlastnosti aktualizovat stejným způsobem jako `BatchUpdate`, ale po aktualizaci řádku je importovat do `products` `ProductsDataTable` prostřednictvím DataTable s [ `ImportRow(DataRow)` metoda](https://msdn.microsoft.com/en-us/library/system.data.datatable.importrow(VS.80).aspx).
+`BatchMethodAlternate`začne tím, že vytvoříte nový prázdný `ProductsDataTable` s názvem `products`. Následně kroky prostřednictvím GridView s `Rows` kolekce a pro každý řádek získá informace o konkrétním produktu pomocí BLL s `GetProductByProductID(productID)` metoda. Načtený `ProductsRow` instance má jeho vlastnosti aktualizovat stejným způsobem jako `BatchUpdate`, ale po aktualizaci řádku je importovat do `products` `ProductsDataTable` prostřednictvím DataTable s [ `ImportRow(DataRow)` metoda](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
 
 Po `For Each` dokončení smyčky `products` obsahuje jeden `ProductsRow` instance pro každý řádek v GridView. Od těchto `ProductsRow` instance jsou přidané do `products` (místo aktualizaci), pokud jsme slepě předejte ji do `UpdateWithTransaction` metoda `ProductsTableAdatper` se pokusí každý záznam vložit do databáze. Místo toho je potřeba zadat, že všechny tyto řádky se změnila (není přidáno).
 

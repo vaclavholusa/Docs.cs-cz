@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: a66e2a80668dbf291b9cc34f205b546b72d92bcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c7dcb7903b0d0772acc560161ff39c6869c599a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-identity"></a>Úvod do ASP.NET Identity
 ====================
@@ -31,7 +31,7 @@ podle [Jon Galloway](https://github.com/jongalloway), [Pranav Rastogi](https://g
 
 ### <a name="aspnet-membership"></a>Členství technologie ASP.NET
 
-[Členství technologie ASP.NET](https://msdn.microsoft.com/en-us/library/yh26yfzy(v=VS.100).aspx) byl proto, aby vyřešila požadavky na členství lokality, které byly v 2005, které se podílejí ověřování pomocí formulářů a databázi systému SQL Server pro uživatelská jména, hesla a data profilu běžné. Dnes je mnohem širší pole možnosti úložiště dat pro webové aplikace a Většina vývojářů chcete povolit jejich lokality používat sociální identity zprostředkovatele pro funkci ověřování a autorizace. Omezení návrhu členství technologie ASP.NET velmi obtížné tento přechod:
+[Členství technologie ASP.NET](https://msdn.microsoft.com/library/yh26yfzy(v=VS.100).aspx) byl proto, aby vyřešila požadavky na členství lokality, které byly v 2005, které se podílejí ověřování pomocí formulářů a databázi systému SQL Server pro uživatelská jména, hesla a data profilu běžné. Dnes je mnohem širší pole možnosti úložiště dat pro webové aplikace a Většina vývojářů chcete povolit jejich lokality používat sociální identity zprostředkovatele pro funkci ověřování a autorizace. Omezení návrhu členství technologie ASP.NET velmi obtížné tento přechod:
 
 - Schéma databáze je navržené pro SQL Server a nelze ji změnit. Můžete přidat informace o profilu, ale další data nachází v balení do jiné tabulky, což znesnadňuje pro přístup k jakýmkoli způsobem s výjimkou prostřednictvím rozhraní API poskytovatele profilu.
 - Systému zprostředkovatele umožňuje změnit úložiště zálohování dat, ale v systému je uspořádaná kolem předpoklady, které jsou vhodné pro relační databázi. Můžete napsat zprostředkovatele uložit informace o členství v mechanismus nerelační úložiště, jako je například úložiště tabulek Azure, ale pak budete muset obejít relační návrhu pomocí zápisu velké množství kódu a spoustu `System.NotImplementedException` výjimky pro metody, které nejsou platí pro databáze NoSQL.
@@ -47,7 +47,7 @@ Jednoduché členství snadněji přizpůsobit informace o profilu uživatele, a
 - Nemůžete ji použít s OWIN.
 - Předchozí postup nebude fungovat správně s existující zprostředkovatele členství technologie ASP.NET a není rozšiřitelný.
 
-### <a name="aspnet-universal-providers"></a>Balíčku ASP.NET Universal Providers
+### <a name="aspnet-universal-providers"></a>ASP.NET Universal Providers
 
 [Balíček ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) byly vyvinuty, aby bylo možné zachovat informace o členství ve službě Microsoft Azure SQL Database a také pracovat se systém SQL Server Compact. Universal Providers byly založený na Entity Framework Code First, což znamená, že můžete uchovávat data v jakékoli úložiště nepodporuje EF použít Universal Providers. S Universal Providers schéma databáze byla vyčištěna poměrně velké také.
 
@@ -132,7 +132,7 @@ ASP.NET Identity je implementovaná pomocí následujícího postupu. Účelem t
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
- Zvýrazněný výš v `SignInAsync` metoda generuje [ClaimsIdentity](https://msdn.microsoft.com/en-us/library/system.security.claims.claimsidentity.aspx). Vzhledem k tomu, že jsou založené na deklaracích identity systému ASP.NET Identity a ověřování souborů Cookie OWIN, rozhraní framework vyžaduje, aby aplikace ke generování ClaimsIdentity pro uživatele. ClaimsIdentity obsahuje informace o všech deklarací identity pro uživatele, například jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.  
+ Zvýrazněný výš v `SignInAsync` metoda generuje [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Vzhledem k tomu, že jsou založené na deklaracích identity systému ASP.NET Identity a ověřování souborů Cookie OWIN, rozhraní framework vyžaduje, aby aplikace ke generování ClaimsIdentity pro uživatele. ClaimsIdentity obsahuje informace o všech deklarací identity pro uživatele, například jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.  
   
  Zvýrazněný níže v `SignInAsync` metoda přihlášení uživatele pomocí třídě z OWIN a volání `SignIn` a předávání v ClaimsIdentity.  
 
@@ -142,7 +142,7 @@ ASP.NET Identity je implementovaná pomocí následujícího postupu. Účelem t
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
- Zvýrazněných code výš ukazuje OWIN `AuthenticationManager.SignOut` metoda. Toto je obdobou [FormsAuthentication.SignOut](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx) metodu používanou [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) modulu ve webových formulářů.
+ Zvýrazněných code výš ukazuje OWIN `AuthenticationManager.SignOut` metoda. Toto je obdobou [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) metodu používanou [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu ve webových formulářů.
 
 ## <a name="components-of-aspnet-identity"></a>Součástí ASP.NET Identity
 

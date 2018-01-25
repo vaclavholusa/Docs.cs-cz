@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 3c5abe84a5c7cc399e0586e680a414fab7a26c1d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: bc1cfe0d6ee88a0af49cdff9ce77ad42f57b95f7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="file-uploads-in-aspnet-core"></a>Nahrávání souborů v ASP.NET Core
 
@@ -134,7 +134,7 @@ public async Task<IActionResult> Register(RegisterViewModel model)
 Pokud velikost nebo četnost nahrávání souborů způsobuje problémy prostředků pro aplikace, zvažte streamování nahrávání souborů a místo ukládání do vyrovnávací paměti jako celek, stejně jako výše uvedeném přístupu vazby modelu. Při použití `IFormFile` a vazby modelu je mnohem jednodušší řešení, streamování vyžaduje několik kroků k implementaci správně.
 
 > [!NOTE]
-> Všechny jednoho z vyrovnávací paměti souboru překročení 64KB přesunout z paměti RAM do dočasného souboru na disku na serveru. Prostředky (disk RAM) používané nahrávání souborů závisí na počtu a velikosti nahrávání souběžných souborů. Streamování není mnoho o výkonu, je o škálování. Pokud se pokusíte vyrovnávací paměť příliš mnoho nahrávání, dojde k chybě váš web pokud jí dojde místo paměti nebo volného místa.
+> Všechny jednoho z vyrovnávací paměti souboru překročení 64KB přesunout z paměti RAM do dočasného souboru na disku na serveru. Prostředky (disk RAM) používané nahrávání souborů závisí na počtu a velikosti nahrávání souběžných souborů. Streamování není mnoho o výkonu se jedná o škálování. Pokud se pokusíte vyrovnávací paměť příliš mnoho nahrávání, dojde k chybě váš web pokud jí dojde místo paměti nebo volného místa.
 
 Následující příklad ukazuje použití JavaScript nebo úhlová k vysílání datového proudu k akci kontroleru. V souboru antiforgery token je generován pomocí vlastní atribut filtru a předán v hlavičkách protokolu HTTP místo v textu požadavku. Vzhledem k tomu, že metoda akce zpracovává odesílaná data přímo, vazby modelu zakázal jiný filtr. V rámci akce, jsou číst obsah formuláře pomocí `MultipartReader`, který čte každého uživatele `MultipartSection`, zpracování souboru nebo ukládání obsahu podle potřeby. Jakmile přečetli všechny části akci provede vlastní vazby modelu.
 

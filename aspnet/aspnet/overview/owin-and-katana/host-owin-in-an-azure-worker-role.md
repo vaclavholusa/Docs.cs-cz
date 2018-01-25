@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 647514ae5a92b9d729179327fb97bd8005b0a4b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8c0fdfdf60ff3bde34b6869adf3f8693b4d9615d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Hostitele OWIN roli pracovního procesu systému Azure
 ====================
@@ -26,13 +26,13 @@ podle [Wasson Jan](https://github.com/MikeWasson)
 > 
 > [Otevřete Web Interface pro .NET](http://owin.org/) (OWIN) definuje abstrakci mezi .NET webové servery a webové aplikace. OWIN oddělí webové aplikace ze serveru, takže je ideální pro hostování samoobslužné webové aplikace v vlastní proces mimo službu IIS OWIN – například uvnitř o roli pracovního procesu systému Azure.
 > 
-> V tomto kurzu budete zjistěte, jak k hostování na vlastním aplikace OWIN uvnitř roli pracovního procesu Microsoft Azure. Další informace o rolích pracovního procesu naleznete v tématu [Azure provádění modely](https://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/#CloudServices).
+> V tomto kurzu budete zjistěte, jak k hostování na vlastním aplikace OWIN uvnitř roli pracovního procesu Microsoft Azure. Další informace o rolích pracovního procesu naleznete v tématu [Azure provádění modely](https://azure.microsoft.com/documentation/articles/fundamentals-application-models/#CloudServices).
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
-> - [Azure SDK pro .NET 2.3](https://azure.microsoft.com/en-us/downloads/)
+> - [Azure SDK pro .NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
 
@@ -125,7 +125,7 @@ Najít IP adresu v rámci nasazení služby, nasazení [id] podrobnosti ze služ
 
 ## <a name="deploy-to-azure"></a>Nasazení do Azure
 
-V tomto kroku musí mít účet Azure. Pokud jste již nemáte, můžete si během několika minut vytvořit Bezplatný zkušební účet. Podrobnosti najdete v tématu [bezplatná zkušební verze Microsoft Azure](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F).
+V tomto kroku musí mít účet Azure. Pokud jste již nemáte, můžete si během několika minut vytvořit Bezplatný zkušební účet. Podrobnosti najdete v tématu [bezplatná zkušební verze Microsoft Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
 
 V Průzkumníku řešení klikněte pravým tlačítkem na projekt AzureApp. Vyberte **publikování**.
 
@@ -151,5 +151,5 @@ Okno Protokol činnosti Azure zobrazuje průběh nasazení. Při nasazení aplik
 
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Přehled Katana projektu](an-overview-of-project-katana.md)
+- [Přehled projektu Katana](an-overview-of-project-katana.md)
 - [Katana projektu na Githubu](https://github.com/aspnet/AspNetKatana/)

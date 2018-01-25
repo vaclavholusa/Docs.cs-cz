@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f2d480793d02c8bfa25c05fd11fa2e6ef9e54a60
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2ca76364a2e9a71dc92644bd579345ae3c304a69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>Aktualizace dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC (6 10)
 ====================
@@ -110,7 +110,7 @@ Nahraďte `HttpPost` `Edit` metoda následujícím kódem. který zpracovává a
 Kód provede následující akce:
 
 - Získá aktuální `Instructor` entity z databáze pomocí přes načítání pro `OfficeAssignment` navigační vlastnost. Je to stejné jako v `HttpGet` `Edit` metoda.
-- Aktualizace načtený `Instructor` entity hodnotami z vazače modelu. [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.108).aspx) vám umožní použít přetížení *povolených* vlastnosti, které chcete zahrnout. To brání přečerpání účtování, jak je popsáno v [druhý kurzu](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
+- Aktualizace načtený `Instructor` entity hodnotami z vazače modelu. [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx) vám umožní použít přetížení *povolených* vlastnosti, které chcete zahrnout. To brání přečerpání účtování, jak je popsáno v [druhý kurzu](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
 
     [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
 - Pokud umístění kanceláře je prázdné, nastaví `Instructor.OfficeAssignment` vlastnost na hodnotu null, aby související řádek v `OfficeAssignment` tabulky se odstraní.
@@ -146,13 +146,13 @@ V *InstructorController.cs*, nahraďte `HttpGet` `Edit` metoda následujícím k
 
 Kód přidá přes načítání pro `Courses` navigační vlastnost a volá novou `PopulateAssignedCourseData` metoda podat informace o použití pole zaškrtávací políčko `AssignedCourseData` zobrazit třídu modelu.
 
-Kód `PopulateAssignedCourseData` metoda čte prostřednictvím všechny `Course` třída modelu entity, aby bylo možné načíst seznam kurzů pomocí zobrazení. Pro každý kurz kód ověří, zda během existuje v lektorem `Courses` navigační vlastnost. Chcete-li vytvořit efektivní vyhledávání při kontrole, zda je přiřazen kurzu lektorem, jsou vložena kurzy přiřazené lektorem [HashSet](https://msdn.microsoft.com/en-us/library/bb359438.aspx) kolekce. `Assigned` Je nastavena na `true` pro kurzy lektorem přiřazen. Zobrazení bude pomocí této vlastnosti k určení, které Kontrola polí musí být zobrazí jako vybraný. Nakonec je předán zobrazení v seznamu `ViewBag` vlastnost.
+Kód `PopulateAssignedCourseData` metoda čte prostřednictvím všechny `Course` třída modelu entity, aby bylo možné načíst seznam kurzů pomocí zobrazení. Pro každý kurz kód ověří, zda během existuje v lektorem `Courses` navigační vlastnost. Chcete-li vytvořit efektivní vyhledávání při kontrole, zda je přiřazen kurzu lektorem, jsou vložena kurzy přiřazené lektorem [HashSet](https://msdn.microsoft.com/library/bb359438.aspx) kolekce. `Assigned` Je nastavena na `true` pro kurzy lektorem přiřazen. Zobrazení bude pomocí této vlastnosti k určení, které Kontrola polí musí být zobrazí jako vybraný. Nakonec je předán zobrazení v seznamu `ViewBag` vlastnost.
 
 Dál přidejte kód, který je spuštěn, když uživatel klikne na **Uložit**. Nahraďte `HttpPost` `Edit` metoda následující kód, který volá nová metoda, která aktualizuje `Courses` vlastnost navigace `Instructor` entity. Změny se zvýrazněnou.
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs?highlight=3,7,20,33,37-65)]
 
-Vzhledem k tomu, že zobrazení nemá kolekce `Course` entity, vazač modelu nelze aktualizovat automaticky `Courses` navigační vlastnost. Místo použití vazače modelu k aktualizaci navigační vlastnost kurzy, můžete to udělat v novém `UpdateInstructorCourses` metoda. Proto musíte vyloučit `Courses` vlastnost z vazby modelu. To nevyžaduje všechny změny kód, který volá [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.98).aspx) vzhledem k tomu, že používáte *povolených* přetížení a `Courses` není v seznamu zahrnout.
+Vzhledem k tomu, že zobrazení nemá kolekce `Course` entity, vazač modelu nelze aktualizovat automaticky `Courses` navigační vlastnost. Místo použití vazače modelu k aktualizaci navigační vlastnost kurzy, můžete to udělat v novém `UpdateInstructorCourses` metoda. Proto musíte vyloučit `Courses` vlastnost z vazby modelu. To nevyžaduje všechny změny kód, který volá [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.98).aspx) vzhledem k tomu, že používáte *povolených* přetížení a `Courses` není v seznamu zahrnout.
 
 Pokud žádná kontrola byly zaškrtnutá políčka, kód v `UpdateInstructorCourses` inicializuje `Courses` navigační vlastnost s prázdnou kolekci:
 

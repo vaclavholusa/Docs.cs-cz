@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: f5783287a26174ddf65bb0eae34c347831d02c47
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3ab67b93a32106c0b79f9e8d739d47835391edb5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>Přidání ASP.NET Identity pro prázdný nebo existující webových formulářů projektu
 ====================
@@ -102,7 +102,7 @@ Všimněte si, že tento balíček nainstaluje balíčky závislost: EntityFrame
 
 ## <a name="configuring-the-application-for-owin-authentication"></a>Konfigurace aplikace pro ověřování OWIN.
 
-V tuto chvíli jsme doplnili jenom podporu pro vytváření uživatelů. Teď přidáme ukazují, jak jsme přidat ověřování se přihlášení uživatele. ASP.NET Identity používá Microsoft OWIN ověřovací middleware pro ověřování pomocí formulářů. Soubor cookie ověřování souborů Cookie OWIN a deklarace identity ověřování založené na mechanismu, který může používat libovolnou architekturu hostované na [OWIN](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx) nebo služby IIS. V tomto modelu lze použít stejné balíčky ověřování napříč více rozhraní, včetně ASP.NET MVC a webových formulářů. Další informace o projektu Katana a jak spustit middlewaru v lhostejné najdete v tématu hostitele [Začínáme s projektem Katana](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx).
+V tuto chvíli jsme doplnili jenom podporu pro vytváření uživatelů. Teď přidáme ukazují, jak jsme přidat ověřování se přihlášení uživatele. ASP.NET Identity používá Microsoft OWIN ověřovací middleware pro ověřování pomocí formulářů. Soubor cookie ověřování souborů Cookie OWIN a deklarace identity ověřování založené na mechanismu, který může používat libovolnou architekturu hostované na [OWIN](https://msdn.microsoft.com/magazine/dn451439.aspx) nebo služby IIS. V tomto modelu lze použít stejné balíčky ověřování napříč více rozhraní, včetně ASP.NET MVC a webových formulářů. Další informace o projektu Katana a jak spustit middlewaru v lhostejné najdete v tématu hostitele [Začínáme s projektem Katana](https://msdn.microsoft.com/magazine/dn451439.aspx).
 
 ## <a name="installing-authentication-packages-to-your-application"></a>Instalace balíčků ověřování do aplikace
 
@@ -135,8 +135,8 @@ V tuto chvíli jsme doplnili jenom podporu pro vytváření uživatelů. Teď p�
 
     > [!NOTE] 
     > 
-    > - Vzhledem k tomu, že jsou deklarace identity na základě systému ASP.NET Identity a ověřování souborů Cookie OWIN, vyžaduje rozhraní vývojáři aplikace k vygenerování [ClaimsIdentity](https://msdn.microsoft.com/en-us/library/microsoft.identitymodel.claims.claimsidentity.aspx) pro uživatele. ClaimsIdentity obsahuje informace o všech deklarací identity pro uživatele, například jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.
-    > - Uživatel může přihlásit pomocí třídě z OWIN a volání `SignIn` a předávání v ClaimsIdentity, jak je uvedeno výše. Tento kód se přihlásit uživatele a vygenerujte soubor cookie také. Toto volání se podobá [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx) používané [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) modulu.
+    > - Vzhledem k tomu, že jsou deklarace identity na základě systému ASP.NET Identity a ověřování souborů Cookie OWIN, vyžaduje rozhraní vývojáři aplikace k vygenerování [ClaimsIdentity](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.claimsidentity.aspx) pro uživatele. ClaimsIdentity obsahuje informace o všech deklarací identity pro uživatele, například jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.
+    > - Uživatel může přihlásit pomocí třídě z OWIN a volání `SignIn` a předávání v ClaimsIdentity, jak je uvedeno výše. Tento kód se přihlásit uživatele a vygenerujte soubor cookie také. Toto volání se podobá [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) používané [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu.
 2. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši klikněte na váš projekt **přidat**a potom **webového formuláře**. Název webového formuláře **přihlášení**.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image12.png)
@@ -150,16 +150,16 @@ V tuto chvíli jsme doplnili jenom podporu pro vytváření uživatelů. Teď p�
     > [!NOTE] 
     > 
     > - `Page_Load` Nyní kontroluje stav aktuálního uživatele a provede akci na základě jeho `Context.User.Identity.IsAuthenticated` stavu.  
-    >     **Zobrazit protokolováno v uživatelské jméno** : Microsoft ASP.NET Identity Framework přidala rozšiřující metody na [System.Security.Principal.IIdentity](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.aspx) který umožňuje získat `UserName` a `UserId` pro přihlášeného uživatele. Tyto rozšiřující metody jsou definovány v `Microsoft.AspNet.Identity.Core` sestavení. Tyto rozšiřující metody jsou náhradou [HttpContext.User.Identity.Name](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.user.aspx) .
+    >     **Zobrazit protokolováno v uživatelské jméno** : Microsoft ASP.NET Identity Framework přidala rozšiřující metody na [System.Security.Principal.IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) který umožňuje získat `UserName` a `UserId` pro přihlášeného uživatele. Tyto rozšiřující metody jsou definovány v `Microsoft.AspNet.Identity.Core` sestavení. Tyto rozšiřující metody jsou náhradou [HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) .
     > - Metoda přihlášení:   
     >     `This`Metoda nahrazuje předchozí `CreateUser_Click` metoda v této ukázkové a nyní přihlásí uživatel po úspěšném vytvoření uživatele.   
     >  Rozhraní Microsoft OWIN přidala rozšiřující metody na `System.Web.HttpContext` , které umožňuje získat odkaz na `IOwinContext`. Tyto rozšiřující metody jsou definovány v `Microsoft.Owin.Host.SystemWeb` sestavení. `OwinContext` Třídy zpřístupňuje `IAuthenticationManager` vlastnost, která představuje funkce middlewaru ověřování dostupné u aktuálního požadavku.  
     >  Uživatel může přihlásit pomocí `AuthenticationManager` z OWIN a volání `SignIn` a předejte `ClaimsIdentity` jako v příkladu nahoře.   
     >  Protože ASP.NET Identity a ověřování souborů Cookie OWIN jsou založené na deklaracích identity systému rozhraní framework vyžaduje, aby aplikace ke generování `ClaimsIdentity` pro uživatele.   
     >  `ClaimsIdentity` Nemá informace o všech deklarací identity pro uživatele, například jaké role uživatel patří. Můžete také přidat další deklarace pro uživatele v této fázi  
-    >  Tento kód se přihlásit uživatele a vygenerujte soubor cookie také. Toto volání se podobá [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx) používané [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) modulu.
+    >  Tento kód se přihlásit uživatele a vygenerujte soubor cookie také. Toto volání se podobá [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) používané [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu.
     > - `SignOut`Metoda:   
-    >  Získá odkaz na `AuthenticationManager` z OWIN a volání `SignOut`. Toto je obdobou [FormsAuthentication.SignOut](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx) metodu používanou [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) modulu.
+    >  Získá odkaz na `AuthenticationManager` z OWIN a volání `SignOut`. Toto je obdobou [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) metodu používanou [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu.
 5. Stiskněte klávesu **kombinaci kláves Ctrl + F5** sestavení a spuštění webové aplikace. Zadejte nové uživatelské jméno a heslo a potom klikněte na **zaregistrovat**.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image13.png)  

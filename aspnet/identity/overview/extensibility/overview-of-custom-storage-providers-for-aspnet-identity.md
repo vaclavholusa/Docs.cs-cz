@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 1ea779cb10661512690e3fec16ae73be0f40d15a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f43f0a2dd80e26ecff15e5742e18264ddb5b26aa
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>Přehled zprostředkovatelů vlastní úložiště pro identitu ASP.NET
 ====================
@@ -96,7 +96,7 @@ Vrstva přístupu k datům poskytnete logika pro uložení dat do zdroje dat z A
 | Role úložiště | Ukládá a načte informace o rolích (například název role). | [RoleTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/RoleTable.cs) |
 | Úložiště objektu UserClaims. | Ukládá a načte informace o deklaraci identity uživatele (například typ deklarace identity a hodnota). | [UserClaimsTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserClaimsTable.cs) |
 | Sada úložiště | Ukládá a načte přihlašovací informace uživatele (například externí zprostředkovatel ověřování). | [UserLoginsTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserLoginsTable.cs) |
-| Položka UserRole úložiště | Ukládá a načte jednotlivé role uživatele je přiřazena k. | [UserRoleTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserRoleTable.cs) |
+| UserRole Storage | Ukládá a načte jednotlivé role uživatele je přiřazena k. | [UserRoleTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserRoleTable.cs) |
 
 Znovu stačí k implementaci třídy, které chcete používat ve vaší aplikaci.
 
@@ -109,15 +109,15 @@ Po vytvoření přístupové třídy vaše data, musíte vytvořit třídy úlo�
 <a id="user"></a>
 ## <a name="customize-the-user-class"></a>Přizpůsobit třídu uživatelů
 
-Při implementaci vlastního zprostředkovatele úložiště, je nutné vytvořit třídu uživatelů, která je ekvivalentní [IdentityUser](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework.identityuser(v=vs.108).aspx) třídy v [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) obor názvů:
+Při implementaci vlastního zprostředkovatele úložiště, je nutné vytvořit třídu uživatelů, která je ekvivalentní [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser(v=vs.108).aspx) třídy v [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) obor názvů:
 
 Následující diagram znázorňuje IdentityUser třídu, která je nutné vytvořit a rozhraní k implementaci v této třídě.
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image2.png)
 
-[IUser&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613291(v=vs.108).aspx) rozhraní definuje vlastnosti, které objekt UserManager pokusí volat při provádění požadované operace. Rozhraní obsahuje dvě vlastnosti - Id a uživatelského jména. [IUser&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613291(v=vs.108).aspx) rozhraní umožňuje určit typ klíče pro uživatele prostřednictvím obecná **TKey** parametr. Typ vlastnosti Id odpovídá hodnotě parametru TKey.
+[IUser&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613291(v=vs.108).aspx) rozhraní definuje vlastnosti, které objekt UserManager pokusí volat při provádění požadované operace. Rozhraní obsahuje dvě vlastnosti - Id a uživatelského jména. [IUser&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613291(v=vs.108).aspx) rozhraní umožňuje určit typ klíče pro uživatele prostřednictvím obecná **TKey** parametr. Typ vlastnosti Id odpovídá hodnotě parametru TKey.
 
-Také poskytuje rozhraní Identity [IUser](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.iuser(v=vs.108).aspx) rozhraní (bez obecný parametr) Pokud chcete pro klíč použít hodnotu řetězce.
+Také poskytuje rozhraní Identity [IUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.iuser(v=vs.108).aspx) rozhraní (bez obecný parametr) Pokud chcete pro klíč použít hodnotu řetězce.
 
 Třída IdentityUser implementuje IUser a obsahuje všechny další vlastnosti nebo konstruktory pro uživatele na váš web z umístění. Následující příklad ukazuje třídu IdentityUser používající celé klíče. Pole Id je nastaveno **int** odpovídat hodnotě obecný parametr. 
 
@@ -128,7 +128,7 @@ Třída IdentityUser implementuje IUser a obsahuje všechny další vlastnosti n
 <a id="userstore"></a>
 ## <a name="customize-the-user-store"></a>Přizpůsobení úložiště uživatele
 
-Můžete také vytvořit úložiště UserStore třídu, která poskytuje metody pro všechny operace data na uživatele. Tato třída je ekvivalentní [objektu UserStore&lt;TUser&gt; ](https://msdn.microsoft.com/en-us/library/dn315446(v=vs.108).aspx) třídy v [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) oboru názvů. V třídě úložiště UserStore implementovat [IUserStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613276(v=vs.108).aspx) a všechny volitelné rozhraní. Vyberete které volitelné rozhraní k implementaci na základě na funkce, které chcete zajistit ve vaší aplikaci.
+Můžete také vytvořit úložiště UserStore třídu, která poskytuje metody pro všechny operace data na uživatele. Tato třída je ekvivalentní [objektu UserStore&lt;TUser&gt; ](https://msdn.microsoft.com/library/dn315446(v=vs.108).aspx) třídy v [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) oboru názvů. V třídě úložiště UserStore implementovat [IUserStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx) a všechny volitelné rozhraní. Vyberete které volitelné rozhraní k implementaci na základě na funkce, které chcete zajistit ve vaší aplikaci.
 
 Následující obrázek ukazuje třídy objektu UserStore, na kterou je nutné vytvořit a relevantní rozhraní.
 
@@ -152,28 +152,28 @@ Následující obrázek ukazuje další informace o funkcích, které jsou defin
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image4.png)
 
-- **Úložiště IUserStore**  
- [IUserStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613278(v=vs.108).aspx) rozhraní je pouze rozhraní musí implementovat v úložišti uživatele. Definuje metody pro vytváření, aktualizaci, odstranění a načítání uživatelů.
+- **IUserStore**  
+ [IUserStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613278(v=vs.108).aspx) rozhraní je pouze rozhraní musí implementovat v úložišti uživatele. Definuje metody pro vytváření, aktualizaci, odstranění a načítání uživatelů.
 - **IUserClaimStore**  
- [IUserClaimStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613265(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat v úložišti uživatele povolující deklarace identity uživatele. Obsahuje metody nebo přidání, odebrání a načítání deklarace identity uživatelů.
+ [IUserClaimStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613265(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat v úložišti uživatele povolující deklarace identity uživatele. Obsahuje metody nebo přidání, odebrání a načítání deklarace identity uživatelů.
 - **IUserLoginStore**  
- [IUserLoginStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613272(v=vs.108).aspx) definuje metody, je nutné implementovat v úložišti uživatele povolit externí zprostředkovatele ověřování. Obsahuje metody pro přidání, odebrání a načítání přihlášení uživatele a metodu pro načtení uživatele podle přihlašovacích údajů.
+ [IUserLoginStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613272(v=vs.108).aspx) definuje metody, je nutné implementovat v úložišti uživatele povolit externí zprostředkovatele ověřování. Obsahuje metody pro přidání, odebrání a načítání přihlášení uživatele a metodu pro načtení uživatele podle přihlašovacích údajů.
 - **IUserRoleStore**  
- [IUserRoleStore&lt;TKey, TUser&gt; ](https://msdn.microsoft.com/en-us/library/dn613276(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat v úložišti pro mapování uživatele k roli uživatele. Obsahuje metody pro přidání, odebrání a načíst role uživatele a umožňuje kontrolu, pokud uživatel je přiřazena k roli.
+ [IUserRoleStore&lt;TKey, TUser&gt; ](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat v úložišti pro mapování uživatele k roli uživatele. Obsahuje metody pro přidání, odebrání a načíst role uživatele a umožňuje kontrolu, pokud uživatel je přiřazena k roli.
 - **IUserPasswordStore**  
- [IUserPasswordStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613273(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat v úložišti uživatele k uchování použita hodnota hash hesla. Obsahuje metody pro získání a nastavení hodnoty hash hesla a metodu, která označuje, zda má uživatel nastavit heslo.
+ [IUserPasswordStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613273(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat v úložišti uživatele k uchování použita hodnota hash hesla. Obsahuje metody pro získání a nastavení hodnoty hash hesla a metodu, která označuje, zda má uživatel nastavit heslo.
 - **IUserSecurityStampStore**  
- [IUserSecurityStampStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613277(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat v úložišti uživatele používat razítko zabezpečení pro označující, zda došlo ke změně informací o účtu uživatele . Razítko se aktualizuje, když uživatel změní heslo, nebo přidá nebo odebere přihlášení. Obsahuje metody pro získání a nastavení razítko zabezpečení.
+ [IUserSecurityStampStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613277(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat v úložišti uživatele používat razítko zabezpečení pro označující, zda došlo ke změně informací o účtu uživatele . Razítko se aktualizuje, když uživatel změní heslo, nebo přidá nebo odebere přihlášení. Obsahuje metody pro získání a nastavení razítko zabezpečení.
 - **IUserTwoFactorStore**  
- [IUserTwoFactorStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613279(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat pro implementace dvoufaktorové ověřování. Obsahuje metody pro získání a nastavení, zda je pro uživatele povoleno dvoufaktorové ověřování.
+ [IUserTwoFactorStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613279(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat pro implementace dvoufaktorové ověřování. Obsahuje metody pro získání a nastavení, zda je pro uživatele povoleno dvoufaktorové ověřování.
 - **IUserPhoneNumberStore**  
- [IUserPhoneNumberStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613275(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat pro uložení telefonních čísel uživatele. Obsahuje metody pro získání a nastavení telefonní číslo a zda telefonní číslo je potvrzeno.
+ [IUserPhoneNumberStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613275(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat pro uložení telefonních čísel uživatele. Obsahuje metody pro získání a nastavení telefonní číslo a zda telefonní číslo je potvrzeno.
 - **IUserEmailStore**  
- [IUserEmailStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613143(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat pro uložení e-mailové adresy uživatele. Obsahuje metody pro získání a nastavení e-mailovou adresu a zda e-mail je potvrzen.
+ [IUserEmailStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613143(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat pro uložení e-mailové adresy uživatele. Obsahuje metody pro získání a nastavení e-mailovou adresu a zda e-mail je potvrzen.
 - **IUserLockoutStore**  
- [IUserLockoutStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613271(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat k uložení informací o uzamčení účtu. Obsahuje metody pro získání aktuální počet neúspěšných pokusů o přístup, získání a nastavení, zda účet může být uzamčen, získání a nastavení uzamčení koncové datum, zvyšování počet neúspěšných pokusů o a resetuje počet neúspěšných pokusů o přihlášení.
+ [IUserLockoutStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613271(v=vs.108).aspx) rozhraní definuje metody, je nutné implementovat k uložení informací o uzamčení účtu. Obsahuje metody pro získání aktuální počet neúspěšných pokusů o přístup, získání a nastavení, zda účet může být uzamčen, získání a nastavení uzamčení koncové datum, zvyšování počet neúspěšných pokusů o a resetuje počet neúspěšných pokusů o přihlášení.
 - **IQueryableUserStore**  
- [IQueryableUserStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613267(v=vs.108).aspx) rozhraní definuje členy, je nutné implementovat zajistit dotazovatelné úložiště uživatelů. Obsahuje vlastnost, která obsahuje dotazovatelné uživatele.
+ [IQueryableUserStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613267(v=vs.108).aspx) rozhraní definuje členy, je nutné implementovat zajistit dotazovatelné úložiště uživatelů. Obsahuje vlastnost, která obsahuje dotazovatelné uživatele.
 
  Implementace rozhraní, které jsou potřeba v aplikaci; IUserClaimStore, IUserLoginStore, IUserRoleStore, IUserPasswordStore a IUserSecurityStampStore rozhraní, jako, jak je uvedeno níže. 
 
@@ -183,22 +183,22 @@ Pro dokončení implementace (včetně všech rozhraní), najdete v části [obj
 
 ### <a name="identityuserclaim-identityuserlogin-and-identityuserrole"></a>IdentityUserClaim, IdentityUserLogin a IdentityUserRole
 
-Obor názvů Microsoft.AspNet.Identity.EntityFramework obsahuje implementace [IdentityUserClaim](https://msdn.microsoft.com/en-us/library/dn613250(v=vs.108).aspx), [IdentityUserLogin](https://msdn.microsoft.com/en-us/library/dn613251(v=vs.108).aspx), a [IdentityUserRole](https://msdn.microsoft.com/en-us/library/dn613252(v=vs.108).aspx) třídy. Pokud používáte tyto funkce, můžete vytvořit vlastní verzích tyto třídy a definovat vlastnosti pro vaši aplikaci. V některých případech je však efektivnější zatížení tyto entity do paměti při provádění základních operací (například přidáním nebo odebráním deklarace identity uživatele). Třídy úložiště back-end místo toho můžete tyto operace přímo na zdroj dat provést. Například metoda UserStore.GetClaimsAsync() můžete volat userClaimTable.FindByUserId(user. Metoda ID), při spuštění dotazu na, která přímo tabulce a vrátí seznam deklarací identity.
+Obor názvů Microsoft.AspNet.Identity.EntityFramework obsahuje implementace [IdentityUserClaim](https://msdn.microsoft.com/library/dn613250(v=vs.108).aspx), [IdentityUserLogin](https://msdn.microsoft.com/library/dn613251(v=vs.108).aspx), a [IdentityUserRole](https://msdn.microsoft.com/library/dn613252(v=vs.108).aspx) třídy. Pokud používáte tyto funkce, můžete vytvořit vlastní verzích tyto třídy a definovat vlastnosti pro vaši aplikaci. V některých případech je však efektivnější zatížení tyto entity do paměti při provádění základních operací (například přidáním nebo odebráním deklarace identity uživatele). Třídy úložiště back-end místo toho můžete tyto operace přímo na zdroj dat provést. Například metoda UserStore.GetClaimsAsync() můžete volat userClaimTable.FindByUserId(user. Metoda ID), při spuštění dotazu na, která přímo tabulce a vrátí seznam deklarací identity.
 
 [!code-csharp[Main](overview-of-custom-storage-providers-for-aspnet-identity/samples/sample6.cs)]
 
 <a id="role"></a>
 ## <a name="customize-the-role-class"></a>Přizpůsobení role – třída
 
-Při implementaci vlastního zprostředkovatele úložiště, je nutné vytvořit třídu role, která je ekvivalentní [IdentityRole](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework.identityrole(v=vs.108).aspx) třídy v [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) obor názvů:
+Při implementaci vlastního zprostředkovatele úložiště, je nutné vytvořit třídu role, která je ekvivalentní [IdentityRole](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityrole(v=vs.108).aspx) třídy v [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) obor názvů:
 
 Následující diagram znázorňuje IdentityRole třídu, která je nutné vytvořit a rozhraní k implementaci v této třídě.
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image5.png)
 
-[IRole&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613268(v=vs.108).aspx) rozhraní definuje vlastnosti, které RoleManager pokusů o volat při provádění požadované operace. Rozhraní obsahuje dvě vlastnosti - Id a název. [IRole&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613268(v=vs.108).aspx) rozhraní umožňuje určit typ klíče pro roli prostřednictvím obecná **TKey** parametr. Typ vlastnosti Id odpovídá hodnotě parametru TKey.
+[IRole&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613268(v=vs.108).aspx) rozhraní definuje vlastnosti, které RoleManager pokusů o volat při provádění požadované operace. Rozhraní obsahuje dvě vlastnosti - Id a název. [IRole&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613268(v=vs.108).aspx) rozhraní umožňuje určit typ klíče pro roli prostřednictvím obecná **TKey** parametr. Typ vlastnosti Id odpovídá hodnotě parametru TKey.
 
-Také poskytuje rozhraní Identity [IRole](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.irole(v=vs.108).aspx) rozhraní (bez obecný parametr) Pokud chcete pro klíč použít hodnotu řetězce.
+Také poskytuje rozhraní Identity [IRole](https://msdn.microsoft.com/library/microsoft.aspnet.identity.irole(v=vs.108).aspx) rozhraní (bez obecný parametr) Pokud chcete pro klíč použít hodnotu řetězce.
 
 Následující příklad ukazuje třídu IdentityRole používající celé klíče. Pole Id je nastaveno na celá čísla odpovídají hodnotě obecný parametr. 
 
@@ -209,7 +209,7 @@ Následující příklad ukazuje třídu IdentityRole používající celé klí
 <a id="rolestore"></a>
 ## <a name="customize-the-role-store"></a>Přizpůsobení úložiště rolí
 
-Můžete také vytvořit úložiště RoleStore třídu, která poskytuje metody pro všechny operace data na rolích. Tato třída je ekvivalentní [úložiště RoleStore&lt;TRole&gt; ](https://msdn.microsoft.com/en-us/library/dn468181(v=vs.108).aspx) – třída v oboru názvů Microsoft.ASP.NET.Identity.EntityFramework. V třídě úložiště RoleStore implementovat [úložiště IRoleStore&lt;TRole, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613266(v=vs.108).aspx) a volitelně [IQueryableRoleStore&lt;TRole, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613262(v=vs.108).aspx) rozhraní.
+Můžete také vytvořit úložiště RoleStore třídu, která poskytuje metody pro všechny operace data na rolích. Tato třída je ekvivalentní [úložiště RoleStore&lt;TRole&gt; ](https://msdn.microsoft.com/library/dn468181(v=vs.108).aspx) – třída v oboru názvů Microsoft.ASP.NET.Identity.EntityFramework. V třídě úložiště RoleStore implementovat [úložiště IRoleStore&lt;TRole, TKey&gt; ](https://msdn.microsoft.com/library/dn613266(v=vs.108).aspx) a volitelně [IQueryableRoleStore&lt;TRole, TKey&gt; ](https://msdn.microsoft.com/library/dn613262(v=vs.108).aspx) rozhraní.
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image6.png)
 
@@ -217,9 +217,9 @@ Následující příklad ukazuje třídu úložiště rolí. Obecný parametr TR
 
 [!code-csharp[Main](overview-of-custom-storage-providers-for-aspnet-identity/samples/sample8.cs)]
 
-- **Úložiště IRoleStore&lt;TRole&gt;**  
- [Úložiště IRoleStore](https://msdn.microsoft.com/en-us/library/dn468195.aspx) rozhraní definuje metody k implementaci v třídě úložiště rolí. Obsahuje metody pro vytváření, aktualizaci, odstranění a načítání rolí.
-- **Úložiště RoleStore&lt;TRole&gt;**  
+- **IRoleStore&lt;TRole&gt;**  
+ [Úložiště IRoleStore](https://msdn.microsoft.com/library/dn468195.aspx) rozhraní definuje metody k implementaci v třídě úložiště rolí. Obsahuje metody pro vytváření, aktualizaci, odstranění a načítání rolí.
+- **RoleStore&lt;TRole&gt;**  
  Chcete-li přizpůsobit úložiště RoleStore, vytvořte třídu, která implementuje rozhraní úložiště IRoleStore. Budete muset implementaci této třídy, pokud chcete použít role v systému. Konstruktor, který přebírá parametr s názvem *databáze* typu ExampleDatabase je pouze ilustraci jak předat ve třídě data access. Tento konstruktor přijímá implementace MySQL, parametr typu MySQLDatabase.  
   
  Pro úplnou implementaci, najdete v části [úložiště RoleStore (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/RoleStore.cs) .

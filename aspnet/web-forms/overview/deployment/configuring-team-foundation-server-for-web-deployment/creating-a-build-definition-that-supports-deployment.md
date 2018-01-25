@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c2e7a768c2cf9900731b822ec187093a4b250ead
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5610753968328e5d0f1dba4cbbfed08480fd773
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a>Vytvoření definice sestavení, který podporuje nasazení
 ====================
@@ -42,7 +42,7 @@ Definice sestavení je mechanismus, který řídí, jak a kdy dojde k sestavení
 - Různé další parametry procesu sestavení.
 
 > [!NOTE]
-> Další informace o definice sestavení, najdete v části [definovat proces vaše sestavení](https://msdn.microsoft.com/en-us/library/ms181715.aspx).
+> Další informace o definice sestavení, najdete v části [definovat proces vaše sestavení](https://msdn.microsoft.com/library/ms181715.aspx).
 
 
 Toto téma vám ukáže, jak vytvořit definici sestavení, která používá CI, takže sestavení se aktivuje, když vývojář kontroluje nového obsahu. Pokud sestavení úspěšné, spustí službu sestavení vlastní projektu soubor, který chcete nasadit řešení do testovacího prostředí.
@@ -149,7 +149,7 @@ Tyto informace slouží k řešení neúspěšných sestavení a vyřešte všec
 
 ## <a name="monitor-the-build-process"></a>Monitorování procesu sestavení
 
-TFS poskytuje širokou škálou funkcí, které vám pomohou při sledování procesu sestavení. Například můžete TFS e-mailem nebo zobrazení výstrah v oznamovací oblasti hlavního panelu systému po dokončení sestavení. Další informace najdete v tématu [spuštění a monitorování vytvoří](https://msdn.microsoft.com/en-us/library/ms181721.aspx).
+TFS poskytuje širokou škálou funkcí, které vám pomohou při sledování procesu sestavení. Například můžete TFS e-mailem nebo zobrazení výstrah v oznamovací oblasti hlavního panelu systému po dokončení sestavení. Další informace najdete v tématu [spuštění a monitorování vytvoří](https://msdn.microsoft.com/library/ms181721.aspx).
 
 ## <a name="conclusion"></a>Závěr
 
@@ -159,7 +159,7 @@ Aby automatického nasazení na úspěšné jako součást procesu sestavení bu
 
 ## <a name="further-reading"></a>Další čtení
 
-Další informace o vytváření definic sestavení, najdete v části [vytvoření základní definice sestavení](https://msdn.microsoft.com/en-us/library/ms181716.aspx) a [definovat proces vaše sestavení](https://msdn.microsoft.com/en-us/library/ms181715.aspx). Další pokyny k sestavení služby Řízení front, najdete v části [fronty sestavení](https://msdn.microsoft.com/en-us/library/ms181722.aspx).
+Další informace o vytváření definic sestavení, najdete v části [vytvoření základní definice sestavení](https://msdn.microsoft.com/library/ms181716.aspx) a [definovat proces vaše sestavení](https://msdn.microsoft.com/library/ms181715.aspx). Další pokyny k sestavení služby Řízení front, najdete v části [fronty sestavení](https://msdn.microsoft.com/library/ms181722.aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](configuring-a-tfs-build-server-for-web-deployment.md)

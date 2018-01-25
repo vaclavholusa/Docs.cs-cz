@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/testing
-ms.openlocfilehash: 7f34bc7766b41beafb2a1ee09577109bc1402867
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: f27e7ec43cd17e249dd646a7dfbce5df69d59664
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="testing-controller-logic-in-aspnet-core"></a>Testování řadiče logiku v ASP.NET Core
 
@@ -40,7 +40,7 @@ Typické řadiče zodpovědnosti:
 
 ## <a name="unit-testing"></a>Testování částí
 
-[Testování částí](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) zahrnuje testování součástí aplikace izolovaně od jeho infrastruktury a závislosti. Při testování řadiče logiku, obsah jenom jednu akci testování částí, není chování jeho závislé součásti nebo rozhraní sám sebe. Jako jednotku můžete otestovat vaše akce kontroleru, ujistěte se, že byste se zaměřit jenom na své chování. Testování částí řadiče zabraňuje třeba [filtry](filters.md), [směrování](../../fundamentals/routing.md), nebo [model vazby](../models/model-binding.md). Se zaměříte na testování právě jednou z věcí, testy jednotek jsou obecně jednoduché k zápisu a rychlé spuštění. Kvalitně sadu testů jednotek se může spouštět často bez mnoho zásahů. Testy jednotek však Nezjišťovat problémy v interakci mezi součástmi, což je účelem [testování integrace](xref:mvc/controllers/testing#integration-testing).
+[Testování částí](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) zahrnuje testování součástí aplikace izolovaně od jeho infrastruktury a závislosti. Při testování řadiče logiku, obsah jenom jednu akci testování částí, není chování jeho závislé součásti nebo rozhraní sám sebe. Jako jednotku můžete otestovat vaše akce kontroleru, ujistěte se, že byste se zaměřit jenom na své chování. Testování částí řadiče zabraňuje třeba [filtry](filters.md), [směrování](../../fundamentals/routing.md), nebo [model vazby](../models/model-binding.md). Se zaměříte na testování právě jednou z věcí, testy jednotek jsou obecně jednoduché k zápisu a rychlé spuštění. Kvalitně sadu testů jednotek se může spouštět často bez mnoho zásahů. Testy jednotek však není rozpoznat problémy v interakci mezi součástmi, což je účelem [testování integrace](xref:mvc/controllers/testing#integration-testing).
 
 Pokud píšete vlastní filtry, tras atd., měli byste testování částí je, ale nikoli jako součást testy na určitý kontroler akce. Musí být testovány v izolaci.
 
@@ -121,7 +121,7 @@ Zobrazí se `GetTestSession` metoda často používají v testech integrace ní�
 Každá třída testovací integrace nakonfiguruje `TestServer` který se spustí aplikace ASP.NET Core. Ve výchozím nastavení `TestServer` hostuje webové aplikace ve složce, kde běží – v takovém případě složce projektu testu. Proto když zkusíte testovací akce kontroleru, které vracejí `ViewResult`, může se tato chyba:
 
 ```
-The view 'Index' was not found. The following locations were searched:
+The view 'Index' wasn't found. The following locations were searched:
 (list of locations)
 ```
 

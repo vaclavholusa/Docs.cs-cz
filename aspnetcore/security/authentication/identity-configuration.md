@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: d3a13d1cef3417522460b44c52c1361c3e9d1162
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9e79e670173952f1e791a0cefba61c41e1ad4437
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configure-identity"></a>Konfigurace Identity
 
@@ -103,7 +103,7 @@ V části `ConfigureServices` v `Startup` třídu, můžete nakonfigurovat soubo
 | Vlastnost                | Popis                       | Výchozí |
 | ----------------------- | --------------------------------- | ------- |
 | `Cookie.Name`  | Název souboru cookie.  | .AspNetCore.Cookies.  |
-| `Cookie.HttpOnly`  | V případě hodnoty true, není soubor cookie přístupný z skripty na straně klienta.  |  true |
+| `Cookie.HttpOnly`  | V případě hodnoty true souboru cookie, který není přístupná z skripty na straně klienta.  |  true |
 | `ExpireTimeSpan`  | Určuje, jak dlouho lístek ověřování uložené v souboru cookie, který zůstane platný od okamžiku, je vytvořena.  | 14 dnů  |
 | `LoginPath`  | Pokud uživatel není autorizovaný, bude přesměrován na tuto cestu k přihlášení. | / Účet nebo přihlášení  |
 | `LogoutPath`  | Když je přihlášený uživatel, bude přesměrován na této cestě.  | / Účet/odhlášení  |

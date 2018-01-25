@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d575c8f597bcb5d2a5d2e27e1145d39110daabe1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c9e40ff968f82a9d05fc9441e2399e52a6c55f51
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-with-the-objectdatasource-vb"></a>Zobrazení dat s ObjectDataSource (VB)
 ====================
@@ -31,7 +31,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
 Naše aplikace architekturu a webu stránky rozložení dokončení jsme připraveni a začněte se seznamovat jak provést celou řadu běžných úloh a vytváření sestav-souvisejících s daty. V předchozích kurzech jsme viděli jak programově vázat data ze DAL a BLL k data ovládacího prvku webové stránky ASP.NET. Tuto syntaxi přiřazování dat ovládací prvek webu `DataSource` vlastnost, která má data k zobrazení a potom volání ovládacího prvku `DataBind()` metoda byla způsobem používaným v aplikacích ASP.NET 1.x a můžete nadále používat v aplikacích 2.0. ASP.NET 2.0 nové ovládací prvky zdroje dat však nabízí deklarativní způsob, jak pracovat s daty. Pomocí těchto ovládacích prvků můžete vázat data načtená z BLL vytvořili v předchozí kurzu bez nutnosti psaní řádek kódu!
 
-ASP.NET 2.0 se dodává s ovládacími prvky zdroje pět předdefinovaných dat [SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/en-us/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx), [prvku](https://msdn.microsoft.com/en-us/library/e8d8587a%28en-US,VS.80%29.aspx), a [SiteMapDataSource](https://msdn.microsoft.com/en-us/library/5ex9t96x%28en-US,VS.80%29.aspx) i když můžete vytvořit vlastní [vlastní datové zdroje ovládací prvky](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnvs05/html/DataSourceCon1.asp), v případě potřeby. Vzhledem k tomu, že Vyvinuli jsme architekturu pro naše aplikace, budeme používat ObjectDataSource proti naše BLL třídy.
+ASP.NET 2.0 se dodává s ovládacími prvky zdroje pět předdefinovaných dat [SqlDataSource](https://msdn.microsoft.com/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx), [prvku](https://msdn.microsoft.com/library/e8d8587a%28en-US,VS.80%29.aspx), a [SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x%28en-US,VS.80%29.aspx) i když můžete vytvořit vlastní [vlastní datové zdroje ovládací prvky](https://msdn.microsoft.com/library/default.asp?url=/library/dnvs05/html/DataSourceCon1.asp), v případě potřeby. Vzhledem k tomu, že Vyvinuli jsme architekturu pro naše aplikace, budeme používat ObjectDataSource proti naše BLL třídy.
 
 
 ![ASP.NET 2.0 obsahuje pět předdefinovaných dat zdroje ovládacích prvků](displaying-data-with-the-objectdatasource-vb/_static/image1.png)
@@ -90,7 +90,7 @@ Průvodce konfigurací zdroje dat ObjectDataSource nabízí rychlý způsob, jak
 
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-vb/samples/sample1.aspx)]
 
-I když dáváte přednost Průvodce konfigurace zdroje dat, které mohou nastat situace, když budete muset ručně nakonfigurovat ObjectDataSource, jako průvodce jsou uvedeny pouze vývojáře vytvořené třídy. Pokud chcete vytvořit vazbu ObjectDataSource třídu v rozhraní .NET Framework, jako [třída členství](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx), přístup k informace o uživatelském účtu, nebo [třída Directory](https://msdn.microsoft.com/en-us/library/system.io.directory.aspx) pro práci s informace o systému souborů budete muset ručně nastavit ObjectDataSource vlastnosti.
+I když dáváte přednost Průvodce konfigurace zdroje dat, které mohou nastat situace, když budete muset ručně nakonfigurovat ObjectDataSource, jako průvodce jsou uvedeny pouze vývojáře vytvořené třídy. Pokud chcete vytvořit vazbu ObjectDataSource třídu v rozhraní .NET Framework, jako [třída členství](https://msdn.microsoft.com/library/system.web.security.membership.aspx), přístup k informace o uživatelském účtu, nebo [třída Directory](https://msdn.microsoft.com/library/system.io.directory.aspx) pro práci s informace o systému souborů budete muset ručně nastavit ObjectDataSource vlastnosti.
 
 ## <a name="step-2-adding-a-data-web-control-and-binding-it-to-the-objectdatasource"></a>Krok 2: Přidání ovládacího prvku webového dat a vytvoření vazby ObjectDataSource
 
@@ -172,7 +172,7 @@ S naše motiv definované posledním krokem je k uplatnění motivu na naší st
 
 [!code-xml[Main](displaying-data-with-the-objectdatasource-vb/samples/sample5.xml)]
 
-To je všechno je k němu! `styleSheetTheme` Nastavení znamená, že by měl zadány v motivu vlastnosti *není* přepsat vlastnosti zadané pro úroveň ovládacího prvku. Chcete-li určit, že by měl motiv nastavení trumfové barvy nastavení řízení, použijte `theme` atribut místě `styleSheetTheme`; bohužel motiv nastavení se nezobrazí v zobrazení návrhu Visual Studio. Odkazovat na [ASP.NET motivy a vzhledy přehled](https://msdn.microsoft.com/en-us/library/ykzx33wh.aspx) a [motivů pomocí stylů serverové](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx) na motivy a vzhledy; Další informace najdete v části [postupy: použít motivy ASP.NET](https://msdn.microsoft.com/en-us/library/0yy5hxdk%28VS.80%29.aspx) Další informace o konfigurace stránky pro použití motivu.
+To je všechno je k němu! `styleSheetTheme` Nastavení znamená, že by měl zadány v motivu vlastnosti *není* přepsat vlastnosti zadané pro úroveň ovládacího prvku. Chcete-li určit, že by měl motiv nastavení trumfové barvy nastavení řízení, použijte `theme` atribut místě `styleSheetTheme`; bohužel motiv nastavení se nezobrazí v zobrazení návrhu Visual Studio. Odkazovat na [ASP.NET motivy a vzhledy přehled](https://msdn.microsoft.com/library/ykzx33wh.aspx) a [motivů pomocí stylů serverové](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx) na motivy a vzhledy; Další informace najdete v části [postupy: použít motivy ASP.NET](https://msdn.microsoft.com/library/0yy5hxdk%28VS.80%29.aspx) Další informace o konfigurace stránky pro použití motivu.
 
 
 [![GridView zobrazí název, kategorie, dodavatele, ceny a – starší formáty informace o produktu](displaying-data-with-the-objectdatasource-vb/_static/image31.png)](displaying-data-with-the-objectdatasource-vb/_static/image30.png)
@@ -182,7 +182,7 @@ To je všechno je k němu! `styleSheetTheme` Nastavení znamená, že by měl za
 
 ## <a name="displaying-one-record-at-a-time-in-the-detailsview"></a>Zobrazení jeden záznam v daný okamžik v ovládacím prvku DetailsView.
 
-GridView zobrazí jeden řádek pro každý záznam vrácený ovládací prvek zdroje dat, ke kterému je vázán. Existují dobu, ale když jsme chtít zobrazit záznam jedinou nebo jenom jeden záznam současně. [Ovládací prvek DetailsView](https://msdn.microsoft.com/en-us/library/s3w1w7t4.aspx) nabízí tuto funkci, vykreslování jako HTML `<table>` s dva sloupce a jeden řádek pro každý sloupec nebo vlastnost vázáno na ovládací prvek. DetailsView si můžete představit jako GridView s jednoho záznamu otočený 90 stupňů.
+GridView zobrazí jeden řádek pro každý záznam vrácený ovládací prvek zdroje dat, ke kterému je vázán. Existují dobu, ale když jsme chtít zobrazit záznam jedinou nebo jenom jeden záznam současně. [Ovládací prvek DetailsView](https://msdn.microsoft.com/library/s3w1w7t4.aspx) nabízí tuto funkci, vykreslování jako HTML `<table>` s dva sloupce a jeden řádek pro každý sloupec nebo vlastnost vázáno na ovládací prvek. DetailsView si můžete představit jako GridView s jednoho záznamu otočený 90 stupňů.
 
 Začněte tím, že přidání ovládacího prvku DetailsView *výše* GridView v `SimpleDisplay.aspx`. V dalším kroku navázat jej do ovládacího prvku ObjectDataSource jako GridView. Jako s GridView, BoundField budou přidány do DetailsView pro každou vlastnost v objektu vrácený ObjectDataSource `Select` metoda. Jediným rozdílem je, že DetailsView BoundFields jsou nastíněny vodorovně namísto svisle.
 
@@ -219,7 +219,7 @@ Budeme mluvit o další informace o stránkování v budoucnosti kurzy.
 
 DetailsView je poměrně pevné v, jak se zobrazuje každý záznam vrácená z ObjectDataSource. Chceme může flexibilnější zobrazení data. Například místo zobrazuje název produktu, kategorie, dodavatele, ceny a – starší formáty informace na samostatném řádku, budeme chtít zobrazit název produktu a cenu ve `<h4>` záhlaví s informacemi kategorií a dodavatele, zobrazování pod názvem a cenu v menší velikost písma. A nemusí uživatelské zobrazit názvy vlastností (produktu, kategorie a tak dále) vedle hodnoty.
 
-[FormView řízení](https://msdn.microsoft.com/en-US/library/fyf1dk77.aspx) poskytuje tuto úroveň přizpůsobení. Místo použití polí (jako jsou GridView a DetailsView provádět), FormView používá šablony, které umožňují směs ovládací prvky webového, statické HTML a [Syntaxe datové vazby](http://www.15seconds.com/issue/040630.htm). Pokud jste se seznámili s ovládacím prvku Repeater z ASP.NET 1.x, si můžete představit FormView jako opakovače pro zobrazuje jeden záznam.
+[FormView řízení](https://msdn.microsoft.com/library/fyf1dk77.aspx) poskytuje tuto úroveň přizpůsobení. Místo použití polí (jako jsou GridView a DetailsView provádět), FormView používá šablony, které umožňují směs ovládací prvky webového, statické HTML a [Syntaxe datové vazby](http://www.15seconds.com/issue/040630.htm). Pokud jste se seznámili s ovládacím prvku Repeater z ASP.NET 1.x, si můžete představit FormView jako opakovače pro zobrazuje jeden záznam.
 
 Přidání ovládacího prvku FormView `SimpleDisplay.aspx` stránky návrhovou plochu. Zpočátku FormView zobrazí jako blok šedé nám oznamující, že je potřeba zadat, minimálně, ovládacího prvku `ItemTemplate`.
 
@@ -256,12 +256,12 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Vytvořit vlastní ovládací prvky zdroje dat](https://msdn.microsoft.com/en-us/library/ms364049.aspx)
-- [Rutina GridView příklady pro technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/aa479339.aspx)
+- [Vytvořit vlastní ovládací prvky zdroje dat](https://msdn.microsoft.com/library/ms364049.aspx)
+- [Rutina GridView příklady pro technologii ASP.NET 2.0](https://msdn.microsoft.com/library/aa479339.aspx)
 - [Zjednodušené a rozšířené datové vazby syntaxe technologie ASP.NET 2.0](http://www.15seconds.com/issue/040630.htm)
 - [Motivy technologie ASP.NET 2.0](http://www.odetocode.com/Articles/423.aspx)
 - [Motivů pomocí stylů na straně serveru](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx)
-- [Postupy: Motivů technologie ASP.NET prostřednictvím kódu programu](https://msdn.microsoft.com/en-us/library/tx35bd89.aspx)
+- [Postupy: Motivů technologie ASP.NET prostřednictvím kódu programu](https://msdn.microsoft.com/library/tx35bd89.aspx)
 
 ## <a name="about-the-author"></a>O autorovi
 

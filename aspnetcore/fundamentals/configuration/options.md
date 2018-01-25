@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 7d89416626433bf737b63eda4b17e65b089ae142
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: aab96b5313a8632950e51f5586612c1d0d3d176e
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -258,6 +258,12 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 [IOptionsFactory&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1) (jádro ASP.NET 2.0 nebo novější) zodpovídá za vytvoření nové možnosti instancí. Má jeden [vytvořit](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1.create) metoda. Výchozí implementace trvá všech registrovaných `IConfigureOptions` a `IPostConfigureOptions` a spustí všechny první nakonfiguruje, za nímž následuje po konfiguruje. Umožňuje rozlišovat mezi `IConfigureNamedOptions` a `IConfigureOptions` a pouze volá vhodné rozhraní.
 
 [IOptionsMonitorCache&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1) (jádro ASP.NET 2.0 nebo novější) používá `IOptionsMonitor` do mezipaměti `TOptions` instance. `IOptionsMonitorCache` By způsobila neplatnost instance možnosti v monitorování tak, aby hodnota je přepočítávány ([TryRemove](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryremove)). Hodnoty mohou být ručně zavedené i [TryAdd](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryadd). [Zrušte](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.clear) metoda se používá, když všechny pojmenované instance by měl být znovu vytvořen na vyžádání.
+
+## <a name="accessing-options-during-startup"></a>Přístup k možnosti při spuštění
+
+`IOptions`mohou být používány `Configure`, protože služby jsou integrované před `Configure` metody. Pokud je součástí zprostředkovatele služeb `ConfigureServices` pro přístup k možnostem, se nebude obsahovat žádné možnosti konfigurace zadané po poskytovatele služeb. Z důvodu řazení registrace služby můžou Proto existovat v nekonzistentní možnosti stavu.
+
+Vzhledem k tomu, že možnosti jsou obvykle načteny z konfigurace, konfigurace mohou být používány spuštění v obou `Configure` a `ConfigureServices`. Příklady použití konfigurace při spuštění, najdete v článku [spuštění aplikace](xref:fundamentals/startup) tématu.
 
 ## <a name="see-also"></a>Viz také
 

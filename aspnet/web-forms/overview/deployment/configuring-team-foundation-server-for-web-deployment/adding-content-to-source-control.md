@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a6a90a03674cfe7565da0ed56148186ee9525707
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d46e2697d10ca27f8e08533350a6e7f2354b4a43
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-content-to-source-control"></a>Přidávání obsahu do správy zdrojového kódu
 ====================
@@ -90,7 +90,7 @@ Pokud chcete přidat do správy zdrojového kódu projekty a řešení, musíte 
 1. Na pracovní stanici developer přesuňte do příslušného umístění v rámci strukturu mapované složky pro týmový projekt projekty a řešení.
 
     > [!NOTE]
-    > Mnoho organizací bude mít žádoucí pro projekty a řešení uspořádání ve správě zdrojového kódu. Informace o tom, jak struktura složek, najdete v části [postupy: struktura si zdroj ovládacího prvku složek na serveru Team Foundation Server](https://msdn.microsoft.com/en-us/library/bb668992.aspx).
+    > Mnoho organizací bude mít žádoucí pro projekty a řešení uspořádání ve správě zdrojového kódu. Informace o tom, jak struktura složek, najdete v části [postupy: struktura si zdroj ovládacího prvku složek na serveru Team Foundation Server](https://msdn.microsoft.com/library/bb668992.aspx).
 2. Otevřete řešení v sadě Visual Studio 2010.
 3. V **Průzkumníku řešení** oken, klikněte pravým tlačítkem na řešení a pak klikněte na tlačítko **přidat řešení správy zdrojového kódu**.
 
@@ -149,13 +149,13 @@ V tomto okamžiku jste přidali vnější závislosti pro vaše řešení do spr
 
 ## <a name="conclusion"></a>Závěr
 
-Toto téma popisuje postup připojení k týmovému projektu, mapy strukturu složek a přidání obsahu do správy zdrojového kódu. Další informace o tom, jak pracovat s položkami ve správě zdrojového kódu najdete v tématu [pomocí verzí](https://msdn.microsoft.com/en-us/library/ms181368.aspx).
+Toto téma popisuje postup připojení k týmovému projektu, mapy strukturu složek a přidání obsahu do správy zdrojového kódu. Další informace o tom, jak pracovat s položkami ve správě zdrojového kódu najdete v tématu [pomocí verzí](https://msdn.microsoft.com/library/ms181368.aspx).
 
 Dalším tématu [konfigurace serveru TFS sestavení pro nasazení webu](configuring-a-tfs-build-server-for-web-deployment.md), popisuje postup přípravy serveru TFS Team Build k vytváření a nasazování řešení.
 
 ## <a name="further-reading"></a>Další čtení
 
-Další informace o práci se správa zdrojového kódu v sadě TFS naleznete v tématu [pomocí verzí](https://msdn.microsoft.com/en-us/library/ms181368.aspx).
+Další informace o práci se správa zdrojového kódu v sadě TFS naleznete v tématu [pomocí verzí](https://msdn.microsoft.com/library/ms181368.aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](creating-a-team-project-in-tfs.md)

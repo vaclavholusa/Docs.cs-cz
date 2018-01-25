@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 9270287b62f91ddb81d6a347dd583e1cbb32f3c3
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2b39a5105339beb416490db282d4cd8b83d08660
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware komprese odpovědi pro ASP.NET Core
 
@@ -110,7 +110,7 @@ Výchozí zprostředkovatel kompresi gzip nejrychlejší úroveň komprese (`Com
 
 | Úroveň komprese                | Popis                                                                                                   |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `CompressionLevel.Fastest`       | Komprese provést co nejrychleji, i když výsledný výstup není komprimována optimálně. |
+| `CompressionLevel.Fastest`       | Komprese co nejrychleji provést i v případě, že výsledný výstup není komprimována optimálně. |
 | `CompressionLevel.NoCompression` | Je třeba provést bez komprese.                                                                           |
 | `CompressionLevel.Optimal`       | Odpovědi musí být optimálně komprimován, i v případě, že komprese trvá déle.                |
 

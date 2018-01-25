@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 003a22d4b0d9400f3e9effe0892d2d7e03704cde
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3c198ccc3e3e2c11f3e2b9379bc63bd6428dbf69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Úvod do pomocné rutiny značky v ASP.NET Core 
 
@@ -22,7 +22,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="what-are-tag-helpers"></a>Jaké jsou pomocné rutiny značky?
 
-Pomocníci značky povolit kódu na straně serveru k účasti ve vytváření a vykreslení elementů HTML v souborech Razor. Například předdefinovaná `ImageTagHelper` můžete připojit číslo verze pro název bitové kopie. Při každé změně bitovou kopii, server vygeneruje nové jedinečné verze pro bitovou kopii, tak je zaručeno, že klienti získat aktuální image (ne zastaralé bitové kopie v mezipaměti). Existuje mnoho předdefinovaných značky pomocníci pro běžné úlohy -, jako je například vytváření formulářů, odkazy, načítání prostředků a další - a i další dostupné ve veřejných úložišť GitHub a jako NuGet balíčky. Pomocníci značky vytvořené v C# a jejich cílových elementů HTML na základě název elementu, název atributu nebo nadřazené značky. Například předdefinovaná `LabelTagHelper` HTML, můžete vybrat `<label>` element při `LabelTagHelper` jsou použity atributy. Pokud jste obeznámeni s [pomocné objekty HTML](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers), značka Pomocníci snížit explicitní přechodů mezi HTML a C# v zobrazení syntaxe Razor. V mnoha případech pomocné objekty HTML poskytnout alternativní způsob konkrétní pomocné rutiny značky, ale je důležité vědět, že značka Pomocníci nenahrazují pomocné rutiny HTML a neexistuje žádná značka Pomocník pro každý pomocné rutiny HTML. [Značka pomocné rutiny ve srovnání s pomocné objekty HTML](#tag-helpers-compared-to-html-helpers) vysvětluje rozdíly podrobněji.
+Pomocníci značky povolit kódu na straně serveru k účasti ve vytváření a vykreslení elementů HTML v souborech Razor. Například předdefinovaná `ImageTagHelper` můžete připojit číslo verze pro název bitové kopie. Při každé změně bitovou kopii, server vygeneruje nové jedinečné verze pro bitovou kopii, tak je zaručeno, že klienti získat aktuální image (ne zastaralé bitové kopie v mezipaměti). Existuje mnoho předdefinovaných značky pomocníci pro běžné úlohy -, jako je například vytváření formulářů, odkazy, načítání prostředků a další - a i další dostupné ve veřejných úložišť GitHub a jako NuGet balíčky. Pomocníci značky vytvořené v C# a jejich cílových elementů HTML na základě název elementu, název atributu nebo nadřazené značky. Například předdefinovaná `LabelTagHelper` HTML, můžete vybrat `<label>` element při `LabelTagHelper` jsou použity atributy. Pokud jste obeznámeni s [pomocné objekty HTML](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers), značka Pomocníci snížit explicitní přechodů mezi HTML a C# v zobrazení syntaxe Razor. V mnoha případech pomocné objekty HTML poskytnout alternativní způsob konkrétní pomocné rutiny značky, ale je důležité vědět, že pomocné rutiny značky není nahradit pomocné rutiny HTML a neexistuje žádná značka Pomocník pro každý pomocné rutiny HTML. [Značka pomocné rutiny ve srovnání s pomocné objekty HTML](#tag-helpers-compared-to-html-helpers) vysvětluje rozdíly podrobněji.
 
 ## <a name="what-tag-helpers-provide"></a>Co zadejte značky pomocné rutiny
 
@@ -112,7 +112,7 @@ Znak výslovný nesouhlas s pomocná značky je nutné použít pro počátečn�
 ```cshtml
 @tagHelperPrefix th:
 ```
-Následující obrázek kód předponu značky pomocná nastavena na `th:`, takže jenom elementy, pomocí předponu `th:` podporu pomocníků značky (povolené značky pomocné prvky mít rozlišovací písmo). `<label>` a `<input>` prvky mít předponu značky pomocná a povolenými značky Pomocník při `<span>` element neexistuje.
+Následující obrázek kód předponu značky pomocná nastavena na `th:`, takže jenom elementy, pomocí předponu `th:` podporu pomocníků značky (povolené značky pomocné prvky mít rozlišovací písmo). `<label>` a `<input>` prvky mít předponu značky pomocná a povolenými značky Pomocník při `<span>` není element.
 
 ![obrázek](intro/_static/thp.png)
 

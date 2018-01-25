@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 4dd10430778dc51fef1199315ee02eb2cd4970ba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 925d659f42496045089ba056e194ac977c37a8de
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>Pomocné rutiny ASP.NET MVC 4, formulářů a ověřování
 ====================
@@ -36,7 +36,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > Tato laboratoř vás provede procesem vylepšení a nových funkcí popsaných výše použitím malých změn na ukázkové webové aplikaci ve zdrojové složce zadané.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 <a id="Objectives"></a>
@@ -89,7 +89,7 @@ Následující cvičení tvoří toto Hands-On testovací prostředí:
 3. [Vytvoření zobrazení pro úpravy](#Exercise3)
 4. [Přidání zobrazení pro vytváření](#Exercise4)
 5. [Zpracování odstranění](#Exercise5)
-6. [Přidání ověřování](#Exercise6)
+6. [Přidání ověření](#Exercise6)
 7. [Pomocí Nerušivý jQuery na straně klienta](#Exercise7)
 
 > [!NOTE]
@@ -228,7 +228,7 @@ Na následujícím obrázku vidíte, jak formát se mění z důvodu délka text
 V této úloze budete přidávat nové metody **Truncate** k **HTML** objekt vystavený v zobrazení ASP.NET MVC. K tomu budete implementovat **metoda rozšíření** do vestavěné **System.Web.Mvc.HtmlHelper** třída poskytuje rozhraní ASP.NET MVC.
 
 > [!NOTE]
-> Další informace o **rozšiřující metody**, navštivte tohoto článku na webu msdn. [https://msdn.microsoft.com/en-us/library/bb383977.aspx](https://msdn.microsoft.com/en-us/library/bb383977.aspx).
+> Další informace o **rozšiřující metody**, navštivte tohoto článku na webu msdn. [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx).
 
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex2-AddingAnHTMLHelper/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: 387d19af9165d4b54ce3cb1a9b04412271da6fb0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: af8364c584b686fd5c0fe30a89e241d9d08a30c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Úvod k protokolování v ASP.NET Core
 
@@ -43,7 +43,7 @@ Pak volejte metody protokolování pro tento objekt protokolovacího nástroje:
 
 Tento příklad vytvoří protokoly s `TodoController` třídy jako *kategorie*. Kategorie jsou vysvětleny [dále v tomto článku](#log-category).
 
-ASP.NET Core neposkytuje asynchronní metody protokolovacího nástroje protože protokolování by měla být tak rychlé, že není vhodné nákladů na použití asynchronní. Pokud jste v situaci, kde to není pravda, zvažte změnu způsob přihlášení. Pokud data store je pomalé, zápis zpráv protokolu rychlé úložiště nejprve, pak přesuňte je pomalé úložiště později. Například Přihlaste se do fronty zpráv, který je pro čtení a uložit trvale na pomalé úložiště jiným procesem.
+ASP.NET Core neposkytuje asynchronní metody protokolovacího nástroje, protože by měla být tak rychlé, že není vhodné nákladů na použití asynchronních protokolování. Pokud jste v situaci, kde to není pravda, zvažte změnu způsob přihlášení. Pokud data store je pomalé, zápis zpráv protokolu rychlé úložiště nejprve, pak přesuňte je pomalé úložiště později. Například Přihlaste se do fronty zpráv, který má číst a uložit trvale na pomalé úložiště jiným procesem.
 
 ## <a name="how-to-add-providers"></a>Postup přidání zprostředkovatelů
 
@@ -159,7 +159,7 @@ ASP.NET Core definuje následující [protokolu úrovně](https://docs.microsoft
 
 * Upozornění = 3
 
-  Nestandardní nebo neočekávané události v toku aplikací. Ty mohou obsahovat chyby nebo jinými podmínkami, který nezpůsobí zastavení aplikace, ale které může potřebovat nutné prozkoumat. Zpracovávaný výjimky jsou obvyklé místo pro použití `Warning` úrovně protokolování. Příklad:`FileNotFoundException for file quotes.txt.`
+  Nestandardní nebo neočekávané události v toku aplikací. Ty mohou obsahovat chyby nebo jinými podmínkami, které nemáte způsobit zastavení aplikace, ale které může potřebovat nutné prozkoumat. Zpracovávaný výjimky jsou obvyklé místo pro použití `Warning` úrovně protokolování. Příklad:`FileNotFoundException for file quotes.txt.`
 
 * Chyba = 4
 
@@ -356,7 +356,7 @@ Někteří poskytovatelé protokolování umožňují určit, kdy by měla být 
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_AddConsoleAndDebugWithFilter&highlight=6-7)]
 
-`AddEventLog` Metoda má přetížení, které přijímá `EventLogSettings` instanci, která může obsahovat filtrování funkce v jeho `Filter` vlastnost. Zprostředkovatel TraceSource neposkytuje žádné z těchto přetížení vzhledem k tomu, že jsou na základě jeho úroveň protokolování a dalších parametrů `SourceSwitch` a `TraceListener` používá.
+`AddEventLog` Metoda má přetížení, které přijímá `EventLogSettings` instanci, která může obsahovat filtrování funkce v jeho `Filter` vlastnost. Zprostředkovatel TraceSource neposkytuje, žádný z těchto přetížení vzhledem k tomu, že jsou na základě jeho úroveň protokolování a dalších parametrů `SourceSwitch` a `TraceListener` používá.
 
 Můžete nastavit pravidla filtrování pro všechny poskytovatele, které jsou registrovány `ILoggerFactory` instance pomocí `WithFilter` metoda rozšíření. Následující příklad omezuje protokoly framework (kategorie začíná "Microsoft" nebo "Systém") a upozornění při upozornění v protokolu aplikace na úrovni ladění.
 
@@ -364,7 +364,7 @@ Můžete nastavit pravidla filtrování pro všechny poskytovatele, které jsou 
 
 Pokud chcete zabránit zápisu pro danou kategorii všechny protokoly pomocí filtrování, můžete zadat `LogLevel.None` jako úroveň minimální protokolu této kategorie. Celočíselnou hodnotu `LogLevel.None` je 6, která je vyšší než `LogLevel.Critical` (5).
 
-`WithFilter` Rozšíření metoda je poskytována [Microsoft.Extensions.Logging.Filter](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Filter) balíček NuGet. Metoda vrátí novou `ILoggerFactory` instance, která bude filtrovat zprávy protokolu předaný všechny protokoly poskytovatele registrované s ním. Nemá vliv na žádné jiné `ILoggerFactory` instance, včetně původní `ILoggerFactory` instance.
+`WithFilter` Rozšíření metoda je poskytována [Microsoft.Extensions.Logging.Filter](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Filter) balíček NuGet. Metoda vrátí novou `ILoggerFactory` instance, která bude filtrovat zprávy protokolu předaný všechny protokoly poskytovatele registrované s ním. Nemá vliv, jakékoliv `ILoggerFactory` instance, včetně původní `ILoggerFactory` instance.
 
 ---
 
@@ -610,7 +610,7 @@ Když nasazujete do aplikace služby App Service, vaše aplikace respektuje nast
 
 Výchozí umístění pro soubory protokolu je v *D:\\domácí\\LogFiles\\aplikace* složku a výchozí název souboru je *diagnostiky yyyymmdd.txt*. Výchozí limit velikosti souboru je 10 MB a výchozí maximální počet souborů, které uchovávají se 2. Výchozí název objektu blob je *{app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt*. Další informace o výchozí chování najdete v tématu [AzureAppServicesDiagnosticsSettings](https://github.com/aspnet/Logging/blob/c7d0b1b88668ff4ef8a86ea7d2ebb5ca7f88d3e0/src/Microsoft.Extensions.Logging.AzureAppServices/AzureAppServicesDiagnosticsSettings.cs).
 
-Zprostředkovatel funguje pouze při spuštění projektu v prostředí Azure. Nemá žádný vliv, pokud spouštíte místně &mdash; zapsat do místních souborů nebo vývoj pro místní úložiště pro objekty BLOB.
+Zprostředkovatel funguje pouze při spuštění projektu v prostředí Azure. Nemá žádný vliv, pokud spouštíte místně &mdash; není zapsat do místních souborů nebo vývoj pro místní úložiště pro objekty BLOB.
 
 ## <a name="third-party-logging-providers"></a>Zprostředkovatelé třetí strany protokolování
 
@@ -647,7 +647,7 @@ Postup konfigurace streamování protokolů Azure:
 
 ![Stránka Azure portálu diagnostických protokolů](index/_static/azure-diagnostic-logs.png)
 
-Přejděte na **vysílání datového proudu protokolu** stránky zobrazení zpráv aplikace. Jsou zaznamenány aplikací pomocí `ILogger` rozhraní. 
+Přejděte na **vysílání datového proudu protokolu** stránky zobrazení zpráv aplikace. Jste přihlášení pomocí aplikace prostřednictvím `ILogger` rozhraní. 
 
 ![Vysílání datového proudu protokolu aplikace portálu Azure](index/_static/azure-log-streaming.png)
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 008b9cd081152e6a378d0fa2e08497a6771fd9b5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23e317c6e0b6daf2d7937b73738e5cb6fa32cde2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>Scénář: Konfigurace testovacího prostředí pro nasazení webu
 ====================
@@ -49,7 +49,7 @@ Testovací prostředí musí podporovat krokování nebo automatizované nasazen
 - Konfigurace serveru webových testů pro podporu nasazení pomocí obslužná rutina nasazení webu.
 
 > [!NOTE]
-> Můžete také použít [nasazení webu na vyžádání](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx) ("temp agent"). Toto je podobná přístup vzdáleného agenta z hlediska požadavky a omezení.
+> Můžete také použít [nasazení webu na vyžádání](https://technet.microsoft.com/library/ee517345(WS.10).aspx) ("temp agent"). Toto je podobná přístup vzdáleného agenta z hlediska požadavky a omezení.
 
 
 V takovém případě vývojáři mít oprávnění správce na cílovém serveru a testovací prostředí není předmětem omezení přísných bezpečnostních, tak, aby logické volbou konfigurace serveru webového testu pro podporu nasazení pomocí vzdáleného agenta. To je méně složitých a vyžaduje menší počáteční konfiguraci než přístup obslužné rutiny nasazení webu. Také budete muset konfigurovat databázový server pro podporu nasazení a vzdálený přístup.

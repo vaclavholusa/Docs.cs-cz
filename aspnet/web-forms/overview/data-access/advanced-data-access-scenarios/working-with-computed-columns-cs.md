@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 133c55371cccabbbefe1b0eb3f4c7a67f2834f1d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 41206f76f9d9ca68971a53d79e84d82349e92333
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-computed-columns-c"></a>Práce s počítaných sloupcích (C#)
 ====================
@@ -29,7 +29,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
 ## <a name="introduction"></a>Úvod
 
-Microsoft SQL Server umožňuje  *[vypočítaného sloupce](https://msdn.microsoft.com/en-us/library/ms191250.aspx)*, které jsou sloupce, jejichž hodnoty se vypočítají z výraz, který obvykle odkazuje na hodnoty z ostatních sloupců ve stejné tabulce. Jako příklad čas sledování datového modelu může být tabulka s názvem `ServiceLog` se sloupci včetně `ServicePerformed`, `EmployeeID`, `Rate`, a `Duration`, mimo jiné. Při velikosti kvůli pro službu položky (rychlost násobí hodnotou doba trvání) může být výpočet prostřednictvím webové stránky nebo jiné programové rozhraní, může být užitečný, aby zahrnovaly sloupec v `ServiceLog` tabulku s názvem `AmountDue` který ohlásil to informace. V tomto sloupci by bylo možné vytvořit jako normální sloupec, ale třeba, aby kdykoli aktualizovat `Rate` nebo `Duration` hodnot sloupce změněn. Lepší přístup by bylo aby `AmountDue` sloupec počítaný sloupec pomocí výrazu `Rate * Duration`. Díky tomu by způsobilo systému SQL Server se automaticky vypočítá `AmountDue` hodnota sloupce vždy, když byl odkazovaný v dotazu.
+Microsoft SQL Server umožňuje  *[vypočítaného sloupce](https://msdn.microsoft.com/library/ms191250.aspx)*, které jsou sloupce, jejichž hodnoty se vypočítají z výraz, který obvykle odkazuje na hodnoty z ostatních sloupců ve stejné tabulce. Jako příklad čas sledování datového modelu může být tabulka s názvem `ServiceLog` se sloupci včetně `ServicePerformed`, `EmployeeID`, `Rate`, a `Duration`, mimo jiné. Při velikosti kvůli pro službu položky (rychlost násobí hodnotou doba trvání) může být výpočet prostřednictvím webové stránky nebo jiné programové rozhraní, může být užitečný, aby zahrnovaly sloupec v `ServiceLog` tabulku s názvem `AmountDue` který ohlásil to informace. V tomto sloupci by bylo možné vytvořit jako normální sloupec, ale třeba, aby kdykoli aktualizovat `Rate` nebo `Duration` hodnot sloupce změněn. Lepší přístup by bylo aby `AmountDue` sloupec počítaný sloupec pomocí výrazu `Rate * Duration`. Díky tomu by způsobilo systému SQL Server se automaticky vypočítá `AmountDue` hodnota sloupce vždy, když byl odkazovaný v dotazu.
 
 Vzhledem k tomu, že hodnota počítaný sloupec s je určen podle výrazu, tyto sloupce jsou jen pro čtení, a proto nemůže mít hodnoty přiřazen, je v `INSERT` nebo `UPDATE` příkazy. Ale při počítaného sloupce jsou součástí hlavní dotazu pro TableAdapter používající příkazů SQL ad-hoc, budou se automaticky přidají do automaticky vygenerované `INSERT` a `UPDATE` příkazy. V důsledku toho TableAdapter s `INSERT` a `UPDATE` dotazy a `InsertCommand` a `UpdateCommand` vlastnosti musí být aktualizovány k odebrat odkazy na všechny počítané sloupce.
 
@@ -51,7 +51,7 @@ Začněte otevřením `Suppliers` definice tabulky kliknutím pravým tlačítke
 Všimněte si, že může být zřetězen řetězce v systému SQL pomocí `+` operátor. `CASE` Příkaz lze použít jako podmíněného v tradiční programovací jazyk. Ve výše uvedené výrazu `CASE` příkaz lze přečíst jako: Pokud `ContactTitle` není `NULL` ve výstupu `ContactTitle` zřetězen s čárkou, jinak hodnota emitování nic. Další informace o užitečnost `CASE` prohlášení, najdete v části [Power SQL `CASE` příkazy](http://www.4guysfromrolla.com/webtech/102704-1.shtml).
 
 > [!NOTE]
-> Místo použití `CASE` prohlášení, může případně použili jsme `ISNULL(ContactTitle, '')`. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/en-us/library/ms184325.aspx)Vrátí *checkExpression* Pokud jinou hodnotu než NULL, jinak vrátí *zastaralá*. While – buď `ISNULL` nebo `CASE` bude fungovat v tomto případě jsou komplikovanější scénáře kde flexibilitu `CASE` příkaz nelze porovnat podle `ISNULL`.
+> Místo použití `CASE` prohlášení, může případně použili jsme `ISNULL(ContactTitle, '')`. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx)Vrátí *checkExpression* Pokud jinou hodnotu než NULL, jinak vrátí *zastaralá*. While – buď `ISNULL` nebo `CASE` bude fungovat v tomto případě jsou komplikovanější scénáře kde flexibilitu `CASE` příkaz nelze porovnat podle `ISNULL`.
 
 
 Po přidání Tento počítaný sloupec obrazovky by měla vypadat podobně jako na následujícím snímku na obrázku 1.
@@ -69,10 +69,10 @@ Ukládá se tabulka by měl aktualizovat Průzkumníka serveru, včetně sloupci
 
 [!code-sql[Main](working-with-computed-columns-cs/samples/sample2.sql)]
 
-Další informace o počítané sloupce v systému Microsoft SQL Server, najdete v části [technické dokumentace](https://msdn.microsoft.com/en-us/library/ms191250.aspx). Také si přečtěte [postup: Zadejte vypočítaného sloupce](https://msdn.microsoft.com/en-us/library/ms188300.aspx) pro podrobný postup vytváření počítaných sloupcích.
+Další informace o počítané sloupce v systému Microsoft SQL Server, najdete v části [technické dokumentace](https://msdn.microsoft.com/library/ms191250.aspx). Také si přečtěte [postup: Zadejte vypočítaného sloupce](https://msdn.microsoft.com/library/ms188300.aspx) pro podrobný postup vytváření počítaných sloupcích.
 
 > [!NOTE]
-> Ve výchozím nastavení počítané sloupce nejsou fyzicky uložené v tabulce, ale místo toho jsou přepočítána pokaždé, když se odkazuje v dotazu. Zaškrtnutím políčka se jako trvalý, ale můžete určit, aby SQL Server fyzicky ukládat počítaný sloupec v tabulce. To uděláte indexu má být vytvořena na počítaný sloupec, což může zlepšit výkon dotazů, které používají hodnotě počítaný sloupec v jejich `WHERE` klauzule. V tématu [vytváření indexů v vypočítaného sloupce](https://msdn.microsoft.com/en-us/library/ms189292.aspx) Další informace.
+> Ve výchozím nastavení počítané sloupce nejsou fyzicky uložené v tabulce, ale místo toho jsou přepočítána pokaždé, když se odkazuje v dotazu. Zaškrtnutím políčka se jako trvalý, ale můžete určit, aby SQL Server fyzicky ukládat počítaný sloupec v tabulce. To uděláte indexu má být vytvořena na počítaný sloupec, což může zlepšit výkon dotazů, které používají hodnotě počítaný sloupec v jejich `WHERE` klauzule. V tématu [vytváření indexů v vypočítaného sloupce](https://msdn.microsoft.com/library/ms189292.aspx) Další informace.
 
 
 ## <a name="step-2-viewing-the-computed-column-s-values"></a>Krok 2: Zobrazení hodnoty s počítaný sloupec

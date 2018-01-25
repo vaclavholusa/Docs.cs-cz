@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5d250a7fb868d712e8039e65f7219f80ccaa780c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b2262df1a56ffa88a22d9dc8000bd0c300fea72e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>Vytváření nových uložené procedury pro typové datové sady TableAdapters (VB)
 ====================
@@ -47,7 +47,7 @@ Funkce jsou společné pro všechny programovací jazyky konstrukt. Funkce je ko
 > Uložené procedury jsou často označovány jako sprocs nebo aktualizace Service Pack.
 
 
-Uložené procedury lze vytvořit pomocí [ `CREATE PROCEDURE` ](https://msdn.microsoft.com/en-us/library/aa258259(SQL.80).aspx) příkaz T-SQL. Například následující skriptu T-SQL vytvoří uložené procedury s názvem `GetProductsByCategoryID` , která má jeden parametr s názvem `@CategoryID` a vrátí `ProductID`, `ProductName`, `UnitPrice`, a `Discontinued` pole těchto sloupců `Products` tabulky, které mají odpovídající `CategoryID` hodnotu:
+Uložené procedury lze vytvořit pomocí [ `CREATE PROCEDURE` ](https://msdn.microsoft.com/library/aa258259(SQL.80).aspx) příkaz T-SQL. Například následující skriptu T-SQL vytvoří uložené procedury s názvem `GetProductsByCategoryID` , která má jeden parametr s názvem `@CategoryID` a vrátí `ProductID`, `ProductName`, `UnitPrice`, a `Discontinued` pole těchto sloupců `Products` tabulky, které mají odpovídající `CategoryID` hodnotu:
 
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample1.sql)]
@@ -384,7 +384,7 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Vytvoření a údržbu uložené procedury](https://msdn.microsoft.com/en-us/library/aa214299(SQL.80).aspx)
+- [Vytvoření a údržbu uložené procedury](https://msdn.microsoft.com/library/aa214299(SQL.80).aspx)
 - [Načítání skalární dat z uložené procedury](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 - [Systému SQL Server uložené procedury základy](http://www.awprofessional.com/articles/article.asp?p=25288&amp;rl=1)
 - [Uložené procedury: Přehled](http://www.sqlteam.com/item.asp?ItemID=563)

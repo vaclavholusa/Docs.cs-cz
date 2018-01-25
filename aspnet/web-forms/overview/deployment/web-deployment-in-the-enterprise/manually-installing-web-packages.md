@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: 0ab0b4c24c1771a21c45bac011b5f156cb15d28a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e06d37c01ab66f0723b687f4ed1ee72561099aef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="manually-installing-web-packages"></a>Ruční instalaci webových balíčků
 ====================
@@ -131,7 +131,7 @@ Toto téma popisuje postup importování balíčku pro nasazení webu na webu II
 
 ## <a name="further-reading"></a>Další čtení
 
-Pokyny o tom, jak nakonfigurovat webový server služby IIS pro podporu Ruční import balíčku webu najdete v tématu [konfigurace webového serveru pro nasazení publikování na webu (Offline nasazení)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md). Další obecné pokyny pro nasazení webových balíčků najdete v tématu [návod: nasazení webové aplikace projektu pomocí balíčku pro nasazení webu (část 1 / 4)](https://msdn.microsoft.com/en-us/library/dd483479.aspx).
+Pokyny o tom, jak nakonfigurovat webový server služby IIS pro podporu Ruční import balíčku webu najdete v tématu [konfigurace webového serveru pro nasazení publikování na webu (Offline nasazení)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md). Další obecné pokyny pro nasazení webových balíčků najdete v tématu [návod: nasazení webové aplikace projektu pomocí balíčku pro nasazení webu (část 1 / 4)](https://msdn.microsoft.com/library/dd483479.aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](creating-and-running-a-deployment-command-file.md)

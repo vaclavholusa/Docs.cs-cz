@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: a0f25ed3c996b73e362177b196539c6f2b143739
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98647830125670ee2ed43538d65fb3ce6ac40d0d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 nejnovější změny
 ====================
@@ -33,9 +33,9 @@ ms.lasthandoff: 11/10/2017
 [Změny ClientIDMode](#0.1__Toc256770142 "_Toc256770142")  
 [HtmlEncode a UrlEncode nyní kódování apostrofech](#0.1__Toc256770143 "_Toc256770143")  
 [Stránka ASP.NET (.aspx) Analyzátor je Stricter](#0.1__Toc256770144 "_Toc256770144")  
-[Soubory definice prohlížeče aktualizované](#0.1__Toc256770145 "_Toc256770145")  
-[System.Web.Mobile.dll odebrána z kořenové soubor webové konfigurace](#0.1__Toc256770146 "_Toc256770146")  
-[Ověření požadavku ASP.NET](#0.1__Toc256770147 "_Toc256770147")  
+[Browser Definition Files Updated](#0.1__Toc256770145 "_Toc256770145")  
+[System.Web.Mobile.dll Removed from Root Web Configuration File](#0.1__Toc256770146 "_Toc256770146")  
+[ASP.NET Request Validation](#0.1__Toc256770147 "_Toc256770147")  
 [Výchozí algoritmus hash je nyní HMACSHA256](#0.1__Toc256770148 "_Toc256770148")  
 [Konfigurace chyb souvisejících s novou konfiguraci ASP.NET 4 kořenové](#0.1__Toc256770149 "_Toc256770149")  
 [Aplikace ASP.NET 4 podřízené nezdaří spuštění pod ASP.NET 2.0 nebo v technologii ASP.NET 3.5 aplikace](#0.1__Toc256770150 "_Toc256770150")  
@@ -46,10 +46,10 @@ ms.lasthandoff: 11/10/2017
 [Změny v kódu ASP.NET přístup zabezpečení (CA) implementaci](#0.1__Toc256770155 "_Toc256770155")  
 [Byly přesunuty MembershipUser a dalších typů v Namespace System.Web.Security](#0.1__Toc256770156 "_Toc256770156")  
 [Výstup ukládání do mezipaměti změny k odlišení \* hlavičky protokolu HTTP](#0.1__Toc256770157 "_Toc256770157")  
-[Typy System.Web.Security pro Passport jsou zastaralé](#0.1__Toc256770158 "_Toc256770158")  
+[System.Web.Security Types for Passport are Obsolete](#0.1__Toc256770158 "_Toc256770158")  
 [Vlastnost MenuItem.PopOutImageUrl nepodaří Vykreslit obrázek v technologii ASP.NET 4](#0.1__Toc256770159 "_Toc256770159")  
 [Menu.StaticPopOutImageUrl a Menu.DynamicPopOutImageUrl selhání vykreslování obrázků, pokud cesty obsahují zpětná lomítka](#0.1__Toc256770160 "_Toc256770160")  
-[Právní omezení](#0.1__Toc256770161 "_Toc256770161")
+[Disclaimer](#0.1__Toc256770161 "_Toc256770161")
 
 <a id="0.1__ControlRenderingCompatibilityVersio"></a><a id="0.1__Toc245724853"></a><a id="0.1__Toc255587630"></a><a id="0.1__Toc256770141"></a>
 
@@ -272,15 +272,15 @@ Předchozí verze technologie ASP.NET, které jsou zahrnuté **PathInfo** v hodn
 
 V předchozích verzích technologie ASP.NET **požadavku HTTP** vlastnosti mít následující hodnoty:
 
-**HttpRequest.FilePath**:`/testapp/Action.mvc/SomeAction`
+**HttpRequest.FilePath**: `/testapp/Action.mvc/SomeAction`
 
 **HttpRequest.PathInfo**: (prázdný)
 
 V technologii ASP.NET 4 **požadavku HTTP** vlastnosti místo toho mít následující hodnoty:
 
-**HttpRequest.FilePath**:`/testapp/Action.mvc`
+**HttpRequest.FilePath**: `/testapp/Action.mvc`
 
-**HttpRequest.PathInfo**:`SomeAction`
+**HttpRequest.PathInfo**: `SomeAction`
 
 <a id="0.1__Toc252995493"></a><a id="0.1__Toc255587642"></a><a id="0.1__Toc256770153"></a><a id="0.1__Toc245724861"></a>
 
@@ -385,7 +385,7 @@ Toto je shrnutí změn v implementaci výchozí certifikační Autority v techno
 - Dynamicky kompilované sestavení, které jsou vytvořené pomocí poskytovatele sestavení pro ASP.NET byly aktualizovány explicitně označit sestavení jako transparentní.
 - Ve všech sestaveních ASP.NET jsou nyní označeny tak, že je atribut APTCA dodržení pouze v webových hostitelských prostředích. Částečně důvěryhodné jiných webových hostitelských prostředích jako ClickOnce nebude možné provést volání do sestavení ASP.NET.
 
-Další informace o modelu zabezpečení přístupu kódu novou technologii ASP.NET 4 najdete v tématu [pomocí zabezpečení přístupu kódu v aplikacích ASP.NET](https://msdn.microsoft.com/en-us/library/dd984947%28VS.100%29.aspx) na webu MSDN.
+Další informace o modelu zabezpečení přístupu kódu novou technologii ASP.NET 4 najdete v tématu [pomocí zabezpečení přístupu kódu v aplikacích ASP.NET](https://msdn.microsoft.com/library/dd984947%28VS.100%29.aspx) na webu MSDN.
 
 <a id="0.1__Toc256770156"></a><a id="0.1__Toc245724863"></a><a id="0.1__Toc252995496"></a><a id="0.1__Toc255587645"></a><a id="0.1__Toc245724864"></a>
 

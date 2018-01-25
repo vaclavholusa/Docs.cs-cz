@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: 1c24ccd220bf6df09a958d07b13077f004da0a03
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3347657fb5c7bf8c7bb4e51a2e810a1edde826a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>Rozhraní ASP.NET Web Forms připojení odolnost proti chybám a příkaz zachycením
 ====================
@@ -39,7 +39,7 @@ V tomto kurzu budete upravovat adresář Wingtip Toys ukázkovou aplikaci pro po
 
 Než začnete, ujistěte se, že máte v počítači nainstalován následující software:
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) nebo [sady Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). Rozhraní .NET Framework se instaluje automaticky.
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) nebo [sady Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Rozhraní .NET Framework se instaluje automaticky.
 - Adresář Wingtip Toys ukázkový projekt, proto, že můžete implementovat funkci uvedených v tomto kurzu v rámci projektu adresář Wingtip Toys. Podrobnosti stažení naleznete na následující odkaz:
 
     - [Začínáme s ASP.NET 4.5.1 webové formuláře – adresář Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&amp;clcid=0x409) (C#)
@@ -81,7 +81,7 @@ Rozhraní Entity Framework automaticky spustí kód najde v třídu odvozenou z 
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample3.cs?highlight=14-15,17-22)]
 
-Přidáním `RetryLimitExceededException` výjimky, můžete poskytovat lepší protokolování nebo zobrazit chybovou zprávu pro uživatele, kde můžete vybrat a zkuste to znovu proces. Podle zachytávání `RetryLimitExceededException` výjimky, které by mohly být přechodné pouze chyby bude již jste se pokusili a několikrát se nezdařilo. Skutečné vrátil výjimku bude uzavřen do `RetryLimitExceededException` výjimka. Kromě toho jste také přidali bloku catch Obecné. Další informace o `RetryLimitExceededException` výjimky, najdete v části [odolnost připojení Entity Framework nebo opakujte logiku](https://msdn.microsoft.com/en-us/data/dn456835).
+Přidáním `RetryLimitExceededException` výjimky, můžete poskytovat lepší protokolování nebo zobrazit chybovou zprávu pro uživatele, kde můžete vybrat a zkuste to znovu proces. Podle zachytávání `RetryLimitExceededException` výjimky, které by mohly být přechodné pouze chyby bude již jste se pokusili a několikrát se nezdařilo. Skutečné vrátil výjimku bude uzavřen do `RetryLimitExceededException` výjimka. Kromě toho jste také přidali bloku catch Obecné. Další informace o `RetryLimitExceededException` výjimky, najdete v části [odolnost připojení Entity Framework nebo opakujte logiku](https://msdn.microsoft.com/data/dn456835).
 
 ## <a name="command-interception"></a>Příkaz zachycení
 

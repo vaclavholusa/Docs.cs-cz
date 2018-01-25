@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f171929da3610f70f3641030d9a5fdb88f610f7f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a71405bc84304bf7c47f400dfa9886208316d223
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-custom-paged-data-c"></a>Řazení vlastní stránkovaného dat (C#)
 ====================
@@ -51,7 +51,7 @@ Bohužel parametry `ORDER BY` klauzule nejsou povoleny. Místo toho musíte vytv
 
 - Zápis dotazů pevně pro jednotlivé výrazy řazení, které se dají použít; poté použijte `IF/ELSE` příkazů T-SQL k určení dotazu, který chcete spustit.
 - Použití `CASE` příkaz zajistit dynamické `ORDER BY` výrazy na základě `@sortExpressio` n vstupní parametr; viz používá oddílu dynamicky řazení výsledků dotazu v [Power SQL `CASE` příkazy](http://www.4guysfromrolla.com/webtech/102704-1.shtml) Další informace.
-- Vytvořit odpovídající dotazu jako řetězec v uložené proceduře a potom pomocí [ `sp_executesql` systémové uložené procedury](https://msdn.microsoft.com/en-us/library/ms188001.aspx) provést dynamické dotaz.
+- Vytvořit odpovídající dotazu jako řetězec v uložené proceduře a potom pomocí [ `sp_executesql` systémové uložené procedury](https://msdn.microsoft.com/library/ms188001.aspx) provést dynamické dotaz.
 
 Každý z těchto řešení má některé nevýhody. První možnost není jako udržovatelný jako další dvě jako vyžaduje, že vytvoříte dotaz pro každý výraz možné řazení. Proto pokud později se rozhodnete přidat nový, řazení pole do GridView také musíte přejít zpět a aktualizovat uložené procedury. Druhý přístup má některé odlišnosti, které zavést otázky výkonu při řazení podle sloupce jiné než řetězec databáze a také vykazuje stejný problémy udržovatelnosti jako první. A třetí volby, která používá dynamický SQL, představuje riziko pro útok prostřednictvím injektáže SQL, pokud útočník je možné spustit uloženou proceduru předávání v vstupní parametr hodnoty podle vlastního uvážení.
 
@@ -126,7 +126,7 @@ Nyní který jsme sunout rozšířené vrstvy DAL jsme re připravené obrátit 
 
 S rozšířen DAL a BLL zahrnují metody, které využívají `GetProductsPagedAndSorted` uložené procedury, všechny možnosti, které zůstává je konfigurace ObjectDataSource v `SortParameter.aspx` stránky lze pomocí této nové metody BLL a předávat `SortExpression` na základě parametr sloupec, který uživatel požádal o výsledky seřaďte podle.
 
-Začněte tím, že změna ObjectDataSource s `SelectMethod` z `GetProductsPaged` k `GetProductsPagedAndSorted`. To lze provést pomocí Průvodce konfigurace zdroje dat, v okně Vlastnosti nebo přímo pomocí deklarativní syntaxe. Dále je potřeba zadat hodnotu pro ObjectDataSource s [ `SortParameterName` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx). Pokud je tato vlastnost nastavena, ObjectDataSource pokusí předat GridView s `SortExpression` vlastnost, která má `SelectMethod`. Konkrétně ObjectDataSource hledá vstupní parametr, jehož název je rovna hodnotě `SortParameterName` vlastnost. Od BLL s `GetProductsPagedAndSorted` metoda má řazení výraz vstupní parametr s názvem `sortExpression`, nastavit ObjectDataSource s `SortExpression` vlastnost sortExpression.
+Začněte tím, že změna ObjectDataSource s `SelectMethod` z `GetProductsPaged` k `GetProductsPagedAndSorted`. To lze provést pomocí Průvodce konfigurace zdroje dat, v okně Vlastnosti nebo přímo pomocí deklarativní syntaxe. Dále je potřeba zadat hodnotu pro ObjectDataSource s [ `SortParameterName` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx). Pokud je tato vlastnost nastavena, ObjectDataSource pokusí předat GridView s `SortExpression` vlastnost, která má `SelectMethod`. Konkrétně ObjectDataSource hledá vstupní parametr, jehož název je rovna hodnotě `SortParameterName` vlastnost. Od BLL s `GetProductsPagedAndSorted` metoda má řazení výraz vstupní parametr s názvem `sortExpression`, nastavit ObjectDataSource s `SortExpression` vlastnost sortExpression.
 
 Po provedení těchto dvou změn, deklarativní syntaxi s ObjectDataSource by měl vypadat takto:
 
@@ -139,7 +139,7 @@ Po provedení těchto dvou změn, deklarativní syntaxi s ObjectDataSource by m�
 
 Pokud chcete povolit řazení v GridView, stačí zaškrtnout políčko Povolit řazení v GridView s inteligentní značky, která nastavuje hodnoty GridView s `AllowSorting` vlastnost `true` a způsobit tak text záhlaví pro každý sloupec bude vykresleno jako LinkButton. Když koncový uživatel klikne na jedna z hlaviček LinkButtons, vyplývá zpětné volání a transpire následující kroky:
 
-1. Rutina GridView aktualizace jeho [ `SortExpression` vlastnost](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) na hodnotu `SortExpression` pole, jehož propojení záhlaví označeného
+1. Rutina GridView aktualizace jeho [ `SortExpression` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) na hodnotu `SortExpression` pole, jehož propojení záhlaví označeného
 2. ObjectDataSource vyvolá BLL s `GetProductsPagedAndSorted` metody předávání v GridView s `SortExpression` vlastnost jako hodnota pro metodu s `sortExpression` vstupní parametr (spolu s odpovídající `startRowIndex` a `maximumRows` vstupních parametrů)
 3. Vyvolá s vrstvou DAL BLL `GetProductsPagedAndSorted` – metoda
 4. DAL provede `GetProductsPagedAndSorted` uložené procedury, předávání v `@sortExpression` parametr (spolu s `@startRowIndex` a `@maximumRows` vstupních parametrů)

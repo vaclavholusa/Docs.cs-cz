@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: 2d416432aad9d5654aefd8c63b84b6ae18967515
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a7a66e7e67539e4b075da6fc054a7b53984b6ce1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: řešení potíží
 ====================
@@ -31,8 +31,8 @@ Tato stránka popisuje některé běžné problémy, které mohou nastat při na
 
 Scénáře, zobrazí se vztahují na Azure i poskytovatelé hostitelských služeb třetích stran. Další informace o odstraňování potíží s webovými aplikacemi ve službě Azure App Service najdete v následujících zdrojích informací:
 
-- [Řešení potíží s webovou aplikaci v Azure App Service pomocí sady Visual Studio](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
-- [Monitorování webové aplikace v Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-monitor//)
+- [Řešení potíží s webovou aplikaci v Azure App Service pomocí sady Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [Monitorování webové aplikace v Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-monitor//)
 - [Uvedení verze systému Windows Azure SDK 2.0 pro rozhraní .NET](http://https://weblogs.asp.net/scottgu/announcing-the-release-of-windows-azure-sdk-2-0-for-net) (blog uživatele ScottGu ukazuje, jak získat diagnostických protokolů v sadě Visual Studio)
 
 ## <a name="server-error-in--application---current-custom-error-settings-prevent-details-of-the-error-from-being-viewed-remotely"></a>Chyba serveru v aplikaci - '/' aktuální vlastní nastavení chyb zabránit informace o chybě zobrazení vzdáleně
@@ -142,25 +142,25 @@ Pokud připojovací řetězce vypadat jako tento ukázkový, upravte soubor proj
 
 Pak znovu nasaďte aplikaci.
 
-## <a name="http-500-internal-server-error"></a>Chyba protokolu HTTP 500 interního serveru
+## <a name="http-500-internal-server-error"></a>HTTP 500 Internal Server Error
 
 ### <a name="scenario"></a>Scénář
 
 Při spuštění bude web, zobrazí se následující chybová zpráva bez konkrétní informace o tom, příčinu chyby:
 
-Chyba protokolu HTTP 500 - vnitřní chybu serveru.
+HTTP Error 500 - Internal Server Error.
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
 Existuje mnoho příčiny chyb 500, ale možnou příčinou použijete-li tyto kurzy je uvést XML element do nesprávné místo v jednom ze souborů Web.config transformace. Například by se tato chyba, když vložíte transformace, která vloží &lt;umístění&gt; prvek v rámci &lt;system.web&gt; místo přímo pod &lt;konfigurace&gt;. Funkce preview transformace Web.config můžete ověřit, že transformace funguje tak, jak má. Řešení, pokud se vám najít transformaci, která byla nesprávně programového je opravte transformaci souboru a znovu nasaďte. Není-li chybu zřejmé, pokuste se při psaní komentářů se transformací a opětovného nasazení, které z nich zobrazíte způsobuje za následek chybu 500.
 
-## <a name="http-50021-internal-server-error"></a>HTTP 500.21 vnitřní chybu serveru
+## <a name="http-50021-internal-server-error"></a>HTTP 500.21 Internal Server Error
 
 ### <a name="scenario"></a>Scénář
 
 Při spuštění bude web, zobrazí se následující chybová zpráva:
 
-Chyba protokolu HTTP 500.21 – vnitřní chybu serveru. Obslužná rutina "PageHandlerFactory-Integrated" obsahuje chybný modul "ManagedPipelineHandler" seznam modulů.
+HTTP Error 500.21 - Internal Server Error. Obslužná rutina "PageHandlerFactory-Integrated" obsahuje chybný modul "ManagedPipelineHandler" seznam modulů.
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
@@ -180,7 +180,7 @@ System.Data.SqlClient.SqlException: Databázi "DatabaseName" požadovaný v při
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Název *.mdf* souboru nesmí shodovat s názvem databáze SQL Server Express, které se někdy existovalo v počítači, i v případě, že jste odstranili *.mdf* soubor dříve existující databáze. Změňte název *.mdf* souboru na název, který dosud nebyl použit jako název databáze a změňte *Web.config* soubor k použití nového názvu. Jako alternativu, můžete použít [SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593) odstranit dříve existující systém SQL Server Express databáze.
+Název *.mdf* souboru nesmí shodovat s názvem databáze SQL Server Express, které se někdy existovalo v počítači, i v případě, že jste odstranili *.mdf* soubor dříve existující databáze. Změňte název *.mdf* souboru na název, který dosud nebyl použit jako název databáze a změňte *Web.config* soubor k použití nového názvu. Jako alternativu, můžete použít [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) odstranit dříve existující systém SQL Server Express databáze.
 
 ## <a name="model-compatibility-cannot-be-checked"></a>Model kompatibility nelze zkontrolovat
 
@@ -192,7 +192,7 @@ Kompatibilita modelu nelze zkontrolovat, protože databáze neobsahuje metadata 
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Pokud název databáze, které jste zadali v souboru Web.config byla použita nikdy předtím, než v počítači, možná již existuje databáze s některé tabulky v ní. Vyberte nový název, který nebyl použit v počítači před a změny *Web.config* souboru tak, aby odkazoval používat tento nový název databáze. Jako alternativu, můžete použít [SQL Server Express Utility](https://www.microsoft.com/en-us/download/details.aspx?DisplayLang=en&amp;id=3990) nebo [SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593) odstranit stávající databázi.
+Pokud název databáze, které jste zadali v souboru Web.config byla použita nikdy předtím, než v počítači, možná již existuje databáze s některé tabulky v ní. Vyberte nový název, který nebyl použit v počítači před a změny *Web.config* souboru tak, aby odkazoval používat tento nový název databáze. Jako alternativu, můžete použít [SQL Server Express Utility](https://www.microsoft.com/download/details.aspx?DisplayLang=en&amp;id=3990) nebo [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) odstranit stávající databázi.
 
 ## <a name="sql-error-when-a-script-attempts-to-create-users-or-roles"></a>Chyba SQL, když se skript pokusí o vytvoření uživatelů nebo rolí
 
@@ -210,7 +210,7 @@ Uživatelský účet, který používáte k provedení nasazení nemá oprávně
 
 [!code-console[Main](troubleshooting/samples/sample9.cmd)]
 
-Informace o tom, jak upravit PreSource element v souboru projektu najdete v tématu [postupy: Úprava nastavení nasazení v souboru projektu](https://msdn.microsoft.com/en-us/library/ff398069(v=vs.100).aspx). Pokud uživatelé nebo role ve vaší databázi vývoj musí být v cílové databázi, obraťte se na svého poskytovatele hostingu.
+Informace o tom, jak upravit PreSource element v souboru projektu najdete v tématu [postupy: Úprava nastavení nasazení v souboru projektu](https://msdn.microsoft.com/library/ff398069(v=vs.100).aspx). Pokud uživatelé nebo role ve vaší databázi vývoj musí být v cílové databázi, obraťte se na svého poskytovatele hostingu.
 
 ## <a name="sql-server-timeout-error-when-running-custom-scripts-during-deployment"></a>Chyba časového limitu serveru SQL při spouštění vlastních skriptů při nasazení
 
@@ -220,7 +220,7 @@ Jste zadali vlastní skripty SQL, pokud chcete spustit během nasazení a spušt
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Spuštění více skriptů, které mají režimy jinou transakci může způsobit chyby vypršení časového limitu. Ve výchozím nastavení automaticky generovaných skriptů spustit v transakci, ale nepodporují vlastní skripty. Pokud jste vybrali **stáhnout data nebo schéma z existující databáze** možnost **balení/publikování kódu SQL** kartě, a pokud přidáte vlastní skript SQL, musíte změnit nastavení transakcí na některé skripty tak, aby všechny skripty používat stejné nastavení transakce. Další informace najdete v tématu [postupy: nasazení databáze s projekt webové aplikace](https://msdn.microsoft.com/en-us/library/dd465343.aspx).
+Spuštění více skriptů, které mají režimy jinou transakci může způsobit chyby vypršení časového limitu. Ve výchozím nastavení automaticky generovaných skriptů spustit v transakci, ale nepodporují vlastní skripty. Pokud jste vybrali **stáhnout data nebo schéma z existující databáze** možnost **balení/publikování kódu SQL** kartě, a pokud přidáte vlastní skript SQL, musíte změnit nastavení transakcí na některé skripty tak, aby všechny skripty používat stejné nastavení transakce. Další informace najdete v tématu [postupy: nasazení databáze s projekt webové aplikace](https://msdn.microsoft.com/library/dd465343.aspx).
 
 Pokud jste nakonfigurovali nastavení transakce, tak, aby všechny byly stejné, ale stále se tato chyba zobrazí, možných řešení je spustit skripty odděleně. V **databázové skripty** mřížky ve **nasadit** kartě SQL, zrušte **zahrnout** zaškrtnutí políčka pro skript, který způsobuje chybu vypršení časového limitu, pak publikování tohoto projektu. Přejděte zpět do **databázové skripty** mřížky, vyberte tento skript **zahrnout** zaškrtněte políčko a zrušte výběr **zahrnout** zaškrtnutí políčka pro jiné skripty. Potom projekt znovu publikujte. Tentokrát při publikování, pouze vybrané vlastní skript se spustí.
 
@@ -280,7 +280,7 @@ Bude web nemá *amd64* a *x86* podsložky nativní sestavení v nich v rámci ap
 
 Nasazení aplikace, která používá migrace Entity Framework Code First a databázového systému, jako je například SQL Server Compact, která ukládá svou databázi v souboru v aplikaci\_složku Data. Máte migrace Code First nakonfigurované k vytvoření databáze po prvním nasazení. Při spuštění aplikace zobrazí chybová zpráva jako v následujícím příkladu:
 
-Cesta není platná. Zkontrolujte adresář pro databázi. [Cesta = c:\inetpub\wwwroot\App\_Data\DatabaseName.sdf]
+Cesta není platná. Zkontrolujte adresář pro databázi. [Path = c:\inetpub\wwwroot\App\_Data\DatabaseName.sdf ]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
@@ -309,7 +309,7 @@ Publikování selže s chybou, že jste označuje nemáte oprávnění k nastave
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud víte, že výchozí oprávnění na webu složky jsou správné a není potřeba nastavit, že zakážete toto chování přidáním  **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/en-us/library/ff398069.aspx).
+Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud víte, že výchozí oprávnění na webu složky jsou správné a není potřeba nastavit, že zakážete toto chování přidáním  **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx).
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>Když se aplikace pokusí o zápis do složky aplikace chyby odepření přístupu
 
@@ -319,7 +319,7 @@ Vaše aplikace chyby při pokusu o vytvoření nebo úprava soubor v jednom ze s
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud aplikace potřebuje přístup k zápisu do podsložky, můžete nastavit oprávnění pro tuto složku jako uvedené v nastavení oprávnění ke složkám a nasazení do této série kurzů k produkčním prostředí. Pokud aplikace potřebuje přístup k zápisu do kořenové složky webu, budete muset zabránit jeho nastavení jen pro čtení v kořenové složce přidáním  **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/en-us/library/ff398069.aspx).
+Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud aplikace potřebuje přístup k zápisu do podsložky, můžete nastavit oprávnění pro tuto složku jako uvedené v nastavení oprávnění ke složkám a nasazení do této série kurzů k produkčním prostředí. Pokud aplikace potřebuje přístup k zápisu do kořenové složky webu, budete muset zabránit jeho nastavení jen pro čtení v kořenové složce přidáním  **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx).
 
 <a id="aspnet45error"></a>
 
@@ -341,7 +341,7 @@ Server nepodporuje technologii ASP.NET 4.5. Obraťte se na poskytovatele hosting
 
 Pokud nasadíte na technologii ASP.NET 4 nebo dřívější webový projekt se stejným cílem, vyberte **odebrat další soubory v cílovém umístění** v zaškrtávací políčko **nastavení** kartě **Publikovat Web**průvodce. Pokud nevyberete **odebrat další soubory v cílovém umístění**, nadále bude mít konfigurace chybovou stránku.
 
-Projekt **vlastnosti** systém windows obsahuje cílový framework rozevírací seznam, ale tento problém nelze vyřešit změnou právě, z **rozhraní .NET Framework 4.5** k **rozhraní .NET Framework 4**. Pokud je na starší verzi framework změnit cílový framework, budou mít dál odkazy na sestavení novější verze framework projektu a nespustí. Budete muset ručně změnit tyto odkazy nebo vytvořte nový projekt, který cílí rozhraní .NET Framework 4 nebo dřívější. Další informace najdete v tématu [rozhraní .NET Framework cílení pro weby](https://msdn.microsoft.com/en-us/library/bb398791(v=vs.100).aspx).
+Projekt **vlastnosti** systém windows obsahuje cílový framework rozevírací seznam, ale tento problém nelze vyřešit změnou právě, z **rozhraní .NET Framework 4.5** k **rozhraní .NET Framework 4**. Pokud je na starší verzi framework změnit cílový framework, budou mít dál odkazy na sestavení novější verze framework projektu a nespustí. Budete muset ručně změnit tyto odkazy nebo vytvořte nový projekt, který cílí rozhraní .NET Framework 4 nebo dřívější. Další informace najdete v tématu [rozhraní .NET Framework cílení pro weby](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx).
 
 ## <a name="medium-trust-errors"></a>Chyby středním vztahem důvěryhodnosti
 

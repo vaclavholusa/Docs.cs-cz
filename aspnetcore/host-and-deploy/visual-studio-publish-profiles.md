@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: cd59b33bc9fef29a769912617bf9aa3d95d689ec
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 1f403447c39db4ebfe3dafda591602f0dc9db8c3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Visual Studio publikační profily pro nasazení aplikace ASP.NET Core
 
@@ -327,7 +327,7 @@ Následující `<MsDeploySkipRules>` element značek vyloučeny všechny soubory
 <ItemGroup>
   <MsDeploySkipRules Include="CustomSkipFolder">
     <ObjectName>dirPath</ObjectName>
-    <AbsolutePath>wwwroot\content</AbsolutePath>
+    <AbsolutePath>wwwroot\\content</AbsolutePath>
   </MsDeploySkipRules>
 </ItemGroup>
 ```
@@ -359,7 +359,7 @@ Pokud následující `<MsDeploySkipRules>` těchto souborů nemohli odstranit na
 </ItemGroup>
 ```
 
-`<MsDeploySkipRules>` Brání značek výše uvedeném *přeskočen* soubory nebudou depoyed, ale neodstraní těchto souborů, jakmile jsou nasazeny.
+`<MsDeploySkipRules>` Brání značek výše uvedeném *přeskočen* soubory nebudou depoyed ale neodstraní těchto souborů se poté, co máte nasazené.
 
 Následující `<Content>` značek odstraní cílové soubory v lokalitě nasazení:
 
@@ -407,7 +407,7 @@ Následující zvýrazněnou kód ukazuje, jak na:
 
 * Kopírování souboru z mimo projekt do *wwwroot* složky.
 * Vyloučit *wwwroot\Content* složky.
-* Vyloučit *Views\Home\About2.cshtml*.
+* Exclude *Views\Home\About2.cshtml*.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -463,7 +463,7 @@ Chcete-li zobrazit soubory v Azure aplikace Service nasazení aplikace web, pou�
 
 | Adresa URL                                    | Výsledek      |
 | -------------------------------------- | ----------- |
-| `http://mysite.azurewebsites.net/`     | Webové aplikace     |
+| `http://mysite.azurewebsites.net/`     | Web App     |
 | `http://mysite.scm.azurewebsites.net/` | Adresářové kudu |
 
 Vyberte [ladění konzoly](https://github.com/projectkudu/kudu/wiki/Kudu-console) položku nabídky Zobrazit nebo upravit nebo odstranit nebo přidat soubory.

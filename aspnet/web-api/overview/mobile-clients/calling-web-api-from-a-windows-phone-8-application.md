@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1637af40613f1384bd4adec707a5b1a8a07c704b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e5a936decb27fd2e3b8cdcea44db8db822c98eb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Volání webového rozhraní API z aplikace pro Windows Phone 8 (C#)
 ====================
@@ -37,7 +37,7 @@ V tomto kurzu začátku do konce se dozvíte, jak vytvořit následující proje
 
 - Visual Studio 2013 s Windows Phone 8 SDK nainstalován
 - Windows 8 nebo novější na 64bitovém systému s technologií Hyper-V nainstalována
-- Seznam Další požadavky naleznete v tématu *požadavky na systém* části na [Windows Phone SDK 8.0](https://www.microsoft.com/en-us/download/details.aspx?id=35471) stránce pro stažení.
+- Seznam Další požadavky naleznete v tématu *požadavky na systém* části na [Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471) stránce pro stažení.
 
 > [!NOTE]
 > Pokud chcete k testování připojení mezi webového rozhraní API a Windows Phone 8 projekty v lokálním systému, budete muset postupujte podle pokynů  *[připojení k webové rozhraní API aplikace v místním emulátoru Windows Phone 8 Počítač](https://go.microsoft.com/fwlink/?LinkId=324014)*  článku nastavte svého testovacího prostředí.

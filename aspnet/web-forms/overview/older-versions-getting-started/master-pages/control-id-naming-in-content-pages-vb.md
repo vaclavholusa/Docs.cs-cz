@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b24297fd6efcb794e7d5a50076ca176689f74845
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9523fe5b241b6ff45927f142eb844a716822336b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="control-id-naming-in-content-pages-vb"></a>ID ovládacího prvku pojmenování v obsahu stránky (VB)
 ====================
@@ -34,7 +34,7 @@ Zahrnout všechny serverových ovládacích prvků ASP.NET `ID` vlastnost, kter�
 Technologie ASP.NET pro zpracování takových scénářů, umožňuje některé ovládací prvky pro být označené jako pojmenování kontejnerů. Pojmenování kontejneru slouží jako nový `ID` oboru názvů. Všech ovládacích prvků serveru, které se zobrazují v rámci názvový kontejner mít jejich vykreslené `id` předponu hodnotu `ID` pojmenování kontejneru ovládacího prvku. Například `GridView` a `GridViewRow` třídy jsou obě pojmenování kontejnerů. V důsledku toho ovládací prvek popisek, které jsou definované v GridView TemplateField s `ID` `ProductName` je uveden vykreslovaných `id` hodnotu `GridViewID_GridViewRowID_ProductName`. Protože *GridViewRowID* je jedinečný pro každý řádek GridView výsledná `id` jsou jedinečné hodnoty.
 
 > [!NOTE]
-> [ `INamingContainer` Rozhraní](https://msdn.microsoft.com/en-us/library/system.web.ui.inamingcontainer.aspx) slouží k označení, že konkrétní ovládací prvek ASP.NET serveru by měla fungovat jako názvový kontejner. `INamingContainer` Rozhraní není pravopisu na všech metod, které musí implementovat ovládacího prvku serveru; místo toho se používá jako značku. Při generování vykreslované značky, pokud toto rozhraní implementuje ovládacího prvku pak modul ASP.NET automaticky předpony jeho `ID` hodnotu jejího podřízeného prvku vykresluje `id` hodnoty atributu. Tento proces je podrobněji popsána v kroku 2.
+> [ `INamingContainer` Rozhraní](https://msdn.microsoft.com/library/system.web.ui.inamingcontainer.aspx) slouží k označení, že konkrétní ovládací prvek ASP.NET serveru by měla fungovat jako názvový kontejner. `INamingContainer` Rozhraní není pravopisu na všech metod, které musí implementovat ovládacího prvku serveru; místo toho se používá jako značku. Při generování vykreslované značky, pokud toto rozhraní implementuje ovládacího prvku pak modul ASP.NET automaticky předpony jeho `ID` hodnotu jejího podřízeného prvku vykresluje `id` hodnoty atributu. Tento proces je podrobněji popsána v kroku 2.
 
 
 Pojmenování kontejnerů nejen změnit vygenerované `id` hodnota atributu, ale také mít vliv na způsob řízení může prostřednictvím kódu programu na něj odkazovat z třídy kódu stránky ASP.NET. `FindControl("controlID")` Metoda se často používá ke programově odkazovat ovládací prvek webu. Ale `FindControl` není vniknutí prostřednictvím pojmenování kontejnerů. V důsledku toho nelze použít přímo `Page.FindControl` metoda tak, aby odkazovaly ovládacích prvků v GridView nebo jiných názvový kontejner.
@@ -121,7 +121,7 @@ Všimněte si, že `id` atribut zahrnuje obě stránky předlohy `ID` hodnotu (`
 
 Každý ovládací prvek ASP.NET serveru zahrnuje `FindControl("controlID")` metoda, která hledá podřízeného ovládacího prvku pro ovládací prvek s názvem *controlID*. Pokud je nalezen takový ovládací prvek, je vrácena; Pokud se nenajde žádný odpovídající ovládací prvek, `FindControl` vrátí `Nothing`.
 
-`FindControl`je užitečné v situacích, kdy je potřeba řízení přístupu, ale nemáte přímý odkaz na jeho. Při práci s daty ovládací prvky webového jako GridView, například ovládací prvky v rámci prvku GridView pole jsou definovány jednou v deklarativní syntaxi, ale v době běhu je vytvořena instance ovládacího prvku pro každý řádek GridView. V důsledku toho existují ovládací prvky generovaná za běhu, ale nemáme k dispozici od třídy kódu přímý odkaz. Proto je potřeba použít `FindControl` prostřednictvím kódu programu pracovat s určitý ovládací prvek v rámci prvku GridView pole. (Další informace o používání `FindControl` přístup k ovládacím prvkům v rámci prvku data webové šablony, najdete v tématu [vlastní formátování dat na základě při](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md).) K této stejné situaci dojde, když dynamicky přidávání ovládacích prvků do webového formuláře, téma se zabývá [vytváření dynamické uživatelská rozhraní vstupní Data](https://msdn.microsoft.com/en-us/library/aa479330.aspx).
+`FindControl`je užitečné v situacích, kdy je potřeba řízení přístupu, ale nemáte přímý odkaz na jeho. Při práci s daty ovládací prvky webového jako GridView, například ovládací prvky v rámci prvku GridView pole jsou definovány jednou v deklarativní syntaxi, ale v době běhu je vytvořena instance ovládacího prvku pro každý řádek GridView. V důsledku toho existují ovládací prvky generovaná za běhu, ale nemáme k dispozici od třídy kódu přímý odkaz. Proto je potřeba použít `FindControl` prostřednictvím kódu programu pracovat s určitý ovládací prvek v rámci prvku GridView pole. (Další informace o používání `FindControl` přístup k ovládacím prvkům v rámci prvku data webové šablony, najdete v tématu [vlastní formátování dat na základě při](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md).) K této stejné situaci dojde, když dynamicky přidávání ovládacích prvků do webového formuláře, téma se zabývá [vytváření dynamické uživatelská rozhraní vstupní Data](https://msdn.microsoft.com/library/aa479330.aspx).
 
 Pro ilustraci použití `FindControl` metody na hledání pro ovládací prvky obsahu stránce, vytvoření obslužné rutiny události pro `SubmitButton`na `Click` událostí. V obslužné rutiny události, přidejte následující kód, který se odkazuje prostřednictvím kódu programu `Age` textové pole a `Results` popisku pomocí `FindControl` metoda a poté zobrazí zprávu v `Results` založené na vstup uživatele.
 
@@ -228,7 +228,7 @@ Odvolání, že v ASP.NET stránky, která neobsahují názvový kontejner, vykr
 
 Problém s tímto přístupem je, že při použití stránky předlohy (nebo jiné pojmenování ovládací prvky kontejneru), vykreslené HTML `id` není shodný s ovládacího prvku webového `ID` vlastnost. Navštívit stránku prostřednictvím prohlížeče a zobrazte zdroj k určení skutečnou může být vaše první náklon `id` atribut. Znáte vygenerované `id` hodnotu, můžete vložit ji do volání `getElementById` pro přístup k prvku HTML, který potřebujete k práci s prostřednictvím klientský skript. Tento přístup je menší než ideální, protože některé změny na stránku řídit hierarchie nebo změny `ID` vlastností ovládacích prvků pojmenování změní, výsledná `id` atributů, a tím nejnovější kódu jazyka JavaScript.
 
-Dobrá zpráva je, že `id` hodnota atributu, který je vykreslen je přístupný v kódu na straně serveru pomocí ovládacího prvku webového [ `ClientID` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.control.clientid.aspx). Tato vlastnost by měla použít k určení `id` atribut hodnoty používané ve skriptu na straně klienta. Chcete-li například přidat funkce jazyka JavaScript na stránku, při volání, zobrazuje hodnotu `Age` TextBox modální se zprávou, přidejte následující kód, který `Page_Load` obslužné rutiny události:
+Dobrá zpráva je, že `id` hodnota atributu, který je vykreslen je přístupný v kódu na straně serveru pomocí ovládacího prvku webového [ `ClientID` vlastnost](https://msdn.microsoft.com/library/system.web.ui.control.clientid.aspx). Tato vlastnost by měla použít k určení `id` atribut hodnoty používané ve skriptu na straně klienta. Chcete-li například přidat funkce jazyka JavaScript na stránku, při volání, zobrazuje hodnotu `Age` TextBox modální se zprávou, přidejte následující kód, který `Page_Load` obslužné rutiny události:
 
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample15.vb)]
@@ -241,7 +241,7 @@ Ve výše uvedeném kódu vloží hodnota `Age` textové pole na `ClientID` vlas
 Všimněte si jak správný `id` hodnota atributu `ctl00_MainContent_Age`, zobrazí se v rámci volání `getElementById`. Protože tato hodnota se vypočítá za běhu, funguje bez ohledu na novější změny stránky hierarchii ovládacích prvků.
 
 > [!NOTE]
-> Tento příklad v jazyce JavaScript jenom ukazuje, jak přidat funkce JavaScript, která správně odkazuje na element HTML pro vykreslení ovládacího prvku serveru. Použití této funkce musíte vytvořit další JavaScript pro volání funkce při načtení dokumentu nebo při ukáže některé akce konkrétního uživatele. Další informace o tyto a související témata, přečtěte si [práce s klientský skript](https://msdn.microsoft.com/en-us/library/aa479302.aspx).
+> Tento příklad v jazyce JavaScript jenom ukazuje, jak přidat funkce JavaScript, která správně odkazuje na element HTML pro vykreslení ovládacího prvku serveru. Použití této funkce musíte vytvořit další JavaScript pro volání funkce při načtení dokumentu nebo při ukáže některé akce konkrétního uživatele. Další informace o tyto a související témata, přečtěte si [práce s klientský skript](https://msdn.microsoft.com/library/aa479302.aspx).
 
 
 ## <a name="summary"></a>Souhrn
@@ -257,11 +257,11 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Stránky předlohy technologie ASP.NET a`FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
-- [Vytváření dynamických dat záznam uživatelského rozhraní](https://msdn.microsoft.com/en-us/library/aa479330.aspx)
+- [Vytváření dynamických dat záznam uživatelského rozhraní](https://msdn.microsoft.com/library/aa479330.aspx)
 - [Funkce rozšíření základní typ pomocí metody rozšíření](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
-- [Postupy: Odkaz na obsah stránky předlohy ASP.NET](https://msdn.microsoft.com/en-us/library/xxwa0ff0.aspx)
+- [Postupy: Odkaz na obsah stránky předlohy ASP.NET](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
 - [Stránky předlohy: Tipy, triky a depeše](http://www.odetocode.com/articles/450.aspx)
-- [Práce s skript na straně klienta](https://msdn.microsoft.com/en-us/library/aa479302.aspx)
+- [Práce s skript na straně klienta](https://msdn.microsoft.com/library/aa479302.aspx)
 
 ### <a name="about-the-author"></a>O autorovi
 

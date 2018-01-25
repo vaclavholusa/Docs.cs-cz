@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: a980669d49d332d7ef2ff5a18c73e9b269281287
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b36fb71cba058a3409b30a1d9469159fcd027375
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 en-us /
 
@@ -57,13 +57,13 @@ Optimistickou metodu souběžného zahrnuje následující možnosti:
 
 * Můžete udržovat přehled o vlastností, které uživatel změnil a aktualizovat na odpovídající sloupce v databázi.
 
- Ve scénáři bude ztracena žádná data. Různé vlastnosti byly aktualizovány dva uživatelé. Při příštím někdo umožňuje anglické oddělení, se zobrazí na Jana i Jan pro změny. Tato metoda aktualizace může snížit počet konfliktům, ke kterým může dojít ke ztrátě dat. Tento postup: * nelze nedošlo ke ztrátě dat. Pokud konkurenční změn stejnou vlastnost.
+ Ve scénáři bude ztracena žádná data. Různé vlastnosti byly aktualizovány dva uživatelé. Při příštím někdo umožňuje anglické oddělení, uvidí Jana i Jan pro změny. Tato metoda aktualizace může snížit počet konfliktům, ke kterým může dojít ke ztrátě dat. Tento postup: * nelze nedošlo ke ztrátě dat. Pokud konkurenční změn stejnou vlastnost.
         * Je obecně není praktické ve webové aplikaci. To vyžaduje údržbu významné stavu k uchovávání informací o všech načtených hodnoty a nové hodnoty. Správa velkých objemů stavu může ovlivnit výkon aplikace.
         * Může zvýšit složitost aplikace ve srovnání s detekce souběžnosti na entitu.
 
 * Můžete je nechat Jan pro změnu Jana změna přepsána.
 
- Při příštím někdo umožňuje anglické oddělení, se zobrazí 9/1/2013 a načtených $350,000.00 hodnotu. Tato metoda se nazývá *klienta Wins* nebo *poslední ve službě Wins* scénář. (Všechny hodnoty z klienta přednost co je v úložišti.) Pokud neprovedete žádné kódování pro zpracování souběžnosti, Wins, klient se automaticky.
+ Při příštím někdo umožňuje anglické oddělení, zobrazí se 9/1/2013 a načtených $350,000.00 hodnotu. Tato metoda se nazývá *klienta Wins* nebo *poslední ve službě Wins* scénář. (Všechny hodnoty z klienta přednost co je v úložišti.) Pokud neprovedete žádné kódování pro zpracování souběžnosti, Wins, klient se automaticky.
 
 * Jan pro změnu může zabránit aktualizaci v databázi. Obvykle se aplikace by: * Zobrazí se chybová zpráva.
         * Zobrazit aktuální stav data.
@@ -73,16 +73,16 @@ Optimistickou metodu souběžného zahrnuje následující možnosti:
 
 ## <a name="handling-concurrency"></a>Zpracování souběžnosti 
 
-Pokud je vlastnost nakonfigurovaný jako [token souběžnosti](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency):
+Pokud je vlastnost nakonfigurovaný jako [token souběžnosti](https://docs.microsoft.com/ef/core/modeling/concurrency):
 
-* EF základní ověřuje, že vlastnost neupravoval po se načetla. Kontrola dojde při [SaveChanges](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) nebo [SaveChangesAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) je volána.
+* EF základní ověřuje, že vlastnost neupravoval po se načetla. Kontrola dojde při [SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) nebo [SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) je volána.
 * Pokud vlastnost byla změněna od jeho tabulky se načetla, [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0) je vyvolána výjimka. 
 
 Databáze a datového modelu musí být nakonfigurované pro podporu vyvolání `DbUpdateConcurrencyException`.
 
 ### <a name="detecting-concurrency-conflicts-on-a-property"></a>Zjišťování konfliktů souběžnosti u vlastnosti
 
-Může být zjistil konflikt souběžnosti na úrovni vlastnost s [ConcurrencyCheck](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) atribut. Atribut je použít pro více vlastností v modelu. Další informace najdete v tématu [Data poznámky-ConcurrencyCheck](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency#data-annotations).
+Může být zjistil konflikt souběžnosti na úrovni vlastnost s [ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) atribut. Atribut je použít pro více vlastností v modelu. Další informace najdete v tématu [Data poznámky-ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations).
 
 `[ConcurrencyCheck]` Atribut není použit v tomto kurzu.
 
@@ -127,7 +127,7 @@ Následující zvýrazněný kód ukazuje T-SQL, která ověřuje, že byla aktu
 
 [!code-sql[](intro/samples/sql.txt?highlight=4-6)]
 
-[@@ROWCOUNT ](https://docs.microsoft.com/en-us/sql/t-sql/functions/rowcount-transact-sql) vrátí počet řádků, které jsou ovlivněné poslední příkaz. V žádné řádky jsou aktualizovány, vyvolá EF jádra `DbUpdateConcurrencyException`.
+[@@ROWCOUNT ](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql) vrátí počet řádků, které jsou ovlivněné poslední příkaz. V žádné řádky jsou aktualizovány, vyvolá EF jádra `DbUpdateConcurrencyException`.
 
 Uvidíte, že generuje základní EF T-SQL v okně výstupu sady Visual Studio.
 
@@ -250,7 +250,7 @@ Klikněte na tlačítko **Uložit**. Zobrazí chybové zprávy pro všechna pole
 
 ![Oddělení upravit stránku chybová zpráva](concurrency/_static/edit-error.png)
 
-Chcete-li změnit název pole nechtěli tohoto okna prohlížeče. Zkopírujte a vložte aktuální hodnota (jazyky) do pole název. Klikněte na. Ověřování na straně klienta odebere chybovou zprávu.
+Toto okno prohlížeče neměli v úmyslu změňte název pole. Zkopírujte a vložte aktuální hodnota (jazyky) do pole název. Klikněte na. Ověřování na straně klienta odebere chybovou zprávu.
 
 ![Oddělení upravit stránku chybová zpráva](concurrency/_static/cv.png)
 
@@ -305,8 +305,8 @@ V tématu [dědičnosti](xref:data/ef-mvc/inheritance) o tom, jak dědit datový
 
 ### <a name="additional-resources"></a>Další zdroje
 
-* [Tokeny souběžnosti v EF jádra](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency)
-* [Zpracování souběžnost v EF jádra](https://docs.microsoft.com/en-us/ef/core/saving/concurrency)
+* [Tokeny souběžnosti v EF jádra](https://docs.microsoft.com/ef/core/modeling/concurrency)
+* [Zpracování souběžnost v EF jádra](https://docs.microsoft.com/ef/core/saving/concurrency)
 
 >[!div class="step-by-step"]
 [Předchozí](xref:data/ef-rp/update-related-data)

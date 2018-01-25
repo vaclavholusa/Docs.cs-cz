@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: e678c85520613fea2a8d00de60aca04d895d6307
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 632e6098a03eae02f2367c6dc1c293dbdb6b6170
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>Kurz: Začínáme s SignalR 1.x a MVC 4
 ====================
@@ -53,7 +53,7 @@ Následující snímek obrazovky ukazuje dokončené chatovací aplikace spušt�
 Předpoklady:
 
 - Visual Studio 2010 SP1, Visual Studio 2012 nebo Visual Studio 2012 Express. Pokud nemáte Visual Studio, najdete v části [ASP.NET stáhne](https://www.asp.net/downloads) získat volné Visual Studio 2012 Express vývoj nástroj.
-- Pro Visual Studio 2010, nainstalujte [ASP.NET MVC 4](https://www.microsoft.com/en-us/download/details.aspx?id=30683).
+- Pro Visual Studio 2010, nainstalujte [ASP.NET MVC 4](https://www.microsoft.com/download/details.aspx?id=30683).
 
 V této části ukazuje, jak vytvořit aplikaci ASP.NET MVC 4, přidejte knihovně SignalR a vytvoření chatovací aplikace.
 

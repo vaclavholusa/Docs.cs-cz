@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: 90f24550d2bb50147bab6be545be63c1838f312a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8402aa3db1b2566878c4d56212facbbb2925eec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="webmatrix-readme"></a>Soubor Readme pro službu WebMatrix
 ====================
@@ -34,9 +34,9 @@ ms.lasthandoff: 11/10/2017
 - [Změny a problémy](#ChangesAndIssues)
 
     - [Instalace služby WebMatrix 1.0](#Known_Issues_Installation)
-    - [Rozhraní ASP.NET Web Pages](#Known_Issues_ASPNET)
-    - [Služba WebMatrix](#Known_Issues_WebMatrix)
-    - [Služby IIS Express](#Known_Issues_IISExpress)
+    - [Webové stránky ASP.NET](#Known_Issues_ASPNET)
+    - [WebMatrix](#Known_Issues_WebMatrix)
+    - [IIS Express](#Known_Issues_IISExpress)
     - [SQL Server Compact](#Known_Issues_SQLServerCompact)
     - [Instalace aplikace](#Known_Issues_Installing_Applications)
     - [Publikování aplikací](#Known_Issues_Publishing_Applications)
@@ -97,8 +97,8 @@ ms.lasthandoff: 11/10/2017
 
 > Spravovaná sestavení pro SQL Server Compact 4.0 nejsou umístěny v globální mezipaměti sestavení (GAC), při instalaci systému SQL Server Compact 4.0 na 64bitovém počítači a má počítač pouze profil rozhraní .NET Framework 3.5 SP1 klient nainstalován. Spravovaná sestavení, které nejsou nainstalované v mezipaměti GAC jsou:
 > 
-> - *System.Data.SqlServerCe.dll* (Zprostředkovatel ADO.NET)
-> - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework)
+> - *System.Data.SqlServerCe.dll* (ADO.NET provider)
+> - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework )
 > 
 > **Alternativní řešení**  
 > Odinstalujte systém SQL Server Compact 4.0. Stáhněte a nainstalujte plnou verzi rozhraní .NET Framework 3.5 SP1 z následujícího umístění:  
@@ -118,7 +118,7 @@ ms.lasthandoff: 11/10/2017
 
 <a id="Known_Issues_ASPNET"></a>
 
-### <a name="aspnet-web-pages"></a>Rozhraní ASP.NET Web Pages
+### <a name="aspnet-web-pages"></a>ASP.NET – webové stránky
 
 Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 1.0 z webových stránek ASP.NET se syntaxí Razor.
 
@@ -218,7 +218,7 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 
 > 
 > [!code-xml[Main](overview/samples/sample2.xml)]
 > 
-> Další informace o konfiguraci proxy serveru najdete v tématu [ &lt;proxy&gt; – Element (nastavení sítě)](https://msdn.microsoft.com/en-us/library/sa91de1e.aspx) na webu MSDN.
+> Další informace o konfiguraci proxy serveru najdete v tématu [ &lt;proxy&gt; – Element (nastavení sítě)](https://msdn.microsoft.com/library/sa91de1e.aspx) na webu MSDN.
 
 
 #### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>Problém: Odinstalace rozhraní .NET Framework verze 4 zakáže technologie ASP.NET Web Pages se syntaxí Razor
@@ -257,10 +257,10 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 
 > 
 > 1. Zkopírujte sestavení modulu databáze, které chcete *Bin* složky (a její podsložky) aplikace na cílovém počítači:  
 > 
->     - Kopírování *C:\Program Files\Microsoft SQL serveru Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>     - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
 >         **k** *\Bin*
->     - Kopírování *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\*** k***\Bin\x86*
->     - Kopírování *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **k***\Bin\amd64*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\****to***\Bin\x86*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to***\Bin\amd64*
 > 2. V kořenové složce webové stránky, vytvořit nebo otevřít *web.config* souboru. (Ve službě WebMatrix 1.0 je k dispozici, pokud kliknete na tento typ souboru **všechny** v **vyberte typ souboru** dialogové okno.)
 > 3. Přidejte následující prvek jako podřízenou `<configuration>` – element (mimo `<system.web>` element):
 > 
@@ -291,7 +291,7 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 
 
 <a id="Known_Issues_WebMatrix"></a>
 
-### <a name="webmatrix"></a>Služba WebMatrix
+### <a name="webmatrix"></a>WebMatrix
 
 > [!NOTE]
 > Informace o problémech s instalací pro službu WebMatrix najdete v tématu [problémy instalace služby WebMatrix](#Known_Issues_Installation) dříve v tomto dokumentu.
@@ -400,7 +400,7 @@ Tato část dokumentu popisuje známé problémy pro vývojové prostředí WebM
 
 Služba IIS Express má svůj vlastní soubor readme, který je k dispozici na následující adrese URL:
 
-[https://go.microsoft.com/fwlink/?LinkId=207675&amp;clcid = 0x409](https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409)
+[https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409)
 
 <a id="Known_Issues_SQLServerCompact"></a>
 
@@ -408,7 +408,7 @@ Služba IIS Express má svůj vlastní soubor readme, který je k dispozici na n
 
 Systém SQL Server Compact má svůj vlastní soubor readme, který je k dispozici na následující adrese URL:
 
-[https://go.microsoft.com/fwlink/?LinkId=208545](https://go.microsoft.com/fwlink/?LinkID=208545&amp;clcid=0x409)
+[https://go.microsoft.com/fwlink/?LinkID=208545](https://go.microsoft.com/fwlink/?LinkID=208545&amp;clcid=0x409)
 
 Informace o problémech, které zahrnují instalaci systému SQL Server Compact jako součást nástroje WebMatrix, najdete v tématu [problémy instalace služby WebMatrix](#Known_Issues_Installation) dříve v tomto dokumentu.
 
@@ -560,7 +560,7 @@ Informace o problémech, které zahrnují instalaci systému SQL Server Compact 
 Další informace o službě WebMatrix 1.0 najdete na následujících webech:
 
 - [IIS.net](http://iis.net/)
-- [TECHNOLOGIE ASP.NET](https://asp.net/webmatrix)
-- [Http://www.microsoft.com/web/gallery/install.aspx?appid=IISExpress](https://www.microsoft.com/web)
+- [ASP.NET](https://asp.net/webmatrix)
+- [Microsoft.com/web](https://www.microsoft.com/web)
 
-© Microsoft Corporation. 2011. Všechna práva vyhrazena. [Podmínky použití](https://msdn.microsoft.com/en-us/cc300389.aspx).
+© 2011 Microsoft Corporation. Všechna práva vyhrazena. [Podmínky použití](https://msdn.microsoft.cos/cc300389.aspx).

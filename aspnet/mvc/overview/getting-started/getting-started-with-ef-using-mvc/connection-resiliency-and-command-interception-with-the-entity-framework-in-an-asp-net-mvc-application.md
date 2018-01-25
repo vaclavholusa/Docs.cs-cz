@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: fecdd582918a61f3d01519c75d159f9c601c8223
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a28284e203904cc943e5e46b369e8a58ea5c820
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Odolnost připojení a zachycením příkaz s použitím Entity Framework v aplikaci ASP.NET MVC
 ====================
@@ -49,14 +49,14 @@ Funkci odolnost připojení musí bylo správně nakonfigurované pro konkrétn�
 
 Můžete nakonfigurovat tato nastavení ručně pro jakékoli prostředí databáze nepodporuje zprostředkovatele Entity Framework, ale výchozí hodnoty, které obvykle fungují dobře u online aplikace, která používá databázi SQL Windows Azure byla již nakonfigurována, a ty jsou nastavení, které budete implementovat pro aplikaci univerzity Contoso.
 
-Všechny stačí povolit odolnost připojení je vytvořte třídu v vaše sestavení, která je odvozena z [DbConfiguration](https://msdn.microsoft.com/en-us/data/jj680699.aspx) třídy a v této třídě nastavte databázi SQL *strategii provádění*, což v EF je jiný termín pro *zásady opakování*.
+Všechny stačí povolit odolnost připojení je vytvořte třídu v vaše sestavení, která je odvozena z [DbConfiguration](https://msdn.microsoft.com/data/jj680699.aspx) třídy a v této třídě nastavte databázi SQL *strategii provádění*, což v EF je jiný termín pro *zásady opakování*.
 
 1. Ve složce DAL přidejte soubor třídy s názvem *SchoolConfiguration.cs*.
 2. Kód šablony nahraďte následujícím kódem:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-    Rozhraní Entity Framework automaticky spustí kód najde v třídu odvozenou z `DbConfiguration`. Můžete použít `DbConfiguration` třídy konfigurační úkony v kódu, který by jinak uděláte *Web.config* souboru. Další informace najdete v tématu [EntityFramework konfigurace založené na kódu](https://msdn.microsoft.com/en-us/data/jj680699).
+    Rozhraní Entity Framework automaticky spustí kód najde v třídu odvozenou z `DbConfiguration`. Můžete použít `DbConfiguration` třídy konfigurační úkony v kódu, který by jinak uděláte *Web.config* souboru. Další informace najdete v tématu [EntityFramework konfigurace založené na kódu](https://msdn.microsoft.com/data/jj680699).
 3. V *StudentController.cs*, přidejte `using` příkaz pro `System.Data.Entity.Infrastructure`.
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
@@ -66,13 +66,13 @@ Všechny stačí povolit odolnost připojení je vytvořte třídu v vaše sesta
 
     Jste používali `DataException` pokusit se identifikovat chyby, které můžou být přechodné, aby měla přátelskou zprávou "opakujte". Ale nyní, když jste zapnuli zásady opakovaných pokusů, jenom chyby, které by mohly být přechodné bude již byly se pokusila a se nezdařilo několikrát, a skutečný vrátil výjimku bude uzavřen do `RetryLimitExceededException` výjimka.
 
-Další informace najdete v tématu [odolnost připojení Entity Framework nebo opakujte logiku](https://msdn.microsoft.com/en-us/data/dn456835).
+Další informace najdete v tématu [odolnost připojení Entity Framework nebo opakujte logiku](https://msdn.microsoft.com/data/dn456835).
 
 ## <a name="enable-command-interception"></a>Povolit příkaz zachycení
 
 Teď, když jste zapnuli zásady opakovaných pokusů, jak můžete otestovat ověření, že funguje podle očekávání? Není tak snadno vynutit přechodná chyba provést, hlavně, když spouštíte místně, a je obzvláště složité je skutečný přechodné chyby integrovat do test automatizované jednotky. Chcete-li otestovat funkci odolnost připojení, potřebujete způsob, jak zachytávat dotazy, které Entity Framework odešle na SQL Server a nahraďte typ výjimky, který je obvykle přechodná odpověď serveru SQL.
 
-Můžete také použít dotaz zachycení kvůli implementaci osvědčený postup pro cloudové aplikace: [protokolu latenci a úspěch nebo selhání všechna volání do externích služeb](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) například databázové služby. Poskytuje EF6 [vyhrazené protokolování API](https://msdn.microsoft.com/en-us/data/dn469464) , může být snazší protokolování, ale v této části kurzu budete Další informace o použití rozhraní Entity Framework [funkci zachycení](https://msdn.microsoft.com/en-us/data/dn469464) přímo, i pro protokolování a pro simulaci přechodné chyby.
+Můžete také použít dotaz zachycení kvůli implementaci osvědčený postup pro cloudové aplikace: [protokolu latenci a úspěch nebo selhání všechna volání do externích služeb](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) například databázové služby. Poskytuje EF6 [vyhrazené protokolování API](https://msdn.microsoft.com/data/dn469464) , může být snazší protokolování, ale v této části kurzu budete Další informace o použití rozhraní Entity Framework [funkci zachycení](https://msdn.microsoft.com/data/dn469464) přímo, i pro protokolování a pro simulaci přechodné chyby.
 
 ### <a name="create-a-logging-interface-and-class"></a>Vytvoření rozhraní protokolování a – třída
 

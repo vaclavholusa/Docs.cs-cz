@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bc009272df3626402ee4c52578f9b364f70a4e78
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dbd2f6c8f1e21529da8a0fbffab212a29f615cc1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>Vytváření vlastní řazení uživatelské rozhraní (C#)
 ====================
@@ -187,7 +187,7 @@ Výše uvedený kód uveďte záhlaví skupiny řazení jsou teď při řazení 
 
 
 > [!NOTE]
-> Pokud máte produkty s `NULL` hodnoty pro databáze `CategoryID`, `SupplierID`, nebo `UnitPrice` pole, tyto hodnoty se zobrazí jako prázdné řetězce v GridView ve výchozím nastavení znamená text řádku s oddělovač pro tyto produkty s `NULL`hodnoty se čtou jako kategorie: (to znamená, že s žádný název po kategorie: jako s kategorie: nápoje). Pokud chcete hodnoty zobrazené Zde můžete nastavit buď BoundFields [ `NullDisplayText` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) na text, které chcete zobrazit, nebo můžete přidat příkaz podmíněného v metodě vykreslení při přiřazování `currentValue` pro oddělovač řádek s `Text` vlastnost.
+> Pokud máte produkty s `NULL` hodnoty pro databáze `CategoryID`, `SupplierID`, nebo `UnitPrice` pole, tyto hodnoty se zobrazí jako prázdné řetězce v GridView ve výchozím nastavení znamená text řádku s oddělovač pro tyto produkty s `NULL`hodnoty se čtou jako kategorie: (to znamená, že s žádný název po kategorie: jako s kategorie: nápoje). Pokud chcete hodnoty zobrazené Zde můžete nastavit buď BoundFields [ `NullDisplayText` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) na text, které chcete zobrazit, nebo můžete přidat příkaz podmíněného v metodě vykreslení při přiřazování `currentValue` pro oddělovač řádek s `Text` vlastnost.
 
 
 ## <a name="summary"></a>Souhrn

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ef130e736e2f32fa134156d979ce5bfbedcae828
-ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
+ms.openlocfilehash: 84f386db4ab96a82011ee2fc0b6c20a1a05b5e4b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Základy Middleware ASP.NET Core
 
@@ -55,7 +55,7 @@ Můžete řetězu více delegátů žádost společně s [aplikace. Použití](h
 [!code-csharp[Main](middleware/sample/Chain/Startup.cs?name=snippet1)]
 
 >[!WARNING]
-> Nevolejte `next.Invoke` po odeslání odpovědi klientovi. Změny `HttpResponse` po spuštění odpovědi vyvolá výjimku. Například změny, jako je třeba nastavení hlavičky, stavový kód atd., vyvolá výjimku. Zápis do text odpovědi po volání `next`:
+> Nemůžete volat `next.Invoke` po odeslání odpovědi klientovi. Změny `HttpResponse` po spuštění odpovědi vyvolá výjimku. Například změny, jako je třeba nastavení hlavičky, stavový kód atd., vyvolá výjimku. Zápis do text odpovědi po volání `next`:
 > - Může způsobit narušení protokolu. Například zápis více než deklarovaným `content-length`.
 > - Může dojít k poškození formátu textu. Například zápatí HTML zápis do souboru CSS.
 >
@@ -63,7 +63,7 @@ Můžete řetězu více delegátů žádost společně s [aplikace. Použití](h
 
 ## <a name="ordering"></a>Řazení
 
-Middleware součásti jsou přidány v pořadí `Configure` metoda definuje pořadí, ve kterém jsou vyvolány na požadavky a pro odpověď v obráceném pořadí. Toto pořadí je důležité pro zabezpečení, výkonu a funkce.
+Middleware součásti jsou přidány v pořadí `Configure` metoda definuje pořadí, ve kterém se volá na požadavky a pro odpověď v obráceném pořadí. Toto pořadí je důležité pro zabezpečení, výkonu a funkce.
 
 Metodu konfigurace (viz dole) přidá middleware následující součásti:
 
@@ -140,7 +140,7 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="use-run-and-map"></a>Použití, spuštění a mapy
 
-Můžete nakonfigurovat pomocí kanálu HTTP `Use`, `Run`, a `Map`. `Use` Metoda může krátká smyčka kanálu (tj. Pokud ho nevyvolá `next` delegáta požadavek). `Run`je konvence, a může vystavit některé komponenty middlewaru `Run[Middleware]` metody, které běží na konci kanálu.
+Můžete nakonfigurovat pomocí kanálu HTTP `Use`, `Run`, a `Map`. `Use` Metoda může krátká smyčka kanálu (tj. Pokud není volání `next` delegáta požadavek). `Run`je konvence, a může vystavit některé komponenty middlewaru `Run[Middleware]` metody, které běží na konci kanálu.
 
 `Map*`rozšíření jsou použity jako konvence pro vytvoření větve kanálu. [Mapa](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) větví kanálu požadavku podle odpovídá zadanou cestu požadavku. Pokud cesta požadavku začíná zadané cestě, je proveden větev.
 

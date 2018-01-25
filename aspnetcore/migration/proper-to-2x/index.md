@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 96e645129fa53b10d352dcfda8f1ebb152c4dbac
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2804b5926f1016efcdfd1f9d1b751040d05ce671
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>Migrace z technologie ASP.NET na ASP.NET Core 2.0
 
@@ -38,11 +38,11 @@ Cílení na .NET Core můžete omezit množství explicitní balíček odkazuje,
 </ItemGroup>
 ```
 
-Pokud je použita metapackage, se žádné balíčky, na kterou odkazuje metapackage nasazen s aplikací. Rozhraní .NET Core Runtime úložiště zahrnuje tyto prostředky a jsou předkompilovaných ke zlepšení výkonu. V tématu [Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x](xref:fundamentals/metapackage) další podrobnosti.
+Pokud je použita metapackage, se žádné balíčky, na kterou odkazuje metapackage nasazen s aplikací. Úložišti .NET Core Runtime obsahuje tyto prostředky, a že předkompilovaných ke zlepšení výkonu. V tématu [Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x](xref:fundamentals/metapackage) další podrobnosti.
 
 ## <a name="project-structure-differences"></a>Rozdíly struktura projektu
 *.Csproj* formát souboru je jednodušší v ASP.NET Core. Některé upozorňují na důležité změny patří:
-- Explicitní zahrnutí souborů není nutné mohly být považovány za součást projektu. Tím se snižuje riziko ke konfliktům sloučení XML při práci s velkými týmy.
+- Explicitní zahrnutí souborů není nezbytné pro mají být považovány za součást projektu. Tím se snižuje riziko ke konfliktům sloučení XML při práci s velkými týmy.
 - Nejsou žádné na základě GUID odkazy na další projekty, což zlepšuje čitelnost souboru.
 - Soubor můžete upravit bez uvolnění v sadě Visual Studio:
 

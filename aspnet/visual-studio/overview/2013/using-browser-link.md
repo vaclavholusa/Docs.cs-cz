@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/using-browser-link
 msc.type: authoredcontent
-ms.openlocfilehash: 14f67d81a5b460da591b8fb27fedf53d228e7717
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5a13405a303580ec8c1d4cdacafc26c6f8ff34a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-browser-link-in-visual-studio-2013"></a>Pomocí odkazů prohlížeče v sadě Visual Studio 2013
 ====================
@@ -69,7 +69,7 @@ Když po klepnutí **aktualizovat** tlačítko, změna se objevil v systémech w
 
 **Poznámky**
 
-- Chcete-li povolit Browser Link, nastavte `debug=true` v [ &lt;kompilace&gt; ](https://msdn.microsoft.com/en-us/library/s10awwz0(v=vs.85).aspx) element v souboru Web.config projektu.
+- Chcete-li povolit Browser Link, nastavte `debug=true` v [ &lt;kompilace&gt; ](https://msdn.microsoft.com/library/s10awwz0(v=vs.85).aspx) element v souboru Web.config projektu.
 - Aplikace musí být spuštěn na místním hostiteli.
 - Aplikace musí mít jako cíl rozhraní .NET 4.0 nebo novější.
 

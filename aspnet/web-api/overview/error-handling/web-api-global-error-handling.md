@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d2bdf04b4da2a099f3a2af100b16682c68f946f2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c593c56ba3d0ee8ebf6dc425408d2c3b91c83f93
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="global-error-handling-in-aspnet-web-api-2"></a>Globální zpracování chyb v rozhraní ASP.NET Web API 2
 ====================
@@ -46,7 +46,7 @@ Kromě [filtry výjimek](exception-handling.md), [obslužné rutiny zpráv](../a
 1. Podporujeme registrace protokolovačů více výjimek, ale jenom jeden výjimka obslužná rutina.
 2. Protokolovačů výjimek vždy zavolána, i když jsme se chystáte přerušit připojení. Obslužné rutiny výjimek získat volat jenom když jsme stále moci vybrat které zpráva odpověď k odeslání.
 
-Obě služby poskytovat přístup k kontext výjimky obsahující příslušné informace z bodu, kde byla zjištěna výjimka, zejména v [HttpRequestMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessage(v=vs.110).aspx), [HttpRequestContext](https://msdn.microsoft.com/en-us/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx), vyvolána výjimka a zdroji výjimky (níže uvedené podrobnosti).
+Obě služby poskytovat přístup k kontext výjimky obsahující příslušné informace z bodu, kde byla zjištěna výjimka, zejména v [HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage(v=vs.110).aspx), [HttpRequestContext](https://msdn.microsoft.com/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx), vyvolána výjimka a zdroji výjimky (níže uvedené podrobnosti).
 
 ### <a name="design-principles"></a>Principy návrhu
 
@@ -97,7 +97,7 @@ V další `ExceptionContext`, obslužná rutina získá jeden další vlastnost 
 
 [!code-csharp[Main](web-api-global-error-handling/samples/sample5.cs)]
 
-Obslužné rutiny výjimek označuje, že se má výjimka ošetřena nastavením `Result` vlastnost na výsledek akce (například [ExceptionResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.exceptionresult(v=vs.118).aspx), [InternalServerErrorResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx), [ StatusCodeResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.statuscoderesult(v=vs.118).aspx), nebo vlastní výsledek). Pokud `Result` vlastnost má hodnotu null, neošetřené výjimky a původní výjimka bude znovu.
+Obslužné rutiny výjimek označuje, že se má výjimka ošetřena nastavením `Result` vlastnost na výsledek akce (například [ExceptionResult](https://msdn.microsoft.com/library/system.web.http.results.exceptionresult(v=vs.118).aspx), [InternalServerErrorResult](https://msdn.microsoft.com/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx), [ StatusCodeResult](https://msdn.microsoft.com/library/system.web.http.results.statuscoderesult(v=vs.118).aspx), nebo vlastní výsledek). Pokud `Result` vlastnost má hodnotu null, neošetřené výjimky a původní výjimka bude znovu.
 
 Výjimky v horní části zásobníku volání vzali jsme krok navíc k zajištění, že odpověď je vhodný pro volající rozhraní API. Pokud se výjimka šíří až hostitel, volající by žlutý obrazovku smrti nebo některých jiných hostitele zadaný odpovědi, což je většinou HTML a obvykle odpovídající chybnou odpověď rozhraní API. V těchto případech spustí výsledek na jinou hodnotu než null a pouze v případě jeho obslužná rutina vlastní výjimky explicitně nastaví zpět na `null` (neošetřená) se výjimka šíří do hostitele. Nastavení `Result` k `null` v takových případech může být užitečná pro dva scénáře:
 

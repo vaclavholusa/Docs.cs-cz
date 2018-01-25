@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 059dc3a163c646877da40a73bcc9a75eb38fb345
-ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
+ms.openlocfilehash: a08c1b59c7be3a27fc11e6737a1cb4b4208f2901
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -348,7 +348,7 @@ Na následující stránce generuje kód pro dvě stránky pomocí obslužné ru
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?highlight=12-13)]
 
-<!-- Review: the FormActionTagHelper applies to all <form /> elements on a Razor page, even when there is no `asp-` attribute   -->
+<!-- Review: the FormActionTagHelper applies to all <form /> elements on a Razor page, even when there's no `asp-` attribute   -->
 
 Formuláře v předchozím příkladu má dva odeslání tlačítka, každý využívající `FormActionTagHelper` odeslat na jinou adresu URL. `asp-page-handler` Atribut je Pomocníka pro `asp-page`. `asp-page-handler`generuje adresy URL, které odesílají do jednotlivých metod obslužné rutiny, které jsou definované na stránce. `asp-page`není zadán, protože je ukázka propojení na aktuální stránce.
 
@@ -370,7 +370,7 @@ Pokud chcete řetězec dotazu `?handler=JoinList` v adrese URL, můžete změnit
 
 Předchozí trasy vloží název obslužné rutiny cesty URL místo řetězec dotazu. `?` Následující `handler` znamená je volitelný parametr trasy.
 
-Můžete použít `@page` a přidejte další segmenty a parametry k postupu na stránce. Ať je k dispozici je **připojí** trasu výchozí stránky. Použití absolutní nebo virtuální cesta ke změně stránky trasy (například `"~/Some/Other/Path"`) není podporován.
+Můžete použít `@page` a přidejte další segmenty a parametry k postupu na stránce. Ať je k dispozici má **připojí** trasu výchozí stránky. Použití absolutní nebo virtuální cesta ke změně stránky trasy (například `"~/Some/Other/Path"`) není podporován.
 
 ## <a name="configuration-and-settings"></a>Konfigurace a nastavení
 

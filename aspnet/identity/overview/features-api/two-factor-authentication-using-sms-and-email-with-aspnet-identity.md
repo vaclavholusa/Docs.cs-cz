@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: ecb1fc693063995a3a05a7af5db64554c9f595e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0f9ff7cf74048a008b150da1e843ff15333269ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a>Dvoufaktorové ověřování pomocí SMS a e-mailu s ASP.NET Identity
 ====================
@@ -168,7 +168,7 @@ Poté zadejte kód a klikněte na odeslání, kód je odeslána do HTTP POST `Ve
 
 `isPersistent` Parametr nastaví, zda je relace ověřování zachová pro víc požadavků.
 
-Když změníte profil zabezpečení, nové razítko zabezpečení se generuje a uloží do `SecurityStamp` pole z *AspNetUsers* tabulky. Poznámka: `SecurityStamp` pole se liší od zabezpečení souboru cookie. Soubor cookie zabezpečení nejsou uloženy v `AspNetUsers` tabulky (nebo kdekoli jinde v databázi Identity). Token zabezpečení souboru cookie je podepsaný pomocí [DPAPI](https://msdn.microsoft.com/en-us/library/system.security.cryptography.protecteddata.aspx) a pomocí `UserId, SecurityStamp` a informace o čas vypršení platnosti.
+Když změníte profil zabezpečení, nové razítko zabezpečení se generuje a uloží do `SecurityStamp` pole z *AspNetUsers* tabulky. Poznámka: `SecurityStamp` pole se liší od zabezpečení souboru cookie. Soubor cookie zabezpečení nejsou uloženy v `AspNetUsers` tabulky (nebo kdekoli jinde v databázi Identity). Token zabezpečení souboru cookie je podepsaný pomocí [DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx) a pomocí `UserId, SecurityStamp` a informace o čas vypršení platnosti.
 
 Middlewaru souboru cookie zkontroluje souborů cookie u každého požadavku. `SecurityStampValidator` Metoda v `Startup` třída přístupů do databáze a zkontroluje razítko zabezpečení pravidelně jako zadaný `validateInterval`. Tato situace nastane pouze každých 30 minut (v našem ukázce) není-li změnit váš profil zabezpečení. Chcete-li minimalizovat služebních cest do databáze byla zvolena intervalu 30 minut.
 
@@ -264,7 +264,7 @@ Jak místní přihlášení a sociálních protokolu v zkontrolujte, zda je povo
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample17.cs?highlight=10-11,17-18)]
 
-Následující kód ukazuje `SendCode` metody akce. A [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) je vytvořena s všechny metody 2FA pro daného uživatele povoleno. [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) je předán [DropDownListFor](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.dropdownlist.aspx) pomocné rutiny, která umožňuje uživateli vybrat metodu 2FA (obvykle e-mailu a SMS).
+Následující kód ukazuje `SendCode` metody akce. A [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) je vytvořena s všechny metody 2FA pro daného uživatele povoleno. [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) je předán [DropDownListFor](https://msdn.microsoft.com/library/system.web.ui.webcontrols.dropdownlist.aspx) pomocné rutiny, která umožňuje uživateli vybrat metodu 2FA (obvykle e-mailu a SMS).
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample18.cs)]
 

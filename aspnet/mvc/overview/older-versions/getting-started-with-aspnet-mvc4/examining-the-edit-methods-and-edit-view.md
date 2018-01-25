@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: fb20c98283bfd46e62d56252bbec4f4b4b08b1c3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a20693f3e83053dd99499d486412b66777189f1d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>Zkoumání upravit metody a zobrazení
 ====================
@@ -38,7 +38,7 @@ Spusťte aplikaci a přejděte do `Movies` řadiče připojením */Movies* na ad
 
 ![Html.ActionLink](examining-the-edit-methods-and-edit-view/_static/image2.png)
 
-`Html` Objekt je pomocné rutiny, který je zveřejněný pomocí vlastnosti na [System.Web.Mvc.WebViewPage](https://msdn.microsoft.com/en-us/library/gg402107(VS.98).aspx) základní třídy. `ActionLink` Metoda pomocníka, který usnadňuje dynamicky generovat hypertextové odkazy HTML, které odkazují na metody akce na řadiče. První argument `ActionLink` metoda je text odkazu k vykreslení (například `<a>Edit Me</a>`). Druhý argument je název metody akce, která bude vyvolána. Konečný argument je [anonymní objekt](https://weblogs.asp.net/scottgu/archive/2007/05/15/new-orcas-language-feature-anonymous-types.aspx) který generuje data trasy (v tomto případě ID 4).
+`Html` Objekt je pomocné rutiny, který je zveřejněný pomocí vlastnosti na [System.Web.Mvc.WebViewPage](https://msdn.microsoft.com/library/gg402107(VS.98).aspx) základní třídy. `ActionLink` Metoda pomocníka, který usnadňuje dynamicky generovat hypertextové odkazy HTML, které odkazují na metody akce na řadiče. První argument `ActionLink` metoda je text odkazu k vykreslení (například `<a>Edit Me</a>`). Druhý argument je název metody akce, která bude vyvolána. Konečný argument je [anonymní objekt](https://weblogs.asp.net/scottgu/archive/2007/05/15/new-orcas-language-feature-anonymous-types.aspx) který generuje data trasy (v tomto případě ID 4).
 
 Vygenerovaný odkaz viz předchozí obrázek je `http://localhost:xxxxx/Movies/Edit/4`. Výchozí trasa (nastavené v *aplikace\_Start\RouteConfig.cs*) trvá vzor adresy URL `{controller}/{action}/{id}`. Proto ASP.NET překládá `http://localhost:xxxxx/Movies/Edit/4` do požadavek na `Edit` metody akce `Movies` řadiče s parametrem `ID` rovna 4. Zkontrolujte následující kód *aplikace\_Start\RouteConfig.cs* souboru.
 
@@ -54,13 +54,13 @@ Otevřete `Movies` řadiče. Dva `Edit` metody akce, které jsou uvedeny níže.
 
 Všimněte si, druhý `Edit` předchází metody akce `HttpPost` atribut. Tento atribut určuje, které přetížení z `Edit` metoda může být volána pouze pro požadavky POST. Je možné aplikovat `HttpGet` atribut prvního upravit metodu, ale který není nutné protože je výchozí hodnota. (Budeme označovat metody akce, které jsou implicitně přiřazené `HttpGet` atribut jako `HttpGet` metody.)
 
-`HttpGet` `Edit` Metoda přebírá parametr ID film, vyhledává film používající rozhraní Entity Framework `Find` metoda a vrátí vybraného videa na zobrazení pro úpravy. Určuje parametr ID [výchozí hodnota](https://msdn.microsoft.com/en-us/library/dd264739.aspx) z nula v případě `Edit` metoda je volána bez parametrů. Pokud nelze nalézt film, [HttpNotFound](https://msdn.microsoft.com/en-us/library/gg453938(VS.98).aspx) je vrácen. Při generování uživatelského rozhraní systému vytvoření zobrazení pro úpravy, zkontrolován `Movie` třídy a vytvořený kód k vykreslení `<label>` a `<input>` prvky pro každou vlastnost třídy. Následující příklad ukazuje zobrazení upravit, která byla vygenerována:
+`HttpGet` `Edit` Metoda přebírá parametr ID film, vyhledává film používající rozhraní Entity Framework `Find` metoda a vrátí vybraného videa na zobrazení pro úpravy. Určuje parametr ID [výchozí hodnota](https://msdn.microsoft.com/library/dd264739.aspx) z nula v případě `Edit` metoda je volána bez parametrů. Pokud nelze nalézt film, [HttpNotFound](https://msdn.microsoft.com/library/gg453938(VS.98).aspx) je vrácen. Při generování uživatelského rozhraní systému vytvoření zobrazení pro úpravy, zkontrolován `Movie` třídy a vytvořený kód k vykreslení `<label>` a `<input>` prvky pro každou vlastnost třídy. Následující příklad ukazuje zobrazení upravit, která byla vygenerována:
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample4.cshtml)]
 
 Všimněte si, jak se má zobrazit šablonu `@model MvcMovie.Models.Movie` příkaz v horní části souboru – tato hodnota určuje, že zobrazení očekává, že model pro zobrazení šablony být typu `Movie`.
 
-Automaticky generovaný kód používá několik *pomocné metody* zefektivnění kód HTML. [ `Html.LabelFor` ](https://msdn.microsoft.com/en-us/library/gg401864(VS.98).aspx) Pomocné rutiny zobrazuje název pole (&quot;název&quot;, &quot;ReleaseDate&quot;, &quot;Genre&quot;, nebo &quot;cena &quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) Vykreslí pomocné rutiny HTML `<input>` elementu. [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) Pomocník zobrazí všechny zprávy ověření přidružené k této vlastnosti.
+Automaticky generovaný kód používá několik *pomocné metody* zefektivnění kód HTML. [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx) Pomocné rutiny zobrazuje název pole (&quot;název&quot;, &quot;ReleaseDate&quot;, &quot;Genre&quot;, nebo &quot;cena &quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) Vykreslí pomocné rutiny HTML `<input>` elementu. [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) Pomocník zobrazí všechny zprávy ověření přidružené k této vlastnosti.
 
 Spusťte aplikaci a přejděte do */Movies* adresy URL. Klikněte na tlačítko **upravit** odkaz. V prohlížeči zobrazte zdroj pro stránku. Kód HTML pro form element jsou uvedeny níže.
 
@@ -74,7 +74,7 @@ Následující seznam uvádí `HttpPost` verzi `Edit` metody akce.
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample6.cs)]
 
-[Vazač modelu ASP.NET MVC](https://msdn.microsoft.com/en-us/magazine/hh781022.aspx) přijímá hodnoty odeslaného formuláře a vytvoří `Movie` objekt, který se předá jako `movie` parametr. `ModelState.IsValid` Metoda ověří, že odeslaná data do formuláře lze použít k úpravě (upravit nebo aktualizace) `Movie` objektu. Pokud jsou data platná, film data jsou uložena do `Movies` kolekce `db(MovieDBContext` instance). Nová data film je uložit do databáze při volání `SaveChanges` metodu `MovieDBContext`. Po uložení dat, kód přesměruje uživatele `Index` metody akce `MoviesController` třídy, které zobrazuje film kolekce, včetně pouze změny.
+[Vazač modelu ASP.NET MVC](https://msdn.microsoft.com/magazine/hh781022.aspx) přijímá hodnoty odeslaného formuláře a vytvoří `Movie` objekt, který se předá jako `movie` parametr. `ModelState.IsValid` Metoda ověří, že odeslaná data do formuláře lze použít k úpravě (upravit nebo aktualizace) `Movie` objektu. Pokud jsou data platná, film data jsou uložena do `Movies` kolekce `db(MovieDBContext` instance). Nová data film je uložit do databáze při volání `SaveChanges` metodu `MovieDBContext`. Po uložení dat, kód přesměruje uživatele `Index` metody akce `MoviesController` třídy, které zobrazuje film kolekce, včetně pouze změny.
 
 Pokud odeslaných hodnot nejsou platné, se zobrazí znovu ve formuláři. `Html.ValidationMessageFor` Pomocné rutiny v *Edit.cshtml* zobrazení šablony postará o zobrazení příslušné chybové zprávy.
 
@@ -102,7 +102,7 @@ Začněte přidáním `SearchIndex` metoda akce ke stávající `MoviesControlle
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample9.cs)]
 
-První řádek `SearchIndex` metoda vytvoří následující [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) dotazu a vyberte filmy:
+První řádek `SearchIndex` metoda vytvoří následující [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) dotazu a vyberte filmy:
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample10.cs)]
 
@@ -112,7 +112,7 @@ Pokud `searchString` parametr obsahuje řetězec, filmy dotazu je změněno na f
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample11.cs)]
 
-`s => s.Title` Je výše uvedený kód [výrazu Lambda](https://msdn.microsoft.com/en-us/library/bb397687.aspx). Lambdas se používají v na základě metod [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) dotazuje jako argumenty pro standardní dotaz operátor metody, jako [kde](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.where.aspx) metoda použitá ve výše uvedeném kódu. Dotazy LINQ nebudou provedeny, když jsou definovány nebo když jsou upraveny voláním metody `Where` nebo `OrderBy`. Místo toho při provádění dotazu je odložení, což znamená, že je zpožděno vyhodnocení výrazu, dokud jeho zjištěné hodnota je ve skutečnosti vstupní přes nebo [ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx) metoda je volána. V `SearchIndex` ukázku, je dotaz proveden v SearchIndex zobrazení. Další informace o provádění odložené dotazů najdete v tématu [provádění dotazu](https://msdn.microsoft.com/en-us/library/bb738633.aspx).
+`s => s.Title` Je výše uvedený kód [výrazu Lambda](https://msdn.microsoft.com/library/bb397687.aspx). Lambdas se používají v na základě metod [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) dotazuje jako argumenty pro standardní dotaz operátor metody, jako [kde](https://msdn.microsoft.com/library/system.linq.enumerable.where.aspx) metoda použitá ve výše uvedeném kódu. Dotazy LINQ nebudou provedeny, když jsou definovány nebo když jsou upraveny voláním metody `Where` nebo `OrderBy`. Místo toho při provádění dotazu je odložení, což znamená, že je zpožděno vyhodnocení výrazu, dokud jeho zjištěné hodnota je ve skutečnosti vstupní přes nebo [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) metoda je volána. V `SearchIndex` ukázku, je dotaz proveden v SearchIndex zobrazení. Další informace o provádění odložené dotazů najdete v tématu [provádění dotazu](https://msdn.microsoft.com/library/bb738633.aspx).
 
 Teď můžete implementovat `SearchIndex` zobrazení, které se uživateli zobrazí formulář. Klepněte pravým tlačítkem myši `SearchIndex` metoda a pak klikněte na tlačítko **přidat zobrazení**. V **přidat zobrazení** dialogovém okně zadejte, že budete předávat `Movie` objekt, který chcete zobrazit šablonu jako jeho třídu modelu. V **vygenerované uživatelské rozhraní šablony** vyberte **seznamu**, pak klikněte na tlačítko **přidat**.
 

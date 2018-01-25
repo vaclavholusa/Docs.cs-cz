@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 6a5feb9039c5b0e9823e5f22f4d55a70830dd3e6
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: f0953ad5d9f1bfa92ecc5169d9a211ce6b8cda8f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Poskytovatelé vlastní úložiště pro ASP.NET Core Identity
 
@@ -62,7 +62,7 @@ Při vytváření novou instanci třídy `UserManager` nebo `RoleManager` zadejt
 
 ### <a name="users"></a>Uživatelé
 
-Registrovaní uživatelé vašeho webu. [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser) typ může rozšířit nebo používat jako příklad pro vlastní vlastního typu. Není nutné dědění z konkrétního typu implementovat vlastní řešení úložiště vlastní identitu.
+Registrovaní uživatelé vašeho webu. [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser) typ může rozšířit nebo používat jako příklad pro vlastní vlastního typu. Nemusíte dědit z konkrétního typu implementovat vlastní řešení úložiště vlastní identitu.
 
 ### <a name="user-claims"></a>Deklarace identity uživatelů
 
@@ -78,9 +78,9 @@ Skupiny autorizaci pro svůj web. Obsahuje název role a Id role (například "A
 
 ## <a name="the-data-access-layer"></a>Vrstva přístupu k datům
 
-Toto téma předpokládá, že jste obeznámeni s trvalost mechanismus, který chcete použít a jak vytvořit entit pro tento mechanismus. Toto téma neobsahuje podrobnosti o tom, jak vytvořit úložiště nebo data přístupové třídy; poskytuje několik návrhů o rozhodnutí o návrhu při práci s ASP.NET Core Identity.
+Toto téma předpokládá, že jste obeznámeni s trvalost mechanismus, který chcete použít a jak vytvořit entit pro tento mechanismus. Toto téma neposkytuje informace o tom, jak vytvořit úložiště nebo data přístupové třídy; poskytuje několik návrhů o rozhodnutí o návrhu při práci s ASP.NET Core Identity.
 
-Máte spoustu volnost při navrhování vrstva přístupu k datům pro zprostředkovatele vlastní úložiště. Potřebujete vytvořit trvalost mechanismy pro funkce, které chcete používat ve vaší aplikaci. Například pokud nepoužíváte role ve vaší aplikaci, není potřeba vytvořit úložiště pro role nebo přiřazení role uživatelů. Technologie a existující infrastruktura může vyžadovat strukturu, která je příliš neliší od výchozí implementaci ASP.NET Core Identity. Přístup k vaší Datová vrstva poskytnete logiku pro práci s strukturu vaší implementace úložiště.
+Máte spoustu volnost při navrhování vrstva přístupu k datům pro zprostředkovatele vlastní úložiště. Potřebujete vytvořit trvalost mechanismy pro funkce, které chcete používat ve vaší aplikaci. Například pokud nepoužíváte role ve vaší aplikaci, nepotřebujete vytvořit úložiště pro role nebo přiřazení role uživatelů. Technologie a existující infrastruktura může vyžadovat strukturu, která je příliš neliší od výchozí implementaci ASP.NET Core Identity. Přístup k vaší Datová vrstva poskytnete logiku pro práci s strukturu vaší implementace úložiště.
 
 Vrstva přístupu k datům poskytuje logiku pro uložení dat z ASP.NET Core Identity ke zdroji dat. Vrstva přístupu k datům pro poskytovatele vlastní úložiště může obsahovat následující třídy k ukládání informací o uživateli a role.
 

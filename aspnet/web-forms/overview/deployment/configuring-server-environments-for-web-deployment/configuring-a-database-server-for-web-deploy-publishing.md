@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: b225d9911246b3e2be1679b73a9f31d9f8577ba5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98fd728f48f6fb64a61686bc58824b9fb3a28b13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Konfigurace databáze serveru pro publikování nasazení webu
 ====================
@@ -48,7 +48,7 @@ Toto téma vám ukáže, jak provést všechny tyto postupy. Úlohy a postupy v 
 Instance systému SQL Server pouze musí obsahovat **služby databázového stroje** role, která je automaticky součástí všechny instalace systému SQL Server. Pro usnadnění konfigurace a údržby, doporučujeme však zahrnout **nástroje pro správu – základní** a **nástroje pro správu – dokončeno** role serveru.
 
 > [!NOTE]
-> Další informace o připojení počítače k doméně, najdete v části [připojení počítače k doméně a protokolování na](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx). Další informace o konfiguraci statických IP adres najdete v tématu [nakonfigurovat statickou IP adresu](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx). Další informace o instalaci systému SQL Server najdete v tématu [instalace systému SQL Server 2008 R2](https://technet.microsoft.com/en-us/library/bb500395.aspx).
+> Další informace o připojení počítače k doméně, najdete v části [připojení počítače k doméně a protokolování na](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Další informace o konfiguraci statických IP adres najdete v tématu [nakonfigurovat statickou IP adresu](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx). Další informace o instalaci systému SQL Server najdete v tématu [instalace systému SQL Server 2008 R2](https://technet.microsoft.com/library/bb500395.aspx).
 
 
 ## <a name="enable-remote-access-to-sql-server"></a>Povolte vzdálený přístup k systému SQL Server
@@ -66,7 +66,7 @@ K povolení SQL serveru pro komunikaci pomocí protokolu TCP/IP, použijte Sprá
 2. V podokně stromu, rozbalte položku **konfigurace sítě serveru SQL Server**a potom klikněte na **protokoly pro MSSQLSERVER**.
 
     > [!NOTE]
-    > Pokud jste nainstalovali více instancí systému SQL Server, zobrazí se **protokoly pro***[název instance]* položku pro každou instanci. Musíte nakonfigurovat nastavení sítě na základě instance instance.
+    > Pokud jste nainstalovali více instancí systému SQL Server, zobrazí se **protokoly pro *** [název instance]* položku pro každou instanci. Musíte nakonfigurovat nastavení sítě na základě instance instance.
 3. V podokně podrobností klikněte pravým tlačítkem myši **TCP/IP** řádek a potom klikněte na **povolit**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -102,7 +102,7 @@ Za předpokladu, že používáte výchozí instanci systému SQL Server, budete
   
 
 > [!NOTE]
-> Technicky klientský počítač bude používat náhodně přidělenému portu TCP 1024 až 5000 pro komunikaci se serverem SQL Server a vašich pravidlech brány firewall můžete omezit odpovídajícím způsobem. Další informace o porty systému SQL Server a brány firewall najdete v tématu [čísla portů TCP/IP vyžadované pro komunikaci přes bránu firewall pro SQL](https://go.microsoft.com/?linkid=9805125) a [postupy: Konfigurace serveru pro naslouchání na specifickém portu TCP (Konfigurace serveru SQL Server Správce)](https://msdn.microsoft.com/en-us/library/ms177440.aspx).
+> Technicky klientský počítač bude používat náhodně přidělenému portu TCP 1024 až 5000 pro komunikaci se serverem SQL Server a vašich pravidlech brány firewall můžete omezit odpovídajícím způsobem. Další informace o porty systému SQL Server a brány firewall najdete v tématu [čísla portů TCP/IP vyžadované pro komunikaci přes bránu firewall pro SQL](https://go.microsoft.com/?linkid=9805125) a [postupy: Konfigurace serveru pro naslouchání na specifickém portu TCP (Konfigurace serveru SQL Server Správce)](https://msdn.microsoft.com/library/ms177440.aspx).
 
 
 Ve většině prostředí systému Windows Server budete pravděpodobně muset konfigurace brány Windows Firewall na databázovém serveru. Ve výchozím nastavení brány Windows Firewall umožňuje všechny odchozí přenosy, pokud pravidlo výslovně nezakáže. Pokud chcete povolit přístup k databázi webovému serveru, musíte nakonfigurovat příchozí pravidlo, které umožňuje přenos TCP na číslo portu, který používá instanci systému SQL Server. Pokud používáte výchozí instanci systému SQL Server, můžete konfigurovat toto pravidlo v dalším postupu.
@@ -126,11 +126,11 @@ Ve většině prostředí systému Windows Server budete pravděpodobně muset k
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image9.png)
 8. Na **název** stránky, zadejte pro pravidlo vhodně popisný název (například **výchozí instanci systému SQL Server – přístup k síti**) a potom klikněte na **Dokončit**.
 
-Další informace o konfiguraci brány Windows Firewall pro SQL Server, zvlášť pokud je nutné komunikovat se serverem SQL Server přes nestandardní nebo dynamické porty, najdete v části [postupy: Konfigurace brány Windows Firewall pro přístup k databázovému stroji](https://technet.microsoft.com/en-us/library/ms175043.aspx).
+Další informace o konfiguraci brány Windows Firewall pro SQL Server, zvlášť pokud je nutné komunikovat se serverem SQL Server přes nestandardní nebo dynamické porty, najdete v části [postupy: Konfigurace brány Windows Firewall pro přístup k databázovému stroji](https://technet.microsoft.com/library/ms175043.aspx).
 
 ## <a name="configure-logins-and-database-permissions"></a>Konfigurace přihlášení a databáze oprávnění
 
-Když nasadíte webovou aplikaci k Internetové informační služby (IIS), je aplikace spuštěná pomocí identity fondu aplikací. V prostředí domény identity fondu aplikací použijte účet počítače serveru, na kterém poběží přístup k síťovým prostředkům. Účty počítače ve formě *[název domény]***\***[název počítače] ***$**& #x 2014, například **FABRIKAM\ TESTWEB1$**. Chcete-li povolit webovou aplikaci na přístup k databázi v síti, je potřeba:
+Když nasadíte webovou aplikaci k Internetové informační služby (IIS), je aplikace spuštěná pomocí identity fondu aplikací. V prostředí domény identity fondu aplikací použijte účet počítače serveru, na kterém poběží přístup k síťovým prostředkům. Účty počítače ve formě * [název domény]***\*** [název počítače]***$** & #x 2014; například **FABRIKAM\TESTWEB1$**. Chcete-li povolit webovou aplikaci na přístup k databázi v síti, je potřeba:
 
 - Přidáte přihlašovací jméno pro účet počítače webového serveru do instance systému SQL Server.
 - Mapy připojení k účtu počítače k žádné roli požadovaná databáze (obvykle **db\_DataReader –** a **db\_datawriter**).
@@ -183,7 +183,7 @@ Další informace o automatické vytváření přihlášení a mapování role d
 Když ručně mapování databázové role je často více než dostačující pro testovací prostředí, je méně vhodné pro nasazení automatizované nebo jedním kliknutím k pracovním nebo produkčním prostředí. Můžete najít další informace o automatizaci tento druh úloh pomocí skriptů po nasazení v [nasazení členství Role databáze pro testovací prostředí](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md).
 
 > [!NOTE]
-> Další informace o serveru projekty a databázové projekty najdete v tématu [Visual Studio 2010 SQL serveru databázové projekty](https://msdn.microsoft.com/en-us/library/ff678491.aspx).
+> Další informace o serveru projekty a databázové projekty najdete v tématu [Visual Studio 2010 SQL serveru databázové projekty](https://msdn.microsoft.com/library/ff678491.aspx).
 
 
 ## <a name="configure-permissions-for-the-deployment-account"></a>Konfigurace oprávnění pro účet nasazení

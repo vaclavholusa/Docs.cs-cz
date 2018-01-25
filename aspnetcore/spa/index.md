@@ -11,16 +11,16 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/index
-ms.openlocfilehash: 0ac3803aabdc148401b9d5b614645a8560c9a089
-ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
+ms.openlocfilehash: bfb00386af0e775b4c03a71567703ed87a785ce2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="use-the-single-page-application-templates-release-candidate"></a>Použití šablon jednostránkové aplikace (verze release candidate)
 
 > [!NOTE]
-> Vydaná .NET Core 2.0.x SDK obsahuje šablony projektů pro úhlová reagují a s Redux reagovat. **Tato dokumentace není o tyto šablony vydaných projektu.** Tato dokumentace je pro další verze úhlová, reagují a reagují s – obnovení šablony, které Věříme, že pro odeslání v časná 2018.
+> Vydaná .NET Core 2.0.x SDK obsahuje šablony projektů pro úhlová reagují a s Redux reagovat. **Tato dokumentace se o tyto šablony vydaných projektu.** Tato dokumentace je pro další verze úhlová, reagují a reagují s – obnovení šablony, které Věříme, že pro odeslání v časná 2018.
 
 ## <a name="prerequisites"></a>Požadavky
 

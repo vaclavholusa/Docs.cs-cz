@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: fcdded3a7e80ee797eae445f347735f0f7b3d7ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>Práce s formuláře HTML na webech ASP.NET – webové stránky (Razor)
 ====================
@@ -134,12 +134,12 @@ Problém můžete vyřešit snadno, ale. Máte přístup k hodnotám, které byl
     `value` Atribut `<input>` elementy byla nastavena dynamicky načíst hodnotu pole z `Request.Form` objektu. Při prvním požadavku na stránku hodnoty `Request.Form` objekt jsou všechny prázdné. Toto je dobře, protože tímto způsobem formuláře je prázdná.
 2. Spusťte stránku v prohlížeči, vyplňte pole formuláře nebo zůstat prázdné a klikněte na tlačítko **odeslání**. Zobrazí se stránka, která zobrazuje odeslaná hodnoty.
 
-    ![Forms 5](4-working-with-forms/_static/image5.jpg)
+    ![forms-5](4-working-with-forms/_static/image5.jpg)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Další prostředky
 
-- [1,001 způsoby, jak získat vstup od uživatelů webu](https://msdn.microsoft.com/en-us/library/ms971057.aspx)
-- [Pomocí formulářů a zpracování uživatelského vstupu](https://msdn.microsoft.com/en-us/library/ms525182(VS.90).aspx)
-- [Ověřování uživatelského vstupu v ASP.NET – webové stránky servery](https://go.microsoft.com/fwlink/?LinkId=253002)
-- [Použití automatického dokončování v formuláře HTML](https://msdn.microsoft.com/en-us/library/ms533032(VS.85).aspx)
+- [1,001 způsoby, jak získat vstup od uživatelů webu](https://msdn.microsoft.com/library/ms971057.aspx)
+- [Pomocí formulářů a zpracování uživatelského vstupu](https://msdn.microsoft.com/library/ms525182(VS.90).aspx)
+- [Ověřování uživatelských vstupů na webech s webovými stránkami ASP.NET](https://go.microsoft.com/fwlink/?LinkId=253002)
+- [Použití automatického dokončování v formuláře HTML](https://msdn.microsoft.com/library/ms533032(VS.85).aspx)

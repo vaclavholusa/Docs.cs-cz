@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website
 msc.type: authoredcontent
-ms.openlocfilehash: c747fef33a6d1db19f09fd0303c47d689b956687
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 742409219bd3b05f8ddf2c0d5034919fc9bf1d26
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>Ukládání dat v Web Pages (Razor) technologie ASP.NET do mezipaměti pro dosažení vyššího výkonu
 ====================
@@ -72,10 +72,10 @@ Technologie ASP.NET obsahuje `WebCache` pomocné rutiny, která umožňuje snadn
     Tento kód ukazuje vzor, který byste měli vždycky používat při mezipaměti data. Než získáte něco z mezipaměti, vždy proveďte nejprve kontrolu jestli `WebCache.Get` Metoda vrátila hodnotu null. Mějte na paměti, že položky mezipaměti vypršela nebo mohl být odebrán z jiného důvodu, takže všechny položky daného nikdy zaručena bezpečnost pro přístup do mezipaměti.
 3. Spustit *WebCache.cshtml* v prohlížeči. (Ujistěte se, že je vybraný stránky v **soubory** pracovního prostoru, než ji spustit.) Při prvním požadavku na stránce časových dat není v mezipaměti a kód má pro přidání hodnoty time do mezipaměti.
 
-    ![mezipaměť-1](15-caching-to-improve-the-performance-of-your-website/_static/image1.jpg)
+    ![cache-1](15-caching-to-improve-the-performance-of-your-website/_static/image1.jpg)
 4. Aktualizujte *WebCache.cshtml* v prohlížeči. Tentokrát časových dat je v mezipaměti. Všimněte si, že se od posledního zobrazit stránku nezměnil čas.
 
-    ![mezipaměť-2](15-caching-to-improve-the-performance-of-your-website/_static/image2.jpg)
+    ![cache-2](15-caching-to-improve-the-performance-of-your-website/_static/image2.jpg)
 5. Počkejte minutu mezipaměti vyprázdnit a pak aktualizujte stránku. Stránky znovu označuje, že časových dat nebyl nalezen v mezipaměti, a čas poslední aktualizace je přidán do mezipaměti.
 
 <a id="Additional_Resources"></a>
@@ -83,4 +83,4 @@ Technologie ASP.NET obsahuje `WebCache` pomocné rutiny, která umožňuje snadn
 
 
 - [Zobrazení dat v grafu](https://go.microsoft.com/fwlink/?LinkId=202895)
-- [Referenční dokumentace rozhraní API WebCache](https://msdn.microsoft.com/en-us/library/system.web.helpers.webcache(v=vs.99).aspx) (MSDN)
+- [Referenční dokumentace rozhraní API WebCache](https://msdn.microsoft.com/library/system.web.helpers.webcache(v=vs.99).aspx) (MSDN)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e92bb3d67141ba0ce594fd17c266bc69dda3cb5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fe4c421f248e325b69be7cad6c10bcbedf59ae5f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-vb"></a>Konfigurace ověřování formulářů a pokročilá témata (VB)
 ====================
@@ -35,7 +35,7 @@ V tomto kurzu jsme zkontrolujte různých nastavení ověřování pomocí formu
 
 ## <a name="step-1-examining-the-ltformsgt-configuration-settings"></a>Krok 1: Prozkoumání &lt;forms&gt; nastavení konfigurace
 
-Systém ověřování formulářů technologie ASP.NET nabízí řadu nastavení konfigurace, které se dají přizpůsobit pro jednotlivé aplikace aplikace. To zahrnuje nastavení, jako je: životnost ověřování založené na formulářích lístek; Jaký způsob ochrany se použije pro lístku; v části ověřování bez souborů cookie jaké podmínky se používají lístky; Cesta k přihlašovací stránce; a další informace. Chcete-li změnit výchozí hodnoty, přidejte [ &lt;forms&gt; element](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx) jako podřízenou [ &lt;ověřování&gt; element](https://msdn.microsoft.com/en-us/library/532aee0e.aspx), zadání těchto vlastností hodnoty, které chcete přizpůsobit jako atributy XML takto:
+Systém ověřování formulářů technologie ASP.NET nabízí řadu nastavení konfigurace, které se dají přizpůsobit pro jednotlivé aplikace aplikace. To zahrnuje nastavení, jako je: životnost ověřování založené na formulářích lístek; Jaký způsob ochrany se použije pro lístku; v části ověřování bez souborů cookie jaké podmínky se používají lístky; Cesta k přihlašovací stránce; a další informace. Chcete-li změnit výchozí hodnoty, přidejte [ &lt;forms&gt; element](https://msdn.microsoft.com/library/1d3t3c61.aspx) jako podřízenou [ &lt;ověřování&gt; element](https://msdn.microsoft.com/library/532aee0e.aspx), zadání těchto vlastností hodnoty, které chcete přizpůsobit jako atributy XML takto:
 
 [!code-xml[Main](forms-authentication-configuration-and-advanced-topics-vb/samples/sample1.xml)]
 
@@ -57,7 +57,7 @@ Tabulka 1 shrnuje vlastnosti, které lze přizpůsobit pomocí &lt;forms&gt; ele
 
 **Tabulka 1**: Souhrn A &lt;forms&gt; atributy elementu
 
-V technologii ASP.NET 2.0 a nad výchozí hodnoty pro ověřování formuláře jsou pevně zakódovaná ve třídě FormsAuthenticationConfiguration v rozhraní .NET Framework. Všechny změny, musí být použita u jednotlivých aplikací aplikace v souboru Web.config. Tím se liší od ASP.NET 1.x, kde ověřování formulářů výchozí hodnoty byly uloženy v souboru machine.config (a proto je možné upravovat pomocí úpravy souboru machine.config). Chvíli na téma ASP.NET 1.x, je vhodné se zmínit, že počet nastavení systému ověřování pomocí formulářů mají různé výchozí hodnoty v technologii ASP.NET 2.0 a kromě než technologie ASP.NET 1.x. Pokud migrujete z prostředí ASP.NET 1.x vaší aplikace, je potřeba mít na paměti tyto rozdíly. Poraďte se [ &lt;forms&gt; technické dokumentace element](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx) seznam rozdíly.
+V technologii ASP.NET 2.0 a nad výchozí hodnoty pro ověřování formuláře jsou pevně zakódovaná ve třídě FormsAuthenticationConfiguration v rozhraní .NET Framework. Všechny změny, musí být použita u jednotlivých aplikací aplikace v souboru Web.config. Tím se liší od ASP.NET 1.x, kde ověřování formulářů výchozí hodnoty byly uloženy v souboru machine.config (a proto je možné upravovat pomocí úpravy souboru machine.config). Chvíli na téma ASP.NET 1.x, je vhodné se zmínit, že počet nastavení systému ověřování pomocí formulářů mají různé výchozí hodnoty v technologii ASP.NET 2.0 a kromě než technologie ASP.NET 1.x. Pokud migrujete z prostředí ASP.NET 1.x vaší aplikace, je potřeba mít na paměti tyto rozdíly. Poraďte se [ &lt;forms&gt; technické dokumentace element](https://msdn.microsoft.com/library/1d3t3c61.aspx) seznam rozdíly.
 
 > [!NOTE]
 > Několik nastavení ověřování pomocí formulářů, jako je například časový limit, domény a cesty, zadejte podrobnosti pro výsledný soubor cookie lístek ověřování formulářů. Další informace o soubory cookie, funkce a jejich různé vlastnosti čtení [tohoto kurzu soubory cookie](http://www.quirksmode.org/js/cookies.html).
@@ -137,7 +137,7 @@ Zásady souborů cookie používá ověřování systému forms závisí na nast
 Nastavení automaticky rozpozná a UseDeviceProfile spoléhají na *profil zařízení* při určování, zda se má použít lístků pro ověřování na základě souborů cookie nebo bez souborů cookie. ASP.NET udržuje databázi různých zařízení a jejich funkce, například udává, jestli podporují soubory cookie, jaká verze jazyka JavaScript podporují a tak dále. Pokaždé, když zařízení požadavky na webové stránce z webového serveru odešle společně *uživatelský agent* hlavičky protokolu HTTP, který určuje typ zařízení. Zadaný identifikační řetězec ASP.NET automaticky shoduje s odpovídající profil zadaný ve své databázi.
 
 > [!NOTE]
-> Tato databáze možnosti zařízení uložena v počtu souborů XML, který dodržovat [prohlížeče definiční soubor schématu](https://msdn.microsoft.com/en-us/library/ms228122.aspx). Výchozí zařízení profil soubory jsou umístěny v % WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG\Browsers. Můžete také přidat vlastní soubory do vaší aplikace aplikace\_složky prohlížeče. Další informace najdete v tématu [postupy: zjištění typu prohlížeče na webových stránkách ASP.NET](https://msdn.microsoft.com/en-us/library/3yekbd5b.aspx).
+> Tato databáze možnosti zařízení uložena v počtu souborů XML, který dodržovat [prohlížeče definiční soubor schématu](https://msdn.microsoft.com/library/ms228122.aspx). Výchozí zařízení profil soubory jsou umístěny v % WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG\Browsers. Můžete také přidat vlastní soubory do vaší aplikace aplikace\_složky prohlížeče. Další informace najdete v tématu [postupy: zjištění typu prohlížeče na webových stránkách ASP.NET](https://msdn.microsoft.com/library/3yekbd5b.aspx).
 
 
 Protože výchozí nastavení je UseDeviceProfile, lístků pro ověřování pomocí formulářů bez souborů cookie se použije při návštěvě webu zařízení, jehož profil hlásí, že nepodporuje soubory cookie.
@@ -199,7 +199,7 @@ Společnost Microsoft důrazně doporučuje, všechna nastavení.
 
 ### <a name="setting-the-validation-and-decryption-keys"></a>Nastavení ověřovací a dešifrovací klíče
 
-Šifrování a systémem ověřování formulářů sloužící k šifrování a ověření lístek ověřování lze přizpůsobit pomocí [ &lt;machineKey&gt; element](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx) v souboru Web.config. Tabulka 2 jsou podrobněji popsány dále &lt;machineKey&gt; atributy elementu a jeho možných hodnot.
+Šifrování a systémem ověřování formulářů sloužící k šifrování a ověření lístek ověřování lze přizpůsobit pomocí [ &lt;machineKey&gt; element](https://msdn.microsoft.com/library/w8h3skw9.aspx) v souboru Web.config. Tabulka 2 jsou podrobněji popsány dále &lt;machineKey&gt; atributy elementu a jeho možných hodnot.
 
 | **Atribut** | **Popis** |
 | --- | --- |
@@ -223,7 +223,7 @@ Pokud žádná z výše uvedených scénářích platí pro naše ukázková apl
 
 [!code-xml[Main](forms-authentication-configuration-and-advanced-topics-vb/samples/sample5.xml)]
 
-Další informace najdete na [postupy: Konfigurace MachineKey v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998288.aspx).
+Další informace najdete na [postupy: Konfigurace MachineKey v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998288.aspx).
 
 > [!NOTE]
 > Hodnoty decryptionKey a validationKey byly odebrány z [Steve Gibson](http://www.grc.com/stevegibson.htm)na [ideální hesla webové stránky](https://www.grc.com/passwords.htm), které na každé stránce, navštivte generuje náhodné 64 hexadecimálních znaků. Chcete-li omezit pravděpodobnost, že tyto klíče provedením jejich představ do provozních aplikací, se doporučuje výše klíče nahraďte náhodně generované ty, které jsou na stránce ideální hesla.
@@ -233,7 +233,7 @@ Další informace najdete na [postupy: Konfigurace MachineKey v technologii ASP.
 
 Mnoho webových aplikací zobrazit informace o nebo základní zobrazení stránky na aktuálně přihlášeného uživatele. Například na webové stránce může zobrazovat uživatelské jméno a datum, kdy se uživatel naposledy přihlášený v horním rohu každé stránky. Lístek pro ověřování pomocí formulářů ukládá uživatelské jméno aktuálně přihlášeného uživatele, ale v případě potřeby všechny ostatní informace stránce musí přejděte na Windows store uživatele – obvykle databázi – k vyhledávání informací nejsou uložené v lístek ověřování.
 
-S chvilku kódu lze uložit informace o další uživatele v lístek pro ověřování pomocí formulářů. Taková data rozdíl lze vyjádřit pomocí [FormsAuthenticationTicket třída](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.aspx)na [UserData vlastnost](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.userdata.aspx). To je užitečné místo pro malé množství informací o uživateli, který je obvykle potřeba. Hodnota zadaná v UserData vlastnost je zahrnut jako součást souboru cookie pro lístek ověřování a, podobně jako v ostatních polích lístku, je zašifrovaná a ověřit podle konfigurace systému ověřování formulářů. Ve výchozím nastavení je UserData prázdný řetězec.
+S chvilku kódu lze uložit informace o další uživatele v lístek pro ověřování pomocí formulářů. Taková data rozdíl lze vyjádřit pomocí [FormsAuthenticationTicket třída](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.aspx)na [UserData vlastnost](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.userdata.aspx). To je užitečné místo pro malé množství informací o uživateli, který je obvykle potřeba. Hodnota zadaná v UserData vlastnost je zahrnut jako součást souboru cookie pro lístek ověřování a, podobně jako v ostatních polích lístku, je zašifrovaná a ověřit podle konfigurace systému ověřování formulářů. Ve výchozím nastavení je UserData prázdný řetězec.
 
 Chcete-li uložit data uživatele v lístku ověřování, musíme zápisu bit kódu na přihlašovací stránce, který získá informace specifické pro uživatele a uloží je v lístku. Vzhledem k tomu, že UserData je vlastnost typu řetězec, musí být data uložená v ní správně serializované jako řetězec. Představte si například, že naše úložiště uživatele zahrnuta každý uživatel datum narození a název svého zaměstnavatele a jsme chtěli uložit tyto dvě vlastnosti hodnoty lístek ověřování. Tyto hodnoty jsme může serializovat do řetězce zřetězením uživatele datum narození na řetězec s kanálu (|), za nímž následuje název zaměstnavatel. Pro uživatele narodila na 15. srpna 1974, který se dá použít pro Northwind Traders, jsme přiřazujete vlastnost UserData řetězec: 1974-08-15 | Northwind Traders.
 
@@ -269,15 +269,15 @@ V dalším kroku FormsAuthentication.GetAuthCookie metoda je volána, který vyt
 
 Dim authCookie jako HttpCookie = FormsAuthentication.GetAuthCookie (UserName.Text, RememberMe.Checked)
 
-Chcete-li pracovat s FormAuthenticationTicket vloženým do souboru cookie, je potřeba volat třídu FormAuthentication [dešifrovat metoda](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.decrypt.aspx), předejte v hodnotě souboru cookie.
+Chcete-li pracovat s FormAuthenticationTicket vloženým do souboru cookie, je potřeba volat třídu FormAuthentication [dešifrovat metoda](https://msdn.microsoft.com/library/system.web.security.formsauthentication.decrypt.aspx), předejte v hodnotě souboru cookie.
 
 Dim lístek jako FormsAuthenticationTicket = FormsAuthentication.Decrypt(authCookie.Value)
 
 Pak vytvořte *nové* FormsAuthenticationTicket instance na základě existující FormsAuthenticationTicket hodnot. Tento nový lístek, ale obsahuje informace specifické pro uživatele (userDataString).
 
-Dim newTicket jako FormsAuthenticationTicket = nové FormsAuthenticationTicket(ticket. Verze, lístku. Název, lístku. IssueDate, lístku. Vypršení platnosti lístku. IsPersistent, userDataString)
+Dim newTicket As FormsAuthenticationTicket = New FormsAuthenticationTicket(ticket.Version, ticket.Name, ticket.IssueDate, ticket.Expiration, ticket.IsPersistent, userDataString)
 
-Jsme pak šifrování (a ověření) novou instanci FormsAuthenticationTicket voláním [šifrování metoda](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.encrypt.aspx)a tato data šifrovaná (a ověřené) zpět do authCookie.
+Jsme pak šifrování (a ověření) novou instanci FormsAuthenticationTicket voláním [šifrování metoda](https://msdn.microsoft.com/library/system.web.security.formsauthentication.encrypt.aspx)a tato data šifrovaná (a ověřené) zpět do authCookie.
 
 authCookie.Value = FormsAuthentication.Encrypt(newTicket)
 
@@ -322,7 +322,7 @@ Objekt zabezpečení má dva odpovědnosti: označíte, jaké role uživatel pat
 Třídy GenericPrincipal splňuje potřeby pro většinu scénářů ověřování založené na formulářích, nejsou-li použity role. Pro tyto situace, kdy je nedostatečná zpracování role výchozí nebo když potřebujete přidružit vlastní objekt identita uživatele, můžete vytvořit vlastní objekt IPrincipal během ověřování pracovního postupu a přiřadit k vlastnosti HttpContext.User.
 
 > [!NOTE]
-> Jak jsme se zobrazí v budoucnosti kurzy, když ASP. Je povolena na NET framework role vytvoří vlastní objekt zabezpečení typu [RolePrincipal](https://msdn.microsoft.com/en-us/library/system.web.security.roleprincipal.aspx) a přepíše objekt GenericPrincipal vytvořené ověřování formulářů. Dělá to chcete-li přizpůsobit IsInRole metodu objektu zabezpečení pro rozhraní s rolí rozhraní API.
+> Jak jsme se zobrazí v budoucnosti kurzy, když ASP. Je povolena na NET framework role vytvoří vlastní objekt zabezpečení typu [RolePrincipal](https://msdn.microsoft.com/library/system.web.security.roleprincipal.aspx) a přepíše objekt GenericPrincipal vytvořené ověřování formulářů. Dělá to chcete-li přizpůsobit IsInRole metodu objektu zabezpečení pro rozhraní s rolí rozhraní API.
 
 
 Vzhledem k tomu, že jsme nebyly problémem označována role ještě, pouze důvod, který jsme by měla pro vytvoření vlastní objekt zabezpečení v této situaci řešit by k přidružení vlastního identita objektu na objekt zabezpečení. V kroku 4 jsme se podívali na ukládání další uživatelské informace ve vlastnosti UserData lístek ověřování, v konkrétní název společnosti uživatele a jejich funkce. Informace UserData je však pouze přístupné prostřednictvím lístek ověřování a potom pouze jako serializovaný řetězec, což znamená, kdykoliv chceme, chcete-li zobrazit informace o uživateli, které jsou uložené v lístku je potřeba analyzovat UserData vlastnost.
@@ -334,7 +334,7 @@ Můžeme vylepšit vývojáře vytvořením třídy, který implementuje identit
 V tomto kurzu vytvoříme vlastní objekty zabezpečení a identity v aplikaci\_složky kódu. Začněte přidáním aplikace\_kód složky do projektu – klikněte pravým tlačítkem na název projektu v Průzkumníku řešení, vyberte možnost Přidat složku ASP.NET a vyberte aplikaci,\_kódu. Aplikace\_kód složka je speciální složky ASP.NET, který obsahuje soubory specifické pro web – třída.
 
 > [!NOTE]
-> Aplikace\_kód složky musí být použit pouze při správě projektu prostřednictvím modelu projektu webu. Pokud používáte [Model projektu webové aplikace](https://msdn.microsoft.com/en-us/asp.net/Aa336618.aspx), vytvořte standardní složku a přidejte do třídy. Například můžete přidat novou složku s názvem třídy a umístěte kódu existuje.
+> Aplikace\_kód složky musí být použit pouze při správě projektu prostřednictvím modelu projektu webu. Pokud používáte [Model projektu webové aplikace](https://msdn.microsoft.com/asp.net/Aa336618.aspx), vytvořte standardní složku a přidejte do třídy. Například můžete přidat novou složku s názvem třídy a umístěte kódu existuje.
 
 
 Dál přidejte dva nové soubory – třída aplikace\_složky kódu, jednu s názvem CustomIdentity.vb a jednu s názvem CustomPrincipal.vb.
@@ -359,9 +359,9 @@ Dále vytvořte třídu CustomPrincipal. Vzhledem k tomu, že jsme nejsou nevad�
 
 Máme teď třídu, která rozšiřuje specifikace výchozí identita zahrnout NázevSpolečnosti a název vlastnosti, jakož i vlastní hlavní třídu, která používá vlastní identity. Jsme připravení krokování s vnořením kanálu ASP.NET a přiřaďte naše vlastní objekt zabezpečení kontext zabezpečení příchozího požadavku.
 
-Kanálu ASP.NET přijímá příchozí žádosti a zpracovává je pomocí několika kroků. Při každém kroku je vyvolána určitá událost, která umožňuje vývojářům procházet do kanálu ASP.NET a upravovat žádosti v určitých bodech, v jeho průběhu životního cyklu. FormsAuthenticationModule, například čeká na technologii ASP.NET vyvolat [AuthenticateRequest událostí](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx), v tomto okamžiku se kontroluje příchozí požadavek na ověřovací lístek. Pokud je na ověřovací lístek, objektů GenericPrincipal je vytvořen a přiřazeno k vlastnosti HttpContext.User.
+Kanálu ASP.NET přijímá příchozí žádosti a zpracovává je pomocí několika kroků. Při každém kroku je vyvolána určitá událost, která umožňuje vývojářům procházet do kanálu ASP.NET a upravovat žádosti v určitých bodech, v jeho průběhu životního cyklu. FormsAuthenticationModule, například čeká na technologii ASP.NET vyvolat [AuthenticateRequest událostí](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx), v tomto okamžiku se kontroluje příchozí požadavek na ověřovací lístek. Pokud je na ověřovací lístek, objektů GenericPrincipal je vytvořen a přiřazeno k vlastnosti HttpContext.User.
 
-Po události AuthenticateRequest kanálu ASP.NET vyvolá [PostAuthenticateRequest událostí](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.postauthenticaterequest.aspx), což je, kde jsme můžete nahradit GenericPrincipal objekt vytvořený FormsAuthenticationModule s instancí naše Objekt CustomPrincipal. Obrázek 7 znázorňuje tento pracovní postup.
+Po události AuthenticateRequest kanálu ASP.NET vyvolá [PostAuthenticateRequest událostí](https://msdn.microsoft.com/library/system.web.httpapplication.postauthenticaterequest.aspx), což je, kde jsme můžete nahradit GenericPrincipal objekt vytvořený FormsAuthenticationModule s instancí naše Objekt CustomPrincipal. Obrázek 7 znázorňuje tento pracovní postup.
 
 
 [![Objekt GenericPrincipal je nahrazena CustomPrincipal v PostAuthenticationRequest události](forms-authentication-configuration-and-advanced-topics-vb/_static/image20.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image19.png)
@@ -377,13 +377,13 @@ Provádění kódu v reakci na událost kanálu ASP.NET, nemůžeme vytvořit ob
 **Obrázek 08**: Přidá soubor Global.asax na webu ([Kliknutím zobrazit obrázek v plné velikosti](forms-authentication-configuration-and-advanced-topics-vb/_static/image24.png))
 
 
-Výchozí šablony Global.asax obsahuje obslužné rutiny události pro určitý počet událostí kanálu ASP.NET, včetně Start a End a [událost chyby](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.error.aspx), mimo jiné. Můžete bez obav odstranit tyto obslužné rutiny událostí, jak jsme je není nutné pro tuto aplikaci. Události, které jsme zajímají je PostAuthenticateRequest. Aktualizujte si soubor Global.asax tak svůj kód bude vypadat podobně jako následující:
+Výchozí šablony Global.asax obsahuje obslužné rutiny události pro určitý počet událostí kanálu ASP.NET, včetně Start a End a [událost chyby](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx), mimo jiné. Můžete bez obav odstranit tyto obslužné rutiny událostí, jak jsme je není nutné pro tuto aplikaci. Události, které jsme zajímají je PostAuthenticateRequest. Aktualizujte si soubor Global.asax tak svůj kód bude vypadat podobně jako následující:
 
 [!code-aspx[Main](forms-authentication-configuration-and-advanced-topics-vb/samples/sample11.aspx)]
 
 Aplikace\_OnPostAuthenticateRequest metoda spustí pokaždé, když modulem runtime ASP.NET vyvolává událost PostAuthenticateRequest, který se stane jednou na každou příchozí požadavek na stránku. Obslužné rutiny události spustí kontrolou, zda uživatel je ověřen a byl ověřen pomocí ověřování pomocí formulářů. Pokud ano, nový objekt CustomIdentity je vytvořen a aktuální žádost ověřovací lístek předaná jeho konstruktoru. Objekt CustomPrincipal následující, je vytvořen a předaný objekt CustomIdentity vytvořeném v jeho konstruktoru. Nakonec aktuální požadavek kontext zabezpečení je přiřazený k nově vytvořený objekt CustomPrincipal.
 
-Všimněte si, že poslední krok - přiřazení objektu CustomPrincipal kontext zabezpečení žádosti - přiřadí dvě vlastnosti objektu zabezpečení: HttpContext.User a Thread.CurrentPrincipal. Tyto dvě přiřazení jsou nezbytné kvůli způsob, jakým kontexty zabezpečení jsou zpracovávány v technologii ASP.NET. Rozhraní .NET Framework přidruží kontextu zabezpečení jednotlivých spuštěných vláken; Tyto informace jsou k dispozici jako objekt IPrincipal prostřednictvím [objektu vlákna](https://msdn.microsoft.com/en-us/library/system.threading.thread.aspx)na [vlastnost CurrentPrincipal](https://msdn.microsoft.com/en-us/library/system.threading.thread.currentcontext.aspx). Co je složitá je, že technologie ASP.NET má svou vlastní informace kontextu zabezpečení (HttpContext.User).
+Všimněte si, že poslední krok - přiřazení objektu CustomPrincipal kontext zabezpečení žádosti - přiřadí dvě vlastnosti objektu zabezpečení: HttpContext.User a Thread.CurrentPrincipal. Tyto dvě přiřazení jsou nezbytné kvůli způsob, jakým kontexty zabezpečení jsou zpracovávány v technologii ASP.NET. Rozhraní .NET Framework přidruží kontextu zabezpečení jednotlivých spuštěných vláken; Tyto informace jsou k dispozici jako objekt IPrincipal prostřednictvím [objektu vlákna](https://msdn.microsoft.com/library/system.threading.thread.aspx)na [vlastnost CurrentPrincipal](https://msdn.microsoft.com/library/system.threading.thread.currentcontext.aspx). Co je složitá je, že technologie ASP.NET má svou vlastní informace kontextu zabezpečení (HttpContext.User).
 
 V některých scénářích je zkontrolován vlastnost Thread.CurrentPrincipal při určování kontext zabezpečení; v jiných scénářích se používá HttpContext.User. Například existují funkce zabezpečení v rozhraní .NET, které umožňují vývojářům deklarativně stavu jaké uživatelů nebo rolí můžete vytvořit instanci třídy nebo vyvolat konkrétní metody (viz [přidáním autorizačních pravidel pro firmy a Data pomocí vrstev. PrincipalPermissionAttributes](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)). Pod zahrnuje určete tyto deklarativní techniky kontext zabezpečení přes Thread.CurrentPrincipal vlastnost.
 
@@ -412,23 +412,23 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Rozvěrače ověřování pomocí formulářů](http://aspnet.4guysfromrolla.com/articles/072005-1.aspx)
-- [Vysvětlení: Ověřování pomocí formulářů technologie ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/aa480476.aspx)
-- [Postupy: Ochrana ověřování pomocí formulářů technologie ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998310.aspx)
+- [Vysvětlení: Ověřování pomocí formulářů technologie ASP.NET 2.0](https://msdn.microsoft.com/library/aa480476.aspx)
+- [Postupy: Ochrana ověřování pomocí formulářů technologie ASP.NET 2.0](https://msdn.microsoft.com/library/ms998310.aspx)
 - [Professional ASP.NET 2.0 zabezpečení, členství a Role správy](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
-- [Zabezpečení přihlašovacích ovládacích prvků](https://msdn.microsoft.com/en-us/library/ms178346.aspx)
-- [&lt;Ověřování&gt; – Element](https://msdn.microsoft.com/en-us/library/532aee0e.aspx)
-- [&lt;Forms&gt; Element pro &lt;ověřování&gt;](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx)
-- [&lt;MachineKey&gt; – Element](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx)
+- [Zabezpečení přihlašovacích ovládacích prvků](https://msdn.microsoft.com/library/ms178346.aspx)
+- [&lt;Ověřování&gt; – Element](https://msdn.microsoft.com/library/532aee0e.aspx)
+- [&lt;Forms&gt; Element pro &lt;ověřování&gt;](https://msdn.microsoft.com/library/1d3t3c61.aspx)
+- [The &lt;machineKey&gt; Element](https://msdn.microsoft.com/library/w8h3skw9.aspx)
 - [Pochopení lístek pro ověřování pomocí formulářů a souboru Cookie](https://support.microsoft.com/kb/910443)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Video školení na témata, které jsou obsažené v tomto kurzu
 
 - [Postup změny vlastnosti ověřování formulářů](../../../videos/authentication/how-to-change-the-forms-authentication-properties.md)
 - [Postup instalace a používání souborů Cookie bez ověřování v aplikaci ASP.NET](../../../videos/authentication/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application.md)
-- [ASP Forms přihlášení přemístění](../../../videos/authentication/asp-forms-login-relocation.md)
-- [Forms přihlášení vlastní klíče konfigurace](../../../videos/authentication/forms-login-custom-key-configuration.md)
-- [Přidat vlastní Data na metody ověřování](../../../videos/authentication/add-custom-data-to-the-authentication-method.md)
-- [Použití vlastní hlavní objekty](../../../videos/authentication/use-custom-principal-objects.md)
+- [Přemístění formulářů ASP pro přihlášení](../../../videos/authentication/asp-forms-login-relocation.md)
+- [Konfigurace vlastního klíče přihlašovacích formulářů](../../../videos/authentication/forms-login-custom-key-configuration.md)
+- [Přidání vlastních dat do metody ověřování](../../../videos/authentication/add-custom-data-to-the-authentication-method.md)
+- [Použití vlastních hlavních objektů](../../../videos/authentication/use-custom-principal-objects.md)
 
 ### <a name="about-the-author"></a>O autorovi
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 97910940f9de26ca71b111b945581d2de6650b02
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 01f72e0240e84944f8ffece9a2dbc5802be4646b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do testu
 ====================
@@ -40,7 +40,7 @@ Aplikaci můžete otestovat spolehlivěji těmito způsoby:
 
 Možnost 2 je nejspolehlivější způsob, jak otestovat, a pokud tak učiníte, nemusíte nutně možnost 1. Ale pokud nasazujete třetí strany hostování zprostředkovatele možnost 2 nemusí být vhodný nebo může být náročné, takže tento kurz řady zobrazuje obě metody. Pokyny pro možnost 2 je součástí [nasazení do produkčního prostředí](deploying-to-production.md) kurzu.
 
-Další informace o používání webových serverů v sadě Visual Studio najdete v tématu [webové servery v sadě Visual Studio pro webové projekty ASP.NET](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx).
+Další informace o používání webových serverů v sadě Visual Studio najdete v tématu [webové servery v sadě Visual Studio pro webové projekty ASP.NET](https://msdn.microsoft.com/library/58wxa9w5.aspx).
 
 Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, jak absolvovat kurz, nezapomeňte se podívat [řešení potíží s stránky](troubleshooting.md).
 
@@ -73,7 +73,7 @@ Po instalaci služby IIS, spusťte **Správce služby IIS** a ujistěte se, že 
     [![Inetmgr_showing_4.0_app_pools](deploying-to-iis/_static/image3.png)](deploying-to-iis/_static/image2.png)
 4. Pokud se zobrazí pouze dva fondů aplikací a jejich současné jsou nastaveny na rozhraní .NET Framework 2.0, budete muset nainstalovat technologii ASP.NET 4 ve službě IIS.
 
-    Pro systém Windows 8, postupujte podle pokynů v předchozí části pro a ujistěte se, že technologie ASP.NET 4.5 je nainstalován, nebo v tématu [tohoto článku KB](https://support.microsoft.com/kb/2736284). Pro systém Windows 7, otevřete okno příkazového řádku tak, že kliknete pravým tlačítkem na **příkazového řádku** v systému Windows **spustit** nabídky a výběrem **spustit jako správce**. Spusťte [aspnet\_regiis.exe](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx) nainstalovat technologii ASP.NET 4 ve službě IIS, použijte následující příkazy. (V 32bitové systémy, nahraďte "Framework64" s "Framework".)
+    Pro systém Windows 8, postupujte podle pokynů v předchozí části pro a ujistěte se, že technologie ASP.NET 4.5 je nainstalován, nebo v tématu [tohoto článku KB](https://support.microsoft.com/kb/2736284). Pro systém Windows 7, otevřete okno příkazového řádku tak, že kliknete pravým tlačítkem na **příkazového řádku** v systému Windows **spustit** nabídky a výběrem **spustit jako správce**. Spusťte [aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) nainstalovat technologii ASP.NET 4 ve službě IIS, použijte následující příkazy. (V 32bitové systémy, nahraďte "Framework64" s "Framework".)
 
     [!code-console[Main](deploying-to-iis/samples/sample1.cmd)]
 
@@ -94,9 +94,9 @@ Služba IIS je nyní připraven k publikování webové aplikace k němu, ale p�
 
 LocalDB nebyla navržena pro práci ve službě IIS, takže pro testovací prostředí je potřeba mít nainstalovaný SQL Server Express. Pokud používáte Visual Studio 2010 SQL Server Express je již nainstalována ve výchozím nastavení. Pokud používáte Visual Studio 2012, musíte ji nainstalovat.
 
-Pokud chcete nainstalovat systém SQL Server Express, nainstalujte ji z [stažení softwaru společnosti Microsoft: Microsoft SQL Server 2012 Express](https://www.microsoft.com/en-us/download/details.aspx?id=29062) kliknutím [ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe) nebo [ ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe). Pokud si zvolíte nesprávný pro váš systém se nepodaří nainstalovat, a můžete zkusit jiný.
+Pokud chcete nainstalovat systém SQL Server Express, nainstalujte ji z [stažení softwaru společnosti Microsoft: Microsoft SQL Server 2012 Express](https://www.microsoft.com/download/details.aspx?id=29062) kliknutím [ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe) nebo [ ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe). Pokud si zvolíte nesprávný pro váš systém se nepodaří nainstalovat, a můžete zkusit jiný.
 
-Na první stránce Centrum instalace SQL serveru, klikněte na tlačítko **samostatná instalace nový Server SQL nebo přidání funkcí do existující instalace**a postupujte podle pokynů, přijímá výchozí volby. V Průvodci instalací přijměte výchozí nastavení. Další informace o možnostech instalace najdete v tématu [instalace systému SQL Server 2012 z Průvodce instalací (Instalační program)](https://msdn.microsoft.com/en-us/library/ms143219.aspx).
+Na první stránce Centrum instalace SQL serveru, klikněte na tlačítko **samostatná instalace nový Server SQL nebo přidání funkcí do existující instalace**a postupujte podle pokynů, přijímá výchozí volby. V Průvodci instalací přijměte výchozí nastavení. Další informace o možnostech instalace najdete v tématu [instalace systému SQL Server 2012 z Průvodce instalací (Instalační program)](https://msdn.microsoft.com/library/ms143219.aspx).
 
 ## <a name="create-sql-server-express-databases-for-the-test-environment"></a>Vytváření databází systému SQL Server Express pro testovací prostředí
 
@@ -233,7 +233,7 @@ Následující postup se vztahuje na **objekt DefaultConnection** databáze **da
 
 Když Visual Studio zjistí Entity Framework `DbContext` třídy, vytvoří položku v **databáze** oddíl, který má **spustit migrace Code First** políčko místo  **Aktualizace databáze** zaškrtávací políčko. Pro účely tohoto kurzu budete pomocí tohoto zaškrtávacího políčka zadejte nasazení migrace Code First.
 
-V některých scénářích možná používáte `DbContext` databáze, ale chcete použít poskytovatele dbDacFx místo migrace pro nasazení databáze. V takovém případě najdete v části [jak nasadit bez migrace Code First databázi?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) v nejčastějších Dotazech webové nasazení ASP.NET na webu MSDN.
+V některých scénářích možná používáte `DbContext` databáze, ale chcete použít poskytovatele dbDacFx místo migrace pro nasazení databáze. V takovém případě najdete v části [jak nasadit bez migrace Code First databázi?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) v nejčastějších Dotazech webové nasazení ASP.NET na webu MSDN.
 
 Následující postup se vztahuje na **SchoolContext** databáze **databáze** části dialogového okna.
 
@@ -332,7 +332,7 @@ Informace o spuštění služby IIS nebo IIS Express v sadě Visual Studio najde
 
 - [Přehled služby IIS Express](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) na webu IIS.net.
 - [Představení služby IIS Express](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) na blogu Scott Guthrie.
-- [Webové servery v sadě Visual Studio pro projekty ASP.NET – webové](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx).
+- [Webové servery v sadě Visual Studio pro projekty ASP.NET – webové](https://msdn.microsoft.com/library/58wxa9w5.aspx).
 - [Hlavní rozdíly mezi IIS a ASP.NET Development Server](../../older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) na webu technologie ASP.NET.
 
 Informace o problémech, které mohou se vyskytnout při spuštění aplikace v úrovni medium trust, najdete v části [hostování aplikací ASP.NET ve střední důvěryhodnosti](http://www.4guysfromrolla.com/articles/100307-1.aspx) na 4 nepřetržitého z Rolla lokality.

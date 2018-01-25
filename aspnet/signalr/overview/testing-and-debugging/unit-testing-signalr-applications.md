@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: e55efd644dd4b6fb57061ffb89a5c041136c7b5e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d767e1a9d27670387133e5a48a8f92f5bdd39d9e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unit-testing-signalr-applications"></a>Aplikací SignalR testování částí
 ====================
@@ -41,7 +41,7 @@ podle [Patrik Fletcher](https://github.com/pfletcher)
 <a id="unit"></a>
 ## <a name="unit-testing-signalr-applications"></a>Testování částí aplikací SignalR
 
-Funkce testů jednotek v SignalR 2 slouží k vytvoření testů jednotek pro aplikace SignalR. SignalR 2 zahrnuje [IHubCallerConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) rozhraní, které slouží k vytvoření mock objektu k simulaci vaší metod rozbočovače pro testování.
+Funkce testů jednotek v SignalR 2 slouží k vytvoření testů jednotek pro aplikace SignalR. SignalR 2 zahrnuje [IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) rozhraní, které slouží k vytvoření mock objektu k simulaci vaší metod rozbočovače pro testování.
 
 V této části přidáte testy částí pro aplikace vytvořené v [kurzu Začínáme](../getting-started/tutorial-getting-started-with-signalr.md) pomocí [XUnit.net](https://github.com/xunit/xunit) a [Moq](https://github.com/Moq/moq4).
 
@@ -82,7 +82,7 @@ V této části přidáte testů jednotek pro aplikace vytvořené v [kurzu Zač
 
     [!code-csharp[Main](unit-testing-signalr-applications/samples/sample1.cs)]
 
-    Ve výše uvedeném kódu, je vytvořený pomocí testovacího klienta `Mock` objektu z [Moq](https://github.com/Moq/moq4) knihovny typu [IHubCallerConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (v SignalR 2.1 přiřadit `dynamic` pro typ parametr.) `IHubCallerConnectionContext` Rozhraní je objekt proxy, pomocí kterého můžete volat metody na straně klienta. `broadcastMessage` Funkce je pak definované pro imitované klienta tak, aby ji můžete volat `ChatHub` třídy. Modul testu pak zavolá `Send` metodu `ChatHub` třída, která volá mocked `broadcastMessage` funkce.
+    Ve výše uvedeném kódu, je vytvořený pomocí testovacího klienta `Mock` objektu z [Moq](https://github.com/Moq/moq4) knihovny typu [IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (v SignalR 2.1 přiřadit `dynamic` pro typ parametr.) `IHubCallerConnectionContext` Rozhraní je objekt proxy, pomocí kterého můžete volat metody na straně klienta. `broadcastMessage` Funkce je pak definované pro imitované klienta tak, aby ji můžete volat `ChatHub` třídy. Modul testu pak zavolá `Send` metodu `ChatHub` třída, která volá mocked `broadcastMessage` funkce.
 9. Sestavte řešení stisknutím **F6**.
 10. Spuštění testování částí. V sadě Visual Studio, vyberte **Test**, **Windows**, **Průzkumníka testů**. V okně Průzkumníka testů, klikněte pravým tlačítkem na **HubsAreMockableViaDynamic** a vyberte **spuštění testů vybrané**.
 
@@ -101,7 +101,7 @@ V této části přidáte testu pro vytvořené v aplikaci [kurzu Začínáme](.
 
     [!code-csharp[Main](unit-testing-signalr-applications/samples/sample2.cs)]
 
-    Ve výše uvedeném kódu, se vytvoří rozhraní definování podpis `broadcastMessage` metoda, pro který modul testu vytvoří imitované klienta. Imitované klienta je poté jste vytvořili pomocí `Mock` objektu typu [IHubCallerConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (v SignalR 2.1 přiřadit `dynamic` pro parametr typu.) `IHubCallerConnectionContext` Rozhraní je objekt proxy, pomocí kterého můžete volat metody na straně klienta.
+    Ve výše uvedeném kódu, se vytvoří rozhraní definování podpis `broadcastMessage` metoda, pro který modul testu vytvoří imitované klienta. Imitované klienta je poté jste vytvořili pomocí `Mock` objektu typu [IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (v SignalR 2.1 přiřadit `dynamic` pro parametr typu.) `IHubCallerConnectionContext` Rozhraní je objekt proxy, pomocí kterého můžete volat metody na straně klienta.
 
     Test potom vytvoří instanci `ChatHub`a potom vytvoří na cvičnou verzi `broadcastMessage` metoda, která zase se vyvolá při volání `Send` metoda rozbočovače.
 3. Sestavte řešení stisknutím **F6**.

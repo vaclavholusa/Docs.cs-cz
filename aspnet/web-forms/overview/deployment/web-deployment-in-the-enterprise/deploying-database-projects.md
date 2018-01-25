@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: aef8229f2920bd026e3dbf063afb57cffb9b21d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9b1f9a19c76e33b5d996cb4d562cf0c1a3e2f83b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-database-projects"></a>Databázové projekty nasazení
 ====================
@@ -65,7 +65,7 @@ Existují různé různé přístupy k nasazení databázové projekty. Ne všec
 Existují tři hlavní přístupy, které můžete nasadit projekt databáze:
 
 - Můžete použít funkci nasazení s typem databáze projektu v sadě Visual Studio 2010. Vytvořit a nasadit projekt databáze v sadě Visual Studio 2010, proces nasazení používá ke generování specifická pro konfiguraci sestavení na základě SQL nasazení souboru manifest nasazení. Tím se vytvoří databáze, pokud není již neexistuje nebo proveďte potřebné změny do databáze, pokud již existuje. SQLCMD.exe můžete použít ke spuštění tohoto souboru na cílovém serveru, nebo můžete nastavit sady Visual Studio vytvořte a spusťte soubor. Nevýhodou tohoto přístupu je, že máte jenom omezený kontrolu nad nastavení nasazení. Často také musíte upravit soubor nasazení nástroje SQL k zadání hodnot proměnných konkrétní prostředí. Tento přístup z počítače lze použít pouze s Visual Studio 2010 nainstalovaný a vývojář by bylo potřeba vědět a zadejte připojovací řetězce a přihlašovací údaje pro všechny cílové prostředí.
-- Nástroj pro nasazení Internetové informační služby (IIS) webu (Web Deploy) můžete [nasadit databázi jako součást projektu webové aplikace](https://msdn.microsoft.com/en-us/library/dd465343.aspx). Tento přístup je však mnohem složitější, pokud chcete nasadit projekt databáze než jednoduše replikovat existující místní databázi na cílovém serveru. Můžete nakonfigurovat nasazení webu pro spuštění skriptu nasazení SQL, který generuje k databázovému projektu, ale pokud to chcete provést, musíte vytvořit vlastní soubor jako cíle pro váš projekt webové aplikace. Tento postup přidá vyžadovat značné množství složitost do procesu nasazení. Kromě toho Web Deploy přímo nepodporuje přírůstkové aktualizace existující databáze. Další informace o tento přístup, najdete v části [rozšíření kanálu publikování webové do projektu balíček databáze nasazeném souboru SQL](https://go.microsoft.com/?linkid=9805121).
+- Nástroj pro nasazení Internetové informační služby (IIS) webu (Web Deploy) můžete [nasadit databázi jako součást projektu webové aplikace](https://msdn.microsoft.com/library/dd465343.aspx). Tento přístup je však mnohem složitější, pokud chcete nasadit projekt databáze než jednoduše replikovat existující místní databázi na cílovém serveru. Můžete nakonfigurovat nasazení webu pro spuštění skriptu nasazení SQL, který generuje k databázovému projektu, ale pokud to chcete provést, musíte vytvořit vlastní soubor jako cíle pro váš projekt webové aplikace. Tento postup přidá vyžadovat značné množství složitost do procesu nasazení. Kromě toho Web Deploy přímo nepodporuje přírůstkové aktualizace existující databáze. Další informace o tento přístup, najdete v části [rozšíření kanálu publikování webové do projektu balíček databáze nasazeném souboru SQL](https://go.microsoft.com/?linkid=9805121).
 - Můžete použít nástroj VSDBCMD pro nasazení databáze, pomocí schématu databáze nebo manifest nasazení. VSDBCMD.exe můžete volat z nástroje MSBuild cíl, který vám umožňuje publikování databází v rámci procesu nasazení větší, pomocí skriptu. Proměnné v souboru .sqlcmdvars a spoustu dalších vlastnosti databáze z VSDBCMD příkaz, který můžete vytvořit vlastní nastavení nasazení pro různá prostředí bez vytvoření konfigurací s více sestavení můžete přepsat. VSDBCMD poskytuje rozdílů mezi funkce, což znamená, že budou pouze potřebné změny, chcete-li zarovnat cílové databáze s svého schématu databáze. VSDBCMD také nabízí širokou škálu možností příkazového řádku, které poskytují jemně odstupňovanou kontrolu nad procesu nasazení.
 
 Z tohoto přehledu můžete zjistit, že pomocí nástroje MSBuild VSDBCMD je nejvhodnější pro použití v typické podnikové nasazení:
@@ -97,7 +97,7 @@ V tomto případě:
 - **/Dd+** (nebo **/DeployToDatabase+**) přepínač označuje, že chcete vytvořit nasazení a nasadíte ho do cílové prostředí. Pokud zadáte **/dd-**, nebo vynechejte přepínač, VSDBCMD vygeneruje skript nasazení, ale nebude nasazení na cílovém prostředí. Tento přepínač je často zdroji záměny a je vysvětlené podrobněji v další části.
 - **/Script** (nebo **/DeploymentScriptFile**) přepínač určuje, kde chcete vygenerovat skript nasazení. Tato hodnota nemá vliv na proces nasazení.
 
-Další informace o VSDBCMD najdete v tématu [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/en-us/library/dd193283.aspx) a [postupy: Příprava databáze pro nasazení z příkazového řádku pomocí VSDBCMD. EXE](https://msdn.microsoft.com/en-us/library/dd193258.aspx).
+Další informace o VSDBCMD najdete v tématu [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/library/dd193283.aspx) a [postupy: Příprava databáze pro nasazení z příkazového řádku pomocí VSDBCMD. EXE](https://msdn.microsoft.com/library/dd193258.aspx).
 
 Příklad použití VSDBCMD ze souboru projektu nástroje MSBuild, naleznete v části [Principy procesu sestavení](understanding-the-build-process.md). Příklady, jak nakonfigurovat nastavení nasazení databáze pro prostředí s více najdete v tématu [přizpůsobení nasazení databáze pro prostředí s více](../advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments.md).
 
@@ -145,10 +145,10 @@ Informace o tom, jak přizpůsobit tak, že vytvoříte samostatné nasazení ko
 
 Tato témata na webu MSDN poskytují širší pokyny a obecné informace o sadě Visual Studio databázové projekty a proces nasazení databáze:
 
-- [Visual Studio 2010 SQL serveru databázové projekty](https://msdn.microsoft.com/en-us/library/ff678491.aspx)
-- [Správa změn databáze](https://msdn.microsoft.com/en-us/library/aa833404.aspx)
-- [Postupy: Příprava databáze pro nasazení z příkazového řádku pomocí VSDBCMD. SOUBOR EXE](https://msdn.microsoft.com/en-us/library/dd193258.aspx)
-- [Přehled databáze sestavení a nasazení](https://msdn.microsoft.com/en-us/library/aa833165.aspx)
+- [Visual Studio 2010 SQL Server Database Projects](https://msdn.microsoft.com/library/ff678491.aspx)
+- [Správa změn databáze](https://msdn.microsoft.com/library/aa833404.aspx)
+- [Postupy: Příprava databáze pro nasazení z příkazového řádku pomocí VSDBCMD. SOUBOR EXE](https://msdn.microsoft.com/library/dd193258.aspx)
+- [Přehled databáze sestavení a nasazení](https://msdn.microsoft.com/library/aa833165.aspx)
 
 >[!div class="step-by-step"]
 [Předchozí](deploying-web-packages.md)

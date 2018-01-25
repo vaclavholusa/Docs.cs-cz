@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: f244e6bd1cd8abd23b64d07ccafcef5c4db1029b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3ce68b949199db35c18a09771d99d38562b74e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Správa zdrojového kódu (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -137,9 +137,9 @@ Všechny zdrojové prostředí pro řízení můžete použít k implementaci v�
 
 [Git](http://git-scm.com/) je DVCS, který se stane velmi oblíbenou. Při použití Git pro řízení zdrojů, máte úplnou kopii úložiště se všemi jeho historie v místním počítači. Spousta lidí přednost tomu, že vzhledem k tomu je snazší pokračovat v práci, když nejsou připojené k síti – můžete nadále se potvrdí a odvolání, vytvářet a přepnutí větví a tak dále. I když jste připojení k síti, je jednodušší a rychlejší vytvoření větví a přepnutí větví, když všechno, co je místní. Také můžete provést místní potvrzení a odvolání bez nutnosti vliv na ostatní vývojáři. A můžete dávky potvrzení před jejich odesláním na server.
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), dříve se označuje jako Team Foundation Service, nabízí i Git a [správy verzí Team Foundation](https://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx) (TFVC; centralizované správy zdrojového kódu). Zde ve společnosti Microsoft ve skupině Azure pomocí některé týmy centralizované zdrojového kódu, některé použití distribuována, a některé použít kombinaci (centralizované pro některé projekty a distribuován pro další projekty). Službu VSO je zdarma pro uživatele, až 5. Můžete si zaregistrovat pro plánu free [zde](https://go.microsoft.com/fwlink/?LinkId=307137).
+[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), dříve se označuje jako Team Foundation Service, nabízí i Git a [správy verzí Team Foundation](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx) (TFVC; centralizované správy zdrojového kódu). Zde ve společnosti Microsoft ve skupině Azure pomocí některé týmy centralizované zdrojového kódu, některé použití distribuována, a některé použít kombinaci (centralizované pro některé projekty a distribuován pro další projekty). Službu VSO je zdarma pro uživatele, až 5. Můžete si zaregistrovat pro plánu free [zde](https://go.microsoft.com/fwlink/?LinkId=307137).
 
-Visual Studio 2013 zahrnuje integrovanou prvotřídní [podporu Git](https://msdn.microsoft.com/en-us/library/hh850437.aspx); tady je rychlý ukázku jak to funguje.
+Visual Studio 2013 zahrnuje integrovanou prvotřídní [podporu Git](https://msdn.microsoft.com/library/hh850437.aspx); tady je rychlý ukázku jak to funguje.
 
 S projektem otevřeným v nástroji Visual Studio 2013, klikněte pravým tlačítkem na řešení v **Průzkumníku řešení**a zvolte **přidat řešení správy zdrojového kódu**.
 
@@ -187,7 +187,7 @@ Pokud přepnete zpět do hlavní pobočky, obsah  *\_Layout.cshtml* souboru auto
 
 Tento jednoduchý příklad jak můžete rychle vytvořit větev a překlopit přepínat mezi větve. Tato funkce umožňuje vysoce agilní pracovní postup pomocí strukturu větve a skripty pro automatizaci zobrazovat v [automatizovat všechno](automate-everything.md) kapitoly. Například může být práce v pobočce vývoj, vytvořte větev oprava hotfix z hlavní, přejděte do nové větve, provedené změny existuje a potvrdit a pak přejděte zpátky do větve vývoj a pokračovat, co jste dělali.
 
-Co jste se seznámili s tady je způsob práce s místní úložiště Git v sadě Visual Studio. V prostředí team je obvykle také doručte změny do běžné úložiště. Nástroje sady Visual Studio také umožňují bodu do vzdáleného úložiště Git. K tomuto účelu můžete použít webu GitHub.com, nebo můžete použít [Git v prostředí Visual Studio Online](https://msdn.microsoft.com/en-us/library/hh850437.aspx) integrovat všechny ostatní sady Visual Studio Online funkce jako je například pracovní položkou a sledování chyb.
+Co jste se seznámili s tady je způsob práce s místní úložiště Git v sadě Visual Studio. V prostředí team je obvykle také doručte změny do běžné úložiště. Nástroje sady Visual Studio také umožňují bodu do vzdáleného úložiště Git. K tomuto účelu můžete použít webu GitHub.com, nebo můžete použít [Git v prostředí Visual Studio Online](https://msdn.microsoft.com/library/hh850437.aspx) integrovat všechny ostatní sady Visual Studio Online funkce jako je například pracovní položkou a sledování chyb.
 
 Tato akce není jediným způsobem, jak můžete implementovat agilní větvení strategie, samozřejmě. Můžete povolit stejné agilní pracovní postup pomocí úložiště správy centralizované zdrojů.
 
@@ -202,14 +202,14 @@ Měřit její úspěšnost systému správy zdrojů na základě jak rychle prov
 
 Další informace o TFVC (centralizované správy verzí) a Git (distribuované verzí) najdete v následujících zdrojích informací:
 
-- [Které systém správy verzí použít: TFVC nebo Git?](https://msdn.microsoft.com/en-us/library/vstudio/ms181368.aspx#tfvc_or_git_summary) Dokumentace MSDN, obsahuje tabulku shrnutí rozdíly mezi TFVC a Git.
+- [Které systém správy verzí použít: TFVC nebo Git?](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) Dokumentace MSDN, obsahuje tabulku shrnutí rozdíly mezi TFVC a Git.
 - [Dobře je dobré Team Foundation Server a je dobré Git, ale který je lepší?](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Porovnání Git a TFVC.
 
 Další informace o větvení strategie najdete v následujících zdrojích informací:
 
-- [Vytvoření kanálu verze sadou Team Foundation Server 2012](https://msdn.microsoft.com/en-us/library/dn449957.aspx). Dokumentace k Microsoft Patterns and Practices. V kapitole 6 diskuzi o větvení strategie. Funkce obranou přepíná prostřednictvím funkce větve a pokud se používají větve pro funkce, obhajuje zachování jejich krátkodobou (hodin nebo dnů maximálně).
+- [Vytvoření kanálu verze sadou Team Foundation Server 2012](https://msdn.microsoft.com/library/dn449957.aspx). Dokumentace k Microsoft Patterns and Practices. V kapitole 6 diskuzi o větvení strategie. Funkce obranou přepíná prostřednictvím funkce větve a pokud se používají větve pro funkce, obhajuje zachování jejich krátkodobou (hodin nebo dnů maximálně).
 - [Průvodce řízení verze](https://aka.ms/vsarsolutions). Průvodce větvení strategie podle ALM Rangers. Na kartě soubory ke stažení najdete v části Vytvoření větve Strategies.pdf.
-- [Vývoj softwaru pomocí funkce přepínačů](https://msdn.microsoft.com/en-us/magazine/dn683796.aspx). Článek v časopise MSDN.
+- [Vývoj softwaru pomocí funkce přepínačů](https://msdn.microsoft.com/magazine/dn683796.aspx). Článek v časopise MSDN.
 - [Funkce přepínání](http://martinfowler.com/bliki/FeatureToggle.html). Úvod k funkci přepíná / funkce flags na blogu Martin Fowler.
 - [Funkce přepínačů vs funkce větví](http://geekswithblogs.net/Optikal/archive/2013/02/10/152069.aspx). Jiné příspěvku na blogu o funkce přepínačů, podle Dylan Smith.
 

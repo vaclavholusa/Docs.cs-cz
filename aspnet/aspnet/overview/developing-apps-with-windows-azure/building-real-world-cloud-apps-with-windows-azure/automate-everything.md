@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: cf1cb7b07ffe8750724e58e4fb66854c9a033a54
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aa8bb895ed6eaa0ef4c5752f475ea7c911544ef2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatizovat vše (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -45,7 +45,7 @@ Doba mezi Pokud máte představu pro funkci a když jsou zákazníci použití a
 
 V [Úvod do této e knihy](introduction.md), jste viděli webové konzoly, portálu pro správu Azure. Portálu pro správu umožňuje sledovat a spravovat všechny prostředky, které jste nasadili v Azure. Je snadný způsob, jak vytvořit a odstranění služeb jako třeba webové aplikace a virtuálních počítačů, tyto služby konfigurovat, sledovat operace služby a tak dále. Je skvělý nástroj, ale jeho použití je ruční proces. Pokud budete vyvíjet produkční aplikace libovolnou velikost, a hlavně v prostředí team, doporučujeme, aby přejděte prostřednictvím portálu uživatelského rozhraní, chcete-li další informace a seznamte se s Azure a poté automatizaci procesů, které jste budete by opakovaně.
 
-Téměř vše, co můžete udělat ručně v portálu pro správu nebo ze sady Visual Studio můžete také provést volání rozhraní API REST správy. Můžete napsat skripty s použitím [prostředí Windows PowerShell](https://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx), nebo můžete použít otevřeným zdrojem framework [Chef](http://www.opscode.com/chef/) nebo [Puppet](http://puppetlabs.com/puppet/what-is-puppet). Můžete také použít nástroj příkazového řádku Bash v prostředí Mac nebo Linux. Azure má skriptování rozhraní API pro tyto různých prostředích, která je [rozhraní API pro správu .NET](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) v případě, že chcete napsat kód místo skriptu.
+Téměř vše, co můžete udělat ručně v portálu pro správu nebo ze sady Visual Studio můžete také provést volání rozhraní API REST správy. Můžete napsat skripty s použitím [prostředí Windows PowerShell](https://msdn.microsoft.com/library/windowsazure/jj156055.aspx), nebo můžete použít otevřeným zdrojem framework [Chef](http://www.opscode.com/chef/) nebo [Puppet](http://puppetlabs.com/puppet/what-is-puppet). Můžete také použít nástroj příkazového řádku Bash v prostředí Mac nebo Linux. Azure má skriptování rozhraní API pro tyto různých prostředích, která je [rozhraní API pro správu .NET](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) v případě, že chcete napsat kód místo skriptu.
 
 Aplikaci, opravte ji vytvořili jsme některé skripty prostředí Windows PowerShell, které automatizují procesy vytváření testovacího prostředí a nasazení projektu do prostředí a přečtěte část obsah těchto skriptů.
 

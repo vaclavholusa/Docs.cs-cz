@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 5d4c7d7d02ced5a99db5b59f9e2e1adf6588208a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a573b47d27767dc78d557cd2b6c73714eb9e94f4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="part-2-creating-the-domain-models"></a>Část 2: Vytváření modelů domény
 ====================
@@ -32,9 +32,9 @@ Existují tři způsoby, jak přístup Entity Framework:
 - První model: začínat visual modelu a Entity Framework vytvoří databáze a kódu.
 - První kód: začínat kódu a Entity Framework vytvoří databázi.
 
-Používáme přístup první kódu, proto jsme začněte definováním naše objektů domény jako POCOs (prostý starý CLR objekty). S tímto přístupem první kódu domény objekty nepotřebujete žádný další kód pro podporu v databázové vrstvě, jako je například transakce nebo stálosti. (Konkrétně, není nutné dědění z [objektů EntityObject](https://msdn.microsoft.com/en-us/library/system.data.objects.dataclasses.entityobject.aspx) třídy.) Datových poznámek stále můžete řídit, jak rozhraní Entity Framework vytvoří schématu databáze.
+Používáme přístup první kódu, proto jsme začněte definováním naše objektů domény jako POCOs (prostý starý CLR objekty). S tímto přístupem první kódu domény objekty nepotřebujete žádný další kód pro podporu v databázové vrstvě, jako je například transakce nebo stálosti. (Konkrétně, není nutné dědění z [objektů EntityObject](https://msdn.microsoft.com/library/system.data.objects.dataclasses.entityobject.aspx) třídy.) Datových poznámek stále můžete řídit, jak rozhraní Entity Framework vytvoří schématu databáze.
 
-Protože POCOs nepřenášejí žádné další vlastnosti, které popisují [databáze stavu](https://msdn.microsoft.com/en-us/library/system.data.entitystate.aspx), může být snadno serializovat na JSON nebo XML. Ale který neznamená, že by měla vždycky vystavit vaší Entity Framework modely přímo na klienty, jako ukážeme později v tomto kurzu.
+Protože POCOs nepřenášejí žádné další vlastnosti, které popisují [databáze stavu](https://msdn.microsoft.com/library/system.data.entitystate.aspx), může být snadno serializovat na JSON nebo XML. Ale který neznamená, že by měla vždycky vystavit vaší Entity Framework modely přímo na klienty, jako ukážeme později v tomto kurzu.
 
 Vytvoříme POCOs následující:
 

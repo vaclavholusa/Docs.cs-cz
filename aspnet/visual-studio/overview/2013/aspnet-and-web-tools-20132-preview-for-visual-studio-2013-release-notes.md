@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: d3a8183fecaf830b2ee1211acd56da86454b4437
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0e7ad52662f7ceaa1f087d007d0b14b610f90bee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>Technologie ASP.NET a webové nástroje 2013.2 poznámky k verzi 2013 Visual Studio
 ====================
@@ -49,12 +49,12 @@ Následující části popisují funkce, které byly zavedeny v verzi.
 - [NuGet 2.8.1](#nuget)
 - [ASP.NET – webové formuláře](#webforms)
 - [ASP.NET MVC 5.1.2](#mvc)
-- [Rozhraní ASP.NET Web API 2.1.2](#webapi)
+- [ASP.NET Web API 2.1.2](#webapi)
 - [Rozhraní ASP.NET Web Pages 3.1.2](#webpages)
 - [Rozhraní Entity Framework 6.1](#ef)
 - [ASP.NET Identity 2.0.0](#identity)
 - [Komponenty Microsoft OWIN](#owin)
-- [Funkce SignalR technologie ASP.NET bodu 2.0.2](#signalr)
+- [ASP.NET SignalR 2.0.2](#signalr)
 
 <a id="oneaspnet"></a>
 ### <a name="one-aspnet-project-templates"></a>Šablony projektů jeden ASP.NET
@@ -213,7 +213,7 @@ NuGet 2.8.1, které RTM zveřejníme. dubna 2014. Tady jsou nejdůležitějším
 - Různé [opravy chyb](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=v5.1%20Preview%7cv5.1%20RTM&assignedTo=All&component=MVC&sortField=AssignedTo&sortDirection=Ascending&page=0&reasonClosed=Fixed)
 
 <a id="webapi"></a>
-### <a name="aspnet-web-api-212"></a>Rozhraní ASP.NET Web API 2.1.2
+### <a name="aspnet-web-api-212"></a>ASP.NET Web API 2.1.2
 
 - [Zpracování chyb globální](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#global-error)
 - [Atribut směrování vylepšení](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#attribute-routing)
@@ -232,10 +232,10 @@ NuGet 2.8.1, které RTM zveřejníme. dubna 2014. Tady jsou nejdůležitějším
 <a id="ef"></a>
 ### <a name="entity-framework-61"></a>Rozhraní Entity Framework 6.1
 
-Rozhraní Entity Framework se aktualizovalo a verze 6.1 pro modul runtime a nástrojů. Entity Framework (EF) 6.1 je menší aktualizace Entity Framework 6 a zahrnuje několik oprav chyb a nové funkce. Podrobné informace o EF6.1, včetně odkazů na dokumentaci pro nové funkce, najdete v části [Entity Framework verze historie](https://msdn.microsoft.com/en-US/data/jj574253). Nové funkce v této verzi patří:
+Rozhraní Entity Framework se aktualizovalo a verze 6.1 pro modul runtime a nástrojů. Entity Framework (EF) 6.1 je menší aktualizace Entity Framework 6 a zahrnuje několik oprav chyb a nové funkce. Podrobné informace o EF6.1, včetně odkazů na dokumentaci pro nové funkce, najdete v části [Entity Framework verze historie](https://msdn.microsoft.com/data/jj574253). Nové funkce v této verzi patří:
 
 - **Tooling konsolidace** poskytuje konzistentní způsob, jak vytvořit nový model EF. Tato funkce rozšiřuje Průvodce ADO.NET Entity Data Model pro podporu vytváření Code First modely, včetně zpětnou analýzu z existující databáze. Tyto funkce byly dřív dostupné v Beta kvality v nástrojích Power EF.
-- **Zpracování chyb potvrzení transakce** poskytuje nové [System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) který využije nově přináší možnost zachytávat operace transakce. **CommitFailureHandler** umožňuje automatické obnovení připojení selhání při potvrzování transakce.
+- **Zpracování chyb potvrzení transakce** poskytuje nové [System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) který využije nově přináší možnost zachytávat operace transakce. **CommitFailureHandler** umožňuje automatické obnovení připojení selhání při potvrzování transakce.
 - **IndexAttribute** umožňuje indexy zadat umístění atribut na vlastnosti (nebo vlastnosti) v modelu Code First. Kód nejprve pak vytvoří odpovídající index v databázi.
 - **Mapování veřejné rozhraní API** poskytuje přístup k informacím EF má na tom, jak vlastnosti a typy jsou namapované na sloupce a tabulky v databázi. V po vydání toto rozhraní API byla interní.
 - **Možnost konfigurace sběrače přes soubor App/Web.config**(povolení sběrače přidávaného bez nutnosti rekompilace aplikace).

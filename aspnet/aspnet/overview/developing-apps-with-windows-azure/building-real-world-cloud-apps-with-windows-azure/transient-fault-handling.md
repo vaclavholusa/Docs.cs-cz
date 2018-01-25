@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3caeeb83e4c074ae0ffc30f035d793a821eb6be2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b743b04789c5e5ebf5ab922cf34a516a16a6d356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>Přechodná chyba zpracování (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -39,11 +39,11 @@ Místo vyvolání výjimky a zobrazení stránky není k dispozici nebo Chyba z�
 
 Můžete implementovat logiku opakovaných pokusů inteligentní několika způsoby.
 
-- Microsoft Patterns &amp; má skupina postupy [přechodné chyby zpracování bloku aplikace](https://msdn.microsoft.com/en-us/library/dn440719(v=pandp.60).aspx) který provádí všechno, co pro vás Pokud používáte pro přístup k databázi SQL (ne přes rozhraní Entity Framework) ADO.NET. Stačí nastavit zásady pro opakování – jak často má opakování dotazu nebo příkaz a jak dlouho chcete čekat mezi pokusů – a wrap vaše SQL code v *pomocí* bloku.
+- Microsoft Patterns &amp; má skupina postupy [přechodné chyby zpracování bloku aplikace](https://msdn.microsoft.com/library/dn440719(v=pandp.60).aspx) který provádí všechno, co pro vás Pokud používáte pro přístup k databázi SQL (ne přes rozhraní Entity Framework) ADO.NET. Stačí nastavit zásady pro opakování – jak často má opakování dotazu nebo příkaz a jak dlouho chcete čekat mezi pokusů – a wrap vaše SQL code v *pomocí* bloku.
 
     [!code-csharp[Main](transient-fault-handling/samples/sample1.cs)]
 
-    Také podporuje TFH [mezipaměť hostovaná v instanci Role Azure](https://msdn.microsoft.com/en-us/library/windowsazure/dn386103.aspx) a [Service Bus](https://azure.microsoft.com/services/service-bus/).
+    Také podporuje TFH [mezipaměť hostovaná v instanci Role Azure](https://msdn.microsoft.com/library/windowsazure/dn386103.aspx) a [Service Bus](https://azure.microsoft.com/services/service-bus/).
 - Při použití rozhraní Entity Framework obvykle přímo s nepracujete připojení SQL, proto nemůžete použít tento balíček Patterns and Practices, ale Entity Framework 6 vytvoří tento druh logika opakovaných pokusů přímo do rozhraní. Podobným způsobem můžete zadat strategie opakování, a potom EF pomocí této strategie vždy, když přistupuje k databázi.
 
     Chcete-li použít tuto funkci v aplikaci opravit, všechny budeme muset udělat je přidat třídu, která je odvozena z *DbConfiguration* a zapněte logika opakovaných pokusů.
@@ -88,11 +88,11 @@ Další informace naleznete v následujících materiálech:
 
 Dokumentace
 
-- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy. Podobně jako u řady bezporuchový ale přejde do další postupy podrobnosti. Najdete v části Telemetrie a Diagnostika.
-- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze série videí bezporuchový.
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/en-us/library/dn568099.aspx). V tématu opakování vzor, vzor Scheduler agenta nadřízeného.
+- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy. Podobně jako u řady bezporuchový ale přejde do další postupy podrobnosti. Najdete v části Telemetrie a Diagnostika.
+- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze série videí bezporuchový.
+- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). V tématu opakování vzor, vzor Scheduler agenta nadřízeného.
 - [Odolnost proti chybám v Azure SQL Database](https://blogs.msdn.com/b/windowsazure/archive/2012/07/30/fault-tolerance-in-windows-azure-sql-database.aspx). Příspěvek blogu podle Petrossian ADAM.
-- [Rozhraní Entity Framework - odolnost připojení / logika opakovaných pokusů](https://msdn.microsoft.com/en-us/data/dn456835). Jak používat a přizpůsobit přechodná chyba zpracování funkce Entity Framework 6.
+- [Rozhraní Entity Framework - odolnost připojení / logika opakovaných pokusů](https://msdn.microsoft.com/data/dn456835). Jak používat a přizpůsobit přechodná chyba zpracování funkce Entity Framework 6.
 - [Odolnost připojení a zachycením příkaz s použitím Entity Framework v aplikaci ASP.NET MVC](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md). Čtvrtý v kurzu řadu devět část ukazuje, jak nastavit funkci odolnost připojení EF 6 pro databázi SQL.
 
 Videa

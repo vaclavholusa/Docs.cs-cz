@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 226ef83f289b8fbe9a68f0d0741c7eca0d96ba94
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0224bcd2badc423ba5146feacccc44b8f33a608
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 a Visual Studio 2010 Web Development přehled
 ====================
@@ -199,7 +199,7 @@ ASP.NET 4 zavádí nové možnosti pro rozšíření velikost adresy URL aplikac
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-Chcete-li povolit delší nebo kratší cesty (část adresy URL, která neobsahuje protokol, název serveru a řetězce dotazu), změňte  *[maxUrlLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  atribut. Povolit řetězce dotazu delší nebo kratší, upravte hodnotu  *[maxQueryStringLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  atribut.
+Chcete-li povolit delší nebo kratší cesty (část adresy URL, která neobsahuje protokol, název serveru a řetězce dotazu), změňte  *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  atribut. Povolit řetězce dotazu delší nebo kratší, upravte hodnotu  *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  atribut.
 
 ASP.NET 4 můžete také nakonfigurovat znaky, které se používají znak kontrolou adresy URL. Když ASP.NET vyhledá neplatný znak v části cesty adresy URL, odmítne žádost a vyvolá chybu HTTP 400. V předchozích verzích technologie ASP.NET byla omezena na pevnou sadu znaků kontroly znaků adresy URL. V technologii ASP.NET 4, můžete přizpůsobit sadu platné znaky pomocí nové *requestPathInvalidChars* atribut *httpRuntime* konfigurační element, jak je znázorněno v následujícím příkladu:
 
@@ -561,7 +561,7 @@ Směrování byl k dispozici počínaje ASP.NET 3.5 SP1. (Příklad, jak pomocí
 - Následující nové tvůrci výrazů, které jsou definovány v *System.Web.Compilation.RouteUrlExpressionBuilder* a *System.Web.Compilation.RouteValueExpressionBuilder*:
 - *RouteUrl*, který poskytuje jednoduchý způsob, jak vytvořit adresu URL, která odpovídá adrese URL trasy v rámci ovládacího prvku ASP.NET.
 - *RouteValue*, který poskytuje jednoduchý způsob, jak extrahovat informace z *RouteContext* objektu.
-- *RouteParameter* třídy, která usnadňuje předat data obsažená v *RouteContext* objekt, který má dotaz pro ovládací prvek zdroje dat (podobně jako [ *FormParameter* ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx)).
+- *RouteParameter* třídy, která usnadňuje předat data obsažená v *RouteContext* objekt, který má dotaz pro ovládací prvek zdroje dat (podobně jako [ *FormParameter* ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx)).
 
 #### <a name="routing-for-web-forms-pages"></a>Směrování pro stránky webových formulářů
 
@@ -625,7 +625,7 @@ Při spuštění stránky, která obsahuje tento ovládací prvek, je hodnota "s
 
 #### <a name="using-route-data-for-data-source-control-parameters"></a>Použití dat trasy pro parametry řízení zdroje dat
 
-*RouteParameter* třída umožňuje určit data trasy jako hodnotu parametru pro dotazy v prvku zdroje dat. Ho [funguje podobně jako](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx) třídy, jak je znázorněno v následujícím příkladu:
+*RouteParameter* třída umožňuje určit data trasy jako hodnotu parametru pro dotazy v prvku zdroje dat. Ho [funguje podobně jako](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx) třídy, jak je znázorněno v následujícím příkladu:
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
@@ -1146,7 +1146,7 @@ Dynamická Data byla zavedena ve verzi rozhraní .NET Framework 3.5 SP1 v polovi
 - Schopnost snadno změnit kód, který je generována pro pole v *GridView* a *DetailsView* ovládacích prvků pomocí šablon pole, které jsou součástí projektu Dynamická Data.
 
 > [!NOTE]
-> Poznámka: Další informace naleznete [Dynamická Data dokumentaci](https://msdn.microsoft.com/en-us/library/cc488545.aspx) v knihovně MSDN.
+> Poznámka: Další informace naleznete [Dynamická Data dokumentaci](https://msdn.microsoft.com/library/cc488545.aspx) v knihovně MSDN.
 
 
 Pro technologii ASP.NET 4 je vylepšená Dynamická Data umožňuje vývojářům více síly pro rychlé vytváření webů řízené daty.
@@ -1325,7 +1325,7 @@ Visual Studio 2010 používá k vytvoření komprimovaný soubor (ZIP) pro vaši
 
 Webový balíček můžete zkopírovat na libovolný server a pomocí Správce služby IIS nainstalovat ručně. Můžete taky pro automatické nasazení, balíček lze nainstalovat pomocí příkazy příkazového řádku nebo pomocí rozhraní API nasazení.
 
-Visual Studio 2010 zajišťuje součástí úlohy nástroje MSBuild a cíle k vytvoření webových balíčků. Další informace najdete v tématu [Přehled nasazení projektu do aplikace ASP.NET webových aplikací](https://msdn.microsoft.com/en-us/library/dd394698%28VS.100%29.aspx) na webu MSDN a [10 + 20 důvodů, proč by měl vytvořit balíček webové](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html) na Vishal Joshi blog.
+Visual Studio 2010 zajišťuje součástí úlohy nástroje MSBuild a cíle k vytvoření webových balíčků. Další informace najdete v tématu [Přehled nasazení projektu do aplikace ASP.NET webových aplikací](https://msdn.microsoft.com/library/dd394698%28VS.100%29.aspx) na webu MSDN a [10 + 20 důvodů, proč by měl vytvořit balíček webové](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html) na Vishal Joshi blog.
 
 <a id="0.2__Toc224729057"></a><a id="0.2__Toc253429294"></a><a id="0.2__Toc243304665"></a>
 
@@ -1337,7 +1337,7 @@ Následující příklad ukazuje část `web.release.config` souboru, která mů
 
 [!code-xml[Main](overview/samples/sample102.xml)]
 
-Další informace najdete v tématu [syntaxe transformace Web.config pro nasazení projektu webové aplikace](https://msdn.microsoft.com/en-us/library/dd465326%28VS.100%29.aspx) na webu MSDN <a id="0.2_a"> </a> webu a[nasazení webu: transformace Web.Config](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)na Vishal Joshi blog.
+Další informace najdete v tématu [syntaxe transformace Web.config pro nasazení projektu webové aplikace](https://msdn.microsoft.com/library/dd465326%28VS.100%29.aspx) na webu MSDN <a id="0.2_a"> </a> webu a[nasazení webu: transformace Web.Config](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)na Vishal Joshi blog.
 
 <a id="0.2__Toc224729058"></a><a id="0.2__Toc253429295"></a><a id="0.2__Toc243304666"></a>
 
@@ -1345,7 +1345,7 @@ Další informace najdete v tématu [syntaxe transformace Web.config pro nasazen
 
 Balíček pro nasazení aplikace Visual Studio 2010 můžou obsahovat závislosti, databáze serveru SQL Server. Jako součást definice balíčku zadejte připojovací řetězec pro zdrojové databáze. Při vytváření balíčku webu Visual Studio 2010 vytvoří skripty SQL pro schéma databáze a volitelně pro data a pak přidá do balíčku. Můžete také zadat vlastní skripty SQL a určit pořadí, ve kterém by měly být spuštěny na serveru. Při nasazení zadejte připojovací řetězec, který je vhodný pro cílový server. proces nasazení ke spouštění skriptů, které vytvořit schéma databáze a přidejte data použije tento připojovací řetězec.
 
-Kromě toho publikovat pomocí jedním kliknutím, můžete nakonfigurovat nasazení k publikování databáze přímo, pokud je publikovaná aplikace vzdálené sdílené hostování lokality. Další informace najdete v tématu [postupy: nasazení databáze s projekt webové aplikace](https://msdn.microsoft.com/en-us/library/dd465343%28VS.100%29.aspx) na webu MSDN a [nasazení databáze s VS 2010](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html) na Vishal Joshi blog.
+Kromě toho publikovat pomocí jedním kliknutím, můžete nakonfigurovat nasazení k publikování databáze přímo, pokud je publikovaná aplikace vzdálené sdílené hostování lokality. Další informace najdete v tématu [postupy: nasazení databáze s projekt webové aplikace](https://msdn.microsoft.com/library/dd465343%28VS.100%29.aspx) na webu MSDN a [nasazení databáze s VS 2010](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html) na Vishal Joshi blog.
 
 <a id="0.2__Toc224729059"></a><a id="0.2__Toc253429296"></a><a id="0.2__Toc243304667"></a>
 
@@ -1353,7 +1353,7 @@ Kromě toho publikovat pomocí jedním kliknutím, můžete nakonfigurovat nasaz
 
 Visual Studio 2010 také vám umožní používat službu Vzdálená správa služby IIS pro publikování webové aplikace na vzdálený server. Můžete vytvořit profil publikování pro hostitelský účet nebo pro testování serverů nebo přípravu servery. Každý profil můžete bezpečně uložit příslušná pověření. Pak můžete nasadit do některé z cílových serverů s jedním kliknutím pomocí webu jedním kliknutím panel nástrojů publikování. S Visual Studio 2010 můžete také publikovat pomocí příkazového řádku nástroje MSBuild. To vám umožní nakonfigurovat prostředí sestavení team chcete zahrnout do modelu průběžnou integraci publikování.
 
-Další informace najdete v tématu [postupy: nasazení webové aplikace projektu pomocí publikování jedním kliknutím a nasazení webu](https://msdn.microsoft.com/en-us/library/dd465337%28VS.100%29.aspx) na webu MSDN a [webové 1 klikněte na tlačítko Publikovat s VS 2010](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) na Vishal Joshi blog. Video prezentace nasazení webových aplikací v sadě Visual Studio 2010 naleznete v tématu [VS 2010 pro Web Developer Preview](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) na Vishal Joshi blog.
+Další informace najdete v tématu [postupy: nasazení webové aplikace projektu pomocí publikování jedním kliknutím a nasazení webu](https://msdn.microsoft.com/library/dd465337%28VS.100%29.aspx) na webu MSDN a [webové 1 klikněte na tlačítko Publikovat s VS 2010](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) na Vishal Joshi blog. Video prezentace nasazení webových aplikací v sadě Visual Studio 2010 naleznete v tématu [VS 2010 pro Web Developer Preview](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) na Vishal Joshi blog.
 
 <a id="0.2__Toc224729060"></a><a id="0.2__Toc253429297"></a><a id="0.2__Toc243304668"></a>
 
@@ -1361,9 +1361,9 @@ Další informace najdete v tématu [postupy: nasazení webové aplikace projekt
 
 Na následujících webech poskytují další informace o technologii ASP.NET 4 a Visual Studio 2010.
 
-- [ASP.NET 4](https://msdn.microsoft.com/en-us/library/ee532866%28VS.100%29.aspx) – oficiální dokumentaci pro technologii ASP.NET 4 na webu MSDN.
+- [ASP.NET 4](https://msdn.microsoft.com/library/ee532866%28VS.100%29.aspx) – oficiální dokumentaci pro technologii ASP.NET 4 na webu MSDN.
 - [https://www.ASP.NET/](https://www.asp.net/) – ASP.NET týmu vlastní webové stránky.
-- [https://www.ASP.NET/DynamicData/](https://msdn.microsoft.com/en-us/library/cc488545.aspx) a [obsahu mapy Dynamická Data technologie ASP.NET](https://msdn.microsoft.com/en-us/library/cc488545%28VS.100%29.aspx) – prostředků Online na webu technologie ASP.NET a v oficiální dokumentaci pro dynamická Data technologie ASP.NET.
+- [https://www.ASP.NET/DynamicData/](https://msdn.microsoft.com/library/cc488545.aspx) a [obsahu mapy Dynamická Data technologie ASP.NET](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx) – prostředků Online na webu technologie ASP.NET a v oficiální dokumentaci pro dynamická Data technologie ASP.NET.
 - [https://www.ASP.NET/AJAX/](../../ajax/index.md) – hlavní webové prostředky pro vývoj prvku ASP.NET Ajax.
 - [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) – blog The týmu Visual Web Developer, který obsahuje informace o funkcích v sadě Visual Studio 2010.
 - [Skvělá webová sada ASP.NET](https://github.com/aspnet/AspNetWebStack) – hlavní webovým prostředkům pro verze preview technologie ASP.NET.

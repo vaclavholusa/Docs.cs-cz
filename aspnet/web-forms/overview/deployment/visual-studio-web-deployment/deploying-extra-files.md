@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: a34607b25f6cf502f5fbf2fe51bf1937f470159e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46e18ba81c3db8bb04c5cb997bcc1607e4e38bae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení dalších souborů
 ====================
@@ -83,17 +83,17 @@ Dokončení této série kurzů k nasazení do hostujícího zprostředkovatele 
 
 ## <a name="more-information"></a>Další informace
 
-Pokud umíte pracovat se soubory nástroje MSBuild, můžete automatizovat celou řadu dalších úloh nasazení podle psaní kódu v *.pubxml* soubory (pro úlohy specifické pro profil) nebo projektu *. wpp.targets* souboru (pro úkoly, které platí pro všechny profily). Další informace o *.pubxml* a *. wpp.targets* soubory, najdete v části [postup: Upravit nastavení nasazení v souborech profil publikování (.pubxml) a. wpp.targets souboru v aplikaci Visual Studio Web Projekty](https://msdn.microsoft.com/en-us/library/ff398069). Základní informace o MSBuild kód, najdete v části **The anatomie soubor projektu** v [Enterprise nasazení řady: Principy souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Naučte se pracovat se soubory nástroje MSBuild úkoly pro vaše vlastní scénáře, najdete v článku tato kniha: [uvnitř Microsoft Build Engine: pomocí nástroje MSBuild a Team Foundation Build](http://msbuildbook.com) Sayed Ibraham Hashimi a William Bartholomew.
+Pokud umíte pracovat se soubory nástroje MSBuild, můžete automatizovat celou řadu dalších úloh nasazení podle psaní kódu v *.pubxml* soubory (pro úlohy specifické pro profil) nebo projektu *. wpp.targets* souboru (pro úkoly, které platí pro všechny profily). Další informace o *.pubxml* a *. wpp.targets* soubory, najdete v části [postup: Upravit nastavení nasazení v souborech profil publikování (.pubxml) a. wpp.targets souboru v aplikaci Visual Studio Web Projekty](https://msdn.microsoft.com/library/ff398069). Základní informace o MSBuild kód, najdete v části **The anatomie soubor projektu** v [Enterprise nasazení řady: Principy souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Naučte se pracovat se soubory nástroje MSBuild úkoly pro vaše vlastní scénáře, najdete v článku tato kniha: [uvnitř Microsoft Build Engine: pomocí nástroje MSBuild a Team Foundation Build](http://msbuildbook.com) Sayed Ibraham Hashimi a William Bartholomew.
 
 ## <a name="acknowledgements"></a>Potvrzení
 
 Děkujeme, že následující osob, které významně přispěli k obsahu tento kurz řady chci:
 
-- [Alberto Poblacion, MVP &amp; MCT, Španělsko](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion, MVP &amp; MCT, Španělsko](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - Jarod Ferguson, vývoj platformy Data MVP, Spojené státy
-- Nevlídné Mittal, Microsoft
+- Harsh Mittal, Microsoft
 - [Jon Galloway](https://weblogs.asp.net/jgalloway) (twitter: [ @jongalloway ](http://twitter.com/jongalloway))
-- [Kristina Olson Microsoft](https://blogs.iis.net/krolson/default.aspx)
+- [Kristina Olson, Microsoft](https://blogs.iis.net/krolson/default.aspx)
 - [Jan Pope, Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
 - Mohit Srivastava, Microsoft
 - [Raffaele Rialdi, Itálie](http://www.iamraf.net/)
@@ -101,7 +101,7 @@ Děkujeme, že následující osob, které významně přispěli k obsahu tento 
 - [SAYED Hashimi společnost Microsoft](http://sedodream.com/default.aspx)(twitter: [ @sayedihashimi ](http://twitter.com/sayedihashimi))
 - [Scott Hanselman](http://www.hanselman.com/blog/) (twitter: [ @shanselman ](http://twitter.com/shanselman))
 - [Scott Hunter, Microsoft](https://blogs.msdn.com/b/scothu/) (twitter: [ @coolcsh ](http://twitter.com/coolcsh))
-- [Srđan Božović, Srbsko](http://msforge.net/blogs/zmajcek/)
+- [Srđan Božović, Serbia](http://msforge.net/blogs/zmajcek/)
 - [Vishal Joshi, Microsoft](http://vishaljoshi.blogspot.com/) (twitter: [ @vishalrjoshi ](http://twitter.com/vishalrjoshi))
 
 >[!div class="step-by-step"]

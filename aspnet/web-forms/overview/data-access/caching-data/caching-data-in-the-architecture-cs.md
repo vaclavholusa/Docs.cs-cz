@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 60bdab9dc8317c7f8753891b461da18f02993812
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b068b3020b5c454519950e436115a7efa044fb4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-in-the-architecture-c"></a>Ukládání dat v architektuře (C#)
 ====================
@@ -62,7 +62,7 @@ ObjectDataSource ukládání do mezipaměti funkce prozkoumali v předchozím ku
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample1.cs)]
 
-[ `Cache` Třída](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.aspx) s [ `Insert` metoda](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.insert.aspx) má několik přetížení. `Cache["key"] = value`a `Cache.Insert(key, value)` jsou synonyma a jak přidat položku do mezipaměti pomocí zadaného klíče bez definované vypršení platnosti. Obvykle chceme zadejte vypršela platnost při přidání položky do mezipaměti, buď jako závislost, na základě času vypršení platnosti nebo obojí. Použijte jednu z dalších `Insert` přetížení metody s poskytnout informace na základě závislostí nebo čas vypršení platnosti.
+[ `Cache` Třída](https://msdn.microsoft.com/library/system.web.caching.cache.aspx) s [ `Insert` metoda](https://msdn.microsoft.com/library/system.web.caching.cache.insert.aspx) má několik přetížení. `Cache["key"] = value`a `Cache.Insert(key, value)` jsou synonyma a jak přidat položku do mezipaměti pomocí zadaného klíče bez definované vypršení platnosti. Obvykle chceme zadejte vypršela platnost při přidání položky do mezipaměti, buď jako závislost, na základě času vypršení platnosti nebo obojí. Použijte jednu z dalších `Insert` přetížení metody s poskytnout informace na základě závislostí nebo čas vypršení platnosti.
 
 Ukládání do mezipaměti vrstvu, kterou s metody muset nejdřív zkontrolujte, zda požadovaná data jsou v mezipaměti a pokud ano, vrátí se z ní. Pokud není požadovaná data v mezipaměti, odpovídající metodu BLL musí být volána. Vrácená hodnota by měla do mezipaměti a poté vrácen, jak ukazuje následující diagram pořadí.
 
@@ -90,7 +90,7 @@ Rozdíl v této druhé, fragment kódu nesprávný je, že místo ukládání od
 > Mezipaměť dat je bezpečné pro přístup z více vláken, takže neuděláte potřeba t synchronizaci vlákno přístup pro jednoduché čtení nebo zápisu. Ale pokud je třeba provést několik operací na data v mezipaměti, které musí být Atomický, jste zodpovědní za implementaci zámek nebo jiným mechanismem zajistit bezpečný přístup z více vláken. V tématu [synchronizaci přístup k mezipaměti technologie ASP.NET](http://www.ddj.com/184406369) Další informace.
 
 
-Položku můžete programově vyloučena z mezipaměti dat pomocí [ `Remove` metoda](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.remove.aspx) takto:
+Položku můžete programově vyloučena z mezipaměti dat pomocí [ `Remove` metoda](https://msdn.microsoft.com/library/system.web.caching.cache.remove.aspx) takto:
 
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample4.cs)]
@@ -115,10 +115,10 @@ V `GetProducts()` a `GetProductsByCategoryID(categoryID)` metody, s daty vrácen
 
 `GetCacheItem(key)`nepoužívá *klíč* hodnotu jako zadaný, ale volání `GetCacheKey(key)` metoda, která vrátí hodnotu *klíč* přidá jako předpona s ProductsCache-. `MasterCacheKeyArray`, Který obsahuje řetězec ProductsCache, také používány `AddCacheItem(key, value)` metoda, jak jsme se zobrazí na okamžik.
 
-Ze třídy kódu stránky s technologie ASP.NET datovou mezipaměť je přístupná pomocí `Page` třídu s [ `Cache` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.page.cache.aspx)a umožňuje syntaxe jako `Cache["key"] = value`, jak je popsáno v kroku 2. Od třídy, v rámci architekturu, datovou mezipaměť je přístupná pomocí `HttpRuntime.Cache` nebo `HttpContext.Current.Cache`. [Petr Janíček](https://weblogs.asp.net/pjohnson/default.aspx)na položce blogu [HttpRuntime.Cache vs. HttpContext.Current.Cache](https://weblogs.asp.net/pjohnson/httpruntime-cache-vs-httpcontext-current-cache) poznámky k výhodu v podobě malého výkonu pomocí `HttpRuntime` místo `HttpContext.Current`; v důsledku toho `ProductsCL` používá `HttpRuntime`.
+Ze třídy kódu stránky s technologie ASP.NET datovou mezipaměť je přístupná pomocí `Page` třídu s [ `Cache` vlastnost](https://msdn.microsoft.com/library/system.web.ui.page.cache.aspx)a umožňuje syntaxe jako `Cache["key"] = value`, jak je popsáno v kroku 2. Od třídy, v rámci architekturu, datovou mezipaměť je přístupná pomocí `HttpRuntime.Cache` nebo `HttpContext.Current.Cache`. [Petr Janíček](https://weblogs.asp.net/pjohnson/default.aspx)na položce blogu [HttpRuntime.Cache vs. HttpContext.Current.Cache](https://weblogs.asp.net/pjohnson/httpruntime-cache-vs-httpcontext-current-cache) poznámky k výhodu v podobě malého výkonu pomocí `HttpRuntime` místo `HttpContext.Current`; v důsledku toho `ProductsCL` používá `HttpRuntime`.
 
 > [!NOTE]
-> Pokud vaší architektury je implementovaná pomocí projektů knihovny tříd pak budete muset přidat odkaz na `System.Web` sestavení, aby bylo možné používat [HttpRuntime](https://msdn.microsoft.com/en-us/library/system.web.httpruntime.aspx) a [HttpContext](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx) třídy.
+> Pokud vaší architektury je implementovaná pomocí projektů knihovny tříd pak budete muset přidat odkaz na `System.Web` sestavení, aby bylo možné používat [HttpRuntime](https://msdn.microsoft.com/library/system.web.httpruntime.aspx) a [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) třídy.
 
 
 Pokud položka není nalezena v mezipaměti, `ProductsCL` metody třídy s získat data z BLL a přidejte ji do mezipaměti pomocí `AddCacheItem(key, value)` metoda. Chcete-li přidat *hodnotu* do mezipaměti může používáme následující kód, který používá 60 sekundu čas vypršení platnosti:
@@ -126,7 +126,7 @@ Pokud položka není nalezena v mezipaměti, `ProductsCL` metody třídy s získ
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample7.cs)]
 
-`DateTime.Now.AddSeconds(CacheDuration)`Určuje na základě času vypršení platnosti 60 sekund budoucí chvíli [ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx) označuje tom, že s žádné klouzavé vypršení platnosti. Když je tento `Insert` přetížení metody má vstupní parametry pro obě absolutní a klouzavé vypršení platnosti, můžete jenom zadat jednu ze dvou. Pokud se pokusíte zadejte absolutní čas a časové období, `Insert` vyvolá metoda výjimku `ArgumentException` výjimka.
+`DateTime.Now.AddSeconds(CacheDuration)`Určuje na základě času vypršení platnosti 60 sekund budoucí chvíli [ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx) označuje tom, že s žádné klouzavé vypršení platnosti. Když je tento `Insert` přetížení metody má vstupní parametry pro obě absolutní a klouzavé vypršení platnosti, můžete jenom zadat jednu ze dvou. Pokud se pokusíte zadejte absolutní čas a časové období, `Insert` vyvolá metoda výjimku `ArgumentException` výjimka.
 
 > [!NOTE]
 > Tato implementace `AddCacheItem(key, value)` metoda má aktuálně některé nedostatků. Jsme budete adresy a vyřešit tyto problémy v kroku 4.
@@ -150,7 +150,7 @@ Aktualizace umožňují s `AddCacheItem(key, value)` metoda tak, aby každá pol
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample9.cs)]
 
-`MasterCacheKeyArray`pole řetězců obsahující jednu hodnotu, ProductsCache je. Nejprve položku mezipaměti je přidán do mezipaměti a přiřazené k aktuálnímu datu a času. Pokud položku mezipaměti, která již existuje, je aktualizována. V dalším kroku se vytvoří závislost mezipaměti. [ `CacheDependency` Třída](https://msdn.microsoft.com/en-US/library/system.web.caching.cachedependency(VS.80).aspx) konstruktor s má několik přetížení, ale ten používá sem očekává dva `string` pole vstupy. První z nich určuje sadu souborů má být použit jako závislosti. Vzhledem k tomu, že jsme nejsou zobrazeny t chcete použít všechny závislosti na základě souborů, hodnota `null` se používá pro první vstupní parametr. Druhý vstupní parametr určuje sadu mezipaměti klíče k použití jako závislosti. Zde jsme naše jeden závislostí, zadejte `MasterCacheKeyArray`. `CacheDependency` Pak předá do `Insert` metoda.
+`MasterCacheKeyArray`pole řetězců obsahující jednu hodnotu, ProductsCache je. Nejprve položku mezipaměti je přidán do mezipaměti a přiřazené k aktuálnímu datu a času. Pokud položku mezipaměti, která již existuje, je aktualizována. V dalším kroku se vytvoří závislost mezipaměti. [ `CacheDependency` Třída](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx) konstruktor s má několik přetížení, ale ten používá sem očekává dva `string` pole vstupy. První z nich určuje sadu souborů má být použit jako závislosti. Vzhledem k tomu, že jsme nejsou zobrazeny t chcete použít všechny závislosti na základě souborů, hodnota `null` se používá pro první vstupní parametr. Druhý vstupní parametr určuje sadu mezipaměti klíče k použití jako závislosti. Zde jsme naše jeden závislostí, zadejte `MasterCacheKeyArray`. `CacheDependency` Pak předá do `Insert` metoda.
 
 Pomocí této změny `AddCacheItem(key, value)`, invaliding mezipaměti je jednoduché, odebráním závislosti.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: 0440f807c7baa7b92e5f05590eca9cc237b5aef9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df37acd8901b457f7887afe767d42d53e45e4815
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>Pomocí rozhraní Entity Framework 4.0 a ovládacího prvku ObjectDataSource, část 2: Přidání vrstvu obchodní logiky a testy jednotek
 ====================
@@ -74,7 +74,7 @@ Třída proměnné, která obsahuje odkaz na třídu úložiště je definována
 CRUD metody, které volají třídu úložiště a dva konstruktory umožňují použití třídy obchodní logiky s jakoukoli back-end data store zvolíte. Třída obchodní logiky nemusí zajímat, jak třídu, která je volání potrvají data. (To se často označuje jako *trvalost které*.) To usnadňuje testování, jednotky, protože třída obchodní logiky můžete připojit k implementace úložiště, který používá něco jako jednoduchý jako v paměti `List` kolekce k ukládání dat.
 
 > [!NOTE]
-> Technicky jsou objekty entity stále není trvalost – které ignorují, protože jste instanci ze třídy, které dědí od rozhraní Entity Framework `EntityObject` třídy. Pro dokončení trvalost které můžete použít *prostý staré objekty CLR*, nebo *POCOs*, místo objekty, které dědí od `EntityObject` třídy. Použití POCOs je nad rámec tohoto kurzu. Další informace najdete v tématu [testovatelnosti a Entity Framework 4.0](https://msdn.microsoft.com/en-us/library/ff714955.aspx) na webu MSDN.)
+> Technicky jsou objekty entity stále není trvalost – které ignorují, protože jste instanci ze třídy, které dědí od rozhraní Entity Framework `EntityObject` třídy. Pro dokončení trvalost které můžete použít *prostý staré objekty CLR*, nebo *POCOs*, místo objekty, které dědí od `EntityObject` třídy. Použití POCOs je nad rámec tohoto kurzu. Další informace najdete v tématu [testovatelnosti a Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx) na webu MSDN.)
 
 
 Teď se můžete připojit `ObjectDataSource` ovládacích prvků mají obchodní logiky třídy místo na úložišti a ověřte, že všechno funguje stejně jako předtím.
@@ -221,7 +221,7 @@ Přidejte následující obslužné rutiny události:
 
 Nyní můžete otestovat *DepartmentsAdd.aspx.cs* a ověřte, že také správně zpracovává pokusy o nastavení jedna osoba správce více než jeden oddělení.
 
-Tím dokončíte Úvod k implementaci použitému vzoru pro použití `ObjectDataSource` ovládacího prvku pomocí rozhraní Entity Framework. Další informace o použitému vzoru úložišť a testovatelnosti, najdete v dokumentu White Paper MSDN [testovatelnosti a Entity Framework 4.0](https://msdn.microsoft.com/en-us/library/ff714955.aspx).
+Tím dokončíte Úvod k implementaci použitému vzoru pro použití `ObjectDataSource` ovládacího prvku pomocí rozhraní Entity Framework. Další informace o použitému vzoru úložišť a testovatelnosti, najdete v dokumentu White Paper MSDN [testovatelnosti a Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx).
 
 V následujícím kurzu uvidíte, jak přidat řazení a filtrování funkce do aplikace.
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 0af5f7e841bb43fa41fa0daa4ad8d59ee0596404
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4a5433a7dd70e27b59163822ba427b026c3f4ce0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>Průběžnou integraci a nastavené průběžné doručování (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -37,13 +37,13 @@ Obecně doporučujeme, abyste provedli nastavené průběžné doručování vá
 
 Následující diagram z [Microsoft Patterns and Practices elektronická kniha o nastavené průběžné doručování](http://aka.ms/ReleasePipeline) znázorňuje obvyklý pracovní postup. Kliknutím na obrázek najdete ji v plné velikosti v jeho původní kontextu.
 
-[![Pracovní postup nastavené průběžné doručování](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/en-us/library/dn449955.aspx)
+[![Pracovní postup nastavené průběžné doručování](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
 ## <a name="how-the-cloud-enables-cost-effective-ci-and-cd"></a>Jak cloud umožňuje nákladově efektivní konfigurace a disku CD
 
 Automatizace tyto procesy v Azure je snadné. Vzhledem k tomu, že používáte všechno, co v cloudu, nemusíte se koupit nebo spravovat servery pro vaše buildy nebo testovací prostředí. A nemusíte čekat na server jako dostupné pro testování v. Každé sestavení, které uděláte může číselníku testovací prostředí v Azure pomocí skriptu pro automatizaci, spusťte přijetí testů nebo další podrobné testů proti ho a pak při dokončení právě přerušit ho. A pokud spustíte pouze tento server pro 2 hodiny nebo 8 hodin za den, množství peněz, které budete muset platit pro něj je minimální, protože jste věnujeme jenom čas, kdy je počítač je ve skutečnosti spuštěna. Například prostředí vyžaduje pro opravu že aplikace v podstatě náklady na něj o 1 centů za hodinu Pokud přechod jedné vrstvy od bezplatná úroveň. V průběhu měsíce v případě pouze spustil prostředí na hodinu současně, vaše testovací prostředí by pravděpodobně nákladů menší než latte, který si zakoupíte v Starbucks.
 
-## <a name="visual-studio-team-services-vsts"></a>Visual Studio Team Services (služby VSTS)
+## <a name="visual-studio-team-services-vsts"></a>Visual Studio Team Services (VSTS)
 
 Služby VSTS poskytuje celou řadu funkcí a pomůže vám při vývoji aplikací z plánování nasazení.
 
@@ -65,13 +65,13 @@ První tři cloudu vývojové vzory se o tom, jak implementovat proces opakovate
 
 ## <a name="resources"></a>Prostředky
 
-Další informace najdete v tématu [nasazení webové aplikace v Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/).
+Další informace najdete v tématu [nasazení webové aplikace v Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-deploy/).
 
 Další informace v následujících zdrojích informací:
 
 - [Vytvoření kanálu verze sadou Team Foundation Server 2012](http://aka.ms/ReleasePipeline). Elektronická kniha, praktických labs a ukázkový kód podle Microsoft Patterns and Practices, poskytuje podrobný Úvod do nastavené průběžné doručování. Zahrnuje použití Visual Studio – správa testovacího prostředí a Visual Studio – správa verzí.
 - [DevOps Rangers ALM nástrojů a pokyny](https://aka.ms/vsarsolutions/). ALM Rangers zavedená DevOps Workbench ukázkové doprovodné řešení a praktické informace ve spolupráci se vzory &amp; postupy kniha *vytváření kanálu verze sadu TFS 2012*, jako skvělý způsob, jak začít učení koncepty DevOps &amp; správy verzí sady TFS 2012 a chcete vykázat a otestovat. Pokyny ukazuje, jak vytvářet jednou a nasazení do několika prostředí.
-- [Testování pro nastavené průběžné doručování sadou Visual Studio 2012](https://msdn.microsoft.com/en-us/library/jj159345.aspx). Elektronická kniha podle Microsoft Patterns and Practices, vysvětluje, jak integrovat automatizované testování s nastavené průběžné doručování.
+- [Testování pro nastavené průběžné doručování sadou Visual Studio 2012](https://msdn.microsoft.com/library/jj159345.aspx). Elektronická kniha podle Microsoft Patterns and Practices, vysvětluje, jak integrovat automatizované testování s nastavené průběžné doručování.
 - [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker). Zdrojový kód pro nástroj určený k zaznamenání sestavení ze sady TFS (podle štítek), sestavte jej, balíček je, někdo povolit v roli DevOps ke konfiguraci konkrétních aspektů a poslat ho do Azure. Nástroj sleduje proces nasazení k povolení operací "vrácení" dříve nasazené verzi. Tento nástroj nemá žádné externí závislosti a může pracovat samostatné pomocí rozhraní API sady TFS a sady Azure SDK.
 - [Nastavené průběžné doručování: Spolehlivé softwaru uvolní prostřednictvím sestavení, testování a nasazení automatizace](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1377126361). Seznamu pomocí Jez Humble.
 - [Verze ji! Navrhování a nasazení softwaru produkční prostředí](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). Seznamu pomocí Michael T. Nygard.

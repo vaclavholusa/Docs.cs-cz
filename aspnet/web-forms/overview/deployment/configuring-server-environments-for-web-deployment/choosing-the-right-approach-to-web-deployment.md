@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 5265f9962ca6244b1fe13ca6e37a5217c15b8cdf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b77aa37160f3822f58908866e44497aea3d3bdc8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>Výběr správný přístup k nasazení webu
 ====================
@@ -38,7 +38,7 @@ Tato tabulka ukazuje hlavní výhody a nevýhody jednotlivých přístupů nasaz
 
 | Přístup | Výhody | Nevýhody | Typické scénáře |
 | --- | --- | --- | --- |
-| Vzdáleného agenta | Je snadné vytvořit. Je vhodné pro pravidelné aktualizace pro webové aplikace a obsah. | Uživatel musí být správce na cílovém serveru. uživatele nelze zadat alternativní přihlašovací údaje. | Vývojové prostředí. Testovací prostředí. |
+| Vzdáleného agenta | Je snadné vytvořit. Je vhodné pro pravidelné aktualizace pro webové aplikace a obsah. | Uživatel musí být správce na cílovém serveru. Uživatele nelze zadat alternativní přihlašovací údaje. | Vývojové prostředí. Testovací prostředí. |
 | Dočasné agenta | Není nutné k instalaci nástroje nasazení webu na cílovém počítači. Automaticky se používá nejnovější verzi nástroje nasazení webu. | Uživatel musí být správce na cílovém serveru. Uživatele nelze zadat alternativní přihlašovací údaje. | Vývojové prostředí. Testovací prostředí. |
 | Obslužné rutiny pro nasazení webu | Uživatelé bez oprávnění správce, můžete nasadit obsah. Je vhodné pro pravidelné aktualizace pro webové aplikace a obsah. | Je mnohem složitější nastavit. | Přípravná prostředí. Provozní prostředí intranetu. Hostované prostředí. |
 | Offline nasazení | Je velmi snadné nastavit. Je vhodná pro izolované prostředí. | Správce serveru musíte ručně zkopírovat a importovat pokaždé, když webového balíčku. | Internetový provozní prostředí. Izolované prostředí sítě. |
@@ -69,7 +69,7 @@ Ve skutečnosti můžete Web Deploy spustitelný soubor odvození adresa koncov�
 
 
 > [!NOTE]
-> Další informace o nasazení webu syntaxe příkazového řádku a *. deploy.cmd* soubory, najdete v části [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx).
+> Další informace o nasazení webu syntaxe příkazového řádku a *. deploy.cmd* soubory, najdete v části [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx).
 
 
 Vzdáleného agenta nabízí snadný způsob, jak nasadit obsah ze vzdáleného umístění, a tento přístup může fungovat i s jedním kliknutím nebo automatické nasazení. Uživatel, který spouští příkaz nasazení však také musí být správce domény nebo členem místní skupiny administrators na cílovém serveru. Kromě toho vzdáleného agenta nepodporuje základní ověřování, takže nemůžete předat alternativní přihlašovací údaje na příkazovém řádku.
@@ -94,7 +94,7 @@ Pokud chcete použít nastavení poskytovatele dočasného agenta, přidejte **/
 
 Výhodou tohoto přístupu je, že nemusíte udržovat instalace nasazení webu na cílových serverech. Kromě toho není nutné zajistit, že zdrojový a cílový počítač používají stejnou verzi nástroje nasazení webu. Tento přístup, ale vykazuje hlavní stejná omezení jako přístup vzdáleného agenta, konkrétně musí být místní správce na cílovém serveru za účelem nasazení obsahu, a je podporována pouze ověřování NTLM. Postup dočasného agenta taky vyžaduje mnohem víc počáteční konfigurace cílového prostředí.
 
-Další informace o použití dočasného agenta, najdete v části [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx) a [nasazení webu na vyžádání](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx).
+Další informace o použití dočasného agenta, najdete v části [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx) a [nasazení webu na vyžádání](https://technet.microsoft.com/library/ee517345(WS.10).aspx).
 
 ## <a name="using-the-web-deploy-handler"></a>Pomocí webu nasadit obslužné rutiny
 
@@ -125,7 +125,7 @@ Předpokládejme například, že procesu sestavení nastaven tak, aby automatic
 
 
 > [!NOTE]
-> Další informace o syntaxi a nasazení webu operací příkazového řádku najdete v tématu [příkazového řádku pro nasazení webového odkazu](https://technet.microsoft.com/en-us/library/dd568991(v=ws.10).aspx). Další informace o používání *. deploy.cmd* souborů najdete v tématu [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx).
+> Další informace o syntaxi a nasazení webu operací příkazového řádku najdete v tématu [příkazového řádku pro nasazení webového odkazu](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx). Další informace o používání *. deploy.cmd* souborů najdete v tématu [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx).
 
 
 Obslužné rutiny nasazení webu poskytuje užitečné přístup k nasazení v pracovním prostředí, hostované prostředí a na základě intranetu provozní prostředí, kde vzdálený přístup k serveru je k dispozici, ale nejsou přihlašovací údaje správce.
@@ -146,9 +146,9 @@ Příklad začátku do konce scénáře, který používá přístup offline nas
 
 ## <a name="further-reading"></a>Další čtení
 
-Další informace o syntaxi a nasazení webu operací příkazového řádku najdete v tématu [příkazového řádku pro nasazení webového odkazu](https://technet.microsoft.com/en-us/library/dd568991(v=ws.10).aspx). Další informace o používání *. deploy.cmd* souborů najdete v tématu [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx).
+Další informace o syntaxi a nasazení webu operací příkazového řádku najdete v tématu [příkazového řádku pro nasazení webového odkazu](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx). Další informace o používání *. deploy.cmd* souborů najdete v tématu [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx).
 
-Další obecné informace o různých způsobech, ve kterém bude možné nasadit balíčky web ze vzdáleného počítače, najdete v části [vzdálené použití nasazení webu](https://technet.microsoft.com/en-us/library/ee461175(WS.10).aspx). Další informace o použití nasazení webu na vyžádání najdete v tématu [nasazení webu na vyžádání](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx).
+Další obecné informace o různých způsobech, ve kterém bude možné nasadit balíčky web ze vzdáleného počítače, najdete v části [vzdálené použití nasazení webu](https://technet.microsoft.com/library/ee461175(WS.10).aspx). Další informace o použití nasazení webu na vyžádání najdete v tématu [nasazení webu na vyžádání](https://technet.microsoft.com/library/ee517345(WS.10).aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](configuring-server-environments-for-web-deployment.md)

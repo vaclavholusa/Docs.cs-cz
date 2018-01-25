@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d5d89a6a82c91b915d61ddc3c350ea0935511c07
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c5ec43ac78be4a9452ebaa6495a6883506ac162f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-error-handling"></a>Zpracování chyb ASP.NET
 ====================
@@ -313,7 +313,7 @@ V tomto kurzu jste se naučili o zpracování chyb na úrovni aplikace, na úrov
 
 ## <a name="tutorial-series-conclusion"></a>Závěru kurzu řady
 
-*Děkujeme, že následující společně. Ať Tato sada kurzy pomohly při seznámení s webovými formuláři ASP.NET. Pokud potřebujete další informace o funkcích webových formulářů, které jsou k dispozici v technologii ASP.NET 4.5 a Visual Studio 2013, přečtěte si* [ *ASP.NET a nástroje Web Tools pro Visual Studio 2013 verze poznámky* ](../../../../visual-studio/overview/2013/release-notes.md)  *. Navíc nezapomeňte podívejte se na kurz uvedený v*   ***další kroky *** části a defintely vyzkoušení* [ *bezplatnou zkušební verzi Azure* ](https://azure.microsoft.com/pricing/free-trial/)*.*
+*Děkujeme, že následující společně. Ať Tato sada kurzy pomohly při seznámení s webovými formuláři ASP.NET. Pokud potřebujete další informace o funkcích webových formulářů, které jsou k dispozici v technologii ASP.NET 4.5 a Visual Studio 2013, přečtěte si* [ *ASP.NET a nástroje Web Tools pro Visual Studio 2013 verze poznámky* ](../../../../visual-studio/overview/2013/release-notes.md)  *. Navíc nezapomeňte podívejte se na kurz uvedený v* ***další kroky *** části a defintely vyzkoušení* [ *bezplatnou zkušební verzi Azure* ](https://azure.microsoft.com/pricing/free-trial/)*.*
 
 ![Děkujeme - Erik](aspnet-error-handling/_static/image10.png)  
 
@@ -335,11 +335,11 @@ Další informace o nasazení webové aplikace do služby Microsoft Azure, najde
 
 Děkujeme, že následující osob, které významně přispěli k obsahu tento kurz řady chci:
 
-- [Alberto Poblacion, MVP &amp; MCT, Španělsko](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion, MVP &amp; MCT, Španělsko](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - [Alex Thissen, Nizozemsko](http://blog.alexthissen.nl/) (twitter: [ @alexthissen ](http://twitter.com/alexthissen))
 - [Andre Tournier, USA](http://andret503.wordpress.com/)
 - Apurva Joshi, Microsoft
-- [Bojan Vrhovnik, Slovinsko](http://twitter.com/bvrhovnik)
+- [Bojan Vrhovnik, Slovenia](http://twitter.com/bvrhovnik)
 - [Bruno Sonnino, Brazílie](http://msmvps.com/blogs/bsonnino) (twitter: [ @bsonnino ](http://twitter.com/bsonnino))
 - [Carlosu dos Santos, Brazílie](http://www.carloscds.net/)
 - [Dave Campbell, USA](http://www.wynapse.com/) (twitter: [ @windowsdevnews ](http://twitter.com/windowsdevnews))
@@ -348,10 +348,10 @@ Děkujeme, že následující osob, které významně přispěli k obsahu tento 
 - Jan Pope
 - [Prodejci Mitchel, USA](http://www.mitchelsellers.com/) (twitter: [ @MitchelSellers ](http://twitter.com/MitchelSellers))
 - [Paul Cociuba, Microsoft](http://linqto.me/Links/pcociuba)
-- [Paulo Morgado, Portugalsko](http://paulomorgado.net/)
+- [Paulo Morgado, Portugal](http://paulomorgado.net/)
 - [Pranav Rastogi, Microsoft](https://blogs.msdn.com/b/pranav_rastogi)
-- [TIM Ammann, Microsoft](https://blogs.iis.net/timamm/default.aspx)
-- [Tní Dykstra, Microsoft](https://blogs.msdn.com/aspnetue)
+- [Tim Ammann, Microsoft](https://blogs.iis.net/timamm/default.aspx)
+- [Tom Dykstra, Microsoft](https://blogs.msdn.com/aspnetue)
 
 ## <a name="community-contributions"></a>Komunitní příspěvky
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: aaa061e61b9bab5b33083851624f0487b2cf6473
-ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
+ms.openlocfilehash: ccf4329e6684d07570bfaabfaa1a570664fb2ca3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Vytvoření aplikace ASP.NET MVC 5 s Facebook, Twitter, LinkedIn a Google OAuth2 přihlašování (C#)
 ====================
@@ -95,7 +95,7 @@ Pro připojení k zprostředkovatele ověřování, jako je Google a Facebook, m
 6. Vyberte **webové** kartě a vložte adresu URL SSL do **adresa Url projektu** pole. Uložte soubor (seznam Ctl + S). Budete potřebovat adresu URL konfigurace aplikací pro ověřování sítě Facebook a Google.  
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image10.png)
-7. Přidat [RequireHttps](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute.aspx) atribut `Home` řadiče tak, aby vyžadovala všechny požadavky musí používat protokol HTTPS. Zabezpečení způsobů je přidání [RequireHttps](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute.aspx) filtru do aplikace. Najdete v části &quot;chránit aplikace pomocí protokolu SSL a atribut Autorizovat&quot; v mé tutoral [vytvoření aplikace ASP.NET MVC pomocí ověřování a databázi SQL a nasazení do Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). Část domovské řadiče jsou uvedeny níže.
+7. Přidat [RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) atribut `Home` řadiče tak, aby vyžadovala všechny požadavky musí používat protokol HTTPS. Zabezpečení způsobů je přidání [RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) filtru do aplikace. Najdete v části &quot;chránit aplikace pomocí protokolu SSL a atribut Autorizovat&quot; v mé tutoral [vytvoření aplikace ASP.NET MVC pomocí ověřování a databázi SQL a nasazení do Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). Část domovské řadiče jsou uvedeny níže.
 
     [!code-csharp[Main](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/samples/sample1.cs?highlight=1)]
 8. Stisknutím kombinace kláves CTRL + F5 a spusťte aplikaci. Pokud jste nainstalovali certifikát v minulosti, můžete přeskočit zbývající část tohoto oddílu a přejít na [vytvoření aplikace na Google OAuth 2 a připojení aplikace k projektu](#goog), jinak postupujte podle pokynů důvěřovat podepsaný certifikát, který služba IIS Express vygenerovala.  
@@ -286,7 +286,7 @@ Využijte tento kurz [vytvoření aplikace ASP.NET MVC pomocí ověřování a d
 
 1. Postup nasazení aplikace do Azure.
 2. Jak zabezpečit aplikace s rolemi.
-3. Jak zabezpečit vaší aplikace pomocí [RequireHttps](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx) a [Autorizovat](https://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.100).aspx) filtry.
+3. Jak zabezpečit vaší aplikace pomocí [RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx) a [Autorizovat](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.100).aspx) filtry.
 4. Jak používat členské rozhraní API pro přidání uživatelů a rolí.
 
 Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může zlepšit. Můžete také vyžádat nová témata na [zobrazit mi jak s kód](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code). Dokonce můžete požádat o a hlasovat o nové funkce, které mají být přidány do technologie ASP.NET. Například můžete hlasovat pro nástroj, který [vytvoření a správě uživatelů a rolí.](http://aspnet.uservoice.com/forums/41199-general-asp-net/suggestions/5646857-asp-net-identity-membership-db-tool-to-mangage-use)

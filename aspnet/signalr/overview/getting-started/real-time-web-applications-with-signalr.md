@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 96d3b8b82f78d8f6da85012aac8a1411cf297e26
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 22123a9c61e6830f3f9f66a45182e1e923950341
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>Rukou na testovacího prostředí: V reálném čase webových aplikací pomocí nástroje SignalR
 ====================
@@ -260,10 +260,10 @@ Tyto problémy můžete vyřešit pomocí komponenty s názvem *propojovacího r
 Aktuálně existují tři typy backplanes pro SignalR:
 
 - **Windows Azure Service Bus**. Service Bus je zasílání zpráv infrastrukturu, která umožňuje součásti odesílat volně párované zprávy.
-- **Systému SQL Server**. Propojovací rozhraní systému SQL Server zapíše zprávy do tabulky SQL. Propojovacího rozhraní používá službu Service Broker pro efektivní zasílání zpráv. Ale spolupracuje také pokud Service Broker není povolena.
+- **SQL Server**. Propojovací rozhraní systému SQL Server zapíše zprávy do tabulky SQL. Propojovacího rozhraní používá službu Service Broker pro efektivní zasílání zpráv. Ale spolupracuje také pokud Service Broker není povolena.
 - **Redis**. Redis je úložišti klíč hodnota v paměti. Redis podporuje vzor publikovat/odebírat ("pub nebo sub") pro odesílání zpráv.
 
-Každá zpráva se budou odesílat prostřednictvím sběrnice zpráv. Implementuje sběrnice zpráv [IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) rozhraní, která poskytuje abstrakci se publikování a přihlášení k odběru. Backplanes fungovat tak, že nahradíte výchozí **IMessageBus** se sběrnicí určené pro tento propojovacího rozhraní.
+Každá zpráva se budou odesílat prostřednictvím sběrnice zpráv. Implementuje sběrnice zpráv [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) rozhraní, která poskytuje abstrakci se publikování a přihlášení k odběru. Backplanes fungovat tak, že nahradíte výchozí **IMessageBus** se sběrnicí určené pro tento propojovacího rozhraní.
 
 Každá instance serveru se připojí k propojovacího rozhraní přes sběrnici. Pokud je odeslána zpráva, přejdete do propojovacího rozhraní a propojovacího rozhraní odešle ji do každého serveru. Když server přijme zprávu o z propojovacího rozhraní, ukládá zprávy v místní mezipaměti. Server pak přináší zprávy pro klienty z místní mezipaměti.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: 4c89ca004ad4c9d731868e868cf6723aa4ed625d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c114627388217e892c84d6b76366d0fa96b0b70c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-the-entity-framework-40"></a>Co je nového v rozhraní Entity Framework 4.0
 ====================
@@ -90,7 +90,7 @@ Spustit *Courses.aspx* stránky znovu zobrazíte změněná data.
 
 (Pokud chcete nastavit počet kredity zpět na původní hodnoty, v *UpdateCredits.aspx.cs* změnit `Credits * {0}` k `Credits / {0}` a znovu spusťte stránce zadání 10 jako dělitel.)
 
-Další informace o provádění dotazů, které definujete v kódu najdete v tématu [postup: přímo spustit příkazy proti Data Source](https://msdn.microsoft.com/en-us/library/ee358769.aspx).
+Další informace o provádění dotazů, které definujete v kódu najdete v tématu [postup: přímo spustit příkazy proti Data Source](https://msdn.microsoft.com/library/ee358769.aspx).
 
 ## <a name="model-first-development"></a>Vývoj s včasným modelu
 
@@ -178,7 +178,7 @@ Spuštění stránky.
 
 (Poznámka: Tato stránka je součástí ke stažení projektu, ale ke spolupráci je musíte vytvořit databázi v místní instanci systému SQL Server Express; není zahrnuta jako databázi *.mdf* v soubor *aplikace\_ Data* složky.)
 
-Další informace o použití funkce první model Entity Framework najdete v tématu [první Model Entity Framework 4](https://msdn.microsoft.com/en-us/data/ff830362.aspx).
+Další informace o použití funkce první model Entity Framework najdete v tématu [první Model Entity Framework 4](https://msdn.microsoft.com/data/ff830362.aspx).
 
 ## <a name="poco-support"></a>Podpora objektů POCO
 
@@ -188,7 +188,7 @@ Rozhraní Entity Framework 4 zavádí možnost používat tříd entit, které n
 
 Další informace o používání POCOs v Entity Framework najdete v následujících zdrojích informací:
 
-- [Práce s entity objektů POCO](https://msdn.microsoft.com/en-us/library/dd456853.aspx). Toto je dokument MSDN, který je přehled POCOs, s odkazy na jiné dokumenty, které mít podrobnější informace.
+- [Práce s entity objektů POCO](https://msdn.microsoft.com/library/dd456853.aspx). Toto je dokument MSDN, který je přehled POCOs, s odkazy na jiné dokumenty, které mít podrobnější informace.
 - [Návod: Objektů POCO šablony rozhraní Entity Framework](https://blogs.msdn.com/b/adonet/archive/2010/01/25/walkthrough-poco-template-for-the-entity-framework.aspx) jde blogu z Entity Framework vývojový tým, s odkazy na další příspěvcích na blogu o POCOs.
 
 ## <a name="code-first-development"></a>Vývoj s včasným kódu
@@ -209,7 +209,7 @@ Kromě toho se nové MVC kódu-první kurz, který vytváří podobná aplikace 
 
 Tím dokončíte přehled co je nového v Entity Framework a tento pokračování s řadou kurz Entity Framework. Další informace o nových funkcích rozhraní Entity Framework 4, které nejsou zahrnuty v tomto poli najdete v následujících zdrojích informací:
 
-- [Co je nového v technologii ADO.NET](https://msdn.microsoft.com/en-us/library/ex6y04yf.aspx) tématu MSDN na nové funkce ve verzi rozhraní Entity Framework 4.
+- [Co je nového v technologii ADO.NET](https://msdn.microsoft.com/library/ex6y04yf.aspx) tématu MSDN na nové funkce ve verzi rozhraní Entity Framework 4.
 - [Uvedení verze Entity Framework 4](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx) Entity Framework vývojový tým příspěvku na blogu o nových funkcích ve verze 4.
 
 >[!div class="step-by-step"]

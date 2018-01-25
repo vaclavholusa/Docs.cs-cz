@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 505cca303b5569b2f676adab767d742cb5cd21a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de31a9dffb95b863a4ec38b74fd2c6e03f287a7f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>Konfigurace serveru TFS sestavení pro nasazení webu
 ====================
@@ -58,13 +58,13 @@ Při konfiguraci serveru sestavení první úlohou je nainstalovat a nakonfiguro
 - Vytvoření *vytvoření řadiče* a jeden nebo více *agentů sestavení*. Každý řadič sestavení spravuje sadu agenty sestavení. Pokud jste ve frontě sestavení, přiřadí kontroleru buildu sestavovací úlohy agenta k dispozici sestavení. Každou kolekci týmového projektu v sadě TFS je namapována na řadič jednoho sestavení.
 - Konfigurace složky drop pro vaše výstupy sestavení. Toto je sdílené síťové složky. Žádné sestavení výstupů, jako jsou balíčky nasazení webu, se odesílají do složky, vyřaďte.
 
-[Správu Team Foundation Build](https://msdn.microsoft.com/en-us/library/ms252495.aspx) kapitoly na webu MSDN obsahuje všechny prostředky, které potřebují k vykonávání těchto úkolů:
+[Správu Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx) kapitoly na webu MSDN obsahuje všechny prostředky, které potřebují k vykonávání těchto úkolů:
 
-- Koncepční přehled služby Team Foundation Build, včetně služby sestavení, řadiče sestavení a agenty sestavení, viz [Principy Team Foundation sestavení System](https://msdn.microsoft.com/en-us/library/dd793166.aspx).
-- Informace o instalaci a konfiguraci služby sestavení najdete v tématu [konfigurace počítače sestavení](https://msdn.microsoft.com/en-us/library/ms181712.aspx).
-- Informace o vytváření řadiče sestavení najdete v tématu [vytvoření a práci s řadičem sestavení](https://msdn.microsoft.com/en-us/library/ee330987.aspx).
-- Informace o vytváření agentů sestavení najdete v tématu [vytvoření a práci s agenty, sestavení](https://msdn.microsoft.com/en-us/library/bb399135.aspx).
-- Informace o vytváření a konfiguraci rozevírací složky najdete v tématu [nastavit až vyřadit složky](https://msdn.microsoft.com/en-us/library/bb778394.aspx).
+- Koncepční přehled služby Team Foundation Build, včetně služby sestavení, řadiče sestavení a agenty sestavení, viz [Principy Team Foundation sestavení System](https://msdn.microsoft.com/library/dd793166.aspx).
+- Informace o instalaci a konfiguraci služby sestavení najdete v tématu [konfigurace počítače sestavení](https://msdn.microsoft.com/library/ms181712.aspx).
+- Informace o vytváření řadiče sestavení najdete v tématu [vytvoření a práci s řadičem sestavení](https://msdn.microsoft.com/library/ee330987.aspx).
+- Informace o vytváření agentů sestavení najdete v tématu [vytvoření a práci s agenty, sestavení](https://msdn.microsoft.com/library/bb399135.aspx).
+- Informace o vytváření a konfiguraci rozevírací složky najdete v tématu [nastavit až vyřadit složky](https://msdn.microsoft.com/library/bb778394.aspx).
 
 ## <a name="install-required-products-and-components"></a>Instalace požadovaných produktů a součásti
 
@@ -114,7 +114,7 @@ V tomto okamžiku je váš server sestavení chtít začít vytvářet a nasazov
 
 ## <a name="further-reading"></a>Další čtení
 
-Další obecné pokyny o práci s Team Build najdete v tématu [správu Team Foundation Build](https://msdn.microsoft.com/en-us/library/ms252495.aspx).
+Další obecné pokyny o práci s Team Build najdete v tématu [správu Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](adding-content-to-source-control.md)

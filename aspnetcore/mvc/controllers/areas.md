@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/areas
-ms.openlocfilehash: 666be2da6b38ffb538ae3888ea879a4104c8fd12
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 87bf2eaad1c13d21412051be769992411f685e2e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="areas"></a>Oblasti
 
@@ -153,7 +153,7 @@ Procházení k `http://<yourApp>/products`, `Index` metody akce `HomeController`
 
   TagHelper syntaxe:`<a asp-action="Index">Go to Product's Home Page</a>`
 
-  Všimněte si, že jsme nemusí zadat hodnoty 'oblastí' a 'controller' tady, protože je již k dispozici v kontextu aktuálního požadavku. Tyto druhy hodnot, se nazývají `ambient` hodnoty.
+  Všimněte si, že jsme nemusí zadat hodnoty 'oblastí' a 'controller' tady jsou již k dispozici v kontextu aktuálního požadavku. Tyto druhy hodnot, se nazývají `ambient` hodnoty.
 
 * Generování odkazů z akce v rámci oblast na základě řadiče další akci na jiném řadiči
 

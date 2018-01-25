@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: e14f3bed001592c85bdbba868f51141bc52a9470
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51344535e7ff42f1bd6641aeaaf043be6423f1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: Úvod
 ====================
@@ -53,7 +53,7 @@ Kurzy jsou zaměřené na vývojáře využívající technologii ASP.NET, kteř
 Nasazení z [ovládací prvek zdroje](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md) pomocí [nastavené průběžné doručování](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) procesu není zahrnutý v těchto kurzech s výjimkou jeden kurzu, který ukazuje, jak nasadit z příkazového řádku. Informace o nastavené průběžné doručování najdete v následujících zdrojích informací:
 
 - [Průběžnou integraci a nastavené průběžné doručování (vytváření reálných cloudových aplikací pomocí služby Windows Azure)](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
-- [Nasazení webové aplikace v Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/)
+- [Nasazení webové aplikace v Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
 - [Nasazení webové aplikace v podnikové scénáře](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md) (starší sadu kurzů napsán pro sadu Visual Studio 2010, která má stále užitečné informace pro podniková prostředí.)
 
 ## <a name="using-a-third-party-hosting-provider"></a>Pomocí poskytovatele hostitelských služeb třetích stran
@@ -120,7 +120,7 @@ Tento kurz je určen pro následující produkty:
 
 - Windows 8 nebo Windows 7.
 - Visual Studio 2012 nebo Visual Studio 2012 Express pro Web s [nejnovější aktualizace](https://go.microsoft.com/fwlink/?LinkId=272486).
-- [Azure SDK pro sadu Visual Studio 2012](https://go.microsoft.com/fwlink/?LinkId=254364)
+- [Azure SDK for Visual Studio 2012](https://go.microsoft.com/fwlink/?LinkId=254364)
 
 Můžete postupovat v kurzu pomocí Visual Studio 2010 SP1 nebo Visual Studio 2013, ale některé snímky obrazovky se bude lišit a některé funkce se bude lišit.
 
@@ -128,9 +128,9 @@ Pokud používáte Visual Studio 2013, nainstalujte [Azure SDK pro Visual Studio
 
 Pokud používáte Visual Studio 2010 SP1, nainstalujte následující software:
 
-- [Azure SDK pro sadu Visual Studio 2010](https://go.microsoft.com/fwlink/?LinkID=254269)
-- [Databáze SQL Server Express LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=SQLLocalDBOnly_11_0)
-- [Nástroje SQL Server Data Tools](https://msdn.microsoft.com/en-us/library/hh500335.aspx).
+- [Azure SDK for Visual Studio 2010](https://go.microsoft.com/fwlink/?LinkID=254269)
+- [SQL Server Express LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=SQLLocalDBOnly_11_0)
+- [Nástroje SQL Server Data Tools](https://msdn.microsoft.com/library/hh500335.aspx).
 
 V závislosti na tom, kolik závislostí sady SDK už máte na počítači může instalace sady Azure SDK trvat dlouhou dobu, od několika minut až půl hodiny nebo i déle. I když chcete publikovat do jiných výrobců poskytovatele hostingu místo do Azure, protože sada SDK zahrnuje nejnovější aktualizace sady Visual Studio web publikovat funkce musíte sadu Azure SDK.
 
@@ -203,4 +203,4 @@ Následující funkce aplikace budou mít vliv nasazení nebo co musíte udělat
 V tomto prvním kurzu v řadě byly staženy ukázkový projekt sady Visual Studio a zkontrolovat lokality funkce, které ovlivňují nasazení aplikace. V následujících kurzech připravíte nasazení nastavením některé z těchto věcí automaticky zpracovávat. Ostatní můžete postará o ručně.
 
 >[!div class="step-by-step"]
-[Další](preparing-databases.md)
+[Next](preparing-databases.md)

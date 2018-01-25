@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: 02c2a01ef8ec2b5a49f2c303ee61f02702a3ba54
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 997582263bd48590b74434ee0ffc6be928fa1e08
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="routing-and-action-selection-in-aspnet-web-api"></a>Směrování a výběr akce v rozhraní ASP.NET Web API
 ====================
@@ -121,7 +121,7 @@ Poskytuje výchozí implementaci **ApiControllerActionSelector** třídy. Vybert
 
 Před prohlížení algoritmus výběr, je potřeba pochopit některé věci o akce kontroleru.
 
-**Které metody na řadiči, jsou považovány za "akce"?** Když vyberete akci, rozhraní pouze vypadá na veřejné instance metody na řadiči. Navíc vyloučí ["speciální název"](https://msdn.microsoft.com/en-us/library/system.reflection.methodbase.isspecialname) metody (konstruktory, události, přetížení operátoru a tak dále) a metody zděděno z **objektu ApiController** třídy.
+**Které metody na řadiči, jsou považovány za "akce"?** Když vyberete akci, rozhraní pouze vypadá na veřejné instance metody na řadiči. Navíc vyloučí ["speciální název"](https://msdn.microsoft.com/library/system.reflection.methodbase.isspecialname) metody (konstruktory, události, přetížení operátoru a tak dále) a metody zděděno z **objektu ApiController** třídy.
 
 **Metody HTTP.** Rozhraní framework vybere pouze akce, které odpovídají metoda HTTP požadavku, stanoven následujícím způsobem:
 
@@ -134,7 +134,7 @@ Před prohlížení algoritmus výběr, je potřeba pochopit některé věci o a
 - Jednoduché typy jsou převzaty z identifikátoru URI.
 - Komplexní typy jsou převzaty z textu požadavku.
 
-Jednoduché typy zahrnout všechny [primitivní typy rozhraní .NET Framework](https://msdn.microsoft.com/en-us/library/system.type.isprimitive), plus **data a času**, **Decimal**, **Guid**, **řetězec** , a **časový interval**. Pro každou akci může číst maximálně jeden parametr textu požadavku.
+Jednoduché typy zahrnout všechny [primitivní typy rozhraní .NET Framework](https://msdn.microsoft.com/library/system.type.isprimitive), plus **data a času**, **Decimal**, **Guid**, **řetězec** , a **časový interval**. Pro každou akci může číst maximálně jeden parametr textu požadavku.
 
 > [!NOTE]
 > Je možné přepsat výchozí pravidla pro vazbu. V tématu [vazbu parametru WebAPI pod pokličkou](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx).

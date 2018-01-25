@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8002253ef40c7786a5dada95b7e8d0dc070409fd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 629c1154683a0370e3e650873edf29dc9f22b4bc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="uploading-files-c"></a>Nahrávání souborů (C#)
 ====================
@@ -99,7 +99,7 @@ Alternativně můžete uložená binární data přímo v databázi Microsoft SQ
 Hlavní výhodou ukládání binární data přímo v databázi je úzkou párování mezi binární data a záznamů databáze. To výrazně zjednodušuje databáze úlohy správy, jako je zálohování nebo přesunutí databáze do jiné lokality nebo server. Odstranění záznamu automaticky odstraní také odpovídající binární data. Existují také další jemně výhod ukládání binární data v databázi. V tématu [ukládání binární soubory přímo v databázi pomocí technologie ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/120606-1.aspx) pro podrobné informace.
 
 > [!NOTE]
-> V systému Microsoft SQL Server 2000 a dřívějších verzích `varbinary` datový typ měli maximální limit 8 000 bajtů. K uložení až 2 GB binárních dat [ `image` datový typ](https://msdn.microsoft.com/en-us/library/ms187993.aspx) se musí použít místo. Po přidání `MAX` v systému SQL Server 2005, ale `image` datový typ je zastaralá. Ho s stále podporována z důvodů zpětné kompatibility, ale Microsoft oznámila, který `image` datový typ budou odebrány v budoucí verzi systému SQL Server.
+> V systému Microsoft SQL Server 2000 a dřívějších verzích `varbinary` datový typ měli maximální limit 8 000 bajtů. K uložení až 2 GB binárních dat [ `image` datový typ](https://msdn.microsoft.com/library/ms187993.aspx) se musí použít místo. Po přidání `MAX` v systému SQL Server 2005, ale `image` datový typ je zastaralá. Ho s stále podporována z důvodů zpětné kompatibility, ale Microsoft oznámila, který `image` datový typ budou odebrány v budoucí verzi systému SQL Server.
 
 
 Pokud pracujete s starší datového modelu může zobrazit `image` datového typu. Databáze Northwind s `Categories` tabulka má `Picture` sloupec, který slouží k uložení binární data souboru s bitovou kopií pro kategorii. Vzhledem k tomu, že databáze Northwind má jeho kořeny v aplikaci Microsoft Access a dřívějších verzích systému SQL Server, tento sloupec je typu `image`.
@@ -210,7 +210,7 @@ S vrstvy DAL aktualizovat zbývá k posílení obchodní logiky vrstvy (BLL) o m
 
 Při shromažďování binární data, často tato data poskytuje koncovým uživatelem. Pokud chcete zaznamenat tyto informace, uživatel musí být možné nahrát soubor z jejich počítače do webového serveru. Odeslaná data je pak potřeba integrovat datový model, který může to znamenat ukládání souboru do systému souborů s webového serveru a přidání cesty k souboru v databázi nebo zápis binární obsah přímo do databáze. V tomto kroku budete podíváme na to, jak chcete, aby uživatel k nahrání souborů z jejich počítače k serveru. V dalším kurzu jsme budete zapněte naše pozornost integraci nahrávaný soubor do datového modelu.
 
-ASP.NET 2.0 s novou [ovládací prvek webu odesílání souborů při odpovědích](https://msdn.microsoft.com/en-us/library/ms227677(VS.80).aspx) poskytuje mechanismus pro uživatelům odeslat soubor z počítače na webový server. Ovládací prvek odesílání souborů při odpovědích vykreslí jako `<input>` element jehož `type` je atribut nastaven na soubor, který prohlížeče zobrazí jako textové pole s tlačítko Procházet. Klepnutím na tlačítko Procházet vyvolá dialogové okno, ze kterého může uživatel vybrat soubor. Při odeslání formuláře zpět obsah s vybraný soubor se odesílají společně s zpětné volání. Na straně serveru je přístupný prostřednictvím vlastnosti odesílání souborů při odpovědích ovládacích prvků s informace o nahrávaný soubor.
+ASP.NET 2.0 s novou [ovládací prvek webu odesílání souborů při odpovědích](https://msdn.microsoft.com/library/ms227677(VS.80).aspx) poskytuje mechanismus pro uživatelům odeslat soubor z počítače na webový server. Ovládací prvek odesílání souborů při odpovědích vykreslí jako `<input>` element jehož `type` je atribut nastaven na soubor, který prohlížeče zobrazí jako textové pole s tlačítko Procházet. Klepnutím na tlačítko Procházet vyvolá dialogové okno, ze kterého může uživatel vybrat soubor. Při odeslání formuláře zpět obsah s vybraný soubor se odesílají společně s zpětné volání. Na straně serveru je přístupný prostřednictvím vlastnosti odesílání souborů při odpovědích ovládacích prvků s informace o nahrávaný soubor.
 
 K předvedení odesílání souborů, otevřete `FileUpload.aspx` stránku `BinaryData` složku, přetáhněte ovládací prvek odesílání souborů při odpovědích z panelu nástrojů na návrháře a nastavení ovládacího prvku s `ID` vlastnost `UploadTest`. V dalším kroku přidání ovládacího prvku tlačítko webové nastavení jeho `ID` a `Text` vlastnosti, které chcete `UploadButton` a nahrajte soubor vybrané v uvedeném pořadí. Nakonec, umístěte ovládací prvek popisek webové pod tlačítko, vymažte jeho `Text` vlastnost a sadu jeho `ID` vlastnost `UploadDetails`.
 
@@ -233,13 +233,13 @@ Zpětné volání nahraný soubor lze uložit do systému souborů nebo jeho bin
 
 [!code-csharp[Main](uploading-files-cs/samples/sample5.cs)]
 
-Ovládací prvek odesílání souborů při odpovědích poskytuje celou řadu vlastností pro práci s odeslaná data. Pro instanci [ `HasFile` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.fileupload.hasfile.aspx) označuje, zda byl soubor odeslaný uživatelem, zatímco [ `FileBytes` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.fileupload.filebytes.aspx) poskytuje přístup k nahrané binární data jako pole bajtů. `Click` Obslužné rutiny události spustí tím zajistí, že soubor byl odeslán. Pokud soubor se nahrají popisek zobrazuje název nahrávaný soubor, jeho velikost v bajtech a typ obsahu.
+Ovládací prvek odesílání souborů při odpovědích poskytuje celou řadu vlastností pro práci s odeslaná data. Pro instanci [ `HasFile` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.hasfile.aspx) označuje, zda byl soubor odeslaný uživatelem, zatímco [ `FileBytes` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.filebytes.aspx) poskytuje přístup k nahrané binární data jako pole bajtů. `Click` Obslužné rutiny události spustí tím zajistí, že soubor byl odeslán. Pokud soubor se nahrají popisek zobrazuje název nahrávaný soubor, jeho velikost v bajtech a typ obsahu.
 
 > [!NOTE]
 > K zajištění, že uživatel uloží soubor můžete zkontrolovat `HasFile` vlastnost a zobrazí upozornění, pokud ji s `false`, nebo můžete použít [ovládací prvek RequiredFieldValidator](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/validation/default.aspx) místo.
 
 
-Odesílání souborů při odpovědích s `SaveAs(filePath)` nahrávaný soubor uloží do zadaného *filePath*. *filePath* musí být *fyzická cesta* (`C:\Websites\Brochures\SomeFile.pdf`) ne *virtuální* *cesta* (`/Brochures/SomeFile.pdf`). [ `Server.MapPath(virtPath)` Metoda](https://msdn.microsoft.com/en-us/library/system.web.httpserverutility.mappath.aspx) obsahuje virtuální cestu a vrátí jeho odpovídající fyzická cesta. Virtuální cesta, která následuje `~/Brochures/fileName`, kde *fileName* je název nahrávaný soubor. V tématu [pomocí Server.MapPath](http://www.4guysfromrolla.com/webtech/121799-1.shtml) pro další informace o virtuálních a fyzických cest a používání `Server.MapPath`.
+Odesílání souborů při odpovědích s `SaveAs(filePath)` nahrávaný soubor uloží do zadaného *filePath*. *filePath* musí být *fyzická cesta* (`C:\Websites\Brochures\SomeFile.pdf`) ne *virtuální* *cesta* (`/Brochures/SomeFile.pdf`). [ `Server.MapPath(virtPath)` Metoda](https://msdn.microsoft.com/library/system.web.httpserverutility.mappath.aspx) obsahuje virtuální cestu a vrátí jeho odpovídající fyzická cesta. Virtuální cesta, která následuje `~/Brochures/fileName`, kde *fileName* je název nahrávaný soubor. V tématu [pomocí Server.MapPath](http://www.4guysfromrolla.com/webtech/121799-1.shtml) pro další informace o virtuálních a fyzických cest a používání `Server.MapPath`.
 
 Po dokončení `Click` obslužné rutiny události, za chvíli k otestování stránku v prohlížeči. Klikněte na tlačítko Procházet a vyberte soubor z pevného disku a potom klikněte na tlačítko Nahrát soubor vybrané. Zpětné volání odešle obsah vybraného souboru webového serveru, který se potom zobrazí informace o souboru před jeho uložením `~/Brochures` složky. Po nahrání souboru, vraťte k sadě Visual Studio a klikněte na tlačítko Aktualizovat v Průzkumníku řešení. Měli byste vidět soubor, který jste právě nahráli ve složce ~/Brochures!
 
@@ -264,7 +264,7 @@ Existuje několik postupů pro řešení konfliktů názvů souborů. Jednou z m
 
 ## <a name="challenges-involved-with-very-large-amounts-of-binary-data"></a>Problémy spojené s velmi velkých objemů binární Data
 
-Tyto kurzy předpokládat, že je binární data zaznamenaná mírné velikost. Pracujete s velmi velkým množstvím binární datové soubory, které jsou několik MB nebo větší zavádí nové výzvy, které jsou nad rámec těchto kurzů. Například ve výchozím nastavení ASP.NET odmítnou nahrávání více než 4 MB, i když to můžete nakonfigurovat přes [ `<httpRuntime>` element](https://msdn.microsoft.com/en-us/library/e1f13641.aspx) v `Web.config`. Služba IIS ukládá příliš vlastní omezení velikosti nahrávání souborů. V tématu [velikost souboru nahrát IIS](http://vandamme.typepad.com/development/2005/09/iis_upload_file.html) Další informace. Čas potřebný k nahrání velkých souborů kromě toho můžete překročit výchozí 110 sekundách, po kterou čekat ASP.NET pro žádost. Existují také paměti a výkon problémy, které nastat při práci s velkými soubory.
+Tyto kurzy předpokládat, že je binární data zaznamenaná mírné velikost. Pracujete s velmi velkým množstvím binární datové soubory, které jsou několik MB nebo větší zavádí nové výzvy, které jsou nad rámec těchto kurzů. Například ve výchozím nastavení ASP.NET odmítnou nahrávání více než 4 MB, i když to můžete nakonfigurovat přes [ `<httpRuntime>` element](https://msdn.microsoft.com/library/e1f13641.aspx) v `Web.config`. Služba IIS ukládá příliš vlastní omezení velikosti nahrávání souborů. V tématu [velikost souboru nahrát IIS](http://vandamme.typepad.com/development/2005/09/iis_upload_file.html) Další informace. Čas potřebný k nahrání velkých souborů kromě toho můžete překročit výchozí 110 sekundách, po kterou čekat ASP.NET pro žádost. Existují také paměti a výkon problémy, které nastat při práci s velkými soubory.
 
 Odesílání souborů při odpovědích řízení je nepraktické pro nahrávání velkých souborů. Jako obsah souboru s jsou odeslání na server, čekat, bez jakékoli potvrzení, že je jejich nahrávání pokročíte patiently koncového uživatele. Toto není mnoho problém, při plánování práce s menší soubory, které lze odeslat během pár sekund, ale může být problém při plánování práce s větší soubory, které může trvat nahrát. Existuje mnoho různých třetích stran souboru nahrávání ovládací prvky, které jsou vhodnější pro zpracování velkých nahrávání a mnohé z těchto dodavatelů poskytují indikátory průběhu a ActiveX nahrát správci, která představují mnohem zajímavější činnost koncového uživatele.
 
@@ -280,7 +280,7 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Použití velké hodnoty datových typů](https://msdn.microsoft.com/en-us/library/ms178158.aspx)
+- [Použití velké hodnoty datových typů](https://msdn.microsoft.com/library/ms178158.aspx)
 - [Odesílání souborů při odpovědích ovládací prvek – elementy QuickStart](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/standard/fileupload.aspx)
 - [Ovládací prvek ASP.NET 2.0 odesílání souborů při odpovědích serveru](http://www.wrox.com/WileyCDA/Section/id-292158.html)
 - [Tmavý straně nahrávání souborů](http://www.aspnetresources.com/articles/dark_side_of_file_uploads.aspx)
@@ -294,4 +294,4 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Teresy Murphy a Bernadette Leigh. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 >[!div class="step-by-step"]
-[Další](displaying-binary-data-in-the-data-web-controls-cs.md)
+[Next](displaying-binary-data-in-the-data-web-controls-cs.md)

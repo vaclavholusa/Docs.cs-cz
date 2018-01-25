@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e74d368b1f9eec2177a528a6b09c599d6a307b74
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad09847d828d02019a72e3022d035a8fbe921568
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="debugging-stored-procedures-vb"></a>Ladění uložené procedury (VB)
 ====================
@@ -39,7 +39,7 @@ V tomto kurzu se podíváme na zanoříte se do uložené procedury z Průzkumn�
 
 ## <a name="sql-server-debugging-concepts"></a>Koncepty ladění SQL serveru
 
-Microsoft SQL Server 2005 byla navržená tak, aby nabízí integraci s [Common Language Runtime (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx), což je modul runtime používá všechna sestavení .NET. V důsledku toho systému SQL Server 2005 podporuje spravované databázové objekty. To znamená můžete vytvořit databázové objekty, jako jsou uložené procedury a uživatelem definované funkce (UDF) jako metody ve třídě jazyka Visual Basic. To umožňuje tyto uložené procedury a funkce UDF, abyste mohli využívat funkce v rozhraní .NET Framework a z vlastní třídy. Samozřejmě SQL Server 2005 taky poskytuje podporu pro databázové objekty T-SQL.
+Microsoft SQL Server 2005 byla navržená tak, aby nabízí integraci s [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), což je modul runtime používá všechna sestavení .NET. V důsledku toho systému SQL Server 2005 podporuje spravované databázové objekty. To znamená můžete vytvořit databázové objekty, jako jsou uložené procedury a uživatelem definované funkce (UDF) jako metody ve třídě jazyka Visual Basic. To umožňuje tyto uložené procedury a funkce UDF, abyste mohli využívat funkce v rozhraní .NET Framework a z vlastní třídy. Samozřejmě SQL Server 2005 taky poskytuje podporu pro databázové objekty T-SQL.
 
 SQL Server 2005 nabízí podporu ladění pro T-SQL a spravované databázové objekty. Však můžete tyto objekty ladit pouze prostřednictvím edice Visual Studio 2005 Professional a systémy týmu. V tomto kurzu vyzkoušíme ladění T-SQL databázové objekty. Další kurz zjistí ladění spravovaného databázové objekty.
 
@@ -53,7 +53,7 @@ Visual Studio můžete ladit uložené procedury na místní a vzdálené instan
 
 Pokud používáte místní instanci systému SQL Server, můžete začněte krokem 1 a fungovat až do konce tohoto kurzu. Pokud používáte vzdálenou instanci systému SQL Server, ale budete nejprve zajistit, aby při ladění jste přihlášeni na počítači pro vývoj pomocí uživatelského účtu systému Windows, který má přihlášení systému SQL Server ve vzdálené instanci. Moveover, toto přihlášení databáze a přihlášení k databázi používá k připojení k databázi z spuštěná aplikace ASP.NET musí být členy `sysadmin` role. Zobrazí objekty ladění T-SQL databáze v oddílu vzdálené instance na konci tohoto kurzu pro další informace o konfiguraci sady Visual Studio a ladění vzdálené instance systému SQL Server.
 
-Nakonec uvědomit, že ladění podporu pro databázové objekty T-SQL není jako funkce bohaté jako ladění podporu pro aplikace .NET. Například zarážek podmínky a filtry nejsou podporovány, jen podmnožinu ladění windows jsou k dispozici, nemůžete použít upravit a pokračovat, vykreslení hodnot proměnných nemá a podobně. V tématu [omezení příkazů ladicího programu a funkce](https://msdn.microsoft.com/en-us/library/ms165035(VS.80).aspx) Další informace.
+Nakonec uvědomit, že ladění podporu pro databázové objekty T-SQL není jako funkce bohaté jako ladění podporu pro aplikace .NET. Například zarážek podmínky a filtry nejsou podporovány, jen podmnožinu ladění windows jsou k dispozici, nemůžete použít upravit a pokračovat, vykreslení hodnot proměnných nemá a podobně. V tématu [omezení příkazů ladicího programu a funkce](https://msdn.microsoft.com/library/ms165035(VS.80).aspx) Další informace.
 
 ## <a name="step-1-directly-stepping-into-a-stored-procedure"></a>Krok 1: Přímo Zanoříte se do uložené procedury
 
@@ -172,10 +172,10 @@ Příklad by měly pomoci vysvětlení věcí. Představte si, že je účet sys
 
 [!code-console[Main](debugging-stored-procedures-vb/samples/sample2.cmd)]
 
-Podrobnější vysvětlení tohoto postupu najdete v tématu [William R. Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker s příručka k sadě Visual Studio a SQL Server, sedmého edice* a také [postupy: nastavení oprávnění serveru SQL pro ladění](https://msdn.microsoft.com/en-us/library/w1bhybwz(VS.80).aspx).
+Podrobnější vysvětlení tohoto postupu najdete v tématu [William R. Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker s příručka k sadě Visual Studio a SQL Server, sedmého edice* a také [postupy: nastavení oprávnění serveru SQL pro ladění](https://msdn.microsoft.com/library/w1bhybwz(VS.80).aspx).
 
 > [!NOTE]
-> Pokud vývojovém počítači se systémem Windows XP Service Pack 2, budete muset nakonfigurovat bránu povolit vzdálené ladění. [Pokynů k: Povolit ladění na SQL Server 2005](https://msdn.microsoft.com/en-us/library/s0fk6z6e(VS.80).aspx) článku značí, že to zahrnuje dva kroky: (a) na hostitelském počítači Visual Studio, je nutné přidat `Devenv.exe` do seznamu výjimek a otevřete port TCP 135; a (b) ve vzdáleném počítači (SQL), musíte otevřít TCP 135 portu a přidat `sqlservr.exe` do seznamu výjimek. Pokud zásady vaší domény vyžaduje komunikaci sítě s provést prostřednictvím protokolu IPSec, musíte otevřít porty UDP 4500 a UDP 500.
+> Pokud vývojovém počítači se systémem Windows XP Service Pack 2, budete muset nakonfigurovat bránu povolit vzdálené ladění. [Pokynů k: Povolit ladění na SQL Server 2005](https://msdn.microsoft.com/library/s0fk6z6e(VS.80).aspx) článku značí, že to zahrnuje dva kroky: (a) na hostitelském počítači Visual Studio, je nutné přidat `Devenv.exe` do seznamu výjimek a otevřete port TCP 135; a (b) ve vzdáleném počítači (SQL), musíte otevřít TCP 135 portu a přidat `sqlservr.exe` do seznamu výjimek. Pokud zásady vaší domény vyžaduje komunikaci sítě s provést prostřednictvím protokolu IPSec, musíte otevřít porty UDP 4500 a UDP 500.
 
 
 ## <a name="summary"></a>Souhrn

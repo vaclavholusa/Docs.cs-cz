@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 5fad4b659dafe5470aeb84d320ff711b8840d1e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: def2f4b3e54c8de539e10c1b526a1dababeca8fb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix a rozhraní ASP.NET Web Pages (Razor) Beta 3 verze Readme
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 - [Nové funkce, změny a známé problémy ve verzi Beta 3](#Known_Issues)
 
     - [Problémy instalace služby WebMatrix](#Known_Issues_Installation)
-    - [Rozhraní ASP.NET Web Pages](#Known_Issues_ASPNET)
+    - [Webové stránky ASP.NET](#Known_Issues_ASPNET)
     - [SQL Server Compact](#Known_Issues_SQL_Server_Compact)
     - [Instalace aplikace](#Known_Issues_Installing_Applications)
     - [Publikování aplikací](#Known_Issues_Publishing_Applications)
@@ -94,8 +94,8 @@ ms.lasthandoff: 11/10/2017
 
 > Spravovaná sestavení pro SQL Server Compact 4.0 nejsou umístěny v globální mezipaměti sestavení (GAC), při instalaci systému SQL Server Compact 4.0 na 64bitovém počítači a má počítač pouze profil rozhraní .NET Framework 3.5 SP1 klient nainstalován. Spravovaná sestavení, které nejsou nainstalované v mezipaměti GAC jsou:
 > 
-> - *System.Data.SqlServerCe.dll* (Zprostředkovatel ADO.NET)
-> - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework)
+> - *System.Data.SqlServerCe.dll* (ADO.NET provider)
+> - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework )
 > 
 > **Alternativní řešení**  
 > Odinstalujte systém SQL Server Compact 4.0. Stáhněte a nainstalujte plnou verzi rozhraní .NET Framework 3.5 SP1 z následujícího umístění:  
@@ -115,7 +115,7 @@ ms.lasthandoff: 11/10/2017
 
 <a id="Known_Issues_ASPNET"></a>
 
-### <a name="aspnet-web-pages"></a>Rozhraní ASP.NET Web Pages
+### <a name="aspnet-web-pages"></a>ASP.NET – webové stránky
 
 Tato část dokumentu popisuje nové funkce, změny a známé problémy ve verzi Beta 3 z webových stránek ASP.NET se syntaxí Razor.
 
@@ -265,7 +265,7 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy ve verzi
 > 
 > [!code-xml[Main](beta3/samples/sample5.xml)]
 > 
-> Další informace o konfiguraci proxy serveru najdete v tématu [ &lt;proxy&gt; – Element (nastavení sítě)](https://msdn.microsoft.com/en-us/library/sa91de1e.aspx) na webu MSDN.
+> Další informace o konfiguraci proxy serveru najdete v tématu [ &lt;proxy&gt; – Element (nastavení sítě)](https://msdn.microsoft.com/library/sa91de1e.aspx) na webu MSDN.
 
 
 #### <a name="issue-microsoftwebinfrastructuredll-cannot-be-loaded-error"></a>Problém: "Nelze načíst Microsoft.Web.Infrastructure.dll" Chyba
@@ -340,9 +340,9 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy ve verzi
 > 
 > 1. Zkopírujte sestavení modulu databáze, které chcete *Bin* složky (a její podsložky) aplikace na cílovém počítači: 
 > 
->     - Kopírování *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **k** *\Bin*
->     - Kopírování *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **k** *\Bin\x86*
->     - Kopírování *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **k** *\Bin\amd64*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **to** *\Bin*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **to** *\Bin\x86*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to** *\Bin\amd64*
 > 2. V kořenové složce webové stránky, vytvořit nebo otevřít *Web.config* souboru. (Ve službě WebMatrix Beta 3, je k dispozici, pokud kliknete na tento typ souboru **všechny** v **vyberte typ souboru** dialogové okno.)
 > 3. Přidejte následující prvek jako podřízenou  **&lt;konfigurace&gt;**  – element (mimo  **&lt;system.web&gt;**  element):
 > 
@@ -548,9 +548,9 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy ve verzi
 Další informace o službě WebMatrix Beta 3 najdete na následujících webech:
 
 - [IIS.net](http://iis.net/)
-- [TECHNOLOGIE ASP.NET](https://asp.net/webmatrix)
-- [Http://www.microsoft.com/web/gallery/install.aspx?appid=IISExpress](https://www.microsoft.com/web)
+- [ASP.NET](https://asp.net/webmatrix)
+- [Microsoft.com/web](https://www.microsoft.com/web)
 
 * * *
 
-© 2010 Microsoft Corporation. Všechna práva vyhrazena. [Podmínky použití](https://msdn.microsoft.com/en-us/cc300389.aspx).
+© 2010 Microsoft Corporation. Všechna práva vyhrazena. [Podmínky použití](https://msdn.microsoft.cos/cc300389.aspx).

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/samples-list
 msc.type: content
-ms.openlocfilehash: 2f40cd4bebdd64c3a4b94cfc1e717fa4b304e57e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1e1f43bbeedfc052f0b3a3924f51b544a5a79dca
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-api-samples-list"></a>Seznam ukázek rozhraní Web API
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 **Ukázka převede Bing** | [VS 2012 zdroje](http://aspnet.codeplex.com/SourceControl/changeset/view/15dfe7e0759f#Samples%2fNet45%2fCS%2fHttpClient%2fBingTranslateSample%2fReadMe.txt)
 
-Ukazuje způsob volání [služby Microsoft Translator](https://msdn.microsoft.com/en-us/library/ff512419.aspx) pomocí **HttpClient** třídy. Rozhraní API služby Microsoft Translator vyžaduje tokenu OAuth, které aplikace obdrží odesláním požadavku na server Azure tokenu pro každý požadavek pro službu překladač. Výsledek z tokenu serveru předány do požadavek odeslaný do služby překladu. Před spuštěním této ukázce, je nutné získat [klíč aplikace z Azure Marketplace](https://msdn.microsoft.com/en-us/library/hh454950.aspx) a vyplňte informace v ukázkové třídy AccessTokenMessageHandler.
+Ukazuje způsob volání [služby Microsoft Translator](https://msdn.microsoft.com/library/ff512419.aspx) pomocí **HttpClient** třídy. Rozhraní API služby Microsoft Translator vyžaduje tokenu OAuth, které aplikace obdrží odesláním požadavku na server Azure tokenu pro každý požadavek pro službu překladač. Výsledek z tokenu serveru předány do požadavek odeslaný do služby překladu. Před spuštěním této ukázce, je nutné získat [klíč aplikace z Azure Marketplace](https://msdn.microsoft.com/library/hh454950.aspx) a vyplňte informace v ukázkové třídy AccessTokenMessageHandler.
 
 **Ukázka mapy Google** | [podrobný popis](https://blogs.msdn.com/b/henrikn/archive/2012/02/17/downloading-a-google-map-to-local-file.aspx) | [VS 2012 zdroje](http://aspnet.codeplex.com/SourceControl/changeset/view/15dfe7e0759f#Samples%2fNet45%2fCS%2fHttpClient%2fGoogleMapsSample%2fReadMe.txt)
 
@@ -83,7 +83,7 @@ Ukazuje, jak odesílat soubory **objektu ApiController** pomocí MIME Multipart 
 
 **Soubor nahrávání ukázce úložiště objektů Blob Azure** | [podrobný popis](https://blogs.msdn.com/b/yaohuang1/archive/2012/07/02/asp-net-web-api-and-azure-blob-storage.aspx) | [VS 2012 zdroje](http://aspnet.codeplex.com/SourceControl/changeset/view/61dfed023e50#Samples%2fNet45%2fCS%2fWebApi%2fAzureBlobsFileUploadSample%2fReadMe.txt)
 
-Tato ukázka je podobný ukázce nahrát soubor, ale místo uložení na místní disk, odeslané soubory, soubory asynchronně odešle [úložišti objektů Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs) pomocí [Windows Azure SDK pro .NET](https://www.windowsazure.com/en-us/develop/net/). Také poskytuje mechanismus pro výpis aktuálně nachází v objektů blob [kontejner úložiště objektů Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Můžete vyzkoušet ukázkový spuštěným pro **emulátoru úložiště Azure** dodávaný společně s nástrojem Azure SDK. Pokud máte [účet úložiště Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs), můžete spustit službě skutečné úložiště.
+Tato ukázka je podobný ukázce nahrát soubor, ale místo uložení na místní disk, odeslané soubory, soubory asynchronně odešle [úložišti objektů Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs) pomocí [Windows Azure SDK pro .NET](https://www.windowsazure.com/develop/net/). Také poskytuje mechanismus pro výpis aktuálně nachází v objektů blob [kontejner úložiště objektů Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Můžete vyzkoušet ukázkový spuštěným pro **emulátoru úložiště Azure** dodávaný společně s nástrojem Azure SDK. Pokud máte [účet úložiště Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs), můžete spustit službě skutečné úložiště.
 
 **Ukázka kanálu obslužné rutiny zpráv HTTP** | [podrobný popis](https://blogs.msdn.com/b/henrikn/archive/2012/08/07/httpclient-httpclienthandler-and-httpwebrequesthandler.aspx) | [zdroj VS 2010](http://aspnet.codeplex.com/SourceControl/changeset/view/15dfe7e0759f#Samples%2fNet4%2fCS%2fWebApi%2fHttpMessageHandlerPipelineSample%2fReadMe.txt)
 

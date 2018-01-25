@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 137ac45166be03ae3c4864f41666d2acd1a37dc2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2a4b5ed8a712b061b4afdf5a3adc9378dd72b37f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>Ověřování a autorizace v rozhraní ASP.NET Web API
 ====================
@@ -37,7 +37,7 @@ První článek v řadě poskytuje obecný přehled ověřování a autorizace v
 
 Webové rozhraní API předpokládá, že se stane, že ověřování na hostiteli. Pro hostování webů, je hostitele služby IIS, která používá vytváření modulů HTTP pro ověřování. Můžete nakonfigurovat projektu pro použití žádné z modulů ověřování, které jsou součástí služby IIS nebo v technologii ASP.NET, nebo napsat vlastní modul protokolu HTTP k provedení vlastní ověřování.
 
-Když hostitel ověřuje uživatele, vytvoří *hlavní*, který je [IPrincipal](https://msdn.microsoft.com/en-us/library/System.Security.Principal.IPrincipal.aspx) objekt, který reprezentuje kontext zabezpečení, v němž je spuštěn kód. Hostitel připojí k objektu zabezpečení pro aktuální vlákno nastavením **Thread.CurrentPrincipal**. Objekt zabezpečení obsahuje přiřazený **Identity** objekt, který obsahuje informace o uživateli. Pokud je uživatel ověřený, **Identity.IsAuthenticated** vlastnost vrátí **true**. U anonymních požadavků **IsAuthenticated** vrátí **false**. Další informace o objekty zabezpečení najdete v tématu [na základě rolí zabezpečení](https://msdn.microsoft.com/en-us/library/shz8h065.aspx).
+Když hostitel ověřuje uživatele, vytvoří *hlavní*, který je [IPrincipal](https://msdn.microsoft.com/library/System.Security.Principal.IPrincipal.aspx) objekt, který reprezentuje kontext zabezpečení, v němž je spuštěn kód. Hostitel připojí k objektu zabezpečení pro aktuální vlákno nastavením **Thread.CurrentPrincipal**. Objekt zabezpečení obsahuje přiřazený **Identity** objekt, který obsahuje informace o uživateli. Pokud je uživatel ověřený, **Identity.IsAuthenticated** vlastnost vrátí **true**. U anonymních požadavků **IsAuthenticated** vrátí **false**. Další informace o objekty zabezpečení najdete v tématu [na základě rolí zabezpečení](https://msdn.microsoft.com/library/shz8h065.aspx).
 
 ### <a name="http-message-handlers-for-authentication"></a>Obslužné rutiny zpráv HTTP pro ověřování
 
@@ -78,7 +78,7 @@ Autorizace se stane později v kanálu, co nejblíže ke kontroleru. Který vám
 <a id="auth3"></a>
 ### <a name="using-the-authorize-attribute"></a>Pomocí [Povolit] atributu
 
-Webové rozhraní API poskytuje integrované autorizační filtr, [třídy AuthorizeAttribute](https://msdn.microsoft.com/en-us/library/system.web.http.authorizeattribute.aspx). Tento filtr kontroluje, zda je uživatel ověřený. V opačném případě vrátí stavový kód HTTP 401 (Neautorizováno), bez vyvolání akce.
+Webové rozhraní API poskytuje integrované autorizační filtr, [třídy AuthorizeAttribute](https://msdn.microsoft.com/library/system.web.http.authorizeattribute.aspx). Tento filtr kontroluje, zda je uživatel ověřený. V opačném případě vrátí stavový kód HTTP 401 (Neautorizováno), bez vyvolání akce.
 
 Můžete použít filtr globálně, na úrovni kontroleru, nebo na úrovni inidivual akcí.
 

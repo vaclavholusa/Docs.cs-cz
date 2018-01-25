@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa4b3ea69999f0d97d20047663d302277ebdf433
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a072ae18bbb19d086eb825c6e72b68d40b2e429
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>Vlastní tlačítka v DataList a opakovače (C#)
 ====================
@@ -114,17 +114,17 @@ V tomto příkladu nastavit LinkButton s `CommandName` vlastnost ShowProducts a 
 
 Pokud po kliknutí na tlačítko, dojde k zpětné volání a DataList nebo opakovače s `ItemCommand` je aktivována událost. Obslužné rutiny události je předána na tlačítko s `CommandName` a `CommandArgument` hodnoty.
 
-Vytvoření obslužné rutiny události pro opakovače s `ItemCommand` událostí a Poznámka: druhý parametr předaný do obslužné rutiny události (s názvem `e`). Tento druhý parametr je typu [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) a má následující čtyři vlastnosti:
+Vytvoření obslužné rutiny události pro opakovače s `ItemCommand` událostí a Poznámka: druhý parametr předaný do obslužné rutiny události (s názvem `e`). Tento druhý parametr je typu [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) a má následující čtyři vlastnosti:
 
 - `CommandArgument`Hodnota tlačítka s `CommandArgument` vlastnost
 - `CommandName`Hodnota tlačítko s `CommandName` vlastnost
 - `CommandSource`odkaz na ovládací prvek tlačítko, který označeného kliknutím
-- `Item`odkaz na [ `RepeaterItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeateritem.aspx) obsahující tlačítko označeného; každý záznam vázána na opakovače označované jako`RepeaterItem`
+- `Item`odkaz na [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) obsahující tlačítko označeného; každý záznam vázána na opakovače označované jako`RepeaterItem`
 
 Od vybrané kategorie s `CategoryID` je předaná prostřednictvím `CommandArgument` vlastnost nám získat sadu produktů, které jsou spojené s vybranou kategorii v `ItemCommand` obslužné rutiny události. Tyto produkty mohou být vázány pak do ovládacího prvku BulletedList v `ItemTemplate` (které jsme jste ještě chcete-li přidat). Všechny, které zůstává a pak je přidání BulletedList, v odkazovat `ItemCommand` obslužné rutiny události a vytvořit vazbu k němu sadu produktů pro vybranou kategorii, které jsme budete řešení v kroku 4.
 
 > [!NOTE]
-> DataList s `ItemCommand` obslužné rutiny události se předá objekt typu [ `DataListCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx), který nabízí stejné čtyři vlastnosti, jako `RepeaterCommandEventArgs` třídy.
+> DataList s `ItemCommand` obslužné rutiny události se předá objekt typu [ `DataListCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx), který nabízí stejné čtyři vlastnosti, jako `RepeaterCommandEventArgs` třídy.
 
 
 ## <a name="step-4-displaying-the-selected-category-s-products-in-a-bulleted-list"></a>Krok 4: Zobrazení vybrané kategorie s produkty v seznamu s odrážkami
@@ -169,4 +169,4 @@ Radostí programování!
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl společnosti Dennis Patterson. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 >[!div class="step-by-step"]
-[Další](custom-buttons-in-the-datalist-and-repeater-vb.md)
+[Next](custom-buttons-in-the-datalist-and-repeater-vb.md)

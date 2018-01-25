@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 65d32309cbd8bed6decbba4c5027d8e10a558ae8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f22a745f42dae66cd64dc38df28c59b910c17070
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unlocking-and-approving-user-accounts-c"></a>Odemykání a schvalujícím uživatelské účty (C#)
 ====================
@@ -57,7 +57,7 @@ Po přidání HyperLinkField do GridView, chvíli trvat, chcete-li zobrazit `Man
 **Obrázek 1**: HyperLinkField přidá odkaz "Manage" pro každý uživatelský účet ([Kliknutím zobrazit obrázek v plné velikosti](unlocking-and-approving-user-accounts-cs/_static/image3.png))
 
 
-Bude vytvoření uživatelského rozhraní a kód `UserInformation.aspx` stránka ve chvíli, ale prvního Pojďme talk o programové změny uživatel uzamčen a stavy, které jsou schváleny. [ `MembershipUser` Třída](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx) má [ `IsLockedOut` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.islockedout.aspx) a [ `IsApproved` vlastnosti](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.isapproved.aspx). `IsLockedOut` Vlastnost je jen pro čtení. Neexistuje žádný mechanismus na prostřednictvím kódu programu uzamčení uživatele. Chcete-li odemčení uživatele, použijte `MembershipUser` třídy [ `UnlockUser` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.unlockuser.aspx). `IsApproved` Vlastnost je možné číst a zapisovat. Pokud chcete uložit změny na tuto vlastnost, musíme volání `Membership` třídy [ `UpdateUser` metoda](https://msdn.microsoft.com/en-us/library/system.web.security.membership.updateuser.aspx)a předejte upravenou `MembershipUser` objektu.
+Bude vytvoření uživatelského rozhraní a kód `UserInformation.aspx` stránka ve chvíli, ale prvního Pojďme talk o programové změny uživatel uzamčen a stavy, které jsou schváleny. [ `MembershipUser` Třída](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx) má [ `IsLockedOut` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.islockedout.aspx) a [ `IsApproved` vlastnosti](https://msdn.microsoft.com/library/system.web.security.membershipuser.isapproved.aspx). `IsLockedOut` Vlastnost je jen pro čtení. Neexistuje žádný mechanismus na prostřednictvím kódu programu uzamčení uživatele. Chcete-li odemčení uživatele, použijte `MembershipUser` třídy [ `UnlockUser` metoda](https://msdn.microsoft.com/library/system.web.security.membershipuser.unlockuser.aspx). `IsApproved` Vlastnost je možné číst a zapisovat. Pokud chcete uložit změny na tuto vlastnost, musíme volání `Membership` třídy [ `UpdateUser` metoda](https://msdn.microsoft.com/library/system.web.security.membership.updateuser.aspx)a předejte upravenou `MembershipUser` objektu.
 
 Protože `IsApproved` vlastnost je možné číst a zapisovat, ovládací prvek zaškrtávací políčko je pravděpodobně nejlepší element uživatelského rozhraní pro konfiguraci této vlastnosti. Však nebude fungovat zaškrtávací políčko `IsLockedOut` vlastnost vzhledem k tomu, že správce nemůže zablokovat uživatele, uživatel může odemknout jenom uživatele. Vhodné uživatelské rozhraní pro `IsLockedOut` vlastnost je tlačítko, která po kliknutí na odemkne uživatelský účet. Toto tlačítko by měly povoleny, pouze pokud je uživatel uzamčen.
 
@@ -88,7 +88,7 @@ Výše uvedený kód spustí tím zajistí, že se jedná o první návštěvě 
 
 `MembershipUser` Objektu `UserName` se následně zobrazí hodnota `UserNameLabel` a `IsApproved` je zaškrtnuté políčko na základě `IsApproved` hodnotu vlastnosti.
 
-`MembershipUser` Objektu [ `LastLockoutDate` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.lastlockoutdate.aspx) vrátí `DateTime` hodnotu, která určuje, kdy byl naposledy uživatel uzamčen. Pokud uživatel nikdy byl uzamčen, hodnota vrácená závisí na zprostředkovateli členství. Když je vytvořen nový účet, `SqlMembershipProvider` nastaví `aspnet_Membership` tabulky `LastLockoutDate` do `1754-01-01 12:00:00 AM`. Výše uvedený kód zobrazí prázdný řetězec v `LastLockoutDateLabel` Pokud `LastLockoutDate` vlastnost dojde před rok 2000; v opačném část data `LastLockoutDate` vlastnost je zobrazena v popisku. `UnlockUserButton'` s `Enabled` je vlastnost nastavena na uživatele, dojde k uzamčení stavu, což znamená, že toto tlačítko bude pouze povoleno, jestliže je uzamčen.
+`MembershipUser` Objektu [ `LastLockoutDate` vlastnost](https://msdn.microsoft.com/library/system.web.security.membershipuser.lastlockoutdate.aspx) vrátí `DateTime` hodnotu, která určuje, kdy byl naposledy uživatel uzamčen. Pokud uživatel nikdy byl uzamčen, hodnota vrácená závisí na zprostředkovateli členství. Když je vytvořen nový účet, `SqlMembershipProvider` nastaví `aspnet_Membership` tabulky `LastLockoutDate` do `1754-01-01 12:00:00 AM`. Výše uvedený kód zobrazí prázdný řetězec v `LastLockoutDateLabel` Pokud `LastLockoutDate` vlastnost dojde před rok 2000; v opačném část data `LastLockoutDate` vlastnost je zobrazena v popisku. `UnlockUserButton'` s `Enabled` je vlastnost nastavena na uživatele, dojde k uzamčení stavu, což znamená, že toto tlačítko bude pouze povoleno, jestliže je uzamčen.
 
 Za chvíli k testování `UserInformation.aspx` stránku prostřednictvím prohlížeče. Samozřejmě, bude muset začínají `ManageUsers.aspx` a vyberte uživatelský účet pro správu. Při přicházejících u `UserInformation.aspx`, Všimněte si, že `IsApproved` zaškrtávací políčko je zaškrtnuto, pouze je-li uživatel schválen. Pokud uživatel někdy byl uzamčen, zobrazí se jejich poslední uzamčen datum. Tlačítko Odemknout uživatele je povoleno pouze v případě, že uživatel je aktuálně uzamčen. Zaškrtnutí `IsApproved` zaškrtávací políčko nebo klepnutím na tlačítko Odemknout uživatele způsobí, že zpětné volání, ale žádné úpravy probíhají uživatelskému účtu, protože jsme ještě pro vytváření obslužných rutin událostí pro tyto události.
 
@@ -146,7 +146,7 @@ Dále je potřeba nakonfigurovat CreateUserWizard řízení odeslat e-mail pro n
 
 ### <a name="sending-a-verification-email-to-new-users"></a>Odesílání e-mailu s ověření pro nové uživatele
 
-Odeslat e-mail z ovládacího prvku CreateUserWizard, konfigurovat jeho `MailDefinition` vlastnost správně. Jak je popsáno v <a id="Tutorial13"> </a> [předchozí kurzu](recovering-and-changing-passwords-cs.md), změna hesla byla a PasswordRecovery ovládací prvky zahrnují [ `MailDefinition` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx) to funguje stejným způsobem jako CreateUserWizard ovládacího prvku.
+Odeslat e-mail z ovládacího prvku CreateUserWizard, konfigurovat jeho `MailDefinition` vlastnost správně. Jak je popsáno v <a id="Tutorial13"> </a> [předchozí kurzu](recovering-and-changing-passwords-cs.md), změna hesla byla a PasswordRecovery ovládací prvky zahrnují [ `MailDefinition` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx) to funguje stejným způsobem jako CreateUserWizard ovládacího prvku.
 
 > [!NOTE]
 > Použít `MailDefinition` vlastnost je třeba zadat doručení pošty možnosti v `Web.config`. Další informace najdete v části [odesílání e-mailu v ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx).
@@ -160,7 +160,7 @@ Nastavte `MailDefinition'` s `BodyFileName` vlastnost "~ / EmailTemplates/Create
 
 Všimněte si, že `CreateUserWizard.txt` obsahuje e-mailovou šablonu `<%VerificationUrl%>` zástupný symbol. To je, kdy adresu URL `Verification.aspx` stránky budou umístěny. CreateUserWizard automaticky nahrazuje `<%UserName%>` a `<%Password%>` zástupné symboly nový účet uživatelské jméno a heslo, ale neexistuje žádné předdefinované `<%VerificationUrl%>` zástupný symbol. Je potřeba ručně nahraďte adresu URL odpovídající ověření.
 
-K tomu, vytvoření obslužné rutiny události pro CreateUserWizard [ `SendingMail` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.sendingmail.aspx) a přidejte následující kód:
+K tomu, vytvoření obslužné rutiny události pro CreateUserWizard [ `SendingMail` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.sendingmail.aspx) a přidejte následující kód:
 
 [!code-csharp[Main](unlocking-and-approving-user-accounts-cs/samples/sample4.cs)]
 

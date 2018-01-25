@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: 44b2b38c284e678344432d4473162404b4bb75a5
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a38ddc64583de05b4088cd31d48fbd7ee949d4e5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrace obslužné rutiny HTTP a moduly, které middleware ASP.NET Core 
 
@@ -51,7 +51,7 @@ Před pokračováním ASP.NET Core middleware, můžeme nejprve recap jak funguj
 
    1. [Životního cyklu aplikace](https://msdn.microsoft.com/library/ms227673.aspx), což je řady událostí, aktivováno technologií ASP.NET: [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest)atd. Každý modul můžete vytvořit obslužnou rutinu pro jeden nebo více událostí.
 
-   2. Pro stejnou událost, ve kterém jsou nakonfigurované v pořadí *Web.config*.
+   2. Pro stejnou událost, pořadí, ve které jste nakonfigurovali v *Web.config*.
 
 Kromě moduly, obslužné rutiny pro události životního cyklu, které přidáte vaše *Global.asax.cs* souboru. V těchto obslužných rutinách spustit po obslužné rutiny v nakonfigurované moduly.
 
@@ -77,7 +77,7 @@ Kromě moduly, obslužné rutiny pro události životního cyklu, které přidá
 
 **Middleware a moduly jsou zpracovány v jiném pořadí:**
 
-   * Pořadí middlewaru je založeno na pořadí, ve kterém jsou vloženy do kanálu požadavku, zatímco především podle pořadí modulů [životního cyklu aplikace](https://msdn.microsoft.com/library/ms227673.aspx) události
+   * Pořadí middlewaru je založeno na pořadí, ve kterém jsou vkládána do kanálu požadavku, zatímco především podle pořadí modulů [životního cyklu aplikace](https://msdn.microsoft.com/library/ms227673.aspx) události
 
    * Pořadí middleware pro odpovědi je zpětného od pro požadavky, zatímco pořadí modulů je stejný pro požadavky a odpovědi
 
@@ -109,7 +109,7 @@ Modul může ukončit žádost, například pokud uživatel nemá oprávnění:
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
 
-Middleware zpracovává tento není voláním `Invoke` na další middleware v kanálu. Mějte na paměti, že to nezavře plně požadavek, protože předchozí middlewares bude stále vyvolán při odpovědi díky zpět skrze kanálu.
+Middleware zpracovává tento není voláním `Invoke` na další middleware v kanálu. Mějte na paměti, že to není ukončit plně požadavek, protože předchozí middlewares bude stále vyvolán při odpovědi díky zpět skrze kanálu.
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
 
@@ -209,7 +209,7 @@ Nové [konfigurační systém](xref:fundamentals/configuration/index) vám dáv�
 
   [UseMiddleware](#http-modules-usemiddleware) metody rozšíření, která přidá vaše middlewaru, který má `IApplicationBuilder` postará vkládání závislostí.
 
-  Toto není omezen na `IOptions` objekty. Tímto způsobem může vložit jakýkoliv jiný objekt, který vyžaduje vlastního middlewaru.
+  Tato akce není omezen na `IOptions` objekty. Tímto způsobem může vložit jakýkoliv jiný objekt, který vyžaduje vlastního middlewaru.
 
 ## <a name="loading-middleware-options-through-direct-injection"></a>Možnosti middlewaru prostřednictvím přímé vkládání načítání
 

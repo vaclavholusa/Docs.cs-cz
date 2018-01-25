@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fbf980f0086e8c638a8689305d4265561a016887
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 30324c45fd8acbcba43808307512ef7aecffe695
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-c"></a>Zadáte název, značky Meta a dalších hlavičky HTML stránka předlohy (C#)
 ====================
@@ -42,7 +42,7 @@ Výchozí soubor předlohové stránky vytvořené Visual Studio 2008 obsahuje n
 
 [!code-aspx[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/samples/sample1.aspx)]
 
-Všimněte si, že `<head>` obsahuje element `runat="server"` atribut, který označuje, že je pro ovládací prvek serveru (nikoli statické HTML). Všechny stránky ASP.NET je odvozena od [ `Page` třída](https://msdn.microsoft.com/en-us/library/system.web.ui.page.aspx), který se nachází ve `System.Web.UI` oboru názvů. Tato třída obsahuje `Header` vlastnost, která poskytuje přístup na stránku `<head>` oblast. Pomocí [ `Header` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.page.header.aspx) nemůžeme nastavit název stránky ASP.NET nebo přidejte další značky vygenerované `<head>` části. Je možné, pak, chcete-li přizpůsobit stránky obsahu `<head>` element napsáním bit kódu na stránce `Page_Load` obslužné rutiny události. Jsme zkontrolujte jak programově nastavit nadpis stránky v kroku 1.
+Všimněte si, že `<head>` obsahuje element `runat="server"` atribut, který označuje, že je pro ovládací prvek serveru (nikoli statické HTML). Všechny stránky ASP.NET je odvozena od [ `Page` třída](https://msdn.microsoft.com/library/system.web.ui.page.aspx), který se nachází ve `System.Web.UI` oboru názvů. Tato třída obsahuje `Header` vlastnost, která poskytuje přístup na stránku `<head>` oblast. Pomocí [ `Header` vlastnost](https://msdn.microsoft.com/library/system.web.ui.page.header.aspx) nemůžeme nastavit název stránky ASP.NET nebo přidejte další značky vygenerované `<head>` části. Je možné, pak, chcete-li přizpůsobit stránky obsahu `<head>` element napsáním bit kódu na stránce `Page_Load` obslužné rutiny události. Jsme zkontrolujte jak programově nastavit nadpis stránky v kroku 1.
 
 Kód ukazuje `<head>` element výše také obsahuje ovládací prvek ContentPlaceHolder s názvem head. Tento ovládací prvek ContentPlaceHolder není nutné, jako stránky obsahu můžete přidat vlastní obsah `<head>` element prostřednictvím kódu programu. Je užitečné, ale v situacích, kde musí stránku obsahu přidat statické značek k `<head>` element jako statické značka můžete přidat deklarativně do ovládacího prvku odpovídající obsahu místo prostřednictvím kódu programu.
 
@@ -69,7 +69,7 @@ Obsahu stránky nemají `<title>` elementu, protože je definována v stránky p
 
 ### <a name="setting-the-pages-title-declaratively"></a>Nastavení nadpisu stránky deklarativně
 
-Název stránky obsahu můžete nastavit deklarativně pomocí `Title` atribut [ `<%@ Page %>` – direktiva](https://msdn.microsoft.com/en-us/library/ydy4x04a.aspx). Tuto vlastnost lze nastavit přímou úpravou `<%@ Page %>` nebo prostřednictvím okna Vlastnosti. Podívejme se na obou přístupů.
+Název stránky obsahu můžete nastavit deklarativně pomocí `Title` atribut [ `<%@ Page %>` – direktiva](https://msdn.microsoft.com/library/ydy4x04a.aspx). Tuto vlastnost lze nastavit přímou úpravou `<%@ Page %>` nebo prostřednictvím okna Vlastnosti. Podívejme se na obou přístupů.
 
 Ze zobrazení zdroje, vyhledejte `<%@ Page %>` – direktiva, což je v horní části stránky deklarativní značky. `<%@ Page %>` Direktivy pro `Default.aspx` následuje:
 
@@ -96,7 +96,7 @@ Název stránky může být také nastaven v okně Vlastnosti. V okně Vlastnost
 
 ### <a name="setting-the-pages-title-programmatically"></a>Nastavení nadpisu stránky prostřednictvím kódu programu
 
-Stránky předlohy `<head runat="server">` značek je přeložit na [ `HtmlHead` třída](https://msdn.microsoft.com/en-us/library/system.web.ui.htmlcontrols.htmlhead.aspx) instance při vykreslení stránky ASP.NET modul. `HtmlHead` Třída má [ `Title` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.htmlcontrols.htmlhead.title.aspx) jejichž hodnoty se odrazí v vygenerované `<title>` elementu. Tato vlastnost je přístupná ze třídy kódu stránky ASP.NET prostřednictvím `Page.Header.Title`; tento stejné vlastnosti lze také přistupovat prostřednictvím `Page.Title`.
+Stránky předlohy `<head runat="server">` značek je přeložit na [ `HtmlHead` třída](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlhead.aspx) instance při vykreslení stránky ASP.NET modul. `HtmlHead` Třída má [ `Title` vlastnost](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlhead.title.aspx) jejichž hodnoty se odrazí v vygenerované `<title>` elementu. Tato vlastnost je přístupná ze třídy kódu stránky ASP.NET prostřednictvím `Page.Header.Title`; tento stejné vlastnosti lze také přistupovat prostřednictvím `Page.Title`.
 
 Chcete provádět nastavení nadpis stránky prostřednictvím kódu programu, přejděte `About.aspx` kódu stránky třídy a vytvoření obslužné rutiny události pro danou stránku `Load` událostí. Dále nastavte nadpis stránky "hlavní stránky kurzy:: o:: *datum*", kde *datum* je aktuální datum. Po přidání tohoto kódu vaší `Page_Load` obslužné rutiny události by měl vypadat podobně jako následující:
 
@@ -189,7 +189,7 @@ Struktury mapy webu je také přístupný prostřednictvím kódu programu ze t�
 
 ### <a name="creating-the-site-map"></a>Vytváření mapy webu
 
-Mapa systému lokality je vytvořené na [modelu poskytovatelů](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx), který odděluje mapy webu rozhraní API z logiky, která serializuje informace mapy webu mezi paměti a trvalé úložiště. Rozhraní .NET Framework se dodává s verzí [ `XmlSiteMapProvider` třída](https://msdn.microsoft.com/en-us/library/system.web.xmlsitemapprovider.aspx), což je výchozí poskytovatel mapy webu. Jak již název napovídá, `XmlSiteMapProvider` používá soubor XML jako své úložiště mapy webu. Pojďme tohoto zprostředkovatele použijte pro definování naše mapy webu.
+Mapa systému lokality je vytvořené na [modelu poskytovatelů](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx), který odděluje mapy webu rozhraní API z logiky, která serializuje informace mapy webu mezi paměti a trvalé úložiště. Rozhraní .NET Framework se dodává s verzí [ `XmlSiteMapProvider` třída](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx), což je výchozí poskytovatel mapy webu. Jak již název napovídá, `XmlSiteMapProvider` používá soubor XML jako své úložiště mapy webu. Pojďme tohoto zprostředkovatele použijte pro definování naše mapy webu.
 
 Začněte vytvořením souboru mapy webu v kořenové složce webu s názvem `Web.sitemap`. K tomu, klikněte pravým tlačítkem na název webu v Průzkumníku řešení, vyberte Přidat novou položku a vyberte šablonu, mapy webu. Ujistěte se, že je soubor s názvem `Web.sitemap` a klikněte na tlačítko Přidat.
 
@@ -247,7 +247,7 @@ Po dokončení konfigurace ListView šablony, přejděte na webovou stránku. Ja
 **Obrázek 09**: lekce oddíl obsahuje jednu položku seznamu ([Kliknutím zobrazit obrázek v plné velikosti](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image17.png))
 
 
-Chcete-li zobrazit více úrovní jsme může vnořit více ListViews v rámci `ItemTemplate`. Tato technika byl zkontrolován v [ *hlavní stránky a navigace na webu* kurzu](../../data-access/introduction/master-pages-and-site-navigation-cs.md) z mé [práce s kurz datové řady](../../data-access/index.md). Pro tento kurz řady však naše mapy webu bude obsahovat pouze dvě úrovně: Home (nejvyšší úroveň); a každý lekce jako podřízenou domovské. Místo věnujte vnořené ListView, jsme místo toho určit, aby SiteMapDataSource není vrátit počáteční uzel nastavením jeho [ `ShowStartingNode` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sitemapdatasource.showstartingnode.aspx) k `false`. Net efekt je, že SiteMapDataSource začne vrácením druhé vrstvy mapy uzlů lokality.
+Chcete-li zobrazit více úrovní jsme může vnořit více ListViews v rámci `ItemTemplate`. Tato technika byl zkontrolován v [ *hlavní stránky a navigace na webu* kurzu](../../data-access/introduction/master-pages-and-site-navigation-cs.md) z mé [práce s kurz datové řady](../../data-access/index.md). Pro tento kurz řady však naše mapy webu bude obsahovat pouze dvě úrovně: Home (nejvyšší úroveň); a každý lekce jako podřízenou domovské. Místo věnujte vnořené ListView, jsme místo toho určit, aby SiteMapDataSource není vrátit počáteční uzel nastavením jeho [ `ShowStartingNode` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sitemapdatasource.showstartingnode.aspx) k `false`. Net efekt je, že SiteMapDataSource začne vrácením druhé vrstvy mapy uzlů lokality.
 
 Díky této změně ListView zobrazí položky s odrážkami o a pomocí ovládacích prvků více ContentPlaceHolder lekci, ale vynechá položku odrážka pro domovskou. Chcete-li to opravit, jsme explicitně přidat položku odrážka pro domovskou v `LayoutTemplate`:
 
@@ -279,7 +279,7 @@ Aktualizace `BasePage` třídy `OnLoadComplete` tak, aby zahrnoval následujíc�
 
 Jako předtím `OnLoadComplete` metoda spustí tak, že určíte, zda byla explicitně nastavit nadpis stránky. Pokud `Page.Title` je `null`, prázdný řetězec, nebo je přiřadit hodnotu "Bez názvu stránka", pak kód automaticky přiřadí hodnota `Page.Title`.
 
-K určení názvu používat, kód spustí odkazem [ `SiteMap` třída](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx)na [ `CurrentNode` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.sitemap.currentnode.aspx). `CurrentNode`Vrátí [ `SiteMapNode` ](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.aspx) instance na mapě webu, která odpovídá aktuálně požadované stránky. Za předpokladu, že se aktuálně požadovaná stránka nachází v rámci mapy webu `SiteMapNode`na `Title` vlastnost je přiřazená k titulu stránky. Pokud aktuálně požadované stránky není v mapě webu `CurrentNode` vrátí `null` a název souboru k požadované stránce slouží jako název (jako tomu bylo v kroku 2).
+K určení názvu používat, kód spustí odkazem [ `SiteMap` třída](https://msdn.microsoft.com/library/system.web.sitemap.aspx)na [ `CurrentNode` vlastnost](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx). `CurrentNode`Vrátí [ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) instance na mapě webu, která odpovídá aktuálně požadované stránky. Za předpokladu, že se aktuálně požadovaná stránka nachází v rámci mapy webu `SiteMapNode`na `Title` vlastnost je přiřazená k titulu stránky. Pokud aktuálně požadované stránky není v mapě webu `CurrentNode` vrátí `null` a název souboru k požadované stránce slouží jako název (jako tomu bylo v kroku 2).
 
 Obrázek 12 znázorňuje `MultipleContentPlaceHolders.aspx` v případě, že zobrazit pomocí prohlížeče. Vzhledem k tomu, že název této stránky není explicitně nastavena, bude místo něj použita jeho odpovídající uzel mapy webu na název.
 
@@ -320,10 +320,10 @@ Schopnost programově přidat obsah `<head>` oblast je užitečné, když je dyn
 
 [!code-csharp[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/samples/sample15.cs)]
 
-Výše uvedený kód přidá `<meta>` element klíčová slova `<head>` oblast, která poskytuje čárkami oddělený seznam klíčových slov, která popisují stránky. Všimněte si, že chcete přidat `<meta>` značku vytvoříte [ `HtmlMeta` ](https://msdn.microsoft.com/en-us/library/system.web.ui.htmlcontrols.htmlmeta.aspx) instance, nastavte jeho `Name` a `Content` vlastnosti a přidat jej do `Header`na `Controls` kolekce. Podobně programově přidat `<link>` elementu, vytvořit [ `HtmlLink` ](https://msdn.microsoft.com/en-us/library/system.web.ui.htmlcontrols.htmllink.aspx) objektu, nastavte jeho vlastnosti a přidat jej do `Header`na `Controls` kolekce.
+Výše uvedený kód přidá `<meta>` element klíčová slova `<head>` oblast, která poskytuje čárkami oddělený seznam klíčových slov, která popisují stránky. Všimněte si, že chcete přidat `<meta>` značku vytvoříte [ `HtmlMeta` ](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlmeta.aspx) instance, nastavte jeho `Name` a `Content` vlastnosti a přidat jej do `Header`na `Controls` kolekce. Podobně programově přidat `<link>` elementu, vytvořit [ `HtmlLink` ](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmllink.aspx) objektu, nastavte jeho vlastnosti a přidat jej do `Header`na `Controls` kolekce.
 
 > [!NOTE]
-> Přidejte libovolné značky, vytvořte [ `LiteralControl` ](https://msdn.microsoft.com/en-us/library/system.web.ui.literalcontrol.aspx) instance, nastavte jeho `Text` vlastnost a přidat jej do `Header`na `Controls` kolekce.
+> Přidejte libovolné značky, vytvořte [ `LiteralControl` ](https://msdn.microsoft.com/library/system.web.ui.literalcontrol.aspx) instance, nastavte jeho `Text` vlastnost a přidat jej do `Header`na `Controls` kolekce.
 
 
 ## <a name="summary"></a>Souhrn

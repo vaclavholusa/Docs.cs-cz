@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 923a8257376e98e6cae10d905f1cb18f7fdb28e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 24ede9cb9289c84140f6e2573f9d526f19cac64b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>Distribuované ukládání do mezipaměti (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -79,12 +79,12 @@ Toto jsou ukázky pro ilustraci jednoduché ukládání do mezipaměti kódu; uk
 
 ## <a name="azure-caching-services"></a>Ukládání do mezipaměti služby Azure
 
-Azure nabízí následující služby ukládání do mezipaměti: [Azure Redis Cache](https://msdn.microsoft.com/en-us/library/dn690523.aspx) a [Azure spravované Cache](https://msdn.microsoft.com/en-us/library/dn386094.aspx). Azure Redis cache je založená na oblíbených [otevřít zdroj Redis Cache](http://redis.io/) a je první volbou pro většinu ukládání do mezipaměti scénáře.
+Azure nabízí následující služby ukládání do mezipaměti: [Azure Redis Cache](https://msdn.microsoft.com/library/dn690523.aspx) a [Azure spravované Cache](https://msdn.microsoft.com/library/dn386094.aspx). Azure Redis cache je založená na oblíbených [otevřít zdroj Redis Cache](http://redis.io/) a je první volbou pro většinu ukládání do mezipaměti scénáře.
 
 <a id="sessionstate"></a>
 ## <a name="aspnet-session-state-using-a-cache-provider"></a>Pomocí zprostředkovatele mezipaměti stavu relace ASP.NET
 
-Jak je uvedeno v [webové vývoj osvědčené postupy kapitoly](web-development-best-practices.md), osvědčeným postupem je vyhýbat se používání stavu relace. Pokud vaše aplikace vyžaduje stav relace, další osvědčený postup se vyhnete výchozího zprostředkovatele v paměti vzhledem k tomu, který neumožňuje horizontální navýšení kapacity (více instancí webového serveru). Umožňuje poskytovatele stavu relace ASP.NET SQL Server lokality, která běží na více webových serverů k používání stavu relace, ale jeho vznikly náklady vysokou latencí ve srovnání s poskytovatele v paměti. Nejlepším řešením, pokud máte se používání stavu relace je pro použití poskytovatele mezipaměti, například [poskytovatele stavu relace pro Azure Cache](https://msdn.microsoft.com/en-us/library/windowsazure/gg185668.aspx).
+Jak je uvedeno v [webové vývoj osvědčené postupy kapitoly](web-development-best-practices.md), osvědčeným postupem je vyhýbat se používání stavu relace. Pokud vaše aplikace vyžaduje stav relace, další osvědčený postup se vyhnete výchozího zprostředkovatele v paměti vzhledem k tomu, který neumožňuje horizontální navýšení kapacity (více instancí webového serveru). Umožňuje poskytovatele stavu relace ASP.NET SQL Server lokality, která běží na více webových serverů k používání stavu relace, ale jeho vznikly náklady vysokou latencí ve srovnání s poskytovatele v paměti. Nejlepším řešením, pokud máte se používání stavu relace je pro použití poskytovatele mezipaměti, například [poskytovatele stavu relace pro Azure Cache](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx).
 
 ## <a name="summary"></a>Souhrn
 
@@ -96,11 +96,11 @@ Další informace o ukládání do mezipaměti najdete v následujících materi
 
 Dokumentace
 
-- [Mezipaměť Azure](https://msdn.microsoft.com/en-us/library/gg278356.aspx). Oficiální dokumentace MSDN na ukládání do mezipaměti v Azure.
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Najdete pokyny ukládání do mezipaměti a doplňováním mezipaměti.
-- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Najdete v části na ukládání do mezipaměti.
-- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). DOKONČENO Dokument White paper moduly SIMM značky a Michael Thomassy. Najdete v části na distribuované ukládání do mezipaměti.
-- [Distribuované ukládání do mezipaměti na cestě k škálovatelnost](https://msdn.microsoft.com/en-us/magazine/dd942840.aspx). Starší článek Časopis MSDN (2009), ale jasně napsané Úvod k distribuované ukládání do mezipaměti obecně; Klient se přepne do větší hloubky než na ukládání do mezipaměti části Dokumenty white paper bezporuchový a osvědčené postupy.
+- [Mezipaměť Azure](https://msdn.microsoft.com/library/gg278356.aspx). Oficiální dokumentace MSDN na ukládání do mezipaměti v Azure.
+- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Najdete pokyny ukládání do mezipaměti a doplňováním mezipaměti.
+- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Najdete v části na ukládání do mezipaměti.
+- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). W. Dokument White paper moduly SIMM značky a Michael Thomassy. Najdete v části na distribuované ukládání do mezipaměti.
+- [Distribuované ukládání do mezipaměti na cestě k škálovatelnost](https://msdn.microsoft.com/magazine/dd942840.aspx). Starší článek Časopis MSDN (2009), ale jasně napsané Úvod k distribuované ukládání do mezipaměti obecně; Klient se přepne do větší hloubky než na ukládání do mezipaměti části Dokumenty white paper bezporuchový a osvědčené postupy.
 
 Videa
 

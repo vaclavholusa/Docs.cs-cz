@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 0cc51fbe84124a62f0c1254faab796cbcdc7efd6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de661616ff3ca83052ae74d3ae6810d014aff764
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>Přidat novou kategorii k rozevírací seznam pomocí uživatelského rozhraní jQuery
 ====================
@@ -90,7 +90,7 @@ Druhý řádek používá ID `genreDialog` vytvořit dialogové okno na značce 
 
 [!code-cshtml[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample7.cshtml)]
 
-[Html.BeginForm](https://msdn.microsoft.com/en-us/library/dd492714.aspx) pomocná přetížení použít v *Views\Genre\\_CreateGenre.cshtml* generuje soubor HTML s atributem akce, který obsahuje adresu URL pro odeslání formuláře. Tím zobrazíte tak zobrazení stránky album vytvořit v prohlížeči a vyberte zdroj zobrazit v prohlížeči. Následující kód ukazuje generovaný kód HTML obsahující značku formuláře.
+[Html.BeginForm](https://msdn.microsoft.com/library/dd492714.aspx) pomocná přetížení použít v *Views\Genre\\_CreateGenre.cshtml* generuje soubor HTML s atributem akce, který obsahuje adresu URL pro odeslání formuláře. Tím zobrazíte tak zobrazení stránky album vytvořit v prohlížeči a vyberte zdroj zobrazit v prohlížeči. Následující kód ukazuje generovaný kód HTML obsahující značku formuláře.
 
 [!code-html[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample8.html)]
 
@@ -131,15 +131,15 @@ Rick.Anderson[at]Microsoft.com
 ### <a name="contributors"></a>Contributors
 
 - [Radu Enuca](https://weblogs.asp.net/raduenuca/default.aspx)
-- Jean Sébastien Goupil
+- Jean-Sébastien Goupil
 - [Brad Wilson](http://bradwilson.typepad.com/)
 
 ### <a name="reviewers"></a>Recenzenti
 
-- Jean Sébastien Goupil
+- Jean-Sébastien Goupil
 - [Brad Wilson](http://bradwilson.typepad.com/)
 - Jan Pope
-- Tní Dykstra
+- Tom Dykstra
 
 >[!div class="step-by-step"]
 [Předchozí](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

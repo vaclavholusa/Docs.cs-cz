@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: 729b4fa4c461eedbd0447371102010451eb51586
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bc31bf55b29661816e0ca9a50b51b0abc3eb2c98
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-and-running-a-deployment-command-file"></a>Vytváření a spouštění soubor příkazů nasazení
 ====================
@@ -116,7 +116,7 @@ Tento příkaz nástroje MSBuild může obsahovat soubor příkazů pro publikov
 > Pokyny k přizpůsobení souborů projektu specifický pro vaše vlastní prostředí serveru najdete v tématu [nakonfigurovat vlastnosti nasazení pro cílové prostředí](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
 
 
-Přepsání vlastností nebo nastavení různé další přepínače v příkazu MSBuild můžete také upravit procesu sestavení pro každé prostředí. Další informace najdete v tématu [příkazového řádku MSBuild – Reference](https://msdn.microsoft.com/en-us/library/ms164311.aspx).
+Přepsání vlastností nebo nastavení různé další přepínače v příkazu MSBuild můžete také upravit procesu sestavení pro každé prostředí. Další informace najdete v tématu [příkazového řádku MSBuild – Reference](https://msdn.microsoft.com/library/ms164311.aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](deploying-database-projects.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bb0b80f63ea69bb12a28f01193946f5689e70fb9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2e0698269c0a29c234f03dc56f7b63e7bc83d032
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-the-tableadapter-to-use-joins-vb"></a>Aktualizace pro použití TableAdapter spojí (VB)
 ====================
@@ -54,7 +54,7 @@ Alternativně `JOIN` lze použít k vrácení každý název dodavatele a katego
 A `JOIN` slučuje záznamy z jedné tabulky se záznamy z jiné tabulky, na základě některé kritérií. Ve výše uvedeném dotazu, například `LEFT JOIN Categories ON Categories.CategoryID = Products.CategoryID` SQL serveru pokyn ke sloučení každý záznam produktu v kategorii záznam, jehož `CategoryID` hodnota odpovídá produktu s `CategoryID` hodnotu. Sloučené výsledek umožňuje pracovat s odpovídající pole kategorií každého produktu (například `CategoryName`).
 
 > [!NOTE]
-> `JOIN`s běžně se používají při dotazování na data z relační databáze. Pokud jste ještě `JOIN` syntaxe nebo potřeba zdokonalit v práci s trochu jeho využití, doporučujeme I d [kurzu připojení k SQL](http://www.w3schools.com/sql/sql_join.asp) v [škol W3](http://www.w3schools.com/). Také vhodné čtení jsou [ `JOIN` Základy](https://msdn.microsoft.com/en-us/library/ms191517.aspx) a [poddotazu Základy](https://msdn.microsoft.com/en-us/library/ms189575.aspx) části [dokumentaci knihy Online SQL](https://msdn.microsoft.com/en-us/library/ms130214.aspx).
+> `JOIN`s běžně se používají při dotazování na data z relační databáze. Pokud jste ještě `JOIN` syntaxe nebo potřeba zdokonalit v práci s trochu jeho využití, doporučujeme I d [kurzu připojení k SQL](http://www.w3schools.com/sql/sql_join.asp) v [škol W3](http://www.w3schools.com/). Také vhodné čtení jsou [ `JOIN` Základy](https://msdn.microsoft.com/library/ms191517.aspx) a [poddotazu Základy](https://msdn.microsoft.com/library/ms189575.aspx) části [dokumentaci knihy Online SQL](https://msdn.microsoft.com/library/ms130214.aspx).
 
 
 Vzhledem k tomu `JOIN` s a korelační poddotazy obě slouží k načtení dat v relaci z jiné tabulky, celá řada vývojářů nezbývají hrabání jejich oznámení a vás zajímá, jaký přístup k použití. Všechny SQL gurus I sunout mluvili do mají uvedená zhruba samé, to nemá t skutečně vás performance-wise spojitá plány zhruba identické spuštění systému SQL Server. Jejich poradenství, pak je pomocí technik, které vám a vašemu týmu jsou nejvíce vyhovuje. Ho věci poznamenat, že po vodorovně tuto žádost tyto odborníky okamžitě express jejich předvolbu `JOIN` s přes korelační poddotazy.

@@ -1,19 +1,19 @@
 ---
 title: "Úvod do Identity na jádro ASP.NET"
 author: rick-anderson
-description: "Pomocí Identity aplikace ASP.NET Core"
+description: "Pomocí Identity aplikace ASP.NET Core. Obsahuje požadavky na heslo nastavení (RequireDigit, RequiredLength, RequiredUniqueChars a další)."
 ms.author: riande
 manager: wpickett
-ms.date: 01/02/2018
+ms.date: 01/24/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 436a5ecfd126c9660591cd55efc1cc52b9493136
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b1dc6d31f44a26a2b91a92dc43032b0315e73cce
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity na jádro ASP.NET
 
@@ -23,7 +23,7 @@ Identita ASP.NET Core je systém členství, který umožňuje přidat funkce p�
 
 Můžete nakonfigurovat ASP.NET Identity Core ukládat uživatelská jména, hesla a data profilu do databáze serveru SQL Server. Alternativně můžete použít vlastní trvalého úložiště, například Azure Table Storage. Tento dokument obsahuje pokyny pro sadu Visual Studio a pro používání rozhraní příkazového řádku.
 
-[Zobrazení nebo stažení ukázkového kódu.](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(Postup stažení)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/index#how-to-download-a-sample)
+[Zobrazení nebo stažení ukázkového kódu.](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(Postup stažení)](https://docs.microsoft.com/aspnet/core/tutorials/index#how-to-download-a-sample)
 
 ## <a name="overview-of-identity"></a>Přehled identity
 
@@ -124,9 +124,10 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
  
     Předchozí kód výše volání `_signInManager.SignOutAsync` metoda. `SignOutAsync` Metoda vymaže deklaracích identity uživatele v souborech cookie.
  
+<a name="pw"></a>
 6.  Konfigurace.
 
-    Identita má některé výchozí chování lze přepsat v třídě spuštění vaší aplikace. Není potřeba konfigurovat ``IdentityOptions`` Pokud používáte výchozí chování.
+    Identita má některé výchozí chování, které mohou být přepsána nastaveními v třída při spuštění aplikace. `IdentityOptions`není nutné nakonfigurovat při použití výchozí chování. Následující kód nastaví několik možností síly hesla:
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
     
@@ -194,6 +195,10 @@ Tyto závislosti jsou potřeba k použití v aplikacích ASP.NET Core systém id
 ## <a name="migrating-to-aspnet-core-identity"></a>Migrace na jádro ASP.NET Identity
 
 Pro další informace a pokyny k migraci stávající identitu úložiště najdete v tématu [migrace ověřování a identita](xref:migration/identity).
+
+## <a name="setting-password-strength"></a>Nastavení síly hesla
+
+V tématu [konfigurace](#pw) pro ukázku, která nastaví požadavky na minimální hesla.
 
 ## <a name="next-steps"></a>Další kroky
 

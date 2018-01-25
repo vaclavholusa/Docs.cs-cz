@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 73332d168e2f22621cb234a6591f3ce0eeed802f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 93b4df5fcbde8d87866d00dffda8a241d0dd596b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-to-the-model"></a>Přidání ověřování do modelu
 ====================
@@ -40,13 +40,13 @@ Podíváme, jak můžete využít výhod tato podpora ověřování v aplikaci f
 
 Budete začněte tím, že některé logiku ověření pro přidání `Movie` třídy.
 
-Otevřete *Movie.cs* souboru. Přidat `using` příkaz v horní části souboru, který odkazuje [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) obor názvů:
+Otevřete *Movie.cs* souboru. Přidat `using` příkaz v horní části souboru, který odkazuje [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů:
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample1.cs)]
 
 Všimněte si, obor názvů neobsahuje `System.Web`. DataAnnotations poskytuje integrovanou sadu atributů ověření, které můžete provést deklarativně všechny třídy nebo vlastnost.
 
-Nyní aktualizovat `Movie` třída využít předdefinované [ `Required` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), a [ `Range` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributů ověření . Použijte následující kód jako příklad umístění pro použití atributy.
+Nyní aktualizovat `Movie` třída využít předdefinované [ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), a [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributů ověření . Použijte následující kód jako příklad umístění pro použití atributy.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample2.cs?highlight=4,10,13,17)]
 
@@ -99,7 +99,7 @@ Možná jste si všimli vlastností `Title` a `Genre`, požadovaný atribut nevy
 5. Odeberte text.
 6. Klikněte na.
 
-Výše uvedené pořadí aktivují požadované ověření bez stiskne tlačítko pro odeslání. Jednoduše stiskne tlačítko pro odeslání bez nutnosti zadávat žádná pole aktivují ověřování na straně klienta. Data formuláře není odesílat na server, dokud nejsou žádné chyby ověření straně klienta. Toto můžete otestovat uvedení přerušení v metodu Post protokolu HTTP nebo pomocí [nástroj fiddler](http://fiddler2.com/fiddler2/) nebo aplikace Internet Explorer 9 [nástroje pro vývojáře F12](https://msdn.microsoft.com/en-us/ie/aa740478).
+Výše uvedené pořadí aktivují požadované ověření bez stiskne tlačítko pro odeslání. Jednoduše stiskne tlačítko pro odeslání bez nutnosti zadávat žádná pole aktivují ověřování na straně klienta. Data formuláře není odesílat na server, dokud nejsou žádné chyby ověření straně klienta. Toto můžete otestovat uvedení přerušení v metodu Post protokolu HTTP nebo pomocí [nástroj fiddler](http://fiddler2.com/fiddler2/) nebo aplikace Internet Explorer 9 [nástroje pro vývojáře F12](https://msdn.microsoft.com/ie/aa740478).
 
 ![](adding-validation-to-the-model/_static/image2.png)
 
@@ -137,17 +137,17 @@ Pokud chcete později změnit logiku ověření, můžete tak učinit na jednom 
 
 ## <a name="adding-formatting-to-the-movie-model"></a>Přidání formátování ke film modelu
 
-Otevřete *Movie.cs* soubor a zkontrolujte `Movie` třídy. [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) Obor názvů poskytuje atributy formátování kromě integrovanou sadu atributů ověření. Provedli jsme již [ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) Výčtová hodnota, datum vydání a pole cena. Následující kód ukazuje `ReleaseDate` a `Price` vlastnosti s příslušnou [ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut.
+Otevřete *Movie.cs* soubor a zkontrolujte `Movie` třídy. [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) Obor názvů poskytuje atributy formátování kromě integrovanou sadu atributů ověření. Provedli jsme již [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) Výčtová hodnota, datum vydání a pole cena. Následující kód ukazuje `ReleaseDate` a `Price` vlastnosti s příslušnou [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample9.cs)]
 
-[ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) Atributy nejsou atributů ověření, používají se k informování zobrazovací modul, jak k vykreslení kódu HTML. V příkladu nahoře `DataType.Date` atribut zobrazí data film jako kalendářní data pouze bez čas. Například následující [ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) atributy nemáte ověření formátu dat:
+[ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) Atributy nejsou atributů ověření, používají se k informování zobrazovací modul, jak k vykreslení kódu HTML. V příkladu nahoře `DataType.Date` atribut zobrazí data film jako kalendářní data pouze bez čas. Například následující [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atributy nemáte ověření formátu dat:
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample10.cs)]
 
-Atributy uvedené výše pouze poskytovat pro modul zobrazení pro zobrazení dat (a zadejte atributy, jako &lt;&gt; pro adresy URL a &lt;href =&quot;mailto:EmailAddress.com&quot; &gt; e-mailu. Můžete použít [regulární výraz](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut pro ověření formátu dat.
+Atributy uvedené výše pouze poskytovat pro modul zobrazení pro zobrazení dat (a zadejte atributy, jako &lt;&gt; pro adresy URL a &lt;href =&quot;mailto:EmailAddress.com&quot; &gt; e-mailu. Můžete použít [regulární výraz](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut pro ověření formátu dat.
 
-Alternativní způsob použití `DataType` atributy, můžete explicitně nastavit [ `DataFormatString` ](https://msdn.microsoft.com/en-us/library/system.string.format.aspx) hodnotu. Následující kód ukazuje vlastnost datum vydání s řetězec formátu datum (konkrétně, &quot;d&quot;). To byste použili k určení, že nechcete, aby čas jako součást datum vydání.
+Alternativní způsob použití `DataType` atributy, můžete explicitně nastavit [ `DataFormatString` ](https://msdn.microsoft.com/library/system.string.format.aspx) hodnotu. Následující kód ukazuje vlastnost datum vydání s řetězec formátu datum (konkrétně, &quot;d&quot;). To byste použili k určení, že nechcete, aby čas jako součást datum vydání.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample11.cs)]
 

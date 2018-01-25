@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 18c3825c58e7cfe0a73817a8431593c661c5fa4f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f9b68abeba19561a327bad5ee4be80d79af1a550
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>Řazení, filtrování a stránkování s platformou Entity Framework v aplikaci ASP.NET MVC (3 10)
 ====================
@@ -64,7 +64,7 @@ Jedná se o Ternární příkazy. První z nich určuje, že pokud `sortOrder` p
 | Datum vzestupné | ascending | descending |
 | Datum sestupném | ascending | ascending |
 
-Používá metodu [technologie LINQ to Entities](https://msdn.microsoft.com/en-us/library/bb386964.aspx) zadat Tento sloupec seřadit podle. Kód vytvoří [IQueryable](https://msdn.microsoft.com/en-us/library/bb351562.aspx) proměnné před `switch` ho v příkazu, změní `switch` prohlášení a volání `ToList` metoda po `switch` příkaz. Při vytváření a úprava `IQueryable` proměnné, bude odeslán žádný dotaz do databáze. Dotaz není provést, dokud je převést `IQueryable` objektu do kolekce voláním metody `ToList`. Proto tento kód výsledkem jeden dotaz, který není provést, dokud `return View` příkaz.
+Používá metodu [technologie LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx) zadat Tento sloupec seřadit podle. Kód vytvoří [IQueryable](https://msdn.microsoft.com/library/bb351562.aspx) proměnné před `switch` ho v příkazu, změní `switch` prohlášení a volání `ToList` metoda po `switch` příkaz. Při vytváření a úprava `IQueryable` proměnné, bude odeslán žádný dotaz do databáze. Dotaz není provést, dokud je převést `IQueryable` objektu do kolekce voláním metody `ToList`. Proto tento kód výsledkem jeden dotaz, který není provést, dokud `return View` příkaz.
 
 ### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>Přidání záhlaví hypertextové odkazy na zobrazení indexu Student sloupce
 
@@ -92,7 +92,7 @@ V *Controllers\StudentController.cs*, nahraďte `Index` metoda následujícím k
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-Přidali jste `searchString` parametru `Index` metoda. Jste také přidali do příkazu LINQ `where` clausethat vybere pouze studenty, jejichž křestní jméno nebo příjmení obsahuje řetězec pro hledání. Hodnota řetězce vyhledávání byl přijat z textové pole, které přidáte do zobrazení indexu. Příkaz, který přidá [kde](https://msdn.microsoft.com/en-us/library/bb535040.aspx) klauzule se spustí pouze v případě, že je hodnota pro vyhledávání.
+Přidali jste `searchString` parametru `Index` metoda. Jste také přidali do příkazu LINQ `where` clausethat vybere pouze studenty, jejichž křestní jméno nebo příjmení obsahuje řetězec pro hledání. Hodnota řetězce vyhledávání byl přijat z textové pole, které přidáte do zobrazení indexu. Příkaz, který přidá [kde](https://msdn.microsoft.com/library/bb535040.aspx) klauzule se spustí pouze v případě, že je hodnota pro vyhledávání.
 
 > [!NOTE]
 > V mnoha případech můžete volat stejnou metodu na sadu entit Entity Framework nebo jako metody rozšíření na kolekci v paměti. Výsledky jsou obvykle stejné, ale v některých případech může být odlišné. Například implementace rozhraní .NET Framework `Contains` metoda vrátí všechny řádky, pokud předáte prázdný řetězec, ale zprostředkovatel Entity Framework pro SQL Server Compact 4.0 vrací nulový počet řádků prázdné řetězce. Proto kód v ukázce (vložení `Where` příkaz uvnitř `if` příkaz) zajišťuje, že dostanete stejné výsledky pro všechny verze systému SQL Server. Navíc implementace rozhraní .NET Framework `Contains` metoda provádí malá a velká písmena porovnání ve výchozím nastavení, ale zprostředkovatelé Entity Framework SQL Server provést porovnávání ve výchozím nastavení. Proto volání `ToUpper` metoda aby test explicitně velká a malá písmena zajišťuje výsledky se nemění při změně kódu později použít úložiště, která se vrátit `IEnumerable` kolekce místo `IQueryable` objektu. (Při volání `Contains` metodu `IEnumerable` kolekce, získat implementace rozhraní .NET Framework;. při jeho volání na `IQueryable` objektu získat implementace zprostředkovatele databáze.)
@@ -158,7 +158,7 @@ Na konci metody `ToPagedList` rozšiřující metody na na studentů `IQueryable
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-`ToPagedList` Metoda přebírá číslo stránky. Představují dva otazníky [slučování null operátor](https://msdn.microsoft.com/en-us/library/ms173224.aspx). Operátor slučování null definuje výchozí hodnotu pro typ s možnou hodnotou Null; výraz `(page ?? 1)` znamená vrátí hodnotu `page` Pokud má hodnotu, nebo 1-li vrátit `page` má hodnotu null.
+`ToPagedList` Metoda přebírá číslo stránky. Představují dva otazníky [slučování null operátor](https://msdn.microsoft.com/library/ms173224.aspx). Operátor slučování null definuje výchozí hodnotu pro typ s možnou hodnotou Null; výraz `(page ?? 1)` znamená vrátí hodnotu `page` Pokud má hodnotu, nebo 1-li vrátit `page` má hodnotu null.
 
 ### <a name="add-paging-links-to-the-student-index-view"></a>Přidat stránkování odkazy na zobrazení indexu studenty
 
@@ -170,11 +170,11 @@ V *Views\Student\Index.cshtml*, existujícího kódu nahraďte následujícím k
 
 `using` Příkaz pro `PagedList.Mvc` dává přístup do pomocné rutiny MVC tlačítka stránkování.
 
-Kódu používá přetížení [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) který umožňuje zadat [FormMethod.Get](https://msdn.microsoft.com/en-us/library/system.web.mvc.formmethod(v=vs.100).aspx/css).
+Kódu používá přetížení [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) který umožňuje zadat [FormMethod.Get](https://msdn.microsoft.com/library/system.web.mvc.formmethod(v=vs.100).aspx/css).
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-Výchozí hodnota [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) odesílat data formuláře s POST, což znamená, že jsou parametry předány v textu zprávy HTTP a není v adrese URL jako řetězce dotazu. Když zadáte GET protokolu HTTP, data formuláře je předán v adrese URL jako řetězce dotazu, který uživatelům umožňuje bookmark adresu URL. [W3C pokyny pro použití metody GET protokolu HTTP](http://www.w3.org/2001/tag/doc/whenToUseGet.html) určit, že by měl používat GET při akci nevede aktualizaci.
+Výchozí hodnota [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) odesílat data formuláře s POST, což znamená, že jsou parametry předány v textu zprávy HTTP a není v adrese URL jako řetězce dotazu. Když zadáte GET protokolu HTTP, data formuláře je předán v adrese URL jako řetězce dotazu, který uživatelům umožňuje bookmark adresu URL. [W3C pokyny pro použití metody GET protokolu HTTP](http://www.w3.org/2001/tag/doc/whenToUseGet.html) určit, že by měl používat GET při akci nevede aktualizaci.
 
 Textové pole je inicializován aktuální řetězec pro hledání, po kliknutí na tlačítko Nová stránka se zobrazí aktuální hledaný řetězec.
 
@@ -291,7 +291,7 @@ Windows Azure SQL Database je služba relační databáze založené na cloudu, 
 7. Klikněte na šipku, která odkazuje na vpravo v dolní části pole. Průvodce přejde **nastavení databáze** krok.
 8. V **název** zadejte *ContosoUniversityDB*.
 9. V **Server** vyberte **novou databázi SQL serveru**. Případně pokud jste dříve vytvořili serveru, můžete vybrat tento server z rozevíracího seznamu.
-10. Zadejte správce **PŘIHLAŠOVACÍ jméno** a **heslo**. Pokud jste vybrali **novou databázi SQL serveru** nezadáváte existující jméno a heslo, zadáváte nové jméno a heslo, které teď definujete pro pozdější použití při přístupu k databázi. Pokud jste vybrali serveru, který jste vytvořili dříve, budete zadejte přihlašovací údaje pro tento server. V tomto kurzu nebude vyberete ***Upřesnit*** zaškrtávací políčko. ***Upřesnit*** možnosti umožňují nastavit databázi [kolace](https://msdn.microsoft.com/en-us/library/aa174903(v=SQL.80).aspx).
+10. Zadejte správce **PŘIHLAŠOVACÍ jméno** a **heslo**. Pokud jste vybrali **novou databázi SQL serveru** nezadáváte existující jméno a heslo, zadáváte nové jméno a heslo, které teď definujete pro pozdější použití při přístupu k databázi. Pokud jste vybrali serveru, který jste vytvořili dříve, budete zadejte přihlašovací údaje pro tento server. V tomto kurzu nebude vyberete ***Upřesnit*** zaškrtávací políčko. ***Upřesnit*** možnosti umožňují nastavit databázi [kolace](https://msdn.microsoft.com/library/aa174903(v=SQL.80).aspx).
 11. Vyberte stejnou **oblast** kterou jste zvolili pro webovou stránku.
 12. Klikněte na ikonu zaškrtnutí v pravém dolním rohu políčka potvrďte, že budete hotovi.   
   
@@ -367,7 +367,7 @@ Windows Azure SQL Database je služba relační databáze založené na cloudu, 
   
     ![Students_index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image32.png)
 
-V tomto okamžiku vaší *SchoolContext* databáze byla vytvořena ve službě Windows Azure SQL Database, protože jste vybrali **spustit migrace Code First (spuštěno při spuštění aplikace)**. *Web.config* změnil soubor na nasazené webu tak, aby [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/en-us/library/hh829476(v=vs.103).aspx) inicializátoru by spustit při prvním kódu čtení nebo zápisu dat v databázi (která se stalo, pokud jste vybrali **studenty** kartě):
+V tomto okamžiku vaší *SchoolContext* databáze byla vytvořena ve službě Windows Azure SQL Database, protože jste vybrali **spustit migrace Code First (spuštěno při spuštění aplikace)**. *Web.config* změnil soubor na nasazené webu tak, aby [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) inicializátoru by spustit při prvním kódu čtení nebo zápisu dat v databázi (která se stalo, pokud jste vybrali **studenty** kartě):
 
 ![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image33.png)
 
@@ -387,7 +387,7 @@ Můžete najít soubor Web.config na vašem počítači v nasazené verzi *Conto
 
 ## <a name="code-first-initializers"></a>První inicializátory kódu
 
-V části nasazení jste viděli [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/en-us/library/hh829476(v=vs.103).aspx) inicializátoru používá. Kód nejprve taky poskytuje další inicializátory, které můžete použít, včetně [CreateDatabaseIfNotExists](https://msdn.microsoft.com/en-us/library/gg679221(v=vs.103).aspx) (výchozí), [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/en-us/library/gg679604(v=VS.103).aspx) a [ DropCreateDatabaseAlways](https://msdn.microsoft.com/en-us/library/gg679506(v=VS.103).aspx). `DropCreateAlways` Inicializátoru může být užitečná pro nastavení podmínky pro testování částí. Můžete taky napsat vlastní inicializátory a můžete volat inicializátoru explicitně Pokud nechcete čekat, až aplikace čte z nebo zapisuje do databáze. Komplexní vysvětlení inicializátory, naleznete v kapitole 6 knihy [programovací rozhraní Entity Framework: Code First](http://shop.oreilly.com/product/0636920022220.do) Julie Lerman a Rowan Lukeš.
+V části nasazení jste viděli [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) inicializátoru používá. Kód nejprve taky poskytuje další inicializátory, které můžete použít, včetně [CreateDatabaseIfNotExists](https://msdn.microsoft.com/library/gg679221(v=vs.103).aspx) (výchozí), [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/library/gg679604(v=VS.103).aspx) a [ DropCreateDatabaseAlways](https://msdn.microsoft.com/library/gg679506(v=VS.103).aspx). `DropCreateAlways` Inicializátoru může být užitečná pro nastavení podmínky pro testování částí. Můžete taky napsat vlastní inicializátory a můžete volat inicializátoru explicitně Pokud nechcete čekat, až aplikace čte z nebo zapisuje do databáze. Komplexní vysvětlení inicializátory, naleznete v kapitole 6 knihy [programovací rozhraní Entity Framework: Code First](http://shop.oreilly.com/product/0636920022220.do) Julie Lerman a Rowan Lukeš.
 
 ## <a name="summary"></a>Souhrn
 

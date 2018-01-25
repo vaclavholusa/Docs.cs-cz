@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 6cb77e8ef301c2eeef7df3e391e14f4e2c0364e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 489769533a26c99404c6a5186d66f560385dcffd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>Úložiště objektů Blob nestrukturovaných (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -33,7 +33,7 @@ V předchozích kapitol jsme hledá v rozdělení schémata a vysvětlení, jak 
 
 Služba Azure Storage Blob poskytuje způsob, jak ukládat soubory v cloudu. Služba objektů Blob má několik výhod oproti ukládání souborů v místní systém souborů:
 
-- Je vysoce škálovatelná. Jeden účet úložiště můžete ukládat [stovky terabajtů](https://msdn.microsoft.com/en-us/library/windowsazure/dn249410.aspx), a může mít více účtů úložiště. Některé z největších Azure zákazníkům ukládat stovky petabajty. Microsoft SkyDrive používá úložiště objektů blob.
+- Je vysoce škálovatelná. Jeden účet úložiště můžete ukládat [stovky terabajtů](https://msdn.microsoft.com/library/windowsazure/dn249410.aspx), a může mít více účtů úložiště. Některé z největších Azure zákazníkům ukládat stovky petabajty. Microsoft SkyDrive používá úložiště objektů blob.
 - Je odolný. Automaticky se zálohuje všechny soubory, které ukládáte ve službě Blob.
 - Poskytuje vysokou dostupnost. [SLA pro úložiště](https://go.microsoft.com/fwlink/p/?linkid=159705&amp;clcid=0x409) lišící 99,9 % nebo 99,99 % dostupnost, v závislosti na možnosti geografická redundance, kterou zvolíte.
 - Je platforma jako služba (PaaS) funkce Azure, což znamená právě ukládání a načítání souborů, platícího pouze pro skutečné množství úložiště, které používáte, a Azure automaticky postará o nastavení a všechny virtuální počítače a diskových jednotek, které jsou potřebné pro správu Služba.
@@ -146,7 +146,7 @@ Další informace najdete v následujících zdrojích informací:
 - [Úvod do Azure BLOB Storage](https://www.simple-talk.com/cloud/cloud-data/an-introduction-to-windows-azure-blob-storage-/). Blog podle Karel dřeva.
 - [Jak používat službu Azure Blob Storage v rozhraní .NET](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Oficiální dokumentaci na webu MicrosoftAzure.com. Stručný úvod do objektu blob úložiště příklady kódu znázorňující způsob připojení k úložišti objektů blob, vytvoření kontejnerů, nahrávání a stahování objekty BLOB atd.
 - [Bezporuchový: Vytváření škálovatelné, odolné cloudové služby](https://channel9.msdn.com/Series/FailSafe). Série videí devět částí Ulrich Homann, Mercuri matolin a moduly SIMM značky. Uvede základními koncepty a architektury zásady způsobem, velmi přístupné a zajímavé, s scénářů čerpají z prostředí Microsoft zákazníka poradní tým (CAT) s skutečným zákazníkům. Popis služby Azure Storage a objekty BLOB najdete v díl 5 počínaje 35:13.
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Vzor klíč osobní služby najdete v tématu.
+- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Vzor klíč osobní služby najdete v tématu.
 
 >[!div class="step-by-step"]
 [Předchozí](data-partitioning-strategies.md)

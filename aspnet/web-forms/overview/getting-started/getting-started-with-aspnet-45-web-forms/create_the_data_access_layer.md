@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: ebace10dc8a861ab38bd5c834c2225e3373f13fe
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 809609155b06c4632bd4f450082d84c432c7a46f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-the-data-access-layer"></a>Vytvořit Data Access Layer
 ====================
@@ -43,7 +43,7 @@ Tento kurz popisuje, jak vytvářet, přístup a zkontrolujte data v databázi p
 
 ## <a name="creating-the-data-models"></a>Vytváření modelů dat
 
-[Rozhraní Entity Framework](https://msdn.microsoft.com/en-us/data/aa937723) představuje rozhraní objektu relační mapování (ORM). Umožňuje pracovat s relačních dat jako objekty, odstraňuje většinu kódu přístup k datům, které by obvykle potřebujete k zápisu. Používající rozhraní Entity Framework, můžete vydávat dotazy pomocí [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx), načítat a pracovat s daty jako objektů se silným typem. LINQ poskytuje vzory pro dotazování a aktualizace dat. Používající rozhraní Entity Framework umožňuje zaměřit se na vytváření zbytek vaší aplikace, nikoli zaměřené na data základy přístup. Později v kurzu této série jsme budete ukazují, jak tato data použít k naplnění navigaci a produktu dotazy.
+[Rozhraní Entity Framework](https://msdn.microsoft.com/data/aa937723) představuje rozhraní objektu relační mapování (ORM). Umožňuje pracovat s relačních dat jako objekty, odstraňuje většinu kódu přístup k datům, které by obvykle potřebujete k zápisu. Používající rozhraní Entity Framework, můžete vydávat dotazy pomocí [LINQ](https://msdn.microsoft.com/library/bb397926.aspx), načítat a pracovat s daty jako objektů se silným typem. LINQ poskytuje vzory pro dotazování a aktualizace dat. Používající rozhraní Entity Framework umožňuje zaměřit se na vytváření zbytek vaší aplikace, nikoli zaměřené na data základy přístup. Později v kurzu této série jsme budete ukazují, jak tato data použít k naplnění navigaci a produktu dotazy.
 
 Rozhraní Entity Framework podporuje vývoj zlepší, nazývá *Code First*. Kód nejprve umožňuje definovat modely dat pomocí třídy. Třída je konstruktor, který umožňuje vytvořit vlastní typy společně seskupením proměnné jiné typy, metod a události. Můžete třídy map k existující databázi nebo použít ke generování databáze. V tomto kurzu vytvoříte datové modely vytvořením třídy datového modelu. Potom budete umožní vytvořit databázi na za chodu z tyto nové třídy rozhraní Entity Framework.
 
@@ -181,11 +181,11 @@ V dalším kurzu budete aktualizovat uživatelského rozhraní, přidat navigač
 
 ## <a name="additional-resources"></a>Další prostředky
 
-[Přehled Entity Framework](https://msdn.microsoft.com/en-us/library/bb399567.aspx)   
-[Příručka začátečníka ADO.NET Entity Framework](https://msdn.microsoft.com/en-us/data/ee712907)   
+[Přehled Entity Framework](https://msdn.microsoft.com/library/bb399567.aspx)   
+[Příručka začátečníka ADO.NET Entity Framework](https://msdn.microsoft.com/data/ee712907)   
 [První vývoj pomocí rozhraní Entity Framework Code](http://www.msteched.com/2010/Europe/DEV212) (video)   
-[Kód první vztahy rozhraní Fluent API](https://msdn.microsoft.com/en-us/data/hh134698)   
-[Kód první datových poznámek](https://msdn.microsoft.com/en-us/data/gg193958)  
+[Kód první vztahy rozhraní Fluent API](https://msdn.microsoft.com/data/hh134698)   
+[Kód první datových poznámek](https://msdn.microsoft.com/data/gg193958)  
 [Vylepšení produktivitu rozhraní Entity Framework](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
 >[!div class="step-by-step"]

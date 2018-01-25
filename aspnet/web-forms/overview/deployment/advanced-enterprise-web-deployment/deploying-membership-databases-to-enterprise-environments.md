@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
 msc.type: authoredcontent
-ms.openlocfilehash: f4d898b6e09b5b9df44b62f9cb4b9d367f288efb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27fade9fc5cae917579d4963da7bca12f6a5cda1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-membership-databases-to-enterprise-environments"></a>Nasazení databáze členství v podnikových prostředích
 ====================
@@ -44,8 +44,8 @@ Bohužel databáze členství technologie ASP.NET znamenat určité výzvy, na k
 
 Když zvolíte jak zřídit databáze členství v podnikovém prostředí serveru, použijte tyto pokyny:
 
-- Pokud je to možné, nenasazujte databáze členství. Místo toho vytvořte databázi členství ručně na cílovém serveru databáze. Pokud jste schéma databáze členství nepřizpůsobili, můžete jednoduše vytvořit novou na místě v cílovém pomocí [ASP.NET nástroj pro registraci serveru SQL Server (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx).
-- Pokud nemáte žádnou možnost, ale chcete nasadit databázi členství & #x 2014; například pokud jste provedli rozsáhlé změny schématu databáze & #x 2014; měli byste provést nasazení pouze pro schéma databáze členství, vyloučit data účtu uživatele, a Spusťte skript po nasazení pro všechny požadované konfigurační data přidat. Obecné pokyny najdete v těchto přístupů [postupy: nasazení ASP.NET členství databáze bez včetně uživatelských účtů](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx).
+- Pokud je to možné, nenasazujte databáze členství. Místo toho vytvořte databázi členství ručně na cílovém serveru databáze. Pokud jste schéma databáze členství nepřizpůsobili, můžete jednoduše vytvořit novou na místě v cílovém pomocí [ASP.NET nástroj pro registraci serveru SQL Server (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx).
+- Pokud nemáte žádnou možnost, ale chcete nasadit databázi členství & #x 2014; například pokud jste provedli rozsáhlé změny schématu databáze & #x 2014; měli byste provést nasazení pouze pro schéma databáze členství, vyloučit data účtu uživatele, a Spusťte skript po nasazení pro všechny požadované konfigurační data přidat. Obecné pokyny najdete v těchto přístupů [postupy: nasazení ASP.NET členství databáze bez včetně uživatelských účtů](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx).
 
 Je důležité nezapomenout, že *schéma databáze členství je pravděpodobně poměrně statické*. I v případě, že jste přizpůsobili databázi členství, nepravděpodobné, že budete muset aktualizovat schéma v pravidelných intervalech & #x 2014; není chystáte změnit často jako kód na webové aplikace nebo projekt databáze. Jako takový neměli byste potřebovat zahrnout do všech procesů nasazení automatizované nebo krokování databáze členství.
 
@@ -57,8 +57,8 @@ Alternativou je použití nástroje VSDBCMD aktualizovat schéma cílové datab�
 
 Chcete-li aktualizovat schéma databáze členství můžete těchto kroků:
 
-1. Použít VSDBCMD **Import** akce generovat soubor .dbschema pro vaše zdrojové databáze členství. Tento postup je popsaný v [postupy: Import schématu z příkazového řádku](https://msdn.microsoft.com/en-us/library/dd172135.aspx).
-2. Použít VSDBCMD **nasadit** akce k nasazení souboru .dbschema na vaše cílové databáze členství. Tento postup je popsaný v [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/en-us/library/dd193283.aspx).
+1. Použít VSDBCMD **Import** akce generovat soubor .dbschema pro vaše zdrojové databáze členství. Tento postup je popsaný v [postupy: Import schématu z příkazového řádku](https://msdn.microsoft.com/library/dd172135.aspx).
+2. Použít VSDBCMD **nasadit** akce k nasazení souboru .dbschema na vaše cílové databáze členství. Tento postup je popsaný v [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/library/dd193283.aspx).
 
 ## <a name="conclusion"></a>Závěr
 
@@ -66,7 +66,7 @@ Toto téma popisuje některé z problémů, které může být vystaven když po
 
 ## <a name="further-reading"></a>Další čtení
 
-Další pokyny a příklady použití VSDBCMD najdete v tématu [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/en-us/library/dd193283.aspx) a [postupy: Import schématu z příkazového řádku](https://msdn.microsoft.com/en-us/library/dd172135.aspx). Další informace o používání aspnet\_regsql.exe k vytváření databází členství, najdete v části [ASP.NET nástroj pro registraci serveru SQL Server (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx). Další obecné pokyny pro nasazení databáze členství, najdete v části [postupy: nasazení ASP.NET členství databáze bez včetně uživatelských účtů](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx).
+Další pokyny a příklady použití VSDBCMD najdete v tématu [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/library/dd193283.aspx) a [postupy: Import schématu z příkazového řádku](https://msdn.microsoft.com/library/dd172135.aspx). Další informace o používání aspnet\_regsql.exe k vytváření databází členství, najdete v části [ASP.NET nástroj pro registraci serveru SQL Server (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx). Další obecné pokyny pro nasazení databáze členství, najdete v části [postupy: nasazení ASP.NET členství databáze bez včetně uživatelských účtů](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx).
 
 >[!div class="step-by-step"]
 [Předchozí](deploying-database-role-memberships-to-test-environments.md)

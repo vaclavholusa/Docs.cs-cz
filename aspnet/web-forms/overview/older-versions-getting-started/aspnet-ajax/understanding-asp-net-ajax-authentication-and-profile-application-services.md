@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 7e0ddc15fac9af40a0a20a99979a80517eb1b6a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 182276f9f91b99beb1ce0fc40dcda1f19376669a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>Princip ověřování pomocí technologie ASP.NET AJAX a profil aplikačních služeb
 ====================
@@ -43,7 +43,7 @@ Ověřovací služby umožňuje uživatelům zadat přihlašovací údaje, aby b
 
 Profil služby umožňuje automatické integrace a úložiště dat uživatele na základě členství jako poskytovaný službou ověřování. Uložená data je uvedené v souboru web.config a různé profilování poskytovatelé služeb zpracovat data správy. Stejně jako u ověřovací služby, je kompatibilní s standardní profilovou službou ASP.NET AJAX profilovou službou, tak, aby stránky aktuálně zařadit funkce profilu ASP.NET služby by neměl přerušený zahrnutím podporu AJAX.
 
-Ověřování pomocí technologie ASP.NET a služby profilování, sami zapojení do aplikace je mimo rozsah tohoto dokumentu. Další informace v tématu naleznete v knihovně MSDN odkazovat článku Správa uživatelů pomocí členství v [https://msdn.microsoft.com/en-us/library/tw292whz.aspx](https://msdn.microsoft.com/en-us/library/tw292whz.aspx). ASP.NET obsahuje také nástroj automaticky nastavit členství se systémem SQL Server, který je výchozím zprostředkovatelem služeb ověřování pro členství technologie ASP.NET. Další informace najdete v článku ASP.NET nástroj pro registraci serveru SQL Server (Aspnet\_regsql.exe) v [https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx).
+Ověřování pomocí technologie ASP.NET a služby profilování, sami zapojení do aplikace je mimo rozsah tohoto dokumentu. Další informace v tématu naleznete v knihovně MSDN odkazovat článku Správa uživatelů pomocí členství v [https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx). ASP.NET obsahuje také nástroj automaticky nastavit členství se systémem SQL Server, který je výchozím zprostředkovatelem služeb ověřování pro členství technologie ASP.NET. Další informace najdete v článku ASP.NET nástroj pro registraci serveru SQL Server (Aspnet\_regsql.exe) v [https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*Pomocí služby ověřování ASP.NET AJAX*
 
@@ -65,7 +65,7 @@ Metoda login() zahájí požadavek na ověření pověření uživatele. Tato me
 
 | **Název parametru** | **Význam** |
 | --- | --- |
-| Uživatelské jméno | Požadováno. Uživatelské jméno k ověření. |
+| userName | Požadováno. Uživatelské jméno k ověření. |
 | Heslo | Volitelné (výchozí nastavení na hodnotu null). Heslo uživatele. |
 | isPersistent | Volitelné (výchozí hodnota je false). Jestli má soubor cookie pro ověřování uživatele zachová napříč relacemi. Pokud je hodnota false, bude se uživatel odhlaste při zavření prohlížeče nebo platnosti relace. |
 | redirectUrl | Volitelné (výchozí nastavení na hodnotu null). Adresa URL pro přesměrování prohlížeče po úspěšném ověření. Pokud tento parametr je null nebo prázdný řetězec, dojde k žádné přesměrování. |

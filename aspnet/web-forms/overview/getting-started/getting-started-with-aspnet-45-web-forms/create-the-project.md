@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: 2678342891a87d591476a07e418c118b2ae94d4d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 094733dcbe31486385dda2f8b44ba77a17486c82
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-the-project"></a>Vytvoření projektu
 ====================
@@ -74,7 +74,7 @@ Můžete přepínat mezi **návrhu** zobrazení a **zdroj** zobrazit výběrem m
 >  Webové formuláře framework se zaměřuje na vývojáře, kteří raději deklarativní a založený na řízení programování, jako je například Microsoft Windows Forms (WinForms) a WPF nebo XAML nebo Silverlight. Nabízí WYSIWYG vývoje řízeného Návrhář modelu, tak se s vývojáři hledá prostředí pro vývoj (RAD) rychlé aplikace pro vývoj webů. Pokud jsou pro nové webové programování a jsou obeznámeni s tradiční Microsoft RAD vývoj nástroji klienta (například Visual Basic a Visual C#), můžete rychle vytvořit webovou aplikaci bez nutnosti prostředí v rámci HTML a JavaScript.
 > - [ASP.NET MVC](../../../../mvc/index.md)  
 >  ASP.NET MVC cílí vývojáře, kteří mají zájem o vzory a principy vývoje řízeného testováním, oddělené oblasti zájmu, v inverzi řízení (IoC) a vkládání závislostí (DI). Toto rozhraní podporuje, oddělení vrstvu obchodní logiky webové aplikace z jeho prezentační vrstvy.
-> - [Rozhraní ASP.NET Web Pages](../../../../web-pages/index.md)  
+> - [Webové stránky ASP.NET](../../../../web-pages/index.md)  
 >  Rozhraní ASP.NET Web Pages cílí vývojáře, kteří chtějí scénáře vývoj jednoduchého webového, podle PHP. V modelu webové stránky vytvoření stránky HTML a poté přidejte serverový kód na stránku Chcete-li dynamicky řízení způsobu vykreslení značek. Webové stránky je určená speciálně pro být jednoduché rozhraní, a je nejjednodušší vstupním bodem do technologie ASP.NET pro uživatele, kteří znalost jazyka HTML, ale nemusí mít širokou programovací prostředí – například, studenty nebo hobbyists. Je také vhodné vývojářům webů, kteří znají, PHP nebo podobné architektury spuštění pomocí technologie ASP.NET.
 > - [Aplikace ASP.NET jedné stránky](../../../../single-page-application/index.md)  
 >  ASP.NET jedné stránky aplikace (SPA) pomáhá vytvářet aplikace, které zahrnují významné interakce na straně klienta pomocí standardu HTML 5, 3 šablon stylů CSS a JavaScript. Technologie ASP.NET a webové nástroje 2012.2 aktualizace dodává novou šablonu pro vytváření jednostránkové aplikace s použitím knockout.js a ASP.NET Web API. Kromě novou šablonu SPA jsou nové šablony vytvořené komunity SPA také k dispozici ke stažení.
@@ -97,8 +97,8 @@ Visual Studio vytvoří některé počáteční složek a souborů pro váš pro
 | --- | --- |
 | *Default.aspx* | Obvykle první stránka zobrazí, když je aplikace spuštěna v prohlížeči. |
 | *Site.Master* | Stránka, která vám umožní vytvořit konzistentní rozložení a použijte standardní chování stránky v aplikaci. |
-| *Soubor Global.asax* | Volitelný soubor, který obsahuje kód pro reagování na úrovni aplikace a úrovni relace události aktivované technologií ASP.NET nebo vytváření modulů HTTP. |
-| *Soubor Web.config* | Konfigurační data pro aplikaci. |
+| *Global.asax* | Volitelný soubor, který obsahuje kód pro reagování na úrovni aplikace a úrovni relace události aktivované technologií ASP.NET nebo vytváření modulů HTTP. |
+| *Web.config* | Konfigurační data pro aplikaci. |
 
 ### <a name="running-the-default-web-application"></a>Spuštění výchozí webové aplikace
 
@@ -114,7 +114,7 @@ Existují tři hlavní stránky v této výchozí webové aplikace: *Default.asp
 
 ## <a name="aspnet-web-forms-background"></a>ASP.NET – webové formuláře pozadí
 
-Webové formuláře ASP.NET jsou stránky, které jsou založené na technologii Microsoft ASP.NET, ve kterém kód, který běží na serveru dynamicky vygeneruje výstup webové stránky do prohlížeče nebo klienta zařízení. Stránku webových formulářů ASP.NET automaticky vykreslí správný HTML kompatibilní s prohlížečem funkcí, jako jsou styly, rozložení a tak dále. Webové formuláře jsou kompatibilní se žádný jazyk podporuje modulu .NET CLR, jako je například Microsoft Visual Basic a Microsoft Visual C#. Navíc webové formuláře jsou postaveny na [rozhraní Microsoft .NET Framework](https://msdn.microsoft.com/en-US/vstudio/aa496123), která poskytuje výhody například spravovaném prostředí, bezpečnost typů a dědičnosti.
+Webové formuláře ASP.NET jsou stránky, které jsou založené na technologii Microsoft ASP.NET, ve kterém kód, který běží na serveru dynamicky vygeneruje výstup webové stránky do prohlížeče nebo klienta zařízení. Stránku webových formulářů ASP.NET automaticky vykreslí správný HTML kompatibilní s prohlížečem funkcí, jako jsou styly, rozložení a tak dále. Webové formuláře jsou kompatibilní se žádný jazyk podporuje modulu .NET CLR, jako je například Microsoft Visual Basic a Microsoft Visual C#. Navíc webové formuláře jsou postaveny na [rozhraní Microsoft .NET Framework](https://msdn.microsoft.com/vstudio/aa496123), která poskytuje výhody například spravovaném prostředí, bezpečnost typů a dědičnosti.
 
 Při spuštění stránky webových formulářů ASP.NET, stránka prochází životním cyklem, ve které provádí řadu kroků zpracování. Tyto kroky zahrnují inicializace vytváření instancí ovládacích prvků, obnovení a udržování stavu, spuštěná kód obslužné rutiny událostí a vykreslování. Seznámení s výkonem webových formulářů ASP.NET, je důležité porozumět [životního cyklu stránky ASP.NET](https://msdn.microsoft.com/library/ms178472(v=vs.100).aspx) tak, aby můžete ve fázi odpovídající životního cyklu pro účinek, který chcete napsat kód.
 
@@ -128,19 +128,19 @@ Když webový server obdrží požadavek stránku, se najde stránky, procesy, o
 > 
 > **Členství**
 > 
-> [ASP.NET](https://msdn.microsoft.com/en-us/library/yh26yfzy.aspx) Identity ukládá přihlašovací údaje uživatelů v databázi vytvořené aplikací. Pokud vaši uživatelé přihlásí, aplikace ověří jejich přihlašovacích údajů načtením databáze. Váš projekt *účet* složka obsahuje soubory, které implementují různých částí členství: registrace, přihlášení, změna hesla a autorizaci přístupu. Kromě toho webových formulářů ASP.NET podporuje OAuth a OpenID. Tato vylepšení ověřování umožňují uživatelům přihlásit se do vaší lokality pomocí stávající přihlašovací údaje z těchto účtů jako Facebook, Twitter, Windows Live a Google.
+> [ASP.NET](https://msdn.microsoft.com/library/yh26yfzy.aspx) Identity ukládá přihlašovací údaje uživatelů v databázi vytvořené aplikací. Pokud vaši uživatelé přihlásí, aplikace ověří jejich přihlašovacích údajů načtením databáze. Váš projekt *účet* složka obsahuje soubory, které implementují různých částí členství: registrace, přihlášení, změna hesla a autorizaci přístupu. Kromě toho webových formulářů ASP.NET podporuje OAuth a OpenID. Tato vylepšení ověřování umožňují uživatelům přihlásit se do vaší lokality pomocí stávající přihlašovací údaje z těchto účtů jako Facebook, Twitter, Windows Live a Google.
 > 
 > ![Vytvoření projektu – Průzkumník řešení (ASP.NET Identity)](create-the-project/_static/image7.png)
 > 
 > Ve výchozím nastavení vytvoří šablona dílčí databázi členství pomocí výchozí název databáze na instanci systému SQL Server Express LocalDB, vývoj databázový server, který se dodává s Visual Studio Express 2013 pro Web.
 > 
-> **Databáze SQL Server Express LocalDB**
+> **SQL Server Express LocalDB**
 > 
 > [SQL Server Express LocalDB](https://technet.microsoft.com/library/hh510202.aspx) je Odlehčená verze systému SQL Server, který obsahuje mnoho funkcí programovatelnosti databáze systému SQL Server. SQL Server Express LocalDB běží v uživatelském režimu a má rychlé, bez nutnosti konfigurace instalace, který má seznam krátké požadavky pro instalaci. V systému Microsoft SQL Server, všechny databáze nebo kód jazyka Transact-SQL můžete přesunout z SQL serveru Express LocalDB do systému SQL Server a SQL Azure bez upgradu kroků. Ano SQL Server Express LocalDB slouží jako vývojářského prostředí pro aplikace cílený na všech edicích systému SQL Server. SQL Server Express LocalDB umožňuje jako uložené procedury, uživatelem definované funkce a agregace, integrace rozhraní .NET Framework, prostorové typy a dalších funkcí, které nejsou k dispozici v systému SQL Server Compact.
 > 
 > **Stránky předlohy**
 > 
-> [Hlavní stránky ASP.NET](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx) definuje konzistentní vzhled a chování pro všechny stránky v aplikaci. Rozložení stránky předlohy sloučí s obsahem z jednotlivé stránky obsahu k vytvoření poslední stránce, která uživateli se zobrazí. V aplikaci adresář Wingtip Toys upravíte *Site.master* hlavní stránky tak, aby všechny stránky webu adresář Wingtip Toys sdílet stejný rozlišovací logo a navigační panel.
+> [Hlavní stránky ASP.NET](https://msdn.microsoft.com/library/wtxbf3hh.aspx) definuje konzistentní vzhled a chování pro všechny stránky v aplikaci. Rozložení stránky předlohy sloučí s obsahem z jednotlivé stránky obsahu k vytvoření poslední stránce, která uživateli se zobrazí. V aplikaci adresář Wingtip Toys upravíte *Site.master* hlavní stránky tak, aby všechny stránky webu adresář Wingtip Toys sdílet stejný rozlišovací logo a navigační panel.
 > 
 > **HTML5**
 > 
@@ -192,8 +192,8 @@ V tomto kurzu jste vytvořili, zkontrolovat a spustit výchozí aplikace webový
 ## <a name="additional-resources"></a>Další prostředky
 
 [Výběr správné programovací Model](../../../videos/how-do-i/choosing-the-right-programming-model.md)   
-[Projekty webových aplikací versus webové projekty](https://msdn.microsoft.com/en-us/library/dd547590.aspx)   
-[ASP.NET – webové formuláře stránky přehled](https://msdn.microsoft.com/en-us/library/428509ah.aspx)
+[Projekty webových aplikací versus webové projekty](https://msdn.microsoft.com/library/dd547590.aspx)   
+[ASP.NET – webové formuláře stránky přehled](https://msdn.microsoft.com/library/428509ah.aspx)
 
 >[!div class="step-by-step"]
 [Předchozí](introduction-and-overview.md)

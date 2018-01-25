@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: 465c9cf6f452c268e7e23509e7a29547df5d3e83
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 995d9a088e3095f36a01d2adb19ec08e6a6d1b3e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>Osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a službě Azure App Service
 ====================
@@ -54,7 +54,7 @@ Kód v souboru externí (*AppSettingsSecrets.config* v této ukázce), je stejn�
 Modul runtime ASP.NET sloučí obsah externího souboru se značkami v &lt;appSettings&gt; elementu. Modul runtime atribut souboru ignoruje, pokud zadaný soubor nelze nalézt.
 
 > [!WARNING]
-> Zabezpečení – nepřidávejte vaše *tajné klíče .config* souboru do projektu nebo zkontrolujte do správy zdrojového kódu. Ve výchozím nastavení, Visual Studio nastaví `Build Action` k `Content`, což znamená, že soubor je nasazená. Další informace najdete v části [proč si všechny soubory ve složce projektu nasadí?](https://msdn.microsoft.com/en-us/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) Přestože je možné použít jakékoli rozšíření pro *.config tajné klíče* souboru, je nejvhodnější zajistit jeho *.config*, protože konfigurační soubory nejsou obsloužených služby IIS. Všimněte si také, že *AppSettingsSecrets.config* soubor je dvě úrovně directory si z *web.config* souboru, takže je zcela mimo adresář řešení. Přesunutím souboru mimo adresář řešení &quot;git přidat \* &quot; nebude přidejte do úložiště.
+> Zabezpečení – nepřidávejte vaše *tajné klíče .config* souboru do projektu nebo zkontrolujte do správy zdrojového kódu. Ve výchozím nastavení, Visual Studio nastaví `Build Action` k `Content`, což znamená, že soubor je nasazená. Další informace najdete v části [proč si všechny soubory ve složce projektu nasadí?](https://msdn.microsoft.com/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) Přestože je možné použít jakékoli rozšíření pro *.config tajné klíče* souboru, je nejvhodnější zajistit jeho *.config*, protože konfigurační soubory nejsou obsloužených služby IIS. Všimněte si také, že *AppSettingsSecrets.config* soubor je dvě úrovně directory si z *web.config* souboru, takže je zcela mimo adresář řešení. Přesunutím souboru mimo adresář řešení &quot;git přidat \* &quot; nebude přidejte do úložiště.
 
 
 <a id="con"></a>
@@ -96,7 +96,7 @@ Při nasazení webové aplikace do Azure, *AppSettingsSecrets.config* soubor neb
 
 **Nastavení aplikace** a **připojovací řetězec** hodnoty přepsání stejné nastavení *web.config* souboru. V našem příkladu jsme nebyla nasazena tato nastavení do Azure, ale pokud byly tyto klíče v *web.config* souboru nastavení zobrazí na portálu by mají přednost před.
 
-Osvědčeným postupem je podle [DevOps pracovního postupu](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything.md) a používat [prostředí Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/) (nebo jiné framework jako [Chef](http://www.opscode.com/chef/) nebo [Puppet](http://puppetlabs.com/puppet/what-is-puppet)) na automatizovat nastavení tyto hodnoty v Azure. Následující skript Powershellu využívá [Export CliXml](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk) export šifrované tajné klíče na disk:
+Osvědčeným postupem je podle [DevOps pracovního postupu](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything.md) a používat [prostředí Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/) (nebo jiné framework jako [Chef](http://www.opscode.com/chef/) nebo [Puppet](http://puppetlabs.com/puppet/what-is-puppet)) na automatizovat nastavení tyto hodnoty v Azure. Následující skript Powershellu využívá [Export CliXml](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk) export šifrované tajné klíče na disk:
 
 [!code-powershell[Main](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure/samples/sample6.ps1)]
 
@@ -105,7 +105,7 @@ Ve výše uvedené skriptu "Název" je název tajný klíč, jako například '&
 [!code-powershell[Main](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure/samples/sample7.ps1)]
 
 > [!WARNING]
-> Zabezpečení – neobsahují hesla nebo jiné tajné ve skriptu prostředí PowerShell, díky Ano popírá svůj účel nasazení citlivá data pomocí skriptu prostředí PowerShell. [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx) rutiny poskytuje zabezpečené mechanismus k získání hesla. Pomocí uživatelského rozhraní řádku můžete zabránit úniku heslo.
+> Zabezpečení – neobsahují hesla nebo jiné tajné ve skriptu prostředí PowerShell, díky Ano popírá svůj účel nasazení citlivá data pomocí skriptu prostředí PowerShell. [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx) rutiny poskytuje zabezpečené mechanismus k získání hesla. Pomocí uživatelského rozhraní řádku můžete zabránit úniku heslo.
 
 
 ### <a name="deploying-db-connection-strings"></a>Nasazení DB-řetězce připojení
@@ -119,7 +119,7 @@ Od páry klíč hodnota pro obě **nastavení aplikace** a **připojovací řet�
 
 ## <a name="notes-for-on-premises-servers"></a>Poznámky pro místní servery
 
-Pokud nasazujete do místní webové servery, můžete pomoct zabezpečené tajné klíče podle [šifrování konfigurační oddíly konfiguračních souborů](https://msdn.microsoft.com/en-us/library/ff647398.aspx). Jako alternativu, můžete použít ve stejný přístup doporučené pro weby Azure: udržovat – vývojové nastavení v konfiguračních souborech a používat hodnot proměnných prostředí pro výrobní nastavení. V takovém případě však máte napsat kód aplikace pro funkce, které jsou automatické v weby Azure: nastavení načíst z proměnné prostředí a použijte tyto hodnoty místo souboru nastavení konfigurace nebo použijte nastavení konfiguračního souboru při nejsou nalezeny proměnné prostředí.
+Pokud nasazujete do místní webové servery, můžete pomoct zabezpečené tajné klíče podle [šifrování konfigurační oddíly konfiguračních souborů](https://msdn.microsoft.com/library/ff647398.aspx). Jako alternativu, můžete použít ve stejný přístup doporučené pro weby Azure: udržovat – vývojové nastavení v konfiguračních souborech a používat hodnot proměnných prostředí pro výrobní nastavení. V takovém případě však máte napsat kód aplikace pro funkce, které jsou automatické v weby Azure: nastavení načíst z proměnné prostředí a použijte tyto hodnoty místo souboru nastavení konfigurace nebo použijte nastavení konfiguračního souboru při nejsou nalezeny proměnné prostředí.
 
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>Další prostředky

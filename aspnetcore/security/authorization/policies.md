@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: 1067e97dd6e71021929aa3690b0c3f5bfc6c9724
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c249985a6266483d47f447ac4a232546ed2b2708
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-policy-based-authorization"></a>Autorizace uživatele na základě zásad
 
@@ -69,7 +69,7 @@ Všimněte si, že `Handle` metoda v [příklad obslužná rutina](#security-aut
 
 * Obslužná rutina označuje úspěch voláním `context.Succeed(IAuthorizationRequirement requirement)`, předávání požadavek, který byl úspěšně ověřen.
 
-* Obslužná rutina pro zpracování chyby obecně platí, jako ostatní obslužné rutiny pro požadavek na stejné může být úspěšné, nemusí.
+* Obslužná rutina nepotřebuje řešit selhání obecně platí, jako ostatních obslužných rutin pro stejný požadavek může být úspěšné.
 
 * Chcete-li zaručit selhání, i v případě ostatních obslužných rutin požadavek úspěšné, volejte `context.Fail`.
 

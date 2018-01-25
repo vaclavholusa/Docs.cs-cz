@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 55128faa3752a43902c17525dde3543a4a8c3997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f2fca1e91720fba0215e12b1a1894a3a31e86b5c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-and-deleting-existing-binary-data-c"></a>Aktualizace a odstranění existující binární Data (C#)
 ====================
@@ -150,7 +150,7 @@ Při odstranění pracovního postupu byla úspěšně odebrána záznam kategor
 
 Jedním z downsides ukládání binární data externí do databáze je, že je třeba brát kroků navíc odstranit tyto soubory při odstranění záznamu přidružené databáze. Rutina GridView a ObjectDataSource poskytují události, které budou spuštěny před a po provedení příkaz delete. Ve skutečnosti potřebujeme vytváření obslužných rutin událostí pro události před a po akce. Před `Categories` odstranění záznamu je potřeba určit její cesta k souboru s PDF, ale nemůžeme nejsou zobrazeny t chcete odstranit PDF před odstraněním kategorii v případě, že je některé výjimky a kategorie se neodstraní.
 
-Rutina GridView s [ `RowDeleting` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx) aktivuje před příkaz delete s ObjectDataSource byla vyvolána, při jeho [ `RowDeleted` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx) aktivuje se po. Vytváření obslužných rutin událostí pro tyto dvě události pomocí následujícího kódu:
+Rutina GridView s [ `RowDeleting` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx) aktivuje před příkaz delete s ObjectDataSource byla vyvolána, při jeho [ `RowDeleted` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx) aktivuje se po. Vytváření obslužných rutin událostí pro tyto dvě události pomocí následujícího kódu:
 
 
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample5.cs)]

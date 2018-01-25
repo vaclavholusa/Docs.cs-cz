@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 756f1bbba73bd760f780d18c01597642dd1f7216
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a4ae696bdd114ab9c36d1218f753fa3d515f2300
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>Dědičnost – základní EF s kurz k ASP.NET MVC jádra (9, 10)
 
@@ -106,7 +106,7 @@ Tento kód má na starosti následující úlohy aktualizace databáze:
 
 * Vzhledem k tomu, že řádky student nebude mít přijetím kalendářních dat, díky HireDate s možnou hodnotou Null.
 
-* Přidá dočasné pole, které se použije k aktualizaci cizí klíče, které odkazují na studenty. Při kopírování studenty do tabulky osob získají budete nové hodnot primárního klíče.
+* Přidá dočasné pole, které se použije k aktualizaci cizí klíče, které odkazují na studenty. Při kopírování studenty do tabulky osob získají nové hodnot primárního klíče.
 
 * Kopíruje data z tabulky studenty do tabulky osob. To způsobí, že studentů přiřazovány nové hodnot primárního klíče.
 

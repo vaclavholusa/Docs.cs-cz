@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b14bb4279ac5f6a986fc597b97176b61150044c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7bb8a9bccbd9dfbbf983618ecd32588fd8f69c64
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="master-pages-and-site-navigation-vb"></a>Hlavní stránky a navigace na webu (VB)
 ====================
@@ -167,11 +167,11 @@ Mapy webu definuje navigační strukturu webu, která je hierarchie, která popi
 **Obrázek 10**: mapy webu představuje hierarchická struktura navigační ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-site-navigation-vb/_static/image26.png))
 
 
-Technologie ASP.NET poskytuje struktury mapy webu prostřednictvím rozhraní .NET Framework [Třída SiteMap](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx). Tato třída obsahuje `CurrentNode` vlastnost, která vrací informace o části návštěvy aktuálně; `RootNode` vlastnost vrací kořenu mapy webu (v našem mapy webu domácí). Jak `CurrentNode` a `RootNode` vlastnosti vrátit [SiteMapNode](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.aspx) instancí, které mají vlastnosti jako `ParentNode`, `ChildNodes`, `NextSibling`, `PreviousSibling`a tak dále, které umožňují, aby mapy webu hierarchie být proveden pro vaši firmu.
+Technologie ASP.NET poskytuje struktury mapy webu prostřednictvím rozhraní .NET Framework [Třída SiteMap](https://msdn.microsoft.com/library/system.web.sitemap.aspx). Tato třída obsahuje `CurrentNode` vlastnost, která vrací informace o části návštěvy aktuálně; `RootNode` vlastnost vrací kořenu mapy webu (v našem mapy webu domácí). Jak `CurrentNode` a `RootNode` vlastnosti vrátit [SiteMapNode](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) instancí, které mají vlastnosti jako `ParentNode`, `ChildNodes`, `NextSibling`, `PreviousSibling`a tak dále, které umožňují, aby mapy webu hierarchie být proveden pro vaši firmu.
 
 ## <a name="step-3-displaying-a-menu-based-on-the-site-map"></a>Krok 3: Zobrazení nabídky založené na mapy webu
 
-Přístup k datům v technologii ASP.NET 2.0 lze provést prostřednictvím kódu programu, stejně jako v nástroji ASP.NET 1.x, nebo deklarativně, prostřednictvím nové [ovládací prvky zdroje dat](https://msdn.microsoft.com/en-us/library/ms227679.aspx). Existuje několik předdefinovaných ovládací prvky zdroje dat například prvku SqlDataSource pro přístup k datům relační databáze, ovládacího prvku ObjectDataSource pro přístup k datům z třídy a dalších. Můžete například vytvořit vlastní [vlastní datové zdroje ovládací prvky](https://msdn.microsoft.com/asp.net/reference/data/default.aspx?pull=/library/en-us/dnvs05/html/DataSourceCon1.asp).
+Přístup k datům v technologii ASP.NET 2.0 lze provést prostřednictvím kódu programu, stejně jako v nástroji ASP.NET 1.x, nebo deklarativně, prostřednictvím nové [ovládací prvky zdroje dat](https://msdn.microsoft.com/library/ms227679.aspx). Existuje několik předdefinovaných ovládací prvky zdroje dat například prvku SqlDataSource pro přístup k datům relační databáze, ovládacího prvku ObjectDataSource pro přístup k datům z třídy a dalších. Můžete například vytvořit vlastní [vlastní datové zdroje ovládací prvky](https://msdn.microsoft.com/asp.net/reference/data/default.aspx?pull=/library/dnvs05/html/DataSourceCon1.asp).
 
 Ovládací prvky zdroje dat slouží jako server proxy mezi stránku ASP.NET a základní data. Chcete-li zobrazit ovládací prvek zdroje dat načtená data, jsme budete obvykle přidejte další ovládací prvek webové stránky a navázat jej data zdrojového kódu. Chcete-li vytvořit vazbu ovládacího prvku webového do ovládacího prvku zdroje dat, jednoduše nastavte ovládacího prvku webového `DataSourceID` vlastnost na hodnotu ovládacího prvku zdroje dat `ID` vlastnost.
 
@@ -218,7 +218,7 @@ Tato nabídka je na hlavní stránce a vázaný k mapy webu definované v `Web.s
 
 Všechny ovládací prvky ASP.NET můžete volitelně zachovat jejich stavu [zobrazení stavu](https://msdn.microsoft.com/msdnmag/issues/03/02/CuttingEdge/), který serializuje jako skryté pole formuláře v vykreslené kódu HTML. Stav zobrazení se používá z ovládacích prvků pamatovat jejich stavu prostřednictvím kódu programu změnit napříč postback, například data svázán s ovládacím Web data. Při zobrazení stavu umožňuje informace, které mít na paměti, napříč postback, jeho hodnota se zvyšuje velikost značky, které musí být odeslat klientovi a může vést k tomu závažné stránky není-li byste měli pečlivě monitorovat. Ovládací prvky webového dat zejména GridView jsou zvláště notorious pro přidání desítek navíc kilobajtů značek na stránku. O zvýšení limitu může být nepatrné pro uživatele, širokopásmové připojení nebo intranetu, zobrazení stavu do doby odezvy pro uživatele telefonického připojení můžete přidat několik sekund.
 
-Chcete-li zobrazit dopad zobrazení stavu, najdete na stránce v prohlížeči a potom zobrazte zdroj odeslaných webovou stránku (v Internet Exploreru přejděte do nabídky Zobrazit a vybrat možnost zdroje). Můžete také zapnout [trasování stránek](https://msdn.microsoft.com/en-us/library/sfbfw58f.aspx) zobrazíte přidělení zobrazení stavu jednotlivých ovládacích prvků na stránce používá. Informace o stavu zobrazení je serializována v skryté pole formuláře s názvem `__VIEWSTATE`, který je umístěn v `<div>` element ihned po otevření `<form>` značky. Zobrazení stavu uchovávána pouze po webového formuláře používá; Pokud stránku ASP.NET neobsahuje `<form runat="server">` v jeho deklarativní syntaxi nebude dostupný `__VIEWSTATE` skryté pole formuláře v vykreslované značky.
+Chcete-li zobrazit dopad zobrazení stavu, najdete na stránce v prohlížeči a potom zobrazte zdroj odeslaných webovou stránku (v Internet Exploreru přejděte do nabídky Zobrazit a vybrat možnost zdroje). Můžete také zapnout [trasování stránek](https://msdn.microsoft.com/library/sfbfw58f.aspx) zobrazíte přidělení zobrazení stavu jednotlivých ovládacích prvků na stránce používá. Informace o stavu zobrazení je serializována v skryté pole formuláře s názvem `__VIEWSTATE`, který je umístěn v `<div>` element ihned po otevření `<form>` značky. Zobrazení stavu uchovávána pouze po webového formuláře používá; Pokud stránku ASP.NET neobsahuje `<form runat="server">` v jeho deklarativní syntaxi nebude dostupný `__VIEWSTATE` skryté pole formuláře v vykreslované značky.
 
 `__VIEWSTATE` Pole formuláře, které jsou generované stránky předlohy přidá přibližně 1 800 bajtů generovaných značek. Tato další tomu je kvůli především v ovládacím prvku Repeater jako obsah ovládacího prvku SiteMapDataSource jsou nastavené jako trvalé stavu zobrazení. Když navíc 1 800 bajtů nemusí jevit jako mnohem získat nadšení o, při použití GridView s mnoha pole a záznamy, stav zobrazení můžete snadno bobtnat faktorem, 10 nebo víc.
 
@@ -252,7 +252,7 @@ S popisem cesty zobrazuje stránku aktuální uživatel je v hierarchii lokality
 
 Kurzy v našem webu jsou rozděleny do různých kategorií sestav základní filtrování, formátování vlastní, a tak dále se složkou pro každou kategorii a odpovídající kurzy jako stránky ASP.NET v této složce. Kromě toho obsahuje každou složku `Default.aspx` stránky. Pro tuto stránku výchozí umožňuje zobrazit všechna kurzy pro aktuální oddíl. To znamená, že pro `Default.aspx` v `BasicReporting` složky nám odkazy na `SimpleDisplay.aspx`, `DeclarativeParams.aspx`, a `ProgrammaticParams.aspx`. Zde znovu, můžeme použít `SiteMap` třídy a data ovládací prvek webu zobrazit tyto informace na základě mapy webu definované v `Web.sitemap`.
 
-Umožňuje zobrazit neuspořádaný seznam znovu, ale tentokrát jsme vám zobrazí název a popis kurzů k pomocí prvku Repeater. Vzhledem k tomu, že značek a kódu k provádění budou muset opakovat pro každý `Default.aspx` stránky, jsme zapouzdření tuto logiku uživatelského rozhraní [uživatelský ovládací prvek](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx). Vytvořte složku na webu s názvem `UserControls` a přidejte do nové položky typu uživatelský ovládací prvek webu s názvem `SectionLevelTutorialListing.ascx`a přidejte následující kód:
+Umožňuje zobrazit neuspořádaný seznam znovu, ale tentokrát jsme vám zobrazí název a popis kurzů k pomocí prvku Repeater. Vzhledem k tomu, že značek a kódu k provádění budou muset opakovat pro každý `Default.aspx` stránky, jsme zapouzdření tuto logiku uživatelského rozhraní [uživatelský ovládací prvek](https://msdn.microsoft.com/library/y6wb1a0e.aspx). Vytvořte složku na webu s názvem `UserControls` a přidejte do nové položky typu uživatelský ovládací prvek webu s názvem `SectionLevelTutorialListing.ascx`a přidejte následující kód:
 
 
 [![Přidat nový uživatelský ovládací prvek webu do složky UserControls](master-pages-and-site-navigation-vb/_static/image30.png)](master-pages-and-site-navigation-vb/_static/image29.png)
@@ -297,15 +297,15 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Přehled stránky předlohy technologie ASP.NET](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx)
+- [Přehled stránky předlohy technologie ASP.NET](https://msdn.microsoft.com/library/wtxbf3hh.aspx)
 - [Stránky předlohy v technologii ASP.NET 2.0](http://odetocode.com/Articles/419.aspx)
 - [ASP.NET 2.0 návrh šablony](https://msdn.microsoft.com/asp.net/reference/design/templates/default.aspx)
-- [Přehled Navigační stránka technologie ASP.NET](https://msdn.microsoft.com/en-us/library/e468hxky.aspx)
+- [Přehled Navigační stránka technologie ASP.NET](https://msdn.microsoft.com/library/e468hxky.aspx)
 - [Zkoumání ASP.NET 2.0 je navigace na webu](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 - [Funkce navigace technologie ASP.NET 2.0 lokality](https://weblogs.asp.net/scottgu/archive/2005/11/20/431019.aspx)
-- [Principy ASP.NET zobrazení stavu](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnaspp/html/viewstate.asp)
-- [Postupy: Povolení trasování pro stránku ASP.NET](https://msdn.microsoft.com/en-us/library/94c55d08%28VS.80%29.aspx)
-- [Uživatelské ovládací prvky ASP.NET](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)
+- [Principy ASP.NET zobrazení stavu](https://msdn.microsoft.com/library/default.asp?url=/library/dnaspp/html/viewstate.asp)
+- [Postupy: Povolení trasování pro stránku ASP.NET](https://msdn.microsoft.com/library/94c55d08%28VS.80%29.aspx)
+- [Uživatelské ovládací prvky ASP.NET](https://msdn.microsoft.com/library/y6wb1a0e.aspx)
 
 ## <a name="about-the-author"></a>O autorovi
 

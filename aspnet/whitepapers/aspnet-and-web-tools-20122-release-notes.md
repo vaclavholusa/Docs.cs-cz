@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet-and-web-tools-20122-release-notes
 msc.type: content
-ms.openlocfilehash: e6c940aa507d72928d71019070ded5197458a763
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 52559a47f86e572f873d4eaaab50e87eb51722fd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>Technologie ASP.NET a webové nástroje 2012.2 poznámky k verzi
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
     - [Nástrojů](#_Tooling)
     - [Publikování na webu](#_Web_Publishing)
     - [Šablony ASP.NET MVC](#_Templates)
-    - [Rozhraní ASP.NET Web API](#_ASP.NET_Web_API)
+    - [Webové rozhraní API v ASP.NET](#_ASP.NET_Web_API)
 
     - [Funkce SignalR technologie ASP.NET](#_ASP.NET_SignalR)
     - [ASP.NET přátelské adresy URL](#_ASP.NET_Friendly_URLs)
@@ -152,7 +152,7 @@ Další informace o ASP.NET Web API OData v tématu [https://go.microsoft.com/fw
 
 #### <a name="aspnet-web-api-tracing"></a>Trasování rozhraní ASP.NET Web API
 
-Trasování rozhraní ASP.NET Web API integruje data trasování z webových rozhraní API pomocí rozhraní .NET trasování. Teď je povolené ve výchozím nastavení v šabloně projektu webového rozhraní API. Data pro váš web trasování rozhraní API je odeslán do okna výstupu a je k dispozici prostřednictvím IntelliTrace. ASP.NET Web API Tracing umožňuje informace trasování o webové rozhraní API při hostování v systému Windows Azure prostřednictvím integrace s [Windows Azure Diagnostics](https://msdn.microsoft.com/en-us/library/windowsazure/hh411529.aspx). Můžete také nainstalovat a povolit ASP.NET Web API Tracing v jakékoli aplikaci pomocí balíčku NuGet trasování ASP.NET Web API ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
+Trasování rozhraní ASP.NET Web API integruje data trasování z webových rozhraní API pomocí rozhraní .NET trasování. Teď je povolené ve výchozím nastavení v šabloně projektu webového rozhraní API. Data pro váš web trasování rozhraní API je odeslán do okna výstupu a je k dispozici prostřednictvím IntelliTrace. ASP.NET Web API Tracing umožňuje informace trasování o webové rozhraní API při hostování v systému Windows Azure prostřednictvím integrace s [Windows Azure Diagnostics](https://msdn.microsoft.com/library/windowsazure/hh411529.aspx). Můžete také nainstalovat a povolit ASP.NET Web API Tracing v jakékoli aplikaci pomocí balíčku NuGet trasování ASP.NET Web API ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
 
 Další informace o konfiguraci a použití technologie ASP.NET Web API Tracing v tématu [https://go.microsoft.com/fwlink/?LinkID=269874](https://go.microsoft.com/fwlink/?LinkID=269874).
 
@@ -163,7 +163,7 @@ Ve výchozím nastavení v šabloně projektu webového rozhraní API je nyní z
 Další informace o nastavení a přizpůsobení stránce nápovědy k serveru ASP.NET Web API najdete [https://go.microsoft.com/fwlink/?LinkId=271140](https://go.microsoft.com/fwlink/?LinkId=271140).
 
 <a id="_ASP.NET_SignalR"></a>
-### <a name="aspnet-signalr"></a>Funkce SignalR technologie ASP.NET
+### <a name="aspnet-signalr"></a>ASP.NET SignalR
 
 Funkce SignalR technologie ASP.NET usnadňuje přidání webu v reálném čase možností do aplikace ASP.NET pomocí technologie WebSockets, pokud je k dispozici a automaticky návratem zpět k jinými technikami, když není.
 
@@ -240,8 +240,8 @@ Analyzátor identifikátoru URI protokolu OData se nepodaří správně analyzov
 
 OData nepodporuje názvy vlastností velká a malá písmena v dotazů OData a cestu odata. V tématu pracovních:
 
-- [http://aspnetwebstack.CodePlex.com/workitem/366](http://aspnetwebstack.codeplex.com/workitem/366)
-- [http://aspnetwebstack.CodePlex.com/workitem/704](http://aspnetwebstack.codeplex.com/workitem/704)
+- [http://aspnetwebstack.codeplex.com/workitem/366](http://aspnetwebstack.codeplex.com/workitem/366)
+- [http://aspnetwebstack.codeplex.com/workitem/704](http://aspnetwebstack.codeplex.com/workitem/704)
 
 Pokud uživatelé používají různé velká a malá písmena na javascript na straně klienta a na straně serveru, budou pravděpodobně bude tento problém nastane. Tento problém je v protokolu odata. Řada uživatelů sestavy však tento problém. Obejít ho, uživatelé mají k odstranění jejich případech v adrese URL.
 
@@ -259,7 +259,7 @@ V rozevíracím seznamu framework v dialogovém okně Nový projekt zobrazíte �
 
 #### <a name="real-time-update-controller"></a>Aktualizace v reálném čase řadiče
 
-Šablona Facebook aplikací umožňuje uživateli snadno vytvořit řadič webové rozhraní API pro zpracování v reálném čase aktualizace ze sítě Facebook. Pokud je počítači pro vývoj za serverem NAT, řadiči nemusí fungovat bez další konfigurace sítě. Podrobnosti najdete v: [http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook](http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook)
+Šablona Facebook aplikací umožňuje uživateli snadno vytvořit řadič webové rozhraní API pro zpracování v reálném čase aktualizace ze sítě Facebook. Pokud je počítači pro vývoj za serverem NAT, řadiči nemusí fungovat bez další konfigurace sítě. See here for details: [http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook](http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook)
 
 #### <a name="query-string-values-conflict-with-facebook-oauth-parameters"></a>Dotaz, jestli řetězcové hodnoty v konfliktu s parametry OAuth pro Facebook
 
@@ -283,7 +283,7 @@ Soubor todo.model.js
 
 Funkce todoList.prototype.addTodo, přidejte následující blacked text:  
  **self.isSelected(true);**  
- self.newTodoTitle (&quot;&quot;);
+ self.newTodoTitle(&quot;&quot;);
 
 Soubor index.cshtml, přidejte následující blacked text:  
  &lt;vytvoří data-bind =&quot;odeslat: addTodo&quot;&gt;  

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: f8d378d3332669ae4606dad8ada06de37e7dfd20
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5780bfde928011f46c3f504aec927f2127f10d0d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuration-and-instrumentation"></a>Konfigurace a instrumentace
 ====================
@@ -78,13 +78,13 @@ Mnoho konfigurace třídy a metody jsou podobné navzájem. Následující tabul
 
 | **Konfigurace třída nebo obor názvů** | **Popis** |
 | --- | --- |
-| [System.Configuration](https://msdn.microsoft.com/en-us/library/system.configuration.aspx) obor názvů | Obsahuje třídy hlavní konfigurace pro všechny aplikace rozhraní .NET Framework. Třídy obslužných rutin oddílu se používají k získání konfiguračních dat pro oddíl z metod, jako je například GetSection a GetSectionGroup. Tyto dvě metody jsou nestatické. |
+| [System.Configuration](https://msdn.microsoft.com/library/system.configuration.aspx) obor názvů | Obsahuje třídy hlavní konfigurace pro všechny aplikace rozhraní .NET Framework. Třídy obslužných rutin oddílu se používají k získání konfiguračních dat pro oddíl z metod, jako je například GetSection a GetSectionGroup. Tyto dvě metody jsou nestatické. |
 | System.Configuration.Configuration – třída | Představuje sadu konfiguračních dat pro počítače, aplikace, adresáře webové nebo jiný prostředek. Tato třída obsahuje užitečné metody, jako je například GetSection a GetSectionGroup, aktualizuje se nastavení konfigurace a získání odkazů na oddíly a skupiny oddílů. Tato třída se používá jako návratový typ pro metody, které získávají data návrhu konfigurace, jako je například metody třídy WebConfigurationManager a ConfigurationManager. |
-| Obor názvů System.Web.Configuration | Obsahuje třídy obslužné rutiny oddílu pro konfigurační oddíly ASP.NET definované v [nastavení konfigurace ASP.NET](https://msdn.microsoft.com/en-us/library/b5ysx397.aspx). Třídy obslužných rutin oddílu se používají k získání konfiguračních dat pro oddíl z metod, jako je například GetSection a GetSectionGroup. |
-| System.Web.Configuration.WebConfigurationManager – třída | Poskytuje užitečné metody pro získání odkazy na nastavení konfigurace spuštění a návrhu. Tyto metody používat třídu System.Configuration.Configuration jako návratový typ. Můžete vytvořit statickou metodu GetSection této třídy nebo nestatickou metodu GetSection třídy System.Configuration.ConfigurationManager zcela zaměnitelným významem. Ke konfiguraci webových aplikací se doporučuje třídě System.Web.Configuration.WebConfigurationManager místo System.Configuration.ConfigurationManager třídy. |
-| [System.Configuration.Provider](https://msdn.microsoft.com/en-us/library/system.configuration.provider.aspx) obor názvů | Poskytuje způsob, jak přizpůsobit a rozšířit zprostředkovatele konfigurace. Toto je základní třída pro všechny třídy zprostředkovatele v konfiguraci systému. |
-| [System.Web.Management](https://msdn.microsoft.com/en-us/library/system.web.management.aspx) obor názvů | Obsahuje třídy a rozhraní pro správu a sledování stavu webových aplikací. Tento obor názvů přesněji řečeno, nepovažuje za součást konfigurace rozhraní API. Sledování a spouštění událostí se provádí pomocí třídy v tomto oboru názvů. |
-| [System.Management.Instrumentation](https://msdn.microsoft.com/en-us/library/system.management.instrumentation.aspx) obor názvů | Poskytuje třídy, které jsou nezbytné pro instrumentaci aplikací ke zveřejnění své informace o správě a události prostřednictvím Windows Management Instrumentation (WMI) pro potenciální spotřebitelů. Monitorování stavu ASP.NET využívá rozhraní WMI k poskytování události. Tento obor názvů přesněji řečeno, nepovažuje za součást konfigurace rozhraní API. |
+| System.Web.Configuration namespace | Obsahuje třídy obslužné rutiny oddílu pro konfigurační oddíly ASP.NET definované v [nastavení konfigurace ASP.NET](https://msdn.microsoft.com/library/b5ysx397.aspx). Třídy obslužných rutin oddílu se používají k získání konfiguračních dat pro oddíl z metod, jako je například GetSection a GetSectionGroup. |
+| System.Web.Configuration.WebConfigurationManager class | Poskytuje užitečné metody pro získání odkazy na nastavení konfigurace spuštění a návrhu. Tyto metody používat třídu System.Configuration.Configuration jako návratový typ. Můžete vytvořit statickou metodu GetSection této třídy nebo nestatickou metodu GetSection třídy System.Configuration.ConfigurationManager zcela zaměnitelným významem. Ke konfiguraci webových aplikací se doporučuje třídě System.Web.Configuration.WebConfigurationManager místo System.Configuration.ConfigurationManager třídy. |
+| [System.Configuration.Provider](https://msdn.microsoft.com/library/system.configuration.provider.aspx) obor názvů | Poskytuje způsob, jak přizpůsobit a rozšířit zprostředkovatele konfigurace. Toto je základní třída pro všechny třídy zprostředkovatele v konfiguraci systému. |
+| [System.Web.Management](https://msdn.microsoft.com/library/system.web.management.aspx) namespace | Obsahuje třídy a rozhraní pro správu a sledování stavu webových aplikací. Tento obor názvů přesněji řečeno, nepovažuje za součást konfigurace rozhraní API. Sledování a spouštění událostí se provádí pomocí třídy v tomto oboru názvů. |
+| [System.Management.Instrumentation](https://msdn.microsoft.com/library/system.management.instrumentation.aspx) obor názvů | Poskytuje třídy, které jsou nezbytné pro instrumentaci aplikací ke zveřejnění své informace o správě a události prostřednictvím Windows Management Instrumentation (WMI) pro potenciální spotřebitelů. Monitorování stavu ASP.NET využívá rozhraní WMI k poskytování události. Tento obor názvů přesněji řečeno, nepovažuje za součást konfigurace rozhraní API. |
 
 ## <a name="reading-from-aspnet-configuration-files"></a>Čtení z konfigurační soubory technologie ASP.NET
 
@@ -120,7 +120,7 @@ Následující kód změny **ladění** atribut &lt;kompilace&gt; element na hod
 
 Při spuštění tohoto kódu **ladění** atribut &lt;kompilace&gt; element bude nastaven na hodnotu false pro *webApp* souboru web.config aplikace.
 
-## <a name="systemwebmanagement-namespace"></a>Namespace System.Web.Management
+## <a name="systemwebmanagement-namespace"></a>System.Web.Management Namespace
 
 System.Web.Management obor názvů obsahuje třídy a rozhraní pro správu a monitorování stavu aplikace ASP.NET.
 
@@ -246,10 +246,10 @@ K dispozici jsou následující nástroje příkazového řádku:
 
 | **Nástroj** | **Použití** |
 | --- | --- |
-| **ASPNET\_regiis.exe** | Umožňuje zaregistrovat technologii ASP.NET se službou IIS. Existují dvě verze tohoto nástroje nastavených s prostředím ASP.NET 2.0, jeden pro 32bitové systémy (ve složce Framework) a jeden pro 64bitové systémy (ve složce Framework64.) 64bitová verze nebude nainstalován do 32bitového operačního systému. |
-| **ASPNET\_regsql.exe** | Nástroj registrace SQL serveru ASP.NET se používá k vytvoření databáze Microsoft SQL Server pro použití systému SQL Server zprostředkovatelé technologie ASP.NET, nebo můžete přidat nebo odebrat možnosti z existující databáze. Aspnet\_regsql.exe soubor je umístěný ve [drive:]\WINDOWS\Microsoft.NET\Framework\versionNumber složky na vašem webovém serveru. |
-| **ASPNET\_regbrowsers.exe** | Nástroj registrace prohlížeče technologie ASP.NET analyzuje a zkompiluje všech prohlížečů definic do sestavení a nainstaluje sestavení do globální mezipaměti sestavení. Nástroj používá definiční soubory prohlížeče (. Soubory prohlížeče) z podadresáře rozhraní .NET Framework prohlížeče. Tento nástroj naleznete v adresáři %SystemRoot%\Microsoft.NET\Framework\version\. |
-| **ASPNET\_compiler.exe** | Nástroj kompilace technologie ASP.NET umožňuje kompilovat webovou aplikaci ASP.NET, buď v místě, nebo pro nasazení do cílového umístění, jako je například provozní server. Kompilace v místě zlepšuje výkon aplikací, protože koncoví uživatelé nevšimnete zpoždění na první požadavek na aplikaci, zatímco kompiluje aplikace. |
+| **aspnet\_regiis.exe** | Umožňuje zaregistrovat technologii ASP.NET se službou IIS. Existují dvě verze tohoto nástroje nastavených s prostředím ASP.NET 2.0, jeden pro 32bitové systémy (ve složce Framework) a jeden pro 64bitové systémy (ve složce Framework64.) 64bitová verze nebude nainstalován do 32bitového operačního systému. |
+| **aspnet\_regsql.exe** | Nástroj registrace SQL serveru ASP.NET se používá k vytvoření databáze Microsoft SQL Server pro použití systému SQL Server zprostředkovatelé technologie ASP.NET, nebo můžete přidat nebo odebrat možnosti z existující databáze. Aspnet\_regsql.exe soubor je umístěný ve [drive:]\WINDOWS\Microsoft.NET\Framework\versionNumber složky na vašem webovém serveru. |
+| **aspnet\_regbrowsers.exe** | Nástroj registrace prohlížeče technologie ASP.NET analyzuje a zkompiluje všech prohlížečů definic do sestavení a nainstaluje sestavení do globální mezipaměti sestavení. Nástroj používá definiční soubory prohlížeče (. Soubory prohlížeče) z podadresáře rozhraní .NET Framework prohlížeče. Tento nástroj naleznete v adresáři %SystemRoot%\Microsoft.NET\Framework\version\. |
+| **aspnet\_compiler.exe** | Nástroj kompilace technologie ASP.NET umožňuje kompilovat webovou aplikaci ASP.NET, buď v místě, nebo pro nasazení do cílového umístění, jako je například provozní server. Kompilace v místě zlepšuje výkon aplikací, protože koncoví uživatelé nevšimnete zpoždění na první požadavek na aplikaci, zatímco kompiluje aplikace. |
 
 Protože aspnet\_regiis.exe nástroj není nové na technologii ASP.NET 2.0, nebude probereme ho sem.
 
@@ -259,11 +259,11 @@ Můžete nastavit několik typů možností pomocí nástroje registrace SQL ser
 
 Některé služby aplikací ASP.NET využívají poskytovatele ke správě ukládání a načítání dat ze zdroje dat. Každý poskytovatel je specifická pro zdroj dat. Technologie ASP.NET obsahuje zprostředkovatele SQL Server pro následující funkce ASP.NET:
 
-- Členství ( [SqlMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlmembershipprovider.aspx) třídy).
-- Správa rolí ( [SqlRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlroleprovider.aspx) třídy).
-- Profil ( [SqlProfileProvider](https://msdn.microsoft.com/en-us/library/system.web.profile.sqlprofileprovider.aspx) třídy).
-- Přizpůsobení webových částí ( [SqlPersonalizationProvider](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.webparts.sqlpersonalizationprovider.aspx) třídy).
-- Webové události ( [SqlWebEventProvider](https://msdn.microsoft.com/en-us/library/system.web.management.sqlwebeventprovider.aspx) třídy).
+- Členství ( [SqlMembershipProvider](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx) třídy).
+- Správa rolí ( [SqlRoleProvider](https://msdn.microsoft.com/library/system.web.security.sqlroleprovider.aspx) třídy).
+- Profil ( [SqlProfileProvider](https://msdn.microsoft.com/library/system.web.profile.sqlprofileprovider.aspx) třídy).
+- Přizpůsobení webových částí ( [SqlPersonalizationProvider](https://msdn.microsoft.com/library/system.web.ui.webcontrols.webparts.sqlpersonalizationprovider.aspx) třídy).
+- Webové události ( [SqlWebEventProvider](https://msdn.microsoft.com/library/system.web.management.sqlwebeventprovider.aspx) třídy).
 
 Při instalaci ASP.NET souboru Machine.config. pro váš server obsahuje konfigurační prvky, které určují poskytovatele serveru SQL Server pro každou funkci ASP.NET, které jsou závislé na zprostředkovatele. Tyto zprostředkovatele jsou nakonfigurované ve výchozím nastavení pro připojení k místní uživatelskou instanci systému SQL Server Express 2005. Pokud změníte výchozí připojovací řetězec používaný zprostředkovatele, abyste mohli používat všechny funkce ASP.NET, které jsou nakonfigurované v konfiguraci počítače, je nutné nainstalovat databázi systému SQL Server a prvky databáze pro vaši zvolenou funkci pomocí Aspnet\_regsql.exe. Pokud databáze, které zadáte pomocí nástroje registrace SQL již neexistuje (aspnetdb bude výchozí databáze Pokud není zadaná na příkazovém řádku), pak je aktuální uživatel musí mít oprávnění k vytváření databází v systému SQL Server také jako k vytvoření schématu e lements v databázi.
 
@@ -301,7 +301,7 @@ Při spuštění aspnet jsou k dispozici následující možnosti\_regbrowser.ex
 
 Nástroj kompilace technologie ASP.NET lze použít dvěma způsoby: pro kompilaci na místě a kompilace pro nasazení, tam, kde je zadán cílový výstupní adresář.
 
-### <a name="compiling-an-application-in-placehttpsmsdnmicrosoftcomen-uslibraryms229863aspx"></a>[Kompilování aplikace na místě](https://msdn.microsoft.com/en-us/library/ms229863.aspx)
+### <a name="compiling-an-application-in-placehttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[Kompilování aplikace na místě](https://msdn.microsoft.com/library/ms229863.aspx)
 
 Nástroj kompilace technologie ASP.NET můžete zkompilovat aplikaci na místě, který je napodobuje chování zasílání více požadavků na aplikaci, což způsobuje regulární kompilace. Uživatelé předem kompilovaném lokality nebude docházet ke zpoždění způsobené kompilace stránky na první požadavek.
 
@@ -317,7 +317,7 @@ Můžete také znovu zkompiluje po přidání nové zdrojové soubory k němu ap
 > Kompilace aplikace, která obsahuje vnořené aplikaci nekompiluje vnořené aplikace. Vnořené aplikace musí být zkompilovány samostatně.
 
 
-### <a name="compiling-an-application-for-deploymenthttpsmsdnmicrosoftcomen-uslibraryms229863aspx"></a>[Kompilace aplikace pro nasazení](https://msdn.microsoft.com/en-us/library/ms229863.aspx)
+### <a name="compiling-an-application-for-deploymenthttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[Kompilace aplikace pro nasazení](https://msdn.microsoft.com/library/ms229863.aspx)
 
 Zadáním parametru targetDir zkompilujete aplikace pro nasazení (kompilace do cílového umístění). TargetDir může být do konečného umístění pro webovou aplikaci nebo kompilované aplikace můžete další nasazení. Pomocí **-u** možnost kompilaci aplikace tak, že můžete provádět změny určité soubory kompilované aplikace bez nutnosti rekompilace se. ASPNET\_compiler.exe rozlišuje statické a dynamické typy souborů a zpracovává je jiným způsobem, při vytváření výsledné aplikace.
 
@@ -349,18 +349,18 @@ Následující tabulka popisuje, jak kompilace technologie ASP.NET nástroj zpra
 | .cs, VB, .jsl, sada (včetně není soubory kódu pro výše uvedených typů souborů) | Zdrojový kód, který je odkazován generovaná z .ascx, .ashx nebo soubory .aspx sestavení je zkompilovány do sestavení a umístit do adresáře Bin. Žádné zdrojové soubory jsou kopírovány. |
 | Vlastní typy souborů | Tyto soubory jsou kompilovat, jako jsou dynamické soubory. V závislosti na typu souboru, které jsou založené na kompilátor mapování soubory umístit do výstupního adresáře. |
 | Soubory v aplikaci\_podadresáře kódu | Soubory zdrojového kódu v tomto podadresáři jsou zkompilovány do sestavení a umístit do adresáře Bin. |
-| Soubory v aplikaci\_GlobalResources podadresáři | Tyto soubory jsou zkompilovány do sestavení a umístit do adresáře Bin. Žádná aplikace\_GlobalResources podadresáři se vytvořil v rámci hlavní výstupnímu adresáři. Pokud konfigurační soubor Určuje appliesTo = "Vše", soubory RESX a Resources se zkopírují do výstupního adresáře. Pokud se odkazuje nejsou zkopírovány [zprostředkovatele BuildProvider](https://msdn.microsoft.com/en-us/library/system.web.configuration.buildprovider.aspx). |
+| Soubory v aplikaci\_GlobalResources podadresáři | Tyto soubory jsou zkompilovány do sestavení a umístit do adresáře Bin. Žádná aplikace\_GlobalResources podadresáři se vytvořil v rámci hlavní výstupnímu adresáři. Pokud konfigurační soubor Určuje appliesTo = "Vše", soubory RESX a Resources se zkopírují do výstupního adresáře. Pokud se odkazuje nejsou zkopírovány [zprostředkovatele BuildProvider](https://msdn.microsoft.com/library/system.web.configuration.buildprovider.aspx). |
 | soubory RESX a Resource v aplikaci\_LocalResources podadresáři | Tyto soubory jsou zkompilovány do sestavení s jedinečnými názvy a umístit do adresáře Bin. Žádné soubory RESX a Resource se zkopírují do výstupního adresáře. |
 | soubory SKIN v aplikaci\_podadresáři motivů | Motivy jsou zkompilovány do sestavení a umístit do adresáře Bin. Soubory se zakázaným inzerováním jsou vytvořené pro soubory skin a umístěn v adresáři odpovídající výstup. Statické soubory (například .css) se zkopírují do výstupního adresáře. |
 | Browser souboru Web.config statické typy již existuje v adresáři Bin sestavení | Tyto soubory budou zkopírovány do výstupního adresáře. |
 
-### <a name="fixed-assembly-nameshttpsmsdnmicrosoftcomen-uslibraryms229863aspx"></a>[Sestavení s pevnými názvy](https://msdn.microsoft.com/en-us/library/ms229863.aspx##)
+### <a name="fixed-assembly-nameshttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[Sestavení s pevnými názvy](https://msdn.microsoft.com/library/ms229863.aspx##)
 
 Některé scénáře, jako je nasazení webové aplikace pomocí Instalační služby MSI, vyžadují použití konzistentních názvů souborů a obsah, jakož i konzistentní adresářovou strukturu k identifikaci sestavení nebo konfigurace nastavení pro aktualizace. V takových případech můžete použít **- fixednames** můžete určit, že nástroj kompilace technologie ASP.NET má kompilace sestavení pro každý zdrojový soubor, místo použití where více stránek kompilované do sestavení. To může vést k velký počet sestavení, a proto pokud máte obavy s škálovatelnost použijte tuto možnost používejte opatrně.
 
-### <a name="strong-name-compilationhttpsmsdnmicrosoftcomen-uslibraryms229863aspx"></a>[Kompilace se silnými názvy](https://msdn.microsoft.com/en-us/library/ms229863.aspx##)
+### <a name="strong-name-compilationhttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[Strong-Name Compilation](https://msdn.microsoft.com/library/ms229863.aspx##)
 
-**- Aptca**, **- delaysign**, **- keycontainer** a **- keyfile** možnosti jsou k dispozici, aby můžete Aspnet\_ Compiler.exe vytvořit silně pojmenované sestavení bez použití [Strong Name Tool (Sn.exe)](https://msdn.microsoft.com/en-us/library/k5b5tt23.aspx) samostatně. Tyto parametry odpovídají do **AllowPartiallyTrustedCallersAttribute**, **AssemblyDelaySignAttribute**, **AssemblyKeyNameAttribute**a  **AssemblyKeyFileAttribute**.
+**- Aptca**, **- delaysign**, **- keycontainer** a **- keyfile** možnosti jsou k dispozici, aby můžete Aspnet\_ Compiler.exe vytvořit silně pojmenované sestavení bez použití [Strong Name Tool (Sn.exe)](https://msdn.microsoft.com/library/k5b5tt23.aspx) samostatně. Tyto parametry odpovídají do **AllowPartiallyTrustedCallersAttribute**, **AssemblyDelaySignAttribute**, **AssemblyKeyNameAttribute**a  **AssemblyKeyFileAttribute**.
 
 Informace o těchto atributů jsou mimo rozsah tohoto kurzu.
 
@@ -447,4 +447,4 @@ V tomto testovacím prostředí vytvoříte kód, který vám umožní přepnut�
 
 ## <a name="more-information"></a>Další informace:
 
-ASP.NET 2.0 je model poskytovatelů umožňuje vytvářet vlastní zprostředkovatele, ne jenom instrumentace aplikací, ale pro mnoho dalších situací například členství, profily atd. Podrobné informace o psaní vlastního zprostředkovatele do protokolu událostí aplikace do textového souboru, najdete v článku [tento odkaz](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnaspp/html/ASPNETProvMod_Prt6.asp).
+ASP.NET 2.0 je model poskytovatelů umožňuje vytvářet vlastní zprostředkovatele, ne jenom instrumentace aplikací, ale pro mnoho dalších situací například členství, profily atd. Podrobné informace o psaní vlastního zprostředkovatele do protokolu událostí aplikace do textového souboru, najdete v článku [tento odkaz](https://msdn.microsoft.com/library/default.asp?url=/library/dnaspp/html/ASPNETProvMod_Prt6.asp).

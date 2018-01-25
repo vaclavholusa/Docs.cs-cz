@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0b1fe8d2e376065aed8d94b1267910bd1f7e5bd0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2982af897b433706889cb4eda79dcb4e76baea62
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-additional-datatable-columns-c"></a>Přidání další DataTable sloupců (C#)
 ====================
@@ -90,12 +90,12 @@ Potom jsme se zobrazí výzva k `SELECT` dotazu. V průvodci zadejte následují
 
 [!code-sql[Main](adding-additional-datatable-columns-cs/samples/sample1.sql)]
 
-Výše uvedené dotaz používá SQL Server 2005 s novou [ `NTILE` funkce](https://msdn.microsoft.com/en-us/library/ms175126.aspx) k rozdělení výsledky do čtyř skupin, kde jsou určeny skupiny `UnitPrice` hodnoty seřazené v sestupném pořadí.
+Výše uvedené dotaz používá SQL Server 2005 s novou [ `NTILE` funkce](https://msdn.microsoft.com/library/ms175126.aspx) k rozdělení výsledky do čtyř skupin, kde jsou určeny skupiny `UnitPrice` hodnoty seřazené v sestupném pořadí.
 
 Bohužel Tvůrce dotazů nebude vědět, jak analyzovat `OVER` – klíčové slovo a zobrazí chybu při analýze výše uvedeném dotazu. Proto výše uvedeném dotazu přímo do textového pole zadejte v Průvodci bez použití Tvůrce dotazů.
 
 > [!NOTE]
-> Další informace o NTILE a SQL Server 2005 s najdete v dalších funkcí hodnocení [vrácení seřazeny výsledků s Microsoft SQL Server 2005](http://www.4guysfromrolla.com/webtech/010406-1.shtml) a [řazení funkce oddílu](https://msdn.microsoft.com/en-us/library/ms189798.aspx) z [SQL Server 2005 Books Online](https://msdn.microsoft.com/en-us/library/ms189798.aspx).
+> Další informace o NTILE a SQL Server 2005 s najdete v dalších funkcí hodnocení [vrácení seřazeny výsledků s Microsoft SQL Server 2005](http://www.4guysfromrolla.com/webtech/010406-1.shtml) a [řazení funkce oddílu](https://msdn.microsoft.com/library/ms189798.aspx) z [SQL Server 2005 Books Online](https://msdn.microsoft.com/library/ms189798.aspx).
 
 
 Po zadání `SELECT` dotazu a kliknutím na tlačítko Další, tento průvodce zobrazí, abychom mohli poskytovat název uložené procedury vytvoří. Název nové uložené procedury `Products_SelectWithPriceQuartile` a klikněte na tlačítko Další.

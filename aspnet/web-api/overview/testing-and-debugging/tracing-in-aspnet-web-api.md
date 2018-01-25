@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f35c8a10018ce796e2d905d6ee839ff09bb380a1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7392ae5d9bc4c3aab45a9373099a0ee18e873a4f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>Trasování v rozhraní ASP.NET Web API 2
 ====================
@@ -58,7 +58,7 @@ Otevřete soubor WebApiConfig.cs v aplikaci\_spouštěcí složka. Přidejte ná
 
 [!code-csharp[Main](tracing-in-aspnet-web-api/samples/sample2.cs?highlight=6)]
 
-Tento kód přidá [zapisovač SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx) třída do kanálu webové rozhraní API. **Zapisovač SystemDiagnosticsTraceWriter** zapíše trasování do třídy [System.Diagnostics.Trace](https://msdn.microsoft.com/en-us/library/system.diagnostics.trace).
+Tento kód přidá [zapisovač SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx) třída do kanálu webové rozhraní API. **Zapisovač SystemDiagnosticsTraceWriter** zapíše trasování do třídy [System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace).
 
 Pokud chcete zobrazit trasování, spusťte aplikaci v ladicím programu. V prohlížeči přejděte na `/api/values`.
 
@@ -68,7 +68,7 @@ Příkazy trasování se zapisují do okna výstupu v sadě Visual Studio. (Z **
 
 [![](tracing-in-aspnet-web-api/_static/image7.png)](tracing-in-aspnet-web-api/_static/image6.png)
 
-Protože **zapisovač SystemDiagnosticsTraceWriter** zapíše trasování do **System.Diagnostics.Trace**, můžete zaregistrovat další trasování – moduly naslouchání; například zapsat trasování do souboru protokolu. Další informace o trasování zapisovače najdete v tématu [trasování – moduly naslouchání](https://msdn.microsoft.com/en-us/library/4y5y10s7.aspx) tématu na webu MSDN.
+Protože **zapisovač SystemDiagnosticsTraceWriter** zapíše trasování do **System.Diagnostics.Trace**, můžete zaregistrovat další trasování – moduly naslouchání; například zapsat trasování do souboru protokolu. Další informace o trasování zapisovače najdete v tématu [trasování – moduly naslouchání](https://msdn.microsoft.com/library/4y5y10s7.aspx) tématu na webu MSDN.
 
 ### <a name="configuring-systemdiagnosticstracewriter"></a>Konfigurace zapisovač SystemDiagnosticsTraceWriter
 
@@ -89,7 +89,7 @@ Přidání zapisovač trasování umožňuje okamžitý přístup k trasování 
 
 Chcete-li získat zapisovač trasování, volejte **HttpConfiguration.Services.GetTraceWriter**. Z řadiče, tato metoda je přístupná prostřednictvím **ApiController.Configuration** vlastnost.
 
-Pokud chcete zapsat trasování, můžete zavolat **ITraceWriter.Trace** metoda přímo, ale [ITraceWriterExtensions](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.itracewriterextensions.aspx) třída definuje některé rozšiřující metody, které jsou přehlednější. Například **informace** výše uvedená metoda vytvoří trasování s úroveň trasování **informace**.
+Pokud chcete zapsat trasování, můžete zavolat **ITraceWriter.Trace** metoda přímo, ale [ITraceWriterExtensions](https://msdn.microsoft.com/library/system.web.http.tracing.itracewriterextensions.aspx) třída definuje některé rozšiřující metody, které jsou přehlednější. Například **informace** výše uvedená metoda vytvoří trasování s úroveň trasování **informace**.
 
 ## <a name="web-api-tracing-infrastructure"></a>Infrastruktura trasování webového rozhraní API
 

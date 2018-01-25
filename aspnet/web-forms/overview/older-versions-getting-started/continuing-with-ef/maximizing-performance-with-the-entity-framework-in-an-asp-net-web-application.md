@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9e257f5061f6bdf14ad0776ff6385fb526d6dcb1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 40a53a110115e5f6342d2a97d21b64470450fd3c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Tím se maximalizuje výkon s rozhraní Entity Framework 4.0 4 webové aplikace technologie ASP.NET
 ====================
@@ -251,17 +251,17 @@ Teď můžete aplikaci spustit a ověřte, že funguje jako předtím.
 
 Další informace o předem vygenerovaných zobrazení najdete v následujících zdrojích informací:
 
-- [Postupy: předběžnému generování zobrazení za účelem zlepšení výkonu dotazů](https://msdn.microsoft.com/en-us/library/bb896240.aspx) na webu MSDN. Vysvětluje, jak používat `EdmGen.exe` nástroj příkazového řádku k předběžnému generování zobrazení.
+- [Postupy: předběžnému generování zobrazení za účelem zlepšení výkonu dotazů](https://msdn.microsoft.com/library/bb896240.aspx) na webu MSDN. Vysvětluje, jak používat `EdmGen.exe` nástroj příkazového řádku k předběžnému generování zobrazení.
 - [Izolace výkonu předkompilované nebo vedlejší-generated zobrazení v rozhraní Entity Framework 4](https://blogs.msdn.com/b/appfabriccat/archive/2010/08/06/isolating-performance-with-precompiled-pre-generated-views-in-the-entity-framework-4.aspx) na Windows Server AppFabric poradní tým blogu.
 
 Tím dokončíte Úvod ke zlepšení výkonu ve webové aplikaci ASP.NET, který používá rozhraní Entity Framework. Další informace naleznete v následujících materiálech:
 
-- [Faktory ovlivňující výkon (rozhraní Entity Framework)](https://msdn.microsoft.com/en-us/library/cc853327.aspx) na webu MSDN.
+- [Faktory ovlivňující výkon (rozhraní Entity Framework)](https://msdn.microsoft.com/library/cc853327.aspx) na webu MSDN.
 - [Související s výkonem příspěvcích na blogu týmu Entity Framework](https://blogs.msdn.com/b/adonet/archive/tags/performance/).
 - [EF sloučení možnosti a kompilované dotazy](https://blogs.msdn.com/b/dsimmons/archive/2010/01/12/ef-merge-options-and-compiled-queries.aspx). Příspěvek blogu, který vysvětluje neočekávané chování kompilované dotazy a merge možnosti, jako `NoTracking`. Pokud budete chtít použít kompilované dotazy nebo upravit nastavení možnosti sloučení v aplikaci, přečtěte si nejprve tuto.
 - [Entity Framework související odešle blog in the Data a modelování poradní tým](https://blogs.msdn.com/b/dmcat/archive/tags/entity+framework/). Zahrnuje příspěvcích na kompilované dotazy a pomocí Visual Studio 2010 profileru ke zjišťování problémů s výkonem.
-- [Entity Framework fórum vlákno s Rady, jak ke zlepšení výkonu vysoce složitých dotazů](https://social.msdn.microsoft.com/Forums/en-US/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6).
-- [Doporučení pro správu stavu ASP.NET](https://msdn.microsoft.com/en-us/library/z1hkazw7.aspx).
+- [Entity Framework fórum vlákno s Rady, jak ke zlepšení výkonu vysoce složitých dotazů](https://social.msdn.microsoft.com/Forums/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6).
+- [Doporučení pro správu stavu ASP.NET](https://msdn.microsoft.com/library/z1hkazw7.aspx).
 - [Použitím rozhraní Entity Framework a ObjectDataSource: vlastní stránkování](http://geekswithblogs.net/Frez/articles/using-the-entity-framework-and-the-objectdatasource-custom-paging.aspx). Příspěvek blogu, který je založený na ContosoUniversity aplikace vytvořené v těchto kurzech vysvětlují, jak implementovat stránkování v *Departments.aspx* stránky.
 
 V dalším kurzu zkontroluje některé důležité vylepšení na rozhraní Entity Framework, které nově jsou v verze 4.

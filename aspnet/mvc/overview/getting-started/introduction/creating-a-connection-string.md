@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/creating-a-connection-string
 msc.type: authoredcontent
-ms.openlocfilehash: 41f1f30d86406580ab9fc7278a94d9c291913f9a
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 25d1c1c9954baaca9ef91eff3dd3c853930a5893
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>Vytvoření připojovacího řetězce a práci s LocalDB serveru SQL
 ====================
@@ -28,7 +28,7 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 `MovieDBContext` Třídy, které jste vytvořili zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi. Jeden otázku může, ale je uveden postup určit se připojí k databázi. Nemáte ve skutečnosti zadejte databázi, ke které použít, bude jako výchozí rozhraní Entity Framework pomocí [LocalDB](https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-2016-express-localdb). V této části explicitně přidáme připojovací řetězec *Web.config* souboru aplikace.
 
-## <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
+## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
 [LocalDB](https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-2016-express-localdb) je Odlehčená verze SQL Server Express databázový stroj, který se spustí na vyžádání a běží v uživatelském režimu. LocalDB běží v režimu speciální spuštění systému SQL Server Express, který umožňuje pracovat s databázemi jako *.mdf* soubory. Obvykle jsou zachovány soubory databáze LocalDB v *aplikace\_Data* složky webového projektu.
 
@@ -36,7 +36,7 @@ SQL Server Express se nedoporučuje používat v produkční webové aplikace. L
 
 V aplikaci Visual Studio 2017 LocalDB je nainstalována ve výchozím nastavení pomocí sady Visual Studio.
 
-Ve výchozím nastavení, vypadá rozhraní Entity Framework pro řetězec připojení se stejným názvem jako objekt context – třída (`MovieDBContext` pro tento projekt). Další informace najdete v části [připojovací řetězce SQL serveru pro webové aplikace ASP.NET](https://msdn.microsoft.com/en-us/library/jj653752.aspx).
+Ve výchozím nastavení, vypadá rozhraní Entity Framework pro řetězec připojení se stejným názvem jako objekt context – třída (`MovieDBContext` pro tento projekt). Další informace najdete v části [připojovací řetězce SQL serveru pro webové aplikace ASP.NET](https://msdn.microsoft.com/library/jj653752.aspx).
 
 Otevřete kořenový adresář aplikace *Web.config* souboru vidíte níže. (Není *Web.config* v soubor *zobrazení* složky.)
 
@@ -56,11 +56,11 @@ Následující příklad ukazuje část *Web.config* soubor s přidat nový při
 
 Dva připojovací řetězce jsou velmi podobné. První připojovací řetězec názvem `DefaultConnection` a používá se pro databázi členství řídit, kdo má přístup k aplikaci. Určuje připojovací řetězec, který jste přidali LocalDB databáze s názvem *Movie.mdf* umístěný v *aplikace\_Data* složky. Jsme nebude používat databázi členství v tomto kurzu, další informace o členství, ověřování a zabezpečení, najdete v části Moje kurzu [vytvoření aplikace ASP.NET MVC pomocí ověřování a databázi SQL a nasazení do Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data).
 
-Název připojovacího řetězce musí odpovídat názvu [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx) třídy.
+Název připojovacího řetězce musí odpovídat názvu [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx) třídy.
 
 [!code-csharp[Main](creating-a-connection-string/samples/sample3.cs?highlight=15)]
 
-Chcete-li přidat nepotřebujete ve skutečnosti `MovieDBContext` připojovací řetězec. Pokud nezadáte připojovací řetězec, rozhraní Entity Framework vytvoří databáze LocalDB v adresáři uživatele s plně kvalifikovaný název [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx) – třída (v tomto případě `MvcMovie.Models.MovieDBContext`). Můžete pojmenovat databázi nic se vám líbí, dokud obsahuje *. MDF* příponu. Například můžeme mohla mít název databáze *MyFilms.mdf*.
+Chcete-li přidat nepotřebujete ve skutečnosti `MovieDBContext` připojovací řetězec. Pokud nezadáte připojovací řetězec, rozhraní Entity Framework vytvoří databáze LocalDB v adresáři uživatele s plně kvalifikovaný název [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx) – třída (v tomto případě `MvcMovie.Models.MovieDBContext`). Můžete pojmenovat databázi nic se vám líbí, dokud obsahuje *. MDF* příponu. Například můžeme mohla mít název databáze *MyFilms.mdf*.
 
 Dále budete vytvářet nové `MoviesController` třídu, která můžete použít k zobrazení dat film a povolit uživatelům vytvářet nové výpisy film.
 

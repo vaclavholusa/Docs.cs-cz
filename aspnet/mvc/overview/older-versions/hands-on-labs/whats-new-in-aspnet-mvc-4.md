@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 3de952224e23eed29f90ed0e8c662e4ee3f531ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b1bdae048afc78399ccc7b0eac7125d9b983c13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-4"></a>Co je nového v architektuře ASP.NET MVC 4
 ====================
 podle [webové táborech Team](https://twitter.com/webcamps)
 
-[Stažení webové táborech cvičení Kit](http://www.microsoft.com/en-us/download/29843)
+[Stažení webové táborech cvičení Kit](http://www.microsoft.com/download/29843)
 
 > ASP.NET MVC 4 je rozhraní pro vytváření škálovatelných standardy webových aplikací pomocí vzory zavedené návrhu a výkonu technologie ASP.NET a rozhraní .NET framework. Tento nový, čtvrté verzi rozhraní framework se zaměřuje na snadněji vývoj mobilních webových aplikací.
 > 
@@ -30,7 +30,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > V tomto testovacím prostředí praktických se spustí s ASP.NET MVC 4 &quot;Internetové aplikace&quot; šablona projektu pro vytvoření aplikace Fotogalerie. Progresivně se zlepšila aplikace pomocí jQuery Mobile a nové funkce ASP.NET MVC 4, aby byl kompatibilní s různých mobilních zařízení a klientů webových prohlížečů. Naučíte se také o nový kód recepty pro generování kódu a jak ASP.NET MVC 4 usnadňuje psaní metody asynchronní akce díky podpoře úloh&lt;ActionResult&gt; návratové typy.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 <a id="Objectives"></a>
@@ -56,7 +56,7 @@ Musíte mít následující položky k dokončení tohoto testovacího prostřed
 
 - [Microsoft Visual Studio Express 2012 pro Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) nebo i vyšší (čtení [příloha B](#AppendixB) pokyny o tom, jak ji nainstalovat).
 - [ASP.NET MVC 4](../../../mvc4.md) (zahrnutá v instalaci sady Microsoft Visual Studio 2012)
-- Emulátor Windows Phone (součástí [Windows Phone 7.1.1 SDK](https://www.microsoft.com/en-us/download/details.aspx?id=29233))
+- Emulátor Windows Phone (součástí [Windows Phone 7.1.1 SDK](https://www.microsoft.com/download/details.aspx?id=29233))
 - Volitelné - [WebMatrix 2](https://www.microsoft.com/web/webmatrix/) s **Electric Plum iPhone simulátoru** rozšíření (pouze pro cvičení 3 umožňuje procházet webové aplikace s simulátor pro zařízení iPhone)
 
 <a id="Setup"></a>
@@ -179,7 +179,7 @@ V tomto cvičení zaměříte vylepšení v šablonách projektu ASP.NET MVC 4. 
 
     *Šablona projektu ASP.NET MVC 4 Internetové aplikace*
 
-    - **HTML 5 značek**
+    - **HTML 5 Markup**
 
         Procházejte šablony zobrazení a zjistěte, kód nový motiv.
 
@@ -611,7 +611,7 @@ V této úloze se vytvoří vlastní rozložení pro zařízení iPhone a bude m
 7. Stiskněte klávesu **F5** ke spuštění aplikace a přejděte do lokality v **emulátoru Windows Phone**.
 8. Otevřete **iPhone simulátoru** (najdete v části [příloha C](#AppendixC) pokyny o tom, jak nainstalovat a nakonfigurovat simulátor pro zařízení iPhone) a přejděte na web příliš. Všimněte si, že každý phone používá konkrétní šablonu.
 
-    ![Using-different-views-for-each-Mobile-device2](whats-new-in-aspnet-mvc-4/_static/image35.png)
+    ![Using-different-views-for-each-mobile-device2](whats-new-in-aspnet-mvc-4/_static/image35.png)
 
     *Použití různých zobrazení pro každý mobilní zařízení*
 
@@ -622,7 +622,7 @@ V této úloze se vytvoří vlastní rozložení pro zařízení iPhone a bude m
 
 Rozhraní Microsoft .NET Framework 4.5 zavádí nové jazykové funkce v C# a Visual Basic zajistit nové platformu pro asynchrony v .NET – programování. Tento nový foundation umožňuje asynchronní programování podobná - a o stejně jednoduché jako - synchronní programování. Je nyní možné zapisovat pomocí metody asynchronní akce v architektuře ASP.NET MVC 4 **AsyncController** třídy. Můžete použít asynchronní akce metody pro dlouhodobé, bez procesoru vázaný požadavky. Tím je zabráněno blokování webový server z provede práci během zpracování požadavku. Třída AsyncController se obvykle používá pro dlouhodobé volání webové služby.
 
-Tento postup vysvětluje základy asynchronní operace v rozhraní ASP.NET MVC 4. Pokud chcete o podrobnější prohlídku, můžete najdete v následujícím článku: [ [https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)
+Tento postup vysvětluje základy asynchronní operace v rozhraní ASP.NET MVC 4. Pokud chcete o podrobnější prohlídku, můžete najdete v následujícím článku: [ [https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
 
 <a id="Task_1_-_Implementing_an_Asynchronous_Controller"></a>
 #### <a name="task-1---implementing-an-asynchronous-controller"></a>Úloha 1 – implementace asynchronní kontroler

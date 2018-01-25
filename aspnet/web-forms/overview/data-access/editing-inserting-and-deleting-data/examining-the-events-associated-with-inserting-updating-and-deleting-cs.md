@@ -2,7 +2,7 @@
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs
 title: "Zkoumání události související s vkládání, aktualizaci nebo odstranění (C#) | Microsoft Docs"
 author: rick-anderson
-description: "V tomto kurzu podíváme pomocí události, které nastaly před, během a po typu vložení aktualizaci nebo odstranění operace dat ASP.NET ovládací prvek webu. DOKONČENO..."
+description: "V tomto kurzu podíváme pomocí události, které nastaly před, během a po typu vložení aktualizaci nebo odstranění operace dat ASP.NET ovládací prvek webu. W..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 30f6ecef1a03153619df1b3ba4e709f3742c6927
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 93da23d58d1ba73c5b97f42631d036dd364de24d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-events-associated-with-inserting-updating-and-deleting-c"></a>Zkoumání události související s vkládání, aktualizaci nebo odstranění (C#)
 ====================
@@ -162,12 +162,12 @@ Díky této změně hodnotu `UnitPrice` zobrazí v upravená řádek je formát 
 
 Však aktualizace produktu pomocí symbolu měny do textového pole, jako je $19.00 vyvolá `FormatException`. Když se pokusí přiřadit hodnoty zadané uživatelem ObjectDataSource GridView `UpdateParameters` kolekce je možné převést `UnitPrice` řetězec "$19.00" do `decimal` vyžaduje parametr (viz obrázek 11). Chcete-li to opravit můžeme vytvořit obslužnou rutinu události pro prvku GridView `RowUpdating` událostí a mějte ho analyzovat uživatelem zadané `UnitPrice` jako měnu formátu `decimal`.
 
-Prvku GridView `RowUpdating` událost přijme jako její druhý parametr objekt typu [GridViewUpdateEventArgs](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx), což zahrnuje `NewValues` slovníku jako jeden z jeho vlastnosti, které obsahuje hodnoty připravené k zadané uživatelem přiřazené ObjectDataSource `UpdateParameters` kolekce. Jsme můžete přepsat existující `UnitPrice` hodnotu `NewValues` kolekce s desetinnou hodnotou analyzovat pomocí následující řádky kódu ve formátu měny `RowUpdating` obslužné rutiny události:
+Prvku GridView `RowUpdating` událost přijme jako její druhý parametr objekt typu [GridViewUpdateEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx), což zahrnuje `NewValues` slovníku jako jeden z jeho vlastnosti, které obsahuje hodnoty připravené k zadané uživatelem přiřazené ObjectDataSource `UpdateParameters` kolekce. Jsme můžete přepsat existující `UnitPrice` hodnotu `NewValues` kolekce s desetinnou hodnotou analyzovat pomocí následující řádky kódu ve formátu měny `RowUpdating` obslužné rutiny události:
 
 
 [!code-csharp[Main](examining-the-events-associated-with-inserting-updating-and-deleting-cs/samples/sample4.cs)]
 
-Pokud má zadaný uživatel `UnitPrice` hodnotu (například "$19.00"), se tato hodnota přepíše s desetinnou hodnotou vypočítávají podle [Decimal.Parse](https://msdn.microsoft.com/en-us/library/system.decimal.parse(VS.80).aspx), analýza hodnotu jako měny. To bude správně analyzovat desetinné v případě symboly měny, čárky, desetinných míst a tak dále a používá [výčet NumberStyles](https://msdn.microsoft.com/en-US/library/system.globalization.numberstyles(VS.80).aspx) v [System.Globalization](https://msdn.microsoft.com/en-US/library/abeh092z(VS.80).aspx) oboru názvů.
+Pokud má zadaný uživatel `UnitPrice` hodnotu (například "$19.00"), se tato hodnota přepíše s desetinnou hodnotou vypočítávají podle [Decimal.Parse](https://msdn.microsoft.com/library/system.decimal.parse(VS.80).aspx), analýza hodnotu jako měny. To bude správně analyzovat desetinné v případě symboly měny, čárky, desetinných míst a tak dále a používá [výčet NumberStyles](https://msdn.microsoft.com/library/system.globalization.numberstyles(VS.80).aspx) v [System.Globalization](https://msdn.microsoft.com/library/abeh092z(VS.80).aspx) oboru názvů.
 
 Obrázek 11 ukazuje potíže způsobené symboly měny v uživatelem zadané `UnitPrice`, společně s postupy prvku GridView `RowUpdating` obslužné rutiny události, můžete použít k správně analyzovat takové vstup.
 
@@ -216,10 +216,10 @@ Pokud uživatel se pokusí uložit bez zadání cenu produktu, aktualizace byla 
 
 Zatím jsme viděli, jak používat prvku GridView `RowUpdating` událostí prostřednictvím kódu programu změnit hodnoty parametru přiřazené ObjectDataSource `UpdateParameters` kolekce a jak zrušit aktualizaci zpracovat zcela. Tyto koncepty přenesou do ovládacích prvků DetailsView a FormView a platí také pro vkládání a odstraňování.
 
-Tyto úlohy lze také provést na úrovni ObjectDataSource prostřednictvím obslužné rutiny události pro jeho `Inserting`, `Updating`, a `Deleting` události. Tyto události fire před vyvoláním související metody podkladového objektu a zadejte poslední chance moci upravit kolekci vstupní parametry, nebo přímý operaci zrušte. Obslužné rutiny události pro tyto tři události jsou předávány na objektu typu [ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx) má dvě vlastnosti, které vás zajímají:
+Tyto úlohy lze také provést na úrovni ObjectDataSource prostřednictvím obslužné rutiny události pro jeho `Inserting`, `Updating`, a `Deleting` události. Tyto události fire před vyvoláním související metody podkladového objektu a zadejte poslední chance moci upravit kolekci vstupní parametry, nebo přímý operaci zrušte. Obslužné rutiny události pro tyto tři události jsou předávány na objektu typu [ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx) má dvě vlastnosti, které vás zajímají:
 
-- [Zrušit](https://msdn.microsoft.com/en-US/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx), která, pokud nastavena na `true`, zruší prováděnou operaci
-- [Vstupní parametry](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx), což je kolekce `InsertParameters`, `UpdateParameters`, nebo `DeleteParameters`, v závislosti na tom, zda obslužná rutina události pro `Inserting`, `Updating`, nebo `Deleting` událostí
+- [Zrušit](https://msdn.microsoft.com/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx), která, pokud nastavena na `true`, zruší prováděnou operaci
+- [Vstupní parametry](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx), což je kolekce `InsertParameters`, `UpdateParameters`, nebo `DeleteParameters`, v závislosti na tom, zda obslužná rutina události pro `Inserting`, `Updating`, nebo `Deleting` událostí
 
 Pro ilustraci práce s hodnotami parametrů na úrovni ObjectDataSource, umožňuje zahrnout DetailsView naši stránku, který umožňuje uživatelům přidání nového produktu. Tato DetailsView se použije k poskytnutí rozhraní pro rychle přidání nového produktu do databáze. Při přidání nového produktu umožňuje povolit uživatelům jenom zadat hodnoty pro zachovat konzistentní uživatelské rozhraní `ProductName` a `UnitPrice` pole. Ve výchozím nastavení, je možnost tyto hodnoty, které nejsou dodány v ovládacím prvku DetailsView vkládání rozhraní `NULL` databáze hodnotu. Ale můžeme použít ObjectDataSource `Inserting` událost vložení různé výchozí hodnoty, jako jsme krátce zobrazí.
 

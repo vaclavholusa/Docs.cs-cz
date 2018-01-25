@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 31d83a11488212ab0ff83494d5e896ffcbeaa8a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b97834e3e287645151bf927996fde63d93ae8356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: migrace na SQL Server – 10 12
 ====================
@@ -37,7 +37,7 @@ Tento kurz ukazuje, jak migrovat ze systému SQL Server Compact do systému SQL 
 
 Jakmile jste se rozhodli upgradujte na SQL Server, můžete chtít používat SQL Server nebo SQL Server Express v vývojová a testovací prostředí. Kromě rozdíly v nástroj pro podporu a databázové stroje funkce jsou rozdíly v implementacích zprostředkovatele mezi systém SQL Server Compact a jiné verze systému SQL Server. Tyto rozdíly může způsobit stejný kód ke generování odlišné výsledky. Proto pokud se rozhodnete zachovat SQL Server Compact jako vývoj databáze, měli byste důkladně otestovat váš web v systému SQL Server nebo SQL Server Express v testovacím prostředí před každé nasazení do produkčního prostředí.
 
-Na rozdíl od systém SQL Server Compact je v podstatě stejný databázový stroj SQL Server Express a používá stejný zprostředkovatel .NET jako plnou instalaci systému SQL Server. Při testování pomocí serveru SQL Server Express, může být jisti, získání stejné výsledky jako budete s SQL serverem. Většina nástroje stejné databáze můžete použít s SQL Server Express, který můžete použít s SQL serverem (významné výjimky se [SQL Server Profiler](https://msdn.microsoft.com/en-us/library/ms181091.aspx)), a podporuje další funkce systému SQL Server jako uložené procedury, triggery, a zobrazení a replikace. (Obvykle musíte použít úplnou systému SQL Server v provozním webu, ale. Ve sdíleném hostování prostředí, můžete spustit SQL Server Express, ale nebyl navržen, pro který a mnoho poskytovatelů hostingu nepodporují.)
+Na rozdíl od systém SQL Server Compact je v podstatě stejný databázový stroj SQL Server Express a používá stejný zprostředkovatel .NET jako plnou instalaci systému SQL Server. Při testování pomocí serveru SQL Server Express, může být jisti, získání stejné výsledky jako budete s SQL serverem. Většina nástroje stejné databáze můžete použít s SQL Server Express, který můžete použít s SQL serverem (významné výjimky se [SQL Server Profiler](https://msdn.microsoft.com/library/ms181091.aspx)), a podporuje další funkce systému SQL Server jako uložené procedury, triggery, a zobrazení a replikace. (Obvykle musíte použít úplnou systému SQL Server v provozním webu, ale. Ve sdíleném hostování prostředí, můžete spustit SQL Server Express, ale nebyl navržen, pro který a mnoho poskytovatelů hostingu nepodporují.)
 
 Pokud používáte Visual Studio 2012, obvykle zvolíte SQL serveru Express LocalDB pro vývojové prostředí protože se jedná o tom, co je nainstalované ve výchozím nastavení pomocí sady Visual Studio. Ale LocalDB nefunguje ve službě IIS, takže pro testovací prostředí, budete muset používat SQL Server nebo SQL Server Express.
 
@@ -57,9 +57,9 @@ Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, j
 
 SQL Server Express je automaticky nainstalována ve výchozím nastavení s Visual Studio 2010, ale ve výchozím nastavení nenainstaluje se sadou Visual Studio 2012. Pokud chcete nainstalovat SQL Server 2012 Express, klikněte na následující odkaz
 
-- [Systém SQL Server Express 2012](https://www.microsoft.com/en-us/download/details.aspx?id=29062)
+- [SQL Server Express 2012](https://www.microsoft.com/download/details.aspx?id=29062)
 
-Zvolte *CSY/x64/SQLEXPR\_x64\_ENU.exe* nebo *csy/x86/SQLEXPR\_x86\_ENU.exe*a v Průvodci instalací přijmete výchozí hodnoty nastavení. Další informace o možnostech instalace najdete v tématu [instalace systému SQL Server 2012 z Průvodce instalací (Instalační program)](https://msdn.microsoft.com/en-us/library/ms143219.aspx).
+Zvolte *CSY/x64/SQLEXPR\_x64\_ENU.exe* nebo *csy/x86/SQLEXPR\_x86\_ENU.exe*a v Průvodci instalací přijmete výchozí hodnoty nastavení. Další informace o možnostech instalace najdete v tématu [instalace systému SQL Server 2012 z Průvodce instalací (Instalační program)](https://msdn.microsoft.com/library/ms143219.aspx).
 
 ## <a name="creating-sql-server-express-databases-for-the-test-environment"></a>Vytváření databází systému SQL Server Express pro testovací prostředí
 

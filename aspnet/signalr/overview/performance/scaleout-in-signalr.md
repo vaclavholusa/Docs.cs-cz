@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 4f1ad959c45281cdd831c37c2e3ca428f3fae9a0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f1d15250682305f6d0512b72bd2e40cb4a8a18e5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-scaleout-in-signalr"></a>Úvod do škálování v systému SignalR
 ====================
@@ -57,19 +57,19 @@ Funkce SignalR aktuálně poskytuje tři backplanes:
 
 - **Azure Service Bus**. Service Bus je zasílání zpráv infrastrukturu, která umožňuje součásti odesílat zprávy volně párované způsobem.
 - **Redis**. Redis je úložišti klíč hodnota v paměti. Redis podporuje vzor publikovat/odebírat ("pub nebo sub") pro odesílání zpráv.
-- **Systému SQL Server**. Propojovací rozhraní systému SQL Server zapíše zprávy do tabulky SQL. Propojovacího rozhraní používá službu Service Broker pro efektivní zasílání zpráv. Ale spolupracuje také pokud Service Broker není povolena.
+- **SQL Server**. Propojovací rozhraní systému SQL Server zapíše zprávy do tabulky SQL. Propojovacího rozhraní používá službu Service Broker pro efektivní zasílání zpráv. Ale spolupracuje také pokud Service Broker není povolena.
 
-Pokud nasazujete aplikaci na platformě Azure, zvažte použití Redis propojovací rozhraní systému pomocí [Azure Redis Cache](https://azure.microsoft.com/en-us/services/cache/). Pokud nasazujete do serverové farmy, zvažte systému SQL Server nebo Redis backplanes.
+Pokud nasazujete aplikaci na platformě Azure, zvažte použití Redis propojovací rozhraní systému pomocí [Azure Redis Cache](https://azure.microsoft.com/services/cache/). Pokud nasazujete do serverové farmy, zvažte systému SQL Server nebo Redis backplanes.
 
 Následující témata obsahují podrobné kurzy pro každý propojovacího rozhraní:
 
-- [Škálování SignalR službou Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
-- [Škálování SignalR s Redisem](scaleout-with-redis.md)
-- [Škálování SignalR s SQL serverem](scaleout-with-sql-server.md)
+- [Škálování aplikace SignalR službou Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
+- [Šklálování aplikace SignalR službou Redis](scaleout-with-redis.md)
+- [Šklálování aplikace SignalR SQL Serverem](scaleout-with-sql-server.md)
 
 ## <a name="implementation"></a>Implementace
 
-V systému SignalR každá zpráva se budou odesílat prostřednictvím sběrnice zpráv. Implementuje sběrnice zpráv [IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) rozhraní, která poskytuje abstrakci se publikování a přihlášení k odběru. Backplanes fungovat tak, že nahradíte výchozí **IMessageBus** se sběrnicí určené pro tento propojovacího rozhraní. Je například sběrnici zpráv pro Redis [RedisMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), a používá Redis [pub nebo sub](http://redis.io/topics/pubsub) mechanismus odesílat a přijímat zprávy.
+V systému SignalR každá zpráva se budou odesílat prostřednictvím sběrnice zpráv. Implementuje sběrnice zpráv [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) rozhraní, která poskytuje abstrakci se publikování a přihlášení k odběru. Backplanes fungovat tak, že nahradíte výchozí **IMessageBus** se sběrnicí určené pro tento propojovacího rozhraní. Je například sběrnici zpráv pro Redis [RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), a používá Redis [pub nebo sub](http://redis.io/topics/pubsub) mechanismus odesílat a přijímat zprávy.
 
 Každá instance serveru se připojí k propojovacího rozhraní přes sběrnici. Pokud je odeslána zpráva, přejdete do propojovacího rozhraní a propojovacího rozhraní odešle ji do každého serveru. Když server získá zprávu z propojovacího rozhraní, uloží zprávu v místní mezipaměti. Server pak přináší zprávy pro klienty z místní mezipaměti.
 

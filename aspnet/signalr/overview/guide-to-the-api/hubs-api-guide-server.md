@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: 1cd5569554c3fbd966ee5d55ad08a79b81af36de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c2567d4d39a494daf77a23db5dff83c8fae4925d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-c"></a>Funkce SignalR technologie ASP.NET centra API Průvodce – Server (C#)
 ====================
@@ -102,7 +102,7 @@ Součásti serveru pro funkci SignalR 2 jsou dostupné jenom v rozhraní .NET 4.
 
 ## <a name="how-to-register-signalr-middleware"></a>Postup registrace middlewaru SignalR.
 
-Chcete-li definovat trasy, která budou klienti používat pro připojení do vašeho centra, volejte `MapSignalR` metoda při spuštění aplikace. `MapSignalR`je [metoda rozšíření](https://msdn.microsoft.com/en-us/library/vstudio/bb383977.aspx) pro `OwinExtensions` třídy. Následující příklad ukazuje, jak definovat trasu rozbočovače SignalR pomocí třídy pro spuštění OWIN.
+Chcete-li definovat trasy, která budou klienti používat pro připojení do vašeho centra, volejte `MapSignalR` metoda při spuštění aplikace. `MapSignalR`je [metoda rozšíření](https://msdn.microsoft.com/library/vstudio/bb383977.aspx) pro `OwinExtensions` třídy. Následující příklad ukazuje, jak definovat trasu rozbočovače SignalR pomocí třídy pro spuštění OWIN.
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample1.cs)]
 
@@ -156,7 +156,7 @@ Následující příklad ukazuje, jak určit adresu URL připojení SignalR a ty
 
 ## <a name="how-to-create-and-use-hub-classes"></a>Postup vytvoření a používání třídy rozbočovače
 
-K vytvoření rozbočovač, vytvořte třídu, která je odvozena z [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx). Následující příklad ukazuje jednoduchý třídy rozbočovače pro chatovací aplikace.
+K vytvoření rozbočovač, vytvořte třídu, která je odvozena z [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx). Následující příklad ukazuje jednoduchý třídy rozbočovače pro chatovací aplikace.
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample7.cs)]
 
@@ -262,7 +262,7 @@ Pokud chcete zadat jiný název pro klienty použít, přidejte `HubMethodName` 
 
 ### <a name="when-to-execute-asynchronously"></a>Při spuštění asynchronně
 
-Pokud metoda bude se dlouho běžící nebo pracovat, by zahrnovat čekání, jako je vyhledávání v databázi nebo volání webové služby, zkontrolujte asynchronní metody rozbočovače vrácením [úloh](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx) (místě `void` vrátit) nebo [ Úloha&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/dd321424.aspx) objektu (místě `T` návratový typ). Když se vrátíte `Task` objekt z metody SignalR čeká `Task` k dokončení, a pak pošle rozbalenou výsledek zpět do klienta, takže není žádný rozdíl v tom, jak kód volání metody, které v klientovi.
+Pokud metoda bude se dlouho běžící nebo pracovat, by zahrnovat čekání, jako je vyhledávání v databázi nebo volání webové služby, zkontrolujte asynchronní metody rozbočovače vrácením [úloh](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) (místě `void` vrátit) nebo [ Úloha&lt;T&gt; ](https://msdn.microsoft.com/library/dd321424.aspx) objektu (místě `T` návratový typ). Když se vrátíte `Task` objekt z metody SignalR čeká `Task` k dokončení, a pak pošle rozbalenou výsledek zpět do klienta, takže není žádný rozdíl v tom, jak kód volání metody, které v klientovi.
 
 Provedení metody rozbočovače asynchronní zabraňuje blokování připojení, když používá přenos protokolu WebSocket. Když metoda rozbočovače spouští synchronně a přenosu je WebSocket, následných volání metod rozbočovače ze stejného klienta jsou zablokovány, dokud se nedokončí metody rozbočovače.
 
@@ -272,7 +272,7 @@ Následující příklad ukazuje stejnou metodu zakódované spouští synchronn
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample19.cs)]
 
-**Asynchronní**
+**Asynchronous**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample20.cs?highlight=1,7-8)]
 
@@ -331,7 +331,7 @@ Můžete zadat komplexní typy a pole parametrů. Následující příklad před
 
 ### <a name="selecting-which-clients-will-receive-the-rpc"></a>Výběr klienty, kteří obdrží vzdálené volání Procedur
 
-Vrátí vlastnost klientů [HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) objekt, který poskytuje několik možností pro zadání klienty, kteří obdrží vzdálené volání Procedur:
+Vrátí vlastnost klientů [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) objekt, který poskytuje několik možností pro zadání klienty, kteří obdrží vzdálené volání Procedur:
 
 - Všichni připojení klienti.
 
@@ -403,7 +403,7 @@ Pokud používáte `await` počkat, dokud nebude dokončeno metodu klientské p�
 
 ### <a name="how-to-use-a-string-variable-as-the-method-name"></a>Postup řetězec proměnnou použít jako název metody
 
-Pokud chcete vyvolat metodu klienta pomocí proměnné řetězec jako název metody, přetypovat `Clients.All` (nebo `Clients.Others`, `Clients.Caller`atd) k `IClientProxy` a pak zavolají [Invoke (methodName, argumentů...) ](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
+Pokud chcete vyvolat metodu klienta pomocí proměnné řetězec jako název metody, přetypovat `Clients.All` (nebo `Clients.Others`, `Clients.Caller`atd) k `IClientProxy` a pak zavolají [Invoke (methodName, argumentů...) ](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample42.cs)]
 
@@ -413,7 +413,7 @@ Pokud chcete vyvolat metodu klienta pomocí proměnné řetězec jako název met
 
 Skupiny v systému SignalR poskytují metodu pro zprávy všesměrové vysílání pro zadaný podmnožiny připojených klientů. Skupina může mít libovolný počet klientů a klienta může být členem skupiny libovolný počet skupin.
 
-Chcete-li spravovat členství ve skupinách, použijte [přidat](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) a [odebrat](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) metody poskytované `Groups` vlastnost třídy rozbočovače. Následující příklad ukazuje `Groups.Add` a `Groups.Remove` metody používané v metodách rozbočovače, které se nazývají kódem na straně klienta, za nímž následuje kód JavaScript klienta, který volá je.
+Chcete-li spravovat členství ve skupinách, použijte [přidat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) a [odebrat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) metody poskytované `Groups` vlastnost třídy rozbočovače. Následující příklad ukazuje `Groups.Add` a `Groups.Remove` metody používané v metodách rozbočovače, které se nazývají kódem na straně klienta, za nímž následuje kód JavaScript klienta, který volá je.
 
 **Server**
 
@@ -494,7 +494,7 @@ Metody obslužné rutiny události životnost připojení se nazývají ze serve
 
 ## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>Jak získat informace o klientovi z vlastností kontextu
 
-Chcete-li získat informace o klientovi, použijte `Context` vlastnost třídy rozbočovače. `Context` Vlastnost vrátí [HubCallerContext](https://msdn.microsoft.com/en-us/library/jj890883(v=vs.111).aspx) objekt, který poskytuje přístup k následujícím informacím:
+Chcete-li získat informace o klientovi, použijte `Context` vlastnost třídy rozbočovače. `Context` Vlastnost vrátí [HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx) objekt, který poskytuje přístup k následujícím informacím:
 
 - ID připojení volajícího klienta.
 
@@ -578,7 +578,7 @@ V VB.NET nebo v rozbočovači silného typu, volající objekt stavu nelze přis
 Zpracování chyb, které nastat ve vaší metody třídy rozbočovače, použijte jednu nebo více z následujících metod:
 
 - Zalomení metoda kódu v try-catch – bloky a protokolu objekt výjimky. Pro účely ladění můžete odeslat výjimka klienta, ale pro zabezpečení se nedoporučuje důvodů odesílání podrobné informace pro klienty v produkčním prostředí.
-- Vytvoření modulu kanálu rozbočovače, který zpracovává [OnIncomingError](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) metoda. Následující příklad ukazuje, kanálů modul, který protokoluje chyby, za nímž následuje kód v souboru Startup.cs, který se vloží do kanálu rozbočovače modul.
+- Vytvoření modulu kanálu rozbočovače, který zpracovává [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) metoda. Následující příklad ukazuje, kanálů modul, který protokoluje chyby, za nímž následuje kód v souboru Startup.cs, který se vloží do kanálu rozbočovače modul.
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample61.cs)]
 
@@ -674,4 +674,4 @@ Následující kód na *Startup.cs* souboru zaregistruje modul pro spuštění v
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample77.cs?highlight=3)]
 
-Existuje mnoho různých způsobů, které můžete přepsat. Úplný seznam najdete v tématu [HubPipelineModule metody](https://msdn.microsoft.com/en-us/library/jj918633(v=vs.111).aspx).
+Existuje mnoho různých způsobů, které můžete přepsat. Úplný seznam najdete v tématu [HubPipelineModule metody](https://msdn.microsoft.com/library/jj918633(v=vs.111).aspx).

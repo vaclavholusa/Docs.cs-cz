@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 5054f932d05fb612a6e18a81274719d7e249b77b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4de0b52e0b4ae7ce00e7b07bce2decfc5068964a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Vytváření reálných cloudových aplikací s Azure
 ====================
@@ -103,7 +103,7 @@ Tato e kniha vysvětluje že třináct doporučená vzory pro vývoj cloudové. 
     - Povolit vysokou dostupnost a zlepšit škálovatelnost volně spojovacích webové a pracovní vrstev.
     - Ukázka: Fronty úložiště Azure v aplikaci opravit.
 - [Více cloudové aplikace vzory a pokyny](more-patterns-and-guidance.md).
-- [Dodatek: Opravte ji ukázkové aplikace](the-fix-it-sample-application.md)
+- [Příloha: ukázková aplikace Fix It](the-fix-it-sample-application.md)
 
     - Známé problémy
     - Doporučené postupy
@@ -155,7 +155,7 @@ Pokud je počítač přestane fungovat, Azure automaticky vyžaduje od otáčen�
 
 Všechny tyto probíhá automaticky. Všechny, které musíte udělat je vytvoření webu a nasazení aplikace, pomocí prostředí Windows PowerShell, sady Visual Studio nebo portál pro správu Azure.
 
-Rychlé a snadné podrobný návod, jak vytvořit webovou aplikaci v sadě Visual Studio a nasadit ho na web Azure, najdete v části [Začínáme s Azure a ASP.NET](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/).
+Rychlé a snadné podrobný návod, jak vytvořit webovou aplikaci v sadě Visual Studio a nasadit ho na web Azure, najdete v části [Začínáme s Azure a ASP.NET](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
 
 <a id="summary"></a>
 ## <a name="summary"></a>Souhrn
@@ -168,14 +168,14 @@ Další informace o tématech, zahrnuté v této kapitole najdete v následujíc
 
 Dokumentace:
 
-- [Webové aplikace v Azure App Service](https://azure.microsoft.com/en-us/services/app-service/web/). Stránky portálu Azure dokumentaci o webové aplikace.
-- [Webové aplikace, cloudové služby a virtuální počítače: volba aplikace?](https://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/) WAWS, jak je znázorněno v této kapitole je jen jednou ze tří způsobů, které webové aplikace můžete spustit v Azure. Tento článek vysvětluje rozdíly mezi třemi způsoby a poskytuje pokyny o tom, jak zvolit, které z nich je pro váš scénář. Cloudové služby jako webové servery, je funkce PaaS Azure. Virtuální počítače se o funkci IaaS. Další informace o PaaS versus IaaS, najdete v článku [možnosti dat](data-storage-options.md#paasiaas) kapitoly.
+- [Webové aplikace v Azure App Service](https://azure.microsoft.com/services/app-service/web/). Stránky portálu Azure dokumentaci o webové aplikace.
+- [Webové aplikace, cloudové služby a virtuální počítače: volba aplikace?](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) WAWS, jak je znázorněno v této kapitole je jen jednou ze tří způsobů, které webové aplikace můžete spustit v Azure. Tento článek vysvětluje rozdíly mezi třemi způsoby a poskytuje pokyny o tom, jak zvolit, které z nich je pro váš scénář. Cloudové služby jako webové servery, je funkce PaaS Azure. Virtuální počítače se o funkci IaaS. Další informace o PaaS versus IaaS, najdete v článku [možnosti dat](data-storage-options.md#paasiaas) kapitoly.
 
 Videa:
 
-- [Scott Guthrie spustí v kroku 0 - co je operační systém cloudu Azure?](https://azure.microsoft.com/en-us/documentation/videos/what-is-the-cloud-os-scottgu/)
-- [Architektura weby - s Stefan Schackow](https://azure.microsoft.com/en-us/documentation/videos/why-azure-web-sites-plus-architecture/).
+- [Scott Guthrie spustí v kroku 0 - co je operační systém cloudu Azure?](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
+- [Architektura weby - s Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/).
 - [Interní informace o Azure webové stránky s Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 
 >[!div class="step-by-step"]
-[Další](automate-everything.md)
+[Next](automate-everything.md)

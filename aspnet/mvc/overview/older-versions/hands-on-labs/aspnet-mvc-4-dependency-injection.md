@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: af4967f642ba4615f3392c0c404d2ec62edaaae8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 48a7d7fdb670aebb72450fc4eb12a364ef595c53
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-dependency-injection"></a>Vkládání závislostí architektury ASP.NET MVC 4
 ====================
@@ -25,7 +25,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > [!NOTE]
 > Toto testovací prostředí Hands-on předpokládá, že máte základní znalosti o **ASP.NET MVC** a **ASP.NET MVC 4 filtry**. Pokud jste nepoužili **ASP.NET MVC 4 filtry** před, doporučujeme si projít **ASP.NET MVC vlastní akce filtry** Hands-on testovacího prostředí.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 V **zaměřené na konkrétní objekt programování** zlepší, objekty spolupracují v modelu spolupráce tam, kde existují přispěvatelé a příjemce. Tento model komunikace samozřejmě generuje závislosti mezi objekty a součásti, aby se aktivovala obtížné spravovat v případě, že zvyšuje složitost.
@@ -188,7 +188,7 @@ V této úloze bude obsahovat **Unity.Mvc3** balíček NuGet pro řešení.
 1. Nainstalujte **Unity.Mvc3** balíček NuGet v **MvcMusicStore** projektu. Chcete-li to provést, otevřete **Konzola správce balíčků** z **zobrazení** | **ostatní okna**.
 2. Spusťte následující příkaz.
 
-    POMOCÍ PMC
+    PMC
 
     [!code-powershell[Main](aspnet-mvc-4-dependency-injection/samples/sample3.ps1)]
 
@@ -474,7 +474,7 @@ V této úloze bude aplikaci spustit a otestovat, zda filtr vlastní akce je tra
 
     ![Hudba úložiště](aspnet-mvc-4-dependency-injection/_static/image11.png "Hudba úložiště")
 
-    *Hudba úložiště*
+    *Aplikace Music Store*
 3. Přejděte do **/Trace.axd** zobrazíte trasování aplikací a pak klikněte na tlačítko **zobrazit podrobnosti**.
 
     ![Protokol trasování aplikace](aspnet-mvc-4-dependency-injection/_static/image12.png "protokolu trasování aplikace")

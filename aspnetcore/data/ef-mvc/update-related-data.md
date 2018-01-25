@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 0e4df407a1ca15aa5baa2b7226be1cf91902a583
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3cdd36ae03824645e09f97cae85cc55956679390
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Aktualizace souvisejících dat – základní EF s kurz k ASP.NET MVC jádra (7 10)
 
@@ -129,7 +129,7 @@ Kód provede následující akce:
 
 -  Aktualizuje načtenou entitu lektorem hodnotami z vazače modelu. `TryUpdateModel` Přetížení umožňuje povolených vlastnosti, které chcete zahrnout. To brání přečerpání účtování, jak je popsáno v [druhý kurzu](crud.md).
 
-    <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
+    <!-- Snippets don't play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
     ```csharp
     if (await TryUpdateModelAsync<Instructor>(
@@ -140,7 +140,7 @@ Kód provede následující akce:
     
 -   Pokud umístění kanceláře je prázdné, nastaví vlastnost Instructor.OfficeAssignment na hodnotu null, takže související řádek v tabulce OfficeAssignment se odstraní.
 
-    <!-- Snippets do not play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
+    <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
 
     ```csharp
     if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssignment?.Location))
@@ -221,7 +221,7 @@ V *Views/Instructors/Edit.cshtml*, přidat **kurzy** pole s pole zaškrtávacíc
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
-Tento kód vytvoří tabulky jazyka HTML, který má tři sloupce. V každém sloupci je zaškrtávací políčko, za nímž následuje popisek, který se skládá z kurzu číslo a název. Všechna zaškrtávací políčka mají stejný název ("selectedCourses"), která informuje o vazač modelu, které jsou považovány za skupinu. Hodnota atributu každé zaškrtávací políčko je nastavena na hodnotu `CourseID`. Když je stránka vrácena, vazač modelu předá pole na řadič, který se skládá z `CourseID` hodnoty pro pouze zaškrtávací políčka, které jsou vybrány.
+Tento kód vytvoří tabulky jazyka HTML, který má tři sloupce. V každém sloupci je zaškrtávací políčko, za nímž následuje popisek, který se skládá z kurzu číslo a název. Všechna zaškrtávací políčka mají stejný název ("selectedCourses"), která informuje o vazač modelu jsou považovány za skupinu. Hodnota atributu každé zaškrtávací políčko je nastavena na hodnotu `CourseID`. Když je stránka vrácena, vazač modelu předá pole na řadič, který se skládá z `CourseID` hodnoty pro pouze zaškrtávací políčka, které jsou vybrány.
 
 Když zaškrtnutí políček jsou původně vykresleno, ty, které jsou pro kurzy přiřazené lektorem jste zkontrolovali atributy, které vybere je (zobrazí se, které je zaškrtnutí).
 

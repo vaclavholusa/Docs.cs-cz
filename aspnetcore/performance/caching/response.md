@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.topic: article
 ms.prod: asp.net-core
 uid: performance/caching/response
-ms.openlocfilehash: 104cfb2eab706a2ec6278b4d1c461f70b0af5df1
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>Ukládání odpovědí do mezipaměti v ASP.NET Core
 
@@ -32,10 +32,10 @@ Běžné `Cache-Control` direktivy jsou uvedeny v následující tabulce.
 
 | – Direktiva                                                       | Akce |
 | --------------------------------------------------------------- | ------ |
-| [veřejné](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | Mezipaměť může ukládat odpověď. |
-| [privátní](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | Odpověď nesmí být uloženy ve sdílené mezipaměti. Privátní mezipaměti může uložit a opakovaně používat odpovědi. |
-| [Maximální stáří](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | Klient nebude přijímat odpovědi, jejichž stáří je větší než zadaný počet sekund. Příklady: `max-age=60` (60 sekund), `max-age=2592000` (1 měsíc) |
-| [Ne mezipaměti](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **U požadavků**: mezipaměti nesmí používat uložené odpovědi ke zpracování požadavku. Poznámka: Na zdrojový server znovu generuje odpovědi pro klienta a middleware aktualizuje odpověď uložená v mezipaměti.<br><br>**V odpovědi**: odpověď nesmí se používat pro následné žádosti bez ověřování na původním serveru. |
+| [public](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | Mezipaměť může ukládat odpověď. |
+| [private](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | Odpověď nesmí být uloženy ve sdílené mezipaměti. Privátní mezipaměti může uložit a opakovaně používat odpovědi. |
+| [max-age](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | Klient nebude přijímat odpovědi, jejichž stáří je větší než zadaný počet sekund. Příklady: `max-age=60` (60 sekund), `max-age=2592000` (1 měsíc) |
+| [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **U požadavků**: mezipaměti nesmí používat uložené odpovědi ke zpracování požadavku. Poznámka: Na zdrojový server znovu generuje odpovědi pro klienta a middleware aktualizuje odpověď uložená v mezipaměti.<br><br>**V odpovědi**: odpověď nesmí se používat pro následné žádosti bez ověřování na původním serveru. |
 | [Ne – úložiště](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **U požadavků**: žádost nesmí uložena mezipaměti.<br><br>**V odpovědi**: mezipaměti nesmí ukládat libovolná součást odpovědi. |
 
 V následující tabulce jsou uvedeny další mezipaměti hlavičky, které hrají roli při ukládání do mezipaměti.
@@ -43,8 +43,8 @@ V následující tabulce jsou uvedeny další mezipaměti hlavičky, které hraj
 | Záhlaví                                                     | Funkce |
 | ---------------------------------------------------------- | -------- |
 | [Stáří](https://tools.ietf.org/html/rfc7234#section-5.1)     | Odhad množství času v sekundách, protože odpověď byla vygenerována nebo úspěšně ověřen na původním serveru. |
-| [Vypršení platnosti](https://tools.ietf.org/html/rfc7234#section-5.3) | Datum a čas, po jejímž uplynutí je považován za odpověď zastaralých. |
-| [Direktiva pragma](https://tools.ietf.org/html/rfc7234#section-5.4)  | Pro zpětnou kompatibilitu s HTTP/1.0 ukládá do mezipaměti pro nastavení existuje `no-cache` chování. Pokud `Cache-Control` záhlaví nachází, `Pragma` záhlaví je ignorována. |
+| [Expires](https://tools.ietf.org/html/rfc7234#section-5.3) | Datum a čas, po jejímž uplynutí je považován za odpověď zastaralých. |
+| [Pragma](https://tools.ietf.org/html/rfc7234#section-5.4)  | Pro zpětnou kompatibilitu s HTTP/1.0 ukládá do mezipaměti pro nastavení existuje `no-cache` chování. Pokud `Cache-Control` záhlaví nachází, `Pragma` záhlaví je ignorována. |
 | [Lišit](https://tools.ietf.org/html/rfc7231#section-7.1.4)  | Určuje, že odpovědi v mezipaměti nesmí být odeslána, pokud všechny služby `Vary` záhlaví pole shodují v původní žádost odpověď uložená v mezipaměti a nový požadavek. |
 
 ## <a name="http-based-caching-respects-request-cache-control-directives"></a>Ukládání do mezipaměti ohledech založené na protokolu HTTP žádosti direktivy Cache-Control
@@ -65,7 +65,7 @@ Další informace najdete v tématu [Úvod k ukládání do mezipaměti v pamět
 
 ### <a name="distributed-cache"></a>Distribuované mezipaměti
 
-Distribuované mezipaměti využívat k ukládání dat v paměti, když aplikace hostovaná v cloudu nebo server farmy. Mezipaměť je sdílet mezi servery, které zpracovávají požadavky. Klient může odeslat svoji žádost, kterou provádí služba jakýkoli server ve skupině a data uložená v mezipaměti klienta je k dispozici. ASP.NET Core nabízí systému SQL Server a Redis distribuované mezipaměti.
+Distribuované mezipaměti využívat k ukládání dat v paměti, když aplikace hostovaná v cloudu nebo server farmy. Mezipaměť je sdílet mezi servery, které zpracovávají požadavky. Klienta můžete odeslat požadavek, který má zpracovávaných jakýkoli server ve skupině a data do mezipaměti klienta je k dispozici. ASP.NET Core nabízí systému SQL Server a Redis distribuované mezipaměti.
 
 Další informace najdete v tématu [práce s distribuované mezipaměti](xref:performance/caching/distributed).
 
@@ -96,7 +96,7 @@ Další informace najdete v tématu [distribuované mezipaměti značky pomocná
 | `http://example.com?key1=value1` | Vrácená z middlewaru. |
 | `http://example.com?key1=value2` | Vrácená serverem     |
 
-První požadavek je vrácená serverem a uložené v mezipaměti v middlewaru. Druhá žádost se vrátí middlewarem, protože řetězec dotazu odpovídá předchozí požadavek. Třetí žádost není v mezipaměti middleware, protože hodnotu řetězce dotazu se neshoduje se na předchozí požadavek. 
+První požadavek je vrácená serverem a uložené v mezipaměti v middlewaru. Druhá žádost se vrátí middlewarem, protože řetězec dotazu odpovídá předchozí požadavek. Třetí požadavek není v mezipaměti middleware, protože hodnotu řetězce dotazu se neshoduje se na předchozí požadavek. 
 
 `ResponseCacheAttribute` Slouží ke konfiguraci a vytvoření (prostřednictvím `IFilterFactory`) `ResponseCacheFilter`. `ResponseCacheFilter` Provede práci aktualizace příslušné hlavičky protokolu HTTP a funkce odpovědi. Filtr:
 
@@ -177,9 +177,9 @@ Cache-Control: public,max-age=60
 
 * [Ukládání do mezipaměti v protokolu HTTP z specifikace](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [Ukládání do mezipaměti v paměti](xref:performance/caching/memory)
+* [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
 * [Práce s distribuované mezipaměti](xref:performance/caching/distributed)
 * [Detekovat změny s tokeny změn](xref:fundamentals/primitives/change-tokens)
-* [Middleware ukládání do mezipaměti odpovědi](xref:performance/caching/middleware)
-* [Pomocník značky mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Pomocník značky distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
+* [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

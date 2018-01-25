@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f43001b1980452e95187096cf884778c2970eb5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e08b55f763677a40a03503e54a23dc77a10a34f5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-vb"></a>Přehled úpravy a odstraňování dat v DataList (VB)
 ====================
@@ -86,11 +86,11 @@ Po aktualizaci `Web.sitemap`, pozorně Zobrazit kurzy web prostřednictvím proh
 
 Bohužel DataList neposkytuje žádné této integrované funkce. Je naše odpovědností zajistit přiřazení hodnoty uživatele s parametry s ObjectDataSource a že jeho `Update()` metoda je volána. Pokud chcete nám pomoci při této omezené úsilí, prvku DataList poskytuje následující vlastnosti a události:
 
-- **[ `DataKeyField` Vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**  při aktualizaci nebo odstranění, potřebujeme, abyste mohli jednoznačně identifikovat každou položku v prvku DataList. Nastavte tuto vlastnost na primární klíče pole zobrazená data. Díky tomu bude naplnit DataList s [ `DataKeys` kolekce](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx) se zadaným `DataKeyField` hodnota pro každou položku DataList.
-- **[ `EditCommand` Událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**  aktivuje se v případě tlačítka, LinkButton nebo ImageButton jehož `CommandName` je nastavena na kliknutí na Upravit.
-- **[ `CancelCommand` Událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**  aktivuje se v případě tlačítka, LinkButton nebo ImageButton jehož `CommandName` je nastavena na kliknutí na Storno.
-- **[ `UpdateCommand` Událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**  aktivuje se v případě tlačítka, LinkButton nebo ImageButton jehož `CommandName` je nastavena na po kliknutí na aktualizace.
-- **[ `DeleteCommand` Událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**  aktivuje se v případě tlačítka, LinkButton nebo ImageButton jehož `CommandName` je nastavena na po kliknutí na odstranění.
+- **[ `DataKeyField` Vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**  při aktualizaci nebo odstranění, potřebujeme, abyste mohli jednoznačně identifikovat každou položku v prvku DataList. Nastavte tuto vlastnost na primární klíče pole zobrazená data. Díky tomu bude naplnit DataList s [ `DataKeys` kolekce](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx) se zadaným `DataKeyField` hodnota pro každou položku DataList.
+- **[ `EditCommand` Událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**  aktivuje se v případě tlačítka, LinkButton nebo ImageButton jehož `CommandName` je nastavena na kliknutí na Upravit.
+- **[ `CancelCommand` Událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**  aktivuje se v případě tlačítka, LinkButton nebo ImageButton jehož `CommandName` je nastavena na kliknutí na Storno.
+- **[ `UpdateCommand` Událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**  aktivuje se v případě tlačítka, LinkButton nebo ImageButton jehož `CommandName` je nastavena na po kliknutí na aktualizace.
+- **[ `DeleteCommand` Událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**  aktivuje se v případě tlačítka, LinkButton nebo ImageButton jehož `CommandName` je nastavena na po kliknutí na odstranění.
 
 Pomocí těchto vlastností a událostí, existují čtyři přístupy, které jsme můžete použít k aktualizaci a odstranění dat z prvku DataList:
 
@@ -153,7 +153,7 @@ Chcete-li zobrazit naše průběh prostřednictvím prohlížeče chvíli trvat.
 >  Astute čtečky si pamatovat, že jsme byli schopni zakázat stav zobrazení, při vytváření upravitelné GridViews, DetailsViews a FormViews. Důvodem je, že může zahrnovat ovládacích prvků technologie ASP.NET 2.0 *řízení stavu*, což je stav ukládaný napříč postback jako stav zobrazení, ale domnělého nezbytné.
 
 
-Zakazuje zobrazení stavu v GridView jenom vynechá trivial stavové informace, ale zachová stav ovládacího prvku (které zahrnuje stav potřebné pro úpravy a odstranění). DataList, s byla vytvořena v určeném časovém rozmezí ASP.NET 1.x nevyužívá ovládací prvek stavu a proto musí mít stav zobrazení, které jsou povolené. V tématu [řízení stavu vs. Zobrazení stavu](https://msdn.microsoft.com/en-us/library/1whwt1k7.aspx) Další informace o účelu řízení stavu a jak se liší od stav zobrazení.
+Zakazuje zobrazení stavu v GridView jenom vynechá trivial stavové informace, ale zachová stav ovládacího prvku (které zahrnuje stav potřebné pro úpravy a odstranění). DataList, s byla vytvořena v určeném časovém rozmezí ASP.NET 1.x nevyužívá ovládací prvek stavu a proto musí mít stav zobrazení, které jsou povolené. V tématu [řízení stavu vs. Zobrazení stavu](https://msdn.microsoft.com/library/1whwt1k7.aspx) Další informace o účelu řízení stavu a jak se liší od stav zobrazení.
 
 ## <a name="step-4-adding-an-editing-user-interface"></a>Krok 4: Přidání úpravy uživatelského rozhraní
 
@@ -225,7 +225,7 @@ Jakmile přidáte toto tlačítko Upravit pozorně zobrazíte stránku prostřed
 
 Kliknutím na tlačítko způsobí, že zpětné volání, ale nemá *není* uvést do režimu úprav dílčího produktu. Chcete-li produkt upravovat, je potřeba:
 
-1. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) na index `DataListItem` právě označeného jehož tlačítko Upravit.
+1. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) na index `DataListItem` právě označeného jehož tlačítko Upravit.
 2. Rebind data, která mají DataList. Po znovu vykreslené DataList `DataListItem` jejichž `ItemIndex` odpovídá DataList s `EditItemIndex` bude vykreslit pomocí jeho `EditItemTemplate`.
 
 Od DataList s `EditCommand` událost je aktivována, jestliže po kliknutí na tlačítko Upravit, vytvořte `EditCommand` obslužné rutiny události s následujícím kódem:
@@ -249,7 +249,7 @@ Kliknutím na tlačítko s upravená produktu aktualizaci nebo Storno tlačítka
 
 Chcete-li DataList vykreslení všechny jeho položky v režimu jen pro čtení, je potřeba:
 
-1. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) do indexu neexistující `DataListItem` index. `-1`je bezpečné volbou, protože `DataListItem` indexy začínají `0`.
+1. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) do indexu neexistující `DataListItem` index. `-1`je bezpečné volbou, protože `DataListItem` indexy začínají `0`.
 2. Rebind data, která mají DataList. Od ne `DataListItem` `ItemIndex` es odpovídají DataList s `EditItemIndex`, budou k dispozici celý DataList v režimu jen pro čtení.
 
 Následující kód obslužné rutiny událostí se dá udělat tyto kroky:
@@ -263,7 +263,7 @@ Je poslední obslužné rutiny události je potřeba dokončit `UpdateCommand` o
 
 1. Programový přístup název zadaný uživatelem produktu a ceny, jakož i upravená produktu s `ProductID`.
 2. Zahájit proces aktualizace voláním odpovídající `UpdateProduct` přetížení v `ProductsBLL` třídy.
-3. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) do indexu neexistující `DataListItem` index. `-1`je bezpečné volbou, protože `DataListItem` indexy začínají `0`.
+3. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) do indexu neexistující `DataListItem` index. `-1`je bezpečné volbou, protože `DataListItem` indexy začínají `0`.
 4. Rebind data, která mají DataList. Od ne `DataListItem` `ItemIndex` es odpovídají DataList s `EditItemIndex`, budou k dispozici celý DataList v režimu jen pro čtení.
 
 Provedení kroků 1 a 2 zodpovídají za uložení uživatele s změn; kroky 3 a 4 DataList vrátit do předem úpravy stavu po změny byly uloženy a se shoduje s postupem prováděla `CancelCommand` obslužné rutiny události.

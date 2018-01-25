@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: c25ebf472df5dcbc664257cdf8678bfac535d846
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 223dd48bb996de527f20291e4701e7d1b60a539d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>Vytvoření datového modelu Entity Framework pro aplikaci ASP.NET MVC (1 10)
 ====================
@@ -33,7 +33,7 @@ podle [tní Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="code-first"></a>Nejprve kódu
 > 
-> Existují tři způsoby, můžete pracovat s daty v Entity Framework: *Database First*, *Model First*, a *Code First*. Tento kurz je určen pro Code First. Informace o rozdílech mezi tyto pracovní postupy a pokyny o tom, jak zvolit tu nejvhodnější pro váš scénář najdete v tématu [Entity Framework vývoj pracovních](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+> Existují tři způsoby, můžete pracovat s daty v Entity Framework: *Database First*, *Model First*, a *Code First*. Tento kurz je určen pro Code First. Informace o rozdílech mezi tyto pracovní postupy a pokyny o tom, jak zvolit tu nejvhodnější pro váš scénář najdete v tématu [Entity Framework vývoj pracovních](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 > 
 > ## <a name="mvc"></a>MVC
 > 
@@ -51,7 +51,7 @@ podle [tní Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="questions"></a>Otázky
 > 
-> Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx), [Entity Framework a technologie LINQ to Entities fórum](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), nebo [ StackOverflow.com](http://stackoverflow.com/).
+> Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx), [Entity Framework a technologie LINQ to Entities fórum](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), nebo [ StackOverflow.com](http://stackoverflow.com/).
 > 
 > ## <a name="acknowledgments"></a>Potvrzování
 > 
@@ -84,7 +84,7 @@ Pokud máte nainstalovanou sadu Visual Studio, výše uvedený odkaz nainstaluje
 
 ## <a name="create-an-mvc-web-application"></a>Vytvořit webovou aplikaci MVC
 
-Otevřete Visual Studio a vytvořte nový projekt C# s s názvem "ContosoUniversity" pomocí **webové aplikace ASP.NET MVC 4** šablony. Zajistěte, aby cílíte **rozhraní .NET Framework 4.5** (které budete používat [ `enum` vlastnosti](https://msdn.microsoft.com/en-us/data/hh859576.aspx), a který vyžaduje .NET 4.5).
+Otevřete Visual Studio a vytvořte nový projekt C# s s názvem "ContosoUniversity" pomocí **webové aplikace ASP.NET MVC 4** šablony. Zajistěte, aby cílíte **rozhraní .NET Framework 4.5** (které budete používat [ `enum` vlastnosti](https://msdn.microsoft.com/data/hh859576.aspx), a který vyžaduje .NET 4.5).
 
 ![New_project_dialog_box](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image3.png)
 
@@ -159,7 +159,7 @@ V *modely* složku vytvořit *Enrollment.cs* a existujícího kódu nahraďte n�
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample5.cs)]
 
-Vlastnost úrovni je [výčtu](https://msdn.microsoft.com/en-us/data/hh859576.aspx). Otazník po `Grade` deklaraci typu znamená, že `Grade` vlastnost je [s možnou hodnotou Null](https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx). Třída, která má hodnotu null se liší od nulové úrovni – hodnota null znamená úrovni není známý nebo ještě nebyly přiřazeny.
+Vlastnost úrovni je [výčtu](https://msdn.microsoft.com/data/hh859576.aspx). Otazník po `Grade` deklaraci typu znamená, že `Grade` vlastnost je [s možnou hodnotou Null](https://msdn.microsoft.com/library/2cf62fcy.aspx). Třída, která má hodnotu null se liší od nulové úrovni – hodnota null znamená úrovni není známý nebo ještě nebyly přiřazeny.
 
 `StudentID` Vlastnost je cizí klíč a odpovídající navigační vlastnost `Student`. `Enrollment` Entita je spojen s jednou `Student` entit, tak vlastnost mohou obsahovat pouze jeden `Student` entity (na rozdíl od `Student.Enrollments` navigační vlastnost jste viděli dříve, která může pojmout více `Enrollment` entity).
 
@@ -175,21 +175,21 @@ V *modely* složku vytvořit *Course.cs*, existujícího kódu nahraďte násled
 
 `Enrollments` Je navigační vlastnost. A `Course` entity může souviset s libovolný počet `Enrollment` entity.
 
-Budete říkáme, informace o [[DatabaseGenerated](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([DatabaseGeneratedOption](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx). Žádný)] atribut v dalším kurzu. V zásadě platí tento atribut slouží k zadání primární klíč pro během, místo aby databázi jeho vygenerování.
+Budete říkáme, informace o [[DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([DatabaseGeneratedOption](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx). Žádný)] atribut v dalším kurzu. V zásadě platí tento atribut slouží k zadání primární klíč pro během, místo aby databázi jeho vygenerování.
 
 ## <a name="create-the-database-context"></a>Vytvoření kontextu databáze
 
-Hlavní třída, která koordinuje funkcí rozhraní Entity Framework pro daný datový model je *kontext databáze* třídy. Vytvořit této třídy odvozené z [System.Data.Entity.DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx) třídy. V kódu zadáte entit, které jsou zahrnuty v datovém modelu. Můžete také upravit chování určité Entity Framework. V tomto projektu je třída s názvem `SchoolContext`.
+Hlavní třída, která koordinuje funkcí rozhraní Entity Framework pro daný datový model je *kontext databáze* třídy. Vytvořit této třídy odvozené z [System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) třídy. V kódu zadáte entit, které jsou zahrnuty v datovém modelu. Můžete také upravit chování určité Entity Framework. V tomto projektu je třída s názvem `SchoolContext`.
 
 Vytvořte složku s názvem *DAL* (pro Data Access Layer). V této složce vytvořte soubor novou třídu s názvem *SchoolContext.cs*a existujícího kódu nahraďte následujícím kódem:
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample7.cs)]
 
-Tento kód vytvoří [DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=VS.103).aspx) vlastnosti pro každou sadu entit. V terminologii rozhraní Entity Framework *sady entit* obvykle odpovídá do databázové tabulky a *entity* odpovídá na řádek v tabulce.
+Tento kód vytvoří [DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=VS.103).aspx) vlastnosti pro každou sadu entit. V terminologii rozhraní Entity Framework *sady entit* obvykle odpovídá do databázové tabulky a *entity* odpovídá na řádek v tabulce.
 
-`modelBuilder.Conventions.Remove` Příkaz v [OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) metoda zabrání se pluralized názvy tabulek. Pokud nebylo to uděláte, by generovaného tabulky s názvem `Students`, `Courses`, a `Enrollments`. Místo toho budou názvy tabulek `Student`, `Course`, a `Enrollment`. Vývojáři Nesouhlasím o tom, jestli by měl názvy tabulek pluralized nebo ne. Tento kurz používá jednotném čísle, ale důležité je, že můžete vybrat libovolného tvaru dáváte přednost zahrnutím nebo vynechání tento řádek kódu.
+`modelBuilder.Conventions.Remove` Příkaz v [OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) metoda zabrání se pluralized názvy tabulek. Pokud nebylo to uděláte, by generovaného tabulky s názvem `Students`, `Courses`, a `Enrollments`. Místo toho budou názvy tabulek `Student`, `Course`, a `Enrollment`. Vývojáři Nesouhlasím o tom, jestli by měl názvy tabulek pluralized nebo ne. Tento kurz používá jednotném čísle, ale důležité je, že můžete vybrat libovolného tvaru dáváte přednost zahrnutím nebo vynechání tento řádek kódu.
 
-## <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
+## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
 [LocalDB](https://blogs.msdn.com/b/sqlexpress/archive/2011/07/12/introducing-localdb-a-better-sql-express.aspx) je Odlehčená verze SQL Server Express databázový stroj, který se spustí na vyžádání a běží v uživatelském režimu. LocalDB běží v režimu speciální spuštění systému SQL Server Express, který umožňuje pracovat s databázemi jako *.mdf* soubory. Obvykle jsou zachovány soubory databáze LocalDB v *aplikace\_Data* složky webového projektu. Instance funkce uživatel v systému SQL Server Express také umožňuje pracovat s *.mdf* soubory, ale funkce instance uživatel je zastaralý, tedy LocalDB doporučuje se pro práci s *.mdf* soubory.
 
@@ -201,15 +201,15 @@ V tomto kurzu budete pracujete s LocalDB tak, aby databáze mohou být uloženy 
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample8.xml)]
 
-Ve výchozím nastavení, hledá rozhraní Entity Framework se stejným názvem jako připojovací řetězec `DbContext` – třída (`SchoolContext` pro tento projekt). Určuje připojovací řetězec, který jste přidali LocalDB databáze s názvem *ContosoUniversity.mdf* umístěný v *aplikace\_Data* složky. Další informace najdete v tématu [připojovací řetězce SQL serveru pro webové aplikace ASP.NET](https://msdn.microsoft.com/en-us/library/jj653752.aspx).
+Ve výchozím nastavení, hledá rozhraní Entity Framework se stejným názvem jako připojovací řetězec `DbContext` – třída (`SchoolContext` pro tento projekt). Určuje připojovací řetězec, který jste přidali LocalDB databáze s názvem *ContosoUniversity.mdf* umístěný v *aplikace\_Data* složky. Další informace najdete v tématu [připojovací řetězce SQL serveru pro webové aplikace ASP.NET](https://msdn.microsoft.com/library/jj653752.aspx).
 
-Nemusíte ve skutečnosti zadejte připojovací řetězec. Pokud nezadáte připojovací řetězec, rozhraní Entity Framework vytvoří za vás; však nemusí být databáze v *aplikace\_data* složky vaší aplikace. Informace, na kterém se vytvoří databáze najdete v tématu [Code First pro novou databázi](https://msdn.microsoft.com/en-us/data/jj193542).
+Nemusíte ve skutečnosti zadejte připojovací řetězec. Pokud nezadáte připojovací řetězec, rozhraní Entity Framework vytvoří za vás; však nemusí být databáze v *aplikace\_data* složky vaší aplikace. Informace, na kterém se vytvoří databáze najdete v tématu [Code First pro novou databázi](https://msdn.microsoft.com/data/jj193542).
 
 `connectionStrings` Kolekce má také připojovací řetězec s názvem `DefaultConnection` sloužící pro databázi členství. Nebudete používat databázi členství v tomto kurzu. Jediným rozdílem mezi dva připojovací řetězce je název databáze a hodnota atributu název.
 
 ## <a name="set-up-and-execute-a-code-first-migration"></a>Nastavení a provedení migrace první kódu
 
-Při prvním spuštění nástroje pro vývoj aplikací, datový model změn často a pokaždé, když změn modelu, které získá synchronizována s databází. Můžete nakonfigurovat automaticky vyřadit a znovu vytvořit databázi při každé změně datového modelu Entity Framework. To není problém již v rané fázi ve vývoji, protože je snadno znovu vytvořit testovací data, ale po nasazení do produkčního prostředí obvykle chcete aktualizovat schéma databáze bez jejich odstranění databáze. Povolí funkci migrace Code First k aktualizaci databáze bez vyřadit a znovu ji vytvořit. Časná v cyklu vývoje nového projektu můžete chtít použít [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/en-us/library/gg679604(v=vs.103).aspx) vyřadit, znovu vytvořte a znovu naplnit databázi pokaždé, když změny modelu. Jeden získáte připraveny k nasazení aplikace, můžete převést na metodu migrace. Pro účely tohoto kurzu budete používat jenom migrace. Další informace najdete v tématu [migrace Code First](https://msdn.microsoft.com/en-us/data/jj591621) a [migrace záznam dění na monitoru řady](https://blogs.msdn.com/b/adonet/archive/2014/03/12/migrations-screencast-series.aspx).
+Při prvním spuštění nástroje pro vývoj aplikací, datový model změn často a pokaždé, když změn modelu, které získá synchronizována s databází. Můžete nakonfigurovat automaticky vyřadit a znovu vytvořit databázi při každé změně datového modelu Entity Framework. To není problém již v rané fázi ve vývoji, protože je snadno znovu vytvořit testovací data, ale po nasazení do produkčního prostředí obvykle chcete aktualizovat schéma databáze bez jejich odstranění databáze. Povolí funkci migrace Code First k aktualizaci databáze bez vyřadit a znovu ji vytvořit. Časná v cyklu vývoje nového projektu můžete chtít použít [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/library/gg679604(v=vs.103).aspx) vyřadit, znovu vytvořte a znovu naplnit databázi pokaždé, když změny modelu. Jeden získáte připraveny k nasazení aplikace, můžete převést na metodu migrace. Pro účely tohoto kurzu budete používat jenom migrace. Další informace najdete v tématu [migrace Code First](https://msdn.microsoft.com/data/jj591621) a [migrace záznam dění na monitoru řady](https://blogs.msdn.com/b/adonet/archive/2014/03/12/migrations-screencast-series.aspx).
 
 ### <a name="enable-code-first-migrations"></a>Povolení migrace Code First
 
@@ -234,9 +234,9 @@ Při prvním spuštění nástroje pro vývoj aplikací, datový model změn ča
 
 ### <a name="set-up-the-seed-method"></a>Nastavit Seed – metoda
 
-[Počáteční hodnoty](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx) metoda se spouští při migrace Code First vytvoří databázi a pokaždé, když se aktualizuje databázi nejnovější migrace. Účelem metodu počáteční hodnoty je umožnit vložení dat do tabulek před aplikace přistupovat k databázi poprvé.
+[Počáteční hodnoty](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) metoda se spouští při migrace Code First vytvoří databázi a pokaždé, když se aktualizuje databázi nejnovější migrace. Účelem metodu počáteční hodnoty je umožnit vložení dat do tabulek před aplikace přistupovat k databázi poprvé.
 
-V dřívějších verzích systému Code First, před migrací vydáním, bylo běžné `Seed` metody vložit testovací data, protože při každé změně modelu během vývoje neprobíhala v databázi úplně odstranit a znovu vytvořit od začátku. Pomocí migrace Code First, testovací data se uchovávají po provedení změn databáze, takže včetně testovací data v [počáteční hodnoty](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx) metoda není obvykle nutné. Ve skutečnosti, které nechcete `Seed` metoda vložit testovací data, pokud budete používat migrace pro nasazení databáze do produkčního prostředí, protože `Seed` metoda bude spuštěna v produkčním prostředí. V takovém případě má `Seed` metoda vložit do databáze pouze data, která má být vložen v produkčním prostředí. Například můžete zahrnout názvy skutečné oddělení v databázi `Department` tabulky, až aplikace k dispozici v produkčním prostředí.
+V dřívějších verzích systému Code First, před migrací vydáním, bylo běžné `Seed` metody vložit testovací data, protože při každé změně modelu během vývoje neprobíhala v databázi úplně odstranit a znovu vytvořit od začátku. Pomocí migrace Code First, testovací data se uchovávají po provedení změn databáze, takže včetně testovací data v [počáteční hodnoty](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) metoda není obvykle nutné. Ve skutečnosti, které nechcete `Seed` metoda vložit testovací data, pokud budete používat migrace pro nasazení databáze do produkčního prostředí, protože `Seed` metoda bude spuštěna v produkčním prostředí. V takovém případě má `Seed` metoda vložit do databáze pouze data, která má být vložen v produkčním prostředí. Například můžete zahrnout názvy skutečné oddělení v databázi `Department` tabulky, až aplikace k dispozici v produkčním prostředí.
 
 V tomto kurzu budete používat migrace pro nasazení, ale vaše `Seed` metoda bude přesto vložit testovací data pro snazší zjistit, jak funguje funkce aplikace, aniž by bylo nutné ručně vložit velké množství dat.
 
@@ -244,11 +244,11 @@ V tomto kurzu budete používat migrace pro nasazení, ale vaše `Seed` metoda b
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
-    [Počáteční hodnoty](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx) metoda přebírá objekt kontextu databáze jako vstupní parametr a kód v metodě používá tento objekt k přidání nové entity do databáze. Ke každému typu entity kód vytvoří kolekci nové entity, se přidají do příslušné [DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=vs.103).aspx) vlastnost a uloží změny do databáze. Není nutné volat [SaveChanges](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) metoda po každé skupiny entit, jako je na jednom místě, ale umožňuje učinit vyhledejte zdroj problému, pokud dojde k výjimce při kód je zápis do databáze.
+    [Počáteční hodnoty](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) metoda přebírá objekt kontextu databáze jako vstupní parametr a kód v metodě používá tento objekt k přidání nové entity do databáze. Ke každému typu entity kód vytvoří kolekci nové entity, se přidají do příslušné [DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.103).aspx) vlastnost a uloží změny do databáze. Není nutné volat [SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) metoda po každé skupiny entit, jako je na jednom místě, ale umožňuje učinit vyhledejte zdroj problému, pokud dojde k výjimce při kód je zápis do databáze.
 
-    Některé příkazy, který vkládá data pomocí [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) metoda o provedení operace "upsert". Protože `Seed` metoda se spouští se každých migrace, data, nelze právě vložit, protože řádky, které se pokoušíte přidat bude po první migrace, která vytváří databázi již existovat. Operace "upsert", zabraňuje chyb, které by mohlo dojít, pokud se pokusíte vložit řádek, který již existuje, ale ***přepsání*** všechny změny dat, která může provedení při testování aplikace. Pro testovací data v některé tabulky nemusí Chcete to tak proběhlo: v některých případech při změně dat při testování vaše změny zůstat po aktualizace databáze. V takovém případě budete chtít provést operace podmíněného insert: Vložit řádek pouze v případě, že ještě neexistuje. Metoda počáteční hodnoty pomocí obou přístupů.
+    Některé příkazy, který vkládá data pomocí [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) metoda o provedení operace "upsert". Protože `Seed` metoda se spouští se každých migrace, data, nelze právě vložit, protože řádky, které se pokoušíte přidat bude po první migrace, která vytváří databázi již existovat. Operace "upsert", zabraňuje chyb, které by mohlo dojít, pokud se pokusíte vložit řádek, který již existuje, ale ***přepsání*** všechny změny dat, která může provedení při testování aplikace. Pro testovací data v některé tabulky nemusí Chcete to tak proběhlo: v některých případech při změně dat při testování vaše změny zůstat po aktualizace databáze. V takovém případě budete chtít provést operace podmíněného insert: Vložit řádek pouze v případě, že ještě neexistuje. Metoda počáteční hodnoty pomocí obou přístupů.
 
-    První parametr předaný [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) metoda určuje vlastnost, která má použít pro kontrolu, pokud řádek již existuje. Pro testovací data studenty, který zadáte `LastName` vlastnost lze použít pro tento účel, protože každý příjmení v seznamu je jedinečný:
+    První parametr předaný [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) metoda určuje vlastnost, která má použít pro kontrolu, pokud řádek již existuje. Pro testovací data studenty, který zadáte `LastName` vlastnost lze použít pro tento účel, protože každý příjmení v seznamu je jedinečný:
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample12.cs)]
 
@@ -258,7 +258,7 @@ V tomto kurzu budete používat migrace pro nasazení, ale vaše `Seed` metoda b
 
     Další informace o `AddOrUpdate` metodu, najdete v části [postará s EF 4.3 AddOrUpdate metoda](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/) na blogu Julie Lerman.
 
-    Kód, který přidá `Enrollment` entity nepoužívá `AddOrUpdate` metoda. Zkontroluje, zda entita již existuje a vloží entitu, pokud neexistuje. Tento přístup se zachovat změny, které můžete provést úrovni registrace při spuštění migrace. Kód prochází každý člen `Enrollment` [seznamu](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) a pokud registrace nebyla nalezena v databázi, přidá zápisu do databáze. Při prvním aktualizaci databáze, databáze se bude prázdný, proto přidá každou registrace.
+    Kód, který přidá `Enrollment` entity nepoužívá `AddOrUpdate` metoda. Zkontroluje, zda entita již existuje a vloží entitu, pokud neexistuje. Tento přístup se zachovat změny, které můžete provést úrovni registrace při spuštění migrace. Kód prochází každý člen `Enrollment` [seznamu](https://msdn.microsoft.com/library/6sh2ey19.aspx) a pokud registrace nebyla nalezena v databázi, přidá zápisu do databáze. Při prvním aktualizaci databáze, databáze se bude prázdný, proto přidá každou registrace.
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample13.cs)]
 
@@ -343,7 +343,7 @@ Kvůli použití je minimální množství kódu, které jste měli k zápisu, a
 - Názvy vlastností entity se používají pro názvy sloupců.
 - Vlastnosti entity, které jsou s názvem `ID` nebo *classname* `ID` jsou rozpoznán jako vlastnosti primárního klíče.
 
-Už víte, že je možné přepsat konvence (například jste určili, že by neměl být pluralized názvy tabulek), a dozvíte další informace o konvence a postupu přepsání je v [vytváření další komplexní Model dat](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) kurzu dále v této série. Další informace najdete v tématu [první pravidla týkající se kódu](https://msdn.microsoft.com/en-us/data/jj679962).
+Už víte, že je možné přepsat konvence (například jste určili, že by neměl být pluralized názvy tabulek), a dozvíte další informace o konvence a postupu přepsání je v [vytváření další komplexní Model dat](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) kurzu dále v této série. Další informace najdete v tématu [první pravidla týkající se kódu](https://msdn.microsoft.com/data/jj679962).
 
 ## <a name="summary"></a>Souhrn
 
@@ -352,4 +352,4 @@ Nyní jste vytvořili jednoduchou aplikaci, která se používá k uložení a z
 Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
 >[!div class="step-by-step"]
-[Další](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
+[Next](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)

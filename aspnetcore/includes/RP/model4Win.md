@@ -16,8 +16,8 @@ Otevřete příkazové prostředí do adresáře projektu (adresář, který obs
 
 Pokud dojde k chybě:
   ```
-  The process cannot access the file
- 'RazorPagesMovie/bin/Debug/netcoreapp2.0/RazorPagesMovie.dll'
+  The process cannot access the file 
+ 'RazorPagesMovie/bin/Debug/netcoreapp2.0/RazorPagesMovie.dll' 
   because it is being used by another process.
   ```
 

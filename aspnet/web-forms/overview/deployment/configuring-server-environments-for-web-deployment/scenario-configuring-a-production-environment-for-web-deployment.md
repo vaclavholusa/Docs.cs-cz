@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: d5574ee353ff41205e9029e4aa5d139a5aa0e959
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cdd13f96ddf08ff86b01ef9de17ea82cf038ab28
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-production-environment-for-web-deployment"></a>Scénář: Konfigurace produkčním prostředí pro nasazení webu
 ====================
@@ -35,7 +35,7 @@ V provozním prostředí je konečným cílem pro webové aplikace nebo webu. Po
 - Na základě méně často než testu nebo pracovní nasazení se nasadí změny aplikace.
 
 > [!NOTE]
-> Škálování databáze nasazení více serverů je nad rámec tohoto kurzu. Další informace o této oblasti, přečtěte si [SQL Server Books Online](https://technet.microsoft.com/en-us/library/ms130214.aspx).
+> Škálování databáze nasazení více serverů je nad rámec tohoto kurzu. Další informace o této oblasti, přečtěte si [SQL Server Books Online](https://technet.microsoft.com/library/ms130214.aspx).
 
 
 Například v našem [kurz scénář](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), server Team Build obsahuje definice sestavení, které umožňují uživatelům sestavte řešení, obraťte se na správce a nasadit ji do pracovního prostředí v jediném kroku. Když je aplikace připravená k nasazení do produkčního prostředí, a to z důvodu omezení způsobené požadavky na zabezpečení a síťové infrastruktury, správce produkčního prostředí musíte ručně zkopírovat webového balíčku na produkční webový server a importovat ji pomocí Správce Internetové informační služby (IIS).

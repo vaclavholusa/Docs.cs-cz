@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /mobile/device-simulators
 msc.type: content
-ms.openlocfilehash: 48145b15b4983d6a143a8c53c9e6e8b4639da91e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a8293a5bff9ed73f177be2d9928d8d686c4f311d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="simulate-popular-mobile-devices-for-testing"></a>Simulovat oblíbených mobilních zařízení pro testování
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/10/2017
 | Zařízení nebo prohlížeče | Emulátoru / simulátoru |
 | --- | --- |
 | BrowserStack hostované prohlížeče virtualizace ![BrowserStack hostované prohlížeče virtualizace](device-simulators/_static/image1.png) | [Virtualizace prohlížeče hostované BrowserStack](http://browserstack.com) testování místní nebo produkční prostředí v libovolného prohlížeče na jakékoli platformě. Tunelové propojení mezi počítači a BrowserStack sítí můžete vytvořit vlastní hostovaný virtuální počítač. Ujistěte se, získat [BrowserStack rozšíření sady Visual Studio](https://visualstudiogallery.msdn.microsoft.com/2dfa32b1-3c47-439d-b1c5-9e28be18b81c) i více bezproblémové prostředí. |
-| Windows Phone | [Windows Phone SDK stáhne](https://dev.windowsphone.com/en-us/downloadsdk) Windows Phone Software Development Kit (SDK) obsahuje všechny funkce nástroje, které potřebujete k vývoji aplikace a hry pro Windows Phone |
+| Windows Phone | [Windows Phone SDK stáhne](https://dev.windowsphone.com/downloadsdk) Windows Phone Software Development Kit (SDK) obsahuje všechny funkce nástroje, které potřebujete k vývoji aplikace a hry pro Windows Phone |
 | zařízení iPhone nebo iPod nebo iPad | [Electric Plum](http://www.electricplum.com/studio.aspx) iPhone a iPad simulátorů pro systém Windows a také Responsive návrh nástroj. Můžete integrovat s možností "Vyhledat s.." VS 2012. |
 | Android | [Android SDK domovské stránky](https://developer.android.com/sdk) |
 | Prohlížeči Opera Mobile / Opera malé | Nejnovější verze: [Opera Developer Tools domácí](http://www.opera.com/developer/tools/) Opera malé 4.2: [simulátoru založené na jazyce Java Online](http://www.opera.com/mobile/demo/?ver=4) |

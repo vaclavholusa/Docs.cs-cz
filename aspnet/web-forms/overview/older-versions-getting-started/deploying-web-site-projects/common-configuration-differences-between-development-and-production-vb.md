@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3a98ee93df9ef7c94b3d0da81c095cccedadf05f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8de1acada8713abf5f92c1f13fa82a5d4ccc18be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="common-configuration-differences-between-development-and-production-vb"></a>Běžné konfigurace rozdíly mezi vývojovým týmem a produkční (VB)
 ====================
@@ -38,7 +38,7 @@ Při nasazení webové aplikace je důležité informace o správné konfiguraci
 
 `Web.config` Soubor obsahuje širokou konfigurační informace pro aplikace ASP.NET. Některé z těchto informací je stejný bez ohledu na prostředí. Například nastavení ověřování a autorizačních pravidel adres URL jako slovo v `Web.config` souboru `<authentication>` a `<authorization>` elementy jsou obvykle stejné bez ohledu na prostředí. Ale jiné informace o konfiguraci – například informace o externích zdrojů - se obvykle liší v závislosti na prostředí.
 
-Typickým příkladem informace o konfiguraci, která se liší podle prostředí jsou řetězce připojení databáze. Když webové aplikace komunikuje se serverem databáze, musíte nejprve vytvořit připojení, a který je dosaženo pomocí [připojovací řetězec](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string). I když je možné zakódovat připojovací řetězec databáze přímo do webové stránky nebo kód, který se připojuje k databázi, je nejvhodnější pro jeho umístění `Web.config`na [ `<connectionStrings>` element](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx) tak, aby připojovací řetězec informace jsou v jednom centralizovaného umístění. Často se do jiné databáze používá během vývoje, než se používá v produkčním prostředí; informace o připojovacím řetězci v důsledku toho musí být jedinečný pro každé prostředí.
+Typickým příkladem informace o konfiguraci, která se liší podle prostředí jsou řetězce připojení databáze. Když webové aplikace komunikuje se serverem databáze, musíte nejprve vytvořit připojení, a který je dosaženo pomocí [připojovací řetězec](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string). I když je možné zakódovat připojovací řetězec databáze přímo do webové stránky nebo kód, který se připojuje k databázi, je nejvhodnější pro jeho umístění `Web.config`na [ `<connectionStrings>` element](https://msdn.microsoft.com/library/bf7sd233.aspx) tak, aby připojovací řetězec informace jsou v jednom centralizovaného umístění. Často se do jiné databáze používá během vývoje, než se používá v produkčním prostředí; informace o připojovacím řetězci v důsledku toho musí být jedinečný pro každé prostředí.
 
 > [!NOTE]
 > Budoucí kurzy prozkoumejte nasazení aplikací datové od této chvíle jsme budete podrobně specifické údaje o tom, jak databázové připojovací řetězce jsou uložené v konfiguračním souboru.
@@ -48,7 +48,7 @@ O záměrné chování vývoj a produkční prostředí se podstatně liší. We
 
 ### <a name="configuration-settings-that-impact-performance"></a>Nastavení konfigurace s dopadem na výkon
 
-Když je navštívené stránky ASP.NET pro první (nebo při prvním po se změnila), je nutno jeho deklarativní převést na třídu a tato třída musí být zkompilovány. Pokud webová aplikace používá automatickou kompilaci pak třídy kódu stránky musí být zkompilovány příliš. Můžete nakonfigurovat širokou možnosti kompilace prostřednictvím `Web.config` souboru [ `<compilation>` element](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx).
+Když je navštívené stránky ASP.NET pro první (nebo při prvním po se změnila), je nutno jeho deklarativní převést na třídu a tato třída musí být zkompilovány. Pokud webová aplikace používá automatickou kompilaci pak třídy kódu stránky musí být zkompilovány příliš. Můžete nakonfigurovat širokou možnosti kompilace prostřednictvím `Web.config` souboru [ `<compilation>` element](https://msdn.microsoft.com/library/s10awwz0.aspx).
 
 Atribut ladění je jedním z nejdůležitějších atributů `<compilation>` elementu. Pokud `debug` atribut je nastaven na hodnotu true, pak kompilované sestavení obsahovat symboly ladění, které jsou potřeba při ladění aplikace v sadě Visual Studio. Ale symboly ladění zvětšete velikost sestavení a stanovit požadavky další paměť při spuštění kódu. Kromě toho, když `debug` atribut je nastaven na hodnotu true, žádný obsah vrácený `WebResource.axd` není v mezipaměti, což znamená, že pokaždé, když uživatel navštíví stránky, bude nutné znovu stáhnout statický obsah vrácený `WebResource.axd`.
 
@@ -68,7 +68,7 @@ Když dojde k neošetřené výjimce v aplikaci ASP.NET bubliny až do okamžiku
 - Zobrazí se zprávou výjimky podrobnosti, což zahrnuje informace o výjimku, která se právě vyvolala.
 - Zobrazí se vlastní chybovou stránku, která je stránka technologie ASP.NET, kterou vytvoříte, zobrazí jakékoli zprávy, které očekáváte.
 
-Co se stane při krátkodobém nezpracovanou výjimku odvíjí `Web.config` souboru [ `<customErrors>` části](https://msdn.microsoft.com/en-us/library/h0hfz6fc.aspx).
+Co se stane při krátkodobém nezpracovanou výjimku odvíjí `Web.config` souboru [ `<customErrors>` části](https://msdn.microsoft.com/library/h0hfz6fc.aspx).
 
 Při vývoji a testování aplikace pomáhá zobrazíte podrobnosti jakékoli výjimky v prohlížeči. Zobrazuje podrobnosti o výjimce v aplikaci na produkční je však představuje potenciální bezpečnostní riziko. Kromě toho je unflattering a umožňuje neprofesionálně webu. V ideálním případě by v případě neošetřené výjimky webové aplikace ve vývojovém prostředí se zobrazí podrobnosti výjimky při stejnou aplikaci v produkčním prostředí se zobrazí vlastní chybovou stránku.
 
@@ -76,7 +76,7 @@ Při vývoji a testování aplikace pomáhá zobrazíte podrobnosti jakékoli v�
 > Výchozí hodnota `<customErrors>` část nastavení zobrazuje podrobnosti o výjimce zprávy jenom v případě, že na stránce přístupu prostřednictvím místního hostitele a zobrazí se chybová stránka Obecné runtime jinak. Tato akce není ideální, ale je zajištění vědět, že výchozí chování není odhalit podrobnosti výjimky pro návštěvníky není místní. Prozkoumá budoucí kurz `<customErrors>` části podrobněji a ukazuje, jak mají vlastní chybovou stránku zobrazí, když dojde k chybě v produkčním prostředí.
 
 
-Jiné funkce ASP.NET, které jsou užitečné při vývoji je trasování. Trasování, pokud je povoleno, zaznamenává informace o jednotlivých příchozích požadavků a obsahuje speciální webové stránky, `Trace.axd`, k zobrazení nedávné podrobnosti požadavku. Můžete zapnout a konfigurovat trasování prostřednictvím [ `<trace>` element](https://msdn.microsoft.com/en-us/library/6915t83k.aspx) v `Web.config`.
+Jiné funkce ASP.NET, které jsou užitečné při vývoji je trasování. Trasování, pokud je povoleno, zaznamenává informace o jednotlivých příchozích požadavků a obsahuje speciální webové stránky, `Trace.axd`, k zobrazení nedávné podrobnosti požadavku. Můžete zapnout a konfigurovat trasování prostřednictvím [ `<trace>` element](https://msdn.microsoft.com/library/6915t83k.aspx) v `Web.config`.
 
 Pokud povolíte trasování Ujistěte se, že to je zakázané v produkčním prostředí. Informace o trasování zahrnuje soubory cookie, data relace a další potenciálně citlivé informace, a proto je důležité pro vypnutí trasování v produkčním prostředí. Dobrá zpráva je, že ve výchozím nastavení, trasování je zakázáno a `Trace.axd` souboru je k dispozici pouze prostřednictvím místního hostitele. Změníte-li tato výchozí nastavení v vývoj Ujistěte se, že jsou vypnuté zpět v produkčním prostředí.
 
@@ -110,7 +110,7 @@ informace o konfiguraci, která se zkopírují do tohoto adresáře následujíc
 
 Nasazení webové aplikace sestavení webového projektu nasazení a poté zkopírujte soubory ze složky projektu výstup do produkčního prostředí.
 
-Další informace o použití nasazení webového projektu podívejte se na [v tomto článku webové projekty nasazení](https://msdn.microsoft.com/en-us/magazine/cc163448.aspx) z vydání duben 2007 [Časopis MSDN](https://msdn.microsoft.com/en-us/magazine/default.aspx), nebo se podívejte na odkazy v části Další čtení na konce tohoto kurzu.
+Další informace o použití nasazení webového projektu podívejte se na [v tomto článku webové projekty nasazení](https://msdn.microsoft.com/magazine/cc163448.aspx) z vydání duben 2007 [Časopis MSDN](https://msdn.microsoft.com/magazine/default.aspx), nebo se podívejte na odkazy v části Další čtení na konce tohoto kurzu.
 
 > [!NOTE]
 > Nasazení webového projektu nelze použít s Visual Web Developer, protože webový projekt nasazení je implementovaný jako Visual Studio Add-In a Visual Studio Express Edition (včetně Visual Web Developer) nepodporují doplňků.
@@ -134,7 +134,7 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Nastavení klíče konfigurace při nasazení databází](http://aspnet.4guysfromrolla.com/articles/121008-1.aspx)
 - [Visual Studio 2008 nasazení projekty stažením z webu](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) | [Visual Studio 2005 nasazení projekty stažením z webu](https://download.microsoft.com/download/9/4/9/9496adc4-574e-4043-bb70-bc841e27f13c/WebDeploymentSetup.msi)
 - [Projekty nasazení webu 2008 VS](https://weblogs.asp.net/scottgu/archive/2005/11/06/429723.aspx) | [VS 2008 webového projektu podpora nasazení vydání](https://weblogs.asp.net/scottgu/archive/2008/01/28/vs-2008-web-deployment-project-support-released.aspx)
-- [Webové projekty nasazení](https://msdn.microsoft.com/en-us/magazine/cc163448.aspx)
+- [Projekty nasazení webu](https://msdn.microsoft.com/magazine/cc163448.aspx)
 
 >[!div class="step-by-step"]
 [Předchozí](deploying-your-site-using-visual-studio-vb.md)

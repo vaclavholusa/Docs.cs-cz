@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 5fa7b6227eb88aa6766ab8776bc8a3cc1111b942
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 548baaaa06980fb793c079b66b6edc34422eb579
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>Potvrzení účtu a heslo pro obnovení s ASP.NET Identity (C#)
 ====================
@@ -78,7 +78,7 @@ Začněte tím, že instalace a spuštění [Visual Studio Express 2013 pro Web]
 
 1. Vytvořte nový projekt ASP.NET Web a vyberte šablonu MVC. Webové formuláře také podporuje ASP.NET Identity, takže můžete sledovat v aplikaci web forms podobným způsobem.
 2. Ponechte výchozí ověřování jako **jednotlivé uživatelské účty**.
-3. Spuštění aplikace, klikněte na tlačítko **zaregistrovat** propojit a zaregistrovat uživatele. V tomto okamžiku je pouze ověření na e-mailu [[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) atribut.
+3. Spuštění aplikace, klikněte na tlačítko **zaregistrovat** propojit a zaregistrovat uživatele. V tomto okamžiku je pouze ověření na e-mailu [[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) atribut.
 4. V Průzkumníku serveru, přejděte na **Data Connections\DefaultConnection\Tables\AspNetUsers**, klikněte pravým tlačítkem a vyberte **otevřete definici tabulky**.
 
     Na následujícím obrázku `AspNetUsers` schématu:
@@ -94,7 +94,7 @@ Je výchozí úložiště dat pro ASP.NET Identity Entity Framework, ale můžet
 
 [Třídy pro spuštění OWIN](../../../aspnet/overview/owin-and-katana/owin-startup-class-detection.md) ( *Startup.cs* ) je volána, když se aplikace spustí a vyvolá `ConfigureAuth` metoda v *aplikace\_Start\Startup.Auth.cs*, která nakonfiguruje kanál OWIN a inicializuje ASP.NET Identity. Zkontrolujte `ConfigureAuth` metoda. Každý `CreatePerOwinContext` volání zaregistruje zpětné volání (uložené v `OwinContext`), bude vyvolána jedenkrát za požadavek na vytvoření instance zadaného typu. Můžete nastavit bod přerušení v konstruktoru a `Create` metoda každého typu (`ApplicationDbContext, ApplicationUserManager`) a ověřte, se nazývají na každý požadavek. Instanci `ApplicationDbContext` a `ApplicationUserManager` je uložená v kontextu OWIN, který je přístupný v celé aplikaci. ASP.NET Identity zachytí do kanálu OWIN prostřednictvím middlewaru souboru cookie. Další informace najdete v tématu [za správu životního cyklu požadavek pro objekt UserManager třídu v identitě ASP.NET Identity](https://blogs.msdn.com/b/webdev/archive/2014/02/12/per-request-lifetime-management-for-usermanager-class-in-asp-net-identity.aspx).
 
-Když změníte profil zabezpečení, nové razítko zabezpečení se generuje a uloží do `SecurityStamp` pole z *AspNetUsers* tabulky. Poznámka: `SecurityStamp` pole se liší od zabezpečení souboru cookie. Soubor cookie zabezpečení nejsou uloženy v `AspNetUsers` tabulky (nebo kdekoli jinde v databázi Identity). Token zabezpečení souboru cookie je podepsaný pomocí [DPAPI](https://msdn.microsoft.com/en-us/library/system.security.cryptography.protecteddata.aspx) a pomocí `UserId, SecurityStamp` a informace o čas vypršení platnosti.
+Když změníte profil zabezpečení, nové razítko zabezpečení se generuje a uloží do `SecurityStamp` pole z *AspNetUsers* tabulky. Poznámka: `SecurityStamp` pole se liší od zabezpečení souboru cookie. Soubor cookie zabezpečení nejsou uloženy v `AspNetUsers` tabulky (nebo kdekoli jinde v databázi Identity). Token zabezpečení souboru cookie je podepsaný pomocí [DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx) a pomocí `UserId, SecurityStamp` a informace o čas vypršení platnosti.
 
 Middlewaru souboru cookie zkontroluje souborů cookie u každého požadavku. `SecurityStampValidator` Metoda v `Startup` třída přístupů do databáze a zkontroluje razítko zabezpečení pravidelně jako zadaný `validateInterval`. Tato situace nastane pouze každých 30 minut (v našem ukázce) není-li změnit váš profil zabezpečení. Chcete-li minimalizovat služebních cest do databáze byla zvolena intervalu 30 minut. Najdete v části Moje [dvoufaktorové ověřování kurzu](index.md) další podrobnosti.
 
@@ -117,7 +117,7 @@ Zkontrolujte `ApplicationUserManager` třídy, která obsahuje informace o ident
 - Dvoufaktorové ověřování (2FA). V jiné kurzu budete zahrnovat 2FA a SMS.
 - Zapojování e-mailu a služby SMS. (I zaměříme SMS v jiné kurzu).
 
-`ApplicationUserManager` Třída odvozená z obecná `UserManager<ApplicationUser>` třídy. `ApplicationUser`odvozená z [IdentityUser](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework.identityuser.aspx). `IdentityUser`odvozená z obecná `IdentityUser` třídy:
+`ApplicationUserManager` Třída odvozená z obecná `UserManager<ApplicationUser>` třídy. `ApplicationUser`odvozená z [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx). `IdentityUser`odvozená z obecná `IdentityUser` třídy:
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample1.cs)]
 
@@ -131,7 +131,7 @@ Obecné argumenty na `IUser` umožňují odvození třídy pomocí různých typ
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample2.cs?highlight=8-9)]
 
-Generuje zvýrazněný výše [ClaimsIdentity](https://msdn.microsoft.com/en-us/library/system.security.claims.claimsidentity.aspx). ASP.NET Identity a ověřování souborů Cookie OWIN jsou založené na deklaracích, proto rozhraní vyžaduje aplikaci generovat `ClaimsIdentity` pro uživatele. `ClaimsIdentity`obsahuje informace o všech deklarací identity pro uživatele, jako je například uživatelské jméno, stáří a jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.
+Generuje zvýrazněný výše [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). ASP.NET Identity a ověřování souborů Cookie OWIN jsou založené na deklaracích, proto rozhraní vyžaduje aplikaci generovat `ClaimsIdentity` pro uživatele. `ClaimsIdentity`obsahuje informace o všech deklarací identity pro uživatele, jako je například uživatelské jméno, stáří a jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.
 
 OWIN `AuthenticationManager.SignIn` metoda předá `ClaimsIdentity` a přihlášení uživatele:
 
@@ -179,13 +179,13 @@ Když se uživatel zaregistruje místní účet, `HTTP Post Register` metoda je 
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample6.cs)]
 
-Výše uvedený kód používá k vytvoření nového uživatelského účtu pomocí e-mailu a heslo zadané data modelu. Pokud e-mailový alias v úložišti dat, vytvoření účtu se nezdaří a formulář se zobrazí znovu. `GenerateEmailConfirmationTokenAsync` Metoda vytvoří zabezpečené potvrzovací token a ukládá je v úložišti dat ASP.NET Identity. [Url.Action](https://msdn.microsoft.com/en-us/library/dd505232(v=vs.118).aspx) metoda vytvoří odkaz obsahující `UserId` a potvrzovací token. Tento odkaz se pak e-mailem uživateli, může uživatel kliknutím na odkaz v jejich e-mailovou aplikaci a potvrďte svůj účet.
+Výše uvedený kód používá k vytvoření nového uživatelského účtu pomocí e-mailu a heslo zadané data modelu. Pokud e-mailový alias v úložišti dat, vytvoření účtu se nezdaří a formulář se zobrazí znovu. `GenerateEmailConfirmationTokenAsync` Metoda vytvoří zabezpečené potvrzovací token a ukládá je v úložišti dat ASP.NET Identity. [Url.Action](https://msdn.microsoft.com/library/dd505232(v=vs.118).aspx) metoda vytvoří odkaz obsahující `UserId` a potvrzovací token. Tento odkaz se pak e-mailem uživateli, může uživatel kliknutím na odkaz v jejich e-mailovou aplikaci a potvrďte svůj účet.
 
 <a id="email"></a>
 
 ## <a name="set-up-email-confirmation"></a>Nastavení e-mailu potvrzení
 
-Přejděte na [sendgrid vám umožňuje Azure registrační stránku](https://azure.microsoft.com/en-us/gallery/store/sendgrid/sendgrid-azure/) a zaregistrovat účet zdarma. Přidejte kód podobná následující příkaz pro konfiguraci sendgrid vám umožňuje:
+Přejděte na [sendgrid vám umožňuje Azure registrační stránku](https://azure.microsoft.com/gallery/store/sendgrid/sendgrid-azure/) a zaregistrovat účet zdarma. Přidejte kód podobná následující příkaz pro konfiguraci sendgrid vám umožňuje:
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample7.cs?highlight=5)]
 
@@ -193,7 +193,7 @@ Přejděte na [sendgrid vám umožňuje Azure registrační stránku](https://az
 > E-mailoví klienti často přijímají pouze textové zprávy (žádné HTML). Měl by poskytnout zprávy v text nebo HTML. Ve výše uvedené ukázkové sendgrid vám umožňuje to provádí pomocí `myMessage.Text` a `myMessage.Html` výše uvedeném kódu.
 
 
-Následující kód ukazuje, jak odeslat e-mailu pomocí [poštovní zpráva](https://msdn.microsoft.com/en-us/library/system.net.mail.mailmessage.aspx) třídy kde `message.Body` vrátí jenom propojení.
+Následující kód ukazuje, jak odeslat e-mailu pomocí [poštovní zpráva](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) třídy kde `message.Body` vrátí jenom propojení.
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample8.cs)]
 
@@ -238,7 +238,7 @@ Následující kód ukazuje metodu potvrzení e-mailu:
 
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Přehled zprostředkovatelů vlastní úložiště pro identitu ASP.NET](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [Přehled poskytovatelů vlastního úložiště pro ASP.NET Identity](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [Aplikace MVC 5 se službou Facebook, Twitter, LinkedIn a přihlašování Google OAuth2](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) také ukazuje, jak přidat informace o profilu do tabulky uživatelů.
 - [ASP.NET MVC a Identity 2.0: Principy Základy](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx) podle Atten Jan.
 - [Úvod do ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)

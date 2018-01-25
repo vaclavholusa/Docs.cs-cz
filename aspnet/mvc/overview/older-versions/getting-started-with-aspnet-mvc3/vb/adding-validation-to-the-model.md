@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: d36ce4e2735bdc73e8731eae27346edec47998cf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a58b4a4893fca66800c012bebae4a8bbfedf7a6a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-to-the-model-vb"></a>Přidání ověřování do modelu (VB)
 ====================
@@ -47,13 +47,13 @@ Podíváme, jak můžete využít výhod tato podpora ověřování v aplikaci f
 
 Budete začněte tím, že některé logiku ověření pro přidání `Movie` třídy.
 
-Otevřete *Movie.vb* souboru. Přidat `Imports` příkaz v horní části souboru, který odkazuje [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) obor názvů:
+Otevřete *Movie.vb* souboru. Přidat `Imports` příkaz v horní části souboru, který odkazuje [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů:
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample1.vb)]
 
 Obor názvů je součástí rozhraní .NET Framework. Poskytuje integrovanou sadu atributů ověření, které můžete provést deklarativně všechny třídy nebo vlastnost.
 
-Nyní aktualizovat `Movie` třída využít předdefinované [ `Required` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), a [ `Range` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributů ověření . Použijte následující kód jako příklad umístění pro použití atributy.
+Nyní aktualizovat `Movie` třída využít předdefinované [ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), a [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributů ověření . Použijte následující kód jako příklad umístění pro použití atributy.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample2.vb)]
 
@@ -101,11 +101,11 @@ Pokud chcete později změnit logiku ověření, můžete tak učinit na jednom 
 
 ## <a name="adding-formatting-to-the-movie-model"></a>Přidání formátování ke film modelu
 
-Otevřete *Movie.vb* souboru. [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) Obor názvů poskytuje atributy formátování kromě integrovanou sadu atributů ověření. Se použije pouze [ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut a [ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) Výčtová hodnota, datum vydání a pole cena. Následující kód ukazuje `ReleaseDate` a `Price` vlastnosti s příslušnou [ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut.
+Otevřete *Movie.vb* souboru. [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) Obor názvů poskytuje atributy formátování kromě integrovanou sadu atributů ověření. Se použije pouze [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut a [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) Výčtová hodnota, datum vydání a pole cena. Následující kód ukazuje `ReleaseDate` a `Price` vlastnosti s příslušnou [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample7.vb)]
 
-Alternativně můžete explicitně nastavit [ `DataFormatString` ](https://msdn.microsoft.com/en-us/library/system.string.format.aspx) hodnotu. Následující kód ukazuje vlastnost datum vydání s řetězec formátu datum (konkrétně, "d"). To byste použili k určení, že nechcete, aby čas jako součást datum vydání.
+Alternativně můžete explicitně nastavit [ `DataFormatString` ](https://msdn.microsoft.com/library/system.string.format.aspx) hodnotu. Následující kód ukazuje vlastnost datum vydání s řetězec formátu datum (konkrétně, "d"). To byste použili k určení, že nechcete, aby čas jako součást datum vydání.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample8.vb)]
 

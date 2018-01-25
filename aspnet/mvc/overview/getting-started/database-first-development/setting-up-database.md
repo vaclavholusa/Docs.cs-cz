@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: 9ecde847841eb727a0440f0483c69d1df6757815
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb979333131cc6ac87fd640bf7c96931054a1814
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Začínáme s Entity Framework 6 Database First pomocí MVC 5
 ====================
@@ -37,7 +37,7 @@ Toto téma nabízí situaci, kdy máte databázi a chcete pro generování kódu
 
 Příklad úvodní Code First vývoj naleznete v části [Začínáme s ASP.NET MVC 5](../introduction/getting-started.md). Pokročilejší příklad najdete v tématu [vytváření datového modelu Entity Framework pro aplikace ASP.NET MVC 4](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
-Informace o výběru přístupem Entity Framework, najdete v části [Entity Framework vývoj přístupy](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+Informace o výběru přístupem Entity Framework, najdete v části [Entity Framework vývoj přístupy](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -49,7 +49,7 @@ Aby napodobovaly prostředí, že máte existující databázi, nejprve vytvoři
 
 V tomto kurzu byla vyvinuta pomocí LocalDB Visual Studio 2013 nebo Visual Studio Express 2013 pro Web. Můžete použít existující databázový server místo LocalDB, ale v závislosti na vaší verzi sady Visual Studio a váš typ databáze, všechny nástroje data v sadě Visual Studio nemusí být podporován. Pokud nejsou k dispozici pro vaši databázi nástroje, musíte provést některé z kroků specifické pro databáze v sadě management pro vaši databázi.
 
-Pokud máte potíže s databázové nástroje ve vaší verzi sady Visual Studio, ujistěte se, jestli že je nainstalovaná nejnovější verze nástroje databáze. Informace o aktualizaci nebo instalaci databáze nástroje najdete v tématu [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/en-us/data/hh297027).
+Pokud máte potíže s databázové nástroje ve vaší verzi sady Visual Studio, ujistěte se, jestli že je nainstalovaná nejnovější verze nástroje databáze. Informace o aktualizaci nebo instalaci databáze nástroje najdete v tématu [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/data/hh297027).
 
 Spusťte sadu Visual Studio a vytvořte **projekt databáze serveru SQL**. Název projektu **ContosoUniversityData**.
 
@@ -112,4 +112,4 @@ Zobrazí se upravitelné zobrazení dat v tabulce.
 Vaše databáze je nyní nastavení a naplněný daty. V dalším kurzu vytvoříte webovou aplikaci pro databázi.
 
 >[!div class="step-by-step"]
-[Další](creating-the-web-application.md)
+[Next](creating-the-web-application.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 8207df79c1e915b33a0ba095d917a6dc69550173
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2056e769edf972cba830b31cf37f6418148ca73
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>Zabezpečení webového rozhraní API s jednotlivých účtů a místní přihlášení v rozhraní ASP.NET Web API 2.2
 ====================
@@ -30,7 +30,7 @@ podle [Wasson Jan](https://github.com/MikeWasson)
 > 
 > 
 > - [Visual Studio 2013 Update 3](https://www.microsoft.com/visualstudio/eng/2013-downloads)
-> - [Webové rozhraní API 2.2](../releases/whats-new-in-aspnet-web-api-22.md)
+> - [Web API 2.2](../releases/whats-new-in-aspnet-web-api-22.md)
 > - [ASP.NET Identity 2.1](../../../identity/index.md)
 
 
@@ -204,8 +204,8 @@ Zde jsou hlavní aplikace třídy, které implementují tyto funkce:
 
 - `AccountController`. Obsahuje koncový bod webové rozhraní API pro správu uživatelských účtů. `Register` Akce je pouze ten, který jsme použili v tomto kurzu. Další metody pro třídu podporují resetování hesla, sociálních přihlášení a další funkce.
 - `ApplicationUser`, definované v /Models/IdentityModels.cs. Tato třída je model EF pro uživatelské účty v databázi členství.
-- `ApplicationUserManager`, definované v /App\_Start/IdentityConfig.cs Tato třída odvozená z [objekt UserManager](https://msdn.microsoft.com/en-us/library/dn613290.aspx) a provádí operace v uživatelských účtech, jako je například vytváření nového uživatele, ověření hesla a tak dále a automaticky přetrvává. změny databáze.
-- `ApplicationOAuthProvider`. Tento objekt zapojení do middlewaru OWIN a zpracovává událostí vyvolaných middlewarem. Je odvozena z [OAuthAuthorizationServerProvider](https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx).
+- `ApplicationUserManager`, definované v /App\_Start/IdentityConfig.cs Tato třída odvozená z [objekt UserManager](https://msdn.microsoft.com/library/dn613290.aspx) a provádí operace v uživatelských účtech, jako je například vytváření nového uživatele, ověření hesla a tak dále a automaticky přetrvává. změny databáze.
+- `ApplicationOAuthProvider`. Tento objekt zapojení do middlewaru OWIN a zpracovává událostí vyvolaných middlewarem. Je odvozena z [OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx).
 
 ![](individual-accounts-in-web-api/_static/image14.png)
 

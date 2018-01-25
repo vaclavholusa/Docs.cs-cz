@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-grunt
-ms.openlocfilehash: 959a3e61af9834b9364e9fe4bf65a04962e28969
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 527373829754757e52ab84b64e04702d649e9062
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="using-grunt-in-aspnet-core"></a>Použití Grunt v ASP.NET Core 
 
@@ -94,14 +94,14 @@ V dalším kroku nakonfigurujte NPM ke stažení grunt a grunt úlohy.
 
 1. V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **Přidat > Nová položka** v místní nabídce. Vyberte **konfigurační soubor NPM** položky, ponechte výchozí název *package.json*a klikněte na tlačítko **přidat** tlačítko.
 
-2. V *package.json* souboru uvnitř `devDependencies` objektu složené závorky, zadejte "grunt". Vyberte `grunt` z Intellisense seznamu a stiskněte klávesu Enter. Visual Studio bude quote grunt název balíčku a přidat dvojtečkou. Napravo od dvojtečkou vyberte nejnovější stabilní verze balíčku z horní části seznamu Intellisense (stiskněte `Ctrl-Space` Pokud není uvedené Intellisense).
+2. V *package.json* souboru uvnitř `devDependencies` objektu složené závorky, zadejte "grunt". Vyberte `grunt` z Intellisense seznamu a stiskněte klávesu Enter. Visual Studio bude quote grunt název balíčku a přidat dvojtečkou. Napravo od dvojtečkou vyberte nejnovější stabilní verze balíčku z horní části seznamu Intellisense (stiskněte `Ctrl-Space` nezobrazí Intellisense).
 
     ![grun Intellisense](using-grunt/_static/devdependencies-grunt.png)
     
     > [!NOTE]
     > Používá NPM [sémantické verze](http://semver.org/) k uspořádání závislosti. Sémantické verze, také známé jako SemVer identifikuje balíčky s schématu číslování <major>.<minor>. <patch>. IntelliSense zjednodušuje tím, že zobrazuje pouze několik běžné volby sémantické verze. Horní položku v seznamu Intellisense (0.4.5 v předchozím příkladu), je považován za nejnovější stabilní verze balíčku. Symbol šipka nahoru (^) odpovídá nejnovější hlavní verzi a znak tilda (~) odpovídá nejnovější dílčí verzi. Najdete v článku [NPM semver verze analyzátor odkazu](https://www.npmjs.com/package/semver) jako vodítko k úplné expressivity, která poskytuje SemVer.
 
-3. Přidat další závislosti načíst grunt-contrib -\* balíčky pro *čisté*, *jshint*, *concat*, *uglify*a *sledovat* jak je znázorněno v následujícím příkladu. Verze nemusíte odpovídaly příkladu.
+3. Přidat další závislosti načíst grunt-contrib -\* balíčky pro *čisté*, *jshint*, *concat*, *uglify*a *sledovat* jak je znázorněno v následujícím příkladu. Verze nepotřebují tak, aby odpovídaly v příkladu.
 
     ```json
     "devDependencies": {

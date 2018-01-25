@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 556b90f5e29f30756a4bd3b16be9608011558c4d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad578d5d5fb1ef0ac63d3cbde3f307535ea3d98c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-vb"></a>Vytváření Data Access Layer (VB)
 ====================
@@ -89,7 +89,7 @@ Například objektu DataReader a datové sady (ve výchozím nastavení) jsou ob
 Pokud chcete vrátit objektů se silným typem, vývojáři můžete vytvořit své vlastní objekty vlastní obchodní nebo použít typové datové sady. Objekt obchodní je implementoval vývojář jako představuje třídu, jejíž vlastnosti obvykle podle sloupce základní tabulky databáze objekt firmy. Typové datové sady je třída vygenerovány pro vás Visual Studio na základě schématu databáze a jejíž členové jsou silného typu podle tohoto schématu. Datová sada zadali, samotné se skládá z třídy, které rozšiřují třídy sady dat ADO.NET, DataTable a DataRow. Kromě silného typu DataTables typové datové sady teď také zahrnovat TableAdapters, které jsou tříd pomocí metody pro naplnění DataTables datovou sadu a šíření úpravy v rámci DataTables zpět do databáze.
 
 > [!NOTE]
-> Další informace o výhody a nevýhody použití typové datové sady a vlastní obchodní objekty, najdete v části [navrhování komponenty datové vrstvy a předávání dat prostřednictvím vrstvy](https://msdn.microsoft.com/en-us/library/ms978496.aspx).
+> Další informace o výhody a nevýhody použití typové datové sady a vlastní obchodní objekty, najdete v části [navrhování komponenty datové vrstvy a předávání dat prostřednictvím vrstvy](https://msdn.microsoft.com/library/ms978496.aspx).
 
 
 Pro tyto kurzy architekturu použijeme silného typu datové sady. Obrázek 3 znázorňuje pracovní postup mezi různých úrovní aplikaci, která používá typové datové sady.
@@ -293,7 +293,7 @@ Existují dva vzory běžně používá pro vkládání, aktualizaci a odstraňo
 **Obrázek 21**: každý vložení, aktualizace a odstranění požadavku posílá databáze okamžitě ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-vb/_static/image57.png))
 
 
-Další vzorek, který označovány jako dávky aktualizace vzor, je aktualizovat celou datovou sadu, DataTable nebo kolekce DataRows ve volání jednu metodu. Pomocí tohoto vzoru vývojář odstraní, vloží, upraví DataRows v DataTable a pak předá tyto DataRows nebo DataTable do metodu aktualizace. Tato metoda pak vytvoří výčet DataRows předaná, určuje, zda budou jste byl změněn, přidat nebo odstraněn (prostřednictvím DataRow [RowState vlastnost](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) hodnotu) a vydá požadavek příslušné databáze pro každý záznam.
+Další vzorek, který označovány jako dávky aktualizace vzor, je aktualizovat celou datovou sadu, DataTable nebo kolekce DataRows ve volání jednu metodu. Pomocí tohoto vzoru vývojář odstraní, vloží, upraví DataRows v DataTable a pak předá tyto DataRows nebo DataTable do metodu aktualizace. Tato metoda pak vytvoří výčet DataRows předaná, určuje, zda budou jste byl změněn, přidat nebo odstraněn (prostřednictvím DataRow [RowState vlastnost](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) hodnotu) a vydá požadavek příslušné databáze pro každý záznam.
 
 
 [![Všechny změny jsou synchronizovány s databází, když je volána metoda aktualizace](creating-a-data-access-layer-vb/_static/image59.png)](creating-a-data-access-layer-vb/_static/image58.png)
@@ -339,7 +339,7 @@ Pokud chcete vytvořit vlastní metodu, vrátíte do návrháře datovou sadu. K
 **Obrázek 25**: vytvoření metody, chcete-li přidat nový řádek, abyste `Products` tabulky ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-vb/_static/image69.png))
 
 
-Na další obrazovce `InsertCommand`na `CommandText` se zobrazí. Posílení tento dotaz přidáním `SELECT SCOPE_IDENTITY()` na konci tohoto dotazu, který vrátí poslední hodnotu identity, které jsou vloženy do `IDENTITY` sloupec ve stejném oboru. (Najdete v článku [technické dokumentace](https://msdn.microsoft.com/en-us/library/ms190315.aspx) Další informace o `SCOPE_IDENTITY()` a důvody, budete pravděpodobně chtít [použít OBOR\_IDENTITY() lieu z @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Ujistěte se, že se vám stát `INSERT` příkaz s středníkem před přidáním `SELECT` příkaz.
+Na další obrazovce `InsertCommand`na `CommandText` se zobrazí. Posílení tento dotaz přidáním `SELECT SCOPE_IDENTITY()` na konci tohoto dotazu, který vrátí poslední hodnotu identity, které jsou vloženy do `IDENTITY` sloupec ve stejném oboru. (Najdete v článku [technické dokumentace](https://msdn.microsoft.com/library/ms190315.aspx) Další informace o `SCOPE_IDENTITY()` a důvody, budete pravděpodobně chtít [použít OBOR\_IDENTITY() lieu z @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Ujistěte se, že se vám stát `INSERT` příkaz s středníkem před přidáním `SELECT` příkaz.
 
 
 [![Posílení dotaz vrátil hodnoty SCOPE_IDENTITY()](creating-a-data-access-layer-vb/_static/image71.png)](creating-a-data-access-layer-vb/_static/image70.png)
@@ -520,18 +520,18 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Vytváření DAL, použitím silného typu TableAdapters a DataTables v VS 2005 a technologii ASP.NET 2.0](https://weblogs.asp.net/scottgu/435498)
-- [Navrhování komponenty datové vrstvy a předávání dat prostřednictvím vrstev](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [Navrhování komponenty datové vrstvy a předávání dat prostřednictvím vrstev](https://msdn.microsoft.com/library/ms978496.aspx)
 - [Sestavení Data Access Layer pomocí návrháře DataSet Visual Studio 2005](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [Šifrování informací o konfiguraci technologie ASP.NET 2.0 aplikace](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [TableAdapter – přehled](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [Práce s typové datové sady](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [TableAdapter – přehled](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [Práce s typové datové sady](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [Pomocí přístup k datům silného typu v sadě Visual Studio 2005 a technologií ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [Postup rozšíření metod TableAdapter](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [Načítání skalární dat z uložené procedury](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Video školení na témata, které jsou obsažené v tomto kurzu
 
-- [Datové vrstvy přístupu v aplikacích ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
+- [Vrstvy přístupu k datům v aplikacích ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
 - [Jak ručně vytvořit vazbu datovou sadu Datagrid](../../../videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid.md)
 - [Jak pracovat s datových sad a filtry z aplikace ASP](../../../videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 

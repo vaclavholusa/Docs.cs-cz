@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4f49c201c71ca8f98d7e15b29f1df9a6bcd1b12e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eb462a0e8ce88037855ea12d00c1afc0419fa04e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>Při přidávání nového záznamu (VB) včetně řešením nahrávání souborů
 ====================
@@ -176,7 +176,7 @@ Pokud uživatel odešle typ nesprávný soubor, je potřeba zrušit úlohy inser
 
 ## <a name="step-6-saving-the-uploaded-brochure-to-the-web-server-s-file-system"></a>Krok 6: Ukládání nahrané – příručka k systému souborů webového serveru s
 
-Když uživatel zadá hodnoty pro novou kategorii a kliknutím na tlačítko Vložit, proběhne zpětné volání a kterou se vkládání pracovního postupu. První, DetailsView s [ `ItemInserting` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx) aktivuje. Další, ObjectDataSource s `Insert()` metoda je volána, výsledkem nový záznam, který se přidává do `Categories` tabulky. Potom DetailsView s [ `ItemInserted` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx) aktivuje.
+Když uživatel zadá hodnoty pro novou kategorii a kliknutím na tlačítko Vložit, proběhne zpětné volání a kterou se vkládání pracovního postupu. První, DetailsView s [ `ItemInserting` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx) aktivuje. Další, ObjectDataSource s `Insert()` metoda je volána, výsledkem nový záznam, který se přidává do `Categories` tabulky. Potom DetailsView s [ `ItemInserted` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx) aktivuje.
 
 Před ObjectDataSource s `Insert()` metoda je volána, jsme musíte nejdříve se ujistěte, typy souborů odpovídající byly odeslaný uživatele a pak uložte – příručka PDF do systému souborů webového serveru s. Vytvoření obslužné rutiny události pro DetailsView s `ItemInserting` událostí a přidejte následující kód:
 
@@ -191,7 +191,7 @@ Obslužné rutiny události spustí odkazem `BrochureUpload` řízení odesílá
 
 Jak je popsáno v [nahrávání souborů](uploading-files-vb.md) kurzu, musí dát pozor, při ukládání souborů do systému souborů tak, že jeden uživatel s nahrávání nepřepisuje jiné s. V tomto kurzu jsme se pokusí použít stejný název jako nahrávaný soubor. Pokud již existuje soubor v `~/Brochures` directory tohoto souboru stejný název, ale nemůžeme budete připojit číslo na konci dokud nebude nalezen jedinečný název. Například, pokud uživatel odesílá informace o soubor s názvem `Meats.pdf`, ale již existuje soubor s názvem `Meats.pdf` v `~/Brochures` složky, Změníme názvu uloženého souboru `Meats-1.pdf`. Pokud existuje, pokusíme se `Meats-2.pdf`a tak dále, dokud nebude nalezen jedinečný název souboru.
 
-Následující kód používá [ `File.Exists(path)` metoda](https://msdn.microsoft.com/en-us/library/system.io.file.exists.aspx) k určení, pokud soubor se zadaným názvem již existuje. Pokud ano, potrvá pokusit nové názvy souborů – příručka, dokud nebude nalezen žádný konflikt.
+Následující kód používá [ `File.Exists(path)` metoda](https://msdn.microsoft.com/library/system.io.file.exists.aspx) k určení, pokud soubor se zadaným názvem již existuje. Pokud ano, potrvá pokusit nové názvy souborů – příručka, dokud nebude nalezen žádný konflikt.
 
 
 [!code-vb[Main](including-a-file-upload-option-when-adding-a-new-record-vb/samples/sample7.vb)]

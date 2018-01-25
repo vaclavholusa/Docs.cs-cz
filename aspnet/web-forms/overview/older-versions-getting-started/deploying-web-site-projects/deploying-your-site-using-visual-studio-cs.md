@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15d3d2c70346abad5addab5c29d4af9f238b39da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c0c32c3dd24be5edfea3e17695753973f3fad30a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-your-site-using-visual-studio-c"></a>Nasazení webu pomocí sady Visual Studio (C#)
 ====================
@@ -33,7 +33,7 @@ Předchozí kurzu podívat, jak nasadit jednoduchou webovou aplikaci ASP.NET ke 
 
 
 > [!NOTE]
-> Zahrnout další týkající se nasazení nástroje Visual Studio nabízí [webové projekty instalace](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx) a [webové projekty nasazení](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) Add-In. Webové projekty instalace balíčku obsahu webu a informace o konfiguraci do jednoho souboru MSI. Tato možnost je velmi užitečné pro weby, které jsou nasazeny v rámci sítě intranet nebo pro společnosti, které prodeje předem zabalené webové aplikace, které zákazníkům nainstalovat na své vlastní webové servery. Doplněk projekty nasazení webové je, že že Visual Studio Add-In usnadňující zadání konfigurace rozdíly mezi sestavení pro vývojové prostředí a pro produkční prostředí. Webové projekty instalace nejsou popisovaná v této kurz; Webové projekty nasazení jsou shrnuty v [ *běžné konfigurace rozdíly mezi vývoj a produkční* ](common-configuration-differences-between-development-and-production-cs.md) kurzu.
+> Zahrnout další týkající se nasazení nástroje Visual Studio nabízí [webové projekty instalace](https://msdn.microsoft.com/library/wx3b589t.aspx) a [webové projekty nasazení](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) Add-In. Webové projekty instalace balíčku obsahu webu a informace o konfiguraci do jednoho souboru MSI. Tato možnost je velmi užitečné pro weby, které jsou nasazeny v rámci sítě intranet nebo pro společnosti, které prodeje předem zabalené webové aplikace, které zákazníkům nainstalovat na své vlastní webové servery. Doplněk projekty nasazení webové je, že že Visual Studio Add-In usnadňující zadání konfigurace rozdíly mezi sestavení pro vývojové prostředí a pro produkční prostředí. Webové projekty instalace nejsou popisovaná v této kurz; Webové projekty nasazení jsou shrnuty v [ *běžné konfigurace rozdíly mezi vývoj a produkční* ](common-configuration-differences-between-development-and-production-cs.md) kurzu.
 
 
 ## <a name="deploying-your-site-using-the-copy-web-site-tool"></a>Nasazení webu pomocí nástroje Kopírovat web
@@ -149,11 +149,11 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Kopírování webové stránky s nástroje Kopírovat web](https://msdn.microsoft.com/en-us/library/1cc82atw.aspx)
+- [Kopírování webové stránky s nástroje Kopírovat web](https://msdn.microsoft.com/library/1cc82atw.aspx)
 - [Jak I: nasazení webu pomocí nástroje Kopírovat web](../../../videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool.md) (Video)
-- [Postupy: Publikování projekty webových aplikací](https://msdn.microsoft.com/en-us/library/aa983453.aspx)
-- [Postupy: Publikování webů](https://msdn.microsoft.com/en-us/library/20yh9f1b.aspx)
-- [Projekty instalace a nasazení v sadě Visual Studio](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx)
+- [Postupy: Publikování projekty webových aplikací](https://msdn.microsoft.com/library/aa983453.aspx)
+- [Postupy: Publikování webů](https://msdn.microsoft.com/library/20yh9f1b.aspx)
+- [Projekty instalace a nasazení v sadě Visual Studio](https://msdn.microsoft.com/library/wx3b589t.aspx)
 
 >[!div class="step-by-step"]
 [Předchozí](deploying-your-site-using-an-ftp-client-cs.md)

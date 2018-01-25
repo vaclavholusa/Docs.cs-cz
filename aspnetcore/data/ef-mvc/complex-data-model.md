@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 5b5645936504333573950b5bd17f5a037ffd984f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d844e2a69e4bbfdf3942f2666ead0047bdf83b7a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Vytvoření modelu komplexní data - základní EF s kurz k ASP.NET MVC jádra (5 10)
 
@@ -41,7 +41,7 @@ V *Models/Student.cs*, přidejte `using` příkaz pro `System.ComponentModel.Dat
 
 `DataType` Atribut slouží k určení datový typ, který je specifičtější než vnitřní typ databáze. V tomto případě chceme jenom udržování přehledu o datum, není datum a čas. `DataType` Výčtu poskytuje pro mnoho typů dat, jako je například datum, čas, telefonní číslo, měny, EmailAddress a další. `DataType` Atributu můžete také povolit aplikace automaticky poskytnout konkrétní typ funkce. Například `mailto:` může vytvořit odkaz pro `DataType.EmailAddress`, a datum selektor lze zadat pro `DataType.Date` v prohlížečích podporujících HTML5. `DataType` Atribut vysílá standardu HTML 5 `data-` (výrazný data dash) atributy, které můžete porozumět standardu HTML 5 prohlížeče. `DataType` Atributy neposkytují žádné ověření.
 
-`DataType.Date`neurčuje formát data, které se zobrazí. Ve výchozím nastavení je datové pole zobrazí podle výchozích formátů podle serveru CultureInfo.
+`DataType.Date`neuvádí formát data, které se zobrazí. Ve výchozím nastavení je datové pole zobrazí podle výchozích formátů podle serveru CultureInfo.
 
 `DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
 
@@ -103,7 +103,7 @@ Spuštění aplikace, vyberte **studenty** , klikněte na **vytvořit nový**a z
 
 Atributy můžete taky řídit, jak jsou mapovány třídy a vlastnosti do databáze. Předpokládejme, že při použití názvu `FirstMidName` pro první název pole, protože pole může obsahovat také křestní jméno. Ale chcete sloupci databáze s názvem `FirstName`, protože jsou uživatelé, kteří budou být zápis dotazů ad-hoc v databázi zvykli tohoto názvu. Chcete-li toto mapování, můžete použít `Column` atribut.
 
-`Column` Atribut určuje, že při vytvoření databáze, sloupec `Student` tabulku, která se mapuje `FirstMidName` vlastnost bude mít název `FirstName`. Jinými slovy, pokud váš kód odkazuje na `Student.FirstMidName`, data budou pocházet z nebo aktualizovány v `FirstName` sloupec `Student` tabulky. Pokud nezadáte názvy sloupců, jsou uvedené stejný název jako název vlastnosti.
+`Column` Atribut určuje, že při vytvoření databáze, sloupec `Student` tabulku, která se mapuje `FirstMidName` vlastnost bude mít název `FirstName`. Jinými slovy, pokud váš kód odkazuje na `Student.FirstMidName`, data budou pocházet z nebo aktualizovány v `FirstName` sloupec `Student` tabulky. Pokud nezadáte názvy sloupců, získá se stejný název jako název vlastnosti.
 
 V *Student.cs* soubor, přidejte `using` příkaz pro `System.ComponentModel.DataAnnotations.Schema` a přidejte atribut název sloupce, který se `FirstMidName` vlastnost, jak je znázorněno v následující zvýrazněný kód:
 
@@ -231,7 +231,7 @@ V *Models/Course.cs*, nahraďte kód, který jste přidali dříve následujíc�
 
 Během entita má vlastností cizího klíče `DepartmentID` který odkazuje na související entity oddělení a má `Department` navigační vlastnost.
 
-Rozhraní Entity Framework nevyžaduje, můžete přidat vlastností cizího klíče do datového modelu, když máte navigační vlastnost pro související entity.  EF automaticky vytvoří cizí klíče v databázi bez ohledu na jsou potřeba a vytvoří [stínové vlastnosti](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pro ně. Ale s cizí klíč v datovém modelu můžete provést aktualizace teď jednodušší a efektivnější. Například při fetch kurzu entity upravit oddělení entita je null. Pokud nemáte načíst ho, tak při aktualizaci entity kurzu, budete muset nejdřív načíst entity oddělení. Pokud vlastnost cizího klíče `DepartmentID` je zahrnutá v datovém modelu, nemusíte načtení entity oddělení dřív, než je aktualizovat.
+Rozhraní Entity Framework nevyžaduje, můžete přidat vlastností cizího klíče do datového modelu, když máte navigační vlastnost pro související entity.  EF automaticky vytvoří cizí klíče v databázi bez ohledu na jejich jste potřeby a vytvoří [stínové vlastnosti](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pro ně. Ale s cizí klíč v datovém modelu můžete provést aktualizace teď jednodušší a efektivnější. Například při fetch kurzu entity upravit oddělení entita je null. Pokud nemáte načíst ho, tak při aktualizaci entity kurzu, budete muset nejdřív načíst entity oddělení. Pokud vlastnost cizího klíče `DepartmentID` je zahrnutá v datovém modelu, nemusíte načtení entity oddělení dřív, než je aktualizovat.
 
 ### <a name="the-databasegenerated-attribute"></a>Atribut DatabaseGenerated
 
@@ -308,7 +308,7 @@ public ICollection<Course> Courses { get; set; }
 ```
 
 > [!NOTE]
-> Podle konvence rozhraní Entity Framework umožňuje kaskádové odstranění pro použití hodnot Null cizí klíče a pro relace m: n. Výsledkem může být Cyklické kaskádové odstranění pravidla, která způsobí výjimku při pokusu o přidání migrace. Například pokud vlastnost Department.InstructorID neuvedli jako s možnou hodnotou Null, EF byste nakonfigurovali cascade delete pravidlo odstranit lektorem odstranit oddělení, který není co chcete se stane, když. V případě potřeby obchodní pravidla `InstructorID` vlastnost, která má mít hodnotu Null, je třeba použít následující příkaz rozhraní API fluent zakázat kaskádové odstranění v relaci:
+> Podle konvence rozhraní Entity Framework umožňuje kaskádové odstranění pro použití hodnot Null cizí klíče a pro relace m: n. Výsledkem může být Cyklické kaskádové odstranění pravidla, která způsobí výjimku při pokusu o přidání migrace. Například pokud vlastnost Department.InstructorID neuvedli jako s možnou hodnotou Null, EF byste nakonfigurovali odstranit lektorem při odstranění oddělení, která není, co se stane chcete odstranit pravidlo cascade. V případě potřeby obchodní pravidla `InstructorID` vlastnost, která má mít hodnotu Null, je třeba použít následující příkaz rozhraní API fluent zakázat kaskádové odstranění v relaci:
 > ```csharp
 > modelBuilder.Entity<Department>()
 >    .HasOne(d => d.Administrator)
@@ -354,7 +354,7 @@ Každý řádek vztahů je 1 na jeden element end a znak hvězdičky (*) v dalš
 
 Pokud v tabulce registrace nezahrnuli úrovni informace, jenom třeba, aby obsahovat dvě cizí klíče CourseID a StudentID. V takovém případě je m: n spojení tabulku bez datová část (nebo čistou vazební tabulku) v databázi. Entity lektorem a kurzu mají tento druh relace m: n a dalším krokem je vytvoření třídu entity jako tabulku spojení bez datové části.
 
-(EF 6.x podporuje implicitní spojení tabulky pro relace m: n, ale základní EF neexistuje. Další informace najdete v tématu [diskuse v úložišti GitHub základní EF](https://github.com/aspnet/EntityFramework/issues/1368).) 
+(EF 6.x podporuje implicitní spojení tabulky pro relace m: n, ale základní EF nepodporuje. Další informace najdete v tématu [diskuse v úložišti GitHub základní EF](https://github.com/aspnet/EntityFramework/issues/1368).) 
 
 ## <a name="the-courseassignment-entity"></a>CourseAssignment entity
 

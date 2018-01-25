@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: db5d6a98d5e6702842e8b036c378ed96aef61b70
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 32bfddde48f5e5de9c06cb159493eb9ba6ede8be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="filters"></a>Filtry
 
@@ -70,7 +70,7 @@ Můžete implementovat rozhraní pro několik fází filtru do jedné třídy. N
 
 ### <a name="ifilterfactory"></a>IFilterFactory
 
-`IFilterFactory`implementuje `IFilter`. Proto `IFilterFactory` instanci SQL lze použít jako `IFilter` instance kdekoli v kanálu filtru. Když rozhraní připraví vyvolání filtr, pokusí se vysílat `IFilterFactory`. Pokud tento přetypování úspěšné, `CreateInstance` metoda je volána k vytvoření `IFilter` instance, která bude volána. To umožňuje návrh s velmi flexibilní, protože kanál přesné filtru není nutné explicitně nastavit při spuštění aplikace.
+`IFilterFactory`implementuje `IFilter`. Proto `IFilterFactory` instanci SQL lze použít jako `IFilter` instance kdekoli v kanálu filtru. Když rozhraní připraví vyvolání filtr, pokusí se vysílat `IFilterFactory`. Pokud tento přetypování úspěšné, `CreateInstance` metoda je volána k vytvoření `IFilter` instance, která bude volána. To umožňuje návrh s velmi flexibilní, protože kanál přesné filtru nemusí být explicitně nastaveno při spuštění aplikace.
 
 Můžete implementovat `IFilterFactory` na vlastní atribut implementace jako další postup pro vytvoření filtrů:
 
@@ -177,7 +177,7 @@ V následujícím kódu jak `ShortCircuitingResourceFilter` a `AddHeader` cílov
 
 Filtry je možné přidat podle typu nebo instance. Pokud chcete přidat instance, tato instance se použije pro každý požadavek. Pokud přidáte typu, bude typ aktivované, což znamená, vytvoří se instance pro každý požadavek, a všechny závislosti konstruktor vyplní podle [vkládání závislostí](../../fundamentals/dependency-injection.md) (DI). Přidání filtru podle typu je ekvivalentní `filters.Add(new TypeFilterAttribute(typeof(MyFilter)))`.
 
-Filtry, které jsou implementovány jako atributy a přidat přímo do třídy kontroleru nebo metody akce nemohou mít závislosti konstruktor poskytované [vkládání závislostí](../../fundamentals/dependency-injection.md) (DI). Je to proto, že atributy musí mít své konstruktor parametry zadané, kde se použijí. Jedná se o omezení o fungování atributy.
+Filtry, které jsou implementovány jako atributy a přidat přímo do třídy kontroleru nebo metody akce nemohou mít závislosti konstruktor poskytované [vkládání závislostí](../../fundamentals/dependency-injection.md) (DI). Je to proto, že atributy musí mít své konstruktor parametry zadané, kde uplatňují. Jedná se o omezení o fungování atributy.
 
 Pokud vaše filtrů závislosti, které potřebujete získat přístup z DI, existuje několik podporované přístupů. Vašemu filtru můžete použít pro třídu nebo akce metoda pomocí jedné z následujících akcí:
 
@@ -207,9 +207,9 @@ System.InvalidOperationException: No service for type
 
 ### <a name="typefilterattribute"></a>TypeFilterAttribute
 
-`TypeFilterAttribute`je velmi podobné `ServiceFilterAttribute` (a také implementuje `IFilterFactory`), ale jeho typ není vyřešen přímo z DI kontejneru. Místo toho vytvoří typ pomocí `Microsoft.Extensions.DependencyInjection.ObjectFactory`.
+`TypeFilterAttribute`je velmi podobné `ServiceFilterAttribute` (a také implementuje `IFilterFactory`), ale jeho typ není vyřešit přímo z DI kontejneru. Místo toho vytvoří typ pomocí `Microsoft.Extensions.DependencyInjection.ObjectFactory`.
 
-Vzhledem k tomuto rozdílu typy, které jsou odkazovány pomocí `TypeFilterAttribute` nemusí být registrováno v kontejneru, nejdřív (ale budou mít pořád závislé splnil kontejnerem). Navíc `TypeFilterAttribute` může volitelně přijmout argumenty konstruktoru pro daný typ nejistá. Následující příklad ukazuje, jak předat argumenty typu pomocí `TypeFilterAttribute`:
+Vzhledem k tomuto rozdílu typy, které jsou odkazovány pomocí `TypeFilterAttribute` nepotřebují být registrováno v kontejneru, nejdřív (ale budou mít pořád závislé splnil kontejnerem). Navíc `TypeFilterAttribute` může volitelně přijmout argumenty konstruktoru pro daný typ nejistá. Následující příklad ukazuje, jak předat argumenty typu pomocí `TypeFilterAttribute`:
 
 [!code-csharp[Main](../../mvc/controllers/filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_TypeFilter&highlight=1,2)]
 
@@ -252,7 +252,7 @@ Zde je ukázka filtr akce:
 * `Canceled`-bude hodnota true, pokud provádění akce byla zkratována jiný filtr.
 * `Exception`-bude obsahovat hodnotu null, pokud akci nebo filtr následné akce došlo k výjimce. Nastavení této vlastnosti na hodnotu null, efektivně 'zpracovává' výjimku, a `Result` bude proveden, jako kdyby se vrátil metody akce normálně.
 
-Pro `IAsyncActionFilter`, volání `ActionExecutionDelegate` provede všechny následné akce filtry a metoda akce vrací `ActionExecutedContext`. Krátká smyčka, přiřaďte `ActionExecutingContext.Result` na některé výsledek instance a upravit `ActionExecutionDelegate`.
+Pro `IAsyncActionFilter`, volání `ActionExecutionDelegate` provede všechny následné akce filtry a metoda akce vrací `ActionExecutedContext`. Krátká smyčka, přiřaďte `ActionExecutingContext.Result` na některé výsledek instance a nemůžete volat `ActionExecutionDelegate`.
 
 Rozhraní framework poskytuje abstraktní `ActionFilterAttribute` , ke kterým můžete podtřídy. 
 
@@ -301,7 +301,7 @@ Když `OnResultExecuted` metoda spustí, odpověď pravděpodobně byl odeslán 
 
 `ResultExecutedContext.Exception`bude být nastavená na hodnotu jinou hodnotu než null, pokud výsledek akce nebo filtr následné výsledků došlo k výjimce. Nastavení `Exception` na hodnotu null efektivně zpracovává výjimku a brání výjimky z se znovu vyvolány podle MVC později v kanálu. Pokud jste zpracování výjimek v filtr výsledků, nemusí být možné zapisovat data do odpovědi. Pokud výsledek akce, vyvolá partway prostřednictvím jejího provádění a hlavičky již byly vyprázdněny klientovi, neexistuje žádný spolehlivý mechanismus odeslat kód chyby.
 
-Pro `IAsyncResultFilter` volání `await next()` na `ResultExecutionDelegate` provede všechny následné výsledek filtry a výsledku akce. Krátká smyčka, nastavte `ResultExecutingContext.Cancel` na hodnotu true a upravit `ResultExectionDelegate`.
+Pro `IAsyncResultFilter` volání `await next()` na `ResultExecutionDelegate` provede všechny následné výsledek filtry a výsledku akce. Krátká smyčka, nastavte `ResultExecutingContext.Cancel` na hodnotu true a nemůžete volat `ResultExectionDelegate`.
 
 Rozhraní framework poskytuje abstraktní `ResultFilterAttribute` , ke kterým můžete podtřídy. [AddHeaderAttribute](#add-header-attribute) třída uvedena výše je příkladem atribut filtru výsledků.
 

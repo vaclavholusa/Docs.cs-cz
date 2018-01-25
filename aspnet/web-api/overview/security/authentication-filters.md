@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: eee4e7accd338262698d127ed08d4182608839ab
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c704cc351876b49ec143a49b25cc0ca83876e06
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-filters-in-aspnet-web-api-2"></a>Filtry ověřování v rozhraní ASP.NET Web API 2
 ====================
@@ -47,7 +47,7 @@ Chcete-li filtr použít na všechny řadiče webového rozhraní API, přidejte
 
 ## <a name="implementing-a-web-api-authentication-filter"></a>Implementace filtru webové rozhraní API ověřování
 
-V rozhraní Web API implementovat filtry ověřování [System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/en-us/library/system.web.http.filters.iauthenticationfilter.aspx) rozhraní. Také musí dědit z **System.Attribute**, aby bylo možné použít jako atributy.
+V rozhraní Web API implementovat filtry ověřování [System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx) rozhraní. Také musí dědit z **System.Attribute**, aby bylo možné použít jako atributy.
 
 **IAuthenticationFilter** rozhraní má dvě metody:
 
@@ -168,4 +168,4 @@ Chcete-li zakázat ověřování na úrovni hostitele uvnitř kanál rozhraní W
 
 ## <a name="additional-resources"></a>Další prostředky
 
-[Filtry zabezpečení rozhraní ASP.NET Web API](https://msdn.microsoft.com/en-us/magazine/dn781361.aspx) (Časopis MSDN)
+[Filtry zabezpečení rozhraní ASP.NET Web API](https://msdn.microsoft.com/magazine/dn781361.aspx) (Časopis MSDN)

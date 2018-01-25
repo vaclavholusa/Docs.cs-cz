@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: f1bdbc723e4602c2e53723aff91ec5d254f4bd93
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 5073a1663ec99a1b161092d74ab035ee9782becd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>WebListener webového serveru implementace v ASP.NET Core
 
@@ -131,7 +131,7 @@ using (WebListener listener = new WebListener(settings))
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>Preregister předpony adres URL a konfigurace protokolu SSL
 
-Služba IIS a WebListener závisí na základní ovladač režimu jádra Http.Sys naslouchat požadavkům a počáteční zpracování. Ve službě IIS uživatelské rozhraní pro správu poskytuje relativně snadný způsob, jak nakonfigurovat vše, co. Ale pokud používáte WebListener budete muset nakonfigurovat Http.Sys sami. Integrované nástroje učinit je netsh.exe. 
+Služba IIS a WebListener závisí na základní ovladač režimu jádra Http.Sys naslouchat požadavkům a počáteční zpracování. Ve službě IIS uživatelské rozhraní pro správu poskytuje relativně snadný způsob, jak nakonfigurovat vše, co. Ale pokud používáte WebListener budete muset nakonfigurovat Http.Sys sami. Předdefinované nástroj pro to, který je netsh.exe. 
 
 Běžné úkoly, budete muset použít netsh.exe pro jsou rezervování předpony adres URL a přiřazení certifikáty SSL.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: dfcddb4373fbf17ca29c5ab94c6ab3387ed6b526
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8714f673cb0434189ca23d2dda14035d8652a051
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>Kód úpravy webových formulářů ASP.NET v sadě Visual Studio 2013
 ====================
@@ -38,7 +38,7 @@ Během tohoto návodu se dozvíte, jak:
 
 K dokončení tohoto návodu, budete potřebovat:
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) nebo [sady Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). Rozhraní .NET Framework se instaluje automaticky. 
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) nebo [sady Microsoft Visual Studio Express 2013 pro Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Rozhraní .NET Framework se instaluje automaticky. 
 
     > [!NOTE] 
     > 
@@ -57,7 +57,7 @@ V této části průvodce vytvoříte projekt webové aplikace a do ní přidejt
 
 ### <a name="to-create-a-web-application-project"></a>Chcete-li vytvořit projekt webové aplikace
 
-1. Otevřete sadu Microsoft Visual Studio.
+1. Open Microsoft Visual Studio.
 2. Na **soubor** nabídce vyberte možnost **nový projekt**.  
     ![Nabídka Soubor](code-editing-in-web-forms-pages/_static/image1.png)
 
@@ -132,8 +132,8 @@ V této části Průvodce napsat jednoduchý kód a potom z něj extrahujte meto
 ### <a name="to-extract-a-method-in-a-c-page"></a>Extrahování metody stránce C#
 
 1. Přepnout na **návrhu** zobrazení.
-2. V **sada nástrojů**, z **standardní** kartě, přetáhněte ji [tlačítko](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.aspx) ovládacího prvku na stránku.
-3. Dvakrát klikněte na **tlačítko** řízení vytvořit obslužnou rutinu události pro jeho [klikněte na tlačítko](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.click.aspx) události a poté přidejte následující zvýrazněný kód:
+2. V **sada nástrojů**, z **standardní** kartě, přetáhněte ji [tlačítko](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) ovládacího prvku na stránku.
+3. Dvakrát klikněte na **tlačítko** řízení vytvořit obslužnou rutinu události pro jeho [klikněte na tlačítko](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) události a poté přidejte následující zvýrazněný kód:
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample2.cs?highlight=3-16)]
 
@@ -185,13 +185,13 @@ Při práci s proměnné a také objekty, můžete je přejmenovat, až se už n
 
 Protože nejsou k dispozici mnoho kódování úlohy, které vývojáři webové formuláře se často potřeba udělat, editoru kódu poskytuje knihovnu fragmentů kódu nebo bloků předepsaného kódu. Tyto fragmenty kódu můžete vložit do vaší stránky.
 
-Pro každý jazyk, který používáte v sadě Visual Studio existuje drobné rozdíly ve způsobu, jakým Vložit fragmenty kódu. Informace o vkládání fragmentů najdete v tématu [jazyka Visual Basic IntelliSense – fragmenty kódu](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx). Informace o vkládání fragmentů kódu v jazyce Visual C# najdete v tématu [fragmenty kódu Visual C#](https://msdn.microsoft.com/en-us/library/z41h7fat.aspx).
+Pro každý jazyk, který používáte v sadě Visual Studio existuje drobné rozdíly ve způsobu, jakým Vložit fragmenty kódu. Informace o vkládání fragmentů najdete v tématu [jazyka Visual Basic IntelliSense – fragmenty kódu](https://msdn.microsoft.com/library/18yz4be4.aspx). Informace o vkládání fragmentů kódu v jazyce Visual C# najdete v tématu [fragmenty kódu Visual C#](https://msdn.microsoft.com/library/z41h7fat.aspx).
 
 ## <a name="next-steps"></a>Další kroky
 
 Tento návod znázorňuje základní funkce editoru kódu Visual Studio 2010 pro opravu chyb v kódu, refaktoring kódu, přejmenování proměnné a vkládání fragmentů kódu do vašeho kódu. Vývoj aplikací rychlý a snadný můžete nastavit další funkce v editoru. Například můžete chtít:
 
-- Další informace o funkcích technologie IntelliSense, jako je například úprava možnosti IntelliSense, správě fragmentů kódu a vyhledávání fragmentů kódu online. Další informace najdete v tématu [pomocí IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b.aspx).
-- Naučte se vytvářet vlastní fragmenty kódu. Další informace najdete v tématu [vytváření a používání IntelliSense – fragmenty kódu](https://msdn.microsoft.com/en-us/library/ms165392.aspx)
-- Další informace o funkcích specifické pro Visual Basic IntelliSense – fragmenty kódu, například přizpůsobení fragmentů kódu a řešení potíží. Další informace najdete v tématu [jazyka Visual Basic IntelliSense – fragmenty kódu](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx)
-- Další informace o jazyka C# – konkrétní funkce technologie IntelliSense, jako je například refaktoring a fragmenty kódu. Další informace najdete v tématu [Visual C# IntelliSense](https://msdn.microsoft.com/en-us/library/43f44291.aspx).
+- Další informace o funkcích technologie IntelliSense, jako je například úprava možnosti IntelliSense, správě fragmentů kódu a vyhledávání fragmentů kódu online. Další informace najdete v tématu [pomocí IntelliSense](https://msdn.microsoft.com/library/hcw1s69b.aspx).
+- Naučte se vytvářet vlastní fragmenty kódu. Další informace najdete v tématu [vytváření a používání IntelliSense – fragmenty kódu](https://msdn.microsoft.com/library/ms165392.aspx)
+- Další informace o funkcích specifické pro Visual Basic IntelliSense – fragmenty kódu, například přizpůsobení fragmentů kódu a řešení potíží. Další informace najdete v tématu [jazyka Visual Basic IntelliSense – fragmenty kódu](https://msdn.microsoft.com/library/18yz4be4.aspx)
+- Další informace o jazyka C# – konkrétní funkce technologie IntelliSense, jako je například refaktoring a fragmenty kódu. Další informace najdete v tématu [Visual C# IntelliSense](https://msdn.microsoft.com/library/43f44291.aspx).

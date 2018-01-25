@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: a0c59245eedbf53f367949e12dd83e2611f44fc4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1c262ec7b834107524a18c6552b171f731452c91
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="taking-web-applications-offline-with-web-deploy"></a>Pořízení webových aplikací do offline režimu s Web nasazení
 ====================
@@ -74,7 +74,7 @@ Dalším krokem je upravit logika nasazení zkopírujte soubor na cílový serve
 > V dalším postupu se předpokládá, že používáte vlastní soubor projektu nástroje MSBuild k řízení procesu vaše nasazení, jak je popsáno v [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Pokud nasazujete přímé ze sady Visual Studio, budete muset použít jiný přístup. SAYED Ibrahim Hashimi popisuje jeden takový přístup v [postup trvat vaše webové aplikace do režimu Offline během publikování](http://sedodream.com/2012/01/08/HowToTakeYourWebAppOfflineDuringPublishing.aspx).
 
 
-K nasazení *aplikace\_offline* soubor do cílového webu služby IIS, je nutné vyvolat MSDeploy.exe pomocí [nasazení webu **contentPath** zprostředkovatele](https://technet.microsoft.com/en-us/library/dd569034(WS.10).aspx). **ContentPath** poskytovatel podporuje fyzický adresář cesty a cesty k webu nebo aplikace služby IIS, takže je ideálním řešením pro synchronizaci souborů mezi složku projekt sady Visual Studio a webové aplikace služby IIS. K nasazení souboru, MSDeploy příkazu by měl vypadat přibližně takto:
+K nasazení *aplikace\_offline* soubor do cílového webu služby IIS, je nutné vyvolat MSDeploy.exe pomocí [nasazení webu **contentPath** zprostředkovatele](https://technet.microsoft.com/library/dd569034(WS.10).aspx). **ContentPath** poskytovatel podporuje fyzický adresář cesty a cesty k webu nebo aplikace služby IIS, takže je ideálním řešením pro synchronizaci souborů mezi složku projekt sady Visual Studio a webové aplikace služby IIS. K nasazení souboru, MSDeploy příkazu by měl vypadat přibližně takto:
 
 
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample1.cmd)]
@@ -95,7 +95,7 @@ Chcete-li automatizovat tyto příkazy v rámci procesu sestavení a nasazení, 
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample3.xml)]
 3. **SourceRoot** vlastnost je definována jinde v *Publish.proj* souboru. Označuje umístění kořenová složka pro zdrojový obsah vzhledem k aktuální cestě & #x 2014; jinými slovy, relativní k umístění *Publish.proj* souboru.
-4. **ContentPath** zprostředkovatele nebude přijímat relativní cesty k souboru, takže potřebujete získat absolutní cestu k souboru zdroje, než bude možné nasadit. Můžete použít [converttoabsolutepath –](https://msdn.microsoft.com/en-us/library/bb882668.aspx) úloh k tomu.
+4. **ContentPath** zprostředkovatele nebude přijímat relativní cesty k souboru, takže potřebujete získat absolutní cestu k souboru zdroje, než bude možné nasadit. Můžete použít [converttoabsolutepath –](https://msdn.microsoft.com/library/bb882668.aspx) úloh k tomu.
 5. Přidejte nový **cíl** element s názvem **GetAppOfflineAbsolutePath**. Uvnitř tohoto cíle, použijte **converttoabsolutepath –** na absolutní cestu k získání úlohy *aplikace\_offline šablony* soubor ve složce projektu.
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample4.xml)]
@@ -148,7 +148,7 @@ Následující postup ukazuje, jak to přidat *. wpp.targets* soubor pro projekt
 1. Otevřete řešení v sadě Visual Studio 2010.
 2. V **Průzkumníku řešení** okna, klikněte pravým tlačítkem na uzel projektu vaší webové aplikace (například **ContactManager.Mvc**), přejděte na příkaz **přidat**a potom klikněte na **Novou položku**.
 3. V **přidat novou položku** dialogové okno, vyberte **souboru XML** šablony.
-4. V **název** zadejte *[název projektu]***. wpp.targets** (například **ContactManager.Mvc.wpp.targets**) a pak klikněte na tlačítko  **Přidat**.
+4. V **název** zadejte *[název projektu] ***.wpp.targets** (například **ContactManager.Mvc.wpp.targets**) a pak klikněte na tlačítko **přidat**.
 
     ![](taking-web-applications-offline-with-web-deploy/_static/image4.png)
 

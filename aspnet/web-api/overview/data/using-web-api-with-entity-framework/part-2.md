@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-2
 msc.type: authoredcontent
-ms.openlocfilehash: b75eae11fd99b60864256f79d4770a3007487964
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7e09316f0faaf0731e4cdda48040fdaedc0f244a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="add-models-and-controllers"></a>Přidání řadiče a modely
 ====================
@@ -28,7 +28,7 @@ V této části přidáte třídy modelu, které definují entity databáze. Pot
 
 ## <a name="add-model-classes"></a>Přidání třídy modelu
 
-V tomto kurzu vytvoříme databázi pomocí "Code First" přístup k Entity Framework (EF). S Code First zápisu třídy jazyka C#, které odpovídají tabulkách databáze a EF vytvoří databázi. (Další informace najdete v tématu [Entity Framework vývoj přístupy](https://msdn.microsoft.com/en-us/library/ms178359%28v=vs.110%29.aspx#dbfmfcf).)
+V tomto kurzu vytvoříme databázi pomocí "Code First" přístup k Entity Framework (EF). S Code First zápisu třídy jazyka C#, které odpovídají tabulkách databáze a EF vytvoří databázi. (Další informace najdete v tématu [Entity Framework vývoj přístupy](https://msdn.microsoft.com/library/ms178359%28v=vs.110%29.aspx#dbfmfcf).)
 
 Začneme definováním naše objektů domény jako POCOs (prostý starý CLR objekty). Vytvoříme POCOs následující:
 

@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 uid: mvc/models/model-binding
-ms.openlocfilehash: 8fc6ff66d05164c1040f8cc77886357a633a0472
-ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
+ms.openlocfilehash: 26c4c016548cc3e465991c5ebf16893d4022145d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="model-binding"></a>Vazby modelu
 
@@ -56,7 +56,7 @@ Poznámka: Formuláře hodnoty, data trasy a dotazů řetězce se ukládají jak
 
 Vzhledem k tomu, že vazby modelu žádali klíč s názvem `id` a není nic s názvem `id` v hodnot formuláře, přesune do vyhledávání pro tento klíč hodnoty trasy. V našem příkladu je nalezena shoda. Vázání a hodnota je převést na celé číslo 2. Stejné žádosti pomocí úpravy (řetězec id) by převést na řetězec "2".
 
-Pokud v příkladu jednoduché typy. V MVC jednoduché typy jsou všechny .NET primitivní typ nebo typ pomocí převaděče typu řetězec. Kdyby parametru metody akce třídy, jako `Movie` typu, který obsahuje jednoduché a komplexní typy jako vhodně vlastností MVC model vazby budou nadále jej zpracovat. Reflexe a rekurze používá procházení vlastnosti komplexních typů hledání shody. Vazby modelu hledá vzoru *parameter_name.property_name* k vytvoření vazby na vlastnosti. Pokud se nenajde odpovídající hodnoty tohoto formuláře, pokusí se vytvořit vazbu pomocí název vlastnosti. Pro tyto typy jako `Collection` typy, vazby modelu hledá shod, který se *parameter_name [index]* nebo právě *[index]*. Model vazby vyhodnotí `Dictionary` podobně typy žádostí o *parameter_name [klíč]* nebo právě *[klíč]*, pokud jsou klíče jednoduché typy. Klíče, které jsou podporovány odpovídat názvům pole HTML a značky Pomocníci vygenerované stejný typ modelu. To umožňuje odezvy hodnoty tak, aby pole formuláře zůstaly vyplněný se vstupem uživatele pro jejich pohodlí, například když vázaných dat z vytvořit nebo upravit neprošel ověřením.
+Pokud v příkladu jednoduché typy. V MVC jednoduché typy jsou všechny .NET primitivní typ nebo typ pomocí převaděče typu řetězec. Kdyby parametru metody akce třídy, jako `Movie` typu, který obsahuje jednoduché a komplexní typy jako vhodně vlastností MVC model vazby budou nadále jej zpracovat. Reflexe a rekurze používá procházení vlastnosti komplexních typů hledání shody. Vazby modelu hledá vzoru *parameter_name.property_name* k vytvoření vazby na vlastnosti. Pokud se nenajde odpovídající hodnoty tohoto formuláře, pokusí se vytvořit vazbu pomocí název vlastnosti. Pro tyto typy jako `Collection` typy, vazby modelu hledá shod, který se *parameter_name [index]* nebo právě *[index]*. Model vazby vyhodnotí `Dictionary` podobně typy žádostí o *parameter_name [klíč]* nebo právě *[klíč]*, pokud jsou klíče jednoduché typy. Klíče, které jsou podporovány odpovídat názvům pole HTML a značky Pomocníci vygenerované stejný typ modelu. To umožňuje odezvy hodnoty tak, aby pole formuláře zůstaly vyplněný se vstupem uživatele pro jejich pohodlí, například když vázaných dat z vytvořit nebo upravit neproběhla úspěšně ověření.
 
 V pořadí pro vazbu provést třídu musí mít veřejný výchozí konstruktor a člen vázat musí být veřejné vlastnosti s možností zápisu. Pokud vazba modelu se stane, že třída bude vytvořena pouze pomocí výchozí veřejný konstruktor, můžete nastavit vlastnosti.
 
@@ -70,7 +70,7 @@ Když vazbu parametru vazby modelu zastaví hledá hodnoty s tímto názvem a je
 
 * Typy hodnot: Použití hodnot Null typy hodnot typu `T` jsou nastaveny na `default(T)`. Vazby modelu bude třeba nastavit parametr `int id` na hodnotu 0. Zvažte použití ověření modelu nebo typy s možnou hodnotou Null, namísto spoléhání na výchozí hodnoty.
 
-Pokud vazba se nezdaří, MVC nevyvolá chybu. Všechny akce, která přijímá vstup uživatele by se mělo zjistit `ModelState.IsValid` vlastnost.
+Pokud vazba se nezdaří, nebude MVC vyvolána chyba. Všechny akce, která přijímá vstup uživatele by se mělo zjistit `ModelState.IsValid` vlastnost.
 
 Poznámka: Každý záznam v kontroleru `ModelState` vlastnost je `ModelStateEntry` obsahující `Errors` vlastnost. Je málokdy potřeba dotazování tuto kolekci sami. Místo nich se používá `ModelState.IsValid`.
 

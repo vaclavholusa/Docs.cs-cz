@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: e6b49b9dde94cc7d035ea91b992a13df8cb8caf2
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9f53ce11f1659aa3416fe4fbb94183c64ab0dab5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Povolení žádostí napříč zdroji (CORS)
 
@@ -44,7 +44,7 @@ Tyto adresy URL mít různého původu než předchozí dva:
 * `http://example.com:9000/foo.html`-Jiný port
 
 > [!NOTE]
-> Internet Explorer nebere v úvahu port při porovnávání zdroje.
+> Internet Explorer nepovažuje port při porovnávání zdroje.
 
 ## <a name="setting-up-cors"></a>Nastavení CORS
 
@@ -160,7 +160,7 @@ Nejsou prohlížeče zcela v souladu v tom, jak nastavují Access-Control-Reques
 
 ### <a name="set-the-exposed-response-headers"></a>Nastavit hlavičky zveřejněné odpovědi
 
-Ve výchozím prohlížeči nevystavuje všechny hlavičky odpovědi do aplikace. (Viz [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).) Hlavičky odpovědi, které jsou k dispozici ve výchozím nastavení jsou:
+Ve výchozím prohlížeči nezveřejňuje všechny hlavičky odpovědi do aplikace. (Viz [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).) Hlavičky odpovědi, které jsou k dispozici ve výchozím nastavení jsou:
 
 * Cache-Control
 
@@ -252,7 +252,7 @@ Content-Length: 12
 Test message
 ```
 
-Pokud odpověď nezahrnuje hlavičky Access-Control-Allow-Origin, požadavek AJAX se nezdaří. V prohlížeči přímo, neumožňuje žádosti. I když server vrátí úspěšné odpovědi, prohlížeč není zpřístupnit odpověď do klientské aplikace.
+Pokud odpověď neobsahuje hlavičky Access-Control-Allow-Origin, požadavek AJAX se nezdaří. V prohlížeči přímo, neumožňuje žádosti. I když server vrátí úspěšné odpovědi, prohlížeč nepodporuje zpřístupnit odpověď do klientské aplikace.
 
 ### <a name="preflight-requests"></a>Předběžných požadavků
 
@@ -290,7 +290,7 @@ Content-Length: 0
 
 * Access-Control-Request-Method: Metodu protokolu HTTP, který se použije pro skutečný požadavek.
 
-* Access-Control-Request-Headers: Seznam hlaviček požadavků, které aplikace nastavena na skutečnou žádost. (Znovu, nezahrnuje hlavičky, které nastaví prohlížeče.)
+* Access-Control-Request-Headers: Seznam hlaviček požadavků, které aplikace nastavena na skutečnou žádost. (Znovu to neobsahuje hlavičky, které nastaví prohlížeče.)
 
 Zde je odpověď příklad, za předpokladu, že server umožňuje žádost:
 

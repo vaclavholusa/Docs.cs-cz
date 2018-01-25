@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: d0b76c06495c51df3ed0f61cd318507a05240392
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5296bc1ca3fd0b24123bd79a550a7e2cffc34a44
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení databáze SQL Server Compact - 2 12
 ====================
@@ -37,17 +37,17 @@ Pro přístup k databázi aplikace Contoso univerzity vyžaduje následující s
 
 - [Systém SQL Server Compact](https://www.microsoft.com/sqlserver/en/us/editions/compact.aspx) (databázový stroj).
 - [Balíček ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) (která umožňují používat systém SQL Server Compact členství technologie ASP.NET)
-- [Rozhraní Entity Framework 5.0](https://msdn.microsoft.com/en-us/library/gg696172(d=lightweight,v=vs.103).aspx)(Code First s migrace).
+- [Rozhraní Entity Framework 5.0](https://msdn.microsoft.com/library/gg696172(d=lightweight,v=vs.103).aspx)(Code First s migrace).
 
 Struktura databáze a některé (ne všechny) dat v aplikačním dvě databáze musí být také nasazen. Obvykle když budete vyvíjet aplikace, zadáte testovací data do databáze, které nechcete použít k nasazení na živý web. Můžete však také zadat produkční data, která chcete nasadit. V tomto kurzu nakonfigurujete projektu univerzity Contoso tak, aby požadovaný software a správná data jsou zahrnuty, když nasazujete.
 
 Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, jak absolvovat kurz, nezapomeňte se podívat [řešení potíží s stránky](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md).
 
-## <a name="sql-server-compact-versus-sql-server-express"></a>SQL Server Compact a SQL Server Express.
+## <a name="sql-server-compact-versus-sql-server-express"></a>SQL Server Compact versus SQL Server Express
 
 Ukázková aplikace používá SQL Server Compact 4.0. Tento databázový stroj je relativně nové možnosti pro weby; dřívějších verzích systému SQL Server Compact nefungují ve webovém hostitelském prostředí. Systém SQL Server Compact nabízí několik výhod, které jsou ve srovnání s více běžný scénář vývoj pomocí SQL Server Express a nasazení na plnou instalaci systému SQL Server. V závislosti na poskytovateli hostitelských služeb, které zvolíte systém SQL Server Compact může být levnější chcete nasadit, protože někteří poskytovatelé účtují navíc k podpoře úplnou databázi systému SQL Server. Vzhledem k tomu, že databázový stroj samotné můžete nasadit jako součást webové aplikace není pro systém SQL Server Compact bez dalších poplatků.
 
-Ale můžete také měli vědět jeho omezení. Systém SQL Server Compact nepodporuje uložené procedury, triggery, zobrazení nebo replikace. (Úplný seznam funkcí systému SQL Server, které nepodporují systém SQL Server Compact, najdete v části [rozdíly mezi systém SQL Server Compact a SQL Server](https://msdn.microsoft.com/en-us/library/bb896140.aspx).) Navíc některé nástroje, které můžete použít k manipulaci s schémata a data v systému SQL Server Express a databáze SQL serveru nefungují s systém SQL Server Compact. V sadě Visual Studio s databázemi SQL Server Compact nelze například použít SQL Server Management Studio nebo SQL Server Data Tools. Máte další možnosti pro práci s databázemi SQL Server Compact:
+Ale můžete také měli vědět jeho omezení. Systém SQL Server Compact nepodporuje uložené procedury, triggery, zobrazení nebo replikace. (Úplný seznam funkcí systému SQL Server, které nepodporují systém SQL Server Compact, najdete v části [rozdíly mezi systém SQL Server Compact a SQL Server](https://msdn.microsoft.com/library/bb896140.aspx).) Navíc některé nástroje, které můžete použít k manipulaci s schémata a data v systému SQL Server Express a databáze SQL serveru nefungují s systém SQL Server Compact. V sadě Visual Studio s databázemi SQL Server Compact nelze například použít SQL Server Management Studio nebo SQL Server Data Tools. Máte další možnosti pro práci s databázemi SQL Server Compact:
 
 - V Průzkumníku serveru můžete použít v sadě Visual Studio, který nabízí funkce manipulaci s omezenou databáze pro systém SQL Server Compact.
 - Můžete použít funkci zpracování databáze [WebMatrix](https://www.microsoft.com/web/webmatrix/), který má více funkcí než Průzkumníka serveru.
@@ -77,11 +77,11 @@ Sestavte projekt a potom v **Průzkumníku řešení** klikněte na tlačítko *
 
 Rozbalte **bin** složky zobrazíte **amd64** a **x86** složek a potom vyberte tyto složky, klikněte pravým tlačítkem a vyberte **zahrnout do projektu**.
 
-![amd64_and_x86_in_Solution_Explorer.PNG](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
+![amd64_and_x86_in_Solution_Explorer.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
 
 Ikony složky změní, složce byl zahrnut v projektu.
 
-![Solution_Explorer_amd64_included.PNG](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
+![Solution_Explorer_amd64_included.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
 
 ## <a name="configuring-code-first-migrations-for-application-database-deployment"></a>Konfigurace migrace Code First pro nasazení databáze aplikace
 
@@ -165,7 +165,7 @@ Migrace Code First vytvoří další soubor třídy ve *migrace* složky a tato 
 
 V **Konzola správce balíčků**, zadejte příkazu "update-database" k vytvoření databáze a spusťte **počáteční hodnoty** metoda.
 
-![aktualizace database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
+![update-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
 
 (Pokud dojde k chybě, která označuje tabulka již existuje a nelze vytvořit, je možné, že jste spustili aplikaci po odstranění databáze a před provedení `update-database`. In that Case, odstraňte *School.sdf* znovu a zkuste zopakovat `update-database` příkaz.)
 
@@ -190,7 +190,7 @@ Přihlaste se jako "admin" pomocí hesla "Pa$ w0rd" (Všimněte si číslo nula 
 Při prvním nasazení lokality, je běžné vyloučit většinu nebo všechny uživatelské účty, které vytvoříte pro testování. V takovém případě budete nasazovat účtu správce a žádné uživatelské účty. Místo ručním odstranění testovací účty, vytvoříte novou databázi členství, který má jenom jeden správce uživatelský účet, který je nutné v produkčním prostředí.
 
 > [!NOTE]
-> Databáze členství ukládá hodnotu hash hesla účtů. Abyste mohli nasadit účty z jednoho počítače do druhého, ujistěte se, že hash rutiny negenerovat různé hodnoty hash na cílovém serveru, než na zdrojovém počítači. Stejné hodnoty hash se generují při použití balíčku ASP.NET Universal Providers tak dlouho, dokud Neměnit výchozí algoritmus. Výchozí algoritmus HMACSHA256 a je určena v **ověření** atribut  **[machineKey](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx)**  element v souboru Web.config.
+> Databáze členství ukládá hodnotu hash hesla účtů. Abyste mohli nasadit účty z jednoho počítače do druhého, ujistěte se, že hash rutiny negenerovat různé hodnoty hash na cílovém serveru, než na zdrojovém počítači. Stejné hodnoty hash se generují při použití balíčku ASP.NET Universal Providers tak dlouho, dokud Neměnit výchozí algoritmus. Výchozí algoritmus HMACSHA256 a je určena v **ověření** atribut  **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)**  element v souboru Web.config.
 
 
 Databáze členství není spravován migrace Code First a neexistuje žádný automatické inicializátoru, který doplňuje databáze s účty testů (jako je pro databázi škola). Proto aby testovací data k dispozici budete vytvořit kopii testovací databáze před vytvořením nového.
@@ -243,7 +243,7 @@ Systém SQL Server Compact databázový stroj a obě databáze je teď připrave
 
 ## <a name="more-information"></a>Další informace
 
-Další informace o NuGet najdete v tématu [spravovat projektu knihovny s NuGet](https://msdn.microsoft.com/en-us/magazine/hh547106.aspx) a [NuGet dokumentaci](http://docs.nuget.org/docs/start-here/overview). Pokud nechcete použít NuGet, budete potřebovat další informace o analýze balíčku NuGet k určení, jak funguje, když je nainstalovaná. (Například může nakonfigurovat *Web.config* transformace, konfigurovat skripty prostředí PowerShell, aby se spouštěla v čase vytvoření buildu atd.) Další informace o tom, jak NuGet funguje, najdete v části hlavně [vytváření a publikování balíčku](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) a [konfigurační soubor a zdrojový kód transformace](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
+Další informace o NuGet najdete v tématu [spravovat projektu knihovny s NuGet](https://msdn.microsoft.com/magazine/hh547106.aspx) a [NuGet dokumentaci](http://docs.nuget.org/docs/start-here/overview). Pokud nechcete použít NuGet, budete potřebovat další informace o analýze balíčku NuGet k určení, jak funguje, když je nainstalovaná. (Například může nakonfigurovat *Web.config* transformace, konfigurovat skripty prostředí PowerShell, aby se spouštěla v čase vytvoření buildu atd.) Další informace o tom, jak NuGet funguje, najdete v části hlavně [vytváření a publikování balíčku](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) a [konfigurační soubor a zdrojový kód transformace](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
 
 >[!div class="step-by-step"]
 [Předchozí](deployment-to-a-hosting-provider-introduction-1-of-12.md)

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: a6ac34307b7558ad13684448f339ca74ade9e997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 618f8fa23630dcf9821a54415766dc015694e535
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-startup-class-detection"></a>Detekce třídy pro spuštění OWIN
 ====================
@@ -79,7 +79,7 @@ podle [Praburaj Thiagarajan](https://github.com/Praburaj), [Rick Anderson](https
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample8.cs?highlight=5,7,15-28,31-34)]
   
- `app.Use` Výrazu lambda slouží k registraci komponenty zadaný middleware do kanálu OWIN. V takovém případě nastavujeme protokolování příchozích požadavků před reagovat na příchozí požadavek. `next` Parametr je delegáta ( [Func](https://msdn.microsoft.com/en-us/library/bb534960(v=vs.100).aspx) &lt; [úloh](https://msdn.microsoft.com/en-us/library/dd321424(v=vs.100).aspx) &gt; ) další komponentou v kanálu. `app.Run` Výrazu lambda zachytí až kanálu na příchozí požadavky a poskytuje mechanismus odpovědi.
+ `app.Use` Výrazu lambda slouží k registraci komponenty zadaný middleware do kanálu OWIN. V takovém případě nastavujeme protokolování příchozích požadavků před reagovat na příchozí požadavek. `next` Parametr je delegáta ( [Func](https://msdn.microsoft.com/library/bb534960(v=vs.100).aspx) &lt; [úloh](https://msdn.microsoft.com/library/dd321424(v=vs.100).aspx) &gt; ) další komponentou v kanálu. `app.Run` Výrazu lambda zachytí až kanálu na příchozí požadavky a poskytuje mechanismus odpovědi.
      > [!NOTE]
      > Ve výše uvedeném kódu, budeme mít komentované `OwinStartup` atribut a My se spoléhat na konvence spuštěných třída s názvem `Startup` .-stiskněte ***F5*** ke spuštění aplikace. Dosáhl aktualizace několikrát.  
   

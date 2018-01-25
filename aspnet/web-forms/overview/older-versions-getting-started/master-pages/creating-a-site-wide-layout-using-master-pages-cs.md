@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5e3507acda4958fa7caa4a22fec7603deaec73c2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8061a2aff318d397116cbc0bc0a8ce24ef35c7fb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>Vytvoření webu rozložení pomocí stránky předlohy (C#)
 ====================
@@ -60,7 +60,7 @@ Vytváření webu s rozložení konzistentní stránky na webu vyžaduje, aby ka
 
 Existují různé metody pro vytváření webových stránek s konzistentní vzhled a chování. Naïve přístupem je jednoduše zkopírujte a vložte kód běžné rozložení do všech webových stránek, ale tento přístup má počet downsides. Pro začátek se pokaždé, když se vytvoří nová stránka, nezapomeňte zkopírovat a Vložit sdílený obsah na stránku. Takové kopírování a vkládání operace jsou zralé došlo k chybě jako pouze podmnožinu sdílené značek může nechtěně zkopírujte do nové stránky. A na začátek ho, tento přístup zajišťuje, nahraďte existující vzhled celý web novou problémové reálné číslo, protože každé jedné stránky webu musí upravit, aby bylo možné používat nový vzhled a chování.
 
-Před technologii ASP.NET verze 2.0, stránka vývojáři často umístit běžné značek v [uživatelské ovládací prvky](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx) a pak přidá tyto uživatelské ovládací prvky na každé stránce. Tento přístup vyžaduje vývojář stránky nezapomeňte ručně přidat uživatelské ovládací prvky pro každou novou stránku, že povolená pro snazší úpravy celý web, protože při aktualizaci značek běžné potřeby pouze uživatelské ovládací prvky má být změněn. Visual Studio .NET 2002 a 2003 - verze sady Visual Studio, bohužel použít k vytvoření aplikace ASP.NET 1.x - uživatelské ovládací prvky v zobrazení návrhu se vykresluje jako šedá pole. V důsledku toho stránky vývojáře, kteří používají tento přístup není získejte WYSIWYG prostředí návrhu.
+Před technologii ASP.NET verze 2.0, stránka vývojáři často umístit běžné značek v [uživatelské ovládací prvky](https://msdn.microsoft.com/library/y6wb1a0e.aspx) a pak přidá tyto uživatelské ovládací prvky na každé stránce. Tento přístup vyžaduje vývojář stránky nezapomeňte ručně přidat uživatelské ovládací prvky pro každou novou stránku, že povolená pro snazší úpravy celý web, protože při aktualizaci značek běžné potřeby pouze uživatelské ovládací prvky má být změněn. Visual Studio .NET 2002 a 2003 - verze sady Visual Studio, bohužel použít k vytvoření aplikace ASP.NET 1.x - uživatelské ovládací prvky v zobrazení návrhu se vykresluje jako šedá pole. V důsledku toho stránky vývojáře, kteří používají tento přístup není získejte WYSIWYG prostředí návrhu.
 
 Nedostatků použití uživatelských ovládacích prvků byla provedena v technologii ASP.NET verze 2.0 a Visual Studio 2005 se zavedením *hlavní stránky*. Hlavní stránka je speciální typ stránky ASP.NET, která definuje kód na webu a *oblasti* kde přidružené *obsahu stránky* definovat své vlastní značky. Jak jsme uvidí v kroku 1, jsou tyto oblasti definované ContentPlaceHolder ovládací prvky. Ovládací prvek ContentPlaceHolder jednoduše označuje pozici v hierarchii řízení stránky předlohy, kde může vlastní obsah vložit podle obsahu stránky.
 
@@ -95,7 +95,7 @@ Teď, když budeme mít popsané, jak fungují stránky předlohy, Podívejme se
 Před jsme můžete prozkoumat vytváření a používání stránky, potřebujeme nejprve webu ASP.NET. Začněte vytvořením webu ASP.NET na základě systému nový soubor. K tomu, spusťte aplikaci Visual Web Developer a pak přejděte do nabídky soubor a vyberte nový web zobrazení dialogového okna Nový web (viz obrázek 4). Výběr šablony webu ASP.NET, nastavte rozevírací seznam umístění do systému souborů, vyberte složku pro umístění na webu a nastavení jazyka C#. Tím se vytvoří nový web s `Default.aspx` stránka ASP.NET `App_Data` složku a `Web.config` souboru.
 
 > [!NOTE]
-> Visual Studio podporuje dva režimy řízení projektu: webové projekty a projekty webových aplikací. Webové projekty chybí soubor projektu, zatímco projekty webových aplikací napodobovat architektuře projektu ve Visual Studio .NET 2002 nebo 2003 – se můžete zahrnout soubor projektu a kompilace zdrojového kódu projektu do jednoho sestavení, který je umístěn do `/bin` složka. Projekty Visual Studio 2005 původně pouze podporované webové stránky, i když [modelu projektu webové aplikace](https://msdn.microsoft.com/en-us/library/aa730880(vs.80).aspx) bylo znovu zavedeno s aktualizací Service Pack 1; Visual Studio 2008 nabízí obou modelů projektu. Visual Web Developer 2005 a edice 2008, ale podporují pouze webové projekty. Můžu použít webový projekt modelu pro moje ukázky z této série kurzu. Pokud používáte jiný Express edition a chcete místo toho použít model projektu webové aplikace, zaregistrované, můžete tak učinit, ale uvědomte si, že mohou být některé rozdíly mezi zobrazené na obrazovce a kroky, které je nutné provést porovnání snímky obrazovky ukazuje a instructio zadaná v těchto kurzech NS.
+> Visual Studio podporuje dva režimy řízení projektu: webové projekty a projekty webových aplikací. Webové projekty chybí soubor projektu, zatímco projekty webových aplikací napodobovat architektuře projektu ve Visual Studio .NET 2002 nebo 2003 – se můžete zahrnout soubor projektu a kompilace zdrojového kódu projektu do jednoho sestavení, který je umístěn do `/bin` složka. Projekty Visual Studio 2005 původně pouze podporované webové stránky, i když [modelu projektu webové aplikace](https://msdn.microsoft.com/library/aa730880(vs.80).aspx) bylo znovu zavedeno s aktualizací Service Pack 1; Visual Studio 2008 nabízí obou modelů projektu. Visual Web Developer 2005 a edice 2008, ale podporují pouze webové projekty. Můžu použít webový projekt modelu pro moje ukázky z této série kurzu. Pokud používáte jiný Express edition a chcete místo toho použít model projektu webové aplikace, zaregistrované, můžete tak učinit, ale uvědomte si, že mohou být některé rozdíly mezi zobrazené na obrazovce a kroky, které je nutné provést porovnání snímky obrazovky ukazuje a instructio zadaná v těchto kurzech NS.
 
 
 [![Vytvoření nového souboru na základě systému webového serveru](creating-a-site-wide-layout-using-master-pages-cs/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image8.png)
@@ -115,7 +115,7 @@ Přidání nového souboru hlavní stránky prostřednictvím Visual Web Develop
 
 [!code-aspx[Main](creating-a-site-wide-layout-using-master-pages-cs/samples/sample1.aspx)]
 
-V prvním řádku deklarativní je [ `@Master` – direktiva](https://msdn.microsoft.com/en-us/library/ms228176.aspx). `@Master` – Direktiva je podobná [ `@Page` – direktiva](https://msdn.microsoft.com/en-us/library/ydy4x04a.aspx) které se zobrazí na stránkách ASP.NET. Určuje jazyk na straně serveru (C#) a informace o umístění a dědičnost třídy kódu stránky předlohy.
+V prvním řádku deklarativní je [ `@Master` – direktiva](https://msdn.microsoft.com/library/ms228176.aspx). `@Master` – Direktiva je podobná [ `@Page` – direktiva](https://msdn.microsoft.com/library/ydy4x04a.aspx) které se zobrazí na stránkách ASP.NET. Určuje jazyk na straně serveru (C#) a informace o umístění a dědičnost třídy kódu stránky předlohy.
 
 `DOCTYPE` a deklarativní stránky se zobrazí pod `@Master` – direktiva. Stránka obsahuje statický HTML spolu s čtyři serverové ovládací prvky:
 
@@ -163,7 +163,7 @@ Během let I sestavili počet webové aplikace ASP.NET pro malé - pro střední
 Naštěstí innumerous weby, které nabízejí šablony bezplatnou návrhu HTML – Google vrátil více než půl milionů výsledky pro hledaný termín "šablony bezplatnou webu." Jeden z mých Oblíbené ty, které jsou je [OpenDesigns.org](http://opendesigns.org/). Po nalezení webu šablonu, kterou chcete přidat soubory šablon stylů CSS a bitové kopie do projektu webu a integrovat šablony HTML do vaší stránky předlohy.
 
 > [!NOTE]
-> Microsoft také nabízí řadu [bez spuštění šablony Kit aplikace ASP.NET návrhu](https://msdn.microsoft.com/en-us/asp.net/aa336613.aspx) , integrovat do dialogu Nový web v sadě Visual Studio.
+> Microsoft také nabízí řadu [bez spuštění šablony Kit aplikace ASP.NET návrhu](https://msdn.microsoft.com/asp.net/aa336613.aspx) , integrovat do dialogu Nový web v sadě Visual Studio.
 
 
 ## <a name="step-2-creating-associated-content-pages"></a>Krok 2: Vytvoření související stránky obsahu
@@ -272,8 +272,8 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Technologie ASP.NET pro návrháře: Uvolněte návrh šablony a pokyny o vytváření webů ASP.NET pomocí webové standardy](https://msdn.microsoft.com/en-us/asp.net/aa336602.aspx)
-- [Přehled stránky předlohy technologie ASP.NET](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx)
+- [Technologie ASP.NET pro návrháře: Uvolněte návrh šablony a pokyny o vytváření webů ASP.NET pomocí webové standardy](https://msdn.microsoft.com/asp.net/aa336602.aspx)
+- [Přehled stránky předlohy technologie ASP.NET](https://msdn.microsoft.com/library/wtxbf3hh.aspx)
 - [Kurzy kaskádové šablony stylů (CSS)](http://www.w3schools.com/css/default.asp)
 - [Dynamicky nastavení nadpis stránky](http://aspnet.4guysfromrolla.com/articles/051006-1.aspx)
 - [Stránky předlohy technologie ASP.NET](http://www.odetocode.com/articles/419.aspx)
@@ -288,4 +288,4 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
 >[!div class="step-by-step"]
-[Další](multiple-contentplaceholders-and-default-content-cs.md)
+[Next](multiple-contentplaceholders-and-default-content-cs.md)

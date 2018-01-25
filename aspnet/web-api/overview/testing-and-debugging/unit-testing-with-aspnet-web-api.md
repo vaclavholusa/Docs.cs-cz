@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 13211ee4543e17a4bfb2f83495f4041880f37df2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d6102dd81589e41894d8ecd95bf9ddd761a65bd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>Rozhraní ASP.NET Web API 2 testování částí
 ====================
@@ -118,7 +118,7 @@ Existujícího kódu nahraďte následujícím kódem. Pro zjednodušení tento 
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample2.cs)]
 
-Metoda GetProduct vrací instanci třídy **IHttpActionResult** rozhraní. IHttpActionResult je jednou z nových funkcí ve webovém rozhraní API 2 a usnadňují vývoj testů jednotek. Třídy, které implementují rozhraní IHttpActionResult se nacházejí v [System.Web.Http.Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx) oboru názvů. Tyto třídy představují možné odpovědí z akcí žádosti a odpovídají stavové kódy HTTP.
+Metoda GetProduct vrací instanci třídy **IHttpActionResult** rozhraní. IHttpActionResult je jednou z nových funkcí ve webovém rozhraní API 2 a usnadňují vývoj testů jednotek. Třídy, které implementují rozhraní IHttpActionResult se nacházejí v [System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx) oboru názvů. Tyto třídy představují možné odpovědí z akcí žádosti a odpovídají stavové kódy HTTP.
 
 Sestavte řešení.
 

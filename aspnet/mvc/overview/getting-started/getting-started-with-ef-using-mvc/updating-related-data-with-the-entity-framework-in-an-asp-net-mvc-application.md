@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 348940748e3c33ace03d1b8f41615e9814cf6b40
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 205d5ddcd0c3240c87ec5705a6676215eb67942d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Aktualizace dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC
 ====================
@@ -127,7 +127,7 @@ Kód provede následující akce:
 
 - Změní název metody k `EditPost` protože podpis je nyní stejná jako `HttpGet` – metoda ( `ActionName` atribut určuje, jestli se stále používá adresu URL /Edit/).
 - Získá aktuální `Instructor` entity z databáze pomocí přes načítání pro `OfficeAssignment` navigační vlastnost. Je to stejné jako v `HttpGet` `Edit` metoda.
-- Aktualizace načtený `Instructor` entity hodnotami z vazače modelu. [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.108).aspx) vám umožní použít přetížení *povolených* vlastnosti, které chcete zahrnout. To brání přečerpání účtování, jak je popsáno v [druhý kurzu](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
+- Aktualizace načtený `Instructor` entity hodnotami z vazače modelu. [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx) vám umožní použít přetížení *povolených* vlastnosti, které chcete zahrnout. To brání přečerpání účtování, jak je popsáno v [druhý kurzu](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
 
     [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs)]
 - Pokud umístění kanceláře je prázdné, nastaví `Instructor.OfficeAssignment` vlastnost na hodnotu null, aby související řádek v `OfficeAssignment` tabulky se odstraní.
@@ -163,7 +163,7 @@ V *InstructorController.cs*, nahraďte `HttpGet` `Edit` metoda následujícím k
 
 Kód přidá přes načítání pro `Courses` navigační vlastnost a volá novou `PopulateAssignedCourseData` metoda podat informace o použití pole zaškrtávací políčko `AssignedCourseData` zobrazit třídu modelu.
 
-Kód `PopulateAssignedCourseData` metoda čte prostřednictvím všechny `Course` třída modelu entity, aby bylo možné načíst seznam kurzů pomocí zobrazení. Pro každý kurz kód ověří, zda během existuje v lektorem `Courses` navigační vlastnost. Chcete-li vytvořit efektivní vyhledávání při kontrole, zda je přiřazen kurzu lektorem, jsou vložena kurzy přiřazené lektorem [HashSet](https://msdn.microsoft.com/en-us/library/bb359438.aspx) kolekce. `Assigned` Je nastavena na `true` pro kurzy lektorem přiřazen. Zobrazení bude pomocí této vlastnosti k určení, které Kontrola polí musí být zobrazí jako vybraný. Nakonec je předán zobrazení v seznamu `ViewBag` vlastnost.
+Kód `PopulateAssignedCourseData` metoda čte prostřednictvím všechny `Course` třída modelu entity, aby bylo možné načíst seznam kurzů pomocí zobrazení. Pro každý kurz kód ověří, zda během existuje v lektorem `Courses` navigační vlastnost. Chcete-li vytvořit efektivní vyhledávání při kontrole, zda je přiřazen kurzu lektorem, jsou vložena kurzy přiřazené lektorem [HashSet](https://msdn.microsoft.com/library/bb359438.aspx) kolekce. `Assigned` Je nastavena na `true` pro kurzy lektorem přiřazen. Zobrazení bude pomocí této vlastnosti k určení, které Kontrola polí musí být zobrazí jako vybraný. Nakonec je předán zobrazení v seznamu `ViewBag` vlastnost.
 
 Dál přidejte kód, který je spuštěn, když uživatel klikne na **Uložit**. Nahraďte `EditPost` metoda následující kód, který volá nová metoda, která aktualizuje `Courses` vlastnost navigace `Instructor` entity. Změny se zvýrazněnou.
 
@@ -171,7 +171,7 @@ Dál přidejte kód, který je spuštěn, když uživatel klikne na **Uložit**.
 
 Podpis metody se liší od teď `HttpGet` `Edit` proto název metody změní z `EditPost` zpět na `Edit`.
 
-Vzhledem k tomu, že zobrazení nemá kolekce `Course` entity, vazač modelu nelze aktualizovat automaticky `Courses` navigační vlastnost. Místo použití vazače modelu k aktualizaci `Courses` navigační vlastnost, můžete to udělat v novém `UpdateInstructorCourses` metoda. Proto musíte vyloučit `Courses` vlastnost z vazby modelu. To nevyžaduje všechny změny kód, který volá [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.98).aspx) vzhledem k tomu, že používáte *povolených* přetížení a `Courses` není v seznamu zahrnout.
+Vzhledem k tomu, že zobrazení nemá kolekce `Course` entity, vazač modelu nelze aktualizovat automaticky `Courses` navigační vlastnost. Místo použití vazače modelu k aktualizaci `Courses` navigační vlastnost, můžete to udělat v novém `UpdateInstructorCourses` metoda. Proto musíte vyloučit `Courses` vlastnost z vazby modelu. To nevyžaduje všechny změny kód, který volá [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.98).aspx) vzhledem k tomu, že používáte *povolených* přetížení a `Courses` není v seznamu zahrnout.
 
 Pokud žádná kontrola byly zaškrtnutá políčka, kód v `UpdateInstructorCourses` inicializuje `Courses` navigační vlastnost s prázdnou kolekci:
 
@@ -266,7 +266,7 @@ Spuštění stránky vytvořit a přidat lektorem.
 <a id="transactions"></a>
 ## <a name="handling-transactions"></a>Zpracování transakcí
 
-Jak je popsáno v [základní funkce CRUD kurzu](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md), ve výchozím nastavení rozhraní Entity Framework implicitně implementuje transakce. Scénáře, kde můžete potřebovat více řídit – například pokud chcete takové operace, provést v transakci – mimo Entity Framework najdete v tématu [práce s transakce](https://msdn.microsoft.com/en-US/data/dn456843) na webu MSDN.
+Jak je popsáno v [základní funkce CRUD kurzu](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md), ve výchozím nastavení rozhraní Entity Framework implicitně implementuje transakce. Scénáře, kde můžete potřebovat více řídit – například pokud chcete takové operace, provést v transakci – mimo Entity Framework najdete v tématu [práce s transakce](https://msdn.microsoft.com/data/dn456843) na webu MSDN.
 
 ## <a name="summary"></a>Souhrn
 

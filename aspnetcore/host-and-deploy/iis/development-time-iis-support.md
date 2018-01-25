@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: 95bc6c124f4d017a4371017b3dd04fd1ca69f96d
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 264be49e8aff72f913c22508150e424541d49fa0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Podpora IIS době vývoje v sadě Visual Studio pro ASP.NET Core
 
@@ -80,4 +80,4 @@ Blahopřejeme! V tomto okamžiku projekt je konfigurován pro podporu vývoj ča
 
 * [Jádro ASP.NET hostitele v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index)
 * [Úvod do modulu ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
-* [Odkaz na konfiguraci základní modul ASP.NET](xref:host-and-deploy/aspnet-core-module)
+* [Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)

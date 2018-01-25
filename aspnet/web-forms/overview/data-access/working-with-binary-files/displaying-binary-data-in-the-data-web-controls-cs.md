@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 09482ef453e9e8efa4a2721b9fe628d2a58dd53c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d66079f784792a2514eefabf57f70826aab5dcf1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-c"></a>Zobrazení binární Data v ovládací prvky webového dat (C#)
 ====================
@@ -129,7 +129,7 @@ Dále vytvořte `protected` metoda v prostředí ASP.NET stránky s názvem tř�
 
 [!code-csharp[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample3.cs)]
 
-Tato metoda určuje, zda předané `object` hodnota je databáze `NULL` a pokud ano, vrátí zpráva označující, že chybí kategorii – příručka. Jinak, pokud je `BrochurePath` hodnotu, se zobrazí v hypertextový odkaz s. Všimněte si, že pokud `BrochurePath` hodnota je k dispozici s předaný do [ `ResolveUrl(url)` metoda](https://msdn.microsoft.com/en-us/library/system.web.ui.control.resolveurl.aspx). Tato metoda přeloží předané *adresa url*, a nahraďte `~` znak s příslušnou virtuální cestu. Například pokud aplikace se zobrazuje v `/Tutorial55`, `ResolveUrl("~/Brochures/Meats.pdf")` vrátí `/Tutorial55/Brochures/Meat.pdf`.
+Tato metoda určuje, zda předané `object` hodnota je databáze `NULL` a pokud ano, vrátí zpráva označující, že chybí kategorii – příručka. Jinak, pokud je `BrochurePath` hodnotu, se zobrazí v hypertextový odkaz s. Všimněte si, že pokud `BrochurePath` hodnota je k dispozici s předaný do [ `ResolveUrl(url)` metoda](https://msdn.microsoft.com/library/system.web.ui.control.resolveurl.aspx). Tato metoda přeloží předané *adresa url*, a nahraďte `~` znak s příslušnou virtuální cestu. Například pokud aplikace se zobrazuje v `/Tutorial55`, `ResolveUrl("~/Brochures/Meats.pdf")` vrátí `/Tutorial55/Brochures/Meat.pdf`.
 
 Obrázek 10 ukazuje na stránku po použití těchto změn. Všimněte si, že ryby kategorie s `BrochurePath` pole nyní zobrazí text není – příručka k dispozici.
 
@@ -164,7 +164,7 @@ Ve třídě, stránku s kódem v pozadí, přidejte následující kód, který 
 
 [!code-csharp[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample6.cs)]
 
-Tento kód začíná čtení v `CategoryID` hodnotu querystring do proměnné s názvem `categoryID`. V dalším kroku jsou načtena data obrázek prostřednictvím volání `CategoriesBLL` třídu s `GetCategoryWithBinaryDataByCategoryID(categoryID)` metoda. Tato data je vrácen do klienta pomocí `Response.BinaryWrite(data)` metoda, ale předtím, než je tomu se říká, `Picture` záhlaví OLE hodnotu s sloupce musí být odebrány. Toho dosahuje tak, že vytvoříte `byte` pole s názvem `strippedImageData` , bude obsahovat přesně 78 znaky menší než co je v `Picture` sloupce. [ `Array.Copy` Metoda](https://msdn.microsoft.com/en-us/library/z50k9bft.aspx) se používá ke zkopírování dat z `category.Picture` začínající na pozici 78 přes k `strippedImageData`.
+Tento kód začíná čtení v `CategoryID` hodnotu querystring do proměnné s názvem `categoryID`. V dalším kroku jsou načtena data obrázek prostřednictvím volání `CategoriesBLL` třídu s `GetCategoryWithBinaryDataByCategoryID(categoryID)` metoda. Tato data je vrácen do klienta pomocí `Response.BinaryWrite(data)` metoda, ale předtím, než je tomu se říká, `Picture` záhlaví OLE hodnotu s sloupce musí být odebrány. Toho dosahuje tak, že vytvoříte `byte` pole s názvem `strippedImageData` , bude obsahovat přesně 78 znaky menší než co je v `Picture` sloupce. [ `Array.Copy` Metoda](https://msdn.microsoft.com/library/z50k9bft.aspx) se používá ke zkopírování dat z `category.Picture` začínající na pozici 78 přes k `strippedImageData`.
 
 `Response.ContentType` Určuje vlastnost [typ MIME](http://en.wikipedia.org/wiki/MIME) obsahu nevrátila tak, aby prohlížeč umí vykreslit ho. Vzhledem k tomu `Categories` tabulky s `Picture` sloupec rastrový obrázek, zobrazí typ MIME rastrový obrázek zde (bitovou kopii nebo bmp). Pokud vynecháte typ MIME, většina prohlížečů bude stále umožňuje zobrazit obrázek správně vzhledem k tomu, že můžete odvození typu na základě obsahu binární data bitové kopie souboru s. Nicméně je doporučeno zahrnout MIME s zadejte, pokud je to možné. Najdete v článku [webu s Internet Assigned Numbers Authority](http://www.iana.org/) pro úplný seznam všech [typy MIME média](http://www.iana.org/assignments/media-types/).
 

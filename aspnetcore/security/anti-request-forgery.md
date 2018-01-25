@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/anti-request-forgery
-ms.openlocfilehash: d7df8f91e88290509c8751a4b69804b60138846e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3831bf737186d10eb1b298f5ec2da1fd33ebedd9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Prevence útoků (XSRF/proti útokům CSRF) padělání požadavku posílaného mezi weby v ASP.NET Core
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="what-attack-does-anti-forgery-prevent"></a>Jaké útoku proti padělání zabránit?
 
-Padělání požadavku posílaného mezi weby (také označované jako XSRF nebo proti útokům CSRF, vyslovováno *najdete procházení*) je útok na hostované webové aplikace, které můžete vytvořit web ovlivnit interakce mezi prohlížeče klienta a webová stránka, která důvěřuje Tento prohlížeč. Tyto útoky jsou možné, protože webových prohlížečů odesílat některé typy ověřování tokenů automaticky s každou žádost na web. Tato forma zneužití je také označován jako *jedním kliknutím útoku* nebo jako *relace jízda*, protože je útok trvá výhod uživatel ověřený relace.
+Padělání požadavku posílaného mezi weby (také označované jako XSRF nebo proti útokům CSRF, vyslovováno *najdete procházení*) je útok na hostované webové aplikace, které můžete vytvořit web ovlivnit interakce mezi prohlížeče klienta a webová stránka, která důvěřuje Tento prohlížeč. Tyto útoky jsou možné, protože webových prohlížečů odesílat některé typy ověřování tokenů automaticky s každou žádost na web. Tato forma zneužití je taky říká *jedním kliknutím útoku* nebo jako *relace jízda*, protože je útok trvá výhod uživatel ověřený relace.
 
 Příklad útoku proti útokům CSRF:
 
@@ -57,7 +57,7 @@ Některými útoky cílové lokality koncové body, které reagují na `GET` po�
 
 Útoky proti útokům CSRF je možné proti webové stránky, které používají soubory cookie pro ověřování, protože prohlížeče odesílají všechny relevantní soubory cookie k cílovému webu. Útoky proti útokům CSRF však nejsou omezeny na zneužitím soubory cookie. Ověřování Basic a Digest jsou například také snadno napadnutelný. Po přihlášení uživatele pomocí ověřování základní nebo Digest, v prohlížeči automaticky odesílá přihlašovací údaje až do ukončení relace.
 
-Poznámka: V tomto kontextu *relace* odkazuje na straně klienta relace, během které je uživatel ověřený. Nemá vliv na to relace na straně serveru nebo [relace middleware](xref:fundamentals/app-state).
+Poznámka: V tomto kontextu *relace* odkazuje na straně klienta relace, během které je uživatel ověřený. Je relace na straně serveru, které nejsou nebo [relace middleware](xref:fundamentals/app-state).
 
 Uživatelé můžou chránit proti ohrožení zabezpečení proti útokům CSRF pomocí:
 * Protokolování z webových stránek, při jejich dokončení jejich používání.
@@ -171,7 +171,7 @@ public async Task<IActionResult> RemoveLogin(RemoveLoginViewModel account)
 
 ### <a name="autovalidateantiforgerytoken"></a>AutoValidateAntiforgeryToken
 
-Aplikace ASP.NET Core obecně negenerují antiforgery tokeny pro bezpečné metody HTTP (GET, HEAD, možnosti a trasování). Místo použití široce ``ValidateAntiForgeryToken`` atribut a pak jeho pomocí přepsání ``IgnoreAntiforgeryToken`` atributy, můžete použít ``AutoValidateAntiforgeryToken`` atribut. Tento atribut funguje stejně jako na ``ValidateAntiForgeryToken`` atribut, s tím rozdílem, že není třeba tokeny na požadavky vytvořené pomocí následujících metod HTTP:
+Aplikace ASP.NET Core obecně negenerovat antiforgery tokeny pro bezpečné metody HTTP (GET, HEAD, možnosti a trasování). Místo použití široce ``ValidateAntiForgeryToken`` atribut a pak jeho pomocí přepsání ``IgnoreAntiforgeryToken`` atributy, můžete použít ``AutoValidateAntiforgeryToken`` atribut. Tento atribut funguje stejně jako na ``ValidateAntiForgeryToken`` atribut, s tím rozdílem, že není třeba tokeny na požadavky vytvořené pomocí následujících metod HTTP:
 
 * GET
 * HEAD
@@ -345,7 +345,7 @@ V tématu https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builde
 
 ### <a name="cookie-based-authentication"></a>Ověřování na základě souborů cookie
 
-Jakmile uživatel byl ověřen pomocí uživatelského jména a hesla, je vystaví token, který slouží k jejich identifikaci a ověření, které byly ověřeny. Token je uloženo jako soubor cookie, který doprovází každý požadavek klienta umožňuje. Generování a ověřování tento soubor cookie je potřeba middleware ověřování souborů cookie. Základní technologie ASP.NET poskytuje soubor cookie [middleware](../fundamentals/middleware.md) který serializuje hlavní název uživatele do šifrovaného souboru cookie a pak na následné žádosti, ověří souboru cookie, znovu vytvoří objekt a přiřadí ji k `User` vlastnost `HttpContext`.
+Jakmile uživatel byl ověřen pomocí uživatelského jména a hesla, budou se vystaví token, který slouží k jejich identifikaci a ověření, které byly ověřeny. Token je uloženo jako soubor cookie, který doprovází každý požadavek klienta umožňuje. Generování a ověřování tento soubor cookie je potřeba middleware ověřování souborů cookie. Základní technologie ASP.NET poskytuje soubor cookie [middleware](../fundamentals/middleware.md) který serializuje hlavní název uživatele do šifrovaného souboru cookie a pak na následné žádosti, ověří souboru cookie, znovu vytvoří objekt a přiřadí ji k `User` vlastnost `HttpContext`.
 
 Pokud soubor cookie se používá, ověřovacího souboru cookie je kontejner pro ověřovací lístek. Lístek se předá jako hodnota souboru cookie pro ověřování formulářů s každou žádostí a ověřování pomocí formulářů, na serveru, používá k identifikaci ověřeného uživatele.
 
@@ -353,11 +353,11 @@ Když je uživatel přihlášen do systému, uživatelské relace je vytvořena 
 
 ### <a name="user-tokens"></a>Tokeny uživatele
 
-Ověřování na základě tokenu není relace uložit na server. Když je přihlášen uživatel je místo toho vystaví token (ne antiforgery token). Tento token obsahuje všechna data, která je nutné k ověření tokenu. Také obsahuje informace o uživateli ve formě [deklarace identity](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Pokud chce uživatel pro přístup k prostředkům serveru, které vyžadují ověřování, token je odeslána na server s hlavičku další ověřování ve formuláři nosiče {token}. Díky aplikaci bezstavové vzhledem k tomu, že v každé následné žádosti o token je předán v požadavku pro ověřování na straně serveru. Tento token není *šifrované*; je spíše *kódovaný*. Na straně serveru může dekódovat tokenu pro přístup k nezpracované informace v tokenu. Odeslat token v následných žádostí, můžete buď je uložit v prohlížeči místní úložiště nebo v souboru cookie. Nemusíte si dělat starosti o ohrožení zabezpečení XSRF, pokud váš token je uložený v místním úložišti, ale je problém, pokud je token je uložen v souboru cookie.
+Ověřování na základě tokenu není relace uložit na server. Místo toho když je přihlášený uživatel jejich jste vystaví token (ne antiforgery token). Tento token obsahuje všechna data, která je nutné k ověření tokenu. Také obsahuje informace o uživateli ve formě [deklarace identity](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Pokud chce uživatel pro přístup k prostředkům serveru, které vyžadují ověřování, token je odeslána na server s hlavičku další ověřování ve formuláři nosiče {token}. Díky aplikaci bezstavové vzhledem k tomu, že v každé následné žádosti o token je předán v požadavku pro ověřování na straně serveru. Tento token není *šifrované*; je spíše *kódovaný*. Na straně serveru může dekódovat tokenu pro přístup k nezpracované informace v tokenu. Odeslat token v následných žádostí, můžete buď je uložit v prohlížeči místní úložiště nebo v souboru cookie. Nemusíte si dělat starosti o ohrožení zabezpečení XSRF, pokud váš token je uložený v místním úložišti, ale je problém, pokud je token je uložen v souboru cookie.
 
 ### <a name="multiple-applications-are-hosted-in-one-domain"></a>Více aplikací, které jsou hostované v jedné doméně
 
-I když `example1.cloudapp.net` a `example2.cloudapp.net` jsou různých hostitelích, je vztah implicitní vztah důvěryhodnosti mezi všechny hostitele pod `*.cloudapp.net` domény. Tento vztah důvěryhodnosti implicitní umožňuje potenciálně nedůvěryhodní hostitelé ovlivnit vzájemně soubory cookie (stejného původu zásady, které řídí požadavky AJAX nemusí platit pro soubory cookie HTTP). Modul runtime ASP.NET Core poskytuje některé zmírnění v tom, že uživatelské jméno se vloží do pole tokenu, tak i v případě, že škodlivý subdoména je možné přepsat token relace nelze vygenerovat token pro daného uživatele platné pole. Ale když jsou hostované v takovém prostředí rutiny předdefinované anti-XSRF stále nelze bránit proti zneužití relace nebo přihlášení proti útokům CSRF útoky. Sdílené hostitelská prostředí jsou vunerable zneužití relace, přihlášení proti útokům CSRF a jiným útokům.
+I když `example1.cloudapp.net` a `example2.cloudapp.net` jsou různých hostitelích, je vztah implicitní vztah důvěryhodnosti mezi všechny hostitele pod `*.cloudapp.net` domény. Tento vztah důvěryhodnosti implicitní umožňuje potenciálně nedůvěryhodní hostitelé ovlivnit vzájemně soubory cookie (stejného původu zásady, které řídí požadavky AJAX nemáte platit pro soubory cookie HTTP). Modul runtime ASP.NET Core poskytuje některé zmírnění v tom, že uživatelské jméno se vloží do pole tokenu, tak i v případě, že škodlivý subdoména je možné přepsat token relace nelze vygenerovat token pro daného uživatele platné pole. Ale když jsou hostované v takovém prostředí rutiny předdefinované anti-XSRF stále nelze bránit proti zneužití relace nebo přihlášení proti útokům CSRF útoky. Sdílené hostitelská prostředí jsou vunerable zneužití relace, přihlášení proti útokům CSRF a jiným útokům.
 
 
 ### <a name="additional-resources"></a>Další prostředky

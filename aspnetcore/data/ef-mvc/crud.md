@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 7e495ba56958012713836c1dd75ac0c5a8bff942
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 873e4592ba668bbcb22f761c2a547a2a27d7e443
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Vytvářet, číst, aktualizovat a odstraňovat – základní EF s kurz k ASP.NET MVC jádra (2 10)
 
@@ -118,7 +118,7 @@ V *StudentsController.cs*, upravte HttpPost `Create` metoda pomocí bloku try-ca
 
 Tento kód přidá Student entity vytvořené vazač modelu ASP.NET MVC v entitě studenty nastavení a pak uloží změny do databáze. (Vazač modelu odkazuje funkce ASP.NET MVC, která usnadňuje práci s data odeslaná formuláře; vazač modelu převádí hodnoty odeslaného formuláře pro typy CLR a předává je na metodu akce v parametrech. V tomto případě vazač modelu vytvoří instanci Student entity můžete pomocí hodnoty vlastností z kolekce formuláře.)
 
-Můžete odebrat `ID` z `Bind` atributů, protože ID má hodnotu primárního klíče, který systému SQL Server bude nastavení automaticky při vložit řádek. Vstup od uživatele není nastavena hodnota ID.
+Můžete odebrat `ID` z `Bind` atributů, protože ID má hodnotu primárního klíče, který systému SQL Server bude nastavení automaticky při vložit řádek. Vstup od uživatele nemá nastavit hodnotu ID.
 
 Jiné než `Bind` atribut try-catch – blok je pouze změny, které jste udělali automaticky generovaný kód. Pokud se výjimka, která je odvozena z `DbUpdateException` je zachycena, zatímco se ukládají změny, se zobrazí obecnou chybovou zprávu. `DbUpdateException`výjimky jsou někdy způsobeny něco externí do aplikací, nikoli chybě programování, takže uživatel se doporučuje a zkuste to znovu. I když není implementována v této ukázce, produkční kvality aplikace by zaprotokolování výjimky. Další informace najdete v tématu **protokolu přehledy** kapitoly [monitorování a Telemetrie (vytváření reálných cloudových aplikací s Azure)](https://docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).
 
@@ -216,7 +216,7 @@ Ve webové aplikaci `DbContext` , který původně čte entity a zobrazí jeho d
 
 Ale pokud nechcete provést operace čtení nadbytečné, budete muset použít objekt entity vytvořené vazač modelu.  Nejjednodušší způsob, jak to udělat je nastavení stavu entity na změněné, jak se provádí v dříve uvedeném alternativní HttpPost úpravy kódu. Potom při volání `SaveChanges`, rozhraní Entity Framework aktualizuje všechny sloupce řádku databáze, protože kontext nemá žádný způsob, jak zjistit vlastnosti, které jste změnili.
 
-Pokud chcete, aby se zabránilo přístup pro čtení první, ale také chcete aktualizovat SQL příkaz k aktualizaci pouze pole, která uživatel ve skutečnosti změnit, je složitější kód. Budete muset uložit původní hodnoty nějakým způsobem (například pomocí skrytá pole), aby byly k dispozici při HttpPost `Edit` metoda je volána. Potom můžete vytvořit Student entitu pomocí původní hodnoty, volání `Attach` metoda tento původní verzi entity, aktualizujte hodnoty entity na nové hodnoty a pak zavolají `SaveChanges`.
+Pokud chcete, aby se zabránilo přístup pro čtení první, ale také chcete aktualizovat SQL příkaz k aktualizaci pouze pole, která uživatel ve skutečnosti změnit, je složitější kód. Budete muset uložit původní hodnoty nějakým způsobem (například pomocí skrytá pole) tak, že jsou k dispozici při HttpPost `Edit` metoda je volána. Potom můžete vytvořit Student entitu pomocí původní hodnoty, volání `Attach` metoda tento původní verzi entity, aktualizujte hodnoty entity na nové hodnoty a pak zavolají `SaveChanges`.
 
 ### <a name="test-the-edit-page"></a>Testovací stránka upravit
 

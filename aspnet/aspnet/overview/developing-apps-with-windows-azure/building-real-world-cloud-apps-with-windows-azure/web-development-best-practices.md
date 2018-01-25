@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: a40a3779ddc416e141dd27b665f43830a43590b1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de536a0ca39cb752c0962f0c4ae36eb00b586bff
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Vývoj webové osvědčených postupů (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -142,20 +142,20 @@ Další informace najdete v následujících materiálech.
 
 Bezstavové webové servery:
 
-- [Microsoft Patterns and Practices - automatické škálování pokyny](https://msdn.microsoft.com/en-us/library/dn589774.aspx).
+- [Microsoft Patterns and Practices - automatické škálování pokyny](https://msdn.microsoft.com/library/dn589774.aspx).
 - [Zakázání ARR Instance spřažení v systému Windows Azure weby](https://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/). Příspěvek blogu podle Erez Benari vysvětluje spřažení relace v weby systému Windows Azure.
 
 CDN:
 
 - [Bezporuchový: Vytváření škálovatelné, odolné cloudové služby](https://channel9.msdn.com/Series/FailSafe). Série videí devět částí Ulrich Homann, Mercuri matolin a moduly SIMM značky. Přečtěte si diskuzi CDN v díl 3 počínaje 1:34:00.
-- [Vzor Microsoft Patterns a postupy statického obsahu hostování](https://msdn.microsoft.com/en-us/library/dn589776.aspx)
+- [Vzor Microsoft Patterns a postupy statického obsahu hostování](https://msdn.microsoft.com/library/dn589776.aspx)
 - [CDN recenze](http://www.cdnreviews.com/). Přehled mnoho sítím CDN.
 
 Asynchronní programování:
 
 - [Použití asynchronních metod v architektuře ASP.NET MVC 4](../../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md). Kurz od Ricka Andersona.
-- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (C# a Visual Basic)](https://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx). MSDN dokumentu white paper, popisuje důvody asynchronní programování, jak to funguje v technologii ASP.NET 4.5 a jak napsat kód pro implementaci.
-- [Entity Framework asynchronní dotaz a uložit](https://msdn.microsoft.com/en-us/data/jj819165)
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (C# a Visual Basic)](https://msdn.microsoft.com/library/vstudio/hh191443.aspx). MSDN dokumentu white paper, popisuje důvody asynchronní programování, jak to funguje v technologii ASP.NET 4.5 a jak napsat kód pro implementaci.
+- [Entity Framework asynchronní dotaz a uložit](https://msdn.microsoft.com/data/jj819165)
 - [Postup vytvoření webové aplikace ASP.NET pomocí modifikátoru Async](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B337#fbid=tgkT4SR_DK7). Video prezentace podle Rowan Lukeš. Zahrnuje grafické ukázce jak asynchronního programování může usnadnit výraznému nárůstu propustnosti webového serveru podmínky vysokého zatížení.
 - [Bezporuchový: Vytváření škálovatelné, odolné cloudové služby](https://channel9.msdn.com/Series/FailSafe). Série videí devět částí Ulrich Homann, Mercuri matolin a moduly SIMM značky. Diskuze o vlivu asynchronního programování na škálovatelnost najdete v části díl 4 a díl 8.
 - [Magic použití asynchronních metod v technologii ASP.NET 4.5 a důležité gotcha](http://www.hanselman.com/blog/TheMagicOfUsingAsynchronousMethodsInASPNET45PlusAnImportantGotcha.aspx). Příspěvek blogu Scotta Hanselmana, kde, hlavně o použití modifikátoru async v aplikace webových formulářů ASP.NET.

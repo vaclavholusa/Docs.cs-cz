@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 4e2a3176aaedccd40ef6b619efa3c4052dd8470b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a549bd62bd78573c368784fd1529a830e009b0d4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>Začínáme s databáze Entity Framework 4.0 nejprve a 4 webových formulářů ASP.NET - část 2
 ====================
@@ -35,7 +35,7 @@ V předchozích kurzu jste vytvořili webovou stránku, databázi a datový mode
 
 [![Image18](the-entity-framework-and-aspnet-getting-started-part-2/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image5.png)
 
-Upozorňujeme, že v této aplikaci můžete nebude přidávat ověření vstupu na stránky, které aktualizace databáze a některé zpracování chyb nebude robustní, jako by byly zapotřebí v produkční aplikaci. Který udržuje tento kurz se zaměřuje na rozhraní Entity Framework a udržuje ho z získávání příliš dlouhý. Podrobnosti o tom, jak do aplikace přidat tyto funkce najdete v tématu [ověření vstupu uživatele na webových stránkách ASP.NET](https://msdn.microsoft.com/en-us/library/7kh55542.aspx) a [zpracování chyb stránek ASP.NET a v aplikacích](https://msdn.microsoft.com/en-us/library/w16865z6.aspx).
+Upozorňujeme, že v této aplikaci můžete nebude přidávat ověření vstupu na stránky, které aktualizace databáze a některé zpracování chyb nebude robustní, jako by byly zapotřebí v produkční aplikaci. Který udržuje tento kurz se zaměřuje na rozhraní Entity Framework a udržuje ho z získávání příliš dlouhý. Podrobnosti o tom, jak do aplikace přidat tyto funkce najdete v tématu [ověření vstupu uživatele na webových stránkách ASP.NET](https://msdn.microsoft.com/library/7kh55542.aspx) a [zpracování chyb stránek ASP.NET a v aplikacích](https://msdn.microsoft.com/library/w16865z6.aspx).
 
 ## <a name="adding-and-configuring-the-entitydatasource-control"></a>Přidání a konfigurace ovládacího prvku EntityDataSource
 
@@ -157,13 +157,13 @@ Do značky `EntityDataSource` řídit, odeberte `ConnectionString` a `DefaultCon
 
 - Lepší výkon. Když `EntityDataSource` řízení inicializuje data pomocí modelu `ConnectionString` a `DefaultContainerName` atributy, provede načíst metadata u každého požadavku v práci. Tato akce není nutné v případě, že zadáte `ContextTypeName` atribut.
 - Opožděného načítání je zapnutá ve výchozím nastavení v objekt generovaný kontext třídy (například `SchoolEntities` v tomto kurzu) v Entity Framework 4.0. To znamená, že navigační vlastnosti jsou načtená související data automaticky přímo v případě potřeby. Opožděného načítání je vysvětlené podrobněji později v tomto kurzu.
-- Všechna přizpůsobení, která jste použili na objekt context – třída (v takovém případě `SchoolEntities` třída) bude k dispozici pro ovládací prvky, které používají `EntityDataSource` ovládací prvek. Přizpůsobení třídu objektu kontextu je rozšířená který není součástí tohoto kurzu řady. Další informace najdete v tématu [rozšíření Entity Framework generované typy](https://msdn.microsoft.com/en-us/library/dd456844.aspx).
+- Všechna přizpůsobení, která jste použili na objekt context – třída (v takovém případě `SchoolEntities` třída) bude k dispozici pro ovládací prvky, které používají `EntityDataSource` ovládací prvek. Přizpůsobení třídu objektu kontextu je rozšířená který není součástí tohoto kurzu řady. Další informace najdete v tématu [rozšíření Entity Framework generované typy](https://msdn.microsoft.com/library/dd456844.aspx).
 
 Kód bude nyní vypadat v následujícím příkladu (pořadí vlastnosti může být odlišné):
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample6.aspx)]
 
-`EnableFlattening` Atribut odkazuje na funkci, která je potřeba v dřívějších verzích rozhraní Entity Framework, protože nebyly zveřejněné sloupce cizích klíčů jako vlastnosti entity. Aktuální verze je možné použít *přidružení cizího klíče*, což znamená, že vlastnosti cizího klíče jsou viditelné pro všechny ale m: n přidružení. Pokud vaše entity vlastnosti cizího klíče a ne [komplexní typy](https://msdn.microsoft.com/en-us/library/bb738472.aspx), můžete nechat tento atribut nastavit na `False`. Nemáte odeberte atribut z kódu, protože výchozí hodnota je `True`. Další informace najdete v tématu [vyrovnání objekty (EntityDataSource)](https://msdn.microsoft.com/en-us/library/ee404746.aspx).
+`EnableFlattening` Atribut odkazuje na funkci, která je potřeba v dřívějších verzích rozhraní Entity Framework, protože nebyly zveřejněné sloupce cizích klíčů jako vlastnosti entity. Aktuální verze je možné použít *přidružení cizího klíče*, což znamená, že vlastnosti cizího klíče jsou viditelné pro všechny ale m: n přidružení. Pokud vaše entity vlastnosti cizího klíče a ne [komplexní typy](https://msdn.microsoft.com/library/bb738472.aspx), můžete nechat tento atribut nastavit na `False`. Nemáte odeberte atribut z kódu, protože výchozí hodnota je `True`. Další informace najdete v tématu [vyrovnání objekty (EntityDataSource)](https://msdn.microsoft.com/library/ee404746.aspx).
 
 Spuštění stránky a zobrazte seznam všech studenty a zaměstnanci (budete filtrovat jenom studentů v dalším kurzu). Křestní jméno a příjmení se zobrazují společně.
 

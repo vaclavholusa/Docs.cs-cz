@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 2ac18799d214777d098cc85ec6c85fd09f84a782
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a388f2e0ca3e1f0ce24a6def2a2b91711a7bf5a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>Další vzory a pokyny (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -31,18 +31,18 @@ Jste nyní zaznamenané 13 vzorů, které poskytují pokyny o tom, jak úspěšn
 
 - Migraci stávající místní aplikace do cloudu. 
 
-    - [Přesunutí aplikace do cloudu](https://msdn.microsoft.com/en-us/library/ff728592.aspx). Elektronická kniha podle Microsoft Patterns and Practices. Také k dispozici jako [tištěné paperback](https://www.amazon.com/dp/1621140202).
+    - [Přesunutí aplikace do cloudu](https://msdn.microsoft.com/library/ff728592.aspx). Elektronická kniha podle Microsoft Patterns and Practices. Také k dispozici jako [tištěné paperback](https://www.amazon.com/dp/1621140202).
     - [Migrace Microsoft ASP.NET a IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656). Případová studie podle Roberta Mcmurrayho.
     - [Přesunutí 4th &amp; primátor na weby Azure](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/). Blog o Jeff Wilcox post, chronicling jeho činnost přesun webovou aplikaci z Amazon Web Services pro službu Web Apps v Azure App Service.
-    - [Přesunutí aplikace do Azure: jaké změny?](https://azure.microsoft.com/en-us/documentation/videos/web-sites-internals-and-the-file-system/) Krátké video podle Stefan Schackow, vysvětluje přístupu k systému souborů ve službě Web Apps v Azure App Service.
+    - [Přesunutí aplikace do Azure: jaké změny?](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) Krátké video podle Stefan Schackow, vysvětluje přístupu k systému souborů ve službě Web Apps v Azure App Service.
     - [Azure hybridní Cloud](https://www.amazon.com/dp/B00EOP4UQW). Výtisk knihy nebo elektronická kniha Danny Garber, Jamal Malik a Adam Fazio.
 - Zabezpečení, ověřování a autorizace problémy, které jsou jedinečné pro cloudové aplikace
 
     - [Doprovodné materiály zabezpečení Azure](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
-    - [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Informace najdete v těchto pravidel vzoru vzor federované Identity.
+    - [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Informace najdete v těchto pravidel vzoru vzor federované Identity.
     - [Zabezpečení sítě Azure](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx). Dokument White paper podle Ashin Palekar.
 
-Viz také dodatečné cloudové výpočetní vzory a dokumentaci na webu [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/en-us/library/dn568099.aspx).
+Viz také dodatečné cloudové výpočetní vzory a dokumentaci na webu [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx).
 
 <a id="resources"></a>
 ## <a name="resources"></a>Prostředky
@@ -51,9 +51,9 @@ Další informace o tomto konkrétní tématu každý kapitol v této příručc
 
 Dokumentace
 
-- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy.
-- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze série videí bezporuchový.
-- [Azure pokyny](https://azure.microsoft.com/en-us/develop/net/guidance/) stránku portálu oficiální dokumentaci týkající se vývoje aplikací pro Azure.
+- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy.
+- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze série videí bezporuchový.
+- [Azure pokyny](https://azure.microsoft.com/develop/net/guidance/) stránku portálu oficiální dokumentaci týkající se vývoje aplikací pro Azure.
 
 Videa
 
@@ -69,13 +69,13 @@ Ukázka kódu
 Kopírování pevný knihy
 
 - [Cloud Computing biblické](https://www.amazon.com/dp/0470903562). Podle Barrie Sosinsky.
-- [Verze ji! Navrhování a nasazení softwaru produkční prostředí](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). Podle Michael T. Nygard.
+- [Verze ji! Navrhování a nasazení softwaru produkční prostředí](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). By Michael T. Nygard.
 - [Vzory cloudové architektury: Použití Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do). Podle Wilder faktury.
 - [Windows Azure Platform](https://www.amazon.com/dp/1430235632). Podle Tejaswi Redkar.
 - [Windows Azure programování vzory pro začínající podniky](https://www.amazon.com/dp/1849685606). Podle Riccardo Becker.
 - [Microsoft Windows Azure Development kuchařka](https://www.amazon.com/dp/1849682224). Podle Neil Mackenzie.
 
-Nakonec při začít vytváření reálných aplikací a jejich spouštění v Azure, dřív nebo později budete pravděpodobně potřebovat pomoc od odborníků. Například můžete klást otázky v lokalitách komunity [fóra Azure nebo StackOverflow](https://azure.microsoft.com/en-us/support/forums/), nebo mohou kontaktovat Microsoft přímo za účelem podpory Azure. Společnost Microsoft nabízí několik úrovní se na technickou podporu Azure: Souhrn a porovnání možností najdete v tématu [podporu Azure](https://azure.microsoft.com/en-us/support/plans/).
+Nakonec při začít vytváření reálných aplikací a jejich spouštění v Azure, dřív nebo později budete pravděpodobně potřebovat pomoc od odborníků. Například můžete klást otázky v lokalitách komunity [fóra Azure nebo StackOverflow](https://azure.microsoft.com/support/forums/), nebo mohou kontaktovat Microsoft přímo za účelem podpory Azure. Společnost Microsoft nabízí několik úrovní se na technickou podporu Azure: Souhrn a porovnání možností najdete v tématu [podporu Azure](https://azure.microsoft.com/support/plans/).
 
 <a id="acknowledgments"></a>
 ## <a name="acknowledgments"></a>Potvrzování
@@ -106,7 +106,7 @@ Mnoho kolegy v Microsoftu recenze a komentář na pracovní verze a kódu:
 
 Členové [Microsoft Developer pokyny Advisory Council](http://aka.ms/DGAC) (DGAC) také recenze a komentář na koncepty:
 
-- Jean Luc Boucho
+- Jean-Luc Boucho
 - Catalin Gheorghiu
 - Wouter de Kort
 - Carlosu dos Santos
@@ -120,15 +120,15 @@ Mnoho kolegy v Microsoftu recenze a komentář na pracovní verze a kódu:
 Jiní členové DGAC recenze a komentář na předběžná přehledu:
 
 - Damir Arh
-- EDWARD Bakker
+- Edward Bakker
 - Srdjan Bozovic
 - Jde Man kanál
 - Gianni Rosa Gallina
 - Paulo Morgado
 - JASON Oliveira
 - Alberto Poblacion
-- Ryan Rileymu
-- Petr PEREZ Tsisah
+- Ryan Riley
+- Perez Jones Tsisah
 - Roger Whitehead
 - Pawel Wilkosz
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: db29c3382895ef4d7efc3a686fa558189c8788de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4fe77769c27dd46967da2e1d68791d7142021d99
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>Princip a zpracování události životnost připojení v systému SignalR 1.x
 ====================
@@ -44,14 +44,14 @@ Tento článek obsahuje následující části:
 - [Nastavení časového limitu a funkce keepalive](#timeoutkeepalive)
 
     - [ConnectionTimeout](#connectiontimeout)
-    - [Hodnota DisconnectTimeout](#disconnecttimeout)
-    - [Funkce KeepAlive](#keepalive)
+    - [DisconnectTimeout](#disconnecttimeout)
+    - [KeepAlive](#keepalive)
     - [Postup změny nastavení časového limitu a funkce keepalive](#changetimeout)
 - [Jak upozornit uživatele o odpojení](#notifydisconnect)
 - [Opakované nepřetržitě připojení](#continuousreconnect)
 - [Jak odpojení klienta v serverovém kódu](#disconnectclientfromserver)
 
-Odkazy na témata referenční dokumentace rozhraní API jsou na rozhraní .NET 4.5 verzi rozhraní API. Pokud používáte rozhraní .NET 4, přečtěte si téma [verze .NET 4 témat rozhraní API](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx).
+Odkazy na témata referenční dokumentace rozhraní API jsou na rozhraní .NET 4.5 verzi rozhraní API. Pokud používáte rozhraní .NET 4, přečtěte si téma [verze .NET 4 témat rozhraní API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="terminology"></a>
 
@@ -181,7 +181,7 @@ Toto nastavení představuje dobu čekání po připojení přenosu dojde ke ztr
 
 <a id="keepalive"></a>
 
-### <a name="keepalive"></a>Funkce KeepAlive
+### <a name="keepalive"></a>KeepAlive
 
 Toto nastavení představuje dobu čekání před odesláním paketu keepalive přes nečinné připojení. Výchozí hodnota je 10 sekund. Tato hodnota nesmí být víc než 1/3 `DisconnectTimeout` hodnotu.
 

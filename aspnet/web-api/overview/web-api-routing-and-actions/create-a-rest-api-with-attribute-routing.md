@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 9ecc233e595716a167ad800a0a21a6162b051648
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c1d0b3e1644ef7f9ebb4be74c3fdf3df90cf3537
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Vytvořit rozhraní REST API s atributem směrování v rozhraní ASP.NET Web API 2
 ====================
@@ -65,7 +65,7 @@ V **nový projekt ASP.NET** dialogovém okně, vyberte **prázdný** šablony. V
 
 Tím se vytvoří kostru projektu, který je nakonfigurován pro funkce webového rozhraní API.
 
-### <a name="domain-models"></a>Modely domény
+### <a name="domain-models"></a>Domain Models
 
 Dál přidejte třídy pro modely domény. V Průzkumníku řešení klikněte pravým tlačítkem na složku modely. Vyberte **přidat**, pak vyberte **třída**. Název třídy `Author`.
 
@@ -141,7 +141,7 @@ Přidejte jinou třídu s názvem `BookDetailDto`.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample8.cs)]
 
-Potom aktualizujte `BooksController` třídy vracení `BookDto` instance. Použijeme [Queryable.Select](https://msdn.microsoft.com/en-us/library/system.linq.queryable.select.aspx) metoda do projektu `Book` instance k `BookDto` instance. Tady je aktualizovaný kód pro třídy kontroleru.
+Potom aktualizujte `BooksController` třídy vracení `BookDto` instance. Použijeme [Queryable.Select](https://msdn.microsoft.com/library/system.linq.queryable.select.aspx) metoda do projektu `Book` instance k `BookDto` instance. Tady je aktualizovaný kód pro třídy kontroleru.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample9.cs)]
 

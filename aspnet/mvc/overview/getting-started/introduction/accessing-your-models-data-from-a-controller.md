@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: b60913cef4b62745cf167e6074834bf7d0c228d1
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 91bfa5fe3c5bd3029b7d7c12c8831e1653fb1d2b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>Přístup k vašemu modelu datům z řadiče
 ====================
@@ -87,7 +87,7 @@ Požadavek na `Movies` vrátí všechny položky v `Movies` tabulce a pak před�
 
 V tomto kurzu jste viděli, jak řadič může předat data nebo objekty zobrazení šablony pomocí `ViewBag` objektu. `ViewBag` Je dynamický objekt, který představuje pohodlný způsob pozdní vazbou předávat informace k zobrazení.
 
-MVC rovněž poskytuje možnost předat *důrazně* zadali objekty, které chcete zobrazit šablonu. Tento přístup silného typu umožňuje lepší kompilaci vracení se změnami kódu a bohatší [IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b(v=vs.120).aspx) v editoru Visual Studio. Mechanismus generování uživatelského rozhraní v sadě Visual Studio používá tento přístup (to znamená, předávání *důrazně* typu modelu) s `MoviesController` třídy a zobrazení šablony při jeho vytvoření metody a zobrazení.
+MVC rovněž poskytuje možnost předat *důrazně* zadali objekty, které chcete zobrazit šablonu. Tento přístup silného typu umožňuje lepší kompilaci vracení se změnami kódu a bohatší [IntelliSense](https://msdn.microsoft.com/library/hcw1s69b(v=vs.120).aspx) v editoru Visual Studio. Mechanismus generování uživatelského rozhraní v sadě Visual Studio používá tento přístup (to znamená, předávání *důrazně* typu modelu) s `MoviesController` třídy a zobrazení šablony při jeho vytvoření metody a zobrazení.
 
 V *Controllers\MoviesController.cs* zkontrolujte vygenerovaného souboru `Details` metoda. `Details` Metoda jsou uvedeny níže.
 
@@ -109,9 +109,9 @@ Zahrnutím `@model` příkaz v horní části souboru šablony zobrazení, můž
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample6.cshtml)]
 
-To `@model` – direktiva umožňuje přístup k video, které kontroleru předaná do zobrazení pomocí pomocí `Model` objekt, který je silného typu. Například v *Details.cshtml* šablony, kód předá pro každé pole film `DisplayNameFor` a [DisplayFor](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) pomocné objekty HTML s silného typu `Model` objektu. `Create` a `Edit` metody a zobrazit šablony předat také film objektu modelu.
+To `@model` – direktiva umožňuje přístup k video, které kontroleru předaná do zobrazení pomocí pomocí `Model` objekt, který je silného typu. Například v *Details.cshtml* šablony, kód předá pro každé pole film `DisplayNameFor` a [DisplayFor](https://msdn.microsoft.com/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) pomocné objekty HTML s silného typu `Model` objektu. `Create` a `Edit` metody a zobrazit šablony předat také film objektu modelu.
 
-Zkontrolujte *Index.cshtml* zobrazit šablonu a `Index` metoda v *MoviesController.cs* souboru. Všimněte si, jak kód vytvoří [ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) objektu při volání `View` Pomocná metoda v `Index` metody akce. Tento kód pak předá `Movies` ze seznamu `Index` metody akce k zobrazení:
+Zkontrolujte *Index.cshtml* zobrazit šablonu a `Index` metoda v *MoviesController.cs* souboru. Všimněte si, jak kód vytvoří [ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx) objektu při volání `View` Pomocná metoda v `Index` metody akce. Tento kód pak předá `Movies` ze seznamu `Index` metody akce k zobrazení:
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample7.cs?highlight=3)]
 

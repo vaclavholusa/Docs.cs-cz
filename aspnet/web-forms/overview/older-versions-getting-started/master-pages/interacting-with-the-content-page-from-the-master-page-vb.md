@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0a2720c8dbd1b0fb12d4000ac5e309e203128604
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a25f739e5d5717d275554909e1584bb7e7fed302
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>Interakci s stránky obsahu ze stránky předlohy (VB)
 ====================
@@ -158,7 +158,7 @@ Třída jako odběratel u událost vytvořením *obslužné rutiny události*, c
 Druhý parametr předaný obslužné rutiny události může obsahovat další informace o události. Při základní `EventArgs` třída nepředává podél žádné informace, rozhraní .NET Framework zahrnuje několik tříd, které rozšiřují `EventArgs` a zahrnovat další vlastnosti. Například `CommandEventArgs` instance předána obslužné rutiny událostí, které reagují na `Command` události a zahrnuje dvě informační vlastnosti: `CommandArgument` a `CommandName`.
 
 > [!NOTE]
-> Další informace o vytváření vyvolání a zpracování událostí, najdete v části [události a delegáti](https://msdn.microsoft.com/en-us/library/17sde2xt.aspx) a [– delegáti událostí v jednoduchých anglické](http://www.codeproject.com/KB/cs/eventdelegates.aspx).
+> Další informace o vytváření vyvolání a zpracování událostí, najdete v části [události a delegáti](https://msdn.microsoft.com/library/17sde2xt.aspx) a [– delegáti událostí v jednoduchých anglické](http://www.codeproject.com/KB/cs/eventdelegates.aspx).
 
 
 Chcete-li definovat událost použijte následující syntaxi:
@@ -251,7 +251,7 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Přístup k informacím a aktualizace dat v technologii ASP.NET](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
-- [Události a delegáti](https://msdn.microsoft.com/en-us/library/17sde2xt.aspx)
+- [Události a delegáti](https://msdn.microsoft.com/library/17sde2xt.aspx)
 - [Předávání informací mezi obsah a stránky předlohy](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [Práce s daty v kurzech ASP.NET](../../data-access/index.md)
 

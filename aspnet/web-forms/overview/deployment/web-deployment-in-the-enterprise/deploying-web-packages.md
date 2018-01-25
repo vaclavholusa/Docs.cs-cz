@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: db24fbf4a3486a1349ac47e55cfa495fdf1a166c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cd2bfa07262155b68ac4605fc7e9748d276d3193
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-web-packages"></a>Nasazení webových balíčků
 ====================
@@ -69,14 +69,14 @@ Je nutné zadat buď **/T** příznak nebo **/Y** příznak indikující, zda ch
 | **/A** | Určuje typ ověřování, který by měl MSDeploy.exe využít k nasazení. Možné hodnoty jsou **NTLM** a **základní**. V případě vynechání **/A** příznaku, výchozí typ ověřování **NTLM** pro nasazení do vzdáleného agenta nasazení webové služby a na **základní** pro nasazení do nasazení webu Obslužná rutina. |
 | **/U** | Určuje uživatelské jméno. To platí jenom v případě, že používáte základní ověřování. |
 | **/P** | Určuje heslo. To platí jenom v případě, že používáte základní ověřování. |
-| **/ L** | Označuje, že byste měli nasadit balíček do místní instance služby IIS Express. |
-| **/G** | Určuje, že je balíček nasazen pomocí [poskytovatele tempAgent](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx). V případě vynechání **/G** příznak, má výchozí hodnotu **false**. |
+| **/L** | Označuje, že byste měli nasadit balíček do místní instance služby IIS Express. |
+| **/G** | Určuje, že je balíček nasazen pomocí [poskytovatele tempAgent](https://technet.microsoft.com/library/ee517345(WS.10).aspx). V případě vynechání **/G** příznak, má výchozí hodnotu **false**. |
 
 > [!NOTE]
 > Pokaždé, když se proces vytváření vytvoří webový balíček, také vytvoří soubor s názvem *[název projektu] .deploy-readme.txt* vysvětlující tyto možnosti nasazení.
 
 
-Kromě těchto příznaky, můžete zadat nastavení operace nasazení webu jako další *. deploy.cmd* parametry. Veškerá další nastavení, které zadáte, se jednoduše předána do základní příkaz MSDeploy.exe. Další informace o těchto nastaveních najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx).
+Kromě těchto příznaky, můžete zadat nastavení operace nasazení webu jako další *. deploy.cmd* parametry. Veškerá další nastavení, které zadáte, se jednoduše předána do základní příkaz MSDeploy.exe. Další informace o těchto nastaveních najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
 
 Předpokládejme, že chcete nasadit ContactManager.Mvc projekt webové aplikace v testovacím prostředí tak, že spustíte *. deploy.cmd* souboru. Testovací prostředí je nakonfigurovaný na použití vzdáleného agenta nasazení webové služby, jak je popsáno v [konfigurace webového serveru pro nasazení publikování na webu (vzdáleného agenta)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md). Chcete-li nasadit webovou aplikaci, proveďte následující kroky.
 
@@ -101,7 +101,7 @@ Pro ilustraci jak pomocí *. deploy.cmd* souboru zjednodušuje proces nasazení,
 [!code-console[Main](deploying-web-packages/samples/sample3.cmd)]
 
 
-Další informace o používání *. deploy.cmd* souboru nasazení webového balíčku, najdete v článku [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx).
+Další informace o používání *. deploy.cmd* souboru nasazení webového balíčku, najdete v článku [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx).
 
 ## <a name="using-msdeployexe"></a>Pomocí MSDeploy.exe
 
@@ -115,21 +115,21 @@ Pokud používáte MSDeploy.exe, potřebujete poskytovat tři důležité inform
 
 - A **– zdroj** parametr, který určuje, kde vaše data pocházejí.
 - A **– cíle** parametr, který určuje, kde se bude vaše data.
-- A **– příkaz** parametr, který určuje [operace](https://technet.microsoft.com/en-us/library/dd568989(WS.10).aspx) chcete provést.
+- A **– příkaz** parametr, který určuje [operace](https://technet.microsoft.com/library/dd568989(WS.10).aspx) chcete provést.
 
-MSDeploy.exe spoléhá na [Web Deploy zprostředkovatelé](https://technet.microsoft.com/en-us/library/dd569040(WS.10).aspx) proces zdrojové a cílové data. Nasazení webu obsahuje mnoho poskytovatelů, které představují řadu aplikací a zdrojů dat, můžete pracovat s & #x 2014, například existuje poskytovatelů pro databáze systému SQL Server, webové servery služby IIS, certifikáty, sestavení sestavení v globální mezipaměti (aktivit GAC), různé jiné konfigurační soubory a spoustu dalších typů dat. Obě **– zdroj** parametr a **– cíle** parametr musí zprostředkovatele, zadejte ve tvaru **– zdroj**: [*providerName*] = [*umístění*]. Když nasazujete balíček webu na web služby IIS, měli byste použít tyto hodnoty:
+MSDeploy.exe spoléhá na [Web Deploy zprostředkovatelé](https://technet.microsoft.com/library/dd569040(WS.10).aspx) proces zdrojové a cílové data. Nasazení webu obsahuje mnoho poskytovatelů, které představují řadu aplikací a zdrojů dat, můžete pracovat s & #x 2014, například existuje poskytovatelů pro databáze systému SQL Server, webové servery služby IIS, certifikáty, sestavení sestavení v globální mezipaměti (aktivit GAC), různé jiné konfigurační soubory a spoustu dalších typů dat. Obě **– zdroj** parametr a **– cíle** parametr musí zprostředkovatele, zadejte ve tvaru **– zdroj**: [*providerName*] = [*umístění*]. Když nasazujete balíček webu na web služby IIS, měli byste použít tyto hodnoty:
 
-- **– Zdroj** zprostředkovatele je vždy [balíček](https://technet.microsoft.com/en-us/library/dd569019(WS.10).aspx). Příklad:
+- **– Zdroj** zprostředkovatele je vždy [balíček](https://technet.microsoft.com/library/dd569019(WS.10).aspx). Příklad:
 
     [!code-console[Main](deploying-web-packages/samples/sample4.cmd)]
-- **– Cíle** zprostředkovatele je vždy [automaticky](https://technet.microsoft.com/en-us/library/dd569016(WS.10).aspx). Příklad:
+- **– Cíle** zprostředkovatele je vždy [automaticky](https://technet.microsoft.com/library/dd569016(WS.10).aspx). Příklad:
 
     [!code-console[Main](deploying-web-packages/samples/sample5.cmd)]
 - **– Příkaz** je vždy **synchronizace**.
 
     [!code-console[Main](deploying-web-packages/samples/sample6.cmd)]
 
-Kromě toho budete muset zadat různé další [specifický pro zprostředkovatele nastavení](https://technet.microsoft.com/en-us/library/dd569001(WS.10).aspx) a Obecné [operace nastavení](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx). Předpokládejme například, že chcete nasadit webovou aplikaci ContactManager.Mvc pro pracovní prostředí. Nasazení se zaměří na obslužné rutiny nasazení webu a musí používat základní ověřování. Chcete-li nasadit webovou aplikaci, proveďte následující kroky.
+Kromě toho budete muset zadat různé další [specifický pro zprostředkovatele nastavení](https://technet.microsoft.com/library/dd569001(WS.10).aspx) a Obecné [operace nastavení](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Předpokládejme například, že chcete nasadit webovou aplikaci ContactManager.Mvc pro pracovní prostředí. Nasazení se zaměří na obslužné rutiny nasazení webu a musí používat základní ověřování. Chcete-li nasadit webovou aplikaci, proveďte následující kroky.
 
 **Nasazení webové aplikace pomocí MSDeploy.exe**
 
@@ -145,7 +145,7 @@ V tomto příkladu:
 - **– Zdroj** parametr určuje **balíček** zprostředkovatele a určuje umístění webového balíčku.
 - **– Cíle** parametr určuje **automaticky** zprostředkovatele. **ComputerName** nastavení poskytuje adresu URL služby položky obslužné rutiny nasazení webu na cílovém serveru. **Authtype** nastavení znamená, že chcete používat základní ověřování, a jako takový je třeba zadat **uživatelské jméno** a **heslo**. Nakonec **includeAcls = "False"** nastavení znamená, že nechcete kopírovat seznamy řízení přístupu (ACL) souborů ve vaší webové aplikaci zdrojového na cílový server.
 - **– Příkaz: synchronizace** argument označuje, že chcete replikovat zdrojový obsah na cílovém serveru.
-- **– DisableLink** argumenty znamenat, že nechcete replikovat fondy aplikací, konfigurace virtuálního adresáře nebo certifikáty Secure Sockets Layer (SSL) na cílovém serveru. Další informace najdete v tématu [odkaz rozšíření nasazení webových](https://technet.microsoft.com/en-us/library/dd569028(WS.10).aspx).
+- **– DisableLink** argumenty znamenat, že nechcete replikovat fondy aplikací, konfigurace virtuálního adresáře nebo certifikáty Secure Sockets Layer (SSL) na cílovém serveru. Další informace najdete v tématu [odkaz rozšíření nasazení webových](https://technet.microsoft.com/library/dd569028(WS.10).aspx).
 - **– SetParamFile** parametr poskytuje umístění *SetParameters.xml* souboru.
 - **– AllowUntrusted** přepínač označuje, že nasazení webu musí přijmout certifikátů SSL, které nebyly vydané důvěryhodnou certifikační autoritou. Pokud nasazujete do obslužné rutiny nasazení webu a certifikát podepsaný svým držitelem jste použili k zabezpečení adresu URL služby, musíte zahrnout tento přepínač.
 

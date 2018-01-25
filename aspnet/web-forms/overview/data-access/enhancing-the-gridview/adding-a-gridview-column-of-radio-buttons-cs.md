@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ba6b163078bbab1bda302676e7e4c8a1d07f3c98
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 386fcb1cef896edbb465ba36415712af70d916ec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-c"></a>Přidat sloupec GridView přepínačů (C#)
 ====================
@@ -148,7 +148,7 @@ Po provedení těchto přidané prostřednictvím návrháře, vaše značky s G
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-cs/samples/sample3.aspx)]
 
-RadioButton s [ `GroupName` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.radiobutton.groupname(VS.80).aspx) co se používá k seskupení řady přepínačů. Všechny ovládací prvky přepínač se stejným `GroupName` hodnota jsou považovány za seskupené; ze skupiny, lze vybrat pouze jeden přepínač najednou. `GroupName` Vlastnost určuje hodnotu vykreslené přepínač s `name` atribut. V prohlížeči prozkoumá přepínačů `name` atributů k určení přepínač tlačítko seskupení.
+RadioButton s [ `GroupName` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.radiobutton.groupname(VS.80).aspx) co se používá k seskupení řady přepínačů. Všechny ovládací prvky přepínač se stejným `GroupName` hodnota jsou považovány za seskupené; ze skupiny, lze vybrat pouze jeden přepínač najednou. `GroupName` Vlastnost určuje hodnotu vykreslené přepínač s `name` atribut. V prohlížeči prozkoumá přepínačů `name` atributů k určení přepínač tlačítko seskupení.
 
 Pomocí ovládacího prvku RadioButton Web přidat do `ItemTemplate`, navštivte tuto stránku prostřednictvím prohlížeče a klikněte na přepínače v mřížka s řádky. Všimněte si, jak nejsou seskupení přepínačů, což umožňuje vybrat všechny řádky, jako obrázek 11 zobrazuje.
 
@@ -184,7 +184,7 @@ Existují dva přístupy, které lze provést tak, aby bylo možné vložit níz
 
 Zde `GetUniqueRadioButton` a `GetRadioButtonValue` by metody definovaný ve třídě kódu, který vrátí odpovídající `id` a `value` atribut hodnoty pro každý přepínač. Tento postup funguje dobře pro přiřazení `id` a `value` atributy, ale spadá krátký, když je potřeba určit `checked` hodnota atributu, protože syntaxe vazby dat je pouze spuštěn, když data jsou nejprve svázána s GridView. Proto pokud GridView má povolen stav zobrazení, formátování metody bude pouze platit při prvním načtení stránky (nebo když GridView explicitně odrážejí ke zdroji dat) a proto funkce, která nastaví `checked` atribut won t volat na zpětné volání. Ho s místo jemně problém a trochu nad rámec tohoto článku, takže budete ponechat v této. I však provést doporučujeme, abyste použijte výše uvedený přístup a fungovat přes do bodu, kde je budete zablokuje. Při takové cvičení won t získat žádné blíže k pracovní verze, pomůže podporovat lépe pochopili, GridView a životního cyklu datové vazby.
 
-Další přístup k vložení vlastní, nízké úrovně značek v šablonu a přístup, který budeme používat pro účely tohoto kurzu je přidání [prvku Literal control](https://msdn.microsoft.com/en-us/library/sz4949ks(VS.80).aspx) do šablony. Potom v GridView s `RowCreated` nebo `RowDataBound` obslužné rutiny události, ovládacím prvku Literal control lze programově přistupovat a jeho `Text` vlastností nastavenou na kód pro vydávání.
+Další přístup k vložení vlastní, nízké úrovně značek v šablonu a přístup, který budeme používat pro účely tohoto kurzu je přidání [prvku Literal control](https://msdn.microsoft.com/library/sz4949ks(VS.80).aspx) do šablony. Potom v GridView s `RowCreated` nebo `RowDataBound` obslužné rutiny události, ovládacím prvku Literal control lze programově přistupovat a jeho `Text` vlastností nastavenou na kód pro vydávání.
 
 Začněte tím, že RadioButton odebráním TemplateField s `ItemTemplate`, nahraďte ho prvku Literal control. Nastavit ovládacím prvku Literal control s `ID` k `RadioButtonMarkup`.
 
@@ -205,7 +205,7 @@ Když je vybrán řádek GridView a dojde k zpětné volání, jsme mají zájem
 
 Po přidání tohoto kódu obslužná rutina události, trvat několik minut k otestování stránku v prohlížeči. První, Všimněte si, že pouze jeden přepínač najednou lze vybrat přepínač v mřížce. Ale když výběrem přepínače a kliknutím na jedno z tlačítek, dojde k zpětné volání a všech přepínačů vrátit původní (tedy na zpětné volání, vybraného přepínače je již vybrána). Chcete-li odstranit tento problém, musíme posílení `RowCreated` obslužné rutiny události, které se kontroluje index vybraného přepínače tlačítko odeslané ze zpětného volání a přidá `checked="checked"` atribut kód emitovaného shod index řádku.
 
-Zpětné volání v případech, prohlížeč odesílá zpět `name` a `value` z vybraného přepínače. Hodnota může být načten prostřednictvím kódu programu, pomocí `Request.Form["name"]`. [ `Request.Form` Vlastnost](https://msdn.microsoft.com/en-us/library/system.web.httprequest.form.aspx) poskytuje [ `NameValueCollection` ](https://msdn.microsoft.com/en-us/library/system.collections.specialized.namevaluecollection.aspx) představující proměnných formuláře. Proměnných formuláře jsou názvy a hodnoty polí formuláře na webové stránce a jsou odesílány zpět ve webovém prohlížeči, vždy, když vyplývá zpětné volání. Protože vygenerované `name` atribut přepínače v GridView `SuppliersGroup`, pokud webová stránka je odeslána zpět v prohlížeči bude odesílat `SuppliersGroup=valueOfSelectedRadioButton` zpět na webový server (spolu s další pole formuláře). Tyto informace lze přistupovat z `Request.Form` pomocí vlastnosti: `Request.Form["SuppliersGroup"]`.
+Zpětné volání v případech, prohlížeč odesílá zpět `name` a `value` z vybraného přepínače. Hodnota může být načten prostřednictvím kódu programu, pomocí `Request.Form["name"]`. [ `Request.Form` Vlastnost](https://msdn.microsoft.com/library/system.web.httprequest.form.aspx) poskytuje [ `NameValueCollection` ](https://msdn.microsoft.com/library/system.collections.specialized.namevaluecollection.aspx) představující proměnných formuláře. Proměnných formuláře jsou názvy a hodnoty polí formuláře na webové stránce a jsou odesílány zpět ve webovém prohlížeči, vždy, když vyplývá zpětné volání. Protože vygenerované `name` atribut přepínače v GridView `SuppliersGroup`, pokud webová stránka je odeslána zpět v prohlížeči bude odesílat `SuppliersGroup=valueOfSelectedRadioButton` zpět na webový server (spolu s další pole formuláře). Tyto informace lze přistupovat z `Request.Form` pomocí vlastnosti: `Request.Form["SuppliersGroup"]`.
 
 Od jsme budete potřebovat k určení vybraného přepínače indexu není pouze v `RowCreated` obslužné rutiny události, ale v `Click` přidejte obslužné rutiny události pro ovládací prvky webového tlačítko, umožňují s `SuppliersSelectedIndex` vlastnost k třídě kódu, který vrací `-1`Pokud nebyl vybrán žádný přepínač a vybraného indexu, pokud je vybrána jedna z přepínačů.
 
@@ -222,7 +222,7 @@ Díky této změně vybraného přepínače vybrané po zůstane zpětné volán
 V tuto chvíli jsme přidali sloupec seskupené rádiová tlačítka na GridView, která umožňuje jednoho řádku GridView vybrané a zapamatovaných napříč postback. Naše další kroky se mají zobrazit produkty poskytnutých vybrané dodavatelem. V kroku 4 ukážeme, jak přesměrovat uživatele na jinou stránku, odesílání podél vybraný `SupplierID`. V kroku 5 vidíte zobrazení vybrané dodavatele s produkty v GridView na stejné stránce.
 
 > [!NOTE]
-> Místo pomocí TemplateField (fokus tento zdlouhavé krok 3), jsme může vytvořit vlastní `DataControlField` třídu, která vykreslí příslušné uživatelské rozhraní a funkce. [ `DataControlField` Třída](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datacontrolfield.aspx) je základní třída, ze kterého BoundField, vlastnost CheckBoxField, TemplateField a jiné předdefinovaná pole GridView a DetailsView odvozena. Vytváření vlastní `DataControlField` třída by znamenají, že nebylo možné přidat pouze pomocí deklarativní syntaxe sloupci přepínačů a by také provést replikace funkce na jiné webové stránky a další webové aplikace výrazně jednodušší.
+> Místo pomocí TemplateField (fokus tento zdlouhavé krok 3), jsme může vytvořit vlastní `DataControlField` třídu, která vykreslí příslušné uživatelské rozhraní a funkce. [ `DataControlField` Třída](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datacontrolfield.aspx) je základní třída, ze kterého BoundField, vlastnost CheckBoxField, TemplateField a jiné předdefinovaná pole GridView a DetailsView odvozena. Vytváření vlastní `DataControlField` třída by znamenají, že nebylo možné přidat pouze pomocí deklarativní syntaxe sloupci přepínačů a by také provést replikace funkce na jiné webové stránky a další webové aplikace výrazně jednodušší.
 
 
 Pokud jste již někdy vytvářeli vlastní, kompilovat ovládacích prvků technologie ASP.NET, ale víte, že to vyžaduje správného množství legwork a představuje s ním hostitele odlišnosti a hraniční případů, které je třeba pečlivě zvládnout. Proto jsme se forgo implementace sloupec přepínačů jako vlastní `DataControlField` třídy prozatím a přilepit s možností TemplateField. Možná jsme budete mít možnost prozkoumat vytvoření, použití a nasazení vlastních `DataControlField` třídy v budoucnu kurzu!
@@ -295,7 +295,7 @@ Po dokončení konfigurace SELECT, aktualizovat, Vložit a odstranit karty, klik
 
 Máme několik možností, které jsou zde v určení zdroji s hodnotu parametru. Jsme může použít objekt výchozí parametr a prostřednictvím kódu programu přiřadit hodnotu `SuppliersSelectedIndex` vlastnost, která má parametr s `DefaultValue` vlastnost ObjectDataSource s `Selecting` obslužné rutiny události. Odkazovat zpět [prostřednictvím kódu programu nastavování hodnot parametrů ObjectDataSource](../basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs.md) kurzu aktualizačnímu programu na prostřednictvím kódu programu přiřazení hodnoty k ObjectDataSource s parametry.
 
-Alternativně jsme můžete použít ControlParameter a odkazovat `Suppliers` GridView s [ `SelectedValue` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedvalue.aspx) (viz obrázek 19). Rutina GridView s `SelectedValue` vlastnost vrátí `DataKey` odpovídající hodnota [ `SelectedIndex` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedindex.aspx). Aby tato možnost fungovala, je potřeba nastavit programově GridView s `SelectedIndex` vlastnosti tak, aby vybraný řádek, kdy `ListProducts` po kliknutí na tlačítko. Jako dodatečná výhoda, a to nastavením `SelectedIndex`, vybraný záznam neprovede `SelectedRowStyle` definované v `DataWebControls` motiv (žlutý pozadí).
+Alternativně jsme můžete použít ControlParameter a odkazovat `Suppliers` GridView s [ `SelectedValue` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue.aspx) (viz obrázek 19). Rutina GridView s `SelectedValue` vlastnost vrátí `DataKey` odpovídající hodnota [ `SelectedIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex.aspx). Aby tato možnost fungovala, je potřeba nastavit programově GridView s `SelectedIndex` vlastnosti tak, aby vybraný řádek, kdy `ListProducts` po kliknutí na tlačítko. Jako dodatečná výhoda, a to nastavením `SelectedIndex`, vybraný záznam neprovede `SelectedRowStyle` definované v `DataWebControls` motiv (žlutý pozadí).
 
 
 [![Použijte k určení GridView s SelectedValue jako zdroj parametru ControlParameter](adding-a-gridview-column-of-radio-buttons-cs/_static/image19.gif)](adding-a-gridview-column-of-radio-buttons-cs/_static/image33.png)
@@ -342,4 +342,4 @@ Radostí programování!
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl David Suru. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 >[!div class="step-by-step"]
-[Další](adding-a-gridview-column-of-checkboxes-cs.md)
+[Next](adding-a-gridview-column-of-checkboxes-cs.md)

@@ -9,14 +9,12 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: dd31e3a9583a0c152e97ae7cf6b215389298a20c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d0e64c967ff332365981338809a47faf35d499ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
-/en-nám
-
 # <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>Publikování webové aplikace ASP.NET Core Azure App Service pomocí sady Visual Studio
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](https://github.com/cesarbs), a [Rachel Appel](https://twitter.com/rachelappel)
@@ -25,7 +23,7 @@ V tématu [publikovat do Azure ze sady Visual Studio pro Mac](https://blog.xamar
 
 ## <a name="set-up"></a>Nastavení
 
-* Otevřete [bezplatný účet Azure](https://aka.ms/K5y5yh) Pokud nemáte jeden. 
+* Otevřete [bezplatný účet Azure](https://aka.ms/K5y5yh) Pokud nemáte. 
 
 ## <a name="create-a-web-app"></a>Vytvoření webové aplikace
 
@@ -184,6 +182,6 @@ Po dokončení testování aplikace, přejděte na [portál Azure](https://porta
 
 ## <a name="additonal-resources"></a>Dalších prostředků
 
-* [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-overview)
-* [Skupiny prostředků Azure.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups)
-* [Databáze Azure SQL](https://docs.microsoft.com/en-us/azure/sql-database/)
+* [Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
+* [Skupiny prostředků Azure.](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
+* [Databáze Azure SQL](https://docs.microsoft.com/azure/sql-database/)

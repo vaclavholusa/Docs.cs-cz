@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 58b76f0ac07051496c6f34be41dcf20154e34674
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1f95a6868ccce8ce0dfa16a92486e705c42e1db4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>Použití existující uložené procedury pro TableAdapters typové datové sady (C#)
 ====================
@@ -200,7 +200,7 @@ Tento vzor, můžou se implementovat v syntaxi T-SQL pomocí následující šab
 
 Šablona spustí definováním `TRY...CATCH` blok konstrukt nový SQL Server 2005. Jako s `try...catch` bloků v C#, SQL `TRY...CATCH` spouští příkazy v bloku `TRY` bloku. Pokud žádné příkaz vyvolá chybu, je ovládací prvek okamžitě přenesen na `CATCH` bloku.
 
-Pokud nejsou žádné chyby provádění příkazů SQL tento způsob vytvoření transakce, `COMMIT TRANSACTION` příkaz potvrdí změny a dokončení transakce. Pokud však mezi příkazy skončí chybou, `ROLLBACK TRANSACTION` v `CATCH` bloku vrátí databázi do stavu před zahájení transakce. Uložená procedura také dojde k chybě pomocí [příkaz RAISERROR](https://msdn.microsoft.com/en-us/library/ms178592.aspx), který spustí `SqlException` má být aktivována v aplikaci.
+Pokud nejsou žádné chyby provádění příkazů SQL tento způsob vytvoření transakce, `COMMIT TRANSACTION` příkaz potvrdí změny a dokončení transakce. Pokud však mezi příkazy skončí chybou, `ROLLBACK TRANSACTION` v `CATCH` bloku vrátí databázi do stavu před zahájení transakce. Uložená procedura také dojde k chybě pomocí [příkaz RAISERROR](https://msdn.microsoft.com/library/ms178592.aspx), který spustí `SqlException` má být aktivována v aplikaci.
 
 > [!NOTE]
 > Vzhledem k tomu `TRY...CATCH` blok je nový systém SQL Server 2005, výše uvedené šablony nebude fungovat, pokud používáte starší verze systému Microsoft SQL Server. Pokud se nepoužívá systém SQL Server 2005, projděte si [Správa transakcí v SQL serveru uložené procedury](http://www.4guysfromrolla.com/webtech/080305-1.shtml) pro šablonu, která bude fungovat s jiné verze systému SQL Server.

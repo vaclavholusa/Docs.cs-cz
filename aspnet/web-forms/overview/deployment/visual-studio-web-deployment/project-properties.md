@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
-ms.openlocfilehash: 68a1892dcf8055d8cc898f471a96d86e8abb64de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 85b6dbcc8d40c168a49513ef6b549f9ec7fa5097
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: vlastnosti projektu
 ====================
@@ -45,7 +45,7 @@ Když se zobrazí okno, bude výchozí s nastavením pro kteroukoli konfigurace 
 
 S **aktivní (verze)** nebo **verze** vybrali, zobrazí hodnoty, které jsou platné, když nasadíte pomocí konfigurace sestavení verze:
 
-- V **položky k nasazení** pole **pouze soubory potřebné ke spuštění aplikace** je vybrána. Ostatní možnosti patří **všechny soubory v tomto projektu** nebo **všechny soubory v této složce projektu**. Ponechat výchozí výběr beze změny vyhnete soubory zdrojového kódu, například nasazení. Toto nastavení je důvod, proč složky, které obsahují systém SQL Server Compact binární soubory musí být zahrnutý v projektu. Další informace o tomto nastavení najdete v tématu **proč si všechny soubory ve složce projektu nasadí?** v [ASP.NET webové aplikace projektu nasazení – nejčastější dotazy](https://msdn.microsoft.com/en-us/library/ee942158.aspx).
+- V **položky k nasazení** pole **pouze soubory potřebné ke spuštění aplikace** je vybrána. Ostatní možnosti patří **všechny soubory v tomto projektu** nebo **všechny soubory v této složce projektu**. Ponechat výchozí výběr beze změny vyhnete soubory zdrojového kódu, například nasazení. Toto nastavení je důvod, proč složky, které obsahují systém SQL Server Compact binární soubory musí být zahrnutý v projektu. Další informace o tomto nastavení najdete v tématu **proč si všechny soubory ve složce projektu nasadí?** v [ASP.NET webové aplikace projektu nasazení – nejčastější dotazy](https://msdn.microsoft.com/library/ee942158.aspx).
 - **Vyloučit generované symboly ladění** je vybrána. Při použití této konfigurace sestavení, nebude možné ladění.
 - **Zahrnout všechny databáze nakonfigurované na kartě Balení/publikování kódu SQL** je vybrána. Určuje, zda bude databáze a také soubory nasazení sady Visual Studio. I když políčko popisku pouze zmínkami **balení/publikování kódu SQL** kartě, zrušíte zaškrtnutí tohoto políčka by také zakázat nasazení databáze, který je nakonfigurovaný v profilu publikování. Můžete se to, který později, tak pole musí zůstat vybrané. **Balení/publikování kódu SQL** karta slouží k publikování metoda, která nebudete používat v těchto kurzech starší verze databáze.
 - **Nastavení balíčku pro nasazení webových** oddíl nelze použít, protože používáte jedním kliknutím publikovat v těchto kurzech.
@@ -60,7 +60,7 @@ Jak už jste viděli v tomto kurzu předchozí [balíček Elmah NuGet](http://ww
 
 S výjimkou určité soubory nebo složky z nasazení je běžné požadavek; Dalším příkladem může být do složky, které mohou uživatelé odeslat soubory do. Nechcete, aby se soubory protokolu nebo nahrát soubory, které byly vytvořeny ve vašem vývojovém prostředí pro nasazení do produkčního prostředí. A Pokud nasazujete aktualizace do produkčního prostředí nechcete, aby proces nasazení k odstranění souborů, které existují v produkčním prostředí. (V závislosti na tom, jak nastavit možnost nasazení, pokud soubor existuje v cílové lokalitě, ale není zdrojové lokality při nasazení, Web Deploy neodstraní z cílového.)
 
-Jak už jste viděli dříve v tomto kurzu **položky k nasazení** možnost **balení/publikování webu** karta je nastaven na **pouze soubory potřebné ke spuštění této aplikace**. Výsledkem je soubory protokolů, které jsou vytvořené pomocí Elmah vývojem nebude nasazen, který se má stát. (Chcete-li být nasazen, by musel být zahrnutý v projektu a jejich **akce sestavení** vlastnost musel být nastavena na **obsahu**. Další informace najdete v tématu **proč si všechny soubory ve složce projektu nasadí?** v [ASP.NET webové aplikace projektu nasazení – nejčastější dotazy](https://msdn.microsoft.com/en-us/library/ee942158.aspx)). Ale Web Deploy nebude vytvořte složku v cílové lokalitě pokud existuje alespoň jeden soubor zkopírujte do něj. Proto přidáte *.txt* soubor do složky tak, aby fungoval jako zástupný znak, aby se zkopírují na složku.
+Jak už jste viděli dříve v tomto kurzu **položky k nasazení** možnost **balení/publikování webu** karta je nastaven na **pouze soubory potřebné ke spuštění této aplikace**. Výsledkem je soubory protokolů, které jsou vytvořené pomocí Elmah vývojem nebude nasazen, který se má stát. (Chcete-li být nasazen, by musel být zahrnutý v projektu a jejich **akce sestavení** vlastnost musel být nastavena na **obsahu**. Další informace najdete v tématu **proč si všechny soubory ve složce projektu nasadí?** v [ASP.NET webové aplikace projektu nasazení – nejčastější dotazy](https://msdn.microsoft.com/library/ee942158.aspx)). Ale Web Deploy nebude vytvořte složku v cílové lokalitě pokud existuje alespoň jeden soubor zkopírujte do něj. Proto přidáte *.txt* soubor do složky tak, aby fungoval jako zástupný znak, aby se zkopírují na složku.
 
 V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *Elmah* složky, vyberte **přidat novou položku**a vytvořte textový soubor s názvem *Placeholder.txt*. Zadejte následující text v něm: "Toto je soubor zástupný symbol zajistit, že složce nasadí." A uložte soubor. To je všechno, budete muset udělat, pokud chcete mít jistotu, že Visual Studio nasadí tento soubor a složka je v, protože **akce sestavení** vlastnost *.txt* soubory nastavena na **obsahu**ve výchozím nastavení.
 

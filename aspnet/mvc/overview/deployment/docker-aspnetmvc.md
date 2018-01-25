@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/deployment/docker
-title: "Migrace aplikací ASP.NET MVC do kontejneru systému Windows"
+title: "Migrace aplikací ASP.NET MVC do kontejnerů s Windows"
 description: "Zjistěte, jak využít existující aplikaci ASP.NET MVC a spustíte ho v systému Windows kontejner Docker"
 keywords: Windows Containers,Docker,ASP.NET MVC
 author: BillWagner
@@ -11,13 +11,13 @@ ms.prod: .net-framework
 ms.technology: dotnet-mvc
 ms.devlang: dotnet
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: 336d0e9d2247dd2d63c779fd446f9a50be6dbc50
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: badc1c9b10ac27c3d876e3331c855a9d5904d27d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
-# <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>Migrace aplikací ASP.NET MVC do kontejneru systému Windows
+# <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>Migrace aplikací ASP.NET MVC do kontejnerů s Windows
 
 Spuštění existující aplikace založené na rozhraní .NET Framework v kontejneru Windows navíc nevyžaduje žádné změny do vaší aplikace. Ke spouštění vaší aplikace v kontejneru systému Windows vytvořit bitovou kopii Docker obsahující vaší aplikace a spusťte kontejner. Toto téma vysvětluje, jak využít existující [aplikace ASP.NET MVC](http://www.asp.net/mvc) a nasadit ji v kontejneru systému Windows.
 
@@ -40,16 +40,16 @@ Přesunutí aplikace zahrnuje tyto kroky:
 
 Vývojovém počítači musí být spuštěna.
 
-- [Windows 10 Anniversary Update](https://www.microsoft.com/en-us/software-download/windows10/) (nebo vyšší) nebo [systému Windows Server 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server) (nebo vyšší).
+- [Windows 10 Anniversary Update](https://www.microsoft.com/software-download/windows10/) (nebo vyšší) nebo [systému Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server) (nebo vyšší).
 - [Docker pro systém Windows](https://docs.docker.com/docker-for-windows/) -Beta 26 verze stabilní 1.13.0 nebo 1.12 (nebo novější verze)
-- [Visual Studio 2017](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx).
+- [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx).
 
 > [!IMPORTANT]
 > Pokud používáte systém Windows Server 2016, postupujte podle pokynů pro [nasazení hostitele kontejneru - Windows Server](https://msdn.microsoft.com/virtualization/windowscontainers/deployment/deployment).
 
 Po instalaci a spuštění Docker, klikněte pravým tlačítkem na ikonu na hlavním panelu a vyberte **přepnout do kontejnerů Windows**. To se vyžaduje ke spuštění Docker Image založené na systému Windows. Tento příkaz má několik sekund provést:
 
-![Kontejneru systému Windows][windows-container]
+![Windows Container][windows-container]
 
 ## <a name="publish-script"></a>Publikování skriptu
 

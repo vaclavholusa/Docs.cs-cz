@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: e83be2446ef1e3ff1275d06d5b743fb5b9444a6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7192481de46c36f7de71164766e68afdbba74f6d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="bundling-and-minification"></a>Sdružování a minimalizace
 ====================
@@ -55,7 +55,7 @@ Po minimalizaci je funkce snížen na následující:
 
 Kromě odebírání komentářů a nepotřebné prázdné znaky, tyto parametry a proměnné názvy byly přejmenovány (zkrátit) následujícím způsobem:
 
-| **Původní** | **Přejmenovat** |
+| **Original** | **Renamed** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | t |
@@ -76,7 +76,7 @@ Počet odeslaných bajtů došlo k výraznému snížení s sdružování jsou p
 
 ## <a name="debugging-bundled-and-minified-javascript"></a>Ladění dodávat a Minifikovaný JavaScript
 
-Usnadňuje ladění vaší JavaScriptu ve vývojovém prostředí (kde [kompilace Element](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) v *Web.config* soubor pro `debug="true"` ) vzhledem k tomu, že nejsou seskupeny soubory JavaScript nebo minifikovaný. Můžete také ladění sestavení pro vydání JavaScript souborů jsou seskupeny a minifikovaný. Používání nástrojů pro vývojáře IE F12, ladění funkce jazyka JavaScript, který je součástí sady minifikovaný pomocí následující postup:
+Usnadňuje ladění vaší JavaScriptu ve vývojovém prostředí (kde [kompilace Element](https://msdn.microsoft.com/library/s10awwz0.aspx) v *Web.config* soubor pro `debug="true"` ) vzhledem k tomu, že nejsou seskupeny soubory JavaScript nebo minifikovaný. Můžete také ladění sestavení pro vydání JavaScript souborů jsou seskupeny a minifikovaný. Používání nástrojů pro vývojáře IE F12, ladění funkce jazyka JavaScript, který je součástí sady minifikovaný pomocí následující postup:
 
 1. Vyberte **skriptu** a pak vyberte **spustit ladění** tlačítko.
 2. Vyberte sadu obsahující funkce JavaScript, který chcete ladit pomocí tlačítka prostředky.  
@@ -85,11 +85,11 @@ Usnadňuje ladění vaší JavaScriptu ve vývojovém prostředí (kde [kompilac
 4. V **skript vyhledávání** t vstupní pole, vyberte název funkce, kterou chcete ladit. Na následujícím obrázku **AddAltToImg** bylo zadáno v **skript vyhledávání** t vstupního pole.  
     ![](bundling-and-minification/_static/image6.png)
 
-Další informace o ladění pomocí nástrojů pro vývojáře F12, najdete v článku na webu MSDN [používání nástrojů pro vývojáře F12 k ladění chyby jazyka JavaScript](https://msdn.microsoft.com/en-us/library/ie/gg699336(v=vs.85).aspx).
+Další informace o ladění pomocí nástrojů pro vývojáře F12, najdete v článku na webu MSDN [používání nástrojů pro vývojáře F12 k ladění chyby jazyka JavaScript](https://msdn.microsoft.com/library/ie/gg699336(v=vs.85).aspx).
 
 ## <a name="controlling-bundling-and-minification"></a>Řízení sdružování a minimalizace
 
-Sdružování a minimalizace povolit nebo zakázat nastavením hodnoty atributu ladění v [kompilace Element](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) v *Web.config* souboru. V následující soubor XML `debug` je nastaven na hodnotu true, tak sdružování a minimalizace je zakázána.
+Sdružování a minimalizace povolit nebo zakázat nastavením hodnoty atributu ladění v [kompilace Element](https://msdn.microsoft.com/library/s10awwz0.aspx) v *Web.config* souboru. V následující soubor XML `debug` je nastaven na hodnotu true, tak sdružování a minimalizace je zakázána.
 
 [!code-xml[Main](bundling-and-minification/samples/sample3.xml?highlight=2)]
 
@@ -98,7 +98,7 @@ Chcete-li povolit sdružování a minimalizace, nastavte `debug` hodnotu "Neprav
 [!code-csharp[Main](bundling-and-minification/samples/sample4.cs?highlight=7)]
 
 > [!NOTE]
-> Pokud `EnableOptimizations` je `true` nebo ladění atribut v [kompilace Element](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) v *Web.config* soubor pro `false`, soubory nebude dodávat nebo minifikovaný. Kromě toho se nepoužijí .min verze souborů, úplné ladicí verze bude vybrána. `EnableOptimizations`přepíše ladění atribut v [kompilace Element](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) v *Web.config* souboru
+> Pokud `EnableOptimizations` je `true` nebo ladění atribut v [kompilace Element](https://msdn.microsoft.com/library/s10awwz0.aspx) v *Web.config* soubor pro `false`, soubory nebude dodávat nebo minifikovaný. Kromě toho se nepoužijí .min verze souborů, úplné ladicí verze bude vybrána. `EnableOptimizations`přepíše ladění atribut v [kompilace Element](https://msdn.microsoft.com/library/s10awwz0.aspx) v *Web.config* souboru
 
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>Pomocí sdružování a minimalizace s webovými formuláři ASP.NET a webové stránky
@@ -137,11 +137,11 @@ Zatímco ve verzi režimu a ladění verzi jQuery budou načteny místně v rež
 
 ## <a name="creating-a-bundle"></a>Vytvoření sady
 
-[Sady](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) třída `Include` metoda přebírá pole řetězců, kde je každý řetězec virtuální cesty k prostředku. Následující kód z metody RegisterBundles v *aplikace\_Start\BundleConfig.cs* souboru ukazuje, jak více souborů, které jsou přidány do sady:
+[Sady](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) třída `Include` metoda přebírá pole řetězců, kde je každý řetězec virtuální cesty k prostředku. Následující kód z metody RegisterBundles v *aplikace\_Start\BundleConfig.cs* souboru ukazuje, jak více souborů, které jsou přidány do sady:
 
 [!code-csharp[Main](bundling-and-minification/samples/sample8.cs)]
 
-[Sady](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) třída `IncludeDirectory` metoda zajišťuje přidejte všechny soubory v adresáři (a volitelně všechny podadresáře), které se shodují vzoru hledání. [Sady](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) třída `IncludeDirectory` rozhraní API jsou uvedeny níže:
+[Sady](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) třída `IncludeDirectory` metoda zajišťuje přidejte všechny soubory v adresáři (a volitelně všechny podadresáře), které se shodují vzoru hledání. [Sady](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) třída `IncludeDirectory` rozhraní API jsou uvedeny níže:
 
 [!code-csharp[Main](bundling-and-minification/samples/sample9.cs)]
 
@@ -170,17 +170,17 @@ Následující tabulka uvádí soubory přidané do sady pomocí zástupného, j
 
 | **Volání** | **Přidat soubory nebo byla vyvolána výjimka** |
 | --- | --- |
-| Zahrnout ("~/Scripts/Common/\*.js") | *ToggleImg.js AddAltToImg.js, ToggleDiv.js,* |
+| Zahrnout ("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
 | Zahrnout ("~/Scripts/Common/T\*.js") | Neplatný vzor výjimka. Zástupný znak je povolena pouze u předponu nebo příponu. |
 | Zahrnout ("~/Scripts/Common/\*og.\*") | Neplatný vzor výjimka. Je povolen pouze jeden zástupný znak. |
-| "Zahrnují (" ~/Scripts/Common/T\*") | *ToggleDiv.js ToggleImg.js* |
+| "Zahrnují (" ~/Scripts/Common/T\*") | *ToggleDiv.js, ToggleImg.js* |
 | "Zahrnují (" ~/Scripts/Common/\*") | Neplatný vzor výjimka. Segment čistý zástupný znak není platný. |
-| IncludeDirectory ("~/Scripts/Common", "T\*") | *ToggleDiv.js ToggleImg.js* |
-| IncludeDirectory ("~/Scripts/Common", "T\*", true) | *ToggleLinks.js ToggleDiv.js, ToggleImg.js,* |
+| IncludeDirectory ("~/Scripts/Common", "T\*") | *ToggleDiv.js, ToggleImg.js* |
+| IncludeDirectory ("~/Scripts/Common", "T\*", true) | *ToggleDiv.js, ToggleImg.js, ToggleLinks.js* |
 
 Explicitně přidání každého souboru do sady je obecně upřednostňované přes zástupný znak načítání souborů z následujících důvodů:
 
-- Probíhá přidávání skriptů pomocí zástupných znaků výchozí hodnoty k jejich načtení v abecedním pořadí, což je obvykle není co chcete použít. Soubory šablon stylů CSS a JavaScript je často nutné přidat v určitém pořadí (neabecední). Toto riziko zmírnit přidáním vlastní [IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx) implementace, ale explicitně přidání každý soubor je menší chyba náchylné k chybám. Například můžete přidat nové prostředky do složky v budoucnosti, které může vyžadovat, abyste upravili vaše [IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx) implementace.
+- Probíhá přidávání skriptů pomocí zástupných znaků výchozí hodnoty k jejich načtení v abecedním pořadí, což je obvykle není co chcete použít. Soubory šablon stylů CSS a JavaScript je často nutné přidat v určitém pořadí (neabecední). Toto riziko zmírnit přidáním vlastní [IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx) implementace, ale explicitně přidání každý soubor je menší chyba náchylné k chybám. Například můžete přidat nové prostředky do složky v budoucnosti, které může vyžadovat, abyste upravili vaše [IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx) implementace.
 - Zobrazení přidat do adresáře pomocí zástupný znak načítání konkrétní soubory můžou být součástí všech zobrazení odkazující na této sady. Je-li zobrazit konkrétní skript přidá do sady, může dojít k chybě jazyka JavaScript na jiné zobrazení, které odkazují na sadu.
 - Soubory šablon stylů CSS, které importovat další soubory za následek importovaných souborů načíst dvakrát. Například následující kód vytvoří sadu s většina souborů šablon stylů CSS motiv uživatelského rozhraní jQuery načíst dvakrát. 
 
@@ -209,10 +209,10 @@ Sdružování a minimalizace framework poskytuje mechanismus pro zpracování zp
 1. Vytvořte složku pro menší obsah. Následující příklad používá *Content\MyLess* složky.
 2. Přidat [.less](http://www.dotlesscss.org/) balíček NuGet **bez tečky** do projektu.  
     ![Instalace bez tečky NuGet](bundling-and-minification/_static/image9.png)
-3. Přidat třídu, která implementuje [IBundleTransform](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundletransform(VS.110).aspx) rozhraní. Pro transformaci .less přidejte následující kód do projektu.
+3. Přidat třídu, která implementuje [IBundleTransform](https://msdn.microsoft.com/library/system.web.optimization.ibundletransform(VS.110).aspx) rozhraní. Pro transformaci .less přidejte následující kód do projektu.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample13.cs)]
-4. Vytvoření sady menší soubory se `LessTransform` a [CssMinify](https://msdn.microsoft.com/en-us/library/system.web.optimization.cssminify(VS.110).aspx) transformace. Přidejte následující kód, který `RegisterBundles` metoda v *aplikace\_Start\BundleConfig.cs* souboru.
+4. Vytvoření sady menší soubory se `LessTransform` a [CssMinify](https://msdn.microsoft.com/library/system.web.optimization.cssminify(VS.110).aspx) transformace. Přidejte následující kód, který `RegisterBundles` metoda v *aplikace\_Start\BundleConfig.cs* souboru.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample14.cs)]
 5. Přidejte následující kód do všech zobrazení, která odkazuje na sadu menší.

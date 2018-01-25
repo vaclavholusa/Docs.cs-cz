@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: d7a1dcc04baaa5ab27aecf95936d943f5a9b3f0c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2394ee81f4592417a034e47db6eefd3e4b91a9af
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-troubleshooting"></a>Řešení potíží s SignalR
 ====================
@@ -192,7 +192,7 @@ Existuje několik příčin tohoto problému. Ověřte všechny z následující
 
 - **Odkaz adresu proxy server rozbočovače není správně naformátovaný:** tato chyba obvykle nastává Pokud odkaz na adresu proxy serveru generovaného centra není správně naformátovaná. Ověřte, že je odkaz na adresu rozbočovače provedeny správně. V tématu [jak odkazovat dynamicky generovaném proxy](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy) podrobnosti.
 - **Přidání tras do aplikace před přidáním trasu rozbočovače:** Pokud vaše aplikace používá další postupy, ověřte, zda je první trasy přidat volání `MapSignalR`.
-- **Pomocí služby IIS 7 nebo 7.5 bez aktualizace pro adresy URL bez přípony:** pomocí služby IIS 7 nebo 7.5 vyžaduje před spuštěním akce aktualizace pro adresy URL bez přípony, aby server může poskytnout přístup k centru definice v `/signalr/hubs`. Aktualizace lze nalézt [zde](https://support.microsoft.com/kb/980368/en-us).
+- **Pomocí služby IIS 7 nebo 7.5 bez aktualizace pro adresy URL bez přípony:** pomocí služby IIS 7 nebo 7.5 vyžaduje před spuštěním akce aktualizace pro adresy URL bez přípony, aby server může poskytnout přístup k centru definice v `/signalr/hubs`. Aktualizace lze nalézt [zde](https://support.microsoft.com/kb/980368).
 - **Služba IIS mezipaměti zastaralá nebo poškození:** Pokud chcete ověřit, že obsah mezipaměti nejsou zastaralý, zadejte následující příkaz v okně prostředí PowerShell a vymažte mezipaměť:
 
     [!code-powershell[Main](troubleshooting/samples/sample11.ps1)]

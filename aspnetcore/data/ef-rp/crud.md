@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: c26ba75f6a401d50a6b46bd7ee40500c5736f20f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Vytvářet, číst, aktualizovat a odstraňovat – základní EF s stránky Razor (2 8)
 
@@ -86,7 +86,7 @@ Neměnit globálně `@page` k `@page "{id:int}"`, provádění Ano zalomení odk
 
 ### <a name="add-related-data"></a>Přidání souvisejících dat
 
-Automaticky generovaný kód pro studenty indexovou stránku nezahrnuje `Enrollments` vlastnost. V této části, obsah `Enrollments` kolekce se zobrazí na stránce Podrobnosti.
+Automaticky generovaný kód pro studenty indexovou stránku neobsahuje `Enrollments` vlastnost. V této části, obsah `Enrollments` kolekce se zobrazí na stránce Podrobnosti.
 
 `OnGetAsync` Metodu *Pages/Students/Details.cshtml.cs* používá `FirstOrDefaultAsync` metoda pro načtení jedné `Student` entity. Přidejte následující zvýrazněný kód:
 

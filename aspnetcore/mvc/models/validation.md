@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.openlocfilehash: 91db17e103723ac411a2ad4f3f9549860f250cce
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 56928c61ae47d313145afadf3e0fa93a078b681b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Úvod k ověření modelu v aplikaci ASP.NET MVC jádra
 
@@ -155,7 +155,7 @@ $.get({
     url: "https://url/that/returns/a/form",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newFormHTML) {
         var container = document.getElementById("form-container");
@@ -178,7 +178,7 @@ $.get({
     url: "https://url/that/returns/a/control",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newInputHTML) {
         var form = document.getElementById("my-form");
@@ -235,8 +235,7 @@ Nyní když uživatelé zadají e-mailu, JavaScript v zobrazení umožňuje vzd�
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`může mít explicitně nastavena na řetězce `"FirstName"` a `"LastName"`, ale pomocí [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operátor takto zjednodušuje refaktoring později. Metody akce k provedení ověření musí přijměte dva argumenty, jeden pro hodnotu `FirstName` a jeden pro hodnotu `LastName`.
-
+`AdditionalFields`může jste explicitně nastavena na řetězce `"FirstName"` a `"LastName"`, ale pomocí [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operátor takto zjednodušuje refaktoring později. Metody akce k provedení ověření musí přijměte dva argumenty, jeden pro hodnotu `FirstName` a jeden pro hodnotu `LastName`.
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
 
@@ -253,4 +252,4 @@ Pokud budete muset ověřit minimálně dva další pole s `[Remote]` atribut ji
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`, jako jsou všechny argumenty atributu musí být konstantní výraz. Proto nesmí používat [interpolované řetězce](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) nebo volání [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) k chybě při inicializaci `AdditionalFields`. Pro každý další pole, která přidáte do `[Remote]` atribut, musíte přidat jiné argument odpovídající metoda akce kontroleru.
+`AdditionalFields`, jako jsou všechny argumenty atributu musí být konstantní výraz. Proto nesmí používat [interpolované řetězce](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings) nebo volání [ `string.Join()` ](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) k chybě při inicializaci `AdditionalFields`. Pro každý další pole, která přidáte do `[Remote]` atribut, musíte přidat jiné argument odpovídající metoda akce kontroleru.

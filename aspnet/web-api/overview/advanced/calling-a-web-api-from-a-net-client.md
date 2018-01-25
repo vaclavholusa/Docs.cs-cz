@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 41f014e1d23d46ed28c8c1be5ee92f1a6d878ad9
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 8156bd1c7cfc111a6a121a89d845ca284ee1b7af
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>Volání webového rozhraní API z klienta .NET (C#)
 ====================
@@ -23,16 +23,16 @@ podle [Karel Wasson](https://github.com/MikeWasson) a [Rick Anderson](https://tw
 
 [Stáhněte si dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)
 
-Tento kurz ukazuje způsob volání webového rozhraní API z aplikace .NET, pomocí [System.Net.Http.HttpClient.](https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(v=vs.110).aspx)
+Tento kurz ukazuje způsob volání webového rozhraní API z aplikace .NET, pomocí [System.Net.Http.HttpClient.](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
 V tomto kurzu je zapsán klientskou aplikaci, která využívá následující webové rozhraní API:
 
 | Akce | Metoda HTTP | Relativní identifikátor URI |
 | --- | --- | --- |
-| Získání ID produktu | GET | /API/produkty/*id* |
+| Získání ID produktu | GET | /api/products/*id* |
 | Vytvoření nového produktu | POST | / api/produkty |
-| Aktualizace produktu | PUT | /API/produkty/*id* |
-| Odstranit produktu | DELETE | /API/produkty/*id* |
+| Aktualizace produktu | PUT | /api/products/*id* |
+| Odstranit produktu | DELETE | /api/products/*id* |
 
 Pokud chcete dozvědět, jak implementovat toto rozhraní API s rozhraním ASP.NET Web API, přečtěte si téma [vytváření webového rozhraní API této operace CRUD podporuje](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 ).
@@ -109,7 +109,7 @@ Následující kód odešle požadavek GET pro produkt:
 
 **GetAsync** metoda odešle požadavek HTTP GET. Po metodě dokončení vrátí **objekt HttpResponseMessage** , který obsahuje odpověď HTTP. Pokud stavový kód v odpovědi kód úspěch, text odpovědi obsahuje reprezentace JSON produktu. Volání **ReadAsAsync** k datové části JSON k deserializaci `Product` instance. **ReadAsAsync** metoda je asynchronní, protože text odpovědi lze libovolně velké.
 
-**HttpClient** nevyvolá výjimku, pokud odpověď HTTP, která obsahuje kód chyby. Místo toho **IsSuccessStatusCode** vlastnost je **false** Pokud je stav chybový kód. Pokud dáváte přednost zacházet s kódy chyb HTTP jako výjimky, volání [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) na objekt odpovědi. `EnsureSuccessStatusCode`vyvolá výjimku, pokud kód stavu spadá mimo rozsah 200&ndash;299. Všimněte si, že **HttpClient** může vyvolat výjimky z jiných důvodů &mdash; například, pokud vyprší časový limit žádosti.
+**HttpClient** nevyvolá výjimku, pokud odpověď HTTP, která obsahuje kód chyby. Místo toho **IsSuccessStatusCode** vlastnost je **false** Pokud je stav chybový kód. Pokud dáváte přednost zacházet s kódy chyb HTTP jako výjimky, volání [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) na objekt odpovědi. `EnsureSuccessStatusCode`vyvolá výjimku, pokud kód stavu spadá mimo rozsah 200&ndash;299. Všimněte si, že **HttpClient** může vyvolat výjimky z jiných důvodů &mdash; například, pokud vyprší časový limit žádosti.
 
 <a id="MediaTypeFormatters"></a>
 ### <a name="media-type-formatters-to-deserialize"></a>Formátovací moduly typu média k deserializaci
@@ -167,7 +167,7 @@ Následující kód odešle požadavek DELETE k odstranění produktu:
 
 K testování aplikace klienta:
 
-1. [Stáhněte si](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) a spuštění aplikace serveru. [Pokyny ke stahování](https://docs.microsoft.com/en-us/aspnet/core/tutorials/#how-to-download-a-sample). Ověřte, zda že je funkční aplikace serveru. Pro exaxmple `http://localhost:64195/api/products` by měla vrátit seznam produktů.
+1. [Stáhněte si](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) a spuštění aplikace serveru. [Pokyny ke stahování](https://docs.microsoft.com/aspnet/core/tutorials/#how-to-download-a-sample). Ověřte, zda že je funkční aplikace serveru. Pro exaxmple `http://localhost:64195/api/products` by měla vrátit seznam produktů.
 2. Nastaví základní identifikátor URI pro požadavky HTTP. Změňte číslo portu na port použitý při aplikace serveru.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

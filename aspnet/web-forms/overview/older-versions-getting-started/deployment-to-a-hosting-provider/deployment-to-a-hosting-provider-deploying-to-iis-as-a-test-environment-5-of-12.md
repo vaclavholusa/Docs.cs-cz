@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a5538744dfaff76f28c5f17d8f5d782ef3f6c118
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a7995844ee6ed19efa130c4f6c019214d6652ea7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení pro službu IIS v testovacím prostředí - 5 12
 ====================
@@ -83,7 +83,7 @@ V **připojení** podokně rozbalte uzel serveru a vyberte **fondy aplikací**. 
 
 Pokud se zobrazí pouze dva fondů aplikací a jejich současné jsou nastaveny na rozhraní .NET Framework 2.0, je nutné nainstalovat technologii ASP.NET 4 ve službě IIS:
 
-- Otevřete okno příkazového řádku kliknutím pravým tlačítkem na **příkazového řádku** v systému Windows **spustit** nabídky a výběrem **spustit jako správce**. Spusťte [aspnet\_regiis.exe](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx) nainstalovat technologii ASP.NET 4 ve službě IIS, použijte následující příkazy. (V 64bitových systémech, nahraďte "Framework" s "Framework64".)
+- Otevřete okno příkazového řádku kliknutím pravým tlačítkem na **příkazového řádku** v systému Windows **spustit** nabídky a výběrem **spustit jako správce**. Spusťte [aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) nainstalovat technologii ASP.NET 4 ve službě IIS, použijte následující příkazy. (V 64bitových systémech, nahraďte "Framework" s "Framework64".)
 
     [!code-console[Main](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/samples/sample2.cmd)]
 
@@ -111,7 +111,7 @@ Existuje několik způsobů, které můžete nasadit pomocí sady Visual Studio 
 - Vytvoření *balíček pro nasazení* a nainstalujte ji pomocí uživatelského rozhraní Správce služby IIS. Balíček pro nasazení se skládá z *.zip* soubor, který obsahuje všechny soubory a metadata potřebná k instalaci lokality ve službě IIS.
 - Vytvořit balíček pro nasazení a nainstalujte ji pomocí příkazového řádku.
 
-Proces, který jste se v předchozí kurzů a sady Visual Studio k automatizaci úloh nasazení se vztahují na všechny tyto tři metody. V těchto kurzech použijete první z těchto metod. Informace o používání balíčky pro nasazení najdete v tématu [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/en-us/library/bb386521.aspx).
+Proces, který jste se v předchozí kurzů a sady Visual Studio k automatizaci úloh nasazení se vztahují na všechny tyto tři metody. V těchto kurzech použijete první z těchto metod. Informace o používání balíčky pro nasazení najdete v tématu [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx).
 
 Před publikováním, ujistěte se, že používáte Visual Studio v režimu správce. (V systému Windows 7 **spustit** nabídky, klikněte pravým tlačítkem myši na ikonu pro verzi Visual Studia, kterou používáte a vyberte **spustit jako správce**.) Režim správce je vyžadována pro publikování, pouze když publikujete aplikaci do služby IIS v místním počítači.
 
@@ -244,7 +244,7 @@ Informace o spuštění služby IIS nebo IIS Express v sadě Visual Studio najde
 
 - [Přehled služby IIS Express](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) na webu IIS.net.
 - [Představení služby IIS Express](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) na blogu Scott Guthrie.
-- [Postupy: určení webového serveru pro webové projekty v sadě Visual Studio](https://msdn.microsoft.com/en-us/library/ms178108.aspx).
+- [Postupy: určení webového serveru pro webové projekty v sadě Visual Studio](https://msdn.microsoft.com/library/ms178108.aspx).
 - [Hlavní rozdíly mezi IIS a ASP.NET Development Server](../deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) na webu technologie ASP.NET.
 - [Testování ASP.NET MVC nebo aplikaci Web Forms ve službě IIS 7 30 sekund](https://blogs.msdn.com/b/rickandy/archive/2011/04/22/test-you-asp-net-mvc-or-webforms-application-on-iis-7-in-30-seconds.aspx) na blogu Ricka Andersona. Tato položka obsahuje příklady Proč není stejně spolehlivá jako testování v IIS Express testování pomocí vývojového serveru Visual Studio (Cassini) a proč není stejně spolehlivá jako testování ve službě IIS testování v IIS Express.
 

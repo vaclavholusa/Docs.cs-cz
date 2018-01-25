@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 054c67ec7d7eec38d46933417930161a0edd5a60
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 977cdea38d240bcae284968de7d780ec59ab6dfd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-c"></a>Interakci se stránkou předlohy ze stránky obsahu (C#)
 ====================
@@ -192,9 +192,9 @@ Podívejme se na obou přístupů.
 
 ### <a name="using-the-loosely-typedpagemasterproperty"></a>Pomocí volného typu`Page.Master`vlastnost
 
-Všechny webové stránky ASP.NET musí být odvozeny od `Page` třídy, která se nachází v `System.Web.UI` oboru názvů. `Page` Obsahuje třídy [ `Master` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.page.master.aspx) , vrátí odkaz na hlavní stránky. Pokud stránky nemá na hlavní stránce `Master` vrátí `null`.
+Všechny webové stránky ASP.NET musí být odvozeny od `Page` třídy, která se nachází v `System.Web.UI` oboru názvů. `Page` Obsahuje třídy [ `Master` vlastnost](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx) , vrátí odkaz na hlavní stránky. Pokud stránky nemá na hlavní stránce `Master` vrátí `null`.
 
-`Master` Vlastnost vrací objekt typu [ `MasterPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.masterpage.aspx) (také umístěný v `System.Web.UI` oboru názvů) což je základní typ, ze kterého všechny hlavní stránky odvozen z. Proto pro použití veřejné vlastnosti nebo metody definované v našem webu stránky předlohy jsme musíte vysílat `MasterPage` objekt vrácený `Master` vlastnost příslušného typu. Protože jsme pojmenovali naše soubor předlohové stránky `Site.master`, se s názvem třídy kódu `Site`. Proto následující kód přetypování `Page.Master` vlastnost, která má instance třídy lokality.
+`Master` Vlastnost vrací objekt typu [ `MasterPage` ](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) (také umístěný v `System.Web.UI` oboru názvů) což je základní typ, ze kterého všechny hlavní stránky odvozen z. Proto pro použití veřejné vlastnosti nebo metody definované v našem webu stránky předlohy jsme musíte vysílat `MasterPage` objekt vrácený `Master` vlastnost příslušného typu. Protože jsme pojmenovali naše soubor předlohové stránky `Site.master`, se s názvem třídy kódu `Site`. Proto následující kód přetypování `Page.Master` vlastnost, která má instance třídy lokality.
 
 
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample8.cs)]
@@ -217,7 +217,7 @@ Pokud najít úzce uvidíte, třída kódu stránky ASP.NET je konkrétní tří
 
 Automatické vytváření kódu, k níž dojde vždy, když je navštívené stránky ASP.NET dláždí některé možnosti místo zajímavé a užitečné. V případě hlavní stránky, pokud nám říct modulu ASP.NET, jaké stránky předlohy je stále používán naší obsahu stránce generuje silného typu `Master` vlastnost pro nás.
 
-Použití [ `@MasterType` – direktiva](https://msdn.microsoft.com/en-us/library/ms228274.aspx) k informování modul ASP.NET typu obsahu stránce stránky předlohy. `@MasterType` – Direktiva může přijmout, buď název typu stránky předlohy nebo jeho cesta k souboru. Chcete-li určit, že `AddProduct.aspx` stránka používá `Site.master` jako jeho stránku předlohy, přidejte následující direktivu na začátek `AddProduct.aspx`:
+Použití [ `@MasterType` – direktiva](https://msdn.microsoft.com/library/ms228274.aspx) k informování modul ASP.NET typu obsahu stránce stránky předlohy. `@MasterType` – Direktiva může přijmout, buď název typu stránky předlohy nebo jeho cesta k souboru. Chcete-li určit, že `AddProduct.aspx` stránka používá `Site.master` jako jeho stránku předlohy, přidejte následující direktivu na začátek `AddProduct.aspx`:
 
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample9.aspx)]

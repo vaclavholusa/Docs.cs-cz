@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d6a9c6aef42d1f165567d1a1802bffa853a320e1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 416178533f022f2a262799e6f042d6009bb9d999
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>Zobrazení více záznamů na řádek pomocí ovládacího prvku DataList (VB)
 ====================
@@ -67,7 +67,7 @@ Za chvíli navštivte stránku v prohlížeči. Jak je vidět na obrázku 2, Dat
 
 ## <a name="step-2-changing-the-datalist-s-layout-direction"></a>Krok 2: Změna směru DataList s rozložení
 
-Při výchozí chování pro prvku DataList je pro rozložení jeho položky svisle v tabulce jednoho sloupce, více řádků, toto chování lze snadno změnit prostřednictvím DataList s [ `RepeatDirection` vlastnost](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatdirection.aspx). `RepeatDirection` Vlastnost může přijmout jeden dvě možné hodnoty: `Horizontal` nebo `Vertical` (výchozí).
+Při výchozí chování pro prvku DataList je pro rozložení jeho položky svisle v tabulce jednoho sloupce, více řádků, toto chování lze snadno změnit prostřednictvím DataList s [ `RepeatDirection` vlastnost](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx). `RepeatDirection` Vlastnost může přijmout jeden dvě možné hodnoty: `Horizontal` nebo `Vertical` (výchozí).
 
 Změnou `RepeatDirection` vlastnost z `Vertical` k `Horizontal`, prvku DataList vykreslí jeho záznamů do jednoho řádku vytváření za Zdrojová položka dat jeden sloupec. Pro ilustraci tohoto efektu, klikněte na DataList v návrháři a potom v okně vlastností změňte `RepeatDirection` vlastnost z `Vertical` k `Horiztonal`. Okamžitě po to uděláte, návrháře upraví rozložení DataList s vytváření rozhraní jednoho řádku s více sloupci (viz obrázek 3).
 
@@ -87,7 +87,7 @@ Při zobrazení malé množství dat, jeden řádek, může být více sloupci t
 
 ## <a name="step-3-displaying-data-in-a-multi-column-multi-row-table"></a>Krok 3: Zobrazení dat v tabulce vícesloupcového, více řádků
 
-K vytvoření DataList vícesloupcového, více řádků, je potřeba nastavit [ `RepeatColumns` vlastnost](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) počtu sloupce k zobrazení. Ve výchozím nastavení `RepeatColumns` je nastavena na 0, což způsobí DataList zobrazíte všechny jeho položky v jeden řádek nebo sloupec (v závislosti na hodnotě `RepeatDirection` vlastnost).
+K vytvoření DataList vícesloupcového, více řádků, je potřeba nastavit [ `RepeatColumns` vlastnost](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) počtu sloupce k zobrazení. Ve výchozím nastavení `RepeatColumns` je nastavena na 0, což způsobí DataList zobrazíte všechny jeho položky v jeden řádek nebo sloupec (v závislosti na hodnotě `RepeatDirection` vlastnost).
 
 Pro náš příklad umožní s zobrazit tři produkty každý řádek tabulky. Proto nastavit `RepeatColumns` vlastnost 3. Po provedení této změny, pozorně zobrazte výsledky v prohlížeči. Jak je vidět na obrázku 5, jsou nyní uvedeny produkty v tabulce tři sloupce, více řádků.
 

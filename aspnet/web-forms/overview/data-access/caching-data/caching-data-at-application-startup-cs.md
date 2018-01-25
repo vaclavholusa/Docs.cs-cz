@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ccf22f9e72777242ca0239aee69045ab03d56960
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3a618ad702763a59b87336784afd1cb74de06d4c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-at-application-startup-c"></a>Ukládání dat do mezipaměti při spuštění aplikace (C#)
 ====================
@@ -36,7 +36,7 @@ Dva předchozí kurzy prohlédli ukládání dat v prezentace a vrstev ukládán
 Jiné příchuť proaktivní načítání a typ, který jsme budete seznamovat v tomto kurzu je načítání dat do mezipaměti při spuštění aplikace. Tento přístup je zvláště užitečná pro ukládání do mezipaměti statických dat, jako je například záznamy v databázi vyhledávací tabulky.
 
 > [!NOTE]
-> Více hlubší pohled na rozdíly mezi proaktivní a reaktivní načítání, jakož i seznam výhody, nevýhody a implementace doporučení, najdete v části [správu jeho obsahu mezipaměti](https://msdn.microsoft.com/en-us/library/ms978503.aspx) části [ Ukládání do mezipaměti Průvodce architekturou pro aplikace .NET Framework](https://msdn.microsoft.com/en-us/library/ms978498.aspx).
+> Více hlubší pohled na rozdíly mezi proaktivní a reaktivní načítání, jakož i seznam výhody, nevýhody a implementace doporučení, najdete v části [správu jeho obsahu mezipaměti](https://msdn.microsoft.com/library/ms978503.aspx) části [ Ukládání do mezipaměti Průvodce architekturou pro aplikace .NET Framework](https://msdn.microsoft.com/library/ms978498.aspx).
 
 
 ## <a name="step-1-determining-what-data-to-cache-at-application-startup"></a>Krok 1: Určení, jaká Data do mezipaměti při spuštění aplikace
@@ -68,7 +68,7 @@ Při práci s třídou, obvykle musíte nejprve vytvořit instanci třídy můž
 
 Předtím, než můžete vyvolat jsme *SomeMethod* nebo pracovat s *SomeProperty*, jsme musíte nejdřív vytvořit instanci třídy pomocí `new` – klíčové slovo. *SomeMethod* a *SomeProperty* jsou přidruženy ke konkrétní instanci. Doba platnosti těchto členů je vázaný na životnost jejich přidruženého objektu. *Statické členy*, na druhé straně jsou proměnné, vlastnosti a metody, které jsou sdíleny mezi *všechny* instancí třídy a v důsledku toho mají stejně dlouho jako třída životnost. Statické členy jsou rozlišeny pomocí klíčového slova `static`.
 
-Kromě statické členy data do mezipaměti pomocí stav aplikace. Každá aplikace technologie ASP.NET udržuje kolekci název hodnota této s sdílet všechny uživatele a stránky aplikace. Tuto kolekci lze přistupovat pomocí [ `HttpContext` třída](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx) s [ `Application` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.application.aspx)a použít z třídy kódu stránky s ASP.NET takto:
+Kromě statické členy data do mezipaměti pomocí stav aplikace. Každá aplikace technologie ASP.NET udržuje kolekci název hodnota této s sdílet všechny uživatele a stránky aplikace. Tuto kolekci lze přistupovat pomocí [ `HttpContext` třída](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) s [ `Application` vlastnost](https://msdn.microsoft.com/library/system.web.httpcontext.application.aspx)a použít z třídy kódu stránky s ASP.NET takto:
 
 
 [!code-csharp[Main](caching-data-at-application-startup-cs/samples/sample2.cs)]
@@ -135,7 +135,7 @@ Výchozí hodnota `Global.asax` soubor šablony obsahuje pět metod v rámci str
 - **`Session_Start`**provede, když je vytvořena nová relace
 - **`Session_End`**spustí, když je relace vypršela platnost, nebo opuštění
 
-`Application_Start` Obslužné rutiny události je jenom jednou volána v průběhu životního cyklu aplikace s. Spuštění aplikace při prvním prostředek ASP.NET se požaduje od aplikace a nadále spustit až po restartování aplikace, které může dojít, změně obsahu `/Bin` složky, úprava `Global.asax`, změny obsah v `App_Code` složky nebo změny `Web.config` souboru mezi další příčiny. Odkazovat na [Přehled životního cyklu aplikace ASP.NET](https://msdn.microsoft.com/en-us/library/ms178473.aspx) podrobnější diskuzi o životním cyklu aplikace.
+`Application_Start` Obslužné rutiny události je jenom jednou volána v průběhu životního cyklu aplikace s. Spuštění aplikace při prvním prostředek ASP.NET se požaduje od aplikace a nadále spustit až po restartování aplikace, které může dojít, změně obsahu `/Bin` složky, úprava `Global.asax`, změny obsah v `App_Code` složky nebo změny `Web.config` souboru mezi další příčiny. Odkazovat na [Přehled životního cyklu aplikace ASP.NET](https://msdn.microsoft.com/library/ms178473.aspx) podrobnější diskuzi o životním cyklu aplikace.
 
 Tyto kurzy musíme pouze přidejte kód, který `Application_Start` metoda, takže chování volné odeberte ostatní. V `Application_Start`, stačí zavolat `StaticCache` třídu s `LoadStaticCache()` metodu, která načte a dodavatele informace v mezipaměti:
 

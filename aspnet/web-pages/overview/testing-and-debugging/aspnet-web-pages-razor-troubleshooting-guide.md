@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: e507d97903583c7233456e9139e1a869f8bf75bd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72c49ed8b76b5fb5eb15bf01f57980b382607496
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET – webové stránky průvodce řešením potíží (Razor)
 ====================
@@ -60,7 +60,7 @@ Ověřte, zda kořenovém adresáři vašeho webu má alespoň jeden *.cshtml* s
 
 Pokud se zobrazí tato chyba, když webový server je na vzdáleném serveru, obraťte se na správce serveru. Ujistěte se, že server má rozhraní .NET Framework 4 nebo novější. Také se ujistěte, že je aplikace spuštěna ve fondu aplikací, který je nakonfigurován pro použití této verzi rozhraní.NET Framework.
 
-Pokud budete mít kontrolu nad serveru, ujistěte se, že běží správnou verzi rozhraní .NET Framework. Může také zkuste opravit instalaci spuštěním `aspnet_regiis -iru` příkaz. (Například při instalaci služby IIS po instalaci rozhraní .NET Framework, služba IIS nebude správně konfigurován pro spuštění stránek ASP.NET.) Další informace najdete v tématu [ASP.NET IIS Registration Tool (Aspnet\_regiis.exe)](https://msdn.microsoft.com/en-US/library/k6h9cz8h(v=vs.100).aspx).
+Pokud budete mít kontrolu nad serveru, ujistěte se, že běží správnou verzi rozhraní .NET Framework. Může také zkuste opravit instalaci spuštěním `aspnet_regiis -iru` příkaz. (Například při instalaci služby IIS po instalaci rozhraní .NET Framework, služba IIS nebude správně konfigurován pro spuštění stránek ASP.NET.) Další informace najdete v tématu [ASP.NET IIS Registration Tool (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h(v=vs.100).aspx).
 
 ### <a name="http-error-40314---forbidden"></a>Chyba protokolu HTTP 403.14 – zakázáno
 
@@ -158,6 +158,6 @@ Nahraďte příslušnými hodnotami pro `your-SMTP-server-name`a tak dále. Něk
 <a id="AdditionalResources"></a>
 ## <a name="additional-resources"></a>Další prostředky
 
-[ASP.NET Web Pages – nejčastější dotazy (Razor)](https://go.microsoft.com/fwlink/?LinkId=253000)
+[Webové stránky ASP.NET (Razor) – časté otázky](https://go.microsoft.com/fwlink/?LinkId=253000)
 
 [Služba WebMatrix a webové stránky ASP.NET](https://forums.asp.net/1224.aspx/1?WebMatrix) fórum na webu technologie ASP.NET

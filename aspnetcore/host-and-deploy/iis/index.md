@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 01cedb4e3abb35670d2908fe8cb4367c3fd58b33
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 18c7448ad79891d04eca1e939a0aeeabe417bde8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Jádro ASP.NET hostitele v systému Windows pomocí služby IIS
 
@@ -114,7 +114,7 @@ services.Configure<IISOptions>(options =>
 | `AuthenticationDisplayName`    | `null`  | Nastaví zobrazovaný název zobrazovat uživatelům na přihlašovací stránky. |
 | `ForwardClientCertificate`     | `true`  | Pokud `true` a `MS-ASPNETCORE-CLIENTCERT` nachází hlavička požadavku `HttpContext.Connection.ClientCertificate` se naplní. |
 
-### <a name="webconfig"></a>soubor Web.config
+### <a name="webconfig"></a>web.config
 
 *Web.config* souboru primárním účelem je konfigurace [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Volitelně ji mohou zadat další nastavení konfigurace služby IIS. Vytváření, transformace a publikování *web.config* zpracováván pomocí .NET SDK webového jádra (`Microsoft.NET.Sdk.Web`). Sada SDK je nastavena v horní části souboru projektu `<Project Sdk="Microsoft.NET.Sdk.Web">`. Zabránit transformace sady SDK *web.config* soubor, přidejte  **\<IsTransformWebConfigDisabled >** vlastnost k souboru projektu s nastavením `true`:
 
@@ -295,9 +295,9 @@ Konfigurace služby IIS je ovlivněno  **\<system.webServer >** části *web.con
 
 Části Configruation aplikace rozhraní ASP.NET v *web.config* nejsou používány nástrojem aplikace ASP.NET Core pro konfiguraci:
 
-* **\<System.Web >**
-* **\<appSettings >**
-* **\<connectionStrings >**
+* **\<system.web>**
+* **\<appSettings>**
+* **\<connectionStrings>**
 * **\<umístění >**
 
 Aplikace ASP.NET Core jsou konfigurováni pomocí jiných poskytovatelů konfigurace. Další informace najdete v tématu [konfigurace](xref:fundamentals/configuration/index).
@@ -343,7 +343,7 @@ ICACLS C:\sites\MyWebApp /grant "IIS AppPool\DefaultAppPool":F
 * [Řešení potíží s ASP.NET Core ve službě IIS](xref:host-and-deploy/iis/troubleshoot)
 * [Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
 * [Úvod do modulu ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
-* [Odkaz na konfiguraci základní modul ASP.NET](xref:host-and-deploy/aspnet-core-module)
+* [Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
 * [Moduly služby IIS pomocí ASP.NET Core](xref:host-and-deploy/iis/modules)
 * [Úvod do ASP.NET Core](../index.md)
 * [Lokality oficiální Microsoft IIS](https://www.iis.net/)

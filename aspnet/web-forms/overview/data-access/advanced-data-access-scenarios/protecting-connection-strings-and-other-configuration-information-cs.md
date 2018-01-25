@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e57886250fa98af95b61103d67481f747f44c390
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3782e3d4acc2db0e744128dad64fdfae1e8766d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-c"></a>Ochrana připojovací řetězce a další informace o konfiguraci (C#)
 ====================
@@ -60,10 +60,10 @@ Technologie ASP.NET 2.0 obsahuje chráněné konfigurace systému pro šifrován
 
 Rozhraní .NET Framework se dodává s dva poskytovatelé chráněné konfigurace:
 
-- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/en-us/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-používá asymetrický [algoritmu RSA](http://en.wikipedia.org/wiki/Rsa) pro šifrování a dešifrování.
-- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/en-us/system.configuration.dpapiprotectedconfigurationprovider.aspx)-používá Windows [Data Protection API (DPAPI)](https://msdn.microsoft.com/en-us/library/ms995355.aspx) pro šifrování a dešifrování.
+- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-používá asymetrický [algoritmu RSA](http://en.wikipedia.org/wiki/Rsa) pro šifrování a dešifrování.
+- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx)-používá Windows [Data Protection API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) pro šifrování a dešifrování.
 
-Vzhledem k tomu, že chráněný konfigurační systém implementuje vzor návrhu poskytovatele, je možné vytvořit vlastního poskytovatele chráněné konfigurace a zapojte jej do vaší aplikace. V tématu [implementace poskytovatele konfigurace chráněné](https://msdn.microsoft.com/en-us/library/wfc2t3az(VS.80).aspx) Další informace o tomto procesu.
+Vzhledem k tomu, že chráněný konfigurační systém implementuje vzor návrhu poskytovatele, je možné vytvořit vlastního poskytovatele chráněné konfigurace a zapojte jej do vaší aplikace. V tématu [implementace poskytovatele konfigurace chráněné](https://msdn.microsoft.com/library/wfc2t3az(VS.80).aspx) Další informace o tomto procesu.
 
 Poskytovatelé RSA a DPAPI používají klíče pro jejich šifrování a dešifrování rutiny a tyto klíče může být uložený v počítači - nebo -úrovni uživatele. Úroveň počítače klíče jsou ideální pro scénáře, kde je webová aplikace spuštěna na svůj vlastní vyhrazený server nebo pokud je na serveru, který potřebují sdílet více aplikací šifrované informace. Individuální klíče jsou bezpečnější možnost ve sdílených hostitelských prostředích, kde by neměl být schopno dešifrovat vaší aplikace s chráněné konfigurační oddíly jiné aplikace na stejném serveru.
 
@@ -96,20 +96,20 @@ Dále je potřeba psát kód, který načte a zobrazí obsah `Web.config` v `Web
 
 [!code-csharp[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample1.cs)]
 
-`DisplayWebConfig` Metoda používá [ `File` – třída](https://msdn.microsoft.com/en-us/library/system.io.file.aspx) otevřete aplikaci s `Web.config` souboru [ `StreamReader` – třída](https://msdn.microsoft.com/en-us/library/system.io.streamreader.aspx) načíst jeho obsah do řetězce a [ `Path` třída](https://msdn.microsoft.com/en-us/library/system.io.path.aspx) ke generování fyzickou cestu k `Web.config` souboru. Tyto tři třídy se nacházejí v [ `System.IO` obor názvů](https://msdn.microsoft.com/en-us/library/system.io.aspx). V důsledku toho budete muset přidat `using` `System.IO` příkaz do horní části kódu třídu nebo, případně tyto třídy názvy s předponou `System.IO.` .
+`DisplayWebConfig` Metoda používá [ `File` – třída](https://msdn.microsoft.com/library/system.io.file.aspx) otevřete aplikaci s `Web.config` souboru [ `StreamReader` – třída](https://msdn.microsoft.com/library/system.io.streamreader.aspx) načíst jeho obsah do řetězce a [ `Path` třída](https://msdn.microsoft.com/library/system.io.path.aspx) ke generování fyzickou cestu k `Web.config` souboru. Tyto tři třídy se nacházejí v [ `System.IO` obor názvů](https://msdn.microsoft.com/library/system.io.aspx). V důsledku toho budete muset přidat `using` `System.IO` příkaz do horní části kódu třídu nebo, případně tyto třídy názvy s předponou `System.IO.` .
 
 Dále je potřeba přidat obslužných rutin událostí pro dvě tlačítka `Click` události a přidání nezbytného kódu k šifrování a dešifrování `<connectionStrings>` části klíč úrovni počítače pomocí rozhraní DPAPI zprostředkovatele. Z návrháře, dvakrát klikněte na každou z tlačítka pro přidání `Click` obslužné rutiny událostí v modelu code-behind třídu a přidejte následující kód:
 
 
 [!code-csharp[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample2.cs)]
 
-Kód použitý v obslužné rutině dvě události je téměř shodná. Obě začít nastavením informace o aktuální aplikaci s `Web.config` souboru prostřednictvím [ `WebConfigurationManager` třída](https://msdn.microsoft.com/en-us/library/system.web.configuration.webconfigurationmanager.aspx) s [ `OpenWebConfiguration` metoda](https://msdn.microsoft.com/en-us/library/system.web.configuration.webconfigurationmanager.openwebconfiguration.aspx). Tato metoda vrátí konfigurační soubor webu pro zadanou virtuální cestu. Dále `Web.config` soubor s `<connectionStrings>` části přistupuje prostřednictvím [ `Configuration` – třída](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.aspx) s [ `GetSection(sectionName)` metoda](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.getsection.aspx), která vrátí [ `ConfigurationSection` ](https://msdn.microsoft.com/en-us/library/system.configuration.configurationsection.aspx) objektu.
+Kód použitý v obslužné rutině dvě události je téměř shodná. Obě začít nastavením informace o aktuální aplikaci s `Web.config` souboru prostřednictvím [ `WebConfigurationManager` třída](https://msdn.microsoft.com/library/system.web.configuration.webconfigurationmanager.aspx) s [ `OpenWebConfiguration` metoda](https://msdn.microsoft.com/library/system.web.configuration.webconfigurationmanager.openwebconfiguration.aspx). Tato metoda vrátí konfigurační soubor webu pro zadanou virtuální cestu. Dále `Web.config` soubor s `<connectionStrings>` části přistupuje prostřednictvím [ `Configuration` – třída](https://msdn.microsoft.com/library/system.configuration.configuration.aspx) s [ `GetSection(sectionName)` metoda](https://msdn.microsoft.com/library/system.configuration.configuration.getsection.aspx), která vrátí [ `ConfigurationSection` ](https://msdn.microsoft.com/library/system.configuration.configurationsection.aspx) objektu.
 
-`ConfigurationSection` Objekt zahrnuje [ `SectionInformation` vlastnost](https://msdn.microsoft.com/en-us/library/system.configuration.configurationsection.sectioninformation.aspx) poskytuje další informace a funkce týkající se konfigurační oddíl. Jako kód výš ukazuje, můžeme určit, zda je konfigurační oddíl zašifrována kontrolou `SectionInformation` vlastnosti s `IsProtected` vlastnost. Kromě toho můžete v části šifrování a dešifrování prostřednictvím `SectionInformation` vlastnosti s `ProtectSection(provider)` a `UnprotectSection` metody.
+`ConfigurationSection` Objekt zahrnuje [ `SectionInformation` vlastnost](https://msdn.microsoft.com/library/system.configuration.configurationsection.sectioninformation.aspx) poskytuje další informace a funkce týkající se konfigurační oddíl. Jako kód výš ukazuje, můžeme určit, zda je konfigurační oddíl zašifrována kontrolou `SectionInformation` vlastnosti s `IsProtected` vlastnost. Kromě toho můžete v části šifrování a dešifrování prostřednictvím `SectionInformation` vlastnosti s `ProtectSection(provider)` a `UnprotectSection` metody.
 
 `ProtectSection(provider)` Metoda akceptuje jako vstupní řetězec určující název zprostředkovatele chráněné konfigurace použít při šifrování. V `EncryptConnString` jsme předat DataProtectionConfigurationProvider do obslužné rutiny události tlačítko s `ProtectSection(provider)` metoda tak, aby se používá rozhraní DPAPI zprostředkovatele. `UnprotectSection` Metoda můžete určit zprostředkovatele, který se používá k šifrování konfiguračního oddílu a proto nevyžaduje žádné vstupní parametry.
 
-Po volání `ProtectSection(provider)` nebo `UnprotectSection` metodu, musí volat `Configuration` objekt s [ `Save` metoda](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.save.aspx) a zachová tak změny. Jakmile informace o konfiguraci byla zašifrovaná nebo dešifrovat a změny uložit, říkáme `DisplayWebConfig` načíst aktualizovaný `Web.config` obsah do ovládacího prvku textového pole.
+Po volání `ProtectSection(provider)` nebo `UnprotectSection` metodu, musí volat `Configuration` objekt s [ `Save` metoda](https://msdn.microsoft.com/library/system.configuration.configuration.save.aspx) a zachová tak změny. Jakmile informace o konfiguraci byla zašifrovaná nebo dešifrovat a změny uložit, říkáme `DisplayWebConfig` načíst aktualizovaný `Web.config` obsah do ovládacího prvku textového pole.
 
 Po výše uvedeném kódu, které jste zadali, otestovat ji navštivte stránky `EncryptingConfigSections.aspx` stránku prostřednictvím prohlížeče. Nejdřív měli vidět stránky, který uvádí obsah `Web.config` s `<connectionStrings>` části zobrazit v prostém textu (viz obrázek 3).
 
@@ -155,7 +155,7 @@ Vrátit zpátky `<connectionStrings>` části zpět na reprezentaci formátu pro
 
 ## <a name="step-3-encrypting-configuration-sections-usingaspnetregiisexe"></a>Krok 3: Šifrování pomocí konfiguračních oddílů`aspnet_regiis.exe`
 
-Zahrnuje celou řadu nástrojů příkazového řádku v rozhraní .NET Framework `$WINDOWS$\Microsoft.NET\Framework\version\` složky. V [pomocí závislosti mezipaměti SQL](../caching-data/using-sql-cache-dependencies-cs.md) kurzu, například jsme se podívali na pomocí `aspnet_regsql.exe` nástroj příkazového řádku přidat infrastruktury potřebné pro závislosti mezipaměti SQL. Dalším nástrojem užitečné příkazový řádek v této složce je [nástroje ASP.NET IIS Registration (`aspnet_regiis.exe`)](https://msdn.microsoft.com/en-us/library/k6h9cz8h(VS.80).aspx). Jak již název napovídá, nástroj ASP.NET IIS Registration slouží především zaregistrovat technologii ASP.NET 2.0 aplikaci s Microsoft s profesionální webového serveru IIS. Kromě funkcí jeho souvisí se službou IIS, nástroje ASP.NET IIS Registration lze také se zašifrovat nebo dešifrovat zadaný konfigurační oddíly funkce v `Web.config`.
+Zahrnuje celou řadu nástrojů příkazového řádku v rozhraní .NET Framework `$WINDOWS$\Microsoft.NET\Framework\version\` složky. V [pomocí závislosti mezipaměti SQL](../caching-data/using-sql-cache-dependencies-cs.md) kurzu, například jsme se podívali na pomocí `aspnet_regsql.exe` nástroj příkazového řádku přidat infrastruktury potřebné pro závislosti mezipaměti SQL. Dalším nástrojem užitečné příkazový řádek v této složce je [nástroje ASP.NET IIS Registration (`aspnet_regiis.exe`)](https://msdn.microsoft.com/library/k6h9cz8h(VS.80).aspx). Jak již název napovídá, nástroj ASP.NET IIS Registration slouží především zaregistrovat technologii ASP.NET 2.0 aplikaci s Microsoft s profesionální webového serveru IIS. Kromě funkcí jeho souvisí se službou IIS, nástroje ASP.NET IIS Registration lze také se zašifrovat nebo dešifrovat zadaný konfigurační oddíly funkce v `Web.config`.
 
 Následující příkaz ukazuje obecnou syntaxi použitý k šifrování konfigurační oddíl s `aspnet_regiis.exe` nástroj pro příkazový řádek:
 
@@ -203,7 +203,7 @@ Následující příklad ukazuje připojovací řetězec, který používá ově
 Představte si, že útočník je moct zobrazit vaše aplikace s `Web.config` souboru. Pokud používáte ověřování SQL pro připojení k databázi, která je přístupná prostřednictvím Internetu, může útočník použít tento připojovací řetězec pro připojení k databázi pomocí aplikace SQL Management Studio nebo ze stránky ASP.NET na vlastní web. K zmírnění této hrozby, šifrování informace o připojovacím řetězci v `Web.config` pomocí chráněného konfiguračního systému.
 
 > [!NOTE]
-> Další informace o různých typech ověřování, které jsou k dispozici v systému SQL Server najdete v tématu [vytváření zabezpečení aplikací ASP.NET: ověřování, autorizace a zabezpečená komunikace](https://msdn.microsoft.com/en-us/library/aa302392.aspx). Další připojovací řetězec příklady ilustrující rozdíly mezi syntaxe pro ověřování systému Windows a SQL, najdete v části [ConnectionStrings.com](http://www.connectionstrings.com/).
+> Další informace o různých typech ověřování, které jsou k dispozici v systému SQL Server najdete v tématu [vytváření zabezpečení aplikací ASP.NET: ověřování, autorizace a zabezpečená komunikace](https://msdn.microsoft.com/library/aa302392.aspx). Další připojovací řetězec příklady ilustrující rozdíly mezi syntaxe pro ověřování systému Windows a SQL, najdete v části [ConnectionStrings.com](http://www.connectionstrings.com/).
 
 
 ## <a name="summary"></a>Souhrn
@@ -218,13 +218,13 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Vytváření aplikace zabezpečené ASP.NET: Ověřování, autorizace a zabezpečenou komunikaci](https://msdn.microsoft.com/en-us/library/aa302392.aspx)
+- [Vytváření aplikace zabezpečené ASP.NET: Ověřování, autorizace a zabezpečenou komunikaci](https://msdn.microsoft.com/library/aa302392.aspx)
 - [Šifrování informací o konfiguraci technologie ASP.NET 2.0 aplikace](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
 - [Šifrování `Web.config` hodnoty v technologii ASP.NET 2.0](https://weblogs.asp.net/scottgu/archive/2006/01/09/434893.aspx)
-- [Postupy: Šifrování konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí rozhraní DPAPI](https://msdn.microsoft.com/en-us/library/ms998280.aspx)
-- [Postupy: Šifrování konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí RSA](https://msdn.microsoft.com/en-us/library/ms998283.aspx)
+- [Postupy: Šifrování konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí rozhraní DPAPI](https://msdn.microsoft.com/library/ms998280.aspx)
+- [Postupy: Šifrování konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí RSA](https://msdn.microsoft.com/library/ms998283.aspx)
 - [Rozhraní API konfigurace v rozhraní .NET 2.0](http://www.odetocode.com/Articles/418.aspx)
-- [Ochrana dat systému Windows](https://msdn.microsoft.com/en-us/library/ms995355.aspx)
+- [Ochrana dat systému Windows](https://msdn.microsoft.com/library/ms995355.aspx)
 
 ## <a name="about-the-author"></a>O autorovi
 

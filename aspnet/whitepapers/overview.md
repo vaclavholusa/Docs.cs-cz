@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers
 msc.type: content
-ms.openlocfilehash: 260d9af87b7518131abb885ce2526b1aa7971bea
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ba9fda509605025754dc9753266f86585f38b089
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whitepapers"></a>Dokumenty white paper
 ====================
@@ -63,81 +63,81 @@ ASP.NET MVC 2 lze nainstalovat node souběžně s ASP.NET MVC 1,0 na stejném se
 
 Zabezpečení je důležitým aspektem internetových aplikací a tyto dokumenty White Paper popisují postup návrhu a implementaci zabezpečení aplikace ASP.NET.
 
-[ASP.NET 2.0 instrumentace aplikací pro zabezpečení](https://msdn.microsoft.com/en-us/library/ms998325.aspx)
+[ASP.NET 2.0 instrumentace aplikací pro zabezpečení](https://msdn.microsoft.com/library/ms998325.aspx)
 
 Tento způsob k ukazuje, jak používat vlastní události monitorování stavu k instrumentaci aplikace ASP.NET ke sledování událostí zabezpečení a operace. Verze technologie ASP.NET 2.0 obsahuje stav monitorování, které zahrnuje instrumentace pro mnoho standard...
 
-[Provést kontrolu zabezpečení nasazení pro technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998367.aspx)
+[Provést kontrolu zabezpečení nasazení pro technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998367.aspx)
 
 Tento způsob k ukazuje, jak provádět kontrolu zabezpečení nasazení pro aplikaci ASP.NET 2.0 identifikovala potenciální ohrožení zabezpečení zaváděné nevhodných konfigurační nastavení. Většina proces kontroly zahrnuje provádění...
 
-[Použít ADAM pro role v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998331.aspx)
+[Použít ADAM pro role v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998331.aspx)
 
 Tento způsob k ukazuje, jak můžete vyvíjet webu technologie ASP.NET, který používá režim aplikace Active Directory (ADAM) k uložení role ASP.NET. Ukazuje, jak nakonfigurovat ADAM a úložiště zásad Správce autorizací (AzMan), jak vytvořit nové role a...
 
-[Pomocí Správce autorizací (AzMan) s technologií ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998336.aspx)
+[Pomocí Správce autorizací (AzMan) s technologií ASP.NET 2.0](https://msdn.microsoft.com/library/ms998336.aspx)
 
 Tento způsob k ukazuje, jak pomocí Správce autorizací (AzMan) ve spojení s správce rolí ASP.NET rozhraní API pro správu rolí, zkontrolujte členství v roli uživatele a autorizovat role provádět určité operace proti úložiště AzMan zásad. Postup...
 
-[Použití členství technologie ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998347.aspx)
+[Použití členství technologie ASP.NET 2.0](https://msdn.microsoft.com/library/ms998347.aspx)
 
 Tento způsob k ukazuje, jak používat funkci členství v aplikacích ASP.NET verze 2.0. Ukazuje, jak používat dvě různé členství zprostředkovatele: ActiveDirectoryMembershipProvider a SqlMembershipProvider. Funkce členství...
 
-[Pomocí Správce rolí technologie ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998314.aspx)
+[Pomocí Správce rolí technologie ASP.NET 2.0](https://msdn.microsoft.com/library/ms998314.aspx)
 
 Tento způsob k ukazuje, jak pomocí Správce rolí ASP.NET 2.0. Správce rolí usnadňuje úlohu správy rolí a provádění ověřování na základě rolí v aplikaci. Ukazuje, jak konfigurovat různé role zprostředkovatele pro použití s vaší...
 
-[Ověřování systému Windows v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998358.aspx)
+[Ověřování systému Windows v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998358.aspx)
 
 Tento způsob k ukazuje, jak konfigurovat a používat ověřování systému Windows ve webové aplikaci ASP.NET. Ověřování systému Windows je žádoucí vždy, když uživatelé jsou součástí vaší doméně systému Windows. Tento přístup umožňuje použít stávající úložiště identity...
 
-[Provedení revize kódu zabezpečení pro spravovaný kód (aktivita standardních hodnot)](https://msdn.microsoft.com/en-us/library/ms998364.aspx)
+[Provedení revize kódu zabezpečení pro spravovaný kód (aktivita standardních hodnot)](https://msdn.microsoft.com/library/ms998364.aspx)
 
 Tento způsob k ukazuje, jak provést recenze kód zabezpečení. Tento modul představuje kroky aktivity a techniky pro analýzu výsledky. Použijte tento postup s "seznamu otázky zabezpečení: spravovaný kód (rozhraní .NET Framework 2.0)"...
 
-[Provést kontrolu zabezpečení nasazení pro technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998367.aspx)
+[Provést kontrolu zabezpečení nasazení pro technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998367.aspx)
 
 Tento způsob k ukazuje, jak provádět kontrolu zabezpečení nasazení pro aplikaci ASP.NET 2.0 identifikovala potenciální ohrožení zabezpečení zaváděné nevhodných konfigurační nastavení. Většina proces kontroly zahrnuje provádění...
 
-[Implementace delegování protokolu Kerberos pro systém Windows 2000](https://msdn.microsoft.com/en-us/library/aa302400.aspx)
+[Implementace delegování protokolu Kerberos pro systém Windows 2000](https://msdn.microsoft.com/library/aa302400.aspx)
 
 Delegování protokolu Kerberos umožňuje toku ověřenou identitu přes několik fyzických úrovní aplikace pro podporu podřízené ověřování a autorizace. Tento postup ukazuje, že postup konfigurace třeba správnou.
 
-[Použijte zosobnění a delegování v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998351.aspx)
+[Použijte zosobnění a delegování v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998351.aspx)
 
 Tento způsob k ukazuje, jak a kdy zosobnění by měli používat v aplikacích ASP.NET 2.0. Ve výchozím nastavení zosobnění je vypnutý, a můžete přístup k prostředkům pomocí identity procesu ASP.NET – webové aplikace. Můžete však použít...
 
-[Vytvořit Model hrozeb pro webovou aplikaci v době návrhu](https://msdn.microsoft.com/en-us/library/ms978527.aspx)
+[Vytvořit Model hrozeb pro webovou aplikaci v době návrhu](https://msdn.microsoft.com/library/ms978527.aspx)
 
 Tento způsob k popisuje přístup pro vytvoření model hrozeb pro webovou aplikaci. Riziko, že modelování aktivit vám umožní model návrhu zabezpečení tak, aby předtím, než jste investovat můžou zpřístupnit potenciální nedostatky zabezpečení návrhu a ohrožení zabezpečení...
 
 ### <a name="forms-authentication"></a>Ověřování pomocí formulářů
 
-[Ochrana ověřování pomocí formulářů technologie ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998310.aspx)
+[Ochrana ověřování pomocí formulářů technologie ASP.NET 2.0](https://msdn.microsoft.com/library/ms998310.aspx)
 
 Tento způsob k ukazuje, jak bezpečně konfigurace a použití ověřování pomocí formulářů s aplikacemi technologie ASP.NET 2.0. Klíčovými faktory vzít v úvahu zahrnují správně lístek ověřování zabezpečení a zabezpečení úložiště identity uživatele a přístup do tohoto úložiště. ...
 
-[Ověřování pomocí formulářů se službou Active Directory v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998360.aspx)
+[Ověřování pomocí formulářů se službou Active Directory v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998360.aspx)
 
 Tento způsob k ukazuje, jak používat ověřování pomocí formulářů s Microsoft® Active Directory® adresářové služby pomocí ActiveDirectoryMembershipProvider. Návody ukazuje, jak nakonfigurovat poskytovatele a vytvářet a ověřování uživatelů...
 
-[Ověřování pomocí formulářů se službou Active Directory ve více doménách ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998345.aspx)
+[Ověřování pomocí formulářů se službou Active Directory ve více doménách ASP.NET 2.0](https://msdn.microsoft.com/library/ms998345.aspx)
 
 Tento způsob k ukazuje, jak používat ověřování pomocí formulářů s Microsoft® Active Directory® adresářové služby pomocí ActiveDirectoryMembershipProvider. Návody ukazuje, jak nakonfigurovat poskytovatele a vytvářet a ověřování uživatelů...
 
-[Ověřování pomocí formulářů s SQL serverem v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998317.aspx)
+[Ověřování pomocí formulářů s SQL serverem v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998317.aspx)
 
 Tento způsob k ukazuje, jak můžete používat ověřování pomocí formulářů s zprostředkovatel členství systému SQL Server. Ověřování pomocí formulářů s SQL serverem je nejvhodnějšímu v situacích, kde uživatelů vaší aplikace nejsou součástí vaší doméně systému Windows a v důsledku toho...
 
-[Vytváření objektů GenericPrincipal s ověřování pomocí formulářů technologie ASP.NET 1.1](https://msdn.microsoft.com/en-us/library/aa302399.aspx)
+[Vytváření objektů GenericPrincipal s ověřování pomocí formulářů technologie ASP.NET 1.1](https://msdn.microsoft.com/library/aa302399.aspx)
 
 Tento způsob k ukazuje, jak vytvořit a zpracovat objektů GenericPrincipal a FormsIdentity při použití ověřování pomocí formulářů.
 
-[Ověřování pomocí formulářů se službou Active Directory v technologii ASP.NET 1.1](https://msdn.microsoft.com/en-us/library/aa302397.aspx)
+[Ověřování pomocí formulářů se službou Active Directory v technologii ASP.NET 1.1](https://msdn.microsoft.com/library/aa302397.aspx)
 
 V tomto článku How To ukazuje, jak implementovat ověřování pomocí formulářů pro úložiště přihlašovacích údajů služby Active Directory.
 
-[Ověřování pomocí formulářů s SQL serverem v technologii ASP.NET 1.1](https://msdn.microsoft.com/en-us/library/aa302398.aspx)
+[Ověřování pomocí formulářů s SQL serverem v technologii ASP.NET 1.1](https://msdn.microsoft.com/library/aa302398.aspx)
 
 Tento způsob k ukazuje, jak implementovat ověřování pomocí formulářů pro úložiště přihlašovacích údajů systému SQL Server. Je také ukazuje, jak ukládat hesla hodnoty Digest v databázi.
 
@@ -147,81 +147,81 @@ Tento způsob k ukazuje, jak implementovat ověřování pomocí formulářů pr
 
 Tento dokument popisuje funkci žádosti o ověření technologie ASP.NET ve výchozím nastavení, kde aplikace je zabránit v zpracování nekódovaného obsah HTML odeslána na server. Tato žádost o ověření funkce lze zakázat, pokud byla aplikace...
 
-[Zabránit skriptování technologie ASP.NET](https://msdn.microsoft.com/en-us/library/ms998274.aspx)
+[Zabránit skriptování technologie ASP.NET](https://msdn.microsoft.com/library/ms998274.aspx)
 
 Tento způsob k ukazuje, jak vám může pomoct chránit vaše aplikace ASP.NET před útoky skriptování mezi weby, pomocí techniky správné ověření vstupu a výstupu kódování. Také obsahuje několik jiných mechanismů ochrany, které můžete použít v...
 
-[Chránit před Injektáž SQL technologie ASP.NET](https://msdn.microsoft.com/en-us/library/ms998271.aspx)
+[Chránit před Injektáž SQL technologie ASP.NET](https://msdn.microsoft.com/library/ms998271.aspx)
 
 Tento způsob k zobrazuje počet způsoby, jak chránit vaše aplikace ASP.NET útoky Injektáž SQL. Injektáž SQL může dojít, pokud aplikace používá vstup k sestavování dynamických příkazů SQL nebo pokud používá uložené procedury pro připojení k...
 
-[Chcete-li omezit vstup v technologii ASP.NET pomocí regulárních výrazů](https://msdn.microsoft.com/en-us/library/ms998267.aspx)
+[Chcete-li omezit vstup v technologii ASP.NET pomocí regulárních výrazů](https://msdn.microsoft.com/library/ms998267.aspx)
 
 Tento How To ukazuje, jak můžete pomocí regulárních výrazů v rámci aplikace ASP.NET můžete zadat omezení nedůvěryhodné vstupu. Regulární výrazy jsou vhodný způsob, jak ověřit textová pole, jako je například jména, adresy, telefonní čísla a další informace o uživateli. Můžete použít...
 
 ### <a name="code-access-security"></a>Zabezpečení přístupu kódu
 
-[Použít zabezpečení přístupu kódu v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998326.aspx)
+[Použít zabezpečení přístupu kódu v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998326.aspx)
 
 Tento způsob k ukazuje, jak vybrat úroveň odpovídající vztah důvěryhodnosti pro aplikace a v případě potřeby, jak vytvořit vlastní ASP.NET kódu souboru zásad zabezpečení přístupu k definování vlastní úroveň důvěryhodnosti. Můžete použít jiný kód přístup zabezpečení důvěryhodnosti...
 
-[Vytvořit vlastní šifrování oprávnění](https://msdn.microsoft.com/en-us/library/aa302362.aspx)
+[Vytvořit vlastní šifrování oprávnění](https://msdn.microsoft.com/library/aa302362.aspx)
 
 Tento způsob k popisuje, jak vytvořit vlastní kód oprávnění zabezpečení přístupu k řízení programový přístup k šifrování nespravované funkce, která zajišťuje Win32® Data Protection API (DPAPI). Tato vlastní oprávnění pomocí spravovaná obálka DPAPI...
 
-[Chcete-li omezit sestavení použít zásady zabezpečení přístupu kódu](https://msdn.microsoft.com/en-us/library/aa302361.aspx)
+[Chcete-li omezit sestavení použít zásady zabezpečení přístupu kódu](https://msdn.microsoft.com/library/aa302361.aspx)
 
 Správce může konfigurovat zásady zabezpečení přístupu kódu, chcete-li omezit operace kódu rozhraní .NET Framework (sestavení). V této postupy nakonfigurovat zásady zabezpečení přístupu kódu, chcete-li omezit schopnost sestavení, které chcete provádět vstupně-výstupní a omezení...
 
 ### <a name="communications-security"></a>Zabezpečení komunikace
 
-[Nastavení protokolu SSL na webovém serveru](https://msdn.microsoft.com/en-us/library/aa302411.aspx)
+[Nastavení protokolu SSL na webovém serveru](https://msdn.microsoft.com/library/aa302411.aspx)
 
 Webový server musí být nakonfigurován pro protokol SSL za účelem podpory připojení prostřednictvím protokolu https z klientské aplikace. Tento způsob k ukazuje, jak konfigurace protokolu SSL na webovém serveru.
 
-[Nastavte klientské certifikáty](https://msdn.microsoft.com/en-us/library/aa302412.aspx)
+[Nastavte klientské certifikáty](https://msdn.microsoft.com/library/aa302412.aspx)
 
 Služba IIS podporuje ověřování pomocí certifikátu klienta. Tento způsob k ukazuje, jak nakonfigurovat webovou aplikaci na klientské certifikáty vyžadovat. Je také ukazuje, jak nainstalovat certifikát na klientském počítači a použít ho při volání webové aplikace.
 
-[Použít pro filtrování portů a ověřování IPSec](https://msdn.microsoft.com/en-us/library/aa302366.aspx)
+[Použít pro filtrování portů a ověřování IPSec](https://msdn.microsoft.com/library/aa302366.aspx)
 
 Internet Protocol security (IPSec) je protokol, není služby, které poskytuje šifrování, integritu a ověřování služby pro založenou na protokolu IP síťového provozu. Protože IPSec poskytuje ochranu serveru na server, můžete použít protokol IPSec na vnitřní hrozby čítač...
 
-[Použijte protokol IPSec zajistit zabezpečenou komunikaci mezi dvěma servery](https://msdn.microsoft.com/en-us/library/aa302413.aspx)
+[Použijte protokol IPSec zajistit zabezpečenou komunikaci mezi dvěma servery](https://msdn.microsoft.com/library/aa302413.aspx)
 
 Protokol IPSec je technologie systému Windows 2000, který vám umožní vytvořit šifrovaný kanálů mezi dvěma servery. Protokol IPSec lze použít k filtrování provozu IP a pro ověřování serverů. Tento způsob k ukazuje, jak nakonfigurovat IPSec zajistit zabezpečený (šifrované)...
 
-[Použít SSL pro zabezpečení komunikace se serverem SQL Server](https://msdn.microsoft.com/en-us/library/aa302414.aspx)
+[Použít SSL pro zabezpečení komunikace se serverem SQL Server](https://msdn.microsoft.com/library/aa302414.aspx)
 
 Často je důležité pro aplikace, abyste mohli k zabezpečení dat předávaných do a z databáze serveru SQL Server. Se systémem SQL Server můžete vytvořit šifrovaný kanál SSL. Tento způsob k ukazuje, jak nainstalovat certifikát na serveru databáze...
 
-[Volání webové služby pomocí klientských certifikátů z ASP.NET 1.1](https://msdn.microsoft.com/en-us/library/aa302408.aspx)
+[Volání webové služby pomocí klientských certifikátů z ASP.NET 1.1](https://msdn.microsoft.com/library/aa302408.aspx)
 
 Tento způsob popisuje, jak můžete předat klientský certifikát pro webovou službu pro ověření z webové aplikace ASP.NET nebo z aplikace Windows Forms. Můžete nainstalovat klientský certifikát v úložišti místního počítače nebo úložišti uživatele. If...
 
-[Volání webové služby pomocí protokolu SSL z ASP.NET 1.1](https://msdn.microsoft.com/en-us/library/aa302409.aspx)
+[Volání webové služby pomocí protokolu SSL z ASP.NET 1.1](https://msdn.microsoft.com/library/aa302409.aspx)
 
 Šifrování Secure Sockets Layer (SSL) slouží k zajištění integrity a důvěrnosti zpráv předávaných do a z webové služby. Tento způsob k ukazuje, jak používat protokol SSL s webovými službami.
 
 ### <a name="cryptography"></a>Kryptografie
 
-[Vytvoření knihovny rozhraní DPAPI v rozhraní .NET 1.1](https://msdn.microsoft.com/en-us/library/aa302402.aspx)
+[Vytvoření knihovny rozhraní DPAPI v rozhraní .NET 1.1](https://msdn.microsoft.com/library/aa302402.aspx)
 
 Tento způsob k ukazuje, jak vytvořit knihovnu spravovanou třídou, která poskytuje rozhraní DPAPI funkce aplikací, které chcete šifrovat data, například databázové připojovací řetězce a přihlašovací údaje účtu.
 
-[Vytvoření knihovny šifrování v rozhraní .NET 1.1](https://msdn.microsoft.com/en-us/library/aa302405.aspx)
+[Vytvoření knihovny šifrování v rozhraní .NET 1.1](https://msdn.microsoft.com/library/aa302405.aspx)
 
 Tento způsob k ukazuje, jak vytvořit knihovnu spravované třídy nabízí funkce šifrování pro aplikace. Umožňuje aplikaci zvolit šifrovacího algoritmu. Podporované algoritmy zahrnují DES, Triple DES, RC2 a Rijndael.
 
-[Uložit zašifrovaný připojovací řetězec v registru v technologii ASP.NET 1.1](https://msdn.microsoft.com/en-us/library/aa302406.aspx)
+[Uložit zašifrovaný připojovací řetězec v registru v technologii ASP.NET 1.1](https://msdn.microsoft.com/library/aa302406.aspx)
 
 Aplikace může zvolit uložení šifrovaná data, jako je například připojovací řetězce a přihlašovací údaje účtu v registru systému Windows. Tento způsob k ukazuje, jak k ukládání a načítání šifrované řetězce v registru.
 
-[Pomocí rozhraní DPAPI (úložiště počítače) z ASP.NET 1.1](https://msdn.microsoft.com/en-us/library/aa302403.aspx)
+[Pomocí rozhraní DPAPI (úložiště počítače) z ASP.NET 1.1](https://msdn.microsoft.com/library/aa302403.aspx)
 
 Tento způsob k ukazuje, jak používat k šifrování citlivých dat rozhraní DPAPI z webové aplikace ASP.NET nebo webové služby.
 
-[Pomocí rozhraní DPAPI (úložiště uživatele) z ASP.NET 1.1 s Enterprise Services](https://msdn.microsoft.com/en-us/library/aa302404.aspx)
+[Pomocí rozhraní DPAPI (úložiště uživatele) z ASP.NET 1.1 s Enterprise Services](https://msdn.microsoft.com/library/aa302404.aspx)
 
 Tento způsob k ukazuje, jak používat k šifrování citlivých dat rozhraní DPAPI z webové aplikace ASP.NET nebo služby. Tento způsob k používá rozhraní DPAPI s úložišti uživatele, který vyžaduje použití out procesu součást služby Enterprise.
 
@@ -230,23 +230,23 @@ Tento způsob k ukazuje, jak používat k šifrování citlivých dat rozhraní 
 
 Tyto dokumenty White Paper poskytují podrobné pokyny pro instalaci a konfiguraci ASP.NET na serveru.
 
-[Vytvoření účtu služby technologie ASP.NET 2.0 aplikace](https://msdn.microsoft.com/en-us/library/ms998297.aspx)
+[Vytvoření účtu služby technologie ASP.NET 2.0 aplikace](https://msdn.microsoft.com/library/ms998297.aspx)
 
 Tento způsob k ukazuje, jak vytvořit a nakonfigurovat účet služby vlastní nejmenší úrovní oprávnění ke spuštění webové aplikace ASP.NET. Ve výchozím nastavení spouští aplikace ASP.NET v Microsoft Windows Server 2003 a služby IIS 6.0 pomocí integrované síťové služby...
 
-[Vylepšení zabezpečení při hostování více aplikací technologie ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/aa480478.aspx)
+[Vylepšení zabezpečení při hostování více aplikací technologie ASP.NET 2.0](https://msdn.microsoft.com/library/aa480478.aspx)
 
 Tento způsob k ukazuje, jak můžete izolovat více aplikací od sebe navzájem a ze sdílené systémové prostředky v webové hostování prostředí. Hostitelské prostředí může být zadaný pomocí Internetu (poskytovatele) který je hostitelem více webový server...
 
-[Použití střední důvěryhodnosti v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998341.aspx)
+[Použití střední důvěryhodnosti v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998341.aspx)
 
 Tento How To ukazuje, jak nakonfigurovat webových aplikací ASP.NET pro spuštění ve středním vztahem důvěryhodnosti. Pokud hostujete víc aplikací na stejném serveru, můžete použít k zajištění izolace aplikací zabezpečení přístupu kódu a úroveň středním vztahem důvěryhodnosti. Nastavením...
 
-[Použít účet Network Service přístup k prostředkům v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998320.aspx)
+[Použít účet Network Service přístup k prostředkům v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998320.aspx)
 
 Tento způsob k ukazuje, jak můžete použít účet NT AUTHORITY\Network Service počítače pro přístup k místním a síťovým prostředkům. Ve výchozím nastavení v systému Windows Server 2003 spusťte aplikace ASP.NET pomocí tohoto účtu identity. Je nejméně privilegovaných...
 
-[Použít přechod protokolu a omezeného delegování v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998355.aspx)
+[Použít přechod protokolu a omezeného delegování v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998355.aspx)
 
 Tento způsob k ukazuje, jak konfigurovat a používat Přechod protokolu a omezeného delegování umožňuje vaší aplikace technologie ASP.NET pro přístup k síťovým prostředkům během zosobnění původní volajícího. Operační systém Microsoft® Windows® 2000...
 
@@ -266,42 +266,42 @@ Zatímco systém Windows Server 2003 zahrnuje službu IIS 6.0 a ASP.NET 1.1, tyt
 
 Tento dokument popisuje opravu, která řeší problém pro Internet Explorer, který má vliv na aplikace ASP.NET 1.0 se systémem Windows XP Professional s aktualizací zabezpečení MS03-32.
 
-[Vytvoření vlastního účtu, který spuštění technologie ASP.NET 1.1](https://msdn.microsoft.com/en-us/library/aa302396.aspx)
+[Vytvoření vlastního účtu, který spuštění technologie ASP.NET 1.1](https://msdn.microsoft.com/library/aa302396.aspx)
 
 Použití předdefinovaného účtu ASPNET obvykle běží aplikace ASP.NET. V některých případech můžete místo toho použít vlastní účet. V tomto článku How To ukazuje, jak vytvořit místní účet nejnižšími oprávněními ke spouštění aplikací ASP.NET Web. ...
 
 ### <a name="configuration"></a>Konfigurace
 
-[Konfigurace klíče počítače v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998288.aspx)
+[Konfigurace klíče počítače v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998288.aspx)
 
 Tento způsob k vysvětluje &lt;machineKey&gt; element v souboru Web.config a ukazuje, jak nakonfigurovat &lt;machineKey&gt; element kontroly pravopisu zfalšování řízení a šifrování stav zobrazení, ověřování pomocí formulářů lístků a soubory cookie role. Stav zobrazení je podepsaný...
 
-[Šifrování konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí rozhraní DPAPI](https://msdn.microsoft.com/en-us/library/ms998280.aspx)
+[Šifrování konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí rozhraní DPAPI](https://msdn.microsoft.com/library/ms998280.aspx)
 
 Tento způsob k ukazuje, jak použít rozhraní Windows Data Protection application programming chráněné konfigurace poskytovatele rozhraní (DPAPI) a Aspnet\_regiis.exe nástroj k šifrování oddíly konfiguračních souborů. Můžete použít Aspnet\_regiis.exe nástroj pro...
 
-[Šifrování konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí RSA](https://msdn.microsoft.com/en-us/library/ms998283.aspx)
+[Šifrování konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí RSA](https://msdn.microsoft.com/library/ms998283.aspx)
 
 Tento způsob k ukazuje způsob použití zprostředkovatele konfigurace chráněné RSA a Aspnet\_regiis.exe nástroj k šifrování oddíly konfiguračních souborů. Můžete použít Aspnet\_regiis.exe nástroj pro šifrování citlivých dat, jako je například připojovací řetězce, uchovávat v...
 
-[Použijte zosobnění a delegování v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998351.aspx)
+[Použijte zosobnění a delegování v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998351.aspx)
 
 Tento způsob k ukazuje, jak a kdy zosobnění by měli používat v aplikacích ASP.NET 2.0. Ve výchozím nastavení zosobnění je vypnutý, a můžete přístup k prostředkům pomocí identity procesu ASP.NET – webové aplikace. Můžete však použít...
 
 <a id="sql"></a>
-## <a name="sql-server-whitepapers"></a>SQL Server dokumenty White Paper
+## <a name="sql-server-whitepapers"></a>SQL Server Whitepapers
 
 Zatímco ASP.NET spolupracuje s různými databázemi, podívejte se tyto dokumenty White Paper konkrétně na připojení aplikace ASP.NET do systému SQL Server.
 
-[Připojení k SQL serveru pomocí ověřování SQL technologie ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998300.aspx)
+[Připojení k SQL serveru pomocí ověřování SQL technologie ASP.NET 2.0](https://msdn.microsoft.com/library/ms998300.aspx)
 
 Tento způsob k ukazuje, jak připojit aplikace ASP.NET do Microsoft® SQL Server™ při ověřování přístupu k databázi používá nativní ověřování SQL. Ověřování systému Windows je doporučeným způsobem, jak připojit k systému SQL Server, protože jste...
 
-[Připojení k serveru SQL Server pomocí ověřování systému Windows v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998292.aspx)
+[Připojení k serveru SQL Server pomocí ověřování systému Windows v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998292.aspx)
 
 Tento způsob k ukazuje, jak se připojit k systému SQL Server 2000 pomocí účtu služby systému Windows z aplikace ASP.NET verze 2.0. Ověřování systému Windows musí používat místo ověřování SQL. Pokud je to možné, protože se vyhnout ukládání přihlašovacích údajů v...
 
-[Použít SSL pro zabezpečení komunikace se serverem SQL Server 2000](https://msdn.microsoft.com/en-us/library/aa302414.aspx)
+[Použít SSL pro zabezpečení komunikace se serverem SQL Server 2000](https://msdn.microsoft.com/library/aa302414.aspx)
 
 Často je důležité pro aplikace, abyste mohli k zabezpečení dat předávaných do a z databáze serveru SQL Server. Se systémem SQL Server můžete vytvořit šifrovaný kanál SSL. Tento způsob k ukazuje, jak nainstalovat certifikát na serveru databáze...
 
@@ -314,11 +314,11 @@ Následující Případová studie popisuje proces, který se používá k migra
 
 Tyto dokumenty White Paper zahrnují různá témata týkající se technologie ASP.NET.
 
-[Pomocí sledování stavu v technologii ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998306.aspx)
+[Pomocí sledování stavu v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998306.aspx)
 
 Tento způsob k ukazuje, jak používat k instrumentaci aplikace pro vlastní události sledování stavu. Pokud chcete vytvořit vlastní událost sledování stavu, můžete vytvořit třídu, která pochází z System.Web.Management.WebBaseEvent, nakonfigurovat &lt;healthMonitoring&gt; ...
 
-[Implementace správy oprava](https://msdn.microsoft.com/en-us/library/aa302364.aspx)
+[Implementace správy oprava](https://msdn.microsoft.com/library/aa302364.aspx)
 
 Tento způsob k vysvětluje správu opravy, včetně jak zajistit, aby jeden nebo více serverů, které jsou aktuální. Další software není vyžadována, s výjimkou nástrojů, které jsou k dispozici ke stažení od společnosti Microsoft. Operace a zásady zabezpečení by měl přijmout oprava management...
 

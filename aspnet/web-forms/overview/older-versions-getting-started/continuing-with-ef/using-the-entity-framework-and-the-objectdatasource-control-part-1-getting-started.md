@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 6f93d6033b68773507d624125936f0a69777e2b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 83fe815af9030aee10a5204718b00c79925e9126
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>Pomocí rozhraní Entity Framework 4.0 a ovládacího prvku ObjectDataSource, část 1: Začínáme
 ====================
@@ -30,7 +30,7 @@ podle [tní Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="database-first"></a>První databáze
 > 
-> Existují tři způsoby, můžete pracovat s daty v Entity Framework: *Database First*, *Model First*, a *Code First*. Tento kurz je určen pro první databáze. Informace o rozdílech mezi tyto pracovní postupy a pokyny o tom, jak zvolit tu nejvhodnější pro váš scénář najdete v tématu [Entity Framework vývoj pracovních](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+> Existují tři způsoby, můžete pracovat s daty v Entity Framework: *Database First*, *Model First*, a *Code First*. Tento kurz je určen pro první databáze. Informace o rozdílech mezi tyto pracovní postupy a pokyny o tom, jak zvolit tu nejvhodnější pro váš scénář najdete v tématu [Entity Framework vývoj pracovních](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 > 
 > ## <a name="web-forms"></a>webové formuláře
 > 
@@ -42,12 +42,12 @@ podle [tní Dykstra](https://github.com/tdykstra)
 > | --- | --- |
 > | Windows 7 | Windows 8 |
 > | Visual Studio 2010 | Visual Studio 2010 Express pro Web. Tento kurz nebyl testován s novější verzí sady Visual Studio. Existuje mnoho rozdílů v nabídce Možnosti, dialogová okna a šablony. |
-> | ROZHRANÍ .NET 4 | Rozhraní .NET 4.5 je zpětně kompatibilní s .NET 4, ale tento kurz nebyl testován s .NET 4.5. |
+> | .NET 4 | Rozhraní .NET 4.5 je zpětně kompatibilní s .NET 4, ale tento kurz nebyl testován s .NET 4.5. |
 > | Rozhraní Entity Framework 4 | Tento kurz nebyl testován pomocí novější verze Entity Framework. Od verze Entity Framework 5, EF používá ve výchozím nastavení `DbContext API` která byla zavedená s EF 4.1. Ovládací prvek EntityDataSource byla navržená tak, aby použít `ObjectContext` rozhraní API. Informace o tom, jak používat EntityDataSource řízení s `DbContext` rozhraní API, najdete v části [tomto příspěvku na blogu](https://blogs.msdn.com/b/webdev/archive/2012/09/13/how-to-use-the-entitydatasource-control-with-entity-framework-code-first.aspx). |
 > 
 > ## <a name="questions"></a>Otázky
 > 
-> Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx), [Entity Framework a technologie LINQ to Entities fórum](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), nebo [ StackOverflow.com](http://stackoverflow.com/).
+> Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx), [Entity Framework a technologie LINQ to Entities fórum](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), nebo [ StackOverflow.com](http://stackoverflow.com/).
 
 
 `EntityDataSource` Řízení umožňuje velmi rychle vytvořit aplikaci, ale obvykle vyžaduje, abyste zachovat významné množství obchodní logika a logika přístup k datům v vaše *.aspx* stránky. Pokud očekáváte, vaše aplikace Čím složitost a vyžadují následné údržbě, vývoj déle investovat předem před vytvořením *n vrstvá* nebo *vrstvený* strukturu aplikace To je více udržovatelný. K implementaci této architektury, oddělit prezentační vrstvu z vrstvu obchodní logiky (BLL) a vrstva přístupu k datům (DAL). Jeden způsob, jak implementovat tato struktura je použití `ObjectDataSource` řízení místo `EntityDataSource` ovládacího prvku. Při použití `ObjectDataSource` ovládací prvek, implementovat vlastní kód pro přístup k datům a pak vyvolání v *.aspx* stránky používající ovládací prvek, který má mnoho stejných funkcí jako další ovládací prvky datových zdrojů. Díky tomu můžete kombinovat výhod přístup n vrstvá s výhody použití ovládacího prvku webového formuláře pro přístup k datům.
@@ -60,7 +60,7 @@ podle [tní Dykstra](https://github.com/tdykstra)
 
 Kromě základních operací CRUD, třídu, která vytvoříte pro použití s `ObjectDataSource` řízení může být nutné provést obchodní logiky při `ObjectDataSource` načte nebo aktualizuje data. Při aktualizaci oddělení může například muset ověřte, jestli žádné jiných oddělení mají stejného správce, protože jedna osoba nemůže být správcem více než jeden oddělení.
 
-V některých `ObjectDataSource` dokumentace, například [přehledu třídy ObjectDataSource](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.aspx), ovládacího prvku zavolá třídu označuje jako *obchodní objekt* obchodní logika a logika přístup k datům, který obsahuje . V tomto kurzu vytvoříte samostatné třídy pro obchodní logika a logika přístup k datům. Je volána třída, který zapouzdřuje logiku přístup k datům *úložiště*. Obchodní logiky třída obsahuje metody obchodní logiky a metody přístupu k datům, ale metody přístupu k datům volání úložiště k provádění úloh přístup k datům.
+V některých `ObjectDataSource` dokumentace, například [přehledu třídy ObjectDataSource](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.aspx), ovládacího prvku zavolá třídu označuje jako *obchodní objekt* obchodní logika a logika přístup k datům, který obsahuje . V tomto kurzu vytvoříte samostatné třídy pro obchodní logika a logika přístup k datům. Je volána třída, který zapouzdřuje logiku přístup k datům *úložiště*. Obchodní logiky třída obsahuje metody obchodní logiky a metody přístupu k datům, ale metody přístupu k datům volání úložiště k provádění úloh přístup k datům.
 
 Můžete také vytvořit abstraktní vrstvu mezi BLL a DAL, která usnadňuje automatizované jednotky testování BLL. Tato abstraktní vrstvu je implementováno modulem vytváření rozhraní a pomocí rozhraní při doložit úložiště ve třídě obchodní logiky. Díky tomu je možné zadat třídu obchodní logiky s odkazem na libovolný objekt, který implementuje rozhraní úložiště. Pro běžné operace by poskytnete objekt úložiště, který funguje s platformou Entity Framework. Pro testování, poskytnete objekt úložiště, který funguje s daty uloženými v tak, že můžete snadno upravit, jako je například třída proměnných definovaná jako kolekce.
 
@@ -325,4 +325,4 @@ Změnit hodnotu pole nebo vyberte jiný správce a klikněte na tlačítko **akt
 Tím dokončíte Úvod k použití `ObjectDataSource` řízení pro základní CRUD (vytvořit, číst, aktualizovat, odstraňovat) operací s rozhraní Entity Framework. Když jste sestavili jednoduchou aplikaci n vrstvá, ale vrstvu obchodní logiky je stále úzce párované do vrstvy přístup k datům, což ztěžuje automatizované testování částí. V následujícím kurzu uvidíte, jak implementovat použitému vzoru usnadňuje testování částí.
 
 >[!div class="step-by-step"]
-[Další](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+[Next](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)

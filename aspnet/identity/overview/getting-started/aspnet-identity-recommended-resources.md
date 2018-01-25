@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 8050d37cfea91701e1cae0413feb41ca9a68baff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb6e378d6b1de7d43bbc4272b64f9029f4e92924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity doporučené prostředky
 ====================
@@ -44,7 +44,7 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 - [Nasazení aplikace zabezpečené rozhraní ASP.NET MVC s členství, OAuth a SQL Database k Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). V tomto kurzu přidá nasazení Azure, jak zabezpečit vaše aplikace s rolemi, jak používat členské rozhraní API k přidání uživatelů a rolí a další funkce zabezpečení.
 - [Úvod do ASP.NET Identity](introduction-to-aspnet-identity.md)
 - [Vytvoření zabezpečeného webovou aplikaci ASP.NET MVC 5 s přihlášení resetovat heslo a potvrzení e-mailu](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
-- [Aplikace ASP.NET MVC 5 s SMS a e-mailu dvoufaktorové ověřování](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
+- [Aplikace ASP.NET MVC 5 s dvoufaktorovým ověřováním pomocí SMS a e-mailu](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
 <a id="feat"></a>
 ## <a name="new-featured-must-read-articles"></a>Nové zajímavé články musí pro čtení
@@ -60,10 +60,10 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 - [Potvrzení účtu a heslo pro obnovení s ASP.NET Identity](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
 - [Dvoufaktorové ověřování pomocí SMS a e-mailu s ASP.NET Identity](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
-- [Migrace existující web z členství SQL na identitě ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
-- [Přidání ASP.NET Identity pro prázdný nebo existující webových formulářů projektu](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
-- Časopis MSDN [externího ověřování s ASP.NET Identity](https://msdn.microsoft.com/en-us/magazine/dn745860.aspx) podle Dino Esposito
-- Časopis MSDN[první pohled na identitě ASP.NET Identity](https://msdn.microsoft.com/en-us/magazine/dn605872.aspx) podle Dino Esposito
+- [Migrace stávajícího webu z členství SQL na ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [Přidání ASP.NET Identity do prázdného nebo stávajícího projektu webových formulářů](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
+- Časopis MSDN [externího ověřování s ASP.NET Identity](https://msdn.microsoft.com/magazine/dn745860.aspx) podle Dino Esposito
+- Časopis MSDN[první pohled na identitě ASP.NET Identity](https://msdn.microsoft.com/magazine/dn605872.aspx) podle Dino Esposito
 - [ASP.NET Identity – uzamčení uživatelů](http://tech.trailmax.info/2014/06/asp-net-identity-user-lockout/)
 
 <a id="samp"></a>
@@ -132,7 +132,7 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 - Channel 9 [zabezpečení vašeho webu s ASP.NET Identity](https://channel9.msdn.com/Events/TechDays/Techdays-2014-the-Netherlands/Securing-your-website-with-ASP-NET-Identity) podle Alex Thissen
 - [Použít identitu ASP.NET na existující DB – Model](https://www.youtube.com/watch?v=elfqejow5hM) podle Alexander Schmidt
 - [Identitu ASP.NET jeden](https://www.youtube.com/watch?v=w8GD-QIusKk) podle Ivaylo Kenov z webu Telerik
-- [Čeština ASP.NET Identity](https://www.youtube.com/watch?v=tVbZp5brcpY) v této přednáškový ukážeme, jak nasadit základní ověřování, jak přidat podporu pro externí identity zprostředkovatele například Twitteru nebo Facebooku a způsob použití jednorázového hesla (OTP). [ASP.NET Identity je nástupce členství zprostředkovatele rolí &#367; v technologii ASP.NET, tedy knihovna pro zajišt &#283; ní autentizace uživatel &#367;. V této p &#345; ednášce si ukážeme, jak nasad]
+- [Čeština ASP.NET Identity](https://www.youtube.com/watch?v=tVbZp5brcpY) v této přednáškový ukážeme, jak nasadit základní ověřování, jak přidat podporu pro externí identity zprostředkovatele například Twitteru nebo Facebooku a způsob použití jednorázového hesla (OTP). [ASP.NET Identity je nástupce členství zprostředkovatele rolí &#367; v technologii ASP.NET, tedy knihovna pro zajišt &#283; ní autentizace uživatel &#367;. V této p&#345;ednášce si ukážeme, jak nasad]
 
 <a id="cust"></a>
 ## <a name="custom-storage-providers-for-aspnet-identity"></a>Poskytovatelé vlastní úložiště pro identitu ASP.NET

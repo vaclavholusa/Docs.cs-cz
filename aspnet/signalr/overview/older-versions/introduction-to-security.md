@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 04487614b219f8f6f8f0524c3b5f1aa42480c4d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ebc83098b73902fa3f7a90a38dafc43b413e75fe
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-signalr-security-signalr-1x"></a>Úvod k zabezpečení SignalR (SignalR 1.x)
 ====================
@@ -54,7 +54,7 @@ Tento dokument obsahuje následující části:
 
 SignalR je určena pro integrovat do stávající struktury ověřování pro aplikaci. Neposkytuje všechny funkce pro ověřování uživatelů. Místo toho můžete ověřování uživatelů, jako by normálně ve vaší aplikaci a pak pracovat s výsledky ověřování ve vašem kódu SignalR. Například můžete ověřit uživatele pomocí ověřování ASP.NET pomocí formulářů a pak vynutit v centru, kteří uživatelé nebo role mají oprávnění k volání metody. V centru můžete předat také informace o ověřování, jako je například uživatelské jméno nebo jestli se uživatel patří do role, do klienta.
 
-Funkce SignalR poskytuje [Autorizovat](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) atribut k určení uživatelů, kteří mají přístup do rozbočovače nebo metoda. Použít atribut autorizovat k rozbočovači nebo konkrétní metody v rozbočovači. Bez atribut autorizovat jsou k dispozici pro klienta, který je připojený k rozbočovači všechny veřejné metody v rozbočovači. Další informace o centrech najdete v tématu [ověřování a autorizace pro rozbočovače SignalR](../security/hub-authorization.md).
+Funkce SignalR poskytuje [Autorizovat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) atribut k určení uživatelů, kteří mají přístup do rozbočovače nebo metoda. Použít atribut autorizovat k rozbočovači nebo konkrétní metody v rozbočovači. Bez atribut autorizovat jsou k dispozici pro klienta, který je připojený k rozbočovači všechny veřejné metody v rozbočovači. Další informace o centrech najdete v tématu [ověřování a autorizace pro rozbočovače SignalR](../security/hub-authorization.md).
 
 `Authorize` Atribut se používá jenom s rozbočovači. K vynucení pravidel autorizace při použití `PersistentConnection` je nutné přepsat `AuthorizeRequest` metoda. Další informace o trvalé připojení najdete v tématu [ověřování a autorizace pro trvalé připojení SignalR](../security/persistent-connection-authorization.md).
 

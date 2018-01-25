@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f7ab0df2ebfa24b0928117e683325b158e3aad1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cfd0cdb0afe3bf71686715c0b1891adfbbd5019a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>Řazení dat v DataList nebo prvku Repeater (C#)
 ====================
@@ -81,7 +81,7 @@ Obrázek 3 ukazuje tuto stránku při zobrazení prostřednictvím prohlížeče
 
 ## <a name="step-3-instructing-the-objectdatasource-to-sort-the-data"></a>Krok 3: Instruující ObjectDataSource k řazení dat.
 
-Řazení dat, které zobrazuje v Opakovači, je potřeba informovat ObjectDataSource výrazu řazení, podle kterého má řazení proběhnout data. Předtím, než ObjectDataSource načítá data, nejprve aktivuje její [ `Selecting` událostí](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), což dává příležitost, abychom mohli zadejte výraz řazení. `Selecting` Obslužné rutiny události se předá objekt typu [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), který má vlastnost s názvem [ `Arguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) typu [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx). `DataSourceSelectArguments` Třída slouží k předávání žádostí souvisejících s daty z příjemce dat k řízení zdrojů dat a zahrnuje [ `SortExpression` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.sortexpression.aspx).
+Řazení dat, které zobrazuje v Opakovači, je potřeba informovat ObjectDataSource výrazu řazení, podle kterého má řazení proběhnout data. Předtím, než ObjectDataSource načítá data, nejprve aktivuje její [ `Selecting` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), což dává příležitost, abychom mohli zadejte výraz řazení. `Selecting` Obslužné rutiny události se předá objekt typu [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), který má vlastnost s názvem [ `Arguments` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) typu [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx). `DataSourceSelectArguments` Třída slouží k předávání žádostí souvisejících s daty z příjemce dat k řízení zdrojů dat a zahrnuje [ `SortExpression` vlastnost](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.sortexpression.aspx).
 
 Chcete-li předat řazení informace ze stránky ASP.NET ObjectDataSource, vytvořit obslužnou rutinu události pro `Selecting` událostí a použijte následující kód:
 

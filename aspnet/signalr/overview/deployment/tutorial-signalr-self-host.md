@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
 msc.type: authoredcontent
-ms.openlocfilehash: 997756ff8d48e41da981491d6154f3107ec7a051
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d38e6fbc3407e4beca6942bbdefcaa8258ebc5ad
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-signalr-self-host"></a>Kurz: SignalR hostování na vlastním serveru
 ====================
@@ -94,7 +94,7 @@ V tomto kurzu vytvoříte serveru, který je hostován v konzolové aplikaci, al
 
     Ve výše uvedeném kódu obsahuje tři třídy:
 
-    - **Program**, včetně **hlavní** metoda definování primární cestu provádění. V této metodě, webovou aplikaci typu **spuštění** je spuštěna na zadané adrese URL (`http://localhost:8080`). Pro potřeby zabezpečení na koncový bod se dá implementovat protokol SSL. V tématu [postup: Nakonfigurujte certifikát protokolu SSL Port](https://msdn.microsoft.com/en-us/library/ms733791.aspx) Další informace.
+    - **Program**, včetně **hlavní** metoda definování primární cestu provádění. V této metodě, webovou aplikaci typu **spuštění** je spuštěna na zadané adrese URL (`http://localhost:8080`). Pro potřeby zabezpečení na koncový bod se dá implementovat protokol SSL. V tématu [postup: Nakonfigurujte certifikát protokolu SSL Port](https://msdn.microsoft.com/library/ms733791.aspx) Další informace.
     - **Spuštění**, třída obsahující konfiguraci serveru SignalR (pouze konfigurace tento kurz používá je volání `UseCors`) a volání k `MapSignalR`, která vytvoří trasy pro všechny objekty rozbočovače v projektu.
     - **MyHub**, rozbočovače SignalR třídu, která aplikace bude poskytovat klientům. Tato třída obsahuje jedinou metodu, **odeslat**, že klienti zavolá k vysílání zprávy do všech ostatních připojených klientů.
 6. Zkompilování a spuštění aplikace. Zadaná adresa na serveru běží by měl zobrazit v okně konzoly.

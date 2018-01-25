@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/social/index
-ms.openlocfilehash: 7d03998c82bf13976ec6157acb5c56c28e5c0d52
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d6daad6298267956e7ac1f4b304c5eeaae231ba8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enabling-authentication-using-facebook-google-and-other-external-providers"></a>Povolení ověřování pomocí Facebook, Google a dalších externích zprostředkovatelů
 
@@ -80,7 +80,7 @@ Ke konfiguraci aplikace pomocí příslušného zprostředkovatele použijte v n
 
 ## <a name="optionally-set-password"></a>Volitelně můžete nastavit heslo
 
-Při registraci prostřednictvím poskytovatele externí přihlášení, není nutné heslo zaregistrována aplikace. To nebude můžete vytvářet a zapamatování hesla pro lokalitu, ale také udržuje je závislá na na externího zprostředkovatele přihlášení. Pokud není k dispozici na externího zprostředkovatele přihlášení, nebudete moct přihlásit k webu.
+Při registraci prostřednictvím poskytovatele externí přihlášení nemáte heslo zaregistrována aplikace. To nebude můžete vytvářet a zapamatování hesla pro lokalitu, ale také udržuje je závislá na na externího zprostředkovatele přihlášení. Pokud není k dispozici na externího zprostředkovatele přihlášení, nebudete moct přihlásit k webu.
 
 Vytvořte heslo a přihlaste se pomocí e-mailu nastavený během v procesu přihlašování s externí zprostředkovatele:
 

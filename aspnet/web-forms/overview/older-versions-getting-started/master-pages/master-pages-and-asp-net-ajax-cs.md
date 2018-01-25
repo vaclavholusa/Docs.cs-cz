@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 86ec6454313f5a6e78c0f64433ef4e5a4f8461ee
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e09951be5483ed098b8cab6517335f9962a5d95
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="master-pages-and-aspnet-ajax-c"></a>Hlavní stránky a ASP.NET AJAX (C#)
 ====================
@@ -31,7 +31,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
 V posledních několika letech byla vytváření více vývojáři [AJAX](http://en.wikipedia.org/wiki/Ajax_(programming))-povolené webové aplikace. Webu technologie AJAX používá počet související webové technologie nabízet rychleji reagující uživatelské prostředí. Vytvoření aplikace AJAX ASP.NET je amazingly snadno Děkujeme do společnosti Microsoft [rozhraní ASP.NET AJAX](../../../../ajax/index.md). Technologie ASP.NET AJAX je integrovaná technologie ASP.NET 3.5 a Visual Studio 2008; je k dispozici jako samostatný soubor ke stažení pro aplikace ASP.NET 2.0.
 
-Při vytváření technologie AJAX webové stránky s rozhraní ASP.NET AJAX, je třeba přidat přesně jeden [ovládací prvek ScriptManager](https://msdn.microsoft.com/en-us/library/bb398863.aspx) na každé stránce, která používá rozhraní. Jak již název napovídá, spravuje prvek ScriptManager klientský skript, který je používán podporou AJAXU webové stránky. Minimálně ScriptManager vysílá HTML, které dostane pokyn, aby stahování souborů JavaScript tento způsob vytvoření klientské knihovny ASP.NET AJAX. Je také lze registrovat vlastní soubory JavaScript, skript webovým službám a funkčnost služby vlastní aplikace.
+Při vytváření technologie AJAX webové stránky s rozhraní ASP.NET AJAX, je třeba přidat přesně jeden [ovládací prvek ScriptManager](https://msdn.microsoft.com/library/bb398863.aspx) na každé stránce, která používá rozhraní. Jak již název napovídá, spravuje prvek ScriptManager klientský skript, který je používán podporou AJAXU webové stránky. Minimálně ScriptManager vysílá HTML, které dostane pokyn, aby stahování souborů JavaScript tento způsob vytvoření klientské knihovny ASP.NET AJAX. Je také lze registrovat vlastní soubory JavaScript, skript webovým službám a funkčnost služby vlastní aplikace.
 
 Pokud vaše lokality používá hlavní stránky (jako je), není nutné nutně přidat ovládací prvek ScriptManager do každé jediné obsahu stránce; Místo toho můžete přidat ovládací prvek ScriptManager na hlavní stránku. Tento kurz ukazuje, jak přidat ovládací prvek ScriptManager na hlavní stránku. Vypadá to také o tom, jak používat ovládací prvek ScriptManagerProxy zaregistrovat vlastní skripty a skriptu služby na konkrétní stránku obsahu.
 
@@ -117,7 +117,7 @@ Konfigurace pro připojení k databázi Northwind prostřednictvím ovládacího
 
 [!code-sql[Main](master-pages-and-asp-net-ajax-cs/samples/sample3.sql)]
 
-`TOP 1` – Klíčové slovo v `SELECT` klauzule vrací pouze na první záznam vrácených dotazem. [ `NEWID()` Funkce](https://msdn.microsoft.com/en-us/library/ms190348.aspx) generuje nový [hodnotu globálně jedinečný identifikátor (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier) a mohou být používány `ORDER BY` klauzuli, která vrátí záznamy v tabulce v náhodném pořadí.
+`TOP 1` – Klíčové slovo v `SELECT` klauzule vrací pouze na první záznam vrácených dotazem. [ `NEWID()` Funkce](https://msdn.microsoft.com/library/ms190348.aspx) generuje nový [hodnotu globálně jedinečný identifikátor (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier) a mohou být používány `ORDER BY` klauzuli, která vrátí záznamy v tabulce v náhodném pořadí.
 
 
 [![Konfigurace SqlDataSource vrátit záznam jeden, náhodně vybrané](master-pages-and-asp-net-ajax-cs/_static/image11.png)](master-pages-and-asp-net-ajax-cs/_static/image10.png)

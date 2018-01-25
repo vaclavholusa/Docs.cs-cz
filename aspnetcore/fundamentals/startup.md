@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/startup
-ms.openlocfilehash: dd2eb3d3996bc0bf277c8d5e772c8568ef9f147e
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 81d76c39b7890e2d4ab86252cb0a343e3bb7359a
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -37,11 +37,14 @@ Zadejte `Startup` třídy s [WebHostBuilderExtensions](/dotnet/api/Microsoft.Asp
 
 [!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
-`Startup` Konstruktoru třídy přijímá závislosti definované hostitele. Běžně se používají [vkládání závislostí](xref:fundamentals/dependency-injection) do `Startup` třída je vložení [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) konfigurace služby pro prostředí:
+`Startup` Konstruktoru třídy přijímá závislosti definované hostitele. Běžně se používají [vkládání závislostí](xref:fundamentals/dependency-injection) do `Startup` třída je vložení:
+
+* [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) konfigurace služby pro prostředí.
+* [Parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) konfigurace při spuštění aplikace.
 
 [!code-csharp[Main](startup/snapshot_sample/Startup2.cs)]
 
-Alternativu k vložení `IHostingStartup` , je použít přístup na základě konvence. Aplikace můžete definovat samostatné `Startup` třídy pro různá prostředí (například `StartupDevelopment`), a v době běhu je vybraná třída odpovídající při spuštění. Třída, jehož příponu názvu odpovídá aktuální prostředí prioritu. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v části [práce s několika prostředí](xref:fundamentals/environments#startup-conventions).
+Alternativu k vložení `IHostingEnvironment` , je použít přístup na základě konvence. Aplikace můžete definovat samostatné `Startup` třídy pro různá prostředí (například `StartupDevelopment`), a v době běhu je vybraná třída odpovídající při spuštění. Třída, jehož příponu názvu odpovídá aktuální prostředí prioritu. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments#startup-conventions).
 
 Další informace o `WebHostBuilder`, najdete v článku [hostitelský](xref:fundamentals/hosting) tématu. Informace o zpracování chyb během spouštění najdete v tématu [spuštění zpracování výjimek](xref:fundamentals/error-handling#startup-exception-handling).
 
@@ -83,7 +86,7 @@ Další informace o tom, jak používat `IApplicationBuilder`, najdete v části
 
 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder.configureservices) a [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure) usnadňující metody lze použít místo zadávání `Startup` třídy. Více volá, aby se `ConfigureServices` připojit k sobě. Vícenásobné volání `Configure` použijte posledního volání metody.
 
-[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=16,20)]
+[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
 ## <a name="startup-filters"></a>Spuštění filtrů
 

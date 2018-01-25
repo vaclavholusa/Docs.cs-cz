@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e99b74030104bf17d4d79cd7670cf903270fa51f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 21eac6a4d829795f02eeeca5f9870b1ab8132d08
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>Konfigurace webové aplikace produkční použití provozní databázi (C#)
 ====================
@@ -37,7 +37,7 @@ Je běžné pro konfigurační informace pro liší vývoj a produkční prostř
 
 ## <a name="examining-the-connection-string-information"></a>Zkoumání informace o připojovacím řetězci
 
-Připojovací řetězec použitý kniha recenze webová aplikace je uložené v konfiguračním souboru aplikace s `Web.config`. `Web.config`obsahuje speciální oddíl pro ukládání připojovacích řetězců, vhodně pojmenované [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx). `Web.config` Soubor pro web knihy recenze má jeden připojovacího řetězce definovaný v této části s názvem `ReviewsConnectionString`:
+Připojovací řetězec použitý kniha recenze webová aplikace je uložené v konfiguračním souboru aplikace s `Web.config`. `Web.config`obsahuje speciální oddíl pro ukládání připojovacích řetězců, vhodně pojmenované [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx). `Web.config` Soubor pro web knihy recenze má jeden připojovacího řetězce definovaný v této části s názvem `ReviewsConnectionString`:
 
 [!code-xml[Main](configuring-the-production-web-application-to-use-the-production-database-cs/samples/sample1.xml)]
 
@@ -46,7 +46,7 @@ Připojovací řetězec - zdroj dat =. \SQLEXPRESS; AttachDbFilename = | Zabezpe
 - `Data Source`-Určuje umístění databázového serveru a název instance databázového serveru (pokud existuje). Hodnota, `.\SQLEXPRESS`, je třeba kde je server databáze a název instance. Období určuje, že databázový server je ve stejném počítači jako aplikaci; Název instance je `SQLEXPRESS`.
 - `AttachDbFilename`-Určuje umístění souboru databáze. Hodnota obsahuje zástupný symbol `|DataDirectory|`, který je přeložen na úplnou cestu aplikace s `App_Data` složky za běhu.
 - `Integrated Security`-Logická hodnota, která označuje, zda pomocí zadaného uživatelského jména a hesla při připojování k databázi (false) nebo aktuální Windows přihlašovací údaje účtu (true).
-- `User Instance`-možnost konfigurace specifické pro SQL Server Express Edition, která určuje, jestli se má povolit uživatelům bez oprávnění správce v místním počítači připojení a připojení k databázi systému SQL Server Express Edition. V tématu [instance služby SQL Server Express uživatele](https://msdn.microsoft.com/en-us/library/ms254504.aspx) Další informace o tomto nastavení.
+- `User Instance`-možnost konfigurace specifické pro SQL Server Express Edition, která určuje, jestli se má povolit uživatelům bez oprávnění správce v místním počítači připojení a připojení k databázi systému SQL Server Express Edition. V tématu [instance služby SQL Server Express uživatele](https://msdn.microsoft.com/library/ms254504.aspx) Další informace o tomto nastavení.
   
 
 Možnosti řetězec povolených připojení závisí na databázi, ke kterému se připojujete a databáze zprostředkovatele ADO.NET používá. Například připojovací řetězec pro připojení k serveru Microsoft SQL Server databáze se liší od kterého se připojit k databázi Oracle. Připojení k databázi Microsoft SQL Server pomocí poskytovatel Sqlclienta, používá jiný připojovací řetězec než při použití zprostředkovatele OLE DB.
@@ -71,7 +71,7 @@ Dále určit různé informace o připojení databáze (viz obrázek 2). Při re
 
 Databázi produkčním prostředí by měl být teď uvedený v Průzkumníku serveru. Vyberte databázi z Průzkumníka serveru a přejít do okna vlastností. Zde najdete vlastnost s názvem připojovací řetězec databáze s připojovacím řetězcem. Za předpokladu, že používáte databáze Microsoft SQL Server na produkční a poskytovatel Sqlclienta připojovací řetězec by měl vypadat takto:
 
-**Zdroj dat =*serverName*; Počáteční katalog =*databaseName*; Zachovat bezpečnostní údaje = True; ID uživatele =*uživatelské jméno*; Heslo =*heslo***
+**Zdroj dat =*serverName*; Počáteční katalog =*databaseName*; Zachovat bezpečnostní údaje = True; ID uživatele =*uživatelské jméno*; Heslo = * heslo***
 
 Kde *serverName*, *databaseName*, *uživatelské jméno*, a *heslo* jsou s hodnotami pro název databázového serveru, databáze název a uživatelské jméno a heslo, které vám poskytne vaše společnost webového hostitele.
 
@@ -147,10 +147,10 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Připojovací řetězce a konfigurační soubory](https://msdn.microsoft.com/en-us/library/ms254494.aspx)
+- [Připojovací řetězce a konfigurační soubory](https://msdn.microsoft.com/library/ms254494.aspx)
 - [Konfigurace databáze řetězce informace @ ConnectionStrings.com](http://www.connectionstrings.com/)
 - [Přesunutí nastavení ze souboru Web.config](http://www.asp101.com/tips/index.asp?id=154)
-- [Technická dokumentace k &lt;connectionStrings&gt; – Element](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)
+- [Technická dokumentace k &lt;connectionStrings&gt; – Element](https://msdn.microsoft.com/library/bf7sd233.aspx)
 
 >[!div class="step-by-step"]
 [Předchozí](deploying-a-database-cs.md)

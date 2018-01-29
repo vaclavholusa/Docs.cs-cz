@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: af73a86aa6bcde084ecbe1a3fb5711c7da55871c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3aaab9d4fecd3f0d0da6a0df4d83bee090b329ea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-scripting"></a>Brání skriptování mezi servery
 
@@ -141,11 +141,11 @@ To bude vykreslení v prohlížeči takto:
    ```
 
 >[!WARNING]
-> Řetězení není nedůvěryhodné vstup v jazyce JavaScript k vytvoření DOM elementů. Měli byste použít `createElement()` a přiřadit odpovídajícím způsobem, jako hodnoty vlastností `node.TextContent=`, nebo použijte `element.SetAttribute()` / `element[attribute]=` jinak sami umístěte do založené na modelu DOM XSS.
+> Nedůvěryhodné vstup v jazyce JavaScript k vytváření prvků modelu DOM není zřetězení. Měli byste použít `createElement()` a přiřadit odpovídajícím způsobem, jako hodnoty vlastností `node.TextContent=`, nebo použijte `element.SetAttribute()` / `element[attribute]=` jinak sami umístěte do založené na modelu DOM XSS.
 
 ## <a name="accessing-encoders-in-code"></a>Přístup k kodéry v kódu
 
-Jsou k dispozici kódu dvěma způsoby kodéry HTML, JavaScript a adresu URL, můžete vložit pomocí [vkládání závislostí](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) nebo můžete použít výchozí kodéry, obsažené v `System.Text.Encodings.Web` oboru názvů. Pokud použijete výchozí kodéry pak veškeré použité na rozsahy znak považován za bezpečné se neprojeví, – výchozí kodéry nejbezpečnější kódování pravidla možné použít.
+Jsou k dispozici kódu dvěma způsoby kodéry HTML, JavaScript a adresu URL, můžete vložit pomocí [vkládání závislostí](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) nebo můžete použít výchozí kodéry, obsažené v `System.Text.Encodings.Web` oboru názvů. Pokud použijete výchozí kodéry pak veškeré použité k znak rozsahy považován za bezpečné se neprojeví – výchozí kodéry nejbezpečnější kódování pravidla možné použít.
 
 Použít konfigurovatelná kodéry prostřednictvím DI vaší konstruktory provést *HtmlEncoder*, *JavaScriptEncoder* a *UrlEncoder* parametr podle potřeby. Například;
 

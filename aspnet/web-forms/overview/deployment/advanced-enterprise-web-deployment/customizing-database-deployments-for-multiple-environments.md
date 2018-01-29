@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 449c448d1be237f3f95a437bb2c0415bd8ed0d99
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f3ca344c2466d9d538f55cd8ff0a5bf5b7bac808
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>Přizpůsobení nasazení databáze pro prostředí s více
 ====================
@@ -72,17 +72,17 @@ Tato tabulka ukazuje nastavení typické nasazení pro jiné cílové prostřed�
 |  | Vývojáře/testování | Pracovní nebo integrace | Produkční |
 | --- | --- | --- | --- |
 | **Kolace porovnání nasazení** | Zdroj | cíl | cíl |
-| **Nasazení vlastnosti databáze** | Hodnota TRUE | Pouze první přihlášení | Pouze první přihlášení |
-| **Vždy znovu vytvořit databázi** | Hodnota TRUE | False | False |
-| **Blokovat přírůstkové nasazení, pokud může dojít ke ztrátě dat.** | False | Možná | Hodnota TRUE |
-| **Spustit skript nasazení v režimu jednoho uživatele** | False | Hodnota TRUE | Hodnota TRUE |
-| **Zálohování databáze před nasazením** | False | Možná | Hodnota TRUE |
-| **Generovat příkazy DROP pro objekty, které jsou v cílové databázi, ale nejsou v databázi projektu** | False | Hodnota TRUE | Hodnota TRUE |
+| **Nasazení vlastnosti databáze** | True | Pouze první přihlášení | Pouze první přihlášení |
+| **Vždy znovu vytvořit databázi** | True | False | False |
+| **Blokovat přírůstkové nasazení, pokud může dojít ke ztrátě dat.** | False | Možná | True |
+| **Spustit skript nasazení v režimu jednoho uživatele** | False | True | True |
+| **Zálohování databáze před nasazením** | False | Možná | True |
+| **Generovat příkazy DROP pro objekty, které jsou v cílové databázi, ale nejsou v databázi projektu** | False | True | True |
 | **Nepoužívejte příkaz ALTER ASSEMBLY příkazy aktualizace typů CLR** | False | False | False |
   
 
 > [!NOTE]
-> Další informace o vlastnosti nasazení databáze a důležité informace o prostředí, najdete v části [přehled o nastavení projektu databáze](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx), [postupy: Konfigurace vlastností Podrobnosti nasazení](https://msdn.microsoft.com/en-us/library/dd172125.aspx), [ Sestavení a nasazení databáze do prostředí izolované vývoj](https://msdn.microsoft.com/en-us/library/dd193409.aspx), a [sestavení a nasazení databází k pracovním nebo produkčním prostředí](https://msdn.microsoft.com/en-us/library/dd193413.aspx).
+> Další informace o vlastnosti nasazení databáze a důležité informace o prostředí, najdete v části [přehled o nastavení projektu databáze](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx), [postupy: Konfigurace vlastností Podrobnosti nasazení](https://msdn.microsoft.com/library/dd172125.aspx), [ Sestavení a nasazení databáze do prostředí izolované vývoj](https://msdn.microsoft.com/library/dd193409.aspx), a [sestavení a nasazení databází k pracovním nebo produkčním prostředí](https://msdn.microsoft.com/library/dd193413.aspx).
 
 
 Pro podporu nasazení databázového projektu do více cílů, měli vytvořit konfigurační soubor nasazení pro každé cílové prostředí.
@@ -94,7 +94,7 @@ Pro podporu nasazení databázového projektu do více cílů, měli vytvořit k
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. V **nový soubor konfigurace nasazení** dialogové okno pole, zadejte smysluplný název souboru (například **TestEnvironment.sqldeployment**) a potom klikněte na **Uložit**.
-4. Na *[Filename]***.sqldeployment** stránky, nastavte vlastnosti nasazení pro splnění požadavků na cílové prostředí a pak soubor uložte.
+4. Na *[Filename] *** .sqldeployment** stránky, nastavte vlastnosti nasazení pro splnění požadavků na cílové prostředí a pak soubor uložte.
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. Všimněte si, že nový soubor přidán do složky vlastnosti ve vašem projektu databáze.
@@ -141,10 +141,10 @@ Další informace o nasazení databázové projekty pomocí VSDBCMD.exe najdete 
 
 Tyto články na webu MSDN poskytovat další obecné informace o nasazení databáze:
 
-- [Přehled nastavení projektu databáze](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx)
-- [Postupy: Konfigurace vlastností Podrobnosti nasazení](https://msdn.microsoft.com/en-us/library/dd172125.aspx)
-- [Sestavení a nasazení databází do prostředí izolované vývoj](https://msdn.microsoft.com/en-us/library/dd193409.aspx)
-- [Sestavení a nasazení databází k pracovním nebo produkčním prostředí](https://msdn.microsoft.com/en-us/library/dd193413.aspx)
+- [Přehled nastavení projektu databáze](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)
+- [Postupy: Konfigurace vlastností Podrobnosti nasazení](https://msdn.microsoft.com/library/dd172125.aspx)
+- [Sestavení a nasazení databází do prostředí izolované vývoj](https://msdn.microsoft.com/library/dd193409.aspx)
+- [Sestavení a nasazení databází k pracovním nebo produkčním prostředí](https://msdn.microsoft.com/library/dd193413.aspx)
 
 >[!div class="step-by-step"]
 [Předchozí](performing-a-what-if-deployment.md)

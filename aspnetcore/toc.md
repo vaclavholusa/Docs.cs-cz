@@ -57,6 +57,7 @@
 ### [Webová aplikace Razor Pages na Macu](xref:tutorials/razor-pages-mac/index)
 #### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-mac/razor-pages-start)
 #### [Přidání modelu](xref:tutorials/razor-pages-mac/model)
+#### [Vygenerované stránky Razor](xref:tutorials/razor-pages-mac/page)
 ### [Webová aplikace Razor Pages s editorem VS Code](xref:tutorials/razor-pages-vsc/index)
 #### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-vsc/razor-pages-start)
 #### [Přidání modelu](xref:tutorials/razor-pages-vsc/model)

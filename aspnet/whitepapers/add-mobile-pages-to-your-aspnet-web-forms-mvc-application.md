@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: c7d893fb9633aaa8628f2f46a8db7f2c09f81830
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aac359b26c508784793a67260dc2e65c30db687a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>Postupy: Přidání mobilních stránek do svých formulářů technologie ASP.NET nebo aplikace MVC
 ====================
@@ -25,7 +25,7 @@ ms.lasthandoff: 11/10/2017
 > - Verze webových formulářů ASP.NET 4.0
 > - ASP.NET MVC verze 3.0
 > 
-> **Souhrn**
+> **Shrnutí**
 > 
 > Tento způsob k popisuje různé způsoby, jak sloužit stránky optimalizované pro mobilní zařízení z vaší webové formuláře ASP.NET nebo aplikace MVC a navrhuje architektury a návrhu, které byste měli zvážit při cílení na širokou škálu zařízení. Tento dokument také vysvětluje, proč jsou nyní zastaralé ovládací prvky Mobile ASP.NET z technologie ASP.NET 2.0 až 3.5 a popisuje některé moderní alternativy.
 
@@ -113,12 +113,12 @@ Je lepší rozhodnutí na základě charakteristik než číslo modelu, protože
 Webové formuláře ASP.NET a MVC vývojáři mohou okamžitě zjistit důležité charakteristiky hostujícími prohlížeče zkontrolováním vlastnosti *Request.Browser* objektu. Například v tématu
 
 - Request.Browser.IsMobileDevice
-- Request.Browser.MobileDeviceManufacturer Request.Browser.MobileDeviceModel
+- Request.Browser.MobileDeviceManufacturer, Request.Browser.MobileDeviceModel
 - Request.Browser.ScreenPixelsWidth
 - Request.Browser.SupportsXmlHttp
 - .. a mnoho dalších
 
-Na pozadí, platformu ASP.NET odpovídá příchozí *User-Agent* hlavičky protokolu HTTP (uživatelský Agent) proti regulárních výrazů v sadě souborů XML definice prohlížeče. Ve výchozím nastavení platforma obsahuje definice pro mnoho běžných mobilních zařízení a ostatní uživatelé, který si přejete rozpoznat můžete přidat vlastní soubory definicí prohlížeče. Další podrobnosti najdete v tématu stránce MSDN [ovládací prvky webového serveru technologie ASP.NET a možnosti prohlížeče](https://msdn.microsoft.com/en-us/library/x3k2ssx2.aspx).
+Na pozadí, platformu ASP.NET odpovídá příchozí *User-Agent* hlavičky protokolu HTTP (uživatelský Agent) proti regulárních výrazů v sadě souborů XML definice prohlížeče. Ve výchozím nastavení platforma obsahuje definice pro mnoho běžných mobilních zařízení a ostatní uživatelé, který si přejete rozpoznat můžete přidat vlastní soubory definicí prohlížeče. Další podrobnosti najdete v tématu stránce MSDN [ovládací prvky webového serveru technologie ASP.NET a možnosti prohlížeče](https://msdn.microsoft.com/library/x3k2ssx2.aspx).
 
 ### <a name="using-the-wurfl-device-database-via-51degreesmobi-foundation"></a>Použití databáze zařízení WURFL prostřednictvím 51Degrees.mobi Foundation
 
@@ -213,9 +213,9 @@ Další tipy k optimalizaci značek a šablon stylů CSS pro mobilní prohlíže
 
 Vzhledem k tomu, že vzoru Model-View-Controller oddělí aplikace logiky (v řadiče) z logiky prezentace (v zobrazení), můžete z jakéhokoli z následujících dvou přístupů zpracování mobilní podpory v kódu na straně serveru:
 
-1. ***Použít stejnou řadiče a zobrazení pro stolní počítače a mobilní prohlížeče, ale vykreslit zobrazení s jinou Razor rozložení v závislosti na typu zařízení*.** Tato možnost funguje nejlíp, pokud jste zobrazení identické dat na všech zařízeních, ale jednoduše chcete zadat jinou šablony stylů CSS nebo změnit několik nejvyšší úrovně elementů HTML pro mobilní telefony.
+1. ***Použít stejnou řadiče a zobrazení pro stolní počítače a mobilní prohlížeče, ale vykreslit zobrazení s jinou Razor rozložení v závislosti na typu zařízení *.** Tato možnost funguje nejlíp, pokud jste zobrazení identické dat na všech zařízeních, ale jednoduše chcete zadat jinou šablony stylů CSS nebo změnit několik nejvyšší úrovně elementů HTML pro mobilní telefony.
 2. ***Použít stejnou řadiče pro stolní počítače a mobilní prohlížeče, ale vykreslení různá zobrazení v závislosti na typu zařízení***. Tato možnost funguje nejlíp, pokud jste zobrazení zhruba stejná data a poskytuje stejné pracovních postupů pro koncové uživatele, ale chcete vykreslit velmi různý kód HTML tak, aby vyhovovala zařízení používá.
-3. ***Vytvoření samostatné oblasti pro stolní počítače a mobilní prohlížeče, implementace nezávislé kontrolery a zobrazení pro každý*.** Tato možnost funguje nejlíp, pokud jste zobrazení obrazovky příliš neliší, obsahující různé informace a úvodní uživatele prostřednictvím různých pracovních optimalizované pro jejich typu. Může to znamenat některé opakování kódu, ale můžete minimalizovat, pomocí řešení se běžné logiku do podkladové vrstvy nebo služby.
+3. ***Vytvoření samostatné oblasti pro stolní počítače a mobilní prohlížeče, implementace nezávislé kontrolery a zobrazení pro každý *.** Tato možnost funguje nejlíp, pokud jste zobrazení obrazovky příliš neliší, obsahující různé informace a úvodní uživatele prostřednictvím různých pracovních optimalizované pro jejich typu. Může to znamenat některé opakování kódu, ale můžete minimalizovat, pomocí řešení se běžné logiku do podkladové vrstvy nebo služby.
 
 Pokud budete chtít využít **první** možnost a pouze Razor rozložení se liší podle typu zařízení, je velmi snadné. Právě upravit vaše \_ViewStart.cshtml souboru následujícím způsobem:
 

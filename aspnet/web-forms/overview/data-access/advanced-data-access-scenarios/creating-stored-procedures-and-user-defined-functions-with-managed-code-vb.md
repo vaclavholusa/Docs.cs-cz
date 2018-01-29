@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: efec52c4085c24b1d6227a86f7c435ca657e493c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e30df9ddc094d0390d9e5985ec676713b57feaf4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>Vytváření uložené procedury a funkce definované uživatelem se spravovaným kódem (VB)
 ====================
@@ -33,12 +33,12 @@ Použít databází jako s Microsoft SQL Server 2005 [Transact-Structured dotazo
 
 Jádro aplikace SQL je určená pro práci s datových sad. `SELECT`, `UPDATE`, A `DELETE` příkazy ze své podstaty platí pro všechny záznamy v příslušné tabulce a jsou omezena pouze jejich `WHERE` klauzule. Ještě existuje mnoho funkcí jazyka, které jsou navrženy pro práci s jedním záznamem najednou a manipulace s daty skalární. [`CURSOR`s](http://www.sqlteam.com/item.asp?ItemID=553) povolit pro sadu záznamů být smyčce prostřednictvím jednoho najednou. Řetězec funkce pro zpracování jako `LEFT`, `CHARINDEX`, a `PATINDEX` pracovní skalární daty. SQL také zahrnuje řízení toku příkazy, jako je třeba `IF` a `WHILE`.
 
-Před Microsoft SQL Server 2005 uložené procedury a funkce UDF může definovat pouze jako kolekci příkazů T-SQL. SQL Server 2005, byla však určená k poskytnutí integrace s [Common Language Runtime (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx), což je modul runtime používá všechna sestavení .NET. V důsledku toho uložené procedury a funkce UDF v databázi systému SQL Server 2005 lze vytvořit pomocí spravovaného kódu. To znamená můžete vytvořit uložené procedury nebo UDF jako metodu v třídě jazyka Visual Basic. To umožňuje tyto uložené procedury a funkce UDF, abyste mohli využívat funkce v rozhraní .NET Framework a z vlastní třídy.
+Před Microsoft SQL Server 2005 uložené procedury a funkce UDF může definovat pouze jako kolekci příkazů T-SQL. SQL Server 2005, byla však určená k poskytnutí integrace s [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), což je modul runtime používá všechna sestavení .NET. V důsledku toho uložené procedury a funkce UDF v databázi systému SQL Server 2005 lze vytvořit pomocí spravovaného kódu. To znamená můžete vytvořit uložené procedury nebo UDF jako metodu v třídě jazyka Visual Basic. To umožňuje tyto uložené procedury a funkce UDF, abyste mohli využívat funkce v rozhraní .NET Framework a z vlastní třídy.
 
 V tomto kurzu vyzkoušíme vytvoření spravované uložené procedury a funkce definované uživatelem a postup jejich integraci do databáze Northwind. Umožňují s začít!
 
 > [!NOTE]
-> Spravované databázové objekty nabízí několik výhod oproti nástroji SQL. Jazyk zvučnost a znalosti a možnost pro opakované použití existujícího kódu a logiku jsou uvedené hlavní výhody. Ale spravované databázové objekty, které by mohly být méně efektivní, při práci se sadami dat, které nezahrnují mnohem procedurální logiku. Podrobnější informace o výhodách používání spravovaného kódu a T-SQL, podívejte se [výhody z pomocí spravovaného kódu k vytvoření databázové objekty](https://msdn.microsoft.com/en-us/library/k2e1fb36(VS.80).aspx).
+> Spravované databázové objekty nabízí několik výhod oproti nástroji SQL. Jazyk zvučnost a znalosti a možnost pro opakované použití existujícího kódu a logiku jsou uvedené hlavní výhody. Ale spravované databázové objekty, které by mohly být méně efektivní, při práci se sadami dat, které nezahrnují mnohem procedurální logiku. Podrobnější informace o výhodách používání spravovaného kódu a T-SQL, podívejte se [výhody z pomocí spravovaného kódu k vytvoření databázové objekty](https://msdn.microsoft.com/library/k2e1fb36(VS.80).aspx).
 
 
 ## <a name="step-1-moving-the-northwind-database-out-ofappdata"></a>Krok 1: Přesouváte databázi Northwind z`App_Data`
@@ -81,7 +81,7 @@ Klikněte na tlačítko OK připojte databázi. Průzkumník objektů by měl ny
 
 ## <a name="step-2-creating-a-new-solution-and-sql-server-project-in-visual-studio"></a>Krok 2: Vytvoření nové řešení a SQL Server projektu v sadě Visual Studio
 
-Chcete-li vytvořit spravované uložené procedury nebo funkce UDF v systému SQL Server 2005 jsme bude zapisovat uložené procedury a logiku UDF jako kód jazyka Visual Basic v třídě. Jakmile kód byl zapsán, budeme muset tato třída kompilována sestavení ( `.dll` soubor), registraci sestavení databázi systému SQL Server a pak vytvořte uložená procedura nebo objekt UDF v databázi, která odkazuje na metodu odpovídající v sestavení. Takto lze všechny provést ručně. Jsme vytvoření kódu v jakýkoli text editoru, kompilace z příkazového řádku pomocí Visual Basic – kompilátor (`vbc.exe`), zaregistrujte ho pomocí databáze [ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/en-us/library/ms189524.aspx) příkaz nebo z Management Studio a přidejte uložené procedura nebo objekt UDF prostřednictvím podobným způsobem. Naštěstí Professional a systémy Team verze sady Visual Studio obsahují typ projekt SQL Server, který automatizuje tyto úlohy. V tomto kurzu jsme provede procesem vytváření spravované uložené procedury a UDF pomocí typu SQL Server projektu.
+Chcete-li vytvořit spravované uložené procedury nebo funkce UDF v systému SQL Server 2005 jsme bude zapisovat uložené procedury a logiku UDF jako kód jazyka Visual Basic v třídě. Jakmile kód byl zapsán, budeme muset tato třída kompilována sestavení ( `.dll` soubor), registraci sestavení databázi systému SQL Server a pak vytvořte uložená procedura nebo objekt UDF v databázi, která odkazuje na metodu odpovídající v sestavení. Takto lze všechny provést ručně. Jsme vytvoření kódu v jakýkoli text editoru, kompilace z příkazového řádku pomocí Visual Basic – kompilátor (`vbc.exe`), zaregistrujte ho pomocí databáze [ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/library/ms189524.aspx) příkaz nebo z Management Studio a přidejte uložené procedura nebo objekt UDF prostřednictvím podobným způsobem. Naštěstí Professional a systémy Team verze sady Visual Studio obsahují typ projekt SQL Server, který automatizuje tyto úlohy. V tomto kurzu jsme provede procesem vytváření spravované uložené procedury a UDF pomocí typu SQL Server projektu.
 
 > [!NOTE]
 > Pokud používáte Visual Web Developer nebo ve standardní edici sady Visual Studio, budete muset použít ruční metodu místo. Krok 13 obsahuje podrobné pokyny k provedení těchto kroků ručně. I doporučujeme číst kroky 2 až 12 než si přečtete krok 13 vzhledem k tomu, že k těmto krokům patří důležité pokyny konfigurace systému SQL Server, které se musí použít bez ohledu na to, jaká verze sady Visual Studio, kterou používáte.
@@ -149,14 +149,14 @@ Tím se vytvoří nový soubor třídy jazyka Visual Basic s následujícím obs
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample2.vb)]
 
-Všimněte si, že uložené procedury je implementovaný jako `Shared` metoda v rámci `Partial` soubor třídy s názvem `StoredProcedures`. Kromě toho `GetDiscontinuedProducts` metoda opatřen s [ `SqlProcedure` atribut](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx), což označuje metodu jako uložené procedury.
+Všimněte si, že uložené procedury je implementovaný jako `Shared` metoda v rámci `Partial` soubor třídy s názvem `StoredProcedures`. Kromě toho `GetDiscontinuedProducts` metoda opatřen s [ `SqlProcedure` atribut](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx), což označuje metodu jako uložené procedury.
 
 Následující kód vytvoří `SqlCommand` objekt a nastaví její `CommandText` k `SELECT` dotaz, který vrátí všechny sloupce z `Products` tabulky produktů, jehož `Discontinued` pole se rovná 1. Pak spustí příkaz a odesílá výsledky zpět do klientské aplikace. Přidejte tento kód, který `GetDiscontinuedProducts` metoda.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample3.vb)]
 
-K dispozici všechny objekty spravované databáze [ `SqlContext` objekt](https://msdn.microsoft.com/en-us/library/ms131108.aspx) představující kontext volajícího. `SqlContext` Poskytuje přístup k [ `SqlPipe` objekt](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.aspx) přes jeho [ `Pipe` vlastnost](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx). To `SqlPipe` objekt se používá k ferry informace mezi databázi systému SQL Server a je volající aplikace. Jak již název napovídá, [ `ExecuteAndSend` metoda](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) provede předané `SqlCommand` objekt a odešle výsledky zpět do klientské aplikace.
+K dispozici všechny objekty spravované databáze [ `SqlContext` objekt](https://msdn.microsoft.com/library/ms131108.aspx) představující kontext volajícího. `SqlContext` Poskytuje přístup k [ `SqlPipe` objekt](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.aspx) přes jeho [ `Pipe` vlastnost](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx). To `SqlPipe` objekt se používá k ferry informace mezi databázi systému SQL Server a je volající aplikace. Jak již název napovídá, [ `ExecuteAndSend` metoda](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) provede předané `SqlCommand` objekt a odešle výsledky zpět do klientské aplikace.
 
 > [!NOTE]
 > Objekty spravované databáze jsou nejvhodnější pro uložené procedury a funkce UDF, které používají procedurální logiku, nikoli na základě sady logiku. Procedurální logika zahrnuje práce sady dat na základě řádku na řádek nebo práci s daty skalární. `GetDiscontinuedProducts` Metoda jsme právě vytvořili, ale zahrnuje žádné procedurální logiku. Proto se by v ideálním případě implementovat jako T-SQL uložené procedury. Jsou implementované jako spravované uložené procedury k předvedení kroky potřebné pro vytvoření a nasazení spravované uložené procedury.
@@ -214,7 +214,7 @@ Všimněte si, že každé nastavení konfigurace v obrázek 12 má čtyři hodn
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample5.sql)]
 
-Pokud znovu spustíte `exec sp_configure` uvidíte, že výše uvedený příkaz aktualizován konfigurační hodnota clr povoleno nastavení s na 1, ale že spuštění hodnota je stále nastavené na hodnotu 0. Změna konfigurace se projeví, je potřeba provést [ `RECONFIGURE` příkaz](https://msdn.microsoft.com/en-us/library/ms176069.aspx), který bude nastaven na aktuální hodnota konfigurace spuštění hodnota. Jednoduše zadejte `RECONFIGURE` v okně dotazu a klikněte na ikonu spouštět na panelu nástrojů. Pokud spustíte `exec sp_configure` teď by měl zobrazit hodnotu 1 pro konfiguraci nastavení clr povoleno s a spouštět hodnoty.
+Pokud znovu spustíte `exec sp_configure` uvidíte, že výše uvedený příkaz aktualizován konfigurační hodnota clr povoleno nastavení s na 1, ale že spuštění hodnota je stále nastavené na hodnotu 0. Změna konfigurace se projeví, je potřeba provést [ `RECONFIGURE` příkaz](https://msdn.microsoft.com/library/ms176069.aspx), který bude nastaven na aktuální hodnota konfigurace spuštění hodnota. Jednoduše zadejte `RECONFIGURE` v okně dotazu a klikněte na ikonu spouštět na panelu nástrojů. Pokud spustíte `exec sp_configure` teď by měl zobrazit hodnotu 1 pro konfiguraci nastavení clr povoleno s a spouštět hodnoty.
 
 Dokončení konfigurace clr povoleno jsme jsou připravené ke spuštění spravovaný `GetDiscontinuedProducts` uložené procedury. V okně dotazu zadejte a spusťte příkaz `exec` `GetDiscontinuedProducts`. Volání uložené procedury způsobí, že odpovídající spravovaným kódem v `GetDiscontinuedProducts` metodu provést. Tento kód problémy `SELECT` dotaz vrátí všechny produkty, které se zastaví a vrátí tato data do volající aplikace, který je v této instanci systému SQL Server Management Studio. Management Studio obdrží tyto výsledky a zobrazí je v okně výsledky.
 
@@ -232,7 +232,7 @@ Pokud chcete vytvořit spravované uložené procedury, která přijímá vstupn
 
 Chcete-li přidat nový uložené procedury do projektu, klikněte pravým tlačítkem na `ManagedDatabaseConstructs` název projektu a zvolte pro přidání nové uložené procedury. Název souboru `GetProductsWithPriceLessThan.vb`. Jak jsme viděli v kroku 3, tím se vytvoří nový soubor třídy jazyka Visual Basic pomocí metody s názvem `GetProductsWithPriceLessThan` umístit `Partial` třída `StoredProcedures`.
 
-Aktualizace `GetProductsWithPriceLessThan` definici metody s tak, aby přijímala [ `SqlMoney` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.aspx) vstupní parametr s názvem `price` a napsat kód pro spuštění a vrátí výsledky dotazu:
+Aktualizace `GetProductsWithPriceLessThan` definici metody s tak, aby přijímala [ `SqlMoney` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx) vstupní parametr s názvem `price` a napsat kód pro spuštění a vrátí výsledky dotazu:
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample6.vb)]
@@ -400,19 +400,19 @@ Chcete-li přidat spravovaný UDF na `ManagedDatabaseConstructs` projektu, klikn
 **Obrázek 25**: Přidání nové spravované UDF na `ManagedDatabaseConstructs` projektu ([Kliknutím zobrazit obrázek v plné velikosti](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image61.png))
 
 
-Uživatelem definované funkce šablona vytváří `Partial` třídu s názvem `UserDefinedFunctions` se metoda, jejíž název je stejný jako název souboru s – třída (`udf_ComputeInventoryValue_Managed`, u této instance). Tato metoda je dekorované pomocí [ `SqlFunction` atribut](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx), který flags – metoda jako spravované UDF.
+Uživatelem definované funkce šablona vytváří `Partial` třídu s názvem `UserDefinedFunctions` se metoda, jejíž název je stejný jako název souboru s – třída (`udf_ComputeInventoryValue_Managed`, u této instance). Tato metoda je dekorované pomocí [ `SqlFunction` atribut](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx), který flags – metoda jako spravované UDF.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample13.vb)]
 
-`udf_ComputeInventoryValue` Metoda aktuálně vrací hodnotu [ `SqlString` objekt](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlstring.aspx) a nepřijímá žádné vstupní parametry. Je potřeba aktualizovat definici metody tak, aby přijímá tři vstupní parametry - `UnitPrice`, `UnitsInStock`, a `Discontinued` - a vrátí `SqlMoney` objektu. Logika pro výpočet inventáře hodnota je stejná jako v T-SQL `udf_ComputeInventoryValue` UDF.
+`udf_ComputeInventoryValue` Metoda aktuálně vrací hodnotu [ `SqlString` objekt](https://msdn.microsoft.com/library/system.data.sqltypes.sqlstring.aspx) a nepřijímá žádné vstupní parametry. Je potřeba aktualizovat definici metody tak, aby přijímá tři vstupní parametry - `UnitPrice`, `UnitsInStock`, a `Discontinued` - a vrátí `SqlMoney` objektu. Logika pro výpočet inventáře hodnota je stejná jako v T-SQL `udf_ComputeInventoryValue` UDF.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample14.vb)]
 
-Všimněte si, že vstupní parametry metody s UDF jsou jejich odpovídající typy SQL: `SqlMoney` pro `UnitPrice` pole, [ `SqlInt16` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlint16.aspx) pro `UnitsInStock`, a [ `SqlBoolean` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlboolean.aspx) pro `Discontinued`. Tyto datové typy odráží typy definované v `Products` tabulky: `UnitPrice` sloupec je typu `money`, `UnitsInStock` sloupec typu `smallint`a `Discontinued` sloupec typu `bit`.
+Všimněte si, že vstupní parametry metody s UDF jsou jejich odpovídající typy SQL: `SqlMoney` pro `UnitPrice` pole, [ `SqlInt16` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlint16.aspx) pro `UnitsInStock`, a [ `SqlBoolean` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlboolean.aspx) pro `Discontinued`. Tyto datové typy odráží typy definované v `Products` tabulky: `UnitPrice` sloupec je typu `money`, `UnitsInStock` sloupec typu `smallint`a `Discontinued` sloupec typu `bit`.
 
-Spustí kód tak, že vytvoříte `SqlMoney` instanci s názvem `inventoryValue` přiřazené s hodnotou 0. `Products` Tabulky umožňuje pro databázi `NULL` hodnoty ve `UnitsInPrice` a `UnitsInStock` sloupce. Proto je potřeba první kontrola chcete zobrazit, pokud tyto hodnoty obsahovat `NULL` s, který provedeme prostřednictvím `SqlMoney` objekt s [ `IsNull` vlastnost](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.isnull.aspx). Pokud oba `UnitPrice` a `UnitsInStock` obsahovat jinou hodnotu než`NULL` hodnoty, potom jsme výpočetní `inventoryValue` být součin dvou. Poté, pokud `Discontinued` hodnotu true, jsme polovinu hodnota.
+Spustí kód tak, že vytvoříte `SqlMoney` instanci s názvem `inventoryValue` přiřazené s hodnotou 0. `Products` Tabulky umožňuje pro databázi `NULL` hodnoty ve `UnitsInPrice` a `UnitsInStock` sloupce. Proto je potřeba první kontrola chcete zobrazit, pokud tyto hodnoty obsahovat `NULL` s, který provedeme prostřednictvím `SqlMoney` objekt s [ `IsNull` vlastnost](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.isnull.aspx). Pokud oba `UnitPrice` a `UnitsInStock` obsahovat jinou hodnotu než`NULL` hodnoty, potom jsme výpočetní `inventoryValue` být součin dvou. Poté, pokud `Discontinued` hodnotu true, jsme polovinu hodnota.
 
 > [!NOTE]
 > `SqlMoney` Objektu umožňuje pouze dva `SqlMoney` instance vynásobí společně. Neumožňuje `SqlMoney` instance, která má být násobí hodnotou literálu číslo s plovoucí desetinnou čárkou. Proto na polovinu `inventoryValue` jsme vynásobíme ji novou `SqlMoney` instanci, která má hodnota 0,5.
@@ -559,13 +559,13 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Výhody a nevýhody uživatelsky definované funkce](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1)
 - [Vytváření objektů serveru SQL Server 2005 ve spravovaném kódu](https://channel9.msdn.com/Showpost.aspx?postid=142413)
 - [Vytváření aktivační události pomocí spravovaného kódu v systému SQL Server 2005](http://www.15seconds.com/issue/041006.htm)
-- [Postupy: Vytvoření a spuštění CLR SQL serveru uložené procedury](https://msdn.microsoft.com/en-us/library/5czye81z(VS.80).aspx)
-- [Postupy: Vytvoření a spuštění uživatelem definované funkce CLR SQL serveru](https://msdn.microsoft.com/en-us/library/w2kae45k(VS.80).aspx)
-- [Postupy: Úprava `Test.sql` spuštění objektů SQL skriptu](https://msdn.microsoft.com/en-us/library/ms233682(VS.80).aspx)
+- [Postupy: Vytvoření a spuštění CLR SQL serveru uložené procedury](https://msdn.microsoft.com/library/5czye81z(VS.80).aspx)
+- [Postupy: Vytvoření a spuštění uživatelem definované funkce CLR SQL serveru](https://msdn.microsoft.com/library/w2kae45k(VS.80).aspx)
+- [Postupy: Úprava `Test.sql` spuštění objektů SQL skriptu](https://msdn.microsoft.com/library/ms233682(VS.80).aspx)
 - [Úvod uživatelem definované funkce](http://www.sqlteam.com/item.asp?ItemID=1955)
 - [Spravovaný kód a SQL Server 2005 (Video)](https://channel9.msdn.com/Showpost.aspx?postid=142413)
-- [Referenční informace Transact-SQL](https://msdn.microsoft.com/en-us/library/aa299742(SQL.80).aspx)
-- [Návod: Vytvoření uložené procedury ve spravovaném kódu](https://msdn.microsoft.com/en-us/library/zxsa8hkf(VS.80).aspx)
+- [Transact-SQL Reference](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
+- [Návod: Vytvoření uložené procedury ve spravovaném kódu](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
 
 ## <a name="about-the-author"></a>O autorovi
 

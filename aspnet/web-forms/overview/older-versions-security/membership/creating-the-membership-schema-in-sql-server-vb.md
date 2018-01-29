@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 181741dc7e0fb7e1073f3783d96f59ac905f5e63
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2dadf091c6ae77fdfaf76f4e1bda92fd3e949678
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-the-membership-schema-in-sql-server-vb"></a>Vytvoření schématu členství v systému SQL Server (VB)
 ====================
@@ -33,7 +33,7 @@ Předchozí dva kurzy zkontrolován použití ověřování pomocí formulářů
 
 Před aplikaci ASP.NET 2.0 vývojáři byly hák pro implementaci všechny tyto úlohy souvisejícím s účtem uživatele. Naštěstí týmem ASP.NET rozpoznána tohoto nedostatku a zavedená rozhraní členství s prostředím ASP.NET 2.0. Rozhraní framework členství je sada tříd v rozhraní .NET Framework, které poskytují programové rozhraní pro provádění úloh souvisejícím s účtem uživatele jádra. Toto rozhraní je vytvořené na [modelu poskytovatelů](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx), což umožňuje vývojářům připojte přizpůsobené implementace standardizované rozhraní API.
 
-Jak je popsáno v <a id="Tutorial1"> </a> [ *Základy zabezpečení a podporu ASP.NET* ](../introduction/security-basics-and-asp-net-support-vb.md) kurzu rozhraní .NET Framework se dodává s dvě předdefinované zprostředkovatele členství: [ `ActiveDirectoryMembershipProvider` ](https://msdn.microsoft.com/en-us/library/system.web.security.activedirectorymembershipprovider.aspx) a [ `SqlMembershipProvider` ](https://msdn.microsoft.com/en-us/library/system.web.security.sqlmembershipprovider.aspx). Jak již název napovídá, `SqlMembershipProvider` používá databázi systému Microsoft SQL Server jako úložiště uživatele. Chcete-li použít tento zprostředkovatel v aplikaci, je potřeba oznámit zprostředkovateli, jaké databáze pro použití jako úložiště. Jak je možné si můžete představit, `SqlMembershipProvider` očekává databáze úložiště uživatele tak, aby měl určité databázových tabulek, zobrazení a uložených procedur. Je potřeba přidat tento očekávané schéma k vybrané databázi.
+Jak je popsáno v <a id="Tutorial1"> </a> [ *Základy zabezpečení a podporu ASP.NET* ](../introduction/security-basics-and-asp-net-support-vb.md) kurzu rozhraní .NET Framework se dodává s dvě předdefinované zprostředkovatele členství: [ `ActiveDirectoryMembershipProvider` ](https://msdn.microsoft.com/library/system.web.security.activedirectorymembershipprovider.aspx) a [ `SqlMembershipProvider` ](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx). Jak již název napovídá, `SqlMembershipProvider` používá databázi systému Microsoft SQL Server jako úložiště uživatele. Chcete-li použít tento zprostředkovatel v aplikaci, je potřeba oznámit zprostředkovateli, jaké databáze pro použití jako úložiště. Jak je možné si můžete představit, `SqlMembershipProvider` očekává databáze úložiště uživatele tak, aby měl určité databázových tabulek, zobrazení a uložených procedur. Je potřeba přidat tento očekávané schéma k vybrané databázi.
 
 V tomto kurzu spustí prověřením techniky pro přidání schéma potřebné k databázi chcete-li použít `SqlMembershipProvider`. Následující, jsme prozkoumá klíče tabulky ve schématu a diskutovat o jejím účelu a význam. V tomto kurzu končí podívejte se na poskytovatele, kterého by měl používat rozhraní členství ověření pravosti aplikace ASP.NET.
 
@@ -55,7 +55,7 @@ Oddělení dat úložiště a aplikace uživatele do samostatné databáze má s
 Aplikace, kterou jsme byla vytváření od druhého kurzu není potřeba ještě databáze. Potřebujeme jeden nyní, ale pro úložiště uživatelů. Umožňuje vytvořit a pak přidejte do ní schéma vyžaduje `SqlMembershipProvider` zprostředkovatele (viz krok 2).
 
 > [!NOTE]
-> V rámci tohoto kurzu řady použijeme [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/en-us/sql/Aa336346.aspx) databázi k ukládání tabulek naše aplikací a `SqlMembershipProvider` schématu. Toto rozhodnutí byl proveden dvou důvodů: nejprve z důvodu jeho náklady - free - Express Edition je nejvíce readably přístupné verzi systému SQL Server 2005; za druhé mohou být umístěny databáze SQL Server 2005 Express Edition přímo ve webové aplikaci `App_Data` složky, takže je velmi jednoduché balíčku databáze a webové aplikace společně v jednom souboru ZIP a znovu ji nasaďte bez jakékoli speciální instalační pokyny nebo možnosti konfigurace. Pokud chcete sledovat, používáte verzi systému SQL Server Express Edition, klidně. Kroky jsou téměř stejné. `SqlMembershipProvider` Bude fungovat v žádné verzi systému Microsoft SQL Server 2000 a až schématu.
+> V rámci tohoto kurzu řady použijeme [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/sql/Aa336346.aspx) databázi k ukládání tabulek naše aplikací a `SqlMembershipProvider` schématu. Toto rozhodnutí byl proveden dvou důvodů: nejprve z důvodu jeho náklady - free - Express Edition je nejvíce readably přístupné verzi systému SQL Server 2005; za druhé mohou být umístěny databáze SQL Server 2005 Express Edition přímo ve webové aplikaci `App_Data` složky, takže je velmi jednoduché balíčku databáze a webové aplikace společně v jednom souboru ZIP a znovu ji nasaďte bez jakékoli speciální instalační pokyny nebo možnosti konfigurace. Pokud chcete sledovat, používáte verzi systému SQL Server Express Edition, klidně. Kroky jsou téměř stejné. `SqlMembershipProvider` Bude fungovat v žádné verzi systému Microsoft SQL Server 2000 a až schématu.
 
 V Průzkumníku řešení klikněte pravým tlačítkem na `App_Data` složky a přidat novou položku. (Pokud se nezobrazí `App_Data` složku ve vašem projektu, klikněte pravým tlačítkem na projekt v Průzkumníku řešení, vyberte Přidat složku ASP.NET a vyberte `App_Data`.) Vyberte z dialogového okna Přidat novou položku, chcete-li přidat novou databázi SQL s názvem `SecurityTutorials.mdf`. V tomto kurzu přidáme `SqlMembershipProvider` schématu do této databáze; v následujících kurzech vytvoříme další tabulky k zaznamenání dat naše aplikace.
 
@@ -75,7 +75,7 @@ Přidání databáze do `App_Data` složky automaticky zahrne v zobrazení Průz
 
 ## <a name="step-2-adding-thesqlmembershipproviderschema-to-the-database"></a>Krok 2: Přidání`SqlMembershipProvider`schématu do databáze
 
-`SqlMembershipProvider` Vyžaduje konkrétní sadu tabulek, zobrazení a uložených procedur být nainstalovaný v úložišti databáze uživatelů. Tyto objekty požadavků databázi lze přidat pomocí [ `aspnet_regsql.exe` nástroj](https://msdn.microsoft.com/en-us/library/ms229862.aspx). Tento soubor je umístěný v `%WINDIR%\Microsoft.Net\Framework\v2.0.50727\` složky.
+`SqlMembershipProvider` Vyžaduje konkrétní sadu tabulek, zobrazení a uložených procedur být nainstalovaný v úložišti databáze uživatelů. Tyto objekty požadavků databázi lze přidat pomocí [ `aspnet_regsql.exe` nástroj](https://msdn.microsoft.com/library/ms229862.aspx). Tento soubor je umístěný v `%WINDIR%\Microsoft.Net\Framework\v2.0.50727\` složky.
 
 > [!NOTE]
 > `aspnet_regsql.exe` Nástroj nabízí funkce příkazový řádek a grafické uživatelské rozhraní. Grafické rozhraní je uživatelsky přívětivější a co vyzkoušíme v tomto kurzu. Rozhraní příkazového řádku je užitečné při přidání `SqlMembershipProvider` musí se schéma je možné automatizovat, například sestavení skriptů nebo automatizované testování scénáře.
@@ -199,7 +199,7 @@ Rozhraní členství a role jsou navrženy tak, že jedno úložiště uživatel
 **Obrázek 11**: uživatelské účty může být rozdělena na oddíly napříč více aplikacemi ([Kliknutím zobrazit obrázek v plné velikosti](creating-the-membership-schema-in-sql-server-vb/_static/image33.png))
 
 
-`aspnet_Applications` Tabulka je co definuje tyto oddíly. Každá aplikace, která používá databázi k ukládání informací o uživatelském účtu je reprezentována řádek v této tabulce. `aspnet_Applications` Tabulka obsahuje čtyři sloupce: `ApplicationId`, `ApplicationName`, `LoweredApplicationName`, a `Description`.`ApplicationId` je typu [ `uniqueidentifier` ](https://msdn.microsoft.com/en-us/library/ms187942.aspx) a je primární klíč v tabulce; `ApplicationName` poskytuje jedinečný lidské popisný název pro každou aplikaci.
+`aspnet_Applications` Tabulka je co definuje tyto oddíly. Každá aplikace, která používá databázi k ukládání informací o uživatelském účtu je reprezentována řádek v této tabulce. `aspnet_Applications` Tabulka obsahuje čtyři sloupce: `ApplicationId`, `ApplicationName`, `LoweredApplicationName`, a `Description`.`ApplicationId` je typu [ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx) a je primární klíč v tabulce; `ApplicationName` poskytuje jedinečný lidské popisný název pro každou aplikaci.
 
 Členství a Role související tabulky propojit zpět `ApplicationId` pole `aspnet_Applications`. Například `aspnet_Users` tabulky a který obsahuje záznam pro každý uživatelský účet, má `ApplicationId` pole cizího klíče; viz výše pro `aspnet_Roles` tabulky. `ApplicationId` Pole v těchto tabulkách určuje oddílu aplikace uživatelský účet nebo role patří.
 
@@ -211,7 +211,7 @@ Informace o uživatelském účtu je umístěna ve dvou tabulek: `aspnet_Users` 
 - `UserName`
 - `ApplicationId`
 
-`UserId`je primární klíč (a typu `uniqueidentifier`). `UserName`je typu `nvarchar(256)` a společně s heslo, tvoří přihlašovacích údajů uživatele. (Heslo uživatele je uložený v `aspnet_Membership` tabulku.) `ApplicationId` odkazuje na uživatelský účet na konkrétní aplikace v `aspnet_Applications`. Je složené [ `UNIQUE` omezení](https://msdn.microsoft.com/en-us/library/ms191166.aspx) na `UserName` a `ApplicationId` sloupce. To zajistí, že v dané aplikaci každé uživatelské jméno je jedinečný, ale umožňuje pro stejné `UserName` pro použití v různých aplikací.
+`UserId`je primární klíč (a typu `uniqueidentifier`). `UserName`je typu `nvarchar(256)` a společně s heslo, tvoří přihlašovacích údajů uživatele. (Heslo uživatele je uložený v `aspnet_Membership` tabulku.) `ApplicationId` odkazuje na uživatelský účet na konkrétní aplikace v `aspnet_Applications`. Je složené [ `UNIQUE` omezení](https://msdn.microsoft.com/library/ms191166.aspx) na `UserName` a `ApplicationId` sloupce. To zajistí, že v dané aplikaci každé uživatelské jméno je jedinečný, ale umožňuje pro stejné `UserName` pro použití v různých aplikací.
 
 `aspnet_Membership` Tabulka obsahuje další informace o uživatelském účtu, jako je heslo uživatele, e-mailovou adresu, poslední přihlášení datum a čas a tak dále. Je mezi záznamy v souvislosti `aspnet_Users` a `aspnet_Membership` tabulky. Tento vztah je zajištěna `UserId` pole `aspnet_Membership`, který slouží jako primární klíč tabulky. Podobně jako `aspnet_Users` tabulky, `aspnet_Membership` zahrnuje `ApplicationId` pole, která sváže tyto informace do oddílu aplikace.
 
@@ -231,9 +231,9 @@ Tabulka 1 ukazuje, jak tyto tři sloupce může vypadat pro různé postupy úlo
 
 | **Úložiště technika&lt;\_o3a\_p /&gt;** | **Heslo&lt;\_o3a\_p /&gt;** | **PasswordFormat&lt;\_o3a\_p /&gt;** | **PasswordSalt&lt;\_o3a\_p /&gt;** |
 | --- | --- | --- | --- |
-| Zrušte zaškrtnutí | MySecret! | 0 | tTnkPlesqissc2y2SMEygA == |
-| S použitím algoritmu hash | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM = | 1 | wFgjUfhdUFOCKQiI61vtiQ == |
-| Šifrované | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw == |
+| Zrušte zaškrtnutí | MySecret! | 0 | tTnkPlesqissc2y2SMEygA== |
+| S použitím algoritmu hash | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM= | 1 | wFgjUfhdUFOCKQiI61vtiQ== |
+| Šifrované | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw== |
 
 **Tabulka 1**: ukázkové hodnoty související s hesly pole při ukládání MySecret heslo!
 
@@ -256,13 +256,13 @@ Rozhraní framework role vývojářům umožňuje definovat sadu rolí a určit,
 
 Všechny architektury, které podporují modelu poskytovatelů – například členství a rolí architektury - nedostatku podrobnosti implementace sami a místo toho tuto delegovat na třídu zprostředkovatele. V případě rozhraní členství `Membership` třída definuje rozhraní API pro správu uživatelských účtů, ale není komunikovat přímo s úložištěm všechny uživatele. Místo toho `Membership` metody třídy můžete předat požadavek na nakonfigurovaného zprostředkovatele - použijeme `SqlMembershipProvider`. Když jsme jednu z metod v vyvolání `Membership` třídu, jak členství v rámci vědět o delegování volání `SqlMembershipProvider`?
 
-`Membership` Třída má [ `Providers` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.security.membership.providers.aspx) obsahující odkaz na všechny dostupné pro použití třídy registrované zprostředkovatele rámcem členství. Každý registrovaný poskytovatel má přidruženému názvu a typu. Název nabízí lidské friendly způsob, jak odkazovat na konkrétní zprostředkovatele v `Providers` kolekce, když typ identifikuje třída zprostředkovatele. Navíc může každý registrovaný poskytovatel zahrnují nastavení konfigurace. Konfigurace nastavení pro rozhraní členství zahrnují `PasswordFormat` a `requiresUniqueEmail`, mezi mnohé další. Tabulka 2 najdete úplný seznam nastavení konfigurace používané `SqlMembershipProvider`.
+`Membership` Třída má [ `Providers` vlastnost](https://msdn.microsoft.com/library/system.web.security.membership.providers.aspx) obsahující odkaz na všechny dostupné pro použití třídy registrované zprostředkovatele rámcem členství. Každý registrovaný poskytovatel má přidruženému názvu a typu. Název nabízí lidské friendly způsob, jak odkazovat na konkrétní zprostředkovatele v `Providers` kolekce, když typ identifikuje třída zprostředkovatele. Navíc může každý registrovaný poskytovatel zahrnují nastavení konfigurace. Konfigurace nastavení pro rozhraní členství zahrnují `PasswordFormat` a `requiresUniqueEmail`, mezi mnohé další. Tabulka 2 najdete úplný seznam nastavení konfigurace používané `SqlMembershipProvider`.
 
 `Providers` Obsah vlastnosti jsou určeny pomocí nastavení konfigurace webové aplikace. Všechny webové aplikace mají jako výchozí zprostředkovatel s názvem `AspNetSqlMembershipProvider` typu `SqlMembershipProvider`. Tento výchozí zprostředkovatel členství je zaregistrován v `machine.config` (umístěné v `%WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG`):
 
 [!code-xml[Main](creating-the-membership-schema-in-sql-server-vb/samples/sample1.xml)]
 
-Jako značka výš ukazuje [ `<membership>` element](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx) definuje nastavení konfigurace pro rozhraní členství při [ `<providers>` podřízený element](https://msdn.microsoft.com/en-us/library/6d4936ht.aspx) určuje zaregistrovanou zprostředkovatelé. Zprostředkovatelé lze přidat nebo odebrat pomocí [ `<add>` ](https://msdn.microsoft.com/en-us/library/whae3t94.aspx) nebo [ `<remove>` ](https://msdn.microsoft.com/en-us/library/aykw9a6d.aspx) elementy; použijte [ `<clear>` ](https://msdn.microsoft.com/en-us/library/t062y6yc.aspx) elementu, který chcete odebrat všechny aktuálně Registrovaní zprostředkovatelé. Jako značka výš ukazuje `machine.config` Přidá zprostředkovatele s názvem `AspNetSqlMembershipProvider` typu `SqlMembershipProvider`.
+Jako značka výš ukazuje [ `<membership>` element](https://msdn.microsoft.com/library/1b9hw62f.aspx) definuje nastavení konfigurace pro rozhraní členství při [ `<providers>` podřízený element](https://msdn.microsoft.com/library/6d4936ht.aspx) určuje zaregistrovanou zprostředkovatelé. Zprostředkovatelé lze přidat nebo odebrat pomocí [ `<add>` ](https://msdn.microsoft.com/library/whae3t94.aspx) nebo [ `<remove>` ](https://msdn.microsoft.com/library/aykw9a6d.aspx) elementy; použijte [ `<clear>` ](https://msdn.microsoft.com/library/t062y6yc.aspx) elementu, který chcete odebrat všechny aktuálně Registrovaní zprostředkovatelé. Jako značka výš ukazuje `machine.config` Přidá zprostředkovatele s názvem `AspNetSqlMembershipProvider` typu `SqlMembershipProvider`.
 
 Kromě `name` a `type` atributy, `<add>` element obsahuje atributy, které definovat hodnoty pro různá nastavení konfigurace. Tabulka 2 uvádí dostupných `SqlMembershipProvider`-specifické nastavení, spolu s jejich popis.
 
@@ -321,7 +321,7 @@ Dál přidejte následující kód konfigurace členství pro `Web.config` soubo
 
 Kromě registrace `SecurityTutorialsSqlMembershipProvider` definuje výše uvedený kód poskytovatele, `SecurityTutorialsSqlMembershipProvider` jako výchozí zprostředkovatel (prostřednictvím `defaultProvider` atribut `<membership>` element). Odvolat, aby rozhraní členství může mít víc registrovaných zprostředkovatelů. Vzhledem k tomu `AspNetSqlMembershipProvider` je registrován jako první zprostředkovatele v `machine.config`, slouží jako výchozího zprostředkovatele, pokud jsme znamenat jinak.
 
-V současné době naše aplikace má dva registrovaní zprostředkovatelé: `AspNetSqlMembershipProvider` a `SecurityTutorialsSqlMembershipProvider`. Ale před registrací `SecurityTutorialsSqlMembershipProvider` zprostředkovatele jsme může mít bylo vymazáno všechny dříve registrovaných zprostředkovatelů přidáním [ `<clear />` element](https://msdn.microsoft.com/en-us/library/t062y6yc.aspx) bezprostředně před naše `<add>` elementu. To by Vyčistit `AspNetSqlMembershipProvider` ze seznamu registrovaných zprostředkovatelů, znamená to, že `SecurityTutorialsSqlMembershipProvider` by pouze registrované zprostředkovatele členství. Pokud jsme použili tento postup, pak by musíme označit `SecurityTutorialsSqlMembershipProvider` jako výchozího zprostředkovatele, protože je pouze registrované zprostředkovatele členství. Další informace o používání `<clear />`, najdete v části [pomocí `<clear />` při přidávání poskytovatelů](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx).
+V současné době naše aplikace má dva registrovaní zprostředkovatelé: `AspNetSqlMembershipProvider` a `SecurityTutorialsSqlMembershipProvider`. Ale před registrací `SecurityTutorialsSqlMembershipProvider` zprostředkovatele jsme může mít bylo vymazáno všechny dříve registrovaných zprostředkovatelů přidáním [ `<clear />` element](https://msdn.microsoft.com/library/t062y6yc.aspx) bezprostředně před naše `<add>` elementu. To by Vyčistit `AspNetSqlMembershipProvider` ze seznamu registrovaných zprostředkovatelů, znamená to, že `SecurityTutorialsSqlMembershipProvider` by pouze registrované zprostředkovatele členství. Pokud jsme použili tento postup, pak by musíme označit `SecurityTutorialsSqlMembershipProvider` jako výchozího zprostředkovatele, protože je pouze registrované zprostředkovatele členství. Další informace o používání `<clear />`, najdete v části [pomocí `<clear />` při přidávání poskytovatelů](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx).
 
 Všimněte si, že `SecurityTutorialsSqlMembershipProvider`na `connectionStringName` nastavení odkazy právě přidané `SecurityTutorialsConnectionString` název připojovacího řetězce a že jeho `applicationName` bylo nastaveno na hodnotu SecurityTutorials. Kromě toho `requiresUniqueEmail` nastavení byla nastavena na `true`. Všechny ostatní možnosti konfigurace jsou identické s hodnotami v `AspNetSqlMembershipProvider`. Nebojte se provádět žádné změny konfigurace sem, pokud chcete. Tím, že dvě jiných než alfanumerických znaků místo jednoho nebo zvýšením délka hesla na osm znaků místo 7, například může posílit síly hesla.
 
@@ -344,17 +344,17 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Konfigurace technologie ASP.NET 2.0 aplikace služeb na použít SQL Server 2000 nebo SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)
 - [Stáhnout systému SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)
 - [Zkoumání ASP.NET 2.0 s členství, role a profil](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
-- [`<add>` Element pro zprostředkovatele pro členství](https://msdn.microsoft.com/en-us/library/whae3t94.aspx)
-- [`<membership>` – Element](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx)
-- [`<providers>` Element pro členství](https://msdn.microsoft.com/en-us/library/6d4936ht.aspx)
+- [`<add>` Element pro zprostředkovatele pro členství](https://msdn.microsoft.com/library/whae3t94.aspx)
+- [`<membership>` – Element](https://msdn.microsoft.com/library/1b9hw62f.aspx)
+- [`<providers>` Element pro členství](https://msdn.microsoft.com/library/6d4936ht.aspx)
 - [Pomocí `<clear />` při přidávání zprostředkovatelů](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)
 - [Práce přímo se`SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Video školení na témata, které jsou obsažené v tomto kurzu
 
-- [Principy členství technologie ASP.NET](../../../videos/authentication/understanding-aspnet-memberships.md)
-- [Konfigurace SQL pro práci s schématy členství](../../../videos/authentication/configuring-sql-to-work-with-membership-schemas.md)
-- [Změna nastavení členství ve výchozím nastavení členství schématu](../../../videos/authentication/changing-membership-settings-in-the-default-membership-schema.md)
+- [Principy členství v ASP.NET](../../../videos/authentication/understanding-aspnet-memberships.md)
+- [Konfigurace SQL kvůli spolupráci se schématy členství](../../../videos/authentication/configuring-sql-to-work-with-membership-schemas.md)
+- [Změna nastavení členství ve výchozím schématu členství](../../../videos/authentication/changing-membership-settings-in-the-default-membership-schema.md)
 
 ### <a name="about-the-author"></a>O autorovi
 

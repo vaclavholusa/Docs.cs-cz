@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6ddce74be81cb3ea33df9f7a6b91eae604b83025
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3411272896dee0da4d5f89aa2bdda0999d660423
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a>Seznam podrobnosti filtrování napříč dvěma stránkami (C#)
 ====================
@@ -71,7 +71,7 @@ Pomocí `SupplierListMaster.aspx` a `ProductsForSupplierDetails.aspx` stránky v
 
 Musíme vložit odkaz s názvem zobrazit produkty v jednotlivých řádcích GridView, po kliknutí na uživatele na `ProductsForSupplierDetails.aspx` předávání v vybraného řádku `SupplierID` hodnotné řetězec dotazu. Například, pokud uživatel klikne na odkaz zobrazit produkty pro dodavatele Tokio Traders (který má `SupplierID` hodnotu 4), by měly být odeslány na `ProductsForSupplierDetails.aspx?SupplierID=4`.
 
-Chcete-li dosáhnout, přidejte [HyperLinkField](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.hyperlinkfield.aspx) k GridView, který přidá hypertextový odkaz na každý řádek GridView. Spusťte kliknutím na odkaz Upravit sloupce z prvku GridView inteligentních značek. V dalším kroku vyberte HyperLinkField ze seznamu v levém horním a klikněte na tlačítko Přidat mají být zahrnuty HyperLinkField prvku GridView seznam polí.
+Chcete-li dosáhnout, přidejte [HyperLinkField](https://msdn.microsoft.com/library/system.web.ui.webcontrols.hyperlinkfield.aspx) k GridView, který přidá hypertextový odkaz na každý řádek GridView. Spusťte kliknutím na odkaz Upravit sloupce z prvku GridView inteligentních značek. V dalším kroku vyberte HyperLinkField ze seznamu v levém horním a klikněte na tlačítko Přidat mají být zahrnuty HyperLinkField prvku GridView seznam polí.
 
 
 [![Přidání HyperLinkField do GridView](master-detail-filtering-across-two-pages-cs/_static/image9.png)](master-detail-filtering-across-two-pages-cs/_static/image8.png)
@@ -212,7 +212,7 @@ Ve výchozím nastavení zadejte všechny dodavatelé v databázi Lhota alespoň
 
 Při a podrobností sestavy můžete zobrazit hlavní i podrobné záznamy na jedné stránce, v mnoha webů budou odděleny mezi dvěma webové stránky. V tomto kurzu jsme se podívali na tom, jak implementovat a podrobností sestavu tak, že jsou uvedené v GridView na webové stránce "hlavní" dodavatelů a přidružené produkty uvedené na stránce "Podrobnosti". Každý řádek dodavatele hlavní webové stránky obsahovala odkaz na stránku podrobností, které se předají na řádku `SupplierID` hodnotu. Tyto odkazy specifické pro řádek lze snadno přidat pomocí prvku GridView HyperLinkField.
 
-Na stránce podrobností načítání těchto produktů pro zadaný dodavatele dosáhlo vyvoláním `ProductsBLL` třídy `GetProductsBySupplierID(supplierID)` metoda.  *`supplierID`*  Byla zadána hodnota parametru deklarativně pomocí řetězce dotazu jako zdroj parametru. Také jsme se podívali na tom, jak zobrazit podrobnosti dodavatele na stránce Podrobnosti o použití FormView.
+Na stránce podrobností načítání těchto produktů pro zadaný dodavatele dosáhlo vyvoláním `ProductsBLL` třídy `GetProductsBySupplierID(supplierID)` metoda. *`supplierID`*  Byla zadána hodnota parametru deklarativně pomocí řetězce dotazu jako zdroj parametru. Také jsme se podívali na tom, jak zobrazit podrobnosti dodavatele na stránce Podrobnosti o použití FormView.
 
 Naše [další kurz](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) je poslední v sestavách a podrobností. Podíváme jak zobrazit seznam produktů v GridView, kde má každý řádek vyberte tlačítko. Kliknutím na tlačítko vyberte zobrazí podrobnosti o tomto produktu v ovládacím prvku DetailsView na stejné stránce.
 

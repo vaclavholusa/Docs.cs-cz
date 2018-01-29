@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 46521f48d31414ffff2707986d6f869ca2f9bc9a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af302d67b009fc25e38fb33a5e2a623f7200bcd5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-sql-cache-dependencies-vb"></a>Pomocí závislosti mezipaměti SQL (VB)
 ====================
@@ -33,7 +33,7 @@ Ukládání do mezipaměti techniky ověřuje při [ukládání dat pomocí Obje
 
 Při ukládání do mezipaměti data databáze, na základě času vypršení platnosti je často zvolené pro jeho snadné použití, ale je často nedostatečné řešení. V ideálním případě databázových dat by zůstanou v mezipaměti, dokud v základních datech se změnilo v databázi. pak by mezipaměti vyloučeno. Tento přístup maximalizuje výkon výhod ukládání do mezipaměti a minimalizuje trvání zastaralá data. Ale aby bylo možné získejte tyto výhody existuje musí být některé systému na místě, že zná, když zdrojová data databáze byla změněna a vyloučí odpovídající položky z mezipaměti. Před aplikaci ASP.NET 2.0 byly stránky vývojáři zodpovědný za implementaci tohoto systému.
 
-Poskytuje technologie ASP.NET 2.0 [ `SqlCacheDependency` třída](https://msdn.microsoft.com/en-us/library/system.web.caching.sqlcachedependency.aspx) a může být vyřazena potřebnou infrastrukturu k určení, kdy došlo ke změně v databázi tak, aby příslušné položky v mezipaměti. Existují dvě metody pro určení, kdy došlo ke změně v základních datech: oznámení a dotazování. Po hovoříte o rozdílech mezi oznámení a dotazování, vytvoříme infrastruktury nezbytné pro podporu cyklického dotazování a potom zkoumat použití `SqlCacheDependency` třídy v deklarativní a programově scénáře.
+Poskytuje technologie ASP.NET 2.0 [ `SqlCacheDependency` třída](https://msdn.microsoft.com/library/system.web.caching.sqlcachedependency.aspx) a může být vyřazena potřebnou infrastrukturu k určení, kdy došlo ke změně v databázi tak, aby příslušné položky v mezipaměti. Existují dvě metody pro určení, kdy došlo ke změně v základních datech: oznámení a dotazování. Po hovoříte o rozdílech mezi oznámení a dotazování, vytvoříme infrastruktury nezbytné pro podporu cyklického dotazování a potom zkoumat použití `SqlCacheDependency` třídy v deklarativní a programově scénáře.
 
 ## <a name="understanding-notification-and-polling"></a>Principy oznámení a dotazování
 
@@ -55,7 +55,7 @@ S přístupem dotazování databáze musí být instalační program tak, aby ob
 [!code-console[Main](using-sql-cache-dependencies-vb/samples/sample1.cmd)]
 
 > [!NOTE]
-> Spuštění těchto příkazů přihlášení k zadané databázi musí být v [ `db_securityadmin` ](https://msdn.microsoft.com/en-us/library/ms188685.aspx) a [ `db_ddladmin` ](https://msdn.microsoft.com/en-us/library/ms190667.aspx) role. K prozkoumání odeslal do databáze pomocí T-SQL `aspnet_regsql.exe` příkazového řádku programu, použijte [tuto položku blogu](http://scottonwriting.net/sowblog/posts/10709.aspx).
+> Spuštění těchto příkazů přihlášení k zadané databázi musí být v [ `db_securityadmin` ](https://msdn.microsoft.com/library/ms188685.aspx) a [ `db_ddladmin` ](https://msdn.microsoft.com/library/ms190667.aspx) role. K prozkoumání odeslal do databáze pomocí T-SQL `aspnet_regsql.exe` příkazového řádku programu, použijte [tuto položku blogu](http://scottonwriting.net/sowblog/posts/10709.aspx).
 
 
 Například přidejte infrastrukturu pro dotazování do databáze Microsoft SQL Server s názvem `pubs` na serveru databáze s názvem `ScottsServer` pomocí ověřování systému Windows, přejděte do příslušného adresáře a z příkazového řádku, zadejte:
@@ -77,7 +77,7 @@ V tomto kurzu přidat aktivačních událostí k `Products`, `Categories`, a `Su
 
 ## <a name="step-2-referencing-a-microsoft-sql-server-2005-express-edition-database-inappdata"></a>Krok 2: Odkazování na databázi Microsoft SQL Server 2005 Express Edition v`App_Data`
 
-`aspnet_regsql.exe` Příkazového řádku program vyžaduje název databáze a serveru chcete-li přidat infrastruktury potřebné dotazování. Jaký je název databáze a serveru pro který se nachází v databázi Microsoft SQL Server 2005 Express, ale `App_Data` složky? Místo zjistit, co jsou názvy databáze a serveru, I sunout zjistil, že je nejjednodušší je připojit databázi k `localhost\SQLExpress` databáze instance a přejmenujte dat pomocí [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/ms174173.aspx). Pokud nemáte úplné verze systému SQL Server 2005 v počítači nainstalován, pak pravděpodobně už máte v počítači nainstalovaný SQL Server Management Studio. Pokud máte pouze edice Express, si můžete stáhnout bezplatnou [aktualizace Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796).
+`aspnet_regsql.exe` Příkazového řádku program vyžaduje název databáze a serveru chcete-li přidat infrastruktury potřebné dotazování. Jaký je název databáze a serveru pro který se nachází v databázi Microsoft SQL Server 2005 Express, ale `App_Data` složky? Místo zjistit, co jsou názvy databáze a serveru, I sunout zjistil, že je nejjednodušší je připojit databázi k `localhost\SQLExpress` databáze instance a přejmenujte dat pomocí [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx). Pokud nemáte úplné verze systému SQL Server 2005 v počítači nainstalován, pak pravděpodobně už máte v počítači nainstalovaný SQL Server Management Studio. Pokud máte pouze edice Express, si můžete stáhnout bezplatnou [aktualizace Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796).
 
 Spusťte ukončením sady Visual Studio. Dále otevřete SQL Server Management Studio a zvolte pro připojení k `localhost\SQLExpress` serveru pomocí ověřování systému Windows.
 
@@ -186,7 +186,7 @@ Nyní najdete na této stránce prostřednictvím prohlížeče. Od jsme měli j
 **Obrázek 8**: The ObjectDataSource s `Selecting` aktivuje každý čas události GridView je stránkovaného fondu, upravovaný nebo Sorted ([Kliknutím zobrazit obrázek v plné velikosti](using-sql-cache-dependencies-vb/_static/image10.png))
 
 
-Jak jsme viděli v [ukládání dat pomocí ObjectDataSource](caching-data-with-the-objectdatasource-vb.md) kurzu nastavení `EnableCaching` vlastnost `True` způsobí, že ObjectDataSource pro ukládání do mezipaměti jeho data po dobu trvání určeného jeho `CacheDuration` vlastnost. ObjectDataSource má také [ `SqlCacheDependency` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.sqlcachedependency.aspx), která přidá jeden nebo více závislosti mezipaměti SQL pro data uložená v mezipaměti pomocí vzoru:
+Jak jsme viděli v [ukládání dat pomocí ObjectDataSource](caching-data-with-the-objectdatasource-vb.md) kurzu nastavení `EnableCaching` vlastnost `True` způsobí, že ObjectDataSource pro ukládání do mezipaměti jeho data po dobu trvání určeného jeho `CacheDuration` vlastnost. ObjectDataSource má také [ `SqlCacheDependency` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sqlcachedependency.aspx), která přidá jeden nebo více závislosti mezipaměti SQL pro data uložená v mezipaměti pomocí vzoru:
 
 
 [!code-css[Main](using-sql-cache-dependencies-vb/samples/sample9.css)]
@@ -282,7 +282,7 @@ Odvolat, který `MasterCacheKeyArray` závislost mezipaměti se používá k zaj
 
 Kromě toho při práci se službou SQL závislosti mezipaměti může musíme přidružit více tabulek databáze jako závislosti. Například `ProductsDataTable` do mezipaměti `ProductsCL` třída obsahuje názvy kategorií a dodavatele pro každý produkt, ale `AddCacheItem` metoda používá jenom závislost na `Products`. V této situaci pokud uživatel aktualizuje název kategorie nebo dodavatele, data uložená v mezipaměti produktu, zůstanou v mezipaměti a zastaralá. Proto jsme mají být data uložená v mezipaměti produktu závisí na nejen `Products` tabulky, ale na `Categories` a `Suppliers` také tabulky.
 
-[ `AggregateCacheDependency` Třída](https://msdn.microsoft.com/en-us/library/system.web.caching.aggregatecachedependency.aspx) představuje způsob, jak přidružit více závislostí položky mezipaměti. Začněte vytvořením `AggregateCacheDependency` instance. Dál přidejte sadu závislosti s využitím `AggregateCacheDependency` s `Add` metoda. Při vkládání položka do mezipaměti dat po tomto datu, předejte `AggregateCacheDependency` instance. Když *žádné* z `AggregateCacheDependency` změnit instanci s závislosti, položky v mezipaměti bude vyloučena.
+[ `AggregateCacheDependency` Třída](https://msdn.microsoft.com/library/system.web.caching.aggregatecachedependency.aspx) představuje způsob, jak přidružit více závislostí položky mezipaměti. Začněte vytvořením `AggregateCacheDependency` instance. Dál přidejte sadu závislosti s využitím `AggregateCacheDependency` s `Add` metoda. Při vkládání položka do mezipaměti dat po tomto datu, předejte `AggregateCacheDependency` instance. Když *žádné* z `AggregateCacheDependency` změnit instanci s závislosti, položky v mezipaměti bude vyloučena.
 
 Následující zobrazí aktualizovaný kód `ProductsCL` třídu s `AddCacheItem` metoda. Metoda vytvoří `MasterCacheKeyArray` závislosti spolu s mezipaměti `SqlCacheDependency` objekty pro `Products`, `Categories`, a `Suppliers` tabulky. Tyto jsou všechny zkombinované do jednoho `AggregateCacheDependency` objekt s názvem `aggregateDependencies`, který byl následně předán do `Insert` metoda.
 
@@ -292,7 +292,7 @@ Následující zobrazí aktualizovaný kód `ProductsCL` třídu s `AddCacheItem
 Test se tento nový kód. Nyní se změní `Products`, `Categories`, nebo `Suppliers` tabulky způsobit, že data uložená v mezipaměti k vyloučení. Kromě toho `ProductsCL` třídu s `UpdateProduct` metodu, která je volána při úpravě produktu prostřednictvím GridView, vyloučí `MasterCacheKeyArray` závislosti, což způsobí, že v mezipaměti mezipaměti `ProductsDataTable` k vyloučení a data mají být načteny znovu při příštím požadavek.
 
 > [!NOTE]
-> Závislosti mezipaměti SQL můžete použít taky s [ukládání výstupu do mezipaměti](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx). Ukázka tuto funkci, najdete v tématu: [pomocí ASP.NET ukládání výstupu do mezipaměti se systémem SQL Server](https://msdn.microsoft.com/en-us/library/e3w8402y(VS.80).aspx).
+> Závislosti mezipaměti SQL můžete použít taky s [ukládání výstupu do mezipaměti](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx). Ukázka tuto funkci, najdete v tématu: [pomocí ASP.NET ukládání výstupu do mezipaměti se systémem SQL Server](https://msdn.microsoft.com/library/e3w8402y(VS.80).aspx).
 
 
 ## <a name="summary"></a>Souhrn
@@ -305,10 +305,10 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Používání oznámení dotazu v systému Microsoft SQL Server 2005](https://msdn.microsoft.com/en-us/library/ms175110.aspx)
-- [Vytváření oznámení o dotazu](https://msdn.microsoft.com/en-us/library/ms188669.aspx)
-- [Ukládání do mezipaměti technologie ASP.NET s `SqlCacheDependency` – třída](https://msdn.microsoft.com/en-us/library/ms178604(VS.80).aspx)
-- [Nástroj pro registraci serveru SQL technologie ASP.NET (`aspnet_regsql.exe`)](https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx)
+- [Používání oznámení dotazu v systému Microsoft SQL Server 2005](https://msdn.microsoft.com/library/ms175110.aspx)
+- [Vytváření oznámení o dotazu](https://msdn.microsoft.com/library/ms188669.aspx)
+- [Ukládání do mezipaměti technologie ASP.NET s `SqlCacheDependency` – třída](https://msdn.microsoft.com/library/ms178604(VS.80).aspx)
+- [Nástroj pro registraci serveru SQL technologie ASP.NET (`aspnet_regsql.exe`)](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)
 - [Přehled`SqlCacheDependency`](http://www.aspnetresources.com/blog/sql_cache_depedency_overview.aspx)
 
 ## <a name="about-the-author"></a>O autorovi

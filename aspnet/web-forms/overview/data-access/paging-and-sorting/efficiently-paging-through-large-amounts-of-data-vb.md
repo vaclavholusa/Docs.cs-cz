@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 00a5358361fa3f37d13ea74d61c437088b388ece
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a1b7fbb1e60c9f1bc6a26ccaeb7d14b4c95219d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>Efektivní stránkování prostřednictvím velké objemy dat (VB)
 ====================
@@ -63,7 +63,7 @@ V následujících dvou krocích podíváme skript SQL se musel reagovat na tyto
 
 ## <a name="step-2-returning-the-total-number-of-records-being-paged-through"></a>Krok 2: Vrátí celkový počet záznamů stránkování prostřednictvím
 
-Před jsme zkontrolujte postup načtení přesné podmnožinu záznamů pro stránku se zobrazuje, umožní s první pohled na tom, jak vrátit celkový počet záznamů stránkování prostřednictvím. Tyto informace je třeba správně nakonfigurovat uživatelské rozhraní stránkování. Celkový počet záznamů vrácených konkrétní dotazu SQL můžete získat pomocí [ `COUNT` agregační funkce](https://msdn.microsoft.com/en-US/library/ms175997.aspx). Například můžete určit celkový počet záznamů v `Products` tabulky, můžeme použít následující dotaz:
+Před jsme zkontrolujte postup načtení přesné podmnožinu záznamů pro stránku se zobrazuje, umožní s první pohled na tom, jak vrátit celkový počet záznamů stránkování prostřednictvím. Tyto informace je třeba správně nakonfigurovat uživatelské rozhraní stránkování. Celkový počet záznamů vrácených konkrétní dotazu SQL můžete získat pomocí [ `COUNT` agregační funkce](https://msdn.microsoft.com/library/ms175997.aspx). Například můžete určit celkový počet záznamů v `Products` tabulky, můžeme použít následující dotaz:
 
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample1.sql)]
@@ -120,7 +120,7 @@ Toto není výzvu, pokud již existuje sloupec v tabulce databáze, která slou�
 Existují dvě obecné postupy používané k efektivní přidružit index řádku s daty na stránku prostřednictvím, zpřístupňují přesné dílčí sadu záznamů, které mají být načteny:
 
 - **Pomocí systému SQL Server 2005 s `ROW_NUMBER()` – klíčové slovo** nový SQL Server 2005, `ROW_NUMBER()` – klíčové slovo přidruží hodnoticí každý vrácený záznam podle pořadí. Toto pořadí slouží jako index řádku pro každý řádek.
-- **Pomocí proměnné tabulky a `SET ROWCOUNT`**  systému SQL Server s [ `SET ROWCOUNT` příkaz](https://msdn.microsoft.com/en-us/library/ms188774.aspx) umožňuje určit počet celkový počet záznamů dotaz by měl zpracovat před ukončením; [tabulky proměnné](http://www.sqlteam.com/item.asp?ItemID=9454) jsou místní proměnné T-SQL, které mohou být uloženy tabulková data akin k [dočasných tabulek](http://www.sqlteam.com/item.asp?ItemID=2029). Tento postup funguje stejně dobře s Microsoft SQL Server 2005 a SQL Server 2000 (vzhledem k tomu `ROW_NUMBER()` přístup pracuje pouze s SQL Server 2005).  
+- **Pomocí proměnné tabulky a `SET ROWCOUNT`**  systému SQL Server s [ `SET ROWCOUNT` příkaz](https://msdn.microsoft.com/library/ms188774.aspx) umožňuje určit počet celkový počet záznamů dotaz by měl zpracovat před ukončením; [tabulky proměnné](http://www.sqlteam.com/item.asp?ItemID=9454) jsou místní proměnné T-SQL, které mohou být uloženy tabulková data akin k [dočasných tabulek](http://www.sqlteam.com/item.asp?ItemID=2029). Tento postup funguje stejně dobře s Microsoft SQL Server 2005 a SQL Server 2000 (vzhledem k tomu `ROW_NUMBER()` přístup pracuje pouze s SQL Server 2005).  
   
  Rada tady je vytvoření proměnné tabulky, která má `IDENTITY` sloupce a sloupce pro primární klíče v tabulce, jejichž data se prostřednictvím stránkování. V dalším kroku obsah tabulky, jejichž data je stránkování prostřednictvím vypsána do proměnné tabulky, a tím přidružení sekvenční řádek indexu (prostřednictvím `IDENTITY` sloupec) pro každý záznam v tabulce. Po naplnění proměnnou tabulky `SELECT` příkaz na proměnnou tabulky spojena s podkladové tabulce, mohou být provedeny vysunout konkrétní záznamy. `SET ROWCOUNT` Se použije příkaz inteligentně omezit počet záznamů, které je třeba uložit do proměnné tabulky.  
   
@@ -275,9 +275,9 @@ Protože ObjectDataSource aktuálně používá 0 jako hodnoty pro obě chybí G
 
 Chcete-li to opravit, je potřeba nakonfigurovat ObjectDataSource používat vlastní stránkování. Můžete to provést v následujících krocích:
 
-1. **Nastavit ObjectDataSource s `EnablePaging` vlastnost `true`**  tím je oznámeno ObjectDataSource, který je nutné předat `SelectMethod` dva další parametry: jeden k určení Index řádku spustit ([ `StartRowIndexParameterName` ](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx)) a jeden, který zadejte maximální počet řádků ([`MaximumRowsParameterName`](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx)).
+1. **Nastavit ObjectDataSource s `EnablePaging` vlastnost `true`**  tím je oznámeno ObjectDataSource, který je nutné předat `SelectMethod` dva další parametry: jeden k určení Index řádku spustit ([ `StartRowIndexParameterName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx)) a jeden, který zadejte maximální počet řádků ([`MaximumRowsParameterName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx)).
 2. **Nastavit ObjectDataSource s `StartRowIndexParameterName` a `MaximumRowsParameterName` vlastnosti odpovídajícím způsobem** `StartRowIndexParameterName` a `MaximumRowsParameterName` vlastnosti označují názvy vstupní parametry předané do `SelectMethod` pro vlastní účely stránkování . Ve výchozím nastavení, jsou tyto názvy parametrů `startIndexRow` a `maximumRows`, což je důvod, proč, při vytváření `GetProductsPaged` metoda v BLL, lze použít tyto hodnoty pro vstupní parametry. Pokud jste se rozhodli použít jiný parametr názvy BLL s `GetProductsPaged` metoda jako `startIndex` a `maxRows`pro příklad by bylo potřeba nastavit ObjectDataSource s `StartRowIndexParameterName` a `MaximumRowsParameterName` vlastnosti odpovídajícím způsobem (například počáteční index pro `StartRowIndexParameterName` a maxRows pro `MaximumRowsParameterName`).
-3. **Nastavit ObjectDataSource s [ `SelectCountMethod` vlastnost](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx) na název metody, která vrátí celkový počet z záznamy se stránkovaného prostřednictvím (`TotalNumberOfProducts`)** odvolat, který `ProductsBLL` třídu s `TotalNumberOfProducts`metoda vrátí celkový počet záznamů stránkování prostřednictvím DAL metodu, která provede `SELECT COUNT(*) FROM Products` dotazu. Tyto informace je třeba pomocí ObjectDataSource správně vykreslení rozhraní stránkování.
+3. **Nastavit ObjectDataSource s [ `SelectCountMethod` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx) na název metody, která vrátí celkový počet z záznamy se stránkovaného prostřednictvím (`TotalNumberOfProducts`)** odvolat, který `ProductsBLL` třídu s `TotalNumberOfProducts`metoda vrátí celkový počet záznamů stránkování prostřednictvím DAL metodu, která provede `SELECT COUNT(*) FROM Products` dotazu. Tyto informace je třeba pomocí ObjectDataSource správně vykreslení rozhraní stránkování.
 4. **Odeberte `startRowIndex` a `maximumRows` `<asp:Parameter>` elementy z ObjectDataSource s deklarativní** při konfiguraci ObjectDataSource prostřednictvím průvodce, Visual Studio automaticky přidá dva `<asp:Parameter>` prvky `GetProductsPaged` metoda s vstupní parametry. Nastavením `EnablePaging` k `true`, tyto parametry se předají automaticky, pokud se zobrazí také v deklarativní syntaxi, bude ObjectDataSource pokus předat *čtyři* parametry, které `GetProductsPaged` – metoda a dva parametry pro `TotalNumberOfProducts` metoda. Pokud zapomenete pro jejich odebrání `<asp:Parameter>` prvky, pokud na stránce prostřednictvím prohlížeče získáte chybovou zprávu jako: *ObjectDataSource 'ObjectDataSource1' nelze najít neobecnou metodu 'TotalNumberOfProducts', který má Parametry: startRowIndex maximumRows*.
 
 Po provedení těchto změn, deklarativní syntaxi s ObjectDataSource by měl vypadat následovně:
@@ -352,15 +352,15 @@ Vzhledem k tomu, že vlastní stránkování pouze načte potřebné záznamů, 
 
 Bohužel se zde s žádné velikosti, která vyhoví všechny zodpovědět sem. Zvýšení výkonu závisí na počtu faktorů, nejvíce viditelného dva se počet záznamů stránkování prostřednictvím a zatížení umístit do databáze serveru a komunikační kanály mezi webovým serverem a serverem databáze. Pro malé tabulky s několika záznamy desítek může být nepatrné rozdíl výkonem. Pro rozsáhlé tabulky s tisíci na stovky tisíc řádků, ale výkonu rozdíl je čárkou nad vpravo.
 
-Článek min, [vlastní stránkování v technologii ASP.NET 2.0 pomocí serveru SQL Server 2005](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx), obsahuje některé testy výkonu byl spuštěn vykazovat rozdíly ve výkonu mezi tyto dvě techniky stránkování při procházení tabulky databáze s 50 000 záznamů. Tyto testy I ověřuje čas k provedení dotazu na úrovni serveru SQL (pomocí [SQL Profiler](https://msdn.microsoft.com/en-us/library/ms173757.aspx)) a na stránku ASP.NET pomocí [ASP.NET s trasování funkce](https://msdn.microsoft.com/en-US/library/y13fw6we.aspx). Mějte na paměti, že tyto testy měla spustit na můj vývoj pole s jedním uživatelem aktivní a proto jsou unscientific a není napodobovat vzorů zatížení typické webu. Bez ohledu na to výsledky znázorňují relativní rozdíly v čase spuštění pro výchozí a vlastní stránkování při práci s dostatečně velké objemy dat.
+Článek min, [vlastní stránkování v technologii ASP.NET 2.0 pomocí serveru SQL Server 2005](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx), obsahuje některé testy výkonu byl spuštěn vykazovat rozdíly ve výkonu mezi tyto dvě techniky stránkování při procházení tabulky databáze s 50 000 záznamů. Tyto testy I ověřuje čas k provedení dotazu na úrovni serveru SQL (pomocí [SQL Profiler](https://msdn.microsoft.com/library/ms173757.aspx)) a na stránku ASP.NET pomocí [ASP.NET s trasování funkce](https://msdn.microsoft.com/library/y13fw6we.aspx). Mějte na paměti, že tyto testy měla spustit na můj vývoj pole s jedním uživatelem aktivní a proto jsou unscientific a není napodobovat vzorů zatížení typické webu. Bez ohledu na to výsledky znázorňují relativní rozdíly v čase spuštění pro výchozí a vlastní stránkování při práci s dostatečně velké objemy dat.
 
 
 |  | **Střední Doba trvání (sekundy)** | **Čtení** |
 | --- | --- | --- |
 | **Výchozí stránkování SQL profileru** | 1.411 | 383 |
 | **Vlastní stránkování SQL profileru** | 0.002 | 29 |
-| **Výchozí stránkování ASP.NET trasování** | 2.379 | *NENÍ K DISPOZICI* |
-| **Vlastní trasování ASP.NET stránkování** | 0.029 | *NENÍ K DISPOZICI* |
+| **Výchozí stránkování ASP.NET trasování** | 2.379 | *N/A* |
+| **Vlastní trasování ASP.NET stránkování** | 0.029 | *N/A* |
 
 
 Jak vidíte, načítání konkrétní stránku dat vyžaduje 354 méně čtení v průměru a dokončit za zlomek času. Na stránce ASP.NET, vlastní stránky bylo možné vykreslit v blíží 1/100<sup>tý</sup> času trvalo při použití výchozí stránkování. V tématu [Moje článku](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx) Další informace o těchto výsledků spolu s kódem a databáze můžete stáhnout na reprodukujte tyto testy ve svém vlastním prostředí.

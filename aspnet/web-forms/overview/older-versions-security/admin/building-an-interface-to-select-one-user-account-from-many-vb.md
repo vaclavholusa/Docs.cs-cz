@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6561fec9ccffbc421dd6a542dcd421acd0af6052
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0339578291c536a474f1c7314b28668a6519c8c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-an-interface-to-select-one-user-account-from-many-vb"></a>Vytváření rozhraní vybrat jeden uživatelský účet z mnoha (VB)
 ====================
@@ -134,13 +134,13 @@ Obrázek 5 ukazuje `ManageUsers.aspx` v případě, že zobrazit pomocí prohlí
 > Uživatelská jména, může začínat libovolný znak, včetně čísel a interpunkčních znamének. Chcete-li zobrazit tyto účty, správce bude muset používat všechny LinkButton možnost. Alternativně můžete přidat LinkButton vrátit všechny uživatelské účty, které začínají číslem. Nechat to jako cvičení pro čtečku.
 
 
-Kliknutím na některé z filtrování LinkButtons způsobí, že zpětné volání a vyvolá opakovače `ItemCommand` událostí, ale neexistuje žádná změna v mřížce, protože jsme ještě k psaní jakéhokoli kódu filtrování výsledků. `Membership` Třída zahrnuje [ `FindUsersByName` metoda](https://technet.microsoft.com/en-us/library/system.web.security.membership.findusersbyname.aspx) , který vrací tyto uživatelské účty, jejichž uživatelské jméno odpovídá vzoru zadaný hledání. Tato metoda jsme můžete použít k načtení pouze tyto uživatelské účty, jejichž uživatelská jména začínat písmenem určeného `CommandName` z filtrované LinkButton, kterou jste klepli.
+Kliknutím na některé z filtrování LinkButtons způsobí, že zpětné volání a vyvolá opakovače `ItemCommand` událostí, ale neexistuje žádná změna v mřížce, protože jsme ještě k psaní jakéhokoli kódu filtrování výsledků. `Membership` Třída zahrnuje [ `FindUsersByName` metoda](https://technet.microsoft.com/library/system.web.security.membership.findusersbyname.aspx) , který vrací tyto uživatelské účty, jejichž uživatelské jméno odpovídá vzoru zadaný hledání. Tato metoda jsme můžete použít k načtení pouze tyto uživatelské účty, jejichž uživatelská jména začínat písmenem určeného `CommandName` z filtrované LinkButton, kterou jste klepli.
 
 Začněte tím, že aktualizace `ManageUser.aspx` kódu stránky třídy tak, že obsahují vlastnost s názvem `UsernameToMatch` tuto vlastnost potrvají řetězec filtru uživatelské jméno napříč postback:
 
 [!code-vb[Main](building-an-interface-to-select-one-user-account-from-many-vb/samples/sample8.vb)]
 
-`UsernameToMatch` Jeho hodnota je přiřazen do vlastnosti se ukládají `ViewState` kolekce pomocí klíče UsernameToMatch. Pokud hodnota této vlastnosti je pro čtení, zkontroluje, zda existuje hodnota v `ViewState` kolekce; v opačném případě se vrátí výchozí hodnotu, prázdný řetězec. `UsernameToMatch` Vlastnost jádro vykazuje běžný vzor, a to uložením hodnotu, pokud chcete zobrazit stav tak, aby všechny změny vlastnosti jsou nastavené jako trvalé mezi postback. Další informace o tomto vzoru, najdete v tématu [stav zobrazení ASP.NET Principy](https://msdn.microsoft.com/en-us/library/ms972976.aspx).
+`UsernameToMatch` Jeho hodnota je přiřazen do vlastnosti se ukládají `ViewState` kolekce pomocí klíče UsernameToMatch. Pokud hodnota této vlastnosti je pro čtení, zkontroluje, zda existuje hodnota v `ViewState` kolekce; v opačném případě se vrátí výchozí hodnotu, prázdný řetězec. `UsernameToMatch` Vlastnost jádro vykazuje běžný vzor, a to uložením hodnotu, pokud chcete zobrazit stav tak, aby všechny změny vlastnosti jsou nastavené jako trvalé mezi postback. Další informace o tomto vzoru, najdete v tématu [stav zobrazení ASP.NET Principy](https://msdn.microsoftn-us/library/ms972976.aspx).
 
 Potom aktualizujte `BindUserAccounts` tak místo volání metody `Membership.GetAllUsers`, zavolá `Membership.FindUsersByName`a předejte hodnotu `UsernameToMatch` vlastnost připojená se zástupným znakem SQL %.
 
@@ -177,7 +177,7 @@ Při procházení tisíce záznamů, může být poměrně dlouhou výkonu rozd�
 
 Chcete-li implementovat vlastní stránkování potřebujeme některé mechanismus, pomocí kterých se budou načítat přesné podmnožinu záznamů v zobrazení GridView. Dobrá zpráva je, že `Membership` třídy `FindUsersByName` metoda má přetížení, které umožňuje zadejte index stránky a velikost stránky a vrátí pouze uživatelské účty, které spadají do tohoto rozsahu záznamů.
 
-Konkrétně toto přetížení má následující podpis: [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/en-us/library/fa5st8b2.aspx).
+Konkrétně toto přetížení má následující podpis: [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/library/fa5st8b2.aspx).
 
 *Index stránky* parametr určuje stránce uživatelských účtů vrátit; *pageSize* Určuje, kolik zaznamenává zobrazených na stránce. *TotalRecords* parametr `ByRef` parametr, který vrátí počet celkový počet uživatelských účtů v úložišti uživatele.
 

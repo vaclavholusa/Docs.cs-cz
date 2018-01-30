@@ -28,6 +28,21 @@
 ### [Zkoumání metod Details a Delete](tutorials/first-mvc-app/details.md)
 
 ## [Kurzy pro vývoj pro různé platformy](xref:tutorials/xplat)
+### [Webová aplikace Razor Pages na Macu](xref:tutorials/razor-pages-mac/index)
+#### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-mac/razor-pages-start)
+#### [Přidání modelu](xref:tutorials/razor-pages-mac/model)
+#### [Vygenerované stránky Razor](xref:tutorials/razor-pages-mac/page)
+#### [Práce s SQLite](xref:tutorials/razor-pages-mac/sql)
+#### [Aktualizace stránek](xref:tutorials/razor-pages-mac/da1)
+#### [Přidání vyhledávání](xref:tutorials/razor-pages-mac/search)
+
+
+### [Webová aplikace Razor Pages s editorem VS Code](xref:tutorials/razor-pages-vsc/index)
+#### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-vsc/razor-pages-start)
+#### [Přidání modelu](xref:tutorials/razor-pages-vsc/model)
+#### [Vygenerované stránky Razor](xref:tutorials/razor-pages-vsc/page)
+#### [Práce s SQLite](xref:tutorials/razor-pages-vsc/sql)
+#### [Aktualizace stránek](xref:tutorials/razor-pages-vsc/da1)
 
 ### [Webová aplikace MVC s použitím sady Visual Studio pro Mac](xref:tutorials/first-mvc-app-mac/index)
 #### [Začínáme](xref:tutorials/first-mvc-app-mac/start-mvc)
@@ -41,7 +56,7 @@
 #### [Přidání ověření](xref:tutorials/first-mvc-app-mac/validation)
 #### [Zkoumání metod Details a Delete](xref:tutorials/first-mvc-app/details)
 
-### [Webová aplikace s použitím editoru Visual Studio Code pro Mac nebo Linux](xref:tutorials/first-mvc-app-xplat/index)
+### [Webové aplikace MVC s kódem jazyka Visual Studio na Mac nebo Linux](xref:tutorials/first-mvc-app-xplat/index)
 #### [Začínáme](tutorials/first-mvc-app-xplat/start-mvc.md)
 #### [Přidání kontroleru](tutorials/first-mvc-app-xplat/adding-controller.md)
 #### [Přidání zobrazení](tutorials/first-mvc-app-xplat/adding-view.md)
@@ -52,15 +67,6 @@
 #### [Přidání nového pole](tutorials/first-mvc-app-xplat/new-field.md)
 #### [Přidání ověření](tutorials/first-mvc-app-xplat/validation.md)
 #### [Zkoumání metod Details a Delete](tutorials/first-mvc-app/details.md)
-
-
-### [Webová aplikace Razor Pages na Macu](xref:tutorials/razor-pages-mac/index)
-#### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-mac/razor-pages-start)
-#### [Přidání modelu](xref:tutorials/razor-pages-mac/model)
-#### [Vygenerované stránky Razor](xref:tutorials/razor-pages-mac/page)
-### [Webová aplikace Razor Pages s editorem VS Code](xref:tutorials/razor-pages-vsc/index)
-#### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-vsc/razor-pages-start)
-#### [Přidání modelu](xref:tutorials/razor-pages-vsc/model)
 
 ### [Web API se sadou Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
 ### [Web API s editorem Visual Studio Code](xref:tutorials/web-api-vsc)
@@ -244,6 +250,7 @@
 ### [Azure Active Directory](xref:security/authentication/azure-active-directory/index)
 #### [Integrace Azure AD do webové aplikace ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
 #### [Integrace Azure AD B2C do webové aplikace ASP.NET Core určené pro zákazníky](xref:security/authentication/azure-ad-b2c)
+#### [Integrace Azure AD B2C do webové ASP.NET Core rozhraní API](xref:security/authentication/azure-ad-b2c-webapi)
 #### [Volání webového rozhraní API aplikace ASP.NET Core z aplikace WPF pomocí Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 #### [Volání webového rozhraní API webové aplikace ASP.NET Core pomocí Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 ### [Zabezpečení aplikací ASP.NET serverem IdentityServer4](https://identityserver4.readthedocs.io/)

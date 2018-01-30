@@ -2,18 +2,18 @@
 title: Globalizace a lokalizace v ASP.NET Core
 author: rick-anderson
 description: "Zjistěte, jak ASP.NET Core poskytuje služby a middleware pro lokalizaci obsahu do různých jazyků a kultur."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 01/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: 5f1579b5682b2f0b3f8227f0cf6b4c0361eb1e67
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 794abf628beff7e5c78f9ca04309694d46910373
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -224,7 +224,7 @@ Pokud předáte pouze v jednom ze dvou (`culture` nebo `ui-culture`), nastaví o
 
 Produkční aplikace bude často poskytují mechanismus nastavit jazykovou verzi pomocí souboru cookie jazykovou verzi ASP.NET Core. Použití `MakeCookieValue` metodu pro vytvoření souboru cookie.
 
-`CookieRequestCultureProvider` `DefaultCookieName` Vrátí výchozí název souboru cookie použít ke sledování uživatel upřednostňované jazykové verze. Výchozí název souboru cookie je ". AspNetCore.Culture".
+`CookieRequestCultureProvider` `DefaultCookieName` Vrátí výchozí název souboru cookie použít ke sledování uživatel upřednostňované jazykové verze. Výchozí název souboru cookie je `.AspNetCore.Culture`.
 
 Formát souboru cookie je `c=%LANGCODE%|uic=%LANGCODE%`, kde `c` je `Culture` a `uic` je `UICulture`, například:
 

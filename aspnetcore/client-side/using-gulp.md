@@ -2,19 +2,19 @@
 title: "Použití Gulp v ASP.NET Core"
 author: rick-anderson
 description: "Další informace o použití Gulp v ASP.NET Core."
-ms.author: riande
 manager: wpickett
-ms.date: 02/28/2017
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: client-side/using-gulp
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2ccfed42d66ea49c5f2745bc8653d8fb12bf707a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.date: 02/28/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: client-side/using-gulp
+ms.openlocfilehash: f091370bc85a37eeaac1291a2fdc6ea85164f148
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>Úvod do používání Gulp v ASP.NET Core 
 
@@ -59,13 +59,13 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 
 Ve výše uvedeném kódu určuje, které moduly uzlu jsou požadovány. `require` Funkce importuje každý modul tak, aby závislých úloh můžete využívat jejich funkce. Každý z importovaných modulů je přiřazený k proměnné. Moduly můžou být buď podle názvu nebo cesty. V tomto příkladu s názvem moduly `gulp`, `rimraf`, `gulp-concat`, `gulp-cssmin`, a `gulp-uglify` se načítají podle názvu. Kromě toho řadu cesty jsou vytvořeny tak, aby umístění souborů CSS a JavaScript můžete opakovaně používat a odkazuje v rámci úlohy. Následující tabulka obsahuje popis modulů, které jsou součástí *gulpfile.js*.
 
-|Název modulu|Popis|
-|---|---|
-|gulp|Systém Gulp streamování sestavení. Další informace najdete v tématu [gulp](https://www.npmjs.com/package/gulp).|
-|rimraf|Modul odstranění uzlu. Další informace najdete v tématu [rimraf](https://www.npmjs.com/package/rimraf).|
-|gulp concat|Modul, který řetězí soubory podle znak nového řádku operačního systému. Další informace najdete v tématu [gulp concat](https://www.npmjs.com/package/gulp-concat).|
-|gulp cssmin|Modul, který minifikuje soubory šablon stylů CSS. Další informace najdete v tématu [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin).|
-|gulp uglify|Modul, který minifikuje *.js* soubory. Další informace najdete v tématu [gulp uglify](https://www.npmjs.com/package/gulp-uglify).|
+| Název modulu | Popis |
+| ----------- | ----------- |
+| gulp        | Systém Gulp streamování sestavení. Další informace najdete v tématu [gulp](https://www.npmjs.com/package/gulp). |
+| rimraf      | Modul odstranění uzlu. Další informace najdete v tématu [rimraf](https://www.npmjs.com/package/rimraf). |
+| gulp concat | Modul, který řetězí soubory podle znak nového řádku operačního systému. Další informace najdete v tématu [gulp concat](https://www.npmjs.com/package/gulp-concat). |
+| gulp cssmin | Modul, který minifikuje soubory šablon stylů CSS. Další informace najdete v tématu [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin). |
+| gulp uglify | Modul, který minifikuje *.js* soubory. Další informace najdete v tématu [gulp uglify](https://www.npmjs.com/package/gulp-uglify). |
 
 Jakmile požadavků moduly importují, je možné zadat úlohy. Zde jsou šesti úlohy zaregistrován, reprezentována následující kód:
 

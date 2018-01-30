@@ -2,18 +2,18 @@
 title: "Zobrazení součásti"
 author: rick-anderson
 description: "Zobrazení součásti jsou určeny kdekoli, že máte opakovaně použitelné vykreslování logiku."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 02/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/view-components
-ms.openlocfilehash: 65074ca02a1365db278d348d4e024121a6eb4634
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 27e77b8fa032c2b5be753a27db748b7499e27105
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="view-components"></a>Zobrazení součásti
 
@@ -23,12 +23,12 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="introducing-view-components"></a>Představení součásti zobrazení
 
-Nové do architektury ASP.NET MVC jádra, zobrazení součásti jsou podobná částečné zobrazení, ale jsou mnohem silnější. Součásti zobrazení nemáte použít modelovou vazbu a pouze závisí na data, která je zadat při volání do ní. Součást zobrazení:
+Nové do architektury ASP.NET MVC jádra, zobrazení součásti jsou podobná částečné zobrazení, ale jsou mnohem silnější. Součásti zobrazení nemáte použít modelovou vazbu a pouze závisí na data zadaná při volání do ní. Součást zobrazení:
 
-* Vykreslí bloku dat, nikoli celý odpověď
-* Zahrnuje stejné oddělení z otázky a výhody testovatelnosti nalezen mezi řadiče a zobrazení
-* Může mít parametry a obchodní logiky
-* Obvykle je volána z rozložení stránky
+* Vykreslí bloku dat, nikoli celý odpovědi.
+* Zahrnuje stejné oddělení z otázky a výhody testovatelnosti nalezen mezi řadiče a zobrazení.
+* Může mít parametry a obchodní logiku.
+* Obvykle volat z ke stránce rozložení.
 
 Zobrazení součásti jsou určeny kdekoli, že máte opakovaně použitelné vykreslování logiky, která je příliš složitý pro částečné zobrazení, jako například:
 
@@ -244,6 +244,6 @@ Přidat `using` příkaz, který má vaše Razor zobrazení souboru a použít `
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,33-)]
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
-* [Injektáž závislostí do zobrazení](dependency-injection.md)
+* [Injektáž závislostí do zobrazení](xref:mvc/views/dependency-injection)

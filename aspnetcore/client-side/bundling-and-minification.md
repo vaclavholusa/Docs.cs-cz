@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: ac8e7fee7600dabb8f4970b5bf87ad7a57ebf17f
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 6c233d0957ce9974adbc6112e6194c072aab0b41
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="bundling-and-minification"></a>Sdružování a minimalizace
 
@@ -27,7 +27,7 @@ Tento článek vysvětluje výhody použití sdružování a minimalizace, včet
 
 Sdružování a minimalizace jsou dvě odlišné výkonu optimalizace, které můžete použít ve webové aplikaci. Použít společně, sdružování a minimalizace vylepšit výkon, snižuje počet požadavků serveru a zmenšení velikosti požadovaných prostředků statické.
 
-Sdružování a minimalizace především zlepšit první čas načítání stránky požadavku. Jakmile požádal na webové stránce v prohlížeči ukládá do mezipaměti statické prostředky (JavaScript, CSS a bitové kopie). V důsledku toho sdružování a minimalizace nemáte výkon při požadavku stejné stránce nebo stránky, na stejném webu požaduje stejné prostředky. Pokud není nastavený vyprší záhlaví správně na vaše prostředky, a pokud nepoužíváte sdružování a minimalizace, v prohlížeči aktuálnosti heuristiky označit prostředky zastaralé po několik dní. Kromě toho v prohlížeči vyžaduje žádost o ověření pro každý prostředek. V takovém případě sdružování a minimalizace poskytnout zlepšování výkonu i po první požadavek na stránku.
+Sdružování a minimalizace především zlepšit první čas načítání stránky požadavku. Jakmile požádal na webové stránce v prohlížeči ukládá do mezipaměti statické prostředky (JavaScript, CSS a bitové kopie). V důsledku toho sdružování a minimalizace nemáte výkon při požadavku stejné stránce nebo stránky, na stejném webu požaduje stejné prostředky. Pokud vyprší platnost hlavičky není správně nastaven na prostředky a pokud se nepoužívá sdružování a minimalizace, heuristiky aktuálnosti prohlížeče označit prostředky zastaralé po několik dní. Kromě toho v prohlížeči vyžaduje žádost o ověření pro každý prostředek. V takovém případě sdružování a minimalizace poskytnout zlepšování výkonu i po první požadavek na stránku.
 
 ### <a name="bundling"></a>Sdružování
 
@@ -320,4 +320,4 @@ Průzkumník Spouštěče úloh sady Visual Studio lze případně vázat Gulp �
 * [Použití nástroje Gulp](xref:client-side/using-gulp)
 * [Použití nástroje Grunt](xref:client-side/using-grunt)
 * [Práce s několika prostředí](xref:fundamentals/environments)
-* [Pomocníci značky](xref:mvc/views/tag-helpers/intro)
+* [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)

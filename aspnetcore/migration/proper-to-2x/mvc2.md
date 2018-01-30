@@ -1,19 +1,19 @@
 ---
 title: Migrace z technologie ASP.NET na ASP.NET Core 2.0
 author: isaac2004
-description: "Tento referenční dokument obsahuje pokyny pro migraci stávající ASP.NET MVC nebo webového rozhraní API aplikace pro technologii ASP.NET 2.0 jádra."
-ms.author: scaddie
+description: "Zobrazí pokyny k migraci existujících ASP.NET MVC nebo webového rozhraní API aplikací na technologii ASP.NET 2.0 jádra."
 manager: wpickett
+ms.author: scaddie
 ms.date: 08/27/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 95bedf9299b4ff65c2f520358136174c4d2c4623
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 65717c1605c7f55bfd836110072772fe3dcdeb76
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>Migrace z technologie ASP.NET na ASP.NET Core 2.0
 
@@ -147,5 +147,6 @@ Například prostředek bitové kopie v *wwwroot nebo obrázky* , jako je přís
 
 **Poznámka:** podrobnější odkaz na zpracování statických souborů v ASP.NET Core, najdete v části [Úvod k práci s statické soubory v ASP.NET Core](xref:fundamentals/static-files).
 
-## <a name="additional-resources"></a>Další prostředky
-* [Portování knihovny .NET Core](https://docs.microsoft.com/dotnet/core/porting/libraries)
+## <a name="additional-resources"></a>Další zdroje
+
+* [Portování knihovny .NET Core](/dotnet/core/porting/libraries)

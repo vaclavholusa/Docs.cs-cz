@@ -2,18 +2,18 @@
 title: "Žádost o funkce ASP.NET Core"
 author: ardalis
 description: "Další informace o webového serveru implementace podrobnosti týkající se požadavků HTTP a odpovědí, které jsou definovány v rozhraní pro ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/request-features
-ms.openlocfilehash: f0e371f5ea6c6688ef32adcacf667a412e4625e5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 11644dc646f2c0e749f0f64e80ee00ea8b671302
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="request-features-in-aspnet-core"></a>Žádost o funkce ASP.NET Core
 
@@ -70,10 +70,8 @@ Kombinací implementace vlastního serveru a vylepšení určitému middlewaru j
 
 Funkce rozhraní definovat konkrétní funkce protokolu HTTP, které můžou podporovat daného požadavku. Servery definovat kolekce funkcí a počáteční sadu funkcí, které tento server podporuje, ale ke zvýšení tyto funkce můžete použít middleware.
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
-* [Servery](servers/index.md)
-
-* [Middleware](middleware.md)
-
-* [Otevřené webové rozhraní pro .NET (OWIN)](owin.md)
+* [Servery](xref:fundamentals/servers/index)
+* [Middleware](xref:fundamentals/middleware)
+* [Otevřené webové rozhraní pro .NET (OWIN)](xref:fundamentals/owin)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41e1f8673b42571a9dcbdae668a30426fe90f42f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b4bba02449debff17422f6b7008247fdf61856c8
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-elmah-vb"></a>Podrobnosti o chybě protokolování s ELMAH (VB)
 ====================
@@ -29,7 +29,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
 ## <a name="introduction"></a>Úvod
 
-[Předchozí kurzu](logging-error-details-with-asp-net-health-monitoring-vb.md) zkontrolován ASP. NET na stav systému, který nabízí out of knihovně pole pro záznam širokou škálu webové události pro monitorování. Celá řada vývojářů pomocí protokolu a e-mailové podrobnosti o neošetřených výjimek sledování stavu. Existuje však několik problémové body s tímto systémem. Především je nedostatek žádné řazení uživatelské rozhraní pro zobrazení informací o protokolu událostí. Pokud chcete zobrazit souhrn 10 poslední chyby, nebo zobrazení podrobností o chybu, která se stalo poslední týden, musíte buď vkládat informace prostřednictvím databáze, kontrola prostřednictvím Doručená pošta nebo vytvořit webovou stránku, která se zobrazují informace z `aspnet_WebEvent_Events` tabulky.
+[Předchozí kurzu](logging-error-details-with-asp-net-health-monitoring-vb.md) zkontrolován ASP. NET na stav systému, který nabízí out of knihovně pole pro záznam širokou škálu webové události pro monitorování. Celá řada vývojářů pomocí protokolu a e-mailových podrobnosti o neošetřených výjimek sledování stavu. Existuje však několik problémové body s tímto systémem. Především je nedostatek žádné řazení uživatelské rozhraní pro zobrazení informací o protokolu událostí. Pokud chcete zobrazit souhrn 10 poslední chyby, nebo zobrazení podrobností o chybu, která se stalo poslední týden, musíte buď vkládat informace prostřednictvím databáze, kontrola prostřednictvím e-mailu doručené pošty nebo vytvořit webovou stránku, která se zobrazují informace z `aspnet_WebEvent_Events` tabulky.
 
 Jiný bod problémové soustředí kolem složitost stavu monitorování. Protože sledování stavu je možné použít k zaznamenání nadbytku různé událostí a protože nejsou k dispozici různé možnosti pro instruující, jak a kdy se protokolují události, správně konfigurace sledování systému stavu může být obtížné úloh. Nakonec jsou problémy s kompatibilitou. Sledování stavu byl přidán první rozhraní .NET Framework verze 2.0, není k dispozici pro starší webové aplikace vyvíjené v technologii ASP.NET verze 1.x. Kromě toho `SqlWebEventProvider` třídy, která jsme použili v předchozí kurzu na podrobnosti o chybě protokoly na databázi, pracuje pouze s databází systému Microsoft SQL Server. Musíte pro vytvoření třídy zprostředkovatele vlastního protokolu, bude nutné protokolovat chyby k úložišti alternativní dat, například soubor XML nebo databáze Oracle.
 
@@ -71,7 +71,7 @@ Dále otevřete Visual Studio a sestavení do projektu přidejte kliknutím prav
 - **Vytváření modulů HTTP v** -modulu HTTP je třída, která definuje obslužné rutiny události pro `HttpApplication` události, například `Error` událostí. ELMAH obsahuje více modulů HTTP, tři nejvíce podstatný ty, které se: 
 
     - `ErrorLogModule`-Zdroj protokolu v protokolech neošetřených výjimek.
-    - `ErrorMailModule`-Podrobnosti k neošetřené výjimce odešle e-mailové zprávy.
+    - `ErrorMailModule`-odešle podrobnosti k neošetřené výjimce v e-mailovou zprávu.
     - `ErrorFilterModule`-vztahuje zadaný vývojáře filtrů určit, jaké výjimky jsou protokolovány a co ty, které jsou ignorovány.
 - **Obslužné rutiny HTTP** – obslužné rutiny HTTP je třída, která je zodpovědná za generování kódu pro konkrétní typ požadavku. ELMAH zahrnuje obslužné rutiny HTTP, která vykreslit podrobnosti o chybě jako webovou stránku, jako informačního kanálu RSS nebo jako soubor s oddělovači (CSV).
 - **Chyba protokolu zdroje** – předinstalované ELMAH můžete protokolovat chyby do paměti, do databáze Microsoft SQL Server, k databázi Microsoft Access k databázi Oracle do souboru XML, databáze SQLite, nebo do databáze Vista DB. Architektura ELMAH na jako je stav monitorování systému, bylo vytvořeno pomocí zprostředkovatele modelu, což znamená, že můžete vytvořit a v případě potřeby se hladce integrují zdroj vlastní vlastní protokol zprostředkovatele.
@@ -199,27 +199,27 @@ V protokolu chyb v provozním prostředí můžete nyní zobrazit vzdálení už
 
 Na ELMAH `ErrorLogModule` modulu HTTP automaticky protokoluje neošetřených výjimek ke zdroji zadaného protokolu. Alternativně může přihlásit k chybě bez nutnosti zvýšení k neošetřené výjimce pomocí `ErrorSignal` třídy a jeho `Raise` metoda. `Raise` Metodě se předává `Exception` objektu a do protokolu zaznamená, jako by měl nebyly vytvořeny této výjimky a dosahoval modulem runtime ASP.NET bez zpracování. Rozdíl, je ale, že žádost pokračuje v provádění obvykle po `Raise` byla volána metoda, zatímco výjimce dojde, neošetřené výjimky přerušení normální spuštění žádosti a způsobí, že modulem runtime ASP.NET zobrazíte nakonfigurované chybové stránky.
 
-`ErrorSignal` Třída je užitečné v situacích, kde je některé akce, která může selhat, ale jeho selhání není závažné celkové operace provádí. Například web může obsahovat formulář, který přijímá vstup uživatele, uloží je v databázi a poté odešle uživateli e-mailu informací, že se informace byla zpracována. Pokud informace se ukládají do databáze úspěšně, ale dojde k chybě při odesílání e-mailová zpráva, která má proběhnout? Jednou z možností je vyvolána výjimka a uživateli odeslat chybovou stránku. Ale to může zmást uživatele do přemýšlení, který informace, které zadal nebyla uložena. Jiná možnost by mohla být protokolu chyba e-mailem, nikoli však činnost koncového uživatele nijak změnit. To je, kdy `ErrorSignal` třída je užitečná.
+`ErrorSignal` Třída je užitečné v situacích, kde je některé akce, která může selhat, ale jeho selhání není závažné celkové operace provádí. Například web může obsahovat formulář, který přijímá vstup uživatele, uloží je v databázi a pak odešle uživateli e-mailu informací, že se informace byla zpracována. Které dojde, pokud informace se ukládají do databáze úspěšně, ale dojde k chybě při odesílání e-mailové zprávě? Jednou z možností je vyvolána výjimka a uživateli odeslat chybovou stránku. Ale to může zmást uživatele do přemýšlení, který informace, které zadal nebyla uložena. Jiná možnost by mohla být protokolu chyby související s e-mailu, ale není činnost koncového uživatele nijak změnit. To je, kdy `ErrorSignal` třída je užitečná.
 
 [!code-vb[Main](logging-error-details-with-elmah-vb/samples/sample6.vb)]
 
-## <a name="error-notification-via-e-mail"></a>Chyba oznámení prostřednictvím e-mailu
+## <a name="error-notification-via-email"></a>Oznámení o chybě e-mailem
 
-Společně s protokolování chyb do databáze ELMAH lze také nastavit k e-mailu podrobnosti o chybě pro zadaný příjemce. Tato funkce poskytuje `ErrorMailModule` modulu HTTP; proto je nutné zaregistrovat tento modul HTTP v `Web.config` aby bylo možné odesílat podrobnosti o chybě prostřednictvím e-mailu.
+Společně s protokolování chyb do databáze může být ELMAH nakonfigurovat taky k zadané příjemce e-mailem poslat podrobnosti o chybě. Tato funkce poskytuje `ErrorMailModule` modulu HTTP; proto je nutné zaregistrovat tento modul HTTP v `Web.config` aby bylo možné odesílat podrobnosti o chybě e-mailem.
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample7.xml)]
 
-Potom zadejte informace o chybě e-mailu v `<elmah>` elementu `<errorMail>` části znamenající odesílatele a příjemce, předmět, e mailu a zda e-mail je odeslán asynchronně.
+Potom zadejte informace o chybě e-mailu v `<elmah>` elementu `<errorMail>` části znamenající odesílatele a příjemce, předmět, k e-mailu a zda e-mail je odeslán asynchronně.
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample8.xml)]
 
-Výše uvedené nastavení na místě a vždy, když chyba za běhu dochází ELMAH odešle e-mail, který support@example.com s podrobnosti o chybě. Na ELMAH chyba e-mailu obsahuje stejné informace zobrazené v chybě podrobnosti o webové stránky, a to chybovou zprávu, trasování zásobníku a proměnných serveru (odkazuje zpět na **obrázky 4** a **5**). Chyba e-mailu také zahrnuje obsah výjimky podrobnosti žlutý obrazovka smrti jako přílohu (`YSOD.html`).
+Výše uvedené nastavení na místě a vždy, když chyba za běhu dochází ELMAH odešle e-mail s support@example.com s podrobnosti o chybě. E-mailu chyba na ELMAH zahrnuje stejné informace zobrazené v chybě podrobnosti o webové stránky, a to chybovou zprávu, trasování zásobníku a proměnných serveru (odkazuje zpět na **obrázky 4** a **5**). E-mailu, chyba také zahrnuje obsah výjimky podrobnosti žlutý obrazovka smrti jako přílohu (`YSOD.html`).
 
-**Obrázek 8** ukazuje na ELMAH chyba e-mail vygenerovaný navštivte stránky `Genre.aspx?ID=foo`. Při **obrázek 8** zobrazuje pouze chyby zásobníku a zpráva trasování, proměnné serveru jsou zahrnuty další dolů v textu e mailu.
+**Obrázek 8** zobrazuje e-mailu chyba na ELMAH generované navštívíte `Genre.aspx?ID=foo`. Při **obrázek 8** zobrazuje pouze chyby zásobníku a zpráva trasování, proměnné serveru jsou zahrnuty další dolů v obsahu e-mailu.
 
 [![](logging-error-details-with-elmah-vb/_static/image21.png)](logging-error-details-with-elmah-vb/_static/image20.png)
 
-**Obrázek 8**: můžete nakonfigurovat ELMAH Odeslat podrobnosti o chybě prostřednictvím e-mailu  
+**Obrázek 8**: můžete nakonfigurovat ELMAH Odeslat podrobnosti o chybě e-mailem  
 ([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-elmah-vb/_static/image22.png))
 
 ## <a name="only-logging-errors-of-interest"></a>Jenom protokolování chyb, které vás zajímají
@@ -240,7 +240,7 @@ Další informace o chybě pro ELMAH možností filtrování, najdete v části 
 
 ## <a name="summary"></a>Souhrn
 
-ELMAH poskytuje jednoduché, ale výkonný mechanismus pro protokolování chyb ve webové aplikaci ASP.NET. Jako systém sledování stavu společnosti Microsoft ELMAH chyby můžete připojit k databázi a podrobnosti o chybě můžete odeslat vývojář prostřednictvím e-mailu. Na rozdíl od stavu systému pro monitorování, zahrnuje ELMAH z pole podporu pro širší škálu úložišť dat protokolu chyb, včetně: Microsoft SQL Server, Microsoft Access, Oracle, soubory XML a několik dalších. Kromě toho ELMAH nabízí integrovanou mechanismus pro zobrazení v protokolu chyb a podrobnosti o konkrétní chybě z webové stránky, `elmah.axd`. `elmah.axd` Stránky může také zpracovat informace o chybě jako informačního kanálu RSS, nebo jako soubor hodnot oddělených čárkami (CSV), který si můžete přečíst pomocí aplikace Microsoft Excel. Můžete také určit, aby ELMAH filtru chyby z protokolu pomocí deklarativní nebo programové kontrolní výrazy. A ELMAH lze použít s aplikací ASP.NET verze 1.x.
+ELMAH poskytuje jednoduché, ale výkonný mechanismus pro protokolování chyb ve webové aplikaci ASP.NET. Jako systém sledování stavu společnosti Microsoft ELMAH chyby můžete připojit k databázi a podrobnosti o chybě můžete odeslat vývojář e-mailem. Na rozdíl od stavu systému pro monitorování, zahrnuje ELMAH z pole podporu pro širší škálu úložišť dat protokolu chyb, včetně: Microsoft SQL Server, Microsoft Access, Oracle, soubory XML a několik dalších. Kromě toho ELMAH nabízí integrovanou mechanismus pro zobrazení v protokolu chyb a podrobnosti o konkrétní chybě z webové stránky, `elmah.axd`. `elmah.axd` Stránky může také zpracovat informace o chybě jako informačního kanálu RSS, nebo jako soubor hodnot oddělených čárkami (CSV), který si můžete přečíst pomocí aplikace Microsoft Excel. Můžete také určit, aby ELMAH filtru chyby z protokolu pomocí deklarativní nebo programové kontrolní výrazy. A ELMAH lze použít s aplikací ASP.NET verze 1.x.
 
 Všechny nasazené aplikace by měl mít některé mechanismus pro automaticky protokolování neošetřených výjimek a odesílání oznámení do vývojového týmu. Jestli toho dosahuje pomocí sledování stavu nebo ELMAH je sekundární. Jinými slovy nezáleží na skutečně mnohem ať už používáte sledování stavu nebo ELMAH; Posuďte obou systémů a potom vyberte ten, který nejlépe vyhovuje vašim potřebám. Co je zásadně důležité je, že některé mechanismus zavedou k protokolování neošetřených výjimek v provozním prostředí.
 

@@ -2,18 +2,18 @@
 title: "Začínáme s ASP.NET Core a Entity Framework 6"
 author: tdykstra
 description: "Tento článek ukazuje, jak používat Entity Framework 6 v aplikaci ASP.NET Core."
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 02/24/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: data/entity-framework-6
-ms.openlocfilehash: 7f3c1f28c1e0b3a68db7f6f84c56b18643b56cc8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7407fe8a976978d7d5077d5e5ac6cc264565621d
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-aspnet-core-and-entity-framework-6"></a>Začínáme s ASP.NET Core a Entity Framework 6
 
@@ -37,7 +37,7 @@ Projekt ASP.NET Core musí odkazovat na rozhraní .NET framework a EF6. Napřík
 
 [!code-xml[](entity-framework-6/sample/MVCCore/MVCCore.csproj?range=3-9&highlight=2)]
 
-Pokud vytváříte nový projekt, použijte **webové aplikace ASP.NET Core (rozhraní .NET Framework)** šablony.
+Při vytváření nového projektu, použijte **webové aplikace ASP.NET Core (rozhraní .NET Framework)** šablony.
 
 ## <a name="handle-connection-strings"></a>Popisovač připojovací řetězce
 
@@ -91,6 +91,6 @@ Tato ukázka lze vytvořit od začátku pomocí následujících kroků v sadě 
 
 Tento článek poskytl základní pokyny pro používání Entity Framework 6 v aplikaci ASP.NET Core.
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
 * [Rozhraní Entity Framework - konfigurace založené na kódu](https://msdn.microsoft.com/data/jj680699.aspx)

@@ -2,18 +2,18 @@
 title: "Jádro ASP.NET na Nano Server"
 author: shirhatti
 description: "Zjistěte, jak chcete využít stávající aplikace ASP.NET Core a nasaďte ho do instance Nano Server služby IIS."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/04/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: tutorials/nano-server
-ms.openlocfilehash: d9b55fb42088b447451326b7ee573d9bfa5f5941
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 4fc5f6874f86130da9f66d13778516d984ff8b46
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>Jádro ASP.NET se službou IIS na Nano Server
 
@@ -31,7 +31,7 @@ Existují tři způsoby snadno můžete vyzkoušet Nano Server. Pokud jste se p�
 
 2. Stáhněte si Nano Server virtuálního pevného disku.
 
-3. Vytvoření virtuálního počítače v Azure pomocí bitové kopie Nano Server v Azure Gallery. Pokud nemáte účet Azure, můžete získat bezplatnou 30denní zkušební verzi.
+3. Vytvoření virtuálního počítače v Azure pomocí bitové kopie Nano Server v Azure Gallery. Bezplatnou zkušební verzi Azure je dostupné.
 
 V tomto kurzu použijeme 2. možnost předdefinovaných VHD Nano Server ze systému Windows Server 2016.
 

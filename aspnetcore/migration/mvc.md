@@ -1,19 +1,19 @@
 ---
 title: "Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC"
 author: ardalis
-description: 
-ms.author: riande
+description: "Zjistěte, jak začít pracovat migrace projektu aplikace ASP.NET MVC do architektury ASP.NET MVC jádra."
 manager: wpickett
+ms.author: riande
 ms.date: 03/07/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: e3220fb32900aac42cf96497964936ad5b375a86
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 447b13eccf523cab81590405740bb194112b0dad
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC
 
@@ -94,7 +94,7 @@ Spusťte aplikaci.
 
 ![Webové aplikace, otevřete v Microsoft Edge](mvc/_static/hello-world.png)
 
-V tématu [řadiče](../mvc/controllers/index.md) a [zobrazení](../mvc/views/index.md) Další informace.
+V tématu [řadiče](xref:mvc/controllers/actions) a [zobrazení](xref:mvc/views/overview) Další informace.
 
 Teď, když máme minimální funkční projekt ASP.NET Core, můžeme začít migrace funkce z projektu ASP.NET MVC. Budeme muset přesunout následující:
 
@@ -156,7 +156,7 @@ V tématu [spravovat klientské balíčky s Bower](../client-side/bower.md) Dal�
 
 * Vytvoření *zobrazení a sdílených* složky.
 
-* *Volitelné:* kopie *_ViewImports.cshtml* z *FullAspNetCore* projektu MVC *zobrazení* složky do projektu ASP.NET Core *Zobrazení* složky. Odeberte všechny deklarace oboru názvů v *_ViewImports.cshtml* souboru. *_ViewImports.cshtml* soubor poskytuje obory názvů pro všechny soubory, zobrazení a přináší [značky Pomocníci](../mvc/views/tag-helpers/index.md). Pomocníci značky se používají v nové rozložení souboru. *_ViewImports.cshtml* souboru je nového pro ASP.NET Core.
+* *Volitelné:* kopie *_ViewImports.cshtml* z *FullAspNetCore* projektu MVC *zobrazení* složky do projektu ASP.NET Core *Zobrazení* složky. Odeberte všechny deklarace oboru názvů v *_ViewImports.cshtml* souboru. *_ViewImports.cshtml* soubor poskytuje obory názvů pro všechny soubory, zobrazení a přináší [značky Pomocníci](xref:mvc/views/tag-helpers/intro). Pomocníci značky se používají v nové rozložení souboru. *_ViewImports.cshtml* souboru je nového pro ASP.NET Core.
 
 * Kopírování *_Layout.cshtml* soubor z původního projektu ASP.NET MVC *zobrazení a sdílených* složky do projektů ASP.NET Core *zobrazení a sdílených* složky.
 
@@ -191,9 +191,9 @@ Aktualizovaný *_Layout.cshtml* souboru jsou uvedeny níže:
 
 Zobrazte webu v prohlížeči. Nyní by se měly správně načíst s očekávanou styly na místě.
 
-* *Volitelné:* můžete chtít zkuste použít nový soubor rozložení. Pro tento projekt můžete zkopírovat soubor rozložení z *FullAspNetCore* projektu. Nový soubor rozložení používá [značky Pomocníci](../mvc/views/tag-helpers/index.md) a má další vylepšení.
+* *Volitelné:* můžete chtít zkuste použít nový soubor rozložení. Pro tento projekt můžete zkopírovat soubor rozložení z *FullAspNetCore* projektu. Nový soubor rozložení používá [značky Pomocníci](xref:mvc/views/tag-helpers/intro) a má další vylepšení.
 
-## <a name="configure-bundling--minification"></a>Konfigurace sdružování & minimalizaci
+## <a name="configure-bundling-and-minification"></a>Konfigurace sdružování a minimalizace
 
 Informace o tom, jak nakonfigurovat sdružování a minimalizace najdete v tématu [sdružování a Minifikace](../client-side/bundling-and-minification.md).
 
@@ -222,8 +222,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 V tématu **pomocí stránky výjimka vývojáře** v [zpracování chyb](../fundamentals/error-handling.md) Další informace.
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
-* [Vývoj straně klienta](../client-side/index.md)
-
-* [Pomocné rutiny značek](../mvc/views/tag-helpers/index.md)
+* [Vývoj straně klienta](xref:client-side/index)
+* [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)

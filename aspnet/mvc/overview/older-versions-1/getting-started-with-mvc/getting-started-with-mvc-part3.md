@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 title: "Přidání zobrazení | Microsoft Docs"
 author: shanselman
-description: "Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoříte jednoduchou webovou aplikaci, která čte a zapisuje z databáze."
+description: "Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 509dd301eef7c00431eae194a0df69d70e6d80f8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8725d054861c857ceac10a42b0cc3f2afe056aea
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="adding-a-view"></a>Přidání zobrazení
 ====================
@@ -77,7 +77,7 @@ Tady je Site.Master v celé jeho šíři s naše změněn název:
 
 Nyní změňte název indexovou stránku.
 
-Otevřete /HelloWorld/Index.aspx. Není k dispozici dvě místa, chcete-li změnit. Nejprve: název, které se zobrazí v prohlížeči, pak se sekundární záhlaví -, který je také H2 - názvu. I budete je každý mírně lišit, abyste viděli, které malou část kódu, kterou část aplikace změny provést.
+Open /HelloWorld/Index.aspx. Není k dispozici dvě místa, chcete-li změnit. Nejprve: název, které se zobrazí v prohlížeči, pak se sekundární záhlaví -, který je také H2 - názvu. I budete je každý mírně lišit, abyste viděli, které malou část kódu, kterou část aplikace změny provést.
 
 [!code-aspx[Main](getting-started-with-mvc-part3/samples/sample7.aspx)]
 

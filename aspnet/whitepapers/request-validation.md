@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 61a96b75fdc29bdd1510ed689ee0356ef30e03fc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b24fe2193d2c7a858667505bad9ed0b1d70a328
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="request-validation---preventing-script-attacks"></a>Žádosti o ověření - prevence útoků skriptu
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 
 Ověření žádosti, funkce technologie ASP.NET od verze 1.1, zabrání serveru přijetí obsahu obsahující bez kódování HTML. Tato funkce je určena k zabránění některými útoky vložení skriptu, při kterém kód skriptu klienta nebo HTML můžete nechtěně odeslat na server, ukládat a poté jsou předloženy ostatním uživatelům. Stále důrazně doporučujeme, aby ověření všech vstupních dat a jeho v případě nutnosti kódování HTML.
 
-Například můžete vytvořit webovou stránku, která požaduje e-mailová adresa uživatele a pak uloží tuto e-mailovou adresu v databázi. Pokud uživatel zadá &lt;skriptu&gt;výstrahy ("hello ze skriptu")&lt;/SCRIPT&gt; místo platnou e-mailovou adresu, když se tato data, tento skript můžete provést Pokud obsah nebyl správně kódovaný. Funkce ověření žádosti technologie ASP.NET to zabrání situaci.
+Například můžete vytvořit webovou stránku, která požaduje e-mailovou adresu uživatele a potom úložiště, která e-mailovou adresu v databázi. Pokud uživatel zadá &lt;skriptu&gt;výstrahy ("hello ze skriptu")&lt;/SCRIPT&gt; místo platnou e-mailovou adresu, když se tato data, tento skript můžete provést Pokud obsah nebyl správně kódovaný. Funkce ověření žádosti technologie ASP.NET to zabrání situaci.
 
 ## <a name="why-this-feature-is-useful"></a>Proč se tato funkce je užitečná
 

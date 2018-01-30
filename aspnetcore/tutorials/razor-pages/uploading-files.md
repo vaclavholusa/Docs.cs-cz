@@ -2,18 +2,18 @@
 title: "Nahrávání souborů na stránku Razor v ASP.NET Core"
 author: guardrex
 description: "Zjistěte, jak k nahrání souborů do stránky Razor."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/12/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: a29043ac5d28ae8efcbbd6919e73e3774ba22699
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 24eaa0dd9293cc932c51d280300308e835a0840e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Nahrávání souborů na stránku Razor v ASP.NET Core
 
@@ -76,9 +76,9 @@ Každá skupina formuláře zahrnuje  **\<popisek >** který zobrazí název ka�
 
 Každá skupina formuláře zahrnuje ověřování  **\<span >**. Uživatelský vstup nesplňuje-li vlastnost atributy nastavit v `FileUpload` třídy nebo pokud platí jedna z `ProcessFormFile` metoda souboru ověřování selže, model se nepodaří ověřit. Pokud selže ověření modelu, je generován zprávu užitečné ověření uživatele. Například `Title` vlastnost je opatřen poznámkou `[Required]` a `[StringLength(60, MinimumLength = 3)]`. Pokud se uživateli nepodaří zadat název, obdrží zprávu s upozorněním, že je vyžadována hodnota. Pokud uživatel zadá hodnotu menší než 3 znaky nebo víc než 60 znaků, obdrží zprávu s upozorněním, že hodnota má nesprávnou délku. Soubor je zadaný, který nemá žádný obsah, zobrazí se zpráva označující, že soubor je prázdný.
 
-## <a name="add-the-code-behind-file"></a>Přidejte soubor kódu
+## <a name="add-the-page-model"></a>Přidání stránky modelu
 
-Přidejte soubor kódu (*Index.cshtml.cs*) k *plány* složky:
+Přidání stránky modelu (*Index.cshtml.cs*) k *plány* složky:
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
 
@@ -110,7 +110,7 @@ Když uživatel klikne na Odstranit plán, kterým chcete šance, že na tlačí
 
 [!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
-Souboru kódu na pozadí (*Delete.cshtml.cs*) načte jeden plán identifikovaný `id` v datech trasy žádosti. Přidat *Delete.cshtml.cs* do souboru *plány* složky:
+Model stránky (*Delete.cshtml.cs*) načte jeden plán identifikovaný `id` v datech trasy žádosti. Přidat *Delete.cshtml.cs* do souboru *plány* složky:
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
 

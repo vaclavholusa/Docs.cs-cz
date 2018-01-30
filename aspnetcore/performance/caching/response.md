@@ -2,22 +2,25 @@
 title: "Ukládání odpovědí do mezipaměti v ASP.NET Core"
 author: rick-anderson
 description: "Další informace o použití odpověď do mezipaměti pro nižší nároky na šířku pásma a zvýšit výkon aplikací ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/20/2017
-ms.topic: article
 ms.prod: asp.net-core
+ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c38f9b9a1bf1c523951e2cf1f3070858fe5daf04
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>Ukládání odpovědí do mezipaměti v ASP.NET Core
 
 Podle [Jan Luo](https://github.com/JunTaoLuo), [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), a [Luke Latham](https://github.com/guardrex)
 
+> [!NOTE]
+> Ukládání odpovědí do mezipaměti [není podporována v stránky Razor s prostředím ASP.NET 2.0 základní](https://github.com/aspnet/Mvc/issues/6437). Tato funkce bude podporovaný v [verze ASP.NET Core 2.1](https://github.com/aspnet/Home/wiki/Roadmap).
+  
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 Ukládání odpovědí do mezipaměti snižuje počet požadavků, které provede klient nebo server proxy webový server. Ukládání odpovědí do mezipaměti také snižuje množství práce provádí webového serveru pro generování odpovědi. Ukládání odpovědí do mezipaměti řídí hlavičky, které určují, jakým způsobem chcete klienta, proxy server a middleware do mezipaměti odpovědi.

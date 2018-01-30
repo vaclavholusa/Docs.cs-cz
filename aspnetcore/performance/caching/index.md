@@ -1,26 +1,26 @@
 ---
-title: "Ukládání do mezipaměti"
+title: Caching
 author: ardalis
 description: "Naučte se používat ukládání do mezipaměti ke zlepšení výkonu aplikací ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: performance/caching/index
-ms.openlocfilehash: fc96850f726a5a2a9466691901b32001b8506e36
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 4864380508d8e063c9845b32df46120957dc080e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="caching"></a>Ukládání do mezipaměti
+# <a name="caching"></a>Caching
 
-* [Ukládání do mezipaměti v paměti](xref:performance/caching/memory)
+* [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
 * [Práce s distribuované mezipaměti](xref:performance/caching/distributed)
 * [Detekovat změny s tokeny změn](xref:fundamentals/primitives/change-tokens)
 * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
-* [Middleware ukládání do mezipaměti odpovědi](xref:performance/caching/middleware)
-* [Pomocník značky mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Pomocník značky distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
+* [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 title: "Úvod do architektury ASP.NET MVC | Microsoft Docs"
 author: shanselman
-description: "Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoříte jednoduchou webovou aplikaci, která čte a zapisuje z databáze."
+description: "Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 msc.type: authoredcontent
-ms.openlocfilehash: b884c3c535929038f047e2c4ceedf9e7ca543292
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 08c30f4aab77bff64ed3ab874d13cc5dc863fc99
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="intro-to-aspnet-mvc"></a>Úvod do architektury ASP.NET MVC
 ====================
@@ -85,4 +85,4 @@ To způsobí, že Visual Web Developer spustí webový vývoj-server a spuštěn
 Ihned poskytuje tuto výchozí šablonu můžete dvě stránky přejděte a základní přihlašovací stránku. Umožňuje změnit, jak tato aplikace funguje a chvíli informace o architektuře ASP.NET MVC v procesu. Zavřete okno prohlížeče a umožňuje změnit nějaký kód.
 
 >[!div class="step-by-step"]
-[Další](getting-started-with-mvc-part2.md)
+[Next](getting-started-with-mvc-part2.md)

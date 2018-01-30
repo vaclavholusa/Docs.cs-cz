@@ -2,18 +2,18 @@
 title: "Práce s několika prostředí v ASP.NET Core"
 author: rick-anderson
 description: "Zjistěte, jak ASP.NET Core poskytuje podporu pro řízení chování aplikace ve více prostředích."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 12/25/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/environments
-ms.openlocfilehash: 60a1543ce11d08490e6df0eb84f980672ecfe672
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b40ee9b1c6feae4942f05d22dab776d3cf6c26a0
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="working-with-multiple-environments"></a>Práce s několika prostředí
 
@@ -50,9 +50,9 @@ Vývojové prostředí můžete povolit funkce, které by neměly být vystaveny
 
 Prostředí pro vývoj na místním počítači může být nastavena v *Properties\launchSettings.json* souboru projektu. Hodnoty prostředí nastavené *launchSettings.json* přepsat hodnoty nastavené v prostředí systému.
 
-Následující kód XML ukazuje tři profily *launchSettings.json* souboru:
+Zobrazuje tři profily z následujícím kódu JSON *launchSettings.json* souboru:
 
-[!code-xml[Main](environments/sample/WebApp1/Properties/launchSettings.json?highlight=10,11,18,26)]
+[!code-json[Main](environments/sample/WebApp1/Properties/launchSettings.json?highlight=10,11,18,26)]
 
 Když je aplikace spuštěna s `dotnet run`, první profil s `"commandName": "Project"` se použije. Hodnota `commandName` určuje webový server ke spuštění. `commandName`může být jedna z:
 
@@ -93,7 +93,7 @@ Maximalizovat zabezpečení, výkonu a odolnosti aplikace musí být nakonfiguro
 * Prostředky na straně klienta jsou seskupeny, minifikovaný a potenciálně zpracovat z název CDN.
 * Diagnostické chybové stránky zakázána.
 * Povolit popisný chybové stránky.
-* Produkční protokolování a monitorování povoleno. Například [Application Insights](https://azure.microsoft.com/documentation/articles/app-insights-asp-net-five/).
+* Produkční protokolování a monitorování povoleno. Například [Application Insights](/azure/application-insights/app-insights-asp-net-core).
 
 ## <a name="setting-the-environment"></a>Nastavení prostředí
 
@@ -149,7 +149,7 @@ export ASPNETCORE_ENVIRONMENT=Development
 ```
 Proměnné prostředí úrovni počítače jsou nastaveny v *.bashrc* nebo *.bash_profile* souboru. Upravte soubor pomocí libovolného textového editoru a přidejte následující příkaz.
 
-```
+```bash
 export ASPNETCORE_ENVIRONMENT=Development
 ```
 
@@ -173,7 +173,7 @@ Poznámka: Volání [WebHostBuilder.UseStartup<TStartup> ](https://docs.microsof
 
 [!code-csharp[Main](environments/sample/WebApp1/Startup.cs?name=snippet_all&highlight=15,37)]
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
 * [Spuštění aplikace](xref:fundamentals/startup)
 * [Konfigurace](xref:fundamentals/configuration/index)

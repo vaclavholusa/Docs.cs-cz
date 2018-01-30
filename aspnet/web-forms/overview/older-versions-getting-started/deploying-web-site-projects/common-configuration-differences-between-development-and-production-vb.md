@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8de1acada8713abf5f92c1f13fa82a5d4ccc18be
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b53565e4ae09b007029bdab7cc8724e2d7d193fe
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="common-configuration-differences-between-development-and-production-vb"></a>Běžné konfigurace rozdíly mezi vývojovým týmem a produkční (VB)
 ====================
@@ -30,7 +30,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 ## <a name="introduction"></a>Úvod
 
 
-Posledních dvou kurzy projít nasazení jednoduché webové aplikace. [ *Nasazení vaší lokality pomocí klienta FTP* ](deploying-your-site-using-an-ftp-client-vb.md) kurz vám ukázal, jak zkopírovat potřebné soubory z vývojového prostředí až produkční, použijte samostatné klienta FTP. Předchozí kurzu [ *nasazení vaše lokality pomocí sady Visual Studio*](deploying-your-site-using-visual-studio-vb.md), hledá v nasazení pomocí sady Visual Studio nástroj Kopírovat web a možností publikovat. V obou kurzech každý soubor v produkčním prostředí se kopie souboru ve vývojovém prostředí. Však není pro konfigurační soubory v provozním prostředí, abyste lišit od těch ve vývojovém prostředí. Konfigurace webové aplikace je uložená v `Web.config` souboru a obvykle obsahují informace o externím prostředkům, například databáze, webové a e-mailové servery. Také stanoví chování aplikace v určitých situacích, jako je postup, chcete-li provést, když dojde k neošetřené výjimce.
+Posledních dvou kurzy projít nasazení jednoduché webové aplikace. [ *Nasazení vaší lokality pomocí klienta FTP* ](deploying-your-site-using-an-ftp-client-vb.md) kurz vám ukázal, jak zkopírovat potřebné soubory z vývojového prostředí až produkční, použijte samostatné klienta FTP. Předchozí kurzu [ *nasazení vaše lokality pomocí sady Visual Studio*](deploying-your-site-using-visual-studio-vb.md), hledá v nasazení pomocí sady Visual Studio nástroj Kopírovat web a možností publikovat. V obou kurzech každý soubor v produkčním prostředí se kopie souboru ve vývojovém prostředí. Však není pro konfigurační soubory v provozním prostředí, abyste lišit od těch ve vývojovém prostředí. Konfigurace webové aplikace je uložená v `Web.config` souboru a obvykle obsahují informace o externím prostředkům, například databáze, webové a e-mailu servery. Také stanoví chování aplikace v určitých situacích, jako je postup, chcete-li provést, když dojde k neošetřené výjimce.
 
 Při nasazení webové aplikace je důležité informace o správné konfiguraci skončili v provozním prostředí. Ve většině případů `Web.config` soubor ve vývojovém prostředí nelze zkopírovat do produkčního prostředí jako-je. Místo toho přizpůsobená verze `Web.config` musí být nahrán do produkčního prostředí. V tomto kurzu stručně zkontroluje některé z běžnějších konfigurace rozdíly; taky shrnuje některé techniky pro údržbu informace o konfiguraci se mezi těmito prostředími.
 

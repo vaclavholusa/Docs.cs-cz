@@ -2,18 +2,18 @@
 title: Kurzy ASP.NET Core
 author: rick-anderson
 description: "Seznam podrobné návody pro naučit vyvíjet aplikace ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: dc81edce2b54683b20520babeed8ddb78073e709
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 01a804151ad813dbf47ab4b2415076a4e01bf1d9
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
 
@@ -34,7 +34,7 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
 
    * [Webovou aplikaci pomocí sady Visual Studio pro Windows](first-mvc-app/index.md)
    * [Webovou aplikaci pomocí sady Visual Studio pro Mac](first-mvc-app-mac/index.md)
-   * [Webové aplikace pomocí kódu v sadě Visual Studio na Mac nebo Linux](first-mvc-app-xplat/index.md)
+   * [Webová aplikace s použitím editoru Visual Studio Code pro Mac nebo Linux](first-mvc-app-xplat/index.md)
 
 * [Začínáme s technologiemi ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](../data/ef-mvc/index.md)
 * [Vytváření pomocných rutin značek](../mvc/views/tag-helpers/authoring.md)
@@ -45,8 +45,8 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
 * Vytvoření webové rozhraní API pomocí ASP.NET Core
 
   * [Webové rozhraní API pomocí sady Visual Studio pro Windows](first-web-api.md)
-  * [Webové rozhraní API pomocí sady Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
-  * [Webové rozhraní API pomocí kódu v sadě Visual Studio](web-api-vsc.md)
+  * [Web API se sadou Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
+  * [Web API s editorem Visual Studio Code](web-api-vsc.md)
   
 * [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](web-api-help-pages-using-swagger.md)
 * [Vytvoření back-endu webové služby pro nativní mobilní aplikace](../mobile/native-mobile-backend.md)

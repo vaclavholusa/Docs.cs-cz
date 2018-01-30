@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-source-controls
 msc.type: authoredcontent
-ms.openlocfilehash: f40189796d3e25e9c337768cf04fdbfa293cdc2f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1ac7fb62767d61c97fe00338bc0f5087f4863b5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="data-source-controls"></a>Ovládací prvky zdroje dat
 ====================
@@ -143,7 +143,7 @@ Získá nebo nastaví název parametru uložené procedury, který je používá
 
 Oddělené středníky řetězec určující databáze a tabulky použité v mezipaměti závislost SQL Server. (Závislosti mezipaměti SQL budou popsané v novější modulu.)
 
-### <a name="updatecommand"></a>Vlastnost UpdateCommand
+### <a name="updatecommand"></a>UpdateCommand
 
 Nastaví nebo získá řetězec SQL, který se používá k aktualizaci dat v databázi. To může být buď dotaz SQL nebo název uložené procedury.
 

@@ -2,18 +2,18 @@
 title: "Ovladač HTTP.sys webového serveru implementace v ASP.NET Core"
 author: rick-anderson
 description: "Představuje HTTP.sys, webový server pro ASP.NET Core v systému Windows. Postavená na ovladač režimu jádra Http.Sys, ovladač HTTP.sys je alternativa k Kestrel, který lze použít pro přímé připojení k Internetu bez služby IIS."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/07/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 6fc356d8ecc1b699269286f244000b493e48a2c5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f36a86fc67e715165afd0c38992f9767f90cf3b4
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Ovladač HTTP.sys webového serveru implementace v ASP.NET Core
 

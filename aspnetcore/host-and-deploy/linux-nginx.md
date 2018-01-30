@@ -1,20 +1,20 @@
 ---
 title: "Hostování v systému Linux s Nginx ASP.NET Core"
-description: "Popisuje, jak nastavit jako reverzní proxy server na Ubuntu 16.04 pro přenos dat protokolu HTTP do webové aplikace ASP.NET Core systémem Kestrel Nginx."
 author: rick-anderson
-ms.author: riande
+description: "Popisuje, jak nastavit jako reverzní proxy server na Ubuntu 16.04 pro přenos dat protokolu HTTP do webové aplikace ASP.NET Core systémem Kestrel Nginx."
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 08/21/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 465f1391ef4ff9492d9aed48cb32da0659ceda41
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9939e420fee41b11e709da911d4051a048e789b3
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Hostování v systému Linux s Nginx ASP.NET Core
 
@@ -51,7 +51,7 @@ Reverzní proxy server je běžné instalační program pro obsluhující dynami
 
 ### <a name="why-use-a-reverse-proxy-server"></a>Proč používat reverzní proxy server?
 
-Kestrel je skvělá pro obsluhující dynamický obsah z ASP.NET Core; však nejsou webové části slouží jako bohaté funkce jako servery jako služby IIS, Apache nebo Nginx. Reverzní proxy server můžete přesměrovat pracovní obsluhující statický obsah, ukládání do mezipaměti požadavky, komprese požadavků a ukončení protokolu SSL ze serveru HTTP. Reverzní proxy server může být na vyhrazeném počítači nebo může být nasazeny společně se HTTP server.
+Kestrel je skvělá pro obsluhující dynamický obsah z ASP.NET Core. Však nejsou webové funkce slouží jako bohaté funkce jako servery, například služby IIS, Apache nebo Nginx. Reverzní proxy server můžete přesměrovat pracovní například statický obsah obsluhuje, ukládání do mezipaměti požadavky, komprese požadavků a ukončení protokolu SSL ze serveru HTTP. Reverzní proxy server může být na vyhrazeném počítači nebo může být nasazeny společně se HTTP server.
 
 Pro účely tohoto průvodce se používá jednu instanci Nginx. Běží na stejném serveru, spolu s HTTP server. Na základě požadavků, různé instalační může být zvolené.
 

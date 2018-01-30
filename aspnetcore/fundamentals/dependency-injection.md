@@ -2,21 +2,21 @@
 title: "Vkládání závislostí v ASP.NET Core"
 author: ardalis
 description: "Zjistěte, jak ASP.NET Core implementuje vkládání závislostí a způsobu jeho použití."
-ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: fundamentals/dependency-injection
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7a5a0991694b2c7caa79dbc09f6471d614f67dac
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.date: 10/14/2016
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: fundamentals/dependency-injection
+ms.openlocfilehash: acbce5d139da0acc0870a9cf23a779bf27699a61
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Úvod do vkládání závislostí v ASP.NET Core
+# <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
 <a name="fundamentals-dependency-injection"></a>
 
@@ -71,7 +71,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 }
 ```
 
-## <a name="using-framework-provided-services"></a>Pomocí služby poskytované Framework
+## <a name="using-framework-provided-services"></a>Pomocí služby poskytované framework
 
 `ConfigureServices` Metoda v `Startup` třída je odpovědná za definici služby, aplikace bude používat, včetně funkcí platformy jako Entity Framework Core a ASP.NET Core MVC. Standardně `IServiceCollection` poskytované `ConfigureServices` má následující služby definované (v závislosti na [konfigurace hostitele](xref:fundamentals/hosting)):
 
@@ -101,7 +101,7 @@ Funkce a middleware technologii ASP.NET, jako je například MVC, postupujte pod
 >[!TIP]
 > Můžete požádat o určité zadaný framework služby v rámci `Startup` najdete v části metody prostřednictvím jejich seznamy parametrů - [spuštění aplikace](startup.md) další podrobnosti.
 
-## <a name="registering-your-own-services"></a>Registrace vlastní služby
+## <a name="registering-services"></a>Registrace služby
 
 Takto můžete zaregistrovat vlastní aplikačních služeb. První obecný typ představuje typ (obvykle rozhraní), který bude vyžádána z kontejneru. Druhý obecný typ představuje konkrétní typ, který mohl vytvořit jeho instanci kontejneru, který se používá ke splnění těchto požadavků.
 
@@ -206,7 +206,7 @@ Obecně byste neměli používat tyto vlastnosti přímo, upřednostňují míst
 > [!NOTE]
 > Dáváte přednost požaduje závislosti jako parametry konstruktor přístup `RequestServices` kolekce.
 
-## <a name="designing-your-services-for-dependency-injection"></a>Navrhování vaší služby pro vkládání závislostí
+## <a name="designing-services-for-dependency-injection"></a>Navrhování služeb pro vkládání závislostí
 
 Měli byste navrhnout vaše služby, aby získat jejich spolupracovníci pomocí vkládání závislostí. To znamená, že zabraňující použití stavová statickou metodu volání (důsledkem toho kód pach, označuje jako [statické plevami](http://deviq.com/static-cling/)) a přímé instance závislých tříd v rámci vašich služeb. Mohou pomoci pamatovat fráze, [nové je pojidlem](https://ardalis.com/new-is-glue), při výběru, zda se má vytvořit instanci typu nebo o pomocí vkládání závislostí. Pomocí následujících [plnou zásady z objektu zaměřené na konkrétní návrh](http://deviq.com/solid/), tříd se přirozeně jsou obvykle malé, dobře započítané a snadno otestované.
 
@@ -312,16 +312,11 @@ Při práci s vkládání závislostí, mějte následující doporučení:
 
 Pamatujte si, že je vkládání závislostí *alternativní* na static, globální objekt přístupové vzorce. Nebudete moci pochopit výhody DI Pokud kombinujete statické objektu přístup.
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
-* [Spuštění aplikace](startup.md)
-
-* [Testování](../testing/index.md)
-
+* [Spuštění aplikace](xref:fundamentals/startup)
+* [Testování](xref:testing/index)
 * [Psaní kódu vyčištění v ASP.NET Core pomocí vkládání závislostí (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
-
 * [Návrh aplikace spravované kontejneru, Prelude: Kde podporuje, patří kontejneru?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
-
 * [Princip explicitní závislosti.](http://deviq.com/explicit-dependencies-principle/)
-
 * [Inverze – kontejnery ovládacích prvků a vzor vkládání závislostí](https://www.martinfowler.com/articles/injection.html) (Fowler)

@@ -2,18 +2,18 @@
 title: "Povolení žádostí napříč zdroji (CORS)"
 author: rick-anderson
 description: "Toto téma představuje CORS jako standard pro povolení nebo odmítnutí žádostí napříč zdroji v aplikaci ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 05/17/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 9f53ce11f1659aa3416fe4fbb94183c64ab0dab5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1c0d87b61882f69dbf2aeb0a896d9294bd029374
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Povolení žádostí napříč zdroji (CORS)
 
@@ -209,7 +209,7 @@ Odpověď HTTP bude teď obsahovat přístup – ovládací prvek-Allow-Credenti
 
 Pokud prohlížeč odesílá přihlašovací údaje, ale odpověď neobsahuje platný přístup – ovládací prvek-Allow-Credentials záhlaví, prohlížeče nebude vystavit odpověď na žádost a vyvolá chybu požadavek AJAX.
 
-Pečlivě velmi o povolení cross-origin přihlašovací údaje, protože znamená to, že web v jiné doméně může odesílat pověření přihlášeného uživatele do vaší aplikace jménem uživatele, aniž by uživatel znal. Sdílení CORS spec také stavy tohoto nastavení počátky k "*" (všechny původy) je neplatný, pokud je k dispozici přístup – ovládací prvek-Allow-Credentials záhlaví.
+Buďte opatrní při povolení cross-origin přihlašovací údaje. Web v jiné doméně odeslat do aplikace jménem uživatele bez vědomí uživatele pověření přihlášeného uživatele. Specifikace CORS také stavy tohoto nastavení počátky k "*" (všechny původy) je neplatný Pokud `Access-Control-Allow-Credentials` záhlaví nachází.
 
 ### <a name="set-the-preflight-expiration-time"></a>Nastavte hodnotu doby předběžných vypršení platnosti
 
@@ -221,11 +221,11 @@ Záhlaví přístupu – ovládací prvek-Max-Age Určuje, jak dlouho může do 
 
 ## <a name="how-cors-works"></a>Jak funguje CORS
 
-Tato část popisuje, co se stane, že v žádosti o CORS na úrovni zpráv protokolu HTTP. Je důležité pochopit, jak CORS funguje, takže můžete nakonfigurovat zásady CORS správně a vyřešit případné věcí nefungují podle očekávání.
+Tato část popisuje, co se stane, že v požadavku CORS na úrovni zpráv protokolu HTTP. Je důležité pochopit, jak CORS funguje tak, aby zásada CORS můžete správně nakonfigurovaná a troubleshooted když dojde k neočekávané chování.
 
-Specifikace CORS zavádí několik nových hlavičky HTTP, které povolení žádostí napříč zdroji. Pokud prohlížeč podporuje CORS, nastaví tato záhlaví automaticky pro požadavky cross-origin; nemusíte provádět žádné zvláštní v kódu jazyka JavaScript.
+Specifikace CORS zavádí několik nových hlavičky HTTP, které povolení žádostí napříč zdroji. Pokud prohlížeč podporuje CORS, nastaví tato záhlaví automaticky pro požadavky cross-origin. Vlastní kód JavaScript není vyžadován k povolení sdílení CORS.
 
-Tady je příklad žádost nepůvodního zdroje. Záhlaví "Původ" dává domény, lokality, která odeslala žádost:
+Tady je příklad žádost nepůvodního zdroje. `Origin` Záhlaví poskytuje domény, lokality, která odeslala žádost:
 
 ```
 GET http://myservice.azurewebsites.net/api/test HTTP/1.1

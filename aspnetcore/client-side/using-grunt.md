@@ -2,18 +2,18 @@
 title: "Použití Grunt v ASP.NET Core"
 author: rick-anderson
 description: 
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: client-side/using-grunt
-ms.openlocfilehash: 527373829754757e52ab84b64e04702d649e9062
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c23f170b36ac1b9623835337020f2b5ac9514971
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-grunt-in-aspnet-core"></a>Použití Grunt v ASP.NET Core 
 
@@ -51,7 +51,7 @@ Pokud chcete začít, nastavte novou prázdnou webovou aplikaci a přidejte soub
 
 4.  Přidejte novou složku s názvem `TypeScript` do vašeho adresáře projektu.
 
-5.  Před přidáním jakékoli soubory, Pojďme zajistit, že Visual Studio má možnost "zkompilovat na Uložit ' pro soubory TypeScript se změnami. *Nástroje > Možnosti > textový Editor > Typescript > projektu*
+5.  Před přidáním jakékoli soubory, ujistěte se, že Visual Studio má možnost "zkompilovat na Uložit ' pro soubory TypeScript se změnami. Přejděte na **nástroje** > **možnosti** > **textového editoru** > **Typescript**  >  **Projektu**:
 
     ![Možnosti nastavení automatického compliation TypeScript souborů](using-grunt/_static/typescript-options.png)
 

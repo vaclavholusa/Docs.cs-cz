@@ -2,18 +2,18 @@
 title: "Vysoce výkonné protokolování s LoggerMessage v ASP.NET Core"
 author: guardrex
 description: "Naučte se používat k vytvoření delegáti lze uložit do mezipaměti, které vyžadují méně objekt přidělení než protokolovacího nástroje rozšiřující metody pro scénáře protokolování vysoce výkonné LoggerMessage funkcí."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/03/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: defba75c6c9ea13d24af4cd8515d82d9e7cf9853
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b155826b5047e88a79d9e339d7bca8885a79006d
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>Vysoce výkonné protokolování s LoggerMessage v ASP.NET Core
 
@@ -92,7 +92,7 @@ Metoda statické rozšíření pro přidávání v uvozovkách, `QuoteAdded`, ob
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet10)]
 
-V souboru kódu na pozadí indexovou stránku (*Pages/Index.cshtml.cs*), `QuoteAdded` nazývá do protokolu zpráva:
+V modelu stránky indexovou stránku (*Pages/Index.cshtml.cs*), `QuoteAdded` nazývá do protokolu zpráva:
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet3&highlight=6)]
 
@@ -114,7 +114,7 @@ Všimněte si, jak je předán výjimka delegáta v `QuoteDeleteFailed`:
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet11)]
 
-V modelu Index stránky code-behind, odstranění úspěšné uvozovky volá `QuoteDeleted` metodu protokolovacího nástroje. Když pro odstranění, se nenašel v uvozovkách `ArgumentNullException` je vyvolána výjimka. Výjimka je zachytí aplikace `try` &ndash; `catch` příkaz a voláním `QuoteDeleteFailed` metodu protokolovacího nástroje v `catch` blok (*Pages/Index.cshtml.cs*):
+V modelu stránky pro stránku Index odstranění úspěšné uvozovky volá `QuoteDeleted` metodu protokolovacího nástroje. Když pro odstranění, se nenašel v uvozovkách `ArgumentNullException` je vyvolána výjimka. Výjimka je zachytí aplikace `try` &ndash; `catch` příkaz a voláním `QuoteDeleteFailed` metodu protokolovacího nástroje v `catch` blok (*Pages/Index.cshtml.cs*):
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet5&highlight=14,18)]
 

@@ -2,18 +2,18 @@
 title: "Syntaxe Razor stránky trasy a aplikace konvence funkce ASP.NET Core"
 author: guardrex
 description: "Zjistit, jak trasy a aplikací modelu zprostředkovatele konvence funkce vám pomohou ovládací prvek stránky směrování, zjišťování a zpracování."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/23/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/razor-pages/razor-pages-convention-features
-ms.openlocfilehash: 69475ca9abd4e732dc704ad6a8a2fffe219984f7
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: bf1c895fc972310d5541d0098226d58b8183e320
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="razor-pages-route-and-app-convention-features-in-aspnet-core"></a>Syntaxe Razor stránky trasy a aplikace konvence funkce ASP.NET Core
 
@@ -262,7 +262,7 @@ Zaregistrovat `CustomPageApplicationModelProvider` v `Startup` třídy:
 
 [!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet10)]
 
-Soubor modelu code-behind *Index.cshtml.cs* ukazuje, jak jsou změnit zásady vytváření názvů metoda obyčejnou obslužné rutiny pro stránky v aplikaci. Odeberou se běžném provozu "Na" předponu pojmenování použít s stránky Razor. Metoda, která inicializuje stav stránky teď jmenuje `Get`. Můžete zobrazit touto konvencí použít v celé aplikaci, pokud otevřít libovolný soubor kódu pro kterákoli ze stránek.
+Model stránky v *Index.cshtml.cs* ukazuje, jak jsou změnit zásady vytváření názvů metoda obyčejnou obslužné rutiny pro stránky v aplikaci. Odeberou se běžném provozu "Na" předponu pojmenování použít s stránky Razor. Metoda, která inicializuje stav stránky teď jmenuje `Get`. Můžete zobrazit touto konvencí použít v celé aplikaci v případě, že otevřete kteréhokoli modelu stránky pro všechny stránky.
 
 Každý z jiné metody spustit pomocí příkazu HTTP, který popisuje jeho zpracování. Tyto dvě metody, které začínají `Delete` by za normálních okolností považována za odstranit příkaz HTTP, ale logika `TryParseHandlerMethod` explicitně na hodnotu POST nastaví příkaz pro obě obslužné rutiny.
 
@@ -286,7 +286,7 @@ Filtr stránek ([IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipage
 
 Tento filtr vyhledává `globalTemplate` směrování hodnotu "TriggerValue" a záměna v "Zastaralá".
 
-`ReplaceRouteValueFilter` Atribut lze použít přímo na `PageModel` v kódu:
+`ReplaceRouteValueFilter` Atribut lze použít přímo na `PageModel`:
 
 [!code-csharp[Main](razor-pages-convention-features/sample/Pages/OtherPages/Page3.cshtml.cs?range=10-12&highlight=1)]
 

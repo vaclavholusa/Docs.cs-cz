@@ -1,19 +1,19 @@
 ---
 title: "Prevence útoků (XSRF/proti útokům CSRF) padělání požadavku posílaného mezi weby v ASP.NET Core"
 author: steve-smith
-ms.author: riande
 description: "Prevence útoků (XSRF/proti útokům CSRF) padělání požadavku posílaného mezi weby v ASP.NET Core"
 manager: wpickett
+ms.author: riande
 ms.date: 7/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: 3831bf737186d10eb1b298f5ec2da1fd33ebedd9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e076e301004c04b5c516d775353a4b6e50a3f36e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Prevence útoků (XSRF/proti útokům CSRF) padělání požadavku posílaného mezi weby v ASP.NET Core
 
@@ -43,7 +43,7 @@ Příklad útoku proti útokům CSRF:
 Všimněte si, že akce formuláře požadavky na server, snadno napadnutelný, aby škodlivé weby. Toto je část "webů" proti útokům CSRF.
 
 4. Uživatel kliknutím na tlačítko pro odeslání. V prohlížeči automaticky zahrne ověřovacího souboru cookie pro požadovanou doménu (citlivé lokality v tomto případě) s požadavkem.
-5. Žádost se spustí na serveru s kontext ověřování uživatele a dělat vše, co ověřený uživatel může provádět.
+5. Žádost se spustí na serveru s kontext ověřování uživatele a můžete provádět žádnou akci, která ověřený uživatel může provádět.
 
 Tento příklad vyžaduje, aby uživatel klepnutím na tlačítko formuláře. Na stránce škodlivého může:
 
@@ -353,13 +353,12 @@ Když je uživatel přihlášen do systému, uživatelské relace je vytvořena 
 
 ### <a name="user-tokens"></a>Tokeny uživatele
 
-Ověřování na základě tokenu není relace uložit na server. Místo toho když je přihlášený uživatel jejich jste vystaví token (ne antiforgery token). Tento token obsahuje všechna data, která je nutné k ověření tokenu. Také obsahuje informace o uživateli ve formě [deklarace identity](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Pokud chce uživatel pro přístup k prostředkům serveru, které vyžadují ověřování, token je odeslána na server s hlavičku další ověřování ve formuláři nosiče {token}. Díky aplikaci bezstavové vzhledem k tomu, že v každé následné žádosti o token je předán v požadavku pro ověřování na straně serveru. Tento token není *šifrované*; je spíše *kódovaný*. Na straně serveru může dekódovat tokenu pro přístup k nezpracované informace v tokenu. Odeslat token v následných žádostí, můžete buď je uložit v prohlížeči místní úložiště nebo v souboru cookie. Nemusíte si dělat starosti o ohrožení zabezpečení XSRF, pokud váš token je uložený v místním úložišti, ale je problém, pokud je token je uložen v souboru cookie.
+Ověřování na základě tokenu není relace uložit na server. Když je uživatel přihlášen, že se vystaví token, (ne antiforgery token). Tento token obsahuje data, která je nutné k ověření tokenu. Také obsahuje informace o uživateli ve formě [deklarace identity](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Pokud chce uživatel pro přístup k prostředkům serveru, které vyžadují ověřování, token je odeslána na server s hlavičku další ověřování ve formuláři nosiče {token}. Díky aplikaci bezstavové vzhledem k tomu, že v každé následné žádosti o token je předán v požadavku pro ověřování na straně serveru. Tento token není *šifrované*; je spíše *kódovaný*. Na straně serveru může dekódovat tokenu pro přístup k nezpracované informace v tokenu. Odeslat token v následných žádostí, buď uložit v místním úložišti v prohlížeči nebo v souboru cookie. Nemusíte si dělat starosti o ohrožení zabezpečení XSRF Pokud token je uložený v místním úložišti, ale je problém, pokud je token je uložen v souboru cookie.
 
 ### <a name="multiple-applications-are-hosted-in-one-domain"></a>Více aplikací, které jsou hostované v jedné doméně
 
-I když `example1.cloudapp.net` a `example2.cloudapp.net` jsou různých hostitelích, je vztah implicitní vztah důvěryhodnosti mezi všechny hostitele pod `*.cloudapp.net` domény. Tento vztah důvěryhodnosti implicitní umožňuje potenciálně nedůvěryhodní hostitelé ovlivnit vzájemně soubory cookie (stejného původu zásady, které řídí požadavky AJAX nemáte platit pro soubory cookie HTTP). Modul runtime ASP.NET Core poskytuje některé zmírnění v tom, že uživatelské jméno se vloží do pole tokenu, tak i v případě, že škodlivý subdoména je možné přepsat token relace nelze vygenerovat token pro daného uživatele platné pole. Ale když jsou hostované v takovém prostředí rutiny předdefinované anti-XSRF stále nelze bránit proti zneužití relace nebo přihlášení proti útokům CSRF útoky. Sdílené hostitelská prostředí jsou vunerable zneužití relace, přihlášení proti útokům CSRF a jiným útokům.
+I když `example1.cloudapp.net` a `example2.cloudapp.net` jsou různých hostitelích, je vztah implicitní vztah důvěryhodnosti mezi hostiteli v rámci `*.cloudapp.net` domény. Tento vztah důvěryhodnosti implicitní umožňuje potenciálně nedůvěryhodní hostitelé ovlivnit vzájemně soubory cookie (stejného původu zásady, které řídí požadavky AJAX nemáte platit pro soubory cookie HTTP). Modul runtime ASP.NET Core poskytuje některé zmírnění v tom, že uživatelské jméno se vloží do tokenu pole. I když je možné přepsat token relace škodlivý subdomény, nelze vygenerovat token pro daného uživatele platné pole. Když jsou hostované v takovém prostředí, rutiny předdefinované anti-XSRF stále nelze bránit proti zneužití relace nebo přihlášení proti útokům CSRF útoky. Sdílené hostitelská prostředí jsou vunerable zneužití relace, přihlášení proti útokům CSRF a jiným útokům.
 
-
-### <a name="additional-resources"></a>Další prostředky
+### <a name="additional-resources"></a>Další zdroje
 
 * [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) na [otevřete projekt webové aplikace zabezpečení](https://www.owasp.org/index.php/Main_Page) (OWASP).

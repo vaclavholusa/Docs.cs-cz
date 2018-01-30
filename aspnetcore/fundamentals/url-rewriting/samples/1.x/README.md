@@ -6,7 +6,7 @@ Při spuštění ukázky, odpověď se zpracuje zobrazující adresu URL přepsa
 
 ## <a name="examples-in-this-sample"></a>Příklady v této ukázce
 
-* `AddRedirect("redirect-rule/(.*)", "$1")`
+* `AddRedirect("redirect-rule/(.*)", "redirected/$1")`
   - Úspěch stavový kód: 302 (nalezeno)
   - Příklad (přesměrování): **/redirect-rule / {capture_group}** k **/redirected/ {capture_group}**
 * `AddRewrite(@"^rewrite-rule/(\d+)/(\d+)", "rewritten?var1=$1&var2=$2", skipRemainingRules: true)`

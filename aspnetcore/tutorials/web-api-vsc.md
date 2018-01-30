@@ -1,25 +1,25 @@
 ---
 title: "Vytvoření webové rozhraní API pomocí ASP.NET Core a VS Code"
-description: "Sestavení webového rozhraní API v systému macOS, Linux nebo Windows s ASP.NET MVC jádra a Visual Studio Code"
 author: rick-anderson
+description: "Sestavení webového rozhraní API v systému macOS, Linux nebo Windows s ASP.NET MVC jádra a Visual Studio Code"
+manager: wpickett
 ms.author: riande
 ms.date: 09/22/2017
-ms.topic: get-started-article
 ms.prod: asp.net-core
 ms.technology: aspnet
-manager: wpickett
+ms.topic: get-started-article
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: 9fec8904cf05fc486160c0641731c6336fe2766a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 44566c4014400aa2ca3d512eeaa226637b5f0b97
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-code-on-linux-macos-and-windows"></a>Vytvoření webového rozhraní API s ASP.NET MVC jádra a Visual Studio Code v systému Windows, Linux a systému macOS
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Wasson Jan](https://github.com/mikewasson)
 
-V tomto kurzu vytvoříte webového rozhraní API pro správu "úkolů" položek seznamu. Nebude sestavení uživatelského rozhraní.
+V tomto kurzu sestavení webového rozhraní API pro správu "úkolů" položek seznamu. Uživatelského rozhraní není vytvořená.
 
 Existují 3 verze tohoto kurzu:
 

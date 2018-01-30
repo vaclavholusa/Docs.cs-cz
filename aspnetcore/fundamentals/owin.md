@@ -2,19 +2,19 @@
 title: "Spustit nástroj webové rozhraní pro platformu .NET (OWIN)"
 author: ardalis
 description: "Zjistit, jak ASP.NET Core podporuje Open Web Interface pro .NET (OWIN), což umožňuje webových aplikací pro být odděleno od webové servery."
-ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: fundamentals/owin
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 42ffa01745b7a492b3b8cb2778805f254863b890
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.date: 10/14/2016
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: fundamentals/owin
+ms.openlocfilehash: 91e59d8568434867e10869b4db22bce9935ce573
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-open-web-interface-for-net-owin"></a>Úvod do spustit nástroj webové rozhraní pro platformu .NET (OWIN)
 
@@ -264,7 +264,7 @@ OWIN závisí na `IDictionary<string,object>` objekt ke sdělování informací 
 | owin. ResponseBody | `Stream`  | |
 
 
-### <a name="other-data-owin-v100"></a>Další Data (OWIN v1.0.0)
+### <a name="other-data-owin-v100"></a>Další data (OWIN v1.0.0)
 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
@@ -318,9 +318,7 @@ OWIN závisí na `IDictionary<string,object>` objekt ke sdělování informací 
 | protokol websocket. ClientCloseStatus | `int` | Nepovinné |
 | protokol websocket. ClientCloseDescription | `String` | Nepovinné |
 
+## <a name="additional-resources"></a>Další zdroje
 
-## <a name="additional-resources"></a>Další prostředky
-
-* [Middleware](middleware.md)
-
-* [Servery](servers/index.md)
+* [Middleware](xref:fundamentals/middleware)
+* [Servery](xref:fundamentals/servers/index)

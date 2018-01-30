@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f2c7b1324e75584a80530620eea94d4ecd7a7044
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c5a4d2e3468c9b7db5d3acf9f59fc13a6b791497
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="processing-unhandled-exceptions-vb"></a>Zpracování neošetřených výjimek (VB)
 ====================
@@ -82,7 +82,7 @@ Následující kód používá `GetLastErrormessage` k načtení informací o v�
 
 [!code-vb[Main](processing-unhandled-exceptions-vb/samples/sample3.vb)]
 
-V tuto chvíli máte všechny informace, které budete muset psát kód, který bude protokolovat podrobnosti výjimky do databázové tabulky. Můžete vytvořit tabulku databáze s sloupce pro každou podrobnosti o chybě zájmu – typ, zprávu, trasování zásobníku a tak dále – spolu s další užitečné požadované informace, například adresu URL k požadované stránce a jméno aktuálně přihlášeného uživatele. V `Application_Error` obslužné rutiny události by pak připojení k databázi a vložení záznamu do tabulky. Podobně můžete přidat kód pro výstrahy vývojář chyby prostřednictvím e-mailu.
+V tuto chvíli máte všechny informace, které budete muset psát kód, který bude protokolovat podrobnosti výjimky do databázové tabulky. Můžete vytvořit tabulku databáze s sloupce pro každou podrobnosti o chybě zájmu – typ, zprávu, trasování zásobníku a tak dále – spolu s další užitečné požadované informace, například adresu URL k požadované stránce a jméno aktuálně přihlášeného uživatele. V `Application_Error` obslužné rutiny události by pak připojení k databázi a vložení záznamu do tabulky. Podobně můžete přidat kód pro výstrahy vývojář chyby e-mailem.
 
 V knihovnách protokolování chyb v následujících dvou kurzy poskytují takové funkce předinstalované, proto není nutné vytvářet tento protokolování chyb a oznámení sami. Však k objasnění, která `Error` událost vyvolána a že `Application_Error` obslužné rutiny události lze protokolu podrobnosti o chybě a upozornění vývojář, Pojďme přidat kód, který upozorní vývojář, když dojde k chybě.
 
@@ -90,29 +90,29 @@ V knihovnách protokolování chyb v následujících dvou kurzy poskytují tako
 
 Když dojde k neošetřené výjimce v provozním prostředí, je důležité výstrahy vývojový tým, aby můžou posoudit chyba a určit, jaké akce je třeba přijmout. Například pokud dojde k chybě při připojování k databázi, pak budete muset dvojité Zkontrolujte připojovací řetězec a, možná, otevřete lístek podpory se vaše webového hostingu společnosti. Pokud k výjimce došlo kvůli chybě programování, pravděpodobně nutné další kód nebo logiku ověření pro přidání do vyhnout tak v budoucnu.
 
-Třídy rozhraní .NET Framework v [ `System.Net.Mail` obor názvů](https://msdn.microsoft.com/library/system.net.mail.aspx) můžete snadno odeslat e-mail. [ `MailMessage` Třída](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) představuje e-mailovou zprávu a má vlastnosti, například `To`, `From`, `Subject`, `Body`, a `Attachments`. `SmtpClass` Se používá k odeslání `MailMessage` objektu pomocí zadaného serveru SMTP; lze zadat prostřednictvím kódu programu nebo deklarativně v nastavení serveru SMTP [ `<system.net>` element](https://msdn.microsoft.com/library/6484zdc1.aspx) v `Web.config file`. Další informace o odesílání e-mailové zprávy v aplikaci ASP.NET najdete na Moje článku [odesílání e-mailu v ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)a [nejčastější dotazy týkající se System.Net.Mail](http://systemnetmail.com/).
+Třídy rozhraní .NET Framework v [ `System.Net.Mail` obor názvů](https://msdn.microsoft.com/library/system.net.mail.aspx) můžete snadno odeslat e-mail. [ `MailMessage` Třída](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) představuje e-mailovou zprávu a má vlastnosti, například `To`, `From`, `Subject`, `Body`, a `Attachments`. `SmtpClass` Se používá k odeslání `MailMessage` objektu pomocí zadaného serveru SMTP; lze zadat prostřednictvím kódu programu nebo deklarativně v nastavení serveru SMTP [ `<system.net>` element](https://msdn.microsoft.com/library/6484zdc1.aspx) v `Web.config file`. Další informace o odesílání e-mailové zprávy v aplikaci ASP.NET najdete na můj článek [odesílání e-mailu v ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)a [nejčastější dotazy týkající se System.Net.Mail](http://systemnetmail.com/).
 
 > [!NOTE]
 > `<system.net>` Element obsahuje nastavení serveru SMTP, který se používá `SmtpClient` třídy při odesílání e-mailu. Vaše webového hostingu společnosti pravděpodobně má server SMTP, který můžete použít k odesílání e-mailu z vaší aplikace. Informace o nastavení serveru SMTP, který byste měli použít ve webové aplikaci naleznete v části Podpora webového hostitele.
 
 
-Přidejte následující kód, který `Application_Error` obslužné rutiny události pro odeslání vývojář e-mailu, když dojde k chybě:
+Přidejte následující kód, který `Application_Error` obslužné rutiny události odeslat vývojář e-mail, když dojde k chybě:
 
 [!code-vb[Main](processing-unhandled-exceptions-vb/samples/sample4.vb)]
 
-Při výše uvedeném kódu je velmi náročná, vytvoří hromadné ho HTML, který se zobrazí v e-mailu posílá vývojář. Spustí kód odkazem `HttpException` vrácený `GetLastError` – metoda (`lastErrorWrapper`). Skutečné výjimku, která byla vyvolána žádosti o se načítají prostřednictvím `lastErrorWrapper.InnerException` a přiřazený k proměnné `lastError`. Typ, zprávu a zásobník trasování informace získává z `lastError` a uložené v proměnné tři řetězce.
+Při výše uvedeném kódu je velmi náročná, vytvoří hromadné ho HTML, který se zobrazí v e-mailu pro vývojáře. Spustí kód odkazem `HttpException` vrácený `GetLastError` – metoda (`lastErrorWrapper`). Skutečné výjimku, která byla vyvolána žádosti o se načítají prostřednictvím `lastErrorWrapper.InnerException` a přiřazený k proměnné `lastError`. Typ, zprávu a zásobník trasování informace získává z `lastError` a uložené v proměnné tři řetězce.
 
-Další, `MailMessage` objekt s názvem `mm` je vytvořena. Text e-mailu je ve formátu HTML a zobrazí adresu URL k požadované stránce, názvu aktuálně přihlášeného uživatele a informace o výjimce (typ, zpráv a trasování zásobníku). Jedním z nástrojů věcí o `HttpException` třída je, že můžete vygenerovat HTML použít k vytvoření výjimka podrobnosti žlutý obrazovky z smrti (YSOD) voláním [GetHtmlErrorMessage metoda](https://msdn.microsoft.com/library/system.web.httpexception.gethtmlerrormessage.aspx). Tato metoda zde slouží k načtení kód YSOD podrobnosti výjimky a přidejte ji do e-mailu jako přílohu. Jedno slovo upozornění: Pokud výjimka, která aktivuje `Error` událostí došlo k výjimce založené na protokolu HTTP (třeba požadavek na stránce neexistující) potom `GetHtmlErrorMessage` metoda vrátí `null`.
+Další, `MailMessage` objekt s názvem `mm` je vytvořena. Tělo e-mailu je ve formátu HTML a zobrazí adresu URL k požadované stránce, názvu aktuálně přihlášeného uživatele a informace o výjimce (typ, zpráv a trasování zásobníku). Jedním z nástrojů věcí o `HttpException` třída je, že můžete vygenerovat HTML použít k vytvoření výjimka podrobnosti žlutý obrazovky z smrti (YSOD) voláním [GetHtmlErrorMessage metoda](https://msdn.microsoft.com/library/system.web.httpexception.gethtmlerrormessage.aspx). Tato metoda zde slouží k načtení kód YSOD podrobnosti výjimky a přidejte ji do e-mailu jako přílohu. Jedno slovo upozornění: Pokud výjimka, která aktivuje `Error` událostí došlo k výjimce založené na protokolu HTTP (třeba požadavek na stránce neexistující) potom `GetHtmlErrorMessage` metoda vrátí `null`.
 
 Posledním krokem je odeslat `MailMessage`. To se provádí tak, že vytvoříte novou `SmtpClient` metoda a volání jeho `Send` metoda.
 
 > [!NOTE]
-> Před použitím tento kód ve vaší webové aplikaci budete chtít změnit hodnoty `ToAddress` a `FromAddress` konstanty z support@example.com libovolnou e-mailovou adresu by měly být odeslány na e-mailové oznámení chyby a pocházejí z. Také budete muset zadat nastavení serveru SMTP v `<system.net>` kapitoly `Web.config`. Poraďte se se svého poskytovatele hostitele webové nastavení serveru SMTP používat.
+> Před použitím tento kód ve vaší webové aplikaci budete chtít změnit hodnoty `ToAddress` a `FromAddress` konstanty z support@example.com k e-mailu by měly být odeslány na adresu e-mailové oznámení chyby a pocházejí z. Také budete muset zadat nastavení serveru SMTP v `<system.net>` kapitoly `Web.config`. Poraďte se se svého poskytovatele hostitele webové nastavení serveru SMTP používat.
 
 
-Tento kód na místě kdykoliv dojde k chybě vývojáře je odeslán shrnuje chybu, která obsahuje YSOD e-mailu. V předchozím kurzu jsme ukázán běhová chyba návštěvou Genre.aspx a předávání v neplatný `ID` hodnotu pomocí řetězce dotazu, jako je třeba `Genre.aspx?ID=foo`. Na stránce s `Global.asax` soubor na místě vytváří stejné prostředí pro uživatele, jako v předchozím kurzu - ve vývojovém prostředí budete se bude opakovat výjimka podrobnosti žlutý obrazovky z smrti, zatímco v produkčním prostředí budete najdete v části vlastní chybovou stránku. Kromě tohoto chování existující vývojář se odesílají e-mailu.
+Tento kód na místě kdykoliv dojde k chybě vývojáře je odeslán e-mailovou zprávu shrnuje chybu, která obsahuje YSOD. V předchozím kurzu jsme ukázán běhová chyba návštěvou Genre.aspx a předávání v neplatný `ID` hodnotu pomocí řetězce dotazu, jako je třeba `Genre.aspx?ID=foo`. Na stránce s `Global.asax` soubor na místě vytváří stejné prostředí pro uživatele, jako v předchozím kurzu - ve vývojovém prostředí budete se bude opakovat výjimka podrobnosti žlutý obrazovky z smrti, zatímco v produkčním prostředí budete najdete v části vlastní chybovou stránku. Kromě tohoto chování existující vývojář se odesílají e-mailu.
 
-**Obrázek 2** zobrazuje e-mailu přijal při návštěvě `Genre.aspx?ID=foo`. Text e-mailu shrnuje informace o výjimce, při `YSOD.htm` přílohy zobrazuje obsah, který se zobrazí v YSOD podrobnosti výjimky (najdete v části **obrázek 3**).
+**Obrázek 2** ukazuje e-maily přijaté při návštěvě `Genre.aspx?ID=foo`. Tělo e-mailu shrnuje informace o výjimce, při `YSOD.htm` přílohy zobrazuje obsah, který se zobrazí v YSOD podrobnosti výjimky (najdete v části **obrázek 3**).
 
 [![](processing-unhandled-exceptions-vb/_static/image5.png)](processing-unhandled-exceptions-vb/_static/image4.png)
 
@@ -147,7 +147,7 @@ Teď, když dojde k neošetřené výjimce `Application_Error` obslužné rutiny
 
 ## <a name="summary"></a>Souhrn
 
-Když dojde k neošetřené výjimce ve webové aplikaci ASP.NET modulem runtime ASP.NET vyvolá `Error` událostí a zobrazí se nakonfigurované chybová stránka. Upozorníme na vývojáře v chybě, podrobnosti protokolu nebo zpracovat nějak jiné vytvořením obslužné rutiny události pro události chyby. Existují dva způsoby vytvoření obslužné rutiny události pro `HttpApplication` události, jako `Error`: v `Global.asax` souboru nebo z modulu HTTP. Tento kurz vám ukázal, jak vytvořit `Error` obslužné rutiny událostí v `Global.asax` soubor, který prostřednictvím e-mailové zprávy upozorní vývojáři k chybě.
+Když dojde k neošetřené výjimce ve webové aplikaci ASP.NET modulem runtime ASP.NET vyvolá `Error` událostí a zobrazí se nakonfigurované chybová stránka. Upozorníme na vývojáře v chybě, podrobnosti protokolu nebo zpracovat nějak jiné vytvořením obslužné rutiny události pro události chyby. Existují dva způsoby vytvoření obslužné rutiny události pro `HttpApplication` události, jako `Error`: v `Global.asax` souboru nebo z modulu HTTP. Tento kurz vám ukázal, jak vytvořit `Error` obslužné rutiny událostí v `Global.asax` soubor, který upozorní vývojáři chybu prostřednictvím e-mailovou zprávu.
 
 Vytvoření `Error` je užitečné, pokud potřebujete ke zpracování neošetřených výjimek nějakým způsobem jedinečné nebo vlastní obslužnou rutinu události. Ale vytvoření vlastního `Error` obslužné rutiny události k zaprotokolování výjimky nebo oznámit vývojář není využívat s maximální efektivitou času jako již existují knihovny protokolování volné a snadno použitelný chyby, které může být instalační program v řádu minut. Následující dva kurzy zkontrolujte dvě takové knihovny.
 

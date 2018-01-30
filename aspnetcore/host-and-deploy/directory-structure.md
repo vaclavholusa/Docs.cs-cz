@@ -2,19 +2,19 @@
 title: "Struktura adresářů ASP.NET Core"
 author: guardrex
 description: "V tématu strukturu adresáře publikovaných aplikací ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 03/15/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: 27f0f40aea1c55315642d7d6f9b9d7be3e111cb4
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 55e1e0dac32609446243098dbb4a4373f06b4212
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="directory-structure-of-published-aspnet-core-apps"></a>Struktura adresářů publikované aplikace ASP.NET Core
 
@@ -24,8 +24,8 @@ V ASP.NET Core, adresář aplikace *publikování*, se skládá z souborů aplik
 
 | Typ aplikace                       | Struktura adresářů |
 | ------------------------------ | ------------------- |
-| Nasazení závislé na Framework | <ul><li>publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Moduly runtime\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>MyApp.deps.JSON</li><li>MyApp.dll</li><li>MyApp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>MyApp.runtimeconfig.JSON</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul> |
-| Samostatná nasazení      | <ul><li>publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>MyApp.deps.JSON</li><li>MyApp.exe</li><li>MyApp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>MyApp.runtimeconfig.JSON</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul> |
+| Nasazení závislé na Framework | <ul><li>publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Moduly runtime\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>myapp.deps.json</li><li>myapp.dll</li><li>myapp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>myapp.runtimeconfig.json</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul> |
+| Samostatná nasazení      | <ul><li>publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>myapp.deps.json</li><li>myapp.exe</li><li>myapp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>myapp.runtimeconfig.json</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul> |
 \*Určuje adresář
 
 Obsah *publikování* představuje adresář *obsahu kořenovou cestu*, také zavolat *základní cesty aplikace*, nasazení. Jakýkoli název je uveden *publikování* directory v nasazení, její umístění slouží jako serveru fyzickou cestu k hostované aplikace. *Wwwroot* adresáře, pokud existuje, obsahuje pouze statické prostředky. *Protokoly* adresář může být součástí nasazení ve vytváření projektu a přidání `<Target>` element uvedené níže, aby vaše *.csproj* souboru nebo fyzicky vytváření adresáře na Server.

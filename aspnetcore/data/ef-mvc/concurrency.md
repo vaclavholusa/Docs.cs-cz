@@ -2,18 +2,18 @@
 title: "Jádro ASP.NET MVC s EF Core - souběžnosti - 8, 10"
 author: tdykstra
 description: "Tento kurz ukazuje způsobu řešení konfliktů, když se více uživatelů aktualizace stejné entity ve stejnou dobu."
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: eee84fe0fbec6ed772342d09931986994903906a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c271488d4da72ba340f3617ac20c7b6da2574c69
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>Zpracování konfliktů souběžnosti – základní EF s kurz k ASP.NET MVC jádra (8 10)
 

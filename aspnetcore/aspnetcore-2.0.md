@@ -2,18 +2,18 @@
 title: "Co je nového v technologii ASP.NET 2.0 jádra"
 author: rick-anderson
 description: "Co je nového v technologii ASP.NET 2.0 jádra"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/10/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: ca02de7954002dcbc125898c9f570438f88db818
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 35d57abd07e83cd5b190572962fbf43aef03a534
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Co je nového v technologii ASP.NET 2.0 jádra
 
@@ -82,7 +82,7 @@ Jeden šablony projektů stránky aplikace (SPA) pro úhlová, Aurelia, Knockout
 
 ## <a name="kestrel-improvements"></a>Vylepšení kestrel
 
-Webový server Kestrel obsahuje nové funkce, které lépe vyhovovalo jako internetový server. Přidali jsme řadu možnosti konfigurace serveru omezení v `KestrelServerOptions` třída je nové `Limits` vlastnost. Nyní můžete přidat omezení pro následující:
+Webový server Kestrel obsahuje nové funkce, které lépe vyhovovalo jako internetový server. Počet možnosti konfigurace serveru omezení přidán v `KestrelServerOptions` třída je nové `Limits` vlastnost. Přidejte následující omezení:
 
 - Maximální počet klientských připojení
 - Velikost textu maximální požadavku
@@ -120,7 +120,7 @@ Informace o stavu plánované dokumentaci najdete v tématu [potíže Githubu](h
 
 ## <a name="automatic-use-of-anti-forgery-tokens"></a>Automatické použití tokeny proti zfalšování
 
-ASP.NET Core vždy pomohlo kódování HTML obsah ve výchozím nastavení, ale s novou verzí přesměrováváme krok navíc pomáhá zabránit útokům (XSRF) padělání požadavku posílaného mezi weby. ASP.NET Core bude nyní emitování tokeny proti zfalšování ve výchozím nastavení a ověření je na akce POST formuláře a stránkách bez další konfigurace.
+ASP.NET Core vždy pomohlo kódování HTML obsah ve výchozím nastavení, ale s novou verzí pořízení krok navíc pomohou zabránit útokům (XSRF) padělání požadavku posílaného mezi weby. ASP.NET Core bude nyní emitování tokeny proti zfalšování ve výchozím nastavení a ověření je na akce POST formuláře a stránkách bez další konfigurace.
 
 Další informace najdete v tématu [útoky brání webů požadavku padělání (XSRF/proti útokům CSRF) v ASP.NET Core](xref:security/anti-request-forgery).
 
@@ -158,4 +158,4 @@ Pokyny k migraci aplikace ASP.NET Core 1.x na technologii ASP.NET 2.0 jádra naj
 
 Úplný seznam změn, najdete v článku [poznámky k verzi ASP.NET Core 2.0](https://github.com/aspnet/Home/releases/tag/2.0.0).
 
-Pokud chcete propojit s ASP.NET Core vývojový tým průběh a plány, naladit týdenní [ASP.NET komunity Standup](https://live.asp.net/).
+Pro připojení k vývojový tým ASP.NET Core průběh a plány, naladit [ASP.NET komunity Standup](https://live.asp.net/).

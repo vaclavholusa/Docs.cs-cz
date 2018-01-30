@@ -2,19 +2,19 @@
 title: Stav relace a aplikace v ASP.NET Core
 author: rick-anderson
 description: "Přístupy k zachování aplikace a stavu uživatele (relace) mezi požadavky."
-ms.author: riande
 manager: wpickett
-ms.date: 11/27/2017
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: fundamentals/app-state
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e00960370fbe87ac0f81f8455526221fa992decd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.date: 11/27/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: fundamentals/app-state
+ms.openlocfilehash: 7aa200d3612f766ab633ccab807421b9c5393975
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Úvod do stavu relace a aplikace v ASP.NET Core
 
@@ -28,7 +28,7 @@ Stav relace je funkce v ASP.NET Core, který můžete použít k ukládání a u
 
 ASP.NET Core Udržovat stav relace tím, že klient soubor cookie, který obsahuje Identifikátor relace, která je odeslána na server s každou žádostí. Tento server využívá ID relace k načtení dat relace. Soubor cookie relace je prohlížeč, a proto nelze sdílet relací mezi prohlížeče. Soubory cookie relace se odstraní pouze při ukončení relace prohlížeče. Pokud není soubor cookie pro relaci s ukončenou platností, je vytvořit novou relaci, který používá stejný soubor cookie relace. 
 
-Server uchovává relace po omezenou dobu od poslední žádosti. Můžete nastavit časový limit relace nebo použijte výchozí hodnotu 20 minut. Je ideální pro ukládání uživatelských dat, která je specifická pro konkrétní relace, ale nemusí být trvale jako trvalý stav relace. Data odstranit z úložiště zálohování buď při volání `Session.Clear` nebo vypršení platnosti relace v úložišti. Server není známo, při zavření prohlížeče nebo když se odstraní soubor cookie relace.
+Server uchovává relace po omezenou dobu od poslední žádosti. Buď nastavte časový limit relace, nebo použijte výchozí hodnotu 20 minut. Je ideální pro ukládání uživatelských dat, která je specifická pro konkrétní relace, ale nemusí být trvale jako trvalý stav relace. Data odstranit z úložiště zálohování buď při volání metody `Session.Clear` nebo vypršení platnosti relace v úložišti. Server není známo, při zavření prohlížeče nebo když se odstraní soubor cookie relace.
 
 > [!WARNING]
 > Citlivá data neukládejte v relaci. Klient nemusí zavřete prohlížeč a vymazat souboru cookie relace (a některé prohlížeče zachování souborů cookie relací připojení mezi windows). Navíc nemusí být relaci omezen na jednoho uživatele; Další uživatel může pokračovat ve stejné relaci.
@@ -281,9 +281,7 @@ Někdo uloží nákupní košík v relaci. Uživatel přidá položku, ale potvr
 
 Je doporučeným způsobem, jak zkontrolovat takové chyby pro volání `await feature.Session.CommitAsync();` z kódu aplikace po dokončení zápisu do relace. Pak můžete udělat, co se vám líbí došlo k chybě. Funguje stejným způsobem jako při volání metody `LoadAsync`.
 
-
-### <a name="additional-resources"></a>Další prostředky
-
+### <a name="additional-resources"></a>Další zdroje
 
 * [ASP.NET Core 1.x: ukázkový kód v tomto dokumentu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/sample/src/WebAppSession)
 * [ASP.NET Core 2.x: ukázkový kód v tomto dokumentu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/sample/src/WebAppSessionDotNetCore2.0App)

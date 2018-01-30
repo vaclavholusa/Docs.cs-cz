@@ -2,19 +2,19 @@
 title: "Pomocné rutiny značky v ASP.NET Core"
 author: rick-anderson
 description: "Zjistěte, jaké jsou pomocné rutiny značky a jejich použití v ASP.NET Core."
-ms.author: riande
 manager: wpickett
-ms.date: 7/14/2017
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: mvc/views/tag-helpers/intro
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3c198ccc3e3e2c11f3e2b9379bc63bd6428dbf69
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.date: 7/14/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: mvc/views/tag-helpers/intro
+ms.openlocfilehash: 939eccd45ec437f379fb9349c24246cc0683528b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Úvod do pomocné rutiny značky v ASP.NET Core 
 
@@ -250,12 +250,9 @@ Můžete přizpůsobit písma a zabarvení z **nástroje** > **možnosti** > **p
 
 ![obrázek](intro/_static/fontoptions2.png)
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
-* [Vytváření Pomocníci značky](authoring.md)
-* [Práce s formuláři](../working-with-forms.md)
+* [Vytváření Pomocníci značky](xref:mvc/views/tag-helpers/authoring)
+* [Práce s formuláři](xref:mvc/views/working-with-forms)
 * [TagHelperSamples na Githubu](https://github.com/dpaquette/TagHelperSamples) obsahuje ukázky značky Pomocníka pro práci s [Bootstrap](http://getbootstrap.com/).
-
-<!--
-* [Working with Forms ](xref:mvc/views/working-with-forms)
--->
+* [Práce s formuláři](xref:mvc/views/working-with-forms)

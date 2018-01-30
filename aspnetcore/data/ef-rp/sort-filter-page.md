@@ -4,15 +4,15 @@ author: rick-anderson
 description: "V tomto kurzu přidáte třídění, filtrování a stránkování funkce na stránku pomocí ASP.NET Core a Entity Framework Core."
 ms.author: riande
 ms.date: 10/22/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 24649374b71da39d638d943617a219d45f064846
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9c1ee6f8c00f3cd501ea86fbf73f51ae540a010a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>Řazení, filtrování, stránkování a seskupení – základní EF s stránky Razor (3 8)
 
@@ -107,7 +107,7 @@ Projděte ladicího programu.
 Chcete-li přidat filtrování studenty indexovou stránku:
 
 * Textové pole a tlačítko odeslání se přidá na stránku Razor. Textové pole poskytuje hledaný řetězec na jméno nebo příjmení.
-* Použít hodnotu textového pole aktualizace souboru kódu na pozadí.
+* Model stránky je aktualizovat a použít hodnotu textového pole.
 
 ### <a name="add-filtering-functionality-to-the-index-method"></a>Přidat další filtrování funkce Index – metoda
 
@@ -245,7 +245,7 @@ Projděte ladicího programu.
 V tomto kroku *Pages/About.cshtml* se aktualizuje a zobrazí, kolik studenti, kteří mají zaregistrované pro každé datum registrace. Aktualizace používá seskupování a zahrnuje následující kroky:
 
 * Vytvořte třídu modelu zobrazení dat používané **o** stránky.
-* Upravte soubor o stránky Razor a kódu.
+* Změňte model o Razor stránky a stránky.
 
 ### <a name="create-the-view-model"></a>Vytvoření modelu zobrazení
 
@@ -255,7 +255,7 @@ V *SchoolViewModels* složky, přidejte *EnrollmentDateGroup.cs* následujícím
 
 [!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
-### <a name="update-the-about-code-behind-page"></a>Aktualizace kódu stránky o
+### <a name="update-the-about-page-model"></a>Aktualizace modelu stránky o
 
 Aktualizace *Pages/About.cshtml.cs* soubor s následujícím kódem:
 
@@ -277,7 +277,7 @@ Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené
 
 ![O stránku](sort-filter-page/_static/about.png)
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
 * [Ladění ASP.NET Core 2.x zdroje](https://github.com/aspnet/Docs/issues/4155)
 

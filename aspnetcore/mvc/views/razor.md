@@ -2,18 +2,18 @@
 title: Reference syntaxe Razor pro ASP.NET Core
 author: rick-anderson
 description: "Další informace o syntaxi Razor kód pro vložení kódu na serveru do webové stránky."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/18/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: abdbb8112533d42f81180abad52f5ee86e3b280f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 98021cc76555f0c1402764c845471a4730b01b20
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pro ASP.NET Core
 

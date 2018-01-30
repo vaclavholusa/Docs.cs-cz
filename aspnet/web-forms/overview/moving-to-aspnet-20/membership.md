@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6bff33e9ec1de03c591de6eee2e632c7b7509d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a5a495845b60f9aac51c9776311af67f5dc8767
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="membership"></a>Členství
 ====================
@@ -120,7 +120,7 @@ Ovládací prvek LoginView je šablonované ovládací prvek, který poskytuje d
 
 ## <a name="passwordrecovery-control"></a>Ovládací prvek PasswordRecovery
 
-Ovládací prvek PasswordRecovery umožňuje uživatelům přijímat e-mailu s své aktuální heslo nebo resetovat své heslo. Prostý text a šifrované hesla můžete obnovit a odesláno e-mailem uživatelům. Pokud je použita hodnota hash hesla, nelze obnovit. Uživatel místo toho bude nutné provést resetování hesla.
+Ovládací prvek PasswordRecovery umožňuje uživatelům přijímat e-mail s své aktuální heslo nebo resetovat své heslo. Prostý text a šifrované hesla můžete obnovit a e-mailem uživatelům. Pokud je použita hodnota hash hesla, nelze obnovit. Uživatel místo toho bude nutné provést resetování hesla.
 
 ## <a name="loginstatus-control"></a>Ovládací prvek LoginStatus
 

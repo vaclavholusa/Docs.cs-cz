@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: 5780bfde928011f46c3f504aec927f2127f10d0d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16dfe3c899dfa028d8a52b4b5f9c2868887e8fa9
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="configuration-and-instrumentation"></a>Konfigurace a instrumentace
 ====================
@@ -138,7 +138,7 @@ Typy poskytovatelů, které jsou k dispozici umožňují odesílat události vý
 
 Technologie ASP.NET 2.0 používá v protokolu událostí zprostředkovatele out-of-the-box do protokolu událostí podle aplikační domény spouštění a zastavování, jakož i protokolování jakékoli neošetřené výjimky. Pomůžete tak, aby pokrývalo některé základní scénáře. Řekněme například, že aplikace vyvolá výjimku, ale uživatel nebude uložen chyba a ho nelze reprodukovat. Výchozí pravidlo protokolu událostí bude moct shromažďovat informace zásobníku výjimek a získat lepší představu o jaký typ chyby došlo k chybě. Další příklad platí v případě, že aplikace je došlo ke ztrátě stavu relace. V takovém případě můžete zobrazit v protokolu událostí k určení, zda je recyklace domény aplikace a proč domény aplikace zastavena na prvním místě.
 
-Navíc je rozšiřitelný systém stavu sledování. Můžete například definovat vlastní webové události, je provést v rámci vaší aplikace a pak definovat pravidlo k odeslání informací o události do zprostředkovatele například k e-mailu. To umožňuje snadno tie vaše instrumentace na poskytovatele sledování stavu. Například může aktivovat událost pokaždé, když je pořadí zpracování a nastavit pravidlo, které odesílá všechny události do databáze SQL serveru. Může také aktivovat událost v případě, že se uživateli nepodaří přihlásit několikrát za sebou, a nastavte událost používat – na základě zprostředkovatele.
+Navíc je rozšiřitelný systém stavu sledování. Můžete například definovat vlastní webové události, je provést v rámci vaší aplikace a pak definovat pravidlo k odeslání informací o události do zprostředkovatele například e-mailu. To umožňuje snadno tie vaše instrumentace na poskytovatele sledování stavu. Například může aktivovat událost pokaždé, když je pořadí zpracování a nastavit pravidlo, které odesílá všechny události do databáze SQL serveru. Může také aktivovat událost v případě, že se uživateli nepodaří přihlásit několikrát za sebou, a nastavte událost používat e mailové zprostředkovatele.
 
 Konfigurace pro výchozí zprostředkovatele a události je uložená v globální souboru Web.config. Globální souboru Web.config uloží všechny webové nastavení, které byly uloženy v souboru Machine.config. technologie ASP.NET 1 x. Globální soubor Web.config je umístěný v následujícím adresáři:
 
@@ -152,7 +152,7 @@ Konfigurace pro výchozí zprostředkovatele a události je uložená v globáln
 | --- | --- |
 | **eventMappings** | Obsahuje mapování pro různé třídy WebBase. Tento seznam můžete rozšířit, pokud generovat třídě události. Generování třídě události získáte podrobnější přes zprostředkovatele, které odesílají informace na. Například může nakonfigurovat neošetřené výjimky k odeslání do systému SQL Server při odesílání vlastních událostí k e-mailu. |
 | **pravidla** | Odkazy eventMappings poskytovatele. |
-| **ukládání do vyrovnávací paměti** | Použít se systému SQL Server a e-mailovou určit, jak často se vyprázdnit události k poskytovateli. |
+| **ukládání do vyrovnávací paměti** | Určit, jak často se vyprázdnit události k poskytovateli použít se systému SQL Server a e-mailu. |
 
 Níže je příklad kódu z globální souboru Web.config.
 
@@ -196,7 +196,7 @@ Musíte přidat pravidlo pro přidružení eventMapping do zprostředkovatele a 
 
 [!code-xml[Main](configuration-and-instrumentation/samples/sample10.xml)]
 
-## <a name="how-to-forward-events-to-e-mail"></a>Jak přesměrovat události k e-mailu
+## <a name="how-to-forward-events-to-email"></a>Jak přesměrovat události k e-mailu
 
 Události k e-mailu můžete dál. Dávejte pozor, o které pravidel událostí je mapovat do svého poskytovatele e-mailu jako neúmyslně odesláním sami velké množství informací, může být vhodnější pro SQL Server nebo v protokolu událostí. Existují dva poskytovatelé e-mailu; SimpleMailWebEventProvider a TemplatedMailWebEventProvider. Každý má stejné atributy konfigurace, s výjimkou "Šablona" a "detailedTemplateErrors" atributy, které jsou dostupné jenom na TemplatedMailWebEventProvider.
 

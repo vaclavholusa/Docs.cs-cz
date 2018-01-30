@@ -2,18 +2,18 @@
 title: Migrace z ASP.NET Core 1.x na 2.0
 author: scottaddie
 description: "Tento článek popisuje požadavky a nejběžnější kroky migrace projektu ASP.NET Core 1.x na technologii ASP.NET 2.0 jádra."
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.date: 10/03/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 2ab6d72ca57332eb25435a144d77ea43203a7b4c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a88d22c88689d20376fec748b05fc4b5ecca3510
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>Migrace z ASP.NET Core 1.x na jádro ASP.NET 2.0
 
@@ -146,7 +146,7 @@ Od verze 2.0, je chybný postup udělat něco `BuildWebHost` s výjimkou sestave
 
 <a name="view-compilation"></a>
 
-## <a name="review-your-razor-view-compilation-setting"></a>Zkontrolujte vaše nastavení kompilace zobrazení syntaxe Razor
+## <a name="review-razor-view-compilation-setting"></a>Zkontrolujte nastavení kompilace zobrazení syntaxe Razor
 Rychlejší doba spuštění aplikace a menší publikované sady mají velký důraz na vás. Z těchto důvodů [kompilace zobrazení syntaxe Razor](xref:mvc/views/view-compilation) je povoleno ve výchozím nastavení v technologii ASP.NET 2.0 jádra.
 
 Nastavení `MvcRazorCompileOnPublish` vlastnost na hodnotu true se už nevyžaduje. Pokud se zakázání kompilace zobrazení, vlastnost mohl být odebrán z *.csproj* souboru.
@@ -157,7 +157,7 @@ Při cílení na rozhraní .NET Framework, stále je třeba explicitně odkazova
 
 <a name="app-insights"></a>
 
-## <a name="rely-on-application-insights-light-up-features"></a>Funkce Application Insights "Light-Up"
+## <a name="rely-on-application-insights-light-up-features"></a>Funkce "light-up" Application Insights
 Snadné nastavení výkonu instrumentace aplikací je důležité. Nyní můžete spoléhat na novém [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) "light-up" funkce dostupné v nástroji Visual Studio 2017.
 
 Projekty ASP.NET Core 1.1 vytvořené v aplikaci Visual Studio 2017 přidat Application Insights ve výchozím nastavení. Pokud nepoužíváte Application Insights SDK přímo, mimo *Program.cs* a *Startup.cs*, postupujte takto:
@@ -178,8 +178,9 @@ Pokud používáte Application Insights SDK přímo, nadále používat. Rozhran
 
 <a name="auth-and-identity"></a>
 
-## <a name="adopt-authentication--identity-improvements"></a>Přijmout ověřování nebo vylepšení Identity
+## <a name="adopt-authenticationidentity-improvements"></a>Přijmout nebo identitu ověřování vylepšení
 Jádro ASP.NET 2.0 obsahuje nový model ověřování a několik významných změn ASP.NET Core Identity. Pokud jste vytvořili projekt s jednotlivé uživatelské účty, které jsou povolené, nebo pokud jste ručně přidali ověřování nebo Identity, najdete v části [migrace ověřování a identita na technologii ASP.NET 2.0 základní](xref:migration/1x-to-2x/identity-2x).
 
-## <a name="additional-resources"></a>Další prostředky
-- [Nejnovější změny ve jádro ASP.NET 2.0](https://github.com/aspnet/announcements/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A2.0.0+label%3A%22Breaking+change%22&utf8=%E2%9C%93)
+## <a name="additional-resources"></a>Další zdroje
+
+* [Nejnovější změny ve jádro ASP.NET 2.0](https://github.com/aspnet/announcements/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A2.0.0+label%3A%22Breaking+change%22&utf8=%E2%9C%93)

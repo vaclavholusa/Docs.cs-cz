@@ -46,7 +46,7 @@ Zkontrolujte *Views/_ViewStart.cshtml* souboru:
 
 Změňte název `Index` zobrazení.
 
-Otevřete *Views/HelloWorld/Index.cshtml*. Existují dvě místa změnit:
+Open *Views/HelloWorld/Index.cshtml*. Existují dvě místa změnit:
 
    * Text, který se zobrazí v názvu prohlížeče.
    * Sekundární hlavičky (`<h2>` element).
@@ -85,7 +85,7 @@ Akce kontroleru je vyvolán v odpovědi na požadavek příchozí adresy URL. T�
 
 Řadiče jsou zajišťuje data nutná pro šablonu zobrazení k vykreslení odpovědi. Osvědčeným postupem: by měl zobrazit šablony **není** provést obchodní logiky nebo pracovat přímo s databází. Místo toho by měla zobrazit šablonu fungovat jenom s data, která je k němu poskytované řadičem. Zachování tento "oddělené oblasti zájmu" vám pomůže uchovávat kódu čistá, možností intenzivního testování a udržovatelný.
 
-V současné době `Welcome` metoda v `HelloWorldController` třídy trvá `name` a `ID` parametr a potom výstupy hodnoty přímo do prohlížeče. Místo mít řadič vykreslení této odpovědi jako řetězec, umožňuje změnit řadič místo toho použít šablonu zobrazení. Zobrazit šablonu způsobí vygenerování dynamických odpovědí, která znamená, že potřebujete předat příslušné bits dat z řadiče zobrazení za účelem vygenerování odpovědi. To provedete tak, že řadiče put dynamických dat (parametry), která vyžaduje zobrazení šablony `ViewData` slovník, který šablona zobrazení můžete poté přistoupit.
+V současné době `Welcome` metoda v `HelloWorldController` třídy trvá `name` a `ID` parametr a potom výstupy hodnoty přímo do prohlížeče. Místo mít řadič vykreslení této odpovědi jako řetězec, změňte řadič místo toho použít šablonu zobrazení. Zobrazit šablonu generuje dynamické odpovědi, což znamená, že odpovídající bits dat musí být předán z řadiče zobrazení za účelem vygenerování odpovědi. To udělat tak, že řadiče put dynamických dat (parametry), která vyžaduje zobrazení šablony `ViewData` slovník, který šablona zobrazení můžete poté přistoupit.
 
 Vraťte se do *HelloWorldController.cs* soubor a změňte `Welcome` metody přidat `Message` a `NumTimes` hodnotu `ViewData` slovníku. `ViewData` Je dynamický objekt, což znamená všechno můžete vložit do ní; slovník `ViewData` objekt nemá žádné definované vlastnosti, dokud vložíte něco uvnitř ho. [Systému vazby modelu MVC](xref:mvc/models/model-binding) automaticky mapuje pojmenované parametry (`name` a `numTimes`) z řetězce dotazu v panelu Adresa parametry ve své metodě. Kompletní *HelloWorldController.cs* soubor vypadá takto:
 

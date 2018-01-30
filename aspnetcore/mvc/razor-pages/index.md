@@ -2,18 +2,18 @@
 title: "Úvod do stránky Razor v ASP.NET Core"
 author: Rick-Anderson
 description: "Kurz ASP.NET Core na stránky Razor. Obsahuje základní MVC, ASP.NET Core 2.x, pro vývoj webů a Visual Studio 2017. Tato dokumentace poskytuje přehled používání stránky Razor v ASP.NET Core k usnadnění vývoje zaměřené na stránce scénáře."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/12/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: a08c1b59c7be3a27fc11e6737a1cb4b4208f2901
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c16959189448337b12dc4902300516b25c200eee
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -76,7 +76,7 @@ Podobná stránky, můžete použít `PageModel` třídy, je uvedené v následu
 
 [!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml)]
 
-*Pages/Index2.cshtml.cs* "" souboru kódu:
+*Pages/Index2.cshtml.cs* model stránky:
 
 [!code-cs[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml.cs)]
 
@@ -116,7 +116,7 @@ Kontext databáze:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Create.cshtml)]
 
-*Pages/Create.cshtml.cs* souboru kódu na pozadí pro zobrazení:
+*Pages/Create.cshtml.cs* model stránky:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_ALL)]
 
@@ -332,7 +332,7 @@ Následující kód v *Pages/Customers/Index.cshtml* souboru se zobrazí hodnota
 <h3>Msg: @Model.Message</h3>
 ```
 
-*Pages/Customers/Index.cshtml.cs* souboru kódu se vztahuje `[TempData]` atribut `Message` vlastnost.
+*Pages/Customers/Index.cshtml.cs* modelu stránka se vztahuje `[TempData]` atribut `Message` vlastnost.
 
 ```cs
 [TempData]
@@ -352,7 +352,7 @@ Na následující stránce generuje kód pro dvě stránky pomocí obslužné ru
 
 Formuláře v předchozím příkladu má dva odeslání tlačítka, každý využívající `FormActionTagHelper` odeslat na jinou adresu URL. `asp-page-handler` Atribut je Pomocníka pro `asp-page`. `asp-page-handler`generuje adresy URL, které odesílají do jednotlivých metod obslužné rutiny, které jsou definované na stránce. `asp-page`není zadán, protože je ukázka propojení na aktuální stránce.
 
-Soubor kódu:
+Model stránky:
 
 [!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml.cs?highlight=20,32)]
 

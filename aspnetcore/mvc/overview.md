@@ -2,18 +2,18 @@
 title: "Přehled ASP.NET Core MVC"
 author: ardalis
 description: "Zjistěte, jak je bohaté rozhraní pro vytváření webových aplikací ASP.NET MVC jádra a rozhraní API pomocí Model-View-Controller návrh vzor."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 01/08/2018
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/overview
-ms.openlocfilehash: 3c3279e7d25704f5e70bbd83cf9feebda8319203
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16fd1b5e71cde4364f02640f504d42218ed680df
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Přehled ASP.NET Core MVC
 
@@ -29,7 +29,7 @@ Následující diagram znázorňuje třemi hlavními komponentami a ty, které o
 
 ![Vzor MVC](overview/_static/mvc.png)
 
-Tato vymezení odpovědnosti umožňuje škálovat aplikaci z hlediska složitost, protože je jednodušší code, ladit a testovat (model, zobrazení nebo řadič) něčeho, co má jediné úlohy (a odpovídá [jeden zásady odpovědnosti ](http://deviq.com/single-responsibility-principle/)). Je obtížné aktualizace, testování a ladění kódu, který má závislosti rozloženy dva nebo víc z těchto tří oblastí. Například logiku uživatelského rozhraní se obvykle změnit častěji, než obchodní logiku. Pokud kód a obchodní logiku prezentace jsou sloučeny do jednoho objektu, budete muset upravit objekt, který obsahuje obchodní logiku pokaždé, když změníte uživatelské rozhraní. Je to pravděpodobně vzniku chyb, a vyžaduje opakované zkoušky všechny obchodní logiky po změně každých minimální uživatelské rozhraní.
+Tato vymezení odpovědnosti umožňuje škálovat aplikaci z hlediska složitost, protože je jednodušší code, ladit a testovat (model, zobrazení nebo řadič) něčeho, co má jediné úlohy (a odpovídá [jeden zásady odpovědnosti ](http://deviq.com/single-responsibility-principle/)). Je obtížné aktualizace, testování a ladění kódu, který má závislosti rozloženy dva nebo víc z těchto tří oblastí. Například logiku uživatelského rozhraní se obvykle změnit častěji, než obchodní logiku. Pokud kód a obchodní logiku prezentace jsou sloučeny do jednoho objektu, musíte změnit objekt obsahující obchodní logiku pokaždé, když se změní uživatelské rozhraní. To často představuje chyby a vyžaduje opakované zkoušky obchodní logiky po každé změně minimální uživatelské rozhraní.
 
 > [!NOTE]
 > Zobrazení a kontroler závisí na modelu. Model však závisí na zobrazení ani kontroleru. To je jedno z klíčových výhod oddělení. Toto rozdělení umožňuje modelu, který má být vytvořeny a testovány nezávislé vizuální prezentaci.

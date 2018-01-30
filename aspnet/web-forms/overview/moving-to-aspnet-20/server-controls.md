@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 09f1a2e4de024e5778e69fdd691d9cb0040459f3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72e9cac7cf9a01791c30783fa56ad7ea205a5a11
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="server-controls"></a>Ovládací prvky serveru
 ====================
@@ -69,7 +69,7 @@ Toto video je návod, zobrazení stavu a stavu ovládacího prvku.
 ![](server-controls/_static/image1.png)
 
 
-[Otevřete Video přes celou obrazovku](server-controls/_static/state1.wmv)
+[Open Full-Screen Video](server-controls/_static/state1.wmv)
 
 
 Aby ovládacího prvku serveru ke čtení a zápisu pro řízení stavu je třeba provést tři kroky.
@@ -214,7 +214,7 @@ Toto video je návod, ovládacího prvku průvodce.
 ![](server-controls/_static/image2.png)
 
 
-[Otevřete Video přes celou obrazovku](server-controls/_static/wizard1.wmv)
+[Open Full-Screen Video](server-controls/_static/wizard1.wmv)
 
 
 ## <a name="localize-control"></a>Lokalizace ovládacího prvku
@@ -224,7 +224,7 @@ Ovládací prvek Localize je podobná prvku Literal control. Ovládací prvek Lo
 | **Režim** | **Vysvětlení** |
 | --- | --- |
 | Transformace | Značka je transformovat podle protokolu prohlížeče, který zadal žádost. |
-| Atribut PassThrough | Značka je vykreslen jako-je. |
+| PassThrough | Značka je vykreslen jako-je. |
 | Kódování | Značky, který je přidán do ovládacího prvku jsou zakódovány pomocí HtmlEncode. |
 
 ## <a name="multiview-and-view-controls"></a>MultiView a ovládací prvky zobrazení
@@ -295,7 +295,7 @@ Ovládací prvek LoginView umožňuje zobrazení různých šablon na základě 
 
 Ovládací prvek PasswordRecovery slouží k načtení zapomenutým heslům uživatelé aplikací technologie ASP.NET. Je o něm zmínka v podrobněji modul novější.
 
-## <a name="loginstatus"></a>loginStatus
+## <a name="loginstatus"></a>LoginStatus
 
 Tento ovládací prvek LoginStatus zobrazí stav přihlášení uživatele. Je o něm zmínka v podrobněji modul novější.
 

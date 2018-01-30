@@ -2,18 +2,18 @@
 title: "Stránky Razor EF základní - CRUD - 2 8"
 author: rick-anderson
 description: "Ukazuje, jak vytvořit, číst, aktualizovat, odstraňovat s EF jádra"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/crud
-ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 757aeb713b645cea0fe633b150784184d2d3571e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Vytvářet, číst, aktualizovat a odstraňovat – základní EF s stránky Razor (2 8)
 
@@ -23,7 +23,7 @@ Podle [tní Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter
 
 V tomto kurzu vygenerované CRUD (vytvořit, číst, aktualizovat, odstraňovat) kód je zkontrolovat a upravit.
 
-Poznámka: Minimalizovat složitost a zachovat tyto kurzy zaměřené na základní EF, EF základní kód se používá v souborech kódu stránky Razor. Někteří vývojáři použít k vytvoření abstraktní vrstvu mezi uživatelského rozhraní (Razor stránky) a vrstva přístupu k datům služby vrstvy nebo úložiště vzoru v.
+Poznámka: Minimalizovat složitost a zachovat tyto kurzy zaměřené na základní EF, EF základní kódu použít v modelech stránky stránky Razor. Někteří vývojáři použít k vytvoření abstraktní vrstvu mezi uživatelského rozhraní (Razor stránky) a vrstva přístupu k datům služby vrstvy nebo úložiště vzoru v.
 
 V tomto kurzu, vytvořit, upravit, odstranit a stránky Razor podrobnosti v *Student* složky jsou upraveny.
 
@@ -147,7 +147,7 @@ Hodnota "OverPost" úspěšně přidán do `Secret` vlastnost vloženého řádk
 <a name="vm"></a>
 ### <a name="view-model"></a>Model zobrazení
 
-Model zobrazení obvykle obsahuje podmnožinu vlastností obsažených v modelu používá aplikace. Aplikační model se často nazývá modelu domény. Model domény obvykle obsahuje všechny vlastnosti požadované odpovídající entita v databázi. Model zobrazení obsahuje pouze vlastnosti, které jsou nutné pro vrstvu uživatelského rozhraní (například stránka vytvořit). Kromě zobrazení modelu některé aplikace použít vazby modelu nebo vstupní modelu k předávání dat mezi třídou kódu stránky Razor a v prohlížeči. Vezměte v úvahu následující `Student` modelu zobrazení:
+Model zobrazení obvykle obsahuje podmnožinu vlastností obsažených v modelu používá aplikace. Aplikační model se často nazývá modelu domény. Model domény obvykle obsahuje všechny vlastnosti požadované odpovídající entita v databázi. Model zobrazení obsahuje pouze vlastnosti, které jsou nutné pro vrstvu uživatelského rozhraní (například stránka vytvořit). Kromě zobrazení modelu některé aplikace použít vazby modelu nebo vstupní modelu k předávání dat mezi třídy modelu stránky Razor stránky a v prohlížeči. Vezměte v úvahu následující `Student` modelu zobrazení:
 
 [!code-csharp[Main](intro/samples/cu/Models/StudentVM.cs)]
 
@@ -165,7 +165,7 @@ Na stránkách Razor `PageModel` odvozené třídy je zobrazení modelu.
 
 ## <a name="update-the-edit-page"></a>Upravit stránku aktualizace
 
-Aktualizace souboru kódu stránky upravit:
+Aktualizace modelu stránky pro stránku upravit:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Edit.cshtml.cs?name=snippet_OnPostAsync&highlight=20,36)]
 

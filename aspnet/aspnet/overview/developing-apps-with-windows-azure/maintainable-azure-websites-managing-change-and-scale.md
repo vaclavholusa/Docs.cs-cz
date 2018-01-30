@@ -2,7 +2,7 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 title: "Předá na testovacím: udržovatelný weby Azure: Správa změn a škálování | Microsoft Docs"
 author: rick-anderson
-description: "Microsoft Azure umožňuje snadno vytvářet a nasazovat weby do produkčního prostředí. Ale nejsou uděláte, když je aplikace za provozu, budete právě začínat! Můžete..."
+description: "V tomto testovacím prostředí zjistěte, jak Microsoft Azure umožňuje snadno vytvářet a nasazovat weby do produkčního prostředí."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 3d24c633368abc14efcd9fcf200a4d05c5b182c9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4bce02b2c592ff04e0dbce78d18004c69268e4fd
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Předá na testovacím: udržovatelný weby Azure: Správa změn a škálování
 ====================

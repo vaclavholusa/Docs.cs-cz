@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 862f07defafb2d2613fef9f76f13aab0b11c5440
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7792891aed6f0c5e952018dacb36a1d267cb6ae0
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-vb"></a>Nasazení webu pomocí klienta FTP (VB)
 ====================
@@ -48,7 +48,7 @@ Odvolat, že existují dvě verze webové aplikace kontrolní seznam: jeden impl
 
 Spusťte projekt BookReviewsWAP přechodem na `BookReviewsWAP` složku a dvakrát klikněte na `BookReviewsWAP.sln` souboru. Před nasazením projektu je důležité k sestavení, aby obsahovaly všechny změny do zdrojového kódu v kompilovaném sestavení. Projekt sestavíte přejděte do nabídky sestavení a vyberte možnost nabídky BookReviewsWAP sestavení. To kompilovaný zdrojového kódu v projektu do jednoho sestavení `BookReviewsWAP.dll`, která je umístěna v `Bin` složky.
 
-Nyní jsme připravení nasadit potřebné soubory! Spusťte vašeho klienta FTP a připojit k webovému serveru u svého poskytovatele webového hostitele. (Při registraci se na web hostingové společnosti se bude e-mailu informace o tom, jak se připojit k serveru FTP, jedná se o adresu serveru FTP a také uživatelské jméno a heslo.)
+Nyní jsme připravení nasadit potřebné soubory! Spusťte vašeho klienta FTP a připojit k webovému serveru u svého poskytovatele webového hostitele. (Při registraci se na web hostingové společnosti se bude e-mailem informace o tom, jak se připojit k serveru FTP, jedná se o adresu serveru FTP a také uživatelské jméno a heslo.)
 
 Zkopírujte následující soubory z plochy do kořenové složky webu u svého poskytovatele webového hostitele. Pokud je na webovém serveru FTP na webu hostitelem poskytovatele budete chtít nejspíš do kořenového adresáře webu. Ale některé webové hostitele zprostředkovatele se pojmenovaná podsložka `www` nebo `wwwroot` sloužícím jako kořenová složka pro soubory vašeho webu. Nakonec, když FTPing soubory může musíte vytvořit odpovídající struktura složek v provozním prostředí – `Bin` složku, `Fiction` složku, `Images` složky a tak dále.
 

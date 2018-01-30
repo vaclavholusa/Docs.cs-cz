@@ -2,18 +2,18 @@
 title: "Bezpečné úložiště tajné klíče aplikace během vývoje v ASP.NET Core"
 author: rick-anderson
 description: "Ukazuje, jak bezpečně uložit tajné klíče během vývoje"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/15/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 94356cef7a0333f0faac6420b1b5425920b99deb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 337782a0530a37916b04aa562174b5921ddbc46b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Bezpečné úložiště tajné klíče aplikace během vývoje v ASP.NET Core
 
@@ -124,6 +124,6 @@ Hodnota `userSecretsId` pochází z hodnoty zadané ve *.csproj* souboru.
 
 Neměli psát kód, který závisí na umístění nebo formát dat pomocí nástroje Správce tajný klíč uložit jako, může se měnit tyto podrobnosti implementace. Například tajný hodnoty jsou aktuálně *není* šifruje dnes, ale může být jednou budete.
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
 * [Konfigurace](xref:fundamentals/configuration/index)

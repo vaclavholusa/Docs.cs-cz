@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 85a8615bf71f58c58b9565da14bc3b3fbef9d264
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5bbba0e4e8660dbc60b9f9ad220c923274144b89
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>Podrobnosti o chybě protokolování s ASP.NET stavu monitorování (C#)
 ====================
@@ -24,7 +24,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
 [Stáhněte si kód](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_CS.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_cs.pdf)
 
-> Systém monitorování stavu společnosti Microsoft poskytuje snadný a přizpůsobit způsob do protokolu různé události web, včetně neošetřených výjimek. Tento kurz vás provede nastavením stavu systému pro monitorování k protokolování neošetřených výjimek k databázi a vývojáři prostřednictvím e-mailové zprávy.
+> Systém monitorování stavu společnosti Microsoft poskytuje snadný a přizpůsobit způsob do protokolu různé události web, včetně neošetřených výjimek. Tento kurz vás provede nastavením stavu systému pro monitorování k protokolování neošetřených výjimek k databázi a vývojáři prostřednictvím e-mailovou zprávu.
 
 
 ## <a name="introduction"></a>Úvod
@@ -37,7 +37,7 @@ Stav systému pro monitorování bylo zavedeno v technologii ASP.NET 2.0 a slou�
 - Události zabezpečení, včetně neúspěšných pokusů o přihlášení a neúspěšné požadavky autorizace adresy URL
 - Chyby aplikace, včetně neošetřené výjimky, zobrazení stavu analýza výjimky, žádost o ověření výjimky a chyby při kompilaci mezi jiné typy chyb.
 
-Když stavu monitorování událost se vyvolá, můžete je zaznamenána do libovolný počet zadaný *protokolu zdroje*. Stav systému pro monitorování se dodává s protokolu zdrojů, které protokolovat webové události do databáze Microsoft SQL Server, do protokolu událostí systému Windows, nebo prostřednictvím e-mailové zprávy, mimo jiné. Můžete také vytvořit vlastní zdroje protokolu.
+Když stavu monitorování událost se vyvolá, můžete je zaznamenána do libovolný počet zadaný *protokolu zdroje*. Stav systému pro monitorování se dodává s protokolu zdrojů, které protokolovat webové události do databáze Microsoft SQL Server, do protokolu událostí systému Windows, nebo prostřednictvím e-mailovou zprávu, mimo jiné. Můžete také vytvořit vlastní zdroje protokolu.
 
 Události protokoluje stav monitorování systému, společně s protokolu zdroje, používá, jsou definovány v `Web.config`. Zadání několika řádků kódu konfigurace můžete použít k protokolování neošetřených výjimek všechny k databázi a upozornit vás výjimky prostřednictvím e-mailu na sledování stavu.
 
@@ -96,7 +96,7 @@ Informace o stavu systému v akci pro monitorování, přejděte na webovou str�
 
 ### <a name="displaying-the-error-log-in-a-web-page"></a>Zobrazení v protokolu chyb na webové stránce
 
-Stav systému pro monitorování s aktuální konfigurací webu, zaznamená všechny neošetřené výjimky k databázi. Sledování stavu však neposkytuje žádný mechanismus zobrazte protokol chyb prostřednictvím na webové stránce. Je však sestavení stránku ASP.NET, která zobrazuje tyto informace z databáze. (Jako ukážeme na okamžik, se můžete rozhodnout pro mít podrobnosti o chybě vám odeslán e-mailová zpráva.)
+Stav systému pro monitorování s aktuální konfigurací webu, zaznamená všechny neošetřené výjimky k databázi. Sledování stavu však neposkytuje žádný mechanismus zobrazte protokol chyb prostřednictvím na webové stránce. Je však sestavení stránku ASP.NET, která zobrazuje tyto informace z databáze. (Jako ukážeme na okamžik, se můžete rozhodnout pro mít podrobnosti o chybě vám odeslán e-mailovou zprávu.)
 
 Pokud vytvoříte taková stránka, zkontrolujte, zda že je provést kroky k Povolit jenom autorizovaným uživatelům, chcete-li zobrazit podrobnosti o chybě. Pokud váš web již aktivuje uživatelské účty se autorizačních pravidel adres URL můžete použít k omezení přístupu na stránku na určité uživatele nebo role. Další informace o tom, jak udělit nebo omezení přístupu k webovým stránkám na základě přihlášeného uživatele, najdete v části Moje [kurzy zabezpečení webu](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md).
 
@@ -104,40 +104,40 @@ Pokud vytvoříte taková stránka, zkontrolujte, zda že je provést kroky k Po
 > Jsou zde popsány následné kurzu alternativní Chyba protokolování a oznámení systému s názvem ELMAH. ELMAH zahrnuje integrovanou mechanismus pro zobrazení v protokolu chyb z obou webové stránky a jako informačního kanálu RSS.
 
 
-## <a name="logging-events-to-e-mail"></a>Protokolování událostí do e-mailu
+## <a name="logging-events-to-email"></a>Protokolování událostí k e-mailu
 
 Stav systému pro monitorování obsahuje poskytovatele zdroj protokolu, který "" zaprotokoluje událost e-mailové zprávě. Zdroj protokolu obsahuje stejné informace, která je zaznamenána do databáze v textu e-mailové zprávy. Tento zdroj protokolu můžete informovala, že vývojář stavu monitorování výskytu daných událostí.
 
 Umožňuje aktualizovat recenze kniha konfiguraci příslušného webu tak, aby obdržíme e-mailu vždy, když k výjimce dochází. K tomu je potřeba provést tři úkoly:
 
-1. Konfigurace webové aplikace ASP.NET pro odeslání e-mailu. Toho dosahuje tak, že určíte, jak se odesílají e-mailové zprávy prostřednictvím `<system.net>` konfigurační prvek. Další informace o odesílání e-mailové zprávy v aplikaci ASP.NET najdete v části [odesílání e-mailu v ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) a [nejčastější dotazy týkající se System.Net.Mail](http://systemnetmail.com/).
+1. Konfigurace webové aplikace ASP.NET k odesílání e-mailu. Toho dosahuje tak, že určíte, jak se odesílají e-mailové zprávy prostřednictvím `<system.net>` konfigurační prvek. Další informace o odesílání e-mailové zprávy v aplikaci ASP.NET najdete v části [odesílání e-mailu v ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) a [nejčastější dotazy týkající se System.Net.Mail](http://systemnetmail.com/).
 2. Zaregistrujte poskytovatele správy zdrojového protokolu e-mailu v `<providers>` elementu a
 3. Přidání položky do `<rules>` element, který mapuje událostí "Všechny chyby" poskytovatele správy zdrojového protokolu přidali v kroku (2).
 
-Sledování systému stavu zahrnuje dvě třídy zprostředkovatele zdroj e-mailu protokolu: `SimpleMailWebEventProvider` a `TemplatedMailWebEventProvider`. [ `SimpleMailWebEventProvider` Třída](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) odesílá prostého textu e-mailovou zprávu, která zahrnuje události, podrobnosti a poskytuje málo přizpůsobení text e-mailu. S [ `TemplatedMailWebEventProvider` třída](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) zadáte stránku ASP.NET, jejichž vykreslované značky se používá jako text zprávy pro e-mailová zpráva. [ `TemplatedMailWebEventProvider` Třída](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vám dává mnohem větší kontrolu nad obsah a formát e-mailová zpráva, ale vyžaduje trochu další předem práci, jako je nutné vytvořit stránku ASP.NET, který generuje tělo e-mailové zprávy. Tento kurz se zaměřuje na pomocí `SimpleMailWebEventProvider` třídy.
+Sledování systému stavu zahrnuje dvě třídy zprostředkovatele zdroj e-mailu protokolu: `SimpleMailWebEventProvider` a `TemplatedMailWebEventProvider`. [ `SimpleMailWebEventProvider` Třída](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) odešle zprávu e-mailu ve formátu prostého textu, která zahrnuje události, podrobnosti a poskytuje málo přizpůsobení obsahu e-mailu. S [ `TemplatedMailWebEventProvider` třída](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) zadáte stránku ASP.NET, jejichž vykreslované značky se používá jako text e-mailové zprávy. [ `TemplatedMailWebEventProvider` Třída](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vám dává mnohem větší kontrolu nad obsah a formát e-mailové zprávy, ale vyžaduje trochu další předem práci, jako je nutné vytvořit stránku ASP.NET, který generuje tělo e-mailové zprávy. Tento kurz se zaměřuje na pomocí `SimpleMailWebEventProvider` třídy.
 
 Aktualizovat stav monitorování systému `<providers>` element v `Web.config` souboru protokolu zdroj pro `SimpleMailWebEventProvider` třídy:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample3.xml)]
 
-Výše uvedený kód používá `SimpleMailWebEventProvider` třída jako poskytovatele správy zdrojového protokolu a přiřadí ji popisný název "EmailWebEventProvider". Kromě toho `<add>` atribut obsahuje další možnosti konfigurace, jako je například Komu a z adresy e-mailová zpráva.
+Výše uvedený kód používá `SimpleMailWebEventProvider` třída jako poskytovatele správy zdrojového protokolu a přiřadí ji popisný název "EmailWebEventProvider". Kromě toho `<add>` atribut obsahuje další možnosti konfigurace, jako je například Komu a z adres e-mailové zprávy.
 
 Se zdrojem e-mailu protokolu definované zbývá dáte pokyn, aby stav systému pro použití tohoto zdroje k "protokolování" neošetřené výjimky pro monitorování. To je možné udělat přidáním nové pravidlo v `<rules>` části:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample4.xml)]
 
-`<rules>` Část teď obsahuje dvě pravidla. První z nich, s názvem "Všechny chyby na e-mailu", odešle zdroj protokolu "EmailWebEventProvider" všechny neošetřené výjimky. Toto pravidlo má za následek odesílání podrobnosti o chybách na webu do zadané adresy. "Všechny chyby do databáze" pravidlo zaznamená podrobnosti o chybě do databáze lokality. V důsledku toho vždy, když dojde k neošetřené výjimce v lokalitě podrobnosti jsou přihlášení k databázi i odeslán na zadanou e-mailovou adresu.
+`<rules>` Část teď obsahuje dvě pravidla. První z nich, s názvem "Všechny chyby na e-mailu", odešle zdroj protokolu "EmailWebEventProvider" všechny neošetřené výjimky. Toto pravidlo má za následek odesílání podrobnosti o chybách na webu do zadané adresy. "Všechny chyby do databáze" pravidlo zaznamená podrobnosti o chybě do databáze lokality. V důsledku toho vždy, když dojde k neošetřené výjimce v lokalitě podrobnosti se obě přihlášení k databázi a odesílají do zadané e-mailovou adresu.
 
 **Obrázek 2** ukazuje vygenerovaných e-mailu `SimpleMailWebEventProvider` třídy při návštěvě `Genre.aspx?ID=foo`.
 
 [![](logging-error-details-with-asp-net-health-monitoring-cs/_static/image5.png)](logging-error-details-with-asp-net-health-monitoring-cs/_static/image4.png)
 
-**Obrázek 2**: Podrobnosti o chybě se odesílají e-mailové zprávy  
+**Obrázek 2**: Podrobnosti o chybě jsou zasílány v e-mailové zprávy  
 ([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-asp-net-health-monitoring-cs/_static/image6.png))
 
 ## <a name="summary"></a>Souhrn
 
-Systém monitorování stavu ASP.NET je navržena k umožnění správci sledovat stav nasazených webových aplikací. Události monitorování stavu se vyvolá, když unfold určité akce, například při zastavení aplikace, pokud uživatel úspěšně přihlásí webu, nebo když dojde k neošetřené výjimce. Tyto události může být protokolovány libovolný počet zdrojů protokolu. Tento kurz vám ukázal, jak k databázi a prostřednictvím e-mailová zpráva protokolu podrobnosti o neošetřených výjimek.
+Systém monitorování stavu ASP.NET je navržena k umožnění správci sledovat stav nasazených webových aplikací. Události monitorování stavu se vyvolá, když unfold určité akce, například při zastavení aplikace, pokud uživatel úspěšně přihlásí webu, nebo když dojde k neošetřené výjimce. Tyto události může být protokolovány libovolný počet zdrojů protokolu. Tento kurz vám ukázal, jak k databázi a prostřednictvím e-mailovou zprávu protokolu podrobnosti o neošetřených výjimek.
 
 Tento kurz se zaměřuje na použití k protokolování neošetřených výjimek, ale mějte na paměti, že monitorování stavu slouží k měření celkového stavu nasazené aplikace ASP.NET a obsahuje celou řadu událostí sledování stavu a protokolu zdroje není sledování stavu prozkoumali sem. Co je více, můžete vytvořit vlastní sledování událostí a protokolu zdrojů, stavu potřeby nastat. Pokud vás zajímá dozvědět další informace o sledování stavu, dobrý prvním krokem je pročtěte [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)na [sledování nejčastější dotazy týkající se stavu](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Následující, poraďte se [postupy: použití sledování stavu v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998306.aspx).
 

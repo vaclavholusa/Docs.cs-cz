@@ -2,18 +2,18 @@
 title: Oblasti
 author: rick-anderson
 description: "Ukazuje, jak pracovat s oblastí."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 02/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: 87bf2eaad1c13d21412051be769992411f685e2e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1ade49de3f6c58edc4ea7b06bc593b3db797081c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="areas"></a>Oblasti
 
@@ -159,9 +159,9 @@ Procházení k `http://<yourApp>/products`, `Index` metody akce `HomeController`
 
   Řekněme, že je cesta aktuální žádosti jako`/Products/Home/Create`
 
-  HtmlHelper syntaxe:`@Html.ActionLink("Go to Manage Products’  Home Page", "Index", "Manage")`
+  HtmlHelper syntaxe:`@Html.ActionLink("Go to Manage Products Home Page", "Index", "Manage")`
 
-  TagHelper syntaxe:`<a asp-controller="Manage" asp-action="Index">Go to Manage Products’  Home Page</a>`
+  TagHelper syntaxe:`<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
 
   Všimněte si, tady je použita hodnota vedlejším oblasti, ale výše je výslovně zadána hodnota 'controller'.
 
@@ -169,17 +169,17 @@ Procházení k `http://<yourApp>/products`, `Index` metody akce `HomeController`
 
   Řekněme, že je cesta aktuální žádosti jako`/Products/Home/Create`
 
-  HtmlHelper syntaxe:`@Html.ActionLink("Go to Services’ Home Page", "Index", "Home", new { area = "Services" })`
+  HtmlHelper syntaxe:`@Html.ActionLink("Go to Services Home Page", "Index", "Home", new { area = "Services" })`
 
-  TagHelper syntaxe:`<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services’ Home Page</a>`
+  TagHelper syntaxe:`<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`
 
   Všimněte si, že tady jsou použity žádné vedlejším hodnoty.
 
 * Generování odkazů z akce v rámci řadič oblast na základě jinou akci na jiném řadiči a **není** v oblasti.
 
-  HtmlHelper syntaxe:`@Html.ActionLink("Go to Manage Products’  Home Page", "Index", "Home", new { area = "" })`
+  HtmlHelper syntaxe:`@Html.ActionLink("Go to Manage Products  Home Page", "Index", "Home", new { area = "" })`
 
-  TagHelper syntaxe:`<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products’  Home Page</a>`
+  TagHelper syntaxe:`<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
 
   Vzhledem k tomu, že chcete generovat odkazy na jiné oblasti na základě akce kontroleru, jsme prázdný vedlejším hodnota "plochu" sem.
 

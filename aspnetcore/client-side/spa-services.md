@@ -2,19 +2,19 @@
 title: "Použití JavaScriptServices pro vytváření aplikací pro jednu stránku"
 author: scottaddie
 description: "Seznamte se s výhodami JavaScriptServices vytvořit jedné stránce aplikace (SPA) zajišťoval ASP.NET Core."
-ms.author: scaddie
 manager: wpickett
-ms.date: 08/02/2017
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: client-side/spa-services
+ms.author: scaddie
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 514efcdd78957f999e46c521d0266f092f742538
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.date: 08/02/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: client-side/spa-services
+ms.openlocfilehash: bd18d342de7c147e3588bd6daa3aebd68aa81c36
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>Použití JavaScriptServices pro vytvoření jednostránkové aplikace pomocí ASP.NET Core
 
@@ -262,7 +262,7 @@ Existují dva režimy primární runtime konfigurace:
     * Vyloučí zdroj mapy.
     * Optimalizuje kód klienta prostřednictvím sdružování a minimalizace.
 
-ASP.NET Core používá proměnnou prostředí s názvem `ASPNETCORE_ENVIRONMENT` k uložení konfigurace režimu. V tématu  **[nastavení prostředí](xref:fundamentals/environments#setting-the-environment)**  Další informace.
+ASP.NET Core používá proměnnou prostředí s názvem `ASPNETCORE_ENVIRONMENT` k uložení konfigurace režimu. V tématu ** [nastavení prostředí](xref:fundamentals/environments#setting-the-environment) ** Další informace.
 
 ### <a name="running-with-net-core-cli"></a>Spuštění s .NET Core rozhraní příkazového řádku
 
@@ -288,7 +288,7 @@ Otevřete *.csproj* souboru vygenerované `dotnet new` příkaz. Požadované ba
 
 ## <a name="testing-the-app"></a>Testování aplikace
 
-SpaServices šablony jsou předem nakonfigurované ke spuštění testů na straně klienta pomocí [Karma](https://karma-runner.github.io/1.0/index.html) a [Jasmine](https://jasmine.github.io/). Jasmine je Oblíbené jednotku testování framework pro JavaScript, zatímco Karma je testu pro tyto testy. Karma je nakonfigurováno pro práci s [Webpack Dev Middleware](#webpack-dev-middleware) tak, že nemáte zastavení a spuštění testu pokaždé, když jsou provedeny změny. Jestli je kód spuštěn před testovacího případu nebo testovací případ, samotné, test se spouští automaticky.
+SpaServices šablony jsou předem nakonfigurované ke spuštění testů na straně klienta pomocí [Karma](https://karma-runner.github.io/1.0/index.html) a [Jasmine](https://jasmine.github.io/). Jasmine je Oblíbené jednotku testování framework pro JavaScript, zatímco Karma je testu pro tyto testy. Karma je nakonfigurováno pro práci s [Webpack Dev Middleware](#webpack-dev-middleware) tak, že vývojář není vyžadován k zastavení a spuštění testu pokaždé, když jsou provedeny změny. Jestli je kód spuštěn před testovacího případu nebo testovací případ, samotné, test se spouští automaticky.
 
 Jako příklad použijeme úhlová aplikace, dvě Jasmine testovacích případů již pro jsou k dispozici `CounterComponent` v *counter.component.spec.ts* souboru:
 

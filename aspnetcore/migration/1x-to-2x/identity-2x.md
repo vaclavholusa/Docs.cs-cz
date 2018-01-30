@@ -2,18 +2,18 @@
 title: "Migrace ověřování a identita na jádro ASP.NET 2.0"
 author: scottaddie
 description: "Tento článek popisuje nejběžnější kroky pro migraci ASP.NET Core 1.x ověřování a identita na technologii ASP.NET 2.0 jádra."
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.date: 10/26/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 72ad31438a344fb5fa2b357c709b923b8077e742
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dd48b2b027d22b570aa182e748ca91738e935f49
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>Migrace ověřování a identita na jádro ASP.NET 2.0
 
@@ -136,7 +136,7 @@ Proveďte následující změny v *Startup.cs*:
 
     Tento fragment kódu nepoužívá identitu, abyste výchozí schéma musí nastavit předáním `JwtBearerDefaults.AuthenticationScheme` k `AddAuthentication` metoda.
 
-### <a name="openid-connect-oidc-authentication"></a>OpenID Connect ověřování (OIDC)
+### <a name="openid-connect-oidc-authentication"></a>Ověřování OpenID Connect (OIDC)
 Proveďte následující změny v *Startup.cs*:
 
 - Nahraďte `UseOpenIdConnectAuthentication` volání metody `Configure` metoda s `UseAuthentication`:
@@ -161,7 +161,7 @@ Proveďte následující změny v *Startup.cs*:
     });
     ```
 
-### <a name="facebook-authentication"></a>Ověřování Facebook
+### <a name="facebook-authentication"></a>ověřování Facebook
 Proveďte následující změny v *Startup.cs*:
 - Nahraďte `UseFacebookAuthentication` volání metody `Configure` metoda s `UseAuthentication`:
  
@@ -199,7 +199,7 @@ Proveďte následující změny v *Startup.cs*:
             });    
     ```
 
-### <a name="microsoft-account-authentication"></a>Ověření účtu Microsoft
+### <a name="microsoft-account-authentication"></a>Ověřování Microsoft Account
 Proveďte následující změny v *Startup.cs*:
 - Nahraďte `UseMicrosoftAccountAuthentication` volání metody `Configure` metoda s `UseAuthentication`:
 
@@ -398,5 +398,5 @@ V projektech 2.0, návratový typ se změní na `IList<AuthenticationScheme>`. V
 
 <a name="additional-resources"></a>
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 Diskusní a další podrobnosti najdete v tématu [diskusi k ověřování 2.0](https://github.com/aspnet/Security/issues/1338) problém na Githubu.

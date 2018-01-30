@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 4e1270f9fb58032d22380117f4ec18b00bd725fc
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5f6ed1ae0309e9bdd3ca4ae229195835f20bc729
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>Middleware OWIN v integrovaném kanálu služby IIS
 ====================
@@ -78,7 +78,7 @@ Komponenty middlewaru Owin (OMC) může být nakonfigurována pro spuštění v 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample8.cs)]
 
 1. Ve výchozím nastavení spustí OMCs na poslední událost (`PreHandlerExecute`). To je důvod, proč naše první ukázkový kód zobrazí "PreExecuteRequestHandler".
-2. Můžete použít `pp.UseStageMarker` metody pro registraci OMC spustit dříve, v jakékoli fázi kanálu OWIN uvedené v `PipelineStage` výčtu.
+2. Můžete použít `app.UseStageMarker` metody pro registraci OMC spustit dříve, v jakékoli fázi kanálu OWIN uvedené v `PipelineStage` výčtu.
 3. Kanál OWIN a IIS kanálu je seřadit, proto volání `app.UseStageMarker` musí být v pořadí. Obslužné rutiny události nelze nastavit na událost, která předchází poslední událost, které jsou registrovány k `app.UseStageMarker`. Například *po* volání:
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample9.cmd)]

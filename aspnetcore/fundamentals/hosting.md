@@ -2,66 +2,66 @@
 title: "Hostování v ASP.NET Core"
 author: guardrex
 description: "Další informace o webového hostitele v ASP.NET Core, která je zodpovědná za spuštění a životního cyklu správy aplikací."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/21/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/hosting
-ms.openlocfilehash: 7f6712073002b73ca4ddd7586718c81e62cacbc2
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 78209c8d34fa1a2a164ae333d625feca1e145e89
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="hosting-in-aspnet-core"></a><span data-ttu-id="3bd40-103">Hostování v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="3bd40-103">Hosting in ASP.NET Core</span></span>
+# <a name="hosting-in-aspnet-core"></a><span data-ttu-id="5ecfd-103">Hostování v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="5ecfd-103">Hosting in ASP.NET Core</span></span>
 
-<span data-ttu-id="3bd40-104">Podle [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="3bd40-104">By [Luke Latham](https://github.com/guardrex)</span></span>
+<span data-ttu-id="5ecfd-104">Podle [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="5ecfd-104">By [Luke Latham](https://github.com/guardrex)</span></span>
 
-<span data-ttu-id="3bd40-105">Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*.</span><span class="sxs-lookup"><span data-stu-id="3bd40-105">ASP.NET Core apps configure and launch a *host*.</span></span> <span data-ttu-id="3bd40-106">Hostitel je zodpovědná za spuštění a životního cyklu správy aplikací.</span><span class="sxs-lookup"><span data-stu-id="3bd40-106">The host is responsible for app startup and lifetime management.</span></span> <span data-ttu-id="3bd40-107">Minimálně hostitele nakonfiguruje server a kanálu zpracování požadavků.</span><span class="sxs-lookup"><span data-stu-id="3bd40-107">At a minimum, the host configures a server and a request processing pipeline.</span></span>
+<span data-ttu-id="5ecfd-105">Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-105">ASP.NET Core apps configure and launch a *host*.</span></span> <span data-ttu-id="5ecfd-106">Hostitel je zodpovědná za spuštění a životního cyklu správy aplikací.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-106">The host is responsible for app startup and lifetime management.</span></span> <span data-ttu-id="5ecfd-107">Minimálně hostitele nakonfiguruje server a kanálu zpracování požadavků.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-107">At a minimum, the host configures a server and a request processing pipeline.</span></span>
 
-## <a name="setting-up-a-host"></a><span data-ttu-id="3bd40-108">Nastavení hostitele</span><span class="sxs-lookup"><span data-stu-id="3bd40-108">Setting up a host</span></span>
+## <a name="setting-up-a-host"></a><span data-ttu-id="5ecfd-108">Nastavení hostitele</span><span class="sxs-lookup"><span data-stu-id="5ecfd-108">Setting up a host</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-109">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-109">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-109">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-109">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="3bd40-110">Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder).</span><span class="sxs-lookup"><span data-stu-id="3bd40-110">Create a host using an instance of [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder).</span></span> <span data-ttu-id="3bd40-111">To se obvykle provádí v vstupní bod aplikace, `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="3bd40-111">This is typically performed in the app's entry point, the `Main` method.</span></span> <span data-ttu-id="3bd40-112">V rámci šablon projektu `Main` se nachází v *Program.cs*.</span><span class="sxs-lookup"><span data-stu-id="3bd40-112">In the project templates, `Main` is located in *Program.cs*.</span></span> <span data-ttu-id="3bd40-113">Typické *Program.cs* volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) zahájíte nastavení hostitele:</span><span class="sxs-lookup"><span data-stu-id="3bd40-113">A typical *Program.cs* calls [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) to start setting up a host:</span></span>
+<span data-ttu-id="5ecfd-110">Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-110">Create a host using an instance of [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder).</span></span> <span data-ttu-id="5ecfd-111">To se obvykle provádí v vstupní bod aplikace, `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-111">This is typically performed in the app's entry point, the `Main` method.</span></span> <span data-ttu-id="5ecfd-112">V rámci šablon projektu `Main` se nachází v *Program.cs*.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-112">In the project templates, `Main` is located in *Program.cs*.</span></span> <span data-ttu-id="5ecfd-113">Typické *Program.cs* volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) zahájíte nastavení hostitele:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-113">A typical *Program.cs* calls [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) to start setting up a host:</span></span>
 
 [!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main)]
 
-<span data-ttu-id="3bd40-114">`CreateDefaultBuilder`provádí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="3bd40-114">`CreateDefaultBuilder` performs the following tasks:</span></span>
+<span data-ttu-id="5ecfd-114">`CreateDefaultBuilder`provádí následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-114">`CreateDefaultBuilder` performs the following tasks:</span></span>
 
-* <span data-ttu-id="3bd40-115">Nakonfiguruje [Kestrel](servers/kestrel.md) jako webový server.</span><span class="sxs-lookup"><span data-stu-id="3bd40-115">Configures [Kestrel](servers/kestrel.md) as the web server.</span></span> <span data-ttu-id="3bd40-116">Výchozí možnosti Kestrel najdete v tématu [Kestrel možnosti části Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).</span><span class="sxs-lookup"><span data-stu-id="3bd40-116">For the Kestrel default options, see [the Kestrel options section of Kestrel web server implementation in ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).</span></span>
-* <span data-ttu-id="3bd40-117">Nastaví obsahu kořenovou cestu vrácený [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).</span><span class="sxs-lookup"><span data-stu-id="3bd40-117">Sets the content root to the path returned by [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).</span></span>
-* <span data-ttu-id="3bd40-118">Načítání z volitelné konfigurace:</span><span class="sxs-lookup"><span data-stu-id="3bd40-118">Loads optional configuration from:</span></span>
-  * <span data-ttu-id="3bd40-119">*appsettings.json*.</span><span class="sxs-lookup"><span data-stu-id="3bd40-119">*appsettings.json*.</span></span>
-  * <span data-ttu-id="3bd40-120">*appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="3bd40-120">*appsettings.{Environment}.json*.</span></span>
-  * <span data-ttu-id="3bd40-121">[Tajné klíče uživatele](xref:security/app-secrets) při spuštění aplikace `Development` prostředí.</span><span class="sxs-lookup"><span data-stu-id="3bd40-121">[User secrets](xref:security/app-secrets) when the app runs in the `Development` environment.</span></span>
-  * <span data-ttu-id="3bd40-122">Proměnné prostředí.</span><span class="sxs-lookup"><span data-stu-id="3bd40-122">Environment variables.</span></span>
-  * <span data-ttu-id="3bd40-123">Argumenty příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="3bd40-123">Command-line arguments.</span></span>
-* <span data-ttu-id="3bd40-124">Nakonfiguruje [protokolování](xref:fundamentals/logging/index) konzoly a ladění výstupu.</span><span class="sxs-lookup"><span data-stu-id="3bd40-124">Configures [logging](xref:fundamentals/logging/index) for console and debug output.</span></span> <span data-ttu-id="3bd40-125">Zahrnuje protokolování [filtrování protokolu](xref:fundamentals/logging/index#log-filtering) pravidla stanovená v části Konfigurace protokolování *appSettings.JSON určený* nebo *appsettings. { Prostředí} .json* souboru.</span><span class="sxs-lookup"><span data-stu-id="3bd40-125">Logging includes [log filtering](xref:fundamentals/logging/index#log-filtering) rules specified in a Logging configuration section of an *appsettings.json* or *appsettings.{Environment}.json* file.</span></span>
-* <span data-ttu-id="3bd40-126">Když spustíte za služby IIS, umožňuje [integrační služby IIS](xref:host-and-deploy/iis/index).</span><span class="sxs-lookup"><span data-stu-id="3bd40-126">When running behind IIS, enables [IIS integration](xref:host-and-deploy/iis/index).</span></span> <span data-ttu-id="3bd40-127">Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module).</span><span class="sxs-lookup"><span data-stu-id="3bd40-127">Configures the base path and port the server listens on when using the [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module).</span></span> <span data-ttu-id="3bd40-128">Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel.</span><span class="sxs-lookup"><span data-stu-id="3bd40-128">The module creates a reverse proxy between IIS and Kestrel.</span></span> <span data-ttu-id="3bd40-129">Nakonfiguruje aplikaci taky [zaznamenat chyby při spuštění](#capture-startup-errors).</span><span class="sxs-lookup"><span data-stu-id="3bd40-129">Also configures the app to [capture startup errors](#capture-startup-errors).</span></span> <span data-ttu-id="3bd40-130">Výchozí možnosti služby IIS najdete v tématu [IIS možnosti oddílu hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#iis-options).</span><span class="sxs-lookup"><span data-stu-id="3bd40-130">For the IIS default options, see [the IIS options section of Host ASP.NET Core on Windows with IIS](xref:host-and-deploy/iis/index#iis-options).</span></span>
+* <span data-ttu-id="5ecfd-115">Nakonfiguruje [Kestrel](servers/kestrel.md) jako webový server.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-115">Configures [Kestrel](servers/kestrel.md) as the web server.</span></span> <span data-ttu-id="5ecfd-116">Výchozí možnosti Kestrel najdete v tématu [Kestrel možnosti části Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-116">For the Kestrel default options, see [the Kestrel options section of Kestrel web server implementation in ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).</span></span>
+* <span data-ttu-id="5ecfd-117">Nastaví obsahu kořenovou cestu vrácený [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-117">Sets the content root to the path returned by [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).</span></span>
+* <span data-ttu-id="5ecfd-118">Načítání z volitelné konfigurace:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-118">Loads optional configuration from:</span></span>
+  * <span data-ttu-id="5ecfd-119">*appsettings.json*.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-119">*appsettings.json*.</span></span>
+  * <span data-ttu-id="5ecfd-120">*appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-120">*appsettings.{Environment}.json*.</span></span>
+  * <span data-ttu-id="5ecfd-121">[Tajné klíče uživatele](xref:security/app-secrets) při spuštění aplikace `Development` prostředí.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-121">[User secrets](xref:security/app-secrets) when the app runs in the `Development` environment.</span></span>
+  * <span data-ttu-id="5ecfd-122">Proměnné prostředí.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-122">Environment variables.</span></span>
+  * <span data-ttu-id="5ecfd-123">Argumenty příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-123">Command-line arguments.</span></span>
+* <span data-ttu-id="5ecfd-124">Nakonfiguruje [protokolování](xref:fundamentals/logging/index) konzoly a ladění výstupu.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-124">Configures [logging](xref:fundamentals/logging/index) for console and debug output.</span></span> <span data-ttu-id="5ecfd-125">Zahrnuje protokolování [filtrování protokolu](xref:fundamentals/logging/index#log-filtering) pravidla stanovená v části Konfigurace protokolování *appSettings.JSON určený* nebo *appsettings. { Prostředí} .json* souboru.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-125">Logging includes [log filtering](xref:fundamentals/logging/index#log-filtering) rules specified in a Logging configuration section of an *appsettings.json* or *appsettings.{Environment}.json* file.</span></span>
+* <span data-ttu-id="5ecfd-126">Když spustíte za služby IIS, umožňuje [integrační služby IIS](xref:host-and-deploy/iis/index).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-126">When running behind IIS, enables [IIS integration](xref:host-and-deploy/iis/index).</span></span> <span data-ttu-id="5ecfd-127">Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-127">Configures the base path and port the server listens on when using the [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module).</span></span> <span data-ttu-id="5ecfd-128">Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-128">The module creates a reverse proxy between IIS and Kestrel.</span></span> <span data-ttu-id="5ecfd-129">Nakonfiguruje aplikaci taky [zaznamenat chyby při spuštění](#capture-startup-errors).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-129">Also configures the app to [capture startup errors](#capture-startup-errors).</span></span> <span data-ttu-id="5ecfd-130">Výchozí možnosti služby IIS najdete v tématu [IIS možnosti oddílu hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#iis-options).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-130">For the IIS default options, see [the IIS options section of Host ASP.NET Core on Windows with IIS](xref:host-and-deploy/iis/index#iis-options).</span></span>
 
-<span data-ttu-id="3bd40-131">*Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC.</span><span class="sxs-lookup"><span data-stu-id="3bd40-131">The *content root* determines where the host searches for content files, such as MVC view files.</span></span> <span data-ttu-id="3bd40-132">Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu.</span><span class="sxs-lookup"><span data-stu-id="3bd40-132">When the app is started from the project's root folder, the project's root folder is used as the content root.</span></span> <span data-ttu-id="3bd40-133">Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).</span><span class="sxs-lookup"><span data-stu-id="3bd40-133">This is the default used in [Visual Studio](https://www.visualstudio.com/) and the [dotnet new templates](/dotnet/core/tools/dotnet-new).</span></span>
+<span data-ttu-id="5ecfd-131">*Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-131">The *content root* determines where the host searches for content files, such as MVC view files.</span></span> <span data-ttu-id="5ecfd-132">Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-132">When the app is started from the project's root folder, the project's root folder is used as the content root.</span></span> <span data-ttu-id="5ecfd-133">Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-133">This is the default used in [Visual Studio](https://www.visualstudio.com/) and the [dotnet new templates](/dotnet/core/tools/dotnet-new).</span></span>
 
-<span data-ttu-id="3bd40-134">Další informace o konfiguraci aplikace, najdete v části [konfigurace v ASP.NET Core](xref:fundamentals/configuration/index).</span><span class="sxs-lookup"><span data-stu-id="3bd40-134">For more information on app configuration, see [Configuration in ASP.NET Core](xref:fundamentals/configuration/index).</span></span>
+<span data-ttu-id="5ecfd-134">Další informace o konfiguraci aplikace, najdete v části [konfigurace v ASP.NET Core](xref:fundamentals/configuration/index).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-134">For more information on app configuration, see [Configuration in ASP.NET Core](xref:fundamentals/configuration/index).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3bd40-135">Jako alternativu k použití statických `CreateDefaultBuilder` metody vytvoření hostitele z [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) je podporované přístup pomocí ASP.NET Core 2.x.</span><span class="sxs-lookup"><span data-stu-id="3bd40-135">As an alternative to using the static `CreateDefaultBuilder` method, creating a host from [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) is a supported approach with ASP.NET Core 2.x.</span></span> <span data-ttu-id="3bd40-136">Další informace najdete v tématu kartě 1.x ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="3bd40-136">For more information, see the ASP.NET Core 1.x tab.</span></span>
+> <span data-ttu-id="5ecfd-135">Jako alternativu k použití statických `CreateDefaultBuilder` metody vytvoření hostitele z [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) je podporované přístup pomocí ASP.NET Core 2.x.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-135">As an alternative to using the static `CreateDefaultBuilder` method, creating a host from [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) is a supported approach with ASP.NET Core 2.x.</span></span> <span data-ttu-id="5ecfd-136">Další informace najdete v tématu kartě 1.x ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-136">For more information, see the ASP.NET Core 1.x tab.</span></span>
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-137">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-137">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-137">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-137">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="3bd40-138">Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder).</span><span class="sxs-lookup"><span data-stu-id="3bd40-138">Create a host using an instance of [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder).</span></span> <span data-ttu-id="3bd40-139">Vytvoření hostitele se obvykle provádí v vstupní bod aplikace, `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="3bd40-139">Creating a host is typically performed in the app's entry point, the `Main` method.</span></span> <span data-ttu-id="3bd40-140">V rámci šablon projektu `Main` se nachází v *Program.cs*:</span><span class="sxs-lookup"><span data-stu-id="3bd40-140">In the project templates, `Main` is located in *Program.cs*:</span></span>
+<span data-ttu-id="5ecfd-138">Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-138">Create a host using an instance of [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder).</span></span> <span data-ttu-id="5ecfd-139">Vytvoření hostitele se obvykle provádí v vstupní bod aplikace, `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-139">Creating a host is typically performed in the app's entry point, the `Main` method.</span></span> <span data-ttu-id="5ecfd-140">V rámci šablon projektu `Main` se nachází v *Program.cs*:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-140">In the project templates, `Main` is located in *Program.cs*:</span></span>
 
 [!code-csharp[Main](../common/samples/WebApplication1/Program.cs)]
 
-<span data-ttu-id="3bd40-141">`WebHostBuilder`vyžaduje [serveru, který implementuje IServer](servers/index.md).</span><span class="sxs-lookup"><span data-stu-id="3bd40-141">`WebHostBuilder` requires a [server that implements IServer](servers/index.md).</span></span> <span data-ttu-id="3bd40-142">Jsou předdefinované servery [Kestrel](servers/kestrel.md) a [HTTP.sys](servers/httpsys.md) (před verzí technologie ASP.NET 2.0 jádra, ovladač HTTP.sys volala [WebListener](xref:fundamentals/servers/weblistener)).</span><span class="sxs-lookup"><span data-stu-id="3bd40-142">The built-in servers are [Kestrel](servers/kestrel.md) and [HTTP.sys](servers/httpsys.md) (prior to the release of ASP.NET Core 2.0, HTTP.sys was called [WebListener](xref:fundamentals/servers/weblistener)).</span></span> <span data-ttu-id="3bd40-143">V tomto příkladu [UseKestrel rozšíření metoda](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) určuje Kestrel server.</span><span class="sxs-lookup"><span data-stu-id="3bd40-143">In this example, the [UseKestrel extension method](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) specifies the Kestrel server.</span></span>
+<span data-ttu-id="5ecfd-141">`WebHostBuilder`vyžaduje [serveru, který implementuje IServer](servers/index.md).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-141">`WebHostBuilder` requires a [server that implements IServer](servers/index.md).</span></span> <span data-ttu-id="5ecfd-142">Jsou předdefinované servery [Kestrel](servers/kestrel.md) a [HTTP.sys](servers/httpsys.md) (před verzí technologie ASP.NET 2.0 jádra, ovladač HTTP.sys volala [WebListener](xref:fundamentals/servers/weblistener)).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-142">The built-in servers are [Kestrel](servers/kestrel.md) and [HTTP.sys](servers/httpsys.md) (prior to the release of ASP.NET Core 2.0, HTTP.sys was called [WebListener](xref:fundamentals/servers/weblistener)).</span></span> <span data-ttu-id="5ecfd-143">V tomto příkladu [UseKestrel rozšíření metoda](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) určuje Kestrel server.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-143">In this example, the [UseKestrel extension method](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) specifies the Kestrel server.</span></span>
 
-<span data-ttu-id="3bd40-144">*Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC.</span><span class="sxs-lookup"><span data-stu-id="3bd40-144">The *content root* determines where the host searches for content files, such as MVC view files.</span></span> <span data-ttu-id="3bd40-145">Výchozí kořen obsahu se získávají pro `UseContentRoot` podle [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1).</span><span class="sxs-lookup"><span data-stu-id="3bd40-145">The default content root is obtained for `UseContentRoot` by [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1).</span></span> <span data-ttu-id="3bd40-146">Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu.</span><span class="sxs-lookup"><span data-stu-id="3bd40-146">When the app is started from the project's root folder, the project's root folder is used as the content root.</span></span> <span data-ttu-id="3bd40-147">Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).</span><span class="sxs-lookup"><span data-stu-id="3bd40-147">This is the default used in [Visual Studio](https://www.visualstudio.com/) and the [dotnet new templates](/dotnet/core/tools/dotnet-new).</span></span>
+<span data-ttu-id="5ecfd-144">*Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-144">The *content root* determines where the host searches for content files, such as MVC view files.</span></span> <span data-ttu-id="5ecfd-145">Výchozí kořen obsahu se získávají pro `UseContentRoot` podle [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-145">The default content root is obtained for `UseContentRoot` by [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1).</span></span> <span data-ttu-id="5ecfd-146">Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-146">When the app is started from the project's root folder, the project's root folder is used as the content root.</span></span> <span data-ttu-id="5ecfd-147">Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-147">This is the default used in [Visual Studio](https://www.visualstudio.com/) and the [dotnet new templates](/dotnet/core/tools/dotnet-new).</span></span>
 
-<span data-ttu-id="3bd40-148">Chcete-li použít jako reverzní proxy server služby IIS, volejte [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) jako součást sestavení hostitele.</span><span class="sxs-lookup"><span data-stu-id="3bd40-148">To use IIS as a reverse proxy, call [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) as part of building the host.</span></span> <span data-ttu-id="3bd40-149">`UseIISIntegration`neprovede konfiguraci *server*, například [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) nepodporuje.</span><span class="sxs-lookup"><span data-stu-id="3bd40-149">`UseIISIntegration` doesn't configure a *server*, like [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) does.</span></span> <span data-ttu-id="3bd40-150">`UseIISIntegration`Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) vytvořit reverzní proxy server mezi Kestrel a služby IIS.</span><span class="sxs-lookup"><span data-stu-id="3bd40-150">`UseIISIntegration` configures the base path and port the server listens on when using the [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module) to create a reverse proxy between Kestrel and IIS.</span></span> <span data-ttu-id="3bd40-151">Použití služby IIS s ASP.NET Core `UseKestrel` a `UseIISIntegration` musí být zadán.</span><span class="sxs-lookup"><span data-stu-id="3bd40-151">To use IIS with ASP.NET Core, `UseKestrel` and `UseIISIntegration` must be specified.</span></span> <span data-ttu-id="3bd40-152">`UseIISIntegration`aktivuje pouze při spuštění za služby IIS nebo IIS Express.</span><span class="sxs-lookup"><span data-stu-id="3bd40-152">`UseIISIntegration` only activates when running behind IIS or IIS Express.</span></span> <span data-ttu-id="3bd40-153">Další informace najdete v tématu [Úvod k modulu jádra ASP.NET](xref:fundamentals/servers/aspnet-core-module) a [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module).</span><span class="sxs-lookup"><span data-stu-id="3bd40-153">For more information, see [Introduction to ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module) and [ASP.NET Core Module configuration reference](xref:host-and-deploy/aspnet-core-module).</span></span>
+<span data-ttu-id="5ecfd-148">Chcete-li použít jako reverzní proxy server služby IIS, volejte [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) jako součást sestavení hostitele.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-148">To use IIS as a reverse proxy, call [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) as part of building the host.</span></span> <span data-ttu-id="5ecfd-149">`UseIISIntegration`neprovede konfiguraci *server*, například [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) nepodporuje.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-149">`UseIISIntegration` doesn't configure a *server*, like [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) does.</span></span> <span data-ttu-id="5ecfd-150">`UseIISIntegration`Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) vytvořit reverzní proxy server mezi Kestrel a služby IIS.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-150">`UseIISIntegration` configures the base path and port the server listens on when using the [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module) to create a reverse proxy between Kestrel and IIS.</span></span> <span data-ttu-id="5ecfd-151">Použití služby IIS s ASP.NET Core `UseKestrel` a `UseIISIntegration` musí být zadán.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-151">To use IIS with ASP.NET Core, `UseKestrel` and `UseIISIntegration` must be specified.</span></span> <span data-ttu-id="5ecfd-152">`UseIISIntegration`aktivuje pouze při spuštění za služby IIS nebo IIS Express.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-152">`UseIISIntegration` only activates when running behind IIS or IIS Express.</span></span> <span data-ttu-id="5ecfd-153">Další informace najdete v tématu [Úvod k modulu jádra ASP.NET](xref:fundamentals/servers/aspnet-core-module) a [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-153">For more information, see [Introduction to ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module) and [ASP.NET Core Module configuration reference](xref:host-and-deploy/aspnet-core-module).</span></span>
 
-<span data-ttu-id="3bd40-154">Minimální implementace, které konfiguruje hostitele (a aplikace ASP.NET Core) zahrnuje určení serveru a konfiguraci kanálu žádostí aplikace:</span><span class="sxs-lookup"><span data-stu-id="3bd40-154">A minimal implementation that configures a host (and an ASP.NET Core app) includes specifying a server and configuration of the app's request pipeline:</span></span>
+<span data-ttu-id="5ecfd-154">Minimální implementace, které konfiguruje hostitele (a aplikace ASP.NET Core) zahrnuje určení serveru a konfiguraci kanálu žádostí aplikace:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-154">A minimal implementation that configures a host (and an ASP.NET Core app) includes specifying a server and configuration of the app's request pipeline:</span></span>
 
 ```csharp
 var host = new WebHostBuilder()
@@ -77,31 +77,31 @@ host.Run();
 
 ---
 
-<span data-ttu-id="3bd40-155">Při nastavování hostitele, [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) a [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) metody lze zadat.</span><span class="sxs-lookup"><span data-stu-id="3bd40-155">When setting up a host, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) and [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) methods can be provided.</span></span> <span data-ttu-id="3bd40-156">Pokud `Startup` je zadána třída, musíte definovat `Configure` metoda.</span><span class="sxs-lookup"><span data-stu-id="3bd40-156">If a `Startup` class is specified, it must define a `Configure` method.</span></span> <span data-ttu-id="3bd40-157">Další informace najdete v tématu [spuštění aplikace v ASP.NET Core](startup.md).</span><span class="sxs-lookup"><span data-stu-id="3bd40-157">For more information, see [Application Startup in ASP.NET Core](startup.md).</span></span> <span data-ttu-id="3bd40-158">Více volá, aby se `ConfigureServices` připojit k sobě.</span><span class="sxs-lookup"><span data-stu-id="3bd40-158">Multiple calls to `ConfigureServices` append to one another.</span></span> <span data-ttu-id="3bd40-159">Více volá, aby se `Configure` nebo `UseStartup` na `WebHostBuilder` nahradit předchozí nastavení.</span><span class="sxs-lookup"><span data-stu-id="3bd40-159">Multiple calls to `Configure` or `UseStartup` on the `WebHostBuilder` replace previous settings.</span></span>
+<span data-ttu-id="5ecfd-155">Při nastavování hostitele, [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) a [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) metody lze zadat.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-155">When setting up a host, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) and [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) methods can be provided.</span></span> <span data-ttu-id="5ecfd-156">Pokud `Startup` je zadána třída, musíte definovat `Configure` metoda.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-156">If a `Startup` class is specified, it must define a `Configure` method.</span></span> <span data-ttu-id="5ecfd-157">Další informace najdete v tématu [spuštění aplikace v ASP.NET Core](startup.md).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-157">For more information, see [Application Startup in ASP.NET Core](startup.md).</span></span> <span data-ttu-id="5ecfd-158">Více volá, aby se `ConfigureServices` připojit k sobě.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-158">Multiple calls to `ConfigureServices` append to one another.</span></span> <span data-ttu-id="5ecfd-159">Více volá, aby se `Configure` nebo `UseStartup` na `WebHostBuilder` nahradit předchozí nastavení.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-159">Multiple calls to `Configure` or `UseStartup` on the `WebHostBuilder` replace previous settings.</span></span>
 
-## <a name="host-configuration-values"></a><span data-ttu-id="3bd40-160">Hodnoty konfigurace hostitele</span><span class="sxs-lookup"><span data-stu-id="3bd40-160">Host configuration values</span></span>
+## <a name="host-configuration-values"></a><span data-ttu-id="5ecfd-160">Hodnoty konfigurace hostitele</span><span class="sxs-lookup"><span data-stu-id="5ecfd-160">Host configuration values</span></span>
 
-<span data-ttu-id="3bd40-161">[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) závisí na následujících dvou přístupů k nastavení hostitelské hodnoty konfigurace:</span><span class="sxs-lookup"><span data-stu-id="3bd40-161">[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) relies on the following approaches to set the host configuration values:</span></span>
+<span data-ttu-id="5ecfd-161">[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) závisí na následujících dvou přístupů k nastavení hostitelské hodnoty konfigurace:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-161">[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) relies on the following approaches to set the host configuration values:</span></span>
 
-* <span data-ttu-id="3bd40-162">Konfigurace hostitele tvůrce, který zahrnuje proměnné prostředí ve formátu `ASPNETCORE_{configurationKey}`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-162">Host builder configuration, which includes environment variables with the format `ASPNETCORE_{configurationKey}`.</span></span> <span data-ttu-id="3bd40-163">Například `ASPNETCORE_URLS`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-163">For example, `ASPNETCORE_URLS`.</span></span>
-* <span data-ttu-id="3bd40-164">Explicitní metody, jako například `CaptureStartupErrors`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-164">Explicit methods, such as `CaptureStartupErrors`.</span></span>
-* <span data-ttu-id="3bd40-165">[UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) a přidružené klíče.</span><span class="sxs-lookup"><span data-stu-id="3bd40-165">[UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) and the associated key.</span></span> <span data-ttu-id="3bd40-166">Při nastavení hodnoty s `UseSetting`, je hodnota nastavena jako bez ohledu na typ řetězec.</span><span class="sxs-lookup"><span data-stu-id="3bd40-166">When setting a value with `UseSetting`, the value is set as a string regardless of the type.</span></span>
+* <span data-ttu-id="5ecfd-162">Konfigurace hostitele tvůrce, který zahrnuje proměnné prostředí ve formátu `ASPNETCORE_{configurationKey}`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-162">Host builder configuration, which includes environment variables with the format `ASPNETCORE_{configurationKey}`.</span></span> <span data-ttu-id="5ecfd-163">Například `ASPNETCORE_URLS`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-163">For example, `ASPNETCORE_URLS`.</span></span>
+* <span data-ttu-id="5ecfd-164">Explicitní metody, jako například `CaptureStartupErrors`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-164">Explicit methods, such as `CaptureStartupErrors`.</span></span>
+* <span data-ttu-id="5ecfd-165">[UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) a přidružené klíče.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-165">[UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) and the associated key.</span></span> <span data-ttu-id="5ecfd-166">Při nastavení hodnoty s `UseSetting`, je hodnota nastavena jako bez ohledu na typ řetězec.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-166">When setting a value with `UseSetting`, the value is set as a string regardless of the type.</span></span>
 
-<span data-ttu-id="3bd40-167">Hostitel používá. obě tyto možnosti nastaví hodnotu poslední.</span><span class="sxs-lookup"><span data-stu-id="3bd40-167">The host uses whichever option sets a value last.</span></span> <span data-ttu-id="3bd40-168">Další informace najdete v tématu [konfigurace přepíše](#overriding-configuration) v další části.</span><span class="sxs-lookup"><span data-stu-id="3bd40-168">For more information, see [Overriding configuration](#overriding-configuration) in the next section.</span></span>
+<span data-ttu-id="5ecfd-167">Hostitel používá. obě tyto možnosti nastaví hodnotu poslední.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-167">The host uses whichever option sets a value last.</span></span> <span data-ttu-id="5ecfd-168">Další informace najdete v tématu [konfigurace přepíše](#overriding-configuration) v další části.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-168">For more information, see [Overriding configuration](#overriding-configuration) in the next section.</span></span>
 
-### <a name="capture-startup-errors"></a><span data-ttu-id="3bd40-169">Zaznamenat chyby při spuštění</span><span class="sxs-lookup"><span data-stu-id="3bd40-169">Capture Startup Errors</span></span>
+### <a name="capture-startup-errors"></a><span data-ttu-id="5ecfd-169">Zaznamenat chyby při spuštění</span><span class="sxs-lookup"><span data-stu-id="5ecfd-169">Capture Startup Errors</span></span>
 
-<span data-ttu-id="3bd40-170">Toto nastavení řídí zaznamenávání chyby při spuštění.</span><span class="sxs-lookup"><span data-stu-id="3bd40-170">This setting controls the capture of startup errors.</span></span>
+<span data-ttu-id="5ecfd-170">Toto nastavení řídí zaznamenávání chyby při spuštění.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-170">This setting controls the capture of startup errors.</span></span>
 
-<span data-ttu-id="3bd40-171">**Klíč**: captureStartupErrors</span><span class="sxs-lookup"><span data-stu-id="3bd40-171">**Key**: captureStartupErrors</span></span>  
-<span data-ttu-id="3bd40-172">**Typ**: *bool* (`true` nebo `1`)</span><span class="sxs-lookup"><span data-stu-id="3bd40-172">**Type**: *bool* (`true` or `1`)</span></span>  
-<span data-ttu-id="3bd40-173">**Výchozí**: použije se výchozí hodnota `false` Pokud aplikace běží s Kestrel za služby IIS, kde výchozí hodnota je `true`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-173">**Default**: Defaults to `false` unless the app runs with Kestrel behind IIS, where the default is `true`.</span></span>  
-<span data-ttu-id="3bd40-174">**Nastavit pomocí**:`CaptureStartupErrors`</span><span class="sxs-lookup"><span data-stu-id="3bd40-174">**Set using**: `CaptureStartupErrors`</span></span>  
-<span data-ttu-id="3bd40-175">**Proměnné prostředí**:`ASPNETCORE_CAPTURESTARTUPERRORS`</span><span class="sxs-lookup"><span data-stu-id="3bd40-175">**Environment variable**: `ASPNETCORE_CAPTURESTARTUPERRORS`</span></span>
+<span data-ttu-id="5ecfd-171">**Klíč**: captureStartupErrors</span><span class="sxs-lookup"><span data-stu-id="5ecfd-171">**Key**: captureStartupErrors</span></span>  
+<span data-ttu-id="5ecfd-172">**Typ**: *bool* (`true` nebo `1`)</span><span class="sxs-lookup"><span data-stu-id="5ecfd-172">**Type**: *bool* (`true` or `1`)</span></span>  
+<span data-ttu-id="5ecfd-173">**Výchozí**: použije se výchozí hodnota `false` Pokud aplikace běží s Kestrel za služby IIS, kde výchozí hodnota je `true`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-173">**Default**: Defaults to `false` unless the app runs with Kestrel behind IIS, where the default is `true`.</span></span>  
+<span data-ttu-id="5ecfd-174">**Nastavit pomocí**:`CaptureStartupErrors`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-174">**Set using**: `CaptureStartupErrors`</span></span>  
+<span data-ttu-id="5ecfd-175">**Proměnné prostředí**:`ASPNETCORE_CAPTURESTARTUPERRORS`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-175">**Environment variable**: `ASPNETCORE_CAPTURESTARTUPERRORS`</span></span>
 
-<span data-ttu-id="3bd40-176">Když `false`, chyb během spuštění výsledek v hostiteli. operace bude ukončena.</span><span class="sxs-lookup"><span data-stu-id="3bd40-176">When `false`, errors during startup result in the host exiting.</span></span> <span data-ttu-id="3bd40-177">Když `true`, hostitel zachytí výjimky během spouštění a pokusí o spuštění serveru.</span><span class="sxs-lookup"><span data-stu-id="3bd40-177">When `true`, the host captures exceptions during startup and attempts to start the server.</span></span>
+<span data-ttu-id="5ecfd-176">Když `false`, chyb během spuštění výsledek v hostiteli. operace bude ukončena.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-176">When `false`, errors during startup result in the host exiting.</span></span> <span data-ttu-id="5ecfd-177">Když `true`, hostitel zachytí výjimky během spouštění a pokusí o spuštění serveru.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-177">When `true`, the host captures exceptions during startup and attempts to start the server.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-178">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-178">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-178">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-178">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -109,7 +109,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-179">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-179">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-179">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-179">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -119,19 +119,19 @@ var host = new WebHostBuilder()
 
 ---
 
-### <a name="content-root"></a><span data-ttu-id="3bd40-180">Obsah kořenové</span><span class="sxs-lookup"><span data-stu-id="3bd40-180">Content Root</span></span>
+### <a name="content-root"></a><span data-ttu-id="5ecfd-180">Obsah kořenové</span><span class="sxs-lookup"><span data-stu-id="5ecfd-180">Content Root</span></span>
 
-<span data-ttu-id="3bd40-181">Toto nastavení určuje, kde začíná ASP.NET Core hledání obsahu souborů, jako je například zobrazení MVC.</span><span class="sxs-lookup"><span data-stu-id="3bd40-181">This setting determines where ASP.NET Core begins searching for content files, such as MVC views.</span></span> 
+<span data-ttu-id="5ecfd-181">Toto nastavení určuje, kde začíná ASP.NET Core hledání obsahu souborů, jako je například zobrazení MVC.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-181">This setting determines where ASP.NET Core begins searching for content files, such as MVC views.</span></span> 
 
-<span data-ttu-id="3bd40-182">**Klíč**: contentRoot</span><span class="sxs-lookup"><span data-stu-id="3bd40-182">**Key**: contentRoot</span></span>  
-<span data-ttu-id="3bd40-183">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="3bd40-183">**Type**: *string*</span></span>  
-<span data-ttu-id="3bd40-184">**Výchozí**: výchozí složce, kde se nachází sestavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-184">**Default**: Defaults to the folder where the app assembly resides.</span></span>  
-<span data-ttu-id="3bd40-185">**Nastavit pomocí**:`UseContentRoot`</span><span class="sxs-lookup"><span data-stu-id="3bd40-185">**Set using**: `UseContentRoot`</span></span>  
-<span data-ttu-id="3bd40-186">**Proměnné prostředí**:`ASPNETCORE_CONTENTROOT`</span><span class="sxs-lookup"><span data-stu-id="3bd40-186">**Environment variable**: `ASPNETCORE_CONTENTROOT`</span></span>
+<span data-ttu-id="5ecfd-182">**Klíč**: contentRoot</span><span class="sxs-lookup"><span data-stu-id="5ecfd-182">**Key**: contentRoot</span></span>  
+<span data-ttu-id="5ecfd-183">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="5ecfd-183">**Type**: *string*</span></span>  
+<span data-ttu-id="5ecfd-184">**Výchozí**: výchozí složce, kde se nachází sestavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-184">**Default**: Defaults to the folder where the app assembly resides.</span></span>  
+<span data-ttu-id="5ecfd-185">**Nastavit pomocí**:`UseContentRoot`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-185">**Set using**: `UseContentRoot`</span></span>  
+<span data-ttu-id="5ecfd-186">**Proměnné prostředí**:`ASPNETCORE_CONTENTROOT`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-186">**Environment variable**: `ASPNETCORE_CONTENTROOT`</span></span>
 
-<span data-ttu-id="3bd40-187">Kořenu obsahu se používá jako základní cesta pro [kořenový Web nastavení](#web-root).</span><span class="sxs-lookup"><span data-stu-id="3bd40-187">The content root is also used as the base path for the [Web Root setting](#web-root).</span></span> <span data-ttu-id="3bd40-188">Pokud cesta neexistuje, hostitel se nepodaří spustit.</span><span class="sxs-lookup"><span data-stu-id="3bd40-188">If the path doesn't exist, the host fails to start.</span></span>
+<span data-ttu-id="5ecfd-187">Kořenu obsahu se používá jako základní cesta pro [kořenový Web nastavení](#web-root).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-187">The content root is also used as the base path for the [Web Root setting](#web-root).</span></span> <span data-ttu-id="5ecfd-188">Pokud cesta neexistuje, hostitel se nepodaří spustit.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-188">If the path doesn't exist, the host fails to start.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-189">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-189">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-189">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-189">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -139,7 +139,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-190">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-190">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-190">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-190">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -149,19 +149,19 @@ var host = new WebHostBuilder()
 
 ---
 
-### <a name="detailed-errors"></a><span data-ttu-id="3bd40-191">Podrobné chyby</span><span class="sxs-lookup"><span data-stu-id="3bd40-191">Detailed Errors</span></span>
+### <a name="detailed-errors"></a><span data-ttu-id="5ecfd-191">Podrobné chyby</span><span class="sxs-lookup"><span data-stu-id="5ecfd-191">Detailed Errors</span></span>
 
-<span data-ttu-id="3bd40-192">Určuje, zda podrobné chyby, které mají být zaznamenány.</span><span class="sxs-lookup"><span data-stu-id="3bd40-192">Determines if detailed errors should be captured.</span></span>
+<span data-ttu-id="5ecfd-192">Určuje, zda podrobné chyby, které mají být zaznamenány.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-192">Determines if detailed errors should be captured.</span></span>
 
-<span data-ttu-id="3bd40-193">**Klíč**: detailedErrors</span><span class="sxs-lookup"><span data-stu-id="3bd40-193">**Key**: detailedErrors</span></span>  
-<span data-ttu-id="3bd40-194">**Typ**: *bool* (`true` nebo `1`)</span><span class="sxs-lookup"><span data-stu-id="3bd40-194">**Type**: *bool* (`true` or `1`)</span></span>  
-<span data-ttu-id="3bd40-195">**Výchozí**: false</span><span class="sxs-lookup"><span data-stu-id="3bd40-195">**Default**: false</span></span>  
-<span data-ttu-id="3bd40-196">**Nastavit pomocí**:`UseSetting`</span><span class="sxs-lookup"><span data-stu-id="3bd40-196">**Set using**: `UseSetting`</span></span>  
-<span data-ttu-id="3bd40-197">**Proměnné prostředí**:`ASPNETCORE_DETAILEDERRORS`</span><span class="sxs-lookup"><span data-stu-id="3bd40-197">**Environment variable**: `ASPNETCORE_DETAILEDERRORS`</span></span>
+<span data-ttu-id="5ecfd-193">**Klíč**: detailedErrors</span><span class="sxs-lookup"><span data-stu-id="5ecfd-193">**Key**: detailedErrors</span></span>  
+<span data-ttu-id="5ecfd-194">**Typ**: *bool* (`true` nebo `1`)</span><span class="sxs-lookup"><span data-stu-id="5ecfd-194">**Type**: *bool* (`true` or `1`)</span></span>  
+<span data-ttu-id="5ecfd-195">**Výchozí**: false</span><span class="sxs-lookup"><span data-stu-id="5ecfd-195">**Default**: false</span></span>  
+<span data-ttu-id="5ecfd-196">**Nastavit pomocí**:`UseSetting`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-196">**Set using**: `UseSetting`</span></span>  
+<span data-ttu-id="5ecfd-197">**Proměnné prostředí**:`ASPNETCORE_DETAILEDERRORS`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-197">**Environment variable**: `ASPNETCORE_DETAILEDERRORS`</span></span>
 
-<span data-ttu-id="3bd40-198">Když povolené (nebo když <a href="#environment">prostředí</a> je nastaven na `Development`), aplikace zaznamená podrobné výjimky.</span><span class="sxs-lookup"><span data-stu-id="3bd40-198">When enabled (or when the <a href="#environment">Environment</a> is set to `Development`), the app captures detailed exceptions.</span></span>
+<span data-ttu-id="5ecfd-198">Když povolené (nebo když <a href="#environment">prostředí</a> je nastaven na `Development`), aplikace zaznamená podrobné výjimky.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-198">When enabled (or when the <a href="#environment">Environment</a> is set to `Development`), the app captures detailed exceptions.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-199">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-199">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-199">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-199">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -169,7 +169,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-200">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-200">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-200">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-200">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -179,19 +179,19 @@ var host = new WebHostBuilder()
 
 ---
 
-### <a name="environment"></a><span data-ttu-id="3bd40-201">Prostředí</span><span class="sxs-lookup"><span data-stu-id="3bd40-201">Environment</span></span>
+### <a name="environment"></a><span data-ttu-id="5ecfd-201">Prostředí</span><span class="sxs-lookup"><span data-stu-id="5ecfd-201">Environment</span></span>
 
-<span data-ttu-id="3bd40-202">Nastaví prostředí aplikace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-202">Sets the app's environment.</span></span>
+<span data-ttu-id="5ecfd-202">Nastaví prostředí aplikace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-202">Sets the app's environment.</span></span>
 
-<span data-ttu-id="3bd40-203">**Klíč**: prostředí</span><span class="sxs-lookup"><span data-stu-id="3bd40-203">**Key**: environment</span></span>  
-<span data-ttu-id="3bd40-204">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="3bd40-204">**Type**: *string*</span></span>  
-<span data-ttu-id="3bd40-205">**Výchozí**: produkční</span><span class="sxs-lookup"><span data-stu-id="3bd40-205">**Default**: Production</span></span>  
-<span data-ttu-id="3bd40-206">**Nastavit pomocí**:`UseEnvironment`</span><span class="sxs-lookup"><span data-stu-id="3bd40-206">**Set using**: `UseEnvironment`</span></span>  
-<span data-ttu-id="3bd40-207">**Proměnné prostředí**:`ASPNETCORE_ENVIRONMENT`</span><span class="sxs-lookup"><span data-stu-id="3bd40-207">**Environment variable**: `ASPNETCORE_ENVIRONMENT`</span></span>
+<span data-ttu-id="5ecfd-203">**Klíč**: prostředí</span><span class="sxs-lookup"><span data-stu-id="5ecfd-203">**Key**: environment</span></span>  
+<span data-ttu-id="5ecfd-204">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="5ecfd-204">**Type**: *string*</span></span>  
+<span data-ttu-id="5ecfd-205">**Výchozí**: produkční</span><span class="sxs-lookup"><span data-stu-id="5ecfd-205">**Default**: Production</span></span>  
+<span data-ttu-id="5ecfd-206">**Nastavit pomocí**:`UseEnvironment`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-206">**Set using**: `UseEnvironment`</span></span>  
+<span data-ttu-id="5ecfd-207">**Proměnné prostředí**:`ASPNETCORE_ENVIRONMENT`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-207">**Environment variable**: `ASPNETCORE_ENVIRONMENT`</span></span>
 
-<span data-ttu-id="3bd40-208">Prostředí můžete nastavit na jakoukoli hodnotu.</span><span class="sxs-lookup"><span data-stu-id="3bd40-208">The environment can be set to any value.</span></span> <span data-ttu-id="3bd40-209">Framework definované hodnoty zahrnují `Development`, `Staging`, a `Production`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-209">Framework-defined values include `Development`, `Staging`, and `Production`.</span></span> <span data-ttu-id="3bd40-210">Hodnoty nejsou velká a malá písmena.</span><span class="sxs-lookup"><span data-stu-id="3bd40-210">Values aren't case sensitive.</span></span> <span data-ttu-id="3bd40-211">Ve výchozím nastavení *prostředí* je pro čtení z `ASPNETCORE_ENVIRONMENT` proměnné prostředí.</span><span class="sxs-lookup"><span data-stu-id="3bd40-211">By default, the *Environment* is read from the `ASPNETCORE_ENVIRONMENT` environment variable.</span></span> <span data-ttu-id="3bd40-212">Při použití [Visual Studio](https://www.visualstudio.com/), proměnné prostředí může být nastavena v *launchSettings.json* souboru.</span><span class="sxs-lookup"><span data-stu-id="3bd40-212">When using [Visual Studio](https://www.visualstudio.com/), environment variables may be set in the *launchSettings.json* file.</span></span> <span data-ttu-id="3bd40-213">Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).</span><span class="sxs-lookup"><span data-stu-id="3bd40-213">For more information, see [Working with Multiple Environments](xref:fundamentals/environments).</span></span>
+<span data-ttu-id="5ecfd-208">Prostředí můžete nastavit na jakoukoli hodnotu.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-208">The environment can be set to any value.</span></span> <span data-ttu-id="5ecfd-209">Framework definované hodnoty zahrnují `Development`, `Staging`, a `Production`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-209">Framework-defined values include `Development`, `Staging`, and `Production`.</span></span> <span data-ttu-id="5ecfd-210">Hodnoty nejsou velká a malá písmena.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-210">Values aren't case sensitive.</span></span> <span data-ttu-id="5ecfd-211">Ve výchozím nastavení *prostředí* je pro čtení z `ASPNETCORE_ENVIRONMENT` proměnné prostředí.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-211">By default, the *Environment* is read from the `ASPNETCORE_ENVIRONMENT` environment variable.</span></span> <span data-ttu-id="5ecfd-212">Při použití [Visual Studio](https://www.visualstudio.com/), proměnné prostředí může být nastavena v *launchSettings.json* souboru.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-212">When using [Visual Studio](https://www.visualstudio.com/), environment variables may be set in the *launchSettings.json* file.</span></span> <span data-ttu-id="5ecfd-213">Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-213">For more information, see [Working with Multiple Environments](xref:fundamentals/environments).</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-214">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-214">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-214">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-214">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -199,7 +199,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-215">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-215">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-215">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-215">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -209,21 +209,21 @@ var host = new WebHostBuilder()
 
 ---
 
-### <a name="hosting-startup-assemblies"></a><span data-ttu-id="3bd40-216">Hostování spuštění sestavení</span><span class="sxs-lookup"><span data-stu-id="3bd40-216">Hosting Startup Assemblies</span></span>
+### <a name="hosting-startup-assemblies"></a><span data-ttu-id="5ecfd-216">Hostování spuštění sestavení</span><span class="sxs-lookup"><span data-stu-id="5ecfd-216">Hosting Startup Assemblies</span></span>
 
-<span data-ttu-id="3bd40-217">Nastaví hostování spuštění sestavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-217">Sets the app's hosting startup assemblies.</span></span>
+<span data-ttu-id="5ecfd-217">Nastaví hostování spuštění sestavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-217">Sets the app's hosting startup assemblies.</span></span>
 
-<span data-ttu-id="3bd40-218">**Klíč**: hostingStartupAssemblies</span><span class="sxs-lookup"><span data-stu-id="3bd40-218">**Key**: hostingStartupAssemblies</span></span>  
-<span data-ttu-id="3bd40-219">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="3bd40-219">**Type**: *string*</span></span>  
-<span data-ttu-id="3bd40-220">**Výchozí**: prázdný řetězec</span><span class="sxs-lookup"><span data-stu-id="3bd40-220">**Default**: Empty string</span></span>  
-<span data-ttu-id="3bd40-221">**Nastavit pomocí**:`UseSetting`</span><span class="sxs-lookup"><span data-stu-id="3bd40-221">**Set using**: `UseSetting`</span></span>  
-<span data-ttu-id="3bd40-222">**Proměnné prostředí**:`ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`</span><span class="sxs-lookup"><span data-stu-id="3bd40-222">**Environment variable**: `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`</span></span>
+<span data-ttu-id="5ecfd-218">**Klíč**: hostingStartupAssemblies</span><span class="sxs-lookup"><span data-stu-id="5ecfd-218">**Key**: hostingStartupAssemblies</span></span>  
+<span data-ttu-id="5ecfd-219">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="5ecfd-219">**Type**: *string*</span></span>  
+<span data-ttu-id="5ecfd-220">**Výchozí**: prázdný řetězec</span><span class="sxs-lookup"><span data-stu-id="5ecfd-220">**Default**: Empty string</span></span>  
+<span data-ttu-id="5ecfd-221">**Nastavit pomocí**:`UseSetting`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-221">**Set using**: `UseSetting`</span></span>  
+<span data-ttu-id="5ecfd-222">**Proměnné prostředí**:`ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-222">**Environment variable**: `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`</span></span>
 
-<span data-ttu-id="3bd40-223">Řetězec oddělený středníkem hostování spuštění sestavení načíst při spuštění.</span><span class="sxs-lookup"><span data-stu-id="3bd40-223">A semicolon-delimited string of hosting startup assemblies to load on startup.</span></span> <span data-ttu-id="3bd40-224">Tato funkce je nového v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="3bd40-224">This feature is new in ASP.NET Core 2.0.</span></span>
+<span data-ttu-id="5ecfd-223">Řetězec oddělený středníkem hostování spuštění sestavení načíst při spuštění.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-223">A semicolon-delimited string of hosting startup assemblies to load on startup.</span></span> <span data-ttu-id="5ecfd-224">Tato funkce je nového v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-224">This feature is new in ASP.NET Core 2.0.</span></span>
 
-<span data-ttu-id="3bd40-225">I když výchozí hodnota konfigurace je řetězec prázdný, hostování spuštění sestavení, vždy zahrňte sestavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-225">Although the configuration value defaults to an empty string, the hosting startup assemblies always include the app's assembly.</span></span> <span data-ttu-id="3bd40-226">Při hostování spuštění sestavení jsou k dispozici, se přidají do sestavení aplikace pro načtení, když aplikace sestavení jeho společných služeb během spouštění.</span><span class="sxs-lookup"><span data-stu-id="3bd40-226">When hosting startup assemblies are provided, they're added to the app's assembly for loading when the app builds its common services during startup.</span></span>
+<span data-ttu-id="5ecfd-225">I když výchozí hodnota konfigurace je řetězec prázdný, hostování spuštění sestavení, vždy zahrňte sestavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-225">Although the configuration value defaults to an empty string, the hosting startup assemblies always include the app's assembly.</span></span> <span data-ttu-id="5ecfd-226">Při hostování spuštění sestavení jsou k dispozici, se přidají do sestavení aplikace pro načtení, když aplikace sestavení jeho společných služeb během spouštění.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-226">When hosting startup assemblies are provided, they're added to the app's assembly for loading when the app builds its common services during startup.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-227">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-227">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-227">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-227">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -231,25 +231,25 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-228">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-228">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-228">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-228">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="3bd40-229">Tato funkce není k dispozici v ASP.NET Core 1.x.</span><span class="sxs-lookup"><span data-stu-id="3bd40-229">This feature is unavailable in ASP.NET Core 1.x.</span></span>
+<span data-ttu-id="5ecfd-229">Tato funkce není k dispozici v ASP.NET Core 1.x.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-229">This feature is unavailable in ASP.NET Core 1.x.</span></span>
 
 ---
 
-### <a name="prefer-hosting-urls"></a><span data-ttu-id="3bd40-230">Prefer Hosting URLs</span><span class="sxs-lookup"><span data-stu-id="3bd40-230">Prefer Hosting URLs</span></span>
+### <a name="prefer-hosting-urls"></a><span data-ttu-id="5ecfd-230">Prefer Hosting URLs</span><span class="sxs-lookup"><span data-stu-id="5ecfd-230">Prefer Hosting URLs</span></span>
 
-<span data-ttu-id="3bd40-231">Určuje, zda hostitel naslouchat požadavkům na adresy URL nakonfigurované `WebHostBuilder` místo nastavení nakonfigurovaného pomocí `IServer` implementace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-231">Indicates whether the host should listen on the URLs configured with the `WebHostBuilder` instead of those configured with the `IServer` implementation.</span></span>
+<span data-ttu-id="5ecfd-231">Určuje, zda hostitel naslouchat požadavkům na adresy URL nakonfigurované `WebHostBuilder` místo nastavení nakonfigurovaného pomocí `IServer` implementace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-231">Indicates whether the host should listen on the URLs configured with the `WebHostBuilder` instead of those configured with the `IServer` implementation.</span></span>
 
-<span data-ttu-id="3bd40-232">**Klíč**: preferHostingUrls</span><span class="sxs-lookup"><span data-stu-id="3bd40-232">**Key**: preferHostingUrls</span></span>  
-<span data-ttu-id="3bd40-233">**Typ**: *bool* (`true` nebo `1`)</span><span class="sxs-lookup"><span data-stu-id="3bd40-233">**Type**: *bool* (`true` or `1`)</span></span>  
-<span data-ttu-id="3bd40-234">**Výchozí**: true</span><span class="sxs-lookup"><span data-stu-id="3bd40-234">**Default**: true</span></span>  
-<span data-ttu-id="3bd40-235">**Nastavit pomocí**:`PreferHostingUrls`</span><span class="sxs-lookup"><span data-stu-id="3bd40-235">**Set using**: `PreferHostingUrls`</span></span>  
-<span data-ttu-id="3bd40-236">**Proměnné prostředí**:`ASPNETCORE_PREFERHOSTINGURLS`</span><span class="sxs-lookup"><span data-stu-id="3bd40-236">**Environment variable**: `ASPNETCORE_PREFERHOSTINGURLS`</span></span>
+<span data-ttu-id="5ecfd-232">**Klíč**: preferHostingUrls</span><span class="sxs-lookup"><span data-stu-id="5ecfd-232">**Key**: preferHostingUrls</span></span>  
+<span data-ttu-id="5ecfd-233">**Typ**: *bool* (`true` nebo `1`)</span><span class="sxs-lookup"><span data-stu-id="5ecfd-233">**Type**: *bool* (`true` or `1`)</span></span>  
+<span data-ttu-id="5ecfd-234">**Výchozí**: true</span><span class="sxs-lookup"><span data-stu-id="5ecfd-234">**Default**: true</span></span>  
+<span data-ttu-id="5ecfd-235">**Nastavit pomocí**:`PreferHostingUrls`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-235">**Set using**: `PreferHostingUrls`</span></span>  
+<span data-ttu-id="5ecfd-236">**Proměnné prostředí**:`ASPNETCORE_PREFERHOSTINGURLS`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-236">**Environment variable**: `ASPNETCORE_PREFERHOSTINGURLS`</span></span>
 
-<span data-ttu-id="3bd40-237">Tato funkce je nového v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="3bd40-237">This feature is new in ASP.NET Core 2.0.</span></span>
+<span data-ttu-id="5ecfd-237">Tato funkce je nového v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-237">This feature is new in ASP.NET Core 2.0.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-238">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-238">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-238">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-238">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -257,25 +257,25 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-239">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-239">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-239">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-239">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="3bd40-240">Tato funkce není k dispozici v ASP.NET Core 1.x.</span><span class="sxs-lookup"><span data-stu-id="3bd40-240">This feature is unavailable in ASP.NET Core 1.x.</span></span>
+<span data-ttu-id="5ecfd-240">Tato funkce není k dispozici v ASP.NET Core 1.x.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-240">This feature is unavailable in ASP.NET Core 1.x.</span></span>
 
 ---
 
-### <a name="prevent-hosting-startup"></a><span data-ttu-id="3bd40-241">Zabránit spuštění hostování</span><span class="sxs-lookup"><span data-stu-id="3bd40-241">Prevent Hosting Startup</span></span>
+### <a name="prevent-hosting-startup"></a><span data-ttu-id="5ecfd-241">Zabránit spuštění hostování</span><span class="sxs-lookup"><span data-stu-id="5ecfd-241">Prevent Hosting Startup</span></span>
 
-<span data-ttu-id="3bd40-242">Brání automatické načítání hostování spuštění sestavení, a to včetně hostování spuštění sestavení nakonfiguroval sestavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-242">Prevents the automatic loading of hosting startup assemblies, including hosting startup assemblies configured by the app's assembly.</span></span> <span data-ttu-id="3bd40-243">V tématu [přidat funkce aplikací z externí sestavení pomocí IHostingStartup](xref:host-and-deploy/ihostingstartup) Další informace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-243">See [Add app features from an external assembly using IHostingStartup](xref:host-and-deploy/ihostingstartup) for more information.</span></span>
+<span data-ttu-id="5ecfd-242">Brání automatické načítání hostování spuštění sestavení, a to včetně hostování spuštění sestavení nakonfiguroval sestavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-242">Prevents the automatic loading of hosting startup assemblies, including hosting startup assemblies configured by the app's assembly.</span></span> <span data-ttu-id="5ecfd-243">V tématu [přidat funkce aplikací z externí sestavení pomocí IHostingStartup](xref:host-and-deploy/ihostingstartup) Další informace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-243">See [Add app features from an external assembly using IHostingStartup](xref:host-and-deploy/ihostingstartup) for more information.</span></span>
 
-<span data-ttu-id="3bd40-244">**Klíč**: preventHostingStartup</span><span class="sxs-lookup"><span data-stu-id="3bd40-244">**Key**: preventHostingStartup</span></span>  
-<span data-ttu-id="3bd40-245">**Typ**: *bool* (`true` nebo `1`)</span><span class="sxs-lookup"><span data-stu-id="3bd40-245">**Type**: *bool* (`true` or `1`)</span></span>  
-<span data-ttu-id="3bd40-246">**Výchozí**: false</span><span class="sxs-lookup"><span data-stu-id="3bd40-246">**Default**: false</span></span>  
-<span data-ttu-id="3bd40-247">**Nastavit pomocí**:`UseSetting`</span><span class="sxs-lookup"><span data-stu-id="3bd40-247">**Set using**: `UseSetting`</span></span>  
-<span data-ttu-id="3bd40-248">**Proměnné prostředí**:`ASPNETCORE_PREVENTHOSTINGSTARTUP`</span><span class="sxs-lookup"><span data-stu-id="3bd40-248">**Environment variable**: `ASPNETCORE_PREVENTHOSTINGSTARTUP`</span></span>
+<span data-ttu-id="5ecfd-244">**Klíč**: preventHostingStartup</span><span class="sxs-lookup"><span data-stu-id="5ecfd-244">**Key**: preventHostingStartup</span></span>  
+<span data-ttu-id="5ecfd-245">**Typ**: *bool* (`true` nebo `1`)</span><span class="sxs-lookup"><span data-stu-id="5ecfd-245">**Type**: *bool* (`true` or `1`)</span></span>  
+<span data-ttu-id="5ecfd-246">**Výchozí**: false</span><span class="sxs-lookup"><span data-stu-id="5ecfd-246">**Default**: false</span></span>  
+<span data-ttu-id="5ecfd-247">**Nastavit pomocí**:`UseSetting`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-247">**Set using**: `UseSetting`</span></span>  
+<span data-ttu-id="5ecfd-248">**Proměnné prostředí**:`ASPNETCORE_PREVENTHOSTINGSTARTUP`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-248">**Environment variable**: `ASPNETCORE_PREVENTHOSTINGSTARTUP`</span></span>
 
-<span data-ttu-id="3bd40-249">Tato funkce je nového v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="3bd40-249">This feature is new in ASP.NET Core 2.0.</span></span>
+<span data-ttu-id="5ecfd-249">Tato funkce je nového v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-249">This feature is new in ASP.NET Core 2.0.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-250">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-250">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-250">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-250">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -283,25 +283,25 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-251">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-251">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-251">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-251">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="3bd40-252">Tato funkce není k dispozici v ASP.NET Core 1.x.</span><span class="sxs-lookup"><span data-stu-id="3bd40-252">This feature is unavailable in ASP.NET Core 1.x.</span></span>
+<span data-ttu-id="5ecfd-252">Tato funkce není k dispozici v ASP.NET Core 1.x.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-252">This feature is unavailable in ASP.NET Core 1.x.</span></span>
 
 ---
 
-### <a name="server-urls"></a><span data-ttu-id="3bd40-253">Adresy URL serveru</span><span class="sxs-lookup"><span data-stu-id="3bd40-253">Server URLs</span></span>
+### <a name="server-urls"></a><span data-ttu-id="5ecfd-253">Adresy URL serveru</span><span class="sxs-lookup"><span data-stu-id="5ecfd-253">Server URLs</span></span>
 
-<span data-ttu-id="3bd40-254">Určuje IP adres nebo adres hostitele s porty a protokoly, které server naslouchat požadavkům na požadavky.</span><span class="sxs-lookup"><span data-stu-id="3bd40-254">Indicates the IP addresses or host addresses with ports and protocols that the server should listen on for requests.</span></span>
+<span data-ttu-id="5ecfd-254">Určuje IP adres nebo adres hostitele s porty a protokoly, které server naslouchat požadavkům na požadavky.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-254">Indicates the IP addresses or host addresses with ports and protocols that the server should listen on for requests.</span></span>
 
-<span data-ttu-id="3bd40-255">**Klíč**: adresy URL</span><span class="sxs-lookup"><span data-stu-id="3bd40-255">**Key**: urls</span></span>  
-<span data-ttu-id="3bd40-256">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="3bd40-256">**Type**: *string*</span></span>  
-<span data-ttu-id="3bd40-257">**Výchozí**: http://localhost: 5000</span><span class="sxs-lookup"><span data-stu-id="3bd40-257">**Default**: http://localhost:5000</span></span>  
-<span data-ttu-id="3bd40-258">**Nastavit pomocí**:`UseUrls`</span><span class="sxs-lookup"><span data-stu-id="3bd40-258">**Set using**: `UseUrls`</span></span>  
-<span data-ttu-id="3bd40-259">**Proměnné prostředí**:`ASPNETCORE_URLS`</span><span class="sxs-lookup"><span data-stu-id="3bd40-259">**Environment variable**: `ASPNETCORE_URLS`</span></span>
+<span data-ttu-id="5ecfd-255">**Klíč**: adresy URL</span><span class="sxs-lookup"><span data-stu-id="5ecfd-255">**Key**: urls</span></span>  
+<span data-ttu-id="5ecfd-256">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="5ecfd-256">**Type**: *string*</span></span>  
+<span data-ttu-id="5ecfd-257">**Výchozí**: http://localhost: 5000</span><span class="sxs-lookup"><span data-stu-id="5ecfd-257">**Default**: http://localhost:5000</span></span>  
+<span data-ttu-id="5ecfd-258">**Nastavit pomocí**:`UseUrls`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-258">**Set using**: `UseUrls`</span></span>  
+<span data-ttu-id="5ecfd-259">**Proměnné prostředí**:`ASPNETCORE_URLS`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-259">**Environment variable**: `ASPNETCORE_URLS`</span></span>
 
-<span data-ttu-id="3bd40-260">Nastavte na oddělených středníkem (;) seznam URL předpony serveru by měl odpovídat.</span><span class="sxs-lookup"><span data-stu-id="3bd40-260">Set to a semicolon-separated (;) list of URL prefixes to which the server should respond.</span></span> <span data-ttu-id="3bd40-261">Například `http://localhost:123`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-261">For example, `http://localhost:123`.</span></span> <span data-ttu-id="3bd40-262">Použití "\*" k označení, že by měl server přijímat požadavky na všechny IP adresy nebo názvu hostitele pomocí zadaný port a protokol (například `http://*:5000`).</span><span class="sxs-lookup"><span data-stu-id="3bd40-262">Use "\*" to indicate that the server should listen for requests on any IP address or hostname using the specified port and protocol (for example, `http://*:5000`).</span></span> <span data-ttu-id="3bd40-263">Protokol (`http://` nebo `https://`) musí být součástí každou adresu URL.</span><span class="sxs-lookup"><span data-stu-id="3bd40-263">The protocol (`http://` or `https://`) must be included with each URL.</span></span> <span data-ttu-id="3bd40-264">Podporované formáty liší mezi servery.</span><span class="sxs-lookup"><span data-stu-id="3bd40-264">Supported formats vary between servers.</span></span>
+<span data-ttu-id="5ecfd-260">Nastavte na oddělených středníkem (;) seznam URL předpony serveru by měl odpovídat.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-260">Set to a semicolon-separated (;) list of URL prefixes to which the server should respond.</span></span> <span data-ttu-id="5ecfd-261">Například `http://localhost:123`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-261">For example, `http://localhost:123`.</span></span> <span data-ttu-id="5ecfd-262">Použití "\*" k označení, že by měl server přijímat požadavky na všechny IP adresy nebo názvu hostitele pomocí zadaný port a protokol (například `http://*:5000`).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-262">Use "\*" to indicate that the server should listen for requests on any IP address or hostname using the specified port and protocol (for example, `http://*:5000`).</span></span> <span data-ttu-id="5ecfd-263">Protokol (`http://` nebo `https://`) musí být součástí každou adresu URL.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-263">The protocol (`http://` or `https://`) must be included with each URL.</span></span> <span data-ttu-id="5ecfd-264">Podporované formáty liší mezi servery.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-264">Supported formats vary between servers.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-265">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-265">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-265">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-265">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -309,9 +309,9 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-<span data-ttu-id="3bd40-266">Kestrel má svůj vlastní koncový bod rozhraní API konfigurace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-266">Kestrel has its own endpoint configuration API.</span></span> <span data-ttu-id="3bd40-267">Další informace najdete v tématu [Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel?tabs=aspnetcore2x#endpoint-configuration).</span><span class="sxs-lookup"><span data-stu-id="3bd40-267">For more information, see [Kestrel web server implementation in ASP.NET Core](xref:fundamentals/servers/kestrel?tabs=aspnetcore2x#endpoint-configuration).</span></span>
+<span data-ttu-id="5ecfd-266">Kestrel má svůj vlastní koncový bod rozhraní API konfigurace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-266">Kestrel has its own endpoint configuration API.</span></span> <span data-ttu-id="5ecfd-267">Další informace najdete v tématu [Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel?tabs=aspnetcore2x#endpoint-configuration).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-267">For more information, see [Kestrel web server implementation in ASP.NET Core](xref:fundamentals/servers/kestrel?tabs=aspnetcore2x#endpoint-configuration).</span></span>
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-268">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-268">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-268">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-268">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -321,19 +321,19 @@ var host = new WebHostBuilder()
 
 ---
 
-### <a name="shutdown-timeout"></a><span data-ttu-id="3bd40-269">Časový limit vypnutí</span><span class="sxs-lookup"><span data-stu-id="3bd40-269">Shutdown Timeout</span></span>
+### <a name="shutdown-timeout"></a><span data-ttu-id="5ecfd-269">Časový limit vypnutí</span><span class="sxs-lookup"><span data-stu-id="5ecfd-269">Shutdown Timeout</span></span>
 
-<span data-ttu-id="3bd40-270">Určuje dobu čekání na webového hostitele vypnutí.</span><span class="sxs-lookup"><span data-stu-id="3bd40-270">Specifies the amount of time to wait for the web host to shutdown.</span></span>
+<span data-ttu-id="5ecfd-270">Určuje dobu čekání na webového hostitele vypnutí.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-270">Specifies the amount of time to wait for the web host to shutdown.</span></span>
 
-<span data-ttu-id="3bd40-271">**Klíč**: shutdownTimeoutSeconds</span><span class="sxs-lookup"><span data-stu-id="3bd40-271">**Key**: shutdownTimeoutSeconds</span></span>  
-<span data-ttu-id="3bd40-272">**Typ**: *int*</span><span class="sxs-lookup"><span data-stu-id="3bd40-272">**Type**: *int*</span></span>  
-<span data-ttu-id="3bd40-273">**Výchozí**: 5</span><span class="sxs-lookup"><span data-stu-id="3bd40-273">**Default**: 5</span></span>  
-<span data-ttu-id="3bd40-274">**Nastavit pomocí**:`UseShutdownTimeout`</span><span class="sxs-lookup"><span data-stu-id="3bd40-274">**Set using**: `UseShutdownTimeout`</span></span>  
-<span data-ttu-id="3bd40-275">**Proměnné prostředí**:`ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`</span><span class="sxs-lookup"><span data-stu-id="3bd40-275">**Environment variable**: `ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`</span></span>
+<span data-ttu-id="5ecfd-271">**Klíč**: shutdownTimeoutSeconds</span><span class="sxs-lookup"><span data-stu-id="5ecfd-271">**Key**: shutdownTimeoutSeconds</span></span>  
+<span data-ttu-id="5ecfd-272">**Typ**: *int*</span><span class="sxs-lookup"><span data-stu-id="5ecfd-272">**Type**: *int*</span></span>  
+<span data-ttu-id="5ecfd-273">**Výchozí**: 5</span><span class="sxs-lookup"><span data-stu-id="5ecfd-273">**Default**: 5</span></span>  
+<span data-ttu-id="5ecfd-274">**Nastavit pomocí**:`UseShutdownTimeout`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-274">**Set using**: `UseShutdownTimeout`</span></span>  
+<span data-ttu-id="5ecfd-275">**Proměnné prostředí**:`ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-275">**Environment variable**: `ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`</span></span>
 
-<span data-ttu-id="3bd40-276">I když přijme klíč *int* s `UseSetting` (například `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), `UseShutdownTimeout` rozšíření metoda přebírá `TimeSpan`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-276">Although the key accepts an *int* with `UseSetting` (for example, `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), the `UseShutdownTimeout` extension method takes a `TimeSpan`.</span></span> <span data-ttu-id="3bd40-277">Tato funkce je nového v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="3bd40-277">This feature is new in ASP.NET Core 2.0.</span></span>
+<span data-ttu-id="5ecfd-276">I když přijme klíč *int* s `UseSetting` (například `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), `UseShutdownTimeout` rozšíření metoda přebírá `TimeSpan`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-276">Although the key accepts an *int* with `UseSetting` (for example, `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), the `UseShutdownTimeout` extension method takes a `TimeSpan`.</span></span> <span data-ttu-id="5ecfd-277">Tato funkce je nového v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-277">This feature is new in ASP.NET Core 2.0.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-278">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-278">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-278">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-278">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -341,25 +341,25 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-279">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-279">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-279">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-279">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="3bd40-280">Tato funkce není k dispozici v ASP.NET Core 1.x.</span><span class="sxs-lookup"><span data-stu-id="3bd40-280">This feature is unavailable in ASP.NET Core 1.x.</span></span>
+<span data-ttu-id="5ecfd-280">Tato funkce není k dispozici v ASP.NET Core 1.x.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-280">This feature is unavailable in ASP.NET Core 1.x.</span></span>
 
 ---
 
-### <a name="startup-assembly"></a><span data-ttu-id="3bd40-281">Spuštění sestavení</span><span class="sxs-lookup"><span data-stu-id="3bd40-281">Startup Assembly</span></span>
+### <a name="startup-assembly"></a><span data-ttu-id="5ecfd-281">Spuštění sestavení</span><span class="sxs-lookup"><span data-stu-id="5ecfd-281">Startup Assembly</span></span>
 
-<span data-ttu-id="3bd40-282">Určuje sestavení pro vyhledávání `Startup` třídy.</span><span class="sxs-lookup"><span data-stu-id="3bd40-282">Determines the assembly to search for the `Startup` class.</span></span>
+<span data-ttu-id="5ecfd-282">Určuje sestavení pro vyhledávání `Startup` třídy.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-282">Determines the assembly to search for the `Startup` class.</span></span>
 
-<span data-ttu-id="3bd40-283">**Klíč**: startupAssembly</span><span class="sxs-lookup"><span data-stu-id="3bd40-283">**Key**: startupAssembly</span></span>  
-<span data-ttu-id="3bd40-284">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="3bd40-284">**Type**: *string*</span></span>  
-<span data-ttu-id="3bd40-285">**Výchozí**: sestavení aplikace</span><span class="sxs-lookup"><span data-stu-id="3bd40-285">**Default**: The app's assembly</span></span>  
-<span data-ttu-id="3bd40-286">**Nastavit pomocí**:`UseStartup`</span><span class="sxs-lookup"><span data-stu-id="3bd40-286">**Set using**: `UseStartup`</span></span>  
-<span data-ttu-id="3bd40-287">**Proměnné prostředí**:`ASPNETCORE_STARTUPASSEMBLY`</span><span class="sxs-lookup"><span data-stu-id="3bd40-287">**Environment variable**: `ASPNETCORE_STARTUPASSEMBLY`</span></span>
+<span data-ttu-id="5ecfd-283">**Klíč**: startupAssembly</span><span class="sxs-lookup"><span data-stu-id="5ecfd-283">**Key**: startupAssembly</span></span>  
+<span data-ttu-id="5ecfd-284">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="5ecfd-284">**Type**: *string*</span></span>  
+<span data-ttu-id="5ecfd-285">**Výchozí**: sestavení aplikace</span><span class="sxs-lookup"><span data-stu-id="5ecfd-285">**Default**: The app's assembly</span></span>  
+<span data-ttu-id="5ecfd-286">**Nastavit pomocí**:`UseStartup`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-286">**Set using**: `UseStartup`</span></span>  
+<span data-ttu-id="5ecfd-287">**Proměnné prostředí**:`ASPNETCORE_STARTUPASSEMBLY`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-287">**Environment variable**: `ASPNETCORE_STARTUPASSEMBLY`</span></span>
 
-<span data-ttu-id="3bd40-288">Sestavení podle názvu (`string`) nebo typ (`TStartup`) může být odkaz.</span><span class="sxs-lookup"><span data-stu-id="3bd40-288">The assembly by name (`string`) or type (`TStartup`) can be referenced.</span></span> <span data-ttu-id="3bd40-289">Pokud je to více `UseStartup` metody jsou volány, poslední změny mají přednost.</span><span class="sxs-lookup"><span data-stu-id="3bd40-289">If multiple `UseStartup` methods are called, the last one takes precedence.</span></span>
+<span data-ttu-id="5ecfd-288">Sestavení podle názvu (`string`) nebo typ (`TStartup`) může být odkaz.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-288">The assembly by name (`string`) or type (`TStartup`) can be referenced.</span></span> <span data-ttu-id="5ecfd-289">Pokud je to více `UseStartup` metody jsou volány, poslední změny mají přednost.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-289">If multiple `UseStartup` methods are called, the last one takes precedence.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-290">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-290">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-290">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-290">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -373,7 +373,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-291">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-291">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-291">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-291">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -389,17 +389,17 @@ var host = new WebHostBuilder()
 
 ---
 
-### <a name="web-root"></a><span data-ttu-id="3bd40-292">Kořenový web</span><span class="sxs-lookup"><span data-stu-id="3bd40-292">Web Root</span></span>
+### <a name="web-root"></a><span data-ttu-id="5ecfd-292">Kořenový web</span><span class="sxs-lookup"><span data-stu-id="5ecfd-292">Web Root</span></span>
 
-<span data-ttu-id="3bd40-293">Nastaví relativní cestu na statické prostředky aplikace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-293">Sets the relative path to the app's static assets.</span></span>
+<span data-ttu-id="5ecfd-293">Nastaví relativní cestu na statické prostředky aplikace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-293">Sets the relative path to the app's static assets.</span></span>
 
-<span data-ttu-id="3bd40-294">**Klíč**: webroot</span><span class="sxs-lookup"><span data-stu-id="3bd40-294">**Key**: webroot</span></span>  
-<span data-ttu-id="3bd40-295">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="3bd40-295">**Type**: *string*</span></span>  
-<span data-ttu-id="3bd40-296">**Výchozí**: Pokud není zadáno, výchozí hodnota je "(Content Root)/wwwroot", pokud cesta existuje.</span><span class="sxs-lookup"><span data-stu-id="3bd40-296">**Default**: If not specified, the default is "(Content Root)/wwwroot", if the path exists.</span></span> <span data-ttu-id="3bd40-297">Pokud cesta neexistuje, je použít soubor no-op zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="3bd40-297">If the path doesn't exist, then a no-op file provider is used.</span></span>  
-<span data-ttu-id="3bd40-298">**Nastavit pomocí**:`UseWebRoot`</span><span class="sxs-lookup"><span data-stu-id="3bd40-298">**Set using**: `UseWebRoot`</span></span>  
-<span data-ttu-id="3bd40-299">**Proměnné prostředí**:`ASPNETCORE_WEBROOT`</span><span class="sxs-lookup"><span data-stu-id="3bd40-299">**Environment variable**: `ASPNETCORE_WEBROOT`</span></span>
+<span data-ttu-id="5ecfd-294">**Klíč**: webroot</span><span class="sxs-lookup"><span data-stu-id="5ecfd-294">**Key**: webroot</span></span>  
+<span data-ttu-id="5ecfd-295">**Typ**: *řetězec*</span><span class="sxs-lookup"><span data-stu-id="5ecfd-295">**Type**: *string*</span></span>  
+<span data-ttu-id="5ecfd-296">**Výchozí**: Pokud není zadáno, výchozí hodnota je "(Content Root)/wwwroot", pokud cesta existuje.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-296">**Default**: If not specified, the default is "(Content Root)/wwwroot", if the path exists.</span></span> <span data-ttu-id="5ecfd-297">Pokud cesta neexistuje, je použít soubor no-op zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-297">If the path doesn't exist, then a no-op file provider is used.</span></span>  
+<span data-ttu-id="5ecfd-298">**Nastavit pomocí**:`UseWebRoot`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-298">**Set using**: `UseWebRoot`</span></span>  
+<span data-ttu-id="5ecfd-299">**Proměnné prostředí**:`ASPNETCORE_WEBROOT`</span><span class="sxs-lookup"><span data-stu-id="5ecfd-299">**Environment variable**: `ASPNETCORE_WEBROOT`</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-300">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-300">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-300">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-300">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -407,7 +407,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-301">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-301">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-301">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-301">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -417,13 +417,13 @@ var host = new WebHostBuilder()
 
 ---
 
-## <a name="overriding-configuration"></a><span data-ttu-id="3bd40-302">Přepsání konfigurace</span><span class="sxs-lookup"><span data-stu-id="3bd40-302">Overriding configuration</span></span>
+## <a name="overriding-configuration"></a><span data-ttu-id="5ecfd-302">Přepsání konfigurace</span><span class="sxs-lookup"><span data-stu-id="5ecfd-302">Overriding configuration</span></span>
 
-<span data-ttu-id="3bd40-303">Použití [konfigurace](xref:fundamentals/configuration/index) konfigurace hostitele.</span><span class="sxs-lookup"><span data-stu-id="3bd40-303">Use [Configuration](xref:fundamentals/configuration/index) to configure the host.</span></span> <span data-ttu-id="3bd40-304">V následujícím příkladu je konfigurace hostitele volitelně specifikován v *hosting.json* souboru.</span><span class="sxs-lookup"><span data-stu-id="3bd40-304">In the following example, host configuration is optionally specified in a *hosting.json* file.</span></span> <span data-ttu-id="3bd40-305">Všechny konfigurace načtena z *hosting.json* soubor může být přepsána argumenty příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="3bd40-305">Any configuration loaded from the *hosting.json* file may be overridden by command-line arguments.</span></span> <span data-ttu-id="3bd40-306">Integrovaný konfigurace (v `config`) se používá ke konfiguraci hostitele s `UseConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-306">The built configuration (in `config`) is used to configure the host with `UseConfiguration`.</span></span>
+<span data-ttu-id="5ecfd-303">Použití [konfigurace](xref:fundamentals/configuration/index) konfigurace hostitele.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-303">Use [Configuration](xref:fundamentals/configuration/index) to configure the host.</span></span> <span data-ttu-id="5ecfd-304">V následujícím příkladu je konfigurace hostitele volitelně specifikován v *hosting.json* souboru.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-304">In the following example, host configuration is optionally specified in a *hosting.json* file.</span></span> <span data-ttu-id="5ecfd-305">Všechny konfigurace načtena z *hosting.json* soubor může být přepsána argumenty příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-305">Any configuration loaded from the *hosting.json* file may be overridden by command-line arguments.</span></span> <span data-ttu-id="5ecfd-306">Integrovaný konfigurace (v `config`) se používá ke konfiguraci hostitele s `UseConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-306">The built configuration (in `config`) is used to configure the host with `UseConfiguration`.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-307">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-307">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-307">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-307">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="3bd40-308">*hosting.json*:</span><span class="sxs-lookup"><span data-stu-id="3bd40-308">*hosting.json*:</span></span>
+<span data-ttu-id="5ecfd-308">*hosting.json*:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-308">*hosting.json*:</span></span>
 
 ```json
 {
@@ -431,7 +431,7 @@ var host = new WebHostBuilder()
 }
 ```
 
-<span data-ttu-id="3bd40-309">Přepsání zadaná podle konfigurace `UseUrls` s *hosting.json* konfigurace příkazového řádku, první argument konfigurace druhý:</span><span class="sxs-lookup"><span data-stu-id="3bd40-309">Overriding the configuration provided by `UseUrls` with *hosting.json* config first, command-line argument config second:</span></span>
+<span data-ttu-id="5ecfd-309">Přepsání zadaná podle konfigurace `UseUrls` s *hosting.json* konfigurace příkazového řádku, první argument konfigurace druhý:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-309">Overriding the configuration provided by `UseUrls` with *hosting.json* config first, command-line argument config second:</span></span>
 
 ```csharp
 public class Program
@@ -462,9 +462,9 @@ public class Program
 }
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-310">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-310">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-310">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-310">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="3bd40-311">*hosting.json*:</span><span class="sxs-lookup"><span data-stu-id="3bd40-311">*hosting.json*:</span></span>
+<span data-ttu-id="5ecfd-311">*hosting.json*:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-311">*hosting.json*:</span></span>
 
 ```json
 {
@@ -472,7 +472,7 @@ public class Program
 }
 ```
 
-<span data-ttu-id="3bd40-312">Přepsání zadaná podle konfigurace `UseUrls` s *hosting.json* konfigurace příkazového řádku, první argument konfigurace druhý:</span><span class="sxs-lookup"><span data-stu-id="3bd40-312">Overriding the configuration provided by `UseUrls` with *hosting.json* config first, command-line argument config second:</span></span>
+<span data-ttu-id="5ecfd-312">Přepsání zadaná podle konfigurace `UseUrls` s *hosting.json* konfigurace příkazového řádku, první argument konfigurace druhý:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-312">Overriding the configuration provided by `UseUrls` with *hosting.json* config first, command-line argument config second:</span></span>
 
 ```csharp
 public class Program
@@ -504,29 +504,29 @@ public class Program
 ---
 
 > [!NOTE]
-> <span data-ttu-id="3bd40-313">[UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) metoda rozšíření není aktuálně schopen analyzovat konfigurační oddíl vrácený `GetSection` (například `.UseConfiguration(Configuration.GetSection("section"))`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-313">The [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) extension method isn't currently capable of parsing a configuration section returned by `GetSection` (for example, `.UseConfiguration(Configuration.GetSection("section"))`.</span></span> <span data-ttu-id="3bd40-314">`GetSection` Metoda filtry konfigurace klíče do části požadovaný, ale ponechá název oddílu na klíče (například `section:urls`, `section:environment`).</span><span class="sxs-lookup"><span data-stu-id="3bd40-314">The `GetSection` method filters the configuration keys to the section requested but leaves the section name on the keys (for example, `section:urls`, `section:environment`).</span></span> <span data-ttu-id="3bd40-315">`UseConfiguration` Metoda očekává klíče tak, aby odpovídala `WebHostBuilder` klíče (například `urls`, `environment`).</span><span class="sxs-lookup"><span data-stu-id="3bd40-315">The `UseConfiguration` method expects the keys to match the `WebHostBuilder` keys (for example, `urls`, `environment`).</span></span> <span data-ttu-id="3bd40-316">Přítomnost názvu oddílu na klíče zabrání hodnoty v části Konfigurace hostitele.</span><span class="sxs-lookup"><span data-stu-id="3bd40-316">The presence of the section name on the keys prevents the section's values from configuring the host.</span></span> <span data-ttu-id="3bd40-317">Tento problém bude vyřešen v příští verzi.</span><span class="sxs-lookup"><span data-stu-id="3bd40-317">This issue will be addressed in an upcoming release.</span></span> <span data-ttu-id="3bd40-318">Další informace a řešení, najdete v části [předávání konfigurační oddíl do WebHostBuilder.UseConfiguration používá úplné klíče](https://github.com/aspnet/Hosting/issues/839).</span><span class="sxs-lookup"><span data-stu-id="3bd40-318">For more information and workarounds, see [Passing configuration section into WebHostBuilder.UseConfiguration uses full keys](https://github.com/aspnet/Hosting/issues/839).</span></span>
+> <span data-ttu-id="5ecfd-313">[UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) metoda rozšíření není aktuálně schopen analyzovat konfigurační oddíl vrácený `GetSection` (například `.UseConfiguration(Configuration.GetSection("section"))`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-313">The [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) extension method isn't currently capable of parsing a configuration section returned by `GetSection` (for example, `.UseConfiguration(Configuration.GetSection("section"))`.</span></span> <span data-ttu-id="5ecfd-314">`GetSection` Metoda filtry konfigurace klíče do části požadovaný, ale ponechá název oddílu na klíče (například `section:urls`, `section:environment`).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-314">The `GetSection` method filters the configuration keys to the section requested but leaves the section name on the keys (for example, `section:urls`, `section:environment`).</span></span> <span data-ttu-id="5ecfd-315">`UseConfiguration` Metoda očekává klíče tak, aby odpovídala `WebHostBuilder` klíče (například `urls`, `environment`).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-315">The `UseConfiguration` method expects the keys to match the `WebHostBuilder` keys (for example, `urls`, `environment`).</span></span> <span data-ttu-id="5ecfd-316">Přítomnost názvu oddílu na klíče zabrání hodnoty v části Konfigurace hostitele.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-316">The presence of the section name on the keys prevents the section's values from configuring the host.</span></span> <span data-ttu-id="5ecfd-317">Tento problém bude vyřešen v příští verzi.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-317">This issue will be addressed in an upcoming release.</span></span> <span data-ttu-id="5ecfd-318">Další informace a řešení, najdete v části [předávání konfigurační oddíl do WebHostBuilder.UseConfiguration používá úplné klíče](https://github.com/aspnet/Hosting/issues/839).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-318">For more information and workarounds, see [Passing configuration section into WebHostBuilder.UseConfiguration uses full keys](https://github.com/aspnet/Hosting/issues/839).</span></span>
 
-<span data-ttu-id="3bd40-319">Pokud chcete zadat hostiteli spustit na konkrétní adresu URL, požadovanou hodnotu lze předat ve z příkazového řádku při provádění `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-319">To specify the host run on a particular URL, the desired value can be passed in from a command prompt when executing `dotnet run`.</span></span> <span data-ttu-id="3bd40-320">Přepíše argument příkazového řádku `urls` z hodnoty *hosting.json* souboru a server naslouchá na portu 8080:</span><span class="sxs-lookup"><span data-stu-id="3bd40-320">The command-line argument overrides the `urls` value from the *hosting.json* file, and the server listens on port 8080:</span></span>
+<span data-ttu-id="5ecfd-319">Pokud chcete zadat hostiteli spustit na konkrétní adresu URL, požadovanou hodnotu lze předat ve z příkazového řádku při provádění `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-319">To specify the host run on a particular URL, the desired value can be passed in from a command prompt when executing `dotnet run`.</span></span> <span data-ttu-id="5ecfd-320">Přepíše argument příkazového řádku `urls` z hodnoty *hosting.json* souboru a server naslouchá na portu 8080:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-320">The command-line argument overrides the `urls` value from the *hosting.json* file, and the server listens on port 8080:</span></span>
 
 ```console
 dotnet run --urls "http://*:8080"
 ```
 
-## <a name="starting-the-host"></a><span data-ttu-id="3bd40-321">Od hostitele</span><span class="sxs-lookup"><span data-stu-id="3bd40-321">Starting the host</span></span>
+## <a name="starting-the-host"></a><span data-ttu-id="5ecfd-321">Od hostitele</span><span class="sxs-lookup"><span data-stu-id="5ecfd-321">Starting the host</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3bd40-322">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-322">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5ecfd-322">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-322">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="3bd40-323">**Spustit**</span><span class="sxs-lookup"><span data-stu-id="3bd40-323">**Run**</span></span>
+<span data-ttu-id="5ecfd-323">**Spustit**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-323">**Run**</span></span>
 
-<span data-ttu-id="3bd40-324">`Run` Metoda spuštění webové aplikace a blokuje volající vlákno, dokud hostitel vypnutí:</span><span class="sxs-lookup"><span data-stu-id="3bd40-324">The `Run` method starts the web app and blocks the calling thread until the host is shutdown:</span></span>
+<span data-ttu-id="5ecfd-324">`Run` Metoda spuštění webové aplikace a blokuje volající vlákno, dokud hostitel vypnutí:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-324">The `Run` method starts the web app and blocks the calling thread until the host is shutdown:</span></span>
 
 ```csharp
 host.Run();
 ```
 
-<span data-ttu-id="3bd40-325">**Start**</span><span class="sxs-lookup"><span data-stu-id="3bd40-325">**Start**</span></span>
+<span data-ttu-id="5ecfd-325">**Start**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-325">**Start**</span></span>
 
-<span data-ttu-id="3bd40-326">Spuštění hostitele způsobem neblokující voláním jeho `Start` metoda:</span><span class="sxs-lookup"><span data-stu-id="3bd40-326">Run the host in a non-blocking manner by calling its `Start` method:</span></span>
+<span data-ttu-id="5ecfd-326">Spuštění hostitele způsobem neblokující voláním jeho `Start` metoda:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-326">Run the host in a non-blocking manner by calling its `Start` method:</span></span>
 
 ```csharp
 using (host)
@@ -536,7 +536,7 @@ using (host)
 }
 ```
 
-<span data-ttu-id="3bd40-327">Pokud je předán seznam adres URL, `Start` metoda, naslouchá na zadané adresy URL:</span><span class="sxs-lookup"><span data-stu-id="3bd40-327">If a list of URLs is passed to the `Start` method, it listens on the URLs specified:</span></span>
+<span data-ttu-id="5ecfd-327">Pokud je předán seznam adres URL, `Start` metoda, naslouchá na zadané adresy URL:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-327">If a list of URLs is passed to the `Start` method, it listens on the URLs specified:</span></span>
 
 ```csharp
 var urls = new List<string>()
@@ -556,11 +556,11 @@ using (host)
 }
 ```
 
-<span data-ttu-id="3bd40-328">Aplikace můžete inicializaci a spuštění nové hostitele pomocí předem nakonfigurovaných výchozích nastavení `CreateDefaultBuilder` pomocí jiné metody statické pohodlí.</span><span class="sxs-lookup"><span data-stu-id="3bd40-328">The app can initialize and start a new host using the pre-configured defaults of `CreateDefaultBuilder` using a static convenience method.</span></span> <span data-ttu-id="3bd40-329">Tyto metody start pro server bez výstup konzoly a s [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown) počkejte zalomení (Ctrl-C nebo sigint – nebo SIGTERM –):</span><span class="sxs-lookup"><span data-stu-id="3bd40-329">These methods start the server without console output and with [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown) wait for a break (Ctrl-C/SIGINT or SIGTERM):</span></span>
+<span data-ttu-id="5ecfd-328">Aplikace můžete inicializaci a spuštění nové hostitele pomocí předem nakonfigurovaných výchozích nastavení `CreateDefaultBuilder` pomocí jiné metody statické pohodlí.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-328">The app can initialize and start a new host using the pre-configured defaults of `CreateDefaultBuilder` using a static convenience method.</span></span> <span data-ttu-id="5ecfd-329">Tyto metody start pro server bez výstup konzoly a s [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown) počkejte zalomení (Ctrl-C nebo sigint – nebo SIGTERM –):</span><span class="sxs-lookup"><span data-stu-id="5ecfd-329">These methods start the server without console output and with [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown) wait for a break (Ctrl-C/SIGINT or SIGTERM):</span></span>
 
-<span data-ttu-id="3bd40-330">**Spuštění (RequestDelegate aplikace)**</span><span class="sxs-lookup"><span data-stu-id="3bd40-330">**Start(RequestDelegate app)**</span></span>
+<span data-ttu-id="5ecfd-330">**Spuštění (RequestDelegate aplikace)**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-330">**Start(RequestDelegate app)**</span></span>
 
-<span data-ttu-id="3bd40-331">Začněte `RequestDelegate`:</span><span class="sxs-lookup"><span data-stu-id="3bd40-331">Start with a `RequestDelegate`:</span></span>
+<span data-ttu-id="5ecfd-331">Začněte `RequestDelegate`:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-331">Start with a `RequestDelegate`:</span></span>
 
 ```csharp
 using (var host = WebHost.Start(app => app.Response.WriteAsync("Hello, World!")))
@@ -570,11 +570,11 @@ using (var host = WebHost.Start(app => app.Response.WriteAsync("Hello, World!"))
 }
 ```
 
-<span data-ttu-id="3bd40-332">Vytvoření žádosti o v prohlížeči `http://localhost:5000` k obdrží odpověď "Hello, World!"</span><span class="sxs-lookup"><span data-stu-id="3bd40-332">Make a request in the browser to `http://localhost:5000` to receive the response "Hello World!"</span></span> <span data-ttu-id="3bd40-333">`WaitForShutdown`bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –).</span><span class="sxs-lookup"><span data-stu-id="3bd40-333">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="3bd40-334">Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.</span><span class="sxs-lookup"><span data-stu-id="3bd40-334">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
+<span data-ttu-id="5ecfd-332">Vytvoření žádosti o v prohlížeči `http://localhost:5000` k obdrží odpověď "Hello, World!"</span><span class="sxs-lookup"><span data-stu-id="5ecfd-332">Make a request in the browser to `http://localhost:5000` to receive the response "Hello World!"</span></span> <span data-ttu-id="5ecfd-333">`WaitForShutdown`bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-333">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="5ecfd-334">Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-334">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
 
-<span data-ttu-id="3bd40-335">**Spuštění (řetězec adresy url, RequestDelegate aplikace)**</span><span class="sxs-lookup"><span data-stu-id="3bd40-335">**Start(string url, RequestDelegate app)**</span></span>
+<span data-ttu-id="5ecfd-335">**Spuštění (řetězec adresy url, RequestDelegate aplikace)**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-335">**Start(string url, RequestDelegate app)**</span></span>
 
-<span data-ttu-id="3bd40-336">Spustit s adresou URL a `RequestDelegate`:</span><span class="sxs-lookup"><span data-stu-id="3bd40-336">Start with a URL and `RequestDelegate`:</span></span>
+<span data-ttu-id="5ecfd-336">Spustit s adresou URL a `RequestDelegate`:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-336">Start with a URL and `RequestDelegate`:</span></span>
 
 ```csharp
 using (var host = WebHost.Start("http://localhost:8080", app => app.Response.WriteAsync("Hello, World!")))
@@ -584,11 +584,11 @@ using (var host = WebHost.Start("http://localhost:8080", app => app.Response.Wri
 }
 ```
 
-<span data-ttu-id="3bd40-337">Stejný výsledek jako **spuštění (RequestDelegate aplikace)**, s výjimkou aplikace reaguje na `http://localhost:8080`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-337">Produces the same result as **Start(RequestDelegate app)**, except the app responds on `http://localhost:8080`.</span></span>
+<span data-ttu-id="5ecfd-337">Stejný výsledek jako **spuštění (RequestDelegate aplikace)**, s výjimkou aplikace reaguje na `http://localhost:8080`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-337">Produces the same result as **Start(RequestDelegate app)**, except the app responds on `http://localhost:8080`.</span></span>
 
-<span data-ttu-id="3bd40-338">**Spuštění (akce<IRouteBuilder> routeBuilder)**</span><span class="sxs-lookup"><span data-stu-id="3bd40-338">**Start(Action<IRouteBuilder> routeBuilder)**</span></span>
+<span data-ttu-id="5ecfd-338">**Spuštění (akce<IRouteBuilder> routeBuilder)**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-338">**Start(Action<IRouteBuilder> routeBuilder)**</span></span>
 
-<span data-ttu-id="3bd40-339">Použít instanci `IRouteBuilder` ([Microsoft.AspNetCore.Routing](https://www.nuget.org/packages/Microsoft.AspNetCore.Routing/)) používat směrování middleware:</span><span class="sxs-lookup"><span data-stu-id="3bd40-339">Use an instance of `IRouteBuilder` ([Microsoft.AspNetCore.Routing](https://www.nuget.org/packages/Microsoft.AspNetCore.Routing/)) to use routing middleware:</span></span>
+<span data-ttu-id="5ecfd-339">Použít instanci `IRouteBuilder` ([Microsoft.AspNetCore.Routing](https://www.nuget.org/packages/Microsoft.AspNetCore.Routing/)) používat směrování middleware:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-339">Use an instance of `IRouteBuilder` ([Microsoft.AspNetCore.Routing](https://www.nuget.org/packages/Microsoft.AspNetCore.Routing/)) to use routing middleware:</span></span>
 
 ```csharp
 using (var host = WebHost.Start(router => router
@@ -607,22 +607,22 @@ using (var host = WebHost.Start(router => router
 }
 ```
 
-<span data-ttu-id="3bd40-340">Použijte následující požadavky na prohlížeč s příkladu:</span><span class="sxs-lookup"><span data-stu-id="3bd40-340">Use the following browser requests with the example:</span></span>
+<span data-ttu-id="5ecfd-340">Použijte následující požadavky na prohlížeč s příkladu:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-340">Use the following browser requests with the example:</span></span>
 
-| <span data-ttu-id="3bd40-341">Požadavek</span><span class="sxs-lookup"><span data-stu-id="3bd40-341">Request</span></span>                                    | <span data-ttu-id="3bd40-342">Odpověď</span><span class="sxs-lookup"><span data-stu-id="3bd40-342">Response</span></span>                                 |
+| <span data-ttu-id="5ecfd-341">Požadavek</span><span class="sxs-lookup"><span data-stu-id="5ecfd-341">Request</span></span>                                    | <span data-ttu-id="5ecfd-342">Odpověď</span><span class="sxs-lookup"><span data-stu-id="5ecfd-342">Response</span></span>                                 |
 | ------------------------------------------ | ---------------------------------------- |
-| `http://localhost:5000/hello/Martin`       | <span data-ttu-id="3bd40-343">Hello, Martin!</span><span class="sxs-lookup"><span data-stu-id="3bd40-343">Hello, Martin!</span></span>                           |
-| `http://localhost:5000/buenosdias/Catrina` | <span data-ttu-id="3bd40-344">Buenos dias, Catrina!</span><span class="sxs-lookup"><span data-stu-id="3bd40-344">Buenos dias, Catrina!</span></span>                    |
-| `http://localhost:5000/throw/ooops!`       | <span data-ttu-id="3bd40-345">Vyvolá výjimku řetězcem "ooops!"</span><span class="sxs-lookup"><span data-stu-id="3bd40-345">Throws an exception with string "ooops!"</span></span> |
-| `http://localhost:5000/throw`              | <span data-ttu-id="3bd40-346">Vyvolá výjimku řetězcem "Uh jejda!"</span><span class="sxs-lookup"><span data-stu-id="3bd40-346">Throws an exception with string "Uh oh!"</span></span> |
-| `http://localhost:5000/Sante/Kevin`        | <span data-ttu-id="3bd40-347">Santé, kevina!</span><span class="sxs-lookup"><span data-stu-id="3bd40-347">Sante, Kevin!</span></span>                            |
-| `http://localhost:5000`                    | <span data-ttu-id="3bd40-348">Ahoj světe!</span><span class="sxs-lookup"><span data-stu-id="3bd40-348">Hello World!</span></span>                             |
+| `http://localhost:5000/hello/Martin`       | <span data-ttu-id="5ecfd-343">Hello, Martin!</span><span class="sxs-lookup"><span data-stu-id="5ecfd-343">Hello, Martin!</span></span>                           |
+| `http://localhost:5000/buenosdias/Catrina` | <span data-ttu-id="5ecfd-344">Buenos dias, Catrina!</span><span class="sxs-lookup"><span data-stu-id="5ecfd-344">Buenos dias, Catrina!</span></span>                    |
+| `http://localhost:5000/throw/ooops!`       | <span data-ttu-id="5ecfd-345">Vyvolá výjimku řetězcem "ooops!"</span><span class="sxs-lookup"><span data-stu-id="5ecfd-345">Throws an exception with string "ooops!"</span></span> |
+| `http://localhost:5000/throw`              | <span data-ttu-id="5ecfd-346">Vyvolá výjimku řetězcem "Uh jejda!"</span><span class="sxs-lookup"><span data-stu-id="5ecfd-346">Throws an exception with string "Uh oh!"</span></span> |
+| `http://localhost:5000/Sante/Kevin`        | <span data-ttu-id="5ecfd-347">Santé, kevina!</span><span class="sxs-lookup"><span data-stu-id="5ecfd-347">Sante, Kevin!</span></span>                            |
+| `http://localhost:5000`                    | <span data-ttu-id="5ecfd-348">Ahoj světe!</span><span class="sxs-lookup"><span data-stu-id="5ecfd-348">Hello World!</span></span>                             |
 
-<span data-ttu-id="3bd40-349">`WaitForShutdown`bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –).</span><span class="sxs-lookup"><span data-stu-id="3bd40-349">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="3bd40-350">Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.</span><span class="sxs-lookup"><span data-stu-id="3bd40-350">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
+<span data-ttu-id="5ecfd-349">`WaitForShutdown`bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-349">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="5ecfd-350">Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-350">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
 
-<span data-ttu-id="3bd40-351">**Spuštění (řetězce adresy url, akce<IRouteBuilder> routeBuilder)**</span><span class="sxs-lookup"><span data-stu-id="3bd40-351">**Start(string url, Action<IRouteBuilder> routeBuilder)**</span></span>
+<span data-ttu-id="5ecfd-351">**Spuštění (řetězce adresy url, akce<IRouteBuilder> routeBuilder)**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-351">**Start(string url, Action<IRouteBuilder> routeBuilder)**</span></span>
 
-<span data-ttu-id="3bd40-352">Použijte adresu URL a instance `IRouteBuilder`:</span><span class="sxs-lookup"><span data-stu-id="3bd40-352">Use a URL and an instance of `IRouteBuilder`:</span></span>
+<span data-ttu-id="5ecfd-352">Použijte adresu URL a instance `IRouteBuilder`:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-352">Use a URL and an instance of `IRouteBuilder`:</span></span>
 
 ```csharp
 using (var host = WebHost.Start("http://localhost:8080", router => router
@@ -641,11 +641,11 @@ using (var host = WebHost.Start("http://localhost:8080", router => router
 }
 ```
 
-<span data-ttu-id="3bd40-353">Stejný výsledek jako **spuštění (akce<IRouteBuilder> routeBuilder)**, s výjimkou aplikace reaguje na `http://localhost:8080`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-353">Produces the same result as **Start(Action<IRouteBuilder> routeBuilder)**, except the app responds at `http://localhost:8080`.</span></span>
+<span data-ttu-id="5ecfd-353">Stejný výsledek jako **spuštění (akce<IRouteBuilder> routeBuilder)**, s výjimkou aplikace reaguje na `http://localhost:8080`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-353">Produces the same result as **Start(Action<IRouteBuilder> routeBuilder)**, except the app responds at `http://localhost:8080`.</span></span>
 
-<span data-ttu-id="3bd40-354">**StartWith (akce<IApplicationBuilder> aplikace)**</span><span class="sxs-lookup"><span data-stu-id="3bd40-354">**StartWith(Action<IApplicationBuilder> app)**</span></span>
+<span data-ttu-id="5ecfd-354">**StartWith (akce<IApplicationBuilder> aplikace)**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-354">**StartWith(Action<IApplicationBuilder> app)**</span></span>
 
-<span data-ttu-id="3bd40-355">Zadejte delegát pro konfiguraci `IApplicationBuilder`:</span><span class="sxs-lookup"><span data-stu-id="3bd40-355">Provide a delegate to configure an `IApplicationBuilder`:</span></span>
+<span data-ttu-id="5ecfd-355">Zadejte delegát pro konfiguraci `IApplicationBuilder`:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-355">Provide a delegate to configure an `IApplicationBuilder`:</span></span>
 
 ```csharp
 using (var host = WebHost.StartWith(app => 
@@ -662,11 +662,11 @@ using (var host = WebHost.StartWith(app =>
 }
 ```
 
-<span data-ttu-id="3bd40-356">Vytvoření žádosti o v prohlížeči `http://localhost:5000` k obdrží odpověď "Hello, World!"</span><span class="sxs-lookup"><span data-stu-id="3bd40-356">Make a request in the browser to `http://localhost:5000` to receive the response "Hello World!"</span></span> <span data-ttu-id="3bd40-357">`WaitForShutdown`bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –).</span><span class="sxs-lookup"><span data-stu-id="3bd40-357">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="3bd40-358">Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.</span><span class="sxs-lookup"><span data-stu-id="3bd40-358">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
+<span data-ttu-id="5ecfd-356">Vytvoření žádosti o v prohlížeči `http://localhost:5000` k obdrží odpověď "Hello, World!"</span><span class="sxs-lookup"><span data-stu-id="5ecfd-356">Make a request in the browser to `http://localhost:5000` to receive the response "Hello World!"</span></span> <span data-ttu-id="5ecfd-357">`WaitForShutdown`bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-357">`WaitForShutdown` blocks until a break (Ctrl-C/SIGINT or SIGTERM) is issued.</span></span> <span data-ttu-id="5ecfd-358">Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-358">The app displays the `Console.WriteLine` message and waits for a keypress to exit.</span></span>
 
-<span data-ttu-id="3bd40-359">**StartWith (řetězce adresy url, akce<IApplicationBuilder> aplikace)**</span><span class="sxs-lookup"><span data-stu-id="3bd40-359">**StartWith(string url, Action<IApplicationBuilder> app)**</span></span>
+<span data-ttu-id="5ecfd-359">**StartWith (řetězce adresy url, akce<IApplicationBuilder> aplikace)**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-359">**StartWith(string url, Action<IApplicationBuilder> app)**</span></span>
 
-<span data-ttu-id="3bd40-360">Zadejte adresu URL a delegát pro konfiguraci `IApplicationBuilder`:</span><span class="sxs-lookup"><span data-stu-id="3bd40-360">Provide a URL and a delegate to configure an `IApplicationBuilder`:</span></span>
+<span data-ttu-id="5ecfd-360">Zadejte adresu URL a delegát pro konfiguraci `IApplicationBuilder`:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-360">Provide a URL and a delegate to configure an `IApplicationBuilder`:</span></span>
 
 ```csharp
 using (var host = WebHost.StartWith("http://localhost:8080", app => 
@@ -683,21 +683,21 @@ using (var host = WebHost.StartWith("http://localhost:8080", app =>
 }
 ```
 
-<span data-ttu-id="3bd40-361">Stejný výsledek jako **StartWith (akce<IApplicationBuilder> aplikace)**, s výjimkou aplikace reaguje na `http://localhost:8080`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-361">Produces the same result as **StartWith(Action<IApplicationBuilder> app)**, except the app responds on `http://localhost:8080`.</span></span>
+<span data-ttu-id="5ecfd-361">Stejný výsledek jako **StartWith (akce<IApplicationBuilder> aplikace)**, s výjimkou aplikace reaguje na `http://localhost:8080`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-361">Produces the same result as **StartWith(Action<IApplicationBuilder> app)**, except the app responds on `http://localhost:8080`.</span></span>
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3bd40-362">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="3bd40-362">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5ecfd-362">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="5ecfd-362">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="3bd40-363">**Spustit**</span><span class="sxs-lookup"><span data-stu-id="3bd40-363">**Run**</span></span>
+<span data-ttu-id="5ecfd-363">**Spustit**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-363">**Run**</span></span>
 
-<span data-ttu-id="3bd40-364">`Run` Metoda spustí webovou aplikaci a blokuje volající vlákno, dokud se vypne hostitele:</span><span class="sxs-lookup"><span data-stu-id="3bd40-364">The `Run` method starts the web app and blocks the calling thread until the host is shut down:</span></span>
+<span data-ttu-id="5ecfd-364">`Run` Metoda spustí webovou aplikaci a blokuje volající vlákno, dokud se vypne hostitele:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-364">The `Run` method starts the web app and blocks the calling thread until the host is shut down:</span></span>
 
 ```csharp
 host.Run();
 ```
 
-<span data-ttu-id="3bd40-365">**Start**</span><span class="sxs-lookup"><span data-stu-id="3bd40-365">**Start**</span></span>
+<span data-ttu-id="5ecfd-365">**Start**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-365">**Start**</span></span>
 
-<span data-ttu-id="3bd40-366">Spuštění hostitele způsobem neblokující voláním jeho `Start` metoda:</span><span class="sxs-lookup"><span data-stu-id="3bd40-366">Run the host in a non-blocking manner by calling its `Start` method:</span></span>
+<span data-ttu-id="5ecfd-366">Spuštění hostitele způsobem neblokující voláním jeho `Start` metoda:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-366">Run the host in a non-blocking manner by calling its `Start` method:</span></span>
 
 ```csharp
 using (host)
@@ -707,7 +707,7 @@ using (host)
 }
 ```
 
-<span data-ttu-id="3bd40-367">Pokud je předán seznam adres URL, `Start` metoda, naslouchá na zadané adresy URL:</span><span class="sxs-lookup"><span data-stu-id="3bd40-367">If a list of URLs is passed to the `Start` method, it listens on the URLs specified:</span></span>
+<span data-ttu-id="5ecfd-367">Pokud je předán seznam adres URL, `Start` metoda, naslouchá na zadané adresy URL:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-367">If a list of URLs is passed to the `Start` method, it listens on the URLs specified:</span></span>
 
 
 ```csharp
@@ -730,9 +730,9 @@ using (host)
 
 ---
 
-## <a name="ihostingenvironment-interface"></a><span data-ttu-id="3bd40-368">IHostingEnvironment rozhraní</span><span class="sxs-lookup"><span data-stu-id="3bd40-368">IHostingEnvironment interface</span></span>
+## <a name="ihostingenvironment-interface"></a><span data-ttu-id="5ecfd-368">IHostingEnvironment rozhraní</span><span class="sxs-lookup"><span data-stu-id="5ecfd-368">IHostingEnvironment interface</span></span>
 
-<span data-ttu-id="3bd40-369">[IHostingEnvironment rozhraní](/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) poskytuje informace o hostování prostředí webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-369">The [IHostingEnvironment interface](/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) provides information about the app's web hosting environment.</span></span> <span data-ttu-id="3bd40-370">Použít [konstruktor vkládání](xref:fundamentals/dependency-injection) získat `IHostingEnvironment` Chcete-li použít její vlastnosti a metody rozšíření:</span><span class="sxs-lookup"><span data-stu-id="3bd40-370">Use [constructor injection](xref:fundamentals/dependency-injection) to obtain the `IHostingEnvironment` in order to use its properties and extension methods:</span></span>
+<span data-ttu-id="5ecfd-369">[IHostingEnvironment rozhraní](/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) poskytuje informace o hostování prostředí webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-369">The [IHostingEnvironment interface](/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) provides information about the app's web hosting environment.</span></span> <span data-ttu-id="5ecfd-370">Použít [konstruktor vkládání](xref:fundamentals/dependency-injection) získat `IHostingEnvironment` Chcete-li použít její vlastnosti a metody rozšíření:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-370">Use [constructor injection](xref:fundamentals/dependency-injection) to obtain the `IHostingEnvironment` in order to use its properties and extension methods:</span></span>
 
 ```csharp
 public class CustomFileReader
@@ -752,7 +752,7 @@ public class CustomFileReader
 }
 ```
 
-<span data-ttu-id="3bd40-371">A [založené na konvenci přístup](xref:fundamentals/environments#startup-conventions) můžete použít ke konfiguraci aplikace při spuštění založených na prostředí.</span><span class="sxs-lookup"><span data-stu-id="3bd40-371">A [convention-based approach](xref:fundamentals/environments#startup-conventions) can be used to configure the app at startup based on the environment.</span></span> <span data-ttu-id="3bd40-372">Můžete také vložit `IHostingEnvironment` do `Startup` konstruktor pro použití v `ConfigureServices`:</span><span class="sxs-lookup"><span data-stu-id="3bd40-372">Alternatively, inject the `IHostingEnvironment` into the `Startup` constructor for use in `ConfigureServices`:</span></span>
+<span data-ttu-id="5ecfd-371">A [založené na konvenci přístup](xref:fundamentals/environments#startup-conventions) můžete použít ke konfiguraci aplikace při spuštění založených na prostředí.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-371">A [convention-based approach](xref:fundamentals/environments#startup-conventions) can be used to configure the app at startup based on the environment.</span></span> <span data-ttu-id="5ecfd-372">Můžete také vložit `IHostingEnvironment` do `Startup` konstruktor pro použití v `ConfigureServices`:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-372">Alternatively, inject the `IHostingEnvironment` into the `Startup` constructor for use in `ConfigureServices`:</span></span>
 
 ```csharp
 public class Startup
@@ -781,9 +781,9 @@ public class Startup
 ```
 
 > [!NOTE]
-> <span data-ttu-id="3bd40-373">Kromě `IsDevelopment` metoda rozšíření `IHostingEnvironment` nabízí `IsStaging`, `IsProduction`, a `IsEnvironment(string environmentName)` metody.</span><span class="sxs-lookup"><span data-stu-id="3bd40-373">In addition to the `IsDevelopment` extension method, `IHostingEnvironment` offers `IsStaging`, `IsProduction`, and `IsEnvironment(string environmentName)` methods.</span></span> <span data-ttu-id="3bd40-374">V tématu [práce s několika prostředí](xref:fundamentals/environments) podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="3bd40-374">See [Working with multiple environments](xref:fundamentals/environments) for details.</span></span>
+> <span data-ttu-id="5ecfd-373">Kromě `IsDevelopment` metoda rozšíření `IHostingEnvironment` nabízí `IsStaging`, `IsProduction`, a `IsEnvironment(string environmentName)` metody.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-373">In addition to the `IsDevelopment` extension method, `IHostingEnvironment` offers `IsStaging`, `IsProduction`, and `IsEnvironment(string environmentName)` methods.</span></span> <span data-ttu-id="5ecfd-374">V tématu [práce s několika prostředí](xref:fundamentals/environments) podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-374">See [Working with multiple environments](xref:fundamentals/environments) for details.</span></span>
 
-<span data-ttu-id="3bd40-375">`IHostingEnvironment` Služby může také vložit přímo do `Configure` metoda pro nastavení zpracování kanálu:</span><span class="sxs-lookup"><span data-stu-id="3bd40-375">The `IHostingEnvironment` service can also be injected directly into the `Configure` method for setting up the processing pipeline:</span></span>
+<span data-ttu-id="5ecfd-375">`IHostingEnvironment` Služby může také vložit přímo do `Configure` metoda pro nastavení zpracování kanálu:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-375">The `IHostingEnvironment` service can also be injected directly into the `Configure` method for setting up the processing pipeline:</span></span>
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -803,7 +803,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-<span data-ttu-id="3bd40-376">`IHostingEnvironment`můžete vložit do `Invoke` metoda při vytváření vlastní [middleware](xref:fundamentals/middleware#writing-middleware):</span><span class="sxs-lookup"><span data-stu-id="3bd40-376">`IHostingEnvironment` can be injected into the `Invoke` method when creating custom [middleware](xref:fundamentals/middleware#writing-middleware):</span></span>
+<span data-ttu-id="5ecfd-376">`IHostingEnvironment`můžete vložit do `Invoke` metoda při vytváření vlastní [middleware](xref:fundamentals/middleware#writing-middleware):</span><span class="sxs-lookup"><span data-stu-id="5ecfd-376">`IHostingEnvironment` can be injected into the `Invoke` method when creating custom [middleware](xref:fundamentals/middleware#writing-middleware):</span></span>
 
 ```csharp
 public async Task Invoke(HttpContext context, IHostingEnvironment env)
@@ -821,19 +821,19 @@ public async Task Invoke(HttpContext context, IHostingEnvironment env)
 }
 ```
 
-## <a name="iapplicationlifetime-interface"></a><span data-ttu-id="3bd40-377">IApplicationLifetime rozhraní</span><span class="sxs-lookup"><span data-stu-id="3bd40-377">IApplicationLifetime interface</span></span>
+## <a name="iapplicationlifetime-interface"></a><span data-ttu-id="5ecfd-377">IApplicationLifetime rozhraní</span><span class="sxs-lookup"><span data-stu-id="5ecfd-377">IApplicationLifetime interface</span></span>
 
-<span data-ttu-id="3bd40-378">[IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) umožňuje po spuštění a vypnutí aktivity.</span><span class="sxs-lookup"><span data-stu-id="3bd40-378">[IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) allows for post-startup and shutdown activities.</span></span> <span data-ttu-id="3bd40-379">Zrušení tokenů použitá pro zaregistrování jsou tři vlastnosti na rozhraní `Action` metody, které definují události spuštění a vypnutí.</span><span class="sxs-lookup"><span data-stu-id="3bd40-379">Three properties on the interface are cancellation tokens used to register `Action` methods that define startup and shutdown events.</span></span> <span data-ttu-id="3bd40-380">K dispozici je také `StopApplication` metoda.</span><span class="sxs-lookup"><span data-stu-id="3bd40-380">There's also a `StopApplication` method.</span></span>
+<span data-ttu-id="5ecfd-378">[IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) umožňuje po spuštění a vypnutí aktivity.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-378">[IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) allows for post-startup and shutdown activities.</span></span> <span data-ttu-id="5ecfd-379">Zrušení tokenů použitá pro zaregistrování jsou tři vlastnosti na rozhraní `Action` metody, které definují události spuštění a vypnutí.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-379">Three properties on the interface are cancellation tokens used to register `Action` methods that define startup and shutdown events.</span></span> <span data-ttu-id="5ecfd-380">K dispozici je také `StopApplication` metoda.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-380">There's also a `StopApplication` method.</span></span>
 
-| <span data-ttu-id="3bd40-381">Token zrušení</span><span class="sxs-lookup"><span data-stu-id="3bd40-381">Cancellation Token</span></span>    | <span data-ttu-id="3bd40-382">Aktivuje, když &#8230;</span><span class="sxs-lookup"><span data-stu-id="3bd40-382">Triggered when&#8230;</span></span> |
+| <span data-ttu-id="5ecfd-381">Token zrušení</span><span class="sxs-lookup"><span data-stu-id="5ecfd-381">Cancellation Token</span></span>    | <span data-ttu-id="5ecfd-382">Aktivuje, když &#8230;</span><span class="sxs-lookup"><span data-stu-id="5ecfd-382">Triggered when&#8230;</span></span> |
 | --------------------- | --------------------- |
-| `ApplicationStarted`  | <span data-ttu-id="3bd40-383">Hostitele plně byla spuštěna.</span><span class="sxs-lookup"><span data-stu-id="3bd40-383">The host has fully started.</span></span> |
-| `ApplicationStopping` | <span data-ttu-id="3bd40-384">Hostitel provádí řádné vypnutí.</span><span class="sxs-lookup"><span data-stu-id="3bd40-384">The host is performing a graceful shutdown.</span></span> <span data-ttu-id="3bd40-385">Může být stále aktivní žádosti.</span><span class="sxs-lookup"><span data-stu-id="3bd40-385">Requests may still be processing.</span></span> <span data-ttu-id="3bd40-386">Vypnutí bloky až po dokončení této události.</span><span class="sxs-lookup"><span data-stu-id="3bd40-386">Shutdown blocks until this event completes.</span></span> |
-| `ApplicationStopped`  | <span data-ttu-id="3bd40-387">Hostitel je dokončení řádné vypnutí.</span><span class="sxs-lookup"><span data-stu-id="3bd40-387">The host is completing a graceful shutdown.</span></span> <span data-ttu-id="3bd40-388">Všechny požadavky, měla by být zpracována.</span><span class="sxs-lookup"><span data-stu-id="3bd40-388">All requests should be processed.</span></span> <span data-ttu-id="3bd40-389">Vypnutí bloky až po dokončení této události.</span><span class="sxs-lookup"><span data-stu-id="3bd40-389">Shutdown blocks until this event completes.</span></span> |
+| `ApplicationStarted`  | <span data-ttu-id="5ecfd-383">Hostitele plně byla spuštěna.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-383">The host has fully started.</span></span> |
+| `ApplicationStopping` | <span data-ttu-id="5ecfd-384">Hostitel provádí řádné vypnutí.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-384">The host is performing a graceful shutdown.</span></span> <span data-ttu-id="5ecfd-385">Může být stále aktivní žádosti.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-385">Requests may still be processing.</span></span> <span data-ttu-id="5ecfd-386">Vypnutí bloky až po dokončení této události.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-386">Shutdown blocks until this event completes.</span></span> |
+| `ApplicationStopped`  | <span data-ttu-id="5ecfd-387">Hostitel je dokončení řádné vypnutí.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-387">The host is completing a graceful shutdown.</span></span> <span data-ttu-id="5ecfd-388">Všechny požadavky, měla by být zpracována.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-388">All requests should be processed.</span></span> <span data-ttu-id="5ecfd-389">Vypnutí bloky až po dokončení této události.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-389">Shutdown blocks until this event completes.</span></span> |
 
-| <span data-ttu-id="3bd40-390">Metoda</span><span class="sxs-lookup"><span data-stu-id="3bd40-390">Method</span></span>            | <span data-ttu-id="3bd40-391">Akce</span><span class="sxs-lookup"><span data-stu-id="3bd40-391">Action</span></span>                                           |
+| <span data-ttu-id="5ecfd-390">Metoda</span><span class="sxs-lookup"><span data-stu-id="5ecfd-390">Method</span></span>            | <span data-ttu-id="5ecfd-391">Akce</span><span class="sxs-lookup"><span data-stu-id="5ecfd-391">Action</span></span>                                           |
 | ----------------- | ------------------------------------------------ |
-| `StopApplication` | <span data-ttu-id="3bd40-392">Žádosti o ukončení aktuální aplikace.</span><span class="sxs-lookup"><span data-stu-id="3bd40-392">Requests termination of the current application.</span></span> |
+| `StopApplication` | <span data-ttu-id="5ecfd-392">Žádosti o ukončení aktuální aplikace.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-392">Requests termination of the current application.</span></span> |
 
 ```csharp
 public class Startup 
@@ -869,23 +869,23 @@ public class Startup
 }
 ```
 
-## <a name="troubleshooting-systemargumentexception"></a><span data-ttu-id="3bd40-393">Řešení potíží s System.ArgumentException</span><span class="sxs-lookup"><span data-stu-id="3bd40-393">Troubleshooting System.ArgumentException</span></span>
+## <a name="troubleshooting-systemargumentexception"></a><span data-ttu-id="5ecfd-393">Řešení potíží s System.ArgumentException</span><span class="sxs-lookup"><span data-stu-id="5ecfd-393">Troubleshooting System.ArgumentException</span></span>
 
-<span data-ttu-id="3bd40-394">**Platí pro pouze ASP.NET Core 2.0**</span><span class="sxs-lookup"><span data-stu-id="3bd40-394">**Applies to ASP.NET Core 2.0 Only**</span></span>
+<span data-ttu-id="5ecfd-394">**Platí pro pouze ASP.NET Core 2.0**</span><span class="sxs-lookup"><span data-stu-id="5ecfd-394">**Applies to ASP.NET Core 2.0 Only**</span></span>
 
-<span data-ttu-id="3bd40-395">Hostitel může být sestaven vložením `IStartup` přímo do kontejneru pro vkládání závislosti místo volání `UseStartup` nebo `Configure`:</span><span class="sxs-lookup"><span data-stu-id="3bd40-395">A host may be built by injecting `IStartup` directly into the dependency injection container rather than calling `UseStartup` or `Configure`:</span></span>
+<span data-ttu-id="5ecfd-395">Hostitel může být sestaven vložením `IStartup` přímo do kontejneru pro vkládání závislosti místo volání `UseStartup` nebo `Configure`:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-395">A host may be built by injecting `IStartup` directly into the dependency injection container rather than calling `UseStartup` or `Configure`:</span></span>
 
 ```csharp
 services.AddSingleton<IStartup, Startup>();
 ```
 
-<span data-ttu-id="3bd40-396">Pokud hostitel je integrovaný tímto způsobem, může dojít k následující chybě:</span><span class="sxs-lookup"><span data-stu-id="3bd40-396">If the host is built this way, the following error may occur:</span></span>
+<span data-ttu-id="5ecfd-396">Pokud hostitel je integrovaný tímto způsobem, může dojít k následující chybě:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-396">If the host is built this way, the following error may occur:</span></span>
 
 ```
 Unhandled Exception: System.ArgumentException: A valid non-empty application name must be provided.
 ```
 
-<span data-ttu-id="3bd40-397">K tomu dochází, protože [applicationName(ApplicationKey)](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey) (aktuální sestavení) je nutná ke kontrole pro `HostingStartupAttributes`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-397">This occurs because the [applicationName(ApplicationKey)](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey) (the current assembly) is required to scan for `HostingStartupAttributes`.</span></span> <span data-ttu-id="3bd40-398">Pokud aplikace ručně vloží `IStartup` do kontejneru pro vkládání závislosti, přidejte následující volání `WebHostBuilder` se zadaným názvem sestavení:</span><span class="sxs-lookup"><span data-stu-id="3bd40-398">If the app manually injects `IStartup` into the dependency injection container, add the following call to `WebHostBuilder` with the assembly name specified:</span></span>
+<span data-ttu-id="5ecfd-397">K tomu dochází, protože [applicationName(ApplicationKey)](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey) (aktuální sestavení) je nutná ke kontrole pro `HostingStartupAttributes`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-397">This occurs because the [applicationName(ApplicationKey)](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey) (the current assembly) is required to scan for `HostingStartupAttributes`.</span></span> <span data-ttu-id="5ecfd-398">Pokud aplikace ručně vloží `IStartup` do kontejneru pro vkládání závislosti, přidejte následující volání `WebHostBuilder` se zadaným názvem sestavení:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-398">If the app manually injects `IStartup` into the dependency injection container, add the following call to `WebHostBuilder` with the assembly name specified:</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -893,7 +893,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-<span data-ttu-id="3bd40-399">Můžete taky přidat fiktivní `Configure` k `WebHostBuilder`, která nastaví `applicationName`(`ApplicationKey`) automaticky:</span><span class="sxs-lookup"><span data-stu-id="3bd40-399">Alternatively, add a dummy `Configure` to the `WebHostBuilder`, which sets the `applicationName`(`ApplicationKey`) automatically:</span></span>
+<span data-ttu-id="5ecfd-399">Můžete taky přidat fiktivní `Configure` k `WebHostBuilder`, která nastaví `applicationName`(`ApplicationKey`) automaticky:</span><span class="sxs-lookup"><span data-stu-id="5ecfd-399">Alternatively, add a dummy `Configure` to the `WebHostBuilder`, which sets the `applicationName`(`ApplicationKey`) automatically:</span></span>
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -901,13 +901,13 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-<span data-ttu-id="3bd40-400">**Poznámka:**: Toto je pouze požadované verze technologie ASP.NET 2.0 jádra a pouze pokud aplikace nemá volání `UseStartup` nebo `Configure`.</span><span class="sxs-lookup"><span data-stu-id="3bd40-400">**NOTE**: This is only required with the ASP.NET Core 2.0 release and only when the app doesn't call `UseStartup` or `Configure`.</span></span>
+<span data-ttu-id="5ecfd-400">**Poznámka:**: Toto je pouze požadované verze technologie ASP.NET 2.0 jádra a pouze pokud aplikace nemá volání `UseStartup` nebo `Configure`.</span><span class="sxs-lookup"><span data-stu-id="5ecfd-400">**NOTE**: This is only required with the ASP.NET Core 2.0 release and only when the app doesn't call `UseStartup` or `Configure`.</span></span>
 
-<span data-ttu-id="3bd40-401">Další informace najdete v tématu [oznámení: Microsoft.Extensions.PlatformAbstractions byl odebrán (komentář)](https://github.com/aspnet/Announcements/issues/237#issuecomment-323786938) a [StartupInjection ukázka](https://github.com/aspnet/Hosting/blob/8377d226f1e6e1a97dabdb6769a845eeccc829ed/samples/SampleStartups/StartupInjection.cs).</span><span class="sxs-lookup"><span data-stu-id="3bd40-401">For more information, see [Announcements: Microsoft.Extensions.PlatformAbstractions has been removed (comment)](https://github.com/aspnet/Announcements/issues/237#issuecomment-323786938) and the [StartupInjection sample](https://github.com/aspnet/Hosting/blob/8377d226f1e6e1a97dabdb6769a845eeccc829ed/samples/SampleStartups/StartupInjection.cs).</span></span>
+<span data-ttu-id="5ecfd-401">Další informace najdete v tématu [oznámení: Microsoft.Extensions.PlatformAbstractions byl odebrán (komentář)](https://github.com/aspnet/Announcements/issues/237#issuecomment-323786938) a [StartupInjection ukázka](https://github.com/aspnet/Hosting/blob/8377d226f1e6e1a97dabdb6769a845eeccc829ed/samples/SampleStartups/StartupInjection.cs).</span><span class="sxs-lookup"><span data-stu-id="5ecfd-401">For more information, see [Announcements: Microsoft.Extensions.PlatformAbstractions has been removed (comment)](https://github.com/aspnet/Announcements/issues/237#issuecomment-323786938) and the [StartupInjection sample](https://github.com/aspnet/Hosting/blob/8377d226f1e6e1a97dabdb6769a845eeccc829ed/samples/SampleStartups/StartupInjection.cs).</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="3bd40-402">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="3bd40-402">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="5ecfd-402">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="5ecfd-402">Additional resources</span></span>
 
-* [<span data-ttu-id="3bd40-403">Hostování ve Windows se službou IIS</span><span class="sxs-lookup"><span data-stu-id="3bd40-403">Host on Windows with IIS</span></span>](xref:host-and-deploy/iis/index)
-* [<span data-ttu-id="3bd40-404">Hostování v Linuxu na serveru Nginx</span><span class="sxs-lookup"><span data-stu-id="3bd40-404">Host on Linux with Nginx</span></span>](xref:host-and-deploy/linux-nginx)
-* [<span data-ttu-id="3bd40-405">Hostování v Linuxu na serveru Apache</span><span class="sxs-lookup"><span data-stu-id="3bd40-405">Host on Linux with Apache</span></span>](xref:host-and-deploy/linux-apache)
-* [<span data-ttu-id="3bd40-406">Hostitele ve službě Windows</span><span class="sxs-lookup"><span data-stu-id="3bd40-406">Host in a Windows Service</span></span>](xref:host-and-deploy/windows-service)
+* [<span data-ttu-id="5ecfd-403">Hostování ve Windows se službou IIS</span><span class="sxs-lookup"><span data-stu-id="5ecfd-403">Host on Windows with IIS</span></span>](xref:host-and-deploy/iis/index)
+* [<span data-ttu-id="5ecfd-404">Hostování v Linuxu na serveru Nginx</span><span class="sxs-lookup"><span data-stu-id="5ecfd-404">Host on Linux with Nginx</span></span>](xref:host-and-deploy/linux-nginx)
+* [<span data-ttu-id="5ecfd-405">Hostování v Linuxu na serveru Apache</span><span class="sxs-lookup"><span data-stu-id="5ecfd-405">Host on Linux with Apache</span></span>](xref:host-and-deploy/linux-apache)
+* [<span data-ttu-id="5ecfd-406">Hostitele ve službě Windows</span><span class="sxs-lookup"><span data-stu-id="5ecfd-406">Host in a Windows Service</span></span>](xref:host-and-deploy/windows-service)

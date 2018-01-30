@@ -9,17 +9,19 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: f439b6414d95f6edd1c2201c8aee043f1eab9b76
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dae1b0f7c8700bbd99080752fb4bb37f93441c9a
+ms.sourcegitcommit: 18ff1fdaa3e1ae204ed6a2ba9351ce8cf1371c85
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc--on-mac-linux-or-windows"></a>Začínáme s ASP.NET MVC jádra na Mac, Linux nebo Windows
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V tomto kurzu naučit, základní informace o vytváření ASP.NET MVC základní webové aplikace pomocí [Visual Studio Code](https://code.visualstudio.com) (VS Code). Kurz předpokládá familarity kódem VS. V tématu [Začínáme s VS Code](https://code.visualstudio.com/docs) a [Visual Studio Code nápovědy](#visual-studio-code-help) Další informace. [!INCLUDE[consider RP](../../includes/razor.md)]
+V tomto kurzu naučit, základní informace o vytváření ASP.NET MVC základní webové aplikace pomocí [Visual Studio Code](https://code.visualstudio.com) (VS Code). Kurz předpokládá familarity kódem VS. V tématu [Začínáme s VS Code](https://code.visualstudio.com/docs) a [Visual Studio Code nápovědy](#visual-studio-code-help) Další informace. 
+
+[!INCLUDE[consider RP](../../includes/razor.md)]
 
 Existují 3 verze tohoto kurzu:
 

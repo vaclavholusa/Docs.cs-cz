@@ -3,7 +3,7 @@
 # [Kurzy](tutorials.md)
 
 # [Webové formuláře](web-forms/index.md)
-## [Doprovodné materiály](web-forms/overview/index.md)
+## [Pokyny](web-forms/overview/index.md)
 ### [Začínáme](web-forms/overview/getting-started/index.md)
 #### [Začínáme s webovými formuláři ASP.NET 4.5 a sadou Visual Studio 2013](web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/index.md)
 ##### [Začínáme s webovými formuláři a sadou Visual Studio](web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview.md)

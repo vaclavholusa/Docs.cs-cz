@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 459f1793b1f1f73792bb6537856cb739774c6261
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8aeb04f772fa687706bd8080b4306ff0040a159f
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Potvrzení účtu a obnovení hesla v ASP.NET Core
 
@@ -114,7 +114,7 @@ Předchozí řádek zabrání registrovaní uživatelé protokolována, dokud je
 
 ### <a name="configure-email-provider"></a>Nakonfigurujte poskytovatele tak e-mailu
 
-V tomto kurzu se sendgrid vám umožňuje používá k odesílání e-mailu. Musíte sendgrid vám umožňuje účtu a klíč k odeslání e-mailu. Můžete vytvořit další poskytovatele e-mailu. ASP.NET Core 2.x zahrnuje `System.Net.Mail`, který umožňuje odeslat e-mailu z vaší aplikace. Doporučujeme, aby že použití sendgrid vám umožňuje nebo jinou e-mailovou službu pro odeslání e-mailu.
+V tomto kurzu se sendgrid vám umožňuje používá k odesílání e-mailu. Musíte sendgrid vám umožňuje účtu a klíč k odeslání e-mailu. Můžete vytvořit další poskytovatele e-mailu. ASP.NET Core 2.x zahrnuje `System.Net.Mail`, který umožňuje odeslat e-mailu z vaší aplikace. Doporučujeme, aby že použití sendgrid vám umožňuje nebo jinou e-mailovou službu pro odeslání e-mailu. SMTP je obtížné k zabezpečení a nastavit správně.
 
 [Možnosti vzor](xref:fundamentals/configuration/options) se používá pro přístup k účtu a klíč nastavení uživatele. Další informace najdete v tématu [konfigurace](xref:fundamentals/configuration/index).
 

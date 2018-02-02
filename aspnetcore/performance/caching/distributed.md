@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 86fd40863f6eeef3c129335141d704769d36b4c1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 877a3e1f8c3282fdd67a389ddf5b4ff49dea3b42
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>Práce s distribuované mezipaměti ASP.NET Core
 
@@ -66,7 +66,7 @@ Chcete-li použít `IDistributedCache` rozhraní:
 
    2. Nakonfigurujte konkrétní implementace `IDistributedCache` ve vaší `Startup` třídy `ConfigureServices` metoda a přidejte ji do kontejneru existuje.
 
-   3. Z aplikace [Middleware](../../fundamentals/middleware.md) nebo třídy řadiče MVC, požádejte o instanci `IDistributedCache` z konstruktoru. Instance poskytovaný [vkládání závislostí](../../fundamentals/dependency-injection.md) (DI).
+   3. Z aplikace [Middleware](xref:fundamentals/middleware/index) nebo třídy řadiče MVC, požádejte o instanci `IDistributedCache` z konstruktoru. Instance poskytovaný [vkládání závislostí](../../fundamentals/dependency-injection.md) (DI).
 
 > [!NOTE]
 > Není nutné používat Singleton nebo Scoped doba života pro `IDistributedCache` instance (alespoň pro předdefinované implementace). Můžete také vytvořit instance, bez ohledu na jednu může být nutné (místo použití [vkládání závislostí](../../fundamentals/dependency-injection.md)), ale může být váš kód těžší chcete otestovat a je v rozporu [explicitní závislosti Princip](http://deviq.com/explicit-dependencies-principle/).

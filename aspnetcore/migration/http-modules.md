@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: f104c9116cfaa4a82ac88e4a83b4b6f172eb2aa1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8aac6c649b22dc8f6cfc916aa78d56efad7821a0
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrace obslužné rutiny HTTP a moduly, které middleware ASP.NET Core 
 
 Podle [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-Tento článek ukazuje, jak migrovat existující ASP.NET [modulů HTTP a obslužné rutiny z system.webserver](https://docs.microsoft.com/iis/configuration/system.webserver/) na jádro ASP.NET [middleware](../fundamentals/middleware.md).
+Tento článek ukazuje, jak migrovat existující ASP.NET [modulů HTTP a obslužné rutiny z system.webserver](https://docs.microsoft.com/iis/configuration/system.webserver/) na jádro ASP.NET [middleware](xref:fundamentals/middleware/index).
 
 ## <a name="modules-and-handlers-revisited"></a>Moduly a obslužné rutiny kdykoli znovu spustit.
 
@@ -65,7 +65,7 @@ Kromě moduly, obslužné rutiny pro události životního cyklu, které přidá
 
    * Middleware jsou konfigurováni pomocí kódu spíše než v *souboru Web.config*
 
-   * [Vytvoření větve kanálu](../fundamentals/middleware.md#middleware-run-map-use) umožňuje odesílat žádosti do konkrétní middleware, podle ne jenom adresu URL, ale i na hlavičky požadavku, řetězce dotazu, atd.
+   * [Vytvoření větve kanálu](xref:fundamentals/middleware/index#middleware-run-map-use) umožňuje odesílat žádosti do konkrétní middleware, podle ne jenom adresu URL, ale i na hlavičky požadavku, řetězce dotazu, atd.
 
 **Middleware jsou velmi podobné moduly:**
 
@@ -81,7 +81,7 @@ Kromě moduly, obslužné rutiny pro události životního cyklu, které přidá
 
    * Pořadí middleware pro odpovědi je zpětného od pro požadavky, zatímco pořadí modulů je stejný pro požadavky a odpovědi
 
-   * V tématu [vytváření middlewaru v řadě s IApplicationBuilder](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder)
+   * V tématu [vytváření middlewaru v řadě s IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)
 
 ![Middleware](http-modules/_static/middleware.png)
 
@@ -93,13 +93,13 @@ Existující modul HTTP bude vypadat podobně jako tento:
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
 
-Jak je znázorněno v [Middleware](../fundamentals/middleware.md) stránka, middlewaru ASP.NET Core je třída, která zveřejňuje `Invoke` metoda pořízení `HttpContext` a vrácení `Task`. Vaše nové middleware bude vypadat takto:
+Jak je znázorněno v [Middleware](xref:fundamentals/middleware/index) stránka, middlewaru ASP.NET Core je třída, která zveřejňuje `Invoke` metoda pořízení `HttpContext` a vrácení `Task`. Vaše nové middleware bude vypadat takto:
 
 <a name="http-modules-usemiddleware"></a>
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
-Výše uvedené šablony middleware pořízení z části [zápis middleware](../fundamentals/middleware.md#middleware-writing-middleware).
+Předchozí middleware šablony pořízení z části [zápis middleware](xref:fundamentals/middleware/index#middleware-writing-middleware).
 
 *MyMiddlewareExtensions* pomocná třída usnadňuje konfiguraci vlastního middlewaru v vaší `Startup` třídy. `UseMyMiddleware` Metoda přidá do kanálu žádost o třídě middleware. V konstruktoru middlewaru získat vložit služeb požadovaných middleware.
 
@@ -121,7 +121,7 @@ Vytváření modulů HTTP jsou obvykle přidány do žádosti o kanálu pomocí 
 
 [!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
 
-Převést tím, že [přidání vlastního nové middlewaru](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder) na kanále vaší `Startup` – třída:
+Převést tím, že [přidání vlastního nové middlewaru](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder) na kanále vaší `Startup` – třída:
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
 
@@ -383,4 +383,4 @@ public async Task Invoke(HttpContext httpContext)
 * [Přehled modulů HTTP a obslužné rutiny HTTP](/iis/configuration/system.webserver/)
 * [Konfigurace](xref:fundamentals/configuration/index)
 * [Spuštění aplikace](xref:fundamentals/startup)
-* [Middleware](xref:fundamentals/middleware)
+* [Middleware](xref:fundamentals/middleware/index)

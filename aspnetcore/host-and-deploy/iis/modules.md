@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 1b5391c113ca0b980eb3c47bcce0717d4a4739ed
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b7c81f2851a932cd12553af4a2655eb9f1f7bc64
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>Moduly služby IIS pomocí ASP.NET Core
 
@@ -44,8 +44,8 @@ Modul | Aktivní základní rozhraní .NET | ASP.NET jádra
 **HTTP Redirection**<br>`HttpRedirectionModule` | Ano | [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting)
 **Ověřování pomocí mapování certifikátu klienta služby IIS**<br>`IISCertificateMappingAuthenticationModule` | Ano | 
 **Omezení domény a IP**<br>`IpRestrictionModule` | Ano | 
-**Filtry ISAPI**<br>`IsapiFilterModule` | Ano | [Middleware](xref:fundamentals/middleware)
-**ISAPI**<br>`IsapiModule` | Ano | [Middleware](xref:fundamentals/middleware)
+**Filtry ISAPI**<br>`IsapiFilterModule` | Ano | [Middleware](xref:fundamentals/middleware/index)
+**ISAPI**<br>`IsapiModule` | Ano | [Middleware](xref:fundamentals/middleware/index)
 **Podpora protokolu**<br>`ProtocolSupportModule` | Ano | 
 **Filtrování požadavků**<br>`RequestFilteringModule` | Ano | [Adresa URL přepisování middlewaru`IRule`](xref:fundamentals/url-rewriting#irule-based-rule)
 **Sledování požadavků**<br>`RequestMonitorModule` | Ano | 

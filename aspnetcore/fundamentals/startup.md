@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: cf9e6a25f5b9cc8395c803a11c15622349620a07
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c324918b33af82b619bb2251f32308e4a57c27e5
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -70,7 +70,7 @@ Webový hostitel poskytuje některé služby, které jsou k dispozici `Startup` 
 
 ## <a name="the-configure-method"></a>Metoda konfigurace
 
-[Konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) metoda se používá k určení, jak se aplikace reaguje na požadavky HTTP. Kanál požadavku je nakonfigurována tak, že přidáte [middleware](xref:fundamentals/middleware) součásti, které [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) instance. `IApplicationBuilder`je k dispozici `Configure` metoda, ale není registrován v kontejneru služby. Hostování vytvoří `IApplicationBuilder` a předává je přímo na `Configure` ([odkaz na zdroj](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
+[Konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) metoda se používá k určení, jak se aplikace reaguje na požadavky HTTP. Kanál požadavku je nakonfigurována tak, že přidáte [middleware](xref:fundamentals/middleware/index) součásti, které [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) instance. `IApplicationBuilder`je k dispozici `Configure` metoda, ale není registrován v kontejneru služby. Hostování vytvoří `IApplicationBuilder` a předává je přímo na `Configure` ([odkaz na zdroj](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
 
 [Šablony ASP.NET Core](/dotnet/core/tools/dotnet-new) konfiguraci kanálu s podporou pro vývojáře výjimka stránku, [BrowserLink](http://vswebessentials.com/features/browserlink), chybové stránky, statické soubory a architektura ASP.NET MVC:
 
@@ -80,7 +80,7 @@ Každý `Use` metoda rozšíření přidá do kanálu požadavku komponenta midd
 
 Další služby, jako například `IHostingEnvironment` a `ILoggerFactory`, můžete také zadat v podpis metody. -Li zadána, jsou vložit další služby, pokud jsou k dispozici.
 
-Další informace o tom, jak používat `IApplicationBuilder`, najdete v části [Middleware](xref:fundamentals/middleware).
+Další informace o tom, jak používat `IApplicationBuilder`, najdete v části [Middleware](xref:fundamentals/middleware/index).
 
 ## <a name="convenience-methods"></a>Usnadňující metody
 
@@ -92,7 +92,7 @@ Další informace o tom, jak používat `IApplicationBuilder`, najdete v části
 
 Použití [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter) pro konfiguraci middlewaru na začátku nebo na konci aplikace [konfigurace](#the-configure-method) middlewaru v řadě. `IStartupFilter`je užitečné k zajištění, že middleware běží před nebo po middleware přidal knihovny na začátku nebo na konci kanálu zpracování žádostí aplikace.
 
-`IStartupFilter`implementuje jedné metody [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure), který obdrží a vrátí `Action<IApplicationBuilder>`. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) definuje třída ke konfiguraci aplikace požadavku kanálu. Další informace najdete v tématu [vytváření middlewaru v řadě s IApplicationBuilder](xref:fundamentals/middleware#creating-a-middleware-pipeline-with-iapplicationbuilder).
+`IStartupFilter`implementuje jedné metody [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure), který obdrží a vrátí `Action<IApplicationBuilder>`. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) definuje třída ke konfiguraci aplikace požadavku kanálu. Další informace najdete v tématu [vytváření middlewaru v řadě s IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder).
 
 Každý `IStartupFilter` implementuje jeden nebo více middlewares v kanálu požadavku. Filtry je vyvolán v pořadí, ve kterém byly přidány do kontejneru služby. Filtry může přidat middleware před nebo po úspěšném řízení další filtru, proto se připojit k začátku nebo na konci kanálu aplikace.
 
@@ -121,7 +121,7 @@ Pořadí spuštění middlewaru je nastavena podle pořadí podle `IStartupFilte
 
 * [Hostování](xref:fundamentals/hosting)
 * [Práce s několika prostředí](xref:fundamentals/environments)
-* [Middleware](xref:fundamentals/middleware)
+* [Middleware](xref:fundamentals/middleware/index)
 * [Protokolování](xref:fundamentals/logging/index)
 * [Konfigurace](xref:fundamentals/configuration/index)
 * [Třída StartupLoader: metoda FindStartupType (referenční dokumentace zdroje)](https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/StartupLoader.cs#L66-L116)

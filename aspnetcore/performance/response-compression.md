@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: b93b3fc6c3fafd3e45a5cd42f43aa06dc730db0f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: eae51e74c7f2b2f038638c765d4e833a1d9b1232
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware komprese odpovědi pro ASP.NET Core
 
@@ -196,7 +196,7 @@ Pomocí některého nástroje, například [Fiddler](http://www.telerik.com/fidd
 
 ## <a name="additional-resources"></a>Další zdroje
 * [Spuštění aplikace](xref:fundamentals/startup)
-* [Middleware](xref:fundamentals/middleware)
+* [Middleware](xref:fundamentals/middleware/index)
 * [Mozilla Developer Network: Přijměte kódování](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding)
 * [RFC 7231 části 3.1.2.1: Obsahu Codings](https://tools.ietf.org/html/rfc7231#section-3.1.2.1)
 * [RFC 7230 oddílu 4.2.3: Kódování Gzip](https://tools.ietf.org/html/rfc7230#section-4.2.3)

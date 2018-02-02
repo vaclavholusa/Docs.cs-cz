@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: c79f1152afd2f55f53bf5deb9208fa5b4d5ef64d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a63bfc26bb6b0f5ea1c64641d6f57a3555d7f401
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c"></a>Cloudové ověřování v rozhraní web API s Azure Active Directory B2C
 
@@ -101,7 +101,8 @@ Visual Studio vytvoří webové rozhraní API s řadičem s názvem *ValuesContr
 
 V sadě Visual Studio spusťte rozhraní API. Visual Studio spustí prohlížeč odkazoval na adresy URL kořenového adresáře rozhraní API. Poznamenejte si adresu URL na panelu Adresa a nechte rozhraní API spuštěná na pozadí.
 
-> [!NOTE] Vzhledem k tomu, že není k dispozici žádný řadič definované pro adresy URL kořenového adresáře, prohlížeč zobrazí chybu 404 (stránka nebyla nalezena). Toto je očekávané chování.
+> [!NOTE]
+> Vzhledem k tomu, že není k dispozici žádný řadič definované pro adresy URL kořenového adresáře, prohlížeč zobrazí chybu 404 (stránka nebyla nalezena). Toto je očekávané chování.
 
 ## <a name="use-postman-to-get-a-token-and-test-the-api"></a>Použití Postman k získání tokenu a testování rozhraní API
 

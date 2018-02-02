@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 946ccc80915c5de60976a98cbbb253cb8dfacaca
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7f0e30b3ac7f9cc3a32bd96f45d83ba13505a475
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
@@ -71,7 +71,7 @@ public class Startup
 }
 ```
 
-`ConfigureServices`definuje [služby](#dependency-injection-services) používané vaší aplikace (například Identity Entity Framework Core, základní rozhraní ASP.NET MVC). `Configure`definuje [middleware](xref:fundamentals/middleware) pro kanál požadavku.
+`ConfigureServices`definuje [služby](#dependency-injection-services) používané vaší aplikace (například Identity Entity Framework Core, základní rozhraní ASP.NET MVC). `Configure`definuje [middleware](xref:fundamentals/middleware/index) pro kanál požadavku.
 
 Další informace najdete v tématu [spuštění aplikace](xref:fundamentals/startup).
 
@@ -91,9 +91,9 @@ Další informace najdete v tématu [vkládání závislostí](xref:fundamentals
 
 ## <a name="middleware"></a>Middleware
 
-V ASP.NET Core, vytvoříte pomocí kanálu požadavku [middleware](xref:fundamentals/middleware). ASP.NET Core middleware provede asynchronní logiku `HttpContext` a vyvolá další middleware v pořadí, nebo přímo ukončí žádosti. Přidá middleware komponenty s názvem "XYZ" se při vyvolání `UseXYZ` metoda rozšíření v `Configure` metoda.
+V ASP.NET Core, vytvoříte pomocí kanálu požadavku [middleware](xref:fundamentals/middleware/index). ASP.NET Core middleware provede asynchronní logiku `HttpContext` a vyvolá další middleware v pořadí, nebo přímo ukončí žádosti. Přidá middleware komponenty s názvem "XYZ" se při vyvolání `UseXYZ` metoda rozšíření v `Configure` metoda.
 
-ASP.NET Core se dodává s bohatou sadu předdefinovaných middleware:
+ASP.NET Core obsahuje bohatou sadu předdefinovaných middleware:
 
 * [Statické soubory](xref:fundamentals/static-files)
 * [Směrování](xref:fundamentals/routing)
@@ -103,7 +103,7 @@ ASP.NET Core se dodává s bohatou sadu předdefinovaných middleware:
 
 [OWIN](http://owin.org)– na základě middlewaru je k dispozici pro aplikace ASP.NET Core a můžete napsat vlastní vlastní middleware.
 
-Další informace najdete v tématu [Middleware](xref:fundamentals/middleware) a [Open Web Interface pro .NET (OWIN)](xref:fundamentals/owin).
+Další informace najdete v tématu [Middleware](xref:fundamentals/middleware/index) a [Open Web Interface pro .NET (OWIN)](xref:fundamentals/owin).
 
 ## <a name="environments"></a>Prostředí
 

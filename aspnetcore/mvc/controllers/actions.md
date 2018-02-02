@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/actions
-ms.openlocfilehash: 1c6bf5ad92a43274af351652d240e2fa8873a956
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0f04891aaeec026120e2afff3ff24fb89f649c8d
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Zpracování žádostí s řadiči v ASP.NET MVC jádra
 
@@ -104,4 +104,4 @@ Zpracování chyb a ukládání odpovědí do mezipaměti, jsou často mezi vyj�
    * [Zpracování chyb](xref:mvc/controllers/filters#exception-filters)
    * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
 
-Mnoho mezi vyjímání otázky můžete ke zpracování pomocí filtrů nebo vlastní [middleware](xref:fundamentals/middleware).
+Mnoho mezi vyjímání otázky můžete ke zpracování pomocí filtrů nebo vlastní [middleware](xref:fundamentals/middleware/index).

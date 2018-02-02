@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: 52b78922da54a2d4e66120552c2ffc9f585f406b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0c05c636a991371b1a1feec88b5393724a6dc629
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity na jádro ASP.NET
 
@@ -65,7 +65,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
     
     Tyto služby jsou k dispozici pro aplikace prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection).
     
-    Identity je pro tuto aplikaci povolena voláním `UseAuthentication` v `Configure` metoda. `UseAuthentication`Přidá ověřování [middleware](xref:fundamentals/middleware) požadavku kanálu.
+    Identity je pro tuto aplikaci povolena voláním `UseAuthentication` v `Configure` metoda. `UseAuthentication`Přidá ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.
     
     [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
@@ -75,7 +75,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
     
     Tyto služby jsou k dispozici pro aplikace prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection).
     
-    Identity je pro tuto aplikaci povolena voláním `UseIdentity` v `Configure` metoda. `UseIdentity`Přidá ověřování na základě souborů cookie [middleware](xref:fundamentals/middleware) požadavku kanálu.
+    Identity je pro tuto aplikaci povolena voláním `UseIdentity` v `Configure` metoda. `UseIdentity`Přidá ověřování na základě souborů cookie [middleware](xref:fundamentals/middleware/index) požadavku kanálu.
         
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
     

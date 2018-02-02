@@ -9,11 +9,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: d60698b5798e837a5946dbe158a647aae9e149d4
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4815155ad238c31316e00471cf87beb3dd262613
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c"></a>Ověření cloudu s Azure Active Directory B2C
 
@@ -139,5 +139,5 @@ Teď, když je aplikace ASP.NET Core nakonfigurovaná pro ověřování, pomocí
 * [Povolit službu Multi-Factor authentication](/azure/active-directory-b2c/active-directory-b2c-reference-mfa).
 * Nakonfigurovat další identity poskytovatelů, jako třeba [Microsoft](/azure/active-directory-b2c/active-directory-b2c-setup-msa-app), [Facebook](/azure/active-directory-b2c/active-directory-b2c-setup-fb-app), [Google](/azure/active-directory-b2c/active-directory-b2c-setup-goog-app), [Amazon](/azure/active-directory-b2c/active-directory-b2c-setup-amzn-app), [služby Twitter ](/azure/active-directory-b2c/active-directory-b2c-setup-twitter-app)a další.
 * [Použijte rozhraní Azure AD Graph API](/azure/active-directory-b2c/active-directory-b2c-devquickstarts-graph-dotnet) načíst informace o dalších uživateli, jako je členství ve skupině, z klienta Azure AD B2C.
-* [Zabezpečení webového rozhraní API pomocí Azure AD B2C ASP.NET Core](xref:security/authentication/azure-ad-b2c-api).
+* [Zabezpečení webového rozhraní API pomocí Azure AD B2C ASP.NET Core](xref:security/authentication/azure-ad-b2c-webapi).
 * [Volání webového rozhraní API .NET z webové aplikace .NET pomocí Azure AD B2C](/azure/active-directory-b2c/active-directory-b2c-devquickstarts-web-api-dotnet).

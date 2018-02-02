@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: e076e301004c04b5c516d775353a4b6e50a3f36e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 079c36535b8c9e7229952a2f7bcd53174effa6af
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Prevence útoků (XSRF/proti útokům CSRF) padělání požadavku posílaného mezi weby v ASP.NET Core
 
@@ -345,7 +345,7 @@ V tématu https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builde
 
 ### <a name="cookie-based-authentication"></a>Ověřování na základě souborů cookie
 
-Jakmile uživatel byl ověřen pomocí uživatelského jména a hesla, budou se vystaví token, který slouží k jejich identifikaci a ověření, které byly ověřeny. Token je uloženo jako soubor cookie, který doprovází každý požadavek klienta umožňuje. Generování a ověřování tento soubor cookie je potřeba middleware ověřování souborů cookie. Základní technologie ASP.NET poskytuje soubor cookie [middleware](../fundamentals/middleware.md) který serializuje hlavní název uživatele do šifrovaného souboru cookie a pak na následné žádosti, ověří souboru cookie, znovu vytvoří objekt a přiřadí ji k `User` vlastnost `HttpContext`.
+Jakmile uživatel byl ověřen pomocí uživatelského jména a hesla, budou se vystaví token, který slouží k jejich identifikaci a ověření, které byly ověřeny. Token je uloženo jako soubor cookie, který doprovází každý požadavek klienta umožňuje. Generování a ověřování tento soubor cookie je potřeba middleware ověřování souborů cookie. Základní technologie ASP.NET poskytuje soubor cookie [middleware](xref:fundamentals/middleware/index) který serializuje hlavní název uživatele do šifrovaného souboru cookie a pak na následné žádosti, ověří souboru cookie, znovu vytvoří objekt a přiřadí ji k `User` vlastnost `HttpContext`.
 
 Pokud soubor cookie se používá, ověřovacího souboru cookie je kontejner pro ověřovací lístek. Lístek se předá jako hodnota souboru cookie pro ověřování formulářů s každou žádostí a ověřování pomocí formulářů, na serveru, používá k identifikaci ověřeného uživatele.
 

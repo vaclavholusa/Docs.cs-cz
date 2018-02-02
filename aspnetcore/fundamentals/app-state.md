@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: 7aa200d3612f766ab633ccab807421b9c5393975
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f4ed38f7395e3f4fe939584c1f3f5b0dba93724c
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Úvod do stavu relace a aplikace v ASP.NET Core
 
@@ -84,7 +84,7 @@ Následující `Startup` kód třídy nakonfiguruje TempData zprostředkovatele 
 
 ---
 
-Pořadí je důležité pro komponenty middlewaru. V předchozím příkladu, k výjimce typu `InvalidOperationException` dojde při `UseSession` je volána poté, co `UseMvcWithDefaultRoute`. V tématu [řazení Middleware](xref:fundamentals/middleware#ordering) další podrobnosti.
+Pořadí je důležité pro komponenty middlewaru. V předchozím příkladu, k výjimce typu `InvalidOperationException` dojde při `UseSession` je volána poté, co `UseMvcWithDefaultRoute`. V tématu [řazení Middleware](xref:fundamentals/middleware/index#ordering) další podrobnosti.
 
 > [!IMPORTANT]
 > Pokud cílení na rozhraní .NET Framework a pomocí zprostředkovatele na bázi relace, přidejte [Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft.AspNetCore.Session) balíček NuGet do projektu.
@@ -189,7 +189,7 @@ Následující příklad ukazuje, jak nastavit a získat serializovatelný objek
 
 `HttpContext` Abstrakce zajišťuje podporu pro kolekci slovníku typu `IDictionary<object, object>`, názvem `Items`. Tato kolekce je k dispozici od začátku *požadavku HTTP* a na konci každého požadavku se zahodí. Můžete k němu přístup přiřazením hodnoty pro položku s klíčem nebo tím, že požádá hodnotu pro konkrétní klíč.
 
-V ukázce níže [Middleware](middleware.md) přidá `isVerified` k `Items` kolekce.
+V následující ukázce [Middleware](xref:fundamentals/middleware/index) přidá `isVerified` k `Items` kolekce.
 
 ```csharp
 app.Use(async (context, next) =>

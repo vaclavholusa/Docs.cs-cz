@@ -3,7 +3,7 @@
 | Parametr               | Popis|
 | ----------------- | ------------ |
 | -m  | Název modelu. |
-| -řadiče domény  | Data kontextu. |
+| -dc  | Data kontextu. |
 | -udl | Použijte výchozí rozložení. |
 | -outDir | Relativní výstupní cesta ke složce vytvoření zobrazení. |
 | --referenceScriptLibraries | Přidá `_ValidationScriptsPartial` upravovat a vytvářet stránky |

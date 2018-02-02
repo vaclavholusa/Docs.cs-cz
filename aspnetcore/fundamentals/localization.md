@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: 794abf628beff7e5c78f9ca04309694d46910373
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 766cec5dd00b7b464eef31a3bc1721f522697608
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -198,7 +198,7 @@ Lokalizace je nakonfigurovaný v `ConfigureServices` metoda:
 
 ### <a name="localization-middleware"></a>Lokalizace middlewaru
 
-Aktuální jazykovou verzi na vyžádání je nastavena v lokalizace [Middleware](middleware.md). Lokalizace middlewaru je povolena v `Configure` metodu *Program.cs* souboru. Všimněte si, lokalizace middleware musí být nakonfigurovaná před veškerý middleware, která může kontrola jazyková verze požadavku (například `app.UseMvcWithDefaultRoute()`).
+Aktuální jazykovou verzi na vyžádání je nastavena v lokalizace [Middleware](xref:fundamentals/middleware/index). Lokalizace middlewaru je povolena v `Configure` metoda. Lokalizace middleware musí být nakonfigurovaná před veškerý middleware, která může kontrola jazyková verze požadavku (například `app.UseMvcWithDefaultRoute()`).
 
 [!code-csharp[Main](localization/sample/Localization/Program.cs?name=snippet2)]
 

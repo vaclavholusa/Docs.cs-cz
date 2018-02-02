@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: 8549083ad42f3b81f850c0572b36dd99c4f50350
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2ba3c226cc57f8a3fb26b4119ae9e575eff522f9
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="filters"></a>Filtry
 
@@ -307,7 +307,7 @@ Rozhraní framework poskytuje abstraktní `ResultFilterAttribute` , ke kterým m
 
 ## <a name="using-middleware-in-the-filter-pipeline"></a>Pomocí middleware v kanálu filtru
 
-Filtry prostředků fungují jako [middleware](../../fundamentals/middleware.md) v tom, že jejich obklopit provádění všechny položky, která se dodává později v kanálu. Ale filtry se liší od middleware, že jsou součástí MVC, což znamená, že mají přístup do kontextu MVC a konstrukce.
+Filtry prostředků fungují jako [middleware](xref:fundamentals/middleware/index) v tom, že jejich obklopit provádění všechny položky, která se dodává později v kanálu. Ale filtry se liší od middleware, že jsou součástí MVC, což znamená, že mají přístup do kontextu MVC a konstrukce.
 
 V technologii ASP.NET Core 1.1 můžete použít middleware v kanálu filtru. Můžete chtít udělat, pokud máte komponenta middlewaru, který potřebuje přístup k data směrování MVC nebo ten, který by měly být spuštěny pouze pro určité řadiče nebo akce.
 

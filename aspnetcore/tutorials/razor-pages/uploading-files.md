@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 24eaa0dd9293cc932c51d280300308e835a0840e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a2c6da6ed698d1a65ee51bd00a557e607f012da
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Nahrávání souborů na stránku Razor v ASP.NET Core
 
@@ -23,11 +23,29 @@ V této části je znázorněn nahrávání souborů stránky Razor.
 
 [Film stránky Razor ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie) v tento kurz používá jednoduchý model vazby k nahrání souborů, které funguje dobře pro nahrávání souborů malé. Informace o streamování velkých souborů, v tématu [nahrávání velkých souborů s streamování](xref:mvc/models/file-uploads#uploading-large-files-with-streaming).
 
-V následujících krocích přidáte funkci nahrávání souboru plán film ukázkovou aplikaci. Je reprezentována plán film `Schedule` třídy. Třída zahrnuje dvě verze plánu. Jedna verze je poskytováno zákazníkům, `PublicSchedule`. Jiné verze se má použít pro zaměstnance společnosti `PrivateSchedule`. Každá verze je uloženo jako samostatný soubor. Tento kurz ukazuje, jak provést dvě nahrávání souborů ze stránky s jediným POŠTOVNÍM k serveru.
+V následujících krocích se funkce nahrávání souboru plán film přidá do ukázková aplikace. Je reprezentována plán film `Schedule` třídy. Třída zahrnuje dvě verze plánu. Jedna verze je poskytováno zákazníkům, `PublicSchedule`. Jiné verze se má použít pro zaměstnance společnosti `PrivateSchedule`. Každá verze je uloženo jako samostatný soubor. Tento kurz ukazuje, jak provést dvě nahrávání souborů ze stránky s jediným POŠTOVNÍM k serveru.
+
+## <a name="security-considerations"></a>Aspekty zabezpečení
+
+Upozornění: musí být provedeny, když nabízí uživatelům možnost k nahrání souborů do serveru. Útočník může spustit [útok DoS](/windows-hardware/drivers/ifs/denial-of-service) a jiným útokům na systém. Některé kroky zabezpečení, které sníží pravděpodobnost úspěšného útoku jsou:
+
+* Nahrání souborů do oblasti nahrávání souboru vyhrazené systému, takže je jednodušší uložit opatření zabezpečení nahraná obsahu. Když umožňující nahrávání souborů, ujistěte se, oprávnění ke spouštění jsou zakázány na umístění nahrávání.
+* Použijte soubor bezpečný název určit aplikace, nikoli z vstup uživatele nebo název souboru nahrávaný soubor.
+* Povolte jenom konkrétní sadu schválený přípon.
+* Ověřte, že kontrola klienta se provádí na serveru. Kontrola na straně klienta jsou snadno obejít.
+* Zkontrolujte velikost nahrávání a zabránit nahrávání větší, než se očekávalo.
+* Spusťte vyhledávání virů nebo malwaru v nahraném obsah.
+
+> [!WARNING]
+> Odesílání škodlivý kód do systému je často prvním krokem k provádění kód, který můžete:
+> * Úplné převzetí a systému.
+> * Přetížení systému se výsledek, který systému úplně selže.
+> * Ohrožení dat uživatele nebo systému.
+> * Graffiti se vztahují na veřejné rozhraní.
 
 ## <a name="add-a-fileupload-class"></a>Přidání třídy odesílání souborů při odpovědích
 
-Níže vytvoříte stránky Razor pro zpracování pár nahrávání souborů. Přidat `FileUpload` třídy, která je vázána na stránku získat data plánu. Klikněte pravým tlačítkem *modely* složky. Vyberte **přidat** > **třída**. Název třídy **odesílání souborů při odpovědích** a přidejte následující vlastnosti:
+Vytvoření stránky Razor pro zpracování pár nahrávání souborů. Přidat `FileUpload` třídy, která je vázána na stránku získat data plánu. Klikněte pravým tlačítkem *modely* složky. Vyberte **přidat** > **třída**. Název třídy **odesílání souborů při odpovědích** a přidejte následující vlastnosti:
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
 
@@ -38,6 +56,23 @@ Třída nemá vlastnost pro nadpis podle plánu a vlastnost pro každou z dvou v
 Nechcete duplicity kód pro zpracování souborů nahrané plán, přidejte nejprve statickou pomocnou metodu. Vytvoření *nástroje* složky v aplikaci a přidejte *FileHelpers.cs* soubor s následujícím obsahem. Pomocná metoda `ProcessFormFile`, trvá [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) a [ModelStateDictionary](/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary) a vrátí řetězec obsahující velikost souboru a jeho obsah. Se kontroluje, typu obsahu a délka. Pokud soubor neprojde ověřování pravosti, chyba je přidán do `ModelState`.
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
+
+### <a name="save-the-file-to-disk"></a>Uložte soubor na disku
+
+Ukázková aplikace uloží obsah souboru do pole databáze. Pokud chcete uložit obsah souboru na disk, použijte [FileStream](/dotnet/api/system.io.filestream):
+
+```csharp
+using (var fileStream = new FileStream(filePath, FileMode.Create))
+{
+    await formFile.CopyToAsync(fileStream);
+}
+```
+
+Pracovní proces musí mít oprávnění k zápisu do určeného umístění `filePath`.
+
+### <a name="save-the-file-to-azure-blob-storage"></a>Uložte soubor do Azure Blob Storage
+
+Pokud chcete nahrát obsah souboru do Azure Blob Storage, najdete v části [Začínáme s Azure Blob Storage pomocí rozhraní .NET](/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Téma ukazuje, jak používat [UploadFromStream](/dotnet/api/microsoft.windowsazure.storage.file.cloudfile.uploadfromstreamasync) Uložit [FileStream](/dotnet/api/system.io.filestream) do úložiště objektů blob.
 
 ## <a name="add-the-schedule-class"></a>Přidání třídy plán
 
@@ -106,7 +141,7 @@ Otevřete *_Layout.cshtml* a přidat odkaz na navigačním panelu k dosažení s
 
 ## <a name="add-a-page-to-confirm-schedule-deletion"></a>Přidat stránku potvrďte odstranění plánu
 
-Když uživatel klikne na Odstranit plán, kterým chcete šance, že na tlačítko Storno. Přidat stránku potvrzení odstranění (*Delete.cshtml*) k *plány* složky:
+Když uživatel klikne na Odstranit plán, je k dispozici šanci na tlačítko Storno. Přidat stránku potvrzení odstranění (*Delete.cshtml*) k *plány* složky:
 
 [!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
@@ -144,7 +179,7 @@ Můžete kliknout na uživatele **odstranit** odkaz z ní k dosažení zobrazen�
 
 Pro řešení potíží s informací o s `IFormFile` nahrát, najdete v článku [nahrávání souborů v ASP.NET Core: řešení potíží s](xref:mvc/models/file-uploads#troubleshooting).
 
-Děkujeme, že dokončení tohoto úvodu do stránky Razor. Děkujeme za jakékoli komentáře, která zůstanou. [Začínáme s MVC a EF základní](xref:data/ef-mvc/intro) je vynikající postupujte podle kroků až tento kurz.
+Děkujeme, že dokončení tohoto úvodu do stránky Razor. Děkujeme za zpětnou vazbu. [Začínáme s MVC a EF základní](xref:data/ef-mvc/intro) je vynikající postupujte podle kroků až tento kurz.
 
 ## <a name="additional-resources"></a>Další zdroje
 

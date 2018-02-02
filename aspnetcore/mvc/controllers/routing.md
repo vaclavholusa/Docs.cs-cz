@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/routing
-ms.openlocfilehash: ca4f40766b4ec3d59587109ec9d5a412e834e3ce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d87cb50871b956c51045558d2e4f076de4211f81
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="routing-to-controller-actions"></a>Směrování do akce Kontroleru
 
 Podle [Ryan Nowak](https://github.com/rynowak) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Jádro ASP.NET MVC používá směrování [middleware](../../fundamentals/middleware.md) odpovídající adresy URL příchozích požadavků a jejich namapování na akce. Trasy jsou definovány v spuštění kódu nebo atributy. Postupy popisují, jak cest URL by měla odpovídat akce. Trasy se také používají k vygenerování adres URL (pro odkazy) odeslaná v odpovědi. 
+Jádro ASP.NET MVC používá směrování [middleware](xref:fundamentals/middleware/index) odpovídající adresy URL příchozích požadavků a jejich namapování na akce. Trasy jsou definovány v spuštění kódu nebo atributy. Postupy popisují, jak cest URL by měla odpovídat akce. Trasy se také používají k vygenerování adres URL (pro odkazy) odeslaná v odpovědi. 
 
 Akce se buď obvykle směrují nebo směrován atribut. Uvedení trasu na kontroler nebo akce umožňuje atribut směrovat. V tématu [ve smíšeném směrování](#routing-mixed-ref-label) Další informace.
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: 2897eb3a756654c61e38e847f5a8e1f8ca4f0b7c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d35c24347e8e06ed85e2af8addcc1f8cf28dc47a
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -36,7 +36,7 @@ Směrování používá *trasy* (implementace [IRouter](https://docs.microsoft.c
 
 Obecně platí aplikace má jedinou kolekci tras. Pokud dorazí požadavek, je v pořadí zpracování kolekce tras. Příchozí požadavek vypadá pro trasu, která odpovídá adrese URL žádosti voláním `RouteAsync` metodu na každý postup k dispozici v kolekci trasy. Naopak odpověď můžete používat směrování k vygenerování adres URL (například pro přesměrování nebo odkazy) na základě informací o směrování a proto vyhnout se nutnosti pevně adresy URL, která pomáhá udržovatelnosti.
 
-Směrování je připojený k [middleware](middleware.md) kanálu pomocí `RouterMiddleware` třídy. [ASP.NET MVC](../mvc/overview.md) přidá směrování do middlewaru v řadě jako součást její konfiguraci. Další informace o použití směrování jako samostatná součást najdete v tématu [pomocí směrování middleware](#using-routing-middleware).
+Směrování je připojený k [middleware](xref:fundamentals/middleware/index) kanálu pomocí `RouterMiddleware` třídy. [Jádro ASP.NET MVC](xref:mvc/overview) přidá směrování do middlewaru v řadě jako součást její konfiguraci. Další informace o použití směrování jako samostatná součást najdete v tématu [pomocí směrování middleware](#using-routing-middleware).
 
 <a name="url-matching-ref"></a>
 

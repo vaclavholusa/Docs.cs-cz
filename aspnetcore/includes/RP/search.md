@@ -90,7 +90,3 @@ Aktualizace *Index.cshtml* následujícím způsobem:
 [!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/Movies/IndexFormGenreNoRating.cshtml?highlight=16-18&range=1-26)]
 
 Testování aplikací tak, že genre, název filmu a oběma.
-
->[!div class="step-by-step"]
-[Předchozí: Aktualizace stránky](xref:tutorials/razor-pages/da1)
-[Další: Přidání nové pole](xref:tutorials/razor-pages/new-field)

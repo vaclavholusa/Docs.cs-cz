@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: ebae76da01e1b24466174179a9d4bbe826202cc3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a5f14e11de6ed91f67808c3ea8c78a7b1d43b03
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>Integrace testování v ASP.NET Core
 
@@ -127,7 +127,7 @@ Tento kód funguje, ale je daleko od způsob implementace tento druh funkce v ap
 
 Jednou z možností vzít v úvahu je přidání [MVC](xref:mvc/overview) aplikace a vytvoření řadiče pro zpracování prvotní kontrola. Ale za předpokladu, že aktuálně není třeba žádné další MVC funkce, která je chvíli overkill.
 
-Můžete však využít výhod ASP.NET Core [middleware](xref:fundamentals/middleware), který vám pomůže nám zapouzdření prime kontrola logiku v její vlastní třída a dosáhnout lepší [oddělené oblasti zájmu](http://deviq.com/separation-of-concerns/) v `Configure` Metoda.
+Můžete však využít výhod ASP.NET Core [middleware](xref:fundamentals/middleware/index), který vám pomůže nám zapouzdření prime kontrola logiku v její vlastní třída a dosáhnout lepší [oddělené oblasti zájmu](http://deviq.com/separation-of-concerns/) v `Configure` Metoda.
 
 Chcete povolit cestu middleware použije zadat jako parametr, tak třída middleware očekává `RequestDelegate` a `PrimeCheckerOptions` instance v jeho konstruktoru. Pokud cesta požadavku se neshoduje se co tento middleware je nakonfigurován tak, aby se dalo očekávat, jednoduše volat další middleware v řetězci a žádná další akce. Zbytek implementace kód, který byl v `Configure` je teď ve `Invoke` metoda.
 
@@ -150,5 +150,5 @@ Následující tento refaktoring jste jisti, že webové aplikace stále funguje
 ## <a name="resources"></a>Prostředky
 
 * [Testování jednotek](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [Middleware](xref:fundamentals/middleware)
+* [Middleware](xref:fundamentals/middleware/index)
 * [Testování kontrolerů](xref:mvc/controllers/testing)

@@ -2,6 +2,9 @@
   tocHref: /
   topicHref: /
   items:
+    - name: "referenční dokumentace k\_rozhraní API"
+      tocHref: /dotnet/api/
+      topicHref: /dotnet/api/index
     - name: ASP.NET
       tocHref: /aspnet/
       topicHref: /aspnet/index

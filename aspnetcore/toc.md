@@ -36,13 +36,13 @@
 #### [Aktualizace stránek](xref:tutorials/razor-pages-mac/da1)
 #### [Přidání vyhledávání](xref:tutorials/razor-pages-mac/search)
 
-
 ### [Webová aplikace Razor Pages s editorem VS Code](xref:tutorials/razor-pages-vsc/index)
 #### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-vsc/razor-pages-start)
 #### [Přidání modelu](xref:tutorials/razor-pages-vsc/model)
 #### [Vygenerované stránky Razor](xref:tutorials/razor-pages-vsc/page)
 #### [Práce s SQLite](xref:tutorials/razor-pages-vsc/sql)
 #### [Aktualizace stránek](xref:tutorials/razor-pages-vsc/da1)
+#### [Přidání vyhledávání](xref:tutorials/razor-pages-vsc/search)
 
 ### [Webová aplikace MVC s použitím sady Visual Studio pro Mac](xref:tutorials/first-mvc-app-mac/index)
 #### [Začínáme](xref:tutorials/first-mvc-app-mac/start-mvc)
@@ -102,7 +102,9 @@
 # [Základy](fundamentals/index.md)
 ## [Spuštění aplikace](fundamentals/startup.md)
 ## [Injektáž závislostí (služby)](fundamentals/dependency-injection.md)
-## [Middleware](fundamentals/middleware.md)
+## [Middleware](xref:fundamentals/middleware/index)
+### [Middleware](xref:fundamentals/middleware/index)
+### [Na základě Factory middlewaru](xref:fundamentals/middleware/extensibility)
 ## [Práce se statickými soubory](fundamentals/static-files.md)
 ## [Směrování](fundamentals/routing.md)
 ## [Middleware pro přepis adres URL](fundamentals/url-rewriting.md)

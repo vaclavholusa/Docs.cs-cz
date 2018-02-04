@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: 76b6566df4a427836eb5060f7d80e1039e479884
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 608aaa469c5ca20fab8250025804e28e7808122d
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="claims-based-authorization"></a>Ověření na základě deklarace identity
 
 <a name="security-authorization-claims-based"></a>
 
-Při vytvoření identity může přiřadit jeden nebo více deklarace identity vystaveny důvěryhodná strana. Deklarace identity je název hodnota je pár, který představuje jaké předmět, není co předmět můžete provést. Například můžete mít licenci ovladače, vydaný místní řízení autoritou licence. Bance má vaše datum narození na. V takovém případě by být název deklarací `DateOfBirth`, hodnoty deklarace identity by vaše datum narození, například `8th June 1970` a vystavitele bude podporovat jeho autority licence. Autorizaci deklarací identity na základě, v nejjednodušším kontroluje hodnotu deklarace identity a umožňuje přístup k prostředku na základě této hodnotě. Pokud chcete přístup k křížovou kartou noci proces autorizace. například může být:
+Při vytvoření identity může přiřadit jeden nebo více deklarace identity vystaveny důvěryhodná strana. Deklarace identity je, že je dvojice název-hodnota reprezentující jaké předmět, můžete provést není co předmět. Například můžete mít licenci ovladače, vydaný místní řízení autoritou licence. Bance má vaše datum narození na. V takovém případě by být název deklarací `DateOfBirth`, hodnoty deklarace identity by vaše datum narození, například `8th June 1970` a vystavitele bude podporovat jeho autority licence. Autorizaci deklarací identity na základě, v nejjednodušším kontroluje hodnotu deklarace identity a umožňuje přístup k prostředku na základě této hodnotě. Pokud chcete přístup k křížovou kartou noci proces autorizace. například může být:
 
 Úředník zabezpečení dveře by vyhodnocovaly hodnotu vaše datum narození deklarace identity a jestli důvěřují vystavitele (řízení oprávnění licencí) před udělením přístupu.
 

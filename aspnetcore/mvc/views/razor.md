@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 98021cc76555f0c1402764c845471a4730b01b20
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ef3bf31da76df47312f98f494973295f29e18743
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pro ASP.NET Core
 
@@ -471,7 +471,7 @@ Zpřístupní Razor `Model` vlastnost pro přístup k modelu předaná do zobraz
 <div>The Login Email: @Model.Email</div>
 ```
 
-`@model` – Direktiva Určuje typ této vlastnosti. Direktiva Určuje `T` v `RazorPage<T>` že generované třídy, zobrazení je odvozena z. Pokud `@model` direktivy iisn't zadána, `Model` vlastnost je typu `dynamic`. Hodnota modelu se z řadiče předaná do zobrazení. Další informace najdete v tématu [silného typu modely a @model – klíčové slovo.
+`@model` – Direktiva Určuje typ této vlastnosti. Direktiva Určuje `T` v `RazorPage<T>` že generované třídy, zobrazení je odvozena z. Pokud `@model` – direktiva není zadán, `Model` vlastnost je typu `dynamic`. Hodnota modelu se z řadiče předaná do zobrazení. Další informace najdete v tématu [silného typu modely a @model – klíčové slovo.
 
 ### <a name="inherits"></a>@inherits
 

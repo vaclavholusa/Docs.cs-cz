@@ -8,11 +8,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 9c1ee6f8c00f3cd501ea86fbf73f51ae540a010a
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 271bae2c3aeac61f0542570d4c0289ba539091cc
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>Řazení, filtrování, stránkování a seskupení – základní EF s stránky Razor (3 8)
 
@@ -69,7 +69,7 @@ Tyto dva příkazy zapnutí zobrazení nastavit sloupec hypertextové odkazy zá
 
 Metoda používá k určení tento sloupec seřadit podle technologie LINQ to Entities. Inicializuje kód `IQueryable<Student> ` před příkazem switch a upravuje v příkazu přepínače:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-)]
+[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-999)]
 
  Když`IQueryable` vytvoření nebo úpravě, odešle žádný dotaz do databáze. Dokud není spustit dotaz `IQueryable` objekt je převeden do kolekce. `IQueryable`se převedou na kolekci voláním metody `ToListAsync`. Proto `IQueryable` kódu má za následek jeden dotaz, který není provést, dokud následující příkaz:
 
@@ -178,7 +178,7 @@ V *Students/Index.cshtml.cs*, aktualizujte typ `Student` z `IList<Student>` k `P
 
 Aktualizace *Students/Index.cshtml.cs* `OnGetAsync` následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-)]
+[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-999)]
 
 Předchozí kód přidá index stránky, aktuální `sortOrder`a `currentFilter` k označení metody.
 
@@ -215,7 +215,7 @@ Dva otazníky v `PaginatedList.CreateAsync` představují [slučování null ope
 
 Aktualizovat kód v *Students/Index.cshtml*. Změny se zvýrazněnou:
 
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-)]
+[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-999)]
 
 Odkazy záhlaví sloupce používáte k průchodu aktuální hledaný řetězec na řetězec dotazu `OnGetAsync` metoda tak, aby uživatel může seřadit v rámci výsledky filtru:
 

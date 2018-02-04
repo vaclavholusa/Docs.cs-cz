@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: b155826b5047e88a79d9e339d7bca8885a79006d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bae970c916518070faea8a06a7bccc3da20cfeff
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>Vysoce výkonné protokolování s LoggerMessage v ASP.NET Core
 
@@ -34,15 +34,7 @@ Ukázková aplikace ukazuje `LoggerMessage` funkce s základní nabídky systém
 
 [Definujte (LogLevel, ID události, řetězec)](/dotnet/api/microsoft.extensions.logging.loggermessage.define) vytvoří `Action` delegovat pro protokolování zprávy. `Define`přetížení povolení předávání až šest parametry typu na řetězec s názvem formátu (šablony).
 
-## <a name="loggermessagedefinescope"></a>LoggerMessage.DefineScope
-
-[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) vytvoří `Func` delegovat pro definování [protokolu oboru](xref:fundamentals/logging/index#log-scopes). `DefineScope`přetížení povolení předávání až tři parametry typu na řetězec s názvem formátu (šablony).
-
-## <a name="message-template-named-format-string"></a>Šablona zprávy (s názvem řetězec formátu)
-
-Pro zadaný řetězec `Define` a `DefineScope` metody je šablonu a není interpolované řetězce. Zástupné symboly doplní v pořadí, že jsou uvedené typy. Zástupné názvy v šabloně by měl být popisný a konzistentní v rámci šablony. Představují názvy vlastností v rámci strukturovaných dat protokolu. Doporučujeme, abyste [Pascal velká a malá písmena](/dotnet/standard/design-guidelines/capitalization-conventions) pro názvy zástupný symbol. Například `{Count}`, `{FirstName}`.
-
-## <a name="implementing-loggermessagedefine"></a>Implementace LoggerMessage.Define
+Pro zadaný řetězec `Define` je metoda šablonu a není interpolované řetězce. Zástupné symboly doplní v pořadí, že jsou uvedené typy. Zástupné názvy v šabloně by měl být popisný a konzistentní v rámci šablony. Představují názvy vlastností v rámci strukturovaných dat protokolu. Doporučujeme, abyste [Pascal velká a malá písmena](/dotnet/standard/design-guidelines/capitalization-conventions) pro názvy zástupný symbol. Například `{Count}`, `{FirstName}`.
 
 Každé zprávě protokolu je `Action` uchovávat v statické pole vytvořené `LoggerMessage.Define`. Například vytvoří ukázkovou aplikaci pole pro popis zprávy protokolu pro požadavek GET na indexovou stránku (*Internal/LoggerExtensions.cs*):
 
@@ -141,7 +133,11 @@ Parameter name: entity
       <PATH>\sample\Pages\Index.cshtml.cs:line 87
 ```
 
-## <a name="implementing-loggermessagedefinescope"></a>Implementace LoggerMessage.DefineScope
+## <a name="loggermessagedefinescope"></a>LoggerMessage.DefineScope
+
+[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) vytvoří `Func` delegovat pro definování [protokolu oboru](xref:fundamentals/logging/index#log-scopes). `DefineScope`přetížení povolení předávání až tři parametry typu na řetězec s názvem formátu (šablony).
+
+Stejně jako případě `Define` metoda, pro zadaný řetězec `DefineScope` je metoda šablonu a není interpolované řetězce. Zástupné symboly doplní v pořadí, že jsou uvedené typy. Zástupné názvy v šabloně by měl být popisný a konzistentní v rámci šablony. Představují názvy vlastností v rámci strukturovaných dat protokolu. Doporučujeme, abyste [Pascal velká a malá písmena](/dotnet/standard/design-guidelines/capitalization-conventions) pro názvy zástupný symbol. Například `{Count}`, `{FirstName}`.
 
 Definování [protokolu oboru](xref:fundamentals/logging/index#log-scopes) chcete použít pro řadu zpráv protokolu pomocí [DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) metoda.
 

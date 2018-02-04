@@ -11,21 +11,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 708f306da740870b106cbeeb96879480f8745439
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 723e371e0d0b4877f96898c68cd59b433fa97dc1
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="resource-based-authorization"></a>Ověření na základě prostředků
-
-Podle [Scott Addie](https://twitter.com/Scott_Addie)
 
 Strategie autorizace závisí na prostředek přistupuje. Vezměte v úvahu dokument, který má vlastnost autora. K aktualizaci dokumentu je povoleno pouze autora. V důsledku toho dokumentu musí načíst z úložiště dat, než dojde k vyhodnocení autorizace.
 
 Před datové vazby a před spuštěním obslužná rutina stránky nebo akce, který načte dokumentu dojde k vyhodnocení atribut. Z těchto důvodů, deklarativní autorizace pomocí `[Authorize]` atribut nestačí. Místo toho můžete vyvolat metodu vlastní autorizace&mdash;styl známé jako imperativní autorizace.
 
 Použití [ukázkové aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample)) prozkoumat funkce popsané v tomto tématu.
+
+[Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace](xref:security/authorization/secure-data) obsahuje ukázkovou aplikaci, která používá ověřování založené na prostředcích.
 
 ## <a name="use-imperative-authorization"></a>Použít imperativní autorizace
 

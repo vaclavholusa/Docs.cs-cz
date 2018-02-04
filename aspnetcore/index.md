@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: index
-ms.openlocfilehash: d7957bdc6fa982790141bac9b73ad7d3b1dd3d8a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 42bf005a29a8723233a0d9e5532827f7522f0e75
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
-# <a name="introduction-to-aspnet-core"></a>Úvod do ASP.NET Core
+# <a name="aspnet-core"></a>ASP.NET Core
 
 Autoři: [Daniel Roth](https://github.com/danroth27), [Rick Anderson](https://twitter.com/RickAndMSFT) a [Shaun Luttin](https://twitter.com/dicshaunary)
 
@@ -65,6 +65,7 @@ Architektura ASP.NET Core se hladce integruje do oblíbených klientských rozhr
 
 Další informace naleznete v následujících materiálech:
 
+* [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Kurzy k ASP.NET Core](xref:tutorials/index)
 * [Základy ASP.NET Core](xref:fundamentals/index)
 * [Týdenní přehled novinek v komunitě ASP.NET](https://live.asp.net/) se zabývá pokrokem v týmových projektech a týmovými plány. Nabízí nové blogové příspěvky a software třetích stran.

@@ -1,27 +1,25 @@
 ---
-title: "Základní webové rozhraní API pomůže stránky ASP.NET pomocí Swagger"
+title: "Jádro ASP.NET Web API pomůže stránky pomocí Swagger"
 author: spboyer
 description: "V tomto kurzu poskytuje návod k přidávání Swagger ke generování dokumentaci, abyste stránky pro aplikaci webového rozhraní API."
 manager: wpickett
 ms.author: spboyer
-ms.date: 09/01/2017
+ms.date: 02/02/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 911504d9472ae78a0d1d002f1feb57f3a160d5bf
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 95dc89fbd9aa3038b7ec500121db4345de9765c6
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
-# <a name="aspnet-core-web-api-help-pages-using-swagger"></a>Základní webové rozhraní API pomůže stránky ASP.NET pomocí Swagger
-
-<a name="web-api-help-pages-using-swagger"></a>
+# <a name="aspnet-core-web-api-help-pages-using-swagger"></a>Jádro ASP.NET Web API pomůže stránky pomocí Swagger
 
 Podle [Shayne Boyer](https://twitter.com/spboyer) a [Scott Addie](https://twitter.com/Scott_Addie)
 
-Vysvětlení různých metod rozhraní API může být složité vývojář při sestavování spotřebitelskou aplikací.
+Vysvětlení různých metod rozhraní API může být složité vývojář při sestavování náročné aplikace.
 
 Generování správné stránky dokumentace a nápovědu pro vaše webové rozhraní API, pomocí [Swagger](https://swagger.io/) s implementací .NET Core [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore), je stejně snadná jako několik balíčků NuGet pro přidání a úpravy *Startup.cs*.
 
@@ -31,7 +29,7 @@ Generování správné stránky dokumentace a nápovědu pro vaše webové rozhr
 
 V tomto kurzu vychází z vzorku [vytváření vaše první rozhraní Web API s ASP.NET MVC jádra a sady Visual Studio](xref:tutorials/first-web-api). Pokud chcete sledovat, stažení ukázky v [https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample).
 
-## <a name="getting-started"></a>Začínáme
+## <a name="get-started"></a>Začínáme
 
 Existují tři hlavní komponenty k Swashbuckle:
 
@@ -89,7 +87,7 @@ dotnet add TodoApi.csproj package Swashbuckle.AspNetCore
 
 Přidání generátoru Swagger ke kolekci služby v `ConfigureServices` metodu *Startup.cs*:
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Startup2.cs?name=snippet_ConfigureServices&highlight=7-10)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Startup2.cs?name=snippet_ConfigureServices&highlight=7-10)]
 
 Přidejte následující příkaz pro použití `Info` třídy:
 
@@ -99,11 +97,12 @@ using Swashbuckle.AspNetCore.Swagger;
 
 V `Configure` metodu *Startup.cs*, povolit middleware pro obsluhující generovaného dokumentu JSON a SwaggerUI:
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Startup2.cs?name=snippet_Configure&highlight=4,7-10)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Startup2.cs?name=snippet_Configure&highlight=4,7-10)]
 
 Spusťte aplikaci a přejděte na `http://localhost:<random_port>/swagger/v1/swagger.json`. Zobrazí se vygenerovaný dokument popisující koncových bodů.
 
-**Poznámka:** Microsoft Edge, Google Chrome a Firefox zobrazení dokumentů JSON nativně. Existují rozšíření pro Chrome, která formátovat dokument pro snadnější čtení. *V následujícím příkladu se snižuje jako stručný výtah.*
+> [!NOTE]
+> Microsoft Edge, Google Chrome a Firefox zobrazí nativně dokumentů JSON. Existují rozšíření pro Chrome, která formátovat dokument pro snadnější čtení. *V následujícím příkladu se snižuje jako stručný výtah.*
 
 ```json
 {
@@ -182,7 +181,7 @@ Každá metoda veřejné akce v `TodoController` může být testována z uživa
 
 ![Příklad Swagger získat testu](web-api-help-pages-using-swagger/_static/get-try-it-out.png)
 
-## <a name="customization--extensibility"></a>Přizpůsobení a rozšíření
+## <a name="customize--extend"></a>Přizpůsobit a rozšířit
 
 Swagger poskytuje možnosti pro dokumentaci v objektovém modelu a přizpůsobení uživatelského rozhraní tak, aby odpovídaly vaší motivu.
 
@@ -190,7 +189,7 @@ Swagger poskytuje možnosti pro dokumentaci v objektovém modelu a přizpůsoben
 
 Akce konfigurace předaný `AddSwaggerGen` metoda slouží k přidání informací jako autor, licence a popis:
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Startup.cs?range=20-30,36)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Startup.cs?range=20-30,36)]
 
 Následující obrázek znázorňuje rozhraní Swagger, zobrazení informací o verzi:
 
@@ -218,7 +217,7 @@ XML – komentáře lze je aktivovat pomocí následujících postupů:
 
 Ručně přidejte následující fragment k *.csproj* souboru:
 
-[!code-xml[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/TodoApi.csproj?range=7-9)]
+[!code-xml[](web-api-help-pages-using-swagger/sample/TodoApi/TodoApi.csproj?range=8-9,11)]
 
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
@@ -226,17 +225,25 @@ Najdete v sadě Visual Studio Code.
 
 ---
 
-Povolení komentáře XML poskytuje informace o ladění pro nedokumentovanými veřejných typů a členů. Nezdokumentovaný typy a členy indikován upozornění: *komentář chybí XML pro veřejně viditelný typ nebo člen*.
+Povolení komentáře XML poskytuje informace o ladění pro nedokumentovanými veřejných typů a členů. Upozornění jsou označeny nedokumentovanými typy a členy. Například následující zpráva označuje porušení upozornění kód. 1591:
+
+```
+warning CS1591: Missing XML comment for publicly visible type or member 'TodoController.GetAll()'
+```
+
+Potlačení upozornění definováním seznam kódů upozornění ignorovat v oddělených středníky *.csproj* souboru:
+
+[!code-xml[](web-api-help-pages-using-swagger/sample/TodoApi/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=3)]
 
 Nakonfigurujte Swagger používat generovaný soubor XML. Pro operační systémy jiný systém než Windows nebo Linux může být malá a velká písmena názvů a cest souborů. Například *ToDoApi.XML* soubor by v systému Windows, ale není CentOS nalezen.
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Startup.cs?name=snippet_ConfigureServices&highlight=20-22)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Startup.cs?name=snippet_ConfigureServices&highlight=20-22)]
 
 V předchozí kód `ApplicationBasePath` získá základní cesta aplikace. Základní cesta se používá k vyhledání souboru komentáře XML. *TodoApi.xml* funguje pouze v tomto příkladu vzhledem k tomu, že název generovaného kódu XML komentáře soubor podle názvu aplikace.
 
 Přidávání komentářů triple lomítko metodě vylepšuje uživatelské rozhraní Swagger přidáním popis do záhlaví části:
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete&highlight=2)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete&highlight=2)]
 
 ![Zobrazuje komentáře XML odstraní konkrétní TodoItem. uživatelské rozhraní swagger pro metodu DELETE](web-api-help-pages-using-swagger/_static/triple-slash-comments.png)
 
@@ -271,19 +278,19 @@ Vygenerovaný soubor JSON, který také obsahuje tyto komentáře doprovází u�
 
 Přidat [ <remarks> ](https://docs.microsoft.com/dotnet/csharp/programming-guide/xmldoc/remarks) označení pro `Create` dokumentace metoda akce. Doplňuje informace uvedené v `<summary>` značky a poskytuje robustnější uživatelské rozhraní Swagger. `<remarks>` Obsah značky se může skládat z textu JSON a XML.
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]
 
 Všimněte si, vylepšení uživatelského rozhraní s tyto další komentáři.
 
 ![Uživatelské rozhraní swagger s další komentáři zobrazí](web-api-help-pages-using-swagger/_static/xml-comments-extended.png)
 
-### <a name="data-annotations"></a>Datových poznámek
+### <a name="data-annotations"></a>Datové poznámky
 
 Uspořádání model s ve byly nalezeny atributy `System.ComponentModel.DataAnnotations`, aby k rozvoji součásti uživatelského rozhraní Swagger.
 
 Přidat `[Required]` atribut `Name` vlastnost `TodoItem` třídy:
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Models/TodoItem.cs?highlight=10)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Models/TodoItem.cs?highlight=10)]
 
 Přítomnost tento atribut se změní chování uživatelského rozhraní a mění základní schématu JSON:
 
@@ -313,7 +320,7 @@ Přítomnost tento atribut se změní chování uživatelského rozhraní a měn
 
 Přidat `[Produces("application/json")]` atribut kontroleru rozhraní API. Jejím účelem je deklarovat podporovat akce kontroleru vrátí typ obsahu *application/json*:
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Controllers/TodoController.cs?name=snippet_TodoController&highlight=3)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Controllers/TodoController.cs?name=snippet_TodoController&highlight=3)]
 
 **Typ obsahu odpovědi** rozevíracího seznamu vybere jako výchozí pro akce kontroleru GET tento typ obsahu:
 
@@ -321,19 +328,19 @@ Přidat `[Produces("application/json")]` atribut kontroleru rozhraní API. Její
 
 Při použití datové poznámky v rozhraní Web API rostoucí, uživatelského rozhraní a rozhraní API pomohou stránky stát větší popisnosti a užitečné.
 
-### <a name="describing-response-types"></a>Popisující typy odezvy
+### <a name="describe-response-types"></a>Popisují typy odezvy
 
 Využívání vývojáři jsou nejvíce zajímají co je vrácen &mdash; konkrétně odpovědi typy a kódy chyb (Pokud není standard). Tyto jsou zpracovávány v XML komentáře a data poznámky.
 
 `Create` Akce vrátí `201 Created` v případě úspěchu nebo `400 Bad Request` při textu požadavku odeslaného má hodnotu null. Bez správné dokumentace v uživatelském rozhraní Swagger nemá příjemce znalost těchto očekávaných výsledků. Tento problém vyřešen přidáním zvýrazněné řádky v následujícím příkladu:
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]
 
 Uživatelské rozhraní Swagger teď jasně dokumenty očekávané kódy odpovědi HTTP:
 
 ![Zobrazuje popis třídy odpovědi POST, vrátí nově vytvořená položka Todo, uživatelské rozhraní swagger a '400 - Pokud položka má hodnotu null' stavový kód a důvod pod odpovědí na zprávy](web-api-help-pages-using-swagger/_static/data-annotations-response-types.png)
 
-### <a name="customizing-the-ui"></a>Přizpůsobení uživatelského rozhraní
+### <a name="customize-the-ui"></a>Přizpůsobení uživatelského rozhraní
 
 Stock uživatelského rozhraní je funkční a přístupné; ale při vytváření stránky dokumentace pro vaše rozhraní API, chcete ho k reprezentaci značky nebo motiv. Provedení této úlohy se součástmi Swashbuckle vyžaduje přidání prostředků poskytovat statické soubory a pak vytváření strukturu složek pro hostování těchto souborů.
 
@@ -345,7 +352,7 @@ Pokud cílení na rozhraní .NET Framework, přidejte `Microsoft.AspNetCore.Stat
 
 Povolte middleware statické soubory:
 
-[!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Startup.cs?name=snippet_Configure&highlight=3)]
+[!code-csharp[](web-api-help-pages-using-swagger/sample/TodoApi/Startup.cs?name=snippet_Configure&highlight=3)]
 
 Získat obsah *dist* složky z [úložiště GitHub uživatelského rozhraní Swagger](https://github.com/swagger-api/swagger-ui/tree/2.x/dist). Tato složka obsahuje nezbytné prostředky pro stránka uživatelského rozhraní Swagger.
 
@@ -353,11 +360,11 @@ Vytvoření *wwwroot/swagger/uživatelského rozhraní* složku a zkopírujte do
 
 Vytvoření *wwwroot/swagger/ui/css/custom.css* soubor s následující šablon stylů CSS, chcete-li přizpůsobit záhlaví stránky:
 
-[!code-css[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/wwwroot/swagger/ui/css/custom.css)]
+[!code-css[](web-api-help-pages-using-swagger/sample/TodoApi/wwwroot/swagger/ui/css/custom.css)]
 
 Referenční dokumentace *custom.css* v *index.html* souboru:
 
-[!code-html[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/wwwroot/swagger/ui/index.html?range=14)]
+[!code-html[](web-api-help-pages-using-swagger/sample/TodoApi/wwwroot/swagger/ui/index.html?range=14)]
 
 Vyhledejte *index.html* stránky v `http://localhost:<random_port>/swagger/ui/index.html`. Zadejte `http://localhost:<random_port>/swagger/v1/swagger.json` textové pole hlavičky a klikněte na **prozkoumat** tlačítko. Výsledná stránka vypadá takto:
 

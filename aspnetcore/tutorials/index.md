@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 01a804151ad813dbf47ab4b2415076a4e01bf1d9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bcfd20fcea1e683bcbef00a9e67bb28add4f23be
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
 
@@ -52,9 +52,10 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
 * [Vytvoření back-endu webové služby pro nativní mobilní aplikace](../mobile/native-mobile-backend.md)
 
 ## <a name="data-access-and-storage"></a>Přístup k datům a úložiště
-* [Začínáme s technologiemi ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](../data/ef-mvc/index.md)
-* [ASP.NET Core s EF Core – nová databáze](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
-* [ASP.NET Core s EF Core – stávající databáze](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
+* [Začínáme s stránky Razor a základní EF pomocí sady Visual Studio](xref:data/ef-rp/intro)
+* [Začínáme s ASP.NET MVC jádra a základní EF pomocí sady Visual Studio](../data/ef-mvc/index.md)
+* [Jádro ASP.NET MVC s EF Core - novou databázi](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
+* [Jádro ASP.NET MVC s EF Core - existující databázi](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
 
 ## <a name="authentication-and-authorization"></a>Ověřování a autorizace
 * [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](../security/authentication/social/index.md)

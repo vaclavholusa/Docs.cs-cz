@@ -11,11 +11,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/static-files
-ms.openlocfilehash: 60b205bf0a45e2965f9dab46f46956947ae513fd
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
-ms.translationtype: HT
+ms.openlocfilehash: 7b156830ab59db3c08fbff6b2c4180d8765a113b
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="work-with-static-files-in-aspnet-core"></a>Práce s statické soubory v ASP.NET Core
 
@@ -64,7 +64,7 @@ Přidat [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Micros
 
 ---
 
-Konfigurace [middleware](xref:fundamentals/middleware) který povolí zpracování statických souborů.
+Konfigurace [middleware](xref:fundamentals/middleware/index) který povolí zpracování statických souborů.
 
 ### <a name="serve-files-inside-of-web-root"></a>Soubory uvnitř kořenový web poskytovat
 
@@ -252,6 +252,5 @@ Předchozí kód je žádost o soubor s Neznámý typ obsahu vrácena jako obrá
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Middleware](xref:fundamentals/middleware)
-
+* [Middleware](xref:fundamentals/middleware/index)
 * [Úvod do ASP.NET Core](xref:index)

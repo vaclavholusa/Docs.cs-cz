@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 8256240b46873d53bf1a6f6616ea5b520cfadf2e
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 7c6d629ea94dd7c79a2f4e24fd4d0ff797f7e516
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>Ukládání do mezipaměti v paměti v ASP.NET Core
 
@@ -30,7 +30,7 @@ Jádro ASP.NET podporuje několik různé mezipaměti. Nejjednodušší cache je
 
 Vyžadovat non trvalé relací ve webové farmě [distribuované mezipaměti](distributed.md) se chcete vyhnout potížím konzistence mezipaměti. Pro některé aplikace může podporovat distribuované mezipaměti vyšší škálování než mezipaměti v paměti. Pomocí distribuované mezipaměti snižování zátěže mezipaměti paměti externího procesu. 
 
-`IMemoryCache` Mezipaměti bude vyřazení položky mezipaměti přetížena paměť, pokud [mezipaměti s prioritou](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority) je nastaven na `CacheItemPriority.NeverRemove`. Můžete nastavit `CacheItemPriority` upravit prioritu mezipaměti vyloučí položky paměť přetížena.
+`IMemoryCache` Mezipaměti bude vyřazení položky mezipaměti přetížena paměť, pokud [mezipaměti s prioritou](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority) je nastaven na `CacheItemPriority.NeverRemove`. Můžete nastavit `CacheItemPriority` upravit prioritu, se kterým mezipaměti vyloučí položky paměť přetížena.
 
 Mezipaměť v paměti můžete ukládat jakýkoli objekt; rozhraní distribuované mezipaměti je omezený na `byte[]`.
 

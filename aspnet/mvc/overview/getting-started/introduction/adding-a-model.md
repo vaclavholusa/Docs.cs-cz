@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 13aab58e86829a8d4accd1d304420dcb34ffa472
-ms.sourcegitcommit: ec9371e2fbfcb8d62e7e7cae69e7752f3f205385
+ms.openlocfilehash: 79f136257119a8600a65e8d7c5f6e99cb9abceae
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="adding-a-model"></a>Přidání modelu
 ====================
@@ -58,7 +58,7 @@ To provedete tak, že ručně přidáte na pomocí příkazu, nebo můžete poza
 
 ![](adding-a-model/_static/image2.png)
 
-Poznámka: Několik nepoužívané `using` příkazy byly odebrány. Visual Studio zobrazí šedě nepoužité závislé součásti. Můžete odebrat závislosti unnused podržením ukazatele nad šedé závislosti, klikněte na tlačítko `Show potential fixes` a klikněte na tlačítko **odebrat nepoužité řetězce.**
+Poznámka: Několik nepoužívané `using` příkazy byly odebrány. Visual Studio zobrazí šedě nepoužité závislé součásti. Můžete odebrat nepoužité závislé součásti podržením ukazatele nad šedé závislosti, klikněte na tlačítko `Show potential fixes` a klikněte na tlačítko **odebrat nepoužité řetězce.**
 
 ![](adding-a-model/_static/image3.png)
 

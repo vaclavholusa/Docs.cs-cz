@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: c9fe97dbd5fe10cbde25b9daf5ddd35b2d7eaab5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c6ba11799a5a9be3d8c0037fad5d79d8177c0e8
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="profiles-themes-and-web-parts"></a>Profily, motivů a webové části
 ====================
@@ -139,14 +139,14 @@ Umístění, kde jsou uložené motivy se liší v závislosti na rozsahu jejich
 
 `C:\WINDOWS\Microsoft.NET\Framework\v2.x.xxxxx\ASP.NETClientFiles\Themes\<Theme_Name>`
 
-Motiv, který je specifická pro konkrétní aplikace jsou uloženy v aplikaci\_motivy\&lt; Motiv\_název&gt; adresář v kořenu webové stránky.
+Motiv, který je specifická pro konkrétní aplikace jsou uloženy v `App\_Themes\<Theme\_Name>` adresář v kořenu webové stránky.
 
 > [!NOTE]
 > Soubor vzhledu měli změnit, jenom vlastnosti ovládacích prvků serveru, které ovlivňují vzhled.
 
 Jako globální motiv je motiv, který lze použít na všechny aplikace nebo web běžící na webovém serveru. Tyto motivy jsou uloženy ve výchozím nastavení v adresáři ASP.NETClientfiles\Themes, který je uvnitř v2.x.xxxxx adresáře. Alternativně můžete přesunout soubory motiv do aspnet\_klienta nebo systému\_webové / /Themes/ [verze] [motiv\_název] složku v kořenovém adresáři vašeho webu.
 
-Motivy specifické pro aplikaci lze použít pouze k aplikaci, ve kterém jsou umístěny soubory. Tyto soubory jsou uloženy v aplikaci\_motivy /&lt;motiv\_název&gt; adresář v kořenu webové stránky.
+Motivy specifické pro aplikaci lze použít pouze k aplikaci, ve kterém jsou umístěny soubory. Tyto soubory jsou uloženy v `App\_Themes/<theme\_name>` adresář v kořenu webové stránky.
 
 ## <a name="the-components-of-a-theme"></a>Součástí motiv
 
@@ -258,7 +258,7 @@ Pokud už jsme jsme mluvili pouze o použití motivů pomocí vlastnosti motivu.
 
 Pokud byste chtěli potlačit vlastnosti definované v souboru vzhledu v motivu se v zadané vlastnosti návrháře, můžete použít **StyleSheetTheme** vlastnost místo vlastnost motivu. Vlastnost StyleSheetTheme je stejná jako vlastnost motiv s tím rozdílem, že nepřepisuje všechna nastavení explicitní vlastnost jako vlastnost motivu.
 
-Chcete-li zobrazit to v praxi, otevřete soubor web.config z projektu v cvičení 1 a změňte &lt;stránky&gt; element pro následující:
+Chcete-li zobrazit to v praxi, otevřete soubor web.config z projektu v cvičení 1 a změňte `<pages>` element pro následující:
 
 [!code-xml[Main](profiles-themes-and-web-parts/samples/sample19.xml)]
 
@@ -338,17 +338,17 @@ V této části průvodce vytvoříte stránky, který používá webové část
 1. Zavřete stránku výchozího a přidat nové stránky na web s názvem WebPartsDemo.aspx.
 2. Přepnout na **návrhu** zobrazení.
 3. Z **zobrazení** nabídky, ujistěte se, že **nevizuální ovládací prvky** a **podrobnosti** , abyste viděli rozložení značky a ovládací prvky, které nemají uživatelského rozhraní jsou vybrané možnosti.
-4. Umístěte kurzor před  **&lt;div&gt;**  značky na návrhovou plochu a potom stiskněte klávesu ENTER, chcete-li přidat nový řádek. Umístěte kurzor před znak nového řádku, klikněte na tlačítko **Formát bloku** rozevíracího seznamu řízení v nabídce a vyberte **Nadpis 1** možnost. V záhlaví, přidejte text **Ukázková stránka webových částí**.
-5. Z **webové části** karty z panelu nástrojů, přetáhněte **WebPartManager** ovládacího prvku na stránku, umístěte ho bezprostředně za znak nového řádku a před  **&lt;div&gt;**  značky.   
+4. Umístěte kurzor před `<div>` značky na návrhovou plochu a potom stiskněte klávesu ENTER, chcete-li přidat nový řádek. Umístěte kurzor před znak nového řádku, klikněte na tlačítko **Formát bloku** rozevíracího seznamu řízení v nabídce a vyberte **Nadpis 1** možnost. V záhlaví, přidejte text **Ukázková stránka webových částí**.
+5. Z **webové části** karty z panelu nástrojů, přetáhněte **WebPartManager** ovládacího prvku na stránku, umístěte ho bezprostředně za znak nového řádku a před `<div>`značky.   
   
  **WebPartManager** prvek nezobrazuje žádný výstup, takže se jeví jako šedé pole na plochu návrháře.
-6. Umístěte kurzor do  **&lt;div&gt;**  značky.
+6. Umístěte kurzor do `<div>` značky.
 7. V **rozložení** nabídky, klikněte na tlačítko **Vložit tabulku**a vytvořit novou tabulku, která obsahuje jeden řádek a tři sloupce. Klikněte na tlačítko **vlastnosti buněk** tlačítko, vyberte **horní** z **svislé zarovnání** rozevíracího seznamu, klikněte na tlačítko **OK**a klikněte na tlačítko **OK** znovu a vytvořit v tabulce.
 8. Přetáhněte ovládací prvek WebPartZone do levého sloupce tabulky. Klikněte pravým tlačítkem myši **WebPartZone** řídit, zvolte **vlastnosti**a nastavte následující vlastnosti:   
   
  ID: SidebarZone   
   
- HeaderText: bočním panelu
+ HeaderText: Sidebar
 9. Přetáhněte druhý **WebPartZone** řízení do sloupce střední tabulky a nastavte následující vlastnosti:   
   
  ID: MainZone   
@@ -358,13 +358,13 @@ V této části průvodce vytvoříte stránky, který používá webové část
 
 Stránka nyní obsahuje dvě odlišné zóny, které můžete řídit samostatně. Ani zóny však nemá žádný obsah, takže vytváření obsahu je dalším krokem. V tomto návodu pracujete s webovými částmi, které zobrazují jenom statický obsah.
 
-Je zadána rozložení zóny webové části  **&lt;zonetemplate&gt;**  element. Do šablony zóny můžete přidat libovolný ovládací prvek ASP.NET toho, jestli je vlastní ovládací prvek webové části, uživatelský ovládací prvek nebo existujícího ovládacího prvku serveru. Všimněte si, že zde používáte ovládací prvek popisek a do které jednoduše přidáte statický text. Při umístění ovládacího prvku v běžném serveru **WebPartZone** zóny, ASP.NET zpracovává ovládacího prvku jako webovou částí za běhu, která umožňuje webové části funkce na ovládací prvek.
+Je zadána rozložení zóny webové části &lt;zonetemplate&gt; elementu. Do šablony zóny můžete přidat libovolný ovládací prvek ASP.NET toho, jestli je vlastní ovládací prvek webové části, uživatelský ovládací prvek nebo existujícího ovládacího prvku serveru. Všimněte si, že zde používáte ovládací prvek popisek a do které jednoduše přidáte statický text. Při umístění ovládacího prvku v běžném serveru **WebPartZone** zóny, ASP.NET zpracovává ovládacího prvku jako webovou částí za běhu, která umožňuje webové části funkce na ovládací prvek.
 
 **Při vytváření obsahu pro hlavní zóny**
 
 1. V **návrhu** zobrazení, přetáhněte ji **popisek** řídit z **standardní** karty z panelu nástrojů do oblasti obsahu zóny jejichž **ID** vlastnost je nastavena na MainZone.
-2. Přepnout na **zdroj** zobrazení. Všimněte si, že  **&lt;zonetemplate&gt;**  element byla přidána do zabalení **popisek** ovládacího prvku MainZone.
-3. Přidání atributu s názvem **název** k  **&lt;asp: label&gt;**  elementu a jeho hodnotu nastavte na obsah. Odeberte Text = "Popisek" atribut z  **&lt;asp: label&gt;**  element. Mezi počáteční a koncové značky  **&lt;asp: label&gt;**  elementu, přidejte text, například **Vítá vás domovskou stránku** mezi dva  **&lt;h2 &gt;**  značky elementu. Váš kód by měl vypadat takto. 
+2. Přepnout na **zdroj** zobrazení. Všimněte si, že &lt;zonetemplate&gt; element byla přidána do zabalení **popisek** ovládacího prvku MainZone.
+3. Přidání atributu s názvem **název** k &lt;asp: label&gt; elementu a jeho hodnotu nastavte na obsah. Odeberte Text = "Popisek" atribut z &lt;asp: label&gt; elementu. Mezi počáteční a koncové značky &lt;asp: label&gt; elementu, přidejte text, například **Vítá vás domovskou stránku** mezi dva &lt;h2&gt; značky elementu. Váš kód by měl vypadat takto. 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample21.aspx)]
 4. Uložte soubor.
@@ -396,7 +396,7 @@ V době běhu sada webových částí zabalí oba ovládací prvky s ovládacím
 3. Přetáhněte ovládací prvek stránce uživatele jste vytvořili, SearchUserControl.ascx, z **Průzkumníku řešení** do zóny jejichž **ID** vlastnost je nastavena na SidebarZone a umístěte jej.
 4. Uložte stránky WebPartsDemo.aspx.
 5. Přepnout na **zdroj** zobrazení.
-6. Uvnitř  **&lt;asp: webpartzone&gt;**  element pro SidebarZone, nad odkaz na váš uživatelský ovládací prvek, přidejte  **&lt;asp: label&gt;**  element s omezením odkazy, jak je znázorněno v následujícím příkladu. Také přidat **název** atribut ke značce ovládacího prvku uživatele s hodnotou **vyhledávání**, jak je vidět. 
+6. Uvnitř &lt;asp: webpartzone&gt; element pro SidebarZone, nad odkaz na váš uživatelský ovládací prvek, přidejte &lt;asp: label&gt; element s obsahovala odkazy, jak je znázorněno v následujícím příkladu. Také přidat **název** atribut ke značce ovládacího prvku uživatele s hodnotou **vyhledávání**, jak je vidět. 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample23.aspx)]
 7. Soubor uložte a zavřete.
@@ -417,7 +417,7 @@ V názvu každého ovládacího prvku je šipku dolů, který poskytuje přístu
 
 Webové části poskytuje možnost uživatelům změnit rozložení ovládacích prvků webových částí tak, že je přetáhnete z jedné zóny na jiný. Kromě toho, že uživatelům přesunovat **webové části** ovládacích prvků z jedné zóny na jiný, můžete povolit uživatelům upravit různé vlastnosti ovládacích prvků, včetně jejich vzhled, rozložení a chování. Sada webových částí poskytuje základní funkce pro úpravy **webové části** ovládací prvky. I když není obsaženo v tomto návodu, můžete také vytvořit vlastní editor ovládací prvky, které uživatelům umožňují upravovat funkce **webové části** ovládací prvky. Stejně jako u Změna umístění **webové části** ovládací prvek, úprava vlastností ovládacího prvku závisí na technologii ASP.NET přizpůsobení uložit změny, které uživatelé provádět v.
 
-V této části průvodce přidat schopnost uživatelům upravit základní vlastnosti všech **webové části** ovládací prvek na stránce. Pokud chcete povolit tyto funkce, přidáte další vlastní uživatelský ovládací prvek na stránku, spolu s  **&lt;asp: editorzone&gt;**  elementu a dvou ovládacích prvků pro úpravy.
+V této části průvodce přidat schopnost uživatelům upravit základní vlastnosti všech **webové části** ovládací prvek na stránce. Pokud chcete povolit tyto funkce, přidáte další vlastní uživatelský ovládací prvek na stránku, spolu s &lt;asp: editorzone&gt; elementu a dvou ovládacích prvků pro úpravy.
 
 ### <a name="to-create-a-user-control-that-enables-changing-page-layout"></a>Vytvoření uživatelského ovládacího prvku, který umožňuje měnit rozložení stránky
 
@@ -501,7 +501,7 @@ Můžete také umožňují uživatelům přidávat webové části na jejich str
 4. Z **webové části** části na panelu nástrojů, přetáhněte ovládací prvek DeclarativeCatalogPart do oblasti obsahu **CatalogZone** ovládacího prvku.
 5. Klikněte na šipku v pravém horním rohu **DeclarativeCatalogPart** řídit k zobrazení jeho nabídky úkolů a potom vyberte **upravit šablony**.
 6. Z **standardní** oddílu na panelu, přetáhněte **odesílání souborů při odpovědích** řízení a **kalendáře** řízení do **WebPartsTemplate** oddíl **DeclarativeCatalogPart** ovládacího prvku.
-7. Přepnout na **zdroj** zobrazení. Zkontrolujte zdrojový kód  **&lt;asp: catalogzone&gt;**  element. Všimněte si, že **DeclarativeCatalogPart** obsahuje ovládací prvek  **&lt;webpartstemplate&gt;**  elementu pomocí dvou ovládacích prvků závorkách serveru, které budou moct přidat na stránku z katalogu.
+7. Přepnout na **zdroj** zobrazení. Zkontrolujte zdrojový kód &lt;asp: catalogzone&gt; elementu. Všimněte si, že **DeclarativeCatalogPart** obsahuje ovládací prvek &lt;webpartstemplate&gt; elementu pomocí dvou ovládacích prvků závorkách serveru, které budou moct přidat na stránku z katalogu.
 8. Přidat **název** vlastnost všechny ovládací prvky, které jste přidali do katalogu pomocí zobrazí hodnotu řetězce pro každý název v následujícím příkladu kódu. Přestože název se nenachází ve vlastnosti můžete obvykle nastavit tyto dvě serverové ovládací prvky v době návrhu, pokud uživatel přidá tyto ovládací prvky **WebPartZone** zóny z katalogu v době běhu, že se každý je uzavřen do  **GenericWebPart** ovládacího prvku. To umožňuje, aby fungoval jako webové části, tak budou moci zobrazit názvy.   
   
  Kód pro dvou ovládacích prvků, které jsou součástí **DeclarativeCatalogPart** ovládacího prvku by měla vypadat takto. 

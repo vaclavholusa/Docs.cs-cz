@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: c1fa5d31f68b44bfdfda61c870a6825eeba18647
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 92a6dee24b8942d721e3537a712be141155e61df
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/05/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -232,7 +232,7 @@ Tato šablona umožňuje rychle vytvořit pracovní zadávání dat uživatelsk�
 
 Pro *třída kontextu dat*, můžete použít tyto možnosti:
 
-- Pokud chcete použít Code First a mít žádné existující data kontextu třídy, vyberte  *&lt;nový kontext data... &gt;*". Třída kontextu dat se budou generovat pak za vás.
+- Pokud chcete použít Code First a mít žádné existující data kontextu třídy, vyberte ** nový kontext dat **. Třída kontextu dat se budou generovat pak za vás.
 - Pokud chcete pomocí Code First a máte existující třídy kontextu dat, vyberte ho sem. Aktualizují se zachovat třídu modelu, který jste zvolili.
 - Pokud používáte Database First nebo Model First, zvolte třídě kontextu objektu sem.
 
@@ -255,7 +255,7 @@ Dialogové okno, které použijete k vytvoření nové projekty ASP.NET MVC 3 ob
 
 #### <a name="project-templates-are-now-html5-enabled"></a>Šablony projektů jsou nyní HTML5 povoleno
 
-Dialogové okno Nový projekt nyní obsahuje možnost Přidat funkce specifické pro HTML5 šablon projektu. Když vyberete možnost, budou zobrazení má být vygenerován, které obsahují novou HTML5  *&lt;záhlaví&gt;*,  *&lt;zápatí&gt;*, a  *&lt;navigační&gt;*  elementy.
+Dialogové okno Nový projekt nyní obsahuje možnost Přidat funkce specifické pro HTML5 šablon projektu. Když vyberete možnost, budou zobrazení má být vygenerován, které obsahují novou HTML5 `<header>`, `<footer>`, a `<navigation>` elementy. elementy.
 
 Všimněte si, že starší verze prohlížečů nepodporují značky specifické pro HTML5. Chcete-li toto omezení vyřešit, šablony projektů jazyka HTML5 obsahovat odkaz na knihovnu Modernizr. (Viz další část).
 
@@ -293,7 +293,7 @@ Když vytvoříte nový projekt ASP.NET MVC 3, tento projekt zahrnuje soubory Ja
 
 Například zadána četnost nové verze jQuery verzi jQuery obsažené v šabloně projektů v určitém okamžiku bude zastaralá. Ale protože jQuery je uveden jako nainstalovaným balíčkem NuGet, vám bude upozorněn v dialogovém okně NuGet jsou k dispozici novější verze jQuery.
 
-JQuery zahrnuje číslo verze v názvu souboru, a proto jQuery aktualizaci na nejnovější verzi také vyžaduje aktualizaci  *&lt;skriptu&gt;*  značky, který odkazuje na soubor jQuery používat nový název souboru. Další zahrnuté skriptu knihovny neobsahují číslo verze v názvu skriptu, takže může být snadněji aktualizovat na jejich nejnovější verze.
+JQuery zahrnuje číslo verze v názvu souboru, a proto jQuery aktualizaci na nejnovější verzi také vyžaduje aktualizaci `<script>` značky, který odkazuje na soubor jQuery používat nový název souboru. Další zahrnuté skriptu knihovny neobsahují číslo verze v názvu skriptu, takže může být snadněji aktualizovat na jejich nejnovější verze.
 
 <a id="tu-KI"></a>
 ## <a name="known-issues"></a>Známé problémy
@@ -353,7 +353,7 @@ Přejmenování souboru nástroje Razor pomocí Průzkumníku řešení při ote
 - IntelliSense pro syntaxi Razor nefunguje, pokud je nainstalován ReSharper. Pokud máte nainstalovaný ReSharper a chcete využít výhod podpory technologie IntelliSense pro Razor v architektuře ASP.NET MVC 3, naleznete v příspěvku [Razor Intellisense a ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) na blogu Hadi Hariri níž se probírá, jak je používat společně ještě dnes.
 - Zobrazení CCSHTML a VBHTML vytvořen Beta verzi ASP.NET MVC 3 nemají jejich proces sestavení správně nastavené, s výsledkem, že tyto zobrazit typy byly vynechány při publikování projektu. Hodnota akce sestavení pro tyto soubory by měla být nastavena na "Obsah". ASP.NET MVC 3 RTM řeší tento problém pro nové soubory, ale nemá správné nastavení pro existující soubory pro projekt vytvořené pomocí předběžných verzí.
 - ![](mvc3-release-notes/_static/image3.png)
-- Během instalace, zobrazí dialogové okno přijetí smlouvy EULA licenční podmínky v okně, které je menší než zamýšleného. / li&gt;
+- Během instalace se zobrazí dialogové okno přijetí smlouvy EULA licenční podmínky v okně, které je menší než určená.
 - Při úpravách zobrazení syntaxe Razor (cshtml soubor), přejděte do řadiče položky nabídky v sadě Visual Studio nebude k dispozici, a neexistují žádné fragmenty kódu.
 - Pokud nainstalujete ASP.NET MVC 3 pro aplikaci Visual Web Developer Express na počítači, kde není nainstalovaná sada Visual Studio a pak instalaci sady Visual Studio, je třeba přeinstalovat ASP.NET MVC 3. Visual Studio a Visual Web Developer Express sdílet součásti, které jsou aktualizovány pomocí ASP.NET MVC 3 Instalační služby. Stejný problém platí při instalaci ASP.NET MVC 3 pro sadu Visual Studio v počítači, který nepodporuje mít Visual Web Developer Express a pak později nainstalujete Visual Web Developer Express.
 
@@ -398,7 +398,7 @@ Výchozí upravit a vytvořit šablony nezahrnují odkazy na jQuery skripty pot�
 <a id="_Toc2_4"></a>
 ### <a name="added-htmlraw-method"></a>Přidání Html.Raw – metoda
 
-Ve výchozím nastavení zobrazit syntaxi Razor modul umístí kódování HTML všechny hodnoty. Například následující fragment kódu kóduje HTML uvnitř proměnnou pozdravu tak, aby se zobrazí na stránce jako &amp;lt; silné&amp;gt; Ahoj světe! &amp;lt; / strong&amp;gt;.
+Ve výchozím nastavení zobrazit syntaxi Razor modul umístí kódování HTML všechny hodnoty. Například následující fragment kódu kóduje HTML uvnitř proměnnou pozdravu tak, aby se zobrazí na stránce jako `<strong>Hello World!</strong>`.
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample10.cshtml)]
 
@@ -621,7 +621,7 @@ Případně, chcete-li vypnout ověření žádosti pro každou vlastnost modelu
 - Instalační program může trvat déle, než v předchozích verzích rozhraní ASP.NET MVC dokončit, protože ho aktualizuje součásti sady Visual Studio 2010.
 - Generování přidat zobrazení, když vyberete "Upravit" silného typu scaffold zobrazení číst pouze vlastnosti. Vlastnosti jen pro zápis, se vygeneroval pro zobrazení "Zobrazit".
 - Během instalace se zobrazí dialogové okno přijetí smlouvy EULA licenční podmínky v okně, které je menší než určená.
-- Instalace [Visual Studio asynchronní CTP](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=18712f38-fcd2-4e9f-9028-8373dc5732b2&amp;displaylang=en) způsobuje konflikt s vydáním Razor, který je součástí ASP.NET MVC 3 tooling instalace. Ujistěte se, že není pokusí nainstalovat Visual Studio asynchronní CTP a verze Razor na stejném počítači.
+- Instalace Visual Studio asynchronní CTP způsobuje konflikt s vydáním Razor, který je součástí ASP.NET MVC 3 tooling instalace. Ujistěte se, že není pokusí nainstalovat Visual Studio asynchronní CTP a verze Razor na stejném počítači.
 - Při úpravách zobrazení syntaxe Razor (cshtml soubor), přejděte do řadiče položky nabídky v sadě Visual Studio nebude k dispozici, a neexistují žádné fragmenty kódu.
 
 <a id="TOC_ASP_NET_3_Beta"></a>
@@ -852,7 +852,7 @@ Při úpravách zobrazení syntaxe Razor (CSHTML soubor), <a id="0.1__Toc2247290
 
 Při použití @model zobrazit syntaxe zadejte silného typu CSHTML, zkratky specifické pro jazyk pro typy nejsou rozpoznány. Například @model int nebude fungovat, ale @model Int32 bude fungovat. Alternativní řešení pro této chyby je pro použití názvu skutečný typ, když zadáte typ modelu.
 
-Při použití @model syntaxe zadejte zobrazení se silnými typy CSHTML (nebo @ModelType k určení zobrazení se silnými typy VBHTML), nejsou podporované typy s možnou hodnotou Null a deklarace pole. Například @model int? není podporován. Místo toho použijte @model Nullable&lt;Int32&gt;. Syntaxe @model řetězec [] není podporováno také; místo toho použijte @model IList&lt;řetězec&gt;.
+Při použití @model syntaxe zadejte zobrazení se silnými typy CSHTML (nebo @ModelType k určení zobrazení se silnými typy VBHTML), nejsou podporované typy s možnou hodnotou Null a deklarace pole. Například @model int? není podporován. Místo toho použijte `@model Nullable<Int32>`. Syntaxe @model řetězec [] není podporováno také; místo toho použijte `@model IList<string>`.
 
 Při upgradu projektu ASP.NET MVC 2 na ASP.NET MVC 3, ujistěte se, že jste přidejte oddíl appSettings souboru Web.config následující:
 

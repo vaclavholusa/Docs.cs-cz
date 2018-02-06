@@ -13,11 +13,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/using-signalr-performance-counters-in-an-azure-web-role
 msc.type: authoredcontent
-ms.openlocfilehash: 0d2717eb318d282e21e9aa8622a205f556e3a4ee
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2f6c6feb030fc17f95e7862c39029569f3d8c5dc
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="using-signalr-performance-counters-in-an-azure-web-role"></a>Pomocí čítače výkonu SignalR webové role Azure
 
@@ -33,15 +33,15 @@ Podle [Luke Latham](https://github.com/guardrex)
 
 ## <a name="creating-an-azure-web-role-application-that-exposes-signalr-performance-counters"></a>Vytvoření aplikace Azure webovou roli, která zpřístupňuje čítače výkonu SignalR
 
-1. Otevřete Visual Studio 2015.
+1. Open Visual Studio 2015.
 
-2. V sadě Visual Studio 2015, vyberte **soubor &gt; nový &gt; projektu**.
+2. V sadě Visual Studio 2015, vyberte **soubor** > **nový** > **projektu**.
 
 3. V **šablony** podokně **nový projekt** v části **Visual C#** uzlu, vyberte **cloudu** uzel a vyberte možnost **Azure Cloud Service** šablony. Název aplikace **SignalRPerfCounters** a vyberte **OK**.
 
    ![Nové cloudové aplikace](using-signalr-performance-counters-in-an-azure-web-role/_static/image1.png)
     
-4. V **nová Cloudová služba Microsoft Azure** dialogovém okně, vyberte **webovou roli ASP.NET** a vyberte  **&gt;**  tlačítko do projektu přidejte roli. Vyberte **OK**.
+4. V **nová Cloudová služba Microsoft Azure** dialogovém okně, vyberte **webovou roli ASP.NET** a vyberte > tlačítko do projektu přidejte roli. Vyberte **OK**.
 
    ![Přidat webová Role ASP.NET](using-signalr-performance-counters-in-an-azure-web-role/_static/image2.png)
     
@@ -57,21 +57,21 @@ Podle [Luke Latham](https://github.com/guardrex)
 
    [!code-xml[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample1.xml)]
     
-8. Otevřete **Konzola správce balíčků** z **nástroje &gt; Správce balíčků NuGet**. Zadejte následující příkazy pro instalaci nejnovější verze SignalR a balíček nástroje SignalR:
+8. Otevřete **Konzola správce balíčků** z **nástroje** > **Správce balíčků NuGet**. Zadejte následující příkazy pro instalaci nejnovější verze SignalR a balíček nástroje SignalR:
 
    [!code-powershell[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample2.ps1)]
     
-9. Nakonfiguruje aplikaci, aby při spuštění nebo recykluje nainstalovat čítače výkonu SignalR do role instance. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **WebRole1** projektu a vyberte **přidat &gt; novou složku**. Název nové složky *spuštění*.
+9. Nakonfiguruje aplikaci, aby při spuštění nebo recykluje nainstalovat čítače výkonu SignalR do role instance. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **WebRole1** projektu a vyberte **přidat** > **novou složku**. Název nové složky *spuštění*.
 
    ![Přidání spouštěcí složka](using-signalr-performance-counters-in-an-azure-web-role/_static/image5.png)
     
-10. Kopírování *signalr.exe* souboru (přidán s **Microsoft.AspNet.SignalR.Utils** balíčku) z  **&lt;složky projektu&gt;\SignalRPerfCounters\packages\ Microsoft.AspNet.SignalR.Utils. &lt;verze&gt;\tools** k *spuštění* složky, které jste vytvořili v předchozím kroku.
+10. Kopírování *signalr.exe* souboru (přidán s **Microsoft.AspNet.SignalR.Utils** balíčku) z \<složky projektu > / SignalRPerfCounters/packages/Microsoft.AspNet.SignalR.Utils.\< verze > / tools k *spuštění* složky, které jste vytvořili v předchozím kroku.
 
-11. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *spuštění* složky a vyberte **přidat &gt; existující položka**. V dialogovém okně se zobrazí, vyberte *signalr.exe* a vyberte **přidat**.
+11. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *spuštění* složky a vyberte **přidat** > **existující položka**. V dialogovém okně se zobrazí, vyberte *signalr.exe* a vyberte **přidat**.
 
     ![Přidání signalr.exe do projektu](using-signalr-performance-counters-in-an-azure-web-role/_static/image6.png)
     
-12. Klikněte pravým tlačítkem na *spuštění* složky, které jste vytvořili. Vyberte **přidat &gt; novou položku**. Vyberte **Obecné** uzlu, vyberte **textový soubor**a pojmenujte novou položku *SignalRPerfCounterInstall.cmd*. Tento příkaz soubor nainstaluje do webovou roli čítače výkonu SignalR.
+12. Klikněte pravým tlačítkem na *spuštění* složky, které jste vytvořili. Vyberte **přidat** > **novou položku**. Vyberte **Obecné** uzlu, vyberte **textový soubor**a pojmenujte novou položku *SignalRPerfCounterInstall.cmd*. Tento příkaz soubor nainstaluje do webovou roli čítače výkonu SignalR.
 
     ![Vytvoření SignalR výkonu čítač instalace dávkového souboru](using-signalr-performance-counters-in-an-azure-web-role/_static/image7.png)
      
@@ -106,7 +106,7 @@ Podle [Luke Latham](https://github.com/guardrex)
 
     [!code-cshtml[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample6.cshtml)]
     
-21. Vytvořte novou složku v **WebRole1** projektu s názvem *Hubs*. Klikněte pravým tlačítkem myši *Hubs* složky v **Průzkumníku řešení**, vyberte **webové &gt; SignalR**a vyberte **třídy rozbočovače SignalR (v2)**. Název nového centra *MyHub.cs* a vyberte **přidat**.
+21. Vytvořte novou složku v **WebRole1** projektu s názvem *Hubs*. Klikněte pravým tlačítkem myši *Hubs* složky v **Průzkumníku řešení**, vyberte **webové** > **SignalR**a vyberte  **Třídy rozbočovače SignalR (v2)**. Název nového centra *MyHub.cs* a vyberte **přidat**.
 
     ![Přidání třídy rozbočovače SignalR do složky Hubs v dialogovém okně Přidat novou položku](using-signalr-performance-counters-in-an-azure-web-role/_static/image13.png)
 
@@ -114,7 +114,7 @@ Podle [Luke Latham](https://github.com/guardrex)
 
     [!code-csharp[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample7.cs)]
     
-23. *[Crank.exe](signalr-connection-density-testing-with-crank.md)*  je připojení hustotu testování nástroj, který poskytuje s SignalR codebase. Vzhledem k tomu, že Crank vyžaduje trvalé připojení, můžete přidat na váš web pro použití při testování. Přidat novou složku do **WebRole1** projekt s názvem *PersistentConnections*. Klikněte pravým tlačítkem na tuto složku a vyberte **přidat &gt; třída**. Název nového souboru třídy *MyPersistentConnections.cs* a vyberte **přidat**.
+23. *[Crank.exe](signalr-connection-density-testing-with-crank.md)*  je připojení hustotu testování nástroj, který poskytuje s SignalR codebase. Vzhledem k tomu, že Crank vyžaduje trvalé připojení, můžete přidat na váš web pro použití při testování. Přidat novou složku do **WebRole1** projekt s názvem *PersistentConnections*. Klikněte pravým tlačítkem na tuto složku a vyberte **přidat** > **třída**. Název nového souboru třídy *MyPersistentConnections.cs* a vyberte **přidat**.
 
 24. Otevře se Visual Studio *MyPersistentConnections.cs* souboru v hlavním okně. Nahraďte obsah následujícím kódem, pak uložte a zavřete soubor:
 
@@ -133,7 +133,7 @@ Podle [Luke Latham](https://github.com/guardrex)
 
     [!code-xml[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample12.xml?highlight=3,7)]
     
-27. Počkejte přibližně jednu minutu. Otevřete okno Průzkumník cloudu nástroje v sadě Visual Studio (**zobrazení &gt; Průzkumník cloudu**) a rozbalte cestu `(Local)\Storage Accounts\(Development)\Tables`. Klikněte dvakrát na **WADPerformanceCountersTable**. Měli byste vidět čítače SignalR v datech tabulky. Pokud nevidíte v tabulce, musíte znovu zadat přihlašovací údaje Azure Storage. Je nutné vybrat **aktualizovat** tlačítko najdete v tabulce v **Průzkumník cloudu** nebo vyberte **aktualizovat** tlačítka v okně Otevřít tabulku se zobrazí data v tabulce.
+27. Počkejte přibližně jednu minutu. Otevřete okno Průzkumník cloudu nástroje v sadě Visual Studio (**zobrazení** > **Průzkumník cloudu**) a rozbalte cestu `(Local)/Storage Accounts/(Development)/Tables`. Klikněte dvakrát na **WADPerformanceCountersTable**. Měli byste vidět čítače SignalR v datech tabulky. Pokud nevidíte v tabulce, musíte znovu zadat přihlašovací údaje Azure Storage. Je nutné vybrat **aktualizovat** tlačítko najdete v tabulce v **Průzkumník cloudu** nebo vyberte **aktualizovat** tlačítka v okně Otevřít tabulku se zobrazí data v tabulce.
 
     ![Výběr v tabulce čítače výkonu WAD v sadě Visual Studio Průzkumníku cloudu](using-signalr-performance-counters-in-an-azure-web-role/_static/image11.png)
 

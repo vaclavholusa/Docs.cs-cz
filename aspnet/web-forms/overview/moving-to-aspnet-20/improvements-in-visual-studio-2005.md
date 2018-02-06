@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: 2c1f9a7291d8eab675bac3e1c37d6922131e3761
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aafc59980e807677d6023110d324365ce92bb5fc
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="improvements-in-visual-studio-2005"></a>Vylepšení v sadě Visual Studio 2005
 ====================
@@ -71,7 +71,7 @@ Kliknutím sem můžete zobrazit na video s návodem vytvoření webové projekt
 ![](improvements-in-visual-studio-2005/_static/image1.png)
 
 
-[Otevřete Video přes celou obrazovku](improvements-in-visual-studio-2005/_static/creating_projects1.wmv)
+[Open Full-Screen Video](improvements-in-visual-studio-2005/_static/creating_projects1.wmv)
 
 
 ### <a name="file-system-projects"></a>Projektů v systému souborů
@@ -79,10 +79,10 @@ Kliknutím sem můžete zobrazit na video s návodem vytvoření webové projekt
 Jak už jste viděli v video s návodem, můžete vytvářet weby v systému souborů v místním počítači nebo ve vzdáleném umístění prostřednictvím sdílené složky. Webové servery, které jsou vytvořené v systému souborů jsou Procházet a ladit pomocí vývojový Server ASP.NET.
 
 > [!NOTE]
-> Vývojový Server ASP.NET nemusí být úplně jasné pro zákazníky. Pokud je vytvoření webového projektu v systému souborů v IISs adresářovou strukturu (tj. c:\inetpub\wwwroot) na webu stále procházet prostřednictvím vývojový Server ASP.NET při spuštěn z prostředí Visual Studio 2005. Proto všechny konfigurace služby IIS (tj. metody ověřování) není použitelná.
+> Vývojový Server ASP.NET nemusí být úplně jasné pro zákazníky. Pokud je vytvoření webového projektu v systému souborů v IISs adresářovou strukturu (tj. c:/inetpub/wwwroot) webu stále procházet přes vývojový Server ASP.NET při spuštěn z prostředí Visual Studio 2005. Proto všechny konfigurace služby IIS (tj. metody ověřování) není použitelná.
 
 
-Výchozí webový projekt také odebere mnoho režie podle pouze obsahuje stránku Default.aspx, default.cs souboru a aplikace\_složku Data. Soubor web.config a speciální složky (tj. aplikace\_kódu) jsou přidány jako jsou potřeba. Webový projekt zahrnuje jenom soubory a složky, které potřebujete.
+Výchozí webový projekt také odebere mnoho režie podle pouze obsahuje stránku Default.aspx, default.cs souboru a k složce aplikace nebo _Data. Soubor web.config a speciální složky (tj. aplikace nebo _code) se přidají podle potřeby. Webový projekt zahrnuje jenom soubory a složky, které potřebujete.
 
 ### <a name="http-projects"></a>Projekty HTTP
 
@@ -91,7 +91,7 @@ Projekty HTTP může být buď projekty, které jsou vytvořené na místní web
 Možnost místní služba IIS načte informace o lokalitě z metabáze v místním počítači a kopírují soubory pomocí systému souborů. Možnost vzdálené lokality používá serverová rozšíření FrontPage a informace o lokalitě a soubory budou zkopírovány pomocí protokolu HTTP a volání vzdáleného volání Procedur rozšíření FrontPage serveru.
 
 > [!NOTE]
-> Vs ###\_tmp.htm souboru a získání\_aspx\_ver.aspx se už používají k určení informací o verzi.
+> Soubor vs###/_tmp.htm a get/_aspx/_ver.aspx se už používají k určení informací o verzi.
 
 
 Výchozí možnost HTTP je místní služba IIS. Tato možnost přečte metabáze služby IIS určit servery, které jsou k dispozici a umístění, do kterého chcete-li vytvořit obsah. Ve stromovém zobrazení můžete vybrat jinou složku nebo virtuální adresář. Můžete můžete také vytvořit nový virtuální adresář, označit složky jako aplikace, a také odstranit stávající virtuální adresáře z tohoto dialogového okna.
@@ -137,7 +137,7 @@ Při vytvoření aplikace ve vzdálené lokalitě přes SSL, pokud certifikát p
 Visual Studio 2005 představuje možnost vytvářet weby přes FTP. Pokud použijete tuto možnost, rozhraní IDE vytvoří soubory místně v dočasné složce uživatele a potom pomocí FTP k přesunutí souborů do umístění FTP.
 
 > [!NOTE]
-> Umístění dočasné složky je c:\Documents and Settings\&lt; Uživatel&gt;\Local Settings\Temp\VWDWebCache\&lt; Server&gt;\_&lt;název aplikace&gt;
+> Umístění dočasné složky je c:/dokumenty a nastavení nebo&lt;uživatele&gt;/Local nastavení nebo dočasné/VWDWebCache/&lt;Server&gt;/_&lt;název aplikace&gt;
 
 
 Při použití volby FTP, zobrazí se dialogové okno Vybrat umístění. Můžete zadat požadované informace o připojení FTP do toto dialogové okno, jak je uvedeno níže.
@@ -161,7 +161,7 @@ Následující kroky konfigurace serveru FTP tak, aby uživatel má umístění,
 
 ### <a name="create-a-new-folder-for-content"></a>Vytvořte novou složku pro obsah
 
-1. V Průzkumníku Windows, vytvořte novou složku s názvem **uživatel1** uvnitř c:\inetpub\wwwroot.
+1. V Průzkumníku Windows, vytvořte novou složku s názvem **uživatel1** uvnitř c:/inetpub/wwwroot.
 
 #### <a name="configure-folders-and-permissions-on-folders"></a>Nakonfiguruje složek a oprávnění u složek.
 
@@ -169,7 +169,7 @@ Následující kroky konfigurace serveru FTP tak, aby uživatel má umístění,
 2. Rozbalte položku **servery FTP**.
 3. Klikněte pravým tlačítkem myši **výchozí server FTP**, vyberte **nový**, pak **virtuální adresář**, pak klikněte na tlačítko **Další**.
 4. Zadejte **uživatel1** pro název virtuálního adresáře a klikněte na tlačítko **Další**.
-5. Zadejte **c:\inetpub\wwwroot\User1** pro cestu a klikněte na tlačítko **Další**.
+5. Zadejte **c:/inetpub/wwwroot/User1** pro cestu a klikněte na tlačítko **Další**.
 6. Klikněte na tlačítko **Další** a potom **Dokončit** dokončete průvodce.
 7. Klikněte pravým tlačítkem myši **uživatel1** virtuálního adresáře v rámci výchozí server FTP a vyberte **vlastnosti**.
 8. Zkontrolujte **zápisu** zaškrtávací políčko a klikněte na tlačítko **OK** zavřete dialogové okno.
@@ -185,7 +185,7 @@ Následující kroky konfigurace serveru FTP tak, aby uživatel má umístění,
 
 ### <a name="create-web-project"></a>Vytvoření webového projektu
 
-1. Otevřete Visual Studio 2005.
+1. Open Visual Studio 2005.
 2. Z **soubor** nabídce vyberte možnost **nový web**.
 3. V **umístění** rozevíracího seznamu vyberte **FTP**.
 4. Klikněte na tlačítko **Procházet**.
@@ -200,7 +200,7 @@ Následující kroky konfigurace serveru FTP tak, aby uživatel má umístění,
 13. V dialogovém okně požadována adresa URL webu, zadejte `http://localhost/user1` pro adresu URL a klikněte na tlačítko **OK**.
 
 > [!NOTE]
-> Pokud dojde k chybě, která udává, nebylo možné načíst typ \_výchozí, ujistěte se, že používáte technologii ASP.NET 2.0 na váš web a ne starší verze. Můžete to udělat na kartě ASP.NET v Internetové informační službě.
+> Pokud dojde k chybě označující nebylo možné načíst typ /_Default, ujistěte se, že používáte technologii ASP.NET 2.0 na váš web a ne starší verze. Můžete to udělat na kartě ASP.NET v Internetové informační službě.
 
 
 ## <a name="opening-web-projects"></a>Otevírání webové projekty
@@ -223,11 +223,11 @@ Jak je uvedeno dříve v tomto modulu, Visual Studio už používá soubor proje
 
 Protože Visual Studio vytvoří jenom další soubory a složky, pokud je to nezbytné, žádné další soubory nebo složky se přidají do umístění, ve kterém můžete otevřít. Vedlejším účinkem této architektury je, že ho brání vnoření webů v systému souborů. Zvažte například následující adresářovou strukturu.
 
-Webového projektu v C:\MyWebSite
+Webového projektu v C:/MyWebSite
 
-Jiný webový projekt v C:\MyWebSite\Nested
+Jiný webový projekt v C:/MyWebSite/vnořené
 
-Když otevřete na webu na c:\MyWebSite, vnořené složky se zobrazí jako podsložku této aplikace.
+Když otevřete na webu na c:/MyWebSite, vnořené složky se zobrazí jako podsložku této aplikace.
 
 <a id="_Toc116100246"></a>
 
@@ -249,7 +249,7 @@ I když Visual Studio se zobrazí ikona pro aplikace, které jsou vnořené pod 
 
 Když otevřete web přes FTP, soubory se zkopírovat všechny místně do dočasné složky. Úplná cesta pro umístění místní úložiště se zobrazí v podokně vlastností projektu a je vytvořen v následujícím formátu.
 
-C:\Documents and Settings\&lt; Uživatel&gt;\Local Settings\Temp\VWDWebCache\&lt; Server&gt;\_&lt;název aplikace&gt;
+C:/dokumenty a nastavení nebo&lt;uživatele&gt;/Local nastavení nebo dočasné/VWDWebCache/&lt;Server&gt;/_&lt;název aplikace&gt;
 
 Pokud používáte FTP, Visual Studio bude třeba zadat základní adresu URL pro váš projekt, ve kterém můžete vyhledat, jak je uvedeno níže. Pokud základní adresu URL nezadáte, Visual Studio zobrazí výzvu k jeho při prvním pokusu o procházení stránky na webu.
 
@@ -263,7 +263,7 @@ Pokud používáte FTP, Visual Studio bude třeba zadat základní adresu URL pr
 
 Práce s webové aplikace v sadě Visual Studio 2005 je výrazně rychlejší než v předchozích verzích. To je kvůli v žádné malou část změny v architektuře kompilace.
 
-V sadě Visual Studio 2002 a 2003 byly zkompilovat webových aplikací do jednoho sestavení primární umístěný ve složce/Bin. V sadě Visual Studio 2005, aplikace\_kód složka byla přidána. Třídy a jiný kód, bez uživatelského rozhraní se přidají do aplikace\_složky kódu. Když Visual Studio vytvoří projekt, všechny soubory v aplikaci\_kód složky jsou zkompilovány do jediné aplikaci\_Code.dll souboru. Výsledek této změny je mnohem rychlejší než v předchozích verzích následné sestavení.
+V sadě Visual Studio 2002 a 2003 byly zkompilovat webových aplikací do jednoho sestavení primární umístěný ve složce/Bin. V sadě Visual Studio 2005 byla přidána k aplikaci nebo _Code složce. Třídy a jiný kód, bez uživatelského rozhraní se přidají do složky, aplikace nebo _Code. Když Visual Studio vytvoří projekt, všechny soubory ve složce aplikace nebo _Code kompilovány do jednoho souboru App/_Code.dll. Výsledek této změny je mnohem rychlejší než v předchozích verzích následné sestavení.
 
 > [!NOTE]
 > Nástroj příkazového řádku nástroje MSBuild lze také vytvářet ASP.NET – webové aplikace. Tento nástroj se budeme v modulu 9.
@@ -287,7 +287,7 @@ Kliknutím sem zobrazit video s návodem upravit a pokračovat funkce v sadě Vi
 ![](improvements-in-visual-studio-2005/_static/image2.png)
 
 
-[Otevřete Video přes celou obrazovku](improvements-in-visual-studio-2005/_static/editcontinue1.wmv)
+[Open Full-Screen Video](improvements-in-visual-studio-2005/_static/editcontinue1.wmv)
 
 
 Upravit a pokračovat funkce v technologii ASP.NET 2.0 robustní a Visual Studio 2005 je kvůli změně architektury pro aplikace ASP.NET. V technologii ASP.NET 1.x, aplikace vytvořené v aplikaci Visual Studio 2002 nebo 2003 byly zkompilovány do primárních sestavení, která byla uložená ve složce/Bin. Všechny třídy, stránkách atd pro aplikace se zkompiluje do tuto jednu knihovnu DLL. Potom v době běhu ASP.NET by všechny ovládací prvky, značek a kódu ASP.NET v rámci stránky zkompilovat a zkopírujte tyto knihovny DLL do dočasné složky ASP.NET.
@@ -300,14 +300,14 @@ Kliknutím sem zobrazíte na video s návodem návrháře podpory pro uživatels
 ![](improvements-in-visual-studio-2005/_static/image3.png)
 
 
-[Otevřete Video přes celou obrazovku](improvements-in-visual-studio-2005/_static/usercontrols1.wmv)
+[Open Full-Screen Video](improvements-in-visual-studio-2005/_static/usercontrols1.wmv)
 
 
 > [!NOTE]
 > Je-li uživatelský ovládací prvek odebrán ze stránky, @Register – direktiva zůstane ve značce a měla by být ručně odebrána, aby se zabránilo chybám analyzátor, je-li uživatelského ovládacího prvku odstraněna z webu.
 
 
-Jiné zlepšování v modelu kompilace Visual Studio je funkce Publikovat Web. Protože funkce publikování překompiluje webu, vývojářům umožňuje využívat přidané výkon nebudou muset nic na vyžádání zkompilovat. Je také překompiluje všechny zdrojového kódu v aplikaci\_Code složku do knihovny DLL tak, aby žádný zdrojový kód je nutné nasadit.
+Jiné zlepšování v modelu kompilace Visual Studio je funkce Publikovat Web. Protože funkce publikování překompiluje webu, vývojářům umožňuje využívat přidané výkon nebudou muset nic na vyžádání zkompilovat. Také překompiluje všechny zdrojového kódu ve složce aplikace nebo _Code do knihovny DLL tak, aby žádný zdrojový kód je nutné nasadit.
 
 
 ![Dialogové okno publikování webu](improvements-in-visual-studio-2005/_static/image7.jpg)
@@ -316,10 +316,10 @@ Jiné zlepšování v modelu kompilace Visual Studio je funkce Publikovat Web. P
 
 
 > [!NOTE]
-> Aspnet\_compile.exe nástroj lze také předem zkompilovat webovou aplikaci ASP.NET. Tento nástroj se budeme v modulu 9.
+> Nástroj aspnet/_compile.exe také slouží k předem zkompilovat webovou aplikaci ASP.NET. Tento nástroj se budeme v modulu 9.
 
 
-Když budete publikovat webovou stránku, Předkompilované soubory jsou uloženy ve složce Temporary ASP.NET Files jak je uvedeno níže. Soubory s *Compiled* příponu souboru jsou soubory formátu XML, které definují závislosti pro konkrétní knihovny DLL. Všechny ovládací prvky webových formulářů nebo uživatele se zkompiluje do náhodných knihovny DLL, které začínají *aplikace\_webové\_*.
+Když budete publikovat webovou stránku, Předkompilované soubory jsou uloženy ve složce Temporary ASP.NET Files jak je uvedeno níže. Soubory s *Compiled* příponu souboru jsou soubory formátu XML, které definují závislosti pro konkrétní knihovny DLL. Všechny ovládací prvky webových formulářů nebo uživatele se zkompiluje do náhodných knihovny DLL, které začínají *aplikace nebo_webové /_*.
 
 Pokud necháte *tento předkompilovaných webů aktualizovat* políčko zaškrtnuto, značek uvnitř své ovládací prvky webových formulářů a uživatel nebude předem kompilovaném do knihovny DLL, umožní vám provádět změny po nasazení. Pokud si přejete zamknout kód tak, aby nejsou povoleny změny nasazeným obsahem, zrušte zaškrtnutí tohoto políčka.
 
@@ -358,7 +358,7 @@ Pro funkci kopírování webu na video s návodem, klikněte sem.
 ![](improvements-in-visual-studio-2005/_static/image4.png)
 
 
-[Otevřete Video přes celou obrazovku](improvements-in-visual-studio-2005/_static/copysite1.wmv)
+[Open Full-Screen Video](improvements-in-visual-studio-2005/_static/copysite1.wmv)
 
 
 ## <a name="improvements-in-debugging"></a>Vylepšení ladění
@@ -420,7 +420,7 @@ Kliknutím sem získáte na video s návodem tohoto testovacího prostředí.
 ![](improvements-in-visual-studio-2005/_static/image5.png)
 
 
-[Otevřete Video přes celou obrazovku](improvements-in-visual-studio-2005/_static/remdebug1.wmv)
+[Open Full-Screen Video](improvements-in-visual-studio-2005/_static/remdebug1.wmv)
 
 
 Toto testovací prostředí vyžaduje, abyste měli dva počítače, jeden spuštěné Visual Studio 2005 a další spuštěné služby IIS 5 nebo novější.
@@ -432,9 +432,9 @@ Toto testovací prostředí vyžaduje, abyste měli dva počítače, jeden spuš
 
 
 1. Ze vzdáleného webového serveru vyhledejte msvsmon.exe na vývojovém počítači pomocí cesty UNC a spustit ho.  
- Je výchozím umístěním pro msvsmon.exe \\server\c$ \Program Files\Microsoft Debugger\x86 8\Common7\IDE\Remote Visual Studio.
+ Výchozí umístění pro msvsmon.exe je //server/c$/Program soubory nebo Microsoft Visual Studio 8/Common7/IDE/vzdáleného ladicího programu nebo x86.
 2. Pokud se zobrazí výzva k odblokování porty pro vzdálené ladění, učinit.
-3. Z vývojovém počítači otevřete kódu pro Default.aspx a nastavit zarážky na stránce\_Load – metoda.
+3. Z vývojovém počítači otevřete kódu pro Default.aspx a nastavte zarážky v metodě stránky nebo _služba.
 4. Spusťte ladění z vývojovém počítači.
 
 Zarážce by měl dosáhl podle očekávání.
@@ -445,7 +445,7 @@ Jako weve již popsané Visual Studio 2005 se dodává s názvem vývojový Serv
 
 Vývojový Server ASP.NET je omezená webového serveru. Neumožňuje vzdáleného připojení, není možné všechny žádosti, z libovolného uživatele než uživatele, který webový server. Také nemá schopnost poskytovat služby na stránkách ASP. Zpracovává jenom ASP.NET prostředky a prostředky HTML (včetně obrázků, souborů CSS atd.).
 
-Vývojový Server ASP.NET může být spuštěn prostřednictvím příkazového řádku spuštěním souboru WebDev.WebServer.exe nacházející se v c:\Windows\Microsoft.NET\Framework\v2.0. \*\*\*\*\*. Následující dialogové okno zobrazí parametry, které jsou k dispozici.
+Vývojový Server ASP.NET může být spuštěn prostřednictvím příkazového řádku spuštěním souboru WebDev.WebServer.exe nacházející se v c:/Windows/Microsoft.NET/Framework/v2.0./ */*  /  */*/*. Následující dialogové okno zobrazí parametry, které jsou k dispozici.
 
 
 ![](improvements-in-visual-studio-2005/_static/image11.jpg)

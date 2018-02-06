@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/validation
-ms.openlocfilehash: dfb24a4c72b15737295b7aea406be24160fc6674
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a0c7de12e0d9abbe5d1706cf775dfeb2c067c760
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Úvod k ověření modelu v aplikaci ASP.NET MVC jádra
 
@@ -144,7 +144,7 @@ Výše uvedené značky Pomocníci vykreslení HTML níže. Všimněte si, že `
 
 Ověřování na straně klienta brání odeslání, dokud formulář je platný. Tlačítko pro odeslání spustí JavaScript, která buď formulář odešle, nebo zobrazí chybové zprávy.
 
-MVC určuje na základě typu dat .NET vlastnosti, které by mohly mít přepsat pomocí hodnoty atributu typu `[DataType]` atributy. Základní `[DataType]` atribut nemá žádné skutečných serverovou ověření. Prohlížeče zvolte vlastní chybové zprávy a zobrazit tyto chyby, ale chtějí, ale ověření Nerušivého balíček jQuery můžete přepsat zprávy a zobrazit konzistentní s ostatními. To se stane, když uživatelé nejvíce samozřejmě použít `[DataType]` podtřídy jako `[EmailAddress]`.
+MVC určuje na základě typu dat .NET vlastnosti, které by mohly mít přepsat pomocí hodnoty atributu typu `[DataType]` atributy. Základní `[DataType]` atribut nemá žádné skutečných serverovou ověření. Prohlížeče zvolte vlastní chybové zprávy a zobrazit tyto chyby, jako si přejí, ale ověření Nerušivého balíček jQuery můžete přepsat zprávy a zobrazit konzistentní s ostatními. To se stane, když uživatelé nejvíce samozřejmě použít `[DataType]` podtřídy jako `[EmailAddress]`.
 
 ### <a name="add-validation-to-dynamic-forms"></a>Přidávání ověření do dynamické formulářů
 

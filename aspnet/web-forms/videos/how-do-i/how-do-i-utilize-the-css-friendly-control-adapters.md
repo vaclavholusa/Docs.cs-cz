@@ -12,16 +12,16 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-utilize-the-css-friendly-control-adapters
 msc.type: video
-ms.openlocfilehash: 037c5d1b25ef9829ef6ab9e38e8bcec8117ef897
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 93c35d12fcbbdcf0dd98a399df8d6e2207dcef89
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="how-do-i-utilize-the-css-friendly-control-adapters"></a>[Jak na:] Využívat adaptéry popisný řízení šablon stylů CSS?
 ====================
 podle [PEL Jan](https://twitter.com/chrispels)
 
-Ovládací prvek adaptéry popisný šablon stylů CSS umožňují změnit HTML, který je vykreslen metodou standardního ovládacího prvku serveru ASP.NET 2.0. V tomto videu jsme informace, že standardního ovládacího prvku Menu technologie ASP.NET vykreslí HTML &amp;lt; tabulky&amp;gt; elementu, ale ovládací prvek adaptéry popisný šablon stylů CSS s učiní stejný ovládací prvek HTML &amp;lt; ul&amp;gt; element seznamu vylepšení přístupnosti a prezentace v nabídce. Přejděte &lt;href =&quot;https://www.asp.net/cssadapters/&quot;&gt;šablon stylů CSS popisný řízení adaptéry&lt;/a&gt; stránku, abyste viděli, jak se stejné techniky lze použít pro mnoho dalších ASP.NET ovládací prvky serveru.
+Ovládací prvek adaptéry popisný šablon stylů CSS umožňují změnit HTML, který je vykreslen metodou standardního ovládacího prvku serveru ASP.NET 2.0. V tomto videu jsme informace, že standardního ovládacího prvku Menu technologie ASP.NET vykreslí HTML `<table>` elementu, ale ovládací prvek adaptéry popisný šablon stylů CSS s učiní stejný ovládací prvek HTML `<ul>` element seznamu, vylepšení přístupnosti a prezentace v nabídce. 
 
 [&#9654; Podívejte se na video (26 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-utilize-the-css-friendly-control-adapters)

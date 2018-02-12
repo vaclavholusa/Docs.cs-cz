@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 9c0edb301de85d15b9a3527382b72211f6f3d3ec
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a0f38c83bd9231dbd37d3d505c90316af521b336
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio: Úvod - 1 12
 ====================
@@ -137,7 +137,7 @@ Následující funkce aplikace budou mít vliv nasazení nebo co musíte udělat
 - Aplikace používá Entity Framework 5.0 pro přístup k datům v databázi aplikace. Sestavení, které obsahuje Entity Framework 5.0 musí být nasazen s aplikací.
 - Aplikace používá chyba třetích stran, protokolování a vytváření sestav nástroje. Tento nástroj je součástí sestavení, které musí být nasazeno s aplikací.
 - Nástroj protokolování chyba zapisuje informace o chybě v souborů XML do sdílené složky. Máte a ujistěte se, že účet, který technologie ASP.NET spuštěna pod v nasazené lokality má oprávnění k zápisu do této složky a musíte tuto složku vyloučit z nasazení. (, Jinak chyba data protokolu z testovacího prostředí je možno nasadit do produkčního prostředí nebo soubory protokolů chyba produkční může odstranit.)
-- Aplikace obsahuje některá nastavení, které je potřeba změnit v v nasazené *Web.config* souboru v závislosti na cílovém prostředí (testu nebo produkční) a další nastavení, které je potřeba změnit v závislosti na sestavení konfigurace (ladění nebo verze).
+- Aplikace zahrnuje některá nastavení, které je potřeba změnit v nasazené *Web.config* souboru v závislosti na cílovém prostředí (testu nebo produkční) a další nastavení, které je potřeba změnit v závislosti na sestavení konfigurace (ladění nebo verze).
 - Řešení nástroje Visual Studio obsahuje projektu knihovny tříd. Pouze sestavení, které generuje tento projekt by měl být nasazen, nikoli projekt.
 
 V tomto prvním kurzu v řadě byly staženy ukázkový projekt sady Visual Studio a zkontrolovat lokality funkce, které ovlivňují nasazení aplikace. V následujících kurzech připravíte nasazení nastavením některé z těchto věcí automaticky zpracovávat. Ostatní můžete postará o ručně.

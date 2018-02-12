@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 9a933324b48d4117d5d4c806920f1691a7ef7849
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 25ba5887a9fd179e75a45d4e140592d0ea66184a
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-vb"></a>Zkoumání upravit metody a zobrazení (VB)
 ====================
@@ -57,7 +57,7 @@ Otevřete `Movies` řadiče. Dva `Edit` metody akce, které jsou uvedeny níže.
 
 [!code-vb[Main](examining-the-edit-methods-and-edit-view/samples/sample3.vb)]
 
-Všimněte si, druhý `Edit` předchází metody akce `HttpPost` atribut. Tento atribut určuje, které přetížení z `Edit` metoda může být volána pouze pro požadavky POST. Je možné aplikovat `HttpGet` atribut prvního upravit metodu, ale který není nutné protože je výchozí hodnota. (Budeme označovat metody akce, které jsou implicitně přiřazené `HttpGet` atribut jako `HttpGet` metody.)
+Všimněte si, druhý `Edit` předchází metody akce `HttpPost` atribut. Tento atribut určuje, že přetížení `Edit` metoda může být volána pouze pro požadavky POST. Je možné aplikovat `HttpGet` atribut prvního upravit metodu, ale který není nutné protože je výchozí hodnota. (Budeme označovat metody akce, které jsou implicitně přiřazené `HttpGet` atribut jako `HttpGet` metody.)
 
 `HttpGet` `Edit` Metoda přebírá parametr ID film, vyhledává film používající rozhraní Entity Framework `Find` metoda a vrátí vybraného videa na zobrazení pro úpravy. Při generování uživatelského rozhraní systému vytvoření zobrazení pro úpravy, zkontrolován `Movie` třídy a vytvořený kód k vykreslení `<label>` a `<input>` prvky pro každou vlastnost třídy. Následující příklad ukazuje zobrazení upravit, která byla vygenerována:
 

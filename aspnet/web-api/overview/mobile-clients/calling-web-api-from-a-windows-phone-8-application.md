@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6e5a936decb27fd2e3b8cdcea44db8db822c98eb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2025f31f369153b93cd293884880c97635fc8ab8
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Volání webového rozhraní API z aplikace pro Windows Phone 8 (C#)
 ====================
@@ -129,7 +129,7 @@ Dalším krokem tohoto začátku do konce scénáře je vytvoření katalogu apl
 7. Aktualizace **MainPage.xaml** soubor pro přizpůsobení název aplikace:
 
     1. Dvakrát klikněte **MainPage.xaml** soubor v Průzkumníku řešení.
-    2. Pokud **MainPage.xaml** otevření souboru, vyhledejte následující řádky kódu: 
+    2. Když **MainPage.xaml** otevření souboru, vyhledejte následující řádky kódu: 
 
         [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample6.xml)]
     3. Tyto řádky nahraďte následujícím textem: 
@@ -139,7 +139,7 @@ Dalším krokem tohoto začátku do konce scénáře je vytvoření katalogu apl
 8. Aktualizace **DetailsPage.xaml** soubor pro přizpůsobení zobrazených položek:
 
     1. Dvakrát klikněte **DetailsPage.xaml** soubor v Průzkumníku řešení.
-    2. Pokud **DetailsPage.xaml** otevření souboru, vyhledejte následující řádky kódu: 
+    2. Když **DetailsPage.xaml** otevření souboru, vyhledejte následující řádky kódu: 
 
         [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample8.xml)]
     3. Tyto řádky nahraďte následujícím textem: 

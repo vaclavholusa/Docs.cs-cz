@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 73e46134cfafb9edc4c1888211eab44b8f2bf828
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d3eb588aad592605a8e368d1af6e62ece34b79d0
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>Použití asynchronních metod v technologii ASP.NET 4.5
 ====================
@@ -123,7 +123,7 @@ Asynchronní verze:
 - `RegisterAsyncTask` Metoda se používá k registraci asynchronní úlohu obsahující kód, který se spouští asynchronně.
 - Nové `GetGizmosSvcAsync` metoda je označena [asynchronní](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) – klíčové slovo, které sděluje kompilátoru generování zpětných volání pro části textu a automaticky vytvářet `Task` , je vrácena.
 - &quot;Asynchronní&quot; byl připojeným k názvu asynchronní metody. Připojování "Asynchronní" není povinný, ale je konvence při psaní asynchronních metod.
-- Návratový typ nového nové `GetGizmosSvcAsync` je metoda `Task`. Návratový typ `Task` reprezentuje probíhající práce a poskytuje volající metody s popisovačem, pomocí kterého je možné čekání na dokončení asynchronní operace.
+- Návratový typ nové `GetGizmosSvcAsync` je metoda `Task`. Návratový typ `Task` reprezentuje probíhající práce a poskytuje volající metody s popisovačem, pomocí kterého je možné čekání na dokončení asynchronní operace.
 - [Await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) – klíčové slovo, které bylo použito pro volání webové služby.
 - Volala se asynchronní webového rozhraní API služby (`GetGizmosAsync`).
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: f43f0a2dd80e26ecff15e5742e18264ddb5b26aa
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: bbc1f6ef291eddd7488531943b146bb67ae7ee02
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>Přehled zprostředkovatelů vlastní úložiště pro identitu ASP.NET
 ====================
@@ -128,7 +128,7 @@ Třída IdentityUser implementuje IUser a obsahuje všechny další vlastnosti n
 <a id="userstore"></a>
 ## <a name="customize-the-user-store"></a>Přizpůsobení úložiště uživatele
 
-Můžete také vytvořit úložiště UserStore třídu, která poskytuje metody pro všechny operace data na uživatele. Tato třída je ekvivalentní [objektu UserStore&lt;TUser&gt; ](https://msdn.microsoft.com/library/dn315446(v=vs.108).aspx) třídy v [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) oboru názvů. V třídě úložiště UserStore implementovat [IUserStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx) a všechny volitelné rozhraní. Vyberete které volitelné rozhraní k implementaci na základě na funkce, které chcete zajistit ve vaší aplikaci.
+Můžete také vytvořit úložiště UserStore třídu, která poskytuje metody pro všechny operace data na uživatele. Tato třída je ekvivalentní [objektu UserStore&lt;TUser&gt; ](https://msdn.microsoft.com/library/dn315446(v=vs.108).aspx) třídy v [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) oboru názvů. V třídě úložiště UserStore implementovat [IUserStore&lt;TUser, TKey&gt; ](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx) a všechny volitelné rozhraní. Vyberete které volitelné rozhraní k implementaci závislosti na funkcích, které chcete zajistit ve vaší aplikaci.
 
 Následující obrázek ukazuje třídy objektu UserStore, na kterou je nutné vytvořit a relevantní rozhraní.
 

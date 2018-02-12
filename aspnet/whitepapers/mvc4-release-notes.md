@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: 399fbe3fa1e71a9ffa7c5e6dfeca7ccab7294d1b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: bea6f6112388290a2c6b5ed267626ba28fc36671
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -266,7 +266,7 @@ Hlavní změny z Release Candidate. ASP.NET MVC 4 v této verzi jsou shrnuté n�
     - *MvcCSharpRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
     - *MvcWebPageRazorHost.DecorateCodeGenerator(System.Web.Razor.Generator.RazorCodeGenerator)*
     - *MvcVBRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
-- **Když v adresáři/Bin aplikace ASP.NET MVC 4 je součástí WebMatrix.WebData.dll, přebírá adresu URL pro ověřování pomocí formulářů.** Přidání WebMatrix.WebData.dll sestavení do vaší aplikace (například výběrem "ASP.NET Web Pages se syntaxí Razor" při použití dialogové okno Přidat nasaditelné závislosti) se přepíše přihlášení přesměrování ověřování/účet/Logon místo nebo účet nebo přihlášení očekávaným ve výchozím nastavení technologie ASP.NET MVC jsou řadič MVC účtu. Pokud chcete zakázat toto chování a používat zadaná adresa URL již v části ověření souboru Web.config, můžete přidat appSetting názvem PreserveLoginUrl a nastavte ji na hodnotu true: 
+- **Když WebMatrix.WebData.dll je zahrnutý v adresáři/Bin aplikace ASP.NET MVC 4, přebírá adresu URL pro ověřování pomocí formulářů.** Přidání WebMatrix.WebData.dll sestavení do vaší aplikace (například výběrem "ASP.NET Web Pages se syntaxí Razor" při použití dialogové okno Přidat nasaditelné závislosti) se přepíše přihlášení přesměrování ověřování/účet/Logon místo nebo účet nebo přihlášení očekávaným ve výchozím nastavení technologie ASP.NET MVC jsou řadič MVC účtu. Pokud chcete zakázat toto chování a používat zadaná adresa URL již v části ověření souboru Web.config, můžete přidat appSetting názvem PreserveLoginUrl a nastavte ji na hodnotu true: 
 
     [!code-xml[Main](mvc4-release-notes/samples/sample6.xml)]
 - **Správce balíčků NuGet se nepodaří nainstalovat při pokusu o instalaci ASP.NET MVC 4 pro souběžné instalace sady Visual Studio 2010 a program Visual Web Developer 2010.** Ke spuštění sady Visual Studio 2010 a program Visual Web Developer 2010 node souběžně s ASP.NET MVC 4 je nutné nainstalovat ASP.NET MVC 4 po obě verze sady Visual Studio již byl nainstalován.

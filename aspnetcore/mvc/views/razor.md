@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: ef3bf31da76df47312f98f494973295f29e18743
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 68fa29b909ebea57e6a3986fca7b88c5a5cf579c
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pro ASP.NET Core
 
@@ -231,7 +231,7 @@ K vykreslení zbytek celý řádek jako kód HTML uvnitř bloku kódu, použijte
 
 Bez `@:` v kódu, je generována chyba runtime Razor.
 
-Upozornění: Navíc `@` znaky v souboru nástroje Razor mohou způsobit chyby kompilátoru příčina na příkazy v bloku později. Tyto chyby kompilátoru může být obtížné zjistit, protože dojde k chybě skutečné před ohlášené chyby. Tato chyba je běžné po kombinování více implicitního nebo explicitního výrazů do jednoho kód bloku.
+Upozornění: Navíc `@` znaky v souboru nástroje Razor mohou způsobit chyby kompilátoru na příkazy v bloku později. Tyto chyby kompilátoru může být obtížné zjistit, protože dojde k chybě skutečné před ohlášené chyby. Tato chyba je běžné po kombinování více implicitního nebo explicitního výrazů do jednoho kód bloku.
 
 ## <a name="control-structures"></a>Řídicí struktury
 

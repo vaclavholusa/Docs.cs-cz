@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 8541fe47207c0af232ca81ae45da6af201d94799
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8cadb550eaa2dbc4541f945dc8d8d49fa757d4d3
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Poskytovatelé vlastní úložiště pro ASP.NET Core Identity
 
@@ -126,7 +126,7 @@ Minimálně musí zahrnovat třídě user `Id` a `UserName` vlastnost.
 
 ## <a name="customize-the-user-store"></a>Přizpůsobení úložiště uživatele
 
-Vytvoření `UserStore` třídu, která poskytuje metody pro všechny operace data na uživatele. Tato třída je ekvivalentní [objektu UserStore<TUser> ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.userstore-1) třídy. Ve vaší `UserStore` třídy, implementovat `IUserStore<TUser>` a volitelné rozhraní vyžaduje. Vyberete které volitelné rozhraní k implementaci na základě u funkce poskytované ve vaší aplikaci.
+Vytvoření `UserStore` třídu, která poskytuje metody pro všechny operace data na uživatele. Tato třída je ekvivalentní [objektu UserStore<TUser> ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.userstore-1) třídy. Ve vaší `UserStore` třídy, implementovat `IUserStore<TUser>` a volitelné rozhraní vyžaduje. Vyberete volitelné rozhraní, která implementovat podle funkce poskytované ve vaší aplikaci.
 
 ### <a name="optional-interfaces"></a>Volitelné rozhraní
 

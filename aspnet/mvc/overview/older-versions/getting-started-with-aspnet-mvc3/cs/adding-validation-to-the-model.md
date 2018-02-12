@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 6bce4a5d889f548cb1faec15842310703d7077b8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1e1235972d1e16153faee113af09edaa676d70d8
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="adding-validation-to-the-model-c"></a>Přidání ověřování do modelu (C#)
 ====================
@@ -101,7 +101,7 @@ Všimněte si, jak kód používá `Html.EditorFor` pomocná rutina pro výstup 
 
 Co je skutečně dobrý o tento přístup je, že řadičem ani vytvořit šablony zobrazení nic o skutečné ověřovacích pravidel vynucován nebo zná o specifické chybové zprávy zobrazují. Ověřovací pravidla a řetězce chyby se zadávají pouze v `Movie` třídy.
 
-Pokud chcete později změnit logiku ověření, můžete tak učinit na jednom místě. Nebudete mít starat o různých částech aplikace je nekonzistentní s jak se vynucují pravidla – veškerou logiku ověřování definované na jednom místě se použije everywhere. To zajišťuje kód velmi vyčištění a umožňuje snadno spravovat a momentální. . To znamená, že budete plně ctít zásady SUCHÝCH Princip.
+Pokud chcete později změnit logiku ověření, můžete tak učinit na jednom místě. Nebudete mít starat o různých částech aplikace je nekonzistentní s jak se vynucují pravidla – veškerou logiku ověřování definované na jednom místě se použije everywhere. To zajišťuje kód velmi vyčištění a umožňuje snadno spravovat a momentální. . To znamená, že je budete mít plně ctít zásady SUCHÝCH Princip.
 
 ## <a name="adding-formatting-to-the-movie-model"></a>Přidání formátování ke film modelu
 

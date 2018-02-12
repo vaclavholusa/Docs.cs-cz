@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: a91bf065c9ce0fc5bd9b7115340edabea975a7e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69b7d5453b6ff36d6e28a69428b016cb8cfd06e9
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Povolení operace CRUD v ASP.NET Web API 1
 ====================
@@ -42,11 +42,11 @@ Následující metody zveřejní produkty rozhraní API.
 | Akce | Metoda HTTP | Relativní identifikátor URI |
 | --- | --- | --- |
 | Získání seznamu všech produktů | GET | / api/produkty |
-| Získání ID produktu | GET | /API/produkty/*id* |
-| Získání produktu podle kategorie | GET | produkty/api /? kategorie =*kategorie* |
+| Získání ID produktu | GET | /api/products/*id* |
+| Získání produktu podle kategorie | GET | /api/products?category=*category* |
 | Vytvoření nového produktu | POST | / api/produkty |
-| Aktualizace produktu | PUT | /API/produkty/*id* |
-| Odstranit produktu | DELETE | /API/produkty/*id* |
+| Aktualizace produktu | PUT | /api/products/*id* |
+| Odstranit produktu | DELETE | /api/products/*id* |
 
 Všimněte si, že některé identifikátory URI v cestě zahrnují ID produktu. Chcete-li získat produktu, jejíž ID je 28, klient odešle požadavek GET `http://hostname/api/products/28`.
 
@@ -57,7 +57,7 @@ Produkty API definuje identifikátory URI pro dva typy prostředků:
 | Prostředek | Identifikátor URI |
 | --- | --- |
 | Seznam všech produktů. | / api/produkty |
-| Jednotlivé produkty. | /API/produkty/*id* |
+| Jednotlivé produkty. | /api/products/*id* |
 
 ### <a name="methods"></a>Metody
 
@@ -127,7 +127,7 @@ Pokud jste už pracovali s architekturou ASP.NET MVC, pak jste již obeznámeni 
 
 Pokračujte a odstranit ValuesController, kliknutím pravým tlačítkem myši na soubor v Průzkumníku řešení a výběrem **odstranit.** Nyní přidejte nový řadič, následujícím způsobem:
 
-V **Průzkumníku**, klikněte pravým tlačítkem myši složku řadiče. Vyberte **přidat** a pak vyberte **řadič**.
+V **Průzkumníku**, klikněte pravým tlačítkem na složku řadiče. Vyberte **přidat** a pak vyberte **řadič**.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image6.png)
 
@@ -158,8 +158,8 @@ Rozhraní API ProductStore zveřejní několik &quot;číst&quot; akce jako meto
 | Akce | Metoda HTTP | Relativní identifikátor URI |
 | --- | --- | --- |
 | Získání seznamu všech produktů | GET | / api/produkty |
-| Získání ID produktu | GET | /API/produkty/*id* |
-| Získání produktu podle kategorie | GET | produkty/api /? kategorie =*kategorie* |
+| Získání ID produktu | GET | /api/products/*id* |
+| Získání produktu podle kategorie | GET | /api/products?category=*category* |
 
 Chcete-li získat seznam všech produktů, přidejte tuto metodu za účelem `ProductsController` třídy:
 

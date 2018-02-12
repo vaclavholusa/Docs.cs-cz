@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 8c69a355e6281cb7abf03b05eb2f59262cc5d4e1
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 39e655ffcb01fb21c79cd2564862f49a86e9e9d4
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>Čtení související data – základní EF s stránky Razor (6 8)
 
@@ -126,7 +126,7 @@ Spusťte aplikaci a vyberte **kurzy** karty zobrazíte seznam s názvy oddělen�
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
 
-`Select` Operátor načte pouze související data, které jsou potřeba. Pro jednotlivé položky jako `Department.Name` používá SQL vnitřního spojení. Pro kolekce používá jiný přístup k databázi, ale tak.`Include` operátor u kolekcí.
+`Select` Operátor načte pouze související data, které jsou potřeba. Pro jednotlivé položky jako `Department.Name` používá SQL vnitřního spojení. Pro kolekce, používá jiný přístup k databázi, ale tak `Include` operátor u kolekcí.
 
 Následující kód načte související data se `Select` metoda:
 
@@ -148,7 +148,7 @@ V této části se vytvoří vyučující stránky.
 Tato stránka načte a zobrazí související data následujícími způsoby:
 
 * Zobrazí seznam vyučující souvisejících dat z `OfficeAssignment` entity (Office na předchozím obrázku). `Instructor` a `OfficeAssignment` entity jsou ve vztahu-nula nebo 1. Přes načítání se používá pro `OfficeAssignment` entity. Přes načítání je obvykle efektivnější, když související data se mají zobrazit. V takovém případě se zobrazí přiřazení office pro vyučující.
-* Když uživatel vybere lektorem (Harui na předchozím obrázku), související `Course` entity jsou zobrazeny. `Instructor` a `Course` jsou entit v relaci m: n. Načítání pro nápovědy eager `Course` entity a jejich související `Department` entity se používá. Samostatné dotazy v tomto případě může být efektivnější, protože jsou potřeba jenom kurzy pro vybrané lektorem. Tento příklad ukazuje způsob použití přes načítání pro navigační vlastnosti v entity, které jsou v navigační vlastnosti.
+* Když uživatel vybere lektorem (Harui na předchozím obrázku), související `Course` entity jsou zobrazeny. `Instructor` a `Course` jsou entit v relaci m: n. Přes načítání se používá pro `Course` entity a jejich související `Department` entity. Samostatné dotazy v tomto případě může být efektivnější, protože jsou potřeba jenom kurzy pro vybrané lektorem. Tento příklad ukazuje způsob použití přes načítání pro navigační vlastnosti v entity, které jsou v navigační vlastnosti.
 * Když uživatel vybere kurzu (chemie na předchozím obrázku), související data z `Enrollments` entity se zobrazí. Na předchozím obrázku se zobrazí název student a úrovni. `Course` a `Enrollment` entity jsou v vztah jeden mnoho.
 
 ### <a name="create-a-view-model-for-the-instructor-index-view"></a>Vytvoření modelu zobrazení pro Index lektorem zobrazení
@@ -201,7 +201,7 @@ Aktualizace *Pages/Instructors/Index.cshtml* s následující kód:
 
 Předchozí kód provede tyto změny:
 
-* Aktualizace `page` direktivy z `@page` k `@page "{id:int?}"`. `"{id:int?}"`je šablonu trasy. Šablona trasy změny řetězce dotazu celé číslo v adrese URL data trasy. Například kliknete na **vyberte** odkaz lektorem při page – direktiva vytvoří adresu URL podobnou následující:
+* Aktualizace `page` direktivy z `@page` k `@page "{id:int?}"`. `"{id:int?}"`je šablonu trasy. Šablona trasy změny řetězce dotazu celé číslo v adrese URL data trasy. Například kliknete na **vyberte** odkaz lektorem se pouze `@page` – direktiva vytvoří adresu URL podobnou následující:
 
     `http://localhost:1234/Instructors?id=2`
 

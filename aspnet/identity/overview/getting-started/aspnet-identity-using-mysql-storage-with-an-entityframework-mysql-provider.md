@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: ac254abcb756d048d159a9b67967a581f35ac871
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 82341724286a53f7883df324a391beeae3a9e2bd
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>ASP.NET Identity: Pomocí MySQL úložiště pomocí zprostředkovatele EntityFramework MySQL (C#)
 ====================
@@ -65,7 +65,7 @@ Na konci tohoto kurzu budete mít aplikace MVC pomocí ASP.NET Identity úloži�
 
 Pokud chcete provést kroky v této části kurzu, bude nejprve musíte nainstalovat [Visual Studio Express 2013 pro Web](https://go.microsoft.com/fwlink/?LinkId=299058) nebo [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566). Po instalaci sady Visual Studio vytvořte nový projekt aplikace MVC pomocí následujících kroků:
 
-1. Otevřete Visual Studio 2103.
+1. Open Visual Studio 2103.
 2. Klikněte na tlačítko **nový projekt** z **spustit** stránky, nebo můžete kliknout na tlačítko **soubor** nabídce a potom **nový projekt**:  
   
  [Kliknutím na následující obrázek, rozbalte ho. ]  
@@ -83,7 +83,7 @@ Pokud chcete provést kroky v této části kurzu, bude nejprve musíte nainstal
 
 ### <a name="update-the-entity-framework-assembly-for-your-project"></a>Aktualizace sestavení Entity Framework pro váš projekt
 
-Aplikace MVC, který byl vytvořen z šablony sady Visual Studio 2013 obsahuje odkaz na [EntityFramework 6.0.0](http://www.nuget.org/packages/EntityFramework) balíček, ale musí byla aktualizace do tohoto sestavení od jeho vydání obsahujících významné vylepšení výkonu. Chcete-li použít tyto nejnovější aktualizace ve vaší aplikaci, použijte následující kroky.
+Aplikace MVC, který byl vytvořen z šablony sady Visual Studio 2013 obsahuje odkaz na [EntityFramework 6.0.0](http://www.nuget.org/packages/EntityFramework) balíček, ale musí byla aktualizace do tohoto sestavení od jeho vydání, které obsahují důležité vylepšení výkonu. Chcete-li použít tyto nejnovější aktualizace ve vaší aplikaci, použijte následující kroky.
 
 1. Otevřete projekt MVC v sadě Visual Studio 2013.
 2. Klikněte na tlačítko **nástroje**, pak klikněte na tlačítko **Správce balíčků knihoven**a potom klikněte na **Konzola správce balíčků**:  
@@ -139,7 +139,7 @@ Entity Framework Code First používá **MigrationHistory** tabulky ke sledován
 
 ### <a name="creating-a-custom-entityframework-initializer-for-applicationdbcontext"></a>Vytváření vlastních inicializátoru objektu EntityFramework pro ApplicationDbContext
 
-MySQL zprostředkovatele, který bude uvedena v tomto kurzu aktuálně nepodporuje migraci Entity Framework, takže budete muset použít model inicializátory připojit k databázi. Protože v tomto kurzu je pomocí instance databáze MySQL na Azure, bude třeba potřebujete vytvořit vlastní inicializátoru Entity Framework.
+MySQL zprostředkovatele, který bude uvedena v tomto kurzu aktuálně nepodporuje migraci Entity Framework, takže budete muset použít model inicializátory připojit k databázi. Protože v tomto kurzu je pomocí instance databáze MySQL na Azure, musíte vytvořit vlastní inicializátoru Entity Framework.
 
 > [!NOTE]
 > Tento krok není vyžaduje, pokud se připojujete k instanci systému SQL Server v Azure nebo pokud používáte databázi, která je hostovaná místně.

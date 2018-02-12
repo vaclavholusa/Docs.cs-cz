@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: 5d6e6727f387d047e7b41a6efa0d2dadf467558e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 744396cb0c95d1887f259b1e2e890bd06ef7d049
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="external-authentication-services-with-aspnet-web-api-c"></a>Externí ověřovací služby s rozhraním ASP.NET Web API (C#)
 ====================
@@ -73,7 +73,7 @@ Visual Studio 2013 a ASP.NET 4.5.1 usnadnění integrace s externí ověřovací
 - Facebook
 - Google
 - Microsoft Accounts (účty Windows Live ID)
-- Služby Twitter.
+- Twitter
 
 V příkladech v tomto návodu se ukazují, jak nakonfigurovat každou z podporovaných externí ověřovací služby pomocí nové šablony webové aplikace ASP.NET, který se dodává s Visual Studio 2013.
 
@@ -243,8 +243,8 @@ Po získání uživatelský klíč a uživatelský tajný klíč, použijte nás
 
 Další informace o vytváření aplikací, které používají OAuth a OpenID viz následující adresy URL:
 
-- [https://go.microsoft.com/fwlink/?LinkId=252166](https://go.microsoft.com/fwlink/?LinkID=252166)
-- [https://go.microsoft.com/fwlink/?LinkId=243995](https://go.microsoft.com/fwlink/?LinkID=243995)
+- [https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166)
+- [https://go.microsoft.com/fwlink/?LinkID=243995](https://go.microsoft.com/fwlink/?LinkID=243995)
 
 <a id="COMBINE"></a>
 ### <a name="combining-external-authentication-services"></a>Kombinování externí ověřovací služby
@@ -263,7 +263,7 @@ Někteří poskytovatelé externího ověřování nepodporují testování vaš
     1. Otevřete příkazový řádek se zvýšenými oprávněními v systému Windows.
     2. Zadejte následující příkaz:
 
-        <kbd>%WinDir%\system32\drivers\etc\hosts Poznámkový blok</kbd>
+        <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
     3. Přidejte do souboru HOSTITELŮ záznam takto:
 
         <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
@@ -303,7 +303,7 @@ Propojení aplikace pro Windows Live pro Microsoft Authentication je jednoduchý
 <a id="DISABLE"></a>
 ### <a name="optional-disable-local-registration"></a>Volitelné: Zakázat místní registraci
 
-Aktuální místní registraci funkce ASP.NET nezabrání automatizovaným programům (robotů) člena vytváření účtů; například pomocí technologie robota prevence a ověřování, jako je [CAPTCHA](../../../web-pages/overview/security/16-adding-security-and-membership.md). Z tohoto důvodu byste měli odebrat místní přihlašovací formulář a registrace odkaz na přihlašovací stránku. Chcete-li to provést, otevřete  *\_Login.cshtml* stránky ve vašem projektu a pak komentář řádků pro panel místní přihlášení a odkaz na registraci. Výsledná stránka by měla jako jako následující ukázka kódu:
+Aktuální místní registraci funkce ASP.NET nezabrání automatizovaným programům (robotů) člena vytváření účtů; například pomocí technologie robota prevence a ověřování, jako je [CAPTCHA](../../../web-pages/overview/security/16-adding-security-and-membership.md). Z tohoto důvodu byste měli odebrat místní přihlašovací formulář a registrace odkaz na přihlašovací stránku. Chcete-li to provést, otevřete  *\_Login.cshtml* stránky ve vašem projektu a pak komentář řádků pro panel místní přihlášení a odkaz na registraci. Výsledná stránka by měl vypadat jako následující ukázka kódu:
 
 [!code-html[Main](external-authentication-services/samples/sample10.html)]
 

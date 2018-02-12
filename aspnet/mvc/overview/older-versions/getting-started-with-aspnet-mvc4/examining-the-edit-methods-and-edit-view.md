@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: a20693f3e83053dd99499d486412b66777189f1d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 315914056c0a666fdf23cf82a314a999e03114b6
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>Zkoumání upravit metody a zobrazení
 ====================
@@ -52,7 +52,7 @@ Otevřete `Movies` řadiče. Dva `Edit` metody akce, které jsou uvedeny níže.
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample3.cs)]
 
-Všimněte si, druhý `Edit` předchází metody akce `HttpPost` atribut. Tento atribut určuje, které přetížení z `Edit` metoda může být volána pouze pro požadavky POST. Je možné aplikovat `HttpGet` atribut prvního upravit metodu, ale který není nutné protože je výchozí hodnota. (Budeme označovat metody akce, které jsou implicitně přiřazené `HttpGet` atribut jako `HttpGet` metody.)
+Všimněte si, druhý `Edit` předchází metody akce `HttpPost` atribut. Tento atribut určuje, že přetížení `Edit` metoda může být volána pouze pro požadavky POST. Je možné aplikovat `HttpGet` atribut prvního upravit metodu, ale který není nutné protože je výchozí hodnota. (Budeme označovat metody akce, které jsou implicitně přiřazené `HttpGet` atribut jako `HttpGet` metody.)
 
 `HttpGet` `Edit` Metoda přebírá parametr ID film, vyhledává film používající rozhraní Entity Framework `Find` metoda a vrátí vybraného videa na zobrazení pro úpravy. Určuje parametr ID [výchozí hodnota](https://msdn.microsoft.com/library/dd264739.aspx) z nula v případě `Edit` metoda je volána bez parametrů. Pokud nelze nalézt film, [HttpNotFound](https://msdn.microsoft.com/library/gg453938(VS.98).aspx) je vrácen. Při generování uživatelského rozhraní systému vytvoření zobrazení pro úpravy, zkontrolován `Movie` třídy a vytvořený kód k vykreslení `<label>` a `<input>` prvky pro každou vlastnost třídy. Následující příklad ukazuje zobrazení upravit, která byla vygenerována:
 

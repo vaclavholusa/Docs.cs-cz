@@ -12,22 +12,22 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown
 msc.type: chapter
-ms.openlocfilehash: 8d0708b03deb54d41c64ed383d319b0b70549e1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 200dc5ce3f27b5123edea2ac63f0a86b8502605d
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="cascadingdropdown"></a>CascadingDropdown
 ====================
-> Tento kurz ukazuje, jak používat ovládací prvek CascadingDropDown vytvořit související rozevíracího seznamu uvádí tuto aktualizaci, když uživatelé proveďte výběr.
+> Tento kurz ukazuje, jak používat ovládací prvek CascadingDropDown vytvořit související rozevírací seznamy, které aktualizovat, když uživatelé proveďte výběr.
 
 
-- [Naplnění seznamu pomocí CascadingDropDown (C#)](filling-a-list-using-cascadingdropdown-cs.md)
-- [Pomocí CascadingDropDown s databází (C#)](using-cascadingdropdown-with-a-database-cs.md)
-- [Předvolba seznamu položek s CascadingDropDown (C#)](presetting-list-entries-with-cascadingdropdown-cs.md)
-- [Pomocí automatického provedení operace CascadingDropDown (C#)](using-auto-postback-with-cascadingdropdown-cs.md)
-- [Naplnění seznamu pomocí CascadingDropDown (VB)](filling-a-list-using-cascadingdropdown-vb.md)
-- [Pomocí CascadingDropDown s databází (VB)](using-cascadingdropdown-with-a-database-vb.md)
-- [Předvolba seznamu položek s CascadingDropDown (VB)](presetting-list-entries-with-cascadingdropdown-vb.md)
-- [Pomocí automatického provedení operace CascadingDropDown (VB)](using-auto-postback-with-cascadingdropdown-vb.md)
+- [Vyplnění seznamu ovládacím prvkem CascadingDropDown (C#)](filling-a-list-using-cascadingdropdown-cs.md)
+- [Použití ovládacího prvku CascadingDropDown s databází (C#)](using-cascadingdropdown-with-a-database-cs.md)
+- [Předvedení položek seznamu ovládacím prvkem CascadingDropDown (C#)](presetting-list-entries-with-cascadingdropdown-cs.md)
+- [Použití funkce Auto-Postback v ovládacím prvku CascadingDropDown (C#)](using-auto-postback-with-cascadingdropdown-cs.md)
+- [Vyplnění seznamu ovládacím prvkem CascadingDropDown (VB)](filling-a-list-using-cascadingdropdown-vb.md)
+- [Použití ovládacího prvku CascadingDropDown s databází (VB)](using-cascadingdropdown-with-a-database-vb.md)
+- [Předvedení položek seznamu ovládacím prvkem CascadingDropDown (VB)](presetting-list-entries-with-cascadingdropdown-vb.md)
+- [Použití funkce Auto-Postback v ovládacím prvku CascadingDropDown (VB)](using-auto-postback-with-cascadingdropdown-vb.md)

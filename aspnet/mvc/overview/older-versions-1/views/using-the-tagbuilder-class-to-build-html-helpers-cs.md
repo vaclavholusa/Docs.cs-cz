@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ddc4e91bb14082c7c5e889d064d29d2bf91f7329
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63f07c3f95c520dbc74f3568aa65dc6a6f34a901
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>Použití třídy TagBuilder k sestavení pomocné rutiny HTML (C#)
 ====================
@@ -63,7 +63,7 @@ Všimněte si, jak TagBuilder.MergeAttribute() metoda se používá k přidání
 
 Po vytvoření bitové kopie pomocné rutiny, můžete v zobrazení v rozhraní ASP.NET MVC stejně jako všechny ostatní standardní pomocníků HTML pomocné rutiny. Zobrazení v výpis 2 pomocí pomocníka Image dvakrát zobrazí stejné bitové kopie Xbox (viz obrázek 1). Pomocník Image() je volána s i bez zadání kolekce atributů HTML.
 
-**Výpis 2 - Home\Index.aspx**
+**Listing 2 - Home\Index.aspx**
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-cs/samples/sample2.aspx)]
 

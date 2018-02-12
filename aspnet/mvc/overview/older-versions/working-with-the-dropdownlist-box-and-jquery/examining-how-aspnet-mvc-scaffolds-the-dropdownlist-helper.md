@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: 737773ab424b3ec3b6139b8c238a60ca23de2e69
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: abd9b5c09e942b966eb3eaaebe1b315c30b8e0c0
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Prozkoumání, jak rozhraní ASP.NET MVC scaffolds pomocná rozevírací seznam
 ====================
@@ -202,7 +202,7 @@ Spusťte aplikaci a upravit album. Změňte adresu URL používat `EditVM`. Změ
 
 Všechny tři přístupy, zobrazí se acceptible. Celá řada vývojářů přednost explictily průchodu `SelectList` k `DropDownList` pomocí `ViewBag`. Tento přístup má výhodu, která poskytuje flexibilní použití vhodnější název kolekce. Přímý přístup do jedné paměti je nelze pojmenovat `ViewBag SelectList` objektu stejný název jako vlastnost modelu.
 
-Někteří vývojáři přednost ViewModel přístup. Ostatní zvažte více podrobné značek a vygenerovaný HTML ViewModel dosahují nevýhodou.
+Někteří vývojáři přednost ViewModel přístup. Ostatní zvažte podrobnější značek a generovaný kód HTML přístupu ViewModel nevýhodou.
 
 V této části jsme se dozvěděli, tři způsoby používání **rozevírací seznam** daty kategorie. V další části ukážeme, jak přidat novou kategorii.
 

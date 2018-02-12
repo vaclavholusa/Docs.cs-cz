@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 51344535e7ff42f1bd6641aeaaf043be6423f1b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a7c5b348e44a88a56680237b0cac75c999901ec3
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: Úvod
 ====================
@@ -195,7 +195,7 @@ Následující funkce aplikace budou mít vliv nasazení nebo co musíte udělat
 - Aplikace používá systém členství technologie ASP.NET, která ukládá informace o uživatelském účtu v databázi systému SQL Server. Aplikace definuje uživatel s oprávněním správce, který má přístup k určité omezené informace. Je třeba nasadit databázi členství bez testovací účty, ale s účtem správce.
 - Aplikace používá chyba třetích stran, protokolování a vytváření sestav nástroje. Tento nástroj je součástí sestavení, které musí být nasazeno s aplikací.
 - Nástroj protokolování chyba zapisuje informace o chybě v souborů XML do sdílené složky. Máte a ujistěte se, že účet, který technologie ASP.NET spuštěna pod v nasazené lokality má oprávnění k zápisu do této složky a musíte tuto složku vyloučit z nasazení. (, Jinak chyba data protokolu z testovacího prostředí je možno nasadit do produkčního prostředí nebo soubory protokolů chyba produkční může odstranit.)
-- Aplikace obsahuje některá nastavení, které je potřeba změnit v v nasazené *Web.config* souboru v závislosti na cílovém prostředí (test, pracovní nebo produkční) a další nastavení, které je potřeba změnit v závislosti na sestavení konfigurace (ladění nebo verze).
+- Aplikace zahrnuje některá nastavení, které je potřeba změnit v nasazené *Web.config* souboru v závislosti na cílovém prostředí (test, pracovní nebo produkční) a další nastavení, které je potřeba změnit v závislosti na sestavení konfigurace (ladění nebo verze).
 - Řešení nástroje Visual Studio obsahuje projektu knihovny tříd. Pouze sestavení, které generuje tento projekt by měl být nasazen, nikoli projekt.
 
 ## <a name="summary"></a>Souhrn

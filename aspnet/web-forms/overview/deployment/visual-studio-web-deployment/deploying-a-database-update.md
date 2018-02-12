@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
-ms.openlocfilehash: 3fd29a5b26c564d88e4128d1904fab00b57a3b7c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8e875a4282df78ec647579e74c3fbeabd2495fc2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení aktualizace databáze
 ====================
@@ -90,7 +90,7 @@ V této části můžete přidat sloupec Datum narození `Person` základní tř
 6. V **publikování webu jedním kliknutím** nástrojů, klikněte na tlačítko **produkční** profil publikování a potom klikněte na **Publikovat Web**.
 7. Spustit **vyučující** stránky v produkčním prostředí, chcete-li ověřit, že aktualizace byla úspěšně nasazena.
 
-    Pro aktualizaci skutečné produkční aplikace, která zahrnuje změnu databáze je by také běžně provést aplikace do režimu offline během nasazení pomocí *aplikace\_offline.htm*, jak jste viděli v předchozí kurzu.
+    Pro aktualizaci skutečné produkční aplikace, která zahrnuje změnu databáze by také běžně využít aplikace do režimu offline během nasazení pomocí *aplikace\_offline.htm*, jak jste viděli v předchozí kurzu.
 
 ## <a name="deploy-a-database-update-by-using-the-dbdacfx-provider"></a>Nasazení aktualizace databáze pomocí poskytovatele dbDacFx
 

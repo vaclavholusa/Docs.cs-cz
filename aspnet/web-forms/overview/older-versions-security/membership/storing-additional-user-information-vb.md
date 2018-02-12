@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7b9acc02a1280446b9826c3f8f0022b4726139c7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a40238605e8fb3e26d80264af9156eec634affbe
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="storing-additional-user-information-vb"></a>Ukládání informací o uživatelích další (VB)
 ====================
@@ -353,7 +353,7 @@ I skončila pomocí následujících `LayoutTemplate`, `ItemTemplate`, a `ItemSe
 
 `LayoutTemplate` Definuje kód vysílaných ovládacího prvku, při `ItemTemplate` vykreslí jednotlivých položek vrácených ve třídě SqlDataSource. `ItemTemplate`Na výsledný kód je umístěn v `LayoutTemplate`na `itemPlaceholder` ovládacího prvku. Kromě `itemPlaceholder`, `LayoutTemplate` zahrnuje DataPager řízení, které omezuje ListView zobrazí právě 10 komentáře návštěv na stránce (výchozí) a vykreslí rozhraní stránkování.
 
-Moje `ItemTemplate` zobrazí každý návštěv komentář předmět v `<h4>` element spolu s textem nacházející se pod předmět. Má data vrácená této syntaxe pro zobrazení textu `Eval("Body")` příkaz vazby dat, převede ji na řetězec a nahradí zalomení s `<br />` elementu. Tento převod je třeba zobrazit konce řádků zadaný při odesílání komentář, od prázdných znaků je ignorován v HTML. Podpis uživatele se zobrazí pod text kurzívou následuje uživatele domácí města, odkaz na jeho domovskou stránku, datum a čas vytvoření poznámky a uživatelské jméno osoby, která zbývajících komentář.
+Moje `ItemTemplate` zobrazí každý návštěv komentář předmět v `<h4>` element spolu s textem nacházející se pod předmět. Syntaxe pro zobrazení textu má dat vrácených `Eval("Body")` příkaz vazby dat, převede ji na řetězec a nahradí zalomení s `<br />` elementu. Tento převod je třeba zobrazit konce řádků zadaný při odesílání komentář, od prázdných znaků je ignorován v HTML. Podpis uživatele se zobrazí pod text kurzívou následuje uživatele domácí města, odkaz na jeho domovskou stránku, datum a čas vytvoření poznámky a uživatelské jméno osoby, která zbývajících komentář.
 
 Chcete-li zobrazit stránku prostřednictvím prohlížeče chvíli trvat. Měli byste vidět komentáře, které jste přidali do návštěv v kroku 5 zobrazí tady.
 

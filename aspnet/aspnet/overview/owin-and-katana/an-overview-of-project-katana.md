@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 8f28116f88f3cf5143d3d5c9821519d62c4e5452
-ms.sourcegitcommit: 6541c8b11001dd617adf5eb04c814cda165070b9
+ms.openlocfilehash: ceb7d3a7d1cb1685c0f1e62698f508c9a73e77c2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="an-overview-of-project-katana"></a>Přehled Katana projektu
 ====================
@@ -29,7 +29,7 @@ podle [Howard Dierking](https://github.com/howarddierking)
 
  Bez ohledu na to zda jeden diskutuje vývojáře framework nebo koncového uživatele produktu, je důležité si uvědomit, základní motivace pro vytvoření produktu – a součástí, která zahrnuje zjištěním produktu vytvořený pro. ASP.NET byl původně vytvořen se dvěma zákazníky v paměti.   
   
-**První skupinu zákazníků se vývojáři classic ASP.** V době byl ASP jednu primární technologie pro vytváření dynamické a datové weby a aplikace podle propojují značek a skripty na straně serveru. Modul runtime ASP zadat skript na straně serveru sadu objektů, které abstrahované základní aspekty základního protokolu HTTP a webový server a zadaný přístup k další služby takové správy stavu relace a aplikace, do mezipaměti, atd. Při výkonné, stala klasické aplikace ASP může být obtížné spravovat jejich vzrostla v velikost a složitost. Důvodem byla z velké části chybí struktury v nalezen ve vytváření skriptů prostředí, v kombinaci s duplikace kódu vyplývající z prokládání kódu a kódu. Aby bylo možné využít při adresování některé jeho problémy síly klasické ASP, ASP.NET trvalo výhod kód organizace poskytované objektově orientované jazyky rozhraní .NET Framework při zachování také programovací model na straně serveru do které klasické ASP měl zvětšil uzpůsobené vývojáři.
+**První skupinu zákazníků se vývojáři classic ASP.** V době byl ASP jednu primární technologie pro vytváření dynamické a datové weby a aplikace podle propojují značek a skripty na straně serveru. Modul runtime ASP zadat skript na straně serveru sadu objektů, které abstrahované základní aspekty základního protokolu HTTP a webový server a zadaný přístup k další služby takové správy stavu relace a aplikace, do mezipaměti, atd. Při výkonné, stala klasické aplikace ASP může být obtížné spravovat jejich vzrostla v velikost a složitost. Důvodem byla z velké části chybí struktura nalezena ve vytváření skriptů prostředí, v kombinaci s duplikace kódu vyplývající z prokládání kódu a kódu. Aby bylo možné využít při adresování některé jeho problémy síly klasické ASP, ASP.NET trvalo výhod kód organizace poskytované objektově orientované jazyky rozhraní .NET Framework při zachování také programovací model na straně serveru do které klasické ASP měl zvětšil uzpůsobené vývojáři.
 
 **Druhé skupině cílových zákazníků pro technologii ASP.NET se vývojáři obchodní aplikace systému Windows.** Na rozdíl od classic ASP vývojáři, kteří byli uzpůsobené pro zápis kódu HTML a kód ke generování další značka jazyka HTML, vývojáři WinForms (jako vývojáři VB6 před sebou) byly uzpůsobené pro prostředí pro dobu návrhu, které obsahovala na plátno a širokou škálu uživatele ovládací prvky rozhraní. První verzi technologie ASP.NET – taky známé jako "Webových formulářů" zadaný na podobném principu čas návrh spolu s modelem událost na straně serveru pro součásti uživatelského rozhraní a sada funkcí infrastruktury (třeba ViewState) k vytvoření prostředí bezproblémové vývojáře mezi klientem a programování na straně serveru. Webové formuláře efektivně hid bezstavové povaze Web v rámci modelu stavová událost, která byla pro vývojáře WinForms.
 

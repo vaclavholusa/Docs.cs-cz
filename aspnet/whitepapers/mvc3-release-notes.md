@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 92a6dee24b8942d721e3537a712be141155e61df
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: 058b7c6fe6eeeea4403e7e5fdc05bb44d2ba1300
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -255,7 +255,7 @@ Dialogové okno, které použijete k vytvoření nové projekty ASP.NET MVC 3 ob
 
 #### <a name="project-templates-are-now-html5-enabled"></a>Šablony projektů jsou nyní HTML5 povoleno
 
-Dialogové okno Nový projekt nyní obsahuje možnost Přidat funkce specifické pro HTML5 šablon projektu. Když vyberete možnost, budou zobrazení má být vygenerován, které obsahují novou HTML5 `<header>`, `<footer>`, a `<navigation>` elementy. elementy.
+Dialogové okno Nový projekt nyní obsahuje možnost Přidat funkce specifické pro HTML5 šablon projektu. Když vyberete možnost, budou zobrazení má být vygenerován, které obsahují novou HTML5 `<header>`, `<footer>`, a `<navigation>` elementy.
 
 Všimněte si, že starší verze prohlížečů nepodporují značky specifické pro HTML5. Chcete-li toto omezení vyřešit, šablony projektů jazyka HTML5 obsahovat odkaz na knihovnu Modernizr. (Viz další část).
 
@@ -608,7 +608,7 @@ Případně, chcete-li vypnout ověření žádosti pro každou vlastnost modelu
 ## <a name="breaking-changes"></a>Nejnovější změny
 
 - Došlo ke změně pořadí zpracování pro filtry výjimek pro filtry výjimek, které mají stejnou *pořadí* hodnotu. ASP.NET MVC 2 a starší, filtry výjimky na řadiči, který měl stejné *pořadí* jako na metodu akce byly spuštěny před filtry výjimek na metodu akce. To může obvykle být tento případ, kdy byly použity filtry výjimek bez zadané *pořadí* hodnotu. V architektuře ASP.NET MVC 3 Tento pořadí změněno tak, aby se nejprve provede nejvíce konkrétní obslužná rutina výjimky. Jako v předchozích verzích Pokud *pořadí* explicitně zadána vlastnost, filtry jsou spuštěny v uvedeném pořadí.
-- Přidat novou vlastnost s názvem *FileExtensions* k *VirtualPathProviderViewEngine* základní třídy. Při vyhledávání zobrazení cesty (a ne název), pouze zobrazení s příponou souboru, který je součástí považuje za této nové vlastnosti seznamu. To je narušující změně pro ty, kteří zaregistrovat vlastní sestavení zprostředkovatele povolit rozšíření vlastního souboru pro zobrazení webové formuláře a a odkazují tyto zobrazení pomocí úplnou cestu, nikoli název. Řešením je změnit hodnotu *FileExtensions* vlastnost, aby zahrnovala vlastního souboru rozšíření.
+- Přidat novou vlastnost s názvem *FileExtensions* k *VirtualPathProviderViewEngine* základní třídy. Při vyhledávání zobrazení cesty (a ne název), pouze zobrazení s příponou souboru, který je součástí považuje za této nové vlastnosti seznamu. Toto je narušující změně pro ty, kteří zaregistrujte poskytovatele vlastní sestavení povolit rozšíření vlastního souboru pro zobrazení webové formuláře a odkazují tyto zobrazení pomocí úplnou cestu, nikoli název. Řešením je změnit hodnotu *FileExtensions* vlastnost, aby zahrnovala vlastního souboru rozšíření.
 
 <a id="_Toc276711795"></a>
 ## <a name="known-issues"></a>Známé problémy

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility
-ms.openlocfilehash: 57ff9db2edbf307f2442443dc14e69b0498f7475
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 5e7e807a0107f1f500d43b5ffd4362b11f53118b
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="factory-based-middleware-activation-in-aspnet-core"></a>Aktivace na základě Factory middlewaru v ASP.NET Core
 
@@ -84,3 +84,4 @@ Výchozí hodnota `IMiddlewareFactory` implementace [MiddlewareFactory](/dotnet/
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Middleware](xref:fundamentals/middleware/index)
+* [Aktivace na základě Factory middlewaru s kontejner třetích stran](xref:fundamentals/middleware/extensibility-third-party-container)

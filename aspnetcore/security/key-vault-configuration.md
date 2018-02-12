@@ -8,11 +8,11 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 1318ae855154dd8fc91ff0c19b0ab111d86c71e6
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1a91a87fb90d4d4651e07f32415e4364c8e2d993
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Poskytovatel konfigurace služby Azure Key Vault
 
@@ -77,7 +77,7 @@ Při spuštění aplikace zobrazuje webová stránka načtená tajný hodnoty:
 `AddAzureKeyVault`také poskytuje přetížení, které přijímá implementace `IKeyVaultSecretManager`, která umožňuje řídit způsob klíče tajné klíče trezoru se převedou na konfigurační klíče. Například můžete implementovat rozhraní načíst tajný hodnot na základě předpony hodnoty, které poskytnete při spuštění aplikace. To vám například umožňuje načíst tajné klíče založené na verzi aplikace.
 
 > [!WARNING]
-> Nepoužívejte předpony na tajné klíče trezoru klíčů, umístit do stejné trezoru klíčů tajné klíče pro víc aplikací nebo umístit prostředí tajné klíče (například *vývoj* verus *produkční* tajné klíče) do stejné trezor. Doporučujeme různé aplikace a vývoj nebo produkční prostředí použít samostatné trezorů klíčů izolovat aplikace prostředí pro nejvyšší úroveň zabezpečení.
+> Nepoužívejte předpony na tajné klíče trezoru klíčů, umístit do stejné trezoru klíčů tajné klíče pro víc aplikací nebo umístit prostředí tajné klíče (například *vývoj* versus *produkční* tajné klíče) do stejné trezor. Doporučujeme různé aplikace a vývoj nebo produkční prostředí použít samostatné trezorů klíčů izolovat aplikace prostředí pro nejvyšší úroveň zabezpečení.
 
 Pomocí druhého ukázkovou aplikaci, vytvořte tajný klíč v trezoru klíčů pro `5000-AppSecret` (tečky nejsou povoleny v trezoru klíčů názvů tajných klíčů) představující tajný klíč aplikace pro 5.0.0.0 verzi vaší aplikace. Pro jinou verzi, 5.1.0.0, vytvoříte tajný klíč pro `5100-AppSecret`. Jednotlivé verze aplikace načítá vlastní tajná hodnota do jeho konfiguraci jako `AppSecret`, vypuzovacího vypnout verze načtenou tajný klíč. Implementace tohoto příkladu je zobrazena níže:
 

@@ -11,11 +11,11 @@ ms.prod: .net-framework
 ms.technology: dotnet-mvc
 ms.devlang: dotnet
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: badc1c9b10ac27c3d876e3331c855a9d5904d27d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7a580c6c6236b375ea54ef4e9978fff6993d885a
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>Migrace aplikací ASP.NET MVC do kontejnerů s Windows
 
@@ -73,7 +73,7 @@ Klikněte na tlačítko **publikovat**, a Visual Studio zkopíruje všechny pot�
 
 Definujte Docker image v soubor Docker. Soubor Docker obsahuje pokyny pro základní bitovou kopii, další součásti, aplikace, kterou chcete spustit a ostatní konfigurace Image.  Soubor Docker je vstup `docker build` příkaz, který vytvoří bitovou kopii.
 
-Vytvoříte bitovou kopii na základě `microsft/aspnet` image uložená na [úložiště Docker Hub](https://hub.docker.com/r/microsoft/aspnet/).
+Vytvoříte bitovou kopii na základě `microsoft/aspnet` image uložená na [úložiště Docker Hub](https://hub.docker.com/r/microsoft/aspnet/).
 Základní image `microsoft/aspnet`, je bitová kopie systému Windows Server. Obsahuje jádro systému Windows Server, IIS a ASP.NET 4.6.2. Když spustíte tuto bitovou kopii do vašeho kontejneru, automaticky spustí službu IIS a nainstalované weby.
 
 Soubor Docker, která vytvoří image vypadá takto:

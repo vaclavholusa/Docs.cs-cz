@@ -1,65 +1,172 @@
 ---
 title: "Řešení potíží s ASP.NET Core ve službě IIS"
 author: guardrex
-description: "Zjistěte, jak diagnostikovat problémy s IIS nasazení aplikací ASP.NET Core."
+description: "Zjistěte, jak diagnostikovat problémy s Internetové informační služby (IIS) nasazení aplikací ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/13/2017
+ms.date: 02/07/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: c68070a9cba5667504d1ad4927b02b73f83e6573
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 65173e0101a17c64f4cde583e5bbb9fb0a9c7718
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>Řešení potíží s ASP.NET Core ve službě IIS
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-O vyřešení problémů s nasazením služby IIS:
+Tento článek obsahuje pokyny o tom, jak diagnostikovat ASP.NET Core problém při spuštění aplikace při hostování s [Internetové informační služby (IIS)](/iis). Informace v tomto článku se vztahují na hostování ve službě IIS na serveru Windows a Windows Desktop.
 
-* Studie výstup prohlížeče.
-* Zkontrolovat, zda systém **aplikace** protokolu prostřednictvím **Prohlížeč událostí**.
-* Povolit `stdout` protokolování. **ASP.NET Core modulu** protokolu nachází na v zadané cestě *stdoutLogFile* atribut `<aspNetCore>` element v *web.config*. Všechny složky v cestě uvedené v hodnotě atributu musí existovat v nasazení. Nastavit *stdoutLogEnabled* k `true`. Aplikace, které používají `Microsoft.NET.Sdk.Web` SDK k vytvoření *web.config* souboru výchozí *stdoutLogEnabled* nastavení `false`, takže ručně, zadejte *web.config* souboru nebo upravte soubor. Chcete-li povolit `stdout` protokolování.
+V sadě Visual Studio, výchozí projekt ASP.NET Core [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) hostování během ladění. A *502.5 selhání procesu* k tomu dojde při ladění místně může být troubleshooted pomocí doporučení v tomto tématu.
 
-Použijte informace z těchto tří zdrojů s [běžné chyby referenční téma](xref:host-and-deploy/azure-iis-errors-reference) ke zjištění problému. Postupujte podle pomoc při řešení potíží poskytuje k vyřešení problému.
+Řešení potíží další témata:
 
-Několik běžných chyb, dokud modul nezobrazí v prohlížeči, protokolu aplikace a ASP.NET Core modulu protokolu *startupTimeLimit* (výchozí: 120 sekundách) a *startupRetryCount* (výchozí: 2) byly splněny. Proto počkejte úplné šest minut před deducing které modulu se nepodařilo spustit proces pro aplikaci.
+[Řešení potíží s ASP.NET Core ve službě Azure App Service](xref:host-and-deploy/azure-apps/troubleshoot)  
+I když používá služby App Service [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) a služby IIS pro hostitele aplikace v tématu vyhrazené pokyny, které jsou specifické pro aplikaci služby.
 
-A spusťte aplikaci přímo na Kestrel je jeden rychlý způsob, jak zjistit, zda aplikace funguje správně. Pokud aplikace byl publikován jako [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd), provést `dotnet <assembly_name>.dll` ve složce nasazení, což je fyzická cesta k aplikaci služby IIS. Pokud aplikace byl publikován jako [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd)spusťte aplikaci je spustitelný soubor přímo z příkazového řádku, `<assembly_name>.exe`, ve složce nasazení. Pokud Kestrel naslouchá na výchozí port 5000, aplikace by měly být dostupné v `http://localhost:5000/`. Pokud aplikace odpovídá za normálních okolností na adrese Kestrel koncový bod, problém je pravděpodobnější související s konfigurací reverzní proxy server a méně pravděpodobně v aplikaci.
+[Zpracování chyb](xref:fundamentals/error-handling)  
+Můžete zjistit, jak se budou zpracovávat chyby v aplikacích ASP.NET Core během vývoje v místním systému.
 
-Jeden způsob jak určit, jestli je správně funguje reverzní proxy server je provést žádost o jednoduché statických souborů pro šablony stylů, skript nebo bitovou kopii z aplikace statické soubory v *wwwroot* pomocí [Middleware statické soubory](xref:fundamentals/static-files). Pokud aplikace může obsluhovat statické soubory, ale další koncové body a zobrazení MVC selhávají, problém je méně pravděpodobné týkající se konfigurace reverzní proxy server a vyšší pravděpodobnost v rámci aplikace (pro příklad směrování MVC nebo 500 – Vnitřní chyba serveru).
+[Další informace k ladění pomocí sady Visual Studio](/visualstudio/debugger/getting-started-with-the-debugger)  
+Toto téma představuje funkce ladicího programu sady Visual Studio.
 
-Pokud Kestrel spustí běžným způsobem za služby IIS, ale aplikace se nespustí v systému po úspěšném spuštění místně, proměnné prostředí můžete dočasně zařadí do *web.config* nastavit `ASPNETCORE_ENVIRONMENT` k `Development`. Tak dlouho, dokud prostředí není přepsána ve spuštění aplikace, nastavení proměnné prostředí umožňuje [vývojáře výjimka stránky](xref:fundamentals/error-handling) zobrazí při spuštění aplikace. Nastavení proměnné prostředí pro `ASPNETCORE_ENVIRONMENT` tímto způsobem doporučujeme pouze pro testování nebo pracovní servery, které nejsou vystaveny k Internetu. Nezapomeňte odebrat proměnnou prostředí z *web.config* souboru po dokončení. Informace o nastavení proměnné prostředí prostřednictvím *web.config*, najdete v části [environmentVariables podřízený element aspNetCore](xref:host-and-deploy/aspnet-core-module#setting-environment-variables).
+## <a name="app-startup-errors"></a>Chyby při spuštění aplikace
 
-Ve většině případů povolení protokolování aplikací pomáhá při řešení potíží s aplikací nebo reverzní proxy server. V tématu [protokolování](xref:fundamentals/logging/index) Další informace.
+**502.5 zpracování selhání**  
+Pracovní proces se nezdaří. Aplikaci nelze spustit.
 
-Poslední tip pro odstraňování potíží se vztahují k aplikacím, které se nepodařilo spustit po upgradu buď .NET Core SDK na vývoj pro počítače nebo balíček verze v aplikaci. V některých případech je možné osamocené balíčky ukončit aplikaci při provádění hlavních aktualizací. Většina těchto problémů je možné vyřešit:
+Základní modul technologie ASP.NET pokusí spustit pracovní proces, ale se nepodaří spustit. Příčinu selhání spuštění procesu lze určit obvykle položek v [protokolu událostí aplikace](#application-event-log) a [ASP.NET Core modulu stdout protokolu](#aspnet-core-module-stdout-log).
 
-* Odstraňování `bin` a `obj` složek v projektu.
-* Probíhá vymazání balíček ukládá do mezipaměti na `%UserProfile%\.nuget\packages\` a `%LocalAppData%\Nuget\v3-cache`.
-* Obnovení a projekt znovu sestavit.
-* Potvrzení, že předchozí nasazení na serveru úplně odstranit před novým nasazením aplikace.
+*502.5 selhání procesu* chybová stránka je vrácena, pokud nesprávnou konfiguraci aplikace nebo hostování způsobí, že pracovní proces selhání:
+
+![Okno prohlížeče zobrazující stránku 502.5 selhání procesu](troubleshoot/_static/process-failure-page.png)
+
+**500 Internal Server Error**  
+Spuštění aplikace, ale chybu brání splnění požadavku server.
+
+Při spuštění nebo při vytváření odpovědi, k této chybě dojde v kódu aplikace. Odpovědi může obsahovat žádný obsah, nebo se může zobrazit odpověď *500 – Vnitřní chyba serveru* v prohlížeči. V protokolu událostí aplikace obvykle stavy normálně spustil aplikaci. Z hlediska serveru, který je správná. Aplikace se spustit, ale nemůže generovat platnou odpověď. [Spuštění aplikace příkazového řádku](#run-the-app-at-a-command-prompt) na serveru nebo [povolit protokol stdout ASP.NET Core modulu](#aspnet-core-module-stdout-log) k vyřešení tohoto problému.
+
+**Obnovení připojení**
+
+Pokud dojde k chybě po odeslání hlaviček, je příliš pozdní pro server k odeslání **500 – Vnitřní chyba serveru** když dojde k chybě. Často se to stane, když dojde k chybě během serializace komplexních objektů pro odpověď. Tento typ chyby se zobrazí jako *obnovení připojení* chyba na straně klienta. [Protokolování aplikací](xref:fundamentals/logging/index) mohou pomoci při odstraňování těchto typů chyb.
+
+## <a name="default-startup-limits"></a>Výchozí omezení spuštění
+
+Modul základní ASP.NET je konfigurován s výchozím *startupTimeLimit* 120 sekundách. Pokud necháte nastavenou výchozí hodnotu, aplikace může trvat až dvě minuty spustit před modul protokoly selhání procesu. Informace o konfiguraci modulu najdete v tématu [atributy elementu aspNetCore](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element).
+
+## <a name="troubleshoot-app-startup-errors"></a>Řešení chyb při spuštění aplikace
+
+### <a name="application-event-log"></a>Protokol událostí aplikace
+
+Přístup k protokolu událostí aplikace:
+
+1. Otevření nabídky Start, vyhledejte **Prohlížeč událostí**a pak vyberte **Prohlížeč událostí** aplikace.
+1. V **Prohlížeč událostí**, otevřete **protokoly systému Windows** uzlu.
+1. Vyberte **aplikace** otevřít protokol událostí aplikace.
+1. Vyhledejte chyby související s selhání aplikace. Chyby mít hodnotu *modulu IIS AspNetCore* nebo *služby IIS Express AspNetCore modulu* v *zdroj* sloupce.
+
+### <a name="run-the-app-at-a-command-prompt"></a>Spuštění aplikace příkazového řádku
+
+Mnoho chyb spuštění nepřispívají užitečné informace v protokolu událostí aplikace. Příčinu chyby můžete najít spuštěním aplikace na příkazovém řádku v hostitelském systému.
+
+**Nasazení závislé na Framework**
+
+Pokud je aplikace [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd):
+
+1. Na příkazovém řádku přejděte do složky pro nasazení a spuštění aplikace spuštěním sestavení aplikace s *dotnet.exe*. V následujícím příkazu nahraďte název sestavení aplikace pro \<assembly_name >: `dotnet .\<assembly_name>.dll`.
+1. Výstup z aplikace, zobrazuje všechny chyby konzoly se zapíše do okna konzoly.
+1. Dojde-li chyby při vytváření požadavku na aplikaci, vytvořte žádost na hostitele a port, kde Kestrel naslouchá. Pomocí výchozího hostitele a post, vydalo požadavek na `http://localhost:5000/`. Pokud aplikace odpovídá za normálních okolností na adrese Kestrel koncový bod, problém je pravděpodobnější související s konfigurací reverzní proxy server a méně pravděpodobně v aplikaci.
+
+**Samostatná nasazení**
+
+Pokud je aplikace [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd):
+
+1. Na příkazovém řádku přejděte do složky pro nasazení a spustit spustitelný soubor aplikace. V následujícím příkazu nahraďte název sestavení aplikace pro \<assembly_name >: `<assembly_name>.exe`.
+1. Výstup z aplikace, zobrazuje všechny chyby konzoly se zapíše do okna konzoly.
+1. Dojde-li chyby při vytváření požadavku na aplikaci, vytvořte žádost na hostitele a port, kde Kestrel naslouchá. Pomocí výchozího hostitele a post, vydalo požadavek na `http://localhost:5000/`. Pokud aplikace odpovídá za normálních okolností na adrese Kestrel koncový bod, problém je pravděpodobnější související s konfigurací reverzní proxy server a méně pravděpodobně v aplikaci.
+
+### <a name="aspnet-core-module-stdout-log"></a>ASP.NET Core modulu stdout protokolu
+
+Povolení a zobrazit protokoly stdout:
+
+1. Přejděte do složky pro nasazení webu v hostitelském systému.
+1. Pokud *protokoly* složky není přítomna, vytvořte složku. Pokyny o tom, jak povolit MSBuild k vytvoření *protokoly* složky v nasazení automaticky, najdete [adresářovou strukturu](xref:host-and-deploy/directory-structure) tématu.
+1. Upravit *web.config* souboru. Nastavit **stdoutLogEnabled** k `true` a změňte **stdoutLogFile** cesta tak, aby odkazoval *protokoly* složky (například `.\logs\stdout`). `stdout`v cestě je předpona názvu souboru protokolu. Časové razítko, id procesu a přípona souboru se přidávají automaticky při vytvoření protokolu. Pomocí `stdout` jako předpona názvu souboru, má název souboru typické protokolu *stdout_20180205184032_5412.log*. 
+1. Uložte aktualizovaný *web.config* souboru.
+1. Vytvořte žádost na aplikaci.
+1. Přejděte na *protokoly* složky. Najít a otevřít poslední stdout protokol.
+1. Studie v protokolu chyb.
+
+**Důležité!** Zakážete stdout protokolování po dokončení odstraňování potíží.
+
+1. Upravit *web.config* souboru.
+1. Nastavit **stdoutLogEnabled** k `false`.
+1. Uložte soubor.
+
+> [!WARNING]
+> Nepodařilo se zakázat protokol stdout může vést k selhání aplikace nebo serveru. Neexistuje žádné omezení velikosti souboru protokolu nebo počet soubory protokolů vytvořené.
+>
+> Pro běžné protokolování v aplikaci ASP.NET Core, použijte knihovnu protokolování, který omezuje velikost souboru protokolu a otočí protokoly. Další informace najdete v tématu [poskytovatelů třetích stran protokolování](xref:fundamentals/logging/index#third-party-logging-providers).
+
+## <a name="enabling-the-developer-exception-page"></a>Povolení stránce vývojáře výjimky
+
+`ASPNETCORE_ENVIRONMENT` [Proměnné prostředí lze přidat do souboru web.config](xref:host-and-deploy/aspnet-core-module#setting-environment-variables) a spusťte aplikaci ve vývojovém prostředí. Tak dlouho, dokud není prostředí přepsána ve spuštění aplikace pomocí `UseEnvironment` nastavení proměnné prostředí umožňuje na tvůrce hostitele, [vývojáře výjimka stránky](xref:fundamentals/error-handling) zobrazí při spuštění aplikace.
+
+```xml
+<aspNetCore processPath="dotnet"
+      arguments=".\MyApp.dll"
+      stdoutLogEnabled="false"
+      stdoutLogFile=".\logs\stdout">
+  <environmentVariables>
+    <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="Development" />
+  </environmentVariables>
+</aspNetCore>
+```
+
+Nastavení proměnné prostředí pro `ASPNETCORE_ENVIRONMENT` doporučujeme použít pouze pro použití v přípravy a testování serverů, které nejsou vystaveny v Internetu. Odebrat proměnnou prostředí z *web.config* soubor po vyřešení potíží. Informace o nastavení proměnných prostředí *web.config*, najdete v části [environmentVariables podřízený element aspNetCore](xref:host-and-deploy/aspnet-core-module#setting-environment-variables).
+
+## <a name="common-startup-errors"></a>Běžné chyby při spuštění 
+
+Najdete v článku [ASP.NET Core běžné chyby odkaz](xref:host-and-deploy/azure-iis-errors-reference). Většina běžné problémy, které brání spuštění aplikací jsou popsané v referenčním tématu.
+
+## <a name="slow-or-hanging-app"></a>Pomalá nebo měny aplikace
+
+Pokud aplikace reaguje pomalu nebo přestane reagovat na vyžádání, získání a analyzovat [souboru s výpisem](/visualstudio/debugger/using-dump-files). Souborů výpisu paměti se dají získat pomocí kteréhokoli z následujících nástrojů:
+
+* [ProcDump](/sysinternals/downloads/procdump)
+* [Nástroj DebugDiag](https://www.microsoft.com/download/details.aspx?id=49924)
+* WinDbg: [stáhnout nástroje pro ladění pro systém Windows](https://developer.microsoft.com/windows/hardware/download-windbg), [WinDbg ladění pomocí](/windows-hardware/drivers/debugger/debugging-using-windbg)
+
+## <a name="remote-debugging"></a>Vzdálené ladění
+
+V tématu [vzdáleného ladění ASP.NET Core ve vzdáleném počítači služby IIS v aplikaci Visual Studio 2017](/visualstudio/debugger/remote-debugging-aspnet-on-a-remote-iis-computer) v dokumentaci sady Visual Studio.
+
+## <a name="application-insights"></a>Application Insights
+
+[Application Insights](/azure/application-insights/) poskytuje telemetrie z aplikace hostované službou IIS, včetně protokolování a funkce generování sestav. Application Insights lze pouze sestavy chyb, které se provádějí až po aplikace spustí, když je k dispozici funkcí protokolování aplikace. Další informace najdete v tématu [Application Insights pro ASP.NET Core](/azure/application-insights/app-insights-asp-net-core).
+
+## <a name="additional-troubleshooting-advice"></a>Další pomoc při řešení potíží
+
+Někdy se nezdaří funkční aplikaci okamžitě po provedení upgradu buď .NET Core SDK na vývoj pro počítače nebo balíček verze v aplikaci. V některých případech je možné osamocené balíčky ukončit aplikaci při provádění hlavních aktualizací. Většina těchto problémů odstraněny podle těchto pokynů:
+
+1. Odstranit *bin* a *obj* složek.
+1. Zrušte balíček ukládá do mezipaměti na *% UserProfile %\\.nuget\\balíčky* a *LocalAppData %\\Nuget\\v3 mezipaměti*.
+1. Obnovit a znovu sestavte projekt.
+1. Potvrzení, že předchozí nasazení na serveru byla úplně odstranit před opětovného nasazení aplikace.
 
 > [!TIP]
 > Je spuštění vhodný způsob k vymazání mezipamětí balíček `dotnet nuget locals all --clear` z příkazového řádku.
 > 
-> Vymazání mezipaměti balíčku můžete také provést pomocí [nuget.exe](https://www.nuget.org/downloads) nástroj a provádění příkazu `nuget locals all -clear`. *nuget.exe* není připojené instalace s Windows 10 a musí být samostatně získat z webu NuGet.
-<!--
-> [!TIP]
-> A convenient way to clear package caches is to:
->
-> * Obtain the *NuGet.exe* tool from [NuGet.org](https://www.nuget.org/).
-> * Add the path to *NuGet.exe* to the system PATH.
-> * Execute `nuget locals all -clear` from a command prompt.
->
-> Alternatively, execute `dotnet nuget locals all --clear` from a command prompt without obtaining *NuGet.exe*. -->
+> Vymazání mezipaměti balíčku můžete také provést pomocí [nuget.exe](https://www.nuget.org/downloads) nástroj a provádění příkazu `nuget locals all -clear`. *nuget.exe* není připojené instalace s operačním systémem Windows a musí být získána odděleně od [webu NuGet](https://www.nuget.org/downloads).
 
 ## <a name="additional-resources"></a>Další zdroje
 
+* [Úvod do zpracování chyb v ASP.NET Core](xref:fundamentals/error-handling)
 * [Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
 * [Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
+* [Řešení potíží s ASP.NET Core ve službě Azure App Service](xref:host-and-deploy/azure-apps/troubleshoot)

@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 27150d314b6861f1098e6ef4a7de94e7b371a78e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 64ac4e3575f69c164ba053943984ef25f906d7f4
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/11/2018
 ---
 <a name="introduction-to-signalr"></a>Úvod do SignalR
 ====================
@@ -35,7 +35,7 @@ Funkce SignalR technologie ASP.NET je knihovna pro vývojáře využívající t
 
 SignalR slouží k přidání žádné řazení funkce "v reálném čase" webu do aplikace ASP.NET. Při chat se často používá jako příklad, můžete provést mnoho více. Kdykoli uživatel aktualizuje na webové stránce zobrazíte nová data nebo stránce implementuje [dlouhé dotazování](http://en.wikipedia.org/wiki/Push_technology#Long_polling) načte nová data, je kandidátem pro použití funkce SignalR. Mezi příklady patří řídicí panely a monitorování aplikací, spolupráce aplikace (např. souběžných úpravy dokumentů), úlohy, Probíhá aktualizace a v reálném čase formuláře.
 
-Funkce SignalR také umožňuje zcela nové typy webových aplikací, které vyžadují vysoká frekvence aktualizace ze serveru, například v reálném čase herní. Skvělé příklad tohoto najdete v tématu [ShootR hra.](http://shootr.signalr.net/)
+Funkce SignalR také umožňuje zcela nové typy webových aplikací, které vyžadují vysoká frekvence aktualizace ze serveru, například v reálném čase herní.
 
 Funkce SignalR poskytuje jednoduché rozhraní API pro vytvoření klienta a serveru vzdálených volání procedur (RPC) volají funkce JavaScript v klientovi prohlížeče (a jiné platformy klienta) z kódu .NET na straně serveru. Funkce SignalR také zahrnuje rozhraní API pro správu připojení (například připojit a odpojit událostí) a seskupování připojení.
 

@@ -1,7 +1,7 @@
 ---
 title: "Vytvoření stránky Razor webové aplikace s ASP.NET Core"
 author: rick-anderson
-description: "Vytvoření stránky Razor webové aplikace v systému Windows v sadě Visual Studio, ASP.NET Core a EF jádra."
+description: "Vytvoření stránky Razor webové aplikace v systému Windows pomocí sady Visual Studio, ASP.NET Core a EF jádra."
 manager: wpickett
 ms.author: riande
 ms.date: 09/08/2017
@@ -9,15 +9,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/index
-ms.openlocfilehash: 146c6907dfd09f565cb784ce7e555f8cfc01f5cf
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0a3d5ae039bc73d20cc05140e53a8bc4daaefd6c
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core"></a>Vytvoření stránky Razor webové aplikace s ASP.NET Core
 
-Tato řada vysvětluje základy vytváření stránky Razor webové aplikace s ASP.NET Core pomocí sady Visual Studio. Verze Mac, najdete v části [to](xref:tutorials/razor-pages-mac/index). Visual Studio Code verze, najdete v části [to](xref:tutorials/razor-pages-vsc/index).
+Tato řada vysvětluje základy vytváření stránky Razor webové aplikace s ASP.NET Core pomocí sady Visual Studio. Jiné verze obsahovala tuto řadu [verze Mac](xref:tutorials/razor-pages-mac/index) a [verze Visual Studio Code](xref:tutorials/razor-pages-vsc/index).
 
 1. [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 1. [Přidání modelu do aplikace pro stránky Razor](xref:tutorials/razor-pages/model)

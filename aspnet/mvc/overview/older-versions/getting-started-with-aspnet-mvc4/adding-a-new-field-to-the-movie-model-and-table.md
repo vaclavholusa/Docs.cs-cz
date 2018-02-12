@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 0c094c4d4c99702a5b513717126872a254ca3e5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9965c8a755857a8e8cb8ecbc6c467a6c856aa83d
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/11/2018
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>Přidání nové pole do modelu film a tabulky
 ====================
@@ -81,7 +81,7 @@ V **Konzola správce balíčků** okno, zadejte příkaz "Přidat migrace počá
 
 ![](adding-a-new-field-to-the-movie-model-and-table/_static/image7.png)
 
-Migrace Code First vytvoří další soubor třídy ve *migrace* složky (s názvem *{DateStamp}\_Initial.cs* ), a tato třída obsahuje kód, který vytvoří schématu databáze. Název souboru migrace je předem vyřešili s časovým razítkem usnadní řazení. Zkontrolujte *{DateStamp}\_Initial.cs* souboru, obsahuje pokyny pro vytvoření tabulky filmy pro film databáze. Při aktualizaci databáze v podle pokynů níže, tento *{DateStamp}\_Initial.cs* spustí a vytvoření souboru schéma databáze. Pak se **počáteční hodnoty** metoda spustí k naplnění databáze s testovacích datech.
+Migrace Code First vytvoří další soubor třídy ve *migrace* složky (s názvem *{DateStamp}\_Initial.cs* ), a tato třída obsahuje kód, který vytvoří schématu databáze. Název souboru migrace je předem vyřešili s časovým razítkem usnadní řazení. Zkontrolujte *{DateStamp}\_Initial.cs* souboru, obsahuje pokyny pro vytvoření tabulky filmy pro film databáze. Při aktualizaci databáze v podle pokynů níže, tento *{DateStamp}\_Initial.cs* soubor bude spustit a vytvořit schéma databáze. Pak se **počáteční hodnoty** metoda spustí k naplnění databáze s testovacích datech.
 
 V **Konzola správce balíčků**, zadejte příkazu "update-database" k vytvoření databáze a spusťte **počáteční hodnoty** metoda.
 

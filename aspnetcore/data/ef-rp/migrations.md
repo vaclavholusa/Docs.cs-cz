@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/migrations
-ms.openlocfilehash: e89d95702cb94556bc6e5dc73253c51acaa11578
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 32716ddcf7c2a7b11000c333453a0fde3030ae34
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>Migrace – základní EF s stránky Razor kurzu (4 8)
 
@@ -109,7 +109,7 @@ Předchozí kód je počáteční migrace. Tento kód byl vytvořen, když `migr
 Pokud se vytvoří počáteční migrace a ukončí databáze:
 
 * Generování kódu vytvoření databáze.
-* Kód pro vytvoření databáze není nutné spustit, protože databáze již odpovídá datový model. Pokud kód DB vytvoření běží, nemá proveďte požadované změny, protože databáze již odpovídá datový model.
+* Kód pro vytvoření databáze není nutné spustit, protože databáze již odpovídá datový model. Pokud kód vytvoření DB běží, nemá proveďte požadované změny, protože databáze již odpovídá datový model.
 
 Pokud chcete aplikaci nasadit do nového prostředí, pro vytvoření databáze musíte spustit kód pro vytvoření databáze.
 
@@ -181,7 +181,7 @@ info: Microsoft.EntityFrameworkCore.Database.Command[200101]
 Done.
 ```
 
-Snížit úroveň podrobností ve zprávách protokolu, můžete změnit úroveň protokolu v *appsettings. Development.JSON* souboru. Další informace najdete v tématu [Úvod k protokolování](xref:fundamentals/logging/index).
+Chcete-li snížit úroveň podrobností ve zprávách protokolu, změňte úrovní záznamu do protokolu v *appsettings. Development.JSON* souboru. Další informace najdete v tématu [Úvod k protokolování](xref:fundamentals/logging/index).
 
 Použití **Průzkumník objektů systému SQL Server** Kontrola databáze. Všimněte si, přidání `__EFMigrationsHistory` tabulky. `__EFMigrationsHistory` Tabulky uchovává informace o migrace, které byly použity k databázi. Zobrazení dat v `__EFMigrationsHistory` tabulky, zobrazuje jeden řádek na první migraci. V poslední protokolu v předchozím příkladu výstupu rozhraní příkazového řádku se zobrazuje příkaz INSERT, která vytváří tento řádek.
 

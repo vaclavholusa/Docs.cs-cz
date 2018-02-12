@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 54fa970d136de3903ae08b710b55f15f96f9a012
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 30c1062762c7a374079988c143d37377507eb16a
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>Začínáme s stránky Razor v ASP.NET Core
 
@@ -54,9 +54,6 @@ Stiskněte klávesu **F5** a spusťte aplikaci v režimu ladění nebo **Ctrl + 
 * Spuštění aplikace s **Ctrl + F5** (režim bez ladění) umožňuje provádět změny kódu, uložte soubor, aktualizujte stránku prohlížeče a podívejte se změny kódu. Celá řada vývojářů dávají přednost používání režimu bez ladění k rychlému spusťte aplikaci a zobrazit změny.
 
 [!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
-
->[!div class="step-by-step"]
-[Další krok: Přidání modelu](xref:tutorials/razor-pages/model)
 
 >[!div class="step-by-step"]
 [Další krok: Přidání modelu](xref:tutorials/razor-pages/model)

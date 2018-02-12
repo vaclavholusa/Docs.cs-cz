@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/environments
-ms.openlocfilehash: b40ee9b1c6feae4942f05d22dab776d3cf6c26a0
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: ec58b287dfb2b5a3ca4de6e67c20c8d0eb708fa4
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="working-with-multiple-environments"></a>Práce s několika prostředí
 
@@ -87,7 +87,7 @@ Změny provedené v projektu profily pravděpodobně projeví až po restartu we
 
 ### <a name="production"></a>Produkční
 
-Maximalizovat zabezpečení, výkonu a odolnosti aplikace musí být nakonfigurovaný v provozním prostředí. Některé běžné nastavení, která může mít provozním prostředí které by se liší od vývoj patří:
+Maximalizovat zabezpečení, výkonu a odolnosti aplikace musí být nakonfigurovaný v provozním prostředí. Některé běžné nastavení, které se liší od vývoj patří:
 
 * Ukládání do mezipaměti.
 * Prostředky na straně klienta jsou seskupeny, minifikovaný a potenciálně zpracovat z název CDN.

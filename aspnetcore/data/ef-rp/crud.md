@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/crud
-ms.openlocfilehash: 757aeb713b645cea0fe633b150784184d2d3571e
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 76ee951f62eff43ee1dd5316baf63f1ccd1de35e
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Vytvářet, číst, aktualizovat a odstraňovat – základní EF s stránky Razor (2 8)
 
@@ -92,7 +92,7 @@ Automaticky generovaný kód pro studenty indexovou stránku neobsahuje `Enrollm
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Details.cshtml.cs?name=snippet_Details&highlight=8-12)]
 
-`Include` a `ThenInclude` metody způsobit kontext k načtení `Student.Enrollments` navigační vlastnost a v rámci každé registrace `Enrollment.Course` navigační vlastnost. Tyto metody jsou examinied podrobně v tomto kurzu data související s čtení.
+`Include` a `ThenInclude` metody způsobit kontext k načtení `Student.Enrollments` navigační vlastnost a v rámci každé registrace `Enrollment.Course` navigační vlastnost. Tyto metody jsou podrobně v tomto kurzu data související s čtení.
 
 `AsNoTracking` Metoda zvyšuje výkon v situacích, když entity vrátil se neaktualizují v aktuálním kontextu. `AsNoTracking`je popsána dále v tomto kurzu.
 
@@ -197,7 +197,7 @@ Entita může být v jednom z následujících stavů:
 
 V aplikace na ploše změny stavu se obvykle nastavuje automaticky. Entita je pro čtení, změny a stav entity automaticky změnit tak, aby `Modified`. Volání metody `SaveChanges` vytvoří prohlášení aktualizace SQL, který aktualizuje pouze změněné vlastnosti.
 
-Ve webové aplikaci `DbContext` entity a zobrazí data je zrušen po vykreslení stránky, který čte. Když stránkách `OnPostAsync` metoda je volána, Přišla žádost o nový web s novou instanci třídy `DbContext`. Znovu čtení entita v tomto kontextu nové simuluje plochy zpracování.
+Ve webové aplikaci `DbContext` entity a zobrazí data je zrušen po vykreslení stránky, který čte. Pokud na stránce `OnPostAsync` metoda je volána, Přišla žádost o nový web s novou instanci třídy `DbContext`. Znovu čtení entita v tomto kontextu nové simuluje plochy zpracování.
 
 ## <a name="update-the-delete-page"></a>Odstranit stránku aktualizace
 

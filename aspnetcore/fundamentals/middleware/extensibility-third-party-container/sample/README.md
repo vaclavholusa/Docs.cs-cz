@@ -1,0 +1,3 @@
+# <a name="aspnet-middleware-extensibility-sample"></a>Ukázka rozšíření ASP.NET middlewaru
+
+Tento příklad ukazuje použití [IMiddleware](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.http.imiddleware) a [IMiddlewareFactory](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.http.imiddlewarefactory) s 3. stran kontejner vkládání závislostí, [jednoduché Injector](https://github.com/simpleinjector/SimpleInjector). Tento příklad znázorňuje funkce popsané v [aktivace na základě Factory middlewaru s kontejner třetích stran v ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/middleware/extensibility-third-party-container).

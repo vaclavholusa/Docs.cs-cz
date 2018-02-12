@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: c38f9b9a1bf1c523951e2cf1f3070858fe5daf04
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 37592c3b2099c2cb74dc42ad4a7937b32c281f65
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>Ukládání odpovědí do mezipaměti v ASP.NET Core
 
@@ -68,7 +68,7 @@ Další informace najdete v tématu [Úvod k ukládání do mezipaměti v pamět
 
 ### <a name="distributed-cache"></a>Distribuované mezipaměti
 
-Distribuované mezipaměti využívat k ukládání dat v paměti, když aplikace hostovaná v cloudu nebo server farmy. Mezipaměť je sdílet mezi servery, které zpracovávají požadavky. Klienta můžete odeslat požadavek, který má zpracovávaných jakýkoli server ve skupině a data do mezipaměti klienta je k dispozici. ASP.NET Core nabízí systému SQL Server a Redis distribuované mezipaměti.
+Distribuované mezipaměti využívat k ukládání dat v paměti, když aplikace hostovaná v cloudu nebo server farmy. Mezipaměť je sdílet mezi servery, které zpracovávají požadavky. Klient může odeslat svoji žádost, kterou provádí služba jakýkoli server ve skupině, pokud je k dispozici data uložená v mezipaměti klienta. ASP.NET Core nabízí systému SQL Server a Redis distribuované mezipaměti.
 
 Další informace najdete v tématu [práce s distribuované mezipaměti](xref:performance/caching/distributed).
 
@@ -86,12 +86,14 @@ Další informace najdete v tématu [distribuované mezipaměti značky pomocná
 
 ## <a name="responsecache-attribute"></a>Atribut ResponseCache
 
-`ResponseCacheAttribute` Určuje parametry, které jsou nezbytné pro nastavení odpovídající hlavičky v ukládání odpovědí do mezipaměti. V tématu [ResponseCacheAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.responsecacheattribute) popis parametry.
+[ResponseCacheAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.ResponseCacheAttribute) Určuje parametry, které jsou nezbytné pro nastavení odpovídající hlavičky v ukládání odpovědí do mezipaměti.
 
 > [!WARNING]
-> Zakážete ukládání do mezipaměti pro obsah, který obsahuje informace pro klienty ověřené. Ukládání do mezipaměti by měla povoleno pouze pro obsah, který nemění na základě identity uživatele nebo zda je uživatel přihlášen.
+> Zakážete ukládání do mezipaměti pro obsah, který obsahuje informace pro klienty ověřené. Ukládání do mezipaměti by měla povoleno pouze pro obsah, který nemění na základě identity uživatele nebo jestli je uživatel přihlášený.
 
-`VaryByQueryKeys string[]`(vyžaduje ASP.NET Core 1.1 a novější): Pokud nastavíte, Middleware ukládání do mezipaměti odpovědi se liší uložené odpovědi podle hodnoty daný seznam klíče dotazu. Middleware ukládání do mezipaměti odpovědi musí být povoleno nastavení `VaryByQueryKeys` vlastnost; jinak, je vyvolána výjimka za běhu. Neexistuje žádné odpovídající záhlaví HTTP pro `VaryByQueryKeys` vlastnost. Tato vlastnost je funkce protokolu HTTP zpracovávaných Middlewarem ukládání do mezipaměti odpovědi. Pro middleware k obsluze odpovědi v mezipaměti řetězec dotazu a hodnotu řetězce dotazu musí odpovídat na předchozí požadavek. Představte si třeba pořadí požadavků a výsledky zobrazené v následující tabulce.
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) uložené odpovědi se liší podle hodnoty daný seznam klíče dotazu. Když na jedinou hodnotu `*` je zadáno, se liší middleware odpovědí všechny žádosti o parametrů řetězce dotazu. `VaryByQueryKeys`vyžaduje ASP.NET Core 1.1 nebo novější.
+
+Middleware ukládání do mezipaměti odpovědi musí být povoleno nastavení `VaryByQueryKeys` vlastnost; jinak, je vyvolána výjimka za běhu. Není k dispozici odpovídající hlavičku HTTP pro `VaryByQueryKeys` vlastnost. Vlastnost je funkce protokolu HTTP zpracovávaných Middlewarem ukládání do mezipaměti odpovědi. Pro middleware k obsluze odpovědi v mezipaměti řetězec dotazu a hodnotu řetězce dotazu musí odpovídat na předchozí požadavek. Představte si třeba pořadí požadavků a výsledky zobrazené v následující tabulce.
 
 | Požadavek                          | Výsledek                   |
 | -------------------------------- | ------------------------ |
@@ -101,7 +103,7 @@ Další informace najdete v tématu [distribuované mezipaměti značky pomocná
 
 První požadavek je vrácená serverem a uložené v mezipaměti v middlewaru. Druhá žádost se vrátí middlewarem, protože řetězec dotazu odpovídá předchozí požadavek. Třetí požadavek není v mezipaměti middleware, protože hodnotu řetězce dotazu se neshoduje se na předchozí požadavek. 
 
-`ResponseCacheAttribute` Slouží ke konfiguraci a vytvoření (prostřednictvím `IFilterFactory`) `ResponseCacheFilter`. `ResponseCacheFilter` Provede práci aktualizace příslušné hlavičky protokolu HTTP a funkce odpovědi. Filtr:
+`ResponseCacheAttribute` Slouží ke konfiguraci a vytvoření (prostřednictvím `IFilterFactory`) [ResponseCacheFilter](/dotnet/api/microsoft.aspnetcore.mvc.internal.responsecachefilter). `ResponseCacheFilter` Provede práci aktualizace příslušné hlavičky protokolu HTTP a funkce odpovědi. Filtr:
 
 * Odebere všechny existující hlavičky pro `Vary`, `Cache-Control`, a `Pragma`. 
 * Zapíše se příslušné hlavičky na základě vlastností nastavit `ResponseCacheAttribute`. 

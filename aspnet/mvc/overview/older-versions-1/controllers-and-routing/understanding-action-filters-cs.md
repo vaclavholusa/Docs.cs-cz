@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f469894022e39048154ec1915237e448104b4b6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 86d5d429d9900d4c04391804598626705e6c88b4
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/11/2018
 ---
 <a name="understanding-action-filters-c"></a>Seznámení s filtry akcí (C#)
 ====================
@@ -82,7 +82,7 @@ Filtry výjimek jsou poslední typ spustit filtr. Zpracování chyb, vyvolá akc
 
 Každý jiný typ filtru je provést v určitém pořadí. Pokud chcete určit pořadí, ve kterém jsou prováděny filtry stejného typu, můžete nastavit vlastnost pořadí filtru.
 
-Základní třída pro všechny filtry akce je `System.Web.Mvc.FilterAttribute` třídy. Pokud chcete implementovat konkrétní typ filtru, pak je nutné vytvořit třídu, která dědí vlastnosti ze základní třídy filtru a implementuje jeden nebo více `IAuthorizationFilter`, `IActionFilter`, `IResultFilter`, nebo `ExceptionFilter` rozhraní.
+Základní třída pro všechny filtry akce je `System.Web.Mvc.FilterAttribute` třídy. Pokud chcete implementovat konkrétní typ filtru, pak je nutné vytvořit třídu, která dědí vlastnosti ze základní třídy filtru a implementuje jeden nebo více `IAuthorizationFilter`, `IActionFilter`, `IResultFilter`, nebo `IExceptionFilter` rozhraní.
 
 ### <a name="the-base-actionfilterattribute-class"></a>Základní třídy ActionFilterAttribute
 

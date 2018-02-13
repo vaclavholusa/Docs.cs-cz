@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: be3e3d61a6567da3c2cd696c01661146f2da7131
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6daa0dec764e2e9248cac97ba7d7b6df0da3208f
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>Vytváření uložené procedury a funkce definované uživatelem se spravovaným kódem (C#)
 ====================
@@ -420,7 +420,7 @@ Spustí kód tak, že vytvoříte `SqlMoney` instanci s názvem `inventoryValue`
 
 ## <a name="step-11-deploying-the-managed-udf"></a>Krok 11: Nasazení spravovaného UDF
 
-Nyní, že byla vytvořena spravované UDF, jsme připravení nasadit k databázi Northwind. Jak jsme viděli v kroku 4, spravované objekty v projektu serveru SQL se nasazují pravým tlačítkem myši na název projektu v Průzkumníku řešení a zvolením možnosti nasazení v místní nabídce.
+Byla vytvořena spravované UDF, jsme připraveni k nasazení na databázi Northwind. Jak jsme viděli v kroku 4, spravované objekty v projektu serveru SQL se nasazují pravým tlačítkem myši na název projektu v Průzkumníku řešení a zvolením možnosti nasazení v místní nabídce.
 
 Jakmile jste nasadili projekt, vraťte se na SQL Server Management Studio a aktualizovat složku funkce vracející skalární hodnota. Teď byste měli vidět dvě položky:
 

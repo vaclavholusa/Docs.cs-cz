@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 7200899d54585cd09e0a648e3aaaf839db2649e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5efc5ff367d5da5df060eba0028399af898a69fa
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>Začínáme s databáze Entity Framework 4.0 nejprve a 4 webových formulářů ASP.NET - část 5
 ====================
@@ -77,7 +77,7 @@ Spustit *Courses.aspx* a vyberte zobrazíte nové během stejného oddělení.
 
 ## <a name="working-with-many-to-many-relationships"></a>Práce s relací m: N
 
-Vztah mezi `Courses` sady entit a `People` sady entit je relace m: n. A `Course` entity má navigační vlastnost s názvem `People` , může obsahovat nula, jednu nebo více souvisejících `Person` entity (představující vyučující přiřazené naučit tohoto kurzu). A `Person` entity má navigační vlastnost s názvem `Courses` , může obsahovat nula, jednu nebo více souvisejících `Course` entity (představující kurzy, které je přiřazen tento lektorem naučit). Jeden lektorem může naučit více kurzy a může být jeden kurzu výukové ve více vyučující. V této části návodu budete přidávat a odebírat vztahy mezi `Person` a `Course` entity tím, že aktualizuje vlastnosti navigace entit v relaci.
+Vztah mezi `Courses` sady entit a `People` sady entit je relace m: n. A `Course` entity má navigační vlastnost s názvem `People` , může obsahovat nula, jednu nebo více souvisejících `Person` entity (představující vyučující přiřazené naučit tohoto kurzu). A `Person` entity má navigační vlastnost s názvem `Courses` , může obsahovat nula, jednu nebo více souvisejících `Course` entity (představující kurzy této lektorem je přiřazena k výuce). Jeden lektorem může naučit více kurzy a může být jeden kurzu výukové ve více vyučující. V této části návodu budete přidávat a odebírat vztahy mezi `Person` a `Course` entity tím, že aktualizuje vlastnosti navigace entit v relaci.
 
 Vytvořit novou webovou stránku s názvem *InstructorsCourses.aspx* používající *Site.Master* hlavní stránky a přidejte následující kód do `Content` ovládací prvek s názvem `Content2`:
 
@@ -123,7 +123,7 @@ Spuštění stránky.
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-Vyberte lektorem. **Přiřadit kurzu** kurzů, které není lektorem naučit, zobrazí se seznam rozevíracího seznamu a **odebrat kurzu** rozevíracím seznamu zobrazí kurzů, které lektorem je již přiřazen k. V **přiřadit kurzu** vyberte kurzu a pak klikněte na tlačítko **přiřadit**. Během přesune **odebrat kurzu** rozevíracího seznamu. Vyberte kurz v **odebrat kurzu** části a klikněte na tlačítko **odebrat***.* Během přesune **přiřadit kurzu** rozevíracího seznamu.
+Vyberte lektorem. **Přiřadit kurzu** kurzů, které není lektorem naučit, zobrazí se seznam rozevíracího seznamu a **odebrat kurzu** rozevíracím seznamu zobrazí kurzů, které lektorem je již přiřazen k. V **přiřadit kurzu** vyberte kurzu a pak klikněte na tlačítko **přiřadit**. Během přesune **odebrat kurzu** rozevíracího seznamu. Vyberte kurz v **odebrat kurzu** části a klikněte na tlačítko **odebrat ***.* Během přesune **přiřadit kurzu** rozevíracího seznamu.
 
 Nyní jste viděli některé další způsoby, jak pracovat s související data. V následujícím kurzu budete Další informace o použití dědičnosti v datovém modelu ke zlepšení udržovatelnosti vaší aplikace.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 0dd1717ff1051f18a78fe77402c7603008b9b486
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fce1a20f9d1093b6c60542d8a786ddf54fdc922c
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>Část 8: Poslední stránky, výjimek a uzavření
 ====================
@@ -77,7 +77,7 @@ Nyní na stránce\_načíst extrakce obslužné rutiny událostí chybové zprá
 
 ## <a id="_Toc260221683"></a>Uzavření
 
-Jsme viděli, že webových formulářů ASP.NET umožňuje snadno vytvořit sofistikované web s přístupem k databázi, členství, AJAX, atd. poměrně rychle.
+Jste viděli, že webových formulářů ASP.NET umožňuje snadno vytvořit sofistikované web s přístupem k databázi, členství, AJAX, atd. poměrně rychle.
 
 Zpravidla v tomto kurzu jste obdrželi nástroje, které potřebujete, abyste mohli začít vytváření vlastních webových formulářů ASP.NET aplikací!
 

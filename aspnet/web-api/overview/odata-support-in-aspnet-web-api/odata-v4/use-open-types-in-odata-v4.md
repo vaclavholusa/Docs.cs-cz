@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: c2d7454534ff0e9e0a80365793800ab7c45d3b6e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fe67b9a11a82b55d5f3e0e5f1b0cee10a58833d2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>Otevřete typy v OData v4 s rozhraním ASP.NET Web API
 ====================
@@ -100,11 +100,11 @@ Z dokumentu metadat můžete zjistit, který:
 
 - Pro `Book` a `Press` typy, hodnota `OpenType` atribut hodnotu true. `Customer` a `Address` typy nemají tento atribut.
 - `Book` Typ entity má tři deklarované vlastnosti: ISBN, název a stiskněte klávesu. OData metadata nezahrnuje `Book.Properties` vlastnost z třídy CLR.
-- Podobně `Press` komplexní typ má jenom dvě deklarované vlastnosti: název a kategorie. Metadata není nezahrnuje `Press.DynamicProperties` vlastnost z třídy CLR.
+- Podobně `Press` komplexní typ má jenom dvě deklarované vlastnosti: název a kategorie. Metadata se nenachází `Press.DynamicProperties` vlastnost z třídy CLR.
 
 ## <a name="query-an-entity"></a>Dotaz Entity
 
-Pokud chcete získat seznam pomocí ISBN rovno "978-0-7356-7942-9", odeslání odeslat požadavek GET na `~/Books('978-0-7356-7942-9')`. Text odpovědi by měla vypadat podobně jako následující. (Odsazeny, aby byl čitelnější.)
+Potřebujete kniha s ISBN rovno "978-0-7356-7942-9", pošlete požadavek GET na `~/Books('978-0-7356-7942-9')`. Text odpovědi by měla vypadat podobně jako následující. (Odsazeny, aby byl čitelnější.)
 
 [!code-console[Main](use-open-types-in-odata-v4/samples/sample7.cmd?highlight=8-13,15-23)]
 

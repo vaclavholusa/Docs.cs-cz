@@ -53,7 +53,7 @@ HTML `<form>` značku používá [pomocná značku formuláře](xref:mvc/views/w
 
 ## <a name="search-by-genre"></a>Hledat podle genre
 
-Přidat na následující zvýrazněnou vlastnosti, které chcete *Pages/Movies/Index.cshtml.cs*:
+Přidejte následující zvýrazněný vlastnosti pro *Pages/Movies/Index.cshtml.cs*:
 
 [!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs?name=snippet_newProps&highlight=11-999)]
 

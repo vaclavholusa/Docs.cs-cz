@@ -1289,7 +1289,7 @@
 ##### [Prezentace ASP.NET MVC – část 16: Opakování členství s OpenID](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
 ##### [Prezentace ASP.NET MVC – část 17: Pokladna s Jeffem Atwoodem](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
 ##### [Prezentace ASP.NET MVC – část 18: Vytvoření prostředí](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-##### [Prezentace ASP.NET MVC – část 19: Zpracování objednávek pracovním postupem Windows](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+##### [Prezentace ASP.NET MVC – část 19: Zpracování objednávek pracovním postupem Windows](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
 ##### [Prezentace ASP.NET MVC – část 19a: Pokračování pracovního postupu Windows](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
 ##### [Prezentace ASP.NET MVC – část 20: Přihlášení](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
 ##### [Prezentace ASP.NET MVC – část 21: Správa objednávek a přizpůsobení](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)

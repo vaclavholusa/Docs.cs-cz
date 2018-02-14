@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/options
-ms.openlocfilehash: abb3b92af07a7b3b199712fcfdc459ca283d0017
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7b8a1698e1e711c9d61a5b474276c99de2831a7f
+ms.sourcegitcommit: 7ee6e7582421195cbd675355c970d3d292ee668d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -31,7 +31,7 @@ Vzor možnosti používá k reprezentování skupiny související nastavení mo
 
 Základní možnosti konfigurace je znázorněn příklad &num;1 v [ukázkovou aplikaci](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
 
-Třída možností musí být neabstraktní s konstruktor public bez parametrů. Následující třídy, `MyOptions`, má dvě vlastnosti `Option1` a `Option2`. Nastavení výchozích hodnot je nepovinný, ale konstruktoru třídy v následujícím příkladu se nastaví na výchozí hodnotu `Option1`. `Option2`Výchozí hodnota je nastavena pomocí vlastnosti inicializace přímo (*Models/MyOptions.cs*):
+Třída možností musí být neabstraktní s konstruktor public bez parametrů. Následující třídy, `MyOptions`, má dvě vlastnosti `Option1` a `Option2`. Nastavení výchozích hodnot je nepovinný, ale konstruktoru třídy v následujícím příkladu se nastaví na výchozí hodnotu `Option1`. `Option2` Výchozí hodnota je nastavena pomocí vlastnosti inicializace přímo (*Models/MyOptions.cs*):
 
 [!code-csharp[Main](options/sample/Models/MyOptions.cs?name=snippet1)]
 
@@ -196,7 +196,7 @@ named_options_1: option1 = value1_from_json, option2 = -1
 named_options_2: option1 = named_options_2_value1_from_action, option2 = 5
 ```
 
-`named_options_1`hodnoty jsou uvedeny z konfigurace, které jsou načteny z *appSettings.JSON určený* souboru. `named_options_2`hodnoty poskytuje:
+`named_options_1` hodnoty jsou uvedeny z konfigurace, které jsou načteny z *appSettings.JSON určený* souboru. `named_options_2` hodnoty poskytuje:
 
 * `named_options_2` Delegovat v `ConfigureServices` pro `Option1`.
 * Výchozí hodnota pro `Option2` poskytované `MyOptions` třídy.
@@ -218,7 +218,7 @@ named_options_2: option1 = ConfigureAll replacement value, option2 = 5
 ```
 
 > [!NOTE]
-> V technologii ASP.NET Core 2.0 nebo novější jsou všechny možnosti s názvem instance. Existující `IConfigureOption` instance jsou považovány za cílení `Options.DefaultName` instance, kterou je `string.Empty`. `IConfigureNamedOptions`také implementuje `IConfigureOptions`. Výchozí implementaci [IOptionsFactory&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1) ([odkaz na zdroj](https://github.com/aspnet/Options/blob/release/2.0.0/src/Microsoft.Extensions.Options/OptionsFactory.cs)) obsahuje logiku a odpovídajícím způsobem používat. `null` Pojmenované možnost se používá pro všechny pojmenované instance, místo konkrétního pojmenovanou instanci ([ConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configureall) a [PostConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.postconfigureall) použít tento názvů).
+> V technologii ASP.NET Core 2.0 nebo novější jsou všechny možnosti s názvem instance. Existující `IConfigureOption` instance jsou považovány za cílení `Options.DefaultName` instance, kterou je `string.Empty`. `IConfigureNamedOptions` také implementuje `IConfigureOptions`. Výchozí implementaci [IOptionsFactory&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1) ([odkaz na zdroj](https://github.com/aspnet/Options/blob/release/2.0/src/Microsoft.Extensions.Options/IOptionsFactory.cs) obsahuje logiku a odpovídajícím způsobem používat. `null` Pojmenované možnost se používá pro všechny pojmenované instance, místo konkrétního pojmenovanou instanci ([ConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configureall) a [PostConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.postconfigureall) použít tento názvů).
 
 ## <a name="ipostconfigureoptions"></a>IPostConfigureOptions
 
@@ -253,7 +253,7 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 
 ## <a name="options-factory-monitoring-and-cache"></a>Možnosti objektu pro vytváření, monitorování a mezipaměti
 
-[IOptionsMonitor](/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1) se používá pro oznámení při `TOptions` instance změnu. `IOptionsMonitor`podporuje možností možnosti, oznámení, změn a `IPostConfigureOptions`.
+[IOptionsMonitor](/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1) se používá pro oznámení při `TOptions` instance změnu. `IOptionsMonitor` podporuje možností možnosti, oznámení, změn a `IPostConfigureOptions`.
 
 [IOptionsFactory&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1) (jádro ASP.NET 2.0 nebo novější) zodpovídá za vytvoření nové možnosti instancí. Má jeden [vytvořit](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1.create) metoda. Výchozí implementace trvá všech registrovaných `IConfigureOptions` a `IPostConfigureOptions` a spustí všechny první nakonfiguruje, za nímž následuje po konfiguruje. Umožňuje rozlišovat mezi `IConfigureNamedOptions` a `IConfigureOptions` a pouze volá vhodné rozhraní.
 
@@ -261,7 +261,7 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 
 ## <a name="accessing-options-during-startup"></a>Přístup k možnosti při spuštění
 
-`IOptions`mohou být používány `Configure`, protože služby jsou integrované před `Configure` metody. Pokud je součástí zprostředkovatele služeb `ConfigureServices` pro přístup k možnostem, se nebude obsahovat žádné možnosti konfigurace zadané po poskytovatele služeb. Z důvodu řazení registrace služby můžou Proto existovat v nekonzistentní možnosti stavu.
+`IOptions` mohou být používány `Configure`, protože služby jsou integrované před `Configure` metody. Pokud je součástí zprostředkovatele služeb `ConfigureServices` pro přístup k možnostem, se nebude obsahovat žádné možnosti konfigurace zadané po poskytovatele služeb. Z důvodu řazení registrace služby můžou Proto existovat v nekonzistentní možnosti stavu.
 
 Vzhledem k tomu, že možnosti jsou obvykle načteny z konfigurace, konfigurace mohou být používány spuštění v obou `Configure` a `ConfigureServices`. Příklady použití konfigurace při spuštění, najdete v článku [spuštění aplikace](xref:fundamentals/startup) tématu.
 

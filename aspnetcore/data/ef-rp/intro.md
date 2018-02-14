@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: e3a0a692f91c36ef1db2957b67c084e46ff358ef
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: f53697fc005352da781e88fce7ebfbe4cc93d3f6
+ms.sourcegitcommit: 725cb18ad23013e15d3dbb527958481dee79f9f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Začínáme s stránky Razor a Entity Framework Core pomocí sady Visual Studio (1 8)
 
@@ -33,7 +33,7 @@ Znalost [stránky Razor](xref:mvc/razor-pages/index). By se měla dokončit prog
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Pokud narazíte na problém nevyřešíte, obvykle můžete najít řešení tak, že porovnáte svůj kód [dokončit fáze](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) nebo [dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu-final). Seznam běžných chyb a jak je vyřešit, najdete v části [části Poradce při potížích s poslední kurz v této sérii](xref:data/ef-mvc/advanced#common-errors). Pokud se nepodařilo najít, co potřebujete existuje, můžete odeslat dotaz na [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core) pro [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) nebo [EF základní](https://stackoverflow.com/questions/tagged/entity-framework-core).
+Pokud narazíte na problém nevyřešíte, obvykle můžete najít řešení tak, že porovnáte svůj kód [dokončit fáze](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots). Seznam běžných chyb a jak je vyřešit, najdete v části [části Poradce při potížích s poslední kurz v této sérii](xref:data/ef-mvc/advanced#common-errors). Pokud se nepodařilo najít, co potřebujete existuje, můžete odeslat dotaz na [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core) pro [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) nebo [EF základní](https://stackoverflow.com/questions/tagged/entity-framework-core).
 
 > [!TIP]
 > Tato série kurzů staví na co se provádí v dřívější kurzy. Zvažte možnost uložení kopie projektu po každém úspěšném dokončení kurzu. Pokud narazíte na problémy, můžete spustit přes z předchozí kurzu místo přejdete zpět na začátku. Alternativně můžete stáhnout [dokončit fáze](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) a začít od začátku pomocí fázi dokončené.
@@ -102,9 +102,9 @@ Vytvoření *modely* složky. V *modely* složky, vytvořte soubor třídy s ná
 
 `ID` Vlastnost stane sloupec primárního klíče tabulky databáze (databáze), která odpovídá této třídy. Ve výchozím nastavení, EF základní interpretuje vlastnost s názvem `ID` nebo `classnameID` jako primární klíč.
 
-`Enrollments` Je navigační vlastnost. Navigační vlastnosti propojit s dalšími subjekty, které se vztahují k této entity. V takovém případě `Enrollments` vlastnost `Student entity` obsahuje všechny `Enrollment` entit, které se vztahují k které `Student`. Například pokud studentů řádek v databázi existují dvě související registrace řádky, `Enrollments` navigační vlastnost obsahuje tyto dvě `Enrollment` entity. Související `Enrollment` řádek je řádek, který obsahuje hodnotu primárního klíče tohoto Studentova v `StudentID` sloupce. Předpokládejme například, student s ID = 1, má dva řádky v `Enrollment` tabulky. `Enrollment` Tabulka má dva řádky s `StudentID` = 1. `StudentID`cizí klíč v `Enrollment` tabulku, která určuje studenty ve `Student` tabulky.
+`Enrollments` Je navigační vlastnost. Navigační vlastnosti propojit s dalšími subjekty, které se vztahují k této entity. V takovém případě `Enrollments` vlastnost `Student entity` obsahuje všechny `Enrollment` entit, které se vztahují k které `Student`. Například pokud studentů řádek v databázi existují dvě související registrace řádky, `Enrollments` navigační vlastnost obsahuje tyto dvě `Enrollment` entity. Související `Enrollment` řádek je řádek, který obsahuje hodnotu primárního klíče tohoto Studentova v `StudentID` sloupce. Předpokládejme například, student s ID = 1, má dva řádky v `Enrollment` tabulky. `Enrollment` Tabulka má dva řádky s `StudentID` = 1. `StudentID` cizí klíč v `Enrollment` tabulku, která určuje studenty ve `Student` tabulky.
 
-Pokud navigační vlastnost může obsahovat více entit, navigační vlastnost musí být typu seznamu, jako například `ICollection<T>`. `ICollection<T>`lze zadat, nebo typu, jako `List<T>` nebo `HashSet<T>`. Když `ICollection<T>` se používá, vytvoří základní EF `HashSet<T>` kolekce ve výchozím nastavení. Navigační vlastnosti, které mají více entit pocházet z relace m: n a jeden mnoho.
+Pokud navigační vlastnost může obsahovat více entit, navigační vlastnost musí být typu seznamu, jako například `ICollection<T>`. `ICollection<T>` lze zadat, nebo typu, jako `List<T>` nebo `HashSet<T>`. Když `ICollection<T>` se používá, vytvoří základní EF `HashSet<T>` kolekce ve výchozím nastavení. Navigační vlastnosti, které mají více entit pocházet z relace m: n a jeden mnoho.
 
 ### <a name="the-enrollment-entity"></a>Registrace entity
 
@@ -151,7 +151,7 @@ Tento kód vytvoří `DbSet` vlastnosti pro každou sadu entit. V terminologii E
 * Obvykle sadu entit odpovídá Databázové tabulce.
 * Entity odpovídá na řádek v tabulce.
 
-`DbSet<Enrollment>`a `DbSet<Course>` lze vynechat. Základní EF zahrnuje je implicitně v protože `Student` odkazy na entity `Enrollment` entity a `Enrollment` odkazy na entity `Course` entity. V tomto kurzu zachovat `DbSet<Enrollment>` a `DbSet<Course>` v `SchoolContext`.
+`DbSet<Enrollment>` a `DbSet<Course>` lze vynechat. Základní EF zahrnuje je implicitně v protože `Student` odkazy na entity `Enrollment` entity a `Enrollment` odkazy na entity `Course` entity. V tomto kurzu zachovat `DbSet<Enrollment>` a `DbSet<Course>` v `SchoolContext`.
 
 Při vytváření databáze EF základní vytvoří tabulek, které jsou stejné jako názvy `DbSet` názvy vlastností. Názvy vlastností pro kolekce jsou obvykle množném čísle (studenty spíše než Student). Vývojáři Nesouhlasím o tom, jestli by měla být názvy tabulek množném čísle. Pro tyto kurzy je výchozí chování přepsat zadáním názvů singulární tabulek v DbContext. Pokud chcete zadat názvy singulární tabulek, přidejte následující zvýrazněný kód:
 
@@ -267,7 +267,7 @@ Testovací **vytvořit**, **upravit**, a **podrobnosti** odkazy.
 
 ## <a name="view-the-db"></a>Zobrazení databáze
 
-Když se aplikace spustí, `DbInitializer.Initialize` volání `EnsureCreated`. `EnsureCreated`zjistí, pokud existuje databáze a v případě potřeby jej vytvoří. Pokud v databázi, nejsou žádné studenty `Initialize` metoda přidá studenty.
+Když se aplikace spustí, `DbInitializer.Initialize` volání `EnsureCreated`. `EnsureCreated` zjistí, pokud existuje databáze a v případě potřeby jej vytvoří. Pokud v databázi, nejsou žádné studenty `Initialize` metoda přidá studenty.
 
 Otevřete **Průzkumník objektů systému SQL Server** (SSOX) z **zobrazení** nabídky v sadě Visual Studio.
 V SSOX, klikněte na **\MSSQLLocalDB (localdb) > databáze > ContosoUniversity1**.
@@ -278,13 +278,13 @@ Klikněte pravým tlačítkem myši **Student** tabulky a klikněte na tlačítk
 
 *.Mdf* a *.ldf* soubory databáze jsou v *C:\Users\\ <yourusername>*  složky.
 
-`EnsureCreated`je volána při spuštění aplikace, která umožňuje následující pracovní postup:
+`EnsureCreated` je volána při spuštění aplikace, která umožňuje následující pracovní postup:
 
 * Odstranění databáze.
 * Změnit schéma databáze (například přidat `EmailAddress` pole).
 * Spusťte aplikaci.
 
-`EnsureCreated`vytvoří databáze s`EmailAddress` sloupce.
+`EnsureCreated` vytvoří databáze s`EmailAddress` sloupce.
 
 ## <a name="conventions"></a>Konvence
 
@@ -321,7 +321,7 @@ V následujícím kódu `async` – klíčové slovo, `Task<T>` vrátit hodnotu,
 
 * `await` – Klíčové slovo způsobí, že kompilátor metodu rozdělit na dvě části. První část končí operace, které se spustí asynchronně. Druhá část je uvést do metody zpětného volání, která je volána po dokončení operace.
 
-* `ToListAsync`je asynchronní verzi `ToList` metoda rozšíření.
+* `ToListAsync` je asynchronní verzi `ToList` metoda rozšíření.
 
 Třeba mít na paměti při zápisu asynchronní kód, který používá základní EF několik věcí:
 

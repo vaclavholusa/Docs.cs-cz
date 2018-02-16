@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 5891b236306cd3790cbba14919796d6aa894ad53
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6f9e986c34f41fe96beb492680106f725bc1e2f9
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Jednotka stránky Razor testování a integrace v ASP.NET Core
 
@@ -71,7 +71,7 @@ Testování aplikace je konzolovou aplikaci uvnitř *tests/RazorPagesTestingSamp
 | ------------------ | ----------- |
 | *IntegrationTests* | <ul><li>*IndexPageTest.cs* obsahuje integrace testy pro indexovou stránku.</li><li>*TestFixture.cs* vytvoří testovacího hostitele k testování aplikace zprávu.</li></ul> |
 | *UnitTests*        | <ul><li>*DataAccessLayerTest.cs* obsahuje testování částí pro DAL.</li><li>*IndexPageTest.cs* obsahuje testování částí modelu Index stránky.</li></ul> |
-| *Nástroje*        | *Utilities.cs* obsahuje:<ul><li>`TestingDbContextOptions`Metoda použitá k vytvoření nové databáze kontextu možnosti pro každou testování částí DAL tak, aby se obnovení databáze do stavu standardních hodnot pro každý test.</li><li>`GetRequestContentAsync`Metoda použitá k přípravě `HttpClient` a obsahu pro požadavky, které se odesílají do aplikace zprávu během testování integrace.</li></ul>
+| Nástroje        | *Utilities.cs* obsahuje:<ul><li>`TestingDbContextOptions` Metoda použitá k vytvoření nové databáze kontextu možnosti pro každou testování částí DAL tak, aby se obnovení databáze do stavu standardních hodnot pro každý test.</li><li>`GetRequestContentAsync` Metoda použitá k přípravě `HttpClient` a obsahu pro požadavky, které se odesílají do aplikace zprávu během testování integrace.</li></ul>
 
 Testovací prostředí je [xUnit](https://xunit.github.io/). Objekt mocking framework [Moq](https://github.com/moq/moq4). Integrace se zkoušky podle [ASP.NET Core testovacího hostitele](xref:testing/integration-testing#the-test-host).
 
@@ -102,7 +102,7 @@ Problém s tímto přístupem je, že každý test obdrží databáze ve stavu, 
 
 [!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet1)]
 
-Pomocí `DbContextOptions` v jednotce DAL testy umožňuje každý test se spouští atomicky s instanci vytvoří nová databáze:
+Pomocí `DbContextOptions` v jednotce DAL testy umožňuje spouštět atomicky s novou databází instance každého testu:
 
 ```csharp
 using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
@@ -176,7 +176,7 @@ Jednotkové testování krok Application Compatibility Toolkit (*tests/RazorPage
 
 [!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet2)]
 
-`IndexPage`model stránky `OnGetAsync` – metoda (*src/RazorPagesTestingSample/Pages/Index.cshtml.cs*):
+`IndexPage` model stránky `OnGetAsync` – metoda (*src/RazorPagesTestingSample/Pages/Index.cshtml.cs*):
 
 [!code-csharp[Main](razor-pages-testing/sample/src/RazorPagesTestingSample/Pages/Index.cshtml.cs?name=snippet1&highlight=3)]
 
@@ -212,7 +212,7 @@ Všechny požadavek POST do zprávy aplikace musí splňovat antiforgery zkontro
 * Odešle požadavek POST do aplikace.
 * Ověří, zda že je odpověď na přesměrování zpátky na indexovou stránku.
 
-`Post_AddMessageHandler_ReturnsRedirectToRoot `metoda (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
+`Post_AddMessageHandler_ReturnsRedirectToRoot ` metoda (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
 
 [!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet2)]
 

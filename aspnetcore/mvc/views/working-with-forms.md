@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 805c2ba5b3a9669d5547e1c595883436eea0d11a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 752fa03b0cfc85fee2d945e5f65d94c01119d32e
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Základní informace o použití značky Pomocníci ve formulářích v ASP.NET Core
 
@@ -36,7 +36,7 @@ V mnoha případech pomocné objekty HTML poskytnout alternativní způsob konkr
 
 * Poskytuje `asp-route-<Parameter Name>` atribut, kde `<Parameter Name>` se přidá do hodnoty trasy. `routeValues` Parametry, které `Html.BeginForm` a `Html.BeginRouteForm` poskytuje podobné funkce.
 
-* Má alternativu pomocné rutiny HTML `Html.BeginForm` a`Html.BeginRouteForm`
+* Má alternativu pomocné rutiny HTML `Html.BeginForm` a `Html.BeginRouteForm`
 
 Ukázka:
 
@@ -82,7 +82,7 @@ Syntaxe:
 
 Pomocník vstupní značky:
 
-* Generuje `id` a `name` atributy HTML pro název výraz zadaný v `asp-for` atribut. `asp-for="Property1.Property2"`je ekvivalentní `m => m.Property1.Property2`. Název výrazu se bude používat pro `asp-for` hodnota atributu. Najdete v článku [názvy výrazů](#expression-names) části Další informace.
+* Generuje `id` a `name` atributy HTML pro název výraz zadaný v `asp-for` atribut. `asp-for="Property1.Property2"` je ekvivalentní `m => m.Property1.Property2`. Název výrazu se bude používat pro `asp-for` hodnota atributu. Najdete v článku [názvy výrazů](#expression-names) části Další informace.
 
 * Nastaví HTML `type` atribut hodnotu na základě typu modelu a [datové poznámky](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy použité na vlastnost modelu
 
@@ -159,11 +159,11 @@ U anotací dat `Email` a `Password` vlastnosti generovat metadata na modelu. Pom
 
 ### <a name="html-helper-alternatives-to-input-tag-helper"></a>Pomocné rutiny HTML alternativy vstupní značka pomocné rutiny
 
-`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` a `Html.EditorFor` překrývajících se funkce s pomocnou rutinou vstupní značka. Pomocné rutiny vstupní značka automaticky nastaví `type` atribut; `Html.TextBox` a `Html.TextBoxFor` nebude. `Html.Editor`a `Html.EditorFor` zpracování kolekcí, komplexní objekty a šablony; není pomocný vstupní značka. Pomocné rutiny vstupní značka, `Html.EditorFor` a `Html.TextBoxFor` jsou silného typu (jejich použití výrazů lambda); `Html.TextBox` a `Html.Editor` nejsou (používají názvy výrazů).
+`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` a `Html.EditorFor` překrývajících se funkce s pomocnou rutinou vstupní značka. Pomocné rutiny vstupní značka automaticky nastaví `type` atribut; `Html.TextBox` a `Html.TextBoxFor` nebude. `Html.Editor` a `Html.EditorFor` zpracování kolekcí, komplexní objekty a šablony; není pomocný vstupní značka. Pomocné rutiny vstupní značka, `Html.EditorFor` a `Html.TextBoxFor` jsou silného typu (jejich použití výrazů lambda); `Html.TextBox` a `Html.Editor` nejsou (používají názvy výrazů).
 
 ### <a name="htmlattributes"></a>HtmlAttributes
 
-`@Html.Editor()`a `@Html.EditorFor()` použít speciální `ViewDataDictionary` položka s názvem `htmlAttributes` při provádění jejich výchozí šablony. Toto chování je volitelně rozšířen pomocí `additionalViewData` parametry. Klíč "htmlAttributes" nerozlišuje velká a malá písmena. Klíč "htmlAttributes" se zpracovávají podobně jako `htmlAttributes` byl předán objekt pomocné rutiny jako vstup `@Html.TextBox()`.
+`@Html.Editor()` a `@Html.EditorFor()` použít speciální `ViewDataDictionary` položka s názvem `htmlAttributes` při provádění jejich výchozí šablony. Toto chování je volitelně rozšířen pomocí `additionalViewData` parametry. Klíč "htmlAttributes" nerozlišuje velká a malá písmena. Klíč "htmlAttributes" se zpracovávají podobně jako `htmlAttributes` byl předán objekt pomocné rutiny jako vstup `@Html.TextBox()`.
 
 ```HTML
 @Html.EditorFor(model => model.YourProperty, 
@@ -188,6 +188,13 @@ Generuje následující:
 ```
 
 Pomocí vlastnosti kolekce `asp-for="CollectionProperty[23].Member"` vygeneruje stejný název jako `asp-for="CollectionProperty[i].Member"` při `i` má hodnotu `23`.
+
+
+Když ASP.NET MVC základní vypočítá hodnotu `ModelExpression`, se kontroluje několik zdrojů, včetně `ModelState` a `ViewData`. Vezměte v úvahu `<input type="text" asp-for="@Name" />`. Vypočtená hodnota `asp-for` je první z následujících umístění, které není null:
+
+* `ModelState` Položka s klíčem "Name".
+* `ViewData` Položka s klíčem "Name".
+* Výsledkem výrazu `Model.Name`.
 
 ### <a name="navigating-child-properties"></a>Navigace vlastnosti podřízené
 
@@ -260,7 +267,7 @@ The *Views/Shared/EditorTemplates/ToDoItem.cshtml* template:
 
 * Poskytuje silného typování.
 
-* Alternativní pomocné rutiny HTML:`Html.TextAreaFor`
+* Alternativní pomocné rutiny HTML: `Html.TextAreaFor`
 
 Ukázka:
 
@@ -322,7 +329,7 @@ Existují dvě značky Pomocníci ověření. `Validation Message Tag Helper` (K
 
 * Ověření také probíhá na serveru. Klienti mohou mít JavaScript zakázán a některé ověření provést pouze na straně serveru.
 
-* Alternativní pomocné rutiny HTML:`Html.ValidationMessageFor`
+* Alternativní pomocné rutiny HTML: `Html.ValidationMessageFor`
 
 `Validation Message Tag Helper` Se používá s `asp-validation-for` atribut HTML [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) elementu.
 
@@ -356,7 +363,7 @@ Když se stane Chyba ověření straně serveru (například pokud máte ověřo
 
 * Cíle `<div>` elementů s hodnotou `asp-validation-summary` atribut
 
-* Alternativní pomocné rutiny HTML:`@Html.ValidationSummary`
+* Alternativní pomocné rutiny HTML: `@Html.ValidationSummary`
 
 `Validation Summary Tag Helper` Se používá k zobrazení Souhrn ověřovacích zpráv. `asp-validation-summary` Hodnota atributu může být libovolná z následujících:
 
@@ -364,7 +371,7 @@ Když se stane Chyba ověření straně serveru (například pokud máte ověřo
 |--- |--- |
 |ValidationSummary.All|Vlastnost a model úroveň|
 |ValidationSummary.ModelOnly|Model|
-|ValidationSummary.None|Žádné|
+|ValidationSummary.None|Žádná|
 
 ### <a name="sample"></a>Ukázka
 
@@ -399,7 +406,7 @@ Vygenerovaný HTML (když je model platný):
 
 * Generuje [vyberte](https://www.w3.org/wiki/HTML/Elements/select) a přidružených [možnost](https://www.w3.org/wiki/HTML/Elements/option) prvky pro vlastnosti modelu.
 
-* Má alternativu pomocné rutiny HTML `Html.DropDownListFor` a`Html.ListBoxFor`
+* Má alternativu pomocné rutiny HTML `Html.DropDownListFor` a `Html.ListBoxFor`
 
 `Select Tag Helper` `asp-for` Určuje název vlastnosti modelu pro [vyberte](https://www.w3.org/wiki/HTML/Elements/select) elementu a `asp-items` Určuje [možnost](https://www.w3.org/wiki/HTML/Elements/option) elementy.  Příklad:
 

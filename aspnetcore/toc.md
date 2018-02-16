@@ -233,7 +233,7 @@
 ## [Publikační profily v sadě Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [Adresářová struktura](xref:host-and-deploy/directory-structure)
 ## [Referenční informace k běžným chybám u služeb Azure App Service a IIS](xref:host-and-deploy/azure-iis-errors-reference)
-## [Přidání funkcí aplikace z externího sestavení přes IHostingStartup](xref:host-and-deploy/ihostingstartup)
+## [Přidání funkcí aplikace pomocí konfigurace specifických pro platformy](xref:host-and-deploy/platform-specific-configuration)
 
 # [Zabezpečení](xref:security/index)
 ## [Ověřování](xref:security/authentication/index)

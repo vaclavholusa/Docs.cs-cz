@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/hosting
-ms.openlocfilehash: 004487aebe5262a515e2375c30ccd2a84844dff6
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 7e5832f43155aa8aac07a4c8534700aed48fe57d
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>Hostování v ASP.NET Core
 
@@ -29,7 +29,7 @@ Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspn
 
 [!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main)]
 
-`CreateDefaultBuilder`provádí následující úlohy:
+`CreateDefaultBuilder` provádí následující úlohy:
 
 * Nakonfiguruje [Kestrel](servers/kestrel.md) jako webový server. Výchozí možnosti Kestrel najdete v tématu [Kestrel možnosti části Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).
 * Nastaví obsahu kořenovou cestu vrácený [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).
@@ -55,11 +55,11 @@ Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspn
 
 [!code-csharp[Main](../common/samples/WebApplication1/Program.cs)]
 
-`WebHostBuilder`vyžaduje [serveru, který implementuje IServer](servers/index.md). Jsou předdefinované servery [Kestrel](servers/kestrel.md) a [HTTP.sys](servers/httpsys.md) (před verzí technologie ASP.NET 2.0 jádra, ovladač HTTP.sys volala [WebListener](xref:fundamentals/servers/weblistener)). V tomto příkladu [UseKestrel rozšíření metoda](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) určuje Kestrel server.
+`WebHostBuilder` vyžaduje [serveru, který implementuje IServer](servers/index.md). Jsou předdefinované servery [Kestrel](servers/kestrel.md) a [HTTP.sys](servers/httpsys.md) (před verzí technologie ASP.NET 2.0 jádra, ovladač HTTP.sys volala [WebListener](xref:fundamentals/servers/weblistener)). V tomto příkladu [UseKestrel rozšíření metoda](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) určuje Kestrel server.
 
 *Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC. Výchozí kořen obsahu se získávají pro `UseContentRoot` podle [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1). Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu. Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).
 
-Chcete-li použít jako reverzní proxy server služby IIS, volejte [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) jako součást sestavení hostitele. `UseIISIntegration`neprovede konfiguraci *server*, například [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) nepodporuje. `UseIISIntegration`Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) vytvořit reverzní proxy server mezi Kestrel a služby IIS. Použití služby IIS s ASP.NET Core `UseKestrel` a `UseIISIntegration` musí být zadán. `UseIISIntegration`aktivuje pouze při spuštění za služby IIS nebo IIS Express. Další informace najdete v tématu [Úvod k modulu jádra ASP.NET](xref:fundamentals/servers/aspnet-core-module) a [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module).
+Chcete-li použít jako reverzní proxy server služby IIS, volejte [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) jako součást sestavení hostitele. `UseIISIntegration` neprovede konfiguraci *server*, například [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) nepodporuje. `UseIISIntegration` Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) vytvořit reverzní proxy server mezi Kestrel a služby IIS. Použití služby IIS s ASP.NET Core `UseKestrel` a `UseIISIntegration` musí být zadán. `UseIISIntegration` aktivuje pouze při spuštění za služby IIS nebo IIS Express. Další informace najdete v tématu [Úvod k modulu jádra ASP.NET](xref:fundamentals/servers/aspnet-core-module) a [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module).
 
 Minimální implementace, které konfiguruje hostitele (a aplikace ASP.NET Core) zahrnuje určení serveru a konfiguraci kanálu žádostí aplikace:
 
@@ -96,8 +96,8 @@ Toto nastavení řídí zaznamenávání chyby při spuštění.
 **Klíč**: captureStartupErrors  
 **Typ**: *bool* (`true` nebo `1`)  
 **Výchozí**: použije se výchozí hodnota `false` Pokud aplikace běží s Kestrel za služby IIS, kde výchozí hodnota je `true`.  
-**Nastavit pomocí**:`CaptureStartupErrors`  
-**Proměnné prostředí**:`ASPNETCORE_CAPTURESTARTUPERRORS`
+**Nastavit pomocí**: `CaptureStartupErrors`  
+**Proměnné prostředí**: `ASPNETCORE_CAPTURESTARTUPERRORS`
 
 Když `false`, chyb během spuštění výsledek v hostiteli. operace bude ukončena. Když `true`, hostitel zachytí výjimky během spouštění a pokusí o spuštění serveru.
 
@@ -126,8 +126,8 @@ Toto nastavení určuje, kde začíná ASP.NET Core hledání obsahu souborů, j
 **Klíč**: contentRoot  
 **Typ**: *řetězec*  
 **Výchozí**: výchozí složce, kde se nachází sestavení aplikace.  
-**Nastavit pomocí**:`UseContentRoot`  
-**Proměnné prostředí**:`ASPNETCORE_CONTENTROOT`
+**Nastavit pomocí**: `UseContentRoot`  
+**Proměnné prostředí**: `ASPNETCORE_CONTENTROOT`
 
 Kořenu obsahu se používá jako základní cesta pro [kořenový Web nastavení](#web-root). Pokud cesta neexistuje, hostitel se nepodaří spustit.
 
@@ -156,8 +156,8 @@ Určuje, zda podrobné chyby, které mají být zaznamenány.
 **Klíč**: detailedErrors  
 **Typ**: *bool* (`true` nebo `1`)  
 **Výchozí**: false  
-**Nastavit pomocí**:`UseSetting`  
-**Proměnné prostředí**:`ASPNETCORE_DETAILEDERRORS`
+**Nastavit pomocí**: `UseSetting`  
+**Proměnné prostředí**: `ASPNETCORE_DETAILEDERRORS`
 
 Když povolené (nebo když <a href="#environment">prostředí</a> je nastaven na `Development`), aplikace zaznamená podrobné výjimky.
 
@@ -186,8 +186,8 @@ Nastaví prostředí aplikace.
 **Klíč**: prostředí  
 **Typ**: *řetězec*  
 **Výchozí**: produkční  
-**Nastavit pomocí**:`UseEnvironment`  
-**Proměnné prostředí**:`ASPNETCORE_ENVIRONMENT`
+**Nastavit pomocí**: `UseEnvironment`  
+**Proměnné prostředí**: `ASPNETCORE_ENVIRONMENT`
 
 Prostředí můžete nastavit na jakoukoli hodnotu. Framework definované hodnoty zahrnují `Development`, `Staging`, a `Production`. Hodnoty nejsou velká a malá písmena. Ve výchozím nastavení *prostředí* je pro čtení z `ASPNETCORE_ENVIRONMENT` proměnné prostředí. Při použití [Visual Studio](https://www.visualstudio.com/), proměnné prostředí může být nastavena v *launchSettings.json* souboru. Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).
 
@@ -216,8 +216,8 @@ Nastaví hostování spuštění sestavení aplikace.
 **Klíč**: hostingStartupAssemblies  
 **Typ**: *řetězec*  
 **Výchozí**: prázdný řetězec  
-**Nastavit pomocí**:`UseSetting`  
-**Proměnné prostředí**:`ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`
+**Nastavit pomocí**: `UseSetting`  
+**Proměnné prostředí**: `ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`
 
 Řetězec oddělený středníkem hostování spuštění sestavení načíst při spuštění. Tato funkce je nového v technologii ASP.NET 2.0 jádra.
 
@@ -244,8 +244,8 @@ Určuje, zda hostitel naslouchat požadavkům na adresy URL nakonfigurované `We
 **Klíč**: preferHostingUrls  
 **Typ**: *bool* (`true` nebo `1`)  
 **Výchozí**: true  
-**Nastavit pomocí**:`PreferHostingUrls`  
-**Proměnné prostředí**:`ASPNETCORE_PREFERHOSTINGURLS`
+**Nastavit pomocí**: `PreferHostingUrls`  
+**Proměnné prostředí**: `ASPNETCORE_PREFERHOSTINGURLS`
 
 Tato funkce je nového v technologii ASP.NET 2.0 jádra.
 
@@ -265,13 +265,13 @@ Tato funkce není k dispozici v ASP.NET Core 1.x.
 
 ### <a name="prevent-hosting-startup"></a>Zabránit spuštění hostování
 
-Brání automatické načítání hostování spuštění sestavení, a to včetně hostování spuštění sestavení nakonfiguroval sestavení aplikace. V tématu [přidat funkce aplikací z externí sestavení pomocí IHostingStartup](xref:host-and-deploy/ihostingstartup) Další informace.
+Brání automatické načítání hostování spuštění sestavení, a to včetně hostování spuštění sestavení nakonfiguroval sestavení aplikace. V tématu [přidání funkcí aplikace pomocí konfigurace specifických pro platformy](xref:host-and-deploy/platform-specific-configuration) Další informace.
 
 **Klíč**: preventHostingStartup  
 **Typ**: *bool* (`true` nebo `1`)  
 **Výchozí**: false  
-**Nastavit pomocí**:`UseSetting`  
-**Proměnné prostředí**:`ASPNETCORE_PREVENTHOSTINGSTARTUP`
+**Nastavit pomocí**: `UseSetting`  
+**Proměnné prostředí**: `ASPNETCORE_PREVENTHOSTINGSTARTUP`
 
 Tato funkce je nového v technologii ASP.NET 2.0 jádra.
 
@@ -296,8 +296,8 @@ Určuje IP adres nebo adres hostitele s porty a protokoly, které server naslouc
 **Klíč**: adresy URL  
 **Typ**: *řetězec*  
 **Výchozí**: http://localhost: 5000  
-**Nastavit pomocí**:`UseUrls`  
-**Proměnné prostředí**:`ASPNETCORE_URLS`
+**Nastavit pomocí**: `UseUrls`  
+**Proměnné prostředí**: `ASPNETCORE_URLS`
 
 Nastavte na oddělených středníkem (;) seznam URL předpony serveru by měl odpovídat. Například `http://localhost:123`. Použití "\*" k označení, že by měl server přijímat požadavky na všechny IP adresy nebo názvu hostitele pomocí zadaný port a protokol (například `http://*:5000`). Protokol (`http://` nebo `https://`) musí být součástí každou adresu URL. Podporované formáty liší mezi servery.
 
@@ -328,8 +328,8 @@ Určuje dobu čekání na webového hostitele vypnutí.
 **Klíč**: shutdownTimeoutSeconds  
 **Typ**: *int*  
 **Výchozí**: 5  
-**Nastavit pomocí**:`UseShutdownTimeout`  
-**Proměnné prostředí**:`ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`
+**Nastavit pomocí**: `UseShutdownTimeout`  
+**Proměnné prostředí**: `ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`
 
 I když přijme klíč *int* s `UseSetting` (například `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), `UseShutdownTimeout` rozšíření metoda přebírá `TimeSpan`. Tato funkce je nového v technologii ASP.NET 2.0 jádra.
 
@@ -354,8 +354,8 @@ Určuje sestavení pro vyhledávání `Startup` třídy.
 **Klíč**: startupAssembly  
 **Typ**: *řetězec*  
 **Výchozí**: sestavení aplikace  
-**Nastavit pomocí**:`UseStartup`  
-**Proměnné prostředí**:`ASPNETCORE_STARTUPASSEMBLY`
+**Nastavit pomocí**: `UseStartup`  
+**Proměnné prostředí**: `ASPNETCORE_STARTUPASSEMBLY`
 
 Sestavení podle názvu (`string`) nebo typ (`TStartup`) může být odkaz. Pokud je to více `UseStartup` metody jsou volány, poslední změny mají přednost.
 
@@ -396,8 +396,8 @@ Nastaví relativní cestu na statické prostředky aplikace.
 **Klíč**: webroot  
 **Typ**: *řetězec*  
 **Výchozí**: Pokud není zadáno, výchozí hodnota je "(Content Root)/wwwroot", pokud cesta existuje. Pokud cesta neexistuje, je použít soubor no-op zprostředkovatele.  
-**Nastavit pomocí**:`UseWebRoot`  
-**Proměnné prostředí**:`ASPNETCORE_WEBROOT`
+**Nastavit pomocí**: `UseWebRoot`  
+**Proměnné prostředí**: `ASPNETCORE_WEBROOT`
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -516,7 +516,7 @@ dotnet run --urls "http://*:8080"
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-**Spustit**
+Spustit
 
 `Run` Metoda spuštění webové aplikace a blokuje volající vlákno, dokud hostitel vypnutí:
 
@@ -570,7 +570,7 @@ using (var host = WebHost.Start(app => app.Response.WriteAsync("Hello, World!"))
 }
 ```
 
-Vytvoření žádosti o v prohlížeči `http://localhost:5000` k obdrží odpověď "Hello, World!" `WaitForShutdown`bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –). Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.
+Vytvoření žádosti o v prohlížeči `http://localhost:5000` k obdrží odpověď "Hello, World!" `WaitForShutdown` bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –). Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.
 
 **Spuštění (řetězec adresy url, RequestDelegate aplikace)**
 
@@ -618,7 +618,7 @@ Použijte následující požadavky na prohlížeč s příkladu:
 | `http://localhost:5000/Sante/Kevin`        | Santé, kevina!                            |
 | `http://localhost:5000`                    | Ahoj světe!                             |
 
-`WaitForShutdown`bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –). Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.
+`WaitForShutdown` bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –). Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.
 
 **Spuštění (řetězce adresy url, akce<IRouteBuilder> routeBuilder)**
 
@@ -662,7 +662,7 @@ using (var host = WebHost.StartWith(app =>
 }
 ```
 
-Vytvoření žádosti o v prohlížeči `http://localhost:5000` k obdrží odpověď "Hello, World!" `WaitForShutdown`bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –). Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.
+Vytvoření žádosti o v prohlížeči `http://localhost:5000` k obdrží odpověď "Hello, World!" `WaitForShutdown` bloky, dokud se objeví zalomení (Ctrl-C nebo sigint – nebo SIGTERM –). Zobrazí aplikace `Console.WriteLine` zprávu a čeká keypress ukončíte.
 
 **StartWith (řetězce adresy url, akce<IApplicationBuilder> aplikace)**
 
@@ -687,7 +687,7 @@ Stejný výsledek jako **StartWith (akce<IApplicationBuilder> aplikace)**, s vý
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-**Spustit**
+Spustit
 
 `Run` Metoda spustí webovou aplikaci a blokuje volající vlákno, dokud se vypne hostitele:
 
@@ -803,7 +803,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-`IHostingEnvironment`můžete vložit do `Invoke` metoda při vytváření vlastní [middleware](xref:fundamentals/middleware/index#writing-middleware):
+`IHostingEnvironment` můžete vložit do `Invoke` metoda při vytváření vlastní [middleware](xref:fundamentals/middleware/index#writing-middleware):
 
 ```csharp
 public async Task Invoke(HttpContext context, IHostingEnvironment env)
@@ -823,17 +823,13 @@ public async Task Invoke(HttpContext context, IHostingEnvironment env)
 
 ## <a name="iapplicationlifetime-interface"></a>IApplicationLifetime rozhraní
 
-[IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) umožňuje po spuštění a vypnutí aktivity. Zrušení tokenů použitá pro zaregistrování jsou tři vlastnosti na rozhraní `Action` metody, které definují události spuštění a vypnutí. K dispozici je také `StopApplication` metoda.
+[IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) umožňuje po spuštění a vypnutí aktivity. Zrušení tokenů použitá pro zaregistrování jsou tři vlastnosti na rozhraní `Action` metody, které definují události spuštění a vypnutí.
 
 | Token zrušení    | Aktivuje, když &#8230; |
 | --------------------- | --------------------- |
 | `ApplicationStarted`  | Hostitele plně byla spuštěna. |
 | `ApplicationStopping` | Hostitel provádí řádné vypnutí. Může být stále aktivní žádosti. Vypnutí bloky až po dokončení této události. |
 | `ApplicationStopped`  | Hostitel je dokončení řádné vypnutí. Všechny požadavky, měla by být zpracována. Vypnutí bloky až po dokončení této události. |
-
-| Metoda            | Akce                                           |
-| ----------------- | ------------------------------------------------ |
-| `StopApplication` | Žádosti o ukončení aktuální aplikace. |
 
 ```csharp
 public class Startup 
@@ -865,6 +861,34 @@ public class Startup
     private void OnStopped()
     {
         // Perform post-stopped activities here
+    }
+}
+```
+
+[StopApplication](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.stopapplication) požadavky ukončení aplikace. Následující [stránky Razor](xref:mvc/razor-pages/index) stránka používá třídu modelu `StopApplication` řádně vypnutí aplikace. `OnPostShutdown` Po provedení metody **vypnutí** výběru tlačítka v uživatelském rozhraní:
+
+```cshtml
+<button type="submit" asp-page-handler="Shutdown" class="btn btn-default">Shutdown</button>
+```
+
+```csharp
+public class IndexModel : PageModel
+{
+    private readonly IApplicationLifetime _appLifetime;
+
+    public IndexModel(IApplicationLifetime appLifetime)
+    {
+        _appLifetime = appLifetime;
+    }
+
+    public void OnGet()
+    {
+        ...
+    }
+
+    public void OnPostShutdown()
+    {
+        _appLifetime.StopApplication();
     }
 }
 ```

@@ -26,7 +26,7 @@ Při spuštění ukázky, odpověď se zpracuje zobrazující adresu URL přepsa
   - Příklad (přesměrování): **/image.png** k **/png-images/image.png**
   - Příklad (přesměrování): **/image.jpg** k **/jpg-images/image.jpg**
 
-## <a name="using-a-physicalfileprovider"></a>Použití`PhysicalFileProvider`
+## <a name="using-a-physicalfileprovider"></a>Použití `PhysicalFileProvider`
 Můžete také získat `IFileProvider` tak, že vytvoříte `PhysicalFileProvider` k předání do `AddApacheModRewrite()` a `AddIISUrlRewrite()` metody:
 ```csharp
 using Microsoft.Extensions.FileProviders;

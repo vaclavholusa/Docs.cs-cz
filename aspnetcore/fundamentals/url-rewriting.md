@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: ca1f2f366bcf12cd3df83c3cdefa460cb9a68e2a
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: ea697e4b1d3c16dbf3ff5703000d16b93da6c582
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware v ASP.NET Core přepisování adres URL
 
 Podle [Luke Latham](https://github.com/guardrex) a [Mikael Mengistu](https://github.com/mikaelm12)
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 Přepisování adres URL je v rámci úprava požadavek adresy URL založené na jeden nebo více předdefinovaných pravidel. Přepisování adres URL vytváří abstrakci mezi umístění prostředků a jejich adres, takže umístění a adresy nejsou propojené úzce. Existuje několik situací, kdy je vhodné přepisování adres URL:
 * Přesunutí nebo výměna prostředky serveru dočasně nebo trvale při zachování stabilní lokátory pro tyto prostředky
@@ -51,7 +51,7 @@ A *přepisování adres URL* je operaci na straně serveru zadejte prostředek z
 ![Koncový bod služby WebAPI byl změněn z verze 1 (v1) verze 2 (v2) na serveru. Klient odešle požadavek na službu na /v1/api cesta verze 1. Přístup ke službě v /v2/api cesta verze 2 je přepsaná adrese URL žádosti. Služba odpoví na klienta se 200 stavový kód (OK).](url-rewriting/_static/url_rewrite.png)
 
 ## <a name="url-rewriting-sample-app"></a>Adresa URL třeba přepisovat ukázkové aplikace
-Můžete prozkoumat funkce middlewaru přepisování adresy URL se [URL třeba přepisovat ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/). Aplikace používá přepisování a přesměrování pravidla a zobrazuje přepsaná nebo přesměrované adresu URL.
+Můžete prozkoumat funkce middlewaru přepisování adresy URL se [URL třeba přepisovat ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/). Aplikace používá přepisování a přesměrování pravidla a zobrazuje přepsaná nebo přesměrované adresu URL.
 
 ## <a name="when-to-use-url-rewriting-middleware"></a>Kdy použít adresu URL přepisování middlewaru
 Použijte adresu URL přepisování Middleware, pokud nelze použít [modul přepisování adres URL](https://www.iis.net/downloads/microsoft/url-rewrite) službou IIS v systému Windows Server, [Apache mod_rewrite modulu](https://httpd.apache.org/docs/2.4/rewrite/) na serveru Apache [přepisování adres URL na Nginx](https://www.nginx.com/blog/creating-nginx-rewrite-rules/), nebo aplikace je hostovaná na [HTTP.sys serveru](xref:fundamentals/servers/httpsys) (dříve se označovaly jako [WebListener](xref:fundamentals/servers/weblistener)). Hlavní důvody pro použití třeba přepisovat adresy URL na serveru technologie v IIS, Apache nebo Nginx je, že middleware nepodporuje úplné funkce tyto moduly a výkon middleware pravděpodobně nebude odpovídat moduly. Existují však některé funkce serveru moduly, které nepodporují s projekty ASP.NET Core, jako `IsFile` a `IsDirectory` omezení modul přepisování služby IIS. V těchto scénářích použijte místo toho middleware.
@@ -64,11 +64,26 @@ Vytvoření vaší přepisování adres URL a přesměrování pravidla tak, že
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](url-rewriting/samples/2.x/Program.cs?name=snippet1)]
+[!code-csharp[Main](url-rewriting/sample/Startup.cs?name=snippet1)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](url-rewriting/samples/1.x/Startup.cs?name=snippet1)]
+```csharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    var options = new RewriteOptions()
+        .AddRedirect("redirect-rule/(.*)", "redirected/$1")
+        .AddRewrite(@"^rewrite-rule/(\d+)/(\d+)", "rewritten?var1=$1&var2=$2", 
+            skipRemainingRules: true)
+        .AddApacheModRewrite(env.ContentRootFileProvider, "ApacheModRewrite.txt")
+        .AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml")
+        .Add(RedirectXMLRequests)
+        .Add(new RedirectImageRequests(".png", "/png-images"))
+        .Add(new RedirectImageRequests(".jpg", "/jpg-images"));
+
+    app.UseRewriter(options);
+}
+```
 
 ---
 
@@ -77,11 +92,19 @@ Použití `AddRedirect` pro přesměrování požadavků. První parametr obsahu
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](url-rewriting/samples/2.x/Program.cs?name=snippet1&highlight=5)]
+[!code-csharp[Main](url-rewriting/sample/Startup.cs?name=snippet1&highlight=9)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](url-rewriting/samples/1.x/Startup.cs?name=snippet1&highlight=2)]
+```csharp
+public void Configure(IApplicationBuilder app)
+{
+    var options = new RewriteOptions()
+        .AddRedirect("redirect-rule/(.*)", "redirected/$1");
+
+    app.UseRewriter(options);
+}
+```
 
 ---
 
@@ -90,7 +113,7 @@ V prohlížeči pomocí nástrojů pro vývojáře, které jsou povolené, vytvo
 > [!WARNING]
 > Buďte opatrní při vytváření pravidel přesměrování. Přesměrování pravidla se vyhodnocují na každý požadavek pro aplikaci, včetně po přesměrování. Ať už náhodně snadno vytvořit smyčku nekonečné přesměrování.
 
-Původní žádost:`/redirect-rule/1234/5678`
+Původní žádost: `/redirect-rule/1234/5678`
 
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_redirect.png)
 
@@ -101,21 +124,36 @@ V řetězci nahrazení zaznamenané skupiny jsou vloženy do řetězce s znak do
 <a name="url-redirect-to-secure-endpoint"></a>
 ### <a name="url-redirect-to-a-secure-endpoint"></a>Adresa URL přesměrování na zabezpečený koncový bod
 Použití `AddRedirectToHttps` pro přesměrování požadavků HTTP na stejné hostitele a cestu pomocí protokolu HTTPS (`https://`). Pokud je stavový kód není zadaný, middleware výchozí 302 (Found). Pokud není port zadaný, middleware výchozí `null`, což znamená, že protokol změny `https://` a klient přistupuje k prostředku na portu 443. Tento příklad ukazuje, jak nastavit stavový kód na 301 (trvale přesunut) a změnit na 5001.
-```csharp
-var options = new RewriteOptions()
-    .AddRedirectToHttps(301, 5001);
 
-app.UseRewriter(options);
+```csharp
+public void Configure(IApplicationBuilder app)
+{
+    var options = new RewriteOptions()
+        .AddRedirectToHttps(301, 5001);
+
+    app.UseRewriter(options);
+}
 ```
+
 Použití `AddRedirectToHttpsPermanent` přesměrovat nezabezpečené požadavky do stejné hostitele a cestu s zabezpečený protokol HTTPS (`https://` na portu 443). Middleware nastaví stavový kód na 301 (trvale přesunut).
+
+```csharp
+public void Configure(IApplicationBuilder app)
+{
+    var options = new RewriteOptions()
+        .AddRedirectToHttpsPermanent();
+
+    app.UseRewriter(options);
+}
+```
 
 Ukázková aplikace je schopen který ukazuje, jak používat `AddRedirectToHttps` nebo `AddRedirectToHttpsPermanent`. Add – metoda rozšíření pro `RewriteOptions`. Proveďte požadavek nezabezpečené aplikace na všechny adresy URL. Zavřete zabezpečení prohlížeče upozornění, že není důvěryhodný certifikát podepsaný svým držitelem.
 
-Původní žádosti o pomocí `AddRedirectToHttps(301, 5001)`:`/secure`
+Původní žádosti o pomocí `AddRedirectToHttps(301, 5001)`: `/secure`
 
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_redirect_to_https.png)
 
-Původní žádosti o pomocí `AddRedirectToHttpsPermanent`:`/secure`
+Původní žádosti o pomocí `AddRedirectToHttpsPermanent`: `/secure`
 
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_redirect_to_https_permanent.png)
 
@@ -124,15 +162,24 @@ Použití `AddRewrite` k vytvoření pravidla pro přepisování adres URL. Prvn
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](url-rewriting/samples/2.x/Program.cs?name=snippet1&highlight=6)]
+[!code-csharp[Main](url-rewriting/sample/Startup.cs?name=snippet1&highlight=10-11)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](url-rewriting/samples/1.x/Startup.cs?name=snippet1&highlight=3)]
+```csharp
+public void Configure(IApplicationBuilder app)
+{
+    var options = new RewriteOptions()
+        .AddRewrite(@"^rewrite-rule/(\d+)/(\d+)", "rewritten?var1=$1&var2=$2", 
+            skipRemainingRules: true);
+
+    app.UseRewriter(options);
+}
+```
 
 ---
 
-Původní žádost:`/rewrite-rule/1234/5678`
+Původní žádost: `/rewrite-rule/1234/5678`
 
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_rewrite.png)
 
@@ -170,21 +217,29 @@ Použití Apache mod_rewrite pravidel s `AddApacheModRewrite`. Ujistěte se, že
 
 A `StreamReader` slouží k načtení pravidla ze *ApacheModRewrite.txt* soubor s pravidly.
 
-[!code-csharp[Main](url-rewriting/samples/2.x/Program.cs?name=snippet1&highlight=1,7)]
+[!code-csharp[Main](url-rewriting/sample/Startup.cs?name=snippet1&highlight=3-4,12)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
 První parametr má `IFileProvider`, který je k dispozici prostřednictvím [vkládání závislostí](dependency-injection.md). `IHostingEnvironment` Je vložili zajistit `ContentRootFileProvider`. Druhý parametr je cesta k souboru pravidla, která je *ApacheModRewrite.txt* v ukázkové aplikace.
 
-[!code-csharp[Main](url-rewriting/samples/1.x/Startup.cs?name=snippet1&highlight=4)]
+```csharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    var options = new RewriteOptions()
+        .AddApacheModRewrite(env.ContentRootFileProvider, "ApacheModRewrite.txt");
+
+    app.UseRewriter(options);
+}
+```
 
 ---
 
 Ukázková aplikace přesměruje požadavky z `/apache-mod-rules-redirect/(.\*)` k `/redirected?id=$1`. Stavový kód odpovědi je 302 (Found).
 
-[!code[Main](url-rewriting/samples/2.x/ApacheModRewrite.txt)]
+[!code[Main](url-rewriting/sample/ApacheModRewrite.txt)]
 
-Původní žádost:`/apache-mod-rules-redirect/1234`
+Původní žádost: `/apache-mod-rules-redirect/1234`
 
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_apache_mod_redirect.png)
 
@@ -227,21 +282,29 @@ Chcete-li použít pravidla, která se týkají modul přepisování adres URL s
 
 A `StreamReader` slouží k načtení pravidla ze *IISUrlRewrite.xml* soubor s pravidly.
 
-[!code-csharp[Main](url-rewriting/samples/2.x/Program.cs?name=snippet1&highlight=2,8)]
+[!code-csharp[Main](url-rewriting/sample/Startup.cs?name=snippet1&highlight=5-6,13)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
 První parametr má `IFileProvider`, zatímco druhý parametr je cesta k souboru XML pravidla, která je *IISUrlRewrite.xml* v ukázkové aplikace.
 
-[!code-csharp[Main](url-rewriting/samples/1.x/Startup.cs?name=snippet1&highlight=5)]
+```csharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    var options = new RewriteOptions()
+        .AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml");
+
+    app.UseRewriter(options);
+}
+```
 
 ---
 
 Ukázková aplikace přepíše požadavky od `/iis-rules-rewrite/(.*)` k `/rewritten?id=$1`. Odpověď je odeslána na klienta se 200 stavový kód (OK).
 
-[!code-xml[Main](url-rewriting/samples/2.x/IISUrlRewrite.xml)]
+[!code-xml[Main](url-rewriting/sample/IISUrlRewrite.xml)]
 
-Původní žádost:`/iis-rules-rewrite/1234`
+Původní žádost: `/iis-rules-rewrite/1234`
 
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_iis_url_rewrite.png)
 
@@ -301,33 +364,33 @@ Použití `Add(Action<RewriteContext> applyRule)` implementace vlastní logiky n
 
 | kontext. Výsledek                       | Akce                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
-| `RuleResult.ContinueRules`(výchozí) | Pokračovat v použití pravidel                                         |
+| `RuleResult.ContinueRules` (výchozí) | Pokračovat v použití pravidel                                         |
 | `RuleResult.EndResponse`             | Zastavte aplikaci pravidel a odeslání odpovědi                       |
 | `RuleResult.SkipRemainingRules`      | Zastavte aplikaci pravidel a kontext poslat další middleware |
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](url-rewriting/samples/2.x/Program.cs?name=snippet1&highlight=9)]
+[!code-csharp[Main](url-rewriting/sample/Startup.cs?name=snippet1&highlight=14)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](url-rewriting/samples/1.x/Startup.cs?name=snippet1&highlight=6)]
+```csharp
+public void Configure(IApplicationBuilder app)
+{
+    var options = new RewriteOptions()
+        .Add(RedirectXMLRequests);
+
+    app.UseRewriter(options);
+}
+```
 
 ---
 
 Ukázková aplikace ukazuje metodu, který přesměruje požadavky pro cesty, která končit *.xml*. Pokud zadáte požadavek `/file.xml`, je přesměrován na `/xmlfiles/file.xml`. Kód stavu je nastavena na 301 (trvale přesunut). Pro přesměrování je potřeba explicitně nastavit stavový kód odpovědi; jinak se vrátí stavový kód 200 (OK) a přesměrování nedojde v klientovi.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+[!code-csharp[Main](url-rewriting/sample/RewriteRules.cs?name=snippet1)]
 
-[!code-csharp[Main](url-rewriting/samples/2.x/RewriteRules.cs?name=snippet1)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
-[!code-csharp[Main](url-rewriting/samples/1.x/Startup.cs?name=snippet2)]
-
----
-
-Původní žádost:`/file.xml`
+Původní žádost: `/file.xml`
 
 ![Okno prohlížeče s sledování požadavků a odpovědí pro file.xml nástroje pro vývojáře](url-rewriting/_static/add_redirect_xml_requests.png)
 
@@ -336,31 +399,32 @@ Použití `Add(IRule)` implementace vlastní logiky na třídu odvozenou z `IRul
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](url-rewriting/samples/2.x/Program.cs?name=snippet1&highlight=10-11)]
+[!code-csharp[Main](url-rewriting/sample/Startup.cs?name=snippet1&highlight=15-16)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](url-rewriting/samples/1.x/Startup.cs?name=snippet1&highlight=7-8)]
+```csharp
+public void Configure(IApplicationBuilder app)
+{
+    var options = new RewriteOptions()
+        .Add(new RedirectImageRequests(".png", "/png-images"))
+        .Add(new RedirectImageRequests(".jpg", "/jpg-images"));
+
+    app.UseRewriter(options);
+}
+```
 
 ---
 
 Hodnoty parametrů v ukázková aplikace pro `extension` a `newPath` se kontroluje, že splňují několik podmínek. `extension` Musí obsahovat hodnotu, a hodnota musí být *.png*, *.jpg*, nebo *.gif*. Pokud `newPath` není platný, `ArgumentException` je vyvolána výjimka. Pokud zadáte požadavek *image.png*, je přesměrován na `/png-images/image.png`. Pokud zadáte požadavek *image.jpg*, je přesměrován na `/jpg-images/image.jpg`. Kód stavu je nastavena na 301 (trvale přesunuto) a `context.Result` je nastavena na Zastavit zpracování pravidel a odeslání odpovědi.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+[!code-csharp[Main](url-rewriting/sample/RewriteRules.cs?name=snippet2)]
 
-[!code-csharp[Main](url-rewriting/samples/2.x/RewriteRules.cs?name=snippet2)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
-[!code-csharp[Main](url-rewriting/samples/1.x/RewriteRule.cs?name=snippet1)]
-
----
-
-Původní žádost:`/image.png`
+Původní žádost: `/image.png`
 
 ![Okno prohlížeče s sledování požadavků a odpovědí pro image.png nástroje pro vývojáře](url-rewriting/_static/add_redirect_png_requests.png)
 
-Původní žádost:`/image.jpg`
+Původní žádost: `/image.jpg`
 
 ![Okno prohlížeče s sledování požadavků a odpovědí pro image.jpg nástroje pro vývojáře](url-rewriting/_static/add_redirect_jpg_requests.png)
 
@@ -371,7 +435,7 @@ Původní žádost:`/image.jpg`
 | Přepište cestu do řetězce dotazu | `^path/(.*)/(.*)`<br>`/path/abc/123` | `path?var1=$1&var2=$2`<br>`/path?var1=abc&var2=123` |
 | Pruhu koncové lomítko. | `(.*)/$`<br>`/path/` | `$1`<br>`/path` |
 | Vynutit koncové lomítko | `(.*[^/])$`<br>`/path` | `$1/`<br>`/path/` |
-| Vyhněte se přepisování konkrétní požadavky | `^(.*)(?<!\.axd)$`nebo`^(?!.*\.axd$)(.*)$`<br>Ano:`/resource.htm`<br>Ne:`/resource.axd` | `rewritten/$1`<br>`/rewritten/resource.htm`<br>`/resource.axd` |
+| Vyhněte se přepisování konkrétní požadavky | `^(.*)(?<!\.axd)$` Nebo `^(?!.*\.axd$)(.*)$`<br>Ano: `/resource.htm`<br>Ne: `/resource.axd` | `rewritten/$1`<br>`/rewritten/resource.htm`<br>`/resource.axd` |
 | Změna uspořádání segmenty adres URL | `path/(.*)/(.*)/(.*)`<br>`path/1/2/3` | `path/$3/$2/$1`<br>`path/3/2/1` |
 | Nahraďte segment adresy URL | `^(.*)/segment2/(.*)`<br>`/segment1/segment2/segment3` | `$1/replaced/$2`<br>`/segment1/replaced/segment3` |
 

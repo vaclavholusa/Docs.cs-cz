@@ -1,7 +1,7 @@
 ---
 title: "Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace"
 author: rick-anderson
-description: "Postup vytvoření aplikace pro stránky Razor s uživatelskými daty chráněn autorizace. Zahrnuje protokol SSL, ověřování, zabezpečení, ASP.NET Core Identity."
+description: "Postup vytvoření aplikace pro stránky Razor s uživatelskými daty chráněn autorizace. Zahrnuje protokol HTTPS, ověřování, zabezpečení, ASP.NET Core Identity."
 manager: wpickett
 ms.author: riande
 ms.date: 01/24/2018
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 6333082a2b2b4f6d3f1ce2afc600b4203a0f5dca
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: e186adef2e72f852543a92ddce0e82be2a3bcd12
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace
 
@@ -87,7 +87,7 @@ Pomocí technologie ASP.NET [Identity](xref:security/authentication/identity) ID
 
 [!code-csharp[Main](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
 
-`OwnerID`ID uživatele z `AspNetUser` tabulky v [Identity](xref:security/authentication/identity) databáze. `Status` Pole určuje, zda kontakt zobrazit obecné uživatele.
+`OwnerID` ID uživatele z `AspNetUser` tabulky v [Identity](xref:security/authentication/identity) databáze. `Status` Pole určuje, zda kontakt zobrazit obecné uživatele.
 
 Vytvořte nové migrace a aktualizaci databáze:
 
@@ -96,7 +96,7 @@ dotnet ef migrations add userID_Status
 dotnet ef database update
 ```
 
-### <a name="require-ssl-and-authenticated-users"></a>Vyžadovat protokol SSL a ověření uživatelé
+### <a name="require-https-and-authenticated-users"></a>Vyžadovat protokol HTTPS a ověření uživatelé
 
 Přidat [IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) k `Startup`:
 
@@ -104,19 +104,26 @@ Přidat [IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostinge
 
 V `ConfigureServices` metodu *Startup.cs* soubor, přidejte [RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute) filtr autorizace:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=19-999)]
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
 
-Pokud používáte Visual Studio, povolte protokol SSL.
+Pokud používáte Visual Studio, povolte protokol HTTPS.
 
-Přesměrování požadavků HTTP do HTTPS, najdete v části [URL přepisování Middleware](xref:fundamentals/url-rewriting). Pokud jste pomocí Visual Studio Code nebo testování na místní platformu, která neobsahuje testovací certifikát pro protokol SSL:
+Přesměrování požadavků HTTP do HTTPS, najdete v části [URL přepisování Middleware](xref:fundamentals/url-rewriting). Pokud jste pomocí Visual Studio Code nebo testování na místní platformu, která neobsahuje testovací certifikát pro protokol HTTPS:
 
   Nastavit `"LocalTest:skipSSL": true` v *appsettings. Developement.JSON* souboru.
 
 ### <a name="require-authenticated-users"></a>Vyžadovat ověření uživatelé
 
-Nastavte výchozí zásady ověřování tak, aby vyžadovala uživatele k ověření. Můžete vyjádření výslovného nesouhlasu ověřování na úrovni stránky Razor, kontroler nebo akce metoda s `[AllowAnonymous]` atribut. Nastavení výchozích zásad ověřování budou muset uživatelé ověřit chrání nově přidané stránky Razor a řadiče. Má ve výchozím nastavení je vyžadováno ověření je bezpečnější než spoléhat na nových řadičů a stránky Razor zahrnout `[Authorize]` atribut. Přidejte následující `ConfigureServices` metodu *Startup.cs* souboru:
+Nastavte výchozí zásady ověřování tak, aby vyžadovala uživatele k ověření. Můžete vyjádření výslovného nesouhlasu ověřování na úrovni stránky Razor, kontroler nebo akce metoda s `[AllowAnonymous]` atribut. Nastavení výchozích zásad ověřování budou muset uživatelé ověřit chrání nově přidané stránky Razor a řadiče. Má ve výchozím nastavení je vyžadováno ověření je bezpečnější než spoléhat na nových řadičů a stránky Razor zahrnout `[Authorize]` atribut. 
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=31-999)]
+Tento požadavek ověřen, všichni uživatelé [AuthorizeFolder](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizefolder?view=aspnetcore-2.0#Microsoft_Extensions_DependencyInjection_PageConventionCollectionExtensions_AuthorizeFolder_Microsoft_AspNetCore_Mvc_ApplicationModels_PageConventionCollection_System_String_System_String_) a [AuthorizePage](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizepage?view=aspnetcore-2.0) volání nejsou potřeba.
+
+Aktualizace `ConfigureServices` s následujícími změnami:
+
+* Komentář `AuthorizeFolder` a `AuthorizePage`.
+* Nastavte výchozí zásady ověřování tak, aby vyžadovala uživatele k ověření.
+
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=23-27,31-999)]
 
 Přidat [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) do indexu, o a kontaktní stránky, mohou anonymní uživatelé získat informace o lokalitě, před jejich registraci. 
 
@@ -155,11 +162,11 @@ Vytvoření `ContactIsOwnerAuthorizationHandler` třídy v *autorizace* složky.
 `ContactIsOwnerAuthorizationHandler` Volání [kontextu. Úspěšné](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.succeed#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Succeed_Microsoft_AspNetCore_Authorization_IAuthorizationRequirement_) Pokud ověřený aktuální uživatel je jeho vlastníkem. Obslužné rutiny autorizace obecně:
 
 * Vrátí `context.Succeed` Pokud jsou splněny požadavky na.
-* Vrátí `Task.CompletedTask` Pokud nejsou splněné požadavky. `Task.CompletedTask`je ani úspěch nebo neúspěch&mdash;umožňuje ostatních obslužných rutin autorizaci ke spuštění.
+* Vrátí `Task.CompletedTask` Pokud nejsou splněné požadavky. `Task.CompletedTask` je ani úspěch nebo neúspěch&mdash;umožňuje ostatních obslužných rutin autorizaci ke spuštění.
 
 Pokud potřebujete explicitně nezdaří, vrátí [kontextu. Selhání](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.fail).
 
-Aplikace umožňuje kontaktní vlastníky úpravy, odstranění nebo vytvořit svá vlastní data. `ContactIsOwnerAuthorizationHandler`není potřeba zkontrolovat operaci předán v parametru požadavek.
+Aplikace umožňuje kontaktní vlastníky úpravy, odstranění nebo vytvořit svá vlastní data. `ContactIsOwnerAuthorizationHandler` není potřeba zkontrolovat operaci předán v parametru požadavek.
 
 ### <a name="create-a-manager-authorization-handler"></a>Vytvořte obslužnou rutinu Správce autorizací
 
@@ -179,7 +186,7 @@ Musí být pro registrované služby pomocí Entity Framework Core [vkládání 
 
 [!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 
-`ContactAdministratorsAuthorizationHandler`a `ContactManagerAuthorizationHandler` jsou přidány jako jednotlivé prvky. Jsou jednotlivé prvky, protože se nepoužívají EF a veškeré informace potřebné v `Context` parametr `HandleRequirementAsync` metoda.
+`ContactAdministratorsAuthorizationHandler` a `ContactManagerAuthorizationHandler` jsou přidány jako jednotlivé prvky. Jsou jednotlivé prvky, protože se nepoužívají EF a veškeré informace potřebné v `Context` parametr `HandleRequirementAsync` metoda.
 
 ## <a name="support-authorization"></a>Povolení podpory
 
@@ -263,9 +270,9 @@ Aktualizace modelu stránky podrobnosti:
 
 ## <a name="test-the-completed-app"></a>Testování dokončená aplikace
 
-Pokud jste pomocí Visual Studio Code nebo testování na místní platformu, která neobsahuje testovací certifikát pro protokol SSL:
+Pokud jste pomocí Visual Studio Code nebo testování na místní platformu, která neobsahuje testovací certifikát pro protokol HTTPS:
 
-* Nastavit `"LocalTest:skipSSL": true` v *appsettings. Developement.JSON* souboru tak, aby přeskočil požadavek na protokol SSL. Přeskočit SSL pouze na vývojovém počítači.
+* Nastavit `"LocalTest:skipSSL": true` v *appsettings. Developement.JSON* souboru tak, aby přeskočil požadavek HTTPS. Přeskočit HTTPS pouze na vývojovém počítači.
 
 Pokud má kontaktů:
 
@@ -300,7 +307,7 @@ Vytvoření kontaktu v prohlížeči na správce. Zkopírujte adresu URL pro ods
   dotnet new razor -o ContactManager -au Individual -uld
   ```
 
-  * `-uld`Určuje LocalDB místo SQLite
+  * `-uld` Určuje LocalDB místo SQLite
 
 * Přidejte následující `Contact` modelu:
 

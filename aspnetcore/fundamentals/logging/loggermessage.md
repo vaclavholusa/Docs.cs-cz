@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: bae970c916518070faea8a06a7bccc3da20cfeff
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: a67e610150e36165a72a2e8957b33ce7d5741936
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>Vysoce výkonné protokolování s LoggerMessage v ASP.NET Core
 
@@ -21,10 +21,10 @@ Podle [Luke Latham](https://github.com/guardrex)
 
 [LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) funkce vytvořit delegáti lze uložit do mezipaměti, které vyžadují méně přidělování objektů a snižuje nároky na výpočetní výkon než [metody rozšíření protokolovače](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions), jako například `LogInformation`, `LogDebug`a `LogError`. Pro scénáře protokolování vysoce výkonné, použijte `LoggerMessage` vzor.
 
-`LoggerMessage`nabízí následující výhody výkonu přes protokoly rozšiřující metody:
+`LoggerMessage` nabízí následující výhody výkonu přes protokoly rozšiřující metody:
 
 * Metody rozšíření protokolovače vyžadují typy hodnot "zabalení" (převod), jako například `int`, do `object`. `LoggerMessage` Vzor zabraňuje zabalení pomocí statické `Action` pole a rozšiřující metody s parametry silného typu.
-* Metody rozšíření protokolovače musí analyzovat Šablona zprávy (řetězec s názvem formátu) pokaždé, když se zapíše zprávu protokolu. `LoggerMessage`vyžaduje pouze jednou analýza šablonu, když je definovaná zpráva.
+* Metody rozšíření protokolovače musí analyzovat Šablona zprávy (řetězec s názvem formátu) pokaždé, když se zapíše zprávu protokolu. `LoggerMessage` vyžaduje pouze jednou analýza šablonu, když je definovaná zpráva.
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
@@ -32,7 +32,7 @@ Ukázková aplikace ukazuje `LoggerMessage` funkce s základní nabídky systém
 
 ## <a name="loggermessagedefine"></a>LoggerMessage.Define
 
-[Definujte (LogLevel, ID události, řetězec)](/dotnet/api/microsoft.extensions.logging.loggermessage.define) vytvoří `Action` delegovat pro protokolování zprávy. `Define`přetížení povolení předávání až šest parametry typu na řetězec s názvem formátu (šablony).
+[Definujte (LogLevel, ID události, řetězec)](/dotnet/api/microsoft.extensions.logging.loggermessage.define) vytvoří `Action` delegovat pro protokolování zprávy. `Define` přetížení povolení předávání až šest parametry typu na řetězec s názvem formátu (šablony).
 
 Pro zadaný řetězec `Define` je metoda šablonu a není interpolované řetězce. Zástupné symboly doplní v pořadí, že jsou uvedené typy. Zástupné názvy v šabloně by měl být popisný a konzistentní v rámci šablony. Představují názvy vlastností v rámci strukturovaných dat protokolu. Doporučujeme, abyste [Pascal velká a malá písmena](/dotnet/standard/design-guidelines/capitalization-conventions) pro názvy zástupný symbol. Například `{Count}`, `{FirstName}`.
 
@@ -60,7 +60,7 @@ Ukládá strukturované protokolování použít název události při se dodáv
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet9)]
 
-`IndexPageRequested`je volána v protokolovacího nástroje v `OnGetAsync` metoda v *Pages/Index.cshtml.cs*:
+`IndexPageRequested` je volána v protokolovacího nástroje v `OnGetAsync` metoda v *Pages/Index.cshtml.cs*:
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=3)]
 
@@ -135,7 +135,7 @@ Parameter name: entity
 
 ## <a name="loggermessagedefinescope"></a>LoggerMessage.DefineScope
 
-[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) vytvoří `Func` delegovat pro definování [protokolu oboru](xref:fundamentals/logging/index#log-scopes). `DefineScope`přetížení povolení předávání až tři parametry typu na řetězec s názvem formátu (šablony).
+[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) vytvoří `Func` delegovat pro definování [protokolu oboru](xref:fundamentals/logging/index#log-scopes). `DefineScope` přetížení povolení předávání až tři parametry typu na řetězec s názvem formátu (šablony).
 
 Stejně jako případě `Define` metoda, pro zadaný řetězec `DefineScope` je metoda šablonu a není interpolované řetězce. Zástupné symboly doplní v pořadí, že jsou uvedené typy. Zástupné názvy v šabloně by měl být popisný a konzistentní v rámci šablony. Představují názvy vlastností v rámci strukturovaných dat protokolu. Doporučujeme, abyste [Pascal velká a malá písmena](/dotnet/standard/design-guidelines/capitalization-conventions) pro názvy zástupný symbol. Například `{Count}`, `{FirstName}`.
 
@@ -145,7 +145,7 @@ Ukázková aplikace má **Vymazat vše** tlačítko pro odstranění všechna uv
 
 Povolit `IncludeScopes` v možnostech protokolovacího nástroje konzoly:
 
-[!code-csharp[Main](loggermessage/sample/Program.cs?name=snippet1&highlight=22)]
+[!code-csharp[Main](loggermessage/sample/Program.cs?name=snippet1&highlight=10)]
 
 Nastavení `IncludeScopes` je nutný v aplikacích ASP.NET 2.0 jádra pro povolení protokolu obory. Nastavení `IncludeScopes` prostřednictvím *appsettings* konfiguračních souborů je funkce, která má pro verzi ASP.NET Core 2.1.
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: 144af8e93bb935d07fd064d5f45b40faea4a2664
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 150603d17f3bed983f9871fe7665748a70177f89
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Řešení potíží s ASP.NET Core v Azure App Service
 
@@ -37,6 +37,14 @@ Pracovní proces se nezdaří. Aplikaci nelze spustit.
 Spuštění aplikace, ale chybu brání splnění požadavku server.
 
 Při spuštění nebo při vytváření odpovědi, k této chybě dojde v kódu aplikace. Odpovědi může obsahovat žádný obsah, nebo se může zobrazit odpověď *500 – Vnitřní chyba serveru* v prohlížeči. V protokolu událostí aplikace obvykle stavy normálně spustil aplikaci. Z hlediska serveru, který je správná. Aplikace se spustit, ale nemůže generovat platnou odpověď. [Spusťte aplikaci v konzole Kudu](#run-the-app-in-the-kudu-console) nebo [povolit protokol stdout ASP.NET Core modulu](#aspnet-core-module-stdout-log) k vyřešení tohoto problému.
+
+**Obnovení připojení**
+
+Pokud dojde k chybě po odeslání hlaviček, je příliš pozdní pro server k odeslání **500 – Vnitřní chyba serveru** když dojde k chybě. Často se to stane, když dojde k chybě během serializace komplexních objektů pro odpověď. Tento typ chyby se zobrazí jako *obnovení připojení* chyba na straně klienta. [Protokolování aplikací](xref:fundamentals/logging/index) mohou pomoci při odstraňování těchto typů chyb.
+
+## <a name="default-startup-limits"></a>Výchozí omezení spuštění
+
+Modul základní ASP.NET je konfigurován s výchozím *startupTimeLimit* 120 sekundách. Pokud necháte nastavenou výchozí hodnotu, aplikace může trvat až dvě minuty spustit před modul protokoly selhání procesu. Informace o konfiguraci modulu najdete v tématu [atributy elementu aspNetCore](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element).
 
 ## <a name="troubleshoot-app-startup-errors"></a>Řešení chyb při spuštění aplikace
 
@@ -65,10 +73,9 @@ Mnoho chyb spuštění nepřispívají užitečné informace v protokolu událos
 1. Vyberte **Rozšířené nástroje** v okně **nástroje pro vývoj** oblasti. Vyberte **přejděte&rarr;**  tlačítko. Otevře se konzola Kudu v novou kartu prohlížeče nebo okna.
 1. Pomocí navigačního panelu v horní části stránky otevřete **konzolou pro ladění** a vyberte **CMD**.
 1. Otevření složky k cestě **lokality** > **wwwroot**.
-1. V konzole, spusťte aplikaci spuštěním sestavení aplikace s *dotnet.exe*. V následujícím příkazu nahraďte název sestavení aplikace pro `<assembly_name>`:
-   ```console
-   dotnet .\<assembly_name>.dll
-   ```
+1. V konzole spusťte aplikaci spuštěním sestavení aplikace.
+   * Pokud je aplikace [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd), spusťte sestavení aplikace s *dotnet.exe*. V následujícím příkazu nahraďte název sestavení aplikace pro `<assembly_name>`: `dotnet .\<assembly_name>.dll`
+   * Pokud je aplikace [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd)spusťte aplikaci je spustitelný soubor. V následujícím příkazu nahraďte název sestavení aplikace pro `<assembly_name>`: `<assembly_name>.exe`
 1. Výstup z aplikace, zobrazuje všechny chyby konzoly je přesměrovaná do konzole Kudu.
 
 ### <a name="aspnet-core-module-stdout-log"></a>ASP.NET Core modulu stdout protokolu
@@ -104,13 +111,16 @@ Protokol stdout ASP.NET Core modulu zaznamenává často užitečné chybové zp
 
 Najdete v článku [ASP.NET Core běžné chyby odkaz](xref:host-and-deploy/azure-iis-errors-reference). Většina běžné problémy, které brání spuštění aplikací jsou popsané v referenčním tématu.
 
-## <a name="process-dump-for-a-slow-or-hanging-app"></a>Výpis procesu pro aplikace pro práci s pomalými nebo měny
+## <a name="slow-or-hanging-app"></a>Pomalá nebo měny aplikace
 
 Pokud aplikace reaguje pomalu nebo přestane reagovat na vyžádání, najdete v části [Poradce při potížích pomalé webové aplikace problémy s výkonem v Azure App Service](/azure/app-service/app-service-web-troubleshoot-performance-degradation) pro ladění pokyny.
 
 ## <a name="remote-debugging"></a>Vzdálené ladění
 
-V tématu [vzdálené ladění webových aplikací části řešení webové aplikace ve službě Azure App Service pomocí sady Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug) v dokumentaci k Azure.
+Najdete v následujících tématech:
+
+* [Vzdálené ladění webových aplikací části řešení webové aplikace ve službě Azure App Service pomocí sady Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug) (dokumentace k Azure)
+* [Vzdálené ladění ASP.NET Core ve službě IIS v Azure ve Visual Studio 2017](/visualstudio/debugger/remote-debugging-azure) (dokumentace k sadě Visual Studio)
 
 ## <a name="application-insights"></a>Application Insights
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: c1a05c3e40e6aab0f2e4a97c0b3bb9eca8a08a41
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5addaada33364d044d89359196bd1d316590c517
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Odkaz na konfiguraci základní modul ASP.NET
 
@@ -41,7 +41,7 @@ Základní modul ASP.NET je nakonfigurovat přes web nebo aplikaci *web.config* 
 </configuration>
 ```
 
-*Web.config* následující příklad je pro [samostatná nasazení](https://docs.microsoft.com/dotnet/articles/core/deploying/#self-contained-deployments-scd) k [Azure App Service](https://azure.microsoft.com/services/app-service/). Další informace najdete v tématu [hostitele v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index). V tématu [konfiguraci dílčí aplikací](xref:host-and-deploy/iis/index#configuration-of-sub-applications) pro důležitá poznámka týkající se konfigurace *web.config* soubory v dílčí aplikace.
+*Web.config* následující příklad je pro [samostatná nasazení](https://docs.microsoft.com/dotnet/articles/core/deploying/#self-contained-deployments-scd) k [Azure App Service](https://azure.microsoft.com/services/app-service/). Další informace najdete v tématu [hostitele v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index). V tématu [konfiguraci dílčí aplikací](xref:host-and-deploy/iis/index#sub-application-configuration) pro důležitá poznámka týkající se konfigurace *web.config* soubory v dílčí aplikace.
 
 ```xml
 <configuration>
@@ -75,7 +75,7 @@ Základní modul ASP.NET je nakonfigurovat přes web nebo aplikaci *web.config* 
 
 Základní modul ASP.NET umožňuje zadat proměnné prostředí pro proces zadaný v `processPath` atribut zadáním v jednom nebo více `environmentVariable` podřízených elementů `environmentVariables` kolekce element v části `aspNetCore` elementu. Nastavení v této části proměnné prostředí mají přednost před systému proměnných prostředí pro proces.
 
-Následující příklad nastaví dvou proměnných prostředí. `ASPNETCORE_ENVIRONMENT`nakonfiguruje prostředí aplikace `Development`. Vývojář může dočasně nastavit, že tato hodnota *web.config* souboru, aby bylo možné vynutit [vývojáře výjimka stránky](xref:fundamentals/error-handling) načíst při ladění výjimku aplikace. `CONFIG_DIR`je příkladem proměnnou uživatelské prostředí, kde byl vývojář zápis kód, který bude číst hodnotu na spuštění a aby bylo možné načíst konfigurační soubor aplikace vytvořit cestu.
+Následující příklad nastaví dvou proměnných prostředí. `ASPNETCORE_ENVIRONMENT` nakonfiguruje prostředí aplikace `Development`. Vývojář může dočasně nastavit, že tato hodnota *web.config* souboru, aby bylo možné vynutit [vývojáře výjimka stránky](xref:fundamentals/error-handling) načíst při ladění výjimku aplikace. `CONFIG_DIR` je příkladem proměnnou uživatelské prostředí, kde byl vývojář zápis kód, který bude číst hodnotu na spuštění a aby bylo možné načíst konfigurační soubor aplikace vytvořit cestu.
 
 ```xml
 <aspNetCore processPath="dotnet"

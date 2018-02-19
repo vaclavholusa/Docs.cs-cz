@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 752fa03b0cfc85fee2d945e5f65d94c01119d32e
-ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
+ms.openlocfilehash: 646793337037db25a321d273e10565770d76f202
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Základní informace o použití značky Pomocníci ve formulářích v ASP.NET Core
 
@@ -189,11 +189,9 @@ Generuje následující:
 
 Pomocí vlastnosti kolekce `asp-for="CollectionProperty[23].Member"` vygeneruje stejný název jako `asp-for="CollectionProperty[i].Member"` při `i` má hodnotu `23`.
 
-
-Když ASP.NET MVC základní vypočítá hodnotu `ModelExpression`, se kontroluje několik zdrojů, včetně `ModelState` a `ViewData`. Vezměte v úvahu `<input type="text" asp-for="@Name" />`. Vypočtená hodnota `asp-for` je první z následujících umístění, které není null:
+Když ASP.NET MVC základní vypočítá hodnotu `ModelExpression`, se kontroluje několik zdrojů, včetně `ModelState`. Vezměte v úvahu `<input type="text" asp-for="@Name" />`. Vypočítaný `value` atribut je první hodnota nesmí být nulová z:
 
 * `ModelState` Položka s klíčem "Name".
-* `ViewData` Položka s klíčem "Name".
 * Výsledkem výrazu `Model.Name`.
 
 ### <a name="navigating-child-properties"></a>Navigace vlastnosti podřízené
@@ -371,7 +369,7 @@ Když se stane Chyba ověření straně serveru (například pokud máte ověřo
 |--- |--- |
 |ValidationSummary.All|Vlastnost a model úroveň|
 |ValidationSummary.ModelOnly|Model|
-|ValidationSummary.None|Žádná|
+|ValidationSummary.None|Žádné|
 
 ### <a name="sample"></a>Ukázka
 

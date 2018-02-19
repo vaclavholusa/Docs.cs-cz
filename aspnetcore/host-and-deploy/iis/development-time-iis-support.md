@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: a5f727dd21ac0c6702691df2215c42f4adc0ec27
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a8bdf4c0c0399c62666e6e61e70c0298a42c2c12
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Podpora IIS době vývoje v sadě Visual Studio pro ASP.NET Core
 
 Pomocí: [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
-Tento článek popisuje [Visual Studio](https://www.visualstudio.com/vs/) podporu pro ladění aplikací ASP.NET Core spuštěné za služby IIS v systému Windows Server. Toto téma vás provede povolení této funkce a nastavení projektu.
+Tento článek popisuje [Visual Studio](https://www.visualstudio.com/vs/) podporu pro ladění aplikací ASP.NET Core za služby IIS v systému Windows Server. Toto téma vás provede povolení této funkce a nastavení projektu.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -37,7 +37,7 @@ Pokud instalace služby IIS vyžaduje restartování, restartování systému.
 
 ## <a name="enable-development-time-iis-support"></a>Povolit podporu služby IIS vývoj čas
 
-Po instalaci služby IIS, spusťte instalační program sady Visual Studio upravte stávající instalaci sady Visual Studio. V instalačním programu vyberte **okamžiku vývoje služby IIS podporují** součásti. Součást je uveden jako volitelná součást systému **Souhrn** panelu pro **ASP.NET a webové vývoj** zatížení. Tím se nainstaluje [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module), což je nativní modul IIS vyžaduje ke spuštění aplikací ASP.NET Core.
+Spusťte instalační program sady Visual Studio. Vyberte **okamžiku vývoje služby IIS podporují** součásti. Součást je uveden jako volitelný v **Souhrn** panelu pro **ASP.NET a webové vývoj** zatížení. Tím se nainstaluje [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module), což je potřebné ke spuštění aplikace ASP.NET Core nativní modul služby IIS.
 
 ![Úprava funkcích nástroje Visual Studio: je zvolena karta The úlohy. V části Web a Cloud panelu vývoj ASP.NET a webové zaškrtnuto. Na pravé straně v oblasti volitelné souhrnné panelu je zaškrtávací políčko pro vývoj, když služba IIS podporovat.](development-time-iis-support/_static/development_time_support.png)
 
@@ -73,8 +73,6 @@ Případně ručně přidat profil spuštění, který [launchSettings.json](htt
 ```
 
 Visual Studio může výzvu restartování, pokud není spuštěna jako správce. Pokud se zobrazí výzva, restartujte Visual Studio.
-
-Blahopřejeme! V tomto okamžiku projekt je konfigurován pro podporu vývoj čas IIS. 
 
 ## <a name="additional-resources"></a>Další zdroje
 

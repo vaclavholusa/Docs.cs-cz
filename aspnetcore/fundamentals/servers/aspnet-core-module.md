@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/aspnet-core-module
-ms.openlocfilehash: 4337bc42c5454d6a9634a396d9c89f3518af148b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cf02604f2a2f0eba496d0df5c4662f169d044c74
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="introduction-to-aspnet-core-module"></a>Úvod do modulu ASP.NET Core
 
@@ -56,8 +56,12 @@ Tato část obsahuje přehled procesu pro nastavení serveru služby IIS a ASP.N
 
 ### <a name="install-ancm"></a>Nainstalujte ANCM
 
+ANCM je nainstalován ve službě IIS v systému Windows Server a služby IIS Express na operační systémy Windows. Pro servery a počítače vývoj, je součástí ANCM [.NET jádra Windows serveru, který hostuje sady](https://aka.ms/dotnetcore-2-windowshosting). Pokud instalace sady Visual Studio, se automaticky nainstaluje ANCM, ve službě IIS Express (a ve službě IIS, pokud na tomto počítači).
 
-Základní modul ASP.NET musí být nainstalovaná ve službě IIS na serverech a ve službě IIS Express na vašich počítačích vývoj. Pro servery, je součástí ANCM [.NET jádra Windows serveru, který hostuje sady](https://aka.ms/dotnetcore-2-windowshosting). Pro počítače, vývoj Visual Studio automaticky nainstaluje ANCM ve službě IIS Express a ve službě IIS Pokud je již nainstalován na počítači.
+### <a name="net-core-windows-server-hosting-bundle"></a>Hostování v rozhraní .NET core systému Windows Server sady
+
+[.NET jádra Windows serveru, který hostuje sady](https://aka.ms/dotnetcore-2-windowshosting) nainstaluje rozhraní .NET Core Runtime, knihovny .NET Core a ANCM. Další informace najdete v tématu [instalaci sady .NET jádra Windows serveru, který hostuje](
+xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle).
 
 ### <a name="install-the-iisintegration-nuget-package"></a>Nainstalujte balíček IISIntegration NuGet
 

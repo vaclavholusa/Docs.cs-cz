@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 646793337037db25a321d273e10565770d76f202
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: d1c06e850d1a05e393a423c43cdfd368baca0cfe
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Základní informace o použití značky Pomocníci ve formulářích v ASP.NET Core
 
@@ -583,4 +583,4 @@ Správný `<option>` element bude vybrána (obsahovat `selected="selected"` atri
 * [Vazby modelu](xref:mvc/models/model-binding)
 * [Ověření modelu](xref:mvc/models/validation)
 * [IAttributeAdapter rozhraní](/dotnet/api/Microsoft.AspNetCore.Mvc.DataAnnotations.IAttributeAdapter)
-* [Fragmenty kódu pro tento dokument](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/forms/sample)
+* [Fragmenty kódu pro tento dokument](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/working-with-forms/sample/final)

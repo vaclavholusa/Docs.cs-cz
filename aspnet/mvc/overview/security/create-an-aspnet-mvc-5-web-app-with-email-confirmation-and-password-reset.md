@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 5689031015279484cc616090a767a8c25eefa3c1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d55b34135d5bab98ab8de31cc4b12dcc272cbc0a
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/20/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>Vytvoření zabezpečeného webové aplikace ASP.NET MVC 5 se přihlásit, e-mailem potvrzení a heslo resetovat (C#)
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Tento kurz ukazuje, jak sestavit webové aplikace ASP.NET MVC 5 s potvrzení e-mailu a resetování hesla pomocí systému členství ASP.NET Identity. Hotová aplikace si můžete stáhnout [zde](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952). Stahování obsahuje ladění pomocné rutiny, které umožňují testování potvrzení e-mailu a SMS bez nastavení e-mailem nebo poskytovatele služby SMS.
 > 
@@ -65,7 +65,7 @@ I když tento kurz ukazuje jenom postup přidání e-mailové oznámení prostř
 1. V konzole Správce balíčků, zadejte následující příkaz: 
 
     [!code-console[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample1.cmd)]
-2. Přejděte na [sendgrid vám umožňuje Azure registrační stránku](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409) a ZDARMA zaregistrovat účet sendgrid vám umožňuje. Přidejte kód podobná následující příkaz pro konfiguraci sendgrid vám umožňuje:
+2. Přejděte na [sendgrid vám umožňuje Azure registrační stránku](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409) a zaregistrovat bezplatný účet sendgrid vám umožňuje. Sendgrid vám umožňuje nakonfigurovat tak, že přidáte kód, podobně jako v následujícím *App_Start/IdentityConfig.cs*:
 
     [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample2.cs?highlight=3,5)]
 
@@ -102,7 +102,7 @@ Aktuálně po dokončení registračním formuláři Uživatel se přihlásí. C
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample7.cs?highlight=14-15,23-30)]
 
-Pomocí komentářů se `SignInAsync` metoda, nebude uživatel přihlášený pomocí registrace. `TempData["ViewBagLink"] = callbackUrl;` Řádku lze provádět [ladění aplikace](#dbg) a testování registrace bez odeslání e-mailu. `ViewBag.Message`slouží k zobrazení potvrdit pokynů. [Stažení ukázky](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952) obsahuje kód pro testování potvrzení e-mailu bez nastavení e-mailu a můžete také použít k ladění aplikace.
+Pomocí komentářů se `SignInAsync` metoda, nebude uživatel přihlášený pomocí registrace. `TempData["ViewBagLink"] = callbackUrl;` Řádku lze provádět [ladění aplikace](#dbg) a testování registrace bez odeslání e-mailu. `ViewBag.Message` slouží k zobrazení potvrdit pokynů. [Stažení ukázky](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952) obsahuje kód pro testování potvrzení e-mailu bez nastavení e-mailu a můžete také použít k ladění aplikace.
 
 Vytvoření `Views\Shared\Info.cshtml` souboru a přidejte následující kód razor:
 

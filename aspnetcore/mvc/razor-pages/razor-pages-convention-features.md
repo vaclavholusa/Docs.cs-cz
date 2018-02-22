@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/razor-pages/razor-pages-convention-features
-ms.openlocfilehash: bf1c895fc972310d5541d0098226d58b8183e320
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b34fd9ad8ae895087dba13f5ebcdcfd3fbb74667
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="razor-pages-route-and-app-convention-features-in-aspnet-core"></a>Syntaxe Razor stránky trasy a aplikace konvence funkce ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-Naučte se používat stránky trasy aplikace model zprostředkovatele konvence funkcí a k řízení stránky směrování, zjišťování a zpracování v aplikacích pro stránky Razor. Pokud potřebujete nakonfigurovat vlastní stránku trasy pro jednotlivé stránky, konfigurace směrování na stránky s [AddPageRoute konvence](#configure-a-page-route) popsané dál v tomto tématu.
+Naučte se používat stránky [trasy a aplikací modelu konvencí zprostředkovatele](xref:mvc/controllers/application-model#conventions) funkcí řízení stránky směrování, zjišťování a zpracování v aplikacích pro stránky Razor. Pokud potřebujete nakonfigurovat vlastní stránku trasy pro jednotlivé stránky, konfigurace směrování na stránky s [AddPageRoute konvence](#configure-a-page-route) popsané dál v tomto tématu.
 
-Použití [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/razor-pages-convention-features/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample)) prozkoumat funkce popsané v tomto tématu.
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/razor-pages-convention-features/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 | Funkce | Ukázka ukazuje... |
 | -------- | --------------------------- |
@@ -32,7 +32,7 @@ Použití [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspne
 
 ## <a name="add-route-and-app-model-conventions"></a>Přidat trasy a aplikaci konvence modelu
 
-Přidat delegáta pro [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) přidat trasy a aplikaci konvence modelu, které platí pro stránky Razor.
+Přidat delegáta pro [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) přidat [trasy a aplikací modelu konvence](xref:mvc/controllers/application-model#conventions) která platí pro stránky Razor.
 
 **Přidat na všechny stránky modelu konvencí směrování**
 
@@ -45,7 +45,7 @@ Ukázková aplikace přidá `{globalTemplate?}` šablonu trasy na všechny strá
 > [!NOTE]
 > `Order` Vlastnost `AttributeRouteModel` je nastaven na `0` (nula). Tím se zajistí, že tato šablona je daná prioritu pro první pozici hodnoty data trasy, pokud je zadána hodnota jedné směrovací. Příklad: Ukázka přidá `{aboutTemplate?}` šablonu trasy později v tomto tématu. `{aboutTemplate?}` Šablony je uveden `Order` z `1`. Když je stránka o požádali v `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 0`) a ne `RouteData.Values["aboutTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
 
-*Startup.cs*:
+Možnosti stránky Razor, jako je například přidávání [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions), se přidají, když MVC je přidat do kolekce služby v `Startup.ConfigureServices`. Příklad, naleznete v části [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/razor-pages-convention-features/sample/).
 
 [!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet1)]
 
@@ -107,7 +107,7 @@ Požadavek vzorku o stránku v `localhost:5000/About/GlobalRouteValue/AboutRoute
 
 ## <a name="configure-a-page-route"></a>Konfigurace stránky trasy
 
-Použití [AddPageRoute](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.addpageroute) ke konfiguraci trasy na stránku v cestě zadané stránky. Vygenerovaný odkazy na stránce použít zadanou trasu. `AddPageRoute`používá `AddPageRouteModelConvention` k vytvoření trasy.
+Použití [AddPageRoute](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.addpageroute) ke konfiguraci trasy na stránku v cestě zadané stránky. Vygenerovaný odkazy na stránce použít zadanou trasu. `AddPageRoute` používá `AddPageRouteModelConvention` k vytvoření trasy.
 
 Ukázková aplikace vytvoří trasu k `/TheContactPage` pro *Contact.cshtml*:
 
@@ -171,7 +171,7 @@ Požadavek vzorku o stránku v `localhost:5000/About` a zkontrolovat hlavičky z
 
 Model aplikace stránky se používá k ověření pro segmenty, které vést ke stránce strany Page2 na relativní cestu *OtherPages* složky. Pokud podmínka úspěšně projde, se přidá hlavičku. Pokud ne, `EmptyFilter` platí.
 
-`EmptyFilter`je [filtr akce](xref:mvc/controllers/filters#action-filters). Vzhledem k tomu, že filtrů akce jsou ignorovat stránky Razor `EmptyFilter` ne ops tak, jak má, pokud cesta neobsahuje `OtherPages/Page2`.
+`EmptyFilter` je [filtr akce](xref:mvc/controllers/filters#action-filters). Vzhledem k tomu, že filtrů akce jsou ignorovat stránky Razor `EmptyFilter` ne ops tak, jak má, pokud cesta neobsahuje `OtherPages/Page2`.
 
 Požadavek ukázkové strany Page2 stránku v `localhost:5000/OtherPages/Page2` a zkontrolovat hlavičky zobrazíte výsledek:
 
@@ -266,7 +266,7 @@ Model stránky v *Index.cshtml.cs* ukazuje, jak jsou změnit zásady vytvářen�
 
 Každý z jiné metody spustit pomocí příkazu HTTP, který popisuje jeho zpracování. Tyto dvě metody, které začínají `Delete` by za normálních okolností považována za odstranit příkaz HTTP, ale logika `TryParseHandlerMethod` explicitně na hodnotu POST nastaví příkaz pro obě obslužné rutiny.
 
-Všimněte si, že `Async` je volitelný mezi `DeleteAllMessages` a `DeleteMessageAsync`. Jsou oba asynchronní metody, ale můžete použít `Async` přípony nebo není; doporučujeme, abyste provedli. `DeleteAllMessages`Tady je použita pro demonstrační účely, ale doporučujeme pojmenovat tato metoda `DeleteAllMessagesAsync`. Neovlivní zpracování tohoto příkladu implementace, ale pomocí `Async` přípony volání na fakt, že se jedná o asynchronní metodu.
+Všimněte si, že `Async` je volitelný mezi `DeleteAllMessages` a `DeleteMessageAsync`. Jsou oba asynchronní metody, ale můžete použít `Async` přípony nebo není; doporučujeme, abyste provedli. `DeleteAllMessages` Tady je použita pro demonstrační účely, ale doporučujeme pojmenovat tato metoda `DeleteAllMessagesAsync`. Neovlivní zpracování tohoto příkladu implementace, ale pomocí `Async` přípony volání na fakt, že se jedná o asynchronní metodu.
 
 [!code-csharp[Main](razor-pages-convention-features/sample/Pages/Index.cshtml.cs?name=snippet1&highlight=1,6,16,29)]
 
@@ -274,7 +274,7 @@ Poznamenejte si názvy obslužná rutina součástí *Index.cshtml* odpovídat `
 
 [!code-cshtml[Main](razor-pages-convention-features/sample/Pages/Index.cshtml?range=29-60&highlight=7-8,24-25)]
 
-`Async`v názvu metoda obslužná rutina `DeleteMessageAsync` je rozdělen odhlašování pomocí `TryParseHandlerMethod` pro párování obslužné rutiny požadavku POST metodě. `asp-page-handler` Název `DeleteMessage` odpovídá metodu obslužné rutiny `DeleteMessageAsync`.
+`Async` v názvu metoda obslužná rutina `DeleteMessageAsync` je rozdělen odhlašování pomocí `TryParseHandlerMethod` pro párování obslužné rutiny požadavku POST metodě. `asp-page-handler` Název `DeleteMessage` odpovídá metodu obslužné rutiny `DeleteMessageAsync`.
 
 ## <a name="mvc-filters-and-the-page-filter-ipagefilter"></a>Filtry MVC a filtr stránek (IPageFilter)
 

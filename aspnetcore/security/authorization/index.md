@@ -1,38 +1,41 @@
 ---
 title: Autorizace v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument slouží jako obsah v různých oblastech autorizace ASP.NET Core."
+description: "Zjistit témata ASP.NET Core autorizace, které vysvětlují, jak poskytnout práva a oprávnění pro uživatele aplikace."
 manager: wpickett
 ms.author: riande
-ms.date: 10/14/2016
+ms.custom: mvc
+ms.date: 02/19/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/index
-ms.openlocfilehash: ee408afab55a80d28291a3a44e0fd1513ff34e45
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 652a01d58f7a7d19faa8531b61ea780bc379c428
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/20/2018
 ---
-# <a name="authorization-in-aspnet-core-simple-role-claims-based-and-custom"></a>Autorizace v ASP.NET Core: jednoduchý, na základě deklarace a vlastní role
+# <a name="authorization-in-aspnet-core"></a>Autorizace v ASP.NET Core
 
-* [Úvod](introduction.md)
+* [Úvod](xref:security/authorization/introduction)
+
+* [Vytvoření aplikace s uživatelskými daty chráněnými autorizací](xref:security/authorization/secure-data)
 
 * [Autorizace stránek Razor](xref:security/authorization/razor-pages-authorization)
 
-* [Jednoduchá autorizace](simple.md)
+* [Jednoduchá autorizace](xref:security/authorization/simple)
 
-* [Ověřování založené na rolích](roles.md)
+* [Ověřování založené na rolích](xref:security/authorization/roles)
 
-* [Autorizace na základě deklarace identity](claims.md)
+* [Autorizace na základě deklarace identity](xref:security/authorization/claims)
 
-* [Autorizace na základě zásad](policies.md)
+* [Autorizace na základě zásad](xref:security/authorization/policies)
 
-* [Injektáž závislostí v obslužných rutinách požadavků](dependencyinjection.md)
+* [Injektáž závislostí v obslužných rutinách požadavků](xref:security/authorization/dependencyinjection)
 
-* [Autorizace na základě prostředků](resourcebased.md)
+* [Autorizace na základě prostředků](xref:security/authorization/resourcebased)
 
-* [Autorizace na základě zobrazení](views.md)
+* [Autorizace na základě zobrazení](xref:security/authorization/views)
 
-* [Omezení identity schématem](limitingidentitybyscheme.md)
+* [Autorizaci s konkrétní schéma](xref:security/authorization/limitingidentitybyscheme)

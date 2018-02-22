@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: cf7dcdb80f5edf9e10960cb08957793c36829a69
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0ec223ce06ff116c36182b8de507138e96a277a4
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="configure-identity"></a>Konfigurace Identity
 
@@ -35,7 +35,7 @@ Jádro ASP.NET 2.0, které jsou přidány `RequiredUniqueChars` vlastnost. Jinak
 
 ---
 
-`IdentityOptions.Password`má následující vlastnosti:
+`IdentityOptions.Password` má následující vlastnosti:
 
 | Vlastnost                | Popis                       | Výchozí |
 | ----------------------- | --------------------------------- | ------- |
@@ -51,7 +51,7 @@ Jádro ASP.NET 2.0, které jsou přidány `RequiredUniqueChars` vlastnost. Jinak
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,39-42,50-52)]
 
-`IdentityOptions.Lockout`má následující vlastnosti:
+`IdentityOptions.Lockout` má následující vlastnosti:
 
 | Vlastnost                | Popis                       | Výchozí |
 | ----------------------- | --------------------------------- | ------- |
@@ -63,7 +63,7 @@ Jádro ASP.NET 2.0, které jsou přidány `RequiredUniqueChars` vlastnost. Jinak
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,44-46,50-52)]
 
-`IdentityOptions.SignIn`má následující vlastnosti:
+`IdentityOptions.SignIn` má následující vlastnosti:
 
 | Vlastnost                | Popis                       | Výchozí |
 | ----------------------- | --------------------------------- | ------- |
@@ -74,7 +74,7 @@ Jádro ASP.NET 2.0, které jsou přidány `RequiredUniqueChars` vlastnost. Jinak
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,48-52)]
 
-`IdentityOptions.User`má následující vlastnosti:
+`IdentityOptions.User` má následující vlastnosti:
 
 | Vlastnost                | Popis                       | Výchozí |
 | ----------------------- | --------------------------------- | ------- |
@@ -98,7 +98,7 @@ V části `ConfigureServices` v `Startup` třídu, můžete nakonfigurovat soubo
 
 ---
 
-`CookieAuthenticationOptions`má následující vlastnosti:
+`CookieAuthenticationOptions` má následující vlastnosti:
 
 | Vlastnost                | Popis                       | Výchozí |
 | ----------------------- | --------------------------------- | ------- |
@@ -107,8 +107,8 @@ V části `ConfigureServices` v `Startup` třídu, můžete nakonfigurovat soubo
 | `ExpireTimeSpan`  | Určuje, jak dlouho lístek ověřování uložené v souboru cookie, který zůstane platný od okamžiku, je vytvořena.  | 14 dnů  |
 | `LoginPath`  | Pokud uživatel není autorizovaný, bude přesměrován na tuto cestu k přihlášení. | / Účet nebo přihlášení  |
 | `LogoutPath`  | Když je přihlášený uživatel, bude přesměrován na této cestě.  | / Účet/odhlášení  |
-| `AccessDeniedPath`  | Pokud se uživatel nezdaří kontrolu autorizace, bude přesměrován na této cestě.  |   |
-| `SlidingExpiration`  | V případě hodnoty true bude nový čas vypršení platnosti, pokud je aktuální soubor cookie vyčerpal více než polovinu životnosti vydán nový soubor cookie.  | / Účet nebo AccessDenied |
-| `ReturnUrlParameter`  | Určuje název parametru řetězce dotazu, který je middlewarem připojen, pokud až po přesměrování 302 na přihlašovací cestě změněn kód stavu 401 Unauthorized status.  |  true |
+| `AccessDeniedPath`  | Pokud se uživatel nezdaří kontrolu autorizace, bude přesměrován na této cestě.  |  / Účet nebo AccessDenied |
+| `SlidingExpiration`  | V případě hodnoty true bude nový čas vypršení platnosti, pokud je aktuální soubor cookie vyčerpal více než polovinu životnosti vydán nový soubor cookie.  | true |
+| `ReturnUrlParameter`  | Určuje název parametru řetězce dotazu, který je middlewarem připojen, pokud až po přesměrování 302 na přihlašovací cestě změněn kód stavu 401 Unauthorized status.  | ReturnUrl |
 | `AuthenticationScheme`  | To platí pouze pro ASP.NET Core 1.x. Logický název pro konkrétní ověřování schématu. |  |
 | `AutomaticAuthenticate`  | Tento příznak platí pouze pro ASP.NET Core 1.x. V případě hodnoty true ověřování souborů cookie by měl spustit u každého požadavku a pokus o ověření a proveďte rekonstrukci serializovaný objekt zabezpečení, vytvořen.  |  |

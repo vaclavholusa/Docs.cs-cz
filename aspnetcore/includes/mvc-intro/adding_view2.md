@@ -14,11 +14,11 @@ Pokud okno prohlížeče je malá (například na mobilní zařízení), možná
 
 Klepněte na nabídku odkazy (**MvcMovie**, **Domů**, **o**). Každé stránce, zobrazí se stejné rozvržení nabídky. Nabídka rozložení je implementována ve *Views/Shared/_Layout.cshtml* souboru. Otevřete *Views/Shared/_Layout.cshtml* souboru.
 
-[Rozložení](xref:mvc/views/layout) šablony umožňují zadat rozložení kontejneru HTML vašeho webu na jednom místě a následně použít na více stránkách ve vaší lokalitě. Najít `@RenderBody()` řádku. `RenderBody`je zástupný symbol kde všechny na zobrazení konkrétní stránky, můžete vytvořit zobrazení, *zabalené* na stránce rozložení. Například, pokud jste vybrali **o** odkaz, **Views/Home/About.cshtml** zobrazení vykresleno uvnitř `RenderBody` metoda.
+[Rozložení](xref:mvc/views/layout) šablony umožňují zadat rozložení kontejneru HTML vašeho webu na jednom místě a následně použít na více stránkách ve vaší lokalitě. Najít `@RenderBody()` řádku. `RenderBody` je zástupný symbol kde všechny na zobrazení konkrétní stránky, můžete vytvořit zobrazení, *zabalené* na stránce rozložení. Například, pokud jste vybrali **o** odkaz, **Views/Home/About.cshtml** zobrazení vykresleno uvnitř `RenderBody` metoda.
 
 ## <a name="change-the-title-and-menu-link-in-the-layout-file"></a>Změnit název a nabídky odkaz v souboru rozložení
 
-Název elementu, změňte `MvcMovie` k `Movie App`. Změňte text ukotvení v šabloně rozložení z `MvcMovie` k `Mvc Movie` a kontroler, z `Home` k `Movies` jako zvýrazněná níže:
+Název elementu, změňte `MvcMovie` k `Movie App`. Změňte text ukotvení v šabloně rozložení z `MvcMovie` k `Movie App` a kontroler, z `Home` k `Movies` jako zvýrazněná níže:
 
 Poznámka: Na technologii ASP.NET 2.0 základní verzi se mírně liší. Neobsahuje `@inject ApplicationInsights` a `@Html.Raw(JavaScriptSnippet.FullScript)`.
 
@@ -64,7 +64,7 @@ Budete je provedete mírně lišit, abyste viděli, které bit kódu změní kte
 <p>Hello from our View Template!</p>
 ```
 
-`ViewData["Title"] = "Movie List";`v kódu výše nastaví `Title` vlastnost `ViewData` slovník "Film seznamu". `Title` Vlastnost se používá v `<title>` prvek HTML na stránce rozložení:
+`ViewData["Title"] = "Movie List";` v kódu výše nastaví `Title` vlastnost `ViewData` slovník "Film seznamu". `Title` Vlastnost se používá v `<title>` prvek HTML na stránce rozložení:
 
 
 ```HTML

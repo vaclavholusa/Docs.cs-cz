@@ -10,39 +10,39 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 646793337037db25a321d273e10565770d76f202
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: d1c06e850d1a05e393a423c43cdfd368baca0cfe
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/20/2018
 ---
-# <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a><span data-ttu-id="13ed1-103">Základní informace o použití značky Pomocníci ve formulářích v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="13ed1-103">Introduction to using tag helpers in forms in ASP.NET Core</span></span>
+# <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a><span data-ttu-id="65c3d-103">Základní informace o použití značky Pomocníci ve formulářích v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="65c3d-103">Introduction to using tag helpers in forms in ASP.NET Core</span></span>
 
-<span data-ttu-id="13ed1-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Dave Paquette](https://twitter.com/Dave_Paquette), a [Jerrie Pelser](https://github.com/jerriep)</span><span class="sxs-lookup"><span data-stu-id="13ed1-104">By [Rick Anderson](https://twitter.com/RickAndMSFT), [Dave Paquette](https://twitter.com/Dave_Paquette), and [Jerrie Pelser](https://github.com/jerriep)</span></span>
+<span data-ttu-id="65c3d-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Dave Paquette](https://twitter.com/Dave_Paquette), a [Jerrie Pelser](https://github.com/jerriep)</span><span class="sxs-lookup"><span data-stu-id="65c3d-104">By [Rick Anderson](https://twitter.com/RickAndMSFT), [Dave Paquette](https://twitter.com/Dave_Paquette), and [Jerrie Pelser](https://github.com/jerriep)</span></span>
 
-<span data-ttu-id="13ed1-105">Tento dokument ukazuje práci s formuláři a elementů HTML běžně používají na formuláři.</span><span class="sxs-lookup"><span data-stu-id="13ed1-105">This document demonstrates working with Forms and the HTML elements commonly used on a Form.</span></span> <span data-ttu-id="13ed1-106">HTML [formuláře](https://www.w3.org/TR/html401/interact/forms.html) element poskytuje primární mechanismus webové aplikace využívají k odesílání dat zpět na server.</span><span class="sxs-lookup"><span data-stu-id="13ed1-106">The HTML [Form](https://www.w3.org/TR/html401/interact/forms.html) element provides the primary mechanism web apps use to post back data to the server.</span></span> <span data-ttu-id="13ed1-107">Většina tento dokument popisuje [značky Pomocníci](tag-helpers/intro.md) a jak se vám může pomoct efektivní vytvořit robustní formuláře HTML.</span><span class="sxs-lookup"><span data-stu-id="13ed1-107">Most of this document describes [Tag Helpers](tag-helpers/intro.md) and how they can help you productively create robust HTML forms.</span></span> <span data-ttu-id="13ed1-108">Doporučujeme, abyste si přečetli [Úvod do pomocné rutiny značky](tag-helpers/intro.md) před čtením tohoto dokumentu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-108">We recommend you read [Introduction to Tag Helpers](tag-helpers/intro.md) before you read this document.</span></span>
+<span data-ttu-id="65c3d-105">Tento dokument ukazuje práci s formuláři a elementů HTML běžně používají na formuláři.</span><span class="sxs-lookup"><span data-stu-id="65c3d-105">This document demonstrates working with Forms and the HTML elements commonly used on a Form.</span></span> <span data-ttu-id="65c3d-106">HTML [formuláře](https://www.w3.org/TR/html401/interact/forms.html) element poskytuje primární mechanismus webové aplikace využívají k odesílání dat zpět na server.</span><span class="sxs-lookup"><span data-stu-id="65c3d-106">The HTML [Form](https://www.w3.org/TR/html401/interact/forms.html) element provides the primary mechanism web apps use to post back data to the server.</span></span> <span data-ttu-id="65c3d-107">Většina tento dokument popisuje [značky Pomocníci](tag-helpers/intro.md) a jak se vám může pomoct efektivní vytvořit robustní formuláře HTML.</span><span class="sxs-lookup"><span data-stu-id="65c3d-107">Most of this document describes [Tag Helpers](tag-helpers/intro.md) and how they can help you productively create robust HTML forms.</span></span> <span data-ttu-id="65c3d-108">Doporučujeme, abyste si přečetli [Úvod do pomocné rutiny značky](tag-helpers/intro.md) před čtením tohoto dokumentu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-108">We recommend you read [Introduction to Tag Helpers](tag-helpers/intro.md) before you read this document.</span></span>
 
-<span data-ttu-id="13ed1-109">V mnoha případech pomocné objekty HTML poskytnout alternativní způsob konkrétní pomocné rutiny značky, ale je důležité vědět, že pomocné rutiny značky není nahradit pomocné rutiny HTML a neexistuje žádná značka Pomocník pro každý pomocné rutiny HTML.</span><span class="sxs-lookup"><span data-stu-id="13ed1-109">In many cases, HTML Helpers provide an alternative approach to a specific Tag Helper, but it's important to recognize that Tag Helpers don't replace HTML Helpers and there's not a Tag Helper for each HTML Helper.</span></span> <span data-ttu-id="13ed1-110">Pokud existuje alternativu pomocné rutiny HTML, je uvedený.</span><span class="sxs-lookup"><span data-stu-id="13ed1-110">When an HTML Helper alternative exists, it's mentioned.</span></span>
+<span data-ttu-id="65c3d-109">V mnoha případech pomocné objekty HTML poskytnout alternativní způsob konkrétní pomocné rutiny značky, ale je důležité vědět, že pomocné rutiny značky není nahradit pomocné rutiny HTML a neexistuje žádná značka Pomocník pro každý pomocné rutiny HTML.</span><span class="sxs-lookup"><span data-stu-id="65c3d-109">In many cases, HTML Helpers provide an alternative approach to a specific Tag Helper, but it's important to recognize that Tag Helpers don't replace HTML Helpers and there's not a Tag Helper for each HTML Helper.</span></span> <span data-ttu-id="65c3d-110">Pokud existuje alternativu pomocné rutiny HTML, je uvedený.</span><span class="sxs-lookup"><span data-stu-id="65c3d-110">When an HTML Helper alternative exists, it's mentioned.</span></span>
 
 <a name="my-asp-route-param-ref-label"></a>
 
-## <a name="the-form-tag-helper"></a><span data-ttu-id="13ed1-111">Pomocník značku formuláře</span><span class="sxs-lookup"><span data-stu-id="13ed1-111">The Form Tag Helper</span></span>
+## <a name="the-form-tag-helper"></a><span data-ttu-id="65c3d-111">Pomocník značku formuláře</span><span class="sxs-lookup"><span data-stu-id="65c3d-111">The Form Tag Helper</span></span>
 
-<span data-ttu-id="13ed1-112">[Formuláře](https://www.w3.org/TR/html401/interact/forms.html) značky pomocné rutiny:</span><span class="sxs-lookup"><span data-stu-id="13ed1-112">The [Form](https://www.w3.org/TR/html401/interact/forms.html) Tag Helper:</span></span>
+<span data-ttu-id="65c3d-112">[Formuláře](https://www.w3.org/TR/html401/interact/forms.html) značky pomocné rutiny:</span><span class="sxs-lookup"><span data-stu-id="65c3d-112">The [Form](https://www.w3.org/TR/html401/interact/forms.html) Tag Helper:</span></span>
 
-* <span data-ttu-id="13ed1-113">Generuje kód HTML [ \<formuláře >](https://www.w3.org/TR/html401/interact/forms.html) `action` hodnotu atributu pro akce kontroleru MVC nebo pojmenovanou trasu</span><span class="sxs-lookup"><span data-stu-id="13ed1-113">Generates the HTML [\<FORM>](https://www.w3.org/TR/html401/interact/forms.html) `action` attribute value for a MVC controller action or named route</span></span>
+* <span data-ttu-id="65c3d-113">Generuje kód HTML [ \<formuláře >](https://www.w3.org/TR/html401/interact/forms.html) `action` hodnotu atributu pro akce kontroleru MVC nebo pojmenovanou trasu</span><span class="sxs-lookup"><span data-stu-id="65c3d-113">Generates the HTML [\<FORM>](https://www.w3.org/TR/html401/interact/forms.html) `action` attribute value for a MVC controller action or named route</span></span>
 
-* <span data-ttu-id="13ed1-114">Vytváří skrytý [žádosti o ověření tokenu](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) při ochraně před paděláním požadavku posílaného mezi weby (při použití s `[ValidateAntiForgeryToken]` atribut v metodě akce HTTP Post)</span><span class="sxs-lookup"><span data-stu-id="13ed1-114">Generates a hidden [Request Verification Token](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) to prevent cross-site request forgery (when used with the `[ValidateAntiForgeryToken]` attribute in the HTTP Post action method)</span></span>
+* <span data-ttu-id="65c3d-114">Vytváří skrytý [žádosti o ověření tokenu](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) při ochraně před paděláním požadavku posílaného mezi weby (při použití s `[ValidateAntiForgeryToken]` atribut v metodě akce HTTP Post)</span><span class="sxs-lookup"><span data-stu-id="65c3d-114">Generates a hidden [Request Verification Token](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) to prevent cross-site request forgery (when used with the `[ValidateAntiForgeryToken]` attribute in the HTTP Post action method)</span></span>
 
-* <span data-ttu-id="13ed1-115">Poskytuje `asp-route-<Parameter Name>` atribut, kde `<Parameter Name>` se přidá do hodnoty trasy.</span><span class="sxs-lookup"><span data-stu-id="13ed1-115">Provides the `asp-route-<Parameter Name>` attribute, where `<Parameter Name>` is added to the route values.</span></span> <span data-ttu-id="13ed1-116">`routeValues` Parametry, které `Html.BeginForm` a `Html.BeginRouteForm` poskytuje podobné funkce.</span><span class="sxs-lookup"><span data-stu-id="13ed1-116">The  `routeValues` parameters to `Html.BeginForm` and `Html.BeginRouteForm` provide similar functionality.</span></span>
+* <span data-ttu-id="65c3d-115">Poskytuje `asp-route-<Parameter Name>` atribut, kde `<Parameter Name>` se přidá do hodnoty trasy.</span><span class="sxs-lookup"><span data-stu-id="65c3d-115">Provides the `asp-route-<Parameter Name>` attribute, where `<Parameter Name>` is added to the route values.</span></span> <span data-ttu-id="65c3d-116">`routeValues` Parametry, které `Html.BeginForm` a `Html.BeginRouteForm` poskytuje podobné funkce.</span><span class="sxs-lookup"><span data-stu-id="65c3d-116">The  `routeValues` parameters to `Html.BeginForm` and `Html.BeginRouteForm` provide similar functionality.</span></span>
 
-* <span data-ttu-id="13ed1-117">Má alternativu pomocné rutiny HTML `Html.BeginForm` a `Html.BeginRouteForm`</span><span class="sxs-lookup"><span data-stu-id="13ed1-117">Has an HTML Helper alternative `Html.BeginForm` and `Html.BeginRouteForm`</span></span>
+* <span data-ttu-id="65c3d-117">Má alternativu pomocné rutiny HTML `Html.BeginForm` a `Html.BeginRouteForm`</span><span class="sxs-lookup"><span data-stu-id="65c3d-117">Has an HTML Helper alternative `Html.BeginForm` and `Html.BeginRouteForm`</span></span>
 
-<span data-ttu-id="13ed1-118">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="13ed1-118">Sample:</span></span>
+<span data-ttu-id="65c3d-118">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="65c3d-118">Sample:</span></span>
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Demo/RegisterFormOnly.cshtml)]
 
-<span data-ttu-id="13ed1-119">Pomocné rutiny formuláře značka výše generuje následující HTML:</span><span class="sxs-lookup"><span data-stu-id="13ed1-119">The Form Tag Helper above generates the following HTML:</span></span>
+<span data-ttu-id="65c3d-119">Pomocné rutiny formuláře značka výše generuje následující HTML:</span><span class="sxs-lookup"><span data-stu-id="65c3d-119">The Form Tag Helper above generates the following HTML:</span></span>
 
 ```HTML
 <form method="post" action="/Demo/Register">
@@ -51,15 +51,15 @@ ms.lasthandoff: 02/19/2018
     </form>
 ```
 
-<span data-ttu-id="13ed1-120">Modul runtime rozhraní MVC vygeneruje `action` hodnotu atributu ze atributů pomocná značku formuláře `asp-controller` a `asp-action`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-120">The MVC runtime generates the `action` attribute value from the Form Tag Helper attributes `asp-controller` and `asp-action`.</span></span> <span data-ttu-id="13ed1-121">Pomocník značku formuláře také vytváří skrytý [žádosti o ověření tokenu](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) při ochraně před paděláním požadavku posílaného mezi weby (při použití s `[ValidateAntiForgeryToken]` atribut v metodě akce HTTP Post).</span><span class="sxs-lookup"><span data-stu-id="13ed1-121">The Form Tag Helper also generates a hidden [Request Verification Token](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) to prevent cross-site request forgery (when used with the `[ValidateAntiForgeryToken]` attribute in the HTTP Post action method).</span></span> <span data-ttu-id="13ed1-122">Ochrana proti padělání požadavku posílaného mezi weby čistý formuláře HTML je obtížné, pomocná značku formuláře poskytuje tuto službu můžete.</span><span class="sxs-lookup"><span data-stu-id="13ed1-122">Protecting a pure HTML Form from cross-site request forgery is difficult, the Form Tag Helper provides this service for you.</span></span>
+<span data-ttu-id="65c3d-120">Modul runtime rozhraní MVC vygeneruje `action` hodnotu atributu ze atributů pomocná značku formuláře `asp-controller` a `asp-action`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-120">The MVC runtime generates the `action` attribute value from the Form Tag Helper attributes `asp-controller` and `asp-action`.</span></span> <span data-ttu-id="65c3d-121">Pomocník značku formuláře také vytváří skrytý [žádosti o ověření tokenu](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) při ochraně před paděláním požadavku posílaného mezi weby (při použití s `[ValidateAntiForgeryToken]` atribut v metodě akce HTTP Post).</span><span class="sxs-lookup"><span data-stu-id="65c3d-121">The Form Tag Helper also generates a hidden [Request Verification Token](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) to prevent cross-site request forgery (when used with the `[ValidateAntiForgeryToken]` attribute in the HTTP Post action method).</span></span> <span data-ttu-id="65c3d-122">Ochrana proti padělání požadavku posílaného mezi weby čistý formuláře HTML je obtížné, pomocná značku formuláře poskytuje tuto službu můžete.</span><span class="sxs-lookup"><span data-stu-id="65c3d-122">Protecting a pure HTML Form from cross-site request forgery is difficult, the Form Tag Helper provides this service for you.</span></span>
 
-### <a name="using-a-named-route"></a><span data-ttu-id="13ed1-123">Pomocí pojmenovanou trasu</span><span class="sxs-lookup"><span data-stu-id="13ed1-123">Using a named route</span></span>
+### <a name="using-a-named-route"></a><span data-ttu-id="65c3d-123">Pomocí pojmenovanou trasu</span><span class="sxs-lookup"><span data-stu-id="65c3d-123">Using a named route</span></span>
 
-<span data-ttu-id="13ed1-124">`asp-route` Značky pomocný atribut můžete také vygenerovat kód pro kód HTML `action` atribut.</span><span class="sxs-lookup"><span data-stu-id="13ed1-124">The `asp-route` Tag Helper attribute can also generate markup for the HTML `action` attribute.</span></span> <span data-ttu-id="13ed1-125">Aplikace s [trasy](../../fundamentals/routing.md) s názvem `register` použít následující kód pro stránku registrace:</span><span class="sxs-lookup"><span data-stu-id="13ed1-125">An app with a [route](../../fundamentals/routing.md)  named `register` could use the following markup for the registration page:</span></span>
+<span data-ttu-id="65c3d-124">`asp-route` Značky pomocný atribut můžete také vygenerovat kód pro kód HTML `action` atribut.</span><span class="sxs-lookup"><span data-stu-id="65c3d-124">The `asp-route` Tag Helper attribute can also generate markup for the HTML `action` attribute.</span></span> <span data-ttu-id="65c3d-125">Aplikace s [trasy](../../fundamentals/routing.md) s názvem `register` použít následující kód pro stránku registrace:</span><span class="sxs-lookup"><span data-stu-id="65c3d-125">An app with a [route](../../fundamentals/routing.md)  named `register` could use the following markup for the registration page:</span></span>
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterRoute.cshtml)]
 
-<span data-ttu-id="13ed1-126">Řadu zobrazení *zobrazení nebo účet* složky (vygeneruje, když vytvoříte novou webovou aplikaci s *jednotlivé uživatelské účty*) obsahují [asp. trasy returnurl](https://docs.microsoft.com/aspnet/core/mvc/views/working-with-forms) atribut:</span><span class="sxs-lookup"><span data-stu-id="13ed1-126">Many of the views in the *Views/Account* folder (generated when you create a new web app with *Individual User Accounts*) contain the [asp-route-returnurl](https://docs.microsoft.com/aspnet/core/mvc/views/working-with-forms) attribute:</span></span>
+<span data-ttu-id="65c3d-126">Řadu zobrazení *zobrazení nebo účet* složky (vygeneruje, když vytvoříte novou webovou aplikaci s *jednotlivé uživatelské účty*) obsahují [asp. trasy returnurl](https://docs.microsoft.com/aspnet/core/mvc/views/working-with-forms) atribut:</span><span class="sxs-lookup"><span data-stu-id="65c3d-126">Many of the views in the *Views/Account* folder (generated when you create a new web app with *Individual User Accounts*) contain the [asp-route-returnurl](https://docs.microsoft.com/aspnet/core/mvc/views/working-with-forms) attribute:</span></span>
 
 ```cshtml
 <form asp-controller="Account" asp-action="Login"
@@ -68,31 +68,31 @@ ms.lasthandoff: 02/19/2018
 ```
 
 >[!NOTE]
-><span data-ttu-id="13ed1-127">Pomocí integrované šablony `returnUrl` je pouze naplněny automaticky při pokusu o přístup k autorizovaným prostředků, ale není ověřený nebo oprávnění.</span><span class="sxs-lookup"><span data-stu-id="13ed1-127">With the built in templates, `returnUrl` is only populated automatically when you try to access an authorized resource but are not authenticated or authorized.</span></span> <span data-ttu-id="13ed1-128">Když zkusíte neoprávněným přístupem, middleware zabezpečení vás přesměruje na přihlašovací stránku s `returnUrl` nastavit.</span><span class="sxs-lookup"><span data-stu-id="13ed1-128">When you attempt an unauthorized access, the security middleware redirects you to the login page with the `returnUrl` set.</span></span>
+><span data-ttu-id="65c3d-127">Pomocí integrované šablony `returnUrl` je pouze naplněny automaticky při pokusu o přístup k autorizovaným prostředků, ale není ověřený nebo oprávnění.</span><span class="sxs-lookup"><span data-stu-id="65c3d-127">With the built in templates, `returnUrl` is only populated automatically when you try to access an authorized resource but are not authenticated or authorized.</span></span> <span data-ttu-id="65c3d-128">Když zkusíte neoprávněným přístupem, middleware zabezpečení vás přesměruje na přihlašovací stránku s `returnUrl` nastavit.</span><span class="sxs-lookup"><span data-stu-id="65c3d-128">When you attempt an unauthorized access, the security middleware redirects you to the login page with the `returnUrl` set.</span></span>
 
-## <a name="the-input-tag-helper"></a><span data-ttu-id="13ed1-129">Pomocník vstupní značky</span><span class="sxs-lookup"><span data-stu-id="13ed1-129">The Input Tag Helper</span></span>
+## <a name="the-input-tag-helper"></a><span data-ttu-id="65c3d-129">Pomocník vstupní značky</span><span class="sxs-lookup"><span data-stu-id="65c3d-129">The Input Tag Helper</span></span>
 
-<span data-ttu-id="13ed1-130">Váže vstupní značka pomocné rutiny HTML [ \<vstupní >](https://www.w3.org/wiki/HTML/Elements/input) element modelu výrazu v zobrazení syntaxe razor.</span><span class="sxs-lookup"><span data-stu-id="13ed1-130">The Input Tag Helper binds an HTML [\<input>](https://www.w3.org/wiki/HTML/Elements/input) element to a model expression in your razor view.</span></span>
+<span data-ttu-id="65c3d-130">Váže vstupní značka pomocné rutiny HTML [ \<vstupní >](https://www.w3.org/wiki/HTML/Elements/input) element modelu výrazu v zobrazení syntaxe razor.</span><span class="sxs-lookup"><span data-stu-id="65c3d-130">The Input Tag Helper binds an HTML [\<input>](https://www.w3.org/wiki/HTML/Elements/input) element to a model expression in your razor view.</span></span>
 
-<span data-ttu-id="13ed1-131">Syntaxe:</span><span class="sxs-lookup"><span data-stu-id="13ed1-131">Syntax:</span></span>
+<span data-ttu-id="65c3d-131">Syntaxe:</span><span class="sxs-lookup"><span data-stu-id="65c3d-131">Syntax:</span></span>
 
 ```HTML
 <input asp-for="<Expression Name>" />
 ```
 
-<span data-ttu-id="13ed1-132">Pomocník vstupní značky:</span><span class="sxs-lookup"><span data-stu-id="13ed1-132">The Input Tag Helper:</span></span>
+<span data-ttu-id="65c3d-132">Pomocník vstupní značky:</span><span class="sxs-lookup"><span data-stu-id="65c3d-132">The Input Tag Helper:</span></span>
 
-* <span data-ttu-id="13ed1-133">Generuje `id` a `name` atributy HTML pro název výraz zadaný v `asp-for` atribut.</span><span class="sxs-lookup"><span data-stu-id="13ed1-133">Generates the `id` and `name` HTML attributes for the expression name specified in the `asp-for` attribute.</span></span> <span data-ttu-id="13ed1-134">`asp-for="Property1.Property2"` je ekvivalentní `m => m.Property1.Property2`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-134">`asp-for="Property1.Property2"` is equivalent to `m => m.Property1.Property2`.</span></span> <span data-ttu-id="13ed1-135">Název výrazu se bude používat pro `asp-for` hodnota atributu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-135">The name of the expression is what is used for the `asp-for` attribute value.</span></span> <span data-ttu-id="13ed1-136">Najdete v článku [názvy výrazů](#expression-names) části Další informace.</span><span class="sxs-lookup"><span data-stu-id="13ed1-136">See the [Expression names](#expression-names) section for additional information.</span></span>
+* <span data-ttu-id="65c3d-133">Generuje `id` a `name` atributy HTML pro název výraz zadaný v `asp-for` atribut.</span><span class="sxs-lookup"><span data-stu-id="65c3d-133">Generates the `id` and `name` HTML attributes for the expression name specified in the `asp-for` attribute.</span></span> <span data-ttu-id="65c3d-134">`asp-for="Property1.Property2"` je ekvivalentní `m => m.Property1.Property2`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-134">`asp-for="Property1.Property2"` is equivalent to `m => m.Property1.Property2`.</span></span> <span data-ttu-id="65c3d-135">Název výrazu se bude používat pro `asp-for` hodnota atributu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-135">The name of the expression is what is used for the `asp-for` attribute value.</span></span> <span data-ttu-id="65c3d-136">Najdete v článku [názvy výrazů](#expression-names) části Další informace.</span><span class="sxs-lookup"><span data-stu-id="65c3d-136">See the [Expression names](#expression-names) section for additional information.</span></span>
 
-* <span data-ttu-id="13ed1-137">Nastaví HTML `type` atribut hodnotu na základě typu modelu a [datové poznámky](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy použité na vlastnost modelu</span><span class="sxs-lookup"><span data-stu-id="13ed1-137">Sets the HTML `type` attribute value based on the model type and  [data annotation](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributes applied to the model property</span></span>
+* <span data-ttu-id="65c3d-137">Nastaví HTML `type` atribut hodnotu na základě typu modelu a [datové poznámky](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy použité na vlastnost modelu</span><span class="sxs-lookup"><span data-stu-id="65c3d-137">Sets the HTML `type` attribute value based on the model type and  [data annotation](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributes applied to the model property</span></span>
 
-* <span data-ttu-id="13ed1-138">Nedojde k přepsání HTML `type` hodnota atributu, pokud byl zadán jeden</span><span class="sxs-lookup"><span data-stu-id="13ed1-138">Won't overwrite the HTML `type` attribute value when one is specified</span></span>
+* <span data-ttu-id="65c3d-138">Nedojde k přepsání HTML `type` hodnota atributu, pokud byl zadán jeden</span><span class="sxs-lookup"><span data-stu-id="65c3d-138">Won't overwrite the HTML `type` attribute value when one is specified</span></span>
 
-* <span data-ttu-id="13ed1-139">Generuje [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) atributy ověření ze [datové poznámky](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy použité na vlastnosti modelu</span><span class="sxs-lookup"><span data-stu-id="13ed1-139">Generates [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5)  validation attributes from [data annotation](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributes applied to model properties</span></span>
+* <span data-ttu-id="65c3d-139">Generuje [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) atributy ověření ze [datové poznámky](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy použité na vlastnosti modelu</span><span class="sxs-lookup"><span data-stu-id="65c3d-139">Generates [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5)  validation attributes from [data annotation](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributes applied to model properties</span></span>
 
-* <span data-ttu-id="13ed1-140">Obsahuje funkci pomocné rutiny HTML, které se překrývají s `Html.TextBoxFor` a `Html.EditorFor`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-140">Has an HTML Helper feature overlap with `Html.TextBoxFor` and `Html.EditorFor`.</span></span> <span data-ttu-id="13ed1-141">Najdete v článku **pomocné rutiny HTML alternativy vstupní značka pomocná** podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="13ed1-141">See the **HTML Helper alternatives to Input Tag Helper** section for details.</span></span>
+* <span data-ttu-id="65c3d-140">Obsahuje funkci pomocné rutiny HTML, které se překrývají s `Html.TextBoxFor` a `Html.EditorFor`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-140">Has an HTML Helper feature overlap with `Html.TextBoxFor` and `Html.EditorFor`.</span></span> <span data-ttu-id="65c3d-141">Najdete v článku **pomocné rutiny HTML alternativy vstupní značka pomocná** podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="65c3d-141">See the **HTML Helper alternatives to Input Tag Helper** section for details.</span></span>
 
-* <span data-ttu-id="13ed1-142">Poskytuje silného typování.</span><span class="sxs-lookup"><span data-stu-id="13ed1-142">Provides strong typing.</span></span> <span data-ttu-id="13ed1-143">Pokud název změny vlastností a neaktualizovat pomocná značky budete dojde k chybě podobný následujícímu:</span><span class="sxs-lookup"><span data-stu-id="13ed1-143">If the name of the property changes and you don't update the Tag Helper you'll get an error similar to the following:</span></span>
+* <span data-ttu-id="65c3d-142">Poskytuje silného typování.</span><span class="sxs-lookup"><span data-stu-id="65c3d-142">Provides strong typing.</span></span> <span data-ttu-id="65c3d-143">Pokud název změny vlastností a neaktualizovat pomocná značky budete dojde k chybě podobný následujícímu:</span><span class="sxs-lookup"><span data-stu-id="65c3d-143">If the name of the property changes and you don't update the Tag Helper you'll get an error similar to the following:</span></span>
 
 ```HTML
 An error occurred during the compilation of a resource required to process
@@ -105,39 +105,39 @@ Type expected
  could be found (are you missing a using directive or an assembly reference?)
 ```
 
-<span data-ttu-id="13ed1-144">`Input` Nastaví značku pomocné rutiny HTML `type` atribut založený na typu .NET.</span><span class="sxs-lookup"><span data-stu-id="13ed1-144">The `Input` Tag Helper sets the HTML `type` attribute based on the .NET type.</span></span> <span data-ttu-id="13ed1-145">Následující tabulka uvádí některé běžné typy .NET a vygenerovaný typ HTML (ne každý typ formátu .NET je uvedena).</span><span class="sxs-lookup"><span data-stu-id="13ed1-145">The following table lists some common .NET types and generated HTML type (not every .NET type is listed).</span></span>
+<span data-ttu-id="65c3d-144">`Input` Nastaví značku pomocné rutiny HTML `type` atribut založený na typu .NET.</span><span class="sxs-lookup"><span data-stu-id="65c3d-144">The `Input` Tag Helper sets the HTML `type` attribute based on the .NET type.</span></span> <span data-ttu-id="65c3d-145">Následující tabulka uvádí některé běžné typy .NET a vygenerovaný typ HTML (ne každý typ formátu .NET je uvedena).</span><span class="sxs-lookup"><span data-stu-id="65c3d-145">The following table lists some common .NET types and generated HTML type (not every .NET type is listed).</span></span>
 
-|<span data-ttu-id="13ed1-146">Typ formátu .NET</span><span class="sxs-lookup"><span data-stu-id="13ed1-146">.NET type</span></span>|<span data-ttu-id="13ed1-147">Typ vstupu</span><span class="sxs-lookup"><span data-stu-id="13ed1-147">Input Type</span></span>|
+|<span data-ttu-id="65c3d-146">Typ formátu .NET</span><span class="sxs-lookup"><span data-stu-id="65c3d-146">.NET type</span></span>|<span data-ttu-id="65c3d-147">Typ vstupu</span><span class="sxs-lookup"><span data-stu-id="65c3d-147">Input Type</span></span>|
 |---|---|
-|<span data-ttu-id="13ed1-148">BOOL</span><span class="sxs-lookup"><span data-stu-id="13ed1-148">Bool</span></span>|<span data-ttu-id="13ed1-149">type=”checkbox”</span><span class="sxs-lookup"><span data-stu-id="13ed1-149">type=”checkbox”</span></span>|
-|<span data-ttu-id="13ed1-150">String</span><span class="sxs-lookup"><span data-stu-id="13ed1-150">String</span></span>|<span data-ttu-id="13ed1-151">type=”text”</span><span class="sxs-lookup"><span data-stu-id="13ed1-151">type=”text”</span></span>|
-|<span data-ttu-id="13ed1-152">DateTime</span><span class="sxs-lookup"><span data-stu-id="13ed1-152">DateTime</span></span>|<span data-ttu-id="13ed1-153">type=”datetime”</span><span class="sxs-lookup"><span data-stu-id="13ed1-153">type=”datetime”</span></span>|
-|<span data-ttu-id="13ed1-154">Byte</span><span class="sxs-lookup"><span data-stu-id="13ed1-154">Byte</span></span>|<span data-ttu-id="13ed1-155">typ = "number"</span><span class="sxs-lookup"><span data-stu-id="13ed1-155">type=”number”</span></span>|
-|<span data-ttu-id="13ed1-156">celá čísla</span><span class="sxs-lookup"><span data-stu-id="13ed1-156">Int</span></span>|<span data-ttu-id="13ed1-157">typ = "number"</span><span class="sxs-lookup"><span data-stu-id="13ed1-157">type=”number”</span></span>|
-|<span data-ttu-id="13ed1-158">Jednoduché, Double</span><span class="sxs-lookup"><span data-stu-id="13ed1-158">Single, Double</span></span>|<span data-ttu-id="13ed1-159">typ = "number"</span><span class="sxs-lookup"><span data-stu-id="13ed1-159">type=”number”</span></span>|
+|<span data-ttu-id="65c3d-148">BOOL</span><span class="sxs-lookup"><span data-stu-id="65c3d-148">Bool</span></span>|<span data-ttu-id="65c3d-149">type=”checkbox”</span><span class="sxs-lookup"><span data-stu-id="65c3d-149">type=”checkbox”</span></span>|
+|<span data-ttu-id="65c3d-150">String</span><span class="sxs-lookup"><span data-stu-id="65c3d-150">String</span></span>|<span data-ttu-id="65c3d-151">type=”text”</span><span class="sxs-lookup"><span data-stu-id="65c3d-151">type=”text”</span></span>|
+|<span data-ttu-id="65c3d-152">DateTime</span><span class="sxs-lookup"><span data-stu-id="65c3d-152">DateTime</span></span>|<span data-ttu-id="65c3d-153">type=”datetime”</span><span class="sxs-lookup"><span data-stu-id="65c3d-153">type=”datetime”</span></span>|
+|<span data-ttu-id="65c3d-154">Byte</span><span class="sxs-lookup"><span data-stu-id="65c3d-154">Byte</span></span>|<span data-ttu-id="65c3d-155">typ = "number"</span><span class="sxs-lookup"><span data-stu-id="65c3d-155">type=”number”</span></span>|
+|<span data-ttu-id="65c3d-156">celá čísla</span><span class="sxs-lookup"><span data-stu-id="65c3d-156">Int</span></span>|<span data-ttu-id="65c3d-157">typ = "number"</span><span class="sxs-lookup"><span data-stu-id="65c3d-157">type=”number”</span></span>|
+|<span data-ttu-id="65c3d-158">Jednoduché, Double</span><span class="sxs-lookup"><span data-stu-id="65c3d-158">Single, Double</span></span>|<span data-ttu-id="65c3d-159">typ = "number"</span><span class="sxs-lookup"><span data-stu-id="65c3d-159">type=”number”</span></span>|
 
 
-<span data-ttu-id="13ed1-160">Následující tabulka uvádí některé běžné [datových poznámek](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy, které pomocné rutiny vstupní značka se mapování na konkrétní typy vstupu (ne každý atribut ověření je uvedena):</span><span class="sxs-lookup"><span data-stu-id="13ed1-160">The following table shows some common [data annotations](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributes that the input tag helper will map to specific input types (not every validation attribute is listed):</span></span>
+<span data-ttu-id="65c3d-160">Následující tabulka uvádí některé běžné [datových poznámek](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy, které pomocné rutiny vstupní značka se mapování na konkrétní typy vstupu (ne každý atribut ověření je uvedena):</span><span class="sxs-lookup"><span data-stu-id="65c3d-160">The following table shows some common [data annotations](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributes that the input tag helper will map to specific input types (not every validation attribute is listed):</span></span>
 
 
-|<span data-ttu-id="13ed1-161">Atribut</span><span class="sxs-lookup"><span data-stu-id="13ed1-161">Attribute</span></span>|<span data-ttu-id="13ed1-162">Typ vstupu</span><span class="sxs-lookup"><span data-stu-id="13ed1-162">Input Type</span></span>|
+|<span data-ttu-id="65c3d-161">Atribut</span><span class="sxs-lookup"><span data-stu-id="65c3d-161">Attribute</span></span>|<span data-ttu-id="65c3d-162">Typ vstupu</span><span class="sxs-lookup"><span data-stu-id="65c3d-162">Input Type</span></span>|
 |---|---|
-|<span data-ttu-id="13ed1-163">[EmailAddress]</span><span class="sxs-lookup"><span data-stu-id="13ed1-163">[EmailAddress]</span></span>|<span data-ttu-id="13ed1-164">type=”email”</span><span class="sxs-lookup"><span data-stu-id="13ed1-164">type=”email”</span></span>|
-|<span data-ttu-id="13ed1-165">[Url]</span><span class="sxs-lookup"><span data-stu-id="13ed1-165">[Url]</span></span>|<span data-ttu-id="13ed1-166">type=”url”</span><span class="sxs-lookup"><span data-stu-id="13ed1-166">type=”url”</span></span>|
-|<span data-ttu-id="13ed1-167">[HiddenInput]</span><span class="sxs-lookup"><span data-stu-id="13ed1-167">[HiddenInput]</span></span>|<span data-ttu-id="13ed1-168">type=”hidden”</span><span class="sxs-lookup"><span data-stu-id="13ed1-168">type=”hidden”</span></span>|
-|<span data-ttu-id="13ed1-169">[Phone]</span><span class="sxs-lookup"><span data-stu-id="13ed1-169">[Phone]</span></span>|<span data-ttu-id="13ed1-170">type=”tel”</span><span class="sxs-lookup"><span data-stu-id="13ed1-170">type=”tel”</span></span>|
-|<span data-ttu-id="13ed1-171">[DataType(DataType.Password)]</span><span class="sxs-lookup"><span data-stu-id="13ed1-171">[DataType(DataType.Password)]</span></span>| <span data-ttu-id="13ed1-172">typ = "password"</span><span class="sxs-lookup"><span data-stu-id="13ed1-172">type=”password”</span></span>|
-|<span data-ttu-id="13ed1-173">[DataType(DataType.Date)]</span><span class="sxs-lookup"><span data-stu-id="13ed1-173">[DataType(DataType.Date)]</span></span>| <span data-ttu-id="13ed1-174">type=”date”</span><span class="sxs-lookup"><span data-stu-id="13ed1-174">type=”date”</span></span>|
-|<span data-ttu-id="13ed1-175">[DataType(DataType.Time)]</span><span class="sxs-lookup"><span data-stu-id="13ed1-175">[DataType(DataType.Time)]</span></span>| <span data-ttu-id="13ed1-176">typ = "čas"</span><span class="sxs-lookup"><span data-stu-id="13ed1-176">type=”time”</span></span>|
+|<span data-ttu-id="65c3d-163">[EmailAddress]</span><span class="sxs-lookup"><span data-stu-id="65c3d-163">[EmailAddress]</span></span>|<span data-ttu-id="65c3d-164">type=”email”</span><span class="sxs-lookup"><span data-stu-id="65c3d-164">type=”email”</span></span>|
+|<span data-ttu-id="65c3d-165">[Url]</span><span class="sxs-lookup"><span data-stu-id="65c3d-165">[Url]</span></span>|<span data-ttu-id="65c3d-166">type=”url”</span><span class="sxs-lookup"><span data-stu-id="65c3d-166">type=”url”</span></span>|
+|<span data-ttu-id="65c3d-167">[HiddenInput]</span><span class="sxs-lookup"><span data-stu-id="65c3d-167">[HiddenInput]</span></span>|<span data-ttu-id="65c3d-168">type=”hidden”</span><span class="sxs-lookup"><span data-stu-id="65c3d-168">type=”hidden”</span></span>|
+|<span data-ttu-id="65c3d-169">[Phone]</span><span class="sxs-lookup"><span data-stu-id="65c3d-169">[Phone]</span></span>|<span data-ttu-id="65c3d-170">type=”tel”</span><span class="sxs-lookup"><span data-stu-id="65c3d-170">type=”tel”</span></span>|
+|<span data-ttu-id="65c3d-171">[DataType(DataType.Password)]</span><span class="sxs-lookup"><span data-stu-id="65c3d-171">[DataType(DataType.Password)]</span></span>| <span data-ttu-id="65c3d-172">typ = "password"</span><span class="sxs-lookup"><span data-stu-id="65c3d-172">type=”password”</span></span>|
+|<span data-ttu-id="65c3d-173">[DataType(DataType.Date)]</span><span class="sxs-lookup"><span data-stu-id="65c3d-173">[DataType(DataType.Date)]</span></span>| <span data-ttu-id="65c3d-174">type=”date”</span><span class="sxs-lookup"><span data-stu-id="65c3d-174">type=”date”</span></span>|
+|<span data-ttu-id="65c3d-175">[DataType(DataType.Time)]</span><span class="sxs-lookup"><span data-stu-id="65c3d-175">[DataType(DataType.Time)]</span></span>| <span data-ttu-id="65c3d-176">typ = "čas"</span><span class="sxs-lookup"><span data-stu-id="65c3d-176">type=”time”</span></span>|
 
 
-<span data-ttu-id="13ed1-177">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="13ed1-177">Sample:</span></span>
+<span data-ttu-id="65c3d-177">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="65c3d-177">Sample:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/ViewModels/RegisterViewModel.cs)]
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Demo/RegisterInput.cshtml)]
 
-<span data-ttu-id="13ed1-178">Výše uvedený kód generuje následující HTML:</span><span class="sxs-lookup"><span data-stu-id="13ed1-178">The code above generates the following HTML:</span></span>
+<span data-ttu-id="65c3d-178">Výše uvedený kód generuje následující HTML:</span><span class="sxs-lookup"><span data-stu-id="65c3d-178">The code above generates the following HTML:</span></span>
 
 ```HTML
   <form method="post" action="/Demo/RegisterInput">
@@ -155,24 +155,24 @@ Type expected
    </form>
 ```
 
-<span data-ttu-id="13ed1-179">U anotací dat `Email` a `Password` vlastnosti generovat metadata na modelu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-179">The data annotations applied to the `Email` and `Password` properties generate metadata on the model.</span></span> <span data-ttu-id="13ed1-180">Pomocník značky vstup využívá metadat modelu a vytváří [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-val-*` atributy (najdete v části [ověření modelu](../models/validation.md)).</span><span class="sxs-lookup"><span data-stu-id="13ed1-180">The Input Tag Helper consumes the model metadata and produces [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-val-*` attributes (see [Model Validation](../models/validation.md)).</span></span> <span data-ttu-id="13ed1-181">Tyto atributy popisují validátory pro připojení k vstupních polí.</span><span class="sxs-lookup"><span data-stu-id="13ed1-181">These attributes describe the validators to attach to the input fields.</span></span> <span data-ttu-id="13ed1-182">To umožňuje nerušivý HTML5 a [jQuery](https://jquery.com/) ověření.</span><span class="sxs-lookup"><span data-stu-id="13ed1-182">This provides unobtrusive HTML5 and [jQuery](https://jquery.com/) validation.</span></span> <span data-ttu-id="13ed1-183">Nerušivý atributy mají formát `data-val-rule="Error Message"`, kde pravidlo je název pravidla ověření (například `data-val-required`, `data-val-email`, `data-val-maxlength`atd.) Pokud atribut je součástí chybovou zprávu, zobrazí se jako hodnota `data-val-rule` atribut.</span><span class="sxs-lookup"><span data-stu-id="13ed1-183">The unobtrusive attributes have the format `data-val-rule="Error Message"`, where rule is the name of the validation rule (such as `data-val-required`, `data-val-email`, `data-val-maxlength`, etc.) If an error message is provided in the attribute, it's displayed as the value for the `data-val-rule` attribute.</span></span> <span data-ttu-id="13ed1-184">Existují také atributy ve formátu `data-val-ruleName-argumentName="argumentValue"` které poskytují další informace o pravidle, například `data-val-maxlength-max="1024"` .</span><span class="sxs-lookup"><span data-stu-id="13ed1-184">There are also attributes of the form `data-val-ruleName-argumentName="argumentValue"` that provide additional details about the rule, for example, `data-val-maxlength-max="1024"` .</span></span>
+<span data-ttu-id="65c3d-179">U anotací dat `Email` a `Password` vlastnosti generovat metadata na modelu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-179">The data annotations applied to the `Email` and `Password` properties generate metadata on the model.</span></span> <span data-ttu-id="65c3d-180">Pomocník značky vstup využívá metadat modelu a vytváří [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-val-*` atributy (najdete v části [ověření modelu](../models/validation.md)).</span><span class="sxs-lookup"><span data-stu-id="65c3d-180">The Input Tag Helper consumes the model metadata and produces [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-val-*` attributes (see [Model Validation](../models/validation.md)).</span></span> <span data-ttu-id="65c3d-181">Tyto atributy popisují validátory pro připojení k vstupních polí.</span><span class="sxs-lookup"><span data-stu-id="65c3d-181">These attributes describe the validators to attach to the input fields.</span></span> <span data-ttu-id="65c3d-182">To umožňuje nerušivý HTML5 a [jQuery](https://jquery.com/) ověření.</span><span class="sxs-lookup"><span data-stu-id="65c3d-182">This provides unobtrusive HTML5 and [jQuery](https://jquery.com/) validation.</span></span> <span data-ttu-id="65c3d-183">Nerušivý atributy mají formát `data-val-rule="Error Message"`, kde pravidlo je název pravidla ověření (například `data-val-required`, `data-val-email`, `data-val-maxlength`atd.) Pokud atribut je součástí chybovou zprávu, zobrazí se jako hodnota `data-val-rule` atribut.</span><span class="sxs-lookup"><span data-stu-id="65c3d-183">The unobtrusive attributes have the format `data-val-rule="Error Message"`, where rule is the name of the validation rule (such as `data-val-required`, `data-val-email`, `data-val-maxlength`, etc.) If an error message is provided in the attribute, it's displayed as the value for the `data-val-rule` attribute.</span></span> <span data-ttu-id="65c3d-184">Existují také atributy ve formátu `data-val-ruleName-argumentName="argumentValue"` které poskytují další informace o pravidle, například `data-val-maxlength-max="1024"` .</span><span class="sxs-lookup"><span data-stu-id="65c3d-184">There are also attributes of the form `data-val-ruleName-argumentName="argumentValue"` that provide additional details about the rule, for example, `data-val-maxlength-max="1024"` .</span></span>
 
-### <a name="html-helper-alternatives-to-input-tag-helper"></a><span data-ttu-id="13ed1-185">Pomocné rutiny HTML alternativy vstupní značka pomocné rutiny</span><span class="sxs-lookup"><span data-stu-id="13ed1-185">HTML Helper alternatives to Input Tag Helper</span></span>
+### <a name="html-helper-alternatives-to-input-tag-helper"></a><span data-ttu-id="65c3d-185">Pomocné rutiny HTML alternativy vstupní značka pomocné rutiny</span><span class="sxs-lookup"><span data-stu-id="65c3d-185">HTML Helper alternatives to Input Tag Helper</span></span>
 
-<span data-ttu-id="13ed1-186">`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` a `Html.EditorFor` překrývajících se funkce s pomocnou rutinou vstupní značka.</span><span class="sxs-lookup"><span data-stu-id="13ed1-186">`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` and `Html.EditorFor` have overlapping features with the Input Tag Helper.</span></span> <span data-ttu-id="13ed1-187">Pomocné rutiny vstupní značka automaticky nastaví `type` atribut; `Html.TextBox` a `Html.TextBoxFor` nebude.</span><span class="sxs-lookup"><span data-stu-id="13ed1-187">The Input Tag Helper will automatically set the `type` attribute; `Html.TextBox` and `Html.TextBoxFor` won't.</span></span> <span data-ttu-id="13ed1-188">`Html.Editor` a `Html.EditorFor` zpracování kolekcí, komplexní objekty a šablony; není pomocný vstupní značka.</span><span class="sxs-lookup"><span data-stu-id="13ed1-188">`Html.Editor` and `Html.EditorFor` handle collections, complex objects and templates; the Input Tag Helper doesn't.</span></span> <span data-ttu-id="13ed1-189">Pomocné rutiny vstupní značka, `Html.EditorFor` a `Html.TextBoxFor` jsou silného typu (jejich použití výrazů lambda); `Html.TextBox` a `Html.Editor` nejsou (používají názvy výrazů).</span><span class="sxs-lookup"><span data-stu-id="13ed1-189">The Input Tag Helper, `Html.EditorFor`  and  `Html.TextBoxFor` are strongly typed (they use lambda expressions); `Html.TextBox` and `Html.Editor` are not (they use expression names).</span></span>
+<span data-ttu-id="65c3d-186">`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` a `Html.EditorFor` překrývajících se funkce s pomocnou rutinou vstupní značka.</span><span class="sxs-lookup"><span data-stu-id="65c3d-186">`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` and `Html.EditorFor` have overlapping features with the Input Tag Helper.</span></span> <span data-ttu-id="65c3d-187">Pomocné rutiny vstupní značka automaticky nastaví `type` atribut; `Html.TextBox` a `Html.TextBoxFor` nebude.</span><span class="sxs-lookup"><span data-stu-id="65c3d-187">The Input Tag Helper will automatically set the `type` attribute; `Html.TextBox` and `Html.TextBoxFor` won't.</span></span> <span data-ttu-id="65c3d-188">`Html.Editor` a `Html.EditorFor` zpracování kolekcí, komplexní objekty a šablony; není pomocný vstupní značka.</span><span class="sxs-lookup"><span data-stu-id="65c3d-188">`Html.Editor` and `Html.EditorFor` handle collections, complex objects and templates; the Input Tag Helper doesn't.</span></span> <span data-ttu-id="65c3d-189">Pomocné rutiny vstupní značka, `Html.EditorFor` a `Html.TextBoxFor` jsou silného typu (jejich použití výrazů lambda); `Html.TextBox` a `Html.Editor` nejsou (používají názvy výrazů).</span><span class="sxs-lookup"><span data-stu-id="65c3d-189">The Input Tag Helper, `Html.EditorFor`  and  `Html.TextBoxFor` are strongly typed (they use lambda expressions); `Html.TextBox` and `Html.Editor` are not (they use expression names).</span></span>
 
-### <a name="htmlattributes"></a><span data-ttu-id="13ed1-190">HtmlAttributes</span><span class="sxs-lookup"><span data-stu-id="13ed1-190">HtmlAttributes</span></span>
+### <a name="htmlattributes"></a><span data-ttu-id="65c3d-190">HtmlAttributes</span><span class="sxs-lookup"><span data-stu-id="65c3d-190">HtmlAttributes</span></span>
 
-<span data-ttu-id="13ed1-191">`@Html.Editor()` a `@Html.EditorFor()` použít speciální `ViewDataDictionary` položka s názvem `htmlAttributes` při provádění jejich výchozí šablony.</span><span class="sxs-lookup"><span data-stu-id="13ed1-191">`@Html.Editor()` and `@Html.EditorFor()` use a special `ViewDataDictionary` entry named `htmlAttributes` when executing their default templates.</span></span> <span data-ttu-id="13ed1-192">Toto chování je volitelně rozšířen pomocí `additionalViewData` parametry.</span><span class="sxs-lookup"><span data-stu-id="13ed1-192">This behavior is optionally augmented using `additionalViewData` parameters.</span></span> <span data-ttu-id="13ed1-193">Klíč "htmlAttributes" nerozlišuje velká a malá písmena.</span><span class="sxs-lookup"><span data-stu-id="13ed1-193">The key "htmlAttributes" is case-insensitive.</span></span> <span data-ttu-id="13ed1-194">Klíč "htmlAttributes" se zpracovávají podobně jako `htmlAttributes` byl předán objekt pomocné rutiny jako vstup `@Html.TextBox()`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-194">The key "htmlAttributes" is handled similarly to the `htmlAttributes` object passed to input helpers like `@Html.TextBox()`.</span></span>
+<span data-ttu-id="65c3d-191">`@Html.Editor()` a `@Html.EditorFor()` použít speciální `ViewDataDictionary` položka s názvem `htmlAttributes` při provádění jejich výchozí šablony.</span><span class="sxs-lookup"><span data-stu-id="65c3d-191">`@Html.Editor()` and `@Html.EditorFor()` use a special `ViewDataDictionary` entry named `htmlAttributes` when executing their default templates.</span></span> <span data-ttu-id="65c3d-192">Toto chování je volitelně rozšířen pomocí `additionalViewData` parametry.</span><span class="sxs-lookup"><span data-stu-id="65c3d-192">This behavior is optionally augmented using `additionalViewData` parameters.</span></span> <span data-ttu-id="65c3d-193">Klíč "htmlAttributes" nerozlišuje velká a malá písmena.</span><span class="sxs-lookup"><span data-stu-id="65c3d-193">The key "htmlAttributes" is case-insensitive.</span></span> <span data-ttu-id="65c3d-194">Klíč "htmlAttributes" se zpracovávají podobně jako `htmlAttributes` byl předán objekt pomocné rutiny jako vstup `@Html.TextBox()`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-194">The key "htmlAttributes" is handled similarly to the `htmlAttributes` object passed to input helpers like `@Html.TextBox()`.</span></span>
 
 ```HTML
 @Html.EditorFor(model => model.YourProperty, 
   new { htmlAttributes = new { @class="myCssClass", style="Width:100px" } })
 ```
 
-### <a name="expression-names"></a><span data-ttu-id="13ed1-195">Názvy výrazů</span><span class="sxs-lookup"><span data-stu-id="13ed1-195">Expression names</span></span>
+### <a name="expression-names"></a><span data-ttu-id="65c3d-195">Názvy výrazů</span><span class="sxs-lookup"><span data-stu-id="65c3d-195">Expression names</span></span>
 
-<span data-ttu-id="13ed1-196">`asp-for` Hodnota atributu je `ModelExpression` a pravé straně výrazu lambda.</span><span class="sxs-lookup"><span data-stu-id="13ed1-196">The `asp-for` attribute value is a `ModelExpression` and the right hand side of a lambda expression.</span></span> <span data-ttu-id="13ed1-197">Proto `asp-for="Property1"` stane `m => m.Property1` generovaného kódu, proto nemusíte předpony s `Model`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-197">Therefore, `asp-for="Property1"` becomes `m => m.Property1` in the generated code which is why you don't need to prefix with `Model`.</span></span> <span data-ttu-id="13ed1-198">Můžete použít "@" znak spustit výraz vložené a přesuňte před `m.`:</span><span class="sxs-lookup"><span data-stu-id="13ed1-198">You can use the "@" character to start an inline expression and move before the `m.`:</span></span>
+<span data-ttu-id="65c3d-196">`asp-for` Hodnota atributu je `ModelExpression` a pravé straně výrazu lambda.</span><span class="sxs-lookup"><span data-stu-id="65c3d-196">The `asp-for` attribute value is a `ModelExpression` and the right hand side of a lambda expression.</span></span> <span data-ttu-id="65c3d-197">Proto `asp-for="Property1"` stane `m => m.Property1` generovaného kódu, proto nemusíte předpony s `Model`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-197">Therefore, `asp-for="Property1"` becomes `m => m.Property1` in the generated code which is why you don't need to prefix with `Model`.</span></span> <span data-ttu-id="65c3d-198">Můžete použít "@" znak spustit výraz vložené a přesuňte před `m.`:</span><span class="sxs-lookup"><span data-stu-id="65c3d-198">You can use the "@" character to start an inline expression and move before the `m.`:</span></span>
 
 ```HTML
 @{
@@ -181,44 +181,44 @@ Type expected
    <input asp-for="@joe" />
 ```
 
-<span data-ttu-id="13ed1-199">Generuje následující:</span><span class="sxs-lookup"><span data-stu-id="13ed1-199">Generates the following:</span></span>
+<span data-ttu-id="65c3d-199">Generuje následující:</span><span class="sxs-lookup"><span data-stu-id="65c3d-199">Generates the following:</span></span>
 
 ```HTML
 <input type="text" id="joe" name="joe" value="Joe" />
 ```
 
-<span data-ttu-id="13ed1-200">Pomocí vlastnosti kolekce `asp-for="CollectionProperty[23].Member"` vygeneruje stejný název jako `asp-for="CollectionProperty[i].Member"` při `i` má hodnotu `23`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-200">With collection properties, `asp-for="CollectionProperty[23].Member"` generates the same name as `asp-for="CollectionProperty[i].Member"` when `i` has the value `23`.</span></span>
+<span data-ttu-id="65c3d-200">Pomocí vlastnosti kolekce `asp-for="CollectionProperty[23].Member"` vygeneruje stejný název jako `asp-for="CollectionProperty[i].Member"` při `i` má hodnotu `23`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-200">With collection properties, `asp-for="CollectionProperty[23].Member"` generates the same name as `asp-for="CollectionProperty[i].Member"` when `i` has the value `23`.</span></span>
 
-<span data-ttu-id="13ed1-201">Když ASP.NET MVC základní vypočítá hodnotu `ModelExpression`, se kontroluje několik zdrojů, včetně `ModelState`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-201">When ASP.NET Core MVC calculates the value of `ModelExpression`, it inspects several sources, including `ModelState`.</span></span> <span data-ttu-id="13ed1-202">Vezměte v úvahu `<input type="text" asp-for="@Name" />`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-202">Consider `<input type="text" asp-for="@Name" />`.</span></span> <span data-ttu-id="13ed1-203">Vypočítaný `value` atribut je první hodnota nesmí být nulová z:</span><span class="sxs-lookup"><span data-stu-id="13ed1-203">The calculated `value` attribute is the first non-null value from:</span></span>
+<span data-ttu-id="65c3d-201">Když ASP.NET MVC základní vypočítá hodnotu `ModelExpression`, se kontroluje několik zdrojů, včetně `ModelState`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-201">When ASP.NET Core MVC calculates the value of `ModelExpression`, it inspects several sources, including `ModelState`.</span></span> <span data-ttu-id="65c3d-202">Vezměte v úvahu `<input type="text" asp-for="@Name" />`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-202">Consider `<input type="text" asp-for="@Name" />`.</span></span> <span data-ttu-id="65c3d-203">Vypočítaný `value` atribut je první hodnota nesmí být nulová z:</span><span class="sxs-lookup"><span data-stu-id="65c3d-203">The calculated `value` attribute is the first non-null value from:</span></span>
 
-* <span data-ttu-id="13ed1-204">`ModelState` Položka s klíčem "Name".</span><span class="sxs-lookup"><span data-stu-id="13ed1-204">`ModelState` entry with key "Name".</span></span>
-* <span data-ttu-id="13ed1-205">Výsledkem výrazu `Model.Name`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-205">Result of the expression `Model.Name`.</span></span>
+* <span data-ttu-id="65c3d-204">`ModelState` Položka s klíčem "Name".</span><span class="sxs-lookup"><span data-stu-id="65c3d-204">`ModelState` entry with key "Name".</span></span>
+* <span data-ttu-id="65c3d-205">Výsledkem výrazu `Model.Name`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-205">Result of the expression `Model.Name`.</span></span>
 
-### <a name="navigating-child-properties"></a><span data-ttu-id="13ed1-206">Navigace vlastnosti podřízené</span><span class="sxs-lookup"><span data-stu-id="13ed1-206">Navigating child properties</span></span>
+### <a name="navigating-child-properties"></a><span data-ttu-id="65c3d-206">Navigace vlastnosti podřízené</span><span class="sxs-lookup"><span data-stu-id="65c3d-206">Navigating child properties</span></span>
 
-<span data-ttu-id="13ed1-207">Můžete také přejít na vlastnosti podřízené pomocí cesty k vlastnosti zobrazení modelu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-207">You can also navigate to child properties using the property path of the view model.</span></span> <span data-ttu-id="13ed1-208">Vezměte v úvahu složitější třídu modelu, která obsahuje podřízenou `Address` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="13ed1-208">Consider a more complex model class that contains a child `Address` property.</span></span>
+<span data-ttu-id="65c3d-207">Můžete také přejít na vlastnosti podřízené pomocí cesty k vlastnosti zobrazení modelu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-207">You can also navigate to child properties using the property path of the view model.</span></span> <span data-ttu-id="65c3d-208">Vezměte v úvahu složitější třídu modelu, která obsahuje podřízenou `Address` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="65c3d-208">Consider a more complex model class that contains a child `Address` property.</span></span>
 
 [!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/AddressViewModel.cs?highlight=1,2,3,4&range=5-8)]
 
 [!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/RegisterAddressViewModel.cs?highlight=8&range=5-13)]
 
-<span data-ttu-id="13ed1-209">V zobrazení, můžeme vytvořit vazbu na `Address.AddressLine1`:</span><span class="sxs-lookup"><span data-stu-id="13ed1-209">In the view, we bind to `Address.AddressLine1`:</span></span>
+<span data-ttu-id="65c3d-209">V zobrazení, můžeme vytvořit vazbu na `Address.AddressLine1`:</span><span class="sxs-lookup"><span data-stu-id="65c3d-209">In the view, we bind to `Address.AddressLine1`:</span></span>
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterAddress.cshtml?highlight=6)]
 
-<span data-ttu-id="13ed1-210">Následující kód HTML se generuje pro `Address.AddressLine1`:</span><span class="sxs-lookup"><span data-stu-id="13ed1-210">The following HTML is generated for `Address.AddressLine1`:</span></span>
+<span data-ttu-id="65c3d-210">Následující kód HTML se generuje pro `Address.AddressLine1`:</span><span class="sxs-lookup"><span data-stu-id="65c3d-210">The following HTML is generated for `Address.AddressLine1`:</span></span>
 
 ```HTML
 <input type="text" id="Address_AddressLine1" name="Address.AddressLine1" value="" />
 ```
 
-### <a name="expression-names-and-collections"></a><span data-ttu-id="13ed1-211">Názvy výrazů a kolekce</span><span class="sxs-lookup"><span data-stu-id="13ed1-211">Expression names and Collections</span></span>
+### <a name="expression-names-and-collections"></a><span data-ttu-id="65c3d-211">Názvy výrazů a kolekce</span><span class="sxs-lookup"><span data-stu-id="65c3d-211">Expression names and Collections</span></span>
 
-<span data-ttu-id="13ed1-212">Ukázkový model obsahující pole `Colors`:</span><span class="sxs-lookup"><span data-stu-id="13ed1-212">Sample, a model containing an array of `Colors`:</span></span>
+<span data-ttu-id="65c3d-212">Ukázkový model obsahující pole `Colors`:</span><span class="sxs-lookup"><span data-stu-id="65c3d-212">Sample, a model containing an array of `Colors`:</span></span>
 
 [!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/Person.cs?highlight=3&range=5-10)]
 
-<span data-ttu-id="13ed1-213">Metoda akce:</span><span class="sxs-lookup"><span data-stu-id="13ed1-213">The action method:</span></span>
+<span data-ttu-id="65c3d-213">Metoda akce:</span><span class="sxs-lookup"><span data-stu-id="65c3d-213">The action method:</span></span>
 
 ```csharp
 public IActionResult Edit(int id, int colorIndex)
@@ -228,52 +228,52 @@ public IActionResult Edit(int id, int colorIndex)
    }
 ```
 
-<span data-ttu-id="13ed1-214">Následující syntaxe Razor ukazuje, jak přistupovat k konkrétní `Color` element:</span><span class="sxs-lookup"><span data-stu-id="13ed1-214">The following Razor shows how you access a specific `Color` element:</span></span>
+<span data-ttu-id="65c3d-214">Následující syntaxe Razor ukazuje, jak přistupovat k konkrétní `Color` element:</span><span class="sxs-lookup"><span data-stu-id="65c3d-214">The following Razor shows how you access a specific `Color` element:</span></span>
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Demo/EditColor.cshtml)]
 
-<span data-ttu-id="13ed1-215">*Views/Shared/EditorTemplates/String.cshtml* šablony:</span><span class="sxs-lookup"><span data-stu-id="13ed1-215">The *Views/Shared/EditorTemplates/String.cshtml* template:</span></span>
+<span data-ttu-id="65c3d-215">*Views/Shared/EditorTemplates/String.cshtml* šablony:</span><span class="sxs-lookup"><span data-stu-id="65c3d-215">The *Views/Shared/EditorTemplates/String.cshtml* template:</span></span>
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/String.cshtml)]
 
-<span data-ttu-id="13ed1-216">Ukázka použití `List<T>`:</span><span class="sxs-lookup"><span data-stu-id="13ed1-216">Sample using `List<T>`:</span></span>
+<span data-ttu-id="65c3d-216">Ukázka použití `List<T>`:</span><span class="sxs-lookup"><span data-stu-id="65c3d-216">Sample using `List<T>`:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/ViewModels/ToDoItem.cs?range=3-8)]
 
-<span data-ttu-id="13ed1-217">Následující syntaxe Razor ukazuje, jak iterace v kolekci:</span><span class="sxs-lookup"><span data-stu-id="13ed1-217">The following Razor shows how to iterate over a collection:</span></span>
+<span data-ttu-id="65c3d-217">Následující syntaxe Razor ukazuje, jak iterace v kolekci:</span><span class="sxs-lookup"><span data-stu-id="65c3d-217">The following Razor shows how to iterate over a collection:</span></span>
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Demo/Edit.cshtml)]
 
-<span data-ttu-id="13ed1-218">The *Views/Shared/EditorTemplates/ToDoItem.cshtml* template:</span><span class="sxs-lookup"><span data-stu-id="13ed1-218">The *Views/Shared/EditorTemplates/ToDoItem.cshtml* template:</span></span>
+<span data-ttu-id="65c3d-218">The *Views/Shared/EditorTemplates/ToDoItem.cshtml* template:</span><span class="sxs-lookup"><span data-stu-id="65c3d-218">The *Views/Shared/EditorTemplates/ToDoItem.cshtml* template:</span></span>
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
 
 
 >[!NOTE]
-><span data-ttu-id="13ed1-219">Vždy používat `for` (a *není* `foreach`) k iterace v seznamu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-219">Always use `for` (and *not* `foreach`) to iterate over a list.</span></span> <span data-ttu-id="13ed1-220">Vyhodnocení indexer v dotazu LINQ výraz může být nákladné a by měl být minimální.</span><span class="sxs-lookup"><span data-stu-id="13ed1-220">Evaluating an indexer in a LINQ expression can be expensive and should be minimized.</span></span>
+><span data-ttu-id="65c3d-219">Vždy používat `for` (a *není* `foreach`) k iterace v seznamu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-219">Always use `for` (and *not* `foreach`) to iterate over a list.</span></span> <span data-ttu-id="65c3d-220">Vyhodnocení indexer v dotazu LINQ výraz může být nákladné a by měl být minimální.</span><span class="sxs-lookup"><span data-stu-id="65c3d-220">Evaluating an indexer in a LINQ expression can be expensive and should be minimized.</span></span>
 
 &nbsp;
 
 >[!NOTE]
-><span data-ttu-id="13ed1-221">Výše uvedené komentáři vzorový kód ukazuje, jak by nahraďte výraz lambda s `@` operátor pro přístup k každý `ToDoItem` v seznamu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-221">The commented sample code above shows how you would replace the lambda expression with the `@` operator to access each `ToDoItem` in the list.</span></span>
+><span data-ttu-id="65c3d-221">Výše uvedené komentáři vzorový kód ukazuje, jak by nahraďte výraz lambda s `@` operátor pro přístup k každý `ToDoItem` v seznamu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-221">The commented sample code above shows how you would replace the lambda expression with the `@` operator to access each `ToDoItem` in the list.</span></span>
 
-## <a name="the-textarea-tag-helper"></a><span data-ttu-id="13ed1-222">Pomocník Textarea značky</span><span class="sxs-lookup"><span data-stu-id="13ed1-222">The Textarea Tag Helper</span></span>
+## <a name="the-textarea-tag-helper"></a><span data-ttu-id="65c3d-222">Pomocník Textarea značky</span><span class="sxs-lookup"><span data-stu-id="65c3d-222">The Textarea Tag Helper</span></span>
 
-<span data-ttu-id="13ed1-223">`Textarea Tag Helper` Pomocná značky je podobná pomocné rutiny vstupní značka.</span><span class="sxs-lookup"><span data-stu-id="13ed1-223">The `Textarea Tag Helper` tag helper is  similar to the Input Tag Helper.</span></span>
+<span data-ttu-id="65c3d-223">`Textarea Tag Helper` Pomocná značky je podobná pomocné rutiny vstupní značka.</span><span class="sxs-lookup"><span data-stu-id="65c3d-223">The `Textarea Tag Helper` tag helper is  similar to the Input Tag Helper.</span></span>
 
-* <span data-ttu-id="13ed1-224">Generuje `id` a `name` a atributů ověření dat z modelu pro [ \<textarea >](https://www.w3.org/wiki/HTML/Elements/textarea) element.</span><span class="sxs-lookup"><span data-stu-id="13ed1-224">Generates the `id` and `name` attributes, and the data validation attributes from the model for a [\<textarea>](https://www.w3.org/wiki/HTML/Elements/textarea) element.</span></span>
+* <span data-ttu-id="65c3d-224">Generuje `id` a `name` a atributů ověření dat z modelu pro [ \<textarea >](https://www.w3.org/wiki/HTML/Elements/textarea) element.</span><span class="sxs-lookup"><span data-stu-id="65c3d-224">Generates the `id` and `name` attributes, and the data validation attributes from the model for a [\<textarea>](https://www.w3.org/wiki/HTML/Elements/textarea) element.</span></span>
 
-* <span data-ttu-id="13ed1-225">Poskytuje silného typování.</span><span class="sxs-lookup"><span data-stu-id="13ed1-225">Provides strong typing.</span></span>
+* <span data-ttu-id="65c3d-225">Poskytuje silného typování.</span><span class="sxs-lookup"><span data-stu-id="65c3d-225">Provides strong typing.</span></span>
 
-* <span data-ttu-id="13ed1-226">Alternativní pomocné rutiny HTML: `Html.TextAreaFor`</span><span class="sxs-lookup"><span data-stu-id="13ed1-226">HTML Helper alternative: `Html.TextAreaFor`</span></span>
+* <span data-ttu-id="65c3d-226">Alternativní pomocné rutiny HTML: `Html.TextAreaFor`</span><span class="sxs-lookup"><span data-stu-id="65c3d-226">HTML Helper alternative: `Html.TextAreaFor`</span></span>
 
-<span data-ttu-id="13ed1-227">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="13ed1-227">Sample:</span></span>
+<span data-ttu-id="65c3d-227">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="65c3d-227">Sample:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/ViewModels/DescriptionViewModel.cs)]
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterTextArea.cshtml?highlight=4)]
 
-<span data-ttu-id="13ed1-228">Následující kód HTML se vygeneruje:</span><span class="sxs-lookup"><span data-stu-id="13ed1-228">The following HTML is generated:</span></span>
+<span data-ttu-id="65c3d-228">Následující kód HTML se vygeneruje:</span><span class="sxs-lookup"><span data-stu-id="65c3d-228">The following HTML is generated:</span></span>
 
 ```HTML
 <form method="post" action="/Demo/RegisterTextArea">
@@ -289,53 +289,53 @@ public IActionResult Edit(int id, int colorIndex)
 </form>
 ```
 
-## <a name="the-label-tag-helper"></a><span data-ttu-id="13ed1-229">Pomocník značky popisek</span><span class="sxs-lookup"><span data-stu-id="13ed1-229">The Label Tag Helper</span></span>
+## <a name="the-label-tag-helper"></a><span data-ttu-id="65c3d-229">Pomocník značky popisek</span><span class="sxs-lookup"><span data-stu-id="65c3d-229">The Label Tag Helper</span></span>
 
-* <span data-ttu-id="13ed1-230">Generuje popisek popisek a `for` atributu u [ <label> ](https://www.w3.org/wiki/HTML/Elements/label) element pro název výrazu</span><span class="sxs-lookup"><span data-stu-id="13ed1-230">Generates the label caption and `for` attribute on a [<label>](https://www.w3.org/wiki/HTML/Elements/label) element for an expression name</span></span>
+* <span data-ttu-id="65c3d-230">Generuje popisek popisek a `for` atributu u [ <label> ](https://www.w3.org/wiki/HTML/Elements/label) element pro název výrazu</span><span class="sxs-lookup"><span data-stu-id="65c3d-230">Generates the label caption and `for` attribute on a [<label>](https://www.w3.org/wiki/HTML/Elements/label) element for an expression name</span></span>
 
-* <span data-ttu-id="13ed1-231">Alternativní pomocné rutiny HTML: `Html.LabelFor`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-231">HTML Helper alternative: `Html.LabelFor`.</span></span>
+* <span data-ttu-id="65c3d-231">Alternativní pomocné rutiny HTML: `Html.LabelFor`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-231">HTML Helper alternative: `Html.LabelFor`.</span></span>
 
-<span data-ttu-id="13ed1-232">`Label Tag Helper` Přes čistý element popisku HTML poskytuje následující výhody:</span><span class="sxs-lookup"><span data-stu-id="13ed1-232">The `Label Tag Helper`  provides the following benefits over a pure HTML label element:</span></span>
+<span data-ttu-id="65c3d-232">`Label Tag Helper` Přes čistý element popisku HTML poskytuje následující výhody:</span><span class="sxs-lookup"><span data-stu-id="65c3d-232">The `Label Tag Helper`  provides the following benefits over a pure HTML label element:</span></span>
 
-* <span data-ttu-id="13ed1-233">Automaticky získána hodnota popisné označení `Display` atribut.</span><span class="sxs-lookup"><span data-stu-id="13ed1-233">You automatically get the descriptive label value from the `Display` attribute.</span></span> <span data-ttu-id="13ed1-234">Určený zobrazovaný název mohou změnit čas a kombinace `Display` atribut a popisek značky pomocná budou platit `Display` všude, kde se používá.</span><span class="sxs-lookup"><span data-stu-id="13ed1-234">The intended display name might change over time, and the combination of `Display` attribute and Label Tag Helper will apply the `Display` everywhere it's used.</span></span>
+* <span data-ttu-id="65c3d-233">Automaticky získána hodnota popisné označení `Display` atribut.</span><span class="sxs-lookup"><span data-stu-id="65c3d-233">You automatically get the descriptive label value from the `Display` attribute.</span></span> <span data-ttu-id="65c3d-234">Určený zobrazovaný název mohou změnit čas a kombinace `Display` atribut a popisek značky pomocná budou platit `Display` všude, kde se používá.</span><span class="sxs-lookup"><span data-stu-id="65c3d-234">The intended display name might change over time, and the combination of `Display` attribute and Label Tag Helper will apply the `Display` everywhere it's used.</span></span>
 
-* <span data-ttu-id="13ed1-235">Menší značek ve zdrojovém kódu</span><span class="sxs-lookup"><span data-stu-id="13ed1-235">Less markup in source code</span></span>
+* <span data-ttu-id="65c3d-235">Menší značek ve zdrojovém kódu</span><span class="sxs-lookup"><span data-stu-id="65c3d-235">Less markup in source code</span></span>
 
-* <span data-ttu-id="13ed1-236">Silné typování s vlastností modelu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-236">Strong typing with the model property.</span></span>
+* <span data-ttu-id="65c3d-236">Silné typování s vlastností modelu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-236">Strong typing with the model property.</span></span>
 
-<span data-ttu-id="13ed1-237">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="13ed1-237">Sample:</span></span>
+<span data-ttu-id="65c3d-237">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="65c3d-237">Sample:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/ViewModels/SimpleViewModel.cs)]
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterLabel.cshtml?highlight=4)]
 
-<span data-ttu-id="13ed1-238">Následující kód HTML se generuje pro `<label>` element:</span><span class="sxs-lookup"><span data-stu-id="13ed1-238">The following HTML is generated for the `<label>` element:</span></span>
+<span data-ttu-id="65c3d-238">Následující kód HTML se generuje pro `<label>` element:</span><span class="sxs-lookup"><span data-stu-id="65c3d-238">The following HTML is generated for the `<label>` element:</span></span>
 
 ```HTML
 <label for="Email">Email Address</label>
 ```
 
-<span data-ttu-id="13ed1-239">Pomocné rutiny značky popisek vygenerované `for` hodnotu atributu "E-mailu", což je Identifikátor přidružený `<input>` elementu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-239">The Label Tag Helper generated the `for` attribute value of "Email", which is the ID associated with the `<input>` element.</span></span> <span data-ttu-id="13ed1-240">Pomocníci značky generovat konzistentní `id` a `for` elementy, aby mohly být správně přidružena.</span><span class="sxs-lookup"><span data-stu-id="13ed1-240">The Tag Helpers generate consistent `id` and `for` elements so they can be correctly associated.</span></span> <span data-ttu-id="13ed1-241">Titulek v této ukázce pochází z `Display` atribut.</span><span class="sxs-lookup"><span data-stu-id="13ed1-241">The caption in this sample comes from the `Display` attribute.</span></span> <span data-ttu-id="13ed1-242">Pokud model neobsahovalo `Display` atribut popisek by být název vlastnosti výrazu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-242">If the model didn't contain a `Display` attribute, the caption would be the property name of the expression.</span></span>
+<span data-ttu-id="65c3d-239">Pomocné rutiny značky popisek vygenerované `for` hodnotu atributu "E-mailu", což je Identifikátor přidružený `<input>` elementu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-239">The Label Tag Helper generated the `for` attribute value of "Email", which is the ID associated with the `<input>` element.</span></span> <span data-ttu-id="65c3d-240">Pomocníci značky generovat konzistentní `id` a `for` elementy, aby mohly být správně přidružena.</span><span class="sxs-lookup"><span data-stu-id="65c3d-240">The Tag Helpers generate consistent `id` and `for` elements so they can be correctly associated.</span></span> <span data-ttu-id="65c3d-241">Titulek v této ukázce pochází z `Display` atribut.</span><span class="sxs-lookup"><span data-stu-id="65c3d-241">The caption in this sample comes from the `Display` attribute.</span></span> <span data-ttu-id="65c3d-242">Pokud model neobsahovalo `Display` atribut popisek by být název vlastnosti výrazu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-242">If the model didn't contain a `Display` attribute, the caption would be the property name of the expression.</span></span>
 
-## <a name="the-validation-tag-helpers"></a><span data-ttu-id="13ed1-243">Pomocníci značky ověření</span><span class="sxs-lookup"><span data-stu-id="13ed1-243">The Validation Tag Helpers</span></span>
+## <a name="the-validation-tag-helpers"></a><span data-ttu-id="65c3d-243">Pomocníci značky ověření</span><span class="sxs-lookup"><span data-stu-id="65c3d-243">The Validation Tag Helpers</span></span>
 
-<span data-ttu-id="13ed1-244">Existují dvě značky Pomocníci ověření.</span><span class="sxs-lookup"><span data-stu-id="13ed1-244">There are two Validation Tag Helpers.</span></span> <span data-ttu-id="13ed1-245">`Validation Message Tag Helper` (Které zobrazí zprávu ověření pro jedinou vlastnost v modelu) a `Validation Summary Tag Helper` (zobrazuje souhrn chyb ověřování).</span><span class="sxs-lookup"><span data-stu-id="13ed1-245">The `Validation Message Tag Helper` (which displays a validation message for a single property on your model), and the `Validation Summary Tag Helper` (which displays a summary of validation errors).</span></span> <span data-ttu-id="13ed1-246">`Input Tag Helper` Přidá HTML5 klientské straně ověření atributy jako vstup elementy na základě dat atributy poznámky na třídách modelu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-246">The `Input Tag Helper` adds HTML5 client side validation attributes to input elements based on data annotation attributes on your model classes.</span></span> <span data-ttu-id="13ed1-247">Ověření je také provést na serveru.</span><span class="sxs-lookup"><span data-stu-id="13ed1-247">Validation is also performed on the server.</span></span> <span data-ttu-id="13ed1-248">Pomocná rutina pro ověření značky zobrazí tyto chybové zprávy, když dojde k chybě ověření.</span><span class="sxs-lookup"><span data-stu-id="13ed1-248">The Validation Tag Helper displays these error messages when a validation error occurs.</span></span>
+<span data-ttu-id="65c3d-244">Existují dvě značky Pomocníci ověření.</span><span class="sxs-lookup"><span data-stu-id="65c3d-244">There are two Validation Tag Helpers.</span></span> <span data-ttu-id="65c3d-245">`Validation Message Tag Helper` (Které zobrazí zprávu ověření pro jedinou vlastnost v modelu) a `Validation Summary Tag Helper` (zobrazuje souhrn chyb ověřování).</span><span class="sxs-lookup"><span data-stu-id="65c3d-245">The `Validation Message Tag Helper` (which displays a validation message for a single property on your model), and the `Validation Summary Tag Helper` (which displays a summary of validation errors).</span></span> <span data-ttu-id="65c3d-246">`Input Tag Helper` Přidá HTML5 klientské straně ověření atributy jako vstup elementy na základě dat atributy poznámky na třídách modelu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-246">The `Input Tag Helper` adds HTML5 client side validation attributes to input elements based on data annotation attributes on your model classes.</span></span> <span data-ttu-id="65c3d-247">Ověření je také provést na serveru.</span><span class="sxs-lookup"><span data-stu-id="65c3d-247">Validation is also performed on the server.</span></span> <span data-ttu-id="65c3d-248">Pomocná rutina pro ověření značky zobrazí tyto chybové zprávy, když dojde k chybě ověření.</span><span class="sxs-lookup"><span data-stu-id="65c3d-248">The Validation Tag Helper displays these error messages when a validation error occurs.</span></span>
 
-### <a name="the-validation-message-tag-helper"></a><span data-ttu-id="13ed1-249">Pomocná rutina pro ověření zprávy značky</span><span class="sxs-lookup"><span data-stu-id="13ed1-249">The Validation Message Tag Helper</span></span>
+### <a name="the-validation-message-tag-helper"></a><span data-ttu-id="65c3d-249">Pomocná rutina pro ověření zprávy značky</span><span class="sxs-lookup"><span data-stu-id="65c3d-249">The Validation Message Tag Helper</span></span>
 
-* <span data-ttu-id="13ed1-250">Přidá [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` atribut [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element, který připojí chybové zprávy ověření na vlastnosti zadaného modelu vstupní pole.</span><span class="sxs-lookup"><span data-stu-id="13ed1-250">Adds the [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5)  `data-valmsg-for="property"` attribute to the [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element, which attaches the validation error messages on the input field of the specified model property.</span></span> <span data-ttu-id="13ed1-251">Když dojde k chybě ověření straně klienta, [jQuery](https://jquery.com/) zobrazí chybovou zprávu ve `<span>` elementu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-251">When a client side validation error occurs, [jQuery](https://jquery.com/) displays the error message in the `<span>` element.</span></span>
+* <span data-ttu-id="65c3d-250">Přidá [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` atribut [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element, který připojí chybové zprávy ověření na vlastnosti zadaného modelu vstupní pole.</span><span class="sxs-lookup"><span data-stu-id="65c3d-250">Adds the [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5)  `data-valmsg-for="property"` attribute to the [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element, which attaches the validation error messages on the input field of the specified model property.</span></span> <span data-ttu-id="65c3d-251">Když dojde k chybě ověření straně klienta, [jQuery](https://jquery.com/) zobrazí chybovou zprávu ve `<span>` elementu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-251">When a client side validation error occurs, [jQuery](https://jquery.com/) displays the error message in the `<span>` element.</span></span>
 
-* <span data-ttu-id="13ed1-252">Ověření také probíhá na serveru.</span><span class="sxs-lookup"><span data-stu-id="13ed1-252">Validation also takes place on the server.</span></span> <span data-ttu-id="13ed1-253">Klienti mohou mít JavaScript zakázán a některé ověření provést pouze na straně serveru.</span><span class="sxs-lookup"><span data-stu-id="13ed1-253">Clients may have JavaScript disabled and some validation can only be done on the server side.</span></span>
+* <span data-ttu-id="65c3d-252">Ověření také probíhá na serveru.</span><span class="sxs-lookup"><span data-stu-id="65c3d-252">Validation also takes place on the server.</span></span> <span data-ttu-id="65c3d-253">Klienti mohou mít JavaScript zakázán a některé ověření provést pouze na straně serveru.</span><span class="sxs-lookup"><span data-stu-id="65c3d-253">Clients may have JavaScript disabled and some validation can only be done on the server side.</span></span>
 
-* <span data-ttu-id="13ed1-254">Alternativní pomocné rutiny HTML: `Html.ValidationMessageFor`</span><span class="sxs-lookup"><span data-stu-id="13ed1-254">HTML Helper alternative: `Html.ValidationMessageFor`</span></span>
+* <span data-ttu-id="65c3d-254">Alternativní pomocné rutiny HTML: `Html.ValidationMessageFor`</span><span class="sxs-lookup"><span data-stu-id="65c3d-254">HTML Helper alternative: `Html.ValidationMessageFor`</span></span>
 
-<span data-ttu-id="13ed1-255">`Validation Message Tag Helper` Se používá s `asp-validation-for` atribut HTML [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) elementu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-255">The `Validation Message Tag Helper`  is used with the `asp-validation-for` attribute on a HTML [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element.</span></span>
+<span data-ttu-id="65c3d-255">`Validation Message Tag Helper` Se používá s `asp-validation-for` atribut HTML [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) elementu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-255">The `Validation Message Tag Helper`  is used with the `asp-validation-for` attribute on a HTML [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element.</span></span>
 
 ```HTML
 <span asp-validation-for="Email"></span>
 ```
 
-<span data-ttu-id="13ed1-256">Pomocná rutina pro ověření zprávy značky se generují následující kód HTML:</span><span class="sxs-lookup"><span data-stu-id="13ed1-256">The Validation Message Tag Helper will generate the following HTML:</span></span>
+<span data-ttu-id="65c3d-256">Pomocná rutina pro ověření zprávy značky se generují následující kód HTML:</span><span class="sxs-lookup"><span data-stu-id="65c3d-256">The Validation Message Tag Helper will generate the following HTML:</span></span>
 
 ```HTML
 <span class="field-validation-valid"
@@ -343,12 +343,12 @@ public IActionResult Edit(int id, int colorIndex)
   data-valmsg-replace="true"></span>
 ```
 
-<span data-ttu-id="13ed1-257">Obvykle použijete `Validation Message Tag Helper` po `Input` značky Pomocník pro stejnou vlastnost.</span><span class="sxs-lookup"><span data-stu-id="13ed1-257">You generally use the `Validation Message Tag Helper`  after an `Input` Tag Helper for the same property.</span></span> <span data-ttu-id="13ed1-258">Díky tomu se zobrazí chybové zprávy ověření téměř vstupu, který chybu způsobil.</span><span class="sxs-lookup"><span data-stu-id="13ed1-258">Doing so displays any validation error messages near the input that caused the error.</span></span>
+<span data-ttu-id="65c3d-257">Obvykle použijete `Validation Message Tag Helper` po `Input` značky Pomocník pro stejnou vlastnost.</span><span class="sxs-lookup"><span data-stu-id="65c3d-257">You generally use the `Validation Message Tag Helper`  after an `Input` Tag Helper for the same property.</span></span> <span data-ttu-id="65c3d-258">Díky tomu se zobrazí chybové zprávy ověření téměř vstupu, který chybu způsobil.</span><span class="sxs-lookup"><span data-stu-id="65c3d-258">Doing so displays any validation error messages near the input that caused the error.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="13ed1-259">Musíte mít zobrazení s správný jazyk JavaScript a [jQuery](https://jquery.com/) skript odkazy na místě pro ověřování na straně klienta.</span><span class="sxs-lookup"><span data-stu-id="13ed1-259">You must have a view with the correct JavaScript and [jQuery](https://jquery.com/) script references in place for client side validation.</span></span> <span data-ttu-id="13ed1-260">V tématu [ověření modelu](../models/validation.md) Další informace.</span><span class="sxs-lookup"><span data-stu-id="13ed1-260">See [Model Validation](../models/validation.md) for more information.</span></span>
+> <span data-ttu-id="65c3d-259">Musíte mít zobrazení s správný jazyk JavaScript a [jQuery](https://jquery.com/) skript odkazy na místě pro ověřování na straně klienta.</span><span class="sxs-lookup"><span data-stu-id="65c3d-259">You must have a view with the correct JavaScript and [jQuery](https://jquery.com/) script references in place for client side validation.</span></span> <span data-ttu-id="65c3d-260">V tématu [ověření modelu](../models/validation.md) Další informace.</span><span class="sxs-lookup"><span data-stu-id="65c3d-260">See [Model Validation](../models/validation.md) for more information.</span></span>
 
-<span data-ttu-id="13ed1-261">Když se stane Chyba ověření straně serveru (například pokud máte ověřování na straně serveru vlastní nebo je zakázáno ověřování na straně klienta), MVC umístí tuto chybovou zprávu jako text `<span>` elementu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-261">When a server side validation error occurs (for example when you have custom server side validation or client-side validation is disabled), MVC places that error message as the body of the `<span>` element.</span></span>
+<span data-ttu-id="65c3d-261">Když se stane Chyba ověření straně serveru (například pokud máte ověřování na straně serveru vlastní nebo je zakázáno ověřování na straně klienta), MVC umístí tuto chybovou zprávu jako text `<span>` elementu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-261">When a server side validation error occurs (for example when you have custom server side validation or client-side validation is disabled), MVC places that error message as the body of the `<span>` element.</span></span>
 
 ```HTML
 <span class="field-validation-error" data-valmsg-for="Email"
@@ -357,29 +357,29 @@ public IActionResult Edit(int id, int colorIndex)
 </span>
 ```
 
-### <a name="the-validation-summary-tag-helper"></a><span data-ttu-id="13ed1-262">Pomocná rutina pro ověření Summary – značka</span><span class="sxs-lookup"><span data-stu-id="13ed1-262">The Validation Summary Tag Helper</span></span>
+### <a name="the-validation-summary-tag-helper"></a><span data-ttu-id="65c3d-262">Pomocná rutina pro ověření Summary – značka</span><span class="sxs-lookup"><span data-stu-id="65c3d-262">The Validation Summary Tag Helper</span></span>
 
-* <span data-ttu-id="13ed1-263">Cíle `<div>` elementů s hodnotou `asp-validation-summary` atribut</span><span class="sxs-lookup"><span data-stu-id="13ed1-263">Targets `<div>` elements with the `asp-validation-summary` attribute</span></span>
+* <span data-ttu-id="65c3d-263">Cíle `<div>` elementů s hodnotou `asp-validation-summary` atribut</span><span class="sxs-lookup"><span data-stu-id="65c3d-263">Targets `<div>` elements with the `asp-validation-summary` attribute</span></span>
 
-* <span data-ttu-id="13ed1-264">Alternativní pomocné rutiny HTML: `@Html.ValidationSummary`</span><span class="sxs-lookup"><span data-stu-id="13ed1-264">HTML Helper alternative: `@Html.ValidationSummary`</span></span>
+* <span data-ttu-id="65c3d-264">Alternativní pomocné rutiny HTML: `@Html.ValidationSummary`</span><span class="sxs-lookup"><span data-stu-id="65c3d-264">HTML Helper alternative: `@Html.ValidationSummary`</span></span>
 
-<span data-ttu-id="13ed1-265">`Validation Summary Tag Helper` Se používá k zobrazení Souhrn ověřovacích zpráv.</span><span class="sxs-lookup"><span data-stu-id="13ed1-265">The `Validation Summary Tag Helper`  is used to display a summary of validation messages.</span></span> <span data-ttu-id="13ed1-266">`asp-validation-summary` Hodnota atributu může být libovolná z následujících:</span><span class="sxs-lookup"><span data-stu-id="13ed1-266">The `asp-validation-summary` attribute value can be any of the following:</span></span>
+<span data-ttu-id="65c3d-265">`Validation Summary Tag Helper` Se používá k zobrazení Souhrn ověřovacích zpráv.</span><span class="sxs-lookup"><span data-stu-id="65c3d-265">The `Validation Summary Tag Helper`  is used to display a summary of validation messages.</span></span> <span data-ttu-id="65c3d-266">`asp-validation-summary` Hodnota atributu může být libovolná z následujících:</span><span class="sxs-lookup"><span data-stu-id="65c3d-266">The `asp-validation-summary` attribute value can be any of the following:</span></span>
 
-|<span data-ttu-id="13ed1-267">ASP souhrnu ověření</span><span class="sxs-lookup"><span data-stu-id="13ed1-267">asp-validation-summary</span></span>|<span data-ttu-id="13ed1-268">Zobrazí ověřovacích zpráv</span><span class="sxs-lookup"><span data-stu-id="13ed1-268">Validation messages displayed</span></span>|
+|<span data-ttu-id="65c3d-267">ASP souhrnu ověření</span><span class="sxs-lookup"><span data-stu-id="65c3d-267">asp-validation-summary</span></span>|<span data-ttu-id="65c3d-268">Zobrazí ověřovacích zpráv</span><span class="sxs-lookup"><span data-stu-id="65c3d-268">Validation messages displayed</span></span>|
 |--- |--- |
-|<span data-ttu-id="13ed1-269">ValidationSummary.All</span><span class="sxs-lookup"><span data-stu-id="13ed1-269">ValidationSummary.All</span></span>|<span data-ttu-id="13ed1-270">Vlastnost a model úroveň</span><span class="sxs-lookup"><span data-stu-id="13ed1-270">Property and model level</span></span>|
-|<span data-ttu-id="13ed1-271">ValidationSummary.ModelOnly</span><span class="sxs-lookup"><span data-stu-id="13ed1-271">ValidationSummary.ModelOnly</span></span>|<span data-ttu-id="13ed1-272">Model</span><span class="sxs-lookup"><span data-stu-id="13ed1-272">Model</span></span>|
-|<span data-ttu-id="13ed1-273">ValidationSummary.None</span><span class="sxs-lookup"><span data-stu-id="13ed1-273">ValidationSummary.None</span></span>|<span data-ttu-id="13ed1-274">Žádné</span><span class="sxs-lookup"><span data-stu-id="13ed1-274">None</span></span>|
+|<span data-ttu-id="65c3d-269">ValidationSummary.All</span><span class="sxs-lookup"><span data-stu-id="65c3d-269">ValidationSummary.All</span></span>|<span data-ttu-id="65c3d-270">Vlastnost a model úroveň</span><span class="sxs-lookup"><span data-stu-id="65c3d-270">Property and model level</span></span>|
+|<span data-ttu-id="65c3d-271">ValidationSummary.ModelOnly</span><span class="sxs-lookup"><span data-stu-id="65c3d-271">ValidationSummary.ModelOnly</span></span>|<span data-ttu-id="65c3d-272">Model</span><span class="sxs-lookup"><span data-stu-id="65c3d-272">Model</span></span>|
+|<span data-ttu-id="65c3d-273">ValidationSummary.None</span><span class="sxs-lookup"><span data-stu-id="65c3d-273">ValidationSummary.None</span></span>|<span data-ttu-id="65c3d-274">Žádné</span><span class="sxs-lookup"><span data-stu-id="65c3d-274">None</span></span>|
 
-### <a name="sample"></a><span data-ttu-id="13ed1-275">Ukázka</span><span class="sxs-lookup"><span data-stu-id="13ed1-275">Sample</span></span>
+### <a name="sample"></a><span data-ttu-id="65c3d-275">Ukázka</span><span class="sxs-lookup"><span data-stu-id="65c3d-275">Sample</span></span>
 
-<span data-ttu-id="13ed1-276">V následujícím příkladu je model dat označených pomocí `DataAnnotation` atributy, které generuje chybové zprávy ověření na `<input>` elementu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-276">In the following example, the data model is decorated with `DataAnnotation` attributes, which generates validation error messages on the `<input>` element.</span></span>  <span data-ttu-id="13ed1-277">Když dojde k chybě ověření, zobrazí pomocná rutina pro ověření značky chybová zpráva:</span><span class="sxs-lookup"><span data-stu-id="13ed1-277">When a validation error occurs, the Validation Tag Helper displays the error message:</span></span>
+<span data-ttu-id="65c3d-276">V následujícím příkladu je model dat označených pomocí `DataAnnotation` atributy, které generuje chybové zprávy ověření na `<input>` elementu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-276">In the following example, the data model is decorated with `DataAnnotation` attributes, which generates validation error messages on the `<input>` element.</span></span>  <span data-ttu-id="65c3d-277">Když dojde k chybě ověření, zobrazí pomocná rutina pro ověření značky chybová zpráva:</span><span class="sxs-lookup"><span data-stu-id="65c3d-277">When a validation error occurs, the Validation Tag Helper displays the error message:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/ViewModels/RegisterViewModel.cs)]
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterValidation.cshtml?highlight=4,6,8&range=1-10)]
 
-<span data-ttu-id="13ed1-278">Vygenerovaný HTML (když je model platný):</span><span class="sxs-lookup"><span data-stu-id="13ed1-278">The generated HTML (when the model is valid):</span></span>
+<span data-ttu-id="65c3d-278">Vygenerovaný HTML (když je model platný):</span><span class="sxs-lookup"><span data-stu-id="65c3d-278">The generated HTML (when the model is valid):</span></span>
 
 ```HTML
 <form action="/DemoReg/Register" method="post">
@@ -400,33 +400,33 @@ public IActionResult Edit(int id, int colorIndex)
 </form>
 ```
 
-## <a name="the-select-tag-helper"></a><span data-ttu-id="13ed1-279">Vyberte značku pomocné rutiny</span><span class="sxs-lookup"><span data-stu-id="13ed1-279">The Select Tag Helper</span></span>
+## <a name="the-select-tag-helper"></a><span data-ttu-id="65c3d-279">Vyberte značku pomocné rutiny</span><span class="sxs-lookup"><span data-stu-id="65c3d-279">The Select Tag Helper</span></span>
 
-* <span data-ttu-id="13ed1-280">Generuje [vyberte](https://www.w3.org/wiki/HTML/Elements/select) a přidružených [možnost](https://www.w3.org/wiki/HTML/Elements/option) prvky pro vlastnosti modelu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-280">Generates [select](https://www.w3.org/wiki/HTML/Elements/select) and associated [option](https://www.w3.org/wiki/HTML/Elements/option) elements for properties of your model.</span></span>
+* <span data-ttu-id="65c3d-280">Generuje [vyberte](https://www.w3.org/wiki/HTML/Elements/select) a přidružených [možnost](https://www.w3.org/wiki/HTML/Elements/option) prvky pro vlastnosti modelu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-280">Generates [select](https://www.w3.org/wiki/HTML/Elements/select) and associated [option](https://www.w3.org/wiki/HTML/Elements/option) elements for properties of your model.</span></span>
 
-* <span data-ttu-id="13ed1-281">Má alternativu pomocné rutiny HTML `Html.DropDownListFor` a `Html.ListBoxFor`</span><span class="sxs-lookup"><span data-stu-id="13ed1-281">Has an HTML Helper alternative `Html.DropDownListFor` and `Html.ListBoxFor`</span></span>
+* <span data-ttu-id="65c3d-281">Má alternativu pomocné rutiny HTML `Html.DropDownListFor` a `Html.ListBoxFor`</span><span class="sxs-lookup"><span data-stu-id="65c3d-281">Has an HTML Helper alternative `Html.DropDownListFor` and `Html.ListBoxFor`</span></span>
 
-<span data-ttu-id="13ed1-282">`Select Tag Helper` `asp-for` Určuje název vlastnosti modelu pro [vyberte](https://www.w3.org/wiki/HTML/Elements/select) elementu a `asp-items` Určuje [možnost](https://www.w3.org/wiki/HTML/Elements/option) elementy.</span><span class="sxs-lookup"><span data-stu-id="13ed1-282">The `Select Tag Helper` `asp-for` specifies the model property  name for the [select](https://www.w3.org/wiki/HTML/Elements/select) element  and `asp-items` specifies the [option](https://www.w3.org/wiki/HTML/Elements/option) elements.</span></span>  <span data-ttu-id="13ed1-283">Příklad:</span><span class="sxs-lookup"><span data-stu-id="13ed1-283">For example:</span></span>
+<span data-ttu-id="65c3d-282">`Select Tag Helper` `asp-for` Určuje název vlastnosti modelu pro [vyberte](https://www.w3.org/wiki/HTML/Elements/select) elementu a `asp-items` Určuje [možnost](https://www.w3.org/wiki/HTML/Elements/option) elementy.</span><span class="sxs-lookup"><span data-stu-id="65c3d-282">The `Select Tag Helper` `asp-for` specifies the model property  name for the [select](https://www.w3.org/wiki/HTML/Elements/select) element  and `asp-items` specifies the [option](https://www.w3.org/wiki/HTML/Elements/option) elements.</span></span>  <span data-ttu-id="65c3d-283">Příklad:</span><span class="sxs-lookup"><span data-stu-id="65c3d-283">For example:</span></span>
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Home/Index.cshtml?range=4)]
 
-<span data-ttu-id="13ed1-284">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="13ed1-284">Sample:</span></span>
+<span data-ttu-id="65c3d-284">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="65c3d-284">Sample:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/ViewModels/CountryViewModel.cs)]
 
-<span data-ttu-id="13ed1-285">`Index` Metoda inicializuje `CountryViewModel`, nastaví vybrané země a předává jej do `Index` zobrazení.</span><span class="sxs-lookup"><span data-stu-id="13ed1-285">The `Index` method initializes the `CountryViewModel`, sets the selected country and passes it to the `Index` view.</span></span>
+<span data-ttu-id="65c3d-285">`Index` Metoda inicializuje `CountryViewModel`, nastaví vybrané země a předává jej do `Index` zobrazení.</span><span class="sxs-lookup"><span data-stu-id="65c3d-285">The `Index` method initializes the `CountryViewModel`, sets the selected country and passes it to the `Index` view.</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
 
-<span data-ttu-id="13ed1-286">HTTP POST `Index` metoda zobrazí výběr:</span><span class="sxs-lookup"><span data-stu-id="13ed1-286">The HTTP POST `Index` method displays the selection:</span></span>
+<span data-ttu-id="65c3d-286">HTTP POST `Index` metoda zobrazí výběr:</span><span class="sxs-lookup"><span data-stu-id="65c3d-286">The HTTP POST `Index` method displays the selection:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=15-27)]
 
-<span data-ttu-id="13ed1-287">`Index` Zobrazení:</span><span class="sxs-lookup"><span data-stu-id="13ed1-287">The `Index` view:</span></span>
+<span data-ttu-id="65c3d-287">`Index` Zobrazení:</span><span class="sxs-lookup"><span data-stu-id="65c3d-287">The `Index` view:</span></span>
 
 [!code-cshtml[Main](working-with-forms/sample/final/Views/Home/Index.cshtml?highlight=4)]
 
-<span data-ttu-id="13ed1-288">Které generuje následující HTML (písmeny "CA" vybraná):</span><span class="sxs-lookup"><span data-stu-id="13ed1-288">Which generates the following HTML (with "CA" selected):</span></span>
+<span data-ttu-id="65c3d-288">Které generuje následující HTML (písmeny "CA" vybraná):</span><span class="sxs-lookup"><span data-stu-id="65c3d-288">Which generates the following HTML (with "CA" selected):</span></span>
 
 ```html
 <form method="post" action="/">
@@ -441,31 +441,31 @@ public IActionResult Edit(int id, int colorIndex)
 ```
 
 > [!NOTE]
-> <span data-ttu-id="13ed1-289">Nedoporučujeme používat `ViewBag` nebo `ViewData` Pomocník vyberte značky.</span><span class="sxs-lookup"><span data-stu-id="13ed1-289">We don't recommend using `ViewBag` or `ViewData` with the Select Tag Helper.</span></span> <span data-ttu-id="13ed1-290">Model zobrazení je robustnější na poskytování metadat MVC a obecně menší problém.</span><span class="sxs-lookup"><span data-stu-id="13ed1-290">A view model is more robust at providing MVC metadata and generally less problematic.</span></span>
+> <span data-ttu-id="65c3d-289">Nedoporučujeme používat `ViewBag` nebo `ViewData` Pomocník vyberte značky.</span><span class="sxs-lookup"><span data-stu-id="65c3d-289">We don't recommend using `ViewBag` or `ViewData` with the Select Tag Helper.</span></span> <span data-ttu-id="65c3d-290">Model zobrazení je robustnější na poskytování metadat MVC a obecně menší problém.</span><span class="sxs-lookup"><span data-stu-id="65c3d-290">A view model is more robust at providing MVC metadata and generally less problematic.</span></span>
 
-<span data-ttu-id="13ed1-291">`asp-for` Hodnota atributu je zvláštní případ a nevyžaduje `Model` předpony, další atributy do pomocné rutiny značky (například `asp-items`)</span><span class="sxs-lookup"><span data-stu-id="13ed1-291">The `asp-for` attribute value is a special case and doesn't require a `Model` prefix, the other Tag Helper attributes do (such as `asp-items`)</span></span>
+<span data-ttu-id="65c3d-291">`asp-for` Hodnota atributu je zvláštní případ a nevyžaduje `Model` předpony, další atributy do pomocné rutiny značky (například `asp-items`)</span><span class="sxs-lookup"><span data-stu-id="65c3d-291">The `asp-for` attribute value is a special case and doesn't require a `Model` prefix, the other Tag Helper attributes do (such as `asp-items`)</span></span>
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Home/Index.cshtml?range=4)]
 
-### <a name="enum-binding"></a><span data-ttu-id="13ed1-292">Vazba výčtu</span><span class="sxs-lookup"><span data-stu-id="13ed1-292">Enum binding</span></span>
+### <a name="enum-binding"></a><span data-ttu-id="65c3d-292">Vazba výčtu</span><span class="sxs-lookup"><span data-stu-id="65c3d-292">Enum binding</span></span>
 
-<span data-ttu-id="13ed1-293">Často je možné použít `<select>` s `enum` vlastnost a generovat `SelectListItem` elementy z `enum` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="13ed1-293">It's often convenient to use `<select>` with an `enum` property and generate the `SelectListItem` elements from the `enum` values.</span></span>
+<span data-ttu-id="65c3d-293">Často je možné použít `<select>` s `enum` vlastnost a generovat `SelectListItem` elementy z `enum` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="65c3d-293">It's often convenient to use `<select>` with an `enum` property and generate the `SelectListItem` elements from the `enum` values.</span></span>
 
-<span data-ttu-id="13ed1-294">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="13ed1-294">Sample:</span></span>
+<span data-ttu-id="65c3d-294">Ukázka:</span><span class="sxs-lookup"><span data-stu-id="65c3d-294">Sample:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/ViewModels/CountryEnumViewModel.cs?range=3-7)]
 
 [!code-csharp[Main](working-with-forms/sample/final/ViewModels/CountryEnum.cs)]
 
-<span data-ttu-id="13ed1-295">`GetEnumSelectList` Metoda generuje `SelectList` objekt výčtu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-295">The `GetEnumSelectList` method generates a `SelectList` object for an enum.</span></span>
+<span data-ttu-id="65c3d-295">`GetEnumSelectList` Metoda generuje `SelectList` objekt výčtu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-295">The `GetEnumSelectList` method generates a `SelectList` object for an enum.</span></span>
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexEnum.cshtml?highlight=5)]
 
-<span data-ttu-id="13ed1-296">Můžete uspořádání seznamu enumerátor s `Display` atribut získat bohatší uživatelského rozhraní:</span><span class="sxs-lookup"><span data-stu-id="13ed1-296">You can decorate your enumerator list with the `Display` attribute to get a richer UI:</span></span>
+<span data-ttu-id="65c3d-296">Můžete uspořádání seznamu enumerátor s `Display` atribut získat bohatší uživatelského rozhraní:</span><span class="sxs-lookup"><span data-stu-id="65c3d-296">You can decorate your enumerator list with the `Display` attribute to get a richer UI:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/ViewModels/CountryEnum.cs?highlight=5,7)]
 
-<span data-ttu-id="13ed1-297">Následující kód HTML se vygeneruje:</span><span class="sxs-lookup"><span data-stu-id="13ed1-297">The following HTML is generated:</span></span>
+<span data-ttu-id="65c3d-297">Následující kód HTML se vygeneruje:</span><span class="sxs-lookup"><span data-stu-id="65c3d-297">The following HTML is generated:</span></span>
 
 ```HTML
   <form method="post" action="/Home/IndexEnum">
@@ -483,19 +483,19 @@ public IActionResult Edit(int id, int colorIndex)
     </form>
 ```
 
-### <a name="option-group"></a><span data-ttu-id="13ed1-298">Možnost skupiny</span><span class="sxs-lookup"><span data-stu-id="13ed1-298">Option Group</span></span>
+### <a name="option-group"></a><span data-ttu-id="65c3d-298">Možnost skupiny</span><span class="sxs-lookup"><span data-stu-id="65c3d-298">Option Group</span></span>
 
-<span data-ttu-id="13ed1-299">HTML [ \<optgroup >](https://www.w3.org/wiki/HTML/Elements/optgroup) element se vygeneruje, když model zobrazení obsahuje jeden nebo více `SelectListGroup` objekty.</span><span class="sxs-lookup"><span data-stu-id="13ed1-299">The HTML  [\<optgroup>](https://www.w3.org/wiki/HTML/Elements/optgroup) element is generated when the view model contains one or more `SelectListGroup` objects.</span></span>
+<span data-ttu-id="65c3d-299">HTML [ \<optgroup >](https://www.w3.org/wiki/HTML/Elements/optgroup) element se vygeneruje, když model zobrazení obsahuje jeden nebo více `SelectListGroup` objekty.</span><span class="sxs-lookup"><span data-stu-id="65c3d-299">The HTML  [\<optgroup>](https://www.w3.org/wiki/HTML/Elements/optgroup) element is generated when the view model contains one or more `SelectListGroup` objects.</span></span>
 
-<span data-ttu-id="13ed1-300">`CountryViewModelGroup` Skupin `SelectListItem` elementy do skupiny "Severní Americe" a "Evropa":</span><span class="sxs-lookup"><span data-stu-id="13ed1-300">The `CountryViewModelGroup` groups the `SelectListItem` elements into the "North America" and "Europe" groups:</span></span>
+<span data-ttu-id="65c3d-300">`CountryViewModelGroup` Skupin `SelectListItem` elementy do skupiny "Severní Americe" a "Evropa":</span><span class="sxs-lookup"><span data-stu-id="65c3d-300">The `CountryViewModelGroup` groups the `SelectListItem` elements into the "North America" and "Europe" groups:</span></span>
 
 [!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/CountryViewModelGroup.cs?highlight=5,6,14,20,26,32,38,44&range=6-56)]
 
-<span data-ttu-id="13ed1-301">Níže jsou uvedeny dvě skupiny:</span><span class="sxs-lookup"><span data-stu-id="13ed1-301">The two groups are shown below:</span></span>
+<span data-ttu-id="65c3d-301">Níže jsou uvedeny dvě skupiny:</span><span class="sxs-lookup"><span data-stu-id="65c3d-301">The two groups are shown below:</span></span>
 
 ![Příklad skupiny možnost](working-with-forms/_static/grp.png)
 
-<span data-ttu-id="13ed1-303">Generovaný kód HTML:</span><span class="sxs-lookup"><span data-stu-id="13ed1-303">The generated HTML:</span></span>
+<span data-ttu-id="65c3d-303">Generovaný kód HTML:</span><span class="sxs-lookup"><span data-stu-id="65c3d-303">The generated HTML:</span></span>
 
 ```HTML
  <form method="post" action="/Home/IndexGroup">
@@ -516,17 +516,17 @@ public IActionResult Edit(int id, int colorIndex)
  </form>
 ```
 
-### <a name="multiple-select"></a><span data-ttu-id="13ed1-304">Více vyberte</span><span class="sxs-lookup"><span data-stu-id="13ed1-304">Multiple select</span></span>
+### <a name="multiple-select"></a><span data-ttu-id="65c3d-304">Více vyberte</span><span class="sxs-lookup"><span data-stu-id="65c3d-304">Multiple select</span></span>
 
-<span data-ttu-id="13ed1-305">Značka pomocná vyberte automaticky vygeneruje [více = "více"](http://w3c.github.io/html-reference/select.html) -li zadána vlastnost v atributu `asp-for` atribut je `IEnumerable`.</span><span class="sxs-lookup"><span data-stu-id="13ed1-305">The Select Tag Helper  will automatically generate the [multiple = "multiple"](http://w3c.github.io/html-reference/select.html)  attribute if the property specified in the `asp-for` attribute is an `IEnumerable`.</span></span> <span data-ttu-id="13ed1-306">Například uděleno model následující:</span><span class="sxs-lookup"><span data-stu-id="13ed1-306">For example, given the following model:</span></span>
+<span data-ttu-id="65c3d-305">Značka pomocná vyberte automaticky vygeneruje [více = "více"](http://w3c.github.io/html-reference/select.html) -li zadána vlastnost v atributu `asp-for` atribut je `IEnumerable`.</span><span class="sxs-lookup"><span data-stu-id="65c3d-305">The Select Tag Helper  will automatically generate the [multiple = "multiple"](http://w3c.github.io/html-reference/select.html)  attribute if the property specified in the `asp-for` attribute is an `IEnumerable`.</span></span> <span data-ttu-id="65c3d-306">Například uděleno model následující:</span><span class="sxs-lookup"><span data-stu-id="65c3d-306">For example, given the following model:</span></span>
 
 [!code-csharp[Main](../../mvc/views/working-with-forms/sample/final/ViewModels/CountryViewModelIEnumerable.cs?highlight=6)]
 
-<span data-ttu-id="13ed1-307">Pomocí následující zobrazení:</span><span class="sxs-lookup"><span data-stu-id="13ed1-307">With the following view:</span></span>
+<span data-ttu-id="65c3d-307">Pomocí následující zobrazení:</span><span class="sxs-lookup"><span data-stu-id="65c3d-307">With the following view:</span></span>
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexMultiSelect.cshtml?highlight=4)]
 
-<span data-ttu-id="13ed1-308">Generuje následující HTML:</span><span class="sxs-lookup"><span data-stu-id="13ed1-308">Generates the following HTML:</span></span>
+<span data-ttu-id="65c3d-308">Generuje následující HTML:</span><span class="sxs-lookup"><span data-stu-id="65c3d-308">Generates the following HTML:</span></span>
 
 ```HTML
 <form method="post" action="/Home/IndexMultiSelect">
@@ -544,23 +544,23 @@ public IActionResult Edit(int id, int colorIndex)
 </form>
 ```
 
-### <a name="no-selection"></a><span data-ttu-id="13ed1-309">Žádná výběru</span><span class="sxs-lookup"><span data-stu-id="13ed1-309">No selection</span></span>
+### <a name="no-selection"></a><span data-ttu-id="65c3d-309">Žádná výběru</span><span class="sxs-lookup"><span data-stu-id="65c3d-309">No selection</span></span>
 
-<span data-ttu-id="13ed1-310">Pokud se přistihnete pomocí možnosti "nebyl zadán" na více stránkách, můžete vytvořit šablonu k odstranění opakovaných HTML:</span><span class="sxs-lookup"><span data-stu-id="13ed1-310">If you find yourself using the "not specified" option in multiple pages, you can create a template to eliminate repeating the HTML:</span></span>
+<span data-ttu-id="65c3d-310">Pokud se přistihnete pomocí možnosti "nebyl zadán" na více stránkách, můžete vytvořit šablonu k odstranění opakovaných HTML:</span><span class="sxs-lookup"><span data-stu-id="65c3d-310">If you find yourself using the "not specified" option in multiple pages, you can create a template to eliminate repeating the HTML:</span></span>
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexEmptyTemplate.cshtml?highlight=5)]
 
-<span data-ttu-id="13ed1-311">*Views/Shared/EditorTemplates/CountryViewModel.cshtml* šablony:</span><span class="sxs-lookup"><span data-stu-id="13ed1-311">The *Views/Shared/EditorTemplates/CountryViewModel.cshtml* template:</span></span>
+<span data-ttu-id="65c3d-311">*Views/Shared/EditorTemplates/CountryViewModel.cshtml* šablony:</span><span class="sxs-lookup"><span data-stu-id="65c3d-311">The *Views/Shared/EditorTemplates/CountryViewModel.cshtml* template:</span></span>
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/CountryViewModel.cshtml)]
 
-<span data-ttu-id="13ed1-312">Přidání HTML [ \<možnost >](https://www.w3.org/wiki/HTML/Elements/option) není omezen na elementy *žádná výběru* případu.</span><span class="sxs-lookup"><span data-stu-id="13ed1-312">Adding HTML [\<option>](https://www.w3.org/wiki/HTML/Elements/option) elements isn't limited to the *No selection* case.</span></span> <span data-ttu-id="13ed1-313">Například následující metodu zobrazení a akce se generují kód HTML podobně jako výše uvedený kód:</span><span class="sxs-lookup"><span data-stu-id="13ed1-313">For example, the following view and action method will generate HTML similar to the code above:</span></span>
+<span data-ttu-id="65c3d-312">Přidání HTML [ \<možnost >](https://www.w3.org/wiki/HTML/Elements/option) není omezen na elementy *žádná výběru* případu.</span><span class="sxs-lookup"><span data-stu-id="65c3d-312">Adding HTML [\<option>](https://www.w3.org/wiki/HTML/Elements/option) elements isn't limited to the *No selection* case.</span></span> <span data-ttu-id="65c3d-313">Například následující metodu zobrazení a akce se generují kód HTML podobně jako výše uvedený kód:</span><span class="sxs-lookup"><span data-stu-id="65c3d-313">For example, the following view and action method will generate HTML similar to the code above:</span></span>
 
 [!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Home/IndexOption.cshtml)]
 
-<span data-ttu-id="13ed1-314">Správný `<option>` element bude vybrána (obsahovat `selected="selected"` atribut) v závislosti na aktuální `Country` hodnota.</span><span class="sxs-lookup"><span data-stu-id="13ed1-314">The correct `<option>` element will be selected ( contain the `selected="selected"` attribute) depending on the current `Country` value.</span></span>
+<span data-ttu-id="65c3d-314">Správný `<option>` element bude vybrána (obsahovat `selected="selected"` atribut) v závislosti na aktuální `Country` hodnota.</span><span class="sxs-lookup"><span data-stu-id="65c3d-314">The correct `<option>` element will be selected ( contain the `selected="selected"` attribute) depending on the current `Country` value.</span></span>
 
 ```HTML
  <form method="post" action="/Home/IndexEmpty">
@@ -575,12 +575,12 @@ public IActionResult Edit(int id, int colorIndex)
  </form>
  ```
 
-## <a name="additional-resources"></a><span data-ttu-id="13ed1-315">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="13ed1-315">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="65c3d-315">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="65c3d-315">Additional resources</span></span>
 
-* [<span data-ttu-id="13ed1-316">Pomocné rutiny značek</span><span class="sxs-lookup"><span data-stu-id="13ed1-316">Tag Helpers</span></span>](xref:mvc/views/tag-helpers/intro)
-* [<span data-ttu-id="13ed1-317">Element formuláře HTML</span><span class="sxs-lookup"><span data-stu-id="13ed1-317">HTML Form element</span></span>](https://www.w3.org/TR/html401/interact/forms.html)
-* [<span data-ttu-id="13ed1-318">Žádost o ověření tokenu</span><span class="sxs-lookup"><span data-stu-id="13ed1-318">Request Verification Token</span></span>](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
-* [<span data-ttu-id="13ed1-319">Vazby modelu</span><span class="sxs-lookup"><span data-stu-id="13ed1-319">Model Binding</span></span>](xref:mvc/models/model-binding)
-* [<span data-ttu-id="13ed1-320">Ověření modelu</span><span class="sxs-lookup"><span data-stu-id="13ed1-320">Model Validation</span></span>](xref:mvc/models/validation)
-* [<span data-ttu-id="13ed1-321">IAttributeAdapter rozhraní</span><span class="sxs-lookup"><span data-stu-id="13ed1-321">IAttributeAdapter Interface</span></span>](/dotnet/api/Microsoft.AspNetCore.Mvc.DataAnnotations.IAttributeAdapter)
-* [<span data-ttu-id="13ed1-322">Fragmenty kódu pro tento dokument</span><span class="sxs-lookup"><span data-stu-id="13ed1-322">Code snippets for this document</span></span>](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/forms/sample)
+* [<span data-ttu-id="65c3d-316">Pomocné rutiny značek</span><span class="sxs-lookup"><span data-stu-id="65c3d-316">Tag Helpers</span></span>](xref:mvc/views/tag-helpers/intro)
+* [<span data-ttu-id="65c3d-317">Element formuláře HTML</span><span class="sxs-lookup"><span data-stu-id="65c3d-317">HTML Form element</span></span>](https://www.w3.org/TR/html401/interact/forms.html)
+* [<span data-ttu-id="65c3d-318">Žádost o ověření tokenu</span><span class="sxs-lookup"><span data-stu-id="65c3d-318">Request Verification Token</span></span>](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
+* [<span data-ttu-id="65c3d-319">Vazby modelu</span><span class="sxs-lookup"><span data-stu-id="65c3d-319">Model Binding</span></span>](xref:mvc/models/model-binding)
+* [<span data-ttu-id="65c3d-320">Ověření modelu</span><span class="sxs-lookup"><span data-stu-id="65c3d-320">Model Validation</span></span>](xref:mvc/models/validation)
+* [<span data-ttu-id="65c3d-321">IAttributeAdapter rozhraní</span><span class="sxs-lookup"><span data-stu-id="65c3d-321">IAttributeAdapter Interface</span></span>](/dotnet/api/Microsoft.AspNetCore.Mvc.DataAnnotations.IAttributeAdapter)
+* [<span data-ttu-id="65c3d-322">Fragmenty kódu pro tento dokument</span><span class="sxs-lookup"><span data-stu-id="65c3d-322">Code snippets for this document</span></span>](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/working-with-forms/sample/final)

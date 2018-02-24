@@ -5,20 +5,20 @@ description: "Zjistěte, jaké jsou pomocné rutiny značky a jejich použití v
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.date: 7/14/2017
+ms.date: 2/14/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: 939eccd45ec437f379fb9349c24246cc0683528b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 669fb9b22d070a75d891e875156d62590c40fc5a
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Úvod do pomocné rutiny značky v ASP.NET Core 
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="what-are-tag-helpers"></a>Jaké jsou pomocné rutiny značky?
 
@@ -32,19 +32,32 @@ Pomocníci značky povolit kódu na straně serveru k účasti ve vytváření a
 
 **Tak, aby vás zvýšit produktivitu a moct vytvářet robustnější a spolehlivé a udržovatelného kódu pomocí informace, které jsou k dispozici pouze na serveru** v minulosti mantra o aktualizaci bitové kopie byl například změnit název obrázku při změně obrázek. Bitové kopie by měl být intenzivně do mezipaměti z důvodů výkonu, a pokud změníte název bitové kopie, riskujete, že klienti získávání kopii zastaralé. V minulosti po obrázku bylo upraveno, musel změnit název a každý odkaz na obrázek ve webové aplikaci potřeba aktualizovat. Ne jenom je to velmi práce že náročné, je také náchylný (můžete může neproběhly odkaz, zadejte omylem nesprávný řetězec atd.) Integrované `ImageTagHelper` lze provést pro vás automaticky. `ImageTagHelper` Můžete připojit z verze číslo název bitové kopie, takže při každé změně bitovou kopii, server automaticky vygeneruje nové verze jedinečný pro bitovou kopii. Klienti jsou zaručit získat aktuální image. Tato úspory odolné a práci se dodává v podstatě volné pomocí `ImageTagHelper`.
 
-Většina předdefinované značky Pomocníci cíli stávající elementy HTML a poskytuje serverové atributy elementu. Například `<input>` element používán v mnoha zobrazení *zobrazení nebo účet* složka obsahuje `asp-for` atribut, který extrahuje název vlastnosti zadaného modelu do vykreslené kódu HTML. Následující kód Razor:
+Pomocné rutiny nejvíce integrovaných značky cíli standardní elementů HTML a poskytuje serverové atributy elementu. Například `<input>` element používaných v zobrazeních. v mnoha *zobrazení nebo účet* složka obsahuje `asp-for` atribut. Tento atribut extrahuje název vlastnosti zadaného modelu do vykreslené kódu HTML. Vezměte v úvahu Razor zobrazení s modelem následující:
+
+```csharp
+public class Movie
+{
+    public int ID { get; set; }
+    public string Title { get; set; }
+    public DateTime ReleaseDate { get; set; }
+    public string Genre { get; set; }
+    public decimal Price { get; set; }
+}
+```
+
+Následující kód Razor:
 
 ```cshtml
-<label asp-for="Email"></label>
+<label asp-for="Movie.Title"></label>
 ```
 
 Generuje následující HTML:
 
-```cshtml
-<label for="Email">Email</label>
+```html
+ <label for="Movie_Title">Title</label>
 ```
 
-`asp-for` Atribut je k dispozici ve `For` vlastnost `LabelTagHelper`. V tématu [vytváření Pomocníci značky](authoring.md) Další informace.
+`asp-for` Atribut je k dispozici ve `For` vlastnost [LabelTagHelper](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.labeltaghelper?view=aspnetcore-2.0). V tématu [vytváření Pomocníci značky](xref:mvc/views/tag-helpers/authoring) Další informace.
 
 ## <a name="managing-tag-helper-scope"></a>Správa značka pomocná oboru
 
@@ -52,7 +65,7 @@ Značka pomocné rutiny oboru řídí kombinaci `@addTagHelper`, `@removeTagHelp
 
 <a name="add-helper-label"></a>
 
-### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper`zpřístupní značky pomocné rutiny
+### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper` zpřístupní značky pomocné rutiny
 
 Pokud vytvoříte novou webovou aplikaci ASP.NET Core s názvem *AuthoringTagHelpers* (bez jakéhokoli ověřování), následující *Views/_ViewImports.cshtml* soubor bude přidán do projektu:
 
@@ -83,7 +96,7 @@ Jak je uvedeno nahoře, přidání `@addTagHelper` direktivy k *Views/_ViewImpor
 
 <a name="remove-razor-directives-label"></a>
 
-### <a name="removetaghelper-removes-tag-helpers"></a>`@removeTagHelper`Odebere značky pomocné rutiny
+### <a name="removetaghelper-removes-tag-helpers"></a>`@removeTagHelper` Odebere značky pomocné rutiny
 
 `@removeTagHelper` Má stejné dva parametry jako `@addTagHelper`, a odebere značky pomocné rutiny, která byla přidána dříve. Například `@removeTagHelper` použít konkrétní zobrazení odebere zadané pomocné rutiny značky ze zobrazení. Pomocí `@removeTagHelper` v *Views/Folder/_ViewImports.cshtml* souboru odebere zadané pomocné rutiny značku ze všech zobrazení v *složky*.
 
@@ -242,7 +255,7 @@ Editoru Visual Studio umožňuje zapsat **všechny** z kódu v metodě značky p
 
 * Ovládací prvky webového serveru pomocí převaděče typu převod řetězců na objekty. S značky podpůrných rutin pracujete nativně v jazyce C#, takže nemusíte typ – převod.
 
-* Ovládací prvky webového serveru pomocí [System.ComponentModel](https://docs.microsoft.com/dotnet/api/system.componentmodel) k implementaci chování za běhu a návrhu součásti a ovládacích prvků. `System.ComponentModel`obsahuje základní třídy a rozhraní pro implementace atributů, převaděčů typů vazeb na zdroje dat a licencování součásti. Kontrastu, do pomocné rutiny značky, které obvykle odvozena od `TagHelper`a `TagHelper` základní třída zpřístupňuje pouze dvě metody, `Process` a `ProcessAsync`.
+* Ovládací prvky webového serveru pomocí [System.ComponentModel](https://docs.microsoft.com/dotnet/api/system.componentmodel) k implementaci chování za běhu a návrhu součásti a ovládacích prvků. `System.ComponentModel` obsahuje základní třídy a rozhraní pro implementace atributů, převaděčů typů vazeb na zdroje dat a licencování součásti. Kontrastu, do pomocné rutiny značky, které obvykle odvozena od `TagHelper`a `TagHelper` základní třída zpřístupňuje pouze dvě metody, `Process` a `ProcessAsync`.
 
 ## <a name="customizing-the-tag-helper-element-font"></a>Přizpůsobení písma elementu značky pomocné rutiny
 
@@ -253,6 +266,6 @@ Můžete přizpůsobit písma a zabarvení z **nástroje** > **možnosti** > **p
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Vytváření Pomocníci značky](xref:mvc/views/tag-helpers/authoring)
-* [Práce s formuláři](xref:mvc/views/working-with-forms)
+* [Práce s formuláři ](xref:mvc/views/working-with-forms)
 * [TagHelperSamples na Githubu](https://github.com/dpaquette/TagHelperSamples) obsahuje ukázky značky Pomocníka pro práci s [Bootstrap](http://getbootstrap.com/).
-* [Práce s formuláři](xref:mvc/views/working-with-forms)
+* [Práce s formuláři ](xref:mvc/views/working-with-forms)

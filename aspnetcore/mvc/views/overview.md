@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: bab08e75652c75b371438581d6e9f56541844a61
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4f55b3b439d268c371ce40a298b0f63dad9eef69
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Zobrazení v jádro ASP.NET MVC
 
@@ -92,7 +92,7 @@ Výchozí chování `View` – metoda (`return View();`) je lze vrátit zobrazen
 
 Není důležité, pokud se implicitně vrátíte `ViewResult` s `return View();` nebo explicitně předat název zobrazení má `View` metoda s `return View("<ViewName>");`. V obou případech zobrazení zjišťování hledá odpovídající soubor zobrazení v tomto pořadí:
 
-   1. *Views/\[ControllerName]\[ViewName].cshtml*
+   1. *Views/\[ControllerName]/\[ViewName].cshtml*
    1. *Views/Shared/\[ViewName].cshtml*
 
 Místo názvu zobrazení se dá zadat cestu k zobrazení souboru. Pokud používáte absolutní cestu spouštění v kořenovém adresáři aplikace (volitelně od verze "/" nebo "~ /"), *.cshtml* musí být zadán rozšíření:
@@ -198,14 +198,14 @@ Kromě zobrazení silného typu zobrazení mají přístup k *slabě typované* 
 
 Tuto kolekci lze odkazovat pomocí buď `ViewData` nebo `ViewBag` vlastnosti kontrolery a zobrazení. `ViewData` Vlastnost je slovník slabě typované objektů. `ViewBag` Vlastnost je obálku kolem `ViewData` poskytuje dynamické vlastnosti základní `ViewData` kolekce.
 
-`ViewData`a `ViewBag` jsou vyřešeny dynamicky za běhu. Vzhledem k tomu, že nemáte nabízejí kontrolu typu kompilaci, jak jsou obecně více náchylné než použití viewmodel. Z tohoto důvodu někteří vývojáři radši chtěli použít minimálně nebo nikdy `ViewData` a `ViewBag`.
+`ViewData` a `ViewBag` jsou vyřešeny dynamicky za běhu. Vzhledem k tomu, že nemáte nabízejí kontrolu typu kompilaci, jak jsou obecně více náchylné než použití viewmodel. Z tohoto důvodu někteří vývojáři radši chtěli použít minimálně nebo nikdy `ViewData` a `ViewBag`.
 
 
 <a name="VD"></a>
 
 **ViewData**
 
-`ViewData`je [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) objekt přistupovat prostřednictvím `string` klíče. Řetězec dat lze ukládat a používat přímo bez nutnosti přetypování, ale musíte vysílat dalších `ViewData` objekt hodnoty pro konkrétní typy při extrahování je. Můžete použít `ViewData` předání dat z řadiče zobrazení a v zobrazeních, včetně [částečná zobrazení](xref:mvc/views/partial) a [rozložení](xref:mvc/views/layout).
+`ViewData` je [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) objekt přistupovat prostřednictvím `string` klíče. Řetězec dat lze ukládat a používat přímo bez nutnosti přetypování, ale musíte vysílat dalších `ViewData` objekt hodnoty pro konkrétní typy při extrahování je. Můžete použít `ViewData` předání dat z řadiče zobrazení a v zobrazeních, včetně [částečná zobrazení](xref:mvc/views/partial) a [rozložení](xref:mvc/views/layout).
 
 Tady je příklad, který nastavuje hodnoty pozdrav a adresy `ViewData` v akci:
 
@@ -247,7 +247,7 @@ Práce s daty v zobrazení:
 
 Poznámka: `ViewBag` není k dispozici na stránkách Razor.
 
-`ViewBag`je [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) objekt, který poskytuje dynamické přístup k objektům, které jsou uložené v `ViewData`. `ViewBag`může být pohodlnější můžete pracovat, protože nevyžaduje přetypování. Následující příklad ukazuje, jak používat `ViewBag` se stejné výsledky jako pomocí `ViewData` výše:
+`ViewBag` je [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) objekt, který poskytuje dynamické přístup k objektům, které jsou uložené v `ViewData`. `ViewBag` může být pohodlnější můžete pracovat, protože nevyžaduje přetypování. Následující příklad ukazuje, jak používat `ViewBag` se stejné výsledky jako pomocí `ViewData` výše:
 
 ```csharp
 public IActionResult SomeAction()
@@ -318,15 +318,15 @@ Pomocí obou `ViewData` a `ViewBag` ve stejnou dobu funguje, jako nepodporuje ko
 
 **Souhrnné informace o rozdílech mezi ViewData a ViewBag**
 
- `ViewBag`není k dispozici na stránkách Razor.
+ `ViewBag` není k dispozici na stránkách Razor.
 
 * `ViewData`
   * Odvozená z [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary), takže má slovník vlastností, které mohou být užitečné, například `ContainsKey`, `Add`, `Remove`, a `Clear`.
-  * Klíče ve slovníku jsou řetězce, takže je povolen prázdný znak. Příklad:`ViewData["Some Key With Whitespace"]`
+  * Klíče ve slovníku jsou řetězce, takže je povolen prázdný znak. Příklad: `ViewData["Some Key With Whitespace"]`
   * Jakýkoli typ jinými než `string` musíte vysílat v zobrazení použít `ViewData`.
 * `ViewBag`
   * Odvozená z [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata), takže umožňuje vytváření dynamických vlastností pomocí zápisu s tečkou (`@ViewBag.SomeKey = <value or object>`), a není vyžadováno žádné přetypování. Syntaxe `ViewBag` umožňuje rychlejší pro přidání do kontrolery a zobrazení.
-  * Jednodušší zkontrolujte hodnoty null. Příklad:`@ViewBag.Person?.Name`
+  * Jednodušší zkontrolujte hodnoty null. Příklad: `@ViewBag.Person?.Name`
 
 **Kdy použít ViewData nebo ViewBag**
 

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility-third-party-container
-ms.openlocfilehash: bbfd9d748df59418345ddd3eacd6f44b75f6e851
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: bb318747e254ac244facc1fe1ff08a1f5c4727f2
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="factory-based-middleware-activation-with-a-third-party-container-in-aspnet-core"></a>Aktivace na základě Factory middlewaru s kontejner třetích stran v ASP.NET Core
 
@@ -24,7 +24,7 @@ Tento článek ukazuje, jak používat [IMiddlewareFactory](/dotnet/api/microsof
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/extensibility-third-party-container/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-Ukázková aplikace ukazuje middleware aktivace pomocí `IMiddlewareFactory` implementace `SimpleInjectorMiddlewareFactory`. Ukázce se používá [jednoduché Injector](https://github.com/simpleinjector/SimpleInjector) kontejneru pro vkládání (DI) závislosti.
+Ukázková aplikace ukazuje middleware aktivace pomocí `IMiddlewareFactory` implementace `SimpleInjectorMiddlewareFactory`. Ukázce se používá [jednoduché Injector](https://simpleinjector.org) kontejneru pro vkládání (DI) závislosti.
 
 Implementace tohoto příkladu middleware zaznamenává hodnotu poskytovanou infrastrukturou parametr řetězce dotazu (`key`). Middleware kontextu vloženého databáze (vymezená service) používá k zaznamenání hodnotu řetězce dotazu v databázi v paměti.
 
@@ -51,7 +51,7 @@ Vytvoření rozšíření pro middleware (*Middleware/MiddlewareExtensions.cs*):
 
 [!code-csharp[](extensibility-third-party-container/sample/Middleware/MiddlewareExtensions.cs?name=snippet1)]
 
-`Startup.ConfigureServices`musíte provést několik úloh:
+`Startup.ConfigureServices` musíte provést několik úloh:
 
 * Nastavte jednoduché Injector kontejneru.
 * Zaregistrujte objekt pro vytváření a middleware.

@@ -1,34 +1,34 @@
 ---
 title: "Použijte šablonu úhlová projektu"
 author: SteveSandersonMS
-description: "Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jednostránkové aplikace (SPA) release candidate pro úhlová a úhlová příkazového řádku."
+description: "Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro úhlová a úhlová příkazového řádku."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: 4162b1c26e9d278c811f691c4277d4de25adb204
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f81130b67d61ee063b697f19862449c3054d547d
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-angular-project-template-release-candidate"></a>Použijte šablonu úhlová projektu (verze release candidate)
+# <a name="use-the-angular-project-template"></a>Použijte šablonu úhlová projektu
 
 > [!NOTE]
-> Tato dokumentace není o vydaných úhlová projektu šablony. **Tato dokumentace je o na verzi release candidate úhlová šablony.** Věříme, že pro odeslání v časná 2018 vydaná verze.
+> Tato dokumentace není o šablona úhlová projektu součástí technologie ASP.NET 2.0 jádra. Jde o novější úhlová šablony, do kterého můžete ručně aktualizovat. Šablona je součástí 2.1 jádro ASP.NET ve výchozím nastavení.
 
-Šablona aktualizované úhlová projektu poskytuje příhodný výchozí bod pro ASP.NET Core použití úhlová 5 a úhlová příkazového řádku k implementaci bohatou a klientské uživatelské rozhraní (UI) aplikace.
+Šablona aktualizované úhlová projektu poskytuje příhodný výchozí bod pro ASP.NET Core použití úhlová a úhlová příkazového řádku k implementaci bohatou a klientské uživatelské rozhraní (UI) aplikace.
 
 Šablona je ekvivalentní k vytvoření projektu ASP.NET Core tak, aby fungoval jako back-end rozhraní API a projekt úhlová CLI tak, aby fungoval jako uživatelského rozhraní. Šablona nabízí praktické hostování oba typy projektů v jediné aplikaci projektu. V důsledku toho projekt aplikace můžete vytvořená a publikovaná jako na jednu jednotku.
 
 ## <a name="create-a-new-app"></a>Vytvoření nové aplikace
 
-Abyste mohli začít, ujistěte se, když jste [nainstalován v šabloně projektů aktualizované úhlová](xref:spa/index#installation). Tyto pokyny se nevztahují na předchozí šablona úhlová projektu součástí .NET Core 2.0.x SDK.
+Pokud používáte technologii ASP.NET 2.0 jádra, ujistěte se, když jste [nainstalován v šabloně projektů aktualizované úhlová](xref:spa/index#installation). Pokud máte 2.1 jádro ASP.NET, není nutné ji nainstalovat.
 
 Vytvoření nového projektu z příkazového řádku pomocí příkazu `dotnet new angular` v prázdného adresáře. Můžete například vytvořit následující příkazy v aplikaci *-nové aplikace my* adresáře a přepnete se do této složky:
 

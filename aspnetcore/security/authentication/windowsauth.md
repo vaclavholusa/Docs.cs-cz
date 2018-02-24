@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: aaa14e2f2704a7cfa836c5524642d2138a3ae7c8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c229537e7f533eea2173dbc51b8d0d0e097d434a
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="configure-windows-authentication-in-an-aspnet-core-app"></a>Konfigurovat ověřování systému Windows v aplikaci ASP.NET Core
 
@@ -111,6 +111,9 @@ Pokud je povolené ověřování systému Windows a je zakázán anonymní pří
 Pokud jsou povolené ověřování systému Windows a anonymní přístup, použijte `[Authorize]` a `[AllowAnonymous]` atributy. `[Authorize]` Atribut umožňuje zabezpečit součásti aplikace, které skutečně vyžadují ověřování systému Windows. `[AllowAnonymous]` Atribut přepsání `[Authorize]` atribut využití v rámci aplikace, které povolí anonymní přístup. V tématu [jednoduché autorizace](xref:security/authorization/simple) podrobnosti o použití atributu.
 
 V ASP.NET Core 2.x, `[Authorize]` atribut vyžaduje, aby další konfigurace v *Startup.cs* vyzve anonymních požadavků pro ověřování systému Windows. Doporučená konfigurace mírně závisí na webovém serveru, který je používán.
+
+> [!NOTE]
+> Ve výchozím nastavení uživatelé, kteří nemají oprávnění pro přístup k stránky zobrazí se prázdný dokument. [StatusCodePages middleware](xref:fundamentals/error-handling#configuring-status-code-pages) lze nakonfigurovat, aby uživatelům lepší "Přístup byl odepřen".
 
 #### <a name="iis"></a>IIS
 

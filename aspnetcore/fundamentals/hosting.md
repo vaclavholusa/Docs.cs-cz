@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/hosting
-ms.openlocfilehash: f85efe029baa07d963587dcd02a2c07da40de103
-ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
+ms.openlocfilehash: 8a22e97a518e2e5b11ddf0894f209ccc0a8990be
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>Hostování v ASP.NET Core
 
@@ -41,6 +41,7 @@ Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspn
   * Argumenty příkazového řádku.
 * Nakonfiguruje [protokolování](xref:fundamentals/logging/index) konzoly a ladění výstupu. Zahrnuje protokolování [filtrování protokolu](xref:fundamentals/logging/index#log-filtering) pravidla stanovená v části Konfigurace protokolování *appSettings.JSON určený* nebo *appsettings. { Prostředí} .json* souboru.
 * Když spustíte za služby IIS, umožňuje [integrační služby IIS](xref:host-and-deploy/iis/index). Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel. Nakonfiguruje aplikaci taky [zaznamenat chyby při spuštění](#capture-startup-errors). Výchozí možnosti služby IIS najdete v tématu [IIS možnosti oddílu hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#iis-options).
+* Nastaví [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) k `true` Pokud prostředí aplikace je vývoj. Další informace najdete v tématu [obor ověření](#scope-validation).
 
 *Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC. Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu. Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).
 
@@ -516,7 +517,7 @@ dotnet run --urls "http://*:8080"
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-Spustit
+**Spustit**
 
 `Run` Metoda spuštění webové aplikace a blokuje volající vlákno, dokud hostitel vypnutí:
 
@@ -687,7 +688,7 @@ Stejný výsledek jako **StartWith (akce<IApplicationBuilder> aplikace)**, s vý
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-Spustit
+**Spustit**
 
 `Run` Metoda spustí webovou aplikaci a blokuje volající vlákno, dokud se vypne hostitele:
 
@@ -882,6 +883,28 @@ public class MyClass
         _appLifetime.StopApplication();
     }
 }
+```
+
+## <a name="scope-validation"></a>Ověření oboru
+
+V technologii ASP.NET Core 2.0 nebo novější [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) nastaví [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) k `true` Pokud prostředí aplikace je vývoj.
+
+Když `ValidateScopes` je nastaven na `true`, výchozím zprostředkovatelem služeb provádí kontroly, aby ověřte, že:
+
+* Vymezené služby nejsou přímo nebo nepřímo přeložit od kořenové poskytovatele služeb.
+* Vymezená služby nejsou přímo nebo nepřímo vložit do jednotlivých prvků.
+
+Kořenového poskytovatele služby se vytvoří při [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider) je volána. Doba platnosti poskytovatele služeb kořenové odpovídá na aplikační nebo server životního cyklu, pokud zprostředkovatel začíná aplikace a uvolnění při vypnutí aplikace.
+
+Vymezená služby jsou zapomenuty kontejnerem, který je vytvořil. Pokud vymezené služby se vytvoří v kořenovém kontejneru, životnost služby je efektivně povýšen na singleton, protože jejich pouze likvidace podle Kořenový kontejner při ukončení aplikace nebo serveru. Ověřování služby Obory zachytí těchto situacích při `BuildServiceProvider` je volána.
+
+Vždy ověření obory, včetně v provozním prostředí, nakonfigurujte [ServiceProviderOptions](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions) s [UseDefaultServiceProvider](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usedefaultserviceprovider) na tvůrce hostitele:
+
+```csharp
+WebHost.CreateDefaultBuilder(args)
+    .UseDefaultServiceProvider((context, options) => {
+        options.ValidateScopes = true;
+    })
 ```
 
 ## <a name="troubleshooting-systemargumentexception"></a>Řešení potíží s System.ArgumentException

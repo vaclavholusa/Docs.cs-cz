@@ -1,26 +1,26 @@
 ---
 title: "Pomocí šablony projektu reagují"
 author: SteveSandersonMS
-description: "Zjistěte, jak začít pracovat s v šabloně projektů ASP.NET Core jednostránkové aplikace (SPA) release candidate reagují a vytvořit aplikaci reagují."
+description: "Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro reagují a vytvořit aplikaci reagují."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: 5978094083a098a771f5dca103434ea8fcce7777
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e093a47159fd8278ff3705bb2c53571a8e27fab8
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-react-project-template-release-candidate"></a>Pomocí šablony projektu reagují (verze release candidate)
+# <a name="use-the-react-project-template"></a>Pomocí šablony projektu reagují
 
 > [!NOTE]
-> Tato dokumentace není o vydaných v šabloně projektů reagují. **Tato dokumentace je o na verzi release candidate reagují šablony.** Věříme, že pro odeslání v časná 2018 vydaná verze.
+> Tato dokumentace není o šablona projektu reagují součástí technologie ASP.NET 2.0 jádra. Jde o šabloně novější reagují, do kterého můžete ručně aktualizovat. Šablona je součástí 2.1 jádro ASP.NET ve výchozím nastavení.
 
 Aktualizovanou šablonu projektu reagují poskytuje příhodný výchozí bod pro ASP.NET Core aplikací pomocí reagují a [vytvořit aplikaci reagují](https://github.com/facebookincubator/create-react-app) konvence (CRA) k implementaci bohatou a klientské uživatelské rozhraní (UI).
 
@@ -28,7 +28,7 @@ Aktualizovanou šablonu projektu reagují poskytuje příhodný výchozí bod pr
 
 ## <a name="create-a-new-app"></a>Vytvoření nové aplikace
 
-Abyste mohli začít, ujistěte se, když jste [nainstalovat aktualizovanou šablonu projektu reagují](xref:spa/index#installation). Tyto pokyny se nevztahují na předchozí šablona projektu reagují součástí .NET Core 2.0.x SDK.
+Pokud používáte technologii ASP.NET 2.0 jádra, ujistěte se, když jste [nainstalovat aktualizovanou šablonu projektu reagují](xref:spa/index#installation). Pokud máte 2.1 jádro ASP.NET, není nutné ji nainstalovat.
 
 Vytvoření nového projektu z příkazového řádku pomocí příkazu `dotnet new react` v prázdného adresáře. Můžete například vytvořit následující příkazy v aplikaci *-nové aplikace my* adresáře a přepnete se do této složky:
 

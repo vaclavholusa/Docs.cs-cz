@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 43c937ff9631be3edc1f95b3689650e4574abfbd
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 85e25b92b01d84279752deb7865987746c181c72
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
@@ -132,7 +132,7 @@ Všimněte si, že `CharacterRepository` požadavky `ApplicationDbContext` v jeh
 > [!NOTE]
 > Vytváření požadovaný objekt a všechny objekty vyžaduje a všechny objekty těch, které vyžadují, se někdy označuje jako *grafu objektu*. Podobně souhrnný sadu závislosti, které je třeba vyřešit se obvykle označuje jako *strom závislosti* nebo *graf závislostí*.
 
-V takovém případě obě `ICharacterRepository` a naopak `ApplicationDbContext` musí být zaregistrované v kontejneru služby v `ConfigureServices` v `Startup`. `ApplicationDbContext`je nakonfigurován pomocí volání metody rozšíření `AddDbContext<T>`. Následující kód ukazuje registrace `CharacterRepository` typu.
+V takovém případě obě `ICharacterRepository` a naopak `ApplicationDbContext` musí být zaregistrované v kontejneru služby v `ConfigureServices` v `Startup`. `ApplicationDbContext` je nakonfigurován pomocí volání metody rozšíření `AddDbContext<T>`. Následující kód ukazuje registrace `CharacterRepository` typu.
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?highlight=3-5,11&range=16-32)]
 
@@ -155,7 +155,7 @@ Přechodný životního cyklu služeb vytvářejí pokaždé, když, kterou jste
 
 Vymezená životního cyklu služeb se vytvoří jednou na základě požadavku.
 
-**Singleton**
+singleton
 
 Singleton životního cyklu služeb se vytvoří při prvním jste požadovali (nebo když `ConfigureServices` se spustí, pokud existuje instance zadáte) a potom budou všechny následné žádosti o použít stejnou instanci. Pokud vaše aplikace vyžaduje chování typu singleton, povolení kontejneru služby pro správu životního cyklu služby se doporučuje namísto singleton vzor návrhu implementace a správa životního cyklu vaší objekt ve třídě sami.
 
@@ -192,6 +192,19 @@ Sledovat, které `OperationId` hodnoty se liší v rámci požadavku a mezi pož
 * *Obor* objekty jsou stejné v rámci požadavku, ale jiné napříč různé požadavky
 
 * *Singleton* objekty jsou stejné pro všechny objekty a všechny žádosti o (bez ohledu na to, jestli je součástí instance `ConfigureServices`)
+
+## <a name="scope-validation"></a>Ověření oboru
+
+Když aplikace běží ve vývojovém prostředí na technologii ASP.NET Core 2.0 nebo novější, výchozím zprostředkovatelem služeb provádí kontroly ověřit, jestli:
+
+* Vymezené služby nejsou přímo nebo nepřímo přeložit od kořenové poskytovatele služeb.
+* Vymezená služby nejsou přímo nebo nepřímo vložit do jednotlivých prvků.
+
+Kořenového poskytovatele služby se vytvoří při [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider) je volána. Doba platnosti poskytovatele služeb kořenové odpovídá na aplikační nebo server životního cyklu, pokud zprostředkovatel začíná aplikace a uvolnění při vypnutí aplikace.
+
+Vymezená služby jsou zapomenuty kontejnerem, který je vytvořil. Pokud vymezené služby se vytvoří v kořenovém kontejneru, životnost služby je efektivně povýšen na singleton, protože jejich pouze likvidace podle Kořenový kontejner při ukončení aplikace nebo serveru. Ověřování služby Obory zachytí těchto situacích při `BuildServiceProvider` je volána.
+
+Další informace najdete v tématu [obor ověření v tomto tématu hostitelský](xref:fundamentals/hosting#scope-validation).
 
 ## <a name="request-services"></a>Žádost o služby
 

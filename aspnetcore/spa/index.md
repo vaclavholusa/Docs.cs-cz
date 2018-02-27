@@ -1,26 +1,26 @@
 ---
-title: "Použití šablon jednostránkové aplikace"
+title: "Použití šablon jedné stránky aplikace"
 author: SteveSandersonMS
-description: "Zjistěte, jak nainstalovat a začít pracovat se šablonami projektů ASP.NET Core jednostránkové aplikace (SPA) release candidate."
+description: "Zjistěte, jak nainstalovat a začít pracovat se šablonami projektů ASP.NET Core jedné stránky aplikace (SPA)."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/index
-ms.openlocfilehash: 2017c2ada835eb7206dcfd195f6e2c032909f9ef
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 63b56de101199e9ea0d66d89d2dd7288e47902f6
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-single-page-application-templates-release-candidate"></a>Použití šablon jednostránkové aplikace (verze release candidate)
+# <a name="use-the-single-page-application-templates"></a>Použití šablon jedné stránky aplikace
 
 > [!NOTE]
-> Vydaná .NET Core 2.0.x SDK obsahuje šablony projektů pro úhlová reagují a s Redux reagovat. **Tato dokumentace se o tyto šablony vydaných projektu.** Tato dokumentace je pro další verze úhlová, reagují a reagují s – obnovení šablony, které Věříme, že pro odeslání v časná 2018.
+> Vydaná .NET Core 2.0.x SDK zahrnuje starší šablony projektů pro úhlová reagují a s Redux reagovat. Tato dokumentace se o tyto starší šablony projektů. Tato dokumentace je pro nejnovější úhlová reagují a reagují s – obnovení šablony, které může být nainstalován ručně na technologii ASP.NET 2.0 jádra. Šablony jsou zahrnuté ve výchozím nastavení se ASP.NET Core 2.1.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -29,10 +29,10 @@ ms.lasthandoff: 02/11/2018
 
 ## <a name="installation"></a>Instalace
 
-Spusťte následující příkaz k instalaci **verze release candidate** šablon ASP.NET Core pro úhlová reagovat a reagují s Redux:
+Pokud máte aplikaci ASP.NET 2.0 jádra, spusťte následující příkaz k instalaci aktualizované šablony ASP.NET Core pro úhlová, reagovat a reagují s Redux:
 
 ```console
-dotnet new --install Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0-rc2-final
+dotnet new --install Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0
 ```
 
 ## <a name="use-the-templates"></a>Použití šablon

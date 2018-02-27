@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 6b9dcfcc2fa380b601eee56095f2e6a6dbe07732
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 12635c66bacdeed7360a9d6c689212bba81439e3
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Konfigurace aplikace ASP.NET Core
 
@@ -63,6 +63,25 @@ Dvojice název hodnota, které jsou zapsány do vestavěné [konfigurace](/dotne
 
 V předchozím příkladu používá konfigurace indexeru načíst hodnoty. Získat přístup ke konfiguraci mimo `Startup`, použijte *možnosti vzor*. Další informace najdete v tématu [možnosti](xref:fundamentals/configuration/options) tématu.
 
+## <a name="xml-configuration"></a>Konfigurační soubor XML
+
+Chcete-li pracovat s pole ve formátu XML konfigurace zdrojů, zadat `name` index pro každý prvek. Index použijte pro přístup k hodnoty:
+
+```xml
+<wizards>
+  <wizard name="Gandalf">
+    <age>1000</age>
+  </wizard>
+  <wizard name="Harry">
+    <age>17</age>
+  </wizard>
+</wizards>
+```
+
+```csharp
+Console.Write($"{Configuration["wizard:Harry:age"]}");
+// Output: 17
+```
 
 ## <a name="configuration-by-environment"></a>Konfigurace prostředí
 
@@ -74,7 +93,7 @@ Je typické jinou konfiguraci nastavení pro různá prostředí, například v�
 
 Aplikace ASP.NET Core 1.x muset volat `AddJsonFile` a [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables#Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_).
 
-V tématu [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions) vysvětlení parametrů. `reloadOnChange`je podporován pouze v ASP.NET Core 1.1 nebo novější.
+V tématu [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions) vysvětlení parametrů. `reloadOnChange` je podporován pouze v ASP.NET Core 1.1 nebo novější.
 
 Konfigurace zdroje se čtou v pořadí, zda jste zadali. V předchozím kódu se čtou poslední proměnné prostředí. Všechny hodnoty konfigurace nastavit prostřednictvím prostředí nahradit nastavené v dva poskytovatelé předchozí.
 
@@ -91,7 +110,7 @@ V prostředí se obvykle nastavuje na `Development`, `Staging`, nebo `Production
 
 Požadavky na konfiguraci:
 
-* `IOptionsSnapshot`můžete znovu načíst konfigurační data, kdy se změní. Další informace najdete v tématu [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot).,
+* `IOptionsSnapshot` můžete znovu načíst konfigurační data, kdy se změní. Další informace najdete v tématu [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot).,
 * Konfigurace klíče jsou **není** malá a velká písmena.
 * **Nikdy** ukládání hesel nebo jiných citlivých dat. kód zprostředkovatele konfigurace nebo v konfiguračních souborech na prostý text. Nechcete používat produkční tajných klíčů v vývoj nebo testovací prostředí. Zadejte tajné klíče mimo projekt tak, že nemohou být omylem zavazuje úložiště zdrojového kódu. Další informace o [práce s několika prostředí](xref:fundamentals/environments) a správu [bezpečného úložiště tajné klíče aplikace během vývoje](xref:security/app-secrets).
 * Pokud dvojtečkou (`:`) nelze použít v seznamu proměnných prostředí v systému, nahraďte dvojtečkou (`:`) s dvojité podtržítko (`__`).
@@ -110,7 +129,7 @@ Následující příklad ukazuje [GetValue&lt;T&gt; ](/dotnet/api/microsoft.exte
 
 [!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
-ConfigurationBinder `GetValue<T>` metoda umožňuje specifikaci výchozí hodnotu (80 v ukázce). `GetValue<T>`je pro jednoduché scénáře a bez vazby na celý části. `GetValue<T>`Získá skalárních hodnot z `GetSection(key).Value` převést na konkrétního typu.
+ConfigurationBinder `GetValue<T>` metoda umožňuje specifikaci výchozí hodnotu (80 v ukázce). `GetValue<T>` je pro jednoduché scénáře a bez vazby na celý části. `GetValue<T>` Získá skalárních hodnot z `GetSection(key).Value` převést na konkrétního typu.
 
 ## <a name="bind-to-an-object-graph"></a>Vytvořit vazbu na grafu objektu
 
@@ -122,7 +141,7 @@ Následující příklad vytvoří vazbu `AppSettings` třídy:
 
 [!code-csharp[Main](index/sample/ObjectGraph/Program.cs?highlight=15-16)]
 
-**ASP.NET Core 1.1** a vyšší můžete použít `Get<T>`, který pracuje s celé oddíly. `Get<T>`může být vhodnější než použití `Bind`. Následující kód ukazuje, jak používat `Get<T>` s v předchozím příkladu:
+**ASP.NET Core 1.1** a vyšší můžete použít `Get<T>`, který pracuje s celé oddíly. `Get<T>` může být vhodnější než použití `Bind`. Následující kód ukazuje, jak používat `Get<T>` s v předchozím příkladu:
 
 ```csharp
 var appConfig = config.GetSection("App").Get<AppSettings>();
@@ -251,11 +270,11 @@ Typická aplikace ASP.NET Core 2.x použít metodu statické pohodlí `CreateDef
 
 [!code-csharp[Main](index/sample_snapshot//Program.cs?highlight=12)]
 
-`CreateDefaultBuilder`načte volitelné konfiguraci z *appSettings.JSON určený*, *appsettings. { Prostředí} .json*, [tajné klíče uživatele](xref:security/app-secrets) (v `Development` prostředí), proměnné prostředí a argumenty příkazového řádku. Poskytovatel konfigurace příkazového řádku se označuje jako poslední. Poslední volání zprostředkovatele umožňuje dříve názvem argumenty příkazového řádku předaný běhu přepsat konfiguraci nastavit pomocí jiných poskytovatelů konfigurace.
+`CreateDefaultBuilder` načte volitelné konfiguraci z *appSettings.JSON určený*, *appsettings. { Prostředí} .json*, [tajné klíče uživatele](xref:security/app-secrets) (v `Development` prostředí), proměnné prostředí a argumenty příkazového řádku. Poskytovatel konfigurace příkazového řádku se označuje jako poslední. Poslední volání zprostředkovatele umožňuje dříve názvem argumenty příkazového řádku předaný běhu přepsat konfiguraci nastavit pomocí jiných poskytovatelů konfigurace.
 
 Pro *appsettings* soubory kde:
 
-* `reloadOnChange`je povolené.
+* `reloadOnChange` je povolené.
 * Obsahovat stejnému nastavení v argumenty příkazového řádku a *appsettings* souboru.
 * *Appsettings* souboru, který obsahuje odpovídající argument příkazového řádku je změnit po spuštění aplikace.
 
@@ -390,9 +409,9 @@ MachineName: ChadPC
 Left: 1988
 ```
 
-## <a name="the-webconfig-file"></a>V souboru web.config
+## <a name="webconfig-file"></a>web.config file
 
-A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Express. Nastavení v *web.config* povolit [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) spusťte aplikaci a nakonfigurovat další nastavení služby IIS a modulů. Pokud *web.config* soubor není přítomen a zahrnuje soubor projektu `<Project Sdk="Microsoft.NET.Sdk.Web">`, publikování projektu vytvoří *web.config* souboru v publikované výstup ( *publikování* složku). Další informace najdete v tématu [hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#webconfig).
+A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Express. Nastavení v *web.config* povolit [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) spusťte aplikaci a nakonfigurovat další nastavení služby IIS a modulů. Pokud *web.config* soubor není přítomen a zahrnuje soubor projektu `<Project Sdk="Microsoft.NET.Sdk.Web">`, publikování projektu vytvoří *web.config* souboru v publikované výstup ( *publikování* složku). Další informace najdete v tématu [hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#webconfig-file).
 
 ## <a name="accessing-configuration-during-startup"></a>Přístup k konfigurace při spuštění
 
@@ -402,9 +421,9 @@ Získat přístup ke konfiguraci v rámci `ConfigureServices` nebo `Configure` b
 
 * Vkládání závislostí (DI) není nastavená až do doby, po `ConfigureServices` je volána.
 * Konfigurace systému není DI vědět.
-* `IConfiguration`má dva specializací:
-  * `IConfigurationRoot`Používá se pro kořenový uzel. Můžete aktivovat znovu načíst.
-  * `IConfigurationSection`Reprezentuje oddíl hodnoty konfigurace. `GetSection` a `GetChildren` metody vrací `IConfigurationSection`.
+* `IConfiguration` má dva specializací:
+  * `IConfigurationRoot` Používá se pro kořenový uzel. Můžete aktivovat znovu načíst.
+  * `IConfigurationSection` Reprezentuje oddíl hodnoty konfigurace. `GetSection` a `GetChildren` metody vrací `IConfigurationSection`.
   * Použití [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot) při opětovném načtení konfigurace nebo pro přístup do každého poskytovatele. Ani jeden z těchto situacích jsou běžné.
 
 ## <a name="additional-resources"></a>Další zdroje

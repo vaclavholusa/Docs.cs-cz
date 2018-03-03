@@ -1,10 +1,10 @@
 # <a name="working-with-sqlite-in-and-razor-pages"></a>Práce s SQLite v a stránky Razor
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 `MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi. Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:
 
-[!code-csharp[Main](code/Startup.cs?name=snippet2&highlight=6-8)]
+[!code-csharp[](code/Startup.cs?name=snippet2&highlight=6-8)]
 
 ## <a name="sqlite"></a>SQLite
 
@@ -20,7 +20,7 @@ Existuje mnoho nástroje třetích stran, si můžete stáhnout spravovat a zobr
 
 Vytvořte novou třídu s názvem `SeedData` v *modely* složky. Generovaného kódu nahraďte následujícím textem:
 
-[!code-csharp[Main](code\Models\SeedData.cs)]
+[!code-csharp[](code\Models\SeedData.cs)]
 
 Pokud jsou všechny filmy v databázi, vrátí inicializátoru počáteční hodnoty.
 
@@ -36,7 +36,7 @@ if (context.Movie.Any())
 
 Přidat inicializátoru počáteční hodnoty do `Main` metoda v *Program.cs* souboru:
 
-[!code-csharp[Main](../../tutorials/razor-pages\razor-pages-start\sample\RazorPagesMovie\Program.cs)]
+[!code-csharp[](../../tutorials/razor-pages\razor-pages-start\sample\RazorPagesMovie\Program.cs)]
 
 ### <a name="test-the-app"></a>Testování aplikace
 

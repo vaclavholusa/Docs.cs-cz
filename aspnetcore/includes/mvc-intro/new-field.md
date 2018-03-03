@@ -1,6 +1,6 @@
 # <a name="adding-a-new-field"></a>Přidání nové pole
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Přidá nové pole do tohoto kurzu `Movies` tabulky. Jsme budete vyřaďte databázi a vytvořte novou, když nám změnit schéma (Přidat nové pole). Tento pracovní postup funguje dobře časná ve vývoj při nemáme žádná data produkční do opraveny.
 
@@ -10,7 +10,7 @@ Po nasazení vaší aplikace a máte data, která budete muset opraveny, nelze v
 
 Otevřete *Models/Movie.cs* souboru a přidejte `Rating` vlastnost:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 Protože jste přidali nové pole do `Movie` třídy, je také potřeba aktualizovat bílou vazby, tato vlastnost budou zahrnuty. V *MoviesController.cs*, aktualizovat `[Bind]` atribut pro obě `Create` a `Edit` akce metody pro zahrnutí `Rating` vlastnost:
 
@@ -22,7 +22,7 @@ Můžete také potřebovat k aktualizaci zobrazit šablony, aby bylo možné zob
 
 Upravit */Views/Movies/Index.cshtml* souboru a přidejte `Rating` pole:
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
 
 Aktualizace */Views/Movies/Create.cshtml* s `Rating` pole.
 
@@ -48,7 +48,7 @@ V tomto kurzu jsme budete vyřadit a znovu vytvořit databázi, když se změní
 
 Aktualizace `SeedData` třídy tak, aby poskytuje hodnotu pro nový sloupec. Ukázka změnu jsou uvedeny níže, ale budete chtít tuto změnu provést pro každý `new Movie`.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
 
 Přidat `Rating` pole na `Edit`, `Details`, a `Delete` zobrazení.
 

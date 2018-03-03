@@ -1,6 +1,6 @@
 Nahraďte obsah *Views/HelloWorld/Index.cshtml* zobrazení souboru nástroje Razor následujícím kódem:
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
 
 Přejděte na `http://localhost:xxxx/HelloWorld`. `Index` Metoda v `HelloWorldController` nebyla dělat mnohem; byl spuštěn příkaz `return View();`, které určené, že metoda by měla používat soubor šablony zobrazení k vykreslení odpovědi do prohlížeče. Vzhledem k tomu, že nebyla výslovně zadat název souboru šablony zobrazení, uvedena MVC pomocí *Index.cshtml* zobrazení souboru v */zobrazení/HelloWorld* složky. Následující obrázek ukazuje text "Hello z našich zobrazit šablonu!" pevně v zobrazení.
 
@@ -22,7 +22,7 @@ Název elementu, změňte `MvcMovie` k `Movie App`. Změňte text ukotvení v š
 
 Poznámka: Na technologii ASP.NET 2.0 základní verzi se mírně liší. Neobsahuje `@inject ApplicationInsights` a `@Html.Raw(JavaScriptSnippet.FullScript)`.
 
-[!code-html[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
+[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 
 >[!WARNING]
 > Implementovali jsme nebyly `Movies` ještě řadiče, takže když kliknete na tento odkaz, získáte chybu 404 (nebyl nalezen).
@@ -89,7 +89,7 @@ V současné době `Welcome` metoda v `HelloWorldController` třídy trvá `name
 
 Vraťte se do *HelloWorldController.cs* soubor a změňte `Welcome` metody přidat `Message` a `NumTimes` hodnotu `ViewData` slovníku. `ViewData` Je dynamický objekt, což znamená všechno můžete vložit do ní; slovník `ViewData` objekt nemá žádné definované vlastnosti, dokud vložíte něco uvnitř ho. [Systému vazby modelu MVC](xref:mvc/models/model-binding) automaticky mapuje pojmenované parametry (`name` a `numTimes`) z řetězce dotazu v panelu Adresa parametry ve své metodě. Kompletní *HelloWorldController.cs* soubor vypadá takto:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
 
 `ViewData` Objekt slovníku obsahuje data, která bude předána do zobrazení. 
 
@@ -97,7 +97,7 @@ Vytvořit šablonu úvodní zobrazení s názvem *Views/HelloWorld/Welcome.cshtm
 
 Vytvoříte smyčku v *Welcome.cshtml* zobrazit šablonu, která zobrazuje "text Hello" `NumTimes`. Nahraďte obsah *Views/HelloWorld/Welcome.cshtml* následujícím kódem:
 
-[!code-html[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
+[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
 
 Uložte změny a přejděte na následující adresu URL:
 

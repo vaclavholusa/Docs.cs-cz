@@ -9,180 +9,180 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 1c0d87b61882f69dbf2aeb0a896d9294bd029374
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ee61798fc1bde89ca3712eae9b7c4413e58cf70d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
-# <a name="enabling-cross-origin-requests-cors"></a><span data-ttu-id="946c6-103">Povolení žádostí napříč zdroji (CORS)</span><span class="sxs-lookup"><span data-stu-id="946c6-103">Enabling Cross-Origin Requests (CORS)</span></span>
+# <a name="enabling-cross-origin-requests-cors"></a><span data-ttu-id="149cc-103">Povolení žádostí napříč zdroji (CORS)</span><span class="sxs-lookup"><span data-stu-id="149cc-103">Enabling Cross-Origin Requests (CORS)</span></span>
 
-<span data-ttu-id="946c6-104">Podle [Karel Wasson](https://github.com/mikewasson), [Shayne Boyer](https://twitter.com/spboyer), a [tní Dykstra](https://github.com/tdykstra)</span><span class="sxs-lookup"><span data-stu-id="946c6-104">By [Mike Wasson](https://github.com/mikewasson), [Shayne Boyer](https://twitter.com/spboyer), and [Tom Dykstra](https://github.com/tdykstra)</span></span>
+<span data-ttu-id="149cc-104">Podle [Karel Wasson](https://github.com/mikewasson), [Shayne Boyer](https://twitter.com/spboyer), a [tní Dykstra](https://github.com/tdykstra)</span><span class="sxs-lookup"><span data-stu-id="149cc-104">By [Mike Wasson](https://github.com/mikewasson), [Shayne Boyer](https://twitter.com/spboyer), and [Tom Dykstra](https://github.com/tdykstra)</span></span>
 
-<span data-ttu-id="946c6-105">Zabezpečení prohlížeče brání provedení požadavky AJAX do jiné domény na webové stránce.</span><span class="sxs-lookup"><span data-stu-id="946c6-105">Browser security prevents a web page from making AJAX requests to another domain.</span></span> <span data-ttu-id="946c6-106">Toto omezení se nazývá *zásady stejného původu*a zabrání škodlivé weby čtení citlivá data z jiné lokality.</span><span class="sxs-lookup"><span data-stu-id="946c6-106">This restriction is called the *same-origin policy*, and prevents a malicious site from reading sensitive data from another site.</span></span> <span data-ttu-id="946c6-107">Ale v některých případech můžete chtít nechat ostatních lokalit, zkontrolujte žádostí napříč zdroji do webového rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="946c6-107">However, sometimes you might want to let other sites make cross-origin requests to your web API.</span></span>
+<span data-ttu-id="149cc-105">Zabezpečení prohlížeče brání provedení požadavky AJAX do jiné domény na webové stránce.</span><span class="sxs-lookup"><span data-stu-id="149cc-105">Browser security prevents a web page from making AJAX requests to another domain.</span></span> <span data-ttu-id="149cc-106">Toto omezení se nazývá *zásady stejného původu*a zabrání škodlivé weby čtení citlivá data z jiné lokality.</span><span class="sxs-lookup"><span data-stu-id="149cc-106">This restriction is called the *same-origin policy*, and prevents a malicious site from reading sensitive data from another site.</span></span> <span data-ttu-id="149cc-107">Ale v některých případech můžete chtít nechat ostatních lokalit, zkontrolujte žádostí napříč zdroji do webového rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="149cc-107">However, sometimes you might want to let other sites make cross-origin requests to your web API.</span></span>
 
-<span data-ttu-id="946c6-108">[Mezi sdílení prostředků původu](http://www.w3.org/TR/cors/) (CORS) je standard W3C, který umožňuje serveru zmírnit zásady stejného původu.</span><span class="sxs-lookup"><span data-stu-id="946c6-108">[Cross Origin Resource Sharing](http://www.w3.org/TR/cors/) (CORS) is a W3C standard that allows a server to relax the same-origin policy.</span></span> <span data-ttu-id="946c6-109">Pomocí CORS, server explicitně povolit některé žádostí napříč zdroji při odmítnutí ostatní.</span><span class="sxs-lookup"><span data-stu-id="946c6-109">Using CORS, a server can explicitly allow some cross-origin requests while rejecting others.</span></span> <span data-ttu-id="946c6-110">CORS, jako je bezpečnější a flexibilnější než dřívější techniky [JSONP](https://wikipedia.org/wiki/JSONP).</span><span class="sxs-lookup"><span data-stu-id="946c6-110">CORS is safer and more flexible than earlier techniques such as [JSONP](https://wikipedia.org/wiki/JSONP).</span></span> <span data-ttu-id="946c6-111">Toto téma ukazuje postup povolení CORS v aplikaci ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="946c6-111">This topic shows how to enable CORS in an ASP.NET Core application.</span></span>
+<span data-ttu-id="149cc-108">[Mezi sdílení prostředků původu](http://www.w3.org/TR/cors/) (CORS) je standard W3C, který umožňuje serveru zmírnit zásady stejného původu.</span><span class="sxs-lookup"><span data-stu-id="149cc-108">[Cross Origin Resource Sharing](http://www.w3.org/TR/cors/) (CORS) is a W3C standard that allows a server to relax the same-origin policy.</span></span> <span data-ttu-id="149cc-109">Pomocí CORS, server explicitně povolit některé žádostí napříč zdroji při odmítnutí ostatní.</span><span class="sxs-lookup"><span data-stu-id="149cc-109">Using CORS, a server can explicitly allow some cross-origin requests while rejecting others.</span></span> <span data-ttu-id="149cc-110">CORS, jako je bezpečnější a flexibilnější než dřívější techniky [JSONP](https://wikipedia.org/wiki/JSONP).</span><span class="sxs-lookup"><span data-stu-id="149cc-110">CORS is safer and more flexible than earlier techniques such as [JSONP](https://wikipedia.org/wiki/JSONP).</span></span> <span data-ttu-id="149cc-111">Toto téma ukazuje postup povolení CORS v aplikaci ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="149cc-111">This topic shows how to enable CORS in an ASP.NET Core application.</span></span>
 
-## <a name="what-is-same-origin"></a><span data-ttu-id="946c6-112">Co je "stejné původ"?</span><span class="sxs-lookup"><span data-stu-id="946c6-112">What is "same origin"?</span></span>
+## <a name="what-is-same-origin"></a><span data-ttu-id="149cc-112">Co je "stejné původ"?</span><span class="sxs-lookup"><span data-stu-id="149cc-112">What is "same origin"?</span></span>
 
-<span data-ttu-id="946c6-113">Dvou adres URL mají stejný původ v případě, že mají stejné schémata, hostitele a porty.</span><span class="sxs-lookup"><span data-stu-id="946c6-113">Two URLs have the same origin if they have identical schemes, hosts, and ports.</span></span> <span data-ttu-id="946c6-114">([RFC 6454](http://tools.ietf.org/html/rfc6454))</span><span class="sxs-lookup"><span data-stu-id="946c6-114">([RFC 6454](http://tools.ietf.org/html/rfc6454))</span></span>
+<span data-ttu-id="149cc-113">Dvou adres URL mají stejný původ v případě, že mají stejné schémata, hostitele a porty.</span><span class="sxs-lookup"><span data-stu-id="149cc-113">Two URLs have the same origin if they have identical schemes, hosts, and ports.</span></span> <span data-ttu-id="149cc-114">([RFC 6454](http://tools.ietf.org/html/rfc6454))</span><span class="sxs-lookup"><span data-stu-id="149cc-114">([RFC 6454](http://tools.ietf.org/html/rfc6454))</span></span>
 
-<span data-ttu-id="946c6-115">Tyto dvě adresy URL mají stejný původ:</span><span class="sxs-lookup"><span data-stu-id="946c6-115">These two URLs have the same origin:</span></span>
+<span data-ttu-id="149cc-115">Tyto dvě adresy URL mají stejný původ:</span><span class="sxs-lookup"><span data-stu-id="149cc-115">These two URLs have the same origin:</span></span>
 
 * `http://example.com/foo.html`
 
 * `http://example.com/bar.html`
 
-<span data-ttu-id="946c6-116">Tyto adresy URL mít různého původu než předchozí dva:</span><span class="sxs-lookup"><span data-stu-id="946c6-116">These URLs have different origins than the previous two:</span></span>
+<span data-ttu-id="149cc-116">Tyto adresy URL mít různého původu než předchozí dva:</span><span class="sxs-lookup"><span data-stu-id="149cc-116">These URLs have different origins than the previous two:</span></span>
 
-* <span data-ttu-id="946c6-117">`http://example.net`-Jiné domény</span><span class="sxs-lookup"><span data-stu-id="946c6-117">`http://example.net` - Different domain</span></span>
+* <span data-ttu-id="149cc-117">`http://example.net` -Jiné domény</span><span class="sxs-lookup"><span data-stu-id="149cc-117">`http://example.net` - Different domain</span></span>
 
-* <span data-ttu-id="946c6-118">`http://www.example.com/foo.html`-Různých subdomény</span><span class="sxs-lookup"><span data-stu-id="946c6-118">`http://www.example.com/foo.html` - Different subdomain</span></span>
+* <span data-ttu-id="149cc-118">`http://www.example.com/foo.html` -Různých subdomény</span><span class="sxs-lookup"><span data-stu-id="149cc-118">`http://www.example.com/foo.html` - Different subdomain</span></span>
 
-* <span data-ttu-id="946c6-119">`https://example.com/foo.html`-Jiné schéma</span><span class="sxs-lookup"><span data-stu-id="946c6-119">`https://example.com/foo.html` - Different scheme</span></span>
+* <span data-ttu-id="149cc-119">`https://example.com/foo.html` -Jiné schéma</span><span class="sxs-lookup"><span data-stu-id="149cc-119">`https://example.com/foo.html` - Different scheme</span></span>
 
-* <span data-ttu-id="946c6-120">`http://example.com:9000/foo.html`-Jiný port</span><span class="sxs-lookup"><span data-stu-id="946c6-120">`http://example.com:9000/foo.html` - Different port</span></span>
+* <span data-ttu-id="149cc-120">`http://example.com:9000/foo.html` -Jiný port</span><span class="sxs-lookup"><span data-stu-id="149cc-120">`http://example.com:9000/foo.html` - Different port</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="946c6-121">Internet Explorer nepovažuje port při porovnávání zdroje.</span><span class="sxs-lookup"><span data-stu-id="946c6-121">Internet Explorer doesn't consider the port when comparing origins.</span></span>
+> <span data-ttu-id="149cc-121">Internet Explorer nepovažuje port při porovnávání zdroje.</span><span class="sxs-lookup"><span data-stu-id="149cc-121">Internet Explorer doesn't consider the port when comparing origins.</span></span>
 
-## <a name="setting-up-cors"></a><span data-ttu-id="946c6-122">Nastavení CORS</span><span class="sxs-lookup"><span data-stu-id="946c6-122">Setting up CORS</span></span>
+## <a name="setting-up-cors"></a><span data-ttu-id="149cc-122">Nastavení CORS</span><span class="sxs-lookup"><span data-stu-id="149cc-122">Setting up CORS</span></span>
 
-<span data-ttu-id="946c6-123">K nastavení CORS pro vaši aplikaci přidat `Microsoft.AspNetCore.Cors` balíčku do projektu.</span><span class="sxs-lookup"><span data-stu-id="946c6-123">To set up CORS for your application add the `Microsoft.AspNetCore.Cors` package to your project.</span></span>
+<span data-ttu-id="149cc-123">K nastavení CORS pro vaši aplikaci přidat `Microsoft.AspNetCore.Cors` balíčku do projektu.</span><span class="sxs-lookup"><span data-stu-id="149cc-123">To set up CORS for your application add the `Microsoft.AspNetCore.Cors` package to your project.</span></span>
 
-<span data-ttu-id="946c6-124">Přidání služeb CORS v souboru Startup.cs:</span><span class="sxs-lookup"><span data-stu-id="946c6-124">Add the CORS services in Startup.cs:</span></span>
+<span data-ttu-id="149cc-124">Přidání služeb CORS v souboru Startup.cs:</span><span class="sxs-lookup"><span data-stu-id="149cc-124">Add the CORS services in Startup.cs:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample1/Startup.cs?name=snippet_addcors)]
+[!code-csharp[](cors/sample/CorsExample1/Startup.cs?name=snippet_addcors)]
 
-## <a name="enabling-cors-with-middleware"></a><span data-ttu-id="946c6-125">Povolení CORS s middlewaru.</span><span class="sxs-lookup"><span data-stu-id="946c6-125">Enabling CORS with middleware</span></span>
+## <a name="enabling-cors-with-middleware"></a><span data-ttu-id="149cc-125">Povolení CORS s middlewaru.</span><span class="sxs-lookup"><span data-stu-id="149cc-125">Enabling CORS with middleware</span></span>
 
-<span data-ttu-id="946c6-126">Chcete-li přidat CORS pro celou aplikaci CORS middleware do kanálu vaší žádosti o pomocí `UseCors` metoda rozšíření.</span><span class="sxs-lookup"><span data-stu-id="946c6-126">To enable CORS for your entire application add the CORS middleware to your request pipeline using the `UseCors` extension method.</span></span> <span data-ttu-id="946c6-127">Všimněte si, že CORS middleware musí předcházet žádné koncové body definované ve vaší aplikaci, která chcete podporovat žádostí napříč zdroji (např.)</span><span class="sxs-lookup"><span data-stu-id="946c6-127">Note that the CORS middleware must precede any defined endpoints in your app that you want to support cross-origin requests (ex.</span></span> <span data-ttu-id="946c6-128">Před voláním jakékoli `UseMvc`).</span><span class="sxs-lookup"><span data-stu-id="946c6-128">before any call to `UseMvc`).</span></span>
+<span data-ttu-id="149cc-126">Chcete-li přidat CORS pro celou aplikaci CORS middleware do kanálu vaší žádosti o pomocí `UseCors` metoda rozšíření.</span><span class="sxs-lookup"><span data-stu-id="149cc-126">To enable CORS for your entire application add the CORS middleware to your request pipeline using the `UseCors` extension method.</span></span> <span data-ttu-id="149cc-127">Všimněte si, že CORS middleware musí předcházet žádné koncové body definované ve vaší aplikaci, která chcete podporovat žádostí napříč zdroji (např.)</span><span class="sxs-lookup"><span data-stu-id="149cc-127">Note that the CORS middleware must precede any defined endpoints in your app that you want to support cross-origin requests (ex.</span></span> <span data-ttu-id="149cc-128">Před voláním jakékoli `UseMvc`).</span><span class="sxs-lookup"><span data-stu-id="149cc-128">before any call to `UseMvc`).</span></span>
 
-<span data-ttu-id="946c6-129">Při přidávání pomocí middleware CORS můžete zadat zásady cross-origin `CorsPolicyBuilder` třídy.</span><span class="sxs-lookup"><span data-stu-id="946c6-129">You can specify a cross-origin policy when adding the CORS middleware using the `CorsPolicyBuilder` class.</span></span> <span data-ttu-id="946c6-130">Chcete-li to provést dvěma způsoby.</span><span class="sxs-lookup"><span data-stu-id="946c6-130">There are two ways to do this.</span></span> <span data-ttu-id="946c6-131">První je volání UseCors s lambda:</span><span class="sxs-lookup"><span data-stu-id="946c6-131">The first is to call UseCors with a lambda:</span></span>
+<span data-ttu-id="149cc-129">Při přidávání pomocí middleware CORS můžete zadat zásady cross-origin `CorsPolicyBuilder` třídy.</span><span class="sxs-lookup"><span data-stu-id="149cc-129">You can specify a cross-origin policy when adding the CORS middleware using the `CorsPolicyBuilder` class.</span></span> <span data-ttu-id="149cc-130">Chcete-li to provést dvěma způsoby.</span><span class="sxs-lookup"><span data-stu-id="149cc-130">There are two ways to do this.</span></span> <span data-ttu-id="149cc-131">První je volání UseCors s lambda:</span><span class="sxs-lookup"><span data-stu-id="149cc-131">The first is to call UseCors with a lambda:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
+[!code-csharp[](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
 
-<span data-ttu-id="946c6-132">**Poznámka:** bez koncové lomítko musíte zadat adresu URL (`/`).</span><span class="sxs-lookup"><span data-stu-id="946c6-132">**Note:** The URL must be specified without a trailing slash (`/`).</span></span> <span data-ttu-id="946c6-133">Pokud adresu URL ukončí s `/`, vrátí porovnání `false` , které budou vráceny žádné záhlaví.</span><span class="sxs-lookup"><span data-stu-id="946c6-133">If the URL terminates with `/`, the comparison will return `false` and no header will be returned.</span></span>
+<span data-ttu-id="149cc-132">**Poznámka:** bez koncové lomítko musíte zadat adresu URL (`/`).</span><span class="sxs-lookup"><span data-stu-id="149cc-132">**Note:** The URL must be specified without a trailing slash (`/`).</span></span> <span data-ttu-id="149cc-133">Pokud adresu URL ukončí s `/`, vrátí porovnání `false` , které budou vráceny žádné záhlaví.</span><span class="sxs-lookup"><span data-stu-id="149cc-133">If the URL terminates with `/`, the comparison will return `false` and no header will be returned.</span></span>
 
-<span data-ttu-id="946c6-134">Argument lambda trvá `CorsPolicyBuilder` objektu.</span><span class="sxs-lookup"><span data-stu-id="946c6-134">The lambda takes a `CorsPolicyBuilder` object.</span></span> <span data-ttu-id="946c6-135">Seznam najdete [možnosti konfigurace](#cors-policy-options) dál v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="946c6-135">You'll find a list of the [configuration options](#cors-policy-options) later in this topic.</span></span> <span data-ttu-id="946c6-136">V tomto příkladu zásada umožňuje žádostí napříč zdroji z `http://example.com` a žádné jiné zdroje.</span><span class="sxs-lookup"><span data-stu-id="946c6-136">In this example, the policy allows cross-origin requests from `http://example.com` and no other origins.</span></span>
+<span data-ttu-id="149cc-134">Argument lambda trvá `CorsPolicyBuilder` objektu.</span><span class="sxs-lookup"><span data-stu-id="149cc-134">The lambda takes a `CorsPolicyBuilder` object.</span></span> <span data-ttu-id="149cc-135">Seznam najdete [možnosti konfigurace](#cors-policy-options) dál v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="149cc-135">You'll find a list of the [configuration options](#cors-policy-options) later in this topic.</span></span> <span data-ttu-id="149cc-136">V tomto příkladu zásada umožňuje žádostí napříč zdroji z `http://example.com` a žádné jiné zdroje.</span><span class="sxs-lookup"><span data-stu-id="149cc-136">In this example, the policy allows cross-origin requests from `http://example.com` and no other origins.</span></span>
 
-<span data-ttu-id="946c6-137">Všimněte si, že CorsPolicyBuilder obsahuje rozhraní fluent API, takže můžete řetězu volání metod:</span><span class="sxs-lookup"><span data-stu-id="946c6-137">Note that CorsPolicyBuilder has a fluent API, so you can chain method calls:</span></span>
+<span data-ttu-id="149cc-137">Všimněte si, že CorsPolicyBuilder obsahuje rozhraní fluent API, takže můžete řetězu volání metod:</span><span class="sxs-lookup"><span data-stu-id="149cc-137">Note that CorsPolicyBuilder has a fluent API, so you can chain method calls:</span></span>
 
-[!code-csharp[Main](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
+[!code-csharp[](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
 
-<span data-ttu-id="946c6-138">Druhý postup je definovat jeden nebo více s názvem zásady CORS, a potom vyberte zásady podle názvu v době běhu.</span><span class="sxs-lookup"><span data-stu-id="946c6-138">The second approach is to define one or more named CORS policies, and then select the policy by name at run time.</span></span>
+<span data-ttu-id="149cc-138">Druhý postup je definovat jeden nebo více s názvem zásady CORS, a potom vyberte zásady podle názvu v době běhu.</span><span class="sxs-lookup"><span data-stu-id="149cc-138">The second approach is to define one or more named CORS policies, and then select the policy by name at run time.</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample2/Startup.cs?name=snippet_begin)]
+[!code-csharp[](cors/sample/CorsExample2/Startup.cs?name=snippet_begin)]
 
-<span data-ttu-id="946c6-139">Tento příklad přidá zásadu CORS s názvem "AllowSpecificOrigin".</span><span class="sxs-lookup"><span data-stu-id="946c6-139">This example adds a CORS policy named "AllowSpecificOrigin".</span></span> <span data-ttu-id="946c6-140">Vyberte zásadu, předat název, který má `UseCors`.</span><span class="sxs-lookup"><span data-stu-id="946c6-140">To select the policy, pass the name to `UseCors`.</span></span>
+<span data-ttu-id="149cc-139">Tento příklad přidá zásadu CORS s názvem "AllowSpecificOrigin".</span><span class="sxs-lookup"><span data-stu-id="149cc-139">This example adds a CORS policy named "AllowSpecificOrigin".</span></span> <span data-ttu-id="149cc-140">Vyberte zásadu, předat název, který má `UseCors`.</span><span class="sxs-lookup"><span data-stu-id="149cc-140">To select the policy, pass the name to `UseCors`.</span></span>
 
-## <a name="enabling-cors-in-mvc"></a><span data-ttu-id="946c6-141">Povolení CORS v MVC</span><span class="sxs-lookup"><span data-stu-id="946c6-141">Enabling CORS in MVC</span></span>
+## <a name="enabling-cors-in-mvc"></a><span data-ttu-id="149cc-141">Povolení CORS v MVC</span><span class="sxs-lookup"><span data-stu-id="149cc-141">Enabling CORS in MVC</span></span>
 
-<span data-ttu-id="946c6-142">Případně můžete MVC použít konkrétní CORS na každou akci, na jeden kontroler nebo globálně pro všechny řadiče.</span><span class="sxs-lookup"><span data-stu-id="946c6-142">You can alternatively use MVC to apply specific CORS per action, per controller, or globally for all controllers.</span></span> <span data-ttu-id="946c6-143">Při použití MVC k povolení sdílení CORS se používají stejné CORS služby, ale není CORS middleware.</span><span class="sxs-lookup"><span data-stu-id="946c6-143">When using MVC to enable CORS the same CORS services are used, but the CORS middleware isn't.</span></span>
+<span data-ttu-id="149cc-142">Případně můžete MVC použít konkrétní CORS na každou akci, na jeden kontroler nebo globálně pro všechny řadiče.</span><span class="sxs-lookup"><span data-stu-id="149cc-142">You can alternatively use MVC to apply specific CORS per action, per controller, or globally for all controllers.</span></span> <span data-ttu-id="149cc-143">Při použití MVC k povolení sdílení CORS se používají stejné CORS služby, ale není CORS middleware.</span><span class="sxs-lookup"><span data-stu-id="149cc-143">When using MVC to enable CORS the same CORS services are used, but the CORS middleware isn't.</span></span>
 
-### <a name="per-action"></a><span data-ttu-id="946c6-144">Na každou akci</span><span class="sxs-lookup"><span data-stu-id="946c6-144">Per action</span></span>
+### <a name="per-action"></a><span data-ttu-id="149cc-144">Na každou akci</span><span class="sxs-lookup"><span data-stu-id="149cc-144">Per action</span></span>
 
-<span data-ttu-id="946c6-145">Zadejte přidat zásadu CORS pro určité akci `[EnableCors]` atribut akce.</span><span class="sxs-lookup"><span data-stu-id="946c6-145">To specify a CORS policy for a specific action add the `[EnableCors]` attribute to the action.</span></span> <span data-ttu-id="946c6-146">Zadejte název zásady.</span><span class="sxs-lookup"><span data-stu-id="946c6-146">Specify the policy name.</span></span>
+<span data-ttu-id="149cc-145">Zadejte přidat zásadu CORS pro určité akci `[EnableCors]` atribut akce.</span><span class="sxs-lookup"><span data-stu-id="149cc-145">To specify a CORS policy for a specific action add the `[EnableCors]` attribute to the action.</span></span> <span data-ttu-id="149cc-146">Zadejte název zásady.</span><span class="sxs-lookup"><span data-stu-id="149cc-146">Specify the policy name.</span></span>
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnAction)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnAction)]
 
-### <a name="per-controller"></a><span data-ttu-id="946c6-147">Na jeden kontroler</span><span class="sxs-lookup"><span data-stu-id="946c6-147">Per controller</span></span>
+### <a name="per-controller"></a><span data-ttu-id="149cc-147">Na jeden kontroler</span><span class="sxs-lookup"><span data-stu-id="149cc-147">Per controller</span></span>
 
-<span data-ttu-id="946c6-148">Zadejte zásady CORS pro konkrétní řadič přidat `[EnableCors]` atributu do třídy kontroleru.</span><span class="sxs-lookup"><span data-stu-id="946c6-148">To specify the CORS policy for a specific controller add the `[EnableCors]` attribute to the controller class.</span></span> <span data-ttu-id="946c6-149">Zadejte název zásady.</span><span class="sxs-lookup"><span data-stu-id="946c6-149">Specify the policy name.</span></span>
+<span data-ttu-id="149cc-148">Zadejte zásady CORS pro konkrétní řadič přidat `[EnableCors]` atributu do třídy kontroleru.</span><span class="sxs-lookup"><span data-stu-id="149cc-148">To specify the CORS policy for a specific controller add the `[EnableCors]` attribute to the controller class.</span></span> <span data-ttu-id="149cc-149">Zadejte název zásady.</span><span class="sxs-lookup"><span data-stu-id="149cc-149">Specify the policy name.</span></span>
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnController)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnController)]
 
-### <a name="globally"></a><span data-ttu-id="946c6-150">Globálně</span><span class="sxs-lookup"><span data-stu-id="946c6-150">Globally</span></span>
+### <a name="globally"></a><span data-ttu-id="149cc-150">Globálně</span><span class="sxs-lookup"><span data-stu-id="149cc-150">Globally</span></span>
 
-<span data-ttu-id="946c6-151">Můžete povolit CORS globálně pro všechny řadiče přidáním `CorsAuthorizationFilterFactory` filtr do kolekce globálních filtrů:</span><span class="sxs-lookup"><span data-stu-id="946c6-151">You can enable CORS globally for all controllers by adding the `CorsAuthorizationFilterFactory` filter to the global filter collection:</span></span>
+<span data-ttu-id="149cc-151">Můžete povolit CORS globálně pro všechny řadiče přidáním `CorsAuthorizationFilterFactory` filtr do kolekce globálních filtrů:</span><span class="sxs-lookup"><span data-stu-id="149cc-151">You can enable CORS globally for all controllers by adding the `CorsAuthorizationFilterFactory` filter to the global filter collection:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
+[!code-csharp[](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
 
-<span data-ttu-id="946c6-152">Pořadí priorit je: akci, kontroler, globální.</span><span class="sxs-lookup"><span data-stu-id="946c6-152">The precedence order is: Action, controller, global.</span></span> <span data-ttu-id="946c6-153">Zásady na úrovni akce mají přednost před zásady na úrovni kontroleru a zásady na úrovni kontroleru mají přednost před globální zásady.</span><span class="sxs-lookup"><span data-stu-id="946c6-153">Action-level policies take precedence over controller-level policies, and controller-level policies take precedence over global policies.</span></span>
+<span data-ttu-id="149cc-152">Pořadí priorit je: akci, kontroler, globální.</span><span class="sxs-lookup"><span data-stu-id="149cc-152">The precedence order is: Action, controller, global.</span></span> <span data-ttu-id="149cc-153">Zásady na úrovni akce mají přednost před zásady na úrovni kontroleru a zásady na úrovni kontroleru mají přednost před globální zásady.</span><span class="sxs-lookup"><span data-stu-id="149cc-153">Action-level policies take precedence over controller-level policies, and controller-level policies take precedence over global policies.</span></span>
 
-### <a name="disable-cors"></a><span data-ttu-id="946c6-154">Zakázat CORS</span><span class="sxs-lookup"><span data-stu-id="946c6-154">Disable CORS</span></span>
+### <a name="disable-cors"></a><span data-ttu-id="149cc-154">Zakázat CORS</span><span class="sxs-lookup"><span data-stu-id="149cc-154">Disable CORS</span></span>
 
-<span data-ttu-id="946c6-155">Chcete-li zakázat CORS pro kontroler nebo akce, použijte `[DisableCors]` atribut.</span><span class="sxs-lookup"><span data-stu-id="946c6-155">To disable CORS for a controller or action, use the `[DisableCors]` attribute.</span></span>
+<span data-ttu-id="149cc-155">Chcete-li zakázat CORS pro kontroler nebo akce, použijte `[DisableCors]` atribut.</span><span class="sxs-lookup"><span data-stu-id="149cc-155">To disable CORS for a controller or action, use the `[DisableCors]` attribute.</span></span>
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
 
-## <a name="cors-policy-options"></a><span data-ttu-id="946c6-156">Možnosti zásad CORS</span><span class="sxs-lookup"><span data-stu-id="946c6-156">CORS policy options</span></span>
+## <a name="cors-policy-options"></a><span data-ttu-id="149cc-156">Možnosti zásad CORS</span><span class="sxs-lookup"><span data-stu-id="149cc-156">CORS policy options</span></span>
 
-<span data-ttu-id="946c6-157">Tato část popisuje různé možnosti, které můžete nastavit v zásadu CORS.</span><span class="sxs-lookup"><span data-stu-id="946c6-157">This section describes the various options that you can set in a CORS policy.</span></span>
+<span data-ttu-id="149cc-157">Tato část popisuje různé možnosti, které můžete nastavit v zásadu CORS.</span><span class="sxs-lookup"><span data-stu-id="149cc-157">This section describes the various options that you can set in a CORS policy.</span></span>
 
-* [<span data-ttu-id="946c6-158">Nastavit povolené zdroje</span><span class="sxs-lookup"><span data-stu-id="946c6-158">Set the allowed origins</span></span>](#set-the-allowed-origins)
+* [<span data-ttu-id="149cc-158">Nastavit povolené zdroje</span><span class="sxs-lookup"><span data-stu-id="149cc-158">Set the allowed origins</span></span>](#set-the-allowed-origins)
 
-* [<span data-ttu-id="946c6-159">Nastavení povolených metod HTTP</span><span class="sxs-lookup"><span data-stu-id="946c6-159">Set the allowed HTTP methods</span></span>](#set-the-allowed-http-methods)
+* [<span data-ttu-id="149cc-159">Nastavení povolených metod HTTP</span><span class="sxs-lookup"><span data-stu-id="149cc-159">Set the allowed HTTP methods</span></span>](#set-the-allowed-http-methods)
 
-* [<span data-ttu-id="946c6-160">Nastavit hlavičky povolených požadavků</span><span class="sxs-lookup"><span data-stu-id="946c6-160">Set the allowed request headers</span></span>](#set-the-allowed-request-headers)
+* [<span data-ttu-id="149cc-160">Nastavit hlavičky povolených požadavků</span><span class="sxs-lookup"><span data-stu-id="149cc-160">Set the allowed request headers</span></span>](#set-the-allowed-request-headers)
 
-* [<span data-ttu-id="946c6-161">Nastavit hlavičky zveřejněné odpovědi</span><span class="sxs-lookup"><span data-stu-id="946c6-161">Set the exposed response headers</span></span>](#set-the-exposed-response-headers)
+* [<span data-ttu-id="149cc-161">Nastavit hlavičky zveřejněné odpovědi</span><span class="sxs-lookup"><span data-stu-id="149cc-161">Set the exposed response headers</span></span>](#set-the-exposed-response-headers)
 
-* [<span data-ttu-id="946c6-162">Přihlašovací údaje v žádostí napříč zdroji</span><span class="sxs-lookup"><span data-stu-id="946c6-162">Credentials in cross-origin requests</span></span>](#credentials-in-cross-origin-requests)
+* [<span data-ttu-id="149cc-162">Přihlašovací údaje v žádostí napříč zdroji</span><span class="sxs-lookup"><span data-stu-id="149cc-162">Credentials in cross-origin requests</span></span>](#credentials-in-cross-origin-requests)
 
-* [<span data-ttu-id="946c6-163">Nastavte hodnotu doby předběžných vypršení platnosti</span><span class="sxs-lookup"><span data-stu-id="946c6-163">Set the preflight expiration time</span></span>](#set-the-preflight-expiration-time)
+* [<span data-ttu-id="149cc-163">Nastavte hodnotu doby předběžných vypršení platnosti</span><span class="sxs-lookup"><span data-stu-id="149cc-163">Set the preflight expiration time</span></span>](#set-the-preflight-expiration-time)
 
-<span data-ttu-id="946c6-164">Pro některé možnosti může být užitečné číst [funguje jak CORS](#how-cors-works) první.</span><span class="sxs-lookup"><span data-stu-id="946c6-164">For some options it may be helpful to read [How CORS works](#how-cors-works) first.</span></span>
+<span data-ttu-id="149cc-164">Pro některé možnosti může být užitečné číst [funguje jak CORS](#how-cors-works) první.</span><span class="sxs-lookup"><span data-stu-id="149cc-164">For some options it may be helpful to read [How CORS works](#how-cors-works) first.</span></span>
 
-### <a name="set-the-allowed-origins"></a><span data-ttu-id="946c6-165">Nastavit povolené zdroje</span><span class="sxs-lookup"><span data-stu-id="946c6-165">Set the allowed origins</span></span>
+### <a name="set-the-allowed-origins"></a><span data-ttu-id="149cc-165">Nastavit povolené zdroje</span><span class="sxs-lookup"><span data-stu-id="149cc-165">Set the allowed origins</span></span>
 
-<span data-ttu-id="946c6-166">Chcete-li povolit jeden nebo více konkrétních zdroje:</span><span class="sxs-lookup"><span data-stu-id="946c6-166">To allow one or more specific origins:</span></span>
+<span data-ttu-id="149cc-166">Chcete-li povolit jeden nebo více konkrétních zdroje:</span><span class="sxs-lookup"><span data-stu-id="149cc-166">To allow one or more specific origins:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=19-23)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=19-23)]
 
-<span data-ttu-id="946c6-167">Chcete-li povolit všechny původy:</span><span class="sxs-lookup"><span data-stu-id="946c6-167">To allow all origins:</span></span>
+<span data-ttu-id="149cc-167">Chcete-li povolit všechny původy:</span><span class="sxs-lookup"><span data-stu-id="149cc-167">To allow all origins:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs??range=27-31)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs??range=27-31)]
 
-<span data-ttu-id="946c6-168">Pečlivě zvažte, před povolením požadavky od jakýkoli původ.</span><span class="sxs-lookup"><span data-stu-id="946c6-168">Consider carefully before allowing requests from any origin.</span></span> <span data-ttu-id="946c6-169">Znamená to, že názvy všech webu provádět volání AJAX k vašemu rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="946c6-169">It means that literally any website can make AJAX calls to your API.</span></span>
+<span data-ttu-id="149cc-168">Pečlivě zvažte, před povolením požadavky od jakýkoli původ.</span><span class="sxs-lookup"><span data-stu-id="149cc-168">Consider carefully before allowing requests from any origin.</span></span> <span data-ttu-id="149cc-169">Znamená to, že názvy všech webu provádět volání AJAX k vašemu rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="149cc-169">It means that literally any website can make AJAX calls to your API.</span></span>
 
-### <a name="set-the-allowed-http-methods"></a><span data-ttu-id="946c6-170">Nastavení povolených metod HTTP</span><span class="sxs-lookup"><span data-stu-id="946c6-170">Set the allowed HTTP methods</span></span>
+### <a name="set-the-allowed-http-methods"></a><span data-ttu-id="149cc-170">Nastavení povolených metod HTTP</span><span class="sxs-lookup"><span data-stu-id="149cc-170">Set the allowed HTTP methods</span></span>
 
-<span data-ttu-id="946c6-171">Chcete-li povolit všechny metody HTTP:</span><span class="sxs-lookup"><span data-stu-id="946c6-171">To allow all HTTP methods:</span></span>
+<span data-ttu-id="149cc-171">Chcete-li povolit všechny metody HTTP:</span><span class="sxs-lookup"><span data-stu-id="149cc-171">To allow all HTTP methods:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=44-49)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=44-49)]
 
-<span data-ttu-id="946c6-172">To ovlivní letu předběžné požadavky a záhlaví přístupu – ovládací prvek-Allow-Methods.</span><span class="sxs-lookup"><span data-stu-id="946c6-172">This affects pre-flight requests and Access-Control-Allow-Methods header.</span></span>
+<span data-ttu-id="149cc-172">To ovlivní letu předběžné požadavky a záhlaví přístupu – ovládací prvek-Allow-Methods.</span><span class="sxs-lookup"><span data-stu-id="149cc-172">This affects pre-flight requests and Access-Control-Allow-Methods header.</span></span>
 
-### <a name="set-the-allowed-request-headers"></a><span data-ttu-id="946c6-173">Nastavit hlavičky povolených požadavků</span><span class="sxs-lookup"><span data-stu-id="946c6-173">Set the allowed request headers</span></span>
+### <a name="set-the-allowed-request-headers"></a><span data-ttu-id="149cc-173">Nastavit hlavičky povolených požadavků</span><span class="sxs-lookup"><span data-stu-id="149cc-173">Set the allowed request headers</span></span>
 
-<span data-ttu-id="946c6-174">Předběžný požadavek CORS může obsahovat hlavičku Access-Control-Request-Headers výpis hlavičky protokolu HTTP, které jsou nastaveny aplikací (takzvaný "vytvářet hlavičky žádosti").</span><span class="sxs-lookup"><span data-stu-id="946c6-174">A CORS preflight request might include an Access-Control-Request-Headers header, listing the HTTP headers set by the application (the so-called "author request headers").</span></span>
+<span data-ttu-id="149cc-174">Předběžný požadavek CORS může obsahovat hlavičku Access-Control-Request-Headers výpis hlavičky protokolu HTTP, které jsou nastaveny aplikací (takzvaný "vytvářet hlavičky žádosti").</span><span class="sxs-lookup"><span data-stu-id="149cc-174">A CORS preflight request might include an Access-Control-Request-Headers header, listing the HTTP headers set by the application (the so-called "author request headers").</span></span>
 
-<span data-ttu-id="946c6-175">Pro konkrétní hlavičky seznamu povolených IP adres:</span><span class="sxs-lookup"><span data-stu-id="946c6-175">To whitelist specific headers:</span></span>
+<span data-ttu-id="149cc-175">Pro konkrétní hlavičky seznamu povolených IP adres:</span><span class="sxs-lookup"><span data-stu-id="149cc-175">To whitelist specific headers:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=53-58)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=53-58)]
 
-<span data-ttu-id="946c6-176">Umožňuje vytvářet všechny hlavičky žádosti:</span><span class="sxs-lookup"><span data-stu-id="946c6-176">To allow all author request headers:</span></span>
+<span data-ttu-id="149cc-176">Umožňuje vytvářet všechny hlavičky žádosti:</span><span class="sxs-lookup"><span data-stu-id="149cc-176">To allow all author request headers:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=62-67)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=62-67)]
 
-<span data-ttu-id="946c6-177">Nejsou prohlížeče zcela v souladu v tom, jak nastavují Access-Control-Request-Headers.</span><span class="sxs-lookup"><span data-stu-id="946c6-177">Browsers are not entirely consistent in how they set Access-Control-Request-Headers.</span></span> <span data-ttu-id="946c6-178">Pokud nastavíte hlavičky k ničemu jiné než "\*", by měla obsahovat alespoň "přijmout", "content-type" a "Původ" a jakékoli vlastní hlavičky, které chcete podporovat.</span><span class="sxs-lookup"><span data-stu-id="946c6-178">If you set headers to anything other than "\*", you should include at least "accept", "content-type", and "origin", plus any custom headers that you want to support.</span></span>
+<span data-ttu-id="149cc-177">Nejsou prohlížeče zcela v souladu v tom, jak nastavují Access-Control-Request-Headers.</span><span class="sxs-lookup"><span data-stu-id="149cc-177">Browsers are not entirely consistent in how they set Access-Control-Request-Headers.</span></span> <span data-ttu-id="149cc-178">Pokud nastavíte hlavičky k ničemu jiné než "\*", by měla obsahovat alespoň "přijmout", "content-type" a "Původ" a jakékoli vlastní hlavičky, které chcete podporovat.</span><span class="sxs-lookup"><span data-stu-id="149cc-178">If you set headers to anything other than "\*", you should include at least "accept", "content-type", and "origin", plus any custom headers that you want to support.</span></span>
 
-### <a name="set-the-exposed-response-headers"></a><span data-ttu-id="946c6-179">Nastavit hlavičky zveřejněné odpovědi</span><span class="sxs-lookup"><span data-stu-id="946c6-179">Set the exposed response headers</span></span>
+### <a name="set-the-exposed-response-headers"></a><span data-ttu-id="149cc-179">Nastavit hlavičky zveřejněné odpovědi</span><span class="sxs-lookup"><span data-stu-id="149cc-179">Set the exposed response headers</span></span>
 
-<span data-ttu-id="946c6-180">Ve výchozím prohlížeči nezveřejňuje všechny hlavičky odpovědi do aplikace.</span><span class="sxs-lookup"><span data-stu-id="946c6-180">By default, the browser doesn't expose all of the response headers to the application.</span></span> <span data-ttu-id="946c6-181">(Viz [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).) Hlavičky odpovědi, které jsou k dispozici ve výchozím nastavení jsou:</span><span class="sxs-lookup"><span data-stu-id="946c6-181">(See [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).) The response headers that are available by default are:</span></span>
+<span data-ttu-id="149cc-180">Ve výchozím prohlížeči nezveřejňuje všechny hlavičky odpovědi do aplikace.</span><span class="sxs-lookup"><span data-stu-id="149cc-180">By default, the browser doesn't expose all of the response headers to the application.</span></span> <span data-ttu-id="149cc-181">(Viz [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).) Hlavičky odpovědi, které jsou k dispozici ve výchozím nastavení jsou:</span><span class="sxs-lookup"><span data-stu-id="149cc-181">(See [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).) The response headers that are available by default are:</span></span>
 
-* <span data-ttu-id="946c6-182">Cache-Control</span><span class="sxs-lookup"><span data-stu-id="946c6-182">Cache-Control</span></span>
+* <span data-ttu-id="149cc-182">Cache-Control</span><span class="sxs-lookup"><span data-stu-id="149cc-182">Cache-Control</span></span>
 
-* <span data-ttu-id="946c6-183">Obsah – jazyk</span><span class="sxs-lookup"><span data-stu-id="946c6-183">Content-Language</span></span>
+* <span data-ttu-id="149cc-183">Obsah – jazyk</span><span class="sxs-lookup"><span data-stu-id="149cc-183">Content-Language</span></span>
 
-* <span data-ttu-id="946c6-184">Typ obsahu</span><span class="sxs-lookup"><span data-stu-id="946c6-184">Content-Type</span></span>
+* <span data-ttu-id="149cc-184">Typ obsahu</span><span class="sxs-lookup"><span data-stu-id="149cc-184">Content-Type</span></span>
 
-* <span data-ttu-id="946c6-185">Vypršení platnosti</span><span class="sxs-lookup"><span data-stu-id="946c6-185">Expires</span></span>
+* <span data-ttu-id="149cc-185">Vypršení platnosti</span><span class="sxs-lookup"><span data-stu-id="149cc-185">Expires</span></span>
 
-* <span data-ttu-id="946c6-186">Poslední úpravy</span><span class="sxs-lookup"><span data-stu-id="946c6-186">Last-Modified</span></span>
+* <span data-ttu-id="149cc-186">Poslední úpravy</span><span class="sxs-lookup"><span data-stu-id="149cc-186">Last-Modified</span></span>
 
-* <span data-ttu-id="946c6-187">Direktiva pragma</span><span class="sxs-lookup"><span data-stu-id="946c6-187">Pragma</span></span>
+* <span data-ttu-id="149cc-187">Direktiva pragma</span><span class="sxs-lookup"><span data-stu-id="149cc-187">Pragma</span></span>
 
-<span data-ttu-id="946c6-188">Specifikace CORS volá tyto *hlavičky odpovědi jednoduché*.</span><span class="sxs-lookup"><span data-stu-id="946c6-188">The CORS spec calls these *simple response headers*.</span></span> <span data-ttu-id="946c6-189">Pro zpřístupnění jiných hlavičky pro aplikaci:</span><span class="sxs-lookup"><span data-stu-id="946c6-189">To make other headers available to the application:</span></span>
+<span data-ttu-id="149cc-188">Specifikace CORS volá tyto *hlavičky odpovědi jednoduché*.</span><span class="sxs-lookup"><span data-stu-id="149cc-188">The CORS spec calls these *simple response headers*.</span></span> <span data-ttu-id="149cc-189">Pro zpřístupnění jiných hlavičky pro aplikaci:</span><span class="sxs-lookup"><span data-stu-id="149cc-189">To make other headers available to the application:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=71-76)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=71-76)]
 
-### <a name="credentials-in-cross-origin-requests"></a><span data-ttu-id="946c6-190">Přihlašovací údaje v žádostí napříč zdroji</span><span class="sxs-lookup"><span data-stu-id="946c6-190">Credentials in cross-origin requests</span></span>
+### <a name="credentials-in-cross-origin-requests"></a><span data-ttu-id="149cc-190">Přihlašovací údaje v žádostí napříč zdroji</span><span class="sxs-lookup"><span data-stu-id="149cc-190">Credentials in cross-origin requests</span></span>
 
-<span data-ttu-id="946c6-191">Přihlašovací údaje vyžadují zvláštní zpracování v požadavek CORS.</span><span class="sxs-lookup"><span data-stu-id="946c6-191">Credentials require special handling in a CORS request.</span></span> <span data-ttu-id="946c6-192">Ve výchozím prohlížeči neodešle všechny přihlašovací údaje s žádostí napříč zdroji.</span><span class="sxs-lookup"><span data-stu-id="946c6-192">By default, the browser doesn't send any credentials with a cross-origin request.</span></span> <span data-ttu-id="946c6-193">Přihlašovací údaje zahrnují soubory cookie, jakož i schémat ověřování protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="946c6-193">Credentials include cookies as well as HTTP authentication schemes.</span></span> <span data-ttu-id="946c6-194">K odeslání pověření s žádostí napříč zdroji, musí klient nastavit XMLHttpRequest.withCredentials na hodnotu true.</span><span class="sxs-lookup"><span data-stu-id="946c6-194">To send credentials with a cross-origin request, the client must set XMLHttpRequest.withCredentials to true.</span></span>
+<span data-ttu-id="149cc-191">Přihlašovací údaje vyžadují zvláštní zpracování v požadavek CORS.</span><span class="sxs-lookup"><span data-stu-id="149cc-191">Credentials require special handling in a CORS request.</span></span> <span data-ttu-id="149cc-192">Ve výchozím prohlížeči neodešle všechny přihlašovací údaje s žádostí napříč zdroji.</span><span class="sxs-lookup"><span data-stu-id="149cc-192">By default, the browser doesn't send any credentials with a cross-origin request.</span></span> <span data-ttu-id="149cc-193">Přihlašovací údaje zahrnují soubory cookie, jakož i schémat ověřování protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="149cc-193">Credentials include cookies as well as HTTP authentication schemes.</span></span> <span data-ttu-id="149cc-194">K odeslání pověření s žádostí napříč zdroji, musí klient nastavit XMLHttpRequest.withCredentials na hodnotu true.</span><span class="sxs-lookup"><span data-stu-id="149cc-194">To send credentials with a cross-origin request, the client must set XMLHttpRequest.withCredentials to true.</span></span>
 
-<span data-ttu-id="946c6-195">Pomocí rozhraní XMLHttpRequest přímo:</span><span class="sxs-lookup"><span data-stu-id="946c6-195">Using XMLHttpRequest directly:</span></span>
+<span data-ttu-id="149cc-195">Pomocí rozhraní XMLHttpRequest přímo:</span><span class="sxs-lookup"><span data-stu-id="149cc-195">Using XMLHttpRequest directly:</span></span>
 
 ```javascript
 var xhr = new XMLHttpRequest();
@@ -190,7 +190,7 @@ xhr.open('get', 'http://www.example.com/api/test');
 xhr.withCredentials = true;
 ```
 
-<span data-ttu-id="946c6-196">V jQuery:</span><span class="sxs-lookup"><span data-stu-id="946c6-196">In jQuery:</span></span>
+<span data-ttu-id="149cc-196">V jQuery:</span><span class="sxs-lookup"><span data-stu-id="149cc-196">In jQuery:</span></span>
 
 ```jQuery
 $.ajax({
@@ -201,31 +201,31 @@ $.ajax({
 }
 ```
 
-<span data-ttu-id="946c6-197">Kromě toho serveru musí umožňovat přihlašovací údaje.</span><span class="sxs-lookup"><span data-stu-id="946c6-197">In addition, the server must allow the credentials.</span></span> <span data-ttu-id="946c6-198">Chcete-li povolit cross-origin přihlašovací údaje:</span><span class="sxs-lookup"><span data-stu-id="946c6-198">To allow cross-origin credentials:</span></span>
+<span data-ttu-id="149cc-197">Kromě toho serveru musí umožňovat přihlašovací údaje.</span><span class="sxs-lookup"><span data-stu-id="149cc-197">In addition, the server must allow the credentials.</span></span> <span data-ttu-id="149cc-198">Chcete-li povolit cross-origin přihlašovací údaje:</span><span class="sxs-lookup"><span data-stu-id="149cc-198">To allow cross-origin credentials:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=80-85)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=80-85)]
 
-<span data-ttu-id="946c6-199">Odpověď HTTP bude teď obsahovat přístup – ovládací prvek-Allow-Credentials záhlaví, která sděluje prohlížeči, že server umožňuje přihlašovací údaje pro žádost o nepůvodního zdroje.</span><span class="sxs-lookup"><span data-stu-id="946c6-199">Now the HTTP response will include an Access-Control-Allow-Credentials header, which tells the browser that the server allows credentials for a cross-origin request.</span></span>
+<span data-ttu-id="149cc-199">Odpověď HTTP bude teď obsahovat přístup – ovládací prvek-Allow-Credentials záhlaví, která sděluje prohlížeči, že server umožňuje přihlašovací údaje pro žádost o nepůvodního zdroje.</span><span class="sxs-lookup"><span data-stu-id="149cc-199">Now the HTTP response will include an Access-Control-Allow-Credentials header, which tells the browser that the server allows credentials for a cross-origin request.</span></span>
 
-<span data-ttu-id="946c6-200">Pokud prohlížeč odesílá přihlašovací údaje, ale odpověď neobsahuje platný přístup – ovládací prvek-Allow-Credentials záhlaví, prohlížeče nebude vystavit odpověď na žádost a vyvolá chybu požadavek AJAX.</span><span class="sxs-lookup"><span data-stu-id="946c6-200">If the browser sends credentials, but the response doesn't include a valid Access-Control-Allow-Credentials header, the browser won't expose the response to the application, and the AJAX request fails.</span></span>
+<span data-ttu-id="149cc-200">Pokud prohlížeč odesílá přihlašovací údaje, ale odpověď neobsahuje platný přístup – ovládací prvek-Allow-Credentials záhlaví, prohlížeče nebude vystavit odpověď na žádost a vyvolá chybu požadavek AJAX.</span><span class="sxs-lookup"><span data-stu-id="149cc-200">If the browser sends credentials, but the response doesn't include a valid Access-Control-Allow-Credentials header, the browser won't expose the response to the application, and the AJAX request fails.</span></span>
 
-<span data-ttu-id="946c6-201">Buďte opatrní při povolení cross-origin přihlašovací údaje.</span><span class="sxs-lookup"><span data-stu-id="946c6-201">Be careful when allowing cross-origin credentials.</span></span> <span data-ttu-id="946c6-202">Web v jiné doméně odeslat do aplikace jménem uživatele bez vědomí uživatele pověření přihlášeného uživatele.</span><span class="sxs-lookup"><span data-stu-id="946c6-202">A website at another domain can send a logged-in user's credentials to the app on the user's behalf without the user's knowledge.</span></span> <span data-ttu-id="946c6-203">Specifikace CORS také stavy tohoto nastavení počátky k "\*" (všechny původy) je neplatný Pokud `Access-Control-Allow-Credentials` záhlaví nachází.</span><span class="sxs-lookup"><span data-stu-id="946c6-203">The CORS specification also states that setting origins to "\*" (all origins) is invalid if the `Access-Control-Allow-Credentials` header is present.</span></span>
+<span data-ttu-id="149cc-201">Buďte opatrní při povolení cross-origin přihlašovací údaje.</span><span class="sxs-lookup"><span data-stu-id="149cc-201">Be careful when allowing cross-origin credentials.</span></span> <span data-ttu-id="149cc-202">Web v jiné doméně odeslat do aplikace jménem uživatele bez vědomí uživatele pověření přihlášeného uživatele.</span><span class="sxs-lookup"><span data-stu-id="149cc-202">A website at another domain can send a logged-in user's credentials to the app on the user's behalf without the user's knowledge.</span></span> <span data-ttu-id="149cc-203">Specifikace CORS také stavy tohoto nastavení počátky k "\*" (všechny původy) je neplatný Pokud `Access-Control-Allow-Credentials` záhlaví nachází.</span><span class="sxs-lookup"><span data-stu-id="149cc-203">The CORS specification also states that setting origins to "\*" (all origins) is invalid if the `Access-Control-Allow-Credentials` header is present.</span></span>
 
-### <a name="set-the-preflight-expiration-time"></a><span data-ttu-id="946c6-204">Nastavte hodnotu doby předběžných vypršení platnosti</span><span class="sxs-lookup"><span data-stu-id="946c6-204">Set the preflight expiration time</span></span>
+### <a name="set-the-preflight-expiration-time"></a><span data-ttu-id="149cc-204">Nastavte hodnotu doby předběžných vypršení platnosti</span><span class="sxs-lookup"><span data-stu-id="149cc-204">Set the preflight expiration time</span></span>
 
-<span data-ttu-id="946c6-205">Záhlaví přístupu – ovládací prvek-Max-Age Určuje, jak dlouho může do mezipaměti odpovědi na předběžný požadavek.</span><span class="sxs-lookup"><span data-stu-id="946c6-205">The Access-Control-Max-Age header specifies how long the response to the preflight request can be cached.</span></span> <span data-ttu-id="946c6-206">Chcete-li nastavit tuto hlavičku:</span><span class="sxs-lookup"><span data-stu-id="946c6-206">To set this header:</span></span>
+<span data-ttu-id="149cc-205">Záhlaví přístupu – ovládací prvek-Max-Age Určuje, jak dlouho může do mezipaměti odpovědi na předběžný požadavek.</span><span class="sxs-lookup"><span data-stu-id="149cc-205">The Access-Control-Max-Age header specifies how long the response to the preflight request can be cached.</span></span> <span data-ttu-id="149cc-206">Chcete-li nastavit tuto hlavičku:</span><span class="sxs-lookup"><span data-stu-id="149cc-206">To set this header:</span></span>
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=89-94)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=89-94)]
 
 <a name="cors-how-cors-works"></a>
 
-## <a name="how-cors-works"></a><span data-ttu-id="946c6-207">Jak funguje CORS</span><span class="sxs-lookup"><span data-stu-id="946c6-207">How CORS works</span></span>
+## <a name="how-cors-works"></a><span data-ttu-id="149cc-207">Jak funguje CORS</span><span class="sxs-lookup"><span data-stu-id="149cc-207">How CORS works</span></span>
 
-<span data-ttu-id="946c6-208">Tato část popisuje, co se stane, že v požadavku CORS na úrovni zpráv protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="946c6-208">This section describes what happens in a CORS request at the level of the HTTP messages.</span></span> <span data-ttu-id="946c6-209">Je důležité pochopit, jak CORS funguje tak, aby zásada CORS můžete správně nakonfigurovaná a troubleshooted když dojde k neočekávané chování.</span><span class="sxs-lookup"><span data-stu-id="946c6-209">It's important to understand how CORS works so that the CORS policy can be configured correctly and troubleshooted when unexpected behaviors occur.</span></span>
+<span data-ttu-id="149cc-208">Tato část popisuje, co se stane, že v požadavku CORS na úrovni zpráv protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="149cc-208">This section describes what happens in a CORS request at the level of the HTTP messages.</span></span> <span data-ttu-id="149cc-209">Je důležité pochopit, jak CORS funguje tak, aby zásada CORS můžete správně nakonfigurovaná a troubleshooted když dojde k neočekávané chování.</span><span class="sxs-lookup"><span data-stu-id="149cc-209">It's important to understand how CORS works so that the CORS policy can be configured correctly and troubleshooted when unexpected behaviors occur.</span></span>
 
-<span data-ttu-id="946c6-210">Specifikace CORS zavádí několik nových hlavičky HTTP, které povolení žádostí napříč zdroji.</span><span class="sxs-lookup"><span data-stu-id="946c6-210">The CORS specification introduces several new HTTP headers that enable cross-origin requests.</span></span> <span data-ttu-id="946c6-211">Pokud prohlížeč podporuje CORS, nastaví tato záhlaví automaticky pro požadavky cross-origin.</span><span class="sxs-lookup"><span data-stu-id="946c6-211">If a browser supports CORS, it sets these headers automatically for cross-origin requests.</span></span> <span data-ttu-id="946c6-212">Vlastní kód JavaScript není vyžadován k povolení sdílení CORS.</span><span class="sxs-lookup"><span data-stu-id="946c6-212">Custom JavaScript code isn't required to enable CORS.</span></span>
+<span data-ttu-id="149cc-210">Specifikace CORS zavádí několik nových hlavičky HTTP, které povolení žádostí napříč zdroji.</span><span class="sxs-lookup"><span data-stu-id="149cc-210">The CORS specification introduces several new HTTP headers that enable cross-origin requests.</span></span> <span data-ttu-id="149cc-211">Pokud prohlížeč podporuje CORS, nastaví tato záhlaví automaticky pro požadavky cross-origin.</span><span class="sxs-lookup"><span data-stu-id="149cc-211">If a browser supports CORS, it sets these headers automatically for cross-origin requests.</span></span> <span data-ttu-id="149cc-212">Vlastní kód JavaScript není vyžadován k povolení sdílení CORS.</span><span class="sxs-lookup"><span data-stu-id="149cc-212">Custom JavaScript code isn't required to enable CORS.</span></span>
 
-<span data-ttu-id="946c6-213">Tady je příklad žádost nepůvodního zdroje.</span><span class="sxs-lookup"><span data-stu-id="946c6-213">Here is an example of a cross-origin request.</span></span> <span data-ttu-id="946c6-214">`Origin` Záhlaví poskytuje domény, lokality, která odeslala žádost:</span><span class="sxs-lookup"><span data-stu-id="946c6-214">The `Origin` header provides the domain of the site that's making the request:</span></span>
+<span data-ttu-id="149cc-213">Tady je příklad žádost nepůvodního zdroje.</span><span class="sxs-lookup"><span data-stu-id="149cc-213">Here is an example of a cross-origin request.</span></span> <span data-ttu-id="149cc-214">`Origin` Záhlaví poskytuje domény, lokality, která odeslala žádost:</span><span class="sxs-lookup"><span data-stu-id="149cc-214">The `Origin` header provides the domain of the site that's making the request:</span></span>
 
 ```
 GET http://myservice.azurewebsites.net/api/test HTTP/1.1
@@ -238,7 +238,7 @@ User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6
 Host: myservice.azurewebsites.net
 ```
 
-<span data-ttu-id="946c6-215">Pokud server umožňuje žádost, nastaví hlavičky Access-Control-Allow-Origin v odpovědi.</span><span class="sxs-lookup"><span data-stu-id="946c6-215">If the server allows the request, it sets the Access-Control-Allow-Origin header in the response.</span></span> <span data-ttu-id="946c6-216">Hodnotu této hlavičky buď odpovídá počátek hlavička ze žádosti, nebo je hodnota zástupný znak "\*", což znamená, že je povoleno jakýkoli původ:</span><span class="sxs-lookup"><span data-stu-id="946c6-216">The value of this header either matches the Origin header from the request, or is the wildcard value "\*", meaning that any origin is allowed:</span></span>
+<span data-ttu-id="149cc-215">Pokud server umožňuje žádost, nastaví hlavičky Access-Control-Allow-Origin v odpovědi.</span><span class="sxs-lookup"><span data-stu-id="149cc-215">If the server allows the request, it sets the Access-Control-Allow-Origin header in the response.</span></span> <span data-ttu-id="149cc-216">Hodnotu této hlavičky buď odpovídá počátek hlavička ze žádosti, nebo je hodnota zástupný znak "\*", což znamená, že je povoleno jakýkoli původ:</span><span class="sxs-lookup"><span data-stu-id="149cc-216">The value of this header either matches the Origin header from the request, or is the wildcard value "\*", meaning that any origin is allowed:</span></span>
 
 ```
 HTTP/1.1 200 OK
@@ -252,27 +252,27 @@ Content-Length: 12
 Test message
 ```
 
-<span data-ttu-id="946c6-217">Pokud odpověď neobsahuje hlavičky Access-Control-Allow-Origin, požadavek AJAX se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="946c6-217">If the response doesn't include the Access-Control-Allow-Origin header, the AJAX request fails.</span></span> <span data-ttu-id="946c6-218">V prohlížeči přímo, neumožňuje žádosti.</span><span class="sxs-lookup"><span data-stu-id="946c6-218">Specifically, the browser disallows the request.</span></span> <span data-ttu-id="946c6-219">I když server vrátí úspěšné odpovědi, prohlížeč nepodporuje zpřístupnit odpověď do klientské aplikace.</span><span class="sxs-lookup"><span data-stu-id="946c6-219">Even if the server returns a successful response, the browser doesn't make the response available to the client application.</span></span>
+<span data-ttu-id="149cc-217">Pokud odpověď neobsahuje hlavičky Access-Control-Allow-Origin, požadavek AJAX se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="149cc-217">If the response doesn't include the Access-Control-Allow-Origin header, the AJAX request fails.</span></span> <span data-ttu-id="149cc-218">V prohlížeči přímo, neumožňuje žádosti.</span><span class="sxs-lookup"><span data-stu-id="149cc-218">Specifically, the browser disallows the request.</span></span> <span data-ttu-id="149cc-219">I když server vrátí úspěšné odpovědi, prohlížeč nepodporuje zpřístupnit odpověď do klientské aplikace.</span><span class="sxs-lookup"><span data-stu-id="149cc-219">Even if the server returns a successful response, the browser doesn't make the response available to the client application.</span></span>
 
-### <a name="preflight-requests"></a><span data-ttu-id="946c6-220">Předběžných požadavků</span><span class="sxs-lookup"><span data-stu-id="946c6-220">Preflight Requests</span></span>
+### <a name="preflight-requests"></a><span data-ttu-id="149cc-220">Předběžných požadavků</span><span class="sxs-lookup"><span data-stu-id="149cc-220">Preflight Requests</span></span>
 
-<span data-ttu-id="946c6-221">U některých požadavků CORS prohlížeč odešle požadavek další, nazývá "předběžný požadavek", než odešle skutečné požadavek na prostředek.</span><span class="sxs-lookup"><span data-stu-id="946c6-221">For some CORS requests, the browser sends an additional request, called a "preflight request", before it sends the actual request for the resource.</span></span> <span data-ttu-id="946c6-222">V prohlížeči můžete přeskočit předběžný požadavek, pokud jsou splněny následující podmínky:</span><span class="sxs-lookup"><span data-stu-id="946c6-222">The browser can skip the preflight request if the following conditions are true:</span></span>
+<span data-ttu-id="149cc-221">U některých požadavků CORS prohlížeč odešle požadavek další, nazývá "předběžný požadavek", než odešle skutečné požadavek na prostředek.</span><span class="sxs-lookup"><span data-stu-id="149cc-221">For some CORS requests, the browser sends an additional request, called a "preflight request", before it sends the actual request for the resource.</span></span> <span data-ttu-id="149cc-222">V prohlížeči můžete přeskočit předběžný požadavek, pokud jsou splněny následující podmínky:</span><span class="sxs-lookup"><span data-stu-id="149cc-222">The browser can skip the preflight request if the following conditions are true:</span></span>
 
-* <span data-ttu-id="946c6-223">Metoda požadavku je GET, HEAD nebo POST, a</span><span class="sxs-lookup"><span data-stu-id="946c6-223">The request method is GET, HEAD, or POST, and</span></span>
+* <span data-ttu-id="149cc-223">Metoda požadavku je GET, HEAD nebo POST, a</span><span class="sxs-lookup"><span data-stu-id="149cc-223">The request method is GET, HEAD, or POST, and</span></span>
 
-* <span data-ttu-id="946c6-224">Aplikace není nastavena všechny hlavičky požadavku než přijmout, Accept-Language, jazyk obsahu Content-Type nebo poslední událost ID, a</span><span class="sxs-lookup"><span data-stu-id="946c6-224">The application doesn't set any request headers other than Accept, Accept-Language, Content-Language, Content-Type, or Last-Event-ID, and</span></span>
+* <span data-ttu-id="149cc-224">Aplikace není nastavena všechny hlavičky požadavku než přijmout, Accept-Language, jazyk obsahu Content-Type nebo poslední událost ID, a</span><span class="sxs-lookup"><span data-stu-id="149cc-224">The application doesn't set any request headers other than Accept, Accept-Language, Content-Language, Content-Type, or Last-Event-ID, and</span></span>
 
-* <span data-ttu-id="946c6-225">Hlavička Content-Type (Pokud nastavit) je jedním z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="946c6-225">The Content-Type header (if set) is one of the following:</span></span>
+* <span data-ttu-id="149cc-225">Hlavička Content-Type (Pokud nastavit) je jedním z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="149cc-225">The Content-Type header (if set) is one of the following:</span></span>
 
-  * <span data-ttu-id="946c6-226">Application/x--www-form-urlencoded</span><span class="sxs-lookup"><span data-stu-id="946c6-226">application/x-www-form-urlencoded</span></span>
+  * <span data-ttu-id="149cc-226">Application/x--www-form-urlencoded</span><span class="sxs-lookup"><span data-stu-id="149cc-226">application/x-www-form-urlencoded</span></span>
 
-  * <span data-ttu-id="946c6-227">multipart/form-data</span><span class="sxs-lookup"><span data-stu-id="946c6-227">multipart/form-data</span></span>
+  * <span data-ttu-id="149cc-227">multipart/form-data</span><span class="sxs-lookup"><span data-stu-id="149cc-227">multipart/form-data</span></span>
 
-  * <span data-ttu-id="946c6-228">text/plain</span><span class="sxs-lookup"><span data-stu-id="946c6-228">text/plain</span></span>
+  * <span data-ttu-id="149cc-228">text/plain</span><span class="sxs-lookup"><span data-stu-id="149cc-228">text/plain</span></span>
 
-<span data-ttu-id="946c6-229">Pravidlo o hlavičky požadavku platí pro hlavičky, které aplikace nastaví voláním setRequestHeader XMLHttpRequest objektu.</span><span class="sxs-lookup"><span data-stu-id="946c6-229">The rule about request headers applies to headers that the application sets by calling setRequestHeader on the XMLHttpRequest object.</span></span> <span data-ttu-id="946c6-230">(Specifikace CORS volá tyto "Autor hlavičky žádosti"). Pravidlo se nevztahuje na hlavičky, které můžete nastavit v prohlížeči, třeba uživatelského agenta, hostitele nebo Content-Length.</span><span class="sxs-lookup"><span data-stu-id="946c6-230">(The CORS specification calls these "author request headers".) The rule doesn't apply to headers the browser can set, such as User-Agent, Host, or Content-Length.</span></span>
+<span data-ttu-id="149cc-229">Pravidlo o hlavičky požadavku platí pro hlavičky, které aplikace nastaví voláním setRequestHeader XMLHttpRequest objektu.</span><span class="sxs-lookup"><span data-stu-id="149cc-229">The rule about request headers applies to headers that the application sets by calling setRequestHeader on the XMLHttpRequest object.</span></span> <span data-ttu-id="149cc-230">(Specifikace CORS volá tyto "Autor hlavičky žádosti"). Pravidlo se nevztahuje na hlavičky, které můžete nastavit v prohlížeči, třeba uživatelského agenta, hostitele nebo Content-Length.</span><span class="sxs-lookup"><span data-stu-id="149cc-230">(The CORS specification calls these "author request headers".) The rule doesn't apply to headers the browser can set, such as User-Agent, Host, or Content-Length.</span></span>
 
-<span data-ttu-id="946c6-231">Tady je příklad předběžný požadavek:</span><span class="sxs-lookup"><span data-stu-id="946c6-231">Here is an example of a preflight request:</span></span>
+<span data-ttu-id="149cc-231">Tady je příklad předběžný požadavek:</span><span class="sxs-lookup"><span data-stu-id="149cc-231">Here is an example of a preflight request:</span></span>
 
 ```
 OPTIONS http://myservice.azurewebsites.net/api/test HTTP/1.1
@@ -286,13 +286,13 @@ Host: myservice.azurewebsites.net
 Content-Length: 0
 ```
 
-<span data-ttu-id="946c6-232">Žádost o předběžné letu používá metodu HTTP OPTIONS.</span><span class="sxs-lookup"><span data-stu-id="946c6-232">The pre-flight request uses the HTTP OPTIONS method.</span></span> <span data-ttu-id="946c6-233">Obsahuje dva speciální hlavičky:</span><span class="sxs-lookup"><span data-stu-id="946c6-233">It includes two special headers:</span></span>
+<span data-ttu-id="149cc-232">Žádost o předběžné letu používá metodu HTTP OPTIONS.</span><span class="sxs-lookup"><span data-stu-id="149cc-232">The pre-flight request uses the HTTP OPTIONS method.</span></span> <span data-ttu-id="149cc-233">Obsahuje dva speciální hlavičky:</span><span class="sxs-lookup"><span data-stu-id="149cc-233">It includes two special headers:</span></span>
 
-* <span data-ttu-id="946c6-234">Access-Control-Request-Method: Metodu protokolu HTTP, který se použije pro skutečný požadavek.</span><span class="sxs-lookup"><span data-stu-id="946c6-234">Access-Control-Request-Method: The HTTP method that will be used for the actual request.</span></span>
+* <span data-ttu-id="149cc-234">Access-Control-Request-Method: Metodu protokolu HTTP, který se použije pro skutečný požadavek.</span><span class="sxs-lookup"><span data-stu-id="149cc-234">Access-Control-Request-Method: The HTTP method that will be used for the actual request.</span></span>
 
-* <span data-ttu-id="946c6-235">Access-Control-Request-Headers: Seznam hlaviček požadavků, které aplikace nastavena na skutečnou žádost.</span><span class="sxs-lookup"><span data-stu-id="946c6-235">Access-Control-Request-Headers: A list of request headers that the application set on the actual request.</span></span> <span data-ttu-id="946c6-236">(Znovu to neobsahuje hlavičky, které nastaví prohlížeče.)</span><span class="sxs-lookup"><span data-stu-id="946c6-236">(Again, this doesn't include headers that the browser sets.)</span></span>
+* <span data-ttu-id="149cc-235">Access-Control-Request-Headers: Seznam hlaviček požadavků, které aplikace nastavena na skutečnou žádost.</span><span class="sxs-lookup"><span data-stu-id="149cc-235">Access-Control-Request-Headers: A list of request headers that the application set on the actual request.</span></span> <span data-ttu-id="149cc-236">(Znovu to neobsahuje hlavičky, které nastaví prohlížeče.)</span><span class="sxs-lookup"><span data-stu-id="149cc-236">(Again, this doesn't include headers that the browser sets.)</span></span>
 
-<span data-ttu-id="946c6-237">Zde je odpověď příklad, za předpokladu, že server umožňuje žádost:</span><span class="sxs-lookup"><span data-stu-id="946c6-237">Here is an example response, assuming that the server allows the request:</span></span>
+<span data-ttu-id="149cc-237">Zde je odpověď příklad, za předpokladu, že server umožňuje žádost:</span><span class="sxs-lookup"><span data-stu-id="149cc-237">Here is an example response, assuming that the server allows the request:</span></span>
 
 ```
 HTTP/1.1 200 OK
@@ -305,4 +305,4 @@ Access-Control-Allow-Methods: PUT
 Date: Wed, 20 May 2015 06:33:22 GMT
 ```
 
-<span data-ttu-id="946c6-238">Odpověď obsahuje hlavičku přístup – ovládací prvek-Allow-Methods, který obsahuje seznam povolených metod a volitelně hlavičky Access-Control-povolit-Headers, kde jsou uvedeny povolené hlavičky.</span><span class="sxs-lookup"><span data-stu-id="946c6-238">The response includes an Access-Control-Allow-Methods header that lists the allowed methods, and optionally an Access-Control-Allow-Headers header, which lists the allowed headers.</span></span> <span data-ttu-id="946c6-239">Pokud předběžný požadavek úspěšné, prohlížeč odesílá skutečné požadavku, jak je popsáno výše.</span><span class="sxs-lookup"><span data-stu-id="946c6-239">If the preflight request succeeds, the browser sends the actual request, as described earlier.</span></span>
+<span data-ttu-id="149cc-238">Odpověď obsahuje hlavičku přístup – ovládací prvek-Allow-Methods, který obsahuje seznam povolených metod a volitelně hlavičky Access-Control-povolit-Headers, kde jsou uvedeny povolené hlavičky.</span><span class="sxs-lookup"><span data-stu-id="149cc-238">The response includes an Access-Control-Allow-Methods header that lists the allowed methods, and optionally an Access-Control-Allow-Headers header, which lists the allowed headers.</span></span> <span data-ttu-id="149cc-239">Pokud předběžný požadavek úspěšné, prohlížeč odesílá skutečné požadavku, jak je popsáno výše.</span><span class="sxs-lookup"><span data-stu-id="149cc-239">If the preflight request succeeds, the browser sends the actual request, as described earlier.</span></span>

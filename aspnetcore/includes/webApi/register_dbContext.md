@@ -4,7 +4,7 @@ V tomto kroku není zaregistrována kontext databáze [vkládání závislostí]
 
 Zaregistrovat kontext databáze kontejneru služby pomocí integrovanou podporu pro [vkládání závislostí](xref:fundamentals/dependency-injection). Nahraďte obsah *Startup.cs* soubor s následujícím kódem:
 
-[!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Startup.cs?highlight=2,4,12)]
+[!code-csharp[](../../tutorials/first-web-api/sample/TodoApi/Startup.cs?highlight=2,4,12)]
 
 Předchozí kód:
 

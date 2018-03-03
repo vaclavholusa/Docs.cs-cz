@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 61827f456ba01ffa726f3446401156409b29111d
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: b11bc811b6aefce22b60a28afd72c2a2d0b26955
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Hostování v systému Linux s Apache ASP.NET Core
 
@@ -232,7 +232,7 @@ sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-
 
 ### <a name="configure-firewall"></a>Konfigurace brány firewall
 
-*Firewalld* je dynamická démon ke správě brány firewall s podporou zón sítě. Porty a filtrování paketů můžete dál spravovat přes iptables. *Firewalld* by měly být nainstalovány ve výchozím nastavení. `yum`slouží k instalaci balíčku nebo ověřte, zda že je nainstalovaná.
+*Firewalld* je dynamická démon ke správě brány firewall s podporou zón sítě. Porty a filtrování paketů můžete dál spravovat přes iptables. *Firewalld* by měly být nainstalovány ve výchozím nastavení. `yum` slouží k instalaci balíčku nebo ověřte, zda že je nainstalovaná.
 
 ```bash
 sudo yum install firewalld -y
@@ -351,7 +351,7 @@ Přidejte řádek `Header set X-Content-Type-Options "nosniff"`. Uložte soubor.
 
 ### <a name="load-balancing"></a>Vyrovnávání zatížení 
 
-Tento příklad ukazuje, jak nainstalovat a nakonfigurovat Apache na CentOS 7 a Kestrel na stejném počítači instance. Chcete-li nemá jediný bod selhání; pomocí *mod_proxy_balancer* a úprava **VirtualHost** by umožnilo pro správu několik instancí webové aplikace za proxy serverem Apache.
+Tento příklad ukazuje, jak nainstalovat a nakonfigurovat Apache na CentOS 7 a Kestrel na stejném počítači instance. Chcete-li nemá jediný bod selhání; pomocí *mod_proxy_balancer* a úprava **VirtualHost** by umožňoval správu více instancí webové aplikace za proxy serverem Apache.
 
 ```bash
 sudo yum install mod_proxy_balancer

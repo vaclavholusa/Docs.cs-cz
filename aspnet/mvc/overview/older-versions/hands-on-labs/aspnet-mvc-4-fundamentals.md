@@ -12,28 +12,28 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 468f6d5dabb645b1c005680dc5a1ffc4debd63b6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f93f51219403cd5aeca2dd3648444a84690c3d25
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-fundamentals"></a>Základy architektury ASP.NET MVC 4
-====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+# <a name="aspnet-mvc-4-fundamentals"></a>Základy architektury ASP.NET MVC 4
 
-> Toto testovací prostředí Hands-On je založena na rozhraní MVC (Model View Controller) Hudba úložiště, kurz aplikace, která uvádí a popisuje podrobný aplikace ASP.NET MVC a Visual Studio. V testovacím prostředí se dozvíte, jednoduchost, ještě power společně používání těchto technologií. Se spustí s jednoduchou aplikaci a bude sestavte jej, dokud nebudete mít plně funkční ASP.NET MVC 4 webovou aplikaci.
-> 
-> Toto testovací prostředí pracuje s ASP.NET MVC 4.
-> 
-> Pokud chcete prozkoumat verze ASP.NET MVC 3 kurz aplikace, najdete ji v [MVC. Hudba úložiště](https://github.com/evilDave/MVC-Music-Store).
-> 
-> > [!NOTE]
-> > Toto testovací prostředí Hands-On předpokládá, že vývojář má prostředí do webové vývoj technologií, jako je například HTML a JavaScript.
-> 
-> 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
+[Stažení webové táborech cvičení Kit](https://aka.ms/webcamps-training-kit)
+
+Toto testovací prostředí Hands-On je založena na rozhraní MVC (Model View Controller) Hudba úložiště, kurz aplikace, která uvádí a popisuje podrobný aplikace ASP.NET MVC a Visual Studio. V testovacím prostředí se dozvíte, jednoduchost, ještě power společně používání těchto technologií. Se spustí s jednoduchou aplikaci a bude sestavte jej, dokud nebudete mít plně funkční ASP.NET MVC 4 webovou aplikaci.
+
+Toto testovací prostředí pracuje s ASP.NET MVC 4.
+
+Pokud chcete prozkoumat verze ASP.NET MVC 3 kurz aplikace, najdete ji v [MVC. Hudba úložiště](https://github.com/evilDave/MVC-Music-Store).
+
+Toto testovací prostředí Hands-On předpokládá, že vývojář má prostředí do webové vývoj technologií, jako je například HTML a JavaScript.
+
+> [!NOTE]
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [verze Microsoft-webové/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). Projekt specifické pro toto testovací prostředí je k dispozici na [ASP.NET MVC 4 Základy](https://github.com/Microsoft-Web/HOL-MVC4Fundamentals).
 
 <a id="The_Music_Store_application"></a>
 ### <a name="the-music-store-application"></a>Aplikaci Store Hudba
@@ -333,7 +333,7 @@ V této úloze, můžete vyzkoušet na aplikaci ve webovém prohlížeči a pou�
 
     ![Procházení StoreBrowseGenre = Disco](aspnet-mvc-4-fundamentals/_static/image10.png "procházení StoreBrowseGenre = Disco")
 
-    *Procházení /Store/Browse? Genre = Disco*
+    *Browsing /Store/Browse?Genre=Disco*
 3. Zavřete prohlížeč.
 
 <a id="Ex3Task3"></a>
@@ -818,7 +818,7 @@ V této úloze, přidáte pomocí odkazu v zobrazení úložiště tak, aby měl
     > [!NOTE]
     > jiná možnost by propojení přímo na stránku s kódem takto:
     > 
-    > &lt;href =&quot;/úložiště/procházet? genre =@genreName&quot;&gt;@genreName&lt;/a&gt;
+    > &lt;a href=&quot;/Store/Browse?genre=@genreName&quot;&gt;@genreName&lt;/a&gt;
     > 
     > I když tento přístup funguje, závisí na řetězci pevně zakódované. Pokud přejmenujete později Kontroleru, je nutné tento pokyn ručně změnit. Lepší alternativou je použít **pomocné rutiny HTML** metoda. ASP.NET MVC zahrnuje metodu pomocné rutiny HTML, která je k dispozici pro takové úlohy. **Html.ActionLink()** Pomocná metoda usnadňuje sestavení HTML  **&lt;&gt;**  odkazy, a ujistěte se, cest URL jsou správně kódovaná adresou URL.
     > 
@@ -895,7 +895,7 @@ V tomto cvičení zaměříte vylepšení v šablonách projektu ASP.NET MVC 4, 
 #### <a name="task-1-exploring-the-aspnet-mvc-4-internet-application-template"></a>Úloha 1: Zkoumat šablony ASP.NET MVC 4 Internetové aplikace
 
 1. Pokud už otevřený, spusťte **VS Express pro Web**
-2. Vyberte **souboru | Nové | Projekt** příkazu nabídky. V **nový projekt** dialogovém okně, vyberte **Visual C# | Webové** šablony v levém podokně stromu a vyberte **webové aplikace ASP.NET MVC 4**. **Název** projektu *MusicStore* a aktualizovat **název řešení** k *začít*, pak vyberte umístění (nebo ponechte výchozí nastavení) a klikněte na tlačítko **OK**.
+2. Vyberte **souboru | Nové | Projekt** příkazu nabídky. V **nový projekt** dialogovém okně, vyberte **Visual C# | Webové** šablony v levém podokně stromu a vyberte **webové aplikace ASP.NET MVC 4**. **Název** projektu *MusicStore* a aktualizovat **název řešení** k *začít*, pak vyberte umístění (nebo ponechte výchozí nastavení) a klikněte na tlačítko **OK** .
 
     ![Vytvoření nového projektu ASP.NET MVC 4](aspnet-mvc-4-fundamentals/_static/image36.png "vytvoření nového projektu ASP.NET MVC 4")
 

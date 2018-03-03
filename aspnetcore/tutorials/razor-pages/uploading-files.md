@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 4a2c6da6ed698d1a65ee51bd00a557e607f012da
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 2bd593b77c10b1b3ab0b73551d01abd0b4187b8d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Nahrávání souborů na stránku Razor v ASP.NET Core
 
@@ -47,7 +47,7 @@ Upozornění: musí být provedeny, když nabízí uživatelům možnost k nahr�
 
 Vytvoření stránky Razor pro zpracování pár nahrávání souborů. Přidat `FileUpload` třídy, která je vázána na stránku získat data plánu. Klikněte pravým tlačítkem *modely* složky. Vyberte **přidat** > **třída**. Název třídy **odesílání souborů při odpovědích** a přidejte následující vlastnosti:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
 
 Třída nemá vlastnost pro nadpis podle plánu a vlastnost pro každou z dvou verzích plán. Všechny tři vlastnosti jsou požadovány a název musí mít 3 až 60 znaků.
 
@@ -55,7 +55,7 @@ Třída nemá vlastnost pro nadpis podle plánu a vlastnost pro každou z dvou v
 
 Nechcete duplicity kód pro zpracování souborů nahrané plán, přidejte nejprve statickou pomocnou metodu. Vytvoření *nástroje* složky v aplikaci a přidejte *FileHelpers.cs* soubor s následujícím obsahem. Pomocná metoda `ProcessFormFile`, trvá [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) a [ModelStateDictionary](/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary) a vrátí řetězec obsahující velikost souboru a jeho obsah. Se kontroluje, typu obsahu a délka. Pokud soubor neprojde ověřování pravosti, chyba je přidán do `ModelState`.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
 
 ### <a name="save-the-file-to-disk"></a>Uložte soubor na disku
 
@@ -78,7 +78,7 @@ Pokud chcete nahrát obsah souboru do Azure Blob Storage, najdete v části [Za�
 
 Klikněte pravým tlačítkem *modely* složky. Vyberte **přidat** > **třída**. Název třídy **plán** a přidejte následující vlastnosti:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/Schedule.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/Schedule.cs)]
 
 Používá třída `Display` a `DisplayFormat` atributy, které vytvářejí popisné názvy a formátování při vykreslení data plánu.
 
@@ -86,7 +86,7 @@ Používá třída `Display` a `DisplayFormat` atributy, které vytvářejí pop
 
 Zadejte `DbSet` v `MovieContext` (*Models/MovieContext.cs*) pro plány:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
 
 ## <a name="add-the-schedule-table-to-the-database"></a>Přidat do databáze v tabulce plán
 
@@ -105,7 +105,7 @@ Update-Database
 
 V *stránky* složky, vytvoření *plány* složky. V *plány* složku vytvořit stránku s názvem *Index.cshtml* pro nahrávání plán s následujícím obsahem:
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml)]
 
 Každá skupina formuláře zahrnuje  **\<popisek >** který zobrazí název každé vlastnosti třídy. `Display` Atributy v `FileUpload` model poskytují zobrazovaných hodnot pro popisky. Například `UploadPublicSchedule` zobrazovaný název vlastnosti je nastaven s `[Display(Name="Public Schedule")]` a proto zobrazí "Veřejné plán" v popisku, když se vykreslí formulář.
 
@@ -115,43 +115,43 @@ Každá skupina formuláře zahrnuje ověřování  **\<span >**. Uživatelský 
 
 Přidání stránky modelu (*Index.cshtml.cs*) k *plány* složky:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
 
 Model stránky (`IndexModel` v *Index.cshtml.cs*) váže `FileUpload` třídy:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet1)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet1)]
 
 Model také používá seznam plány (`IList<Schedule>`) k zobrazení plány, které jsou uloženy v databázi na stránce:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet2)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet2)]
 
 Při načtení stránky s `OnGetAsync`, `Schedules` je naplněny z databáze a používat ke generování tabulky HTML z načíst plánů:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
 
 Při odeslání formuláře na server, `ModelState` je zaškrtnuté. Pokud je neplatná, `Schedule` znovu sestaven, a vykreslí stránku s jeden nebo více ověřovacích zpráv s informacemi o tom, proč stránky ověření se nezdařilo. Pokud je platná, `FileUpload` vlastnosti se používají v *OnPostAsync* k dokončení nahrávání souborů pro dvě verze plánu a vytvořit nový `Schedule` objekt, který chcete uložit data. Plán pak je uložena do databáze:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
 
 ## <a name="link-the-file-upload-razor-page"></a>Odkaz nahrávání souborů stránky Razor
 
 Otevřete *_Layout.cshtml* a přidat odkaz na navigačním panelu k dosažení stránka nahrávání souboru:
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=31-38&highlight=4)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=31-38&highlight=4)]
 
 ## <a name="add-a-page-to-confirm-schedule-deletion"></a>Přidat stránku potvrďte odstranění plánu
 
 Když uživatel klikne na Odstranit plán, je k dispozici šanci na tlačítko Storno. Přidat stránku potvrzení odstranění (*Delete.cshtml*) k *plány* složky:
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
 Model stránky (*Delete.cshtml.cs*) načte jeden plán identifikovaný `id` v datech trasy žádosti. Přidat *Delete.cshtml.cs* do souboru *plány* složky:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
 
 `OnPostAsync` Metoda zpracovává odstranění plán, podle jeho `id`:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs?name=snippet1&highlight=8,12-13)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs?name=snippet1&highlight=8,12-13)]
 
 Po úspěšném odstranění plán, `RedirectToPage` odešle uživateli zpět na plány *Index.cshtml* stránky.
 

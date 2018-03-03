@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: f81130b67d61ee063b697f19862449c3054d547d
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 07cfd20809acb67bdae6561b6ccd6edf1e70a3fe
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="use-the-angular-project-template"></a>Použijte šablonu úhlová projektu
 
@@ -49,9 +49,9 @@ Proces sestavení obnoví npm závislosti během prvního spuštění, což mů�
 
 Zajistěte, abyste měli proměnné prostředí s názvem `ASPNETCORE_Environment` s hodnotou `Development`. V systému Windows (v výzvy – prostředí PowerShell), spusťte `SET ASPNETCORE_Environment=Development`. V systému macOS nebo Linux, spusťte `export ASPNETCORE_Environment=Development`.
 
-Spustit `dotnet build` k ověření aplikace sestavení správně. Při prvním spuštění procesu sestavení obnoví npm závislosti, které může trvat několik minut. Následující sestavení je mnohem rychlejší.
+Spustit [dotnet sestavení](/dotnet/core/tools/dotnet-build) k ověření aplikace sestavení správně. Při prvním spuštění procesu sestavení obnoví npm závislosti, které může trvat několik minut. Následující sestavení je mnohem rychlejší.
 
-Spustit `dotnet run` a spusťte aplikaci. Zaznamená se zpráva podobná následující:
+Spustit [dotnet spustit](/dotnet/core/tools/dotnet-run) a spusťte aplikaci. Zaznamená se zpráva podobná následující:
 
 ```console
 Now listening on: http://localhost:<port>

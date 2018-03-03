@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: f4ed38f7395e3f4fe939584c1f3f5b0dba93724c
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 6b81cadf39c0db373f82b8de7d8d3901d51ea088
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Úvod do stavu relace a aplikace v ASP.NET Core
 
@@ -38,7 +38,7 @@ Zprostředkovatel relací v paměti ukládá data relace na místním serveru. P
 <a name="temp"></a>
 ## <a name="tempdata"></a>TempData
 
-ASP.NET MVC základní zpřístupní [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) vlastnost [řadiče](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0). Tato vlastnost ukládá data, dokud je pro čtení. `Keep` a `Peek` metody můžete použít k prozkoumání dat bez odstranění. `TempData`je obzvláště užitečné pro přesměrování, pokud dat je potřeba pro více než jeden požadavek. `TempData`je implementováno modulem TempData poskytovatelů, například pomocí souborů cookie nebo stav relace.
+ASP.NET MVC základní zpřístupní [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) vlastnost [řadiče](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0). Tato vlastnost ukládá data, dokud je pro čtení. `Keep` a `Peek` metody můžete použít k prozkoumání dat bez odstranění. `TempData` je obzvláště užitečné pro přesměrování, pokud dat je potřeba pro více než jeden požadavek. `TempData` je implementováno modulem TempData poskytovatelů, například pomocí souborů cookie nebo stav relace.
 
 <a name="tempdata-providers"></a>
 ### <a name="tempdata-providers"></a>Zprostředkovatelé TempData
@@ -91,7 +91,7 @@ Pořadí je důležité pro komponenty middlewaru. V předchozím příkladu, k 
 
 ## <a name="query-strings"></a>Řetězce dotazů
 
-Můžete předat omezené množství dat z jednoho požadavku na jiný přidáním do novou žádost o řetězce dotazu. To je užitečné pro zaznamenání stavu trvalé způsobem, který umožňuje propojení s embedded stavu sdílení e-mailu nebo sociálních sítí. Ale z tohoto důvodu by nikdy používáte řetězce dotazu pro citlivá data. Kromě se snadno sdílet, včetně dat v řetězcích dotazů můžete vytvořit příležitosti pro [webů požadavku padělání (proti útokům CSRF)](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) útoků, které můžete obelstít návštěvou škodlivé weby při ověření uživatele. Útočníci mohou pak odcizit data uživatele z vaší aplikace nebo provést škodlivé akce jménem uživatele. Zachovaných stavu application nebo session musí zajistit ochranu proti útokům proti útokům CSRF. Další informace o útoku proti útokům CSRF najdete v tématu [útoky brání webů požadavku padělání (XSRF/proti útokům CSRF) v ASP.NET Core](../security/anti-request-forgery.md).
+Můžete předat omezené množství dat z jednoho požadavku na jiný přidáním do novou žádost o řetězce dotazu. To je užitečné pro zaznamenání stavu trvalé způsobem, který umožňuje propojení s embedded stavu sdílení e-mailu nebo sociálních sítí. Ale z tohoto důvodu by nikdy používáte řetězce dotazu pro citlivá data. Kromě se snadno sdílet, včetně dat v řetězcích dotazů můžete vytvořit příležitosti pro [webů požadavku padělání (proti útokům CSRF)](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) útoků, které můžete obelstít návštěvou škodlivé weby při ověření uživatele. Útočníci mohou pak odcizit data uživatele z vaší aplikace nebo provést škodlivé akce jménem uživatele. Zachovaných stavu application nebo session musí zajistit ochranu proti útokům proti útokům CSRF. Další informace o útoku proti útokům CSRF najdete v tématu [zabránit webů požadavku padělání (XSRF/proti útokům CSRF) před útoky](xref:security/anti-request-forgery).
 
 ## <a name="post-data-and-hidden-fields"></a>Následná data a skrytá pole
 
@@ -128,11 +128,11 @@ Následující kód ukazuje, jak nastavit Zprostředkovatel relací v paměti.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](app-state/sample/src/WebAppSessionDotNetCore2.0App/Startup.cs?highlight=11-19,24)]
+[!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/Startup.cs?highlight=11-19,24)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](app-state/sample/src/WebAppSession/Startup.cs?highlight=11-19,24)]
+[!code-csharp[](app-state/sample/src/WebAppSession/Startup.cs?highlight=11-19,24)]
 
 ---
 
@@ -156,17 +156,17 @@ Chcete-li přepsat výchozí hodnoty relace, použijte `SessionOptions`:
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupCopy.cs?name=snippet1&highlight=8-12)]
+[!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](app-state/sample/src/WebAppSession/StartupCopy.cs?name=snippet1&highlight=8-12)]
+[!code-csharp[](app-state/sample/src/WebAppSession/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
 ---
 
 Tento server využívá `IdleTimeout` vlastnosti k určení, jak dlouho relace může být nečinnosti, než jsou opuštění její obsah. Tato vlastnost je nezávislá na vypršení platnosti souboru cookie. Každý požadavek, který předává přes middleware relace (číst nebo zapisovat do) obnoví časový limit.
 
-Protože `Session` je *bez uzamčení*, pokud dva požadavky obou pokusí změnit obsah relace, poslední přepíše první. `Session`je implementovaný jako *souvislý relace*, což znamená, že se veškerý obsah ukládat společně. Dva požadavky, které se změnit různé části relace (různé klíče) může stále vzájemně vliv.
+Protože `Session` je *bez uzamčení*, pokud dva požadavky obou pokusí změnit obsah relace, poslední přepíše první. `Session` je implementovaný jako *souvislý relace*, což znamená, že se veškerý obsah ukládat společně. Dva požadavky, které se změnit různé části relace (různé klíče) může stále vzájemně vliv.
 
 ### <a name="setting-and-getting-session-values"></a>Nastavení a získání hodnoty relace
 
@@ -174,15 +174,15 @@ Relace je přístupné přes `Session` vlastnost `HttpContext`. Tato vlastnost j
 
 Následující příklad ukazuje nastavení a získání int a řetězec:
 
-[!code-csharp[Main](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?range=8-27,49)]
+[!code-csharp[](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?range=8-27,49)]
 
 Pokud přidáte následující metody rozšíření, můžete nastavit a získat serializovatelné objekty do relace:
 
-[!code-csharp[Main](app-state/sample/src/WebAppSession/Extensions/SessionExtensions.cs)]
+[!code-csharp[](app-state/sample/src/WebAppSession/Extensions/SessionExtensions.cs)]
 
 Následující příklad ukazuje, jak nastavit a získat serializovatelný objekt:
 
-[!code-csharp[Main](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?name=snippet2)]
+[!code-csharp[](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?name=snippet2)]
 
 
 ## <a name="working-with-httpcontextitems"></a>Práce s HttpContext.Items

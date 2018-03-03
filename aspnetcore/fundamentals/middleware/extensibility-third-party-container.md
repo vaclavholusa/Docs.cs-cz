@@ -1,5 +1,5 @@
 ---
-title: "Aktivace na základě Factory middlewaru s kontejner třetích stran v ASP.NET Core"
+title: "Middleware aktivaci s použitím kontejner třetích stran v ASP.NET Core"
 author: guardrex
 description: "Další informace o použití silného typu middleware aktivace prostřednictvím objektu pro vytváření a kontejner třetích stran v ASP.NET Core."
 ms.author: riande
@@ -10,13 +10,13 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility-third-party-container
-ms.openlocfilehash: bb318747e254ac244facc1fe1ff08a1f5c4727f2
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: b6fd02d1863efe571bafe1344fb34939883e6cb5
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
-# <a name="factory-based-middleware-activation-with-a-third-party-container-in-aspnet-core"></a>Aktivace na základě Factory middlewaru s kontejner třetích stran v ASP.NET Core
+# <a name="middleware-activation-with-a-third-party-container-in-aspnet-core"></a>Middleware aktivaci s použitím kontejner třetích stran v ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 

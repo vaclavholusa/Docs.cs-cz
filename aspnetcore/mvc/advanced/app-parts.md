@@ -1,7 +1,7 @@
 ---
 title: "Částí aplikace v ASP.NET Core"
 author: ardalis
-description: "Další informace o použití částí aplikace, které jsou abstrations přes prostředky aplikace, ke konfiguraci vaší aplikace na zjišťování nebo předejít přetížení funkce ze sestavení."
+description: "Další informace o použití částí aplikace, které jsou abstrakce přes prostředky aplikace, na zjištění nebo předejít přetížení funkce ze sestavení."
 manager: wpickett
 ms.author: riande
 ms.date: 01/04/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 6b855f8725dacc89a7e0607224ef3c19ab9f5676
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a6391dcff2edc239f611be6bac60b40de292634e
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="application-parts-in-aspnet-core"></a>Částí aplikace v ASP.NET Core
 
@@ -75,11 +75,11 @@ Zprostředkovatelé funkce dědit z `IApplicationFeatureProvider<T>`, kde `T` je
 
 Ve výchozím nastavení, ASP.NET MVC základní ignoruje obecné řadiče (například `SomeController<T>`). Tato ukázka používá zprostředkovatele funkce řadiče, který spustí po výchozím zprostředkovatelem a přidá instance obecné řadiče pro zadaný seznam typů (definované v `EntityTypes.Types`):
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/GenericControllerFeatureProvider.cs?highlight=13&range=18-36)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/GenericControllerFeatureProvider.cs?highlight=13&range=18-36)]
 
 Typy entit:
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/Model/EntityTypes.cs?range=6-16)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/Model/EntityTypes.cs?range=6-16)]
 
 Zprostředkovatele funkce je přidaný do `Startup`:
 
@@ -91,11 +91,11 @@ services.AddMvc()
 
 Ve výchozím nastavení, Obecný řadič názvy používaných pro směrování by být ve formátu *GenericController 1 [pomůcky]* místo *pomůcky*. Upravit název tak, aby odpovídaly obecného typu používané řadičem se používá následující atribut:
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/GenericControllerNameConvention.cs)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/GenericControllerNameConvention.cs)]
 
 `GenericController` Třídy:
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/GenericController.cs?highlight=5-6)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/GenericController.cs?highlight=5-6)]
 
 Výsledek, pokud se požaduje odpovídající trasy:
 
@@ -105,7 +105,7 @@ Výsledek, pokud se požaduje odpovídající trasy:
 
 Můžete iterovat vyplněná funkce dostupné pro vaši aplikaci tím, že požádá `ApplicationPartManager` prostřednictvím [vkládání závislostí](../../fundamentals/dependency-injection.md) a jeho použití k naplnění instancí příslušné funkce:
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/Controllers/FeaturesController.cs?highlight=16,25-27)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/Controllers/FeaturesController.cs?highlight=16,25-27)]
 
 Příklad výstupu:
 

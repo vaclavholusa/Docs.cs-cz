@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/index
-ms.openlocfilehash: 7d8ba912da4c0e543bd4dd56632cdc41706814d1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: baa77eba837ff8b86ad543a74ebeee51ace4c25d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-and-deploy-aspnet-core"></a>Hostování a nasazení základní technologie ASP.NET
 
@@ -26,7 +26,7 @@ Obecný postup nasazení aplikace ASP.NET Core do hostitelského prostředí:
 
 ## <a name="publish-to-a-folder"></a>Publikovat do složky 
 
-[Dotnet publikování](/dotnet/articles/core/tools/dotnet-publish) rozhraní příkazového řádku příkaz kompilovaný kód aplikace a zkopíruje soubory potřebné ke spuštění aplikace do *publikování* složky. Při nasazení ze sady Visual Studio `dotnet publish` kroku dojde automaticky před soubory se zkopírují do cíle nasazení.
+[Dotnet publikování](/dotnet/articles/core/tools/dotnet-publish) rozhraní příkazového řádku příkaz kompilovaný kód aplikace a zkopíruje soubory potřebné ke spuštění aplikace do *publikování* složky. Při nasazení ze sady Visual Studio [dotnet publikování](/dotnet/core/tools/dotnet-publish) kroku dojde automaticky před soubory se zkopírují do cíle nasazení.
 
 ### <a name="folder-contents"></a>Obsah složky
 
@@ -61,7 +61,7 @@ Pokud aplikace používá [Kestrel](xref:fundamentals/servers/kestrel) webový s
 
 ## <a name="using-visual-studio-and-msbuild-to-automate-deployment"></a>Pomocí sady Visual Studio a nástroje MSBuild k automatizaci nasazení
 
-Nasazení často vyžaduje další úkoly kromě kopírování výstupu z `dotnet publish` na server. Například může další soubory, které vyžaduje nebo vyloučit z *publikování* složky. Visual Studio použije nástroje MSBuild pro nasazení webu a MSBuild lze přizpůsobit udělat celou řadu dalších úloh během nasazení. Další informace najdete v tématu [profily publikování v sadě Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) a [pomocí nástroje MSBuild a Team Foundation Build](http://msbuildbook.com/) adresáře.
+Nasazení často vyžaduje další úkoly kromě kopírování výstupu z [dotnet publikování](/dotnet/core/tools/dotnet-publish) na server. Například může další soubory, které vyžaduje nebo vyloučit z *publikování* složky. Visual Studio použije nástroje MSBuild pro nasazení webu a MSBuild lze přizpůsobit udělat celou řadu dalších úloh během nasazení. Další informace najdete v tématu [profily publikování v sadě Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) a [pomocí nástroje MSBuild a Team Foundation Build](http://msbuildbook.com/) adresáře.
 
 Pomocí [funkci Publikovat Web](xref:tutorials/publish-to-azure-webapp-using-vs) nebo [integrovanou podporu Git](xref:host-and-deploy/azure-apps/azure-continuous-deployment), aplikace se dá nasadit přímo ze sady Visual Studio na Azure App Service. Visual Studio Team Services podporuje [průběžné nasazování do služby Azure App Service](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts).
 

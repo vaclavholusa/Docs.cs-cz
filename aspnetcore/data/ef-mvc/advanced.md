@@ -1,7 +1,7 @@
 ---
 title: "Jádro ASP.NET MVC s EF Core - rozšířené – 10 z 10"
 author: tdykstra
-description: "V tomto kurzu zavádí několik témat, které jsou vhodné pro zajímat, když přejdete mimo se základy vývoje webové aplikace ASP.NET, které používají základní Entity Framework."
+description: "Tento kurz představuje užitečné témata pro více než se základy vývoje webové aplikace ASP.NET Core, které používají Entity Framework Core."
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 458f2dc8a67f8c706d043f0d9d7cb7ce962e52ce
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: d4631765b3742a076f6d7f0dbf72770a9dbf5a09
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Pokročilá témata – Základní EF s kurz k ASP.NET MVC jádra (10 10)
 
@@ -41,7 +41,7 @@ Jak platí vždy při spuštění příkazů SQL ve webové aplikaci, je nutné 
 
 V *DepartmentsController.cs*v `Details` metoda, nahraďte kód, který načte oddělení s `FromSql` volání metody, jak je znázorněno v následující zvýrazněný kód:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_RawSQL&highlight=8,9,10,13)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_RawSQL&highlight=8,9,10,13)]
 
 Chcete-li ověřit, že nový kód funguje správně, vyberte **oddělení** kartu a potom **podrobnosti** pro jednu z oddělení.
 
@@ -53,11 +53,11 @@ Dříve jste vytvořili mřížka student statistiky o stránky, která vám uk�
 
 V *HomeController.cs*, nahraďte `About` metoda následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseRawSQL&highlight=3-32)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseRawSQL&highlight=3-32)]
 
 Přidat pomocí příkazu:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
 
 Spusťte aplikaci a přejděte na stránku o. Zobrazuje stejná data, která předtím.
 
@@ -71,9 +71,9 @@ Předpokládejme, že chcete provést globální změny v databázi, jako je nap
 
 V *CoursesContoller.cs*, přidejte metody UpdateCourseCredits pro třídy MetadataExchangeClientMode a HttpPost:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdateGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdateGet)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdatePost)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdatePost)]
 
 Pokud kontroler zpracovává požadavek třídy MetadataExchangeClientMode, nic nevrátí v `ViewData["RowsAffected"]`, a zobrazení zobrazí prázdné textové pole a tlačítko pro odeslání, jak je vidět na předchozím obrázku.
 
@@ -85,7 +85,7 @@ V **přidat novou položku** dialogové okno, klikněte na tlačítko **ASP.NET*
 
 V *Views/Courses/UpdateCourseCredits.cshtml*, nahraďte kód šablony s následujícím kódem:
 
-[!code-html[Main](intro/samples/cu/Views/Courses/UpdateCourseCredits.cshtml)]
+[!code-html[](intro/samples/cu/Views/Courses/UpdateCourseCredits.cshtml)]
 
 Spustit `UpdateCourseCredits` metoda výběrem **kurzy** kartě následným přidáním "/ UpdateCourseCredits" na konec adresy URL v adresním řádku prohlížeče (například: `http://localhost:5813/Courses/UpdateCourseCredits`). Zadejte číslo do textového pole:
 
@@ -182,7 +182,7 @@ Pro zpětnou datového modelu, včetně tříd entit z existující databáze, p
 
 [Třetí kurzu této série](sort-filter-page.md) ukazuje, jak napsat kód LINQ podle pevně kódováno názvy sloupců v `switch` příkaz. Se dvěma sloupci můžete vybírat funguje bez problémů, ale pokud máte mnoho sloupců kód může získat podrobné. Chcete-li tento problém vyřešit, můžete použít `EF.Property` metoda zadat název vlastnosti jako řetězec. Chcete-li vyzkoušet tento přístup, nahraďte `Index` metoda v `StudentsController` následujícím kódem.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DynamicLinq)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DynamicLinq)]
 
 ## <a name="next-steps"></a>Další kroky
 

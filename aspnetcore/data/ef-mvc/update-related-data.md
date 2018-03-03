@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 4085ca9340291f6ab594285360f3b65738699098
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: ac9dc6f08bbcd890c5848e7cc5cb4ee93713a559
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Aktualizace souvisejících dat – základní EF s kurz k ASP.NET MVC jádra (7 10)
 
@@ -35,27 +35,27 @@ Při vytvoření nové entity kurzu, musí mít relaci s existující oddělení
 
 V *CoursesController.cs*, odstraňte čtyři metody vytvoření a úpravy a nahraďte následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_CreateGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_CreateGet)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_CreatePost)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_CreatePost)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_EditGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_EditGet)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_EditPost)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_EditPost)]
 
 Po `Edit` metoda HttpPost vytvoření nové metody, která načte informace o oddělení pro rozevíracího seznamu.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_Departments)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_Departments)]
 
 `PopulateDepartmentsDropDownList` Metoda získá seznam všech oddělení seřazené podle názvu, vytvoří `SelectList` kolekci rozevíracího seznamu a předává kolekce pro zobrazení v `ViewBag`. Metodu je možné zadat nepovinný `selectedDepartment` parametr, který umožňuje volací kód, který zadejte položku, která bude vybrána při vykreslení rozevíracího seznamu. Zobrazení předá název "DepartmentID" `<select>` značky pomocné rutiny a pomocné rutiny pak zná k prohledání `ViewBag` objekt pro `SelectList` s názvem "DepartmentID".
 
 Třídy MetadataExchangeClientMode `Create` volání metod `PopulateDepartmentsDropDownList` metoda bez nastavení vybrané položky, protože na nový kurz není oddělení ještě vytvořit:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=3&name=snippet_CreateGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?highlight=3&name=snippet_CreateGet)]
 
 Třídy MetadataExchangeClientMode `Edit` metoda nastaví vybrané položky podle ID oddělení, které je již přiřazen ke kurzu upravovaný:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=15&name=snippet_EditGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?highlight=15&name=snippet_EditGet)]
 
 Metody HttpPost pro obě `Create` a `Edit` také obsahovat kód, který nastaví vybrané položky, když se znovu zobrazit stránku po chybě. Tím se zajistí, že když stránky se zobrazí znovu, chcete-li zobrazit chybová zpráva, ať oddělení nebyla vybrána zůstává vybrané.
 
@@ -63,27 +63,27 @@ Metody HttpPost pro obě `Create` a `Edit` také obsahovat kód, který nastaví
 
 Za účelem optimalizace výkonu podrobnosti o kurzu a odstranění stránky, přidejte `AsNoTracking` zavolá `Details` a třídy MetadataExchangeClientMode `Delete` metody.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=10&name=snippet_Details)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?highlight=10&name=snippet_Details)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=10&name=snippet_DeleteGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?highlight=10&name=snippet_DeleteGet)]
 
 ### <a name="modify-the-course-views"></a>Upravit zobrazení průběhu
 
 V *Views/Courses/Create.cshtml*, přidejte možnost "Vyberte oddělení" **oddělení** rozevíracího seznamu změňte popisek z **DepartmentID** k  **Oddělení**a přidejte ověřovací zprávu.
 
-[!code-html[Main](intro/samples/cu/Views/Courses/Create.cshtml?highlight=2-6&range=29-34)]
+[!code-html[](intro/samples/cu/Views/Courses/Create.cshtml?highlight=2-6&range=29-34)]
 
 V *Views/Courses/Edit.cshtml*, proveďte požadovanou změnu stejné pro pole oddělení, stejně jako ve *Create.cshtml*.
 
 Také v *Views/Courses/Edit.cshtml*, přidání pole číslo kurzu před **název** pole. Protože číslo kurzu je primární klíč, se zobrazí, ale nelze ho změnit.
 
-[!code-html[Main](intro/samples/cu/Views/Courses/Edit.cshtml?range=15-18)]
+[!code-html[](intro/samples/cu/Views/Courses/Edit.cshtml?range=15-18)]
 
 Již existuje skrytá pole (`<input type="hidden">`) pro číslo kurzu v okně Upravit. Přidání `<label>` pomocná značka nemá eliminují nutnost použití skryté pole, protože nezpůsobuje kurzu číslo, které má být součástí odeslaných dat, když uživatel klikne **Uložit** na **upravit** stránky.
 
 V *Views/Courses/Delete.cshtml*, přidání kurzu číslo pole v horní části a změňte ID oddělení název oddělení.
 
-[!code-html[Main](intro/samples/cu/Views/Courses/Delete.cshtml?highlight=14-19,36)]
+[!code-html[](intro/samples/cu/Views/Courses/Delete.cshtml?highlight=14-19,36)]
 
 V *Views/Courses/Details.cshtml*, proveďte požadovanou změnu stejné, který jste právě použili pro *Delete.cshtml*.
 
@@ -115,11 +115,11 @@ Při úpravách záznamu lektorem chcete mít možnost aktualizovat lektorem off
 
 V *InstructorsController.cs*, změňte kód v třídy MetadataExchangeClientMode `Edit` metody, které se načte entitu lektorem `OfficeAssignment` navigační vlastnost a volání `AsNoTracking`:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=9,10&name=snippet_EditGetOA)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=9,10&name=snippet_EditGetOA)]
 
 Nahraďte HttpPost `Edit` metoda následující kód pro zpracování přiřazení aktualizací office:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EditPostOA)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EditPostOA)]
 
 Kód provede následující akce:
 
@@ -129,7 +129,7 @@ Kód provede následující akce:
 
 -  Aktualizuje načtenou entitu lektorem hodnotami z vazače modelu. `TryUpdateModel` Přetížení umožňuje povolených vlastnosti, které chcete zahrnout. To brání přečerpání účtování, jak je popsáno v [druhý kurzu](crud.md).
 
-    <!-- Snippets don't play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
+    <!-- Snippets don't play well with <ul> [!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
     ```csharp
     if (await TryUpdateModelAsync<Instructor>(
@@ -155,7 +155,7 @@ Kód provede následující akce:
 
 V *Views/Instructors/Edit.cshtml*, přidat nové pole pro úpravy pobočce, na konci před **Uložit** tlačítko:
 
-[!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=30-34)]
+[!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=30-34)]
 
 Spuštění aplikace, vyberte **vyučující** a pak klikněte **upravit** na lektorem. Změna **umístění kanceláře** a klikněte na tlačítko **Uložit**.
 
@@ -177,11 +177,11 @@ Pokud chcete data k zobrazení seznamu zaškrtávacích políček, použijete t�
 
 Vytvoření *AssignedCourseData.cs* v *SchoolViewModels* složky a nahraďte existující kód následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/AssignedCourseData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/AssignedCourseData.cs)]
 
 V *InstructorsController.cs*, nahraďte třídy MetadataExchangeClientMode `Edit` metoda následujícím kódem. Změny se zvýrazněnou.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=10,17,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36&name=snippet_EditGetCourses)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=10,17,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36&name=snippet_EditGetCourses)]
 
 Kód přidá přes načítání pro `Courses` navigační vlastnost a volá novou `PopulateAssignedCourseData` metoda podat informace o použití pole zaškrtávací políčko `AssignedCourseData` zobrazit třídu modelu.
 
@@ -189,9 +189,9 @@ Kód `PopulateAssignedCourseData` metoda čte prostřednictvím všechny entity 
 
 Dál přidejte kód, který je spuštěn, když uživatel klikne na **Uložit**. Nahraďte `EditPost` metoda s následující kód a přidat nové metody, která aktualizuje `Courses` navigační vlastnost lektorem entity.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=1,3,12,13,25,39-40&name=snippet_EditPostCourses)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=1,3,12,13,25,39-40&name=snippet_EditPostCourses)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_UpdateCourses&highlight=1-31)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_UpdateCourses&highlight=1-31)]
 
 Podpis metody se liší od třídy MetadataExchangeClientMode teď `Edit` proto název metody změní z `EditPost` zpět na `Edit`.
 
@@ -199,17 +199,17 @@ Vzhledem k tomu, že zobrazení nemá kolekci entit kurzu, automaticky se nedá 
 
 Pokud žádná kontrola byly zaškrtnutá políčka, kód v `UpdateInstructorCourses` inicializuje `CourseAssignments` navigační vlastnost s prázdnou kolekci a vrátí:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_UpdateCourses&highlight=3-7)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_UpdateCourses&highlight=3-7)]
 
 Kód pak projde všechny kurzy v databázi a zkontroluje každý kurzu proti těm, které jsou přiřazeny k lektorem a ty, které byly vybrány v zobrazení. Pro usnadnění efektivní hledání, jsou uloženy pozdější dvě kolekce v `HashSet` objekty.
 
 Pokud je zaškrtnuté políčko kurzu ale během není v `Instructor.CourseAssignments` navigační vlastnost během je přidat do kolekce ve vlastnosti navigace.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=14-20&name=snippet_UpdateCourses)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=14-20&name=snippet_UpdateCourses)]
 
 Pokud není zaškrtnuté políčko kurzu, ale probíhá během `Instructor.CourseAssignments` navigační vlastnost, během je odebrána z navigační vlastnost.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=21-29&name=snippet_UpdateCourses)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=21-29&name=snippet_UpdateCourses)]
 
 ### <a name="update-the-instructor-views"></a>Aktualizujte zobrazení lektorem
 
@@ -219,7 +219,7 @@ V *Views/Instructors/Edit.cshtml*, přidat **kurzy** pole s pole zaškrtávacíc
 > [!NOTE] 
 > Když vložíte kód v sadě Visual Studio, změní se tak, aby dělí kód konce řádků.  Stisknutím kombinace kláves Ctrl + Z jednou vrátit zpět, automatického formátování.  To tak, aby zobrazují se jako to, co vidíte zde opraví konce řádků. Odsazení nemusí být úplně bez chyby, ale `@</tr><tr>`, `@:<td>`, `@:</td>`, a `@:</tr>` řádky musí být na jeden řádek znázorněné nebo získáte Chyba za běhu. Blok vybrané nový kód a stiskněte klávesu Tab, třikrát na řádek kód nového existující kód. Stav tohoto problému můžete zkontrolovat [zde](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html).
 
-[!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
+[!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
 Tento kód vytvoří tabulky jazyka HTML, který má tři sloupce. V každém sloupci je zaškrtávací políčko, za nímž následuje popisek, který se skládá z kurzu číslo a název. Všechna zaškrtávací políčka mají stejný název ("selectedCourses"), která informuje o vazač modelu jsou považovány za skupinu. Hodnota atributu každé zaškrtávací políčko je nastavena na hodnotu `CourseID`. Když je stránka vrácena, vazač modelu předá pole na řadič, který se skládá z `CourseID` hodnoty pro pouze zaškrtávací políčka, které jsou vybrány.
 
@@ -238,7 +238,7 @@ Změna některých během přiřazení a klikněte na Uložit. Provedené změny
 
 V *InstructorsController.cs*, odstraňte `DeleteConfirmed` metoda a vložte následující kód na příslušné místo.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=5-7,9-12&name=snippet_DeleteConfirmed)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=5-7,9-12&name=snippet_DeleteConfirmed)]
 
 Tento kód provede tyto změny:
 
@@ -250,7 +250,7 @@ Tento kód provede tyto změny:
 
 V *InstructorsController.cs*, odstraňování třídy MetadataExchangeClientMode a HttpPost `Create` metody a poté přidejte následující kód v místě jejich:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Create&highlight=3-5,12,14-22,29)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Create&highlight=3-5,12,14-22,29)]
 
 Tento kód je podobný postupu pro `Edit` metody s výjimkou které žádné kurzy jsou vybrány. Třídy MetadataExchangeClientMode `Create` volání metod `PopulateAssignedCourseData` metoda není, protože může být kurzy, ale ve vybrané pořadí zajistit pro prázdnou kolekci `foreach` smyčky v zobrazení (jinak kód zobrazení by throw výjimka odkazu s hodnotou null).
 
@@ -283,7 +283,7 @@ Pokud změníte `CourseAssignments` vlastnost tímto způsobem můžete odstrani
 
 V *Views/Instructor/Create.cshtml*, přidejte office umístění textového pole a zaškrtněte políčka pro kurzy před tlačítko pro odeslání. Jako v případě stránce Upravit [opravte formátování Pokud Visual Studio přeformátuje kód při vkládání](#notepad).
 
-[!code-html[Main](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
+[!code-html[](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
 
 Test spuštění aplikace a vytvoření lektorem. 
 

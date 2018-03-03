@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/razor-pages/razor-pages-convention-features
-ms.openlocfilehash: b34fd9ad8ae895087dba13f5ebcdcfd3fbb74667
-ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
+ms.openlocfilehash: 54834727db70668552b2a1007c8a9be3cfe2e6b7
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="razor-pages-route-and-app-convention-features-in-aspnet-core"></a>Syntaxe Razor stránky trasy a aplikace konvence funkce ASP.NET Core
 
@@ -40,14 +40,14 @@ Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpageso
 
 Ukázková aplikace přidá `{globalTemplate?}` šablonu trasy na všechny stránky v aplikaci:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Conventions/GlobalTemplatePageRouteModelConvention.cs?name=snippet1)]
+[!code-csharp[](razor-pages-convention-features/sample/Conventions/GlobalTemplatePageRouteModelConvention.cs?name=snippet1)]
 
 > [!NOTE]
 > `Order` Vlastnost `AttributeRouteModel` je nastaven na `0` (nula). Tím se zajistí, že tato šablona je daná prioritu pro první pozici hodnoty data trasy, pokud je zadána hodnota jedné směrovací. Příklad: Ukázka přidá `{aboutTemplate?}` šablonu trasy později v tomto tématu. `{aboutTemplate?}` Šablony je uveden `Order` z `1`. Když je stránka o požádali v `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 0`) a ne `RouteData.Values["aboutTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
 
 Možnosti stránky Razor, jako je například přidávání [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions), se přidají, když MVC je přidat do kolekce služby v `Startup.ConfigureServices`. Příklad, naleznete v části [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/razor-pages-convention-features/sample/).
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet1)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet1)]
 
 Požadavek vzorku o stránku v `localhost:5000/About/GlobalRouteValue` a zkontrolovat výsledek:
 
@@ -61,11 +61,11 @@ K předvedení tato a další konvence později v tomto tématu, obsahuje ukázk
 
 Použití ukázkové aplikace `AddHeaderAttribute` třída přidat hlavičku, `GlobalHeader`, na všechny stránky v aplikaci:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Conventions/GlobalHeaderPageApplicationModelConvention.cs?name=snippet1)]
+[!code-csharp[](razor-pages-convention-features/sample/Conventions/GlobalHeaderPageApplicationModelConvention.cs?name=snippet1)]
 
 *Startup.cs*:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet2)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet2)]
 
 Požadavek vzorku o stránku v `localhost:5000/About` a zkontrolovat hlavičky zobrazíte výsledek:
 
@@ -81,7 +81,7 @@ Použití [AddFolderRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.a
 
 Použití ukázkové aplikace `AddFolderRouteModelConvention` přidat `{otherPagesTemplate?}` šablona trasy pro stránky v *OtherPages* složky:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet3)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet3)]
 
 > [!NOTE]
 > `Order` Vlastnost `AttributeRouteModel` je nastaven na `1`. To zajistí, že šablona pro `{globalTemplate?}` (set dříve v tomto tématu) pro data trasy, která první hodnota pozice, pokud je zadána hodnota jedné směrovací přidělen s prioritou. Pokud v požadavku na stránku Page1 `/OtherPages/Page1/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 0`) a ne `RouteData.Values["otherPagesTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
@@ -96,7 +96,7 @@ Použití [AddPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.app
 
 Použití ukázkové aplikace `AddPageRouteModelConvention` přidat `{aboutTemplate?}` šablonu trasy na stránku o:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet4)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet4)]
 
 > [!NOTE]
 > `Order` Vlastnost `AttributeRouteModel` je nastaven na `1`. To zajistí, že šablona pro `{globalTemplate?}` (set dříve v tomto tématu) pro data trasy, která první hodnota pozice, pokud je zadána hodnota jedné směrovací přidělen s prioritou. Pokud v požadavku na stránku o `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 0`) a ne `RouteData.Values["aboutTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
@@ -111,13 +111,13 @@ Použití [AddPageRoute](/dotnet/api/microsoft.extensions.dependencyinjection.pa
 
 Ukázková aplikace vytvoří trasu k `/TheContactPage` pro *Contact.cshtml*:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet5)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet5)]
 
 Obraťte se na stránce také k dispozici na adrese `/Contact` přes jeho výchozí trasu.
 
 Vlastní trasy ukázkové aplikace, obraťte se na stránku umožňuje volitelný `text` segment směrování (`{text?}`). Stránka taky obsahuje této volitelné segmentu v jeho `@page` direktivy v případě, že návštěvník přistupuje na stránce na jeho `/Contact` trasy:
 
-[!code-cshtml[Main](razor-pages-convention-features/sample/Pages/Contact.cshtml?highlight=1)]
+[!code-cshtml[](razor-pages-convention-features/sample/Pages/Contact.cshtml?highlight=1)]
 
 Všimněte si, že adresa URL vygenerované **kontaktujte** odkaz na vykreslené stránce odráží aktualizované trasy:
 
@@ -135,7 +135,7 @@ Výchozí zprostředkovatel modelu stránky, který implementuje [IPageApplicati
 
 Příklady v této části najdete ukázkové aplikace používá `AddHeaderAttribute` třída, která je [ResultFilterAttribute](/dotnet/api/microsoft.aspnetcore.mvc.filters.resultfilterattribute), které se týkají hlavičky odpovědi:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Filters/AddHeader.cs?name=snippet1)]
+[!code-csharp[](razor-pages-convention-features/sample/Filters/AddHeader.cs?name=snippet1)]
 
 Ukázku pomocí konvencí, ukazuje, jak do atribut se vztahují na všechny stránky ve složce a na jednu stránku.
 
@@ -145,7 +145,7 @@ Použití [AddFolderApplicationModelConvention](/dotnet/api/microsoft.aspnetcore
 
 Ukázka demonstruje použití `AddFolderApplicationModelConvention` přidáním záhlaví, `OtherPagesHeader`, stránkám uvnitř *OtherPages* složky aplikace:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet6)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet6)]
 
 Požadavek ukázkové Page1 stránku v `localhost:5000/OtherPages/Page1` a zkontrolovat hlavičky zobrazíte výsledek:
 
@@ -157,7 +157,7 @@ Použití [AddPageApplicationModelConvention](/dotnet/api/microsoft.aspnetcore.m
 
 Ukázka demonstruje použití `AddPageApplicationModelConvention` přidáním záhlaví, `AboutHeader`, o stránku:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet7)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet7)]
 
 Požadavek vzorku o stránku v `localhost:5000/About` a zkontrolovat hlavičky zobrazíte výsledek:
 
@@ -167,7 +167,7 @@ Požadavek vzorku o stránku v `localhost:5000/About` a zkontrolovat hlavičky z
 
 [ConfigureFilter](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.configurefilter) nakonfiguruje zadaný filtr použít. Můžete implementovat třídu filtru, ale ukázková aplikace ukazuje, jak implementovat filtr ve výrazu lambda, které je implementované servisní jako objekt factory, který vrátí filtru:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet8)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet8)]
 
 Model aplikace stránky se používá k ověření pro segmenty, které vést ke stránce strany Page2 na relativní cestu *OtherPages* složky. Pokud podmínka úspěšně projde, se přidá hlavičku. Pokud ne, `EmptyFilter` platí.
 
@@ -183,11 +183,11 @@ Požadavek ukázkové strany Page2 stránku v `localhost:5000/OtherPages/Page2` 
 
 Ukázková aplikace obsahuje příklady použití [filtr vytváření](xref:mvc/controllers/filters#ifilterfactory) přidáním záhlaví, `FilterFactoryHeader`, se dvěma hodnotami stránkám aplikace:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet9)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet9)]
 
 *AddHeaderWithFactory.cs*:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Factories/AddHeaderWithFactory.cs?name=snippet1)]
+[!code-csharp[](razor-pages-convention-features/sample/Factories/AddHeaderWithFactory.cs?name=snippet1)]
 
 Požadavek vzorku o stránku v `localhost:5000/About` a zkontrolovat hlavičky zobrazíte výsledek:
 
@@ -246,7 +246,7 @@ Předpokládejme, že chcete změnit způsob, jakým jsou pojmenované metody po
 
 K vytvoření tohoto systému, dědí `DefaultPageApplicationModelProvider` třídy a přepsat [CreateHandlerModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.internal.defaultpageapplicationmodelprovider.createhandlermodel) metoda zadat vlastní logiky pro vyřešení [PageModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel) názvy obslužné rutiny. Ukázková aplikace se dozvíte, jak je to v jeho `CustomPageApplicationModelProvider` třídy:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/CustomPageApplicationModelProvider.cs?name=snippet1&highlight=1-2,45-46,64-68,78-85,87,92,106)]
+[!code-csharp[](razor-pages-convention-features/sample/CustomPageApplicationModelProvider.cs?name=snippet1&highlight=1-2,45-46,64-68,78-85,87,92,106)]
 
 Mezi nejdůležitější funkce třídy patří:
 
@@ -260,7 +260,7 @@ Mezi nejdůležitější funkce třídy patří:
 
 Zaregistrovat `CustomPageApplicationModelProvider` v `Startup` třídy:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet10)]
+[!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet10)]
 
 Model stránky v *Index.cshtml.cs* ukazuje, jak jsou změnit zásady vytváření názvů metoda obyčejnou obslužné rutiny pro stránky v aplikaci. Odeberou se běžném provozu "Na" předponu pojmenování použít s stránky Razor. Metoda, která inicializuje stav stránky teď jmenuje `Get`. Můžete zobrazit touto konvencí použít v celé aplikaci v případě, že otevřete kteréhokoli modelu stránky pro všechny stránky.
 
@@ -268,11 +268,11 @@ Každý z jiné metody spustit pomocí příkazu HTTP, který popisuje jeho zpra
 
 Všimněte si, že `Async` je volitelný mezi `DeleteAllMessages` a `DeleteMessageAsync`. Jsou oba asynchronní metody, ale můžete použít `Async` přípony nebo není; doporučujeme, abyste provedli. `DeleteAllMessages` Tady je použita pro demonstrační účely, ale doporučujeme pojmenovat tato metoda `DeleteAllMessagesAsync`. Neovlivní zpracování tohoto příkladu implementace, ale pomocí `Async` přípony volání na fakt, že se jedná o asynchronní metodu.
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Pages/Index.cshtml.cs?name=snippet1&highlight=1,6,16,29)]
+[!code-csharp[](razor-pages-convention-features/sample/Pages/Index.cshtml.cs?name=snippet1&highlight=1,6,16,29)]
 
 Poznamenejte si názvy obslužná rutina součástí *Index.cshtml* odpovídat `DeleteAllMessages` a `DeleteMessageAsync` metody obslužné rutiny:
 
-[!code-cshtml[Main](razor-pages-convention-features/sample/Pages/Index.cshtml?range=29-60&highlight=7-8,24-25)]
+[!code-cshtml[](razor-pages-convention-features/sample/Pages/Index.cshtml?range=29-60&highlight=7-8,24-25)]
 
 `Async` v názvu metoda obslužná rutina `DeleteMessageAsync` je rozdělen odhlašování pomocí `TryParseHandlerMethod` pro párování obslužné rutiny požadavku POST metodě. `asp-page-handler` Název `DeleteMessage` odpovídá metodu obslužné rutiny `DeleteMessageAsync`.
 
@@ -282,13 +282,13 @@ MVC [filtrů Akce](xref:mvc/controllers/filters#action-filters) ignorují pomoc�
 
 Filtr stránek ([IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter)) je filtr, který se vztahuje na stránky Razor. Ho obklopuje provádění metody obslužná rutina stránky. Umožňuje zpracovat vlastní kód ve fázích provádění metoda obslužná rutina stránky. Tady je příklad z ukázkové aplikace:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Filters/ReplaceRouteValueFilterAttribute.cs?name=snippet1)]
+[!code-csharp[](razor-pages-convention-features/sample/Filters/ReplaceRouteValueFilterAttribute.cs?name=snippet1)]
 
 Tento filtr vyhledává `globalTemplate` směrování hodnotu "TriggerValue" a záměna v "Zastaralá".
 
 `ReplaceRouteValueFilter` Atribut lze použít přímo na `PageModel`:
 
-[!code-csharp[Main](razor-pages-convention-features/sample/Pages/OtherPages/Page3.cshtml.cs?range=10-12&highlight=1)]
+[!code-csharp[](razor-pages-convention-features/sample/Pages/OtherPages/Page3.cshtml.cs?range=10-12&highlight=1)]
 
 Požadavek stránku Page3 z ukázkové aplikace s v `localhost:5000/OtherPages/Page3/TriggerValue`. Všimněte si, jak filtr nahradí hodnotu trasy:
 

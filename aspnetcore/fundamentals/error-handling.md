@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 1504e49d97c4e72a34597360ad05bd9116188b33
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: cab395645d46c56a1a89464a8e8e716a296a9637
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>Úvod do zpracování chyb v ASP.NET Core
 
@@ -28,7 +28,7 @@ Tento článek popisuje běžné appoaches pro zpracování chyb v aplikacích A
 
 Konfigurace aplikace pro zobrazení stránky, které jsou uvedeny podrobné informace o výjimkách, nainstalujte `Microsoft.AspNetCore.Diagnostics` NuGet balíček a přidat čáru, která [konfigurace metody ve třídě spuštění](startup.md):
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
 Uveďte `UseDeveloperExceptionPage` před veškerý middleware chcete zachytit výjimky, jako například `app.UseMvc`.
 
@@ -51,7 +51,7 @@ Tento požadavek nebyly k dispozici žádné soubory cookie, ale pokud neodpoví
 
 Je vhodné nakonfigurovat stránku obslužná rutina výjimky pro použití při není aplikace spuštěna `Development` prostředí.
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
 V aplikaci MVC nemáte uspořádání explicitně metody akce obslužnou rutinu chyby s atributy metody HTTP, jako například `HttpGet`. Použití explicitní příkazů může zabránit dosažení metodu některých požadavků.
 
@@ -77,7 +77,7 @@ Ve výchozím nastavení přidá tento middleware jednoduchý, textovém obsluž
 
 Middleware podporuje několik různých rozšiřující metody. Má výrazu lambda, jiné přijímá řetězec typ a formát obsahu.
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
 
 ```csharp
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
@@ -85,7 +85,7 @@ app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 
 Existují také metody rozšíření přesměrování. Jeden odešle klientovi 302 stavový kód a jeden vrátí původní stavový kód pro klienta, ale také provede obslužná rutina pro adresa URL pro přesměrování.
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");

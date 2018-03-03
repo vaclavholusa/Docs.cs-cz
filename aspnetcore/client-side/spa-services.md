@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: bd18d342de7c147e3588bd6daa3aebd68aa81c36
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c617f1a563b0eeccea0ab313bba8b90a4c947e28
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>Použití JavaScriptServices pro vytvoření jednostránkové aplikace pomocí ASP.NET Core
 
@@ -96,37 +96,37 @@ Nainstalujte následující:
 
 Pomocníci značky jsou vytvářeny zjistitelný prostřednictvím registrace oboru názvů v projektu *_ViewImports.cshtml* souboru:
 
-[!code-cshtml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/_ViewImports.cshtml?highlight=3)]
+[!code-cshtml[](../client-side/spa-services/sample/SpaServicesSampleApp/Views/_ViewImports.cshtml?highlight=3)]
 
 Tyto značky Pomocníci abstraktní rychle rozbor všech komunikaci přímo s nižší úrovně rozhraní API s využitím syntaxe jazyka HTML v zobrazení syntaxe Razor:
 
-[!code-cshtml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=5)]
+[!code-cshtml[](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=5)]
 
 ### <a name="the-asp-prerender-module-tag-helper"></a>`asp-prerender-module` Značky pomocné rutiny
 
 `asp-prerender-module` Značky pomocné rutiny, používá v předchozím příkladu kódu, provede *ClientApp/dist/main-server.js* na serveru pomocí Node.js. Pro přehlednost na saké *hlavní server.js* je artefakt úloha transpilation TypeScript JavaScript v souboru [Webpack](http://webpack.github.io/) proces sestavení. Definuje vstupní bod zástupce Webpack `main-server`; a traversal graf závislostí pro tento alias začíná na *ClientApp nebo spouštěcí server.ts* souboru:
 
-[!code-javascript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=53)]
+[!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=53)]
 
 V následujícím příkladu úhlová *ClientApp nebo spouštěcí server.ts* využívá soubor `createServerRenderer` funkce a `RenderResult` typ `aspnet-prerendering` npm balíček ke konfiguraci serveru vykreslování prostřednictvím Node.js. Značka jazyka HTML, které jsou určené pro vykreslování na straně serveru je předána volání funkce, vyřešte, které je zabalena v JavaScriptu silného typu `Promise` objektu. `Promise` Násobek objektu je, že asynchronně poskytuje kód HTML na stránku pro vkládání v elementu DOM na zástupný symbol.
 
-[!code-typescript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-34,79-)]
+[!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-34,79-)]
 
 ### <a name="the-asp-prerender-data-tag-helper"></a>`asp-prerender-data` Značky pomocné rutiny
 
 Při kombinaci s `asp-prerender-module` značky pomocné rutiny, `asp-prerender-data` značky pomocná lze předat kontextové informace ze zobrazení syntaxe Razor JavaScript na straně serveru. Například následující kód předá data uživatele `main-server` modul:
 
-[!code-cshtml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=9-12)]
+[!code-cshtml[](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=9-12)]
 
 Přijatého `UserName` argument serializován pomocí předdefinovaných serializátor JSON a je uložen v `params.data` objektu. V následujícím příkladu úhlová, data se používají k vytvoření přizpůsobené pozdravu v rámci `h1` element:
 
-[!code-typescript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,38-52,79-)]
+[!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,38-52,79-)]
 
 Poznámka: Názvy vlastností předaná Pomocníci značky jsou reprezentované pomocí **PascalCase** zápis. Který kontrastu jazyka JavaScript, kde jsou reprezentované stejné názvy vlastností s **camelCase**. Výchozí konfigurace serializace JSON je zodpovědná za tento rozdíl.
 
 Rozšířit na předchozí příklad kódu, data mohou být předána ze serveru do zobrazení pomocí hydrating `globals` vlastnost poskytnuté `resolve` funkce:
 
-[!code-typescript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,57-77,79-)]
+[!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,57-77,79-)]
 
 `postList` Pole definované uvnitř `globals` objekt je připojený k prohlížeče globální `window` objektu. Tato proměnná zvedání do globálního oboru eliminuje zdvojení úsilí, zejména v jak, se vztahuje k načítání stejná data jednou na serveru a znovu na straně klienta.
 
@@ -138,7 +138,7 @@ Rozšířit na předchozí příklad kódu, data mohou být předána ze serveru
 
 [Webpack Dev Middleware](https://webpack.github.io/docs/webpack-dev-middleware.html) zavádí zjednodušenou vývoj pracovního postupu při němž Webpack sestavení prostředky na vyžádání. Middleware automaticky zkompiluje a slouží prostředky na straně klienta, když je znovu na stránce v prohlížeči. Alternativní způsob je ručně vyvolání Webpack pomocí skriptu buildu npm projektu při změně závislost třetích stran nebo vlastní kód. Npm sestavení skriptu *package.json* souboru je znázorněno v následujícím příkladu:
 
-[!code-json[Main](../client-side/spa-services/sample/SpaServicesSampleApp/package.json?range=5)]
+[!code-json[](../client-side/spa-services/sample/SpaServicesSampleApp/package.json?range=5)]
 
 ### <a name="prerequisites"></a>Požadavky
 
@@ -153,13 +153,13 @@ Nainstalujte následující:
 
 Middleware Webpack vývojářů je zaregistrovat do kanálu požadavku HTTP přes následující kód do *Startup.cs* souboru `Configure` metoda:
 
-[!code-csharp[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=webpack-middleware-registration&highlight=4)]
+[!code-csharp[](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=webpack-middleware-registration&highlight=4)]
 
 `UseWebpackDevMiddleware` Před musí být volána metoda rozšíření [registrace hostování statických souborů](xref:fundamentals/static-files) prostřednictvím `UseStaticFiles` metoda rozšíření. Z bezpečnostních důvodů se zaregistrujte middleware jenom v případě, že aplikace běží v režimu pro vývoj.
 
 *Webpack.config.js* souboru `output.publicPath` vlastnost informuje middleware můžete sledovat `dist` složku pro změny:
 
-[!code-javascript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=6,13-16)]
+[!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=6,13-16)]
 
 <a name="hot-module-replacement"></a>
 
@@ -190,7 +190,7 @@ Stejně jako se platí [Webpack Dev Middleware](#webpack-dev-middleware), `UseWe
 
 *Webpack.config.js* musí definovat souboru `plugins` pole, i když je ponechán prázdný:
 
-[!code-javascript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=6,25)]
+[!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=6,25)]
 
 Po načtení aplikace v prohlížeči, karta konzoly nástroje developer tools poskytuje potvrzení HMR aktivace:
 
@@ -217,7 +217,7 @@ Nainstalujte následující:
 
 Metody rozšíření s názvem `MapSpaFallbackRoute` je používán `Configure` metoda:
 
-[!code-csharp[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=mvc-routing-table&highlight=7-9)]
+[!code-csharp[](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=mvc-routing-table&highlight=7-9)]
 
 Tip: Trasy jsou vyhodnocovány v pořadí, ve kterém máte nakonfigurované. V důsledku toho `default` trasy v předchozím příkladu kódu je použita jako první porovnávání vzorů.
 
@@ -244,7 +244,7 @@ Zobrazí se seznam dostupných šablon SPA:
 | Jádro ASP.NET MVC s React.js a – obnovení  | reactredux | [C#]     | Web/MVC/SPA |
 | Jádro ASP.NET MVC s Vue.js              | VUE        | [C#]     | Web/MVC/SPA | 
 
-Pokud chcete vytvořit nový projekt pomocí jedné z šablon SPA, obsahovat **krátký název** šablony ve `dotnet new` příkaz. Následující příkaz vytvoří úhlová aplikace s ASP.NET MVC základní nakonfigurovaná na straně serveru:
+Pokud chcete vytvořit nový projekt pomocí jedné z šablon SPA, obsahovat **krátký název** šablony v [dotnet nové](/dotnet/core/tools/dotnet-new) příkaz. Následující příkaz vytvoří úhlová aplikace s ASP.NET MVC základní nakonfigurovaná na straně serveru:
 
 ```console
 dotnet new angular
@@ -262,7 +262,7 @@ Existují dva režimy primární runtime konfigurace:
     * Vyloučí zdroj mapy.
     * Optimalizuje kód klienta prostřednictvím sdružování a minimalizace.
 
-ASP.NET Core používá proměnnou prostředí s názvem `ASPNETCORE_ENVIRONMENT` k uložení konfigurace režimu. V tématu ** [nastavení prostředí](xref:fundamentals/environments#setting-the-environment) ** Další informace.
+ASP.NET Core používá proměnnou prostředí s názvem `ASPNETCORE_ENVIRONMENT` k uložení konfigurace režimu. V tématu  **[nastavení prostředí](xref:fundamentals/environments#setting-the-environment)**  Další informace.
 
 ### <a name="running-with-net-core-cli"></a>Spuštění s .NET Core rozhraní příkazového řádku
 
@@ -282,7 +282,7 @@ Spuštění aplikace na místním hostiteli podle požadavků [režim konfigurac
 
 ### <a name="running-with-visual-studio-2017"></a>Běh Visual Studio 2017
 
-Otevřete *.csproj* souboru vygenerované `dotnet new` příkaz. Požadované balíčky NuGet a npm se automaticky obnoví po projektem otevřeným. Tento proces obnovení může trvat několik minut a aplikace je připraven ke spuštění po dokončení. Kliknutím na zelené tlačítko spustit nebo klikněte na tlačítko `Ctrl + F5`, a prohlížeči se otevře na cílovou stránku aplikace. Spuštění aplikace na místním hostiteli podle požadavků [režimu runtime konfigurace](#runtime-config-mode). 
+Otevřete *.csproj* souboru vygenerované [dotnet nové](/dotnet/core/tools/dotnet-new) příkaz. Požadované balíčky NuGet a npm se automaticky obnoví po projektem otevřeným. Tento proces obnovení může trvat několik minut a aplikace je připraven ke spuštění po dokončení. Kliknutím na zelené tlačítko spustit nebo klikněte na tlačítko `Ctrl + F5`, a prohlížeči se otevře na cílovou stránku aplikace. Spuštění aplikace na místním hostiteli podle požadavků [režimu runtime konfigurace](#runtime-config-mode). 
 
 <a name="app-testing"></a>
 
@@ -292,7 +292,7 @@ SpaServices šablony jsou předem nakonfigurované ke spuštění testů na stra
 
 Jako příklad použijeme úhlová aplikace, dvě Jasmine testovacích případů již pro jsou k dispozici `CounterComponent` v *counter.component.spec.ts* souboru:
 
-[!code-typescript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
+[!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
 
 Otevřete příkazový řádek v kořenovém adresáři projektu a spusťte následující příkaz:
 
@@ -302,7 +302,7 @@ npm test
 
 Skript spustí nástroj test runner Karma, který čte definované v nastavení *karma.conf.js* souboru. Kromě jiných nastavení *karma.conf.js* identifikuje testovacích souborů, které mají být provedeny prostřednictvím jeho `files` pole:
 
-[!code-javascript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/test/karma.conf.js?range=4-5,8-11)]
+[!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/test/karma.conf.js?range=4-5,8-11)]
 
 <a name="app-publishing"></a>
 
@@ -310,7 +310,7 @@ Skript spustí nástroj test runner Karma, který čte definované v nastavení 
 
 Kombinování generovaného klienta prostředky a publikovaná ASP.NET Core artefakty do balíčku připravená k nasazení může být náročná. Naštěstí SpaServices orchestruje procesu celé publikace s vlastní MSBuild cíl s názvem `RunWebpack`:
 
-[!code-xml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/SpaServicesSampleApp.csproj?range=31-45)]
+[!code-xml[](../client-side/spa-services/sample/SpaServicesSampleApp/SpaServicesSampleApp.csproj?range=31-45)]
 
 Cíl MSBuild má následující zodpovědnosti:
 1. Obnovení balíčků npm

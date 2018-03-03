@@ -1,5 +1,5 @@
 ---
-title: "Povolení ověřování pomocí Facebook, Google a dalších externích zprostředkovatelů"
+title: "Facebook, Google a externího poskytovatele ověřování v ASP.NET Core"
 author: rick-anderson
 description: "Tento kurz ukazuje, jak sestavit ASP.NET Core 2.x aplikaci pomocí externí zprostředkovatelé ověřování OAuth 2.0."
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 475656b03b0d1a3e79e78e6cf3816f091ccd640b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 76433f814d6850a449434c29eb0bd27570ce193a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
-# <a name="enabling-authentication-using-facebook-google-and-other-external-providers"></a>Povolení ověřování pomocí Facebook, Google a dalších externích zprostředkovatelů
+# <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Facebook, Google a externího poskytovatele ověřování v ASP.NET Core
 
 <a name="security-authentication-social-logins"></a>
 

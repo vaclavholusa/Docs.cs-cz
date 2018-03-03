@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: 6fefbd9b28d481184e358e7d66af68d112c63696
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a8e19d096fb66b23920ca012cc96e05b4bdfc000
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="configure-portable-object-localization-with-orchard-core"></a>Lokalizace přenosné objekt nakonfigurovat Orchard jádra
 
@@ -74,21 +74,21 @@ Přidat odkaz na `OrchardCore.Localization.Core` balíček NuGet. Je k dispozici
 
 *.Csproj* soubor nyní obsahuje řádek podobný následujícímu (číslo verze se liší):
 
-[!code-xml[Main](localization/sample/POLocalization/POLocalization.csproj?range=9)]
+[!code-xml[](localization/sample/POLocalization/POLocalization.csproj?range=9)]
 
 ### <a name="registering-the-service"></a>Registrace služby
 
 Přidat požadované služby, aby `ConfigureServices` metodu *Startup.cs*:
 
-[!code-csharp[Main](localization/sample/POLocalization/Startup.cs?name=snippet_ConfigureServices&highlight=4-21)]
+[!code-csharp[](localization/sample/POLocalization/Startup.cs?name=snippet_ConfigureServices&highlight=4-21)]
 
 Přidejte požadované middlewaru, který má `Configure` metodu *Startup.cs*:
 
-[!code-csharp[Main](localization/sample/POLocalization/Startup.cs?name=snippet_Configure&highlight=15)]
+[!code-csharp[](localization/sample/POLocalization/Startup.cs?name=snippet_Configure&highlight=15)]
 
 Přidejte následující kód do zobrazení Razor výběru. *About.cshtml* se používá v tomto příkladu.
 
-[!code-cshtml[Main](localization/sample/POLocalization/Views/Home/About.cshtml)]
+[!code-cshtml[](localization/sample/POLocalization/Views/Home/About.cshtml)]
 
 `IViewLocalizer` Instance je vložit a použita k převodu text "Hello, world!".
 
@@ -96,7 +96,7 @@ Přidejte následující kód do zobrazení Razor výběru. *About.cshtml* se po
 
 Vytvořte soubor s názvem  *<culture code>.po* v kořenové složce aplikace. V tomto příkladu je název souboru *fr.po* vzhledem k tomu, že se používá francouzštině:
 
-[!code-text[Main](localization/sample/POLocalization/fr.po)]
+[!code-text[](localization/sample/POLocalization/fr.po)]
 
 Tento soubor obsahuje řetězec přeložit i řetězec francouzština přeložit. Překlady vraťte se k jejich nadřazené jazykové verzi, v případě potřeby. V tomto příkladu *fr.po* soubor se používá, pokud je požadovaná jazyková verze `fr-FR` nebo `fr-CA`.
 
@@ -133,7 +133,7 @@ Ne všechny jazyky sdílet stejná pravidla. Tento koncept je znázorněn s Čes
 
 Vytvořte `cs.po` následujícím způsobem a Všimněte si, jak pluralizační potřebuje tři různé překlady:
 
-[!code-text[Main](localization/sample/POLocalization/cs.po)]
+[!code-text[](localization/sample/POLocalization/cs.po)]
 
 Přijmout České lokalizace, přidejte `"cs"` do seznamu podporovaných jazykových verzí v `ConfigureServices` metoda:
 
@@ -206,7 +206,7 @@ Pomocí `msgctxt` nastavit jako takový, text dochází k převodu při navigaci
 
 Pokud žádná konkrétní položka je nalezena shoda s kontextem daný soubor, Orchard základní nouzový mechanismus, který vyhledá odpovídající soubor SP bez kontextu. Za předpokladu, že se žádný konkrétní soubor kontext definované pro *Views/Home/Contact.cshtml*, navigační k `/Home/Contact?culture=fr-FR` načte soubor SP jako například:
 
-[!code-text[Main](localization/sample/POLocalization/fr.po)]
+[!code-text[](localization/sample/POLocalization/fr.po)]
 
 ### <a name="changing-the-location-of-po-files"></a>Změna umístění souborů PO
 

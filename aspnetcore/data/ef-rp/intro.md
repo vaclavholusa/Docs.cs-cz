@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: f53697fc005352da781e88fce7ebfbe4cc93d3f6
-ms.sourcegitcommit: 725cb18ad23013e15d3dbb527958481dee79f9f8
+ms.openlocfilehash: 7aaedcd8cb1050884d308c2e81506682e18b78be
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Začínáme s stránky Razor a Entity Framework Core pomocí sady Visual Studio (1 8)
 
@@ -98,7 +98,7 @@ V následujících částech se vytvoří třídu pro každé z nich o těchto e
 
 Vytvoření *modely* složky. V *modely* složky, vytvořte soubor třídy s názvem *Student.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
 
 `ID` Vlastnost stane sloupec primárního klíče tabulky databáze (databáze), která odpovídá této třídy. Ve výchozím nastavení, EF základní interpretuje vlastnost s názvem `ID` nebo `classnameID` jako primární klíč.
 
@@ -112,7 +112,7 @@ Pokud navigační vlastnost může obsahovat více entit, navigační vlastnost 
 
 V *modely* složku vytvořit *Enrollment.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
 
 `EnrollmentID` Vlastnost je primární klíč. Používá tato entita `classnameID` vzor místo `ID` jako `Student` entity. Vývojáři obvykle zvolte jeden vzor a použít ho v rámci datového modelu. Novější kurzu pomocí ID bez classname se zobrazí usnadňují implementace dědičnosti v datovém modelu.
 
@@ -130,7 +130,7 @@ Vlastnost EF základní interpretuje jako cizí klíč, pokud je název `<naviga
 
 V *modely* složku vytvořit *Course.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
 
 `Enrollments` Je navigační vlastnost. A `Course` entity může souviset s libovolný počet `Enrollment` entity.
 
@@ -144,7 +144,7 @@ Ve složce projektu vytvořte složku s názvem *Data*.
 
 V *Data* vytvořit složku *SchoolContext.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
 
 Tento kód vytvoří `DbSet` vlastnosti pro každou sadu entit. V terminologii EF jádra:
 
@@ -155,7 +155,7 @@ Tento kód vytvoří `DbSet` vlastnosti pro každou sadu entit. V terminologii E
 
 Při vytváření databáze EF základní vytvoří tabulek, které jsou stejné jako názvy `DbSet` názvy vlastností. Názvy vlastností pro kolekce jsou obvykle množném čísle (studenty spíše než Student). Vývojáři Nesouhlasím o tom, jestli by měla být názvy tabulek množném čísle. Pro tyto kurzy je výchozí chování přepsat zadáním názvů singulární tabulek v DbContext. Pokud chcete zadat názvy singulární tabulek, přidejte následující zvýrazněný kód:
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
 
 ## <a name="register-the-context-with-dependency-injection"></a>Zaregistrovat kontext vkládání závislostí
 
@@ -163,13 +163,13 @@ Zahrnuje ASP.NET Core [vkládání závislostí](xref:fundamentals/dependency-in
 
 K registraci `SchoolContext` jako služby, otevřete *Startup.cs*a přidejte zvýrazněné řádky, které se `ConfigureServices` metoda.
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
 
 Název připojovacího řetězce, je předaná do kontextu voláním metody na `DbContextOptionsBuilder` objektu. Pro místní vývoj [ASP.NET Core konfigurační systém](xref:fundamentals/configuration/index) čte připojovací řetězec z *appSettings.JSON určený* souboru.
 
 Přidat `using` příkazy pro `ContosoUniversity.Data` a `Microsoft.EntityFrameworkCore` obory názvů. Sestavte projekt.
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_Usings)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_Usings)]
 
 Otevřete *appSettings.JSON určený* souboru a přidat připojovací řetězec, jak je znázorněno v následujícím kódu:
 
@@ -187,7 +187,7 @@ Základní EF vytvoří prázdná databáze. V této části *počáteční hodn
 
 V *Data* složky, vytvořte nový soubor třídy s názvem *DbInitializer.cs* a přidejte následující kód:
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
 Kód kontroluje, zda existují jakékoli studenty v databázi. Pokud nejsou žádné studenty v databázi, databázi osadit testovacích datech. Načte testovací data do pole místo `List<T>` kolekce za účelem optimalizace výkonu.
 
@@ -201,7 +201,7 @@ V *Program.cs*, změnit `Main` metoda proveďte následující:
 
 Následující kód ukazuje aktualizovaný *Program.cs* souboru.
 
-[!code-csharp[Main](intro/samples/cu/ProgramOriginal.cs?name=snippet)]
+[!code-csharp[](intro/samples/cu/ProgramOriginal.cs?name=snippet)]
 
 Při prvním spuštění aplikace, databáze se vytvoří a nasadí se testovací data. Při aktualizaci datového modelu:
 * Odstranění databáze.
@@ -226,7 +226,7 @@ Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Utils
 
 Předchozí příkaz přidá do souboru *.csproj balíčky NuGet:
 
-[!code-csharp[Main](intro/samples/cu/ContosoUniversity1_csproj.txt?highlight=7-8)]
+[!code-csharp[](intro/samples/cu/ContosoUniversity1_csproj.txt?highlight=7-8)]
 
 <a name="scaffold"></a>
 ## <a name="scaffold-the-model"></a>Vygenerované uživatelské rozhraní modelu
@@ -310,7 +310,7 @@ Asynchronní kódu v době běhu zavést malé množství režijní náklady. Pr
 
 V následujícím kódu `async` – klíčové slovo, `Task<T>` vrátit hodnotu, `await` – klíčové slovo, a `ToListAsync` metoda zkontrolujte kód provést asynchronně.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_ScaffoldedIndex)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_ScaffoldedIndex)]
 
 * `async` – Klíčové slovo instruuje kompilátor, aby:
 

@@ -7,7 +7,7 @@ Vyhledejte `Movies` řadiče a podržte ukazatel myši nad **upravit** odkaz zob
 
 **Upravit**, **podrobnosti**, a **odstranit** základní MVC ukotvení značky Pomocník generované odkazy *Views/Movies/Index.cshtml* souboru.
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexOriginal.cshtml?highlight=1-3&range=46-50)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexOriginal.cshtml?highlight=1-3&range=46-50)]
 
 [Pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) umožňují, aby se kód na straně serveru v souborech Razor podílel na vytváření a vykreslování prvků HTML. Ve výše, kódu `AnchorTagHelper` dynamicky vygeneruje HTML `href` hodnota atributu z id metoda a směrování akce kontroleru. Používáte **zobrazit zdroj** z oblíbeném prohlížeči nebo použijte nástrojů pro vývojáře prozkoumat vygenerovaný kód. Část generovaný kód jazyka HTML, je zobrazena níže:
 
@@ -21,7 +21,7 @@ Vyhledejte `Movies` řadiče a podržte ukazatel myši nad **upravit** odkaz zob
 
 Odvolat formát [směrování](xref:mvc/controllers/routing) nastavit *Startup.cs* souboru:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 
 Přeloží ASP.NET Core `http://localhost:1234/Movies/Edit/4` do žádost, aby `Edit` metody akce `Movies` řadiče s parametrem `Id` 4. (Metody kontroleru jsou také známé jako metody akce.)
 
@@ -29,41 +29,41 @@ Přeloží ASP.NET Core `http://localhost:1234/Movies/Edit/4` do žádost, aby `
 
 Otevřete `Movies` řadiče a prozkoumat dva `Edit` metody akce. Následující kód ukazuje `HTTP GET Edit` metodu, která načte film a naplní formuláře upravit vygenerované *Edit.cshtml* souboru nástroje Razor.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit1)]
 
 Následující kód ukazuje `HTTP POST Edit` metoda, která zpracovává odeslaných film hodnoty:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
 
 `[Bind]` Atribut je jedním ze způsobů pro ochranu proti [typu overpost](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). Vlastnosti v by měl obsahovat jenom `[Bind]` atribut, který chcete změnit. V tématu [chránit řadiči z přečerpání příspěvků](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application) Další informace. [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/) poskytnout alternativní způsob zabráníte přečerpání účtování.
 
 Všimněte si, druhý `Edit` předchází metody akce `[HttpPost]` atribut.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2&highlight=4)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2&highlight=4)]
 
 `HttpPost` Atribut určuje, že to `Edit` může být volána metoda *pouze* pro `POST` požadavky. Je možné aplikovat `[HttpGet]` atribut prvního upravit metodu, ale není nutné protože `[HttpGet]` je výchozí.
 
 `ValidateAntiForgeryToken` Atribut se používá ke [ochraně před paděláním požadavku](xref:security/anti-request-forgery) a je spárován k tokenu proti zfalšování vygenerované v souboru zobrazení upravit (*Views/Movies/Edit.cshtml*). Upravit zobrazení souboru vygeneruje token proti padělání s [pomocná značku formuláře](xref:mvc/views/working-with-forms).
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/Edit.cshtml?range=9)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/Edit.cshtml?range=9)]
 
 [Pomocná značku formuláře](xref:mvc/views/working-with-forms) generuje skryté token proti padělání, který se musí shodovat `[ValidateAntiForgeryToken]` vygenerovat token proti padělání v `Edit` metoda filmy řadiče. Další informace najdete v tématu [požadavek proti padělání](xref:security/anti-request-forgery).
 
 `HttpGet Edit` Metoda přebírá film `ID` parametr vyhledává film používající rozhraní Entity Framework `SingleOrDefaultAsync` metoda a vrátí vybraného videa na zobrazení pro úpravy. Pokud nelze nalézt film, `NotFound` (HTTP 404) je vrácen.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit1)]
 
 Při generování uživatelského rozhraní systému vytvoření zobrazení pro úpravy, zkontrolován `Movie` třídy a vytvořený kód k vykreslení `<label>` a `<input>` prvky pro každou vlastnost třídy. Následující příklad ukazuje zobrazení úpravy, který byl vytvořen v sadě Visual Studio generování uživatelského rozhraní systému:
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/EditCopy.cshtml?highlight=1)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/EditCopy.cshtml?highlight=1)]
 
-Všimněte si, jak se má zobrazit šablonu `@model MvcMovie.Models.Movie` příkaz v horní části souboru. `@model MvcMovie.Models.Movie`Určuje, že zobrazení očekává, že model pro zobrazení šablony být typu `Movie`.
+Všimněte si, jak se má zobrazit šablonu `@model MvcMovie.Models.Movie` příkaz v horní části souboru. `@model MvcMovie.Models.Movie` Určuje, že zobrazení očekává, že model pro zobrazení šablony být typu `Movie`.
 
 Automaticky generovaný kód používá několik značky pomocné metody k zjednodušení kód HTML. - [Popisek značky pomocná](xref:mvc/views/working-with-forms) zobrazí název pole ("Title", "ReleaseDate", "Genre" nebo "Cena"). [Vstupní značka pomocná](xref:mvc/views/working-with-forms) vykreslí HTML `<input>` elementu. [Pomocná rutina pro ověření značky](xref:mvc/views/working-with-forms) zobrazí všechny zprávy ověření přidružené k této vlastnosti.
 
 Spusťte aplikaci a přejděte do `/Movies` adresy URL. Klikněte na tlačítko **upravit** odkaz. V prohlížeči zobrazte zdroj pro stránku. Generovaný kód HTML pro `<form>` element jsou uvedeny níže.
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/edit_view_source.html?highlight=1,6,10,17,24,28)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/edit_view_source.html?highlight=1,6,10,17,24,28)]
 
 `<input>` Prvky jsou v `HTML <form>` element jejichž `action` k vystavování příspěvků na nastavený atribut `/Movies/Edit/id` adresy URL. Data formuláře budou odeslány na server při `Save` po kliknutí na tlačítko. Poslední řádek před uzavírací `</form>` ukazuje skrytého elementu [XSRF](xref:security/anti-request-forgery) token vygenerované [pomocná značku formuláře](xref:mvc/views/working-with-forms).
 
@@ -71,7 +71,7 @@ Spusťte aplikaci a přejděte do `/Movies` adresy URL. Klikněte na tlačítko 
 
 Následující seznam uvádí `[HttpPost]` verzi `Edit` metody akce.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
 
 `[ValidateAntiForgeryToken]` Ověří Atribut skrytého [XSRF](xref:security/anti-request-forgery) token generované generátor token proti padělání v [pomocná značku formuláře](xref:mvc/views/working-with-forms)
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/nano-server
-ms.openlocfilehash: 4fc5f6874f86130da9f66d13778516d984ff8b46
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3f234c84d2354a312ad6136b43d8c29aa346ae10
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>Jádro ASP.NET se službou IIS na Nano Server
 
@@ -65,7 +65,7 @@ $nanoServerSession = New-PSSession -ComputerName $nanoServerIpAddress -Credentia
 Enter-PSSession $nanoServerSession
 ```
 
-Úspěšné připojení výsledků v řádku s formátu vyhledávání jako:`[192.168.1.10]: PS C:\Users\Administrator\Documents>`
+Úspěšné připojení výsledků v řádku s formátu vyhledávání jako: `[192.168.1.10]: PS C:\Users\Administrator\Documents>`
 
 ## <a name="creating-a-file-share"></a>Vytvoření sdílené složky
 
@@ -102,9 +102,9 @@ Install-NanoServerPackage -Name Microsoft-NanoServer-IIS-Package
 
 Chcete-li rychle ověřit, pokud služba IIS je nastavena správně, můžete navštívit adresu URL `http://192.168.1.10/` a měla by se zobrazit úvodní stránku. Pokud je nainstalována služba IIS, volat web `Default Web Site` naslouchá na portu 80 se vytvoří ve výchozím nastavení.
 
-## <a name="installing-the-aspnet-core-module-ancm"></a>Instalace modulu ASP.NET Core (ANCM)
+## <a name="install-the-aspnet-core-module"></a>Instalace modulu ASP.NET Core
 
-Základní modul ASP.NET je službu IIS 7.5 + modul, který je zodpovědný za správu proces naslouchacího procesu ASP.NET Core HTTP a na požadavky na proxy pro procesy, které spravuje. V tuto chvíli je ruční proces instalace technologie ASP.NET základní modul pro službu IIS. Budete muset nainstalovat [.NET jádra Windows serveru, který hostuje sady](https://download.microsoft.com/download/B/1/D/B1D7D5BF-3920-47AA-94BD-7A6E48822F18/DotNetCore.2.0.0-WindowsHosting.exe) na běžný (ne Nano) počítače. Po instalaci sady regulární počítače, musíte zkopírujte následující soubory do sdílené složky, kterou jsme vytvořili předtím.
+Základní modul ASP.NET je službu IIS 7.5 + modul, který je zodpovědný za správu proces naslouchacího procesu ASP.NET Core HTTP a na požadavky na proxy pro procesy, které spravuje. V tuto chvíli je ruční proces instalace technologie ASP.NET základní modul pro službu IIS. Nainstalujte [.NET jádra Windows serveru, který hostuje sady](https://aka.ms/dotnetcore-2-windowshosting) na běžný (ne Nano) počítače. Po instalaci sady regulární počítač, zkopírujte následující soubory do sdílené složky, kterou jsme vytvořili předtím.
 
 Na server regular (ne Nano) se službou IIS spusťte následující příkazy pro kopírování:
 
@@ -124,39 +124,7 @@ Copy-Item -Path C:\PublishedApps\AspNetCoreSampleForNano\aspnetcore_schema.xml -
 
 Spusťte následující skript v relaci vzdálené plochy:
 
-```PowerShell
-# Backup existing applicationHost.config
-Copy-Item -Path C:\Windows\System32\inetsrv\config\applicationHost.config -Destination  C:\Windows\System32\inetsrv\config\applicationHost_BeforeInstallingANCM.config
-
-Import-Module IISAdministration
-
-# Initialize variables
-$aspNetCoreHandlerFilePath="C:\windows\system32\inetsrv\aspnetcore.dll"
-Reset-IISServerManager -confirm:$false
-$sm = Get-IISServerManager
-
-# Add AppSettings section 
-$sm.GetApplicationHostConfiguration().RootSectionGroup.Sections.Add("appSettings")
-
-# Set Allow for handlers section
-$appHostconfig = $sm.GetApplicationHostConfiguration()
-$section = $appHostconfig.GetSection("system.webServer/handlers")
-$section.OverrideMode="Allow"
-
-# Add aspNetCore section to system.webServer
-$sectionaspNetCore = $appHostConfig.RootSectionGroup.SectionGroups["system.webServer"].Sections.Add("aspNetCore")
-$sectionaspNetCore.OverrideModeDefault = "Allow"
-$sm.CommitChanges()
-
-# Configure globalModule
-Reset-IISServerManager -confirm:$false
-$globalModules = Get-IISConfigSection "system.webServer/globalModules" | Get-IISConfigCollection
-New-IISConfigCollectionElement $globalModules -ConfigAttribute @{"name"="AspNetCoreModule";"image"=$aspNetCoreHandlerFilePath}
-
-# Configure module
-$modules = Get-IISConfigSection "system.webServer/modules" | Get-IISConfigCollection
-New-IISConfigCollectionElement $modules -ConfigAttribute @{"name"="AspNetCoreModule"}
-```
+[!code-powershell[](nano-server/enable-aspnetcoremodule.ps1)]
 
 > [!NOTE]
 > Odstraňte soubory *aspnetcore.dll* a *aspnetcore_schema.xml* ze sdílené složky po předchozím kroku.

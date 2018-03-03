@@ -9,18 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/adding-model
-ms.openlocfilehash: 81511b05a3cc11a58b93452d3c6e5305e7ee4357
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 180258444c3cca169470fd5f13d0d0fcec539f5f
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 [!INCLUDE[adding-model1](../../includes/mvc-intro/adding-model1.md)]
 
 * Přidání třídy k *modely* složku s názvem *Movie.cs*.
 * Přidejte následující kód, který *Models/Movie.cs* souboru:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 `ID` Pole je vyžadováno pro databázi pro primární klíč. 
 
@@ -30,20 +30,20 @@ Vytvořit aplikaci pro ověření nemáte žádné chyby a nakonec jste přidali
 
 - Přidejte následující zvýrazněnou balíčků NuGet *MvcMovie.csproj* souboru:
              
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
 
 - Uložte tento soubor a vyberte **obnovení** k **informace** zpráva "Neexistují nevyřešené závislosti".
 - Vytvoření *Models/MvcMovieContext.cs* souboru a přidejte následující `MvcMovieContext` třídy:
 
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
    
 - Otevřete *Startup.cs* souboru a přidejte dva direktiv Using:
 
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
 
 - Přidat kontext databáze, který má *Startup.cs* souboru:
 
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
 
   Tato hodnota informuje Entity Framework, které třídy modelu jsou zahrnuty v datovém modelu. Definujete jeden *sady entit* film objektů, které bude možné vyjádřit v databázi jako film tabulku.
 

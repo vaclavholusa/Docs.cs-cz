@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: a1bb1ab1e4fac9c634f4048947ac3f934af3d625
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: ca6a0ac10b2675fb8e7f27bdb9d740777a5e5f4e
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="update-the-generated-pages"></a>Aktualizovat generovaného stránky
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Máme správné spuštění na filmová aplikace, ale není ideální prezentaci. Neradi najdete v části času (12:00:00 AM na obrázku níže) a **ReleaseDate** by měla být **datum vydání** (dvě slova).
 
@@ -27,13 +27,13 @@ Máme správné spuštění na filmová aplikace, ale není ideální prezentaci
 
 Otevřete *Models/Movie.cs* souboru a přidejte následující kód ukazuje zvýrazněné řádky:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDate.cs?name=snippet_1&highlight=10-11)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDate.cs?name=snippet_1&highlight=10-11)]
 
 Klikněte pravým tlačítkem na červenou vlnovkou řádku > ** rychlé akce a refaktoring **.
 
   ![Kontextové nabídky ukazuje ** > rychlé akce a refaktoring **.](da1/qa.png)
 
-Vyberte`using System.ComponentModel.DataAnnotations;`
+Vyberte `using System.ComponentModel.DataAnnotations;`
 
   ![pomocí System.ComponentModel.DataAnnotations v horní části seznamu](da1/da.png)
 

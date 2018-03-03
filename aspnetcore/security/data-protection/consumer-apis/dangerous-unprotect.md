@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: 584dbb545c15add4401086b9160d4bf30caf41b5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 37332dda794f898fb866424b38394f5d4441e166
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>Probíhá rušení ochrany datových částí, které byly odvolány jejíž klíče
 
@@ -30,7 +30,7 @@ Pro podporu scénáře umožnit datových částí má být zrušena ochrana i p
 > [!NOTE]
 > Ne všechny `IDataProtector` instance lze převést na `IPersistedDataProtector`. Vývojáři využít jazyka C# jako operátor nebo podobný, aby se zabránilo výjimky za běhu způsobené neplatné přetypování a měly by být připraven pro případ selhání správně zpracovat.
 
-`IPersistedDataProtector`zpřístupní následující plochy rozhraní API:
+`IPersistedDataProtector` zpřístupní následující plochy rozhraní API:
 
 ```csharp
 DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
@@ -46,4 +46,4 @@ Toto rozhraní API trvá chráněné datová část (jako bajtové pole) a vrát
 >[!WARNING]
 > Prověření extrémně opatrní při předávání `ignoreRevocationErrors: true` k `DangerousUnprotect` metoda. Pokud po voláním této metody `wasRevoked` hodnota je nastavena hodnota true, pak klíč používaný k ochraně tato datová část byl odvolán a datové části pravosti zacházeno jako podezřelá. V takovém případě pouze pokračujte v datové části nechráněné Pokud máte některé samostatné zárukou, že je platná, například jestli pochází z zabezpečené databáze místo odesílány klientem nedůvěryhodné webové.
 
-[!code-csharp[Main](dangerous-unprotect/samples/dangerous-unprotect.cs)]
+[!code-csharp[](dangerous-unprotect/samples/dangerous-unprotect.cs)]

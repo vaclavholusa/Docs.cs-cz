@@ -1,7 +1,7 @@
 ---
 title: "Práce s distribuované mezipaměti ASP.NET Core"
 author: ardalis
-description: "Naučte se používat distribuované ukládání do mezipaměti ke zlepšení výkonu a škálovatelnosti aplikace ASP.NET Core, zejména v případě, že hostovaný v cloudu nebo server prostředí farmy."
+description: "Další informace o použití ASP.NET Core distribuované ukládání do mezipaměti ke zlepšení aplikace výkon a škálovatelnost, zejména v prostředí cloudu nebo server farmy."
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 877a3e1f8c3282fdd67a389ddf5b4ff49dea3b42
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 635c61cbb72a6a9eb822307bbc80936ee73bedc8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>Práce s distribuované mezipaměti ASP.NET Core
 
@@ -73,13 +73,13 @@ Chcete-li použít `IDistributedCache` rozhraní:
 
 Následující příklad ukazuje, jak použít instanci `IDistributedCache` v komponentě jednoduché middleware:
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
 
 Ve výše uvedeném kódu je hodnota uložená v mezipaměti pro čtení, ale nikdy zapsána. V této ukázce je hodnota nastavit pouze při spuštění serveru a nezmění. Ve scénáři s více serverů přepíše nejnovější serveru spusťte všechny předchozí hodnoty, které byly nastavené zásadami jiných serverů. `Get` a `Set` pomocí metody `byte[]` typu. Proto řetězcovou hodnotu převést pomocí `Encoding.UTF8.GetString` (pro `Get`) a `Encoding.UTF8.GetBytes` (pro `Set`).
 
 Následující kód z *Startup.cs* ukazuje, nastaví se hodnota:
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=2,4,5,6&range=58-66)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=2,4,5,6&range=58-66)]
 
 > [!NOTE]
 > Vzhledem k tomu `IDistributedCache` je nakonfigurovaný v `ConfigureServices` metoda, je k dispozici `Configure` metoda jako parametr. Přidání jako parametr vám umožní nakonfigurované instance poskytované prostřednictvím DI.
@@ -92,7 +92,7 @@ Konfigurace v implementaci Redis v `ConfigureServices` a k němu přístup v kó
 
 V ukázkovém kódu `RedisCache` implementace se používá, když je server nakonfigurovaný pro `Staging` prostředí. Proto `ConfigureStagingServices` metoda nakonfiguruje `RedisCache`:
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
 
 > [!NOTE]
 > Na místním počítači nainstalovat Redis, nainstalujte balíček chocolatey [https://chocolatey.org/packages/redis-64/](https://chocolatey.org/packages/redis-64/) a spusťte `redis-server` z příkazového řádku.
@@ -103,7 +103,7 @@ Implementace SqlServerCache umožňuje distribuované mezipaměti používat dat
 
 Chcete-li použít nástroj sql mezipaměti, přidejte `SqlConfig.Tools` k `<ItemGroup>` element *.csproj* souboru a spusťte obnovení dotnet.
 
-[!code-xml[Main](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
+[!code-xml[](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
 
 Otestujte SqlConfig.Tools spuštěním následujícího příkazu
 
@@ -125,7 +125,7 @@ Vytvoření tabulky má následující schéma:
 
 Podobně jako všechny implementace mezipaměti, musí aplikace získávat a nastavovat hodnoty mezipaměti pomocí instance `IDistributedCache`, nikoli `SqlServerCache`. Ukázka implementuje `SqlServerCache` v `Production` prostředí (tak, že je nakonfigurovaný v `ConfigureProductionServices`).
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
 
 > [!NOTE]
 > `ConnectionString` (A volitelně `SchemaName` a `TableName`) by měl obvykle být uloženy mimo zdrojového kódu (například UserSecrets), mohou obsahovat přihlašovací údaje.

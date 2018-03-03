@@ -9,15 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 14d8dd0a5e6a99bacce3bf50b0468b20e0dddb96
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0c2905575751c9880e02d8581642a1628bea5a49
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>Publikování webové aplikace ASP.NET Core Azure App Service pomocí sady Visual Studio
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](https://github.com/cesarbs), a [Rachel Appel](https://twitter.com/rachelappel)
+
+[!INCLUDE[Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 V tématu [publikovat do Azure ze sady Visual Studio pro Mac](https://blog.xamarin.com/publish-azure-visual-studio-mac/) při práci na macu.
 
@@ -140,7 +142,7 @@ Na **nastavení** stránky **publikovat** dialogové okno:
 
 ![Dialogové okno publikování: panel nastavení](publish-to-azure-webapp-using-vs/_static/pubs.png)
 
-Klikněte na tlačítko **publikování**. Visual Studio publishs vaší aplikace do Azure. Po dokončení depoyment aplikace se otevře v prohlížeči.
+Klikněte na tlačítko **publikování**. Visual Studio publishs vaší aplikace do Azure. Po dokončení nasazení aplikace se otevře v prohlížeči.
 
 ### <a name="test-your-app-in-azure"></a>Testování aplikace v Azure
 
@@ -152,7 +154,7 @@ Klikněte na tlačítko **publikování**. Visual Studio publishs vaší aplikac
 
 ### <a name="update-the-app"></a>Aktualizace aplikace
 
-* Upravit *Pages/About.cshtml* Razor stránky a změňte jeho obsah. Například můžete upravit odstavce. Tím vyjádříte "Hello ASP.NET Core!":[!code-html[About](publish-to-azure-webapp-using-vs/sample/about.cshtml?highlight=9&range=1-9)]
+* Upravit *Pages/About.cshtml* Razor stránky a změňte jeho obsah. Například můžete upravit odstavce. Tím vyjádříte "Hello ASP.NET Core!": [!code-html[About](publish-to-azure-webapp-using-vs/sample/about.cshtml?highlight=9&range=1-9)]
 
 * Klikněte pravým tlačítkem na projekt a vyberte **publikování...**  znovu.
 

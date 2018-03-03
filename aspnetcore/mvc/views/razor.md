@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 68fa29b909ebea57e6a3986fca7b88c5a5cf579c
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3528965cc65d2d5ec21df40cbeb71d1333839e1a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pro ASP.NET Core
 
@@ -89,7 +89,7 @@ Veškerý obsah v rámci `@()` závorky je vyhodnocena a vykresleny výstup.
 
 Implicitní výrazy, které jsou popsané v předchozí části, obecně nesmí obsahovat mezery. V následujícím kódu není jeden týden odečten od aktuální čas:
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact.cshtml?range=17)]
+[!code-cshtml[](razor/sample/Views/Home/Contact.cshtml?range=17)]
 
 Vykreslí kód HTML následující:
 
@@ -147,7 +147,7 @@ HTML je zobrazena v prohlížeči jako:
 <span>Hello World</span>
 ```
 
-`HtmlHelper.Raw`výstup není kódovaný ale vykresleno jako značka jazyka HTML.
+`HtmlHelper.Raw` výstup není kódovaný ale vykresleno jako značka jazyka HTML.
 
 > [!WARNING]
 > Pomocí `HtmlHelper.Raw` unsanitized uživatelský vstup je bezpečnostní riziko. Uživatelský vstup může obsahovat jiné zneužití nebo škodlivý JavaScript. Úpravě uživatelský vstup je obtížné. Nepoužívejte `HtmlHelper.Raw` se vstupem uživatele.
@@ -212,7 +212,7 @@ K definování část bloku kódu, který by měl vykreslení HTML, uzavřete zn
 
 Tuto metodu použijte k vykreslení HTML, který není obklopená značky jazyka HTML. Bez značku HTML nebo Razor nastane běhová chyba syntaxe Razor.
 
-**\<Text >** značka je vhodné pro řízení prázdných znaků při vykreslování obsahu:
+ **\<Text >** značka je vhodné pro řízení prázdných znaků při vykreslování obsahu:
 
 * Pouze obsah, mezi  **\<text >** je vykreslen. 
 * Žádné prázdné před nebo po  **\<text >** značky se zobrazí ve výstupu protokolu HTML.
@@ -237,9 +237,9 @@ Upozornění: Navíc `@` znaky v souboru nástroje Razor mohou způsobit chyby k
 
 Řídicí struktury, jsou rozšíření bloky kódu. Všechny aspekty bloky kódu (Přechod na kód, vložené C#) také použít následující struktury:
 
-### <a name="conditionals-if-else-if-else-and-switch"></a>Podmíněné příkazy @if, pokud jiný, #else a@switch
+### <a name="conditionals-if-else-if-else-and-switch"></a>Podmíněné příkazy @if, pokud jiný, #else a @switch
 
-`@if`ovládací prvky při spuštění kódu:
+`@if` ovládací prvky při spuštění kódu:
 
 ```cshtml
 @if (value % 2 == 0)
@@ -248,7 +248,7 @@ Upozornění: Navíc `@` znaky v souboru nástroje Razor mohou způsobit chyby k
 }
 ```
 
-`else`a `else if` nevyžadují `@` symbol:
+`else` a `else if` nevyžadují `@` symbol:
 
 ```cshtml
 @if (value % 2 == 0)
@@ -348,7 +348,7 @@ Podporovány jsou následující příkazy opakování:
 } while (i < people.Length);
 ```
 
-### <a name="compound-using"></a>Složené@using
+### <a name="compound-using"></a>Složené @using
 
 V jazyce C# `using` příkaz slouží k zajištění uvolnění objektu. V prostředí Razor shodný mechanismus slouží k vytvoření pomocné rutiny HTML, které obsahují další obsah. V následujícím kódu pomocné rutiny HTML, vykreslení značku formuláře s `@using` příkaz:
 
@@ -370,7 +370,7 @@ Lze provést akce na úrovni oboru [značky Pomocníci](xref:mvc/views/tag-helpe
 
 Zpracovávání výjimek v jazyce je podobná C#:
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact7.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact7.cshtml)]
 
 ### <a name="lock"></a>@lock
 
@@ -419,7 +419,7 @@ Direktivy Razor jsou reprezentované pomocí implicitní výrazy s následujíc�
 
 Pochopení, jak Razor generuje kód pro zobrazení usnadňuje pochopili, jak funguje direktivy.
 
-[!code-html[Main](razor/sample/Views/Home/Contact8.cshtml)]
+[!code-html[](razor/sample/Views/Home/Contact8.cshtml)]
 
 Generuje kód třídu podobný následujícímu:
 
@@ -443,7 +443,7 @@ Dále v tomto článku v části [zobrazení třídy Razor C# vytvořené pro zo
 
 `@using` – Direktiva přidá jazyka C# `using` direktivy generované zobrazení:
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact9.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact9.cshtml)]
 
 ### <a name="model"></a>@model
 
@@ -483,11 +483,11 @@ Zpřístupní Razor `Model` vlastnost pro přístup k modelu předaná do zobraz
 
 Následující kód je vlastní typ stránky Razor:
 
-[!code-csharp[Main](razor/sample/Classes/CustomRazorPage.cs)]
+[!code-csharp[](razor/sample/Classes/CustomRazorPage.cs)]
 
 `CustomText` Se zobrazí v zobrazení:
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact10.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact10.cshtml)]
 
 Vykreslí kód HTML následující:
 
@@ -495,13 +495,13 @@ Vykreslí kód HTML následující:
 <div>Custom text: Gardyloo! - A Scottish warning yelled from a window before dumping a slop bucket on the street below.</div>
 ```
 
- `@model`a `@inherits` lze použít ve stejném zobrazení. `@inherits`může být v *_ViewImports.cshtml* soubor, který importuje zobrazení:
+ `@model` a `@inherits` lze použít ve stejném zobrazení. `@inherits` může být v *_ViewImports.cshtml* soubor, který importuje zobrazení:
 
-[!code-cshtml[Main](razor/sample/Views/_ViewImportsModel.cshtml)]
+[!code-cshtml[](razor/sample/Views/_ViewImportsModel.cshtml)]
 
 Následující kód je příkladem zobrazení silného typu:
 
-[!code-cshtml[Main](razor/sample/Views/Home/Login1.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Login1.cshtml)]
 
 Pokud "rick@contoso.com" je předán v modelu zobrazení generuje následující kód HTML:
 
@@ -525,7 +525,7 @@ Pokud "rick@contoso.com" je předán v modelu zobrazení generuje následující
 
 Příklad:
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact6.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact6.cshtml)]
 
 Kód generuje následující kód HTML:
 
@@ -535,7 +535,7 @@ Kód generuje následující kód HTML:
 
 Následující kód je generovaná třída Razor C#:
 
-[!code-csharp[Main](razor/sample/Classes/Views_Home_Test_cshtml.cs?range=1-19)]
+[!code-csharp[](razor/sample/Classes/Views_Home_Test_cshtml.cs?range=1-19)]
 
 ### <a name="section"></a>@section
 
@@ -592,11 +592,11 @@ Klíčová slova jazyka C# Razor musí být znaky s `@(@C# Razor Keyword)` (nap�
 
 Přidejte následující třídu do projektu ASP.NET MVC jádra:
 
-[!code-csharp[Main](razor/sample/Utilities/CustomTemplateEngine.cs)]
+[!code-csharp[](razor/sample/Utilities/CustomTemplateEngine.cs)]
 
 Přepsání `RazorTemplateEngine` přidal MVC s `CustomTemplateEngine` třídy:
 
-[!code-csharp[Main](razor/sample/Startup.cs?highlight=4&range=10-14)]
+[!code-csharp[](razor/sample/Startup.cs?highlight=4&range=10-14)]
 
 Nastavit bod přerušení na `return csharpDocument` prohlášení o `CustomTemplateEngine`. Při spuštění programu zastavení okamžiku přerušení, zobrazit hodnotu `generatedCode`.
 

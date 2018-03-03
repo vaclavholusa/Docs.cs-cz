@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 158f11875f22f8f9dba6f7f109123717b9da8d18
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 5d236c79120d79195c1970cc87d164002b56d0f1
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-middleware"></a>Middleware ASP.NET Core
 
@@ -44,13 +44,13 @@ Každý delegát provádět operace před a po další delegáta. Delegát můž
 
 Nejjednodušší možné aplikace ASP.NET Core nastaví delegáta jedné žádosti, která zpracovává všechny požadavky. Tento případ neobsahuje kanál skutečné požadavku. Místo toho jedné anonymní funkce je volána v reakci na každý požadavek HTTP.
 
-[!code-csharp[Main](index/sample/Middleware/Startup.cs)]
+[!code-csharp[](index/sample/Middleware/Startup.cs)]
 
 První [aplikace. Spustit](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions) delegáta ukončí kanálu.
 
 Můžete řetězu více delegátů žádost společně s [aplikace. Použití](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions). `next` Parametr představuje další delegát v kanálu. (Mějte na paměti, že může krátká smyčka kanálu pomocí *není* volání *Další* parametru.) Můžete obvykle provádět akce před i po další delegáta, jak ukazuje tento příklad:
 
-[!code-csharp[Main](index/sample/Chain/Startup.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/Startup.cs?name=snippet1)]
 
 >[!WARNING]
 > Nemůžete volat `next.Invoke` po odeslání odpovědi klientovi. Změny `HttpResponse` po spuštění odpovědi vyvolá výjimku. Například změny, jako je třeba nastavení hlavičky, stavový kód atd., vyvolá výjimku. Zápis do text odpovědi po volání `next`:
@@ -138,11 +138,11 @@ public void Configure(IApplicationBuilder app)
 
 ### <a name="use-run-and-map"></a>Použití, spuštění a mapy
 
-Můžete nakonfigurovat pomocí kanálu HTTP `Use`, `Run`, a `Map`. `Use` Metoda může krátká smyčka kanálu (tj. Pokud není volání `next` delegáta požadavek). `Run`je konvence, a může vystavit některé komponenty middlewaru `Run[Middleware]` metody, které běží na konci kanálu.
+Můžete nakonfigurovat pomocí kanálu HTTP `Use`, `Run`, a `Map`. `Use` Metoda může krátká smyčka kanálu (tj. Pokud není volání `next` delegáta požadavek). `Run` je konvence, a může vystavit některé komponenty middlewaru `Run[Middleware]` metody, které běží na konci kanálu.
 
-`Map*`rozšíření jsou použity jako konvence pro vytvoření větve kanálu. [Mapa](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) větví kanálu požadavku podle odpovídá zadanou cestu požadavku. Pokud cesta požadavku začíná zadané cestě, je proveden větev.
+`Map*` rozšíření jsou použity jako konvence pro vytvoření větve kanálu. [Mapa](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) větví kanálu požadavku podle odpovídá zadanou cestu požadavku. Pokud cesta požadavku začíná zadané cestě, je proveden větev.
 
-[!code-csharp[Main](index/sample/Chain/StartupMap.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/StartupMap.cs?name=snippet1)]
 
 V následující tabulce jsou uvedeny požadavky a odpovědi z `http://localhost:1234` pomocí předchozí kód:
 
@@ -157,7 +157,7 @@ Když `Map` se používá, segment(s) odpovídající cesta se odeberou z `HttpR
 
 [MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions) větví kanál požadavku na základě výsledku daného predikátu. Všechny predikát typu `Func<HttpContext, bool>` lze použít k mapování požadavků na nové větve kanálu. V následujícím příkladu predikát slouží k detekci přítomnosti proměnné řetězce dotazu `branch`:
 
-[!code-csharp[Main](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
 
 V následující tabulce jsou uvedeny požadavky a odpovědi z `http://localhost:1234` pomocí předchozí kód:
 
@@ -166,7 +166,7 @@ V následující tabulce jsou uvedeny požadavky a odpovědi z `http://localhost
 | localhost:1234 | Hello z jiných mapy delegáta.  |
 | localhost:1234/?branch=master | Větev použít = hlavní|
 
-`Map`podporuje vnoření, například:
+`Map` podporuje vnoření, například:
 
 ```csharp
 app.Map("/level1", level1App => {
@@ -181,7 +181,7 @@ app.Map("/level1", level1App => {
    });
    ```
 
-`Map`Můžete také shoda s více segmenty najednou, například:
+`Map` Můžete také shoda s více segmenty najednou, například:
 
  ```csharp
 app.Map("/level1/level2", HandleMultiSeg);
@@ -203,7 +203,7 @@ ASP.NET Core se dodává s následující komponenty middlewaru, jakož i popis 
 | [Směrování](xref:fundamentals/routing) | Definuje a omezí požadavek trasy. | Terminálu odpovídající trasy. |
 | [Relace](xref:fundamentals/app-state) | Poskytuje podporu pro správu uživatelských relací. | Před provedením komponent, které vyžadují relace. |
 | [Statické soubory](xref:fundamentals/static-files) | Poskytuje podporu pro obsluhující statické soubory a procházení adresářů. | Terminál, pokud požadavek odpovídá soubory. |
-| [Přepisování adres URL](xref:fundamentals/url-rewriting) | Poskytuje podporu pro přepisování adres URL a přesměrování požadavků. | Před provedením komponent, které využívají adresu URL. |
+| [Přepisování adres URL ](xref:fundamentals/url-rewriting) | Poskytuje podporu pro přepisování adres URL a přesměrování požadavků. | Před provedením komponent, které využívají adresu URL. |
 | [Webové sokety](xref:fundamentals/websockets) | Umožňuje protokol Websocket. | Před provedením komponent, které jsou nutné k přijímání požadavků protokolu WebSocket. |
 
 <a name="middleware-writing-middleware"></a>
@@ -212,7 +212,7 @@ ASP.NET Core se dodává s následující komponenty middlewaru, jakož i popis 
 
 Middleware je obecně zapouzdřené v třídě a vystavené pomocí metody rozšíření. Vezměte v úvahu následující middlewaru, který nastaví jazykovou verzi pro aktuální požadavek z řetězce dotazu:
 
-[!code-csharp[Main](index/sample/Culture/StartupCulture.cs?name=snippet1)]
+[!code-csharp[](index/sample/Culture/StartupCulture.cs?name=snippet1)]
 
 Poznámka: Výše uvedeném ukázkovém kódu se používá k předvedení vytváření komponenta middlewaru. V tématu [ globalizace a lokalizace](xref:fundamentals/localization) pro podporu předdefinované lokalizace ASP.NET Core.
 
@@ -220,19 +220,19 @@ Middleware můžete otestovat pomocí předání v jazykovou verzi, například 
 
 Následující kód přesune delegáta middleware na třídu:
 
-[!code-csharp[Main](index/sample/Culture/RequestCultureMiddleware.cs)]
+[!code-csharp[](index/sample/Culture/RequestCultureMiddleware.cs)]
 
 Zpřístupní metodu rozšíření middleware prostřednictvím [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder):
 
-[!code-csharp[Main](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
+[!code-csharp[](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
 
 Následující kód volá middleware z `Configure`:
 
-[!code-csharp[Main](index/sample/Culture/Startup.cs?name=snippet1&highlight=5)]
+[!code-csharp[](index/sample/Culture/Startup.cs?name=snippet1&highlight=5)]
 
 Postupujte podle middleware [explicitní závislosti Princip](http://deviq.com/explicit-dependencies-principle/) díky zpřístupnění jeho závislé součásti v jeho konstruktoru. Middleware je vytvořený jednou za *životního cyklu aplikace*. V tématu *požadavků závislosti* níže v případě, je potřeba sdílet s middlewaru v rámci žádost o služby.
 
-Komponenty middlewaru lze vyřešit závislé z vkládání závislostí prostřednictvím parametrů konstruktor. [`UseMiddleware<T>`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary)Můžete také přijímat další parametry, přímo.
+Komponenty middlewaru lze vyřešit závislé z vkládání závislostí prostřednictvím parametrů konstruktor. [`UseMiddleware<T>`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary) Můžete také přijímat další parametry, přímo.
 
 ### <a name="per-request-dependencies"></a>Závislosti na žádost
 
@@ -262,4 +262,4 @@ public class MyMiddleware
 * [Spuštění aplikace](xref:fundamentals/startup)
 * [Funkce požadavků](xref:fundamentals/request-features)
 * [Aktivace na základě Factory middlewaru](xref:fundamentals/middleware/extensibility)
-* [Aktivace na základě Factory middlewaru s kontejner třetích stran](xref:fundamentals/middleware/extensibility-third-party-container)
+* [Middleware aktivaci s použitím kontejner třetích stran](xref:fundamentals/middleware/extensibility-third-party-container)

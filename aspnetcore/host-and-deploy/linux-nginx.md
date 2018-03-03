@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 1044a87a4dcc7636413078b0fc09ade206c97d0a
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 5e85cf909c1a360f245bcc83233ccc1347735b26
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Hostování v systému Linux s Nginx ASP.NET Core
 
@@ -38,7 +38,7 @@ Tato příručka:
 
 ## <a name="copy-over-the-app"></a>Kopírování prostřednictvím aplikace
 
-Spustit `dotnet publish` z prostředí vývojářů pro zabalení aplikace do samostatný adresář, který můžete spustit na serveru.
+Spustit [dotnet publikování](/dotnet/core/tools/dotnet-publish) z prostředí vývojářů pro zabalení aplikace do samostatný adresář, který můžete spustit na serveru.
 
 Kopie aplikace ASP.NET Core k serveru pomocí ať nástroj integruje do pracovního postupu organizace (například spojovací bod služby, FTP). Testování aplikace, například:
 
@@ -53,7 +53,7 @@ Reverzní proxy server je běžné instalační program pro obsluhující dynami
 
 Kestrel je skvělá pro obsluhující dynamický obsah z ASP.NET Core. Však nejsou webové funkce slouží jako bohaté funkce jako servery, například služby IIS, Apache nebo Nginx. Reverzní proxy server můžete přesměrovat pracovní například statický obsah obsluhuje, ukládání do mezipaměti požadavky, komprese požadavků a ukončení protokolu SSL ze serveru HTTP. Reverzní proxy server může být na vyhrazeném počítači nebo může být nasazeny společně se HTTP server.
 
-Pro účely tohoto průvodce se používá jednu instanci Nginx. Běží na stejném serveru, spolu s HTTP server. Na základě požadavků, různé instalační může být zvolené.
+Pro účely tohoto průvodce se používá jednu instanci Nginx. Běží na stejném serveru, spolu s HTTP server. Na základě požadavků, může být zvolen jiné instalace.
 
 Protože požadavky jsou předávány podle reverzní proxy server, použijte hlavičky Middleware předávány z [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) balíčku. Middleware aktualizace `Request.Scheme`pomocí `X-Forwarded-Proto` záhlaví, tak, že přesměrování identifikátory URI a jiné zásady zabezpečení pracovat správně.
 
@@ -283,11 +283,11 @@ Zvažte použití brány firewall webových aplikací jako *ModSecurity* k posí
 
 Přidat */etc/nginx/proxy.conf* konfigurační soubor:
 
-[!code-nginx[Main](linux-nginx/proxy.conf)]
+[!code-nginx[](linux-nginx/proxy.conf)]
 
 Upravit */etc/nginx/nginx.conf* konfigurační soubor. V příkladu obsahuje oba `http` a `server` oddílů v souboru jednu konfiguraci.
 
-[!code-nginx[Main](linux-nginx/nginx.conf?highlight=2)]
+[!code-nginx[](linux-nginx/nginx.conf?highlight=2)]
 
 #### <a name="secure-nginx-from-clickjacking"></a>Zabezpečený Nginx z útoků typu clickjacking
 Útoků typu Clickjacking je škodlivý technika ke shromažďování nakažené uživatel klikne na. Útoků typu Clickjacking triky postižené (návštěvníka) do kliknutím na nakažené lokality. Použití X-FRAME-OPTIONS k zabezpečení webu.

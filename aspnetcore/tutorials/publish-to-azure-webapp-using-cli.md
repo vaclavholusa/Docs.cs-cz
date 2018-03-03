@@ -12,15 +12,17 @@ ms.technology: aspnet
 ms.topic: get-started-article
 services: multiple
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 0418a2695d3afb6dc2c55b8f694a97d62239835f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0e87fbc7f5b5489f20e095be3180d87284e79c4e
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a>Nasazení aplikace ASP.NET Core do služby Azure App Service z příkazového řádku
 
 Podle [Soper kamera](https://twitter.com/camsoper)
+
+[!INCLUDE[Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 Tento kurz vám ukáže, jak vytvářet a nasazovat aplikaci ASP.NET Core ke službě Microsoft Azure App Service pomocí nástrojů příkazového řádku.  Po dokončení, budete mít webovou aplikaci v ASP.NET MVC Core hostované jako webová aplikace Azure App Service.  V tomto kurzu je zapsána pomocí nástroje příkazového řádku Windows, ale můžete použít a Linux prostředí také systému macOS.  
 

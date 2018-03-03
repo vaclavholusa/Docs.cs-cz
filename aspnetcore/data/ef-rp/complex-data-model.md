@@ -1,7 +1,7 @@
 ---
 title: "Stránky Razor EF základní - Model dat – 5 8"
 author: rick-anderson
-description: "V tomto kurzu přidáte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověřování a pravidla mapování databáze."
+description: "V tomto kurzu přidejte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověření a pravidla mapování."
 manager: wpickett
 ms.author: riande
 ms.date: 10/25/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 58bb773ba16314827da84909def05a8ef370479b
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 91dc53162c1dd99c4cdd6fb971a4ecc04dd071de
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>Vytvoření modelu komplexní data - základní EF s stránky Razor kurzu (5 8)
 
@@ -42,7 +42,7 @@ Na stránkách student aktuálně zobrazí čas, datum registrace. Obvykle polí
 
 Aktualizace *Models/Student.cs* s následujícími službami zvýrazněná kódu:
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
 [Datový typ](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) atribut určuje datový typ, který je specifičtější než vnitřní typ databáze. V tomto případě kterou má být zobrazen pouze data, není datum a čas. [Datový typ výčtu](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1) poskytuje pro mnoho typů dat, jako je například datum, čas, telefonní číslo, měny, EmailAddress, atd. `DataType` Atributu můžete také povolit aplikaci automaticky získávat specifické pro typ funkce. Příklad:
 
@@ -51,7 +51,7 @@ Aktualizace *Models/Student.cs* s následujícími službami zvýrazněná kódu
 
 `DataType` Atribut vysílá standardu HTML 5 `data-` (výrazný data dash) atributy, které využívají standardu HTML 5 prohlížeče. `DataType` Atributy neposkytují ověření.
 
-`DataType.Date`neuvádí formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole datum podle výchozích formátů podle serveru [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
+`DataType.Date` neuvádí formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole datum podle výchozích formátů podle serveru [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
 
 `DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
 
@@ -78,7 +78,7 @@ S atributy lze zadat pravidla ověření dat a chybové zprávy ověření. [Str
 
 Aktualizace `Student` modelu s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
 Předchozí kód omezuje názvy k více než 50 znaků. `StringLength` Atribut nemá uživatel zabránit v přechodu do prázdných znaků pro název. [Regulární výraz](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) atribut se používá k aplikování omezení na vstup. Například následující kód vyžaduje první znak, který má být velkými písmeny a zbývající znaků, které mají být abecední:
 
@@ -110,7 +110,7 @@ Při vytváření databáze názvy vlastností na modelu se používají pro ná
 
 Aktualizace *Student.cs* soubor s následující zvýrazněný kód:
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
 S předchozí změny `Student.FirstMidName` v aplikaci mapuje `FirstName` sloupec `Student` tabulky.
 
@@ -155,7 +155,7 @@ Před použitím migrace, byl měla název sloupce typu [nvarchar(MAX)](https://
 
 Aktualizace *Models/Student.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
 ### <a name="the-required-attribute"></a>Požadovaný atribut
 
@@ -175,7 +175,7 @@ public string LastName { get; set; }
 
 ### <a name="the-fullname-calculated-property"></a>Vlastnost FullName vypočítat
 
-`FullName`je počítané vlastnosti, která vrátí hodnotu, která se vytvoří zřetězením dva další vlastnosti. `FullName`Nelze nastavit, že obsahuje pouze přistupující objekt get. Ne `FullName` sloupec se vytvoří v databázi.
+`FullName` je počítané vlastnosti, která vrátí hodnotu, která se vytvoří zřetězením dva další vlastnosti. `FullName` Nelze nastavit, že obsahuje pouze přistupující objekt get. Ne `FullName` sloupec se vytvoří v databázi.
 
 ## <a name="create-the-instructor-entity"></a>Vytvořit entitu lektorem
 
@@ -183,7 +183,7 @@ public string LastName { get; set; }
 
 Vytvoření *Models/Instructor.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
+[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
 
 Všimněte si, že několik vlastností, které jsou stejné ve `Student` a `Instructor` entity. V tomto kurzu implementace dědičnosti později z této série tento kód je teď vyčleněný eliminovat redundance.
 
@@ -217,7 +217,7 @@ Pokud `ICollection<T>` není zadaný, vytvoří základní EF `HashSet<T>` kolek
 
 `CourseAssignment` Entity je popsáno v části u relací m: n.
 
-Contoso univerzity obchodní pravidla stavu, že lektorem může mít maximálně jeden office. `OfficeAssignment` Vlastnost obsahuje jeden `OfficeAssignment` entity. `OfficeAssignment`má hodnotu null, pokud není přiřazena žádná office.
+Contoso univerzity obchodní pravidla stavu, že lektorem může mít maximálně jeden office. `OfficeAssignment` Vlastnost obsahuje jeden `OfficeAssignment` entity. `OfficeAssignment` má hodnotu null, pokud není přiřazena žádná office.
 
 ```csharp
 public OfficeAssignment OfficeAssignment { get; set; }
@@ -229,7 +229,7 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 Vytvoření *Models/OfficeAssignment.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/OfficeAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/OfficeAssignment.cs)]
 
 ### <a name="the-key-attribute"></a>Klíč atributu
 
@@ -237,7 +237,7 @@ Vytvoření *Models/OfficeAssignment.cs* následujícím kódem:
 
 Je--nula nebo 1 vztah mezi `Instructor` a `OfficeAssignment` entity. Přiřazení office existuje pouze ve vztahu k lektorem, které je přiřazen. `OfficeAssignment` Primárníklíč je také jeho cizí klíč (Cizíklíč) `Instructor` entity. Základní EF nelze rozpoznat automaticky `InstructorID` jako Primárníklíč z `OfficeAssignment` protože:
 
-* `InstructorID`není podle ID nebo classnameID zásady vytváření názvů.
+* `InstructorID` není podle ID nebo classnameID zásady vytváření názvů.
 
 Proto `Key` atribut se používá k identifikaci `InstructorID` jako primárnímu Klíči:
 
@@ -258,7 +258,7 @@ Ve výchozím nastavení EF základní klíče jsou považovány za jiný datab�
 
 `OfficeAssignment` Entita má hodnotou Null `Instructor` navigační vlastnost protože:
 
-* `InstructorID`je použití hodnot Null.
+* `InstructorID` je použití hodnot Null.
 * Přiřazení office nemůže existovat bez lektorem.
 
 Když `Instructor` entita má související `OfficeAssignment` entity, každá entita odkazuje na jinou v její navigační vlastnosti.
@@ -278,9 +278,9 @@ Předchozí kód určuje, že musí být související lektorem. Předchozí kó
 
 Aktualizace *Models/Course.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
-`Course` Entity má vlastnosti cizího klíče (Cizíklíč) `DepartmentID`. `DepartmentID`odkazuje na související `Department` entity. `Course` Entita, která má `Department` navigační vlastnost.
+`Course` Entity má vlastnosti cizího klíče (Cizíklíč) `DepartmentID`. `DepartmentID` odkazuje na související `Department` entity. `Course` Entita, která má `Department` navigační vlastnost.
 
 Základní EF nevyžaduje vlastnosti cizího klíče u datového modelu, když model má navigační vlastnost pro související entity.
 
@@ -328,7 +328,7 @@ Kurz může výukové ve více vyučující, proto `CourseAssignments` navigačn
 public ICollection<CourseAssignment> CourseAssignments { get; set; }
 ```
 
-`CourseAssignment`je vysvětlen [později](#many-to-many-relationships).
+`CourseAssignment` je vysvětlen [později](#many-to-many-relationships).
 
 ## <a name="create-the-department-entity"></a>Vytvořit entitu oddělení
 
@@ -336,7 +336,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 Vytvoření *Models/Department.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
 
 ### <a name="the-column-attribute"></a>Atribut sloupce
 
@@ -347,7 +347,7 @@ Dříve `Column` atribut se použít ke změně mapování název sloupce. V kó
 public decimal Budget { get; set; }
 ```
 
-Mapování sloupce není obvykle nutné. Základní EF obecně zvolí příslušného typu dat systému SQL Server, na základě typu CLR pro vlastnost. Modul CLR `decimal` zadejte map k systému SQL Server `decimal` typu. `Budget`je currency, a datový typ money je vhodnější pro měny.
+Mapování sloupce není obvykle nutné. Základní EF obecně zvolí příslušného typu dat systému SQL Server, na základě typu CLR pro vlastnost. Modul CLR `decimal` zadejte map k systému SQL Server `decimal` typu. `Budget` je currency, a datový typ money je vhodnější pro měny.
 
 ### <a name="foreign-key-and-navigation-properties"></a>Cizí klíč a navigační vlastnosti
 
@@ -397,7 +397,7 @@ Záznam zápisu je jeden kurzu provedenou jeden student.
 
 Aktualizace *Models/Enrollment.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>Cizí klíč a navigační vlastnosti
 
@@ -439,7 +439,7 @@ Poznámka: EF 6.x podporuje implicitní spojení tabulky pro relace m: n, ale z�
 
 Vytvoření *Models/CourseAssignment.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/CourseAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/CourseAssignment.cs)]
 
 ### <a name="instructor-to-courses"></a>Lektorem kurzy
 
@@ -456,7 +456,7 @@ Datové modely spustí jednoduchou a zvýší. Žádné datové spojení (PJTs) 
 
 ### <a name="composite-key"></a>Složený klíč
 
-FKs nejsou s možnou hodnotou Null. Dva FKs v `CourseAssignment` (`InstructorID` a `CourseID`) společně jednoznačně každý řádek `CourseAssignment` tabulky. `CourseAssignment`nevyžaduje vyhrazený PK. `InstructorID` a `CourseID` vlastnosti fungovat jako složený PK. Je jediný způsob, jak určit složené PKs na jádro EF s *rozhraní fluent API*. V další části ukazuje, jak nakonfigurovat složené PK.
+FKs nejsou s možnou hodnotou Null. Dva FKs v `CourseAssignment` (`InstructorID` a `CourseID`) společně jednoznačně každý řádek `CourseAssignment` tabulky. `CourseAssignment` nevyžaduje vyhrazený PK. `InstructorID` a `CourseID` vlastnosti fungovat jako složený PK. Je jediný způsob, jak určit složené PKs na jádro EF s *rozhraní fluent API*. V další části ukazuje, jak nakonfigurovat složené PK.
 
 Složený klíč zajistí:
 
@@ -473,7 +473,7 @@ Složený klíč zajistí:
 
 Přidejte následující zvýrazněný kód, který *Data/SchoolContext.cs*:
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
 Předchozí kód přidá nové entity a nakonfiguruje `CourseAssignment` složené PK. entity
 
@@ -492,7 +492,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 V tomto kurzu se používá rozhraní fluent API jenom pro mapování DB, který nelze provést s atributy. Rozhraní fluent API můžete však zadat většinu formátování, ověření a pravidla mapování, které lze provést s atributy.
 
-Některé atributy, jako `MinimumLength` nelze použít s rozhraní fluent API. `MinimumLength`nepodporuje změnu schématu, vztahuje se pouze minimální délka ověřovacího pravidla.
+Některé atributy, jako `MinimumLength` nelze použít s rozhraní fluent API. `MinimumLength` nepodporuje změnu schématu, vztahuje se pouze minimální délka ověřovacího pravidla.
 
 Někteří vývojáři dávají přednost používání rozhraní fluent API výhradně tak, aby se zachovat jejich tříd entit "čistou." Atributy a rozhraní fluent API můžete kombinovat. Existují některé konfigurace, které lze provádět jen pomocí rozhraní fluent API (výběr složené Primárníklíč). Existují některé konfigurace, které lze provést pouze s atributy (`MinimumLength`). Doporučený postup pro používání fluent API nebo atributy:
 
@@ -523,7 +523,7 @@ Na předchozím obrázku uvádí:
 
 Aktualizujte kód v *Data/DbInitializer.cs*:
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
 
 Předchozí kód poskytuje data počáteční hodnoty pro nové entity. Většina tento kód vytvoří nové entity objekty a načte ukázková data. Ukázková data se používají pro testování. Předchozí kód vytvoří následující relace m: n:
 
@@ -613,7 +613,7 @@ Pokud migrace spouštějí s existujícími daty, může být omezení cizího k
 
 *{Timestamp}_ComplexDataModel.cs* soubor obsahuje následující kód:
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_DepartmentID)]
+[!code-csharp[](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_DepartmentID)]
 
 Předchozí kód přidá hodnotou Null `DepartmentID` cizího klíče na `Course` tabulky. Databáze z předchozí kurz obsahuje řádky v `Course`, takže tato tabulka nelze aktualizovat pomocí migrace.
 
@@ -629,9 +629,9 @@ Aktualizace `ComplexDataModel` třídy `Up` metoda:
 * Otevřete *{timestamp}_ComplexDataModel.cs* souboru.
 * Komentář řádek kódu, který přidá `DepartmentID` sloupec, který se `Course` tabulky.
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
+[!code-csharp[](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
 
-Přidejte následující zvýrazněný kód. Nový kód přejde po `.CreateTable( name: "Department"` bloku:[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
+Přidejte následující zvýrazněný kód. Nový kód přejde po `.CreateTable( name: "Department"` bloku: [!code-csharp[](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
 
 S předchozí změny, existující `Course` řádky budou související s oddělení "Temp" po `ComplexDataModel` `Up` metoda spustí.
 

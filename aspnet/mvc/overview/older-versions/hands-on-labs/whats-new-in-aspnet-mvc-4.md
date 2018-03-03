@@ -12,28 +12,26 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 8b1bdae048afc78399ccc7b0eac7125d9b983c13
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 35f9402ad6090c0441425a23b2b8063350892210
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="whats-new-in-aspnet-mvc-4"></a>Co je nového v architektuře ASP.NET MVC 4
-====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+# <a name="whats-new-in-aspnet-mvc-4"></a>Co je nového v architektuře ASP.NET MVC 4
 
-[Stažení webové táborech cvičení Kit](http://www.microsoft.com/download/29843)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
-> ASP.NET MVC 4 je rozhraní pro vytváření škálovatelných standardy webových aplikací pomocí vzory zavedené návrhu a výkonu technologie ASP.NET a rozhraní .NET framework. Tento nový, čtvrté verzi rozhraní framework se zaměřuje na snadněji vývoj mobilních webových aplikací.
-> 
-> Pokud vytvoříte nový projekt ASP.NET MVC 4 je nyní šablona projektu mobilních aplikací, které můžete použít k vytvoření samostatné aplikace speciálně pro mobilní zařízení. Kromě toho ASP.NET MVC 4 se integruje s jQuery Mobile prostřednictvím balíčku NuGet jQuery.Mobile.MVC. jQuery Mobile je základě HTML5 rozhraní pro vývoj webových aplikací, které jsou kompatibilní s všechny platformy oblíbených mobilních zařízení, včetně Windows Phone, iPhone, Android a tak dále. Ale pokud budete potřebovat specializace, ASP.NET MVC 4 také umožňuje obsluhovat různá zobrazení pro různá zařízení a poskytovat optimalizace pro konkrétní zařízení.
-> 
-> V tomto testovacím prostředí praktických se spustí s ASP.NET MVC 4 &quot;Internetové aplikace&quot; šablona projektu pro vytvoření aplikace Fotogalerie. Progresivně se zlepšila aplikace pomocí jQuery Mobile a nové funkce ASP.NET MVC 4, aby byl kompatibilní s různých mobilních zařízení a klientů webových prohlížečů. Naučíte se také o nový kód recepty pro generování kódu a jak ASP.NET MVC 4 usnadňuje psaní metody asynchronní akce díky podpoře úloh&lt;ActionResult&gt; návratové typy.
-> 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
+[Stažení webové táborech cvičení Kit](https://aka.ms/webcamps-training-kit)
 
+ASP.NET MVC 4 je rozhraní pro vytváření škálovatelných standardy webových aplikací pomocí vzory zavedené návrhu a výkonu technologie ASP.NET a rozhraní .NET framework. Tento nový, čtvrté verzi rozhraní framework se zaměřuje na snadněji vývoj mobilních webových aplikací.
 
-<a id="Objectives"></a>
+Pokud vytvoříte nový projekt ASP.NET MVC 4 je nyní šablona projektu mobilních aplikací, které můžete použít k vytvoření samostatné aplikace speciálně pro mobilní zařízení. Kromě toho ASP.NET MVC 4 se integruje s jQuery Mobile prostřednictvím balíčku NuGet jQuery.Mobile.MVC. jQuery Mobile je základě HTML5 rozhraní pro vývoj webových aplikací, které jsou kompatibilní s všechny platformy oblíbených mobilních zařízení, včetně Windows Phone, iPhone, Android a tak dále. Ale pokud budete potřebovat specializace, ASP.NET MVC 4 také umožňuje obsluhovat různá zobrazení pro různá zařízení a poskytovat optimalizace pro konkrétní zařízení.
+
+V tomto testovacím prostředí praktických se spustí s ASP.NET MVC 4 &quot;Internetové aplikace&quot; šablona projektu pro vytvoření aplikace Fotogalerie. Progresivně se zlepšila aplikace pomocí jQuery Mobile a nové funkce ASP.NET MVC 4, aby byl kompatibilní s různých mobilních zařízení a klientů webových prohlížečů. Naučíte se také o nový kód recepty pro generování kódu a jak ASP.NET MVC 4 usnadňuje psaní metody asynchronní akce díky podpoře úloh&lt;ActionResult&gt; návratové typy.
+
+> [!NOTE]
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [verze Microsoft-webové/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). Projekt specifické pro toto testovací prostředí je k dispozici na [co je nového ve webových formulářů v technologii ASP.NET 4.5](https://github.com/Microsoft-Web/HOL-ASPNETWebForms).
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Cíle
@@ -146,7 +144,7 @@ V tomto cvičení zaměříte vylepšení v šablonách projektu ASP.NET MVC 4. 
 
     ![jQuery ověření](whats-new-in-aspnet-mvc-4/_static/image6.png)
 
-    *jQuery ověření*
+    jQuery ověření
 
     > [!NOTE]
     > Všimněte si, že dva protokolu v části v první části se můžou přihlásit pomocí účtu zaregistrovaný z webu a v druhé části můžete altenativelly přihlásit pomocí jiné služby ověřování, jako je google (zakázané ve výchozím nastavení).
@@ -164,7 +162,7 @@ V tomto cvičení zaměříte vylepšení v šablonách projektu ASP.NET MVC 4. 
 
     ![Vyberte protokol ve službě](whats-new-in-aspnet-mvc-4/_static/image7.png)
 
-    *Vyberte protokol ve službě*
+    Vyberte protokol ve službě
 10. Přihlaste se pomocí účtu Google.
 11. Povolit web (localhost) za účelem načtení informací z účtu Google.
 12. Nakonec budete muset zaregistrovat v lokalitě za účelem přidružení účtu Google.
@@ -258,9 +256,9 @@ Pomocí adaptivního vykreslování techniku, bude web **zobrazí správně, bez
 
 Příklady dotazů média: &gt;  **@media všechny a (max-width: 1000px) a (min-width: 700px) {}:** pro všechny rozlišení mezi 700px a 1000px.
 
-> **@mediaobrazovky a (min-width: 400 px) a (max-width: 700px) {...}:** pouze pro obrazovky. Řešení musí být v rozsahu od 400 do 700px.
+> **@media obrazovky a (min-width: 400 px) a (max-width: 700px) {...}:** pouze pro obrazovky. Řešení musí být v rozsahu od 400 do 700px.
 > 
-> **@mediakapesních a (min-width: 20em), obrazovky a (min-width: 20em) {...}:** kapesní zařízení (mobile a zařízení) a obrazovky. Minimální šířka musí být větší než 20em.
+> **@media kapesních a (min-width: 20em), obrazovky a (min-width: 20em) {...}:** kapesní zařízení (mobile a zařízení) a obrazovky. Minimální šířka musí být větší než 20em.
 > 
 > Další informace o tom najdete na [W3C lokality](http://www.w3.org/TR/css3-mediaqueries/).
 

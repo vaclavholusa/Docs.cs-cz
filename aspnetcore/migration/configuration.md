@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: f258e12a95770909bff24fd5dd3611324179596f
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e1ee582072c88542565c5cb860e157afe137f9f0
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-configuration"></a>Migrace konfigurace
 
@@ -31,7 +31,7 @@ ASP.NET Core už používá *Global.asax* a *web.config* soubory, které jsou po
 
 V tomto článku jsme začínáte s projektu ASP.NET Core částečně migrovat z [předchozím článku](mvc.md). Chcete-li nastavit konfiguraci, přidejte následující konstruktor a vlastnost, která má *Startup.cs* soubor umístěný v kořenovém adresáři projektu:
 
-[!code-csharp[Main](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
+[!code-csharp[](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
 
 Poznámka, která v tomto okamžiku *Startup.cs* soubor nebude kompilovat, protože musíme přidejte následující `using` příkaz:
 
@@ -47,7 +47,7 @@ Přidat *appSettings.JSON určený* souboru do kořenového adresáře projektu 
 
 Naše projektu ASP.NET MVC zahrnout požadované databáze připojovací řetězec v *web.config*v `<connectionStrings>` elementu. V našem projektu ASP.NET Core přidáme k ukládání těchto informací v *appSettings.JSON určený* souboru. Otevřete *appSettings.JSON určený*a Všimněte si, že již zahrnuje následující:
 
-[!code-json[Main](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
+[!code-json[](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
 
 
 Ve zvýrazněný řádek použité v ukázkách výše, změňte název databáze z **_CHANGE_ME** na název vaší databáze.

@@ -1,7 +1,7 @@
 ---
 title: "Úvod do stránky Razor v ASP.NET Core"
 author: Rick-Anderson
-description: "Kurz ASP.NET Core na stránky Razor. Obsahuje základní MVC, ASP.NET Core 2.x, pro vývoj webů a Visual Studio 2017. Tato dokumentace poskytuje přehled používání stránky Razor v ASP.NET Core k usnadnění vývoje zaměřené na stránce scénáře."
+description: "Zjistěte, jak stránky Razor v ASP.NET Core Díky kódování zaměřené na stránce scénáře jednodušší a zvýšit produktivitu než použití MVC."
 manager: wpickett
 ms.author: riande
 ms.date: 09/12/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: c16959189448337b12dc4902300516b25c200eee
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f24de7ab12a3bbd7915ce6c3c93a107eb47fe864
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -64,21 +64,21 @@ Spustit `dotnet new razor` z příkazového řádku.
 
 Stránky Razor je povolena v *Startup.cs*:
 
-[!code-cs[main](index/sample/RazorPagesIntro/Startup.cs?name=snippet_Startup)]
+[!code-cs[](index/sample/RazorPagesIntro/Startup.cs?name=snippet_Startup)]
 
-Mějte na paměti na základní stránce:<a name="OnGet"></a>
+Mějte na paměti na základní stránce: <a name="OnGet"></a>
 
-[!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Index.cshtml)]
+[!code-cshtml[](index/sample/RazorPagesIntro/Pages/Index.cshtml)]
 
-Předchozí kód mnoho vypadá soubor zobrazení syntaxe Razor. Čím je jiné je `@page` – direktiva. `@page`Vytvoří soubor do akce MVC – to znamená, že ji zpracovává požadavky přímo, bez průchodu přes řadič. `@page`musí být první direktivu Razor na stránce. `@page`má vliv na chování jiných objektů, které Razor.
+Předchozí kód mnoho vypadá soubor zobrazení syntaxe Razor. Čím je jiné je `@page` – direktiva. `@page` Vytvoří soubor do akce MVC – to znamená, že ji zpracovává požadavky přímo, bez průchodu přes řadič. `@page` musí být první direktivu Razor na stránce. `@page` má vliv na chování jiných objektů, které Razor.
 
 Podobná stránky, můžete použít `PageModel` třídy, je uvedené v následující dva soubory. *Pages/Index2.cshtml* souboru:
 
-[!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml)]
+[!code-cshtml[](index/sample/RazorPagesIntro/Pages/Index2.cshtml)]
 
 *Pages/Index2.cshtml.cs* model stránky:
 
-[!code-cs[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml.cs)]
+[!code-cs[](index/sample/RazorPagesIntro/Pages/Index2.cshtml.cs)]
 
 Podle konvence `PageModel` soubor třídy má stejný název jako soubor stránky Razor s *.cs* připojí. Je třeba na předchozí stránku Razor *Pages/Index2.cshtml*. Soubor obsahující `PageModel` třída nazývá *Pages/Index2.cshtml.cs*.
 
@@ -86,15 +86,15 @@ Přidružení cesty adresy URL na stránky určuje umístění stránky v systé
 
 | Název souboru a cesty               | odpovídající adresy URL |
 | ----------------- | ------------ |
-| */Pages/Index.cshtml* | `/`nebo`/Index` |
+| */Pages/Index.cshtml* | `/` Nebo `/Index` |
 | */Pages/Contact.cshtml* | `/Contact` |
 | */Pages/Store/Contact.cshtml* | `/Store/Contact` |
-| */Pages/Store/Index.cshtml* | `/Store`nebo`/Store/Index` |
+| */Pages/Store/Index.cshtml* | `/Store` Nebo `/Store/Index` |
 
 Poznámky:
 
 * Modul runtime vypadá pro stránky Razor soubory v *stránky* složky ve výchozím nastavení.
-* `Index`Když neobsahuje adresu URL stránky, je výchozí stránky.
+* `Index` Když neobsahuje adresu URL stránky, je výchozí stránky.
 
 ## <a name="writing-a-basic-form"></a>Zápis základní formulář
 
@@ -102,23 +102,23 @@ Funkce stránky Razor jsou navrženy tak, aby se používají u webových prohl�
 
 Pro ukázky v tomto dokumentu `DbContext` je inicializován v [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16) souboru.
 
-[!code-cs[main](index/sample/RazorPagesContacts/Startup.cs?highlight=15-16)]
+[!code-cs[](index/sample/RazorPagesContacts/Startup.cs?highlight=15-16)]
 
 Datový model:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Data/Customer.cs)]
+[!code-cs[](index/sample/RazorPagesContacts/Data/Customer.cs)]
 
 Kontext databáze:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Data/AppDbContext.cs)]
+[!code-cs[](index/sample/RazorPagesContacts/Data/AppDbContext.cs)]
 
 *Pages/Create.cshtml* zobrazení souboru:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Create.cshtml)]
+[!code-cshtml[](index/sample/RazorPagesContacts/Pages/Create.cshtml)]
 
 *Pages/Create.cshtml.cs* model stránky:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_ALL)]
+[!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_ALL)]
 
 Podle konvence `PageModel` třídy se nazývá `<PageName>Model` a je v stejného oboru názvů jako stránky.
 
@@ -126,14 +126,14 @@ Podle konvence `PageModel` třídy se nazývá `<PageName>Model` a je v stejnéh
 
 Na stránce `OnPostAsync` *metoda obslužná rutina*, která se spouští `POST` požadavků (když uživatel odešle formulář). Můžete přidat metody obslužné rutiny pro všechny akce HTTP. Nejběžnější obslužné rutiny jsou:
 
-* `OnGet`k chybě při inicializaci stavu potřebné pro stránku. [OnGet](#OnGet) ukázka.
-* `OnPost`pro zpracování odesílání formuláře.
+* `OnGet` k chybě při inicializaci stavu potřebné pro stránku. [OnGet](#OnGet) ukázka.
+* `OnPost` pro zpracování odesílání formuláře.
 
 `Async` Přípona je nepovinný, ale se často používá podle konvence pro asynchronní funkce. `OnPostAsync` Kód v předchozím příkladu bude vypadat podobně jako by za normálních okolností psaní v kontroleru. Předchozí kód je typické pro stránky Razor. Většina primitiv MVC jako [model vazby](xref:mvc/models/model-binding), [ověření](xref:mvc/models/validation), a jsou sdíleny výsledky akce.  <!-- Review: Ryan, can we get a list of what is shared and what isn't? -->
 
 Předchozí `OnPostAsync` metoda:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_OnPostAsync)]
+[!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_OnPostAsync)]
 
 Základní tok `OnPostAsync`:
 
@@ -142,43 +142,43 @@ Zkontrolujte chyby ověření.
 *  Pokud nejsou žádné chyby, uložit data a přesměrování.
 *  Pokud nejsou chyby, zobrazit stránku znovu s ověřovacích zpráv. Ověřování na straně klienta je stejný jako tradiční aplikací ASP.NET MVC jádra. V mnoha případech chyb při ověřování by být zjištěn v klientském počítači a nikdy odeslat na server.
 
-Při úspěšném zadání data `OnPostAsync` volání metod obslužné rutiny `RedirectToPage` Pomocná metoda vrátí instanci `RedirectToPageResult`. `RedirectToPage`představuje novou výsledek akce, podobně jako `RedirectToAction` nebo `RedirectToRoute`, ale přizpůsobené pro stránky. V předchozím příkladu, je přesměrován na indexovou stránku kořenové (`/Index`). `RedirectToPage`podrobně [generování adresy URL pro stránky](#url_gen) části.
+Při úspěšném zadání data `OnPostAsync` volání metod obslužné rutiny `RedirectToPage` Pomocná metoda vrátí instanci `RedirectToPageResult`. `RedirectToPage` představuje novou výsledek akce, podobně jako `RedirectToAction` nebo `RedirectToRoute`, ale přizpůsobené pro stránky. V předchozím příkladu, je přesměrován na indexovou stránku kořenové (`/Index`). `RedirectToPage` podrobně [generování adresy URL pro stránky](#url_gen) části.
 
-Když odeslaného formuláře došlo k chybám ověřování, (které jsou předávány serveru),`OnPostAsync` volání metod obslužné rutiny `Page` metodu helper. `Page`Vrací instanci třídy `PageResult`. Vrácení `Page` je podobná jak akce v řadiče vrátit `View`. `PageResult`Výchozí nastavení je <!-- Review  --> návratový typ pro obslužné rutiny metodu. Obslužná rutina metodu, která vrátí `void` vykreslí stránku.
+Když odeslaného formuláře došlo k chybám ověřování, (které jsou předávány serveru),`OnPostAsync` volání metod obslužné rutiny `Page` metodu helper. `Page` Vrací instanci třídy `PageResult`. Vrácení `Page` je podobná jak akce v řadiče vrátit `View`. `PageResult` Výchozí nastavení je <!-- Review  --> návratový typ pro obslužné rutiny metodu. Obslužná rutina metodu, která vrátí `void` vykreslí stránku.
 
 `Customer` Používá vlastnost `[BindProperty]` atribut se vyjádřit výslovný souhlas s vazbou modelu.
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_PageModel&highlight=10-11)]
+[!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_PageModel&highlight=10-11)]
 
 Stránky Razor, ve výchozím nastavení, vazbu vlastnosti jenom s příkazy nebo GET. Vazba na vlastnosti může snížit množství kód, který máte k zápisu. Vazba snižuje kódu pomocí stejné vlastnosti k vykreslení pole formuláře (`<input asp-for="Customer.Name" />`) a přijměte vstupu.
 
 Domovská stránka (*Index.cshtml*):
 
-[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml)]
+[!code-cshtml[](index/sample/RazorPagesContacts/Pages/Index.cshtml)]
 
 Kódu *Index.cshtml.cs* souboru:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Index.cshtml.cs)]
+[!code-cs[](index/sample/RazorPagesContacts/Pages/Index.cshtml.cs)]
 
 *Index.cshtml* soubor obsahuje následující kód k vytvoření odkazu pro úpravy pro každý kontakt:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=21)]
+[!code-cshtml[](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=21)]
 
 [Pomocná značka ukotvení](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) použít `asp-route-{value}` atribut pro vygenerování odkazu na stránku upravit. Odkaz obsahuje data trasy s kontakt ID. Například `http://localhost:5000/Edit/1`.
 
 *Pages/Edit.cshtml* souboru:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Edit.cshtml?highlight=1)]
+[!code-cshtml[](index/sample/RazorPagesContacts/Pages/Edit.cshtml?highlight=1)]
 
 První řádek obsahuje `@page "{id:int}"` – direktiva. Omezení směrování`"{id:int}"` informuje stránky tak, aby přijímal požadavky na stránku, které obsahují `int` směrovat data. Pokud požadavek na stránku neobsahuje data trasy, která lze převést na `int`, modul runtime vrátí chybu HTTP 404 (není nalezena).
 
 *Pages/Edit.cshtml.cs* souboru:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Edit.cshtml.cs)]
+[!code-cs[](index/sample/RazorPagesContacts/Pages/Edit.cshtml.cs)]
 
 *Index.cshtml* soubor zároveň obsahuje kód k vytvoření tlačítko Odstranit pro každý kontakt zákazníka:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=22-23)]
+[!code-cshtml[](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=22-23)]
 
 Pokud tlačítko Odstranit je vykreslena ve formátu HTML, jeho `formaction` zahrnuje parametry:
 
@@ -195,7 +195,7 @@ Při výběru tlačítka, formuláře `POST` požadavek odeslán do serveru. Pod
 
 Protože `handler` je `delete` v tomto příkladu `OnPostDeleteAsync` metoda obslužná rutina se používá procesu `POST` požadavku. Pokud `asp-page-handler` nastavena na jinou hodnotu, jako například `remove`, metodu obslužná rutina stránky s názvem `OnPostRemoveAsync` je vybrána.
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Index.cshtml.cs?range=26-37)]
+[!code-cs[](index/sample/RazorPagesContacts/Pages/Index.cshtml.cs?range=26-37)]
 
 `OnPostDeleteAsync` Metoda:
 
@@ -219,7 +219,7 @@ Tato stránka umožňuje declutter díky některé z těchto funkcí.
 
 Přidat [rozložení stránky](xref:mvc/views/layout) k *Pages/_Layout.cshtml*:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_LayoutSimple.cshtml)]
+[!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_LayoutSimple.cshtml)]
 
 [Rozložení](xref:mvc/views/layout):
 
@@ -230,7 +230,7 @@ V tématu [rozložení stránky](xref:mvc/views/layout) Další informace.
 
 [Rozložení](xref:mvc/views/layout#specifying-a-layout) je nastavena *Pages/_ViewStart.cshtml*:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
+[!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
 
 **Poznámka:** rozložení je v *stránky* složky. Stránky vyhledejte další zobrazení (rozložení, šablony, částečné.) hierarchicky, spouštění ve stejné složce jako aktuální stránku. Rozložení v *stránky* složky lze z libovolné stránky Razor pod *stránky* složky.
 
@@ -240,15 +240,15 @@ Obsahuje zobrazení vyhledávání ze stránky Razor *stránky* složky. Rozlož
 
 Přidat *Pages/_ViewImports.cshtml* souboru:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_ViewImports.cshtml)]
+[!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewImports.cshtml)]
 
-`@namespace`se vysvětluje dále v tomto kurzu. `@addTagHelper` – Direktiva přináší [předdefinované značky Pomocníci](xref:mvc/views/tag-helpers/builtin-th/Index) pro všechny stránky v *stránky* složky.
+`@namespace` se vysvětluje dále v tomto kurzu. `@addTagHelper` – Direktiva přináší [předdefinované značky Pomocníci](xref:mvc/views/tag-helpers/builtin-th/Index) pro všechny stránky v *stránky* složky.
 
 <a name="namespace"></a>
 
 Když `@namespace` – direktiva se používá explicitně na stránce:
 
-[!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Customers/Namespace2.cshtml?highlight=2)]
+[!code-cshtml[](index/sample/RazorPagesIntro/Pages/Customers/Namespace2.cshtml?highlight=2)]
 
 Direktiva Nastaví obor názvů pro stránku. `@model` – Direktiva nemusí obsahovat obor názvů.
 
@@ -256,11 +256,11 @@ Když `@namespace` – direktiva je součástí *_ViewImports.cshtml*, zadaný o
 
 Například kódu na pozadí *Pages/Customers/Edit.cshtml.cs* explicitně nastaví obor názvů:
 
-[!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/Edit.cshtml.cs?name=snippet_namespace)]
+[!code-cs[](index/sample/RazorPagesContacts2/Pages/Customers/Edit.cshtml.cs?name=snippet_namespace)]
 
 *Pages/_ViewImports.cshtml* souboru nastaví následující obor názvů:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_ViewImports.cshtml?highlight=1)]
+[!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewImports.cshtml?highlight=1)]
 
 Vygenerovaný obor názvů pro *Pages/Customers/Edit.cshtml* Razor stránky je stejná jako souboru kódu. `@namespace` – Direktiva v byla navržená tak, třídy C# přidán do projektu a kód generovaný stránky *právě pracovní* bez nutnosti přidání `@using` direktivy pro souboru kódu.
 
@@ -268,11 +268,11 @@ Vygenerovaný obor názvů pro *Pages/Customers/Edit.cshtml* Razor stránky je s
 
 Původní *Pages/Create.cshtml* zobrazení souboru:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Create.cshtml?highlight=2)]
+[!code-cshtml[](index/sample/RazorPagesContacts/Pages/Create.cshtml?highlight=2)]
 
 Aktualizovaný *Pages/Create.cshtml* zobrazení souboru:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/Create.cshtml?highlight=2)]
+[!code-cshtml[](index/sample/RazorPagesContacts2/Pages/Customers/Create.cshtml?highlight=2)]
 
 [Projektu úvodní stránky Razor](#rpvs17) obsahuje *Pages/_ValidationScriptsPartial.cshtml*, který zachytí až ověřování na straně klienta.
 
@@ -282,7 +282,7 @@ Aktualizovaný *Pages/Create.cshtml* zobrazení souboru:
 
 `Create` Stránky, která je uvedená dříve, používá `RedirectToPage`:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_OnPostAsync&highlight=10)]
+[!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_OnPostAsync&highlight=10)]
 
 Aplikace má následující strukturu souboru nebo složky:
 
@@ -318,13 +318,13 @@ Relativní název propojení je užitečné, při vytváření lokalit se strukt
 
 ## <a name="tempdata"></a>TempData
 
-ASP.NET Core zpřístupní [TempData](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) vlastnost [řadič](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller). Tato vlastnost ukládá data, dokud je pro čtení. `Keep` a `Peek` metody můžete použít k prozkoumání dat bez odstranění. `TempData`jsou užitečné pro přesměrování, pokud se data potřebná pro více než jeden požadavek.
+ASP.NET Core zpřístupní [TempData](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) vlastnost [řadič](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller). Tato vlastnost ukládá data, dokud je pro čtení. `Keep` a `Peek` metody můžete použít k prozkoumání dat bez odstranění. `TempData` jsou užitečné pro přesměrování, pokud se data potřebná pro více než jeden požadavek.
 
 `[TempData]` Atribut je nového v technologii ASP.NET 2.0 jádra a je podporovaná v řadičích a stránky.
 
 Následující kód nastaví hodnotu `Message` pomocí `TempData`:
 
-[!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateDot.cshtml.cs?highlight=10-11,25&name=snippet_Temp)]
+[!code-cs[](index/sample/RazorPagesContacts2/Pages/Customers/CreateDot.cshtml.cs?highlight=10-11,25&name=snippet_Temp)]
 
 Následující kód v *Pages/Customers/Index.cshtml* souboru se zobrazí hodnota `Message` pomocí `TempData`.
 
@@ -346,19 +346,19 @@ V tématu [TempData](xref:fundamentals/app-state#temp) Další informace.
 
 Na následující stránce generuje kód pro dvě stránky pomocí obslužné rutiny `asp-page-handler` pomocná značky:
 
-[!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?highlight=12-13)]
+[!code-cshtml[](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?highlight=12-13)]
 
 <!-- Review: the FormActionTagHelper applies to all <form /> elements on a Razor page, even when there's no `asp-` attribute   -->
 
-Formuláře v předchozím příkladu má dva odeslání tlačítka, každý využívající `FormActionTagHelper` odeslat na jinou adresu URL. `asp-page-handler` Atribut je Pomocníka pro `asp-page`. `asp-page-handler`generuje adresy URL, které odesílají do jednotlivých metod obslužné rutiny, které jsou definované na stránce. `asp-page`není zadán, protože je ukázka propojení na aktuální stránce.
+Formuláře v předchozím příkladu má dva odeslání tlačítka, každý využívající `FormActionTagHelper` odeslat na jinou adresu URL. `asp-page-handler` Atribut je Pomocníka pro `asp-page`. `asp-page-handler` generuje adresy URL, které odesílají do jednotlivých metod obslužné rutiny, které jsou definované na stránce. `asp-page` není zadán, protože je ukázka propojení na aktuální stránce.
 
 Model stránky:
 
-[!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml.cs?highlight=20,32)]
+[!code-cs[](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml.cs?highlight=20,32)]
 
 Předchozí kód používá *s názvem metody obslužná rutina*. Metody s názvem obslužné rutiny vytvářejí provedením text v názvu po `On<HTTP Verb>` a před `Async` (pokud existuje). V předchozím příkladu jsou metody stránky OnPost**JoinList**Async a OnPost**JoinListUC**asynchronní. S *OnPost* a *asynchronní* odebrat, jsou názvy obslužná rutina `JoinList` a `JoinListUC`.
 
-[!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?range=12-13)]
+[!code-cshtml[](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?range=12-13)]
 
 Použití předcházející code cesty URL, kterou odesílá `OnPostJoinListAsync` je `http://localhost:5000/Customers/CreateFATH?handler=JoinList`. Cesty URL, kterou odesílá `OnPostJoinListUCAsync` je `http://localhost:5000/Customers/CreateFATH?handler=JoinListUC`.
 
@@ -366,7 +366,7 @@ Použití předcházející code cesty URL, kterou odesílá `OnPostJoinListAsyn
 
 Pokud chcete řetězec dotazu `?handler=JoinList` v adrese URL, můžete změnit trasy, která má název obslužné rutiny chápat část adresy obsahující cestu adresy URL. Trasy, která můžete přizpůsobit přidáním šablonu trasy v dvojitých uvozovkách po `@page` – direktiva.
 
-[!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateRoute.cshtml?highlight=1)]
+[!code-cshtml[](index/sample/RazorPagesContacts2/Pages/Customers/CreateRoute.cshtml?highlight=1)]
 
 Předchozí trasy vloží název obslužné rutiny cesty URL místo řetězec dotazu. `?` Následující `handler` znamená je volitelný parametr trasy.
 
@@ -376,7 +376,7 @@ Můžete použít `@page` a přidejte další segmenty a parametry k postupu na 
 
 Nakonfigurujte rozšířené možnosti, pomocí metody rozšíření `AddRazorPagesOptions` na tvůrce MVC:
 
-[!code-cs[main](index/sample/RazorPagesContacts/StartupAdvanced.cs?name=snippet_1)]
+[!code-cs[](index/sample/RazorPagesContacts/StartupAdvanced.cs?name=snippet_1)]
 
 Teď můžete použít `RazorPagesOptions` nastavit kořenový adresář pro stránky, nebo přidejte aplikace model konvence pro stránky. Jsme budete povolit další rozšíření tímto způsobem v budoucnu.
 

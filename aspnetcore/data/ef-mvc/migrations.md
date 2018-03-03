@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: fd466af8a73bf4c568fafe7e7fdcaa82021624da
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 058c7e8821f0ccc4e0be844a7f8dd0fab9942028
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>Migrace – základní EF s kurz k ASP.NET MVC jádra (4 10)
 
@@ -43,7 +43,7 @@ Nástroje EF pro rozhraní příkazového řádku (CLI) jsou uvedeny v [Microsof
 
 V *appSettings.JSON určený* souboru, změňte název databáze v připojovacím řetězci ContosoUniversity2 nebo jiný název, který nepoužili na počítači, který používáte.
 
-[!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
+[!code-json[](intro/samples/cu/appsettings2.json?range=1-4)]
 
 Tato změna nastaví projekt tak, aby první migrací vytvoří novou databázi. Není to povinné pro zahájení práce s migrací, ale se zobrazí později proto je vhodné.
 
@@ -91,7 +91,7 @@ Pokud se zobrazí chybová zpráva "*nemůže přistupovat k souboru... ContosoU
 
 Při provedení `migrations add` příkaz EF generovaného kódu, který vytvoří databázi od začátku. Tento kód je v *migrace* složku, v souboru s názvem  *\<časové razítko > _InitialCreate.cs*. `Up` Metodu `InitialCreate` třída vytvoří databázové tabulky, které odpovídají sady dat modelu entity a `Down` metoda odstraní, jak je znázorněno v následujícím příkladu.
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20170215220724_InitialCreate.cs?range=92-118)]
+[!code-csharp[](intro/samples/cu/Migrations/20170215220724_InitialCreate.cs?range=92-118)]
 
 Migrace volání `Up` metody k implementaci změny modelu dat pro migraci. Když zadáte příkaz k vrácení aktualizace, migrace volání `Down` metoda.
 
@@ -103,7 +103,7 @@ Pokud jste vytvořili počáteční migrace, když databáze již existuje, se v
 
 Migrace taky vytvoří *snímku* z aktuální schéma databáze v *Migrations/SchoolContextModelSnapshot.cs*. Tady je tento kód vypadá takto:
 
-[!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
+[!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
 
 Vzhledem k tomu, že aktuální schéma databáze je reprezentována v kódu, EF základní nemusí pracovat s databází pro vytvoření migrace. Když přidáte migrace, EF Určuje, co se změnilo tak, že porovnáte datový model, který soubor snímku. EF komunikuje s databází jenom v případě, že má k aktualizaci databáze. 
 

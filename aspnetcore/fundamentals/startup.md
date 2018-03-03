@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: c324918b33af82b619bb2251f32308e4a57c27e5
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 6526fe8d00aace19d1225e5dcb1ed1dc3b73b0eb
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -29,20 +29,20 @@ Použití aplikace ASP.NET Core `Startup` třídou, která se nazývá `Startup`
 * Může volitelně obsahovat [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) metoda konfigurace služby pro aplikace.
 * Musí zahrnovat [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) metodu pro vytvoření kanálu zpracování žádostí aplikace.
 
-`ConfigureServices`a `Configure` se nazývají modulem runtime při spuštění aplikace:
+`ConfigureServices` a `Configure` se nazývají modulem runtime při spuštění aplikace:
 
-[!code-csharp[Main](startup/snapshot_sample/Startup1.cs)]
+[!code-csharp[](startup/snapshot_sample/Startup1.cs)]
 
 Zadejte `Startup` třídy s [WebHostBuilderExtensions](/dotnet/api/Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions) [UseStartup&lt;TStartup&gt; ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) metoda:
 
-[!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
+[!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
 `Startup` Konstruktoru třídy přijímá závislosti definované hostitele. Běžně se používají [vkládání závislostí](xref:fundamentals/dependency-injection) do `Startup` třída je vložení:
 
 * [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) konfigurace služby pro prostředí.
 * [Parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) konfigurace při spuštění aplikace.
 
-[!code-csharp[Main](startup/snapshot_sample/Startup2.cs)]
+[!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
 Alternativu k vložení `IHostingEnvironment` , je použít přístup na základě konvence. Aplikace můžete definovat samostatné `Startup` třídy pro různá prostředí (například `StartupDevelopment`), a v době běhu je vybraná třída odpovídající při spuštění. Třída, jehož příponu názvu odpovídá aktuální prostředí prioritu. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments#startup-conventions).
 
@@ -62,7 +62,7 @@ Webového hostitele může konfigurovat některé služby před `Startup` metody
 
 Pro funkce, které vyžadují významné instalace, jsou `Add[Service]` rozšiřující metody na [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Typické webové aplikace se zaregistruje services pro rozhraní Entity Framework, Identity a MVC:
 
-[!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
+[!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
 
 ## <a name="services-available-in-startup"></a>K dispozici v spuštění služby
 
@@ -70,11 +70,11 @@ Webový hostitel poskytuje některé služby, které jsou k dispozici `Startup` 
 
 ## <a name="the-configure-method"></a>Metoda konfigurace
 
-[Konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) metoda se používá k určení, jak se aplikace reaguje na požadavky HTTP. Kanál požadavku je nakonfigurována tak, že přidáte [middleware](xref:fundamentals/middleware/index) součásti, které [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) instance. `IApplicationBuilder`je k dispozici `Configure` metoda, ale není registrován v kontejneru služby. Hostování vytvoří `IApplicationBuilder` a předává je přímo na `Configure` ([odkaz na zdroj](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
+[Konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) metoda se používá k určení, jak se aplikace reaguje na požadavky HTTP. Kanál požadavku je nakonfigurována tak, že přidáte [middleware](xref:fundamentals/middleware/index) součásti, které [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) instance. `IApplicationBuilder` je k dispozici `Configure` metoda, ale není registrován v kontejneru služby. Hostování vytvoří `IApplicationBuilder` a předává je přímo na `Configure` ([odkaz na zdroj](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
 
 [Šablony ASP.NET Core](/dotnet/core/tools/dotnet-new) konfiguraci kanálu s podporou pro vývojáře výjimka stránku, [BrowserLink](http://vswebessentials.com/features/browserlink), chybové stránky, statické soubory a architektura ASP.NET MVC:
 
-[!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
+[!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
 
 Každý `Use` metoda rozšíření přidá do kanálu požadavku komponenta middlewaru. Například `UseMvc` přidá metody rozšíření [směrování middleware](xref:fundamentals/routing) do kanálu požadavku a nakonfiguruje [MVC](xref:mvc/overview) jako výchozí obslužnou rutinu.
 
@@ -86,27 +86,27 @@ Další informace o tom, jak používat `IApplicationBuilder`, najdete v části
 
 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder.configureservices) a [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure) usnadňující metody lze použít místo zadávání `Startup` třídy. Více volá, aby se `ConfigureServices` připojit k sobě. Vícenásobné volání `Configure` použijte posledního volání metody.
 
-[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=18,22)]
+[!code-csharp[](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
 ## <a name="startup-filters"></a>Spuštění filtrů
 
-Použití [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter) pro konfiguraci middlewaru na začátku nebo na konci aplikace [konfigurace](#the-configure-method) middlewaru v řadě. `IStartupFilter`je užitečné k zajištění, že middleware běží před nebo po middleware přidal knihovny na začátku nebo na konci kanálu zpracování žádostí aplikace.
+Použití [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter) pro konfiguraci middlewaru na začátku nebo na konci aplikace [konfigurace](#the-configure-method) middlewaru v řadě. `IStartupFilter` je užitečné k zajištění, že middleware běží před nebo po middleware přidal knihovny na začátku nebo na konci kanálu zpracování žádostí aplikace.
 
-`IStartupFilter`implementuje jedné metody [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure), který obdrží a vrátí `Action<IApplicationBuilder>`. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) definuje třída ke konfiguraci aplikace požadavku kanálu. Další informace najdete v tématu [vytváření middlewaru v řadě s IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder).
+`IStartupFilter` implementuje jedné metody [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure), který obdrží a vrátí `Action<IApplicationBuilder>`. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) definuje třída ke konfiguraci aplikace požadavku kanálu. Další informace najdete v tématu [vytváření middlewaru v řadě s IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder).
 
 Každý `IStartupFilter` implementuje jeden nebo více middlewares v kanálu požadavku. Filtry je vyvolán v pořadí, ve kterém byly přidány do kontejneru služby. Filtry může přidat middleware před nebo po úspěšném řízení další filtru, proto se připojit k začátku nebo na konci kanálu aplikace.
 
 [Ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/startup/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample)) ukazuje, jak zaregistrovat middleware s `IStartupFilter`. Ukázková aplikace obsahuje middleware, která nastavuje hodnoty možností z parametr řetězce dotazu:
 
-[!code-csharp[Main](startup/sample/RequestSetOptionsMiddleware.cs?name=snippet1)]
+[!code-csharp[](startup/sample/RequestSetOptionsMiddleware.cs?name=snippet1)]
 
 `RequestSetOptionsMiddleware` Je nakonfigurovaný v `RequestSetOptionsStartupFilter` třídy:
 
-[!code-csharp[Main](startup/sample/RequestSetOptionsStartupFilter.cs?name=snippet1&highlight=7)]
+[!code-csharp[](startup/sample/RequestSetOptionsStartupFilter.cs?name=snippet1&highlight=7)]
 
 `IStartupFilter` Je zaregistrován v kontejneru služby `ConfigureServices`:
 
-[!code-csharp[Main](startup/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](startup/sample/Startup.cs?name=snippet1&highlight=3)]
 
 Když parametr řetězce dotazu pro `option` je zadané middleware zpracovává přiřazení hodnoty před MVC middleware vykreslí odpovědi:
 

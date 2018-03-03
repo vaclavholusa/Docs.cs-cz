@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 32716ddcf7c2a7b11000c333453a0fde3030ae34
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 2c7994bf41dbc0832cff25a47607ab0bada8f93b
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>Migrace – základní EF s stránky Razor kurzu (4 8)
 
@@ -52,7 +52,7 @@ Následující kód ukazuje aktualizovaný *.csproj* soubor s EF základní rozh
 
 V *appSettings.JSON určený* souboru, změňte název databáze v připojovacím řetězci ContosoUniversity2.
 
-[!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
+[!code-json[](intro/samples/cu/appsettings2.json?range=1-4)]
 
 Změna názvu DB v připojovacím řetězci způsobí, že první migrace k vytvoření nové databáze. Nové databáze je vytvořit, protože s tímto názvem neexistuje. Změna připojovací řetězec není nutné u Začínáme s migrací.
 
@@ -100,7 +100,7 @@ Pokud chybová zpráva "sestavení se nezdařilo." Zobrazí se, spusťte příka
 
 Příkaz EF základní `migrations add` generovaného kódu k vytvoření databáze z. Tento kód migrace je v *migrace\<časové razítko > _InitialCreate.cs* souboru. `Up` Metodu `InitialCreate` třída vytvoří DB tabulky, které odpovídají sady dat modelu entity. `Down` Metoda odstraní, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
+[!code-csharp[](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
 
 Migrace volání `Up` metody k implementaci změny modelu dat pro migraci. Když zadáte příkaz k vrácení aktualizace, migrace volání `Down` metoda.
 
@@ -119,7 +119,7 @@ Připojovací řetězec dříve bylo změněno používat nový název databáze
 
 Vytvoří migrace *snímku* z aktuální schéma databáze v *Migrations/SchoolContextModelSnapshot.cs*:
 
-[!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
+[!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
 
 Vzhledem k tomu, že aktuální schéma databáze je reprezentována v kódu, EF základní nemá pro interakci s DB vytvořit migrace. Když přidáte migrace, EF základní Určuje, co se změnilo tak, že porovnáte datový model, který soubor snímku. Základní EF komunikuje s databáze jenom v případě, že má k aktualizaci databáze.
 
@@ -127,7 +127,7 @@ Soubor snímku musí být synchronizována s migrací, která ji vytvořila. Mig
 
 ## <a name="remove-ensurecreated"></a>Remove EnsureCreated
 
-Pro včasné vývoj `EnsureCreated` příkaz nebyl použit. V tomto kurzu se používá migrace. `EnsureCreated`má následující omezení:
+Pro včasné vývoj `EnsureCreated` příkaz nebyl použit. V tomto kurzu se používá migrace. `EnsureCreated` má následující omezení:
 
 * Obchází migrace a vytvoří databáze a schéma.
 * Nelze vytvořit tabulku migrace.
@@ -189,7 +189,7 @@ Spusťte aplikaci a ověřte, že všechno funguje.
 
 ## <a name="appling-migrations-in-production"></a>Migrace appling v produkčním prostředí
 
-Doporučujeme, abyste měli produkční aplikace **není** volání [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) při spuštění aplikace. `Migrate`nelze volat z aplikace v serverové farmě. Například pokud aplikace bylo cloudové nasazení se Škálováním na více systémů (více instancí aplikace běží).
+Doporučujeme, abyste měli produkční aplikace **není** volání [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) při spuštění aplikace. `Migrate` nelze volat z aplikace v serverové farmě. Například pokud aplikace bylo cloudové nasazení se Škálováním na více systémů (více instancí aplikace běží).
 
 V rámci nasazení a řízené způsobem se má provést migrace databáze. Provozní databáze migrace přístupy patří:
 
@@ -229,7 +229,7 @@ The login failed.
 Login failed for user 'user name'.
 ```
 
-Řešení: spuštění`dotnet ef database update`
+Řešení: spuštění `dotnet ef database update`
 
 Pokud `update` příkaz vrátí chybu "Sestavení se nezdařilo.":
 

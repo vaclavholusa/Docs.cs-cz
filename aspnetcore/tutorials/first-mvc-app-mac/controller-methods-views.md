@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-mac/controller-methods-views
-ms.openlocfilehash: 01c20e505bd9d1591e1921701f94d102822231c8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 154ff861161c5b96f80fe1496e91b68fe17767fe
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="controller-methods-and-views-in-an-aspnet-core-mvc-app"></a>Metody kontroleru a zobrazení v aplikaci ASP.NET MVC jádra
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Máme správné spuštění na filmová aplikace, ale není ideální prezentaci. Neradi najdete v části času (12:00:00 AM na následujícím obrázku) a **ReleaseDate** by měla být dva slova.
 
@@ -25,7 +25,7 @@ Máme správné spuštění na filmová aplikace, ale není ideální prezentaci
 
 Otevřete *Models/Movie.cs* souboru a přidejte zvýrazněné řádky vidíte níže:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1&highlight=2,11-12)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1&highlight=2,11-12)]
 
 Sestavte a spusťte aplikaci.
 

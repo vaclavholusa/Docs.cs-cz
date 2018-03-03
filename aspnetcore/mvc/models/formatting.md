@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/formatting
-ms.openlocfilehash: 36231cd2bf59408e9c858ea99355c1e8dd859e6e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 704ca4f1ea6e0acd14dfa4175b61d8e2acf8f3c7
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-formatting-response-data-in-aspnet-core-mvc"></a>Úvod k formátování data odpovědi v aplikaci ASP.NET MVC jádra
 
@@ -35,7 +35,7 @@ Vrátit data v konkrétním formátu z řadiče, která dědí z `Controller` z�
 
 Vrací data ve formátu JSON:
 
-[!code-csharp[Main](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=3,5&range=21-26)]
+[!code-csharp[](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=3,5&range=21-26)]
 
 Ukázková odpověď z tuto akci:
 
@@ -45,7 +45,7 @@ Všimněte si, že je typ obsahu odpovědi `application/json`, uvedené v seznam
 
 Chcete-li vrátit data ve formátu prostého textu, použijte `ContentResult` a `Content` pomocné rutiny:
 
-[!code-csharp[Main](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=3,5&range=47-52)]
+[!code-csharp[](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=3,5&range=47-52)]
 
 Odpověď z tuto akci:
 
@@ -53,7 +53,7 @@ Odpověď z tuto akci:
 
 Poznámka: v tomto případě `Content-Type` vrátil je `text/plain`. Můžete také dosáhnout tento stejné chování pomocí právě typ odpovědi řetězec:
 
-[!code-csharp[Main](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=3,5&range=54-59)]
+[!code-csharp[](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=3,5&range=54-59)]
 
 >[!TIP]
 > Pro netriviální akce s více vrátit typy nebo možnosti (například různé stavové kódy HTTP na základě výsledku operace provedené), raději `IActionResult` jako návratový typ.
@@ -64,7 +64,7 @@ Vyjednávání obsahu (*conneg* pro zkrácení) nastane, když klient Určuje [h
 
 Používá následující metody akce `Ok` a `NotFound` pomocné metody:
 
-[!code-csharp[Main](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=8,10&range=28-38)]
+[!code-csharp[](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=8,10&range=28-38)]
 
 Odpověď formátu JSON, bude vrácen, pokud byl požadován jiného formátu a server může vracet požadovaný formát. Můžete použít nástroje, jako je [Fiddler](http://www.telerik.com/fiddler) vytvořit požadavek, který obsahuje hlavičku Accept a určit jiného formátu. V takovém případě, pokud má server *formátování* , může vytvořit odpověď v požadovaný formát, výsledkem bude vrácen ve formátu preferované klienta.
 
@@ -76,7 +76,7 @@ Akce kontroleru vrátit POCOs (prostý staré CLR objekty), v takovém případ�
 
 Vrátí typ objektu:
 
-[!code-csharp[Main](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=3&range=40-45)]
+[!code-csharp[](./formatting/sample/Controllers/Api/AuthorsController.cs?highlight=3&range=40-45)]
 
 V ukázce obdrží žádost o alias platný Autor odpovědi 200 OK daty vytvářením obsahu. Žádost o neplatný alias obdrží 204 ne obsahu odpovědi. Níže jsou uvedeny snímky obrazovky zobrazující odpovědi ve formátu XML a JSON.
 
@@ -110,7 +110,7 @@ Chcete-li přidat podporu pro formátování XML, nainstalujte `Microsoft.AspNet
 
 Přidat XmlSerializerFormatters do konfigurace MVC v *Startup.cs*:
 
-[!code-csharp[Main](./formatting/sample/Startup.cs?name=snippet1&highlight=2)]
+[!code-csharp[](./formatting/sample/Startup.cs?name=snippet1&highlight=2)]
 
 Alternativně můžete přidat pouze formátování výstupu:
 

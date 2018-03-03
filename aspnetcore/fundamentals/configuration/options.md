@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 7b8a1698e1e711c9d61a5b474276c99de2831a7f
-ms.sourcegitcommit: 7ee6e7582421195cbd675355c970d3d292ee668d
+ms.openlocfilehash: 1b6b6275633364701c27b66b1dfa55a2a037572b
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -33,23 +33,23 @@ Základní možnosti konfigurace je znázorněn příklad &num;1 v [ukázkovou a
 
 Třída možností musí být neabstraktní s konstruktor public bez parametrů. Následující třídy, `MyOptions`, má dvě vlastnosti `Option1` a `Option2`. Nastavení výchozích hodnot je nepovinný, ale konstruktoru třídy v následujícím příkladu se nastaví na výchozí hodnotu `Option1`. `Option2` Výchozí hodnota je nastavena pomocí vlastnosti inicializace přímo (*Models/MyOptions.cs*):
 
-[!code-csharp[Main](options/sample/Models/MyOptions.cs?name=snippet1)]
+[!code-csharp[](options/sample/Models/MyOptions.cs?name=snippet1)]
 
 `MyOptions` Třída je přidat do kontejneru služby s [IConfigureOptions&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.iconfigureoptions-1) a vázaný k konfigurace:
 
-[!code-csharp[Main](options/sample/Startup.cs?name=snippet_Example1)]
+[!code-csharp[](options/sample/Startup.cs?name=snippet_Example1)]
 
 Následující stránka používá model [vkládání závislostí konstruktor](xref:fundamentals/dependency-injection#what-is-dependency-injection) s [IOptions&lt;TOptions&gt; ](/dotnet/api/Microsoft.Extensions.Options.IOptions-1) pro přístup k nastavení (*Pages/Index.cshtml.cs*):
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?range=9)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?range=9)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=2,8)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=2,8)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet_Example1)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet_Example1)]
 
 Ukázkových *appSettings.JSON určený* soubor Určuje hodnoty pro `option1` a `option2`:
 
-[!code-json[Main](options/sample/appsettings.json)]
+[!code-json[](options/sample/appsettings.json)]
 
 Pokud aplikace běží a model stránky `OnGet` metoda vrátí řetězec zobrazující třída hodnoty možnosti:
 
@@ -63,19 +63,19 @@ Jednoduché možnosti konfigurace s delegáta je znázorněn příklad &num;2 v 
 
 Použití delegáta pro nastavení možností hodnot. Použití ukázkové aplikace `MyOptionsWithDelegateConfig` – třída (*Models/MyOptionsWithDelegateConfig.cs*):
 
-[!code-csharp[Main](options/sample/Models/MyOptionsWithDelegateConfig.cs?name=snippet1)]
+[!code-csharp[](options/sample/Models/MyOptionsWithDelegateConfig.cs?name=snippet1)]
 
 V následujícím kódu druhý `IConfigureOptions<TOptions>` služby se přidá do kontejneru služby. Ke konfiguraci vazby se používá delegáta `MyOptionsWithDelegateConfig`:
 
-[!code-csharp[Main](options/sample/Startup.cs?name=snippet_Example2)]
+[!code-csharp[](options/sample/Startup.cs?name=snippet_Example2)]
 
 *Index.cshtml.cs*:
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?range=10)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?range=10)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=3,9)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=3,9)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet_Example2)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet_Example2)]
 
 Můžete přidat několik poskytovatelů konfigurace. Poskytovatelé konfigurace jsou k dispozici v balíčky NuGet. Uplatňují se, aby bylo úspěšné registrace.
 
@@ -97,25 +97,25 @@ Při vytváření vazby možnosti konfigurace, každou vlastnost v možnosti typ
 
 V následujícím kódu, třetí `IConfigureOptions<TOptions>` služby se přidá do kontejneru služby. Vytvoří vazbu mezi `MySubOptions` do části `subsection` z *appSettings.JSON určený* souboru:
 
-[!code-csharp[Main](options/sample/Startup.cs?name=snippet_Example3)]
+[!code-csharp[](options/sample/Startup.cs?name=snippet_Example3)]
 
 `GetSection` Rozšíření metoda vyžaduje, [Microsoft.Extensions.Options.ConfigurationExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/) balíček NuGet. Pokud aplikace používá [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage, tento balíček je automaticky zahrnuty.
 
 Ukázkových *appSettings.JSON určený* soubor definuje `subsection` člena s klíči pro `suboption1` a `suboption2`:
 
-[!code-json[Main](options/sample/appsettings.json?highlight=4-7)]
+[!code-json[](options/sample/appsettings.json?highlight=4-7)]
 
 `MySubOptions` Třída definuje vlastnosti, `SubOption1` a `SubOption2`, aby udržení hodnoty dílčí možnosti (*Models/MySubOptions.cs*):
 
-[!code-csharp[Main](options/sample/Models/MySubOptions.cs?name=snippet1)]
+[!code-csharp[](options/sample/Models/MySubOptions.cs?name=snippet1)]
 
 Model stránky `OnGet` metoda vrátí řetězec s hodnotami dílčí možnost (*Pages/Index.cshtml.cs*):
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?range=11)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?range=11)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=4,10)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=4,10)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet_Example3)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet_Example3)]
 
 Při spuštění aplikace `OnGet` metoda vrátí řetězec zobrazující dílčí možnost hodnoty třídy:
 
@@ -129,15 +129,15 @@ Možnosti poskytnuté modelem zobrazení nebo pomocí vkládání přímé zobra
 
 Možnosti můžete zadat v zobrazení modelu nebo vložením `IOptions<TOptions>` přímo do zobrazení (*Pages/Index.cshtml.cs*):
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?range=9)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?range=9)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=2,8)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=2,8)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet_Example4)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet_Example4)]
 
 Přímé vkládání vložit `IOptions<MyOptions>` s `@inject` – direktiva:
 
-[!code-cshtml[Main](options/sample/Pages/Index.cshtml?range=1-10&highlight=5)]
+[!code-cshtml[](options/sample/Pages/Index.cshtml?range=1-10&highlight=5)]
 
 Při spuštění aplikace na vykreslené stránce se zobrazuje hodnoty možnosti:
 
@@ -153,11 +153,11 @@ Opětovné načtení konfiguračních dat pomocí `IOptionsSnapshot` je znázorn
 
 Následující příklad ukazuje, jak novou `IOptionsSnapshot` je vytvořen po *appSettings.JSON určený* změny (*Pages/Index.cshtml.cs*). Víc požadavků na server vrátit konstantní hodnoty poskytované *appSettings.JSON určený* souborů, dokud se změní soubor a konfigurace znovu načte.
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?range=12)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?range=12)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=5,11)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=5,11)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet_Example5)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet_Example5)]
 
 Následující obrázek ukazuje počáteční `option1` a `option2` načíst hodnoty z *appSettings.JSON určený* souboru:
 
@@ -179,15 +179,15 @@ S názvem podporu možnosti s [IConfigureNamedOptions](/dotnet/api/microsoft.ext
 
 *S názvem možnosti* podpory umožňuje aplikaci k rozlišení mezi pojmenované možnosti konfigurace. V ukázkové aplikace, jsou pojmenované možnosti deklarovat s [ConfigureNamedOptions&lt;TOptions&gt;. Konfigurace](/dotnet/api/microsoft.extensions.options.configurenamedoptions-1.configure) metoda:
 
-[!code-csharp[Main](options/sample/Startup.cs?name=snippet_Example6)]
+[!code-csharp[](options/sample/Startup.cs?name=snippet_Example6)]
 
 Ukázková aplikace používá s názvem možnosti s [IOptionsSnapshot&lt;TOptions&gt;. Získat](/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1.get) (*Pages/Index.cshtml.cs*):
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?range=13-14)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?range=13-14)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=6,12-13)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=6,12-13)]
 
-[!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?name=snippet_Example6)]
+[!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet_Example6)]
 
 Spuštění ukázkové aplikace, jsou vráceny s názvem možnosti:
 

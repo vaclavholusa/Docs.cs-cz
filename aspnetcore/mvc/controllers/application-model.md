@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 6e5f290c48cfe58ae3efe5ce0208c72e8ffb1daf
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 89a7af0ff95754f036b027aeafb8e25e49f397e2
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="working-with-the-application-model"></a>Práce s modelem aplikace
 
@@ -56,7 +56,7 @@ Potom (`Order=-990`):
 > Pořadí, ve které dva poskytovatelé se stejnou hodnotou pro `Order` se nazývají není definován a proto se spolehnout.
 
 > [!NOTE]
-> `IApplicationModelProvider`je rozšířené koncept pro nástroj framework autorům rozšíření. Obecně platí aplikace by měl použít konvence a rozhraní by měl používat zprostředkovatele. Klíče rozdíl je, že zprostředkovatelé vždy před konvence.
+> `IApplicationModelProvider` je rozšířené koncept pro nástroj framework autorům rozšíření. Obecně platí aplikace by měl použít konvence a rozhraní by měl používat zprostředkovatele. Klíče rozdíl je, že zprostředkovatelé vždy před konvence.
 
 `DefaultApplicationModelProvider` Vytváří řadu výchozí chování používá ASP.NET MVC jádra. Jeho zodpovědnosti patří:
 
@@ -89,25 +89,25 @@ Konvence použijí přidáním možnosti MVC nebo implementací `Attribute`s a j
 
 Následující konvence se používá k přidání vlastnosti do aplikačního modelu. 
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ApplicationDescription.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ApplicationDescription.cs)]
 
 Konvence modelu aplikace se použijí jako možnosti, když MVC je přidaný do `ConfigureServices` v `Startup`.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=5)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=5)]
 
 Vlastnosti jsou k dispozici `ActionDescriptor` vlastnosti kolekce v rámci akce kontroleru:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/AppModelController.cs?name=AppModelController)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/AppModelController.cs?name=AppModelController)]
 
 ### <a name="sample-modifying-the-controllermodel-description"></a>Ukázka: Úprava ControllerModel popis
 
 Jako v předchozím příkladu řadiče modelu můžete také upravit, aby obsahovat vlastní vlastnosti. Tyto přepíše existující vlastnosti se stejným názvem zadané v modelu aplikace. Následující konvence atribut přidá popis na úrovni kontroleru:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ControllerDescriptionAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ControllerDescriptionAttribute.cs)]
 
 Touto konvencí se použije jako atribut na řadiči.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=ControllerDescription&highlight=1)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=ControllerDescription&highlight=1)]
 
 Vlastnost "Popis" přistupuje stejným způsobem jako v předchozích příkladech.
 
@@ -115,31 +115,31 @@ Vlastnost "Popis" přistupuje stejným způsobem jako v předchozích příklade
 
 Konvence samostatné atribut lze použít k jednotlivým akcím, přepsání nastavení na úrovni aplikace nebo řadič se už používá.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ActionDescriptionAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ActionDescriptionAttribute.cs)]
 
 Použití tato akce v kontroleru předchozí příklad ukazuje, jak přepíše úrovni kontroleru konvence:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=DescriptionAttributesController&highlight=9)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=DescriptionAttributesController&highlight=9)]
 
 ### <a name="sample-modifying-the-parametermodel"></a>Ukázka: Úprava ParameterModel
 
 Následující konvence lze použít pro parametry akce k úpravě jejich `BindingInfo`. Následující konvenci vyžaduje, aby parametr parametr trasy; Další potenciální vazby zdroje (např. hodnoty řetězce dotazu) se ignorují.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/MustBeInRouteParameterModelConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/MustBeInRouteParameterModelConvention.cs)]
 
 Atribut může použít jakékoli parametr akce:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/ParameterModelController.cs?name=ParameterModelController&highlight=5)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/ParameterModelController.cs?name=ParameterModelController&highlight=5)]
 
 ### <a name="sample-modifying-the-actionmodel-name"></a>Ukázka: Úprava názvu ActionModel
 
 Upraví následující konvence `ActionModel` aktualizovat *název* akce, které je použito. Nový název je zadat jako parametr do atribut. Tento nový název se používá ve směrování, takže ovlivní trasy použité k dosažení této metodě akce.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/CustomActionNameAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/CustomActionNameAttribute.cs)]
 
 Tento atribut se používá pro metodu akce v `HomeController`:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/HomeController.cs?name=ActionModelConvention&highlight=2)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/HomeController.cs?name=ActionModelConvention&highlight=2)]
 
 I když je název metody `SomeName`, atribut přepsání konvence MVC pomocí názvu metody a nahradí název akce s `MyCoolAction`. Proto trasy použité k dosažení této akce je `/Home/MyCoolAction`.
 
@@ -150,18 +150,18 @@ I když je název metody `SomeName`, atribut přepsání konvence MVC pomocí n�
 
 Můžete použít `IApplicationModelConvention` přizpůsobit funguje jak směrování. Například následující konvence bude začlenit řadiče obory názvů do jejich trasy, nahraďte `.` v oboru názvů s `/` v trasy:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/NamespaceRoutingConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/NamespaceRoutingConvention.cs)]
 
 Konvence je přidán jako možnost v spuštění.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
 
 > [!TIP]
-> Můžete přidat konvence pro vaše [middleware](xref:fundamentals/middleware/index) díky přístupu k `MvcOptions` pomocí`services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`
+> Můžete přidat konvence pro vaše [middleware](xref:fundamentals/middleware/index) díky přístupu k `MvcOptions` pomocí `services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`
 
 Tato ukázka platí tato konvence pro tras, které nepoužívají atribut směrování, pokud je řadič má "Namespace" v názvu. Následující řadiče ukazuje touto konvencí:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/NamespaceRoutingController.cs?highlight=7-8)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/NamespaceRoutingController.cs?highlight=7-8)]
 
 ## <a name="application-model-usage-in-webapicompatshim"></a>Používání modelu aplikací v WebApiCompatShim
 
@@ -205,6 +205,6 @@ Kromě sadu konvence, balíček kompatibility obsahuje `System.Web.Http.ApiContr
 
 Zpřístupní aplikačního modelu [ `ApiExplorer` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.apiexplorermodel) vlastnost na každé úrovni, který slouží k procházení struktury aplikace. To může být slouží jako [generování stránky nápovědy pro vaše webové rozhraní API pomocí nástroje, například Swagger](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger). `ApiExplorer` Zpřístupňuje vlastnost `IsVisible` vlastnost, která můžete nastavit k určení, které části modelu vaše aplikace by měly být vystaveny. Můžete nakonfigurovat toto nastavení používá konvence:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/EnableApiExplorerApplicationConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/EnableApiExplorerApplicationConvention.cs)]
 
 Pomocí tohoto přístupu (a další konvence v případě potřeby), můžete povolit nebo zakázat rozhraní API viditelnost na všechny úrovně v rámci vaší aplikace. 

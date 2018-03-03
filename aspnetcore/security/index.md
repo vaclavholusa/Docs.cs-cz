@@ -9,23 +9,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/index
-ms.openlocfilehash: e1aaae09fe69e6b65a917785b436f927fac5345d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7e5f6bc44241dc6fc11569a145a04340f1b3ee7f
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-security-overview"></a>Přehled zabezpečení ASP.NET Core
 
-ASP.NET Core umožňuje vývojářům snadno konfigurovat a spravovat zabezpečení pro svoje aplikace. ASP.NET Core obsahuje funkce pro správu ověřování, autorizace, ochrany dat, SSL vynucení, tajné klíče aplikace, žádost proti padělání ochrana a správa CORS. Tyto funkce zabezpečení umožňují vytvářet robustní ještě zabezpečení aplikace ASP.NET Core. 
+ASP.NET Core umožňuje vývojářům snadno konfigurovat a spravovat zabezpečení pro svoje aplikace. ASP.NET Core obsahuje funkce pro správu ověřování, autorizace, ochrany dat, SSL vynucení, tajné klíče aplikace, žádost proti padělání ochrana a správa CORS. Tyto funkce zabezpečení umožňují vytvářet robustní ještě zabezpečení aplikace ASP.NET Core.
 
 ## <a name="aspnet-core-security-features"></a>Funkce ASP.NET Core zabezpečení
 
-ASP.NET Core poskytuje řadu nástrojů a knihovny k zabezpečení aplikací včetně předdefinované zprostředkovatele Identity, ale můžete použít 3. stran identity služby jako je Facebook, Twitter a LinkedIn. Pomocí ASP.NET Core můžete snadno spravovat tajné klíče aplikace, které představují způsob, jak ukládat a používat důvěrné informace bez nutnosti vystavit v kódu. 
+ASP.NET Core poskytuje řadu nástrojů a knihovny k zabezpečení aplikací včetně předdefinované zprostředkovatele Identity, ale můžete použít 3. stran identity služby jako je Facebook, Twitter a LinkedIn. Pomocí ASP.NET Core můžete snadno spravovat tajné klíče aplikace, které představují způsob, jak ukládat a používat důvěrné informace bez nutnosti vystavit v kódu.
 
 ## <a name="authentication-vs-authorization"></a>Ověřování vs. Autorizace
 
-Ověřování je proces, ve kterém uživatel poskytuje pověření, které se pak porovnávají s údajů uložených v operační systém, databáze, aplikace nebo prostředku. Pokud se shodují, uživatelé úspěšně ověřit a potom může provést akce, které mají autorizaci, během autorizačního procesu. Povolení odkazuje na proces, který určuje, co uživatel může provádět. 
+Ověřování je proces, ve kterém uživatel poskytuje pověření, které se pak porovnávají s údajů uložených v operační systém, databáze, aplikace nebo prostředku. Pokud se shodují, uživatelé úspěšně ověřit a potom může provést akce, které mají autorizaci, během autorizačního procesu. Povolení odkazuje na proces, který určuje, co uživatel může provádět.
 
 Dalším způsobem zamyslet nad ověřování je vzít v úvahu jako způsob, jak při autorizaci akce, které můžete uživatel provádět, abyste objektů, které uvnitř toto místo (server, databázi nebo aplikace) zadejte prostor, například server, databáze, aplikace nebo prostředku.
 
@@ -38,16 +38,17 @@ ASP.NET Core a EF obsahují funkce, které vám pomohou zabezpečit vaše aplika
 * [Padělání požadavku posílaného mezi weby (proti útokům CSRF)](https://docs.microsoft.com/aspnet/core/security/anti-request-forgery)
 * [Otevřete přesměrování útoky](https://docs.microsoft.com/aspnet/core/security/preventing-open-redirects)
 
-Existují další chyby zabezpečení, které byste měli vědět. Další informace najdete v části v tomto dokumentu na *ASP.NET zabezpečení dokumentaci*. 
+Existují další chyby zabezpečení, které byste měli vědět. Další informace najdete v části v tomto dokumentu na *ASP.NET zabezpečení dokumentaci*.
 
 ## <a name="aspnet-security-documentation"></a>Dokumentace k technologii ASP.NET zabezpečení
 
 *   [Ověřování](authentication/index.md)
     *   [Úvod do systému Identity](authentication/identity.md)
     *   [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](authentication/social/index.md)
+    *   [Povolení ověřování pomocí protokolu WS-Federation](authentication/ws-federation.md)
     * [Konfigurace ověřování systému Windows](authentication/windowsauth.md)
     *   [Potvrzení účtu a obnovení hesla](authentication/accconfirm.md)
-    *   [Dvoufaktorové ověřování přes SMS](authentication/2fa.md) 
+    *   [Dvoufaktorové ověřování přes SMS](authentication/2fa.md)
     *   [Používala ověřování souborů cookie bez Identity](authentication/cookie.md)
     *   [Azure Active Directory](authentication/azure-active-directory/index.md)
         *   [Integrace Azure AD do webové aplikace ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)

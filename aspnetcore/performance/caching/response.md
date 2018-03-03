@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: 37592c3b2099c2cb74dc42ad4a7937b32c281f65
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: c654cfd7c2d291849067bfd3297f940018ccb3d8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>Ukládání odpovědí do mezipaměti v ASP.NET Core
 
@@ -45,10 +45,10 @@ V následující tabulce jsou uvedeny další mezipaměti hlavičky, které hraj
 
 | Záhlaví                                                     | Funkce |
 | ---------------------------------------------------------- | -------- |
-| [Stáří](https://tools.ietf.org/html/rfc7234#section-5.1)     | Odhad množství času v sekundách, protože odpověď byla vygenerována nebo úspěšně ověřen na původním serveru. |
+| [stáří](https://tools.ietf.org/html/rfc7234#section-5.1)     | Odhad množství času v sekundách, protože odpověď byla vygenerována nebo úspěšně ověřen na původním serveru. |
 | [Expires](https://tools.ietf.org/html/rfc7234#section-5.3) | Datum a čas, po jejímž uplynutí je považován za odpověď zastaralých. |
 | [Pragma](https://tools.ietf.org/html/rfc7234#section-5.4)  | Pro zpětnou kompatibilitu s HTTP/1.0 ukládá do mezipaměti pro nastavení existuje `no-cache` chování. Pokud `Cache-Control` záhlaví nachází, `Pragma` záhlaví je ignorována. |
-| [Lišit](https://tools.ietf.org/html/rfc7231#section-7.1.4)  | Určuje, že odpovědi v mezipaměti nesmí být odeslána, pokud všechny služby `Vary` záhlaví pole shodují v původní žádost odpověď uložená v mezipaměti a nový požadavek. |
+| [lišit](https://tools.ietf.org/html/rfc7231#section-7.1.4)  | Určuje, že odpovědi v mezipaměti nesmí být odeslána, pokud všechny služby `Vary` záhlaví pole shodují v původní žádost odpověď uložená v mezipaměti a nový požadavek. |
 
 ## <a name="http-based-caching-respects-request-cache-control-directives"></a>Ukládání do mezipaměti ohledech založené na protokolu HTTP žádosti direktivy Cache-Control
 
@@ -91,7 +91,7 @@ Další informace najdete v tématu [distribuované mezipaměti značky pomocná
 > [!WARNING]
 > Zakážete ukládání do mezipaměti pro obsah, který obsahuje informace pro klienty ověřené. Ukládání do mezipaměti by měla povoleno pouze pro obsah, který nemění na základě identity uživatele nebo jestli je uživatel přihlášený.
 
-[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) uložené odpovědi se liší podle hodnoty daný seznam klíče dotazu. Když na jedinou hodnotu `*` je zadáno, se liší middleware odpovědí všechny žádosti o parametrů řetězce dotazu. `VaryByQueryKeys`vyžaduje ASP.NET Core 1.1 nebo novější.
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) uložené odpovědi se liší podle hodnoty daný seznam klíče dotazu. Když na jedinou hodnotu `*` je zadáno, se liší middleware odpovědí všechny žádosti o parametrů řetězce dotazu. `VaryByQueryKeys` Vyžaduje ASP.NET Core 1.1 nebo novější.
 
 Middleware ukládání do mezipaměti odpovědi musí být povoleno nastavení `VaryByQueryKeys` vlastnost; jinak, je vyvolána výjimka za běhu. Není k dispozici odpovídající hlavičku HTTP pro `VaryByQueryKeys` vlastnost. Vlastnost je funkce protokolu HTTP zpracovávaných Middlewarem ukládání do mezipaměti odpovědi. Pro middleware k obsluze odpovědi v mezipaměti řetězec dotazu a hodnotu řetězce dotazu musí odpovídat na předchozí požadavek. Představte si třeba pořadí požadavků a výsledky zobrazené v následující tabulce.
 
@@ -113,7 +113,7 @@ První požadavek je vrácená serverem a uložené v mezipaměti v middlewaru. 
 
 Tuto hlavičku je zapsat, pouze když `VaryByHeader` je nastavena. Je nastaven na hodnotu `Vary` hodnotu vlastnosti. Následující ukázkové používá `VaryByHeader` vlastnost:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
 
 Můžete zobrazit hlavičky odpovědi pomocí nástrojů v prohlížeči na síti. Následující obrázek ukazuje F12 Edge výstup na **sítě** při `About2` se aktualizují metodu akce:
 
@@ -121,16 +121,16 @@ Můžete zobrazit hlavičky odpovědi pomocí nástrojů v prohlížeči na sít
 
 ### <a name="nostore-and-locationnone"></a>NoStore a Location.None
 
-`NoStore`přepíše většina jiných vlastností. Pokud je tato vlastnost nastavená na `true`, `Cache-Control` záhlaví je nastaven na `no-store`. Pokud `Location` je nastaven na `None`:
+`NoStore` přepíše většina jiných vlastností. Pokud je tato vlastnost nastavená na `true`, `Cache-Control` záhlaví je nastaven na `no-store`. Pokud `Location` je nastaven na `None`:
 
-* `Cache-Control`je nastavena na `no-store,no-cache`.
-* `Pragma`je nastavena na `no-cache`.
+* `Cache-Control` je nastavena na `no-store,no-cache`.
+* `Pragma` je nastavena na `no-cache`.
 
 Pokud `NoStore` je `false` a `Location` je `None`, `Cache-Control` a `Pragma` jsou nastaveny na `no-cache`.
 
 Obvykle nastavíte `NoStore` k `true` na chybové stránky. Příklad:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
 
 Výsledkem je následující hlavičky:
 
@@ -148,7 +148,7 @@ Chcete-li povolit ukládání do mezipaměti, `Duration` musí být nastavena na
 
 Níže je příkladem zobrazujícím hlavičky produkovaný nastavení `Duration` a ponechat výchozí `Location` hodnotu:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
 
 Tímto se vytvoří následující hlavičky:
 
@@ -162,11 +162,11 @@ Místo duplikování `ResponseCache` nastavení na mnoha atributů akce řadič,
 
 Nastavení profilu mezipaměti:
 
-[!code-csharp[Main](response/sample/Startup.cs?name=snippet1)] 
+[!code-csharp[](response/sample/Startup.cs?name=snippet1)] 
 
 Odkazování na profil mezipaměti:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
 
 `ResponseCache` Atribut lze použít jak pro akce (metody) a řadiče (třídy). Atributy na úrovni metody přepsat nastavení zadané v atributy na úrovni třídy.
 

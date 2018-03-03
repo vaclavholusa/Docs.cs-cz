@@ -12,25 +12,26 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 103cd68c576463d87d0077cc149f9b89c6e028e8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 639815cc92b7cb5f3dfb4e1a198f6b4c2476dc90
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-custom-action-filters"></a>Vlastní akce filtrech rozhraní ASP.NET MVC 4
-====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+# <a name="aspnet-mvc-4-custom-action-filters"></a>Vlastní akce filtrech rozhraní ASP.NET MVC 4
 
-> ASP.NET MVC poskytuje filtry akce pro provádění filtrování logiku před i po zavolání metody akce. Filtry akce jsou vlastní atributy, které poskytují deklarativní způsob, jak přidat chování akce před a po akce do metody akce kontroleru.
-> 
-> V tomto testovacím prostředí Hands-on vytvoříte vlastní akce atribut filtru do řešení MvcMusicStore catch požadavky řadiče a protokolovat činnost serveru do databázové tabulky. Bude moct přidat filtr protokolování injektáží do jakékoli kontroler nebo akce. Nakonec zobrazí se zobrazení protokolu, který zobrazuje seznam návštěvníky.
-> 
-> > [!NOTE]
-> > Toto testovací prostředí Hands-on předpokládá, že máte základní znalosti o **ASP.NET MVC**. Pokud jste nepoužili **ASP.NET MVC** před, doporučujeme si projít **ASP.NET MVC 4 Základy** Hands-on testovacího prostředí.
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
+[Stažení webové táborech cvičení Kit](https://aka.ms/webcamps-training-kit)
 
-<a id="Objectives"></a>
+ASP.NET MVC poskytuje filtry akce pro provádění filtrování logiku před i po zavolání metody akce. Filtry akce jsou vlastní atributy, které poskytují deklarativní způsob, jak přidat chování akce před a po akce do metody akce kontroleru.
+
+V tomto testovacím prostředí Hands-on vytvoříte vlastní akce atribut filtru do řešení MvcMusicStore catch požadavky řadiče a protokolovat činnost serveru do databázové tabulky. Bude moct přidat filtr protokolování injektáží do jakékoli kontroler nebo akce. Nakonec zobrazí se zobrazení protokolu, který zobrazuje seznam návštěvníky.
+
+Toto testovací prostředí Hands-on předpokládá, že máte základní znalosti o **ASP.NET MVC**. Pokud jste nepoužili **ASP.NET MVC** před, doporučujeme si projít **ASP.NET MVC 4 Základy** Hands-on testovacího prostředí.
+
+> [!NOTE]
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [verze Microsoft-webové/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). Projekt specifické pro toto testovací prostředí je k dispozici na [ASP.NET MVC 4 vlastní akce filtry](https://github.com/Microsoft-Web/HOL-MVC4CustomActionFilters).
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Cíle
@@ -332,7 +333,7 @@ V této úloze budete aktualizovat řešení zaregistrovat nový filtr (**MyNewC
 1. V **StoreController** třídy, odeberte **[MyNewCustomActionFilter]** atribut a vlastnost pořadí z **[CustomActionFilter]**. By měl vypadat jako následující:
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample13.cs)]
-2. Otevřete **Global.asax** souborů a vyhledejte **aplikace\_spustit** metoda. Všimněte si, že každý thime spuštění aplikace se registrují globální filtry voláním **RegisterGlobalFilters** metoda v rámci **FilterConfig** třídy.
+2. Otevřete **Global.asax** souborů a vyhledejte **aplikace\_spustit** metoda. Všimněte si, že pokaždé, když aplikace spustí se registrují globální filtry voláním **RegisterGlobalFilters** metoda v rámci **FilterConfig** třídy.
 
     ![Registrace globálních filtrů v souboru Global.asax](aspnet-mvc-4-custom-action-filters/_static/image10.png "registrace v souboru Global.asax globálních filtrů")
 
@@ -388,23 +389,23 @@ Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jin�
 
     ![Vyjádření souhlasu s podmínkami licence](aspnet-mvc-4-custom-action-filters/_static/image13.png)
 
-    *Vyjádření souhlasu s podmínkami licence*
+    Vyjádření souhlasu s podmínkami licence
 5. Počkejte na dokončení procesu stahování a instalaci.
 
     ![Průběh instalace](aspnet-mvc-4-custom-action-filters/_static/image14.png)
 
-    *Průběh instalace*
+    Průběh instalace
 6. Po dokončení instalace, klikněte na tlačítko **Dokončit**.
 
     ![Instalace byla dokončena.](aspnet-mvc-4-custom-action-filters/_static/image15.png)
 
-    *Instalace byla dokončena.*
+    Instalace byla dokončena.
 7. Klikněte na tlačítko **ukončení** ukončíte instalační program webové platformy.
 8. Chcete-li spustit nástroj Visual Studio Express pro Web, přejděte na **spustit** obrazovky a začít psát &quot; **VS Express**&quot;, klikněte na **VS Express pro Web** dlaždice.
 
     ![VS Express pro Web dlaždice](aspnet-mvc-4-custom-action-filters/_static/image16.png)
 
-    *VS Express pro Web dlaždice*
+    VS Express pro Web dlaždice
 
 <a id="AppendixB"></a>
 
@@ -484,12 +485,12 @@ Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vyt
 
     ![Přidávání IP adresy klienta](aspnet-mvc-4-custom-action-filters/_static/image27.png)
 
-    *Přidávání IP adresy klienta*
+    Přidávání IP adresy klienta
 3. Jednou **IP adresa klienta** je povolené IP adresy do seznamu, klikněte na **Uložit** potvrďte změny.
 
     ![Potvrzení změn](aspnet-mvc-4-custom-action-filters/_static/image28.png)
 
-    *Potvrzení změn*
+    Potvrzení změn
 
 <a id="ApxBTask3"></a>
 

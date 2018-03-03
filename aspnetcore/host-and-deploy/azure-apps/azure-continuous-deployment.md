@@ -10,15 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 78f4eed188323f2f43fafbb69d3fca9b59129ad2
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ea4788b5daead9e355e13b963c025dd110eb2bff
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="continuous-deployment-to-azure-for-aspnet-core-with-visual-studio-and-git"></a>Průběžné nasazování do Azure pro ASP.NET Core sadou Visual Studio a Git
 
 Podle [Erik Reitan](https://github.com/Erikre)
+
+[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 Tento kurz ukazuje, jak webová aplikace ASP.NET Core pomocí sady Visual Studio vytvořte a nasaďte ho ze sady Visual Studio do služby Azure App Service pomocí průběžné nasazování.
 
@@ -194,7 +196,7 @@ Teď, když webové aplikace je nasazená do Azure, spusťte aplikaci.
 Můžete to provést dvěma způsoby:
 
 * Na portálu Azure vyhledejte okně webové aplikace pro webovou aplikaci. Vyberte **Procházet** Chcete-li zobrazit aplikaci ve výchozím prohlížeči.
-* Otevřete prohlížeč a zadejte adresu URL pro webovou aplikaci. Příklad:`http://SampleWebAppDemo.azurewebsites.net`
+* Otevřete prohlížeč a zadejte adresu URL pro webovou aplikaci. Příklad: `http://SampleWebAppDemo.azurewebsites.net`
 
 ## <a name="update-the-web-app-and-republish"></a>Aktualizovat webovou aplikaci a znovu publikovat
 
@@ -225,7 +227,7 @@ Po provedení změn pomocí místního kódu, znovu publikujte:
 
 ## <a name="view-the-updated-web-app-in-azure"></a>Zobrazení aktualizované webové aplikace v Azure
 
-Zobrazení aktualizované webové aplikace tak, že vyberete **Procházet** v okně webové aplikace na portálu Azure nebo otevřením prohlížeče a zadávat adresu URL pro webovou aplikaci. Příklad:`http://SampleWebAppDemo.azurewebsites.net`
+Zobrazení aktualizované webové aplikace tak, že vyberete **Procházet** v okně webové aplikace na portálu Azure nebo otevřením prohlížeče a zadávat adresu URL pro webovou aplikaci. Příklad: `http://SampleWebAppDemo.azurewebsites.net`
 
 ## <a name="additional-resources"></a>Další zdroje
 

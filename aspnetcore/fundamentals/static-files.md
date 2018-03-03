@@ -11,11 +11,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/static-files
-ms.openlocfilehash: 7b156830ab59db3c08fbff6b2c4180d8765a113b
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 9614d8b744776ee318e9d385b9ef40e90c0c16c1
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="work-with-static-files-in-aspnet-core"></a>Práce s statické soubory v ASP.NET Core
 
@@ -49,7 +49,7 @@ Statické soubory jsou přístupné prostřednictvím cesta relativní vůči ko
 
 * **wwwroot**
   * **css**
-  * **bitové kopie**
+  * **Bitové kopie**
   * **js**
 
 Pro přístup k souboru ve formátu URI *bitové kopie* je podsložka *http://\<server_address > /images/\<image_file_name >*. Například *http://localhost:9189/images/banner3.svg*.
@@ -82,10 +82,10 @@ Vezměte v úvahu hierarchie adresářů, ve kterém obsluhovat statické soubor
 
 * **wwwroot**
   * **css**
-  * **bitové kopie**
+  * **Bitové kopie**
   * **js**
 * **MyStaticFiles**
-  * **bitové kopie**
+  * **Bitové kopie**
       * *banner1.svg*
 
 Žádost o přístup *banner1.svg* souboru nakonfigurováním middleware se statickými soubory:
@@ -146,7 +146,7 @@ Nastavení výchozí domovskou stránku poskytuje návštěvníky logické vých
 [!code-csharp[](static-files/samples/1x/StartupEmpty.cs?name=snippet_ConfigureMethod&highlight=3)]
 
 > [!IMPORTANT]
-> `UseDefaultFiles`musí být volána před provedením `UseStaticFiles` k obsluze výchozí soubor. `UseDefaultFiles`je RW adresu URL, která ve skutečnosti není tento soubor zpracovat. Povolit middleware se statickými soubory přes `UseStaticFiles` pro tento soubor zpracovat.
+> `UseDefaultFiles` musí být volána před provedením `UseStaticFiles` k obsluze výchozí soubor. `UseDefaultFiles` je RW adresu URL, která ve skutečnosti není tento soubor zpracovat. Povolit middleware se statickými soubory přes `UseStaticFiles` pro tento soubor zpracovat.
 
 S `UseDefaultFiles`, požadavky na složku Hledat:
 
@@ -181,10 +181,10 @@ Vezměte v úvahu následující hierarchii:
 
 * **wwwroot**
   * **css**
-  * **bitové kopie**
+  * **Bitové kopie**
   * **js**
 * **MyStaticFiles**
-  * **bitové kopie**
+  * **Bitové kopie**
       * *banner1.svg*
   * *default.html*
 
@@ -192,7 +192,7 @@ Následující kód umožňuje statické soubory, výchozí soubory a procházen
 
 [!code-csharp[](static-files/samples/1x/StartupUseFileServer.cs?name=snippet_ConfigureMethod&highlight=5-11)]
 
-`AddDirectoryBrowser`musí být voláno, když `EnableDirectoryBrowsing` hodnota vlastnosti je `true`:
+`AddDirectoryBrowser` musí být voláno, když `EnableDirectoryBrowsing` hodnota vlastnosti je `true`:
 
 [!code-csharp[](static-files/samples/1x/StartupUseFileServer.cs?name=snippet_ConfigureServicesMethod)]
 
@@ -208,7 +208,7 @@ Pokud neexistuje žádný soubor s názvem výchozí v *MyStaticFiles* directory
 ![Seznam statické soubory](static-files/_static/db2.png)
 
 > [!NOTE]
-> `UseDefaultFiles`a `UseDirectoryBrowser` použijte adresu URL *http://\<server_address > / StaticFiles* bez do adresy koncové lomítko k aktivaci straně klienta přesměrovat na *http://\<server_address > / StaticFiles /*. Všimněte si, přidání do adresy koncové lomítko. Relativní adresy URL v rámci dokumenty jsou považovány za neplatné bez koncové lomítko.
+> `UseDefaultFiles` a `UseDirectoryBrowser` použijte adresu URL *http://\<server_address > / StaticFiles* bez do adresy koncové lomítko k aktivaci straně klienta přesměrovat na *http://\<server_address > / StaticFiles /*. Všimněte si, přidání do adresy koncové lomítko. Relativní adresy URL v rámci dokumenty jsou považovány za neplatné bez koncové lomítko.
 
 ## <a name="fileextensioncontenttypeprovider"></a>FileExtensionContentTypeProvider
 
@@ -234,11 +234,11 @@ Předchozí kód je žádost o soubor s Neznámý typ obsahu vrácena jako obrá
 ### <a name="considerations"></a>Důležité informace
 
 > [!WARNING]
-> `UseDirectoryBrowser`a `UseStaticFiles` může se nevrací tajných klíčů. Důrazně doporučujeme zakázání v produkčním prostředí pro procházení adresářů. Pečlivě zkontrolujte adresáře, které jsou povolené prostřednictvím `UseStaticFiles` nebo `UseDirectoryBrowser`. Celý adresář a jeho dílčí adresáře budou veřejně přístupná. Úložiště soubory vhodný pro slouží veřejnosti vyhrazené adresáře, například  *\<content_root > / wwwroot*. Oddělte tyto soubory z zobrazení MVC, stránky Razor (pouze 2.x), konfiguračních souborů, atd.
+> `UseDirectoryBrowser` a `UseStaticFiles` může se nevrací tajných klíčů. Důrazně doporučujeme zakázání v produkčním prostředí pro procházení adresářů. Pečlivě zkontrolujte adresáře, které jsou povolené prostřednictvím `UseStaticFiles` nebo `UseDirectoryBrowser`. Celý adresář a jeho dílčí adresáře budou veřejně přístupná. Úložiště soubory vhodný pro slouží veřejnosti vyhrazené adresáře, například  *\<content_root > / wwwroot*. Oddělte tyto soubory z zobrazení MVC, stránky Razor (pouze 2.x), konfiguračních souborů, atd.
 
 * Adresy URL pro obsah vystaveny s `UseDirectoryBrowser` a `UseStaticFiles` podléhají malá a velká písmena a znak omezení podkladový systém souborů. Například je malá a velká písmena Windows&mdash;Mac a Linux nejsou.
 
-* Aplikace ASP.NET Core hostované služby IIS používá [ASP.NET Core modulu (ANCM)](xref:fundamentals/servers/aspnet-core-module) předávat všechny požadavky na aplikace, včetně žádostí statických souborů. Obslužné rutiny statických souborů služby IIS se nepoužije. Nemá žádné šanci na zpracování požadavků, než se provádí ANCM.
+* Aplikace ASP.NET Core hostované služby IIS používá [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) předávat všechny požadavky na aplikace, včetně žádostí statických souborů. Obslužné rutiny statických souborů služby IIS se nepoužije. Nemá žádné šanci na zpracování požadavků, než se zpracovávají modulem.
 
 * Pomocí následujících kroků ve Správci služby IIS k odebrání obslužné rutiny statických souborů služby IIS na úrovni serveru nebo webu:
     1. Přejděte na **moduly** funkce.
@@ -246,7 +246,7 @@ Předchozí kód je žádost o soubor s Neznámý typ obsahu vrácena jako obrá
     1. Klikněte na tlačítko **odebrat** v **akce** bočním panelu.
 
 > [!WARNING]
-> Pokud je povoleno obslužné rutiny statických souborů služby IIS **a** ANCM není správně nakonfigurovaná, jsou obsluhovat statické soubory. K tomu dojde, například pokud *web.config* soubor není nasazená.
+> Pokud je povoleno obslužné rutiny statických souborů služby IIS **a** modul základní technologie ASP.NET není správně nakonfigurovaná, jsou obsluhovat statické soubory. K tomu dojde, například pokud *web.config* soubor není nasazená.
 
 * Umístěte soubory kódu (včetně *.cs* a *.cshtml*) mimo projekt aplikace kořenový web. Proto vytvoří logického oddělení se mezi obsah klientské a serverové kód aplikace. To brání úniku kódu na straně serveru.
 

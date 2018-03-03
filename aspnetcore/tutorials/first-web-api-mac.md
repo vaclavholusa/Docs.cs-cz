@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: b0e1a331fe3229119f4669fa336b6af4822785bf
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c7825530146e5e4a879bf44db5a92bc7700de73b
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Vytvoření webové rozhraní API s jádro ASP.NET MVC a Visual Studio pro Mac
 
@@ -88,7 +88,7 @@ Přidat `TodoItem` třídy. Klikněte pravým tlačítkem myši *modely* složky
 
 Nahraďte generovaný kód:
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
+[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
 
 Generuje databázi `Id` při `TodoItem` je vytvořena.
 
@@ -98,7 +98,7 @@ Generuje databázi `Id` při `TodoItem` je vytvořena.
 
 Přidat `TodoContext` třídy k *modely* složky.
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
+[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
 
 [!INCLUDE[Register the database context](../includes/webApi/register_dbContext.md)]
 
@@ -130,11 +130,11 @@ Přidáme `Create`, `Update`, a `Delete` metody pro kontroler. Tyto jsou variant
 
 ### <a name="create"></a>Create
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
+[!code-csharp[](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
 Toto je metoda HTTP POST, uvedené [ `[HttpPost]` ](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. [ `[FromBody]` ](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) Atribut informuje MVC k získání hodnoty položky úkolů z textu požadavku HTTP.
 
-`CreatedAtRoute` Metoda vrátí odpověď 201, což je standardní odpověď pro metodu POST protokolu HTTP, která vytvoří nový prostředek na serveru. `CreatedAtRoute`také přidá do odpovědi hlavičku umístění. Hlavička umístění Určuje identifikátor URI položky nově vytvořený úkolů. V tématu [10.2.2 201 vytvořit](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+`CreatedAtRoute` Metoda vrátí odpověď 201, což je standardní odpověď pro metodu POST protokolu HTTP, která vytvoří nový prostředek na serveru. `CreatedAtRoute` také přidá do odpovědi hlavičku umístění. Hlavička umístění Určuje identifikátor URI položky nově vytvořený úkolů. V tématu [10.2.2 201 vytvořit](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
 ### <a name="use-postman-to-send-a-create-request"></a>Použití Postman k odeslání požadavku na vytvořit
 
@@ -143,7 +143,7 @@ Toto je metoda HTTP POST, uvedené [ `[HttpPost]` ](/aspnet/core/api/microsoft.a
 
 ![Konzole postman](first-web-api/_static/pmc.png)
 
-* Nastavte jako metodu HTTP`POST`
+* Nastavte jako metodu HTTP `POST`
 * Vyberte **textu** přepínač
 * Vyberte **nezpracovaná** přepínač
 * Nastavte typ do formátu JSON
@@ -171,9 +171,9 @@ public IActionResult GetById(string id)
 
 ### <a name="update"></a>Aktualizace
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+[!code-csharp[](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
 
-`Update`je podobná `Create`, ale používá HTTP PUT. Odpověď [204 (ne obsahu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). Podle specifikace protokolu HTTP vyžaduje požadavek PUT klientovi umožní odeslat celý aktualizovanou entitu, nikoli pouze rozdíly. Chcete-li podporovat částečné aktualizace, použijte HTTP PATCH.
+`Update` je podobná `Create`, ale používá HTTP PUT. Odpověď [204 (ne obsahu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). Podle specifikace protokolu HTTP vyžaduje požadavek PUT klientovi umožní odeslat celý aktualizovanou entitu, nikoli pouze rozdíly. Chcete-li podporovat částečné aktualizace, použijte HTTP PATCH.
 
 ```json
 {
@@ -187,7 +187,7 @@ public IActionResult GetById(string id)
 
 ### <a name="delete"></a>Odstranit
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
+[!code-csharp[](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
 
 Odpověď [204 (ne obsahu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
 

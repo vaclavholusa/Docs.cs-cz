@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 2a4b5ed8a712b061b4afdf5a3adc9378dd72b37f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9d7cbb9505afb6461ba4c2087d57e9ea0da38ede
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>Ověřování a autorizace v rozhraní ASP.NET Web API
 ====================
@@ -80,7 +80,7 @@ Autorizace se stane později v kanálu, co nejblíže ke kontroleru. Který vám
 
 Webové rozhraní API poskytuje integrované autorizační filtr, [třídy AuthorizeAttribute](https://msdn.microsoft.com/library/system.web.http.authorizeattribute.aspx). Tento filtr kontroluje, zda je uživatel ověřený. V opačném případě vrátí stavový kód HTTP 401 (Neautorizováno), bez vyvolání akce.
 
-Můžete použít filtr globálně, na úrovni kontroleru, nebo na úrovni inidivual akcí.
+Můžete použít filtr globálně, na úrovni kontroleru, nebo na úrovni jednotlivých akcí.
 
 **Globálně**: Pokud chcete omezit přístup pro každý kontroler Web API, přidejte **třídy AuthorizeAttribute** filtru do seznamu globálních filtrů:
 

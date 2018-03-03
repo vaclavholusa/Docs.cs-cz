@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 673d86c2a1d0db232aca224aba60e5e1cf3c7a31
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 79f59e62483534623c5f17f3b2716da6ae6d179e
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/02/2018
 ---
 en-us /
 
@@ -95,7 +95,7 @@ Ke zjišťování konfliktů souběžnosti, [rowversion](https://docs.microsoft.
 
 Databáze generuje sekvenční `rowversion` číslo, které se zvýší, řádek pokaždé, když se aktualizuje. V `Update` nebo `Delete` příkaz, `Where` klauzule zahrnuje načtených hodnotu `rowversion`. Pokud došlo ke změně řádku:
 
- * `rowversion`neodpovídá hodnotě načtených.
+ * `rowversion` neodpovídá hodnotě načtených.
  * `Update` Nebo `Delete` příkazů nelze nalézt řádek, protože `Where` klauzule zahrnuje načtených `rowversion`.
  * A `DbUpdateConcurrencyException` je vyvolána výjimka.
 
@@ -105,7 +105,7 @@ V EF Core, když žádné řádky bylo aktualizováno správcem `Update` nebo `D
 
 V *Models/Department.cs*, přidejte sledování vlastnost s názvem RowVersion:
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
 
 [Časové razítko](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.timestampattribute) atribut určuje, zda je tento sloupec součástí `Where` klauzuli `Update` a `Delete` příkazy. Atribut se nazývá `Timestamp` protože předchozí verze systému SQL Server používá SQL `timestamp` datového typu než SQL `rowversion` typ nahradí ji.
 
@@ -147,7 +147,7 @@ Předchozí příkazy:
 * Přidá *migrace / {čas stamp}_RowVersion.cs* souboru migrace.
 * Aktualizace *Migrations/SchoolContextModelSnapshot.cs* souboru. Aktualizace přidává následující zvýrazněný kód do `BuildModel` metoda:
 
-[!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
+[!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
 
 * Spustí migrace k aktualizaci databáze.
 
@@ -197,7 +197,7 @@ Ke zjištění problémem souběžnosti [původní hodnota](https://docs.microso
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_rv&highlight=24-999)]
 
-V předchozí kód `Department.RowVersion` je hodnota, když se načetla entity. `OriginalValue`je hodnota v databázi při `FirstOrDefaultAsync` byla volána v této metodě.
+V předchozí kód `Department.RowVersion` je hodnota, když se načetla entity. `OriginalValue` je hodnota v databázi při `FirstOrDefaultAsync` byla volána v této metodě.
 
 Následující kód získá hodnoty klienta (hodnoty odeslány této metody) a hodnoty DB:
 
@@ -222,7 +222,7 @@ Aktualizace *Pages/Departments/Edit.cshtml* s následující kód:
 Předchozí kód:
 
 * Aktualizace `page` direktivy z `@page` k `@page "{id:int}"`.
-* Přidá verze skrytá řádku. `RowVersion`je nutné přidat tak post zpět váže hodnotu.
+* Přidá verze skrytá řádku. `RowVersion` je nutné přidat tak post zpět váže hodnotu.
 * Zobrazí poslední bajt `RowVersion` pro účely ladění.
 * Nahradí `ViewData` s silného typu `InstructorNameSL`.
 
@@ -262,11 +262,11 @@ Aktualizace modelu odstranění stránek s následujícím kódem:
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Delete.cshtml.cs)]
 
-Odstranit stránky rozpozná souběžnosti je v konfliktu, pokud entity se změnila po se načetla. `Department.RowVersion`verze řádku je, když se načetla entity. Když EF základní vytváří příkaz SQL odstranit, obsahuje klauzuli WHERE s `RowVersion`. Pokud vliv na výsledky příkazu SQL odstranit v nulový počet řádků:
+Odstranit stránky rozpozná souběžnosti je v konfliktu, pokud entity se změnila po se načetla. `Department.RowVersion` verze řádku je, když se načetla entity. Když EF základní vytváří příkaz SQL odstranit, obsahuje klauzuli WHERE s `RowVersion`. Pokud vliv na výsledky příkazu SQL odstranit v nulový počet řádků:
 
 * `RowVersion` V SQL odstranit příkaz neodpovídá `RowVersion` v databázi.
 * Je vyvolána výjimka DbUpdateConcurrencyException.
-* `OnGetAsync`je volána `concurrencyError`.
+* `OnGetAsync` je volána `concurrencyError`.
 
 ### <a name="update-the-delete-page"></a>Odstranit stránku aktualizace
 
@@ -281,7 +281,7 @@ Předchozí kód provede tyto změny:
 * Přidá chybovou zprávu.
 * Nahradí FullName v FirstMidName **správce** pole.
 * Změny `RowVersion` zobrazíte poslední bajt.
-* Přidá verze skrytá řádku. `RowVersion`je nutné přidat tak post zpět váže hodnotu.
+* Přidá verze skrytá řádku. `RowVersion` je nutné přidat tak post zpět váže hodnotu.
 
 ### <a name="test-concurrency-conflicts-with-the-delete-page"></a>Test je v konfliktu s stránce odstranit souběžnosti
 

@@ -1,7 +1,7 @@
 ---
 title: "WebListener webového serveru implementace v ASP.NET Core"
 author: rick-anderson
-description: "Představuje WebListener, webový server pro ASP.NET Core v systému Windows. Postavená na ovladač Http.Sys v režimu jádra, WebListener je alternativa k Kestrel, který lze použít pro přímé připojení k Internetu bez služby IIS."
+description: "Další informace o WebListener, webový server pro ASP.NET Core v systému Windows, který lze použít pro přímé připojení k Internetu bez služby IIS."
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: fb2e0621645a48f4e603d754d8babbc07a78cae4
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5df5a0402a6852a40ab46657ac910f60e3f733d9
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>WebListener webového serveru implementace v ASP.NET Core
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 1c0d87b61882f69dbf2aeb0a896d9294bd029374
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ee61798fc1bde89ca3712eae9b7c4413e58cf70d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Povolení žádostí napříč zdroji (CORS)
 
@@ -35,13 +35,13 @@ Tyto dvě adresy URL mají stejný původ:
 
 Tyto adresy URL mít různého původu než předchozí dva:
 
-* `http://example.net`-Jiné domény
+* `http://example.net` -Jiné domény
 
-* `http://www.example.com/foo.html`-Různých subdomény
+* `http://www.example.com/foo.html` -Různých subdomény
 
-* `https://example.com/foo.html`-Jiné schéma
+* `https://example.com/foo.html` -Jiné schéma
 
-* `http://example.com:9000/foo.html`-Jiný port
+* `http://example.com:9000/foo.html` -Jiný port
 
 > [!NOTE]
 > Internet Explorer nepovažuje port při porovnávání zdroje.
@@ -52,7 +52,7 @@ K nastavení CORS pro vaši aplikaci přidat `Microsoft.AspNetCore.Cors` balíč
 
 Přidání služeb CORS v souboru Startup.cs:
 
-[!code-csharp[Main](cors/sample/CorsExample1/Startup.cs?name=snippet_addcors)]
+[!code-csharp[](cors/sample/CorsExample1/Startup.cs?name=snippet_addcors)]
 
 ## <a name="enabling-cors-with-middleware"></a>Povolení CORS s middlewaru.
 
@@ -60,7 +60,7 @@ Chcete-li přidat CORS pro celou aplikaci CORS middleware do kanálu vaší žá
 
 Při přidávání pomocí middleware CORS můžete zadat zásady cross-origin `CorsPolicyBuilder` třídy. Chcete-li to provést dvěma způsoby. První je volání UseCors s lambda:
 
-[!code-csharp[Main](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
+[!code-csharp[](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
 
 **Poznámka:** bez koncové lomítko musíte zadat adresu URL (`/`). Pokud adresu URL ukončí s `/`, vrátí porovnání `false` , které budou vráceny žádné záhlaví.
 
@@ -68,11 +68,11 @@ Argument lambda trvá `CorsPolicyBuilder` objektu. Seznam najdete [možnosti kon
 
 Všimněte si, že CorsPolicyBuilder obsahuje rozhraní fluent API, takže můžete řetězu volání metod:
 
-[!code-csharp[Main](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
+[!code-csharp[](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
 
 Druhý postup je definovat jeden nebo více s názvem zásady CORS, a potom vyberte zásady podle názvu v době běhu.
 
-[!code-csharp[Main](cors/sample/CorsExample2/Startup.cs?name=snippet_begin)]
+[!code-csharp[](cors/sample/CorsExample2/Startup.cs?name=snippet_begin)]
 
 Tento příklad přidá zásadu CORS s názvem "AllowSpecificOrigin". Vyberte zásadu, předat název, který má `UseCors`.
 
@@ -84,19 +84,19 @@ Případně můžete MVC použít konkrétní CORS na každou akci, na jeden kon
 
 Zadejte přidat zásadu CORS pro určité akci `[EnableCors]` atribut akce. Zadejte název zásady.
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnAction)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnAction)]
 
 ### <a name="per-controller"></a>Na jeden kontroler
 
 Zadejte zásady CORS pro konkrétní řadič přidat `[EnableCors]` atributu do třídy kontroleru. Zadejte název zásady.
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnController)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnController)]
 
 ### <a name="globally"></a>Globálně
 
 Můžete povolit CORS globálně pro všechny řadiče přidáním `CorsAuthorizationFilterFactory` filtr do kolekce globálních filtrů:
 
-[!code-csharp[Main](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
+[!code-csharp[](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
 
 Pořadí priorit je: akci, kontroler, globální. Zásady na úrovni akce mají přednost před zásady na úrovni kontroleru a zásady na úrovni kontroleru mají přednost před globální zásady.
 
@@ -104,7 +104,7 @@ Pořadí priorit je: akci, kontroler, globální. Zásady na úrovni akce mají 
 
 Chcete-li zakázat CORS pro kontroler nebo akce, použijte `[DisableCors]` atribut.
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
 
 ## <a name="cors-policy-options"></a>Možnosti zásad CORS
 
@@ -128,11 +128,11 @@ Pro některé možnosti může být užitečné číst [funguje jak CORS](#how-c
 
 Chcete-li povolit jeden nebo více konkrétních zdroje:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=19-23)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=19-23)]
 
 Chcete-li povolit všechny původy:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs??range=27-31)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs??range=27-31)]
 
 Pečlivě zvažte, před povolením požadavky od jakýkoli původ. Znamená to, že názvy všech webu provádět volání AJAX k vašemu rozhraní API.
 
@@ -140,7 +140,7 @@ Pečlivě zvažte, před povolením požadavky od jakýkoli původ. Znamená to,
 
 Chcete-li povolit všechny metody HTTP:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=44-49)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=44-49)]
 
 To ovlivní letu předběžné požadavky a záhlaví přístupu – ovládací prvek-Allow-Methods.
 
@@ -150,11 +150,11 @@ Předběžný požadavek CORS může obsahovat hlavičku Access-Control-Request-
 
 Pro konkrétní hlavičky seznamu povolených IP adres:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=53-58)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=53-58)]
 
 Umožňuje vytvářet všechny hlavičky žádosti:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=62-67)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=62-67)]
 
 Nejsou prohlížeče zcela v souladu v tom, jak nastavují Access-Control-Request-Headers. Pokud nastavíte hlavičky k ničemu jiné než "*", by měla obsahovat alespoň "přijmout", "content-type" a "Původ" a jakékoli vlastní hlavičky, které chcete podporovat.
 
@@ -176,7 +176,7 @@ Ve výchozím prohlížeči nezveřejňuje všechny hlavičky odpovědi do aplik
 
 Specifikace CORS volá tyto *hlavičky odpovědi jednoduché*. Pro zpřístupnění jiných hlavičky pro aplikaci:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=71-76)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=71-76)]
 
 ### <a name="credentials-in-cross-origin-requests"></a>Přihlašovací údaje v žádostí napříč zdroji
 
@@ -203,7 +203,7 @@ $.ajax({
 
 Kromě toho serveru musí umožňovat přihlašovací údaje. Chcete-li povolit cross-origin přihlašovací údaje:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=80-85)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=80-85)]
 
 Odpověď HTTP bude teď obsahovat přístup – ovládací prvek-Allow-Credentials záhlaví, která sděluje prohlížeči, že server umožňuje přihlašovací údaje pro žádost o nepůvodního zdroje.
 
@@ -215,7 +215,7 @@ Buďte opatrní při povolení cross-origin přihlašovací údaje. Web v jiné 
 
 Záhlaví přístupu – ovládací prvek-Max-Age Určuje, jak dlouho může do mezipaměti odpovědi na předběžný požadavek. Chcete-li nastavit tuto hlavičku:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=89-94)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=89-94)]
 
 <a name="cors-how-cors-works"></a>
 

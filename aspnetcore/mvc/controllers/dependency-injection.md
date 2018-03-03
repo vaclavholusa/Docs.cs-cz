@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 118f504311b58258b5a0510477280505135dd2d9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d8253858864efa85f0d2a2175669dc27b879b175
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="dependency-injection-into-controllers"></a>Vkládání závislostí do řadiče
 
@@ -33,17 +33,17 @@ Vkládání závislostí je technika, který následuje [závislostí inverzi Pr
 
 ASP.NET Core integrovanou podporu pro vkládání závislostí na základě konstruktor rozšiřuje na řadiče MVC. Stačí přidat typ služby k řadiči jako parametr konstruktoru, se pokusí přeložit typu pomocí jeho vytvořené v kontejneru služby ASP.NET Core. Služby jsou obvykle, ale ne vždy definovány, pomocí rozhraní. Například pokud aplikace obsahuje obchodní logiky, která závisí na aktuální čas, můžete vložit službu, která načte dobu (nikoli nezakódovávejte ho), který by umožnil testy předávat implementace, které používají nastavit čas.
 
-[!code-csharp[Main](dependency-injection/sample/src/ControllerDI/Interfaces/IDateTime.cs)]
+[!code-csharp[](dependency-injection/sample/src/ControllerDI/Interfaces/IDateTime.cs)]
 
 
 Implementace rozhraní tohoto typu tak, aby používala systémové hodiny v době běhu je jednoduchá:
 
-[!code-csharp[Main](dependency-injection/sample/src/ControllerDI/Services/SystemDateTime.cs)]
+[!code-csharp[](dependency-injection/sample/src/ControllerDI/Services/SystemDateTime.cs)]
 
 
 S tímto na místě můžete použít službu v kontroleru. V takovém případě jsme přidali některé logiku `HomeController` `Index` metodu pro zobrazení pohlednice uživateli podle denní dobu.
 
-[!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Controllers/HomeController.cs?highlight=8,10,12,17,18,19,20,21,22,23,24,25,26,27,28,29,30&range=1-31,51-52)]
+[!code-csharp[](./dependency-injection/sample/src/ControllerDI/Controllers/HomeController.cs?highlight=8,10,12,17,18,19,20,21,22,23,24,25,26,27,28,29,30&range=1-31,51-52)]
 
 Pokud jsme spustit nyní aplikaci, jsme pravděpodobně dojde k chybě:
 
@@ -56,7 +56,7 @@ Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceP
 
 K této chybě dojde, když jsme nenakonfigurovali služby v `ConfigureServices` metoda v našich `Startup` třídy. Chcete-li určit, který požaduje pro `IDateTime` by se měly vyřešit pomocí instance `SystemDateTime`, přidejte zvýrazněný řádek v seznamu níže na vaše `ConfigureServices` metoda:
 
-[!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=4&range=26-27,42-44)]
+[!code-csharp[](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=4&range=26-27,42-44)]
 
 > [!NOTE]
 > Tato konkrétní službu může být implementovaná pomocí některé z možností několik různých doba platnosti (`Transient`, `Scoped`, nebo `Singleton`). V tématu [vkládání závislostí](../../fundamentals/dependency-injection.md) pochopit, jak každá z těchto možností oboru ovlivní chování služby.
@@ -83,7 +83,7 @@ Jako zobrazí se chybová zpráva, můžete vyřešit potíže s právě jeden k
 
 Někdy nepotřebujete služby pro více než jednu akci v rámci vašeho řadiče. V takovém případě má smysl vložení služby jako parametr pro metodu akce. K tomu je potřeba označení parametr s atributem `[FromServices]` jak je vidět tady:
 
-[!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Controllers/HomeController.cs?highlight=1&range=33-38)]
+[!code-csharp[](./dependency-injection/sample/src/ControllerDI/Controllers/HomeController.cs?highlight=1&range=33-38)]
 
 ## <a name="accessing-settings-from-a-controller"></a>Přístup k nastavení z řadiče
 
@@ -91,17 +91,17 @@ Přístup k aplikaci nebo konfigurace nastavení z v kontroleru je běžný vzor
 
 Chcete-li pracovat s vzoru možnosti, vytvořte třídu, která představuje možnosti, jako je tato:
 
-[!code-csharp[Main](dependency-injection/sample/src/ControllerDI/Model/SampleWebSettings.cs)]
+[!code-csharp[](dependency-injection/sample/src/ControllerDI/Model/SampleWebSettings.cs)]
 
 Pak budete muset nakonfigurovat aplikaci, aby používá možnosti model a přidat vaší třídě konfigurace ke kolekci služby v `ConfigureServices`:
 
-[!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=3,4,5,6,9,16,19&range=14-44)]
+[!code-csharp[](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=3,4,5,6,9,16,19&range=14-44)]
 
 > [!NOTE]
 > V seznamu nahoře, jsme konfigurujete aplikaci číst nastavení ze souboru formátu JSON. Zcela v kódu, můžete také nakonfigurovat nastavení, které se zobrazí ve výše uvedeném komentáři kódu. V tématu [konfigurace](xref:fundamentals/configuration/index) pro další možnosti konfigurace.
 
 Jakmile jste určili objekt silného typu konfigurace (v tomto případě `SampleWebSettings`) a jeho přidání ke kolekci služby můžete žádosti ji ze všech Kontroleru nebo metodě akce tím, že požádá o instanci `IOptions<T>` (v tomto případě `IOptions<SampleWebSettings>`) . Následující kód ukazuje, jak jeden vyžadují nastavení z řadiče:
 
-[!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Controllers/SettingsController.cs?highlight=3,5,7&range=7-22)]
+[!code-csharp[](./dependency-injection/sample/src/ControllerDI/Controllers/SettingsController.cs?highlight=3,5,7&range=7-22)]
 
 Následující možnosti vzor umožňuje nastavení a konfiguraci, chcete-li být odděleno od sebe navzájem a zajišťuje kontroleru je následující [oddělené oblasti zájmu](http://deviq.com/separation-of-concerns/), protože nepotřebuje vědět, jak a kde najít nastavení informace. Také umožňuje kontroleru usnadňují testování částí [testování logiku řadiče](testing.md), protože neexistuje žádné [statické plevami](http://deviq.com/static-cling/) nebo přímé vytváření instancí třídy nastavení v rámci třídy kontroleru.

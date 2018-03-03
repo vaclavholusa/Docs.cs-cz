@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 8cadb550eaa2dbc4541f945dc8d8d49fa757d4d3
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 559c5c58b416912b1caef1964ff8d7532bd98439
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Poskytovatelé vlastní úložiště pro ASP.NET Core Identity
 
@@ -112,7 +112,7 @@ Ukládá a načte role, které jsou přiřazeny k uživatelů, kteří. [Příkl
 
 V datových tříd přístup zadejte kód pro provádění operací s daty pro váš mechanismus trvalosti. Například v rámci vlastní zprostředkovatele, může mít následující kód k vytvoření nového uživatele v *ukládání* třídy:
 
-[!code-csharp[Main](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/CustomUserStore.cs?name=createuser&highlight=7)]
+[!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/CustomUserStore.cs?name=createuser&highlight=7)]
 
 Implementační logika pro vytvoření uživatele se v ``_usersTable.CreateAsync`` metoda, viz následující obrázek.
 
@@ -133,7 +133,7 @@ Vytvoření `UserStore` třídu, která poskytuje metody pro všechny operace da
 - IUserRoleStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserrolestore-1
 - IUserClaimStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserclaimstore-1
 - IUserPasswordStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserpasswordstore-1
-- IUserSecurityStampStore<!-- make these all links and remove / -->
+- IUserSecurityStampStore <!-- make these all links and remove / -->
 - IUserEmailStore
 - IPhoneNumberStore
 - IQueryableUserStore
@@ -145,7 +145,7 @@ Volitelné rozhraní dědí `IUserStore`. Můžete zobrazit částečně impleme
 
 V rámci `UserStore` třídy, použijte přístupové třídy dat, které jste vytvořili k provádění operací. Tyto jsou předána pomocí vkládání závislostí. Například v systému SQL Server s Dapper implementací `UserStore` třída má `CreateAsync` metoda, která používá instanci `DapperUsersTable` vložit nový záznam:
 
-[!code-csharp[Main](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/DapperUsersTable.cs?name=createuser&highlight=7)]
+[!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/DapperUsersTable.cs?name=createuser&highlight=7)]
 
 ### <a name="interfaces-to-implement-when-customizing-user-store"></a>Rozhraní k implementaci při přizpůsobení úložiště uživatele
 
@@ -196,7 +196,7 @@ Při implementaci zprostředkovatele úložiště role, můžete vytvořit vlast
 
 Toto je ukázková třída role:
 
-[!code-csharp[Main](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/ApplicationRole.cs)]
+[!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/ApplicationRole.cs)]
 
 ## <a name="customize-the-role-store"></a>Přizpůsobení úložiště rolí
 

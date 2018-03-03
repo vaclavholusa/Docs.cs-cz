@@ -12,24 +12,26 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 15db1589eb90739458b430c35cea38e93e3dec5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 396859463446d95c58271c4b00fc950bcd0d539a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework generování uživatelského rozhraní a migrace
-====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+# <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework generování uživatelského rozhraní a migrace
 
-> Pokud se seznámíte s metody kontroleru architektury ASP.NET MVC 4, nebo byly dokončeny &quot;pomocné rutiny, formulářů a ověřování&quot; praktických testovací prostředí, je třeba si uvědomit, že řadu logiku pro vytvoření, aktualizovat, seznamu a odebrat jakékoli data entity se opakuje mezi aplikace. Nechcete zmínili, že pokud váš model má několik tříd k manipulaci, bude pravděpodobně tráví mnoho času zápis POST a GET metody akce pro každou operaci entity, jakož i každé z zobrazení.
-> 
-> V tomto testovacím prostředí se dozvíte, jak pomocí generování uživatelského rozhraní ASP.NET MVC 4 automaticky generovat účaří CRUD vaší aplikace (vytvoření, čtení, aktualizace a odstranění). Spouštění z jednoduchého modelu třídy a, bez nutnosti napsat jediný řádek kódu, bude vytvoření kontroler, který bude obsahovat všechny operace CRUD a také všechny nezbytné zobrazení. Po vytváření a spouštění jednoduchým řešením, je nutné databázi aplikace vygenerována, společně s logiku MVC a zobrazení pro manipulaci s daty.
-> 
-> Kromě toho se dozvíte, jak je snadné použití Entity Framework migrace k provedení aktualizací modelu v celé vaší celou aplikaci. Entity Framework migrace vám umožní změnit databázi po změně modelu pomocí jednoduchých kroků. Pomocí všech těchto pamatovat bude možné vytvářet a udržovat efektivněji, webových aplikací s využitím nejnovějších funkcí technologie ASP.NET MVC 4.
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
+[Stažení webové táborech cvičení Kit](https://aka.ms/webcamps-training-kit)
 
-<a id="Objectives"></a>
+Pokud se seznámíte s metody kontroleru architektury ASP.NET MVC 4, nebo byly dokončeny &quot;pomocné rutiny, formulářů a ověřování&quot; praktických testovací prostředí, je třeba si uvědomit, že řadu logiku pro vytvoření, aktualizovat, seznamu a odebrat jakékoli data entity se opakuje mezi aplikace. Nechcete zmínili, že pokud váš model má několik tříd k manipulaci, bude pravděpodobně tráví mnoho času zápis POST a GET metody akce pro každou operaci entity, jakož i každé z zobrazení.
+
+V tomto testovacím prostředí se dozvíte, jak pomocí generování uživatelského rozhraní ASP.NET MVC 4 automaticky generovat účaří CRUD vaší aplikace (vytvoření, čtení, aktualizace a odstranění). Spouštění z jednoduchého modelu třídy a, bez nutnosti napsat jediný řádek kódu, bude vytvoření kontroler, který bude obsahovat všechny operace CRUD a také všechny nezbytné zobrazení. Po vytváření a spouštění jednoduchým řešením, je nutné databázi aplikace vygenerována, společně s logiku MVC a zobrazení pro manipulaci s daty.
+
+Kromě toho se dozvíte, jak je snadné použití Entity Framework migrace k provedení aktualizací modelu v celé vaší celou aplikaci. Entity Framework migrace vám umožní změnit databázi po změně modelu pomocí jednoduchých kroků. Pomocí všech těchto pamatovat bude možné vytvářet a udržovat efektivněji, webových aplikací s využitím nejnovějších funkcí technologie ASP.NET MVC 4.
+
+> [!NOTE]
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [verze Microsoft-webové/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). Projekt specifické pro toto testovací prostředí je k dispozici na [ASP.NET MVC 4 Entity Framework generování uživatelského rozhraní a migrace](https://github.com/Microsoft-Web/HOL-EntityFrameworkScaffoldingAndMigrations).
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Cíle
@@ -177,7 +179,7 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
 1. Otevřete konzolu Správce balíčků. Vyberte **nástroje | Správce balíčků knihoven | Konzola správce balíčků**.
 2. V konzole Správce balíčků zadejte následující příkaz:
 
-    POMOCÍ PMC
+    PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample2.ps1)]
 
@@ -205,7 +207,7 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
     *Vytváření aplikace*
 6. V konzole Správce balíčků zadejte následující příkaz:
 
-    POMOCÍ PMC
+    PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample5.ps1)]
 
@@ -216,7 +218,7 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
     *Přidání křestní jméno*
 7. (Volitelné) Spuštěním následujícího příkazu vygenerovat skript SQL s rozdílové aktualizace. To vám umožní aktualizovat databázi ručně (v takovém případě není nutné), nebo použít změny v ostatních databázích:
 
-    POMOCÍ PMC
+    PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample6.ps1)]
 
@@ -229,7 +231,7 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
     *Skript SQL aktualizace*
 8. V konzole Správce balíčků zadejte následující příkaz k aktualizaci databáze:
 
-    POMOCÍ PMC
+    PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample7.ps1)]
 

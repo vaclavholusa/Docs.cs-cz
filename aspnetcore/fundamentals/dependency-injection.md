@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 85e25b92b01d84279752deb7865987746c181c72
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: df9ae2b784e8b7b21a471f465998f09bbacbef75
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
@@ -94,7 +94,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 Dole je příklad toho, jak přidat další služby ke kontejneru s počtem rozšiřující metody jako `AddDbContext`, `AddIdentity`, a `AddMvc`.
 
-[!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?highlight=5-6,8-10,12&range=39-56)]
+[!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=5-6,8-10,12&range=39-56)]
 
 Funkce a middleware technologii ASP.NET, jako je například MVC, postupujte podle konvence použití jedné přidat*ServiceName* metody rozšíření pro všechny služby, tato funkce vyžaduje registraci.
 
@@ -105,7 +105,7 @@ Funkce a middleware technologii ASP.NET, jako je například MVC, postupujte pod
 
 Takto můžete zaregistrovat vlastní aplikačních služeb. První obecný typ představuje typ (obvykle rozhraní), který bude vyžádána z kontejneru. Druhý obecný typ představuje konkrétní typ, který mohl vytvořit jeho instanci kontejneru, který se používá ke splnění těchto požadavků.
 
-[!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?range=53-54)]
+[!code-csharp[](../common/samples/WebApplication1/Startup.cs?range=53-54)]
 
 > [!NOTE]
 > Každý `services.Add<ServiceName>` metoda rozšíření přidá (a potenciálně nakonfiguruje) služby. Například `services.AddMvc()` přidá služby MVC požaduje. Je doporučeno podle touto konvencí, umístění rozšiřujících metod v `Microsoft.Extensions.DependencyInjection` obor názvů pro zapouzdření skupiny registrací služby.
@@ -114,18 +114,18 @@ Takto můžete zaregistrovat vlastní aplikačních služeb. První obecný typ 
 
 V ukázce pro tento článek je jednoduchý kontroler, který se zobrazí názvy znaků, názvem `CharactersController`. Jeho `Index` metoda zobrazí aktuální seznam znaků, které byly uloženy v aplikaci a inicializuje kolekci pár znaků, pokud žádný neexistuje. Všimněte si, že i když tato aplikace používá Entity Framework Core a `ApplicationDbContext` třídy pro jeho stálost, žádná které je zřejmá v řadiči. Místo toho má byla abstrahované mechanismus přístupu konkrétním data za rozhraní, `ICharacterRepository`, které způsobem [použitému vzoru](http://deviq.com/repository-pattern/). Instance `ICharacterRepository` je požadována prostřednictvím konstruktoru a přiřazená privátní pole, které se pak použije k přístup ke znakům podle potřeby.
 
-[!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
+[!code-csharp[](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
 
 `ICharacterRepository` Definuje tyto dvě metody kontroleru musí pracovat s `Character` instance.
 
-[!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
+[!code-csharp[](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
 
 Toto rozhraní je implementováno zase podle konkrétního typu, `CharacterRepository`, který se používá za běhu.
 
 > [!NOTE]
 > Způsob DI se používá s `CharacterRepository` obecné modelu, můžete provést u všech aplikačních služeb, ne jenom při "úložiště" nebo data přístupové třídy je třída.
 
-[!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Models/CharacterRepository.cs?highlight=9,11,12,13,14)]
+[!code-csharp[](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Models/CharacterRepository.cs?highlight=9,11,12,13,14)]
 
 Všimněte si, že `CharacterRepository` požadavky `ApplicationDbContext` v jeho konstruktoru. Není pro vkládání závislostí, který se má použít zřetězené způsobem tímto způsobem, se každý požadovaný závislostí zase vyžaduje vlastní závislosti. Kontejner je zodpovědná za řešení všechny závislé součásti v tomto grafu a vrácení službu plně vyřešený.
 
@@ -134,7 +134,7 @@ Všimněte si, že `CharacterRepository` požadavky `ApplicationDbContext` v jeh
 
 V takovém případě obě `ICharacterRepository` a naopak `ApplicationDbContext` musí být zaregistrované v kontejneru služby v `ConfigureServices` v `Startup`. `ApplicationDbContext` je nakonfigurován pomocí volání metody rozšíření `AddDbContext<T>`. Následující kód ukazuje registrace `CharacterRepository` typu.
 
-[!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?highlight=3-5,11&range=16-32)]
+[!code-csharp[](dependency-injection/sample/DependencyInjectionSample/Startup.cs?highlight=3-5,11&range=16-32)]
 
 Kontexty Entity Framework musí být přidaní do ke kontejneru služby pomocí `Scoped` životního cyklu. To se stará automaticky Pokud používáte metody helper, jak je uvedeno výše. Úložiště, které bude nutné používat rozhraní Entity Framework by měli používat stejnou dobu životnosti.
 
@@ -163,21 +163,21 @@ Služby lze dokument zaregistrovat u kontejneru několika způsoby. Jsme už vid
 
 K předvedení rozdíl mezi těmito možnostmi životnost a registrace, zvažte jednoduché rozhraní, které představuje jeden nebo více úloh, jako *operace* s jedinečným identifikátorem `OperationId`. V závislosti na tom, jak jsme konfigurovat doba platnosti pro tuto službu poskytne kontejner stejný nebo jiný instancí služby k vyžádání třídě. Chcete-li vymazat, který platnosti je požadováno, vytvoříme jeden typ za možnost pro celou životnost:
 
-[!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/IOperation.cs?highlight=5-8)]
+[!code-csharp[](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/IOperation.cs?highlight=5-8)]
 
 Implementaci těchto rozhraní použití jedné třídy, `Operation`, která přijímá `Guid` v jeho konstruktoru nebo používá nové `Guid` Pokud žádný je k dispozici.
 
 Vedle `ConfigureServices`, každý typ je přidat do kontejneru podle své životnosti s názvem:
 
-[!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?range=26-32)]
+[!code-csharp[](dependency-injection/sample/DependencyInjectionSample/Startup.cs?range=26-32)]
 
 Všimněte si, že `IOperationSingletonInstance` služba používá konkrétní instanci s známé ID `Guid.Empty` tak bude zrušte při tento typ se používá (její identifikátor Guid bude samých nul). Také zaregistrovali `OperationService` to závisí na všech dalších `Operation` typy, takže bude zrušte v rámci žádost o tom, jestli je tato služba získávání stejnou instanci jako správce nebo novou pro každý typ operace. Tato služba nemá je vystavit jeho závislé součásti jako vlastnosti, takže je můžete zobrazit v zobrazení.
 
-[!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Services/OperationService.cs)]
+[!code-csharp[](dependency-injection/sample/DependencyInjectionSample/Services/OperationService.cs)]
 
 K předvedení životnosti objektů v rámci a mezi samostatnou jednotlivé požadavky na aplikaci, zahrnuje vzorek `OperationsController` , každý požadavky druh `IOperation` typu a také `OperationService`. `Index` Akce poté zobrazí všechny řadiče a služby `OperationId` hodnoty.
 
-[!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Controllers/OperationsController.cs)]
+[!code-csharp[](dependency-injection/sample/DependencyInjectionSample/Controllers/OperationsController.cs)]
 
 Teď dvě samostatné žádosti o provedení této akce kontroleru:
 

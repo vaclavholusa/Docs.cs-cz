@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: 0c05c636a991371b1a1feec88b5393724a6dc629
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8cbf002a9280650a08ae8d49b5b6d23bafb8be18
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity na jádro ASP.NET
 
@@ -61,23 +61,23 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
     
     Tyto služby jsou k dispozici pro aplikace prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection).
     
-    Identity je pro tuto aplikaci povolena voláním `UseAuthentication` v `Configure` metoda. `UseAuthentication`Přidá ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.
+    Identity je pro tuto aplikaci povolena voláním `UseAuthentication` v `Configure` metoda. `UseAuthentication` Přidá ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
     # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-34)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-34)]
     
     Tyto služby jsou k dispozici pro aplikace prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection).
     
-    Identity je pro tuto aplikaci povolena voláním `UseIdentity` v `Configure` metoda. `UseIdentity`Přidá ověřování na základě souborů cookie [middleware](xref:fundamentals/middleware/index) požadavku kanálu.
+    Identity je pro tuto aplikaci povolena voláním `UseIdentity` v `Configure` metoda. `UseIdentity` Přidá ověřování na základě souborů cookie [middleware](xref:fundamentals/middleware/index) požadavku kanálu.
         
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
     
     ---
      
@@ -100,7 +100,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
     
     Když uživatel klikne **zaregistrovat** odkaz, ``Register`` akce je volána v ``AccountController``. ``Register`` Akce vytvoří uživatele voláním `CreateAsync` na `_userManager` objektu (poskytované ``AccountController`` pomocí vkládání závislostí):
  
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
     Pokud byl uživatel vytvořen úspěšně, uživatel je přihlášen pomocí volání ``_signInManager.SignInAsync``.
 
@@ -112,7 +112,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
     ``Login`` Volání akce ``PasswordSignInAsync`` na ``_signInManager`` objektu (poskytované ``AccountController`` pomocí vkládání závislostí).
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
  
     Základní ``Controller`` třídy zpřístupňuje ``User`` vlastnost, která je přístupné z metody kontroleru. Například můžete vytvořit výčet `User.Claims` a autorizační rozhodnutí. Další informace najdete v tématu [autorizace](xref:security/authorization/index).
  
@@ -120,22 +120,22 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
  
     Kliknutím **odhlášení** odkaz volání `LogOut` akce.
  
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
  
     Předchozí kód výše volání `_signInManager.SignOutAsync` metoda. `SignOutAsync` Metoda vymaže deklaracích identity uživatele v souborech cookie.
  
 <a name="pw"></a>
 6.  Konfigurace.
 
-    Identita má některé výchozí chování, které mohou být přepsána nastaveními v třída při spuštění aplikace. `IdentityOptions`není nutné nakonfigurovat při použití výchozí chování. Následující kód nastaví několik možností síly hesla:
+    Identita má některé výchozí chování, které mohou být přepsána nastaveními v třída při spuštění aplikace. `IdentityOptions` není nutné nakonfigurovat při použití výchozí chování. Následující kód nastaví několik možností síly hesla:
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
     
     # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-34)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-34)]
 
     ---
     
@@ -170,13 +170,13 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
     # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
-    Otevřete okno příkazového řádku a přejděte do projektu kořenový adresář obsahující `.csproj` souboru. Spustit `dotnet run` příkaz ke spuštění aplikace:
+    Otevřete okno příkazového řádku a přejděte do projektu kořenový adresář obsahující `.csproj` souboru. Spustit [dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz ke spuštění aplikace:
 
     ```cs
     dotnet run 
     ```
 
-    Vyhledejte ve výstupu zadanou adresu URL `dotnet run` příkaz. Adresa URL by měla odkazovat na `localhost` s číslem generovaného portu. Přejděte na **o** stránky. Může používat pouze ověření uživatelé **o** stránka nyní, takže ASP.NET vás přesměruje na přihlašovací stránku pro přihlášení nebo registraci.
+    Vyhledejte ve výstupu zadanou adresu URL [dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz. Adresa URL by měla odkazovat na `localhost` s číslem generovaného portu. Přejděte na **o** stránky. Může používat pouze ověření uživatelé **o** stránka nyní, takže ASP.NET vás přesměruje na přihlašovací stránku pro přihlášení nebo registraci.
 
     ---
 
@@ -186,11 +186,11 @@ Je primární referenční sestavení pro systém identit `Microsoft.AspNetCore.
 
 Tyto závislosti jsou potřeba k použití v aplikacích ASP.NET Core systém identit:
 
-* `Microsoft.AspNetCore.Identity.EntityFrameworkCore`-Obsahuje požadované typy, které mají pomocí Identity Entity Framework Core.
+* `Microsoft.AspNetCore.Identity.EntityFrameworkCore` -Obsahuje požadované typy, které mají pomocí Identity Entity Framework Core.
 
-* `Microsoft.EntityFrameworkCore.SqlServer`-Entity Framework Core je technologie přístup doporučené dat společnosti Microsoft pro relační databáze jako SQL Server. Pro testování, můžete použít `Microsoft.EntityFrameworkCore.InMemory`.
+* `Microsoft.EntityFrameworkCore.SqlServer` -Entity Framework Core je technologie přístup doporučené dat společnosti Microsoft pro relační databáze jako SQL Server. Pro testování, můžete použít `Microsoft.EntityFrameworkCore.InMemory`.
 
-* `Microsoft.AspNetCore.Authentication.Cookies`-Middleware, který umožňuje aplikaci používat ověřování na základě souboru cookie.
+* `Microsoft.AspNetCore.Authentication.Cookies` -Middleware, který umožňuje aplikaci používat ověřování na základě souboru cookie.
 
 ## <a name="migrating-to-aspnet-core-identity"></a>Migrace na jádro ASP.NET Identity
 
@@ -205,4 +205,4 @@ V tématu [konfigurace](#pw) pro ukázku, která nastaví požadavky na minimál
 * [Migrace ověřování a identita](xref:migration/identity)
 * [Potvrzení účtu a obnovení hesla](xref:security/authentication/accconfirm)
 * [Dvoufaktorové ověřování přes SMS](xref:security/authentication/2fa)
-* [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](xref:security/authentication/social/index)
+* [Facebook, Google a externí zprostředkovatel ověřování](xref:security/authentication/social/index)

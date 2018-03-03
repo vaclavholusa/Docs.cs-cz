@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 314d585c7bf7f8c95f763babe6cdf93e514ff656
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bfcbddb208fedaa4de46df782336176d97ea5bdc
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="file-uploads-in-aspnet-core"></a>Nahrávání souborů v ASP.NET Core
 
@@ -47,7 +47,7 @@ Aby bylo možné podporovat nahrávání souborů, musí zadat formuláře HTML 
 
 ![Soubor odeslání formuláře](file-uploads/_static/upload-form.png)
 
-Jednotlivé soubory, které jsou odeslány na server, je možné přistupovat prostřednictvím [vazby modelu](xref:mvc/models/model-binding) pomocí [IFormFile](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.iformfile) rozhraní. `IFormFile`má následující strukturu:
+Jednotlivé soubory, které jsou odeslány na server, je možné přistupovat prostřednictvím [vazby modelu](xref:mvc/models/model-binding) pomocí [IFormFile](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.iformfile) rozhraní. `IFormFile` má následující strukturu:
 
 ```csharp
 public interface IFormFile
@@ -71,7 +71,7 @@ Při nahrávání souborů pomocí vazby modelu a `IFormFile` rozhraní, metoda 
 
 [!INCLUDE [GetTempFileName](../../includes/GetTempFileName.md)]
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Controllers/UploadFilesController.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Controllers/UploadFilesController.cs?name=snippet1)]
 
 Soubory, které budou pomocí `IFormFile` technika jsou uložená do vyrovnávací paměti v paměti nebo na disku na webovém serveru před zpracováním. Uvnitř metody akce `IFormFile` obsah je dostupný jako datový proud. Kromě místního systému souborů, soubory Streamovat k [úložiště objektů Azure Blob](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/) nebo [Entity Framework](https://docs.microsoft.com/ef/core/index).
 
@@ -96,7 +96,7 @@ public class RegisterViewModel
 ```
 
 > [!NOTE]
-> `IFormFile`můžete použít přímo jako parametru metody akce nebo jako vlastnost viewmodel, jak je uvedeno výše.
+> `IFormFile` můžete použít přímo jako parametru metody akce nebo jako vlastnost viewmodel, jak je uvedeno výše.
 
 Kopírování `IFormFile` do datového proudu a uložte ho do bajtového pole:
 
@@ -151,15 +151,15 @@ public IActionResult Index()
 
 Atribut používá integrované ASP.NET Core [Antiforgery](xref:security/anti-request-forgery) nastavit soubor cookie s tokenu žádosti o podporu:
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Filters/GenerateAntiforgeryTokenCookieForAjaxAttribute.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Filters/GenerateAntiforgeryTokenCookieForAjaxAttribute.cs?name=snippet1)]
 
 Úhlová automaticky předá antiforgery token v hlavičce žádosti s názvem `X-XSRF-TOKEN`. Aplikace ASP.NET MVC základní nakonfigurovaná odkazovat na tuto hlavičku v jeho konfiguraci v *Startup.cs*:
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Startup.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Startup.cs?name=snippet1)]
 
 `DisableFormValueModelBinding` Slouží ke zakázat vazby modelu pro atribut, viz následující obrázek, `Upload` metody akce.
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Filters/DisableFormValueModelBindingAttribute.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Filters/DisableFormValueModelBindingAttribute.cs?name=snippet1)]
 
 Vzhledem k tomu, že se zakázanou vazbou modelu, `Upload` nepřijímá parametry metody akce. Pracuje přímo `Request` vlastnost `ControllerBase`. A `MultipartReader` slouží k načtení každý oddíl. Soubor zůstane uložen, s názvem GUID souboru a data klíč/hodnota je uložena v `KeyValueAccumulator`. Jakmile byly načteny všechny části, obsah `KeyValueAccumulator` se používají k vytvoření vazby dat formuláře. typ modelu.
 
@@ -167,7 +167,7 @@ Kompletní `Upload` metoda jsou uvedeny níže:
 
 [!INCLUDE [GetTempFileName](../../includes/GetTempFileName.md)]
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Controllers/StreamingController.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Controllers/StreamingController.cs?name=snippet1)]
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 

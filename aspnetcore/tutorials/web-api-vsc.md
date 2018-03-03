@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: 44566c4014400aa2ca3d512eeaa226637b5f0b97
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: adb8fde6e6cb38a1c991b9a43fd1e649380d7c0c
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-code-on-linux-macos-and-windows"></a>Vytvoření webového rozhraní API s ASP.NET MVC jádra a Visual Studio Code v systému Windows, Linux a systému macOS
 
@@ -67,7 +67,7 @@ V tématu [Visual Studio Code nápovědy](#visual-studio-code-help) tipy pro pou
 
 Vytvoření nového projektu v rozhraní .NET 2.0 základní přidá poskytovatele 'Microsoft.AspNetCore.All' v *TodoApi.csproj* souboru. Není nutné k instalaci [Entity Framework Core InMemory](https://docs.microsoft.com/ef/core/providers/in-memory/) databáze zprostředkovatele samostatně. Tento poskytovatel databáze umožňuje Entity Framework Core pro použití s databázi v paměti.
 
-[!code-xml[Main](web-api-vsc/sample/TodoApi/TodoApi.csproj?highlight=12)]
+[!code-xml[](web-api-vsc/sample/TodoApi/TodoApi.csproj?highlight=12)]
 
 ## <a name="add-a-model-class"></a>Přidejte třídu modelu
 
@@ -77,7 +77,7 @@ Přidat složku s názvem *modely*. Třídy modelu můžete umístit kdekoli v p
 
 Přidat `TodoItem` třídy následujícím kódem:
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
+[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
 
 Generuje databázi `Id` při `TodoItem` je vytvořena.
 
@@ -87,7 +87,7 @@ Generuje databázi `Id` při `TodoItem` je vytvořena.
 
 Přidat `TodoContext` třídy v *modely* složky:
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
+[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
 
 [!INCLUDE[Register the database context](../includes/webApi/register_dbContext.md)]
 

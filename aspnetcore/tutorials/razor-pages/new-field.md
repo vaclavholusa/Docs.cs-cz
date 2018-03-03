@@ -9,15 +9,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 36412e9d1f3143f0d1999d0e754e6627f0984ad5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b90910c88d09b11dbf43af455ac3f9b66b0d7cc4
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="adding-a-new-field-to-a-razor-page"></a>Přidání nové pole do stránky Razor
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V této části budete používat [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) migrace Code First a přidat nové pole do modelu migraci, které změnit na databázi.
 
@@ -27,13 +27,13 @@ Při použití EF Code First automaticky vytvořit databázi, Code First přidá
 
 Otevřete *Models/Movie.cs* souboru a přidejte `Rating` vlastnost:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 Sestavení aplikace (Ctrl + Shift + B).
 
 Upravit *Pages/Movies/Index.cshtml*a přidejte `Rating` pole:
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=40-42,61-63)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=40-42,61-63)]
 
 Přidat `Rating` pole na stránky odstranit a podrobnosti.
 
@@ -43,7 +43,7 @@ Aktualizace *Create.cshtml* s `Rating` pole. Vám může zkopírujte a vložte p
 
 Následující kód ukazuje *Create.cshtml* s `Rating` pole:
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?highlight=36-40)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?highlight=36-40)]
 
 Přidat `Rating` pole na stránku upravit.
 
@@ -67,13 +67,13 @@ V tomto kurzu používejte migrace Code First.
 
 Aktualizace `SeedData` třídy tak, aby poskytuje hodnotu pro nový sloupec. Ukázka změnu jsou uvedeny níže, ale budete chtít tuto změnu provést pro každý `new Movie` bloku.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
 Najdete v článku [dokončit SeedData.cs souboru](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs).
 
 Sestavte řešení.
 
-<a name="pmc"></a>Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet > Konzola správce balíčků**.
+<a name="pmc"></a> Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet > Konzola správce balíčků**.
 Pomocí PMC zadejte následující příkazy:
 
 ```powershell
@@ -88,7 +88,7 @@ Update-Database
 
 Název "Hodnocení" libovolný a slouží k názvu souboru migrace. Je vhodné použít smysluplný název souboru migrace.
 
-<a name="ssox"></a>Pokud odstraníte všechny záznamy v databázi, bude inicializátoru počáteční hodnoty databáze a zahrnout `Rating` pole. To lze provést pomocí odstranění odkazy v prohlížeči nebo z [Průzkumník objektů systému Sql Server](xref:tutorials/razor-pages/sql#ssox) (SSOX). Chcete-li odstranit databázi z SSOX:
+<a name="ssox"></a> Pokud odstraníte všechny záznamy v databázi, bude inicializátoru počáteční hodnoty databáze a zahrnout `Rating` pole. To lze provést pomocí odstranění odkazy v prohlížeči nebo z [Průzkumník objektů systému Sql Server](xref:tutorials/razor-pages/sql#ssox) (SSOX). Chcete-li odstranit databázi z SSOX:
 
 * Vyberte databázi v SSOX.
 * Klikněte pravým tlačítkem na databázi a vyberte *odstranit*.

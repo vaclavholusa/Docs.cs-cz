@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/partial
-ms.openlocfilehash: a92466e7e8b12586efb502676cb92c1420d80453
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: c9bbfc83b8ee0cd05c71ea16b2a54a37235c8435
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="partial-views"></a>Částečná zobrazení
 
@@ -43,15 +43,15 @@ Tip: Použijte [nemáte opakujte sami Princip](http://deviq.com/don-t-repeat-you
 
 Z v rámci zobrazení stránky, existuje několik způsobů ve kterých můžete vykreslení částečného zobrazení. Nejjednodušší je použití `Html.Partial`, která vrátí `IHtmlString` a můžete odkazovat pomocí prefixu volání s `@`:
 
-[!code-cshtml[Main](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=9)]
+[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=9)]
 
 `PartialAsync` Metoda je k dispozici pro částečné zobrazení obsahující asynchronní kód (i když kód v zobrazení se obecně nedoporučuje):
 
-[!code-cshtml[Main](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=8)]
+[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=8)]
 
 Můžete vykreslení částečného zobrazení s `RenderPartial`. Tato metoda není vrácení výsledku; je-li datové proudy vykreslené výstup přímo do odpovědi. Protože se nevrací výsledku, je nutné volat v bloku kódu Razor (můžete také volat `RenderPartialAsync` v případě potřeby):
 
-[!code-cshtml[Main](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=10-12)]
+[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=10-12)]
 
 Protože proudů výsledek přímo, `RenderPartial` a `RenderPartialAsync` může v některých scénářích líp fungovat. Ale ve většině případů se doporučuje můžete použít `Partial` a `PartialAsync`.
 
@@ -104,19 +104,19 @@ Model můžete předat také do částečné zobrazení. To může být modelu z
 
 Můžete předat instanci `ViewDataDictionary` a modelu zobrazení pro částečné zobrazení:
 
-[!code-cshtml[Main](partial/sample/src/PartialViewsSample/Views/Articles/Read.cshtml?range=15-16)]
+[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Articles/Read.cshtml?range=15-16)]
 
 Kód níže ukazuje *Views/Articles/Read.cshtml* zobrazení, která obsahuje dvě částečné zobrazení. Druhý částečné zobrazení předává v modelu a `ViewData` částečného zobrazení. Můžete předat nové `ViewData` slovníku a přitom zachovat stávající `ViewData` Pokud použijete konstruktor přetížení `ViewDataDictionary` zvýrazněná níže:
 
-[!code-cshtml[Main](partial/sample/src/PartialViewsSample/Views/Articles/Read.cshtml)]
+[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Articles/Read.cshtml)]
 
 *Zobrazení nebo sdílené nebo AuthorPartial*:
 
-[!code-cshtml[Main](partial/sample/src/PartialViewsSample/Views/Shared/AuthorPartial.cshtml)]
+[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Shared/AuthorPartial.cshtml)]
 
 *ArticleSection* částečné:
 
-[!code-cshtml[Main](partial/sample/src/PartialViewsSample/Views/Articles/ArticleSection.cshtml)]
+[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Articles/ArticleSection.cshtml)]
 
 Za běhu, jsou vykreslovány částečné do nadřazeného zobrazení, které se zobrazí v rámci sdílený *_Layout.cshtml*
 

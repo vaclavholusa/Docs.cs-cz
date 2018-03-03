@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: ccf4329e6684d07570bfaabfaa1a570664fb2ca3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8dc2221ea19a33f1d34ba3aae8c60e365423e140
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Vytvoření aplikace ASP.NET MVC 5 s Facebook, Twitter, LinkedIn a Google OAuth2 přihlašování (C#)
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > V tomto kurzu se dozvíte, jak vytvořit webovou aplikaci ASP.NET MVC 5, který umožňuje uživatelům přihlásit se pomocí [OAuth 2.0](http://oauth.net/2/) s přihlašovací údaje z externí zprostředkovatel ověřování, jako je Facebook, Twitter, LinkedIn, Microsoft nebo Google. Pro zjednodušení tento kurz se zaměřuje na práci s přihlašovacími údaji ze sítě Facebook a Google.
 > 
@@ -114,6 +114,9 @@ Pro připojení k zprostředkovatele ověřování, jako je Google a Facebook, m
 <a id="goog"></a>
 ## <a name="creating-a-google-app-for-oauth-2-and-connecting-the-app-to-the-project"></a>Vytvoření aplikace na Google OAuth 2 a připojení aplikace k projektu
 
+> [!WARNING]
+> Aktuální Google OAuth pokyny najdete v tématu [ověřování Google konfigurace v ASP.NET Core](/aspnet/core/security/authentication/social/google-logins).
+
 1. Přejděte na [konzole pro vývojáře Google](https://console.developers.google.com/).
 1. Pokud jste dosud nevytvořili projektu před, vyberte **pověření** v levé kartě a potom vyberte **vytvořit**.
 1. V levé kartě klikněte na **pověření**.
@@ -158,6 +161,9 @@ Pro připojení k zprostředkovatele ověřování, jako je Google a Facebook, m
 
 <a id="fb"></a>
 ## <a name="creating-the-app-in-facebook-and-connecting-the-app-to-the-project"></a>Vytvoření aplikace v síti Facebook a připojení aplikace k projektu
+
+> [!WARNING]
+> Aktuální pokyny ověřování Facebook OAuth2 najdete v tématu [Facebook konfigurace ověřování](/aspnet/core/security/authentication/social/facebook-logins)
 
 Pro ověřování sítě Facebook OAuth2 musíte zkopírovat do projektu některá nastavení z aplikace, která vytvoříte ve službě Facebook.
 

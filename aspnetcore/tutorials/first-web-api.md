@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api
-ms.openlocfilehash: 1146132693681eca8f92beb00ebabd7296534688
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7c91866de60988ebfeafea6e026a3dcec25d7c3d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 #<a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio pro Windows
 
@@ -69,7 +69,7 @@ Přidat `TodoItem` třídy. Klikněte pravým tlačítkem myši *modely* složky
 
 Aktualizace `TodoItem` třídy následujícím kódem:
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
+[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
 
 Generuje databázi `Id` při `TodoItem` je vytvořena.
 
@@ -81,7 +81,7 @@ Přidat `TodoContext` třídy. Klikněte pravým tlačítkem myši *modely* slo�
 
 Třída nahraďte následujícím kódem:
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
+[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
 
 [!INCLUDE[Register the database context](../includes/webApi/register_dbContext.md)]
 

@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/custom-formatters
-ms.openlocfilehash: 8a42f2d885bd0a0c6d2bd05f9c589def2e15d50a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 617949fb7421c20b67ffae51c241468f4c79ab38
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="custom-formatters-in-aspnet-core-mvc-web-apis"></a>Vlastní formátování v aplikaci ASP.NET MVC základní webové rozhraní API
 
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 Jádro ASP.NET MVC má integrovanou podporu pro výměnu dat ve webové rozhraní API pomocí formátu JSON, XML nebo prostý text. Tento článek ukazuje, jak přidat podporu dalších formátech tak, že vytvoříte vlastní formátování.
 
@@ -52,7 +52,7 @@ Pokud chcete vytvořit formátování:
 
 Text typy médií (například soubor vCard), jsou odvozeny od [TextInputFormatter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.textinputformatter) nebo [TextOutputFormatter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.textoutputformatter) základní třídy.
 
-[!code-csharp[Main](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=classdef)]
+[!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=classdef)]
 
 Pro binární typy jsou odvozeny od [InputFormatter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.inputformatter) nebo [OutputFormatter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.outputformatter) základní třídy.
 
@@ -60,7 +60,7 @@ Pro binární typy jsou odvozeny od [InputFormatter](https://docs.microsoft.com/
 
 V konstruktoru, určete přidáním do platné médium typy a kódování `SupportedMediaTypes` a `SupportedEncodings` kolekce.
 
-[!code-csharp[Main](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=ctor&highlight=3,5-6)]
+[!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=ctor&highlight=3,5-6)]
 
 > [!NOTE]  
 > Nelze provést konstruktor vkládání závislostí v třída formátovacího modulu. Například nelze získat protokolovacího nástroje přidáním protokolovacího nástroje parametr konstruktoru. Pro přístup ke službám, budete muset použít objektu context, který získá předané do vaší metody. Příklad kódu [pod](#read-write) ukazuje, jak to udělat.
@@ -69,7 +69,7 @@ V konstruktoru, určete přidáním do platné médium typy a kódování `Suppo
 
 Zadejte typ můžete deserializovat do nebo z serializovat přepsáním `CanReadType` nebo `CanWriteType` metody. Například může být pouze nebudete moct vytvořit soubor vCard text ze `Contact` a naopak.
 
-[!code-csharp[Main](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=canwritetype)]
+[!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=canwritetype)]
 
 #### <a name="the-canwriteresult-method"></a>Metoda CanWriteResult
 
@@ -86,13 +86,13 @@ Předpokládejme například, vrátí podpis metody akce `Person` typ, ale můž
 
 Vykonávají samotnou práci deserializaci nebo serializace ve `ReadRequestBodyAsync` nebo `WriteResponseBodyAsync`.  Zvýrazněné řádky v následujícím příkladu ukazují, jak získat služby z kontejneru pro vkládání závislosti (je již nelze získat z konstruktoru parametrů).
 
-[!code-csharp[Main](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=writeresponse&highlight=3-4)]
+[!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=writeresponse&highlight=3-4)]
 
 ## <a name="how-to-configure-mvc-to-use-a-custom-formatter"></a>Postup konfigurace MVC používat vlastní formátování
  
 Pokud chcete používat vlastní formátovací modul, přidejte instance třídy pro formátování `InputFormatters` nebo `OutputFormatters` kolekce.
 
-[!code-csharp[Main](custom-formatters/sample/Startup.cs?name=mvcoptions&highlight=3-4)]
+[!code-csharp[](custom-formatters/sample/Startup.cs?name=mvcoptions&highlight=3-4)]
 
 Formátovací moduly jsou vyhodnocovány v pořadí, v jakém že jste je vložili. První z nich má přednost před. 
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/overview
-ms.openlocfilehash: 7f335681581b73e36e5b4deaf513255770900965
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3aa0c4bc8d009147dd15571da4d7d63402e4c512
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="consumer-apis-overview"></a>Přehled rozhraní API příjemce
 
@@ -48,11 +48,11 @@ Následující příklad ukazuje tři koncepty:
 
 3. Vytvoření `IDataProtector` z `IDataProtectionProvider` a jeho použití k ochraně a zrušení data.
 
-[!code-csharp[Main](../using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
+[!code-csharp[](../using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
 
 Balíček Microsoft.AspNetCore.DataProtection.Abstractions obsahuje metody rozšíření `IServiceProvider.GetDataProtector` v zájmu usnadnění práce vývojářů. Zapouzdřit jako najednou i načítání `IDataProtectionProvider` z poskytovatele služeb a volání `IDataProtectionProvider.CreateProtector`. Následující příklad ukazuje jeho použití.
 
-[!code-csharp[Main](./overview/samples/getdataprotector.cs?highlight=15)]
+[!code-csharp[](./overview/samples/getdataprotector.cs?highlight=15)]
 
 >[!TIP]
 > Instance `IDataProtectionProvider` a `IDataProtector` jsou bezpečné pro přístup z více vláken pro více volající. Rozhraní má který určeno po získá odkaz na komponentu `IDataProtector` prostřednictvím volání `CreateProtector`, tento odkaz se bude používat pro několik volání `Protect` a `Unprotect`. Volání `Unprotect` cryptographicexception – vyvolá výjimku, pokud nelze ověřit nebo dešifrovat znalosti chráněné datové části. Některé součásti chtít ignorování chyb během zrušení operace; komponenta, která čte ověřovací soubory cookie může zpracovat tuto chybu a považovat požadavku, jako kdyby měl žádný soubor cookie na všech než nesplní žádost přímý. Součásti, které chcete toto chování má konkrétně catch cryptographicexception – místo požití všechny výjimky.

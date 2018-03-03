@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: 4f55b3b439d268c371ce40a298b0f63dad9eef69
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: b9af2068aec4326585eb2a8994399a16461db3be
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Zobrazení v jádro ASP.NET MVC
 
@@ -48,7 +48,7 @@ Zobrazení nápovědy k vytvoření [ **S**eparation **o**f **C**oncerns (SoC) n
 
 Zobrazení, které jsou specifické pro určitý kontroler jsou vytvořené v *zobrazení / [ControllerName]* složky. Zobrazení, které jsou sdíleny mezi řadiče jsou umístěny v *zobrazení a sdílených* složky. Pokud chcete vytvořit zobrazení, přidejte nový soubor a poskytněte stejný název jako jeho přidruženému kontroleru akce s *.cshtml* příponu souboru. Vytvoření zobrazení, která odpovídá *o* akce v *Domů* řadič, vytvořit *About.cshtml* souboru v *zobrazení Domů*složky:
 
-[!code-cshtml[Main](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
+[!code-cshtml[](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
 
 *Syntaxe Razor* značek začíná `@` symbol. Spusťte příkazy jazyka C# tím, že umístíte C# kódu v rámci [bloky kódu Razor](xref:mvc/views/razor#razor-code-blocks) nastavit ve složených závorkách (`{ ... }`). Například najdete v sekci přiřazení "O" `ViewData["Title"]` uvedené výše. Můžete zobrazit hodnoty v kódu HTML hodnotu s odkazem jednoduše `@` symbol. Zobrazit obsah `<h2>` a `<h3>` prvků uvedených výše.
 
@@ -60,7 +60,7 @@ Zobrazení jsou obvykle vrácené z akce jako [ViewResult](/aspnet/core/api/micr
 
 *HomeController.cs*
 
-[!code-csharp[Main](../../common/samples/WebApplication1/Controllers/HomeController.cs?highlight=5&range=16-21)]
+[!code-csharp[](../../common/samples/WebApplication1/Controllers/HomeController.cs?highlight=5&range=16-21)]
 
 Po návratu tato akce *About.cshtml* zobrazení zobrazen v poslední části vykresleno jako na následující webové stránce:
 

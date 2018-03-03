@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: 53b59045751153cd858e13769b5b42d5700e26d4
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: cd9f8fc310ba0258477db51aa416c03debadeffe
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core
 
@@ -29,6 +29,8 @@ Shromážděte následující informace:
 * Položky protokolu stdout modulu jádro ASP.NET
 
 Porovnávání informací o následující běžné chyby. Pokud je nalezena shoda, postupujte podle pomoc při řešení potíží.
+
+[!INCLUDE[Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 ## <a name="installer-unable-to-obtain-vc-redistributable"></a>Instalační program nemohl získat VC ++ Redistributable
 

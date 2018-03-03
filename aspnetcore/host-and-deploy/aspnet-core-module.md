@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: c01abed767a226eae68725c1c53d922eac2f705e
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 5aac5cf2b8fd4bc53ba7201645b9bb02a5d1ecae
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Odkaz na konfiguraci základní modul ASP.NET
 
@@ -128,6 +128,12 @@ Následující ukázka `aspNetCore` element konfiguruje `stdout` protokolování
 ```
 
 V tématu [konfigurace s web.config](#configuration-with-webconfig) příklad `aspNetCore` element v *web.config* souboru.
+
+## <a name="proxy-configuration-uses-http-protocol-and-a-pairing-token"></a>Konfigurace proxy serveru používá protokol HTTP a párovací token
+
+Proxy server mezi ASP.NET Core modulu a Kestrel vytvořen používá protokol HTTP. Pomocí protokolu HTTP je optimalizace výkonu, kde provoz mezi modulu a Kestrel probíhá na adresu zpětné smyčky z síťové rozhraní. Neexistuje žádné riziko odposlouchávání provoz mezi modulu a Kestrel z umístění od serveru.
+
+Token párovací se používá k zaručit, že požadavků přijatých službou Kestrel byly směrovány přes proxy server službou IIS a nebyla pochází z jiného zdroje. Párovací token se vytvoří a nastavení do proměnné prostředí (`ASPNETCORE_TOKEN`) modulem. Také nastavení párovací tokenu do záhlaví (`MSAspNetCoreToken`) u každého požadavku směrovány přes proxy server. Služba IIS Middleware kontroly požadavku že obdrží potvrďte, že párovací hodnota tokenu hlavičky odpovídá hodnotu proměnné prostředí. Pokud hodnoty tokenu se neshodují, žádost je zaznamenána a odmítnut. Proměnnou párovací tokenu prostředí a přenosy dat mezi modulu a Kestrel nejsou dostupné z umístění od serveru. Bez znalosti párovací hodnota tokenu, útočník nemohou odesílat požadavky, které obejít kontrolu v IIS Middleware.
 
 ## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>Modul ASP.NET Core s službu IIS sdílenou konfiguraci
 

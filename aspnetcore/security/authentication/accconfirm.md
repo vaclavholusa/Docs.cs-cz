@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: e8f73d58bdf626910b2101ef310385f588315e26
-ms.sourcegitcommit: 725cb18ad23013e15d3dbb527958481dee79f9f8
+ms.openlocfilehash: b236b4e5d3a4fa7212453f2aec209d145f5f5e32
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Potvrzení účtu a obnovení hesla v ASP.NET Core
 
@@ -102,7 +102,7 @@ Obvykle budete chtít zabránit noví uživatelé publikování všechna data na
 
 Aktualizace `ConfigureServices` tak, aby vyžadovala potvrzen e-mailu:
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet1&highlight=12-17)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet1&highlight=12-17)]
 
 `config.SignIn.RequireConfirmedEmail = true;` zabraňuje registrovaní uživatelé přihlásit, dokud je potvrzen e-mailu.
 
@@ -114,7 +114,7 @@ V tomto kurzu se sendgrid vám umožňuje používá k odesílání e-mailu. Mus
 
 Vytvořte třídu načíst klíč zabezpečení e-mailu. Tato ukázka `AuthMessageSenderOptions` je v vytvořit třídu *Services/AuthMessageSenderOptions.cs* souboru:
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Services/AuthMessageSenderOptions.cs?name=snippet1)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
 Nastavte `SendGridUser` a `SendGridKey` s [nástroj tajný klíč správce](xref:security/app-secrets). Příklad:
 
@@ -140,11 +140,11 @@ Přidat `AuthMessageSenderOptions` ke kontejneru služby na konci `ConfigureServ
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
+[!code-csharp[](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
 
 ---
 
@@ -170,12 +170,12 @@ V tématu [začněte sendgridu zadarmo](https://sendgrid.com/free/) zaregistrova
 
 Ke konfiguraci Sendgridu, přidejte kód podobný následujícímu v *Services/EmailSender.cs*:
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 * Přidejte kód v *Services/MessageServices.cs* podobný následujícímu konfigurace sendgrid vám umožňuje:
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
+[!code-csharp[](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
 
 ---
 
@@ -193,13 +193,13 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 Kompletní metoda je zobrazena změněné řádek zvýrazněna:
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
 Chcete-li povolit potvrzení účtu, zrušte komentář u následující kód:
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
+[!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
 
 **Poznámka:** kód znemožňuje nově zaregistrovaný uživatele automaticky přihlášený při psaní komentářů následující řádek:
 
@@ -209,11 +209,11 @@ Chcete-li povolit potvrzení účtu, zrušte komentář u následující kód:
 
 Povolit obnovení hesla uncommenting kód `ForgotPassword` akce *Controllers/AccountController.cs*:
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=17-23&name=snippet_ForgotPassword)]
+[!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=17-23&name=snippet_ForgotPassword)]
 
 Zrušením komentáře u prvku formuláře v *Views/Account/ForgotPassword.cshtml*. Můžete chtít odebrat `<p> For more information on how to enable reset password ... </p>` element, který obsahuje odkaz na tohoto článku.
 
-[!code-cshtml[Main](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
+[!code-cshtml[](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
 
 ---
 
@@ -274,7 +274,7 @@ Pokud nelze získat pracovní e-mailu:
 
 ## <a name="combine-social-and-local-login-accounts"></a>Kombinování sociálních a místní přihlášení účtů
 
-K dokončení této části, musíte nejdřív povolit externí zprostředkovatel ověřování. V tématu [povolení ověřování pomocí služby Facebook, Google a ostatní externího poskytovatele](social/index.md).
+K dokončení této části, musíte nejdřív povolit externí zprostředkovatel ověřování. V tématu [Facebook, Google a externí zprostředkovatel ověřování](xref:security/authentication/social/index).
 
 Kliknutím na odkaz na vaši e-mailu můžete kombinovat místní a sociálních účty. V tomto pořadí "RickAndMSFT@gmail.com" je poprvé vytvořen jako místní přihlášení; však můžete nejprve vytvořte účet jako přihlášení prostřednictvím sociální sítě a pak přidejte místní přihlášení.
 

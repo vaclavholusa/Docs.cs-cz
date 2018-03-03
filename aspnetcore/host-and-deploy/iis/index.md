@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 620bfefa625f4b39cb2731b4f553caaa4526c71b
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: b1ca9303c620597f7844c401048129044e99d7be
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Jádro ASP.NET hostitele v systému Windows pomocí služby IIS
 
@@ -45,6 +45,8 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
+Základní modul ASP.NET generuje dynamický port přiřadit pro proces back-end. `UseIISIntegration` Metoda převezme dynamický port a nakonfiguruje Kestrel tak, aby naslouchala na `http://locahost:{dynamicPort}/`. Přepíše ostatní konfigurace adresy URL, například volání `UseUrls` nebo [API naslouchat na Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration). Proto volání `UseUrls` nebo na Kestrel `Listen` při použití modulu nejsou požadované rozhraní API. Pokud `UseUrls` nebo `Listen` nazývá Kestrel sleduje na port zadaný při spuštění aplikace bez služby IIS.
+
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
 Zahrnout závislost na [Microsoft.AspNetCore.Server.IISIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/) balíček v závislosti aplikaci. Pomocí integrace služby IIS middleware přidáním [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) rozšíření metodu [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder):
@@ -57,6 +59,10 @@ var host = new WebHostBuilder()
 ```
 
 Obě [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) a [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) jsou povinné. Volání kódu `UseIISIntegration` nemá vliv přenositelnost kódu. Pokud aplikace není spuštěna za služby IIS (například spuštění aplikace přímo na Kestrel), `UseIISIntegration` nepracuje.
+
+Základní modul ASP.NET generuje dynamický port přiřadit pro proces back-end. `UseIISIntegration` Metoda převezme dynamický port a nakonfiguruje Kestrel tak, aby naslouchala na `http://locahost:{dynamicPort}/`. Přepíše ostatní konfigurace adresy URL, například volání `UseUrls`. Proto volání `UseUrls` není povinné, pokud používáte modul. Pokud `UseUrls` nazývá Kestrel sleduje na port zadaný při spuštění aplikace bez služby IIS.
+
+Pokud `UseUrls` je volána v aplikaci ASP.NET Core 1.0, volání **před** volání `UseIISIntegration` tak, aby modul Konfigurovat port není přepsán. Toto pořadí volání není povinné technologii ASP.NET Core 1.1, protože modul nastavení přepsání `UseUrls`.
 
 ---
 
@@ -164,6 +170,8 @@ Povolit **konzoly pro správu služby IIS** a **webové služby**.
 1. Nainstalujte [.NET jádra Windows serveru, který hostuje sady](https://aka.ms/dotnetcore-2-windowshosting) v hostitelském systému. Sada nainstaluje rozhraní .NET Core Runtime, základní knihovny .NET a [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel server. Pokud systém nemá připojení k Internetu, získejte a nainstalujte [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840) před instalací sady hostování v rozhraní .NET Core systému Windows Server.
 
    **Důležité!** Pokud sadu hostování je nainstalována před službou IIS, je nutné opravit instalaci sady. Spusťte instalační program hostování sady znovu po instalaci služby IIS.
+   
+   Instalační program zabránit instalaci x86 balíčků na x64 OS, spusťte instalační program z příkazového řádku s přepínačem správce `OPT_NO_X86=1`.
 
 1. Restartování systému nebo spuštění **net stop byl /y** následuje **net start w3svc** z příkazového řádku. Restartování služby IIS převezme ke změně systému cesta provedené Instalační služby.
 

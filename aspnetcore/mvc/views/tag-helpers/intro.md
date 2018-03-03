@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: 669fb9b22d070a75d891e875156d62590c40fc5a
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: c775eaaa521399328d157c9b7312e6fe5325c07e
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Úvod do pomocné rutiny značky v ASP.NET Core 
 
@@ -69,13 +69,13 @@ Značka pomocné rutiny oboru řídí kombinaci `@addTagHelper`, `@removeTagHelp
 
 Pokud vytvoříte novou webovou aplikaci ASP.NET Core s názvem *AuthoringTagHelpers* (bez jakéhokoli ověřování), následující *Views/_ViewImports.cshtml* soubor bude přidán do projektu:
 
-[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
+[!code-cshtml[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
 `@addTagHelper` – Direktiva zpřístupní Pomocníci značky k zobrazení. V takovém případě je soubor zobrazení *Views/_ViewImports.cshtml*, který ve výchozím nastavení dědí všechny soubory zobrazení v *zobrazení* složku a podadresářích; zpřístupnění značky pomocné rutiny. Výše uvedený kód používá syntaxi zástupný znak ("\*") Chcete-li určit, že všechny značky pomocníky v zadaném sestavení (*Microsoft.AspNetCore.Mvc.TagHelpers*) bude k dispozici pro každý soubor zobrazení v *zobrazení* nebo dílčí adresáři. První parametr po `@addTagHelper` určuje značky Pomocníci načíst (používáme "\*" pro všechny značky pomocníky), a druhý parametr "Microsoft.AspNetCore.Mvc.TagHelpers" Určuje sestavení obsahující pomocné rutiny značky. *Microsoft.AspNetCore.Mvc.TagHelpers* je sestavení pro předdefinované Pomocníci značky základní technologie ASP.NET.
 
 Ke zveřejnění všechny značky Pomocníci v tomto projektu (která vytvoří sestavení s názvem *AuthoringTagHelpers*), byste použili následující:
 
-[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
+[!code-cshtml[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
 
 Pokud projekt obsahuje `EmailTagHelper` s výchozí obor názvů (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`), můžete zadat plně kvalifikovaný název (FQN) Helper značky:
 
@@ -233,7 +233,7 @@ Kód je mnohem čisticí a snadněji číst, upravit a udržovat než přístup 
 
 Vezměte v úvahu *e-mailu* skupiny:
 
-[!code-csharp[Main](intro/sample/Register.cshtml?range=12-18)]
+[!code-csharp[](intro/sample/Register.cshtml?range=12-18)]
 
 Jednotlivým atributům "asp-" má hodnotu "E-mailu", ale "E-mailu" není řetězec. V tomto kontextu je "E-mailu" C# výraz vlastnost modelu pro `RegisterViewModel`.
 

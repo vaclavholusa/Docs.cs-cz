@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: 8aac6c649b22dc8f6cfc916aa78d56efad7821a0
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 7f08e155491b56933ae183818e9b9ee562ad8286
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrace obslužné rutiny HTTP a moduly, které middleware ASP.NET Core 
 
@@ -91,13 +91,13 @@ Všimněte si, jak na předchozím obrázku middleware ověřování short-circu
 
 Existující modul HTTP bude vypadat podobně jako tento:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
 
 Jak je znázorněno v [Middleware](xref:fundamentals/middleware/index) stránka, middlewaru ASP.NET Core je třída, která zveřejňuje `Invoke` metoda pořízení `HttpContext` a vrácení `Task`. Vaše nové middleware bude vypadat takto:
 
 <a name="http-modules-usemiddleware"></a>
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
 Předchozí middleware šablony pořízení z části [zápis middleware](xref:fundamentals/middleware/index#middleware-writing-middleware).
 
@@ -107,11 +107,11 @@ Předchozí middleware šablony pořízení z části [zápis middleware](xref:f
 
 Modul může ukončit žádost, například pokud uživatel nemá oprávnění:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
 
 Middleware zpracovává tento není voláním `Invoke` na další middleware v kanálu. Mějte na paměti, že to není ukončit plně požadavek, protože předchozí middlewares bude stále vyvolán při odpovědi díky zpět skrze kanálu.
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
 
 Při migraci vaší modulu funkce do vaší nové middleware, můžete zjistit, že kód není kompilovat, protože `HttpContext` v ASP.NET Core výrazně změnila třída. [Později na](#migrating-to-the-new-httpcontext), uvidíte, jak migrovat do nového HttpContext základní technologie ASP.NET.
 
@@ -119,11 +119,11 @@ Při migraci vaší modulu funkce do vaší nové middleware, můžete zjistit, 
 
 Vytváření modulů HTTP jsou obvykle přidány do žádosti o kanálu pomocí *Web.config*:
 
-[!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
+[!code-xml[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
 
 Převést tím, že [přidání vlastního nové middlewaru](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder) na kanále vaší `Startup` – třída:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
 
 Přesnou pozici v kanálu, kde vložit vaše nové middleware závisí na událost, která ji zpracovává jako modul (`BeginRequest`, `EndRequest`atd) a jeho pořadí v seznamu modulů v *Web.config*.
 
@@ -135,11 +135,11 @@ Jako dříve jsme si říkali, neexistuje žádný životního cyklu aplikace v 
 
 Obslužné rutiny HTTP vypadá přibližně takto:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/HttpHandlers/ReportHandler.cs?highlight=5,7,13,14,15,16)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/HttpHandlers/ReportHandler.cs?highlight=5,7,13,14,15,16)]
 
 V projektu ASP.NET Core by to nepřeloží na middleware podobná této:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/ReportHandlerMiddleware.cs?highlight=7,9,13,20,21,22,23,40,42,44)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/ReportHandlerMiddleware.cs?highlight=7,9,13,20,21,22,23,40,42,44)]
 
 Tento middleware je velmi podobný middleware odpovídající moduly. Pouze skutečné rozdílem je, že zde není žádná volání `_next.Invoke(context)`. To dává smysl, protože rutina je na konci kanálu požadavku, takže neexistují žádné další middleware má být vyvolána.
 
@@ -147,15 +147,15 @@ Tento middleware je velmi podobný middleware odpovídající moduly. Pouze skut
 
 Konfigurace obslužné rutiny HTTP se provádí v *Web.config* a vypadá takto:
 
-[!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32,46-48,50,101)]
+[!code-xml[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32,46-48,50,101)]
 
 To může převést přidáním vlastního middlewaru novou obslužnou rutinu do kanálu požadavku ve vaší `Startup` třída, podobně jako middleware převést z modulů. Problém s tohoto přístupu je, že ho do vaší nové middleware obslužnou rutinu by odesílat všechny požadavky. Ale chcete jenom žádosti s příponou dané k dosažení vlastního middlewaru. Který, získáte stejným funkcím, jaké jste měli s vaší obslužné rutiny HTTP.
 
 Jedno řešení je větev kanálu pro požadavky s danou příponu, pomocí `MapWhen` metoda rozšíření. To uděláte ve stejné `Configure` metoda, kde můžete přidat další middleware:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=27-34)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=27-34)]
 
-`MapWhen`mají tyto parametry:
+`MapWhen` mají tyto parametry:
 
 1. Lambda, která přebírá `HttpContext` a vrátí `true` Pokud požadavek by měl přejděte dolů větev. To znamená, že můžete větev požadavky nejen založené na jejich rozšíření, ale také na hlavičky požadavku, parametrů řetězce dotazu, atd.
 
@@ -175,13 +175,13 @@ Nové [konfigurační systém](xref:fundamentals/configuration/index) vám dáv�
 
 1.  Vytvoření třídy k umístění middleware možnosti, například:
 
-    [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
+    [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
 
 2.  Uložení možnost hodnot
 
     Konfigurace systému umožňuje ukládat hodnoty možnosti kdekoli chcete. Ale většina lokality použijte *appSettings.JSON určený*, takže provedeme tohoto přístupu:
 
-    [!code-json[Main](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
+    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
 
     *MyMiddlewareOptionsSection* následuje název oddílu. Nemusí to být stejný jako název třídy vaše možnosti.
 
@@ -193,19 +193,19 @@ Nové [konfigurační systém](xref:fundamentals/configuration/index) vám dáv�
 
     1.  Pokud používáte *appSettings.JSON určený*, přidejte ho do Tvůrce konfigurace v `Startup` konstruktor:
 
-      [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Ctor&highlight=5-6)]
+      [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Ctor&highlight=5-6)]
 
     2.  Konfigurovat službu možnosti:
 
-      [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
+      [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
 
     3.  Možnosti přidružte třídě možnosti:
 
-      [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=6-8)]
+      [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=6-8)]
 
 4.  Vložit možnosti do vaší konstruktor middlewaru. Toto je podobná vložení možnosti do kontroleru.
 
-  [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
+  [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
 
   [UseMiddleware](#http-modules-usemiddleware) metody rozšíření, která přidá vaše middlewaru, který má `IApplicationBuilder` postará vkládání závislostí.
 
@@ -223,15 +223,15 @@ To rozpis ale pokud chcete použít stejné middleware dvakrát, s různými mo�
 
     Chcete-li přidat druhý sadu možností a *appSettings.JSON určený* soubor, použijte nový klíč k jeho jednoznačné identifikaci:
 
-    [!code-json[Main](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
+    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
 
 2.  Načíst hodnoty možností a předejte middleware. `Use...` – Metoda rozšíření (která vlastního middlewaru přidá do kanálu) je logické místo, kde můžete předat hodnoty možnosti: 
 
-    [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
+    [!code-csharp[](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
 
 4.  Povolí middleware má provést parametrem možnosti. Zadejte přetížení `Use...` metoda rozšíření (která přebírá parametr možnosti a předává jej do `UseMiddleware`). Když `UseMiddleware` je volána s parametry, předává parametry do vaší konstruktor middlewaru při vytvoření instance objektu middleware.
 
-    [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
+    [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
 
     Všimněte si, jak to zabalí objekt možnosti v `OptionsWrapper` objektu. To implementuje `IOptions`, podle očekávání tím konstruktor middlewaru.
 
@@ -243,76 +243,76 @@ Už jste viděli dříve, `Invoke` metoda v vlastního middlewaru přebírá par
 public async Task Invoke(HttpContext context)
 ```
 
-`HttpContext`výrazně se změnilo v ASP.NET Core. V této části ukazuje, jak převede nejčastěji používané vlastnosti [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) do nového `Microsoft.AspNetCore.Http.HttpContext`.
+`HttpContext` výrazně se změnilo v ASP.NET Core. V této části ukazuje, jak převede nejčastěji používané vlastnosti [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) do nového `Microsoft.AspNetCore.Http.HttpContext`.
 
 ### <a name="httpcontext"></a>HttpContext
 
 **HttpContext.Items** přeloží na:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Items)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Items)]
 
 **ID jedinečné žádosti (System.Web.HttpContext protějšek)**
 
 Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do protokolů.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Trace)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Trace)]
 
 ### <a name="httpcontextrequest"></a>HttpContext.Request
 
 **HttpContext.Request.HttpMethod** přeloží na:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Method)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Method)]
 
 **HttpContext.Request.QueryString** translates to:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Query)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Query)]
 
 **HttpContext.Request.Url** a **HttpContext.Request.RawUrl** nepřeloží na:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Url)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Url)]
 
 **HttpContext.Request.IsSecureConnection** translates to:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Secure)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Secure)]
 
 **HttpContext.Request.UserHostAddress** translates to:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Host)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Host)]
 
 **HttpContext.Request.Cookies** přeloží na:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Cookies)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Cookies)]
 
 **HttpContext.Request.RequestContext.RouteData** translates to:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Route)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Route)]
 
 **HttpContext.Request.Headers** translates to:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Headers)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Headers)]
 
 **HttpContext.Request.UserAgent** translates to:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Agent)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Agent)]
 
 **HttpContext.Request.UrlReferrer** translates to:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Referrer)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Referrer)]
 
 **HttpContext.Request.ContentType** translates to:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Type)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Type)]
 
 **HttpContext.Request.Form** přeloží na:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Form)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Form)]
 
 > [!WARNING]
 > Čtení hodnot formuláře, pouze v případě, že je typ obsahu dílčí *x--www-form-urlencoded* nebo *data formuláře*.
 
 **HttpContext.Request.InputStream** translates to:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Input)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Input)]
 
 > [!WARNING]
 > Tento kód používejte pouze v middleware typ obslužné rutiny, na konci kanálu.
@@ -325,19 +325,19 @@ Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do p
 
 **HttpContext.Response.Status** a **HttpContext.Response.StatusDescription** nepřeloží na:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Status)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Status)]
 
 **HttpContext.Response.ContentEncoding** a **HttpContext.Response.ContentType** nepřeloží na:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespType)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespType)]
 
 **HttpContext.Response.ContentType** na svůj vlastní také překládá do:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespTypeOnly)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespTypeOnly)]
 
 **HttpContext.Response.Output** přeloží na:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Output)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Output)]
 
 **HttpContext.Response.TransmitFile**
 
@@ -360,7 +360,7 @@ public async Task Invoke(HttpContext httpContext)
 
 `SetHeaders` Metoda zpětného volání bude vypadat takto:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetHeaders)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetHeaders)]
 
 **HttpContext.Response.Cookies**
 
@@ -376,7 +376,7 @@ public async Task Invoke(HttpContext httpContext)
 
 `SetCookies` Metoda zpětného volání by vypadat třeba takto:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetCookies)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetCookies)]
 
 ## <a name="additional-resources"></a>Další zdroje
 

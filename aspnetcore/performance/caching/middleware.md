@@ -9,11 +9,11 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 29ef3cf3d8bcd6b4ebbf08d831dc146e830fa1ac
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e9a74d8f6c3945b1bc8c62d0ab21145a7c5717fb
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Ukládání do mezipaměti Middleware v ASP.NET Core odpovědi
 
@@ -31,11 +31,11 @@ Pokud chcete middleware v projektu, přidejte odkaz na [ `Microsoft.AspNetCore.R
 
 V `ConfigureServices`, přidat middleware ke kolekci služby.
 
-[!code-csharp[Main](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
 
 Nakonfigurovat aplikaci, aby používala middlewaru s `UseResponseCaching` metoda rozšíření, která přidá middleware kanálu zpracování požadavků. Ukázková aplikace přidá [ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2) hlavičky odpovědi, který ukládá do mezipaměti odpovědi lze uložit do mezipaměti pro až 10 sekund. Odesílá vzorek [ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4) záhlaví pro konfiguraci middlewaru k obsluze odpovědi v mezipaměti pouze v případě [ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4) záhlaví následných žádostí se shoduje s původní žádost.
 
-[!code-csharp[Main](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
+[!code-csharp[](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
 
 Middleware ukládání do mezipaměti odpovědi pouze ukládá do mezipaměti serveru odpovědi, jejichž výsledkem 200 stavový kód (OK). Žádné jiné reakce, včetně [chybové stránky](xref:fundamentals/error-handling), ignorují middlewarem.
 
@@ -125,10 +125,10 @@ Při testování a řešení potíží s chování ukládání do mezipaměti, p
 * Metoda požadavku musí být GET nebo HEAD.
 * Terminálu middleware, jako například [Middleware statické soubory](xref:fundamentals/static-files), nesmí zpracovat odpověď před Middleware ukládání do mezipaměti odpovědi.
 * `Authorization` Nesmí být záhlaví.
-* `Cache-Control`Hlavička parametry musí být platný, a odpovědi musí být označen `public` a nesmí být označený `private`.
+* `Cache-Control` Hlavička parametry musí být platný, a odpovědi musí být označen `public` a nesmí být označený `private`.
 * `Pragma: no-cache` Nesmí být záhlaví pokud `Cache-Control` hlavičky není přítomný, jako `Cache-Control` záhlaví přepsání `Pragma` záhlaví, pokud jsou k dispozici.
 * `Set-Cookie` Nesmí být záhlaví.
-* `Vary`Hlavička parametry musí být platný a není rovno `*`.
+* `Vary` Hlavička parametry musí být platný a není rovno `*`.
 * `Content-Length` Hodnota hlavičky (Pokud nastavit) musí odpovídat velikost textu odpovědi.
 * [IHttpSendFileFeature](/aspnet/core/api/microsoft.aspnetcore.http.features.ihttpsendfilefeature) nepoužívá.
 * Odpověď nesmí být zastaralé podle specifikace `Expires` záhlaví a `max-age` a `s-maxage` mezipaměti direktivy.

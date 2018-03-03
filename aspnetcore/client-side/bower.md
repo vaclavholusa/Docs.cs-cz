@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: ee628ee14aa38969cdb4443718c378fd36192596
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 67695843846cfaf1619db11a7bffcc65802e0f69
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Spravovat balíčky klienta s Bower v ASP.NET Core
 
@@ -67,13 +67,13 @@ Do vyhledávacího pole v Průzkumníku řešení můžete použít k vyhledán�
 
 Otevřete *Views\Shared\_Layout.cshtml* souboru a přidejte soubor písma Super šablon stylů CSS v prostředí [značky pomocná](xref:mvc/views/tag-helpers/intro) pro `Development`. V Průzkumníku řešení přetažení *písma awesome.css* uvnitř `<environment names="Development">` elementu.
 
-[!code-html[Main](bower/sample/_Layout.cshtml?highlight=4&range=9-13)]
+[!code-html[](bower/sample/_Layout.cshtml?highlight=4&range=9-13)]
 
 V produkční aplikace přidat *písma awesome.min.css* do pomocné rutiny prostředí značky pro `Staging,Production`.
 
 Nahraďte obsah *Views\Home\About.cshtml* souboru nástroje Razor s následující kód:
 
-[!code-html[Main](bower/sample/About.cshtml)]
+[!code-html[](bower/sample/About.cshtml)]
 
 Spusťte aplikaci a přejděte do zobrazení o ověření funguje písma Super balíčku.
 
@@ -96,7 +96,7 @@ Jakmile seznam balíčků v *bower.json* je se stažení souboru, Visual Studio.
 
 * Otevřete *bower.json*a přidejte jquery a bootstrap na `dependencies` oddílu. Výsledná *bower.json* soubor bude vypadat jako v následujícím příkladu. Verze bude časem změnit a nemusí odpovídat následující obrázek.
 
-[!code-json[Main](bower/sample/bower.json?highlight=5,6)]
+[!code-json[](bower/sample/bower.json?highlight=5,6)]
 
 * Uložit *bower.json* souboru.
 
@@ -109,7 +109,7 @@ Jakmile seznam balíčků v *bower.json* je se stažení souboru, Visual Studio.
 * Přidat `Microsoft.AspNetCore.StaticFiles` balíček NuGet do projektu.
 * Povolte statické soubory ke zpracování s [middleware se statickými soubory](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions). Přidejte volání [UseStaticFiles](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions) k `Configure` metodu `Startup`.
 
-[!code-csharp[Main](bower/sample/Startup.cs?highlight=9)]
+[!code-csharp[](bower/sample/Startup.cs?highlight=9)]
 
 ### <a name="reference-packages"></a>Referenčních balíčků
 
@@ -119,7 +119,7 @@ V této části vytvoříte stránky HTML a ověří, zda má přístup k nasaze
 
  Nahraďte obsah *Index.html* s následující kód:
 
-[!code-html[Main](bower/sample/Index.html)]
+[!code-html[](bower/sample/Index.html)]
 
 * Spusťte aplikaci a přejděte do `http://localhost:<port>/Index.html`. Alternativně s *Index.html* otevřené, stiskněte `Ctrl+Shift+W`. Ověřte, že se použije jumbotron stylů, kód jazyka jQuery odpovídá při kliknutí na tlačítko a že zavedení tlačítko se změní stav.
 

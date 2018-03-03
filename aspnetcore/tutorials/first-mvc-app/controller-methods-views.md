@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/controller-methods-views
-ms.openlocfilehash: 200f02f9815966653b3b46918737c60d11f11d5a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 69f7bfa0f1e203c860abce06f6f2daffcaf47a59
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="controller-methods-and-views"></a>Metody kontroleru a zobrazení
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Máme správné spuštění na filmová aplikace, ale není ideální prezentaci. Neradi najdete v části času (12:00:00 AM na obrázku níže) a **ReleaseDate** by měla být dva slova.
 
@@ -25,14 +25,14 @@ Máme správné spuštění na filmová aplikace, ale není ideální prezentaci
 
 Otevřete *Models/Movie.cs* souboru a přidejte zvýrazněné řádky vidíte níže:
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Models/MovieDateWithExtraUsings.cs?name=snippet_1&highlight=13-14)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Models/MovieDateWithExtraUsings.cs?name=snippet_1&highlight=13-14)]
 
 Klikněte pravým tlačítkem na červenou vlnovkou řádku **> rychlé akce a refaktoring**.
 
   ![Kontextové nabídky ukazuje ** > rychlé akce a refaktoring **.](controller-methods-views/_static/qa.png)
 
 
-Klepněte na`using System.ComponentModel.DataAnnotations;`
+Klepněte na `using System.ComponentModel.DataAnnotations;`
 
   ![pomocí System.ComponentModel.DataAnnotations v horní části seznamu](controller-methods-views/_static/da.png)
 
@@ -44,7 +44,7 @@ Umožňuje odebrat `using` příkazy, které nejsou potřebné. Se zobrazí ve v
 
 Aktualizovaný kódu:
 
-[!code-csharp[Main](./start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1)]
+[!code-csharp[](./start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1)]
 
 <!-- include start -->
 

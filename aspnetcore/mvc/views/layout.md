@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/layout
-ms.openlocfilehash: 3e9e5949d8940a33508e24f0da015b49b7ba468c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 140ee5a9b43ee952e46795e433ceb1553a6da906
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="layout"></a>Rozložení
 
@@ -37,13 +37,13 @@ Toto rozložení definuje šablonu nejvyšší úrovně pro zobrazení v aplikac
 
 Příklad `_Layout.cshtml`:
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=42,66)]
+[!code-html[](../../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=42,66)]
 
 ## <a name="specifying-a-layout"></a>Určení rozložení
 
 Zobrazení syntaxe Razor je k dispozici `Layout` vlastnost. Jednotlivá zobrazení zadejte rozložení nastavením této vlastnosti:
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml?highlight=2)]
+[!code-html[](../../common/samples/WebApplication1/Views/_ViewStart.cshtml?highlight=2)]
 
 Rozložení zadaný můžete použít úplnou cestu (Příklad: `/Views/Shared/_Layout.cshtml`) nebo částečný název (Příklad: `_Layout`). Pokud je zadaný částečný název, bude zobrazovací modul Razor hledat soubor rozložení pomocí jeho procesu zjišťování standardní. Řadič spojená je prohledána složka nejprve následuje `Shared` složky. Tento proces zjišťování je stejný jako ten, který používá ke zjišťování [částečná zobrazení](partial.md).
 
@@ -99,9 +99,9 @@ Soubor nepodporuje jiných součástí Razor, například funkce a definice čá
 
 Ukázka `_ViewImports.cshtml` souboru:
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/_ViewImports.cshtml)]
+[!code-html[](../../common/samples/WebApplication1/Views/_ViewImports.cshtml)]
 
-`_ViewImports.cshtml` Souboru u aplikace ASP.NET MVC základní obvykle umístěny v `Views` složky. A `_ViewImports.cshtml` soubor může být umístěn v rámci libovolné složky, ve kterém případu, uplatní se jenom u zobrazení v této složce a jejích podsložkách. `_ViewImports`zpracování souborů začínající na kořenové úrovni a potom pro každou složku plán pro umístění zobrazení sebe, tak na kořenové úrovni zadané nastavení může být přepsána na úrovni složek.
+`_ViewImports.cshtml` Souboru u aplikace ASP.NET MVC základní obvykle umístěny v `Views` složky. A `_ViewImports.cshtml` soubor může být umístěn v rámci libovolné složky, ve kterém případu, uplatní se jenom u zobrazení v této složce a jejích podsložkách. `_ViewImports` zpracování souborů začínající na kořenové úrovni a potom pro každou složku plán pro umístění zobrazení sebe, tak na kořenové úrovni zadané nastavení může být přepsána na úrovni složek.
 
 Například, pokud kořenové úrovni `_ViewImports.cshtml` soubor Určuje `@model` a `@addTagHelper`a jiné `_ViewImports.cshtml` soubor ve složce přidružené řadiče zobrazení určuje jinou `@model` a přidá další `@addTagHelper`, zobrazení bude mít přístup k Pomocníci obě značky a bude používat k tomu `@model`.
 
@@ -127,7 +127,7 @@ Pokud máte kód budete muset spustit před každé zobrazení, mají být umís
 
 Ukázka `_ViewStart.cshtml` souboru:
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml)]
+[!code-html[](../../common/samples/WebApplication1/Views/_ViewStart.cshtml)]
 
 Výše uvedeného souboru Určuje, že bude používat všechna zobrazení `_Layout.cshtml` rozložení.
 

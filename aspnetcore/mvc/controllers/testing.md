@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/testing
-ms.openlocfilehash: cabb1d2498e6c993b327c2fb9719525ec2181f9e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c72a5adc848cad62c7c20ff7e17469476aefaf53
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="testing-controller-logic-in-aspnet-core"></a>Testování řadiče logiku v ASP.NET Core
 
@@ -49,21 +49,21 @@ Pokud píšete vlastní filtry, tras atd., měli byste testování částí je, 
 
 K předvedení testování částí, zkontrolujte následující řadiče. Zobrazí seznam Debata relací a umožňuje nové Debata relací se vytvoří s příspěvku na:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?highlight=12,16,21,42,43)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?highlight=12,16,21,42,43)]
 
 Kontroleru je následující [explicitní závislosti Princip](http://deviq.com/explicit-dependencies-principle/), byla očekávána vkládání závislostí poskytnout instanci `IBrainstormSessionRepository`. Díky tomu je poměrně snadno testovat pomocí mock objektu rozhraní, jako je třeba [Moq](https://www.nuget.org/packages/Moq/). `HTTP GET Index` Metoda má žádné opakování nebo větvení a pouze volání jednu metodu. Abyste to mohli otestovat `Index` metoda, potřebujeme ověřit, jestli `ViewResult` se vrátí, s `ViewModel` z v úložišti `List` metoda.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=17-18&range=1-33,76-95)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=17-18&range=1-33,76-95)]
 
 `HomeController` `HTTP POST Index` By měl ověřit – metoda (viz výše):
 
-* Metoda akce vrací chybný požadavek `ViewResult` s příslušná data při `ModelState.IsValid` je`false`
+* Metoda akce vrací chybný požadavek `ViewResult` s příslušná data při `ModelState.IsValid` je `false`
 
 * `Add` Je volána metoda na úložiště a `RedirectToActionResult` je vrácen s správné argumenty při `ModelState.IsValid` hodnotu true.
 
 Neplatný stav modelu může být testována přidáním chyb s použitím `AddModelError` jak je znázorněno níže prvního testu.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
 
 První test potvrdí, kdy `ModelState` není platný, stejné `ViewResult` se vrátí jako pro `GET` požadavku. Všimněte si, že test není pokusí předat ve model neplatný. Že nebude fungovat přesto vzhledem k tomu, že není spuštěna vazby modelu (i když [integrace testovací](xref:mvc/controllers/testing#integration-testing) využije vazby modelu cvičení). V takovém případě není testuje vazby modelu. Tyto testy jednotek jenom testujete, jaké jsou kód v metodě akce.
 
@@ -74,23 +74,23 @@ Druhý test ověřuje, že když `ModelState` je platný, nový `BrainstormSessi
 
 Jiný řadič v aplikaci zobrazí informace týkající se konkrétní Debata relace. Obsahuje některé logiku pro řeší neplatné id hodnoty:
 
-[!code-csharp[Main](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
+[!code-csharp[](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
 
 Akce kontroleru má tři případech chcete otestovat, jeden pro každou `return` příkaz:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?highlight=27,28,29,46,47,64,65,66,67,68)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?highlight=27,28,29,46,47,64,65,66,67,68)]
 
 Aplikace zpřístupňuje funkci, jako webové rozhraní API (seznam nápady přidružené Debata relace a metody pro přidání nových nápadů do relace):
 
 <a name="ideas-controller"></a>
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?highlight=21,22,27,30,31,32,33,34,35,36,41,42,46,52,65)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?highlight=21,22,27,30,31,32,33,34,35,36,41,42,46,52,65)]
 
 `ForSession` Metoda vrátí seznam hodnot `IdeaDTO` typy. Vyhněte se vrací entity domény vaší firmy přímo prostřednictvím volání rozhraní API, protože často obsahují více dat, než klient rozhraní API vyžaduje, a jejich zbytečně spojte modelu interní domény vaší aplikace s rozhraním API vystavit externě. Mapování mezi domény entity a typy, vrátíte se prostřednictvím sítě můžete provést ručně (pomocí LINQ `Select` jak je vidět tady) nebo pomocí knihovny jako [AutoMapper](https://github.com/AutoMapper/AutoMapper)
 
 Jednotka testů pro `Create` a `ForSession` metody rozhraní API:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?highlight=18,23,29,33,38-39,43,50,58-59,68-70,76-78&range=1-83,121-135)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?highlight=18,23,29,33,38-39,43,50,58-59,68-70,76-78&range=1-83,121-135)]
 
 Jak už jsme si říkali, k testování chování metodu při `ModelState` je neplatný, přidejte k řadiči chybu modelu v rámci testu. Nepokoušejte se otestovat ověření nebo model vazby modelu v testů jednotek - právě testovací metody akce chování-li čelit konkrétní `ModelState` hodnotu.
 
@@ -112,7 +112,7 @@ V této ukázkové aplikaci používám podporu InMemoryDatabase Entity Framewor
 
 `Startup` Třídy:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Startup.cs?highlight=19,20,34,35,43,52)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Startup.cs?highlight=19,20,34,35,43,52)]
 
 Zobrazí se `GetTestSession` metoda často používají v testech integrace níže.
 
@@ -127,11 +127,11 @@ The view 'Index' wasn't found. The following locations were searched:
 
 Chcete-li opravit tento problém, nakonfigurujte kořenového serveru obsahu, tak, aby mohl vyhledat umístění zobrazení pro projekt testuje. To se provádí volání `UseContentRoot` v `TestFixture` třída, vidíte níže:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/TestFixture.cs?highlight=30,33)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/TestFixture.cs?highlight=30,33)]
 
 `TestFixture` Třída je zodpovědná za konfiguraci a vytváření `TestServer`, nastavuje se `HttpClient` ke komunikaci s `TestServer`. Každý integraci testy používá `Client` vlastnost pro připojení k serveru test a podání žádosti o.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/HomeControllerTests.cs?highlight=20,26,29,30,31,35,38,39,40,41,44,47,48)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/HomeControllerTests.cs?highlight=20,26,29,30,31,35,38,39,40,41,44,47,48)]
 
 V první testu výše `responseString` obsahuje skutečnou vykreslení HTML ze zobrazení, které mohly být zkontrolovány a ověřit tak obsahuje očekávané výsledky.
 
@@ -143,7 +143,7 @@ Pokud vaše aplikace zpřístupní webové rozhraní API, jeho vhodné mít auto
 
 Následující sadu testů cíl `Create` metoda v [IdeasController](xref:mvc/controllers/testing#ideas-controller) třídy uvedené výše:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/ApiIdeasControllerTests.cs)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/ApiIdeasControllerTests.cs)]
 
 Na rozdíl od integrace testy akcí, které vrátí HTML zobrazení webového rozhraní API metody, které vracejí výsledky obvykle lze deserializovat jako objektů se silným typem, jak ukazuje poslední test výše. V takovém případě, test deserializuje výsledek, který má `BrainstormSession` instance a potvrdí, že na nápad správně přidaná do jeho kolekce návrhy.
 

@@ -1,7 +1,7 @@
 ---
-title: "Prevence útoků (XSRF/proti útokům CSRF) padělání požadavku posílaného mezi weby v ASP.NET Core"
+title: "Zabránit webů požadavku padělání (XSRF/proti útokům CSRF) před útoky v ASP.NET Core"
 author: steve-smith
-description: "Prevence útoků (XSRF/proti útokům CSRF) padělání požadavku posílaného mezi weby v ASP.NET Core"
+description: "Zjistit, jak zabránit útoky na webové aplikace, kde můžete škodlivou webovou stránku ovlivnit interakce mezi prohlížeče klienta a aplikace."
 manager: wpickett
 ms.author: riande
 ms.date: 7/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: 079c36535b8c9e7229952a2f7bcd53174effa6af
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 80651a3c3e4c722e0cb96d7cc07de366819f8d1d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
-# <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Prevence útoků (XSRF/proti útokům CSRF) padělání požadavku posílaného mezi weby v ASP.NET Core
+# <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Zabránit webů požadavku padělání (XSRF/proti útokům CSRF) před útoky v ASP.NET Core
 
 [Steve Smith](https://ardalis.com/), [Fiyaz Hasan](https://twitter.com/FiyazBinHasan), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -31,14 +31,14 @@ Příklad útoku proti útokům CSRF:
 
    Škodlivé weby obsahuje formuláře HTML, který je podobný následujícímu:
 
-```html
+   ```html
    <h1>You Are a Winner!</h1>
-     <form action="http://example.com/api/account" method="post">
-       <input type="hidden" name="Transaction" value="withdraw" />
-       <input type="hidden" name="Amount" value="1000000" />
-     <input type="submit" value="Click Me"/>
+   <form action="http://example.com/api/account" method="post">
+       <input type="hidden" name="Transaction" value="withdraw">
+       <input type="hidden" name="Amount" value="1000000">
+       <input type="submit" value="Click Me">
    </form>
-```
+   ```
 
 Všimněte si, že akce formuláře požadavky na server, snadno napadnutelný, aby škodlivé weby. Toto je část "webů" proti útokům CSRF.
 
@@ -91,21 +91,21 @@ Můžete zakázat automatické generování tokenů proti padělání pro prvků
 
 * Výslovně zakazuje `asp-antiforgery`. Příklad
 
- ```html
+  ```html
   <form method="post" asp-antiforgery="false">
   </form>
   ```
 
 * OPT element form mimo značku Pomocníci pomocí pomocné rutiny značka [! výslovný nesouhlas s symbol](xref:mvc/views/tag-helpers/intro#opt-out).
 
- ```html
+  ```html
   <!form method="post">
   </!form>
   ```
 
 * Odeberte `FormTagHelper` ze zobrazení. Můžete odebrat `FormTagHelper` ze zobrazení přidáním následující direktivu Razor zobrazení:
 
- ```html
+  ```html
   @removeTagHelper Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers
   ```
 
@@ -125,7 +125,7 @@ Nejběžnější přístup k obraně proti útokům proti útokům CSRF je token
 }
 ```
 
-Můžete explicitně přidat antiforgery token ``<form>`` element bez použití značky Pomocníci s pomocné rutiny HTML ``@Html.AntiForgeryToken``:
+Můžete explicitně přidat antiforgery token `<form>` element bez použití značky Pomocníci s pomocné rutiny HTML `@Html.AntiForgeryToken`:
 
 
 ```html
@@ -136,18 +136,16 @@ Můžete explicitně přidat antiforgery token ``<form>`` element bez použití 
 
 V každém z předchozích případech se přidá ASP.NET Core skryté pole formuláře podobný následujícímu:
 ```html
-<input name="__RequestVerificationToken" type="hidden" value="CfDJ8NrAkSldwD9CpLRyOtm6FiJB1Jr_F3FQJQDvhlHoLNJJrLA6zaMUmhjMsisu2D2tFkAiYgyWQawJk9vNm36sYP1esHOtamBEPvSk1_x--Sg8Ey2a-d9CV2zHVWIN9MVhvKHOSyKqdZFlYDVd69XYx-rOWPw3ilHGLN6K0Km-1p83jZzF0E4WU5OGg5ns2-m9Yw" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8NrAkSldwD9CpLRyOtm6FiJB1Jr_F3FQJQDvhlHoLNJJrLA6zaMUmhjMsisu2D2tFkAiYgyWQawJk9vNm36sYP1esHOtamBEPvSk1_x--Sg8Ey2a-d9CV2zHVWIN9MVhvKHOSyKqdZFlYDVd69XYx-rOWPw3ilHGLN6K0Km-1p83jZzF0E4WU5OGg5ns2-m9Yw">
 ```
 
-ASP.NET Core obsahuje tři [filtry](xref:mvc/controllers/filters) pro práci s antiforgery tokeny: ``ValidateAntiForgeryToken``, ``AutoValidateAntiforgeryToken``, a ``IgnoreAntiforgeryToken``.
-
-<a name="vaft"></a>
+ASP.NET Core obsahuje tři [filtry](xref:mvc/controllers/filters) pro práci s antiforgery tokeny: `ValidateAntiForgeryToken`, `AutoValidateAntiforgeryToken`, a `IgnoreAntiforgeryToken`.
 
 ### <a name="validateantiforgerytoken"></a>ValidateAntiForgeryToken
 
-``ValidateAntiForgeryToken`` Je filtr akce, který lze použít na jednotlivé akci, kontroler, nebo globálně. Požadavky na akce, které tento filtr použít se zablokuje, pokud požadavek obsahuje platný antiforgery token.
+`ValidateAntiForgeryToken` Je filtr akce, který lze použít na jednotlivé akci, kontroler, nebo globálně. Požadavky na akce, které tento filtr použít se zablokuje, pokud požadavek obsahuje platný antiforgery token.
 
-```c#
+```csharp
 [HttpPost]
 [ValidateAntiForgeryToken]
 public async Task<IActionResult> RemoveLogin(RemoveLoginViewModel account)
@@ -167,25 +165,24 @@ public async Task<IActionResult> RemoveLogin(RemoveLoginViewModel account)
 }
 ```
 
-``ValidateAntiForgeryToken`` Atribut vyžaduje, aby token pro požadavky na metody akce upraví, včetně `HTTP GET` požadavky. Pokud použijete ho široce, můžete přepsat její ``IgnoreAntiforgeryToken`` atribut.
+`ValidateAntiForgeryToken` Atribut vyžaduje, aby token pro požadavky na metody akce upraví, včetně `HTTP GET` požadavky. Pokud použijete ho široce, můžete přepsat její `IgnoreAntiforgeryToken` atribut.
 
 ### <a name="autovalidateantiforgerytoken"></a>AutoValidateAntiforgeryToken
 
-Aplikace ASP.NET Core obecně negenerovat antiforgery tokeny pro bezpečné metody HTTP (GET, HEAD, možnosti a trasování). Místo použití široce ``ValidateAntiForgeryToken`` atribut a pak jeho pomocí přepsání ``IgnoreAntiforgeryToken`` atributy, můžete použít ``AutoValidateAntiforgeryToken`` atribut. Tento atribut funguje stejně jako na ``ValidateAntiForgeryToken`` atribut, s tím rozdílem, že není třeba tokeny na požadavky vytvořené pomocí následujících metod HTTP:
+Aplikace ASP.NET Core obecně negenerovat antiforgery tokeny pro bezpečné metody HTTP (GET, HEAD, možnosti a trasování). Místo použití široce `ValidateAntiForgeryToken` atribut a pak jeho pomocí přepsání `IgnoreAntiforgeryToken` atributy, můžete použít ``AutoValidateAntiforgeryToken`` atribut. Tento atribut funguje stejně jako na `ValidateAntiForgeryToken` atribut, s tím rozdílem, že není třeba tokeny na požadavky vytvořené pomocí následujících metod HTTP:
 
 * GET
 * HEAD
 * MOŽNOSTI
 * TRACE
 
-Doporučujeme použít ``AutoValidateAntiforgeryToken`` široce pro scénáře – rozhraní API. Tím se zajistí, že jsou ve výchozím nastavení chráněna vaše akce POST. Alternativou je ignorovat antiforgery tokeny ve výchozím nastavení, pokud ``ValidateAntiForgeryToken`` se použije k metodě jednotlivé akce. Je pravděpodobnější v tomto scénáři pro metodu POST akce na levé straně nechráněné, a aplikace bude zranitelný vůči útoku proti útokům CSRF. I anonymní PŘÍSPĚVCÍCH by měli poslat antiforgery token.
+Doporučujeme použít `AutoValidateAntiforgeryToken` široce pro scénáře – rozhraní API. Tím se zajistí, že jsou ve výchozím nastavení chráněna vaše akce POST. Alternativou je ignorovat antiforgery tokeny ve výchozím nastavení, pokud `ValidateAntiForgeryToken` se použije k metodě jednotlivé akce. Je pravděpodobnější v tomto scénáři pro metodu POST akce na levé straně nechráněné, a aplikace bude zranitelný vůči útoku proti útokům CSRF. I anonymní PŘÍSPĚVCÍCH by měli poslat antiforgery token.
 
 Poznámka: Rozhraní API nemáte automatický mechanismus pro odesílání bez souborů cookie součást tokenu; implementace pravděpodobně závisí na implementaci kódu klienta. Níže jsou uvedeny některé příklady.
 
-
 Příklad (třída úroveň):
 
-```c#
+```csharp
 [Authorize]
 [AutoValidateAntiforgeryToken]
 public class ManageController : Controller
@@ -194,7 +191,7 @@ public class ManageController : Controller
 
 Příklad (globální):
 
-```c#
+```csharp
 services.AddMvc(options => 
     options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()));
 ```
@@ -203,9 +200,9 @@ services.AddMvc(options =>
 
 ### <a name="ignoreantiforgerytoken"></a>IgnoreAntiforgeryToken
 
-``IgnoreAntiforgeryToken`` Filtru se používá k vyloučení potřeby token antiforgery být pro danou akci (nebo řadič). Při použití, přepíše tento filtr ``ValidateAntiForgeryToken`` nebo ``AutoValidateAntiforgeryToken`` filtry zadané na vyšší úrovni (globálně nebo na řadič).
+`IgnoreAntiforgeryToken` Filtru se používá k vyloučení potřeby token antiforgery být pro danou akci (nebo řadič). Při použití, přepíše tento filtr `ValidateAntiForgeryToken` nebo `AutoValidateAntiforgeryToken` filtry zadané na vyšší úrovni (globálně nebo na řadič).
 
-```c#
+```csharp
 [Authorize]
 [AutoValidateAntiforgeryToken]
 public class ManageController : Controller
@@ -225,14 +222,14 @@ V tradiční aplikace založené na HTML antiforgery tokeny jsou předána serve
 
 ### <a name="angularjs"></a>AngularJS
 
-AngularJS používá vytváření adresu proti útokům CSRF. Pokud server odešle soubor cookie s názvem ``XSRF-TOKEN``, úhlová ``$http`` služba přidá hodnotu z tento soubor cookie do záhlaví při odesílání požadavku na tento server. Tento proces je automatické; nemusíte explicitně nastaven záhlaví. Název hlavičky je ``X-XSRF-TOKEN``. Server by měl zjistit tuto hlavičku a ověřit jeho obsah.
+AngularJS používá vytváření adresu proti útokům CSRF. Pokud server odešle soubor cookie s názvem `XSRF-TOKEN`, úhlová `$http` služba přidá hodnotu z tento soubor cookie do záhlaví při odesílání požadavku na tento server. Tento proces je automatické; nemusíte explicitně nastaven záhlaví. Název hlavičky je `X-XSRF-TOKEN`. Server by měl zjistit tuto hlavičku a ověřit jeho obsah.
 
 Pro rozhraní API ASP.NET Core ve spolupráci s touto konvencí:
 
-* Konfigurace aplikace k poskytování token v souboru cookie s názvem``XSRF-TOKEN``
-* Konfigurovat službu antiforgery hledání hlavičku s názvem``X-XSRF-TOKEN``
+* Konfigurace aplikace k poskytování token v souboru cookie s názvem `XSRF-TOKEN`
+* Konfigurovat službu antiforgery hledání hlavičku s názvem `X-XSRF-TOKEN`
 
-```c#
+```csharp
 services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
 ```
 
@@ -242,20 +239,22 @@ services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
 
 Pomocí jazyka JavaScript se zobrazeními, můžete vytvořit token pomocí služby z v rámci zobrazení. Uděláte to tak, Vložit `Microsoft.AspNetCore.Antiforgery.IAntiforgery` služby do zobrazení a volání `GetAndStoreTokens`, jak je znázorněno:
 
-[!code-csharp[Main](anti-request-forgery/sample/MvcSample/Views/Home/Ajax.cshtml?highlight=4-10,24)]
+[!code-csharp[](anti-request-forgery/sample/MvcSample/Views/Home/Ajax.cshtml?highlight=4-10,12-13,28)]
 
 Tento přístup se eliminuje potřeba k řešení přímo nastavení souborů cookie ze serveru nebo jejich čtení z klienta.
 
+V předchozím příkladu používá jQuery načíst hodnotu skryté pole hlavičky AJAX POST. Pokud chcete použít k získání tokenu hodnoty JavaScript, použijte `document.getElementById('RequestVerificationToken').value`.
+
 JavaScript můžete také přístup k tokeny, které jsou součástí soubory cookie a pak použít obsah souboru cookie pro vytvoření záhlaví s hodnotou tokenu, jak je uvedeno níže.
 
-```c#
+```csharp
 context.Response.Cookies.Append("CSRF-TOKEN", tokens.RequestToken, 
   new Microsoft.AspNetCore.Http.CookieOptions { HttpOnly = false });
 ```
 
-Pak za předpokladu, že vytvoříte svůj skript požadavky odeslat token v hlavičce názvem ``X-CSRF-TOKEN``, konfigurovat službu antiforgery hledání ``X-CSRF-TOKEN`` hlavičky:
+Pak za předpokladu, že vytvoříte svůj skript požadavky odeslat token v hlavičce názvem `X-CSRF-TOKEN`, konfigurovat službu antiforgery hledání `X-CSRF-TOKEN` hlavičky:
 
-```c#
+```csharp
 services.AddAntiforgery(options => options.HeaderName = "X-CSRF-TOKEN");
 ```
 
@@ -277,10 +276,10 @@ $.ajax({
 
 ## <a name="configuring-antiforgery"></a>Konfigurace Antiforgery
 
-`IAntiforgery`poskytuje rozhraní API pro konfiguraci antiforgery systému. Může být požadována v `Configure` metodu `Startup` třídy. Následující příklad používá middleware z aplikace domovské stránky k vygenerování tokenu antiforgery a jeho odeslání v odpovědi jako soubor cookie (pomocí výchozí úhlová konvence popsané výše):
+`IAntiforgery` poskytuje rozhraní API pro konfiguraci antiforgery systému. Může být požadována v `Configure` metodu `Startup` třídy. Následující příklad používá middleware z aplikace domovské stránky k vygenerování tokenu antiforgery a jeho odeslání v odpovědi jako soubor cookie (pomocí výchozí úhlová konvence popsané výše):
 
 
-```c#
+```csharp
 public void Configure(IApplicationBuilder app, 
     IAntiforgery antiforgery)
 {
@@ -308,16 +307,16 @@ public void Configure(IApplicationBuilder app,
 
 Můžete přizpůsobit [antiforgery možnosti](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions#fields_summary) v `ConfigureServices`:
 
-```c#
+```csharp
 services.AddAntiforgery(options => 
 {
-  options.CookieDomain = "mydomain.com";
-  options.CookieName = "X-CSRF-TOKEN-COOKIENAME";
-  options.CookiePath = "Path";
-  options.FormFieldName = "AntiforgeryFieldname";
-  options.HeaderName = "X-CSRF-TOKEN-HEADERNAME";
-  options.RequireSsl = false;
-  options.SuppressXFrameOptionsHeader = false;
+    options.CookieDomain = "mydomain.com";
+    options.CookieName = "X-CSRF-TOKEN-COOKIENAME";
+    options.CookiePath = "Path";
+    options.FormFieldName = "AntiforgeryFieldname";
+    options.HeaderName = "X-CSRF-TOKEN-HEADERNAME";
+    options.RequireSsl = false;
+    options.SuppressXFrameOptionsHeader = false;
 });
 ```
 
@@ -331,7 +330,7 @@ services.AddAntiforgery(options =>
 |FormFieldName | Název pole Skrytá formuláře antiforgery systém použije k vykreslení antiforgery tokeny v zobrazeních. |
 |HeaderName    | Název hlavičky, která používá antiforgery systém. Pokud `null`, systém bude považovat jenom data formuláře. |
 |requireSsl    | Určuje, zda je požadován protokol SSL antiforgery systémem. Použije se výchozí hodnota `false`. Pokud `true`, bez SSL požadavky nezdaří. |
-|SuppressXFrameOptionsHeader  | Určuje, jestli se má potlačit generování `X-Frame-Options` záhlaví. Ve výchozím nastavení je generována záhlaví s hodnotou "SAMEORIGIN". Použije se výchozí hodnota `false`. |
+|SuppressXFrameOptionsHeader | Určuje, jestli se má potlačit generování `X-Frame-Options` záhlaví. Ve výchozím nastavení je generována záhlaví s hodnotou "SAMEORIGIN". Použije se výchozí hodnota `false`. |
 
 V tématu https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.cookieauthenticationoptions Další informace.
 

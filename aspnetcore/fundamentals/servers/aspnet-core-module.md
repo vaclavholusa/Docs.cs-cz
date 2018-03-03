@@ -1,131 +1,64 @@
 ---
 title: Modul ASP.NET Core
 author: tdykstra
-description: "Představuje ASP.NET Core modulu (ANCM), modul služby IIS, která umožní Kestrel webový server použít jako reverzní proxy server služby IIS nebo IIS Express."
+description: "Zjistěte, jak modul základní technologie ASP.NET umožňuje Kestrel webového serveru použít jako reverzní proxy server služby IIS nebo IIS Express."
 manager: wpickett
 ms.author: tdykstra
-ms.custom: H1Hack27Feb2017
-ms.date: 08/03/2017
+ms.custom: mvc
+ms.date: 02/23/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/aspnet-core-module
-ms.openlocfilehash: cf02604f2a2f0eba496d0df5c4662f169d044c74
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: e2170014f1a8fc89ec7e0a02d19c943b88e005fb
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/02/2018
 ---
-# <a name="introduction-to-aspnet-core-module"></a>Úvod do modulu ASP.NET Core
+# <a name="aspnet-core-module"></a>Modul ASP.NET Core
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Rick Strahl](https://github.com/RickStrahl), a [Ross Jan](https://github.com/Tratcher) 
 
-ASP.NET Core modulu (ANCM) umožňuje spouštění aplikací za služby IIS, ASP.NET Core pomocí služby IIS pro co je vhodný v (zabezpečení, správy a mnoha Další) a pomocí [Kestrel](kestrel.md) pro co je vhodný v (se skutečně rychlé) a získávání výhody z obě technologie současně. **ANCM pracuje pouze s Kestrel; není kompatibilní s WebListener (v ASP.NET Core 1.x) nebo ovladač HTTP.sys (v 2.x).** 
+Základní modul ASP.NET umožňuje ASP.NET Core aplikace pro spouštění za služby IIS v konfiguraci reverzní proxy server. Služba IIS poskytuje pokročilé webové funkce zabezpečení a možnosti správy aplikací.
 
 Podporované verze systému Windows:
 
-* Windows 7 a Windows Server 2008 R2 a novější
+* Windows 7 nebo novější
+* Windows Server 2008 R2 nebo novější &#8224;
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+&#8224; Koncepčně používání modulu jádra ASP.NET se službou IIS, které jsou popsané v tomto dokumentu platí také pro hostování aplikací ASP.NET Core na Nano Server IIS. Specifické pro Nano Server pokyny najdete v tématu [ASP.NET Core pomocí služby IIS na serveru Nano](xref:tutorials/nano-server) kurzu.
 
-## <a name="what-aspnet-core-module-does"></a>Jaké jsou modulu jádro ASP.NET
+Základní modul ASP.NET pracuje pouze s Kestrel. Modul není kompatibilní s [HTTP.sys](xref:fundamentals/servers/httpsys) (dříve se označovaly jako [WebListener](xref:fundamentals/servers/weblistener)).
 
-ANCM je nativní modul služby IIS, který zachytí do kanálu služby IIS a přesměrování provozu do back-end aplikace ASP.NET Core. Většině ostatních modulů, jako je například ověřování systému windows, získat stále možné spustit. ANCM pouze přebírá řízení, pokud obslužná rutina je vybrán pro požadavek a mapování obslužné rutiny je definována v aplikaci *web.config* souboru.
+## <a name="aspnet-core-module-description"></a>Popis modulu jádro ASP.NET
 
-Protože se spouští v procesu aplikace ASP.NET Core samostatné z pracovní proces služby IIS, ANCM také zpracovat správy. ANCM spustí proces pro aplikace ASP.NET Core, když první požadavek odeslán a ho restartuje, když ho dojde k chybě. Toto je v podstatě stejné chování jako classic aplikace ASP.NET, spusťte v procesu ve službě IIS a spravovaná službou WAS (Windows Activation Service).
+Základní modul ASP.NET je nativní modul služby IIS, která po zapojení do kanálu služby IIS pro přesměrování požadavků na webu na back-end aplikace ASP.NET Core. Množství nativních modulů, jako je například ověřování systému Windows, zůstávají aktivní. Další informace o moduly služby IIS active s modulem najdete v tématu [moduly služby IIS pomocí](xref:host-and-deploy/iis/modules).
 
-Zde je diagram, který ukazuje vztah mezi aplikací služby IIS, ANCM a ASP.NET Core.
+Protože samostatné aplikace ASP.NET Core spustit v procesu z pracovní proces služby IIS, modul také zpracovává proces správy. Modul zahájí proces pro aplikace ASP.NET Core při prvním požadavku dorazí a restartuje aplikace, pokud ji dojde k chybě. Toto je v podstatě stejné chování jako aplikace ASP.NET 4.x, které běží v procesu v IIS, které jsou spravovány [služby Aktivace procesů systému Windows (WAS)](/iis/manage/provisioning-and-managing-iis/features-of-the-windows-process-activation-service-was).
+
+Následující diagram znázorňuje vztah mezi službou IIS, modul ASP.NET Core a ASP.NET Core aplikace:
 
 ![Modul ASP.NET Core](aspnet-core-module/_static/ancm.png)
 
-Požadavky přichází z webu a stiskněte tlačítko ovladač Http.Sys režimu jádra, který směruje je do služby IIS na primární port (80) nebo SSL port (443). ANCM předá požadavky na aplikace ASP.NET Core přes HTTP port nakonfigurovaný pro aplikaci, která není portu 80/443.
+Požadavky přicházejí z webu pro ovladač HTTP.sys režimu jádra. Ovladač směrovat požadavky na služby IIS na konfigurovaném portu webu, obvykle 80 (HTTP) nebo 443 (HTTPS). Modul předává požadavky Kestrel na náhodných portu pro aplikaci, která není portu 80/443.
 
-Kestrel naslouchá pro provoz přicházející ze ANCM.  ANCM Určuje port, přes proměnné prostředí při spuštění a [UseIISIntegration](#call-useiisintegration) metoda nakonfiguruje server tak, aby naslouchala na `http://localhost:{port}`. Existují další kontroly, aby zamítal požadavky, nikoli z ANCM. (ANCM nepodporuje předávání protokolu HTTPS, takže jsou předávány požadavky prostřednictvím protokolu HTTP i v případě, že přijatých službou IIS prostřednictvím protokolu HTTPS.)
+Modul určuje port, přes proměnné prostředí při spuštění a Middleware integrační služby IIS nakonfiguruje server tak, aby naslouchala na `http://localhost:{port}`. Jsou-li provést další kontroly a odmítne požadavky, které nejsou pocházejí z modulu. Modul nepodporuje předávání protokolu HTTPS, takže jsou předávány požadavky prostřednictvím protokolu HTTP i v případě, že přijatých službou IIS prostřednictvím protokolu HTTPS.
 
-Kestrel převezme požadavky z ANCM a nabízených oznámení je do kanálu ASP.NET Core middlewaru, který poté je zpracovává a předává je jako `HttpContext` instance, které chcete aplikaci logiky. Odpovědi aplikací jsou pak předán zpět do služby IIS, které nabízených oznámení je zpět do klienta protokolu HTTP, který spustil žádosti.
+Po Kestrel převezme žádost z modulu, požadavek se posune do ASP.NET Core middlewaru v řadě. Middlewaru v řadě zpracuje požadavek a předává je jako `HttpContext` instance aplikace logiky. Odpověď aplikace je předán zpět do služby IIS, které nabízených oznámení zpátky klienta HTTP, který žádost iniciovala.
 
-ANCM má několik dalších funkcí také:
+Základní modul ASP.NET obsahuje několik dalších funkcí. Modul může:
 
-* Nastaví proměnné prostředí.
-* Protokoly `stdout` výstup k úložišti souborů.
-* Předává tokeny ověřování systému Windows.
+* Nastavení proměnných prostředí pro pracovní proces.
+* Protokol `stdout` výstup do souboru úložiště pro řešení potíží při spuštění.
+* Předat dál tokeny ověřování systému Windows.
 
-## <a name="how-to-use-ancm-in-aspnet-core-apps"></a>Jak používat ANCM v aplikacích ASP.NET Core
+## <a name="how-to-install-and-use-the-aspnet-core-module"></a>Jak nainstalovat a použít modul jádro ASP.NET
 
-Tato část obsahuje přehled procesu pro nastavení serveru služby IIS a ASP.NET Core aplikace. Podrobné pokyny najdete v tématu [hostitele v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index).
+Podrobné pokyny o tom, jak nainstalovat a používat modul jádro ASP.NET najdete v tématu [hostitele v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index). Informace o konfiguraci modulu najdete v tématu [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module).
 
-### <a name="install-ancm"></a>Nainstalujte ANCM
+## <a name="additional-resources"></a>Další zdroje
 
-ANCM je nainstalován ve službě IIS v systému Windows Server a služby IIS Express na operační systémy Windows. Pro servery a počítače vývoj, je součástí ANCM [.NET jádra Windows serveru, který hostuje sady](https://aka.ms/dotnetcore-2-windowshosting). Pokud instalace sady Visual Studio, se automaticky nainstaluje ANCM, ve službě IIS Express (a ve službě IIS, pokud na tomto počítači).
-
-### <a name="net-core-windows-server-hosting-bundle"></a>Hostování v rozhraní .NET core systému Windows Server sady
-
-[.NET jádra Windows serveru, který hostuje sady](https://aka.ms/dotnetcore-2-windowshosting) nainstaluje rozhraní .NET Core Runtime, knihovny .NET Core a ANCM. Další informace najdete v tématu [instalaci sady .NET jádra Windows serveru, který hostuje](
-xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle).
-
-### <a name="install-the-iisintegration-nuget-package"></a>Nainstalujte balíček IISIntegration NuGet
-
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
-[Microsoft.AspNetCore.Server.IISIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/) balíček je součástí metapackages ASP.NET Core ([Microsoft.AspNetCore](https://www.nuget.org/packages/Microsoft.AspNetCore/) a [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) ). Pokud nepoužíváte jeden z metapackages, nainstalujte `Microsoft.AspNetCore.Server.IISIntegration` samostatně. `IISIntegration` Balíčku je balík vzájemná funkční spolupráce, který čte proměnné prostředí všesměrového vysílání pomocí ANCM k nastavení aplikace. Proměnné prostředí poskytují informace o konfiguraci, jako je port pro naslouchání. 
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
-V aplikaci nainstalovat [Microsoft.AspNetCore.Server.IISIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/). `IISIntegration` Balíčku je balík vzájemná funkční spolupráce, který čte proměnné prostředí všesměrového vysílání pomocí ANCM k nastavení aplikace. Proměnné prostředí poskytují informace o konfiguraci, jako je port pro naslouchání. 
-
----
-
-### <a name="call-useiisintegration"></a>Volání UseIISIntegration
-
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
-`UseIISIntegration` Rozšiřující metody na [ `WebHostBuilder` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilder) je zavolána automaticky při spuštění pomocí služby IIS.
-
-Pokud nepoužíváte jeden metapackages ASP.NET Core a nenainstalovali `Microsoft.AspNetCore.Server.IISIntegration` balíčku, dojde k chybě běhového prostředí. Když zavoláte `UseIISIntegration` explicitně, zobrazí chybu v době kompilace Pokud balíček není nainstalovaný.
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
-Ve vaší aplikaci `Main` metoda, volání `UseIISIntegration` rozšiřující metody na [ `WebHostBuilder` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilder). 
-
-[!code-csharp[](aspnet-core-module/sample/Program.cs?name=snippet_Main&highlight=12)]
-
----
-
-`UseIISIntegration` Metoda vyhledá proměnné prostředí, které nastaví ANCM ale ne ops, pokud nejsou nalezeny. Toto chování usnadňuje scénáře jako vývoj a testování v systému macOS nebo Linux a nasazení na server, který spouští IIS. Při spouštění v systému macOS nebo Linux, Kestrel funguje jako webový server; ale když se aplikace nasadí prostředí služby IIS, automaticky používá ANCM a služby IIS.
-
-### <a name="ancm-port-binding-overrides-other-port-bindings"></a>Vazbou portu ANCM přepíše ostatní port vazby
-
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
-ANCM generuje dynamický port přiřadit pro proces back-end. `UseIISIntegration` Metoda převezme tento dynamický port a nakonfiguruje Kestrel tak, aby naslouchala na `http://locahost:{dynamicPort}/`. Přepíše ostatní konfigurace adresy URL, například volání `UseUrls` nebo [API naslouchat na Kestrel](xref:fundamentals/servers/kestrel?tabs=aspnetcore2x#endpoint-configuration). Proto nemusíte volání `UseUrls` nebo na Kestrel `Listen` rozhraní API při použití ANCM. Když zavoláte `UseUrls` nebo `Listen`, Kestrel naslouchá na portu zadejte při spuštění aplikace bez služby IIS.
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
-ANCM generuje dynamický port přiřadit pro proces back-end. `UseIISIntegration` Metoda převezme tento dynamický port a nakonfiguruje Kestrel tak, aby naslouchala na `http://locahost:{dynamicPort}/`. Přepíše ostatní konfigurace adresy URL, například volání `UseUrls`. Proto nemusíte volání `UseUrls` při použití ANCM. Když zavoláte `UseUrls`, Kestrel naslouchá na portu zadejte při spuštění aplikace bez služby IIS.
-
-V technologii ASP.NET Core 1.0, když zavoláte `UseUrls`, volání **před** zavoláte `UseIISIntegration` tak, aby port nakonfigurovaný ANCM není přepsán. Toto pořadí volání nevyžaduje v technologii ASP.NET Core 1.1, protože přepsání nastavení ANCM `UseUrls`.
-
----
-
-### <a name="configure-ancm-options-in-webconfig"></a>Konfigurace možností ANCM v souboru Web.config.
-
-Konfigurace modulu jádra ASP.NET je uložená v *web.config* soubor, který se nachází v kořenové složce aplikace. Nastavení v tomto souboru, přejděte na spuštění příkaz i jeho argumenty, které spustí vaše aplikace ASP.NET Core. Pro ukázku *web.config* kód a pokyny k možnosti konfigurace, najdete v části [odkazu na modul Konfigurace ASP.NET Core](xref:host-and-deploy/aspnet-core-module).
-
-### <a name="run-with-iis-express-in-development"></a>Spustit v vývoj službou IIS Express
-
-Služba IIS Express, může být spuštěn Visual Studio pomocí výchozí profil definované šablony ASP.NET Core.
-
-## <a name="proxy-configuration-uses-http-protocol-and-a-pairing-token"></a>Konfigurace proxy serveru používá protokol HTTP a párovací token
-
-Proxy server mezi ANCM a Kestrel vytvořen používá protokol HTTP. Pomocí protokolu HTTP je optimalizace výkonu, kde provoz mezi ANCM a Kestrel probíhá na adresu zpětné smyčky z síťové rozhraní. Neexistuje žádné riziko odposlouchávání provoz mezi ANCM a Kestrel z umístění od serveru.
-
-Token párovací se používá k zaručit, že požadavků přijatých službou Kestrel byly směrovány přes proxy server službou IIS a nebyla pochází z jiného zdroje. Párovací token se vytvoří a nastavení do proměnné prostředí (`ASPNETCORE_TOKEN`) pomocí ANCM. Také nastavení párovací tokenu do záhlaví (`MSAspNetCoreToken`) u každého požadavku směrovány přes proxy server. Služba IIS Middleware kontroly požadavku že obdrží potvrďte, že párovací hodnota tokenu hlavičky odpovídá hodnotu proměnné prostředí. Pokud hodnoty tokenu se neshodují, žádost je zaznamenána a odmítnut. Proměnnou párovací tokenu prostředí a přenosy dat mezi ANCM a Kestrel nejsou dostupné z umístění od serveru. Bez znalosti párovací hodnota tokenu, útočník nemohou odesílat požadavky, které obejít kontrolu v IIS Middleware.
-
-## <a name="next-steps"></a>Další kroky
-
-Další informace naleznete v následujících materiálech:
-
-* [Ukázková aplikace pro tohoto článku](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample)
-* [ASP.NET Core modulu zdrojového kódu](https://github.com/aspnet/AspNetCoreModule)
-* [Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
 * [Hostování ve Windows se službou IIS](xref:host-and-deploy/iis/index)
+* [Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
+* [Úložiště GitHub modulu jádra ASP.NET (zdrojový kód)](https://github.com/aspnet/AspNetCoreModule)

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/owin
-ms.openlocfilehash: 1a6a49715840d66dc37465758d3a896af96e2976
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 5cb5236335e71a02452788ced4e49de36092088c
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-open-web-interface-for-net-owin"></a>Úvod do spustit nástroj webové rozhraní pro platformu .NET (OWIN)
 
@@ -95,11 +95,11 @@ app.UseOwin(pipeline =>
 
 Na základě OWIN servery můžou hostovat aplikace ASP.NET. Je jeden takový server [Nowin](https://github.com/Bobris/Nowin), webový server .NET OWIN. V ukázce pro v tomto článku jste projekt, který odkazuje na Nowin a používá k vytvoření připojená `IServer` může být hostitelem samoobslužné ASP.NET Core.
 
-[!code-csharp[Main](owin/sample/src/NowinSample/Program.cs?highlight=15)]
+[!code-csharp[](owin/sample/src/NowinSample/Program.cs?highlight=15)]
 
-`IServer`je rozhraní, které vyžaduje `Features` vlastnost a `Start` metoda.
+`IServer` je rozhraní, které vyžaduje `Features` vlastnost a `Start` metoda.
 
-`Start`je zodpovědná za konfiguraci a spuštění na server, který v tomto případě se provádí pomocí řady fluent volání rozhraní API, které nastavit adresy analyzovat z IServerAddressesFeature. Všimněte si, že fluent konfiguraci `_builder` proměnná Určuje, že bude zpracovávat požadavky `appFunc` definované dříve v metodě. To `Func` se volá na každý požadavek zpracovat příchozí požadavky.
+`Start` je zodpovědná za konfiguraci a spuštění na server, který v tomto případě se provádí pomocí řady fluent volání rozhraní API, které nastavit adresy analyzovat z IServerAddressesFeature. Všimněte si, že fluent konfiguraci `_builder` proměnná Určuje, že bude zpracovávat požadavky `appFunc` definované dříve v metodě. To `Func` se volá na každý požadavek zpracovat příchozí požadavky.
 
 Také přidáme `IWebHostBuilder` rozšíření usnadňují přidejte a nakonfigurujte Nowin server.
 

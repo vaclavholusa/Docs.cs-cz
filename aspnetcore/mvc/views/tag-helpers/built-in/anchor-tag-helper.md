@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 13df80983801564da08a4d65f464a5affbb06377
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 2d829b637f963c3e421fc4b89486709e38c06ab6
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="anchor-tag-helper"></a>Pomocník značka ukotvení
 
@@ -26,7 +26,7 @@ Podle [Petr Kellner](http://peterkellner.net) a [Scott Addie](https://github.com
 
 *SpeakerController* se používá v ukázky v tomto dokumentu:
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Controllers/SpeakerController.cs?name=snippet_SpeakerController)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?name=snippet_SpeakerController)]
 
 Inventář `asp-` atributy způsobem.
 
@@ -34,7 +34,7 @@ Inventář `asp-` atributy způsobem.
 
 [Asp-controller](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.controller) atribut přiřadí o řadič ke generování adresy URL. Následující kód obsahuje seznam všech mluvčí:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspController)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspController)]
 
 Generovaný kód HTML:
 
@@ -52,7 +52,7 @@ Pokud `asp-controller` zadán atribut a `asp-action` není výchozí `asp-action
 
 [Asp akce](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.action) hodnota atributu představuje název akce kontroleru součástí vygenerovaného `href` atribut. Následující kód nastaví vygenerovaného `href` hodnota atributu na stránku hodnocení mluvčího:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspAction)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspAction)]
 
 Generovaný kód HTML:
 
@@ -70,11 +70,11 @@ Pokud `asp-action` hodnota atributu je `Index`, pak žádná akce je připojena 
 
 Vezměte v úvahu následující akce kontroleru:
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Controllers/BuiltInTagController.cs?name=snippet_AnchorTagHelperAction)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Controllers/BuiltInTagController.cs?name=snippet_AnchorTagHelperAction)]
 
 Pomocí výchozí šablony trasy definované v *Startup.Configure*:
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Startup.cs?name=snippet_UseMvc&highlight=8-10)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=8-10)]
 
 Zobrazení MVC používá model, poskytuje akce, následujícím způsobem:
 
@@ -122,11 +122,11 @@ Pokud má jedna `asp-controller` nebo `asp-action` nejsou zadané, pak stejné z
 
 [Asp trasy](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.route) atribut se používá pro vytvoření adresy URL připojení přímo k pojmenovanou trasu. Pomocí [atributy směrování](xref:mvc/controllers/routing#attribute-routing), může mít název trasy, jak je znázorněno `SpeakerController` a používá v jeho `Evaluations` akce:
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Controllers/SpeakerController.cs?range=22-24)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?range=22-24)]
 
 V následující kód `asp-route` pojmenovanou trasu odkazuje atribut:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspRoute)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspRoute)]
 
 Pomocník značka ukotvení vytváří trasu přímo k této akci kontroleru pomocí adresy URL */mluvčího/hodnocení*. Generovaný kód HTML:
 
@@ -142,7 +142,7 @@ Pokud `asp-controller` nebo `asp-action` je zadán kromě `asp-route`, postupu g
 
 V následujícím příkladu je slovník inicializovat a předána do zobrazení Razor. Alternativně může být předán data pomocí modelu.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspAllRouteData)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspAllRouteData)]
 
 Předchozí kód generuje následující HTML:
 
@@ -152,7 +152,7 @@ Předchozí kód generuje následující HTML:
 
 `asp-all-route-data` Slovníku se sloučí k vytvoření řetězec dotazu, který splňuje požadavky přetížené `Evaluations` akce:
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Controllers/SpeakerController.cs?range=26-30)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?range=26-30)]
 
 Pokud se ve slovníku všechny klíče shodují parametry trasy, tyto hodnoty jsou nahrazena v postupu podle potřeby. Neodpovídající hodnoty jsou generovány jako parametry žádosti.
 
@@ -160,7 +160,7 @@ Pokud se ve slovníku všechny klíče shodují parametry trasy, tyto hodnoty js
 
 [Asp fragment](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.fragment) atribut definuje fragment adresy URL pro připojení k adrese URL. Pomocník značka ukotvení přidá znak hash (#). Vezměte v úvahu následující kód:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspFragment)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspFragment)]
 
 Generovaný kód HTML:
 
@@ -181,7 +181,7 @@ Hodnota hash značky jsou užitečné při vytváření aplikace na straně klie
       * **Kontrolery**
         * *HomeController.cs*
       * **Zobrazení**
-        * **Domovské**
+        * **domácí**
           * *AboutBlog.cshtml*
           * *Index.cshtml*
         * *_ViewStart.cshtml*
@@ -189,7 +189,7 @@ Hodnota hash značky jsou užitečné při vytváření aplikace na straně klie
 
 Zadané předchozí hierarchii adresářů, kód tak, aby odkazovaly *AboutBlog.cshtml* souboru je:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspArea)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspArea)]
 
 Generovaný kód HTML:
 
@@ -198,13 +198,13 @@ Generovaný kód HTML:
 ```
 
 > [!TIP]
-> Pro oblasti pro práci v aplikaci MVC musí šablona trasy obsahovat odkaz na oblasti, pokud existuje. Tato šablona je reprezentována druhý parametr `routes.MapRoute` volání metody *Startup.Configure*:[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Startup.cs?name=snippet_UseMvc&highlight=5)]
+> Pro oblasti pro práci v aplikaci MVC musí šablona trasy obsahovat odkaz na oblasti, pokud existuje. Tato šablona je reprezentována druhý parametr `routes.MapRoute` volání metody *Startup.Configure*: [!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=5)]
 
 ## <a name="asp-protocol"></a>asp-protocol
 
 [Asp protokol](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.protocol) atribut je pro zadání protokol (například `https`) v svoji adresu URL. Příklad:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspProtocol)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspProtocol)]
 
 Generovaný kód HTML:
 
@@ -218,7 +218,7 @@ Název hostitele v příkladu je localhost, ale pomocný značka ukotvení použ
 
 [Asp hostitele](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.host) atribut je pro zadání názvu hostitele v svoji adresu URL. Příklad:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspHost)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspHost)]
 
 Generovaný kód HTML:
 
@@ -232,7 +232,7 @@ Generovaný kód HTML:
 
 Následující příklad ukazuje na účastníka Razor stránky:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspPage)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspPage)]
 
 Generovaný kód HTML:
 
@@ -242,7 +242,7 @@ Generovaný kód HTML:
 
 `asp-page` Atribut je vzájemně se vylučuje s `asp-route`, `asp-controller`, a `asp-action` atributy. Ale `asp-page` lze použít s `asp-route-{value}` řídit směrování, jak ukazuje následující kód:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspPageAspRouteId)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspPageAspRouteId)]
 
 Generovaný kód HTML:
 
@@ -256,11 +256,11 @@ Generovaný kód HTML:
 
 Vezměte v úvahu obslužná rutina následující stránky:
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Pages/Attendee.cshtml.cs?name=snippet_OnGetProfileHandler)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Pages/Attendee.cshtml.cs?name=snippet_OnGetProfileHandler)]
 
 Model stránky přidruženému značek odkazy na `OnGetProfile` obslužná rutina stránky. Všimněte si, že `On<Verb>` předpona názvu stránky obslužná rutina metoda je vynechán v `asp-page-handler` hodnota atributu. Pokud to byly asynchronní metodu, `Async` přípona by být příliš vynechán.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspPageHandler)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspPageHandler)]
 
 Generovaný kód HTML:
 

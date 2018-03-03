@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: 447b13eccf523cab81590405740bb194112b0dad
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: c9c9f63cd635f364d9b2e081dc051a46a44d3e4f
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC
 
@@ -48,17 +48,17 @@ Vytvořte novou *prázdný* ASP.NET Core webové aplikace se stejným názvem ja
 
 * Nainstalujte `Microsoft.AspNetCore.Mvc` a `Microsoft.AspNetCore.StaticFiles` balíčky NuGet.
 
-  `Microsoft.AspNetCore.Mvc`je rozhraní ASP.NET MVC jádra. `Microsoft.AspNetCore.StaticFiles`je obslužná rutina statických souborů. Modul runtime ASP.NET je modulární a musí explicitně přihlášení poskytovat statické soubory (viz [práce s statické soubory](../fundamentals/static-files.md)).
+  `Microsoft.AspNetCore.Mvc` je rozhraní ASP.NET MVC jádra. `Microsoft.AspNetCore.StaticFiles` je obslužná rutina statických souborů. Modul runtime ASP.NET je modulární a musí explicitně přihlášení poskytovat statické soubory (viz [práce s statické soubory](../fundamentals/static-files.md)).
 
 * Otevřete *.csproj* souboru (klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **upravit WebApp1.csproj**) a přidejte `PrepareForPublish` cíl:
 
-  [!code-xml[Main](mvc/sample/WebApp1.csproj?range=21-23)]
+  [!code-xml[](mvc/sample/WebApp1.csproj?range=21-23)]
 
   `PrepareForPublish` Cíl je nutný k získání klientské knihovny prostřednictvím Bower. Budeme mluvit o který později.
 
 * Otevřete *Startup.cs* souboru a změnit kód tak, aby odpovídala následující:
 
-  [!code-csharp[Main](mvc/sample/Startup.cs?highlight=14,27-34)]
+  [!code-csharp[](mvc/sample/Startup.cs?highlight=14,27-34)]
 
   `UseStaticFiles` Metoda rozšíření přidá obslužné rutiny statických souborů. Jak je uvedeno nahoře, modulem runtime ASP.NET je modulární a musí explicitně přihlášení poskytovat statické soubory. `UseMvc` Přidá metody rozšíření směrování. Další informace najdete v tématu [spuštění aplikace](../fundamentals/startup.md) a [směrování](../fundamentals/routing.md).
 
@@ -114,7 +114,7 @@ Teď, když máme minimální funkční projekt ASP.NET Core, můžeme začít m
 
 ## <a name="controllers-and-views"></a>Kontrolery a zobrazení
 
-* Zkopírujte všechny metody z rozhraní ASP.NET MVC `HomeController` do nového `HomeController`. Upozorňujeme, že v architektuře ASP.NET MVC předdefinované šablony řadiče akce metoda návratový typ je [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); v aplikaci ASP.NET MVC jádra, metody akce návratový `IActionResult` místo. `ActionResult`implementuje `IActionResult`, takže není nutné změnit návratový typ vaší metody akce.
+* Zkopírujte všechny metody z rozhraní ASP.NET MVC `HomeController` do nového `HomeController`. Upozorňujeme, že v architektuře ASP.NET MVC předdefinované šablony řadiče akce metoda návratový typ je [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); v aplikaci ASP.NET MVC jádra, metody akce návratový `IActionResult` místo. `ActionResult` implementuje `IActionResult`, takže není nutné změnit návratový typ vaší metody akce.
 
 * Kopírování *About.cshtml*, *Contact.cshtml*, a *Index.cshtml* Razor zobrazit soubory z projektu ASP.NET MVC do projektu ASP.NET Core.
 
@@ -140,7 +140,7 @@ V novém projektu, přidáme podporu pro Bootstrap (a další klientské knihovn
 
 * Přidat [Bower](https://bower.io/) konfigurační soubor s názvem *bower.json* do kořenového adresáře projektu (klikněte pravým tlačítkem na projekt a potom **Přidat > novou položku > Bower konfigurační soubor**). Přidat [Bootstrap](http://getbootstrap.com/) a [jQuery](https://jquery.com/) do souboru (viz níže zvýrazněné řádky).
 
-  [!code-json[Main](mvc/sample/bower.json?highlight=5-6)]
+  [!code-json[](mvc/sample/bower.json?highlight=5-6)]
 
 Při ukládání souboru, Bower automaticky stáhnout závislosti na *wwwroot/lib* složky. Můžete použít **Průzkumník služby Search řešení** pole najít cestu prostředky:
 
@@ -156,7 +156,7 @@ V tématu [spravovat klientské balíčky s Bower](../client-side/bower.md) Dal�
 
 * Vytvoření *zobrazení a sdílených* složky.
 
-* *Volitelné:* kopie *_ViewImports.cshtml* z *FullAspNetCore* projektu MVC *zobrazení* složky do projektu ASP.NET Core *Zobrazení* složky. Odeberte všechny deklarace oboru názvů v *_ViewImports.cshtml* souboru. *_ViewImports.cshtml* soubor poskytuje obory názvů pro všechny soubory, zobrazení a přináší [značky Pomocníci](xref:mvc/views/tag-helpers/intro). Pomocníci značky se používají v nové rozložení souboru. *_ViewImports.cshtml* souboru je nového pro ASP.NET Core.
+* *Volitelné:* kopie *_ViewImports.cshtml* z *FullAspNetCore* projektu MVC *zobrazení* složky do projektů ASP.NET Core  *Zobrazení* složky. Odeberte všechny deklarace oboru názvů v *_ViewImports.cshtml* souboru. *_ViewImports.cshtml* soubor poskytuje obory názvů pro všechny soubory, zobrazení a přináší [značky Pomocníci](xref:mvc/views/tag-helpers/intro). Pomocníci značky se používají v nové rozložení souboru. *_ViewImports.cshtml* souboru je nového pro ASP.NET Core.
 
 * Kopírování *_Layout.cshtml* soubor z původního projektu ASP.NET MVC *zobrazení a sdílených* složky do projektů ASP.NET Core *zobrazení a sdílených* složky.
 
@@ -187,7 +187,7 @@ Značky skriptu nahrazení:
 
 Aktualizovaný *_Layout.cshtml* souboru jsou uvedeny níže:
 
-[!code-html[Main](mvc/sample/Views/Shared/_Layout.cshtml?highlight=7,27,39-40)]
+[!code-html[](mvc/sample/Views/Shared/_Layout.cshtml?highlight=7,27,39-40)]
 
 Zobrazte webu v prohlížeči. Nyní by se měly správně načíst s očekávanou styly na místě.
 

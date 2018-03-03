@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 337782a0530a37916b04aa562174b5921ddbc46b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 489c53c066af87e02e43ab0b42b0712d80d5ee5a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Bezpečné úložiště tajné klíče aplikace během vývoje v ASP.NET Core
 
@@ -45,11 +45,11 @@ Nástroj tajný klíč správce ukládá citlivá data pro vývojové práci mim
 
 Klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte **upravit \<název_projektu\>.csproj** v místní nabídce. Přidejte zvýrazněný řádek na *.csproj* souboru a uložte obnovit přidruženého balíčku NuGet:
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
 Znovu klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte **spravovat tajné klíče uživatele** v místní nabídce. Přidá nový tento gesto `UserSecretsId` uzel v rámci `PropertyGroup` z *.csproj* souboru, jak je znázorněno v následující ukázce:
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
 Ukládání upravenou *.csproj* také soubor otevře `secrets.json` soubor v textovém editoru. Nahraďte obsah `secrets.json` soubor s následujícím kódem:
 
@@ -61,9 +61,9 @@ Ukládání upravenou *.csproj* také soubor otevře `secrets.json` soubor v tex
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-Přidat `Microsoft.Extensions.SecretManager.Tools` k *.csproj* souboru a spusťte `dotnet restore`. Stejný postup můžete použít k instalaci nástroje Správce tajný klíč pomocí příkazového řádku.
+Přidat `Microsoft.Extensions.SecretManager.Tools` k *.csproj* souboru a spusťte [dotnet obnovení](/dotnet/core/tools/dotnet-restore). Stejný postup můžete použít k instalaci nástroje Správce tajný klíč pomocí příkazového řádku.
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
 Testovací nástroje tajný klíč Manager tak, že spustíte následující příkaz:
 
@@ -80,7 +80,7 @@ Nástroj tajný klíč Manager funguje v nastavení konfigurace specifických pr
 
 Přidat `UserSecretsId` pro svůj projekt v *.csproj* souboru:
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
 Chcete-li nastavit tajného klíče pomocí nástroje Správce tajný klíč. Například v příkazovém okně z adresáře projektu, zadejte následující příkaz:
 
@@ -100,15 +100,15 @@ Můžete také nástroj Správce tajný klíč do seznamu, odebrat a vymazat taj
 
 ## <a name="accessing-user-secrets-via-configuration"></a>Přístup k tajné klíče uživatele prostřednictvím konfigurace
 
-Tajné klíče tajný klíč správce přistupujete prostřednictvím systému konfigurace. Přidat `Microsoft.Extensions.Configuration.UserSecrets` balíček a spusťte `dotnet restore`.
+Tajné klíče tajný klíč správce přistupujete prostřednictvím systému konfigurace. Přidat `Microsoft.Extensions.Configuration.UserSecrets` balíček a spusťte [dotnet obnovení](/dotnet/core/tools/dotnet-restore).
 
 Přidat zdroj konfigurace tajné klíče uživatele na `Startup` metoda:
 
-[!code-csharp[Main](app-secrets/sample/UserSecrets/Startup.cs?highlight=16-19)]
+[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=16-19)]
 
 Tajné klíče uživatele prostřednictvím rozhraní API konfigurace se můžete dostat:
 
-[!code-csharp[Main](app-secrets/sample/UserSecrets/Startup.cs?highlight=26-29)]
+[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=26-29)]
 
 ## <a name="how-the-secret-manager-tool-works"></a>Jak funguje nástroj Správce tajný klíč
 

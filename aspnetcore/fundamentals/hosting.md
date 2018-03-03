@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/hosting
-ms.openlocfilehash: 8a22e97a518e2e5b11ddf0894f209ccc0a8990be
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: fe9935eaa3529c513dfb2d111a38a4452012b364
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>Hostování v ASP.NET Core
 
@@ -27,7 +27,7 @@ Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*. Hostitel je zodpově
 
 Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder). To se obvykle provádí v vstupní bod aplikace, `Main` metoda. V rámci šablon projektu `Main` se nachází v *Program.cs*. Typické *Program.cs* volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) zahájíte nastavení hostitele:
 
-[!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main)]
+[!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main)]
 
 `CreateDefaultBuilder` provádí následující úlohy:
 
@@ -54,7 +54,7 @@ Další informace o konfiguraci aplikace, najdete v části [konfigurace v ASP.N
 
 Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder). Vytvoření hostitele se obvykle provádí v vstupní bod aplikace, `Main` metoda. V rámci šablon projektu `Main` se nachází v *Program.cs*:
 
-[!code-csharp[Main](../common/samples/WebApplication1/Program.cs)]
+[!code-csharp[](../common/samples/WebApplication1/Program.cs)]
 
 `WebHostBuilder` vyžaduje [serveru, který implementuje IServer](servers/index.md). Jsou předdefinované servery [Kestrel](servers/kestrel.md) a [HTTP.sys](servers/httpsys.md) (před verzí technologie ASP.NET 2.0 jádra, ovladač HTTP.sys volala [WebListener](xref:fundamentals/servers/weblistener)). V tomto příkladu [UseKestrel rozšíření metoda](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) určuje Kestrel server.
 
@@ -332,7 +332,14 @@ Určuje dobu čekání na webového hostitele vypnutí.
 **Nastavit pomocí**: `UseShutdownTimeout`  
 **Proměnné prostředí**: `ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`
 
-I když přijme klíč *int* s `UseSetting` (například `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), `UseShutdownTimeout` rozšíření metoda přebírá `TimeSpan`. Tato funkce je nového v technologii ASP.NET 2.0 jádra.
+I když přijme klíč *int* s `UseSetting` (například `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), [UseShutdownTimeout](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useshutdowntimeout) rozšíření metoda přebírá [časový interval](/dotnet/api/system.timespan). Tato funkce je nového v technologii ASP.NET 2.0 jádra.
+
+Během časového limitu období, hostování:
+
+* Aktivační události [IApplicationLifetime.ApplicationStopping](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.applicationstopping).
+* Pokusy o zastavení hostované služby, protokolování pro služby, které se nepodařilo zastavit všechny chyby.
+
+Pokud vyprší časový limit před všechny zastavení hostovaných služeb, jsou zastaveny všechny zbývající služby active při ukončení aplikace. Zastavení služeb i v případě, že se nedokončilo zpracování. Pokud služby vyžadují další čas ukončení, zvýšit časový limit.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -507,7 +514,7 @@ public class Program
 > [!NOTE]
 > [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) metoda rozšíření není aktuálně schopen analyzovat konfigurační oddíl vrácený `GetSection` (například `.UseConfiguration(Configuration.GetSection("section"))`. `GetSection` Metoda filtry konfigurace klíče do části požadovaný, ale ponechá název oddílu na klíče (například `section:urls`, `section:environment`). `UseConfiguration` Metoda očekává klíče tak, aby odpovídala `WebHostBuilder` klíče (například `urls`, `environment`). Přítomnost názvu oddílu na klíče zabrání hodnoty v části Konfigurace hostitele. Tento problém bude vyřešen v příští verzi. Další informace a řešení, najdete v části [předávání konfigurační oddíl do WebHostBuilder.UseConfiguration používá úplné klíče](https://github.com/aspnet/Hosting/issues/839).
 
-Pokud chcete zadat hostiteli spustit na konkrétní adresu URL, požadovanou hodnotu lze předat ve z příkazového řádku při provádění `dotnet run`. Přepíše argument příkazového řádku `urls` z hodnoty *hosting.json* souboru a server naslouchá na portu 8080:
+Pokud chcete zadat hostiteli spustit na konkrétní adresu URL, požadovanou hodnotu lze předat ve z příkazového řádku při provádění [dotnet spustit](/dotnet/core/tools/dotnet-run). Přepíše argument příkazového řádku `urls` z hodnoty *hosting.json* souboru a server naslouchá na portu 8080:
 
 ```console
 dotnet run --urls "http://*:8080"

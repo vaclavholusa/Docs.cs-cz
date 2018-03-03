@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 58b05587458aacad1a633a04f0359a4d2a3605a3
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: f8454ee7d74b8f563fad8dab6fb2d478d4e119f0
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Čtení související data – základní EF s kurz k ASP.NET MVC jádra (6 10)
 
@@ -65,7 +65,7 @@ Otevřete *CoursesController.cs* a prozkoumat `Index` metoda. Automatické gener
 
 Nahraďte `Index` metoda s následující kód, který používá vhodnější název `IQueryable` kurzu entity, který vrací (`courses` místo `schoolContext`):
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_RevisedIndexMethod)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_RevisedIndexMethod)]
 
 Otevřete *Views/Courses/Index.cshtml* a nahraďte kód šablony s následujícím kódem. Změny se zvýrazněnou:
 
@@ -107,7 +107,7 @@ Stránka vyučující zobrazuje data ze tří různých tabulek. Proto vytvoří
 
 V *SchoolViewModels* složku vytvořit *InstructorIndexData.cs* a existujícího kódu nahraďte následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
 
 ### <a name="create-the-instructor-controller-and-views"></a>Vytvoření řadiče lektorem a zobrazení
 
@@ -117,31 +117,31 @@ Vytvoření řadiče vyučující s akcemi čtení/zápisu EF, jak je znázorně
 
 Otevřete *InstructorsController.cs* a přidat, pomocí příkazu pro obor názvů ViewModels:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Using)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Using)]
 
 Nahraďte metodu Index následující kód do udělat přes načítání souvisejících dat a umístit ho v zobrazení modelu.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EagerLoading)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EagerLoading)]
 
 Metoda přijímá data volitelné trasy (`id`) a parametr řetězce dotazu (`courseID`), zadejte hodnoty ID vybrané lektorem a vybraný kurz. Parametry jsou poskytovány **vyberte** hypertextové odkazy na stránce.
 
 Vytvoření instance modelu zobrazení a vložení v něm seznam vyučující začne kód. Určuje kód přes načítání pro `Instructor.OfficeAssignment` a `Instructor.CourseAssignments` navigační vlastnosti. V rámci `CourseAssignments` vlastnost, `Course` vlastnost je načíst a v rámci které, `Enrollments` a `Department` vlastnosti jsou načíst a v každém `Enrollment` entity `Student` vlastnosti je načtena.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude)]
 
 Vzhledem k tomu, že zobrazení vždy vyžaduje OfficeAssignment entity, je efektivnější načíst, ve stejném dotazu. Během entity se vyžadují při lektorem je vybrána na webové stránce, takže jeden dotaz je lepší, než více dotazů pouze v případě, že stránka se zobrazí více často ke kurzu vybrané než bez.
 
 Kód opakuje `CourseAssignments` a `Course` vzhledem k tomu, že budete potřebovat dvě vlastnosti z `Course`. První řetězec `ThenInclude` volá získá `CourseAssignment.Course`, `Course.Enrollments`, a `Enrollment.Student`.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=3-6)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=3-6)]
 
 V tomto bodě v kódu jiné `ThenInclude` by pro navigační vlastnosti `Student`, které nepotřebujete. Ale volání `Include` začíná přes `Instructor` vlastnosti, takže budete muset projít řetězu znovu, tento čas zadání `Course.Department` místo `Course.Enrollments`.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=7-9)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=7-9)]
 
 Následující kód provede, když se lektorem byl vybrán. Vybrané lektorem se načítají ze seznamu vyučující v zobrazení modelu. Model zobrazení `Courses` vlastnost je pak načten pomocí postupu entity z této lektorem `CourseAssignments` navigační vlastnost.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=56-62)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?range=56-62)]
 
 `Where` Metoda vrátí kolekci, ale v takovém případě kritéria předaný jejichž metoda výsledkem jsou pouze jednu entitu lektorem nevrátila. `Single` Metoda převede kolekci na jednu entitu lektorem, která umožňuje přístup k dané entity `CourseAssignments` vlastnost. `CourseAssignments` Vlastnost obsahuje `CourseAssignment` entity, z nichž chcete pouze související `Course` entity.
 
@@ -159,7 +159,7 @@ Namísto:
 
 Dále pokud jste vybrali kurzu, vybraný kurz se načítají seznam kurzů ve model zobrazení. Potom zobrazení modelu `Enrollments` vlastnosti je načtena s registrace entity z tohoto kurzu `Enrollments` navigační vlastnost.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=64-69)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?range=64-69)]
 
 ### <a name="modify-the-instructor-index-view"></a>Upravit zobrazení lektorem indexu
 
@@ -231,7 +231,7 @@ Pokud jste získali seznam vyučující v *InstructorsController.cs*, jste zadal
 
 Předpokládejme, že očekává uživatelům jen zřídka rádi viděli v vybrané lektorem a během registrace. V takovém případě můžete chtít načíst data registrace pouze v případě, že se požaduje. Chcete-li zobrazit příklad, jak to provést explicitní načítání, nahraďte `Index` metoda následující kód, který odebere přes načítání pro registraci a načte vlastnosti explicitně. Změny kódu jsou vyznačené.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ExplicitLoading&highlight=23-29)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ExplicitLoading&highlight=23-29)]
 
 Zahodí nový kód *ThenInclude* metoda volá zápisu dat z kódu, který načte lektorem entity. Pokud je vybrána lektorem a kurzu, načte zvýrazněný registrace pro vybraný kurz a Student entit pro každý registrace.
 

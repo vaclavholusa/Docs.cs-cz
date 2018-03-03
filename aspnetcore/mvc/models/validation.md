@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/validation
-ms.openlocfilehash: e2911adcfa3a203a06bdae106499994671a055c4
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 76e15cb1d07924389c66f1e4e7ae1e4b9a3a9cfc
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Úvod k ověření modelu v aplikaci ASP.NET MVC jádra
 
@@ -33,7 +33,7 @@ Atributy ověření představují způsob, jak nakonfigurovat ověření modelu 
 
 Níže je poznámkami `Movie` modelu z aplikace, která uchovává informace o filmy a televizní pořady. Většinu vlastností jsou vyžadované a několik vlastností řetězec mít požadavky na délku. Kromě toho je číselný rozsah omezení nastavené pro `Price` vlastnost od 0 do $999,99, spolu s vlastní ověřovací atribut.
 
-[!code-csharp[Main](validation/sample/Movie.cs?range=6-29)]
+[!code-csharp[](validation/sample/Movie.cs?range=6-29)]
 
 Pravidla týkající se dat pro tuto aplikaci, usnadnit zachování kód jednoduše čtení prostřednictvím modelu zjistí. Níže jsou několik atributů oblíbených integrované ověření:
 
@@ -69,7 +69,7 @@ Vazby modelu MVC, která není problémem ověření a atributů ověření, odm
 
 Při použití [Nullable\<T > typ](/dotnet/csharp/programming-guide/nullable-types/) (například `decimal?` nebo `System.Nullable<decimal>`) a označte ji `Required`, se provádí kontrolu ověření na straně serveru, jako kdyby měla vlastnost standardní typ s možnou hodnotou Null (pro Příklad, `string`).
 
-Ověřování na straně klienta vyžaduje hodnotu pro pole formuláře, který odpovídá vlastnosti modelu, které jste označili `Required` a pro vlastnost neumožňující hodnotu Null typu, které nejsou označeny jako `Required`. `Required`slouží k řízení chybové zprávy ověření na straně klienta.
+Ověřování na straně klienta vyžaduje hodnotu pro pole formuláře, který odpovídá vlastnosti modelu, které jste označili `Required` a pro vlastnost neumožňující hodnotu Null typu, které nejsou označeny jako `Required`. `Required` slouží k řízení chybové zprávy ověření na straně klienta.
 
 ## <a name="model-state"></a>Stav modelu
 
@@ -77,7 +77,7 @@ Stav modelu, který představuje chyb při ověřování v odeslaných hodnot fo
 
 MVC bude pokračovat až dosáhnou ověřování polí maximálního počtu chyb (200 ve výchozím nastavení). Toto číslo můžete nakonfigurovat vložením následující kód do `ConfigureServices` metoda v *Startup.cs* souboru:
 
-[!code-csharp[Main](validation/sample/Startup.cs?range=27)]
+[!code-csharp[](validation/sample/Startup.cs?range=27)]
 
 ## <a name="handling-model-state-errors"></a>Stav modelu zpracování chyb
 
@@ -91,7 +91,7 @@ Po dokončení se vazby modelu a ověření, můžete opakovat části. Napřík
 
 Musíte ručně spusťte ověření. Chcete-li tak učinit, zavolejte `TryValidateModel` metoda, jak je vidět tady:
 
-[!code-csharp[Main](validation/sample/MoviesController.cs?range=52)]
+[!code-csharp[](validation/sample/MoviesController.cs?range=52)]
 
 ## <a name="custom-validation"></a>Vlastního ověřování
 
@@ -99,13 +99,13 @@ Atributy ověření fungovat pro většinu potřeb ověření. Některé ověřo
 
 V následující ukázce stavy obchodní pravidlo, že uživatelé nemusí nastavená genre na *Classic* pro film vydanou po 1960. `[ClassicMovie]` Atribut nejprve hledá genre, a pokud je klasický, pak zkontroluje datum vydání a zkontrolujte, že je novější než 1960. Pokud vydání po 1960, ověření se nezdaří. Atribut přijme parametrem celé číslo představující rok, můžete ověřit data. Hodnota parametru v konstruktoru atributu můžete zaznamenat, jak je vidět tady:
 
-[!code-csharp[Main](validation/sample/ClassicMovieAttribute.cs?range=9-29)]
+[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=9-29)]
 
 `movie` Proměnné výše představuje `Movie` objekt, který obsahuje data z odeslání formuláře k ověření. V tomto případě kód ověření ověří datum a genre v `IsValid` metodu `ClassicMovieAttribute` třída podle pravidla. Po úspěšném ověření `IsValid` vrátí `ValidationResult.Success` kód, a když se ověřování nezdaří, `ValidationResult` s chybovou zprávou. Když uživatel změní `Genre` pole a formulář odešle, `IsValid` metodu `ClassicMovieAttribute` bude ověřte, zda se na video klasický. Podobně jako všechny předdefinované atribut použít `ClassicMovieAttribute` vlastnosti, jako třeba `ReleaseDate` zajistit, ověření se stane, jak je znázorněno v předchozí ukázce kódu. Vzhledem k tomu, že v příkladu pracuje pouze s `Movie` typy, lepší možností je používat `IValidatableObject` jak je znázorněno v následujícím odstavci.
 
 Alternativně může umístit tento stejný kód v modelu tím, že implementujete `Validate` metodu `IValidatableObject` rozhraní. Při ověřování vlastní atributy fungují dobře u ověřování jednotlivé vlastnosti, implementace `IValidatableObject` lze použít k implementaci ověření na úrovni třídy, jak je vidět tady.
 
-[!code-csharp[Main](validation/sample/MovieIValidatable.cs?range=32-40)]
+[!code-csharp[](validation/sample/MovieIValidatable.cs?range=32-40)]
 
 ## <a name="client-side-validation"></a>Ověřování na straně klienta
 
@@ -113,13 +113,13 @@ Ověřování na straně klienta je velmi užitečný pro uživatele. Ho šetř�
 
 Zobrazení s správné odkazům na skript JavaScript musí mít zavedené pro ověřování na straně klienta pro práci jak kterou tady vidíte.
 
-[!code-cshtml[Main](validation/sample/Views/Shared/_Layout.cshtml?range=37)]
+[!code-cshtml[](validation/sample/Views/Shared/_Layout.cshtml?range=37)]
 
-[!code-cshtml[Main](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
+[!code-cshtml[](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
 
 [JQuery Nerušivý ověření](https://github.com/aspnet/jquery-validation-unobtrusive) skript je vlastní front-end knihovna Microsoft, který je založený na oblíbených [jQuery ověřením](https://jqueryvalidation.org/) modulu plug-in. Bez jQuery Nerušivý ověření, budete muset code stejnou ověřovací logiku na dvou místech: jednou v atributech straně ověření serveru na vlastnosti modelu a poté znovu v skripty na straně klienta (příklady pro architekturu jQuery ověřit na [ `validate()` ](https://jqueryvalidation.org/validate/) metoda ukazuje, jak komplexní to může být). Místo toho MVC [značky Pomocníci](xref:mvc/views/tag-helpers/intro) a [pomocné objekty HTML](xref:mvc/views/overview) mohli použít atributy ověření a metadata z vlastnosti modelu k vykreslení HTML 5 typu [atributy datového](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes) v elementy form vyžadující ověření. Generuje MVC `data-` atributy pro předdefinované a vlastní atributy. jQuery Nerušivý ověření pak analyzuje tez `data-` atributy a předá logiku jQuery ověřením, efektivně "kopírování" logiku ověření straně serveru do klienta. Můžete zobrazit chyby ověření na straně klienta pomocí pomocné rutiny relevantní značky, jak je vidět tady:
 
-[!code-cshtml[Main](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
+[!code-cshtml[](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
 Výše uvedené značky Pomocníci vykreslení HTML níže. Všimněte si, že `data-` atributy v kódu HTML výstup odpovídají atributů ověření pro `ReleaseDate` vlastnost. `data-val-required` Atribut níže obsahuje chybovou zprávu, pokud uživatel není vyplnit pole Datum verze se má zobrazit. jQuery Nerušivý ověření předá tuto hodnotu jQuery ověřením [ `required()` ](https://jqueryvalidation.org/required-method/) metodu, která pak zobrazí zprávy z odpovídajícího  **\<span >** element.
 
@@ -194,7 +194,7 @@ $.get({
 
 Můžete vytvořit logiku straně klienta pro vaše vlastní atribut a [nerušivý ověření](http://jqueryvalidation.org/documentation/) se spustí na klienta pro vás automaticky jako součást ověření. Prvním krokem je řídí, jaké atributy datového přidají implementací `IClientModelValidator` rozhraní, jak je vidět tady:
 
-[!code-csharp[Main](validation/sample/ClassicMovieAttribute.cs?range=30-42)]
+[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=30-42)]
 
 Atributy, které toto rozhraní implementovat můžete přidat atributy HTML generovaného pole. Zkoumání výstup `ReleaseDate` element zjistí HTML, který je podobný na předchozí příklad, s výjimkou teď není `data-val-classicmovie` atribut, který byl definován v `AddValidation` metodu `IClientModelValidator`.
 
@@ -209,7 +209,7 @@ Atributy, které toto rozhraní implementovat můžete přidat atributy HTML gen
 
 Nerušivý ověření používá data v `data-` atributy, které mají zobrazovat chybové zprávy. Ale jQuery nebude vědět o pravidlech nebo zprávy, dokud je nepřidáte do jQuery na `validator` objektu. To je znázorněno v následujícím příkladu, který přidává metodu s názvem `classicmovie` obsahující vlastního ověřovacího kódu do jQuery `validator` objektu.
 
-[!code-javascript[Main](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
+[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
 
 JQuery má teď informace o spuštění vlastního ověřování jazyka JavaScript, jakož i chybovou zprávu zobrazena v případě, že ověřovací kód vrátí hodnotu false.
 
@@ -219,7 +219,7 @@ Vzdálené ověření je skvělé funkce, která použijte, pokud je nutné ově
 
 Vzdálené ověření můžete implementovat ve dvou krocích. Nejdřív musíte označit modelu pomocí `[Remote]` atribut. `[Remote]` Atribut přijímá několik přetížení, které můžete použít k přímé JavaScript na straně klienta pro příslušný kód volat. Následující příklad ukazuje na `VerifyEmail` metody akce `Users` řadiče.
 
-[!code-csharp[Main](validation/sample/User.cs?range=7-8)]
+[!code-csharp[](validation/sample/User.cs?range=7-8)]
 
 Druhým krokem je uvedení ověřovacího kódu v odpovídající metodu akce, jak jsou definovány v `[Remote]` atribut. Podle jQuery ověřením [ `remote()` ](https://jqueryvalidation.org/remote-method/) metoda dokumentaci:
 
@@ -227,17 +227,17 @@ Druhým krokem je uvedení ověřovacího kódu v odpovídající metodu akce, j
 
 Definice `VerifyEmail()` metoda řídí následujícími pravidly, jak je uvedeno níže. Vrátí chybu ověření zpráv, pokud nedojde k e-mailu, nebo `true` Pokud e-mailu je zdarma a zabalí výsledek v `JsonResult` objektu. Na straně klienta pak můžete použít vrácená hodnota pokračovat nebo zobrazit chyba v případě potřeby.
 
-[!code-csharp[Main](validation/sample/UsersController.cs?range=19-28)]
+[!code-csharp[](validation/sample/UsersController.cs?range=19-28)]
 
 Nyní když uživatelé zadají e-mailu, JavaScript v zobrazení umožňuje vzdálené volání zda že e-mailové byla přijata, a pokud ano, zobrazí se chybová zpráva. Uživatel, jinak můžete odeslat formuláře jako obvykle.
 
 `AdditionalFields` Vlastnost `[Remote]` atribut je užitečný pro ověření kombinace pole s daty na serveru. Například pokud `User` modelu z výše měl dva další vlastnosti názvem `FirstName` a `LastName`, můžete chtít ověřit, že žádné stávající uživatelé již mají tuto dvojici názvy. Můžete definovat nové vlastnosti, jak je znázorněno v následujícím kódu:
 
-[!code-csharp[Main](validation/sample/User.cs?range=10-13)]
+[!code-csharp[](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`může jste explicitně nastavena na řetězce `"FirstName"` a `"LastName"`, ale pomocí [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operátor takto zjednodušuje refaktoring později. Metody akce k provedení ověření musí přijměte dva argumenty, jeden pro hodnotu `FirstName` a jeden pro hodnotu `LastName`.
+`AdditionalFields` může jste explicitně nastavena na řetězce `"FirstName"` a `"LastName"`, ale pomocí [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operátor takto zjednodušuje refaktoring později. Metody akce k provedení ověření musí přijměte dva argumenty, jeden pro hodnotu `FirstName` a jeden pro hodnotu `LastName`.
 
-[!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
+[!code-csharp[](validation/sample/UsersController.cs?range=30-39)]
 
 Nyní když uživatelé zadat název první a poslední, JavaScript:
 

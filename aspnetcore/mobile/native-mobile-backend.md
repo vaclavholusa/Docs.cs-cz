@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: ff09f331cff5cca7b42fa89bff55c0ed5c7d82f4
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: f5c0e5832b43f365c11a785af37b32e381624420
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="creating-backend-services-for-native-mobile-applications"></a>Vytváření služeb back-end pro nativní mobilní aplikace
 
@@ -61,26 +61,26 @@ Vytvořte novou webovou aplikaci ASP.NET Core v sadě Visual Studio. Zvolte šab
 
 Aplikace má odpovědět na všechny požadavky na port 5000. Aktualizace *Program.cs* zahrnout `.UseUrls("http://*:5000")` k dosažení tohoto cíle:
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Program.cs?range=10-16&highlight=3)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Program.cs?range=10-16&highlight=3)]
 
 > [!NOTE]
-> Zajistěte, aby že aplikaci spouštíte přímo, nikoli za služby IIS Express, které nejsou místní požadavky ve výchozím nastavení ignoruje. Spustit `dotnet run` z příkazového řádku, nebo vyberte název profilu aplikace z rozevíracího seznamu cíl ladění na panelu nástrojů Visual Studio.
+> Zajistěte, aby že aplikaci spouštíte přímo, nikoli za služby IIS Express, které nejsou místní požadavky ve výchozím nastavení ignoruje. Spustit [dotnet spustit](/dotnet/core/tools/dotnet-run) z příkazového řádku, nebo vyberte název profilu aplikace z rozevíracího seznamu cíl ladění na panelu nástrojů Visual Studio.
 
 Přidejte třídu modelu představují položkami seznamu úkolů. Označit požadovaná pole pomocí `[Required]` atribut:
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
 
 Metody rozhraní API vyžadují některé způsob, jak pracovat s daty. Použijte stejný `IToDoRepository` rozhraní původní Ukázka používá Xamarin:
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
 
 Tato ukázka implementace právě používá privátní kolekce položek:
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Services/ToDoRepository.cs)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Services/ToDoRepository.cs)]
 
 Konfigurace v implementaci v *Startup.cs*:
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Startup.cs?highlight=6&range=29-35)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Startup.cs?highlight=6&range=29-35)]
 
 V tomto okamžiku jste připraveni vytvořit *ToDoItemsController*.
 
@@ -93,7 +93,7 @@ Přidejte nový řadič do projektu, *ToDoItemsController*. Z Microsoft.AspNetCo
 
 Vyžaduje kontroleru `IToDoRepository` do funkce; požadavku instance tohoto typu pomocí konstruktoru kontroleru. Za běhu, tato instance bude poskytnuta pomocí rozhraní framework podporu pro [vkládání závislostí](../fundamentals/dependency-injection.md).
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=1-17&highlight=9,14)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=1-17&highlight=9,14)]
 
 Toto rozhraní API podporuje čtyři jiné příkazy HTTP k provádění operací CRUD (vytvořit, číst, Update, Delete) na datovém zdroji. Nejjednodušší z nich je operace čtení, který odpovídá na požadavek HTTP GET.
 
@@ -101,7 +101,7 @@ Toto rozhraní API podporuje čtyři jiné příkazy HTTP k provádění operac�
 
 Požadavku na seznam položek provádí pomocí požadavek GET na `List` metoda. `[HttpGet]` Atributu u `List` metoda určuje, že tato akce pouze zpracování požadavků GET. Trasy pro tuto akci je trasy zadaný na řadiči. Nepotřebujete nutně použití název akce v rámci trasy. Potřebujete zajistěte, aby měla každá akce jedinečný a jednoznačné trasy. Atributy směrování lze použít v kontroleru a úrovně metody vybudovat konkrétní trasy.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=19-23)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=19-23)]
 
 `List` Metoda vrátí kód odpovědi 200 OK a všechny položky ToDo serializovanou jako JSON.
 
@@ -115,11 +115,11 @@ Podle konvence vytváření nových položek dat je namapována na příkazu HTT
 
 Uvnitř metody položka je kontrola platnosti a předchozí existence v úložišti dat a pokud dojde k žádné problémy, se přidá pomocí úložiště. Kontrola `ModelState.IsValid` provede [modelu ověření](../mvc/models/validation.md)a by mělo být provedeno v každé metody rozhraní API, která podporuje vstup uživatele.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=25-46)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=25-46)]
 
 Ukázka používá výčet obsahující kódy chyb, které se předávají do mobilního klienta:
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=91-99)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=91-99)]
 
 Otestovat, přidávání nových položek pomocí Postman tak, že zvolíte příkaz POST poskytuje nový objekt ve formátu JSON v textu požadavku. Měli byste také přidat zadání hlavičky požadavku `Content-Type` z `application/json`.
 
@@ -131,7 +131,7 @@ Metoda vrátí nově vytvořenou položku v odpovědi.
 
 Úpravy záznamů se provádí pomocí požadavků HTTP PUT. Než tuto změnu `Edit` metoda je téměř shodné s `Create`. Všimněte si, že pokud se nenajde záznamu, `Edit` akce vrátí `NotFound` odpovědi (404).
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=48-69)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=48-69)]
 
 Testování s Postman, změňte příkaz na PUT. Určete data, aktualizovaného objektu v textu požadavku.
 
@@ -143,7 +143,7 @@ Tato metoda vrátí hodnotu `NoContent` (204) odpovědi, při úspěšné, z dů
 
 Odstraňování záznamů dosahuje tím, že žádosti o odstranění ke službě a předávání ID položky pro odstranění. Jako s aktualizacemi, se zobrazí požadavky pro položky, které neexistují `NotFound` odpovědi. Jinak bude úspěšné žádosti získat `NoContent` (204) odpovědi.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=71-88)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=71-88)]
 
 Při testování funkci odstranění, nic je vyžadována v textu požadavku.
 

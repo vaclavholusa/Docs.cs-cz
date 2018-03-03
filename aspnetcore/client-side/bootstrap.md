@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: dfed5c7a8e103973048295b7607008ecc7e90eeb
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e2ade6223cdc56a4f0f00ff0b985ceda4ab5484a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Vytváření Krásný přizpůsobivý weby s Bootstrap
 
@@ -31,7 +31,7 @@ Existuje několik způsobů, jak začít s Bootstrap. Pokud začínáte novou we
 
 Přidání Bootstrap ASP.NET Core projektu se pouze záležitost jejím přidáním do *bower.json* jako závislost:
 
-[!code-json[Main](../common/samples/WebApplication1/bower.json?highlight=5)]
+[!code-json[](../common/samples/WebApplication1/bower.json?highlight=5)]
 
 Toto je doporučeným způsobem, jak přidat Bootstrap do projektu ASP.NET Core.
 
@@ -60,7 +60,7 @@ Install-Package bootstrap
 
 Pokud jste odkazující na vlastní místní verze Bootstrap, budete muset na ně odkazovat ve všech stránek, které budou používat. V produkčním prostředí by měl odkazovat bootstrap pomocí název CDN. Ve výchozí šablona webu ASP.NET *_Layout.cshtml* souboru tak, jako tento:
 
-[!code-html[Main](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
+[!code-html[](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
 
 > [!NOTE]
 > Pokud se chystáte používat žádné z modulů plug-in jQuery Bootstrap společnosti, musíte se také tak, aby odkazovaly jQuery.

@@ -1,7 +1,7 @@
 ---
 title: "Jádro ASP.NET MVC s EF Core - Model dat – 5 10"
 author: tdykstra
-description: "V tomto kurzu přidáte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověřování a pravidla mapování databáze."
+description: "V tomto kurzu přidejte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověření a pravidla mapování."
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: ac30d9ae5531934ba5163a8d9114b11ac54af8d2
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 9f5354837672920158232b301cfe7be358dbc0f3
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Vytvoření modelu komplexní data - základní EF s kurz k ASP.NET MVC jádra (5 10)
 
@@ -37,11 +37,11 @@ Pro studenty registrace kalendářních dat všech webových stránek aktuálně
 
 V *Models/Student.cs*, přidejte `using` příkaz pro `System.ComponentModel.DataAnnotations` obor názvů a přidejte `DataType` a `DisplayFormat` atributů k `EnrollmentDate` vlastnost, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
 `DataType` Atribut slouží k určení datový typ, který je specifičtější než vnitřní typ databáze. V tomto případě chceme jenom udržování přehledu o datum, není datum a čas. `DataType` Výčtu poskytuje pro mnoho typů dat, jako je například datum, čas, telefonní číslo, měny, EmailAddress a další. `DataType` Atributu můžete také povolit aplikace automaticky poskytnout konkrétní typ funkce. Například `mailto:` může vytvořit odkaz pro `DataType.EmailAddress`, a datum selektor lze zadat pro `DataType.Date` v prohlížečích podporujících HTML5. `DataType` Atribut vysílá standardu HTML 5 `data-` (výrazný data dash) atributy, které můžete porozumět standardu HTML 5 prohlížeče. `DataType` Atributy neposkytují žádné ověření.
 
-`DataType.Date`neuvádí formát data, které se zobrazí. Ve výchozím nastavení je datové pole zobrazí podle výchozích formátů podle serveru CultureInfo.
+`DataType.Date` neuvádí formát data, které se zobrazí. Ve výchozím nastavení je datové pole zobrazí podle výchozích formátů podle serveru CultureInfo.
 
 `DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
 
@@ -69,7 +69,7 @@ Můžete také zadat pravidla ověření dat a chybové zprávy ověření pomoc
 
 Předpokládejme, že chcete zajistit, že uživatelé nezadávejte víc než 50 znaků pro název. Chcete-li přidat toto omezení, přidejte `StringLength` atributů k `LastName` a `FirstMidName` vlastnosti, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
 `StringLength` Atribut nebude uživatel zabránit v přechodu do prázdných znaků pro název. Můžete použít `RegularExpression` atribut použít omezení na vstup. Například následující kód vyžaduje první znak, který má být velkými písmeny a zbývající znaků, které mají být abecední:
 
@@ -107,7 +107,7 @@ Atributy můžete taky řídit, jak jsou mapovány třídy a vlastnosti do datab
 
 V *Student.cs* soubor, přidejte `using` příkaz pro `System.ComponentModel.DataAnnotations.Schema` a přidejte atribut název sloupce, který se `FirstMidName` vlastnost, jak je znázorněno v následující zvýrazněný kód:
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
 Přidání `Column` základní model, změní se atribut `SchoolContext`, takže nebude odpovídat databázi.
 
@@ -136,7 +136,7 @@ Před použitím první dva migrace se název sloupce z typu nvarchar(MAX). Jsou
 
 V *Models/Student.cs*, nahraďte kód, který jste přidali dříve následujícím kódem. Změny se zvýrazněnou.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
 ### <a name="the-required-attribute"></a>Požadovaný atribut
 
@@ -156,7 +156,7 @@ public string LastName { get; set; }
 
 ### <a name="the-fullname-calculated-property"></a>Vlastnost FullName vypočítat
 
-`FullName`je počítané vlastnosti, která vrátí hodnotu, která se vytvoří zřetězením dva další vlastnosti. Proto má pouze přistupující a ne `FullName` vygeneruje sloupec v databázi.
+`FullName` je počítané vlastnosti, která vrátí hodnotu, která se vytvoří zřetězením dva další vlastnosti. Proto má pouze přistupující a ne `FullName` vygeneruje sloupec v databázi.
 
 ## <a name="create-the-instructor-entity"></a>Vytvořit entitu lektorem
 
@@ -164,7 +164,7 @@ public string LastName { get; set; }
 
 Vytvoření *Models/Instructor.cs*, nahraďte kód šablony s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
+[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
 
 Všimněte si, že několik vlastností, které jsou stejné ve Student a lektorem entity. V [implementace dědičnosti](inheritance.md) kurz později z této série budete Refaktorovat tento kód eliminovat redundance.
 
@@ -200,7 +200,7 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 Vytvoření *Models/OfficeAssignment.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/OfficeAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/OfficeAssignment.cs)]
 
 ### <a name="the-key-attribute"></a>Klíč atributu
 
@@ -227,7 +227,7 @@ By mohlo `[Required]` atribut na navigační vlastnost lektorem k určení, že 
 
 V *Models/Course.cs*, nahraďte kód, který jste přidali dříve následujícím kódem. Změny se zvýrazněnou.
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
 Během entita má vlastností cizího klíče `DepartmentID` který odkazuje na související entity oddělení a má `Department` navigační vlastnost.
 
@@ -277,7 +277,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 Vytvoření *Models/Department.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
 
 ### <a name="the-column-attribute"></a>Atribut sloupce
 
@@ -322,7 +322,7 @@ public ICollection<Course> Courses { get; set; }
 
 V *Models/Enrollment.cs*, nahraďte kód, který jste přidali dříve následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>Cizí klíč a navigační vlastnosti
 
@@ -362,7 +362,7 @@ Pokud v tabulce registrace nezahrnuli úrovni informace, jenom třeba, aby obsah
 
 Vytvoření *Models/CourseAssignment.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/CourseAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/CourseAssignment.cs)]
 
 ### <a name="join-entity-names"></a>Připojení k názvy entit
 
@@ -378,7 +378,7 @@ Složený klíč zajistí, že i když můžete mít více řádků pro jeden ku
 
 Přidejte následující zvýrazněný kód, který *Data/SchoolContext.cs* souboru:
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
 Tento kód přidá nové entity a nakonfiguruje složené primární klíče CourseAssignment entity.
 
@@ -413,7 +413,7 @@ Kromě řádky vztah jeden mnoho (1 \*), můžete tady vidíte řádku vztah jed
 
 Nahraďte kód v *Data/DbInitializer.cs* souboru následujícím kódem, chcete-li poskytovat počáteční hodnoty dat pro nové entity, které jste vytvořili.
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
 
 Jak už jste viděli v první kurz, většina tento kód jednoduše vytvoří nové entity objekty a načte ukázková data do vlastnosti podle potřeby pro testování. Všimněte si, jak jsou zpracovávány relace m: n: kód vytvoří vztahy vytvořením entity v `Enrollments` a `CourseAssignment` připojení sady entit.
 
@@ -444,11 +444,11 @@ Chcete-li tato migrace pracovat s existujícími daty, budete muset změnit kód
 
 * Zakomentovat řádek kódu, který přidá sloupec DepartmentID kurzu tabulky.
 
-  [!code-csharp[Main](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
+  [!code-csharp[](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
 
 * Přidejte následující zvýrazněný kód po kód, který vytvoří tabulku oddělení:
 
-  [!code-csharp[Main](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
+  [!code-csharp[](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
 
 V případě produkční aplikace by napíšete kód nebo skripty k přidání oddělení řádky a řádky kurzu se týkají nové řádky oddělení. Potom už potřebovali byste oddělení "Temp" nebo výchozí hodnotu pro sloupec Course.DepartmentID.
 

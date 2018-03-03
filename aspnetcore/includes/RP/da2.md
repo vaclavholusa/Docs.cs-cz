@@ -6,7 +6,7 @@ Přejděte na stránkách nebo filmy a najeďte myší **upravit** odkaz zobraz�
 
 **Upravit**, **podrobnosti**, a **odstranit** generované odkazy [pomocná značka ukotvení](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) v *stránkách nebo filmy nebo Index.cshtml* souboru.
 
-[!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
+[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
 
 [Pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) umožňují, aby se kód na straně serveru v souborech Razor podílel na vytváření a vykreslování prvků HTML. V předchozí kód `AnchorTagHelper` dynamicky vygeneruje HTML `href` hodnotu atributu ze stránky Razor (trasy, která je relativní), `asp-page`a id trasy (`asp-route-id`). V tématu [generování adresy URL pro stránky](xref:mvc/razor-pages/index#url-generation-for-pages) Další informace.
 
@@ -42,13 +42,13 @@ Požadavek na stránku s šablonou cesty "{id: int}", která nemá **není** zah
 
 Aktualizace `OnPostAsync` metoda v *Pages/Movies/Edit.cshtml.cs* souboru. Následující zvýrazněný kód ukazuje změny:
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet1&highlight=16-23)]
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet1&highlight=16-23)]
 
 Při první souběžných klientských odstraní film a druhý souběžných klientských odešle změny na film, předchozí kód zjišťuje pouze výjimky souběžnosti.
 
 K testování `catch` bloku:
 
-* Nastavit zarážky`catch (DbUpdateConcurrencyException)`
+* Nastavit zarážky `catch (DbUpdateConcurrencyException)`
 * Upravte film.
 * V jiném okně prohlížeče, vyberte **odstranit** propojit pro stejné film a pak odstraňte video.
 * V okně prohlížeče předchozí jakýchkoli změn videa.
@@ -57,7 +57,7 @@ Produkčním kódu by obvykle zjistit konfliktů souběžnosti Pokud dvě nebo v
 
 ### <a name="posting-and-binding-review"></a>Publikování a vazbu zkontrolujte
 
-Zkontrolujte *Pages/Movies/Edit.cshtml.cs* souboru:[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
+Zkontrolujte *Pages/Movies/Edit.cshtml.cs* souboru: [!code-csharp[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
 
 Když se provádí požadavek HTTP GET na stránku filmy či upravit (například `http://localhost:5000/Movies/Edit/2`):
 

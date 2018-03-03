@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: 139f6dc53b171c19a9fff67b9aba9cf90e188f62
-ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
+ms.openlocfilehash: eb31bd81c5c3da27c8d412462d1c537aa85e4f8b
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -37,35 +37,35 @@ Lokalizace aplikací zahrnuje následující:
 
 Byla zavedená v ASP.NET Core `IStringLocalizer` a `IStringLocalizer<T>` byly navržen k zvýšení produktivity při vývoji lokalizované aplikace. `IStringLocalizer` používá [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager) a [ResourceReader](https://docs.microsoft.com/dotnet/api/system.resources.resourcereader) k poskytnutí prostředků specifické pro jazykovou verzi za běhu. Jednoduché rozhraní má indexer a `IEnumerable` pro vrácení lokalizovaných řetězců. `IStringLocalizer` nevyžaduje ukládání řetězce výchozí jazyk v souboru prostředků. Můžete vyvíjet aplikace cílené na lokalizace a není nutné vytvářet soubory prostředků v rané fázi vývoj. Následující kód ukazuje, jak zabalit řetězec "Title o" pro lokalizaci.
 
-[!code-csharp[Main](localization/sample/Localization/Controllers/AboutController.cs)]
+[!code-csharp[](localization/sample/Localization/Controllers/AboutController.cs)]
 
 Ve výše, kódu `IStringLocalizer<T>` implementace pochází z [vkládání závislostí](dependency-injection.md). Pokud lokalizované hodnoty "Title o" nebyl nalezen, pak klíč indexeru je vrácen, tedy řetězec "Title o". Můžete ponechat výchozí nastavení literálu řetězce jazyků v aplikaci a zabalení v lokalizátora, tak, aby se mohli zaměřit na vývoj aplikace. Vývoj aplikace s výchozí jazyk a jeho přípravu pro lokalizaci bez vytvoření první výchozí soubor prostředků. Alternativně můžete použít tradiční přístup a zadejte klíč k získání řetězce výchozí jazyk. Pro mnoho vývojáře nový pracovní postup nemá výchozí jazyk *RESX* souborové služby a jednoduše zabalení textové literály můžete snížit režii lokalizace aplikace. Jinými vývojáři bude upřednostňovat tradiční pracovní postup, jak ho můžete bylo snazší práce s delší textové literály a usnadňují aktualizovat lokalizované řetězce.
 
 Použití `IHtmlLocalizer<T>` implementace pro prostředky, které obsahují HTML. `IHtmlLocalizer` Argumenty, které jsou ve formátu v řetězec prostředku kóduje HTML, ale nepodporuje kódování HTML řetězec prostředku sám sebe. V ukázce zvýrazněná níže pouze hodnota `name` parametr není kódován jazykem HTML.
 
-[!code-csharp[Main](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
+[!code-csharp[](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
 
 **Poznámka:** chcete obecně pouze lokalizovat text a není ve formátu HTML.
 
 Na nejnižší úrovni, můžete získat `IStringLocalizerFactory` mimo [vkládání závislostí](dependency-injection.md):
 
-[!code-csharp[Main](localization/sample/Localization/Controllers/TestController.cs?start=9&end=26&highlight=7-13)]
+[!code-csharp[](localization/sample/Localization/Controllers/TestController.cs?start=9&end=26&highlight=7-13)]
 
 Výše uvedený kód ukazuje každé dvě objektu pro vytváření vytvořit metody.
 
 Můžete oddílu lokalizovaných řetězců řadič, oblasti nebo mít jenom jeden kontejner. V ukázkové aplikace s názvem třídu fiktivní `SharedResource` se používá pro sdílené prostředky.
 
-[!code-csharp[Main](localization/sample/Localization/Resources/SharedResource.cs)]
+[!code-csharp[](localization/sample/Localization/Resources/SharedResource.cs)]
 
 Někteří vývojáři použít `Startup` třídy tak, aby obsahovala globální nebo sdíleného řetězce. V ukázce níže `InfoController` a `SharedResource` překladatelům při lokalizaci používají:
 
-[!code-csharp[Main](localization/sample/Localization/Controllers/InfoController.cs?range=9-26)]
+[!code-csharp[](localization/sample/Localization/Controllers/InfoController.cs?range=9-26)]
 
 ## <a name="view-localization"></a>Lokalizace zobrazení
 
 `IViewLocalizer` Služba poskytuje lokalizované řetězce pro [zobrazení](https://docs.microsoft.com/aspnet/core). `ViewLocalizer` Třída implementuje toto rozhraní a vyhledá umístění prostředků z cesty k souboru zobrazení. Následující kód ukazuje, jak používat výchozí implementaci `IViewLocalizer`:
 
-[!code-cshtml[Main](localization/sample/Localization/Views/Home/About.cshtml)]
+[!code-cshtml[](localization/sample/Localization/Views/Home/About.cshtml)]
 
 Výchozí implementaci `IViewLocalizer` vyhledá soubor prostředků na základě názvu souboru zobrazení. Neexistuje žádná možnost použít soubor globální sdílený prostředek. `ViewLocalizer` implementuje lokalizátora pomocí `IHtmlLocalizer`, takže není HTML Razor kódování lokalizovaný řetězec. Můžete parametrizovat řetězce prostředků a `IViewLocalizer` se použije kódování HTML parametry, ale není řetězec prostředku. Vezměte v úvahu následující syntaxe Razor kód:
 
@@ -85,7 +85,7 @@ Vykreslené zobrazení bude obsahovat kód HTML ze zdrojového souboru.
 
 Pokud chcete používat soubor sdílený prostředek v zobrazení, Vložit `IHtmlLocalizer<T>`:
 
-[!code-cshtml[Main](../fundamentals/localization/sample/Localization/Views/Test/About.cshtml?highlight=5,12)]
+[!code-cshtml[](../fundamentals/localization/sample/Localization/Views/Test/About.cshtml?highlight=5,12)]
 
 ## <a name="dataannotations-localization"></a>Lokalizace DataAnnotations
 
@@ -94,7 +94,7 @@ Lokalizace DataAnnotations chybové zprávy s `IStringLocalizer<T>`. Pomocí mo�
 * Resources/ViewModels.Account.RegisterViewModel.fr.resx
 * Resources/ViewModels/Account/RegisterViewModel.fr.resx
 
-[!code-csharp[Main](localization/sample/Localization/ViewModels/Account/RegisterViewModel.cs?start=9&end=26)]
+[!code-csharp[](localization/sample/Localization/ViewModels/Account/RegisterViewModel.cs?start=9&end=26)]
 
 Lokalizace v ASP.NET MVC základní 1.1.0 a vyšší, bez ověření atributy. Jádro ASP.NET MVC 1,0 nemá **není** vyhledávání lokalizovaných řetězců pro atributy bez ověření.
 
@@ -188,7 +188,7 @@ Každá kombinace jazyka a jazykovou verzi (jiné než výchozí jazyk) vyžaduj
 
 Lokalizace je nakonfigurovaný v `ConfigureServices` metoda:
 
-[!code-csharp[Main](localization/sample/Localization/Program.cs?name=snippet1)]
+[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet1)]
 
 * `AddLocalization` Přidá službu lokalizaci ke kontejneru služby. Kód výše také nastaví prostředky cesta k "Zdroje".
 
@@ -200,7 +200,7 @@ Lokalizace je nakonfigurovaný v `ConfigureServices` metoda:
 
 Aktuální jazykovou verzi na vyžádání je nastavena v lokalizace [Middleware](xref:fundamentals/middleware/index). Lokalizace middlewaru je povolena v `Configure` metoda. Lokalizace middleware musí být nakonfigurovaná před veškerý middleware, která může kontrola jazyková verze požadavku (například `app.UseMvcWithDefaultRoute()`).
 
-[!code-csharp[Main](localization/sample/Localization/Program.cs?name=snippet2)]
+[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet2)]
 
 `UseRequestLocalization` inicializuje `RequestLocalizationOptions` objektu. U každého požadavku seznamu z `RequestCultureProvider` v `RequestLocalizationOptions` je výčet a první zprostředkovatele, který můžete určit úspěšně jazykovou verzi požadavku se používá. Výchozí zprostředkovatele pocházet z `RequestLocalizationOptions` třídy:
 
@@ -286,15 +286,15 @@ Použití `RequestLocalizationOptions` chcete přidat nebo odebrat lokalizace zp
 Tato ukázka **Localization.StarterWeb** projektu na [Githubu](https://github.com/aspnet/entropy) obsahuje uživatelského rozhraní nastavit `Culture`. *Views/Shared/_SelectLanguagePartial.cshtml* souboru můžete vybrat ze seznamu podporovaných jazykových verzí jazyková verze:
 
 
-[!code-cshtml[Main](localization/sample/Localization/Views/Shared/_SelectLanguagePartial.cshtml)]
+[!code-cshtml[](localization/sample/Localization/Views/Shared/_SelectLanguagePartial.cshtml)]
 
 *Views/Shared/_SelectLanguagePartial.cshtml* se přidá soubor `footer` rozložení souboru, bude k dispozici u všech zobrazení:
 
-[!code-cshtml[Main](localization/sample/Localization/Views/Shared/_Layout.cshtml?range=43-56&highlight=10)]
+[!code-cshtml[](localization/sample/Localization/Views/Shared/_Layout.cshtml?range=43-56&highlight=10)]
 
 `SetLanguage` Metoda nastaví jazykovou verzi souboru cookie.
 
-[!code-csharp[Main](localization/sample/Localization/Controllers/HomeController.cs?range=57-67)]
+[!code-csharp[](localization/sample/Localization/Controllers/HomeController.cs?range=57-67)]
 
 Nelze připojit *_SelectLanguagePartial.cshtml* na ukázkový kód pro tento projekt. **Localization.StarterWeb** projektu na [Githubu](https://github.com/aspnet/entropy) má kód, které jsou předávány `RequestLocalizationOptions` k částečné prostřednictvím Razor [vkládání závislostí](dependency-injection.md) kontejneru.
 

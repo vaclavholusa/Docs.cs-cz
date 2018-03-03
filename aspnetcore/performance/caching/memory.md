@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 7c6d629ea94dd7c79a2f4e24fd4d0ff797f7e516
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: ef5dba655a8b6332bf0b6f21c678481a1c55aecf
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>Ukládání do mezipaměti v paměti v ASP.NET Core
 
@@ -38,21 +38,21 @@ Mezipaměť v paměti můžete ukládat jakýkoli objekt; rozhraní distribuovan
 
 Ukládání do mezipaměti v paměti je *služby* , je na něj odkazovat z vaší aplikace pomocí [vkládání závislostí](../../fundamentals/dependency-injection.md). Volání `AddMemoryCache` v `ConfigureServices`:
 
-[!code-csharp[Main](memory/sample/WebCache/Startup.cs?highlight=8)] 
+[!code-csharp[](memory/sample/WebCache/Startup.cs?highlight=8)] 
 
 Požadavku `IMemoryCache` instance v konstruktoru:
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-999)] 
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-999)] 
 
-`IMemoryCache`vyžaduje balíček NuGet "Microsoft.Extensions.Caching.Memory".
+`IMemoryCache` vyžaduje balíček NuGet "Microsoft.Extensions.Caching.Memory".
 
 Následující kód používá [TryGetValue](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__) ke kontrole, pokud je aktuální čas v mezipaměti. Pokud položka není v mezipaměti, nový záznam je vytvořen a přidán do mezipaměti s [nastavit](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_).
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
 
 Zobrazí se aktuální čas a čas v mezipaměti:
 
-[!code-html[Main](memory/sample/WebCache/Views/Home/Cache.cshtml)]
+[!code-html[](memory/sample/WebCache/Views/Home/Cache.cshtml)]
 
 Uložená v mezipaměti `DateTime` hodnota zůstane v mezipaměti, přestože jsou požadavky v rámci časového limitu (a žádné vyřazení z důvodu přetížení paměti). Následující obrázek ukazuje aktuální čas a starší čas načten z mezipaměti:
 
@@ -60,11 +60,11 @@ Uložená v mezipaměti `DateTime` hodnota zůstane v mezipaměti, přestože js
 
 Následující kód používá [GetOrCreate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) a [GetOrCreateAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___) data do mezipaměti. 
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet2&highlight=3-7,14-19)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet2&highlight=3-7,14-19)]
 
 Následující kód volání [získat](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Get__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_) se načíst uložené v mezipaměti Doba:
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_gct)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_gct)]
 
 V tématu [IMemoryCache metody](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache) a [CacheExtensions metody](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions) popis metod mezipaměti.
 
@@ -77,13 +77,13 @@ Následující ukázka:
 - Nastaví prioritu mezipaměti `CacheItemPriority.NeverRemove`. 
 - Nastaví [PostEvictionDelegate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.postevictiondelegate) , bude volána po vyřazování položku z mezipaměti. Zpětné volání je spuštěn v jiném podprocesu z kód, který odebere položku z mezipaměti.
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-20)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-20)]
 
 ## <a name="cache-dependencies"></a>Závislosti mezipaměti
 
 Následující příklad ukazuje, jak vypršení platnosti položky mezipaměti, pokud vyprší závislé položky. A `CancellationChangeToken` se přidá do položky v mezipaměti. Když `Cancel` se volá na `CancellationTokenSource`, jsou vyřazování obě položky mezipaměti. 
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ed)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ed)]
 
 Použití `CancellationTokenSource` umožňuje více záznamů mezipaměti určených k vyloučení jako skupina. S `using` vzor ve výše uvedeném kódu položky mezipaměti vytvořit uvnitř `using` bloku zdědí nastavení vypršení platnosti a aktivační události.
 

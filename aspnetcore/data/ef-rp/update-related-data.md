@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 71c04d2bf339467fea6897be183fca950c04b659
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: a7a21aca4d822daad7a6a13f0feec5139bf6e1a5
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>Aktualizace související data - stránky Razor základní EF (7 8)
 
@@ -34,7 +34,7 @@ Zkontrolujte a testovat stránky postupu vytvoření a úpravy. Vytvořte nový 
 
 Stránky kurzy a vytvořit a kurzy či upravit třeba seznam názvů oddělení. Vytvořit *Pages/Courses/DepartmentNamePageModel.cshtml.cs* základní třída pro vytvoření a úpravy stránky:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/DepartmentNamePageModel.cshtml.cs?highlight=9,11,20-21)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/DepartmentNamePageModel.cshtml.cs?highlight=9,11,20-21)]
 
 Předchozí kód vytvoří [SelectList](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.rendering.selectlist?view=aspnetcore-2.0) obsahovat seznam názvů oddělení. Pokud `selectedDepartment` není zadaný, oddělení je vybrána v `SelectList`.
 
@@ -48,7 +48,7 @@ Při vytvoření nové entity kurzu, musí mít relaci s existující oddělení
 
 Aktualizace modelu vytvořit stránku s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Create.cshtml.cs?highlight=7,18,32-999)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Create.cshtml.cs?highlight=7,18,32-999)]
 
 Předchozí kód:
 
@@ -56,13 +56,13 @@ Předchozí kód:
 * Používá `TryUpdateModelAsync` aby [overposting](xref:data/ef-rp/crud#overposting).
 * Nahradí `ViewData["DepartmentID"]` s `DepartmentNameSL` (ze základní třídy).
 
-`ViewData["DepartmentID"]`nahradí se silnými typy `DepartmentNameSL`. Silného typu modely jsou upřednostňovaná přes slabě typované. Další informace najdete v tématu [slabě typované data (ViewData a ViewBag)](xref:mvc/views/overview#VD_VB).
+`ViewData["DepartmentID"]` nahradí se silnými typy `DepartmentNameSL`. Silného typu modely jsou upřednostňovaná přes slabě typované. Další informace najdete v tématu [slabě typované data (ViewData a ViewBag)](xref:mvc/views/overview#VD_VB).
 
 ### <a name="update-the-courses-create-page"></a>Kurzy vytvořit stránku aktualizace
 
 Aktualizace *Pages/Courses/Create.cshtml* s následující kód:
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Courses/Create.cshtml?highlight=29-34)]
+[!code-cshtml[](intro/samples/cu/Pages/Courses/Create.cshtml?highlight=29-34)]
 
 Předchozí kód provede tyto změny:
 
@@ -73,7 +73,7 @@ Předchozí kód provede tyto změny:
 
 Stránka Razor používá [vyberte pomocná značky](xref:mvc/views/working-with-forms#the-select-tag-helper):
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Courses/Create.cshtml?range=28-35&highlight=3-6)]
+[!code-cshtml[](intro/samples/cu/Pages/Courses/Create.cshtml?range=28-35&highlight=3-6)]
 
 Testovací stránka pro vytvoření. Na stránce vytvořit zobrazuje název oddělení, nikoli ID oddělení.
 
@@ -81,13 +81,13 @@ Testovací stránka pro vytvoření. Na stránce vytvořit zobrazuje název odd�
 
 Aktualizace modelu stránky upravit následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Edit.cshtml.cs?highlight=8,28,35,36,40,47-999)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Edit.cshtml.cs?highlight=8,28,35,36,40,47-999)]
 
 Změny jsou podobné těm, které jsou provedeny v modelu vytvořit stránku. V předchozí kód `PopulateDepartmentsDropDownList` předává v oddělení ID, které oddělení, zadaný v rozevíracím seznamu vyberte.
 
 Aktualizace *Pages/Courses/Edit.cshtml* s následující kód:
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Courses/Edit.cshtml?highlight=17-20,32-35)]
+[!code-cshtml[](intro/samples/cu/Pages/Courses/Edit.cshtml?highlight=17-20,32-35)]
 
 Předchozí kód provede tyto změny:
 
@@ -97,7 +97,7 @@ Předchozí kód provede tyto změny:
 * Přidá možnost "Vyberte oddělení". Tato změna vykreslí "Vyberte oddělení" místo první oddělení.
 * Přidá ověřovací zprávu, pokud není vybraná oddělení.
 
-Tato stránka obsahuje skryté pole (`<input type="hidden">`) pro číslo kurzu. Přidání `<label>` značky pomocnou metodu s `asp-for="Course.CourseID"` není eliminují nutnost použití skryté pole. `<input type="hidden">`je vyžadována pro kurzu číslo, které má být součástí odeslaných dat, když uživatel klikne **Uložit**.
+Tato stránka obsahuje skryté pole (`<input type="hidden">`) pro číslo kurzu. Přidání `<label>` značky pomocnou metodu s `asp-for="Course.CourseID"` není eliminují nutnost použití skryté pole. `<input type="hidden">` je vyžadována pro kurzu číslo, které má být součástí odeslaných dat, když uživatel klikne **Uložit**.
 
 Otestujte aktualizovaný kódu. Vytvářet, upravovat a odstraňovat kurzu.
 
@@ -105,17 +105,17 @@ Otestujte aktualizovaný kódu. Vytvářet, upravovat a odstraňovat kurzu.
 
 [AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) můžete zvýšit výkon při sledování není povinné. Přidat `AsNoTracking` stránky modelu odstranit a podrobnosti. Následující kód ukazuje v aktualizovaném modelu. odstranění stránky:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Delete.cshtml.cs?name=snippet&highlight=21,23,40,41)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Delete.cshtml.cs?name=snippet&highlight=21,23,40,41)]
 
 Aktualizace `OnGetAsync` metoda v *Pages/Courses/Details.cshtml.cs* souboru:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Details.cshtml.cs?name=snippet)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Details.cshtml.cs?name=snippet)]
 
 ### <a name="modify-the-delete-and-details-pages"></a>Upravovat stránky odstranit a podrobnosti
 
 Aktualizujte stránku odstranit Razor následující kód:
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Courses/Delete.cshtml?highlight=15-20)]
+[!code-cshtml[](intro/samples/cu/Pages/Courses/Delete.cshtml?highlight=15-20)]
 
 Proveďte stejné změny na stránku podrobností.
 
@@ -137,19 +137,19 @@ Při úpravě záznamu lektorem, můžete aktualizovat lektorem office přiřaze
 
 Aktualizace modelu vyučující upravit stránku s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Edit1.cshtml.cs?name=snippet&highlight=20-23,32,39-999)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Edit1.cshtml.cs?name=snippet&highlight=20-23,32,39-999)]
 
 Předchozí kód:
 
 - Získá aktuální `Instructor` entity z databáze pomocí přes načítání pro `OfficeAssignment` navigační vlastnost.
-- Aktualizace načtený `Instructor` entity hodnotami z vazače modelu. `TryUpdateModel`zabraňuje [overposting](xref:data/ef-rp/crud#overposting).
+- Aktualizace načtený `Instructor` entity hodnotami z vazače modelu. `TryUpdateModel` zabraňuje [overposting](xref:data/ef-rp/crud#overposting).
 - Pokud umístění kanceláře je prázdné, nastaví `Instructor.OfficeAssignment` na hodnotu null. Když `Instructor.OfficeAssignment` je null, související řádek v `OfficeAssignment` tabulka odstraněna.
 
 ### <a name="update-the-instructor-edit-page"></a>Aktualizovat stránku lektorem úpravy
 
 Aktualizace *Pages/Instructors/Edit.cshtml* umístěním office:
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Instructors/Edit1.cshtml?highlight=29-33)]
+[!code-cshtml[](intro/samples/cu/Pages/Instructors/Edit1.cshtml?highlight=29-33)]
 
 Ověřte, že můžete změnit umístění sady vyučující office.
 
@@ -159,7 +159,7 @@ Vyučující může naučit libovolný počet kurzy. V této části přidáte m
 
 ![Stránka upravit lektorem s kurzy](update-related-data/_static/instructor-edit-courses.png)
 
-`Course`a `Instructor` je v relaci m: n. Pokud chcete přidat a odebrat relace, přidávat a odebírat entity z `CourseAssignments` připojení sady entit.
+`Course` a `Instructor` je v relaci m: n. Pokud chcete přidat a odebrat relace, přidávat a odebírat entity z `CourseAssignments` připojení sady entit.
 
 Zaškrtávací políčka povolte změny kurzy, který je přiřazen lektorem. Zaškrtávací políčko se zobrazí na každé kurz v databázi. Kurzy, které je přiřazen lektorem jsou zaškrtnutá políčka. Uživatel může vyberte nebo zrušte zaškrtnutí políček, chcete-li změnit přiřazení kurzu. Kdyby mnohem větší počet kurzů:
 
@@ -170,27 +170,27 @@ Zaškrtávací políčka povolte změny kurzy, který je přiřazen lektorem. Za
 
 Vytvoření *SchoolViewModels/AssignedCourseData.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/AssignedCourseData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/AssignedCourseData.cs)]
 
 `AssignedCourseData` Třída obsahuje dat a vytvořte zaškrtnutí políček u přiřazené kurzy podle lektorem.
 
 Vytvořte *Pages/Instructors/InstructorCoursesPageModel.cshtml.cs* základní třídy:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/InstructorCoursesPageModel.cshtml.cs)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/InstructorCoursesPageModel.cshtml.cs)]
 
-`InstructorCoursesPageModel` Je základní třídou budete používat pro úpravy a vytváření modelů stránky. `PopulateAssignedCourseData`načte všechny `Course` entity k naplnění `AssignedCourseDataList`. Pro každý kurz nastaví kód `CourseID`, název a zda je lektorem přiřazen ke kurzu. A [HashSet](https://docs.microsoft.com/dotnet/api/system.collections.generic.hashset-1) se používá k vytvoření efektivní vyhledávání.
+`InstructorCoursesPageModel` Je základní třídou budete používat pro úpravy a vytváření modelů stránky. `PopulateAssignedCourseData` načte všechny `Course` entity k naplnění `AssignedCourseDataList`. Pro každý kurz nastaví kód `CourseID`, název a zda je lektorem přiřazen ke kurzu. A [HashSet](https://docs.microsoft.com/dotnet/api/system.collections.generic.hashset-1) se používá k vytvoření efektivní vyhledávání.
 
 ### <a name="instructors-edit-page-model"></a>Model stránky upravit vyučující
 
 Aktualizace modelu lektorem upravit stránku s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Edit.cshtml.cs?name=snippet&highlight=1,20-24,30,34,41-999)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Edit.cshtml.cs?name=snippet&highlight=1,20-24,30,34,41-999)]
 
 Předchozí kód zpracovává změny v přiřazení office.
 
 Aktualizace lektorem Razor zobrazení:
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Instructors/Edit.cshtml?highlight=34-59)]
+[!code-cshtml[](intro/samples/cu/Pages/Instructors/Edit.cshtml?highlight=34-59)]
 
 <a id="notepad"></a>
 > [!NOTE]
@@ -208,13 +208,13 @@ Poznámka: Přístup zde použitý k jejich úpravě lektorem kurzu funguje dob�
 
 Aktualizace modelu lektorem vytvořit stránku s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Create.cshtml.cs)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Create.cshtml.cs)]
 
 Předchozí kód je podobná *Pages/Instructors/Edit.cshtml.cs* kódu.
 
 Aktualizujte stránku vytvořit Razor lektorem následující kód:
 
-[!code-cshtml[Main](intro/samples/cu/Pages/Instructors/Create.cshtml?highlight=32-62)]
+[!code-cshtml[](intro/samples/cu/Pages/Instructors/Create.cshtml?highlight=32-62)]
 
 Testovací stránka pro vytvoření lektorem.
 
@@ -222,11 +222,11 @@ Testovací stránka pro vytvoření lektorem.
 
 Aktualizace modelu odstranění stránek s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Delete.cshtml.cs?highlight=5,40-999)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Delete.cshtml.cs?highlight=5,40-999)]
 
 Předchozí kód provede tyto změny:
 
-* Používá přes načítání pro `CourseAssignments` navigační vlastnost. `CourseAssignments`musí být zahrnut nebo nejsou odstraněny při odstranění lektorem. Abyste se vyhnuli nutnosti přečtěte si je, nakonfigurujte kaskádové odstranění v databázi.
+* Používá přes načítání pro `CourseAssignments` navigační vlastnost. `CourseAssignments` musí být zahrnut nebo nejsou odstraněny při odstranění lektorem. Abyste se vyhnuli nutnosti přečtěte si je, nakonfigurujte kaskádové odstranění v databázi.
 
 * Pokud lektorem k odstranění je přiřazen jako správce všech oddělení, odebere přiřazení lektorem z těchto oddělení.
 

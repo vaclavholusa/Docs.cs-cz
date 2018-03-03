@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: c229537e7f533eea2173dbc51b8d0d0e097d434a
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: f6efd838d7b6c837c75f36591a49eab812f9d54c
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="configure-windows-authentication-in-an-aspnet-core-app"></a>Konfigurovat ověřování systému Windows v aplikaci ASP.NET Core
 
@@ -56,7 +56,7 @@ Můžete taky tyto dvě vlastnosti se dá nakonfigurovat v *launchSettings.json*
 
 ## <a name="enable-windows-authentication-with-iis"></a>Povolit ověřování systému Windows pomocí služby IIS
 
-Služba IIS použije [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) (ANCM) pro hostování aplikací ASP.NET Core. ANCM toky ověřování systému Windows do služby IIS ve výchozím nastavení. Konfigurace ověřování systému Windows se provádí v rámci služby IIS, ne projekt aplikace. Následující části vysvětlují, jak pomocí Správce služby IIS ke konfiguraci aplikace ASP.NET Core pomocí ověřování systému Windows.
+Služba IIS použije [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) do hostitele aplikací ASP.NET Core. V modulu toky ověřování systému Windows do služby IIS ve výchozím nastavení. Ověřování systému Windows je konfigurován ve službě IIS, ne aplikace. Následující části vysvětlují, jak pomocí Správce služby IIS ke konfiguraci aplikace ASP.NET Core pomocí ověřování systému Windows.
 
 ### <a name="create-a-new-iis-site"></a>Vytvoří nový web služby IIS
 
@@ -113,7 +113,7 @@ Pokud jsou povolené ověřování systému Windows a anonymní přístup, použ
 V ASP.NET Core 2.x, `[Authorize]` atribut vyžaduje, aby další konfigurace v *Startup.cs* vyzve anonymních požadavků pro ověřování systému Windows. Doporučená konfigurace mírně závisí na webovém serveru, který je používán.
 
 > [!NOTE]
-> Ve výchozím nastavení uživatelé, kteří nemají oprávnění pro přístup k stránky zobrazí se prázdný dokument. [StatusCodePages middleware](xref:fundamentals/error-handling#configuring-status-code-pages) lze nakonfigurovat, aby uživatelům lepší "Přístup byl odepřen".
+> Ve výchozím nastavení můžou uživatelé, kteří nemají oprávnění pro přístup k stránky prázdnou odpověď HTTP 403. [StatusCodePages middleware](xref:fundamentals/error-handling#configuring-status-code-pages) lze nakonfigurovat, aby uživatelům lepší "Přístup byl odepřen".
 
 #### <a name="iis"></a>IIS
 

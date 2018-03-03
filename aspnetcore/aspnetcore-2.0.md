@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: 35d57abd07e83cd5b190572962fbf43aef03a534
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 22494027657aa481790c3d6e78a0b51df301616e
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Co je nového v technologii ASP.NET 2.0 jádra
 
@@ -48,7 +48,7 @@ Balíčky technologii ASP.NET 2.0 základní cíle standardní rozhraní .NET 2.
 
 ## <a name="configuration-update"></a>Aktualizace konfigurace
 
-`IConfiguration` Instance je přidat do kontejneru služby ve výchozím nastavení v technologii ASP.NET 2.0 jádra. `IConfiguration`v služby kontejneru usnadňuje aplikace k načtení hodnoty konfigurace z kontejneru.
+`IConfiguration` Instance je přidat do kontejneru služby ve výchozím nastavení v technologii ASP.NET 2.0 jádra. `IConfiguration` v služby kontejneru usnadňuje aplikace k načtení hodnoty konfigurace z kontejneru.
 
 Informace o stavu plánované dokumentaci najdete v tématu [potíže Githubu](https://github.com/aspnet/Docs/issues/3387).
 
@@ -122,7 +122,7 @@ Informace o stavu plánované dokumentaci najdete v tématu [potíže Githubu](h
 
 ASP.NET Core vždy pomohlo kódování HTML obsah ve výchozím nastavení, ale s novou verzí pořízení krok navíc pomohou zabránit útokům (XSRF) padělání požadavku posílaného mezi weby. ASP.NET Core bude nyní emitování tokeny proti zfalšování ve výchozím nastavení a ověření je na akce POST formuláře a stránkách bez další konfigurace.
 
-Další informace najdete v tématu [útoky brání webů požadavku padělání (XSRF/proti útokům CSRF) v ASP.NET Core](xref:security/anti-request-forgery).
+Další informace najdete v tématu [zabránit webů požadavku padělání (XSRF/proti útokům CSRF) před útoky](xref:security/anti-request-forgery).
 
 ## <a name="automatic-precompilation"></a>Automatická předkompilace
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 12635c66bacdeed7360a9d6c689212bba81439e3
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 8f52f2dc9515761510de870f10ad0975401db74a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Konfigurace aplikace ASP.NET Core
 
@@ -42,15 +42,15 @@ Vzor možnosti používá k reprezentování skupiny související nastavení mo
 
 Následující konzolové aplikace používá zprostředkovatele konfigurace JSON:
 
-[!code-csharp[Main](index/sample/ConfigJson/Program.cs)]
+[!code-csharp[](index/sample/ConfigJson/Program.cs)]
 
 Aplikace načte a zobrazí následující nastavení:
 
-[!code-json[Main](index/sample/ConfigJson/appsettings.json)]
+[!code-json[](index/sample/ConfigJson/appsettings.json)]
 
 Konfigurace se skládá z hierarchický seznam dvojic název hodnota, ve kterých jsou uzly oddělené dvojtečkou. Pokud chcete načíst hodnotu, přístup k `Configuration` indexer klíčem odpovídající položky:
 
-[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=21-22)]
+[!code-csharp[](index/sample/ConfigJson/Program.cs?range=21-22)]
 
 Pro práci s pole ve formátu JSON konfigurace zdrojů, použijte pole indexu jako součást řetězce oddělené dvojtečkou. Následující příklad načte název první položky v předchozím `wizards` pole:
 
@@ -99,11 +99,11 @@ Konfigurace zdroje se čtou v pořadí, zda jste zadali. V předchozím kódu se
 
 Vezměte v úvahu následující *appsettings. Staging.JSON* souboru:
 
-[!code-json[Main](index/sample/appsettings.Staging.json)]
+[!code-json[](index/sample/appsettings.Staging.json)]
 
 Pokud se nastaví prostředí `Staging`, následující `Configure` metoda přečte hodnotu `MyConfig`:
 
-[!code-csharp[Main](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
+[!code-csharp[](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
 
 
 V prostředí se obvykle nastavuje na `Development`, `Staging`, nebo `Production`. Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).
@@ -119,7 +119,7 @@ Požadavky na konfiguraci:
 
 Následující příklad ukazuje, jak použít poskytovatele v paměti a vytvořte vazbu na třídu:
 
-[!code-csharp[Main](index/sample/InMemory/Program.cs)]
+[!code-csharp[](index/sample/InMemory/Program.cs)]
 
 Hodnoty konfigurace se vrátí jako řetězce, ale vazba umožňuje konstrukce objektů. Vazba umožňuje načtení objektů POCO nebo grafy i celý objekt.
 
@@ -127,7 +127,7 @@ Hodnoty konfigurace se vrátí jako řetězce, ale vazba umožňuje konstrukce o
 
 Následující příklad ukazuje [GetValue&lt;T&gt; ](/dotnet/api/microsoft.extensions.configuration.configurationbinder.get?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_ConfigurationBinder_Get__1_Microsoft_Extensions_Configuration_IConfiguration_) metoda rozšíření:
 
-[!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
+[!code-csharp[](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
 ConfigurationBinder `GetValue<T>` metoda umožňuje specifikaci výchozí hodnotu (80 v ukázce). `GetValue<T>` je pro jednoduché scénáře a bez vazby na celý části. `GetValue<T>` Získá skalárních hodnot z `GetSection(key).Value` převést na konkrétního typu.
 
@@ -135,11 +135,11 @@ ConfigurationBinder `GetValue<T>` metoda umožňuje specifikaci výchozí hodnot
 
 Každý objekt v třídě může být rekurzivně vázána. Vezměte v úvahu následující `AppSettings` třídy:
 
-[!code-csharp[Main](index/sample/ObjectGraph/AppSettings.cs)]
+[!code-csharp[](index/sample/ObjectGraph/AppSettings.cs)]
 
 Následující příklad vytvoří vazbu `AppSettings` třídy:
 
-[!code-csharp[Main](index/sample/ObjectGraph/Program.cs?highlight=15-16)]
+[!code-csharp[](index/sample/ObjectGraph/Program.cs?highlight=15-16)]
 
 **ASP.NET Core 1.1** a vyšší můžete použít `Get<T>`, který pracuje s celé oddíly. `Get<T>` může být vhodnější než použití `Bind`. Následující kód ukazuje, jak používat `Get<T>` s v předchozím příkladu:
 
@@ -149,7 +149,7 @@ var appConfig = config.GetSection("App").Get<AppSettings>();
 
 Pomocí následujících *appSettings.JSON určený* souboru:
 
-[!code-json[Main](index/sample/ObjectGraph/appsettings.json)]
+[!code-json[](index/sample/ObjectGraph/appsettings.json)]
 
 Program zobrazí `Height 11`.
 
@@ -188,35 +188,35 @@ V této části se vytvoří základní konfiguraci poskytovatele, který čte d
 
 Definování `ConfigurationValue` entity pro ukládání hodnoty konfigurace v databázi:
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/ConfigurationValue.cs)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/ConfigurationValue.cs)]
 
 Přidat `ConfigurationContext` ukládání a přístup k nakonfigurované hodnoty:
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/ConfigurationContext.cs?name=snippet1)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/ConfigurationContext.cs?name=snippet1)]
 
 Vytvořte třídu, která implementuje [IConfigurationSource](/dotnet/api/Microsoft.Extensions.Configuration.IConfigurationSource):
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
 
 Vytvoření vlastního poskytovatele konfigurace dědění ze [ConfigurationProvider](/dotnet/api/Microsoft.Extensions.Configuration.ConfigurationProvider). Poskytovatel konfigurace inicializuje databázi, pokud je prázdné:
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
 
 Při spuštění ukázky, zobrazí se zvýrazněné hodnoty z databáze ("value_from_ef_1" a "value_from_ef_2").
 
 `EFConfigSource` Rozšíření metodu pro přidání zdroj konfigurace je možné použít:
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkExtensions.cs?highlight=12)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/EntityFrameworkExtensions.cs?highlight=12)]
 
 Následující kód ukazuje, jak používat vlastní `EFConfigProvider`:
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/Program.cs?highlight=21-26)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/Program.cs?highlight=21-26)]
 
 Poznámka: Ukázka přidá vlastní `EFConfigProvider` po poskytovatele JSON, takže všechna nastavení z databáze přepíší nastavení z *appSettings.JSON určený* souboru.
 
 Pomocí následujících *appSettings.JSON určený* souboru:
 
-[!code-json[Main](index/sample/CustomConfigurationProvider/appsettings.json)]
+[!code-json[](index/sample/CustomConfigurationProvider/appsettings.json)]
 
 Zobrazí se následující výstup:
 
@@ -238,7 +238,7 @@ key3=value_from_json_3
 
 Chcete-li aktivovat konfigurace příkazového řádku, zavolejte `AddCommandLine` rozšiřující metody na instanci [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder):
 
-[!code-csharp[Main](index/sample_snapshot//CommandLine/Program.cs?highlight=18,21)]
+[!code-csharp[](index/sample_snapshot//CommandLine/Program.cs?highlight=18,21)]
 
 Spuštění kódu, zobrazí se následující výstup:
 
@@ -262,13 +262,13 @@ Left: 1979
 
 Chcete-li přepsat konfiguraci poskytované jiných poskytovatelů konfigurace s konfigurací příkazového řádku, volejte `AddCommandLine` poslední na `ConfigurationBuilder`:
 
-[!code-csharp[Main](index/sample_snapshot//CommandLine/Program2.cs?range=11-16&highlight=1,5)]
+[!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?range=11-16&highlight=1,5)]
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
 Typická aplikace ASP.NET Core 2.x použít metodu statické pohodlí `CreateDefaultBuilder` k sestavení hostitele:
 
-[!code-csharp[Main](index/sample_snapshot//Program.cs?highlight=12)]
+[!code-csharp[](index/sample_snapshot//Program.cs?highlight=12)]
 
 `CreateDefaultBuilder` načte volitelné konfiguraci z *appSettings.JSON určený*, *appsettings. { Prostředí} .json*, [tajné klíče uživatele](xref:security/app-secrets) (v `Development` prostředí), proměnné prostředí a argumenty příkazového řádku. Poskytovatel konfigurace příkazového řádku se označuje jako poslední. Poslední volání zprostředkovatele umožňuje dříve názvem argumenty příkazového řádku předaný běhu přepsat konfiguraci nastavit pomocí jiných poskytovatelů konfigurace.
 
@@ -286,7 +286,7 @@ Můžete použít aplikaci ASP.NET Core 2.x [WebHostBuilder](/dotnet/api/microso
 
 Vytvoření [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) a volání `AddCommandLine` metodu použít poskytovatele konfigurace příkazového řádku. Poslední volání zprostředkovatele umožňuje dříve názvem argumenty příkazového řádku předaný běhu přepsat konfiguraci nastavit pomocí jiných poskytovatelů konfigurace. Použít konfiguraci [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) s `UseConfiguration` metoda:
 
-[!code-csharp[Main](index/sample_snapshot//CommandLine/Program2.cs?highlight=11,15,19)]
+[!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?highlight=11,15,19)]
 
 ---
 
@@ -361,7 +361,7 @@ Přepínač pravidla klíče slovníku mapování:
 
 V následujícím příkladu `GetSwitchMappings` metoda umožňuje argumentů příkazového řádku pro použití jedné pomlčkou (`-`) klíče předponu a vyhnout se počáteční podklíčů předpony.
 
-[!code-csharp[Main](index/sample/CommandLine/Program.cs?highlight=10-19,32)]
+[!code-csharp[](index/sample/CommandLine/Program.cs?highlight=10-19,32)]
 
 Bez zadání argumentů příkazového řádku, slovníku poskytované `AddInMemoryCollection` nastaví hodnoty konfigurace. Spusťte aplikaci pomocí následujícího příkazu:
 
@@ -432,5 +432,5 @@ Získat přístup ke konfiguraci v rámci `ConfigureServices` nebo `Configure` b
 * [Práce s několika prostředí](xref:fundamentals/environments)
 * [Bezpečné úložiště tajných částí aplikace při vývoji](xref:security/app-secrets)
 * [Hostování v ASP.NET Core](xref:fundamentals/hosting)
-* [Vkládání závislostí](xref:fundamentals/dependency-injection)
+* [Injektáž závislostí](xref:fundamentals/dependency-injection)
 * [Zprostředkovatel konfigurace služby Azure Key Vault](xref:security/key-vault-configuration)

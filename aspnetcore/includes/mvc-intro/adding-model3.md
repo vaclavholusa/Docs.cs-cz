@@ -12,7 +12,7 @@
 
 * V některých národní prostředí budete muset zadat formát data. Viz následující zvýrazněný kód.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateFormat.cs?name=snippet_1&highlight=2,10)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateFormat.cs?name=snippet_1&highlight=2,10)]
 
 Budeme mluvit o `DataAnnotations` dál v tomto kurzu.
 

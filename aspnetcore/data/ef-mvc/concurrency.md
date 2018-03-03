@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: c271488d4da72ba340f3617ac20c7b6da2574c69
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 056d3ffe3f27c45f4da9504dd00afa5e450a86b5
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>Zpracování konfliktů souběžnosti – základní EF s kurz k ASP.NET MVC jádra (8 10)
 
@@ -89,7 +89,7 @@ Ve zbývající části tohoto kurzu přidáte `rowversion` sledování vlastnos
 
 V *Models/Department.cs*, přidejte sledování vlastnost s názvem RowVersion:
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
 
 `Timestamp` Atribut určuje, že v tomto sloupci, budou zahrnuty v Where klauzuli Update a Delete odeslal do databáze. Atribut se nazývá `Timestamp` protože předchozí verze systému SQL Server používá SQL `timestamp` datového typu než SQL `rowversion` jej nahradit. Typ formátu .NET pro `rowversion` je bajtové pole.
 
@@ -120,7 +120,7 @@ Stejně jako dříve pro studenty, kurzy a vyučující vygenerujte řadič odd�
 
 V *DepartmentsController.cs* souboru, změňte všechny čtyři výskyty "FirstMidName" na "FullName" tak, aby oddělení správce rozevírací seznamy bude obsahovat celý název lektorem a nikoli pouze poslední název.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_Dropdown)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_Dropdown)]
 
 ## <a name="update-the-departments-index-view"></a>Aktualizace zobrazení Index oddělení
 
@@ -128,7 +128,7 @@ Generování uživatelského rozhraní stroj vytvořil RowVersion sloupec v inde
 
 Nahraďte kód v *Views/Departments/Index.cshtml* následujícím kódem.
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Index.cshtml?highlight=4,7,44)]
+[!code-html[](intro/samples/cu/Views/Departments/Index.cshtml?highlight=4,7,44)]
 
 To změní záhlaví "Oddělení", odstraní sloupec RowVersion a zobrazuje úplný název místo křestní jméno pro správce.
 
@@ -136,11 +136,11 @@ To změní záhlaví "Oddělení", odstraní sloupec RowVersion a zobrazuje úpl
 
 V obou třídy MetadataExchangeClientMode `Edit` metoda a `Details` metody přidat `AsNoTracking`. V třídy MetadataExchangeClientMode `Edit` metody přidat přes načítání pro správce.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EagerLoading&highlight=2,3)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EagerLoading&highlight=2,3)]
 
 Nahraďte stávající kód httppost `Edit` metoda následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EditPost)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EditPost)]
 
 Kód začíná při pokusu o čtení oddělení aktualizovat. Pokud `SingleOrDefaultAsync` metoda vrátí hodnotu null, z oddělení byla odstraněna jiným uživatelem. V takovém případě kód používá hodnoty odeslaného formuláře vytvořit entitu oddělení tak, aby stránce Upravit můžete zobrazí znovu, zobrazí se chybová zpráva. Jako alternativu nebude muset znovu vytvořit entitu oddělení, pokud se zobrazí pouze se chybová zpráva bez opakované zobrazování pole oddělení.
 
@@ -154,19 +154,19 @@ Pak když rozhraní Entity Framework vytvoří příkaz SQL aktualizace, tento p
 
 Kód v bloku catch pro této výjimky získá ovlivněných oddělení entita, která má aktualizovanými hodnotami z `Entries` vlastnost na objekt výjimky.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=164)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=164)]
 
 `Entries` Kolekce budou mít pouze jeden `EntityEntry` objektu.  Tento objekt můžete získat nové hodnoty zadané uživatelem a hodnot v aktuální databázi.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=165-166)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=165-166)]
 
 Kód přidá vlastní chybové zprávy pro každý sloupec, který má jinou hodnot v databázi z jaké zadané uživatelem na úpravy stránky (pouze jedno pole je tady zobrazené jako stručný výtah).
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=174-178)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=174-178)]
 
 Nakonec kód nastaví `RowVersion` hodnotu `departmentToUpdate` na novou hodnotu načtena z databáze. Tento nový `RowVersion` hodnota bude uložena ve skrytém poli, když úpravy stránka se zobrazí znovu a další čas uživatel klikne na **Uložit**, pouze souběžného zpracování chyb, které dojít, protože vzniká, redisplay upravit stránky.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=199-200)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=199-200)]
 
 `ModelState.Remove` Příkaz není nutná, protože `ModelState` má starý `RowVersion` hodnotu. V zobrazení `ModelState` hodnota pole má přednost před hodnoty vlastností modelu, pokud obě existuje.
 
@@ -178,7 +178,7 @@ V *Views/Departments/Edit.cshtml*, proveďte následující změny:
 
 * Přidejte do seznamu rozevíracího seznamu možnost "Vyberte Administrator".
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Edit.cshtml?highlight=16,34-36)]
+[!code-html[](intro/samples/cu/Views/Departments/Edit.cshtml?highlight=16,34-36)]
 
 ## <a name="test-concurrency-conflicts-in-the-edit-page"></a>Test souběžnosti konfliktů na stránce Upravit
 
@@ -208,13 +208,13 @@ Rozhraní Entity Framework pro stránku odstranit zjistí souběžnosti konflikt
 
 V *DepartmentsController.cs*, nahraďte třídy MetadataExchangeClientMode `Delete` metoda následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
 
 Metodu je možné zadat volitelný parametr, který označuje, zda stránky se se zobrazí znovu po chybě souběžnosti. Pokud tento příznak má hodnotu true a oddělení zadaný už existuje, byla odstraněna jiným uživatelem. V takovém případě kód přesměruje na indexovou stránku.  Pokud tento příznak má hodnotu true a oddělení neexistuje, bylo změněno jiným uživatelem. V takovém případě kód odešle chybovou zprávu pomocí zobrazení `ViewData`.  
 
 Nahraďte kód v HttpPost `Delete` – metoda (s názvem `DeleteConfirmed`) s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeletePost&highlight=1,3,5-8,11-18)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeletePost&highlight=1,3,5-8,11-18)]
 
 V automaticky generovaný kód, který právě nahrazen tato metoda povoleny pouze ID záznamu:
 
@@ -239,7 +239,7 @@ Pokud je chyba souběžnosti zachycena, kód znovu zobrazí stránka potvrzení 
 
 V *Views/Departments/Delete.cshtml*, nahraďte následující kód, který přidá na pole zpráva Chyba a skrytá pole vlastností DepartmentID a RowVersion automaticky generovaný kód. Změny se zvýrazněnou.
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Delete.cshtml?highlight=9,38,44,45,48)]
+[!code-html[](intro/samples/cu/Views/Departments/Delete.cshtml?highlight=9,38,44,45,48)]
 
 Díky následující změny:
 
@@ -269,11 +269,11 @@ Můžete volitelně vyčistit automaticky generovaný kód v podrobnostech a vyt
 
 Nahraďte kód v *Views/Departments/Details.cshtml* odstranění RowVersion sloupce a zobrazit úplný název tohoto správce.
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Details.cshtml?highlight=35)]
+[!code-html[](intro/samples/cu/Views/Departments/Details.cshtml?highlight=35)]
 
 Nahraďte kód v *Views/Departments/Create.cshtml* pro přidání do rozevíracího seznamu vyberte možnost.
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Create.cshtml?highlight=32-34)]
+[!code-html[](intro/samples/cu/Views/Departments/Create.cshtml?highlight=32-34)]
 
 ## <a name="summary"></a>Souhrn
 

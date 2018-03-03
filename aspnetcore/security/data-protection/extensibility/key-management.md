@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: 68f590dffe8bb98813f974a5ecb9b270a5419ddf
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bcc4984efcee9a6ffd0f3b503a38089c78adf5e8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="key-management-extensibility"></a>Rozšíření správy klíčů
 
@@ -67,7 +67,7 @@ Kromě toho `IKey` zpřístupní `CreateEncryptorInstance` metodu, která slouž
 
 `XmlKeyManager` Typ je v poli konkrétní implementace `IKeyManager`. Poskytuje několik užitečné zařízení, včetně klíče úschově a šifrovací klíče v klidovém stavu. Klíče v tomto systému jsou reprezentovány jako elementy XML (konkrétně [XElement](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/xelement-class-overview)).
 
-`XmlKeyManager`závisí na několik součástí vyřízení její úkoly:
+`XmlKeyManager` závisí na několik součástí vyřízení její úkoly:
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -75,17 +75,17 @@ Kromě toho `IKey` zpřístupní `CreateEncryptorInstance` metodu, která slouž
 
 * `IXmlRepository`, které ovládací prvky, kde jsou klíče uchovávané v úložišti.
 
-* `IXmlEncryptor`[Nepovinné], což umožňuje šifrování klíče v klidovém stavu.
+* `IXmlEncryptor` [Nepovinné], což umožňuje šifrování klíče v klidovém stavu.
 
-* `IKeyEscrowSink`[Nepovinné], který poskytuje služby klíče úschově.
+* `IKeyEscrowSink` [Nepovinné], který poskytuje služby klíče úschově.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
 * `IXmlRepository`, které ovládací prvky, kde jsou klíče uchovávané v úložišti.
 
-* `IXmlEncryptor`[Nepovinné], což umožňuje šifrování klíče v klidovém stavu.
+* `IXmlEncryptor` [Nepovinné], což umožňuje šifrování klíče v klidovém stavu.
 
-* `IKeyEscrowSink`[Nepovinné], který poskytuje služby klíče úschově.
+* `IKeyEscrowSink` [Nepovinné], který poskytuje služby klíče úschově.
 
 ---
 
@@ -121,7 +121,7 @@ Při provádění `CreateNewKey`, `IAuthenticatedEncryptorConfiguration` kompone
 
    *Načítání klíče nebo GetAllKeys*
 
-Při provádění `GetAllKeys`, XML dokumenty představující klíče a odvolání se načítají z základní `IXmlRepository`. Pokud jsou tyto dokumenty zašifrované, systém bude automaticky jejich dešifrování. `XmlKeyManager`vytvoří odpovídající `IAuthenticatedEncryptorDescriptorDeserializer` instance k deserializaci dokumenty zpět do `IAuthenticatedEncryptorDescriptor` instance, které jsou pak uzavřen do individuální `IKey` instance. Tato kolekce `IKey` instance je vrácen volajícímu.
+Při provádění `GetAllKeys`, XML dokumenty představující klíče a odvolání se načítají z základní `IXmlRepository`. Pokud jsou tyto dokumenty zašifrované, systém bude automaticky jejich dešifrování. `XmlKeyManager` vytvoří odpovídající `IAuthenticatedEncryptorDescriptorDeserializer` instance k deserializaci dokumenty zpět do `IAuthenticatedEncryptorDescriptor` instance, které jsou pak uzavřen do individuální `IKey` instance. Tato kolekce `IKey` instance je vrácen volajícímu.
 
 Další informace o konkrétní elementy XML lze nalézt v [úložiště klíčů formátovat dokument](../implementation/key-storage-format.md#data-protection-implementation-key-storage-format).
 
@@ -222,4 +222,4 @@ Následující vzorový kód ukazuje vytvoření a registrace `IKeyEscrowSink` k
 > [!NOTE]
 > Chcete-li tuto ukázku spustit, musíte být v doméně systému Windows 8 / Windows Server 2012 počítače a řadič domény musí být Windows Server 2012 nebo novější.
 
-[!code-csharp[Main](key-management/samples/key-management-extensibility.cs)]
+[!code-csharp[](key-management/samples/key-management-extensibility.cs)]

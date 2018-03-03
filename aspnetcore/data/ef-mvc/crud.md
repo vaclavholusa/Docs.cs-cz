@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/crud
-ms.openlocfilehash: a7e0d4ff3d57e42dd7e33ffb5f26f2143520be87
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: a586fdde07ecf349d7523d43a623501af62257a2
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Vytvářet, číst, aktualizovat a odstraňovat – základní EF s kurz k ASP.NET MVC jádra (2 10)
 
@@ -42,7 +42,7 @@ Automaticky generovaný kód pro studenty indexovou stránku vynecháno `Enrollm
 
 V *Controllers/StudentsController.cs*, metoda akce podrobnosti o zobrazení používá `SingleOrDefaultAsync` metoda pro načtení jedné `Student` entity. Přidejte kód, který volá `Include`. `ThenInclude`, a `AsNoTracking` metod, jak je znázorněno v následující zvýrazněný kód.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Details&highlight=8-12)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Details&highlight=8-12)]
 
 `Include` a `ThenInclude` metody způsobit kontext k načtení `Student.Enrollments` navigační vlastnost a v rámci každé registrace `Enrollment.Course` navigační vlastnost.  Dozvíte více o těchto metodách v [čtení souvisejících dat](read-related-data.md) kurzu.
 
@@ -52,7 +52,7 @@ V *Controllers/StudentsController.cs*, metoda akce podrobnosti o zobrazení pou�
 
 Hodnota klíče, který je předán `Details` metoda pochází z *směrování dat*. Data trasy, která jsou data, která vazač modelu nalezen v segment adresy URL. Například výchozí trasa určuje kontroler, akci a id segmenty:
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_Route&highlight=5)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_Route&highlight=5)]
 
 V následující adresu URL výchozí trasu mapuje lektorem jako řadič, Index jako akce a 1, jako je id; Toto jsou hodnot dat trasy.
 
@@ -114,13 +114,13 @@ Spuštění aplikace, vyberte **studenty** a klikněte **podrobnosti** odkaz pro
 
 V *StudentsController.cs*, upravte HttpPost `Create` metoda pomocí bloku try-catch – přidávání a odebírání ID z `Bind` atribut.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
 
 Tento kód přidá Student entity vytvořené vazač modelu ASP.NET MVC v entitě studenty nastavení a pak uloží změny do databáze. (Vazač modelu odkazuje funkce ASP.NET MVC, která usnadňuje práci s data odeslaná formuláře; vazač modelu převádí hodnoty odeslaného formuláře pro typy CLR a předává je na metodu akce v parametrech. V tomto případě vazač modelu vytvoří instanci Student entity můžete pomocí hodnoty vlastností z kolekce formuláře.)
 
 Můžete odebrat `ID` z `Bind` atributů, protože ID má hodnotu primárního klíče, který systému SQL Server bude nastavení automaticky při vložit řádek. Vstup od uživatele nemá nastavit hodnotu ID.
 
-Jiné než `Bind` atribut try-catch – blok je pouze změny, které jste udělali automaticky generovaný kód. Pokud se výjimka, která je odvozena z `DbUpdateException` je zachycena, zatímco se ukládají změny, se zobrazí obecnou chybovou zprávu. `DbUpdateException`výjimky jsou někdy způsobeny něco externí do aplikací, nikoli chybě programování, takže uživatel se doporučuje a zkuste to znovu. I když není implementována v této ukázce, produkční kvality aplikace by zaprotokolování výjimky. Další informace najdete v tématu **protokolu přehledy** kapitoly [monitorování a Telemetrie (vytváření reálných cloudových aplikací s Azure)](https://docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).
+Jiné než `Bind` atribut try-catch – blok je pouze změny, které jste udělali automaticky generovaný kód. Pokud se výjimka, která je odvozena z `DbUpdateException` je zachycena, zatímco se ukládají změny, se zobrazí obecnou chybovou zprávu. `DbUpdateException` výjimky jsou někdy způsobeny něco externí do aplikací, nikoli chybě programování, takže uživatel se doporučuje a zkuste to znovu. I když není implementována v této ukázce, produkční kvality aplikace by zaprotokolování výjimky. Další informace najdete v tématu **protokolu přehledy** kapitoly [monitorování a Telemetrie (vytváření reálných cloudových aplikací s Azure)](https://docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).
 
 `ValidateAntiForgeryToken` Atribut pomáhá zabránit útokům (proti útokům CSRF) padělání požadavku posílaného mezi weby. Token je automaticky vloženy do zobrazení pomocí [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper) a je součástí formulář je odeslán uživatelem. Token je ověřen `ValidateAntiForgeryToken` atribut. Další informace o proti útokům CSRF najdete v tématu [požadavek proti padělání](../../security/anti-request-forgery.md).
 
@@ -162,7 +162,7 @@ Zadejte názvy a datum. Zkuste zadat neplatné datum, pokud prohlížeč umožň
 
 Toto je ověřování na straně serveru, kterou můžete získat ve výchozím nastavení; novější kurzu uvidíte, jak přidat atributy, které bude také generovat kód pro ověřování na straně klienta. Následující zvýrazněný kód ukazuje kontrolu ověření modelu v `Create` metoda.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=8)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=8)]
 
 Změňte na platnou hodnotu data a klikněte na tlačítko **vytvořit** zobrazíte nové student se zobrazí v **Index** stránky.
 
@@ -174,7 +174,7 @@ V *StudentController.cs*, třídy MetadataExchangeClientMode `Edit` – metoda (
 
 Metoda HttpPost upravit akce nahraďte následujícím kódem.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ReadFirst)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ReadFirst)]
 
 Tyto změny implementovat zabránit overposting osvědčeným postupem zabezpečení. Scaffolder generované `Bind` atribut a přidat entity vytvořené vazač modelu pro sadu s entit `Modified` příznak. Pro mnoho scénářů není doporučeno kódu, protože `Bind` atribut vymaže všechny existující data v polích není uvedený v `Include` parametr.
 
@@ -188,7 +188,7 @@ V důsledku těchto změn podpis metoda HttpPost `Edit` metoda je stejná jako t
 
 Doporučené upravit kód HttpPost zajistí aktualizovat pouze změněné sloupce a uchovává data ve vlastnosti, které nechcete, aby zahrnuté pro vazbu modelu. Přístup pro čtení první však vyžaduje další databáze pro čtení a může mít za následek složitější kód pro zpracování konfliktů souběžnosti. Alternativou je připojit entity vytvořené vazač modelu pro kontext EF a označte ji jako upravená. (Neaktualizovat projekt s tímto kódem, ho se zobrazují pouze pro ilustraci volitelné přístup.) 
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_CreateAndAttach)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_CreateAndAttach)]
 
 Tento postup můžete použít, pokud webová stránka uživatelského rozhraní obsahuje všechna pole v entitě a můžete aktualizovat některý z nich.
 
@@ -236,7 +236,7 @@ Blok try-catch – přidáte do HttpPost `Delete` metodu ke zpracování všechn
 
 Nahraďte třídy MetadataExchangeClientMode `Delete` metoda akce s následující kód, který spravuje zasílání zpráv o chybách.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteGet&highlight=1,9,16-21)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteGet&highlight=1,9,16-21)]
 
 Tento kód je možné zadat volitelný parametr, který označuje, zda byla volána metoda po selhání uložte změny. Tento parametr je false, pokud třídy MetadataExchangeClientMode `Delete` metoda je volána bez předchozí chybě. Když je volána metodou HttpPost `Delete` metoda v odpovědi na chybu aktualizace databáze, tento parametr hodnotu true a chybovou zprávu, je předaná do zobrazení.
 
@@ -244,7 +244,7 @@ Tento kód je možné zadat volitelný parametr, který označuje, zda byla vol�
 
 Nahraďte HttpPost `Delete` metoda akce (s názvem `DeleteConfirmed`) s následujícím kódem, který provede operaci skutečného odstranění a zachytí všechny chyby aktualizace databáze.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithReadFirst&highlight=6,8-11,13-14,18-23)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithReadFirst&highlight=6,8-11,13-14,18-23)]
 
 Tento kód načte vybrané entity, pak zavolá `Remove` metodu a nastavit stav entity `Deleted`. Když `SaveChanges` nazývá SQL odstranit se vygeneruje příkaz.
 
@@ -252,7 +252,7 @@ Tento kód načte vybrané entity, pak zavolá `Remove` metodu a nastavit stav e
 
 Pokud je zvýšení výkonu v aplikaci vysoký počet prioritu, se můžete vyhnout nepotřebných dotazů SQL vytváření instancí Student entitu pomocí pouze primární klíč, hodnotu a pak nastavení stavu entity na `Deleted`. To je všechno, která rozhraní Entity Framework potřebuje, aby odstranit entitu. (Neuvádějte tento kód ve vašem projektu, se zde pouze k objasnění alternativu.)
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithoutReadFirst&highlight=7-8)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithoutReadFirst&highlight=7-8)]
 
 Pokud entita má související data, která má být rovněž odstraněn, ujistěte se, že kaskádové odstranění je nakonfigurovaný v databázi. S tímto přístupem k odstranění entity nemusí EF Uvědomte si, že se entit v relaci k odstranění.
 
@@ -272,7 +272,7 @@ Klikněte na tlačítko **odstranit**. Bez odstraněné student se zobrazí str�
 
 Tím se uvolní prostředky, které obsahuje připojení k databázi, instance kontextu je nutné odstranit co nejdříve po dokončení s ním. Předdefinované ASP.NET Core [vkládání závislostí](../../fundamentals/dependency-injection.md) postará tuto úlohu pro vás.
 
-V *Startup.cs*, zavoláte [metoda rozšíření AddDbContext](https://github.com/aspnet/EntityFrameworkCore/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs) zřídit `DbContext` třídy v kontejneru ASP.NET DI. Že metoda nastaví životnost služby `Scoped` ve výchozím nastavení. `Scoped`Doba života objektu kontextu se shoduje s webovou žádost životnosti znamená a `Dispose` automaticky volání metody na konci webový požadavek.
+V *Startup.cs*, zavoláte [metoda rozšíření AddDbContext](https://github.com/aspnet/EntityFrameworkCore/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs) zřídit `DbContext` třídy v kontejneru ASP.NET DI. Že metoda nastaví životnost služby `Scoped` ve výchozím nastavení. `Scoped` Doba života objektu kontextu se shoduje s webovou žádost životnosti znamená a `Dispose` automaticky volání metody na konci webový požadavek.
 
 ## <a name="handling-transactions"></a>Zpracování transakcí
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: f091370bc85a37eeaac1291a2fdc6ea85164f148
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0a3443e8187d46992f55dc537d0f400c6771c50c
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>Úvod do používání Gulp v ASP.NET Core 
 
@@ -204,7 +204,7 @@ Vazby nastavit s **Průzkumník Spouštěče úloh** jsou uloženy ve formě kom
 </Target>
 ```
 
-Teď čistou úlohy je spuštěn při spuštění projektu v sadě Visual Studio nebo pomocí příkazového řádku `dotnet run` příkazu (Spustit `npm install` první).
+Teď čistou úlohy je spuštěn při spuštění projektu v sadě Visual Studio nebo pomocí příkazového řádku [dotnet spustit](/dotnet/core/tools/dotnet-run) příkazu (Spustit `npm install` první).
 
 ## <a name="defining-and-running-a-new-task"></a>Definování a spuštěním nové úlohy
 

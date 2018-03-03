@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 985cc38b10ef830b8274e40ad5f7050157fd4d86
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 55221846422def25452bc148b68573a02299bbfe
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>Dědičnost – základní EF s kurz k ASP.NET MVC jádra (9, 10)
 
@@ -60,23 +60,23 @@ Tento kurz ukazuje, jak implementovat dědičnost TPH. TPH je pouze dědičnosti
 
 Ve složce modely vytvořte Person.cs a nahraďte kód šablony s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/Person.cs)]
+[!code-csharp[](intro/samples/cu/Models/Person.cs)]
 
 ## <a name="make-student-and-instructor-classes-inherit-from-person"></a>Ujistěte se, studenty a lektorem třídy dědí osoba
 
 V *Instructor.cs*, lektorem třída odvozena od třídy osoby a odeberte pole klíče a název. Kód bude vypadat jako v následujícím příkladu:
 
-[!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_AfterInheritance&highlight=8)]
+[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_AfterInheritance&highlight=8)]
 
 Provést stejné změny v *Student.cs*.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_AfterInheritance&highlight=8)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_AfterInheritance&highlight=8)]
 
 ## <a name="add-the-person-entity-type-to-the-data-model"></a>Přidat typ uživatel entity do datového modelu
 
 Přidejte typ entity osoby k *SchoolContext.cs*. Jsou vyznačené nové řádky.
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_AfterInheritance&highlight=19,30)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_AfterInheritance&highlight=19,30)]
 
 To je vše, chcete-li nakonfigurovat tabulky za hierarchie dědičnosti vyžadující rozhraní Entity Framework. Jak zjistíte, když se aktualizuje databázi, bude mít tabulku osoba místo Student a lektorem tabulky.
 
@@ -92,7 +92,7 @@ Nemůžete spustit `database update` ještě příkaz. Tento příkaz povede ke 
 
 Otevřete *migrace nebo\<časové razítko > _Inheritance.cs* a nahraďte `Up` metoda následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20170216215525_Inheritance.cs?name=snippet_Up)]
+[!code-csharp[](intro/samples/cu/Migrations/20170216215525_Inheritance.cs?name=snippet_Up)]
 
 Tento kód má na starosti následující úlohy aktualizace databáze:
 

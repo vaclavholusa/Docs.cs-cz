@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/limited-lifetime-payloads
-ms.openlocfilehash: 812d0373d24c8578bae83db4876549246f189be3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d631851b5b933d75c37a308f492840e3442e6f1a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="limiting-the-lifetime-of-protected-payloads"></a>Omezení délky trvání chráněných datových částí
 
@@ -25,7 +25,7 @@ Pro zjednodušení pro naše cílová skupina vývojáře balíček [Microsoft.A
 
 `ITimeLimitedDataProtector` Rozhraní je základní rozhraní pro ochranu a při rušení časově omezené / samoobslužné zneplatněním obsažených datových částí. K vytvoření instance `ITimeLimitedDataProtector`, je nutné nejdříve instanci běžný [IDataProtector](overview.md) sestavený s konkrétním účelem. Jednou `IDataProtector` instance je k dispozici, volejte `IDataProtector.ToTimeLimitedDataProtector` metoda rozšíření a vraťte se zpět ochranného zařízení s možnostmi předdefinované vypršení platnosti.
 
-`ITimeLimitedDataProtector`poskytuje následující metody rozšíření a prostor pro rozhraní API:
+`ITimeLimitedDataProtector` poskytuje následující metody rozšíření a prostor pro rozhraní API:
 
 * CreateProtector (účel řetězec): ITimeLimitedDataProtector - toto rozhraní API je podobná existující `IDataProtectionProvider.CreateProtector` v tom, že může sloužit k vytvoření [účel řetězy](purpose-strings.md) z ochranného kořenové časově omezené.
 
@@ -58,4 +58,4 @@ Kromě základních `Protect` metody, které trvat jenom jako prostý text, exis
 
 Ukázka níže používá [cesty bez DI kódu](../configuration/non-di-scenarios.md) pro vytvoření instance dat ochrany systému. Pokud chcete tuto ukázku spustit, ujistěte se, že jste přidali nejprve odkaz na balíček Microsoft.AspNetCore.DataProtection.Extensions.
 
-[!code-csharp[Main](limited-lifetime-payloads/samples/limitedlifetimepayloads.cs)]
+[!code-csharp[](limited-lifetime-payloads/samples/limitedlifetimepayloads.cs)]

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 1819aff0e6ae68ad3c609466e52fcb6510fe1dcd
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 368b1e50242dedfd3a4128324934e483e6b4eb30
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
@@ -21,7 +21,7 @@ Poznámka: Šablony ASP.NET 2.0 základní obsahují *modely* složky.
 
 Klikněte pravým tlačítkem myši *modely* složky > **přidat** > **třída**. Název třídy **film** a přidejte následující vlastnosti:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 `ID` Pole je vyžadováno pro databázi pro primární klíč. 
 
@@ -103,7 +103,7 @@ Update-Database
 
 `Update-Database` Příkaz spustí `Up` metoda v *migrace nebo\<časové razítko > _Initial.cs* souboru, který vytvoří databázi.
 
-<a name="cli"></a>Místo pomocí PMC můžete provést kroky předcházející pomocí rozhraní příkazového řádku (CLI):
+<a name="cli"></a> Místo pomocí PMC můžete provést kroky předcházející pomocí rozhraní příkazového řádku (CLI):
 
 * Přidat [EF základní nástrojů](xref:data/ef-mvc/migrations#entity-framework-core-nuget-packages-for-migrations) k *.csproj* souboru.
 * Spusťte následující příkazy z konzoly (v adresáři projektu):
@@ -116,7 +116,7 @@ Update-Database
 
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
 
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model4.md)]
 

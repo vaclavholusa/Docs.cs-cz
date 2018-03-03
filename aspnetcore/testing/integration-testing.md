@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 4a5f14e11de6ed91f67808c3ea8c78a7b1d43b03
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8c28f1b4f66433eaebd9e474e784ecf3f1ac271b
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>Integrace testování v ASP.NET Core
 
@@ -47,7 +47,7 @@ ASP.NET Core zahrnuje hostitele test, který lze přidat do projektů testován�
 
 Jednou `Microsoft.AspNetCore.TestHost` balíčku je zahrnutý v projektu, budete moct vytvořit a nakonfigurovat `TestServer` v testy. Následující test ukazuje, jak ověřit, že požadavku odeslaného do kořenového adresáře webu vrátí "Hello, World!" a je třeba provést úspěšně u výchozí šablonu ASP.NET Core prázdný Web vytvořili pomocí sady Visual Studio.
 
-[!code-csharp[Main](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebDefaultRequestShould.cs?name=snippet_WebDefault&highlight=7,16,22)]
+[!code-csharp[](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebDefaultRequestShould.cs?name=snippet_WebDefault&highlight=7,16,22)]
 
 Tento test je pomocí vzoru Assert Act uspořádání. Uspořádat krok se provádí v konstruktor, který vytvoří instanci `TestServer`. Nakonfigurované `WebHostBuilder` se použije k vytvoření `TestHost`; v tomto příkladu `Configure` metoda ze systému v rámci testovací (SUT) `Startup` předaný – třída `WebHostBuilder`. Tato metoda se použije ke konfiguraci kanálu žádosti o služby `TestServer` stejně jako na tom, jak by SUT server konfigurován.
 
@@ -55,7 +55,7 @@ V části Akce testu je vznesen požadavek `TestServer` instance "/" cesty, a od
 
 Teď můžete přidat několik dalších integrace testů, abyste se ujistili, že prime kontrola funkce fungovat prostřednictvím webové aplikace:
 
-[!code-csharp[Main](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebCheckPrimeShould.cs?name=snippet_CheckPrime)]
+[!code-csharp[](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebCheckPrimeShould.cs?name=snippet_CheckPrime)]
 
 Všimněte si, který se snažíte není skutečně otestovat správnost kontrolu prime číslo s tyto testy ale spíš webové aplikace je to, co očekávat. Už máte pokrytí test jednotky, poskytující spolehlivosti v `PrimeService`, jak je vidět tady:
 
@@ -134,13 +134,13 @@ Chcete povolit cestu middleware použije zadat jako parametr, tak třída middle
 > [!NOTE]
 > Vzhledem k tomu, že middleware závisí na `PrimeService` službu, kterou žádáte také instance této služby s konstruktorem. Rozhraní bude poskytovat této služby prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection), za předpokladu, že byl nakonfigurován, například v `ConfigureServices`.
 
-[!code-csharp[Main](../testing/integration-testing/sample/src/PrimeWeb/Middleware/PrimeCheckerMiddleware.cs?highlight=39-63)]
+[!code-csharp[](../testing/integration-testing/sample/src/PrimeWeb/Middleware/PrimeCheckerMiddleware.cs?highlight=39-63)]
 
 Vzhledem k tomu, že tento middleware funguje jako koncový bod v řetězu delegáta žádost, když odpovídá jeho cesty, je bez volání `_next.Invoke` když tento middleware zpracuje požadavek.
 
 Pomocí tohoto middlewaru v místě a některé užitečné rozšiřující metody vytvoření usnadnění její konfiguraci, refactored `Configure` metoda vypadá takto:
 
-[!code-csharp[Main](../testing/integration-testing/sample/src/PrimeWeb/Startup.cs?highlight=9&range=19-33)]
+[!code-csharp[](../testing/integration-testing/sample/src/PrimeWeb/Startup.cs?highlight=9&range=19-33)]
 
 Následující tento refaktoring jste jisti, že webové aplikace stále funguje, jako předtím, protože integrace testů jsou všechny předávání.
 

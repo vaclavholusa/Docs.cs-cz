@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility
-ms.openlocfilehash: 5e7e807a0107f1f500d43b5ffd4362b11f53118b
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 2d5706f4a2b22980618f0c5c546e16774e0e16b0
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="factory-based-middleware-activation-in-aspnet-core"></a>Aktivace na základě Factory middlewaru v ASP.NET Core
 
@@ -22,14 +22,14 @@ Podle [Luke Latham](https://github.com/guardrex)
 
 [IMiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.imiddlewarefactory)/[IMiddleware](/dotnet/api/microsoft.aspnetcore.http.imiddleware) je bod rozšiřitelnosti pro [middleware](xref:fundamentals/middleware/index) aktivace.
 
-`UseMiddleware`rozšiřující metody zkontrolovat, pokud se implementuje middleware registrovaného typu `IMiddleware`. Pokud ano, `IMiddlewareFactory` instance zaregistrován v kontejneru se používá k překladu `IMiddleware` implementace místo použití logiku aktivace založené na konvenci middleware. Middleware je zaregistrován jako služba vymezenou nebo přechodný v kontejneru služby aplikace.
+`UseMiddleware` rozšiřující metody zkontrolovat, pokud se implementuje middleware registrovaného typu `IMiddleware`. Pokud ano, `IMiddlewareFactory` instance zaregistrován v kontejneru se používá k překladu `IMiddleware` implementace místo použití logiku aktivace založené na konvenci middleware. Middleware je zaregistrován jako služba vymezenou nebo přechodný v kontejneru služby aplikace.
 
 Výhody:
 
 * Aktivace na základě požadavku (vkládání vymezená služeb)
 * Silného typování middlewaru
 
-`IMiddleware`Každý požadavek, je aktivovaná, takže vymezené služby může vložit do konstruktor middlewaru.
+`IMiddleware` Každý požadavek, je aktivovaná, takže vymezené služby může vložit do konstruktor middlewaru.
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/extensibility/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
@@ -46,15 +46,15 @@ Implementace middlewaru fungovat stejně jako a zaznamenejte hodnotu poskytovano
 
 Middleware aktivovat pomocí konvence:
 
-[!code-csharp[Main](extensibility/sample/Middleware/ConventionalMiddleware.cs?name=snippet1)]
+[!code-csharp[](extensibility/sample/Middleware/ConventionalMiddleware.cs?name=snippet1)]
 
 Middleware aktivován `MiddlewareFactory`:
 
-[!code-csharp[Main](extensibility/sample/Middleware/IMiddlewareMiddleware.cs?name=snippet1)]
+[!code-csharp[](extensibility/sample/Middleware/IMiddlewareMiddleware.cs?name=snippet1)]
 
 Rozšíření jsou vytvořeny pro middlewares:
 
-[!code-csharp[Main](extensibility/sample/Middleware/MiddlewareExtensions.cs?name=snippet1)]
+[!code-csharp[](extensibility/sample/Middleware/MiddlewareExtensions.cs?name=snippet1)]
 
 Není možné předat objekty factory aktivuje middlewaru s `UseMiddleware`:
 
@@ -69,11 +69,11 @@ public static IApplicationBuilder UseIMiddlewareMiddleware(
 
 Middleware factory aktivuje je přidat do kontejneru integrované v *Startup.cs*:
 
-[!code-csharp[Main](extensibility/sample/Startup.cs?name=snippet1&highlight=6)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet1&highlight=6)]
 
 Obě middlewares jsou zaregistrovány v kanálu zpracování požadavku v `Configure`:
 
-[!code-csharp[Main](extensibility/sample/Startup.cs?name=snippet2&highlight=12-13)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=12-13)]
 
 ## <a name="imiddlewarefactory"></a>IMiddlewareFactory
 
@@ -84,4 +84,4 @@ Výchozí hodnota `IMiddlewareFactory` implementace [MiddlewareFactory](/dotnet/
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Middleware](xref:fundamentals/middleware/index)
-* [Aktivace na základě Factory middlewaru s kontejner třetích stran](xref:fundamentals/middleware/extensibility-third-party-container)
+* [Middleware aktivaci s použitím kontejner třetích stran](xref:fundamentals/middleware/extensibility-third-party-container)

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/index
-ms.openlocfilehash: fbef1545f3cdcbe3887a5dd9ceca0e9b420193f1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b9640e33043d452246f81b7968996bda1f7474ff
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="authentication"></a>Ověřování
 
@@ -22,6 +22,8 @@ ms.lasthandoff: 01/30/2018
 * [Úvod do systému Identity](identity.md)
 
 * [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](social/index.md)
+
+* [Povolení ověřování pomocí protokolu WS-Federation](ws-federation.md)
 
 * [Zapnutí generování kódu QR v systému Identity](identity-enable-qrcodes.md)
 

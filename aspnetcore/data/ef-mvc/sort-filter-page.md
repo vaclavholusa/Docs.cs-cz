@@ -8,11 +8,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: feb4a50c9e5602064e7d493b6991485949903f47
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: d5a9ac83b30a8173f9229e512bf843d93c11baea
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>Řazení, filtrování, stránkování a seskupení – základní EF s kurz k ASP.NET MVC jádra (3 10)
 
@@ -34,7 +34,7 @@ K přidání řazení Student indexovou stránku, změníte `Index` metoda stude
 
 V *StudentsController.cs*, nahraďte `Index` metoda následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly)]
 
 Tento kód přijme `sortOrder` parametr z řetězce dotazu v adrese URL. Hodnotu řetězce dotazu je poskytovaný ASP.NET MVC základní jako parametr pro metodu akce. Parametr bude řetězec, který je buď "Name" nebo "Datum", může volitelně následovat podtržítkem a řetězec "desc" Zadejte sestupném pořadí. Výchozí pořadí řazení je vzestupně.
 
@@ -42,7 +42,7 @@ Při prvním vyžádání stránky indexu není žádný řetězec dotazu. Stude
 
 Dva `ViewData` prvky (NameSortParm a DateSortParm) se zobrazením používají ke konfiguraci hypertextové odkazy záhlaví sloupce s řetězcové hodnoty odpovídající dotazu.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly&highlight=3-4)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly&highlight=3-4)]
 
 Jedná se o Ternární příkazy. První z nich určuje, že pokud `sortOrder` parametr má hodnotu null nebo prázdná, musí být NameSortParm nastavena na "name_desc"; jinak je potřeba ho nastavit na prázdný řetězec. Tyto dva příkazy zapnutí zobrazení nastavit sloupec hypertextové odkazy záhlaví následujícím způsobem:
 
@@ -77,7 +77,7 @@ Pokud chcete přidat, filtrování studenty indexovou stránku, budete přidat t
 
 V *StudentsController.cs*, nahraďte `Index` metoda následujícím kódem (změny se zvýrazněnou).
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
 
 Přidali jste `searchString` parametru `Index` metoda. Hodnota řetězce vyhledávání byl přijat z textové pole, které přidáte do zobrazení indexu. Jste také přidali do příkazu LINQ where klauzuli, která vybere pouze studenty, jejichž křestní jméno nebo příjmení obsahuje řetězec pro hledání. Příkaz, který přidá where klauzule se spustí pouze v případě, že je hodnota pro vyhledávání.
 
@@ -116,7 +116,7 @@ Pokud chcete přidat stránkování studenty indexovou stránku, vytvoříte `Pa
 
 Ve složce projektu vytvořte `PaginatedList.cs`a pak nahraďte kód šablony s následujícím kódem.
 
-[!code-csharp[Main](intro/samples/cu/PaginatedList.cs)]
+[!code-csharp[](intro/samples/cu/PaginatedList.cs)]
 
 `CreateAsync` Metody v tomto kódu trvá velikost stránky a číslo stránky a použije příslušné `Skip` a `Take` příkazy `IQueryable`. Když `ToListAsync` se volá na `IQueryable`, vrátí seznam obsahující pouze k požadované stránce. Vlastnosti `HasPreviousPage` a `HasNextPage` slouží k povolení nebo zakázání **předchozí** a **Další** stránkování tlačítka.
 
@@ -126,7 +126,7 @@ A `CreateAsync` metoda se používá namísto konstruktor k vytvoření `Paginat
 
 V *StudentsController.cs*, nahraďte `Index` metoda následujícím kódem.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilterPage&highlight=1-5,7,11-18,45-46)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilterPage&highlight=1-5,7,11-18,45-46)]
 
 Tento kód přidá parametr číslo stránky, aktuální parametr pořadí řazení a aktuální parametr filtru podpis metody.
 
@@ -213,21 +213,21 @@ Vytvoření *SchoolViewModels* složku *modely* složky.
 
 V nové složky, přidejte soubor třídy *EnrollmentDateGroup.cs* a nahraďte kód šablony s následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
 ### <a name="modify-the-home-controller"></a>Upravit domácí řadiče
 
 V *HomeController.cs*, přidejte následující příkazy v horní části souboru:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings1)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings1)]
 
 Přidání proměnné třídy kontextu databáze okamžitě po otevření složené závorky pro třídu a získat instance kontextu z DI jádro ASP.NET:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_AddContext&highlight=3,5,7)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_AddContext&highlight=3,5,7)]
 
 Nahraďte `About` metoda následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
 
 Příkaz LINQ skupiny entit student datu registrace, vypočítá počet entit v každé skupině a ukládá výsledky do kolekce `EnrollmentDateGroup` zobrazit objekty modelu.
 > [!NOTE] 

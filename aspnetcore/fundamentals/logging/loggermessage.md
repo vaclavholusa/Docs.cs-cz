@@ -1,7 +1,7 @@
 ---
 title: "Vysoce výkonné protokolování s LoggerMessage v ASP.NET Core"
 author: guardrex
-description: "Naučte se používat k vytvoření delegáti lze uložit do mezipaměti, které vyžadují méně objekt přidělení než protokolovacího nástroje rozšiřující metody pro scénáře protokolování vysoce výkonné LoggerMessage funkcí."
+description: "Další informace o použití LoggerMessage vytvořit Uložitelný delegáti, které vyžadují méně objekt přidělení pro scénáře protokolování vysoce výkonné."
 manager: wpickett
 ms.author: riande
 ms.date: 11/03/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: a67e610150e36165a72a2e8957b33ce7d5741936
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: 24a75cfacfa61ca66e78deeb743baa75718dfb76
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>Vysoce výkonné protokolování s LoggerMessage v ASP.NET Core
 
@@ -38,7 +38,7 @@ Pro zadaný řetězec `Define` je metoda šablonu a není interpolované řetěz
 
 Každé zprávě protokolu je `Action` uchovávat v statické pole vytvořené `LoggerMessage.Define`. Například vytvoří ukázkovou aplikaci pole pro popis zprávy protokolu pro požadavek GET na indexovou stránku (*Internal/LoggerExtensions.cs*):
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet1)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet1)]
 
 Pro `Action`, zadejte:
 
@@ -52,17 +52,17 @@ Požadavek na indexovou stránku sad ukázkové aplikace:
 * Id události k `1` s názvem `IndexPageRequested` metoda.
 * Šablona zprávy (s názvem řetězec formátu) na řetězec.
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet5)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet5)]
 
 Ukládá strukturované protokolování použít název události při se dodává s id události pro obohacení protokolování. Například [Serilog](https://github.com/serilog/serilog-extensions-logging) používá název události.
 
 `Action` Je volána metodou rozšíření silného typu. `IndexPageRequested` Metoda přihlásí ukázková aplikace zprávu o požadavek GET Index stránky:
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet9)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet9)]
 
 `IndexPageRequested` je volána v protokolovacího nástroje v `OnGetAsync` metoda v *Pages/Index.cshtml.cs*:
 
-[!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=3)]
+[!code-csharp[](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=3)]
 
 Zkontrolujte výstup konzoly aplikace:
 
@@ -74,19 +74,19 @@ info: LoggerMessageSample.Pages.IndexModel[1]
 
 Chcete-li předat parametry do zprávy protokolu, definujte až šest typů, při vytváření statické pole. Ukázková aplikace protokoly řetězec při přidávání v uvozovkách definováním `string` zadejte `Action` pole:
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet2)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet2)]
 
 Šablona zprávy protokolu delegáta přijímá jeho zástupné hodnoty ze zadané typy. Ukázková aplikace definuje delegáta pro přidání v uvozovkách, kde parametr uvozovky je `string`:
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet6)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet6)]
 
 Metoda statické rozšíření pro přidávání v uvozovkách, `QuoteAdded`, obdrží hodnota argumentu uvozovky a předává jej do `Action` delegovat:
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet10)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet10)]
 
 V modelu stránky indexovou stránku (*Pages/Index.cshtml.cs*), `QuoteAdded` nazývá do protokolu zpráva:
 
-[!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet3&highlight=6)]
+[!code-csharp[](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet3&highlight=6)]
 
 Zkontrolujte výstup konzoly aplikace:
 
@@ -98,17 +98,17 @@ info: LoggerMessageSample.Pages.IndexModel[2]
 
 Implementuje aplikace ukázka `try` &ndash; `catch` vzor pro odstranění uvozovky. Informační zpráva je zaprotokolována pro operace úspěšné odstranění. Když je vyvolána výjimka, zaprotokoluje se chybová zpráva pro operaci odstranění. Zprávy protokolu pro neúspěšná operace odstranění zahrnuje trasování zásobníku výjimek (*Internal/LoggerExtensions.cs*):
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet3)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet3)]
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet7)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet7)]
 
 Všimněte si, jak je předán výjimka delegáta v `QuoteDeleteFailed`:
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet11)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet11)]
 
 V modelu stránky pro stránku Index odstranění úspěšné uvozovky volá `QuoteDeleted` metodu protokolovacího nástroje. Když pro odstranění, se nenašel v uvozovkách `ArgumentNullException` je vyvolána výjimka. Výjimka je zachytí aplikace `try` &ndash; `catch` příkaz a voláním `QuoteDeleteFailed` metodu protokolovacího nástroje v `catch` blok (*Pages/Index.cshtml.cs*):
 
-[!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet5&highlight=14,18)]
+[!code-csharp[](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet5&highlight=14,18)]
 
 Když je v uvozovkách úspěšně odstraněn, zkontrolujte výstup konzoly aplikace:
 
@@ -145,7 +145,7 @@ Ukázková aplikace má **Vymazat vše** tlačítko pro odstranění všechna uv
 
 Povolit `IncludeScopes` v možnostech protokolovacího nástroje konzoly:
 
-[!code-csharp[Main](loggermessage/sample/Program.cs?name=snippet1&highlight=10)]
+[!code-csharp[](loggermessage/sample/Program.cs?name=snippet1&highlight=10)]
 
 Nastavení `IncludeScopes` je nutný v aplikacích ASP.NET 2.0 jádra pro povolení protokolu obory. Nastavení `IncludeScopes` prostřednictvím *appsettings* konfiguračních souborů je funkce, která má pro verzi ASP.NET Core 2.1.
 
@@ -153,19 +153,19 @@ Ukázková aplikace vymaže jiných poskytovatelů a přidá filtry ke snížen�
 
 Pokud chcete vytvořit obor protokolu, přidání pole pro uložení `Func` delegovat pro obor. Ukázková aplikace vytvoří pole s názvem `_allQuotesDeletedScope` (*Internal/LoggerExtensions.cs*):
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet4)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet4)]
 
 Použití `DefineScope` vytvořit delegát. Až tři typy lze zadat pro použití jako argumenty pro šablony při vyvolání delegáta. Ukázková aplikace používá šablonu zpráva, která obsahuje počet odstraněných nabídek ( `int` typu):
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet8)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet8)]
 
 Zadejte metodu statické rozšíření pro zprávy protokolu. Zahrňte všechny parametry typu s názvem vlastnosti, které se zobrazují v šabloně zprávy. Ukázková aplikace přebírá `count` uvozovky odstranit a vrátí `_allQuotesDeletedScope`:
 
-[!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet12)]
+[!code-csharp[](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet12)]
 
 Zabalí oboru, volání metod rozšíření protokolování `using` bloku:
 
-[!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet4&highlight=5-6,14)]
+[!code-csharp[](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet4&highlight=5-6,14)]
 
 Zkontrolujte zprávy protokolu v výstup konzoly aplikace. Následující výsledek ukazuje tři uvozovky odstranit se zprávou protokolu oboru zahrnout:
 

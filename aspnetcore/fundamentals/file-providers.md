@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/file-providers
-ms.openlocfilehash: 06197f967e111d75531e9c3bcbcbdb971cb9f99b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cdbffdadd9616fe941809d67dc2c0bbd52149561
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="file-providers-in-aspnet-core"></a>Soubor zprostředkovatele v ASP.NET Core
 
@@ -25,9 +25,9 @@ ASP.NET Core abstrahuje přístupu k systému souborů prostřednictvím poskyto
 
 ## <a name="file-provider-abstractions"></a>Abstrakce zprostředkovatele souboru
 
-Soubor poskytovatelé jsou abstrakci přes systémy souborů. Hlavní rozhraní je `IFileProvider`. `IFileProvider`zpřístupní metody pro získání informací o souboru (`IFileInfo`), informace o adresáři (`IDirectoryContents`) a k nastavení oznámení o změnách (pomocí `IChangeToken`).
+Soubor poskytovatelé jsou abstrakci přes systémy souborů. Hlavní rozhraní je `IFileProvider`. `IFileProvider` zpřístupní metody pro získání informací o souboru (`IFileInfo`), informace o adresáři (`IDirectoryContents`) a k nastavení oznámení o změnách (pomocí `IChangeToken`).
 
-`IFileInfo`poskytuje metody a vlastnosti o jednotlivé soubory nebo adresáře. Má dvě logická hodnota vlastnosti `Exists` a `IsDirectory`, a také vlastnosti popisující souboru `Name`, `Length` (v bajtech), a `LastModified` datum. Můžete si přečíst ze souboru pomocí jeho `CreateReadStream` metoda.
+`IFileInfo` poskytuje metody a vlastnosti o jednotlivé soubory nebo adresáře. Má dvě logická hodnota vlastnosti `Exists` a `IsDirectory`, a také vlastnosti popisující souboru `Name`, `Length` (v bajtech), a `LastModified` datum. Můžete si přečíst ze souboru pomocí jeho `CreateReadStream` metoda.
 
 ## <a name="file-provider-implementations"></a>Implementace zprostředkovatele souboru
 
@@ -50,15 +50,15 @@ Můžete iteraci v rámci jeho obsah adresáře nebo získat informace o konkré
 
 K vyžádání zprostředkovatele z řadič, zadejte v konstruktoru kontroleru a přiřaďte ho pro místní pole. Použijte místní instanci z vaší metody akce:
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
 
 Pak vytvořte poskytovatele v dané aplikaci `Startup` třídy:
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
 
 V *Index.cshtml* zobrazit, iteraci v rámci `IDirectoryContents` poskytuje:
 
-[!code-html[Main](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
+[!code-html[](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
 
 Výsledek:
 
@@ -68,7 +68,7 @@ Výsledek:
 
 `EmbeddedFileProvider` Se používá pro přístup k souborům, které jsou součástí sestavení. V rozhraní .NET Core, vložíte do sestavení se soubory `<EmbeddedResource>` element v *.csproj* souboru:
 
-[!code-json[Main](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
+[!code-json[](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
 
 Můžete použít [expanze názvů vzory](#globbing-patterns) při zadávání soubory pro vložení do sestavení. Tyto vzory použít tak, aby odpovídaly jeden nebo více souborů.
 
@@ -97,7 +97,7 @@ Aktualizace ukázková aplikace sloužící `EmbeddedFileProvider` výsledkem n�
 
 `CompositeFileProvider` Kombinuje `IFileProvider` instancí vystavení jednoho rozhraní pro práci se soubory z více poskytovatelů. Při vytváření `CompositeFileProvider`, předáte jeden nebo více `IFileProvider` instance jeho konstruktoru:
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
 
 Aktualizace ukázková aplikace používat `CompositeFileProvider` která obsahuje oba fyzické a embedded zprostředkovatele dříve nakonfigurován, výsledkem následující výstup:
 
@@ -109,7 +109,7 @@ Aktualizace ukázková aplikace používat `CompositeFileProvider` která obsahu
 
 V tomto článku ukázce je konzolová aplikace nakonfigurován k zobrazení zprávy změně textového souboru je:
 
-[!code-csharp[Main](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
+[!code-csharp[](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
 
 Výsledek po uložení souboru několikrát:
 
@@ -150,7 +150,7 @@ Systémové cesty k souborům použít zástupné znaky názvem *expanze názvů
 
 ## <a name="file-provider-usage-in-aspnet-core"></a>Soubor zprostředkovatele využití v ASP.NET Core
 
-Několik částí ASP.NET Core využívat souboru zprostředkovatele. `IHostingEnvironment`zpřístupní obsahu kořenové aplikace a webové kořenový jako `IFileProvider` typy. Middleware statické soubory používá zprostředkovatele souboru k vyhledání statické soubory. Syntaxe Razor umožňuje výrazně využívá `IFileProvider` v vyhledání zobrazení. Pro DotNet publikování funkce používá soubor zprostředkovatele a vzory expanze názvů určit soubory, které je nutné ji publikovat.
+Několik částí ASP.NET Core využívat souboru zprostředkovatele. `IHostingEnvironment` zpřístupní obsahu kořenové aplikace a webové kořenový jako `IFileProvider` typy. Middleware statické soubory používá zprostředkovatele souboru k vyhledání statické soubory. Syntaxe Razor umožňuje výrazně využívá `IFileProvider` v vyhledání zobrazení. Pro DotNet publikování funkce používá soubor zprostředkovatele a vzory expanze názvů určit soubory, které je nutné ji publikovat.
 
 ## <a name="recommendations-for-use-in-apps"></a>Doporučení pro použití v aplikacích
 

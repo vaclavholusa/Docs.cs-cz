@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: f8a5f9528d899f75aaabfbca38f075a27763567f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7b92d1b50311cedbae2bdf30a2dc19204c5b81d1
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="adding-a-new-field"></a>Přidání nové pole
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V této části budete používat [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) migrace Code First a přidat nové pole do modelu migraci, které změnit na databázi.
 
@@ -27,7 +27,7 @@ Při použití EF Code First automaticky vytvořit databázi, Code First přidá
 
 Otevřete *Models/Movie.cs* souboru a přidejte `Rating` vlastnost:
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 Sestavení aplikace (Ctrl + Shift + B).
 
@@ -41,7 +41,7 @@ Je také potřeba aktualizovat zobrazit šablony, aby bylo možné zobrazit, vyt
 
 Upravit */Views/Movies/Index.cshtml* souboru a přidejte `Rating` pole:
 
-[!code-HTML[Main](start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
+[!code-HTML[](start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
 
 Aktualizace */Views/Movies/Create.cshtml* s `Rating` pole. Můžete zkopírujte a vložte předchozí "formuláře skupinu" a pomohou intelliSense aktualizovat pole. IntelliSense pracuje s [značky Pomocníci](xref:mvc/views/tag-helpers/intro). Poznámka: V verze RTM nástroje Visual Studio 2017 musíte nainstalovat [služby jazyk Razor](https://marketplace.visualstudio.com/items?itemName=ms-madsk.RazorLanguageServices) technologie intelliSense pro Razor. Tento problém bude vyřešený v příští verzi.
 
@@ -65,7 +65,7 @@ V tomto kurzu použijeme migrace Code First.
 
 Aktualizace `SeedData` třídy tak, aby poskytuje hodnotu pro nový sloupec. Ukázka změnu jsou uvedeny níže, ale budete chtít tuto změnu provést pro každý `new Movie`.
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
 
 Sestavte řešení.
 

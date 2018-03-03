@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: d35c24347e8e06ed85e2af8addcc1f8cf28dc47a
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 1ff08ee6389ce7b12d74b162b990ddaaadc05ea8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -50,11 +50,11 @@ Primární vstup `RouteAsync` je `RouteContext.HttpContext` přidružené k aktu
 
 Shoda během `RouteAsync` bude také nastavit vlastnosti `RouteContext.RouteData` odpovídající hodnoty, podle dosud provedené zpracování žádostí. Pokud trasa odpovídá žádosti `RouteContext.RouteData` bude obsahovat informace o stavu důležité o *výsledek*.
 
-`RouteData.Values`je slovník *hodnot trasy* vytváří na základě trasy. Tyto hodnoty jsou obvykle určen tokenizaci adresu URL a použít tak, aby přijímal uživatelský vstup, nebo pokud chcete udělat další odesílající rozhodnutích uvnitř aplikace.
+`RouteData.Values` je slovník *hodnot trasy* vytváří na základě trasy. Tyto hodnoty jsou obvykle určen tokenizaci adresu URL a použít tak, aby přijímal uživatelský vstup, nebo pokud chcete udělat další odesílající rozhodnutích uvnitř aplikace.
 
-`RouteData.DataTokens`je kontejner objektů a dat o další data související s porovnávané trasy. `DataTokens`jsou k dispozici pro podporu přiřadit stavu, ve kterém data s každou trasy, aby aplikace mohla provést rozhodnutí o později založené na směrování, která odpovídá. Tyto hodnoty jsou definované na vývojáře a proveďte **není** ovlivnit chování směrování žádným způsobem. Kromě toho hodnoty, které jsou schované na okraji v datové tokeny, jež mohou být jakéhokoli typu, na rozdíl od hodnoty trasy, které musí být snadno převést do a z řetězce.
+`RouteData.DataTokens`  je kontejner objektů a dat o další data související s porovnávané trasy. `DataTokens` jsou k dispozici pro podporu přiřadit stavu, ve kterém data s každou trasy, aby aplikace mohla provést rozhodnutí o později založené na směrování, která odpovídá. Tyto hodnoty jsou definované na vývojáře a proveďte **není** ovlivnit chování směrování žádným způsobem. Kromě toho hodnoty, které jsou schované na okraji v datové tokeny, jež mohou být jakéhokoli typu, na rozdíl od hodnoty trasy, které musí být snadno převést do a z řetězce.
 
-`RouteData.Routers`je seznam tras, které trvalo součástí úspěšně odpovídající požadavku. Trasy lze vnořit do sebe navzájem a `Routers` vlastnost odráží cestu prostřednictvím logického stromu trasy, jejichž výsledkem shody. Obecně první položky v `Routers` je kolekce tras a má být použita pro generování adresy URL. Poslední položky v `Routers` je obslužné rutině trasy, který odpovídá.
+`RouteData.Routers` je seznam tras, které trvalo součástí úspěšně odpovídající požadavku. Trasy lze vnořit do sebe navzájem a `Routers` vlastnost odráží cestu prostřednictvím logického stromu trasy, jejichž výsledkem shody. Obecně první položky v `Routers` je kolekce tras a má být použita pro generování adresy URL. Poslední položky v `Routers` je obslužné rutině trasy, který odpovídá.
 
 ### <a name="url-generation"></a>Generování adresy URL
 
@@ -74,7 +74,7 @@ Trasy především používat hodnoty trasy poskytované `Values` a `AmbientValu
 
 Tip: Zamyslet nad `Values` jako sadu přepsání `AmbientValues`. Generování adresy URL se pokusí znovu použít hodnoty trasy z aktuální žádosti, abyste usnadnili snadnou k vygenerování adres URL pro odkazy pomocí stejného postupu nebo hodnoty trasy.
 
-Výstup `GetVirtualPath` je `VirtualPathData`. `VirtualPathData`je paralelní z `RouteData`; obsahuje `VirtualPath` pro adresu URL výstup, jakož i některé další vlastnosti, které by měla být nastavena trasy.
+Výstup `GetVirtualPath` je `VirtualPathData`. `VirtualPathData` je paralelní z `RouteData`; obsahuje `VirtualPath` pro adresu URL výstup, jakož i některé další vlastnosti, které by měla být nastavena trasy.
 
 `VirtualPathData.VirtualPath` Vlastnost obsahuje *virtuální cestu* vyprodukované trasy. Podle potřeby můžete zpracovat další cestu. Například pokud chcete vykreslit vygenerovaná adresa URL ve formátu HTML budete muset předřazení základní cesta aplikace.
 
@@ -84,7 +84,7 @@ Výstup `GetVirtualPath` je `VirtualPathData`. `VirtualPathData`je paralelní z 
 
 ### <a name="creating-routes"></a>Vytváření tras
 
-Směrování poskytuje `Route` třída jako standardní implementace `IRouter`. `Route`používá *šablonu trasy* syntaxe k definování vzorů, které bude odpovídat proti cestu adresy URL při `RouteAsync` je volána. `Route`použije stejnou šablonu trasy k vygenerování adresy URL při `GetVirtualPath` je volána.
+Směrování poskytuje `Route` třída jako standardní implementace `IRouter`. `Route` používá *šablonu trasy* syntaxe k definování vzorů, které bude odpovídat proti cestu adresy URL při `RouteAsync` je volána. `Route` použije stejnou šablonu trasy k vygenerování adresy URL při `GetVirtualPath` je volána.
 
 Většina aplikací bude vytvářet trasy voláním `MapRoute` nebo jeden z podobné rozšiřující metody definované na `IRouteBuilder`. Všechny tyto metody se vytvořit instanci `Route` a přidat jej do kolekce tras.
 
@@ -187,13 +187,13 @@ Přidejte balíček NuGet "Microsoft.AspNetCore.Routing".
 
 Přidání směrování do kontejneru služby v *Startup.cs*:
 
-[!code-csharp[Main](../fundamentals/routing/sample/RoutingSample/Startup.cs?highlight=3&start=11&end=14)]
+[!code-csharp[](../fundamentals/routing/sample/RoutingSample/Startup.cs?highlight=3&start=11&end=14)]
 
 Musí být nakonfigurované trasy v `Configure` metoda v `Startup` třídy. Následující ukázka používá tato rozhraní API:
 
 * `RouteBuilder`
 * `Build`
-* `MapGet`Odpovídá pouze požadavky HTTP GET
+* `MapGet`  Odpovídá pouze požadavky HTTP GET
 * `UseRouter`
 
 ```csharp
@@ -275,11 +275,11 @@ Následující tabulka ukazuje některé šablony trasy a jejich chování.
 
 | Šablona trasy | Příklad odpovídající adresy URL | Poznámky |
 | -------- | -------- | ------- |
-| Dobrý den  | řetězec Ahoj  | Odpovídá jen jednu cestu`/hello` |
-| {Stránky = Domů} | / | Odpovídá a nastaví `Page` na`Home` |
-| {Stránky = Domů}  | / Kontakt  | Odpovídá a nastaví `Page` na`Contact` |
+| Dobrý den  | řetězec Ahoj  | Odpovídá jen jednu cestu `/hello` |
+| {Stránky = Domů} | / | Odpovídá a nastaví `Page` na `Home` |
+| {Stránky = Domů}  | / Kontakt  | Odpovídá a nastaví `Page` na `Contact` |
 | {controller} / {action} / {id}? | / / Seznam produktů | Se mapuje na `Products` řadiče a `List` akce |
-| {controller} / {action} / {id}? | /Products/Details/123  |  Se mapuje na `Products` řadiče a `Details` akce.  `id`Nastavte na 123 |
+| {controller} / {action} / {id}? | /Products/Details/123  |  Se mapuje na `Products` řadiče a `Details` akce.  `id` Nastavte na 123 |
 | {controller=Home}/{action=Index}/{id?} | /  |  Se mapuje na `Home` řadiče a `Index` metoda; `id` je ignorována. |
 
 Pomocí šablony je obecně nejjednodušším přístupem při směrování. Omezení a výchozí nastavení můžete také uvést mimo šablonu trasy.
@@ -351,7 +351,7 @@ Chcete-li omezit parametr, který se známou sadou možných hodnot, použijte r
 
 Následující příklad ukazuje, jak pro vygenerování odkazu trasu zadaný slovník hodnot trasy a `RouteCollection`.
 
-[!code-csharp[Main](../fundamentals/routing/sample/RoutingSample/Startup.cs?range=45-59)]
+[!code-csharp[](../fundamentals/routing/sample/RoutingSample/Startup.cs?range=45-59)]
 
 `VirtualPath` Vygeneruje na konci ukázkové výše je `/package/create/123`.
 

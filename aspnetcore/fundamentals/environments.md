@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/environments
-ms.openlocfilehash: ec58b287dfb2b5a3ca4de6e67c20c8d0eb708fa4
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: f2e074e1e19bb79453319c5b72e6c3872cd96ead
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="working-with-multiple-environments"></a>Práce s několika prostředí
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Základní technologie ASP.NET poskytuje podporu pro nastavení chování aplikace za běhu pomocí proměnné prostředí.
 
@@ -25,9 +25,9 @@ Základní technologie ASP.NET poskytuje podporu pro nastavení chování aplika
 
 ## <a name="environments"></a>Prostředí
 
-Přečte proměnné prostředí ASP.NET Core `ASPNETCORE_ENVIRONMENT` při spuštění aplikace a úložišť, která hodnotu [IHostingEnvironment.EnvironmentName](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName). `ASPNETCORE_ENVIRONMENT`můžete nastavit na jakoukoli hodnotu, ale [tří hodnot](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname?view=aspnetcore-2.0) podporuje rozhraní: [vývoj](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development?view=aspnetcore-2.0), [pracovní](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging?view=aspnetcore-2.0), a [produkční](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production?view=aspnetcore-2.0). Pokud `ASPNETCORE_ENVIRONMENT` není nastaven, bude použita výchozí `Production`.
+Přečte proměnné prostředí ASP.NET Core `ASPNETCORE_ENVIRONMENT` při spuštění aplikace a úložišť, která hodnotu [IHostingEnvironment.EnvironmentName](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName). `ASPNETCORE_ENVIRONMENT` můžete nastavit na jakoukoli hodnotu, ale [tří hodnot](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname?view=aspnetcore-2.0) podporuje rozhraní: [vývoj](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development?view=aspnetcore-2.0), [pracovní](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging?view=aspnetcore-2.0), a [produkční](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production?view=aspnetcore-2.0). Pokud `ASPNETCORE_ENVIRONMENT` není nastaven, bude použita výchozí `Production`.
 
-[!code-csharp[Main](environments/sample/WebApp1/Startup.cs?name=snippet)]
+[!code-csharp[](environments/sample/WebApp1/Startup.cs?name=snippet)]
 
 Předchozí kód:
 
@@ -40,7 +40,7 @@ Předchozí kód:
 
 [Pomocná značku prostředí ](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper) používá hodnotu `IHostingEnvironment.EnvironmentName` pro zahrnutí nebo vyloučení značek v elementu:
 
-[!code-html[Main](environments/sample/WebApp1/Pages/About.cshtml)]
+[!code-html[](environments/sample/WebApp1/Pages/About.cshtml)]
 
 Poznámka: V systémech Windows a systému macOS proměnné prostředí a hodnoty nejsou velká a malá písmena. Proměnné prostředí Linux a jejich hodnoty jsou **velká a malá písmena** ve výchozím nastavení.
 
@@ -52,21 +52,21 @@ Prostředí pro vývoj na místním počítači může být nastavena v *Propert
 
 Zobrazuje tři profily z následujícím kódu JSON *launchSettings.json* souboru:
 
-[!code-json[Main](environments/sample/WebApp1/Properties/launchSettings.json?highlight=10,11,18,26)]
+[!code-json[](environments/sample/WebApp1/Properties/launchSettings.json?highlight=10,11,18,26)]
 
-Když je aplikace spuštěna s `dotnet run`, první profil s `"commandName": "Project"` se použije. Hodnota `commandName` určuje webový server ke spuštění. `commandName`může být jedna z:
+Když je aplikace spuštěna s [dotnet spustit](/dotnet/core/tools/dotnet-run), první profil s `"commandName": "Project"` se použije. Hodnota `commandName` určuje webový server ke spuštění. `commandName` může být jedna z:
 
 * Služby IIS Express
 * IIS
 * Projekt (který se spouští Kestrel)
 
-Když se aplikace spustí s `dotnet run`:
+Když se aplikace spustí s [dotnet spustit](/dotnet/core/tools/dotnet-run):
 
-* *launchSettings.json* je pro čtení. Pokud je k dispozici. `environmentVariables`nastavení v *launchSettings.json* přepsat proměnné prostředí.
+* *launchSettings.json* je pro čtení. Pokud je k dispozici. `environmentVariables` nastavení v *launchSettings.json* přepsat proměnné prostředí.
 * Hostování prostředí bude zobrazeno.
 
 
-Následující výstup zobrazuje aplikace spuštěna s `dotnet run`:
+Následující výstup zobrazuje aplikace spuštěna s [dotnet spustit](/dotnet/core/tools/dotnet-run):
 ```bash
 PS C:\Webs\WebApp1> dotnet run
 Using launch settings from C:\Webs\WebApp1\Properties\launchSettings.json...
@@ -110,7 +110,7 @@ Pro službu Azure app service:
 
 
 ### <a name="windows"></a>Windows
-Chcete-li nastavit `ASPNETCORE_ENVIRONMENT` pro aktuální relaci, pokud je aplikace spuštěná pomocí `dotnet run`, se používají následující příkazy
+Chcete-li nastavit `ASPNETCORE_ENVIRONMENT` pro aktuální relaci, pokud je aplikace spuštěná pomocí [dotnet spustit](/dotnet/core/tools/dotnet-run), se používají následující příkazy
 
 **Příkazový řádek**
 ```
@@ -165,13 +165,13 @@ V tématu [konfigurace prostředí](xref:fundamentals/configuration/index#config
 
 Při spuštění aplikace ASP.NET Core [třída při spuštění](xref:fundamentals/startup) bootstraps aplikace. Pokud se třída `Startup{EnvironmentName}` existuje, že třídu bude volat třída pro tento `EnvironmentName`:
 
-[!code-csharp[Main](environments/sample/WebApp1/StartupDev.cs?name=snippet&highlight=1)]
+[!code-csharp[](environments/sample/WebApp1/StartupDev.cs?name=snippet&highlight=1)]
 
 Poznámka: Volání [WebHostBuilder.UseStartup<TStartup> ](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) přepsání konfigurační oddíly.
 
 [Konfigurace](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_StartupBase_Configure_Microsoft_AspNetCore_Builder_IApplicationBuilder_) a [ConfigureServices](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices?view=aspnetcore-2.0) podporu prostředí konkrétních verzích formuláře `Configure{EnvironmentName}` a `Configure{EnvironmentName}Services`:
 
-[!code-csharp[Main](environments/sample/WebApp1/Startup.cs?name=snippet_all&highlight=15,37)]
+[!code-csharp[](environments/sample/WebApp1/Startup.cs?name=snippet_all&highlight=15,37)]
 
 ## <a name="additional-resources"></a>Další zdroje
 

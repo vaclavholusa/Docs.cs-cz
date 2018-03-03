@@ -1,7 +1,7 @@
 ---
 title: "Implementace webového serveru v ASP.NET Core"
 author: tdykstra
-description: "Zavádí webové servery Kestrel a WebListener pro ASP.NET Core. Poskytuje pokyny o tom, jak vyberte jeden a jeho použití s reverzní proxy server."
+description: "Zjištění webové servery Kestrel a ovladače HTTP.sys pro ASP.NET Core. Zjistěte, jak vyberte jeden a jeho použití s reverzní proxy server."
 manager: wpickett
 ms.author: tdykstra
 ms.date: 08/03/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/index
-ms.openlocfilehash: 9e2bea396e50615bd02affad93f0ee55255d299f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b9a7fa4e33c56a5973b4bc35f88ca0ebb3d67101
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implementace webového serveru v ASP.NET Core
 
@@ -115,7 +115,7 @@ Pro scénáře interní síti Kestrel obecně doporučujeme pro nejlepší výko
 
 [ `IApplicationBuilder` ](/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder) k dispozici v `Startup` třída `Configure` metoda zpřístupňuje `ServerFeatures` vlastnost typu [ `IFeatureCollection` ](/aspnet/core/api/microsoft.aspnetcore.http.features.ifeaturecollection). Kestrel a WebListener vystavují jenom jednu funkci [ `IServerAddressesFeature` ](/aspnet/core/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature), ale implementace jiný server může vystavit další funkce.
 
-`IServerAddressesFeature`umožňuje zjistit, který port implementaci serveru je vázána na za běhu.
+`IServerAddressesFeature` umožňuje zjistit, který port implementaci serveru je vázána na za běhu.
 
 ## <a name="custom-servers"></a>Vlastní servery
 

@@ -1,28 +1,28 @@
-# <a name="working-with-sqlite-in-and-razor-pages"></a><span data-ttu-id="e855d-101">Práce s SQLite v a stránky Razor</span><span class="sxs-lookup"><span data-stu-id="e855d-101">Working with SQLite in and Razor Pages</span></span>
+# <a name="working-with-sqlite-in-and-razor-pages"></a><span data-ttu-id="be200-101">Práce s SQLite v a stránky Razor</span><span class="sxs-lookup"><span data-stu-id="be200-101">Working with SQLite in and Razor Pages</span></span>
 
-<span data-ttu-id="e855d-102">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="e855d-102">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="be200-102">podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="be200-102">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="e855d-103">`MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi.</span><span class="sxs-lookup"><span data-stu-id="e855d-103">The `MovieContext` object handles the task of connecting to the database and mapping `Movie` objects to database records.</span></span> <span data-ttu-id="e855d-104">Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="e855d-104">The database context is registered with the [Dependency Injection](xref:fundamentals/dependency-injection) container in the `ConfigureServices` method in the *Startup.cs* file:</span></span>
+<span data-ttu-id="be200-103">`MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi.</span><span class="sxs-lookup"><span data-stu-id="be200-103">The `MovieContext` object handles the task of connecting to the database and mapping `Movie` objects to database records.</span></span> <span data-ttu-id="be200-104">Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="be200-104">The database context is registered with the [Dependency Injection](xref:fundamentals/dependency-injection) container in the `ConfigureServices` method in the *Startup.cs* file:</span></span>
 
-[!code-csharp[Main](code/Startup.cs?name=snippet2&highlight=6-8)]
+[!code-csharp[](code/Startup.cs?name=snippet2&highlight=6-8)]
 
-## <a name="sqlite"></a><span data-ttu-id="e855d-105">SQLite</span><span class="sxs-lookup"><span data-stu-id="e855d-105">SQLite</span></span>
+## <a name="sqlite"></a><span data-ttu-id="be200-105">SQLite</span><span class="sxs-lookup"><span data-stu-id="be200-105">SQLite</span></span>
 
-<span data-ttu-id="e855d-106">[SQLite](https://www.sqlite.org/) webu stavy:</span><span class="sxs-lookup"><span data-stu-id="e855d-106">The [SQLite](https://www.sqlite.org/) website states:</span></span>
+<span data-ttu-id="be200-106">[SQLite](https://www.sqlite.org/) webu stavy:</span><span class="sxs-lookup"><span data-stu-id="be200-106">The [SQLite](https://www.sqlite.org/) website states:</span></span>
 
-> <span data-ttu-id="e855d-107">SQLite je samostatná, vysoká spolehlivost, embedded, plně funkční, veřejné domény, databázový stroj SQL.</span><span class="sxs-lookup"><span data-stu-id="e855d-107">SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine.</span></span> <span data-ttu-id="e855d-108">SQLite je nejpoužívanější databázový stroj na světě.</span><span class="sxs-lookup"><span data-stu-id="e855d-108">SQLite is the most used database engine in the world.</span></span>
+> <span data-ttu-id="be200-107">SQLite je samostatná, vysoká spolehlivost, embedded, plně funkční, veřejné domény, databázový stroj SQL.</span><span class="sxs-lookup"><span data-stu-id="be200-107">SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine.</span></span> <span data-ttu-id="be200-108">SQLite je nejpoužívanější databázový stroj na světě.</span><span class="sxs-lookup"><span data-stu-id="be200-108">SQLite is the most used database engine in the world.</span></span>
 
-<span data-ttu-id="e855d-109">Existuje mnoho nástroje třetích stran, si můžete stáhnout spravovat a zobrazovat databáze SQLite.</span><span class="sxs-lookup"><span data-stu-id="e855d-109">There are many third party tools you can download to manage and view a SQLite database.</span></span> <span data-ttu-id="e855d-110">Následující obrázek je z [DB prohlížeče pro SQLite](http://sqlitebrowser.org/).</span><span class="sxs-lookup"><span data-stu-id="e855d-110">The image below is from [DB Browser for SQLite](http://sqlitebrowser.org/).</span></span> <span data-ttu-id="e855d-111">Pokud máte nástroj Oblíbené SQLite, co se vám líbí o něm ponechte komentář.</span><span class="sxs-lookup"><span data-stu-id="e855d-111">If you have a favorite SQLite tool, leave a comment on what you like about it.</span></span>
+<span data-ttu-id="be200-109">Existuje mnoho nástroje třetích stran, si můžete stáhnout spravovat a zobrazovat databáze SQLite.</span><span class="sxs-lookup"><span data-stu-id="be200-109">There are many third party tools you can download to manage and view a SQLite database.</span></span> <span data-ttu-id="be200-110">Následující obrázek je z [DB prohlížeče pro SQLite](http://sqlitebrowser.org/).</span><span class="sxs-lookup"><span data-stu-id="be200-110">The image below is from [DB Browser for SQLite](http://sqlitebrowser.org/).</span></span> <span data-ttu-id="be200-111">Pokud máte nástroj Oblíbené SQLite, co se vám líbí o něm ponechte komentář.</span><span class="sxs-lookup"><span data-stu-id="be200-111">If you have a favorite SQLite tool, leave a comment on what you like about it.</span></span>
 
 ![DB prohlížeče pro SQLite zobrazující film db](../../tutorials/first-mvc-app-xplat/working-with-sql/_static/dbb.png)
 
-## <a name="seed-the-database"></a><span data-ttu-id="e855d-113">Počáteční hodnoty databáze</span><span class="sxs-lookup"><span data-stu-id="e855d-113">Seed the database</span></span>
+## <a name="seed-the-database"></a><span data-ttu-id="be200-113">Počáteční hodnoty databáze</span><span class="sxs-lookup"><span data-stu-id="be200-113">Seed the database</span></span>
 
-<span data-ttu-id="e855d-114">Vytvořte novou třídu s názvem `SeedData` v *modely* složky.</span><span class="sxs-lookup"><span data-stu-id="e855d-114">Create a new class named `SeedData` in the *Models* folder.</span></span> <span data-ttu-id="e855d-115">Generovaného kódu nahraďte následujícím textem:</span><span class="sxs-lookup"><span data-stu-id="e855d-115">Replace the generated code with the following:</span></span>
+<span data-ttu-id="be200-114">Vytvořte novou třídu s názvem `SeedData` v *modely* složky.</span><span class="sxs-lookup"><span data-stu-id="be200-114">Create a new class named `SeedData` in the *Models* folder.</span></span> <span data-ttu-id="be200-115">Generovaného kódu nahraďte následujícím textem:</span><span class="sxs-lookup"><span data-stu-id="be200-115">Replace the generated code with the following:</span></span>
 
-[!code-csharp[Main](code\Models\SeedData.cs)]
+[!code-csharp[](code\Models\SeedData.cs)]
 
-<span data-ttu-id="e855d-116">Pokud jsou všechny filmy v databázi, vrátí inicializátoru počáteční hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e855d-116">If there are any movies in the DB, the seed initializer returns.</span></span>
+<span data-ttu-id="be200-116">Pokud jsou všechny filmy v databázi, vrátí inicializátoru počáteční hodnoty.</span><span class="sxs-lookup"><span data-stu-id="be200-116">If there are any movies in the DB, the seed initializer returns.</span></span>
 
 ```csharp
 if (context.Movie.Any())
@@ -32,14 +32,14 @@ if (context.Movie.Any())
 ```
 
 <a name="si"></a>
-### <a name="add-the-seed-initializer"></a><span data-ttu-id="e855d-117">Přidat inicializátoru počáteční hodnoty</span><span class="sxs-lookup"><span data-stu-id="e855d-117">Add the seed initializer</span></span>
+### <a name="add-the-seed-initializer"></a><span data-ttu-id="be200-117">Přidat inicializátoru počáteční hodnoty</span><span class="sxs-lookup"><span data-stu-id="be200-117">Add the seed initializer</span></span>
 
-<span data-ttu-id="e855d-118">Přidat inicializátoru počáteční hodnoty do `Main` metoda v *Program.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="e855d-118">Add the seed initializer to the `Main` method in the *Program.cs* file:</span></span>
+<span data-ttu-id="be200-118">Přidat inicializátoru počáteční hodnoty do `Main` metoda v *Program.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="be200-118">Add the seed initializer to the `Main` method in the *Program.cs* file:</span></span>
 
-[!code-csharp[Main](../../tutorials/razor-pages\razor-pages-start\sample\RazorPagesMovie\Program.cs)]
+[!code-csharp[](../../tutorials/razor-pages\razor-pages-start\sample\RazorPagesMovie\Program.cs)]
 
-### <a name="test-the-app"></a><span data-ttu-id="e855d-119">Testování aplikace</span><span class="sxs-lookup"><span data-stu-id="e855d-119">Test the app</span></span>
+### <a name="test-the-app"></a><span data-ttu-id="be200-119">Testování aplikace</span><span class="sxs-lookup"><span data-stu-id="be200-119">Test the app</span></span>
 
-<span data-ttu-id="e855d-120">Odstraňte všechny záznamy v databázi (tak, aby metoda počáteční hodnoty spuštěno).</span><span class="sxs-lookup"><span data-stu-id="e855d-120">Delete all the records in the DB (So the seed method will run).</span></span> <span data-ttu-id="e855d-121">Zastavení a spuštění aplikace počáteční hodnoty databáze.</span><span class="sxs-lookup"><span data-stu-id="e855d-121">Stop and start the app to seed the database.</span></span>
+<span data-ttu-id="be200-120">Odstraňte všechny záznamy v databázi (tak, aby metoda počáteční hodnoty spuštěno).</span><span class="sxs-lookup"><span data-stu-id="be200-120">Delete all the records in the DB (So the seed method will run).</span></span> <span data-ttu-id="be200-121">Zastavení a spuštění aplikace počáteční hodnoty databáze.</span><span class="sxs-lookup"><span data-stu-id="be200-121">Stop and start the app to seed the database.</span></span>
 
-<span data-ttu-id="e855d-122">Aplikace zobrazuje dosazená data.</span><span class="sxs-lookup"><span data-stu-id="e855d-122">The app shows the seeded data.</span></span>
+<span data-ttu-id="be200-122">Aplikace zobrazuje dosazená data.</span><span class="sxs-lookup"><span data-stu-id="be200-122">The app shows the seeded data.</span></span>

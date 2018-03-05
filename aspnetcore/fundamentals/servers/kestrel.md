@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: bfe7644891296c7c3485c9a870d90951ba87e9e8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f52f8ae40bc4d135d87efc6e11917d53fdca0df5
+ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/05/2018
 ---
-# <a name="introduction-to-kestrel-web-server-implementation-in-aspnet-core"></a>Úvod k implementaci serveru webové Kestrel v ASP.NET Core
+# <a name="kestrel-web-server-implementation-in-aspnet-core"></a>Kestrel webového serveru implementace v ASP.NET Core
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Jan Ross](https://github.com/Tratcher), a [Stephen Halter](https://twitter.com/halter73)
 
@@ -184,7 +184,7 @@ Ve výchozím nastavení ASP.NET Core váže k `http://localhost:5000`. Konfigur
 
 Všimněte si, jak tento příklad konfiguruje SSL pro koncový bod konkrétní pomocí [ListenOptions](https://github.com/aspnet/KestrelHttpServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.Kestrel.Core/ListenOptions.cs). Konfigurovat další nastavení Kestrel pro konkrétní koncové body, můžete použít stejné rozhraní API.
 
-[!INCLUDE[How to make an SSL cert](../../includes/make-ssl-cert.md)]
+[!INCLUDE[How to make an X.509 cert](../../includes/make-x509-cert.md)]
 
 **Vytvoření vazby na soket systému Unix**
 
@@ -338,7 +338,7 @@ var host = new WebHostBuilder()
 > [!NOTE]
 > Protokol HTTPS a HTTP nemůže být hostovaná na stejném portu.
 
-[!INCLUDE[How to make an SSL cert](../../includes/make-ssl-cert.md)]
+[!INCLUDE[How to make an X.509 cert](../../includes/make-x509-cert.md)]
 
 ---
 ## <a name="next-steps"></a>Další kroky

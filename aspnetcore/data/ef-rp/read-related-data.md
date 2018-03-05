@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 39e655ffcb01fb21c79cd2564862f49a86e9e9d4
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 6e71e9c01a58c3f60dacce8959ac4502a3690690
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>Čtení související data – základní EF s stránky Razor (6 8)
 
@@ -97,9 +97,9 @@ Spusťte aplikaci a vyberte **kurzy** odkaz. Zobrazuje sloupec oddělení `Depar
 
 Aktualizace `OnGetAsync` metoda následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod)]
 
-Předchozí kód přidá `AsNoTracking`. `AsNoTracking`zvyšuje výkon, protože nejsou sledovat entity vrátila. Entity, které nejsou sledovat, protože se neaktualizují v aktuálním kontextu.
+Předchozí kód přidá `AsNoTracking`. `AsNoTracking` zvyšuje výkon, protože nejsou sledovat entity vrátila. Entity, které nejsou sledovat, protože se neaktualizují v aktuálním kontextu.
 
 Aktualizace *Views/Courses/Index.cshtml* s následující zvýrazněný kód:
 
@@ -124,17 +124,17 @@ Spusťte aplikaci a vyberte **kurzy** karty zobrazíte seznam s názvy oddělen�
 
 `OnGetAsync` Metoda načte související data se `Include` metoda:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
 
 `Select` Operátor načte pouze související data, které jsou potřeba. Pro jednotlivé položky jako `Department.Name` používá SQL vnitřního spojení. Pro kolekce, používá jiný přístup k databázi, ale tak `Include` operátor u kolekcí.
 
 Následující kód načte související data se `Select` metoda:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/IndexSelect.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/IndexSelect.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
 
 `CourseViewModel`:
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/CourseViewModel.cs?name=snippet)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/CourseViewModel.cs?name=snippet)]
 
 V tématu [IndexSelect.cshtml](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu/Pages/Courses/IndexSelect.cshtml) a [IndexSelect.cshtml.cs](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu/Pages/Courses/IndexSelect.cshtml.cs) kompletní příklad.
 
@@ -157,7 +157,7 @@ Stránka vyučující zobrazuje data ze tří různých tabulek. Model zobrazen�
 
 V *SchoolViewModels* složku vytvořit *InstructorIndexData.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
 
 ### <a name="scaffold-the-instructor-model"></a>Vygenerované uživatelské rozhraní lektorem modelu
 
@@ -179,13 +179,13 @@ Spusťte aplikaci a přejděte na stránku vyučující.
 
 Nahraďte *Pages/Instructors/Index.cshtml.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,20-99)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,20-99)]
 
 `OnGetAsync` Metoda přijímá data volitelné trasy pro ID vybrané lektorem.
 
 Vyhledejte dotaz na *Pages/Instructors/Index.cshtml* stránky:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_ThenInclude)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_ThenInclude)]
 
 Dotaz má dva zahrnuje:
 
@@ -201,7 +201,7 @@ Aktualizace *Pages/Instructors/Index.cshtml* s následující kód:
 
 Předchozí kód provede tyto změny:
 
-* Aktualizace `page` direktivy z `@page` k `@page "{id:int?}"`. `"{id:int?}"`je šablonu trasy. Šablona trasy změny řetězce dotazu celé číslo v adrese URL data trasy. Například kliknete na **vyberte** odkaz lektorem se pouze `@page` – direktiva vytvoří adresu URL podobnou následující:
+* Aktualizace `page` direktivy z `@page` k `@page "{id:int?}"`. `"{id:int?}"` je šablonu trasy. Šablona trasy změny řetězce dotazu celé číslo v adrese URL data trasy. Například kliknete na **vyberte** odkaz lektorem se pouze `@page` – direktiva vytvoří adresu URL podobnou následující:
 
     `http://localhost:1234/Instructors?id=2`
 
@@ -248,19 +248,19 @@ Klikněte na **vyberte** odkaz. Změny styl řádku.
 
 Aktualizace `OnGetAsync` metoda v *Pages/Instructors/Index.cshtml.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_OnGetAsync&highlight=1,8,16-999)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_OnGetAsync&highlight=1,8,16-999)]
 
 Zkontrolujte aktualizované dotazu:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ThenInclude)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ThenInclude)]
 
 Přidá předchozího dotazu `Department` entity.
 
 Následující kód provede, když je vybrána lektorem (`id != null`). Vybrané lektorem se načítají ze seznamu vyučující v zobrazení modelu. Model zobrazení `Courses` vlastnosti je načtena s `Course` entity z této lektorem `CourseAssignments` navigační vlastnost.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ID)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ID)]
 
-`Where` Metoda vrátí kolekci. V předchozím `Where` metoda jediným `Instructor` se vrátí entity. `Single` Metoda převede kolekci do jednoho `Instructor` entity. `Instructor` Entity poskytuje přístup k `CourseAssignments` vlastnost. `CourseAssignments`poskytuje přístup k související `Course` entity.
+`Where` Metoda vrátí kolekci. V předchozím `Where` metoda jediným `Instructor` se vrátí entity. `Single` Metoda převede kolekci do jednoho `Instructor` entity. `Instructor` Entity poskytuje přístup k `CourseAssignments` vlastnost. `CourseAssignments` poskytuje přístup k související `Course` entity.
 
 ![M:M lektorem kurzy](complex-data-model/_static/courseassignment.png)
 
@@ -271,7 +271,7 @@ Následující kód provede, když je vybrána lektorem (`id != null`). Vybrané
 
 Následující kód naplní model zobrazení `Enrollments` vlastnost, pokud je vybrána kurzu:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_courseID)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_courseID)]
 
 Přidejte následující kód do konce *Pages/Courses/Index.cshtml* Razor stránky:
 
@@ -289,7 +289,7 @@ V této části je aktualizována aplikace na student data pro vybrané kurzu.
 
 Aktualizace dotazu ve `OnGetAsync` metoda v *Pages/Instructors/Index.cshtml.cs* následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
 
 Aktualizace *Pages/Instructors/Index.cshtml*. Na konec souboru přidejte následující kód:
 
@@ -305,7 +305,7 @@ Aktualizujte stránku a vyberte lektorem. Vyberte kurz chcete zobrazit seznam re
 
 `Single` Metoda můžete předat `Where` podmínku namísto volání `Where` metoda samostatně:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21,28-29)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21,28-29)]
 
 Podle předchozích `Single` přístup poskytuje žádné výhod oproti použití `Where`. Někteří vývojáři raději `Single` přístupu stylu.
 
@@ -313,13 +313,13 @@ Podle předchozích `Single` přístup poskytuje žádné výhod oproti použit�
 
 Určuje aktuálního kódu přes načítání pro `Enrollments` a `Students`:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
 
 Předpokládejme, že uživatelé chtějí zřídka najdete v části registrace v kurzu. V takovém případě optimalizace bude pouze načíst data zápisu, pokud se vyžaduje. V této části `OnGetAsync` je aktualizovat, a použít explicitní načítání `Enrollments` a `Students`.
 
 Aktualizace `OnGetAsync` následujícím kódem:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/IndexXp.cshtml.cs?name=snippet_OnGetAsync&highlight=9-13,29-35)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexXp.cshtml.cs?name=snippet_OnGetAsync&highlight=9-13,29-35)]
 
 Předchozí kód zahodí *ThenInclude* metoda volá pro registraci a student data. Pokud je vybrána kurzu, načte zvýrazněný kód:
 

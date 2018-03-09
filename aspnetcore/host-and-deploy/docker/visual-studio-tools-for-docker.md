@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: caf0e423d8e6f61fd2470d1f4ea2dd93909c3696
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 590d32342b1724a0cbc937655c35631938eb09b2
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Visual Studio Tools pro Docker základní technologie ASP.NET
 
@@ -38,7 +38,7 @@ Pro instalaci Docker, přečtěte si informace v [Docker pro Windows: co potřeb
 
 ## <a name="add-docker-support-to-an-app"></a>Přidání podpory Docker do aplikace
 
-Cílový framework projektu ASP.NET Core Určuje typy podporované kontejneru. Projektech zacílených na .NET Core podporovat kontejnery Linux a Windows. Projekty pouze cílení na rozhraní .NET Framework podporují Windows kontejnery.
+Chcete-li přidat podporu Docker do projektu ASP.NET Core, musí být projektu .NET Core. Kontejnery pro Linux a Windows jsou podporovány.
 
 Když přidáváte podporu Docker do projektu, zvolte Windows nebo Linux kontejneru. Hostitelů Docker musí používat stejný typ kontejneru. Chcete-li změnit typ kontejneru v běžící instance Docker, klikněte pravým tlačítkem na ikonu Docker na hlavním panelu a vyberte **přepnout do kontejnerů Windows...**  nebo **přepnout do kontejnerů Linux...** .
 
@@ -67,7 +67,7 @@ Přidat sady Visual Studio Tools for Docker *docker-tvoří* projektu a řešen�
 
 A *soubor Docker*, recepturách pro vytvoření finální image Docker, se přidá do kořenového adresáře projektu. Odkazovat na [odkaz na soubor Docker](https://docs.docker.com/engine/reference/builder/) pro pochopení příkazy v něm. Tato konkrétní *soubor Docker* používá [více fáze sestavení](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) obsahující jedinečné, čtyři fáze sestavení s názvem:
 
-[!code-text[](visual-studio-tools-for-docker/samples/HelloDockerTools/HelloDockerTools/Dockerfile?highlight=1,5,14,17)]
+[!code-dockerfile[](visual-studio-tools-for-docker/samples/HelloDockerTools/HelloDockerTools/Dockerfile?highlight=1,5,14,17)]
 
 *Soubor Docker* je založena na [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore) bitové kopie. Tato základní image obsahuje balíčků ASP.NET Core NuGet, které byly před jitted ke zlepšení výkonu při spuštění.
 

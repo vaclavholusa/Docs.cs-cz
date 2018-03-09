@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 6170ee9f3e8bf1657fdea155c19356b6d5749f2d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 2dced015759eebea01f0174a21819499374ccf7c
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Začínáme s ASP.NET MVC jádra a Entity Framework Core pomocí sady Visual Studio (1 10)
 
@@ -311,7 +311,7 @@ Klikněte pravým tlačítkem myši **Student** tabulky a klikněte na tlačítk
 
 ![Tabulka Student v SSOX](intro/_static/ssox-student-table.png)
 
-*.Mdf* a *.ldf* databázové soubory jsou v *C:\Users\<uživatelské_jméno >* složky.
+*.Mdf* a *.ldf* databázové soubory jsou v *C:\Users\\ <yourusername>*  složky.
 
 Protože jste volání `EnsureCreated` v metodě inicializátoru, který spouští při spuštění aplikace, můžete dokonce vytvářet teď ke změně `Student` třídy, odstraňte tuto databázi, spusťte aplikaci znovu a databáze bude automaticky znovu vytvořit tak, aby odpovídaly vaší změn. Například, pokud přidáte `EmailAddress` vlastnost, která má `Student` třídy, se zobrazí nový `EmailAddress` sloupec v tabulce znovu vytvořena.
 

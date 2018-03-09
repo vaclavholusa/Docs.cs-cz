@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: ef5dba655a8b6332bf0b6f21c678481a1c55aecf
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 64635235c11b55818da02d63d044334f4b2cdb08
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>Ukládání do mezipaměti v paměti v ASP.NET Core
 
@@ -46,15 +46,15 @@ Požadavku `IMemoryCache` instance v konstruktoru:
 
 `IMemoryCache` vyžaduje balíček NuGet "Microsoft.Extensions.Caching.Memory".
 
-Následující kód používá [TryGetValue](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__) ke kontrole, pokud je aktuální čas v mezipaměti. Pokud položka není v mezipaměti, nový záznam je vytvořen a přidán do mezipaměti s [nastavit](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_).
+Následující kód používá [TryGetValue](/dotnet/api/microsoft.extensions.caching.memory.imemorycache.trygetvalue?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__) ke kontrole, pokud čas je v mezipaměti. Pokud není v mezipaměti na dobu, nový záznam je vytvořen a přidán do mezipaměti s [nastavit](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions.set?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_Microsoft_Extensions_Caching_Memory_MemoryCacheEntryOptions_).
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
 
 Zobrazí se aktuální čas a čas v mezipaměti:
 
-[!code-html[](memory/sample/WebCache/Views/Home/Cache.cshtml)]
+[!code-cshtml[](memory/sample/WebCache/Views/Home/Cache.cshtml)]
 
-Uložená v mezipaměti `DateTime` hodnota zůstane v mezipaměti, přestože jsou požadavky v rámci časového limitu (a žádné vyřazení z důvodu přetížení paměti). Následující obrázek ukazuje aktuální čas a starší čas načten z mezipaměti:
+Uložená v mezipaměti `DateTime` hodnota zůstává v mezipaměti, přestože jsou požadavky v rámci časového limitu (a žádné vyřazení z důvodu přetížení paměti). Následující obrázek ukazuje aktuální čas a starší čas načtení z mezipaměti:
 
 ![Zobrazení index se zobrazí dva různé časy.](memory/_static/time.png)
 

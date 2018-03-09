@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: 22494027657aa481790c3d6e78a0b51df301616e
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 81d24088d53a7e37d17bb7c57892c98efb06ca6f
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Co je nového v technologii ASP.NET 2.0 jádra
 
@@ -127,6 +127,8 @@ Další informace najdete v tématu [zabránit webů požadavku padělání (XSR
 ## <a name="automatic-precompilation"></a>Automatická předkompilace
 
 Předběžné kompilace zobrazení syntaxe Razor je standardně během publikování, snižuje velikost výstup publikování a aplikace čas spuštění.
+
+Další informace najdete v tématu [kompilace zobrazení syntaxe Razor a předkompilaci v ASP.NET Core](xref:mvc/views/view-compilation).
 
 ## <a name="razor-support-for-c-71"></a>Podpora syntaxe Razor pro C# 7.1
 

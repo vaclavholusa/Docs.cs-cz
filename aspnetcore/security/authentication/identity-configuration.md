@@ -4,16 +4,16 @@ author: AdrienTorris
 description: "Výchozí hodnoty ASP.NET Core Identity a zjistěte, jak nakonfigurovat vlastnosti Identity, které chcete použít vlastní hodnoty."
 manager: wpickett
 ms.author: scaddie
-ms.date: 02/21/2018
+ms.date: 03/06/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: 6aeb85063b4b6f97822062b523a0c1f7ee6b595c
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 469068af2fc12627a0a5d1c5623eb60bef51cea0
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="configure-identity"></a>Konfigurace Identity
 
@@ -132,7 +132,7 @@ Konfigurovat soubor cookie aplikace v `Startup.ConfigureServices`:
 | [AutomaticChallenge](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticchallenge) | Platí jenom pro ASP.NET Core 1.x.<br><br> V případě hodnoty true zpracovává middleware ověřování automatické problémy. Pokud hodnotu false, middleware ověřování jenom mění odpovědi, když explicitně uvedené `AuthenticationScheme`. |
 | [ClaimsIssuer](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.claimsissuer) | Získá nebo nastaví vystavitele, který se má použít pro deklarace identity, které jsou vytvořené (zděděno z [AuthenticationSchemeOptions](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions)). |
 | [Cookie.Domain](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.domain) | Domény, ke které soubor cookie přidružit. |
-| [Cookie.Expiration](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.expiration) | Získá nebo nastaví životnost souboru cookie. |
+| [Cookie.Expiration](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.expiration) | Získá nebo nastaví životnost souboru cookie HTTP (ne ověřovacího souboru cookie). Tato vlastnost je přepsat [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan). Neměl by být použit v rámci CookieAuthentication. |
 | [Cookie.HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) | Určuje, zda je soubor cookie přístupný pro skript na straně klienta.<br><br>Výchozí hodnota je `true`. |
 | [Cookie.Name](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.name) | Název souboru cookie.<br><br>Výchozí hodnota je `.AspNetCore.Cookies`. |
 | [Cookie.Path](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.path) | Cesta k souboru cookie. |

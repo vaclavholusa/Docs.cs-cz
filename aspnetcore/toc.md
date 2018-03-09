@@ -213,6 +213,9 @@
 # [Mobilní zařízení](xref:mobile/index)
 ## [Vytváření back-endových služeb pro nativní mobilní aplikace](xref:mobile/native-mobile-backend)
 
+# [SignalR](xref:signalr/index)
+## [Začínáme](xref:signalr/get-started-signalr-core)
+
 # [Hostitelství a nasazení](xref:host-and-deploy/index)
 ## [Hostování v Azure App Service](xref:host-and-deploy/azure-apps/index)
 ### [Publikování do Azure pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)

@@ -210,6 +210,9 @@
 ### [Šablona projektu React](xref:spa/react)
 ### [Šablona projektu React with Redux](xref:spa/react-with-redux)
 
+# [SignalR](xref:signalr/introduction-signalr-core)
+## [Úvod](xref:signalr/introduction-signalr-core)
+
 # [Mobilní zařízení](xref:mobile/index)
 ## [Vytváření back-endových služeb pro nativní mobilní aplikace](xref:mobile/native-mobile-backend)
 

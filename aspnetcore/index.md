@@ -4,16 +4,16 @@ author: rick-anderson
 description: "Nabízí úvodní informace o ASP.NET Core."
 manager: wpickett
 ms.author: riande
-ms.date: 12/12/2017
+ms.date: 02/28/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: index
-ms.openlocfilehash: 42bf005a29a8723233a0d9e5532827f7522f0e75
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 112e1e4dc4eed2cf0ee94741a52ce6625e1f42a6
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="aspnet-core"></a>ASP.NET Core
 
@@ -43,7 +43,7 @@ ASP.NET Core nabízí následující výhody:
 * Možnost kompilace a spuštění v systémech Windows, Mac OS a Linux.
 * Architektura zaměřená na open-source a [komunitu](https://live.asp.net/)
 
-Architektura ASP.NET Core se celá dodává v balíčcích [NuGet](https://www.nuget.org/). To umožňuje optimalizovat aplikaci tak, aby zahrnovala jen potřebné balíčky NuGet. Ve skutečnosti vyžadují aplikace ASP.NET Core 2.x, jejichž cílem je .NET Core, jen [jeden balíček NuGet](xref:fundamentals/metapackage). K výhodám menší plochy aplikace patří důkladnější zabezpečení, menší údržba a větší výkon.
+Architektura ASP.NET Core se celá dodává v balíčcích [NuGet](https://www.nuget.org/). Pomocí balíčků NuGet můžete svou aplikaci optimalizovat tak, aby obsahovala jen nezbytné závislosti. Ve skutečnosti vyžadují aplikace ASP.NET Core 2.x, jejichž cílem je .NET Core, jen [jeden balíček NuGet](xref:fundamentals/metapackage). K výhodám menší plochy aplikace patří důkladnější zabezpečení, menší údržba a větší výkon.
 
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>Vytváření webových rozhraní API a webového uživatelského rozhraní v ASP.NET Core MVC
 
@@ -59,7 +59,21 @@ Architektura ASP.NET Core MVC nabízí funkce umožňující vytvářet [webová
 
 ## <a name="client-side-development"></a>Vývoj klientské strany
 
-Architektura ASP.NET Core se hladce integruje do oblíbených klientských rozhraní a knihoven, včetně [Angular](xref:spa/angular), [React](xref:spa/react) a [Bootstrap](xref:client-side/bootstrap). Podrobnější informace najdete v části [Vývoj klientské strany](xref:client-side/index).
+Architektura ASP.NET Core se hladce integruje do oblíbených klientských rozhraní a knihoven, včetně [Angular](xref:spa/angular), [React](xref:spa/react) a [Bootstrap](xref:client-side/bootstrap). Další informace najdete v článku [Vývoj na straně klienta](xref:client-side/index).
+
+## <a name="aspnet-core-targeting-net-framework"></a>Cílení ASP.NET Core na .NET Framework
+
+Cílem ASP.NET Core může být .NET Core nebo .NET Framework. Aplikace ASP.NET Core, jejichž cílem je .NET Framework, nejsou multiplatformní, ale běží jen ve Windows. V ASP.NET Core neplánujeme odebrat podporu pro cílení na .NET Framework. ASP.NET Core se obecně skládá z knihoven [.NET Standard](/dotnet/standard/net-standard). Aplikace vytvořené pomocí .NET Standard 2.0 běží všude, kde se podporuje .NET Standard 2.0.
+
+Cílení na .NET Core má několik výhod, které přibývají s každou vydanou verzí. Mezi výhody .NET Core oproti .NET Framework patří:
+
+* Mutliplatformní: Běží v systémech macOS, Linux a Windows.
+* Vyšší výkon
+* Souběžná správa verzí
+* Nová rozhraní API
+* Open source
+
+Ze všech sil se snažíme doplnit rozhraní API z .NET Framework do .NET Core. Sada [Windows Compatibility Pack](/dotnet/core/porting/windows-compat-pack) zpřístupnila v .NET Core tisíce rozhraní API, která byla určena jen pro Windows. Tato rozhraní API nebyla v .NET Core 1.x dostupná.
 
 ## <a name="next-steps"></a>Další kroky
 

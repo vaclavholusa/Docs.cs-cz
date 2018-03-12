@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api
-ms.openlocfilehash: 7c91866de60988ebfeafea6e026a3dcec25d7c3d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 6ce18cfd488d89a633bca6c02f9391c1dcca9c08
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/12/2018
 ---
 #<a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio pro Windows
 
@@ -41,11 +41,11 @@ V tématu [tento PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/tuto
 
 Ze sady Visual Studio, vyberte **soubor** nabídce > **nový** > **projektu**.
 
-Vyberte **webové aplikace ASP.NET Core (.NET Core)** šablona projektu. Název projektu `TodoApi` a vyberte **OK**.
+Vyberte **.NET Core** >  **webové aplikace ASP.NET Core** šablona projektu. Název projektu `TodoApi` a vyberte **OK**.
 
 ![Dialogové okno Nový projekt](first-web-api/_static/new-project.png)
 
-V **nové základní webové aplikace ASP.NET - TodoApi** dialogovém okně, vyberte **webového rozhraní API** šablony. Vyberte **OK**. Proveďte **není** vyberte **povolení podpory Docker**.
+V **nové základní webové aplikace ASP.NET - TodoApi** dialogovém okně, vyberte **rozhraní API** šablony. Vyberte **OK**. Proveďte **není** vyberte **povolení podpory Docker**.
 
 ![Dialogové okno nové webové aplikace ASP.NET pomocí šablony projektu webového rozhraní API vybrané ze šablon jádro ASP.NET](first-web-api/_static/web-api-project.png)
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: bcfd20fcea1e683bcbef00a9e67bb28add4f23be
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 45b00fbc15740fad60202bb7e5ab14beb9ebe495
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
 
@@ -47,8 +47,11 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
   * [Webové rozhraní API pomocí sady Visual Studio pro Windows](first-web-api.md)
   * [Web API se sadou Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
   * [Web API s editorem Visual Studio Code](web-api-vsc.md)
-  
-* [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](web-api-help-pages-using-swagger.md)
+
+* [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](xref:tutorials/web-api-help-pages-using-swagger)
+  * [Začínáme s NSwag](xref:tutorials/get-started-with-nswag)
+  * [Začínáme s Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
+
 * [Vytvoření back-endu webové služby pro nativní mobilní aplikace](../mobile/native-mobile-backend.md)
 
 ## <a name="data-access-and-storage"></a>Přístup k datům a úložiště

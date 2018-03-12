@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/razor-pages/razor-pages-convention-features
-ms.openlocfilehash: 54834727db70668552b2a1007c8a9be3cfe2e6b7
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 5105935a8f5b9e9f258fe84f839d17f6948bab1d
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="razor-pages-route-and-app-convention-features-in-aspnet-core"></a>Syntaxe Razor stránky trasy a aplikace konvence funkce ASP.NET Core
 
@@ -43,7 +43,7 @@ Ukázková aplikace přidá `{globalTemplate?}` šablonu trasy na všechny strá
 [!code-csharp[](razor-pages-convention-features/sample/Conventions/GlobalTemplatePageRouteModelConvention.cs?name=snippet1)]
 
 > [!NOTE]
-> `Order` Vlastnost `AttributeRouteModel` je nastaven na `0` (nula). Tím se zajistí, že tato šablona je daná prioritu pro první pozici hodnoty data trasy, pokud je zadána hodnota jedné směrovací. Příklad: Ukázka přidá `{aboutTemplate?}` šablonu trasy později v tomto tématu. `{aboutTemplate?}` Šablony je uveden `Order` z `1`. Když je stránka o požádali v `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 0`) a ne `RouteData.Values["aboutTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
+> `Order` Vlastnost `AttributeRouteModel` je nastaven na `-1`. Tím se zajistí, že této šablony je daná prioritu pro první pozici hodnoty data trasy, pokud je zadána hodnota jedné směrovací a také to by mají přednost před automaticky generované trasy stránky Razor. Příklad: Ukázka přidá `{aboutTemplate?}` šablonu trasy později v tomto tématu. `{aboutTemplate?}` Šablony je uveden `Order` z `1`. Když je stránka o požádali v `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = -1`) a ne `RouteData.Values["aboutTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
 
 Možnosti stránky Razor, jako je například přidávání [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions), se přidají, když MVC je přidat do kolekce služby v `Startup.ConfigureServices`. Příklad, naleznete v části [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/razor-pages-convention-features/sample/).
 
@@ -84,7 +84,7 @@ Použití ukázkové aplikace `AddFolderRouteModelConvention` přidat `{otherPag
 [!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet3)]
 
 > [!NOTE]
-> `Order` Vlastnost `AttributeRouteModel` je nastaven na `1`. To zajistí, že šablona pro `{globalTemplate?}` (set dříve v tomto tématu) pro data trasy, která první hodnota pozice, pokud je zadána hodnota jedné směrovací přidělen s prioritou. Pokud v požadavku na stránku Page1 `/OtherPages/Page1/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 0`) a ne `RouteData.Values["otherPagesTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
+> `Order` Vlastnost `AttributeRouteModel` je nastaven na `1`. To zajistí, že šablona pro `{globalTemplate?}` (set dříve v tomto tématu) pro data trasy, která první hodnota pozice, pokud je zadána hodnota jedné směrovací přidělen s prioritou. Pokud v požadavku na stránku Page1 `/OtherPages/Page1/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = -1`) a ne `RouteData.Values["otherPagesTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
 
 Požadavek ukázkové Page1 stránku v `localhost:5000/OtherPages/Page1/GlobalRouteValue/OtherPagesRouteValue` a zkontrolovat výsledek:
 
@@ -99,7 +99,7 @@ Použití ukázkové aplikace `AddPageRouteModelConvention` přidat `{aboutTempl
 [!code-csharp[](razor-pages-convention-features/sample/Startup.cs?name=snippet4)]
 
 > [!NOTE]
-> `Order` Vlastnost `AttributeRouteModel` je nastaven na `1`. To zajistí, že šablona pro `{globalTemplate?}` (set dříve v tomto tématu) pro data trasy, která první hodnota pozice, pokud je zadána hodnota jedné směrovací přidělen s prioritou. Pokud v požadavku na stránku o `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 0`) a ne `RouteData.Values["aboutTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
+> `Order` Vlastnost `AttributeRouteModel` je nastaven na `1`. To zajistí, že šablona pro `{globalTemplate?}` (set dříve v tomto tématu) pro data trasy, která první hodnota pozice, pokud je zadána hodnota jedné směrovací přidělen s prioritou. Pokud v požadavku na stránku o `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = -1`) a ne `RouteData.Values["aboutTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
 
 Požadavek vzorku o stránku v `localhost:5000/About/GlobalRouteValue/AboutRouteValue` a zkontrolovat výsledek:
 
@@ -205,11 +205,11 @@ Metody obslužné rutiny pro příkazy HTTP ("nepojmenované" Obslužná rutina 
 | -------------------------- | ------------------------------ |
 | `OnGet`/`OnGetAsync`       | Inicializujte stav stránky.     |
 | `OnPost`/`OnPostAsync`     | Zpracování požadavků POST.          |
-| `OnDelete`/`OnDeleteAsync` | Zpracování žádosti o odstranění &#8224;. |
-| `OnPut`/`OnPutAsync`       | Zpracování žádosti PUT &#8224;.    |
-| `OnPatch`/`OnPatchAsync`   | Zpracovává požadavky PATCH &#8224;.  |
+| `OnDelete`/`OnDeleteAsync` | Zpracování požadavků DELETE&#8224;. |
+| `OnPut`/`OnPutAsync`       | Zpracování žádosti PUT&#8224;.    |
+| `OnPatch`/`OnPatchAsync`   | Zpracovává požadavky PATCH&#8224;.  |
 
-&#8224; Použít pro volání rozhraní API na stránku.
+&#8224;Použít pro volání rozhraní API na stránku.
 
 **Výchozí název metody obslužné rutiny**
 
@@ -219,11 +219,11 @@ Obslužná rutina metody poskytované developer ("s názvem" metody obslužné r
 | ---------------------------------------- | ------------------------ |
 | `OnGetMessage`/`OnGetMessageAsync`       | Získáte zprávu.        |
 | `OnPostMessage`/`OnPostMessageAsync`     | Odeslat zprávu.          |
-| `OnDeleteMessage`/`OnDeleteMessageAsync` | Odstraňte zprávu &#8224;. |
-| `OnPutMessage`/`OnPutMessageAsync`       | UVEĎTE zprávu &#8224;.    |
-| `OnPatchMessage`/`OnPatchMessageAsync`   | Oprava zprávu &#8224;.  |
+| `OnDeleteMessage`/`OnDeleteMessageAsync` | ODSTRANĚNÍ zprávy&#8224;. |
+| `OnPutMessage`/`OnPutMessageAsync`       | VLOŽÍ zprávu&#8224;.    |
+| `OnPatchMessage`/`OnPatchMessageAsync`   | Oprava zprávu&#8224;.  |
 
-&#8224; Použít pro volání rozhraní API na stránku.
+&#8224;Použít pro volání rozhraní API na stránku.
 
 **Přizpůsobení názvů obslužná rutina – metoda**
 
@@ -233,16 +233,16 @@ Předpokládejme, že chcete změnit způsob, jakým jsou pojmenované metody po
 | ------------------------------------ | ------------------------------ |
 | `Get`                                | Inicializujte stav stránky.     |
 | `Post`/`PostAsync`                   | Zpracování požadavků POST.          |
-| `Delete`/`DeleteAsync`               | Zpracování žádosti o odstranění &#8224;. |
-| `Put`/`PutAsync`                     | Zpracování žádosti PUT &#8224;.    |
-| `Patch`/`PatchAsync`                 | Zpracovává požadavky PATCH &#8224;.  |
+| `Delete`/`DeleteAsync`               | Zpracování požadavků DELETE&#8224;. |
+| `Put`/`PutAsync`                     | Zpracování žádosti PUT&#8224;.    |
+| `Patch`/`PatchAsync`                 | Zpracovává požadavky PATCH&#8224;.  |
 | `GetMessage`                         | Získáte zprávu.              |
 | `PostMessage`/`PostMessageAsync`     | Odeslat zprávu.                |
 | `DeleteMessage`/`DeleteMessageAsync` | Odeslat zprávu odstranit.      |
 | `PutMessage`/`PutMessageAsync`       | Odeslat zprávu pro umístění.         |
 | `PatchMessage`/`PatchMessageAsync`   | Odeslat zprávu na opravu.       |
 
-&#8224; Použít pro volání rozhraní API na stránku.
+&#8224;Použít pro volání rozhraní API na stránku.
 
 K vytvoření tohoto systému, dědí `DefaultPageApplicationModelProvider` třídy a přepsat [CreateHandlerModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.internal.defaultpageapplicationmodelprovider.createhandlermodel) metoda zadat vlastní logiky pro vyřešení [PageModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel) názvy obslužné rutiny. Ukázková aplikace se dozvíte, jak je to v jeho `CustomPageApplicationModelProvider` třídy:
 

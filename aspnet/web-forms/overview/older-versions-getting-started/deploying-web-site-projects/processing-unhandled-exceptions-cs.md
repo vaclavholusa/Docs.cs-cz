@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7be257faa350476bef9f6d372ea4f140fff8d136
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: dda73ca1878396e04b8ff04a255c25bf26ed4eff
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/12/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>Zpracování neošetřených výjimek (C#)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si kód](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_12_CS.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial12_ErrorHandling_cs.pdf)
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs/samples) ([stažení](/aspnet/core/tutorials/index#how-to-download-a-sample))
 
 > Když dojde k chybě za běhu na webovou aplikaci v produkčním prostředí je důležité, upozornit vývojáře a do protokolu chyba, takže může být zjištěna později v čase. V tomto kurzu poskytuje přehled o tom, jak ASP.NET zpracovává chyby za běhu a vypadá na jeden způsob, jak mají vlastní kód provést vždy, když neošetřené výjimce bubliny až modulem runtime ASP.NET.
 
@@ -62,7 +62,7 @@ Obsahu a struktuře `Global.asax` soubor vytvořený pomocí sady Visual Studio 
 
 Obslužné rutiny událostí vytvořené šablona globální třídy aplikace Visual Studio nejsou vyčerpávající. Můžete přidat obslužné rutiny události pro libovolný `HttpApplication` událostí pojmenováním obslužné rutiny události `Application_EventName`. Můžete například přidat následující kód, který `Global.asax` soubor k vytvoření obslužné rutiny události pro [ `AuthorizeRequest` událostí](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx):
 
-[!code-vb[Main](processing-unhandled-exceptions-cs/samples/sample1.vb)]
+[!code-cs[Main](processing-unhandled-exceptions-cs/samples/sample1.cs)]
 
 Podobně můžete odebrat všechny obslužné rutiny vytvořených šablonou globální třídy aplikace, které nejsou potřebné. V tomto kurzu jsme vyžadují jenom obslužné rutiny události pro `Error` událostí; chování volné k odebrání dalších obslužné rutiny událostí z `Global.asax` souboru.
 
@@ -159,7 +159,7 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 - [Vytváření modulů HTTP v ASP.NET a Přehled obslužných rutin HTTP](https://support.microsoft.com/kb/307985)
 - [Řádně neodpovídá na požadavky neošetřených výjimek - zpracování neošetřených výjimek](http://aspnet.4guysfromrolla.com/articles/091306-1.aspx)
-- [`HttpApplication`Třída a objekt aplikace ASP.NET](http://www.eggheadcafe.com/articles/20030211.asp)
+- [`HttpApplication` Třída a objekt aplikace ASP.NET](http://www.eggheadcafe.com/articles/20030211.asp)
 - [Obslužné rutiny HTTP a vytváření modulů HTTP v technologii ASP.NET](http://www.15seconds.com/Issue/020417.htm)
 - [Odesílání e-mailu v technologii ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
 - [Pochopení `Global.asax` souboru](http://aspalliance.com/1114_Understanding_the_Globalasax_file.all)

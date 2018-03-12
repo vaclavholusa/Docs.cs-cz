@@ -29,7 +29,9 @@
 
 ## [Vytváření webových rozhraní API](mvc/web-api/index.md)
 ### [Vytvoření webové rozhraní API v systému Mac](xref:tutorials/first-web-api-mac)
-### [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](tutorials/web-api-help-pages-using-swagger.md)
+### [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](xref:tutorials/web-api-help-pages-using-swagger)
+#### [Začínáme s NSwag](xref:tutorials/get-started-with-nswag)
+#### [Začínáme s Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
 ### [Vytváření back-endových služeb pro nativní mobilní aplikace](mobile/native-mobile-backend.md)
 
 ## [Přístup k datům - s EF jádra](xref:data/index)
@@ -212,12 +214,10 @@
 
 # [SignalR](xref:signalr/introduction-signalr-core)
 ## [Úvod](xref:signalr/introduction-signalr-core)
+## [Začínáme](xref:signalr/get-started-signalr-core)
 
 # [Mobilní zařízení](xref:mobile/index)
 ## [Vytváření back-endových služeb pro nativní mobilní aplikace](xref:mobile/native-mobile-backend)
-
-# [SignalR](xref:signalr/index)
-## [Začínáme](xref:signalr/get-started-signalr-core)
 
 # [Hostitelství a nasazení](xref:host-and-deploy/index)
 ## [Hostování v Azure App Service](xref:host-and-deploy/azure-apps/index)

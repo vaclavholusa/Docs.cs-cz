@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: cb3d013d69e36f97335ea31dd6e4997772ba2d8e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>Konfigurace oprávnění pro tým nasazení sestavení
 ====================
@@ -38,7 +38,7 @@ Při instalaci služby Team Foundation Server (TFS) 2010 sestavení, zadejte ide
 Všechny úlohy nasazení, které vyžadují ověřování systému Windows a plánujete automatizovat pomocí Team Build, se spustí pomocí identity služby sestavení. Jako takový budete muset udělit identita služby sestavení všechny požadované oprávnění pro databázové servery a webové servery.
 
 > [!NOTE]
-> Účet Network Service používá účet počítače k ověřování na jiné počítače. Účty počítače ve formě *[název domény]\[název počítače]***$**& #x 2014, například **FABRIKAM\TFSBUILD$**. Jako takový Pokud vaše sestavení služba spustí, používá identitu síťové služby, byste měli udělit žádná požadovaná oprávnění k identitě účet počítače pro váš server sestavení.
+> Účet Network Service používá účet počítače k ověřování na jiné počítače. Účty počítače ve formě * [název domény]\[název počítače] ***$**& #x 2014, například **FABRIKAM\TFSBUILD$**. Jako takový Pokud vaše sestavení služba spustí, používá identitu síťové služby, byste měli udělit žádná požadovaná oprávnění k identitě účet počítače pro váš server sestavení.
 
 
 ## <a name="configuring-web-server-permissions"></a>Konfigurace oprávnění webového serveru

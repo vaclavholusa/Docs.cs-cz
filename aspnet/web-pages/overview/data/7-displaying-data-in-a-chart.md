@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
 ms.openlocfilehash: f252b74bc42d0ea65b8b1150973c4f3c50cc9cf4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>Zobrazení dat v grafu s ASP.NET Web Pages (Razor)
 ====================
@@ -41,7 +41,7 @@ podle [Microsoft](https://github.com/microsoft)
 <a id="The_Chart_Helper"></a>
 ## <a name="the-chart-helper"></a>Pomocné rutiny grafu
 
-Pokud chcete zobrazit data ve formuláři grafického rozhraní, můžete použít `Chart` pomocné rutiny. `Chart` Pomocník může vykreslit obrázek, který zobrazí data v různých typů grafů. Podporuje mnoho možností pro formátování a označování. `Chart` Pomocník může vykreslit více než 30 typy grafů, včetně všech typů grafů, které mohou být obeznámeni s z aplikace Microsoft Excel nebo jiné nástroje &#8212; plošných grafech panelu grafy, sloupcové grafy řádek grafy a koláčové grafy, spolu s více specializované grafů, jako kontingenčních grafů.
+Pokud chcete zobrazit data ve formuláři grafického rozhraní, můžete použít `Chart` pomocné rutiny. `Chart` Pomocník může vykreslit obrázek, který zobrazí data v různých typů grafů. Podporuje mnoho možností pro formátování a označování. `Chart` Pomocník může vykreslit více než 30 typy grafů, včetně všech typů grafů, které je možné, že znáte z aplikace Microsoft Excel nebo jiných nástrojů &#8212; oblasti grafů, pruhové grafy, sloupcové grafy, spojnicových grafů a výsečové grafy, společně s více specializované grafů, jako kontingenčních grafů.
 
 | **Plošný graf** ![Popis: přehled o typ oblasti grafu.](7-displaying-data-in-a-chart/_static/image1.jpg) | **Pruhový graf** ![Popis: přehled o typ pruhového grafu](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
@@ -122,7 +122,7 @@ Třetí možnost pro grafů, je použití souboru XML jako data grafu. To vyžad
 
     Kód nejprve vytvoří `DataSet` objektu. Tento objekt se používá ke správě dat, která je pro čtení ze souboru XML a uspořádat podle informací v souboru schématu. (Všimněte si, že na začátek kód obsahuje příkaz `using SystemData`. To je vyžadováno k mohli pracovat `DataSet` objektu. Další informace najdete v tématu [ &quot;pomocí&quot; příkazy a plně kvalifikované názvy](#SB_UsingStatements) dále v tomto článku.)
 
-    V dalším kroku kód vytvoří `DataView` objekt založen na datovou sadu. Zobrazení dat obsahuje objekt, který grafu můžete vázat na &#8212; To znamená, přečtěte si a vykreslení. Vytvoří vazbu grafu dat pomocí `AddSeries` metoda, jak jste viděli dříve při grafů pole dat, ale tentokrát `xValue` a `yValues` parametry jsou nastaveny na `DataView` objektu.
+    V dalším kroku kód vytvoří `DataView` objekt založen na datovou sadu. Zobrazení dat obsahuje objekt, který grafu můžete vázat na &#8212; to znamená, přečtěte si a vykreslení. Vytvoří vazbu grafu dat pomocí `AddSeries` metoda, jak jste viděli dříve při grafů pole dat, ale tentokrát `xValue` a `yValues` parametry jsou nastaveny na `DataView` objektu.
 
     Tento příklad také ukazuje, jak zadat typ konkrétní grafu. Když dat je přidaný do `AddSeries` metody `chartType` parametr je také nastavena na zobrazení ve výsečovém graf.
 7. Spusťte stránku v prohlížeči. 
@@ -239,7 +239,7 @@ Grafy uložené do mezipaměti může být odstraněna, pokud na serveru nedosta
 
     Nakonec kód používá `WriteFromCache` metoda pro načtení a vykreslit graf z mezipaměti. Všimněte si, že tato metoda je mimo `if` blok, který hledá v mezipaměti, protože ať už grafu se někdo na začátku nebo musel být vygenerované a uloženy v mezipaměti, se budou získávat graf z mezipaměti.
 
-    Všimněte si, že v příkladu `AddTitle` metoda obsahuje časové razítko. (Přidá aktuální datum a čas &#8212; `DateTime.Now` &#8212; k titulu.)
+    Všimněte si, že v příkladu `AddTitle` metoda obsahuje časové razítko. (Přidá k aktuálnímu datu a času &#8212; `DateTime.Now` &#8212; k titulu.)
 5. Vytvořit novou stránku s názvem *ClearCache.cshtml* a nahraďte jeho obsah následujícím kódem:
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample14.cshtml)]

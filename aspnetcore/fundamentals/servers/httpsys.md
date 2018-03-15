@@ -5,16 +5,16 @@ description: "Další informace o HTTP.sys, webový server pro ASP.NET Core v sy
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/28/2018
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 730ecf12f718f6bbbdefb7cdc561481b126c995b
-ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
+ms.openlocfilehash: d7ae6c070c7eecfd714086e15f32eff96c0943d9
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Ovladač HTTP.sys webového serveru implementace v ASP.NET Core
 
@@ -136,6 +136,9 @@ Ovladač HTTP.sys je Vyspělá technologie, která chrání před mnoho typů ú
    Nastavení v `UrlPrefixes` přepsat `UseUrls` / `urls` / `ASPNETCORE_URLS` nastavení. Proto výhoda `UseUrls`, `urls`a `ASPNETCORE_URLS` – proměnná prostředí je snadnější přepínat mezi Kestrel a ovladače HTTP.sys. Další informace o `UseUrls`, `urls`, a `ASPNETCORE_URLS`, najdete v části [hostitelský](xref:fundamentals/hosting).
 
    Používá ovladače HTTP.sys [formáty řetězců UrlPrefix rozhraní API serveru HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx).
+
+   > [!WARNING]
+   > Vazby nejvyšší úrovně zástupný znak (`http://*:80/` a `http://+:80`) by měl **není** použít. Vazby nejvyšší úrovně zástupný znak můžete otevřít vaší aplikaci k ohrožení zabezpečení. To platí pro silné a slabé zástupné znaky. Použijte explicitní hostitele názvy místo zástupných znaků. Vazba subdomény zástupný znak (například `*.mysub.com`) nemá toto bezpečnostní riziko, pokud řízení celého nadřazené domény (Naproti tomu `*.com`, což je snadno napadnutelný). V tématu [rfc7230 části-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) Další informace.
 
 1. Preregister předpony adres URL pro svázání ovladače HTTP.sys a nastavit certifikáty x.509.
 

@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: e6c0c45bed098a8a1160ff11e4f77244bf55ffd3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="single-page-application-knockoutjs-template"></a>Jedné stránky aplikací: Šablona kódem KnockoutJS
 ====================
@@ -94,7 +94,7 @@ V projektu sady Visual Studio obsahuje složku modely modely, které se použív
 
 **TodoItem, TodoList**
 
-Jsou to databáze modely pro Entity Framework Code First. Všimněte si, že tyto modely mají vlastnosti, které odkazují na sebe navzájem. `ToDoList`obsahuje kolekci ToDoItems a každý `ToDoItem` odkazuje zpět na nadřazené seznamu úkolů. Tyto vlastnosti se nazývají navigačních vlastností a seznam úkolů a jeho položky představují vztah jeden mnoho.
+Jsou to databáze modely pro Entity Framework Code First. Všimněte si, že tyto modely mají vlastnosti, které odkazují na sebe navzájem. `ToDoList` obsahuje kolekci ToDoItems a každý `ToDoItem` odkazuje zpět na nadřazené seznamu úkolů. Tyto vlastnosti se nazývají navigačních vlastností a seznam úkolů a jeho položky představují vztah jeden mnoho.
 
 `ToDoItem` Třídy také používá **[cizí klíč]** atribut určíte, že `ToDoListId` je cizí klíč do `ToDoList` tabulky. Tato hodnota informuje EF přidat omezení cizího klíče do databáze.
 
@@ -162,7 +162,7 @@ Další informace o používání webového rozhraní API pro operace CRUD najde
 
 ## <a name="mvc-controllers-and-views"></a>Kontrolery a zobrazení MVC
 
-Kontrolery MVC jsou také umístěný ve složce řadiče řešení. `HomeController`vykreslí hlavní HTML pro aplikaci. Zobrazení pro řadič domovské je definována v Views/Home/Index.cshtml. Zobrazení Domovská stránka vykresluje jiný obsah, v závislosti na tom, jestli je uživatel přihlášen:
+Kontrolery MVC jsou také umístěný ve složce řadiče řešení. `HomeController` vykreslí hlavní HTML pro aplikaci. Zobrazení pro řadič domovské je definována v Views/Home/Index.cshtml. Zobrazení Domovská stránka vykresluje jiný obsah, v závislosti na tom, jestli je uživatel přihlášen:
 
 [!code-cshtml[Main](knockoutjs-template/samples/sample4.cshtml)]
 
@@ -214,7 +214,7 @@ Hlavní HTML na stránce je definován v Views/Home/Index.cshtml. Vzhledem k tom
 
 [!code-html[Main](knockoutjs-template/samples/sample8.html)]
 
-V tomto příkladu Knockout aktualizuje obsah  **&lt;span&gt;**  element s hodnotou `myItems.count()`. Vždy, když je tato hodnota se změní, aktualizuje Knockout dokumentu.
+V tomto příkladu Knockout aktualizuje obsah ** &lt;span&gt; ** element s hodnotou `myItems.count()`. Vždy, když je tato hodnota se změní, aktualizuje Knockout dokumentu.
 
 Knockout poskytuje několik typů jinou vazbou. Tady jsou některé z vazeb použité v šabloně SPA:
 

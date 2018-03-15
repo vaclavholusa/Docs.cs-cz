@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
 ms.openlocfilehash: 6210d01f65bcadf8ae4209e372d5aac68861bd7a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="web-deployment-in-the-enterprise"></a>Nasazení webu v podnikové síti
 ====================
@@ -26,7 +26,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 
 > Tento kurz popisuje, jak splnit spoustu problémů, které se můžete setkat, když spravujete nasazení podnikovém měřítku webových aplikací na vývoj, testování, pracovní a provozní prostředí. Tento kurz zahrnuje odkaz na řešení společně s směs koncepční a orientované na úlohy obsah vás provedou různé běžné úlohy a postupy.
 > 
-> Italská překlad tyto kurzy, najdete v článku [http://www.lucamorelli.it](http://www.lucamorelli.it).
+> Italská překlad tyto kurzy, najdete v článku [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
 ## <a name="enterprise-deployment-challenges"></a>Podnikové nasazení výzvy
@@ -68,18 +68,18 @@ Tento kurz obsahuje témata, které spadají do čtyř hlavních oblastí.
 
 Tato témata zavést odkaz na řešení & #x 2014; řešení obraťte se na správce & #x 2014; a popisují, jak ji stáhnout a nakonfigurovat na místním počítači:
 
-- [Obraťte se na správce řešení](the-contact-manager-solution.md)
-- [Nastavení řešení obraťte se na správce](setting-up-the-contact-manager-solution.md)
+- [Řešení správce kontaktů](the-contact-manager-solution.md)
+- [Nastavení řešení správce kontaktů](setting-up-the-contact-manager-solution.md)
 
 Tato témata zavést soubory projektu nástroje MSBuild, popisují, jak můžete vytvořit a používat soubory vlastních projektů a proveďte potřebné kroky nasazení pro řešení obraťte se na správce:
 
 - [Vysvětlení souboru projektu](understanding-the-project-file.md)
-- [Principy procesu sestavení](understanding-the-build-process.md)
+- [Vysvětlení procesu sestavení](understanding-the-build-process.md)
 
 Tato témata popisují nasazení webových aplikací, včetně jak sestavení a balení zpracování funguje, jak procesu sestavení integruje s kanálu publikování webové, jak upravit parametry nasazení a nasazení webových balíčků do cílového umístění prostředí:
 
-- [Vytváření a balení projekty webových aplikací](building-and-packaging-web-application-projects.md)
-- [Konfigurace parametrů pro nasazení webového balíčku](configuring-parameters-for-web-package-deployment.md)
+- [Sestavení a balení projektů webových aplikací](building-and-packaging-web-application-projects.md)
+- [Konfigurace parametrů nasazení webového balíčku](configuring-parameters-for-web-package-deployment.md)
 - [Nasazení webových balíčků](deploying-web-packages.md)
 
 - [Nasazení databázové projekty](deploying-database-projects.md) popisuje různé postupy můžete použít k nasazení databázové projekty sady Visual Studio, společně s výhody a nevýhody obou těchto přístupů. [Vytváření a spouštění soubor příkazů nasazení](creating-and-running-a-deployment-command-file.md) popisuje, jak vytvořit soubor jednoduchý příkaz, který zapouzdřuje logika nasazení a umožňuje nasadit komplexní řešení jako krokování proces.
@@ -105,4 +105,4 @@ To je součástí ze série kurzů pět v podnikovém měřítku nasazení webu.
 - [Pokročilé nasazení webu Enterprise](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Tento kurz popisuje, jak k provádění různých dalších pokročilých úloh nasazení, jako vlastní nastavení nasazení databáze pro prostředí s více, vyloučení souborů a složek z nasazení a přepnutím do režimu offline webové aplikace během procesu nasazení .
 
 >[!div class="step-by-step"]
-[Další](the-contact-manager-solution.md)
+[Next](the-contact-manager-solution.md)

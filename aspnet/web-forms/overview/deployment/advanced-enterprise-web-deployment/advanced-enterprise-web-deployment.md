@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/advanced-enterprise-web-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: c3cb7f63cf7c0246a0c4da6038a65a6ac43a7b59
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="advanced-enterprise-web-deployment"></a>Nasazení webu pokročilé Enterprise
 ====================
@@ -26,7 +26,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 
 > Tento kurz vám ukáže, jak provádět různé úlohy, které jsou požadované, nebo žádoucí v spoustu podnikové scénáře nasazení.
 > 
-> Italská překlad tyto kurzy, najdete v článku [http://www.lucamorelli.it](http://www.lucamorelli.it).
+> Italská překlad tyto kurzy, najdete v článku [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
 To je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) řešení & #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
@@ -70,4 +70,4 @@ To je součástí ze série kurzů pět v podnikovém měřítku nasazení webu.
 - [Konfigurace serveru Team Foundation Server pro nasazení webu](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Tento kurz popisuje, jak nakonfigurovat produktu TFS na podporu různých scénářů nasazení, včetně automatického nasazení v rámci procesu položek konfigurace a ručně spustí nasazení konkrétní sestavení.
 
 >[!div class="step-by-step"]
-[Další](performing-a-what-if-deployment.md)
+[Next](performing-a-what-if-deployment.md)

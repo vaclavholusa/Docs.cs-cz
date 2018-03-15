@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 80810415bac473a58f60110fb9d08772e0627bd5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>Vyloučení souborů a složek z nasazení
 ====================
@@ -50,7 +50,7 @@ Pokud vyberete **pouze soubory potřebné ke spuštění této aplikace**, jako 
 
 > [!NOTE]
 > Logiky, která určuje, souborů, které chcete zahrnout je obsažené v tomto souboru:   
-> *%ProgramFiles%\MSBuild\Microsoft\VisualStudio\v10.0\Web\ Microsoft.Web.Publishing.OnlyFilesToRunTheApp.targets*
+> *%PROGRAMFILES%\MSBuild\Microsoft\VisualStudio\v10.0\Web\ Microsoft.Web.Publishing.OnlyFilesToRunTheApp.targets*
 
 
 ## <a name="excluding-specific-files-and-folders"></a>Vyloučení určitých souborů a složek
@@ -95,7 +95,7 @@ Následující postup ukazuje, jak přidat *. wpp.targets* souborů projektu web
 1. Otevřete řešení v sadě Visual Studio 2010.
 2. V **Průzkumníku řešení** okna, klikněte pravým tlačítkem na uzel projektu vaší webové aplikace (například **ContactManager.Mvc**), přejděte na příkaz **přidat**a potom klikněte na **Novou položku**.
 3. V **přidat novou položku** dialogové okno, vyberte **souboru XML** šablony.
-4. V **název** zadejte *[název projektu]***. wpp.targets** (například **ContactManager.Mvc.wpp.targets**) a pak klikněte na tlačítko  **Přidat**.
+4. V **název** zadejte *[název projektu] ***.wpp.targets** (například **ContactManager.Mvc.wpp.targets**) a pak klikněte na tlačítko **přidat**.
 
     ![](excluding-files-and-folders-from-deployment/_static/image3.png)
 

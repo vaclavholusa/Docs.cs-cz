@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
 ms.openlocfilehash: 460af471a1b0650f8d782d582ce6cd9a06664d5c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Úvod k práci s databází v rozhraní ASP.NET Web Pages lokalit (Razor)
 ====================
@@ -54,7 +54,7 @@ Představte si typické adresáře. Pro každou položku v adresáři (který je
 
 Typické způsob, jak data obrázku takto je jako tabulku s řádky a sloupce. V databázi podmínky každý řádek je často označuje jako záznam. Každý sloupec (někdy označované jako pole) obsahuje hodnotu pro každý typ dat: název první, poslední název a tak dále.
 
-| **ID** | **FirstName** | **Příjmení** | **Adresa** | **E-mailu** | **Telefon** |
+| **ID** | **FirstName** | **LastName** | **Adresa** | **E-mailu** | **Telefon** |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Jima | Abrus | 210 100th St SE Orcas WA 98031 | jim@contoso.com | 555 0100 |
 | 2 | Terry | Adams | 1234 hlavní Svatý Seattle WA 99011 | terry@cohowinery.com | 555 0101 |
@@ -91,7 +91,7 @@ Tento postup ukazuje, jak vytvořit databázi s názvem SmallBakery pomocí nás
     Jak již název naznačuje, **je primární klíč** databáze oznamuje, zda bude primární klíč v tabulce. **Je identita** informuje databázi pro automatické vytvoření číslo ID pro každý nový záznam a přiřaďte ho Další pořadové číslo (počínaje 1).
 10. Klepněte na další řádek. Editor spustí novou definici sloupce.
 11. Zadejte hodnotu názvu &quot;název&quot;.
-12. Pro **datový typ**, zvolte &quot;nvarchar&quot; a nastavte délku na 50. *Var* součástí `nvarchar` databáze oznamuje, že data pro tento sloupec bude řetězec, jehož velikost může lišit od záznamy. (  *n*  Předpony představuje *national*, která určuje, že pole může obsahovat znak data, která představuje všechny abecedy nebo zápis systémového &#8212; který je, že pole udržuje kódování Unicode data.)
+12. Pro **datový typ**, zvolte &quot;nvarchar&quot; a nastavte délku na 50. *Var* součástí `nvarchar` databáze oznamuje, že data pro tento sloupec bude řetězec, jehož velikost může lišit od záznamy. ( *n* předpony představuje *national*, která určuje, že pole může obsahovat znak data, která představuje všechny abecedy nebo zápis systému &#8212; to znamená, že pole obsahuje data ve formátu Unicode.)
 13. Nastavte **povolit hodnoty Null** možnost k **ne**. To bude vynucení, který *název* sloupec není ponecháno prázdné.
 14. Pomocí tohoto procesu stejné vytvořte sloupec s názvem *popis*. Nastavit **datový typ** "nvarchar" a 50 délky a sadu **povolit hodnoty Null** má hodnotu false.
 15. Vytvořit sloupec s názvem *cena*. Nastavit **datový typ "money"** a nastavte **povolit hodnoty Null** má hodnotu false.
@@ -145,7 +145,7 @@ Jakmile máte databázi s daty v něm, můžete zobrazit data na webovou stránk
 
     [!code-sql[Main](5-working-with-data/samples/sample2.sql)]
 
-    V příkazu `Product` identifikuje tabulky pro dotaz. `*` Znak určuje, zda má dotaz vrátit všechny sloupce z tabulky. (Může být také seznam sloupců jednotlivě, oddělených čárkami, pokud jste chtěli jenom některé sloupce.) `Order By` Klauzuli Určuje, jak by měla být data seřazená &#8212; v takovém případě pomocí *název* sloupce. To znamená, že data jsou seřazená podle abecedy hodnotu *název* sloupec pro každý řádek.
+    V příkazu `Product` identifikuje tabulky pro dotaz. `*` Znak určuje, zda má dotaz vrátit všechny sloupce z tabulky. (Může být také seznam sloupců jednotlivě, oddělených čárkami, pokud jste chtěli jenom některé sloupce.) `Order By` Klauzuli Určuje, jak by měla být data seřazená &#8212; v tomto případě podle *název* sloupce. To znamená, že data jsou seřazená podle abecedy hodnotu *název* sloupec pro každý řádek.
 
     V těle stránky vytvoří kód HTML tabulku, která se použije k zobrazení dat. Uvnitř `<tbody>` elementu, můžete použít `foreach` smyčky jednotlivě získat každý řádek dat, který je vrácených dotazem. Pro každý řádek dat vytvoříte řádek tabulky HTML (`<tr>` element). Pak vytvoříte buněk tabulky HTML (`<td>` elementy) pro každý sloupec. Pokaždé, když přejdete pomocí smyčky, je k dispozici další řádek z databáze v `row` proměnné (můžete nastavit v `foreach` příkaz). Pokud chcete u jednotlivých sloupců z řádku, můžete použít `row.Name` nebo `row.Description` nebo jakoukoli název je sloupce mají.
 4. Spusťte stránku v prohlížeči. (Ujistěte se, že je vybraný stránky v **soubory** pracovního prostoru, než ji spustit.) Na stránce se zobrazuje seznam takto:
@@ -258,7 +258,7 @@ Po zadání dat do tabulky musíte může jej aktualizovat. Tento postup ukazuje
 
     [!code-html[Main](5-working-with-data/samples/sample12.html)]
 
-    Všimněte si, že `href` je atribut nastaven na `UpdateProducts/n`, kde  *n*  je číslo produktu. Když uživatel klikne na jeden z těchto odkazů, Výsledná adresa URL bude vypadat přibližně takto:
+    Všimněte si, že `href` je atribut nastaven na `UpdateProducts/n`, kde *n* je číslo produktu. Když uživatel klikne na jeden z těchto odkazů, Výsledná adresa URL bude vypadat přibližně takto:
 
     `http://localhost:18816/UpdateProducts/6`
 
@@ -384,7 +384,7 @@ V této části ukazuje, jak uživatelům odstranit z produktu *produktu* datab�
 > 
 > [!code-cshtml[Main](5-working-with-data/samples/sample28.cshtml)]
 > 
-> Jak jsme uvedli, `Database.Open` metoda umožňuje předat název databáze nebo připojovací řetězec a budete-li zjistit, který se použije. To je užitečné, když nasazujete (publikovat) vašeho webu. Můžete použít *SDF* v soubor *aplikace\_Data* složku, když jste vývoj a testování vaší lokality. Když přesouváte vaše lokality na provozním serveru, můžete použít připojovací řetězec *Web.config* soubor, který má stejný název jako vaše *SDF* soubor, ale že odkazuje na databázi & # poskytovatele hostingu 8212; všechny bez nutnosti měnit kód.
+> Jak jsme uvedli, `Database.Open` metoda umožňuje předat název databáze nebo připojovací řetězec a budete-li zjistit, který se použije. To je užitečné, když nasazujete (publikovat) vašeho webu. Můžete použít *SDF* v soubor *aplikace\_Data* složku, když jste vývoj a testování vaší lokality. Když přesouváte vaše lokality na provozním serveru, můžete použít připojovací řetězec *Web.config* soubor, který má stejný název jako vaše *SDF* souboru, ale, že body k poskytovateli hostingu databáze &#8212;všechny bez nutnosti měnit kód.
 > 
 > Nakonec, pokud chcete pracovat přímo s připojovacím řetězcem, můžete zavolat `Database.OpenConnectionString` metoda a předejte jí ho skutečné připojovací řetězec, nikoli jen název v *Web.config* souboru. To může být užitečné v situacích, kde z nějakého důvodu nemáte přístup do připojovacího řetězce (nebo hodnoty v něm, jako *SDF* název souboru) dokud běží stránky. Pro většinu scénářů, ale můžete použít `Database.Open` jak je popsáno v tomto článku.
 
@@ -393,4 +393,4 @@ V této části ukazuje, jak uživatelům odstranit z produktu *produktu* datab�
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/2008/en/us/compact.aspx)
 - [Připojení k systému SQL Server nebo databáze MySQL ve službě WebMatrix](https://go.microsoft.com/fwlink/?LinkId=208661)
-- [Ověřování uživatelského vstupu v ASP.NET – webové stránky servery](https://go.microsoft.com/fwlink/?LinkId=253002)
+- [Ověřování uživatelských vstupů na webech s webovými stránkami ASP.NET](https://go.microsoft.com/fwlink/?LinkId=253002)

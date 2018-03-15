@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 72f60841a1381380c0ea6167077420f960180dc7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-team-foundation-server-for-web-deployment"></a>Konfigurace serveru Team Foundation Server pro nasazení webu
 ====================
@@ -32,7 +32,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 > - Jak vytvořit definici sestavení, která obsahuje logiku nasazení.
 > - Jak nakonfigurovat oprávnění pro automatické nasazení.
 > 
-> Italská překlad tyto kurzy, najdete v článku [http://www.lucamorelli.it](http://www.lucamorelli.it).
+> Italská překlad tyto kurzy, najdete v článku [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
 Tento kurz předpokládá, že máte nainstalované sady TFS 2010 a vytvořit kolekci týmových projektů v rámci procesu počáteční konfigurace. [Team Foundation Průvodce instalací pro Visual Studio 2010](https://go.microsoft.com/?linkid=9805132) poskytuje komplexní pokyny v těchto úloh.
@@ -78,4 +78,4 @@ To je součástí ze série kurzů pět v podnikovém měřítku nasazení webu.
 - [Pokročilé nasazení webu Enterprise](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Tento kurz popisuje, jak k provádění různých dalších pokročilých úloh nasazení, jako vlastní nastavení nasazení databáze pro prostředí s více, vyloučení souborů a složek z nasazení a přepnutím do režimu offline webové aplikace během procesu nasazení .
 
 >[!div class="step-by-step"]
-[Další](creating-a-team-project-in-tfs.md)
+[Next](creating-a-team-project-in-tfs.md)

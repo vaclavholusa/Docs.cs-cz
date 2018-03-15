@@ -1,7 +1,7 @@
 ---
-title: "Brání skriptování mezi servery"
+title: "Brání mezi skriptování (XSS) v ASP.NET Core"
 author: rick-anderson
-description: "Toto téma představuje webů Skriptování a techniky pro vyřešení této chyby zabezpečení v aplikaci ASP.NET Core."
+description: "Další informace o webů Skriptování a techniky pro vyřešení této chyby zabezpečení v aplikaci ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: 679d9689fbc2679d9ba20bf9c6dba5c95d76dbce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9e54ee0b1169c01629c3cd91a378509a73c53904
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="preventing-cross-site-scripting"></a>Brání skriptování mezi servery
+# <a name="preventing-cross-site-scripting-xss-in-aspnet-core"></a>Brání mezi skriptování (XSS) v ASP.NET Core
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Webů Skriptování je ohrožení zabezpečení, která umožňuje útočníkovi uložit skripty na straně klienta (obvykle JavaScript) do webové stránky. Když ostatní uživatelé načíst příslušných stránek, které budou spuštěny skripty útočníci, by ji ke krádeži soubory cookie a relace tokeny, změnit obsah webové stránky prostřednictvím DOM manipulaci nebo přesměrovat na jinou stránku v prohlížeči. Skriptování XSS obecně nastane, když aplikace přijímá vstup uživatele a uloží jej na stránce bez ověřování, kódování nebo ho uvozovací znaky.
 

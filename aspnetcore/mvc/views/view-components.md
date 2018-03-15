@@ -1,7 +1,7 @@
 ---
-title: "Zobrazení součásti"
+title: "Zobrazení součásti v ASP.NET Core"
 author: rick-anderson
-description: "Zobrazení součásti jsou určeny kdekoli, že máte opakovaně použitelné vykreslování logiku."
+description: "Zjistěte, jak zobrazit součásti jsou používány v ASP.NET Core a jejich přidání do aplikace."
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/view-components
-ms.openlocfilehash: 2db6c22c27bad5a242771a6e44ef5e0fa8f77395
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 95b68e1747296310967b7093bb7019005b92fcd7
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="view-components"></a>Zobrazení součásti
+# <a name="view-components-in-aspnet-core"></a>Zobrazení součásti v ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 

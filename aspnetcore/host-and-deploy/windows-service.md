@@ -1,5 +1,5 @@
 ---
-title: "Hostitele ve službě Windows"
+title: "Jádro ASP.NET hostitele ve službě Windows"
 author: tdykstra
 description: "Zjistěte, jak hostovat aplikace ASP.NET Core ve službě Windows."
 manager: wpickett
@@ -10,15 +10,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: c14a1f62bce4d06be3b8e6356f45cd5e330a0751
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: f3455e47cfc06a4492dc4e34871b348184c6ecfb
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="host-an-aspnet-core-app-in-a-windows-service"></a>Hostování aplikace ASP.NET Core ve službě Windows
+# <a name="host-aspnet-core-in-a-windows-service"></a>Jádro ASP.NET hostitele ve službě Windows
 
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 Doporučeným způsobem, jak hostovat aplikace ASP.NET Core v systému Windows bez použití služby IIS je chcete-li používat [služba systému Windows](/dotnet/framework/windows-services/introduction-to-windows-service-applications). Pokud je hostováno jako služby systému Windows, aplikace může automaticky spustit po restartování počítače a dojde k chybě bez nutnosti lidského zásahu.
 
@@ -34,7 +34,7 @@ Doporučeným způsobem, jak hostovat aplikace ASP.NET Core v systému Windows b
 
 * Pokud aplikace přijímá požadavky od Internetu (nikoli pouze z interní sítě), musí používat [HTTP.sys](xref:fundamentals/servers/httpsys) webový server (dříve označovaný jako [WebListener](xref:fundamentals/servers/weblistener) pro aplikace ASP.NET Core 1.x) namísto [Kestrel](xref:fundamentals/servers/kestrel). IIS se doporučuje pro použití jako reverzní proxy server s Kestrel pro nasazení okraj. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
 
-## <a name="getting-started"></a>Začínáme
+## <a name="get-started"></a>Začínáme
 
 Tato část popisuje minimální změny, které jsou nezbytné k nastavení existujícího projektu ASP.NET Core ke spuštění ve službě.
 

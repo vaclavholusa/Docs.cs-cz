@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>Vytváření Data Access Layer (C#)
 ====================
@@ -233,7 +233,7 @@ Nejprve jsme výzva o tom, jestli chceme pro přístup k databázi pomocí pří
 **Obrázek 15**: rozhodnete vytvořit **vyberte** řádky vrátí v příkazu který ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image41.png))
 
 
-Dalším krokem je dotaz SQL, používaný pro přístup k datům. Vzhledem k tomu, že chceme vrátit pouze produkty, které patří do určité kategorie, použít stejné **vyberte** příkaz z **GetProducts()**, ale přidejte následující **kde** klauzule: **kde CategoryID = @CategoryID** . **@CategoryID**  Parametr do Průvodce nastavením TableAdapter označuje, že metoda vytváříme se vyžadují vstupní parametr příslušného typu (integer konkrétně, s možnou hodnotou Null).
+Dalším krokem je dotaz SQL, používaný pro přístup k datům. Vzhledem k tomu, že chceme vrátit pouze produkty, které patří do určité kategorie, použít stejné **vyberte** příkaz z **GetProducts()**, ale přidejte následující **kde** klauzule: **kde CategoryID = @CategoryID** .  **@CategoryID**  Parametr do Průvodce nastavením TableAdapter označuje, že metoda vytváříme se vyžadují vstupní parametr příslušného typu (integer konkrétně, s možnou hodnotou Null).
 
 
 [![Zadejte dotaz vrátit pouze produkty v zadané kategorii.](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
@@ -308,7 +308,7 @@ Oba vzorky úpravy dat použít TableAdapter **událost InsertCommand**, **Updat
 
 [![TableAdapter má událost InsertCommand, vlastnost UpdateCommand a DeleteCommand vlastnosti](creating-a-data-access-layer-cs/_static/image62.png)](creating-a-data-access-layer-cs/_static/image61.png)
 
-**Obrázek 23**: TableAdapter má **událost InsertCommand**, **UpdateCommand**, a **DeleteCommand** vlastnosti ([Kliknutím zobrazit Obrázek plné velikosti](creating-a-data-access-layer-cs/_static/image63.png))
+**Obrázek 23**: TableAdapter má **událost InsertCommand**, **UpdateCommand**, a **DeleteCommand** vlastnosti ([Kliknutím zobrazit v plné velikosti Obrázek](creating-a-data-access-layer-cs/_static/image63.png))
 
 
 Chcete-li zkontrolovat nebo upravit některé z těchto vlastností příkaz databáze, klikněte na **CommandText** dílčí vlastnosti, které se otevře Tvůrce dotazů.
@@ -316,7 +316,7 @@ Chcete-li zkontrolovat nebo upravit některé z těchto vlastností příkaz dat
 
 [![Konfigurace INSERT, UPDATE a DELETE příkazy v Tvůrce dotazů](creating-a-data-access-layer-cs/_static/image65.png)](creating-a-data-access-layer-cs/_static/image64.png)
 
-**Obrázek 24**: konfigurace **vložit**, **aktualizace**, a **odstranit** příkazy v Tvůrce dotazů ([Kliknutím zobrazit obrázek v plné velikosti ](creating-a-data-access-layer-cs/_static/image66.png))
+**Obrázek 24**: konfigurace **vložit**, **aktualizace**, a **odstranit** příkazy v Tvůrce dotazů ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image66.png))
 
 
 Následující příklad kódu ukazuje, jak používat vzor aktualizace batch zdvojnásobit cenu všechny produkty, které nejsou zrušeny a které mají 25 jednotek v stock nebo méně:
@@ -537,7 +537,7 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 

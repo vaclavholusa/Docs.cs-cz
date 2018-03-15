@@ -1,7 +1,7 @@
 ---
-title: "Vkládání závislostí do řadiče"
+title: "Vkládání závislostí do řadičů v ASP.NET Core"
 author: ardalis
-description: 
+description: "Zjistit, jak řadiče ASP.NET Core MVC žádostí závislé explicitně prostřednictvím jejich konstruktory pomocí vkládání závislostí v ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: d8253858864efa85f0d2a2175669dc27b879b175
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 75b3da9805539ee04944231ed2ff0158fad451e4
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="dependency-injection-into-controllers"></a>Vkládání závislostí do řadiče
+# <a name="dependency-injection-into-controllers-in-aspnet-core"></a>Vkládání závislostí do řadičů v ASP.NET Core
 
 <a name="dependency-injection-controllers"></a>
 
@@ -66,7 +66,7 @@ Jakmile služba byla nakonfigurována, spuštění aplikace a přechodu na domov
 ![Server pozdravu](dependency-injection/_static/server-greeting.png)
 
 >[!TIP]
-> V tématu [testování logiku řadič](testing.md) Další informace o explicitní žádost o závislosti [http://deviq.com/explicit-dependencies-principle/](http://deviq.com/explicit-dependencies-principle/) v řadiče usnadňuje kód pro testování.
+> V tématu [testování logiku řadič](testing.md) Další informace o explicitní žádost o závislosti [ http://deviq.com/explicit-dependencies-principle/ ](http://deviq.com/explicit-dependencies-principle/) v řadiče usnadňuje kód pro testování.
 
 Vkládání předdefinovaných závislostí ASP.NET Core podporuje mít jenom jeden konstruktor pro třídy, které žádají o služby. Pokud máte více než jeden konstruktor, může dojít, s oznámením o výjimce:
 

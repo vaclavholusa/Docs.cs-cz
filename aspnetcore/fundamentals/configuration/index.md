@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 8f52f2dc9515761510de870f10ad0975401db74a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 7c41621db835b452c9aad9463a9ffccdf0c06484
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Konfigurace aplikace ASP.NET Core
 
@@ -24,13 +24,13 @@ Rozhraní API konfigurace poskytuje způsob, jak nakonfigurovat ASP.NET Core web
 
 Existují zprostředkovatelé konfigurace pro:
 
-* Formáty souborů (INI, JSON a XML)
-* Argumenty příkazového řádku
-* Proměnné prostředí
-* Objekty .NET v paměti
-* Úložišti šifrované uživatele
-* [Azure Key Vault](xref:security/key-vault-configuration)
-* Vlastní zprostředkovatelé (nainstalována nebo vytvořili)
+* Formáty souborů (INI, JSON a XML).
+* Argumenty příkazového řádku.
+* Proměnné prostředí.
+* Objekty .NET v paměti.
+* Nešifrované [tajný klíč správce](xref:security/app-secrets) úložiště.
+* Šifrované uživatel uložit, například [Azure Key Vault](xref:security/key-vault-configuration).
+* Vlastní zprostředkovatelé (nainstalována nebo vytvořili).
 
 Každá hodnota konfigurace se mapuje na řetězec klíč. Je dostupná podpora předdefinované vazby k deserializaci nastavení do vlastní [objektů POCO](https://wikipedia.org/wiki/Plain_Old_CLR_Object) objektu (jednoduché rozhraní .NET třídu s vlastnostmi).
 
@@ -308,11 +308,11 @@ Klíč může mít předponu.
 | Předpona klíče               | Příklad         |
 | ------------------------ | :-------------: |
 | Žádná předpona.                | `key1=value1`   |
-| Jednotné dash (`-`) &#8224; | `-key2=value2`  |
+| Jednotné dash (`-`)&#8224; | `-key2=value2`  |
 | Dvě pomlčky (`--`)        | `--key3=value3` |
 | Lomítko (`/`)      | `/key4=value4`  |
 
-&#8224; Klíč s předponou jediného (`-`) musí být zadáno v [přepínač mapování](#switch-mappings), které jsou popsány níže.
+&#8224;Klíč s předponou jediného (`-`) musí být zadáno v [přepínač mapování](#switch-mappings), které jsou popsány níže.
 
 Příklad:
 
@@ -330,11 +330,11 @@ Klíč musí mít předponu.
 
 | Předpona klíče               | Příklad         |
 | ------------------------ | :-------------: |
-| Jednotné dash (`-`) &#8224; | `-key1 value1`  |
+| Jednotné dash (`-`)&#8224; | `-key1 value1`  |
 | Dvě pomlčky (`--`)        | `--key2 value2` |
 | Lomítko (`/`)      | `/key3 value3`  |
 
-&#8224; Klíč s předponou jediného (`-`) musí být zadáno v [přepínač mapování](#switch-mappings), které jsou popsány níže.
+&#8224;Klíč s předponou jediného (`-`) musí být zadáno v [přepínač mapování](#switch-mappings), které jsou popsány níže.
 
 Příklad:
 

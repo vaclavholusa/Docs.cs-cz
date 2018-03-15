@@ -1,5 +1,5 @@
 ---
-title: "Stránky Razor EF základní - číst související Data - 6, 8"
+title: "Stránky Razor s EF jádra ASP.NET Core - číst související Data - 6, 8"
 author: rick-anderson
 description: "V tomto kurzu číst a zobrazení souvisejících dat – to znamená, data, která rozhraní Entity Framework se načte do navigační vlastnosti."
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 6e71e9c01a58c3f60dacce8959ac4502a3690690
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 44db7b49aef6bff1e57d10d569ffa9c73930b774
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>Čtení související data – základní EF s stránky Razor (6 8)
+# <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - číst související Data - 6, 8
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -39,7 +39,7 @@ Následující ilustrace znázorňuje dokončené stránky v tomto kurzu:
 
  ![Příklad přes načítání](read-related-data/_static/eager-loading.png)
  
- Přes načítání pošle více dotazů, když je součástí nvavigation kolekce:
+ Při navigaci kolekce je součástí, odešle přes načítání více dotazů:
 
  * Jeden dotaz pro hlavní dotaz 
  * Jeden dotaz pro každou kolekci "edge" ve stromové struktuře zatížení.

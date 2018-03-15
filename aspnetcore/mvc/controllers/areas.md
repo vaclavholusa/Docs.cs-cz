@@ -1,7 +1,7 @@
 ---
-title: Oblasti
+title: Oblasti v ASP.NET Core
 author: rick-anderson
-description: "Ukazuje, jak pracovat s oblastí."
+description: "Zjistěte, jak jsou oblasti o architektuře ASP.NET MVC funkci sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení)."
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: 1ade49de3f6c58edc4ea7b06bc593b3db797081c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cf31c10e7d4d9229a32aa06903a0ff0ed6fb0599
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="areas"></a>Oblasti
+# <a name="areas-in-aspnet-core"></a>Oblasti v ASP.NET Core
 
 Podle [Dhananjay Kumar](https://twitter.com/debug_mode) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -147,39 +147,39 @@ Procházení k `http://<yourApp>/products`, `Index` metody akce `HomeController`
 
 * Generování odkazů z akce v rámci oblast na základě řadiče jiné akce v rámci stejného řadiče.
 
-  Řekněme, že je cesta aktuální žádosti jako`/Products/Home/Create`
+  Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`
 
-  HtmlHelper syntaxe:`@Html.ActionLink("Go to Product's Home Page", "Index")`
+  HtmlHelper syntaxe: `@Html.ActionLink("Go to Product's Home Page", "Index")`
 
-  TagHelper syntaxe:`<a asp-action="Index">Go to Product's Home Page</a>`
+  TagHelper syntaxe: `<a asp-action="Index">Go to Product's Home Page</a>`
 
   Všimněte si, že jsme nemusí zadat hodnoty 'oblastí' a 'controller' tady jsou již k dispozici v kontextu aktuálního požadavku. Tyto druhy hodnot, se nazývají `ambient` hodnoty.
 
 * Generování odkazů z akce v rámci oblast na základě řadiče další akci na jiném řadiči
 
-  Řekněme, že je cesta aktuální žádosti jako`/Products/Home/Create`
+  Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`
 
-  HtmlHelper syntaxe:`@Html.ActionLink("Go to Manage Products Home Page", "Index", "Manage")`
+  HtmlHelper syntaxe: `@Html.ActionLink("Go to Manage Products Home Page", "Index", "Manage")`
 
-  TagHelper syntaxe:`<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
+  TagHelper syntaxe: `<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
 
   Všimněte si, tady je použita hodnota vedlejším oblasti, ale výše je výslovně zadána hodnota 'controller'.
 
 * Generování odkazů z akce v rámci oblasti řadiče další akci na základě různých řadiče a jiné oblasti.
 
-  Řekněme, že je cesta aktuální žádosti jako`/Products/Home/Create`
+  Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`
 
-  HtmlHelper syntaxe:`@Html.ActionLink("Go to Services Home Page", "Index", "Home", new { area = "Services" })`
+  HtmlHelper syntaxe: `@Html.ActionLink("Go to Services Home Page", "Index", "Home", new { area = "Services" })`
 
-  TagHelper syntaxe:`<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`
+  TagHelper syntaxe: `<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`
 
   Všimněte si, že tady jsou použity žádné vedlejším hodnoty.
 
 * Generování odkazů z akce v rámci řadič oblast na základě jinou akci na jiném řadiči a **není** v oblasti.
 
-  HtmlHelper syntaxe:`@Html.ActionLink("Go to Manage Products  Home Page", "Index", "Home", new { area = "" })`
+  HtmlHelper syntaxe: `@Html.ActionLink("Go to Manage Products  Home Page", "Index", "Home", new { area = "" })`
 
-  TagHelper syntaxe:`<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
+  TagHelper syntaxe: `<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
 
   Vzhledem k tomu, že chcete generovat odkazy na jiné oblasti na základě akce kontroleru, jsme prázdný vedlejším hodnota "plochu" sem.
 

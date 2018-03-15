@@ -1,5 +1,5 @@
 ---
-title: "Poskytovatel konfigurace služby Azure Key Vault"
+title: "Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core"
 author: guardrex
 description: "Další informace o použití konfigurace zprostředkovatele služby Azure klíč trezoru pro konfiguraci aplikace pomocí dvojice název hodnota načíst za běhu."
 manager: wpickett
@@ -8,13 +8,13 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 1a91a87fb90d4d4651e07f32415e4364c8e2d993
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e1a4be77417f0a74182f1b123bfba429737d4330
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="azure-key-vault-configuration-provider"></a>Poskytovatel konfigurace služby Azure Key Vault
+# <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex) a [Andrew Stanton-Nurse](https://github.com/anurse)
 
@@ -74,7 +74,7 @@ Při spuštění aplikace zobrazuje webová stránka načtená tajný hodnoty:
 ![Okno prohlížeče zobrazující tajný hodnoty načíst prostřednictvím poskytovatele konfigurace Azure klíč trezoru](key-vault-configuration/_static/sample1.png)
 
 ## <a name="creating-prefixed-key-vault-secrets-and-loading-configuration-values-key-name-prefix-sample"></a>Vytvoření tajných klíčů předponou trezoru klíčů a načítání hodnoty konfigurace (klíč název předpona – ukázka)
-`AddAzureKeyVault`také poskytuje přetížení, které přijímá implementace `IKeyVaultSecretManager`, která umožňuje řídit způsob klíče tajné klíče trezoru se převedou na konfigurační klíče. Například můžete implementovat rozhraní načíst tajný hodnot na základě předpony hodnoty, které poskytnete při spuštění aplikace. To vám například umožňuje načíst tajné klíče založené na verzi aplikace.
+`AddAzureKeyVault` také poskytuje přetížení, které přijímá implementace `IKeyVaultSecretManager`, která umožňuje řídit způsob klíče tajné klíče trezoru se převedou na konfigurační klíče. Například můžete implementovat rozhraní načíst tajný hodnot na základě předpony hodnoty, které poskytnete při spuštění aplikace. To vám například umožňuje načíst tajné klíče založené na verzi aplikace.
 
 > [!WARNING]
 > Nepoužívejte předpony na tajné klíče trezoru klíčů, umístit do stejné trezoru klíčů tajné klíče pro víc aplikací nebo umístit prostředí tajné klíče (například *vývoj* versus *produkční* tajné klíče) do stejné trezor. Doporučujeme různé aplikace a vývoj nebo produkční prostředí použít samostatné trezorů klíčů izolovat aplikace prostředí pro nejvyšší úroveň zabezpečení.

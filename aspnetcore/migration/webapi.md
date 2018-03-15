@@ -1,7 +1,7 @@
 ---
-title: "Migrace z rozhraní ASP.NET Web API"
+title: "Migrace z rozhraní ASP.NET Web API na jádro ASP.NET"
 author: ardalis
-description: 
+description: "Zjistěte, jak migrovat implementace webového rozhraní API z rozhraní ASP.NET Web API ASP.NET MVC jádra."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 9eb5f4dfec82ec1c60d33bff94d35857a4c0cfd6
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 929fab90aa88745807761e824a2cf614f078ea36
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="migrating-from-aspnet-web-api"></a>Migrace z rozhraní ASP.NET Web API
+# <a name="migrating-from-aspnet-web-api-to-aspnet-core"></a>Migrace z rozhraní ASP.NET Web API na jádro ASP.NET
 
 Podle [Steve Smith](https://ardalis.com/) a [Scott Addie](https://scottaddie.com)
 
@@ -25,7 +25,7 @@ Webová rozhraní API jsou služeb HTTP, které využity širokou škálou klien
 
 ## <a name="review-aspnet-web-api-project"></a>Zkontrolujte ASP.NET Web API projektu
 
-Tento článek používá ukázkový projekt *ProductsApp*, které byly vytvořeny v článku [Začínáme s rozhraním ASP.NET Web API](https://docs.microsoft.com/aspnet/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api) jako výchozí bod. V tomto projektu jednoduché projektu ASP.NET Web API nakonfigurovat následujícím způsobem.
+Tento článek používá ukázkový projekt *ProductsApp*, které byly vytvořeny v článku [Začínáme s ASP.NET Web API 2](/aspnet/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api) jako výchozí bod. V tomto projektu jednoduché projektu ASP.NET Web API nakonfigurovat následujícím způsobem.
 
 V *Global.asax.cs*, Přišla žádost o `WebApiConfig.Register`:
 

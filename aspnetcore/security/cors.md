@@ -1,7 +1,7 @@
 ---
-title: "Povolení žádostí napříč zdroji (CORS)"
+title: "Povolení žádostí napříč zdroji (CORS) v ASP.NET Core"
 author: rick-anderson
-description: "Toto téma představuje CORS jako standard pro povolení nebo odmítnutí žádostí napříč zdroji v aplikaci ASP.NET Core."
+description: "Zjistěte, jak CORS jako standard pro povolení nebo odmítnutí žádostí napříč zdroji v aplikaci ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 05/17/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cors
-ms.openlocfilehash: ee61798fc1bde89ca3712eae9b7c4413e58cf70d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 64d939033fee14fad37a08c60da608898e20c01b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="enabling-cross-origin-requests-cors"></a>Povolení žádostí napříč zdroji (CORS)
+# <a name="enabling-cross-origin-requests-cors-in-aspnet-core"></a>Povolení žádostí napříč zdroji (CORS) v ASP.NET Core
 
 Podle [Karel Wasson](https://github.com/mikewasson), [Shayne Boyer](https://twitter.com/spboyer), a [tní Dykstra](https://github.com/tdykstra)
 
@@ -160,7 +160,7 @@ Nejsou prohlížeče zcela v souladu v tom, jak nastavují Access-Control-Reques
 
 ### <a name="set-the-exposed-response-headers"></a>Nastavit hlavičky zveřejněné odpovědi
 
-Ve výchozím prohlížeči nezveřejňuje všechny hlavičky odpovědi do aplikace. (Viz [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).) Hlavičky odpovědi, které jsou k dispozici ve výchozím nastavení jsou:
+Ve výchozím prohlížeči nezveřejňuje všechny hlavičky odpovědi do aplikace. (Viz [ http://www.w3.org/TR/cors/#simple-response-header ](http://www.w3.org/TR/cors/#simple-response-header).) Hlavičky odpovědi, které jsou k dispozici ve výchozím nastavení jsou:
 
 * Cache-Control
 

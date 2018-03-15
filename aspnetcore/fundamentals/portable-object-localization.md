@@ -1,5 +1,5 @@
 ---
-title: "Konfigurace přenosné objekt lokalizace"
+title: "Konfigurace přenosné objekt lokalizace v ASP.NET Core"
 author: sebastienros
 description: "Tento článek představuje soubory přenosné objektů a popisuje kroky pro jejich používání v aplikaci ASP.NET Core s framework Orchard jádra."
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: a8e19d096fb66b23920ca012cc96e05b4bdfc000
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: fbf2afd6fbc07c8068a21be15816aa45618f28d6
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="configure-portable-object-localization-with-orchard-core"></a>Lokalizace přenosné objekt nakonfigurovat Orchard jádra
+# <a name="configure-portable-object-localization-in-aspnet-core"></a>Konfigurace přenosné objekt lokalizace v ASP.NET Core
 
 Podle [Sébastien železnic](https://github.com/sebastienros) a [Scott Addie](https://twitter.com/Scott_Addie)
 
@@ -70,7 +70,7 @@ Tento příklad vychází z aplikace ASP.NET MVC základní vygeneroval ze šabl
 
 ### <a name="referencing-the-package"></a>Odkazování na balíček
 
-Přidat odkaz na `OrchardCore.Localization.Core` balíček NuGet. Je k dispozici na [MyGet](https://www.myget.org/) u následující zdroje balíčků: https://www.myget.org/F/orchardcore-preview/api/v3/index.json
+Přidat odkaz na `OrchardCore.Localization.Core` balíček NuGet. Je k dispozici na [MyGet](https://www.myget.org/) ve zdroji balíčku následující: https://www.myget.org/F/orchardcore-preview/api/v3/index.json
 
 *.Csproj* soubor nyní obsahuje řádek podobný následujícímu (číslo verze se liší):
 

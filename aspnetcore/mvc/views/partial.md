@@ -1,7 +1,7 @@
 ---
-title: "Částečná zobrazení"
+title: "Částečná zobrazení v ASP.NET Core"
 author: ardalis
-description: "Použití částečné zobrazení v rozhraní ASP.NET MVC jádra"
+description: "Zjistěte, jak je částečné zobrazení zobrazení, který je vykreslen v rámci jiného zobrazení a kdy by měly být použity v aplikacích ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 03/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/partial
-ms.openlocfilehash: c9bbfc83b8ee0cd05c71ea16b2a54a37235c8435
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: abe970b02a62ef58deb259241d7451de0185575c
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="partial-views"></a>Částečná zobrazení
+# <a name="partial-views-in-aspnet-core"></a>Částečná zobrazení v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/), [Maher JENDOUBI](https://twitter.com/maherjend), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 

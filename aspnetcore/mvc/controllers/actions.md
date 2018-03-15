@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/actions
-ms.openlocfilehash: 0f04891aaeec026120e2afff3ff24fb89f649c8d
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 1223eacfb88e1e6adb6edaf5ea4ba2b653292850
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Zpracování žádostí s řadiči v ASP.NET MVC jádra
 
@@ -27,7 +27,7 @@ Podle [Steve Smith](https://ardalis.com/) a [Scott Addie](https://github.com/sco
 
 Podle konvence řadiče třídy:
 * Jsou umístěné v kořenové úrovni projektu *řadiče* složky
-* Dědit z`Microsoft.AspNetCore.Mvc.Controller`
+* Dědit z `Microsoft.AspNetCore.Mvc.Controller`
 
 Řadič je instantiable třída, ve kterém je aspoň jeden z následujících podmínek true:
 * Název třídy je na konci "Controller"

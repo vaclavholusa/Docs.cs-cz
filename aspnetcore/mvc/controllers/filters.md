@@ -1,7 +1,7 @@
 ---
-title: Filtry
+title: Filtry v ASP.NET Core
 author: ardalis
-description: "Zjistěte, jak *filtry* práci a jejich použití v aplikaci ASP.NET MVC jádra."
+description: "Zjistěte, jak fungují filtry a jejich použití v aplikaci ASP.NET MVC jádra."
 manager: wpickett
 ms.author: tdykstra
 ms.date: 12/12/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: 5ee2029b3345a76cb283b88da5109ff0d81ebfa4
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: adb80c8161741506188c963d0a1cef721a21bd63
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="filters"></a>Filtry
+# <a name="filters-in-aspnet-core"></a>Filtry v ASP.NET Core
 
 Podle [tní Dykstra](https://github.com/tdykstra/) a [Steve Smith](https://ardalis.com/)
 

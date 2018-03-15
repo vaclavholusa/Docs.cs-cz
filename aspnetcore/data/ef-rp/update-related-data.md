@@ -1,5 +1,5 @@
 ---
-title: "Stránky Razor EF základní - aktualizace související Data - 7, 8"
+title: "Stránky Razor s EF jádra ASP.NET Core - aktualizace související Data - 7, 8"
 author: rick-anderson
 description: "V tomto kurzu aktualizujete souvisejících dat tím, že aktualizuje polí cizího klíče a navigační vlastnosti."
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: a7a21aca4d822daad7a6a13f0feec5139bf6e1a5
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: fe76405c67297891351aba2495a4d7ce22c6195b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>Aktualizace související data - stránky Razor základní EF (7 8)
+# <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - aktualizace související Data - 7, 8
 
 Podle [tní Dykstra](https://github.com/tdykstra), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 

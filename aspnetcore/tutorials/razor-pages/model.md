@@ -1,7 +1,7 @@
 ---
 title: "Přidání modelu do aplikace stránky Razor ve ASP.NET Core"
 author: rick-anderson
-description: "Přidání modelu do aplikace stránky Razor ve ASP.NET Core"
+description: "Zjistit, jak přidat třídy pro správu filmy v databázi pomocí Entity Framework Core (EF jader)."
 manager: wpickett
 ms.author: riande
 ms.date: 07/27/2017
@@ -9,13 +9,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 234af466979c8d8b14990da4d4a07e6e54649bbe
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e2014ec20d5bed742c7e3398bd3a9255146ab4eb
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="adding-a-model-to-a-razor-pages-app"></a>Přidání modelu do aplikace pro stránky Razor
+# <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Přidání modelu do aplikace stránky Razor ve ASP.NET Core
 
 [!INCLUDE[model1](../../includes/RP/model1.md)]
 

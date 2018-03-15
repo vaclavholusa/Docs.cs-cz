@@ -5,16 +5,16 @@ description: "Představuje Kestrel, a platformy webového serveru pro ASP.NET Co
 manager: wpickett
 ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
-ms.date: 08/02/2017
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: f52f8ae40bc4d135d87efc6e11917d53fdca0df5
-ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
+ms.openlocfilehash: be465c9e8803e4d348cdd14181b4ea147f75e1a0
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>Kestrel webového serveru implementace v ASP.NET Core
 
@@ -74,6 +74,9 @@ I když není požadovaných reverzní proxy server, pomocí jednoho může být
 * Poskytuje další úroveň volitelné konfigurace a obrany.
 * Může integrovat lépe stávající infrastruktury.
 * Usnadňují Vyrovnávání zatížení a nastavení protokolu SSL. Pouze reverzní proxy server vyžaduje certifikát SSL a tento server může komunikovat s vašimi aplikací servery v interní síti pomocí prostý protokolu HTTP.
+
+> [!WARNING]
+> Pokud nepoužíváte reverzní proxy server s hostitelem filtrování povoleno, je nutné povolit [hostitele filtrování](#host-filtering).
 
 ## <a name="how-to-use-kestrel-in-aspnet-core-apps"></a>Jak používat Kestrel v aplikacích ASP.NET Core
 
@@ -252,6 +255,9 @@ Pouze předpony adres URL protokolu HTTP jsou platné; Kestrel nepodporuje SSL p
 
   Názvy hostitelů *, a + nejsou speciální. Všechno, co není rozpoznaný IP adresu nebo "localhost" vytvoří vazbu pro všechny IP adresy IPv6 a IPv4. Pokud potřebujete vytvořit vazbu různé názvy hostitelů na různé aplikace ASP.NET Core na stejném portu, použijte [HTTP.sys](httpsys.md) nebo reverzní proxy server, jako jsou služby IIS, Nginx nebo Apache.
 
+  > [!WARNING]
+  > Pokud nepoužíváte reverzní proxy server s hostitelem filtrování povoleno, je nutné povolit [hostitele filtrování](#host-filtering).
+
 * Název "Localhost" s IP číslo nebo zpětné smyčky port s číslem portu
 
   ```
@@ -341,6 +347,166 @@ var host = new WebHostBuilder()
 [!INCLUDE[How to make an X.509 cert](../../includes/make-x509-cert.md)]
 
 ---
+
+## <a name="host-filtering"></a>Filtrování hostitele
+
+I když Kestrel podporuje konfigurace, například podle předpony `http://example.com:5000`, z velké části ignoruje název hostitele. Localhost je zvláštní případ použité pro vazbu na adresy zpětné smyčky. Žádný hostitel, jiné než explicitní IP adresu se váže k všechny veřejné IP adresy. Žádná z těchto informací se používá k ověření hlavičky hostitele požadavku.
+
+Existují dvě možná řešení:
+
+* Hostitel za reverzní proxy server s filtrování hlavičky hostitele. To byl jediný podporovaný scénář pro Kestrel v ASP.NET Core 1.x.
+* Pomocí middleware filtrovat požadavky v hlavičce hostitele. Následuje ukázka middleware:
+
+```csharp
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Primitives;
+using Microsoft.Net.Http.Headers;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// A normal middleware would provide an options type, config binding, extension methods, etc..
+// This intentionally does all of the work inside of the middleware so it can be
+// easily copy-pasted into docs and other projects.
+public class HostFilteringMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly IList<string> _hosts;
+    private readonly ILogger<HostFilteringMiddleware> _logger;
+
+    public HostFilteringMiddleware(RequestDelegate next, IConfiguration config, ILogger<HostFilteringMiddleware> logger)
+    {
+        if (config == null)
+        {
+            throw new ArgumentNullException(nameof(config));
+        }
+
+        _next = next ?? throw new ArgumentNullException(nameof(next));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+        // A semicolon separated list of host names without the port numbers.
+        // IPv6 addresses must use the bounding brackets and be in their normalized form.
+        _hosts = config["AllowedHosts"]?.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+        if (_hosts == null || _hosts.Count == 0)
+        {
+            throw new InvalidOperationException("No configuration entry found for AllowedHosts.");
+        }
+    }
+
+    public Task Invoke(HttpContext context)
+    {
+        if (!ValidateHost(context))
+        {
+            context.Response.StatusCode = 400;
+            _logger.LogDebug("Request rejected due to incorrect host header.");
+            return Task.CompletedTask;
+        }
+
+        return _next(context);
+    }
+
+    // This does not duplicate format validations that are expected to be performed by the host.
+    private bool ValidateHost(HttpContext context)
+    {
+        StringSegment host = context.Request.Headers[HeaderNames.Host].ToString().Trim();
+
+        if (StringSegment.IsNullOrEmpty(host))
+        {
+            // Http/1.0 does not require the host header.
+            // Http/1.1 requires the header but the value may be empty.
+            return true;
+        }
+
+        // Drop the port
+
+        var colonIndex = host.LastIndexOf(':');
+
+        // IPv6 special case
+        if (host.StartsWith("[", StringComparison.Ordinal))
+        {
+            var endBracketIndex = host.IndexOf(']');
+            if (endBracketIndex < 0)
+            {
+                // Invalid format
+                return false;
+            }
+            if (colonIndex < endBracketIndex)
+            {
+                // No port, just the IPv6 Host
+                colonIndex = -1;
+            }
+        }
+
+        if (colonIndex > 0)
+        {
+            host = host.Subsegment(0, colonIndex);
+        }
+
+        foreach (var allowedHost in _hosts)
+        {
+            if (StringSegment.Equals(allowedHost, host, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+            // Sub-domain wildcards: *.example.com
+            if (allowedHost.StartsWith("*.", StringComparison.Ordinal) && host.Length >= allowedHost.Length)
+            {
+                // .example.com
+                var allowedRoot = new StringSegment(allowedHost, 1, allowedHost.Length - 1);
+
+                var hostRoot = host.Subsegment(host.Length - allowedRoot.Length, allowedRoot.Length);
+                if (hostRoot.Equals(allowedRoot, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+}
+```
+
+Zaregistrovat předchozím `HostFilteringMiddleware` v `Startup.Configure`. Všimněte si, že [řazení middleware registrace](xref:fundamentals/middleware/index#ordering) je důležité. K registraci by mělo dojít ihned po diagnostiky middleware (například `app.UseExceptionHandler`).
+
+```csharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+        app.UseBrowserLink();
+    }
+    else
+    {
+        app.UseExceptionHandler("/Home/Error");
+    }
+
+    app.UseMiddleware<HostFilteringMiddleware>();
+
+    app.UseMvcWithDefaultRoute();
+}
+```
+
+Předchozí middleware očekává `AllowedHosts` klíče v *appsettings.\< EnvironmentName > .json*. Hodnota tohoto klíče je seznam názvů hostitele bez čísla portů oddělených středníky. Zahrnout `AllowedHosts` dvojice klíč hodnota v *appsettings. Production.JSON*:
+
+```json
+{
+  "AllowedHosts": "example.com"
+}
+```
+
+Konfigurační soubor localhost *appsettings. Development.JSON*, vypadá podobně jako tento:
+
+```json
+{
+  "AllowedHosts": "localhost"
+}
+```
+
 ## <a name="next-steps"></a>Další kroky
 
 Další informace naleznete v následujících materiálech:

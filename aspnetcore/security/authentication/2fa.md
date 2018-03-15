@@ -1,7 +1,7 @@
 ---
-title: "Dvoufaktorové ověřování pomocí serveru SMS"
+title: "Dvoufaktorové ověřování pomocí SMS v ASP.NET Core"
 author: rick-anderson
-description: "Ukazuje, jak nastavit dvoufaktorové ověřování (2FA) s ASP.NET Core"
+description: "Zjistěte, jak nastavit dvoufaktorové ověřování (2FA) s aplikací ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 08/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: 721c4c20234c7232b509a0cff444538c2cfeb166
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c328c6f4b674695dd1f2db8145a7ac1b8f12d36d
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="two-factor-authentication-with-sms"></a>Dvoufaktorové ověřování pomocí serveru SMS
+# <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>Dvoufaktorové ověřování pomocí SMS v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [mezi Devs](https://github.com/Swiss-Devs)
 
@@ -142,6 +142,13 @@ Pokud neobdržíte textovou zprávu, najdete v protokolu stránky twilio.
 
 ## <a name="account-lockout-for-protecting-against-brute-force-attacks"></a>Uzamčení účtu pro ochranu před útoky hrubou silou
 
-Doporučujeme, že abyste použili uzamčení účtu s 2FA. Jakmile se uživatel přihlásí (prostřednictvím místního účtu nebo sociální účtu), je uložen v 2FA každý neúspěšný pokus a pokud bude dosažen maximální počet pokusů o (výchozí hodnota je 5), uživatel je uzamčen pět minut (můžete nastavit uzamčení časem `DefaultAccountLockoutTimeSpan`). Následující nakonfiguruje účet uzamčen po dobu 10 minut po 10 neúspěšných pokusů o přihlášení.
+Uzamčení účtu se doporučuje s 2FA. Jakmile se uživatel přihlásí pomocí místního účtu nebo sociální účtu, je uložený v 2FA každý neúspěšný pokus. Pokud je dostupný maximální neúspěšných pokusů o přístup, je uživatel uzamčen (výchozí: 5 minut uzamčení po 5 neúspěšných pokusů o přístup). Úspěšné ověření resetuje počet pokusů o neúspěšných přístupů a obnoví hodiny. Maximální počet neúspěšných pokusů o přístup a doby uzamčení lze nastavit s [MaxFailedAccessAttempts](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.maxfailedaccessattempts) a [DefaultLockoutTimeSpan](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.defaultlockouttimespan). Následující konfiguruje uzamčení účtu po dobu 10 minut po 10 neúspěšných pokusů o přístup:
 
-[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)] 
+[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)]
+
+Potvrďte, že [PasswordSignInAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.passwordsigninasync) nastaví `lockoutOnFailure` k `true`:
+
+```csharp
+var result = await _signInManager.PasswordSignInAsync(
+                 Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+```

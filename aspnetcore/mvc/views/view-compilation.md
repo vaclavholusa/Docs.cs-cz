@@ -1,7 +1,7 @@
 ---
-title: "Kompilace zobrazení syntaxe Razor a předkompilace"
+title: "Kompilace zobrazení syntaxe Razor a předkompilaci v ASP.NET Core"
 author: rick-anderson
-description: "Odkaz na dokument vysvětlením, jak povolit kompilace MVC Razor zobrazení a předkompilaci v aplikacích ASP.NET Core."
+description: "Informace o povolení zobrazení kompilace MVC Razor a předkompilaci v aplikacích ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 12/13/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 93994c9f90c18fbd68eb78f65abd6085e7b4e14a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: af1137a087ed145675f38ce5a10fd553044c5582
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="razor-view-compilation-and-precompilation-in-aspnet-core"></a>Kompilace zobrazení syntaxe Razor a předkompilaci v ASP.NET Core
 

@@ -1,5 +1,5 @@
 ---
-title: "Ověření cloudu s Azure Active Directory B2C"
+title: "Ověření cloudu s Azure Active Directory B2C v ASP.NET Core"
 author: camsoper
 description: "Zjistit, jak nastavit ověřování Azure Active Directory B2C pomocí ASP.NET Core."
 manager: wpickett
@@ -9,13 +9,13 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: 65372020ef6554476fb95549f13d110a748b5863
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: a7bad452a68cf7fe7aa81645d79a0ee9e7719fe7
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="cloud-authentication-with-azure-active-directory-b2c"></a>Ověření cloudu s Azure Active Directory B2C
+# <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Ověření cloudu s Azure Active Directory B2C v ASP.NET Core
 
 Podle [Soper kamera](https://twitter.com/camsoper)
 
@@ -51,7 +51,7 @@ Použijte následující hodnoty:
 
 | Nastavení                       | Hodnota                     | Poznámky                                                                                                                                                                                              |
 |-------------------------------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Jméno**                      | *&lt;název aplikace.&gt;*        | Zadejte **název** pro aplikaci, která popisuje aplikace k příjemce.                                                                                                                                 |
+| **Jméno**                      | *&lt;Název aplikace.&gt;*        | Zadejte **název** pro aplikaci, která popisuje aplikace k příjemce.                                                                                                                                 |
 | **Zahrnout webovou aplikaci / webové rozhraní API** | Ano                       |                                                                                                                                                                                                    |
 | **Povolit implicitního toku**       | Ano                       |                                                                                                                                                                                                    |
 | **Adresa URL odpovědi**                 | `https://localhost:44300` | Adresy URL odpovědí jsou koncové body, kde Azure AD B2C vrátí všechny tokeny, které vaše aplikace vyžaduje. Visual Studio poskytuje adresa URL odpovědi pro použití. Nyní, zadejte `https://localhost:44300` k vyplnění formuláře. |
@@ -90,7 +90,7 @@ In Visual Studio:
     | **Cesta zpětného volání**             | *&lt;Použijte výchozí hodnotu&gt;*                       |
     | **Zásady registrace nebo přihlášení** | `B2C_1_SiUpIn`                                        |
     | **Zásady resetování hesel**     | `B2C_1_SSPR`                                          |
-    | **Upravit profil zásad**       | *&lt;ponechat prázdné&gt;*                                 |
+    | **Upravit profil zásad**       | *&lt;Ponechat prázdné&gt;*                                 |
     
     Vyberte **kopie** vedle **URI odpovědi** identifikátor URI odpovědi zkopírovat do schránky. Vyberte **OK** zavřete **změna ověřování** dialogové okno. Vyberte **OK** k vytvoření webové aplikace.
 

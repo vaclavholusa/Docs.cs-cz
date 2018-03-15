@@ -1,7 +1,7 @@
 ---
 title: "Povolení generování kód QR pro aplikace v ASP.NET Core"
 author: rick-anderson
-description: "Povolení generování kód QR pro aplikace v ASP.NET Core"
+description: "Zjistit, jak povolit generování kódu QR pro ověřovací aplikace, které pracovat s ASP.NET Core dvoufaktorové ověřování."
 manager: wpickett
 ms.author: riande
 ms.date: 09/24/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: cf941314d54aa4a7bd1724805dc62c763ca71dfb
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: dd326bb32565b743d21e196bcb616a716d7994bf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Povolení generování kód QR pro aplikace v ASP.NET Core
 
@@ -25,7 +25,7 @@ ASP.NET Core se dodává s podporou pro ověřovací aplikací pro jednotlivé o
 
 ## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>Přidání kódy QR na stránku konfigurace 2FA
 
-Tyto pokyny používají *qrcode.js* z https://davidshimjs.github.io/qrcodejs/ úložiště.
+Tyto pokyny používají *qrcode.js* z https://davidshimjs.github.io/qrcodejs/ úložišti.
 
 * Stažení [knihovna javascript qrcode.js](https://davidshimjs.github.io/qrcodejs/) k `wwwroot\lib` složku ve vašem projektu.
 
@@ -84,8 +84,8 @@ Kód QR knihovny můžete nahradit své upřednostňované knihovny. Obsahuje k�
 
 Je k dispozici v správně formátovaného adresa URL pro kód QR:
 
-* `AuthenticatorUri`Vlastnost modelu.
-* `data-url`Vlastnost `qrCodeData` elementu. 
+* `AuthenticatorUri` Vlastnost modelu.
+* `data-url` Vlastnost `qrCodeData` elementu. 
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP klientských a serverových čas zkosení
 

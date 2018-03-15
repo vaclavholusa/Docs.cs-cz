@@ -4,16 +4,16 @@ author: rick-anderson
 description: "Další informace o WebListener, webový server pro ASP.NET Core v systému Windows, který lze použít pro přímé připojení k Internetu bez služby IIS."
 manager: wpickett
 ms.author: riande
-ms.date: 08/07/2017
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: 5df5a0402a6852a40ab46657ac910f60e3f733d9
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 13555becb76b9df37728f78a7a8bc112d8de682f
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>WebListener webového serveru implementace v ASP.NET Core
 
@@ -87,6 +87,9 @@ Existují také [nastavení registru Http.Sys](https://support.microsoft.com/kb/
   Ve výchozím nastavení ASP.NET Core váže k `http://localhost:5000`. Konfigurace předpony adres URL a portů, můžete použít `UseURLs` metoda rozšíření `urls` argument příkazového řádku nebo konfigurační systém ASP.NET Core. Další informace najdete v tématu [hostitelský](../../fundamentals/hosting.md).
 
   Web používá naslouchací proces [formáty řetězců předponu Http.Sys](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx). Neexistují žádné požadavky formátu řetězec předpony, které jsou specifické pro WebListener.
+
+  > [!WARNING]
+  > Vazby nejvyšší úrovně zástupný znak (`http://*:80/` a `http://+:80`) by měl **není** použít. Vazby nejvyšší úrovně zástupný znak můžete otevřít vaší aplikaci k ohrožení zabezpečení. To platí pro silné a slabé zástupné znaky. Použijte explicitní hostitele názvy místo zástupných znaků. Vazba subdomény zástupný znak (například `*.mysub.com`) nemá toto bezpečnostní riziko, pokud řízení celého nadřazené domény (Naproti tomu `*.com`, což je snadno napadnutelný). V tématu [rfc7230 části-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) Další informace.
 
   > [!NOTE]
   > Ujistěte se, zda jste zadali stejné předpona řetězce v `UseUrls` , preregister na serveru. 

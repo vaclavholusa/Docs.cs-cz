@@ -1,7 +1,7 @@
 ---
-title: "Přidání ověřování"
+title: "Přidat stránku ASP.NET Razor základní ověřování"
 author: rick-anderson
-description: "Vysvětluje postup přidání ověření do stránky Razor."
+description: "Zjistit, jak přidat ověřování do stránky Razor v ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,17 +9,17 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 3632b40abb4a3c2343a17a9f3e08bd28fdcf7174
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: b07aa55d37b2d8ae65ec60f52142a8491dc46b59
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="adding-validation-to-a-razor-page"></a>Přidání ověřování na stránku Razor
+# <a name="add-validation-to-an-aspnet-core-razor-page"></a>Přidat stránku ASP.NET Razor základní ověřování
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V této části ověření logiku přidán `Movie` modelu. Pravidla ověřování se vynucují vždy, když uživatel vytvoří nebo upraví film.
+V této části je do logiku ověření `Movie` modelu. Pravidla ověřování se vynucují vždy, když uživatel vytvoří nebo upraví film.
 
 ## <a name="validation"></a>Ověřování
 

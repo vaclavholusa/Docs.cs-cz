@@ -1,7 +1,7 @@
 ---
-title: "Vytváření Krásný přizpůsobivý weby s Bootstrap"
+title: "Vytváření Krásný přizpůsobivý weby s Bootstrap a ASP.NET Core"
 author: ardalis
-description: 
+description: "Další informace o použití Bootstrap pro vývoj přizpůsobivý webové aplikace s ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: e2ade6223cdc56a4f0f00ff0b985ceda4ab5484a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c3dfaa53e9e3277d025d014f65004e4c24a5acc4
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Vytváření Krásný přizpůsobivý weby s Bootstrap
+# <a name="building-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>Vytváření Krásný přizpůsobivý weby s Bootstrap a ASP.NET Core
 
 <a name="bootstrap-index"></a>
 
@@ -23,7 +23,7 @@ Podle [Steve Smith](https://ardalis.com/)
 
 Bootstrap je aktuálně nejoblíbenější webové rozhraní pro vývoj přizpůsobivý webových aplikací. Nabízí několik funkce a výhody, které může zvýšit vaši uživatelé zkušenosti s webu, ať už jste začínající na front-endu návrh a vývoj nebo odborníka. Bootstrap je nasazený jako sada souborů CSS a JavaScript a slouží k efektivní Nápověda škálování váš web nebo aplikaci z telefonů tablety pro stolní počítače.
 
-## <a name="getting-started"></a>Začínáme
+## <a name="get-started"></a>Začínáme
 
 Existuje několik způsobů, jak začít s Bootstrap. Pokud začínáte novou webovou aplikaci v sadě Visual Studio, můžete výchozí šablona starter pro ASP.NET Core, ve kterém budou pocházet případu Bootstrap předem nainstalovaná:
 
@@ -190,7 +190,7 @@ Pokud chcete Změna motivu spuštění, umístí *bootstrap.css* soubor pro moti
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
 ```
 
-Pokud chcete sestavit vlastní řídicí panel, můžete spustit z volného příkladu, které jsou k dispozici zde: [http://getbootstrap.com/examples/dashboard/](http://getbootstrap.com/examples/dashboard/).
+Pokud chcete sestavit vlastní řídicí panel, můžete spustit z volného příkladu, které jsou k dispozici zde: [ http://getbootstrap.com/examples/dashboard/ ](http://getbootstrap.com/examples/dashboard/).
 
 ## <a name="components"></a>Součásti
 
@@ -214,7 +214,7 @@ Cesta ke stránce jsou běžné součást uživatelského rozhraní používá k
 
 ## <a name="javascript-support"></a>Podpora jazyka JavaScript
 
-Knihovna JavaScript Bootstrap na zahrnuje podporu rozhraní API pro zahrnuté součásti, vám umožní ovládat jejich chování prostřednictvím kódu programu v rámci vaší aplikace. Kromě toho *bootstrap.js* obsahuje více než tucet detekce (aktualizace styly, podle které má uživatel přešli v dokumentu), posuňte se vlastní jQuery modulů plug-in, že poskytuje další funkce, například přechody, modálních dialogových oken sbalte chování, karusely a vyznačení nabídek do okna, takže nemáte přejděte z obrazovky. Není dostatek místa na všechny doplňky JavaScript součástí Bootstrap – Další informace naleznete [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/).
+Knihovna JavaScript Bootstrap na zahrnuje podporu rozhraní API pro zahrnuté součásti, vám umožní ovládat jejich chování prostřednictvím kódu programu v rámci vaší aplikace. Kromě toho *bootstrap.js* obsahuje více než tucet detekce (aktualizace styly, podle které má uživatel přešli v dokumentu), posuňte se vlastní jQuery modulů plug-in, že poskytuje další funkce, například přechody, modálních dialogových oken sbalte chování, karusely a vyznačení nabídek do okna, takže nemáte přejděte z obrazovky. Není dostatek místa na všechny doplňky JavaScript součástí Bootstrap – Další informace naleznete [ http://getbootstrap.com/javascript/ ](http://getbootstrap.com/javascript/).
 
 ## <a name="summary"></a>Souhrn
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/index
-ms.openlocfilehash: 7e5f6bc44241dc6fc11569a145a04340f1b3ee7f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e03256d7b8b442569b0b0126983732c10817e20f
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="aspnet-core-security-overview"></a>Přehled zabezpečení ASP.NET Core
 
@@ -97,7 +97,6 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
         *   [Formát ukládání klíčů](data-protection/implementation/key-storage-format.md)
         *   [Zprostředkovatelé dočasné ochrany dat](data-protection/implementation/key-storage-ephemeral.md)
     *   [Kompatibilita](data-protection/compatibility/index.md)
-        *   [Sdílení souborů cookie mezi aplikacemi](data-protection/compatibility/cookie-sharing.md)
         *   [Nahrazení <machineKey> v ASP.NET](data-protection/compatibility/replacing-machinekey.md)
 *   [Vytvoření aplikace s uživatelskými daty chráněnými autorizací](xref:security/authorization/secure-data)
 *   [Bezpečné úložiště tajných částí aplikace při vývoji](app-secrets.md)
@@ -107,3 +106,4 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
 *   [Prevence útoků založených na otevřeném přesměrování](preventing-open-redirects.md)
 *   [Obrana proti skriptování mezi weby](cross-site-scripting.md)
 *   [Povolení žádostí nepůvodního zdroje (CORS)](cors.md)
+*   [Sdílení souborů cookie mezi aplikacemi](cookie-sharing.md)

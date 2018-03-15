@@ -1,7 +1,7 @@
 ---
-title: "Práce s modelem aplikace"
+title: "Práce s Model v aplikaci ASP.NET Core"
 author: ardalis
-description: 
+description: "Zjistěte, jak číst a manipulace s modelem aplikace změnit chování prvky MVC v ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 89a7af0ff95754f036b027aeafb8e25e49f397e2
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 36109a4264eda10e10a7dc071c257f7b4dc8b304
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="working-with-the-application-model"></a>Práce s modelem aplikace
+# <a name="working-with-the-application-model-in-aspnet-core"></a>Práce s Model v aplikaci ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/)
 

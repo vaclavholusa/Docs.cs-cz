@@ -313,7 +313,6 @@
 #### [Formát ukládání klíčů](xref:security/data-protection/implementation/key-storage-format)
 #### [Zprostředkovatelé dočasné ochrany dat](xref:security/data-protection/implementation/key-storage-ephemeral)
 ### [Kompatibilita](xref:security/data-protection/compatibility/index)
-#### [Sdílení souborů cookie mezi aplikacemi](xref:security/data-protection/compatibility/cookie-sharing)
 #### [Nahrazení <machineKey> v ASP.NET](xref:security/data-protection/compatibility/replacing-machinekey)
 ## [Vynutit HTTPS](xref:security/enforcing-ssl)
 ## [Bezpečné úložiště tajných částí aplikace při vývoji](xref:security/app-secrets)
@@ -322,6 +321,7 @@
 ## [Prevence útoků založených na otevřeném přesměrování](xref:security/preventing-open-redirects)
 ## [Obrana proti skriptování mezi weby](xref:security/cross-site-scripting)
 ## [Povolení žádostí nepůvodního zdroje (CORS)](xref:security/cors)
+## [Sdílení souborů cookie mezi aplikacemi](xref:security/cookie-sharing)
 
 # [Výkon](xref:performance/index)
 ## [Ukládání do mezipaměti](xref:performance/caching/index)

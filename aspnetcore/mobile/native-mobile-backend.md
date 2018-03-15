@@ -1,7 +1,7 @@
 ---
-title: "Vytváření služeb back-end pro nativní mobilní aplikace"
+title: "Vytváření služeb back-end pro nativní mobilní aplikace s ASP.NET Core"
 author: ardalis
-description: 
+description: "Naučte se vytvářet back-end služby pomocí ASP.NET MVC jádra pro podporu nativních mobilní aplikace."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: f5c0e5832b43f365c11a785af37b32e381624420
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 3902cf728ab6ba776674382361ebb1b28e765711
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="creating-backend-services-for-native-mobile-applications"></a>Vytváření služeb back-end pro nativní mobilní aplikace
+# <a name="creating-backend-services-for-native-mobile-applications-with-aspnet-core"></a>Vytváření služeb back-end pro nativní mobilní aplikace s ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/)
 
@@ -25,7 +25,7 @@ Mobilní aplikace můžete snadno komunikovat se službami ASP.NET Core back-end
 
 ## <a name="the-sample-native-mobile-app"></a>Ukázka nativní mobilní aplikace
 
-Tento kurz ukazuje, jak vytvořit back-end služby pomocí ASP.NET MVC jádra pro podporu nativních mobilní aplikace. Použije [aplikace Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) jako nativní klient, který zahrnuje samostatné nativní klientů pro zařízení Android, iOS, univerzální pro Windows a Windows Phone. Vám může postupovat v kurzu propojené vytvoření nativní aplikaci (a instalace nástroje Xamarin nezbytné volné), stejně jako stažení ukázkové řešení Xamarin. Ukázka Xamarin zahrnuje služby projektu ASP.NET Web API 2, které tento článek aplikace ASP.NET Core nahradí (bez nutnosti klientem změn).
+Tento kurz ukazuje, jak vytvořit back-end služby pomocí ASP.NET MVC jádra pro podporu nativních mobilní aplikace. Použije [aplikace Xamarin Forms ToDoRest](/xamarin/xamarin-forms/data-cloud/consuming/rest) jako nativní klient, který zahrnuje samostatné nativní klientů pro zařízení Android, iOS, univerzální pro Windows a Windows Phone. Vám může postupovat v kurzu propojené vytvoření nativní aplikaci (a instalace nástroje Xamarin nezbytné volné), stejně jako stažení ukázkové řešení Xamarin. Ukázka Xamarin zahrnuje služby projektu ASP.NET Web API 2, které tento článek aplikace ASP.NET Core nahradí (bez nutnosti klientem změn).
 
 ![Pro aplikaci Rest se systémem Android smartphone](native-mobile-backend/_static/todo-android.png)
 

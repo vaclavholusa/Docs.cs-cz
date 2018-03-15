@@ -11,13 +11,13 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 6ff9fd279a03197f761454bba3f180d7428b1b1f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d881563cdb6449aada444ef0528061581113a925
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
-<a name="getting-started-with-aspnet-web-api-2-c"></a>Začínáme s rozhraním ASP.NET Web API 2 (C#)
+<a name="get-started-with-aspnet-web-api-2-c"></a>Začínáme s rozhraním ASP.NET Web API 2 (C#)
 ====================
 podle [Wasson Jan](https://github.com/MikeWasson)
 
@@ -134,7 +134,7 @@ Všechno, co je v tomto souboru nahraďte následujícím textem:
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample3.html)]
 
-Chcete-li získat jQuery několika způsoby. V tomto příkladu lze použít [Microsoft Ajax CDN](../../../ajax/cdn/overview.md). Také si můžete stáhnout z [http://jquery.com/](http://jquery.com/)a ASP.NET "Webového rozhraní API" Šablona projektu zahrnuje také jQuery.
+Chcete-li získat jQuery několika způsoby. V tomto příkladu lze použít [Microsoft Ajax CDN](../../../ajax/cdn/overview.md). Také si můžete stáhnout z [ http://jquery.com/ ](http://jquery.com/)a ASP.NET "Webového rozhraní API" Šablona projektu zahrnuje také jQuery.
 
 ### <a name="getting-a-list-of-products"></a>Získávání seznam produktů
 

@@ -5,16 +5,16 @@ author: spboyer
 manager: wpickett
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 10/19/2016
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: b11bc811b6aefce22b60a28afd72c2a2d0b26955
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 033adddc586b60c9f7453df5434617aa838737f8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Hostování v systému Linux s Apache ASP.NET Core
 
@@ -112,27 +112,32 @@ Complete!
 ```
 
 > [!NOTE]
-> V tomto příkladu výstupu odráží httpd.86_64 vzhledem k tomu, že verze CentOS 7 je 64bitový. Pokud chcete ověřit, kde je nainstalován Apache, spusťte `whereis httpd` z příkazového řádku. 
+> V tomto příkladu výstupu odráží httpd.86_64 vzhledem k tomu, že verze CentOS 7 je 64bitový. Pokud chcete ověřit, kde je nainstalován Apache, spusťte `whereis httpd` z příkazového řádku.
 
 ### <a name="configure-apache-for-reverse-proxy"></a>Konfigurace Apache pro reverzní proxy server
 
 Konfigurační soubory pro Apache se nacházejí v rámci `/etc/httpd/conf.d/` adresáře. Všechny soubory s *.conf* rozšíření jsou zpracovávány v abecedním pořadí kromě souborů konfigurace modulu v `/etc/httpd/conf.modules.d/`, která obsahuje všechny konfigurační soubory nezbytné k načtení moduly.
 
-Vytvoření konfiguračního souboru pro aplikaci s názvem `hellomvc.conf`:
+Vytvoření konfiguračního souboru s názvem *hellomvc.conf*, pro aplikaci:
 
 ```
 <VirtualHost *:80>
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
     ProxyPassReverse / http://127.0.0.1:5000/
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ServerName www.example.com
+    ServerAlias *.example.com
+    ErrorLog ${APACHE_LOG_DIR}hellomvc-error.log
+    CustomLog ${APACHE_LOG_DIR}hellomvc-access.log common
 </VirtualHost>
 ```
 
-**VirtualHost** uzlu může vyskytovat více než jednou. v jedné nebo více souborů na serveru. **VirtualHost** je nastaven tak, aby naslouchala na všechny IP adresy pomocí portu 80. Následující dva řádky jsou nastavené na požadavky na proxy serveru v kořenovém adresáři na server v hodnotě 127.0.0.1 na port 5000. Pro obousměrnou komunikaci *ProxyPass* a *ProxyPassReverse* jsou povinné.
+`VirtualHost` Bloku může vyskytovat více než jednou. v jedné nebo více souborů na serveru. V předchozím konfiguračního souboru přijímá Apache veřejné přenosy na portu 80. Domény `www.example.com` je zpracování a `*.example.com` alias přeloží na stejné webové stránky. V tématu [podporu na základě názvu virtuálního hostitele](https://httpd.apache.org/docs/current/vhosts/name-based.html) Další informace. Požadavky jsou směrovány přes proxy server v kořenovém adresáři na port 5000 serveru na 127.0.0.1. Pro obousměrnou komunikaci `ProxyPass` a `ProxyPassReverse` jsou povinné.
 
-Můžete konfigurovat protokolování pro jednotlivé **VirtualHost** pomocí **protokolu chyb** a **CustomLog** direktivy. **Protokolu chyb** je umístění, kam server protokoluje chyby, a **CustomLog** nastaví název souboru a formát souboru protokolu. V takovém případě je kde požadavku je do něj protokolují informace. Je jeden řádek pro každý požadavek.
+> [!WARNING]
+> Nepodařilo se určit správný [ServerName direktiva](https://httpd.apache.org/docs/current/mod/core.html#servername) v **VirtualHost** bloku zpřístupní v aplikaci ohrožení zabezpečení. Vazba subdomény zástupný znak (například `*.example.com`) nemá představovat toto bezpečnostní riziko, pokud řízení celého nadřazené domény (Naproti tomu `*.com`, což je snadno napadnutelný). V tématu [rfc7230 části-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) Další informace.
+
+Můžete konfigurovat protokolování pro jednotlivé `VirtualHost` pomocí `ErrorLog` a `CustomLog` direktivy. `ErrorLog` je umístění, kam server protokoluje chyby, a `CustomLog` nastaví název souboru a formát souboru protokolu. V takovém případě je kde požadavku je do něj protokolují informace. Je jeden řádek pro každý požadavek.
 
 Uložte tento soubor a otestovat konfiguraci. Pokud vše projde, odpověď by měla být `Syntax [OK]`.
 

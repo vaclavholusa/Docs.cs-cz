@@ -1,5 +1,5 @@
 ---
-title: "Cloudové ověřování v rozhraní web API s Azure Active Directory B2C"
+title: "Cloudové ověřování v rozhraní web API s Azure Active Directory B2C v ASP.NET Core"
 author: camsoper
 description: "Zjistit, jak nastavit ověřování Azure Active Directory B2C pomocí webového rozhraní API ASP.NET Core. Otestujte ověření webového rozhraní API s Postman."
 ms.author: casoper
@@ -10,13 +10,13 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: d768e2daf2464b282b097e935ef6c5f85e8705f5
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 1213f7eb25fb6525f98d83dff0956a841ae686a7
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c"></a>Cloudové ověřování v rozhraní web API s Azure Active Directory B2C
+# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Cloudové ověřování v rozhraní web API s Azure Active Directory B2C v ASP.NET Core
 
 Podle [Soper kamera](https://twitter.com/camsoper)
 
@@ -120,7 +120,7 @@ Použijte následující hodnoty:
 | **Zahrnout webovou aplikaci / webové rozhraní API** | Ano                              |                                 |
 | **Povolit implicitního toku**       | Ano                              |                                 |
 | **Adresa URL odpovědi**                 | `https://getpostman.com/postman` |                                 |
-| **Identifikátor ID URI aplikace**                | *&lt;ponechat prázdné&gt;*            | Nepožaduje se pro tento kurz. |
+| **Identifikátor ID URI aplikace**                | *&lt;Ponechat prázdné&gt;*            | Nepožaduje se pro tento kurz. |
 | **Zahrnout nativního klienta**     | Ne                               |                                 |
 
 Nově zaregistrovaný webové aplikace potřebuje oprávnění pro přístup k webové rozhraní API jménem uživatele.  
@@ -177,7 +177,7 @@ Chcete-li požadavek na ověřeného webovému rozhraní API, je požadovaná to
     | **Adresa URL zpětného volání**          | `https://getpostman.com/postman`                                                              |                                                                                            |
     | **Ověřování adresy URL**              | `https://login.microsoftonline.com/<tenant domain name>/oauth2/v2.0/authorize?p=B2C_1_SiUpIn` | Nahraďte  *&lt;název domény klienta&gt;*  s názvem domény klienta bez lomené závorky. |
     | **ID klienta**             | *&lt;Zadejte aplikaci Postman <b>ID aplikace</b>&gt;*                                       |                                                                                            |
-    | **Tajný klíč klienta**         | *&lt;ponechat prázdné&gt;*                                                                         |                                                                                            |
+    | **Tajný klíč klienta**         | *&lt;Ponechat prázdné&gt;*                                                                         |                                                                                            |
     | **Rozsah**                 | `https://<tenant domain name>/api/user_impersonation openid offline_access`                   | Nahraďte  *&lt;název domény klienta&gt;*  s názvem domény klienta bez lomené závorky. |
     | **Ověření klienta** | Odeslání pověření klienta v textu                                                               |                                                                                            |
     

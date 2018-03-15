@@ -11,11 +11,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: 705fbe7c3aa65fed89f5fda02af3cb8dd757b71c
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: aaeaf9b776a5fd98900f2adf04468becec216da0
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="get-started-with-swashbuckle"></a>Začínáme s Swashbuckle
 
@@ -132,6 +132,16 @@ Ručně přidejte následující fragment k *.csproj* souboru:
 [!code-xml[](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi.Swashbuckle/TodoApiSwashbuckle.csproj?range=7-9)]
 
 ---
+
+Povolení komentáře XML poskytuje informace o ladění pro nedokumentovanými veřejných typů a členů. Upozornění jsou označeny nedokumentovanými typy a členy. Například následující zpráva označuje porušení upozornění kód. 1591:
+
+```text
+warning CS1591: Missing XML comment for publicly visible type or member 'TodoController.GetAll()'
+```
+
+Potlačení upozornění definováním seznam kódů upozornění ignorovat v oddělených středníky *.csproj* souboru:
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi.Swashbuckle/TodoApiSwashbuckle.csproj?name=snippet_SuppressWarnings&highlight=3)]
 
 Nakonfigurujte Swagger používat generovaný soubor XML. Pro operační systémy jiný systém než Windows nebo Linux může být malá a velká písmena názvů a cest souborů. Například *TodoApi.Swashbuckle.XML* je soubor na systém Windows, ale CentOS není platný.
 

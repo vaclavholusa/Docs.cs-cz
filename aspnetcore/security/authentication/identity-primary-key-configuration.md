@@ -1,7 +1,7 @@
 ---
-title: "Konfigurace Identity primární klíče datový typ"
+title: "Konfigurace Identity primární klíče datový typ v ASP.NET Core"
 author: AdrienTorris
-description: "Tento článek popisuje kroky pro konfiguraci požadovaný datový typ používaný pro ASP.NET Core Identity primární klíč."
+description: "Další informace o kroky pro konfiguraci požadovaný datový typ používaný pro ASP.NET Core Identity primární klíč."
 manager: wpickett
 ms.author: scaddie
 ms.date: 09/28/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: ff1c3aff3ea833081a25ea5fc4f2c2b65823f536
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 02482b81faa64b01765a90c2c6ffe9cf92b1a7e7
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="configure-the-aspnet-core-identity-primary-key-data-type"></a>Konfigurace ASP.NET Core Identity primární klíče datový typ
+# <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>Konfigurace Identity primární klíče datový typ v ASP.NET Core
 
 Jádro ASP.NET Identity můžete konfigurovat datový typ, který používá k reprezentování primární klíč. Používá identity `string` datový typ ve výchozím nastavení. Toto chování můžete přepsat.
 

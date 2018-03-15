@@ -1,7 +1,7 @@
 ---
 title: "Úvod do základní ASP.NET MVC na Mac, Linux nebo Windows"
 author: rick-anderson
-description: "Začínáme s ASP.NET MVC jádra a Visual Studio Code na Mac, Linux a Windows"
+description: "Zjistěte, jak začít pracovat s ASP.NET MVC jádra a Visual Studio Code na Mac, Linux a Windows"
 manager: wpickett
 ms.author: riande
 ms.date: 07/07/2017
@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: 4771555b66f328a819f17a32eb3959f9ecf33d44
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4960f5b2a82d20b9325f870296f4385e14e15b37
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc--on-mac-linux-or-windows"></a>Začínáme s ASP.NET MVC jádra na Mac, Linux nebo Windows
+# <a name="introduction-to-aspnet-core-mvc-on-mac-linux-or-windows"></a>Úvod do základní ASP.NET MVC na Mac, Linux nebo Windows
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V tomto kurzu naučit, základní informace o vytváření ASP.NET MVC základní webové aplikace pomocí [Visual Studio Code](https://code.visualstudio.com) (VS Code). Kurz předpokládá familarity kódem VS. V tématu [Začínáme s VS Code](https://code.visualstudio.com/docs) a [Visual Studio Code nápovědy](#visual-studio-code-help) Další informace. 
 

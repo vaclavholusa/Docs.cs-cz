@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 7ef82d15de64ef62b952b6c757cb9c35fd40e788
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e00a0929db9dff6c97c4b22468156f621a1a3820
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Úvod do stylů aplikace s méně, Sass a písma Super v ASP.NET Core
 
@@ -97,9 +97,9 @@ body {
 .bgDark2    {color:@darker2}
 ```
 
-`@base`objekt a druhá @-prefixed položky jsou proměnné. Každý z nich představuje barvu. S výjimkou `@base`, je nastavena pomocí funkcí barev: zjednodušit ztmavení a číselníku. Zjednodušit a ztmavení provést podstatě by očekávat; Otočení upraví odstín barvy se o počet stupňů (kolem barevné kolo). Menší procesoru je dostatečně inteligentní ignorovat proměnné, které se nepoužívají, takže ukazují, jak tyto proměnné fungují, potřebujeme používat místo. Třídy `.baseColor`, popisuje počítané hodnoty těchto proměnných v souboru CSS, která je vytvořena atd.
+`@base` objekt a druhá @-prefixed položky jsou proměnné. Každý z nich představuje barvu. S výjimkou `@base`, je nastavena pomocí funkcí barev: zjednodušit ztmavení a číselníku. Zjednodušit a ztmavení provést podstatě by očekávat; Otočení upraví odstín barvy se o počet stupňů (kolem barevné kolo). Menší procesoru je dostatečně inteligentní ignorovat proměnné, které se nepoužívají, takže ukazují, jak tyto proměnné fungují, potřebujeme používat místo. Třídy `.baseColor`, popisuje počítané hodnoty těchto proměnných v souboru CSS, která je vytvořena atd.
 
-### <a name="getting-started"></a>Začínáme
+### <a name="get-started"></a>Začínáme
 
 Vytvoření **konfigurační soubor npm** (*package.json*) ve složce projektu a upravit ho tak, aby odkazovaly `gulp` a `gulp-less`:
 

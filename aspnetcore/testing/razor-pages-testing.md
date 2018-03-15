@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 3f53924e0b36b7924d82f97a8702aa461d9ebd78
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e4f87a8151e378717aa9198e4629711c4ea6ef77
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Jednotka stránky Razor testování a integrace v ASP.NET Core
 
@@ -59,7 +59,7 @@ Zprávy aplikace je jednoduchý systém stránky Razor zpráv s následujícími
 * Aplikace obsahuje vrstva přístupu k datům (DAL) v kontextu své databáze třídy `AppDbContext` (*Data/AppDbContext.cs*). DAL metody jsou označeny `virtual`, což umožňuje mocking metody pro použití v testech.
 * Pokud se databáze nachází prázdný při spuštění aplikace, se inicializuje tři zprávy úložiště zpráv. Tyto *nasadí zprávy* se také používají při testování.
 
-&#8224; V tématu EF [testování pomocí InMemory](/ef/core/miscellaneous/testing/in-memory), vysvětluje, jak používat databázi v paměti pro testování pomocí Mstestu. Toto téma používá [xUnit](https://xunit.github.io/) testování framework. Testování koncepce a testovací implementace mezi různé testování architektury jsou podobné, ale nejsou identické.
+&#8224;V tématu EF [testování pomocí InMemory](/ef/core/miscellaneous/testing/in-memory), vysvětluje, jak používat databázi v paměti pro testování pomocí Mstestu. Toto téma používá [xUnit](https://xunit.github.io/) testování framework. Testování koncepce a testovací implementace mezi různé testování architektury jsou podobné, ale nejsou identické.
 
 I když se aplikace nepoužívá [použitému vzoru](http://martinfowler.com/eaaCatalog/repository.html) a není příklad efektivní [pracovní jednotky (UoW) vzor](https://martinfowler.com/eaaCatalog/unitOfWork.html), stránky Razor podporuje tyto vzory vývoj. Další informace najdete v tématu [navrhování vrstvu trvalosti infrastruktury](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design), [implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application), a [testování Řadič logiku](/aspnet/core/mvc/controllers/testing) (ukázka implementuje vzor úložiště).
 

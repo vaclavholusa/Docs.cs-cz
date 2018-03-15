@@ -1,5 +1,5 @@
 ---
-title: "Stránky Razor EF základní - souběžnosti - 8 8"
+title: "Stránky Razor s EF jádra ASP.NET Core - souběžnosti - 8 8"
 author: rick-anderson
 description: "Tento kurz ukazuje způsobu řešení konfliktů, když se více uživatelů aktualizace stejné entity ve stejnou dobu."
 manager: wpickett
@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 79f59e62483534623c5f17f3b2716da6ae6d179e
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 3921abe0b3741e906ff09b3dfd969214933ff83c
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 en-us /
 
-# <a name="handling-concurrency-conflicts---ef-core-with-razor-pages-8-of-8"></a>Zpracování konfliktů souběžnosti – základní EF s stránky Razor (8 8)
+# <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - souběžnosti - 8 8
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [tní Dykstra](https://github.com/tdykstra), a [Jon P Smith](https://twitter.com/thereformedprog)
 

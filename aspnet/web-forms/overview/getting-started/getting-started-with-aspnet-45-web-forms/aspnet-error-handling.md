@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="aspnet-error-handling"></a>Zpracování chyb ASP.NET
 ====================
@@ -301,7 +301,7 @@ Zobrazení protokolu ELMAH je jednoduché, ale nejprve vytvoříte nezpracovanou
 
 1. Stiskněte klávesu **CTRL + F5** ke spuštění ukázkové aplikace adresář Wingtip Toys.
 2. Chcete-li k neošetřené výjimce zapisovat do protokolu ELMAH, přejděte v prohlížeči na následující adresu URL (s použitím vaše číslo portu):  
-    `https://localhost:44300/NoPage.aspx`Zobrazí se chybová stránka.
+    `https://localhost:44300/NoPage.aspx` Zobrazí se chybová stránka.
 3. Chcete-li zobrazit protokol ELMAH, přejděte v prohlížeči na následující adresu URL (s použitím vaše číslo portu):  
     `https://localhost:44300/elmah.axd`
 

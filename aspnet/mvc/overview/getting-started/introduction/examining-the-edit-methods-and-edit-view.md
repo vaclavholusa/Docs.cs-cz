@@ -13,14 +13,14 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
 ms.openlocfilehash: d7e1ba503b8aa815cebf431d2f5ffc9436b3575b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>Zkoumání upravit metody a zobrazení
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 [!INCLUDE[Tutorial Note](sample/code-location.md)]
 
@@ -62,7 +62,7 @@ Všimněte si, druhý `Edit` předchází metody akce `HttpPost` atribut. Tento 
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample6.cshtml?highlight=9)]
 
-`@Html.AntiForgeryToken()`generuje token proti padělání skrytého, který se musí shodovat s v `Edit` metodu `Movies` řadiče. Další informace o webů požadavku padělání (také označované jako XSRF nebo proti útokům CSRF) v mé kurzu [XSRF proti útokům CSRF nebo zabránění v MVC](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md).
+`@Html.AntiForgeryToken()` generuje token proti padělání skrytého, který se musí shodovat s v `Edit` metodu `Movies` řadiče. Další informace o webů požadavku padělání (také označované jako XSRF nebo proti útokům CSRF) v mé kurzu [XSRF proti útokům CSRF nebo zabránění v MVC](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md).
 
 `HttpGet` `Edit` Metoda přebírá parametr ID film, vyhledává film používající rozhraní Entity Framework `Find` metoda a vrátí vybraného videa na zobrazení pro úpravy. Pokud nelze nalézt film, [HttpNotFound](https://msdn.microsoft.com/library/gg453938(VS.98).aspx) je vrácen. Při generování uživatelského rozhraní systému vytvoření zobrazení pro úpravy, zkontrolován `Movie` třídy a vytvořený kód k vykreslení `<label>` a `<input>` prvky pro každou vlastnost třídy. Následující příklad ukazuje zobrazení úpravy, který byl vytvořen v sadě visual studio generování uživatelského rozhraní systému:
 
@@ -100,7 +100,7 @@ Pokud používáte čeština – počítače, můžete tuto část přeskočte a
 
 
 > [!NOTE]
-> Pro podporu ověřování jQuery pro neanglická národní prostředí, které používají čárkou (&quot;,&quot;) pro desetinné čárky a formát data neanglických USA, musíte zahrnout *globalize.js* a konkrétní  *cultures/Globalize.cultures.js* souboru (z [https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) a JavaScript používat `Globalize.parseFloat`. Ověřování jiných než anglických jQuery můžete získat z NuGet. (Neinstalujte Globalize Pokud používáte anglickou národního prostředí.)
+> pro podporu ověřování jQuery pro neanglická národní prostředí, které používají čárkou (&quot;,&quot;) pro desetinné čárky a formát data neanglických USA, musíte zahrnout *globalize.js* a konkrétní  *cultures/Globalize.cultures.js* souboru (z [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) a JavaScript používat `Globalize.parseFloat`. Ověřování jiných než anglických jQuery můžete získat z NuGet. (Neinstalujte Globalize Pokud používáte anglickou národního prostředí.)
 
 
 1. Z **nástroje** nabídce klikněte na tlačítko **Správce balíčků NuGetLibrary**a potom klikněte na **spravovat balíčky NuGet pro řešení**.  
@@ -109,7 +109,7 @@ Pokud používáte čeština – počítače, můžete tuto část přeskočte a
 2. V levém podokně, vyberte **Procházet*. *** (viz následující obrázek).
 3. Do vstupního pole, zadejte * Globalize **.  
   
-    ![](examining-the-edit-methods-and-edit-view/_static/image6.png)Zvolte `jQuery.Validation.Globalize`, zvolte `MvcMovie` a klikněte na tlačítko **nainstalovat**. *Scripts\jquery.globalize\globalize.js* soubor bude přidán do projektu. *Scripts\jquery.globalize\cultures\* bude obsahovat soubory JavaScript mnoho jazykovou verzi. Poznámka: může trvat pět minut, chcete-li nainstalovat tento balíček.
+    ![](examining-the-edit-methods-and-edit-view/_static/image6.png) Zvolte `jQuery.Validation.Globalize`, zvolte `MvcMovie` a klikněte na tlačítko **nainstalovat**. *Scripts\jquery.globalize\globalize.js* soubor bude přidán do projektu. *Scripts\jquery.globalize\cultures\* bude obsahovat soubory JavaScript mnoho jazykovou verzi. Poznámka: může trvat pět minut, chcete-li nainstalovat tento balíček.
 
  Následující kód ukazuje změny souboru Views\Movies\Edit.cshtml: 
 
@@ -123,7 +123,7 @@ Jako dočasné opravu Pokud nelze získat ověření práce v národním prostř
 
 [!code-xml[Main](examining-the-edit-methods-and-edit-view/samples/sample11.xml)]
 
-<a id="gettingstarted"></a><a id="jQueryAjaxJSON"></a>V dalším kurzu jsme budete implementovat funkce vyhledávání.
+<a id="gettingstarted"></a><a id="jQueryAjaxJSON"></a> V dalším kurzu jsme budete implementovat funkce vyhledávání.
 
 >[!div class="step-by-step"]
 [Předchozí](accessing-your-models-data-from-a-controller.md)

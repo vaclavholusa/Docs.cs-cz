@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 60ef1f93efea777e9309ad8c664a2c6645f1ce80
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>Konfigurace webové aplikace produkční použití provozní databázi (VB)
 ====================
@@ -37,16 +37,16 @@ Je běžné pro konfigurační informace pro liší vývoj a produkční prostř
 
 ## <a name="examining-the-connection-string-information"></a>Zkoumání informace o připojovacím řetězci
 
-Připojovací řetězec použitý kniha recenze webová aplikace je uložené v konfiguračním souboru aplikace s `Web.config`. `Web.config`obsahuje speciální oddíl pro ukládání připojovacích řetězců, vhodně pojmenované [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx). `Web.config` Soubor pro web knihy recenze má jeden připojovacího řetězce definovaný v této části s názvem `ReviewsConnectionString`:
+Připojovací řetězec použitý kniha recenze webová aplikace je uložené v konfiguračním souboru aplikace s `Web.config`. `Web.config` obsahuje speciální oddíl pro ukládání připojovacích řetězců, vhodně pojmenované [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx). `Web.config` Soubor pro web knihy recenze má jeden připojovacího řetězce definovaný v této části s názvem `ReviewsConnectionString`:
 
 [!code-xml[Main](configuring-the-production-web-application-to-use-the-production-database-vb/samples/sample1.xml)]
 
 Připojovací řetězec - zdroj dat =. \SQLEXPRESS; AttachDbFilename = | Zabezpečení DataDirectory|\Reviews.mdf;Integrated = True; Uživatelské Instance = True – se skládá z řady možnosti a hodnoty, s páry možnost hodnota oddělená středník a jednotlivé možnosti a hodnota oddělená symbolem rovná. Čtyři možnosti, které používá v tomto připojovacím řetězci jsou:
 
-- `Data Source`-Určuje umístění databázového serveru a název instance databázového serveru (pokud existuje). Hodnota, `.\SQLEXPRESS`, je třeba kde je server databáze a název instance. Období určuje, že databázový server je ve stejném počítači jako aplikaci; Název instance je `SQLEXPRESS`.
-- `AttachDbFilename`-Určuje umístění souboru databáze. Hodnota obsahuje zástupný symbol `|DataDirectory|`, který je přeložen na úplnou cestu aplikace s `App_Data` složky za běhu.
-- `Integrated Security`-Logická hodnota, která označuje, zda pomocí zadaného uživatelského jména a hesla při připojování k databázi (false) nebo aktuální Windows přihlašovací údaje účtu (true).
-- `User Instance`-možnost konfigurace specifické pro SQL Server Express Edition, která určuje, jestli se má povolit uživatelům bez oprávnění správce v místním počítači připojení a připojení k databázi systému SQL Server Express Edition. V tématu [instance služby SQL Server Express uživatele](https://msdn.microsoft.com/library/ms254504.aspx) Další informace o tomto nastavení.
+- `Data Source` -Určuje umístění databázového serveru a název instance databázového serveru (pokud existuje). Hodnota, `.\SQLEXPRESS`, je třeba kde je server databáze a název instance. Období určuje, že databázový server je ve stejném počítači jako aplikaci; Název instance je `SQLEXPRESS`.
+- `AttachDbFilename` -Určuje umístění souboru databáze. Hodnota obsahuje zástupný symbol `|DataDirectory|`, který je přeložen na úplnou cestu aplikace s `App_Data` složky za běhu.
+- `Integrated Security` -Logická hodnota, která označuje, zda pomocí zadaného uživatelského jména a hesla při připojování k databázi (false) nebo aktuální Windows přihlašovací údaje účtu (true).
+- `User Instance` -možnost konfigurace specifické pro SQL Server Express Edition, která určuje, jestli se má povolit uživatelům bez oprávnění správce v místním počítači připojení a připojení k databázi systému SQL Server Express Edition. V tématu [instance služby SQL Server Express uživatele](https://msdn.microsoft.com/library/ms254504.aspx) Další informace o tomto nastavení.
   
 
 Možnosti řetězec povolených připojení závisí na databázi se připojujete k a [ADO.NET](http://ADO.NET) používaný zprostředkovatel databáze. Například připojovací řetězec pro připojení k serveru Microsoft SQL Server databáze se liší od kterého se připojit k databázi Oracle. Připojení k databázi Microsoft SQL Server pomocí poskytovatel Sqlclienta, používá jiný připojovací řetězec než při použití zprostředkovatele OLE DB.

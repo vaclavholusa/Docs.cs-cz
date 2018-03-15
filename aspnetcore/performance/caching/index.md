@@ -1,5 +1,5 @@
 ---
-title: Caching
+title: "Ukládání do mezipaměti v ASP.NET Core"
 author: ardalis
 description: "Naučte se používat ukládání do mezipaměti ke zlepšení výkonu aplikací ASP.NET Core."
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/index
-ms.openlocfilehash: 4864380508d8e063c9845b32df46120957dc080e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3e04beda76c4cd9cdc2d6ef8af3db12f46a6c0b6
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="caching"></a>Caching
+# <a name="caching-in-aspnet-core"></a>Ukládání do mezipaměti v ASP.NET Core
 
 * [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
 * [Práce s distribuované mezipaměti](xref:performance/caching/distributed)

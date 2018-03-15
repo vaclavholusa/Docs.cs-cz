@@ -1,7 +1,7 @@
 ---
-title: Migrace konfigurace
+title: "Migrace konfigurace základní technologie ASP.NET"
 author: ardalis
-description: 
+description: "Zjistěte, jak migrovat konfigurace z projektu aplikace ASP.NET MVC do projektu aplikace ASP.NET MVC jádra."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: e1ee582072c88542565c5cb860e157afe137f9f0
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 6c72b324de49a03a3b2c4e96ba8886d1ed249103
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="migrating-configuration"></a>Migrace konfigurace
+# <a name="migrating-configuration-to-aspnet-core"></a>Migrace konfigurace základní technologie ASP.NET
 
 Podle [Steve Smith](https://ardalis.com/) a [Scott Addie](https://scottaddie.com)
 

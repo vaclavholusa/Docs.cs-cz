@@ -1,7 +1,7 @@
 ---
-title: "Migrace ověřování a identita"
+title: "Migrace ověřování a identita na jádro ASP.NET"
 author: ardalis
-description: 
+description: "Zjistěte, jak migrovat do projektu ASP.NET MVC základní ověřování a identita z projektu aplikace ASP.NET MVC."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/identity
-ms.openlocfilehash: f02d9472ea0aa1dceae3f53c812776aab85ab54e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bf452ad3969863f8f058b29a31f19af13cb2fc6b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="migrating-authentication-and-identity"></a>Migrace ověřování a identita
+# <a name="migrating-authentication-and-identity-to-aspnet-core"></a>Migrace ověřování a identita na jádro ASP.NET
 
 <a name="migration-identity"></a>
 

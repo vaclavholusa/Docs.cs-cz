@@ -1,5 +1,5 @@
 ---
-title: "Přidání nové pole do stránky Razor"
+title: "Přidání nové pole do stránky Razor v ASP.NET Core"
 author: rick-anderson
 description: "Ukazuje, jak přidat nové pole na stránku Razor základní Entity Framework"
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: b90910c88d09b11dbf43af455ac3f9b66b0d7cc4
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c9494fe4b07590f76095d58b37290a9dc9e6e009
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="adding-a-new-field-to-a-razor-page"></a>Přidání nové pole do stránky Razor
+# <a name="adding-a-new-field-to-a-razor-page-in-aspnet-core"></a>Přidání nové pole do stránky Razor v ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility
-ms.openlocfilehash: 2d5706f4a2b22980618f0c5c546e16774e0e16b0
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 76ba257abfb11e0c2950b974f837c6ae5818a6a1
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="factory-based-middleware-activation-in-aspnet-core"></a>Aktivace na základě Factory middlewaru v ASP.NET Core
 
@@ -35,8 +35,8 @@ Výhody:
 
 Ukázková aplikace ukazuje middleware aktivované tímto:
 
-* Konvence (`ConventionalMiddleware`). Další informace o aktivaci konvenční middleware, najdete v článku [Middleware](xref:fundamentals/middleware/index) tématu.
-* [IMiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.imiddlewarefactory) implementace (`IMiddlewareMiddleware`). Výchozí hodnota [MiddlewareFactory třída](/dotnet/api/microsoft.aspnetcore.http.middlewarefactory) aktivuje middleware.
+* Konvence. Další informace o aktivaci konvenční middleware, najdete v článku [Middleware](xref:fundamentals/middleware/index) tématu.
+* [IMiddleware](/dotnet/api/microsoft.aspnetcore.http.imiddleware) implementace. Výchozí hodnota [MiddlewareFactory třída](/dotnet/api/microsoft.aspnetcore.http.middlewarefactory) aktivuje middleware.
 
 Implementace middlewaru fungovat stejně jako a zaznamenejte hodnotu poskytovanou infrastrukturou parametr řetězce dotazu (`key`). Middlewares použijte kontextu vloženého databáze (vymezená service) pro hodnotu řetězce dotazu v databázi v paměti.
 

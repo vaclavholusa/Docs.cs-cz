@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: cab395645d46c56a1a89464a8e8e716a296a9637
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 53f0f362f38252b86f9afd8416543ce3d515e7c4
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>Úvod do zpracování chyb v ASP.NET Core
 
@@ -65,39 +65,44 @@ public IActionResult Index()
 
 ## <a name="configuring-status-code-pages"></a>Konfigurace stavu znakové stránky
 
-Ve výchozím nastavení nebudou aplikace zadejte znaková stránka bohaté stav stavové kódy HTTP, jako je například 500 (vnitřní chyba serveru) nebo 404 (není nalezena). Můžete nakonfigurovat `StatusCodePagesMiddleware` přidáním řádek do `Configure` metoda:
+Ve výchozím nastavení, aplikace neposkytuje znaková stránka bohaté stav pro stavové kódy HTTP, jako například *404 nebyl nalezen*. Pokud chcete zadat stav znakové stránky, nakonfigurujte Middleware stránky kód stavu přidáním řádek do `Startup.Configure` metoda:
 
 ```csharp
 app.UseStatusCodePages();
 ```
 
-Ve výchozím nastavení přidá tento middleware jednoduchý, textovém obslužné rutiny pro běžné stavových kódů, třeba 404:
+Ve výchozím nastavení přidá Middleware stránky kód stavu jednoduchý, textovém obslužné rutiny pro běžné stavových kódů, třeba 404:
 
 ![404 stránky](error-handling/_static/default-404-status-code.png)
 
-Middleware podporuje několik různých rozšiřující metody. Má výrazu lambda, jiné přijímá řetězec typ a formát obsahu.
+Middleware podporuje několik metod rozšíření. Jedna metoda má výrazu lambda:
 
 [!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
+
+Jiná metoda přebírá obsahu typ a formát řetězce:
 
 ```csharp
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-Existují také metody rozšíření přesměrování. Jeden odešle klientovi 302 stavový kód a jeden vrátí původní stavový kód pro klienta, ale také provede obslužná rutina pro adresa URL pro přesměrování.
+Existují také přesměrování a znovu spouštět metody rozšíření. Metoda přesměrování odešle klientovi 302 stavový kód:
 
 [!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
+
+Znovu spustit metodu vrátí původní kód stavu klienta, ale také provede obslužná rutina pro adresu URL přesměrování:
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");
 ```
 
-Pokud je nutné zakázat stav znakové stránky pro určité požadavky, můžete to udělat:
+Stav znakové stránky lze vypnout pro konkrétní požadavky v metodu obslužná rutina stránky Razor nebo kontroler MVC. Zakázat stav znakové stránky, pokus o načtení [IStatusCodePagesFeature](/dotnet/api/microsoft.aspnetcore.diagnostics.istatuscodepagesfeature) v požadavku [HttpContext.Features](/dotnet/api/microsoft.aspnetcore.http.httpcontext.features) kolekce a zakažte funkci, pokud je k dispozici:
 
 ```csharp
-var statusCodePagesFeature = context.Features.Get<IStatusCodePagesFeature>();
+var statusCodePagesFeature = HttpContext.Features.Get<IStatusCodePagesFeature>();
+
 if (statusCodePagesFeature != null)
 {
-  statusCodePagesFeature.Enabled = false;
+    statusCodePagesFeature.Enabled = false;
 }
 ```
 
@@ -109,7 +114,7 @@ Navíc mějte na paměti, že po odeslání hlaviček pro odpovědi, nelze změn
 
 ## <a name="server-exception-handling"></a>Zpracování výjimek serveru
 
-Kromě zpracování logiky aplikace, výjimek [server](servers/index.md) hostování vaší aplikace provádí některé výjimek. Pokud server výjimku zachytí před odesláním hlavičky, server odešle 500 Vnitřní chyba serveru odpověď se žádný text. Pokud server výjimku zachytí po odeslání hlaviček, server se ukončí připojení. Žádosti, které nejsou zpracovávány aplikace jsou zpracovávány serverem. Jakékoli výjimky jsou zpracována výjimka serveru zpracování. Žádné nakonfigurovat vlastní chybové stránky nebo middleware výjimek nebo filtry toto chování neovlivňuje.
+Kromě zpracování logiky aplikace, výjimek [server](servers/index.md) hostování vaší aplikace provádí některé výjimek. Pokud server výjimku zachytí před odesláním hlavičky, server odešle *500 – Vnitřní chyba serveru* odpověď se žádný text. Pokud server výjimku zachytí po odeslání hlaviček, server se ukončí připojení. Žádosti, které nejsou zpracovávány aplikace jsou zpracovávány serverem. Jakékoli výjimky jsou zpracována výjimka serveru zpracování. Žádné nakonfigurovat vlastní chybové stránky nebo middleware výjimek nebo filtry toto chování neovlivňuje.
 
 ## <a name="startup-exception-handling"></a>Spuštění zpracování výjimek
 

@@ -28,7 +28,7 @@
 ### [Zkoumání metod Details a Delete](tutorials/first-mvc-app/details.md)
 
 ## [Vytváření webových rozhraní API](mvc/web-api/index.md)
-### [Vytvoření webové rozhraní API v systému Mac](xref:tutorials/first-web-api-mac)
+### [Vytvoření webového rozhraní API v systému macOS](xref:tutorials/first-web-api-mac)
 ### [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](xref:tutorials/web-api-help-pages-using-swagger)
 #### [Začínáme s NSwag](xref:tutorials/get-started-with-nswag)
 #### [Začínáme s Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
@@ -59,7 +59,7 @@
 #### [Pokročilá témata](data/ef-mvc/advanced.md)
 
 ## [Kurzy pro vývoj pro různé platformy](xref:tutorials/xplat)
-### [Webová aplikace Razor Pages na Macu](xref:tutorials/razor-pages-mac/index)
+### [Syntaxe Razor stránek webové aplikace v systému macOS](xref:tutorials/razor-pages-mac/index)
 #### [Začínáme se stránkami Razor](xref:tutorials/razor-pages-mac/razor-pages-start)
 #### [Přidání modelu](xref:tutorials/razor-pages-mac/model)
 #### [Vygenerované stránky Razor](xref:tutorials/razor-pages-mac/page)
@@ -87,7 +87,7 @@
 #### [Přidání ověření](xref:tutorials/first-mvc-app-mac/validation)
 #### [Zkoumání metod Details a Delete](xref:tutorials/first-mvc-app/details)
 
-### [Webové aplikace MVC s kódem jazyka Visual Studio na Mac nebo Linux](xref:tutorials/first-mvc-app-xplat/index)
+### [Webové aplikace MVC s kódem jazyka Visual Studio v systému macOS nebo Linux](xref:tutorials/first-mvc-app-xplat/index)
 #### [Začínáme](tutorials/first-mvc-app-xplat/start-mvc.md)
 #### [Přidání kontroleru](tutorials/first-mvc-app-xplat/adding-controller.md)
 #### [Přidání zobrazení](tutorials/first-mvc-app-xplat/adding-view.md)

@@ -1,5 +1,5 @@
 ---
-title: "Začínáme s stránky Razor v ASP.NET Core v systému Mac"
+title: "Začínáme s stránky Razor v ASP.NET Core v systému macOS"
 author: rick-anderson
 description: "Zjistit, jak začít pracovat s stránky Razor v ASP.NET Core pomocí sady Visual Studio for Mac."
 manager: wpickett
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/razor-pages-start
-ms.openlocfilehash: e56799d321cc84c60188a72def9448a0b339d568
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7db2e01fad616b366f67a9a9435190891a39d584
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core-with-visual-studio-for-mac"></a>Začínáme s stránky Razor v ASP.NET Core pomocí sady Visual Studio pro Mac
 

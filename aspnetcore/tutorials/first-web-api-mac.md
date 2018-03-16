@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: c7825530146e5e4a879bf44db5a92bc7700de73b
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 9499a203f899fade5d2972ab4e913b594dd591d8
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Vytvoření webové rozhraní API s jádro ASP.NET MVC a Visual Studio pro Mac
 
@@ -32,7 +32,7 @@ Existují 3 verze tohoto kurzu:
 
 [!INCLUDE[template files](../includes/webApi/intro.md)]
 
-* V tématu [Úvod do architektury ASP.NET MVC jádra na Mac nebo Linux](xref:tutorials/first-mvc-app-xplat/index) pro příklad, který používá trvalé databáze.
+* V tématu [Úvod do rozhraní ASP.NET MVC jádra v systému macOS nebo Linux](xref:tutorials/first-mvc-app-xplat/index) pro příklad, který používá trvalé databáze.
 
 ## <a name="prerequisites"></a>Požadavky
 

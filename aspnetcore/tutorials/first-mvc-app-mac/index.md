@@ -1,5 +1,5 @@
 ---
-title: "Vytvoření webové aplikace s ASP.NET MVC jádra na Macu"
+title: "Vytvoření webové aplikace s ASP.NET MVC jádra v systému macOS"
 author: rick-anderson
 description: "Vytvořte základní ASP.NET MVC nebo Entity Framework aplikace pomocí sady Visual Studio pro Mac"
 manager: wpickett
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/first-mvc-app-mac/index
-ms.openlocfilehash: 554dda7ad7f20f90fd0a73b51eac508f99877683
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 51d62043592fbb7e1edd377c4f3ef3c1693b666a
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-using-visual-studio-for-mac"></a>Vytvoření webové aplikace s ASP.NET MVC základní pomocí sady Visual Studio pro Mac
 

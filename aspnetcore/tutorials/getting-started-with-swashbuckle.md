@@ -2,20 +2,19 @@
 title: "Začínáme s Swashbuckle"
 author: zuckerthoben
 description: "V tomto kurzu poskytuje návod k přidávání Swashbuckle do projektu integrovat uživatelské rozhraní Swagger."
-keywords: "ASP.NET Core, Swagger, Swashbuckle, pomůže stránky webového rozhraní API"
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.custom: mvc
-ms.date: 03/09/2018
+ms.date: 03/15/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: aaeaf9b776a5fd98900f2adf04468becec216da0
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 148ddbebab9afa4d9c78d3bfca5526dbbd8a5ecb
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="get-started-with-swashbuckle"></a>Začínáme s Swashbuckle
 

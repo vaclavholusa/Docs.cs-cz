@@ -11,11 +11,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/static-files
-ms.openlocfilehash: 9614d8b744776ee318e9d385b9ef40e90c0c16c1
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 677cd746215b6b2cfb3a0e1d768f5f0da65cefd8
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="work-with-static-files-in-aspnet-core"></a>Práce s statické soubory v ASP.NET Core
 
@@ -236,7 +236,7 @@ Předchozí kód je žádost o soubor s Neznámý typ obsahu vrácena jako obrá
 > [!WARNING]
 > `UseDirectoryBrowser` a `UseStaticFiles` může se nevrací tajných klíčů. Důrazně doporučujeme zakázání v produkčním prostředí pro procházení adresářů. Pečlivě zkontrolujte adresáře, které jsou povolené prostřednictvím `UseStaticFiles` nebo `UseDirectoryBrowser`. Celý adresář a jeho dílčí adresáře budou veřejně přístupná. Úložiště soubory vhodný pro slouží veřejnosti vyhrazené adresáře, například  *\<content_root > / wwwroot*. Oddělte tyto soubory z zobrazení MVC, stránky Razor (pouze 2.x), konfiguračních souborů, atd.
 
-* Adresy URL pro obsah vystaveny s `UseDirectoryBrowser` a `UseStaticFiles` podléhají malá a velká písmena a znak omezení podkladový systém souborů. Například je malá a velká písmena Windows&mdash;Mac a Linux nejsou.
+* Adresy URL pro obsah vystaveny s `UseDirectoryBrowser` a `UseStaticFiles` podléhají malá a velká písmena a znak omezení podkladový systém souborů. Například je malá a velká písmena Windows&mdash;systému macOS a Linux nejsou.
 
 * Aplikace ASP.NET Core hostované služby IIS používá [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) předávat všechny požadavky na aplikace, včetně žádostí statických souborů. Obslužné rutiny statických souborů služby IIS se nepoužije. Nemá žádné šanci na zpracování požadavků, než se zpracovávají modulem.
 

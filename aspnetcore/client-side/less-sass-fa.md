@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/less-sass-fa
-ms.openlocfilehash: e00a0929db9dff6c97c4b22468156f621a1a3820
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 979f5639e382560d952df45ba6e0b8af3b132c2d
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Úvod do stylů aplikace s méně, Sass a písma Super v ASP.NET Core
 
@@ -323,7 +323,7 @@ Menší poskytuje celou řadu dalších funkcí, ale to by měl získali přehle
 
 Sass je podobná menší, zajištění podpory pro mnoho stejných funkcí, ale syntaxí mírně lišit. Je vytvořen pomocí Ruby místo JavaScript, a proto nemá různé instalační požadavky. Původní jazyk Sass nepoužili složené závorky nebo středníky, ale místo definuje obor pomocí mezer a odsazení. Ve verzi 3 Sass byla zavedená Nová syntaxe, **SCSS** (dále jen "Sassy CSS"). SCSS je podobná šablon stylů CSS v, že ignoruje úrovně odsazení a prázdný znak a místo toho používá středníky a složené závorky.
 
-K instalaci Sass, obvykle můžete by nejprve nainstalujte Ruby (předinstalované na Mac) a spusťte:
+K instalaci Sass, obvykle můžete by nejprve nainstalujte Ruby (předem nainstalovaná v systému macOS) a spusťte:
 
 ```console
 gem install sass

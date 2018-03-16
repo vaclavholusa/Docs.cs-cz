@@ -1,7 +1,7 @@
 ---
-title: "Úvod do základní ASP.NET MVC na Mac, Linux nebo Windows"
+title: "Úvod do architektury ASP.NET MVC jádra v systému macOS, Linux nebo Windows"
 author: rick-anderson
-description: "Zjistěte, jak začít pracovat s ASP.NET MVC jádra a Visual Studio Code na Mac, Linux a Windows"
+description: "Zjistěte, jak začít pracovat s ASP.NET MVC jádra a Visual Studio Code v systému macOS, Linux a Windows"
 manager: wpickett
 ms.author: riande
 ms.date: 07/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: 4960f5b2a82d20b9325f870296f4385e14e15b37
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a612d9b09e58fdc8071378ade15f1bdcafc9c9a6
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
-# <a name="introduction-to-aspnet-core-mvc-on-mac-linux-or-windows"></a>Úvod do základní ASP.NET MVC na Mac, Linux nebo Windows
+# <a name="introduction-to-aspnet-core-mvc-on-macos-linux-or-windows"></a>Úvod do architektury ASP.NET MVC jádra v systému macOS, Linux nebo Windows
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -75,7 +75,7 @@ V další části tohoto kurzu jsme vám další informace o MVC a zahájit záp
 - [Integrované terminálu](https://code.visualstudio.com/docs/editor/integrated-terminal)
 - [Klávesové zkratky](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
 
-  - [Mac klávesové zkratky](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+  - [systému macOS klávesové zkratky](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
   - [Linux klávesové zkratky](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
   - [Klávesové zkratky systému Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 

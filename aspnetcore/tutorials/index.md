@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 45b00fbc15740fad60202bb7e5ab14beb9ebe495
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: fd58a6a3e35a706d503603790fa1c726e6c865d6
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
 
@@ -27,14 +27,14 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
 * Vytvoření stránky Razor webové aplikace s ASP.NET Core
 
    * [Stránky Razor v systému Windows](xref:tutorials/razor-pages/index)
-   * [Stránky Razor v systému Mac](xref:tutorials/razor-pages-mac/index)
+   * [Stránky Razor v systému macOS](xref:tutorials/razor-pages-mac/index)
    * [Stránky Razor kódem VS](xref:tutorials/razor-pages-vsc/index)  
 
 * Vytvoření webové aplikace ASP.NET MVC jádra
 
    * [Webovou aplikaci pomocí sady Visual Studio pro Windows](first-mvc-app/index.md)
    * [Webovou aplikaci pomocí sady Visual Studio pro Mac](first-mvc-app-mac/index.md)
-   * [Webová aplikace s použitím editoru Visual Studio Code pro Mac nebo Linux](first-mvc-app-xplat/index.md)
+   * [Webové aplikace s kódem jazyka Visual Studio v systému macOS nebo Linux](first-mvc-app-xplat/index.md)
 
 * [Začínáme s technologiemi ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](../data/ef-mvc/index.md)
 * [Vytváření pomocných rutin značek](../mvc/views/tag-helpers/authoring.md)

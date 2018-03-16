@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/xplat
-ms.openlocfilehash: 1b1a20eea88d4a90696deadaab340dcfb2b85b86
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: b8b10b9aaf1ef68f42fbf61982b8b2f21ab1183a
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="aspnet-core-cross-platform-tutorials"></a>Kurzy a platformy ASP.NET Core
 
@@ -26,13 +26,13 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
 * [Úvod do stránky Razor v ASP.NET Core](xref:mvc/razor-pages/index)
 * Vytvoření stránky Razor webové aplikace s ASP.NET Core
 
-   * [Stránky Razor v systému Mac](xref:tutorials/razor-pages-mac/index)
+   * [Stránky Razor v systému macOS](xref:tutorials/razor-pages-mac/index)
    * [Stránky Razor kódem VS](xref:tutorials/razor-pages-vsc/index)  
 
 * Vytvoření webové aplikace ASP.NET MVC jádra
 
    * [Webovou aplikaci pomocí sady Visual Studio pro Mac](first-mvc-app-mac/index.md)
-   * [Webová aplikace s použitím editoru Visual Studio Code pro Mac nebo Linux](first-mvc-app-xplat/index.md)
+   * [Webové aplikace s kódem jazyka Visual Studio v systému macOS nebo Linux](first-mvc-app-xplat/index.md)
 
 ## <a name="build-web-apis"></a>Vytvoření rozhraní Web API
 * Vytvoření webové rozhraní API pomocí ASP.NET Core

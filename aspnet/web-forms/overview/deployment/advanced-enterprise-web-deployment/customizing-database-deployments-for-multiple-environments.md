@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
 ms.openlocfilehash: f3ca344c2466d9d538f55cd8ff0a5bf5b7bac808
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>Přizpůsobení nasazení databáze pro prostředí s více
 ====================
@@ -61,7 +61,7 @@ Výchozí nastavení projektu databáze obsahuje jedno nasazení konfiguračníh
 - **Nasazení porovnání kolace**. Tímto způsobem můžete vybrat, jestli se má používat kolaci databáze projektu ( *zdroj* kolace) nebo kolaci databáze na cílovém serveru ( *cíl* kolace). Ve většině případů budete chtít použít zdroj kolace při nasazení na vývojovém nebo testovacím prostředí. Když nasadíte k pracovním nebo produkčním prostředí, budete obvykle chcete opustit cílové kolaci beze změny, aby se zabránilo žádné problémy s interoperabilitou.
 - **Nasazení vlastnosti databáze**. Tímto způsobem můžete vybrat, jestli se má použít vlastnosti databáze, jak jsou definovány v *Database.sqlsettings* souboru. Při prvním nasazení databáze, měli byste nasadit vlastnosti databáze. Pokud aktualizujete existující databázi, vlastnosti musí již být k dispozici a není třeba je znovu nasadit.
 - **Vždy znovu vytvořit databázi**. Díky tomu se rozhodujete, jestli se znovu vytvořit cílová databáze při každém nasazení nebo zkontrolujte aktuální přírůstkové změny, aby cílová databáze s schéma. Pokud znovu vytvořit databázi, ztratíte všechna data v existující databázi. Jako takový by měl obvykle nastavíte **false** pro nasazení do pracovním nebo produkčním prostředí.
-- **Blokovat přírůstkové nasazení, pokud může dojít ke ztrátě dat.**. Tímto způsobem můžete vybrat, jestli by se měla zastavit nasazení, pokud změnu schématu databáze způsobí ztrátu dat. To obvykle nastavuje na **true** pro nasazení v produkčním prostředí, získáte možnost zasáhnout a chránit všechny důležitá data. Pokud jste nastavili **vždy znovu vytvořit databázi** k **false**, toto nastavení nebude mít žádný vliv.
+- **Blokovat přírůstkové nasazení, pokud může dojít ke ztrátě dat**. Tímto způsobem můžete vybrat, jestli by se měla zastavit nasazení, pokud změnu schématu databáze způsobí ztrátu dat. To obvykle nastavuje na **true** pro nasazení v produkčním prostředí, získáte možnost zasáhnout a chránit všechny důležitá data. Pokud jste nastavili **vždy znovu vytvořit databázi** k **false**, toto nastavení nebude mít žádný vliv.
 - **Spouštění nasazení v režimu jednoho uživatele**. To obvykle není problém v prostředí pro vývoj nebo testování. Ale by měl obvykle nastavíte **true** pro nasazení do pracovním nebo produkčním prostředí. To uživatelům bránit v provádění změn do databáze během nasazení.
 - **Zálohování databáze před nasazením**. To obvykle nastavuje na **true** při nasazení v produkčním prostředí, aby se předešlo ztrátě dat. Můžete také nastavit na **true** při nasazení pro pracovní prostředí, pokud vaše pracovní databáze obsahuje velké množství dat.
 - **Generovat příkazy DROP pro objekty, které jsou v cílové databázi, ale nejsou v databázi projektu**. Ve většině případů to je nedílnou a podstatnou část provedením přírůstkové změny databáze. Pokud jste nastavili **vždy znovu vytvořit databázi** k **false**, toto nastavení nebude mít žádný vliv.

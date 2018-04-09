@@ -1,0 +1,9 @@
+<span data-ttu-id="f9e46-101">Nainstalujte **jeden** z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="f9e46-101">Install **one** of the following:</span></span>
+
+* <span data-ttu-id="f9e46-102">Nástroje příkazového řádku: Windows, Linux nebo systému macOS: [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]</span><span class="sxs-lookup"><span data-stu-id="f9e46-102">CLI tooling: Windows, Linux, or macOS: [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]</span></span>
+* <span data-ttu-id="f9e46-103">IDE/editor nástrojů</span><span class="sxs-lookup"><span data-stu-id="f9e46-103">IDE/editor tooling</span></span>
+  * <span data-ttu-id="f9e46-104">Windows: [Visual Studio pro Windows](https://www.microsoft.com/net/download/windows)</span><span class="sxs-lookup"><span data-stu-id="f9e46-104">Windows: [Visual Studio for Windows](https://www.microsoft.com/net/download/windows)</span></span>
+    * <span data-ttu-id="f9e46-105">**Vývoj pro ASP.NET a webové** pracovního vytížení</span><span class="sxs-lookup"><span data-stu-id="f9e46-105">**ASP.NET and web development** workload</span></span>
+    * <span data-ttu-id="f9e46-106">**Vývoj pro různé platformy .NET core** pracovního vytížení</span><span class="sxs-lookup"><span data-stu-id="f9e46-106">**.NET Core cross-platform development** workload</span></span>
+  * <span data-ttu-id="f9e46-107">Linux: [Visual Studio Code](https://www.microsoft.com/net/download/linux)</span><span class="sxs-lookup"><span data-stu-id="f9e46-107">Linux: [Visual Studio Code](https://www.microsoft.com/net/download/linux)</span></span>
+  * <span data-ttu-id="f9e46-108">macOS: [Visual Studio for Mac](https://www.microsoft.com/net/download/macos)</span><span class="sxs-lookup"><span data-stu-id="f9e46-108">macOS: [Visual Studio for Mac](https://www.microsoft.com/net/download/macos)</span></span>

@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s stránky Razor v ASP.NET Core v systému macOS"
+title: Začínáme s stránky Razor v ASP.NET Core v systému macOS pomocí sady Visual Studio pro Mac
 author: rick-anderson
-description: "Zjistit, jak začít pracovat s stránky Razor v ASP.NET Core pomocí sady Visual Studio for Mac."
+description: Zjistit, jak začít pracovat s stránky Razor v ASP.NET Core pomocí sady Visual Studio for Mac.
 manager: wpickett
 ms.author: riande
 ms.date: 07/27/2017
@@ -9,28 +9,25 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/razor-pages-start
-ms.openlocfilehash: 7db2e01fad616b366f67a9a9435190891a39d584
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 6d9233c952c632022c0b37ef1ea6a5320e4eeb6d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="get-started-with-razor-pages-in-aspnet-core-with-visual-studio-for-mac"></a><span data-ttu-id="b7940-103">Začínáme s stránky Razor v ASP.NET Core pomocí sady Visual Studio pro Mac</span><span class="sxs-lookup"><span data-stu-id="b7940-103">Get started with Razor Pages in ASP.NET Core with Visual Studio for Mac</span></span>
+# <a name="get-started-with-razor-pages-in-aspnet-core-on-macos-with-visual-studio-for-mac"></a><span data-ttu-id="54d5c-103">Začínáme s stránky Razor v ASP.NET Core v systému macOS pomocí sady Visual Studio pro Mac</span><span class="sxs-lookup"><span data-stu-id="54d5c-103">Get started with Razor Pages in ASP.NET Core on macOS with Visual Studio for Mac</span></span>
 
-<span data-ttu-id="b7940-104">podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="b7940-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="54d5c-104">podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="54d5c-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="b7940-105">V tomto kurzu se dozvíte, jaké základní informace o vytváření webové aplikace ASP.NET Core Razor stránky.</span><span class="sxs-lookup"><span data-stu-id="b7940-105">This tutorial teaches the basics of building an ASP.NET Core Razor Pages web app.</span></span> <span data-ttu-id="b7940-106">Doporučujeme vám přečíst si téma [Úvod do stránky Razor](xref:mvc/razor-pages/index) před zahájením tohoto kurzu.</span><span class="sxs-lookup"><span data-stu-id="b7940-106">We recommend you review [Introduction to Razor Pages](xref:mvc/razor-pages/index) before starting this tutorial.</span></span> <span data-ttu-id="b7940-107">Stránky Razor je doporučeným způsobem, jak sestavit uživatelského rozhraní pro webové aplikace v ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="b7940-107">Razor Pages is the recommended way to build UI for web applications in ASP.NET Core.</span></span>
+<span data-ttu-id="54d5c-105">V tomto kurzu se dozvíte, jaké základní informace o vytváření webové aplikace ASP.NET Core Razor stránky.</span><span class="sxs-lookup"><span data-stu-id="54d5c-105">This tutorial teaches the basics of building an ASP.NET Core Razor Pages web app.</span></span> <span data-ttu-id="54d5c-106">Doporučujeme vám přečíst si téma [Úvod do stránky Razor](xref:mvc/razor-pages/index) před zahájením tohoto kurzu.</span><span class="sxs-lookup"><span data-stu-id="54d5c-106">We recommend you review [Introduction to Razor Pages](xref:mvc/razor-pages/index) before starting this tutorial.</span></span> <span data-ttu-id="54d5c-107">Stránky Razor je doporučeným způsobem, jak sestavit uživatelského rozhraní pro webové aplikace v ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="54d5c-107">Razor Pages is the recommended way to build UI for web applications in ASP.NET Core.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="b7940-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b7940-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="54d5c-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="54d5c-108">Prerequisites</span></span>
 
-<span data-ttu-id="b7940-109">Nainstalujte následující:</span><span class="sxs-lookup"><span data-stu-id="b7940-109">Install the following:</span></span>
+[!INCLUDE [](~/includes/net-core-prereqs-macos.md)]
 
-* <span data-ttu-id="b7940-110">[.NET core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější</span><span class="sxs-lookup"><span data-stu-id="b7940-110">[.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) or later</span></span>
-* [<span data-ttu-id="b7940-111">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="b7940-111">Visual Studio for Mac</span></span>](https://www.visualstudio.com/vs/visual-studio-mac/)
+## <a name="create-a-razor-web-app"></a><span data-ttu-id="54d5c-109">Vytvoření webové aplikace Razor</span><span class="sxs-lookup"><span data-stu-id="54d5c-109">Create a Razor web app</span></span>
 
-## <a name="create-a-razor-web-app"></a><span data-ttu-id="b7940-112">Vytvoření webové aplikace Razor</span><span class="sxs-lookup"><span data-stu-id="b7940-112">Create a Razor web app</span></span>
-
-<span data-ttu-id="b7940-113">Z terminálu spusťte následující příkazy:</span><span class="sxs-lookup"><span data-stu-id="b7940-113">From a terminal, run the following commands:</span></span>
+<span data-ttu-id="54d5c-110">Z terminálu spusťte následující příkazy:</span><span class="sxs-lookup"><span data-stu-id="54d5c-110">From a terminal, run the following commands:</span></span>
 
 ```console
 dotnet new razor -o RazorPagesMovie
@@ -38,23 +35,23 @@ cd RazorPagesMovie
 dotnet run
 ```
 
-<span data-ttu-id="b7940-114">Předchozí příkazy použijte [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="b7940-114">The preceding commands use the [.NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/dotnet) to create and run a Razor Pages project.</span></span> <span data-ttu-id="b7940-115">Otevřete v prohlížeči na http://localhost: 5000 zobrazení aplikace.</span><span class="sxs-lookup"><span data-stu-id="b7940-115">Open a browser to http://localhost:5000 to view the application.</span></span>
+<span data-ttu-id="54d5c-111">Předchozí příkazy použijte [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="54d5c-111">The preceding commands use the [.NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/dotnet) to create and run a Razor Pages project.</span></span> <span data-ttu-id="54d5c-112">Otevřete prohlížeč na http://localhost:5000 zobrazíte aplikace.</span><span class="sxs-lookup"><span data-stu-id="54d5c-112">Open a browser to http://localhost:5000 to view the application.</span></span>
 
 ![Index nebo Domovská stránka](../razor-pages/razor-pages-start/_static/home.png)
 
-[!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
+[!INCLUDE [razor-pages-start](../../includes/RP/razor-pages-start.md)]
 
-## <a name="open-the-project"></a><span data-ttu-id="b7940-117">Otevřete projekt</span><span class="sxs-lookup"><span data-stu-id="b7940-117">Open the project</span></span>
+## <a name="open-the-project"></a><span data-ttu-id="54d5c-114">Otevřete projekt</span><span class="sxs-lookup"><span data-stu-id="54d5c-114">Open the project</span></span>
 
-<span data-ttu-id="b7940-118">Stiskněte kombinaci kláves Ctrl + C vypnutí aplikace.</span><span class="sxs-lookup"><span data-stu-id="b7940-118">Press Ctrl+C to shut down the application.</span></span>
+<span data-ttu-id="54d5c-115">Stiskněte kombinaci kláves Ctrl + C vypnutí aplikace.</span><span class="sxs-lookup"><span data-stu-id="54d5c-115">Press Ctrl+C to shut down the application.</span></span>
 
-<span data-ttu-id="b7940-119">Ze sady Visual Studio, vyberte **soubor > Otevřít**a pak vyberte *RazorPagesMovie.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="b7940-119">From Visual Studio, select **File > Open**, and then select the *RazorPagesMovie.csproj* file.</span></span>
+<span data-ttu-id="54d5c-116">Ze sady Visual Studio, vyberte **soubor > Otevřít**a pak vyberte *RazorPagesMovie.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="54d5c-116">From Visual Studio, select **File > Open**, and then select the *RazorPagesMovie.csproj* file.</span></span>
 
-### <a name="launch-the-app"></a><span data-ttu-id="b7940-120">Spusťte aplikaci</span><span class="sxs-lookup"><span data-stu-id="b7940-120">Launch the app</span></span>
+### <a name="launch-the-app"></a><span data-ttu-id="54d5c-117">Spusťte aplikaci</span><span class="sxs-lookup"><span data-stu-id="54d5c-117">Launch the app</span></span>
 
-<span data-ttu-id="b7940-121">V sadě Visual Studio, vyberte **spustit > Spustit bez ladění** spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="b7940-121">In Visual Studio, select **Run > Start Without Debugging** to launch the app.</span></span> <span data-ttu-id="b7940-122">Visual Studio spustí [Kestrel](xref:fundamentals/servers/kestrel), spustí se prohlížeč a přejde na `http://localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="b7940-122">Visual Studio starts [Kestrel](xref:fundamentals/servers/kestrel), launches a browser, and navigates to `http://localhost:5000`.</span></span>
+<span data-ttu-id="54d5c-118">V sadě Visual Studio, vyberte **spustit > Spustit bez ladění** spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="54d5c-118">In Visual Studio, select **Run > Start Without Debugging** to launch the app.</span></span> <span data-ttu-id="54d5c-119">Visual Studio spustí [Kestrel](xref:fundamentals/servers/kestrel), spustí se prohlížeč a přejde na `http://localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="54d5c-119">Visual Studio starts [Kestrel](xref:fundamentals/servers/kestrel), launches a browser, and navigates to `http://localhost:5000`.</span></span>
 
-<span data-ttu-id="b7940-123">V dalším kurzu přidáme modelu do projektu.</span><span class="sxs-lookup"><span data-stu-id="b7940-123">In the next tutorial, we add a model to the project.</span></span>
+<span data-ttu-id="54d5c-120">V dalším kurzu přidáme modelu do projektu.</span><span class="sxs-lookup"><span data-stu-id="54d5c-120">In the next tutorial, we add a model to the project.</span></span>
 
->[!div class="step-by-step"]
-[<span data-ttu-id="b7940-124">Další krok: Přidání modelu</span><span class="sxs-lookup"><span data-stu-id="b7940-124">Next: Adding a model</span></span>](xref:tutorials/razor-pages-mac/model)
+> [!div class="step-by-step"]
+> [<span data-ttu-id="54d5c-121">Další krok: Přidání modelu</span><span class="sxs-lookup"><span data-stu-id="54d5c-121">Next: Adding a model</span></span>](xref:tutorials/razor-pages-mac/model)

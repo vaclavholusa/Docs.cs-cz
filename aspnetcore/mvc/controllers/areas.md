@@ -1,7 +1,7 @@
 ---
 title: Oblasti v ASP.NET Core
 author: rick-anderson
-description: "Zjistěte, jak jsou oblasti o architektuře ASP.NET MVC funkci sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení)."
+description: Zjistěte, jak jsou oblasti o architektuře ASP.NET MVC funkci sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení).
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,75 +9,75 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: cf31c10e7d4d9229a32aa06903a0ff0ed6fb0599
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 61527eb350b5aba9cb37b1de5acdeae1287bf073
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="areas-in-aspnet-core"></a><span data-ttu-id="56b53-103">Oblasti v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="56b53-103">Areas in ASP.NET Core</span></span>
+# <a name="areas-in-aspnet-core"></a><span data-ttu-id="7eb90-103">Oblasti v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7eb90-103">Areas in ASP.NET Core</span></span>
 
-<span data-ttu-id="56b53-104">Podle [Dhananjay Kumar](https://twitter.com/debug_mode) a [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="56b53-104">By [Dhananjay Kumar](https://twitter.com/debug_mode)  and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="7eb90-104">Podle [Dhananjay Kumar](https://twitter.com/debug_mode) a [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="7eb90-104">By [Dhananjay Kumar](https://twitter.com/debug_mode)  and [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="56b53-105">Oblasti se o funkci ASP.NET MVC sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení).</span><span class="sxs-lookup"><span data-stu-id="56b53-105">Areas are an ASP.NET MVC feature used to organize related functionality into a group as a separate namespace (for routing) and folder structure (for views).</span></span> <span data-ttu-id="56b53-106">Použití oblastí vytvoří hierarchii pro účely směrování přidáním jiný parametr trasy, `area`do `controller` a `action`.</span><span class="sxs-lookup"><span data-stu-id="56b53-106">Using areas creates a hierarchy for the purpose of routing by adding another route parameter, `area`, to `controller` and `action`.</span></span>
+<span data-ttu-id="7eb90-105">Oblasti se o funkci ASP.NET MVC sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení).</span><span class="sxs-lookup"><span data-stu-id="7eb90-105">Areas are an ASP.NET MVC feature used to organize related functionality into a group as a separate namespace (for routing) and folder structure (for views).</span></span> <span data-ttu-id="7eb90-106">Použití oblastí vytvoří hierarchii pro účely směrování přidáním jiný parametr trasy, `area`do `controller` a `action`.</span><span class="sxs-lookup"><span data-stu-id="7eb90-106">Using areas creates a hierarchy for the purpose of routing by adding another route parameter, `area`, to `controller` and `action`.</span></span>
 
-<span data-ttu-id="56b53-107">Oblasti poskytují způsob, jak oddílu velké ASP.NET Core MVC webové aplikace do menších funkční seskupení.</span><span class="sxs-lookup"><span data-stu-id="56b53-107">Areas provide a way to partition a large ASP.NET Core MVC Web app into smaller functional groupings.</span></span> <span data-ttu-id="56b53-108">Oblast je efektivně strukturu MVC uvnitř aplikace.</span><span class="sxs-lookup"><span data-stu-id="56b53-108">An area is effectively an MVC structure inside an application.</span></span> <span data-ttu-id="56b53-109">V projektu MVC logické součásti jako Model, Kontroleru a zobrazení jsou uchovány v různých složkách a konvence pojmenování aplikace MVC používá k vytvoření vztahu mezi těmito součástmi.</span><span class="sxs-lookup"><span data-stu-id="56b53-109">In an MVC project, logical components like Model, Controller, and View are kept in different folders, and MVC uses naming conventions to create the relationship between these components.</span></span> <span data-ttu-id="56b53-110">Pro velké aplikace může být výhodné oddílu aplikace na samostatné vysoké úrovni oblasti funkcí.</span><span class="sxs-lookup"><span data-stu-id="56b53-110">For a large app, it may be advantageous to partition the  app into separate high level areas of functionality.</span></span> <span data-ttu-id="56b53-111">Pro instanci elektronické obchodování aplikace s více organizačních jednotek, jako je například checkout, fakturace a vyhledávání atd. Každý z těchto jednotek mají své vlastní logickou součástí zobrazení, řadiče a modely.</span><span class="sxs-lookup"><span data-stu-id="56b53-111">For instance, an e-commerce app with multiple business units, such as checkout, billing, and search etc. Each of these units have their own logical component views, controllers, and models.</span></span> <span data-ttu-id="56b53-112">V tomto scénáři můžete v oblasti fyzicky oddílu komponenty obchodní ve stejném projektu.</span><span class="sxs-lookup"><span data-stu-id="56b53-112">In this scenario, you can use Areas to physically partition the business components in the same project.</span></span>
+<span data-ttu-id="7eb90-107">Oblasti poskytují způsob, jak oddílu velké ASP.NET Core MVC webové aplikace do menších funkční seskupení.</span><span class="sxs-lookup"><span data-stu-id="7eb90-107">Areas provide a way to partition a large ASP.NET Core MVC Web app into smaller functional groupings.</span></span> <span data-ttu-id="7eb90-108">Oblast je efektivně strukturu MVC uvnitř aplikace.</span><span class="sxs-lookup"><span data-stu-id="7eb90-108">An area is effectively an MVC structure inside an application.</span></span> <span data-ttu-id="7eb90-109">V projektu MVC logické součásti jako Model, Kontroleru a zobrazení jsou uchovány v různých složkách a konvence pojmenování aplikace MVC používá k vytvoření vztahu mezi těmito součástmi.</span><span class="sxs-lookup"><span data-stu-id="7eb90-109">In an MVC project, logical components like Model, Controller, and View are kept in different folders, and MVC uses naming conventions to create the relationship between these components.</span></span> <span data-ttu-id="7eb90-110">Pro velké aplikace může být výhodné oddílu aplikace na samostatné vysoké úrovni oblasti funkcí.</span><span class="sxs-lookup"><span data-stu-id="7eb90-110">For a large app, it may be advantageous to partition the  app into separate high level areas of functionality.</span></span> <span data-ttu-id="7eb90-111">Pro instanci elektronické obchodování aplikace s více organizačních jednotek, jako je například checkout, fakturace a vyhledávání atd. Každý z těchto jednotek mají své vlastní logickou součástí zobrazení, řadiče a modely.</span><span class="sxs-lookup"><span data-stu-id="7eb90-111">For instance, an e-commerce app with multiple business units, such as checkout, billing, and search etc. Each of these units have their own logical component views, controllers, and models.</span></span> <span data-ttu-id="7eb90-112">V tomto scénáři můžete v oblasti fyzicky oddílu komponenty obchodní ve stejném projektu.</span><span class="sxs-lookup"><span data-stu-id="7eb90-112">In this scenario, you can use Areas to physically partition the business components in the same project.</span></span>
 
-<span data-ttu-id="56b53-113">Oblast může být definován jako menší funkční jednotky v projektu ASP.NET MVC jádra s vlastní sadou řadiče, zobrazení a modely.</span><span class="sxs-lookup"><span data-stu-id="56b53-113">An area can be defined as smaller functional units in an ASP.NET Core MVC project with its own set of controllers, views, and models.</span></span>
+<span data-ttu-id="7eb90-113">Oblast může být definován jako menší funkční jednotky v projektu ASP.NET MVC jádra s vlastní sadou řadiče, zobrazení a modely.</span><span class="sxs-lookup"><span data-stu-id="7eb90-113">An area can be defined as smaller functional units in an ASP.NET Core MVC project with its own set of controllers, views, and models.</span></span>
 
-<span data-ttu-id="56b53-114">Zvažte použití oblastí v MVC při projektu:</span><span class="sxs-lookup"><span data-stu-id="56b53-114">Consider using Areas in an MVC project when:</span></span>
+<span data-ttu-id="7eb90-114">Zvažte použití oblastí v MVC při projektu:</span><span class="sxs-lookup"><span data-stu-id="7eb90-114">Consider using Areas in an MVC project when:</span></span>
 
-* <span data-ttu-id="56b53-115">Aplikace se provádí více vysoké úrovně funkčnosti komponent, které by měl být oddělený logicky</span><span class="sxs-lookup"><span data-stu-id="56b53-115">Your application is made of multiple high-level functional components that should be logically separated</span></span>
+* <span data-ttu-id="7eb90-115">Aplikace se provádí více vysoké úrovně funkčnosti komponent, které by měl být oddělený logicky</span><span class="sxs-lookup"><span data-stu-id="7eb90-115">Your application is made of multiple high-level functional components that should be logically separated</span></span>
 
-* <span data-ttu-id="56b53-116">Chcete oddílu projektu MVC tak, aby každý funkční oblast bylo možné pracovat nezávisle</span><span class="sxs-lookup"><span data-stu-id="56b53-116">You want to partition your MVC project so that each functional area can be worked on independently</span></span>
+* <span data-ttu-id="7eb90-116">Chcete oddílu projektu MVC tak, aby každý funkční oblast bylo možné pracovat nezávisle</span><span class="sxs-lookup"><span data-stu-id="7eb90-116">You want to partition your MVC project so that each functional area can be worked on independently</span></span>
 
-<span data-ttu-id="56b53-117">Oblast funkce:</span><span class="sxs-lookup"><span data-stu-id="56b53-117">Area features:</span></span>
+<span data-ttu-id="7eb90-117">Oblast funkce:</span><span class="sxs-lookup"><span data-stu-id="7eb90-117">Area features:</span></span>
 
-* <span data-ttu-id="56b53-118">ASP.NET MVC základní aplikaci může mít libovolný počet oblastí</span><span class="sxs-lookup"><span data-stu-id="56b53-118">An ASP.NET Core MVC app can have any number of areas</span></span>
+* <span data-ttu-id="7eb90-118">ASP.NET MVC základní aplikaci může mít libovolný počet oblastí</span><span class="sxs-lookup"><span data-stu-id="7eb90-118">An ASP.NET Core MVC app can have any number of areas</span></span>
 
-* <span data-ttu-id="56b53-119">Každou oblast má svou vlastní řadiče, modely a zobrazení</span><span class="sxs-lookup"><span data-stu-id="56b53-119">Each area has its own controllers, models, and views</span></span>
+* <span data-ttu-id="7eb90-119">Každou oblast má svou vlastní řadiče, modely a zobrazení</span><span class="sxs-lookup"><span data-stu-id="7eb90-119">Each area has its own controllers, models, and views</span></span>
 
-* <span data-ttu-id="56b53-120">Umožňuje uspořádat do několika komponent vysoké úrovně, které bylo možné pracovat nezávisle rozsáhlých projektů MVC</span><span class="sxs-lookup"><span data-stu-id="56b53-120">Allows you to organize large MVC projects into multiple high-level components that can be worked on independently</span></span>
+* <span data-ttu-id="7eb90-120">Umožňuje uspořádat do několika komponent vysoké úrovně, které bylo možné pracovat nezávisle rozsáhlých projektů MVC</span><span class="sxs-lookup"><span data-stu-id="7eb90-120">Allows you to organize large MVC projects into multiple high-level components that can be worked on independently</span></span>
 
-* <span data-ttu-id="56b53-121">Podporuje více řadiče se stejným názvem - tak dlouho, dokud mají různé *oblastí*</span><span class="sxs-lookup"><span data-stu-id="56b53-121">Supports multiple controllers with the same name - as long as they have different *areas*</span></span>
+* <span data-ttu-id="7eb90-121">Podporuje více řadiče se stejným názvem - tak dlouho, dokud mají různé *oblastí*</span><span class="sxs-lookup"><span data-stu-id="7eb90-121">Supports multiple controllers with the same name - as long as they have different *areas*</span></span>
 
-<span data-ttu-id="56b53-122">Podívejme se na příklad znázorňující způsob vytváření a použít oblasti.</span><span class="sxs-lookup"><span data-stu-id="56b53-122">Let's take a look at an example to illustrate how Areas are created and used.</span></span> <span data-ttu-id="56b53-123">Řekněme, že máte aplikaci ze storu, která má dva odlišné seskupení kontrolery a zobrazení: produktů a služeb.</span><span class="sxs-lookup"><span data-stu-id="56b53-123">Let's say you have a store app that has two distinct groupings of controllers and views: Products and Services.</span></span> <span data-ttu-id="56b53-124">Složka obvykle struktury pro, že pomocí MVC oblasti vypadá níže:</span><span class="sxs-lookup"><span data-stu-id="56b53-124">A typical folder structure for that using MVC areas looks like below:</span></span>
+<span data-ttu-id="7eb90-122">Podívejme se na příklad znázorňující způsob vytváření a použít oblasti.</span><span class="sxs-lookup"><span data-stu-id="7eb90-122">Let's take a look at an example to illustrate how Areas are created and used.</span></span> <span data-ttu-id="7eb90-123">Řekněme, že máte aplikaci ze storu, která má dva odlišné seskupení kontrolery a zobrazení: produktů a služeb.</span><span class="sxs-lookup"><span data-stu-id="7eb90-123">Let's say you have a store app that has two distinct groupings of controllers and views: Products and Services.</span></span> <span data-ttu-id="7eb90-124">Složka obvykle struktury pro, že pomocí MVC oblasti vypadá níže:</span><span class="sxs-lookup"><span data-stu-id="7eb90-124">A typical folder structure for that using MVC areas looks like below:</span></span>
 
-* <span data-ttu-id="56b53-125">název projektu</span><span class="sxs-lookup"><span data-stu-id="56b53-125">Project name</span></span>
+* <span data-ttu-id="7eb90-125">název projektu</span><span class="sxs-lookup"><span data-stu-id="7eb90-125">Project name</span></span>
 
-  * <span data-ttu-id="56b53-126">Oblasti</span><span class="sxs-lookup"><span data-stu-id="56b53-126">Areas</span></span>
+  * <span data-ttu-id="7eb90-126">Oblasti</span><span class="sxs-lookup"><span data-stu-id="7eb90-126">Areas</span></span>
 
-    * <span data-ttu-id="56b53-127">Produkty</span><span class="sxs-lookup"><span data-stu-id="56b53-127">Products</span></span>
+    * <span data-ttu-id="7eb90-127">Produkty</span><span class="sxs-lookup"><span data-stu-id="7eb90-127">Products</span></span>
 
-      * <span data-ttu-id="56b53-128">Kontrolery</span><span class="sxs-lookup"><span data-stu-id="56b53-128">Controllers</span></span>
+      * <span data-ttu-id="7eb90-128">Kontrolery</span><span class="sxs-lookup"><span data-stu-id="7eb90-128">Controllers</span></span>
 
-        * <span data-ttu-id="56b53-129">HomeController.cs</span><span class="sxs-lookup"><span data-stu-id="56b53-129">HomeController.cs</span></span>
+        * <span data-ttu-id="7eb90-129">HomeController.cs</span><span class="sxs-lookup"><span data-stu-id="7eb90-129">HomeController.cs</span></span>
 
-        * <span data-ttu-id="56b53-130">ManageController.cs</span><span class="sxs-lookup"><span data-stu-id="56b53-130">ManageController.cs</span></span>
+        * <span data-ttu-id="7eb90-130">ManageController.cs</span><span class="sxs-lookup"><span data-stu-id="7eb90-130">ManageController.cs</span></span>
 
-      * <span data-ttu-id="56b53-131">zobrazení</span><span class="sxs-lookup"><span data-stu-id="56b53-131">Views</span></span>
+      * <span data-ttu-id="7eb90-131">zobrazení</span><span class="sxs-lookup"><span data-stu-id="7eb90-131">Views</span></span>
 
-        * <span data-ttu-id="56b53-132">Domů</span><span class="sxs-lookup"><span data-stu-id="56b53-132">Home</span></span>
+        * <span data-ttu-id="7eb90-132">Domů</span><span class="sxs-lookup"><span data-stu-id="7eb90-132">Home</span></span>
 
-          * <span data-ttu-id="56b53-133">Index.cshtml</span><span class="sxs-lookup"><span data-stu-id="56b53-133">Index.cshtml</span></span>
+          * <span data-ttu-id="7eb90-133">Index.cshtml</span><span class="sxs-lookup"><span data-stu-id="7eb90-133">Index.cshtml</span></span>
 
-        * <span data-ttu-id="56b53-134">Správa</span><span class="sxs-lookup"><span data-stu-id="56b53-134">Manage</span></span>
+        * <span data-ttu-id="7eb90-134">Správa</span><span class="sxs-lookup"><span data-stu-id="7eb90-134">Manage</span></span>
 
-          * <span data-ttu-id="56b53-135">Index.cshtml</span><span class="sxs-lookup"><span data-stu-id="56b53-135">Index.cshtml</span></span>
+          * <span data-ttu-id="7eb90-135">Index.cshtml</span><span class="sxs-lookup"><span data-stu-id="7eb90-135">Index.cshtml</span></span>
 
-    * <span data-ttu-id="56b53-136">Služby</span><span class="sxs-lookup"><span data-stu-id="56b53-136">Services</span></span>
+    * <span data-ttu-id="7eb90-136">Služby</span><span class="sxs-lookup"><span data-stu-id="7eb90-136">Services</span></span>
 
-      * <span data-ttu-id="56b53-137">Kontrolery</span><span class="sxs-lookup"><span data-stu-id="56b53-137">Controllers</span></span>
+      * <span data-ttu-id="7eb90-137">Kontrolery</span><span class="sxs-lookup"><span data-stu-id="7eb90-137">Controllers</span></span>
 
-        * <span data-ttu-id="56b53-138">HomeController.cs</span><span class="sxs-lookup"><span data-stu-id="56b53-138">HomeController.cs</span></span>
+        * <span data-ttu-id="7eb90-138">HomeController.cs</span><span class="sxs-lookup"><span data-stu-id="7eb90-138">HomeController.cs</span></span>
 
-      * <span data-ttu-id="56b53-139">zobrazení</span><span class="sxs-lookup"><span data-stu-id="56b53-139">Views</span></span>
+      * <span data-ttu-id="7eb90-139">zobrazení</span><span class="sxs-lookup"><span data-stu-id="7eb90-139">Views</span></span>
 
-        * <span data-ttu-id="56b53-140">Domů</span><span class="sxs-lookup"><span data-stu-id="56b53-140">Home</span></span>
+        * <span data-ttu-id="7eb90-140">Domů</span><span class="sxs-lookup"><span data-stu-id="7eb90-140">Home</span></span>
 
-          * <span data-ttu-id="56b53-141">Index.cshtml</span><span class="sxs-lookup"><span data-stu-id="56b53-141">Index.cshtml</span></span>
+          * <span data-ttu-id="7eb90-141">Index.cshtml</span><span class="sxs-lookup"><span data-stu-id="7eb90-141">Index.cshtml</span></span>
 
-<span data-ttu-id="56b53-142">Když se pokusí MVC pro vykreslení zobrazení v oblasti, ve výchozím nastavení, pokusí se hledat v následujících umístěních:</span><span class="sxs-lookup"><span data-stu-id="56b53-142">When MVC tries to render a view in an Area, by default, it tries to look in the following locations:</span></span>
+<span data-ttu-id="7eb90-142">Když se pokusí MVC pro vykreslení zobrazení v oblasti, ve výchozím nastavení, pokusí se hledat v následujících umístěních:</span><span class="sxs-lookup"><span data-stu-id="7eb90-142">When MVC tries to render a view in an Area, by default, it tries to look in the following locations:</span></span>
 
 ```text
 /Areas/<Area-Name>/Views/<Controller-Name>/<Action-Name>.cshtml
@@ -85,9 +85,9 @@ ms.lasthandoff: 03/15/2018
    /Views/Shared/<Action-Name>.cshtml
    ```
 
-<span data-ttu-id="56b53-143">Jedná se o výchozí umístění, které je možné změnit prostřednictvím `AreaViewLocationFormats` na `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions`.</span><span class="sxs-lookup"><span data-stu-id="56b53-143">These are the default locations which can be changed via the `AreaViewLocationFormats` on the `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions`.</span></span>
+<span data-ttu-id="7eb90-143">Jedná se o výchozí umístění, které je možné změnit prostřednictvím `AreaViewLocationFormats` na `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions`.</span><span class="sxs-lookup"><span data-stu-id="7eb90-143">These are the default locations which can be changed via the `AreaViewLocationFormats` on the `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions`.</span></span>
 
-<span data-ttu-id="56b53-144">Například v níže uvedeného kódu místo nutnosti název složky jako "Oblasti", byla změněna na "Kategorií".</span><span class="sxs-lookup"><span data-stu-id="56b53-144">For example, in the below code instead of having the folder name as 'Areas', it has been changed to 'Categories'.</span></span>
+<span data-ttu-id="7eb90-144">Například v níže uvedeného kódu místo nutnosti název složky jako "Oblasti", byla změněna na "Kategorií".</span><span class="sxs-lookup"><span data-stu-id="7eb90-144">For example, in the below code instead of having the folder name as 'Areas', it has been changed to 'Categories'.</span></span>
 
 ```csharp
 services.Configure<RazorViewEngineOptions>(options =>
@@ -99,9 +99,9 @@ services.Configure<RazorViewEngineOptions>(options =>
    });
    ```
 
-<span data-ttu-id="56b53-145">Poznámka je, že strukturu *zobrazení* složka je jenom jeden, která je považována za důležité sem a obsah ostatních složek, jako jsou *řadiče* a *modely* nemá **není** vás.</span><span class="sxs-lookup"><span data-stu-id="56b53-145">One thing to note is that the structure of the *Views* folder is the only one which is considered important here and the content of the rest of the folders like *Controllers* and *Models* does **not** matter.</span></span> <span data-ttu-id="56b53-146">Například nemusí mít *řadiče* a *modely* složku v všechny.</span><span class="sxs-lookup"><span data-stu-id="56b53-146">For example, you need not have a *Controllers* and *Models* folder at all.</span></span> <span data-ttu-id="56b53-147">Toto funguje, protože obsah *řadiče* a *modely* je pouze kód, který získá zkompilovat do ve formátu .dll, kde je jako obsah *zobrazení* není dokud požadavek na který zobrazení byly provedeny.</span><span class="sxs-lookup"><span data-stu-id="56b53-147">This works because the content of *Controllers* and *Models* is just code which gets compiled into a .dll where as the content of the *Views* isn't until a request to that view has been made.</span></span>
+<span data-ttu-id="7eb90-145">Poznámka je, že strukturu *zobrazení* složka je jenom jeden, která je považována za důležité sem a obsah ostatních složek, jako jsou *řadiče* a *modely* nemá **není** vás.</span><span class="sxs-lookup"><span data-stu-id="7eb90-145">One thing to note is that the structure of the *Views* folder is the only one which is considered important here and the content of the rest of the folders like *Controllers* and *Models* does **not** matter.</span></span> <span data-ttu-id="7eb90-146">Například nemusí mít *řadiče* a *modely* složku v všechny.</span><span class="sxs-lookup"><span data-stu-id="7eb90-146">For example, you need not have a *Controllers* and *Models* folder at all.</span></span> <span data-ttu-id="7eb90-147">Toto funguje, protože obsah *řadiče* a *modely* je pouze kód, který získá zkompilovat do ve formátu .dll, kde je jako obsah *zobrazení* není dokud požadavek na který zobrazení byly provedeny.</span><span class="sxs-lookup"><span data-stu-id="7eb90-147">This works because the content of *Controllers* and *Models* is just code which gets compiled into a .dll where as the content of the *Views* isn't until a request to that view has been made.</span></span>
 
-<span data-ttu-id="56b53-148">Jakmile hierarchii složek, které jste definovali, budete muset MVC říct, že každý řadič je přiřazený k oblasti.</span><span class="sxs-lookup"><span data-stu-id="56b53-148">Once you've defined the folder hierarchy, you need to tell MVC that each controller is associated with an area.</span></span> <span data-ttu-id="56b53-149">Provedete to tak architekturu názvu řadiče s `[Area]` atribut.</span><span class="sxs-lookup"><span data-stu-id="56b53-149">You do that by decorating the controller name with the `[Area]` attribute.</span></span>
+<span data-ttu-id="7eb90-148">Jakmile hierarchii složek, které jste definovali, budete muset MVC říct, že každý řadič je přiřazený k oblasti.</span><span class="sxs-lookup"><span data-stu-id="7eb90-148">Once you've defined the folder hierarchy, you need to tell MVC that each controller is associated with an area.</span></span> <span data-ttu-id="7eb90-149">Provedete to tak architekturu názvu řadiče s `[Area]` atribut.</span><span class="sxs-lookup"><span data-stu-id="7eb90-149">You do that by decorating the controller name with the `[Area]` attribute.</span></span>
 
 ```csharp
 ...
@@ -125,7 +125,7 @@ services.Configure<RazorViewEngineOptions>(options =>
    }
    ```
 
-<span data-ttu-id="56b53-150">Nastavte definici trasy, která funguje s vaší nově vytvořený oblasti.</span><span class="sxs-lookup"><span data-stu-id="56b53-150">Set up a route definition that works with your newly created areas.</span></span> <span data-ttu-id="56b53-151">[Směrování do akce Kontroleru](routing.md) článek obsahuje podrobnosti o tom, jak vytvořit definicí cesty, včetně použití konvenční trasy a trasy atributů.</span><span class="sxs-lookup"><span data-stu-id="56b53-151">The [Routing to Controller Actions](routing.md) article goes into detail about how to create route definitions, including using conventional routes versus attribute routes.</span></span> <span data-ttu-id="56b53-152">V tomto příkladu použijeme konvenční trasy.</span><span class="sxs-lookup"><span data-stu-id="56b53-152">In this example, we'll use a conventional route.</span></span> <span data-ttu-id="56b53-153">Chcete-li to provést, otevřete *Startup.cs* soubor a upravit přidáním `areaRoute` s názvem definice trasy níže.</span><span class="sxs-lookup"><span data-stu-id="56b53-153">To do so, open the *Startup.cs* file and modify it by adding the `areaRoute` named route definition below.</span></span>
+<span data-ttu-id="7eb90-150">Nastavte definici trasy, která funguje s vaší nově vytvořený oblasti.</span><span class="sxs-lookup"><span data-stu-id="7eb90-150">Set up a route definition that works with your newly created areas.</span></span> <span data-ttu-id="7eb90-151">[Trasy, která má akce kontroleru](routing.md) článek obsahuje podrobnosti o tom, jak vytvořit definicí cesty, včetně použití konvenční trasy a trasy atributů.</span><span class="sxs-lookup"><span data-stu-id="7eb90-151">The [Route to controller actions](routing.md) article goes into detail about how to create route definitions, including using conventional routes versus attribute routes.</span></span> <span data-ttu-id="7eb90-152">V tomto příkladu použijeme konvenční trasy.</span><span class="sxs-lookup"><span data-stu-id="7eb90-152">In this example, we'll use a conventional route.</span></span> <span data-ttu-id="7eb90-153">Chcete-li to provést, otevřete *Startup.cs* soubor a upravit přidáním `areaRoute` s názvem definice trasy níže.</span><span class="sxs-lookup"><span data-stu-id="7eb90-153">To do so, open the *Startup.cs* file and modify it by adding the `areaRoute` named route definition below.</span></span>
 
 ```csharp
 ...
@@ -141,48 +141,48 @@ services.Configure<RazorViewEngineOptions>(options =>
    });
    ```
 
-<span data-ttu-id="56b53-154">Procházení k `http://<yourApp>/products`, `Index` metody akce `HomeController` v `Products` oblasti bude volána.</span><span class="sxs-lookup"><span data-stu-id="56b53-154">Browsing to `http://<yourApp>/products`, the `Index` action method of the `HomeController` in the `Products` area will be invoked.</span></span>
+<span data-ttu-id="7eb90-154">Procházení k `http://<yourApp>/products`, `Index` metody akce `HomeController` v `Products` oblasti bude volána.</span><span class="sxs-lookup"><span data-stu-id="7eb90-154">Browsing to `http://<yourApp>/products`, the `Index` action method of the `HomeController` in the `Products` area will be invoked.</span></span>
 
-## <a name="link-generation"></a><span data-ttu-id="56b53-155">Generování odkazů</span><span class="sxs-lookup"><span data-stu-id="56b53-155">Link Generation</span></span>
+## <a name="link-generation"></a><span data-ttu-id="7eb90-155">Generování odkazů</span><span class="sxs-lookup"><span data-stu-id="7eb90-155">Link Generation</span></span>
 
-* <span data-ttu-id="56b53-156">Generování odkazů z akce v rámci oblast na základě řadiče jiné akce v rámci stejného řadiče.</span><span class="sxs-lookup"><span data-stu-id="56b53-156">Generating links from an action within an area based controller to another action within the same controller.</span></span>
+* <span data-ttu-id="7eb90-156">Generování odkazů z akce v rámci oblast na základě řadiče jiné akce v rámci stejného řadiče.</span><span class="sxs-lookup"><span data-stu-id="7eb90-156">Generating links from an action within an area based controller to another action within the same controller.</span></span>
 
-  <span data-ttu-id="56b53-157">Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`</span><span class="sxs-lookup"><span data-stu-id="56b53-157">Let's say the current request's path is like `/Products/Home/Create`</span></span>
+  <span data-ttu-id="7eb90-157">Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`</span><span class="sxs-lookup"><span data-stu-id="7eb90-157">Let's say the current request's path is like `/Products/Home/Create`</span></span>
 
-  <span data-ttu-id="56b53-158">HtmlHelper syntaxe: `@Html.ActionLink("Go to Product's Home Page", "Index")`</span><span class="sxs-lookup"><span data-stu-id="56b53-158">HtmlHelper syntax: `@Html.ActionLink("Go to Product's Home Page", "Index")`</span></span>
+  <span data-ttu-id="7eb90-158">HtmlHelper syntaxe: `@Html.ActionLink("Go to Product's Home Page", "Index")`</span><span class="sxs-lookup"><span data-stu-id="7eb90-158">HtmlHelper syntax: `@Html.ActionLink("Go to Product's Home Page", "Index")`</span></span>
 
-  <span data-ttu-id="56b53-159">TagHelper syntaxe: `<a asp-action="Index">Go to Product's Home Page</a>`</span><span class="sxs-lookup"><span data-stu-id="56b53-159">TagHelper syntax: `<a asp-action="Index">Go to Product's Home Page</a>`</span></span>
+  <span data-ttu-id="7eb90-159">TagHelper syntaxe: `<a asp-action="Index">Go to Product's Home Page</a>`</span><span class="sxs-lookup"><span data-stu-id="7eb90-159">TagHelper syntax: `<a asp-action="Index">Go to Product's Home Page</a>`</span></span>
 
-  <span data-ttu-id="56b53-160">Všimněte si, že jsme nemusí zadat hodnoty 'oblastí' a 'controller' tady jsou již k dispozici v kontextu aktuálního požadavku.</span><span class="sxs-lookup"><span data-stu-id="56b53-160">Note that we need not supply the 'area' and 'controller' values here as they're already available in the context of the current request.</span></span> <span data-ttu-id="56b53-161">Tyto druhy hodnot, se nazývají `ambient` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="56b53-161">These kind of values are called `ambient` values.</span></span>
+  <span data-ttu-id="7eb90-160">Všimněte si, že jsme nemusí zadat hodnoty 'oblastí' a 'controller' tady jsou již k dispozici v kontextu aktuálního požadavku.</span><span class="sxs-lookup"><span data-stu-id="7eb90-160">Note that we need not supply the 'area' and 'controller' values here as they're already available in the context of the current request.</span></span> <span data-ttu-id="7eb90-161">Tyto druhy hodnot, se nazývají `ambient` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="7eb90-161">These kind of values are called `ambient` values.</span></span>
 
-* <span data-ttu-id="56b53-162">Generování odkazů z akce v rámci oblast na základě řadiče další akci na jiném řadiči</span><span class="sxs-lookup"><span data-stu-id="56b53-162">Generating links from an action within an area based controller to another action on a different controller</span></span>
+* <span data-ttu-id="7eb90-162">Generování odkazů z akce v rámci oblast na základě řadiče další akci na jiném řadiči</span><span class="sxs-lookup"><span data-stu-id="7eb90-162">Generating links from an action within an area based controller to another action on a different controller</span></span>
 
-  <span data-ttu-id="56b53-163">Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`</span><span class="sxs-lookup"><span data-stu-id="56b53-163">Let's say the current request's path is like `/Products/Home/Create`</span></span>
+  <span data-ttu-id="7eb90-163">Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`</span><span class="sxs-lookup"><span data-stu-id="7eb90-163">Let's say the current request's path is like `/Products/Home/Create`</span></span>
 
-  <span data-ttu-id="56b53-164">HtmlHelper syntaxe: `@Html.ActionLink("Go to Manage Products Home Page", "Index", "Manage")`</span><span class="sxs-lookup"><span data-stu-id="56b53-164">HtmlHelper syntax: `@Html.ActionLink("Go to Manage Products Home Page", "Index", "Manage")`</span></span>
+  <span data-ttu-id="7eb90-164">HtmlHelper syntaxe: `@Html.ActionLink("Go to Manage Products Home Page", "Index", "Manage")`</span><span class="sxs-lookup"><span data-stu-id="7eb90-164">HtmlHelper syntax: `@Html.ActionLink("Go to Manage Products Home Page", "Index", "Manage")`</span></span>
 
-  <span data-ttu-id="56b53-165">TagHelper syntaxe: `<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`</span><span class="sxs-lookup"><span data-stu-id="56b53-165">TagHelper syntax: `<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`</span></span>
+  <span data-ttu-id="7eb90-165">TagHelper syntaxe: `<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`</span><span class="sxs-lookup"><span data-stu-id="7eb90-165">TagHelper syntax: `<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`</span></span>
 
-  <span data-ttu-id="56b53-166">Všimněte si, tady je použita hodnota vedlejším oblasti, ale výše je výslovně zadána hodnota 'controller'.</span><span class="sxs-lookup"><span data-stu-id="56b53-166">Note that here the ambient value of an 'area' is used but the 'controller' value is specified explicitly above.</span></span>
+  <span data-ttu-id="7eb90-166">Všimněte si, tady je použita hodnota vedlejším oblasti, ale výše je výslovně zadána hodnota 'controller'.</span><span class="sxs-lookup"><span data-stu-id="7eb90-166">Note that here the ambient value of an 'area' is used but the 'controller' value is specified explicitly above.</span></span>
 
-* <span data-ttu-id="56b53-167">Generování odkazů z akce v rámci oblasti řadiče další akci na základě různých řadiče a jiné oblasti.</span><span class="sxs-lookup"><span data-stu-id="56b53-167">Generating links from an action within an area based controller to another action on a different controller and a different area.</span></span>
+* <span data-ttu-id="7eb90-167">Generování odkazů z akce v rámci oblasti řadiče další akci na základě různých řadiče a jiné oblasti.</span><span class="sxs-lookup"><span data-stu-id="7eb90-167">Generating links from an action within an area based controller to another action on a different controller and a different area.</span></span>
 
-  <span data-ttu-id="56b53-168">Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`</span><span class="sxs-lookup"><span data-stu-id="56b53-168">Let's say the current request's path is like `/Products/Home/Create`</span></span>
+  <span data-ttu-id="7eb90-168">Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`</span><span class="sxs-lookup"><span data-stu-id="7eb90-168">Let's say the current request's path is like `/Products/Home/Create`</span></span>
 
-  <span data-ttu-id="56b53-169">HtmlHelper syntaxe: `@Html.ActionLink("Go to Services Home Page", "Index", "Home", new { area = "Services" })`</span><span class="sxs-lookup"><span data-stu-id="56b53-169">HtmlHelper syntax: `@Html.ActionLink("Go to Services Home Page", "Index", "Home", new { area = "Services" })`</span></span>
+  <span data-ttu-id="7eb90-169">HtmlHelper syntaxe: `@Html.ActionLink("Go to Services Home Page", "Index", "Home", new { area = "Services" })`</span><span class="sxs-lookup"><span data-stu-id="7eb90-169">HtmlHelper syntax: `@Html.ActionLink("Go to Services Home Page", "Index", "Home", new { area = "Services" })`</span></span>
 
-  <span data-ttu-id="56b53-170">TagHelper syntaxe: `<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`</span><span class="sxs-lookup"><span data-stu-id="56b53-170">TagHelper syntax: `<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`</span></span>
+  <span data-ttu-id="7eb90-170">TagHelper syntaxe: `<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`</span><span class="sxs-lookup"><span data-stu-id="7eb90-170">TagHelper syntax: `<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`</span></span>
 
-  <span data-ttu-id="56b53-171">Všimněte si, že tady jsou použity žádné vedlejším hodnoty.</span><span class="sxs-lookup"><span data-stu-id="56b53-171">Note that here no ambient values are used.</span></span>
+  <span data-ttu-id="7eb90-171">Všimněte si, že tady jsou použity žádné vedlejším hodnoty.</span><span class="sxs-lookup"><span data-stu-id="7eb90-171">Note that here no ambient values are used.</span></span>
 
-* <span data-ttu-id="56b53-172">Generování odkazů z akce v rámci řadič oblast na základě jinou akci na jiném řadiči a **není** v oblasti.</span><span class="sxs-lookup"><span data-stu-id="56b53-172">Generating links from an action within an area based controller to another action on a different controller and **not** in an area.</span></span>
+* <span data-ttu-id="7eb90-172">Generování odkazů z akce v rámci řadič oblast na základě jinou akci na jiném řadiči a **není** v oblasti.</span><span class="sxs-lookup"><span data-stu-id="7eb90-172">Generating links from an action within an area based controller to another action on a different controller and **not** in an area.</span></span>
 
-  <span data-ttu-id="56b53-173">HtmlHelper syntaxe: `@Html.ActionLink("Go to Manage Products  Home Page", "Index", "Home", new { area = "" })`</span><span class="sxs-lookup"><span data-stu-id="56b53-173">HtmlHelper syntax: `@Html.ActionLink("Go to Manage Products  Home Page", "Index", "Home", new { area = "" })`</span></span>
+  <span data-ttu-id="7eb90-173">HtmlHelper syntaxe: `@Html.ActionLink("Go to Manage Products  Home Page", "Index", "Home", new { area = "" })`</span><span class="sxs-lookup"><span data-stu-id="7eb90-173">HtmlHelper syntax: `@Html.ActionLink("Go to Manage Products  Home Page", "Index", "Home", new { area = "" })`</span></span>
 
-  <span data-ttu-id="56b53-174">TagHelper syntaxe: `<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`</span><span class="sxs-lookup"><span data-stu-id="56b53-174">TagHelper syntax: `<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`</span></span>
+  <span data-ttu-id="7eb90-174">TagHelper syntaxe: `<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`</span><span class="sxs-lookup"><span data-stu-id="7eb90-174">TagHelper syntax: `<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`</span></span>
 
-  <span data-ttu-id="56b53-175">Vzhledem k tomu, že chcete generovat odkazy na jiné oblasti na základě akce kontroleru, jsme prázdný vedlejším hodnota "plochu" sem.</span><span class="sxs-lookup"><span data-stu-id="56b53-175">Since we want to generate links to a non-area based controller action, we empty the ambient value for 'area' here.</span></span>
+  <span data-ttu-id="7eb90-175">Vzhledem k tomu, že chcete generovat odkazy na jiné oblasti na základě akce kontroleru, jsme prázdný vedlejším hodnota "plochu" sem.</span><span class="sxs-lookup"><span data-stu-id="7eb90-175">Since we want to generate links to a non-area based controller action, we empty the ambient value for 'area' here.</span></span>
 
-## <a name="publishing-areas"></a><span data-ttu-id="56b53-176">Publikování oblastí</span><span class="sxs-lookup"><span data-stu-id="56b53-176">Publishing Areas</span></span>
+## <a name="publishing-areas"></a><span data-ttu-id="7eb90-176">Publikování oblastí</span><span class="sxs-lookup"><span data-stu-id="7eb90-176">Publishing Areas</span></span>
 
-<span data-ttu-id="56b53-177">Všechny `*.cshtml` a `wwwroot/**` soubory jsou publikovány do výstupního při `<Project Sdk="Microsoft.NET.Sdk.Web">` je součástí *.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="56b53-177">All `*.cshtml` and `wwwroot/**` files are published to output when `<Project Sdk="Microsoft.NET.Sdk.Web">` is included in the *.csproj* file.</span></span>
+<span data-ttu-id="7eb90-177">Všechny `*.cshtml` a `wwwroot/**` soubory jsou publikovány do výstupního při `<Project Sdk="Microsoft.NET.Sdk.Web">` je součástí *.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="7eb90-177">All `*.cshtml` and `wwwroot/**` files are published to output when `<Project Sdk="Microsoft.NET.Sdk.Web">` is included in the *.csproj* file.</span></span>

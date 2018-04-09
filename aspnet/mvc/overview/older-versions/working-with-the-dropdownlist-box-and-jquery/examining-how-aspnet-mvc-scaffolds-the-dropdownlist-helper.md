@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
-title: "Prozkoumání, jak rozhraní ASP.NET MVC scaffolds pomocná rozevírací seznam | Microsoft Docs"
+title: Prozkoumání, jak rozhraní ASP.NET MVC scaffolds pomocná rozevírací seznam | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: abd9b5c09e942b966eb3eaaebe1b315c30b8e0c0
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 09d2d7a0df5e8ffa14160b7d3c16b1e9da905fa1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Prozkoumání, jak rozhraní ASP.NET MVC scaffolds pomocná rozevírací seznam
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *řadiče* složku a potom vyberte **přidat kontroler**. Název kontroleru **StoreManagerController**. Nastavení možností pro **přidat kontroler** dialogové okno, jak je znázorněno na obrázku níže.
 
@@ -206,6 +206,6 @@ Někteří vývojáři přednost ViewModel přístup. Ostatní zvažte podrobně
 
 V této části jsme se dozvěděli, tři způsoby používání **rozevírací seznam** daty kategorie. V další části ukážeme, jak přidat novou kategorii.
 
->[!div class="step-by-step"]
-[Předchozí](using-the-dropdownlist-helper-with-aspnet-mvc.md)
-[další](adding-a-new-category-to-the-dropdownlist-using-jquery-ui.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-the-dropdownlist-helper-with-aspnet-mvc.md)
+> [další](adding-a-new-category-to-the-dropdownlist-using-jquery-ui.md)

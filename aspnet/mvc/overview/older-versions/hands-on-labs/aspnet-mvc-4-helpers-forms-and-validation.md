@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
-title: "Pomocné rutiny ASP.NET MVC 4, formulářů a ověřování | Microsoft Docs"
+title: Pomocné rutiny ASP.NET MVC 4, formulářů a ověřování | Microsoft Docs
 author: rick-anderson
-description: "V technologii ASP.NET MVC 4 modely a Data laboratoř Hands-on přístupu máte byla načítání a zobrazení dat z databáze. V tomto testovacím prostředí Hands-on přidáte..."
+description: V technologii ASP.NET MVC 4 modely a Data laboratoř Hands-on přístupu máte byla načítání a zobrazení dat z databáze. V tomto testovacím prostředí Hands-on přidáte...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 243db3708ac4311d423c4c137f503f072f5553e6
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 4cfa98144919c3f1bdb3608970af1a7952fe6ea7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>Pomocné rutiny ASP.NET MVC 4, formulářů a ověřování
 
@@ -112,12 +112,12 @@ V této úloze se vytvoří nový řadič názvem **StoreManagerController** pro
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex1-CreatingTheStoreManagerController/počáteční/** složky.
 
-    1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Přidání nového řadiče. Chcete-li to provést, klikněte pravým tlačítkem **řadiče** složky v Průzkumníku řešení, vyberte **přidat** a potom **řadič** příkaz. Změna **řadič** **název** k **StoreManagerController** a zajistěte, aby možnost **kontroler MVC s akcemi čtení/zápisu-prázdný**je vybrána. Klikněte na tlačítko **přidat**.
 
     ![Dialogové okno Přidat řadič](aspnet-mvc-4-helpers-forms-and-validation/_static/image1.png "dialogové okno Přidat kontroler")
@@ -184,7 +184,7 @@ V této úloze se upraví jednoduché zobrazení šablony vytvořené pomocí fu
 1. Zkontrolujte kód vytvořený. Vygenerovaný seznam polí bude součástí následující tabulky HTML, který **generování uživatelského rozhraní** používá pro zobrazení tabulková data.
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample4.cshtml)]
-2. Nahraďte  **&lt;tabulky&gt;**  kódu pomocí následující kód k zobrazení pouze **Genre**, **umělcem**, **název alba**, a **cena** pole. To odstraní **AlbumId** a **alb obrázky URL** sloupce. Také změní GenreId a ArtistId sloupce k zobrazení jejich vlastnosti propojené třída **Artist.Name** a **Genre.Name**a odebere **podrobnosti** odkaz.
+2. Nahraďte **&lt;tabulky&gt;** kódu pomocí následující kód k zobrazení pouze **Genre**, **umělcem**, **název alba**, a **cena** pole. To odstraní **AlbumId** a **alb obrázky URL** sloupce. Také změní GenreId a ArtistId sloupce k zobrazení jejich vlastnosti propojené třída **Artist.Name** a **Genre.Name**a odebere **podrobnosti** odkaz.
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample5.cshtml)]
 3. Změňte v následujících popisech.
@@ -231,14 +231,14 @@ V této úloze budete přidávat nové metody **Truncate** k **HTML** objekt vys
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex2-AddingAnHTMLHelper/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete zobrazení StoreManager na Index. Chcete-li to provést, v Průzkumníku řešení rozbalte **zobrazení** složku, pak se **StoreManager** a otevřete **Index.cshtml** souboru.
-3. Přidejte následující kód níže  **@model**  – direktiva k definování **Truncate** metodu helper.
+3. Přidejte následující kód níže <strong>@model</strong> – direktiva k definování <strong>Truncate</strong> metodu helper.
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample7.cshtml)]
 
@@ -275,7 +275,7 @@ V této úloze budete testovat, **StoreManager** **Index** zobrazit šablonu zkr
 
 V tomto cvičení se dozvíte, jak vytvořit formulář umožňuje správcům úložiště upravit Album. Bude procházení **/StoreManager/Edit/id** adresa URL (**id** probíhá jedinečné id alba, chcete-li upravit), díky čemuž volání GET protokolu HTTP na server.
 
-Bude metoda akce Kontroleru upravit načtení příslušné Album z databáze, vytvořte **StoreManagerViewModel** objekt, který chcete zapouzdření (spolu s seznam umělci a žánry) a předejte ji do šablonu zobrazení vykreslení stránky HTML zpět na uživatele. Tato stránka bude obsahovat  **&lt;formuláře&gt;**  element s textových polí a rozevírací seznamy pro úpravy vlastnosti alba.
+Bude metoda akce Kontroleru upravit načtení příslušné Album z databáze, vytvořte **StoreManagerViewModel** objekt, který chcete zapouzdření (spolu s seznam umělci a žánry) a předejte ji do šablonu zobrazení vykreslení stránky HTML zpět na uživatele. Tato stránka bude obsahovat **&lt;formuláře&gt;** element s textových polí a rozevírací seznamy pro úpravy vlastnosti alba.
 
 Jakmile je uživatel aktualizace hodnot formuláře alba a klikne **Uložit** tlačítko, změny se odešlou přes HTTP POST zpětné volání pro **/StoreManager/Edit/id**. I když adresa URL zůstává stejná jako v posledním volání, ASP.NET MVC identifikuje, že tuto chvíli je HTTP POST a proto provede jinou metodu akce úpravy (jeden označených pomocí **[HttpPost]**).
 
@@ -288,12 +288,12 @@ V této úloze budete implementovat verze HTTP GET metody akce úpravy k načten
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/EX3.-CreatingTheEditView/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete **StoreManagerController** třídy. Chcete-li to provést, rozbalte **řadiče** složku a dvojím kliknutím **StoreManagerController.cs**.
 3. Nahraďte **HTTP GET upravit** metoda akce s následující kód k načtení příslušné **Album** společně s **žánry** a **umělci**uvádí.
 
@@ -425,12 +425,12 @@ V této úloze budete implementovat HTTP GET verzi vytvořit metody akce k načt
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex4-AddingACreateView/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete **StoreManagerController** třídy. Chcete-li to provést, rozbalte **řadiče** složku a dvojím kliknutím **StoreManagerController.cs**.
 3. Nahraďte **vytvořit** kódu metoda akce následujícím kódem:
 
@@ -524,12 +524,12 @@ V této úloze budete implementovat verze HTTP GET metody akce odstranění, na�
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex5-HandlingDeletion/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete **StoreManagerController** třídy. Chcete-li to provést, rozbalte **řadiče** složku a dvojím kliknutím **StoreManagerController.cs**.
 3. Akce kontroleru odstranění je přesně stejný jako předchozí akce kontroleru podrobnosti úložiště: odešle dotaz **album** objekt z databáze pomocí **id** součástí adresy URL a vrátí odpovídající **zobrazení**. Chcete-li to provést, nahraďte HTTP-GET **odstranit** kódu metoda akce s následující:
 
@@ -613,12 +613,12 @@ Toto je trochu složitější v případech, jako je tato aplikace, kde se vygen
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex6-AddingValidation/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete **Album.cs** z **modely** složky.
 3. Nahraďte **Album.cs** obsahu se zvýrazněný kód tak, aby vypadal jako následující:
 
@@ -657,7 +657,7 @@ V této úloze budete testovat, se stránky vytvořit a upravit ověření pole,
 
     ![Ověřené polí na stránce Upravit](aspnet-mvc-4-helpers-forms-and-validation/_static/image19.png)
 
-    Ověřené polí na stránce Upravit
+    *Ověřené polí na stránce Upravit*
 
 <a id="Exercise7"></a>
 
@@ -679,12 +679,12 @@ V této úloze budete spouštět aplikaci před včetně jQuery k porovnání ob
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex7-UnobtrusivejQueryValidation/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Stiskněte klávesu **F5** ke spuštění aplikace.
 3. Projekt se spustí na domovské stránce. Procházet **/StoreManager/vytvořit** a klikněte na tlačítko **vytvořit** bez vyplnění formuláře a přesvědčte se, abyste měli ověřovacích zpráv:
 
@@ -739,24 +739,24 @@ V této úloze budete testovat, **StoreManager** vytvořit zobrazení šablony p
 
     [!code-html[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample23.html)]
 
-    > [!NOTE]
-    > Pro každý ověřovací pravidlo klienta Nerušivý jQuery přidá atribut data-val -*rulename*=&quot;*zpráva*&quot;. Níže je seznam značek této Unobtrusive jQuery vloží do vstupní pole html k provedení ověření klienta:
-    > 
-    > - Val dat
-    > - Číslo datového val
-    > - Oblast dat val
-    > - Data-val rozsah min / Data-val rozsah max
-    > - Potřeba val dat
-    > - Délka dat val
-    > - Data-val délka max / Data-val délka min
-    > 
-    > Všechny hodnoty data jsou vyplněny modelu **datové poznámky**. Potom všechny logiky, která pracuje na straně serveru může být spuštěna na straně klienta. Například cena atribut má následující datové poznámky v modelu:
-    > 
-    > [!code-csharp[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample24.cs)]
-    > 
-    > Po použití Nerušivý jQuery, je generovaný kód:
-    >  
-    > [!code-html[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample25.html)]
+   > [!NOTE]
+   > Pro každý ověřovací pravidlo klienta Nerušivý jQuery přidá atribut data-val -*rulename*=&quot;*zpráva*&quot;. Níže je seznam značek této Unobtrusive jQuery vloží do vstupní pole html k provedení ověření klienta:
+   > 
+   > - Val dat
+   > - Číslo datového val
+   > - Oblast dat val
+   > - Data-val rozsah min / Data-val rozsah max
+   > - Potřeba val dat
+   > - Délka dat val
+   > - Data-val délka max / Data-val délka min
+   > 
+   > Všechny hodnoty data jsou vyplněny modelu **datové poznámky**. Potom všechny logiky, která pracuje na straně serveru může být spuštěna na straně klienta. Například cena atribut má následující datové poznámky v modelu:
+   > 
+   > [!code-csharp[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample24.cs)]
+   > 
+   > Po použití Nerušivý jQuery, je generovaný kód:
+   > 
+   > [!code-html[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample25.html)]
 
 * * *
 
@@ -781,9 +781,9 @@ Provedením tohoto testovacího prostředí Hands-On jste se naučili, jak povol
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Příloha A: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze  **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)** . Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *Visual Studio Express 2012 pro Web se sadou Windows Azure SDK*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 

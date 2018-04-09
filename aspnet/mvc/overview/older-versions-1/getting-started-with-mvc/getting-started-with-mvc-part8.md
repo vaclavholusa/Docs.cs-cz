@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
-title: "Přidání sloupce do modelu | Microsoft Docs"
+title: Přidání sloupce do modelu | Microsoft Docs
 author: shanselman
-description: "Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze."
+description: Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: 17ee105f596319423ac83cf718683ed293f952f3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7a0b64ce00fc5ee6d49990f1d4d93a154c467bf5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-column-to-the-model"></a>Přidání sloupce do modelu
 ====================
@@ -77,11 +77,11 @@ Po kliknutí na tlačítko vytvořit, že posílá indexovou stránku tam, kde m
 
 V tomto kurzu základní tu můžete spustit provedením řadiče a jejich přidružení k zobrazení a předání kolem pevně data. Potom jsme vytvořili a určená databáze a umístí některá data v. Nemůžeme načíst data z databáze a zobrazí do tabulky HTML. Potom jsme přidali vytvořit formulář, který umožní uživateli přidat data do databáze sami z webové aplikace. Jsme přidali ověření a potom provedené ověření pomocí jazyka JavaScript na straně klienta. Nakonec jsme změnit databázi zahrnout nový sloupec dat a potom aktualizovat naše dvě stránky k vytváření a zobrazování tato nová data.
 
-I nyní doporučujeme pokračovat v našem kurzu zprostředkující úrovni "[MVC Hudba úložiště](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)" a také mnoho videa a prostředkům v [https://asp.net/mvc](https://asp.net/mvc) i podrobné informace o architektuře ASP.NET MVC!
+I nyní doporučujeme pokračovat v našem kurzu zprostředkující úrovni "[MVC Hudba úložiště](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)" a také mnoho videa a prostředkům v [ https://asp.net/mvc ](https://asp.net/mvc) i podrobné informace o architektuře ASP.NET MVC!
 
 Užijte si ji!
 
-- Scott Hanselman - [http://hanselman.com](http://hanselman.com) a [ @shanselman ](http://twitter.com/shanselman) na Twitteru.
+- Scott Hanselman - [ http://hanselman.com ](http://hanselman.com) a [ @shanselman ](http://twitter.com/shanselman) na Twitteru.
 
->[!div class="step-by-step"]
-[Předchozí](getting-started-with-mvc-part7.md)
+> [!div class="step-by-step"]
+> [Předchozí](getting-started-with-mvc-part7.md)

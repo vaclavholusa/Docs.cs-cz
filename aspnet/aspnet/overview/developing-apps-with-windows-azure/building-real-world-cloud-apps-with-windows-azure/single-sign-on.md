@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
-title: "Jednotné přihlašování (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs"
+title: Jednotné přihlašování (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
 author: MikeWasson
-description: "Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu..."
+description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: b3640c94a8ae9ede330c0fe6a392acb5843cb65c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 82f2f99154d94074b03d580a0f491053d6f53bde
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Jednotné přihlašování (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -130,7 +130,7 @@ A za pár minut jste hotovi.
 
 Potřebujete ji spustit na jednom řadiči domény v organizaci, v systému Windows 2003 nebo vyšší. A není nutné restartovat. Když jste hotovi, všichni uživatelé jsou v cloudu a můžete provést jednotné přihlašování v jakémkoli web nebo mobilní aplikace, pomocí SAML, WS-Fed nebo OAuth.
 
-Někdy jsme získat vyzváni, o tom, jak zabezpečené jde – Microsoft používá ho pro své vlastní citlivých obchodních dat? A odpovíte kladně, které jsme provést. Například, pokud přejdete na interní web Microsoft SharePoint na [https://microsoft.sharepoint.com/](https://microsoft.sharepoint.com/), získat zobrazí výzva k přihlášení.
+Někdy jsme získat vyzváni, o tom, jak zabezpečené jde – Microsoft používá ho pro své vlastní citlivých obchodních dat? A odpovíte kladně, které jsme provést. Například, pokud přejdete na interní web Microsoft SharePoint na [ https://microsoft.sharepoint.com/ ](https://microsoft.sharepoint.com/), získat zobrazí výzva k přihlášení.
 
 ![Přihlášení k Office 365](single-sign-on/_static/image20.png)
 
@@ -193,6 +193,6 @@ Další informace naleznete v následujících materiálech:
 - [Blog Azure Active Directory Graph API](https://blogs.msdn.com/b/aadgraphteam/).
 - [Řízení přístupu v modelu BYOD a integrace adresáře v hybridní infrastrukturu identit](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/PCIT-B213#fbid=). Technická Ed 2014 relace video Gayana Bagdasaryan.
 
->[!div class="step-by-step"]
-[Předchozí](web-development-best-practices.md)
-[další](data-storage-options.md)
+> [!div class="step-by-step"]
+> [Předchozí](web-development-best-practices.md)
+> [další](data-storage-options.md)

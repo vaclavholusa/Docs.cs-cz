@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do testu | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do testu | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/23/2015
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 01f72e0240e84944f8ffece9a2dbc5802be4646b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: dc11072e053cbddd089e5df4bcea6d2a7af864fc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do testu
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -52,15 +52,15 @@ K nasazení do služby IIS na vývojovém počítači, musí mít služby IIS a 
 
     Ke spuštění instalačního programu webové platformy nainstalovat službu IIS a Web Deploy, pomocí následujícího odkazu. Pokud jste již nainstalovali službu IIS, nástroje nasazení webu ani v žádné z jejich požadované součásti, instalace webové platformy nainstaluje pouze toho, co chybí.
 
-    - [Instalace IIS a Web Deploy pomocí WebPI](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
+   - [Instalace IIS a Web Deploy pomocí WebPI](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
 
-    Zobrazí se zprávy, která udává, že bude nainstalována služba IIS 7. Ujistěte se, funguje odkaz pro IIS 8 v systému Windows 8, ale pro Windows 8 se, že je nainstalována technologie ASP.NET 4.5 provedením následujících kroků:
+     Zobrazí se zprávy, která udává, že bude nainstalována služba IIS 7. Ujistěte se, funguje odkaz pro IIS 8 v systému Windows 8, ale pro Windows 8 se, že je nainstalována technologie ASP.NET 4.5 provedením následujících kroků:
 
-    1. Otevřete **ovládací panely**, **programy a funkce**, **Windows zapnout nebo vypnout funkce**.
-    2. Rozbalte položku **Internetová informační služba**, **webové služby**, a **funkce pro vývoj aplikací**.
-    3. Ujistěte se, že **technologie ASP.NET 4.5** je vybrána.
+   - Otevřete **ovládací panely**, **programy a funkce**, **Windows zapnout nebo vypnout funkce**.
+   - Rozbalte položku **Internetová informační služba**, **webové služby**, a **funkce pro vývoj aplikací**.
+   - Ujistěte se, že **technologie ASP.NET 4.5** je vybrána.
 
-        ![Vyberte položku ASP.NET 4.5](deploying-to-iis/_static/image1.png)
+      ![Vyberte položku ASP.NET 4.5](deploying-to-iis/_static/image1.png)
 
 Po instalaci služby IIS, spusťte **Správce služby IIS** a ujistěte se, že rozhraní .NET Framework verze 4 je přiřazený výchozí fond aplikací.
 
@@ -178,7 +178,7 @@ Před publikováním, ujistěte se, že používáte Visual Studio v režimu spr
     Průvodce automaticky přejde **připojení** kartě.
 4. V **adresa URL služby** zadejte *localhost*.
 5. V **web nebo aplikaci** zadejte *Default Web Site/ContosoUniversity*
-6. V **cílová adresa URL** zadejte`http://localhost/ContosoUniversity`
+6. V **cílová adresa URL** zadejte `http://localhost/ContosoUniversity`
 
     **Cílová adresa URL** nastavení není povinné. Po dokončení nasazení aplikace Visual Studio automaticky otevře výchozí prohlížeč na tuto adresu URL. Pokud nechcete, aby prohlížeče otevřete automaticky po nasazení, nechte toto pole prázdné.
 7. Klikněte na tlačítko **ověřit připojení** k ověřte, zda jsou nastavení správná, a můžete připojit ke službě IIS v místním počítači.
@@ -337,6 +337,6 @@ Informace o spuštění služby IIS nebo IIS Express v sadě Visual Studio najde
 
 Informace o problémech, které mohou se vyskytnout při spuštění aplikace v úrovni medium trust, najdete v části [hostování aplikací ASP.NET ve střední důvěryhodnosti](http://www.4guysfromrolla.com/articles/100307-1.aspx) na 4 nepřetržitého z Rolla lokality.
 
->[!div class="step-by-step"]
-[Předchozí](project-properties.md)
-[další](setting-folder-permissions.md)
+> [!div class="step-by-step"]
+> [Předchozí](project-properties.md)
+> [další](setting-folder-permissions.md)

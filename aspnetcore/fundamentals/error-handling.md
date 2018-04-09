@@ -1,7 +1,7 @@
 ---
-title: "Zpracování chyb v ASP.NET Core"
+title: Zpracování chyb v ASP.NET Core
 author: ardalis
-description: "Můžete zjistit, jak se budou zpracovávat chyby v aplikacích ASP.NET Core."
+description: Můžete zjistit, jak se budou zpracovávat chyby v aplikacích ASP.NET Core.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 53f0f362f38252b86f9afd8416543ce3d515e7c4
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5443cbeb1ef95c579e5fc12b625babbfa27c7ec2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="introduction-to-error-handling-in-aspnet-core"></a>Úvod do zpracování chyb v ASP.NET Core
+# <a name="handle-errors-in-aspnet-core"></a>Zpracování chyb v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/) a [tní Dykstra](https://github.com/tdykstra/)
 

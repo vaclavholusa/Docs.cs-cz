@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
-title: "Vysvětlení souboru projektu | Microsoft Docs"
+title: Vysvětlení souboru projektu | Microsoft Docs
 author: jrjlee
-description: "Soubory projektu Microsoft Build Engine (MSBuild) jsou jádrem procesem sestavení a nasazení. Toto téma začíná koncepční přehled nástroje MSBuild..."
+description: Soubory projektu Microsoft Build Engine (MSBuild) jsou jádrem procesem sestavení a nasazení. Toto téma začíná koncepční přehled nástroje MSBuild...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: 09c3793e9cdddb7c42cf966f2d079245f441540c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 49d1d4fbe48cd4f073e774d8a9c6c0c011bd3319
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-the-project-file"></a>Vysvětlení souboru projektu
 ====================
@@ -36,9 +36,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 
 ## <a name="msbuild-and-the-project-file"></a>MSBuild a soubor projektu
 
-Při vytváření a sestavení řešení v sadě Visual Studio, Visual Studio použije nástroje MSBuild vytvořit jednotlivé projekty v řešení. Každý projekt Visual Studio obsahuje soubor projektu nástroje MSBuild s příponou souboru odpovídající typu projektu & #x 2014; například projekt C# (.csproj), Visual Basic.NET projektu (.vbproj) nebo databázového projektu (.dbproj). Chcete-li vytvořit projekt, musí MSBuild zpracovat soubor projektu, který je přidružený k projektu. Soubor projektu je dokument XML, který obsahuje všechny informace a pokyny, že MSBuild potřebuje k vytvoření projektu, jako je obsah, který chcete zahrnout, požadavky na platformu, informace o správě verzí, webového serveru nebo nastavení databázového serveru a úlohy, které je nutné provést.
+Při vytváření a sestavení řešení v sadě Visual Studio, Visual Studio použije nástroje MSBuild vytvořit jednotlivé projekty v řešení. Každý projekt Visual Studio obsahuje soubor projektu nástroje MSBuild s příponou souboru odpovídající typu projektu&#x2014;například projekt C# (.csproj), Visual Basic.NET projektu (.vbproj) nebo databázového projektu (.dbproj). Chcete-li vytvořit projekt, musí MSBuild zpracovat soubor projektu, který je přidružený k projektu. Soubor projektu je dokument XML, který obsahuje všechny informace a pokyny, že MSBuild potřebuje k vytvoření projektu, jako je obsah, který chcete zahrnout, požadavky na platformu, informace o správě verzí, webového serveru nebo nastavení databázového serveru a úlohy, které je nutné provést.
 
-Soubory projektu nástroje MSBuild jsou založené na [schématu MSBuild XML](https://msdn.microsoft.com/library/5dy88c2e.aspx), a v důsledku procesu sestavení je zcela otevřený a transparentní. Navíc nemusíte instalaci sady Visual Studio, aby bylo možné používat modul MSBuild & #x 2014; spustitelný soubor MSBuild.exe je součástí rozhraní .NET Framework a můžete ji spustit z příkazového řádku. Jako vývojář můžete vytvořit vaše vlastní soubory projektu nástroje MSBuild, pomocí nástroje MSBuild XML schématu, ukládat sofistikovaná a podrobných kontrolu nad projekty jsou vytvořené a nasazené. Tyto soubory vlastních projektů fungovat stejným způsobem jako soubory projektu, které automaticky generuje sada Visual Studio.
+Soubory projektu nástroje MSBuild jsou založené na [schématu MSBuild XML](https://msdn.microsoft.com/library/5dy88c2e.aspx), a v důsledku procesu sestavení je zcela otevřený a transparentní. Navíc nemusíte instalaci sady Visual Studio, aby bylo možné používat modul MSBuild&#x2014;MSBuild.exe spustitelný soubor je součástí rozhraní .NET Framework, a můžete ji spustit z příkazového řádku. Jako vývojář můžete vytvořit vaše vlastní soubory projektu nástroje MSBuild, pomocí nástroje MSBuild XML schématu, ukládat sofistikovaná a podrobných kontrolu nad projekty jsou vytvořené a nasazené. Tyto soubory vlastních projektů fungovat stejným způsobem jako soubory projektu, které automaticky generuje sada Visual Studio.
 
 > [!NOTE]
 > Můžete taky použít soubory projektu nástroje MSBuild službou sestavení týmu v Team Foundation Server (TFS). Například můžete použít soubory projektu ve scénářích průběžnou integraci (CI) k automatizaci nasazení v testovacím prostředí při vrácení se změnami nový kód. Další informace najdete v tématu [konfigurace Team Foundation Server pro nasazení webu automatizované](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md).
@@ -93,7 +93,7 @@ Soubor projektu obvykle nutné poskytnout spoustu různých řadu informací, ab
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
 
-Pokud chcete načíst hodnotu vlastnosti, použijte formát **$(***PropertyName***) ***.* Chcete-li například načíst hodnotu **ServerName** vlastnost, zadali byste:
+Pokud chcete načíst hodnotu vlastnosti, použijte formát <strong>$(</strong><em>PropertyName</em><strong>)</strong><em>.</em> Chcete-li například načíst hodnotu <strong>ServerName</strong> vlastnost, zadali byste:
 
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
@@ -113,7 +113,7 @@ Vložení informací o jako statické vlastnosti v souboru projektu není vždy 
 > Další informace o argumentů a přepínače, které můžete použít se MSBuild.exe najdete v tématu [příkazového řádku MSBuild – Reference](https://msdn.microsoft.com/library/ms164311.aspx).
 
 
-Stejná syntaxe vlastnost slouží k získání hodnot proměnných prostředí a vlastnosti předdefinované projektu. Velké množství běžně používané vlastnosti jsou definovány pro vás a je použijete v souborech projektu zahrnutím název relevantní parametru. Chcete-li například načíst aktuální platformy projektu & #x 2014; například **x86** nebo **AnyCpu**& #x 2014; můžete zahrnout **$(Platform)** odkaz na vlastnost v soubor projektu. Další informace najdete v tématu [makra pro příkazy sestavení a vlastnosti](https://msdn.microsoft.com/library/c02as0cs.aspx), [běžné vlastnosti projektu nástroje MSBuild](https://msdn.microsoft.com/library/bb629394.aspx), a [rezervované vlastnosti](https://msdn.microsoft.com/library/ms164309.aspx).
+Stejná syntaxe vlastnost slouží k získání hodnot proměnných prostředí a vlastnosti předdefinované projektu. Velké množství běžně používané vlastnosti jsou definovány pro vás a je použijete v souborech projektu zahrnutím název relevantní parametru. Například pro načtení aktuální platformě musí projektu&#x2014;například **x86** nebo **AnyCpu**&#x2014;můžete zahrnout **$(Platform)** odkaz na vlastnost v soubor projektu. Další informace najdete v tématu [makra pro příkazy sestavení a vlastnosti](https://msdn.microsoft.com/library/c02as0cs.aspx), [běžné vlastnosti projektu nástroje MSBuild](https://msdn.microsoft.com/library/bb629394.aspx), a [rezervované vlastnosti](https://msdn.microsoft.com/library/ms164309.aspx).
 
 Vlastnosti se často používají ve spojení s *podmínky*. Většina elementů MSBuild podporu **podmínku** atribut, který umožňuje zadat kritéria, na kterých by měly vyhodnotit MSBuild elementu. Představte si třeba tuto definici vlastnosti:
 
@@ -121,13 +121,13 @@ Vlastnosti se často používají ve spojení s *podmínky*. Většina elementů
 [!code-xml[Main](understanding-the-project-file/samples/sample5.xml)]
 
 
-Když MSBuild zpracovává tuto definici vlastnosti, nejdřív zkontroluje, jestli **$(OutputRoot)** hodnota vlastnosti je k dispozici. Pokud hodnota vlastnosti je prázdné & #x 2014; jinými slovy, uživatel nebyl k dispozici hodnota této vlastnosti & #x 2014; je podmínka vyhodnocena jako **true** a hodnota vlastnosti je nastavena na **... \Publish\Out**. Pokud uživatel zadal hodnotu pro tuto vlastnost, je podmínka vyhodnocena jako **false** a hodnota statické vlastnosti se nepoužívá.
+Když MSBuild zpracovává tuto definici vlastnosti, nejdřív zkontroluje, jestli **$(OutputRoot)** hodnota vlastnosti je k dispozici. Pokud je hodnota vlastnosti prázdné&#x2014;jinými slovy, uživatel nebyl k dispozici hodnota pro tuto vlastnost&#x2014;je podmínka vyhodnocena jako **true** a hodnota vlastnosti je nastavena na **... \Publish\Out**. Pokud uživatel zadal hodnotu pro tuto vlastnost, je podmínka vyhodnocena jako **false** a hodnota statické vlastnosti se nepoužívá.
 
 Další informace o různých způsobech, ve kterém můžete zadat podmínky, najdete v části [podmínky nástroje MSBuild](https://msdn.microsoft.com/library/7szfhaft.aspx).
 
 ### <a name="items-and-item-groups"></a>Položky a skupiny položek
 
-Jedním z důležitých rolí souboru projektu je definovat vstupy do procesu sestavení. Obvykle se tyto vstupní hodnoty jsou soubory & #x 2014; soubory kódu, konfigurační soubory, soubory příkazů a další soubory, které je potřeba zpracovat nebo kopírovat jako část procesu sestavení. Ve schématu projektu nástroje MSBuild, jsou reprezentovány tyto vstupy [položky](https://msdn.microsoft.com/library/ms164283.aspx) elementy. V souboru projektu položky musí být definován v rámci [ItemGroup](https://msdn.microsoft.com/library/646dk05y.aspx) element. Stejně jako **vlastnost** prvky, můžete pojmenovat **položky** element ale chcete. Nicméně je nutné zadat **zahrnout** atribut k identifikaci souboru nebo zástupný znak, který představuje položku.
+Jedním z důležitých rolí souboru projektu je definovat vstupy do procesu sestavení. Tyto vstupy jsou obvykle soubory&#x2014;code soubory, konfigurační soubory, soubory příkazů a další soubory, které je potřeba zpracovat nebo kopírovat jako součást procesu sestavení. Ve schématu projektu nástroje MSBuild, jsou reprezentovány tyto vstupy [položky](https://msdn.microsoft.com/library/ms164283.aspx) elementy. V souboru projektu položky musí být definován v rámci [ItemGroup](https://msdn.microsoft.com/library/646dk05y.aspx) element. Stejně jako **vlastnost** prvky, můžete pojmenovat **položky** element ale chcete. Nicméně je nutné zadat **zahrnout** atribut k identifikaci souboru nebo zástupný znak, který představuje položku.
 
 
 [!code-xml[Main](understanding-the-project-file/samples/sample6.xml)]
@@ -139,7 +139,7 @@ Zadáním více **položky** elementy se stejným názvem, efektivně vytváří
 [!code-xml[Main](understanding-the-project-file/samples/sample7.xml)]
 
 
-Tímto způsobem je instruující soubor projektu nástroje MSBuild vytvořit seznam souborů, které potřebují ke zpracování v stejným způsobem & #x 2014; **odkaz** seznam obsahuje sestavení, které musí být místní pro úspěšné sestavení, **Zkompilovat** seznam obsahuje soubory kódu, které musí být zkompilovány, a **obsahu** seznam obsahuje prostředky, které musí být zkopírovány v nezměněném stavu. Podíváme jak procesu sestavení odkazuje a používá tyto položky později v tomto tématu.
+Tímto způsobem je instruující soubor projektu nástroje MSBuild vytvořit seznam souborů, které je třeba zpracovat stejným způsobem&#x2014; **odkaz** seznam obsahuje sestavení, které musí být místní pro úspěšné sestavení,  **Kompilace** seznam obsahuje soubory kódu, které musí být zkompilovány, a **obsahu** seznam obsahuje prostředky, které musí být zkopírovány v nezměněném stavu. Podíváme jak procesu sestavení odkazuje a používá tyto položky později v tomto tématu.
 
 Může také obsahovat elementy položky [itemmetadata –](https://msdn.microsoft.com/library/ms164284.aspx) podřízené elementy. Tyto jsou uživatelem definované páry klíč hodnota a v podstatě představují vlastnosti, které jsou specifické pro danou položku. Například mnoho **zkompilovat** elementy položky v souboru projektu zahrnují **DependentUpon** podřízené elementy.
 
@@ -195,11 +195,11 @@ Cílů a úloh může obsahovat **podmínku** atributy. Takto můžete vynechat 
 
 Obecně platí když vytvoříte užitečné úkoly a cíle, budete potřebovat k odkazování na vlastnosti a položky, které jste definovali jinde v souboru projektu:
 
-- Chcete-li použít hodnotu vlastnosti, zadejte **$(***PropertyName***)**, kde *PropertyName* je název **vlastnost** element nebo název parametr.
-- Chcete-li použít položku, zadejte **@(***název položky***)**, kde *název položky* je název **položky** elementu.
+- Chcete-li použít hodnotu vlastnosti, zadejte <strong>$(</strong><em>PropertyName</em><strong>)</strong>, kde <em>PropertyName</em> je název <strong>vlastnost</strong> element nebo název parametru.
+- Chcete-li použít položku, zadejte <strong>@(</strong><em>název položky</em><strong>)</strong>, kde <em>název položky</em> je název <strong>položky</strong> elementu.
 
 > [!NOTE]
-> Mějte na paměti, že pokud vytvoříte více položek se stejným názvem, kterou sestavujete seznamu. Na rozdíl od Pokud vytvoříte více vlastností se stejným názvem, poslední hodnota vlastnosti, které poskytnete přepíše jakékoli předchozí vlastnosti se stejným názvem & #x 2014; vlastnost může obsahovat pouze jednu hodnotu.
+> Mějte na paměti, že pokud vytvoříte více položek se stejným názvem, kterou sestavujete seznamu. Na rozdíl od, pokud vytvoříte více vlastností se stejným názvem, poslední hodnota vlastnosti je zadat přepíše jakékoli předchozí vlastnosti se stejným názvem&#x2014;vlastnost může obsahovat pouze jednu hodnotu.
 
 
 Například v *Publish.proj* souboru v ukázkové řešení, podívejte se na **BuildProjects** cíl.
@@ -227,7 +227,7 @@ Můžete také zjistit, který **MSBuild** úloh vyvolá cíl s názvem **sestav
 
 ## <a name="splitting-project-files-to-support-multiple-environments"></a>Rozdělení souborů projektu pro podporu prostředí s více
 
-Předpokládejme, že chcete být schopni nasadit řešení do několika prostředích, jako je testovací servery, pracovní platformy a provozní prostředí. Konfigurace může podstatně liší mezi tyto prostředí & #x 2014; ne jen z hlediska názvů serverů, připojovací řetězce a tak dále, ale i potenciálně z hlediska přihlašovací údaje, nastavení zabezpečení a spoustu dalších faktorů. Pokud potřebujete pravidelně to udělat, není skutečně vhodné upravit víc vlastností v souboru projektu pokaždé, když přejdete na cílovém prostředí. Ani je ideální řešení tak, aby vyžadovala nekonečná seznam hodnot vlastností, které mají být poskytovány procesu sestavení.
+Předpokládejme, že chcete být schopni nasadit řešení do několika prostředích, jako je testovací servery, pracovní platformy a provozní prostředí. Konfigurace může značně lišit podle těchto prostředích&#x2014;nejen z hlediska názvů serverů, připojovací řetězce a tak dále, ale i potenciálně z hlediska přihlašovací údaje, nastavení zabezpečení a spoustu dalších faktorů. Pokud potřebujete pravidelně to udělat, není skutečně vhodné upravit víc vlastností v souboru projektu pokaždé, když přejdete na cílovém prostředí. Ani je ideální řešení tak, aby vyžadovala nekonečná seznam hodnot vlastností, které mají být poskytovány procesu sestavení.
 
 Naštěstí představuje alternativu. MSBuild umožňuje konfiguraci sestavení rozdělit do více souborech projektu. Chcete-li zobrazit, jak to funguje, v ukázkové řešení, Všimněte si, zda jsou dva soubory vlastních projektů:
 
@@ -266,6 +266,6 @@ Dalším tématu [Principy procesu sestavení](understanding-the-build-process.m
 
 Podrobnější Úvod do souborů projektu a jako, najdete v části [uvnitř Microsoft Build Engine: pomocí nástroje MSBuild a Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi a William Bartholomew, ISBN: 978-0-7356-4524-0.
 
->[!div class="step-by-step"]
-[Předchozí](setting-up-the-contact-manager-solution.md)
-[další](understanding-the-build-process.md)
+> [!div class="step-by-step"]
+> [Předchozí](setting-up-the-contact-manager-solution.md)
+> [další](understanding-the-build-process.md)

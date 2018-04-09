@@ -1,7 +1,7 @@
 ---
 title: Modul ASP.NET Core
 author: tdykstra
-description: "Zjistěte, jak modul základní technologie ASP.NET umožňuje Kestrel webového serveru použít jako reverzní proxy server služby IIS nebo IIS Express."
+description: Zjistěte, jak modul základní technologie ASP.NET umožňuje Kestrel webového serveru použít jako reverzní proxy server služby IIS nebo IIS Express.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/aspnet-core-module
-ms.openlocfilehash: e2170014f1a8fc89ec7e0a02d19c943b88e005fb
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: d99a4b446b53c431b11bfe083b1bb6133f8e0078
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="aspnet-core-module"></a>Modul ASP.NET Core
 
@@ -25,15 +25,15 @@ Základní modul ASP.NET umožňuje ASP.NET Core aplikace pro spouštění za sl
 Podporované verze systému Windows:
 
 * Windows 7 nebo novější
-* Windows Server 2008 R2 nebo novější &#8224;
+* Windows Server 2008 R2 nebo novější&#8224;
 
-&#8224; Koncepčně používání modulu jádra ASP.NET se službou IIS, které jsou popsané v tomto dokumentu platí také pro hostování aplikací ASP.NET Core na Nano Server IIS. Specifické pro Nano Server pokyny najdete v tématu [ASP.NET Core pomocí služby IIS na serveru Nano](xref:tutorials/nano-server) kurzu.
+&#8224;Koncepčně používání modulu jádra ASP.NET se službou IIS, které jsou popsané v tomto dokumentu platí také pro hostování aplikací ASP.NET Core na Nano Server IIS. Specifické pro Nano Server pokyny najdete v tématu [ASP.NET Core pomocí služby IIS na serveru Nano](xref:tutorials/nano-server) kurzu.
 
 Základní modul ASP.NET pracuje pouze s Kestrel. Modul není kompatibilní s [HTTP.sys](xref:fundamentals/servers/httpsys) (dříve se označovaly jako [WebListener](xref:fundamentals/servers/weblistener)).
 
 ## <a name="aspnet-core-module-description"></a>Popis modulu jádro ASP.NET
 
-Základní modul ASP.NET je nativní modul služby IIS, která po zapojení do kanálu služby IIS pro přesměrování požadavků na webu na back-end aplikace ASP.NET Core. Množství nativních modulů, jako je například ověřování systému Windows, zůstávají aktivní. Další informace o moduly služby IIS active s modulem najdete v tématu [moduly služby IIS pomocí](xref:host-and-deploy/iis/modules).
+Základní modul ASP.NET je nativní modul služby IIS, která po zapojení do kanálu služby IIS pro přesměrování požadavků na webu na back-end aplikace ASP.NET Core. Množství nativních modulů, jako je například ověřování systému Windows, zůstávají aktivní. Další informace o moduly služby IIS active s modulem najdete v tématu [moduly služby IIS](xref:host-and-deploy/iis/modules).
 
 Protože samostatné aplikace ASP.NET Core spustit v procesu z pracovní proces služby IIS, modul také zpracovává proces správy. Modul zahájí proces pro aplikace ASP.NET Core při prvním požadavku dorazí a restartuje aplikace, pokud ji dojde k chybě. Toto je v podstatě stejné chování jako aplikace ASP.NET 4.x, které běží v procesu v IIS, které jsou spravovány [služby Aktivace procesů systému Windows (WAS)](/iis/manage/provisioning-and-managing-iis/features-of-the-windows-process-activation-service-was).
 

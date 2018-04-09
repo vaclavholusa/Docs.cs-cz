@@ -1,18 +1,18 @@
 ---
-title: "Ukládání odpovědí do mezipaměti v ASP.NET Core"
+title: Ukládání odpovědí do mezipaměti v ASP.NET Core
 author: rick-anderson
-description: "Další informace o použití odpověď do mezipaměti pro nižší nároky na šířku pásma a zvýšit výkon aplikací ASP.NET Core."
+description: Další informace o použití odpověď do mezipaměti pro nižší nároky na šířku pásma a zvýšit výkon aplikací ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: c654cfd7c2d291849067bfd3297f940018ccb3d8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: cc1ec50155398ba4143a2bf697ca26435c228c49
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>Ukládání odpovědí do mezipaměti v ASP.NET Core
 
@@ -64,13 +64,13 @@ Neexistuje žádný aktuální vývojáři řídit toto chování ukládání do
 
 Ukládání do mezipaměti v paměti používá server paměti k ukládání data uložená v mezipaměti. Tento typ ukládání do mezipaměti je vhodný pro jeden nebo více serverů pomocí *trvalé relace*. Trvalé relace znamená, že žádosti z klienta jsou vždy směrovány na stejný server pro zpracování.
 
-Další informace najdete v tématu [Úvod k ukládání do mezipaměti v paměti v ASP.NET Core](xref:performance/caching/memory).
+Další informace najdete v tématu [mezipaměti v paměti](xref:performance/caching/memory).
 
 ### <a name="distributed-cache"></a>Distribuované mezipaměti
 
 Distribuované mezipaměti využívat k ukládání dat v paměti, když aplikace hostovaná v cloudu nebo server farmy. Mezipaměť je sdílet mezi servery, které zpracovávají požadavky. Klient může odeslat svoji žádost, kterou provádí služba jakýkoli server ve skupině, pokud je k dispozici data uložená v mezipaměti klienta. ASP.NET Core nabízí systému SQL Server a Redis distribuované mezipaměti.
 
-Další informace najdete v tématu [práce s distribuované mezipaměti](xref:performance/caching/distributed).
+Další informace najdete v tématu [pracovat s distribuované mezipaměti](xref:performance/caching/distributed).
 
 ### <a name="cache-tag-helper"></a>Pomocník značky mezipaměti
 
@@ -180,10 +180,10 @@ Cache-Control: public,max-age=60
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Ukládání do mezipaměti v protokolu HTTP z specifikace](https://tools.ietf.org/html/rfc7234#section-3)
+* [Ukládání odpovědí do mezipaměti](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
-* [Práce s distribuované mezipaměti](xref:performance/caching/distributed)
+* [Mezipaměti v paměti](xref:performance/caching/memory)
+* [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
 * [Detekovat změny s tokeny změn](xref:fundamentals/primitives/change-tokens)
 * [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
 * [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)

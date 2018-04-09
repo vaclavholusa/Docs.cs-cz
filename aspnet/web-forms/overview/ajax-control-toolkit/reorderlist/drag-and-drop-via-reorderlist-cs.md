@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
-title: "Přetáhnout myší prostřednictvím ReorderList (C#) | Microsoft Docs"
+title: Přetáhnout myší prostřednictvím ReorderList (C#) | Microsoft Docs
 author: wenz
-description: "ReorderList ovládacího prvku AJAX Control Toolkit poskytuje seznam, který může být přeuspořádány uživatelem pomocí operace přetažení. Aktuální pořadí položek v seznamu se..."
+description: ReorderList ovládacího prvku AJAX Control Toolkit poskytuje seznam, který může být přeuspořádány uživatelem pomocí operace přetažení. Aktuální pořadí položek v seznamu se...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6afecfc7330647e6f4944c507e308afec6d2401b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 42464d10f119e0ba51d5eebf2a67e76e3e419bda
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="drag-and-drop-via-reorderlist-c"></a>Přetáhnout myší prostřednictvím ReorderList (C#)
 ====================
@@ -35,16 +35,16 @@ podle [Christian Wenz](https://github.com/wenz)
 
 `ReorderList` Řízení podporuje vazba dat z databáze do seznamu. Navíc také podporuje zápis změn pracovního element seznamu zpět do úložiště dat.
 
-Tato ukázka používá jako úložiště dat Microsoft SQL Server 2005 Express Edition. Databáze je volitelné (a free) součástí instalaci sady Visual Studio, včetně express edition. Je také k dispozici jako samostatný soubor ke stažení v rámci [https://go.microsoft.com/fwlink/?LinkId=64064](https://go.microsoft.com/fwlink/?LinkId=64064). Tato ukázka předpokládáme, že je název instance systému SQL Server 2005 Express Edition `SQLEXPRESS` a se nachází na stejném počítači jako webový server; toto je také výchozí nastavení. Pokud vaše instalace se liší, budete muset přizpůsobit informace o připojení pro databázi.
+Tato ukázka používá jako úložiště dat Microsoft SQL Server 2005 Express Edition. Databáze je volitelné (a free) součástí instalaci sady Visual Studio, včetně express edition. Je také k dispozici jako samostatný soubor ke stažení v rámci [ https://go.microsoft.com/fwlink/?LinkId=64064 ](https://go.microsoft.com/fwlink/?LinkId=64064). Tato ukázka předpokládáme, že je název instance systému SQL Server 2005 Express Edition `SQLEXPRESS` a se nachází na stejném počítači jako webový server; toto je také výchozí nastavení. Pokud vaše instalace se liší, budete muset přizpůsobit informace o připojení pro databázi.
 
 Nejjednodušší způsob, jak nastavení databáze je použití Microsoft SQL Server Management Studio Express ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en) ). Připojení k serveru, dvakrát klikněte na `Databases` a vytvořit novou databázi (klikněte pravým tlačítkem a zvolte `New Database`) názvem `Tutorials`.
 
 V této databázi, vytvořte novou tabulku s názvem `AJAX` obsahuje následující čtyři sloupce:
 
-- `id`(primární klíče, celé číslo, identity, není NULL)
-- `char`(char(1), NULL)
-- `description`(varchar(50), NULL)
-- `position`(int, NULL)
+- `id` (primární klíče, celé číslo, identity, není NULL)
+- `char` (char(1), NULL)
+- `description` (varchar(50), NULL)
+- `position` (int, NULL)
 
 
 [![Rozložení tabulky AJAX](drag-and-drop-via-reorderlist-cs/_static/image2.png)](drag-and-drop-via-reorderlist-cs/_static/image1.png)
@@ -90,6 +90,6 @@ Spuštění tohoto příkladu v prohlížeči a trochu Změna uspořádání pol
 
 Data v databázi se změní podle seznamu novou položku pořadí ([Kliknutím zobrazit obrázek v plné velikosti](drag-and-drop-via-reorderlist-cs/_static/image9.png))
 
->[!div class="step-by-step"]
-[Předchozí](using-postbacks-with-reorderlist-cs.md)
-[další](using-postbacks-with-reorderlist-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-postbacks-with-reorderlist-cs.md)
+> [další](using-postbacks-with-reorderlist-vb.md)

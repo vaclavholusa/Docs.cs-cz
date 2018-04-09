@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
-title: "Iterace #2 – zpřístupnění aplikace vypadat dobrý (VB) | Microsoft Docs"
+title: 'Iterace #2 – zpřístupnění aplikace vypadat dobrý (VB) | Microsoft Docs'
 author: microsoft
-description: "V této iteraci můžeme vylepšit vzhled aplikace Úprava výchozí stránky předlohy zobrazení ASP.NET MVC a stylů CSS."
+description: V této iteraci můžeme vylepšit vzhled aplikace Úprava výchozí stránky předlohy zobrazení ASP.NET MVC a stylů CSS.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 07c4eaaf9ae5a389605a98951e970d410ca23122
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8545351b099e52533789b372903cd493f533f834
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-2--make-the-application-look-nice-vb"></a>Iterace #2 – zpřístupnění aplikace vypadat dobrý (VB)
 ====================
@@ -66,7 +66,7 @@ Rozhodli nechcete použít šablonu z Galerie návrhů MVC ASP.NET pro aplikaci 
 
 Galerie ASP.NET MVC je volným prostředkem od společnosti Microsoft. ASP.NET MVC Galerie je umístěn na následující adrese:
 
-[https://www.ASP.NET/MVC/Gallery](https://www.asp.net/mvc/gallery)
+[https://www.asp.net/mvc/gallery](https://www.asp.net/mvc/gallery)
 
 ASP.NET MVC návrhu galerie hostitelem kolekce návrhy volné webu, které byly vytvořené speciálně pro použití v projektu aplikace ASP.NET MVC. Návrhy se odeslaný členové komunity. Návštěvníky do galerie můžete volit pro své oblíbené návrhy (viz obrázek 2).
 
@@ -115,7 +115,7 @@ ASP.NET MVC návrhu galerie má na dobrý výběr různých stylů. Galerie vám
 
 Však může být zapotřebí vytvořit zcela jedinečný návrhu pro svůj web. V takovém případě má smysl pro práci s společnosti návrh webu. Rozhodli pro tento postup pro návrh jednotného přihlašování pro aplikace obraťte se na správce.
 
-Můžu si správce kontaktujte z iterace č. 1 a poslali projektu do návrhu společnosti. Není vlastní sadě Visual Studio (shame na nich!), ale, že dodán t představovat problém. Jsou schopny stáhnout Microsoft Visual Web Developer zdarma z [https://www.asp.net](https://www.asp.net) webu a otevřete obraťte se na správce aplikace Visual Web Developer. Během několika dní že měl vytvořeného návrhu na obrázku 7.
+Můžu si správce kontaktujte z iterace č. 1 a poslali projektu do návrhu společnosti. Není vlastní sadě Visual Studio (shame na nich!), ale, že dodán t představovat problém. Jsou schopny stáhnout Microsoft Visual Web Developer zdarma z [ https://www.asp.net ](https://www.asp.net) webu a otevřete obraťte se na správce aplikace Visual Web Developer. Během několika dní že měl vytvořeného návrhu na obrázku 7.
 
 
 [![Dialogové okno Nový projekt](iteration-2-make-the-application-look-nice-vb/_static/image7.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image13.png)
@@ -163,6 +163,6 @@ V dalším kroku jsme probrali, jak můžete vytvořit vlastní návrh změnou v
 
 V další iterace jsme řešení velmi důležité předmět ověření. Přidáme ověřovacího kódu k naší aplikaci tak, aby uživatele nelze vytvořit nový kontakt bez nutnosti zadávat požadované hodnoty, například uživatel s nejprve a příjmení.
 
->[!div class="step-by-step"]
-[Předchozí](iteration-1-create-the-application-vb.md)
-[další](iteration-3-add-form-validation-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](iteration-1-create-the-application-vb.md)
+> [další](iteration-3-add-form-validation-vb.md)

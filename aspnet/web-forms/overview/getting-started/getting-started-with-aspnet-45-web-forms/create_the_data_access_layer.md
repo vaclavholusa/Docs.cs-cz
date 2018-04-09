@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
-title: "Vytvořit Data Access Layer | Microsoft Docs"
+title: Vytvořit Data Access Layer | Microsoft Docs
 author: Erikre
-description: "Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme..."
+description: Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: 809609155b06c4632bd4f450082d84c432c7a46f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 671d1bbf661dfb3e56c6ccd67ce0d383990918d6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-the-data-access-layer"></a>Vytvořit Data Access Layer
 ====================
@@ -68,13 +68,13 @@ V tomto kurzu budete Začněte přidáním jednoduché entity třídy představu
 
     ![Data Access Layer - vytvořit nové položky nabídky](create_the_data_access_layer/_static/image1.png)
 
- **Přidat novou položku** se zobrazí dialogové okno.
+   **Přidat novou položku** se zobrazí dialogové okno.
 2. V části **Visual C#** z **nainstalovaná** podokna na levé straně vyberte **kód**. 
 
     ![Data Access Layer - vytvořit nové položky nabídky](create_the_data_access_layer/_static/image2.png)
 3. Vyberte **třída** v prostředním podokně a pojmenujte tato nová třída *Product.cs*.
 4. Klikněte na tlačítko **přidat**.  
- Nový soubor třídy se zobrazí v editoru.
+   Nový soubor třídy se zobrazí v editoru.
 5. Ve výchozím kódu nahraďte následujícím kódem:   
 
     [!code-csharp[Main](create_the_data_access_layer/samples/sample1.cs)]
@@ -95,7 +95,7 @@ Pokud chcete začít používat třídy pro přístup k datům, je nutné zadat 
 Tento postup přidá novou C# kontextu třídu k *modely* složky.
 
 1. Klikněte pravým tlačítkem myši *modely* složku a potom vyberte **přidat**  - &gt; **novou položku**.   
- **Přidat novou položku** se zobrazí dialogové okno.
+   **Přidat novou položku** se zobrazí dialogové okno.
 2. Vyberte **třída** v prostředním podokně název *ProductContext.cs* a klikněte na tlačítko **přidat**.
 3. Nahraďte kód výchozích obsaženy v třídě následujícím kódem:   
 
@@ -188,6 +188,6 @@ V dalším kurzu budete aktualizovat uživatelského rozhraní, přidat navigač
 [Kód první datových poznámek](https://msdn.microsoft.com/data/gg193958)  
 [Vylepšení produktivitu rozhraní Entity Framework](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
->[!div class="step-by-step"]
-[Předchozí](create-the-project.md)
-[další](ui_and_navigation.md)
+> [!div class="step-by-step"]
+> [Předchozí](create-the-project.md)
+> [další](ui_and_navigation.md)

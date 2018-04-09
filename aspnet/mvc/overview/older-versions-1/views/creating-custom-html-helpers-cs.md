@@ -1,8 +1,8 @@
 ---
 uid: aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
-title: "Vytváření Pomocníci vlastní HTML (C#) | Microsoft Docs"
+title: Vytváření Pomocníci vlastní HTML (C#) | Microsoft Docs
 author: microsoft
-description: "Cílem tohoto kurzu je ukazují, jak můžete vytvořit vlastní pomocné rutiny HTML, který můžete použít v rámci zobrazení v rozhraní MVC. Díky pomocné rutiny HTML..."
+description: Cílem tohoto kurzu je ukazují, jak můžete vytvořit vlastní pomocné rutiny HTML, který můžete použít v rámci zobrazení v rozhraní MVC. Díky pomocné rutiny HTML...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a0b6d67eb7aab51ba2b422fab0788e34255f2c8c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ebc9aa2aa8dbc02dc01833d671c3bfd19141ba74
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-custom-html-helpers-c"></a>Vytváření Pomocníci vlastní HTML (C#)
 ====================
@@ -57,7 +57,7 @@ Představte si třeba formuláře v výpis 1. Tento formulář je vykreslen pomo
 **Obrázek 01**: stránka vykresluje se pomocné objekty HTML ([Kliknutím zobrazit obrázek v plné velikosti](creating-custom-html-helpers-cs/_static/image3.png))
 
 
-**Výpis 1 –`Views\Home\Index.aspx`**
+**Výpis 1 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample1.aspx)]
 
@@ -72,7 +72,7 @@ Pokud dáváte přednost, místo vytvoření použití bloku, můžete volat met
 
 Rozhraní ASP.NET MVC obsahuje malou sadu pomocné rutiny. S největší pravděpodobností musíte rozšířit rozhraní MVC s vlastní pomocné rutiny HTML. Ve zbývající části tohoto kurzu další dvě metody vytváření vlastní pomocné rutiny HTML.
 
-**Výpis 2 –`Index.aspx Source`**
+**Výpis 2 – `Index.aspx Source`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample2.aspx)]
 
@@ -80,7 +80,7 @@ Rozhraní ASP.NET MVC obsahuje malou sadu pomocné rutiny. S největší pravdě
 
 Nejjednodušší způsob, jak vytvořit nový pomocné rutiny HTML, je vytvoření statickou metodu, která vrací řetězec. Představte si například, že se rozhodnete vytvořit nový pomocné rutiny HTML, který vykreslí HTML `<label>` značky. Třída v výpis 2 můžete použít k vykreslení `<label>` .
 
-**Výpis 2 –`Helpers\LabelHelper.cs`**
+**Výpis 2 – `Helpers\LabelHelper.cs`**
 
 [!code-csharp[Main](creating-custom-html-helpers-cs/samples/sample3.cs)]
 
@@ -88,7 +88,7 @@ Není co speciální o třídy ve výpisu 2. `Label()` Metoda jednoduše vrátí
 
 Používá upravené zobrazení indexu v výpis 3 `LabelHelper` k vykreslení HTML `<label>` značky. Všimněte si, že zobrazení zahrnuje `<%@ imports %>` direktiva, která importuje `Application1.Helpers` oboru názvů.
 
-**Výpis 2 –`Views\Home\Index2.aspx`**
+**Výpis 2 – `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample4.aspx)]
 
@@ -100,7 +100,7 @@ Třídy ve výpisu 3 přidá metody rozšíření pro `HtmlHelper` třídu s ná
 
 Druhý, Všimněte si, že první parametr `Label()` metoda je zadáno klíčové slovo `this`. První parametr metody rozšíření Určuje třídu, která rozšíření metoda rozšiřuje.
 
-**Výpis 3 –`Helpers\LabelExtensions.cs`**
+**Výpis 3 – `Helpers\LabelExtensions.cs`**
 
 [!code-csharp[Main](creating-custom-html-helpers-cs/samples/sample5.cs)]
 
@@ -114,7 +114,7 @@ Po vytvoření metody rozšíření a úspěšně sestavit aplikaci, metoda roz�
 
 Upravené zobrazení indexu v výpis 4 používá metodu Html.Label() rozšíření pro vykreslení všechny jeho `<label>` značky.
 
-**Výpis 4 –`Views\Home\Index3.aspx`**
+**Výpis 4 – `Views\Home\Index3.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample6.aspx)]
 
@@ -124,6 +124,6 @@ V tomto kurzu jste se dozvěděli dvě metody vytváření vlastní pomocné rut
 
 V tomto kurzu I zaměřuje na budování metodu velmi jednoduché pomocné rutiny HTML. Uvědomte si, že může být složité, protože chcete, aby pomocné rutiny HTML. Můžete vytvořit pomocné rutiny HTML, která vykreslit bohaté obsahu například stromové zobrazení, nabídky nebo tabulky dat z databáze.
 
->[!div class="step-by-step"]
-[Předchozí](asp-net-mvc-views-overview-cs.md)
-[další](using-the-tagbuilder-class-to-build-html-helpers-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](asp-net-mvc-views-overview-cs.md)
+> [další](using-the-tagbuilder-class-to-build-html-helpers-cs.md)

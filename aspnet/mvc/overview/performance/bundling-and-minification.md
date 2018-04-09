@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/bundling-and-minification
-title: "Sdružování a minimalizace | Microsoft Docs"
+title: Sdružování a minimalizace | Microsoft Docs
 author: Rick-Anderson
-description: "Sdružování a minimalizace jsou dvě techniky v technologii ASP.NET 4.5 můžete použít ke zlepšení čas načítání požadavku. Sdružování a minimalizace zlepšuje reducin čas načítání..."
+description: Sdružování a minimalizace jsou dvě techniky v technologii ASP.NET 4.5 můžete použít ke zlepšení čas načítání požadavku. Sdružování a minimalizace zlepšuje reducin čas načítání...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/23/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 7192481de46c36f7de71164766e68afdbba74f6d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 001ebf89cda66a50cddcd7e4944f27b9396d4450
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="bundling-and-minification"></a>Sdružování a minimalizace
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Sdružování a minimalizace jsou dvě techniky v technologii ASP.NET 4.5 můžete použít ke zlepšení čas načítání požadavku. Sdružování a minimalizace zlepšuje čas načítání snižuje počet požadavků na server a zmenšení velikosti požadovaných prostředků (například šablon stylů CSS a JavaScript.)
 
@@ -65,7 +65,7 @@ Kromě odebírání komentářů a nepotřebné prázdné znaky, tyto parametry 
 
 Následující tabulka uvádí několik důležitých rozdílů mezi výpis všechny prostředky samostatně a pomocí sdružování a minimalizace (B/M) v ukázka programu.
 
-|  | **Pomocí B/M** | **Bez B/M** | **Změna** |
+|  | **Pomocí B/M** | **Bez B/M** | **změnit** |
 | --- | --- | --- | --- |
 | **Požadavky na soubory** | 9 | 34 | 256% |
 | **Odeslat KB** | 3.26 | 11.92 | 266% |
@@ -98,7 +98,7 @@ Chcete-li povolit sdružování a minimalizace, nastavte `debug` hodnotu "Neprav
 [!code-csharp[Main](bundling-and-minification/samples/sample4.cs?highlight=7)]
 
 > [!NOTE]
-> Pokud `EnableOptimizations` je `true` nebo ladění atribut v [kompilace Element](https://msdn.microsoft.com/library/s10awwz0.aspx) v *Web.config* soubor pro `false`, soubory nebude dodávat nebo minifikovaný. Kromě toho se nepoužijí .min verze souborů, úplné ladicí verze bude vybrána. `EnableOptimizations`přepíše ladění atribut v [kompilace Element](https://msdn.microsoft.com/library/s10awwz0.aspx) v *Web.config* souboru
+> Pokud `EnableOptimizations` je `true` nebo ladění atribut v [kompilace Element](https://msdn.microsoft.com/library/s10awwz0.aspx) v *Web.config* soubor pro `false`, soubory nebude dodávat nebo minifikovaný. Kromě toho se nepoužijí .min verze souborů, úplné ladicí verze bude vybrána. `EnableOptimizations` přepíše ladění atribut v [kompilace Element](https://msdn.microsoft.com/library/s10awwz0.aspx) v *Web.config* souboru
 
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>Pomocí sdružování a minimalizace s webovými formuláři ASP.NET a webové stránky
@@ -186,7 +186,7 @@ Explicitně přidání každého souboru do sady je obecně upřednostňované p
 
     [!code-csharp[Main](bundling-and-minification/samples/sample12.cs)]
 
- Selektor zástupný znak "\*.css" přináší do každého souboru CSS ve složce, včetně *Content\themes\base\jquery.ui.all.css* souboru. *Jquery.ui.all.css* soubor importuje soubory jiných šablon stylů CSS.
+  Selektor zástupný znak "\*.css" přináší do každého souboru CSS ve složce, včetně *Content\themes\base\jquery.ui.all.css* souboru. *Jquery.ui.all.css* soubor importuje soubory jiných šablon stylů CSS.
 
 ## <a name="bundle-caching"></a>Sady ukládání do mezipaměti
 
@@ -233,15 +233,15 @@ Sady by měl stránkami, které je třeba rozdělit na oddíly. Například výc
 
 `System.Web.Optimization` Obor názvů je implementována ve System.Web.Optimization.DLL. Využívá knihovně WebGrease (WebGrease.dll) pro minimalizaci možnosti, které dále používá Antlr3.Runtime.dll.
 
-*Používám služby Twitter a ujistěte se, rychlé příspěvcích sdílet odkazy. Moje Twitter popisovač*:[@RickAndMSFT](http://twitter.com/RickAndMSFT)
+*Používám služby Twitter a ujistěte se, rychlé příspěvcích sdílet odkazy. Moje Twitter popisovač*: [@RickAndMSFT](http://twitter.com/RickAndMSFT)
 
 ## <a name="additional-resources"></a>Další prostředky
 
 - Video:[sdružování a optimalizace](https://channel9.msdn.com/Events/aspConf/aspConf/Bundling-and-Optimizing) podle [Howard Dierking](https://twitter.com/#!/howard_dierking)
 - [Přidání optimalizaci webů k lokalitě webové stránky](https://blogs.msdn.com/b/rickandy/archive/2012/08/15/adding-web-optimization-to-a-web-pages-site.aspx).
 - [Přidání sdružování a minimalizace pro webové formuláře](https://blogs.msdn.com/b/rickandy/archive/2012/08/14/adding-bundling-and-minification-to-web-forms.aspx).
-- [Důsledky výkonu sdružování a minimalizace na procházení webu](https://blogs.msdn.com/b/henrikn/archive/2012/06/17/performance-implications-of-bundling-and-minification-on-http.aspx) podle [společnost Petr F Nielsen](http://en.wikipedia.org/wiki/Henrik_Frystyk_Nielsen)[@frystyk](https://twitter.com/frystyk)
-- [Pomocí sítím CDN a jeho platnost vyprší ke zlepšení výkonu webu](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx) od Ricka Andersona[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
+- [Důsledky výkonu sdružování a minimalizace na procházení webu](https://blogs.msdn.com/b/henrikn/archive/2012/06/17/performance-implications-of-bundling-and-minification-on-http.aspx) podle [společnost Nielsen Petr F](http://en.wikipedia.org/wiki/Henrik_Frystyk_Nielsen) [@frystyk](https://twitter.com/frystyk)
+- [Pomocí sítím CDN a jeho platnost vyprší ke zlepšení výkonu webu](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx) od Ricka Andersona [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 - [Minimalizovat požadavku (časy odezvy)](https://developers.google.com/speed/docs/best-practices/rtt)
 
 ## <a name="contributors"></a>Contributors

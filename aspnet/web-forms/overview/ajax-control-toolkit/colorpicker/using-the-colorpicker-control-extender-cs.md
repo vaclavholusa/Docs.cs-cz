@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
-title: "Pomocí rozšiřujícího objektu ColorPicker řízení (C#) | Microsoft Docs"
+title: Pomocí rozšiřujícího objektu ColorPicker řízení (C#) | Microsoft Docs
 author: microsoft
-description: "ColorPicker je prvku ASP.NET AJAX rozšiřujícího objektu, která poskytuje funkci Barva výdej straně klienta pomocí uživatelského rozhraní v ovládacím prvku místní. Je možné připojit k žádné ASP.NET..."
+description: ColorPicker je prvku ASP.NET AJAX rozšiřujícího objektu, která poskytuje funkci Barva výdej straně klienta pomocí uživatelského rozhraní v ovládacím prvku místní. Je možné připojit k žádné ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5b3cde9552e8aecd5e7e651a825902fb79ae108c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d44fc81305e668b545246cf044dce275563d81a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-colorpicker-control-extender-c"></a>Pomocí rozšiřujícího objektu ColorPicker řízení (C#)
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-> ColorPicker je prvku ASP.NET AJAX rozšiřujícího objektu, která poskytuje funkci Barva výdej straně klienta pomocí uživatelského rozhraní v ovládacím prvku místní. Se lze připojit k žádné ASP.NET TextBox – ovládací prvek. Ho.
+> ColorPicker je prvku ASP.NET AJAX rozšiřujícího objektu, která poskytuje funkci Barva výdej straně klienta pomocí uživatelského rozhraní v ovládacím prvku místní. Se lze připojit k žádné ASP.NET TextBox – ovládací prvek. It.
 
 
 Cílem tohoto kurzu je vysvětlují, jak můžete použít rozšiřujícího objektu řízení Toolkit ColorPicker řízení AJAX. Rozšiřujícího objektu řízení ColorPicker zobrazí automaticky otevřeném okně. dialog, který vám umožní vybrat barvu. ColorPicker je užitečné, kdykoli budete chtít poskytnout intuitivní uživatelské rozhraní pro uživatele a vybrat barvu.
@@ -37,7 +37,7 @@ Představte si například, že chcete vytvořit web, který umožňuje uživate
 **Obrázek 01**: jednoduchý formulář pro vytvoření vizitky ([Kliknutím zobrazit obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image2.png))
 
 
-**Výpis 1 - CreateCard.aspx**
+**Listing 1 - CreateCard.aspx**
 
 [!code-aspx[Main](using-the-colorpicker-control-extender-cs/samples/sample1.aspx)]
 
@@ -114,5 +114,5 @@ Vlastnost SampleControlID je použito k přidružení ovládacího prvku, který
 
 V tomto kurzu jste zjistili, jak používat rozšiřujícího objektu řízení ColorPicker zobrazíte dialogové okno pro výběr barev místní. Nejdřív jsme se zaměřili jak můžete zobrazit dialogové okno když fokus se přesune do ovládacího prvku textového pole. V dalším kroku jste zjistili, jak vytvořit tlačítko, které se zobrazí dialogové okno pro výběr barev, když se po kliknutí na tlačítko.
 
->[!div class="step-by-step"]
-[Další](using-the-colorpicker-control-extender-vb.md)
+> [!div class="step-by-step"]
+> [Next](using-the-colorpicker-control-extender-vb.md)

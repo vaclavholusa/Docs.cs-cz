@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
-title: "Wrap NerdDinner až | Microsoft Docs"
+title: Wrap NerdDinner až | Microsoft Docs
 author: microsoft
-description: "To je závěru kurzu NerdDinner a poskytuje informace o tom, jak získat další informace."
+description: To je závěru kurzu NerdDinner a poskytuje informace o tom, jak získat další informace.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
 msc.type: authoredcontent
-ms.openlocfilehash: bb55668c714532c0a9ff499511b7a47572314194
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8d418f40f6d2911491c1a4f2498a4f711e9c271c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="nerddinner-wrap-up"></a>Wrap NerdDinner nahoru
 ====================
@@ -43,11 +43,11 @@ V tomto kurzu NerdDinner je první kapitoly nový [Professional ASP.NET MVC 1,0]
 
 Si můžete přečíst zbytek kniha i podrobné informace o architektuře ASP.NET MVC.
 
-Můžete také vyhledat skvělé rozhraní ASP.NET MVC, kurzy a videa na: [https://www.asp.net/mvc](../../../index.md) krátce zveřejníme Další skvělé knihy ASP.NET MVC. Aktualizuji této stránce obsahují odkazy na další dokumentaci knihy, jakmile budou k dispozici.
+Můžete také vyhledat skvělé rozhraní ASP.NET MVC, kurzy a videa na: [ https://www.asp.net/mvc ](../../../index.md) krátce zveřejníme Další skvělé knihy ASP.NET MVC. Aktualizuji této stránce obsahují odkazy na další dokumentaci knihy, jakmile budou k dispozici.
 
 Věříme, že to pomůže,
 
 Scott
 
->[!div class="step-by-step"]
-[Předchozí](enable-automated-unit-testing.md)
+> [!div class="step-by-step"]
+> [Předchozí](enable-automated-unit-testing.md)

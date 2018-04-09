@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
-title: "Vytvoření databáze aplikace film za 15 minut s architekturou ASP.NET MVC (VB) | Microsoft Docs"
+title: Vytvoření databáze aplikace film za 15 minut s architekturou ASP.NET MVC (VB) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther vytváří celou databázových aplikací ASP.NET MVC aplikaci od začátku ukončíte. V tomto kurzu je skvělým Úvod pro osoby, které jsou nové t..."
+description: Stephen Walther vytváří celou databázových aplikací ASP.NET MVC aplikaci od začátku ukončíte. V tomto kurzu je skvělým Úvod pro osoby, které jsou nové t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b87a69df24a410161dfaf055519eb6137fa76c06
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ecd5892457af5bc14a939672c64eed85fc05ec22
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-vb"></a>Vytvoření databáze aplikace film za 15 minut s architekturou ASP.NET MVC (VB)
 ====================
@@ -63,7 +63,7 @@ Pokud nevlastníte Visual Studio 2008, můžete stáhnout 90denní zkušební ve
 
 Alternativně můžete vytvořit rozhraní ASP.NET MVC aplikace s Visual Web Developer Express 2008. Pokud se rozhodnete použít Visual Web Developer Express musí mít nainstalovanou aktualizaci Service Pack 1. Visual Web Developer 2008 Express s aktualizací Service Pack 1 si můžete stáhnout z tohoto webu:
 
-[https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
+[https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
 
 Po instalaci Visual Studio 2008 nebo Visual Web Developer 2008, musíte nainstalovat rozhraní ASP.NET MVC. Rozhraní ASP.NET MVC můžete stáhnout z následujícího webu:
 
@@ -366,5 +366,5 @@ Všimněte si, že je nutné získat původní film a pak zavolají ApplyPropert
 
 V tomto kurzu jsme se zaměřili pouze nejzákladnější funkce rozhraní ASP.NET MVC. V budoucích kurzech jsme podrobně hlubší oblastech, jako je řadiče, akce kontroleru, zobrazení, data zobrazení a pomocné rutiny HTML.
 
->[!div class="step-by-step"]
-[Předchozí](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)

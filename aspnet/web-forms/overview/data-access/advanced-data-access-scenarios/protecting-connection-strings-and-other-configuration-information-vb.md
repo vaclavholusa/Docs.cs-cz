@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
-title: "Ochrana připojovací řetězce a informace o konfiguraci (VB) | Microsoft Docs"
+title: Ochrana připojovací řetězce a informace o konfiguraci (VB) | Microsoft Docs
 author: rick-anderson
-description: "Informace o konfiguraci aplikace ASP.NET obvykle ukládá v souboru Web.config. Některé z těchto informací velká a malá písmena a vyžaduje ochrany. Podle def...."
+description: Informace o konfiguraci aplikace ASP.NET obvykle ukládá v souboru Web.config. Některé z těchto informací velká a malá písmena a vyžaduje ochrany. Podle def....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f1514c4b6d041f6bbd83788e2110a95d3d831ff6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3372416dd9143afbfd442eaffb39cd807fae0de6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-vb"></a>Ochrana připojovací řetězce a informace o konfiguraci (VB)
 ====================
@@ -60,8 +60,8 @@ Technologie ASP.NET 2.0 obsahuje chráněné konfigurace systému pro šifrován
 
 Rozhraní .NET Framework se dodává s dva poskytovatelé chráněné konfigurace:
 
-- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-používá asymetrický [algoritmu RSA](http://en.wikipedia.org/wiki/Rsa) pro šifrování a dešifrování.
-- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx)-používá Windows [Data Protection API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) pro šifrování a dešifrování.
+- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx) -používá asymetrický [algoritmu RSA](http://en.wikipedia.org/wiki/Rsa) pro šifrování a dešifrování.
+- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx) -používá Windows [Data Protection API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) pro šifrování a dešifrování.
 
 Vzhledem k tomu, že chráněný konfigurační systém implementuje vzor návrhu poskytovatele, je možné vytvořit vlastního poskytovatele chráněné konfigurace a zapojte jej do vaší aplikace. V tématu [implementace poskytovatele konfigurace chráněné](https://msdn.microsoft.com/library/wfc2t3az(VS.80).aspx) Další informace o tomto procesu.
 
@@ -96,7 +96,7 @@ Dále je potřeba psát kód, který načte a zobrazí obsah `Web.config` v `Web
 
 [!code-vb[Main](protecting-connection-strings-and-other-configuration-information-vb/samples/sample1.vb)]
 
-`DisplayWebConfig` Metoda používá [ `File` – třída](https://msdn.microsoft.com/library/system.io.file.aspx) otevřete aplikaci s `Web.config` souboru [ `StreamReader` – třída](https://msdn.microsoft.com/library/system.io.streamreader.aspx) načíst jeho obsah do řetězce a [ `Path` třída](https://msdn.microsoft.com/library/system.io.path.aspx) ke generování fyzickou cestu k `Web.config` souboru. Tyto tři třídy se nacházejí v [ `System.IO` obor názvů](https://msdn.microsoft.com/library/system.io.aspx). V důsledku toho budete muset přidat `Imports``System.IO` příkaz do horní části kódu třídu nebo, případně tyto třídy názvy s předponou`System.IO.`
+`DisplayWebConfig` Metoda používá [ `File` – třída](https://msdn.microsoft.com/library/system.io.file.aspx) otevřete aplikaci s `Web.config` souboru [ `StreamReader` – třída](https://msdn.microsoft.com/library/system.io.streamreader.aspx) načíst jeho obsah do řetězce a [ `Path` třída](https://msdn.microsoft.com/library/system.io.path.aspx) ke generování fyzickou cestu k `Web.config` souboru. Tyto tři třídy se nacházejí v [ `System.IO` obor názvů](https://msdn.microsoft.com/library/system.io.aspx). V důsledku toho budete muset přidat `Imports``System.IO` příkaz do horní části kódu třídu nebo, případně tyto třídy názvy s předponou `System.IO.`
 
 Dále je potřeba přidat obslužných rutin událostí pro dvě tlačítka `Click` události a přidání nezbytného kódu k šifrování a dešifrování `<connectionStrings>` části klíč úrovni počítače pomocí rozhraní DPAPI zprostředkovatele. Z návrháře, dvakrát klikněte na každou z tlačítka pro přidání `Click` obslužné rutiny událostí v modelu code-behind třídu a přidejte následující kód:
 
@@ -228,12 +228,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Teresy Murphy a Randy Schmidt. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
-[další](debugging-stored-procedures-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
+> [další](debugging-stored-procedures-vb.md)

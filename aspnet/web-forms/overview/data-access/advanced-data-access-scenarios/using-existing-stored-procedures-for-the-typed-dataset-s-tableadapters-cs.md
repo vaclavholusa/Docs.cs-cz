@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
-title: "Použití existující uložené procedury pro TableAdapters typové datové sady (C#) | Microsoft Docs"
+title: Použití existující uložené procedury pro TableAdapters typové datové sady (C#) | Microsoft Docs
 author: rick-anderson
-description: "V předchozích kurzu jsme zjistili, jak používat Průvodce nastavením TableAdapter generovat nové uložené procedury. V tomto kurzu jsme dozvíte, jak stejné TableAdapter..."
+description: V předchozích kurzu jsme zjistili, jak používat Průvodce nastavením TableAdapter generovat nové uložené procedury. V tomto kurzu jsme dozvíte, jak stejné TableAdapter...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f95a6868ccce8ce0dfa16a92486e705c42e1db4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: df8a714325ce99db615eddc3d457da5c926919ba
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>Použití existující uložené procedury pro TableAdapters typové datové sady (C#)
 ====================
@@ -56,7 +56,7 @@ Zadejte následující skript:
 
 Tento skript, a to po provedení přidá nové uložené procedury k databázi Northwind s názvem `Products_SelectByCategoryID`. Tuto uloženou proceduru přijímá jeden vstupní parametr (`@CategoryID`, typu `int`) a vrátí všechna pole pro tyto produkty s odpovídající `CategoryID` hodnotu.
 
-Chcete-li to provést `CREATE PROCEDURE` skript a přidat uloženou proceduru do databáze, klikněte na ikonu Uložit na panelu nástrojů nebo stiskněte kombinaci kláves Ctrl + S. Až to uděláte, aktualizuje složku uložené procedury, zobrazující nově vytvořený uložené procedury. Skript v okně se také změní subtlety z `CREATE PROCEDURE dbo.Products_SelectProductByCategoryID` k `ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`. `CREATE PROCEDURE`Přidá nové uložené procedury do databáze, zatímco `ALTER PROCEDURE` aktualizuje stávající. Vzhledem k tomu, že spuštění skriptu se změnila na `ALTER PROCEDURE`, změna uložené procedury vstupní parametry nebo příkazů SQL a kliknutím na ikonu uložit tyto změny aktualizuje uložené procedury.
+Chcete-li to provést `CREATE PROCEDURE` skript a přidat uloženou proceduru do databáze, klikněte na ikonu Uložit na panelu nástrojů nebo stiskněte kombinaci kláves Ctrl + S. Až to uděláte, aktualizuje složku uložené procedury, zobrazující nově vytvořený uložené procedury. Skript v okně se také změní subtlety z `CREATE PROCEDURE dbo.Products_SelectProductByCategoryID` k `ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`. `CREATE PROCEDURE` Přidá nové uložené procedury do databáze, zatímco `ALTER PROCEDURE` aktualizuje stávající. Vzhledem k tomu, že spuštění skriptu se změnila na `ALTER PROCEDURE`, změna uložené procedury vstupní parametry nebo příkazů SQL a kliknutím na ikonu uložit tyto změny aktualizuje uložené procedury.
 
 Obrázek 2 ukazuje Visual Studio po `Products_SelectByCategoryID` uložená procedura se uložila.
 
@@ -273,12 +273,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Hilton Geisenow, S ren Jakub Lauritsen a Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
-[další](updating-the-tableadapter-to-use-joins-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
+> [další](updating-the-tableadapter-to-use-joins-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
-title: "Využitím pomocné rutiny rozevírací seznam s architekturou ASP.NET MVC | Microsoft Docs"
+title: Využitím pomocné rutiny rozevírací seznam s architekturou ASP.NET MVC | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2012
@@ -12,19 +12,19 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 278d04aec68e93f3ebfd12d06a96b59f3bcbef4b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 21373deeded801c5cea9e89f6dac0f3542a55ca5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>Využitím pomocné rutiny rozevírací seznam s architekturou ASP.NET MVC
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 V tomto kurzu se naučit se základy práce s [rozevírací seznam](https://msdn.microsoft.com/library/dd492948.aspx) pomocné rutiny a [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) pomocné rutiny v aplikaci ASP.NET MVC Web. Můžete použít Microsoft Visual Web Developer 2010 Express Service Pack 1, který je bezplatnou verzi sady Microsoft Visual Studio k postupovat v kurzu. Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže. Kliknutím na následující odkaz můžete nainstalovat všechny z nich: [instalačního programu webové platformy](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativně můžete nainstalovat jednotlivě požadavky pomocí následujících odkazů:
 
-- [Visual Studio Web Developer Express SP1 požadavky](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)<a id="post"></a>
+- [Visual Studio Web Developer Express SP1 požadavky](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack) <a id="post"></a>
 - [Aktualizace nástrojů rozhraní ASP.NET MVC 3](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
 - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(podporu runtime + nástroje)
 
@@ -193,7 +193,7 @@ Otevřete *Views\Home\MultiSelectCountry.cshtml* souboru a přidejte `htmlAttrib
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-Ve výše uvedeném kódu, přidáváme atribut HTML a hodnota atributu `class = "chzn-select"`. Znak @ předcházející třída nijak nesouvisí s zobrazovací modul Razor. `class`je [C# – klíčové slovo](https://msdn.microsoft.com/library/x53a06bb.aspx). Klíčová slova jazyka C# nelze použít jako identifikátory, pokud patří mezi ně jako předponu. V příkladu nahoře `@class` je platný identifikátor ale **třída** není, protože **třída** je klíčové slovo.
+Ve výše uvedeném kódu, přidáváme atribut HTML a hodnota atributu `class = "chzn-select"`. Znak @ předcházející třída nijak nesouvisí s zobrazovací modul Razor. `class` je [C# – klíčové slovo](https://msdn.microsoft.com/library/x53a06bb.aspx). Klíčová slova jazyka C# nelze použít jako identifikátory, pokud patří mezi ně jako předponu. V příkladu nahoře `@class` je platný identifikátor ale **třída** není, protože **třída** je klíčové slovo.
 
 Přidejte odkazy na *Chosen/chosen.jquery.js* a *Chosen/chosen.css* soubory. *Chosen/chosen.jquery.js* a implementuje funkčně z modulu plug-in zvolená. *Chosen/chosen.css* soubor poskytuje stylu. Přidat tyto odkazy v dolní části *Views\Home\MultiSelectCountry.cshtml* souboru. Následující kód ukazuje, jak chcete-li vybrat modulu plug-in.
 
@@ -217,5 +217,5 @@ Spusťte aplikaci a přejděte do `MultiSelectCountry` zobrazení. Zkuste přid�
 
 V další části se zobrazí, jak funguje mechanismus generování uživatelského rozhraní ASP.NET MVC pomocí **rozevírací seznam** pomocné rutiny.
 
->[!div class="step-by-step"]
-[Next](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [!div class="step-by-step"]
+> [Next](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

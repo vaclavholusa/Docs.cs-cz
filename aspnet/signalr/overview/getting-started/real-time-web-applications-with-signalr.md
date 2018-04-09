@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/real-time-web-applications-with-signalr
-title: "Rukou na testovacího prostředí: V reálném čase webových aplikací pomocí nástroje SignalR | Microsoft Docs"
+title: 'Rukou na testovacího prostředí: V reálném čase webových aplikací pomocí nástroje SignalR | Microsoft Docs'
 author: rick-anderson
-description: "V reálném čase webových aplikací funkci možnost nabízet obsah připojeným klientům, jako dochází v reálném čase serverové. Pro vývojáře využívající technologii ASP.NET, ASP..."
+description: V reálném čase webových aplikací funkci možnost nabízet obsah připojeným klientům, jako dochází v reálném čase serverové. Pro vývojáře využívající technologii ASP.NET, ASP...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 22123a9c61e6830f3f9f66a45182e1e923950341
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5a2bc120ded18ad2302fd6c5cde65a5323e86ca8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>Rukou na testovacího prostředí: V reálném čase webových aplikací pomocí nástroje SignalR
 ====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
 [Stažení webové táborech cvičení Kit](http://aka.ms/webcamps-training-kit)
 
@@ -34,7 +34,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > ![Architektura SignalR](real-time-web-applications-with-signalr/_static/image1.png)
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
 
 
 <a id="Overview"></a>
@@ -160,12 +160,12 @@ V této úloze bude do řešení přidat SignalR a odesílání aktualizací na 
 
     *Instalace balíčku SignalR*
 
-    > [!NOTE]
-    > Při instalaci **SignalR** NuGet balíčky verze bodu 2.0.2 z úplně nová aplikace MVC 5, budete muset ručně aktualizovat **OWIN** balíčky verzi 2.0.1 (nebo vyšší) před instalací SignalR. K tomuto účelu můžete spustit následující skript v **Konzola správce balíčků**:
-    > 
-    > [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample2.ps1)]
-    > 
-    > V budoucích vydání systému SignalR bude OWIN závislosti automaticky aktualizován.
+   > [!NOTE]
+   > Při instalaci **SignalR** NuGet balíčky verze bodu 2.0.2 z úplně nová aplikace MVC 5, budete muset ručně aktualizovat **OWIN** balíčky verzi 2.0.1 (nebo vyšší) před instalací SignalR. K tomuto účelu můžete spustit následující skript v **Konzola správce balíčků**:
+   > 
+   > [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample2.ps1)]
+   > 
+   > V budoucích vydání systému SignalR bude OWIN závislosti automaticky aktualizován.
 3. V **Průzkumníku řešení**, rozbalte **skripty** složky a Všimněte si, které funkce SignalR *js* soubory byly přidány k řešení.
 
     ![Odkazuje na SignalR JavaScript](real-time-web-applications-with-signalr/_static/image10.png "odkazuje SignalR JavaScript")
@@ -349,7 +349,7 @@ V této úloze se vytvoří databázi, která bude sloužit jako propojovací ro
     ![Dotazování na stav služby Broker](real-time-web-applications-with-signalr/_static/image25.png "dotazování na stav zprostředkovatele služby.")
 
     *Dotazování na stav zprostředkovatele služby.*
-8. Pokud hodnota **je\_zprostředkovatele\_povoleno** sloupec v databázi je &quot;0&quot;, použijte následující příkaz k jeho povolení. Nahraďte  **&lt;YOUR databáze&gt;**  s názvem jste nastavili při vytváření databáze (např: SignalR).
+8. Pokud hodnota **je\_zprostředkovatele\_povoleno** sloupec v databázi je &quot;0&quot;, použijte následující příkaz k jeho povolení. Nahraďte **&lt;YOUR databáze&gt;** s názvem jste nastavili při vytváření databáze (např: SignalR).
 
     [!code-sql[Main](real-time-web-applications-with-signalr/samples/sample12.sql)]
 
@@ -369,7 +369,7 @@ V této úloze nakonfigurujete **Geek kvízu** pro připojení k systému SQL Se
 
     [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample13.ps1)]
 2. Opakujte předchozí krok, ale tentokrát pro projekt **GeekQuiz2**.
-3. Ke konfiguraci propojovací rozhraní systému SQL Server, otevřete **Startup.cs** soubor **GeekQuiz** projekt a přidejte následující kód do **konfigurace** metoda. Nahraďte  **&lt;YOUR databáze&gt;**  názvem vaší databáze, můžete použít při vytváření propojovací rozhraní systému SQL Server. Opakujte tento krok pro **GeekQuiz2** projektu.
+3. Ke konfiguraci propojovací rozhraní systému SQL Server, otevřete **Startup.cs** soubor **GeekQuiz** projekt a přidejte následující kód do **konfigurace** metoda. Nahraďte **&lt;YOUR databáze&gt;** názvem vaší databáze, můžete použít při vytváření propojovací rozhraní systému SQL Server. Opakujte tento krok pro **GeekQuiz2** projektu.
 
     (Code fragment kódu - *RealTimeSignalR - Ex2 - StartupConfiguration*)
 

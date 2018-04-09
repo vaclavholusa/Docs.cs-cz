@@ -1,7 +1,7 @@
 ---
-title: "Ověření na základě deklarace identity"
+title: Na základě deklarace autorizace v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument vysvětluje, jak přidat kontroluje deklarací autorizace v aplikaci ASP.NET Core."
+description: Informace o postupu přidání deklarace identity kontroluje autorizace v aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: 608aaa469c5ca20fab8250025804e28e7808122d
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: da308b67be046395bb1baa0f272e767cccbc99c8
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="claims-based-authorization"></a>Ověření na základě deklarace identity
+# <a name="claims-based-authorization-in-aspnet-core"></a>Na základě deklarace autorizace v ASP.NET Core
 
 <a name="security-authorization-claims-based"></a>
 
@@ -122,4 +122,4 @@ public class SalaryController : Controller
 
 V předchozím příkladu všechny identity, které splní `EmployeeOnly` přístup zásad `Payslip` akci, jako tyto zásady se vynucuje na řadiči. Ale k volání `UpdateSalary` akce musíte splnit identitu *i* `EmployeeOnly` zásad a `HumanResources` zásad.
 
-Pokud chcete složitější zásady, jako je například trvá datum narození deklarace identity, Výpočet stáří z něho pak kontrola stáří je 21 nebo starší, pak budete muset napsat [obslužné rutiny vlastní zásady](policies.md).
+Pokud chcete složitější zásady, jako je například trvá datum narození deklarace identity, Výpočet stáří z něho pak kontrola stáří je 21 nebo starší, pak budete muset napsat [obslužné rutiny vlastní zásady](xref:security/authorization/policies).

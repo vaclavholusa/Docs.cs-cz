@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
-title: "Distribuované ukládání do mezipaměti (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs"
+title: Distribuované ukládání do mezipaměti (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
 author: MikeWasson
-description: "Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu..."
+description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/20/2015
 ms.topic: article
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 24ede9cb9289c84140f6e2573f9d526f19cac64b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3600200f9bb705ccf66c859547668bdf8e89d97a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>Distribuované ukládání do mezipaměti (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -111,6 +111,6 @@ Ukázka kódu
 
 - [Základy služby ve službě Azure Cloud](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ukázkovou aplikaci, která implementuje distribuované ukládání do mezipaměti. Naleznete v příspěvku blogu doprovodné [cloudové služby základy – základní informace o ukládání do mezipaměti](https://blogs.msdn.com/b/windowsazure/archive/2013/10/03/cloud-service-fundamentals-caching-basics.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](transient-fault-handling.md)
-[další](queue-centric-work-pattern.md)
+> [!div class="step-by-step"]
+> [Předchozí](transient-fault-handling.md)
+> [další](queue-centric-work-pattern.md)

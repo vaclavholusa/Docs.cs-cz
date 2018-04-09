@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
-title: "Hostitel rozhraní ASP.NET Web API 2 roli pracovního procesu Azure | Microsoft Docs"
+title: Hostitel rozhraní ASP.NET Web API 2 roli pracovního procesu Azure | Microsoft Docs
 author: MikeWasson
-description: "Tento kurz ukazuje, jak k hostování role pracovního procesu Azure, rozhraní ASP.NET Web API pomocí k hostování na vlastním rozhraní Web API OWIN. Otevřít Web Interface pro .NET (OWIN) de..."
+description: Tento kurz ukazuje, jak k hostování role pracovního procesu Azure, rozhraní ASP.NET Web API pomocí k hostování na vlastním rozhraní Web API OWIN. Otevřít Web Interface pro .NET (OWIN) de...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/02/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 9a7f8242bf482e81513accfe05e10a64ae0ca0b2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7ba1dc850e2f9d9c88e6ddf263a796e1867a98be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>Hostitel rozhraní ASP.NET Web API 2 roli pracovního procesu systému Azure
 ====================
@@ -131,7 +131,7 @@ Emulátoru služby výpočty v přiřadí místní IP adresu ke koncovému bodu.
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image11.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image10.png)
 
-Najít IP adresu v rámci nasazení služby, nasazení [id] podrobnosti ze služby. Otevřete webový prohlížeč a přejděte na http://*adresu*/testovací/1, kde *adresu* je IP adresa přiřadila emulátoru služby výpočty v; například `http://127.0.0.1:80/test/1`. Měli byste vidět odpovědi z kontroleru webového rozhraní API:
+Najít IP adresu v rámci nasazení služby, nasazení [id] podrobnosti ze služby. Otevřete webový prohlížeč a přejděte na http://<em>adresu</em>/testovací/1, kde <em>adresu</em> je IP adresa přiřadila emulátoru služby výpočty v; například `http://127.0.0.1:80/test/1`. Měli byste vidět odpovědi z kontroleru webového rozhraní API:
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image12.png)
 
@@ -159,7 +159,7 @@ Klikněte na tlačítko **publikování**.
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image20.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image19.png)
 
-Okno Protokol činnosti Azure zobrazuje průběh nasazení. Při nasazení aplikace, přejděte na http://appname.cloudapp.net/test/1.
+Okno Protokol činnosti Azure zobrazuje průběh nasazení. Při nasazení aplikace, přejděte do http://appname.cloudapp.net/test/1.
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image21.png)
 

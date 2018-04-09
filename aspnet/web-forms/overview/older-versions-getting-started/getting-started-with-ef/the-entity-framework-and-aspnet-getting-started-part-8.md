@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
-title: "Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 8 | Microsoft Docs"
+title: Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 8 | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 323ee44f43f6d4081bd9ba50791755696bc9128f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 035cce022d1b3697b825a96487529dbc9675d90e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>Začínáme s databáze Entity Framework 4.0 nejprve a 4 webových formulářů ASP.NET - část 8
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 > Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET pomocí sady Visual Studio 2010 a Entity Framework 4.0. Informace o kurzu řady najdete v tématu [první kurz v řadě](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
@@ -101,7 +101,7 @@ Tento kód vytvoří pro konkrétní třídu `Student` entity. `MetadataType` Po
 
 Atributy použité na vlastnosti ve třídě metadat zadejte formátování, ověření, pravidla a chybové zprávy. Atributy zobrazeny zde bude mít následující výsledky:
 
-- `EnrollmentDate`Zobrazí datum (bez čas).
+- `EnrollmentDate` Zobrazí datum (bez čas).
 - Obě název pole musí být 25 znaků nebo méně v délku a vlastní chybové zprávy je k dispozici.
 - Jsou požadovány obě pole název a vlastní chybové zprávy je k dispozici.
 
@@ -132,5 +132,5 @@ Tím končí tato série kurzů na Začínáme s platformou Entity Framework. Da
 - [Fóra Entity Framework na webu MSDN](https://social.msdn.microsoft.com/forums/adodotnetentityframework/)
 - [Blog Julie Lerman](http://thedatafarm.com/blog/)
 
->[!div class="step-by-step"]
-[Předchozí](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [!div class="step-by-step"]
+> [Předchozí](the-entity-framework-and-aspnet-getting-started-part-7.md)

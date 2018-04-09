@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-vb
-title: "Vytváření rozložení stránek s zobrazit stránky předlohy (VB) | Microsoft Docs"
+title: Vytváření rozložení stránek s zobrazit stránky předlohy (VB) | Microsoft Docs
 author: microsoft
-description: "V tomto kurzu zjistěte, jak vytvořit běžné rozložení stránky pro více stránek v aplikaci a využívají k zobrazení stránky předlohy. Můžete použít..."
+description: V tomto kurzu zjistěte, jak vytvořit běžné rozložení stránky pro více stránek v aplikaci a využívají k zobrazení stránky předlohy. Můžete použít...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5466ea8a33bd2ccfe36c0f01b6b474bbb8d540a3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5208cedd8d24a290a0227bdcbaa84ae6210cd969
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-page-layouts-with-view-master-pages-vb"></a>Vytváření rozložení stránek s zobrazit stránky předlohy (VB)
 ====================
@@ -51,7 +51,7 @@ Hlavní stránka zobrazení vypadá hodně podobá standardní zobrazení ASP.NE
 
 Například stránky předlohy zobrazení v výpis 1 definuje rozložení dvou sloupců. Obsahuje dva `<contentplaceholder>` značky. Jeden `<ContentPlaceHolder>` pro každý sloupec.
 
-**Výpis 1 –`Views\Shared\Site.master`**
+**Výpis 1 – `Views\Shared\Site.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample1.aspx)]
 
@@ -83,7 +83,7 @@ Po kliknutí na tlačítko Přidat dialogové okno Nový zobrazí umožňující
 
 Po vytvoření nové stránky obsahu zobrazení v závislosti na hlavní stránce Site.master, můžete si stáhnout soubor v výpis 2.
 
-**Výpis 2 –`Views\Home\Index.aspx`**
+**Výpis 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample2.aspx)]
 
@@ -97,7 +97,7 @@ Nemusíte přepsání každé `<asp:ContentPlaceHolder>` značky ze stránky př
 
 Například upravené zobrazení indexu v výpis 3 obsahuje pouze dva `<asp:Content>` značky. Každý z `<asp:Content>` značky zahrnuje nějaký text.
 
-**Výpis 3 –`Views\Home\Index.aspx (modified)`**
+**Výpis 3 – `Views\Home\Index.aspx (modified)`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample3.aspx)]
 
@@ -127,7 +127,7 @@ Neexistuje jeden důležité požadavek, který v pořadí pro atribut title fun
 
 Alternativní způsob úpravy obsahu stránky předlohy ze stránky obsahu jednotlivých zobrazení je zabalit oblast, kterou chcete upravit v `<asp:ContentPlaceHolder>` značky. Představte si například, že chcete změnit pouze název, ale také značky meta pro vykreslení zobrazení stránky předlohy. Tato stránka předlohy výpis 4 obsahuje `<asp:ContentPlaceHolder>` označit jeho `<head>` značky.
 
-**Výpis 4 –`Views\Shared\Site2.master`**
+**Výpis 4 – `Views\Shared\Site2.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample5.aspx)]
 
@@ -135,7 +135,7 @@ Všimněte si, že `<asp:ContentPlaceHolder>` značku výpis 4 obsahuje výchoz�
 
 Stránka zobrazení obsahu v výpis 5 přepíše `<asp:ContentPlaceHolder>` značky, aby bylo možné zobrazit vlastní název a vlastní značky meta.
 
-**Výpis 5 –`Views\Home\Index2.aspx`**
+**Výpis 5 – `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample6.aspx)]
 
@@ -143,6 +143,6 @@ Stránka zobrazení obsahu v výpis 5 přepíše `<asp:ContentPlaceHolder>` zna�
 
 V tomto kurzu poskytl základní informace o zobrazit stránky předlohy a stránky obsahu. Jste zjistili, jak vytvořit nové zobrazení hlavní stránky a vytvářet zobrazení obsahu stránky na jejich základě. Rovněž zkoumány, jak je možné upravit obsah zobrazení stránky předlohy z konkrétní zobrazení obsahu stránky.
 
->[!div class="step-by-step"]
-[Předchozí](using-the-tagbuilder-class-to-build-html-helpers-vb.md)
-[další](passing-data-to-view-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-the-tagbuilder-class-to-build-html-helpers-vb.md)
+> [další](passing-data-to-view-master-pages-vb.md)

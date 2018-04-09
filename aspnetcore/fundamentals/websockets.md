@@ -1,7 +1,7 @@
 ---
 title: Podpora pro objekty WebSockets v ASP.NET Core
 author: tdykstra
-description: "Zjistěte, jak začít pracovat s objekty WebSockets v ASP.NET Core."
+description: Zjistěte, jak začít pracovat s objekty WebSockets v ASP.NET Core.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/websockets
-ms.openlocfilehash: c6ad2ea249bf837ce86685b67e6460e433692849
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: e744ab5b81ff85f48edb012a86b55003cc74929c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="introduction-to-websockets-in-aspnet-core"></a>Úvod do technologie WebSockets v ASP.NET Core
+# <a name="websockets-support-in-aspnet-core"></a>Podpora pro objekty WebSockets v ASP.NET Core
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Andrew Stanton-Nurse](https://github.com/anurse)
 
@@ -43,7 +43,7 @@ Tento článek vysvětluje, jak začít pracovat s objekty WebSockets v ASP.NET 
 
   * Windows 8 nebo Windows Server 2012 nebo novější
 
-* Podporované prohlížeče najdete v části https://caniuse.com/#feat=websockets.
+* Podporované prohlížeče, najdete v části https://caniuse.com/#feat=websockets.
 
 ## <a name="when-to-use-websockets"></a>Kdy použít objekty WebSockets
 

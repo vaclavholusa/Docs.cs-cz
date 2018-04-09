@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
-title: "Ruční instalaci webových balíčků | Microsoft Docs"
+title: Ruční instalaci webových balíčků | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak k ručnímu importu balíčku pro nasazení webu v Internetové informační služby (IIS). Vytváření tématu a balení webové aplikace..."
+description: Toto téma popisuje, jak k ručnímu importu balíčku pro nasazení webu v Internetové informační služby (IIS). Vytváření tématu a balení webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: e06d37c01ab66f0723b687f4ed1ee72561099aef
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4a28ea92b22e4928e41a39a8a91b62bfa4f08175
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="manually-installing-web-packages"></a>Ruční instalaci webových balíčků
 ====================
@@ -30,10 +30,10 @@ podle [Jason Lee](https://github.com/jrjlee)
 > 
 > Po vytvoření balíčku pro nasazení webu, můžete ho publikovat na server služby IIS různými způsoby. V celá řada možných scénářů budete chtít využívat výhod body integrace mezi MSBuild, WPP a nasazení webu k vytvoření a vzdáleně instalovat webových balíčků v rámci procesu automatické nebo krokování sestavení a nasazení. Tento proces je popsán v [nasazení webových balíčků](deploying-web-packages.md). Ale tato akce není vždy možné. Předpokládejme, že chcete nasadit webovou aplikaci pro produkční prostředí internetového. Z bezpečnostních důvodů provozním prostředí je na velmi alespoň pravděpodobně být za bránou firewall v podsíti, která je oddělená od serveru sestavení v hraniční síti (označované také jako DMZ, demilitarizovaná zóna a monitorovaná podsíť). V mnoha případech bude produkčním prostředí na samostatné doméně nebo fyzicky izolované sítě.
 > 
-> V těchto scénářích může být jedinou možností k portu webového balíčku na cílový server a ji manuálně naimportovat do služby IIS. I když tento přístup vylučuje automatického nasazení, je stále vysoce efektivní technika pro publikování webové aplikace & #x 2014; jednoduše zkopírovat soubor zip jeden webový server a pomocí Průvodce vás provede procesu importu.
+> V těchto scénářích může být jedinou možností k portu webového balíčku na cílový server a ji manuálně naimportovat do služby IIS. I když tento přístup vylučuje automatického nasazení, je stále vysoce efektivní technika pro publikování webové aplikace&#x2014;jednoduše zkopírovat soubor zip jeden webový server a pomocí Průvodce vás provede procesu importu.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
 ## <a name="task-overview"></a>Přehled úloh
 
@@ -133,5 +133,5 @@ Toto téma popisuje postup importování balíčku pro nasazení webu na webu II
 
 Pokyny o tom, jak nakonfigurovat webový server služby IIS pro podporu Ruční import balíčku webu najdete v tématu [konfigurace webového serveru pro nasazení publikování na webu (Offline nasazení)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md). Další obecné pokyny pro nasazení webových balíčků najdete v tématu [návod: nasazení webové aplikace projektu pomocí balíčku pro nasazení webu (část 1 / 4)](https://msdn.microsoft.com/library/dd483479.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](creating-and-running-a-deployment-command-file.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-and-running-a-deployment-command-file.md)

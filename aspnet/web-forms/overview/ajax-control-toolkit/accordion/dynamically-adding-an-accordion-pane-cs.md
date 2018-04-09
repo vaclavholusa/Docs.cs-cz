@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-cs
-title: "Dynamické přidávání podokně aplikace Accordion (C#) | Microsoft Docs"
+title: Dynamické přidávání podokně aplikace Accordion (C#) | Microsoft Docs
 author: wenz
-description: "Ovládacího prvku typu Accordion prvku Toolkitu AJAX poskytuje více podokna a umožňuje uživatelům zobrazit jeden z nich vždy. Panely jsou obvykle deklarovány w..."
+description: Ovládacího prvku typu Accordion prvku Toolkitu AJAX poskytuje více podokna a umožňuje uživatelům zobrazit jeden z nich vždy. Panely jsou obvykle deklarovány w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1c6af79186ca21082647beec500c47974a47c35a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad2fc6ea3d527215c0226f3f594d781163d538b5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-adding-an-accordion-pane-c"></a>Dynamické přidávání podokně aplikace Accordion (C#)
 ====================
@@ -62,6 +62,6 @@ Dokončete příklad dvou tříd CSS, kterou se odkazuje v ovládacím prvku typ
 
 Data v prvku typu accordion, byl přidán dynamicky kódu na straně serveru ([Kliknutím zobrazit obrázek v plné velikosti](dynamically-adding-an-accordion-pane-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](databinding-to-an-accordion-cs.md)
-[další](databinding-to-an-accordion-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](databinding-to-an-accordion-cs.md)
+> [další](databinding-to-an-accordion-vb.md)

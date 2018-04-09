@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
-title: "Vytvoření třídy modelu pomocí technologie LINQ to SQL (C#) | Microsoft Docs"
+title: Vytvoření třídy modelu pomocí technologie LINQ to SQL (C#) | Microsoft Docs
 author: microsoft
-description: "Cílem tohoto kurzu je vysvětlit, jednu z metod vytváření tříd modelu pro aplikace ASP.NET MVC. V tomto kurzu zjistíte, jak vytvářet c modelu..."
+description: Cílem tohoto kurzu je vysvětlit, jednu z metod vytváření tříd modelu pro aplikace ASP.NET MVC. V tomto kurzu zjistíte, jak vytvářet c modelu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c640007a75f2421e0f6c1e86e525de4834bbc8e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1f30ff6c97e565059c57c55f26d2dff477774aeb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-model-classes-with-linq-to-sql-c"></a>Vytvoření třídy modelu pomocí technologie LINQ to SQL (C#)
 ====================
@@ -109,7 +109,7 @@ Teď, když máme naše třídy LINQ to SQL, jsme můžete použít tyto třídy
 
 Nejprve musíme upravit HomeController třídy. Tato třída naleznete ve složce řadiče vaší aplikace. Upravte třídy, takže to vypadá třídy ve výpisu 1.
 
-**Výpis 1 –`Controllers\HomeController.cs`**
+**Výpis 1 – `Controllers\HomeController.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample1.cs)]
 
@@ -119,7 +119,7 @@ Dotaz LINQ je adresovat DataContext načíst všechny filmy z `tblMovies` datab�
 
 Chcete-li zobrazit filmy, že potřebujeme další ke změně zobrazení indexu. Můžete najít v zobrazení indexu `Views\Home\` složky. Aktualizace zobrazení Index, aby vypadal podobně jako zobrazení v výpis 2.
 
-**Výpis 2 –`Views\Home\Index.aspx`**
+**Výpis 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample2.aspx)]
 
@@ -161,19 +161,19 @@ Když vytvoříte třídu úložiště, můžete vytvořit rozhraní, které př
 
 Název rozhraní v výpis 3 `IMovieRepository` a představuje jednu metodu s názvem `ListAll()`.
 
-**Výpis 3 –`Models\IMovieRepository.cs`**
+**Výpis 3 – `Models\IMovieRepository.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample3.cs)]
 
 Implementuje třídu úložiště v výpis 4 `IMovieRepository` rozhraní. Všimněte si, že obsahuje metodu s názvem `ListAll()` odpovídající metodu vyžaduje `IMovieRepository` rozhraní.
 
-**Výpis 4 –`Models\MovieRepository.cs`**
+**Výpis 4 – `Models\MovieRepository.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample4.cs)]
 
 Nakonec `MoviesController` třídy v výpis 5 využívá schéma úložiště. Už používá LINQ na SQL třídy přímo.
 
-**Výpis 5 –`Controllers\MoviesController.cs`**
+**Výpis 5 – `Controllers\MoviesController.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample5.cs)]
 
@@ -183,7 +183,7 @@ Druhý konstruktor má jeden parametr: `IMovieRepository` parametr. Tento konstr
 
 `MoviesController` Třída je využívat výhod softwaru návrhový vzor, který volá vzoru vkládání závislostí. Konkrétně je používá takzvaný konstruktor vkládání závislostí. Další informace o tomto vzoru načtením v následujícím článku podle Martin Fowler:
 
-[http://martinfowler.com/articles/Injection.HTML](http://martinfowler.com/articles/injection.html)
+[http://martinfowler.com/articles/injection.html](http://martinfowler.com/articles/injection.html)
 
 Všimněte si, že všechny kód `MoviesController` – třída (s výjimkou prvního konstruktor) komunikuje s `IMovieRepository` rozhraní místo skutečnou `MovieRepository` – třída. Kód spolupracuje s abstraktní rozhraní místo konkrétní implementaci rozhraní.
 
@@ -197,6 +197,6 @@ Cílem tohoto kurzu bylo ukazují, jak můžete vytvořit třídy modelu MVC a v
 
 V dalším kroku jsme prozkoumali mírně obtížnější, ale výborný více virtuous cestu pro zobrazení dat databáze. Jsme trvalo výhod použitému vzoru a umístit všechny databáze access logiku do třídy samostatné úložiště. V našem řadiče jsme psali všechny naše kódu proti rozhraní místo konkrétní třídy. Výhodou vzoru úložiště je, že umožňuje nám snadno v budoucnu změnit technologie pro přístup k databázi a umožňuje nám snadno testovatelné naše třídy kontroleru.
 
->[!div class="step-by-step"]
-[Předchozí](creating-model-classes-with-the-entity-framework-cs.md)
-[další](displaying-a-table-of-database-data-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-model-classes-with-the-entity-framework-cs.md)
+> [další](displaying-a-table-of-database-data-cs.md)

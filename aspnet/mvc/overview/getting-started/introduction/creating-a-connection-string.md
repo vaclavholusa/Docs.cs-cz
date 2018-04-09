@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/creating-a-connection-string
-title: "Vytvoření připojovacího řetězce a práci s SQL serveru LocalDB | Microsoft Docs"
+title: Vytvoření připojovacího řetězce a práci s SQL serveru LocalDB | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/creating-a-connection-string
 msc.type: authoredcontent
-ms.openlocfilehash: 25d1c1c9954baaca9ef91eff3dd3c853930a5893
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: edbd46ef8a03670f0cb7527142babe9bd5846c7a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>Vytvoření připojovacího řetězce a práci s LocalDB serveru SQL
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 ## <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>Vytvoření připojovacího řetězce a práci s LocalDB serveru SQL
 
@@ -64,6 +64,6 @@ Chcete-li přidat nepotřebujete ve skutečnosti `MovieDBContext` připojovací 
 
 Dále budete vytvářet nové `MoviesController` třídu, která můžete použít k zobrazení dat film a povolit uživatelům vytvářet nové výpisy film.
 
->[!div class="step-by-step"]
-[Předchozí](adding-a-model.md)
-[další](accessing-your-models-data-from-a-controller.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-a-model.md)
+> [další](accessing-your-models-data-from-a-controller.md)

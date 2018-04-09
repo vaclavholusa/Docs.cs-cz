@@ -1,7 +1,7 @@
 ---
-title: "Testování řadiče logiku v ASP.NET Core"
+title: Testování řadiče logiku v ASP.NET Core
 author: ardalis
-description: "Zjistěte, jak otestovat řadiče logiku v ASP.NET Core s Moq a xUnit."
+description: Zjistěte, jak otestovat řadiče logiku v ASP.NET Core s Moq a xUnit.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/testing
-ms.openlocfilehash: c72a5adc848cad62c7c20ff7e17469476aefaf53
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: b80f92b815439796693528b314b521c1484ba661
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="testing-controller-logic-in-aspnet-core"></a>Testování řadiče logiku v ASP.NET Core
+# <a name="test-controller-logic-in-aspnet-core"></a>Testování řadiče logiku v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/)
 
@@ -38,9 +38,9 @@ Typické řadiče zodpovědnosti:
 * Uložte obchodní entity do trvalost.
 * Vrátí odpovídající `IActionResult`.
 
-## <a name="unit-testing"></a>Testování částí
+## <a name="unit-testing"></a>Testování jednotek
 
-[Testování částí](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) zahrnuje testování součástí aplikace izolovaně od jeho infrastruktury a závislosti. Při testování řadiče logiku, obsah jenom jednu akci testování částí, není chování jeho závislé součásti nebo rozhraní sám sebe. Jako jednotku můžete otestovat vaše akce kontroleru, ujistěte se, že byste se zaměřit jenom na své chování. Testování částí řadiče zabraňuje třeba [filtry](filters.md), [směrování](../../fundamentals/routing.md), nebo [model vazby](../models/model-binding.md). Se zaměříte na testování právě jednou z věcí, testy jednotek jsou obecně jednoduché k zápisu a rychlé spuštění. Kvalitně sadu testů jednotek se může spouštět často bez mnoho zásahů. Testy jednotek však není rozpoznat problémy v interakci mezi součástmi, což je účelem [testování integrace](xref:mvc/controllers/testing#integration-testing).
+[Testování částí](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) zahrnuje testování součástí aplikace izolovaně od jeho infrastruktury a závislosti. Při testování řadiče logiku, obsah jenom jednu akci testování částí, není chování jeho závislé součásti nebo rozhraní sám sebe. Jako jednotku můžete otestovat vaše akce kontroleru, ujistěte se, že byste se zaměřit jenom na své chování. Testování částí řadiče zabraňuje třeba [filtry](filters.md), [směrování](../../fundamentals/routing.md), nebo [model vazby](../models/model-binding.md). Se zaměříte na testování právě jednou z věcí, testy jednotek jsou obecně jednoduché k zápisu a rychlé spuštění. Kvalitně sadu testů jednotek se může spouštět často bez mnoho zásahů. Testy jednotek však není rozpoznat problémy v interakci mezi součástmi, což je účelem [integrace testy](xref:mvc/controllers/testing#integration-testing).
 
 Pokud píšete vlastní filtry, tras atd., měli byste testování částí je, ale nikoli jako součást testy na určitý kontroler akce. Musí být testovány v izolaci.
 
@@ -100,7 +100,7 @@ Poslední test ověřuje, že v úložišti `Update` metoda je volána. Jako jsm
 
 ## <a name="integration-testing"></a>Testování integrace
 
-[Testování integrace](../../testing/integration-testing.md) slouží k zajištění samostatné moduly v práci aplikace správně společně. Obecně platí nic, co můžete otestovat s testů jednotek, můžete také otestovat s test integrace, ale naopak není pravda. Ale integrace testů jsou obvykle mnohem nižší než testování částí. Proto je nejvhodnější pro testování ať můžete pomocí jednotkových testů a použít integrace testy pro scénáře, které zahrnují více spolupracovníci.
+[Integrace testy](../../testing/integration-testing.md) slouží k zajištění samostatné moduly v práci aplikace správně společně. Obecně platí nic, co můžete otestovat s testů jednotek, můžete také otestovat s test integrace, ale naopak není pravda. Ale integrace testů jsou obvykle mnohem nižší než testování částí. Proto je nejvhodnější pro testování ať můžete pomocí jednotkových testů a použít integrace testy pro scénáře, které zahrnují více spolupracovníci.
 
 I když může být stále užitečné, se v testech integrace zřídka používají mock objektů. V jednotce testování jsou mock objektů efektivní způsob, jak řídit chování spolupracovníci mimo jednotky během testování pro testovací účely. V test integrace skutečné spolupracovníci používají a ověřte, zda že celý subsystému společně správně funguje.
 

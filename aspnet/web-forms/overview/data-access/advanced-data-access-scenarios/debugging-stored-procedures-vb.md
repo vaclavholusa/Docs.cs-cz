@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
-title: "Ladění uložené procedury (VB) | Microsoft Docs"
+title: Ladění uložené procedury (VB) | Microsoft Docs
 author: rick-anderson
-description: "Edice Visual Studio Professional a Team System umožňují nastavit zarážky a krok v k uloženým procedurám v systému SQL Server, vytváření, ladění, uložené..."
+description: Edice Visual Studio Professional a Team System umožňují nastavit zarážky a krok v k uloženým procedurám v systému SQL Server, vytváření, ladění, uložené...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ad09847d828d02019a72e3022d035a8fbe921568
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3391a78eaeb0add46e75048069a614ba00628f67
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="debugging-stored-procedures-vb"></a>Ladění uložené procedury (VB)
 ====================
@@ -167,7 +167,7 @@ Prvním krokem je poměrně jednoduché. Nejprve určete uživatelský účet po
 
 V druhé úloze vyžaduje, aby uživatelský účet systému Windows, které používáte k ladění aplikace platného přihlášení na vzdálené databáze. Ale pravděpodobné, že účet systému Windows, které přihlášení do pracovní stanice s není platného přihlášení na serveru SQL Server. Místo přidávání účtu konkrétní přihlášení k systému SQL Server, může být vhodnější určit některé uživatelský účet systému Windows jako ladění účet systému SQL Server. K ladění databázové objekty vzdálené instance systému SQL Server, potom by spusťte Visual Studio pomocí pověření účtu s přihlášení tohoto systému Windows.
 
-Příklad by měly pomoci vysvětlení věcí. Představte si, že je účet systému Windows s názvem `SQLDebug` v doméně systému Windows. Tento účet by bylo potřeba přidat do vzdálené instance systému SQL Server jako platné přihlašovací údaje a jako člena `sysadmin` role. Potom k ladění vzdálené instance systému SQL Server ze sady Visual Studio, by potřebujeme spuštění sady Visual Studio, jako `SQLDebug` uživatele. To může provést protokolování z našich pracovní stanice, přihlaste se zpět jako `SQLDebug`, a opětovném spuštění sady Visual Studio, ale jednodušší by mohla být přihlášení k naší pracovní stanice pomocí vlastních přihlašovacích údajů a pak použijte `runas.exe` ke spuštění sady Visual Studio jako `SQLDebug` uživatele. `runas.exe`Umožňuje provést v rámci guise z jiného uživatelského účtu konkrétní aplikace. Spusťte Visual Studio jako `SQLDebug`, můžete zadat následující příkaz na příkazovém řádku:
+Příklad by měly pomoci vysvětlení věcí. Představte si, že je účet systému Windows s názvem `SQLDebug` v doméně systému Windows. Tento účet by bylo potřeba přidat do vzdálené instance systému SQL Server jako platné přihlašovací údaje a jako člena `sysadmin` role. Potom k ladění vzdálené instance systému SQL Server ze sady Visual Studio, by potřebujeme spuštění sady Visual Studio, jako `SQLDebug` uživatele. To může provést protokolování z našich pracovní stanice, přihlaste se zpět jako `SQLDebug`, a opětovném spuštění sady Visual Studio, ale jednodušší by mohla být přihlášení k naší pracovní stanice pomocí vlastních přihlašovacích údajů a pak použijte `runas.exe` ke spuštění sady Visual Studio jako `SQLDebug` uživatele. `runas.exe` Umožňuje provést v rámci guise z jiného uživatelského účtu konkrétní aplikace. Spusťte Visual Studio jako `SQLDebug`, můžete zadat následující příkaz na příkazovém řádku:
 
 
 [!code-console[Main](debugging-stored-procedures-vb/samples/sample2.cmd)]
@@ -190,8 +190,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](protecting-connection-strings-and-other-configuration-information-vb.md)
-[další](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](protecting-connection-strings-and-other-configuration-information-vb.md)
+> [další](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb.md)

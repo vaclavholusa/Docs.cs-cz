@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
-title: "Konfigurace serveru Team Foundation Server pro nasazení webu | Microsoft Docs"
+title: Konfigurace serveru Team Foundation Server pro nasazení webu | Microsoft Docs
 author: jrjlee
-description: "Tento kurz vám ukáže, jak nakonfigurovat Team Foundation Server (TFS) 2010 sestavení řešení a nasazení webového obsahu na různé cílové prostředí. To..."
+description: Tento kurz vám ukáže, jak nakonfigurovat Team Foundation Server (TFS) 2010 sestavení řešení a nasazení webového obsahu na různé cílové prostředí. To...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 72f60841a1381380c0ea6167077420f960180dc7
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c4cfac333c9400d9ee613ba88520b0b0439873f5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-team-foundation-server-for-web-deployment"></a>Konfigurace serveru Team Foundation Server pro nasazení webu
 ====================
@@ -39,9 +39,9 @@ Tento kurz předpokládá, že máte nainstalované sady TFS 2010 a vytvořit ko
 
 ## <a name="context"></a>Kontext
 
-To je součástí ze série kurzů v závislosti na požadavcích nasazení enterprise fiktivní společnosti s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) řešení & #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+To je součástí ze série kurzů v závislosti na požadavcích nasazení enterprise fiktivní společnosti s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) řešení&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="scenario-overview"></a>Přehled scénáře
 
@@ -77,5 +77,5 @@ To je součástí ze série kurzů pět v podnikovém měřítku nasazení webu.
 - [Konfigurace serveru prostředí pro nasazení webu](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). Tento kurz popisuje postup konfigurace serverů Windows na podporu různých scénářů nasazení, včetně nasazení balíčku vzdáleném webovém pomocí agenta služba pro nasazení webu (vzdáleného agenta) nebo obslužné rutiny nasazení webu a nasazení vzdálené databáze. Na výběr metody nasazení pro vaše vlastní prostředí obsahuje pokyny a popisuje, jak použít k replikaci nasazených webových aplikací ve všech webových serverech ve farmě serverů webové farmy Framework (WFF).
 - [Pokročilé nasazení webu Enterprise](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Tento kurz popisuje, jak k provádění různých dalších pokročilých úloh nasazení, jako vlastní nastavení nasazení databáze pro prostředí s více, vyloučení souborů a složek z nasazení a přepnutím do režimu offline webové aplikace během procesu nasazení .
 
->[!div class="step-by-step"]
-[Next](creating-a-team-project-in-tfs.md)
+> [!div class="step-by-step"]
+> [Next](creating-a-team-project-in-tfs.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
-title: "Ochrana připojovací řetězce a další informace o konfiguraci (C#) | Microsoft Docs"
+title: Ochrana připojovací řetězce a další informace o konfiguraci (C#) | Microsoft Docs
 author: rick-anderson
-description: "Informace o konfiguraci aplikace ASP.NET obvykle ukládá v souboru Web.config. Některé z těchto informací velká a malá písmena a vyžaduje ochrany. Podle def...."
+description: Informace o konfiguraci aplikace ASP.NET obvykle ukládá v souboru Web.config. Některé z těchto informací velká a malá písmena a vyžaduje ochrany. Podle def....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e3782e3d4acc2db0e744128dad64fdfae1e8766d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 20a18a36cb5d1621b0b718f87c05eb3175110143
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-c"></a>Ochrana připojovací řetězce a další informace o konfiguraci (C#)
 ====================
@@ -60,8 +60,8 @@ Technologie ASP.NET 2.0 obsahuje chráněné konfigurace systému pro šifrován
 
 Rozhraní .NET Framework se dodává s dva poskytovatelé chráněné konfigurace:
 
-- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-používá asymetrický [algoritmu RSA](http://en.wikipedia.org/wiki/Rsa) pro šifrování a dešifrování.
-- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx)-používá Windows [Data Protection API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) pro šifrování a dešifrování.
+- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx) -používá asymetrický [algoritmu RSA](http://en.wikipedia.org/wiki/Rsa) pro šifrování a dešifrování.
+- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx) -používá Windows [Data Protection API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) pro šifrování a dešifrování.
 
 Vzhledem k tomu, že chráněný konfigurační systém implementuje vzor návrhu poskytovatele, je možné vytvořit vlastního poskytovatele chráněné konfigurace a zapojte jej do vaší aplikace. V tématu [implementace poskytovatele konfigurace chráněné](https://msdn.microsoft.com/library/wfc2t3az(VS.80).aspx) Další informace o tomto procesu.
 
@@ -228,12 +228,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Teresy Murphy a Randy Schmidt. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs.md)
-[další](debugging-stored-procedures-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs.md)
+> [další](debugging-stored-procedures-cs.md)

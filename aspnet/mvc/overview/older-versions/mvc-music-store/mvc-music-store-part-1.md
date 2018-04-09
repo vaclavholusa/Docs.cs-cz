@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
-title: "Část 1: Přehled a soubor -> Nový projekt | Microsoft Docs"
+title: 'Část 1: Přehled a soubor -> Nový projekt | Microsoft Docs'
 author: jongalloway
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 1 obsahuje přehled a soubor -> Nový projekt."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 1 obsahuje přehled a soubor -> Nový projekt.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 1e3373a21c7d1766cfad390a7ba68b1363d8d895
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2082927d18c95563893da199d60347fa15952446
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-1-overview-and-file-new-project"></a>Část 1: Přehled a soubor -> Nový projekt
 ====================
@@ -125,5 +125,5 @@ ASP.NET MVC využívá některé základní zásady vytváření názvů pro ná
 
 Tyto složky jsou zahrnuty i v aplikaci ASP.NET MVC prázdný, protože rozhraní ASP.NET MVC ve výchozím nastavení používá přístup "konvence přes konfigurace" a některé výchozí předpokladů podle konvence pojmenování složek. Pro instanci řadiče vyhledejte zobrazení ve složce zobrazení ve výchozím nastavení bez nutnosti explicitně určovat to ve vašem kódu. Provedením vykrvovacího vpichu s výchozích konvencí snižuje množství kód, který potřebujete k zápisu, a můžete také usnadňují jinými vývojáři pochopit projektu. Vysvětlíme tyto konvence další, jak jsme sestavení aplikace.
 
->[!div class="step-by-step"]
-[Další](mvc-music-store-part-2.md)
+> [!div class="step-by-step"]
+> [Next](mvc-music-store-part-2.md)

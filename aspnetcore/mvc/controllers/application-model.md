@@ -1,7 +1,7 @@
 ---
-title: "Práce s Model v aplikaci ASP.NET Core"
+title: Práce s model v aplikaci ASP.NET Core
 author: ardalis
-description: "Zjistěte, jak číst a manipulace s modelem aplikace změnit chování prvky MVC v ASP.NET Core."
+description: Zjistěte, jak číst a manipulace s modelem aplikace změnit chování prvky MVC v ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 36109a4264eda10e10a7dc071c257f7b4dc8b304
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 9fbf81b382b76c108769204b4003f6e9f1b47d2c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="working-with-the-application-model-in-aspnet-core"></a>Práce s Model v aplikaci ASP.NET Core
+# <a name="work-with-the-application-model-in-aspnet-core"></a>Práce s model v aplikaci ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/)
 
@@ -168,7 +168,7 @@ Tato ukázka platí tato konvence pro tras, které nepoužívají atribut směro
 Jádro ASP.NET MVC používá jinou sadu konvence z technologie ASP.NET Web API 2. Pomocí vlastních názvů, můžete upravit aplikaci ASP.NET MVC základní chování, aby byla konzistentní se u aplikace webového rozhraní API. Microsoft se dodává [WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim/) speciálně pro tento účel.
 
 > [!NOTE]
-> Další informace o [migrace z rozhraní ASP.NET Web API](xref:migration/webapi).
+> Další informace o [migrovat z rozhraní ASP.NET Web API](xref:migration/webapi).
 
 Pokud chcete použít Shimu Web API kompatibility, budete muset do projektu přidejte balíček a pak přidejte se názvů do MVC voláním `AddWebApiConventions` v `Startup`:
 

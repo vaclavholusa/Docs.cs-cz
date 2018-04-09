@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb
-title: "Sbalení a rozšiřování panely z jazyka JavaScript (VB) | Microsoft Docs"
+title: Sbalení a rozšiřování panely z jazyka JavaScript (VB) | Microsoft Docs
 author: wenz
-description: "CollapsiblePanel ovládacího prvku ASP.NET AJAX Control Toolkit rozšiřuje panelu a poskytuje schopnost Sbalit obsah a rozbalte ho..."
+description: CollapsiblePanel ovládacího prvku ASP.NET AJAX Control Toolkit rozšiřuje panelu a poskytuje schopnost Sbalit obsah a rozbalte ho...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6adca6771042cad71139977496f985cb8dac63aa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5cf61cd0d8204a5405ba62cd3884d66ccb21968b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="collapsing-and-expanding-a-panel-from-javascript-vb"></a>Sbalení a rozšiřování panely z jazyka JavaScript (VB)
 ====================
@@ -53,7 +53,7 @@ Bohužel rozšiřujícího objektu aktuálně nevystavuje konkrétní rozhraní 
 
 [!code-aspx[Main](collapsing-and-expanding-a-panel-from-javascript-vb/samples/sample5.aspx)]
 
-V kódu jazyka JavaScript na straně klienta (práce s `<script type="text/javascript">`), `$find()` metoda se musí použít pro přístup k `CollapsiblePanelExtender`. `$find("cpe")`Vrátí odkaz na něj. Odtud na konkrétní metody vyřeší na prováděné úloze.
+V kódu jazyka JavaScript na straně klienta (práce s `<script type="text/javascript">`), `$find()` metoda se musí použít pro přístup k `CollapsiblePanelExtender`. `$find("cpe")` Vrátí odkaz na něj. Odtud na konkrétní metody vyřeší na prováděné úloze.
 
 Metoda pro otevření (rozšíření) se nazývá panelu `_doOpen()`; následující kód implementuje `doOpen()` funkce volána při kliknutí na první tlačítko:
 
@@ -72,5 +72,5 @@ Tlačítko třetí přepne stav panelu: z sbaleny do rozšiřovat a naopak. `Col
 
 Tlačítko třetí změní stav panelu: z sbalené rozšířené a pozadí ([Kliknutím zobrazit obrázek v plné velikosti](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](collapsing-and-expanding-a-panel-from-javascript-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](collapsing-and-expanding-a-panel-from-javascript-cs.md)

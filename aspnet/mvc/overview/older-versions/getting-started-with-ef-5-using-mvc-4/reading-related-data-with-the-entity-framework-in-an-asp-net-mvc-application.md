@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Čtení dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC (5 10) | Microsoft Docs"
+title: Čtení dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC (5 10) | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9093fb90a52b297f173c5cddb6f332d2d1a25135
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 831f5e0a8b57907ea012c10c1d1f8ff166f5e88b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>Čtení související Data pomocí rozhraní Entity Framework v aplikaci ASP.NET MVC (5 10)
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -149,7 +149,7 @@ Nahraďte `Index` metoda s následující kód pro načtení další souvisejíc
 
 Metoda přijímá data volitelné trasy (`id`) a parametr řetězce dotazu (`courseID`), zadejte hodnoty ID vybrané lektorem a vybraný kurz a předá všechna požadovaná data k zobrazení. Parametry jsou poskytovány **vyberte** hypertextové odkazy na stránce.
 
-> [!TIP] 
+> [!TIP]
 > 
 > **Data trasy**
 > 
@@ -186,7 +186,7 @@ Druhý `Include` metoda načte kurzy a pro každou kurz, který je načten nemá
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cs)]
 
-Jak je uvedeno nahoře, přes načítání není povinný, ale je potřeba pro zlepšení výkonu. Vzhledem k tomu, že zobrazení vždycky vyžaduje, aby `OfficeAssignment` entita, je efektivnější načíst, ve stejném dotazu. `Course`entity jsou požadovány, pokud je vybrána lektorem na webové stránce, takže přes načítání je lepší, než opožděného načítání jenom v případě, že stránka se zobrazí více často ke kurzu vybrané než bez.
+Jak je uvedeno nahoře, přes načítání není povinný, ale je potřeba pro zlepšení výkonu. Vzhledem k tomu, že zobrazení vždycky vyžaduje, aby `OfficeAssignment` entita, je efektivnější načíst, ve stejném dotazu. `Course` entity jsou požadovány, pokud je vybrána lektorem na webové stránce, takže přes načítání je lepší, než opožděného načítání jenom v případě, že stránka se zobrazí více často ke kurzu vybrané než bez.
 
 Pokud jste vybrali ID lektorem, vybrané lektorem se načítají ze seznamu vyučující v zobrazení modelu. Model zobrazení `Courses` vlastnost je pak načten pomocí `Course` entity z této lektorem `Courses` navigační vlastnost.
 
@@ -282,6 +282,6 @@ Nyní jste použili všechny tři způsoby (opožděné, přes a explicitní) a 
 
 Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
-[další](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
+> [další](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)

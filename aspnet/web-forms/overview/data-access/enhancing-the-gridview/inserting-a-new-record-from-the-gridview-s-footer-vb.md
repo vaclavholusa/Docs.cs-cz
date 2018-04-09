@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
-title: "Vkládání nového záznamu z prvku GridView zápatí (VB) | Microsoft Docs"
+title: Vkládání nového záznamu z prvku GridView zápatí (VB) | Microsoft Docs
 author: rick-anderson
-description: "Při prvek GridView neposkytuje integrovanou podporu pro vložení nového záznamu dat, tento kurz ukazuje, jak k posílení GridView zahrnout..."
+description: Při prvek GridView neposkytuje integrovanou podporu pro vložení nového záznamu dat, tento kurz ukazuje, jak k posílení GridView zahrnout...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/06/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4d452e15ced52fd9dcac8201598146cb9ef38d7b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 32f3cb23805813135bf463720e7479f5f819deb7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>Vkládání nového záznamu z prvku GridView zápatí (VB)
 ====================
@@ -140,18 +140,18 @@ Vytvoření rozhraní úprav, vyberte GridView s inteligentním na odkaz Upravit
 
 V následujícím seznamu zobrazí pole GridView zadání vkládání rozhraní, které chcete přidat:
 
-- `ProductID`žádné.
-- `ProductName`přidat textové pole a nastavit jeho `ID` k `NewProductName`. Přidání ovládacího prvku RequiredFieldValidator také zajistit, aby uživatel zadal hodnotu pro název nového produktu s.
-- `SupplierID`žádné.
-- `CategoryID`žádné.
-- `QuantityPerUnit`přidat textové pole, nastavení jeho `ID` k `NewQuantityPerUnit`.
-- `UnitPrice`přidat textové pole s názvem `NewUnitPrice` a CompareValidator, které zajišťuje, aby zadaná hodnota je currency hodnota větší než nebo rovna hodnotě nula.
-- `UnitsInStock`použijte textové pole jehož `ID` je nastaven na `NewUnitsInStock`. Zahrnout CompareValidator, která zajišťuje, že zadaná hodnota je celé číslo větší než nebo rovna hodnotě nula.
-- `UnitsOnOrder`použijte textové pole jehož `ID` je nastaven na `NewUnitsOnOrder`. Zahrnout CompareValidator, která zajišťuje, že zadaná hodnota je celé číslo větší než nebo rovna hodnotě nula.
-- `ReorderLevel`použijte textové pole jehož `ID` je nastaven na `NewReorderLevel`. Zahrnout CompareValidator, která zajišťuje, že zadaná hodnota je celé číslo větší než nebo rovna hodnotě nula.
-- `Discontinued`Přidat zaškrtávací políčko, nastavení jeho `ID` k `NewDiscontinued`.
-- `CategoryName`Přidejte rozevírací seznam a nastavte její `ID` k `NewCategoryID`. Navázat jej na nové ObjectDataSource s názvem `CategoriesDataSource` a nakonfigurujte ho na používání `CategoriesBLL` třídu s `GetCategories()` metoda. Mít rozevírací seznam s `ListItem` s zobrazení `CategoryName` data pole, pomocí `CategoryID` datové pole jako jejich hodnoty.
-- `SupplierName`Přidejte rozevírací seznam a nastavte její `ID` k `NewSupplierID`. Navázat jej na nové ObjectDataSource s názvem `SuppliersDataSource` a nakonfigurujte ho na používání `SuppliersBLL` třídu s `GetSuppliers()` metoda. Mít rozevírací seznam s `ListItem` s zobrazení `CompanyName` data pole, pomocí `SupplierID` datové pole jako jejich hodnoty.
+- `ProductID` Žádné.
+- `ProductName` přidat textové pole a nastavit jeho `ID` k `NewProductName`. Přidání ovládacího prvku RequiredFieldValidator také zajistit, aby uživatel zadal hodnotu pro název nového produktu s.
+- `SupplierID` Žádné.
+- `CategoryID` Žádné.
+- `QuantityPerUnit` přidat textové pole, nastavení jeho `ID` k `NewQuantityPerUnit`.
+- `UnitPrice` přidat textové pole s názvem `NewUnitPrice` a CompareValidator, které zajišťuje, aby zadaná hodnota je currency hodnota větší než nebo rovna hodnotě nula.
+- `UnitsInStock` použijte textové pole jehož `ID` je nastaven na `NewUnitsInStock`. Zahrnout CompareValidator, která zajišťuje, že zadaná hodnota je celé číslo větší než nebo rovna hodnotě nula.
+- `UnitsOnOrder` použijte textové pole jehož `ID` je nastaven na `NewUnitsOnOrder`. Zahrnout CompareValidator, která zajišťuje, že zadaná hodnota je celé číslo větší než nebo rovna hodnotě nula.
+- `ReorderLevel` použijte textové pole jehož `ID` je nastaven na `NewReorderLevel`. Zahrnout CompareValidator, která zajišťuje, že zadaná hodnota je celé číslo větší než nebo rovna hodnotě nula.
+- `Discontinued` Přidat zaškrtávací políčko, nastavení jeho `ID` k `NewDiscontinued`.
+- `CategoryName` Přidejte rozevírací seznam a nastavte její `ID` k `NewCategoryID`. Navázat jej na nové ObjectDataSource s názvem `CategoriesDataSource` a nakonfigurujte ho na používání `CategoriesBLL` třídu s `GetCategories()` metoda. Mít rozevírací seznam s `ListItem` s zobrazení `CategoryName` data pole, pomocí `CategoryID` datové pole jako jejich hodnoty.
+- `SupplierName` Přidejte rozevírací seznam a nastavte její `ID` k `NewSupplierID`. Navázat jej na nové ObjectDataSource s názvem `SuppliersDataSource` a nakonfigurujte ho na používání `SuppliersBLL` třídu s `GetSuppliers()` metoda. Mít rozevírací seznam s `ListItem` s zobrazení `CompanyName` data pole, pomocí `SupplierID` datové pole jako jejich hodnoty.
 
 Pro každou ovládacích prvků ověřování, vymažte `ForeColor` vlastnost tak, aby `FooterStyle` šablon stylů CSS třídu s bílým popředí barva se použije místo výchozího red. Také použít `ErrorMessage` podrobný popis, ale hodnota nastavena `Text` vlastnost hvězdičku. Abyste zabránili text pro ovládací prvek s ověření působit rozhraní vkládání zabalit do dvou řádků, nastavte `FooterStyle` s `Wrap` vlastnost na hodnotu false pro jednotlivé `FooterTemplate` s, použijte ovládací prvek ověření. Nakonec přidejte ovládacího prvku ValidationSummary pod GridView a sadu jeho `ShowMessageBox` vlastnost `True` a jeho `ShowSummary` vlastnost `False`.
 
@@ -234,7 +234,7 @@ Rutina GridView použili v tomto kurzu se nevztahuje žádné řazení uvedené 
 
 [!code-vb[Main](inserting-a-new-record-from-the-gridview-s-footer-vb/samples/sample9.vb)]
 
-`SendUserToLastPage`je logická hodnota proměnné úrovně stránky, která je původně přiřazena hodnota `False`. V GridView s `DataBound` obslužné rutiny události, pokud `SendUserToLastPage` je nastavena hodnota false, `PageIndex` vlastnost se aktualizuje na uživateli odeslat na poslední stránce.
+`SendUserToLastPage` je logická hodnota proměnné úrovně stránky, která je původně přiřazena hodnota `False`. V GridView s `DataBound` obslužné rutiny události, pokud `SendUserToLastPage` je nastavena hodnota false, `PageIndex` vlastnost se aktualizuje na uživateli odeslat na poslední stránce.
 
 
 [!code-vb[Main](inserting-a-new-record-from-the-gridview-s-footer-vb/samples/sample10.vb)]
@@ -262,11 +262,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Bernadette Leigh. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](adding-a-gridview-column-of-checkboxes-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-a-gridview-column-of-checkboxes-vb.md)

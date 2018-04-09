@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
-title: "Konfigurace databáze serveru pro Web nasazení publikování | Microsoft Docs"
+title: Konfigurace databáze serveru pro Web nasazení publikování | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje postup konfigurace databáze serveru SQL Server 2008 R2 pro podporu nasazení webu a publikování. Úlohy popsané v tomto tématu se co..."
+description: Toto téma popisuje postup konfigurace databáze serveru SQL Server 2008 R2 pro podporu nasazení webu a publikování. Úlohy popsané v tomto tématu se co...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 98fd728f48f6fb64a61686bc58824b9fb3a28b13
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a2340c0d561ed274e281b5f6d942af0a2027315a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Konfigurace databáze serveru pro publikování nasazení webu
 ====================
@@ -26,7 +26,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 
 > Toto téma popisuje postup konfigurace databáze serveru SQL Server 2008 R2 pro podporu nasazení webu a publikování.
 > 
-> Úlohy popsané v tomto tématu jsou společné pro každý scénář nasazení & #x 2014, nezávisle na tom, zda webové servery jsou nakonfigurované na používání vzdálené služby agenta nástroj nasazení webu služby IIS (Web Deploy), obslužné rutiny nasazení webu nebo v režimu offline nasazení nebo vaše aplikace běží na jednom webovém serveru nebo serverové farmy. Způsob nasazení databáze může změnit závislosti na požadavcích zabezpečení a další důležité informace. Například můžete nasadit databázi s nebo bez ukázková data, a můžete nasadit mapování role uživatelů a nakonfigurovat ručně po nasazení. Způsob, jak konfigurovat databázový server ale zůstává stejná.
+> Úlohy popsané v tomto tématu jsou společné pro každý scénář nasazení&#x2014;nezávisle na tom, zda webové servery jsou nakonfigurované na používání vzdálené služby agenta nástroj nasazení webu služby IIS (Web Deploy), obslužné rutiny nasazení webu nebo v režimu offline nasazení nebo vaše aplikace běží na jednom webovém serveru nebo serverové farmy. Způsob nasazení databáze může změnit závislosti na požadavcích zabezpečení a další důležité informace. Například můžete nasadit databázi s nebo bez ukázková data, a můžete nasadit mapování role uživatelů a nakonfigurovat ručně po nasazení. Způsob, jak konfigurovat databázový server ale zůstává stejná.
 
 
 Nemusíte instalovat veškeré další produkty a nástroje pro konfiguraci databázový server pro podporu nasazení webu. Za předpokladu, že databázový server a webový server běžet na různých počítačích, jednoduše je potřeba:
@@ -65,8 +65,8 @@ K povolení SQL serveru pro komunikaci pomocí protokolu TCP/IP, použijte Sprá
 1. Na **spustit** nabídky, přejděte na příkaz **všechny programy**, klikněte na tlačítko **Microsoft SQL Server 2008 R2**, klikněte na tlačítko **nástroje pro konfiguraci**a potom klikněte na **Správce konfigurace systému SQL Server**.
 2. V podokně stromu, rozbalte položku **konfigurace sítě serveru SQL Server**a potom klikněte na **protokoly pro MSSQLSERVER**.
 
-    > [!NOTE]
-    > Pokud jste nainstalovali více instancí systému SQL Server, zobrazí se **protokoly pro *** [název instance]* položku pro každou instanci. Musíte nakonfigurovat nastavení sítě na základě instance instance.
+   > [!NOTE]
+   > Pokud jste nainstalovali více instancí systému SQL Server, zobrazí se <strong>protokoly pro</strong><em>[název instance]</em> položku pro každou instanci. Musíte nakonfigurovat nastavení sítě na základě instance instance.
 3. V podokně podrobností klikněte pravým tlačítkem myši **TCP/IP** řádek a potom klikněte na **povolit**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -130,7 +130,7 @@ Další informace o konfiguraci brány Windows Firewall pro SQL Server, zvláš�
 
 ## <a name="configure-logins-and-database-permissions"></a>Konfigurace přihlášení a databáze oprávnění
 
-Když nasadíte webovou aplikaci k Internetové informační služby (IIS), je aplikace spuštěná pomocí identity fondu aplikací. V prostředí domény identity fondu aplikací použijte účet počítače serveru, na kterém poběží přístup k síťovým prostředkům. Účty počítače ve formě * [název domény]***\*** [název počítače]***$** & #x 2014; například **FABRIKAM\TESTWEB1$**. Chcete-li povolit webovou aplikaci na přístup k databázi v síti, je potřeba:
+Když nasadíte webovou aplikaci k Internetové informační služby (IIS), je aplikace spuštěná pomocí identity fondu aplikací. V prostředí domény identity fondu aplikací použijte účet počítače serveru, na kterém poběží přístup k síťovým prostředkům. Účty počítače ve formě <em>[název domény]</em><strong>\</ strong ><em>[název počítače]</em><strong>$</strong>&#x2014;například <strong>FABRIKAM\TESTWEB1$</strong>. Chcete-li povolit webovou aplikaci na přístup k databázi v síti, je potřeba:
 
 - Přidáte přihlašovací jméno pro účet počítače webového serveru do instance systému SQL Server.
 - Mapy připojení k účtu počítače k žádné roli požadovaná databáze (obvykle **db\_DataReader –** a **db\_datawriter**).
@@ -231,6 +231,6 @@ Databázový server by teď měly být připravené přijmout vzdálenou databá
 
 Pokyny k nasazení databázové projekty najdete v tématu [nasazení databázové projekty](../web-deployment-in-the-enterprise/deploying-database-projects.md). Pokyny k vytvoření databáze členství v rolích spuštěním skriptu po nasazení najdete v tématu [nasazení členství Role databáze pro testovací prostředí](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md). Pokyny k nápravě jedinečného nasazení, které představují členství databáze najdete v tématu [nasazení databáze členství v podnikových prostředích](../advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments.md).
 
->[!div class="step-by-step"]
-[Předchozí](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
-[další](creating-a-server-farm-with-the-web-farm-framework.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
+> [další](creating-a-server-farm-with-the-web-farm-framework.md)

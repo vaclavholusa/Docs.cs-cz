@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
-title: "Naplnění seznamu pomocí CascadingDropDown (C#) | Microsoft Docs"
+title: Naplnění seznamu pomocí CascadingDropDown (C#) | Microsoft Docs
 author: wenz
-description: "Ovládací prvek CascadingDropDown v Toolkitu AJAX rozšiřuje ovládací prvek rozevírací seznam tak, aby změny v jedné rozevírací seznam zatížení přidružené hodnoty v anoth..."
+description: Ovládací prvek CascadingDropDown v Toolkitu AJAX rozšiřuje ovládací prvek rozevírací seznam tak, aby změny v jedné rozevírací seznam zatížení přidružené hodnoty v anoth...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e5e0f11a815632aff9e17dc0f783f7eba2753995
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c9e47f6484e49013004bf15084f98440ee67558e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="filling-a-list-using-cascadingdropdown-c"></a>Naplnění seznamu pomocí CascadingDropDown (C#)
 ====================
@@ -68,5 +68,5 @@ Při načítání stránky v prohlížeči aktivuje se v seznamu pro vyplnění 
 
 V seznamu se vyplní automaticky ([Kliknutím zobrazit obrázek v plné velikosti](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Další](using-cascadingdropdown-with-a-database-cs.md)
+> [!div class="step-by-step"]
+> [Next](using-cascadingdropdown-with-a-database-cs.md)

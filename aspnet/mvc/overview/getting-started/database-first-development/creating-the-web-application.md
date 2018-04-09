@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
-title: "Databázi EF nejprve s architekturou ASP.NET MVC: vytvoření webové aplikace a datové modely | Microsoft Docs"
+title: 'Databázi EF nejprve s architekturou ASP.NET MVC: vytvoření webové aplikace a datové modely | Microsoft Docs'
 author: tfitzmac
-description: "Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri..."
+description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: f495bfa3aa5332e4ca3e44c2ffbfb760fbbeafc8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04ccc00fa48702608fdc7b5b00d73778985852f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a>Databázi EF nejprve s architekturou ASP.NET MVC: vytvoření webové aplikace a datové modely
 ====================
@@ -101,6 +101,6 @@ Složku modely nyní zahrnuje mnoho nové soubory související s modely, které
 
 Než budete pokračovat v tomto kurzu, sestavte projekt. V další části bude generovat kód podle datové modely, ale tento oddíl nebude fungovat, pokud nebyl sestaven projektu.
 
->[!div class="step-by-step"]
-[Předchozí](setting-up-database.md)
-[další](generating-views.md)
+> [!div class="step-by-step"]
+> [Předchozí](setting-up-database.md)
+> [další](generating-views.md)

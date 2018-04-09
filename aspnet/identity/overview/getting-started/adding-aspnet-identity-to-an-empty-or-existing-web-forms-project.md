@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
-title: "Přidání ASP.NET Identity pro prázdný nebo existující webových formulářů projekt | Microsoft Docs"
+title: Přidání ASP.NET Identity pro prázdný nebo existující webových formulářů projekt | Microsoft Docs
 author: raquelsa
-description: "V tomto kurzu se dozvíte, jak přidat do aplikace ASP.NET ASP.NET Identity (nový systém členství pro technologii ASP.NET). Při vytváření nové webové formuláře nebo MVC..."
+description: V tomto kurzu se dozvíte, jak přidat do aplikace ASP.NET ASP.NET Identity (nový systém členství pro technologii ASP.NET). Při vytváření nové webové formuláře nebo MVC...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2013
 ms.topic: article
 ms.assetid: 1cbc0ed2-5bd6-4b62-8d34-4c193dcd8b25
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: 3ab67b93a32106c0b79f9e8d739d47835391edb5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8961e596f0d6cc4810e2439be1ec2915bddb8c78
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>Přidání ASP.NET Identity pro prázdný nebo existující webových formulářů projektu
 ====================
@@ -40,7 +40,7 @@ podle [Raquel Soares De Almeida](https://github.com/raquelsa)
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image2.png)  
   
- Upozornění **změna ověřování** tlačítko je zakázané a žádné ověřování podpora je k dispozici v této šabloně. Šablony webových formulářů, MVC a webového rozhraní API umožňují vyberte metodu ověřování. Další informace najdete v tématu [Přehled ověřování](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#auth) .
+   Upozornění **změna ověřování** tlačítko je zakázané a žádné ověřování podpora je k dispozici v této šabloně. Šablony webových formulářů, MVC a webového rozhraní API umožňují vyberte metodu ověřování. Další informace najdete v tématu [Přehled ověřování](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#auth) .
 
 ## <a name="adding-identity-packages-to-your-app"></a>Přidání Identity balíčky do vaší aplikace
 
@@ -152,20 +152,20 @@ V tuto chvíli jsme doplnili jenom podporu pro vytváření uživatelů. Teď p�
     > - `Page_Load` Nyní kontroluje stav aktuálního uživatele a provede akci na základě jeho `Context.User.Identity.IsAuthenticated` stavu.  
     >     **Zobrazit protokolováno v uživatelské jméno** : Microsoft ASP.NET Identity Framework přidala rozšiřující metody na [System.Security.Principal.IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) který umožňuje získat `UserName` a `UserId` pro přihlášeného uživatele. Tyto rozšiřující metody jsou definovány v `Microsoft.AspNet.Identity.Core` sestavení. Tyto rozšiřující metody jsou náhradou [HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) .
     > - Metoda přihlášení:   
-    >     `This`Metoda nahrazuje předchozí `CreateUser_Click` metoda v této ukázkové a nyní přihlásí uživatel po úspěšném vytvoření uživatele.   
+    >     `This` Metoda nahrazuje předchozí `CreateUser_Click` metoda v této ukázkové a nyní přihlásí uživatel po úspěšném vytvoření uživatele.   
     >  Rozhraní Microsoft OWIN přidala rozšiřující metody na `System.Web.HttpContext` , které umožňuje získat odkaz na `IOwinContext`. Tyto rozšiřující metody jsou definovány v `Microsoft.Owin.Host.SystemWeb` sestavení. `OwinContext` Třídy zpřístupňuje `IAuthenticationManager` vlastnost, která představuje funkce middlewaru ověřování dostupné u aktuálního požadavku.  
     >  Uživatel může přihlásit pomocí `AuthenticationManager` z OWIN a volání `SignIn` a předejte `ClaimsIdentity` jako v příkladu nahoře.   
     >  Protože ASP.NET Identity a ověřování souborů Cookie OWIN jsou založené na deklaracích identity systému rozhraní framework vyžaduje, aby aplikace ke generování `ClaimsIdentity` pro uživatele.   
     >  `ClaimsIdentity` Nemá informace o všech deklarací identity pro uživatele, například jaké role uživatel patří. Můžete také přidat další deklarace pro uživatele v této fázi  
     >  Tento kód se přihlásit uživatele a vygenerujte soubor cookie také. Toto volání se podobá [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) používané [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu.
-    > - `SignOut`Metoda:   
+    > - `SignOut` Metoda:   
     >  Získá odkaz na `AuthenticationManager` z OWIN a volání `SignOut`. Toto je obdobou [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) metodu používanou [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu.
 5. Stiskněte klávesu **kombinaci kláves Ctrl + F5** sestavení a spuštění webové aplikace. Zadejte nové uživatelské jméno a heslo a potom klikněte na **zaregistrovat**.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image13.png)  
- Poznámka: V tomto okamžiku nového uživatele je vytvořen a přihlášení.
+   Poznámka: V tomto okamžiku nového uživatele je vytvořen a přihlášení.
 6. Klikněte na **odhlášení** tlačítko. Budete přesměrováni do protokolu v podobě.
 7. Zadejte neplatné uživatelské jméno nebo heslo a klikněte na tlačítko **přihlásit** tlačítko.   
- `UserManager.Find` Metoda vrátí hodnotu null a chybová zpráva: " *neplatné uživatelské jméno nebo heslo* " se zobrazí.  
+   `UserManager.Find` Metoda vrátí hodnotu null a chybová zpráva: " *neplatné uživatelské jméno nebo heslo* " se zobrazí.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image14.png)

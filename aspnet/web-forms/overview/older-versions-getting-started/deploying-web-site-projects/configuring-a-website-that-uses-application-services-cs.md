@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
-title: "Konfigurace webu, který používá aplikačních služeb (C#) | Microsoft Docs"
+title: Konfigurace webu, který používá aplikačních služeb (C#) | Microsoft Docs
 author: rick-anderson
-description: "Verze technologie ASP.NET 2.0 zavedl řadu aplikační služby, které jsou součástí rozhraní .NET Framework a slouží jako sada stavebním blokem služby, které je..."
+description: Verze technologie ASP.NET 2.0 zavedl řadu aplikační služby, které jsou součástí rozhraní .NET Framework a slouží jako sada stavebním blokem služby, které je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3f2b8e395505c1d13b914399b8de2196f0ba230a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: da4ef328e3461e96fbb0cdca156ce1b9a076748f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-website-that-uses-application-services-c"></a>Konfigurace webu, který používá aplikačních služeb (C#)
 ====================
@@ -200,6 +200,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [*Kurzy zabezpečení webu*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 - [*Přehled nástroje pro správu webu*](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](configuring-the-production-web-application-to-use-the-production-database-cs.md)
-[další](strategies-for-database-development-and-deployment-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-the-production-web-application-to-use-the-production-database-cs.md)
+> [další](strategies-for-database-development-and-deployment-cs.md)

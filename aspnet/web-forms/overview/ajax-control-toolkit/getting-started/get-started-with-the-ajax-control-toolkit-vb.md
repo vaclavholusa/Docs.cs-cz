@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-vb
-title: "Začínáme s Toolkitu AJAX (VB) | Microsoft Docs"
+title: Začínáme s Toolkitu AJAX (VB) | Microsoft Docs
 author: microsoft
-description: "Přečtěte si vše, co potřebujete vědět, abyste mohli začít používat sadu ovládacích prvků AJAX."
+description: Přečtěte si vše, co potřebujete vědět, abyste mohli začít používat sadu ovládacích prvků AJAX.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0bbf6dc0be8a96ecd47b8620a6ba3220b50f10d4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 30653a147bd3bf581af27220e11cdecc2f89fc4a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="get-started-with-the-ajax-control-toolkit-vb"></a>Začínáme s Toolkitu AJAX (VB)
 ====================
@@ -89,6 +89,6 @@ Pokud jste používali starší verze sady nástrojů a teď potřebujete přesu
 - Binární soubory – odstranit stará verze sestavení AjaxControlToolkit.dll ze složky koše webu.
 - Položek sady nástrojů – odstranit kartě sadu ovládacích prvků AJAX a znovu vytvořit na kartě s novou verzi sestavení AjaxControlToolkit.dll výše uvedených kroků.
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
-[další](using-ajax-control-toolkit-controls-and-control-extenders-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
+> [další](using-ajax-control-toolkit-controls-and-control-extenders-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
-title: "Uživatelé a role na webu produkční (VB) | Microsoft Docs"
+title: Uživatelé a role na webu produkční (VB) | Microsoft Docs
 author: rick-anderson
-description: "Nástroj pro správu webu ASP.NET (WSAT) poskytuje webové uživatelské rozhraní pro konfiguraci nastavení členství a role a k vytváření, úpravám..."
+description: Nástroj pro správu webu ASP.NET (WSAT) poskytuje webové uživatelské rozhraní pro konfiguraci nastavení členství a role a k vytváření, úpravám...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f3bfaa0e14e3e04a7faae1a78b566d7c2067785a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 611a54b9dd5f188fd64c7020bfbf8171fea27a71
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="users-and-roles-on-the-production-website-vb"></a>Uživatelé a role na webu produkční (VB)
 ====================
@@ -37,7 +37,7 @@ Běžné výzvu pro vývojáře, kteří používají služby členství a role 
 
 ## <a name="using-the-aspnet-web-site-administration-tool"></a>Pomocí nástroje Správa webu ASP.NET
 
-Technologie ASP.NET obsahuje [nástroj Správa webu](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT) umožňující snadno vytvořit a spravovat uživatelské účty a role a určit pravidla autorizace na základě uživatelů a rolí. Pokud chcete použít WSAT, klikněte na ikonu konfigurace ASP.NET v Průzkumníku řešení, nebo přejděte do nabídky webu nebo produktu Project a vyberte možnost konfigurace ASP.NET. Buď přístup spustí webový prohlížeč a odkazuje na WSAT na adresu jako:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
+Technologie ASP.NET obsahuje [nástroj Správa webu](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT) umožňující snadno vytvořit a spravovat uživatelské účty a role a určit pravidla autorizace na základě uživatelů a rolí. Pokud chcete použít WSAT, klikněte na ikonu konfigurace ASP.NET v Průzkumníku řešení, nebo přejděte do nabídky webu nebo produktu Project a vyberte možnost konfigurace ASP.NET. Buď přístup spustí webový prohlížeč a odkazuje na WSAT na adresu jako: `http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
 
 WSAT je rozdělené do tří částí:
 
@@ -119,5 +119,5 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Přehled nástroje pro správu webu](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 - [Kurzy zabezpečení webu](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
->[!div class="step-by-step"]
-[Předchozí](precompiling-your-website-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](precompiling-your-website-vb.md)

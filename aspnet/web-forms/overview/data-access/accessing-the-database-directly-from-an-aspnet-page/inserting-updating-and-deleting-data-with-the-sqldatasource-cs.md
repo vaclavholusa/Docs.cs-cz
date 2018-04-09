@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-cs
-title: "Vložení, aktualizace a odstranění dat pomocí SqlDataSource (C#) | Microsoft Docs"
+title: Vložení, aktualizace a odstranění dat pomocí SqlDataSource (C#) | Microsoft Docs
 author: rick-anderson
-description: "V předchozích kurzy jsme zjistili, jak ovládacího prvku ObjectDataSource povolené pro vložení, aktualizaci a odstraňování dat. Ovládací prvek SqlDataSource podporuje t..."
+description: V předchozích kurzy jsme zjistili, jak ovládacího prvku ObjectDataSource povolené pro vložení, aktualizaci a odstraňování dat. Ovládací prvek SqlDataSource podporuje t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3b080046df49ff6d4c83063d782962c5fcb33e94
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 25dab0292aefa183a1abc2615a7ba8e7a512346d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-c"></a>Vložení, aktualizace a odstranění dat pomocí SqlDataSource (C#)
 ====================
@@ -213,8 +213,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](using-parameterized-queries-with-the-sqldatasource-cs.md)
-[další](implementing-optimistic-concurrency-with-the-sqldatasource-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-parameterized-queries-with-the-sqldatasource-cs.md)
+> [další](implementing-optimistic-concurrency-with-the-sqldatasource-cs.md)

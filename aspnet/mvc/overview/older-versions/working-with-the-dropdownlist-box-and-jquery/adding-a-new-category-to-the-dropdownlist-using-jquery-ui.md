@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
-title: "Přidat novou kategorii k rozevírací seznam pomocí uživatelského rozhraní jQuery | Microsoft Docs"
+title: Přidat novou kategorii k rozevírací seznam pomocí uživatelského rozhraní jQuery | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: de661616ff3ca83052ae74d3ae6810d014aff764
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16f7af1d679aace24fff86abb19740beebafe785
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>Přidat novou kategorii k rozevírací seznam pomocí uživatelského rozhraní jQuery
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 HTML `Select` značka je ideální pro prezentace seznamu pevné kategorie dat, ale často je nutné přidat novou kategorii. Předpokládejme, že nám chcete přidat do kategorie v naší databázi genre "Opera"? V této části se budeme používat jQuery UI přidat dialogové okno, které jsme můžete použít k přidání nové kategorie. Následující obrázek ukazuje, jak se v prohlížeči prezentovat uživatelského rozhraní.
 
@@ -36,7 +36,7 @@ Kdy je nový název genre zadáno a **Uložit** nabídnutých tlačítko těchto
 2. JavaScript přidává nová data genre do seznamu příkazu select.
 3. JavaScript díky nové genre vybranou položku.
 
- Na obrázku níže **Opera** byla přidána do databáze a vybrán v **Genre** rozevíracím seznamu. 
+   Na obrázku níže **Opera** byla přidána do databáze a vybrán v **Genre** rozevíracím seznamu. 
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image3.png)
 
@@ -102,7 +102,7 @@ JQuery `$.post` řádku provede volání AJAX do atributu akce (`/StoreManager/C
 3. Do vyhledávacího pole zadejte GenreID.
 4. Pomocí další ikony   
     ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image9.png)  
- přejděte ke značce vyberte následující:
+   přejděte ke značce vyberte následující:
 
     [!code-html[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample9.html)]
 5. Rozbalte hodnotu poslední možnosti.
@@ -141,5 +141,5 @@ Rick.Anderson[at]Microsoft.com
 - Jan Pope
 - Tom Dykstra
 
->[!div class="step-by-step"]
-[Předchozí](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [!div class="step-by-step"]
+> [Předchozí](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

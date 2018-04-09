@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
-title: "Pokročilé scénáře Entity Framework pro webovou aplikaci MVC (10 10) | Microsoft Docs"
+title: Pokročilé scénáře Entity Framework pro webovou aplikaci MVC (10 10) | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 148a1aa33f6f713ae471ab14c7180f6c08a8679a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 277503b65d9b75a9d3cc05538d5327f9367f45e0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>Pokročilé Entity Framework scénáře pro webové aplikace MVC (10 10)
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -107,7 +107,7 @@ V *DAL* složku vytvořit *CourseRepository.cs* a existujícího kódu nahraďte
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample5.cs)]
 
-V *UnitOfWork.cs*, změnit `Course` typu úložiště z `GenericRepository<Course>` na`CourseRepository:`
+V *UnitOfWork.cs*, změnit `Course` typu úložiště z `GenericRepository<Course>` na `CourseRepository:`
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample6.cs)]
 
@@ -299,7 +299,7 @@ Počkejte několik sekund a aktualizujte stránku.
 
 Chybová zpráva:
 
-*Termín 'Update-Database' nebyl rozpoznán jako název rutiny, funkce, soubor skriptu nebo spustitelného programu. Zkontrolujte, zda název, nebo pokud byl zahrnut cestu, ověřte, zda je cesta správná a zkuste to znovu.* (Z  *`Update-Database`*  v pomocí PMC.)
+*Termín 'Update-Database' nebyl rozpoznán jako název rutiny, funkce, soubor skriptu nebo spustitelného programu. Zkontrolujte, zda název, nebo pokud byl zahrnut cestu, ověřte, zda je cesta správná a zkuste to znovu.* (Z *`Update-Database`* v pomocí PMC.)
 
 Řešení:
 
@@ -309,7 +309,7 @@ Ukončete aplikaci Visual Studio. Otevřete projekt a zkuste to znovu.
 
 Chybová zpráva:
 
-*Ověření se nezdařilo pro jednu nebo více entit. Naleznete ve vlastnosti 'EntityValidationErrors' Další podrobnosti.* (Z  *`Update-Database`*  v pomocí PMC.)
+*Ověření se nezdařilo pro jednu nebo více entit. Naleznete ve vlastnosti 'EntityValidationErrors' Další podrobnosti.* (Z *`Update-Database`* v pomocí PMC.)
 
 Řešení:
 
@@ -335,6 +335,6 @@ Chybová zpráva:
 
 Zkontrolujte připojovací řetězec. Pokud jste odstranili ručně databáze, změňte název databáze v řetězci konstrukce.
 
->[!div class="step-by-step"]
-[Předchozí](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
-[další](building-the-ef5-mvc4-chapter-downloads.md)
+> [!div class="step-by-step"]
+> [Předchozí](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
+> [další](building-the-ef5-mvc4-chapter-downloads.md)

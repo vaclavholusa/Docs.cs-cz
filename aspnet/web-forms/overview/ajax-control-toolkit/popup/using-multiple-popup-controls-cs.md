@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-cs
-title: "Použití více ovládacích prvků místní (C#) | Microsoft Docs"
+title: Použití více ovládacích prvků místní (C#) | Microsoft Docs
 author: wenz
-description: "Rozšiřujícího objektu PopupControl v Toolkitu AJAX nabízí snadný způsob, jak aktivovat místní okno, pokud je aktivován další ovládací prvek. Je také možné použít m..."
+description: Rozšiřujícího objektu PopupControl v Toolkitu AJAX nabízí snadný způsob, jak aktivovat místní okno, pokud je aktivován další ovládací prvek. Je také možné použít m...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d8c9742bb39b655115cb1862ff6e867989e63665
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7acd1b53e1b3e3e0d09d248b68941b166da3e81e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-multiple-popup-controls-c"></a>Použití více ovládacích prvků místní (C#)
 ====================
@@ -56,5 +56,5 @@ Nyní vždy, když kliknete na tlačítko v textovém poli, kalendář se objev�
 
 Kalendář se zobrazí, když uživatel klikne do textového pole ([Kliknutím zobrazit obrázek v plné velikosti](using-multiple-popup-controls-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Další](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)
+> [!div class="step-by-step"]
+> [Next](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)

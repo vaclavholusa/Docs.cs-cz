@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
-title: "Manipulace s DropShadow vlastnosti z kódu klienta (VB) | Microsoft Docs"
+title: Manipulace s DropShadow vlastnosti z kódu klienta (VB) | Microsoft Docs
 author: wenz
-description: "DropShadow ovládacího prvku Toolkitu AJAX rozšiřuje panelu s stínu. Vlastnosti této rozšiřujícího objektu se změní taky pomocí klienta JavaScrip..."
+description: DropShadow ovládacího prvku Toolkitu AJAX rozšiřuje panelu s stínu. Vlastnosti této rozšiřujícího objektu se změní taky pomocí klienta JavaScrip...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 706ccb5a95873aad4c1b9e0942ab06cf4162710a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5b024811ea511e67ce180169de9f0b7e3ef51d9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>Manipulace s DropShadow vlastnosti z kódu klienta (VB)
 ====================
@@ -62,5 +62,5 @@ Funkce JavaScript, která `changeOpacity()` musí nejprve vyhledejte `DropShadow
 
 Krytí se změní na straně klienta ([Kliknutím zobrazit obrázek v plné velikosti](manipulating-dropshadow-properties-from-client-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](adjusting-the-z-index-of-a-dropshadow-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](adjusting-the-z-index-of-a-dropshadow-vb.md)

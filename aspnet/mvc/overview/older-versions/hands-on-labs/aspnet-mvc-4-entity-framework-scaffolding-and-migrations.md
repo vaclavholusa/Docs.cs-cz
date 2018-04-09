@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
-title: "ASP.NET MVC 4 Entity Framework generování uživatelského rozhraní a migrace | Microsoft Docs"
+title: ASP.NET MVC 4 Entity Framework generování uživatelského rozhraní a migrace | Microsoft Docs
 author: rick-anderson
-description: "Pokud se seznámíte s metody kontroleru architektury ASP.NET MVC 4, nebo byly dokončeny &quot;pomocné rutiny, formulářů a ověřování&quot; praktické cvičení, byste měli vědět..."
+description: Pokud se seznámíte s metody kontroleru architektury ASP.NET MVC 4, nebo byly dokončeny &quot;pomocné rutiny, formulářů a ověřování&quot; praktické cvičení, byste měli vědět...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 396859463446d95c58271c4b00fc950bcd0d539a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 548afe1926eed49841251832d54dc213da0cb753
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework generování uživatelského rozhraní a migrace
 
@@ -109,7 +109,9 @@ V tomto cvičení se dozvíte, jak generování uživatelského rozhraní ASP.NE
     (Code fragment kódu - *architektury ASP.NET MVC 4 a Entity Framework migrace - Ex1 osoba vlastnosti*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
+~~~
 6. Klikněte na tlačítko **sestavení | Vytvoření řešení** uložte změny a sestavte projekt.
 
     ![Vytváření aplikace](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image3.png "vytváření aplikace")
@@ -118,14 +120,14 @@ V tomto cvičení se dozvíte, jak generování uživatelského rozhraní ASP.NE
 7. V Průzkumníku řešení klikněte pravým tlačítkem na složku řadiče a vyberte **přidat | Řadič**.
 8. Název kontroleru *PersonController* a dokončete **možnosti generování uživatelského rozhraní** s následujícími hodnotami.
 
-    1. V **šablony** rozevíracího seznamu, vyberte **kontroler MVC s akcemi čtení/zápisu a zobrazeními, s využitím nástroje Entity Framework** možnost.
-    2. V **třída modelu** rozevíracího seznamu, vyberte **osoba** třídy.
-    3. V **třída kontextu dat** seznamu, vyberte  **&lt;nový kontext data... &gt;**. Vyberte libovolný název a klikněte na **OK**.
-    4. V **zobrazení** rozevíracího seznamu, ujistěte se, že **Razor** je vybrána.
+   1. V **šablony** rozevíracího seznamu, vyberte **kontroler MVC s akcemi čtení/zápisu a zobrazeními, s využitím nástroje Entity Framework** možnost.
+   2. V **třída modelu** rozevíracího seznamu, vyberte **osoba** třídy.
+   3. V **třída kontextu dat** seznamu, vyberte  **&lt;nový kontext data... &gt;**. Vyberte libovolný název a klikněte na **OK**.
+   4. V **zobrazení** rozevíracího seznamu, ujistěte se, že **Razor** je vybrána.
 
-    ![Přidání řadiče osoba s generování uživatelského rozhraní](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "přidání řadiče osoba s generování uživatelského rozhraní")
+      ![Přidání řadiče osoba s generování uživatelského rozhraní](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "přidání řadiče osoba s generování uživatelského rozhraní")
 
-    *Přidání řadiče osoba s generování uživatelského rozhraní*
+      *Přidání řadiče osoba s generování uživatelského rozhraní*
 9. Klikněte na tlačítko **přidat** k vytvoření nového řadiče pro osoby s generování uživatelského rozhraní. Byly generovány akce kontroleru, jakož i zobrazení.
 
     ![Po vytvoření kontroleru osoba pomocí generování uživatelského rozhraní](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image5.png "po vytvoření kontroleru osoba pomocí generování uživatelského rozhraní")
@@ -133,9 +135,9 @@ V tomto cvičení se dozvíte, jak generování uživatelského rozhraní ASP.NE
     *Po vytvoření kontroleru osoba pomocí generování uživatelského rozhraní*
 10. Otevřete **PersonController** třídy. Všimněte si, že úplné metody akce CRUD byly vytvořeny automaticky.
 
-    ![Uvnitř řadičem osoba](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image6.png "uvnitř osoba řadiče")
+   ![Uvnitř řadičem osoba](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image6.png "uvnitř osoba řadiče")
 
-    *Uvnitř řadičem osoba*
+   *Uvnitř řadičem osoba*
 
 <a id="Ex1Task2"></a>
 
@@ -195,11 +197,15 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
 3. Otevřete **Configuration.cs** soubor ve složce migrace. Vyhledejte konstruktoru třídy a změňte **AutomaticMigrationsEnabled** hodnotu *true*.
 
 
-    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
+~~~
 4. Otevřete osoba třídu a přidejte atribut pro křestní jméno osoby. Pomocí tohoto nového atributu změníte model.
 
 
-    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
+~~~
 5. Vyberte **sestavení | Vytvoření řešení** v nabídce pro sestavení aplikace.
 
     ![Vytváření aplikace](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image13.png "vytváření aplikace")
@@ -247,9 +253,9 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
     *Aktualizace kontroleru*
 10. Klikněte na tlačítko **přidat**. Potom vyberte hodnoty **přepsat PersonController.cs** a **přepsat přidružené zobrazení** a klikněte na tlačítko **OK**.
 
-    ![Přidání přepsat řadiče](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image19.png)
+   ![Přidání přepsat řadiče](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image19.png)
 
-    *Aktualizace kontroleru*
+   *Aktualizace kontroleru*
 
 <a id="Ex1Task4"></a>
 
@@ -280,9 +286,9 @@ V tomto testovacím prostředí praktických jste se naučili jednoduché kroky 
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Příloha A: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze  **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)** . Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *Visual Studio Express 2012 pro Web se sadou Windows Azure SDK*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 

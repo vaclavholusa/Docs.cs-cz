@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
-title: "Výběr správný přístup k nasazení webu | Microsoft Docs"
+title: Výběr správný přístup k nasazení webu | Microsoft Docs
 author: jrjlee
-description: "Při práci s Internetové informační služby (IIS) nástroj pro nasazení webu (Web Deploy) 2.0 nebo novější, existují tři hlavní přístupy, které můžete použít k získání..."
+description: Při práci s Internetové informační služby (IIS) nástroj pro nasazení webu (Web Deploy) 2.0 nebo novější, existují tři hlavní přístupy, které můžete použít k získání...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: b77aa37160f3822f58908866e44497aea3d3bdc8
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 2d690744687af93a69743dc6ce6c853629f61f5d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>Výběr správný přístup k nasazení webu
 ====================
@@ -118,7 +118,7 @@ V případě uživatelé bez oprávnění správce služba webové správy (WMSv
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample6.cmd)]
 
 
-Předpokládejme například, že procesu sestavení nastaven tak, aby automaticky nasadit webovou aplikaci pro pracovní prostředí po každé úspěšné sestavení. Pokud jste použili přístup vzdáleného agenta, potřebovali byste aby identitě procesu sestavení správce na cílovém serveru. Naproti tomu přístup obslužné rutiny nasazení webu můžete udělit uživatel není správcem & #x 2014; **FABRIKAM\stagingdeployer** tento případ & #x 2014; oprávnění pouze konkrétní web služby IIS a procesu sestavení může poskytnout tyto přihlašovací údaje pro nasazení webového balíčku.
+Předpokládejme například, že procesu sestavení nastaven tak, aby automaticky nasadit webovou aplikaci pro pracovní prostředí po každé úspěšné sestavení. Pokud jste použili přístup vzdáleného agenta, potřebovali byste aby identitě procesu sestavení správce na cílovém serveru. Naproti tomu přístup obslužné rutiny nasazení webu můžete udělit uživatel není správcem&#x2014;**FABRIKAM\stagingdeployer** v tomto případě&#x2014;můžete poskytnout oprávnění pouze konkrétní web služby IIS a procesu sestavení přihlašovací údaje pro nasazení webového balíčku.
 
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample7.cmd)]
@@ -150,6 +150,6 @@ Další informace o syntaxi a nasazení webu operací příkazového řádku naj
 
 Další obecné informace o různých způsobech, ve kterém bude možné nasadit balíčky web ze vzdáleného počítače, najdete v části [vzdálené použití nasazení webu](https://technet.microsoft.com/library/ee461175(WS.10).aspx). Další informace o použití nasazení webu na vyžádání najdete v tématu [nasazení webu na vyžádání](https://technet.microsoft.com/library/ee517345(WS.10).aspx).
 
->[!div class="step-by-step"]
-[Předchozí](configuring-server-environments-for-web-deployment.md)
-[další](scenario-configuring-a-test-environment-for-web-deployment.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-server-environments-for-web-deployment.md)
+> [další](scenario-configuring-a-test-environment-for-web-deployment.md)

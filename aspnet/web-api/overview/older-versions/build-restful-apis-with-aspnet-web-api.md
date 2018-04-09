@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
-title: "Sestavení rozhraní RESTful API s rozhraním ASP.NET Web API | Microsoft Docs"
+title: Sestavení rozhraní RESTful API s rozhraním ASP.NET Web API | Microsoft Docs
 author: rick-anderson
-description: "V posledních letech se stal jasné, že HTTP není je jen pro poskytovat stránky HTML. Je také efektivní platformu pro sestavování rozhraní Web API, pomocí o několik..."
+description: V posledních letech se stal jasné, že HTTP není je jen pro poskytovat stránky HTML. Je také efektivní platformu pro sestavování rozhraní Web API, pomocí o několik...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,25 +12,25 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 49dcd86649ceb77cd5a02ebeb5d9d7b11ff4f344
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 320409cd395384a608a07307a56d18105d45de14
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>Sestavení rozhraní RESTful API s rozhraním ASP.NET Web API
 ====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
 > V posledních letech se stal jasné, že HTTP není je jen pro poskytovat stránky HTML. Je také efektivní platformu pro sestavování rozhraní Web API, například pomocí několik příkazů (GET, POST a tak dále) plus pár jednoduchými koncepty *identifikátory URI* a *hlavičky*. Rozhraní ASP.NET Web API je sada komponent, které zjednodušují programování HTTP. Protože je založen na modul runtime rozhraní ASP.NET MVC, webového rozhraní API automaticky zpracovává podrobnosti nízké úrovně přenos HTTP. Současně zpřístupní webového rozhraní API přirozeně programovací model protokolu HTTP. Ve skutečnosti jeden cílem webového rozhraní API je *není* abstraktní rychle když ve skutečnosti HTTP. V důsledku toho webového rozhraní API je flexibilní a snadné rozšíření. V tomto testovacím prostředí praktických použije k vytvoření jednoduché rozhraní REST API pro kontaktujte správce aplikace webového rozhraní API. Pokud vytvoříte klienta využívají rozhraní API. Styl architektury REST ukázal jako efektivní způsob, jak využít HTTP -, i když není určitě pouze platný přístup k protokolu HTTP. Kontaktujte správce zveřejní dosáhl standardu RESTful pro výpis, přidávání a odebírání kontakty, mimo jiné. Toto testovací prostředí vyžaduje základní znalosti protokolu HTTP, REST a předpokládá, že máte základní praktické znalosti jazyka HTML, JavaScript a jQuery.
 > 
 > > [!NOTE]
-> > Má oblast vyhrazený pro rozhraní ASP.NET Web API na webu technologie ASP.NET [ [https://asp.net/web-api](https://asp.net/web-api)](https://asp.net/web-api). Tento web bude pokračovat v poskytování nejnovější informace, ukázky a zprávy související s webového rozhraní API, tak to zkuste ho často Pokud byste chtěli pustíte hlubší do obrázky vytváření vlastní webová rozhraní API k dispozici pro prakticky libovolný zařízení nebo vývojovém prostředí.
+> > Má oblast vyhrazený pro rozhraní ASP.NET Web API na webu technologie ASP.NET [ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api). Tento web bude pokračovat v poskytování nejnovější informace, ukázky a zprávy související s webového rozhraní API, tak to zkuste ho často Pokud byste chtěli pustíte hlubší do obrázky vytváření vlastní webová rozhraní API k dispozici pro prakticky libovolný zařízení nebo vývojovém prostředí.
 > > 
 > > Rozhraní ASP.NET Web API, podobné technologie ASP.NET MVC 4, má flexibilitu z hlediska oddělení vrstvě služby z řadičů budete moci použít některé z dostupných vkládání závislostí architektury velmi snadná. Je dobré vzorku v MSDN, který ukazuje způsob použití Ninject pro vkládání závislostí v projektu webového rozhraní API ASP.NET, které si můžete stáhnout z [zde](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7).
 > 
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
 
 
 <a id="Objectives"></a>
@@ -172,7 +172,9 @@ V této úloze vytvoří řadič třídy, ve kterých se bude nacházet metody r
     (Code fragment kódu - *webové rozhraní API prostředí - Ex01 - kontaktní třída*)
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
+~~~
 4. V **ContactController** třídy, vyberte slovo **řetězec** v definici metoda **získat** metoda a zadejte slovo *kontaktujte*. Po slovo je zadán v, slouží jako ukazatel zobrazí na začátku slova **kontaktujte**. Buď podržte stisknutou **Ctrl** klíče a stiskněte klávesu tečka (.) nebo klikněte na ikonu pomocí myši otevřete dialog pomoc v editoru kódu vyplnit automaticky **pomocí** direktivy pro modely obor názvů.
 
     ![Pomocí Intellisense pomoc pro deklarace oborů názvů](build-restful-apis-with-aspnet-web-api/_static/image12.png)
@@ -185,16 +187,16 @@ V této úloze vytvoří řadič třídy, ve kterých se bude nacházet metody r
     [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample3.cs)]
 6. Stiskněte klávesu **F5** k ladění webové aplikace v prohlížeči. Chcete-li zobrazit změny provedené v výstup odezvy rozhraní API, proveďte následující kroky.
 
-    1. Jakmile se prohlížeči se otevře, stiskněte klávesu **F12** Pokud nástrojů pro vývojáře ještě nejsou otevřené.
-    2. Klikněte **sítě** kartě.
-    3. Stiskněte **spustit zachytávání** tlačítko.
-    4. Přidat adresu URL příponu **/api/kontakt** adresy URL v adresním řádku a stiskněte klávesu **Enter** klíč.
-    5. Stiskněte **přejít na podrobné zobrazení** tlačítko.
-    6. Vyberte **odpovědi** kartě. Měli byste vidět JSON řetězec představující serializovaný formu pole Kontakt instancí.
+   1. Jakmile se prohlížeči se otevře, stiskněte klávesu **F12** Pokud nástrojů pro vývojáře ještě nejsou otevřené.
+   2. Klikněte **sítě** kartě.
+   3. Stiskněte **spustit zachytávání** tlačítko.
+   4. Přidat adresu URL příponu **/api/kontakt** adresy URL v adresním řádku a stiskněte klávesu **Enter** klíč.
+   5. Stiskněte **přejít na podrobné zobrazení** tlačítko.
+   6. Vyberte **odpovědi** kartě. Měli byste vidět JSON řetězec představující serializovaný formu pole Kontakt instancí.
 
-    ![JSON serializovat výstup komplexní metoda volání webového rozhraní API](build-restful-apis-with-aspnet-web-api/_static/image13.png "JSON serializovat výstup komplexní volání webového rozhraní API – metoda")
+      ![JSON serializovat výstup komplexní metoda volání webového rozhraní API](build-restful-apis-with-aspnet-web-api/_static/image13.png "JSON serializovat výstup komplexní volání webového rozhraní API – metoda")
 
-    *Výstup serializován do formátu JSON komplexní volání webového rozhraní API – metoda*
+      *Výstup serializován do formátu JSON komplexní volání webového rozhraní API – metoda*
 
 <a id="Ex1Task4"></a>
 
@@ -221,7 +223,9 @@ Tato úloha bude ukazují, jak funkce do vrstvy služby pro vývojáře k odděl
 4. Přidat pomocí direktivy k **ContactRepository.cs** souboru obor názvů modelů.
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
+~~~
 5. Přidejte následující zvýrazněný kód, který **ContactRepository.cs** souboru k implementaci GetAllContacts metoda.
 
     (Code fragment kódu - *webové rozhraní API prostředí - Ex01 - kontaktní úložiště*)
@@ -231,7 +235,9 @@ Tato úloha bude ukazují, jak funkce do vrstvy služby pro vývojáře k odděl
 7. Přidejte následující příkaz using do části deklarace oboru názvů souboru.
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
+~~~
 8. Přidejte následující zvýrazněný kód, který **ContactController.cs** třída přidat soukromé pole představující instanci úložiště, tak, aby zbývající členy provádět třídy používat implementace služby.
 
     (Code fragment kódu - *webové rozhraní API prostředí - Ex01 - kontaktní řadiče*)
@@ -244,9 +250,9 @@ Tato úloha bude ukazují, jak funkce do vrstvy služby pro vývojáře k odděl
     [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample8.cs)]
 10. Umístí zarážku **ContactController**na **získat** definici metody.
 
-    ![Přidání zarážky kontaktní řadiče](build-restful-apis-with-aspnet-web-api/_static/image17.png "přidání zarážky kontaktní řadiče")
+   ![Přidání zarážky kontaktní řadiče](build-restful-apis-with-aspnet-web-api/_static/image17.png "přidání zarážky kontaktní řadiče")
 
-    *Přidání zarážky kontaktní řadiče*
+   *Přidání zarážky kontaktní řadiče*
 11. Stiskněte klávesu **F5** ke spuštění aplikace.
 12. Když se otevře v prohlížeči, stiskněte klávesu **F12** otevření nástrojů pro vývojáře.
 13. Klikněte **sítě** kartě.
@@ -254,9 +260,9 @@ Tato úloha bude ukazují, jak funkce do vrstvy služby pro vývojáře k odděl
 15. Připojte na adresu URL v adresním řádku s příponou **/api/kontakt** a stiskněte klávesu **Enter** načtení kontroleru rozhraní API.
 16. Visual Studio 2012 by mělo dojít jednou **získat** metoda zahájí spuštění.
 
-    ![Pozastavení v rámci metody Get](build-restful-apis-with-aspnet-web-api/_static/image18.png "dopadem na dřívější kód v rámci metody Get")
+   ![Pozastavení v rámci metody Get](build-restful-apis-with-aspnet-web-api/_static/image18.png "dopadem na dřívější kód v rámci metody Get")
 
-    *Ukončování řádků v rámci metody Get*
+   *Ukončování řádků v rámci metody Get*
 17. Stiskněte klávesu **F5** pokračujte.
 18. Vraťte se zpátky do Internet Exploreru Pokud ještě není aktivní. Poznámka: okno sběr sítě.
 
@@ -287,12 +293,12 @@ V této úloze se připravíte na vylepšení projekt webového rozhraní API, k
 1. Spustit **Visual Studio 2012 Express pro Web**, přejděte k **spustit** a typ **VS Express pro Web** stiskněte **Enter**.
 2. Otevřete **začít** řešení nacházející se v **zdroj/Ex02-ReadWriteWebAPI/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 3. Otevřete **Services/ContactRepository.cs** souboru.
 
 <a id="Ex2Task2"></a>
@@ -341,21 +347,25 @@ V této úloze budete upravovat výchozí zobrazení indexu webové aplikace pro
 1. Otevřete **Visual Studio 2012 Express pro Web** Pokud ještě není otevřené.
 2. Otevřete **začít** řešení nacházející se v **zdroj/Ex03-ConsumingWebAPI/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 3. Otevřete **Index.cshtml** soubor umístěný ve **zobrazení Domů** složky.
 4. Nahraďte kód HTML v rámci div element id **textu** tak, aby vypadal jako následující kód.
 
 
-    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
+~~~
+[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
+~~~
 5. Přidejte následující kód v JavaScriptu v dolní části souboru k provedení této žádosti HTTP do webového rozhraní API.
 
 
-    [!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
+~~~
+[!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
+~~~
 6. Otevřete **ContactController.cs** soubor, pokud ještě není otevřené.
 7. Umístěte zarážku na **získat** metodu **ContactController** třídy.
 
@@ -391,12 +401,16 @@ V této úloze bude pokračovat ke změně zobrazení indexu aplikace MVC. Formu
     (Code fragment kódu - *webové rozhraní API prostředí - Ex03 - metodu Post*)
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
+~~~
 3. Otevřete **Index.cshtml** souborů v sadě Visual Studio, pokud ještě není otevřené.
 4. Kód HTML níže přidejte do souboru právě po neuspořádaného seznamu, které jste přidali v předchozí úloze.
 
 
-    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
+~~~
+[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
+~~~
 5. V rámci elementu skript v dolní části dokumentu přidejte následující zvýrazněný kód pro zpracování událostí kliknutí na tlačítko, které bude odeslána data do webového rozhraní API pomocí volání HTTP POST.
 
     [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample17.html)]
@@ -414,14 +428,14 @@ V této úloze bude pokračovat ke změně zobrazení indexu aplikace MVC. Formu
     *Obraťte se na objekt odesílána webového rozhraní API z klienta*
 10. Krok prostřednictvím metody v ladicím programu až **odpovědi** proměnná byla vytvořena. Při kontrole v **místní hodnoty –** okno v ladicím programu, uvidíte, že byly nastaveny všechny vlastnosti.
 
-    ![Odpověď po vytvoření v ladicím programu](build-restful-apis-with-aspnet-web-api/_static/image26.png "odpověď po vytvoření v ladicím programu")
+   ![Odpověď po vytvoření v ladicím programu](build-restful-apis-with-aspnet-web-api/_static/image26.png "odpověď po vytvoření v ladicím programu")
 
-    *Odpověď po vytvoření v ladicím programu*
+   *Odpověď po vytvoření v ladicím programu*
 11. Pokud vyberete **F5** nebo klikněte na tlačítko **pokračovat** v ladicím programu bude žádost dokončena. Když přepnete zpět do prohlížeče, nového kontaktu se přidal do seznamu kontaktů uložené **ContactRepository** implementace.
 
-    ![V prohlížeči odráží úspěšné vytvoření nové instance kontaktní](build-restful-apis-with-aspnet-web-api/_static/image27.png "prohlížeče odráží úspěšné vytvoření nové instance kontaktů")
+   ![V prohlížeči odráží úspěšné vytvoření nové instance kontaktní](build-restful-apis-with-aspnet-web-api/_static/image27.png "prohlížeče odráží úspěšné vytvoření nové instance kontaktů")
 
-    *Úspěšné vytvoření nové instance kontaktní odráží prohlížeče*
+   *Úspěšné vytvoření nové instance kontaktní odráží prohlížeče*
 
 > [!NOTE]
 > Kromě toho můžete nasadit tuto aplikaci do Azure následující [příloha C: publikování aplikace ASP.NET MVC 4 pomocí nástroje nasazení webu](#AppendixC).
@@ -434,7 +448,7 @@ V této úloze bude pokračovat ke změně zobrazení indexu aplikace MVC. Formu
 
 Toto testovací prostředí obsahuje zavedla nové architektury ASP.NET Web API a provádění RESTful webová rozhraní API pomocí rozhraní. Z tohoto místa může vytvořit nové úložiště, která usnadňuje trvalosti dat pomocí libovolný počet mechanismy a propojit služby si místo jednoduché jeden jako příklad v tomto testovacím prostředí. Webové rozhraní API podporuje mnoho dalších funkcí, například povolení komunikaci od klientů jiného typu než HTML, které jsou napsané v libovolném jazyce, který podporuje protokol HTTP a XML nebo JSON. Schopnost hostitele webového rozhraní API mimo typické webové aplikace je také možné, je možnost vytvářet vlastní formáty serializace.
 
-Má oblast vyhrazený pro rozhraní ASP.NET Web API na webu technologie ASP.NET [ [https://asp.net/web-api](https://asp.net/web-api)](https://asp.net/web-api). Tento web bude pokračovat v poskytování nejnovější informace, ukázky a zprávy související s webového rozhraní API, tak to zkuste ho často Pokud byste chtěli pustíte hlubší do obrázky vytváření vlastní webová rozhraní API k dispozici pro prakticky libovolný zařízení nebo vývojovém prostředí.
+Má oblast vyhrazený pro rozhraní ASP.NET Web API na webu technologie ASP.NET [ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api). Tento web bude pokračovat v poskytování nejnovější informace, ukázky a zprávy související s webového rozhraní API, tak to zkuste ho často Pokud byste chtěli pustíte hlubší do obrázky vytváření vlastní webová rozhraní API k dispozici pro prakticky libovolný zařízení nebo vývojovém prostředí.
 
 <a id="AppendixA"></a>
 
@@ -492,9 +506,9 @@ S fragmenty kódu máte všechny kód, který je nutné na dosah ruky. Dokument 
 <a id="Appendix_B_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-b-installing-visual-studio-express-2012-for-web"></a>Příloha B: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze  **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)** . Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *Visual Studio Express 2012 pro Web se sadou Azure SDK*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 
@@ -638,14 +652,14 @@ Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vyt
     *Konfigurace nasazení webu*
 5. Připojení k databázi nakonfigurujte následujícím způsobem:
 
-    - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
-    - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
-    - V **heslo** zadejte přihlašovací heslo správce serveru.
-    - Zadejte nový název databáze, například: *MVC4SampleDB*.
+   - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
+   - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
+   - V **heslo** zadejte přihlašovací heslo správce serveru.
+   - Zadejte nový název databáze, například: *MVC4SampleDB*.
 
-    ![Konfigurace cílový připojovací řetězec](build-restful-apis-with-aspnet-web-api/_static/image55.png "konfigurace cílový připojovací řetězec")
+     ![Konfigurace cílový připojovací řetězec](build-restful-apis-with-aspnet-web-api/_static/image55.png "konfigurace cílový připojovací řetězec")
 
-    *Konfigurace cílový připojovací řetězec*
+     *Konfigurace cílový připojovací řetězec*
 6. Pak klikněte na tlačítko **OK**. Po zobrazení výzvy k vytvoření databáze, klikněte na tlačítko **Ano**.
 
     ![Vytvoření databáze](build-restful-apis-with-aspnet-web-api/_static/image56.png "vytváření řetězec databáze")

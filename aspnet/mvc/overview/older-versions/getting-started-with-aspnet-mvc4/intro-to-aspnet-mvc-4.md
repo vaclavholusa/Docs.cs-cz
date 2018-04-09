@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
-title: "Úvod do architektury ASP.NET MVC 4 | Microsoft Docs"
+title: Úvod do architektury ASP.NET MVC 4 | Microsoft Docs
 author: Rick-Anderson
-description: "Aktualizovaná verze, pokud v tomto kurzu je k dispozici zde pomocí sady Visual Studio 2013. Nový kurz používá ASP.NET MVC 5, který nabízí mnoho vylepšení v porovnání s t..."
+description: Aktualizovaná verze, pokud v tomto kurzu je k dispozici zde pomocí sady Visual Studio 2013. Nový kurz používá ASP.NET MVC 5, který nabízí mnoho vylepšení v porovnání s t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 92d9e583b6c26fa8c928d33e14593d280702a269
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 519bac22ba2607931c5f3123b9b567859a2b3d1c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="intro-to-aspnet-mvc-4"></a>Úvod do architektury ASP.NET MVC 4
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Pokud v tomto kurzu je k dispozici aktualizovaná verze [sem](../../getting-started/introduction/getting-started.md) pomocí [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads). Nový kurz používá ASP.NET MVC 5, který obsahuje mnoho vylepšení v tomto kurzu.
 > 
@@ -88,5 +88,5 @@ F5 způsobí, že chcete spustit službu IIS Express a spuštění webové aplik
 
 Okamžitě po nasazení této výchozí šablony vám dává domácí, kontaktů a o stránky. Také poskytuje podporu registrace a přihlášení a obsahuje odkazy na Facebook nebo Twitter. Dalším krokem je a změnit tak, jak tato aplikace funguje trochu Další informace o architektuře ASP.NET MVC. Zavřete prohlížeč a zkuste změnit nějaký kód.
 
->[!div class="step-by-step"]
-[Next](adding-a-controller.md)
+> [!div class="step-by-step"]
+> [Next](adding-a-controller.md)

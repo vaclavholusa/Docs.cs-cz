@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/testing-and-debugging/unit-testing-signalr-applications
-title: "Testování částí aplikací SignalR | Microsoft Docs"
+title: Testování částí aplikací SignalR | Microsoft Docs
 author: pfletcher
-description: "Tento článek popisuje, jak používat funkce testování částí 2.0 SignalR."
+description: Tento článek popisuje, jak používat funkce testování částí 2.0 SignalR.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: d767e1a9d27670387133e5a48a8f92f5bdd39d9e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cff866716cb1179e02b930f33cb0f8c33d4a6cf0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="unit-testing-signalr-applications"></a>Aplikací SignalR testování částí
 ====================
@@ -72,11 +72,11 @@ V této části přidáte testů jednotek pro aplikace vytvořené v [kurzu Zač
     ![Přidat odkaz na projekt](unit-testing-signalr-applications/_static/image3.png)
 6. Přidat SignalR, Moq a XUnit balíčky, do kterých **TestLibrary** projektu. V **Konzola správce balíčků**, nastavte **výchozí projekt** rozevírací k **TestLibrary**. V okně konzoly spusťte následující příkazy:
 
-    - `Install-Package Microsoft.AspNet.SignalR`
-    - `Install-Package Moq`
-    - `Install-Package XUnit`
+   - `Install-Package Microsoft.AspNet.SignalR`
+   - `Install-Package Moq`
+   - `Install-Package XUnit`
 
-    ![Instalovat balíčky](unit-testing-signalr-applications/_static/image4.png)
+     ![Instalovat balíčky](unit-testing-signalr-applications/_static/image4.png)
 7. Vytvoření testovacího souboru. Klikněte pravým tlačítkem myši **TestLibrary** projektu a klikněte na tlačítko **přidat...** , **Třída**. Pojmenujte novou třídu **Tests.cs**.
 8. Obsah Tests.cs nahraďte následujícím kódem.
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
-title: "Přidání dynamický obsah na stránku v mezipaměti (VB) | Microsoft Docs"
+title: Přidání dynamický obsah na stránku v mezipaměti (VB) | Microsoft Docs
 author: microsoft
-description: "Zjistěte, jak kombinovat dynamické a uložené v mezipaměti obsahu na stejné stránce. Nahrazení po mezipaměti umožňuje zobrazit dynamický obsah, jako je například o banner oznámení o inzerovaném programu..."
+description: Zjistěte, jak kombinovat dynamické a uložené v mezipaměti obsahu na stejné stránce. Nahrazení po mezipaměti umožňuje zobrazit dynamický obsah, jako je například o banner oznámení o inzerovaném programu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f07f4ecec36e71679dbc471b65f26d260349a07e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 89421b4bec2170e408ded87ccc918a7a16844a98
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-dynamic-content-to-a-cached-page-vb"></a>Přidání dynamický obsah na stránku v mezipaměti (VB)
 ====================
@@ -47,7 +47,7 @@ Představte si například, že chcete náhodně zobrazit různé příspěvků 
 
 Abyste mohli využívat mezipaměti po nahrazení, zavolejte metodu HttpResponse.WriteSubstitution(). Metoda WriteSubstitution() nastaví kód tak, aby oblasti v mezipaměti stránku nahraďte dynamický obsah. Metoda WriteSubstitution() slouží k zobrazení položky náhodných zpráv v zobrazení v výpis 2.
 
-**Výpis 2 – Views\Home\Index.aspx**
+**Listing 2 – Views\Home\Index.aspx**
 
 [!code-aspx[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample2.aspx)]
 
@@ -97,6 +97,6 @@ V tomto kurzu vysvětlení, jak můžete dynamicky aktualizovat obsah v mezipam�
 
 Využít výhod ukládání do mezipaměti, kdykoli je to možné – ho může mít výrazný dopad na výkon webových aplikací. Jak je popsáno v tomto kurzu, můžete využít výhod ukládání do mezipaměti i v případě, že je třeba zobrazit dynamický obsah na stránkách.
 
->[!div class="step-by-step"]
-[Předchozí](improving-performance-with-output-caching-vb.md)
-[další](creating-a-controller-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](improving-performance-with-output-caching-vb.md)
+> [další](creating-a-controller-vb.md)

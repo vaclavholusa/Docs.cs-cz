@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-cs
-title: "Prevence útoků vkládání JavaScript (C#) | Microsoft Docs"
+title: Prevence útoků vkládání JavaScript (C#) | Microsoft Docs
 author: StephenWalther
-description: "Zabránit útoky prostřednictvím injektáže JavaScript a webů skriptování útoky na vás. V tomto kurzu Stephen Walther vysvětluje, jak můžete snadno de..."
+description: Zabránit útoky prostřednictvím injektáže JavaScript a webů skriptování útoky na vás. V tomto kurzu Stephen Walther vysvětluje, jak můžete snadno de...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 67f53162cb1bb0771d632ba7a3f5960db00e2744
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fbec58c009640164d908db5a45557c9e50041173
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="preventing-javascript-injection-attacks-c"></a>Prevence útoků vkládání JavaScript (C#)
 ====================
@@ -43,7 +43,7 @@ Představte si, že jste vytvořili web zpětné vazby zákazníků (viz obráze
 
 Web zpětné vazby zákazníka používá `controller` v výpis 1. To `controller` obsahuje dvě akce s názvem `Index()` a `Create()`.
 
-**Výpis 1 –`HomeController.cs`**
+**Výpis 1 – `HomeController.cs`**
 
 [!code-csharp[Main](preventing-javascript-injection-attacks-cs/samples/sample1.cs)]
 
@@ -53,7 +53,7 @@ Web zpětné vazby zákazníka používá `controller` v výpis 1. To `controlle
 
 `Index` Zobrazení je součástí výpis 2.
 
-**Výpis 2 –`Index.aspx`**
+**Výpis 2 – `Index.aspx`**
 
 [!code-aspx[Main](preventing-javascript-injection-attacks-cs/samples/sample2.aspx)]
 
@@ -65,7 +65,7 @@ Představte si, zadejte následující text do formulář zpětné vazby zákazn
 
 [!code-html[Main](preventing-javascript-injection-attacks-cs/samples/sample3.html)]
 
-Tento text představuje skript jazyka JavaScript, který zobrazí pole zpráva s výstrahou. Po někdo předá tento skript do zpětné vazby formuláři zprávu *poč!* Zobrazí se vždy, když každý uživatel navštíví web zpětné vazby zákazníka v budoucnu (viz obrázek 2).
+Tento text představuje skript jazyka JavaScript, který zobrazí pole zpráva s výstrahou. Po někdo předá tento skript do zpětné vazby formuláři zprávu <em>poč!</em> Zobrazí se vždy, když každý uživatel navštíví web zpětné vazby zákazníka v budoucnu (viz obrázek 2).
 
 
 [![Vkládání JavaScript](preventing-javascript-injection-attacks-cs/_static/image5.png)](preventing-javascript-injection-attacks-cs/_static/image4.png)
@@ -121,6 +121,6 @@ Proč je to chybný? Pokud byste někdy potřebovali pro zobrazení dat databáz
 
 Účelem tohoto kurzu bylo vystrašení můžete o potenciálních zákazníků útoku vkládání JavaScript. Dva přístupy k obraně aplikace ASP.NET MVC před útoky vkládání JavaScript popsané v tomto kurzu: můžete buď HTML kódování uživatel odeslal data v zobrazení, nebo můžete HTML kódování uživatel odeslal data v kontroleru.
 
->[!div class="step-by-step"]
-[Předchozí](authenticating-users-with-windows-authentication-cs.md)
-[další](authenticating-users-with-forms-authentication-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](authenticating-users-with-windows-authentication-cs.md)
+> [další](authenticating-users-with-forms-authentication-vb.md)

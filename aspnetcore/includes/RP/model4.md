@@ -3,7 +3,7 @@ Následující tabulka Podrobnosti ASP.NET Core kódu generátory parametry:
 | Parametr               | Popis|
 | ----------------- | ------------ |
 | -m  | Název modelu. |
-| -řadiče domény  | Data kontextu. |
+| -dc  | Data kontextu. |
 | -udl | Použijte výchozí rozložení. |
 | -outDir | Relativní výstupní cesta ke složce vytvoření zobrazení. |
 | --referenceScriptLibraries | Přidá `_ValidationScriptsPartial` upravovat a vytvářet stránky |
@@ -19,7 +19,7 @@ dotnet aspnet-codegenerator razorpage -h
 * Spusťte aplikaci a připojit `/Movies` na adresu URL v prohlížeči (`http://localhost:port/movies`).
 * Testovací **vytvořit** odkaz.
 
- ![Vytvoření stránky](../../tutorials/razor-pages/model/_static/conan.png)
+  ![Vytvoření stránky](../../tutorials/razor-pages/model/_static/conan.png)
 
 <a name="scaffold"></a>
 

@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
-title: "Účet potvrzení a obnovení hesla s ASP.NET Identity (C#) | Microsoft Docs"
+title: Účet potvrzení a obnovení hesla s ASP.NET Identity (C#) | Microsoft Docs
 author: HaoK
-description: "Před provedením tohoto kurzu, které by se měla dokončit nejprve vytvořte zabezpečení webové aplikace ASP.NET MVC 5 s přihlášení resetovat heslo a potvrzení e-mailu. V tomto kurzu..."
+description: Před provedením tohoto kurzu, které by se měla dokončit nejprve vytvořte zabezpečení webové aplikace ASP.NET MVC 5 s přihlášení resetovat heslo a potvrzení e-mailu. V tomto kurzu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
 ms.topic: article
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 548baaaa06980fb793c079b66b6edc34422eb579
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0167388cf6b488b72ca36f583a7794690dbf9900
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>Potvrzení účtu a heslo pro obnovení s ASP.NET Identity (C#)
 ====================
@@ -88,7 +88,7 @@ Začněte tím, že instalace a spuštění [Visual Studio Express 2013 pro Web]
   
     ![](account-confirmation-and-password-recovery-with-aspnet-identity/_static/image10.png)  
   
- V tomto okamžiku není potvrzena e-mailu.
+   V tomto okamžiku není potvrzena e-mailu.
 
 Je výchozí úložiště dat pro ASP.NET Identity Entity Framework, ale můžete nakonfigurovat ji k používání jiným úložištím dat a přidat další pole. V tématu [další prostředky](#addRes) na konci tohoto kurzu.
 
@@ -117,7 +117,7 @@ Zkontrolujte `ApplicationUserManager` třídy, která obsahuje informace o ident
 - Dvoufaktorové ověřování (2FA). V jiné kurzu budete zahrnovat 2FA a SMS.
 - Zapojování e-mailu a služby SMS. (I zaměříme SMS v jiné kurzu).
 
-`ApplicationUserManager` Třída odvozená z obecná `UserManager<ApplicationUser>` třídy. `ApplicationUser`odvozená z [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx). `IdentityUser`odvozená z obecná `IdentityUser` třídy:
+`ApplicationUserManager` Třída odvozená z obecná `UserManager<ApplicationUser>` třídy. `ApplicationUser` odvozená z [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx). `IdentityUser` odvozená z obecná `IdentityUser` třídy:
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample1.cs)]
 
@@ -127,11 +127,11 @@ Obecné argumenty na `IUser` umožňují odvození třídy pomocí různých typ
 
 ### <a name="applicationuser"></a>ApplicationUser
 
-`ApplicationUser`(`public class ApplicationUserManager : UserManager<ApplicationUser>`) je definován v *Models\IdentityModels.cs* jako:
+`ApplicationUser` (`public class ApplicationUserManager : UserManager<ApplicationUser>`) je definován v *Models\IdentityModels.cs* jako:
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample2.cs?highlight=8-9)]
 
-Generuje zvýrazněný výše [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). ASP.NET Identity a ověřování souborů Cookie OWIN jsou založené na deklaracích, proto rozhraní vyžaduje aplikaci generovat `ClaimsIdentity` pro uživatele. `ClaimsIdentity`obsahuje informace o všech deklarací identity pro uživatele, jako je například uživatelské jméno, stáří a jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.
+Generuje zvýrazněný výše [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). ASP.NET Identity a ověřování souborů Cookie OWIN jsou založené na deklaracích, proto rozhraní vyžaduje aplikaci generovat `ClaimsIdentity` pro uživatele. `ClaimsIdentity` obsahuje informace o všech deklarací identity pro uživatele, jako je například uživatelské jméno, stáří a jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.
 
 OWIN `AuthenticationManager.SignIn` metoda předá `ClaimsIdentity` a přihlášení uživatele:
 
@@ -152,7 +152,7 @@ V této části použijete ke stažení, které budeme pracovat s více ucelenou
 
     [!code-console[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample4.cmd)]
 
- V tomto kurzu použijeme [sendgrid vám umožňuje](http://sendgrid.com/) k odesílání e-mailu. `Identity.Samples` Balíček nainstaluje kód Pracujeme s.
+   V tomto kurzu použijeme [sendgrid vám umožňuje](http://sendgrid.com/) k odesílání e-mailu. `Identity.Samples` Balíček nainstaluje kód Pracujeme s.
 3. Nastavte [projektu pro použití protokolu SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
 4. Otestujte vytvoření místního účtu spuštěním aplikace a kliknutím na **zaregistrovat** propojit a publikování registračním formuláři.
 5. Klikněte na odkaz Ukázkový e-mailu, který simuluje potvrzení e-mailu.
@@ -198,7 +198,7 @@ Následující kód ukazuje, jak odeslat e-mailu pomocí [poštovní zpráva](ht
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample8.cs)]
 
 > [!WARNING]
-> Zabezpečení – nikdy úložiště citlivá data ve zdrojovém kódu. Účet a přihlašovací údaje jsou uloženy v appSetting. V Azure, můžete bezpečně uložit tyto hodnoty na  **[konfigurace](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**  na portálu Azure. V tématu [osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a do Azure](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
+> Zabezpečení – nikdy úložiště citlivá data ve zdrojovém kódu. Účet a přihlašovací údaje jsou uloženy v appSetting. V Azure, můžete bezpečně uložit tyto hodnoty na **[konfigurace](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** na portálu Azure. V tématu [osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a do Azure](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
 
 
 Zadejte přihlašovacích údajů služby SendGrid, spusťte aplikaci, můžete zaregistrovat s e-mailový alias kliknutím na odkaz potvrdit v e-mailu. Chcete-li zjistit, jak to provést pomocí vaší [Outlook.com](http://outlook.com) e-mailový účet, najdete v části Jan Atten [C# konfigurace SMTP pro hostitele SMTP Outlook.Com](http://typecastexception.com/post/2013/12/20/C-SMTP-Configuration-for-OutlookCom-SMTP-Host.aspx) a svůj[technologii ASP.NET 2.0 Identity: nastavení ověření účtu dvoufaktorové ověřování a](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) odešle.

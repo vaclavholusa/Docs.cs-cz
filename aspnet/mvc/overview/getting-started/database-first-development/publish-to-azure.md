@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/publish-to-azure
-title: "Publikování MVC databáze první lokalitu v Azure | Microsoft Docs"
+title: Publikování MVC databáze první lokalitu v Azure | Microsoft Docs
 author: tfitzmac
-description: "Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri..."
+description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/22/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/publish-to-azure
 msc.type: authoredcontent
-ms.openlocfilehash: eadc0f2b08df29f80fe53d03cf88cd3cdcecfb12
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 839bbceba6f0e098303facd40dbb1496bd449ba3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a>Publikování MVC databáze první lokalitu v Azure
 ====================
@@ -166,5 +166,5 @@ Příklad úvodní Code First vývoj naleznete v části [Začínáme s ASP.NET 
 
 Pokročilejší příklad najdete v tématu [vytváření datového modelu Entity Framework pro aplikace ASP.NET MVC 4](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md). Všimněte si, že rozhraní API DbContext, který používáte pro práci s daty v první databáze je stejný jako rozhraní API, které používáte pro práci s daty v Code First. I v případě, že máte v úmyslu použít Database First, můžete naučit pro zpracování složitějších scénáře, jako je čtení a aktualizaci související data, zpracování konfliktů souběžnosti, a tak dále z Code First kurzu. Jediný rozdíl spočívá v tom, jak vytvořit databázi, třída kontextu a tříd entit.
 
->[!div class="step-by-step"]
-[Předchozí](enhancing-data-validation.md)
+> [!div class="step-by-step"]
+> [Předchozí](enhancing-data-validation.md)

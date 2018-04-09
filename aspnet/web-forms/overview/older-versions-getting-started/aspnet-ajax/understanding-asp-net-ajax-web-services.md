@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
-title: "Principy webových služeb ASP.NET AJAX | Microsoft Docs"
+title: Principy webových služeb ASP.NET AJAX | Microsoft Docs
 author: scottcate
-description: "Webové služby jsou nedílnou součástí rozhraní .NET framework, které poskytují řešení a platformy pro výměnu dat mezi distribuované systémy. I když Web..."
+description: Webové služby jsou nedílnou součástí rozhraní .NET framework, které poskytují řešení a platformy pro výměnu dat mezi distribuované systémy. I když Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: 8eb3486c9b3f4ddb6a8bc2c1cdcac774a6852574
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b9f61f895fea1960ebd25780454b86d5c3ba1bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-web-services"></a>Principy webových služeb ASP.NET AJAX
 ====================
@@ -51,7 +51,7 @@ Tato nahrazení httpHandlers přišla Chcete-li povolit volání jazyka JavaScri
 
 [!code-json[Main](understanding-asp-net-ajax-web-services/samples/sample2.json)]
 
-> *>[!NOTE] název operace je definují jako část adresy URL k webové službě, kromě toho nejsou vždy odeslaných zpráv žádostí prostřednictvím formátu JSON. Webové služby můžete využít atribut ScriptMethod s parametrem UseHttpGet nastavit na hodnotu true, což způsobí, že předávání pomocí parametrů parametrů řetězce dotazu.*
+> *> [!NOTE] Název operace je definován jako část adresy URL k webové službě; Kromě toho zprávy žádosti nejsou vždy odeslat prostřednictvím formátu JSON. Webové služby můžete využít atribut ScriptMethod s parametrem UseHttpGet nastavit na hodnotu true, což způsobí, že předávání pomocí parametrů parametrů řetězce dotazu.*
 
 
 **Výpis 3. Zpráva odpovědi webové služby serializovat na JSON**
@@ -160,7 +160,7 @@ Přidání odkazu na CustomersService.asmx prostřednictvím ovládací prvek Sc
 
 [!code-html[Main](understanding-asp-net-ajax-web-services/samples/sample14.html)]
 
-> *>[!NOTE] Pokud byste chtěli vidět skutečný kód proxy JavaScript, který se vygeneruje můžete do pole Adresa Internet Exploreru zadejte adresu URL k webové službě požadované rozhraní .NET a připojit /js na konec.*
+> *> [!NOTE] Pokud byste chtěli vidět skutečný kód proxy JavaScript, který se vygeneruje můžete do pole Adresa Internet Exploreru zadejte adresu URL k webové službě požadované rozhraní .NET a připojit /js na konec.*
 
 
 Pokud je povoleno ladění v souboru web.config, které budou vloženy ladicí verze proxy server JavaScript na stránce jako ukazuje následující:
@@ -263,7 +263,7 @@ Pomocí objektu PageMethods je velmi podobný používání objekt proxy server 
 
 ## <a name="the-autocompleteextender-and-the-aspnet-ajax-toolkit"></a>AutoCompleteExtender a ASP.NET AJAX Toolkit
 
-ASP.NET AJAX Toolkit (k dispozici z [http://ajax.asp.net](http://ajax.asp.net)) nabízí několik ovládacích prvků, které lze použít pro přístup k webovým službám. Konkrétně sada nástrojů obsahuje užitečné ovládací prvek s názvem `AutoCompleteExtender` který slouží k volání webové služby a zobrazit data bez psaní kódu jazyka JavaScript na všech stránkách.
+ASP.NET AJAX Toolkit (k dispozici z [ http://ajax.asp.net ](http://ajax.asp.net)) nabízí několik ovládacích prvků, které lze použít pro přístup k webovým službám. Konkrétně sada nástrojů obsahuje užitečné ovládací prvek s názvem `AutoCompleteExtender` který slouží k volání webové služby a zobrazit data bez psaní kódu jazyka JavaScript na všech stránkách.
 
 Ovládací prvek AutoCompleteExtender lze rozšířit stávající funkce textové pole a pomůže snadno najít data, která se snaží zjistit další uživatelé. Psaní do textové pole řízení lze použít k dotazování webové služby a dynamicky zobrazuje výsledky pod textové pole. Obrázek 4 ukazuje příklad použití ovládacího prvku AutoCompleteExtender zobrazíte ID zákazníka pro podporu aplikace. Jako uživatel zadá různých znaků do textového pole, zobrazí se pod ním podle jejich vstup různé položky. Uživatelé pak můžete vybrat id požadované zákazníka.
 
@@ -309,6 +309,6 @@ Dana Wahlin (Microsoft nejvíc hodí v situaci Professional pro technologii ASP.
 
 Scott Dikovat pracuje s technologií Microsoft Web od 1997 a je ředitel myKB.com ([www.myKB.com](http://www.myKB.com)) kde mu se specializuje na psaní ASP.NET na základě aplikací, které jsou zaměřené na řešení softwaru znalostní báze Knowledge Base. Scott nelze kontaktovat prostřednictvím e-mailu v [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) nebo jeho blog na [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Předchozí](understanding-asp-net-ajax-localization.md)
-[další](understanding-asp-net-ajax-debugging-capabilities.md)
+> [!div class="step-by-step"]
+> [Předchozí](understanding-asp-net-ajax-localization.md)
+> [další](understanding-asp-net-ajax-debugging-capabilities.md)

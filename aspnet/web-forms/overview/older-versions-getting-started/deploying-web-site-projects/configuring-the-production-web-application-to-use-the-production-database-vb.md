@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
-title: "Konfigurace webové aplikace produkční použití provozní databázi (VB) | Microsoft Docs"
+title: Konfigurace webové aplikace produkční použití provozní databázi (VB) | Microsoft Docs
 author: rick-anderson
-description: "Jak je popsáno v dřívější kurzy, není pro konfigurační informace pro liší vývoj a produkční prostředí. Toto je es..."
+description: Jak je popsáno v dřívější kurzy, není pro konfigurační informace pro liší vývoj a produkční prostředí. Toto je es...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 60ef1f93efea777e9309ad8c664a2c6645f1ce80
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: b1741807fe02b4e60db7098cfd46922d3ba50ccd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>Konfigurace webové aplikace produkční použití provozní databázi (VB)
 ====================
@@ -71,7 +71,7 @@ Dále určit různé informace o připojení databáze (viz obrázek 2). Při re
 
 Databázi produkčním prostředí by měl být teď uvedený v Průzkumníku serveru. Vyberte databázi z Průzkumníka serveru a přejít do okna vlastností. Zde najdete vlastnost s názvem připojovací řetězec databáze s připojovacím řetězcem. Za předpokladu, že používáte databáze Microsoft SQL Server na produkční a poskytovatel Sqlclienta připojovací řetězec by měl vypadat takto:
 
-**Zdroj dat =*serverName*; Počáteční katalog =*databaseName*; Zachovat bezpečnostní údaje = True; ID uživatele =*uživatelské jméno*; Heslo = * heslo***
+<strong>Zdroj dat =<em>serverName</em>; Počáteční katalog =<em>databaseName</em>; Zachovat bezpečnostní údaje = True; ID uživatele =<em>uživatelské jméno</em>; Heslo =*heslo</strong>*
 
 Kde *serverName*, *databaseName*, *uživatelské jméno*, a *heslo* jsou s hodnotami pro název databázového serveru, databáze název a uživatelské jméno a heslo, které vám poskytne vaše společnost webového hostitele.
 
@@ -152,6 +152,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Přesunutí nastavení ze souboru Web.config](http://www.asp101.com/tips/index.asp?id=154)
 - [Technická dokumentace k &lt;connectionStrings&gt; – Element](https://msdn.microsoft.com/library/bf7sd233.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](deploying-a-database-vb.md)
-[další](configuring-a-website-that-uses-application-services-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-a-database-vb.md)
+> [další](configuring-a-website-that-uses-application-services-vb.md)

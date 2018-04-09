@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
-title: "Hostování OWIN roli pracovního procesu Azure | Microsoft Docs"
+title: Hostování OWIN roli pracovního procesu Azure | Microsoft Docs
 author: MikeWasson
-description: "Tento kurz ukazuje, jak v roli pracovního procesu Microsoft Azure vlastní hostování OWIN. Open Web Interface pro .NET (OWIN) definuje abstrakci mezi .NET webový server..."
+description: Tento kurz ukazuje, jak v roli pracovního procesu Microsoft Azure vlastní hostování OWIN. Open Web Interface pro .NET (OWIN) definuje abstrakci mezi .NET webový server...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/11/2014
 ms.topic: article
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 8c0fdfdf60ff3bde34b6869adf3f8693b4d9615d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 13bccc4b2d6f1b22c94446deaf6795dab766275b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Hostitele OWIN roli pracovního procesu systému Azure
 ====================
@@ -119,7 +119,7 @@ Emulátoru služby výpočty v přiřadí místní IP adresu ke koncovému bodu.
 
 [![](host-owin-in-an-azure-worker-role/_static/image10.png)](host-owin-in-an-azure-worker-role/_static/image9.png)
 
-Najít IP adresu v rámci nasazení služby, nasazení [id] podrobnosti ze služby. Otevřete webový prohlížeč a přejděte na http://*adresu*, kde *adresu* je IP adresa přiřadila emulátoru služby výpočty v; například `http://127.0.0.1:80`. Měli byste vidět úvodní stránku OWIN:
+Najít IP adresu v rámci nasazení služby, nasazení [id] podrobnosti ze služby. Otevřete webový prohlížeč a přejděte na http://<em>adresu</em>, kde <em>adresu</em> je IP adresa přiřadila emulátoru služby výpočty v; například `http://127.0.0.1:80`. Měli byste vidět úvodní stránku OWIN:
 
 ![](host-owin-in-an-azure-worker-role/_static/image11.png)
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
-title: "Znovu použijte uživatelské rozhraní pomocí stránky předlohy a částečné. | Microsoft Docs"
+title: Znovu použijte uživatelské rozhraní pomocí stránky předlohy a částečné. | Microsoft Docs
 author: microsoft
-description: "Krok 7 zjistí způsoby použijeme SUCHÝCH zásadu v rámci našich šablon zobrazení omezit zdvojení kódu, pomocí šablony částečné zobrazení a stránky předlohy."
+description: Krok 7 zjistí způsoby použijeme SUCHÝCH zásadu v rámci našich šablon zobrazení omezit zdvojení kódu, pomocí šablony částečné zobrazení a stránky předlohy.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
-ms.openlocfilehash: c42cd6aca40b08a9f8461532fbfd0589901b64ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ade655f3a4a429360b678d02fb564ac9cf255d42
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a>Znovu použijte uživatelské rozhraní pomocí stránky předlohy a částečné.
 ====================
@@ -137,6 +137,6 @@ A */Dinners/Edit / [id]* adresy URL:
 
 Pojďme nyní pokroku výpis scénáře, který jsme vytvořili výše a škálovatelné podporu stránkování.
 
->[!div class="step-by-step"]
-[Předchozí](use-viewdata-and-implement-viewmodel-classes.md)
-[další](implement-efficient-data-paging.md)
+> [!div class="step-by-step"]
+> [Předchozí](use-viewdata-and-implement-viewmodel-classes.md)
+> [další](implement-efficient-data-paging.md)

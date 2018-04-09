@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
-title: "Iterace #1 – Vytvoření aplikace (C#) | Microsoft Docs"
+title: 'Iterace #1 – Vytvoření aplikace (C#) | Microsoft Docs'
 author: microsoft
-description: "V první iteraci vytvoříme obraťte se na správce v nejjednodušší způsob, jak to možné. Nemůžeme přidat podporu pro základní databázových operací: vytvořit, číst, aktualizovat a D...."
+description: 'V první iteraci vytvoříme obraťte se na správce v nejjednodušší způsob, jak to možné. Nemůžeme přidat podporu pro základní databázových operací: vytvořit, číst, aktualizovat a D....'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 12927250595a8f3130328d2fe219280a13349787
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 30f626511164363fea2195a05e73aeee5764933b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-1--create-the-application-c"></a>Iterace #1 – Vytvoření aplikace (C#)
 ====================
@@ -67,7 +67,7 @@ V této iteraci jsme proveďte následující kroky:
 
 V aplikacích ASP.NET MVC musíte mít Visual Studio 2008 nebo Visual Web Developer 2008 nainstalovaná ve vašem počítači (Visual Web Developer je bezplatnou verzi Visual Studia, která nezahrnuje všechny rozšířené funkce sady Visual Studio). Buď zkušební verzi sady Visual Studio 2008 nebo Visual Web Developer si můžete stáhnout z následující adresy:
 
-[https://www.ASP.NET/downloads/Essential/](https://www.asp.net/downloads/essential)
+[https://www.asp.net/downloads/essential/](https://www.asp.net/downloads/essential)
 
 > [!NOTE] 
 > 
@@ -76,15 +76,15 @@ V aplikacích ASP.NET MVC musíte mít Visual Studio 2008 nebo Visual Web Develo
 
 Architektura ASP.NET MVC. Rozhraní ASP.NET MVC můžete stáhnout z následující adresy:
 
-[https://www.ASP.NET/MVC](../../../index.md)
+[https://www.asp.net/mvc](../../../index.md)
 
 V tomto kurzu používáme Microsoft Entity Framework pro přístup k databázi. Rozhraní Entity Framework je součástí rozhraní .NET Framework 3.5 Service Pack 1. Tato aktualizace service pack můžete stáhnout z následujícího umístění:
 
-[https://www.microsoft.com/downloads/details.aspx?FamilyId=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang = en](https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en)
+[https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang = en](https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en)
 
 Jako alternativu k provádění každé z těchto souborů ke stažení jeden po druhém můžete využít výhod služby instalace webové platformy (instalace webové platformy). Instalace webové platformy si můžete stáhnout z následující adresy:
 
-[https://www.ASP.NET/downloads/Essential/](https://www.asp.net/downloads/essential)
+[https://www.asp.net/downloads/essential/](https://www.asp.net/downloads/essential)
 
 ## <a name="aspnet-mvc-project"></a>Projektu ASP.NET MVC
 
@@ -172,9 +172,9 @@ Je potřeba vytvořit tabulku, která obsahuje následující sloupce:
 | **Název sloupce** | **Datový typ** | **Povolit hodnoty Null** |
 | --- | --- | --- |
 | ID | int | false |
-| FirstName | Nvarchar(50) | false |
-| Příjmení | Nvarchar(50) | false |
-| Telefon | Nvarchar(50) | false |
+| FirstName | nvarchar(50) | false |
+| LastName | nvarchar(50) | false |
+| Telefon | nvarchar(50) | false |
 | E-mailu | nvarchar(255) | false |
 
 
@@ -292,7 +292,7 @@ Když kliknete **přidat** generováno tlačítko zobrazení indexu v výpis 3. 
 
 Text Index zobrazení obsahuje smyčka typu foreach, který iteruje v rámci každé kontaktů reprezentována třídu modelu. Hodnoty vlastností třídy, obraťte se zobrazí v rámci tabulky HTML.
 
-**Výpis 3 - Views\Home\Index.aspx (ponechat beze změny)**
+**Listing 3 - Views\Home\Index.aspx (unmodified)**
 
 [!code-aspx[Main](iteration-1-create-the-application-cs/samples/sample3.aspx)]
 
@@ -354,7 +354,7 @@ V **přidat zobrazení** dialogovém okně, vyberte **ContactManager.Models.Cont
 
 Vytvořit zobrazení obsahuje pro každé z vlastností třídy, obraťte se na pole formuláře. Kód pro vytvoření zobrazení je součástí výpis 5.
 
-**Výpis 5 - Views\Home\Create.aspx**
+**Listing 5 - Views\Home\Create.aspx**
 
 [!code-aspx[Main](iteration-1-create-the-application-cs/samples/sample5.aspx)]
 
@@ -390,7 +390,7 @@ Můžete vygenerovat zobrazení, které obsahuje formulář upravit tak, že kli
 
 Když kliknete na tlačítko Přidat, se automaticky vytvoří nové zobrazení upravit. Formuláře HTML, který je generován obsahuje pole, které odpovídají každé vlastnosti třídy, obraťte se na (viz seznam 7).
 
-**Výpis 7 – Views\Home\Edit.aspx**
+**Listing 7 - Views\Home\Edit.aspx**
 
 [!code-aspx[Main](iteration-1-create-the-application-cs/samples/sample7.aspx)]
 
@@ -439,7 +439,7 @@ Na rozdíl od v případě zobrazení seznamu, vytvořit a upravit, dialogové o
 
 Obsah zobrazení odstranění je obsažený v výpis 9. Toto zobrazení obsahuje formulář, který potvrdí, zda by měla být konkrétní kontakt odstranit (viz obrázek 21).
 
-**Výpis 9 – Views\Home\Delete.aspx**
+**Listing 9 - Views\Home\Delete.aspx**
 
 [!code-aspx[Main](iteration-1-create-the-application-cs/samples/sample9.aspx)]
 
@@ -472,7 +472,7 @@ Když provedete tuto změnu, aplikace nebude mít řadič domovské. Při spušt
 
 Je potřeba aktualizovat výchozí trasu v souboru Global.asax pro použití řadiče obraťte se na místo domovské řadiče. Otevřete soubor Global.asax a upravte výchozí řadiče, používá výchozí trasa (viz seznam 10).
 
-**Výpis 10 – Global.asax.cs**
+**Listing 10 - Global.asax.cs**
 
 [!code-csharp[Main](iteration-1-create-the-application-cs/samples/sample10.cs)]
 
@@ -490,5 +490,5 @@ Druhý jsme ještě implementována žádné ověřování formuláře. Napřík
 
 Nakonec a co je nejdůležitější na aktuální iteraci aplikace, obraťte se na správce nelze snadno změnit ani zachována. Například logika přístup k databázi je zaručená vpravo do akce kontroleru. To znamená, že jsme nelze upravit naše data přístup kód beze změny naše řadiče. V novějších iterací jsme prozkoumejte vzory návrhu softwaru, které jsme můžete implementovat, aby odolnější vůči změnit obraťte se na správce.
 
->[!div class="step-by-step"]
-[Další](iteration-2-make-the-application-look-nice-cs.md)
+> [!div class="step-by-step"]
+> [Next](iteration-2-make-the-application-look-nice-cs.md)

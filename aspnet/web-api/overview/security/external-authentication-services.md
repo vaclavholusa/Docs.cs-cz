@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/external-authentication-services
-title: "Externí ověřovací služby s rozhraním ASP.NET Web API (C#) | Microsoft Docs"
+title: Externí ověřovací služby s rozhraním ASP.NET Web API (C#) | Microsoft Docs
 author: rmcmurray
-description: "Popisuje použití externí služby ověřování v rozhraní ASP.NET Web API."
+description: Popisuje použití externí služby ověřování v rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: 744396cb0c95d1887f259b1e2e890bd06ef7d049
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 406a85db7055910cb7a4e15fec8ef68dff5a19dc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="external-authentication-services-with-aspnet-web-api-c"></a>Externí ověřovací služby s rozhraním ASP.NET Web API (C#)
 ====================
@@ -119,7 +119,7 @@ V následujících částech se dozvíte, jak můžete povolit každou z extern�
 <a id="FACEBOOK"></a>
 ## <a name="enabling-facebook-authentication"></a>Povolení ověřování Facebook
 
-Pomocí služby Facebook ověřování vyžaduje, abyste k vytvoření účtu vývojáře Facebook a projekt bude vyžadovat ID aplikace a tajný klíč ze sítě Facebook, chcete-li funkce. Informace o vytvoření účtu vývojáře Facebook a získání ID aplikace a tajný klíč najdete v tématu [https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166).
+Pomocí služby Facebook ověřování vyžaduje, abyste k vytvoření účtu vývojáře Facebook a projekt bude vyžadovat ID aplikace a tajný klíč ze sítě Facebook, chcete-li funkce. Informace o vytvoření účtu vývojáře Facebook a získání ID aplikace a tajný klíč najdete v tématu [ https://go.microsoft.com/fwlink/?LinkID=252166 ](https://go.microsoft.com/fwlink/?LinkID=252166).
 
 Po získání ID aplikace a tajný klíč, použijte následující postup povolení ověřování Facebook pro webové aplikace:
 
@@ -180,7 +180,7 @@ Pokud chcete povolit ověřování Google pro vaši webovou aplikaci, použijte 
 <a id="MICROSOFT"></a>
 ## <a name="enabling-microsoft-authentication"></a>Povolení ověřování Microsoft
 
-Ověřování Microsoft vyžaduje, abyste vytvořili účet pro vývojáře a jeho vyžaduje ID klienta a tajný klíč klienta fungovat. Informace o vytvoření účtu Microsoft developer a získání ID klienta a tajný klíč klienta najdete v tématu [https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070).
+Ověřování Microsoft vyžaduje, abyste vytvořili účet pro vývojáře a jeho vyžaduje ID klienta a tajný klíč klienta fungovat. Informace o vytvoření účtu Microsoft developer a získání ID klienta a tajný klíč klienta najdete v tématu [ https://go.microsoft.com/fwlink/?LinkID=144070 ](https://go.microsoft.com/fwlink/?LinkID=144070).
 
 Po získání uživatelský klíč a uživatelský tajný klíč, použijte následující postup povolení ověřování Microsoft pro webové aplikace:
 
@@ -212,7 +212,7 @@ Po získání uživatelský klíč a uživatelský tajný klíč, použijte nás
 <a id="TWITTER"></a>
 ## <a name="enabling-twitter-authentication"></a>Povolení ověřování služby Twitter.
 
-Twitter ověřování vyžaduje, abyste vytvořili účet pro vývojáře a chcete-li funkce vyžaduje uživatelský klíč a uživatelský tajný klíč. Informace o vytváření vývojářského účtu služby Twitter a získat uživatelský klíč a uživatelským utajením najdete v tématu [https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166).
+Twitter ověřování vyžaduje, abyste vytvořili účet pro vývojáře a chcete-li funkce vyžaduje uživatelský klíč a uživatelský tajný klíč. Informace o vytváření vývojářského účtu služby Twitter a získat uživatelský klíč a uživatelským utajením najdete v tématu [ https://go.microsoft.com/fwlink/?LinkID=252166 ](https://go.microsoft.com/fwlink/?LinkID=252166).
 
 Po získání uživatelský klíč a uživatelský tajný klíč, použijte následující postup povolení ověřování služby Twitter pro webové aplikace:
 
@@ -260,19 +260,21 @@ Někteří poskytovatelé externího ověřování nepodporují testování vaš
 
 - Přidejte statické plně kvalifikovaný název domény mapování souboru hostitele:
 
-    1. Otevřete příkazový řádek se zvýšenými oprávněními v systému Windows.
-    2. Zadejte následující příkaz:
+  1. Otevřete příkazový řádek se zvýšenými oprávněními v systému Windows.
+  2. Zadejte následující příkaz:
 
-        <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
-    3. Přidejte do souboru HOSTITELŮ záznam takto:
+      <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
+  3. Přidejte do souboru HOSTITELŮ záznam takto:
 
-        <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
-    4. Uložte a zavřete soubor HOSTITELŮ.
+      <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
+  4. Uložte a zavřete soubor HOSTITELŮ.
+
 - Konfigurace projektu Visual Studio pro použití plně kvalifikovaný název domény:
 
-    1. Pokud váš projekt otevřete v sadě Visual Studio 2013, klikněte na **projektu** nabídce a pak vyberte vlastnosti projektu. Například můžete vybrat **WebApplication1 vlastnosti**.
-    2. Vyberte **webové** kartě.
-    3. Zadejte plně kvalifikovaný název vaší domény pro **projektu Url**. Například zadejte <kbd>http://www.wingtiptoys.com</kbd> Pokud, který byl mapování plně kvalifikovaný název domény, který jste přidali do souboru HOSTITELŮ.
+  1. Pokud váš projekt otevřete v sadě Visual Studio 2013, klikněte na **projektu** nabídce a pak vyberte vlastnosti projektu. Například můžete vybrat **WebApplication1 vlastnosti**.
+  2. Vyberte **webové** kartě.
+  3. Zadejte plně kvalifikovaný název vaší domény pro <strong>projektu Url</strong>. Například zadejte <kbd> <http://www.wingtiptoys.com> </kbd> Pokud, který byl mapování plně kvalifikovaný název domény, který jste přidali do souboru HOSTITELŮ.
+
 - Konfigurace služby IIS Express použít plně kvalifikovaný název domény pro vaši aplikaci:
 
     1. Otevřete příkazový řádek se zvýšenými oprávněními v systému Windows.
@@ -283,14 +285,14 @@ Někteří poskytovatelé externího ověřování nepodporují testování vaš
 
         <kbd>Appcmd.exe nastavení konfigurace-section:system.applicationHost/sites / +&quot;[name = 'WebApplication1'] .bindings. [protokol http, bindingInformation = ='*:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
 
- Kde **WebApplication1** je název projektu a **bindingInformation** obsahuje plně kvalifikovaný název domény a číslo portu, které chcete použít pro testování.
+  Kde **WebApplication1** je název projektu a **bindingInformation** obsahuje plně kvalifikovaný název domény a číslo portu, které chcete použít pro testování.
 
 <a id="OBTAIN"></a>
 ### <a name="how-to-obtain-your-application-settings-for-microsoft-authentication"></a>Jak získat nastavení aplikace pro ověřování Microsoft
 
 Propojení aplikace pro Windows Live pro Microsoft Authentication je jednoduchý proces. Pokud už nejsou propojené aplikace pro Windows Live, můžete použít následující kroky:
 
-1. Přejděte do [https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070) a zadejte název účtu Microsoft a heslo, když se zobrazí výzva, a pak klikněte na tlačítko **přihlášení**:
+1. Přejděte do [ https://go.microsoft.com/fwlink/?LinkID=144070 ](https://go.microsoft.com/fwlink/?LinkID=144070) a zadejte název účtu Microsoft a heslo, když se zobrazí výzva, a pak klikněte na tlačítko **přihlášení**:
 
     [![](external-authentication-services/_static/image64.png "Kliknutím rozbalíte bitovou kopii")](external-authentication-services/_static/image63.png)
 2. Zadejte název a jazyk aplikace po zobrazení výzvy a pak klikněte na tlačítko **souhlasím**:

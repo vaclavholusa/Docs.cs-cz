@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
-title: "Pomocí technologie ASP.NET MVC s různými verzemi služby IIS (C#) | Microsoft Docs"
+title: Pomocí technologie ASP.NET MVC s různými verzemi služby IIS (C#) | Microsoft Docs
 author: microsoft
-description: "V tomto kurzu zjistěte, jak používat rozhraní ASP.NET MVC a směrování adres URL, s různými verzemi služby IIS. Dozvíte různé strategie..."
+description: V tomto kurzu zjistěte, jak používat rozhraní ASP.NET MVC a směrování adres URL, s různými verzemi služby IIS. Dozvíte různé strategie...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f2b98d5e5ae677fdac32336d542202a40290e21
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 73c129c1eaf85cb5b110248fe2a2c0faed0157bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>Pomocí technologie ASP.NET MVC s různými verzemi služby IIS (C#)
 ====================
@@ -33,7 +33,7 @@ Zde je souhrn různé verze služby IIS:
 - Služba IIS 7.0 (klasickém režimu) -, budete muset provést speciální konfigurace, pokud chcete používat směrování ASP.NET.
 - Služby IIS 6.0 nebo níže – je potřeba provést zvláštní konfiguraci chcete používat směrování ASP.NET.
 
-Nejnovější verze služby IIS je verze 7.5 (na Win7). Služby IIS 7 IIS je součástí s Windows Server 2008 a VISTA/SP1 a vyšší. Také můžete nainstalovat službu IIS 7.0 na žádné verze operačního systému Vista kromě Home Basic (viz [https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
+Nejnovější verze služby IIS je verze 7.5 (na Win7). Služby IIS 7 IIS je součástí s Windows Server 2008 a VISTA/SP1 a vyšší. Také můžete nainstalovat službu IIS 7.0 na žádné verze operačního systému Vista kromě Home Basic (viz [ https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx ](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
 
 IIS 7.0 podporuje dva režimy pro zpracování požadavků. Můžete použít integrovaného režimu nebo v klasickém režimu. Nemusíte provádět žádné kroky speciální konfigurace, při použití služby IIS 7.0 v integrovaném režimu. Však nutné provést další konfigurace, při použití služby IIS 7.0 v klasickém režimu.
 
@@ -63,7 +63,7 @@ Ve výchozím nastavení, služba IIS byla nakonfigurovaná pro podporu dvou fon
 Všimněte si, že můžete upravit režim zpracování požadavků v dialogovém okně Upravit aplikaci. Kliknutím na tlačítko Vybrat a změnit fond aplikací, které jsou přidružené k aplikaci. Uvědomte si, že existují problémy s kompatibilitou při změně aplikace ASP.NET z klasického do integrovaného režimu. Další informace najdete v následujících článcích:
 
 - Upgrade ASP.NET 1.1 pro službu IIS 7.0 v systému Windows Vista a Windows Server 2008 – [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008)
-- Integrace technologie ASP.NET se službou IIS 7.0 - [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
+- Integrace technologie ASP.NET se službou IIS 7.0: [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
 
 Pokud aplikace ASP.NET používá DefaultAppPool, pak nemusíte provádět žádné další kroky k získání směrování ASP.NET (a proto ASP.NET MVC) fungovat. Pokud aplikace ASP.NET je nakonfigurovaná pro použití Classic .NET AppPool pak zachovat čtení, ale máte další práci udělat.
 
@@ -103,7 +103,7 @@ Starší verze služby IIS mapovat jenom určité požadavky na technologii ASP.
 
 Proto směrování ASP.NET pro práci získáte jsme musíte změnit výchozí trasu tak, že obsahují příponu souboru, který je namapovaný na technologii ASP.NET.
 
-To se provádí pomocí skriptu s názvem `registermvc.wsf`. Byl zahrnut ve verzi ASP.NET MVC 1 v `C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`, ale od 2 technologie ASP.NET tento skript se přesunula do Futures ASP.NET k dispozici na [http://aspnet.codeplex.com/releases/view/39978](http://aspnet.codeplex.com/releases/view/39978).
+To se provádí pomocí skriptu s názvem `registermvc.wsf`. Byl zahrnut ve verzi ASP.NET MVC 1 v `C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`, ale od 2 technologie ASP.NET tento skript se přesunula do Futures ASP.NET k dispozici na [ http://aspnet.codeplex.com/releases/view/39978 ](http://aspnet.codeplex.com/releases/view/39978).
 
 Provádění tohoto skriptu zaregistruje nové rozšíření .mvc službou IIS. Po dokončení registrace .mvc rozšíření, můžete upravit trasy v souboru Global.asax tak, aby trasy používat .mvc rozšíření.
 
@@ -212,5 +212,5 @@ První možnost vyžaduje, abyste upravili adres URL používaných ve vaší ap
 
 Druhou možností je vytvořit mapu skriptů se zástupnými znaky. Výhodou této druhé možnosti je, že není potřeba změnit vaší adresy URL. Nevýhodou této druhé možnosti je, že může mít dopad na výkon vaší aplikace ASP.NET MVC.
 
->[!div class="step-by-step"]
-[Next](using-asp-net-mvc-with-different-versions-of-iis-vb.md)
+> [!div class="step-by-step"]
+> [Next](using-asp-net-mvc-with-different-versions-of-iis-vb.md)

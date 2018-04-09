@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
-title: "Použití třídy TagBuilder k sestavení pomocné objekty HTML (VB) | Microsoft Docs"
+title: Použití třídy TagBuilder k sestavení pomocné objekty HTML (VB) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther vás seznámí s třídy užitečné nástroj v rozhraní ASP.NET MVC s názvem třídy TagBuilder. Třídy pro TagBuilder můžete snadno..."
+description: Stephen Walther vás seznámí s třídy užitečné nástroj v rozhraní ASP.NET MVC s názvem třídy TagBuilder. Třídy pro TagBuilder můžete snadno...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 92c003cf929448d0b03f9de76330e9495ac51d20
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 2b72e08dff646f66252f210543230186cab6e641
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>Použití třídy TagBuilder k sestavení pomocné objekty HTML (VB)
 ====================
@@ -79,6 +79,6 @@ Všimněte si, že je nutné naimportovat obor názvů související s pomocnou 
 
 V aplikaci Visual Basic výchozí obor názvů je stejný jako název aplikace.
 
->[!div class="step-by-step"]
-[Předchozí](creating-custom-html-helpers-vb.md)
-[další](creating-page-layouts-with-view-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-custom-html-helpers-vb.md)
+> [další](creating-page-layouts-with-view-master-pages-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
-title: "Ověřování vrstva služby (VB) | Microsoft Docs"
+title: Ověřování vrstva služby (VB) | Microsoft Docs
 author: StephenWalther
-description: "Další informace o přesunutí logika ověřování z vaší akce kontroleru a do vrstvy samostatné služby. V tomto kurzu Stephen Walther vysvětluje, jak můžete..."
+description: Další informace o přesunutí logika ověřování z vaší akce kontroleru a do vrstvy samostatné služby. V tomto kurzu Stephen Walther vysvětluje, jak můžete...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5a8f1dd888c7fa6a3353b7b748a0ffa30b94149c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bb1191b663f863bf881def620efab4f2f03edc56
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-with-a-service-layer-vb"></a>Ověřování vrstva služby (VB)
 ====================
@@ -99,6 +99,6 @@ Použití IValidationDictionary rozhraní a třídy ModelStateWrapper umožňuje
 
 Cílem tohoto kurzu bylo popisují jeden z přístupů k provádění ověření v aplikaci ASP.NET MVC. V tomto kurzu jste zjistili, jak přesunout všechny logika ověřování z řadičů a do vrstvy samostatné služby. Také jste zjistili, jak izolovat vrstvě služby z vašeho řadiče vrstvy ModelStateWrapper třídu.
 
->[!div class="step-by-step"]
-[Předchozí](validating-with-the-idataerrorinfo-interface-vb.md)
-[další](validation-with-the-data-annotation-validators-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](validating-with-the-idataerrorinfo-interface-vb.md)
+> [další](validation-with-the-data-annotation-validators-vb.md)

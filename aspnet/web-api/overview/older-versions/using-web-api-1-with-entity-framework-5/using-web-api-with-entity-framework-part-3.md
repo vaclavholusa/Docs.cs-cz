@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
-title: "Část 3: Vytvoření správce řadiče | Microsoft Docs"
+title: 'Část 3: Vytvoření správce řadiče | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 6fadfb6e96ae287fc5f81516b7535e03853c7e6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 588d9d1b5d27759692cd840faabf2c3549c309d6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-3-creating-an-admin-controller"></a>Část 3: Vytvoření správce řadiče
 ====================
@@ -71,10 +71,10 @@ A **DbSet** představuje sadu entit, které může být dotazován. Tady je úpl
 | Metoda kontroleru | Popis | Identifikátor URI | Metoda HTTP |
 | --- | --- | --- | --- |
 | GetProducts | Získá všechny produkty. | rozhraní API nebo produkty | GET |
-| GetProduct | Vyhledá produkt podle ID. | rozhraní API neboprodukty/*id* | GET |
-| PutProduct | Aktualizace produktu. | rozhraní API neboprodukty/*id* | PUT |
+| GetProduct | Vyhledá produkt podle ID. | api/products/*id* | GET |
+| PutProduct | Aktualizace produktu. | api/products/*id* | PUT |
 | PostProduct | Vytvoří nového produktu. | rozhraní API nebo produkty | POST |
-| DeleteProduct | Odstraní produktu. | rozhraní API neboprodukty/*id* | DELETE |
+| DeleteProduct | Odstraní produktu. | api/products/*id* | DELETE |
 
 Každá metoda volá do `OrdersContext` dotazu databázi. Volání metody, které upravit kolekci (PUT, POST a odstranit) `db.SaveChanges` k zachování změn do databáze. Řadiče jsou vytvořené za požadavku HTTP a poté odstraněny, takže je potřeba předtím, než vrátí metodu zachování změn.
 
@@ -102,6 +102,6 @@ Odeslat požadavek HTTP "`http://localhost:*portnum*/api/admin`. První požadav
 
 [!code-console[Main](using-web-api-with-entity-framework-part-3/samples/sample6.cmd)]
 
->[!div class="step-by-step"]
-[Předchozí](using-web-api-with-entity-framework-part-2.md)
-[další](using-web-api-with-entity-framework-part-4.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-web-api-with-entity-framework-part-2.md)
+> [další](using-web-api-with-entity-framework-part-4.md)

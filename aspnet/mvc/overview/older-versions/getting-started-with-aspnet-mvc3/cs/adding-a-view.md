@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
-title: "Přidání zobrazení (C#) | Microsoft Docs"
+title: Přidání zobrazení (C#) | Microsoft Docs
 author: Rick-Anderson
-description: "V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je..."
+description: V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 46d5494e668dfe156aeb6647ded83e6ce5366714
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 50ce4a2024ffd9e2bbb5526717052d486689ff38
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view-c"></a>Přidání zobrazení (C#)
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > > [!NOTE]
 > > Je k dispozici aktualizovaná verze tohoto kurzu [sem](../../../getting-started/introduction/getting-started.md) používající ASP.NET MVC 5 a Visual Studio 2013. Je bezpečnější, postupujte podle mnohem jednodušší a ukazuje další funkce.
@@ -77,7 +77,7 @@ První kterou chcete změnit "Moje aplikace MVC" nadpis v horní části stránk
 
 [![_LayoutCshtml](adding-a-view/_static/image8.png)](adding-a-view/_static/image7.png)
 
-Šablony rozložení umožňují zadat rozložení kontejneru HTML vašeho webu na jednom místě a pak ho použít na více stránkách ve vaší lokalitě. Poznámka: `@RenderBody()` řádku v dolní části souboru. `RenderBody`slouží jako zástupný text, kde všechny zobrazení konkrétní stránky, které vytvoříte objeví, "zabalené" na stránce rozložení. Změňte název záhlaví v šabloně rozložení z "Aplikace My MVC" na "Filmová aplikace MVC".
+Šablony rozložení umožňují zadat rozložení kontejneru HTML vašeho webu na jednom místě a pak ho použít na více stránkách ve vaší lokalitě. Poznámka: `@RenderBody()` řádku v dolní části souboru. `RenderBody` slouží jako zástupný text, kde všechny zobrazení konkrétní stránky, které vytvoříte objeví, "zabalené" na stránce rozložení. Změňte název záhlaví v šabloně rozložení z "Aplikace My MVC" na "Filmová aplikace MVC".
 
 [!code-cshtml[Main](adding-a-view/samples/sample3.cshtml)]
 
@@ -91,7 +91,7 @@ Kompletní  *\_Layout.cshtml* souboru jsou uvedeny níže:
 
 Nyní změňte název stránky indexu (zobrazení).
 
-Otevřete *MvcMovie\Views\HelloWorld\Index.cshtml*. Existují dvě místa změnit: nejdřív, zobrazí se text v názvu prohlížeče a pak v hlavičce sekundární ( `<h2>` element). Budete je provedete mírně lišit, abyste viděli, které bit kódu změní kterou částí aplikace.
+Open *MvcMovie\Views\HelloWorld\Index.cshtml*. Existují dvě místa změnit: nejdřív, zobrazí se text v názvu prohlížeče a pak v hlavičce sekundární ( `<h2>` element). Budete je provedete mírně lišit, abyste viděli, které bit kódu změní kterou částí aplikace.
 
 [!code-cshtml[Main](adding-a-view/samples/sample5.cshtml)]
 
@@ -113,7 +113,7 @@ Před jsme přejděte k databázi a mluvit o modely, ale umožňuje nejprve mluv
 
 V současné době `Welcome` metodu akce v `HelloWorldController` třídy trvá `name` a `numTimes` parametr a potom výstupy hodnoty přímo do prohlížeče. Místo mít řadič vykreslení této odpovědi jako řetězec, umožňuje změnit řadič místo toho použít šablonu zobrazení. Zobrazit šablonu způsobí vygenerování dynamických odpovědí, která znamená, že potřebujete předat příslušné bits dat z řadiče zobrazení za účelem vygenerování odpovědi. To provedete tak, že řadiče put dynamických dat, která vyžaduje zobrazení šablony `ViewBag` objekt, který šablona zobrazení můžete poté přistoupit.
 
-Vraťte se do *HelloWorldController.cs* soubor a změňte `Welcome` metody přidat `Message` a `NumTimes` hodnotu `ViewBag` objektu. `ViewBag`je to dynamický objekt, což znamená, že všechno můžete vložit do ní; `ViewBag` objekt nemá žádné definované vlastnosti, dokud vložíte něco uvnitř ho. Kompletní *HelloWorldController.cs* soubor vypadá takto:
+Vraťte se do *HelloWorldController.cs* soubor a změňte `Welcome` metody přidat `Message` a `NumTimes` hodnotu `ViewBag` objektu. `ViewBag` je to dynamický objekt, což znamená, že všechno můžete vložit do ní; `ViewBag` objekt nemá žádné definované vlastnosti, dokud vložíte něco uvnitř ho. Kompletní *HelloWorldController.cs* soubor vypadá takto:
 
 [!code-csharp[Main](adding-a-view/samples/sample6.cs)]
 
@@ -141,6 +141,6 @@ Data se nyní prováděné z adresy URL a automaticky předaný kontroleru. Bal�
 
 Dobře, který byl druh "M" pro model, ale není typ databáze. Podívejme se, co jsme jste se naučili a vytvořit databázi filmy.
 
->[!div class="step-by-step"]
-[Předchozí](adding-a-controller.md)
-[další](adding-a-model.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-a-controller.md)
+> [další](adding-a-model.md)

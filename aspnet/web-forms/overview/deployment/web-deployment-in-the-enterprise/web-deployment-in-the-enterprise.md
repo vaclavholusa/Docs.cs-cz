@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
-title: "Nasazení v podnikové síti webu | Microsoft Docs"
+title: Nasazení v podnikové síti webu | Microsoft Docs
 author: jrjlee
-description: "Tento kurz popisuje, jak splnit spoustu problémů, které se můžete setkat, když spravujete nasazení podnikovém měřítku webových aplikací na devel..."
+description: Tento kurz popisuje, jak splnit spoustu problémů, které se můžete setkat, když spravujete nasazení podnikovém měřítku webových aplikací na devel...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
-ms.openlocfilehash: 6210d01f65bcadf8ae4209e372d5aac68861bd7a
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: fc463cb689f4f63a12788b80958c9fc8fe20119d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-deployment-in-the-enterprise"></a>Nasazení webu v podnikové síti
 ====================
@@ -66,7 +66,7 @@ Tento kurz, společně s další kurzy v této série používá tento vysoké �
 
 Tento kurz obsahuje témata, které spadají do čtyř hlavních oblastí.
 
-Tato témata zavést odkaz na řešení & #x 2014; řešení obraťte se na správce & #x 2014; a popisují, jak ji stáhnout a nakonfigurovat na místním počítači:
+Tato část představuje odkaz na řešení&#x2014;řešení obraťte se na správce&#x2014;a popisují, jak ji stáhnout a nakonfigurovat na místním počítači:
 
 - [Řešení správce kontaktů](the-contact-manager-solution.md)
 - [Nastavení řešení správce kontaktů](setting-up-the-contact-manager-solution.md)
@@ -104,5 +104,5 @@ To je součástí ze série kurzů pět v podnikovém měřítku nasazení webu.
 - [Konfigurace serveru Team Foundation Server pro nasazení webu](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Tento kurz popisuje, jak nakonfigurovat produktu TFS na podporu různých scénářů nasazení, včetně automatického nasazení v rámci procesu položek konfigurace a ručně spustí nasazení konkrétní sestavení.
 - [Pokročilé nasazení webu Enterprise](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Tento kurz popisuje, jak k provádění různých dalších pokročilých úloh nasazení, jako vlastní nastavení nasazení databáze pro prostředí s více, vyloučení souborů a složek z nasazení a přepnutím do režimu offline webové aplikace během procesu nasazení .
 
->[!div class="step-by-step"]
-[Next](the-contact-manager-solution.md)
+> [!div class="step-by-step"]
+> [Next](the-contact-manager-solution.md)

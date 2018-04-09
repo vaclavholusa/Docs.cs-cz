@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-vb
-title: "Iterace #7 – funkce Ajax přidat (VB) | Microsoft Docs"
+title: 'Iterace #7 – funkce Ajax přidat (VB) | Microsoft Docs'
 author: microsoft
-description: "V sedmého iteraci jsme přidáním podpory pro Ajax zvýšit rychlost reakce a výkon aplikace."
+description: V sedmého iteraci jsme přidáním podpory pro Ajax zvýšit rychlost reakce a výkon aplikace.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fa50fdea8ac165be3f8e96322ec049196a511ebe
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 35d961ee39d7b87a31c7208645148b45c7b0c563
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-7--add-ajax-functionality-vb"></a>Iterace #7 – funkce Ajax přidat (VB)
 ====================
@@ -104,7 +104,7 @@ Umožní s spustit změnou naše Index zobrazení tak, aby kliknutím na skupinu
 
 Prvním krokem je oddělení součástí zobrazení, které chcete aktualizovat asynchronně do samostatné částečné (zobrazení uživatelský ovládací prvek). V části zobrazení Index, který zobrazí seznam kontaktů byl přesunut do částečného v výpis 1.
 
-**Výpis 1 - Views\Contact\ContactList.ascx**
+**Listing 1 - Views\Contact\ContactList.ascx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-vb/samples/sample2.aspx)]
 
@@ -112,7 +112,7 @@ Všimněte si, že partial v výpis 1 má jiný model, než zobrazení indexu. *
 
 Aktualizovaná zobrazení indexu je součástí výpis 2.
 
-**Výpis 2 - Views\Contact\Index.aspx**
+**Listing 2 - Views\Contact\Index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-vb/samples/sample3.aspx)]
 
@@ -148,7 +148,7 @@ Existuje několik způsobů, které mohou použít pro uživatele, že probíhaj
 
 Použijeme knihovna jQuery, která je součástí Microsoft ASP.NET MVC framework, chcete-li vytvořit efekty animace. Aktualizovaná zobrazení indexu je součástí výpis 4.
 
-**Výpis 4 - Views\Contact\Index.aspx**
+**Listing 4 - Views\Contact\Index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-vb/samples/sample6.aspx)]
 
@@ -176,7 +176,7 @@ Prohlížeč historie prvku ASP.NET AJAX, musíte udělat tři věci:
 
 Aktualizovaná zobrazení indexu je součástí výpis 5.
 
-**Výpis 5 - Views\Contact\Index.aspx**
+**Listing 5 - Views\Contact\Index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-vb/samples/sample8.aspx)]
 
@@ -206,7 +206,7 @@ Je tempting stránku potvrzení odstranění vynechat a odstraňovat a obraťte 
 
 Odstraní propojení je obsažený v částečné ContactList. Aktualizovanou verzi částečné ContactList je obsažený v výpis 6.
 
-**Výpis 6 - Views\Contact\ContactList.ascx**
+**Listing 6 - Views\Contact\ContactList.ascx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-vb/samples/sample10.aspx)]
 
@@ -243,5 +243,5 @@ Také jsme přidali prohlížeče historie podporu pro naši aplikaci Ajax. Mů�
 
 Nakonec jsme vytvořili odstraní propojení, které podporuje operace HTTP DELETE. Provedením Ajax odstranění jsme povolit uživatelům odstranit záznamů databáze bez nutnosti uživateli požadavek na potvrzovací stránku další odstranit.
 
->[!div class="step-by-step"]
-[Předchozí](iteration-6-use-test-driven-development-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](iteration-6-use-test-driven-development-vb.md)

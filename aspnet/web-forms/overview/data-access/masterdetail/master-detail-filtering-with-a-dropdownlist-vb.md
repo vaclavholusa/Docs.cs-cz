@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
-title: "Filtrování s rozevírací seznam (VB) podrobností | Microsoft Docs"
+title: Filtrování s rozevírací seznam (VB) podrobností | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu vidíte zobrazení hlavní záznamy v ovládací prvek rozevírací seznam a podrobnosti vybrané položky seznamu v GridView."
+description: V tomto kurzu vidíte zobrazení hlavní záznamy v ovládací prvek rozevírací seznam a podrobnosti vybrané položky seznamu v GridView.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f66e133b2bc8cdececf55b4d92508e6ff157d95
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5d1ae660ddbc6c8e2874190ade6f3deddeebe820
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>Filtrování s rozevírací seznam (VB) podrobností
 ====================
@@ -87,12 +87,12 @@ Tento poslední krok v našich a podrobností sestavy je seznam produkty spojen�
 **Obrázek 7**: vyberte `GetProductsByCategoryID(categoryID)` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-vb/_static/image21.png))
 
 
-Po výběru této metody, Průvodce ObjectDataSource k zadání nám hodnota metody  *`categoryID`*  parametr. Chcete použít hodnotu vybrané `categories` rozevírací seznam položky nastavit parametr Zdroj ovládacího prvku a ControlID k `Categories`.
+Po výběru této metody, Průvodce ObjectDataSource k zadání nám hodnota metody *`categoryID`* parametr. Chcete použít hodnotu vybrané `categories` rozevírací seznam položky nastavit parametr Zdroj ovládacího prvku a ControlID k `Categories`.
 
 
 [![Nastaví categoryID parametr na hodnotu rozevírací seznam kategorií](master-detail-filtering-with-a-dropdownlist-vb/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image22.png)
 
-**Obrázek 8**: nastavte  *`categoryID`*  parametr na hodnotu `Categories` rozevírací seznam ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
+**Obrázek 8**: nastavte *`categoryID`* parametr na hodnotu `Categories` rozevírací seznam ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
 
 
 Podívejte se na naše průběh v prohlížeči chvíli trvat. Při první návštěvě stránky, tyto produkty patří do vybrané kategorie (nápoje) jsou zobrazeny (jak je znázorněno na obrázku 9), ale změna rozevírací seznam neaktualizuje data. To je proto zpětné volání, musí dojít k GridView aktualizovat. K tomu můžeme mít dvě možnosti (ani z nich vyžaduje psaní jakéhokoli kódu):
@@ -146,12 +146,12 @@ Po provedení těchto změn při první návštěvě stránky je vybrána možno
 **Obrázek 13**: na the počáteční stránka zatížení Ne se zobrazí produkty ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-vb/_static/image37.png))
 
 
-Z důvodu žádné produkty jsou vzhledem k tomu, že je vybraná položka seznamu "– Vyberte kategorii –" zobrazí, když je, protože její hodnota je `-1` a v databázi s nejsou žádné produkty `CategoryID` z `-1`. Pokud toto chování je budete chtít pak v tomto okamžiku jste hotovi! Pokud však chcete zobrazit *všechny* kategorie Pokud je vybraná položka seznamu "– Vyberte kategorii –", vraťte k `ProductsBLL` třídy a přizpůsobit `GetProductsByCategoryID(categoryID)` metody, které se vyvolá `GetProducts()` metoda Pokud předaný v  *`categoryID`*  parametru je menší než nula:
+Z důvodu žádné produkty jsou vzhledem k tomu, že je vybraná položka seznamu "– Vyberte kategorii –" zobrazí, když je, protože její hodnota je `-1` a v databázi s nejsou žádné produkty `CategoryID` z `-1`. Pokud toto chování je budete chtít pak v tomto okamžiku jste hotovi! Pokud však chcete zobrazit *všechny* kategorie Pokud je vybraná položka seznamu "– Vyberte kategorii –", vraťte k `ProductsBLL` třídy a přizpůsobit `GetProductsByCategoryID(categoryID)` metody, které se vyvolá `GetProducts()` metoda Pokud předaný v *`categoryID`* parametru je menší než nula:
 
 
 [!code-vb[Main](master-detail-filtering-with-a-dropdownlist-vb/samples/sample2.vb)]
 
-Technika použít zde je podobná přístup jsme slouží k zobrazení všech dodavatelů zpět v [deklarativní parametry](../basic-reporting/declarative-parameters-cs.md) kurz, i když v tomto příkladu používáme hodnotu `-1` indikující, že by měly být všechny záznamy načíst naproti tomu `Nothing`. Důvodem je, že  *`categoryID`*  parametr `GetProductsByCategoryID(categoryID)` metoda očekává jako předána hodnota celé číslo, zatímco v tomto kurzu deklarativní parametry jsme byly předávání v vstupní parametr řetězce.
+Technika použít zde je podobná přístup jsme slouží k zobrazení všech dodavatelů zpět v [deklarativní parametry](../basic-reporting/declarative-parameters-cs.md) kurz, i když v tomto příkladu používáme hodnotu `-1` indikující, že by měly být všechny záznamy načíst naproti tomu `Nothing`. Důvodem je, že *`categoryID`* parametr `GetProductsByCategoryID(categoryID)` metoda očekává jako předána hodnota celé číslo, zatímco v tomto kurzu deklarativní parametry jsme byly předávání v vstupní parametr řetězce.
 
 Snímek obrazovky ukazuje obrázek 14 `FilterByDropDownList.aspx` když je vybrána možnost "– Vyberte kategorii –". Zde jsou ve výchozím nastavení zobrazí všechny produkty a uživatele můžete zúžit zobrazení tak, že zvolíte do určité kategorie.
 
@@ -171,8 +171,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)
-[další](master-detail-filtering-with-two-dropdownlists-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)
+> [další](master-detail-filtering-with-two-dropdownlists-vb.md)

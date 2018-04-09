@@ -1,7 +1,7 @@
 ---
-title: "Úvod do autorizace"
+title: Úvod do autorizace v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument poskytuje základní vysvětlení autorizace a vysvětluje, jak autorizace souvisí s ASP.NET Core."
+description: Přečtěte si základní informace o ověřování a autorizace práce v aplikacích ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/introduction
-ms.openlocfilehash: 3fef6d38672af8871c04b65834789a39a7df8487
-ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
+ms.openlocfilehash: 7ba1966dcaf1ce0510f489cfe0ff11501faffa56
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="introduction"></a>Úvod
+# <a name="introduction-to-authorization-in-aspnet-core"></a>Úvod do autorizace v ASP.NET Core
 
 <a name="security-authorization-introduction"></a>
 
@@ -25,7 +25,7 @@ Autorizace je ortogonální a nezávislé na ověřování, což je proces pro z
 
 ## <a name="authorization-types"></a>Typy autorizace
 
-ASP.NET Core autorizaci poskytuje jednoduchý deklarativní [role](roles.md) a s formátováním [na základě zásad](policies.md) modelu. Autorizace je vyjádřeno v požadavcích a obslužné rutiny vyhodnotit deklarace identity uživatele podle požadavků. Imperativní kontroly může být založen na jednoduchý zásad nebo zásad, které vyhodnocení identitu uživatele a vlastnosti prostředku, který uživatel se pokouší o přístup.
+ASP.NET Core autorizaci poskytuje jednoduchý deklarativní [role](xref:security/authorization/roles) a s formátováním [na základě zásad](xref:security/authorization/policies) modelu. Autorizace je vyjádřeno v požadavcích a obslužné rutiny vyhodnotit deklarace identity uživatele podle požadavků. Imperativní kontroly může být založen na jednoduchý zásad nebo zásad, které vyhodnocení identitu uživatele a vlastnosti prostředku, který uživatel se pokouší o přístup.
 
 ## <a name="namespaces"></a>Jmenné prostory
 

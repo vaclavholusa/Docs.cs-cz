@@ -1,7 +1,7 @@
 ---
 title: Zvolte mezi ASP.NET a ASP.NET Core
 author: rick-anderson
-description: "Zjistěte, jak si vybrat mezi ASP.NET a ASP.NET Core."
+description: Zjistěte, jak si vybrat mezi ASP.NET a ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 03/14/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/choose-between-aspnet-and-aspnetcore
-ms.openlocfilehash: 3986e904d6670c451edc5c9338dc07e18d3c207d
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e6ac9f54ef623895b81eea33d90791e5f0ad5120
+ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="choose-between-aspnet-and-aspnet-core"></a>Zvolte mezi ASP.NET a ASP.NET Core
 
@@ -32,7 +32,7 @@ ASP.NET je vyspělá rozhraní, které poskytuje všechny potřebné k vytvořen
 | ASP.NET Core | ASP.NET |
 |---|---|
 |Sestavení pro Windows, systému macOS nebo Linux|Sestavení pro Windows|
-|[Stránky Razor](xref:mvc/razor-pages/index) se o doporučený postup pro vytvoření webového uživatelského rozhraní od ASP.NET Core 2.x. Viz také [MVC](xref:mvc/overview), [webové rozhraní API](xref:tutorials/first-web-api), a [SignalR](xref:signalr/introduction-signalr-core).|Použití [Web Forms](/aspnet/web-forms), [SignalR](/aspnet/signalr), [MVC](/aspnet/mvc), [webové rozhraní API](/aspnet/web-api/), nebo [webové stránky](/aspnet/web-pages)|
+|[Stránky Razor](xref:mvc/razor-pages/index) se o doporučený postup pro vytvoření webového uživatelského rozhraní od ASP.NET Core 2.x. Viz také [MVC](xref:mvc/overview), [webové rozhraní API](xref:tutorials/first-web-api), a [SignalR](xref:signalr/introduction).|Použití [Web Forms](/aspnet/web-forms), [SignalR](/aspnet/signalr), [MVC](/aspnet/mvc), [webové rozhraní API](/aspnet/web-api/), nebo [webové stránky](/aspnet/web-pages)|
 |Několik verzí systému na počítač|Jedna verze na počítač|
 |Vývoj pomocí sady Visual Studio, [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/), nebo [Visual Studio Code](https://code.visualstudio.com/) pomocí jazyka C# nebo F #|Vývoj pomocí sady Visual Studio pomocí jazyka C#, VB a F #|
 |Vyšší výkon než technologie ASP.NET|Dobrý výkon|

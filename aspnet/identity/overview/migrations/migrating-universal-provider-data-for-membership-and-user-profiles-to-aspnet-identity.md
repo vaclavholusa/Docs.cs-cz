@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
-title: "Migrace dat Universal zprostředkovatele členství a uživatelské profily mají být ASP.NET Identity (C#) | Microsoft Docs"
+title: Migrace dat Universal zprostředkovatele členství a uživatelské profily mají být ASP.NET Identity (C#) | Microsoft Docs
 author: rustd
-description: "Tento kurz popisuje kroky, které jsou potřebné k migraci uživatelů a rolí dat a data uživatelského profilu vytvořený Universal Providers stávající aplikace..."
+description: Tento kurz popisuje kroky, které jsou potřebné k migraci uživatelů a rolí dat a data uživatelského profilu vytvořený Universal Providers stávající aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/13/2013
 ms.topic: article
 ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: e00bcfc111425d5dd26c7ff341eaf87fd969e089
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f65f93b20543d06ea70a9009b6921e297477c99e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>Migrace dat Universal zprostředkovatele členství a uživatelské profily mají být ASP.NET Identity (C#)
 ====================
@@ -30,7 +30,7 @@ S verzí sady Visual Studio 2013, ASP.NET team zavedly nový systém ASP.NET Ide
 Jako příklad spustíme s webové aplikace vytvořený pomocí Visual Studio 2012, která používá model poskytovatelů. Jsme budete pak přidat kód pro správu profilů, zaregistrovat uživatele, přidat data profilu pro uživatele, migraci schématu databáze a poté změňte aplikaci používat systém identit pro správu uživatelů a rolí. Jako test migrace uživatelé vytvořený Universal Providers by měli být schopni se přihlásit a noví uživatelé musí být možné zaregistrovat.
 
 > [!NOTE]
-> Můžete najít úplnou ukázku najdete na adrese [https://github.com/suhasj/UniversalProviders-Identity-Migrations](https://github.com/suhasj/UniversalProviders-Identity-Migrations).
+> Můžete najít úplnou ukázku najdete na adrese [ https://github.com/suhasj/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations).
 
 
 ## <a name="profile-data-migration-summary"></a>Souhrn migrace dat profilu
@@ -39,7 +39,7 @@ Před zahájením s byla migrace, dejte nám se podívejte na možnosti ukládá
 
 1. Přidejte třídu, která obsahuje vlastnosti, které používají k ukládání dat profilu.
 2. Přidejte třídu, která rozšiřuje 'ProfileBase' a implementuje metody k získání výše uvedená data profilu pro uživatele.
-3. Povolit použití výchozí profil zprostředkovatele v *web.config* souboru a definovat třídu deklarované v kroku &#2;, který se má použít při přístupu ke informace o profilu.
+3. Povolit použití výchozí profil zprostředkovatele v *web.config* souboru a definovat třídu deklarované v kroku 2 #, který se má použít při přístupu ke informace o profilu.
 
 Informace o profilu se ukládají jako serializovaný xml a binární data v tabulce 'profily, v databázi.
 
@@ -61,11 +61,11 @@ Po migraci aplikaci, aby používala nový systém ASP.NET Identity, je informac
 
     [!code-html[Main](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/samples/sample3.html)]
 
- Přidejte následující kód v kódu:
+   Přidejte následující kód v kódu:
 
     [!code-csharp[Main](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/samples/sample4.cs)]
 
- Přidáte obor názvů, pod které AppProfile třída definována, chcete-li odebrat chyby kompilace.
+   Přidáte obor názvů, pod které AppProfile třída definována, chcete-li odebrat chyby kompilace.
 6. Spusťte aplikaci a vytvořit nového uživatele s uživatelským jménem "**olduser'.** Přejděte na stránku 'AddProfileData' a přidejte informace o profilu pro uživatele.  
     ![](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/_static/image2.png)
 
@@ -81,7 +81,7 @@ Chcete-li pracovat s systém identit existující databázi, je potřeba aktuali
 
 ![](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/_static/image5.png)
 
-Vložte skript SQL z [https://raw.github.com/suhasj/UniversalProviders-Identity-Migrations/master/Migration.txt](https://raw.github.com/suhasj/UniversalProviders-Identity-Migrations/master/Migration.txt) a potom ho spusťte. Pokud 'objekt DefaultConnection, aktualizaci, vidíme, aby byly přidány nové tabulky. Můžete zkontrolovat data uvnitř tabulek, které chcete zobrazit, že byla migrována informace.
+Vložte skript SQL z [ https://raw.github.com/suhasj/UniversalProviders-Identity-Migrations/master/Migration.txt ](https://raw.github.com/suhasj/UniversalProviders-Identity-Migrations/master/Migration.txt) a potom ho spusťte. Pokud 'objekt DefaultConnection, aktualizaci, vidíme, aby byly přidány nové tabulky. Můžete zkontrolovat data uvnitř tabulek, které chcete zobrazit, že byla migrována informace.
 
 ![](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/_static/image6.png)
 
@@ -97,14 +97,14 @@ Vložte skript SQL z [https://raw.github.com/suhasj/UniversalProviders-Identity-
     - Microsoft.Owin.Security.MicrosoftAccount
     - Microsoft.Owin.Security.Twitter
 
- Další informace o spravovat balíčky Nuget najdete [sem](http://docs.nuget.org/docs/start-here/Managing-NuGet-Packages-Using-The-Dialog)
+   Další informace o spravovat balíčky Nuget najdete [sem](http://docs.nuget.org/docs/start-here/Managing-NuGet-Packages-Using-The-Dialog)
 2. Pro práci s existujícími daty v tabulce, potřebujeme vytvořit model třídy, které mapování zpět do tabulky a propojte je v systému Identity. V rámci Identity kontraktu třídy modelu buď musí implementovat rozhraní definované v knihovně dll Identity.Core nebo můžete rozšířit stávající provádění těchto rozhraní, které jsou k dispozici v Microsoft.AspNet.Identity.EntityFramework. Použijeme existujících tříd pro roli, přihlášení uživatele a deklarace identity uživatelů. Je potřeba použít vlastního uživatele pro naše ukázka. Klikněte pravým tlačítkem na projekt a vytvořte novou složku 'IdentityModels'. Přidejte novou třídu "Uživatelem", jak je uvedeno níže:
 
     [!code-csharp[Main](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/samples/sample5.cs)]
 
- Všimněte si, ProfileInfo je nyní vlastnost v třídě uživatele. Proto jsme můžete použít třídu uživatele přímo pracovat s daty profilu.
+   Všimněte si, ProfileInfo je nyní vlastnost v třídě uživatele. Proto jsme můžete použít třídu uživatele přímo pracovat s daty profilu.
 
-Zkopírujte soubory v **IdentityModels** a **IdentityAccount** složek ze zdroje stahování ( [https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/ UniversalProviders-Identity-Migrations](https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations) ). Tyto mají zbývající třídy modelu a potřebné pro správu rolí pomocí rozhraní API ASP.NET Identity uživatelů a nové stránky. Metoda používaná je podobný členství SQL a naleznete podrobné vysvětlení [zde](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md).
+Zkopírujte soubory v **IdentityModels** a **IdentityAccount** složek ze zdroje stahování ( [ https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations) ). Tyto mají zbývající třídy modelu a potřebné pro správu rolí pomocí rozhraní API ASP.NET Identity uživatelů a nové stránky. Metoda používaná je podobný členství SQL a naleznete podrobné vysvětlení [zde](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md).
 
 ## <a name="copying-profile-data-to-the-new-tables"></a>Kopírování dat profilu do nové tabulky
 
@@ -118,7 +118,7 @@ Jak už bylo zmíněno dříve, je potřeba deserializovat xml data v tabulkách
 
     [!code-csharp[Main](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/samples/sample6.cs)]
 
- Některé modely použité jsou definovány ve složce 'IdentityModels' projekt webové aplikace, musí obsahovat odpovídající obory názvů.
+   Některé modely použité jsou definovány ve složce 'IdentityModels' projekt webové aplikace, musí obsahovat odpovídající obory názvů.
 5. Ve výše uvedeném kódu funguje na soubor databáze v aplikaci\_vytvořit složku Data projektu webové aplikace v předchozích krocích. Chcete-li který, aktualizujte připojovací řetězec v souboru app.config v konzolové aplikace s připojovací řetězec v souboru web.config webové aplikace. Zadejte také úplnou fyzickou cestu ve vlastnosti 'AttachDbFilename'.
 6. Otevřete příkazový řádek a přejděte do složky bin výše konzolové aplikace. Spuštění spustitelného souboru a prohlédněte si výstup protokolu, jak je znázorněno na následujícím obrázku.  
     ![](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/_static/image3.jpg)

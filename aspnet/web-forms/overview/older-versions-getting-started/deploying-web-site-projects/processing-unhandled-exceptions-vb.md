@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
-title: "Zpracování neošetřených výjimek (VB) | Microsoft Docs"
+title: Zpracování neošetřených výjimek (VB) | Microsoft Docs
 author: rick-anderson
-description: "Když dojde k chybě za běhu na webovou aplikaci v produkčním prostředí je důležité upozornit vývojář a do protokolu chyba, takže může být zjištěna v la..."
+description: Když dojde k chybě za běhu na webovou aplikaci v produkčním prostředí je důležité upozornit vývojář a do protokolu chyba, takže může být zjištěna v la...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f5bf39bc2433a2fb277cb56554ddf39bea7a9c79
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: cb42cf6c457cf20da7f65352bb7eed1230b59588
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="processing-unhandled-exceptions-vb"></a>Zpracování neošetřených výjimek (VB)
 ====================
@@ -167,6 +167,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Práce s ASP.NET `Global.asax` souboru](http://articles.techrepublic.com.com/5100-10878_11-5771721.html)
 - [Práce s `HttpApplication` instancí](https://msdn.microsoft.com/library/a0xez8f2.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](displaying-a-custom-error-page-vb.md)
-[další](logging-error-details-with-asp-net-health-monitoring-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](displaying-a-custom-error-page-vb.md)
+> [další](logging-error-details-with-asp-net-health-monitoring-vb.md)

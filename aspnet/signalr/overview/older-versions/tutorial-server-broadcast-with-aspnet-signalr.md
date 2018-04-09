@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
-title: "Kurz: Server všesměrového vysílání pomocí funkce SignalR technologie ASP.NET 1.x | Microsoft Docs"
+title: 'Kurz: Server všesměrového vysílání pomocí funkce SignalR technologie ASP.NET 1.x | Microsoft Docs'
 author: pfletcher
-description: "Tento kurz ukazuje, jak vytvořit webovou aplikaci, která využívá funkce SignalR technologie ASP.NET a poskytuje všesměrového vysílání funkce serveru. Server všesměrového vysílání znamená, že communic..."
+description: Tento kurz ukazuje, jak vytvořit webovou aplikaci, která využívá funkce SignalR technologie ASP.NET a poskytuje všesměrového vysílání funkce serveru. Server všesměrového vysílání znamená, že communic...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/10/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 3f641b53a9ed568132909114c6cceaa957064fa2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 85d40e411a7ff974da5cc4fa7fbd789b83d92201
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Kurz: Server všesměrového vysílání pomocí funkce SignalR technologie ASP.NET 1.x
 ====================
@@ -39,7 +39,7 @@ Aplikace, která budete sestavení v první části tohoto kurzu zobrazí mří�
 
 ![Počáteční verze StockTicker](tutorial-server-broadcast-with-aspnet-signalr/_static/image1.png)
 
-Server pravidelně náhodně aktualizací uložených ceny a nabízených oznámení aktualizace pro všechny připojené klienty. V prohlížeči čísla a symboly v **změnit** a  **%**  sloupců dynamicky měnit v reakci na oznámení ze serveru. Pokud můžete otevřít další prohlížeče na stejnou adresu URL, budou všechny zobrazit stejná data a stejné změny dat současně.
+Server pravidelně náhodně aktualizací uložených ceny a nabízených oznámení aktualizace pro všechny připojené klienty. V prohlížeči čísla a symboly v **změnit** a **%** sloupců dynamicky měnit v reakci na oznámení ze serveru. Pokud můžete otevřít další prohlížeče na stejnou adresu URL, budou všechny zobrazit stejná data a stejné změny dat současně.
 
 Tento kurz obsahuje následující části:
 
@@ -217,7 +217,7 @@ Teď jste dokončili nastavení kódu serveru. V další části budete nastaven
 
     Značky skriptu zadejte souboru skriptu jQuery, soubor skriptu SignalR core, soubor skriptu SignalR proxy servery a StockTicker soubor skriptu, který vytvoříte později. Soubor skriptu SignalR proxy, který určuje adresu URL, "/ signalr/hubs", se dynamicky vygeneruje a v takovém případě definuje proxy metody pro metody pro třídy rozbočovače pro StockTickerHub.GetAllStocks. Pokud dáváte přednost, tento soubor JavaScript generování ručně pomocí [nástroje SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/) a zakázat dynamické souboru vytvoření při volání metody MapHubs.
 3. > [!IMPORTANT]
- > Ujistěte se, zda soubor JavaScript odkazuje v *StockTicker.html* jsou správné. To znamená, ujistěte se, že verze jQuery ve vaší značky script (1.8.2 v příkladu) je stejná jako verze jQuery ve vašem projektu *skripty* složku a ujistěte se, že verze SignalR ve vaší značky script je stejný jako funkce SignalR verze ve vašem projektu *skripty* složky. V případě potřeby, změňte názvy souborů v značek skriptu.
+   > Ujistěte se, zda soubor JavaScript odkazuje v *StockTicker.html* jsou správné. To znamená, ujistěte se, že verze jQuery ve vaší značky script (1.8.2 v příkladu) je stejná jako verze jQuery ve vašem projektu *skripty* složku a ujistěte se, že verze SignalR ve vaší značky script je stejný jako funkce SignalR verze ve vašem projektu *skripty* složky. V případě potřeby, změňte názvy souborů v značek skriptu.
 4. V **Průzkumníku řešení**, klikněte pravým tlačítkem na *StockTicker.html*a potom klikněte na **nastavit jako úvodní stránku**.
 5. Vytvořte nový soubor JavaScript ve složce projektu s názvem *StockTicker.js*...
 6. Kód šablony nahraďte následujícím kódem:

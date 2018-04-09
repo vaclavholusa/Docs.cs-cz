@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
-title: "Profil a ladění aplikace ASP.NET MVC pomocí balíčku Glimpse | Microsoft Docs"
+title: Profil a ladění aplikace ASP.NET MVC pomocí balíčku Glimpse | Microsoft Docs
 author: Rick-Anderson
-description: "Balíčku glimpse je neúspěchu a rozšiřujících se řadu balíčky NuGet s otevřeným zdrojem, který poskytuje podrobné výkon, ladění a diagnostické informace pro technologii ASP.NET..."
+description: Balíčku glimpse je neúspěchu a rozšiřujících se řadu balíčky NuGet s otevřeným zdrojem, který poskytuje podrobné výkon, ladění a diagnostické informace pro technologii ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 9cfdced21251b482ca527dda9c3a698de77cc8ca
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6ac23256c57116de81c7bf690d5ce743301c75ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Profil a ladění aplikace ASP.NET MVC pomocí balíčku Glimpse
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Balíčku glimpse je neúspěchu a rozšiřujících se řadu balíčky NuGet s otevřeným zdrojem, který poskytuje podrobné výkon, ladění a diagnostické informace pro aplikace ASP.NET. Je trivial k instalaci, lightweight, ultrarychlého a zobrazí klíčové metriky výkonu v dolní části každé stránky. Umožňuje rozbalit vaší aplikace, když potřebujete zjistit, co se děje na serveru. Balíčku glimpse poskytuje mnohem cenné informace, doporučujeme, že můžete ji použít v celé vaší cyklu vývoje, včetně Azure testovacího prostředí. Při [Fiddler](http://www.telerik.com/fiddler) a [nástroje pro vývoj F-12](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) poskytují straně klienta zobrazení balíčku Glimpse poskytuje podrobný pohled ze serveru. V tomto kurzu se soustředí na pomocí balíčku Glimpse ASP.NET MVC a EF balíčků, ale jsou k dispozici mnoho dalších balíčků. Kde to bude možné I odkaz na příslušné [balíčku Glimpse dokumentace](http://getglimpse.com/Docs/) který I pomáhají udržovat. Balíčku glimpse je opensourcový projekt, příliš se může přispívat k zdrojový kód a dokumentaci.
 
@@ -55,7 +55,7 @@ Následující příkazy instalace balíčku Glimpse MVC5 a EF6 modulů z konzol
 <a id="eg"></a>
 ## <a name="enable-glimpse-for-localhost"></a>Povolit balíčku Glimpse pro místního hostitele
 
-Přejděte na http://localhost:&lt;portu #&gt;/glimpse.axd a klikněte na **balíčku Glimpse zapnout** tlačítko.
+Přejděte na http://localhost: &lt;portu #&gt;/glimpse.axd a klikněte na <strong>balíčku Glimpse zapnout</strong> tlačítko.
 
 ![Stránka axd balíčku glimpse](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image4.png)
 

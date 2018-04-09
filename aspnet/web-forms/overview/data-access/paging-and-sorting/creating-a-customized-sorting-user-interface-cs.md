@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
-title: "Vytváření vlastní řazení uživatelské rozhraní (C#) | Microsoft Docs"
+title: Vytváření vlastní řazení uživatelské rozhraní (C#) | Microsoft Docs
 author: rick-anderson
-description: "Při zobrazení dlouhý seznam seřazený dat, může být velmi užitečné k seskupení souvisejících dat zavedením oddělovač řádků. V tomto kurzu ukážeme, jak vytvořit..."
+description: Při zobrazení dlouhý seznam seřazený dat, může být velmi užitečné k seskupení souvisejících dat zavedením oddělovač řádků. V tomto kurzu ukážeme, jak vytvořit...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dbd2f6c8f1e21529da8a0fbffab212a29f615cc1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c2680f5e47883c9d5fa874a36eb666270c5e406a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>Vytváření vlastní řazení uživatelské rozhraní (C#)
 ====================
@@ -141,7 +141,7 @@ S indexem sloupce data jsou seřazená posledním krokem je vytvoření výčtu 
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample4.cs)]
 
-Tento kód spustí prostřednictvím kódu programu odkazem `Table` objekt nalezen na nejnižší úrovni hierarchie ovládacího prvku s GridView a vytvořit řetězec proměnné s názvem `lastValue`. `lastValue`se používá k porovnání aktuální hodnota sloupce s seřadit řádek s předchozí řádek s hodnotou. Další, rutina GridView s `Rows` je vytvořena kolekce a pro každý řádek hodnotu seřazený sloupec je uložená v `currentValue` proměnné.
+Tento kód spustí prostřednictvím kódu programu odkazem `Table` objekt nalezen na nejnižší úrovni hierarchie ovládacího prvku s GridView a vytvořit řetězec proměnné s názvem `lastValue`. `lastValue` se používá k porovnání aktuální hodnota sloupce s seřadit řádek s předchozí řádek s hodnotou. Další, rutina GridView s `Rows` je vytvořena kolekce a pro každý řádek hodnotu seřazený sloupec je uložená v `currentValue` proměnné.
 
 > [!NOTE]
 > K určení hodnoty sloupce s seřadit konkrétního řádku používám buňky s `Text` vlastnost. Tento postup funguje dobře pro BoundFields, ale nebude fungovat podle potřeby pro TemplateFields, CheckBoxFields a tak dále. Podíváme postup účet pro alternativní GridView pole za chvíli.
@@ -198,8 +198,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](sorting-custom-paged-data-cs.md)
-[další](paging-and-sorting-report-data-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](sorting-custom-paged-data-cs.md)
+> [další](paging-and-sorting-report-data-vb.md)

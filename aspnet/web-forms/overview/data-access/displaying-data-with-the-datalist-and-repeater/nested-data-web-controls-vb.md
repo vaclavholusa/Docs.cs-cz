@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-vb
-title: "Vnořená Data webové ovládací prvky (VB) | Microsoft Docs"
+title: Vnořená Data webové ovládací prvky (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu se podíváme na použití prvku Repeater vnořit do jiné opakovače. Příklady ilustruje způsob naplnění vnitřní opakovače obou d..."
+description: V tomto kurzu se podíváme na použití prvku Repeater vnořit do jiné opakovače. Příklady ilustruje způsob naplnění vnitřní opakovače obou d...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 944f208d6fe4f9fde13b530fb236ecc69ff5e9cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d8bb5eae2003273fa8d8a06cc4adaa959378f1e2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="nested-data-web-controls-vb"></a>Ovládací prvky webového vnořená Data (VB)
 ====================
@@ -93,14 +93,14 @@ Data pro vazbu k ovládacímu prvku opakovače vnitřní se dá buď dostat dekl
 
 ## <a name="accessing-the-data-declaratively-with-an-objectdatasource-control-and-theitemdataboundevent-handler"></a>Přístup k datům deklarativně pomocí ovládacího prvku ObjectDataSource a`ItemDataBound`obslužné rutiny události
 
-Protože jsme použít sunout ObjectDataSource hojně v rámci tohoto kurzu řady nejvíce přirozené volba pro přístup k datům v tomto příkladu je přilepit s ObjectDataSource. `ProductsBLL` Třída má `GetProductsByCategoryID(categoryID)` metodu, která vrátí informace o těchto produktů, které patří do zadané  *`categoryID`* . Proto jsme můžete přidat ObjectDataSource k `CategoryList` opakovače s `ItemTemplate` a nakonfigurujte ho pro přístup k jeho data z této třídy s metody.
+Protože jsme použít sunout ObjectDataSource hojně v rámci tohoto kurzu řady nejvíce přirozené volba pro přístup k datům v tomto příkladu je přilepit s ObjectDataSource. `ProductsBLL` Třída má `GetProductsByCategoryID(categoryID)` metodu, která vrátí informace o těchto produktů, které patří do zadané *`categoryID`*. Proto jsme můžete přidat ObjectDataSource k `CategoryList` opakovače s `ItemTemplate` a nakonfigurujte ho pro přístup k jeho data z této třídy s metody.
 
 Bohužel t nemá opakovače povolí jeho šablony k provádění úprav prostřednictvím zobrazení návrhu, takže je potřeba ručně přidat deklarativní syntaxe tohoto ovládacího prvku ObjectDataSource. Následující syntaxe ukazuje `CategoryList` opakovače s `ItemTemplate` po přidání tohoto nového ObjectDataSource (`ProductsByCategoryDataSource`):
 
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample3.aspx)]
 
-Při použití ObjectDataSource přístup, je potřeba nastavit `ProductsByCategoryList` opakovače s `DataSourceID` vlastnost, která má `ID` prvku ObjectDataSource (`ProductsByCategoryDataSource`). Navíc Všimněte si, že je naše ObjectDataSource `<asp:Parameter>` element, který určuje  *`categoryID`*  hodnotu, která se předají do `GetProductsByCategoryID(categoryID)` metoda. Ale jak jsme tuto hodnotu zadat? V ideálním případě jsme d moct stačí nastavit `DefaultValue` vlastnost `<asp:Parameter>` elementu s použitím syntaxe vazby dat, například takto:
+Při použití ObjectDataSource přístup, je potřeba nastavit `ProductsByCategoryList` opakovače s `DataSourceID` vlastnost, která má `ID` prvku ObjectDataSource (`ProductsByCategoryDataSource`). Navíc Všimněte si, že je naše ObjectDataSource `<asp:Parameter>` element, který určuje *`categoryID`* hodnotu, která se předají do `GetProductsByCategoryID(categoryID)` metoda. Ale jak jsme tuto hodnotu zadat? V ideálním případě jsme d moct stačí nastavit `DefaultValue` vlastnost `<asp:Parameter>` elementu s použitím syntaxe vazby dat, například takto:
 
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample4.aspx)]
@@ -133,7 +133,7 @@ Místo použití ObjectDataSource načíst produktů pro aktuální kategorii, j
 
 Opakovače s `DataSource` vlastnost se používá syntaxe datové vazby k označení, že jeho data pocházejí z `GetProductsInCategory(categoryID)` metoda. Vzhledem k tomu `Eval("CategoryID")` vrátí hodnotu typu `Object`, nemůžeme převést objekt, který má `Integer` před předáním do `GetProductsInCategory(categoryID)` metoda. Všimněte si, že `CategoryID` používaná tady prostřednictvím vazby dat je syntaxe `CategoryID` v *vnější* opakovače (`CategoryList`), že s vázána na záznamy v `Categories` tabulky. Proto jsme vědět, že `CategoryID` nelze databázi `NULL` hodnotu, kterou je důvod, proč může slepě přetypovat `Eval` metoda bez kontroly, pokud jsme re práci s `DBNull`.
 
-S tímto přístupem, je potřeba vytvořit `GetProductsInCategory(categoryID)` metoda a mějte ho načíst příslušné sady produktů zadané zadaných  *`categoryID`* . Jsme to můžete udělat jednoduše vrácení `ProductsDataTable` vrácený `ProductsBLL` třídu s `GetProductsByCategoryID(categoryID)` metoda. Umožní s vytvořit `GetProductsInCategory(categoryID)` metodu v třídě kódu pro naše `NestedControls.aspx` stránky. Učinit pomocí následujícího kódu:
+S tímto přístupem, je potřeba vytvořit `GetProductsInCategory(categoryID)` metoda a mějte ho načíst příslušné sady produktů zadané zadaných *`categoryID`*. Jsme to můžete udělat jednoduše vrácení `ProductsDataTable` vrácený `ProductsBLL` třídu s `GetProductsByCategoryID(categoryID)` metoda. Umožní s vytvořit `GetProductsInCategory(categoryID)` metodu v třídě kódu pro naše `NestedControls.aspx` stránky. Učinit pomocí následujícího kódu:
 
 
 [!code-vb[Main](nested-data-web-controls-vb/samples/sample7.vb)]
@@ -179,11 +179,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Zack Petr a Liz Shulok. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](showing-multiple-records-per-row-with-the-datalist-control-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](showing-multiple-records-per-row-with-the-datalist-control-vb.md)

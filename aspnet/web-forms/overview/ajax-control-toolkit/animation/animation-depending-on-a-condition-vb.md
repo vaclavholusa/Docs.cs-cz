@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
-title: "Animace v závislosti na podmínce (VB) | Microsoft Docs"
+title: Animace v závislosti na podmínce (VB) | Microsoft Docs
 author: wenz
-description: "V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Zda je animace..."
+description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Zda je animace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cc8600f33f9c27e1045f5083a126b9d2d1e90303
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d3a648ff8299c9720e9f34522f271595ab1b9bc9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animation-depending-on-a-condition-vb"></a>Animace v závislosti na podmínce (VB)
 ====================
@@ -45,7 +45,7 @@ Související třídy CSS pro panel definovat barvu pozadí dobrý a také nasta
 
 [!code-css[Main](animation-depending-on-a-condition-vb/samples/sample3.css)]
 
-Poté, přidejte `AnimationExtender` na stránku, poskytuje `ID`, `TargetControlID` atribut a povinný údaj`runat="server":`
+Poté, přidejte `AnimationExtender` na stránku, poskytuje `ID`, `TargetControlID` atribut a povinný údaj `runat="server":`
 
 [!code-aspx[Main](animation-depending-on-a-condition-vb/samples/sample4.aspx)]
 
@@ -60,6 +60,6 @@ Všimněte si, že menší než přihlašovací (`<`) v `ConditionScript` atribu
 
 Na panelu je pozvolného vysouvání bez změny velikosti, tak druhý animace spustí první z nich nebyl ([Kliknutím zobrazit obrázek v plné velikosti](animation-depending-on-a-condition-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](executing-several-animations-after-each-other-vb.md)
-[další](picking-one-animation-out-of-a-list-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](executing-several-animations-after-each-other-vb.md)
+> [další](picking-one-animation-out-of-a-list-vb.md)

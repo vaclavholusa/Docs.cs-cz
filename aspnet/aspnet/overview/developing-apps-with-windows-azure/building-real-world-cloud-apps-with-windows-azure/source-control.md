@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
-title: "Zdroj ovládacího prvku (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs"
+title: Zdroj ovládacího prvku (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
 author: MikeWasson
-description: "Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu..."
+description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/23/2015
 ms.topic: article
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: e3ce68b949199db35c18a09771d99d38562b74e9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0022458fa89a3be7ee8303750ad0e072df3b1bab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Správa zdrojového kódu (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -66,7 +66,7 @@ Hlavní větve vždy odpovídá kód, který je v produkčním prostředí. Vět
 
 Pro velký týmy může být samostatné větve pro každou novou funkci; pro menší tým může mít každý přihlašuje na větev vývoj.
 
-Pokud máte větev pro jednotlivé funkce, když funkce A je připravený sloučení změny jeho zdrojového kódu až do vývoj větev a dolů na další funkce větve. Tento zdrojový kód slučování proces může být časově náročná a nechcete svou práci při zachování funkce samostatné, některé týmy používají jinou názvem  *[funkci přepínačů](http://en.wikipedia.org/wiki/Feature_toggle)*  (označované taky jako *funkci příznaky*). To znamená, že všechny kód pro všechny funkce je ve stejné pobočce, ale povolit nebo zakázat jednotlivých funkcí s použitím přepínače v kódu. Předpokládejme například, funkce A je nové pole pro úlohy aplikace opravte ji a funkce B přidává funkce ukládání do mezipaměti. Kód pro obě funkce může být v pobočce vývoj, ale pouze zobrazení bude aplikace pole nové proměnné je nastavena na hodnotu true a bude používat jenom ukládání do mezipaměti při různých proměnná je nastavená na hodnotu true. Pokud funkci A není připraven chcete zvýšit, ale funkce B je připraveno, můžete zvýšit úroveň všech kódu do produkčního prostředí s přepínač funkcí A vypnout a B funkce přepínač na. Potom můžete dokončit A funkce a povyšte ho později, všechny s slučování žádný zdrojový kód.
+Pokud máte větev pro jednotlivé funkce, když funkce A je připravený sloučení změny jeho zdrojového kódu až do vývoj větev a dolů na další funkce větve. Tento zdrojový kód slučování proces může být časově náročná a nechcete svou práci při zachování funkce samostatné, některé týmy používají jinou názvem *[funkci přepínačů](http://en.wikipedia.org/wiki/Feature_toggle)* (označované taky jako *funkci příznaky*). To znamená, že všechny kód pro všechny funkce je ve stejné pobočce, ale povolit nebo zakázat jednotlivých funkcí s použitím přepínače v kódu. Předpokládejme například, funkce A je nové pole pro úlohy aplikace opravte ji a funkce B přidává funkce ukládání do mezipaměti. Kód pro obě funkce může být v pobočce vývoj, ale pouze zobrazení bude aplikace pole nové proměnné je nastavena na hodnotu true a bude používat jenom ukládání do mezipaměti při různých proměnná je nastavená na hodnotu true. Pokud funkci A není připraven chcete zvýšit, ale funkce B je připraveno, můžete zvýšit úroveň všech kódu do produkčního prostředí s přepínač funkcí A vypnout a B funkce přepínač na. Potom můžete dokončit A funkce a povyšte ho později, všechny s slučování žádný zdrojový kód.
 
 Jestli používáte větví nebo přepínačů pro funkce, větvení struktura jako to umožňuje toku kódu z vývojového do provozního agilní a opakovatelných způsobem.
 
@@ -221,6 +221,6 @@ Další informace o způsobu zpracování citlivé informace, které by neměl b
 
 Informace o dalších metodách pro zachování citlivých informací mimo zdrojového kódu najdete v tématu [ASP.NET MVC: zachovat privátní nastavení ze zdrojového kódu](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](automate-everything.md)
-[další](continuous-integration-and-continuous-delivery.md)
+> [!div class="step-by-step"]
+> [Předchozí](automate-everything.md)
+> [další](continuous-integration-and-continuous-delivery.md)

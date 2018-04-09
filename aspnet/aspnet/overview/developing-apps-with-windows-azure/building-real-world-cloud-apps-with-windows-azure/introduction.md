@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
-title: "Vytváření reálných cloudových aplikací s Azure | Microsoft Docs"
+title: Vytváření reálných cloudových aplikací s Azure | Microsoft Docs
 author: MikeWasson
-description: "Tato e kniha vás provede prostřednictvím přístupu na základě vzory pro vytváření reálných cloudových řešení. Vzory použít pro proces vývoj stejně jako na..."
+description: Tato e kniha vás provede prostřednictvím přístupu na základě vzory pro vytváření reálných cloudových řešení. Vzory použít pro proces vývoj stejně jako na...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 4de0b52e0b4ae7ce00e7b07bce2decfc5068964a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5a62818a2dc21128bb0a42a8b296ade460e7b060
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Vytváření reálných cloudových aplikací s Azure
 ====================
@@ -60,7 +60,7 @@ Tato e kniha vysvětluje že třináct doporučená vzory pro vývoj cloudové. 
     - Zachovat webová vrstva bezstavové.
     - Ukázka: škálování a automatické škálování ve službě Web Apps v Azure App Service.
     - Vyhněte se stav relace.
-    - Používají název CDN.
+    - Když není k dispozici CDN, používají název CDN s zálohu.
     - Použijte asynchronní programovací model.
     - Ukázka: asynchronní v architektuře ASP.NET MVC a Entity Framework.
 - [Jednotné přihlašování](single-sign-on.md). 
@@ -177,5 +177,5 @@ Videa:
 - [Architektura weby - s Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/).
 - [Interní informace o Azure webové stránky s Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 
->[!div class="step-by-step"]
-[Next](automate-everything.md)
+> [!div class="step-by-step"]
+> [Next](automate-everything.md)

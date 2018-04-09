@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
-title: "Obraťte se na správce řešení | Microsoft Docs"
+title: Obraťte se na správce řešení | Microsoft Docs
 author: jrjlee
-description: "Tato série kurzů používá ukázkové řešení & #x 2014; řešení obraťte se na správce & #x 2014; představují aplikace podnikovém měřítku s realistické leve..."
+description: Tato série kurzů používá ukázkové řešení&#x2014;řešení obraťte se na správce&#x2014;představují aplikace podnikovém měřítku s realistické leve...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: b7f691a1ee855788f6a57616aea35d960e4c85c7
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d7034f800df98747d10401d7e2c7297fea0e46d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-contact-manager-solution"></a>Obraťte se na správce řešení
 ====================
@@ -24,7 +24,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 
 [Stáhnout PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> To [série kurzů](web-deployment-in-the-enterprise.md) používá ukázkové řešení & #x 2014; řešení obraťte se na správce & #x 2014; představují podnikovém měřítku aplikace s úrovní realistické složitější. Toto téma představuje řešení obraťte se na správce, popisuje klíčové komponenty řešení a identifikuje problémy při nasazení tento druh aplikace na různé cílové platformy v podnikovém prostředí.
+> To [série kurzů](web-deployment-in-the-enterprise.md) používá ukázkové řešení&#x2014;řešení obraťte se na správce&#x2014;představují podnikovém měřítku aplikace s úrovní realistické složitější. Toto téma představuje řešení obraťte se na správce, popisuje klíčové komponenty řešení a identifikuje problémy při nasazení tento druh aplikace na různé cílové platformy v podnikovém prostředí.
 > 
 > Při práci prostřednictvím v tématech v těchto kurzech můžete jako referenční implementace, které ukazuje, jak můžou řešit konkrétní problémy v podnikové scénáře nasazení řešení obraťte se na správce. Dalším tématu [nastavení nahoru řešení obraťte se na správce](setting-up-the-contact-manager-solution.md), popisuje postup stažení a spuštění řešení na pracovní stanici developer.
 
@@ -67,6 +67,6 @@ Toto téma poskytuje přehled řešení obraťte se na správce a identifikovat 
 
 Dalším tématu [nastavení nahoru řešení obraťte se na správce](setting-up-the-contact-manager-solution.md), popisuje postup stažení a spuštění řešení na pracovní stanici developer.
 
->[!div class="step-by-step"]
-[Předchozí](web-deployment-in-the-enterprise.md)
-[další](setting-up-the-contact-manager-solution.md)
+> [!div class="step-by-step"]
+> [Předchozí](web-deployment-in-the-enterprise.md)
+> [další](setting-up-the-contact-manager-solution.md)

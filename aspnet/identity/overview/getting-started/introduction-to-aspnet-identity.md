@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/introduction-to-aspnet-identity
-title: "Úvod do ASP.NET Identity | Microsoft Docs"
+title: Úvod do ASP.NET Identity | Microsoft Docs
 author: jongalloway
-description: "Systém členství technologie ASP.NET byla zavedena v systému technologii ASP.NET 2.0 zpět 2005 a od pak byly mnoho změny v typicall způsoby webové aplikace..."
+description: Systém členství technologie ASP.NET byla zavedena v systému technologii ASP.NET 2.0 zpět 2005 a od pak byly mnoho změny v typicall způsoby webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 7c7dcb7903b0d0772acc560161ff39c6869c599a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 59272f4659256e108ee99b22eb3bd3e2583a617c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-identity"></a>Úvod do ASP.NET Identity
 ====================
@@ -112,37 +112,37 @@ ASP.NET Identity je implementovaná pomocí následujícího postupu. Účelem t
 2. Vytvořený projekt obsahuje následující tři balíčky pro ASP.NET Identity.
 
     - [`Microsoft.AspNet.Identity.EntityFramework`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.EntityFramework/)  
- Tento balíček obsahuje implementace Entity Framework ASP.NET Identity, který se uchová ASP.NET Identity dat a schématu na SQL Server.
+   Tento balíček obsahuje implementace Entity Framework ASP.NET Identity, který se uchová ASP.NET Identity dat a schématu na SQL Server.
     - [`Microsoft.AspNet.Identity.Core`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Core/)  
- Tento balíček má základní rozhraní pro ASP.NET Identity. Tento balíček lze zapsat implementace pro ASP.NET Identity, že trvalost jiné cíle ukládá jako je například Azure Table Storage, NoSQL databáze atd.
+   Tento balíček má základní rozhraní pro ASP.NET Identity. Tento balíček lze zapsat implementace pro ASP.NET Identity, že trvalost jiné cíle ukládá jako je například Azure Table Storage, NoSQL databáze atd.
     - [`Microsoft.AspNet.Identity.OWIN`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Owin/)  
- Tento balíček obsahuje funkce, které se používá k zařaďte ověřování OWIN s ASP.NET Identity v aplikacích ASP.NET. Používá se při přidání protokolu do funkce aplikace a volání do middleware ověřování souborů Cookie OWIN ke generování souboru cookie.
+   Tento balíček obsahuje funkce, které se používá k zařaďte ověřování OWIN s ASP.NET Identity v aplikacích ASP.NET. Používá se při přidání protokolu do funkce aplikace a volání do middleware ověřování souborů Cookie OWIN ke generování souboru cookie.
 3. Vytváření uživatele.  
- Spuštění aplikace a potom klikněte na **zaregistrovat** odkaz pro vytvoření uživatele. Následující obrázek ukazuje na stránku registrace, který shromažďuje uživatelské jméno a heslo.  
+   Spuštění aplikace a potom klikněte na **zaregistrovat** odkaz pro vytvoření uživatele. Následující obrázek ukazuje na stránku registrace, který shromažďuje uživatelské jméno a heslo.  
   
     ![](introduction-to-aspnet-identity/_static/image2.png)  
   
- Když uživatel klikne **zaregistrovat** tlačítko `Register` akce řadiče účtu vytvoří uživatele voláním rozhraní API ASP.NET Identity, jak je znázorněno níže:
+   Když uživatel klikne **zaregistrovat** tlačítko `Register` akce řadiče účtu vytvoří uživatele voláním rozhraní API ASP.NET Identity, jak je znázorněno níže:
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample1.cs?highlight=8-9)]
 4. Přihlásit se.  
- Pokud byl uživatel vytvořen úspěšně, uživatel přihlášen pomocí `SignInAsync` metoda.  
+   Pokud byl uživatel vytvořen úspěšně, uživatel přihlášen pomocí `SignInAsync` metoda.  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample2.cs?highlight=12)]
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
- Zvýrazněný výš v `SignInAsync` metoda generuje [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Vzhledem k tomu, že jsou založené na deklaracích identity systému ASP.NET Identity a ověřování souborů Cookie OWIN, rozhraní framework vyžaduje, aby aplikace ke generování ClaimsIdentity pro uživatele. ClaimsIdentity obsahuje informace o všech deklarací identity pro uživatele, například jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.  
+   Zvýrazněný výš v `SignInAsync` metoda generuje [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Vzhledem k tomu, že jsou založené na deklaracích identity systému ASP.NET Identity a ověřování souborů Cookie OWIN, rozhraní framework vyžaduje, aby aplikace ke generování ClaimsIdentity pro uživatele. ClaimsIdentity obsahuje informace o všech deklarací identity pro uživatele, například jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.  
   
- Zvýrazněný níže v `SignInAsync` metoda přihlášení uživatele pomocí třídě z OWIN a volání `SignIn` a předávání v ClaimsIdentity.  
+   Zvýrazněný níže v `SignInAsync` metoda přihlášení uživatele pomocí třídě z OWIN a volání `SignIn` a předávání v ClaimsIdentity.  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample4.cs?highlight=8-11)]
 5. Odhlaste se.  
- Kliknutím **Odhlásit** odkaz volá odhlášení akce v kontroleru účtu. 
+   Kliknutím **Odhlásit** odkaz volá odhlášení akce v kontroleru účtu. 
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
- Zvýrazněných code výš ukazuje OWIN `AuthenticationManager.SignOut` metoda. Toto je obdobou [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) metodu používanou [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu ve webových formulářů.
+   Zvýrazněných code výš ukazuje OWIN `AuthenticationManager.SignOut` metoda. Toto je obdobou [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) metodu používanou [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu ve webových formulářů.
 
 ## <a name="components-of-aspnet-identity"></a>Součástí ASP.NET Identity
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/changing-the-database
-title: "Databázi EF nejprve s architekturou ASP.NET MVC: Změna databáze | Microsoft Docs"
+title: 'Databázi EF nejprve s architekturou ASP.NET MVC: Změna databáze | Microsoft Docs'
 author: tfitzmac
-description: "Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri..."
+description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/changing-the-database
 msc.type: authoredcontent
-ms.openlocfilehash: 1ffe753812e5eef817f03ab488a28ae5fcefd41e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63ee8768a43dbdac80922e3adbedd3378c10da73
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-changing-the-database"></a>Databázi EF nejprve s architekturou ASP.NET MVC: Změna databáze
 ====================
@@ -63,6 +63,6 @@ Zobrazení nyní obsahují vlastnost MiddleName.
 
 V další části přidáte kód pro přizpůsobení zobrazení pro zobrazení podrobností o student záznamu.
 
->[!div class="step-by-step"]
-[Předchozí](generating-views.md)
-[další](customizing-a-view.md)
+> [!div class="step-by-step"]
+> [Předchozí](generating-views.md)
+> [další](customizing-a-view.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
-title: "Vytváření Data Access Layer (C#) | Microsoft Docs"
+title: Vytváření Data Access Layer (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme budete začít od samého začátku a vytvořit Data přístup Layer (DAL), pomocí typové datové sady, pro přístup k informacím v databázi."
+description: V tomto kurzu jsme budete začít od samého začátku a vytvořit Data přístup Layer (DAL), pomocí typové datové sady, pro přístup k informacím v databázi.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/05/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7e1a457c23ef659bf7ee9c15b66dc5c2d8a31416
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>Vytváření Data Access Layer (C#)
 ====================
@@ -84,7 +84,7 @@ Všechny kódu, které jsou specifické pro daný zdroj dat. například vytvoř
 
 Tyto metody, a to po vyvolání bude připojení k databázi, vydávání odpovídající dotaz a vrátí výsledky. Jak vrátíme těchto výsledků je důležité. Tyto metody může vrátit jednoduše datové sady nebo DataReader nenaplnil databázový dotaz, ale v ideálním případě tyto výsledky má být vrácen pomocí *objektů se silným typem*. Objekt silného typu je jejichž schématu je pevně definovaná při kompilaci, zatímco opak, objekt volného typu, je jedním jejichž schématu není znám, dokud modulu runtime.
 
-Například objektu DataReader a datové sady (ve výchozím nastavení) jsou objekty volného typu vzhledem k tomu, že je jejich schéma definované sloupců vrácených dotazem databáze používaných k naplnění je. Pro přístup k určité sloupce z DataTable volného typu musíme použijte syntaxi jako: ***DataTable*. Řádky [*index*] ["*columnName *"]**. Přijít zadáním DataTable v tomto příkladu je vykazují skutečnost, že musíme přístup pomocí řetězec nebo index pořadových název sloupce. DataTable silného typu, na druhé straně, bude mít každý z jeho sloupců implementovaná jako vlastnosti, výsledkem je kód, který vypadá takto: ***DataTable*. Řádky [*index*].* columnName***.
+Například objektu DataReader a datové sady (ve výchozím nastavení) jsou objekty volného typu vzhledem k tomu, že je jejich schéma definované sloupců vrácených dotazem databáze používaných k naplnění je. Pro přístup k určité sloupce z DataTable volného typu musíme použijte syntaxi jako:  <strong><em>DataTable</em>. Řádky [<em>index</em>] ["<em>columnName</em>"]</strong>. Přijít zadáním DataTable v tomto příkladu je vykazují skutečnost, že musíme přístup pomocí řetězec nebo index pořadových název sloupce. DataTable silného typu, na druhé straně, bude mít každý z jeho sloupců implementovaná jako vlastnosti, výsledkem je kód, který vypadá takto:  <strong><em>DataTable</em>. Řádky [<em>index</em>]. *columnName</strong>*.
 
 Pokud chcete vrátit objektů se silným typem, vývojáři můžete vytvořit své vlastní objekty vlastní obchodní nebo použít typové datové sady. Objekt obchodní je implementoval vývojář jako představuje třídu, jejíž vlastnosti obvykle podle sloupce základní tabulky databáze objekt firmy. Typové datové sady je třída vygenerovány pro vás Visual Studio na základě schématu databáze a jejíž členové jsou silného typu podle tohoto schématu. Datová sada zadali, samotné se skládá z třídy, které rozšiřují třídy sady dat ADO.NET, DataTable a DataRow. Kromě silného typu DataTables typové datové sady teď také zahrnovat TableAdapters, které jsou tříd pomocí metody pro naplnění DataTables datovou sadu a šíření úpravy v rámci DataTables zpět do databáze.
 
@@ -124,7 +124,7 @@ Průvodce nastavením TableAdapter začíná požadavkem, abyste vyberte databá
 **Obrázek 5**: v rozevíracím seznamu vyberte databázi Northwind ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image13.png))
 
 
-Po výběru databáze a kliknutím na tlačítko Další, zobrazí se dotaz, pokud chcete uložit připojovací řetězec do **Web.config** souboru. Uložením připojovací řetězec je budete nepoužívejte ho pevný programového v TableAdapter třídy, který zjednodušuje věcí, pokud v budoucnu změní informace o připojovacím řetězci. Pokud se přihlásíte k uložení připojovací řetězec v konfiguračním souboru je umístěn v  **&lt;connectionStrings&gt;**  oddíl, což může být [volitelně šifrované](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx) pro vylepšené zabezpečení nebo upravené později pomocí nové stránky vlastností ASP.NET 2.0 v rámci nástroje Správce služby IIS grafického uživatelského rozhraní, což je více ideální pro správce.
+Po výběru databáze a kliknutím na tlačítko Další, zobrazí se dotaz, pokud chcete uložit připojovací řetězec do **Web.config** souboru. Uložením připojovací řetězec je budete nepoužívejte ho pevný programového v TableAdapter třídy, který zjednodušuje věcí, pokud v budoucnu změní informace o připojovacím řetězci. Pokud se přihlásíte k uložení připojovací řetězec v konfiguračním souboru je umístěn v **&lt;connectionStrings&gt;** oddíl, což může být [volitelně šifrované](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx) pro vylepšené zabezpečení nebo upravené později pomocí nové stránky vlastností ASP.NET 2.0 v rámci nástroje Správce služby IIS grafického uživatelského rozhraní, což je více ideální pro správce.
 
 
 [![Připojovací řetězec uložit do souboru Web.config](creating-a-data-access-layer-cs/_static/image15.png)](creating-a-data-access-layer-cs/_static/image14.png)
@@ -233,7 +233,7 @@ Nejprve jsme výzva o tom, jestli chceme pro přístup k databázi pomocí pří
 **Obrázek 15**: rozhodnete vytvořit **vyberte** řádky vrátí v příkazu který ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image41.png))
 
 
-Dalším krokem je dotaz SQL, používaný pro přístup k datům. Vzhledem k tomu, že chceme vrátit pouze produkty, které patří do určité kategorie, použít stejné **vyberte** příkaz z **GetProducts()**, ale přidejte následující **kde** klauzule: **kde CategoryID = @CategoryID** .  **@CategoryID**  Parametr do Průvodce nastavením TableAdapter označuje, že metoda vytváříme se vyžadují vstupní parametr příslušného typu (integer konkrétně, s možnou hodnotou Null).
+Dalším krokem je dotaz SQL, používaný pro přístup k datům. Vzhledem k tomu, že chceme vrátit pouze produkty, které patří do určité kategorie, použít stejné <strong>vyberte</strong> příkaz z <strong>GetProducts()</strong>, ale přidejte následující <strong>kde</strong> klauzule: <strong>kde CategoryID = @CategoryID</strong> . <strong>@CategoryID</strong> Parametr do Průvodce nastavením TableAdapter označuje, že metoda vytváříme se vyžadují vstupní parametr příslušného typu (integer konkrétně, s možnou hodnotou Null).
 
 
 [![Zadejte dotaz vrátit pouze produkty v zadané kategorii.](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
@@ -241,7 +241,7 @@ Dalším krokem je dotaz SQL, používaný pro přístup k datům. Vzhledem k to
 **Obrázek 16**: Zadejte dotaz na pouze vrátit produktů v kategorii zadaný ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-data-access-layer-cs/_static/image44.png))
 
 
-V posledním kroku, který jsme můžete zvolit který vzory použít, a také přizpůsobit názvy metod generované přístup k datům. Vzorek výplně, změňte název, který má **FillByCategoryID** a pro návratový DataTable vrátit vzoru ( **získat * X*** metody), použijeme **GetProductsByCategoryID**.
+V posledním kroku, který jsme můžete zvolit který vzory použít, a také přizpůsobit názvy metod generované přístup k datům. Vzorek výplně, změňte název, který má <strong>FillByCategoryID</strong> a pro návratový DataTable vrátit vzoru ( <strong>získat*X</strong>*  metody), použijeme  <strong>GetProductsByCategoryID</strong>.
 
 
 [![Zvolte názvy metod TableAdapter](creating-a-data-access-layer-cs/_static/image46.png)](creating-a-data-access-layer-cs/_static/image45.png)
@@ -403,48 +403,48 @@ Trvat několik minut pro vytvoření následující TableAdapters a metod pomoc�
 
 - **ProductsTableAdapter**
 
-    - **GetProducts**: 
+  - **GetProducts**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample10.sql)]
-    - **GetProductsByCategoryID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample10.sql)]
+  - **GetProductsByCategoryID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample11.sql)]
-    - **GetProductsBySupplierID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample11.sql)]
+  - **GetProductsBySupplierID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample12.sql)]
-    - **GetProductByProductID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample12.sql)]
+  - **GetProductByProductID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample13.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample13.sql)]
 - **CategoriesTableAdapter**
 
-    - **GetCategories**: 
+  - **GetCategories**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample14.sql)]
-    - **GetCategoryByCategoryID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample14.sql)]
+  - **GetCategoryByCategoryID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample15.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample15.sql)]
 - **SuppliersTableAdapter**
 
-    - **GetSuppliers**: 
+  - **GetSuppliers**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample16.sql)]
-    - **GetSuppliersByCountry**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample16.sql)]
+  - **GetSuppliersByCountry**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample17.sql)]
-    - **GetSupplierBySupplierID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample17.sql)]
+  - **GetSupplierBySupplierID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample18.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample18.sql)]
 - **EmployeesTableAdapter**
 
-    - **GetEmployees**: 
+  - **GetEmployees**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample19.sql)]
-    - **GetEmployeesByManager**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample19.sql)]
+  - **GetEmployeesByManager**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample20.sql)]
-    - **GetEmployeeByEmployeeID**: 
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample20.sql)]
+  - **GetEmployeeByEmployeeID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample21.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample21.sql)]
 
 
 [![Po přidání čtyři TableAdapters návrháře DataSet](creating-a-data-access-layer-cs/_static/image84.png)](creating-a-data-access-layer-cs/_static/image83.png)
@@ -543,5 +543,5 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu bylo Ron zelený, Hilton Giesenow, společnosti Dennis Patterson, Liz Shulok, opisek Gomez a Carlos Santos. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Next](creating-a-business-logic-layer-cs.md)
+> [!div class="step-by-step"]
+> [Next](creating-a-business-logic-layer-cs.md)

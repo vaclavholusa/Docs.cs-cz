@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
-title: "Přechodná chyba zpracování (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs"
+title: Přechodná chyba zpracování (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
 author: MikeWasson
-description: "Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu..."
+description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/03/2015
 ms.topic: article
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: b743b04789c5e5ebf5ab922cf34a516a16a6d356
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 86bd67b04931ae2452f6e063e6475a434a0125bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>Přechodná chyba zpracování (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -104,6 +104,6 @@ Ukázka kódu
 
 - [Základy služby ve službě Azure Cloud](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ukázková aplikace, které jsou vytvořené Azure poradní tým Microsoftu které ukazuje, jak používat [Enterprise knihovny přechodné chyby zpracování bloku](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/) (TFH). Další informace najdete v tématu [cloudové služby základy Data Access Layer – přechodných chyb](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx). TFH se doporučuje pro přístup k databázi pomocí ADO.NET přímo (bez použití rozhraní Entity Framework).
 
->[!div class="step-by-step"]
-[Předchozí](monitoring-and-telemetry.md)
-[další](distributed-caching.md)
+> [!div class="step-by-step"]
+> [Předchozí](monitoring-and-telemetry.md)
+> [další](distributed-caching.md)

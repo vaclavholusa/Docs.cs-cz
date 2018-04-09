@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
-title: "Dvoufaktorové ověřování pomocí SMS a e-mailu s ASP.NET Identity | Microsoft Docs"
+title: Dvoufaktorové ověřování pomocí SMS a e-mailu s ASP.NET Identity | Microsoft Docs
 author: HaoK
-description: "Tento kurz vám ukáže, jak nastavit dvoufaktorové ověřování (2FA) pomocí serveru SMS a e-mailu. Tento článek napsal Rick Anderson ( @RickAndMSFT ), za..."
+description: Tento kurz vám ukáže, jak nastavit dvoufaktorové ověřování (2FA) pomocí serveru SMS a e-mailu. Tento článek napsal Rick Anderson ( @RickAndMSFT ), za...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2015
 ms.topic: article
 ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 0f9ff7cf74048a008b150da1e843ff15333269ab
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c8f628d177004a8569dde2651469ed591e48591e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a>Dvoufaktorové ověřování pomocí SMS a e-mailu s ASP.NET Identity
 ====================
@@ -52,11 +52,11 @@ V této části použijete NuGet Stáhnout ukázku, kterou budeme pracovat s. Za
     `Install-Package SendGrid`  
     `Install-Package -Prerelease Microsoft.AspNet.Identity.Samples`  
   
- V tomto kurzu použijeme [sendgrid vám umožňuje](http://sendgrid.com/) k odesílání e-mailu a [Twilio](https://www.twilio.com/) nebo [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) pro odesílání textových zpráv sms. `Identity.Samples` Balíček nainstaluje kód Pracujeme s.
+   V tomto kurzu použijeme [sendgrid vám umožňuje](http://sendgrid.com/) k odesílání e-mailu a [Twilio](https://www.twilio.com/) nebo [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) pro odesílání textových zpráv sms. `Identity.Samples` Balíček nainstaluje kód Pracujeme s.
 3. Nastavte [projektu pro použití protokolu SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
 4. *Volitelné*: postupujte podle pokynů v mé [kurzu potvrzení e-mailu](account-confirmation-and-password-recovery-with-aspnet-identity.md) spojit sendgrid vám umožňuje a pak spusťte aplikaci a zaregistrovat e-mailový účet.
 5. * Volitelné: * kód Ukázkový odkaz e-mailu potvrzení odebrání vzorku ( `ViewBag.Link` kódu v kontroleru účtu. Najdete v článku `DisplayEmail` a `ForgotPasswordConfirmation` metody akce a zobrazení syntaxe razor).
-6. * Volitelné: * Odebrat `ViewBag.Status` kód z řadičů spravovat a účet a *Views\Account\VerifyCode.cshtml* a *Views\Manage\VerifyPhoneNumber.cshtml* zobrazení syntaxe razor. Alternativně můžete ponechat `ViewBag.Status` displej tak, aby testovat, jak se tato aplikace funguje místně bez nutnosti spojit a odeslat e-mailu a zpráv SMS.
+6. <em>Volitelné: * Odebrat `ViewBag.Status` kód z řadičů spravovat a účet a *Views\Account\VerifyCode.cshtml</em> a <em>Views\Manage\VerifyPhoneNumber.cshtml</em> zobrazení syntaxe razor. Alternativně můžete ponechat `ViewBag.Status` displej tak, aby testovat, jak se tato aplikace funguje místně bez nutnosti spojit a odeslat e-mailu a zpráv SMS.
 
 > [!NOTE]
 > Upozornění: Pokud změníte některá nastavení zabezpečení v této ukázce, výroby, které aplikace bude muset podstoupit auditu zabezpečení, která explicitně volá se změny provedené.
@@ -70,44 +70,44 @@ Tento kurz obsahuje pokyny pro použití Twilio nebo ASPSMS ale můžete použí
 
 1. **Vytvoření uživatelského účtu s poskytovatelem služby SMS**  
   
- Vytvoření [Twilio](https://www.twilio.com/try-twilio) nebo [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) účtu.
+   Vytvoření [Twilio](https://www.twilio.com/try-twilio) nebo [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) účtu.
 2. **Instalace dalších balíčků nebo přidání odkazů na služby**  
   
- Twilio:  
- V konzole Správce balíčků zadejte následující příkaz:  
+   Twilio:  
+   V konzole Správce balíčků zadejte následující příkaz:  
     `Install-Package Twilio`  
   
- ASPSMS:  
- Následující odkaz na službu musí být přidán:  
+   ASPSMS:  
+   Následující odkaz na službu musí být přidán:  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image1.png)  
   
- Adresa:  
+   Adresa:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
- Obor názvů:  
+   Obor názvů:  
     `ASPSMSX2`
 3. **Zjištění přihlašovací údaje uživatele poskytovatele serveru SMS**  
   
- Twilio:  
- Z **řídicí panel** kartě svého účtu Twilio kopie **SID účtu** a **Auth token**.  
+   Twilio:  
+   Z **řídicí panel** kartě svého účtu Twilio kopie **SID účtu** a **Auth token**.  
   
- ASPSMS:  
- V nastavení svého účtu, přejděte na **Userkey** a zkopírujte jej spolu s samoobslužné definované **heslo**.  
+   ASPSMS:  
+   V nastavení svého účtu, přejděte na **Userkey** a zkopírujte jej spolu s samoobslužné definované **heslo**.  
   
- Tyto hodnoty jsme později budou ukládat do proměnné `SMSAccountIdentification` a `SMSAccountPassword` .
+   Tyto hodnoty jsme později budou ukládat do proměnné `SMSAccountIdentification` a `SMSAccountPassword` .
 4. **Zadání ID odesílatele nebo původce**  
   
- Twilio:  
- Z **čísla** kartě, zkopírujte své telefonní číslo Twilio.  
+   Twilio:  
+   Z **čísla** kartě, zkopírujte své telefonní číslo Twilio.  
   
- ASPSMS:  
- V rámci **odemknutí autoru** nabídce odemknutí jeden nebo více autoru nebo vyberte alfanumerické původce (nepodporuje všechny sítě).  
+   ASPSMS:  
+   V rámci **odemknutí autoru** nabídce odemknutí jeden nebo více autoru nebo vyberte alfanumerické původce (nepodporuje všechny sítě).  
   
- Tato hodnota jsme později se uloží v proměnné `SMSAccountFrom` .
+   Tato hodnota jsme později se uloží v proměnné `SMSAccountFrom` .
 5. **Přenos přihlašovací údaje poskytovatele služby SMS do aplikace**  
   
- Zkontrolujte přihlašovací údaje a telefonní číslo odesílatele, k dispozici pro aplikaci:
+   Zkontrolujte přihlašovací údaje a telefonní číslo odesílatele, k dispozici pro aplikaci:
 
     [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample1.cs)]
 
@@ -115,9 +115,9 @@ Tento kurz obsahuje pokyny pro použití Twilio nebo ASPSMS ale můžete použí
     > Zabezpečení – nikdy úložiště citlivá data ve zdrojovém kódu. Účet a přihlašovací údaje se přidají do výše pro zjednodušení v ukázkovém kódu. V tématu Jon Atten [rozhraní ASP.NET MVC: zachovat mimo privátní nastavení správy zdrojového kódu](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx).
 6. **Implementace přenos dat do poskytovatele služby SMS**  
   
- Konfigurace `SmsService` třídy v *aplikace\_Start\IdentityConfig.cs* souboru.  
+   Konfigurace `SmsService` třídy v *aplikace\_Start\IdentityConfig.cs* souboru.  
   
- V závislosti na použité poskytovatele služby SMS aktivovat buď **Twilio** nebo **ASPSMS** části: 
+   V závislosti na použité poskytovatele služby SMS aktivovat buď **Twilio** nebo **ASPSMS** části: 
 
     [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample2.cs)]
 7. Spusťte aplikaci a přihlaste se pomocí účtu, který jste dříve registrován.

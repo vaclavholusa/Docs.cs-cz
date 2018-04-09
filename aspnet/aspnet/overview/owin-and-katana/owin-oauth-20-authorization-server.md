@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
-title: "Serveru ověřování OAuth 2.0 OWIN | Microsoft Docs"
+title: Serveru ověřování OAuth 2.0 OWIN | Microsoft Docs
 author: hongyes
-description: "V tomto kurzu pokyny o tom, jak implementovat serveru autorizace OAuth 2.0 pomocí middlewaru OWIN OAuth. To je pokročilé kurzu této pouze Nastav..."
+description: V tomto kurzu pokyny o tom, jak implementovat serveru autorizace OAuth 2.0 pomocí middlewaru OWIN OAuth. To je pokročilé kurzu této pouze Nastav...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/20/2014
 ms.topic: article
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
 ms.openlocfilehash: e5968f8d19191c3f44e9bd58f8e22a39d8d8faff
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="owin-oauth-20-authorization-server"></a>Server ověřování OWIN OAuth 2.0
 ====================
@@ -104,7 +104,7 @@ OAuth nebude vědět, kde nebo jak můžete spravovat informace o účtu uživat
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample4.cs?highlight=1)]
 
-`ValidateClientRedirectUri`slouží k ověření klienta se jeho adresa URL přesměrování registrované. `ValidateClientAuthentication`kontroluje hlavičky základní schéma a text formuláře získat pověření klienta.
+`ValidateClientRedirectUri` slouží k ověření klienta se jeho adresa URL přesměrování registrované. `ValidateClientAuthentication` kontroluje hlavičky základní schéma a text formuláře získat pověření klienta.
 
 Přihlašovací stránky je zobrazena níže:
 
@@ -241,10 +241,10 @@ V tématu *AuthorizationServer\ResourceServer\App\_Start\Startup.WebApi.cs* v uk
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample13.cs)]
 
-- `UseCors`metoda umožňuje CORS pro všechny domény.
-- `UseOAuthBearerAuthentication`metoda umožňuje middleware nosiče tokenu ověřování OAuth, který bude přijímat a ověření tokenu nosiče z autorizační hlavičky v požadavku.
-- `Config.SuppressDefaultHostAuthenticaiton`potlačí výchozí hostitel ověřený objekt zabezpečení z aplikace, proto všechny požadavky budou anonymní po toto volání.
-- `HostAuthenticationFilter`Umožňuje ověřování jenom pro zadaný typ ověřování. V takovém případě je typ ověřování nosiče.
+- `UseCors` metoda umožňuje CORS pro všechny domény.
+- `UseOAuthBearerAuthentication` metoda umožňuje middleware nosiče tokenu ověřování OAuth, který bude přijímat a ověření tokenu nosiče z autorizační hlavičky v požadavku.
+- `Config.SuppressDefaultHostAuthenticaiton` potlačí výchozí hostitel ověřený objekt zabezpečení z aplikace, proto všechny požadavky budou anonymní po toto volání.
+- `HostAuthenticationFilter` Umožňuje ověřování jenom pro zadaný typ ověřování. V takovém případě je typ ověřování nosiče.
 
 Aby bylo možné prokázat ověřenou identitu, vytvoříme objektu ApiController výstup deklarací identity aktuálního uživatele.
 
@@ -272,7 +272,7 @@ Zde je ukázka kódu `HomeController` klienta.
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample16.cs)]
 
-`DotNetOpenAuth`vyžaduje SSL ve výchozím nastavení. Vzhledem k tomu, že naše Ukázka používá HTTP, je nutné přidat následující nastavení v konfiguračním souboru:
+`DotNetOpenAuth` vyžaduje SSL ve výchozím nastavení. Vzhledem k tomu, že naše Ukázka používá HTTP, je nutné přidat následující nastavení v konfiguračním souboru:
 
 [!code-xml[Main](owin-oauth-20-authorization-server/samples/sample17.xml?highlight=4-6)]
 

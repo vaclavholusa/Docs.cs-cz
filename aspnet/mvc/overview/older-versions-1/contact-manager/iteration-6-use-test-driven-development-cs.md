@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
-title: "Iterace #6 – použijte testy řízený vývoj (C#) | Microsoft Docs"
+title: 'Iterace #6 – použijte testy řízený vývoj (C#) | Microsoft Docs'
 author: microsoft
-description: "V této šesté iteraci přidáme nové funkce pro naši aplikaci tak, že nejprve zápis testů částí a psaní kódu pro testování částí. V této iteraci..."
+description: V této šesté iteraci přidáme nové funkce pro naši aplikaci tak, že nejprve zápis testů částí a psaní kódu pro testování částí. V této iteraci...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 85426a7d4024b779848c3ffd05f2ab306152000c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 94502625f66d3eb08a24b8f2a369bf456a3367b1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-6--use-test-driven-development-c"></a>Iterace #6 – použijte testy řízený vývoj (C#)
 ====================
@@ -133,7 +133,7 @@ V tomto okamžiku můžeme i sestavení t naše aplikace, můžeme t spouštěn�
 
 Třídy kontroleru skupiny v výpis 2 obsahuje minimální požadované předat testování částí kódu. Akce Index() vrátí seznam staticky programové skupiny (třídy skupiny je definována v výpis 3).
 
-**Výpis 2 - Controllers\GroupController.cs**
+**Listing 2 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample2.cs)]
 
@@ -163,7 +163,7 @@ Test v výpis 4 volá řadičem skupiny Create() metoda s nový kontakt skupiny.
 
 Změny skupiny řadiče v výpis 5 obsahuje minimální změn, které vyžadují předat nový test.
 
-**Výpis 5 - Controllers\GroupController.cs**
+**Listing 5 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample5.cs)]
 
@@ -215,7 +215,7 @@ Výpis 11 obsahuje novou třídu FakeContactManagerRepository, která implementu
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample10.cs)]
 
-**Výpis 11 – Controllers\FakeContactManagerRepository.cs**
+**Listing 11 - Controllers\FakeContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample11.cs)]
 
@@ -249,7 +249,7 @@ Je potřeba vytvořit novou tabulku databáze skupiny. Postupujte podle těchto 
 | **Název sloupce** | **Datový typ** | **Povolit hodnoty Null** |
 | --- | --- | --- |
 | ID | int | False |
-| Název | Nvarchar(50) | False |
+| Název | nvarchar(50) | False |
 
 
 Dále je potřeba odstranit všechna data z tabulky kontaktů (jinak, jsme won t možné vytvořit relaci mezi tabulkami kontakty a skupiny). Postupujte podle těchto kroků:
@@ -359,6 +359,6 @@ Po jsme dokončení zápisu dostatek kódu vyhovět jejich požadavkům vyjádř
 
 V další iterace – poslední iterace – přepisování jsme naši aplikaci chcete využít výhod Ajax. Využitím Ajax, jsme budete zvýšit rychlost reakce a výkonu aplikace, obraťte se na správce.
 
->[!div class="step-by-step"]
-[Předchozí](iteration-5-create-unit-tests-cs.md)
-[další](iteration-7-add-ajax-functionality-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](iteration-5-create-unit-tests-cs.md)
+> [další](iteration-7-add-ajax-functionality-cs.md)

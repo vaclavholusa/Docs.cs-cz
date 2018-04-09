@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
-title: "Určení soubory musí být nasazené (VB) | Microsoft Docs"
+title: Určení soubory musí být nasazené (VB) | Microsoft Docs
 author: rick-anderson
-description: "Soubory musí být nasazeny z vývojového prostředí do produkčního prostředí závisí částečně na tom, zda technologie ASP.NET byla vytvořena nám..."
+description: Soubory musí být nasazeny z vývojového prostředí do produkčního prostředí závisí částečně na tom, zda technologie ASP.NET byla vytvořena nám...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
-ms.openlocfilehash: aad0d4d4f7db5942c51255c34f36be73ed0e1f2d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4b9fcdbaaa0c2a6d7610339ecb6018a0fe6895f4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="determining-what-files-need-to-be-deployed-vb"></a>Určení soubory musí být nasazené (VB)
 ====================
@@ -41,7 +41,7 @@ Vezměte v úvahu stránku ASP.NET s názvem `Clock.aspx` obsahující ovládac�
 
 [!code-vb[Main](determining-what-files-need-to-be-deployed-vb/samples/sample1.vb)]
 
-Aby modul ASP.NET pro zpracování požadavku pro tuto stránku, část kódu stránky (  *`WebPage`*  `.aspx.vb` souboru) musí být nejprve kompilovány. Tato kompilace může dojít, explicitně nebo automaticky.
+Aby modul ASP.NET pro zpracování požadavku pro tuto stránku, část kódu stránky ( *`WebPage`* `.aspx.vb` souboru) musí být nejprve kompilovány. Tato kompilace může dojít, explicitně nebo automaticky.
 
 Pokud kompilace se stane explicitně pak bude celá aplikace zdrojový kód je zkompilovat do jednoho nebo více sestavení (`.dll` soubory) nachází v aplikačním `Bin` adresáře. Pokud kompilace se stane automaticky pak výsledná automaticky generovaný je sestavení, ve výchozím nastavení, umístit do `Temporary ASP.NET Files` složky, kterou najdete na `%WINDOWS%\Microsoft.NET\Framework\<version>`, i když toto umístění je lze nakonfigurovat [ &lt; kompilace&gt; element](https://msdn.microsoft.com/library/s10awwz0.aspx) v `Web.config`. Explicitní kompilace je nutné provést některé akce pro kompilaci kódu aplikace ASP.NET na sestavení, a tento krok dojde před jejich nasazením. S automatickou kompilaci proces kompilace dojde na webovém serveru při prvním přístupu k prostředku.
 
@@ -79,15 +79,15 @@ Ke stažení pro tento kurz zahrnuje názvem recenze adresáře aplikace ASP.NET
 - Stránky předlohy (`Site.master`).
 - Sedm různých stránkách ASP.NET:
 
-    - ~/`Default.aspx`-domovské stránky daného webu.
-    - ~/`About.aspx`-stránku "O the server".
-    - ~/`Fiction/Default.aspx`-stránku se seznamem fiction knihy, které byly.
+    - ~/`Default.aspx` -domovské stránky daného webu.
+    - ~/`About.aspx` -stránku "O the server".
+    - ~/`Fiction/Default.aspx` -stránku se seznamem fiction knihy, které byly.
 
-        - ~/`Fiction/Blaze.aspx`-o nové Richard Bachman *Blaze*.
-    - ~/`Tech/Default.aspx`-stránku se seznamem knih technologie, které byly zkontrolovány.
+        - ~/`Fiction/Blaze.aspx` -o nové Richard Bachman *Blaze*.
+    - ~/`Tech/Default.aspx` -stránku se seznamem knih technologie, které byly zkontrolovány.
 
-        - ~/`Tech/CYOW.aspx`-o *vytvořit si vlastní web*.
-        - ~/`Tech/TYASP35.aspx`-o *naučit sami technologie ASP.NET 3.5 za 24 hodin*.
+        - ~/`Tech/CYOW.aspx` -o *vytvořit si vlastní web*.
+        - ~/`Tech/TYASP35.aspx` -o *naučit sami technologie ASP.NET 3.5 za 24 hodin*.
 - Tři různé soubory šablon stylů CSS v `Styles` složky.
 - Čtyři bitové kopie souborům - používá technologii ASP.NET logo a bitové kopie zahrnuje tři zkontrolovat Books – všechny v `Images` složky.
 - A `Web.sitemap` souboru, který definuje mapy webu a slouží k zobrazení v nabídkách `Default.aspx` stránky v kořenovém adresáři a `Fiction` a `Tech` složek.
@@ -189,6 +189,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Systém projektu webu Visual Studio 2005: co je to a proč jsme to udělali?](https://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx)
 - [Návod: Převádění webový projekt na projekt webové aplikace v sadě Visual Studio](https://msdn.microsoft.com/library/aa983476.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](asp-net-hosting-options-vb.md)
-[další](deploying-your-site-using-an-ftp-client-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](asp-net-hosting-options-vb.md)
+> [další](deploying-your-site-using-an-ftp-client-vb.md)

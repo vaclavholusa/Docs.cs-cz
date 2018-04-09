@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
-title: "Předkompilace webu (VB) | Microsoft Docs"
+title: Předkompilace webu (VB) | Microsoft Docs
 author: rick-anderson
-description: "Visual Studio nabízí vývojářům ASP.NET dva typy projektů: projekty webových aplikací (WAP) a webových projektů (WSPs). Jeden z hlavní rozdíly betwe..."
+description: 'Visual Studio nabízí vývojářům ASP.NET dva typy projektů: projekty webových aplikací (WAP) a webových projektů (WSPs). Jeden z hlavní rozdíly betwe...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7cc487aa5276c601fed632e82d7b6d32d1b53b58
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7296808480fa48b4afd0b308cd27707378519747
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="precompiling-your-website-vb"></a>Předkompilace webu (VB)
 ====================
@@ -97,7 +97,7 @@ Po předkompilace web, přejděte do cílového umístění, které jste zadali 
 
 [![](precompiling-your-website-vb/_static/image5.png)](precompiling-your-website-vb/_static/image4.png)
 
-**Obrázek 2**: adresář projektu obsahuje `.aspx` a `.aspx.cs` soubory; `Bin` složka obsahuje právě`Elmah.dll`  
+**Obrázek 2**: adresář projektu obsahuje `.aspx` a `.aspx.cs` soubory; `Bin` složka obsahuje právě `Elmah.dll`  
  ([Kliknutím zobrazit obrázek v plné velikosti](precompiling-your-website-vb/_static/image6.png))
 
 **Obrázek 3** ukazuje cílové umístění složky, jejichž obsah se vytvořily ve nástroje kompilace technologie ASP.NET. Tato složka neobsahuje žádné soubory kódu. Kromě toho tato složka `Bin` directory zahrnuje několik sestavení a dvě `.compiled` soubory kromě `Elmah.dll` sestavení.
@@ -190,6 +190,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Předkompilaci technologie ASP.NET](http://www.odetocode.com/Articles/417.aspx)
 - [Možnosti předkompilovaných webů technologie ASP.NET](http://www.dotnetperls.com/precompiled)
 
->[!div class="step-by-step"]
-[Předchozí](logging-error-details-with-elmah-vb.md)
-[další](users-and-roles-on-the-production-website-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](logging-error-details-with-elmah-vb.md)
+> [další](users-and-roles-on-the-production-website-vb.md)

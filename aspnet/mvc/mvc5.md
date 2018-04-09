@@ -2,7 +2,7 @@
 uid: mvc/mvc5
 title: ASP.NET MVC 5 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC 5 ASP.NET MVC 5 je rozhraní pro vytváření škálovatelných standardy webových aplikací pomocí vzory návrhu zavedené a výkon AS...."
+description: ASP.NET MVC 5 ASP.NET MVC 5 je rozhraní pro vytváření škálovatelných standardy webových aplikací pomocí vzory návrhu zavedené a výkon AS....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/mvc5
 msc.type: content
-ms.openlocfilehash: e57163469ae4606df0fc17e3e054b7696782a084
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1b3f920b51a70757ec0e20e36fa8e7dc329e663d
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/22/2018
 ---
 <a name="aspnet-mvc-5"></a>ASP.NET MVC 5
 ====================
@@ -38,7 +38,7 @@ Informace týkající se upgradu projekty MVC 4 až MVC 5 najdete v tématu [pos
 
 ### <a name="authentication-filters"></a>Filtry ověřování
 
-[Filtry ověřování](http://www.dotnetcurry.com/showarticle.aspx?ID=957) jsou nový typ filtru v architektuře ASP.NET MVC, která spustí před filtry autorizace v architektuře ASP.NET MVC kanálu a umožňují určit ověřování logiku za akce, kontroleru, nebo globálně pro všechny řadiče. Filtry ověřování zpracovat přihlašovací údaje v požadavku a zadejte odpovídající objekt zabezpečení. Filtry ověřování můžete také přidat výzev ověřování v reakci na neoprávněné žádosti. V tématu [filtry ověřování aplikace ASP.NET MVC 5](http://www.dotnetcurry.com/showarticle.aspx?ID=957), [filtry ověřování v ASP.NET MVC 5](http://theshravan.net/blog/authentication-filters-in-asp-net-mvc-5/) a [nakonec nové technologie ASP.NET MVC 5 filtry ověřování!](http://hackwebwith.net/finally-the-new-asp-net-mvc-5-authentication-filters/).
+[Filtry ověřování](http://www.dotnetcurry.com/showarticle.aspx?ID=957) jsou nový typ filtru v architektuře ASP.NET MVC, která spustí před filtry autorizace v architektuře ASP.NET MVC kanálu a umožňují určit ověřování logiku za akce, kontroleru, nebo globálně pro všechny řadiče. Filtry ověřování zpracovat přihlašovací údaje v požadavku a zadejte odpovídající objekt zabezpečení. Filtry ověřování můžete také přidat výzev ověřování v reakci na neoprávněné žádosti. V tématu [filtry ověřování rozhraní ASP.NET MVC 5](http://www.dotnetcurry.com/showarticle.aspx?ID=957), [filtry ověřování v architektuře ASP.NET MVC 5](http://theshravan.net/blog/authentication-filters-in-asp-net-mvc-5/).
 
 ### <a name="filter-overrides"></a>Přepsání filtru
 
@@ -46,7 +46,7 @@ Nyní můžete přepsat filtry, které platí pro danou akci metodu nebo řadič
 
 ### <a name="attribute-routing"></a>Atribut směrování
 
-ASP.NET MVC nyní podporuje [směrováním atributů](https://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx), díky příspěvek ve Tim McCall, Autor [http://attributerouting.net](http://attributerouting.net). Se směrováním atributů můžete zadat trasy zadávání poznámek k akce a kontrolery.
+ASP.NET MVC nyní podporuje [směrováním atributů](https://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx), díky příspěvek ve Tim McCall, Autor [ http://attributerouting.net ](http://attributerouting.net). Se směrováním atributů můžete zadat trasy zadávání poznámek k akce a kontrolery.
 
 ## <a name="new-web-project-experience"></a>Nové prostředí webového projektu
 

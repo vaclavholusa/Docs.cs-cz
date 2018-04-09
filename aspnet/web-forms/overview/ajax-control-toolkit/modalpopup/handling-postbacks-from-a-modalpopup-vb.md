@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-vb
-title: "Zpracování postback z ModalPopup (VB) | Microsoft Docs"
+title: Zpracování postback z ModalPopup (VB) | Microsoft Docs
 author: wenz
-description: "ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Zvláštní pozornost musí být provedeny, když pos..."
+description: ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Zvláštní pozornost musí být provedeny, když pos...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7915d555fef363f41aa51bd77f0183c97c2f3769
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1aa2c42deb67015dd0b35edf4ba72d8d667ec88c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-postbacks-from-a-modalpopup-vb"></a>Zpracování postback z ModalPopup (VB)
 ====================
@@ -62,6 +62,6 @@ Ovládacích prvcích textbox v překryvném okně modální by měl být navíc
 
 Modální místní způsobí postback ([Kliknutím zobrazit obrázek v plné velikosti](handling-postbacks-from-a-modalpopup-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](using-modalpopup-with-a-repeater-control-vb.md)
-[další](positioning-a-modalpopup-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-modalpopup-with-a-repeater-control-vb.md)
+> [další](positioning-a-modalpopup-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/introduction-to-signalr
-title: "Úvod do SignalR | Microsoft Docs"
+title: Úvod do SignalR | Microsoft Docs
 author: pfletcher
-description: "Tento článek popisuje, co je SignalR a některé řešení, které je určen k vytvoření."
+description: Tento článek popisuje, co je SignalR a některé řešení, které je určen k vytvoření.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 5bb49c9c2405d232ba5e067d99f8879b3bc99361
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: 0ceca3edc26d35b1155946e60863a84da0bbe592
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-signalr"></a>Úvod do SignalR
 ====================
@@ -85,11 +85,11 @@ Následující seznam obsahuje kroky, které používá SignalR rozhodnout, kter
 2. Pokud je nakonfigurovaný JSONP (tedy `jsonp` parametr je nastaven na `true` při spuštění připojení), dlouhé dotazování se používá.
 3. Pokud mezi doménami právě připojení (Pokud SignalR koncový bod není ve stejné doméně jako hostování stránka), bude WebSocket použit, pokud se splní následující kritéria:
 
-    - Klient podporuje CORS (sdílení prostředků různého původu). Informace, na kterých klienti podporují CORS najdete v tématu [CORS v caniuse.com](http://www.caniuse.com/CORS).
-    - Klient podporuje protokol WebSocket
-    - Server podporuje protokol WebSocket
+   - Klient podporuje CORS (sdílení prostředků různého původu). Informace, na kterých klienti podporují CORS najdete v tématu [CORS v caniuse.com](http://www.caniuse.com/CORS).
+   - Klient podporuje protokol WebSocket
+   - Server podporuje protokol WebSocket
 
-    Pokud nejsou splněny některé z těchto kritérií, dlouhé dotazování se použije. Další informace o připojení mezi doménami, najdete v části [postup připojení mezi doménami](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain).
+     Pokud nejsou splněny některé z těchto kritérií, dlouhé dotazování se použije. Další informace o připojení mezi doménami, najdete v části [postup připojení mezi doménami](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain).
 4. Pokud není nakonfigurovaný JSONP a připojení není mezi doménami, WebSocket se použijí, pokud klient i server podporovat.
 5. Pokud klient nebo server nepodporují protokolu WebSocket, odeslané události serveru se používá, pokud je k dispozici.
 6. Pokud události odeslané serveru není k dispozici, dojde k pokusu o navždy rámce.

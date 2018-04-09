@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
-title: "Vytvoření nového projektu ASP.NET MVC | Microsoft Docs"
+title: Vytvoření nového projektu ASP.NET MVC | Microsoft Docs
 author: microsoft
-description: "Krok 1 ukazuje, jak zavést základní strukturu NerdDinner aplikace."
+description: Krok 1 ukazuje, jak zavést základní strukturu NerdDinner aplikace.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
 msc.type: authoredcontent
-ms.openlocfilehash: 4d30a6803b1478014a2afb814ac317df27394446
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d15ca67f0ddd8db6842bc5112996ae2dee433536
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-new-aspnet-mvc-project"></a>Vytvoření nového projektu ASP.NET MVC
 ====================
@@ -136,6 +136,6 @@ Později v tomto kurzu jsme budete komunikovat více informací o automatizovan�
 
 Jste nyní My struktura základní aplikace na místě. Nyní Pojďme [vytvořit databázi k ukládání dat naše aplikace](create-a-database.md).
 
->[!div class="step-by-step"]
-[Předchozí](introducing-the-nerddinner-tutorial.md)
-[další](create-a-database.md)
+> [!div class="step-by-step"]
+> [Předchozí](introducing-the-nerddinner-tutorial.md)
+> [další](create-a-database.md)

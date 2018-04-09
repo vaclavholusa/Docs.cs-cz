@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
-title: "Seznam záznamů hlavní s odrážkami pomocí podrobnosti DataList (VB) podrobností | Microsoft Docs"
+title: Seznam záznamů hlavní s odrážkami pomocí podrobnosti DataList (VB) podrobností | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme budete komprimovat dvě stránky a podrobností sestavy předchozí kurzu do jediné stránce s odrážkami seznam názvů kategorie na t..."
+description: V tomto kurzu jsme budete komprimovat dvě stránky a podrobností sestavy předchozí kurzu do jediné stránce s odrážkami seznam názvů kategorie na t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 613ad1fb101a168c79310c9dc7bf731be264f889
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4d87dc7f4fb00e96d9eb2653e6fbc1efb8bb656c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>Seznam záznamů hlavní s odrážkami pomocí podrobnosti DataList (VB) podrobností
 ====================
@@ -74,7 +74,7 @@ Po přidání třídy CSS a kódu značek v konfiguraci `CategoriesAndProducts.a
 
 Opakovače a DataList s, které obaluje značek dokončení jsme re připravené k vytvoření vazby dat kategorie opakovače kontrolu. Ale jak seznamu s odrážkami kategorií obrázek 1 ukazuje, kromě každý název kategorie s také potřebujeme zobrazíte počet produktů, které jsou spojené s kategorií. Chcete-li přistupovat k těmto informacím jsme provést jeden z následujících kroků:
 
-- **Určete tyto informace z třídy s kódu stránky ASP.NET.** Zadané konkrétní  *`categoryID`*  jsme můžete určit počet produktů, přidružené voláním `ProductsBLL` třídu s `GetProductsByCategoryID(categoryID)` metoda. Tato metoda vrátí hodnotu `ProductsDataTable` objekt, jehož `Count` vlastnost udává, kolik `ProductsRow` s existuje, což je počet produktů, pro zadané  *`categoryID`* . Můžeme vytvořit `ItemDataBound` obslužné rutiny události pro opakovače, která pro každou kategorii vázána na opakovače, zavolá `ProductsBLL` třídu s `GetProductsByCategoryID(categoryID)` metoda i jeho počet ve výstupu.
+- **Určete tyto informace z třídy s kódu stránky ASP.NET.** Zadané konkrétní *`categoryID`* jsme můžete určit počet produktů, přidružené voláním `ProductsBLL` třídu s `GetProductsByCategoryID(categoryID)` metoda. Tato metoda vrátí hodnotu `ProductsDataTable` objekt, jehož `Count` vlastnost udává, kolik `ProductsRow` s existuje, což je počet produktů, pro zadané *`categoryID`*. Můžeme vytvořit `ItemDataBound` obslužné rutiny události pro opakovače, která pro každou kategorii vázána na opakovače, zavolá `ProductsBLL` třídu s `GetProductsByCategoryID(categoryID)` metoda i jeho počet ve výstupu.
 - **Aktualizace `CategoriesDataTable` v datové sadě zadali zahrnout `NumberOfProducts` sloupce.** Jsme může aktualizovat `GetCategories()` metoda v `CategoriesDataTable` zahrnout tyto informace, nebo můžete taky nechat `GetCategories()` jako-je a vytvořte novou `CategoriesDataTable` metodu s názvem `GetCategoriesAndNumberOfProducts()`.
 
 Umožní s prozkoumat obě z následujících postupů. Prvním přístupem je jednodušší implementace vzhledem k tomu, že jsme nejsou zobrazeny t potřeba aktualizovat Data Access Layer; to ale vyžaduje další komunikaci s databází. Volání `ProductsBLL` třídu s `GetProductsByCategoryID(categoryID)` metoda v `ItemDataBound` obslužné rutiny události přidá volání další databáze pro každou kategorii zobrazí v Opakovači. Při této technice existují *N* + volání 1 databáze, kde *N* je počet kategorií zobrazí v Opakovači. Druhý přístup, je vrácen počet produktů s informace o každé kategorie z `CategoriesBLL` třídu s `GetCategories()` (nebo `GetCategoriesAndNumberOfProducts()`) metoda, což by vedlo k jenom jednu cestu k databázi.
@@ -210,7 +210,7 @@ Výstup poskytnutý aktualizace DAL zahrnout `NumberOfProducts` sloupec je stejn
 
 V tomto okamžiku máme `Categories` opakovače zobrazení seznamu kategorií spolu s počtem produkty v každé kategorii. Opakovače používá LinkButton pro každou kategorii, že po kliknutí na příčiny a zpětné volání, ve kterém bodu budeme potřebovat zobrazit tyto produkty pro vybrané kategorie v `CategoryProducts` DataList.
 
-Problémy čelí nám je jak vám má DataList zobrazit právě produkty pro vybrané kategorie. V [hlavní/podrobností volitelný GridView hlavní pomocí DetailsView podrobnosti](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md) kurzu jsme viděli, jak sestavit GridView jejichž řádky může vybrat, s vybraný řádek s podrobností se zobrazí v DetailsView na stejné stránce. Rutina GridView s ObjectDataSource vrátí informace o všech produktů pomocí `ProductsBLL` s `GetProducts()` metoda při DetailsView s ObjectDataSource načíst informace o používání vybrané produktu `GetProductsByProductID(productID)` metoda. *`productID`*  Hodnota parametru zadaná deklarativně tím, že přidružíte s hodnotou GridView s `SelectedValue` vlastnost. Bohužel opakovače nemá `SelectedValue` vlastnost a nemůže sloužit jako zdroj parametru.
+Problémy čelí nám je jak vám má DataList zobrazit právě produkty pro vybrané kategorie. V [hlavní/podrobností volitelný GridView hlavní pomocí DetailsView podrobnosti](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md) kurzu jsme viděli, jak sestavit GridView jejichž řádky může vybrat, s vybraný řádek s podrobností se zobrazí v DetailsView na stejné stránce. Rutina GridView s ObjectDataSource vrátí informace o všech produktů pomocí `ProductsBLL` s `GetProducts()` metoda při DetailsView s ObjectDataSource načíst informace o používání vybrané produktu `GetProductsByProductID(productID)` metoda. *`productID`* Hodnota parametru zadaná deklarativně tím, že přidružíte s hodnotou GridView s `SelectedValue` vlastnost. Bohužel opakovače nemá `SelectedValue` vlastnost a nemůže sloužit jako zdroj parametru.
 
 > [!NOTE]
 > Toto je jedna z těchto problémů, které se zobrazí při použití LinkButton v prvku Repeater. Měli jsme použili hypertextový odkaz předávat `CategoryID` prostřednictvím řetězec dotazu místo toho jsme může použít toto pole řetězce dotazu jako zdroj pro s hodnotu parametru.
@@ -233,7 +233,7 @@ Nyní nastavena na hodnotu None parametr zdrojového rozevíracího seznamu. Bud
 
 [![Proveďte není uveden zdroj parametru pro parametr categoryID](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image35.png)
 
-**Obrázek 13**: není zadán parametr zdroje  *`categoryID`*  parametr ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image37.png))
+**Obrázek 13**: není zadán parametr zdroje *`categoryID`* parametr ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image37.png))
 
 
 Po dokončení průvodce Konfigurace zdroje dat, Visual Studio automaticky generuje DataList s `ItemTemplate`. Nahraďte toto výchozí nastavení `ItemTemplate` se šablonou jsme použili v předchozí kurzu; také nastavit DataList s `RepeatColumns` vlastnost na hodnotu 2. Po provedení těchto změn deklarativní vaší DataList a jeho přidružené ObjectDataSource by měl vypadat následovně:
@@ -241,7 +241,7 @@ Po dokončení průvodce Konfigurace zdroje dat, Visual Studio automaticky gener
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/samples/sample10.aspx)]
 
-V současné době `CategoryProductsDataSource` ObjectDataSource s  *`categoryID`*  parametr nikdy nastaven, tak při prohlížení stránky, se nezobrazí žádné produkty. Co je potřeba udělat je mít tento parametr hodnotu nastavit na základě `CategoryID` kliknutelnou kategorie v Opakovači. Vzniká dva problémy: nejdřív, jak jsme je zjistit při LinkButton v opakovače s `ItemTemplate` kliknutelnou; a druhé, jak jsme zjistit `CategoryID` odpovídající kategorie, jejichž LinkButton označeného?
+V současné době `CategoryProductsDataSource` ObjectDataSource s *`categoryID`* parametr nikdy nastaven, tak při prohlížení stránky, se nezobrazí žádné produkty. Co je potřeba udělat je mít tento parametr hodnotu nastavit na základě `CategoryID` kliknutelnou kategorie v Opakovači. Vzniká dva problémy: nejdřív, jak jsme je zjistit při LinkButton v opakovače s `ItemTemplate` kliknutelnou; a druhé, jak jsme zjistit `CategoryID` odpovídající kategorie, jejichž LinkButton označeného?
 
 Má LinkButton jako a ImageButton ovládacích prvků `Click` událostí a [ `Command` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx). `Click` Událostí slouží k jednoduše Všimněte si, že LinkButton klepnutí na. V některých případech ale kromě poznamenat, že bylo stisknuto LinkButton také potřebujeme předat některé doplňující informace k obslužné rutině událostí. Pokud ano, LinkButton s [ `CommandName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx) a [ `CommandArgument` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx) vlastnosti lze přiřadit tyto doplňující informace. Potom po kliknutí LinkButton jeho `Command` aktivuje událost (místo jeho `Click` událostí) a obslužné rutiny události je předána hodnoty `CommandName` a `CommandArgument` vlastnosti.
 
@@ -296,11 +296,11 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Zack Petr. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](master-detail-filtering-acess-two-pages-datalist-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](master-detail-filtering-acess-two-pages-datalist-vb.md)

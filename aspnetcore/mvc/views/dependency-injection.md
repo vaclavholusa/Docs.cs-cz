@@ -1,7 +1,7 @@
 ---
-title: "Vkládání závislostí do zobrazení v ASP.NET Core"
+title: Vkládání závislostí do zobrazení v ASP.NET Core
 author: ardalis
-description: "Zjistěte, jak ASP.NET Core podporuje vkládání závislostí do zobrazení MVC."
+description: Zjistěte, jak ASP.NET Core podporuje vkládání závislostí do zobrazení MVC.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: cde30322450529f5b3b58f9ee54c22b4cbda65c8
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: cc34b9069ec062f08644c0026c1ccdcd00f667ac
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="dependency-injection-into-views-in-aspnet-core"></a>Vkládání závislostí do zobrazení v ASP.NET Core
 
@@ -39,7 +39,7 @@ Toto zobrazení ukazuje seznam `ToDoItem` instance, společně s souhrn zobrazuj
 
 `StatisticsService` Provede pár výpočtů na sadu `ToDoItem` instance, které se přistupuje prostřednictvím úložiště:
 
-[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/StatisticsService.cs?highlight=15,20,26)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/StatisticsService.cs?highlight=15,20,25)]
 
 Ukázka úložiště používá kolekci v paměti. Implementace výše uvedeném (který funguje na všechna data v paměti) se nedoporučuje pro velké, vzdáleně používaná datové sady.
 

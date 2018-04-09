@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb
-title: "Přidání animace do ovládacího prvku (VB) | Microsoft Docs"
+title: Přidání animace do ovládacího prvku (VB) | Microsoft Docs
 author: wenz
-description: "V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Tento kurz ukazuje, jak..."
+description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Tento kurz ukazuje, jak...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c2d6971ade89405245c8d23cafb6fd8bb9468639
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3da98e478c45213875b3829e51351d03571a05b8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-animation-to-a-control-vb"></a>Přidání animace do ovládacího prvku (VB)
 ====================
@@ -51,22 +51,22 @@ Další až, potřebujeme `AnimationExtender`. Po zadání `ID` a obvykle `runat
 
 Použití celou animace deklarativně, pomocí syntaxe XML bohužel momentálně není plně nepodporuje technologii IntelliSense v sadě Visual Studio. Kořenový uzel je `<Animations>;` v rámci tohoto uzlu, jsou povoleny několik událostí, které určují, kdy animation(s) přezkumném místní:
 
-- `OnClick`(klikněte na tlačítko myši)
-- `OnHoverOut`(Pokud myši ponechá ovládací prvek)
-- `OnHoverOver`(pokud ukazatel myši nachází ovládacího prvku, zastavování `OnHoverOut` animace)
-- `OnLoad`(Pokud stránky byl načten)
-- `OnMouseOut`(Pokud myši ponechá ovládací prvek)
-- `OnMouseOver`(pokud ukazatel myši nachází ovládacího prvku, není zastavení `OnMouseOut` animace)
+- `OnClick` (klikněte na tlačítko myši)
+- `OnHoverOut` (Pokud myši ponechá ovládací prvek)
+- `OnHoverOver` (pokud ukazatel myši nachází ovládacího prvku, zastavování `OnHoverOut` animace)
+- `OnLoad` (Pokud stránky byl načten)
+- `OnMouseOut` (Pokud myši ponechá ovládací prvek)
+- `OnMouseOver` (pokud ukazatel myši nachází ovládacího prvku, není zastavení `OnMouseOut` animace)
 
 Rozhraní framework se dodává se sadou animací, každé z nich reprezentována vlastní – element XML. Tady je výběr:
 
-- `<Color>`(a změníte barvu)
-- `<FadeIn>`(pozvolného vysouvání)
-- `<FadeOut>`(pozvolného vysouvání)
-- `<Property>`(Změna ovládacího prvku)
-- `<Pulse>`(pulsating)
-- `<Resize>`(změně velikosti)
-- `<Scale>`(úměrně změně velikosti)
+- `<Color>` (a změníte barvu)
+- `<FadeIn>` (pozvolného vysouvání)
+- `<FadeOut>` (pozvolného vysouvání)
+- `<Property>` (Změna ovládacího prvku)
+- `<Pulse>` (pulsating)
+- `<Resize>` (změně velikosti)
+- `<Scale>` (úměrně změně velikosti)
 
 V tomto příkladu se objevovat panelu. Animace přijmou 1,5 sekund (`Duration` atribut), zobrazení 24 snímků (postup animace) za sekundu (`Fps` atributy). Tady je značku dokončení `AnimationExtender` ovládacího prvku:
 
@@ -79,6 +79,6 @@ Při spuštění tohoto skriptu panelu se zobrazí a setmívá v jedné a půl s
 
 Na panelu je pozvolného vysouvání ([Kliknutím zobrazit obrázek v plné velikosti](adding-animation-to-a-control-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](dynamically-controlling-updatepanel-animations-cs.md)
-[další](executing-several-animations-at-the-same-time-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](dynamically-controlling-updatepanel-animations-cs.md)
+> [další](executing-several-animations-at-the-same-time-vb.md)

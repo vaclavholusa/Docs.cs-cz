@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
-title: "Vytváření koncový bod OData v3 s Web API 2 | Microsoft Docs"
+title: Vytváření koncový bod OData v3 s Web API 2 | Microsoft Docs
 author: MikeWasson
-description: "Open Data Protocol (OData) je protokol přístupu dat pro web. OData poskytuje uniform způsob, jak struktury dat, dotaz na data a manipulovat s daty..."
+description: Open Data Protocol (OData) je protokol přístupu dat pro web. OData poskytuje uniform způsob, jak struktury dat, dotaz na data a manipulovat s daty...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 33fe4d764bf9bf64c852f1269255925b5cc42536
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 227faacd3f42731e08a4cd2b71075776309961b6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Vytváření koncový bod OData v3 s Web API 2
 ====================
@@ -150,7 +150,7 @@ EDM je abstraktní model dat. EDM slouží k vytvoření dokument metadat a zade
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample4.cs)]
 
-První parametr je popisný název pro tuto trasu. Klienti služby nejsou vidět tento název. Druhý parametr je předpony identifikátoru URI pro koncový bod. Daný tento kód, je identifikátor URI pro sadu entit produkty http://*hostname*  /odata/produkty. Vaše aplikace může mít více než jeden koncový bod OData. Pro každý koncový bod volání **MapODataRoute** a zadejte název jedinečné trasy a jedinečný předpony identifikátoru URI.
+První parametr je popisný název pro tuto trasu. Klienti služby nejsou vidět tento název. Druhý parametr je předpony identifikátoru URI pro koncový bod. Daný tento kód, je identifikátor URI pro sadu entit produkty http://<em>hostname</em>  /odata/produkty. Vaše aplikace může mít více než jeden koncový bod OData. Pro každý koncový bod volání <strong>MapODataRoute</strong> a zadejte název jedinečné trasy a jedinečný předpony identifikátoru URI.
 
 <a id="seed-db"></a>
 ## <a name="seed-the-database-optional"></a>Počáteční hodnoty databázi (volitelné)

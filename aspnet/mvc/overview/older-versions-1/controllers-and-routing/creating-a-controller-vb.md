@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-vb
-title: "Vytvoření řadiče (VB) | Microsoft Docs"
+title: Vytvoření řadiče (VB) | Microsoft Docs
 author: StephenWalther
-description: "V tomto kurzu Stephen Walther ukazuje, jak přidat řadič pro aplikaci ASP.NET MVC."
+description: V tomto kurzu Stephen Walther ukazuje, jak přidat řadič pro aplikaci ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d2caf7fe137b48c016ff3cd52db9e36e1e8001c0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e9a2bbcb09672f5247429064908cd4d2ef67f518
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-controller-vb"></a>Vytvoření řadiče (VB)
 ====================
@@ -92,10 +92,10 @@ Kontroler ASP.NET MVC je právě třída. Pokud dáváte přednost, můžete ign
 
 `http://localhost:40071/Person`
 
-> [!NOTE] 
+> [!NOTE]
 > 
 > Vývojový Server ASP.NET používá číslo portu náhodné (například 40071). Při zadávání adresy URL pro vyvolání řadič, budete muset zadat číslo pravý port. Ukázáním myší na ikonu pro vývojový Server ASP.NET v oznamovací oblasti systému Windows (pravém dolním rohu obrazovky) můžete zjistit číslo portu.
-
->[!div class="step-by-step"]
-[Předchozí](adding-dynamic-content-to-a-cached-page-vb.md)
-[další](creating-an-action-vb.md)
+> 
+> [!div class="step-by-step"]
+> [Předchozí](adding-dynamic-content-to-a-cached-page-vb.md)
+> [další](creating-an-action-vb.md)

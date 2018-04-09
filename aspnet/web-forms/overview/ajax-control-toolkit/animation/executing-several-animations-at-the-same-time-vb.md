@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-vb
-title: "Provádění několik animací ve stejnou dobu (VB) | Microsoft Docs"
+title: Provádění několik animací ve stejnou dobu (VB) | Microsoft Docs
 author: wenz
-description: "V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Umožňuje spustit severa..."
+description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Umožňuje spustit severa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8461f5ea303a9e1166f694d4039d4c1aedd1caa8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 823764abd4444b5cb8d9bc6e8e8ed34d6f670310
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="executing-several-animations-at-the-same-time-vb"></a>Provádění několik animací ve stejnou dobu (VB)
 ====================
@@ -62,6 +62,6 @@ A skutečně: při spuštění tohoto skriptu se zobrazí na panelu a potom změ
 
 Na panelu je pozvolného vysouvání a změna velikosti (včetně jeho obsahu, díky modul vykreslování prohlížeče) ([Kliknutím zobrazit obrázek v plné velikosti](executing-several-animations-at-the-same-time-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](adding-animation-to-a-control-vb.md)
-[další](executing-several-animations-after-each-other-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-animation-to-a-control-vb.md)
+> [další](executing-several-animations-after-each-other-vb.md)

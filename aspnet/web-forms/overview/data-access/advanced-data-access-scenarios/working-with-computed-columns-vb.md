@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-vb
-title: "Práce s počítaných sloupcích (VB) | Microsoft Docs"
+title: Práce s počítaných sloupcích (VB) | Microsoft Docs
 author: rick-anderson
-description: "Při vytváření tabulky databáze, Microsoft SQL Server umožňuje definovat počítaný sloupec, jehož hodnota je vypočítána z výrazu to obvykle referen..."
+description: Při vytváření tabulky databáze, Microsoft SQL Server umožňuje definovat počítaný sloupec, jehož hodnota je vypočítána z výrazu to obvykle referen...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 52fc0b89343236b70f8a2e013ad8a33431ae3d2d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 04b39902aae05d815eb11ec7b7163988d017f78c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="working-with-computed-columns-vb"></a>Práce s počítaných sloupcích (VB)
 ====================
@@ -51,7 +51,7 @@ Začněte otevřením `Suppliers` definice tabulky kliknutím pravým tlačítke
 Všimněte si, že může být zřetězen řetězce v systému SQL pomocí `+` operátor. `CASE` Příkaz lze použít jako podmíněného v tradiční programovací jazyk. Ve výše uvedené výrazu `CASE` příkaz lze přečíst jako: Pokud `ContactTitle` není `NULL` ve výstupu `ContactTitle` zřetězen s čárkou, jinak hodnota emitování nic. Další informace o užitečnost `CASE` prohlášení, najdete v části [Power SQL `CASE` příkazy](http://www.4guysfromrolla.com/webtech/102704-1.shtml).
 
 > [!NOTE]
-> Místo použití `CASE` prohlášení, může případně použili jsme `ISNULL(ContactTitle, '')`. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx)Vrátí *checkExpression* Pokud jinou hodnotu než NULL, jinak vrátí *zastaralá*. While – buď `ISNULL` nebo `CASE` bude fungovat v tomto případě jsou komplikovanější scénáře kde flexibilitu `CASE` příkaz nelze porovnat podle `ISNULL`.
+> Místo použití `CASE` prohlášení, může případně použili jsme `ISNULL(ContactTitle, '')`. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx) Vrátí *checkExpression* Pokud jinou hodnotu než NULL, jinak vrátí *zastaralá*. While – buď `ISNULL` nebo `CASE` bude fungovat v tomto případě jsou komplikovanější scénáře kde flexibilitu `CASE` příkaz nelze porovnat podle `ISNULL`.
 
 
 Po přidání Tento počítaný sloupec obrazovky by měla vypadat podobně jako na následujícím snímku na obrázku 1.
@@ -261,12 +261,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Hilton Geisenow a Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](adding-additional-datatable-columns-vb.md)
-[další](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-additional-datatable-columns-vb.md)
+> [další](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)

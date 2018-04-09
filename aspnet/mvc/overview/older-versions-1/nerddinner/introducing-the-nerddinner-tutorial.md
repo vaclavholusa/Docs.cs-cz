@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/introducing-the-nerddinner-tutorial
-title: "Představujeme v kurzu NerdDinner | Microsoft Docs"
+title: Představujeme v kurzu NerdDinner | Microsoft Docs
 author: shanselman
-description: "Nejlepší způsob, jak další nové architektury je sestavení něco s ním. Tento kurz vás provede postup vytvoření malé, ale dokončení aplikace pomocí ASP.NE..."
+description: Nejlepší způsob, jak další nové architektury je sestavení něco s ním. Tento kurz vás provede postup vytvoření malé, ale dokončení aplikace pomocí ASP.NE...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/introducing-the-nerddinner-tutorial
 msc.type: authoredcontent
-ms.openlocfilehash: 57eedb224e26867c78cc399b89f91b95f722074d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3d925a7dc89fc0c742468653c5c138a0f1d71231
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-the-nerddinner-tutorial"></a>Představujeme v kurzu NerdDinner
 ====================
@@ -88,5 +88,5 @@ Teď, když jsme jste popsané, co je NerdDinner, můžeme souhrnné naše ruká
 
 Budete Začneme s použitím souboru -&gt;nový projekt v sadě Visual Studio k vytvoření aplikace NerdDinner.
 
->[!div class="step-by-step"]
-[Další](create-a-new-aspnet-mvc-project.md)
+> [!div class="step-by-step"]
+> [Next](create-a-new-aspnet-mvc-project.md)

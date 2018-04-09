@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
-title: "Aplikace ASP.NET MVC 5 s SMS a e-mailu dvoufaktorové ověřování | Microsoft Docs"
+title: Aplikace ASP.NET MVC 5 s SMS a e-mailu dvoufaktorové ověřování | Microsoft Docs
 author: Rick-Anderson
-description: "Tento kurz ukazuje, jak sestavit webové aplikace ASP.NET MVC 5 s dvoufaktorové ověřování. Vytvoření zabezpečeného ASP.NET MVC 5 webové aplikace s by se měla dokončit..."
+description: Tento kurz ukazuje, jak sestavit webové aplikace ASP.NET MVC 5 s dvoufaktorové ověřování. Vytvoření zabezpečeného ASP.NET MVC 5 webové aplikace s by se měla dokončit...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/20/2015
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: d6bc92f3cbe6b61332e33e8a507b4516bf5c15a5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5e1c54b3901f2c8c85134445c1fa91ee9f2e0d59
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>Aplikace ASP.NET MVC 5 s SMS a e-mailu dvoufaktorové ověřování
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Tento kurz ukazuje, jak sestavit webové aplikace ASP.NET MVC 5 s dvoufaktorové ověřování. By se měla Dokončit [vytvořit zabezpečený webovou aplikaci ASP.NET MVC 5 s protokolu v e-mailu potvrzení a heslo resetovat](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md) než budete pokračovat. Hotová aplikace si můžete stáhnout [zde](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952). Stahování obsahuje ladění pomocné rutiny, které umožňují testování potvrzení e-mailu a SMS bez nastavení e-mailem nebo poskytovatele služby SMS.
 > 
@@ -53,44 +53,44 @@ Tento kurz obsahuje pokyny pro použití Twilio nebo ASPSMS ale můžete použí
 
 1. **Vytvoření uživatelského účtu s poskytovatelem služby SMS**  
   
- Vytvoření [Twilio](https://www.twilio.com/try-twilio) nebo [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) účtu.
+   Vytvoření [Twilio](https://www.twilio.com/try-twilio) nebo [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) účtu.
 2. **Instalace dalších balíčků nebo přidání odkazů na služby**  
   
- Twilio:  
- V konzole Správce balíčků zadejte následující příkaz:  
+   Twilio:  
+   V konzole Správce balíčků zadejte následující příkaz:  
     `Install-Package Twilio`  
   
- ASPSMS:  
- Následující odkaz na službu musí být přidán:  
+   ASPSMS:  
+   Následující odkaz na službu musí být přidán:  
   
     ![](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/_static/image2.png)  
   
- Adresa:  
+   Adresa:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
- Obor názvů:  
+   Obor názvů:  
     `ASPSMSX2`
 3. **Zjištění přihlašovací údaje uživatele poskytovatele serveru SMS**  
   
- Twilio:  
- Z **řídicí panel** kartě svého účtu Twilio kopie **SID účtu** a **Auth token**.  
+   Twilio:  
+   Z **řídicí panel** kartě svého účtu Twilio kopie **SID účtu** a **Auth token**.  
   
- ASPSMS:  
- V nastavení svého účtu, přejděte na **Userkey** a zkopírujte jej spolu s samoobslužné definované **heslo**.  
+   ASPSMS:  
+   V nastavení svého účtu, přejděte na **Userkey** a zkopírujte jej spolu s samoobslužné definované **heslo**.  
   
- Později jsme se uloží v tyto hodnoty *web.config* souboru v rámci klíče `"SMSAccountIdentification"` a `"SMSAccountPassword"` .
+   Později jsme se uloží v tyto hodnoty *web.config* souboru v rámci klíče `"SMSAccountIdentification"` a `"SMSAccountPassword"` .
 4. **Zadání ID odesílatele nebo původce**  
   
- Twilio:  
- Z **čísla** kartě, zkopírujte své telefonní číslo Twilio.  
+   Twilio:  
+   Z **čísla** kartě, zkopírujte své telefonní číslo Twilio.  
   
- ASPSMS:  
- V rámci **odemknutí autoru** nabídce odemknutí jeden nebo více autoru nebo vyberte alfanumerické původce (nepodporuje všechny sítě).  
+   ASPSMS:  
+   V rámci **odemknutí autoru** nabídce odemknutí jeden nebo více autoru nebo vyberte alfanumerické původce (nepodporuje všechny sítě).  
   
- Později jsme uloží tuto hodnotu v *web.config* souboru daný klíč `"SMSAccountFrom"` .
+   Později jsme uloží tuto hodnotu v *web.config* souboru daný klíč `"SMSAccountFrom"` .
 5. **Přenos přihlašovací údaje poskytovatele služby SMS do aplikace**  
   
- Přihlašovací údaje a zpřístupníte odesílatele telefonní číslo do aplikace. Pro zjednodušení jsme se uloží v tyto hodnoty *web.config* souboru. Když jsme nasadit do Azure, uložíme můžete bezpečně v hodnoty **nastavení aplikace** karta Konfigurace části na webu. 
+   Přihlašovací údaje a zpřístupníte odesílatele telefonní číslo do aplikace. Pro zjednodušení jsme se uloží v tyto hodnoty *web.config* souboru. Když jsme nasadit do Azure, uložíme můžete bezpečně v hodnoty **nastavení aplikace** karta Konfigurace části na webu. 
 
     [!code-xml[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample1.xml?highlight=8-10)]
 
@@ -98,9 +98,9 @@ Tento kurz obsahuje pokyny pro použití Twilio nebo ASPSMS ale můžete použí
     > Zabezpečení – nikdy úložiště citlivá data ve zdrojovém kódu. Účet a přihlašovací údaje se přidají do výše pro zjednodušení v ukázkovém kódu. V tématu [osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a do Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
 6. **Implementace přenos dat do poskytovatele služby SMS**  
   
- Konfigurace `SmsService` třídy v *aplikace\_Start\IdentityConfig.cs* souboru.  
+   Konfigurace `SmsService` třídy v *aplikace\_Start\IdentityConfig.cs* souboru.  
   
- V závislosti na použité poskytovatele služby SMS aktivovat buď **Twilio** nebo **ASPSMS** části: 
+   V závislosti na použité poskytovatele služby SMS aktivovat buď **Twilio** nebo **ASPSMS** části: 
 
     [!code-csharp[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample2.cs)]
 7. Aktualizace *Views\Manage\Index.cshtml* zobrazení syntaxe Razor: (Poznámka: není právě Odebere komentáře v existujícímu kódu, použijte následující kód.)  

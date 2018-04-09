@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení příkazového řádku | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení příkazového řádku | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 8446b3fc05e3ef4a5a30c753c989252fd7f1a56f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: acc4a0e7f4744a3759b90e0f1b159da68b7c7362
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení příkazového řádku
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -98,9 +98,9 @@ Můžete zadat profil publikování, podle názvu nebo podle úplnou cestu k *.p
 
 Tři publikování metody jsou podporovány pro publikování příkazového řádku:
 
-- `MSDeploy`-Publikujte pomocí nástroje nasazení webu.
-- `Package`-Publikujte vytvořením balíčku pro nasazení webu. Je nutné nainstalovat samostatně z nástroje MSBuild příkaz, který ji vytvoří.
-- `FileSystem`-Publikujte pomocí kopírování souborů do zadané složky.
+- `MSDeploy` -Publikujte pomocí nástroje nasazení webu.
+- `Package` -Publikujte vytvořením balíčku pro nasazení webu. Je nutné nainstalovat samostatně z nástroje MSBuild příkaz, který ji vytvoří.
+- `FileSystem` -Publikujte pomocí kopírování souborů do zadané složky.
 
 ### <a name="specifying-the-build-configuration-and-platform"></a>Konfigurace sestavení a platformy
 
@@ -144,6 +144,6 @@ Nyní jste nasadili aktualizaci aplikace pomocí příkazového řádku.
 
 V dalším kurzu se zobrazí příklad toho, jak rozšířit webu kanálu publikování. V příkladu vám ukáže, jak nasadit soubory, které nejsou součástí projektu.
 
->[!div class="step-by-step"]
-[Předchozí](deploying-a-database-update.md)
-[další](deploying-extra-files.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-a-database-update.md)
+> [další](deploying-extra-files.md)

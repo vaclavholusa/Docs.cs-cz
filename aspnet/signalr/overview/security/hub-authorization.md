@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/security/hub-authorization
-title: "Ověřování a autorizace pro rozbočovače SignalR | Microsoft Docs"
+title: Ověřování a autorizace pro rozbočovače SignalR | Microsoft Docs
 author: pfletcher
-description: "Toto téma popisuje, jak omezit, které uživatelé nebo role mají přístup k metod rozbočovače. Verze softwaru použitým v tomto tématu Visual Studio 2013 .NET 4.5 SignalR sunout..."
+description: Toto téma popisuje, jak omezit, které uživatelé nebo role mají přístup k metod rozbočovače. Verze softwaru použitým v tomto tématu Visual Studio 2013 .NET 4.5 SignalR sunout...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/05/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: cb0f06a3ca2b39a4a952c33cea70136c7c5af7a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8e3bc8889efb1be80c57084fb04dc8030b386601
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authentication-and-authorization-for-signalr-hubs"></a>Ověřování a autorizace pro rozbočovače SignalR
 ====================
@@ -55,7 +55,7 @@ Toto téma obsahuje následující oddíly:
     - [Soubor cookie ověřování pomocí formulářů](#cookie)
     - [Ověřování systému Windows](#windows)
     - [Hlavička připojení](#header)
-    - [Certifikát](#certificate)
+    - [certifikát](#certificate)
 
 <a id="authorizeattribute"></a>
 
@@ -73,10 +73,10 @@ Nebo můžete určit, že obsahuje rozbočovači jedna metoda, která je k dispo
 
 Následující příklady adres autorizace různé scénáře:
 
-- `[Authorize]`– jen ověření uživatelé
-- `[Authorize(Roles = "Admin,Manager")]`– jen ověření uživatelé v zadaných rolí
-- `[Authorize(Users = "user1,user2")]`– pouze pro ověřené uživatele s zadaná uživatelská jména
-- `[Authorize(RequireOutgoing=false)]`– pouze pro ověřené uživatele můžete vyvolat rozbočovače, ale volání ze serveru zpět klientům nejsou omezeny autorizace, jako je třeba při pouze určitým uživatelům poslat zprávu, ale všechny ostatní mohou přijímat zprávy. Vlastnost hodnotu RequireOutgoing lze použít pouze k centru celý není pro jednotlivce metody v rozbočovači. Pokud hodnotu RequireOutgoing není nastavena na hodnotu false, jsou pouze uživatelé, kteří splní požadavek na autorizaci volat ze serveru.
+- `[Authorize]` – jen ověření uživatelé
+- `[Authorize(Roles = "Admin,Manager")]` – jen ověření uživatelé v zadaných rolí
+- `[Authorize(Users = "user1,user2")]` – pouze pro ověřené uživatele s zadaná uživatelská jména
+- `[Authorize(RequireOutgoing=false)]` – pouze pro ověřené uživatele můžete vyvolat rozbočovače, ale volání ze serveru zpět klientům nejsou omezeny autorizace, jako je třeba při pouze určitým uživatelům poslat zprávu, ale všechny ostatní mohou přijímat zprávy. Vlastnost hodnotu RequireOutgoing lze použít pouze k centru celý není pro jednotlivce metody v rozbočovači. Pokud hodnotu RequireOutgoing není nastavena na hodnotu false, jsou pouze uživatelé, kteří splní požadavek na autorizaci volat ze serveru.
 
 <a id="requireauth"></a>
 
@@ -126,7 +126,7 @@ Když váš klient .NET pracuje s rozbočovači, který používá ověřování
 
 [!code-csharp[Main](hub-authorization/samples/sample7.cs)]
 
-Konzolové aplikace odešle pověření **www.contoso.com/RemoteLogin** který může odkazovat na prázdnou stránku, která obsahuje následující souboru kódu na pozadí.
+Konzolové aplikace odešle pověření <strong>www.contoso.com/RemoteLogin</strong> který může odkazovat na prázdnou stránku, která obsahuje následující souboru kódu na pozadí.
 
 [!code-csharp[Main](hub-authorization/samples/sample8.cs)]
 

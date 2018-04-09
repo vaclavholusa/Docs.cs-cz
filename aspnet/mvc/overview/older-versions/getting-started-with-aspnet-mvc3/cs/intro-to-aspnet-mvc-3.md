@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3
-title: "Úvod do architektury ASP.NET MVC 3 (C#) | Microsoft Docs"
+title: Úvod do architektury ASP.NET MVC 3 (C#) | Microsoft Docs
 author: Rick-Anderson
-description: "V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je..."
+description: V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
-ms.openlocfilehash: bbeaad9e52db1fd85ef166052a377e8b6732a90a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9b965df6175051a084de35627160161c116be42d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="intro-to-aspnet-mvc-3-c"></a>Úvod do architektury ASP.NET MVC 3 (C#)
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > > [!NOTE]
 > > Je k dispozici aktualizovaná verze tohoto kurzu [sem](../../../getting-started/introduction/getting-started.md) používající ASP.NET MVC 5 a Visual Studio 2013. Je bezpečnější, postupujte podle mnohem jednodušší a ukazuje další funkce.
@@ -91,5 +91,5 @@ F5 způsobí, že Visual Web Developer spustí webový server vývoj a spuštěn
 
 Okamžitě po nasazení této výchozí šablony vám dává dvě stránky přejděte a základní přihlašovací stránku. Dalším krokem je a změnit tak, jak tato aplikace funguje trochu informace o architektuře ASP.NET MVC v procesu. Zavřete prohlížeč a zkuste změnit nějaký kód.
 
->[!div class="step-by-step"]
-[Další](adding-a-controller.md)
+> [!div class="step-by-step"]
+> [Next](adding-a-controller.md)

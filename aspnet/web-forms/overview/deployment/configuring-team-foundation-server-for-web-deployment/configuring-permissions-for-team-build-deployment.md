@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
-title: "Nasazení sestavení konfigurace oprávnění pro Team | Microsoft Docs"
+title: Nasazení sestavení konfigurace oprávnění pro Team | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak nakonfigurovat oprávnění, aby umožňuje serveru sestavení pro nasazení obsahu pro webové servery a servery databázi jako součást automatizované b..."
+description: Toto téma popisuje, jak nakonfigurovat oprávnění, aby umožňuje serveru sestavení pro nasazení obsahu pro webové servery a servery databázi jako součást automatizované b...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: cb3d013d69e36f97335ea31dd6e4997772ba2d8e
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4698349d664816ec49475bbfe71fb32af79ea96d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>Konfigurace oprávnění pro tým nasazení sestavení
 ====================
@@ -27,9 +27,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma popisuje, jak nakonfigurovat oprávnění pro povolení vašem serveru sestavení pro nasazení obsahu pro webové servery a servery databázi jako součást procesu automatizované sestavení.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="task-overview"></a>Přehled úloh
 
@@ -38,7 +38,7 @@ Při instalaci služby Team Foundation Server (TFS) 2010 sestavení, zadejte ide
 Všechny úlohy nasazení, které vyžadují ověřování systému Windows a plánujete automatizovat pomocí Team Build, se spustí pomocí identity služby sestavení. Jako takový budete muset udělit identita služby sestavení všechny požadované oprávnění pro databázové servery a webové servery.
 
 > [!NOTE]
-> Účet Network Service používá účet počítače k ověřování na jiné počítače. Účty počítače ve formě * [název domény]\[název počítače] ***$**& #x 2014, například **FABRIKAM\TFSBUILD$**. Jako takový Pokud vaše sestavení služba spustí, používá identitu síťové služby, byste měli udělit žádná požadovaná oprávnění k identitě účet počítače pro váš server sestavení.
+> Účet Network Service používá účet počítače k ověřování na jiné počítače. Účty počítače ve formě * [název domény]\[název počítače] ***$**&#x2014;například **FABRIKAM\TFSBUILD$**. Jako takový Pokud vaše sestavení služba spustí, používá identitu síťové služby, byste měli udělit žádná požadovaná oprávnění k identitě účet počítače pro váš server sestavení.
 
 
 ## <a name="configuring-web-server-permissions"></a>Konfigurace oprávnění webového serveru
@@ -50,7 +50,7 @@ Jak je popsáno v [výběr práva přístup k nasazení webu](../configuring-ser
 
 Vzdáleného agenta v tomto případě má dva klíče omezení:
 
-- Vzdáleného agenta podporuje pouze ověřování NTLM. Jinými slovy nasazení musí používat identitu služby sestavení & #x 2014; nemůže zosobnit jiný účet.
+- Vzdáleného agenta podporuje pouze ověřování NTLM. Jinými slovy, nasazení musí používat identitu služby sestavení&#x2014;nemůže zosobnit jiný účet.
 - Pokud chcete používat vzdáleného agenta, musí být účet, který provádí nasazení správce na cílovém serveru.
 
 Společně tyto dvě omezení zkontrolujte přístup vzdáleného agenta nežádoucího automatické vytvoření týmu nasazení. Pro tento postup, bude třeba, aby službu sestavení účtu správce na všechny cílové webové servery.
@@ -93,5 +93,5 @@ V tomto okamžiku byste měli porozumět oprávnění potřebná společně s ot
 
 Další informace o konfiguraci serveru prostředí Windows pro podporu vzdáleného nasazení najdete v tématu [konfigurace serveru prostředí pro nasazení webu](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md).
 
->[!div class="step-by-step"]
-[Předchozí](deploying-a-specific-build.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-a-specific-build.md)

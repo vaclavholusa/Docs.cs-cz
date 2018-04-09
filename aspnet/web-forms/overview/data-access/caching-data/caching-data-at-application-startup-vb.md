@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/caching-data-at-application-startup-vb
-title: "Ukládání do mezipaměti dat při spuštění aplikace (VB) | Microsoft Docs"
+title: Ukládání do mezipaměti dat při spuštění aplikace (VB) | Microsoft Docs
 author: rick-anderson
-description: "Všechny webové aplikace se některá data často používat a některá data se zřídka použije. Můžeme vylepšit výkon naše b aplikace ASP.NET..."
+description: Všechny webové aplikace se některá data často používat a některá data se zřídka použije. Můžeme vylepšit výkon naše b aplikace ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5b84b797bf0c9670ac65a5384b6d95d5df3827eb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f8f322dae89480fc7ed5586d7f8eeb4c67d7839f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching-data-at-application-startup-vb"></a>Ukládání dat do mezipaměti při spuštění aplikace (VB)
 ====================
@@ -129,11 +129,11 @@ Přidat `Global.asax` soubor do vaší webové aplikace s kořenový adresář p
 
 Výchozí hodnota `Global.asax` soubor šablony obsahuje pět metod v rámci straně serveru `<script>` značky:
 
-- **`Application_Start`**spustí při prvním spuštění webové aplikace
-- **`Application_End`**spustí, když se aplikace vypíná.
-- **`Application_Error`**provede vždy, když aplikace dosáhne k neošetřené výjimce
-- **`Session_Start`**provede, když je vytvořena nová relace
-- **`Session_End`**spustí, když je relace vypršela platnost, nebo opuštění
+- **`Application_Start`** spustí při prvním spuštění webové aplikace
+- **`Application_End`** spustí, když se aplikace vypíná.
+- **`Application_Error`** provede vždy, když aplikace dosáhne k neošetřené výjimce
+- **`Session_Start`** provede, když je vytvořena nová relace
+- **`Session_End`** spustí, když je relace vypršela platnost, nebo opuštění
 
 `Application_Start` Obslužné rutiny události je jenom jednou volána v průběhu životního cyklu aplikace s. Spuštění aplikace při prvním prostředek ASP.NET se požaduje od aplikace a nadále spustit až po restartování aplikace, které může dojít, změně obsahu `/Bin` složky, úprava `Global.asax`, změny obsah v `App_Code` složky nebo změny `Web.config` souboru mezi další příčiny. Odkazovat na [Přehled životního cyklu aplikace ASP.NET](https://msdn.microsoft.com/library/ms178473.aspx) podrobnější diskuzi o životním cyklu aplikace.
 
@@ -194,12 +194,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Teresy Murphy a Zack Petr. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](caching-data-in-the-architecture-vb.md)
-[další](using-sql-cache-dependencies-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](caching-data-in-the-architecture-vb.md)
+> [další](using-sql-cache-dependencies-vb.md)

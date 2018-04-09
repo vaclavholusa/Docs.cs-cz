@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-3-pipes-and-filters
-title: "Rozhraní ASP.NET MVC Storefront část 3: Kanály a filtrů | Microsoft Docs"
+title: 'Rozhraní ASP.NET MVC Storefront část 3: Kanály a filtrů | Microsoft Docs'
 author: robconery
-description: "Rob Conery popisuje zpětnou vazbu od částí 1 a 2 a pak informace do implementace kanály a filtry na úložišti IQueryable."
+description: Rob Conery popisuje zpětnou vazbu od částí 1 a 2 a pak informace do implementace kanály a filtry na úložišti IQueryable.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-3-pipes-and-filters
 msc.type: video
-ms.openlocfilehash: 020a4781b9778b4905d7c81f529c6cca2f4012a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3666acf556f49232f7e403a40ada08884694c611
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-storefront-part-3-pipes-and-filters"></a>Rozhraní ASP.NET MVC Storefront část 3: Kanály a filtrů
 ====================
@@ -24,8 +24,8 @@ podle [ukrást Conery](https://github.com/robconery)
 
 Rob Conery popisuje zpětnou vazbu od částí 1 a 2 a pak informace do implementace kanály a filtry na úložišti IQueryable.
 
-[&#9654; Podívejte se na video (16 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-3-pipes-and-filters)
+[&#9654;Podívejte se na video (16 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-3-pipes-and-filters)
 
->[!div class="step-by-step"]
-[Předchozí](aspnet-mvc-storefront-part-2-the-repository-pattern.md)
-[další](aspnet-mvc-storefront-part-4-linq-to-sql-spike.md)
+> [!div class="step-by-step"]
+> [Předchozí](aspnet-mvc-storefront-part-2-the-repository-pattern.md)
+> [další](aspnet-mvc-storefront-part-4-linq-to-sql-spike.md)

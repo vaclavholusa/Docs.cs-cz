@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-vb
-title: "Testování síla hesla (VB) | Microsoft Docs"
+title: Testování síla hesla (VB) | Microsoft Docs
 author: wenz
-description: "Hesla je nutná prakticky odkudkoli tak, aby opožděné uživatelé zpravidla zvolte jednoduchá hesla, které se dají snadno rozdělit. PasswordStrength ovládacího prvku ASP. N...."
+description: Hesla je nutná prakticky odkudkoli tak, aby opožděné uživatelé zpravidla zvolte jednoduchá hesla, které se dají snadno rozdělit. PasswordStrength ovládacího prvku ASP. N....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7f09a05fd4b5771b7ab532d40476fe45cbd3fe38
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1d46026535f3f5cf82944359599464e8a4725280
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="testing-the-strength-of-a-password-vb"></a>Testování síla hesla (VB)
 ====================
@@ -35,10 +35,10 @@ Hesla je nutná prakticky odkudkoli tak, aby opožděné uživatelé zpravidla z
 
 `PasswordStrength` Řízení rozšiřuje textové pole a zkontroluje, zda je heslo v ní dostatečně funkční. Nabízí širokou řadu možností prostřednictvím atributy; Zde jsou jen některé z nich:
 
-- `MinimumNumericCharacters`minimální počet číselné znaků požadovaných v hesle
-- `MinimumSymbolCharacters`minimální počet znaků symbolu (ne písmen a číslic) v hesle
-- `PreferredPasswordLength`Minimální délka hesla
-- `RequiresUpperAndLowerCaseCharacters`jestli heslo musí používat velká a malá písmena
+- `MinimumNumericCharacters` minimální počet číselné znaků požadovaných v hesle
+- `MinimumSymbolCharacters` minimální počet znaků symbolu (ne písmen a číslic) v hesle
+- `PreferredPasswordLength` Minimální délka hesla
+- `RequiresUpperAndLowerCaseCharacters` jestli heslo musí používat velká a malá písmena
 
 `StrengthIndicatorType` Poskytuje informace o tom, jak k dispozici síly hesla, jako text (hodnota `"Text"`) nebo jako druh indikátor průběhu (hodnota `"BarIndicator"`). V `DisplayPosition` atribut, můžete konfigurovat umístění zobrazení informací. Tady je kompletní příklad, včetně prvku ASP.NET AJAX `ScriptManager` ovládací prvek, `PasswordStrength` řízení a samozřejmě textového pole, které může uživatel zadat heslo. Pole pozdější formuláře je z důvodu ukázce běžného textového pole a pole hesla, aby mohli zobrazit během vývoje zadávané.
 
@@ -51,5 +51,5 @@ Spuštění stránky a zadejte ji okamžitě: pouze po malá písmena, velká p�
 
 Teď je heslo (celkem) vhodný ([Kliknutím zobrazit obrázek v plné velikosti](testing-the-strength-of-a-password-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](testing-the-strength-of-a-password-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](testing-the-strength-of-a-password-cs.md)

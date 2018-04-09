@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/aspnet-mvc-4-mobile-features
-title: "Funkce mobilní architektury ASP.NET MVC 4 | Microsoft Docs"
+title: Funkce mobilní architektury ASP.NET MVC 4 | Microsoft Docs
 author: Rick-Anderson
-description: "Je nyní ve verzi MVC 5 tohoto kurzu s ukázky kódu v nasazení technologie ASP.NET MVC 5 mobilní webové aplikace na weby Azure."
+description: Je nyní ve verzi MVC 5 tohoto kurzu s ukázky kódu v nasazení technologie ASP.NET MVC 5 mobilní webové aplikace na weby Azure.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: f4e0e4eb558e0c7b9e94fc83ede986fa4c666739
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 5f38fcdd8e71ce12f7899214b6b2133e21f9910c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>Funkce mobilní architektury ASP.NET MVC 4
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Je nyní verze MVC 5 s ukázky kódu v tomto kurzu [nasazení ASP.NET MVC 5 mobilní webové aplikace na weby Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/).
 
@@ -190,7 +190,7 @@ Nainstalujte *jQuery.Mobile.MVC* balíček NuGet tímto způsobem:
 1. Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a potom vyberte **Konzola správce balíčků**.
 
     [![p3_packageMgr](aspnet-mvc-4-mobile-features/_static/image20.png)](aspnet-mvc-4-mobile-features/_static/image19.png)
-2. V **Konzola správce balíčků**, zadejte`Install-Package jQuery.Mobile.MVC -version 1.0.0`
+2. V **Konzola správce balíčků**, zadejte `Install-Package jQuery.Mobile.MVC -version 1.0.0`
 
 Následující obrázek ukazuje soubory přidávání a měnění do projektu MvcMobile jQuery.Mobile.MVC balíček NuGet. Soubory, které jsou přidány [přidat] připojí po název souboru. Obrázek nezobrazuje GIF, soubory PNG přidat do *Content\images* složky.
 
@@ -204,7 +204,7 @@ Balíček NuGet jQuery.Mobile.MVC nainstaluje následující:
 - soubory jQuery Mobile JavaScript.
 - JQuery Mobile stylem rozložení souboru (*Views\Shared\\_Layout.Mobile.cshtml*).
 - Částečné zobrazení přepínači zobrazení *(MvcMobile\Views\Shared\\_ViewSwitcher.cshtml*), který poskytuje odkaz v horní části každé stránce přepnutí z zobrazení plochy na mobilní zobrazení a naopak.
-- Několik*.png* a *.gif* soubory v obrázku *Content\images* složky.
+- Několik<em>.png</em> a <em>.gif</em> soubory v obrázku <em>Content\images</em> složky.
 
 Otevřete *Global.asax* souboru a přidejte následující kód jako poslední řádek `Application_Start` metoda.
 
@@ -270,7 +270,7 @@ Výchozí zobrazení (jiných než mobilních) z vykreslování uvnitř mobilní
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample17.cshtml)]
 
-Když `RequireConsistentDisplayMode` je nastaven na `true`, mobilní rozložení (*\_Layout.Mobile.cshtml*) se používá pouze pro mobilní zobrazení. (To znamená, je soubor zobrazení formuláře ***ViewName**. Mobile.cshtml*.) Můžete chtít nastavit `RequireConsistentDisplayMode` k `true` Pokud vaše mobilní rozložení nebude fungovat dobře u jiných než mobilních zobrazení. Na snímku obrazovky níže znázorňuje jak *Řečníci* stránka vykresluje při `RequireConsistentDisplayMode` je nastaven na `true`.
+Když `RequireConsistentDisplayMode` je nastaven na `true`, mobilní rozložení (<em>\_Layout.Mobile.cshtml</em>) se používá pouze pro mobilní zobrazení. (To znamená, je soubor zobrazení formuláře <em>** ViewName</em><em>. Mobile.cshtml</em>.) Můžete chtít nastavit `RequireConsistentDisplayMode` k `true` Pokud vaše mobilní rozložení nebude fungovat dobře u jiných než mobilních zobrazení. Na snímku obrazovky níže znázorňuje jak <em>Řečníci</em> stránka vykresluje při `RequireConsistentDisplayMode` je nastaven na `true`.
 
 [![p3_speakersConsistent](aspnet-mvc-4-mobile-features/_static/image33.png)](aspnet-mvc-4-mobile-features/_static/image32.png)
 

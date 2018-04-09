@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
-title: "Implementace zprostředkovatele úložiště ASP.NET Identity vlastní MySQL | Microsoft Docs"
+title: Implementace zprostředkovatele úložiště ASP.NET Identity vlastní MySQL | Microsoft Docs
 author: raquelsa
-description: "ASP.NET Identity je rozšiřitelný systém díky tomu můžete vytvořit vlastního poskytovatele úložiště a zařadit ho do aplikace bez znovu práce aplika..."
+description: ASP.NET Identity je rozšiřitelný systém díky tomu můžete vytvořit vlastního poskytovatele úložiště a zařadit ho do aplikace bez znovu práce aplika...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
 ms.topic: article
 ms.assetid: 248f5fe7-39ba-40ea-ab1e-71a69b0bd649
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 3bfbccd91705755fc24bb8305fff171baa26f370
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d843b31e011fe520aad6cfdab0beca2d12477f12
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>Implementace zprostředkovatele úložiště ASP.NET Identity vlastní MySQL
 ====================
@@ -124,7 +124,7 @@ V případě potřeby nainstalujte buď [Visual Studio Express 2013 pro Web](htt
 5. Klikněte pravým tlačítkem na projekt IdentityMySQLDemo, vyberte **přidat**, **odkaz na řešení, projekty;** vyberte AspNet.Identity.MySQL projekt a klikněte na tlačítko **OK**.
 6. V projektu IdentityMySQLDemo nahraďte všechny odkazy na  
     `using Microsoft.AspNet.Identity.EntityFramework;`  
- with  
+   with  
      `using AspNet.Identity.MySQL;`
 7. V IdentityModels.cs, nastavte **ApplicationDbContext** k odvozování z **MySqlDatabase** a zahrnují contructor, který trvat jeden parametr s názvem připojení.  
 

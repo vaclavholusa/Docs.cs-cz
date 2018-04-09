@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/create-a-database
-title: "Vytvoření databáze | Microsoft Docs"
+title: Vytvoření databáze | Microsoft Docs
 author: microsoft
-description: "Krok 2 ukazuje postup vytvoření databáze, která uchovává všechny večeře a RSVP data pro naši aplikaci NerdDinner."
+description: Krok 2 ukazuje postup vytvoření databáze, která uchovává všechny večeře a RSVP data pro naši aplikaci NerdDinner.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-database
 msc.type: authoredcontent
-ms.openlocfilehash: 7635722fc357356edd06fb4cff301a8c4dfebbef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ba28d671bf13ec54b83b876462e2c23f90310037
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-database"></a>Vytvoření databáze
 ====================
@@ -131,6 +131,6 @@ Přidáme pár řádků večeři dat, které jsme můžete použít později, ja
 
 Jsme dokončili vytváření databáze. Nyní vytvoříme třídy modelu, které jsme můžete použít k dotazu a aktualizovat ji.
 
->[!div class="step-by-step"]
-[Předchozí](create-a-new-aspnet-mvc-project.md)
-[další](build-a-model-with-business-rule-validations.md)
+> [!div class="step-by-step"]
+> [Předchozí](create-a-new-aspnet-mvc-project.md)
+> [další](build-a-model-with-business-rule-validations.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
-title: "Implementace optimistickou metodu souběžného (C#) | Microsoft Docs"
+title: Implementace optimistickou metodu souběžného (C#) | Microsoft Docs
 author: rick-anderson
-description: "Pro webovou aplikaci, která umožňuje více uživatelům upravovat data existuje riziko, že dva uživatele může být úpravy stejná data ve stejnou dobu. V této tutori..."
+description: Pro webovou aplikaci, která umožňuje více uživatelům upravovat data existuje riziko, že dva uživatele může být úpravy stejná data ve stejnou dobu. V této tutori...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a19e6c320838849e10d2aa397a23a0ee906bac22
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 27441ea9343055b3139468036fc6f201c77667e5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-optimistic-concurrency-c"></a>Implementace optimistickou metodu souběžného (C#)
 ====================
@@ -259,8 +259,8 @@ Pro tyto předchozí návodů, které se podílejí úprava dat, doporučujeme o
 
 Neexistuje jeden nastavení konečné vlastnosti, které musí být provedeny v pořadí pro ObjectDataSource správně metody BLL předat původní hodnoty. Má ObjectDataSource [vlastnost ConflictDetection](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) lze přiřadit k [jednu ze dvou hodnot](https://msdn.microsoft.com/library/system.web.ui.conflictoptions.aspx):
 
-- `OverwriteChanges`-Výchozí hodnota. Tyto metody BLL původní vstupní parametry neodesílá původní hodnoty
-- `CompareAllValues`-odesílat původní hodnoty na BLL metody; Tuto možnost zvolte, pokud používáte optimistickou metodu souběžného zpracování
+- `OverwriteChanges` -Výchozí hodnota. Tyto metody BLL původní vstupní parametry neodesílá původní hodnoty
+- `CompareAllValues` -odesílat původní hodnoty na BLL metody; Tuto možnost zvolte, pokud používáte optimistickou metodu souběžného zpracování
 
 Za chvíli nastavit `ConflictDetection` vlastnost `CompareAllValues`.
 
@@ -429,8 +429,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](customizing-the-data-modification-interface-cs.md)
-[další](adding-client-side-confirmation-when-deleting-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](customizing-the-data-modification-interface-cs.md)
+> [další](adding-client-side-confirmation-when-deleting-cs.md)

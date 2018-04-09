@@ -1,30 +1,30 @@
 ---
 uid: identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
-title: "Vývoj aplikací ASP.NET se službou Azure Active Directory | Microsoft Docs"
+title: Vývoj aplikací ASP.NET se službou Azure Active Directory | Microsoft Docs
 author: Rick-Anderson
-description: "Nástroje Microsoft ASP.NET tools pro službu Azure Active Directory zjednodušuje kvůli povolení ověřování pro webové aplikace hostované v Azure. Můžete použít Azure Authenti..."
+description: Nástroje Microsoft ASP.NET tools pro službu Azure Active Directory zjednodušuje kvůli povolení ověřování pro webové aplikace hostované v Azure. Můžete použít Azure Authenti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2014
 ms.topic: article
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 1ef0468d5f5c17480b23ac88983f30fe6f4979c0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 44bf29e099583bf9d49f2715d3ff4f748728ad8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>Vývoj aplikací ASP.NET se službou Azure Active Directory
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Nástroje Microsoft ASP.NET pro Azure Active Directory usnadňuje povolení ověřování pro webové aplikace hostované na [Azure](https://www.windowsazure.com/home/features/web-sites/). Ověřování Azure můžete použít k ověření uživatele služeb Office 365 z vaší organizace, podnikové účty synchronizované z vaší místní službou Active Directory nebo uživatelé vytvoření ve vlastní domény Azure Active Directory. Povolení ověřování systému Windows Azure nakonfiguruje aplikace k ověření uživatelů pomocí jedné [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) klienta.
 > 
->  V tomto kurzu napsal Rick Anderson[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
+>  V tomto kurzu napsal Rick Anderson [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 
 
 Tento kurz vám ukáže, jak vytvořit aplikaci ASP.NET, který je nakonfigurován pro přihlašování pomocí [Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (Azure AD). Také se naučíte, jak zavolat rozhraní Graph API k načtení informací o aktuálně přihlášeného uživatele a jak nasadit aplikaci do Azure.
@@ -52,7 +52,7 @@ Tento kurz vám ukáže, jak vytvořit aplikaci ASP.NET, který je nakonfigurov�
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image4.png)  
   
- Uložit heslo budou muset změnit heslo po prvním přihlášení. Následující obrázek ukazuje nový účet správce. Azure Active Directory musíte použít k přihlášení do aplikace, není k účtu Microsoft, které jsou také uvedené na této stránce.  
+   Uložit heslo budou muset změnit heslo po prvním přihlášení. Následující obrázek ukazuje nový účet správce. Azure Active Directory musíte použít k přihlášení do aplikace, není k účtu Microsoft, které jsou také uvedené na této stránce.  
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image5.png)
 
@@ -65,11 +65,11 @@ Následující postup použijte [Visual Studio Express 2013 pro Web](https://www
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image6.png)
 3. Na **změna ověřování** dialogovém okně, vyberte **účty organizace**. Tyto možnosti lze automaticky registrace vaší aplikace s Azure AD a také automaticky konfigurace aplikace pro integraci se službou Azure AD. Nemusíte používat **změna ověřování** dialogovém okně můžete zaregistrovat a nakonfigurovat aplikaci, ale je mnohem jednodušší. Pokud například používáte sadu Visual Studio 2012, můžete pořád spustit ručně zaregistrovat aplikaci v portálu pro správu Azure a aktualizaci konfigurace pro integraci s Azure AD.  
- V rozevíracích nabídek vyberte **cloudu – jednotný** a **jednotné přihlašování, čtení dat adresáře**. Zadejte doménu pro váš adresář Azure AD, například (v obrázcích níže) *aricka0yahoo.onmicrosoft.com*a potom klikněte na **OK**. Název domény můžete získat z karty domén pro výchozí adresář na portálu azure (viz další image dolů).   
+   V rozevíracích nabídek vyberte **cloudu – jednotný** a **jednotné přihlašování, čtení dat adresáře**. Zadejte doménu pro váš adresář Azure AD, například (v obrázcích níže) *aricka0yahoo.onmicrosoft.com*a potom klikněte na **OK**. Název domény můžete získat z karty domén pro výchozí adresář na portálu azure (viz další image dolů).   
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image7.png)  
   
- Následující obrázek zobrazuje název domény z portálu Azure.  
+   Následující obrázek zobrazuje název domény z portálu Azure.  
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image8.png)  
 
@@ -94,11 +94,11 @@ Následující postup použijte [Visual Studio Express 2013 pro Web](https://www
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image13.png)  
   
- Pokud dojde k chybě:  
- Hodnota nemůže být null nebo prázdný. Název parametru: linkText   
+   Pokud dojde k chybě:  
+   Hodnota nemůže být null nebo prázdný. Název parametru: linkText   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image14.png)  
   
- najdete v článku [ladění](#dbg) části na konci tohoto kurzu.
+   najdete v článku [ladění](#dbg) části na konci tohoto kurzu.
 
 ## <a name="basics-of-the-graph-api"></a>Základní informace o Graph API
 

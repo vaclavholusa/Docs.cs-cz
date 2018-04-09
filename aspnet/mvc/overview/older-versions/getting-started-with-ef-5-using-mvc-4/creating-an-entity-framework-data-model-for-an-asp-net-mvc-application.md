@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
-title: "Vytvoření datového modelu Entity Framework pro aplikaci ASP.NET MVC (1 10) | Microsoft Docs"
+title: Vytvoření datového modelu Entity Framework pro aplikaci ASP.NET MVC (1 10) | Microsoft Docs
 author: tdykstra
-description: "Je k dispozici pro Visual Studio 2013, Entity Framework 6 a MVC 5 novější verze tohoto kurzu řady. Contoso univerzity ukázkové webové aplikace de..."
+description: Je k dispozici pro Visual Studio 2013, Entity Framework 6 a MVC 5 novější verze tohoto kurzu řady. Contoso univerzity ukázkové webové aplikace de...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8c9971ccc70cb4b966abb64086b1b5420fc6c72a
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: a963f26b408f2a54bd9cd3e852bc1e368f86c41f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>Vytvoření datového modelu Entity Framework pro aplikaci ASP.NET MVC (1 10)
 ====================
@@ -311,29 +311,29 @@ Dalším krokem je vytvoření kontroleru a zobrazení ASP.NET MVC v aplikaci, k
 
 1. K vytvoření `Student` řadiče, klikněte pravým tlačítkem myši **řadiče** složky v **Průzkumníku řešení**, vyberte **přidat**a potom klikněte na **řadiče** . V **přidat kontroler** dialogové okno pole, vyberte následující možnosti a pak klikněte na tlačítko **přidat**: 
 
-    - Název řadiče: **StudentController**.
-    - Šablona: **kontroler MVC s akcemi čtení/zápisu a zobrazeními, s využitím nástroje Entity Framework**.
-    - Třída modelu: **Student (ContosoUniversity.Models)**. (Pokud tato možnost v rozevíracím seznamu nezobrazí, sestavte projekt a zkuste to znovu.)
-    - Třída kontextu dat: **SchoolContext (ContosoUniversity.Models)**.
-    - Zobrazení: **Razor (CSHTML)**. (Výchozí nastavení.)
+   - Název řadiče: **StudentController**.
+   - Šablona: **kontroler MVC s akcemi čtení/zápisu a zobrazeními, s využitím nástroje Entity Framework**.
+   - Třída modelu: **Student (ContosoUniversity.Models)**. (Pokud tato možnost v rozevíracím seznamu nezobrazí, sestavte projekt a zkuste to znovu.)
+   - Třída kontextu dat: **SchoolContext (ContosoUniversity.Models)**.
+   - Zobrazení: **Razor (CSHTML)**. (Výchozí nastavení.)
 
-    ![Add_Controller_dialog_box_for_Student_controller](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image20.png)
-- Otevře se Visual Studio *Controllers\StudentController.cs* souboru. Uvidíte, že byl vytvořen proměnné třídy, který vytvoří instanci objektu kontextu databáze:
+     ![Add_Controller_dialog_box_for_Student_controller](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image20.png)
+2. Otevře se Visual Studio *Controllers\StudentController.cs* souboru. Uvidíte, že byl vytvořen proměnné třídy, který vytvoří instanci objektu kontextu databáze:
 
-    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
+     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
 
-    `Index` Metoda akce získá seznam studenty z *studenty* načtením sadu entit `Students` vlastností kontextu instance databáze:
+     `Index` Metoda akce získá seznam studenty z *studenty* načtením sadu entit `Students` vlastností kontextu instance databáze:
 
-    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample17.cs)]
+     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample17.cs)]
 
-    *Student\Index.cshtml* zobrazení zobrazí tento seznam v tabulce:
+     *Student\Index.cshtml* zobrazení zobrazí tento seznam v tabulce:
 
-    [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample18.cshtml)]
-- Stisknutím kombinace kláves CTRL + F5 a spusťte projekt.
+     [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample18.cshtml)]
+3. Stisknutím kombinace kláves CTRL + F5 a spusťte projekt.
 
-    Klikněte na tlačítko **studenty** karty zobrazíte testovací data, `Seed` metoda vložit.
+     Klikněte na tlačítko **studenty** karty zobrazíte testovací data, `Seed` metoda vložit.
 
-    ![Student indexovou stránku](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image21.png)
+     ![Student indexovou stránku](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image21.png)
 
 ## <a name="conventions"></a>Konvence
 
@@ -351,5 +351,5 @@ Nyní jste vytvořili jednoduchou aplikaci, která se používá k uložení a z
 
 Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Next](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Next](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)

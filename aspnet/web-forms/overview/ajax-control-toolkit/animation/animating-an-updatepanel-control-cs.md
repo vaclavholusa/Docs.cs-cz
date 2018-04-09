@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-cs
-title: "Animace ovládacího prvku UpdatePanel (C#) | Microsoft Docs"
+title: Animace ovládacího prvku UpdatePanel (C#) | Microsoft Docs
 author: wenz
-description: "V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Pro obsah..."
+description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Pro obsah...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6d8954d2ec886994cdd723121e540b471131f6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5d8d5b9c3f15b39045b5e01b455bdddfc9443a24
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animating-an-updatepanel-control-c"></a>Animace ovládacího prvku UpdatePanel (C#)
 ====================
@@ -43,8 +43,8 @@ Animace v tomto scénáři se použijí pro technologie ASP.NET `Wizard` umíst�
 
 Kód potřebné pro `UpdatePanelAnimationExtender` je velmi podobný kód používá pro ovládací prvek `AnimationExtender`. V `TargetControlID` atribut poskytujeme `ID` z `UpdatePanel` pro animaci; v rámci `UpdatePanelAnimationExtender` ovládací prvek, `<Animations>` element obsahuje kód XML pro animation(s). Je však jeden rozdíl: velikost události a obslužné rutiny událostí je omezená ve srovnání s `AnimationExtender`. Pro `UpdatePanels`, pouze dvě z nich neexistuje:
 
-- `<OnUpdated>`Když se aktualizovala UpdatePanel
-- `<OnUpdating>`Při spuštění UpdatePanel aktualizace
+- `<OnUpdated>` Když se aktualizovala UpdatePanel
+- `<OnUpdating>` Při spuštění UpdatePanel aktualizace
 
 V tomto scénáři nový obsah `UpdatePanel` (po postback) se objevovat se. Toto je nezbytné značek pro tento:
 
@@ -57,6 +57,6 @@ Nyní vždy, když v rámci prvku UpdatePanel dojde k zpětné volání, nový o
 
 V dalším kroku průvodce je pozvolného vysouvání ([Kliknutím zobrazit obrázek v plné velikosti](animating-an-updatepanel-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](changing-an-animation-using-client-side-code-cs.md)
-[další](dynamically-controlling-updatepanel-animations-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](changing-an-animation-using-client-side-code-cs.md)
+> [další](dynamically-controlling-updatepanel-animations-cs.md)

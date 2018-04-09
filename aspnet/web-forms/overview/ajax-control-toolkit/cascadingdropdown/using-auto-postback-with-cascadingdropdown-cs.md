@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-cs
-title: "Pomocí automatického provedení operace CascadingDropDown (C#) | Microsoft Docs"
+title: Pomocí automatického provedení operace CascadingDropDown (C#) | Microsoft Docs
 author: wenz
-description: "Ovládací prvek CascadingDropDown v Toolkitu AJAX rozšiřuje ovládací prvek rozevírací seznam tak, aby změny v jedné rozevírací seznam zatížení přidružené hodnoty v anoth..."
+description: Ovládací prvek CascadingDropDown v Toolkitu AJAX rozšiřuje ovládací prvek rozevírací seznam tak, aby změny v jedné rozevírací seznam zatížení přidružené hodnoty v anoth...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cd103283f46223d5158e58227bb53c00c74bc7d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04e0914dd1057f9ce490f68ae3fa9c56766beafb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-auto-postback-with-cascadingdropdown-c"></a>Pomocí automatického provedení operace CascadingDropDown (C#)
 ====================
@@ -64,6 +64,6 @@ Tímto způsobem zpětné volání je spustit pouze když existuje ve skutečnos
 
 Výběr prvku seznamu způsobí, že zpětné volání ([Kliknutím zobrazit obrázek v plné velikosti](using-auto-postback-with-cascadingdropdown-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](presetting-list-entries-with-cascadingdropdown-cs.md)
-[další](filling-a-list-using-cascadingdropdown-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](presetting-list-entries-with-cascadingdropdown-cs.md)
+> [další](filling-a-list-using-cascadingdropdown-vb.md)

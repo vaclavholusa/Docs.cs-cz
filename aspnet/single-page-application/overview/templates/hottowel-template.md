@@ -1,22 +1,22 @@
 ---
 uid: single-page-application/overview/templates/hottowel-template
-title: "Aktivní ručníků šablony | Microsoft Docs"
+title: Aktivní ručníků šablony | Microsoft Docs
 author: madskristensen
-description: "HotTowel šablony"
+description: HotTowel šablony
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/09/2013
 ms.topic: article
 ms.assetid: 75af2e17-6ed3-4d24-8ea1-bc340027c318
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/hottowel-template
 msc.type: authoredcontent
-ms.openlocfilehash: bfc6e2c884c422f44e8be5f4f29554ae86f7ecb6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dbd037c2469d326a3d3248ca07492ed9eb93e225
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hot-towel-template"></a>Aktivní ručníků šablony
 ====================
@@ -29,8 +29,8 @@ podle [Mads Kristensen](https://github.com/madskristensen)
 > [Šablony MVC aktivní ručníků pro sadu Visual Studio 2012](https://visualstudiogallery.msdn.microsoft.com/1f68fbe8-b4e9-4968-9fd3-ddc7cbc52dca)
 > 
 > [Šablony MVC aktivní ručníků pro Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/1eb8780d-d522-4dcf-bf56-56f0eab305c2)
-
-
+> 
+> 
 > Aktivní ručníků: Vzhledem k tomu, že nechcete, aby přejít na SPA bez jeden!
 
 
@@ -95,7 +95,7 @@ Jednoduše spustíte, přidání kódu!
 2. Přidat zobrazení, která `App/views` složky
 3. Přidat viewmodels k `App/viewmodels` složky
 4. Přidat kód HTML a Knockout vazby dat k novým zobrazením
-5. Aktualizace tras navigace v`shell.js`
+5. Aktualizace tras navigace v `shell.js`
 
 ## <a name="walkthrough-of-the-htmljavascript"></a>Návod, HTML/JavaScript
 
@@ -105,7 +105,7 @@ index.cshtml je výchozí trasy a zobrazení pro aplikaci MVC. Obsahuje všechny
 
 [!code-cshtml[Main](hottowel-template/samples/sample2.cshtml)]
 
-### <a name="appmainjs"></a>App/Main.js
+### <a name="appmainjs"></a>App/main.js
 
 `main.js` Soubor obsahuje kód, který se spustí hned, jak vaše aplikace je načtena. Toto je, kde chcete definovat navigační trasy, nastavte vaše po spuštění zobrazení a provést všechny instalační program nebo zavádění například priming data aplikace.
 
@@ -117,7 +117,7 @@ index.cshtml je výchozí trasy a zobrazení pro aplikaci MVC. Obsahuje všechny
 
 Zobrazení jsou součástí `App/views` složky.
 
-### <a name="shellhtml"></a>Shell.HTML
+### <a name="shellhtml"></a>shell.html
 
 `shell.html` Obsahuje hlavní rozložení pro kódu HTML. Všechna vaše zobrazení se skládá někde v straně vaší `shell` zobrazení. Poskytuje aktivní ručníků `shell` s tři tyto oblasti: zápatí, záhlaví a oblast obsahu. Každý z těchto oblastí je načtena s dalšími zobrazeními vyžádání tvoří obsah.
 
@@ -125,7 +125,7 @@ Zobrazení jsou součástí `App/views` složky.
 
 [!code-html[Main](hottowel-template/samples/sample4.html)]
 
-### <a name="navhtml"></a>NAV.HTML
+### <a name="navhtml"></a>nav.html
 
 `nav.html` Obsahuje navigační odkazy zabezpečené ověřování HESLA. Toto je strukturu nabídky můžete umístění, například. Často je jím data vázaná (pomocí Knockout) k `router` modulu zobrazení navigace definované v `shell.js`. Knockout vypadá pro atributy data-bind a aby se váže `shell` viewmodel k zobrazení navigační trasy a zobrazit komponenta progressbar (pomocí služby Twitter Bootstrap) Pokud `router` modulu zrovna navigaci z jednoho zobrazení na jiné (viz `router.isNavigating`).
 
@@ -135,7 +135,7 @@ Zobrazení jsou součástí `App/views` složky.
 
 Tato zobrazení obsahovat HTML pro vlastní zobrazení. Když `home` na odkaz v `nav` zobrazení nabídky po kliknutí na, `home` zobrazení bude uložena v oblasti obsahu `shell` zobrazení. Tato zobrazení můžete rozšířit nebo nahradit vlastní zobrazení.
 
-### <a name="footerhtml"></a>Footer.HTML
+### <a name="footerhtml"></a>footer.html
 
 `footer.html` Obsahuje HTML, který se zobrazí v zápatí, v dolní části `shell` zobrazení.
 
@@ -143,7 +143,7 @@ Tato zobrazení obsahovat HTML pro vlastní zobrazení. Když `home` na odkaz v 
 
 ViewModels se nacházejí v `App/viewmodels` složky.
 
-### <a name="shelljs"></a>Shell.js
+### <a name="shelljs"></a>shell.js
 
 `shell` Viewmodel obsahuje vlastnosti a funkce, které jsou vázány `shell` zobrazení. Často je jím kde se nacházejí vazby navigační nabídky (viz `router.mapNav` logiku).
 
@@ -159,6 +159,6 @@ Tyto viewmodels obsahovat vlastnosti a funkce, které jsou vázány `home` zobra
 
 Služby se nacházejí ve složce aplikace nebo služby. V ideálním případě vaše budoucí služby, jako je například dataservice modul, který zodpovídá za načítání a publikování vzdálených dat, může být umístěny.
 
-### <a name="loggerjs"></a>Logger.js
+### <a name="loggerjs"></a>logger.js
 
 Poskytuje aktivní ručníků `logger` modulu ve složce služby. `logger` Modul je ideální pro protokolování zpráv do konzoly a uživateli v překryvu informační zprávy.

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
-title: "Ověřování uživatelů s formulářové ověřování (C#) | Microsoft Docs"
+title: Ověřování uživatelů s formulářové ověřování (C#) | Microsoft Docs
 author: microsoft
-description: "Naučte se používat atribut [autorizovat] heslo k ochraně konkrétní stránky v aplikaci MVC. Zjistíte, jak používat správu webu příliš..."
+description: Naučte se používat atribut [autorizovat] heslo k ochraně konkrétní stránky v aplikaci MVC. Zjistíte, jak používat správu webu příliš...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17bcf02e1351587d64b72ee2b40393e0f748f23e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e1def84bbf48847339e89b239b026d053640b935
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-forms-authentication-c"></a>Ověřování uživatelů pomocí ověřování pomocí formulářů (C#)
 ====================
@@ -107,7 +107,7 @@ Nastavit výchozí databázi SQL Express je v pořádku při vývoji aplikace. P
 
 Prvním krokem je přidání všechny potřebné databázové objekty (tabulky a uložené procedury) pro vaši produkční databázi. Nejjednodušší způsob, jak přidat tyto objekty pro novou databázi je využít Průvodce instalací serveru SQL pro technologii ASP.NET (viz obrázek 8). Tento nástroj můžete spustit ze skupiny programu Microsoft Visual Studio 2008 otevřením Visual Studio 2008 příkazový řádek a spuštěním následujícího příkazu z příkazového řádku:
 
-ASPNET\_regsql
+aspnet\_regsql
 
 **Obrázek 8 – Průvodce instalací serveru SQL technologie ASP.NET**
 
@@ -119,7 +119,7 @@ Průvodce instalací serveru SQL technologie ASP.NET umožňuje vybrat databázi
 > 
 > Pokud nechcete použít Průvodce instalací serveru SQL pro ASP.NET, můžete najít skripty SQL pro přidání aplikace služby databázové objekty v následující složce:
 > 
-> > C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727
+> > C:\Windows\Microsoft.NET\Framework\v2.0.50727
 
 
 Po vytvoření nezbytné databázové objekty, budete muset upravit připojení k databázi používat aplikaci MVC. Upravte připojovací řetězec ApplicationServices v souboru webové konfigurace (web.config) tak, aby ukazoval na produkční databázi. Například upravené připojení v výpis 3 odkazuje na databázi s názvem MyProductionDB (původní připojovací řetězec ApplicationServices byla změněna na komentář).
@@ -152,5 +152,5 @@ Jakmile vytvoříte požadované přihlášení, budete muset mapovat přihláš
 
 V tomto kurzu jste zjistili, jak používat ověřování pomocí formulářů, při vytváření aplikace ASP.NET MVC. Nejprve jste zjistili, jak vytvořit nové uživatele a role a využívají nástroj pro správu webu. V dalším kroku jste zjistili, jak pomocí atributu [autorizovat] zabránit neoprávněným uživatelům v vyvolání akce kontroleru. Nakonec jste zjistili, jak nakonfigurovat aplikace MVC uložit uživatele a informace o rolích do provozní databáze.
 
->[!div class="step-by-step"]
-[Další](authenticating-users-with-windows-authentication-cs.md)
+> [!div class="step-by-step"]
+> [Next](authenticating-users-with-windows-authentication-cs.md)

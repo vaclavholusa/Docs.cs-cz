@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
-title: "Provádění a jaké Pokud nasazení | Microsoft Docs"
+title: Provádění a jaké Pokud nasazení | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, co když' provádění (nebo simulated) pomocí nástroj nasazení webu Internetové informační služby (IIS) (Web Deploy) a V nasazení..."
+description: Toto téma popisuje, co když' provádění (nebo simulated) pomocí nástroj nasazení webu Internetové informační služby (IIS) (Web Deploy) a V nasazení...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: cea805c86f0764c7443ccc5c9f89248860a6a842
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c1a13f38c8e629bcd615190b00104109e25fb289
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="performing-a-what-if-deployment"></a>Provádění nasazení "Co když"
 ====================
@@ -27,9 +27,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma popisuje, jak provést "Co když" (nebo simulated) pomocí nástroj nasazení webu Internetové informační služby (IIS) (Web Deploy) a VSDBCMD nasazení. Díky tomu můžete určit důsledky logika nasazení v prostředí s konkrétní cílový před svou aplikaci nasazujete ve skutečnosti.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na soubor projektu rozdělení metody uvedené v [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které dva soubory projektu & #x 2014 je řízena procesem sestavení a nasazení; o Ne, obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve kterém je řízena procesem sestavení a nasazení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="performing-a-what-if-deployment-for-web-packages"></a>Provádění pro balíčky webového nasazení "Co když"
 
@@ -41,7 +41,7 @@ Nasazení webu obsahuje funkce, které umožňuje provádění nasazení v "Co k
 
 Protože je nasazení "Co když" nic nezmění. ve skutečnosti na cílovém serveru se nemůže vždy provádět předpovědi, zda bude úspěšné nasazení.
 
-Jak je popsáno v [nasazení webových balíčků](../web-deployment-in-the-enterprise/deploying-web-packages.md), bude možné nasadit balíčky webového pomocí v dva způsoby & #x 2014; pomocí příkazový řádek MSDeploy.exe přímo nebo spuštěním nástroje nasazení webu *. deploy.cmd* soubor, který generuje procesu sestavení.
+Jak je popsáno v [nasazení webových balíčků](../web-deployment-in-the-enterprise/deploying-web-packages.md), bude možné nasadit balíčky webového pomocí nástroje nasazení webu dvěma způsoby&#x2014;pomocí nástroje příkazového řádku MSDeploy.exe přímo nebo spuštěním *. deploy.cmd* souboru aby generuje procesu sestavení.
 
 Pokud používáte MSDeploy.exe přímo, můžete spustit nasazení "Co když" tak, že přidáte **– whatif** příznak do příkazu. Například k vyhodnocení, co by mohlo dojít, pokud jste nasadili balíček ContactManager.Mvc.zip pracovní prostředí, příkaz MSDeploy by měl vypadat přibližně takto:
 
@@ -122,7 +122,7 @@ Další fáze je o parametrizaci nasazení webu a VSDBCMD příkazů tak, aby od
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample6.xml)]
 
 
-Podobně Další cíl používá nástroj VSDBCMD nasazení databáze. Ve výchozím nastavení **/dd** přepínač není zahrnutý. To znamená, že VSDBCMD vygeneruje skript nasazení, ale nebude nasadit databázi & #x 2014; jinými slovy, "Co když" scénáři. Pokud **WhatIf** vlastnost není nastavena na **true**, **/dd** přidán přepínač a VSDBCMD se nasazení databáze.
+Podobně Další cíl používá nástroj VSDBCMD nasazení databáze. Ve výchozím nastavení **/dd** přepínač není zahrnutý. To znamená, že VSDBCMD vygeneruje skript nasazení, ale nebude nasazení databáze&#x2014;jinými slovy, "Co když" scénáři. Pokud **WhatIf** vlastnost není nastavena na **true**, **/dd** přidán přepínač a VSDBCMD se nasazení databáze.
 
 
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample7.xml)]
@@ -144,6 +144,6 @@ Toto téma popisuje postup spouštět "Co když" nasazení pomocí nástroje nas
 
 Další informace o nasazení webu syntaxe příkazového řádku najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Pokyny k možnosti příkazového řádku při použití *. deploy.cmd* souborů najdete v tématu [postup: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx). Pokyny v VSDBCMD syntaxe příkazového řádku najdete v tématu [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/library/dd193283.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](advanced-enterprise-web-deployment.md)
-[další](customizing-database-deployments-for-multiple-environments.md)
+> [!div class="step-by-step"]
+> [Předchozí](advanced-enterprise-web-deployment.md)
+> [další](customizing-database-deployments-for-multiple-environments.md)

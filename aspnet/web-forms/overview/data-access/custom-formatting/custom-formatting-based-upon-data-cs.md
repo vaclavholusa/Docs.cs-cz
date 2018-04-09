@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
-title: "Vlastní formátování na základě údajů o (C#) | Microsoft Docs"
+title: Vlastní formátování na základě údajů o (C#) | Microsoft Docs
 author: rick-anderson
-description: "Úprava formát GridView, DetailsView nebo FormView podle na něj navázaná data lze provést několika způsoby. V tomto kurzu jsme budete l..."
+description: Úprava formát GridView, DetailsView nebo FormView podle na něj navázaná data lze provést několika způsoby. V tomto kurzu jsme budete l...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 606721b01fae34a7bce85d497a442cb110f1b51e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 31cf628baf2250c2e7e71ab38cd64b218dc927e7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="custom-formatting-based-upon-data-c"></a>Vlastní formátování na základě údajů o (C#)
 ====================
@@ -217,19 +217,19 @@ Tyto tři jednoduchých kroků postačí pro DetailsView a FormView, protože se
 
 V kroku 2 GridView zobrazí zdroj dat a pro každý záznam vytvoří `GridViewRow` instance a vytvoří vazbu na aktuální záznam. Pro každou `GridViewRow` přidá do GridView, dvě události jsou vyvolány:
 
-- **`RowCreated`**Aktivuje se po `GridViewRow` byla vytvořena
-- **`RowDataBound`**Aktivuje se po záznam na aktuální záznam byla svázána se `GridViewRow`.
+- **`RowCreated`** Aktivuje se po `GridViewRow` byla vytvořena
+- **`RowDataBound`** Aktivuje se po záznam na aktuální záznam byla svázána se `GridViewRow`.
 
 Pro GridView pak datová vazba je přesněji popsané v následujícím pořadí kroků:
 
 1. Rutina GridView na `DataBinding` je aktivována událost.
 2. Data je vázána GridView.   
   
- Pro každý záznam ve zdroji dat. 
+   Pro každý záznam ve zdroji dat. 
 
     1. Vytvoření `GridViewRow` objektu
     2. Ještě efektivněji `RowCreated` událostí
-    3. Záznam, který chcete vytvořit vazbu`GridViewRow`
+    3. Záznam, který chcete vytvořit vazbu `GridViewRow`
     4. Ještě efektivněji `RowDataBound` událostí
     5. Přidat `GridViewRow` k `Rows` kolekce
 3. Rutina GridView na `DataBound` je aktivována událost.
@@ -275,12 +275,12 @@ Když `RowDataBound` aktivuje událost obslužné rutiny události se předá ja
 
 Při práci s `RowDataBound` obslužné rutiny události je důležité mít na paměti, která GridView se skládá z různých typů řádků a tato událost je aktivována například pro *všechny* řádek typy. A `GridViewRow`na typ se dá určit pomocí jeho `RowType` vlastnost a může mít jednu z možných hodnot:
 
-- `DataRow`řádek, který je vázaný na záznam z GridView.`DataSource`
-- `EmptyDataRow`řádek zobrazí, pokud rutina GridView `DataSource` je prázdná
-- `Footer`řádek zápatí; Pokud zobrazené GridView `ShowFooter` je nastavena na`true`
-- `Header`řádek záhlaví; Zobrazí, pokud rutina GridView ShowHeader je nastavena na `true` (výchozí)
-- `Pager`rutina GridView na které implementují, stránkování, řádek, který zobrazuje rozhraní stránkování
-- `Separator`nepoužívá se pro GridView, ale používá `RowType` vlastnosti DataList a opakovače ovládací prvky, dvěma datovými ovládací prvky webového probereme v budoucnosti kurzy
+- `DataRow` řádek, který je vázaný na záznam z GridView. `DataSource`
+- `EmptyDataRow` řádek zobrazí, pokud rutina GridView `DataSource` je prázdná
+- `Footer` řádek zápatí; Pokud zobrazené GridView `ShowFooter` je nastavena na `true`
+- `Header` řádek záhlaví; Zobrazí, pokud rutina GridView ShowHeader je nastavena na `true` (výchozí)
+- `Pager` rutina GridView na které implementují, stránkování, řádek, který zobrazuje rozhraní stránkování
+- `Separator` nepoužívá se pro GridView, ale používá `RowType` vlastnosti DataList a opakovače ovládací prvky, dvěma datovými ovládací prvky webového probereme v budoucnosti kurzy
 
 Vzhledem k tomu, `EmptyDataRow`, `Header`, `Footer`, a `Pager` řádků nejsou spojené s `DataSource` záznamů, bude vždy mají `null` hodnotu pro jejich `DataItem` vlastnost. Z tohoto důvodu před pokusem o práci s aktuální `GridViewRow`na `DataItem` vlastnost nám Nejdřív musíte zajistit, aby jsme pracujete s `DataRow`. To lze provést pomocí kontroly `GridViewRow`na `RowType` vlastnost takto:
 
@@ -319,11 +319,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Pro tento kurz byly E.R. vést kontrolorů Gilmore, společnosti Dennis Patterson a Dana Jagers. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Next](using-templatefields-in-the-gridview-control-cs.md)
+> [!div class="step-by-step"]
+> [Next](using-templatefields-in-the-gridview-control-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
-title: "Přehled řadiče ASP.NET MVC (VB) | Microsoft Docs"
+title: Přehled řadiče ASP.NET MVC (VB) | Microsoft Docs
 author: StephenWalther
-description: "V tomto kurzu Stephen Walther vás seznámí s ASP.NET MVC řadiče. Zjistíte, jak vytvořit nové řadiče a vrátíte se různé typy res akce..."
+description: V tomto kurzu Stephen Walther vás seznámí s ASP.NET MVC řadiče. Zjistíte, jak vytvořit nové řadiče a vrátíte se různé typy res akce...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 452e2cf771e8b1f298ce9693ec2a707e7c1d4dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0a45630e8f2d5ae0548bb6b8496df08ca5877a40
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-controller-overview-vb"></a>Přehled řadiče ASP.NET MVC (VB)
 ====================
@@ -103,8 +103,8 @@ Výsledek akce ContentResult je speciální. Výsledek akce ContentResult může
 **Výpis 4 - Controllers\StatusController.vb**
 
 > StatusController
-
-
+> 
+> 
 > System.Web.Mvc.Controller
 
 
@@ -124,6 +124,6 @@ Akce Index() ve výpisu 5 vrátí objekt data a času. Rozhraní ASP.NET MVC př
 
 Účelem tohoto kurzu bylo seznámí s koncepty řadičů ASP.NET MVC, akce kontroleru a výsledky akce kontroleru. V první části jste zjistili, jak k přidávání nových řadičů do projektu aplikace ASP.NET MVC. V dalším kroku jste se dozvěděli, jak veřejné metody řadiče jsou zveřejněné na základní soubor jako akce kontroleru. Nakonec jsme probrali různé typy výsledků akcí, které mohou být vráceny z akce kontroleru. Konkrétně jsme se bavili jak vracet ViewResult, RedirectToActionResult a ContentResult z akce kontroleru.
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-custom-route-constraint-cs.md)
-[další](creating-custom-routes-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-custom-route-constraint-cs.md)
+> [další](creating-custom-routes-vb.md)

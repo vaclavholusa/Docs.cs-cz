@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
-title: "Doprovodné materiály zabezpečení pro rozhraní ASP.NET Web API 2 OData | Microsoft Docs"
+title: Doprovodné materiály zabezpečení pro rozhraní ASP.NET Web API 2 OData | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/06/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 799e2a0c742b545acf3b5cd27531d734aa7def80
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 41b05f2a2f8247853d8358e6cc1246c8b438a6db
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="security-guidance-for-aspnet-web-api-2-odata"></a>Doprovodné materiály zabezpečení pro rozhraní ASP.NET Web API 2 OData
 ====================
@@ -70,8 +70,8 @@ Pokud víte, že všichni klienti jsou důvěryhodné (například v podnikovém
     [!code-csharp[Main](odata-security-guidance/samples/sample9.cs)]
 - Vezměte v úvahu omezení $filter dotazy napsáním validátor, které je přizpůsobené pro vaši databázi. Představte si třeba tyto dva dotazy: 
 
-    - Všechny filmy se účastníky, jejichž příjmení začíná "A".
-    - Všechny filmy vydané v roce 1994 za.
+  - Všechny filmy se účastníky, jejichž příjmení začíná "A".
+  - Všechny filmy vydané v roce 1994 za.
 
     Pokud jsou filmy indexovat pomocí aktéři, první dotaz může vyžadovat databázový stroj ke kontrole celý seznam filmy. Zatímco druhý dotaz zřejmě není přijatelné, předpokladu filmy jsou indexované podle verze roku.
 

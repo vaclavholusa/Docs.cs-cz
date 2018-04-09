@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-vb
-title: "Ověřování s idataerrorinfo – rozhraní (VB) | Microsoft Docs"
+title: Ověřování s idataerrorinfo – rozhraní (VB) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther ukazuje způsob zobrazení chybové zprávy ověření na vlastní implementací rozhraní idataerrorinfo – ve třídu modelu."
+description: Stephen Walther ukazuje způsob zobrazení chybové zprávy ověření na vlastní implementací rozhraní idataerrorinfo – ve třídu modelu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1439d470a7fa3cb1171dbdd0b7eec6a6aa52912d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 60df0f934432484e0c97e0caef25c15605beb14f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-with-the-idataerrorinfo-interface-vb"></a>Ověřování s idataerrorinfo – rozhraní (VB)
 ====================
@@ -161,6 +161,6 @@ Všimněte si, že automaticky ověření DateReleased hodnoty. Vzhledem k tomu,
 
 V tomto kurzu jste se naučili idataerrorinfo – rozhraní použít ke generování chybových zpráv ověření. Nejdřív jsme vytvořili částečné film třídu, která rozšiřuje funkce film třídu generované rozhraní Entity Framework. V dalším kroku jsme přidali logiku ověření film třída OnTitleChanging() a OnDirectorChanging() částečné metody. Nakonec implementovali jsme idataerrorinfo – rozhraní tak, aby získal tyto zprávy ověření na rozhraní ASP.NET MVC.
 
->[!div class="step-by-step"]
-[Předchozí](performing-simple-validation-vb.md)
-[další](validating-with-a-service-layer-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](performing-simple-validation-vb.md)
+> [další](validating-with-a-service-layer-vb.md)

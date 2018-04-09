@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s ASP.NET Core 1.1"
+title: Začínáme s ASP.NET Core 1.1
 author: rick-anderson
-description: "V tomto kurzu rychle vytvořit a spustit jednoduchou aplikaci Hello World pomocí ASP.NET Core 1.1."
+description: V tomto kurzu rychle vytvořit a spustit jednoduchou aplikaci Hello World pomocí ASP.NET Core 1.1.
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,18 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: getting-started-1.1
-ms.openlocfilehash: df34c93de265c3e69877c9f68dd69126bb1b850d
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c61a9a918e51bbd6c1f1142a04473393c8fc54ca
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="get-started-with-aspnet-core-11"></a>Začínáme s ASP.NET Core 1.1
 
 > [!NOTE]
 > Tyto pokyny jsou určené pro ASP.NET Core 1.1. Hledáte nejnovější verzi? V tématu [aktuální verzi v tomto kurzu](xref:getting-started).
 
-1. Instalace .NET Core **instalační program sady SDK** pro sadu SDK 1.0.4 z [.NET Core 1.0.5 & 1.1.2 SDK 1.0.4 stáhne stránky](https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.0.5-download.md).
+1. Instalace .NET Core **instalační program sady SDK** pro sadu SDK 1.0.4 z [.NET Core všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
 
 2. Vytvořte složku pro nový projekt .NET Core.
 

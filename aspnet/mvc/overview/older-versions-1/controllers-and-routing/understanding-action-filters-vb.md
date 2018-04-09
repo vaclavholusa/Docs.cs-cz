@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
-title: "Seznámení s filtry akcí (VB) | Microsoft Docs"
+title: Seznámení s filtry akcí (VB) | Microsoft Docs
 author: microsoft
-description: "Cílem tohoto kurzu je vysvětlit, filtrů akce. Filtr akce je atribut, který můžete použít pro akce kontroleru--nebo celý řadiče..."
+description: Cílem tohoto kurzu je vysvětlit, filtrů akce. Filtr akce je atribut, který můžete použít pro akce kontroleru--nebo celý řadiče...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 483133ec5db27c2fa1ed4b463e37e17efab12e0f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2796b67cba6a2ddaee7a006a170dfb7e5ff89888
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-action-filters-vb"></a>Seznámení s filtry akcí (VB)
 ====================
@@ -45,7 +45,7 @@ Filtr akce je atribut. Většina filtrů akce můžete použít pro akce jednotl
 
 Například řadič Data v výpis 1 zpřístupní akci s názvem `Index()` , který vrací aktuální čas. Tato akce je upraven pomocí `OutputCache` filtru akce. Tento filtr způsobí, že hodnoty vrácené akce ukládat do mezipaměti 10 sekund.
 
-**Výpis 1 –`Controllers\DataController.vb`**
+**Výpis 1 – `Controllers\DataController.vb`**
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample1.vb)]
 
@@ -103,7 +103,7 @@ V další části uvidíme, jak můžete implementovat, každá z těchto různ�
 
 Chcete-li ilustrují, jak můžete vytvořit vlastní akce filtru, vytvoříme vlastní akce filtr, který protokoluje fází zpracování akce kontroleru do okna výstupu Visual Studio. Naše `LogActionFilter` je součástí výpis 2.
 
-**Výpis 2 –`ActionFilters\LogActionFilter.vb`**
+**Výpis 2 – `ActionFilters\LogActionFilter.vb`**
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample2.vb)]
 
@@ -117,7 +117,7 @@ Výpis 2 `OnActionExecuting()`, `OnActionExecuted()`, `OnResultExecuting()`, a `
 
 Domovské řadiče v výpis 3 znázorňuje, jak můžete použít filtr akce protokolu celý ovladač třídy. Vždy, když jednu z akcí, které jsou vystavené domovské řadiče jsou vyvolány – buď `Index()` metoda nebo `About()` metoda – fáze zpracování akce se zaznamenávají do okna výstupu Visual Studio.
 
-**Výpis 3 –`Controllers\HomeController.vb`**
+**Výpis 3 – `Controllers\HomeController.vb`**
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample3.vb)]
 
@@ -127,6 +127,6 @@ V tomto kurzu jste se seznámili s ASP.NET MVC filtrů akce. Seznámili jste se 
 
 Nakonec jste zjistili, jak implementovat jednoduchého filtru akce. Jsme vytvořili filtr akce protokol, který protokoluje fází zpracování akce kontroleru do okna výstupu Visual Studio.
 
->[!div class="step-by-step"]
-[Předchozí](asp-net-mvc-routing-overview-vb.md)
-[další](improving-performance-with-output-caching-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](asp-net-mvc-routing-overview-vb.md)
+> [další](improving-performance-with-output-caching-vb.md)

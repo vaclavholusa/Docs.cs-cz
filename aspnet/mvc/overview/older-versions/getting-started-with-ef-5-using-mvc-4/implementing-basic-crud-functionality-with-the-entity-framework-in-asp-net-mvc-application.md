@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
-title: "Implementace funkce základní CRUD s platformou Entity Framework v aplikaci ASP.NET MVC (2 10) | Microsoft Docs"
+title: Implementace funkce základní CRUD s platformou Entity Framework v aplikaci ASP.NET MVC (2 10) | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: d031cd760fb578d29626933eed39fe987ef796d7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: acec5c9641b1de230956478c4396d1d541fcb0eb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>Implementace funkce základní CRUD s platformou Entity Framework v aplikaci ASP.NET MVC (2 10)
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -172,27 +172,27 @@ Přidáte `try-catch` zablokujte `HttpPost` `Delete` metodu ke zpracování vše
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample9.cs)]
 
     Tento kód přijímá [volitelné](https://msdn.microsoft.com/library/dd264739.aspx) logického parametru, která určuje, zda byla volána po selhání uložte změny. Tento parametr je `false` při `HttpGet` `Delete` metoda je volána bez předchozí chybě. Když je volána metodou `HttpPost` `Delete` metoda v odpovědi na chybu aktualizace databáze, je parametr `true` a chybová zpráva je předána do zobrazení.
-- Nahraďte `HttpPost` `Delete` metoda akce (s názvem `DeleteConfirmed`) s následujícím kódem, který provede operaci skutečného odstranění a zachytí všechny chyby aktualizace databáze.
+2. Nahraďte `HttpPost` `Delete` metoda akce (s názvem `DeleteConfirmed`) s následujícím kódem, který provede operaci skutečného odstranění a zachytí všechny chyby aktualizace databáze.
 
-    [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample10.cs)]
+     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample10.cs)]
 
-    Tento kód načte vybrané entity, pak zavolá [odebrat](https://msdn.microsoft.com/library/system.data.entity.dbset.remove(v=vs.103).aspx) metodu a nastavit stav entity `Deleted`. Když `SaveChanges` nazývá SQL `DELETE` se vygeneruje příkaz. Také jste změnili název metody akce z `DeleteConfirmed` k `Delete`. Automaticky generovaný kód s názvem `HttpPost` `Delete` metoda `DeleteConfirmed` umožnit `HttpPost` metoda jedinečný podpis. (Modulu CLR vyžaduje přetížené metody, mít parametry jinou metodu.) Teď, když podpisy jsou jedinečné, můžete přilepit s konvence MVC a použít pro stejný název `HttpPost` a `HttpGet` odstranit metody.
+     Tento kód načte vybrané entity, pak zavolá [odebrat](https://msdn.microsoft.com/library/system.data.entity.dbset.remove(v=vs.103).aspx) metodu a nastavit stav entity `Deleted`. Když `SaveChanges` nazývá SQL `DELETE` se vygeneruje příkaz. Také jste změnili název metody akce z `DeleteConfirmed` k `Delete`. Automaticky generovaný kód s názvem `HttpPost` `Delete` metoda `DeleteConfirmed` umožnit `HttpPost` metoda jedinečný podpis. (Modulu CLR vyžaduje přetížené metody, mít parametry jinou metodu.) Teď, když podpisy jsou jedinečné, můžete přilepit s konvence MVC a použít pro stejný název `HttpPost` a `HttpGet` odstranit metody.
 
-    Pokud je zvýšení výkonu v aplikaci vysoký počet prioritu, se můžete vyhnout dotazu SQL nepotřebné načíst řádek nahrazením řádků kódu, které volají `Find` a `Remove` metody následujícím kódem, jak je znázorněno v žlutý Zvýrazněte:
+     Pokud je zvýšení výkonu v aplikaci vysoký počet prioritu, se můžete vyhnout dotazu SQL nepotřebné načíst řádek nahrazením řádků kódu, které volají `Find` a `Remove` metody následujícím kódem, jak je znázorněno v žlutý Zvýrazněte:
 
-    [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample11.cs)]
+     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample11.cs)]
 
-    Tento kód vytvoří `Student` entitu pomocí pouze hodnotu primárního klíče a poté nastaví stav entity na `Deleted`. To je všechno, která rozhraní Entity Framework potřebuje, aby odstranit entitu.
+     Tento kód vytvoří `Student` entitu pomocí pouze hodnotu primárního klíče a poté nastaví stav entity na `Deleted`. To je všechno, která rozhraní Entity Framework potřebuje, aby odstranit entitu.
 
-    Jak jsme uvedli, `HttpGet` `Delete` metoda neodstraní data. Provádění operace odstranění v reakci na příkaz GET požadavku (nebo k tomuto účelu, provádět všechny operace upravit vytvořit operaci, nebo jiná operace, která se mění data) vytvoří bezpečnostní riziko. Další informace najdete v tématu [46 Tip # aplikace ASP.NET MVC – nepoužívejte odkazy odstranit, protože uživatel vytvořit celistvosti](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx) na blogu Stephen Walther.
-- V *Views\Student\Delete.cshtml*, přidejte chybovou zprávu mezi `h2` záhlaví a `h3` záhlaví, jak je znázorněno v následujícím příkladu:
+     Jak jsme uvedli, `HttpGet` `Delete` metoda neodstraní data. Provádění operace odstranění v reakci na příkaz GET požadavku (nebo k tomuto účelu, provádět všechny operace upravit vytvořit operaci, nebo jiná operace, která se mění data) vytvoří bezpečnostní riziko. Další informace najdete v tématu [46 Tip # aplikace ASP.NET MVC – nepoužívejte odkazy odstranit, protože uživatel vytvořit celistvosti](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx) na blogu Stephen Walther.
+3. V *Views\Student\Delete.cshtml*, přidejte chybovou zprávu mezi `h2` záhlaví a `h3` záhlaví, jak je znázorněno v následujícím příkladu:
 
-    [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample12.cshtml?highlight=2)]
+     [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample12.cshtml?highlight=2)]
 
-    Spuštění stránky tak, že vyberete **studenty** kartě a kliknutím na **odstranit** hypertextový odkaz:
+     Spuštění stránky tak, že vyberete **studenty** kartě a kliknutím na **odstranit** hypertextový odkaz:
 
-    ![Student_Delete_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image12.png)
-- Klikněte na tlačítko **odstranit**. Bez odstraněné student se zobrazí stránka indexu. (Příklady kódu v akci v pro zpracování chyby najdete [zpracování souběžnosti](../../getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md) kurz později z této série.)
+     ![Student_Delete_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image12.png)
+4. Klikněte na tlačítko **odstranit**. Bez odstraněné student se zobrazí stránka indexu. (Příklady kódu v akci v pro zpracování chyby najdete [zpracování souběžnosti](../../getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md) kurz později z této série.)
 
 ## <a name="ensuring-that-database-connections-are-not-left-open"></a>Zajištění, že připojení databáze ponechány není otevřené
 
@@ -210,6 +210,6 @@ V dalším kurzu rozbalíte funkce indexovou stránku přidáním řazení a str
 
 Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Předchozí](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
-[další](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
+> [další](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)

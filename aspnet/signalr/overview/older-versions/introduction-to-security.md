@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/introduction-to-security
-title: "Úvod k zabezpečení SignalR (SignalR 1.x) | Microsoft Docs"
+title: Úvod k zabezpečení SignalR (SignalR 1.x) | Microsoft Docs
 author: pfletcher
-description: "Popisuje problémy se zabezpečením, které musíte zvážit při vývoji aplikace SignalR."
+description: Popisuje problémy se zabezpečením, které musíte zvážit při vývoji aplikace SignalR.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: ebc83098b73902fa3f7a90a38dafc43b413e75fe
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b756d3e71d89b6c826bd497f73d052c4c8f634e8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-signalr-security-signalr-1x"></a>Úvod k zabezpečení SignalR (SignalR 1.x)
 ====================
@@ -98,7 +98,7 @@ Tady je příklad útoku proti útokům CSRF:
 
     [!code-html[Main](introduction-to-security/samples/sample1.html)]
 
- Všimněte si, že akce formuláře požadavky na server, snadno napadnutelný, aby škodlivé weby. Toto je část "webů" proti útokům CSRF.
+   Všimněte si, že akce formuláře požadavky na server, snadno napadnutelný, aby škodlivé weby. Toto je část "webů" proti útokům CSRF.
 4. Uživatel kliknutím na tlačítko pro odeslání. V prohlížeči zahrnuje ověřovacího souboru cookie s požadavkem.
 5. Žádost se spustí na serveru example.com s kontext ověřování uživatele a dělat vše, co ověřený uživatel může provádět.
 

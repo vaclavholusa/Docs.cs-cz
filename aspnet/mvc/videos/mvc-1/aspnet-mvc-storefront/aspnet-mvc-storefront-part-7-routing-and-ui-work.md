@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-7-routing-and-ui-work
-title: "ASP.NET MVC Storefront část 7: Směrování a uživatelského rozhraní | Microsoft Docs"
+title: 'ASP.NET MVC Storefront část 7: Směrování a uživatelského rozhraní | Microsoft Docs'
 author: robconery
-description: "Rob komunikuje s Scott Hanselman o tom, jak nastavit směrování, a pak mu implementuje uživatelské rozhraní."
+description: Rob komunikuje s Scott Hanselman o tom, jak nastavit směrování, a pak mu implementuje uživatelské rozhraní.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-7-routing-and-ui-work
 msc.type: video
-ms.openlocfilehash: 034afc1d1230a4bf7e5ace1ed15c79b2775317ed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 18acf244c29f3b698eb3588640ac1b0491b360b2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-storefront-part-7-routing-and-ui-work"></a>ASP.NET MVC Storefront část 7: Směrování a uživatelského rozhraní
 ====================
@@ -24,8 +24,8 @@ podle [ukrást Conery](https://github.com/robconery)
 
 Rob komunikuje s Scott Hanselman o tom, jak nastavit směrování, a pak mu implementuje uživatelské rozhraní.
 
-[&#9654; Podívejte se na video (25 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-7-routing-and-ui-work)
+[&#9654;Podívejte se na video (25 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-7-routing-and-ui-work)
 
->[!div class="step-by-step"]
-[Předchozí](aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work.md)
-[další](aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete.md)
+> [!div class="step-by-step"]
+> [Předchozí](aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work.md)
+> [další](aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete.md)

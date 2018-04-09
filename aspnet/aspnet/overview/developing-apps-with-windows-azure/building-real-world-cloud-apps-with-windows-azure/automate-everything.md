@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
-title: "Automatizovat vše (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs"
+title: Automatizovat vše (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
 author: MikeWasson
-description: "Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu..."
+description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: aa8bb895ed6eaa0ef4c5752f475ea7c911544ef2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2e30ab7831a10f215a08f74e61adf2d147e76543
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatizovat vše (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -128,7 +128,7 @@ První věc skript nemá, je vytvoření webové aplikace pomocí volání `New-
 
 ### <a name="create-the-storage-account"></a>Vytvořit účet úložiště
 
-Potom hlavní skript se spustí *New-AzureStorage.ps1* skriptu, zadání "*&lt;zadaným hodnotám websitename&gt;*úložiště" pro název účtu úložiště a stejná data center umístění jako webové aplikace.
+Potom hlavní skript se spustí <em>New-AzureStorage.ps1</em> skriptu, zadání "<em>&lt;zadaným hodnotám websitename&gt;</em>úložiště" pro název účtu úložiště a stejná data center umístění jako webové aplikace.
 
 [!code-powershell[Main](automate-everything/samples/sample4.ps1?highlight=3)]
 
@@ -158,7 +158,7 @@ Vytvoření databázového skriptu načte vývojářském počítači IP adresu 
 
     [!code-powershell[Main](automate-everything/samples/sample10.ps1?highlight=4)]
 
-    `New-PSCredentialFromPlainText`je funkce ve skriptu, který volá `ConvertTo-SecureString` rutiny k šifrování hesla a vrátí `PSCredential` objektu, stejný typ, který `Get-Credential` rutina vrátí.
+    `New-PSCredentialFromPlainText` je funkce ve skriptu, který volá `ConvertTo-SecureString` rutiny k šifrování hesla a vrátí `PSCredential` objektu, stejný typ, který `Get-Credential` rutina vrátí.
 - Vytvoří aplikační databázi a databázi členství pomocí `New-AzureSqlDatabase` rutiny.
 
     [!code-powershell[Main](automate-everything/samples/sample11.ps1?highlight=2,5)]
@@ -264,6 +264,6 @@ V [další kapitoly](source-control.md) jsme budete podívejte se na zdrojový k
 - [Pomocí skriptů prostředí PowerShell systému Windows k publikování pro vývojáře a testovací prostředí](https://msdn.microsoft.com/library/azure/dn642480.aspx). Dokumentace MSDN, která vysvětluje, jak používat publikovat skripty, které automaticky generuje sada Visual Studio pro webové projekty.
 - [Prostředí PowerShell nástroje pro sadu Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597). Visual Studio rozšíření, která přidá podporu pro prostředí Windows PowerShell v sadě Visual Studio.
 
->[!div class="step-by-step"]
-[Předchozí](introduction.md)
-[další](source-control.md)
+> [!div class="step-by-step"]
+> [Předchozí](introduction.md)
+> [další](source-control.md)

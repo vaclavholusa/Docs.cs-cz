@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
-title: "Část 7: Vytvoření hlavní stránky | Microsoft Docs"
+title: 'Část 7: Vytvoření hlavní stránky | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 4d06e72bc664f707bbbe4603be41347158c58903
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2c378e68a1e6600daf655c19afbfe355e89496d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-creating-the-main-page"></a>Část 7: Vytvoření hlavní stránky
 ====================
@@ -59,13 +59,13 @@ Uživatele můžete vybrat existující pořadí a získat podrobnosti o pořad�
 
 `OrderDetailsViewModel` Inicializován s pořadí, a podrobnosti o pořadí ho načte odesláním požadavek AJAX na server.
 
-Všimněte si také, `total` vlastnost `OrderDetailsViewModel`. Tato vlastnost je zvláštní druh názvem lze zobrazit [počítaný lze zobrazit](http://knockoutjs.com/documentation/computedObservables.html). Jak již název napovídá, počítaný lze zobrazit umožňuje vazbě dat na vypočtenou hodnotou &#8212; v takovém případě celkové náklady pořadí.
+Všimněte si také, `total` vlastnost `OrderDetailsViewModel`. Tato vlastnost je zvláštní druh názvem lze zobrazit [počítaný lze zobrazit](http://knockoutjs.com/documentation/computedObservables.html). Jak již název napovídá, počítaný lze zobrazit umožňuje vazbě dat na vypočtenou hodnotou&#8212;v tomto případě celkové náklady pořadí.
 
 Dál přidejte tyto funkce `AppViewModel`:
 
-- `resetCart`Odebere všechny položky z košíku.
-- `getDetails`Získá podrobnosti pro pořadí (podle pusing a nové `OrderDetailsViewModel` na `details` seznamu).
-- `createOrder`Vytvoří nové pořadí a vyprázdní košíku.
+- `resetCart` Odebere všechny položky z košíku.
+- `getDetails` Získá podrobnosti pro pořadí (podle pusing a nové `OrderDetailsViewModel` na `details` seznamu).
+- `createOrder` Vytvoří nové pořadí a vyprázdní košíku.
 
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample6.js?highlight=4)]
@@ -119,5 +119,5 @@ Další zdroje informací:
 - [Mapa obsahu přístupu k Data technologie ASP.NET](https://msdn.microsoft.com/library/6759sth4.aspx)
 - [Středisko pro vývojáře Entity Framework](https://msdn.microsoft.com/data/ef)
 
->[!div class="step-by-step"]
-[Předchozí](using-web-api-with-entity-framework-part-6.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-web-api-with-entity-framework-part-6.md)

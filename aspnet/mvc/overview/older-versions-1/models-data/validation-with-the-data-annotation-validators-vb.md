@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
-title: "Ověřování pomocí datové poznámky validátory (VB) | Microsoft Docs"
+title: Ověřování pomocí datové poznámky validátory (VB) | Microsoft Docs
 author: microsoft
-description: "Výhodou vazač modelu dat poznámky k provedení ověření v rámci aplikace ASP.NET MVC. Naučte se používat s různými typy validátoru..."
+description: Výhodou vazač modelu dat poznámky k provedení ověření v rámci aplikace ASP.NET MVC. Naučte se používat s různými typy validátoru...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 227c1acb5e478047c4e5cdc7dbddedd703e91292
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d1987182a44a0ad3f91f455342dc934d1dd50267
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a>Ověřování pomocí datové poznámky validátory (VB)
 ====================
@@ -78,14 +78,14 @@ Třída produktu ukazuje, jak používat jeden další atribut: atribut DisplayN
 
 > [!NOTE] 
 > 
-> Pokud chcete úplně přizpůsobit chybové zprávy zobrazí validátor můžete přiřadit vlastní chybová zpráva pro vlastnost ErrorMessage validátoru takto:`<Required(ErrorMessage:="This field needs a value!")>`
+> Pokud chcete úplně přizpůsobit chybové zprávy zobrazí validátor můžete přiřadit vlastní chybová zpráva pro vlastnost ErrorMessage validátoru takto: `<Required(ErrorMessage:="This field needs a value!")>`
 
 
 Můžete použít třídu produktu v **výpis 1** s akce kontroleru Create() v **výpis 2**. Tato akce kontroleru znovu vytvořit zobrazení zobrazí, pokud stav modelu, který obsahuje všechny chyby.
 
 [!code-vb[Main](validation-with-the-data-annotation-validators-vb/samples/sample3.vb)]
 
-**Výpis 2**: Controllers\ProductController.vb
+**Listing 2**: Controllers\ProductController.vb
 
 Nakonec můžete vytvořit zobrazení v **výpis 3** akce Create() kliknete pravým tlačítkem a výběrem možnosti nabídky **přidat zobrazení**. Vytvoření zobrazení silného typu pomocí třídy produktu jako třídu modelu. Vyberte **vytvořit** z zobrazení obsahu rozevíracího seznamu (viz **na obrázku 2**).
 
@@ -95,7 +95,7 @@ Nakonec můžete vytvořit zobrazení v **výpis 3** akce Create() kliknete prav
 
 [!code-aspx[Main](validation-with-the-data-annotation-validators-vb/samples/sample4.aspx)]
 
-**Výpis 3**: Views\Product\Create.aspx
+**Listing 3**: Views\Product\Create.aspx
 
 > [!NOTE] 
 > 
@@ -153,5 +153,5 @@ Stránka v **obrázek 6** znázorňuje chybové zprávy vracené při zadání n
 
 V tomto kurzu jste zjistili, jak chcete využít výhod vazač modelu dat poznámky k provedení ověření v rámci aplikace ASP.NET MVC. Jste zjistili, jak používat různé typy ověření jako je povinná a StringLength atributů. Také jste zjistili, jak používat tyto atributy při práci se službou Microsoft Entity Framework.
 
->[!div class="step-by-step"]
-[Předchozí](validating-with-a-service-layer-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](validating-with-a-service-layer-vb.md)

@@ -1,28 +1,28 @@
 ---
 uid: aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
-title: "Začínáme s OWIN a Katana | Microsoft Docs"
+title: Začínáme s OWIN a Katana | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/27/2013
 ms.topic: article
 ms.assetid: 6dae249f-5ac6-4f6e-bc49-13bcd5a54a70
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 8922aada723da9b149ec111902fcd883c8241dfb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ac0302ef1a786f6b1eef8119b3134a965f01c533
+ms.sourcegitcommit: 5ab5c5f4bfdb0150f42ba84c2770eadf540cae48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/28/2018
 ---
 <a name="getting-started-with-owin-and-katana"></a>Začínáme s OWIN a Katana
 ====================
 podle [Wasson Jan](https://github.com/MikeWasson)
 
-[Otevřete Web Interface pro .NET (OWIN)](http://owin.org/) definuje abstrakci mezi .NET webové servery a webové aplikace. Protože webový server z aplikace, OWIN usnadňuje vytvoření middleware pro vývoj webů .NET. Navíc OWIN usnadňuje port webové aplikace k jiným hostitelům &#8212; například vlastní hostování služby systému Windows nebo jiný proces.
+[Otevřete Web Interface pro .NET (OWIN)](http://owin.org/) definuje abstrakci mezi .NET webové servery a webové aplikace. Protože webový server z aplikace, OWIN usnadňuje vytvoření middleware pro vývoj webů .NET. Navíc OWIN usnadňuje port webových aplikací na jiné hostitele&#8212;například vlastní hostování služby systému Windows nebo jiný proces.
 
 OWIN je specifikace vlastněných komunity, není implementace. Projekt Katana je sada open-source OWIN součásti vyvinuté společností Microsoft. Obecné přehled OWIN a Katana, najdete v tématu [Přehled projektu Katana](an-overview-of-project-katana.md). V tomto článku I se pustíme přímo do kódu začít pracovat.
 
@@ -74,7 +74,7 @@ Stisknutím klávesy F5 spusťte ladění. Visual Studio se otevře okno prohlí
 
 ## <a name="self-host-owin-in-a-console-application"></a>Vlastní hostování OWIN v konzolové aplikaci
 
-Je snadné převést hostování IIS pro vlastní hostování v vlastní proces, který tuto aplikaci. S hostování IIS IIS funguje jako HTTP server a jako proces tohoto hostitele k serveru. S vlastní hostování, vaše aplikace vytvoří proces a použije **HttpListener** třída jako HTTP server.
+Je snadné převést hostování IIS pro vlastní hostování v vlastní proces, který tuto aplikaci. S hostování IIS IIS funguje jako HTTP server a jako proces, který je hostitelem služby. S vlastní hostování, vaše aplikace vytvoří proces a použije **HttpListener** třída jako HTTP server.
 
 V sadě Visual Studio vytvořte novou konzolovou aplikaci. V okně konzoly Správce balíčků zadejte následující příkaz:
 
@@ -108,6 +108,6 @@ Teď použijte CTRL + F5 a spusťte aplikaci bez ladění, tak, aby Visual Studi
 
 ## <a name="next-steps"></a>Další kroky
 
-- [Detekce třídy pro spuštění OWIN](owin-startup-class-detection.md)
+- [Rozpoznání spouštěcí třídy OWIN](owin-startup-class-detection.md)
 - [Použít k hostování na vlastním rozhraní ASP.NET Web API OWIN](../../../web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api.md)
 - [Hostování na vlastním SignalR pomocí OWIN](../../../signalr/overview/deployment/tutorial-signalr-self-host.md)

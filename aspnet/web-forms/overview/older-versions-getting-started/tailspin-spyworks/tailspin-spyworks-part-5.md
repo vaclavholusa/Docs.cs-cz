@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
-title: "Část 5: Obchodní logiky | Microsoft Docs"
+title: 'Část 5: Obchodní logiky | Microsoft Docs'
 author: JoeStagner
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 5 přidá některé obchodní logiku."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 5 přidá některé obchodní logiku.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: e205788e05a2ad94d86d4847c11c40898b1c3113
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e4342e634ef8c4bcf4e0085650a28f414ab23736
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-5-business-logic"></a>Část 5: Obchodní logiky
 ====================
@@ -27,7 +27,7 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 > Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 5 přidá některé obchodní logiku.
 
 
-## <a id="_Toc260221671"></a>Přidání některé obchodní logiky
+## <a id="_Toc260221671"></a>  Přidání některé obchodní logiky
 
 Chceme našich zkušeností nákupní být k dispozici vždy, když někdo navštíví našeho webu. Návštěvníků bude možné procházet a přidání položek do nákupního košíku, i když nejsou registrované nebo přihlášení. Jakmile jsou připravené k rezervaci budou mít možnost ověřit a pokud nejsou ještě členy bude mít k vytvoření účtu.
 
@@ -85,7 +85,7 @@ Za předpokladu, že žádné chyby došlo k ovládací prvek předává na str�
 
 Aktuálně jsme nebyly dosud implementován popisovač globální chyb, by se dostala neošetřené v naší aplikaci výjimku, ale jsme se to za chvíli napravit.
 
-Všimněte si také použití příkazu Debug.Fail() (dostupné prostřednictvím`using System.Diagnostics;)`
+Všimněte si také použití příkazu Debug.Fail() (dostupné prostřednictvím `using System.Diagnostics;)`
 
 Je je aplikace spuštěna v rámci ladicího programu, tato metoda zobrazí podrobné dialogové okno s informacemi o stavu aplikace spolu s chybovou zprávu, která určíme.
 
@@ -159,7 +159,7 @@ Nyní Pojďme ad metodu ke zpracování za podmínek, když uživatel změní je
 
 [!code-csharp[Main](tailspin-spyworks-part-5/samples/sample14.cs)]
 
-Se základními funkcemi odebrat a aktualizace na místě můžeme implementovat logiku, která ve skutečnosti aktualizuje nákupní košík v databázi. (V MyShoppingCart.cs)
+Se základními funkcemi odebrat a aktualizace na místě můžeme implementovat logiku, která ve skutečnosti aktualizuje nákupní košík v databázi. (In MyShoppingCart.cs)
 
 [!code-csharp[Main](tailspin-spyworks-part-5/samples/sample15.cs)]
 
@@ -187,6 +187,6 @@ V této fázi v projektu na vývoj jsme jsou Příprava implementovat proces che
 
 Než tak umožňuje generovat databázi členství a přidejte uživatele do úložiště členství pomocí sady Visual Studio.
 
->[!div class="step-by-step"]
-[Předchozí](tailspin-spyworks-part-4.md)
-[další](tailspin-spyworks-part-6.md)
+> [!div class="step-by-step"]
+> [Předchozí](tailspin-spyworks-part-4.md)
+> [další](tailspin-spyworks-part-6.md)

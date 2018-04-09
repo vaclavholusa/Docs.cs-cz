@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-vb
-title: "Úprava animace z na straně serveru (VB) | Microsoft Docs"
+title: Úprava animace z na straně serveru (VB) | Microsoft Docs
 author: wenz
-description: "V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Animací může také..."
+description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Animací může také...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c5b23cce529be24157a8a3f9136de7ad7bafc1ea
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2b9ce85fc5040b2318233b3c553c2cf53dd03555
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="modifying-animations-from-the-server-side-vb"></a>Úprava animace z na straně serveru (VB)
 ====================
@@ -62,6 +62,6 @@ Nakonec přidejte `AnimationExtender` v řízení na aktuální stránku, `<form
 
 Animace je vytvořený pomocí kódu na straně serveru C# / VB. ([Kliknutím zobrazit obrázek v plné velikosti](modifying-animations-from-the-server-side-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](triggering-an-animation-in-another-control-vb.md)
-[další](executing-animations-using-client-side-code-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](triggering-an-animation-in-another-control-vb.md)
+> [další](executing-animations-using-client-side-code-vb.md)

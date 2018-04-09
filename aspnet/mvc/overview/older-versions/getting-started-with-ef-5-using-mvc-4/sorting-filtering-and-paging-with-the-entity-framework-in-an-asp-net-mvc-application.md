@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Řazení, filtrování a stránkování s platformou Entity Framework v aplikaci ASP.NET MVC (3 10) | Microsoft Docs"
+title: Řazení, filtrování a stránkování s platformou Entity Framework v aplikaci ASP.NET MVC (3 10) | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f9b68abeba19561a327bad5ee4be80d79af1a550
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 09327b760d9be38d7e004cbcef08cad4eab3a26c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>Řazení, filtrování a stránkování s platformou Entity Framework v aplikaci ASP.NET MVC (3 10)
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -146,7 +146,7 @@ Tento kód přidá `page` parametr, aktuální parametr pořadí řazení a aktu
 
 První stránka se zobrazí, nebo pokud uživatel nebyl klikli stránkování nebo řazení odkaz, všechny parametry budou mít hodnotu null. Po kliknutí na odkaz stránkování `page` proměnná bude obsahovat číslo stránky pro zobrazení.
 
-`A ViewBag`Vlastnost nabízí zobrazení s aktuální pořadí řazení, protože to musí být součástí stránkování odkazy. Chcete-li zachovat pořadí řazení, stejné při stránkování:
+`A ViewBag` Vlastnost nabízí zobrazení s aktuální pořadí řazení, protože to musí být součástí stránkování odkazy. Chcete-li zachovat pořadí řazení, stejné při stránkování:
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample9.cs)]
 
@@ -277,7 +277,7 @@ Windows Azure SQL Database je služba relační databáze založené na cloudu, 
 
     ![Vytvoření pomocí připojení databáze na portálu pro správu](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image12.png)
 
- **Nový webový server - vytvořit vlastní** otevře se průvodce.
+   **Nový webový server - vytvořit vlastní** otevře se průvodce.
 3. V **nový web** krok v průvodci zadejte řetězec ve **URL** pole, které chcete použít jako jedinečnou adresu URL pro vaši aplikaci. Úplnou adresu URL bude obsahovat co zadáte a příponu, která se zobrazí vedle textového pole. Na obrázku "ConU", ale tuto adresu URL je pravděpodobně prováděné, budete muset. Zvolte jiný.
 
     ![Vytvoření pomocí připojení databáze na portálu pro správu](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image13.png)
@@ -297,11 +297,11 @@ Windows Azure SQL Database je služba relační databáze založené na cloudu, 
   
     ![Krok nastavení databáze z nový webový server - vytvořit pomocí Průvodce databáze](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image16.png)  
 
- Následující obrázek ukazuje použití existující Server SQL a přihlášení.   
+    Následující obrázek ukazuje použití existující Server SQL a přihlášení.   
   
     ![Krok nastavení databáze z nový webový server - vytvořit pomocí Průvodce databáze](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image17.png)  
   
- Vrátí portálu pro správu na stránku webové servery a **stav** sloupci se zobrazuje vytvoření webu. Po chvíli (obvykle během méně než minuty) **stav** sloupci se zobrazuje, že lokality byl úspěšně vytvořen. V navigačním panelu na levé straně, počet lokalit, které máte ve vašem účtu se zobrazí vedle **weby** ikonu a počet databází, se zobrazí vedle **databází SQL** ikonu.
+    Vrátí portálu pro správu na stránku webové servery a **stav** sloupci se zobrazuje vytvoření webu. Po chvíli (obvykle během méně než minuty) **stav** sloupci se zobrazuje, že lokality byl úspěšně vytvořen. V navigačním panelu na levé straně, počet lokalit, které máte ve vašem účtu se zobrazí vedle **weby** ikonu a počet databází, se zobrazí vedle **databází SQL** ikonu.
 
 ## <a name="deploy-the-application-to-windows-azure"></a>Nasazení aplikace do systému Windows Azure
 
@@ -354,16 +354,16 @@ Windows Azure SQL Database je služba relační databáze založené na cloudu, 
   
     ![Tlačítko StartPreview na kartě Preview](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image29.png)  
   
- Na kartě zobrazí seznam souborů, které se zkopírují na serveru. Zobrazení náhledu není vyžadován pro publikování aplikace, ale je užitečné funkce znát. V takovém případě nemusíte dělat nic s seznam souborů, který se zobrazí. Pouze soubory, které se změnily při příštím nasadit tuto aplikaci, bude v tomto seznamu.  
+    Na kartě zobrazí seznam souborů, které se zkopírují na serveru. Zobrazení náhledu není vyžadován pro publikování aplikace, ale je užitečné funkce znát. V takovém případě nemusíte dělat nic s seznam souborů, který se zobrazí. Pouze soubory, které se změnily při příštím nasadit tuto aplikaci, bude v tomto seznamu.  
   
     ![Výstup souboru StartPreview](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image30.png)
 12. Klikněte na tlačítko **publikování**.  
- Visual Studio spustí proces kopírování souborů na serveru systému Windows Azure.
+    Visual Studio spustí proces kopírování souborů na serveru systému Windows Azure.
 13. **Výstup** okno zobrazuje, jaké akce nasazení byly provedeny a hlásí úspěšné dokončení nasazení.  
   
     ![Výstup – okno hlášením úspěšného nasazení](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image31.png)
 14. Po úspěšném nasazení na adresu URL nasazené webové stránky automaticky otevře výchozí prohlížeč.  
- Aplikace, kterou jste vytvořili je nyní spuštěna v cloudu. Klikněte na kartu studenty.  
+    Aplikace, kterou jste vytvořili je nyní spuštěna v cloudu. Klikněte na kartu studenty.  
   
     ![Students_index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image32.png)
 
@@ -395,6 +395,6 @@ V tomto kurzu jste viděli, jak vytvořit datový model a implementovat základn
 
 Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Předchozí](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
-[další](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
+> [další](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)

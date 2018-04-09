@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
-title: "Vytváření akce (VB) | Microsoft Docs"
+title: Vytváření akce (VB) | Microsoft Docs
 author: microsoft
-description: "Zjistěte, jak přidat novou akci k řadiči ASP.NET MVC. Informace o požadavcích pro metodu jako akce."
+description: Zjistěte, jak přidat novou akci k řadiči ASP.NET MVC. Informace o požadavcích pro metodu jako akce.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3d1d355599c17df597f9c08d9d7f129fffc1a2e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c77e4738444c61d60bdd78a50b36f98be41fc271
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-action-vb"></a>Vytváření akce (VB)
 ====================
@@ -64,6 +64,6 @@ Pokud se pokusíte vyvolání akce kontroleru CompanySecrets() zadáním /Work/C
 
 **Obrázek 01**: volání metody NonAction ([Kliknutím zobrazit obrázek v plné velikosti](creating-an-action-vb/_static/image2.png))
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-controller-vb.md)
-[další](aspnet-mvc-controllers-overview-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-controller-vb.md)
+> [další](aspnet-mvc-controllers-overview-cs.md)

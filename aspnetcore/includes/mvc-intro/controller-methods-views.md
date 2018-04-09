@@ -87,7 +87,7 @@ Všechny `HttpGet` metody v kontroleru film podle podobný Princip. Získají ob
 
 * [Globalizace a lokalizace](xref:fundamentals/localization)
 * [Úvod do pomocné rutiny značky](xref:mvc/views/tag-helpers/intro)
-* [Vytváření Pomocníci značky](xref:mvc/views/tag-helpers/authoring)
+* [Autor značky pomocné rutiny](xref:mvc/views/tag-helpers/authoring)
 * [Ochrana proti padělání požadavků](xref:security/anti-request-forgery)
 * Chránit řadiči z [typu overpost](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application)
 * [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/)

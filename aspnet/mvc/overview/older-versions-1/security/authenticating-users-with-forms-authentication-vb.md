@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
-title: "Ověřování uživatelů s formulářové ověřování (VB) | Microsoft Docs"
+title: Ověřování uživatelů s formulářové ověřování (VB) | Microsoft Docs
 author: microsoft
-description: "Naučte se používat atribut [autorizovat] heslo k ochraně konkrétní stránky v aplikaci MVC. Zjistíte, jak používat správu webu příliš..."
+description: Naučte se používat atribut [autorizovat] heslo k ochraně konkrétní stránky v aplikaci MVC. Zjistíte, jak používat správu webu příliš...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c7d52e51158575c674264efd19c81de9b077d27b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0ff425a4c9728de2eec3d0c94e76cb51a15de487
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-forms-authentication-vb"></a>Ověřování uživatelů pomocí ověřování pomocí formulářů (VB)
 ====================
@@ -33,25 +33,25 @@ Před provedeme cokoliv jiného, jsme měli začít vytváření některých už
 
 **Obrázek 1 – spustit nástroj Správa webu**
 
-![clip_image002 [4]](authenticating-users-with-forms-authentication-vb/_static/image1.jpg)
+![clip_image002[4]](authenticating-users-with-forms-authentication-vb/_static/image1.jpg)
 
 V rámci nástroj pro správu webu při vytváření nových uživatelů a rolí na kartě Zabezpečení dialogu. Klikněte **vytvořit uživateli** odkaz pro vytvoření nového uživatele s názvem Stephen (viz obrázek 2). Zadejte uživatele Stephen heslem, které chcete (například *tajný klíč*).
 
 **Obrázek 2 – Vytvoření nového uživatele**
 
-![clip_image004 [4]](authenticating-users-with-forms-authentication-vb/_static/image2.jpg)
+![clip_image004[4]](authenticating-users-with-forms-authentication-vb/_static/image2.jpg)
 
 Při vytváření nové role první povolení role a definování jednu nebo více rolí. Povolit role kliknutím **povolit role** odkaz. Dále vytvořte roli s názvem *správci* kliknutím **vytvořit ani spravovat role** odkaz (viz obrázek 3).
 
 **Obrázek 3: vytvoření nové role**
 
-![clip_image006 [4]](authenticating-users-with-forms-authentication-vb/_static/image3.jpg)
+![clip_image006[4]](authenticating-users-with-forms-authentication-vb/_static/image3.jpg)
 
 Nakonec vytvořte nového uživatele s názvem Jan a přidružte Jan role správců tak, že kliknete na odkaz vytvořit uživatele výběr správci při vytváření Jan (viz obrázek 4).
 
 **Obrázek 4 – přidání uživatele k roli**
 
-![clip_image008 [4]](authenticating-users-with-forms-authentication-vb/_static/image4.jpg)
+![clip_image008[4]](authenticating-users-with-forms-authentication-vb/_static/image4.jpg)
 
 Když všechny je uvedená a provádí, měli byste mít dva nové uživatele s názvem Stephen a Jan. Musí být také novou roli s názvem Správci. Jan je členem role Správci nástroje a Stephen není.
 
@@ -69,7 +69,7 @@ Pokud volání akce CompanySecrets() zadáním adresy URL/Home nebo CompanySecre
 
 **Obrázek 5 – zobrazení přihlášení**
 
-![clip_image010 [4]](authenticating-users-with-forms-authentication-vb/_static/image5.jpg)
+![clip_image010[4]](authenticating-users-with-forms-authentication-vb/_static/image5.jpg)
 
 Zobrazení přihlášení můžete použít k zadání uživatelského jména a hesla. Pokud si nejste registrovaní uživatelé pak můžete kliknout na **zaregistrovat** odkazu přejděte na rejstříku zobrazení (viz obrázek 6). Registrace zobrazení můžete vytvořit nový uživatelský účet.
 
@@ -107,7 +107,7 @@ Nastavit výchozí databázi SQL Express je v pořádku při vývoji aplikace. P
 
 Prvním krokem je přidání všechny potřebné databázové objekty (tabulky a uložené procedury) pro vaši produkční databázi. Nejjednodušší způsob, jak přidat tyto objekty pro novou databázi je využít Průvodce instalací serveru SQL pro technologii ASP.NET (viz obrázek 8). Tento nástroj můžete spustit ze skupiny programu Microsoft Visual Studio 2008 otevřením Visual Studio 2008 příkazový řádek a spuštěním následujícího příkazu z příkazového řádku:
 
-ASPNET\_regsql
+aspnet\_regsql
 
 **Obrázek 8 – Průvodce instalací serveru SQL technologie ASP.NET**
 
@@ -117,9 +117,9 @@ Průvodce instalací serveru SQL technologie ASP.NET umožňuje vybrat databázi
 
 > [!NOTE]
 > Pokud nechcete použít Průvodce instalací serveru SQL pro ASP.NET, můžete najít skripty SQL pro přidání aplikace služby databázové objekty v následující složce:
-
-
-> C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727
+> 
+> 
+> C:\Windows\Microsoft.NET\Framework\v2.0.50727
 
 
 Po vytvoření nezbytné databázové objekty, budete muset upravit připojení k databázi používat aplikaci MVC. Upravte připojovací řetězec ApplicationServices v souboru webové konfigurace (web.config) tak, aby ukazoval na produkční databázi. Například upravené připojení v výpis 3 odkazuje na databázi s názvem MyProductionDB (původní připojovací řetězec ApplicationServices byla změněna na komentář).
@@ -152,6 +152,6 @@ Jakmile vytvoříte požadované přihlášení, budete muset mapovat přihláš
 
 V tomto kurzu jste zjistili, jak používat ověřování pomocí formulářů, při vytváření aplikace ASP.NET MVC. Nejprve jste zjistili, jak vytvořit nové uživatele a role a využívají nástroj pro správu webu. V dalším kroku jste zjistili, jak pomocí atributu [autorizovat] zabránit neoprávněným uživatelům v vyvolání akce kontroleru. Nakonec jste zjistili, jak nakonfigurovat aplikace MVC uložit uživatele a informace o rolích do provozní databáze.
 
->[!div class="step-by-step"]
-[Předchozí](preventing-javascript-injection-attacks-cs.md)
-[další](authenticating-users-with-windows-authentication-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](preventing-javascript-injection-attacks-cs.md)
+> [další](authenticating-users-with-windows-authentication-vb.md)

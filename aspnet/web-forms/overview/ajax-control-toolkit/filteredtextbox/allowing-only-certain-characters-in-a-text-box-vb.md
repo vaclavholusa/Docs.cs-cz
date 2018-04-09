@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
-title: "Povolení jenom určitých znaků v textovém poli (VB) | Microsoft Docs"
+title: Povolení jenom určitých znaků v textovém poli (VB) | Microsoft Docs
 author: wenz
-description: "Ovládací prvky ASP.NET ověření můžete zajistit, že jsou povolené jenom některé znaky vstup uživatele. Ale to stále nebrání uživatelům z zadáte neplatný..."
+description: Ovládací prvky ASP.NET ověření můžete zajistit, že jsou povolené jenom některé znaky vstup uživatele. Ale to stále nebrání uživatelům z zadáte neplatný...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b41ec1dfda5d85c625026e1f1e1ecd7e190ee3ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2b63a3582c09e08310c97d4adfc7b8273458a723
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-vb"></a>Povolení jenom určitých znaků v textovém poli (VB)
 ====================
@@ -45,10 +45,10 @@ Potom potřebujeme textové pole:
 
 Nakonec `FilteredTextBoxExtender` řízení postará znaky má uživatel na typ omezení. Nastavte nejprve, `TargetControlID` atribut `ID` z `TextBox` ovládacího prvku. Potom vyberte jednu z dostupných `FilterType` hodnoty:
 
-- `Custom`Výchozí; je nutné zadat seznam platný znaků
-- `LowercaseLetters`jenom malá písmena
-- `Numbers`pouze číslice
-- `UppercaseLetters`jenom velká písmena
+- `Custom` Výchozí; je nutné zadat seznam platný znaků
+- `LowercaseLetters` jenom malá písmena
+- `Numbers` pouze číslice
+- `UppercaseLetters` jenom velká písmena
 
 Pokud `Custom FilterType` se používá, `ValidChars` vlastnost musí být nastavené a zadat seznam znaky, které může být typu. Tím: Pokud se pokusíte vložit text do textového pole, se odeberou všechny neplatné znaky.
 
@@ -63,5 +63,5 @@ Spustit na stránku a zkuste zadat písmeno, pokud je povolen jazyk JavaScript, 
 
 Lze zadat pouze číslice ([Kliknutím zobrazit obrázek v plné velikosti](allowing-only-certain-characters-in-a-text-box-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](allowing-only-certain-characters-in-a-text-box-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](allowing-only-certain-characters-in-a-text-box-cs.md)

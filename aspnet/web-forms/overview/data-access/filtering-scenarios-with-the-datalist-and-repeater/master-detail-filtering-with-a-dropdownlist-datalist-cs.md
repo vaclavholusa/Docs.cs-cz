@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs
-title: "Filtrování s rozevírací seznam (C#) podrobností | Microsoft Docs"
+title: Filtrování s rozevírací seznam (C#) podrobností | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme zjistit, jak zobrazit sestavy a podrobností v jednu webovou stránku zobrazit \"hlavní\" záznamy a DataList s upozorněním pomocí DropDownLists..."
+description: V tomto kurzu jsme zjistit, jak zobrazit sestavy a podrobností v jednu webovou stránku zobrazit "hlavní" záznamy a DataList s upozorněním pomocí DropDownLists...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c2199f0957f4cbe1d35dd971744087da9af1abce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c84902ccf028c976246380abfaebb6a76c573603
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Seznam podrobnosti filtrování s rozevírací seznam (C#)
 ====================
@@ -103,12 +103,12 @@ Posledním krokem v naší a podrobností sestavy je seznam produkty spojené s 
 **Obrázek 7**: vyberte `GetProductsByCategoryID(categoryID)` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image17.png))
 
 
-Po kliknutí na tlačítko Další, Průvodce ObjectDataSource k zadání nám zdroj hodnota `GetProductsByCategoryID(categoryID)` metody  *`categoryID`*  parametr. Chcete použít hodnotu vybrané `categories` rozevírací seznam položky nastavit parametr Zdroj ovládacího prvku a ControlID k `Categories`.
+Po kliknutí na tlačítko Další, Průvodce ObjectDataSource k zadání nám zdroj hodnota `GetProductsByCategoryID(categoryID)` metody *`categoryID`* parametr. Chcete použít hodnotu vybrané `categories` rozevírací seznam položky nastavit parametr Zdroj ovládacího prvku a ControlID k `Categories`.
 
 
 [![Nastaví categoryID parametr na hodnotu rozevírací seznam kategorií](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
 
-**Obrázek 8**: nastavte  *`categoryID`*  parametr na hodnotu `Categories` rozevírací seznam ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
+**Obrázek 8**: nastavte *`categoryID`* parametr na hodnotu `Categories` rozevírací seznam ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
 
 
 Po dokončení průvodce Konfigurace zdroje dat, bude automaticky generovat Visual Studio `ItemTemplate` pro DataList, který zobrazí název a hodnotu každé datové pole. Umožňuje zvýšit DataList místo toho použít `ItemTemplate` který zobrazí pouze název produktu, kategorie, dodavatele, množství jednotce a ceníku spolu s `SeparatorTemplate` , vloží `<hr>` element mezi každou položku. Přechod do použít `ItemTemplate` z příklad v [zobrazení dat s ovládacími prvky opakovače a DataList](../displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs.md) kurzu, ale můžete použít libovolnou šablonu značek zjistíte nejvíce přitažlivé chování.
@@ -164,7 +164,7 @@ Z důvodu jsme zvolili hodnota `0` seznamu "– Vyberte kategorii –" položka 
 **Obrázek 13**: Pokud je vybrána položka seznamu "– Vyberte kategorii –", jsou zobrazeny žádné produkty ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image31.png))
 
 
-Pokud byste místo zobrazení *všechny* produkty Pokud je vybraná možnost "– Vyberte kategorii –", použijte hodnotu `-1` místo. Astute čtečky připomíná, že zpět v *a podrobností filtrování s rozevírací seznam* kurzu aktualizovali jsme `ProductsBLL` třídy `GetProductsByCategoryID(categoryID)` metoda tak, aby pokud  *`categoryID`*  Hodnota `-1` byl předán v všechny produktu, záznamů byly vráceny.
+Pokud byste místo zobrazení *všechny* produkty Pokud je vybraná možnost "– Vyberte kategorii –", použijte hodnotu `-1` místo. Astute čtečky připomíná, že zpět v *a podrobností filtrování s rozevírací seznam* kurzu aktualizovali jsme `ProductsBLL` třídy `GetProductsByCategoryID(categoryID)` metoda tak, aby pokud *`categoryID`* Hodnota `-1` byl předán v všechny produktu, záznamů byly vráceny.
 
 ## <a name="summary"></a>Souhrn
 
@@ -176,11 +176,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování...
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Randy Schmidt. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Další](master-detail-filtering-acess-two-pages-datalist-cs.md)
+> [!div class="step-by-step"]
+> [Next](master-detail-filtering-acess-two-pages-datalist-cs.md)

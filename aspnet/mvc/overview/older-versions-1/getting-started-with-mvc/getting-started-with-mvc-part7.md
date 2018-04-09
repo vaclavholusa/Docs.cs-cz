@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
-title: "Přidání ověřování do modelu | Microsoft Docs"
+title: Přidání ověřování do modelu | Microsoft Docs
 author: shanselman
-description: "Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze."
+description: Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
-ms.openlocfilehash: 5616c3c3bc77be0a770540d04cc2ae48ba9eedff
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 78dd6bdd81fcb51a3a21a8f1ee12b4b2bfc37db5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-to-the-model"></a>Přidání ověřování do modelu
 ====================
@@ -72,6 +72,6 @@ Spusťte aplikaci a znovu přejděte /Movies/Create a klikněte na tlačítko vy
 
 To je vyhledávání dobrý! Přidejme jeden další sloupec teď do databáze.
 
->[!div class="step-by-step"]
-[Předchozí](getting-started-with-mvc-part6.md)
-[další](getting-started-with-mvc-part8.md)
+> [!div class="step-by-step"]
+> [Předchozí](getting-started-with-mvc-part6.md)
+> [další](getting-started-with-mvc-part8.md)

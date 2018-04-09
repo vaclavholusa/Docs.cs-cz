@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
-title: "Spuštění animace v další ovládací prvek (C#) | Microsoft Docs"
+title: Spuštění animace v další ovládací prvek (C#) | Microsoft Docs
 author: wenz
-description: "V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Obecně platí, spouštění..."
+description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Obecně platí, spouštění...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d243eebc42b66f1e86b38a1b7531e527144ea7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e94046ca70607e37c1b5ef57d5cedef67a236b94
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="triggering-an-animation-in-another-control-c"></a>Spuštění animace v další ovládací prvek (C#)
 ====================
@@ -64,6 +64,6 @@ Všimněte si, speciální pořadí, ve kterém se zobrazují jednotlivé animac
 
 Panel animace spuštěna, myši klikněte na tlačítko ([Kliknutím zobrazit obrázek v plné velikosti](triggering-an-animation-in-another-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](disabling-actions-during-animation-cs.md)
-[další](modifying-animations-from-the-server-side-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](disabling-actions-during-animation-cs.md)
+> [další](modifying-animations-from-the-server-side-cs.md)

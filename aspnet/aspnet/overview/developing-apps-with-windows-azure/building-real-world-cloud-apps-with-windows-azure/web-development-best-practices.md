@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
-title: "Webové osvědčené postupy pro vývoj (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs"
+title: Webové osvědčené postupy pro vývoj (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
 author: MikeWasson
-description: "Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu..."
+description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: de536a0ca39cb752c0962f0c4ae36eb00b586bff
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4c43b256018d91e89b3427f90fc5c6cd018641f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Vývoj webové osvědčených postupů (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -165,6 +165,6 @@ Pro více webových vývoj osvědčené postupy najdete v následujících mater
 - [Oprava je ukázková aplikace - osvědčené postupy](the-fix-it-sample-application.md#bestpractices). Příloha do této e knihy uvádí počet osvědčené postupy, které byly implementovány v aplikaci, opravte ji.
 - [Kontrolní seznam webových vývojářů](http://webdevchecklist.com/asp.net)
 
->[!div class="step-by-step"]
-[Předchozí](continuous-integration-and-continuous-delivery.md)
-[další](single-sign-on.md)
+> [!div class="step-by-step"]
+> [Předchozí](continuous-integration-and-continuous-delivery.md)
+> [další](single-sign-on.md)

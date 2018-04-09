@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
-title: "Vytváření složitějších datový Model pro aplikaci ASP.NET MVC (4 10) | Microsoft Docs"
+title: Vytváření složitějších datový Model pro aplikaci ASP.NET MVC (4 10) | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: accb5ddab8df67dfa29038541dc0cd72eaac173c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c8f01b33c18ce77d91ee2f0db5e561b047c1891c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>Vytváření složitějších datový Model pro aplikaci ASP.NET MVC (4 10)
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -51,7 +51,7 @@ V *Models\Student.cs*, přidejte `using` příkaz pro `System.ComponentModel.Dat
 
 [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atribut slouží k určení datový typ, který je specifičtější než vnitřní typ databáze. V tomto případě chceme jenom udržování přehledu o datum, není datum a čas. [Datový typ výčtu](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) poskytuje pro mnoho typů dat, jako například *datum, čas, telefonní číslo, měny, EmailAddress* a další. `DataType` Atributu můžete také povolit aplikace automaticky poskytnout konkrétní typ funkce. Například `mailto:` může vytvořit odkaz pro [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), a datum selektor lze zadat pro [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) v prohlížečích podporujících [HTML5](http://html5.org/). [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy vysílá standardu HTML 5 [data -](http://ejohn.org/blog/html-5-data-attributes/) (vyslovováno *data dash*) atributy, které můžete porozumět standardu HTML 5 prohlížeče. [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy neposkytují žádné ověření.
 
-`DataType.Date`neurčuje formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole dat podle výchozích formátů podle serveru [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
+`DataType.Date` neurčuje formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole dat podle výchozích formátů podle serveru [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
 
 `DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
 
@@ -155,7 +155,7 @@ Více atributů můžete umístit na jeden řádek, můžete také napsat tříd
 
 ### <a name="the-fullname-calculated-property"></a>Položka FullName vypočítat vlastnost
 
-`FullName`je počítané vlastnosti, která vrátí hodnotu, která se vytvoří zřetězením dva další vlastnosti. Proto má jen `get` přistupujícího objektu a ne `FullName` vygeneruje sloupec v databázi.
+`FullName` je počítané vlastnosti, která vrátí hodnotu, která se vytvoří zřetězením dva další vlastnosti. Proto má jen `get` přistupujícího objektu a ne `FullName` vygeneruje sloupec v databázi.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
@@ -258,8 +258,8 @@ Vlastnosti cizího klíče a navigační odráží následující relace:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample23.cs)]
 
- > [!NOTE]
- > Podle konvence rozhraní Entity Framework umožňuje kaskádové odstranění pro použití hodnot Null cizí klíče a pro relace m: n. Výsledkem může být Cyklické kaskádové odstranění pravidla, která způsobí výjimku při spuštění kódu inicializátor. Například, pokud neuvedli `Department.InstructorID` vlastnost jako s možnou hodnotou Null, se zobrazí zpráva o výjimce při spuštění inicializátoru: "referenční vztah způsobí cyklické odkaz, který není povolen." V případě potřeby obchodní pravidla `InstructorID` vlastnost jako hodnotu Null, museli byste zakázat kaskádové odstranění na relace použijte následující fluent API: 
+  > [!NOTE]
+  > Podle konvence rozhraní Entity Framework umožňuje kaskádové odstranění pro použití hodnot Null cizí klíče a pro relace m: n. Výsledkem může být Cyklické kaskádové odstranění pravidla, která způsobí výjimku při spuštění kódu inicializátor. Například, pokud neuvedli `Department.InstructorID` vlastnost jako s možnou hodnotou Null, se zobrazí zpráva o výjimce při spuštění inicializátoru: "referenční vztah způsobí cyklické odkaz, který není povolen." V případě potřeby obchodní pravidla `InstructorID` vlastnost jako hodnotu Null, museli byste zakázat kaskádové odstranění na relace použijte následující fluent API: 
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
@@ -399,6 +399,6 @@ Nyní máte složitější datový model a příslušné databáze. V následuj�
 
 Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Předchozí](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[další](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [další](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)

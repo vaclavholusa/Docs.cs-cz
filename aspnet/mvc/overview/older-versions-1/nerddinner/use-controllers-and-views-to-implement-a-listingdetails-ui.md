@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
-title: "Implementace výpis/podrobnosti uživatelského rozhraní pomocí řadiče a zobrazení | Microsoft Docs"
+title: Implementace výpis/podrobnosti uživatelského rozhraní pomocí řadiče a zobrazení | Microsoft Docs
 author: microsoft
-description: "Krok 4 ukazuje, jak přidat řadič k aplikaci, která využívá našeho modelu uživatelům prostředí navigační výpis/podrobnosti dat..."
+description: Krok 4 ukazuje, jak přidat řadič k aplikaci, která využívá našeho modelu uživatelům prostředí navigační výpis/podrobnosti dat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 2f9148a2d419863229e2c5a2a0c98984001fcee5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ac3568941eeef24bd9857c5787471aadea15fc7f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>Implementace výpis/podrobnosti uživatelského rozhraní pomocí řadiče a zobrazení
 ====================
@@ -59,7 +59,7 @@ Otevře se také si novou třídu DinnersController v editoru kódu.
 
 Chceme, aby návštěvníkům používajícím naše aplikace procházet seznam nadcházející večeří a umožňuje jim klikněte na všechny večeři v seznamu zobrazíte konkrétní podrobnosti o něm. Provedeme to tím, že publikujete následující adresy URL z našich aplikace:
 
-| **ADRESA URL** | **Účel** |
+| **URL** | **Účel** |
 | --- | --- |
 | */Dinners/* | Zobrazení seznamu HTML z nadcházející večeří |
 | */Dinners/podrobnosti / [id]* | Zobrazit podrobnosti o konkrétní večeři indikován parametrem "id" vkládán adresu URL –, která bude odpovídat DinnerID večeři v databázi. Příklad: /Dinners/Details/2 by zobrazit stránku HTML s podrobnostmi o večeři, jehož hodnota DinnerID je 2. |
@@ -92,12 +92,12 @@ Výchozí pravidla směrování ASP.NET MVC jsou zaregistrovány v rámci metody
 
 "Trasy. MapRoute() "volání metody výše zaregistruje výchozí směrování pravidlo, které mapuje příchozí adresy URL do třídy kontroleru formátu adresy URL:" / {controller} / {action} / {id} "–"controller"je název třídy controller k vytváření instancí,"action"je název veřejná metoda k vyvolání na a "id" je volitelný parametr vkládán adresu URL, kterou lze předat jako argument metodu. Třetí parametr předaný volání metody "MapRoute()" je sada výchozích hodnot pro použití pro kontroler nebo akce nebo id hodnoty v případě, že se nenachází v adrese URL (řadiče = "Domů", akce = "Index", Id = "").
 
-Níže uvádíme tabulku, která ukazuje, jak různé adresy URL jsou mapovány pomocí výchozího "*/ {řadiče} / {action} / {id}"*pravidlo trasy:
+Níže uvádíme tabulku, která ukazuje, jak různé adresy URL jsou mapovány pomocí výchozího "<em>/ {řadiče} / {action} / {id}"</em>pravidlo trasy:
 
-| **ADRESA URL** | **Třída kontroleru** | **Metody akce** | **Parametry předané** |
+| **URL** | **Třída kontroleru** | **Metody akce** | **Parametry předané** |
 | --- | --- | --- | --- |
-| */ Večeří/podrobnosti/2* | DinnersController | Details(ID) | ID = 2 |
-| */ Večeří/Edit/5* | DinnersController | Edit(ID) | ID = 5 |
+| */ Večeří/podrobnosti/2* | DinnersController | Details(ID) | id=2 |
+| */ Večeří/Edit/5* | DinnersController | Edit(ID) | id=5 |
 | */ Večeří nebo vytvořit* | DinnersController | Create() | Není k dispozici |
 | */ Večeří* | DinnersController | Index() | Není k dispozici |
 | *Domů* | HomeController | Index() | Není k dispozici |
@@ -301,6 +301,6 @@ Nyní je k dispozici dobrý večeři procházení prostředí sestaven.
 
 Teď umožňuje povolit úprav podporu CRUD (vytvořit, číst, Update, Delete) dat formuláře.
 
->[!div class="step-by-step"]
-[Předchozí](build-a-model-with-business-rule-validations.md)
-[další](provide-crud-create-read-update-delete-data-form-entry-support.md)
+> [!div class="step-by-step"]
+> [Předchozí](build-a-model-with-business-rule-validations.md)
+> [další](provide-crud-create-read-update-delete-data-form-entry-support.md)

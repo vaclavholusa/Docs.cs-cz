@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
-title: "Iterace #4 – zpřístupnění aplikace volně vázány (C#) | Microsoft Docs"
+title: 'Iterace #4 – zpřístupnění aplikace volně vázány (C#) | Microsoft Docs'
 author: microsoft
-description: "V této třetí iteraci jsme využít výhod několik softwaru vzory návrhu na bylo snazší spravovat a upravovat aplikace obraťte se na správce. Pro..."
+description: V této třetí iteraci jsme využít výhod několik softwaru vzory návrhu na bylo snazší spravovat a upravovat aplikace obraťte se na správce. Pro...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1b8df72f51b4730a1fa9178b51a3770ce9edf181
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 33221c6c3326c7034fe013f152579828e2fc8a3a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-c"></a>Iterace #4 – zpřístupnění aplikace volně vázány (C#)
 ====================
@@ -172,7 +172,7 @@ Naše vrstvy služby však musí být schopni projít ověřením chybové zprá
 
 Vzor Dekoratéra umožňuje zalomení existující třídy v novou třídu kvůli implementaci rozhraní. Naše obraťte se na správce projekt obsahuje třídu ModelStateWrapper obsažené v výpis 7. Třída ModelStateWrapper implementuje rozhraní výpis 8.
 
-**Výpis 7 – Models\Validation\ModelStateWrapper.cs**
+**Listing 7 - Models\Validation\ModelStateWrapper.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample7.cs)]
 
@@ -196,6 +196,6 @@ Pokud jsme vytvořili vrstvy služby, vzali jsme výhod vzoru Dekoratéra izolov
 
 Nakonec vzali jsme výhod vzor návrhu softwaru s názvem vzoru vkládání závislostí. Tento vzor umožňuje nám programu proti rozhraní (abstrakce) namísto konkrétní třídy. Implementace vzoru návrhu vkládání závislostí také díky kódu více možností intenzivního testování. V další iterace přidáme na našem projekt testování částí.
 
->[!div class="step-by-step"]
-[Předchozí](iteration-3-add-form-validation-cs.md)
-[další](iteration-5-create-unit-tests-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](iteration-3-add-form-validation-cs.md)
+> [další](iteration-5-create-unit-tests-cs.md)

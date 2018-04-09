@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/getting-started
-title: "Začínáme s ASP.NET MVC 5 | Microsoft Docs"
+title: Začínáme s ASP.NET MVC 5 | Microsoft Docs
 author: Rick-Anderson
-description: "Poznámka: Aktualizovanou verzi tohoto kurzu je k dispozici zde pomocí sady Visual Studio 2015. Nový kurz používá ASP.NET Core MVC 6, která poskytuje mnoho improvem..."
+description: 'Poznámka: Aktualizovanou verzi tohoto kurzu je k dispozici zde pomocí sady Visual Studio 2015. Nový kurz používá ASP.NET Core MVC 6, která poskytuje mnoho improvem...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,26 +12,25 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 1616b238612fa9f519418f583c40a46b9d81d8ce
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0f1fd2026691d3bc0e81b20a9731879d7a6041bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-aspnet-mvc-5"></a>Začínáme s ASP.NET MVC 5
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[consider RP](../../../../includes/razor.md)]
+[!INCLUDE [consider RP](../../../../includes/razor.md)]
 
- 
  V tomto kurzu naučit, základní informace o vytváření ASP.NET MVC 5 webovou aplikaci pomocí [Visual Studio 2017](https://www.visualstudio.com/). Poslední zdroje pro kurz umístěn na [Githubu](https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)
- 
- 
+
+
  V tomto kurzu napsal [Scott Guthrie](https://weblogs.asp.net/scottgu/) (twitter[ @scottgu ](https://twitter.com/scottgu) ), [Scott Hanselman](http://www.hanselman.com/blog/) (twitter: [ @shanselman ](https://twitter.com/shanselman) ) , a [Rick Anderson](https://twitter.com/RickAndMSFT) ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )
- 
+
  Potřebujete účet Azure k nasazení této aplikace na Azure:
- 
+
  - Můžete [zdarma otevřít účet Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -získáte kredity, můžete použít k vyzkoušení placených služeb Azure a i po jejich použití až můžete účet ponechat a používat bezplatné služby Azure.
  - Můžete [aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -vaše předplatné MSDN vám dává kredity každý měsíc, které můžete použít pro placené služby Azure.
 
@@ -42,9 +41,9 @@ Začněte tím, že instalace a spuštění [Visual Studio 2017](https://www.vis
 
 Visual Studio je IDE, nebo integrované vývojové prostředí. Stejně jako zápisu dokumentů pomocí aplikace Microsoft Word, použijete k vytvoření aplikací rozhraní IDE. V sadě Visual Studio je seznam podél dolního zobrazuje různé možnosti, které jsou k dispozici pro vás. Je také nabídku, která obsahuje jiný způsob, jak provádět úlohy v prostředí IDE. (Například místo výběru **nový projekt** z **spustit** stránky, můžete použít nabídku a vyberte **soubor** &gt; **nový projekt**.)
 
-   
+
 ![](getting-started/_static/image1.png)  
- 
+
 
 ## <a name="creating-your-first-application"></a>Vytvoření vaší první aplikace
 
@@ -83,5 +82,5 @@ Potřebujete účet Azure k nasazení tohoto řešení do Azure. Pokud již úč
 - [Zdarma otevřít účet Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -získáte kredity, můžete použít k vyzkoušení placených služeb Azure a i po jejich použití až můžete účet ponechat a používat bezplatné služby Azure.
 - [Aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -vaše předplatné MSDN vám dává kredity každý měsíc, které můžete použít pro placené služby Azure.
 
->[!div class="step-by-step"]
-[Next](adding-a-controller.md)
+> [!div class="step-by-step"]
+> [Next](adding-a-controller.md)

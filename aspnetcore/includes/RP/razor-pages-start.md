@@ -10,9 +10,9 @@ Následující tabulka uvádí soubory a složky v projektu. V tomto kurzu *Star
 
 | Soubor nebo složka              | Účel |
 | ----------------- | ------------ | 
-| Wwwroot | Obsahuje statické soubory. V tématu [práce s statické soubory](xref:fundamentals/static-files). |
+| Wwwroot | Obsahuje statické soubory. V tématu [pracovat s statické soubory](xref:fundamentals/static-files). |
 | Stránky | Složka pro [stránky Razor](xref:mvc/razor-pages/index). | 
-| *appSettings.JSON určený* | [Konfigurace](xref:fundamentals/configuration/index) |
+| *appsettings.json* | [Konfigurace](xref:fundamentals/configuration/index) |
 | *Program.cs* | [Hostitelé](xref:fundamentals/hosting) aplikace ASP.NET Core.|
 | *Startup.cs* | Nakonfiguruje služby a kanál požadavku. V tématu [spuštění](xref:fundamentals/startup).|
 

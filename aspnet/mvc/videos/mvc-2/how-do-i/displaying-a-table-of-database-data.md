@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/displaying-a-table-of-database-data
-title: "Zobrazení tabulky dat z databáze | Microsoft Docs"
+title: Zobrazení tabulky dat z databáze | Microsoft Docs
 author: StephenWalther
-description: "Potřebujete zobrazíte sadu záznamů databáze v zobrazení ASP.NET MVC? Další dvě metody zobrazení záznamů do tabulky HTML. Zjistíte, jak k provedení všech t..."
+description: Potřebujete zobrazíte sadu záznamů databáze v zobrazení ASP.NET MVC? Další dvě metody zobrazení záznamů do tabulky HTML. Zjistíte, jak k provedení všech t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/20/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/displaying-a-table-of-database-data
 msc.type: video
-ms.openlocfilehash: 5ad1d531fb2e47dc5192d202ae1641b70f30f1e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a8c3bd87273323d570baeb662ec70083750914e8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-table-of-database-data"></a>Zobrazení tabulky dat z databáze
 ====================
@@ -24,8 +24,8 @@ podle [Stephen Walther](https://github.com/StephenWalther)
 
 Potřebujete zobrazíte sadu záznamů databáze v zobrazení ASP.NET MVC? Další dvě metody zobrazení záznamů do tabulky HTML. Zjistíte, jak k provedení všech formátování vložené. Můžete také zjistěte, jak vytvořit šablonu s uživatelský ovládací prvek ASP.NET MVC.
 
-[&#9654; Podívejte se na video (15 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/displaying-a-table-of-database-data)
+[&#9654;Podívejte se na video (15 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/displaying-a-table-of-database-data)
 
->[!div class="step-by-step"]
-[Předchozí](creating-model-classes-with-linq-to-sql.md)
-[další](what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-model-classes-with-linq-to-sql.md)
+> [další](what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)

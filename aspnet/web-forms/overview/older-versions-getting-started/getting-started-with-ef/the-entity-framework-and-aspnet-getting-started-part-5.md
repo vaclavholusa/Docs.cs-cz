@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
-title: "Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 5 | Microsoft Docs"
+title: Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 5 | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 5efc5ff367d5da5df060eba0028399af898a69fa
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7f351718123e881e832f4ac95af506ed601d3337
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>Začínáme s databáze Entity Framework 4.0 nejprve a 4 webových formulářů ASP.NET - část 5
 ====================
@@ -123,10 +123,10 @@ Spuštění stránky.
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-Vyberte lektorem. **Přiřadit kurzu** kurzů, které není lektorem naučit, zobrazí se seznam rozevíracího seznamu a **odebrat kurzu** rozevíracím seznamu zobrazí kurzů, které lektorem je již přiřazen k. V **přiřadit kurzu** vyberte kurzu a pak klikněte na tlačítko **přiřadit**. Během přesune **odebrat kurzu** rozevíracího seznamu. Vyberte kurz v **odebrat kurzu** části a klikněte na tlačítko **odebrat ***.* Během přesune **přiřadit kurzu** rozevíracího seznamu.
+Vyberte lektorem. <strong>Přiřadit kurzu</strong> kurzů, které není lektorem naučit, zobrazí se seznam rozevíracího seznamu a <strong>odebrat kurzu</strong> rozevíracím seznamu zobrazí kurzů, které lektorem je již přiřazen k. V <strong>přiřadit kurzu</strong> vyberte kurzu a pak klikněte na tlačítko <strong>přiřadit</strong>. Během přesune <strong>odebrat kurzu</strong> rozevíracího seznamu. Vyberte kurz v <strong>odebrat kurzu</strong> části a klikněte na tlačítko <strong>odebrat</strong><em>.</em> Během přesune <strong>přiřadit kurzu</strong> rozevíracího seznamu.
 
 Nyní jste viděli některé další způsoby, jak pracovat s související data. V následujícím kurzu budete Další informace o použití dědičnosti v datovém modelu ke zlepšení udržovatelnosti vaší aplikace.
 
->[!div class="step-by-step"]
-[Předchozí](the-entity-framework-and-aspnet-getting-started-part-4.md)
-[další](the-entity-framework-and-aspnet-getting-started-part-6.md)
+> [!div class="step-by-step"]
+> [Předchozí](the-entity-framework-and-aspnet-getting-started-part-4.md)
+> [další](the-entity-framework-and-aspnet-getting-started-part-6.md)

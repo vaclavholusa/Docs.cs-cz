@@ -1,7 +1,7 @@
 ---
-title: "Migrace ověřování a identita na jádro ASP.NET 2.0"
+title: Migrujte na technologii ASP.NET 2.0 základní ověřování a identita
 author: scottaddie
-description: "Tento článek popisuje nejběžnější kroky pro migraci ASP.NET Core 1.x ověřování a identita na technologii ASP.NET 2.0 jádra."
+description: Tento článek popisuje nejběžnější kroky pro migraci ASP.NET Core 1.x ověřování a identita na technologii ASP.NET 2.0 jádra.
 manager: wpickett
 ms.author: scaddie
 ms.date: 10/26/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: f0c29e6b4faa5c9d574726fc960f0c7c60092757
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 16369a14dbe97778724632317a82e11de5a8faed
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>Migrace ověřování a identita na jádro ASP.NET 2.0
+# <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a>Migrujte na technologii ASP.NET 2.0 základní ověřování a identita
 
 Podle [Scott Addie](https://github.com/scottaddie) a [ani Haovi společnosti](https://github.com/HaoK)
 

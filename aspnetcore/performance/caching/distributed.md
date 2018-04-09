@@ -1,7 +1,7 @@
 ---
-title: "Práce s distribuované mezipaměti ASP.NET Core"
+title: Práce s distribuované mezipaměti ASP.NET Core
 author: ardalis
-description: "Další informace o použití ASP.NET Core distribuované ukládání do mezipaměti ke zlepšení aplikace výkon a škálovatelnost, zejména v prostředí cloudu nebo server farmy."
+description: Další informace o použití ASP.NET Core distribuované ukládání do mezipaměti ke zlepšení aplikace výkon a škálovatelnost, zejména v prostředí cloudu nebo server farmy.
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 635c61cbb72a6a9eb822307bbc80936ee73bedc8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: d9c7c1c3b2c052ba11f9ea5eaaa424d69bc43eb2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="working-with-a-distributed-cache-in-aspnet-core"></a>Práce s distribuované mezipaměti ASP.NET Core
+# <a name="work-with-a-distributed-cache-in-aspnet-core"></a>Práce s distribuované mezipaměti ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/)
 
@@ -25,7 +25,7 @@ Distribuované mezipaměti může zvýšit výkon a škálovatelnost aplikací A
 
 ## <a name="what-is-a-distributed-cache"></a>Co je distribuované mezipaměti
 
-Distribuované mezipaměti, je sdílen více serverů aplikace (viz [základní informace o ukládání do mezipaměti](memory.md#caching-basics)). Informace v mezipaměti nejsou uloženy v paměti jednotlivých webových serverů a data uložená v mezipaměti je k dispozici pro všechny servery aplikace. To poskytuje několik výhod:
+Distribuované mezipaměti, je sdílen více serverů aplikace (viz [mezipaměti Základy](memory.md#caching-basics)). Informace v mezipaměti nejsou uloženy v paměti jednotlivých webových serverů a data uložená v mezipaměti je k dispozici pro všechny servery aplikace. To poskytuje několik výhod:
 
 1. Data uložená v mezipaměti je souvislý ve všech webových serverech. Uživatelé neuvidí odlišné výsledky v závislosti na tom, které webový server zpracovává jeho žádost
 
@@ -95,7 +95,7 @@ V ukázkovém kódu `RedisCache` implementace se používá, když je server nak
 [!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
 
 > [!NOTE]
-> Na místním počítači nainstalovat Redis, nainstalujte balíček chocolatey [https://chocolatey.org/packages/redis-64/](https://chocolatey.org/packages/redis-64/) a spusťte `redis-server` z příkazového řádku.
+> Na místním počítači nainstalovat Redis, nainstalujte balíček chocolatey [ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/) a spusťte `redis-server` z příkazového řádku.
 
 ## <a name="using-a-sql-server-distributed-cache"></a>Pomocí systému SQL Server distribuované mezipaměti
 
@@ -138,7 +138,7 @@ Při rozhodování, kdy zavedení `IDistributedCache` je pro aplikace, vyberte m
 
 * [Redis Cache v Azure](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [Databáze SQL v Azure](https://azure.microsoft.com/documentation/services/sql-database/)
-* [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
+* [Mezipaměti v paměti](xref:performance/caching/memory)
 * [Detekovat změny s tokeny změn](xref:fundamentals/primitives/change-tokens)
 * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
 * [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)

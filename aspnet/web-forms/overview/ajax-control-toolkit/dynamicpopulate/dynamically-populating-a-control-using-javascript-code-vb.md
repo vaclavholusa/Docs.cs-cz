@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
-title: "Dynamicky naplnění ovládacího prvku s použitím kódu JavaScript (VB) | Microsoft Docs"
+title: Dynamicky naplnění ovládacího prvku s použitím kódu JavaScript (VB) | Microsoft Docs
 author: wenz
-description: "DynamicPopulate ovládacího prvku ASP.NET AJAX Control Toolkit volání webové služby (nebo metodu stránky) a výplní výslednou hodnotu do cílový ovládací prvek na t..."
+description: DynamicPopulate ovládacího prvku ASP.NET AJAX Control Toolkit volání webové služby (nebo metodu stránky) a výplní výslednou hodnotu do cílový ovládací prvek na t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b4090b3a785059c8f09de266df79eba0914e9f13
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04bbc6fca839c2b1ed5cafd3a4411604b98e187d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-populating-a-control-using-javascript-code-vb"></a>Dynamicky naplnění ovládacího prvku s použitím kódu JavaScript (VB)
 ====================
@@ -62,6 +62,6 @@ Všimněte si, že se v kontextu přepínače, JavaScript výraz `this.value` od
 
 Klikněte na tlačítko načte data ze serveru ve formátu určeném ([Kliknutím zobrazit obrázek v plné velikosti](dynamically-populating-a-control-using-javascript-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](dynamically-populating-a-control-vb.md)
-[další](using-dynamicpopulate-with-a-user-control-and-javascript-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](dynamically-populating-a-control-vb.md)
+> [další](using-dynamicpopulate-with-a-user-control-and-javascript-vb.md)

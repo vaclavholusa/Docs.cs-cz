@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-a-controller
-title: "Přidávání řadiče | Microsoft Docs"
+title: Přidávání řadiče | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: c8f317b2ac133f560461917af1588b7a1fa51c4f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3864bab284661b0c44f9e4cb363c2d60eccc7c66
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller"></a>Přidání Kontroleru
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 Zastupuje rozhraní MVC *model-view-controller*. MVC je vzor pro vývoj aplikací, které jsou dobře navrženou, možností intenzivního testování a snadnou údržbou. Aplikace založené na MVC obsahují:
 
@@ -95,7 +95,7 @@ Vítejte metoda nahraďte následujícím kódem:
 
 [!code-csharp[Main](adding-a-controller/samples/sample4.cs)]
 
-Spusťte aplikaci a zadejte následující adresu URL:`http://localhost:xxx/HelloWorld/Welcome/1?name=Scott`
+Spusťte aplikaci a zadejte následující adresu URL: `http://localhost:xxx/HelloWorld/Welcome/1?name=Scott`
 
 ![](adding-a-controller/_static/image8.png)
 
@@ -115,6 +115,6 @@ Výchozí trasu pro mnoho aplikace MVC, funguje bez problémů. Dozvíte pozděj
 
 V těchto příkladech se to řadičem &quot;VC&quot; část MVC – to znamená, zobrazení a kontroler práci. Řadičem přímo vrací HTML. Normálně nechcete, aby řadiče vrácení HTML přímo, vzhledem k tomu, který se stane velmi náročná kódu. Místo toho obvykle použijeme oddělená zobrazení souboru šablony ke generování odpovědi HTML. Podíváme se na tom, jak jsme to lze provést další.
 
->[!div class="step-by-step"]
-[Předchozí](getting-started.md)
-[další](adding-a-view.md)
+> [!div class="step-by-step"]
+> [Předchozí](getting-started.md)
+> [další](adding-a-view.md)

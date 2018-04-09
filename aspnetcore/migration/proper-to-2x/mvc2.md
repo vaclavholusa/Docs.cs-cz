@@ -1,7 +1,7 @@
 ---
 title: Migrace z technologie ASP.NET na ASP.NET Core 2.0
 author: isaac2004
-description: "Zobrazí pokyny k migraci existujících ASP.NET MVC nebo webového rozhraní API aplikací na technologii ASP.NET 2.0 jádra."
+description: Zobrazí pokyny k migraci existujících ASP.NET MVC nebo webového rozhraní API aplikací na technologii ASP.NET 2.0 jádra.
 manager: wpickett
 ms.author: scaddie
 ms.date: 08/27/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 9424234011525afdba35824b6b324f5175ba023f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 58fac7642dbfdad58fef99f04d17de33e7218524
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-to-aspnet-core-20"></a>Migrace z technologie ASP.NET na ASP.NET Core 2.0
+# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>Migrace z technologie ASP.NET na ASP.NET Core 2.0
 
 Podle [Isaac Levin](https://isaaclevin.com)
 
@@ -23,7 +23,12 @@ Tento článek slouží jako referenční příručka pro migraci aplikace ASP.N
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [.NET core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější.
+Nainstalujte **jeden** z následujících [stáhne .NET: Windows](https://www.microsoft.com/net/download/windows):
+
+* .NET core SDK
+* Visual Studio pro Windows
+  * **Vývoj pro ASP.NET a webové** pracovního vytížení
+  * **Vývoj pro různé platformy .NET core** pracovního vytížení
 
 ## <a name="target-frameworks"></a>Cílové rozhraní
 Projekty ASP.NET Core 2.0 nabízí vývojářům flexibilitu cílení na .NET Core, rozhraní .NET Framework nebo obojí. V tématu [výběru mezi .NET Core a rozhraní .NET Framework pro server aplikace](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server) k určení, které cílové rozhraní je nejvhodnější.
@@ -145,7 +150,7 @@ V ASP.NET Core jsou statické soubory uložené v kořenu"web" (*&lt;obsahu koř
 
 Například prostředek bitové kopie v *wwwroot nebo obrázky* , jako je přístupný v prohlížeči na umístění složky `http://<app>/images/<imageFileName>`.
 
-**Poznámka:** podrobnější odkaz na zpracování statických souborů v ASP.NET Core, najdete v části [Úvod k práci s statické soubory v ASP.NET Core](xref:fundamentals/static-files).
+**Poznámka:** podrobnější odkaz na zpracování statických souborů v ASP.NET Core, najdete v části [pracovat s statické soubory v ASP.NET Core](xref:fundamentals/static-files).
 
 ## <a name="additional-resources"></a>Další zdroje
 

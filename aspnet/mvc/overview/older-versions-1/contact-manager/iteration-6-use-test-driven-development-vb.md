@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
-title: "Iterace #6 – použijte testy řízený vývoj (VB) | Microsoft Docs"
+title: 'Iterace #6 – použijte testy řízený vývoj (VB) | Microsoft Docs'
 author: microsoft
-description: "V této šesté iteraci přidáme nové funkce pro naši aplikaci tak, že nejprve zápis testů částí a psaní kódu pro testování částí. V této iteraci..."
+description: V této šesté iteraci přidáme nové funkce pro naši aplikaci tak, že nejprve zápis testů částí a psaní kódu pro testování částí. V této iteraci...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9b558df9c0b44f5f76115270d361b6022658f9f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 71b3425c5ca8cbfc1b89493c7afb26681f8bdc9d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-6--use-test-driven-development-vb"></a>Iterace #6 – použijte testy řízený vývoj (VB)
 ====================
@@ -155,7 +155,7 @@ Nyní se můžeme přesunout k druhý uživatelský scénář. Je potřeba k vyt
 
 Test v výpis 4 ověřuje, že volání Create() metoda s novou skupinu přidá do seznamu skupin vráceném metodou Index() skupině. Jinými slovy je-li vytvořit novou skupinu pak bych moct vrátit do nové skupiny ze seznamu skupin vráceném metodou Index().
 
-**Výpis 4 - Controllers\GroupControllerTest.vb**
+**Listing 4 - Controllers\GroupControllerTest.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample4.vb)]
 
@@ -163,7 +163,7 @@ Test v výpis 4 volá řadičem skupiny Create() metoda s nový kontakt skupiny.
 
 Změny skupiny řadiče v výpis 5 obsahuje minimální změn, které vyžadují předat nový test.
 
-**Výpis 5 - Controllers\GroupController.vb**
+**Listing 5 - Controllers\GroupController.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample5.vb)]
 
@@ -215,7 +215,7 @@ Výpis 11 obsahuje novou třídu FakeContactManagerRepository, která implementu
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample10.vb)]
 
-**Výpis 11 – Controllers\FakeContactManagerRepository.vb**
+**Listing 11 - Controllers\FakeContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample11.vb)]
 
@@ -250,7 +250,7 @@ Je potřeba vytvořit novou tabulku databáze skupiny. Postupujte podle těchto 
 | **Název sloupce** | **Datový typ** | **Povolit hodnoty Null** |
 | --- | --- | --- |
 | ID | int | False |
-| Název | Nvarchar(50) | False |
+| Název | nvarchar(50) | False |
 
 
 Dále je potřeba odstranit všechna data z tabulky kontaktů (jinak, jsme won t možné vytvořit relaci mezi tabulkami kontakty a skupiny). Postupujte podle těchto kroků:
@@ -360,6 +360,6 @@ Po jsme dokončení zápisu dostatek kódu vyhovět jejich požadavkům vyjádř
 
 V další iterace – poslední iterace – přepisování jsme naši aplikaci chcete využít výhod Ajax. Využitím Ajax, jsme budete zvýšit rychlost reakce a výkonu aplikace, obraťte se na správce.
 
->[!div class="step-by-step"]
-[Předchozí](iteration-5-create-unit-tests-vb.md)
-[další](iteration-7-add-ajax-functionality-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](iteration-5-create-unit-tests-vb.md)
+> [další](iteration-7-add-ajax-functionality-vb.md)

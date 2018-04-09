@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
-title: "Ověřování uživatelů pomocí ověřování systému Windows (VB) | Microsoft Docs"
+title: Ověřování uživatelů pomocí ověřování systému Windows (VB) | Microsoft Docs
 author: microsoft
-description: "Další informace o použití ověřování systému Windows v rámci aplikace MVC. Zjistíte, jak povolit ověřování systému Windows v rámci převeďte webové aplikace..."
+description: Další informace o použití ověřování systému Windows v rámci aplikace MVC. Zjistíte, jak povolit ověřování systému Windows v rámci převeďte webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 63b1266e03041c4261e71fd25e988c63932b503e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cf711d44a05d2457493998ed61e86536c65b5984
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a>Ověřování uživatelů pomocí ověřování systému Windows (VB)
 ====================
@@ -51,7 +51,7 @@ Pro provozní webové aplikace na straně, použijete službu IIS jako webový s
 
 > [!NOTE] 
 > 
-> Podrobnější přehled tyto různé typy ověřování, najdete v tématu [https://msdn.microsoft.com/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
+> Podrobnější přehled tyto různé typy ověřování, najdete v tématu [ https://msdn.microsoft.com/library/aa292114(VS.71).aspx ](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
 
 
 Chcete-li povolit konkrétní typ ověřování můžete použít Správce Internetové informační služby. Upozorňujeme, že všechny typy ověřování nejsou k dispozici v případě každý operační systém. Kromě toho pokud používáte službu IIS 7.0 se systémem Windows Vista, musíte povolit různé typy ověřování systému Windows, než se objeví v Správce Internetové informační služby. Otevřete **ovládacích panelů, programů, programy a funkce, nebo vypnout funkce systému Windows**a rozbalte uzel Internetová informační služba (viz obrázek 2).
@@ -92,6 +92,6 @@ Pokud na druhé straně používáte službu IIS zakázaný anonymní přístup 
 
 V tomto kurzu vysvětlení, jak můžete použít ověřování systému Windows v rámci aplikace ASP.NET MVC. Jste se dozvěděli, jak povolit ověřování systému Windows v souboru konfigurace webové aplikace a jak nakonfigurovat ověřování pomocí služby IIS. Nakonec jste zjistili, jak používat &lt;Autorizovat&gt; atribut omezit přístup k akce kontroleru konkrétní Windows uživatelům nebo skupinám.
 
->[!div class="step-by-step"]
-[Předchozí](authenticating-users-with-forms-authentication-vb.md)
-[další](preventing-javascript-injection-attacks-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](authenticating-users-with-forms-authentication-vb.md)
+> [další](preventing-javascript-injection-attacks-vb.md)

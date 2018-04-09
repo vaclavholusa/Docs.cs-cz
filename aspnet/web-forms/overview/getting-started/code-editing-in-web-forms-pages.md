@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/code-editing-in-web-forms-pages
-title: "ASP.NET – webové formuláře v sadě Visual Studio 2013 úpravy kódu | Microsoft Docs"
+title: ASP.NET – webové formuláře v sadě Visual Studio 2013 úpravy kódu | Microsoft Docs
 author: Erikre
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/03/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 8714f673cb0434189ca23d2dda14035d8652a051
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 79b10df04432490d6338dadb8f7ddd36192beb3e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>Kód úpravy webových formulářů ASP.NET v sadě Visual Studio 2013
 ====================
@@ -46,7 +46,7 @@ K dokončení tohoto návodu, budete potřebovat:
     >   
     > Pokud používáte Visual Studio, tento návod předpokládá, že jste vybrali **vývoj webů** kolekce nastavení při prvním spuštění sady Visual Studio. Další informace najdete v tématu [postupy: nastavení prostředí vyberte vývoj webové](https://msdn.microsoft.com/library/ff521558.aspx).
 
- Úvod do sady Visual Studio a ASP.NET, najdete v části [vytvoření základní stránky webových formulářů ASP.NET 4.5 ve Visual Studiu 2013](creating-a-basic-web-forms-page.md).   
+  Úvod do sady Visual Studio a ASP.NET, najdete v části [vytvoření základní stránky webových formulářů ASP.NET 4.5 ve Visual Studiu 2013](creating-a-basic-web-forms-page.md).   
  
 
 ## <a name="creating-a-web-application-project-and-a-page"></a>Vytvoření projektu webové aplikace a stránky
@@ -98,19 +98,19 @@ Editor kódu v sadě Visual Studio pomáhá zabránit chybám, jak napsat kód, 
 
 
 1. V **návrhu** klikněte dvakrát na prázdnou stránku vytvořit obslužnou rutinu události pro **zatížení** událostí pro stránku.   
-Obslužné rutiny události používají pouze jako místo napsat kód.
+   Obslužné rutiny události používají pouze jako místo napsat kód.
 2. Uvnitř obslužné rutiny, zadejte následující řádek obsahující chyby a stiskněte klávesu **ENTER**:
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample1.cs)]
 
- Po stisknutí klávesy **ENTER**, editoru kódu umístí podtržení zelenou a červený (běžně volání &quot;vlnovkou&quot; řádky) v oblasti kódu, které mají problémy. Zelená podtržení zobrazuje varování. Červené podtržení označuje chybu, která je nutné opravit. 
+   Po stisknutí klávesy **ENTER**, editoru kódu umístí podtržení zelenou a červený (běžně volání &quot;vlnovkou&quot; řádky) v oblasti kódu, které mají problémy. Zelená podtržení zobrazuje varování. Červené podtržení označuje chybu, která je nutné opravit. 
 
     Podržte ukazatel myši nad `myStr` zobrazíte popis toho, o upozornění. Navíc podržte ukazatel myši nad červené podtržení zobrazíte chybovou zprávu.
 
     Následující obrázek znázorňuje kód s podtržení.
 
     ![Úvodní text v zobrazení návrhu](code-editing-in-web-forms-pages/_static/image5.png "uvítací text v zobrazení návrhu")  
- Chyba musí být vyřešeny přidáním středníkem `;` na konec řádku. Upozornění jednoduše vás upozorní, že jste nepoužili `myStr` ještě proměnné.  
+   Chyba musí být vyřešeny přidáním středníkem `;` na konec řádku. Upozornění jednoduše vás upozorní, že jste nepoužili `myStr` ještě proměnné.  
 
     > [!NOTE] 
     > 
@@ -137,7 +137,7 @@ V této části Průvodce napsat jednoduchý kód a potom z něj extrahujte meto
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample2.cs?highlight=3-16)]
 
- Kód vytvoří **ArrayList** používá smyčku do něj hodnoty objektu a potom pomocí další smyčky zobrazí obsah **ArrayList** objektu.
+   Kód vytvoří **ArrayList** používá smyčku do něj hodnoty objektu a potom pomocí další smyčky zobrazí obsah **ArrayList** objektu.
 4. Stiskněte klávesu **CTRL + F5** spuštění stránky, a pak klikněte na **tlačítko** a ujistěte se, že se zobrazí následující výstup:   
 
     [!code-html[Main](code-editing-in-web-forms-pages/samples/sample3.html)]

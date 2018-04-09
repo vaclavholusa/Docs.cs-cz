@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-cs
-title: "Parametrizované dotazy pomocí SqlDataSource (C#) | Microsoft Docs"
+title: Parametrizované dotazy pomocí SqlDataSource (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu budeme pokračovat naše pohled na ovládací prvek SqlDataSource a zjistěte, jak definovat parametrizované dotazy. Parametry mohou být zadány oba decla..."
+description: V tomto kurzu budeme pokračovat naše pohled na ovládací prvek SqlDataSource a zjistěte, jak definovat parametrizované dotazy. Parametry mohou být zadány oba decla...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b66c68b8306b905a800465ab0ed720ae6f9d16b9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 87abf3029919eb9e3c2c931abfb4beb0b2f92fdb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-c"></a>Parametrizované dotazy pomocí SqlDataSource (C#)
 ====================
@@ -235,7 +235,7 @@ Začněte přidáním SqlDataSource k `ParameterizedQueries.aspx` a nastavit jeh
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-cs/samples/sample10.sql)]
 
-`ORDER BY NEWID()`Vrátí náhodné řazení záznamů (v tématu [pomocí `NEWID()` náhodně řazení záznamů](http://www.sqlteam.com/item.asp?ItemID=8747)). `SELECT TOP 1`Vrátí první záznam ze sady výsledků. V kostce řečeno, tento dotaz vrací `CategoryID` a `CategoryName` hodnoty sloupců z jedné, náhodně vybrané kategorie.
+`ORDER BY NEWID()` Vrátí náhodné řazení záznamů (v tématu [pomocí `NEWID()` náhodně řazení záznamů](http://www.sqlteam.com/item.asp?ItemID=8747)). `SELECT TOP 1` Vrátí první záznam ze sady výsledků. V kostce řečeno, tento dotaz vrací `CategoryID` a `CategoryName` hodnoty sloupců z jedné, náhodně vybrané kategorie.
 
 K zobrazení kategorie s `CategoryName` hodnotu, přidání ovládacího prvku popisek na stránku, nastavte jeho `ID` vlastnost `CategoryNameLabel`a vymažte jeho `Text` vlastnost. Prostřednictvím kódu programu načíst data z ovládacího prvku SqlDataSource, musíme vyvolání jeho `Select()` metoda. [ `Select()` Metoda](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx) očekává, že jeden vstupní parametr typu [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx), která určuje, jak by měla být data messaged před vrácením. To může obsahovat pokyny, řazení a filtrování dat a data, která webové ovládací prvky při řazení nebo procházení dat z ovládacího prvku SqlDataSource používá. Pro náš příklad, ale jsme nejsou zobrazeny t potřeba data před vrácením upravit a proto bude předávat `DataSourceSelectArguments.Empty` objektu.
 
@@ -246,7 +246,7 @@ Následující kód ukazuje, jak načíst záznamy ze `RandomCategoryDataSource`
 
 [!code-csharp[Main](using-parameterized-queries-with-the-sqldatasource-cs/samples/sample11.cs)]
 
-`randomCategoryView[0]`Vrátí první `DataRowView` v zobrazení DataView. `randomCategoryView[0]["CategoryName"]`Vrátí hodnotu `CategoryName` sloupec v této první řádek. Všimněte si, zda je zobrazení DataView volného typu. Chcete-li hodnota konkrétní sloupce musíme předat název sloupce jako řetězec (v tomto případě CategoryName). Obrázek 13 zobrazuje zpráva zobrazená v `CategoryNameLabel` při zobrazení stránky. Samozřejmě kategorie skutečný název zobrazený náhodně vybrány ve `RandomCategoryDataSource` SqlDataSource na každou, navštivte stránku (včetně postback).
+`randomCategoryView[0]` Vrátí první `DataRowView` v zobrazení DataView. `randomCategoryView[0]["CategoryName"]` Vrátí hodnotu `CategoryName` sloupec v této první řádek. Všimněte si, zda je zobrazení DataView volného typu. Chcete-li hodnota konkrétní sloupce musíme předat název sloupce jako řetězec (v tomto případě CategoryName). Obrázek 13 zobrazuje zpráva zobrazená v `CategoryNameLabel` při zobrazení stránky. Samozřejmě kategorie skutečný název zobrazený náhodně vybrány ve `RandomCategoryDataSource` SqlDataSource na každou, navštivte stránku (včetně postback).
 
 
 [![S náhodně vybrané kategorie, název se zobrazí](using-parameterized-queries-with-the-sqldatasource-cs/_static/image13.gif)](using-parameterized-queries-with-the-sqldatasource-cs/_static/image25.png)
@@ -306,12 +306,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Scott Clyde, Randell Schmidt a Ken Pespisa. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](querying-data-with-the-sqldatasource-control-cs.md)
-[další](inserting-updating-and-deleting-data-with-the-sqldatasource-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](querying-data-with-the-sqldatasource-control-cs.md)
+> [další](inserting-updating-and-deleting-data-with-the-sqldatasource-cs.md)

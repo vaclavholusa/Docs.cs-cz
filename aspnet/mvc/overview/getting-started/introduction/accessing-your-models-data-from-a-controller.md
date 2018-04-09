@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
-title: "Přístup k vašemu modelu datům z řadiče | Microsoft Docs"
+title: Přístup k vašemu modelu datům z řadiče | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 91bfa5fe3c5bd3029b7d7c12c8831e1653fb1d2b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d3dfa079c334e04f368531456ec2ec4e9728f893
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>Přístup k vašemu modelu datům z řadiče
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 V této části vytvoříte novou `MoviesController` třídy a napsat kód, který načte data pro film a zobrazí v prohlížeči pomocí šablony zobrazení.
 
@@ -40,7 +40,7 @@ V **přidat vygenerované uživatelské rozhraní** dialogové okno, klikněte n
 - Vyberte **MovieDBContext (MvcMovie.Models)** pro třída kontextu dat.
 - Pro daný název Kontroleru zadejte **MoviesController**.
 
- Následující obrázek ukazuje dialog dokončené.  
+  Následující obrázek ukazuje dialog dokončené.  
   
 ![](accessing-your-models-data-from-a-controller/_static/image3.png)   
 
@@ -64,7 +64,7 @@ Vyberte **vytvořit nový** odkaz. Zadejte některé podrobnosti o film a poté 
 ![](accessing-your-models-data-from-a-controller/_static/image5.png)
 
 > [!NOTE]
-> Nelze zadat desetinných míst nebo čárkami pole cena. Pro podporu ověřování jQuery pro neanglická národní prostředí, které používají čárkou (&quot;,&quot;) pro desetinné čárky a formát data neanglických USA, musíte zahrnout *globalize.js* a konkrétní  *cultures/Globalize.cultures.js* souboru (z [https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) a JavaScript používat `Globalize.parseFloat`. I budete ukazují, jak to udělat v dalším kurzu. Teď zadejte jenom celá čísla, jako je 10.
+> Nelze zadat desetinných míst nebo čárkami pole cena. pro podporu ověřování jQuery pro neanglická národní prostředí, které používají čárkou (&quot;,&quot;) pro desetinné čárky a formát data neanglických USA, musíte zahrnout *globalize.js* a konkrétní  *cultures/Globalize.cultures.js* souboru (z [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) a JavaScript používat `Globalize.parseFloat`. I budete ukazují, jak to udělat v dalším kurzu. Teď zadejte jenom celá čísla, jako je 10.
 
 
 Kliknutím **vytvořit** tlačítko způsobí, že formulář odeslat na server, kde film informace se ukládají v databázi. Potom budete přesměrováni na */Movies* adresu URL, kde se můžete podívat na nově vytvořený video ve výpisu.
@@ -157,6 +157,6 @@ Až budete hotovi, zavřete připojení kliknutím pravým tlačítkem *MovieDBC
 
 Nyní máte databázi a stránkami zobrazit, upravit, aktualizovat a odstranit data. V dalším kurzu jsme budete zkontrolujte zbytek automaticky generovaný kód a přidejte `SearchIndex` metoda a `SearchIndex` zobrazení, které umožňuje hledat filmy v této databázi. Další informace o používání rozhraní Entity Framework s MVC najdete v tématu [vytváření datového modelu Entity Framework pro aplikaci ASP.NET MVC](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-connection-string.md)
-[další](examining-the-edit-methods-and-edit-view.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-connection-string.md)
+> [další](examining-the-edit-methods-and-edit-view.md)

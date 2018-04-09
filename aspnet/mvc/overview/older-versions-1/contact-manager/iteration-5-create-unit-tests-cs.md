@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
-title: "Iterace #5 – testů jednotek vytvořit (C#) | Microsoft Docs"
+title: 'Iterace #5 – testů jednotek vytvořit (C#) | Microsoft Docs'
 author: microsoft
-description: "V páté iteraci jsme snadněji naše aplikace spravovat a upravovat přidáním testování částí. Jsme model třídy modelu našich dat a vytvářet testy částí pro o..."
+description: V páté iteraci jsme snadněji naše aplikace spravovat a upravovat přidáním testování částí. Jsme model třídy modelu našich dat a vytvářet testy částí pro o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f9b2d05ec8756d68f6bd2f387c85faf03abd167e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7a61b5791a40088df9d27f7b1bd37df1831ef22b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-5--create-unit-tests-c"></a>Iterace #5 – vytvoření testování částí (C#)
 ====================
@@ -105,9 +105,9 @@ Například můžete použít model objektu rozhraní k vygenerování verzi moc
 
 Visual Studio nezahrnuje framework model objektu. Existuje však několik architektury model objektu komerční s otevřeným zdrojem k dispozici pro rozhraní .NET framework:
 
-1. Moq – toto rozhraní je k dispozici v rámci licence BSD s otevřeným zdrojem. Můžete si stáhnout Moq z [https://code.google.com/p/moq/](https://code.google.com/p/moq/).
-2. Rhino Mocks – toto rozhraní je k dispozici v části s otevřeným zdrojem BSD licencí. Můžete si stáhnout Rhino Mocks z [http://ayende.com/projects/rhino-mocks.aspx](http://ayende.com/projects/rhino-mocks.aspx).
-3. Typemock Odpojovač - Toto je komerční framework. Můžete si stáhnout zkušební verzi z [http://www.typemock.com/](http://www.typemock.com/).
+1. Moq – toto rozhraní je k dispozici v rámci licence BSD s otevřeným zdrojem. Můžete si stáhnout Moq z [ https://code.google.com/p/moq/ ](https://code.google.com/p/moq/).
+2. Rhino Mocks – toto rozhraní je k dispozici v části s otevřeným zdrojem BSD licencí. Můžete si stáhnout Rhino Mocks z [ http://ayende.com/projects/rhino-mocks.aspx ](http://ayende.com/projects/rhino-mocks.aspx).
+3. Typemock Odpojovač - Toto je komerční framework. Můžete si stáhnout zkušební verzi z [ http://www.typemock.com/ ](http://www.typemock.com/).
 
 V tomto kurzu rozhodli používat Moq. Ale můžete stejným způsobem použít Rhino Mocks nebo Typemock Odpojovač vytvořit model objektů aplikace obraťte se na správce.
 
@@ -158,7 +158,7 @@ První test ověřuje, že a obraťte se na platný nevygeneruje chybu ověřen�
 
 Kód pro tyto testy je obsažený v výpis 1.
 
-**Výpis 1 - Models\ContactManagerServiceTest.cs**
+**Listing 1 - Models\ContactManagerServiceTest.cs**
 
 [!code-csharp[Main](iteration-5-create-unit-tests-cs/samples/sample1.cs)]
 
@@ -239,6 +239,6 @@ Jsme vytvořili dvě sady testů jednotek. Nejdřív jsme testovali ověřovací
 
 V další iterace jsme upravit aplikaci obraťte se na správce, tak, aby podporoval skupiny kontaktu. Tato nová funkce přidáme do aplikace pomocí procesu návrhu softwaru s názvem testy řízený vývoj.
 
->[!div class="step-by-step"]
-[Předchozí](iteration-4-make-the-application-loosely-coupled-cs.md)
-[další](iteration-6-use-test-driven-development-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](iteration-4-make-the-application-loosely-coupled-cs.md)
+> [další](iteration-6-use-test-driven-development-cs.md)

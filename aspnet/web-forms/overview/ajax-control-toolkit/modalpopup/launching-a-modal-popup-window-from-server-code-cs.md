@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
-title: "Spuštění modální automaticky otevíraném okně z kódu serveru (C#) | Microsoft Docs"
+title: Spuštění modální automaticky otevíraném okně z kódu serveru (C#) | Microsoft Docs
 author: wenz
-description: "ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Ale některé scénáře vyžadují tento t..."
+description: ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Ale některé scénáře vyžadují tento t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cc2ccf8153de4f2633cc46ebbee2da199ba9d06e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04bb056ee29065a472a70d480568b897a789ae59
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="launching-a-modal-popup-window-from-server-code-c"></a>Spuštění modální automaticky otevíraném okně z kódu serveru (C#)
 ====================
@@ -72,5 +72,5 @@ Jak můžete vidět, a klikněte na tlačítko generuje zpětné volání a prov
 
 Modální automaticky otevřeném okně se zobrazí, když po kliknutí na buď tlačítek ([Kliknutím zobrazit obrázek v plné velikosti](launching-a-modal-popup-window-from-server-code-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Další](using-modalpopup-with-a-repeater-control-cs.md)
+> [!div class="step-by-step"]
+> [Next](using-modalpopup-with-a-repeater-control-cs.md)

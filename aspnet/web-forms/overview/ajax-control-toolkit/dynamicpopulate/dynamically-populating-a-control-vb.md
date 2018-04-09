@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
-title: "Dynamicky naplnění ovládacího prvku (VB) | Microsoft Docs"
+title: Dynamicky naplnění ovládacího prvku (VB) | Microsoft Docs
 author: wenz
-description: "DynamicPopulate ovládacího prvku ASP.NET AJAX Control Toolkit volání webové služby (nebo metodu stránky) a výplní výslednou hodnotu do cílový ovládací prvek na t..."
+description: DynamicPopulate ovládacího prvku ASP.NET AJAX Control Toolkit volání webové služby (nebo metodu stránky) a výplní výslednou hodnotu do cílový ovládací prvek na t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ec0b6d429f3eb4a7243201c2a91adde462cf6345
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2031a80be71a406e632955583d83920dd0f3ef7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-populating-a-control-vb"></a>Dynamicky naplnění ovládacího prvku (VB)
 ====================
@@ -55,12 +55,12 @@ K aktivaci dynamické plnění pak bude sloužit HTML tlačítko (jako ovládac�
 
 Nakonec potřebujeme `DynamicPopulateExtender` řízení přenosu věcí nahoru. Následující atributy se nastaví (kromě těch zřejmé, `ID` a `runat` = `"server"`):
 
-- `TargetControlID`umístění výsledek z volání webové služby
-- `ServicePath`Cesta k webové službě (vynechat, pokud chcete použít metodu stránky)
-- `ServiceMethod`Název webové metody nebo stránce – metoda
-- `ContextKey`informace o kontextu k odeslání do webové služby
-- `PopulateTriggerControlID`element, který aktivuje volání webové služby
-- `ClearContentsDuringUpdate`jestli se má prázdný target element během volání webové služby
+- `TargetControlID` umístění výsledek z volání webové služby
+- `ServicePath` Cesta k webové službě (vynechat, pokud chcete použít metodu stránky)
+- `ServiceMethod` Název webové metody nebo stránce – metoda
+- `ContextKey` informace o kontextu k odeslání do webové služby
+- `PopulateTriggerControlID` element, který aktivuje volání webové služby
+- `ClearContentsDuringUpdate` jestli se má prázdný target element během volání webové služby
 
 Jak můžete vidět, ovládacího prvku vyžaduje některé informace, ale vytvoření všechno, co je poměrně jednoduché. Zde je kód pro `DynamicPopulateExtender` ovládací prvek v aktuální scénář:
 
@@ -73,6 +73,6 @@ V prohlížeči spuštění stránky ASP.NET a klikněte na tlačítko; Zobrazí
 
 Klikněte na tlačítko načte data ze serveru ([Kliknutím zobrazit obrázek v plné velikosti](dynamically-populating-a-control-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](using-dynamicpopulate-with-a-user-control-and-javascript-cs.md)
-[další](dynamically-populating-a-control-using-javascript-code-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-dynamicpopulate-with-a-user-control-and-javascript-cs.md)
+> [další](dynamically-populating-a-control-using-javascript-code-vb.md)

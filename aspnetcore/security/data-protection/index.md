@@ -1,7 +1,7 @@
 ---
 title: Ochrana dat v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument slouží jako obsah v různých oblastech ochrany dat ASP.NET Core."
+description: Tento dokument slouží jako obsah v různých oblastech ochrany dat ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,70 +9,70 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/index
-ms.openlocfilehash: e08dea63f012c4a758f2e5561c4930d09cfee0ac
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 83b5bb1e6a4942a4d3e5ec0d445fa6e5a21fb533
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="data-protection-in-aspnet-core-consumer-apis-configuration-extensibility-apis-and-implementation"></a>Ochrana dat v ASP.NET Core: rozhraní API pro příjemce, konfiguraci, rozšiřitelnost rozhraní API a implementace
+# <a name="data-protection-in-aspnet-core"></a>Ochrana dat v ASP.NET Core
 
-* [Úvod do ochrany dat](introduction.md)
+* [Úvod do ochrany dat](xref:security/data-protection/introduction)
 
-* [Začínáme s rozhraními API na ochranu dat](using-data-protection.md)
+* [Začínáme s rozhraními API na ochranu dat](xref:security/data-protection/using-data-protection)
 
-* [Rozhraní API příjemců](consumer-apis/index.md)
+* [Rozhraní API příjemců](xref:security/data-protection/consumer-apis/index)
 
-  * [Přehled rozhraní API příjemců](consumer-apis/overview.md)
+  * [Přehled rozhraní API příjemců](xref:security/data-protection/consumer-apis/overview)
 
-  * [Účelové řetězce](consumer-apis/purpose-strings.md)
+  * [Účelové řetězce](xref:security/data-protection/consumer-apis/purpose-strings)
 
-  * [Hierarchie účelů a víceklientská architektura](consumer-apis/purpose-strings-multitenancy.md)
+  * [Hierarchie účelů a víceklientská architektura](xref:security/data-protection/consumer-apis/purpose-strings-multitenancy)
 
-  * [Použití funkce hash u hesla](consumer-apis/password-hashing.md)
+  * [Hodnota hash hesla](xref:security/data-protection/consumer-apis/password-hashing)
 
-  * [Omezení životnosti chráněných datových částí](consumer-apis/limited-lifetime-payloads.md)
+  * [Omezení životnosti chráněných datových částí](xref:security/data-protection/consumer-apis/limited-lifetime-payloads)
 
-  * [Zrušení ochrany datových částí s odvolanými klíči](consumer-apis/dangerous-unprotect.md)
+  * [Zrušení ochrany datových částí s odvolanými klíči](xref:security/data-protection/consumer-apis/dangerous-unprotect)
 
-* [Konfigurace](configuration/index.md)
+* [Konfigurace](xref:security/data-protection/configuration/index)
 
-  * [Konfigurace ochrany dat](configuration/overview.md)
+  * [Konfigurovat ochranu dat ASP.NET Core](xref:security/data-protection/configuration/overview)
 
-  * [Výchozí nastavení](configuration/default-settings.md)
+  * [Výchozí nastavení](xref:security/data-protection/configuration/default-settings)
 
-  * [Zásady pro celý počítač](configuration/machine-wide-policy.md)
+  * [Zásady pro celý počítač](xref:security/data-protection/configuration/machine-wide-policy)
 
-  * [Scénáře využívající DI](configuration/non-di-scenarios.md)
+  * [Scénáře využívající DI](xref:security/data-protection/configuration/non-di-scenarios)
 
-* [Rozšiřující rozhraní API](extensibility/index.md)
+* [Rozšiřující rozhraní API](xref:security/data-protection/extensibility/index)
 
-  * [Rozšiřitelnost základní kryptografie](extensibility/core-crypto.md)
+  * [Rozšiřitelnost základní kryptografie](xref:security/data-protection/extensibility/core-crypto)
 
-  * [Rozšiřitelnost správy klíčů](extensibility/key-management.md)
+  * [Rozšiřitelnost správy klíčů](xref:security/data-protection/extensibility/key-management)
 
-  * [Ostatní rozhraní API](extensibility/misc-apis.md)
+  * [Ostatní rozhraní API](xref:security/data-protection/extensibility/misc-apis)
 
-* [Implementace](implementation/index.md)
+* [Implementace](xref:security/data-protection/implementation/index)
 
-  * [Podrobnosti ověřeného šifrování](implementation/authenticated-encryption-details.md)
+  * [Podrobnosti ověřeného šifrování](xref:security/data-protection/implementation/authenticated-encryption-details)
 
-  * [Odvozování podklíčů a ověřené šifrování](implementation/subkeyderivation.md)
+  * [Odvozování podklíčů a ověřené šifrování](xref:security/data-protection/implementation/subkeyderivation)
 
-  * [Kontextová záhlaví](implementation/context-headers.md)
+  * [Kontextová záhlaví](xref:security/data-protection/implementation/context-headers)
 
-  * [Správa klíčů](implementation/key-management.md)
+  * [Správa klíčů](xref:security/data-protection/implementation/key-management)
 
-  * [Zprostředkovatelé úložiště klíčů](implementation/key-storage-providers.md)
+  * [Zprostředkovatelé úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers)
 
-  * [Šifrování klíčů v klidovém stavu](implementation/key-encryption-at-rest.md)
+  * [Šifrování klíčů v klidovém stavu](xref:security/data-protection/implementation/key-encryption-at-rest)
 
-  * [Neměnnost klíče a změna nastavení](implementation/key-immutability.md)
+  * [Klíče neměnitelnosti a nastavení](xref:security/data-protection/implementation/key-immutability)
 
-  * [Formát ukládání klíčů](implementation/key-storage-format.md)
+  * [Formát ukládání klíčů](xref:security/data-protection/implementation/key-storage-format)
 
-  * [Zprostředkovatelé dočasné ochrany dat](implementation/key-storage-ephemeral.md)
+  * [Zprostředkovatelé dočasné ochrany dat](xref:security/data-protection/implementation/key-storage-ephemeral)
 
-* [Kompatibilita](compatibility/index.md)
+* [Kompatibilita](xref:security/data-protection/compatibility/index)
 
-  * [Nahrazení <machineKey> v ASP.NET](xref:security/data-protection/compatibility/replacing-machinekey)
+  * [Nahrazení ASP.NET <machineKey> v ASP.NET Core](xref:security/data-protection/compatibility/replacing-machinekey)

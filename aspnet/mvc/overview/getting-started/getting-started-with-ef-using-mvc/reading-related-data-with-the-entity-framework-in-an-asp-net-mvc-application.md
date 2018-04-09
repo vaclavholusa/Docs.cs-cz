@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Čtení dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC | Microsoft Docs"
+title: Čtení dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC | Microsoft Docs
 author: tdykstra
 description: /ajax/tutorials/using-ajax-control-toolkit-controls-and-control-extenders-vb
 ms.author: aspnetcontent
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7a74d01f306abeeac5ac28c942f03001e0fe00f8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 06784d8b610856e71eae78b0db2d0253faedb955
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Čtení související Data pomocí rozhraní Entity Framework v aplikaci ASP.NET MVC
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stáhnout PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
@@ -156,7 +156,7 @@ Druhý `Include` metoda načte kurzy a pro každou kurz, který je načten nemá
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
 
-Jak je uvedeno nahoře, přes načítání není povinný, ale je potřeba pro zlepšení výkonu. Vzhledem k tomu, že zobrazení vždycky vyžaduje, aby `OfficeAssignment` entita, je efektivnější načíst, ve stejném dotazu. `Course`entity jsou požadovány, pokud je vybrána lektorem na webové stránce, takže přes načítání je lepší, než opožděného načítání jenom v případě, že stránka se zobrazí více často ke kurzu vybrané než bez.
+Jak je uvedeno nahoře, přes načítání není povinný, ale je potřeba pro zlepšení výkonu. Vzhledem k tomu, že zobrazení vždycky vyžaduje, aby `OfficeAssignment` entita, je efektivnější načíst, ve stejném dotazu. `Course` entity jsou požadovány, pokud je vybrána lektorem na webové stránce, takže přes načítání je lepší, než opožděného načítání jenom v případě, že stránka se zobrazí více často ke kurzu vybrané než bez.
 
 Pokud jste vybrali ID lektorem, vybrané lektorem se načítají ze seznamu vyučující v zobrazení modelu. Model zobrazení `Courses` vlastnost je pak načten pomocí `Course` entity z této lektorem `Courses` navigační vlastnost.
 
@@ -250,6 +250,6 @@ Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může z
 
 Odkazy na další zdroje Entity Framework najdete v [přístup k datům ASP.NET - doporučené prostředky](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
-[další](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
+> [další](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)

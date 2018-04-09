@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
-title: "Vytváření MVC 3 aplikace s Razor a Nerušivý JavaScript | Microsoft Docs"
+title: Vytváření MVC 3 aplikace s Razor a Nerušivý JavaScript | Microsoft Docs
 author: microsoft
-description: "Seznam uživatelů ukázkovou webovou aplikaci ukazuje, jak jednoduché je vytvoření aplikace ASP.NET MVC 3 pomocí zobrazovací modul Razor. Aplikace s ukázka..."
+description: Seznam uživatelů ukázkovou webovou aplikaci ukazuje, jak jednoduché je vytvoření aplikace ASP.NET MVC 3 pomocí zobrazovací modul Razor. Aplikace s ukázka...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/01/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 29b45c07b5498542abbf22c4c3001b1cee41edc9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9b273f6827cad2078b581d6da7b127198dfddaa5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>Vytváření MVC 3 aplikace s Razor a Nerušivý JavaScript
 ====================
@@ -54,7 +54,7 @@ V tomto kurzu nebudete používat poskytovatele členství prostředí ASP.NET, 
 
 ![Soln Exp](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image5.png)
 
-Upravit  *\_Layout.cshtml* souboru a nahraďte kód uvnitř `<div>` element s názvem `logindisplay` se zprávou  *&quot;* zakázáno přihlášení&quot;. Následující příklad ukazuje kód nové:
+Upravit  <em>\_Layout.cshtml</em> souboru a nahraďte kód uvnitř `<div>` element s názvem `logindisplay` se zprávou <em>&quot;</em>zakázáno přihlášení&quot;. Následující příklad ukazuje kód nové:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample1.cshtml)]
 
@@ -122,7 +122,7 @@ Přidejte následující `Details` metoda domácí řadiče:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample8.cs)]
 
-Klepněte pravým tlačítkem myši `Details` metoda a potom vyberte **přidat zobrazení**. Ověřte, zda **zobrazit třída dat** obsahuje pole **Mvc3Razor.Models.UserModel***.* Nastavit **zobrazit obsah** k **podrobnosti** a pak klikněte na **přidat**.
+Klepněte pravým tlačítkem myši `Details` metoda a potom vyberte <strong>přidat zobrazení</strong>. Ověřte, zda <strong>zobrazit třída dat</strong> obsahuje pole <strong>Mvc3Razor.Models.UserModel</strong><em>.</em> Nastavit <strong>zobrazit obsah</strong> k <strong>podrobnosti</strong> a pak klikněte na <strong>přidat</strong>.
 
 ![Přidání zobrazení podrobností](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
 

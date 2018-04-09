@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
-title: "Vytvoření vrstvy obchodní logiky (C#) | Microsoft Docs"
+title: Vytvoření vrstvy obchodní logiky (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu ukážeme, jak centralizovat obchodní pravidla do obchodní logiku vrstvy (BLL), který slouží jako prostředník pro výměnu dat mezi t..."
+description: V tomto kurzu ukážeme, jak centralizovat obchodní pravidla do obchodní logiku vrstvy (BLL), který slouží jako prostředník pro výměnu dat mezi t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7518ddd11a05a9e3d5df85e3cf6ceffa09a25060
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6e73e9e68e4abb0d382baa7da925c167809e417a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-business-logic-layer-c"></a>Vytvoření vrstvy obchodní logiky (C#)
 ====================
@@ -61,13 +61,13 @@ Dále umožňuje přidání metody do jednotlivých tříd jednoduše zabalit me
 
 Pro `ProductsBLL` třída je potřeba přidat celkem sedm metody:
 
-- `GetProducts()`Vrátí všechny produkty
-- `GetProductByProductID(productID)`Vrátí součin s ID zadaného produktu
-- `GetProductsByCategoryID(categoryID)`Vrátí všechny produkty z Zadaná kategorie
-- `GetProductsBySupplier(supplierID)`Vrátí všechny produkty z zadaný dodavatele
-- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)`Vloží nového produktu do databáze pomocí hodnot předané; Vrátí `ProductID` hodnotu nově vloženou záznamu
-- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)`Aktualizuje existující produkt v databázi pomocí hodnoty předané; Vrátí `true` Pokud přesně jeden řádek aktualizován, `false` jinak
-- `DeleteProduct(productID)`Odstraní zadaný produkt z databáze
+- `GetProducts()` Vrátí všechny produkty
+- `GetProductByProductID(productID)` Vrátí součin s ID zadaného produktu
+- `GetProductsByCategoryID(categoryID)` Vrátí všechny produkty z Zadaná kategorie
+- `GetProductsBySupplier(supplierID)` Vrátí všechny produkty z zadaný dodavatele
+- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)` Vloží nového produktu do databáze pomocí hodnot předané; Vrátí `ProductID` hodnotu nově vloženou záznamu
+- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)` Aktualizuje existující produkt v databázi pomocí hodnoty předané; Vrátí `true` Pokud přesně jeden řádek aktualizován, `false` jinak
+- `DeleteProduct(productID)` Odstraní zadaný produkt z databáze
 
 ProductsBLL.cs
 
@@ -205,12 +205,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu bylo Liz Shulok, společnosti Dennis Patterson, Carlos Santos a Hilton Giesenow. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-data-access-layer-cs.md)
-[další](master-pages-and-site-navigation-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-data-access-layer-cs.md)
+> [další](master-pages-and-site-navigation-cs.md)

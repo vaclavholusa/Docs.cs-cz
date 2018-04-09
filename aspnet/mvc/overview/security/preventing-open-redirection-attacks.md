@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/preventing-open-redirection-attacks
-title: "Prevence útoků otevřete přesměrování (C#) | Microsoft Docs"
+title: Prevence útoků otevřete přesměrování (C#) | Microsoft Docs
 author: jongalloway
-description: "Tento kurz popisuje, jak lze zabránit útokům otevřete přesměrování v aplikacích ASP.NET MVC. Tento kurz popisuje změny, které byly provedeny..."
+description: Tento kurz popisuje, jak lze zabránit útokům otevřete přesměrování v aplikacích ASP.NET MVC. Tento kurz popisuje změny, které byly provedeny...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 17944c0600a174176e3e9940f414b34f0835b800
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ec1cd1791eb6d32e7c1ea50bc6626929cad2960e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="preventing-open-redirection-attacks-c"></a>Prevence útoků otevřete přesměrování (C#)
 ====================
@@ -39,7 +39,7 @@ Na tomto snímku obrazovky uvidíme, že pokus o přístup k zobrazení /Account
 
 **Obrázek 01**: přihlašovací stránku s otevřete přesměrování
 
-Vzhledem k tomu, že parametr řetězce dotazu ReturnUrl není ověřená, útočník ho upravit, abyste vložit libovolnou adresu URL do parametru k provedení útoku otevřete přesměrování. Ukazuje to jsme můžete změnit parametr ReturnUrl na [http://bing.com](http://bing.com), takže výsledný přihlašovací adresa URL bude/Account/přihlášení? ReturnUrl = http://www.bing.com/. Po úspěšně přihlašování k webu, jsme se přesměrují na [http://bing.com](http://bing.com). Vzhledem k tomu, že toto přesměrování není ověřen, může místo toho přejděte na škodlivé weby, které se pokouší přesvědčit uživatele, aby.
+Vzhledem k tomu, že parametr řetězce dotazu ReturnUrl není ověřená, útočník ho upravit, abyste vložit libovolnou adresu URL do parametru k provedení útoku otevřete přesměrování. Ukazuje to jsme můžete změnit parametr ReturnUrl na [ http://bing.com ](http://bing.com), takže výsledný přihlašovací adresa URL bude/Account/přihlášení? ReturnUrl =<http://www.bing.com/>. Po úspěšně přihlašování k webu, jsme se přesměrují na [ http://bing.com ](http://bing.com). Vzhledem k tomu, že toto přesměrování není ověřen, může místo toho přejděte na škodlivé weby, které se pokouší přesvědčit uživatele, aby.
 
 ### <a name="a-more-complex-open-redirection-attack"></a>Složitější otevřete útoku přesměrování
 
@@ -55,7 +55,7 @@ Všimněte si, že návratová adresa URL odkazuje na nerddiner.com, které chyb
 
 **Obrázek 02**: NerdDinner přihlašovací stránku s otevřete přesměrování
 
-Když jsme správně přihlásit, akce ASP.NET MVC AccountController přihlášení nám přesměruje na adresu URL zadanou v parametru řetězce dotazu returnUrl. V takovém případě je adresu URL, kterou má zadán útočník, který je [http://nerddiner.com/Account/LogOn](http://nerddiner.com/Account/LogOn). Pokud jsme velmi watchful, že je velmi pravděpodobné, že nebude, zjistíme zvlášť, protože útočník byl pečlivě zkontrolujte, zda jejich padělané stránka vypadá úplně stejně jako legitimní přihlašovací stránku. Tento přihlašovací stránku obsahuje, chyba zprávu požadavku, nemůžeme přihlásit znovu. Clumsy nás, jsme musí zadali heslo.
+Když jsme správně přihlásit, akce ASP.NET MVC AccountController přihlášení nám přesměruje na adresu URL zadanou v parametru řetězce dotazu returnUrl. V takovém případě je adresu URL, kterou má zadán útočník, který je [ http://nerddiner.com/Account/LogOn ](http://nerddiner.com/Account/LogOn). Pokud jsme velmi watchful, že je velmi pravděpodobné, že nebude, zjistíme zvlášť, protože útočník byl pečlivě zkontrolujte, zda jejich padělané stránka vypadá úplně stejně jako legitimní přihlašovací stránku. Tento přihlašovací stránku obsahuje, chyba zprávu požadavku, nemůžeme přihlásit znovu. Clumsy nás, jsme musí zadali heslo.
 
 [![](preventing-open-redirection-attacks/_static/image6.png)](preventing-open-redirection-attacks/_static/image5.png)
 
@@ -67,13 +67,13 @@ Když jsme znovu naše uživatelské jméno a heslo, padělané přihlašovací 
 
 Kód pro přihlášení akce v aplikaci ASP.NET MVC 2 je uveden níže. Všimněte si, že po úspěšném přihlášení kontroleru vrátí přesměrování returnUrl. Uvidíte, že žádné ověření se provádí před returnUrl parametr.
 
-**Výpis 1 – akce ASP.NET MVC 2 přihlášení v`AccountController.cs`**
+**Výpis 1 – akce ASP.NET MVC 2 přihlášení v `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample1.cs)]
 
 Nyní Podíváme se na změny akce ASP.NET MVC 3 přihlášení. Tento kód byl změněn na ověření parametru returnUrl voláním nové metody v System.Web.Mvc.Url pomocná třída s názvem `IsLocalUrl()`.
 
-**Výpis 2 – akce ASP.NET MVC 3 přihlášení v`AccountController.cs`**
+**Výpis 2 – akce ASP.NET MVC 3 přihlášení v `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample2.cs)]
 
@@ -85,7 +85,7 @@ Přidáním pomocnou metodu IsLocalUrl() a aktualizaci akce přihlášení k ov�
 
 Metoda UrlHelper IsLocalUrl() ve skutečnosti jenom volání do metody v System.Web.WebPages jako toto ověření používá i rozhraní ASP.NET Web Pages.
 
-**Výpis 3 – metoda IsLocalUrl() z ASP.NET MVC 3 UrlHelper`class`**
+**Výpis 3 – metoda IsLocalUrl() z ASP.NET MVC 3 UrlHelper `class`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample3.cs)]
 
@@ -107,7 +107,7 @@ Teď, když metoda IsLocalUrl() je na místě, jsme ji volat z našich akce při
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample6.cs)]
 
-Nyní jsme můžete otestovat útoku otevřete přesměrování probíhá pokus o přihlášení pomocí externí návratovou adresu URL. Umožňuje používat/Account/přihlášení? ReturnUrl = http://www.bing.com/ znovu.
+Nyní jsme můžete otestovat útoku otevřete přesměrování probíhá pokus o přihlášení pomocí externí návratovou adresu URL. Umožňuje použít /Account/LogOn? ReturnUrl =<http://www.bing.com/> znovu.
 
 [![](preventing-open-redirection-attacks/_static/image8.png)](preventing-open-redirection-attacks/_static/image7.png)
 

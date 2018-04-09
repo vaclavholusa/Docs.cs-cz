@@ -1,22 +1,22 @@
 ---
 uid: single-page-application/overview/introduction/other-libraries
-title: "Vědět, než Knockout knihovny? | Microsoft Docs"
+title: Vědět, než Knockout knihovny? | Microsoft Docs
 author: madskristensen
-description: "Vědět, než Knockout knihovny?"
+description: Vědět, než Knockout knihovny?
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/05/2013
 ms.topic: article
 ms.assetid: a8367c6d-ef94-4dff-a010-5eff9e6eea96
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/other-libraries
 msc.type: authoredcontent
-ms.openlocfilehash: 5a863f50401a4e2bab3f772374b7fd178f6c6cdf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6ac260e88fd156bad4b414e93325d5a04c490c88
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="know-a-library-other-than-knockout"></a>Vědět, než Knockout knihovny?
 ====================
@@ -57,15 +57,17 @@ Porovnání s další šablony zde uvedeny, aktivní ručníků teample poskytuj
 
 Zde jsou funkce poskytované službou každé šabloně SPA:
 
-|  | ASP.NET SPA | Páteřní | Úhlová/uloženy | Uloženy/KO | Členskými | Aktivní ručníků |
-| --- | --- | --- | --- | --- | --- | --- |
-| Ukázka ToDo | &#10003; |  | &#10003; | &#10003; | &#10003; |  |
-| Úplné šablony |  | &#10003; |  |  |  | &#10003; |
-| Navigační a historie |  | &#10003; | &#10003; |  | &#10003; | &#10003; |
-| Knihovnami |  |  |  |  |  |  |
-| úhlová |  |  | &#10003; |  |  |  |
-| &#8195; Páteřní |  | &#10003; |  |  |  |  |
-| Uloženy |  |  | &#10003; | &#10003; |  | &#10003; |
-| Durandal |  |  |  |  |  | &#10003; |
-| Členskými |  |  |  |  | &#10003; |  |
-| Knockout | &#10003; |  |  | &#10003; |  | &#10003; |
+
+|                        | ASP.NET SPA | Páteřní | Úhlová/uloženy | Breeze/KO |  Členskými   | Aktivní ručníků |
+|------------------------|-------------|----------|----------------|-----------|----------|-----------|
+|      Ukázka ToDo       |  &#10003;   |          |    &#10003;    | &#10003;  | &#10003; |           |
+|     Úplné šablony      |             | &#10003; |                |           |          | &#10003;  |
+| Navigační a historie |             | &#10003; |    &#10003;    |           | &#10003; | &#10003;  |
+|        Libaries        |             |          |                |           |          |           |
+|        úhlová         |             |          |    &#10003;    |           |          |           |
+|    &#8195;Backbone     |             | &#10003; |                |           |          |           |
+|         Uloženy         |             |          |    &#10003;    | &#10003;  |          | &#10003;  |
+|        Durandal        |             |          |                |           |          | &#10003;  |
+|         Členskými          |             |          |                |           | &#10003; |           |
+|        Knockout        |  &#10003;   |          |                | &#10003;  |          | &#10003;  |
+

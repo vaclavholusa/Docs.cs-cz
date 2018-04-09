@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
-title: "Přístup k vašemu modelu datům z řadiče | Microsoft Docs"
+title: Přístup k vašemu modelu datům z řadiče | Microsoft Docs
 author: shanselman
-description: "Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze."
+description: Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 msc.type: authoredcontent
-ms.openlocfilehash: cf81d351aef45af3640f5d113eb3619911e03606
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2ba1b73f40a920e27e4a03d9f703e62054d3f25c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>Přístup k vašemu modelu datům z řadiče
 ====================
@@ -63,6 +63,6 @@ Vytváří odkazy, které nebudou potřebujeme, takže jsme budete odstranit v t
 
 Nyní je k dispozici jednoduchý seznam naše film data. Ale když kliknete na odkaz "Vytvořit nové", jsme budete dojde k chybě jako ji není připojili! Umožňuje implementovat metodu vytvořit akce a umožní uživateli zadat nové filmy v naší databázi.
 
->[!div class="step-by-step"]
-[Předchozí](getting-started-with-mvc-part4.md)
-[další](getting-started-with-mvc-part6.md)
+> [!div class="step-by-step"]
+> [Předchozí](getting-started-with-mvc-part4.md)
+> [další](getting-started-with-mvc-part6.md)

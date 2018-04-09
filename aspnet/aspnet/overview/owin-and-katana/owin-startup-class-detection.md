@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/owin-startup-class-detection
-title: "Detekce třídy pro spuštění OWIN | Microsoft Docs"
+title: Detekce třídy pro spuštění OWIN | Microsoft Docs
 author: Praburaj
-description: "Tento kurz ukazuje, jak nakonfigurovat, které třídy pro spuštění OWIN je načtena. Další informace o OWIN najdete v části Přehled Katana projektu. V tomto kurzu se..."
+description: Tento kurz ukazuje, jak nakonfigurovat, které třídy pro spuštění OWIN je načtena. Další informace o OWIN najdete v části Přehled Katana projektu. V tomto kurzu se...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 08257f55-36f4-4e39-9c88-2a5602838c79
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: 618f8fa23630dcf9821a54415766dc015694e535
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 33d2745b24387419e5614c62c2d46948427b242a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="owin-startup-class-detection"></a>Detekce třídy pro spuštění OWIN
 ====================
@@ -38,20 +38,20 @@ podle [Praburaj Thiagarajan](https://github.com/Praburaj), [Rick Anderson](https
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample1.cs)]
 
- `OwinStartup` Atribut přepsání zásady vytváření názvů. Také můžete zadat popisný název k tomuto atributu, ale pomocí popisný název vyžaduje, abyste také použít `appSetting` element v konfiguračním souboru.
+   `OwinStartup` Atribut přepsání zásady vytváření názvů. Také můžete zadat popisný název k tomuto atributu, ale pomocí popisný název vyžaduje, abyste také použít `appSetting` element v konfiguračním souboru.
 3. **Element appSetting v konfiguračním souboru**: `appSetting` element přepsání `OwinStartup` atribut a zásady vytváření názvů. Může mít několik tříd spuštění (každý využívající `OwinStartup` atribut) a konfigurace, které třída při spuštění bude načten do konfiguračního souboru pomocí značek podobný následujícímu:  
 
     [!code-xml[Main](owin-startup-class-detection/samples/sample2.xml)]
 
- Následující klíč, který explicitně určuje třídy pro spuštění a sestavení lze také použít: 
+   Následující klíč, který explicitně určuje třídy pro spuštění a sestavení lze také použít: 
 
     [!code-xml[Main](owin-startup-class-detection/samples/sample3.xml)]
 
- Následující kód XML v konfiguračním souboru Určuje název třídy popisný spuštění `ProductionConfiguration`.  
+   Následující kód XML v konfiguračním souboru Určuje název třídy popisný spuštění `ProductionConfiguration`.  
 
     [!code-xml[Main](owin-startup-class-detection/samples/sample4.xml)]
 
- Výše uvedený kód musí být použit s následující `OwinStartup` atribut, který určuje popisný název a způsobí, že `ProductionStartup2` třídy ke spuštění.
+   Výše uvedený kód musí být použit s následující `OwinStartup` atribut, který určuje popisný název a způsobí, že `ProductionStartup2` třídy ke spuštění.
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample5.cs?highlight=1,16)]
 4. Chcete-li zakázat zjišťování OWIN při spuštění přidejte `appSetting owin:AutomaticAppStartup` s hodnotou `"false"` v souboru web.config.
@@ -63,29 +63,29 @@ podle [Praburaj Thiagarajan](https://github.com/Praburaj), [Rick Anderson](https
 1. Vytvořit prázdnou webovou aplikaci Asp.Net a pojmenujte ji **StartupDemo**. -Instalovat `Microsoft.Owin.Host.SystemWeb` pomocí Správce balíčků NuGet. Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a potom **Konzola správce balíčků**. Zadejte následující příkaz:  
 
     [!code-powershell[Main](owin-startup-class-detection/samples/sample7.ps1)]
-- Přidání třídy pro spuštění OWIN. V sadě Visual Studio 2013 klikněte pravým tlačítkem na projekt a vyberte **přidat třídu**. - v **přidat novou položku** dialogové okno zadejte *OWIN* do pole hledání a změňte název na Startup.cs, a pak klikněte na **přidat**.  
+2. Přidání třídy pro spuštění OWIN. V sadě Visual Studio 2013 klikněte pravým tlačítkem na projekt a vyberte **přidat třídu**. - v **přidat novou položku** dialogové okno zadejte *OWIN* do pole hledání a změňte název na Startup.cs, a pak klikněte na **přidat**.  
   
-    ![](owin-startup-class-detection/_static/image1.png)   
+     ![](owin-startup-class-detection/_static/image1.png)   
   
- Další čas, který chcete přidat *třídy pro spuštění Owin*, bude ve dostupné z **přidat** nabídky.  
+   Další čas, který chcete přidat *třídy pro spuštění Owin*, bude ve dostupné z **přidat** nabídky.  
    
-    ![](owin-startup-class-detection/_static/image2.png)  
+     ![](owin-startup-class-detection/_static/image2.png)  
   
- Alternativně můžete klikněte pravým tlačítkem na projekt a vyberte **přidat**, pak vyberte **nová položka**a pak vyberte **třídy pro spuštění Owin**.  
+   Alternativně můžete klikněte pravým tlačítkem na projekt a vyberte **přidat**, pak vyberte **nová položka**a pak vyberte **třídy pro spuštění Owin**.  
   
-    ![](owin-startup-class-detection/_static/image3.png)  
+     ![](owin-startup-class-detection/_static/image3.png)  
   
 - Nahraďte generovaného kódu v *Startup.cs* soubor s následující:  
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample8.cs?highlight=5,7,15-28,31-34)]
   
- `app.Use` Výrazu lambda slouží k registraci komponenty zadaný middleware do kanálu OWIN. V takovém případě nastavujeme protokolování příchozích požadavků před reagovat na příchozí požadavek. `next` Parametr je delegáta ( [Func](https://msdn.microsoft.com/library/bb534960(v=vs.100).aspx) &lt; [úloh](https://msdn.microsoft.com/library/dd321424(v=vs.100).aspx) &gt; ) další komponentou v kanálu. `app.Run` Výrazu lambda zachytí až kanálu na příchozí požadavky a poskytuje mechanismus odpovědi.
+  `app.Use` Výrazu lambda slouží k registraci komponenty zadaný middleware do kanálu OWIN. V takovém případě nastavujeme protokolování příchozích požadavků před reagovat na příchozí požadavek. `next` Parametr je delegáta ( [Func](https://msdn.microsoft.com/library/bb534960(v=vs.100).aspx) &lt; [úloh](https://msdn.microsoft.com/library/dd321424(v=vs.100).aspx) &gt; ) další komponentou v kanálu. `app.Run` Výrazu lambda zachytí až kanálu na příchozí požadavky a poskytuje mechanismus odpovědi.
      > [!NOTE]
      > Ve výše uvedeném kódu, budeme mít komentované `OwinStartup` atribut a My se spoléhat na konvence spuštěných třída s názvem `Startup` .-stiskněte ***F5*** ke spuštění aplikace. Dosáhl aktualizace několikrát.  
   
     ![](owin-startup-class-detection/_static/image4.png)  
-Poznámka: Na číslo zobrazené v obrázcích v tomto kurzu nebudou odpovídat na číslo se zobrazí. Milisekundu řetězec se používá k zobrazení novou odpověď, když obnovíte stránku.  
- Zobrazí se informace trasování v **výstup** okno.  
+  Poznámka: Na číslo zobrazené v obrázcích v tomto kurzu nebudou odpovídat na číslo se zobrazí. Milisekundu řetězec se používá k zobrazení novou odpověď, když obnovíte stránku.  
+  Zobrazí se informace trasování v **výstup** okno.  
   
     ![](owin-startup-class-detection/_static/image5.png)
 
@@ -105,7 +105,7 @@ V této části přidáme jiné třídy spuštění. Můžete přidat více tř�
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample10.cs?highlight=6,14-18)]
 
- `OwinStartup` Určuje atribut přetížení výše `TestingConfiguration` jako *popisný* název třída při spuštění.
+   `OwinStartup` Určuje atribut přetížení výše `TestingConfiguration` jako *popisný* název třída při spuštění.
 6. Otevřete *web.config* souboru a přidejte spouštěcí klíč aplikace OWIN, který určuje popisný název třídy spuštění:
 
     [!code-xml[Main](owin-startup-class-detection/samples/sample11.xml?highlight=3-5)]
@@ -122,11 +122,11 @@ V této části přidáme jiné třídy spuštění. Můžete přidat více tř�
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample14.cs)]
 
- Všechny tyto klíče aplikace OWIN při spuštění způsobí, že třída produkční ke spuštění. 
+    Všechny tyto klíče aplikace OWIN při spuštění způsobí, že třída produkční ke spuštění. 
 
     [!code-xml[Main](owin-startup-class-detection/samples/sample15.xml)]
 
- Klíč poslední spuštění určuje metodu spuštění konfigurace. Následující spouštěcí klíč OWIN aplikace můžete změnit název třídy pro konfiguraci `MyConfiguration` .
+    Klíč poslední spuštění určuje metodu spuštění konfigurace. Následující spouštěcí klíč OWIN aplikace můžete změnit název třídy pro konfiguraci `MyConfiguration` .
 
     [!code-xml[Main](owin-startup-class-detection/samples/sample16.xml)]
 
@@ -136,7 +136,7 @@ V této části přidáme jiné třídy spuštění. Můžete přidat více tř�
 
     [!code-xml[Main](owin-startup-class-detection/samples/sample17.xml?highlight=3-6)]
 
- Klíč poslední služby wins, tak v tomto případě `TestStartup` je zadán.
+   Klíč poslední služby wins, tak v tomto případě `TestStartup` je zadán.
 2. Nainstalujte Owinhost z pomocí PMC: 
 
     [!code-console[Main](owin-startup-class-detection/samples/sample18.cmd)]
@@ -144,14 +144,14 @@ V této části přidáme jiné třídy spuštění. Můžete přidat více tř�
 
     [!code-console[Main](owin-startup-class-detection/samples/sample19.cmd)]
 
- Příkazové okno se zobrazí: 
+   Příkazové okno se zobrazí: 
 
     [!code-console[Main](owin-startup-class-detection/samples/sample20.cmd)]
 4. Spustit prohlížeč s adresou URL `http://localhost:5000/`.  
   
     ![](owin-startup-class-detection/_static/image8.png)  
   
- OwinHost dodržení konvence spuštění uvedené výše.
+   OwinHost dodržení konvence spuštění uvedené výše.
 5. V příkazovém okně stisknutím klávesy Enter ukončete OwinHost.
 6. V `ProductionStartup` třídy, přidejte následující atribut OwinStartup, který určuje popisný název *ProductionConfiguration*.
 
@@ -160,9 +160,9 @@ V této části přidáme jiné třídy spuštění. Můžete přidat více tř�
 
     [!code-console[Main](owin-startup-class-detection/samples/sample22.cmd)]
 
- Třída při spuštění produkční je načten.  
+   Třída při spuštění produkční je načten.  
     ![](owin-startup-class-detection/_static/image9.png)  
- Naše aplikace má více tříd, spuštění a v tomto příkladu jsme mají odložené které třída při spuštění načíst do modulu runtime.
+   Naše aplikace má více tříd, spuštění a v tomto příkladu jsme mají odložené které třída při spuštění načíst do modulu runtime.
 8. Testovací následující možnosti při spuštění modulu runtime:
 
     [!code-console[Main](owin-startup-class-detection/samples/sample23.cmd)]

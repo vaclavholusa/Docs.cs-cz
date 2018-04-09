@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
-title: "Část 8: Nákupní košík s aktualizace Ajax | Microsoft Docs"
+title: 'Část 8: Nákupní košík s aktualizace Ajax | Microsoft Docs'
 author: jongalloway
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 8 obsahuje nákupní košík s aktualizace Ajax."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 8 obsahuje nákupní košík s aktualizace Ajax.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 75e1dff96f8b56d74c28ff9d522f4766fbad669f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 195c01ff0d71b2bfd0c00e71244d47a166330921
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-8-shopping-cart-with-ajax-updates"></a>Část 8: Nákupní košík s aktualizace Ajax
 ====================
@@ -161,6 +161,6 @@ Po načtení do nákupního košíku, můžete kliknutím na odebrat z košíku 
 Sestavili jsme si funkční nákupní košík, což umožňuje uživatelům zrušit registraci k přidávání položek do jejich košíku. V následující části jsme budete mohly k registraci a dokončete proces checkout.
 
 
->[!div class="step-by-step"]
-[Předchozí](mvc-music-store-part-7.md)
-[další](mvc-music-store-part-9.md)
+> [!div class="step-by-step"]
+> [Předchozí](mvc-music-store-part-7.md)
+> [další](mvc-music-store-part-9.md)

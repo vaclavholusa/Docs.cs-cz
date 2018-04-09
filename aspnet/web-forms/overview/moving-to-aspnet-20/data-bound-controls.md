@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/data-bound-controls
-title: "Vázané ovládací prvky dat | Microsoft Docs"
+title: Vázané ovládací prvky dat | Microsoft Docs
 author: microsoft
-description: "Většina aplikací ASP.NET závisí na určitý stupeň prezentace dat ze zdroje dat back-end. Ovládací prvky vázané na data byla hrají součástí vzájemně komunikující w..."
+description: Většina aplikací ASP.NET závisí na určitý stupeň prezentace dat ze zdroje dat back-end. Ovládací prvky vázané na data byla hrají součástí vzájemně komunikující w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-bound-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 3ebb0f9a7a2f071b7bf7aa3855920f1a5784a61f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5c3f6aad4b87450149189352e86106f46c765fb8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="data-bound-controls"></a>Data vázané ovládací prvky
 ====================
@@ -112,14 +112,14 @@ Ovládací prvky seznamu zahrnují ListBox, rozevírací seznam, CheckBoxList, R
 
 Data vazby ovládací prvek seznamu, přidejte ovládací prvek zdroje dat na stránku. Určení příkazu, vyberte možnost pro ovládací prvek zdroje dat a nastavte ID ovládacího prvku zdroje dat ovládacího prvku seznam nastavenou vlastnost DataSourceID. Použití **DataTextField** a **DataValueField** vlastnosti, které chcete definovat zobrazovaný text a hodnoty pro ovládací prvek. Kromě toho můžete použít **DataTextFormatString** vlastnost, která má-li řídit vzhled zobrazovaný text následujícím způsobem:
 
-| **Výraz** | **Popis** |
+| **Expression** | **Popis** |
 | --- | --- |
 | Cena: {0: c} | Pro data číselný/decimal. Zobrazuje skutečné "cena:" následované čísel ve formátu měny. Formátu měny závisí na nastavení jazykové verze zadané v atributu jazykovou verzi na **stránky** direktivy nebo v souboru Web.config. |
 | {0:D4} | Pro data, celé číslo. Nelze použít s desetinným číslem. Celá čísla se zobrazí v poli nulami, které je širokém čtyři znaky. |
-| {0:N2} % | Pro číselná data. Zobrazuje číslo s 2 desetinné místo přesnost následuje literál "%". |
+| {0:N2}% | Pro číselná data. Zobrazuje číslo s 2 desetinné místo přesnost následuje literál "%". |
 | {0:000.0} | Pro data číselný/decimal. Čísla jsou zaokrouhleny na jedno desetinné místo. Je menší než nulami tří číslic čísla. |
-| {0: D} | Pro data datum a čas. Zobrazí formát dlouhého data ("čtvrtek, srpen 06, 1996"). Formát data závisí na nastavení jazykové verze stránky nebo v souboru Web.config. |
-| {0: d} | Pro data datum a čas. Zobrazí krátkého data formátu ("12/31/99"). |
+| {0:D} | Pro data datum a čas. Zobrazí formát dlouhého data ("čtvrtek, srpen 06, 1996"). Formát data závisí na nastavení jazykové verze stránky nebo v souboru Web.config. |
+| {0:d} | Pro data datum a čas. Zobrazí krátkého data formátu ("12/31/99"). |
 | {0:yy-MM-dd} | Pro data datum a čas. Zobrazí datum v číselném formátu rok měsíc den (96-08-06) |
 
 ## <a name="gridview"></a>GridView
@@ -152,7 +152,7 @@ Následující tabulka uvádí typy polí jiný sloupec, které lze použít.
 | ImageField | Zobrazí obrázek pro každou položku v ovládacím prvku GridView. |
 | TemplateField | Zobrazí obsah uživatelem definované pro každou položku v ovládacím prvku GridView podle zadané šablony. Tento typ pole sloupce můžete vytvořit vlastní sloupec pole. |
 
-Chcete-li definovat deklarativně kolekci pole sloupec, nejprve přidat otvírání a zavírání  **&lt;sloupce&gt;**  značky mezi počáteční a koncové značky ovládacího prvku GridView. V dalším kroku seznam pole sloupců, které chcete zahrnout mezi počáteční a koncovou  **&lt;sloupce&gt;**  značky. Sloupce zadané se přidají do kolekce sloupců v uvedeném pořadí. **Sloupce** kolekce ukládá všechny sloupce polí v ovládacím prvku a umožňuje vám spravovat prostřednictvím kódu programu pole sloupců v ovládacím prvku GridView.
+Chcete-li definovat deklarativně kolekci pole sloupec, nejprve přidat otvírání a zavírání **&lt;sloupce&gt;** značky mezi počáteční a koncové značky ovládacího prvku GridView. V dalším kroku seznam pole sloupců, které chcete zahrnout mezi počáteční a koncovou **&lt;sloupce&gt;** značky. Sloupce zadané se přidají do kolekce sloupců v uvedeném pořadí. **Sloupce** kolekce ukládá všechny sloupce polí v ovládacím prvku a umožňuje vám spravovat prostřednictvím kódu programu pole sloupců v ovládacím prvku GridView.
 
 Pole explicitně deklarované sloupec lze zobrazit v kombinaci s pole automaticky generované sloupců. Pokud obě používají, pole explicitně deklarované sloupců jsou vykreslovány v nejprve, za nímž následuje pole automaticky generovaný sloupec.
 
@@ -207,7 +207,7 @@ Můžete také zobrazit nebo skrýt různé části ovládacího prvku. Následu
 
 Ovládací prvek GridView poskytuje několik událostí, které můžete naprogramovat oproti. To umožňuje spouštět vlastní rutina vždy, když dojde k události. Následující tabulka uvádí události GridView ovládacím prvkem podporována.
 
-| **Události** | **Popis** |
+| **Event** | **Popis** |
 | --- | --- |
 | PageIndexChanged | Nastane při kliknutí na jednu z tlačítka stránkování, ale po prvek GridView zpracovává operaci stránkování. Tato událost se běžně používá, když potřebujete provést úlohu po uživatel přejde na jinou stránku v ovládacím prvku. |
 | PageIndexChanging | Nastane, když po kliknutí na jednu z tlačítka stránkování, ale před GridView ovládací prvek zpracovává operaci stránkování. Tato událost se často používá ke zrušení operace stránkování. |
@@ -299,7 +299,7 @@ Můžete přizpůsobit vzhled ovládacího prvku FormView nastavením vlastnosti
 
 Ovládací prvek FormView poskytuje několik událostí, které můžete naprogramovat oproti. To umožňuje spouštět vlastní rutina vždy, když dojde k události. Následující tabulka uvádí události FormView ovládacím prvkem podporována.
 
-| **Události** | **Popis** |
+| **Event** | **Popis** |
 | --- | --- |
 | ItemCommand | Nastane, když po kliknutí na tlačítko v ovládacím prvku FormView. Tato událost se často používá k provedení úloh při stisknutí tlačítka v ovládacím prvku. |
 | ItemCreated | Nastane po vytvoření všechny objekty FormViewRow v ovládacím prvku FormView. Tato událost se často používá k úpravě hodnoty záznamu, než se zobrazí. |
@@ -341,7 +341,7 @@ Každý řádek dat v ovládacím prvku DetailsView je vytvořen deklarací ovl�
 
 Ve výchozím nastavení, je vlastnost AutoGenerateRows nastavena **true**, který automaticky vytvoří objekt vázané řádek pole pro každé pole vazbu typu ve zdroji dat. Platné typy vazbu jsou řetězce, data a času, Decimal, identifikátor Guid a sadu primitivní typy. Každé pole se následně zobrazí v řádku, jako text v pořadí, ve kterém se zobrazí každé pole v datovém zdroji.
 
-Automatické generování řádky poskytuje rychlý a snadný způsob, jak zobrazit každé pole v záznamu. Však nutné používat DetailsView ovládacího prvku rozšířené možnosti, které je potřeba explicitně deklarovat pole řádku, která chcete zahrnout v ovládacím prvku DetailsView. Chcete deklarovat pole řádku, nastavte nejprve **AutoGenerateRows** vlastnost **false**. Dál přidejte otvírání a zavírání  **&lt;pole&gt;**  značky mezi počáteční a koncové značky ovládacího prvku DetailsView. Nakonec seznam pole řádku, které chcete zahrnout mezi počáteční a koncovou  **&lt;pole&gt;**  značky. Zadaná pole řádku jsou přidány do kolekce polí v uvedeném pořadí. **Pole** kolekce umožňuje programovou správu pole řádků v ovládacím prvku DetailsView.
+Automatické generování řádky poskytuje rychlý a snadný způsob, jak zobrazit každé pole v záznamu. Však nutné používat DetailsView ovládacího prvku rozšířené možnosti, které je potřeba explicitně deklarovat pole řádku, která chcete zahrnout v ovládacím prvku DetailsView. Chcete deklarovat pole řádku, nastavte nejprve **AutoGenerateRows** vlastnost **false**. Dál přidejte otvírání a zavírání **&lt;pole&gt;** značky mezi počáteční a koncové značky ovládacího prvku DetailsView. Nakonec seznam pole řádku, které chcete zahrnout mezi počáteční a koncovou **&lt;pole&gt;** značky. Zadaná pole řádku jsou přidány do kolekce polí v uvedeném pořadí. **Pole** kolekce umožňuje programovou správu pole řádků v ovládacím prvku DetailsView.
 
 > [!NOTE]
 > Automaticky generuje řádek, který pole nejsou přidány do kolekce polí.
@@ -391,7 +391,7 @@ Můžete přizpůsobit vzhled ovládacího prvku DetailsView nastavením vlastno
 
 Ovládací prvek DetailsView poskytuje několik událostí, které můžete naprogramovat oproti. To umožňuje spouštět vlastní rutina vždy, když dojde k události. Následující tabulka uvádí události DetailsView ovládacím prvkem podporována. Tyto události ovládacího prvku DetailsView také dědí z jeho základních tříd: datové vazby, vycentrovat, Disposed, Init, zatížení, PreRender a vykreslování.
 
-| **Události** | **Popis** |
+| **Event** | **Popis** |
 | --- | --- |
 | ItemCommand | Nastane při stisknutí tlačítka v ovládacím prvku DetailsView. |
 | ItemCreated | Nastane po vytvoření všechny objekty DetailsViewRow v ovládacím prvku DetailsView. Tato událost se často používá k úpravě hodnoty záznamu, než se zobrazí. |
@@ -701,16 +701,16 @@ Toto cvičení předpokládá, že máte SQL Server je spuštěn místně a v in
 16. Klikněte **upravit sloupce** propojit a ujistěte se, že **automaticky generovat pole** je zaškrtnuté.
 17. Click **OK**.
 18. Pomocí ovládacího prvku GridView vybraný, klikněte na tlačítko Další na **DataKeyNames** vlastnosti v podokně Vlastnosti.
-19. Vyberte **ProductID** z **dostupné datová pole** seznamu a klikněte na tlačítko  **&gt;**  tlačítko Přidat.
+19. Vyberte **ProductID** z **dostupné datová pole** seznamu a klikněte na tlačítko **&gt;** tlačítko Přidat.
 20. Klikněte na tlačítko OK.
 21. Přidání nové SqlDataSource ovládacího prvku na stránku.
 22. Změňte ID ovládacího prvku SqlDataSource k **podrobnosti**.
 23. V nabídce úlohy SqlDataSource zvolte **konfigurace zdroje dat**.
 24. Zvolte **Northwind** z rozevíracího seznamu a klikněte na tlačítko **Další**.
-25. Vyberte **produkty** z **název** rozevírací seznam a zkontrolujte  **\***  zaškrtnout políčko **sloupce** listbox.
+25. Vyberte <strong>produkty</strong> z <strong>název</strong> rozevírací seznam a zkontrolujte <strong> \</ strong > * zaškrtnout políčko <strong>sloupce</strong> listbox.
 26. Klikněte **kde** tlačítko.
 27. Vyberte **ProductID** z **sloupec** rozevíracího seznamu.
-28. Vyberte  **=**  v rozevírací nabídce operátor.
+28. Vyberte **=** v rozevírací nabídce operátor.
 29. Vyberte **řízení** z **zdroj** rozevíracího seznamu.
 30. Vyberte **GridView1** z **ID ovládacího prvku** rozevíracího seznamu.
 31. Klikněte **přidat** tlačítko přidáte klauzuli WHERE.

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
-title: "Použití třídy TagBuilder k sestavení pomocné rutiny HTML (C#) | Microsoft Docs"
+title: Použití třídy TagBuilder k sestavení pomocné rutiny HTML (C#) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther vás seznámí s třídy užitečné nástroj v rozhraní ASP.NET MVC s názvem třídy TagBuilder. Třídy pro TagBuilder můžete snadno..."
+description: Stephen Walther vás seznámí s třídy užitečné nástroj v rozhraní ASP.NET MVC s názvem třídy TagBuilder. Třídy pro TagBuilder můžete snadno...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 63f07c3f95c520dbc74f3568aa65dc6a6f34a901
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 6c0e8e4e3a733f2cc8690dc85e3006bce6c661d2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>Použití třídy TagBuilder k sestavení pomocné rutiny HTML (C#)
 ====================
@@ -77,6 +77,6 @@ Všimněte si, že je nutné naimportovat obor názvů související s pomocnou 
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-cs/samples/sample3.aspx)]
 
->[!div class="step-by-step"]
-[Předchozí](creating-custom-html-helpers-cs.md)
-[další](creating-page-layouts-with-view-master-pages-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-custom-html-helpers-cs.md)
+> [další](creating-page-layouts-with-view-master-pages-cs.md)

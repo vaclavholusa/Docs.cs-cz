@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
-title: "Přidávání řadiče | Microsoft Docs"
+title: Přidávání řadiče | Microsoft Docs
 author: shanselman
-description: "Aktualizovaná verze, pokud v tomto kurzu je k dispozici zde pomocí sady Visual Studio 2013. Nový kurz používá ASP.NET MVC 5, který nabízí mnoho vylepšení v porovnání s t..."
+description: Aktualizovaná verze, pokud v tomto kurzu je k dispozici zde pomocí sady Visual Studio 2013. Nový kurz používá ASP.NET MVC 5, který nabízí mnoho vylepšení v porovnání s t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 93a362cf83d39b29fcba3f2dee0c28257805a89e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c6ecd1ffdd53a629d0079d57b85c7f6db2f316ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller"></a>Přidání Kontroleru
 ====================
@@ -77,6 +77,6 @@ Spusťte aplikaci a navštivte `http://localhost:xx/HelloWorld/Welcome?name=Scot
 
 V obou těchto příkladech řadičem byl všechny pracuje a má byla vrácení HTML přímo. Normálně Neradi bychom naše řadiče vrácení HTML přímo - vzhledem k tomu, který bude mít je velmi náročná kódu. Místo toho obvykle použijeme samostatný soubor šablony zobrazení ke generování odpovědi HTML. Podíváme, jak jsme to můžete provést. Zavřete prohlížeč a vraťte se k prostředí IDE.
 
->[!div class="step-by-step"]
-[Předchozí](getting-started-with-mvc-part1.md)
-[další](getting-started-with-mvc-part3.md)
+> [!div class="step-by-step"]
+> [Předchozí](getting-started-with-mvc-part1.md)
+> [další](getting-started-with-mvc-part3.md)

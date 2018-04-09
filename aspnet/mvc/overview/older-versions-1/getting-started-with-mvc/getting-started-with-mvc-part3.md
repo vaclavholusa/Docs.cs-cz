@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
-title: "Přidání zobrazení | Microsoft Docs"
+title: Přidání zobrazení | Microsoft Docs
 author: shanselman
-description: "Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze."
+description: Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 8725d054861c857ceac10a42b0cc3f2afe056aea
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 978d7980274c072ed559b54ed69ab86245b6c5a7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view"></a>Přidání zobrazení
 ====================
@@ -120,6 +120,6 @@ Spusťte aplikaci a navštivte `http://localhost:xx/HelloWorld/Welcome?name=Scot
 
 Dobře, který byl druh "M" pro Model, ale není typ databáze. Podívejme se, co jsme jste se naučili a vytvořit databázi filmy.
 
->[!div class="step-by-step"]
-[Předchozí](getting-started-with-mvc-part2.md)
-[další](getting-started-with-mvc-part4.md)
+> [!div class="step-by-step"]
+> [Předchozí](getting-started-with-mvc-part2.md)
+> [další](getting-started-with-mvc-part4.md)

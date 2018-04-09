@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
-title: "Rozhraní ASP.NET Web Forms připojení odolnost proti chybám a příkaz zachycením | Microsoft Docs"
+title: Rozhraní ASP.NET Web Forms připojení odolnost proti chybám a příkaz zachycením | Microsoft Docs
 author: Erikre
-description: "Tento kurz popisuje, jak změnit ukázková aplikace pro podporu odolnost připojení a zachycením příkaz."
+description: Tento kurz popisuje, jak změnit ukázková aplikace pro podporu odolnost připojení a zachycením příkaz.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: e3347657fb5c7bf8c7bb4e51a2e810a1edde826a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d5c4e46209e1b21a303fdf1fb16c6c868b3ca923
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>Rozhraní ASP.NET Web Forms připojení odolnost proti chybám a příkaz zachycením
 ====================
@@ -102,9 +102,9 @@ Podle výše uvedeného postupu, jste stáhli a otevřeli **Northwind** ukázkov
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample4.cs)]
 
- Rozhraní obsahuje tři úrovně trasování a určete relativní důležitost protokolů a z nich slouží k zadání informací o latence pro volání externí služby, jako je například databázové dotazy. Metody protokolování, mají přetížení, které umožňují předat výjimku. Toto je tak, aby informace o výjimce, včetně protokolů trasování a vnitřní výjimky je spolehlivě podle třídy, který implementuje rozhraní, aniž byste museli spoléhat na které se provádí v každém volání metody protokolování v celé aplikaci.  
+   Rozhraní obsahuje tři úrovně trasování a určete relativní důležitost protokolů a z nich slouží k zadání informací o latence pro volání externí služby, jako je například databázové dotazy. Metody protokolování, mají přetížení, které umožňují předat výjimku. Toto je tak, aby informace o výjimce, včetně protokolů trasování a vnitřní výjimky je spolehlivě podle třídy, který implementuje rozhraní, aniž byste museli spoléhat na které se provádí v každém volání metody protokolování v celé aplikaci.  
   
- `TraceApi` Metody vám umožňují sledovat latence každé volání externí služba například databáze SQL.
+   `TraceApi` Metody vám umožňují sledovat latence každé volání externí služba například databáze SQL.
 3. V *protokolování* složky, vytvořte soubor třídy s názvem *Logger.cs* a ve výchozím kódu nahraďte následujícím kódem:  
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample5.cs)]
@@ -121,20 +121,20 @@ V dalším kroku vytvoříte třídy, které rozhraní Entity Framework zavolá 
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample6.cs)]
 
- Pro úspěšné dotazy nebo příkazy tento kód zapíše protokol informací s informacemi o latence. Pro výjimky vytvoří se protokol chyb.
+   Pro úspěšné dotazy nebo příkazy tento kód zapíše protokol informací s informacemi o latence. Pro výjimky vytvoří se protokol chyb.
 2. Pro vytvoření třídy interceptoru, který vygeneruje fiktivní přechodné chyby, když zadáte &quot;Throw&quot; v **název** textové pole na stránce s názvem *AdminPage.aspx*, vytvořte třídu soubor s názvem *InterceptorTransientErrors.cs* v *logiku* složky a nahradit výchozí kód následujícím kódem:  
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample7.cs)]
 
     Tento kód pouze přepsání `ReaderExecuting` metodu, která je volána pro dotazy, které může vrátit více řádků dat. Pokud jste chtěli zkontrolujte odolnost připojení pro jiné typy dotazů, může také přepsat `NonQueryExecuting` a `ScalarExecuting` metody, jako interceptoru protokolování nemá.  
   
- Později, se přihlaste jako "Admin" a vyberte **správce** spojení v horním navigačním panelu. Potom na *AdminPage.aspx* stránky přidáte produkt s názvem &quot;Throw&quot;. Kód vytvoří fiktivní výjimka databáze SQL pro chyby číslo 20, typu ví, nejčastěji přechodné. Další chyba čísla aktuálně rozpoznán jako přechodný jsou 64, 233, 10053, 10054, 10060, 10928, 10929, 40197, 40501 a 40613, ale to se může měnit v nové verze databáze SQL. Produkt bude přejmenován na "TransientErrorExample", které můžete provést v kódu *InterceptorTransientErrors.cs* souboru.  
+   Později, se přihlaste jako "Admin" a vyberte **správce** spojení v horním navigačním panelu. Potom na *AdminPage.aspx* stránky přidáte produkt s názvem &quot;Throw&quot;. Kód vytvoří fiktivní výjimka databáze SQL pro chyby číslo 20, typu ví, nejčastěji přechodné. Další chyba čísla aktuálně rozpoznán jako přechodný jsou 64, 233, 10053, 10054, 10060, 10928, 10929, 40197, 40501 a 40613, ale to se může měnit v nové verze databáze SQL. Produkt bude přejmenován na "TransientErrorExample", které můžete provést v kódu *InterceptorTransientErrors.cs* souboru.  
   
- Kód vrátí Entity Framework namísto spuštění dotazu a předání back výsledky výjimku. Je vrácen přechodný výjimka *čtyři* dobu, a potom se vrátí kód do běžný postup předat dotaz do databáze.
+   Kód vrátí Entity Framework namísto spuštění dotazu a předání back výsledky výjimku. Je vrácen přechodný výjimka *čtyři* dobu, a potom se vrátí kód do běžný postup předat dotaz do databáze.
 
     Vzhledem k tomu, že je všechno, co přihlášení, budete moci zobrazit Entity Framework se pokusí provést dotaz čtyřikrát před nakonec úspěšné, a v aplikaci jediným rozdílem je, že trvá déle k vykreslení stránky s výsledky dotazu.  
   
- Počet, který se bude opakovat rozhraní Entity Framework se dá konfigurovat; kód určuje čtyřikrát, protože se jedná o výchozí hodnotu pro zásady spouštění databáze SQL. Pokud změníte zásady spouštění, musíte také změnit zde kód, který určuje, kolikrát se generují přechodné chyby. Můžete také změnit kód ke generování další výjimky tak, aby rozhraní Entity Framework vyvolá výjimku `RetryLimitExceededException` výjimka.
+   Počet, který se bude opakovat rozhraní Entity Framework se dá konfigurovat; kód určuje čtyřikrát, protože se jedná o výchozí hodnotu pro zásady spouštění databáze SQL. Pokud změníte zásady spouštění, musíte také změnit zde kód, který určuje, kolikrát se generují přechodné chyby. Můžete také změnit kód ke generování další výjimky tak, aby rozhraní Entity Framework vyvolá výjimku `RetryLimitExceededException` výjimka.
 3. V *Global.asax*, přidejte následující příkazy:  
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample8.cs)]
@@ -158,16 +158,16 @@ Napsání kódu simulace přechodné chybě způsobem, který umožňuje způsob
 2. Vyberte **správce** z navigačního panelu v horní části.
 3. Zadejte nový produkt s názvem "Výjimku" souborem odpovídající popis, ceny a bitové kopie.
 4. Stiskněte **přidat produktu** tlačítko.  
- Můžete si všimnout, že v prohlížeči zdá se, že zablokuje pro několik sekund, zatímco Entity Framework opakuje dotaz několikrát. První opakování se stane velmi rychle a pak zvyšuje čekání před každou další opakování. Tento proces nebude čekání před každou opakování nazývá *exponenciálního omezení rychlosti* .
+   Můžete si všimnout, že v prohlížeči zdá se, že zablokuje pro několik sekund, zatímco Entity Framework opakuje dotaz několikrát. První opakování se stane velmi rychle a pak zvyšuje čekání před každou další opakování. Tento proces nebude čekání před každou opakování nazývá *exponenciálního omezení rychlosti* .
 5. Počkejte, dokud stránku už atttempting načíst.
 6. Zastavte projektu a podívejte se na sady Visual Studio **výstup** a zobrazte výstup trasování. Můžete najít **výstup** okno výběrem **ladění**  - &gt; **Windows**  - &gt;  **Výstup**. Můžete chtít přejděte po několik další protokoly, které jsou zapsány ve vašem protokolovacího nástroje.  
   
- Všimněte si, zda se zobrazí skutečné příkazy jazyka SQL odeslal do databáze. Zobrazí některé počáteční dotazy a příkazy, které nemá Entity Frameworku Pokud chcete začít, kontrola tabulce historie verze a migraci databáze.   
+   Všimněte si, zda se zobrazí skutečné příkazy jazyka SQL odeslal do databáze. Zobrazí některé počáteční dotazy a příkazy, které nemá Entity Frameworku Pokud chcete začít, kontrola tabulce historie verze a migraci databáze.   
     ![Okno Výstup](aspnet-web-forms-connection-resiliency-and-command-interception/_static/image1.png)   
- Poznámka: Tento test nelze opakovat, pokud zastavte aplikaci a restartujte ji. Pokud chcete otestovat odolnost připojení více než jednou. v jedné spustit aplikace, můžete napsat kód, chcete-li obnovit čítač chyby v `InterceptorTransientErrors` .
+   Poznámka: Tento test nelze opakovat, pokud zastavte aplikaci a restartujte ji. Pokud chcete otestovat odolnost připojení více než jednou. v jedné spustit aplikace, můžete napsat kód, chcete-li obnovit čítač chyby v `InterceptorTransientErrors` .
 7. Rozdíl strategii provádění (zásady opakování) provede, komentář `SetExecutionStrategy` řádek v *WingtipToysConfiguration.cs* v soubor *logiku* složky, spusťte **správce**  stránku znovu v režimu ladění a přidání produktu s názvem &quot;Throw&quot; znovu.  
   
- Tentokrát ladicí program zastaví v první generovaného výjimka při pokusu o provedení dotazu poprvé okamžitě.  
+   Tentokrát ladicí program zastaví v první generovaného výjimka při pokusu o provedení dotazu poprvé okamžitě.  
     ![Ladění – zobrazit podrobnosti](aspnet-web-forms-connection-resiliency-and-command-interception/_static/image2.png)
 8. Zrušením komentáře u `SetExecutionStrategy` řádek v *WingtipToysConfiguration.cs* souboru.
 

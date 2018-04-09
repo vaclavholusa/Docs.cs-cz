@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
-title: "Middleware OWIN v IIS integrovaný kanál | Microsoft Docs"
+title: Middleware OWIN v IIS integrovaný kanál | Microsoft Docs
 author: Praburaj
-description: "Tento článek ukazuje, jak spustit komponenty middlewaru OWIN (OMCs) v integrovaném kanálu služby IIS a jak nastavit kanál událostí OMC běží na. Měli byste..."
+description: Tento článek ukazuje, jak spustit komponenty middlewaru OWIN (OMCs) v integrovaném kanálu služby IIS a jak nastavit kanál událostí OMC běží na. Měli byste...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2013
 ms.topic: article
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 5f6ed1ae0309e9bdd3ca4ae229195835f20bc729
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5df70c80084a32c5f61ac9288c8cdbfaaa47f124
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>Middleware OWIN v integrovaném kanálu služby IIS
 ====================
@@ -83,13 +83,13 @@ Komponenty middlewaru Owin (OMC) může být nakonfigurována pro spuštění v 
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample9.cmd)]
 
- volání `app.UseStageMarker` předávání `Authenticate` nebo `PostAuthenticate` nebudou přijmout, a bude vyvolána žádná výjimka. Spustit v poslední fázi, který ve výchozím nastavení je OMCs `PreHandlerExecute`. Fáze značek jsou používány k zobrazení, aby se spouštěly dříve. Pokud zadáte fázi značek mimo pořadí, jsme zaokrouhlit na dřívější značky. Jinými slovy přidání značka fáze, říká "Spustit později než fáze X". OMC na spuštění v nejdřívější značky fází po je přidán do kanálu OWIN.
+   volání `app.UseStageMarker` předávání `Authenticate` nebo `PostAuthenticate` nebudou přijmout, a bude vyvolána žádná výjimka. Spustit v poslední fázi, který ve výchozím nastavení je OMCs `PreHandlerExecute`. Fáze značek jsou používány k zobrazení, aby se spouštěly dříve. Pokud zadáte fázi značek mimo pořadí, jsme zaokrouhlit na dřívější značky. Jinými slovy přidání značka fáze, říká "Spustit později než fáze X". OMC na spuštění v nejdřívější značky fází po je přidán do kanálu OWIN.
 4. Nejdřívější fáze volání `app.UseStageMarker` wins. Například, pokud jste přešli pořadí `app.UseStageMarker` volání z našich předchozí příklad:
 
     [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample10.cs?highlight=13,19)]
 
- Ve výstupním okně se zobrazí: 
+   Ve výstupním okně se zobrazí: 
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample11.cmd)]
 
- Všechny spuštění v OMCs `AuthenticateRequest` dvoufázové instalace, protože poslední OMC zaregistrovaná pomocí `Authenticate` událostí a `Authenticate` událostí předchází všechny ostatní události.
+   Všechny spuštění v OMCs `AuthenticateRequest` dvoufázové instalace, protože poslední OMC zaregistrovaná pomocí `Authenticate` událostí a `Authenticate` událostí předchází všechny ostatní události.

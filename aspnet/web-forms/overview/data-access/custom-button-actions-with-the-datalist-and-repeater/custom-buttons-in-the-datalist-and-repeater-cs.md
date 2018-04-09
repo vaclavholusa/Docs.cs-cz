@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
-title: "Vlastní tlačítka v DataList a opakovače (C#) | Microsoft Docs"
+title: Vlastní tlačítka v DataList a opakovače (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu využijeme rozhraní, které používá prvku Repeater seznam kategorií v systému, s každou kategorii poskytování tlačítko zobrazíte jeho associ..."
+description: V tomto kurzu využijeme rozhraní, které používá prvku Repeater seznam kategorií v systému, s každou kategorii poskytování tlačítko zobrazíte jeho associ...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9a072ae18bbb19d086eb825c6e72b68d40b2e429
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d6d07f1dc3f97523da6d9ee1d45302cac06b45d2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>Vlastní tlačítka v DataList a opakovače (C#)
 ====================
@@ -104,8 +104,8 @@ Kdykoliv po kliknutí na tlačítko, LinkButton nebo ImageButton v rámci šablo
 
 Při stisknutí tlačítka v rámci DataList nebo opakovače často musíme (například předají které tlačítko bylo kliknuto (v případě, že může existovat více tlačítek v ovládacím prvku, jako je například obě upravíte a tlačítko Odstranit) a případně nějaké další informace primární hodnota klíče položky, jejichž tlačítko označeného). Tlačítko, LinkButton a ImageButton poskytují dvě vlastnosti, jejichž hodnoty jsou předávány `ItemCommand` obslužné rutiny události:
 
-- `CommandName`řetězec se obvykle používá k identifikaci každé tlačítko v šabloně
-- `CommandArgument`běžně používané pro udržení hodnotu některé pole data, jako je například hodnotu primárního klíče
+- `CommandName` řetězec se obvykle používá k identifikaci každé tlačítko v šabloně
+- `CommandArgument` běžně používané pro udržení hodnotu některé pole data, jako je například hodnotu primárního klíče
 
 V tomto příkladu nastavit LinkButton s `CommandName` vlastnost ShowProducts a vazby aktuální záznam s hodnotu primárního klíče `CategoryID` k `CommandArgument` vlastnost pomocí syntaxe datové vazby `CategoryArgument='<%# Eval("CategoryID") %>'`. Po zadání tyto dvě vlastnosti, deklarativní syntaxi s LinkButton by měl vypadat následovně:
 
@@ -116,10 +116,10 @@ Pokud po kliknutí na tlačítko, dojde k zpětné volání a DataList nebo opak
 
 Vytvoření obslužné rutiny události pro opakovače s `ItemCommand` událostí a Poznámka: druhý parametr předaný do obslužné rutiny události (s názvem `e`). Tento druhý parametr je typu [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) a má následující čtyři vlastnosti:
 
-- `CommandArgument`Hodnota tlačítka s `CommandArgument` vlastnost
-- `CommandName`Hodnota tlačítko s `CommandName` vlastnost
-- `CommandSource`odkaz na ovládací prvek tlačítko, který označeného kliknutím
-- `Item`odkaz na [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) obsahující tlačítko označeného; každý záznam vázána na opakovače označované jako`RepeaterItem`
+- `CommandArgument` Hodnota tlačítka s `CommandArgument` vlastnost
+- `CommandName` Hodnota tlačítko s `CommandName` vlastnost
+- `CommandSource` odkaz na ovládací prvek tlačítko, který označeného kliknutím
+- `Item` odkaz na [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) obsahující tlačítko označeného; každý záznam vázána na opakovače označované jako `RepeaterItem`
 
 Od vybrané kategorie s `CategoryID` je předaná prostřednictvím `CommandArgument` vlastnost nám získat sadu produktů, které jsou spojené s vybranou kategorii v `ItemCommand` obslužné rutiny události. Tyto produkty mohou být vázány pak do ovládacího prvku BulletedList v `ItemTemplate` (které jsme jste ještě chcete-li přidat). Všechny, které zůstává a pak je přidání BulletedList, v odkazovat `ItemCommand` obslužné rutiny události a vytvořit vazbu k němu sadu produktů pro vybranou kategorii, které jsme budete řešení v kroku 4.
 
@@ -162,11 +162,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl společnosti Dennis Patterson. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Next](custom-buttons-in-the-datalist-and-repeater-vb.md)
+> [!div class="step-by-step"]
+> [Next](custom-buttons-in-the-datalist-and-repeater-vb.md)

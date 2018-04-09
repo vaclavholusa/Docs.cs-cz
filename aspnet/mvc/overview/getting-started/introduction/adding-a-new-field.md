@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-a-new-field
-title: "Přidání nové pole | Microsoft Docs"
+title: Přidání nové pole | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 453fbf68aa2f3a1d9ea708355c06c53d4f1eabd0
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 0dac798eba586cdcc232cedd262e610b954004df
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-field"></a>Přidání nové pole
 ====================
 podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 V této části používáte migrace Code First Entity Framework pro migraci některé změny do třídy modelu tak, že použití této změny do databáze.
 
@@ -62,7 +62,7 @@ Díky tomu přidá následující příkaz using:
 
 [!code-csharp[Main](adding-a-new-field/samples/sample2.cs)]
 
-> [!NOTE] 
+> [!NOTE]
 > 
 > Kód volání první migrace `Seed` metoda po každé migraci (tedy volání **update-database** v konzole Správce balíčků), a tato metoda aktualizace řádků, které již byl vložen a vloží je, pokud jejich Nemáte ještě neexistuje.
 > 
@@ -71,15 +71,15 @@ Díky tomu přidá následující příkaz using:
 > [!code-csharp[Main](adding-a-new-field/samples/sample3.cs)]
 > 
 > Protože [počáteční hodnoty](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) metoda se spouští se každých migrace, data, nelze právě vložit, protože řádky, které se pokoušíte přidat bude po první migrace, která vytváří databázi již existovat. "[Upsert](http://en.wikipedia.org/wiki/Upsert)" operaci brání chyb, které by mohlo dojít, pokud se pokusíte vložit řádek, který již existuje, ale přepíše všechny změny dat, která může provedení při testování aplikace. Pro testovací data v některé tabulky nemusí Chcete to tak proběhlo: v některých případech při změně dat při testování vaše změny zůstat po aktualizace databáze. V takovém případě budete chtít provést operace podmíněného insert: Vložit řádek pouze v případě, že ještě neexistuje.   
->   
+> 
 > První parametr předaný [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) metoda určuje vlastnost, která má použít pro kontrolu, pokud řádek již existuje. Pro testovací data film, který zadáte `Title` vlastnost lze použít pro tento účel, protože v nadpisu každé v seznamu je jedinečný:
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample4.cs)]
 > 
 > Tento kód předpokládá, že se jedinečné názvy. Pokud chcete ručně přidat duplicitní název, získáte následující výjimka při příštím provedení migrace.   
->   
+> 
 >  *Sekvence obsahuje více než jeden element.*  
->   
+> 
 > Další informace o [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) metodu, najdete v části [postará s EF 4.3 AddOrUpdate metoda](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
 
@@ -191,6 +191,6 @@ Můžete zadat příkaz "update-database" v **Konzola správce balíčků** znov
 
 V této části jste viděli, jak můžete upravit objekty modelu a synchronizujte databázi s změny. Také jste zjistili, způsob, jak naplnit nově vytvořenou databázi s ukázkovými daty, můžete zkusit scénáře. To se právě rychlý úvod do Code First najdete v tématu [vytváření datového modelu Entity Framework pro aplikaci ASP.NET MVC](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) Podrobnější kurz týkající se předmět. V dalším kroku podíváme, jak můžete přidat do třídy modelu bohatší logiku ověření a povolit některé obchodní pravidla, která budou vynucena.
 
->[!div class="step-by-step"]
-[Předchozí](adding-search.md)
-[další](adding-validation.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-search.md)
+> [další](adding-validation.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
-title: "Vytvoření ovládacího prvku hodnocení (C#) | Microsoft Docs"
+title: Vytvoření ovládacího prvku hodnocení (C#) | Microsoft Docs
 author: wenz
-description: "Mnoho webů, z elektronického obchodování do lokalit komunity, nabízí svým uživatelům míra články nebo položek. Většinou je potřeba některé kódování úsilí, ale máme..."
+description: Mnoho webů, z elektronického obchodování do lokalit komunity, nabízí svým uživatelům míra články nebo položek. Většinou je potřeba některé kódování úsilí, ale máme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7c004522ac72b848e42320862d77bced0c11ca15
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a48cf0ed9402e2875e87ba7bdb76afc5f501a670
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-rating-control-c"></a>Vytvoření ovládacího prvku hodnocení (C#)
 ====================
@@ -41,12 +41,12 @@ Pak vytvořte nový soubor ASP.NET a začněte přidáte `ScriptManager` řízen
 
 Poté, přidejte `Rating` řízení z ovládacího prvku ASP.NET AJAX Toolkit. Následující atributy je nutné nastavit v tomto příkladu:
 
-- `CurrentRating`Počáteční hodnocení, který se má použít
-- `MaxRating`maximální hodnocení
-- `EmptyStarCssClass`Třída šablon stylů CSS pro použití při hodnocení položky (hvězdička) je prázdný
-- `FilledStarCssClass`třídy šablon stylů CSS použité při vyplňování položku hodnocení (hvězdička)
-- `StarCssClass`Třída šablon stylů CSS pro viditelné stat
-- `WaitingStarCssClass`třídy šablon stylů CSS použité při hodnocení hvězdičkami budou odeslána zpět do serveru
+- `CurrentRating` Počáteční hodnocení, který se má použít
+- `MaxRating` maximální hodnocení
+- `EmptyStarCssClass` Třída šablon stylů CSS pro použití při hodnocení položky (hvězdička) je prázdný
+- `FilledStarCssClass` třídy šablon stylů CSS použité při vyplňování položku hodnocení (hvězdička)
+- `StarCssClass` Třída šablon stylů CSS pro viditelné stat
+- `WaitingStarCssClass` třídy šablon stylů CSS použité při hodnocení hvězdičkami budou odeslána zpět do serveru
 
 A zde je kód, který vytvoří ovládacího prvku hodnocení s pěti položek (Veselé obličeje), ve kterých žádný vyplní se původně:
 
@@ -73,5 +73,5 @@ Uložit stránky a načíst do prohlížeče. Po přesunutí ukazatele myši pol
 
 Vytváření hodnocení systému s minimálním kódu ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-rating-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Další](creating-a-rating-control-vb.md)
+> [!div class="step-by-step"]
+> [Next](creating-a-rating-control-vb.md)

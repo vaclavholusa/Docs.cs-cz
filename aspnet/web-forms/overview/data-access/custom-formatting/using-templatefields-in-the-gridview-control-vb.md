@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-vb
-title: "Pomocí TemplateFields v ovládacím prvku GridView (VB) | Microsoft Docs"
+title: Pomocí TemplateFields v ovládacím prvku GridView (VB) | Microsoft Docs
 author: rick-anderson
-description: "Zajistit flexibilitu nabízí GridView TemplateField, která vykreslí pomocí šablony. Šablony můžete zahrnout směs statické HTML, ovládací prvky webového, a..."
+description: Zajistit flexibilitu nabízí GridView TemplateField, která vykreslí pomocí šablony. Šablony můžete zahrnout směs statické HTML, ovládací prvky webového, a...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 337765988cc6ec92384bec09a72fd00505d9a039
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f236c1cfaaeaa00f30b6a90553ad4e468e05ca23
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-templatefields-in-the-gridview-control-vb"></a>Pomocí TemplateFields v ovládacím prvku GridView (VB)
 ====================
@@ -94,7 +94,7 @@ Pokračujte a proveďte převod `FirstName` BoundField do TemplateField. Po tét
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-vb/samples/sample2.aspx)]
 
-Jak můžete vidět, TemplateField se skládá ze dvou šablon `ItemTemplate` , má popisek jejichž `Text` je nastavena na hodnotu `FirstName` pole dat a `EditItemTemplate` textové pole kontrolu jehož `Text` je nastavena také vlastnost na `FirstName` datové pole. Datové vazby syntaxe – `<%# Bind("fieldName") %>` -znamená, že datové pole  *`fieldName`*  je vázána na zadanou vlastnost webové ovládací prvek.
+Jak můžete vidět, TemplateField se skládá ze dvou šablon `ItemTemplate` , má popisek jejichž `Text` je nastavena na hodnotu `FirstName` pole dat a `EditItemTemplate` textové pole kontrolu jehož `Text` je nastavena také vlastnost na `FirstName` datové pole. Datové vazby syntaxe – `<%# Bind("fieldName") %>` -znamená, že datové pole *`fieldName`* je vázána na zadanou vlastnost webové ovládací prvek.
 
 Chcete-li přidat `LastName` data pole hodnota, která má toto TemplateField budeme muset přidat další ovládací prvek popisek webu v `ItemTemplate` a vytvořte vazbu jeho `Text` vlastnost `LastName`. To můžete provést ručně nebo pomocí návrháře. Chcete-li provést ručně, jednoduše přidejte příslušné deklarativní syntaxe `ItemTemplate`:
 
@@ -239,7 +239,7 @@ Nastavit tento nový TemplateField `HeaderText` vlastnost "Dní na the úloha" a
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-vb/samples/sample6.aspx)]
 
-`Container.DataItem`Vrátí `DataRowView` objekt odpovídající `DataSource` záznam vázána `GridViewRow`. Jeho `Row` vlastnost vrací silného typu `Northwind.EmployeesRow`, který je předán `DisplayDaysOnJob` metoda. Tato syntaxe vazby dat se může zobrazit přímo v `ItemTemplate` (jak je znázorněno níže uvedené deklarativní syntaxe) nebo lze přiřadit k `Text` vlastností ovládacího prvku popisek Web.
+`Container.DataItem` Vrátí `DataRowView` objekt odpovídající `DataSource` záznam vázána `GridViewRow`. Jeho `Row` vlastnost vrací silného typu `Northwind.EmployeesRow`, který je předán `DisplayDaysOnJob` metoda. Tato syntaxe vazby dat se může zobrazit přímo v `ItemTemplate` (jak je znázorněno níže uvedené deklarativní syntaxe) nebo lze přiřadit k `Text` vlastností ovládacího prvku popisek Web.
 
 > [!NOTE]
 > Alternativně místo předávání `EmployeesRow` instance, jsme právě předat v `HireDate` hodnotu pomocí `<%# DisplayDaysOnJob(Eval("HireDate")) %>`. Ale `Eval` metoda vrátí `Object`, takže nám změnit naše `DisplayDaysOnJob` podpis metody tak, aby přijímal vstupní parametr typu `Object`, místo toho. Jsme slepě nejde přetypovat `Eval("HireDate")` volat na `DateTime` protože `HireDate` sloupec v `Employees` tabulka může obsahovat `NULL` hodnoty. Proto je potřeba přijmout `Object` jako vstupní parametr pro `DisplayDaysOnJob` metoda, zkontrolujte, pokud ji měla databázi `NULL` hodnotu (jehož lze dosáhnout pomocí `Convert.IsDBNull(objectToCheck)`) a poté pokračujte odpovídajícím způsobem.
@@ -276,12 +276,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Dana Jagers. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](custom-formatting-based-upon-data-vb.md)
-[další](using-templatefields-in-the-detailsview-control-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](custom-formatting-based-upon-data-vb.md)
+> [další](using-templatefields-in-the-detailsview-control-vb.md)

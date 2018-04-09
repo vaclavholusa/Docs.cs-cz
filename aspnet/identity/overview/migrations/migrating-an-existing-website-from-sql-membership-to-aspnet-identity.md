@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
-title: "Migrace existující web z členství SQL na identitě ASP.NET Identity | Microsoft Docs"
+title: Migrace existující web z členství SQL na identitě ASP.NET Identity | Microsoft Docs
 author: Rick-Anderson
-description: "Tento kurz ukazuje kroky při migraci stávající webovou aplikaci s uživatelů a data role, které jsou vytvořené pomocí SQL členství na novou identitu ASP.NET s..."
+description: Tento kurz ukazuje kroky při migraci stávající webovou aplikaci s uživatelů a data role, které jsou vytvořené pomocí SQL členství na novou identitu ASP.NET s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/19/2014
 ms.topic: article
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 3638c6779a0fcedaaa49623126b28ecf09a4954f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2790f32bc74cecf450f5a258fc1ff5b280a63923
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrace existující web z členství SQL na identitě ASP.NET Identity
 ====================
@@ -67,14 +67,14 @@ V tomto kurzu jsme bude trvat šablony webové aplikace (webových formulářů)
 
 1. V Průzkumníku řešení klikněte pravým tlačítkem na projekt &gt; **spravovat balíčky NuGet**. Do vyhledávacího pole zadejte "Asp.net Identity". Vyberte balíček, v seznamu výsledků a kliknutím na tlačítko Instalovat. Přijměte licenční smlouvu kliknutím na tlačítko "I přijmout". Všimněte si, že tento balíček nainstaluje balíčky závislost: EntityFramework a Microsoft ASP.NET Identity Core. Podobně nainstalujte následující balíčky (Přeskočit poslední 4 balíčky OWIN, pokud nechcete povolit přihlášení OAuth):
 
-    - Microsoft.AspNet.Identity.Owin
-    - Microsoft.Owin.Host.SystemWeb
-    - Microsoft.Owin.Security.Facebook
-    - Microsoft.Owin.Security.Google
-    - Microsoft.Owin.Security.MicrosoftAccount
-    - Microsoft.Owin.Security.Twitter
+   - Microsoft.AspNet.Identity.Owin
+   - Microsoft.Owin.Host.SystemWeb
+   - Microsoft.Owin.Security.Facebook
+   - Microsoft.Owin.Security.Google
+   - Microsoft.Owin.Security.MicrosoftAccount
+   - Microsoft.Owin.Security.Twitter
 
-    ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image6.png)
+     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image6.png)
 
 ### <a name="migrate-database-to-the-new-identity-system"></a>Migrace databáze do nového systému Identity
 
@@ -193,7 +193,7 @@ V našem ukázce tabulky AspNetRoles, AspNetUserClaims, AspNetLogins a AspNetUse
 
 ### <a name="create-new-account-management-pages"></a>Vytvořit nový účet správy stránky
 
-Dalším krokem při migraci je přidat účet správy stránky, které vám umožní zaregistrovat a přihlásit uživatele. Stránky starý účet z členství SQL pomocí ovládacích prvků, které nefungují s novým systémem identit. Chcete-li přidat nového uživatele správu stránek postupovat v kurzu na tento odkaz [https://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project](../getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md) od kroku. Přidání webové formuláře pro registrace uživatelů do vaší aplikace, protože jsme už máte vytvořené projektu a přidání balíčků NuGet.
+Dalším krokem při migraci je přidat účet správy stránky, které vám umožní zaregistrovat a přihlásit uživatele. Stránky starý účet z členství SQL pomocí ovládacích prvků, které nefungují s novým systémem identit. Chcete-li přidat nového uživatele správu stránek postupovat v kurzu na tento odkaz [ https://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project ](../getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md) od kroku, přidání webové formuláře pro registrace uživatelů do vaší aplikace' vzhledem k tomu, že jsme už máte vytvořené projektu a přidat NuGet balíčky.
 
 Je potřeba provést některé změny pro ukázkové pro práci s projekt, který bychom měli sem.
 

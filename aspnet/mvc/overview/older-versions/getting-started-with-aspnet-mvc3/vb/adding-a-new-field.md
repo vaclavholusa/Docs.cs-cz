@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
-title: "Přidání nové pole film modelu a databázové tabulky (VB) | Microsoft Docs"
+title: Přidání nové pole film modelu a databázové tabulky (VB) | Microsoft Docs
 author: Rick-Anderson
-description: "V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je..."
+description: V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 377c667a56bb5c0d58ecef5c3550ca510ec52546
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5927b7d977e375881fe618b4b844cbd708023ba1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>Přidání nové pole film modelu a databázové tabulky (VB)
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je bezplatnou verzi sady Microsoft Visual Studio. Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže. Kliknutím na následující odkaz můžete nainstalovat všechny z nich: [instalačního programu webové platformy](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativně můžete nainstalovat jednotlivě požadavky pomocí následujících odkazů:
 > 
@@ -49,7 +49,7 @@ Znovu zkompiluje aplikace pomocí **ladění** &gt; **sestavení film** příkaz
 
 Teď, když jste aktualizovali `Model` třídy, je také potřeba aktualizovat *\Views\Movies\Index.vbhtml* a *\Views\Movies\Create.vbhtml* zobrazí šablony za účelem podpory nové `Rating`vlastnost.
 
-Otevřete*\Views\Movies\Index.vbhtml* souboru a přidejte `<th>Rating</th>` právě po záhlaví sloupce **cena** sloupce. Pak přidejte `<td>` sloupce u konce šablony k vykreslení `@item.Rating` hodnotu. Níže je co aktualizované *Index.vbhtml* zobrazit šablonu vypadá takto:
+Otevřete<em>\Views\Movies\Index.vbhtml</em> souboru a přidejte `<th>Rating</th>` právě po záhlaví sloupce <strong>cena</strong> sloupce. Pak přidejte `<td>` sloupce u konce šablony k vykreslení `@item.Rating` hodnotu. Níže je co aktualizované <em>Index.vbhtml</em> zobrazit šablonu vypadá takto:
 
 [!code-vbhtml[Main](adding-a-new-field/samples/sample3.vbhtml)]
 
@@ -123,6 +123,6 @@ Klikněte na tlačítko **vytvořit**. Nové film, včetně hodnocení, se zobra
 
 V této části jste viděli, jak můžete upravit objekty modelu a synchronizujte databázi s změny. Také jste zjistili, způsob, jak naplnit nově vytvořenou databázi s ukázkovými daty, můžete zkusit scénáře. V dalším kroku podíváme, jak můžete přidat do třídy modelu bohatší logiku ověření a povolit některé obchodní pravidla, která budou vynucena.
 
->[!div class="step-by-step"]
-[Předchozí](examining-the-edit-methods-and-edit-view.md)
-[další](adding-validation-to-the-model.md)
+> [!div class="step-by-step"]
+> [Předchozí](examining-the-edit-methods-and-edit-view.md)
+> [další](adding-validation-to-the-model.md)

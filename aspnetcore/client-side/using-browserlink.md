@@ -1,7 +1,7 @@
 ---
 title: Browser Link v ASP.NET Core
 author: ncarandini
-description: "Vysvětluje, jak Browser Link je funkce sady Visual Studio, který odkazuje vývojového prostředí s jeden nebo více webových prohlížečů."
+description: Vysvětluje, jak Browser Link je funkce sady Visual Studio, který odkazuje vývojového prostředí s jeden nebo více webových prohlížečů.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-browserlink
-ms.openlocfilehash: 3e62bdd180bb1f5e2ce0645a8cf13c9ffe76197e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a75a896dd7ebc488e3e9344ec705c24201924375
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="browser-link-in-aspnet-core"></a>Browser Link v ASP.NET Core 
+# <a name="browser-link-in-aspnet-core"></a>Browser Link v ASP.NET Core
 
 Podle [Nicolò Carandini](https://github.com/ncarandini), [Karel Wasson](https://github.com/MikeWasson), a [tní Dykstra](https://github.com/tdykstra)
 
@@ -66,7 +66,7 @@ if (env.IsDevelopment())
 }
 ```
 
-Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).
+Další informace najdete v tématu [pracovat s několika prostředí](xref:fundamentals/environments).
 
 ## <a name="how-to-use-browser-link"></a>Postup použití Browser Link
 

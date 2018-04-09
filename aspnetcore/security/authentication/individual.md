@@ -1,7 +1,7 @@
 ---
-title: "Články založené na projekty vytvořené pomocí jednotlivých uživatelských účtů"
+title: Články založené na ASP.NET Core projekty vytvořené pomocí jednotlivých uživatelských účtů
 author: rick-anderson
-description: "Tento dokument obsahuje seznam článků založené na projekty vytvořené pomocí jednotlivých uživatelských účtů."
+description: Zjistit články založené na ASP.NET Core projekty vytvořené pomocí jednotlivých uživatelských účtů.
 manager: wpickett
 ms.author: riande
 ms.date: 11/30/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/individual
-ms.openlocfilehash: aee18fa08fbc5c8452ca2b401d32858edaf55e7c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 40715debb48c0a7121ce84d7843b8517b0973e74
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="articles-based-on-projects-created-with-individual-user-accounts"></a>Články založené na projekty vytvořené pomocí jednotlivých uživatelských účtů
+# <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a>Články založené na ASP.NET Core projekty vytvořené pomocí jednotlivých uživatelských účtů
 
 Jádro ASP.NET Identity je součástí šablony projektů v sadě Visual Studio s parametrem "Jednotlivé uživatelské účty".
 

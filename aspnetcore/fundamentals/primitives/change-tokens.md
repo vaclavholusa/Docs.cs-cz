@@ -1,7 +1,7 @@
 ---
-title: "Detekovat změny s tokeny změn v ASP.NET Core"
+title: Detekovat změny s tokeny změn v ASP.NET Core
 author: guardrex
-description: "Další informace o použití změn tokeny ke sledování změn."
+description: Další informace o použití změn tokeny ke sledování změn.
 manager: wpickett
 ms.author: riande
 ms.date: 11/10/2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 4d3fa59d44dac5742e310cec117f41289ed6c5ab
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: fd57683506e809fd68ba8c02ad184b5f8afe53a2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>Detekovat změny s tokeny změn v ASP.NET Core
 
@@ -139,7 +139,7 @@ Když `OnPostStartMonitoring` je aktivována, je zapnuto monitorování a aktuá
 
 ## <a name="monitoring-cached-file-changes"></a>Monitorování změn souborů uložených v mezipaměti
 
-Obsah souboru může být uložená v mezipaměti v paměti pomocí [IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache). Ukládání do mezipaměti v paměti je podrobněji popsaná [ukládání do mezipaměti v paměti](xref:performance/caching/memory) tématu. Bez nutnosti převádět další kroky, jako je popsáno níže, implementace *zastaralé* (zastaralé) data jsou vrácena z mezipaměti, pokud se změní zdrojová data.
+Obsah souboru může být uložená v mezipaměti v paměti pomocí [IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache). Ukládání do mezipaměti v paměti je podrobněji popsaná [mezipaměti v paměti](xref:performance/caching/memory) tématu. Bez nutnosti převádět další kroky, jako je popsáno níže, implementace *zastaralé* (zastaralé) data jsou vrácena z mezipaměti, pokud se změní zdrojová data.
 
 Bez zohlednění stav v mezipaměti zdrojového souboru při obnovování [klouzavé vypršení platnosti](/dotnet/api/microsoft.extensions.caching.memory.memorycacheentryoptions.slidingexpiration) období vede k zastaralých data do mezipaměti. Každý požadavek pro data obnovuje klouzavou dobu vypršení platnosti, ale soubor nikdy znovu načíst do mezipaměti. Všechny funkce aplikací, které používají obsah uložený v mezipaměti v souboru se vztahují pravděpodobně přijetí starý obsah.
 
@@ -199,8 +199,8 @@ var compositeChangeToken =
 
 ## <a name="see-also"></a>Viz také
 
-* [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
-* [Práce s distribuované mezipaměti](xref:performance/caching/distributed)
+* [Mezipaměti v paměti](xref:performance/caching/memory)
+* [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
 * [Detekovat změny s tokeny změn](xref:fundamentals/primitives/change-tokens)
 * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
 * [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)

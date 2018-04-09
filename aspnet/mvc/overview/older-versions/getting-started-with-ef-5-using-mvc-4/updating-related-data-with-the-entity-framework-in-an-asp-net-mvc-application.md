@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Aktualizace dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC (6 10) | Microsoft Docs"
+title: Aktualizace dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC (6 10) | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 2ca76364a2e9a71dc92644bd579345ae3c304a69
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 227a7fed0ced884db591f0375454d6d0a62518f5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>Aktualizace dat souvisejících s platformou Entity Framework v aplikaci ASP.NET MVC (6 10)
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -214,6 +214,6 @@ Teď jste dokončili tento úvod k práci s související data. Pokud v těchto 
 
 Odkazy na další zdroje Entity Framework najdete na konci [poslední kurzu této série](advanced-entity-framework-scenarios-for-an-mvc-web-application.md).
 
->[!div class="step-by-step"]
-[Předchozí](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[další](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [další](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)

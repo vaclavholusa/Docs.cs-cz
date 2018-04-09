@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs
-title: "Zobrazení tabulky dat databáze (C#) | Microsoft Docs"
+title: Zobrazení tabulky dat databáze (C#) | Microsoft Docs
 author: microsoft
-description: "V tomto kurzu ukazují I dvě metody zobrazení sadu záznamů databáze. Zobrazit dvě metody formátování sadu záznamů databáze v kódu HTML tových..."
+description: V tomto kurzu ukazují I dvě metody zobrazení sadu záznamů databáze. Zobrazit dvě metody formátování sadu záznamů databáze v kódu HTML tových...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 37ea081df2ee26e186669b815a4d769e1976ae9c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1d5dc9dd4a82e4577c6c1a3b124d45fef0b0f67c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-table-of-database-data-c"></a>Zobrazení tabulky dat databáze (C#)
 ====================
@@ -135,7 +135,7 @@ V **přidat zobrazení** dialogové okno, zaškrtněte políčko s názvem bez p
 
 Po kliknutí **přidat** tlačítko zobrazení v výpis 2 je generován automaticky. Toto zobrazení obsahuje je kód potřebný k procházení kolekce filmy a zobrazení ke každé z vlastností přehrávání videa.
 
-**Výpis 2 – Views\Movie\Index.aspx**
+**Listing 2 – Views\Movie\Index.aspx**
 
 [!code-aspx[Main](displaying-a-table-of-database-data-cs/samples/sample2.aspx)]
 
@@ -173,7 +173,7 @@ Partial v výpis 3 obsahuje šablonu pro jeden řádek záznamů.
 
 Upravené zobrazení indexu v výpis 4 používá částečné MovieTemplate.
 
-**Výpis 4 – Views\Movie\Index.aspx**
+**Listing 4 – Views\Movie\Index.aspx**
 
 [!code-aspx[Main](displaying-a-table-of-database-data-cs/samples/sample4.aspx)]
 
@@ -189,6 +189,6 @@ Metoda RenderPartial() je jiný než většina jiných metod helper, protože ne
 
 Cílem tohoto kurzu bylo vysvětlují, jak můžete zobrazit také sadu záznamů databáze do tabulky HTML. Nejprve jste zjistili, jak vracet sadu záznamů databáze z akce kontroleru a využívají k Microsoft Entity Framework. V dalším kroku jste zjistili, jak generovat zobrazení, které zobrazuje kolekce položek automaticky pomocí generování uživatelského rozhraní sady Visual Studio. Nakonec jste zjistili, jak můžete zjednodušit využitím částečné zobrazení. Jste zjistili, jak používat částečné jako šablona, tak, že každý záznam v databázi.
 
->[!div class="step-by-step"]
-[Předchozí](creating-model-classes-with-linq-to-sql-cs.md)
-[další](performing-simple-validation-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-model-classes-with-linq-to-sql-cs.md)
+> [další](performing-simple-validation-cs.md)

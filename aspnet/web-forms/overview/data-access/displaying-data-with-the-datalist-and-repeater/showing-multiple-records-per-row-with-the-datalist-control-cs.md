@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
-title: "Zobrazení více záznamů na řádek pomocí ovládacího prvku DataList (C#) | Microsoft Docs"
+title: Zobrazení více záznamů na řádek pomocí ovládacího prvku DataList (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu krátké jsme budete prozkoumejte postup přizpůsobení DataList rozložení pomocí jeho RepeatColumns a RepeatDirection vlastnosti."
+description: V tomto kurzu krátké jsme budete prozkoumejte postup přizpůsobení DataList rozložení pomocí jeho RepeatColumns a RepeatDirection vlastnosti.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e9f04089afdbeb1b13725536c9fe97951ee8ca5c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 308427836c1fef05e66d1f5348c6bd9e80290f9b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>Zobrazení více záznamů na řádek pomocí ovládacího prvku DataList (C#)
 ====================
@@ -55,7 +55,7 @@ Po vytvoření a vytvoření vazby nové ObjectDataSource prvku DataList, vytvo�
 
 [!code-aspx[Main](showing-multiple-records-per-row-with-the-datalist-control-cs/samples/sample2.aspx)]
 
-Všimněte si zadá sunout zahrnuté specifikace formátu v `Eval` Syntaxe datové vazby `UnitPrice`, formátování vrácené hodnoty jako měnu -`Eval("UnitPrice", "{0:C}").`
+Všimněte si zadá sunout zahrnuté specifikace formátu v `Eval` Syntaxe datové vazby `UnitPrice`, formátování vrácené hodnoty jako měnu - `Eval("UnitPrice", "{0:C}").`
 
 Za chvíli navštivte stránku v prohlížeči. Jak je vidět na obrázku 2, DataList vykreslí jako jeden sloupec, více řádků tabulky produktů.
 
@@ -113,12 +113,12 @@ DataList, ve výchozím nastavení, jsou jeho položky v jednoho sloupce, řádk
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Suru Jan. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](formatting-the-datalist-and-repeater-based-upon-data-cs.md)
-[další](nested-data-web-controls-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](formatting-the-datalist-and-repeater-based-upon-data-cs.md)
+> [další](nested-data-web-controls-cs.md)

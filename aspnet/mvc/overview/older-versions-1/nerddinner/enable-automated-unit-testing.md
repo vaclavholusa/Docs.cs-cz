@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
-title: "Povolit automatizované testování částí | Microsoft Docs"
+title: Povolit automatizované testování částí | Microsoft Docs
 author: microsoft
-description: "Krok 12 ukazuje, jak vyvíjet sada testů jednotek automatizované, ověřte funkčnost naše NerdDinner a který nám umožní spolehlivosti provést změny..."
+description: Krok 12 ukazuje, jak vyvíjet sada testů jednotek automatizované, ověřte funkčnost naše NerdDinner a který nám umožní spolehlivosti provést změny...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
-ms.openlocfilehash: 1a4258054d90b2d5bcc06a63fb6f3b4673a4837d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fede08be7e06327c6d04fa5d36f7dd818d79b380
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="enable-automated-unit-testing"></a>Povolit automatické testování částí
 ====================
@@ -234,7 +234,7 @@ Objekt uživatele na základní třídy Kontroleru zapouzdřuje informace o při
 
 Mocking architektury proveďte testování usnadnit tím, že umožňuje nám vytvořit dynamicky falešných verzích závislé objekty, které podporují naše testy. Například můžete použít mocking framework v našem testu akce úpravy dynamicky vytvořit objekt uživatele, který naše DinnersController můžete použít k vyhledání simulované uživatelské jméno. Vyhnete se odkaz s hodnotou null z se vyvolá, když jsme spuštění našich testů.
 
-Existuje mnoho .NET mocking rozhraní, které lze použít s architekturou ASP.NET MVC (zobrazí se seznam z nich zde: [http://www.mockframeworks.com/](http://www.mockframeworks.com/)). Pro testování aplikace NerdDinner použijeme typu open source mocking framework názvem "Moq", který si můžete stáhnout zdarma z [http://www.mockframeworks.com/moq](http://www.mockframeworks.com/moq).
+Existuje mnoho .NET mocking rozhraní, které lze použít s architekturou ASP.NET MVC (zobrazí se seznam z nich zde: [ http://www.mockframeworks.com/ ](http://www.mockframeworks.com/)). Pro testování aplikace NerdDinner použijeme typu open source mocking framework názvem "Moq", který si můžete stáhnout zdarma z [ http://www.mockframeworks.com/moq ](http://www.mockframeworks.com/moq).
 
 Po stažení, přidáme v našem NerdDinner.Tests projektu odkaz na sestavení Moq.dll:
 
@@ -285,6 +285,6 @@ Novější kapitoly v knize zabývat testovací řízené vývoj (TDD) a způsob
 
 Některé konečné wrap až komentáře.
 
->[!div class="step-by-step"]
-[Předchozí](use-ajax-to-implement-mapping-scenarios.md)
-[další](nerddinner-wrap-up.md)
+> [!div class="step-by-step"]
+> [Předchozí](use-ajax-to-implement-mapping-scenarios.md)
+> [další](nerddinner-wrap-up.md)

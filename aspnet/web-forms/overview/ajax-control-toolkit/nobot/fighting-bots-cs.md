@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
-title: "Požárů robotů (C#) | Microsoft Docs"
+title: Požárů robotů (C#) | Microsoft Docs
 author: wenz
-description: "Automatizované robotů sádra weblogů a další weby s nevyžádanou poštou, odesílání formulářů komentář bez nutnosti zásahu uživatele. NoBot ovládacího prvku ASP.NET AJAX Con..."
+description: Automatizované robotů sádra weblogů a další weby s nevyžádanou poštou, odesílání formulářů komentář bez nutnosti zásahu uživatele. NoBot ovládacího prvku ASP.NET AJAX Con...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b8eedff4691c1115e242be884f9e74663dc0b4f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1ea3aaa5461c2f58a927ae975568f18a34a4729b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="fighting-bots-c"></a>Požárů robotů (C#)
 ====================
@@ -37,7 +37,7 @@ Do jaké míry robotů jeden běžný postup je použití CAPTCHAs zcela automat
 
 Existuje několik výhod a nevýhod tohoto přístupu, avšak informace o to jsou nad rámec tohoto návodu. Ale ovládací prvek v sadě nástrojů ovládacího prvku ASP.NET AJAX, která poskytuje podobný postup: `NoBot`. Je snazší překonat než test CAPTCHA, ale je velmi snadno použitelný a tarify velmi dobře na webech jako blogy, kde považuje úspěšné, pokud většinu spamu pokusy jsou nepotlačí, což `NoBot` ovládacího prvku provést.
 
-`NoBot`zpětné volání aktuálního webové formuláře ASP.NET zachytí při splnění alespoň jeden z těchto podmínek:
+`NoBot` zpětné volání aktuálního webové formuláře ASP.NET zachytí při splnění alespoň jeden z těchto podmínek:
 
 - V prohlížeči se nepodaří vyřešit stavebnice JavaScript (například při deaktivaci JavaScript)
 - Odeslání formuláře pro rychlé uživatele
@@ -45,9 +45,9 @@ Existuje několik výhod a nevýhod tohoto přístupu, avšak informace o to jso
 
 Chcete-li zkontrolovat pro tyto podmínky `NoBot` ovládacího prvku vyžaduje tyto atributy (všechny z nich volitelný):
 
-- `ResponseMinimumDelaySeconds`minimální množství sekund mezi zpětná vystavení
-- `CutoffWindowSeconds`Délka Časový interval, ve kterém jsou postback z jedna IP adresa míry
-- `CutoffMaximumInstances`maximální množství za časový interval v sekundách
+- `ResponseMinimumDelaySeconds` minimální množství sekund mezi zpětná vystavení
+- `CutoffWindowSeconds` Délka Časový interval, ve kterém jsou postback z jedna IP adresa míry
+- `CutoffMaximumInstances` maximální množství za časový interval v sekundách
 
 Následující kód požadavky tohoto nejméně dvou sekund uplynout mezi postback a že jsou pouze pět postback nebo méně v intervalu 30 sekund:
 
@@ -72,5 +72,5 @@ Při spuštění tohoto skriptu a deaktivovat JavaScript nebo odesláním formul
 
 Tato chybová zpráva by mohla být způsobena robotu ([Kliknutím zobrazit obrázek v plné velikosti](fighting-bots-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Další](fighting-bots-vb.md)
+> [!div class="step-by-step"]
+> [Next](fighting-bots-vb.md)

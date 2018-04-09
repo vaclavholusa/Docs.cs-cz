@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Async a uložené procedury s rozhraní Entity Framework v aplikaci ASP.NET MVC | Microsoft Docs"
+title: Async a uložené procedury s rozhraní Entity Framework v aplikaci ASP.NET MVC | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 5 s použitím Entity Framework 6 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 5 s použitím Entity Framework 6 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7412b32ac29179dfa319544781d4c7165c58196b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 84cf427c7da7905444568ac34534e9ed98a7d8c8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Async a uložené procedury s rozhraní Entity Framework v aplikaci ASP.NET MVC
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stáhnout PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
@@ -117,16 +117,16 @@ Někteří vývojáři a DBAs přednost pomocí uložených procedur pro příst
     Otevřete *migrace\&lt; časové razítko&gt;\_DepartmentSP.cs* zobrazíte kód `Up` metodu, která vytvoří Insert, Update a Delete uložené procedury:
 
     [!code-csharp[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs?highlight=3-4,26-27,42-43)]
-- V konzole pro správu balíčku zadejte následující příkaz:
+3. V konzole pro správu balíčku zadejte následující příkaz:
 
-    `update-database`
-- Spuštění aplikace v režimu ladění, klikněte **oddělení** a pak klikněte **vytvořit nový**.
-- Zadejte data pro nové oddělení a pak klikněte na tlačítko **vytvořit**.
+     `update-database`
+4. Spuštění aplikace v režimu ladění, klikněte **oddělení** a pak klikněte **vytvořit nový**.
+5. Zadejte data pro nové oddělení a pak klikněte na tlačítko **vytvořit**.
 
-    ![Vytvořit oddělení](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
-- V sadě Visual Studio, podívejte se na protokoly v **výstup** okna, zobrazí se, že uložené procedury použila vložit nový řádek oddělení.
+     ![Vytvořit oddělení](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
+6. V sadě Visual Studio, podívejte se na protokoly v **výstup** okna, zobrazí se, že uložené procedury použila vložit nový řádek oddělení.
 
-    ![Vložení SP oddělení](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
+     ![Vložení SP oddělení](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
 Kód nejprve vytvoří výchozí uložené procedury názvy. Pokud používáte existující databázi, může být nutné přizpůsobit názvy uložené procedury, chcete-li použít uložené procedury již definována v databázi. Informace o tom, jak to udělat najdete v tématu [Entity Framework Code první vložení, aktualizaci nebo odstranění uložených procedur](https://msdn.microsoft.com/data/dn468673).
 
@@ -152,6 +152,6 @@ V tomto kurzu jste viděli, jak ke zlepšení efektivity serveru podle psaní k�
 
 Odkazy na další zdroje Entity Framework najdete v [přístup k datům ASP.NET - doporučené prostředky](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Předchozí](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[další](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [další](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-vb
-title: "Datové vazby v ovládacím prvku posuvník (VB) | Microsoft Docs"
+title: Datové vazby v ovládacím prvku posuvník (VB) | Microsoft Docs
 author: wenz
-description: "Ovládacího prvku posuvník Toolkitu AJAX poskytuje grafické jezdce, která se dá řídit pomocí myši. Je možné svázat aktuální pozice..."
+description: Ovládacího prvku posuvník Toolkitu AJAX poskytuje grafické jezdce, která se dá řídit pomocí myši. Je možné svázat aktuální pozice...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6d106fda523356c9b7abd2d82b2d82537b50bd21
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3ecd8598cd7fdcbbb4812e501bb30fa1f563a054
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="databinding-the-slider-control-vb"></a>Datové vazby v ovládacím prvku posuvník (VB)
 ====================
@@ -52,5 +52,5 @@ Jak vidíte v prohlížeči, datové vazby funguje v obou směrech: zadáním no
 
 Posuvník a textové pole, které jsou synchronizované ([Kliknutím zobrazit obrázek v plné velikosti](databinding-the-slider-control-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](using-the-slider-control-with-auto-postback-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-the-slider-control-with-auto-postback-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
-title: "Přehled směrování rozhraní ASP.NET MVC (C#) | Microsoft Docs"
+title: Přehled směrování rozhraní ASP.NET MVC (C#) | Microsoft Docs
 author: StephenWalther
-description: "V tomto kurzu Stephen Walther ukazuje, jak rozhraní ASP.NET MVC mapuje požadavky prohlížeče akce kontroleru."
+description: V tomto kurzu Stephen Walther ukazuje, jak rozhraní ASP.NET MVC mapuje požadavky prohlížeče akce kontroleru.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 714fd1939ffeba11b84a82e80193ecbbe4b12e09
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fa565d2ef253539844f5224df00bdcdc047bb3f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-routing-overview-c"></a>Přehled směrování rozhraní ASP.NET MVC (C#)
 ====================
@@ -37,7 +37,7 @@ Druhý a důležitější je v souboru Global.asax aplikace vytvoří směrovac�
 
 Soubor v výpis 1 obsahuje výchozí soubor Global.asax pro aplikaci ASP.NET MVC.
 
-**Výpis 1 – Global.asax.cs**
+**Listing 1 - Global.asax.cs**
 
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample1.cs)]
 
@@ -55,7 +55,7 @@ Výchozí trasu mapuje tuto adresu URL následující parametry:
 
 - Akce = indexu
 
-- ID = 3
+- id = 3
 
 Pokud budete požadovat adresy URL/Home nebo Index nebo 3, se spustí následující kód:
 
@@ -109,5 +109,5 @@ Adresa URL/Home nebo Index nebo 3, na druhé straně funguje správně, pomocí 
 
 Cílem tohoto kurzu bylo poskytnout stručný úvod do směrování ASP.NET. Jsme se zaměřili na výchozí směrovací tabulka, kterou můžete získat pomocí nové aplikace ASP.NET MVC. Jste se dozvěděli, jak výchozí trasu mapuje adresy URL akce kontroleru.
 
->[!div class="step-by-step"]
-[Další](understanding-action-filters-cs.md)
+> [!div class="step-by-step"]
+> [Next](understanding-action-filters-cs.md)

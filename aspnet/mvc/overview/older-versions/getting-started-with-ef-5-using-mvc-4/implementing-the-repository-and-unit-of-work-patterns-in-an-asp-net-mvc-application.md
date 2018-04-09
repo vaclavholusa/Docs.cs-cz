@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
-title: "Implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC (9, 10) | Microsoft Docs"
+title: Implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC (9, 10) | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 02b1de31b9513247facc92bc6b72247865d176f9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f870b61658686769304a7809bde62e66da3bd0c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>Implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC (9, 10)
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -124,7 +124,7 @@ Došlo ke změně pouze zvýrazněný kód.
 
 V původní verzi kódu `students` je zadán jako `IQueryable` objektu. Dotaz není odeslal do databáze, dokud je převeden do kolekce pomocí metody, jako třeba `ToList`, který nedojde, dokud zobrazení indexu přistupuje k student modelu. `Where` Stane metoda ve výše uvedeném původní kódu `WHERE` klauzule v dotazu SQL, která je odeslána do databáze. Naopak to znamená, že jenom vybrané entity jsou vráceny v databázi. Ale v důsledku změna `context.Students` k `studentRepository.GetStudents()`, `students` proměnná po tento příkaz `IEnumerable` kolekci, která zahrnuje všechny studenty v databázi. Konečný výsledek použití `Where` metoda je stejný, ale teď práci v paměti na webovém serveru a ne serverem databáze. Pro dotazy, které vrací velké objemy dat může to být neefektivní.
 
-> [!TIP] 
+> [!TIP]
 > 
 > **IQueryable vs. Rozhraní IEnumerable**
 > 
@@ -249,6 +249,6 @@ Nyní jste implementovali úložišti a jednotky pracovních vzorů. Lambda – 
 
 Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Předchozí](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[další](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [další](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

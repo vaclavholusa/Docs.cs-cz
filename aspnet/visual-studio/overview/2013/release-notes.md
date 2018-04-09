@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2013/release-notes
-title: "Technologie ASP.NET a webové nástroje pro poznámky k verzi 2013 Visual Studio | Microsoft Docs"
+title: Technologie ASP.NET a webové nástroje pro poznámky k verzi 2013 Visual Studio | Microsoft Docs
 author: microsoft
-description: "Tento dokument popisuje verzi technologie ASP.NET a webové nástroje pro sadu Visual Studio 2013."
+description: Tento dokument popisuje verzi technologie ASP.NET a webové nástroje pro sadu Visual Studio 2013.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 7f38a0f2693aeb2a4884b9c03719b583423957a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e9ddd96f186564834ff6bb2c30cf0ed5444cbf1b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>Technologie ASP.NET a webové nástroje pro poznámky k verzi 2013 Visual Studio
 ====================
@@ -201,14 +201,14 @@ Nyní můžete přepsat filtry, které platí pro danou akci metodu nebo řadič
 
 ### <a name="attribute-routing"></a>Atribut směrování
 
-ASP.NET MVC teď podporuje atribut směrování díky příspěvek ve Tim McCall, Autor [http://attributerouting.net](http://attributerouting.net). Se směrováním atributů můžete zadat trasy zadávání poznámek k akce a kontrolery.
+ASP.NET MVC teď podporuje atribut směrování díky příspěvek ve Tim McCall, Autor [ http://attributerouting.net ](http://attributerouting.net). Se směrováním atributů můžete zadat trasy zadávání poznámek k akce a kontrolery.
 
 <a id="TOC11"></a>
 ## <a name="aspnet-web-api-2"></a>Rozhraní API pro ASP.NET Web 2
 
 ### <a name="attribute-routing"></a>Atribut směrování
 
-Rozhraní ASP.NET Web API nyní podporuje atribut směrování díky příspěvek ve Tim McCall, Autor [http://attributerouting.net](http://attributerouting.net). Se směrováním atributů můžete zadat trasy webového rozhraní API zadávání poznámek k vaše akce a kontrolery takto:
+Rozhraní ASP.NET Web API nyní podporuje atribut směrování díky příspěvek ve Tim McCall, Autor [ http://attributerouting.net ](http://attributerouting.net). Se směrováním atributů můžete zadat trasy webového rozhraní API zadávání poznámek k vaše akce a kontrolery takto:
 
 [!code-csharp[Main](release-notes/samples/sample1.cs)]
 
@@ -332,7 +332,7 @@ SignalR 2.0 je založený na úplně [OWIN (otevřít webové rozhraní pro rozh
 
 ### <a name="maphubs-and-mapconnection-are-now-mapsignalr"></a>MapHubs a MapConnection jsou nyní MapSignalR
 
-Pro kompatibilitu s normami OWIN, byla přejmenovaná tyto metody k `MapSignalR`. `MapSignalR`Voláno bez parametrů se namapuje všechny rozbočovače (jako `MapHubs` nemá ve verzi 1.x); k mapování jednotlivých **připojení PersistentConnection** objekty, zadejte jako parametr typu a přípona adresy URL pro připojení jako typ připojení první argument.
+Pro kompatibilitu s normami OWIN, byla přejmenovaná tyto metody k `MapSignalR`. `MapSignalR` Voláno bez parametrů se namapuje všechny rozbočovače (jako `MapHubs` nemá ve verzi 1.x); k mapování jednotlivých **připojení PersistentConnection** objekty, zadejte jako parametr typu a přípona adresy URL pro připojení jako typ připojení první argument.
 
 `MapSignalR` Metoda je volána v třídy pro spuštění Owin. Visual Studio 2013 obsahuje novou šablonu pro třídy pro spuštění Owin; pro použití této šablony, postupujte takto:
 
@@ -392,7 +392,7 @@ Následující kód ukazuje, jak povolit CORS a JSONP v projektu SignalR 2.0. Te
 
 Byla přidána podpora pro iOS a Android klienty, kteří používají MonoTouch a MonoDroid součásti z [Xamarin knihovny](https://xamarin.com/). Další informace o tom, jak je používat najdete v tématu [pomocí součásti Xamarin](https://github.com/SignalR/SignalR/wiki/Building-Mono.Mobile.sln). Tyto součásti bude k dispozici v [Xamarin Storu](https://store.xamarin.com/) při vydání SignalR RTW je k dispozici.
 
-<a id="portable"></a>### Přenosný klient .NET
+<a id="portable"></a> ### Přenosný klient .NET
 
 Pro lepší usnadňují vývoj pro různé platformy, Silverlight, WinRT a klienti Windows Phone nahradil jeden přenosný klient .NET, který podporuje tyto platformy:
 
@@ -580,8 +580,8 @@ ASP.NET Razor 3 zahrnuje následující nové funkce:
 - Podpora pro úpravy kartě. Preivously **formátovat dokument** příkaz, automaticky odsazení a automatické formátování v sadě Visual Studio nebude fungovat správně při použití **zachovat karty** možnost. Tato změna opraví formátování pro kódu Razor pro karta formátování sady Visual Studio.
 - Podporu pravidel přepisování adres URL při generování odkazů.
 - Odebrání transparentní atributu zabezpečení.
- > [!NOTE]
- > Toto je narušující změně a umožňuje Razor 3 nekompatibilní s MVC4 a starší, zatímco Razor 2 není kompatibilní s MVC5 nebo sestavení zkompilovaných proti MVC5.
+  > [!NOTE]
+  > Toto je narušující změně a umožňuje Razor 3 nekompatibilní s MVC4 a starší, zatímco Razor 2 není kompatibilní s MVC5 nebo sestavení zkompilovaných proti MVC5.
 
 Chyby syntaxe Razor 3 v sadě Visual Studio 2013 z předběžných verzí naleznete [zde](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Resolved%7cClosed&type=All&priority=All&release=All%7cv5.0%2bPreview%7cv5.0%2bRC%7cv5.0%2bRTM&assignedTo=All&component=Web%2bPages%252fRazor&reasonClosed=Fixed&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
 
@@ -603,7 +603,7 @@ Tato část popisuje známé problémy a nejnovějších změn v ASP.NET a webov
 
 ### <a name="aspnet-web-api"></a>Rozhraní API pro ASP.NET Web
 
-1. `ODataQueryOptions<T>.ApplyTo(IQueryable)`nevrací `IQueryable<T>` vždy, protože jsme doplnili podporu pro `$select` a `$expand`.
+1. `ODataQueryOptions<T>.ApplyTo(IQueryable)` nevrací `IQueryable<T>` vždy, protože jsme doplnili podporu pro `$select` a `$expand`.
 
     Naše starší ukázky pro `ODataQueryOptions<T>` vždy převedena návratový z hodnoty `ApplyTo` k `IQueryable<T>`. To fungovala předtím, protože dotaz možnostech, které jsme podporováno dříve (`$filter`, `$orderby`, `$skip`, `$top`) neměňte tvaru dotazu. Teď, když podporujeme `$select` a `$expand` návratovou hodnotou z `ApplyTo` nebude `IQueryable<T>` vždy.
 
@@ -632,7 +632,7 @@ Tato část popisuje známé problémy a nejnovějších změn v ASP.NET a webov
 
     *Chyba serveru v aplikaci '/'.*
 
-    *Deklarace identity typu 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier' nebo 'http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider' nebyl v zadané ClaimsIdentity. Povolení podpory token proti padělání s ověřováním na základě deklarace, zkontrolujte, zda zprostředkovatele nakonfigurované deklarací identity je zajištění obě tyto deklarace na ClaimsIdentity instance, které generuje. Pokud na jiný typ deklarací zprostředkovatele deklarací identity nakonfigurované místo toho používá jako jedinečný identifikátor, lze nakonfigurovat pomocí statické vlastnosti AntiForgeryConfig.UniqueClaimTypeIdentifier.*
+    <em>Deklarace typu '<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>'nebo'<http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>' nebyl v zadané ClaimsIdentity. Povolení podpory token proti padělání s ověřováním na základě deklarace, zkontrolujte, zda zprostředkovatele nakonfigurované deklarací identity je zajištění obě tyto deklarace na ClaimsIdentity instance, které generuje. Pokud na jiný typ deklarací zprostředkovatele deklarací identity nakonfigurované místo toho používá jako jedinečný identifikátor, lze nakonfigurovat pomocí statické vlastnosti AntiForgeryConfig.UniqueClaimTypeIdentifier.</em>
 
     **Alternativní řešení**:
 
@@ -647,14 +647,14 @@ Tato část popisuje známé problémy a nejnovějších změn v ASP.NET a webov
 
     Chcete-li opravit výše uvedené chyby, otevřete *všechny* (včetně těch v zobrazení složky) souborů Web.config v projektu a postupujte takto:
 
-    1. Aktualizujte všechny výskyty verze "4.0.0.0" "System.Web.Mvc" na "5.0.0.0".
-    2. Aktualizovat všechny výskyty verzi "System.Web.Helpers", "2.0.0.0" &quot;System.Web.WebPages&quot; a &quot;System.Web.WebPages.Razor&quot; k "3.0.0.0"
+   1. Aktualizujte všechny výskyty verze "4.0.0.0" "System.Web.Mvc" na "5.0.0.0".
+   2. Aktualizovat všechny výskyty verzi "System.Web.Helpers", "2.0.0.0" &quot;System.Web.WebPages&quot; a &quot;System.Web.WebPages.Razor&quot; k "3.0.0.0"
 
-    Například po provedení výše změny vazby sestavení by měl vypadat takto:
+      Například po provedení výše změny vazby sestavení by měl vypadat takto:
 
-    [!code-xml[Main](release-notes/samples/sample24.xml)]
+      [!code-xml[Main](release-notes/samples/sample24.xml)]
 
-    Informace týkající se upgradu projekty MVC 4 až MVC 5 najdete v tématu [postup upgradu služby ASP.NET MVC 4 a projekt webového rozhraní API ASP.NET MVC 5 a webovém rozhraní API 2](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md).
+      Informace týkající se upgradu projekty MVC 4 až MVC 5 najdete v tématu [postup upgradu služby ASP.NET MVC 4 a projekt webového rozhraní API ASP.NET MVC 5 a webovém rozhraní API 2](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md).
 3. Při použití ověřování na straně klienta s jQuery Nerušivý ověření, zobrazí se zpráva ověření je někdy nesprávný pro element HTML input s typem = "číslo". Chyba ověřování je pro požadovaná hodnota ("stáří pole je povinné") se zobrazí kdy je zadáno neplatné číslo místo správné zpráva, že je požadováno platné číslo.
 
     Tento problém je často najít s automaticky generovaný kód pro model se ve vlastnosti integer. v zobrazení vytvořit a upravit.
@@ -697,13 +697,13 @@ Alternativní řešení:
 - Chcete-li vyřešit tuto chybu pro MVC, přidat novou položku vygenerované a vyberte závislosti MVC 5 (minimální nebo úplná). Tento proces bude do projektu přidejte všechny požadované změny.
 - Odstranění této chyby pro webového rozhraní API:
 
-    1. Do projektu přidejte třídy WebApiConfig.
+  1. Do projektu přidejte třídy WebApiConfig.
 
-        [!code-csharp[Main](release-notes/samples/sample25.cs)]
+      [!code-csharp[Main](release-notes/samples/sample25.cs)]
 
-        [!code-vb[Main](release-notes/samples/sample26.vb)]
-    2. Konfigurace WebApiConfig.Register v aplikaci\_Start – metoda v souboru Global.asax následujícím způsobem:
+      [!code-vb[Main](release-notes/samples/sample26.vb)]
+  2. Konfigurace WebApiConfig.Register v aplikaci\_Start – metoda v souboru Global.asax následujícím způsobem:
 
-        [!code-csharp[Main](release-notes/samples/sample27.cs)]
+      [!code-csharp[Main](release-notes/samples/sample27.cs)]
 
-        [!code-vb[Main](release-notes/samples/sample28.vb)]
+      [!code-vb[Main](release-notes/samples/sample28.vb)]

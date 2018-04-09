@@ -1,7 +1,7 @@
 ---
-title: "Vytváření služeb back-end pro nativní mobilní aplikace s ASP.NET Core"
+title: Vytvoření služby back-end pro nativní mobilní aplikace pomocí ASP.NET Core
 author: ardalis
-description: "Naučte se vytvářet back-end služby pomocí ASP.NET MVC jádra pro podporu nativních mobilní aplikace."
+description: Naučte se vytvářet back-end služby pomocí ASP.NET MVC jádra pro podporu nativních mobilní aplikace.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: 3902cf728ab6ba776674382361ebb1b28e765711
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 18aecea00eb9cda3462ede7e478616a99cf302f8
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="creating-backend-services-for-native-mobile-applications-with-aspnet-core"></a>Vytváření služeb back-end pro nativní mobilní aplikace s ASP.NET Core
+# <a name="create-backend-services-for-native-mobile-apps-with-aspnet-core"></a>Vytvoření služby back-end pro nativní mobilní aplikace pomocí ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/)
 
@@ -85,7 +85,7 @@ Konfigurace v implementaci v *Startup.cs*:
 V tomto okamžiku jste připraveni vytvořit *ToDoItemsController*.
 
 > [!TIP]
-> Další informace o vytváření webovým rozhraním API v [vytváření vaše první rozhraní Web API s ASP.NET MVC jádra a sady Visual Studio](../tutorials/first-web-api.md).
+> Další informace o vytváření webovým rozhraním API v [vytvoření vašeho prvního rozhraní API webové s ASP.NET MVC jádra a sady Visual Studio](../tutorials/first-web-api.md).
 
 ## <a name="creating-the-controller"></a>Vytvoření Kontroleru
 

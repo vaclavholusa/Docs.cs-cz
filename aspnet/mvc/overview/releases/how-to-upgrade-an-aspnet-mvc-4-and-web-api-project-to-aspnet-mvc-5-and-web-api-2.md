@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
-title: "Postup upgradu ASP.NET MVC 4 a webového projektu rozhraní API a rozhraní Web API 2 ASP.NET MVC 5 | Microsoft Docs"
+title: Postup upgradu ASP.NET MVC 4 a webového projektu rozhraní API a rozhraní Web API 2 ASP.NET MVC 5 | Microsoft Docs
 author: Rick-Anderson
-description: "ASP.NET MVC 5 a webovém rozhraní API 2 Přepněte hostitele nových funkcí, včetně směrováním atributů, filtry ověřování a mnoho dalšího."
+description: ASP.NET MVC 5 a webovém rozhraní API 2 Přepněte hostitele nových funkcí, včetně směrováním atributů, filtry ověřování a mnoho dalšího.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 05a3189cf105d1230b96e90b46ea5ab60fef1bf1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f61502933a5ba92896ee97cef9cff915fe23831d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2"></a>Postup upgradu rozhraní ASP.NET MVC 4 a projekt webového rozhraní API a rozhraní Web API 2 ASP.NET MVC 5
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-> ASP.NET MVC 5 a webovém rozhraní API 2 Přepněte hostitele nových funkcí, včetně směrováním atributů, filtry ověřování a mnoho dalšího. V tématu [https://www.asp.net/vnext](https://www.asp.net/core) další podrobnosti.
+> ASP.NET MVC 5 a webovém rozhraní API 2 Přepněte hostitele nových funkcí, včetně směrováním atributů, filtry ověřování a mnoho dalšího. V tématu [ https://www.asp.net/vnext ](https://www.asp.net/core) další podrobnosti.
 > 
 > Tento návod vám pomohou s kroky nutné k upgradu vaší aplikace na nejnovější verzi.  
 > 
@@ -41,7 +41,7 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
     [!code-csharp[Main](how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2/samples/sample1.cs)]
 
- až
+   až
 
     [!code-csharp[Main](how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2/samples/sample2.cs)]
 3. Zajistěte, aby všechny balíčky, které použít projekty jsou kompatibilní s MVC 5 a webovém rozhraní API 2. Následující tabulka uvádí MVC 4 a webového rozhraní API související s balíčky, než se musí změnit. Pokud máte balíček, který je závislý na jednom z balíčky uvedené níže, obraťte se na vydavatele získat novější verze, které jsou kompatibilní s MVC 5 a webovém rozhraní API 2. Pokud máte zdrojový kód pro tyto balíčky, by je znovu zkompiluje s nové sestavení MVC 5 a webovém rozhraní API 2.   
@@ -66,9 +66,9 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
     | Microsoft.Data.OData | 5.2.x | 5.6.x |
     | System.Spatial | 5.2.x | 5.6.x |
     | Microsoft.Data.Edm | 5.2.x | 5.6.x |
-    | Microsoft.AspNet.Mvc.FixedDisplayModes | < o: p >< / o: p > | Odebrat |
-    | Microsoft.AspNet.WebPages.Administration | < o: p >< / o: p > | Odebrat |
-    | Microsoft weboví Pomocníci | < o: p >< / o: p > | Microsoft.AspNet.WebHelpers |
+    | Microsoft.AspNet.Mvc.FixedDisplayModes | <o:p> </o:p> | Odebrat |
+    | Microsoft.AspNet.WebPages.Administration | <o:p> </o:p> | Odebrat |
+    | Microsoft-Web-Helpers | <o:p> </o:p> | Microsoft.AspNet.WebHelpers |
 
     > [!NOTE]
     > Microsoft-weboví Pomocníci nahradilo Microsoft.AspNet.WebHelpers. Doporučujeme nejprve odeberte starý balíček a pak nainstalujte novější balíček.   
@@ -78,17 +78,17 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 5. Odeberte některé z následujících balíčků ASP.NET NuGet, které jsou nainstalovány. Odeberete tyto pomocí konzoly Správce balíčků (PMC). Otevřete pomocí PMC, vyberte **nástroje** nabídce a potom vyberte **Správce balíčků knihoven** vyberte **Konzola správce balíčků**. Projekt nemusí zahrnovat všechny z nich.
 
     1. `Microsoft.AspNet.WebPages.Administration`  
- Tento balíček je obvykle přidat při upgradu z MVC 3 pro MVC 4. Jej Pokud chcete odstranit, spusťte následující příkaz v pomocí PMC:  
+   Tento balíček je obvykle přidat při upgradu z MVC 3 pro MVC 4. Jej Pokud chcete odstranit, spusťte následující příkaz v pomocí PMC:  
         `Uninstall-Package -Id Microsoft.AspNet.WebPages.Administration`
     2. `Microsoft-Web-Helpers`   
- Tento balíček obsahuje byla přejmenované jako `Microsoft.AspNet.WebHelpers`. Jej Pokud chcete odstranit, spusťte následující příkaz v pomocí PMC:  
+   Tento balíček obsahuje byla přejmenované jako `Microsoft.AspNet.WebHelpers`. Jej Pokud chcete odstranit, spusťte následující příkaz v pomocí PMC:  
         `Uninstall-Package -Id Microsoft-Web-Helpers`
     3. `Microsoft.AspNet.Mvc.FixedDisplayMode`  
- Tento balíček obsahuje pracovní kolem pro chyby v MVC 4, který byl vyřešen v MVC 5. Jej Pokud chcete odstranit, spusťte následující příkaz v pomocí PMC:  
+   Tento balíček obsahuje pracovní kolem pro chyby v MVC 4, který byl vyřešen v MVC 5. Jej Pokud chcete odstranit, spusťte následující příkaz v pomocí PMC:  
         `Uninstall-Package -Id Microsoft.AspNet.Mvc.FixedDisplayModes`
 6. Upgradujte všech balíčků ASP.NET NuGet pomocí pomocí PMC. Pomocí PMC spusťte následující příkaz:  
     `Update-Package`  
- `Update-Package` Příkaz bez žádné parametry aktualizuje všechny balíčky. Balíčky můžete aktualizovat samostatně pomocí ID argumentu. Další informace o příkazu aktualizace, spusťte `get-help update-package` .
+   `Update-Package` Příkaz bez žádné parametry aktualizuje všechny balíčky. Balíčky můžete aktualizovat samostatně pomocí ID argumentu. Další informace o příkazu aktualizace, spusťte `get-help update-package` .
 
 ## <a name="update-the-application-webconfig-file"></a>Aktualizovat aplikaci *web.config* souboru
 

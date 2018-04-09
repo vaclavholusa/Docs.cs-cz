@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Implementace dědičnosti s rozhraní Entity Framework v aplikaci ASP.NET MVC (8 10) | Microsoft Docs"
+title: Implementace dědičnosti s rozhraní Entity Framework v aplikaci ASP.NET MVC (8 10) | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 54e46c6f996b6fe86a227c851562e61678b02780
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee088f841bdb68f4806b0b62be7d379b9eab9f8c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-inheritance-with-the-entity-framework-in-an-aspnet-mvc-application-8-of-10"></a>Implementace dědičnosti s rozhraní Entity Framework v aplikaci ASP.NET MVC (8 10)
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -47,13 +47,13 @@ Předpokládejme, že chcete odstranit redundantní kód pro vlastnosti, které 
 
 Existuje několik způsobů, které tato struktura dědičnosti může být reprezentován v databázi. Můžete mít `Person` tabulku, která obsahuje informace o studenty a vyučující v jediné tabulce. Některé sloupce může použít pouze pro vyučující (`HireDate`), některé jenom pro studenty (`EnrollmentDate`), některé na obojí (`LastName`, `FirstName`). Obvykle byste měli *diskriminátoru* sloupce k určení, který typ každý řádek představuje. Například možná sloupce diskriminátoru pro vyučující a "Student" pro studenty, "Lektorem".
 
-![Tabulka za hierarchy_example](https://asp.net/media/2578125/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-hierarchy_example_244067cd-b451-4e9b-9595-793b9afca505.png)
+![Table-per-hierarchy_example](https://asp.net/media/2578125/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-hierarchy_example_244067cd-b451-4e9b-9595-793b9afca505.png)
 
 Tento vzor generování strukturu dědičnosti entity z jedné tabulky databáze se nazývá *tabulky na hierarchii* dědičnost (TPH).
 
 Alternativou je ke změně databáze vzhled strukturu dědičnosti. Například můžete mít jenom pole název `Person` tabulky a mít samostatné `Instructor` a `Student` tabulky s poli datum.
 
-![Tabulka za type_inheritance](https://asp.net/media/2578131/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-type_inheritance.png)
+![Table-per-type_inheritance](https://asp.net/media/2578131/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-type_inheritance.png)
 
 Tento vzor vytvoření databázové tabulky, pro každou třídu entity se nazývá *tabulky podle typu* dědičnosti (TPT).
 
@@ -100,7 +100,7 @@ Tato změna není povinné; změní jenom název InstructorID sloupce v tabulce 
 Dále je třeba změnit `InstructorID` k `PersonID` a `StudentID` k `PersonID` v rámci projektu ***s výjimkou*** v souborech migrace časovým razítkem v *migrace* složka. K tomu budete najít a otevřít pouze soubory, které se musí změnit a pak provést globální změnu na otevřených souborů. Jediný soubor ve *migrace* je složka, měli byste změnit *Migrations\Configuration.cs.*
 
 1. > [!IMPORTANT]
- > Začněte tím, že zavřít všechny otevřené soubory v sadě Visual Studio.
+   > Začněte tím, že zavřít všechny otevřené soubory v sadě Visual Studio.
 2. Klikněte na tlačítko **najít a nahradit – najít všechny soubory** v **upravit** nabídce a potom vyhledejte všechny soubory v projektu, které obsahují `InstructorID`.  
   
     ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
@@ -108,7 +108,7 @@ Dále je třeba změnit `InstructorID` k `PersonID` a `StudentID` k `PersonID` v
   
     ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
 4. Otevřete **nahradit v souborech** dialogové okno a změňte **Hledat v** k **všechny otevřené dokumenty**.
-5. Použití **nahradit v souborech** dialogové okno změnit všechny `InstructorID` do`PersonID.`  
+5. Použití **nahradit v souborech** dialogové okno změnit všechny `InstructorID` do `PersonID.`  
   
     ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 6. Najít všechny soubory v projektu, které obsahují `StudentID`.
@@ -169,6 +169,6 @@ Teď byl implementován tabulky za hierarchie dědičnosti pro `Person`, `Studen
 
 Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Předchozí](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[další](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [další](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)

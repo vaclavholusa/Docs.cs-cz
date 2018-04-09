@@ -1,26 +1,26 @@
 ---
 uid: identity/overview/getting-started/aspnet-identity-recommended-resources
-title: "ASP.NET Identity doporučené prostředky | Microsoft Docs"
+title: ASP.NET Identity doporučené prostředky | Microsoft Docs
 author: Rick-Anderson
-description: "Toto téma obsahuje odkazy na zdroje informací k dokumentaci o tom, jak používat ASP.NET Identity. Pokud znáte skvělé blogu, vlákno stackoverflow nebo jiných připoj..."
+description: Toto téma obsahuje odkazy na zdroje informací k dokumentaci o tom, jak používat ASP.NET Identity. Pokud znáte skvělé blogu, vlákno stackoverflow nebo jiných připoj...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2015
 ms.topic: article
 ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: cb6e378d6b1de7d43bbc4272b64f9029f4e92924
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f2e1693a32fce6956ddb1e095e6f208b9f0faab6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity doporučené prostředky
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Toto téma obsahuje odkazy na zdroje informací k dokumentaci o tom, jak používat ASP.NET Identity.
 > 
@@ -94,7 +94,7 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
     - [Principy kanálu Owin externí ověřování](http://coding.abel.nu/2014/06/understanding-the-owin-external-authentication-pipeline/)
     - [Přehled Owin a ASP.NET Identity](http://coding.abel.nu/2014/06/asp-net-identity-and-owin-overview/)
 
- Podle [K. Scott Allen](https://twitter.com/OdeToCode) na funkce Ode ke kódu
+  Podle [K. Scott Allen](https://twitter.com/OdeToCode) na funkce Ode ke kódu
 
     - [ASP.NET Core Identity](http://odetocode.com/blogs/scott/archive/2013/11/25/asp-net-core-identity.aspx) tomto blogu prozkoumá základní abstrakce, včetně IUser, IUserStore a I\*ukládání rozhraní.
     - [ASP.NET Identity s platformou Entity Framework](http://odetocode.com/blogs/scott/archive/2014/01/03/asp-net-identity-with-the-entity-framework.aspx) jednotlivé uživatelské účty v aplikacích MVC 5, webového rozhraní API a SPA, připojovací řetězce a správu kontexty
@@ -108,7 +108,7 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 - [Pranav Rastogi](https://twitter.com/rustd)
 
     - [Další informace získáte z sociálních zprostředkovatelů](https://blogs.msdn.com/b/webdev/archive/2013/10/16/get-more-information-from-social-providers-used-in-the-vs-2013-project-templates.aspx)
-- [@beabigrockstar](https://twitter.com/beabigrockstar)(Jerrie Pelser)
+- [@beabigrockstar](https://twitter.com/beabigrockstar) (Jerrie Pelser)
 
     - [2 Multi-Factor authentication](http://www.beabigrockstar.com/blog/2-factor-authentication-with-asp-net-identity-2-0-beta-1/)
     - [Pomocí ASP.NET Identity Google Authenticator](http://www.beabigrockstar.com/blog/using-google-authenticator-asp-net-identity/)
@@ -132,7 +132,7 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 - Channel 9 [zabezpečení vašeho webu s ASP.NET Identity](https://channel9.msdn.com/Events/TechDays/Techdays-2014-the-Netherlands/Securing-your-website-with-ASP-NET-Identity) podle Alex Thissen
 - [Použít identitu ASP.NET na existující DB – Model](https://www.youtube.com/watch?v=elfqejow5hM) podle Alexander Schmidt
 - [Identitu ASP.NET jeden](https://www.youtube.com/watch?v=w8GD-QIusKk) podle Ivaylo Kenov z webu Telerik
-- [Čeština ASP.NET Identity](https://www.youtube.com/watch?v=tVbZp5brcpY) v této přednáškový ukážeme, jak nasadit základní ověřování, jak přidat podporu pro externí identity zprostředkovatele například Twitteru nebo Facebooku a způsob použití jednorázového hesla (OTP). [ASP.NET Identity je nástupce členství zprostředkovatele rolí &#367; v technologii ASP.NET, tedy knihovna pro zajišt &#283; ní autentizace uživatel &#367;. V této p&#345;ednášce si ukážeme, jak nasad]
+- [Čeština ASP.NET Identity](https://www.youtube.com/watch?v=tVbZp5brcpY) v této přednáškový ukážeme, jak nasadit základní ověřování, jak přidat podporu pro externí identity zprostředkovatele například Twitteru nebo Facebooku a způsob použití jednorázového hesla (OTP). [ASP.NET Identity je nástupce členství zprostředkovatele rolí&#367; v technologii ASP.NET, tedy knihovna pro zajišt&#283;ní autentizace uživatel&#367;. V této p&#345;ednášce si ukážeme, jak nasad]
 
 <a id="cust"></a>
 ## <a name="custom-storage-providers-for-aspnet-identity"></a>Poskytovatelé vlastní úložiště pro identitu ASP.NET

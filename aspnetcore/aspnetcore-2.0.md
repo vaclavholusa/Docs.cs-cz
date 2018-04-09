@@ -1,7 +1,7 @@
 ---
-title: "Co je nového v technologii ASP.NET 2.0 jádra"
+title: Co je nového v technologii ASP.NET 2.0 jádra
 author: rick-anderson
-description: "Další informace o nových funkcích v technologii ASP.NET 2.0 jádra."
+description: Další informace o nových funkcích v technologii ASP.NET 2.0 jádra.
 manager: wpickett
 ms.author: riande
 ms.date: 07/10/2017
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: cfeff3abafb310c15d6623dcfbb9e1857640c79b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 711a96b17fd41847619ade21eb643af845705c79
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Co je nového v technologii ASP.NET 2.0 jádra
 
@@ -73,12 +73,12 @@ Provedli jsme je snazší sestavovat zabezpečené webové rozhraní API pomocí
 Další informace o ověřování změny v 2.0 naleznete v následujících zdrojích informací:
 
 * [Potvrzení účtu a obnovení hesla v ASP.NET Core](xref:security/authentication/accconfirm)
-* [Povolení generování kód QR pro aplikace v ASP.NET Core](xref:security/authentication/identity-enable-qrcodes)
+* [Povolit generování kód QR pro aplikace v ASP.NET Core](xref:security/authentication/identity-enable-qrcodes)
 * [Migrace ověřování a identita na jádro ASP.NET 2.0](xref:migration/1x-to-2x/identity-2x)
 
 ## <a name="spa-templates"></a>SPA šablony
 
-Jeden šablony projektů stránky aplikace (SPA) pro úhlová, Aurelia, Knockout.js, React.js a React.js s Redux jsou k dispozici. Úhlová šablony je aktualizovaná tak, aby úhlová 4. Úhlová a reagují šablony jsou dostupné ve výchozím nastavení; informace o tom, jak získat další šablony najdete v tématu [vytvoření nového projektu SPA](xref:client-side/spa-services#creating-a-new-project). Informace o tom, jak sestavit SPA v ASP.NET Core najdete v tématu [pomocí JavaScriptServices pro vytváření jednostránkové aplikace](xref:client-side/spa-services).
+Jeden šablony projektů stránky aplikace (SPA) pro úhlová, Aurelia, Knockout.js, React.js a React.js s Redux jsou k dispozici. Úhlová šablony je aktualizovaná tak, aby úhlová 4. Úhlová a reagují šablony jsou dostupné ve výchozím nastavení; informace o tom, jak získat další šablony najdete v tématu [vytvořte nový projekt SPA](xref:client-side/spa-services#creating-a-new-project). Informace o tom, jak sestavit SPA v ASP.NET Core najdete v tématu [JavaScriptServices použijte pro vytvoření jednostránkové aplikace](xref:client-side/spa-services).
 
 ## <a name="kestrel-improvements"></a>Vylepšení kestrel
 
@@ -145,7 +145,7 @@ Informace o stavu funkcí jazyka C# 7.1 najdete v tématu [úložiště Roslyn G
 * [Visual Studio publikační profily pro nasazení aplikace ASP.NET Core](xref:host-and-deploy/visual-studio-publish-profiles)
 * [Správa klíčů](xref:security/data-protection/implementation/key-management)
 * [Konfigurace ověřování Facebook](xref:security/authentication/facebook-logins)
-* [Konfigurace ověřování služby Twitter.](xref:security/authentication/twitter-logins)
+* [Nakonfigurujte ověřování služby Twitter.](xref:security/authentication/twitter-logins)
 * [Konfigurace ověřování Google](xref:security/authentication/google-logins)
 * [Konfigurace ověřování Account Microsoft](xref:security/authentication/microsoft-logins)
 

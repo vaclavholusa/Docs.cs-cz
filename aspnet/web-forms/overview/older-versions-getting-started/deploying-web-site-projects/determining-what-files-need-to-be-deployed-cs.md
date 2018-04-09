@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
-title: "Určení soubory musí být nasazené (C#) | Microsoft Docs"
+title: Určení soubory musí být nasazené (C#) | Microsoft Docs
 author: rick-anderson
-description: "Soubory musí být nasazeny z vývojového prostředí do produkčního prostředí závisí částečně na tom, zda technologie ASP.NET byla vytvořena nám..."
+description: Soubory musí být nasazeny z vývojového prostředí do produkčního prostředí závisí částečně na tom, zda technologie ASP.NET byla vytvořena nám...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d58956323275a46b44b36d4f19db4d2f607e3916
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ff5f1d7d156efa12d97382db56211a07c43178fd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="determining-what-files-need-to-be-deployed-c"></a>Určení soubory musí být nasazené (C#)
 ====================
@@ -80,14 +80,14 @@ Ke stažení pro tento kurz zahrnuje názvem recenze adresáře aplikace ASP.NET
 - Sedm různých stránkách ASP.NET: 
 
     - ~`/Default.aspx`-domovské stránky daného webu.
-    - ~`/About.aspx`-stránku "O the server".
-    - ~`/Fiction/Default.aspx`-stránku se seznamem fiction knihy, které byly. 
+    - ~`/About.aspx` -stránku "O the server".
+    - ~`/Fiction/Default.aspx` -stránku se seznamem fiction knihy, které byly. 
 
-        - ~`/Fiction/Blaze.aspx`-o nové Richard Bachman *Blaze*.
-    - ~/`Tech/Default.aspx`-stránku se seznamem knih technologie, které byly zkontrolovány. 
+        - ~`/Fiction/Blaze.aspx` -o nové Richard Bachman *Blaze*.
+    - ~/`Tech/Default.aspx` -stránku se seznamem knih technologie, které byly zkontrolovány. 
 
         - ~/`Tech/CYOW.aspx`-o *vytvořit si vlastní web*.
-        - ~/`Tech/TYASP35.aspx`-o *naučit sami technologie ASP.NET 3.5 za 24 hodin*.
+        - ~/`Tech/TYASP35.aspx` -o *naučit sami technologie ASP.NET 3.5 za 24 hodin*.
 - Tři různé šablon stylů CSS soubory ve složce stylů.
 - Čtyři bitové kopie souborům - používá technologii ASP.NET logo a bitové kopie zahrnuje tři zkontrolovat Books – všechny v `Images` složky.
 - A `Web.sitemap` souboru, který definuje mapy webu a slouží k zobrazení v nabídkách `Default.aspx` stránky v kořenovém adresáři a `Fiction` a `Tech` složek.
@@ -110,7 +110,7 @@ Tato aplikace nepoužívá databázi. Každý kontrolní je implementovaný jako
 V tomto kurzu stažení má dvě kopie webové aplikace, každý implementovaný jako jiný typ projektu sady Visual Studio: BookReviewsWAP, projekt webové aplikace a BookReviewsWSP, webový projekt. Oba projekty se vytvořily s Visual Web Developer 2008 SP1 a pomocí technologie ASP.NET 3.5 SP1. Pro práci s těmihle projekty začít rozbalení obsahu na pracovní plochu. Otevřít projekt webové aplikace (BookReviewsWAP), přejděte do složky BookReviewsWAP a poklikejte na soubor řešení `BookReviewsWAP.sln`. Otevřete webový projekt (BookReviewsWSP), spusťte sadu Visual Studio a pak v nabídce Soubor vyberte možnost Otevřít web, přejděte na `BookReviewsWSP` na pracovní ploše a klikněte na tlačítko OK.
 
 
-Zbývající dvě části tohoto kurzu pohled na jaké soubory, budete muset zkopírovat do produkčního prostředí při nasazení aplikace. Následující dva kurzy -  *[nasazení vaše lokality pomocí protokolu FTP](deploying-your-site-using-an-ftp-client-cs.md)*  a  *[nasazení vaše lokality pomocí sady Visual Studio](deploying-your-site-using-visual-studio-cs.md)*  -různé způsoby, jak zobrazit Zkopírujte tyto soubory zprostředkovatele webového hostitele.
+Zbývající dvě části tohoto kurzu pohled na jaké soubory, budete muset zkopírovat do produkčního prostředí při nasazení aplikace. Následující dva kurzy - *[nasazení vaše lokality pomocí protokolu FTP](deploying-your-site-using-an-ftp-client-cs.md)* a *[nasazení vaše lokality pomocí sady Visual Studio](deploying-your-site-using-visual-studio-cs.md)* -různé způsoby, jak zobrazit Zkopírujte tyto soubory zprostředkovatele webového hostitele.
 
 ## <a name="determining-the-files-to-deploy-for-the-web-application-project"></a>Určení souborů k nasazení pro projekt webové aplikace
 
@@ -185,6 +185,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Systém projektu webu Visual Studio 2005: co je to a proč jsme to udělali?](https://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx)
 - [Návod: Převádění webový projekt na projekt webové aplikace v sadě Visual Studio](https://msdn.microsoft.com/library/aa983476.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](asp-net-hosting-options-cs.md)
-[další](deploying-your-site-using-an-ftp-client-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](asp-net-hosting-options-cs.md)
+> [další](deploying-your-site-using-an-ftp-client-cs.md)

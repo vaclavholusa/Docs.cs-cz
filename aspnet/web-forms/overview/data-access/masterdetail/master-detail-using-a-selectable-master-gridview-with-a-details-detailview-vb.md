@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
-title: "Vybrat hlavní GridView pomocí podrobnosti DetailView (VB) podrobností | Microsoft Docs"
+title: Vybrat hlavní GridView pomocí podrobnosti DetailView (VB) podrobností | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu bude mít GridView, jejichž řádky zahrnovat jméno a cena jednotlivých produktů společně s vyberte tlačítko. Kliknutím na tlačítko Vybrat pro particu..."
+description: V tomto kurzu bude mít GridView, jejichž řádky zahrnovat jméno a cena jednotlivých produktů společně s vyberte tlačítko. Kliknutím na tlačítko Vybrat pro particu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eae9c07eff7780aab18346815ca410d687789d17
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 80db1589de901f7364c05c5bb67829145579b6c0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>Vybrat hlavní GridView pomocí podrobnosti DetailView (VB) podrobností
 ====================
@@ -131,12 +131,12 @@ Pomocí `ProductsGrid` dokončit GridView, všechno, co zbývá přidat DetailsV
 **Obrázek 9**: vyvolání `ProductsBLL` třídy `GetProductByProductID(productID)` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image27.png))
 
 
-Máte  *`productID`*  hodnoty parametru získané z ovládacího prvku GridView `SelectedValue` vlastnost. Jak již bylo zmíněno dříve, prvku GridView `SelectedValue` vlastnost vrací hodnotu pro vybraný řádek klíče první data. Proto je nutné, prvku GridView `DataKeyNames` je nastavena na `ProductID`tak, aby vybraný řádek `ProductID` vrácena hodnota `SelectedValue`.
+Máte *`productID`* hodnoty parametru získané z ovládacího prvku GridView `SelectedValue` vlastnost. Jak již bylo zmíněno dříve, prvku GridView `SelectedValue` vlastnost vrací hodnotu pro vybraný řádek klíče první data. Proto je nutné, prvku GridView `DataKeyNames` je nastavena na `ProductID`tak, aby vybraný řádek `ProductID` vrácena hodnota `SelectedValue`.
 
 
 [![Nastavit productID parametrů pro vlastnost SelectedValue GridView.](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image28.png)
 
-**Obrázek 10**: nastavte  *`productID`*  parametru prvku GridView `SelectedValue` vlastnost ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
+**Obrázek 10**: nastavte *`productID`* parametru prvku GridView `SelectedValue` vlastnost ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
 
 
 Jednou `productDetailsDataSource` ObjectDataSource je správně nakonfigurována a vázána na DetailsView, v tomto kurzu je dokončena! Při první návštěvě stránky není vybrán žádný řádek, proto je rutina GridView `SelectedValue` vlastnost vrátí `Nothing`. Vzhledem k tomu, že nejsou žádné produkty s `NULL` `ProductID` hodnotu, jsou vráceny žádné záznamy `GetProductByProductID(productID)` metoda, což znamená, že se nezobrazí DetailsView (viz obrázek 11). Po kliknutí na tlačítko vyberte řádek GridView vyplývá zpětné volání a DetailsView se aktualizují. V tuto chvíli rutina GridView `SelectedValue` vlastnost vrátí `ProductID` vybraného řádku `GetProductByProductID(productID)` metoda vrátí `ProductsDataTable` s informacemi o konkrétním produktu a DetailsView obsahuje tyto informace (viz obrázek 12).
@@ -162,11 +162,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Hilton Giesenow. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](master-detail-filtering-across-two-pages-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](master-detail-filtering-across-two-pages-vb.md)

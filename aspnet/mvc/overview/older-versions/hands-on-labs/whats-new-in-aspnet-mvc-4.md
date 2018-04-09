@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
-title: "Co je nového v architektuře ASP.NET MVC 4 | Microsoft Docs"
+title: Co je nového v architektuře ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC 4 je rozhraní pro vytváření škálovatelných standardy webových aplikací pomocí vzory zavedené návrhu a výkonu technologie ASP.NET a..."
+description: ASP.NET MVC 4 je rozhraní pro vytváření škálovatelných standardy webových aplikací pomocí vzory zavedené návrhu a výkonu technologie ASP.NET a...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 35f9402ad6090c0441425a23b2b8063350892210
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 977a6b5a84825ebd087752dcc2ebc0c5410e1657
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>Co je nového v architektuře ASP.NET MVC 4
 
@@ -144,7 +144,7 @@ V tomto cvičení zaměříte vylepšení v šablonách projektu ASP.NET MVC 4. 
 
     ![jQuery ověření](whats-new-in-aspnet-mvc-4/_static/image6.png)
 
-    jQuery ověření
+    *jQuery ověření*
 
     > [!NOTE]
     > Všimněte si, že dva protokolu v části v první části se můžou přihlásit pomocí účtu zaregistrovaný z webu a v druhé části můžete altenativelly přihlásit pomocí jiné služby ověřování, jako je google (zakázané ve výchozím nastavení).
@@ -153,43 +153,45 @@ V tomto cvičení zaměříte vylepšení v šablonách projektu ASP.NET MVC 4. 
 7. Odebrat z posledního řádku registrace klienta Google pro komentář *OAuth* ověřování.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample1.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample1.cs)]
 
-    > [!NOTE]
-    > Všimněte si, že můžete snadno povolit ověřování pomocí služby všechny OpenID nebo OAuth, jako je Facebook, Twitter, Microsoft atd.
+> [!NOTE]
+> Notice you can easily enable authentication using any OpenID or OAuth service like Facebook, Twitter, Microsoft, etc.
+~~~
 8. Stiskněte klávesu **F5** spustíte řešení v a přejít na stránku přihlášení.
 9. Vyberte **Google** službu pro přihlášení.
 
     ![Vyberte protokol ve službě](whats-new-in-aspnet-mvc-4/_static/image7.png)
 
-    Vyberte protokol ve službě
+    *Vyberte protokol ve službě*
 10. Přihlaste se pomocí účtu Google.
 11. Povolit web (localhost) za účelem načtení informací z účtu Google.
 12. Nakonec budete muset zaregistrovat v lokalitě za účelem přidružení účtu Google.
 
-    ![Přidružení účtu Google](whats-new-in-aspnet-mvc-4/_static/image8.png)
+   ![Přidružení účtu Google](whats-new-in-aspnet-mvc-4/_static/image8.png)
 
-    *Přidružení účtu Google*
+   *Přidružení účtu Google*
 13. Zavřete prohlížeč zastavení ladicího programu a vrátíte se k sadě Visual Studio.
 14. Nyní prozkoumejte řešení podívejte se na některé další nové funkce, zavedená v šabloně projektu ASP.NET MVC 4.
 
-    ![Šablona projektu ASP.NET MVC 4 Internet aplikace](whats-new-in-aspnet-mvc-4/_static/image9.png "šablona projektu ASP.NET MVC 4 Internetové aplikace")
+   ![Šablona projektu ASP.NET MVC 4 Internet aplikace](whats-new-in-aspnet-mvc-4/_static/image9.png "šablona projektu ASP.NET MVC 4 Internetové aplikace")
 
-    *Šablona projektu ASP.NET MVC 4 Internetové aplikace*
+   *Šablona projektu ASP.NET MVC 4 Internetové aplikace*
 
-    - **HTML 5 Markup**
+   - **HTML 5 Markup**
 
-        Procházejte šablony zobrazení a zjistěte, kód nový motiv.
+       Procházejte šablony zobrazení a zjistěte, kód nový motiv.
 
-        ![Nové šablony, pomocí syntaxe Razor a HTML5 značek About.cshtml. ] (whats-new-in-aspnet-mvc-4/_static/image10.png "Novou šablonu, pomocí syntaxe Razor a HTML5 značek About.cshtml.")
+       ![Nové šablony, pomocí syntaxe Razor a HTML5 značek About.cshtml. ] (whats-new-in-aspnet-mvc-4/_static/image10.png "Novou šablonu, pomocí syntaxe Razor a HTML5 značek About.cshtml.")
 
-        *Nové šablony, pomocí syntaxe Razor a HTML5 značek (About.cshtml).*
-    - **Aktualizované knihoven jazyka JavaScript**
+       *Nové šablony, pomocí syntaxe Razor a HTML5 značek (About.cshtml).*
+   - **Aktualizované knihoven jazyka JavaScript**
 
-        Výchozí šablony ASP.NET MVC 4 nyní zahrnuje kódem KnockoutJS, rozhraní MVVM JavaScript rozhraní, které umožňuje vytvářet a vysoce přizpůsobivém webových aplikací pomocí jazyka JavaScript a HTML. Jako v MVC3, jQuery a knihovny uživatelského rozhraní jQuery jsou také zahrnuté v architektuře ASP.NET MVC 4.
+       Výchozí šablony ASP.NET MVC 4 nyní zahrnuje kódem KnockoutJS, rozhraní MVVM JavaScript rozhraní, které umožňuje vytvářet a vysoce přizpůsobivém webových aplikací pomocí jazyka JavaScript a HTML. Jako v MVC3, jQuery a knihovny uživatelského rozhraní jQuery jsou také zahrnuté v architektuře ASP.NET MVC 4.
 
-        > [!NOTE]
-        > Můžete získat další informace o knihovně kódem KnockOutJS v tento odkaz: [ [http://learn.knockoutjs.com/](http://learn.knockoutjs.com/)](http://learn.knockoutjs.com/). Kromě toho se dozvíte jQuery a kalendáře jQuery UI v [ [http://docs.jquery.com/](http://docs.jquery.com/)](http://docs.jquery.com/).
+     > [!NOTE]
+     > Můžete získat další informace o knihovně kódem KnockOutJS v tento odkaz: [ [ http://learn.knockoutjs.com/ ](http://learn.knockoutjs.com/) ](http://learn.knockoutjs.com/). Kromě toho se dozvíte jQuery a kalendáře jQuery UI v [ [ http://docs.jquery.com/ ](http://docs.jquery.com/) ](http://docs.jquery.com/).
 
 <a id="Task_2_-_Exploring_the_Mobile_Application_Template"></a>
 #### <a name="task-2---exploring-the-mobile-application-template"></a>Úloha 2 – prohlížení šablona mobilních aplikací
@@ -228,16 +230,20 @@ ASP.NET MVC 4 usnadňuje vývoj webů pro mobilní a tablet prohlížeče. Tato 
 9. Otevřete  **\_Layout.cshtml**, který je umístěn v **zobrazení | Sdílené** složky a komentář metaznačku zobrazení. Spuštění aplikace, není-li již otevřít a podívejte se na rozdíly.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample2.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample2.cshtml)]
 
-    ![Lokality po komentářů metaznačku zobrazení](whats-new-in-aspnet-mvc-4/_static/image15.png "lokality po komentářů metaznačku zobrazení")
+![The site after commenting the viewport meta tag](whats-new-in-aspnet-mvc-4/_static/image15.png "The site after commenting the viewport meta tag")
 
-    *Lokality po komentářů metaznačku zobrazení*
+*The site after commenting the viewport meta tag*
+~~~
 10. V sadě Visual Studio, stiskněte klávesu **SHIFT** + **F5** Zastavit ladění aplikace.
 11. Zrušením komentáře u metaznačku zobrazení.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample3.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample3.cshtml)]
+~~~
 
 <a id="Task_3_-_Using_Adaptive_Rendering"></a>
 #### <a name="task-3---using-adaptive-rendering"></a>Úloha 3 – pomocí adaptivního vykreslování
@@ -254,11 +260,11 @@ Pomocí adaptivního vykreslování techniku, bude web **zobrazí správně, bez
 > Je základní formát media dotaz: @media \[oboru: všechny | kapesních | tisku | projekce | obrazovky\] ([vlastnost: hodnota] a... [vlastnost: hodnota])
 
 
-Příklady dotazů média: &gt;  **@media všechny a (max-width: 1000px) a (min-width: 700px) {}:** pro všechny rozlišení mezi 700px a 1000px.
+Příklady dotazů média: &gt;  <strong>@media všechny a (max-width: 1000px) a (min-width: 700px) {}:</strong> pro všechny rozlišení mezi 700px a 1000px.
 
-> **@media obrazovky a (min-width: 400 px) a (max-width: 700px) {...}:** pouze pro obrazovky. Řešení musí být v rozsahu od 400 do 700px.
+> <strong>@media obrazovky a (min-width: 400 px) a (max-width: 700px) {...}:</strong> pouze pro obrazovky. Řešení musí být v rozsahu od 400 do 700px.
 > 
-> **@media kapesních a (min-width: 20em), obrazovky a (min-width: 20em) {...}:** kapesní zařízení (mobile a zařízení) a obrazovky. Minimální šířka musí být větší než 20em.
+> <strong>@media kapesních a (min-width: 20em), obrazovky a (min-width: 20em) {...}:</strong> kapesní zařízení (mobile a zařízení) a obrazovky. Minimální šířka musí být větší než 20em.
 > 
 > Další informace o tom najdete na [W3C lokality](http://www.w3.org/TR/css3-mediaqueries/).
 
@@ -267,7 +273,7 @@ Bude nyní prozkoumat, jak funguje adaptivního vykreslování, zlepšení čite
 
 1. Otevřete **PhotoGallery.sln** řešení, které jste vytvořili v úloze 1 a vyberte **Fotogalerie** projektu. Stiskněte klávesu **F5** ke spuštění řešení.
 2. Změnit šířku prohlížeče, nastavení windows polovina nebo méně než čtvrtletí původní velikosti. Všimněte si, co se stane s položkami v hlavičce: některé prvky se nezobrazí v oblasti viditelné hlavičky.
-3. Otevřete **Site.css** soubor v Průzkumníku řešení Visual Studio, umístěný v **obsahu** složce projektu. Stiskněte klávesu **kombinaci kláves CTRL + F** otevřete Visual Studio integrované hledání a zapisovat  **@media**  najít **šablon stylů CSS media dotaz**.
+3. Otevřete <strong>Site.css</strong> soubor v Průzkumníku řešení Visual Studio, umístěný v <strong>obsahu</strong> složce projektu. Stiskněte klávesu <strong>kombinaci kláves CTRL + F</strong> otevřete Visual Studio integrované hledání a zapisovat <strong>@media</strong> najít <strong>šablon stylů CSS media dotaz</strong>.
 
     Tímto způsobem lze použít média dotazu podmínka, která je definována v této šabloně: když je velikost okna prohlížeče pod **850 px**, použita pravidla stylu CSS jsou ty, které jsou definované v tomto bloku média.
 
@@ -278,13 +284,13 @@ Bude nyní prozkoumat, jak funguje adaptivního vykreslování, zlepšení čite
 
     ![Na levé straně stránky aplikuje @media styl, v pravém styl je vynechán](whats-new-in-aspnet-mvc-4/_static/image17.png "na levé straně stránky použití @media styl, v pravém styl je vynechán.")
 
-    *Na levé straně stránky aplikuje @media styl, v pravém styl je vynechán.*
+    <em>Na levé straně stránky aplikuje @media styl, v pravém styl je vynechán.</em>
 
     Nyní Pojďme podívejte se na co se stane, že na mobilních zařízeních:
 
     ![Na levé straně stránky aplikuje @media styl, v pravém styl je vynechán](whats-new-in-aspnet-mvc-4/_static/image18.png "na levé straně stránky použití @media styl, v pravém styl je vynechán.")
 
-    *Na levé straně stránky aplikuje @media styl, v pravém styl je vynechán.*
+    <em>Na levé straně stránky aplikuje @media styl, v pravém styl je vynechán.</em>
 
     I když si všimnete, že změny při vykreslení stránky ve webovém prohlížeči nejsou velmi důležité, pokud používáte mobilní zařízení stane zřejmější rozdíly. Na levé straně bitové kopie můžete vidíte, že vlastní styl lepší čitelnost.
 
@@ -321,7 +327,9 @@ V této úloze se vytvoří model služby fotografii k získání obsahu, který
     (Code fragment kódu - *architektury ASP.NET MVC 4 laboratoř - Ex02 - Galerie akce*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample4.cs)]
+~~~
 7. Stiskněte klávesu **F5** pro spuštění řešení a pak přejděte na následující adresu URL k testování služby mocked fotografií: `http://localhost:[port]/photo/gallery` (hodnoty [port] závisí na aktuální portu, kde byla aplikace spuštěná). Požadavek na tuto adresu URL by měla načíst obsah **Photos.json** souboru.
 
     ![Testování službu mocked fotografií](whats-new-in-aspnet-mvc-4/_static/image20.png "testování mocked fotografií služby")
@@ -342,20 +350,26 @@ V této úloze aktualizujte domovské stránce k zobrazení galerie fotografií 
     (Code fragment kódu - *modelu ASP.NET MVC 4 laboratoř - Ex02 - fotografie*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
+~~~
 4. Otevřete **HomeController.cs** souboru z **řadiče** složky.
 5. Přidejte následující příkazy using.
 
     (Code fragment kódu - *architektury ASP.NET MVC 4 laboratoř - Ex02 - HomeController direktiv Using*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample6.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample6.cs)]
+~~~
 6. Aktualizace **Index** akci použít **HttpClient** k načtení dat Galerie a potom pomocí **JavaScriptSerializer** k deserializaci do modelu zobrazení.
 
     (Code fragment kódu - *architektury ASP.NET MVC 4 laboratoř - Ex02 - indexu akce*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample7.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample7.cs)]
+~~~
 7. Otevřete **Index.cshtml** soubor umístěný v části **Views\Home** složky a nahradit veškerý obsah následujícím kódem.
 
     Tento kód projde všech fotografií získaný ze služby a zobrazí je do neuspořádaný seznam.
@@ -363,7 +377,9 @@ V této úloze aktualizujte domovské stránce k zobrazení galerie fotografií 
     (Code fragment kódu - *architektury ASP.NET MVC 4 laboratoř - Ex02 - fotografií seznamu*)
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample8.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample8.cshtml)]
+~~~
 8. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **obsahu** složku projekt a vyberte **přidat | Existující položka**. Vyhledejte **Source\Assets\Content** složky tohoto testovacího prostředí a přidejte **Site.css** souboru. Budete muset potvrdit jeho nahrazení. Pokud máte **Site.css** soubor otevřít, budete muset potvrďte také znovu načíst soubor.
 9. Otevřete Průzkumníka souborů a zkopírujte celou **fotografie** složka umístěná **Source\Assets** složky tohoto testovacího prostředí do kořenové složky vašeho projektu v Průzkumníku řešení.
 10. Spusťte aplikaci. Měli byste nyní vidět na domovskou stránku zobrazení fotografií v galerii.
@@ -385,12 +401,12 @@ Jednou z klíčových aktualizací v architektuře ASP.NET MVC 4 je podpora pro 
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/EX3.-MobileSupport/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete **Konzola správce balíčků** kliknutím **nástroje** &gt; **Správce balíčků knihoven** &gt; **Správce balíčků Konzole** možnost nabídky.
 
     ![Otevření konzole Správce balíčků NuGet](whats-new-in-aspnet-mvc-4/_static/image22.png "otevření konzole Správce balíčků NuGet")
@@ -419,7 +435,9 @@ Jednou z klíčových aktualizací v architektuře ASP.NET MVC 4 je podpora pro 
     (Code fragment kódu - *architektury ASP.NET MVC 4 laboratoř - Ex03 - zaregistrovat mobilní sady*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample10.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample10.cs)]
+~~~
 5. Spusťte aplikaci pomocí plochy webového prohlížeče.
 6. Otevřete **Windows Phone 7 emulátoru,** umístěný v **nabídce Start | Všechny programy | Windows Phone SDK 7.1 | Emulátor Windows Phone.**
 7. Na obrazovce start phone otevřete Internet Explorer. Podívejte se na adresu URL, kde je aplikace spuštěna a přejděte na tuto adresu URL pomocí prohlížeče telefonu (například `http://localhost:[PortNumber]/`).
@@ -445,19 +463,21 @@ V této úloze vytvoříte mobilní verzi zobrazení pro index s obsah přizpůs
 2. Otevřete nový vytvořit **Index.Mobile.cshtml** zobrazení a nahradit existující &lt;ul&gt; značky s tímto kódem. Díky tomu bude aktualizace &lt;ul&gt; značky s anotacemi mobilních dat jQuery pomocí mobilních motivů z jQuery.
 
 
-    [!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample11.html)]
+~~~
+[!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample11.html)]
 
-    > [!NOTE] 
-    > 
-    > Všimněte si, že:
-    > 
-    > - **Data-role** atribut nastaven na **listview** vykreslí seznamu pomocí listview stylů.
-    > 
-    > - **Data inset** atribut nastaven na hodnotu true se zobrazí v seznamu s zaokrouhlené okraj a okraj.
-    > 
-    > - **Filtr dat** atribut nastaven na **true** vygeneruje vyhledávací pole.
-    > 
-    > Další informace o mobilních konvence jQuery v dokumentaci k projektu: [ [http://jquerymobile.com/demos/1.1.1/](http://jquerymobile.com/demos/1.1.1/)](http://jquerymobile.com/demos/1.1.1/)
+> [!NOTE] 
+> 
+> Notice that:
+> 
+> - The **data-role** attribute set to **listview** will render the list using the listview styles.
+> 
+> - The **data-inset** attribute set to true will show the list with rounded border and margin.
+> 
+> - The **data-filter** attribute set to **true** will generate a search box.
+> 
+> You can learn more about jQuery Mobile conventions in the project documentation: [[http://jquerymobile.com/demos/1.1.1/](http://jquerymobile.com/demos/1.1.1/)](http://jquerymobile.com/demos/1.1.1/)
+~~~
 3. Stiskněte klávesu **kombinaci kláves CTRL + S** a uložte změny.
 4. Přepnout **emulátoru Windows Phone** a aktualizovat lokalitu. Všimněte si nového vzhledu a chování seznamu galerie, jakož i nové vyhledávacího pole umístěné v horní části. Poté do vyhledávacího pole zadejte slovo (například **Tulipány**) Chcete-li hledat v galerii fotografií.
 
@@ -493,7 +513,9 @@ V této úloze aktualizujte mobilní rozložení používat jiný než výchozí
 3. Najít div element k roli dat nastavena na &quot;stránky&quot; a aktualizovat **data-theme** k &quot; **e**&quot;.
 
 
-    [!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample13.html)]
+~~~
+[!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample13.html)]
+~~~
 4. Stiskněte klávesu **kombinaci kláves CTRL + S** a uložte změny.
 5. Aktualizujte lokality v **emulátoru Windows Phone** a Všimněte si nové schéma barev.
 
@@ -549,14 +571,16 @@ V této úloze aktualizujte plochy rozložení zahrnout k přepínači zobrazen�
 4. Najít oddíl přihlášení a vložení volání k vykreslení  **\_ViewSwitcher** částečné zobrazení níže  **\_LogOnPartial** částečné zobrazení. Potom stiskněte klávesu **kombinaci kláves CTRL + S** a uložte změny.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample14.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample14.cshtml)]
+~~~
 5. Stiskněte klávesu **kombinaci kláves CTRL + S** a uložte změny.
 6. Aktualizujte stránku v emulátoru Windows Phone a dvakrát klikněte na obrazovce a přiblížení. Všimněte si, že nyní zobrazuje domovské stránce **mobilní zobrazení** odkaz, který přepíná z mobilních na zobrazení plochy.
 
     ![Zobrazit v zobrazení plochy přepínači](whats-new-in-aspnet-mvc-4/_static/image32.png "přepínači zobrazení se zobrazují v zobrazení plochy")
 
     *Přepínači zobrazení se zobrazují v zobrazení plochy*
-7. Přepněte do pohledu mobilní znovu a přejděte do **o** stránky (http://localhost [port] / Home/o). Všimněte si, že i v případě, že jste nevytvořili zobrazení About.Mobile.cshtml, o stránka se zobrazí pomocí mobilních rozložení (\_Layout.Mobile.cshtml).
+7. Přepněte do pohledu mobilní znovu a přejděte do <strong>o</strong> stránky (http://localhost[port] / Home/o). Všimněte si, že i v případě, že jste nevytvořili zobrazení About.Mobile.cshtml, o stránka se zobrazí pomocí mobilních rozložení (\_Layout.Mobile.cshtml).
 
     ![O stránku](whats-new-in-aspnet-mvc-4/_static/image33.png "o stránce")
 
@@ -580,32 +604,38 @@ V této úloze se vytvoří vlastní rozložení pro zařízení iPhone a bude m
 2. Otevřete **Global.asax.cs** a přidejte následující příkaz using.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample15.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample15.cs)]
+~~~
 3. Přidejte následující zvýrazněný kód do aplikace\_Start – metoda.
 
     (Code fragment kódu - *ASP.NET MVC 4 laboratoř - Ex03 - iPhone DisplayMode*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample16.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample16.cs)]
 
-    Jste si zaregistrovali nový **DefaultDisplayMode s názvem &quot;iPhone&quot;**, v rámci statických **DisplayModeProvider.Instance.Modes** statický seznam, který bude porovnání každého příchozího požadavku. Pokud příchozí požadavek obsahuje řetězec &quot;iPhone&quot;, ASP.NET MVC najdete zobrazení, jehož název obsahovat &quot;iPhone&quot; příponu. Parametr 0 označuje, jak konkrétní je nový režim; Toto zobrazení je pro instanci podrobnější než Obecné &quot;.mobile&quot; pravidlo, které odpovídá požadavky z mobilních zařízení.
+You have registered a new **DefaultDisplayMode named &quot;iPhone&quot;**, within the static **DisplayModeProvider.Instance.Modes** static list, that will be matched against each incoming request. If the incoming request contains the string &quot;iPhone&quot;, ASP.NET MVC will find the views whose name contain the &quot;iPhone&quot; suffix. The 0 parameter indicates how specific is the new mode; for instance, this view is more specific than the general &quot;.mobile&quot; rule that matches requests from mobile devices.
 
-    Po spuštění tohoto kódu, pokud iPhone prohlížeči vygeneruje žádost, vaše aplikace bude používat **Views\Shared\\_Layout.iPhone.cshtml** rozložení vytvoříte v dalších krocích.
+After this code runs, when an iPhone browser generates a request, your application will use the **Views\Shared\\_Layout.iPhone.cshtml** layout you will create in the next steps.
 
-    > [!NOTE]
-    > Tímto způsobem testování požadavku pro iPhone je jednodušší pro účely ukázky a nemusí fungovat podle očekávání pro každý řetězec uživatelského agenta iPhone (pro testovací příklad je malá a velká písmena).
-4. Vytvořit kopii  **\_Layout.Mobile.cshtml** v soubor **Views\Shared** složku a přejmenujte kopírovat do &quot;  **\_Layout.iPhone.csthml** &quot;.
+> [!NOTE]
+> This way of testing the request for iPhone has been simplified for demo purposes and might not work as expected for every iPhone user agent string (for example test is case sensitive).
+~~~
+4. Vytvořit kopii  **\_Layout.Mobile.cshtml** v soubor **Views\Shared** složku a přejmenujte kopírovat do &quot; **\_Layout.iPhone.csthml**&quot;.
 5. Otevřete  **\_Layout.iPhone.csthml** jste vytvořili v předchozím kroku.
 6. Najít div element s atribut data-role nastaven na **stránky** a změňte **data-theme** atribut &quot; **a**&quot;.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
 
-    Nyní máte 3 rozložení v aplikaci ASP.NET MVC 4:
+Now you have 3 layouts in your ASP.NET MVC 4 application:
 
-    1. **\_Layout.cshtml**: výchozí rozložení použít u stolních počítačů.
-    2. **\_Layout.Mobile.cshtml**: výchozí rozložení se používá pro mobilní zařízení.
-    3. **\_Layout.iPhone.cshtml**: konkrétní rozložení pro zařízení iPhone, pomocí jiné barevné schéma k odlišení od \_Layout.mobile.cshtml.
+1. **\_Layout.cshtml**: default layout used for desktop browsers.
+2. **\_Layout.mobile.cshtml**: default layout used for mobile devices.
+3. **\_Layout.iPhone.cshtml**: specific layout for iPhone devices, using a different color scheme to differentiate from \_Layout.mobile.cshtml.
+~~~
 7. Stiskněte klávesu **F5** ke spuštění aplikace a přejděte do lokality v **emulátoru Windows Phone**.
 8. Otevřete **iPhone simulátoru** (najdete v části [příloha C](#AppendixC) pokyny o tom, jak nainstalovat a nakonfigurovat simulátor pro zařízení iPhone) a přejděte na web příliš. Všimněte si, že každý phone používá konkrétní šablonu.
 
@@ -620,52 +650,62 @@ V této úloze se vytvoří vlastní rozložení pro zařízení iPhone a bude m
 
 Rozhraní Microsoft .NET Framework 4.5 zavádí nové jazykové funkce v C# a Visual Basic zajistit nové platformu pro asynchrony v .NET – programování. Tento nový foundation umožňuje asynchronní programování podobná - a o stejně jednoduché jako - synchronní programování. Je nyní možné zapisovat pomocí metody asynchronní akce v architektuře ASP.NET MVC 4 **AsyncController** třídy. Můžete použít asynchronní akce metody pro dlouhodobé, bez procesoru vázaný požadavky. Tím je zabráněno blokování webový server z provede práci během zpracování požadavku. Třída AsyncController se obvykle používá pro dlouhodobé volání webové služby.
 
-Tento postup vysvětluje základy asynchronní operace v rozhraní ASP.NET MVC 4. Pokud chcete o podrobnější prohlídku, můžete najdete v následujícím článku: [ [https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
+Tento postup vysvětluje základy asynchronní operace v rozhraní ASP.NET MVC 4. Pokud chcete o podrobnější prohlídku, naleznete v následujícím článku na: [[https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
 
 <a id="Task_1_-_Implementing_an_Asynchronous_Controller"></a>
 #### <a name="task-1---implementing-an-asynchronous-controller"></a>Úloha 1 – implementace asynchronní kontroler
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex4-asynchronní/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete **HomeController.cs** třídy z **řadiče** složky.
 3. Přidejte následující příkaz using.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample18.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample18.cs)]
+~~~
 4. Aktualizace **HomeController** třídy dědí **AsyncController**. Řadiče, které jsou odvozeny od AsyncController povolit technologii ASP.NET pro zpracování asynchronní požadavky a mohou stále metody synchronní akce služby.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
+~~~
 5. Přidat **asynchronní** – klíčové slovo k **Index** metoda a nastavit jej vrátí typ **úloh&lt;ActionResult&gt;**.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
 
-    > [!NOTE]
-    > **Asynchronní** – klíčové slovo je jednou z nových klíčových slov rozhraní .NET Framework 4.5 poskytuje; říká kompilátoru, že tato metoda obsahuje asynchronní kód. A **úloh** objekt představuje asynchronní operaci, kterou může dokončit v určitém okamžiku v budoucnu.
+> [!NOTE]
+> The **async** keyword is one of the new keywords the .NET Framework 4.5 provides; it tells the compiler that this method contains asynchronous code. A **Task** object represents an asynchronous operation that may complete at some point in the future.
+~~~
 6. Nahraďte **klienta. GetAsync()** volání s použitím verze úplné asynchronní – klíčové slovo await, jak je uvedeno níže.
 
     (Code fragment kódu - *architektury ASP.NET MVC 4 laboratoř - Ex04 - GetAsync*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample21.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample21.cs)]
 
-    > [!NOTE]
-    > V předchozí verzi, jste používali **výsledek** vlastnost z **úloh** objekt, který chcete blokovat vlákno, dokud vrácením výsledku (verzi služby sync).
-    > 
-    > Přidávání **await** – klíčové slovo říká kompilátoru asynchronně čekání úlohy vrácená z volání metody. To znamená, že zbytek kód bude proveden jako zpětné volání pouze po dokončení awaited metoda. Jiné si všimněte je, že není potřeba změnit vaše bloku try-catch – aby bylo možné tento pracovní: výjimky, které dojít pozadí nebo v popředí stále vzniká, bez další zátěže pomocí poskytované rozhraní framework obslužnou rutinu.
+> [!NOTE]
+> In the previous version, you were using the **Result** property from the **Task** object to block the thread until the result is returned (sync version).
+> 
+> Adding the **await** keyword tells the compiler to asynchronously wait for the task returned from the method call. This means that the rest of the code will be executed as a callback only after the awaited method completes. Another thing to notice is that you do not need to change your try-catch block in order to make this work: the exceptions that happen in background or in foreground will still be caught without any extra work using a handler provided by the framework.
+~~~
 7. Změnit kód pokračujte s asynchronní implementace nahrazením řádky s novým kódem, jak je uvedeno níže
 
     (Code fragment kódu - *architektury ASP.NET MVC 4 laboratoř - Ex04 - ReadAsStringAsync*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample22.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample22.cs)]
+~~~
 8. Spusťte aplikaci. Všimnete si žádné větší změny, ale váš kód nebude blokování vlákna z fondu podprocesů Příprava lepší využití serverových prostředků a zlepšení výkonu.
 
     > [!NOTE]
@@ -680,31 +720,43 @@ Asynchronní akce metody, které vracejí instance úloh může také podporovat
 2. Přidejte následující příkaz k použití **HomeController.cs** souboru.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample23.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample23.cs)]
+~~~
 3. Akce indexu přijímat aktualizace **CancellationToken** argument.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample24.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample24.cs)]
+~~~
 4. Aktualizace **GetAsync** volání předat token zrušení.
 
     (Code fragment kódu - *SendAsync laboratoř - Ex04 - architektury ASP.NET MVC 4 s CancellationToken*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample25.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample25.cs)]
+~~~
 5. Uspořádání *Index* metoda s **hodnota vlastnosti AsyncTimeout** atributu nastavena na 500 milisekund a **HandleError** atributu nakonfigurovaného pro zpracování  **TaskCanceledException** přesměrováním na **TimedOut** zobrazení.
 
     (Code fragment kódu - *atributy architektury ASP.NET MVC 4 laboratoř - Ex04 -*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample26.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample26.cs)]
+~~~
 6. Otevřete **PhotoController** třídy a aktualizace **Galerie** metoda zpoždění spuštění 1000 miliseconds (1 sekunda) simulovat dlouhotrvající úlohy.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample27.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample27.cs)]
+~~~
 7. Otevřete **Web.config** souboru a povolit vlastní chyby přidáním následující element.
 
 
-    [!code-xml[Main](whats-new-in-aspnet-mvc-4/samples/sample28.xml)]
+~~~
+[!code-xml[Main](whats-new-in-aspnet-mvc-4/samples/sample28.xml)]
+~~~
 8. Vytvořit nové zobrazení v **Views\Shared** s názvem **TimedOut** a použít výchozí rozložení. V Průzkumníku řešení klikněte pravým tlačítkem myši **Views\Shared** složky a vyberte **přidat | Zobrazení**.
 
     ![Pro každé mobilních zařízení pomocí různých zobrazení](whats-new-in-aspnet-mvc-4/_static/image36.png "použití různých zobrazení pro každý mobilní zařízení")
@@ -713,7 +765,9 @@ Asynchronní akce metody, které vracejí instance úloh může také podporovat
 9. Aktualizace **TimedOut** zobrazit obsah, jak je uvedeno níže.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample29.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample29.cshtml)]
+~~~
 10. Spusťte aplikaci a přejděte do adresy URL kořenového adresáře. Jak jste přidali **Thread.Sleep** na 1000 milisekund, budete mít k vypršení časového limitu, generovaných **hodnota vlastnosti AsyncTimeout** atribut a catch podle **HandleError** atribut.
 
     ![Časový limit výjimka zpracovává](whats-new-in-aspnet-mvc-4/_static/image37.png "zpracovává výjimka časového limitu")
@@ -788,9 +842,9 @@ S fragmenty kódu máte všechny kód, který je nutné na dosah ruky. Dokument 
 <a id="Appendix_B_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-b-installing-visual-studio-express-2012-for-web"></a>Příloha B: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze  **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)** . Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *Visual Studio Express 2012 pro Web se sadou Windows Azure SDK*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 
@@ -831,7 +885,7 @@ Spusťte svůj web ve iPhone simulované zařízení můžete rozšíření pros
 <a id="Task_1_-_Installing_WebMatrix_2"></a>
 #### <a name="task-1---installing-webmatrix-2"></a>Úloha 1 – instalace služby WebMatrix 2
 
-1. Přejděte na [ [https://go.microsoft.com/?linkid=9809776](https://go.microsoft.com/?linkid=9809776)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *WebMatrix 2*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/?linkid=9809776 ](https://go.microsoft.com/?linkid=9809776) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>WebMatrix 2</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 
@@ -901,13 +955,13 @@ Spusťte svůj web ve iPhone simulované zařízení můžete rozšíření pros
 3. V &quot;procházet s&quot; dialogové okno, klikněte na tlačítko **přidat**.
 4. V &quot;přidat Program&quot; dialogové okno, použijte následující hodnoty:
 
-    - **Program**: C:\Users\*{CurrentUser}*\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe *(aktualizace odpovídajícím způsobem cestu)*
-    - **Argumenty**: &quot;1&quot;
-    - **Popisný název**: iPhone simulátoru
+   - <strong>Program</strong>: C:\Users\*{CurrentUser}<em>\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe * (aktualizace odpovídajícím způsobem cestu)</em>
+   - **Argumenty**: &quot;1&quot;
+   - **Popisný název**: iPhone simulátoru
 
-    ![Přidat program](whats-new-in-aspnet-mvc-4/_static/image59.png "přidat program")
+     ![Přidat program](whats-new-in-aspnet-mvc-4/_static/image59.png "přidat program")
 
-    *Přidejte program procházet s*
+     *Přidejte program procházet s*
 5. Klikněte na tlačítko **OK** a zavřete dialogová okna.
 6. Nyní budete moci spustit vaší webové aplikace v simulátoru iPhone ze sady Visual Studio 2012.
 
@@ -1030,14 +1084,14 @@ Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vyt
     *Konfigurace nasazení webu*
 5. Připojení k databázi nakonfigurujte následujícím způsobem:
 
-    - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
-    - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
-    - V **heslo** zadejte přihlašovací heslo správce serveru.
-    - Zadejte nový název databáze, například: *MVC4SampleDB*.
+   - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
+   - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
+   - V **heslo** zadejte přihlašovací heslo správce serveru.
+   - Zadejte nový název databáze, například: *MVC4SampleDB*.
 
-    ![Konfigurace cílový připojovací řetězec](whats-new-in-aspnet-mvc-4/_static/image77.png "konfigurace cílový připojovací řetězec")
+     ![Konfigurace cílový připojovací řetězec](whats-new-in-aspnet-mvc-4/_static/image77.png "konfigurace cílový připojovací řetězec")
 
-    *Konfigurace cílový připojovací řetězec*
+     *Konfigurace cílový připojovací řetězec*
 6. Pak klikněte na tlačítko **OK**. Po zobrazení výzvy k vytvoření databáze, klikněte na tlačítko **Ano**.
 
     ![Vytvoření databáze](whats-new-in-aspnet-mvc-4/_static/image78.png "vytváření řetězec databáze")

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/secure-applications-using-authentication-and-authorization
-title: "Zabezpečení aplikací s použitím ověřování a autorizace | Microsoft Docs"
+title: Zabezpečení aplikací s použitím ověřování a autorizace | Microsoft Docs
 author: microsoft
-description: "Krok 9 ukazuje, jak přidat ověřování a autorizace pro zabezpečení naše aplikace NerdDinner tak, aby uživatelé potřebují k registraci a přihlaste se k webu pro vytvoření..."
+description: Krok 9 ukazuje, jak přidat ověřování a autorizace pro zabezpečení naše aplikace NerdDinner tak, aby uživatelé potřebují k registraci a přihlaste se k webu pro vytvoření...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/secure-applications-using-authentication-and-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: a23b2cf4d1728624698c0db49c25ea7efd3af67d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4a9b1e6d7d453bd8dc5a61b1f1cec4617af7d693
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="secure-applications-using-authentication-and-authorization"></a>Zabezpečení aplikací s použitím ověřování a autorizace
 ====================
@@ -155,6 +155,6 @@ Aktualizujeme naše zobrazení šablony podmíněně zobrazit či skrýt odkazy 
 
 Nyní podíváme, jak můžeme provést aktivaci ověřeným uživatelům zasílání zpráv rysy pro večeří pomocí rozhraní AJAX.
 
->[!div class="step-by-step"]
-[Předchozí](implement-efficient-data-paging.md)
-[další](use-ajax-to-deliver-dynamic-updates.md)
+> [!div class="step-by-step"]
+> [Předchozí](implement-efficient-data-paging.md)
+> [další](use-ajax-to-deliver-dynamic-updates.md)

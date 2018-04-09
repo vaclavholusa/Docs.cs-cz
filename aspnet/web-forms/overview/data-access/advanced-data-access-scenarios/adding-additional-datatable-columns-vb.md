@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
-title: "Přidání další DataTable sloupců (VB) | Microsoft Docs"
+title: Přidání další DataTable sloupců (VB) | Microsoft Docs
 author: rick-anderson
-description: "Při použití Průvodce nastavením TableAdapter vytvoření typové datové sady, obsahuje odpovídající DataTable sloupců vrácených dotazem hlavní databáze. Ale zde..."
+description: Při použití Průvodce nastavením TableAdapter vytvoření typové datové sady, obsahuje odpovídající DataTable sloupců vrácených dotazem hlavní databáze. Ale zde...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d357ca7bfe364090ff2c8504b2116e0d99d004bc
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b51089057ad1e14901cb09589534d6e575261c3e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-additional-datatable-columns-vb"></a>Přidání další DataTable sloupců (VB)
 ====================
@@ -41,9 +41,9 @@ V tomto kurzu se podíváme na postup rozšíření schématu s DataTable přid�
 
 V *vytváření nové uložených procedur, pro typové datové sady s TableAdapters* kurzu jsme vytvořili zadali datovou sadu s názvem `NorthwindWithSprocs`. Tato datová sada obsahuje teď dvě DataTables: `ProductsDataTable` a `EmployeesDataTable`. `ProductsTableAdapter` Má následující tři metody:
 
-- `GetProducts`-main dotazu, která vrátí všechny záznamy z `Products` tabulky
-- `GetProductsByCategoryID(categoryID)`-Vrátí všechny produkty se zadaným *categoryID*.
-- `GetProductByProductID(productID)`-vrací konkrétní produkt se zadaným *productID*.
+- `GetProducts` -main dotazu, která vrátí všechny záznamy z `Products` tabulky
+- `GetProductsByCategoryID(categoryID)` -Vrátí všechny produkty se zadaným *categoryID*.
+- `GetProductByProductID(productID)` -vrací konkrétní produkt se zadaným *productID*.
 
 Hlavní dotaz a dva další metody všechny vrátit stejnou sadu datová pole, konkrétně všechny sloupce z `Products` tabulky. Neexistují žádné korelační poddotazy nebo `JOIN` s stahování dat v relaci z `Categories` nebo `Suppliers` tabulky. Proto `ProductsDataTable` má odpovídající sloupec pro každé pole v `Products` tabulky.
 
@@ -209,12 +209,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Randy Schmidt, Jan Goor, Bernadette Leigh a Hilton Giesenow. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](updating-the-tableadapter-to-use-joins-vb.md)
-[další](working-with-computed-columns-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](updating-the-tableadapter-to-use-joins-vb.md)
+> [další](working-with-computed-columns-vb.md)

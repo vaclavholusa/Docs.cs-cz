@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
-title: "Pomocí postback ReorderList (C#) | Microsoft Docs"
+title: Pomocí postback ReorderList (C#) | Microsoft Docs
 author: wenz
-description: "ReorderList ovládacího prvku AJAX Control Toolkit poskytuje seznam, který může být přeuspořádány uživatelem pomocí operace přetažení. Vždy, když je pořadí v seznamu změníte, objednávky a..."
+description: ReorderList ovládacího prvku AJAX Control Toolkit poskytuje seznam, který může být přeuspořádány uživatelem pomocí operace přetažení. Vždy, když je pořadí v seznamu změníte, objednávky a...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5f5c5e253f6d85203a488152c5ad908157e6ee0c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed01c30c0721c8f1cd8ccb3fea0735ea8fa4f0a1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-postbacks-with-reorderlist-c"></a>Pomocí postback ReorderList (C#)
 ====================
@@ -69,5 +69,5 @@ Nakonec, aby bylo možné aktivovat funkce ASP.NET AJAX a sady nástrojů ovlád
 
 Každý změna aktivuje zpětné volání ([Kliknutím zobrazit obrázek v plné velikosti](using-postbacks-with-reorderlist-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Další](drag-and-drop-via-reorderlist-cs.md)
+> [!div class="step-by-step"]
+> [Next](drag-and-drop-via-reorderlist-cs.md)

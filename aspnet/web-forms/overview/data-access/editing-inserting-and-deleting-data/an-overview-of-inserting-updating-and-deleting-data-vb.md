@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
-title: "Přehled vkládání, aktualizaci a odstraňování dat (VB) | Microsoft Docs"
+title: Přehled vkládání, aktualizaci a odstraňování dat (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu ukážeme, jak namapovat ObjectDataSource Insert(), Update(), a metody Delete() metody BLL třídy a také jak configu..."
+description: V tomto kurzu ukážeme, jak namapovat ObjectDataSource Insert(), Update(), a metody Delete() metody BLL třídy a také jak configu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e7552abb30aa26d3aaceb3312c00661c6d4d6cf8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: db77d9ec5b0d4b27259023363e786b26fe736d7b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>Přehled vkládání, aktualizaci a odstraňování dat (VB)
 ====================
@@ -238,7 +238,7 @@ V našem kurzu budeme právě odstranit všechny záznamy z `Order Details` tabu
 - Posílení `DeleteProduct` tak, aby zahrnoval logiku odstranit podrobnosti pořadí zadaného produktu
 - Změňte dotaz SQL používané TableAdapter zahrnout odstranění podrobnosti pořadí zadaného produktu
 
-Pojďme právě odstranit všechny záznamy z `Order Details` tabulky k obcházení omezení cizího klíče. Přejděte do Průzkumníka serveru v sadě Visual Studio, klikněte pravým tlačítkem na `NORTHWND.MDF` uzel a vyberte nový dotaz. Potom v okně dotazu spusťte následující příkaz SQL:`DELETE FROM [Order Details]`
+Pojďme právě odstranit všechny záznamy z `Order Details` tabulky k obcházení omezení cizího klíče. Přejděte do Průzkumníka serveru v sadě Visual Studio, klikněte pravým tlačítkem na `NORTHWND.MDF` uzel a vyberte nový dotaz. Potom v okně dotazu spusťte následující příkaz SQL: `DELETE FROM [Order Details]`
 
 
 [![Odstraňte všechny záznamy z tabulky Podrobnosti o pořadí](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image35.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image34.png)
@@ -441,8 +441,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](limiting-data-modification-functionality-based-on-the-user-cs.md)
-[další](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](limiting-data-modification-functionality-based-on-the-user-cs.md)
+> [další](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)

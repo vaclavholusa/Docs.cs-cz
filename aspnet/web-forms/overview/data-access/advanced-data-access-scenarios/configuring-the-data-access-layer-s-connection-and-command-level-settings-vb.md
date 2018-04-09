@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
-title: "Konfigurace nastavení připojení a příkaz úrovně Data Access Layer (VB) | Microsoft Docs"
+title: Konfigurace nastavení připojení a příkaz úrovně Data Access Layer (VB) | Microsoft Docs
 author: rick-anderson
-description: "TableAdapters v prvku DataSet zadali automaticky postará o připojení k databázi, vydávání příkazů a naplnění DataTable s výsledky..."
+description: TableAdapters v prvku DataSet zadali automaticky postará o připojení k databázi, vydávání příkazů a naplnění DataTable s výsledky...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ab392f2a7d9b6cf97da920f899aea23379209f96
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b73c6113e84e290025e5835781fa2f85587289b1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>Konfigurace nastavení připojení a příkaz úrovně Data Access Layer (VB)
 ====================
@@ -93,7 +93,7 @@ Jak je popsáno v [vytváření Data Access Layer](../introduction/creating-a-da
 
 ![Přidat podsložku s názvem ConnectionAndCommandSettings](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image5.png)
 
-**Obrázek 3**: Přidat podsložku s názvem`ConnectionAndCommandSettings`
+**Obrázek 3**: Přidat podsložku s názvem `ConnectionAndCommandSettings`
 
 
 Přidat nový soubor třídy s názvem `ProductsTableAdapter.ConnectionAndCommandSettings.vb` a zadejte následující kód:
@@ -169,12 +169,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Burnadette Leigh, S ren Jakub Lauritsen Teresy Murphy a Hilton Geisenow. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](working-with-computed-columns-vb.md)
-[další](protecting-connection-strings-and-other-configuration-information-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](working-with-computed-columns-vb.md)
+> [další](protecting-connection-strings-and-other-configuration-information-vb.md)

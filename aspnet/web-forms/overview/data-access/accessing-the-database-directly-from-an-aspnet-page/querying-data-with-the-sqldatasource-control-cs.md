@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
-title: "Dotazování na Data pomocí ovládacího prvku SqlDataSource (C#) | Microsoft Docs"
+title: Dotazování na Data pomocí ovládacího prvku SqlDataSource (C#) | Microsoft Docs
 author: rick-anderson
-description: "V předchozím kurzech jsme použili ovládacího prvku ObjectDataSource plně z vrstvy přístup k datům oddělení prezentační vrstvy. Od této tutor..."
+description: V předchozím kurzech jsme použili ovládacího prvku ObjectDataSource plně z vrstvy přístup k datům oddělení prezentační vrstvy. Od této tutor...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4652e5820e621a7b2ad3b03bb5a1d2cb4968fadd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3d6f681169267ad5c65486c1d1fac0a9396535d1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="querying-data-with-the-sqldatasource-control-c"></a>Dotazování na Data pomocí ovládacího prvku SqlDataSource (C#)
 ====================
@@ -201,7 +201,7 @@ Přidejte další ovládací prvek GridView k `Querying.aspx` stránce a vyberte
 
 ![Vytvořte nový ovládací prvek SqlDataSource s názvem ProductsWithCategoryInfoDataSource](querying-data-with-the-sqldatasource-control-cs/_static/image18.gif)
 
-**Obrázek 12**: Vytvořte nový ovládací prvek SqlDataSource s názvem`ProductsWithCategoryInfoDataSource`
+**Obrázek 12**: Vytvořte nový ovládací prvek SqlDataSource s názvem `ProductsWithCategoryInfoDataSource`
 
 
 Na další obrazovce zobrazí nám a určete databázi. Jako jsme to udělali zpět na obrázku 7, vyberte `NORTHWINDConnectionString` z rozevíracího seznamu a klikněte na tlačítko Další. V Konfigurace obrazovky vyberte příkaz vyberte určení vlastního příkazu SQL nebo uloženou proceduru přepínač a klikněte na tlačítko Další. Tím se otevře definovat vlastní příkazy nebo uložené procedury obrazovce, která nabízí karty označené SELECT, UPDATE, INSERT a DELETE. V každé kartě můžete zadat vlastní příkaz SQL do textového pole nebo z rozevíracího seznamu vyberte uloženou proceduru. V tomto kurzu se podíváme na zadávání vlastního příkazu SQL; v dalším kurzu obsahuje příklad, který používá uložené procedury.
@@ -256,11 +256,11 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Susan Connery Bernadette Leigh a David Suru. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Next](using-parameterized-queries-with-the-sqldatasource-cs.md)
+> [!div class="step-by-step"]
+> [Next](using-parameterized-queries-with-the-sqldatasource-cs.md)

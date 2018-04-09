@@ -1,26 +1,26 @@
 ---
 uid: visual-studio/overview/2012/windows-azure-authentication
-title: "Windows Azure ověřování | Microsoft Docs"
+title: Windows Azure ověřování | Microsoft Docs
 author: Rick-Anderson
-description: "Nástroje Microsoft ASP.NET tools pro systém Windows Azure Active Directory usnadňuje povolení ověřování pro webové aplikace hostované na weby systému Windows Azure..."
+description: Nástroje Microsoft ASP.NET tools pro systém Windows Azure Active Directory usnadňuje povolení ověřování pro webové aplikace hostované na weby systému Windows Azure...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2013
 ms.topic: article
 ms.assetid: a3cef801-a54b-4ebd-93c3-55764e2e14b1
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 4deb3536699f1ef3025f8858ee71a76a1c2def18
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 09cb37ceb0132958a48f5f3a5d52dc46c6f0a78d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="windows-azure-authentication"></a>Windows Azure ověřování
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Nástroje Microsoft ASP.NET pro Windows Azure Active Directory usnadňuje povolení ověřování pro webové aplikace hostované na [weby systému Windows Azure](https://www.windowsazure.com/home/features/web-sites/). Ověřování systému Windows Azure můžete použít k ověření uživatele služeb Office 365 z vaší organizace, podnikové účty synchronizované z vaší místní službou Active Directory nebo uživatelé vytvoření ve vlastní domény systému Windows Azure Active Directory. Povolení ověřování systému Windows Azure nakonfiguruje aplikace k ověření uživatelů pomocí jedné [Windows Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) klienta.
 > 
@@ -50,7 +50,7 @@ Pokud nemáte existujícího klienta služby Windows Azure Active Directory (nap
 
 1. Vyberte z nabídky projektu **povolit ověřování systému Windows Azure**:  
   
- ![](windows-azure-authentication/_static/image2.png)
+   ![](windows-azure-authentication/_static/image2.png)
 
 2. Zadejte doménu pro klienta služby Windows Azure Active Directory (například contoso.onmicrosoft.com) a klikněte na tlačítko **povolit**:
 
@@ -58,7 +58,7 @@ Pokud nemáte existujícího klienta služby Windows Azure Active Directory (nap
 
 3. Ve webové ověřování dialogové okno přihlášení jako správce pro vašeho klienta Windows Azure Active Directory:  
   
- ![](windows-azure-authentication/_static/image4.png)
+   ![](windows-azure-authentication/_static/image4.png)
 
 ![](windows-azure-authentication/_static/image5.png)
 

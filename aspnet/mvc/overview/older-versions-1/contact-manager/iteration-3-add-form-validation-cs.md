@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-cs
-title: "Iterace #3 – přidat ověřování formuláře (C#) | Microsoft Docs"
+title: 'Iterace #3 – přidat ověřování formuláře (C#) | Microsoft Docs'
 author: microsoft
-description: "V třetím iteraci přidáme ověření základní formulář. Jsme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Také jsme ověřit emai..."
+description: V třetím iteraci přidáme ověření základní formulář. Jsme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Také jsme ověřit emai...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 120c35755784ba5a08a9592fdc58f17879848631
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b9353c32b2839fd760513982c5742bb8f521e94a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-3--add-form-validation-c"></a>Iterace #3 – přidat ověřování formuláře (C#)
 ====================
@@ -118,7 +118,7 @@ Po provedení ověřovacích pravidel, se kontroluje vlastnost IsValid ModelStat
 
 > [!NOTE] 
 > 
-> Zobrazí chybové regulárních výrazů pro ověření telefonní číslo a e-mailovou adresu z úložiště regulárnímu výrazu v [ *http://regexlib.com*](http://regexlib.com)
+> Zobrazí chybové regulárních výrazů pro ověření telefonní číslo a e-mailovou adresu z úložiště regulárnímu výrazu v [*http://regexlib.com*](http://regexlib.com)
 
 
 ## <a name="adding-validation-logic-to-the-edit-action"></a>Přidání logiku ověření pro akci Upravit
@@ -139,6 +139,6 @@ V této iteraci jsme přidali logiku ověření pro naši aplikaci obraťte se n
 
 V další iterace jsme bude Refaktorovat naše logiku ověření a logiku přístupu k řadiči pro naše. Provedeme výhod několik zásady designu softwaru povolit nám vytvořte více volného párované a více udržovatelného aplikaci.
 
->[!div class="step-by-step"]
-[Předchozí](iteration-2-make-the-application-look-nice-cs.md)
-[další](iteration-4-make-the-application-loosely-coupled-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](iteration-2-make-the-application-look-nice-cs.md)
+> [další](iteration-4-make-the-application-loosely-coupled-cs.md)

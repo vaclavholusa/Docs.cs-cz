@@ -1,7 +1,7 @@
 ---
-title: "Řešení potíží s ASP.NET Core ve službě IIS"
+title: Řešení potíží s ASP.NET Core ve službě IIS
 author: guardrex
-description: "Zjistěte, jak diagnostikovat problémy s Internetové informační služby (IIS) nasazení aplikací ASP.NET Core."
+description: Zjistěte, jak diagnostikovat problémy s Internetové informační služby (IIS) nasazení aplikací ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 65173e0101a17c64f4cde583e5bbb9fb0a9c7718
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e44892d2022ca1a176cee9d027e220e196c6572d
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>Řešení potíží s ASP.NET Core ve službě IIS
 
@@ -96,7 +96,7 @@ Povolení a zobrazit protokoly stdout:
 
 1. Přejděte do složky pro nasazení webu v hostitelském systému.
 1. Pokud *protokoly* složky není přítomna, vytvořte složku. Pokyny o tom, jak povolit MSBuild k vytvoření *protokoly* složky v nasazení automaticky, najdete [adresářovou strukturu](xref:host-and-deploy/directory-structure) tématu.
-1. Upravit *web.config* souboru. Nastavit **stdoutLogEnabled** k `true` a změňte **stdoutLogFile** cesta tak, aby odkazoval *protokoly* složky (například `.\logs\stdout`). `stdout`v cestě je předpona názvu souboru protokolu. Časové razítko, id procesu a přípona souboru se přidávají automaticky při vytvoření protokolu. Pomocí `stdout` jako předpona názvu souboru, má název souboru typické protokolu *stdout_20180205184032_5412.log*. 
+1. Upravit *web.config* souboru. Nastavit **stdoutLogEnabled** k `true` a změňte **stdoutLogFile** cesta tak, aby odkazoval *protokoly* složky (například `.\logs\stdout`). `stdout` v cestě je předpona názvu souboru protokolu. Časové razítko, id procesu a přípona souboru se přidávají automaticky při vytvoření protokolu. Pomocí `stdout` jako předpona názvu souboru, má název souboru typické protokolu *stdout_20180205184032_5412.log*. 
 1. Uložte aktualizovaný *web.config* souboru.
 1. Vytvořte žádost na aplikaci.
 1. Přejděte na *protokoly* složky. Najít a otevřít poslední stdout protokol.

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
-title: "Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 7 | Microsoft Docs"
+title: Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 7 | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: aeea122636f5235364e6a40cb6e041b1fe221317
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cb84f4f3e130fedb3e2f1a17d630767ff65bfa05
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Začínáme s databáze Entity Framework 4.0 nejprve a 4 webových formulářů ASP.NET - část 7
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 > Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET pomocí sady Visual Studio 2010 a Entity Framework 4.0. Informace o kurzu řady najdete v tématu [první kurz v řadě](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
@@ -51,7 +51,7 @@ Zkopírujte následující příkazy SQL a vložte je do okna uložené procedur
 
 [![image14](the-entity-framework-and-aspnet-getting-started-part-7/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image3.png)
 
-`Student`entit obsahuje čtyři vlastnosti: `PersonID`, `LastName`, `FirstName`, a `EnrollmentDate`. Databáze automaticky generuje hodnotu ID a uložené procedury přijímá parametry pro další tři. Uložená procedura vrací hodnoty klíče záznamu pro nový řádek tak, aby rozhraní Entity Framework můžete sledovat určité, ve verzi entity, který udržuje v paměti.
+`Student` entit obsahuje čtyři vlastnosti: `PersonID`, `LastName`, `FirstName`, a `EnrollmentDate`. Databáze automaticky generuje hodnotu ID a uložené procedury přijímá parametry pro další tři. Uložená procedura vrací hodnoty klíče záznamu pro nový řádek tak, aby rozhraní Entity Framework můžete sledovat určité, ve verzi entity, který udržuje v paměti.
 
 Uložte a zavřete okno uložené procedury.
 
@@ -139,6 +139,6 @@ Stránka teď používá `GetCourses` uložené procedury načíst seznam všech
 
 V dalším kurzu dozvíte, jak bylo snazší program a testování pravidla formátování a ověření dat pomocí funkce Dynamická Data. Místo zadání na každý pravidla webové stránky, jako jsou třeba řetězce formátu data a zda pole je požadováno, tato pravidla můžete zadat v metadatech datového modelu a automaticky se použijí na každé stránce.
 
->[!div class="step-by-step"]
-[Předchozí](the-entity-framework-and-aspnet-getting-started-part-6.md)
-[další](the-entity-framework-and-aspnet-getting-started-part-8.md)
+> [!div class="step-by-step"]
+> [Předchozí](the-entity-framework-and-aspnet-getting-started-part-6.md)
+> [další](the-entity-framework-and-aspnet-getting-started-part-8.md)

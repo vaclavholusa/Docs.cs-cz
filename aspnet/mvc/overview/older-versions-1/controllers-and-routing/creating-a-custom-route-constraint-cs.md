@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-cs
-title: "Vytváření vlastní trasy omezení (C#) | Microsoft Docs"
+title: Vytváření vlastní trasy omezení (C#) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther ukazuje, jak můžete vytvořit vlastní trasy omezení. Implementaci jednoduchou vlastní omezení, které brání v dodržení trasa odpovídá w..."
+description: Stephen Walther ukazuje, jak můžete vytvořit vlastní trasy omezení. Implementaci jednoduchou vlastní omezení, které brání v dodržení trasa odpovídá w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c31ba3382b9dbe22a6826b9f858944c223efdd9d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c120a102b117433b6774f2ea7800f1c4a609f8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-custom-route-constraint-c"></a>Vytváření vlastní trasy omezení (C#)
 ====================
@@ -37,7 +37,7 @@ Metoda vrací logickou hodnotu. Pokud jste vrátí hodnotu false, trasy přidru�
 
 Výpis 1 je součástí omezení Localhost.
 
-**Výpis 1 - LocalhostConstraint.cs**
+**Listing 1 - LocalhostConstraint.cs**
 
 [!code-csharp[Main](creating-a-custom-route-constraint-cs/samples/sample2.cs)]
 
@@ -45,7 +45,7 @@ Omezení v výpis 1 využívá vlastnost IsLocal vystavené třídě požadavku 
 
 Můžete použít vlastní omezení v rámci trasy definované v souboru Global.asax. Soubor Global.asax výpis 2 používá omezení Localhost zabránit uživatelům v požadavku stránky pro správu, pokud provádění požadavku z místního serveru. Žádost o /Admin/DeleteAll se například nezdaří, když ze vzdáleného serveru.
 
-**Výpis 2 - Global.asax**
+**Listing 2 - Global.asax**
 
 [!code-csharp[Main](creating-a-custom-route-constraint-cs/samples/sample3.cs)]
 
@@ -53,6 +53,6 @@ Omezení Localhost se používá v definici trasy, která správce. Tato trasa n
 
 Všimněte si, že výchozí trasu byla změněna na komentář ze souboru Global.asax v výpis 2. Pokud zahrnete výchozí trasu, výchozí trasa odpovídá požadavky řadiče pro správu. V takovém případě vzdálených uživatelů může stále vyvolání akce správce řadiče i v případě, že jejich požadavky nebude odpovídají správce trasy.
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-route-constraint-cs.md)
-[další](asp-net-mvc-controller-overview-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-route-constraint-cs.md)
+> [další](asp-net-mvc-controller-overview-vb.md)

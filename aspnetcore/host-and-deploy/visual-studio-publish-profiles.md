@@ -1,7 +1,7 @@
 ---
-title: "Visual Studio publikační profily pro nasazení aplikace ASP.NET Core"
+title: Visual Studio publikační profily pro nasazení aplikace ASP.NET Core
 author: rick-anderson
-description: "Zjistit, jak vytvořit publikační profily pro aplikace ASP.NET Core v sadě Visual Studio."
+description: Zjistit, jak vytvořit publikační profily pro aplikace ASP.NET Core v sadě Visual Studio.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: d2c4ec317f235c6d042bd130dbf79f6cb5e2d47d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 64c96f572c42c56480cfe2bd58f926d54eddf35e
+ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Visual Studio publikační profily pro nasazení aplikace ASP.NET Core
 
@@ -91,7 +91,7 @@ Při načtení projektu nástroje MSBuild nebo Visual Studio jsou prováděny n�
 * Výpočetní soubory k publikování
 * Publikovat soubory do cílového umístění
 
-### <a name="compute-project-items"></a>Výpočetní položky projektu
+## <a name="compute-project-items"></a>Výpočetní položky projektu
 
 Při načtení projektu, se vypočítávají položky projektu (soubory). `item type` Atribut určuje způsob zpracování souboru. Ve výchozím nastavení *.cs* souborů jsou součástí `Compile` seznamu položek. Soubory `Compile` kompilované seznamu položek.
 
@@ -197,6 +197,7 @@ Průvodce Publikovat podporuje následující cíle publikování:
 V tématu [jaké možnosti publikování je pro mě nejlepší?](https://docs.microsoft.com/visualstudio/ide/not-in-toc/web-publish-options) Další informace.
 
 Při vytváření profilu publikování pomocí sady Visual Studio *vlastnosti/PublishProfiles/\<název publikovat > .pubxml* k vytvoření souboru MSBuild. To *.pubxml* soubor je soubor MSBuild a obsahuje konfigurační nastavení publikování. Tento soubor můžete změnit na přizpůsobení sestavení a publikování procesu. Proces publikování je pro čtení tohoto souboru. `<LastUsedBuildConfiguration>` je speciální, protože je globální vlastnost a by neměl být ve všech souborů, které je v sestavení naimportována. V tématu [MSBuild: jak nastavit vlastnost konfigurace](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx) Další informace.
+
 *.Pubxml* souboru by neměla být zaškrtnuta do správy zdrojového kódu, protože závisí na *.uživatel* souboru. *.Uživatel* soubor by měl zkontrolovat nikdy do správy zdrojového kódu, protože ho mohou obsahovat citlivé údaje a jeho je platná pouze pro jednoho uživatele a počítače.
 
 Se šifrují citlivých informací (jako je publikování heslo) na uživatele nebo počítač úrovně a uložené v *vlastnosti/PublishProfiles/\<název publikovat >. pubxml.user* souboru. Protože tento soubor může obsahovat citlivé informace, by měl **není** se změnami do správy zdrojového kódu.
@@ -444,7 +445,7 @@ MSBuild file.
 
 Najdete v článku [WebSDK Readme](https://github.com/aspnet/websdk) pro další ukázky nasazení.
 
-### <a name="run-a-target-before-or-after-publishing"></a>Spustit cíl před nebo po publikování
+## <a name="run-a-target-before-or-after-publishing"></a>Spustit cíl před nebo po publikování
 
 Integrované `BeforePublish` a `AfterPublish` cíle můžete použít ke spuštění cíl před nebo po cíl publikování. Následující kód můžete přidat do profilu publikování k protokolování zpráv bude výstup konzoly, před a po publikování:
 
@@ -455,6 +456,16 @@ Integrované `BeforePublish` a `AfterPublish` cíle můžete použít ke spušt�
   <Target Name="CustomActionsAfterPublish" AfterTargets="AfterPublish">
     <Message Text="Inside AfterPublish" Importance="high" />
 </Target>
+```
+
+## <a name="publish-to-a-server-using-an-untrusted-certificate"></a>Publikování na serveru, který používá nedůvěryhodný certifikát
+
+Přidat `<AllowUntrustedCertificate>` vlastnosti s hodnotou `True` k profilu publikování:
+
+```xml
+<PropertyGroup>
+  <AllowUntrustedCertificate>True</AllowUntrustedCertificate>
+</PropertyGroup>
 ```
 
 ## <a name="the-kudu-service"></a>Služby modulu Kudu
@@ -471,4 +482,4 @@ Vyberte [ladění konzoly](https://github.com/projectkudu/kudu/wiki/Kudu-console
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Nasazení webové](https://www.iis.net/downloads/microsoft/web-deploy) (MSDeploy) zjednodušuje nasazení webové aplikace a weby pro servery služby IIS.
-* [https://github.com/ASPNET/websdk](https://github.com/aspnet/websdk/issues): soubor problémy a žádosti o funkce pro nasazení.
+* [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): Soubor problémy a žádosti o funkce pro nasazení.

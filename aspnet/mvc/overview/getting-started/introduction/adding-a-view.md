@@ -1,7 +1,7 @@
 ---
-title: "Přidání zobrazení do aplikace MVC"
+title: Přidání zobrazení do aplikace MVC
 author: Rick-Anderson
-description: "Přidání zobrazení do aplikace MVC"
+description: Přidání zobrazení do aplikace MVC
 ms.author: riande
 manager: wpickett
 ms.date: 09/1721/2017
@@ -9,17 +9,17 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: 86887f0dafa31ff3eb6597284c469c4b3053b6b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 21db97e635b5db580df31f46ca7f8b60a80d6f94
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view"></a>Přidání zobrazení
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 V této části se chystáte upravit `HelloWorldController` třídu se má použít zobrazení soubory šablon do této aplikace zapouzdření proces generování odpovědi HTML pro klienta. 
 
@@ -71,7 +71,7 @@ První, kterou chcete změnit &quot;název aplikace&quot; odkaz v horní části
 
 ![_LayoutCshtml](adding-a-view/_static/image7.png)
 
-Šablony rozložení umožňují zadat rozložení kontejneru HTML vašeho webu na jednom místě a pak ho použít na více stránkách ve vaší lokalitě. Najít `@RenderBody()` řádku. `RenderBody`je zástupný symbol kde všechny na zobrazení konkrétní stránky, můžete vytvořit zobrazení, &quot;zabalené&quot; na stránce rozložení. Například, pokud jste vybrali **o** odkaz, *Views\Home\About.cshtml* zobrazení vykresleno uvnitř `RenderBody` metoda.
+Šablony rozložení umožňují zadat rozložení kontejneru HTML vašeho webu na jednom místě a pak ho použít na více stránkách ve vaší lokalitě. Najít `@RenderBody()` řádku. `RenderBody` je zástupný symbol kde všechny na zobrazení konkrétní stránky, můžete vytvořit zobrazení, &quot;zabalené&quot; na stránce rozložení. Například, pokud jste vybrali **o** odkaz, *Views\Home\About.cshtml* zobrazení vykresleno uvnitř `RenderBody` metoda.
 
 Změňte obsah elementu název. Změna [ActionLink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx) v šabloně rozložení z &quot;název aplikace&quot; k &quot;MVC film&quot; a kontroler, z `Home` k `Movies`. Dokončení rozložení souboru je zobrazena níže:
 
@@ -85,7 +85,7 @@ Když jsme nejdřív vytvořili *Views\HelloWorld\Index.cshtml* souboru obsahuje
 
 [!code-cshtml[Main](adding-a-view/samples/sample4.cshtml)]
 
-Kódu Razor výše je výslovně nastavení ke stránce rozložení. Zkontrolujte *zobrazení\\soubor _ViewStart.cshtml* souboru, obsahuje kód přesně stejnou Razor. *[Zobrazení\\soubor _ViewStart.cshtml](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)*  soubor definuje běžné rozložení, který bude používat všechna zobrazení, proto můžete okomentovat out nebo odeberte tento kód z *Views\HelloWorld\ Index.cshtml* souboru.
+Kódu Razor výše je výslovně nastavení ke stránce rozložení. Zkontrolujte *zobrazení\\soubor _ViewStart.cshtml* souboru, obsahuje kód přesně stejnou Razor. *[Zobrazení\\soubor _ViewStart.cshtml](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)* soubor definuje běžné rozložení, který bude používat všechna zobrazení, proto můžete okomentovat out nebo odeberte tento kód z *Views\HelloWorld\ Index.cshtml* souboru.
 
 [!code-cshtml[Main](adding-a-view/samples/sample5.cshtml?highlight=1-3)]
 
@@ -119,7 +119,7 @@ Před jsme přejděte k databázi a mluvit o modely, ale umožňuje nejprve mluv
 
 V současné době `Welcome` metodu akce v `HelloWorldController` třídy trvá `name` a `numTimes` parametr a potom výstupy hodnoty přímo do prohlížeče. Místo mít řadič vykreslení této odpovědi jako řetězec, umožňuje změnit řadič místo toho použít šablonu zobrazení. Zobrazit šablonu způsobí vygenerování dynamických odpovědí, která znamená, že potřebujete předat příslušné bits dat z řadiče zobrazení za účelem vygenerování odpovědi. To provedete tak, že řadiče put dynamických dat (parametry), která vyžaduje zobrazení šablony `ViewBag` objekt, který šablona zobrazení můžete poté přistoupit.
 
-Vraťte se do *HelloWorldController.cs* soubor a změňte `Welcome` metody přidat `Message` a `NumTimes` hodnotu `ViewBag` objektu. `ViewBag`je to dynamický objekt, což znamená, že všechno můžete vložit do ní; `ViewBag` objekt nemá žádné definované vlastnosti, dokud vložíte něco uvnitř ho. [Systému vazby modelu ASP.NET MVC](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) automaticky mapuje pojmenované parametry (`name` a `numTimes`) z řetězce dotazu v panelu Adresa parametry ve své metodě. Kompletní *HelloWorldController.cs* soubor vypadá takto:
+Vraťte se do *HelloWorldController.cs* soubor a změňte `Welcome` metody přidat `Message` a `NumTimes` hodnotu `ViewBag` objektu. `ViewBag` je to dynamický objekt, což znamená, že všechno můžete vložit do ní; `ViewBag` objekt nemá žádné definované vlastnosti, dokud vložíte něco uvnitř ho. [Systému vazby modelu ASP.NET MVC](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) automaticky mapuje pojmenované parametry (`name` a `numTimes`) z řetězce dotazu v panelu Adresa parametry ve své metodě. Kompletní *HelloWorldController.cs* soubor vypadá takto:
 
 [!code-csharp[Main](adding-a-view/samples/sample8.cs)]
 
@@ -151,6 +151,6 @@ V ukázce výše jsme použili `ViewBag` objekt, který chcete předat data z ř
 
 Také, který byl typ služby &quot;M&quot; modelu, ale není typ databáze. Podívejme se, co jsme jste se naučili a vytvořit databázi filmy.
 
->[!div class="step-by-step"]
-[Předchozí](adding-a-controller.md)
-[další](adding-a-model.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-a-controller.md)
+> [další](adding-a-model.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-7
-title: "Část 7: Členství a autorizace | Microsoft Docs"
+title: 'Část 7: Členství a autorizace | Microsoft Docs'
 author: jongalloway
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 7 popisuje členství a autorizaci."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 7 popisuje členství a autorizaci.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: db459de687db862be00a9b59ff5b1b238fa75061
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a0f599da4691c5bb7c8e6f01625fc0e94ce0eac8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-membership-and-authorization"></a>Část 7: Členství a autorizace
 ====================
@@ -110,6 +110,6 @@ Nyní procházení k /StoreManager zobrazí dialogové okno přihlášení:
 
 Po přihlášení s naše nový účet správce se nám moci přejít na obrazovce upravit Album jako před.
 
->[!div class="step-by-step"]
-[Předchozí](mvc-music-store-part-6.md)
-[další](mvc-music-store-part-8.md)
+> [!div class="step-by-step"]
+> [Předchozí](mvc-music-store-part-6.md)
+> [další](mvc-music-store-part-8.md)

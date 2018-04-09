@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
-title: "Přidání zobrazení (VB) | Microsoft Docs"
+title: Přidání zobrazení (VB) | Microsoft Docs
 author: Rick-Anderson
-description: "V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je..."
+description: V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 7e8564c743510780b93d56bc1215f4c5b1faeb43
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c9675eb7776116ecbe910d5515abfe9b4391df22
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view-vb"></a>Přidání zobrazení (VB)
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je bezplatnou verzi sady Microsoft Visual Studio. Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže. Kliknutím na následující odkaz můžete nainstalovat všechny z nich: [instalačního programu webové platformy](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativně můžete nainstalovat jednotlivě požadavky pomocí následujících odkazů:
 > 
@@ -65,7 +65,7 @@ Vypadá poměrně funkční. Všimněte si však, že v prohlížeči záhlaví 
 
 Nejprve změňte text &quot;Moje aplikace MVC.&quot; Tento text se sdílí a se zobrazí na každé stránce. Ve skutečnosti zobrazí se na jenom jednom místě v našem projektu, i když je na každé stránce v naší aplikaci. Přejděte na */zobrazení/sdílené* složky v **Průzkumníku řešení** a otevřete  *\_Layout.vbhtml* souboru. Tento soubor se nazývá ke stránce rozložení a je sdílený &quot;prostředí&quot; , všechny ostatní stránky použít.
 
-Poznámka: `@RenderBody()` řádek kódu v dolní části souboru. `RenderBody`slouží jako zástupný text, kde zobrazit všechny stránky, které vytvoříte, &quot;zabalené&quot; na stránce rozložení. Změna `<h1>` nadpis z  **&quot;**  Moje aplikace MVC&quot; k &quot;filmová aplikace MVC&quot;.
+Poznámka: `@RenderBody()` řádek kódu v dolní části souboru. `RenderBody` slouží jako zástupný text, kde zobrazit všechny stránky, které vytvoříte, &quot;zabalené&quot; na stránce rozložení. Změna `<h1>` nadpis z **&quot;** Moje aplikace MVC&quot; k &quot;filmová aplikace MVC&quot;.
 
 [!code-html[Main](adding-a-view/samples/sample3.html)]
 
@@ -79,7 +79,7 @@ Nyní změňte název stránky indexu (zobrazení).
 
 [!code-vbhtml[Main](adding-a-view/samples/sample5.vbhtml)]
 
-Otevřete *MvcMovie\Views\HelloWorld\Index.vbhtml*. Existují dvě místa změnit: nejdřív, zobrazí se text v názvu prohlížeče a pak v hlavičce sekundární ( `<h2>` element). Vytočit je mírně lišit, abyste viděli, které bit kódu změní kterou částí aplikace.
+Open *MvcMovie\Views\HelloWorld\Index.vbhtml*. Existují dvě místa změnit: nejdřív, zobrazí se text v názvu prohlížeče a pak v hlavičce sekundární ( `<h2>` element). Vytočit je mírně lišit, abyste viděli, které bit kódu změní kterou částí aplikace.
 
 Spusťte aplikaci a přejděte do`http://localhost:xx/HelloWorld`. Všimněte si, že došlo ke změně záhlaví prohlížeče, záhlaví primární a sekundární záhlaví. Je snadné provést big změny ve vaší aplikaci s malým změnám zobrazení. (Pokud nevidíte změny v prohlížeči, může být zobrazil obsah uložený v mezipaměti. Stisknutím kláves Ctrl + F5 v prohlížeči na vynucení odpovědi ze serveru načíst.)
 
@@ -111,11 +111,11 @@ Tady je co vaše **přidat zobrazení** dialogové okno bude vypadat takto.
 
 [![3AddWelcomeView](adding-a-view/_static/image12.png "3AddWelcomeView")](adding-a-view/_static/image11.png)
 
-Přidejte následující kód pod `<h2>` element v novém *úvodní.* vbhtml soubor. Jsme budete zkontrolujte smyčku a vyslovte &quot;Hello&quot; tolikrát, kolikrát uživatel zvolí jsme měli!
+Přidejte následující kód pod `<h2>` element v novém <em>úvodní.</em> vbhtml soubor. Jsme budete zkontrolujte smyčku a vyslovte &quot;Hello&quot; tolikrát, kolikrát uživatel zvolí jsme měli!
 
 [!code-vbhtml[Main](adding-a-view/samples/sample8.vbhtml)]
 
-Spusťte aplikaci a přejděte do`http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
+Spusťte aplikaci a přejděte do `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
 
 Data se nyní prováděné z adresy URL a automaticky předaný kontroleru. Řadičem zabalí dat do `Model` objekt a předává, které objektu do zobrazení. Zobrazení, než se zobrazí data jako kód HTML pro uživatele.
 
@@ -123,6 +123,6 @@ Data se nyní prováděné z adresy URL a automaticky předaný kontroleru. Řad
 
 Také, který byl typ služby &quot;M&quot; modelu, ale není typ databáze. Podívejme se, co jsme jste se naučili a vytvořit databázi filmy.
 
->[!div class="step-by-step"]
-[Předchozí](adding-a-controller.md)
-[další](adding-a-model.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-a-controller.md)
+> [další](adding-a-model.md)

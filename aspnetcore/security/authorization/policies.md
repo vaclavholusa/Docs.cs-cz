@@ -1,7 +1,7 @@
 ---
-title: "Na základě zásad autorizace v ASP.NET Core"
+title: Na základě zásad autorizace v ASP.NET Core
 author: rick-anderson
-description: "Zjistěte, jak vytvořit a používat obslužné rutiny zásad autorizace pro vynucení požadavky autorizace v aplikaci ASP.NET Core."
+description: Zjistěte, jak vytvořit a používat obslužné rutiny zásad autorizace pro vynucení požadavky autorizace v aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/policies
-ms.openlocfilehash: a9ee7e6fd06fa88485d7f578a9df74cbf87d9540
-ms.sourcegitcommit: 7ee6e7582421195cbd675355c970d3d292ee668d
+ms.openlocfilehash: 411fee90bdccfb45c33f5d4ccd7864c83c614e70
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="policy-based-authorization"></a>Na základě zásad autorizace
+# <a name="policy-based-authorization-in-aspnet-core"></a>Na základě zásad autorizace v ASP.NET Core
 
 Pod zahrnuje [autorizace na základě rolí](xref:security/authorization/roles) a [založené na deklaracích identity autorizace](xref:security/authorization/claims) použít požadavek, obslužnou rutinu požadavků a předem nakonfigurované zásad. Tyto stavební bloky podporovat výraz hodnocení autorizace v kódu. Výsledkem je strukturou autorizací bohatší, opakovaně použitelný, možností intenzivního testování.
 

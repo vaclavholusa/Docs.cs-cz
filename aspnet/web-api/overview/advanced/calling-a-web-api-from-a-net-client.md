@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/calling-a-web-api-from-a-net-client
-title: "Volání webového rozhraní API z klienta .NET (C#) | Microsoft Docs"
+title: Volání webového rozhraní API z klienta .NET (C#) | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/24/2017
@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 44e02888b53ee372ab93db5f90acb691f26b7519
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: a243eeb982ba581e237263c4e31e130d634aff0e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>Volání webového rozhraní API z klienta .NET (C#)
 ====================
@@ -48,7 +48,7 @@ V sadě Visual Studio vytvořte novou konzolovou aplikaci systému Windows s ná
 
 Předchozí kód je kompletní klientské aplikace.
 
-`RunAsync`Spustí a bloky až do dokončení. Většina **HttpClient** metody jsou asynchronní, protože fungují v/v sítě. Všechny asynchronních úloh se provádějí v `RunAsync`. Za normálních okolností aplikace neblokuje hlavního vlákna, ale tato aplikace nebude povolovat interakce.
+`RunAsync` Spustí a bloky až do dokončení. Většina **HttpClient** metody jsou asynchronní, protože fungují v/v sítě. Všechny asynchronních úloh se provádějí v `RunAsync`. Za normálních okolností aplikace neblokuje hlavního vlákna, ale tato aplikace nebude povolovat interakce.
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_run)]
 
@@ -109,7 +109,7 @@ Následující kód odešle požadavek GET pro produkt:
 
 **GetAsync** metoda odešle požadavek HTTP GET. Po metodě dokončení vrátí **objekt HttpResponseMessage** , který obsahuje odpověď HTTP. Pokud stavový kód v odpovědi kód úspěch, text odpovědi obsahuje reprezentace JSON produktu. Volání **ReadAsAsync** k datové části JSON k deserializaci `Product` instance. **ReadAsAsync** metoda je asynchronní, protože text odpovědi lze libovolně velké.
 
-**HttpClient** nevyvolá výjimku, pokud odpověď HTTP, která obsahuje kód chyby. Místo toho **IsSuccessStatusCode** vlastnost je **false** Pokud je stav chybový kód. Pokud dáváte přednost zacházet s kódy chyb HTTP jako výjimky, volání [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) na objekt odpovědi. `EnsureSuccessStatusCode`vyvolá výjimku, pokud kód stavu spadá mimo rozsah 200&ndash;299. Všimněte si, že **HttpClient** může vyvolat výjimky z jiných důvodů &mdash; například, pokud vyprší časový limit žádosti.
+**HttpClient** nevyvolá výjimku, pokud odpověď HTTP, která obsahuje kód chyby. Místo toho **IsSuccessStatusCode** vlastnost je **false** Pokud je stav chybový kód. Pokud dáváte přednost zacházet s kódy chyb HTTP jako výjimky, volání [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) na objekt odpovědi. `EnsureSuccessStatusCode` vyvolá výjimku, pokud kód stavu spadá mimo rozsah 200&ndash;299. Všimněte si, že **HttpClient** může vyvolat výjimky z jiných důvodů &mdash; například, pokud vyprší časový limit žádosti.
 
 <a id="MediaTypeFormatters"></a>
 ### <a name="media-type-formatters-to-deserialize"></a>Formátovací moduly typu média k deserializaci
@@ -173,10 +173,10 @@ K testování aplikace klienta:
 
 3. Spusťte klientskou aplikaci. Vytváří následující výstup:
 
- ```console
- Created at http://localhost:64195/api/products/4
-Name: Gizmo     Price: 100.0    Category: Widgets
-Updating price...
-Name: Gizmo     Price: 80.0     Category: Widgets
-Deleted (HTTP Status = 204)
-```
+   ```console
+   Created at http://localhost:64195/api/products/4
+   Name: Gizmo     Price: 100.0    Category: Widgets
+   Updating price...
+   Name: Gizmo     Price: 80.0     Category: Widgets
+   Deleted (HTTP Status = 204)
+   ```

@@ -118,4 +118,4 @@ V další části řady, jsme budete zkontrolujte, zda aplikace a některá vyle
 * [Práce s formuláři](xref:mvc/views/working-with-forms)
 * [Globalizace a lokalizace](xref:fundamentals/localization)
 * [Úvod do pomocné rutiny značky](xref:mvc/views/tag-helpers/intro)
-* [Vytváření Pomocníci značky](xref:mvc/views/tag-helpers/authoring)
+* [Autor značky pomocné rutiny](xref:mvc/views/tag-helpers/authoring)

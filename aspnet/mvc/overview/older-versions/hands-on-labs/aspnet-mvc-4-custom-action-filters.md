@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
-title: "Vlastní akce filtrech rozhraní ASP.NET MVC 4 | Microsoft Docs"
+title: Vlastní akce filtrech rozhraní ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC poskytuje filtry akce pro provádění filtrování logiku před i po zavolání metody akce. Zadaná vlastní atributy jsou filtry akce..."
+description: ASP.NET MVC poskytuje filtry akce pro provádění filtrování logiku před i po zavolání metody akce. Zadaná vlastní atributy jsou filtry akce...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 639815cc92b7cb5f3dfb4e1a198f6b4c2476dc90
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 8b135b23aea64b0c7c7d4368eef9ee80914159e4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>Vlastní akce filtrech rozhraní ASP.NET MVC 4
 
@@ -139,14 +139,14 @@ V této úloze vytvoříte třídu atributu vlastního filtru, která bude obsah
 
 1. Otevřete **začít** řešení nacházející se v **\Source\Ex01-LoggingActions\Begin** složky.
 
-    1. Musíte se ke stažení některé chybějící balíčky NuGet, než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Musíte se ke stažení některé chybějící balíčky NuGet, než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
-    > 
-    > Další informace najdete v tomto článku: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > 
+      > Další informace najdete v tomto článku: [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
 2. Přidejte novou C# třídu do **filtry** složku a pojmenujte ji *CustomActionFilter.cs*. Tato složka se uloží všechny vlastní filtry.
 3. Otevřete **CustomActionFilter.cs** a přidejte odkaz na **System.Web.Mvc** a **MvcMusicStore.Models** oborů názvů:
 
@@ -185,10 +185,10 @@ Je také možné zachytit metoda konkrétní řadič.
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample5.cs)]
 
-    > [!NOTE]
-    > Pokud je filtr vloženy do třídy kontroleru, jsou také vložit všechny jeho akce. Pokud chcete použít filtr pouze pro sadu akcí, budete muset vložit **[CustomActionFilter]** na každém z nich:
-    > 
-    > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample6.cs)]
+   > [!NOTE]
+   > Pokud je filtr vloženy do třídy kontroleru, jsou také vložit všechny jeho akce. Pokud chcete použít filtr pouze pro sadu akcí, budete muset vložit **[CustomActionFilter]** na každém z nich:
+   > 
+   > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample6.cs)]
 
 <a id="Ex1Task3"></a>
 
@@ -204,14 +204,14 @@ V této úloze budete testovat, protokolování filtru funguje. Bude spustit apl
 
     *Stav sledovací modul protokolu před stránky aktivity*
 
-    > [!NOTE]
-    > Ve výchozím nastavení je vždy zobrazí jednu položku, který se vygeneruje, když načítání existující žánry pro v nabídce.
-    > 
-    > Pro účely jednoduchost jsme čištění **ActionLog** tabulky pokaždé, když je aplikace spuštěná, zobrazí pouze protokoly ověřování každý konkrétní úkol.
-    > 
-    > Možná budete muset odebrat následující kód z **relace\_spustit** – metoda (v **Global.asax** třída), aby bylo možné uložit Historický protokol pro všechny akce provést v úložišti Řadiče.
-    > 
-    > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample7.cs)]
+   > [!NOTE]
+   > Ve výchozím nastavení je vždy zobrazí jednu položku, který se vygeneruje, když načítání existující žánry pro v nabídce.
+   > 
+   > Pro účely jednoduchost jsme čištění **ActionLog** tabulky pokaždé, když je aplikace spuštěná, zobrazí pouze protokoly ověřování každý konkrétní úkol.
+   > 
+   > Možná budete muset odebrat následující kód z **relace\_spustit** – metoda (v **Global.asax** třída), aby bylo možné uložit Historický protokol pro všechny akce provést v úložišti Řadiče.
+   > 
+   > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample7.cs)]
 3. Klikněte na jednu z **žánry** z nabídky a provádět některé akce, jako je k dispozici album procházení.
 4. Přejděte do **/ActionLog** a pokud je protokol prázdný stiskněte **F5** obnovíte stránku. Zkontrolujte, že byly sledovány vaší návštěvy:
 
@@ -250,7 +250,7 @@ V této úloze vytvoříte nový filtr vlastní akce se vložit do třídy Store
         > [!NOTE]
         > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
         > 
-        > Další informace najdete v tomto článku: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
+        > Další informace najdete v tomto článku: [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
 2. Přidejte novou C# třídu do **filtry** složku a pojmenujte ji *MyNewCustomActionFilter.cs*
 3. Otevřete **MyNewCustomActionFilter.cs** a přidejte odkaz na **System.Web.Mvc** a **MvcMusicStore.Models** obor názvů:
 
@@ -264,7 +264,7 @@ V této úloze vytvoříte nový filtr vlastní akce se vložit do třídy Store
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample9.cs)]
 
     > [!NOTE]
-    > Tato vlastní akce filtru je téměř stejný než ten, který jste vytvořili v předchozím cvičení. Hlavní rozdíl je, že je  *&quot;přihlášení pomocí&quot;*  aktualizováno tato nová třída název pro identifikaci požadovaly filtru atributu zaregistrován v protokolu.
+    > Tato vlastní akce filtru je téměř stejný než ten, který jste vytvořili v předchozím cvičení. Hlavní rozdíl je, že je *&quot;přihlášení pomocí&quot;* aktualizováno tato nová třída název pro identifikaci požadovaly filtru atributu zaregistrován v protokolu.
 
 <a id="Ex2Task2"></a>
 
@@ -376,9 +376,9 @@ Provedením tohoto testovacího prostředí Hands-On jste se naučili, jak rozš
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Příloha A: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze  **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)** . Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *Visual Studio Express 2012 pro Web se sadou Windows Azure SDK*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 
@@ -389,23 +389,23 @@ Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jin�
 
     ![Vyjádření souhlasu s podmínkami licence](aspnet-mvc-4-custom-action-filters/_static/image13.png)
 
-    Vyjádření souhlasu s podmínkami licence
+    *Vyjádření souhlasu s podmínkami licence*
 5. Počkejte na dokončení procesu stahování a instalaci.
 
     ![Průběh instalace](aspnet-mvc-4-custom-action-filters/_static/image14.png)
 
-    Průběh instalace
+    *Průběh instalace*
 6. Po dokončení instalace, klikněte na tlačítko **Dokončit**.
 
     ![Instalace byla dokončena.](aspnet-mvc-4-custom-action-filters/_static/image15.png)
 
-    Instalace byla dokončena.
+    *Instalace byla dokončena.*
 7. Klikněte na tlačítko **ukončení** ukončíte instalační program webové platformy.
 8. Chcete-li spustit nástroj Visual Studio Express pro Web, přejděte na **spustit** obrazovky a začít psát &quot; **VS Express**&quot;, klikněte na **VS Express pro Web** dlaždice.
 
     ![VS Express pro Web dlaždice](aspnet-mvc-4-custom-action-filters/_static/image16.png)
 
-    VS Express pro Web dlaždice
+    *VS Express pro Web dlaždice*
 
 <a id="AppendixB"></a>
 
@@ -485,12 +485,12 @@ Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vyt
 
     ![Přidávání IP adresy klienta](aspnet-mvc-4-custom-action-filters/_static/image27.png)
 
-    Přidávání IP adresy klienta
+    *Přidávání IP adresy klienta*
 3. Jednou **IP adresa klienta** je povolené IP adresy do seznamu, klikněte na **Uložit** potvrďte změny.
 
     ![Potvrzení změn](aspnet-mvc-4-custom-action-filters/_static/image28.png)
 
-    Potvrzení změn
+    *Potvrzení změn*
 
 <a id="ApxBTask3"></a>
 
@@ -522,14 +522,14 @@ Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vyt
     *Konfigurace nasazení webu*
 5. Připojení k databázi nakonfigurujte následujícím způsobem:
 
-    - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
-    - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
-    - V **heslo** zadejte přihlašovací heslo správce serveru.
-    - Zadejte nový název databáze.
+   - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
+   - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
+   - V **heslo** zadejte přihlašovací heslo správce serveru.
+   - Zadejte nový název databáze.
 
-    ![Konfigurace cílový připojovací řetězec](aspnet-mvc-4-custom-action-filters/_static/image33.png "konfigurace cílový připojovací řetězec")
+     ![Konfigurace cílový připojovací řetězec](aspnet-mvc-4-custom-action-filters/_static/image33.png "konfigurace cílový připojovací řetězec")
 
-    *Konfigurace cílový připojovací řetězec*
+     *Konfigurace cílový připojovací řetězec*
 6. Pak klikněte na tlačítko **OK**. Po zobrazení výzvy k vytvoření databáze, klikněte na tlačítko **Ano**.
 
     ![Vytvoření databáze](aspnet-mvc-4-custom-action-filters/_static/image34.png "vytváření řetězec databáze")

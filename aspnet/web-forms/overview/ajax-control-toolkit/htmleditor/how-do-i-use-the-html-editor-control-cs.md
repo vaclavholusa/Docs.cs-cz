@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
-title: "Používání ovládacího prvku HTML Editor (C#) | Microsoft Docs"
+title: Používání ovládacího prvku HTML Editor (C#) | Microsoft Docs
 author: microsoft
-description: "HTMLEditor je ovládací prvek ASP.NET AJAX, který umožňuje snadno vytvářet a upravovat obsah HTML pomocí tlačítek na panelu nástrojů."
+description: HTMLEditor je ovládací prvek ASP.NET AJAX, který umožňuje snadno vytvářet a upravovat obsah HTML pomocí tlačítek na panelu nástrojů.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17343660d7bf7aa6210fa9c6c9c0206598d34b18
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fca18948c0e4f1323f214dc0033f19fa44efad47
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-html-editor-control-c"></a>Používání ovládacího prvku HTML Editor (C#)
 ====================
@@ -93,7 +93,7 @@ Třída výpis 2 musíte přidat do vaší aplikace\_Code složky tak, aby se au
 
 Po vytvoření vlastního editoru, můžete ho přidat do stránky ASP.NET stejným způsobem, jak přidat normální Editor HTML (viz seznam 3).
 
-**Výpis 3 - ShowCustomEditor.aspx**
+**Listing 3 - ShowCustomEditor.aspx**
 
 [!code-aspx[Main](how-do-i-use-the-html-editor-control-cs/samples/sample3.aspx)]
 
@@ -111,5 +111,5 @@ Představte si například, že vytváříte aplikace blogu. V takovém případ
 
 V tomto kurzu byly poskytnuty s stručný přehled ovládacího prvku HTML Editor součástí Toolkitu AJAX. Jste zjistili, jak pomocí editoru HTML přijmout bohaté obsah od uživatele a odeslání obsahu na server. Také popsané, jak můžete přizpůsobit tlačítka panelu nástrojů, která se zobrazí HTML Editor. Nakonec jste zjistili, jak se vyhnout skriptování útoků webů při použití editoru HTML tak, aby přijímal potenciálně škodlivý vstup.
 
->[!div class="step-by-step"]
-[Další](how-do-i-use-the-html-editor-control-vb.md)
+> [!div class="step-by-step"]
+> [Next](how-do-i-use-the-html-editor-control-vb.md)

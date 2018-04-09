@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
-title: "Část 2: Řadiče | Microsoft Docs"
+title: 'Část 2: Řadiče | Microsoft Docs'
 author: jongalloway
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 2 popisuje řadiče."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 2 popisuje řadiče.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: bdafd751e996e759d516d0fa25b09eff21241ed7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 680cdea388d9b01961bd626643c0fd91c9205ed7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-controllers"></a>Část 2: řadiče
 ====================
@@ -63,7 +63,7 @@ Metoda by měl nyní vypadat takto:
 Teď umožňuje spuštění tohoto webu. Můžeme spustí naše webový server a vyzkoušejte webu pomocí kteréhokoli z následujících::
 
 - Zvolte ladění ⇨ spustit ladění položku nabídky
-- Klikněte na tlačítko zelenou šipku na panelu nástrojů![](mvc-music-store-part-2/_static/image2.jpg)
+- Klikněte na tlačítko zelenou šipku na panelu nástrojů ![](mvc-music-store-part-2/_static/image2.jpg)
 - Použijte klávesovou zkratku, F5.
 
 Pomocí kterékoli z výše uvedené kroky budou kompilaci naše projektu a potom způsobit, že je ASP.NET Development Server, který je integrovaný do aplikace Visual Web Developer spustit. Oznámení se zobrazí v dolním rohu obrazovky indikující, že je ASP.NET Development Server byla spuštěna a zobrazí číslo portu, zda je spuštěna pod.
@@ -116,7 +116,7 @@ Nejprve Změníme metody akce procházet načíst hodnotu řetězce dotazu z adr
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*Poznámka: Používáme metodu HttpUtility.HtmlEncode nástroj pro úpravu vstup uživatele. To zabrání uživatelům vložení Javascript do našich zobrazení s odkazem jako /Store/Browse? Genre =&lt;skriptu&gt;window.location= 'http://hackersite.com'&lt;/script&gt;.*
+*Poznámka: Používáme metodu HttpUtility.HtmlEncode nástroj pro úpravu vstup uživatele. To zabrání uživatelům vložení Javascript do našich zobrazení s odkazem jako /Store/Browse? Genre =&lt;skriptu&gt;window.location='http://hackersite.com'&lt;/script&gt;.*
 
 Teď umožňuje procházet/úložiště / Procházet? Genre = Disco
 
@@ -141,6 +141,6 @@ Pojďme recap, co máme jste Hotovo, pokud:
 - Přidali jsme metody akce na našem řadiče, které reagují na požadavky na adresu URL a vrací text do prohlížeče
 
 
->[!div class="step-by-step"]
-[Předchozí](mvc-music-store-part-1.md)
-[další](mvc-music-store-part-3.md)
+> [!div class="step-by-step"]
+> [Předchozí](mvc-music-store-part-1.md)
+> [další](mvc-music-store-part-3.md)

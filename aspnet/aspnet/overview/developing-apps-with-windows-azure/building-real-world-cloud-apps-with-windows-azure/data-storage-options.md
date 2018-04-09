@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
-title: "Možnosti ukládání dat (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs"
+title: Možnosti ukládání dat (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
 author: MikeWasson
-description: "Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu..."
+description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 88f57244bfbfdf33df3bb265d8aa2c93689b2f24
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d638dca331cb24c340a4471e5964a00b75bb608a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>Možnosti ukládání dat (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -250,7 +250,7 @@ Zde jsou uvedeny pokyny o tom, jak zvolit dva modely.
 | Databáze Azure SQL (PaaS) | Systému SQL Server ve virtuálním počítači (IaaS) |
 | --- | --- |
 | **Specialisté** -nemáte k vytvoření nebo spravovat virtuální počítače, aktualizace nebo opravy operačního systému nebo SQL; Provede Azure. -Integrovanou vysokou dostupnost, s SLA úrovni databáze. -Nedostatek celkové náklady na vlastnictví (TCO), protože platíte jenom za použijete (žádná licence vyžaduje). -Vhodné pro zpracování velkého počtu menší databáze (&lt;= 500 GB). -Snadno vytvořit dynamicky nové databáze a umožnit tak škálování. | ***Specialisté*** – funkce kompatibilní s místním SQL serveru. -Můžete implementovat systému SQL Server [vysokou dostupnost prostřednictvím AlwaysOn](https://www.microsoft.com/sqlserver/solutions-technologies/mission-critical-operations/high-availability.aspx) ve virtuálních počítačích 2 +, s SLA úroveň virtuálního počítače. -Máte plnou kontrolu nad spravováni SQL. -Můžete znovu použít SQL licence už vlastníte, nebo se platit za hodinu pro jednu. -Vhodné pro zpracování méně ale větší (1 TB +) databází. |
-| **Cons** -některé funkce mezery ve srovnání s místním SQL serveru (nedostatku [integrace modulu CLR](https://technet.microsoft.com/library/ms131102.aspx), [TDE](https://technet.microsoft.com/library/bb934049.aspx), [podporu komprese](https://technet.microsoft.com/library/cc280449.aspx), [SQL Server Reporting Services](https://technet.microsoft.com/library/ms159106.aspx)atd)-limitu velikosti databáze 500 GB. | ***Cons*** – aktualizace nebo opravy (operačního systému a SQL) jsou zodpovědní za – vytváření a správu databází jsou zodpovědní za - IOPS disku (vstupně výstupních operací za sekundu) nesmí být o 8000 (prostřednictvím 16 datových jednotek). |
+| **Cons** -některé funkce mezery ve srovnání s místním SQL serveru (nedostatku [integrace modulu CLR](https://technet.microsoft.com/library/ms131102.aspx), [TDE](https://technet.microsoft.com/library/bb934049.aspx), [podporu komprese](https://technet.microsoft.com/library/cc280449.aspx), [systému SQL Server Služba Reporting Services](https://technet.microsoft.com/library/ms159106.aspx)atd)-limitu velikosti databáze 500 GB. | ***Cons*** – aktualizace nebo opravy (operačního systému a SQL) jsou zodpovědní za – vytváření a správu databází jsou zodpovědní za - IOPS disku (vstupně výstupních operací za sekundu) nesmí být o 8000 (prostřednictvím 16 datových jednotek). |
 
 Pokud chcete používat systém SQL Server ve virtuálním počítači, můžete použít vlastní licenci na SQL Server, nebo může platit pro jednu podle hodin. Například na portálu nebo pomocí rozhraní REST API můžete vytvořit nový virtuální počítač pomocí bitové kopie systému SQL Server.
 
@@ -301,6 +301,6 @@ HDInsight (Hadoop v Azure):
 - [Hadoop a prostředí HDInsight: velkých objemů dat v Azure](https://msdn.microsoft.com/magazine/dn385705.aspx). Článku MSDN časopis Bruno Terkaly a Richard Villalobos, představení Hadoop v Azure.
 - [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Vzor MapReduce najdete v tématu.
 
->[!div class="step-by-step"]
-[Předchozí](single-sign-on.md)
-[další](data-partitioning-strategies.md)
+> [!div class="step-by-step"]
+> [Předchozí](single-sign-on.md)
+> [další](data-partitioning-strategies.md)

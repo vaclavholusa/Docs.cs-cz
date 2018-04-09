@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-vb
-title: "Vytvoření třídy modelu pomocí rozhraní Entity Framework (VB) | Microsoft Docs"
+title: Vytvoření třídy modelu pomocí rozhraní Entity Framework (VB) | Microsoft Docs
 author: microsoft
-description: "V tomto kurzu zjistěte, jak používat rozhraní ASP.NET MVC s Microsoft Entity Framework. Dozvíte, jak používat průvodce Entity k vytvoření ADO.NET Entity Da..."
+description: V tomto kurzu zjistěte, jak používat rozhraní ASP.NET MVC s Microsoft Entity Framework. Dozvíte, jak používat průvodce Entity k vytvoření ADO.NET Entity Da...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-vb
 msc.type: authoredcontent
-ms.openlocfilehash: efc190d856fe9ebf1c09e0ae4758aabb1e3254dc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3442435c7b2b9ce2ce6bd016ba74fe671eb76f62
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-model-classes-with-the-entity-framework-vb"></a>Vytvoření třídy modelu pomocí rozhraní Entity Framework (VB)
 ====================
@@ -38,7 +38,7 @@ Chcete-li ilustrují, jak můžete použít rozhraní Entity Framework Microsoft
 
 Tento kurz předpokládá, že máte Visual Studio 2008 nebo Visual Web Developer 2008 s aktualizací Service Pack 1. Chcete-li použít rozhraní Entity Framework musíte aktualizací Service Pack 1. Visual Studio 2008 Service Pack 1 nebo Visual Web Developer s aktualizací Service Pack 1 si můžete stáhnout z následující adresy:
 
-> [https://www.ASP.NET/downloads/](https://www.asp.net/downloads)
+> [https://www.asp.net/downloads/](https://www.asp.net/downloads)
 
 
 ## <a name="creating-the-movie-sample-database"></a>Vytváření film ukázkové databáze
@@ -47,9 +47,9 @@ Aplikace film databáze používá tabulku databáze s názvem filmy, která obs
 
 | Název sloupce | Datový typ | Povolit hodnoty Null? | Je primární klíč? |
 | --- | --- | --- | --- |
-| ID | int | False | Hodnota TRUE |
-| Název | Nvarchar(100) | False | False |
-| Adresář nacházející | Nvarchar(100) | False | False |
+| ID | int | False | True |
+| Název | nvarchar(100) | False | False |
+| Adresář nacházející | nvarchar(100) | False | False |
 
 V této tabulce můžete přidat k projektu ASP.NET MVC pomocí následujících kroků:
 
@@ -135,7 +135,7 @@ Syntaxí kteroukoli LINQ – syntaxe využívající metody nebo syntaxe dotazů
 
 Zobrazení v výpis 2 se používá k zobrazení film záznamy.
 
-**Výpis 2 – Views\Home\Index.aspx**
+**Listing 2 – Views\Home\Index.aspx**
 
 [!code-aspx[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample3.aspx)]
 
@@ -197,7 +197,7 @@ Nakonec pokud nejsou žádné chyby ověření, potom základní tabulky databá
 
 Při úpravě záznamů databáze, musíte předat s Id záznamu upravovaný k akci kontroleru, který provádí aktualizaci databáze. Akce kontroleru, jinak nebude vědět, které záznam aktualizovat v podkladové databázi. Upravit zobrazení, obsažené v výpis 5, obsahuje skryté pole formuláře představující Id upravovaný záznamů databáze.
 
-**Výpis 5 – Views\Home\Edit.aspx**
+**Listing 5 – Views\Home\Edit.aspx**
 
 [!code-aspx[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample8.aspx)]
 
@@ -217,6 +217,6 @@ Akce Delete() nejprve načte film entita, která odpovídá Id předaný akce. V
 
 Nejdřív jsme probrali použití průvodce Entity Data Model generovat Model dat Entity z Visual Studia. V dalším kroku zjistíte, jak používat technologie LINQ to Entities načíst sadu záznamů databáze z tabulky databáze. Nakonec jsme použili rozhraní Entity Framework vložit, aktualizovat a odstraňovat záznamů databáze.
 
->[!div class="step-by-step"]
-[Předchozí](validation-with-the-data-annotation-validators-cs.md)
-[další](creating-model-classes-with-linq-to-sql-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](validation-with-the-data-annotation-validators-cs.md)
+> [další](creating-model-classes-with-linq-to-sql-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
-title: "Začínáme s Entity Framework 6 Code First pomocí MVC 5 | Microsoft Docs"
+title: Začínáme s Entity Framework 6 Code First pomocí MVC 5 | Microsoft Docs
 author: tdykstra
-description: "Je k dispozici novější verze Tato řada kurz: Začínáme s ASP.NET Core a Entity Framework Core pomocí sady Visual Studio 2015. Contoso Universi..."
+description: 'Je k dispozici novější verze Tato řada kurz: Začínáme s ASP.NET Core a Entity Framework Core pomocí sady Visual Studio 2015. Contoso Universi...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/22/2015
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 46f53279e2e6daa4266c06feb4ba544e14b68a03
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2417a872bb57b18f4a61ef70f5dd35cb3d94ff73
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-6-code-first-using-mvc-5"></a>Začínáme s Entity Framework 6 Code First pomocí MVC 5
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stáhnout PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
@@ -175,7 +175,7 @@ V *modely* složku vytvořit *Enrollment.cs* a existujícího kódu nahraďte n�
 
 `CourseID` Vlastnost je cizí klíč a odpovídající navigační vlastnost `Course`. `Enrollment` Entita je spojen s jednou `Course` entity.
 
-Rozhraní Entity Framework interpretuje vlastnost jako vlastnost cizího klíče, pokud je název  *&lt;název vlastnosti navigace&gt;&lt;vlastnost primárního klíče název&gt;*  (například `StudentID`pro `Student` navigační vlastnost, protože `Student` je primární klíč entity `ID`). Vlastnosti cizího klíče můžete také se stejným názvem, jednoduše  *&lt;vlastnost primárního klíče název&gt;*  (například `CourseID` vzhledem k tomu `Course` je primární klíč entity `CourseID`).
+Rozhraní Entity Framework interpretuje vlastnost jako vlastnost cizího klíče, pokud je název *&lt;název vlastnosti navigace&gt;&lt;vlastnost primárního klíče název&gt;* (například `StudentID`pro `Student` navigační vlastnost, protože `Student` je primární klíč entity `ID`). Vlastnosti cizího klíče můžete také se stejným názvem, jednoduše *&lt;vlastnost primárního klíče název&gt;* (například `CourseID` vzhledem k tomu `Course` je primární klíč entity `CourseID`).
 
 ### <a name="the-course-entity"></a>Během Entity
 
@@ -274,37 +274,37 @@ Teď vytvoříte webovou stránku pro zobrazení dat a automaticky spustí proce
 Vytvoření databáze. Budete zahájíte vytváření nového řadiče. Ale předtím, než můžete udělat, sestavte projekt, aby byly k dispozici generování uživatelského rozhraní řadiče MVC třídy modelu a kontextu.
 
 1. Klikněte pravým tlačítkem myši **řadiče** složky v **Průzkumníku řešení**, vyberte **přidat**a potom klikněte na **novou vygenerovanou položku**.
-- V **přidat vygenerované uživatelské rozhraní** dialogové okno, vyberte **kontroler MVC 5 se zobrazeními s využitím nástroje Entity Framework**.
+2. V **přidat vygenerované uživatelské rozhraní** dialogové okno, vyberte **kontroler MVC 5 se zobrazeními s využitím nástroje Entity Framework**.
 
-    ![Přidat vygenerované uživatelské rozhraní](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image12.png)
-- V dialogovém okně Přidat kontroler, vyberte následující možnosti a pak klikněte na **přidat**:
+     ![Přidat vygenerované uživatelské rozhraní](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image12.png)
+3. V dialogovém okně Přidat kontroler, vyberte následující možnosti a pak klikněte na **přidat**:
 
-    - Třída modelu: **Student (ContosoUniversity.Models)**. (Pokud tato možnost v rozevíracím seznamu nezobrazí, sestavte projekt a zkuste to znovu.)
-    - Třída kontextu dat: **SchoolContext (ContosoUniversity.DAL)**.
-    - Název řadiče: **StudentController** (ne StudentsController).
-    - Ponechte výchozí hodnoty pro ostatní pole.
+   - Třída modelu: **Student (ContosoUniversity.Models)**. (Pokud tato možnost v rozevíracím seznamu nezobrazí, sestavte projekt a zkuste to znovu.)
+   - Třída kontextu dat: **SchoolContext (ContosoUniversity.DAL)**.
+   - Název řadiče: **StudentController** (ne StudentsController).
+   - Ponechte výchozí hodnoty pro ostatní pole.
 
-    ![Add_Controller_dialog_box_for_Student_controller](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image13.png)
+     ![Add_Controller_dialog_box_for_Student_controller](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image13.png)
 
-    Když kliknete na tlačítko **přidat**, scaffolder vytvoří soubor StudentController.cs a sadu zobrazení (.cshtml soubory), které pracují s řadičem. V budoucnu při vytváření projektů, které používají rozhraní Entity Framework můžete také využít výhod některé další funkce scaffolder: právě vytvoření vaší první třídy modelu, nevytvářejte připojovací řetězec a potom v **přidat kontroler** pole zadejte novou třídu kontextu. Vytvoří scaffolder vaše `DbContext` třídy a připojení řetězce a také řadiče a zobrazení.
-- Otevře se Visual Studio *Controllers\StudentController.cs* souboru. Uvidíte, že byl vytvořen proměnné třídy, který vytvoří instanci objektu kontextu databáze:
+     Když kliknete na tlačítko **přidat**, scaffolder vytvoří soubor StudentController.cs a sadu zobrazení (.cshtml soubory), které pracují s řadičem. V budoucnu při vytváření projektů, které používají rozhraní Entity Framework můžete také využít výhod některé další funkce scaffolder: právě vytvoření vaší první třídy modelu, nevytvářejte připojovací řetězec a potom v **přidat kontroler** pole zadejte novou třídu kontextu. Vytvoří scaffolder vaše `DbContext` třídy a připojení řetězce a také řadiče a zobrazení.
+4. Otevře se Visual Studio *Controllers\StudentController.cs* souboru. Uvidíte, že byl vytvořen proměnné třídy, který vytvoří instanci objektu kontextu databáze:
 
-    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
+     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
-    `Index` Metoda akce získá seznam studenty z *studenty* načtením sadu entit `Students` vlastností kontextu instance databáze:
+     `Index` Metoda akce získá seznam studenty z *studenty* načtením sadu entit `Students` vlastností kontextu instance databáze:
 
-    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample12.cs)]
+     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample12.cs)]
 
-    *Student\Index.cshtml* zobrazení zobrazí tento seznam v tabulce:
+     *Student\Index.cshtml* zobrazení zobrazí tento seznam v tabulce:
 
-    [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample13.cshtml)]
-- Stisknutím kombinace kláves CTRL + F5 a spusťte projekt. (Pokud dojde k chybě "Nemůže vytvořit stínovou kopii", zavřete prohlížeč a zkuste to znovu.)
+     [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample13.cshtml)]
+5. Stisknutím kombinace kláves CTRL + F5 a spusťte projekt. (Pokud dojde k chybě "Nemůže vytvořit stínovou kopii", zavřete prohlížeč a zkuste to znovu.)
 
-    Klikněte na tlačítko **studenty** karty zobrazíte testovací data, `Seed` metoda vložit. V závislosti na tom, jak úzké okno prohlížeče je, uvidíte odkaz Student karty na panelu Adresa horní nebo budete muset klikněte na pravém horním rohu na odkaz zobrazíte.
+     Klikněte na tlačítko **studenty** karty zobrazíte testovací data, `Seed` metoda vložit. V závislosti na tom, jak úzké okno prohlížeče je, uvidíte odkaz Student karty na panelu Adresa horní nebo budete muset klikněte na pravém horním rohu na odkaz zobrazíte.
 
-    ![Tlačítko nabídky](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image14.png)
+     ![Tlačítko nabídky](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image14.png)
 
-    ![Student indexovou stránku](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image15.png)
+     ![Student indexovou stránku](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image15.png)
 
 ## <a name="view-the-database"></a>Zobrazení databáze
 
@@ -332,7 +332,7 @@ Kvůli použití je minimální množství kódu, které jste měli k zápisu, a
 - Pluralized formy názvy tříd entity se používají jako názvy tabulek.
 - Názvy vlastností entity se používají pro názvy sloupců.
 - Vlastnosti entity, které jsou s názvem `ID` nebo *classname* `ID` jsou rozpoznán jako vlastnosti primárního klíče.
-- Vlastnost interpretována jako vlastností cizího klíče, pokud je název  *&lt;název vlastnosti navigace&gt;&lt;vlastnost primárního klíče název&gt;*  (například `StudentID` pro `Student` navigační vlastnost, protože `Student` je primární klíč entity `ID`). Vlastnosti cizího klíče můžete také se stejným názvem, jednoduše &lt;vlastnost primárního klíče název&gt; (například `EnrollmentID` vzhledem k tomu `Enrollment` je primární klíč entity `EnrollmentID`).
+- Vlastnost interpretována jako vlastností cizího klíče, pokud je název *&lt;název vlastnosti navigace&gt;&lt;vlastnost primárního klíče název&gt;* (například `StudentID` pro `Student` navigační vlastnost, protože `Student` je primární klíč entity `ID`). Vlastnosti cizího klíče můžete také se stejným názvem, jednoduše &lt;vlastnost primárního klíče název&gt; (například `EnrollmentID` vzhledem k tomu `Enrollment` je primární klíč entity `EnrollmentID`).
 
 Seznámili jste se, že je možné přepsat konvence. Například jste zadali, že by neměl být pluralized názvy tabulek, a budete později jak explicitně označit vlastnost jako vlastnost cizího klíče. Budete Další informace o konvence a jak přepsat je do [vytváření další komplexní Model dat](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) kurz později z této série. Další informace o konvencích najdete v tématu [první pravidla týkající se kódu](https://msdn.microsoft.com/data/jj679962).
 
@@ -344,5 +344,5 @@ Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může z
 
 Odkazy na další zdroje Entity Framework najdete v [přístup k datům ASP.NET - doporučené prostředky](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Next](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Next](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)

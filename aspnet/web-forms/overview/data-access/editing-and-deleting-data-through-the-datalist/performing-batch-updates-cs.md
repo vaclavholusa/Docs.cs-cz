@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
-title: "Provádění dávkové aktualizace (C#) | Microsoft Docs"
+title: Provádění dávkové aktualizace (C#) | Microsoft Docs
 author: rick-anderson
-description: "Naučte se vytvářet plně nelze upravit upravit DataList, kde jsou všechny jeho položky v režimu a jejichž hodnoty můžete uložit kliknutím tlačítko Aktualizovat vše na..."
+description: Naučte se vytvářet plně nelze upravit upravit DataList, kde jsou všechny jeho položky v režimu a jejichž hodnoty můžete uložit kliknutím tlačítko Aktualizovat vše na...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 46db3c5d733b9c8b6e749a9b8ff1aa9a061c36df
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: af19104edb1849272773193befe1f5b2c7347683
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="performing-batch-updates-c"></a>Provádění dávkové aktualizace (C#)
 ====================
@@ -43,8 +43,8 @@ V tomto kurzu podíváme, jak povolit uživatelům aktualizovat informace o adre
 
 V předchozím kurzu, kde vytváření upravitelné DataList standardní, na úrovni položek, jsme použili jsme dvě šablony:
 
-- `ItemTemplate`obsahuje jen pro čtení uživatelské rozhraní (popisek webové ovládací prvky zobrazení každý s názvem produktu a ceny).
-- `EditItemTemplate`obsahuje úpravy režimu uživatelské rozhraní (dva textové pole webové kontroly).
+- `ItemTemplate` obsahuje jen pro čtení uživatelské rozhraní (popisek webové ovládací prvky zobrazení každý s názvem produktu a ceny).
+- `EditItemTemplate` obsahuje úpravy režimu uživatelské rozhraní (dva textové pole webové kontroly).
 
 DataList s `EditItemIndex` vlastnost stanoví, co `DataListItem` (pokud existuje) je vykreslen pomocí `EditItemTemplate`. Konkrétně `DataListItem` jejichž `ItemIndex` hodnota odpovídá DataList s `EditItemIndex` vlastnost je vykreslen pomocí `EditItemTemplate`. Tento model funguje dobře, pokud lze upravit jen jednu položku na dobu, ale od sebe spadá při vytváření plně upravitelné DataList.
 
@@ -163,12 +163,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Zack Petr a Ken Pespisa. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
-[další](handling-bll-and-dal-level-exceptions-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
+> [další](handling-bll-and-dal-level-exceptions-cs.md)

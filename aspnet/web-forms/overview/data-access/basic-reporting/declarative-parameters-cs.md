@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
-title: "Deklarativní parametrů (C#) | Microsoft Docs"
+title: Deklarativní parametrů (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme budete ukazují, jak použít parametr nastavit na hodnotu pevně vyberte data pro zobrazení v ovládacím prvku DetailsView."
+description: V tomto kurzu jsme budete ukazují, jak použít parametr nastavit na hodnotu pevně vyberte data pro zobrazení v ovládacím prvku DetailsView.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4bbe32ae65f71196fc1f939671b9d1a24bee8c34
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 840630852d28f49f4f4387f1d2cc6b275b468fc2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="declarative-parameters-c"></a>Deklarativní parametrů (C#)
 ====================
@@ -127,7 +127,7 @@ Jakmile návštěvníka zadá země, ale a klikne na tlačítko Zobrazit dodavat
 
 ## <a name="showing-all-suppliers-by-default"></a>Zobrazení všech dodavatelů ve výchozím nastavení
 
-Spíše než jeden z dodavatelů zobrazit při prvním zobrazení stránky může chceme zobrazit *všechny* dodavatelů na první pohled, které uživateli umožňují porovnat dolů v seznamu tak, že zadáte název země do textového pole. Pokud do textového pole prázdné, `SuppliersBLL` třídy `GetSuppliersByCountry(country)` metodě se předává v `null` hodnotu pro jeho  *`country`*  vstupní parametr. To `null` hodnota je pak předá do DAL `GetSupplierByCountry(country)` metoda, kde je přeložená na databázi `NULL` hodnota `@Country` parametr v následujícím dotazu:
+Spíše než jeden z dodavatelů zobrazit při prvním zobrazení stránky může chceme zobrazit *všechny* dodavatelů na první pohled, které uživateli umožňují porovnat dolů v seznamu tak, že zadáte název země do textového pole. Pokud do textového pole prázdné, `SuppliersBLL` třídy `GetSuppliersByCountry(country)` metodě se předává v `null` hodnotu pro jeho *`country`* vstupní parametr. To `null` hodnota je pak předá do DAL `GetSupplierByCountry(country)` metoda, kde je přeložená na databázi `NULL` hodnota `@Country` parametr v následujícím dotazu:
 
 [!code-sql[Main](declarative-parameters-cs/samples/sample3.sql)]
 
@@ -157,12 +157,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Hilton Giesenow. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](displaying-data-with-the-objectdatasource-cs.md)
-[další](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](displaying-data-with-the-objectdatasource-cs.md)
+> [další](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)

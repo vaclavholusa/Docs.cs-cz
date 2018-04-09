@@ -1,7 +1,7 @@
 ---
 title: Oblasti v ASP.NET Core
 author: rick-anderson
-description: "Zjistěte, jak jsou oblasti o architektuře ASP.NET MVC funkci sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení)."
+description: Zjistěte, jak jsou oblasti o architektuře ASP.NET MVC funkci sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení).
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: cf31c10e7d4d9229a32aa06903a0ff0ed6fb0599
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 61527eb350b5aba9cb37b1de5acdeae1287bf073
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="areas-in-aspnet-core"></a>Oblasti v ASP.NET Core
 
@@ -125,7 +125,7 @@ Jakmile hierarchii složek, které jste definovali, budete muset MVC říct, že
    }
    ```
 
-Nastavte definici trasy, která funguje s vaší nově vytvořený oblasti. [Směrování do akce Kontroleru](routing.md) článek obsahuje podrobnosti o tom, jak vytvořit definicí cesty, včetně použití konvenční trasy a trasy atributů. V tomto příkladu použijeme konvenční trasy. Chcete-li to provést, otevřete *Startup.cs* soubor a upravit přidáním `areaRoute` s názvem definice trasy níže.
+Nastavte definici trasy, která funguje s vaší nově vytvořený oblasti. [Trasy, která má akce kontroleru](routing.md) článek obsahuje podrobnosti o tom, jak vytvořit definicí cesty, včetně použití konvenční trasy a trasy atributů. V tomto příkladu použijeme konvenční trasy. Chcete-li to provést, otevřete *Startup.cs* soubor a upravit přidáním `areaRoute` s názvem definice trasy níže.
 
 ```csharp
 ...

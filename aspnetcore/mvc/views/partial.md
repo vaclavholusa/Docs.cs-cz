@@ -1,23 +1,23 @@
 ---
-title: "Částečná zobrazení v ASP.NET Core"
+title: Částečná zobrazení v ASP.NET Core
 author: ardalis
-description: "Zjistěte, jak je částečné zobrazení zobrazení, který je vykreslen v rámci jiného zobrazení a kdy by měly být použity v aplikacích ASP.NET Core."
+description: Zjistěte, jak je částečné zobrazení zobrazení, který je vykreslen v rámci jiného zobrazení a kdy by měly být použity v aplikacích ASP.NET Core.
 manager: wpickett
 ms.author: riande
-ms.date: 03/14/2017
+ms.date: 03/14/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/partial
-ms.openlocfilehash: abe970b02a62ef58deb259241d7451de0185575c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 3deaaeb666e5443d0784f2ac6977e58e1b25d711
+ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="partial-views-in-aspnet-core"></a>Částečná zobrazení v ASP.NET Core
 
-Podle [Steve Smith](https://ardalis.com/), [Maher JENDOUBI](https://twitter.com/maherjend), a [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Steve Smith](https://ardalis.com/), [Maher JENDOUBI](https://twitter.com/maherjend), [Rick Anderson](https://twitter.com/RickAndMSFT), a [Scott Sauber](https://twitter.com/scottsauber)
 
 Jádro ASP.NET MVC podporuje částečné zobrazení, která jsou užitečné, když máte opakovaně použitelné částí webových stránek, které chcete sdílet mezi různá zobrazení.
 
@@ -41,19 +41,17 @@ Tip: Použijte [nemáte opakujte sami Princip](http://deviq.com/don-t-repeat-you
 
 ## <a name="referencing-a-partial-view"></a>Odkazování na částečné zobrazení
 
-Z v rámci zobrazení stránky, existuje několik způsobů ve kterých můžete vykreslení částečného zobrazení. Nejjednodušší je použití `Html.Partial`, která vrátí `IHtmlString` a můžete odkazovat pomocí prefixu volání s `@`:
-
-[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=9)]
-
-`PartialAsync` Metoda je k dispozici pro částečné zobrazení obsahující asynchronní kód (i když kód v zobrazení se obecně nedoporučuje):
+Z v rámci zobrazení stránky, existuje několik způsobů ve kterých můžete vykreslení částečného zobrazení. Osvědčeným postupem je použít `Html.PartialAsync`, která vrátí `IHtmlString` a můžete odkazovat pomocí prefixu volání s `@`:
 
 [!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=8)]
 
-Můžete vykreslení částečného zobrazení s `RenderPartial`. Tato metoda není vrácení výsledku; je-li datové proudy vykreslené výstup přímo do odpovědi. Protože se nevrací výsledku, je nutné volat v bloku kódu Razor (můžete také volat `RenderPartialAsync` v případě potřeby):
+Můžete vykreslení částečného zobrazení s `RenderPartialAsync`. Tato metoda není vrácení výsledku; je-li datové proudy vykreslené výstup přímo do odpovědi. Protože se nevrací výsledek, musí být volána v rámci bloku kódu Razor:
 
-[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=10-12)]
+[!code-cshtml[](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=11-13)]
 
-Protože proudů výsledek přímo, `RenderPartial` a `RenderPartialAsync` může v některých scénářích líp fungovat. Ale ve většině případů se doporučuje můžete použít `Partial` a `PartialAsync`.
+Protože proudů výsledek přímo, `RenderPartialAsync` může v některých scénářích líp fungovat. Je však doporučeno, abyste používali `PartialAsync`.
+
+Přestože jsou synchronní ekvivalenty `Html.PartialAsync` (`Html.Partial`) a `Html.RenderPartialAsync` (`Html.RenderPartial`), použijte synchronní ekvivalenty není doporučeno, protože existují scénáře, kde budou zablokování. Synchronní metody není k dispozici v budoucích verzích.
 
 > [!NOTE]
 > Pokud vaše zobrazení musí ke spouštění kódu, je použití vzoru doporučené [zobrazení součást](view-components.md) místo částečné zobrazení.
@@ -65,18 +63,18 @@ Při odkazování na částečné zobrazení, můžete odkazovat na umístění,
 ```cshtml
 // Uses a view in current folder with this name
 // If none is found, searches the Shared folder
-@Html.Partial("ViewName")
+@await Html.PartialAsync("ViewName")
 
 // A view with this name must be in the same folder
-@Html.Partial("ViewName.cshtml")
+@await Html.PartialAsync("ViewName.cshtml")
 
 // Locate the view based on the application root
 // Paths that start with "/" or "~/" refer to the application root
-@Html.Partial("~/Views/Folder/ViewName.cshtml")
-@Html.Partial("/Views/Folder/ViewName.cshtml")
+@await Html.PartialAsync("~/Views/Folder/ViewName.cshtml")
+@await Html.PartialAsync("/Views/Folder/ViewName.cshtml")
 
 // Locate the view using relative paths
-@Html.Partial("../Account/LoginPartial.cshtml")
+@await Html.PartialAsync("../Account/LoginPartial.cshtml")
 ```
 
 Může mít různé částečná zobrazení se stejným názvem v jiné zobrazení složky. Při odkazování na zobrazení podle názvu (bez přípony souboru), použije zobrazení v každé složky ve stejné složce s nimi částečné zobrazení. Můžete také zadat výchozí částečné zobrazení chcete použít, v jeho umístění *sdílené* složky. Sdílené částečné zobrazení použije všechna zobrazení, které nemají své vlastní verzi částečné zobrazení. Můžete mít výchozí částečné zobrazení (v *sdílené*), který přepsat částečné zobrazení se stejným názvem ve stejné složce jako nadřazeného zobrazení.
@@ -93,13 +91,13 @@ Při vytváření instance částečného zobrazení získá kopii nadřazeného
 Můžete předat instanci `ViewDataDictionary` částečného zobrazení:
 
 ```cshtml
-@Html.Partial("PartialName", customViewData)
+@await Html.PartialAsync("PartialName", customViewData)
 ```
 
-Model můžete předat také do částečné zobrazení. To může být modelu zobrazení stránky, nebo jeho některé části nebo vlastní objekt. Můžete předat modelu pro `Partial`,`PartialAsync`, `RenderPartial`, nebo `RenderPartialAsync`:
+Model můžete předat také do částečné zobrazení. To může být modelu zobrazení stránky nebo vlastní objekt. Můžete předat modelu pro `PartialAsync` nebo `RenderPartialAsync`:
 
 ```cshtml
-@Html.Partial("PartialName", viewModel)
+@await Html.PartialAsync("PartialName", viewModel)
 ```
 
 Můžete předat instanci `ViewDataDictionary` a modelu zobrazení pro částečné zobrazení:

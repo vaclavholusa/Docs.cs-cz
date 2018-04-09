@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
-title: "Implementace mapování scénáře pomocí rozhraní AJAX | Microsoft Docs"
+title: Implementace mapování scénáře pomocí rozhraní AJAX | Microsoft Docs
 author: microsoft
-description: "Krok 11 ukazuje, jak integrovat podporu mapování AJAX do naší aplikaci NerdDinner uživatelům, kteří jsou vytváření, úpravy nebo zobrazení večeří zobrazíte l..."
+description: Krok 11 ukazuje, jak integrovat podporu mapování AJAX do naší aplikaci NerdDinner uživatelům, kteří jsou vytváření, úpravy nebo zobrazení večeří zobrazíte l...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: cc55560ce691826b6d52971b16d0515ed73d72a6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4b3f1e46886c4c1f054e43768b0a44695d71bf09
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>Implementace mapování scénáře pomocí rozhraní AJAX
 ====================
@@ -115,7 +115,7 @@ K dokončení vypnout naše implementace AJAX, přidejte umožňuje mapování n
 
 ![](use-ajax-to-implement-mapping-scenarios/_static/image7.png)
 
-Začneme budete implementovat podporu v rámci naší vrstvy úložiště databáze a datový k efektivnímu provádění vyhledávání na základě umístění protokolu radius pro večeří. Můžeme použít nové [geoprostorové funkce SQL 2008](https://www.microsoft.com/sqlserver/2008/en/us/spatial-data.aspx) implementovat, nebo můžete také můžeme použít přístup funkce SQL, který Gary Dryden popsané v článku zde: [http://www.codeproject.com/KB/cs/ distancebetweenlocations.aspx](http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx) a Rob Conery rozsáhlý blok o pomocí technologie LINQ to SQL zde: [http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/](http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/)
+Začneme budete implementovat podporu v rámci naší vrstvy úložiště databáze a datový k efektivnímu provádění vyhledávání na základě umístění protokolu radius pro večeří. Můžeme použít nové [geoprostorové funkce SQL 2008](https://www.microsoft.com/sqlserver/2008/en/us/spatial-data.aspx) implementovat, nebo můžete také můžeme použít přístup funkce SQL, který Gary Dryden popsané v článku zde: [ http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx ](http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx) a Rob Conery rozsáhlý blok o pomocí technologie LINQ to SQL tady: [http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/](http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/)
 
 K implementaci Tato technika, jsme bude otevřete "Průzkumníka serveru" v sadě Visual Studio, vyberte databázi, NerdDinner a klikněte pravým tlačítkem na uzel dílčí "funkce" v něm a můžete vytvořit nový "skalární funkce založené na":
 
@@ -193,6 +193,6 @@ Kliknutím na nadpis večeři do bubliny nebo na pravé straně v seznamu HTML p
 
 Implementovali jsme nyní všechny funkce aplikace naše NerdDinner aplikace. Pojďme nyní pohled na tom, jak můžeme provést aktivaci automatizované jednotky testování ho.
 
->[!div class="step-by-step"]
-[Předchozí](use-ajax-to-deliver-dynamic-updates.md)
-[další](enable-automated-unit-testing.md)
+> [!div class="step-by-step"]
+> [Předchozí](use-ajax-to-deliver-dynamic-updates.md)
+> [další](enable-automated-unit-testing.md)

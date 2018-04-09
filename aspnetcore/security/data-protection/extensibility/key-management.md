@@ -1,7 +1,7 @@
 ---
-title: "Rozšíření správy klíčů"
+title: Rozšíření správy klíčů v základní technologie ASP.NET
 author: rick-anderson
-description: "Tento dokument popisuje rozšiřitelnost správy klíčů ochrany dat ASP.NET Core."
+description: Další informace o rozšíření ochrany dat ASP.NET Core správy klíčů.
 manager: wpickett
 ms.author: riande
 ms.date: 11/22/2017
@@ -9,18 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: bcc4984efcee9a6ffd0f3b503a38089c78adf5e8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e3042b371cf7be8fa0218c1906042d2810b180e3
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-management-extensibility"></a>Rozšíření správy klíčů
+# <a name="key-management-extensibility-in-aspnet-core"></a>Rozšíření správy klíčů v základní technologie ASP.NET
 
 <a name="data-protection-extensibility-key-management"></a>
 
 >[!TIP]
-> Pro čtení [Správa klíčů](../implementation/key-management.md#data-protection-implementation-key-management) části před čtením této části, jak vysvětluje některé základní koncepty za tato rozhraní API.
+> Pro čtení [Správa klíčů](xref:security/data-protection/implementation/key-management#data-protection-implementation-key-management) části před čtením této části, jak vysvětluje některé základní koncepty za tato rozhraní API.
 
 >[!WARNING]
 > Typy, které implementují některá z následujících rozhraní by měly být vláken pro více volající.
@@ -37,11 +37,11 @@ ms.lasthandoff: 03/02/2018
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-Kromě toho `IKey` zpřístupní `CreateEncryptor` metodu, která slouží k vytvoření [IAuthenticatedEncryptor](core-crypto.md#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instance vázaný na tento klíč.
+Kromě toho `IKey` zpřístupní `CreateEncryptor` metodu, která slouží k vytvoření [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instance vázaný na tento klíč.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
-Kromě toho `IKey` zpřístupní `CreateEncryptorInstance` metodu, která slouží k vytvoření [IAuthenticatedEncryptor](core-crypto.md#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instance vázaný na tento klíč.
+Kromě toho `IKey` zpřístupní `CreateEncryptorInstance` metodu, která slouží k vytvoření [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instance vázaný na tento klíč.
 
 ---
 
@@ -123,7 +123,7 @@ Při provádění `CreateNewKey`, `IAuthenticatedEncryptorConfiguration` kompone
 
 Při provádění `GetAllKeys`, XML dokumenty představující klíče a odvolání se načítají z základní `IXmlRepository`. Pokud jsou tyto dokumenty zašifrované, systém bude automaticky jejich dešifrování. `XmlKeyManager` vytvoří odpovídající `IAuthenticatedEncryptorDescriptorDeserializer` instance k deserializaci dokumenty zpět do `IAuthenticatedEncryptorDescriptor` instance, které jsou pak uzavřen do individuální `IKey` instance. Tato kolekce `IKey` instance je vrácen volajícímu.
 
-Další informace o konkrétní elementy XML lze nalézt v [úložiště klíčů formátovat dokument](../implementation/key-storage-format.md#data-protection-implementation-key-storage-format).
+Další informace o konkrétní elementy XML lze nalézt v [úložiště klíčů formátovat dokument](xref:security/data-protection/implementation/key-storage-format#data-protection-implementation-key-storage-format).
 
 ## <a name="ixmlrepository"></a>IXmlRepository
 
@@ -135,7 +135,7 @@ Další informace o konkrétní elementy XML lze nalézt v [úložiště klíč�
 
 Implementace `IXmlRepository` nemusíte analyzovat soubor XML prošla je. Jejich považovat za neprůhledné dokumentů XML a nechat vyšší vrstvy starat o generování a analýza dokumenty.
 
-Existují dva předdefinované konkrétní typy, které implementují třídu `IXmlRepository`: `FileSystemXmlRepository` a `RegistryXmlRepository`. Najdete v článku [dokumentu zprostředkovatele úložiště klíčů](../implementation/key-storage-providers.md#data-protection-implementation-key-storage-providers) Další informace. Vlastní registrace `IXmlRepository` může být vhodným způsobem použít záložní úložiště, například Azure Blob Storage.
+Existují dva předdefinované konkrétní typy, které implementují třídu `IXmlRepository`: `FileSystemXmlRepository` a `RegistryXmlRepository`. Najdete v článku [dokumentu zprostředkovatele úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers) Další informace. Vlastní registrace `IXmlRepository` může být vhodným způsobem použít záložní úložiště, například Azure Blob Storage.
 
 Chcete-li změnit výchozí úložiště celou aplikaci, zaregistrovat vlastní `IXmlRepository` instance:
 
@@ -169,7 +169,7 @@ Existují čtyři integrované konkrétní typy, které implementují třídu `I
 * `DpapiXmlEncryptor`
 * `NullXmlEncryptor`
 
-Najdete v článku [klíče šifrování v dokumentu rest](../implementation/key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) Další informace.
+Najdete v článku [klíče šifrování v dokumentu rest](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) Další informace.
 
 Chcete-li změnit výchozí klíč šifrování na rest mechanismus celou aplikaci, zaregistrovat vlastní `IXmlEncryptor` instance:
 

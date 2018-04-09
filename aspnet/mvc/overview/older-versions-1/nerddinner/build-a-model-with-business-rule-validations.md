@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
-title: "Vytvoření modelu s obchodní pravidlo ověření | Microsoft Docs"
+title: Vytvoření modelu s obchodní pravidlo ověření | Microsoft Docs
 author: microsoft
-description: "Krok 3 ukazuje, jak vytvořit model, že jsme pomocí obou dotazu a aktualizaci databáze pro naši aplikaci NerdDinner."
+description: Krok 3 ukazuje, jak vytvořit model, že jsme pomocí obou dotazu a aktualizaci databáze pro naši aplikaci NerdDinner.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
-ms.openlocfilehash: dbe6370979f218988c168df3e80314ef9b338fbd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c5a482474fd2f41836f70952306ada5cd9136455
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="build-a-model-with-business-rule-validations"></a>Vytvoření modelu s obchodní pravidlo ověření
 ====================
@@ -91,7 +91,7 @@ Přidáním objekt zasílání zpráv rysy do kolekce večeři RSVPs jsme inform
 
 Pokud chcete způsob, jakým má návrháře modelován nebo s názvem přidružení tabulky, můžete ho přepsat. Právě klikněte na šipku přidružení v návrháři a otevřete jeho vlastnosti prostřednictvím mřížku vlastností přejmenovat, odstranit nebo upravit. Pro naši aplikaci NerdDinner ale pravidla přidružení výchozí fungují dobře u datových tříd modelu, které jsme vytváření a můžeme jednoduše použít výchozí chování.
 
-### <a name="nerddinnerdatacontext-class"></a>NerdDinnerDataContext – třída
+### <a name="nerddinnerdatacontext-class"></a>NerdDinnerDataContext Class
 
 Třídy rozhraní .NET, které představují modely a databáze vztahy definované pomocí LINQ to SQL návrhář automaticky vytvoří sada Visual Studio. LINQ to SQL DataContext třídy se také generuje pro každou technologii LINQ to SQL Návrháře soubory přidané do řešení. Protože jsme pojmenovali naše technologie LINQ to SQL třída položku "NerdDinner", bude mít název "NerdDinnerDataContext" třídě DataContext vytvořena. Tato třída NerdDinnerDataContext je primární způsob, jakým jsme bude komunikovat s databází.
 
@@ -228,6 +228,6 @@ My jste nyní model, který jsme vám pomůže dotazy na data a aktualizace naš
 
 Umožňuje přidat některé řadiče a zobrazení pro projekt, který jsme můžete použít k vytvoření HTML uživatelské rozhraní kolem něj.
 
->[!div class="step-by-step"]
-[Předchozí](create-a-database.md)
-[další](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+> [!div class="step-by-step"]
+> [Předchozí](create-a-database.md)
+> [další](use-controllers-and-views-to-implement-a-listingdetails-ui.md)

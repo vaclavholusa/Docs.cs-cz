@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
-title: "Konfigurace webového serveru pro Web nasazení publikování (vzdáleného agenta) | Microsoft Docs"
+title: Konfigurace webového serveru pro Web nasazení publikování (vzdáleného agenta) | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje postup konfigurace webovém serveru Internetové informační služby (IIS) pro podporu nasazení pomocí nasazení webu služby IIS a publikování na webu..."
+description: Toto téma popisuje postup konfigurace webovém serveru Internetové informační služby (IIS) pro podporu nasazení pomocí nasazení webu služby IIS a publikování na webu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: 23195949121cd13ca4b1809b8db91a7320d1fdd2
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 8cad6ee45a8331513c72c4079f300fbb06c1ed77
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>Konfigurace webového serveru pro nasazení webu publikování (vzdáleného agenta)
 ====================
@@ -102,7 +102,7 @@ V takovém případě musíte nainstalovat tyto věci:
 7. V navigačním podokně klikněte na tlačítko **Server**.
 8. V **IIS 7 doporučená konfigurace** řádek, klikněte na tlačítko **přidat**.
 9. V **2.1 nástroj pro nasazení webového** řádek, klikněte na tlačítko **přidat**.
-10. Klikněte na tlačítko **nainstalovat**. Instalace webové platformy zobrazí seznam produktů & #x 2014; společně s všechny přidružené závislosti & #x 2014; nainstalována a zobrazí výzvu k potvrzení licenčních podmínek.
+10. Klikněte na tlačítko **nainstalovat**. Instalace webové platformy zobrazí seznam produktů&#x2014;spolu s případnými přidružené závislosti&#x2014;k instalaci a zobrazí výzvu k potvrzení licenčních podmínek.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image2.png)
 11. Přečtěte si licenční podmínky a pokud vyjadřujete svůj souhlas s podmínkami, klikněte na **souhlasím**.
@@ -176,11 +176,11 @@ I když není co můžete zastavit z nasazení obsahu na výchozí web ve služb
     > [!NOTE]
     > Ukázkové řešení vyžaduje rozhraní .NET Framework 4.0. Toto není požadavek pro nasazení webu obecně.
 
-V pořadí pro svůj web pro práci s obsahem identita fondu aplikací musí mít oprávnění ke čtení místní složky, která uloží obsah. Ve službě IIS 7.5 spusťte fondy aplikací s identitou fondu aplikací jedinečný ve výchozím nastavení (na rozdíl od předchozí verze služby IIS, kde by fondy aplikací obvykle běží pod účtem síťové služby). Identita fondu aplikací není skutečné uživatelský účet a nezobrazuje na všechny seznamy uživatelů nebo skupin & #x 2014; místo toho je vytvořen v dynamicky při spuštění fondu aplikací. Každý identita fondu aplikací se přidá do místní **IIS\_IUSRS** skupiny zabezpečení jako skrytá položka.
+V pořadí pro svůj web pro práci s obsahem identita fondu aplikací musí mít oprávnění ke čtení místní složky, která uloží obsah. Ve službě IIS 7.5 spusťte fondy aplikací s identitou fondu aplikací jedinečný ve výchozím nastavení (na rozdíl od předchozí verze služby IIS, kde by fondy aplikací obvykle běží pod účtem síťové služby). Identita fondu aplikací není skutečné uživatelský účet a nezobrazuje na všechny seznamy uživatelů nebo skupin&#x2014;místo toho se vytváří v dynamicky při spuštění fondu aplikací. Každý identita fondu aplikací se přidá do místní **IIS\_IUSRS** skupiny zabezpečení jako skrytá položka.
 
 Abyste mohli udělit oprávnění k souboru nebo složce identity fondu aplikací, máte dvě možnosti:
 
-- Přiřadit oprávnění k identitě fondu aplikací přímo, formátu **IIS AppPool\***[název fondu aplikací] * (například **IIS AppPool\DemoSite**).
+- Přiřadit oprávnění k identitě fondu aplikací přímo, formátu <strong>IIS AppPool\</ strong ><em>[název fondu aplikací]</em>(například <strong>IIS AppPool\DemoSite</strong>).
 - Přidělování oprávnění k **IIS\_IUSRS** skupiny.
 
 Většina běžný postup je přiřadit oprávnění k místní **IIS\_IUSRS** skupiny, protože tento přístup umožňuje změnit fondy aplikací bez nutnosti měnit oprávnění systému souborů. Následující postup používá tento přístup na základě skupiny.
@@ -198,8 +198,8 @@ Většina běžný postup je přiřadit oprávnění k místní **IIS\_IUSRS** s
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image8.png)
 5. V **vybrat uživatele nebo skupiny** dialogové okno, typ **IIS\_IUSRS**, klikněte na tlačítko **Kontrola názvů**a potom klikněte na **OK**.
-6. V **oprávnění pro *** [název složky]*dialogové okno, Všimněte si, že byl přiřazen do nové skupiny **čtení &amp; provést**, **zobrazovat obsah složky**, a **Čtení** oprávnění ve výchozím nastavení. Nechte beze změny a klikněte na tlačítko **OK**.
-7. Klikněte na tlačítko **OK** zavřete *[název složky] *** vlastnosti** dialogové okno.
+6. V <strong>oprávnění pro</strong><em>[název složky]</em>dialogové okno, Všimněte si, že byl přiřazen do nové skupiny <strong>čtení &amp; provést</strong>, <strong>složku seznamu obsah</strong>, a <strong>čtení</strong> oprávnění ve výchozím nastavení. Nechte beze změny a klikněte na tlačítko <strong>OK</strong>.
+7. Klikněte na tlačítko <strong>OK</strong> zavřete <em>[název složky]</em><strong>vlastnosti</strong> dialogové okno.
 
 Jako poslední úlohy před dalším pokusem o všechny balíčky webového nasazení na server, měli byste zajistit, že je spuštěna Služba agenta pro nasazení webu. Při nasazení balíčku ze vzdáleného počítače se Služba agenta pro nasazení webu zodpovídá za extrahování a instalace obsahu balíčku. Služba je spuštěna ve výchozím nastavení po instalaci nástroj pro nasazení webu a bude spuštěna pod síťovou službu.
 
@@ -217,7 +217,7 @@ Můžete zkontrolovat zda je spuštěná v několika různými způsoby, pomocí
 
 Ve výchozím nastavení vzdálené služby Agent naslouchá na portu TCP 80 a na této adrese URL:
 
-http:// [*název serveru*] / MSDEPLOYAGENTSERVICE
+http:// [<em>název serveru</em>] / MSDEPLOYAGENTSERVICE
 
 Ve většině případů nebude muset nakonfigurovat pravidla žádné další brány firewall pro službu vzdáleného agenta, protože webové servery obvykle naslouchat požadavkům HTTP na portu 80. Pokud jste si přizpůsobili instalaci tak, aby naslouchala na nestandardním portu, budete muset nakonfigurovat výjimky brány firewall podle potřeby.
 
@@ -233,6 +233,6 @@ Váš webový server je nyní připraven k přijímání a instalaci webové bal
 
 Pokyny ke konfiguraci vlastních souborů projektu Microsoft Build Engine (MSBuild) pro nasazení webových balíčků pro službu vzdáleného agenta najdete v tématu [konfigurace vlastnosti nasazení pro cílové prostředí](configuring-deployment-properties-for-a-target-environment.md).
 
->[!div class="step-by-step"]
-[Předchozí](scenario-configuring-a-production-environment-for-web-deployment.md)
-[další](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
+> [!div class="step-by-step"]
+> [Předchozí](scenario-configuring-a-production-environment-for-web-deployment.md)
+> [další](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)

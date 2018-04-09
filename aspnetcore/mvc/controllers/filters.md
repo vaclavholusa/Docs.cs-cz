@@ -1,7 +1,7 @@
 ---
 title: Filtry v ASP.NET Core
 author: ardalis
-description: "Zjistěte, jak fungují filtry a jejich použití v aplikaci ASP.NET MVC jádra."
+description: Zjistěte, jak fungují filtry a jejich použití v aplikaci ASP.NET MVC jádra.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 12/12/2016
@@ -9,17 +9,20 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: adb80c8161741506188c963d0a1cef721a21bd63
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7a857bc60500985c9b0547dc0d7e372e987a9099
+ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="filters-in-aspnet-core"></a>Filtry v ASP.NET Core
 
 Podle [tní Dykstra](https://github.com/tdykstra/) a [Steve Smith](https://ardalis.com/)
 
 *Filtry* v aplikaci ASP.NET MVC základní umožňují spustit kód před nebo po určité fáze v kanálu zpracování požadavků.
+
+> [!IMPORTANT]
+> Toto téma neobsahuje **není** platí pro stránky Razor. ASP.NET Core 2.1 preview a novější podporuje `IPageFilter` a `IAsyncPageFilter` pro stránky Razor.
 
  Integrované filtry popisovač úlohy, jako je například autorizace (brání přístupu k prostředkům, které uživatel není oprávněn), zajistíte, že všechny požadavky používat protokol HTTPS a reakce na ukládání do mezipaměti (krátká smyčka kanál požadavku k vrácení odpovědi v mezipaměti). 
 
@@ -57,7 +60,7 @@ Filtry podporují synchronní a asynchronní implementace prostřednictvím růz
 
 Synchronní filtry, které můžete spustit kód před a po jejich fáze kanálu definovat na*fáze*zpracování a na*fáze*provést metody. Například `OnActionExecuting` je volána před zavolání metody akce a `OnActionExecuted` je volána po metodě akce vrátí.
 
-[!code-csharp[](./filters/sample/src/FiltersSample/Filters/SampleActionFilter.cs?highlight=6,8,13)]
+[!code-csharp[](./filters/sample/src/FiltersSample/Filters/SampleActionFilter.cs?&name=snippet1)]
 
 Asynchronní filtry definovat jeden na*fáze*ExecutionAsync metoda. Tato metoda přebírá *FilterType*ExecutionDelegate delegáta, který provede fáze kanálu se filtr. Například `ActionExecutionDelegate` volání metody akce a může spustit kód před a po jeho volání.
 
@@ -277,7 +280,7 @@ Filtry výjimek zpracování neošetřených výjimek, které se vyskytují ve v
 Ke zpracování výjimky, nastavte `ExceptionContext.ExceptionHandled` vlastnost na hodnotu true nebo zápisu odpovědi. To zastaví šíření výjimky. Všimněte si, že filtr výjimek nelze zapnout výjimku do "ÚSPĚCH". Pouze filtr akce můžete udělat.
 
 > [!NOTE]
-> V technologii ASP.NET 1.1 odpovědi neposílají, pokud jste nastavili `ExceptionHandled` na hodnotu true **a** zápisu odpovědi. V tomto scénáři ASP.NET Core 1.0 odeslání odpovědi a ASP.NET Core 1.1.2 vrátí 1.0 chování. Další informace najdete v tématu [vydání #5594](https://github.com/aspnet/Mvc/issues/5594) v úložišti GitHub. 
+> V technologii ASP.NET Core 1.1, odpověď neposílají, pokud jste nastavili `ExceptionHandled` na hodnotu true **a** zápisu odpovědi. V tomto scénáři ASP.NET Core 1.0 odeslání odpovědi a ASP.NET Core 1.1.2 vrátí 1.0 chování. Další informace najdete v tématu [vydání #5594](https://github.com/aspnet/Mvc/issues/5594) v úložišti GitHub. 
 
 Filtry výjimek jsou vhodné pro soutisku výjimky, které se vyskytují v akce MVC, jsou ale není tak účinná jako chyba zpracování middleware. Dáváte přednost middleware pro obecné případ a použít filtry, pouze pokud potřebujete udělat zpracování chyb *jinak* podle MVC akci, která jste vybrali. Aplikace může mít například metody akce pro obě rozhraní API koncových bodů a zobrazení nebo HTML. Koncové body rozhraní API může vrátí informace o chybě formátu JSON, zatímco akce na základě zobrazení může vrátit chybovou stránku ve formátu HTML.
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/tailspin-spyworks/tailspin-spyworks-migrate-the-shopping-cart
-title: "Tailspin Spyworks - migrovat nákupní košík | Microsoft Docs"
+title: Tailspin Spyworks - migrovat nákupní košík | Microsoft Docs
 author: JoeStagner
-description: "Jan Stagner ukazuje, jak převést některého ověřené před posledním rezervaci pro ukázku Tailspin Spyworks F. webové nákupní košík anonymní uživatele..."
+description: Jan Stagner ukazuje, jak převést některého ověřené před posledním rezervaci pro ukázku Tailspin Spyworks F. webové nákupní košík anonymní uživatele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/29/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-migrate-the-shopping-cart
 msc.type: video
-ms.openlocfilehash: 11e2127b57048f7bf06fbd168bddac592a8d17de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a35cd4eeb46eeea2d7e965bdedda3a9aa481967c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tailspin-spyworks---migrate-the-shopping-cart"></a>Tailspin Spyworks - migrovat nákupní košík
 ====================
@@ -24,8 +24,8 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 
 Jan Stagner ukazuje, jak převést některého ověřené před posledním rezervaci pro ukázkovou aplikaci Web Forms Tailspin Spyworks nákupního košíku anonymního uživatele.
 
-[&#9654; Podívejte se na video (23 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-migrate-the-shopping-cart)
+[&#9654;Podívejte se na video (23 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-migrate-the-shopping-cart)
 
->[!div class="step-by-step"]
-[Předchozí](tailspin-spyworks-update-the-shopping-cart.md)
-[další](tailspin-spyworks-final-check-out.md)
+> [!div class="step-by-step"]
+> [Předchozí](tailspin-spyworks-update-the-shopping-cart.md)
+> [další](tailspin-spyworks-final-check-out.md)

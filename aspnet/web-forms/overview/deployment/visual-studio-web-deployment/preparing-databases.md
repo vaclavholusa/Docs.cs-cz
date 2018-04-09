@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: Příprava pro nasazení databáze | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: Příprava pro nasazení databáze | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: caa79725ede320c4bd3e87ac246966c57175eb8e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 61392af322de454687da522055005a670b34f510
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: Příprava pro nasazení databáze
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -171,7 +171,7 @@ Zde příliš, obvykle nechcete, aby stejná data v produkčním prostředí, kt
 Uživatelé development budete nasazovat do testovacího prostředí a produkční uživatelům pracovní a provozní. K tomu v tomto kurzu, jednu pro vývoj a jeden pro produkční prostředí vytvoříte dva skripty SQL a v dalších kurzech budete konfigurovat proces publikování, abyste je mohli spustit.
 
 > [!NOTE]
-> Databáze členství ukládá hodnotu hash hesla účtů. Abyste mohli nasadit účty z jednoho počítače do druhého, ujistěte se, že hash rutiny negenerovat různé hodnoty hash na cílovém serveru, než na zdrojovém počítači. Stejné hodnoty hash se generují při použití balíčku ASP.NET Universal Providers tak dlouho, dokud Neměnit výchozí algoritmus. Výchozí algoritmus HMACSHA256 a je určena v **ověření** atribut  **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)**  element v souboru Web.config.
+> Databáze členství ukládá hodnotu hash hesla účtů. Abyste mohli nasadit účty z jednoho počítače do druhého, ujistěte se, že hash rutiny negenerovat různé hodnoty hash na cílovém serveru, než na zdrojovém počítači. Stejné hodnoty hash se generují při použití balíčku ASP.NET Universal Providers tak dlouho, dokud Neměnit výchozí algoritmus. Výchozí algoritmus HMACSHA256 a je určena v **ověření** atribut **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)** element v souboru Web.config.
 
 
 Skripty nasazení dat můžete vytvořit ručně pomocí SQL Server Management Studio (SSMS) nebo pomocí nástroje třetích stran. Tento zbývající část tohoto kurzu vám ukáže, jak to udělat v aplikaci SSMS, ale pokud nechcete, aby instalaci a použití aplikace SSMS můžete získat skripty z dokončené verze projektu a přejít do části, kde jsou uloženy ve složce řešení.
@@ -215,11 +215,11 @@ Vzhledem k tomu, že jste nespustili projektu s provozní databáze, není dosud
 1. V aplikaci SSMS **Průzkumník objektů**, klikněte pravým tlačítkem na **databáze** a klikněte na tlačítko **Attach**.
 
     ![Připojení aplikace SSMS](preparing-databases/_static/image15.png)
-- V **připojit databáze** dialogové okno, klikněte na tlačítko **přidat** a potom přejděte na *aspnet. ContosoUniversity Prod.mdf* v soubor *aplikace\_ Data* složky.
+2. V **připojit databáze** dialogové okno, klikněte na tlačítko **přidat** a potom přejděte na *aspnet. ContosoUniversity Prod.mdf* v soubor *aplikace\_ Data* složky.
 
-    ![Aplikace SSMS přidejte soubory MDF připojit](preparing-databases/_static/image16.png)
-- Click **OK**.
-- Postupujte podle stejného postupu, který jste použili k vytvoření skriptu pro produkční soubor dříve. Název souboru skriptu *aspnet. data prod.sql*.
+     ![Aplikace SSMS přidejte soubory MDF připojit](preparing-databases/_static/image16.png)
+3. Click **OK**.
+4. Postupujte podle stejného postupu, který jste použili k vytvoření skriptu pro produkční soubor dříve. Název souboru skriptu *aspnet. data prod.sql*.
 
 ## <a name="summary"></a>Souhrn
 
@@ -233,6 +233,6 @@ V následujícím kurzu jste nakonfigurovali nastavení projektu, které ovlivň
 
 Další informace o NuGet najdete v tématu [spravovat projektu knihovny s NuGet](https://msdn.microsoft.com/magazine/hh547106.aspx) a [NuGet dokumentaci](http://docs.nuget.org/docs/start-here/overview). Pokud nechcete použít NuGet, budete potřebovat další informace o analýze balíčku NuGet k určení, jak funguje, když je nainstalovaná. (Například může nakonfigurovat *Web.config* transformace, konfigurovat skripty prostředí PowerShell, aby se spouštěla v čase vytvoření buildu atd.) Další informace o tom, jak NuGet funguje, najdete v části [vytváření a publikování balíčku](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) a [konfigurační soubor a zdrojový kód transformace](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
 
->[!div class="step-by-step"]
-[Předchozí](introduction.md)
-[další](web-config-transformations.md)
+> [!div class="step-by-step"]
+> [Předchozí](introduction.md)
+> [další](web-config-transformations.md)

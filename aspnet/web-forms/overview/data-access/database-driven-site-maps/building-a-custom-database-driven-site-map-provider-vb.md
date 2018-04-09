@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-vb
-title: "Vytváření mapy zprostředkovatele vlastní vycházející z databáze lokality (VB) | Microsoft Docs"
+title: Vytváření mapy zprostředkovatele vlastní vycházející z databáze lokality (VB) | Microsoft Docs
 author: rick-anderson
-description: "Výchozí poskytovatel mapy webu v technologii ASP.NET 2.0 načte data ze statického souboru XML. Zprostředkovatel formátu XML je vhodné pro mnoho malé a střední – okno velikosti..."
+description: Výchozí poskytovatel mapy webu v technologii ASP.NET 2.0 načte data ze statického souboru XML. Zprostředkovatel formátu XML je vhodné pro mnoho malé a střední – okno velikosti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e9b71ed89dce4e973a9096a9e2326d2c16c30673
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: df295f1b8bf0b83647ffb90501936181894634d7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-a-custom-database-driven-site-map-provider-vb"></a>Vytváření mapy zprostředkovatele vlastní vycházející z databáze lokality (VB)
 ====================
@@ -145,7 +145,7 @@ V dalším kroku přidejte HyperLinkField a přesunout ho na pozici nejvíce vle
 
 ![Přidat podrobnosti HyperLinkField zobrazení, která odkazuje na ProductDetails.aspx](building-a-custom-database-driven-site-map-provider-vb/_static/image10.gif)
 
-**Obrázek 10**: Přidání, zobrazení podrobností HyperLinkField, která odkazuje na`ProductDetails.aspx`
+**Obrázek 10**: Přidání, zobrazení podrobností HyperLinkField, která odkazuje na `ProductDetails.aspx`
 
 
 Po přizpůsobení, rutina GridView a ObjectDataSource s deklarativní by měl vypadat takto:
@@ -208,9 +208,9 @@ Mapa lokality je přístupná prostřednictvím [ `SiteMap` třída](https://msd
 
 Když `SiteMap` přístup k vlastnostem třídy s, se musí serializovat struktury mapy webu z některé trvalé střední do paměti. Ale logiku serializace mapy webu není pevný zakódovaný do `SiteMap` třídy. Místo toho za běhu `SiteMap` třída určuje, které mapy webu *zprostředkovatele* používat pro serializaci. Ve výchozím nastavení [ `XmlSiteMapProvider` třída](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx) se používá, který čte mapu s struktury webu ze souboru XML správně naformátován. S chvilku pracovní jsme však můžete vytvořit vlastní poskytovatel mapy vlastního webu.
 
-Všichni poskytovatelé mapy webu musí být odvozen od [ `SiteMapProvider` třída](https://msdn.microsoft.com/library/system.web.sitemapprovider.aspx), což zahrnuje základní metody a vlastnosti, které jsou potřebné pro lokalitu mapování poskytovatelů, ale vynechá řadu podrobnosti implementace. Třídu sekundu [ `StaticSiteMapProvider` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.aspx), rozšiřuje `SiteMapProvider` třídy a obsahuje robustnější provádění požadovaných funkcí. Interně `StaticSiteMapProvider` ukládá `SiteMapNode` instance lokality mapování v `Hashtable` a poskytuje metody, jako `AddNode(child, parent)`, `RemoveNode(siteMapNode),` a `Clear()` , přidávat a odebírat `SiteMapNode` s k interní `Hashtable`. `XmlSiteMapProvider`je odvozený od `StaticSiteMapProvider`.
+Všichni poskytovatelé mapy webu musí být odvozen od [ `SiteMapProvider` třída](https://msdn.microsoft.com/library/system.web.sitemapprovider.aspx), což zahrnuje základní metody a vlastnosti, které jsou potřebné pro lokalitu mapování poskytovatelů, ale vynechá řadu podrobnosti implementace. Třídu sekundu [ `StaticSiteMapProvider` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.aspx), rozšiřuje `SiteMapProvider` třídy a obsahuje robustnější provádění požadovaných funkcí. Interně `StaticSiteMapProvider` ukládá `SiteMapNode` instance lokality mapování v `Hashtable` a poskytuje metody, jako `AddNode(child, parent)`, `RemoveNode(siteMapNode),` a `Clear()` , přidávat a odebírat `SiteMapNode` s k interní `Hashtable`. `XmlSiteMapProvider` je odvozený od `StaticSiteMapProvider`.
 
-Při vytváření poskytovatele mapy vlastní web, který rozšiřuje `StaticSiteMapProvider`, existují dvě abstraktní metody, které se musí přepsat: [ `BuildSiteMap` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.buildsitemap.aspx) a [ `GetRootNodeCore` ](https://msdn.microsoft.com/library/system.web.sitemapprovider.getrootnodecore.aspx). `BuildSiteMap`, jak již název napovídá, zodpovídá za načítání struktury mapy webu z trvalého úložiště a vytváření v paměti. `GetRootNodeCore`Vrátí kořenového uzlu v mapě webu.
+Při vytváření poskytovatele mapy vlastní web, který rozšiřuje `StaticSiteMapProvider`, existují dvě abstraktní metody, které se musí přepsat: [ `BuildSiteMap` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.buildsitemap.aspx) a [ `GetRootNodeCore` ](https://msdn.microsoft.com/library/system.web.sitemapprovider.getrootnodecore.aspx). `BuildSiteMap`, jak již název napovídá, zodpovídá za načítání struktury mapy webu z trvalého úložiště a vytváření v paměti. `GetRootNodeCore` Vrátí kořenového uzlu v mapě webu.
 
 Před webové aplikace můžete použít poskytovatele mapy webu, které musí být zaregistrovaný v konfiguraci s aplikace. Ve výchozím nastavení `XmlSiteMapProvider` je zaregistrovat pomocí názvu `AspNetXmlSiteMapProvider`. Registrace zprostředkovatele mapy další lokality, přidejte následující kód do `Web.config`:
 
@@ -221,10 +221,10 @@ Před webové aplikace můžete použít poskytovatele mapy webu, které musí b
 
 Vytvoření prvním je přístupný z instance třídy zprostředkovatele mapy webu `SiteMap` třídy a zůstanou v paměti po dobu jeho existence webové aplikace. Vzhledem k tomu, že existuje pouze jedna instance poskytovatele mapy webu, který může být volána z více souběžných webových návštěvníky, je nutné, aby metody zprostředkovatele s být *vláken*.
 
-Pro výkon a škálovatelnost je důležité, že jsme mezipaměti v paměti lokality s namapovat struktura a vrátit to do mezipaměti, struktura, nikoli jeho opětné vytvoření pokaždé, když `BuildSiteMap` metoda je volána. `BuildSiteMap`může být volána několikrát za požadavek na stránku na uživatele, v závislosti na ovládací prvky navigace používán na stránce a hloubka struktury mapy webu. V případě, pokud jsme Neukládat do mezipaměti struktury mapy webu v `BuildSiteMap` pokaždé, když je volána, jsme nutné, aby znovu načíst informace o produktu a kategorie z architektury (což by způsobilo dotaz do databáze). Jak již bylo zmíněno v předchozí kurzech ukládání do mezipaměti, se může stát zastaralá data uložená v mezipaměti. Boje proti to, můžeme použít buď čas - nebo expiries na základě závislostí mezipaměti SQL.
+Pro výkon a škálovatelnost je důležité, že jsme mezipaměti v paměti lokality s namapovat struktura a vrátit to do mezipaměti, struktura, nikoli jeho opětné vytvoření pokaždé, když `BuildSiteMap` metoda je volána. `BuildSiteMap` může být volána několikrát za požadavek na stránku na uživatele, v závislosti na ovládací prvky navigace používán na stránce a hloubka struktury mapy webu. V případě, pokud jsme Neukládat do mezipaměti struktury mapy webu v `BuildSiteMap` pokaždé, když je volána, jsme nutné, aby znovu načíst informace o produktu a kategorie z architektury (což by způsobilo dotaz do databáze). Jak již bylo zmíněno v předchozí kurzech ukládání do mezipaměti, se může stát zastaralá data uložená v mezipaměti. Boje proti to, můžeme použít buď čas - nebo expiries na základě závislostí mezipaměti SQL.
 
 > [!NOTE]
-> Poskytovatel mapy webu může volitelně přepsat [ `Initialize` metoda](https://msdn.microsoft.com/library/system.web.sitemapprovider.initialize.aspx). `Initialize`je voláno, když je poskytovatel mapy webu při prvním vytvoření instance a je předána žádné vlastní atributy, které jsou přiřazené k poskytovateli v `Web.config` v `<add>` element jako: `<add name="name" type="type" customAttribute="value" />`. Je vhodné, pokud chcete povolit vývojáři stránky zadejte různé lokality mapu zprostředkovatele související nastavení bez nutnosti upravovat kód s zprostředkovatele. Například pokud jsme byly čtení dat kategorie a produkty pravděpodobně přímo z databáze naproti tomu prostřednictvím architektury, jsme d Chcete umožnit vývojář stránky zadejte připojovací řetězec databáze prostřednictvím, aby `Web.config` místo pomocí pevně zakódovaný Hodnota v kódu zprostředkovatele s. Poskytovatel mapy webu vlastní jsme budete sestavení v kroku 6 nepřepisuje to `Initialize` metoda. Příklad použití `Initialize` metoda, odkazovat na [Jeff Prosise](http://www.wintellect.com/Weblogs/CategoryView,category,Jeff%20Prosise.aspx) s [ukládání mapy webu v systému SQL Server](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/) článku.
+> Poskytovatel mapy webu může volitelně přepsat [ `Initialize` metoda](https://msdn.microsoft.com/library/system.web.sitemapprovider.initialize.aspx). `Initialize` je voláno, když je poskytovatel mapy webu při prvním vytvoření instance a je předána žádné vlastní atributy, které jsou přiřazené k poskytovateli v `Web.config` v `<add>` element jako: `<add name="name" type="type" customAttribute="value" />`. Je vhodné, pokud chcete povolit vývojáři stránky zadejte různé lokality mapu zprostředkovatele související nastavení bez nutnosti upravovat kód s zprostředkovatele. Například pokud jsme byly čtení dat kategorie a produkty pravděpodobně přímo z databáze naproti tomu prostřednictvím architektury, jsme d Chcete umožnit vývojář stránky zadejte připojovací řetězec databáze prostřednictvím, aby `Web.config` místo pomocí pevně zakódovaný Hodnota v kódu zprostředkovatele s. Poskytovatel mapy webu vlastní jsme budete sestavení v kroku 6 nepřepisuje to `Initialize` metoda. Příklad použití `Initialize` metoda, odkazovat na [Jeff Prosise](http://www.wintellect.com/Weblogs/CategoryView,category,Jeff%20Prosise.aspx) s [ukládání mapy webu v systému SQL Server](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/) článku.
 
 
 ## <a name="step-6-creating-the-custom-site-map-provider"></a>Krok 6: Vytvoření zprostředkovatele mapy vlastní stránky
@@ -238,13 +238,13 @@ Umožní s začínat zkoumat tuto třídu s `BuildSiteMap` metodu, která začí
 
 Úroveň třída `SiteMapNode` proměnná `root` se používá pro ukládání do mezipaměti struktury mapy webu. Když se mapy webu poprvé nebo poprvé po podkladová data byla změněna, `root` bude `Nothing` a bude vypočten struktury mapy webu. Kořenový uzel mapy s webu je přiřazena k `root` během konstrukce proces tak, aby příště tato metoda se označuje jako, `root` nebude `Nothing`. V důsledku toho tak dlouho, dokud `root` není `Nothing` struktury mapy webu bude vrácen volajícímu bez nutnosti ho znovu vytvořit.
 
-Pokud je kořenový `Nothing`, struktury mapy webu je vytvořený z informací o produktu a kategorie. Mapy webu je sestavena vytváření `SiteMapNode` instancí a pak které tvoří hierarchii prostřednictvím volání `StaticSiteMapProvider` třídu s `AddNode` metoda. `AddNode`provede účetnictví ukládání různé `SiteMapNode` instancí v `Hashtable`. Než začneme vytvořením hierarchii, začneme voláním `Clear` metodu, která vymaže prvky z interní `Hashtable`. Dále `ProductsBLL` třídu s `GetProducts` metoda a výsledná `ProductsDataTable` jsou uloženy v místní proměnné.
+Pokud je kořenový `Nothing`, struktury mapy webu je vytvořený z informací o produktu a kategorie. Mapy webu je sestavena vytváření `SiteMapNode` instancí a pak které tvoří hierarchii prostřednictvím volání `StaticSiteMapProvider` třídu s `AddNode` metoda. `AddNode` provede účetnictví ukládání různé `SiteMapNode` instancí v `Hashtable`. Než začneme vytvořením hierarchii, začneme voláním `Clear` metodu, která vymaže prvky z interní `Hashtable`. Dále `ProductsBLL` třídu s `GetProducts` metoda a výsledná `ProductsDataTable` jsou uloženy v místní proměnné.
 
 Vytváření mapy s lokality začíná vytvořením kořenového uzlu a přiřadit ji k `root`. Přetížení [ `SiteMapNode` konstruktor s](https://msdn.microsoft.com/library/system.web.sitemapnode.sitemapnode.aspx) používá sem a v rámci to `BuildSiteMap` je předán následující informace:
 
 - Odkaz na poskytovatel mapy webu (`Me`).
 - `SiteMapNode` s `Key`. To vyžaduje, hodnota musí být jedinečný pro každý `SiteMapNode`.
-- `SiteMapNode` s `Url`. `Url`je volitelný, ale pokud je zadán, každý `SiteMapNode` s `Url` hodnota musí být jedinečná.
+- `SiteMapNode` s `Url`. `Url` je volitelný, ale pokud je zadán, každý `SiteMapNode` s `Url` hodnota musí být jedinečná.
 - `SiteMapNode` s `Title`, což je vyžadováno.
 
 `AddNode(root)` Volání metody přidá `SiteMapNode` `root` do mapy webu jako kořen. Další, každý `ProductRow` v `ProductsDataTable` výčtu. Pokud už existuje `SiteMapNode` pro aktuální kategorii produktu s, se odkazuje. Jinak nový `SiteMapNode` pro kategorii je vytvořen a přidán jako podřízený `SiteMapNode``root` prostřednictvím `AddNode(categoryNode, root)` volání metody. Po příslušné kategorii `SiteMapNode` uzel byl nalezen nebo vytvořili, `SiteMapNode` se vytvoří pro aktuální produkt a přidán jako podřízený kategorie `SiteMapNode` prostřednictvím `AddNode(productNode, categoryNode)`. Všimněte si, že kategorie `SiteMapNode` s `Url` hodnota vlastnosti je `~/SiteMapProvider/ProductsByCategory.aspx?CategoryID=categoryID` při produktu `SiteMapNode` s `Url` je přiřazená vlastnost `~/SiteMapNode/ProductDetails.aspx?ProductID=productID`.
@@ -261,7 +261,7 @@ Po vytváření mapy webu, je libovolný objekt přidán do mezipaměti dat pomo
 
 `BuildSiteMap` Metoda dokončení vrácením kořenového uzlu mapy webu.
 
-Ostatní metody jsou poměrně jednoduché. `GetRootNodeCore`zodpovídá za vrácení kořenového uzlu. Vzhledem k tomu `BuildSiteMap` vrátí kořenová `GetRootNodeCore` jednoduše vrátí `BuildSiteMap` s vrátit hodnotu. `OnSiteMapChanged` Metoda nastaví `root` zpět na `Nothing` po odebrání položky v mezipaměti. S kořenem zpět `Nothing`, při příštím `BuildSiteMap` je vyvolána, strukturu mapy lokality bude znovu vytvořen. Nakonec `CachedDate` vlastnost vrací hodnoty data a času, které jsou uložené v mezipaměti dat, pokud taková hodnota existuje. Tuto vlastnost lze použít vývojáři stránky, kdy byl naposledy do mezipaměti data mapy webu.
+Ostatní metody jsou poměrně jednoduché. `GetRootNodeCore` zodpovídá za vrácení kořenového uzlu. Vzhledem k tomu `BuildSiteMap` vrátí kořenová `GetRootNodeCore` jednoduše vrátí `BuildSiteMap` s vrátit hodnotu. `OnSiteMapChanged` Metoda nastaví `root` zpět na `Nothing` po odebrání položky v mezipaměti. S kořenem zpět `Nothing`, při příštím `BuildSiteMap` je vyvolána, strukturu mapy lokality bude znovu vytvořen. Nakonec `CachedDate` vlastnost vrací hodnoty data a času, které jsou uložené v mezipaměti dat, pokud taková hodnota existuje. Tuto vlastnost lze použít vývojáři stránky, kdy byl naposledy do mezipaměti data mapy webu.
 
 ## <a name="step-7-registering-thenorthwindsitemapprovider"></a>Krok 7: Registrace`NorthwindSiteMapProvider`
 
@@ -362,11 +362,11 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Dave Gardner, Zack Petr, Teresy Murphy a Bernadette Leigh. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](building-a-custom-database-driven-site-map-provider-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](building-a-custom-database-driven-site-map-provider-cs.md)

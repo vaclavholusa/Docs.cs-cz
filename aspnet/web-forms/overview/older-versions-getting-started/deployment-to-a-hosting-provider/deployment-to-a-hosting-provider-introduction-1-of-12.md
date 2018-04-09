@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
-title: "Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio: Úvod - 1 12 | Microsoft Docs"
+title: 'Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio: Úvod - 1 12 | Microsoft Docs'
 author: tdykstra
-description: "Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného..."
+description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a0f38c83bd9231dbd37d3d505c90316af521b336
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3f1572bb890ee136cdd746040a5efae2ce537116
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio: Úvod - 1 12
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -53,7 +53,7 @@ Kurzy jsou zaměřené na vývojáře využívající technologii ASP.NET, kteř
 
 V podnikových prostředích je typičtější pro implementaci procesů průběžnou integraci a provozním prostředí je obvykle hostované servery vlastní společnosti. Jiné osoby také běžně provádět různé role. Informace o podnikové nasazení najdete v tématu [nasazení webové aplikace v podnikové scénáře](../../deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md).
 
-Organizací všech velikostí můžete taky nasadit webové aplikace do Azure a většina postupy uvedené v těchto kurzech platí také pro Azure App Services Web Apps. Úvod do Azure, najdete v části [https://azure.microsoft.com](https://azure.microsoft.com).
+Organizací všech velikostí můžete taky nasadit webové aplikace do Azure a většina postupy uvedené v těchto kurzech platí také pro Azure App Services Web Apps. Úvod do Azure, najdete v části [ https://azure.microsoft.com ](https://azure.microsoft.com).
 
 ## <a name="the-hosting-provider-shown-in-the-tutorials"></a>Poskytovatel hostingu ukazuje kurzů k
 
@@ -142,5 +142,5 @@ Následující funkce aplikace budou mít vliv nasazení nebo co musíte udělat
 
 V tomto prvním kurzu v řadě byly staženy ukázkový projekt sady Visual Studio a zkontrolovat lokality funkce, které ovlivňují nasazení aplikace. V následujících kurzech připravíte nasazení nastavením některé z těchto věcí automaticky zpracovávat. Ostatní můžete postará o ručně.
 
->[!div class="step-by-step"]
-[Next](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [!div class="step-by-step"]
+> [Next](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-client-library-controls
-title: "[Jak na:] Pomocí ovládacích prvků ASP.NET AJAX klienta knihovny? | Microsoft Docs"
+title: '[Jak na:] Pomocí ovládacích prvků ASP.NET AJAX klienta knihovny? | Microsoft Docs'
 author: JoeStagner
-description: "Demonstruje programovací prostředí na straně klienta pomocí prvku ASP.NET AJAX klientské knihovny skriptů a ovládací prvky. Ovládací prvky klienta přidat akce, behavio..."
+description: Demonstruje programovací prostředí na straně klienta pomocí prvku ASP.NET AJAX klientské knihovny skriptů a ovládací prvky. Ovládací prvky klienta přidat akce, behavio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-client-library-controls
 msc.type: video
-ms.openlocfilehash: 713ed131938a422f7b1388c1d057dc7c0c9be6d2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed54ddd5666422962b6ab8e1bfdef3db392e3084
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-aspnet-ajax-client-library-controls"></a>[Jak na:] Pomocí ovládacích prvků ASP.NET AJAX klienta knihovny?
 ====================
@@ -24,8 +24,8 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 
 Demonstruje programovací prostředí na straně klienta pomocí prvku ASP.NET AJAX klientské knihovny skriptů a ovládací prvky. Ovládací prvky klienta přidat akce, chování a vazby dat na straně klienta uživatelské rozhraní možnosti.
 
-[&#9654; Podívejte se na video (10 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-client-library-controls)
+[&#9654;Podívejte se na video (10 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-client-library-controls)
 
->[!div class="step-by-step"]
-[Předchozí](how-do-i-aspnet-ajax-enable-an-existing-web-service.md)
-[další](how-do-i-use-an-aspnet-ajax-scriptmanagerproxy.md)
+> [!div class="step-by-step"]
+> [Předchozí](how-do-i-aspnet-ajax-enable-an-existing-web-service.md)
+> [další](how-do-i-use-an-aspnet-ajax-scriptmanagerproxy.md)

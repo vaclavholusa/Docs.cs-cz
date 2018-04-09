@@ -1,7 +1,7 @@
 ---
-title: "Použijte šablonu úhlová projektu"
+title: Použít šablonu úhlová projekt pomocí ASP.NET Core
 author: SteveSandersonMS
-description: "Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro úhlová a úhlová příkazového řádku."
+description: Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro úhlová a úhlová příkazového řádku.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: 07cfd20809acb67bdae6561b6ccd6edf1e70a3fe
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e3956bedbc243578f6dfdc09f5f043327de7c66b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="use-the-angular-project-template"></a>Použijte šablonu úhlová projektu
+# <a name="use-the-angular-project-template-with-aspnet-core"></a>Použít šablonu úhlová projekt pomocí ASP.NET Core
 
 > [!NOTE]
 > Tato dokumentace není o šablona úhlová projektu součástí technologie ASP.NET 2.0 jádra. Jde o novější úhlová šablony, do kterého můžete ručně aktualizovat. Šablona je součástí 2.1 jádro ASP.NET ve výchozím nastavení.
@@ -39,14 +39,12 @@ cd my-new-app
 
 Spusťte aplikaci v sadě Visual Studio nebo .NET Core rozhraní příkazového řádku:
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-
+#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 Otevřete vygenerovaného *.csproj* souboru a spuštění aplikace jako normální odtud.
 
 Proces sestavení obnoví npm závislosti během prvního spuštění, což může trvat několik minut. Následující sestavení je mnohem rychlejší.
 
-# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
-
+#### <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli/)
 Zajistěte, abyste měli proměnné prostředí s názvem `ASPNETCORE_Environment` s hodnotou `Development`. V systému Windows (v výzvy – prostředí PowerShell), spusťte `SET ASPNETCORE_Environment=Development`. V systému macOS nebo Linux, spusťte `export ASPNETCORE_Environment=Development`.
 
 Spustit [dotnet sestavení](/dotnet/core/tools/dotnet-build) k ověření aplikace sestavení správně. Při prvním spuštění procesu sestavení obnoví npm závislosti, které může trvat několik minut. Následující sestavení je mnohem rychlejší.
@@ -59,10 +57,9 @@ Now listening on: http://localhost:<port>
 
 Přejděte na tuto adresu URL v prohlížeči.
 
-Spuštění aplikace instanci serveru úhlová rozhraní příkazového řádku na pozadí. Je zaznamenána zpráva podobná následující: *NG Live vývojový Server naslouchá na localhost:&lt;otherport&gt;, otevřete prohlížeč na http://localhost:&lt;otherport&gt; /* . Tuto zprávu ignorovat&mdash;má **není** adresu URL pro kombinované aplikace ASP.NET Core a úhlová příkazového řádku.
+Spuštění aplikace instanci serveru úhlová rozhraní příkazového řádku na pozadí. Je zaznamenána zpráva podobná následující: <em>NG Live vývojový Server naslouchá na localhost:&lt;otherport&gt;, otevřete prohlížeč na http://localhost: &lt;otherport&gt; /</em> . Tuto zprávu ignorovat&mdash;má <strong>není</strong> adresu URL pro kombinované aplikace ASP.NET Core a úhlová příkazového řádku.
 
----
-
+* * *
 Šablona projektu vytvoří aplikace ASP.NET Core a úhlová aplikace. Aplikace ASP.NET Core se má použít pro přístup k datům, autorizaci a další otázky straně serveru. Úhlová aplikace, které se nacházejí v *ClientApp* podadresáři, je určena k použití pro všechny otázky uživatelského rozhraní.
 
 ## <a name="add-pages-images-styles-modules-etc"></a>Přidání stránky, obrázky, styly, moduly, atd.

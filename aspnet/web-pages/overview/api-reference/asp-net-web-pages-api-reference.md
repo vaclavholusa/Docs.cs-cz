@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/api-reference/asp-net-web-pages-api-reference
-title: "ASP.NET Web Pages referenční dokumentace rozhraní API rychlé (Razor) | Microsoft Docs"
+title: ASP.NET Web Pages referenční dokumentace rozhraní API rychlé (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tato stránka obsahuje seznam s běžně používané objekty, vlastnosti a metody pro programování webových stránek ASP.NET se syntaxí Razor stručný příklady."
+description: Tato stránka obsahuje seznam s běžně používané objekty, vlastnosti a metody pro programování webových stránek ASP.NET se syntaxí Razor stručný příklady.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/api-reference/asp-net-web-pages-api-reference
 msc.type: authoredcontent
-ms.openlocfilehash: 35f91f4dbea4881d9dabc4ab7c6b96dbb6a01ea2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f9d84f4d453583d7d4eae12e4fc510275255616
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-pages-razor-api-quick-reference"></a>ASP.NET Web Pages referenční dokumentace rozhraní API rychlé (Razor)
 ====================
@@ -42,7 +42,7 @@ Tato stránka obsahuje referenční informace pro následující:
 - [Třídy](#Classes)
 - [Data](#Data)
 - [Pomocné rutiny](#Helpers)
-- [Ověření](#Validation)
+- [Ověřování](#Validation)
 
 <a id="Classes"></a>
 ## <a name="classes"></a>Třídy
@@ -158,13 +158,13 @@ Získá soubory, které byly odeslány v aktuální žádosti.
 
 ### `Request.Form[key]`
 
-Získá data, která byla ve formuláři odeslány (jako řetězce). `Request[key]`kontroluje, jak `Request.Form` a `Request.QueryString` kolekce.
+Získá data, která byla ve formuláři odeslány (jako řetězce). `Request[key]` kontroluje, jak `Request.Form` a `Request.QueryString` kolekce.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample19.cs)]
 
 ### `Request.QueryString[key]`
 
-Získá data, která byla zadaná v řetězci dotazu adresy URL. `Request[key]`kontroluje, jak `Request.Form` a `Request.QueryString` kolekce.
+Získá data, která byla zadaná v řetězci dotazu adresy URL. `Request[key]` kontroluje, jak `Request.Form` a `Request.QueryString` kolekce.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample20.cs)]
 
@@ -692,7 +692,7 @@ Odešle e-mailovou zprávu.
 
 ### `WebMail.SmtpServer`
 
-Nastaví název serveru SMTP. Za normálních okolností, můžete tuto vlastnost nastavit v*\_AppStart* stránky.
+Nastaví název serveru SMTP. Za normálních okolností, můžete tuto vlastnost nastavit v<em>\_AppStart</em> stránky.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample105.html)]
 

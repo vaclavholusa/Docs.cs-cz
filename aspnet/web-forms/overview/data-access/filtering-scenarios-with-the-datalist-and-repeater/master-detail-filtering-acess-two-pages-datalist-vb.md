@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-vb
-title: "Filtrování napříč dvěma stránkami (VB) podrobností | Microsoft Docs"
+title: Filtrování napříč dvěma stránkami (VB) podrobností | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu podíváme na to, jak jednotlivé sestavy a podrobností mezi dvěma stránkami. Na stránce \"hlavní\" používáme k vykreslení seznam categ ovládacího prvku opakovače..."
+description: V tomto kurzu podíváme na to, jak jednotlivé sestavy a podrobností mezi dvěma stránkami. Na stránce "hlavní" používáme k vykreslení seznam categ ovládacího prvku opakovače...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f43fa998b81800cb1a2b7796ebb3922fc1caeb8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2afc216de3b6894cfdd112787ab92d7483198ecc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>Filtrování napříč dvěma stránkami (VB) podrobností
 ====================
@@ -59,7 +59,7 @@ S Tento kód dokončeno pozorně zobrazit naše průběh prostřednictvím prohl
 
 ## <a name="step-2-turning-the-category-name-into-a-link-to-the-details-page"></a>Krok 2: Zapnutí název kategorie na odkaz na stránku podrobností
 
-Povolit uživatelům zobrazit informace o "Podrobnosti" pro danou kategorii, je potřeba přidat odkaz na každém s odrážkami seznamu položku, která, při kliknutí na, přenese uživatele na druhé stránce (`ProductsForCategoryDetails.aspx`). Této druhé stránce se pak zobrazí produkty pro vybrané kategorie pomocí DataList. Chcete-li zjistit, kategorie, jehož propojení označeného, musíme předat kliknutelnou kategorie `CategoryID` na druhou stránku prostřednictvím některé mechanismus. Nejjednodušší a nejjednodušší způsob přenosu skalární dat z jedné stránky na jiný je pomocí řetězce dotazu, což je možnosti, kterou použijeme v tomto kurzu. Konkrétně `ProductsForCategoryDetails.aspx` stránka bude očekávat vybraný  *`categoryID`*  hodnota, která má být předána pole řetězce dotazu s názvem `CategoryID`. Chcete-li například zobrazit produkty pro kategorii Nápoje, který má `CategoryID` 1, by uživatel navštíví `ProductsForCategoryDetails.aspx?CategoryID=1`.
+Povolit uživatelům zobrazit informace o "Podrobnosti" pro danou kategorii, je potřeba přidat odkaz na každém s odrážkami seznamu položku, která, při kliknutí na, přenese uživatele na druhé stránce (`ProductsForCategoryDetails.aspx`). Této druhé stránce se pak zobrazí produkty pro vybrané kategorie pomocí DataList. Chcete-li zjistit, kategorie, jehož propojení označeného, musíme předat kliknutelnou kategorie `CategoryID` na druhou stránku prostřednictvím některé mechanismus. Nejjednodušší a nejjednodušší způsob přenosu skalární dat z jedné stránky na jiný je pomocí řetězce dotazu, což je možnosti, kterou použijeme v tomto kurzu. Konkrétně `ProductsForCategoryDetails.aspx` stránka bude očekávat vybraný *`categoryID`* hodnota, která má být předána pole řetězce dotazu s názvem `CategoryID`. Chcete-li například zobrazit produkty pro kategorii Nápoje, který má `CategoryID` 1, by uživatel navštíví `ProductsForCategoryDetails.aspx?CategoryID=1`.
 
 Vytvoření hypertextového odkazu pro každou položku seznamu s odrážkami v Opakovači musíme buď přidání ovládacího prvku hypertextový odkaz webové nebo HTML anchor element (`<a>`) na `ItemTemplate`. Ve scénářích, kdy hypertextový odkaz zobrazí stejné pro každý řádek, postačí buď přístup. Pro opakovače raději nechci pomocí elementu anchor. Pomocí elementu anchor, aktualizujte opakovače ItemTemplate na:
 
@@ -170,18 +170,18 @@ Po aktualizaci databáze odpovídajícím způsobem se vraťte ke `CategoryListM
 
 Při a podrobností sestavy můžete zobrazit hlavní i podrobné záznamy na jedné stránce, v mnoha webů budou odděleny mezi dvěma webové stránky. V tomto kurzu jsme se podívali na tom, jak implementovat a podrobností sestavu tak, že kategorií uvedených v seznamu s odrážkami pomocí prvku na webové stránce "hlavní" a související produkty uvedené na stránce "Podrobnosti". Jednotlivé položky seznamu v hlavní webové stránky obsahovala odkaz na stránku podrobností, které se předají na řádku `CategoryID` hodnotu.
 
-Na stránce podrobností načítání těchto produktů pro zadaný dodavatele dosáhlo prostřednictvím `ProductsBLL` třídy `GetProductsByCategoryID(categoryID)` metoda.  *`categoryID`*  Byla zadána hodnota parametru deklarativně pomocí `CategoryID` hodnotu řetězce dotazu jako zdroj parametru. Také jsme se podívali na tom, jak zobrazit podrobnosti o kategorií na stránce Podrobnosti o použití FormView a jak zobrazit zprávu, pokud nebyly žádné produkty, které patří do vybrané kategorie.
+Na stránce podrobností načítání těchto produktů pro zadaný dodavatele dosáhlo prostřednictvím `ProductsBLL` třídy `GetProductsByCategoryID(categoryID)` metoda. *`categoryID`* Byla zadána hodnota parametru deklarativně pomocí `CategoryID` hodnotu řetězce dotazu jako zdroj parametru. Také jsme se podívali na tom, jak zobrazit podrobnosti o kategorií na stránce Podrobnosti o použití FormView a jak zobrazit zprávu, pokud nebyly žádné produkty, které patří do vybrané kategorie.
 
 Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování...
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Zack Petr a Liz Shulok. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](master-detail-filtering-with-a-dropdownlist-datalist-vb.md)
-[další](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](master-detail-filtering-with-a-dropdownlist-datalist-vb.md)
+> [další](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md)

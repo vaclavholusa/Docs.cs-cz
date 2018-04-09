@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
-title: "Část 3: Rozložení a kategorie nabídky | Microsoft Docs"
+title: 'Část 3: Rozložení a kategorie nabídky | Microsoft Docs'
 author: JoeStagner
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 3 zahrnuje přidání rozložení a kategorie nabídky."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 3 zahrnuje přidání rozložení a kategorie nabídky.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 57c0342efb67b94a0d8c8b06dc13a727e7184db8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27a493173b03f813ee3dcbbfafd8bc52fb0b9771
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-3-layout-and-category-menu"></a>Část 3: Rozložení a kategorie nabídky
 ====================
@@ -27,7 +27,7 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 > Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 3 zahrnuje přidání rozložení a kategorie nabídky.
 
 
-## <a id="_Toc260221669"></a>Přidání některé rozložení a kategorie nabídky
+## <a id="_Toc260221669"></a>  Přidání některé rozložení a kategorie nabídky
 
 V našem stránka přidáme div pro sloupec levé straně, který bude obsahovat našich produktů kategorie nabídky.
 
@@ -77,6 +77,6 @@ Umožňuje spustit nyní aplikaci.
 
 Všimněte si, že našich produktů kategorie nabídky se nyní zobrazí a když jsme více než jedné z položek nabídky kategorie vidíme body odkaz položky nabídky na stránku, musíme ještě implementovat najeďte pojmenovaný ProductsList.aspx a že Vyvinuli jsme argument řetězce dynamické dotazu, obsahuje  id kategorie.
 
->[!div class="step-by-step"]
-[Předchozí](tailspin-spyworks-part-2.md)
-[další](tailspin-spyworks-part-4.md)
+> [!div class="step-by-step"]
+> [Předchozí](tailspin-spyworks-part-2.md)
+> [další](tailspin-spyworks-part-4.md)

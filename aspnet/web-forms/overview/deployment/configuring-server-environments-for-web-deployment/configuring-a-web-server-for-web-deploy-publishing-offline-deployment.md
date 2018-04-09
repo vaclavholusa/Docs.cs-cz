@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
-title: "Konfigurace webového serveru pro Web nasazení publikování (Offline nasazení) | Microsoft Docs"
+title: Konfigurace webového serveru pro Web nasazení publikování (Offline nasazení) | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak nakonfigurovat webový server služby IIS pro podporu nasazení a publikování na webu do režimu offline. Při práci s Internetová informační služba (I..."
+description: Toto téma popisuje, jak nakonfigurovat webový server služby IIS pro podporu nasazení a publikování na webu do režimu offline. Při práci s Internetová informační služba (I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: dfd3ab41e44a3b000bf2c25a5a71db4344617bf2
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e28bdea26847d4e660d6ee59b15eb38f749d2314
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>Konfigurace webového serveru pro nasazení webu publikování (Offline nasazení)
 ====================
@@ -35,7 +35,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Další informace o klíčové funkce, výhody a nevýhody těchto přístupů, najdete v části [výběr práva přístup k nasazení webu](choosing-the-right-approach-to-web-deployment.md).
 
 
-Ano, pokud vaše síťové infrastruktury nebo zabezpečení omezení brání vzdálené nasazení. Příčinou je pravděpodobně být velká písmena v internetového provozní prostředí, kde jsou webové servery izolované & #x 2014; buď fyzicky nebo pomocí brány firewall a podsítě & #x 2014; zbytek serverové infrastruktury.
+Ano, pokud vaše síťové infrastruktury nebo zabezpečení omezení brání vzdálené nasazení. Toto je nejpravděpodobnější tak v produkčním prostředí internetového, kde jsou webové servery izolované&#x2014;fyzicky nebo pomocí brány firewall a podsítě&#x2014;od zbytku serverové infrastruktury.
 
 Tento přístup stane samozřejmě méně vhodné, pokud vaše webové aplikace se aktualizují v pravidelných intervalech. Pokud vaše infrastruktura dovoluje, můžete zvážit povolení vzdáleného nasazení pomocí obslužné rutiny nasazení webu nebo webové nasazení vzdáleného agenta služby.
 
@@ -97,7 +97,7 @@ V takovém případě musíte nainstalovat tyto věci:
 7. V navigačním podokně klikněte na tlačítko **Server**.
 8. V **IIS 7 doporučená konfigurace** řádek, klikněte na tlačítko **přidat**.
 9. V **2.1 nástroj pro nasazení webového** řádek, klikněte na tlačítko **přidat**.
-10. Klikněte na tlačítko **nainstalovat**. Instalace webové platformy zobrazí seznam produktů & #x 2014; společně s všechny přidružené závislosti & #x 2014; nainstalována a zobrazí výzvu k potvrzení licenčních podmínek.
+10. Klikněte na tlačítko **nainstalovat**. Instalace webové platformy zobrazí seznam produktů&#x2014;spolu s případnými přidružené závislosti&#x2014;k instalaci a zobrazí výzvu k potvrzení licenčních podmínek.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image2.png)
 11. Přečtěte si licenční podmínky a pokud vyjadřujete svůj souhlas s podmínkami, klikněte na **souhlasím**.
@@ -171,11 +171,11 @@ I když není co můžete zastavit z nasazení obsahu na výchozí web ve služb
     > [!NOTE]
     > Ukázkové řešení vyžaduje rozhraní .NET Framework 4.0. Toto není požadavek pro nasazení webu obecně.
 
-V pořadí pro svůj web pro práci s obsahem identita fondu aplikací musí mít oprávnění ke čtení místní složky, která uloží obsah. Ve službě IIS 7.5 spusťte fondy aplikací s identitou fondu aplikací jedinečný ve výchozím nastavení (na rozdíl od předchozí verze služby IIS, kde by fondy aplikací obvykle běží pod účtem síťové služby). Identita fondu aplikací není skutečné uživatelský účet a nezobrazuje na všechny seznamy uživatelů nebo skupin & #x 2014; místo toho je vytvořen v dynamicky při spuštění fondu aplikací. Každý identita fondu aplikací se přidá do místní **IIS\_IUSRS** skupiny zabezpečení jako skrytá položka.
+V pořadí pro svůj web pro práci s obsahem identita fondu aplikací musí mít oprávnění ke čtení místní složky, která uloží obsah. Ve službě IIS 7.5 spusťte fondy aplikací s identitou fondu aplikací jedinečný ve výchozím nastavení (na rozdíl od předchozí verze služby IIS, kde by fondy aplikací obvykle běží pod účtem síťové služby). Identita fondu aplikací není skutečné uživatelský účet a nezobrazuje na všechny seznamy uživatelů nebo skupin&#x2014;místo toho se vytváří v dynamicky při spuštění fondu aplikací. Každý identita fondu aplikací se přidá do místní **IIS\_IUSRS** skupiny zabezpečení jako skrytá položka.
 
 Abyste mohli udělit oprávnění k souboru nebo složce identity fondu aplikací, máte dvě možnosti:
 
-- Přiřadit oprávnění k identitě fondu aplikací přímo, formátu **IIS AppPool\***[název fondu aplikací] * (například **IIS AppPool\DemoSite**).
+- Přiřadit oprávnění k identitě fondu aplikací přímo, formátu <strong>IIS AppPool\</ strong ><em>[název fondu aplikací]</em>(například <strong>IIS AppPool\DemoSite</strong>).
 - Přidělování oprávnění k **IIS\_IUSRS** skupiny.
 
 Většina běžný postup je přiřadit oprávnění k místní **IIS\_IUSRS** skupiny, protože tento přístup umožňuje změnit fondy aplikací bez nutnosti měnit oprávnění systému souborů. Následující postup používá tento přístup na základě skupiny.
@@ -193,8 +193,8 @@ Většina běžný postup je přiřadit oprávnění k místní **IIS\_IUSRS** s
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image8.png)
 5. V **vybrat uživatele nebo skupiny** dialogové okno, typ **IIS\_IUSRS**, klikněte na tlačítko **Kontrola názvů**a potom klikněte na **OK**.
-6. V **oprávnění pro *** [název složky]* dialogové okno, Všimněte si, že byl přiřazen do nové skupiny **čtení &amp; provést**, **zobrazovat obsah složky**, a **Čtení** oprávnění ve výchozím nastavení. Nechte beze změny a klikněte na tlačítko **OK**.
-7. Klikněte na tlačítko **OK** zavřete *[název složky] *** vlastnosti** dialogové okno.
+6. V <strong>oprávnění pro</strong><em>[název složky]</em> dialogové okno, Všimněte si, že byl přiřazen do nové skupiny <strong>čtení &amp; provést</strong>, <strong>složku seznamu obsah</strong>, a <strong>čtení</strong> oprávnění ve výchozím nastavení. Nechte beze změny a klikněte na tlačítko <strong>OK</strong>.
+7. Klikněte na tlačítko <strong>OK</strong> zavřete <em>[název složky]</em><strong>vlastnosti</strong> dialogové okno.
 
 ## <a name="disable-the-remote-agent-service"></a>Zakázat službu vzdáleného agenta
 
@@ -226,6 +226,6 @@ V tomto okamžiku je připraven pro nasazení balíčku offline webové váš we
 - Má identita fondu aplikací přístup pro čtení ke zdrojové složce pro svůj web?
 - Je nutné zastavit službu webové nasazení agenta?
 
->[!div class="step-by-step"]
-[Předchozí](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
-[další](configuring-a-database-server-for-web-deploy-publishing.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
+> [další](configuring-a-database-server-for-web-deploy-publishing.md)

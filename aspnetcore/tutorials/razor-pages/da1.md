@@ -1,7 +1,7 @@
 ---
-title: "Aktualizovat generovaného stránky"
+title: Aktualizovat generovaného stránky v aplikaci ASP.NET Core
 author: rick-anderson
-description: "Aktualizujte generovaného stránky s lepší zobrazení."
+description: Zjistěte, jak aktualizovat generovaného stránky v aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: ca6a0ac10b2675fb8e7f27bdb9d740777a5e5f4e
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 0207696af14305a1b549cf55da1b42fa99d01776
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="update-the-generated-pages"></a>Aktualizovat generovaného stránky
+# <a name="update-the-generated-pages-in-an-aspnet-core-app"></a>Aktualizovat generovaného stránky v aplikaci ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -39,8 +39,8 @@ Vyberte `using System.ComponentModel.DataAnnotations;`
 
   Visual studio. přidá `using System.ComponentModel.DataAnnotations;`.
 
-[!INCLUDE[model1](../../includes/RP/da2.md)]
+[!INCLUDE [model1](../../includes/RP/da2.md)]
 
->[!div class="step-by-step"]
-[Předchozí: Práce s SQL serveru LocalDB](xref:tutorials/razor-pages/sql)
-[přidání vyhledávání](xref:tutorials/razor-pages/search)
+> [!div class="step-by-step"]
+> [Předchozí: Práce s SQL Server LocalDB](xref:tutorials/razor-pages/sql)
+> [přidat vyhledávání](xref:tutorials/razor-pages/search)

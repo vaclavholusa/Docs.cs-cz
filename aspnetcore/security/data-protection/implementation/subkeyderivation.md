@@ -1,7 +1,7 @@
 ---
-title: "Odvození podklíčů a ověřené šifrování"
+title: Odvození podklíčů a ověřené šifrování v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument popisuje podrobnosti implementace ochrany dat ASP.NET Core podklíčů odvození a ověření šifrování."
+description: Další podrobnosti implementace ochrany dat ASP.NET Core podklíčů odvození a ověřovat šifrování.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/subkeyderivation
-ms.openlocfilehash: 4b905bbc7bb064b6ba1741557bd694c8c67ccfa8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8c83da40a524896becc07c94c01d5e2b684e4386
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="subkey-derivation-and-authenticated-encryption"></a>Odvození podklíčů a ověřené šifrování
+# <a name="subkey-derivation-and-authenticated-encryption-in-aspnet-core"></a>Odvození podklíčů a ověřené šifrování v ASP.NET Core
 
 <a name="data-protection-implementation-subkey-derivation"></a>
 
@@ -63,7 +63,7 @@ Po vygenerování K_E prostřednictvím výše mechanismus jsme generování ná
 *výstup: = keyModifier || IV || E_cbc (K_E, iv, data) || Metoda HMAC (K_H, iv || E_cbc (K_E, iv, data))*
 
 > [!NOTE]
-> `IDataProtector.Protect` Bude implementace [předřazení magic záhlaví a id klíče](authenticated-encryption-details.md) do výstupu před jeho vrácením volající. Protože jsou implicitně magic záhlaví a id klíče součástí [AAD](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation-aad), a protože klíče modifikátor předány jako vstup KDF, to znamená, že každý jednobajtová poslední vrácená datové části je ověřována MAC.
+> `IDataProtector.Protect` Bude implementace [předřazení magic záhlaví a id klíče](xref:security/data-protection/implementation/authenticated-encryption-details) do výstupu před jeho vrácením volající. Protože jsou implicitně magic záhlaví a id klíče součástí [AAD](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation-aad), a protože klíče modifikátor předány jako vstup KDF, to znamená, že každý jednobajtová poslední vrácená datové části je ověřována MAC.
 
 ## <a name="galoiscounter-mode-encryption--validation"></a>Režim Galois/čítač šifrování + ověření
 
@@ -74,4 +74,4 @@ Po vygenerování K_E prostřednictvím výše mechanismus jsme generování ná
 *výstup: = keyModifier || hodnotu Nonce || E_gcm (K_E, nonce, data) || authTag*
 
 > [!NOTE]
-> I když GCM nativně podporuje koncept AAD, jsme se stále napájení AAD pouze na původní KDF vyjádření výslovného má být předán prázdný řetězec GCM pro její parametr AAD. Důvodem je dvojí. První, [pro podporu flexibility](context-headers.md#data-protection-implementation-context-headers) jsme nikdy nechcete používat K_M přímo jako šifrovací klíč. Kromě toho GCM ukládá velmi přísná jedinečnosti požadavků na vstupy. Pravděpodobnost, že rutiny šifrování GCM někdy vyvolaná na dva nebo více distinct nastaví vstupních dat se stejným (klíč, nonce) pár nesmí být delší než 2 ^ 32. Pokud jsme opravte K_E nejde udělat víc než 2 ^ 32 operace šifrování než jsme spustit afoul o 2 ^ omezit -32. Může se to zdát jako velký počet operací, ale vysokým provozem webového serveru můžete projít 4 miliardy požadavků v pouhé dní, a to i v rámci normálního doba života pro tyto klíče. Zůstane kompatibilní 2 ^ omezení pravděpodobnosti-32, budeme nadále používat modifikátor klíče 128-bit a hodnotu nonce 96 bitů, které výrazně rozšiřuje počet operací použitelné pro jakékoli dané K_M. Pro zjednodušení návrhu sdílíme KDF kódové cestě mezi operace CBC a GCM a vzhledem k tomu, že AAD považován za KDF již není třeba předávat do rutiny GCM.
+> I když GCM nativně podporuje koncept AAD, jsme se stále napájení AAD pouze na původní KDF vyjádření výslovného má být předán prázdný řetězec GCM pro její parametr AAD. Důvodem je dvojí. První, [pro podporu flexibility](xref:security/data-protection/implementation/context-headers#data-protection-implementation-context-headers) jsme nikdy nechcete používat K_M přímo jako šifrovací klíč. Kromě toho GCM ukládá velmi přísná jedinečnosti požadavků na vstupy. Pravděpodobnost, že rutiny šifrování GCM někdy vyvolaná na dva nebo více distinct nastaví vstupních dat se stejným (klíč, nonce) pár nesmí být delší než 2 ^ 32. Pokud jsme opravte K_E nejde udělat víc než 2 ^ 32 operace šifrování než jsme spustit afoul o 2 ^ omezit -32. Může se to zdát jako velký počet operací, ale vysokým provozem webového serveru můžete projít 4 miliardy požadavků v pouhé dní, a to i v rámci normálního doba života pro tyto klíče. Zůstane kompatibilní 2 ^ omezení pravděpodobnosti-32, budeme nadále používat modifikátor klíče 128-bit a hodnotu nonce 96 bitů, které výrazně rozšiřuje počet operací použitelné pro jakékoli dané K_M. Pro zjednodušení návrhu sdílíme KDF kódové cestě mezi operace CBC a GCM a vzhledem k tomu, že AAD považován za KDF již není třeba předávat do rutiny GCM.

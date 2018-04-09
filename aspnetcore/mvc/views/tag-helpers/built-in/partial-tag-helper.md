@@ -1,7 +1,7 @@
 ---
-title: "Pomocník částečné značky ASP.NET Core"
+title: Pomocník částečné značky ASP.NET Core
 author: scottaddie
-description: "Zjistit pomocná částečné značky ASP.NET Core a roli každý z jeho atributy hrát v vykreslení částečného zobrazení."
+description: Zjistit pomocná částečné značky ASP.NET Core a roli každý z jeho atributy hrát v vykreslení částečného zobrazení.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: a9848539206892579501a39a9fce3044c6753948
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4573409720ccba524c0d5d05696e0fb3468ff338
+ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>Pomocník částečné značky ASP.NET Core
 
@@ -28,8 +28,9 @@ Podle [Scott Addie](https://github.com/scottaddie)
 
 * Vyžaduje ASP.NET Core 2.1 nebo vyšší.
 * Představuje alternativu k [pomocné rutiny HTML syntaxe](xref:mvc/views/partial#referencing-a-partial-view).
+* Asynchronně vykreslí částečné zobrazení.
 
-Chcete-li recap, možnosti pomocné rutiny HTML pro vykreslení částečného zobrazení patří:
+Možnosti pomocné rutiny HTML pro vykreslení částečného zobrazení:
 
 * [@await Html.PartialAsync](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync)
 * [@await Html.RenderPartialAsync](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.renderpartialasync)
@@ -60,7 +61,7 @@ Následující kód načte *_ProductPartial.cshtml*:
 
 Částečné zobrazení je vázán k modelu přidružené stránky `Product` vlastnost:
 
-[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Product.cshtml.cs?highlight=8)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Pages/Product.cshtml.cs?highlight=8)]
 
 ## <a name="view-data"></a>view-data
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-vb
-title: "Změna animace pomocí kódu na straně klienta (VB) | Microsoft Docs"
+title: Změna animace pomocí kódu na straně klienta (VB) | Microsoft Docs
 author: wenz
-description: "V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Animace může taky..."
+description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Animace může taky...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 83d1a21fba37d8807be467d02b5550dc7d096e6c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f9b72576cc3a9e91827cfb40983821704621060
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="changing-an-animation-using-client-side-code-vb"></a>Změna animace pomocí kódu na straně klienta (VB)
 ====================
@@ -78,6 +78,6 @@ Následující kód v JavaScriptu přiřadí JSON descripting k `OnClick` animac
 
 Animace se spustí okamžitě, bez klikněte na tlačítko myši (a s velmi malé značek) ([Kliknutím zobrazit obrázek v plné velikosti](changing-an-animation-using-client-side-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](executing-animations-using-client-side-code-vb.md)
-[další](animating-an-updatepanel-control-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](executing-animations-using-client-side-code-vb.md)
+> [další](animating-an-updatepanel-control-vb.md)

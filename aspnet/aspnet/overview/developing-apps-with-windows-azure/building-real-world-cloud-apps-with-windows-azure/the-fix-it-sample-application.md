@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
-title: "Dodatek: Opravu ho ukázkovou aplikaci (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs"
+title: 'Dodatek: Opravu ho ukázkovou aplikaci (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs'
 author: MikeWasson
-description: "Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu..."
+description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: c98e79bf8e9a1fe0899ed6d952c3e411ca472f7e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9a1fa36b34c4783b101bb27bc6931241e9251e10
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Dodatek: Opravu ho ukázkovou aplikaci (vytváření reálných cloudových aplikací s Azure)
 ====================
@@ -245,18 +245,18 @@ Spuštění aplikace vyřešit dvěma způsoby:
 
     Pomocí sady Visual Studio 2013:
 
-    1. Stisknutím klávesy F5 spusťte projekt automatickou.
-    2. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt MyFixItCloudService a pak klikněte na tlačítko **ladění** -- **spustit novou instanci**.
+   1. Stisknutím klávesy F5 spusťte projekt automatickou.
+   2. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt MyFixItCloudService a pak klikněte na tlačítko **ladění** -- **spustit novou instanci**.
 
-    Pomocí Visual Studio 2013 Express pro Web:
+      Pomocí Visual Studio 2013 Express pro Web:
 
-    1. V Průzkumníku řešení klikněte pravým tlačítkem na řešení automatickou a vyberte **vlastnosti**.
-    2. Vyberte **více projektů po spuštění**...
-    3. V **akce** rozevíracího seznamu v části MyFixIt a MyFixItCloudService, vyberte **spustit**.
-    4. Click **OK**.
-    5. Stisknutím klávesy F5 spusťte obou projektů.
+   3. V Průzkumníku řešení klikněte pravým tlačítkem na řešení automatickou a vyberte **vlastnosti**.
+   4. Vyberte **více projektů po spuštění**...
+   5. V **akce** rozevíracího seznamu v části MyFixIt a MyFixItCloudService, vyberte **spustit**.
+   6. Click **OK**.
+   7. Stisknutím klávesy F5 spusťte obou projektů.
 
-    Při spuštění MyFixItCloudService projektu sady Visual Studio spustí emulátor výpočtů v Azure. V závislosti na konfiguraci brány firewall může být nutné povolit emulátoru přes bránu firewall.
+      Při spuštění MyFixItCloudService projektu sady Visual Studio spustí emulátor výpočtů v Azure. V závislosti na konfiguraci brány firewall může být nutné povolit emulátoru přes bránu firewall.
 
 <a id="deploybase"></a>
 ## <a name="how-to-deploy-the-base-app-to-azure-app-service-web-apps-by-using-the-windows-powershell-scripts"></a>Postup nasazení základní aplikace do Azure App Service Web Apps pomocí skriptů prostředí Windows PowerShell
@@ -285,7 +285,7 @@ Tyto pokyny předpokládají jste si stáhli a řešení opravte ji spustit mís
     Tyto přihlašovací údaje vyprší po určitou dobu a budete muset znovu spustit `Add-AzureAccount` rutiny. Tato e kniha probíhá zápis, je časový limit před vypršením platnosti pověření 12 hodin.
 5. Pokud máte více předplatných, použijte rutinu Select-AzureSubscription pro určení předplatného, kterou chcete vytvořit v testovacím prostředí.
 6. Importovat certifikát správy pro stejné předplatné Azure pomocí `Get-AzurePublishSettingsFile` a `Import-AzurePublishSettingsFile` rutiny. První z těchto rutin stáhne soubor certifikátu a v druhém zadejte umístění tohoto souboru, aby bylo možné importovat. > [!IMPORTANT]
- > Zachovat stažený soubor do bezpečného umístění, nebo odstranit když jste hotovi s ní, protože obsahuje certifikát, který lze použít ke správě služeb Azure.
+   > Zachovat stažený soubor do bezpečného umístění, nebo odstranit když jste hotovi s ní, protože obsahuje certifikát, který lze použít ke správě služeb Azure.
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample22.cmd)]
 
@@ -399,5 +399,5 @@ V MyFixItCloudService\ServiceConfiguration.Cloud.cscfg nahraďte stejné dvě ho
 
 Nyní jste připraveni k nasazení cloudové služby. V řešení prozkoumat, klikněte pravým tlačítkem na projekt MyFixItCloudService a vyberte **publikovat**. Další informace najdete v tématu "[Nasaďte aplikaci do Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", což je v rámci 2 [v tomto kurzu](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
 
->[!div class="step-by-step"]
-[Předchozí](more-patterns-and-guidance.md)
+> [!div class="step-by-step"]
+> [Předchozí](more-patterns-and-guidance.md)

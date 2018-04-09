@@ -1,7 +1,7 @@
 ---
-title: "Částí aplikace v ASP.NET Core"
+title: Částí aplikace v ASP.NET Core
 author: ardalis
-description: "Další informace o použití částí aplikace, které jsou abstrakce přes prostředky aplikace, na zjištění nebo předejít přetížení funkce ze sestavení."
+description: Další informace o použití částí aplikace, které jsou abstrakce přes prostředky aplikace, na zjištění nebo předejít přetížení funkce ze sestavení.
 manager: wpickett
 ms.author: riande
 ms.date: 01/04/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: a6391dcff2edc239f611be6bac60b40de292634e
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 31ab125462da032d30ef25b45cf81a0d18212bc1
+ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="application-parts-in-aspnet-core"></a>Částí aplikace v ASP.NET Core
 
@@ -35,7 +35,7 @@ services.AddMvc()
 var assembly = typeof(Startup).GetTypeInfo().Assembly;
 var part = new AssemblyPart(assembly);
 services.AddMvc()
-    .ConfigureApplicationPartManager(apm => p.ApplicationParts.Add(part));
+    .ConfigureApplicationPartManager(apm => apm.ApplicationParts.Add(part));
 ```
 
 Ve výchozím nastavení se MVC vyhledávání strom závislosti a vyhledat řadiče (i v jiných sestavení). Načíst libovolný sestavení (například z modulu plug-in, který se odkazuje v době kompilace), můžete použít jako součást aplikace.
@@ -46,9 +46,9 @@ Pokud je sestavení obsahující řadiče nechcete používat, odeberte jej z `A
 
 ```csharp
 services.AddMvc()
-    .ConfigureApplicationPartManager(p =>
+    .ConfigureApplicationPartManager(apm =>
     {
-        var dependentLibrary = p.ApplicationParts
+        var dependentLibrary = apm.ApplicationParts
             .FirstOrDefault(part => part.Name == "DependentLibrary");
 
         if (dependentLibrary != null)
@@ -85,8 +85,8 @@ Zprostředkovatele funkce je přidaný do `Startup`:
 
 ```csharp
 services.AddMvc()
-    .ConfigureApplicationPartManager(p => 
-        p.FeatureProviders.Add(new GenericControllerFeatureProvider()));
+    .ConfigureApplicationPartManager(apm => 
+        apm.FeatureProviders.Add(new GenericControllerFeatureProvider()));
 ```
 
 Ve výchozím nastavení, Obecný řadič názvy používaných pro směrování by být ve formátu *GenericController 1 [pomůcky]* místo *pomůcky*. Upravit název tak, aby odpovídaly obecného typu používané řadičem se používá následující atribut:

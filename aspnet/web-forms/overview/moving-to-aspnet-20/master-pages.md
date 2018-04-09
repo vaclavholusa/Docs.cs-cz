@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/master-pages
-title: "Stránky předlohy | Microsoft Docs"
+title: Stránky předlohy | Microsoft Docs
 author: microsoft
-description: "Mezi klíčové součásti, které úspěšná webu je konzistentní vzhled a chování. V technologii ASP.NET 1.x, vývojáři použít uživatelské ovládací prvky replikace běžné elem. stránky..."
+description: Mezi klíčové součásti, které úspěšná webu je konzistentní vzhled a chování. V technologii ASP.NET 1.x, vývojáři použít uživatelské ovládací prvky replikace běžné elem. stránky...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: bd9effd4b73a014d4d7bb825b382b8db34d636f1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f45dd9704f665244d2a48ec000326f6e98984e4f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="master-pages"></a>Stránky předlohy
 ====================
@@ -74,7 +74,7 @@ Pokud chcete vytvořit novou stránku předlohy:
 **Obrázek 2**: vytvoření nové stránky předlohy
 
 
-Všimněte si, že přípona souboru pro hlavní stránky je *.master*. Toto je jedním ze způsobů, který na hlavní stránce se liší od obyčejnou stránky. Základní rozdíl je, že v lieu z @Page direktivy, obsahuje stránky předlohy @Master – direktiva. Přepněte do zobrazení zdroje pro hlavní stránky, které jste právě vytvořili a zkontrolujte kód.
+Všimněte si, že přípona souboru pro hlavní stránky je <em>.master</em>. Toto je jedním ze způsobů, který na hlavní stránce se liší od obyčejnou stránky. Základní rozdíl je, že v lieu z @Page direktivy, obsahuje stránky předlohy @Master – direktiva. Přepněte do zobrazení zdroje pro hlavní stránky, které jste právě vytvořili a zkontrolujte kód.
 
 Novou stránku předlohy bude mít jeden prvek ContentPlaceHolder ve výchozím nastavení. Ve většině případů je vhodnější nejprve vytvořte společné prvky stránky a pak vložení ovládacích prvků ContentPlaceHolder kde je žádoucí vlastní obsah. V takových případech bude vývojáři chcete odstranit ovládací prvek ContentPlaceHolder výchozí a vkládání nových jako vyvinutý stránky. Ovládací prvky ContentPlaceHolder nejsou s možností změny velikosti přes skutečnost, že se zobrazí úchyty. Velikosti ovládacího prvku ContentPlaceHolder automaticky podle obsahu, který obsahuje s jednou výjimkou; Pokud jste například buňky tabulky ovládacího prvku ContentPlaceHolder v blokovém elementu, bude velikost na základě velikosti elementu.
 
@@ -142,10 +142,10 @@ Nová stránka obsahu se zobrazí v sadě Visual Studio obsahuje jeden prvek obs
 
 Přidružení mezi stránky předlohy a stránky obsahu mohou být konfigurovány v jednom z znázorněné různé způsoby:
 
-- **MasterPageFile** atribut @Page – direktiva
+- <strong>MasterPageFile</strong> atribut @Page – direktiva
 - Nastavení **Page.MasterPageFile** vlastností v kódu.
--  **&lt;Stránky&gt;**  element v konfiguračním souboru aplikace (web.config v kořenové složce aplikace)
--  **&lt;Stránky&gt;**  element v konfiguračním souboru podsložky (soubor web.config v podsložce)
+- **&lt;Stránky&gt;** element v konfiguračním souboru aplikace (web.config v kořenové složce aplikace)
+- **&lt;Stránky&gt;** element v konfiguračním souboru podsložky (soubor web.config v podsložce)
 
 ## <a name="masterpagefile-attribute"></a>Atribut MasterPageFile
 
@@ -157,7 +157,7 @@ Nastavením vlastnost MasterPageFile v kódu můžete použít konkrétní strá
 
 ## <a name="using-the-ltpagesgt-element"></a>Pomocí &lt;stránky&gt; – Element
 
-Na hlavní stránce můžete nakonfigurovat pro stránky nastavením atributu masterPageFile v &lt;stránky&gt; element v souboru web.config. Při použití této metody, mějte na paměti, soubory web.config nižší ve struktuře aplikace můžete toto nastavení přepsat. Všechny atributy MasterPageFile, nastavte v @Page – direktiva bude toto nastavení také přepsat. Pomocí &lt;stránky&gt; element můžete snadno vytvořit *hlavní* stránky předlohy, který může být přepsána nastaveními v případě potřeby v konkrétní složek nebo souborů.
+Na hlavní stránce můžete nakonfigurovat pro stránky nastavením atributu masterPageFile v &lt;stránky&gt; element v souboru web.config. Při použití této metody, mějte na paměti, soubory web.config nižší ve struktuře aplikace můžete toto nastavení přepsat. Všechny atributy MasterPageFile, nastavte v @Page – direktiva bude toto nastavení také přepsat. Pomocí &lt;stránky&gt; element můžete snadno vytvořit <em>hlavní</em> stránky předlohy, který může být přepsána nastaveními v případě potřeby v konkrétní složek nebo souborů.
 
 ## <a name="properties-in-master-pages"></a>Vlastnosti stránky předlohy
 
@@ -193,7 +193,7 @@ Toto video ukazuje návod k používání vnořené hlavní stránky.
 ![](master-pages/_static/image1.png)
 
 
-[Otevřete Video přes celou obrazovku](master-pages/_static/nested1.wmv)
+[Open Full-Screen Video](master-pages/_static/nested1.wmv)
 
 
 ![Vyberte stránku předlohy](master-pages/_static/image4.jpg)

@@ -1,7 +1,7 @@
 ---
-title: "Nahrávání souborů na stránku Razor v ASP.NET Core"
+title: Nahrání souborů do stránky Razor v ASP.NET Core
 author: guardrex
-description: "Zjistěte, jak k nahrání souborů do stránky Razor."
+description: Zjistěte, jak k nahrání souborů do stránky Razor.
 manager: wpickett
 ms.author: riande
 ms.date: 09/12/2017
@@ -9,13 +9,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 184a42b3b6a458a6fbe23c4d54e03abc228b6efa
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 6f229ef625b1c7ddaffb9cb3bc7945cc31e5263c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Nahrávání souborů na stránku Razor v ASP.NET Core
+# <a name="upload-files-to-a-razor-page-in-aspnet-core"></a>Nahrání souborů do stránky Razor v ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
@@ -186,5 +186,5 @@ Děkujeme, že dokončení tohoto úvodu do stránky Razor. Děkujeme za zpětno
 * [Nahrávání souborů v ASP.NET Core](xref:mvc/models/file-uploads)
 * [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile)
 
->[!div class="step-by-step"]
-[Předchozí: ověření](xref:tutorials/razor-pages/validation)
+> [!div class="step-by-step"]
+> [Předchozí: ověření](xref:tutorials/razor-pages/validation)

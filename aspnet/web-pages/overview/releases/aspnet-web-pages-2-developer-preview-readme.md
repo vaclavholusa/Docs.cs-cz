@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/releases/aspnet-web-pages-2-developer-preview-readme
-title: "Rozhraní ASP.NET Web Pages 2 Developer Preview ReadMe | Microsoft Docs"
+title: Rozhraní ASP.NET Web Pages 2 Developer Preview ReadMe | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/14/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/aspnet-web-pages-2-developer-preview-readme
 msc.type: authoredcontent
-ms.openlocfilehash: 119265c62abb3f3110cdc7f0b94a7c9b16b4251c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a43b2b12af9cd223d8a3622239743f7c431f617
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-pages-2-developer-preview-readme"></a>Rozhraní ASP.NET Web Pages 2 Developer Preview ReadMe
 ====================
@@ -28,7 +28,7 @@ podle [Microsoft](https://github.com/microsoft)
 
 ### <a name="contents"></a>Obsah
 
-#### <a id="_Toc303701284"></a>Poznámky k instalaci
+#### <a id="_Toc303701284"></a>  Poznámky k instalaci
 
 Abyste mohli nainstalovat Web Pages 2 Developer Preview, máte tyto možnosti:
 
@@ -38,15 +38,15 @@ Abyste mohli nainstalovat Web Pages 2 Developer Preview, máte tyto možnosti:
 
 Rozhraní ASP.NET Web Pages 2 Developer Preview lze nainstalovat a spustit souběžně sdílená s 1 webové stránky ASP.NET. <a id="a"></a>Podrobnosti najdete v části "Spuštění webové stránky aplikace-souběžného" v [horní funkce v Web Pages 2 Developer Preview](https://go.microsoft.com/fwlink/?LinkID=227824).
 
-#### <a id="_Toc303701285"></a>Dokumentace
+#### <a id="_Toc303701285"></a>  Dokumentace
 
 Kurzy a další informace o webových stránkách ASP.NET, které jsou k dispozici na stránce webové stránky ASP.NET webu ([https://www.asp.net/web-pages/](../../index.md)). Informace o nových funkcích a vylepšeních v Web Pages 2 najdete v tématu [horní funkce v Web Pages 2 Developer Preview](https://go.microsoft.com/fwlink/?LinkID=227824).
 
-#### <a id="_Toc303701286"></a>Podpora
+#### <a id="_Toc303701286"></a>  Podpora
 
-<a id="_Toc209852135"></a><a id="_Toc255833657"></a>Toto je verze preview a není oficiálně podporován. Pokud máte dotazy týkající se práce s touto verzí, odešlete je na fóru rozhraní ASP.NET Web Pages ([https://forums.asp.net/1224.aspx/1?WebMatrix](https://forums.asp.net/1224.aspx/1?WebMatrix) ), kde jsou často schopen poskytnout neformální podporu členové komunity služby ASP.NET.
+<a id="_Toc209852135"></a><a id="_Toc255833657"></a> Toto je verze preview a není oficiálně podporován. Pokud máte dotazy týkající se práce s touto verzí, odešlete je na fóru rozhraní ASP.NET Web Pages ([ https://forums.asp.net/1224.aspx/1?WebMatrix ](https://forums.asp.net/1224.aspx/1?WebMatrix) ), kde jsou často schopen poskytnout neformální podporu členové komunity služby ASP.NET.
 
-#### <a id="_Toc303701287"></a>Požadavky na software
+#### <a id="_Toc303701287"></a>  Požadavky na software
 
 ASP.NET Web Pages 2 vyžaduje rozhraní .NET Framework 4. Funguje taky s verzí rozhraní .NET Framework 4.5 Developer Preview.
 
@@ -67,11 +67,11 @@ ASP.NET Web Pages 2 vyžaduje rozhraní .NET Framework 4. Funguje taky s verzí 
 
     [!code-csharp[Main](aspnet-web-pages-2-developer-preview-readme/samples/sample2.cs)]
 
- Doporučujeme však, pokud používáte nové metody ověření vstupu, nepoužívejte *ModelState.IsValid*. Místo toho struktury kódu takto: 
+  Doporučujeme však, pokud používáte nové metody ověření vstupu, nepoužívejte *ModelState.IsValid*. Místo toho struktury kódu takto: 
 
     [!code-csharp[Main](aspnet-web-pages-2-developer-preview-readme/samples/sample3.cs)]
 - **V aplikaci Internet Explorer 8 a Internet Explorer 7, nefunguje ověřování na straně klienta**. Ověřování na straně klienta nefunguje z důvodu nekompatibility s jQuery 1.6.2, který je součástí výchozí šablona projektu. (Ověřování na straně serveru funguje.).
 
-#### <a id="_Toc303701289"></a>Právní omezení
+#### <a id="_Toc303701289"></a>  Právní omezení
 
-© Microsoft Corporation. 2011. Všechna práva vyhrazena. Tento dokument je poskytován "jako-je." Informace a názory vyjádřené v tomto dokumentu včetně adres URL a dalších odkazů na internetové weby, mohou změnit bez předchozího upozornění. Můžete na sebe rizika spojená s jejím používáním.
+© 2011 Microsoft Corporation. Všechna práva vyhrazena. Tento dokument je poskytován "jako-je." Informace a názory vyjádřené v tomto dokumentu včetně adres URL a dalších odkazů na internetové weby, mohou změnit bez předchozího upozornění. Můžete na sebe rizika spojená s jejím používáním.

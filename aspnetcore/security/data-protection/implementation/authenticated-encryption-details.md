@@ -1,7 +1,7 @@
 ---
-title: "Podrobnosti o ověřené šifrování"
+title: Podrobnosti o ověřené šifrování v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument obsahuje přehled podrobnosti implementace ochrany dat ASP.NET Core ověřit šifrování."
+description: Další podrobnosti o implementaci šifrování ochrany dat ASP.NET základní ověření.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: b58f36a5f0353da69d6f1ef4db542aba8267027a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3ca5231e84156ede59793825e1a3e3bea0313055
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="authenticated-encryption-details"></a>Podrobnosti o ověřené šifrování
+# <a name="authenticated-encryption-details-in-aspnet-core"></a>Podrobnosti o ověřené šifrování v ASP.NET Core
 
 <a name="data-protection-implementation-authenticated-encryption-details"></a>
 
@@ -31,7 +31,7 @@ Formát chráněných datové části zahrnuje tři hlavní komponenty:
 
 * Id klíče 128-bit, který identifikuje klíč používaný k ochraně této konkrétní datové části.
 
-* Zbývající část chráněné datové části je [specifické pro modulu pro šifrování zapouzdřené pomocí tohoto klíče](subkeyderivation.md#data-protection-implementation-subkey-derivation). V následujícím příkladu představuje klíč AES-256-CBC + HMACSHA256 modulu pro šifrování a datové části se dále dělí: * modifikátor klíče A 128 bitů. * Na 128-bit inicializační vektor. * 48 bajtů AES-256-CBC výstupu. * HMACSHA256 ověřování značku.
+* Zbývající část chráněné datové části je [specifické pro modulu pro šifrování zapouzdřené pomocí tohoto klíče](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation). V následujícím příkladu představuje klíč AES-256-CBC + HMACSHA256 modulu pro šifrování a datové části se dále dělí: * modifikátor klíče A 128 bitů. * Na 128-bit inicializační vektor. * 48 bajtů AES-256-CBC výstupu. * HMACSHA256 ověřování značku.
 
 Ukázka chráněné datové části je zobrazený dole.
 

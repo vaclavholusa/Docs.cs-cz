@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-timer-control
-title: "[Jak na:] Použití ovládacího prvku ASP.NET AJAX časovače? | Microsoft Docs"
+title: '[Jak na:] Použití ovládacího prvku ASP.NET AJAX časovače? | Microsoft Docs'
 author: JoeStagner
-description: "Ovládací prvek AJAX časovače umožňuje část webovou stránku ASP.NET dynamicky aktualizovat v pravidelných intervalech, namísto nutnosti uživatele k provedení..."
+description: Ovládací prvek AJAX časovače umožňuje část webovou stránku ASP.NET dynamicky aktualizovat v pravidelných intervalech, namísto nutnosti uživatele k provedení...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-timer-control
 msc.type: video
-ms.openlocfilehash: e89513452b967ebffe1b145057c1a4b1e31c9dc4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9df7427ea3b6bb8f3c4249830ba5b8f967f64bc5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-aspnet-ajax-timer-control"></a>[Jak na:] Použití ovládacího prvku ASP.NET AJAX časovače?
 ====================
@@ -24,8 +24,8 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 
 Ovládací prvek AJAX časovače umožňuje část webovou stránku ASP.NET dynamicky aktualizovat v pravidelných intervalech, namísto nutnosti uživatele k provedení akce, jako kliknutím na tlačítko.
 
-[&#9654; Podívejte se na video (6 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-timer-control)
+[&#9654;Podívejte se na video (6 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-timer-control)
 
->[!div class="step-by-step"]
-[Předchozí](how-do-i-use-the-aspnet-ajax-roundedcorners-extender.md)
-[další](how-do-i-implement-the-predictive-fetch-pattern-for-ajax.md)
+> [!div class="step-by-step"]
+> [Předchozí](how-do-i-use-the-aspnet-ajax-roundedcorners-extender.md)
+> [další](how-do-i-implement-the-predictive-fetch-pattern-for-ajax.md)

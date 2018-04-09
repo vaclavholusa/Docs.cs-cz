@@ -1,7 +1,7 @@
 ---
-title: "Pomocné rutiny značky v ASP.NET Core"
+title: Pomocné rutiny značky v ASP.NET Core
 author: rick-anderson
-description: "Zjistěte, jaké jsou pomocné rutiny značky a jejich použití v ASP.NET Core."
+description: Zjistěte, jaké jsou pomocné rutiny značky a jejich použití v ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: c775eaaa521399328d157c9b7312e6fe5325c07e
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 27246ece3eaaecb708f922bcaaf05658034bce82
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Úvod do pomocné rutiny značky v ASP.NET Core 
+# <a name="tag-helpers-in-aspnet-core"></a>Pomocné rutiny značky v ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -54,10 +54,10 @@ Následující kód Razor:
 Generuje následující HTML:
 
 ```html
- <label for="Movie_Title">Title</label>
+<label for="Movie_Title">Title</label>
 ```
 
-`asp-for` Atribut je k dispozici ve `For` vlastnost [LabelTagHelper](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.labeltaghelper?view=aspnetcore-2.0). V tématu [vytváření Pomocníci značky](xref:mvc/views/tag-helpers/authoring) Další informace.
+`asp-for` Atribut je k dispozici ve `For` vlastnost [LabelTagHelper](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.labeltaghelper?view=aspnetcore-2.0). V tématu [Autor značky Pomocníci](xref:mvc/views/tag-helpers/authoring) Další informace.
 
 ## <a name="managing-tag-helper-scope"></a>Správa značka pomocná oboru
 
@@ -185,7 +185,7 @@ Na (`@`) symbol informuje Razor začátek kódu. Následující dva parametry ("
 new {@class="caption"}
 ```
 
-Slouží k reprezentaci atributy anonymní objekt. Protože **– třída** je vyhrazené klíčové slovo v jazyce C#, můžete použít `@` symbol, který má vynutit C# interpretovat "@class=" jako symbol (název vlastnosti). Do front-endu návrháře (někdo obeznámeni s HTML + CSS + JavaScript a další technologie klienta, ale není obeznámeni s C# a Razor), je většina řádku cizí. Celý řádek musí být vytvořené bez pomoci z IntelliSense.
+Slouží k reprezentaci atributy anonymní objekt. Protože <strong>– třída</strong> je vyhrazené klíčové slovo v jazyce C#, můžete použít `@` symbol, který má vynutit C# interpretovat "@class=" jako symbol (název vlastnosti). Do front-endu návrháře (někdo obeznámeni s HTML + CSS + JavaScript a další technologie klienta, ale není obeznámeni s C# a Razor), je většina řádku cizí. Celý řádek musí být vytvořené bez pomoci z IntelliSense.
 
 Pomocí `LabelTagHelper`, lze zapsat značku stejné jako:
 
@@ -265,7 +265,6 @@ Můžete přizpůsobit písma a zabarvení z **nástroje** > **možnosti** > **p
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Vytváření Pomocníci značky](xref:mvc/views/tag-helpers/authoring)
+* [Autor značky pomocné rutiny](xref:mvc/views/tag-helpers/authoring)
 * [Práce s formuláři ](xref:mvc/views/working-with-forms)
 * [TagHelperSamples na Githubu](https://github.com/dpaquette/TagHelperSamples) obsahuje ukázky značky Pomocníka pro práci s [Bootstrap](http://getbootstrap.com/).
-* [Práce s formuláři ](xref:mvc/views/working-with-forms)

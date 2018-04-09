@@ -1,7 +1,7 @@
 ---
-title: "Základy ASP.NET Core"
+title: Základy ASP.NET Core
 author: rick-anderson
-description: "Zjistit základní koncepty pro vytváření aplikací ASP.NET Core."
+description: Zjistit základní koncepty pro vytváření aplikací ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,48 +10,42 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: be37df7789354ac4ce8e373a1560366be157ffa5
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: b74870c93ea0120e43931bb75f47bab19a6de201
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
 Aplikace ASP.NET Core je konzolovou aplikaci, která vytvoří webovým serverem v jeho `Main` metoda:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs)]
 
 `Main` Vyvolá metoda `WebHost.CreateDefaultBuilder`, který odpovídá vzorci Tvůrce vytvořit hostitel webové aplikace. Tvůrce obsahuje metody, které definují webového serveru (například `UseKestrel`) a třída při spuštění (`UseStartup`). V předchozím příkladu [Kestrel](xref:fundamentals/servers/kestrel) webový server je automaticky přidělen. ASP.NET Core webového hostitele se pokusí o spuštění ve službě IIS, pokud je k dispozici. Další webové servery, jako například [HTTP.sys](xref:fundamentals/servers/httpsys), mohou být využívána volání metody odpovídající rozšíření. `UseStartup` je vysvětleno v následující části Další.
 
 `IWebHostBuilder`, návratový typ `WebHost.CreateDefaultBuilder` volání, nabízí mnoho způsobů volitelné. Některé z těchto metod zahrnují `UseHttpSys` pro hostování aplikace v HTTP.sys a `UseContentRoot` pro zadání kořenový adresář s obsahem. `Build` a `Run` metody sestavení `IWebHost` objekt, který je hostitelem aplikace a začne naslouchat požadavkům HTTP.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs)]
 
 `Main` Používá metoda `WebHostBuilder`, který odpovídá vzorci Tvůrce vytvořit hostitel webové aplikace. Tvůrce obsahuje metody, které definují webového serveru (například `UseKestrel`) a třída při spuštění (`UseStartup`). V předchozím příkladu [Kestrel](xref:fundamentals/servers/kestrel) se používá webový server. Další webové servery, jako například [WebListener](xref:fundamentals/servers/weblistener), mohou být využívána volání metody odpovídající rozšíření. `UseStartup` je vysvětleno v následující části Další.
 
 `WebHostBuilder` nabízí mnoho volitelné způsobů, včetně `UseIISIntegration` pro hostování v IIS a služby IIS Express a `UseContentRoot` pro zadání kořenový adresář s obsahem. `Build` a `Run` metody sestavení `IWebHost` objekt, který je hostitelem aplikace a začne naslouchat požadavkům HTTP.
 
----
-
+* * *
 ## <a name="startup"></a>Spuštění
 
 `UseStartup` Metodu `WebHostBuilder` Určuje `Startup` třídy pro aplikaci:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs?highlight=10&range=6-17)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs?highlight=7&range=6-17)]
 
----
-
+* * *
 `Startup` Je třída, kde můžete definovat v kanálu zpracování požadavků a které jsou nakonfigurované všechny služby potřebné pro aplikaci. `Startup` Třída musí být veřejné a musí obsahovat následující metody:
 
 ```csharp
@@ -109,7 +103,7 @@ Další informace najdete v tématu [Middleware](xref:fundamentals/middleware/in
 
 Prostředí, jako je například "Vývoj" a "Provozní", jsou hodnoty první třídy v ASP.NET Core a se dá nastavit pomocí proměnné prostředí.
 
-Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).
+Další informace najdete v tématu [pracovat s několika prostředí](xref:fundamentals/environments).
 
 ## <a name="configuration"></a>Konfigurace
 
@@ -127,7 +121,7 @@ Jádro ASP.NET podporuje protokolování rozhraní API, která funguje s různý
 
 ASP.NET Core obsahuje integrované funkce pro zpracování chyb v aplikacích, včetně stránky výjimka developer, vlastní chybové stránky, statické stav znakové stránky a spuštění zpracování výjimek.
 
-Další informace najdete v tématu [zpracování chyb](xref:fundamentals/error-handling).
+Další informace najdete v tématu [způsob zpracování chyb](xref:fundamentals/error-handling).
 
 ## <a name="routing"></a>Směrování
 
@@ -145,7 +139,7 @@ Další informace najdete v tématu [souboru zprostředkovatelé](xref:fundament
 
 Statické soubory middleware poskytuje statické soubory, jako je například HTML, CSS, image a JavaScript.
 
-Další informace najdete v tématu [práce s statické soubory](xref:fundamentals/static-files).
+Další informace najdete v tématu [pracovat s statické soubory](xref:fundamentals/static-files).
 
 ## <a name="hosting"></a>Hostování
 

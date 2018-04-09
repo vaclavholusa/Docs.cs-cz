@@ -1,7 +1,7 @@
 ---
-title: "Brání mezi skriptování (XSS) v ASP.NET Core"
+title: Zabránit mezi skriptování (XSS) v ASP.NET Core
 author: rick-anderson
-description: "Další informace o webů Skriptování a techniky pro vyřešení této chyby zabezpečení v aplikaci ASP.NET Core."
+description: Další informace o webů Skriptování a techniky pro vyřešení této chyby zabezpečení v aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: 9e54ee0b1169c01629c3cd91a378509a73c53904
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d9263a2c1bb6a376008b7d8a55864e4d15e77cee
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="preventing-cross-site-scripting-xss-in-aspnet-core"></a>Brání mezi skriptování (XSS) v ASP.NET Core
+# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Zabránit mezi skriptování (XSS) v ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -37,7 +37,7 @@ Na základní úrovni XSS funguje tak, přičemž aplikace do vkládání `<scri
 
 ## <a name="html-encoding-using-razor"></a>Kódování HTML pomocí syntaxe Razor
 
-Použít v MVC automaticky modul Razor zakóduje všechny výstup jako zdroj proměnné, pokud pracujete skutečně pevného zabránit, aby ji tak. Ji používá atribut HTML kódování pravidla při každém použití  *@*  – direktiva. Ve formátu HTML kódování atributu je nadmnožinou kódování HTML, znamená to, že nemusíte sami se týkají s jestli byste měli používat kódování HTML nebo kódování atributu HTML. Je nutné zajistit, že používáte pouze v kontextu HTML při pokusu o vložení nedůvěryhodné vstup přímo do jazyka JavaScript. Pomocníci značka bude také zakódovat vstup, které můžete použít v parametrech značky.
+Použít v MVC automaticky modul Razor zakóduje všechny výstup jako zdroj proměnné, pokud pracujete skutečně pevného zabránit, aby ji tak. Ji používá atribut HTML kódování pravidla při každém použití *@* – direktiva. Ve formátu HTML kódování atributu je nadmnožinou kódování HTML, znamená to, že nemusíte sami se týkají s jestli byste měli používat kódování HTML nebo kódování atributu HTML. Je nutné zajistit, že používáte pouze v kontextu HTML při pokusu o vložení nedůvěryhodné vstup přímo do jazyka JavaScript. Pomocníci značka bude také zakódovat vstup, které můžete použít v parametrech značky.
 
 Proveďte následující zobrazení syntaxe Razor;
 
@@ -145,7 +145,7 @@ To bude vykreslení v prohlížeči takto:
 
 ## <a name="accessing-encoders-in-code"></a>Přístup k kodéry v kódu
 
-Jsou k dispozici kódu dvěma způsoby kodéry HTML, JavaScript a adresu URL, můžete vložit pomocí [vkládání závislostí](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) nebo můžete použít výchozí kodéry, obsažené v `System.Text.Encodings.Web` oboru názvů. Pokud použijete výchozí kodéry pak veškeré použité k znak rozsahy považován za bezpečné se neprojeví – výchozí kodéry nejbezpečnější kódování pravidla možné použít.
+Jsou k dispozici kódu dvěma způsoby kodéry HTML, JavaScript a adresu URL, můžete vložit pomocí [vkládání závislostí](xref:fundamentals/dependency-injection#fundamentals-dependency-injection) nebo můžete použít výchozí kodéry, obsažené v `System.Text.Encodings.Web` oboru názvů. Pokud použijete výchozí kodéry pak veškeré použité k znak rozsahy považován za bezpečné se neprojeví – výchozí kodéry nejbezpečnější kódování pravidla možné použít.
 
 Použít konfigurovatelná kodéry prostřednictvím DI vaší konstruktory provést *HtmlEncoder*, *JavaScriptEncoder* a *UrlEncoder* parametr podle potřeby. Například;
 

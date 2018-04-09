@@ -1,7 +1,7 @@
 ---
-title: "Migrace konfigurace základní technologie ASP.NET"
+title: Migruje konfiguraci pro jádro ASP.NET
 author: ardalis
-description: "Zjistěte, jak migrovat konfigurace z projektu aplikace ASP.NET MVC do projektu aplikace ASP.NET MVC jádra."
+description: Zjistěte, jak migrovat konfigurace z projektu aplikace ASP.NET MVC do projektu aplikace ASP.NET MVC jádra.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: 6c72b324de49a03a3b2c4e96ba8886d1ed249103
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5bb89401ac54b54810fe5724b293ae8ed7e5afef
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-configuration-to-aspnet-core"></a>Migrace konfigurace základní technologie ASP.NET
+# <a name="migrate-configuration-to-aspnet-core"></a>Migruje konfiguraci pro jádro ASP.NET
 
 Podle [Steve Smith](https://ardalis.com/) a [Scott Addie](https://scottaddie.com)
 
-V předchozím článku jsme začali [migrace projektu aplikace ASP.NET MVC do architektury ASP.NET MVC základní](mvc.md). V tomto článku jsme migruje konfiguraci.
+V předchozím článku jsme začali [migrovat projektu aplikace ASP.NET MVC do architektury ASP.NET MVC základní](mvc.md). V tomto článku jsme migruje konfiguraci.
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 

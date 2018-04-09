@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
-title: "Co je nového v technologii ASP.NET a vývoj webů v sadě Visual Studio 2012 | Microsoft Docs"
+title: Co je nového v technologii ASP.NET a vývoj webů v sadě Visual Studio 2012 | Microsoft Docs
 author: rick-anderson
-description: "Nová verze sady Visual Studio přináší řadu vylepšení, které jsou zaměřené na vylepšení zkušeností a výkon při práci s technologiemi Web..."
+description: Nová verze sady Visual Studio přináší řadu vylepšení, které jsou zaměřené na vylepšení zkušeností a výkon při práci s technologiemi Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: f0818cce2a82ede80556b3471cec9d965c3e987f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 00b43cc548df44edded925521991a095ed856494
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Co je nového v technologii ASP.NET a vývoj webů v sadě Visual Studio 2012
 ====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
 > Nová verze sady Visual Studio přináší řadu vylepšení, které jsou zaměřené na vylepšení zkušeností a výkon při práci s technologiemi Web. Visual Studio editory pro šablon stylů CSS, JavaScript a HTML byl zcela renovována zahrnout mnoho podpor kód nejvíce vyžádání, jako je například technologie IntelliSense a Automatické odsazení. Z hlediska výkonu sdružování a minimalizace jsou teď integrované jako doba načítání integrované funkce snadno snížit stránky.
 > 
@@ -32,7 +32,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > Tato laboratoř vás provede procesem vylepšení a nových funkcí popsaných výše použitím malých změn na ukázkové webové aplikaci ve zdrojové složce zadané.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
 
 
 <a id="Objectives"></a>
@@ -147,7 +147,7 @@ V této úloze zjistíte, že nové volby barev šablon stylů CSS je integrová
     *Výběr barvy neprůhlednost.*
 
     > [!NOTE]
-    > Definice barvy RGBA (červená, zelená, modrá, Alpha) ve specifikaci CSS3 umožňuje definovat hodnota neprůhlednosti barvu pro jednu položku. Na rozdíl od **krytí -** podobné atribut CSS  **-**  RGBA barev je také kompatibilní s nejnovějšími prohlížeči.
+    > Definice barvy RGBA (červená, zelená, modrá, Alpha) ve specifikaci CSS3 umožňuje definovat hodnota neprůhlednosti barvu pro jednu položku. Na rozdíl od **krytí -** podobné atribut CSS **-** RGBA barev je také kompatibilní s nejnovějšími prohlížeči.
 
 <a id="Ex1Task3"></a>
 
@@ -156,7 +156,7 @@ V této úloze zjistíte, že nové volby barev šablon stylů CSS je integrová
 
 V této úloze se dozvíte, jak používat různé prohlížeče kompatibilní CSS3 fragmenty kvůli implementaci některé funkce ve vašem webu.
 
-1. V **Site.css** souboru, vyhledejte **záhlaví** šablon stylů CSS třídy definice (.header) a umístěte kurzor níže  **/ \*ohraničení radius\* /**  zástupný symbol pro přidání nové fragment kódu. Stiskněte klávesu **Enter** k zobrazení seznamu IntelliSense a typ **radius** pro filtrování seznamu. Vyberte **border-radius** možnost ze seznamu s klikněte a potom stiskněte klávesu **KARTĚ** klíč vložit fragment. Poté zadejte velikost protokolu radius v pixelech a stiskněte klávesu **Enter**. Například zadejte **15px**.
+1. V **Site.css** souboru, vyhledejte **záhlaví** šablon stylů CSS třídy definice (.header) a umístěte kurzor níže **/ \*ohraničení radius\* /** zástupný symbol pro přidání nové fragment kódu. Stiskněte klávesu **Enter** k zobrazení seznamu IntelliSense a typ **radius** pro filtrování seznamu. Vyberte **border-radius** možnost ze seznamu s klikněte a potom stiskněte klávesu **KARTĚ** klíč vložit fragment. Poté zadejte velikost protokolu radius v pixelech a stiskněte klávesu **Enter**. Například zadejte **15px**.
 
     Atributy CSS3 přidal fragmentu vykreslí zaokrouhlené ohraničení ve většině prohlížečů dodržování předpisů HTML5, včetně Mozilla a na základě WebKit prohlížeče.
 
@@ -260,7 +260,9 @@ Visual Studio nyní aktualizuje HTML otevírání nebo při zavření značky el
 1. Na **Default.aspx** přidejte **H3** element s názvem (například Visual Studio 2012 skály!).
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
+~~~
 2. Změna **H3** značky a typ **H2** nebo **H1.**
 
     Všimněte si, že koncová značka automaticky aktualizuje. Můžete také upravit koncovou značku, pokud chcete zobrazit, že počáteční značky se aktualizuje příliš.
@@ -287,10 +289,12 @@ Visual Studio teď obsahuje několik fragmenty kódu jazyka HTML5. V této úloz
 3. Aktualizujte zdroj zvuku tak, aby odkazoval na existující zvukový soubor.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
 
-    > [!NOTE]
-    > Musíte přidat zvukový soubor k řešení.
+> [!NOTE]
+> You will need to add the audio file to the solution.
+~~~
 4. Stiskněte klávesu **F5** přehrávání zvuku a spuštění tohoto webu.
 
     ![Spuštěním ovládacího prvku zvuk](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image29.png "systémem zvuk ovládacího prvku")
@@ -404,7 +408,7 @@ Tato úloha vás seznámí s některé z nových funkcí editoru jazyka JavaScri
 
     *Čítač stránky*
 3. Zavřete prohlížeč a přejděte zpátky na Visual Studio.
-4. Otevřete **JavaScript.aspx** stránky a najděte  **&lt;skriptu&gt;**  blok (zobrazené dole).
+4. Otevřete **JavaScript.aspx** stránky a najděte **&lt;skriptu&gt;** blok (zobrazené dole).
 
     Následující kód používá místní úložiště HTML5 k uložení *pageLoadCount* proměnné, která ukládá počet, kolikrát má aktuální uživatel navštívil stránky. Místní úložiště je databáze klienta klíč hodnota, zavedl se standardem HTML5. Data budou uložena v místním počítači, do prohlížeče uživatele.
 
@@ -449,8 +453,8 @@ V této úloze bude zjišťovat nové ověření JavaScript pro standardní ECMA
     ![Chybovou zprávu ověření JavaScript](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image42.png "chybovou zprávu ověření JavaScript")
 
     *Chybovou zprávu ověření JavaScript*
-3. Komentář  **&quot;použití Striktního režimu&quot;**  směr a Všimněte si, že zmizí chyby, ale zůstal upozornění.
-4. V poslední řádek souboru, zápis libovolný řetězec jako  **&quot;testování&quot;**  (včetně uvozovek to znamená, je jako řetězec). Zápis období vedle řetězec k zobrazení seznamu IntelliSense a vyberte **trim** možnost.
+3. Komentář **&quot;použití Striktního režimu&quot;** směr a Všimněte si, že zmizí chyby, ale zůstal upozornění.
+4. V poslední řádek souboru, zápis libovolný řetězec jako **&quot;testování&quot;** (včetně uvozovek to znamená, je jako řetězec). Zápis období vedle řetězec k zobrazení seznamu IntelliSense a vyberte **trim** možnost.
 
     Ve verzi ECMAScript5 standard řetězcové hodnoty a proměnné mají řetězcových metod, které jsou definované jako uvolnění dočasné paměti, velká písmena, vyhledávání a nahrazení.
 
@@ -546,28 +550,36 @@ V této úloze se dozvíte, jak povolit odkazovat připojené a minifikovaný so
     Všimněte si, že nové **Microsoft.Web.Optimization** obor názvů je označeno jako komentář na začátku souboru. Zrušením komentáře u použití direktiva k obsahují sdružování a minimalizace funkce.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
+~~~
 4. Vyhledejte **aplikace\_spustit** metoda.
 
     Tato metoda zrušte komentář u volání EnableDefaultBundles, jak je znázorněno v následujícím fragmentu. To umožňuje nám tak, aby odkazovaly připojené kolekce souborů CSS ve složce pomocí cesty ke složce, a &quot;šablon stylů CSS&quot; nebo &quot;JS&quot; příponu.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
+~~~
 5. Otevřete **Optimization.aspx** souborů a vyhledejte obsahu ovládací prvek pro **HeadContent**.
 
     Všimněte si, že soubory šablon stylů CSS a soubory JS mít jedinou značku odkazované.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
 
-    > [!NOTE]
-    > Tento kód je pro účely ukázky. V ideálním případě bude odkazovat sad v souboru Site.Master. V ukázkový kód zjistíte, že některé připojené soubory jsou také se na ně odkazovat soubor Site.Master provádění tohoto odkazu na poslední redundantní.
+> [!NOTE]
+> This code is for demo purposes. Ideally, you will reference the bundles in the Site.Master file. In this sample code, you will find that some of the bundled files are also being referenced by the Site.Master file, making this last reference redundant.
+~~~
 6. Všimněte si, že odkazy používají instalujícího názvů v **href** atribut k získání souborů CSS nebo JS ze styly a Scripts\custom složku v uvedeném pořadí.
 
     Cestu můžete použít **skripty nebo vlastní/JS** jak je uvedeno dále sady a všechny soubory JS uvnitř minifikaci **skripty nebo vlastní** složky. Toto je výchozí chování na výchozí sady.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
+~~~
 7. Otevřete **Styles\Site.css** souboru.
 
     Všimněte si, že původní soubor CSS obsahuje zobrazují odsazené kód, mezery a komentáře, které zvětšit soubor. (Také soubor JavaScript obsahuje mezery a komentáře).
@@ -609,13 +621,17 @@ V této úloze nakonfigurujete sady statické definovat určitou sadu souborů s
     Všimněte si, že nejsou soubory umístěné na stejném místě; To je Další výhodou přes výchozí sdružování.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
+~~~
 4. Otevřete **Optimization.aspx** souboru.
 
     Všimněte si, že odkaz na **statické JS sady** je pomocí cesty deklarujete při konfiguraci sady statické v souboru Global.asax.cs: **/StaticBundle**.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
+~~~
 5. Stiskněte klávesu **F5** aplikaci spustit, a potom přejděte na **optimalizace** stránky.
 6. Klikněte na **statické JS sady** odkazu k otevření souboru.
 
@@ -641,7 +657,9 @@ V tomto příkladu se dozvíte, jak používat **DynamicFolderBundle** třídy z
     Definování sady dynamické složky, který bude používat **CoffeeMinify** vlastní minimalizace procesor, které se vztahuje pouze na soubory s &quot; **.coffee** &quot; (rozšíření CoffeeScript soubory). Všimněte si, že vzor hledání můžete vybrat soubory sady ve složce, jako je třeba se\*.coffee'.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
+~~~
 3. Otevřete konzolu Správce balíčků NuGet. Chcete-li to provést, použijte nabídku **zobrazení** | **ostatní okna** | **Konzola správce balíčků**.
 4. V **Konzola správce balíčků** typ **Install-Package CoffeeSharp** a stiskněte klávesu **ENTER**.
 5. Klikněte **zobrazit všechny soubory** tlačítka na **Průzkumníku řešení** okno
@@ -659,7 +677,9 @@ V tomto příkladu se dozvíte, jak používat **DynamicFolderBundle** třídy z
     Tato třída dědí od JsMinify k minifikaci vyplývající z CoffeeScript kompilace kódu JavaScript výstup. Zavolá CoffeeScript kompilátoru nejprve generovat kód jazyka JavaScript a pak se odešle do metodu JsMinify.Process k minifikaci výsledný kód.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
+~~~
 8. Otevřete **Script1.coffee** a **Script2.coffee** souborů z **skripty nebo sady** složky.
 
     Tyto soubory bude obsahovat kód CoffeScript sestavují při provádění sdružování pomocí třídy CoffeeMinify.
@@ -677,7 +697,9 @@ V tomto příkladu se dozvíte, jak používat **DynamicFolderBundle** třídy z
     Všimněte si, že odkaz na **dynamické sady JS** odkazuje **skripty nebo sady** složky pomocí **/kávy** přípon, které jste nakonfigurovali pro sadu složek dynamické.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
+~~~
 10. Stiskněte klávesu **F5** aplikaci spustit, a potom přejděte na **optimalizace** stránky.
 11. Klikněte na **dynamické sady JS** odkazu k otevření vygenerovaný soubor.
 
@@ -703,9 +725,9 @@ Provedením tohoto testovacího prostředí Hands-On mít dozvědět, jak použ�
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Příloha A: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze  **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)** . Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *Visual Studio Express 2012 pro Web se sadou Windows Azure SDK*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 
@@ -851,14 +873,14 @@ Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vyt
     *Konfigurace nasazení webu*
 5. Připojení k databázi nakonfigurujte následujícím způsobem:
 
-    - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
-    - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
-    - V **heslo** zadejte přihlašovací heslo správce serveru.
-    - Zadejte nový název databáze, například: *MVC4SampleDB*.
+   - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
+   - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
+   - V **heslo** zadejte přihlašovací heslo správce serveru.
+   - Zadejte nový název databáze, například: *MVC4SampleDB*.
 
-    ![Konfigurace cílový připojovací řetězec](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image80.png "konfigurace cílový připojovací řetězec")
+     ![Konfigurace cílový připojovací řetězec](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image80.png "konfigurace cílový připojovací řetězec")
 
-    *Konfigurace cílový připojovací řetězec*
+     *Konfigurace cílový připojovací řetězec*
 6. Pak klikněte na tlačítko **OK**. Po zobrazení výzvy k vytvoření databáze, klikněte na tlačítko **Ano**.
 
     ![Vytvoření databáze](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image81.png "vytváření řetězec databáze")

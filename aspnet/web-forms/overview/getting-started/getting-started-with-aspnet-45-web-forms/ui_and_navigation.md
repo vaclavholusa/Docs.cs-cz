@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
-title: "Uživatelské rozhraní a navigace | Microsoft Docs"
+title: Uživatelské rozhraní a navigace | Microsoft Docs
 author: Erikre
-description: "Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme..."
+description: Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 7f1d8a1a473820a7c8da4c8086904cc41c86fd2a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d2d4101455a85c53e016e567c0cf1337642f1863
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ui-and-navigation"></a>Uživatelské rozhraní a navigace
 ====================
@@ -54,7 +54,7 @@ Tento kurz řady budete pokračovat změnou *Default.aspx* stránky. Slouží k 
     [!code-aspx[Main](ui_and_navigation/samples/sample2.aspx)]
 5. Uložit *Default.aspx* stránky tak, že vyberete **uložit Default.aspx** z **souboru** nabídky.
 
- Výsledná *Default.aspx* stránka bude vypadat takto: 
+   Výsledná *Default.aspx* stránka bude vypadat takto: 
 
 [!code-aspx[Main](ui_and_navigation/samples/sample3.aspx)]
 
@@ -62,7 +62,7 @@ V příkladu jste nastavili `Title` atribut `@Page` – direktiva. Když se zobr
 
 Příklad stránky obsahuje základní prvky, které tvoří webovou stránku ASP.NET. Tato stránka obsahuje statický text jako můžete mít na stránce HTML, společně s prvky, které jsou specifické pro technologii ASP.NET. Součástí obsahu *Default.aspx* integrovat stránky obsahu stránky předlohy, čímž se vysvětluje dále v tomto kurzu.
 
-### <a name="page-directive"></a>@Page– Direktiva
+### <a name="page-directive"></a>@Page – Direktiva
 
 Webové formuláře ASP.NET obvykle obsahují direktivy, které vám umožní zadat stránku vlastností a informace o konfiguraci pro stránku. Direktivy jsou použitý technologií ASP.NET jako pokyny, jak proces stránce, ale nejsou vykresleno jako součást kód, který je odesláno prohlížeči.
 
@@ -166,8 +166,8 @@ V tomto kurzu se změní vzhled a chování aplikace adresář Wingtip Toys nahr
 2. Klikněte pravým tlačítkem myši *bootstrap.css* souborů a přejmenujte ji na *bootstrap original.css*.
 3. Přejmenujte *bootstrap.min.css* k *bootstrap original.min.css*.
 4. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *obsahu* složky a vyberte **otevřít složku v Průzkumníku souborů**.  
- Zobrazí se Průzkumníku souborů. Stažené bootstrap soubory šablon stylů CSS uloží do tohoto umístění.
-5. V prohlížeči přejděte na [http://Bootswatch.com](http://bootswatch.com/).
+   Zobrazí se Průzkumníku souborů. Stažené bootstrap soubory šablon stylů CSS uloží do tohoto umístění.
+5. V prohlížeči přejděte na [ http://Bootswatch.com ](http://bootswatch.com/).
 6. Přejděte okna prohlížeče, dokud neuvidíte Cerulean motivu. 
 
     ![Uživatelské rozhraní a navigace - Cerulean motiv](ui_and_navigation/_static/image5.png)
@@ -176,9 +176,9 @@ V tomto kurzu se změní vzhled a chování aplikace adresář Wingtip Toys nahr
 
     ![Uživatelské rozhraní a navigace – Průzkumník řešení](ui_and_navigation/_static/image6.png)
 
- Zobrazí se dva nové soubory šablon stylů CSS v **obsahu** složka, ale Všimněte si, že na ikonu vedle názvu každého souboru je zobrazena šedě. To znamená, že soubor nebyl ještě přidán do projektu.
+   Zobrazí se dva nové soubory šablon stylů CSS v **obsahu** složka, ale Všimněte si, že na ikonu vedle názvu každého souboru je zobrazena šedě. To znamená, že soubor nebyl ještě přidán do projektu.
 9. Klikněte pravým tlačítkem myši *bootstrap.css* a *bootstrap.min.css* soubory a vyberte **zahrnout do projektu**.   
- Při spuštění aplikace adresář Wingtip Toys později v tomto kurzu, zobrazí se nové uživatelské rozhraní.
+   Při spuštění aplikace adresář Wingtip Toys později v tomto kurzu, zobrazí se nové uživatelské rozhraní.
 
 > [!NOTE] 
 > 
@@ -292,6 +292,6 @@ V tomto kurzu řady přidáte některé základní uživatelské rozhraní, graf
 [Přehled ovládacích prvků webového serveru technologie ASP.NET](https://msdn.microsoft.com/library/zsyt68f1.aspx)   
 [Kurz šablon stylů CSS](http://www.w3schools.com/css/default.asp)
 
->[!div class="step-by-step"]
-[Předchozí](create_the_data_access_layer.md)
-[další](display_data_items_and_details.md)
+> [!div class="step-by-step"]
+> [Předchozí](create_the_data_access_layer.md)
+> [další](display_data_items_and_details.md)

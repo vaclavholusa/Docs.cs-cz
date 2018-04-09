@@ -1,7 +1,7 @@
 ---
-title: "Rozšiřitelnost kryptografie jádra"
+title: Rozšiřitelnost základní kryptografie v ASP.NET Core
 author: rick-anderson
-description: "Popisuje IAuthenticatedEncryptor, IAuthenticatedEncryptorDescriptor, IAuthenticatedEncryptorDescriptorDeserializer a objektu pro vytváření nejvyšší úrovně."
+description: Další informace o IAuthenticatedEncryptor, IAuthenticatedEncryptorDescriptor, IAuthenticatedEncryptorDescriptorDeserializer a objektu pro vytváření nejvyšší úrovně.
 manager: wpickett
 ms.author: riande
 ms.date: 8/11/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: ead4012236244d88cff0b0520d000d89f93f3355
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b5a0dbc9120a8032dbb8d8eee74684495a982ac1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="core-cryptography-extensibility"></a>Rozšiřitelnost kryptografie jádra
+# <a name="core-cryptography-extensibility-in-aspnet-core"></a>Rozšiřitelnost základní kryptografie v ASP.NET Core
 
 <a name="data-protection-extensibility-core-crypto"></a>
 
@@ -123,7 +123,7 @@ Hlavní rozdíl mezi IAuthenticatedEncryptor a IAuthenticatedEncryptorDescriptor
 
 Popisovač lze serializovat přes její rutiny ExportToXml. Tato rutina vrátí XmlSerializedDescriptorInfo, který obsahuje dvě vlastnosti: reprezentace XElement popisovač a typ, který představuje [IAuthenticatedEncryptorDescriptorDeserializer](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer) může být použít tento popisovač zadaný odpovídající XElement resurrect.
 
-Serializované popisovače mohou obsahovat citlivé informace, jako je například materiál kryptografické klíče. Systém ochrany dat má integrovanou podporu pro šifrování informací před obsahuje trvalé do úložiště. Abyste mohli využívat tohoto objektu, měli označit popisovač element, který obsahuje citlivé informace s název "requiresEncryption" (xmlns "http://schemas.asp.net/2015/03/dataProtection"), hodnotu "true".
+Serializované popisovače mohou obsahovat citlivé informace, jako je například materiál kryptografické klíče. Systém ochrany dat má integrovanou podporu pro šifrování informací před obsahuje trvalé do úložiště. Abyste mohli využívat tohoto, popisovač měli označit element, který obsahuje citlivé informace s názvem "requiresEncryption atribut" (xmlns "<http://schemas.asp.net/2015/03/dataProtection>"), hodnotu "true".
 
 >[!TIP]
 > Pro nastavení tohoto atributu je pomocná rozhraní API. Volání metody rozšíření, které XElement.MarkAsRequiresEncryption() nachází v oboru názvů Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.
@@ -161,7 +161,7 @@ AlgorithmConfiguration si můžete představit jako objekt pro vytváření nejv
 
 Když je volána CreateNewDescriptor, výhradně pro toto volání se vytvoří nový materiál klíče a vytváří nové IAuthenticatedEncryptorDescriptor který zabalí tuto materiál klíče a algoritmické informace požadované pro využívat materiál. Materiál klíče může vytvořit v softwaru (a uchovávat v paměti), může být vytvořen a uchovávat v modulu hardwarového zabezpečení a tak dále. Je velmi důležitý bod je, že jakékoli dvě volání CreateNewDescriptor by nikdy vytvořit ekvivalentní IAuthenticatedEncryptorDescriptor instance.
 
-Typ AlgorithmConfiguration slouží jako vstupní bod pro vytvoření klíče rutiny jako [automatické klíč vrácení](../implementation/key-management.md#key-expiration-and-rolling). Chcete-li změnit implementaci pro všechny budoucí klíče, nastavte vlastnost AuthenticatedEncryptorConfiguration v KeyManagementOptions.
+Typ AlgorithmConfiguration slouží jako vstupní bod pro vytvoření klíče rutiny jako [automatické klíč vrácení](xref:security/data-protection/implementation/key-management#key-expiration-and-rolling). Chcete-li změnit implementaci pro všechny budoucí klíče, nastavte vlastnost AuthenticatedEncryptorConfiguration v KeyManagementOptions.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
 
@@ -173,6 +173,6 @@ IAuthenticatedEncryptorConfiguration si můžete představit jako objekt pro vyt
 
 Když je volána CreateNewDescriptor, výhradně pro toto volání se vytvoří nový materiál klíče a vytváří nové IAuthenticatedEncryptorDescriptor který zabalí tuto materiál klíče a algoritmické informace požadované pro využívat materiál. Materiál klíče může vytvořit v softwaru (a uchovávat v paměti), může být vytvořen a uchovávat v modulu hardwarového zabezpečení a tak dále. Je velmi důležitý bod je, že jakékoli dvě volání CreateNewDescriptor by nikdy vytvořit ekvivalentní IAuthenticatedEncryptorDescriptor instance.
 
-Typ IAuthenticatedEncryptorConfiguration slouží jako vstupní bod pro vytvoření klíče rutiny jako [automatické klíč vrácení](../implementation/key-management.md#key-expiration-and-rolling). Chcete-li změnit implementaci pro všechny budoucí klíče, zaregistrujte typu singleton IAuthenticatedEncryptorConfiguration v kontejneru služby.
+Typ IAuthenticatedEncryptorConfiguration slouží jako vstupní bod pro vytvoření klíče rutiny jako [automatické klíč vrácení](xref:security/data-protection/implementation/key-management#key-expiration-and-rolling). Chcete-li změnit implementaci pro všechny budoucí klíče, zaregistrujte typu singleton IAuthenticatedEncryptorConfiguration v kontejneru služby.
 
 ---

@@ -1,7 +1,7 @@
 ---
 title: Globalizace a lokalizace v ASP.NET Core
 author: rick-anderson
-description: "Zjistěte, jak ASP.NET Core poskytuje služby a middleware pro lokalizaci obsahu do různých jazyků a kultur."
+description: Zjistěte, jak ASP.NET Core poskytuje služby a middleware pro lokalizaci obsahu do různých jazyků a kultur.
 manager: wpickett
 ms.author: riande
 ms.date: 01/14/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: eb31bd81c5c3da27c8d412462d1c537aa85e4f8b
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 3ae73cb40b4db492883f302aeb559b9606aa8ee7
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -91,8 +91,8 @@ Pokud chcete používat soubor sdílený prostředek v zobrazení, Vložit `IHtm
 
 Lokalizace DataAnnotations chybové zprávy s `IStringLocalizer<T>`. Pomocí možnosti `ResourcesPath = "Resources"`, chyba zprávy v `RegisterViewModel` mohou být uloženy v některém z následujících cestách:
 
-* Resources/ViewModels.Account.RegisterViewModel.fr.resx
-* Resources/ViewModels/Account/RegisterViewModel.fr.resx
+* *Resources/ViewModels.Account.RegisterViewModel.fr.resx*
+* *Resources/ViewModels/Account/RegisterViewModel.fr.resx*
 
 [!code-csharp[](localization/sample/Localization/ViewModels/Account/RegisterViewModel.cs?start=9&end=26)]
 
@@ -114,9 +114,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-V kódu, který předchází `SharedResource` je třída odpovídající resx, kde jsou uložené ověřovacích zpráv. Při tomto postupu se bude používat jenom DataAnnotations `SharedResource`, namísto prostředků pro každou třídu. 
+V kódu, který předchází `SharedResource` je třída odpovídající resx, kde jsou uložené ověřovacích zpráv. Při tomto postupu se bude používat jenom DataAnnotations `SharedResource`, namísto prostředků pro každou třídu.
 
-## <a name="provide-localized-resources-for-the-languages-and-cultures-you-support"></a>Zadejte lokalizované prostředky pro jazyků a kultur, které podporujete  
+## <a name="provide-localized-resources-for-the-languages-and-cultures-you-support"></a>Zadejte lokalizované prostředky pro jazyků a kultur, které podporujete
 
 ### <a name="supportedcultures-and-supporteduicultures"></a>SupportedCultures a SupportedUICultures
 
@@ -172,17 +172,25 @@ Pokud nepoužijete `ResourcesPath` možnost, *RESX* soubor pro zobrazení by nac
 
 ## <a name="culture-fallback-behavior"></a>Chování záložní jazykovou verzi
 
+Při hledání prostředku, lokalizace mezi "alternativního národního prostředí". Od požadovanou jazykovou verzi, pokud nebyl nalezen, se vrátí do nadřazené jazyková verze této jazykové verze. Jako vyhraďte [CultureInfo.Parent](/dotnet/api/system.globalization.cultureinfo.parent) vlastnost představuje nadřazenou jazykovou verzi. To obvykle (ale ne vždy) znamená national signifier odebráním ISO. Požadovaný dialekt Španělština používaný v Mexico je například "es-MX". Má nadřazený "es"&mdash;španělské nespecifickou do kterékoli zemi.
+
+Představte si, že vaše lokalita obdrží požadavek pro prostředek "Vítá", s využitím jazykové verze "fr-CA". Lokalizace systému hledá v následujících zdrojích v pořadí a vybere na první shodu:
+
+* *Welcome.fr-CA.resx*
+* *Welcome.fr.resx*
+* *Welcome.resx* (Pokud `NeutralResourcesLanguage` je "fr-CA")
+
 Jako příklad Pokud odeberete označení culture ".fr" a budete mít jazykové verze nastavte na francouzštinu, výchozí soubor prostředků je pro čtení a jsou lokalizované řetězce. Správce prostředků označí výchozí nebo záložní prostředku pro Pokud nic splňuje vaše požadovanou jazykovou verzi. Pokud chcete právě vracet klíč chybí prostředek pro požadovanou jazykovou verzi můžete nesmí mít výchozí soubor prostředků.
 
 ### <a name="generate-resource-files-with-visual-studio"></a>Generovat soubory prostředků pomocí sady Visual Studio
 
-Pokud vytvoříte soubor prostředků v sadě Visual Studio bez jazykové verzi v názvu souboru (například *Welcome.resx*), s vlastností pro každý řetězec třída C# vytvoří sada Visual Studio. Který je obvykle není co chcete s ASP.NET Core; Obvykle nebudete mít výchozí *RESX* souboru prostředků (A *RESX* soubor bez název jazykové verze). Doporučujeme vám vytvořit *RESX* soubor s názvem jazykové verze (například *Welcome.fr.resx*). Při vytváření *RESX* soubor s názvem jazykovou verzi sady Visual Studio nebude generovat soubor třídy. Očekáváme, že se celá řada vývojářů **není** vytvořte soubor výchozí jazyk prostředků.
+Pokud vytvoříte soubor prostředků v sadě Visual Studio bez jazykové verzi v názvu souboru (například *Welcome.resx*), s vlastností pro každý řetězec třída C# vytvoří sada Visual Studio. Který je obvykle není co chcete s ASP.NET Core. Obvykle nebudete mít výchozí *RESX* souboru prostředků ( *RESX* soubor bez název jazykové verze). Doporučujeme vám vytvořit *RESX* soubor s názvem jazykové verze (například *Welcome.fr.resx*). Při vytváření *RESX* soubor s názvem jazykovou verzi sady Visual Studio nebude generovat soubor třídy. Očekáváme, že celá řada vývojářů nevytvoří soubor výchozí jazyk prostředků.
 
 ### <a name="add-other-cultures"></a>Přidání nových jazykových verzí
 
-Každá kombinace jazyka a jazykovou verzi (jiné než výchozí jazyk) vyžaduje jedinečný soubor prostředků. Soubory prostředků jiných jazykových verzí a národní prostředí vytvoříte tak, že vytvoříte nové soubory prostředků, ve kterých jsou ISO kód jazyka součástí názvu souboru (například **en-us**, **fr-ca**, a  **en-gb**). Tyto kódy ISO jsou umístěny mezi název souboru a *RESX* souboru příponu názvu, jako v *Welcome.es MX.resx* (španělština/Mexico). Chcete-li zadat neutrální jazyk, odeberte kód země (`MX` v předchozím příkladu). Název souboru jazykově neutrální španělské prostředku je *Welcome.es.resx*.
+Každá kombinace jazyka a jazykovou verzi (jiné než výchozí jazyk) vyžaduje jedinečný soubor prostředků. Soubory prostředků jiných jazykových verzí a národní prostředí vytvoříte tak, že vytvoříte nové soubory prostředků, ve kterých jsou ISO kód jazyka součástí názvu souboru (například **en-us**, **fr-ca**, a  **en-gb**). Tyto kódy ISO jsou umístěny mezi název souboru a *RESX* souboru rozšíření, jako v *Welcome.es MX.resx* (španělština/Mexico).
 
-## <a name="implement-a-strategy-to-select-the-languageculture-for-each-request"></a>Implementace strategie pro vyberte jazyk nebo jazykovou verzi pro každý požadavek  
+## <a name="implement-a-strategy-to-select-the-languageculture-for-each-request"></a>Implementace strategie pro vyberte jazyk nebo jazykovou verzi pro každý požadavek
 
 ### <a name="configure-localization"></a>Konfigurace lokalizace
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs
-title: "Vytváření vzájemně se vylučuje zaškrtávací políčka (C#) | Microsoft Docs"
+title: Vytváření vzájemně se vylučuje zaškrtávací políčka (C#) | Microsoft Docs
 author: wenz
-description: "Když může vybrat pouze jeden ze sady možností, přepínače se obvykle používají. Nevýhodou, když je: Jakmile jeden ve skupině přepínače,..."
+description: 'Když může vybrat pouze jeden ze sady možností, přepínače se obvykle používají. Nevýhodou, když je: Jakmile jeden ve skupině přepínače,...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e165c3784b246effcaeafc0ad4274bc0ca81a99c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c3a5abe7d02ace16f4aaad8d4adfbd0cba8e84ef
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-mutually-exclusive-checkboxes-c"></a>Vytváření vzájemně se vylučuje zaškrtávací políčka (C#)
 ====================
@@ -54,5 +54,5 @@ Uložte a spuštění stránky: můžete zkontrolovat a zrušit zaškrtnutí obo
 
 Může být pouze jeden zaškrtnuto současně ([Kliknutím zobrazit obrázek v plné velikosti](creating-mutually-exclusive-checkboxes-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Další](creating-mutually-exclusive-checkboxes-vb.md)
+> [!div class="step-by-step"]
+> [Next](creating-mutually-exclusive-checkboxes-vb.md)

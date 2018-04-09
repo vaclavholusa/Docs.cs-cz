@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/creating-a-basic-web-forms-page
-title: "Vytvoření základní technologie ASP.NET 4.5 webové stránky formuláře v sadě Visual Studio 2013 | Microsoft Docs"
+title: Vytvoření základní technologie ASP.NET 4.5 webové stránky formuláře v sadě Visual Studio 2013 | Microsoft Docs
 author: Erikre
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/03/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 6b699cc939292b7ab0167dba7cfa6a00b681ef3a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0dbd3063c9be3564637fad34e60f62c1662dcc07
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>Vytvoření základní technologie ASP.NET 4.5 webové stránky formuláře v sadě Visual Studio 2013
 ====================
@@ -201,8 +201,8 @@ Visual Studio nabízí různé způsoby, jak nastavit vlastnosti ovládacích pr
 
     > [!NOTE] 
     > 
-    > Všechny ovládací prvky jsou uvnitř **formuláře** element, který má také atribut **runat =&quot;server&quot;**. **Runat =&quot;server&quot;**  atribut a **asp:** předponu značky ovládacího prvku značí ovládací prvky tak, aby se při spuštění stránky zpracovány na serveru pomocí technologie ASP.NET. Kód vně  **&lt;formuláři runat =&quot;server&quot; &gt;**  a  **&lt;skript runat =&quot;server&quot; &gt;**  elementy odeslán nezměněn do prohlížeče, což je důvod, proč kódu ASP.NET musí být uvnitř elementu, jehož počáteční značka obsahuje **runat =&quot;server&quot;**  atribut.
-4. V dalším kroku přidejte další vlastnosti [popisek](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) ovládacího prvku. Umístěte kurzor přímo po **asp: Label** v  **&lt;asp: Label&gt;**  značku a potom stiskněte klávesu **MEZERNÍK**.
+    > Všechny ovládací prvky jsou uvnitř **formuláře** element, který má také atribut **runat =&quot;server&quot;**. **Runat =&quot;server&quot;**  atribut a **asp:** předponu značky ovládacího prvku značí ovládací prvky tak, aby se při spuštění stránky zpracovány na serveru pomocí technologie ASP.NET. Kód vně **&lt;formuláři runat =&quot;server&quot; &gt;** a **&lt;skript runat =&quot;server&quot; &gt;** elementy odeslán nezměněn do prohlížeče, což je důvod, proč kódu ASP.NET musí být uvnitř elementu, jehož počáteční značka obsahuje **runat =&quot;server&quot;**  atribut.
+4. V dalším kroku přidejte další vlastnosti [popisek](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) ovládacího prvku. Umístěte kurzor přímo po **asp: Label** v **&lt;asp: Label&gt;** značku a potom stiskněte klávesu **MEZERNÍK**.
 
     Zobrazí se zobrazí seznam dostupných vlastností můžete nastavit pro rozevírací seznam [popisek](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) ovládacího prvku. Tato funkce označuje jako **IntelliSense**, pomáhá v **zdroj** zobrazení se syntaxí ovládací prvky serveru, elementů HTML a dalších položek na stránce. Následující obrázek ukazuje **IntelliSense** rozevíracího seznamu pro [popisek](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) ovládacího prvku.
 
@@ -214,7 +214,7 @@ Visual Studio nabízí různé způsoby, jak nastavit vlastnosti ovládacích pr
     > [!NOTE] 
     > 
     > Můžete zobrazit **IntelliSense** rozevíracího seznamu kdykoli stisknutím **CTRL + J** při zobrazení kódu.
-6. Vyberte barvu pro  **[popisek](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)**  text ovládacího prvku. Ujistěte se, zda že jste vybrali barvu, která je dostatečně tmavý ke čtení proti bílé pozadí.
+6. Vyberte barvu pro **[popisek](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)** text ovládacího prvku. Ujistěte se, zda že jste vybrali barvu, která je dostatečně tmavý ke čtení proti bílé pozadí.
 
     **ForeColor** atribut byla dokončena s barvu, která jste vybrali, včetně uzavírací uvozovky.
 
@@ -231,7 +231,7 @@ V tomto návodu budete psát kód, který čte jméno, které uživatel zadá do
 2. Dvakrát klikněte [tlačítko](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) ovládacího prvku.
 
     Ve výchozím nastavení, Visual Studio se přepne do souboru kódu na pozadí a vytvoří "kostra" obslužnou rutinu pro [tlačítko](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) výchozí událost ovládacího prvku [klikněte na tlačítko](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) událostí. Soubor kódu odděluje váš kód uživatelského rozhraní (například HTML) z vašeho kódu serveru (například C#).   
-Kurzor je nastavený přidat kód pro této obslužné rutiny události.
+   Kurzor je nastavený přidat kód pro této obslužné rutiny události.
 
     > [!NOTE] 
     > 
@@ -247,7 +247,7 @@ Kurzor je nastavený přidat kód pro této obslužné rutiny události.
 
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample2.vb?highlight=2)]
 5. Přepněte zpět na zobrazení **zdroj** zobrazení vaší značka jazyka HTML, kliknutím pravým tlačítkem na *FirstWebPage.aspx* v **Průzkumníku řešení** a výběrem **zobrazení Značka**.
-6. Přejděte k položce  **&lt;asp: tlačítko&gt;**  element. Všimněte si, že  **&lt;asp: tlačítko&gt;**  element má nyní atribut **onclick =&quot;Button1\_klikněte na tlačítko&quot;**.
+6. Přejděte k položce **&lt;asp: tlačítko&gt;** element. Všimněte si, že **&lt;asp: tlačítko&gt;** element má nyní atribut **onclick =&quot;Button1\_klikněte na tlačítko&quot;**.
 
     Tento atribut váže na tlačítko [klikněte na tlačítko](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) událostí na metodu obslužné rutiny programového v předchozím kroku.
 
@@ -268,7 +268,7 @@ Nyní můžete otestovat serverové ovládací prvky na stránce.
     Zadaný název se zobrazí v [popisek](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) ovládacího prvku. Všimněte si, že když kliknete na tlačítko, je stránka vrácena na webový server. ASP.NET pak znovu vytvoří stránku, spustí váš kód (v takovém případě [tlačítko](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) ovládacího prvku [klikněte na tlačítko](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) spustí obslužnou rutinu události) a poté odešle novou stránku v prohlížeči. Pokud sledujete stavového řádku v prohlížeči, uvidíte, že stránka vytváří dobu odezvy na webový server pokaždé, když kliknete na tlačítko.
 3. V prohlížeči zobrazit zdroj stránce spustíte tak, že kliknete pravým tlačítkem na stránku a výběr **zobrazit zdroj**.
 
-    Ve zdrojovém kódu stránky zobrazí bez jakékoli serveru kódu HTML. Konkrétně se nezobrazí  **&lt;asp:&gt;**  prvky, které jste pracovali v **zdroj** zobrazení. Při spuštění stránky ASP.NET zpracovává ovládací prvky serveru a vykreslí prvků HTML na stránku, které provádějí funkce, které představují ovládací prvek. Například  **&lt;asp: tlačítko&gt;**  vykreslení ovládacího prvku jako kód HTML  **&lt;typ vstupu =&quot;odeslání&quot; &gt;**  element.
+    Ve zdrojovém kódu stránky zobrazí bez jakékoli serveru kódu HTML. Konkrétně se nezobrazí **&lt;asp:&gt;** prvky, které jste pracovali v **zdroj** zobrazení. Při spuštění stránky ASP.NET zpracovává ovládací prvky serveru a vykreslí prvků HTML na stránku, které provádějí funkce, které představují ovládací prvek. Například **&lt;asp: tlačítko&gt;** vykreslení ovládacího prvku jako kód HTML **&lt;typ vstupu =&quot;odeslání&quot; &gt;** element.
 4. Zavřete prohlížeč.
 
 
@@ -297,7 +297,7 @@ V této části přidáte [System.Web.UI.WebControls.Calendar](https://msdn.micr
 4. Z **vyberte schéma** vyberte **jednoduché** a pak klikněte na **OK**.
 5. Přepnout na **zdroj** zobrazení.
 
-    Můžete zobrazit  **&lt;asp: kalendáře&gt;**  element. Tento element je mnohem delší než elementy pro jednoduché ovládací prvky, které jste vytvořili dříve. Také obsahuje dílčí prvky, jako například  **&lt;WeekEndDayStyle&gt;**, které představují různé nastavení formátování. Následující obrázek ukazuje [kalendáře](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) řídit ve **zdroj** zobrazení. (Přesný kód, který se zobrazí v **zdroj** zobrazení může mírně lišit od na obrázku.)
+    Můžete zobrazit **&lt;asp: kalendáře&gt;** element. Tento element je mnohem delší než elementy pro jednoduché ovládací prvky, které jste vytvořili dříve. Také obsahuje dílčí prvky, jako například  **&lt;WeekEndDayStyle&gt;**, které představují různé nastavení formátování. Následující obrázek ukazuje [kalendáře](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) řídit ve **zdroj** zobrazení. (Přesný kód, který se zobrazí v **zdroj** zobrazení může mírně lišit od na obrázku.)
 
     ![V ovládacím prvku v zobrazení zdroje kalendář](creating-a-basic-web-forms-page/_static/image15.png "v ovládacím prvku v zobrazení zdroje kalendář")
 
@@ -316,10 +316,12 @@ V této části, bude program [kalendáře](https://msdn.microsoft.com/library/s
 2. Dokončit [SelectionChanged](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selectionchanged.aspx) obslužné rutiny události s následujícím kódem.
 
 
-    [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
+~~~
+[!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
 
 
-    [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
+[!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
+~~~
 
  Ve výše uvedeném kódu nastaví textový popisek ovládacího prvku na vybraným datem ovládacího prvku kalendář.
 

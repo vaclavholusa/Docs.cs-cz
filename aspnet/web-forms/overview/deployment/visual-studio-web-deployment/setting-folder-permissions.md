@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/setting-folder-permissions
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: nastavení oprávnění ke složkám | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nastavení oprávnění ke složkám | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/setting-folder-permissions
 msc.type: authoredcontent
-ms.openlocfilehash: 19bef5ff97fd5b79135df8ca9bd6bd316594cc5e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7efe267975835e889950983126088f1b637c28fb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-setting-folder-permissions"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nastavení oprávnění ke složkám
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -77,6 +77,6 @@ V tomto příkladu se poměrně zřejmé důvod, proč nebylo možné uložit so
 
 Další informace o tom, jak udělit oprávnění k identity fondu aplikací najdete v tématu [identity fondu aplikací součásti](https://www.iis.net/learn/manage/configuring-security/application-pool-identities) a [zabezpečený obsah ve službě IIS prostřednictvím systému seznamy ACL v souborech](https://www.iis.net/learn/get-started/planning-for-security/secure-content-in-iis-through-file-system-acls) na webu IIS.net.
 
->[!div class="step-by-step"]
-[Předchozí](deploying-to-iis.md)
-[další](deploying-to-production.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-to-iis.md)
+> [další](deploying-to-production.md)

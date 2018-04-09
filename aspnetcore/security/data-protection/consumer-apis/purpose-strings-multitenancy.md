@@ -1,7 +1,7 @@
 ---
-title: "Účel řetězců v ASP.NET Core"
+title: Účel hierarchie a víceklientský v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument popisuje účel řetězec hierarchie a víceklientský ve vztahu k ochrany dat ASP.NET Core rozhraní API."
+description: Další informace o účelu řetězec hierarchie a víceklientský ve vztahu k rozhraní API ASP.NET Core Data Protection.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/purpose-strings-multitenancy
-ms.openlocfilehash: 490896563db514aba3904b01e69a23b61659d830
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a1ca2c32f95a86b877cbbe94d106d23b86800443
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="purpose-hierarchy-and-multi-tenancy-in-aspnet-core"></a>Účel hierarchie a víceklientský v ASP.NET Core
 
 Protože `IDataProtector` implicitně je také `IDataProtectionProvider`, účely dají se propojit. V tomto smyslu `provider.CreateProtector([ "purpose1", "purpose2" ])` je ekvivalentní `provider.CreateProtector("purpose1").CreateProtector("purpose2")`.
 
-To umožňuje některé zajímavé hierarchické vztahy prostřednictvím systému ochrany dat. V dřívějších příkladu [Contoso.Messaging.SecureMessage](purpose-strings.md#data-protection-contoso-purpose), můžete volat komponentu SecureMessage `provider.CreateProtector("Contoso.Messaging.SecureMessage")` jednou počáteční a mezipaměti výsledek do privátního `_myProvide` pole. Budoucí ochrany mohou být vytvořeny prostřednictvím volání `_myProvider.CreateProtector("User: username")`, a tato ochrana se použije pro zabezpečení jednotlivých zpráv.
+To umožňuje některé zajímavé hierarchické vztahy prostřednictvím systému ochrany dat. V dřívějších příkladu [Contoso.Messaging.SecureMessage](xref:security/data-protection/consumer-apis/purpose-strings#data-protection-contoso-purpose), můžete volat komponentu SecureMessage `provider.CreateProtector("Contoso.Messaging.SecureMessage")` jednou počáteční a mezipaměti výsledek do privátního `_myProvide` pole. Budoucí ochrany mohou být vytvořeny prostřednictvím volání `_myProvider.CreateProtector("User: username")`, a tato ochrana se použije pro zabezpečení jednotlivých zpráv.
 
 To může také překlopit. Zvažte jednu logickou aplikaci, které hostitele více klientů (systém správy obsahu zdá se, že přiměřené) a každý klient můžete nakonfigurovat vlastní ověřování a stavu systému správy. Aplikace zastřešující má jednoho hlavní zprostředkovatele, a volá `provider.CreateProtector("Tenant 1")` a `provider.CreateProtector("Tenant 2")` poskytnout vlastní izolované řez systému ochrany dat každého klienta. Klienti potom může odvozena vlastní jednotlivých ochrany na základě svých vlastních potřeb, ale bez ohledu na to, jak pevného snaží uživatel nemůže vytvořit ochrany, které jsou v konfliktu s žádným jiným klientem v systému. Graficky to je reprezentována jako níže.
 

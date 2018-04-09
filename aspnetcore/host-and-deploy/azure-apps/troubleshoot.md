@@ -1,7 +1,7 @@
 ---
-title: "Řešení potíží s ASP.NET Core v Azure App Service"
+title: Řešení potíží s ASP.NET Core v Azure App Service
 author: guardrex
-description: "Zjistěte, jak k diagnostikování problémů s nasazením ASP.NET Core Azure App Service."
+description: Zjistěte, jak k diagnostikování problémů s nasazením ASP.NET Core Azure App Service.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: e6a8404d3fe96a0136d7f874107b2cdf63e8e890
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 47056c80c7abf5dd5ad5ae96af7b821d31b21b8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Řešení potíží s ASP.NET Core v Azure App Service
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 Tento článek obsahuje pokyny o tom, jak diagnostikovat ASP.NET Core problém při spuštění aplikace pomocí diagnostických nástrojů Azure App Service. Další pomoc při řešení potíží, najdete v části [Přehled služby Azure App Service diagnostics](/azure/app-service/app-service-diagnostics) a [postup: monitorování aplikací ve službě Azure App Service](/azure/app-service/web-sites-monitor) v dokumentaci k Azure.
 
@@ -105,9 +105,9 @@ Protokol stdout ASP.NET Core modulu zaznamenává často užitečné chybové zp
 1. Vyberte **Uložit** k uložení souboru.
 
 > [!WARNING]
-> Nepodařilo se zakázat protokol stdout může vést k selhání aplikace nebo serveru. Neexistuje žádné omezení velikosti souboru protokolu nebo počet soubory protokolů vytvořené.
+> Nepodařilo se zakázat protokol stdout může vést k selhání aplikace nebo serveru. Neexistuje žádné omezení velikosti souboru protokolu nebo počet soubory protokolů vytvořené. Používejte pouze stdout protokolování pro řešení problémů při spuštění aplikace.
 >
-> Pro běžné protokolování v aplikaci ASP.NET Core, použijte knihovnu protokolování, který omezuje velikost souboru protokolu a otočí protokoly. Další informace najdete v tématu [poskytovatelů třetích stran protokolování](xref:fundamentals/logging/index#third-party-logging-providers).
+> Pro obecné protokolování v aplikaci ASP.NET Core po spuštění, použijte knihovnu protokolování, který omezuje velikost souboru protokolu a otočí protokoly. Další informace najdete v tématu [poskytovatelů třetích stran protokolování](xref:fundamentals/logging/index#third-party-logging-providers).
 
 ## <a name="common-startup-errors"></a>Běžné chyby při spuštění 
 

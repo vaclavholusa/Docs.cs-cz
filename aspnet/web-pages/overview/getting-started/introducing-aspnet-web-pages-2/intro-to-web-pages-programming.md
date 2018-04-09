@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
-title: "Představení technologie ASP.NET Web Pages – programování základy | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages – programování základy | Microsoft Docs
 author: tfitzmac
-description: "V tomto kurzu získáte přehled o programu na webových stránkách ASP.NET se syntaxí Razor. Co se dozvíte: základní syntaxe, Razor, který používáte pro pr..."
+description: 'V tomto kurzu získáte přehled o programu na webových stránkách ASP.NET se syntaxí Razor. Co se dozvíte: základní syntaxe, Razor, který používáte pro pr...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/17/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: eed07f4f8a13ea9082ab3aad3e3db24febff8ef6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3e2c990a6451c13e03baafa343df156b2d46d219
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a>Představení technologie ASP.NET Web Pages – základy programování
 ====================
@@ -103,7 +103,7 @@ Nejste omezeno na proměnné, ale. Zde několik instancí znak @ předchází v�
 
 - @(\*b) vykreslí produktu ať jsou v proměnné a a b. ( \* Operátor znamená násobení.)
 - @(technologie + "" + produktu) vykreslí po zřetězení je a přidání mezery v rozmezí hodnot v proměnných technologie a produktu. Operátor (+) pro zřetězení řetězců je stejný jako operátor pro přidání čísla. ASP.NET lze obvykle zjistit, zda pracujete s čísla nebo řetězce a správné funkci s + – operátor.
-- @Request.Urlvykreslí vlastnost adresa Url objektu požadavku. Objekt žádosti obsahuje informace o aktuálním požadavku z prohlížeče a samozřejmě vlastnost adresa Url obsahuje adresu URL aktuální žádosti.
+- @Request.Url vykreslí vlastnost adresa Url objektu požadavku. Objekt žádosti obsahuje informace o aktuálním požadavku z prohlížeče a samozřejmě vlastnost adresa Url obsahuje adresu URL aktuální žádosti.
 
 V příkladu je navržen tak, aby ukazují, že můžete pracovat různými způsoby. Můžete provádět výpočty v bloku kódu v horní části, put výsledků do proměnné a následnému vykreslení proměnné v kódu. Nebo můžete provést výpočtů v práva výraz ve značkách. Přístupů, které použijete, závisí na jaké úlohy a do určité míry, na vlastní předvolby.
 
@@ -165,7 +165,7 @@ Tady je několik příkladů podmínky můžete otestovat v Pokud příkaz:
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample7.cs)]
 
-Proměnné před hodnoty nebo výrazy můžete otestovat pomocí *logický operátor* nebo *relační operátor*: rovná se (==) větší než (&gt;), menší než (&lt;), větší než nebo rovno (&gt;=) a menší než nebo rovno (&lt;=). ! = Znamená operátor není rovno – například pokud (! = 0) znamená *Pokud* *a**není rovno 0*.
+Proměnné před hodnoty nebo výrazy můžete otestovat pomocí <em>logický operátor</em> nebo <em>relační operátor</em>: rovná se (==) větší než (&gt;), menší než (&lt;), větší než nebo rovno (&gt;=) a menší než nebo rovno (&lt;=). ! = Znamená operátor není rovno – například pokud (! = 0) znamená <em>Pokud</em> <em>a</em><em>není rovno 0</em>.
 
 > [!NOTE]
 > Ujistěte se, že jste si všimli, že relační operátor pro hodnotu (==) není stejný jako =. = Operátor slouží pouze k přiřadit hodnoty (var = 2). Pokud kombinujete tyto operátory, budete buď dojde k chybě nebo některé neobvyklé výsledků.
@@ -207,7 +207,7 @@ Spuštění stránky a klikněte na tlačítko **odeslání**. Tentokrát nejen 
 
 ### <a name="testing-the-value-of-a-query-string"></a>Testování hodnota řetězce dotazu
 
-Jeden další test. Tentokrát přidáte pokud blok, který porovnává hodnotu s názvem show, která mohla být předána v řetězci dotazu. (Podobné výjimky: % http://localhost:43097/TestRazorPart2.cshtml`?show=true`) změníte stránky tak, aby zpráva vám jste se zobrazení ("Toto je prvním...", atd.) se zobrazí jenom v případě zobrazit hodnotu true.
+Jeden další test. Tentokrát přidáte pokud blok, který porovnává hodnotu s názvem show, která mohla být předána v řetězci dotazu. (Podobné výjimky: %http://localhost:43097/TestRazorPart2.cshtml`?show=true`) změníte stránky tak, aby zpráva vám jste se zobrazení ("Toto je prvním...", atd.) se zobrazí jenom v případě zobrazit hodnotu true.
 
 V dolní (ale uvnitř) přidejte následující blok kódu v horní části stránky:
 
@@ -281,7 +281,7 @@ ASP.NET – webové stránky má několik Pomocníci součástí. Mnoho pomocné
 
 V této části kurzu nainstalujete pomocné rutiny, která umožňuje zobrazit obrázek Gravatar (dále jen "globálně rozpoznaný miniatury"). Dozvíte dvě věci. Jeden je jak najít a nainstalovat pomocné rutiny. Budete také zjistěte, jak pomocné rutiny usnadňuje dělejte, které byste jinak potřebovali Uděláte to pomocí velké množství kódu, budete muset napsat sami.
 
-Můžete zaregistrovat vlastní Gravatar na webu Gravatar na [http://www.gravatar.com/](http://www.gravatar.com/), ale to není nezbytně nutné, aby vytvořit účet Gravatar k provedení této části kurzu.
+Můžete zaregistrovat vlastní Gravatar na webu Gravatar na [ http://www.gravatar.com/ ](http://www.gravatar.com/), ale to není nezbytně nutné, aby vytvořit účet Gravatar k provedení této části kurzu.
 
 Ve službě WebMatrix, klikněte **NuGet** tlačítko.
 
@@ -360,6 +360,6 @@ V dalším kurzu se seznámíte s práci s databází. V tomto kurzu začnete bu
 - [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Pomocník Twitter](../../ui-layouts-and-themes/twitter-helper.md)
 
->[!div class="step-by-step"]
-[Předchozí](getting-started.md)
-[další](displaying-data.md)
+> [!div class="step-by-step"]
+> [Předchozí](getting-started.md)
+> [další](displaying-data.md)

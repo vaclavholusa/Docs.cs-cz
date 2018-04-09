@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
-title: "Řízení ID pojmenování v obsahu stránky (VB) | Microsoft Docs"
+title: Řízení ID pojmenování v obsahu stránky (VB) | Microsoft Docs
 author: rick-anderson
-description: "Ukazuje, jak ovládacích prvků ContentPlaceHolder sloužit jako názvový kontejner a proto ujistěte se, prostřednictvím kódu programu práce s ovládacím prvkem obtížné (prostřednictvím FindConrol)..."
+description: Ukazuje, jak ovládacích prvků ContentPlaceHolder sloužit jako názvový kontejner a proto ujistěte se, prostřednictvím kódu programu práce s ovládacím prvkem obtížné (prostřednictvím FindConrol)...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9523fe5b241b6ff45927f142eb844a716822336b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 288afbb6851e23de4725f9e6351ae12ccecefaa5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="control-id-naming-in-content-pages-vb"></a>ID ovládacího prvku pojmenování v obsahu stránky (VB)
 ====================
@@ -121,7 +121,7 @@ Všimněte si, že `id` atribut zahrnuje obě stránky předlohy `ID` hodnotu (`
 
 Každý ovládací prvek ASP.NET serveru zahrnuje `FindControl("controlID")` metoda, která hledá podřízeného ovládacího prvku pro ovládací prvek s názvem *controlID*. Pokud je nalezen takový ovládací prvek, je vrácena; Pokud se nenajde žádný odpovídající ovládací prvek, `FindControl` vrátí `Nothing`.
 
-`FindControl`je užitečné v situacích, kdy je potřeba řízení přístupu, ale nemáte přímý odkaz na jeho. Při práci s daty ovládací prvky webového jako GridView, například ovládací prvky v rámci prvku GridView pole jsou definovány jednou v deklarativní syntaxi, ale v době běhu je vytvořena instance ovládacího prvku pro každý řádek GridView. V důsledku toho existují ovládací prvky generovaná za běhu, ale nemáme k dispozici od třídy kódu přímý odkaz. Proto je potřeba použít `FindControl` prostřednictvím kódu programu pracovat s určitý ovládací prvek v rámci prvku GridView pole. (Další informace o používání `FindControl` přístup k ovládacím prvkům v rámci prvku data webové šablony, najdete v tématu [vlastní formátování dat na základě při](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md).) K této stejné situaci dojde, když dynamicky přidávání ovládacích prvků do webového formuláře, téma se zabývá [vytváření dynamické uživatelská rozhraní vstupní Data](https://msdn.microsoft.com/library/aa479330.aspx).
+`FindControl` je užitečné v situacích, kdy je potřeba řízení přístupu, ale nemáte přímý odkaz na jeho. Při práci s daty ovládací prvky webového jako GridView, například ovládací prvky v rámci prvku GridView pole jsou definovány jednou v deklarativní syntaxi, ale v době běhu je vytvořena instance ovládacího prvku pro každý řádek GridView. V důsledku toho existují ovládací prvky generovaná za běhu, ale nemáme k dispozici od třídy kódu přímý odkaz. Proto je potřeba použít `FindControl` prostřednictvím kódu programu pracovat s určitý ovládací prvek v rámci prvku GridView pole. (Další informace o používání `FindControl` přístup k ovládacím prvkům v rámci prvku data webové šablony, najdete v tématu [vlastní formátování dat na základě při](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md).) K této stejné situaci dojde, když dynamicky přidávání ovládacích prvků do webového formuláře, téma se zabývá [vytváření dynamické uživatelská rozhraní vstupní Data](https://msdn.microsoft.com/library/aa479330.aspx).
 
 Pro ilustraci použití `FindControl` metody na hledání pro ovládací prvky obsahu stránce, vytvoření obslužné rutiny události pro `SubmitButton`na `Click` událostí. V obslužné rutiny události, přidejte následující kód, který se odkazuje prostřednictvím kódu programu `Age` textové pole a `Results` popisku pomocí `FindControl` metoda a poté zobrazí zprávu v `Results` založené na vstup uživatele.
 
@@ -256,7 +256,7 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Stránky předlohy technologie ASP.NET a`FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
+- [Stránky předlohy technologie ASP.NET a `FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
 - [Vytváření dynamických dat záznam uživatelského rozhraní](https://msdn.microsoft.com/library/aa479330.aspx)
 - [Funkce rozšíření základní typ pomocí metody rozšíření](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
 - [Postupy: Odkaz na obsah stránky předlohy ASP.NET](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
@@ -265,12 +265,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Zack Petr a Suchi Barnerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Předchozí](urls-in-master-pages-vb.md)
-[další](interacting-with-the-master-page-from-the-content-page-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](urls-in-master-pages-vb.md)
+> [další](interacting-with-the-master-page-from-the-content-page-vb.md)

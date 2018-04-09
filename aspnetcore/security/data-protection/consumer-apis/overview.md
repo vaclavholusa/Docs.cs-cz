@@ -1,7 +1,7 @@
 ---
-title: "Přehled rozhraní API příjemce"
+title: Přehled rozhraní API příjemce pro ASP.NET Core
 author: rick-anderson
-description: "Tento dokument obsahuje stručný přehled různých příjemce rozhraní API, které jsou k dispozici v knihovně ochrany dat ASP.NET Core."
+description: Zobrazí stručný přehled různých příjemce rozhraní API, které jsou k dispozici v knihovně ochrany dat ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/overview
-ms.openlocfilehash: 3aa0c4bc8d009147dd15571da4d7d63402e4c512
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 5d161ed8fbc39bcf4a970644480b4e909810b555
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="consumer-apis-overview"></a>Přehled rozhraní API příjemce
+# <a name="consumer-apis-overview-for-aspnet-core"></a>Přehled rozhraní API příjemce pro ASP.NET Core
 
 `IDataProtectionProvider` a `IDataProtector` základní rozhraní, pomocí kterých příjemci použít systém ochrany dat jsou rozhraní. Se nachází v [Microsoft.AspNetCore.DataProtection.Abstractions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Abstractions/) balíčku.
 
 ## <a name="idataprotectionprovider"></a>IDataProtectionProvider
 
-Rozhraní poskytovatele reprezentuje kořen systému ochrany dat. Ji nelze použít přímo k ochraně nebo zrušení ochrany dat. Místo toho musíte příjemce získat odkaz na `IDataProtector` voláním `IDataProtectionProvider.CreateProtector(purpose)`, kde účel je řetězec, který popisuje případ použití zamýšlený příjemce. V tématu [účel řetězce](purpose-strings.md) mnohem Další informace o záměr tento parametr a jak vybrat odpovídající hodnotu.
+Rozhraní poskytovatele reprezentuje kořen systému ochrany dat. Ji nelze použít přímo k ochraně nebo zrušení ochrany dat. Místo toho musíte příjemce získat odkaz na `IDataProtector` voláním `IDataProtectionProvider.CreateProtector(purpose)`, kde účel je řetězec, který popisuje případ použití zamýšlený příjemce. V tématu [účel řetězce](xref:security/data-protection/consumer-apis/purpose-strings) mnohem Další informace o záměr tento parametr a jak vybrat odpovídající hodnotu.
 
 ## <a name="idataprotector"></a>IDataProtector
 
@@ -31,18 +31,18 @@ K ochraně část dat, předat data, která mají `Protect` metoda. Základní r
 
 Chcete-li zrušit ochranu dřív chránila část dat, předejte chráněných dat na `Unprotect` metoda. (Existují byte [] – na základě a na základě řetězec přetížení důvodu usnadnění práce vývojářů.) Pokud chráněné datové části vygenerovalo starší volání `Protect` na tento stejný `IDataProtector`, `Unprotect` metoda vrátí původní nechráněný datové části. Pokud chráněný datovou ní bylo neoprávněně manipulováno, nebo bylo vytvořeno pomocí jiné `IDataProtector`, `Unprotect` vyvolá metoda výjimku cryptographicexception –.
 
-Koncept stejné vs. jiné `IDataProtector` ties zpět na koncept účel. Pokud dva `IDataProtector` instancí, které byly generovány od stejnou kořenovou `IDataProtectionProvider` ale prostřednictvím různých účel řetězce ve volání `IDataProtectionProvider.CreateProtector`, pak se považují za [různých ochrany](purpose-strings.md), a jeden nebude možné zrušit ochranu generuje jinými datové části.
+Koncept stejné vs. jiné `IDataProtector` ties zpět na koncept účel. Pokud dva `IDataProtector` instancí, které byly generovány od stejnou kořenovou `IDataProtectionProvider` ale prostřednictvím různých účel řetězce ve volání `IDataProtectionProvider.CreateProtector`, pak se považují za [různých ochrany](xref:security/data-protection/consumer-apis/purpose-strings), a jeden nebude možné zrušit ochranu generuje jinými datové části.
 
 ## <a name="consuming-these-interfaces"></a>Využívání těchto rozhraní
 
 Pro komponentu podporou DI zamýšlené použití je, že součást trvat `IDataProtectionProvider` parametr v jeho konstruktoru a že DI systému automaticky poskytuje tuto službu, při vytváření instance komponentu.
 
 > [!NOTE]
-> Některé aplikace (například konzolové aplikace nebo aplikace ASP.NET 4.x) nemusí být DI deklaracemi, nemůžete použít tento mechanismus popsané tady. Pro tyto scénáře naleznete [jiné scénáře využívající DI](../configuration/non-di-scenarios.md) dokumentu pro další informace o získávání instanci `IDataProtection` zprostředkovatele bez průchodu přes DI.
+> Některé aplikace (například konzolové aplikace nebo aplikace ASP.NET 4.x) nemusí být DI deklaracemi, nemůžete použít tento mechanismus popsané tady. Pro tyto scénáře naleznete [jiné scénáře využívající DI](xref:security/data-protection/configuration/non-di-scenarios) dokumentu pro další informace o získávání instanci `IDataProtection` zprostředkovatele bez průchodu přes DI.
 
 Následující příklad ukazuje tři koncepty:
 
-1. [Přidání systému ochrany dat](../configuration/overview.md) ke kontejneru služby
+1. [Přidání systému ochrany dat](xref:security/data-protection/configuration/overview) ke kontejneru služby
 
 2. Pomocí DI přijímat instanci `IDataProtectionProvider`, a
 

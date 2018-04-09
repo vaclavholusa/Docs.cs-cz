@@ -1,7 +1,7 @@
 ---
-title: "Přidat model do aplikace ASP.NET MVC jádra"
+title: Přidat model do aplikace ASP.NET MVC základní pomocí sady Visual Studio pro Mac
 author: rick-anderson
-description: "Přidáte model do jednoduchou aplikaci ASP.NET Core."
+description: Přidáte model do jednoduchou aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 09/22/2017
@@ -10,13 +10,15 @@ ms.prod: .net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-mac/adding-model
-ms.openlocfilehash: 7f99f611c1554dfae72564905227c3fc25d96a01
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 6792dbc7c9ab063d85c0c4145481b8fd6b40da63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app-with-visual-studio-for-mac"></a>Přidat model do aplikace ASP.NET MVC základní pomocí sady Visual Studio pro Mac
+
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 * Klikněte pravým tlačítkem myši *modely* složku a potom vyberte **přidat** > **nový soubor**. 
 * V **nový soubor** dialogové okno:
@@ -96,9 +98,9 @@ Automatické vytváření [CRUD](https://wikipedia.org/wiki/Create,_read,_update
   * Přejděte na *zobrazení* složky, vyberte *Views\Movies*a potom vyberte **otevřete**.
   * V **vyberte soubory, které chcete přidat z filmy** vyberte **zahrnují všechny**a potom **OK**.
 
-[!INCLUDE[adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
+[!INCLUDE [adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
 Nyní máte databázi a stránkami zobrazit, upravit, aktualizovat a odstranit data. V dalším kurzu jsme budete pracovat s databází.
 
@@ -107,6 +109,6 @@ Nyní máte databázi a stránkami zobrazit, upravit, aktualizovat a odstranit d
 * [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)
 * [Globalizace a lokalizace](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[Předchozí přidávání zobrazení](adding-view.md)
-[další práci s SQL](working-with-sql.md)  
+> [!div class="step-by-step"]
+> [Předchozí přidávání zobrazení](adding-view.md)
+> [další práci s SQL](working-with-sql.md)  

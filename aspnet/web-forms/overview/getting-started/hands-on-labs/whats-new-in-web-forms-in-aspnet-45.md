@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
-title: "Co je nového ve webových formulářů technologie ASP.NET 4.5 | Microsoft Docs"
+title: Co je nového ve webových formulářů technologie ASP.NET 4.5 | Microsoft Docs
 author: rick-anderson
-description: "Nové verze aplikace webových formulářů ASP.NET zavádí několik vylepšení funkce zaměřené na vylepšení činnost koncového uživatele při práci s daty. V předchozích verzích..."
+description: Nové verze aplikace webových formulářů ASP.NET zavádí několik vylepšení funkce zaměřené na vylepšení činnost koncového uživatele při práci s daty. V předchozích verzích...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 560f949f79be8ba4936e4a6f8ee8ee32ef15acbf
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: db2658ff1feae1d4c20e4cfd19c36cfdf9492761
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>Co je nového ve webových formulářů technologie ASP.NET 4.5
 ====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
 > Nové verze aplikace webových formulářů ASP.NET zavádí několik vylepšení funkce zaměřené na vylepšení činnost koncového uživatele při práci s daty.
 > 
@@ -42,7 +42,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > Na portálu oficiální ASP.NET můžete najít další příklady nových funkcí v technologii ASP.NET 4.5 WebForms: [co je nového v technologii ASP.NET 4.5 a Visual Studio 2012](../../../../whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012.md#_Toc318097385)
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
 
 
 <a id="Objectives"></a>
@@ -103,12 +103,12 @@ V této úloze bude zjišťovat nové silného typu vazby k dispozici v technolo
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex1-objektuModelBinding/počáteční/** složky.
 
-    1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete **Customers.aspx** stránky. Umístěte nečíslovaná seznamu v ovládacím prvku hlavní a zahrnují ovládacího prvku opakovače uvnitř pro výpis každého zákazníka. Nastavte název opakovače na **customersRepeater** jak je znázorněno v následujícím kódu.
 
     V předchozích verzích webových formulářů při použití datových vazeb pro vydávání hodnota člena v objektu jste vazby dat, byste použili výraz vazby dat, společně s volání metody Eval předávání názvu člena jako řetězec.
@@ -341,12 +341,12 @@ V této části bude povolíte nerušivý ověření technologie ASP.NET pro por
 
 1. Otevřete **Visual Studio 2012** a otevřete **začít** řešení umístěný v **Source\Ex2 Validation\Begin** složky tohoto testovacího prostředí. Alternativně můžete pokračovat v práci na vaše stávající řešení z předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést v Průzkumníku řešení, klikněte na tlačítko **WebFormsLab** projektu **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést v Průzkumníku řešení, klikněte na tlačítko **WebFormsLab** projektu **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Stiskněte klávesu **F5** spuštění webové aplikace. Přejděte na zákazníky a klikněte na tlačítko **přidat nový zákazník** odkaz.
 3. Klikněte pravým tlačítkem na stránce prohlížeče a vyberte **zobrazit zdroj** možnost otevřete generovaný aplikací, kódu HTML.
 
@@ -535,12 +535,12 @@ V této úloze aktualizujte stránku Podrobnosti o produktu umožňující uživ
 
 1. Otevřete **Visual Studio 2012** a zatížení **začít** řešení umístěný v **Source\Ex3 Async\Begin** ze složky toto testovací prostředí. Alternativně můžete pokračovat v práci na vaše stávající řešení z předchozí cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést v Průzkumníku řešení, klikněte na tlačítko **WebFormsLab** projektu a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést v Průzkumníku řešení, klikněte na tlačítko **WebFormsLab** projektu a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete **ProductDetails.aspx** stránky zdroje a přidání pole v třídě FormView ItemTemplate zobrazíte bitovou kopii produktu.
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample30.aspx)]
@@ -562,7 +562,7 @@ V této úloze aktualizujte stránku Podrobnosti o produktu umožňující uživ
     (Code fragment kódu - *Web Forms laboratoř - Ex03 - UpdateProductImage volání*)
 
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample34.cs)]
-7. Spusťte aplikaci a zkuste odeslat bitovou kopii pro produkt. Například můžete použít následující adresa URL obrázku z Office klip přístroje: [ [http://officeimg.vo.msecnd.net/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)
+7. Spusťte aplikaci a zkuste odeslat bitovou kopii pro produkt. Například můžete použít následující adresa URL obrázku z přístroje klip Office: [[http://officeimg.vo.msecnd.net/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)
 
     ![Nastavení bitovou kopii pro produkt](whats-new-in-web-forms-in-aspnet-45/_static/image23.png "nastavení bitovou kopii pro produkt")
 
@@ -580,7 +580,9 @@ Asynchronní metody ve webových aplikacích můžete použít k optimalizaci zp
 1. Otevřete **ProductDetails.aspx** stránky. Přidat **asynchronní** atribut **stránky** elementu a nastavte ji na **true**. Tento atribut informuje technologii ASP.NET pro implementaci rozhraní IHttpAsyncHandler.
 
 
-    [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample35.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample35.aspx)]
+~~~
 2. Přidání popisku v dolní části stránky a zobrazit podrobnosti vláken spuštění stránky.
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample36.aspx)]
@@ -636,9 +638,9 @@ V tomto testovacím prostředí praktických byly následující koncepty řeši
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Příloha A: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze  **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)** . Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *Visual Studio Express 2012 pro Web se sadou Azure SDK*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 
@@ -782,14 +784,14 @@ Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vyt
     *Konfigurace nasazení webu*
 5. Připojení k databázi nakonfigurujte následujícím způsobem:
 
-    - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
-    - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
-    - V **heslo** zadejte přihlašovací heslo správce serveru.
-    - Zadejte nový název databáze.
+   - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
+   - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
+   - V **heslo** zadejte přihlašovací heslo správce serveru.
+   - Zadejte nový název databáze.
 
-    ![Konfigurace cílový připojovací řetězec](whats-new-in-web-forms-in-aspnet-45/_static/image46.png "konfigurace cílový připojovací řetězec")
+     ![Konfigurace cílový připojovací řetězec](whats-new-in-web-forms-in-aspnet-45/_static/image46.png "konfigurace cílový připojovací řetězec")
 
-    *Konfigurace cílový připojovací řetězec*
+     *Konfigurace cílový připojovací řetězec*
 6. Pak klikněte na tlačítko **OK**. Po zobrazení výzvy k vytvoření databáze, klikněte na tlačítko **Ano**.
 
     ![Vytvoření databáze](whats-new-in-web-forms-in-aspnet-45/_static/image47.png "vytváření řetězec databáze")

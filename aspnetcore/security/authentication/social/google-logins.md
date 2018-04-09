@@ -1,7 +1,7 @@
 ---
-title: "Instalační program externí přihlášení Google v ASP.NET Core"
+title: Instalační program externí přihlášení Google v ASP.NET Core
 author: rick-anderson
-description: "Tento kurz představuje integraci ověřování uživatele účet Google do existující aplikace ASP.NET Core."
+description: Tento kurz představuje integraci ověřování uživatele účet Google do existující aplikace ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 08/02/2017
@@ -9,21 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/google-logins
-ms.openlocfilehash: 1ca63593a7cf2b0eff1e52c0beda7ef2b826d474
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ab49eb1c45d69ff918b25190d7b94a105ff13972
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configuring-google-authentication-in-aspnet-core"></a>Konfigurace ověřování Google v ASP.NET Core
+# <a name="google-external-login-setup-in-aspnet-core"></a>Instalační program externí přihlášení Google v ASP.NET Core
 
 Podle [Valeriy Novytskyy](https://github.com/01binary) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V tomto kurzu se dozvíte, jak povolit uživatelům přihlásit se pomocí účtu své Google + pomocí projektu ASP.NET 2.0 základní ukázka na vytvořit [předchozí stránce](index.md). Začneme podle [oficiální kroky](https://developers.google.com/identity/sign-in/web/devconsole-project) k vytvoření nové aplikace v konzole rozhraní API Google.
+V tomto kurzu se dozvíte, jak povolit uživatelům přihlásit se pomocí účtu své Google + pomocí projektu ASP.NET 2.0 základní ukázka na vytvořit [předchozí stránce](xref:security/authentication/social/index). Začneme podle [oficiální kroky](https://developers.google.com/identity/sign-in/web/devconsole-project) k vytvoření nové aplikace v konzole rozhraní API Google.
 
 ## <a name="create-the-app-in-google-api-console"></a>Vytvořit aplikaci v konzole rozhraní API Google
 
-* Přejděte na [https://console.developers.google.com/projectselector/apis/library](https://console.developers.google.com/projectselector/apis/library) a přihlaste se. Pokud nemáte účet Google, použijte **další možnosti** > **[vytvořit účet](https://accounts.google.com/SignUpWithoutGmail?service=cloudconsole&continue=https%3A%2F%2Fconsole.developers.google.com%2Fprojectselector%2Fapis%2Flibrary&ltmpl=api)**  odkaz k jeho vytvoření:
+* Přejděte na [ https://console.developers.google.com/projectselector/apis/library ](https://console.developers.google.com/projectselector/apis/library) a přihlaste se. Pokud nemáte účet Google, použijte **další možnosti** > **[vytvořit účet](https://accounts.google.com/SignUpWithoutGmail?service=cloudconsole&continue=https%3A%2F%2Fconsole.developers.google.com%2Fprojectselector%2Fapis%2Flibrary&ltmpl=api)**  odkaz k jeho vytvoření:
 
 ![Konzoly rozhraní Google API](index/_static/GoogleConsoleLogin.png)
 
@@ -80,14 +80,13 @@ V tomto kurzu se dozvíte, jak povolit uživatelům přihlásit se pomocí účt
 
 ## <a name="store-google-clientid-and-clientsecret"></a>Store Google ClientID a ClientSecret
 
-Odkaz citlivá nastavení, jako je Google `Client ID` a `Client Secret` do konfigurace vaší aplikace pomocí [tajný klíč správce](../../app-secrets.md). Pro účely tohoto kurzu, název tokeny `Authentication:Google:ClientId` a `Authentication:Google:ClientSecret`.
+Odkaz citlivá nastavení, jako je Google `Client ID` a `Client Secret` do konfigurace vaší aplikace pomocí [tajný klíč správce](xref:security/app-secrets). Pro účely tohoto kurzu, název tokeny `Authentication:Google:ClientId` a `Authentication:Google:ClientSecret`.
 
 Hodnoty pro tyto tokeny naleznete v souboru JSON stáhli v předchozím kroku v části `web.client_id` a `web.client_secret`.
 
 ## <a name="configure-google-authentication"></a>Konfigurace ověřování Google
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Přidání služby Google `ConfigureServices` metoda v *Startup.cs* souboru:
 
 ```csharp
@@ -102,10 +101,9 @@ services.AddAuthentication().AddGoogle(googleOptions =>
 });
 ```
 
-[!INCLUDE[default settings configuration](includes/default-settings.md)]
+[!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Šablona projektu použili v tomto kurzu zajistí, že [Microsoft.AspNetCore.Authentication.Google](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) balíček nainstalován.
 
  * Chcete-li nainstalovat tento balíček s Visual Studio 2017, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**.
@@ -123,8 +121,7 @@ app.UseGoogleAuthentication(new GoogleOptions()
 });
 ```
 
----
-
+* * *
 Najdete v článku [GoogleOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.googleoptions) referenční dokumentace rozhraní API pro další informace o možnostech konfigurace nepodporuje ověřování Google. To slouží k požadavku na jiné informace o uživateli.
 
 ## <a name="sign-in-with-google"></a>Přihlaste se pomocí služby Google
@@ -151,7 +148,7 @@ Nyní jste se přihlásili pomocí svých přihlašovacích údajů Google:
 
 ## <a name="next-steps"></a>Další kroky
 
-* Tento článek vám ukázal, jak můžete ověřit pomocí služby Google. Můžete postupovat podle podobný postup k ověření pomocí jiných poskytovatelů uvedené na [předchozí stránce](index.md).
+* Tento článek vám ukázal, jak můžete ověřit pomocí služby Google. Můžete postupovat podle podobný postup k ověření pomocí jiných poskytovatelů uvedené na [předchozí stránce](xref:security/authentication/social/index).
 
 * Jakmile budete publikovat web vaší webové aplikace Azure, byste měli obnovit `ClientSecret` v konzole rozhraní API Google.
 

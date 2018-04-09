@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
-title: "Zabalení změny databáze v rámci transakce (VB) | Microsoft Docs"
+title: Zabalení změny databáze v rámci transakce (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu je první čtyři, který zjistí aktualizaci, odstranění a vložení dávky data. V tomto kurzu jsme zjistěte, jak povolit databázové transakce..."
+description: V tomto kurzu je první čtyři, který zjistí aktualizaci, odstranění a vložení dávky data. V tomto kurzu jsme zjistěte, jak povolit databázové transakce...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f054445091edbc27263127fb3b7b851776ec617f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2005561755b22f5811d011bd3146853f6cd184af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="wrapping-database-modifications-within-a-transaction-vb"></a>Zabalení změny databáze v rámci transakce (VB)
 ====================
@@ -117,7 +117,7 @@ Typové datové sady `Northwind.xsd` se nachází v `App_Code` složku s `DAL` p
 
 ![Přidat složku s názvem TransactionSupport a soubor třídy s názvem ProductsTableAdapter.TransactionSupport.vb](wrapping-database-modifications-within-a-transaction-vb/_static/image4.gif)
 
-**Obrázek 4**: Přidat složku s názvem `TransactionSupport` a soubor třídy s názvem`ProductsTableAdapter.TransactionSupport.vb`
+**Obrázek 4**: Přidat složku s názvem `TransactionSupport` a soubor třídy s názvem `ProductsTableAdapter.TransactionSupport.vb`
 
 
 Zadejte následující kód do `ProductsTableAdapter.TransactionSupport.vb` souboru:
@@ -127,7 +127,7 @@ Zadejte následující kód do `ProductsTableAdapter.TransactionSupport.vb` soub
 
 `Partial` – Klíčové slovo v deklaraci třídy označuje kompilátoru, které jsou členy přidat do mají být přidány do `ProductsTableAdapter` třídy v `NorthwindTableAdapters` oboru názvů. Poznámka: `Imports System.Data.SqlClient` příkaz v horní části souboru. Vzhledem k tomu, že TableAdapter byla nakonfigurovaná pro použití poskytovatele SqlClient, interně používá [ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter.aspx) objekt, který chcete vydat jeho příkazů do databáze. V důsledku toho je potřeba použít `SqlTransaction` třída zahájíte transakce a pak ji zapište nebo vrátit zpět. Pokud používáte úložiště dat než ze systému Microsoft SQL Server, budete muset použít příslušného poskytovatele.
 
-Tyto metody poskytují stavební bloky potřebné ke spuštění, vrácení zpět a potvrzení transakce. Jsou označeny `Public`, je pro použití v rámci povolení `ProductsTableAdapter`, z jiné třídy v DAL, nebo z jiné vrstvy architektury, jako je například BLL. `BeginTransaction`Otevře interní TableAdapter s `SqlConnection` (v případě potřeby), začne transakce a přiřadí ji k `Transaction` vlastnost a připojí k interní transakce `SqlDataAdapter` s `SqlCommand` objekty. `CommitTransaction`a `RollbackTransaction` volání `Transaction` objekt s `Commit` a `Rollback` metody, v uvedeném pořadí, před jeho zavřením interní `Connection` objektu.
+Tyto metody poskytují stavební bloky potřebné ke spuštění, vrácení zpět a potvrzení transakce. Jsou označeny `Public`, je pro použití v rámci povolení `ProductsTableAdapter`, z jiné třídy v DAL, nebo z jiné vrstvy architektury, jako je například BLL. `BeginTransaction` Otevře interní TableAdapter s `SqlConnection` (v případě potřeby), začne transakce a přiřadí ji k `Transaction` vlastnost a připojí k interní transakce `SqlDataAdapter` s `SqlCommand` objekty. `CommitTransaction` a `RollbackTransaction` volání `Transaction` objekt s `Commit` a `Rollback` metody, v uvedeném pořadí, před jeho zavřením interní `Connection` objektu.
 
 ## <a name="step-3-adding-methods-to-update-and-delete-data-under-the-umbrella-of-a-transaction"></a>Krok 3: Přidání metody pro aktualizace a odstranění dat pod pojmem transakce
 
@@ -247,18 +247,18 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 - [Zachování konzistence databáze s transakce](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx)
 - [Správa transakcí v systému SQL Server uložené procedury](http://www.4guysfromrolla.com/webtech/080305-1.shtml)
-- [Transakce, umožněno:`System.Transactions`](https://blogs.msdn.com/florinlazar/archive/2004/07/23/192239.aspx)
+- [Transakce, umožněno: `System.Transactions`](https://blogs.msdn.com/florinlazar/archive/2004/07/23/192239.aspx)
 - [TransactionScope a DataAdapters](http://andyclymer.blogspot.com/2007/01/transactionscope-and-dataadapters.html)
 - [Použití Oracle databázové transakce v rozhraní .NET](http://www.oracle.com/technology/pub/articles/price_dbtrans_dotnet.html)
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Dave Gardner Hilton Giesenow a Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](batch-inserting-cs.md)
-[další](batch-updating-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](batch-inserting-cs.md)
+> [další](batch-updating-vb.md)

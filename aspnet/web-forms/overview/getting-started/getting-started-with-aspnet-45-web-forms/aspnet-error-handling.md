@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
-title: "Zpracování chyb ASP.NET | Microsoft Docs"
+title: Zpracování chyb ASP.NET | Microsoft Docs
 author: Erikre
-description: "Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme..."
+description: Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: ac5508334bf6d471471a719b98618bdcd3214fb5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-error-handling"></a>Zpracování chyb ASP.NET
 ====================
@@ -104,7 +104,7 @@ Blok try ve výše uvedeném kódu obsahuje kód, který musí být chráněn pr
 Před přidáním Chyba při zpracování na adresář Wingtip Toys ukázkovou aplikaci, budou navíc podporovat protokolování chyb přidáním `ExceptionUtility` třídy k *logiku* složky. Tímto způsobem, pokaždé, když aplikace zpracovává k chybě, podrobnosti o chybě se zařadí do souboru protokolu chyb.
 
 1. Klikněte pravým tlačítkem myši *logiku* složku a potom vyberte **přidat**  - &gt; **novou položku**.   
- **Přidat novou položku** se zobrazí dialogové okno.
+   **Přidat novou položku** se zobrazí dialogové okno.
 2. Vyberte **Visual C#**  - &gt; **kód** skupiny šablony na levé straně. Pak vyberte **třída**ze středu seznamu a pojmenujte ji **ExceptionUtility.cs**.
 3. Zvolte **přidat**. Zobrazí se nový soubor třídy.
 4. Nahraďte stávající kód s následujícími službami:  
@@ -118,7 +118,7 @@ Když dojde k výjimce, výjimky, je možné zapsat do souboru protokolu výjimk
 V adresář Wingtip Toys ukázkovou aplikaci jednu stránku se použije k zobrazení chyb. Chybové stránky je určena pro zobrazovat zabezpečené chybovou zprávu pro uživatele tohoto webu. Pokud je uživatel vývojář provádění požadavku HTTP obsluhované místně na počítači tam, kde platný kód, informace o dalších chybách bude zobrazovat na chybové stránce.
 
 1. Klikněte pravým tlačítkem na název projektu (**adresář Wingtip Toys**) v **Průzkumníku řešení** a vyberte **přidat**  - &gt; **nová položka**.   
- **Přidat novou položku** se zobrazí dialogové okno.
+   **Přidat novou položku** se zobrazí dialogové okno.
 2. Vyberte **Visual C#**  - &gt; **webové** skupiny šablony na levé straně. Vyberte ze seznamu střední **webové formuláře se stránkou předlohy**a pojmenujte ji **ErrorPage.aspx**.
 3. Klikněte na tlačítko **přidat**.
 4. Vyberte *Site.Master* souboru jako stránky předlohy a potom vyberte **OK**.
@@ -166,7 +166,7 @@ Při požadavku *NoPage.aspx* stránky, který neexistuje, chybové stránky se 
 Chcete-li ověřit funkci aplikaci po chybě dojde, můžete vytvořit chybové stavy úmyslně technologie ASP.NET. V ukázkové aplikaci adresář Wingtip Toys vyvolá výjimku testovací výjimka při načtení stránky výchozí Pokud chcete zobrazit, co se stane.
 
 1. Otevřete kódu z *Default.aspx* stránka v sadě Visual Studio.   
- *Default.aspx.cs* se zobrazí stránka kódu.
+   *Default.aspx.cs* se zobrazí stránka kódu.
 2. V `Page_Load` obslužná rutina, přidejte kód tak, aby obslužná rutina vypadat takto:   
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample9.cs?highlight=3-4)]
@@ -356,11 +356,11 @@ Děkujeme, že následující osob, které významně přispěli k obsahu tento 
 ## <a name="community-contributions"></a>Komunitní příspěvky
 
 - Graham Mendick ([@grahammendick](http://twitter.com/grahammendick))  
- Visual Studio 2012 související ukázka kódu na webu MSDN: [navigační adresář Wingtip Toys](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)
+  Visual Studio 2012 související ukázka kódu na webu MSDN: [navigační adresář Wingtip Toys](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)
 - James Chaney ([jchaney@agvance.net](mailto:jchaney@agvance.net))  
- Visual Studio 2012 související ukázka kódu na webu MSDN: [ASP.NET 4.5 Web Forms kurzu řady v jazyce Visual Basic](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
+  Visual Studio 2012 související ukázka kódu na webu MSDN: [ASP.NET 4.5 Web Forms kurzu řady v jazyce Visual Basic](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
 - Andrielle Azevedo - technické cílovou skupinu Přispěvatel společnosti Microsoft (twitter: @driazevedo)  
- Visual Studio 2012 překlad: [Iniciando com technologie ASP.NET Web Forms 4.5 - Parte 1 - Introdução e Visão General](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
+  Visual Studio 2012 překlad: [Iniciando com technologie ASP.NET Web Forms 4.5 - Parte 1 - Introdução e Visão General](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
 
->[!div class="step-by-step"]
-[Předchozí](url-routing.md)
+> [!div class="step-by-step"]
+> [Předchozí](url-routing.md)

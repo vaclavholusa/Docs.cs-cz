@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
-title: "Vytvoření webu rozložení pomocí stránky předlohy (C#) | Microsoft Docs"
+title: Vytvoření webu rozložení pomocí stránky předlohy (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu se zobrazí základy stránky předlohy. Konkrétně, jaké jsou hlavní stránky, jak funguje jeden vytvořit stránku předlohy, jaké jsou držitelé obsahu místní, jak funguje jeden cr..."
+description: V tomto kurzu se zobrazí základy stránky předlohy. Konkrétně, jaké jsou hlavní stránky, jak funguje jeden vytvořit stránku předlohy, jaké jsou držitelé obsahu místní, jak funguje jeden cr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8061a2aff318d397116cbc0bc0a8ce24ef35c7fb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 72f870e07a4f7754e352dc3478d9c86d4cb43994
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>Vytvoření webu rozložení pomocí stránky předlohy (C#)
 ====================
@@ -34,7 +34,7 @@ Jeden atribut dobře navrženou webu je rozložení konzistentní stránky na we
 
 [![Web www.asp.net využívá konzistentní vzhled a chování na všech stránkách](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
 
-**Obrázek 01**: www.asp.net webu využívá konzistentní vzhled a myslíte, že mezi všechny stránky ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
+<strong>Obrázek 01</strong>: www.asp.net webu využívá konzistentní vzhled a myslíte, že mezi všechny stránky ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
 
 
 Jiný atribut dobře navrženou lokality je snadné, pomocí kterého lze změnit vzhled daného webu. Obrázek 1 zobrazuje na domovské stránce www.asp.net z března 2008, ale mezi teď a publikace v tomto kurzu se mohl změnit vzhled a chování. Možná bude rozšiřovat položek nabídky v horní zahrnout nová část pro rozhraní MVC. Nebo možná bude unveiled radikálně nový design pro různé barvy, písma a rozložení. Při použití těchto změn celá lokalita by měla být rychlý a jednoduchý proces, který nevyžaduje úprava webové stránky, které tvoří webu tisíců.
@@ -281,11 +281,11 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Next](multiple-contentplaceholders-and-default-content-cs.md)
+> [!div class="step-by-step"]
+> [Next](multiple-contentplaceholders-and-default-content-cs.md)

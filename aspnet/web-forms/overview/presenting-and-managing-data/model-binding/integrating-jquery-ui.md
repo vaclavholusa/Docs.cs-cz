@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/integrating-jquery-ui
-title: "Integrace s vazby modelu a webových formulářů JQuery UI ovládací prvek Datepicker | Microsoft Docs"
+title: Integrace s vazby modelu a webových formulářů JQuery UI ovládací prvek Datepicker | Microsoft Docs
 author: tfitzmac
-description: "Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-..."
+description: Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/integrating-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: da3c8f347a709a4c9a47fd0ecce5201d9b0cd1b1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 126262b440f3e914a7fac3f0b7eeadb4f648d2bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="integrating-jquery-ui-datepicker-with-model-binding-and-web-forms"></a>Ovládací prvek Datepicker uživatelského rozhraní JQuery integrování vazby modelu a webové formuláře
 ====================
@@ -115,6 +115,6 @@ V tomto kurzu jste zjistili, jak začlenit JQuery widget do webové formuláře,
 
 V dalším [kurzu](using-query-string-values-to-retrieve-data.md), při výběru dat použijete hodnotu řetězce dotazu.
 
->[!div class="step-by-step"]
-[Předchozí](sorting-paging-and-filtering-data.md)
-[další](using-query-string-values-to-retrieve-data.md)
+> [!div class="step-by-step"]
+> [Předchozí](sorting-paging-and-filtering-data.md)
+> [další](using-query-string-values-to-retrieve-data.md)

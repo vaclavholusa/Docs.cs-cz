@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
-title: "Zkoumání upravit metody a zobrazení | Microsoft Docs"
+title: Zkoumání upravit metody a zobrazení | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: d7e1ba503b8aa815cebf431d2f5ffc9436b3575b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a3baa8e9af572d4c21813218ba394715a6db65cb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>Zkoumání upravit metody a zobrazení
 ====================
 podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 V této části budete zkontrolujte vygenerovaného `Edit` zobrazení pro řadič film a metody akce. Ale nejprve bude trvat krátké zneužívání aby datum vydání vypadat lépe. Otevřete *Models\Movie.cs* souboru a přidejte zvýrazněné řádky vidíte níže:
 
@@ -106,12 +106,12 @@ Pokud používáte čeština – počítače, můžete tuto část přeskočte a
 1. Z **nástroje** nabídce klikněte na tlačítko **Správce balíčků NuGetLibrary**a potom klikněte na **spravovat balíčky NuGet pro řešení**.  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
-2. V levém podokně, vyberte **Procházet*. *** (viz následující obrázek).
+2. V levém podokně, vyberte <strong>Procházet*.</strong>* (Viz následující obrázek).
 3. Do vstupního pole, zadejte * Globalize **.  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png) Zvolte `jQuery.Validation.Globalize`, zvolte `MvcMovie` a klikněte na tlačítko **nainstalovat**. *Scripts\jquery.globalize\globalize.js* soubor bude přidán do projektu. *Scripts\jquery.globalize\cultures\* bude obsahovat soubory JavaScript mnoho jazykovou verzi. Poznámka: může trvat pět minut, chcete-li nainstalovat tento balíček.
 
- Následující kód ukazuje změny souboru Views\Movies\Edit.cshtml: 
+   Následující kód ukazuje změny souboru Views\Movies\Edit.cshtml: 
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample10.cshtml)]
 
@@ -125,6 +125,6 @@ Jako dočasné opravu Pokud nelze získat ověření práce v národním prostř
 
 <a id="gettingstarted"></a><a id="jQueryAjaxJSON"></a> V dalším kurzu jsme budete implementovat funkce vyhledávání.
 
->[!div class="step-by-step"]
-[Předchozí](accessing-your-models-data-from-a-controller.md)
-[další](adding-search.md)
+> [!div class="step-by-step"]
+> [Předchozí](accessing-your-models-data-from-a-controller.md)
+> [další](adding-search.md)

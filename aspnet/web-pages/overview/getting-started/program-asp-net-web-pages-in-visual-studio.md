@@ -1,8 +1,8 @@
 ---
 uid: aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
-title: "Programování ASP.NET Web Pages (Razor) pomocí sady Visual Studio | Microsoft Docs"
+title: Programování ASP.NET Web Pages (Razor) pomocí sady Visual Studio | Microsoft Docs
 author: tfitzmac
-description: "Tento dodatek vysvětluje, jak můžete pomocí sady Visual Studio 2010 nebo Visual Web Developer 2010 Express programu rozhraní ASP.NET Web Pages se syntaxí Razor."
+description: Tento dodatek vysvětluje, jak můžete pomocí sady Visual Studio 2010 nebo Visual Web Developer 2010 Express programu rozhraní ASP.NET Web Pages se syntaxí Razor.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 5cfeda206eda8fb3fd769d34fb40bae2c3b65093
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eb17c8cc1fab5b552c8495e74bb86ae9dbc5b972
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>Programování webových stránek ASP.NET (Razor) pomocí sady Visual Studio
 ====================
@@ -97,7 +97,7 @@ Teď, když jste vytvořili lokalitu, uvidíte, jak funguje technologie IntelliS
 
     ![IntelliSense](program-asp-net-web-pages-in-visual-studio/_static/image4.png)
 3. Vyberte `GetHtml` metoda ze seznamu a potom stiskněte klávesu Enter. IntelliSense automaticky vyplní metodu. (Jako u jakékoli metody v jazyce C#, je nutné přidat `()` znaků po metodě.)  
- Dokončený kód `GetHtml` metoda vypadá jako v následujícím příkladu:  
+   Dokončený kód `GetHtml` metoda vypadá jako v následujícím příkladu:  
 
     [!code-cshtml[Main](program-asp-net-web-pages-in-visual-studio/samples/sample1.cshtml)]
 4. Stisknutím kombinace kláves Ctrl + F5 a spusťte stránky. Je to, co bude stránka vypadat, když se zobrazí v prohlížeči: 
@@ -138,7 +138,7 @@ V této části ukazuje, jak nainstalovat Visual Web Developer Express 2010 a n�
 
 1. Pokud ještě nemáte služby instalace webové platformy, můžete ji stáhněte z následující adresy URL:
 
-    [https://www.microsoft.com/web/downloads/Platform.aspx](https://www.microsoft.com/web/downloads/platform.aspx)
+    [https://www.microsoft.com/web/downloads/platform.aspx](https://www.microsoft.com/web/downloads/platform.aspx)
 2. Spuštění instalačního programu webové platformy.
 3. Klikněte **produkty** kartě.
 

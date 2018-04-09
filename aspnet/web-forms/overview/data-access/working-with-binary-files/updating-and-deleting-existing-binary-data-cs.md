@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
-title: "Aktualizace a odstranění existující binární Data (C#) | Microsoft Docs"
+title: Aktualizace a odstranění existující binární Data (C#) | Microsoft Docs
 author: rick-anderson
-description: "V dřívějších kurzech jsme viděli, jak prvek GridView můžete snadno upravovat a odstraňovat textová data. V tomto kurzu vidíte, jak způsobují prvek GridView..."
+description: V dřívějších kurzech jsme viděli, jak prvek GridView můžete snadno upravovat a odstraňovat textová data. V tomto kurzu vidíte, jak způsobují prvek GridView...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f2fca1e91720fba0215e12b1a1894a3a31e86b5c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 28d9d7a7e45eb4df9f61e3f587edfe2388583507
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-and-deleting-existing-binary-data-c"></a>Aktualizace a odstranění existující binární Data (C#)
 ====================
@@ -264,8 +264,8 @@ Při kliknutí na tlačítko Aktualizovat GridView s jeho `RowUpdating` je aktiv
 
 Kroky potřebné při dokončení RadioButtonList s `SelectedValue` je 3 jsou téměř stejné jako ty používané DetailsView s `ItemInserting` obslužné rutiny události. Tuto obslužnou rutinu události se spustí při přidání nového záznamu kategorie z ovládacího prvku DetailsView jsme přidali v [předchozí kurzu](including-a-file-upload-option-when-adding-a-new-record-cs.md). Proto behooves nám Refaktorovat tato funkce se do samostatné metody. Konkrétně po přesunutí na běžné funkce do dvou metod:
 
-- `ProcessBrochureUpload(FileUpload, out bool)`přijme jako vstup instanci ovládacího prvku odesílání souborů při odpovědích a výstup logickou hodnotu, která určuje, zda by měl odstranit nebo upravit operace pokračovat, nebo pokud by měl být zrušena z důvodu chyby ověření. Tato metoda vrací cestu k souboru uložené nebo `null` Pokud žádný soubor byl uložen.
-- `DeleteRememberedBrochurePath`Odstraní soubor určený touto cestu, do proměnné stránky `deletedCategorysPdfPath` Pokud `deletedCategorysPdfPath` není `null`.
+- `ProcessBrochureUpload(FileUpload, out bool)` přijme jako vstup instanci ovládacího prvku odesílání souborů při odpovědích a výstup logickou hodnotu, která určuje, zda by měl odstranit nebo upravit operace pokračovat, nebo pokud by měl být zrušena z důvodu chyby ověření. Tato metoda vrací cestu k souboru uložené nebo `null` Pokud žádný soubor byl uložen.
+- `DeleteRememberedBrochurePath` Odstraní soubor určený touto cestu, do proměnné stránky `deletedCategorysPdfPath` Pokud `deletedCategorysPdfPath` není `null`.
 
 Následuje kód pro tyto dvě metody. Všimněte si podobnosti mezi `ProcessBrochureUpload` a DetailsView s `ItemInserting` obslužné rutiny události z předchozích kurzu. V tomto kurzu I jste aktualizovali DetailsView obslužné rutiny s událostí na tyto nové metody. Stáhněte si kód spojený s úpravy obslužné rutiny událostí s DetailsView najdete v tomto kurzu.
 
@@ -362,12 +362,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](including-a-file-upload-option-when-adding-a-new-record-cs.md)
-[další](uploading-files-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](including-a-file-upload-option-when-adding-a-new-record-cs.md)
+> [další](uploading-files-vb.md)

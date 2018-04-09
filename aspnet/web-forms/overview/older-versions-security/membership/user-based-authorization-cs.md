@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/user-based-authorization-cs
-title: "Ověření na základě uživatele (C#) | Microsoft Docs"
+title: Ověření na základě uživatele (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu se podíváme na omezení přístupu na stránky a omezení funkce úrovně stránky prostřednictvím řady různých způsobů."
+description: V tomto kurzu se podíváme na omezení přístupu na stránky a omezení funkce úrovně stránky prostřednictvím řady různých způsobů.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5bee98878b5191a096b851c65aaea19ad989f608
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9a0d476ffaf1f176c21b245520fa943f66e8c0d5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="user-based-authorization-c"></a>Ověření na základě uživatele (C#)
 ====================
@@ -168,7 +168,7 @@ K otestování této změny autorizace, spusťte navštivte web jako anonymní u
 
 ### <a name="a-look-at-how-theurlauthorizationmoduleuses-the-authorization-rules-to-grant-or-deny-access"></a>Podívejte se na jak`UrlAuthorizationModule`používá autorizační pravidla pro přístup udělit nebo odepřít
 
-`UrlAuthorizationModule` Určuje, jestli k autorizaci konkrétní identity pro konkrétní adresu URL analýzou autorizace adres URL pravidla jeden po druhém, od první a práci směrem dolů. Jakmile je nalezena shoda, je uživatel povolen nebo odepřen přístup, podle toho, pokud v byla nalezena shoda `<allow>` nebo `<deny>` elementu. **Pokud není nalezena žádná shoda, uživateli je udělen přístup.** V důsledku toho, pokud chcete omezit přístup, je nutné použít `<deny>` element jako posledním prvkem v konfiguraci ověřování adresy URL. **Pokud vynecháte ***`<deny>`*** elementu, všichni uživatelé bude udělen přístup.**
+`UrlAuthorizationModule` Určuje, jestli k autorizaci konkrétní identity pro konkrétní adresu URL analýzou autorizace adres URL pravidla jeden po druhém, od první a práci směrem dolů. Jakmile je nalezena shoda, je uživatel povolen nebo odepřen přístup, podle toho, pokud v byla nalezena shoda `<allow>` nebo `<deny>` elementu. <strong>Pokud není nalezena žádná shoda, uživateli je udělen přístup.</strong> V důsledku toho, pokud chcete omezit přístup, je nutné použít `<deny>` element jako posledním prvkem v konfiguraci ověřování adresy URL. <strong>Pokud vynecháte</strong><strong>`<deny>`</strong><strong>elementu, všichni uživatelé bude udělen přístup.</strong>
 
 Abyste lépe pochopili proces používané `UrlAuthorizationModule` k určení autority, podívejte se na příklad autorizačních pravidel adres URL, které jsme se podívali na dříve v tomto kroku. První pravidlo je `<allow>` element, který umožňuje přístup k Tito a Scott. Je druhý pravidla `<deny>` element, který odepře přístup všem uživatelům. Pokud anonymní uživatel navštíví, `UrlAuthorizationModule` začne tím, že požádá, je anonymní Scott nebo Tito? Odpověď, ne, je samozřejmě, takže pokračuje na druhé pravidlo. Je v sadě každý uživatel anonymní? Od odpověď tady je Ano, `<deny>` pravidlo je v platnosti put a návštěvníka se přesměruje na přihlašovací stránku. Podobně, pokud je návštěvou Jisun, `UrlAuthorizationModule` začne tím, že požádá, je Jisun Scott nebo Tito? Vzhledem k tomu, že uživatel není, je `UrlAuthorizationModule` pokračuje druhou otázku, je Jisun v sadě každý uživatel? Uživatel je, takže uživatel, příliš, byl odepřen přístup. Navíc pokud Tito navštíví, první otázku chráněná `UrlAuthorizationModule` je pozitivní odpovědi, takže Tito je udělen přístup.
 
@@ -217,7 +217,7 @@ Tato pravidla autorizace spočívá v jemné dá implementovat buď deklarativn�
 Umožňuje vytvořit stránku, která obsahuje soubory, které v konkrétní adresáře v rámci GridView. Společně s výpis název souboru, velikost a další informace, bude obsahovat GridView dva sloupce LinkButtons: jednu s názvem, zobrazení a jeden názvem odstranit. Po kliknutí na LinkButton zobrazení, zobrazí se obsah vybraného souboru; Po kliknutí na LinkButton odstranit soubor se odstraní. Nejdřív vytvoříme této stránky tak, aby jeho zobrazení a odstranění funkce je k dispozici všem uživatelům. V pomocí části LoginView řízení a omezení funkce prostřednictvím kódu programu, vidíme postup povolení nebo zakázání tyto funkce na základě uživatele, kteří navštěvují stránky.
 
 > [!NOTE]
-> Stránku ASP.NET, které jsme se chystáte vytvořit pomocí ovládacího prvku GridView zobrazí seznam souborů. Od tohoto kurzu, které řady se zaměřuje na ověřování pomocí formulářů, ověřování, uživatelské účty a rolí nechci se příliš mnoho času hovoříte o vnitřního chodu ovládacího prvku GridView. Při tomto kurzu obsahuje konkrétní podrobné pokyny pro nastavení této stránky, není pustíte do podrobnosti proč byly provedeny některé možnosti, nebo konkrétní vlastnosti vliv mají na vykresleném výstupu. Získat důkladné posouzení ovládacího prvku GridView, obraťte se na Moje  *[práci s daty v technologii ASP.NET 2.0](../../data-access/index.md)*  kurz řady.
+> Stránku ASP.NET, které jsme se chystáte vytvořit pomocí ovládacího prvku GridView zobrazí seznam souborů. Od tohoto kurzu, které řady se zaměřuje na ověřování pomocí formulářů, ověřování, uživatelské účty a rolí nechci se příliš mnoho času hovoříte o vnitřního chodu ovládacího prvku GridView. Při tomto kurzu obsahuje konkrétní podrobné pokyny pro nastavení této stránky, není pustíte do podrobnosti proč byly provedeny některé možnosti, nebo konkrétní vlastnosti vliv mají na vykresleném výstupu. Získat důkladné posouzení ovládacího prvku GridView, obraťte se na Moje *[práci s daty v technologii ASP.NET 2.0](../../data-access/index.md)* kurz řady.
 
 
 Začněte otevřením `UserBasedAuthorization.aspx` v soubor `Membership` složku a přidání ovládacího prvku GridView na stránku s názvem `FilesGrid`. Z prvku GridView inteligentních značek klikněte na odkaz Upravit sloupce spustit dialogové okno pole. Z tohoto místa zrušte zaškrtnutí políčka automaticky generovat pole v levém dolním rohu. Dál přidejte tlačítka Vybrat tlačítko Odstranit a dvě BoundFields z levého horního rohu (tlačítka vyberte a odstranění naleznete v části Typ CommandField). Vyberte tlačítko nastavit `SelectText` vlastnost k zobrazení a první BoundField `HeaderText` a `DataField` vlastnosti název. Nastavit druhý BoundField `HeaderText` vlastnost, která má velikost v bajtech, jeho `DataField` vlastnost, která má délku jeho `DataFormatString` vlastnost {0: N0} a její `HtmlEncode` vlastnost na hodnotu False.
@@ -396,24 +396,24 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [Přidávání do obchodní a datové vrstvy pomocí autorizačních pravidel`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
+- [Přidávání do obchodní a datové vrstvy pomocí autorizačních pravidel `PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
 - [Autorizaci ASP.NET](https://msdn.microsoft.com/library/wce3kxhd.aspx)
 - [Změny mezi služby IIS 6 a službu IIS7 zabezpečení](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
 - [Konfigurace konkrétní soubory a podadresáře](https://msdn.microsoft.com/library/6hbkh9s7.aspx)
 - [Omezení funkce změny dat na základě uživatele](../../data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs.md)
 - [Ovládací prvek LoginView – elementy QuickStart](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/loginview.aspx)
 - [Principy IIS7 autorizace adres URL](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/URL-Authorization/Understanding-IIS7-URL-Authorization)
-- [`UrlAuthorizationModule`Technická dokumentace](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
+- [`UrlAuthorizationModule` Technická dokumentace](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
 - [Práce s daty v technologii ASP.NET 2.0](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Předchozí](validating-user-credentials-against-the-membership-user-store-cs.md)
-[další](storing-additional-user-information-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](validating-user-credentials-against-the-membership-user-store-cs.md)
+> [další](storing-additional-user-information-cs.md)

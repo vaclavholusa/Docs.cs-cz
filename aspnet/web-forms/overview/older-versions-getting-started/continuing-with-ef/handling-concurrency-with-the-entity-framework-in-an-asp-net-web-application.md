@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
-title: "Zpracování souběžnosti s rozhraní Entity Framework 4.0 4 webové aplikace ASP.NET | Microsoft Docs"
+title: Zpracování souběžnosti s rozhraní Entity Framework 4.0 4 webové aplikace ASP.NET | Microsoft Docs
 author: tdykstra
-description: "Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený Začínáme s řadou kurz Entity Framework 4.0. I..."
+description: Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený Začínáme s řadou kurz Entity Framework 4.0. I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7bdcf610458631749531ed1279d27e90572f0371
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f40695270006e4f8b0c9ad8e94049e5239f06e63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-concurrency-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Zpracování souběžnosti s rozhraní Entity Framework 4.0 4 webové aplikace technologie ASP.NET
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 > Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený [Začínáme s Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) kurz řady. Pokud nebyla dokončena starší kurzy, jako výchozí bod pro účely tohoto kurzu můžete [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , kterou by jste vytvořili. Můžete také [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) vytvořené dokončení kurzu řady. Pokud máte dotazy týkající se kurzy, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx).
 
@@ -304,6 +304,6 @@ Spuštění stránky a znovu vytvořte konflikt souběžnosti. Tentokrát uvidí
 
 Tím dokončíte Úvod pro zpracování konfliktů souběžnosti. V dalším kurzu se poskytují pokyny o tom, jak zlepšit výkon v webové aplikace, která používá rozhraní Entity Framework.
 
->[!div class="step-by-step"]
-[Předchozí](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
-[další](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+> [další](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)

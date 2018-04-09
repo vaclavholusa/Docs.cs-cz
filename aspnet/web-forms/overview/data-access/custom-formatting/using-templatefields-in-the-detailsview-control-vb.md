@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-vb
-title: "Pomocí TemplateFields v ovládacím prvku DetailsView (VB) | Microsoft Docs"
+title: Pomocí TemplateFields v ovládacím prvku DetailsView (VB) | Microsoft Docs
 author: rick-anderson
-description: "K dispozici GridView stejné TemplateFields funkce jsou k dispozici pomocí ovládacího prvku DetailsView. V tomto kurzu zobrazujeme jeden produktu..."
+description: K dispozici GridView stejné TemplateFields funkce jsou k dispozici pomocí ovládacího prvku DetailsView. V tomto kurzu zobrazujeme jeden produktu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b368a651253a569865bb92fa93d3462f88d8935f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 67009460477dcc3d1e966220b446a47d6e5b6f5a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-templatefields-in-the-detailsview-control-vb"></a>Pomocí TemplateFields v ovládacím prvku DetailsView (VB)
 ====================
@@ -129,7 +129,7 @@ V tuto chvíli jsme zobrazí a formátu `UnitPrice` data pole v cenové a Templa
 
 Přidejte statické značek, ovládací prvky webového popisek a syntaxe vazby dat tak, že cenové a inventáře TemplateField zobrazuje informace o ceny a inventáře takto:
 
-*UnitPrice*  
+*unitPrice*  
 (**Stock vstupně v pořadí:** *JednotkyNaSkladě* / *ObjednánoJednotek*)
 
 Po provedení této úlohy vaší DetailsView deklarativní by měl vypadat takto:
@@ -199,12 +199,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Dana Jagers. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](using-templatefields-in-the-gridview-control-vb.md)
-[další](using-the-formview-s-templates-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-templatefields-in-the-gridview-control-vb.md)
+> [další](using-the-formview-s-templates-vb.md)

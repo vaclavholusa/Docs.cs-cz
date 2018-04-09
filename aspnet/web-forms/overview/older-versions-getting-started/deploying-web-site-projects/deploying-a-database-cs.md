@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-cs
-title: "Nasazení databází (C#) | Microsoft Docs"
+title: Nasazení databází (C#) | Microsoft Docs
 author: rick-anderson
-description: "Nasazení webové aplikace ASP.NET zahrnuje získávání potřebné soubory a prostředky z vývojového prostředí do produkčního prostředí. Pro da..."
+description: Nasazení webové aplikace ASP.NET zahrnuje získávání potřebné soubory a prostředky z vývojového prostředí do produkčního prostředí. Pro da...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f71e3cd1e81644df7b3dfed363b6f2ca826e610d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 203bf64da887f31e5f0727fc57173d6a573095da
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-a-database-c"></a>Nasazení databází (C#)
 ====================
@@ -41,10 +41,10 @@ Aktualizovaného recenzemi kniha webové aplikace používá [SQL Server 2008 Ex
 
 `Reviews.mdf` Databáze obsahuje čtyři tabulky:
 
-- `Genres`-obsahuje záznam pro každý genre, jako je technologie, Fiction a Business.
-- `Books`-obsahuje záznam pro každý revize se sloupci jako `Title`, `GenreId`, `ReviewDate`, a `Review`, mimo jiné.
-- `Authors`-obsahuje informace o jednotlivých autora, který má na zkontrolovat kniha podílí.
-- `BooksAuthors`-m: n tabulku spojení, která určuje, jaké Autoři mají zapisovat jaké knihy.
+- `Genres` -obsahuje záznam pro každý genre, jako je technologie, Fiction a Business.
+- `Books` -obsahuje záznam pro každý revize se sloupci jako `Title`, `GenreId`, `ReviewDate`, a `Review`, mimo jiné.
+- `Authors` -obsahuje informace o jednotlivých autora, který má na zkontrolovat kniha podílí.
+- `BooksAuthors` -m: n tabulku spojení, která určuje, jaké Autoři mají zapisovat jaké knihy.
   
 
 Obrázek 1 zobrazuje diagramu ER tyto čtyři tabulek.
@@ -195,6 +195,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Stáhnout průvodce 1.1 publikováním databáze Microsoft SQL Server](https://www.microsoft.com/downloads/details.aspx?familyid=56E5B1C5-BF17-42E0-A410-371A838E570A&amp;displaylang=en)
 - [Stáhněte si Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)
 
->[!div class="step-by-step"]
-[Předchozí](core-differences-between-iis-and-the-asp-net-development-server-cs.md)
-[další](configuring-the-production-web-application-to-use-the-production-database-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](core-differences-between-iis-and-the-asp-net-development-server-cs.md)
+> [další](configuring-the-production-web-application-to-use-the-production-database-cs.md)

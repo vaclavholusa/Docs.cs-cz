@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
-title: "Nasazení databáze členství v rolích do testovacího prostředí | Microsoft Docs"
+title: Nasazení databáze členství v rolích do testovacího prostředí | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje postup přidání uživatelských účtů do role databáze v rámci řešení pro nasazení v testovacím prostředí. Při nasazení řešení obsahující..."
+description: Toto téma popisuje postup přidání uživatelských účtů do role databáze v rámci řešení pro nasazení v testovacím prostředí. Při nasazení řešení obsahující...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 226c28622f76e866fba1fc33cf9b9b7a01e5295b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4f635153213b0695d7d4b64d09adefaf8ee8e892
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a>Nasazení databáze členství v rolích do testovacího prostředí
 ====================
@@ -37,9 +37,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Klíčovým faktorem je, že tato operace musí být podmíněného založené na cílovém prostředí. Pokud nasazujete do pracovním nebo produkčním prostředí, chcete přeskočit operaci. Pokud jste nasazení do vývojář nebo testovací prostředí, budete chtít nasadit členství v rolích bez dalšího zásahu. Toto téma popisuje jeden z přístupů, které můžete použít, chcete-li vyřešit tento problém.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="task-overview"></a>Přehled úloh
 
@@ -94,7 +94,7 @@ Před cíl MSBuild vložíte tento příkaz, je třeba vzít v úvahu, za jakýc
 
 - Cílová databáze musí existovat změnit jeho členství v rolích. Jako takový, budete muset spustit tento skript *po* nasazení databáze.
 - Je nutné zahrnout podmínku tak, aby skript se spustí, pouze pro testovací prostředí.
-- Pokud používáte "Co když" nasazení & #x 2014; jinými slovy, pokud jste generování skriptů nasazení, ale ve skutečnosti není spuštěna je & #x 2014; nesmí spuštěním skriptu SQL.
+- Pokud používáte nasazení "Co když"&#x2014;jinými slovy, pokud jste generování skriptů nasazení, ale ve skutečnosti není spuštěna je&#x2014;by neměl spusťte skript SQL.
 
 Pokud používáte popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), jak je předvedeno ukázkové řešení obraťte se na správce, můžete rozdělit sestavení pokyny pro váš skript SQL takto:
 
@@ -132,6 +132,6 @@ Toto téma popisuje jeden ze způsobů, ve kterém můžete přidat uživatele d
 
 Další informace o použití VSDBCMD pro databázové projekty nasazení najdete v tématu [nasazení databázové projekty](../web-deployment-in-the-enterprise/deploying-database-projects.md). Pokyny k přizpůsobení nasazení databáze pro různé cílové prostředí najdete v tématu [přizpůsobení nasazení databáze pro prostředí s více](customizing-database-deployments-for-multiple-environments.md). Další informace o používání vlastních souborů projektu nástroje MSBuild k řízení procesu nasazení najdete v tématu [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md) a [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Další informace o možnostech příkazového řádku sqlcmd najdete v tématu [Nástroj sqlcmd](https://msdn.microsoft.com/library/ms162773.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](customizing-database-deployments-for-multiple-environments.md)
-[další](deploying-membership-databases-to-enterprise-environments.md)
+> [!div class="step-by-step"]
+> [Předchozí](customizing-database-deployments-for-multiple-environments.md)
+> [další](deploying-membership-databases-to-enterprise-environments.md)

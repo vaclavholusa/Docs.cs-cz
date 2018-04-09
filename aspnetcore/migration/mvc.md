@@ -1,7 +1,7 @@
 ---
-title: "Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC"
+title: Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC
 author: ardalis
-description: "Zjistěte, jak začít pracovat migrace projektu aplikace ASP.NET MVC do architektury ASP.NET MVC jádra."
+description: Zjistěte, jak začít pracovat migrace projektu aplikace ASP.NET MVC do architektury ASP.NET MVC jádra.
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: c9c9f63cd635f364d9b2e081dc051a46a44d3e4f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e249be06726b307a1c41a525a132f7e0ab8b50ee
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC
+# <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [ADAM Roth](https://github.com/danroth27), [Steve Smith](https://ardalis.com/), a [Scott Addie](https://scottaddie.com)
 
@@ -48,7 +48,7 @@ Vytvořte novou *prázdný* ASP.NET Core webové aplikace se stejným názvem ja
 
 * Nainstalujte `Microsoft.AspNetCore.Mvc` a `Microsoft.AspNetCore.StaticFiles` balíčky NuGet.
 
-  `Microsoft.AspNetCore.Mvc` je rozhraní ASP.NET MVC jádra. `Microsoft.AspNetCore.StaticFiles` je obslužná rutina statických souborů. Modul runtime ASP.NET je modulární a musí explicitně přihlášení poskytovat statické soubory (viz [práce s statické soubory](../fundamentals/static-files.md)).
+  `Microsoft.AspNetCore.Mvc` je rozhraní ASP.NET MVC jádra. `Microsoft.AspNetCore.StaticFiles` je obslužná rutina statických souborů. Modulem runtime ASP.NET je modulární a musí explicitně přihlášení poskytovat statické soubory (viz [pracovat s statické soubory](../fundamentals/static-files.md)).
 
 * Otevřete *.csproj* souboru (klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **upravit WebApp1.csproj**) a přidejte `PrepareForPublish` cíl:
 
@@ -220,7 +220,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 }
 ```
 
-V tématu **pomocí stránky výjimka vývojáře** v [zpracování chyb](../fundamentals/error-handling.md) Další informace.
+V tématu **pomocí stránky výjimka vývojáře** v [zpracovávat chyby](../fundamentals/error-handling.md) Další informace.
 
 ## <a name="additional-resources"></a>Další zdroje
 

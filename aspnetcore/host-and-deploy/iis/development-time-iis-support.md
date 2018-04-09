@@ -1,7 +1,7 @@
 ---
-title: "Podpora IIS době vývoje v sadě Visual Studio pro ASP.NET Core"
+title: Podpora IIS době vývoje v sadě Visual Studio pro ASP.NET Core
 author: shirhatti
-description: "Zjistit, podpora ladění aplikací ASP.NET Core při spuštění za služby IIS v systému Windows Server."
+description: Zjistit, podpora ladění aplikací ASP.NET Core při spuštění za služby IIS v systému Windows Server.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,22 +10,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: a8bdf4c0c0399c62666e6e61e70c0298a42c2c12
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: 218bb2653b92cd7b1cf2c6726b2d4bedbf307a62
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Podpora IIS době vývoje v sadě Visual Studio pro ASP.NET Core
 
-Pomocí: [Sourabh Shirhatti](https://twitter.com/sshirhatti)
+Podle [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
 Tento článek popisuje [Visual Studio](https://www.visualstudio.com/vs/) podporu pro ladění aplikací ASP.NET Core za služby IIS v systému Windows Server. Toto téma vás provede povolení této funkce a nastavení projektu.
 
 ## <a name="prerequisites"></a>Požadavky
 
-* Visual Studio (2017/verze 15.3 nebo novější)
-* ASP.NET a webové úlohy vývoj *nebo* zatížení vývoj pro různé platformy .NET Core
+[!INCLUDE [](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="enable-iis"></a>Povolení služby IIS
 
@@ -45,7 +44,7 @@ Spusťte instalační program sady Visual Studio. Vyberte **okamžiku vývoje sl
 
 Vytvořte nový profil spuštění přidat podporu vývoj služby IIS. V sadě Visual Studio **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**. Vyberte **ladění** kartě. Vyberte **IIS** z **spusťte** rozevíracího seznamu. Potvrďte, že **spuštění prohlížeče** je funkce s správnou adresu URL.
 
-![Okno vlastností projektu s kartu ladění vybrané. Nastavení profilu a spuštění je nastaveno do služby IIS. Funkce spuštění prohlížeče je povolená s adresu http://localhost/WebApplication2. Stejnou adresu jsou tu taky v poli Adresa URL aplikace v oblasti nastavení webového serveru s povoleno povolit anonymní ověřování.](development-time-iis-support/_static/project_properties.png)
+![Okno vlastností projektu s kartu ladění vybrané. Nastavení profilu a spuštění je nastaveno do služby IIS. Povolena funkce spuštění prohlížeče s adresou http://localhost/WebApplication2. Stejnou adresu jsou tu taky v poli Adresa URL aplikace v oblasti nastavení webového serveru s povoleno povolit anonymní ověřování.](development-time-iis-support/_static/project_properties.png)
 
 Případně ručně přidat profil spuštění, který [launchSettings.json](http://json.schemastore.org/launchsettings) souboru v aplikaci:
 

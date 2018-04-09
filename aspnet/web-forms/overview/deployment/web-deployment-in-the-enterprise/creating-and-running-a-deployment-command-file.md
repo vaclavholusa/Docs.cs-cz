@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
-title: "Vytváření a spouštění nasazení příkaz Soubor | Microsoft Docs"
+title: Vytváření a spouštění nasazení příkaz Soubor | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak vytvořit soubor příkazů, které vám umožní spustit nasazení, které využívá soubory projektu Microsoft Build Engine (MSBuild) jako jeden krok, znovu..."
+description: Toto téma popisuje, jak vytvořit soubor příkazů, které vám umožní spustit nasazení, které využívá soubory projektu Microsoft Build Engine (MSBuild) jako jeden krok, znovu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: bc31bf55b29661816e0ca9a50b51b0abc3eb2c98
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e5fb034a67bc9f2ea549af269eae51a49acc4d98
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-and-running-a-deployment-command-file"></a>Vytváření a spouštění soubor příkazů nasazení
 ====================
@@ -27,9 +27,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma popisuje, jak vytvořit soubor příkazů, které vám umožní spuštění pomocí souborů projektu Microsoft Build Engine (MSBuild) jako jeden krok, opakovatelných procesu nasazení.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [obraťte se na správce](the-contact-manager-solution.md) řešení & #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [obraťte se na správce](the-contact-manager-solution.md) řešení&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [Principy procesu sestavení](understanding-the-build-process.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [Principy procesu sestavení](understanding-the-build-process.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="process-overview"></a>Přehled procesu
 
@@ -40,7 +40,7 @@ V tomto tématu se dozvíte, jak vytvořit a spustit soubor příkazů, který p
 
 ## <a name="create-an-msbuild-command"></a>Vytvořit příkaz nástroje MSBuild
 
-Jak je popsáno v [Principy procesu sestavení](understanding-the-build-process.md), soubor projektu konkrétní prostředí & #x 2014; například *Env Dev.proj*& #x 2014; slouží k importu do bez ohledu na prostředí *Publish.proj* souboru v čase vytvoření buildu. Společně poskytují tyto dva soubory kompletní sada pokynů, které informují MSBuild, jak vytvořit a nasadit řešení.
+Jak je popsáno v [Principy procesu sestavení](understanding-the-build-process.md), soubor projektu konkrétní prostředí&#x2014;například *Env Dev.proj*&#x2014;slouží k importu do prostředí na úlohách *Publish.proj* souboru v čase vytvoření buildu. Společně poskytují tyto dva soubory kompletní sada pokynů, které informují MSBuild, jak vytvořit a nasadit řešení.
 
 *Publish.proj* soubor používá **importovat** elementu, který chcete importovat soubor projektu konkrétní prostředí.
 
@@ -92,7 +92,7 @@ Když vytvoříte soubor příkazů pro cílové prostředí byste měli mít k 
 5. Pokud je při prvním nasazení řešení do prostředí tohoto nástroje, budete muset přidat účet počítače serveru webového testu k **db\_datawriter** a **db\_DataReader –**rolí na **ContactManager** databáze. Tento postup je popsaný v [konfigurace databáze serveru pro webové nasazení publikování](../configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing.md).
 
     > [!NOTE]
-    > Potřebujete tato oprávnění přiřadit, když vytvoříte databázi. Ve výchozím nastavení procesu sestavení nebude znovu vytvořit databázi na každou nasazení & #x 2014; místo toho porovná existující databázi a schéma nejnovější a proveďte pouze požadované změny. V důsledku toho by měla pouze potřebujete namapovat tyto databázové role při prvním nasazení řešení.
+    > Potřebujete tato oprávnění přiřadit, když vytvoříte databázi. Ve výchozím nastavení, procesu sestavení nebude znovu vytvořit databázi na každé nasazení&#x2014;místo toho porovná existující databázi a schéma nejnovější a proveďte pouze požadované změny. V důsledku toho by měla pouze potřebujete namapovat tyto databázové role při prvním nasazení řešení.
 6. Otevřete Internet Explorer a přejděte na adresu URL aplikace, obraťte se na správce (například `http://testweb1:85/ContactManager/`).
 7. Ověřte, že aplikace funguje podle očekávání a vy budete moci přidat kontakty.
 
@@ -118,6 +118,6 @@ Tento příkaz nástroje MSBuild může obsahovat soubor příkazů pro publikov
 
 Přepsání vlastností nebo nastavení různé další přepínače v příkazu MSBuild můžete také upravit procesu sestavení pro každé prostředí. Další informace najdete v tématu [příkazového řádku MSBuild – Reference](https://msdn.microsoft.com/library/ms164311.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](deploying-database-projects.md)
-[další](manually-installing-web-packages.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-database-projects.md)
+> [další](manually-installing-web-packages.md)

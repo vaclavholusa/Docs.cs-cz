@@ -1,7 +1,7 @@
 ---
 title: Stav relace a aplikace v ASP.NET Core
 author: rick-anderson
-description: "Přístupy k zachování aplikace a stavu uživatele (relace) mezi požadavky."
+description: Přístupy k zachování aplikace a stavu uživatele (relace) mezi požadavky.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: 6b81cadf39c0db373f82b8de7d8d3901d51ea088
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: ca77db7bd498289b448475fc6cadeea622b4a606
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Úvod do stavu relace a aplikace v ASP.NET Core
+# <a name="session-and-application-state-in-aspnet-core"></a>Stav relace a aplikace v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), a [Diana LaRose](https://github.com/DianaLaRose)
 
@@ -33,7 +33,7 @@ Server uchovává relace po omezenou dobu od poslední žádosti. Buď nastavte 
 > [!WARNING]
 > Citlivá data neukládejte v relaci. Klient nemusí zavřete prohlížeč a vymazat souboru cookie relace (a některé prohlížeče zachování souborů cookie relací připojení mezi windows). Navíc nemusí být relaci omezen na jednoho uživatele; Další uživatel může pokračovat ve stejné relaci.
 
-Zprostředkovatel relací v paměti ukládá data relace na místním serveru. Pokud máte v plánu ke spouštění vaší webové aplikace na serverové farmě, musíte použít trvalé relace ke svázání každou relaci k určitému serveru. Platforma Windows Azure webů výchozí trvalé relace (směrování žádostí na aplikace nebo směrování žádostí na aplikace). Trvalé relace však může mít vliv na škálovatelnost a zkomplikovat aktualizace webové aplikace. Lepší možností je používat Redis nebo SQL Server distribuované ukládá do mezipaměti, které nevyžadují trvalé relace. Další informace najdete v tématu [práce s distribuované mezipaměti](xref:performance/caching/distributed). Podrobnosti o nastavení poskytovatelé služeb najdete v tématu [konfigurace relace](#configuring-session) dále v tomto článku.
+Zprostředkovatel relací v paměti ukládá data relace na místním serveru. Pokud máte v plánu ke spouštění vaší webové aplikace na serverové farmě, musíte použít trvalé relace ke svázání každou relaci k určitému serveru. Platforma Windows Azure webů výchozí trvalé relace (směrování žádostí na aplikace nebo směrování žádostí na aplikace). Trvalé relace však může mít vliv na škálovatelnost a zkomplikovat aktualizace webové aplikace. Lepší možností je používat Redis nebo SQL Server distribuované ukládá do mezipaměti, které nevyžadují trvalé relace. Další informace najdete v tématu [pracovat s distribuované mezipaměti](xref:performance/caching/distributed). Podrobnosti o nastavení poskytovatelé služeb najdete v tématu [konfigurace relace](#configuring-session) dále v tomto článku.
 
 <a name="temp"></a>
 ## <a name="tempdata"></a>TempData
@@ -70,20 +70,17 @@ Výběr zprostředkovatele TempData zahrnuje několik důležité informace, nap
 <a name="config-temp"></a>
 ### <a name="configure-the-tempdata-provider"></a>Konfigurace zprostředkovatele TempData
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Ve výchozím nastavení je povolen TempData zprostředkovatel na základě souboru cookie. Následující `Startup` kód třídy nakonfiguruje TempData zprostředkovatele na bázi relace:
 
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,6,11)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Následující `Startup` kód třídy nakonfiguruje TempData zprostředkovatele na bázi relace:
 
 [!code-csharp[](app-state/sample/src/WebAppSession/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,9)]
 
----
-
+* * *
 Pořadí je důležité pro komponenty middlewaru. V předchozím příkladu, k výjimce typu `InvalidOperationException` dojde při `UseSession` je volána poté, co `UseMvcWithDefaultRoute`. V tématu [řazení Middleware](xref:fundamentals/middleware/index#ordering) další podrobnosti.
 
 > [!IMPORTANT]
@@ -107,11 +104,11 @@ Soubory cookie se často používají pro přizpůsobení, kde je obsah přizpů
 
 ## <a name="httpcontextitems"></a>HttpContext.Items
 
-`Items` Kolekce je dobré umístění pro uložení dat, která je potřeba pouze při zpracování jednoho konkrétního požadavku. Obsah kolekce jsou zahozeny po každé žádosti. `Items` Kolekce je nejvhodnější jako způsob, jak součásti nebo middleware pro komunikaci, když budou fungovat v různých okamžicích v době žádost a mají přímý způsob, jak předat parametry. Další informace najdete v tématu [práce s HttpContext.Items](#working-with-httpcontextitems)dál v tomto článku.
+`Items` Kolekce je dobré umístění pro uložení dat, která je potřeba pouze při zpracování jednoho konkrétního požadavku. Obsah kolekce jsou zahozeny po každé žádosti. `Items` Kolekce je nejvhodnější jako způsob, jak součásti nebo middleware pro komunikaci, když budou fungovat v různých okamžicích v době žádost a mají přímý způsob, jak předat parametry. Další informace najdete v tématu [pracovat s HttpContext.Items](#working-with-httpcontextitems)dál v tomto článku.
 
 ## <a name="cache"></a>Mezipaměti
 
-Ukládání do mezipaměti je účinný způsob, jak ukládat a načítat data. Můžete ovládat, doba platnosti položek v mezipaměti na základě času a další důležité informace. Další informace o [ukládání do mezipaměti](../performance/caching/index.md).
+Ukládání do mezipaměti je účinný způsob, jak ukládat a načítat data. Můžete ovládat, doba platnosti položek v mezipaměti na základě času a další důležité informace. Další informace o [jak mezipaměť](../performance/caching/index.md).
 
 <a name="session"></a>
 ## <a name="working-with-session-state"></a>Práce s stav relace
@@ -126,16 +123,13 @@ Ukládání do mezipaměti je účinný způsob, jak ukládat a načítat data. 
 
 Následující kód ukazuje, jak nastavit Zprostředkovatel relací v paměti.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/Startup.cs?highlight=11-19,24)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](app-state/sample/src/WebAppSession/Startup.cs?highlight=11-19,24)]
 
----
-
+* * *
 Relace, můžete odkazovat `HttpContext` po je nainstalovaná a nakonfigurovaná.
 
 Pokud se pokusíte přístup `Session` před `UseSession` byla volána, výjimka `InvalidOperationException: Session has not been configured for this application or request` je vyvolána výjimka.
@@ -154,16 +148,13 @@ Relace používá ke sledování a identifikaci požadavků z jednoho prohlíže
 
 Chcete-li přepsat výchozí hodnoty relace, použijte `SessionOptions`:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](app-state/sample/src/WebAppSession/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
----
-
+* * *
 Tento server využívá `IdleTimeout` vlastnosti k určení, jak dlouho relace může být nečinnosti, než jsou opuštění její obsah. Tato vlastnost je nezávislá na vypršení platnosti souboru cookie. Každý požadavek, který předává přes middleware relace (číst nebo zapisovat do) obnoví časový limit.
 
 Protože `Session` je *bez uzamčení*, pokud dva požadavky obou pokusí změnit obsah relace, poslední přepíše první. `Session` je implementovaný jako *souvislý relace*, což znamená, že se veškerý obsah ukládat společně. Dva požadavky, které se změnit různé části relace (různé klíče) může stále vzájemně vliv.
@@ -271,7 +262,7 @@ public class MyController : Controller
 
 * "Nelze přeložit služby pro typ 'Microsoft.Extensions.Caching.Distributed.IDistributedCache' při pokusu o aktivaci 'Microsoft.AspNetCore.Session.DistributedSessionStore'."
 
-  To je obvykle způsobeno nedaří nakonfigurovat alespoň jednu `IDistributedCache` implementace. Další informace najdete v tématu [práce s distribuované mezipaměti](xref:performance/caching/distributed) a [v ukládání do mezipaměti](xref:performance/caching/memory).
+  To je obvykle způsobeno nedaří nakonfigurovat alespoň jednu `IDistributedCache` implementace. Další informace najdete v tématu [pracovat s distribuované mezipaměti](xref:performance/caching/distributed) a [v ukládání do mezipaměti](xref:performance/caching/memory).
 
 * V případě, který relace middleware nepodaří zachovat relace (například: Pokud databáze není k dispozici), se protokoluje výjimku a swallows ho. Žádost se pak normálně pokračovat, což vede k velmi nepředvídatelné chování.
 

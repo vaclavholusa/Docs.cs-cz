@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs
-title: "Zobrazení souhrnných informací v prvku GridView zápatí (C#) | Microsoft Docs"
+title: Zobrazení souhrnných informací v prvku GridView zápatí (C#) | Microsoft Docs
 author: rick-anderson
-description: "V dolní části sestavy v souhrnu řádek je často zobrazí souhrnné informace. Ovládací prvek GridView může obsahovat zápatí řádek, na jejichž buněk můžeme pr..."
+description: V dolní části sestavy v souhrnu řádek je často zobrazí souhrnné informace. Ovládací prvek GridView může obsahovat zápatí řádek, na jejichž buněk můžeme pr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0d3df976181a4641dbfffe77875989c77ece059d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3bb00a41bee86090f71d6315d73037cd41b2c621
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-c"></a>Zobrazení souhrnných informací v prvku GridView zápatí (C#)
 ====================
@@ -101,7 +101,7 @@ Vzhledem k tomu `GetProductsByCategoryID(categoryID)` metoda přebírá vstupní
 
 [![Získání categoryID hodnota parametru z rozevírací seznam vybrané kategorie](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)
 
-**Obrázek 8**: získání  *`categoryID`*  hodnota parametru z rozevírací seznam vybrané kategorie ([Kliknutím zobrazit obrázek v plné velikosti](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
+**Obrázek 8**: získání *`categoryID`* hodnota parametru z rozevírací seznam vybrané kategorie ([Kliknutím zobrazit obrázek v plné velikosti](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
 
 
 Po dokončení průvodce bude GridView mít BoundField pro jednotlivé vlastnosti produktu. Pojďme vyčištění tyto BoundFields proto pouze `ProductName`, `UnitPrice`, `UnitsInStock`, a `UnitsOnOrder` BoundFields jsou zobrazeny. Libosti přidat všechna nastavení na úrovni pole pro zbývající BoundFields (například formátování `UnitPrice` jako měny). Po provedení těchto změn, deklarativní prvku GridView by měl vypadat takto:
@@ -114,7 +114,7 @@ V tuto chvíli nemáme plně funkční a podrobností sestavu, která zobrazí n
 
 [![Získání categoryID hodnota parametru z rozevírací seznam vybrané kategorie](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)
 
-**Obrázek 9**: získání  *`categoryID`*  hodnota parametru z rozevírací seznam vybrané kategorie ([Kliknutím zobrazit obrázek v plné velikosti](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
+**Obrázek 9**: získání *`categoryID`* hodnota parametru z rozevírací seznam vybrané kategorie ([Kliknutím zobrazit obrázek v plné velikosti](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
 
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a>Krok 2: Zobrazení v prvku GridView zápatí
@@ -177,10 +177,10 @@ Vytvoření `RowDataBound` obslužné rutiny události pro GridView výběrem Gr
 
 Aby byla zachována spuštěný celkový potřebujeme k definování proměnné mimo obor obslužné rutiny události. Vytvořte následující čtyři proměnné na úrovni stránky:
 
-- `_totalUnitPrice`, typu`decimal`
-- `_totalNonNullUnitPriceCount`, typu`int`
-- `_totalUnitsInStock`, typu`int`
-- `_totalUnitsOnOrder`, typu`int`
+- `_totalUnitPrice`, typu `decimal`
+- `_totalNonNullUnitPriceCount`, typu `int`
+- `_totalUnitsInStock`, typu `int`
+- `_totalUnitsOnOrder`, typu `int`
 
 Dále napište kód se zvýší těchto tří proměnných pro každý řádek dat zjistil v `RowDataBound` obslužné rutiny události.
 
@@ -221,8 +221,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](using-the-formview-s-templates-cs.md)
-[další](custom-formatting-based-upon-data-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-the-formview-s-templates-cs.md)
+> [další](custom-formatting-based-upon-data-vb.md)

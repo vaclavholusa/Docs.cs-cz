@@ -1,7 +1,7 @@
 ---
-title: "Hostování v ASP.NET Core"
+title: Hostování v ASP.NET Core
 author: guardrex
-description: "Další informace o webového hostitele v ASP.NET Core, která je zodpovědná za spuštění a životního cyklu správy aplikací."
+description: Další informace o webového hostitele v ASP.NET Core, která je zodpovědná za spuštění a životního cyklu správy aplikací.
 manager: wpickett
 ms.author: riande
 ms.date: 09/21/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/hosting
-ms.openlocfilehash: fe9935eaa3529c513dfb2d111a38a4452012b364
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 9d9b35153e8d771086e3171a224cb62d5d9cc14e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>Hostování v ASP.NET Core
 
@@ -23,8 +23,7 @@ Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*. Hostitel je zodpově
 
 ## <a name="setting-up-a-host"></a>Nastavení hostitele
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder). To se obvykle provádí v vstupní bod aplikace, `Main` metoda. V rámci šablon projektu `Main` se nachází v *Program.cs*. Typické *Program.cs* volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) zahájíte nastavení hostitele:
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main)]
@@ -50,8 +49,7 @@ Další informace o konfiguraci aplikace, najdete v části [konfigurace v ASP.N
 > [!NOTE]
 > Jako alternativu k použití statických `CreateDefaultBuilder` metody vytvoření hostitele z [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) je podporované přístup pomocí ASP.NET Core 2.x. Další informace najdete v tématu kartě 1.x ASP.NET Core.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder). Vytvoření hostitele se obvykle provádí v vstupní bod aplikace, `Main` metoda. V rámci šablon projektu `Main` se nachází v *Program.cs*:
 
 [!code-csharp[](../common/samples/WebApplication1/Program.cs)]
@@ -76,8 +74,7 @@ var host = new WebHostBuilder()
 host.Run();
 ```
 
----
-
+* * *
 Při nastavování hostitele, [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) a [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) metody lze zadat. Pokud `Startup` je zadána třída, musíte definovat `Configure` metoda. Další informace najdete v tématu [spuštění aplikace v ASP.NET Core](startup.md). Více volá, aby se `ConfigureServices` připojit k sobě. Více volá, aby se `Configure` nebo `UseStartup` na `WebHostBuilder` nahradit předchozí nastavení.
 
 ## <a name="host-configuration-values"></a>Hodnoty konfigurace hostitele
@@ -190,7 +187,7 @@ Nastaví prostředí aplikace.
 **Nastavit pomocí**: `UseEnvironment`  
 **Proměnné prostředí**: `ASPNETCORE_ENVIRONMENT`
 
-Prostředí můžete nastavit na jakoukoli hodnotu. Framework definované hodnoty zahrnují `Development`, `Staging`, a `Production`. Hodnoty nejsou velká a malá písmena. Ve výchozím nastavení *prostředí* je pro čtení z `ASPNETCORE_ENVIRONMENT` proměnné prostředí. Při použití [Visual Studio](https://www.visualstudio.com/), proměnné prostředí může být nastavena v *launchSettings.json* souboru. Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).
+Prostředí můžete nastavit na jakoukoli hodnotu. Framework definované hodnoty zahrnují `Development`, `Staging`, a `Production`. Hodnoty nejsou velká a malá písmena. Ve výchozím nastavení *prostředí* je pro čtení z `ASPNETCORE_ENVIRONMENT` proměnné prostředí. Při použití [Visual Studio](https://www.visualstudio.com/), proměnné prostředí může být nastavena v *launchSettings.json* souboru. Další informace najdete v tématu [pracovat s několika prostředí](xref:fundamentals/environments).
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -296,7 +293,7 @@ Určuje IP adres nebo adres hostitele s porty a protokoly, které server naslouc
 
 **Klíč**: adresy URL  
 **Typ**: *řetězec*  
-**Výchozí**: http://localhost: 5000  
+**Výchozí**: http://localhost:5000  
 **Nastavit pomocí**: `UseUrls`  
 **Proměnné prostředí**: `ASPNETCORE_URLS`
 
@@ -789,7 +786,7 @@ public class Startup
 ```
 
 > [!NOTE]
-> Kromě `IsDevelopment` metoda rozšíření `IHostingEnvironment` nabízí `IsStaging`, `IsProduction`, a `IsEnvironment(string environmentName)` metody. V tématu [práce s několika prostředí](xref:fundamentals/environments) podrobnosti.
+> Kromě `IsDevelopment` metoda rozšíření `IHostingEnvironment` nabízí `IsStaging`, `IsProduction`, a `IsEnvironment(string environmentName)` metody. V tématu [pracovat s několika prostředí](xref:fundamentals/environments) podrobnosti.
 
 `IHostingEnvironment` Služby může také vložit přímo do `Configure` metoda pro nastavení zpracování kanálu:
 
@@ -833,7 +830,7 @@ public async Task Invoke(HttpContext context, IHostingEnvironment env)
 
 [IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) umožňuje po spuštění a vypnutí aktivity. Zrušení tokenů použitá pro zaregistrování jsou tři vlastnosti na rozhraní `Action` metody, které definují události spuštění a vypnutí.
 
-| Token zrušení    | Aktivuje, když &#8230; |
+| Token zrušení    | Při aktivaci&#8230; |
 | --------------------- | --------------------- |
 | `ApplicationStarted`  | Hostitele plně byla spuštěna. |
 | `ApplicationStopping` | Hostitel provádí řádné vypnutí. Může být stále aktivní žádosti. Vypnutí bloky až po dokončení této události. |

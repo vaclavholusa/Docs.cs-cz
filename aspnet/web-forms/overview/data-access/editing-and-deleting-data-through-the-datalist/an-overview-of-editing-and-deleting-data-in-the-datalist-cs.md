@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
-title: "Přehled úpravy a odstraňování dat v DataList (C#) | Microsoft Docs"
+title: Přehled úpravy a odstraňování dat v DataList (C#) | Microsoft Docs
 author: rick-anderson
-description: "Při prvku DataList chybí předdefinované úpravy a odstraňování možnosti, v tomto kurzu ukážeme, jak vytvořit DataList, který podporuje úpravy a odstraňování o..."
+description: Při prvku DataList chybí předdefinované úpravy a odstraňování možnosti, v tomto kurzu ukážeme, jak vytvořit DataList, který podporuje úpravy a odstraňování o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8b3067c5a6bcf81a35f66d43886c9b116a0ef7d8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: be86707980b11453ef78fdbddead73ab9808b54d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a>Přehled úpravy a odstraňování dat v DataList (C#)
 ====================
@@ -249,7 +249,7 @@ Kliknutím na tlačítko s upravená produktu aktualizaci nebo Storno tlačítka
 
 Chcete-li DataList vykreslení všechny jeho položky v režimu jen pro čtení, je potřeba:
 
-1. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) do indexu neexistující `DataListItem` index. `-1`je bezpečné volbou, protože `DataListItem` indexy začínají `0`.
+1. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) do indexu neexistující `DataListItem` index. `-1` je bezpečné volbou, protože `DataListItem` indexy začínají `0`.
 2. Rebind data, která mají DataList. Od ne `DataListItem` `ItemIndex` es odpovídají DataList s `EditItemIndex`, budou k dispozici celý DataList v režimu jen pro čtení.
 
 Následující kód obslužné rutiny událostí se dá udělat tyto kroky:
@@ -263,7 +263,7 @@ Je poslední obslužné rutiny události je potřeba dokončit `UpdateCommand` o
 
 1. Programový přístup název zadaný uživatelem produktu a ceny, jakož i upravená produktu s `ProductID`.
 2. Zahájit proces aktualizace voláním odpovídající `UpdateProduct` přetížení v `ProductsBLL` třídy.
-3. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) do indexu neexistující `DataListItem` index. `-1`je bezpečné volbou, protože `DataListItem` indexy začínají `0`.
+3. Nastavit DataList s [ `EditItemIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) do indexu neexistující `DataListItem` index. `-1` je bezpečné volbou, protože `DataListItem` indexy začínají `0`.
 4. Rebind data, která mají DataList. Od ne `DataListItem` `ItemIndex` es odpovídají DataList s `EditItemIndex`, budou k dispozici celý DataList v režimu jen pro čtení.
 
 Provedení kroků 1 a 2 zodpovídají za uložení uživatele s změn; kroky 3 a 4 DataList vrátit do předem úpravy stavu po změny byly uloženy a se shoduje s postupem prováděla `CancelCommand` obslužné rutiny události.
@@ -339,11 +339,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Zack Petr, Ken Pespisa a Randy Schmidt. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Next](performing-batch-updates-cs.md)
+> [!div class="step-by-step"]
+> [Next](performing-batch-updates-cs.md)

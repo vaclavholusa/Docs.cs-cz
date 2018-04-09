@@ -1,7 +1,7 @@
 ---
-title: "Jádro ASP.NET MVC s Entity Framework Core - kurz 1 10"
+title: Jádro ASP.NET MVC s Entity Framework Core - kurz 1 10
 author: tdykstra
-description: 
+description: ''
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 68b38df790689acefce983e65ad2adb64f67d62d
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: eaa3070e182b161087185bbb9007e8067052d95c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="get-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Začínáme s ASP.NET MVC jádra a Entity Framework Core pomocí sady Visual Studio (1 10)
+# <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Jádro ASP.NET MVC s Entity Framework Core - kurz 1 10
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[RP better than MVC](../../includes/RP-EF/rp-over-mvc.md)]
+[!INCLUDE [RP better than MVC](../../includes/RP-EF/rp-over-mvc.md)]
 
 Contoso univerzity ukázkovou webovou aplikaci ukazuje, jak vytvářet webové aplikace ASP.NET MVC 2.0 základní pomocí základní Entity Framework (EF) 2.0 a Visual Studio 2017.
 
@@ -35,7 +35,7 @@ Základní EF 2.0 je nejnovější verzi EF, ale ještě nemá všechny funkce E
 
 ## <a name="prerequisites"></a>Požadavky
 
-[!INCLUDE[install 2.0](../../includes/install2.0.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
@@ -311,7 +311,7 @@ Klikněte pravým tlačítkem myši **Student** tabulky a klikněte na tlačítk
 
 ![Tabulka Student v SSOX](intro/_static/ssox-student-table.png)
 
-*.Mdf* a *.ldf* databázové soubory jsou v *C:\Users\\ <yourusername>*  složky.
+<em>.Mdf</em> a <em>.ldf</em> databázové soubory jsou v <em>C:\Users\\ <yourusername> </em> složky.
 
 Protože jste volání `EnsureCreated` v metodě inicializátoru, který spouští při spuštění aplikace, můžete dokonce vytvářet teď ke změně `Student` třídy, odstraňte tuto databázi, spusťte aplikaci znovu a databáze bude automaticky znovu vytvořit tak, aby odpovídaly vaší změn. Například, pokud přidáte `EmailAddress` vlastnost, která má `Student` třídy, se zobrazí nový `EmailAddress` sloupec v tabulce znovu vytvořena.
 
@@ -325,7 +325,7 @@ Kvůli použití konvence nebo předpoklady, které umožňuje Entity Framework 
 
 * Vlastnosti entity, které jsou s názvem ID nebo classnameID jsou rozpoznat jako vlastnosti primárního klíče.
 
-* Vlastnost interpretována jako vlastností cizího klíče, pokud je název  *<navigation property name> <primary key property name>*  (například `StudentID` pro `Student` navigační vlastnost, protože `Student` je primární klíč entity `ID`). Taky vlastnosti cizího klíče jednoduše název  *<primary key property name>*  (například `EnrollmentID` vzhledem k tomu `Enrollment` je primární klíč entity `EnrollmentID`).
+* Vlastnost interpretována jako vlastností cizího klíče, pokud je název *<navigation property name> <primary key property name>* (například `StudentID` pro `Student` navigační vlastnost, protože `Student` je primární klíč entity `ID`). Taky vlastnosti cizího klíče jednoduše název *<primary key property name>* (například `EnrollmentID` vzhledem k tomu `Enrollment` je primární klíč entity `EnrollmentID`).
 
 Konvenční chování lze přepsat. Například můžete explicitně zadáte názvy tabulek, jako jste viděli dříve v tomto kurzu. A můžete nastavit názvy sloupců a nastavte libovolnou vlastnost jako primární klíč, cizí klíč, nebo jak uvidíte v [novější kurzu](complex-data-model.md) této série.
 
@@ -363,5 +363,5 @@ Další informace o asynchronní programování v rozhraní .NET najdete v téma
 
 Nyní jste vytvořili jednoduchou aplikaci, která se používá k uložení a zobrazení data Entity Framework Core a SQL Server Express LocalDB. V následujícím kurzu se dozvíte jak provádět základní CRUD (vytvořit, číst, aktualizovat, odstraňovat) operace.
 
->[!div class="step-by-step"]
-[Next](crud.md)
+> [!div class="step-by-step"]
+> [Next](crud.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
-title: "Implementace optimistickou metodu souběžného s SqlDataSource (VB) | Microsoft Docs"
+title: Implementace optimistickou metodu souběžného s SqlDataSource (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme zkontrolujte essentials optimistickou metodu souběžného řízení a poté zjistit, jak ji pomocí ovládacího prvku SqlDataSource implementovat."
+description: V tomto kurzu jsme zkontrolujte essentials optimistickou metodu souběžného řízení a poté zjistit, jak ji pomocí ovládacího prvku SqlDataSource implementovat.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 974ea50a0d12aae09107470815214b20068ea553
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6e7e81b3f3a54596c033caa2cf75e5e3ec01764c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>Implementace optimistickou metodu souběžného s SqlDataSource (VB)
 ====================
@@ -116,7 +116,7 @@ Podobně `DeleteCommand` vlastnost a `DeleteParameters` kolekce by měla vypadat
 
 Kromě rozšířit `WHERE` klauzulích `UpdateCommand` a `DeleteCommand` vlastnosti (a přidání dalších parametrů do kolekce příslušných parametrů), výběr použít optimistickou metodu souběžného zpracování možnost upraví dva další vlastnosti:
 
-- Změny [ `ConflictDetection` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) z `OverwriteChanges` (výchozí) na`CompareAllValues`
+- Změny [ `ConflictDetection` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) z `OverwriteChanges` (výchozí) na `CompareAllValues`
 - Změny [ `OldValuesParameterFormatString` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx) z {0} (výchozí) na původní\_{0}.
 
 Pokud data ovládací prvek webu vyvolá SqlDataSource s `Update()` nebo `Delete()` metoda, předává v původní hodnoty. Pokud SqlDataSource s `ConflictDetection` je nastavena na `CompareAllValues`, tyto původní hodnoty se přidají do příkazu. `OldValuesParameterFormatString` Vlastnost poskytuje vzoru pro pojmenovávání použít pro tyto parametry s původní hodnotou. Průvodce konfigurace zdroje dat používá původní\_{0} a názvy jednotlivých původní parametrů v `UpdateCommand` a `DeleteCommand` vlastnosti a `UpdateParameters` a `DeleteParameters` kolekce odpovídajícím způsobem.
@@ -231,7 +231,7 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)

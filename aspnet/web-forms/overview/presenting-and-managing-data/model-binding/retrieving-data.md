@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
-title: "Načítání a zobrazení dat s model vazby a webových formulářů | Microsoft Docs"
+title: Načítání a zobrazení dat s model vazby a webových formulářů | Microsoft Docs
 author: tfitzmac
-description: "Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-..."
+description: Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: e750250285fcb0088da284588d721ac21e73820c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 26873efa5dbfdbdab39a52cfb9cfd5a65c8231a3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Načítání a zobrazování dat pomocí vazby modelu a webové formuláře
 ====================
@@ -182,5 +182,5 @@ V tomto kurzu jste vytvořili třídy modelu dat a generuje databázi z těchto 
 
 V dalším [kurzu](updating-deleting-and-creating-data.md) této série povolíte aktualizaci, odstranění a vytvoření data.
 
->[!div class="step-by-step"]
-[Další](updating-deleting-and-creating-data.md)
+> [!div class="step-by-step"]
+> [Next](updating-deleting-and-creating-data.md)

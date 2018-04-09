@@ -1,7 +1,7 @@
 ---
-title: Implementace
+title: Ochrana dat základní implementace technologie ASP.NET
 author: rick-anderson
-description: "Tento dokument slouží jako obsah pro různé ochrany implementace témata dat ASP.NET Core."
+description: Zjistit různé implementace témata týkající se ochrany dat ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,28 +9,28 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/index
-ms.openlocfilehash: a464e961c0df1eb5f3def40d2a8c306454ed02d8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ac891077342bb60cf321b96ba6d55df1a90655cd
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="implementation"></a>Implementace
+# <a name="aspnet-core-data-protection-implementation"></a>Ochrana dat základní implementace technologie ASP.NET
 
-* [Podrobnosti ověřeného šifrování](authenticated-encryption-details.md)
+* [Podrobnosti ověřeného šifrování](xref:security/data-protection/implementation/authenticated-encryption-details)
 
-* [Odvozování podklíčů a ověřené šifrování](subkeyderivation.md)
+* [Odvozování podklíčů a ověřené šifrování](xref:security/data-protection/implementation/subkeyderivation)
 
-* [Kontextová záhlaví](context-headers.md)
+* [Kontextová záhlaví](xref:security/data-protection/implementation/context-headers)
 
-* [Správa klíčů](key-management.md)
+* [Správa klíčů](xref:security/data-protection/implementation/key-management)
 
-* [Zprostředkovatelé úložiště klíčů](key-storage-providers.md)
+* [Zprostředkovatelé úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers)
 
-* [Šifrování klíčů v klidovém stavu](key-encryption-at-rest.md)
+* [Šifrování klíčů v klidovém stavu](xref:security/data-protection/implementation/key-encryption-at-rest)
 
-* [Neměnnost klíče a změna nastavení](key-immutability.md)
+* [Klíče neměnitelnosti a nastavení](xref:security/data-protection/implementation/key-immutability)
 
-* [Formát ukládání klíčů](key-storage-format.md)
+* [Formát ukládání klíčů](xref:security/data-protection/implementation/key-storage-format)
 
-* [Zprostředkovatelé dočasné ochrany dat](key-storage-ephemeral.md)
+* [Zprostředkovatelé dočasné ochrany dat](xref:security/data-protection/implementation/key-storage-ephemeral)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs
-title: "Interakci s stránky obsahu ze stránky předlohy (C#) | Microsoft Docs"
+title: Interakci s stránky obsahu ze stránky předlohy (C#) | Microsoft Docs
 author: rick-anderson
-description: "Prozkoumá tom, jak volat metody, nastavte vlastnosti atd stránky obsahu z kódu na hlavní stránce."
+description: Prozkoumá tom, jak volat metody, nastavte vlastnosti atd stránky obsahu z kódu na hlavní stránce.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4d7f6eeac084f3516ab470adf8973351cf08a7f1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7c845c7b0077e6d3fb5ce770029b4f9f48609b17
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-c"></a>Interakci s stránky obsahu ze stránky předlohy (C#)
 ====================
@@ -153,7 +153,7 @@ Jak je popsáno výše v tomto kurzu, musíme aktivuje událost na hlavní strá
 Třída jako odběratel u událost vytvořením *obslužné rutiny události*, což je metoda, která se spustí v reakci na událost se vyvolá. Vydavatel definuje události, kterou vyvolá definováním *delegát události*. Delegát události Určuje, jaké vstupní parametry obslužné rutiny události musí přijmout. V rozhraní .NET Framework – delegáti událostí není vrátí všechny hodnoty a přijmout dva vstupní parametry:
 
 - `Object`, Který identifikuje zdroji událostí a
-- Třídy odvozené od`System.EventArgs`
+- Třídy odvozené od `System.EventArgs`
 
 Druhý parametr předaný obslužné rutiny události může obsahovat další informace o události. Při základní `EventArgs` třída nepředává podél žádné informace, rozhraní .NET Framework zahrnuje několik tříd, které rozšiřují `EventArgs` a zahrnovat další vlastnosti. Například `CommandEventArgs` instance předána obslužné rutiny událostí, které reagují na `Command` události a zahrnuje dvě informační vlastnosti: `CommandArgument` a `CommandName`.
 
@@ -199,7 +199,7 @@ Kód pro obslužnou rutinu události dokončení, ale zatím jsme na propojit st
 
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample11.cs)]
 
-*Vydavatel* je odkaz na objekt, který nabízí událost *eventName*, a *methodName* je název obslužné rutiny události definované v odběrateli, který má odpovídající podpis na *eventDelegate*. Jinými slovy, pokud událost delegovat je `EventHandler`, pak *methodName* musí být název metody v odběrateli, která nevrátí hodnotu a přijímá dva vstupní parametry typů `Object` a `EventArgs`, v uvedeném pořadí.
+*Vydavatel* je odkaz na objekt, který nabízí událost *eventName*, a *methodName* je název obslužné rutiny události definované v odběrateli, který má odpovídající podpis *eventDelegate*. Jinými slovy, pokud událost delegovat je `EventHandler`, pak *methodName* musí být název metody v odběrateli, která nevrátí hodnotu a přijímá dva vstupní parametry typů `Object` a `EventArgs`, v uvedeném pořadí.
 
 Tento kód kabeláž událostí je třeba spustit na první návštěvě stránky a následné zpětná vystavení a má probíhat na bod v průběhu životního cyklu stránky, předcházejícího při událost může být vyvolána. Ve fázi PreInit, který probíhá velmi brzy v životním cyklu stránky je vhodná doba přidat kód kabeláž události.
 
@@ -257,12 +257,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Suchi Banerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Suchi Banerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](interacting-with-the-master-page-from-the-content-page-cs.md)
-[další](master-pages-and-asp-net-ajax-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](interacting-with-the-master-page-from-the-content-page-cs.md)
+> [další](master-pages-and-asp-net-ajax-cs.md)

@@ -1,7 +1,7 @@
 ---
-title: "Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio pro Mac"
+title: Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio pro Mac
 author: rick-anderson
-description: "Vytvoření webové rozhraní API s jádro ASP.NET MVC a Visual Studio pro Mac"
+description: Vytvoření webové rozhraní API s jádro ASP.NET MVC a Visual Studio pro Mac
 helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Service, HTTP Service
 manager: wpickett
 ms.author: riande
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: 9499a203f899fade5d2972ab4e913b594dd591d8
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: ce94091447452a51654f2cd4dad9043b63c737ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Vytvoření webové rozhraní API s jádro ASP.NET MVC a Visual Studio pro Mac
+# <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-mac"></a>Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio pro Mac
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Wasson Jan](https://github.com/mikewasson)
 
@@ -30,16 +30,13 @@ Existují 3 verze tohoto kurzu:
 
 <!-- WARNING: The code AND images in this doc are used by uid: tutorials/web-api-vsc, tutorials/first-web-api-mac and tutorials/first-web-api. If you change any code/images in this tutorial, update uid: tutorials/web-api-vsc -->
 
-[!INCLUDE[template files](../includes/webApi/intro.md)]
+[!INCLUDE [template files](../includes/webApi/intro.md)]
 
-* V tématu [Úvod do rozhraní ASP.NET MVC jádra v systému macOS nebo Linux](xref:tutorials/first-mvc-app-xplat/index) pro příklad, který používá trvalé databáze.
+V tématu [Úvod do rozhraní ASP.NET MVC jádra v systému macOS nebo Linux](xref:tutorials/first-mvc-app-xplat/index) pro příklad, který používá trvalé databáze.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Nainstalujte následující:
-
-- [.NET core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější
-- [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
+[!INCLUDE [](~/includes/net-core-prereqs-macos.md)]
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
@@ -100,7 +97,7 @@ Přidat `TodoContext` třídy k *modely* složky.
 
 [!code-csharp[](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
 
-[!INCLUDE[Register the database context](../includes/webApi/register_dbContext.md)]
+[!INCLUDE [Register the database context](../includes/webApi/register_dbContext.md)]
 
 ## <a name="add-a-controller"></a>Přidání kontroleru
 
@@ -108,7 +105,7 @@ V Průzkumníku řešení v *řadiče* složky, přidejte třídu `TodoControlle
 
 Nahradit následující generovaný kód (a přidejte uzavírací závorky):
 
-[!INCLUDE[code and get todo items](../includes/webApi/getTodoItems.md)]
+[!INCLUDE [code and get todo items](../includes/webApi/getTodoItems.md)]
 
 ### <a name="launch-the-app"></a>Spusťte aplikaci
 
@@ -195,7 +192,7 @@ Odpověď [204 (ne obsahu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm
 
 ## <a name="next-steps"></a>Další kroky
 
-* [Směrování do akce Kontroleru](xref:mvc/controllers/routing)
+* [Směrování na akce kontroleru](xref:mvc/controllers/routing)
 * Informace o nasazení rozhraní API najdete v tématu [hostitele a nasazení](xref:host-and-deploy/index).
 * [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 * [Postman](https://www.getpostman.com/)

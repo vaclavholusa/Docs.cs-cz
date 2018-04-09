@@ -1,7 +1,7 @@
 ---
-title: "Facebook, Google a externího poskytovatele ověřování v ASP.NET Core"
+title: Facebook, Google a externího poskytovatele ověřování v ASP.NET Core
 author: rick-anderson
-description: "Tento kurz ukazuje, jak sestavit ASP.NET Core 2.x aplikaci pomocí externí zprostředkovatelé ověřování OAuth 2.0."
+description: Tento kurz ukazuje, jak sestavit ASP.NET Core 2.x aplikaci pomocí externí zprostředkovatelé ověřování OAuth 2.0.
 manager: wpickett
 ms.author: riande
 ms.date: 11/01/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 76433f814d6850a449434c29eb0bd27570ce193a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 93fa42be9c551f5bbdf3851aec1d9e01139fdb76
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Facebook, Google a externího poskytovatele ověřování v ASP.NET Core
 
@@ -23,7 +23,7 @@ Podle [Valeriy Novytskyy](https://github.com/01binary) a [Rick Anderson](https:/
 
 Tento kurz ukazuje, jak sestavit ASP.NET Core 2.x aplikaci, která umožňuje uživatelům přihlásit se pomocí pověření z externí zprostředkovatelé ověřování OAuth 2.0.
 
-[Facebook](facebook-logins.md), [Twitter](twitter-logins.md), [Google](google-logins.md), a [Microsoft](microsoft-logins.md) poskytovatelé jsou popsané v následujících částech. Jiní poskytovatelé jsou k dispozici v balíčky jiných výrobců, jako [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) a [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers).
+[Facebook](xref:security/authentication/facebook-logins), [Twitter](xref:security/authentication/twitter-logins), [Google](xref:security/authentication/google-logins), a [Microsoft](xref:security/authentication/microsoft-logins) poskytovatelé jsou popsané v následujících částech. Jiní poskytovatelé jsou k dispozici v balíčky jiných výrobců, jako [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) a [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers).
 
 ![Ikony sociálních médií pro Facebook, Twitter, Google plus a Windows](index/_static/social.png)
 
@@ -58,7 +58,7 @@ OAuth 2.0 vyžaduje použití protokolu SSL pro ověřování prostřednictvím 
 
 Poznámka: Projekty vytvořené pomocí **webové aplikace** nebo **webového rozhraní API** šablony projektů pro ASP.NET Core 2.x automaticky konfigurují pro povolit protokol SSL a spustit s adresou URL https, pokud **jednotlivých Uživatelské účty** na jste vybrali možnost **dialogové okno Změna ověřování** v Průvodci projektu jak je uvedeno výše.
 
-* Vyžadovat šifrování SSL na svém webu pomocí následujících kroků v [vynucování SSL v aplikaci ASP.NET Core](xref:security/enforcing-ssl) tématu.
+* Vyžadovat šifrování SSL na svém webu pomocí následujících kroků v [vynutit SSL v aplikaci ASP.NET Core](xref:security/enforcing-ssl) tématu.
 
 ## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>Používat SecretManager k uložení tokeny přiřadila zprostředkovatele přihlášení
 
@@ -66,17 +66,17 @@ Přihlášení prostřednictvím sociální sítě poskytovatelů přiřadit **I
 
 Tyto hodnoty jsou efektivně *uživatelské jméno* a *heslo* vaše aplikace používá pro přístup k jejich rozhraní API a tvoří "všechna tajemství" které může být propojený konfiguraci vaší aplikace pomocí **Tajný klíč správce** místo je uložen v konfiguračních souborech přímo nebo přímo v kódu je.
 
-Postupujte podle kroků v [bezpečného úložiště tajné klíče aplikace během vývoje v ASP.NET Core](xref:security/app-secrets) téma tak, aby můžete ukládat tokeny přiřadí každé níže zprostředkovatele přihlášení.
+Postupujte podle kroků v [bezpečného úložiště tajné klíče aplikace v vývoj v ASP.NET Core](xref:security/app-secrets) téma tak, aby můžete ukládat tokeny přiřadí každé níže zprostředkovatele přihlášení.
 
 ## <a name="setup-login-providers-required-by-your-application"></a>Instalační program zprostředkovatele přihlášení, které jsou požadované aplikací
 
 Ke konfiguraci aplikace pomocí příslušného zprostředkovatele použijte v následujících tématech:
 
-* [Facebook](facebook-logins.md) pokyny
-* [Twitter](twitter-logins.md) pokyny
-* [Google](google-logins.md) pokyny
-* [Microsoft](microsoft-logins.md) pokyny
-* [Ostatní poskytovatele](other-logins.md) pokyny
+* [Facebook](xref:security/authentication/facebook-logins) pokyny
+* [Twitter](xref:security/authentication/twitter-logins) pokyny
+* [Google](xref:security/authentication/google-logins) pokyny
+* [Microsoft](xref:security/authentication/microsoft-logins) pokyny
+* [Ostatní poskytovatele](xref:security/authentication/otherlogins) pokyny
 
 ## <a name="optionally-set-password"></a>Volitelně můžete nastavit heslo
 

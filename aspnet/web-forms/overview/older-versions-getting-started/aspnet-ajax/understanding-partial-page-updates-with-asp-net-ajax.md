@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
-title: "Principy částečná stránka se aktualizuje pomocí prvku ASP.NET AJAX | Microsoft Docs"
+title: Principy částečná stránka se aktualizuje pomocí prvku ASP.NET AJAX | Microsoft Docs
 author: scottcate
-description: "Možná nejvíce viditelné funkce ASP.NET AJAX rozšíření je možnost provést na stránce částečné nebo přírůstkové aktualizace bez provádění úplné postback t..."
+description: Možná nejvíce viditelné funkce ASP.NET AJAX rozšíření je možnost provést na stránce částečné nebo přírůstkové aktualizace bez provádění úplné postback t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
-ms.openlocfilehash: 1d8d3009df0a264e466d3f7decfb65978d8ae7a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 91a98bf1c9a71ae84c569f7ae40930422cb652e0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>Principy částečná stránka se aktualizuje pomocí prvku ASP.NET AJAX
 ====================
@@ -52,7 +52,7 @@ Možnost integrace vykreslení části stránky je integrována do technologie A
 ## <a name="walkthrough-integrating-partial-rendering-into-an-existing-project"></a>Návod: Integraci částečným vykreslením do existujícího projektu
 
 
-1. V aplikaci Microsoft Visual Studio 2008, vytvořte nový projekt ASP.NET webu přechodem na *soubor*  *- &gt; nový*  *- &gt; webu* a výběrem webové stránky ASP.NET z tohoto dialogového okna. Můžete pojmenovat se vám líbí a může ji nainstalovat buď do systému souborů nebo do Internetové informační služby (IIS).
+1. V aplikaci Microsoft Visual Studio 2008, vytvořte nový projekt ASP.NET webu přechodem na <em>soubor</em>  <em>- &gt; nový</em>  <em>- &gt; webu</em> a výběrem webové stránky ASP.NET z tohoto dialogového okna. Můžete pojmenovat se vám líbí a může ji nainstalovat buď do systému souborů nebo do Internetové informační služby (IIS).
 2. Zobrazí se prázdný výchozí stránka s základní značky ASP.NET (formuláře na straně serveru a `@Page` – direktiva). Vyřaďte popisek s názvem `Label1` tlačítko s názvem `Button1` na stránku v rámci elementu formuláře. Můžete nastavit jejich vlastnosti textu k vám líbí.
 3. V návrhovém zobrazení, klikněte dvakrát na `Button1` pro vygenerování obslužné rutiny kódu. V rámci této obslužné rutiny události nastavit `Label1.Text` na kliknutí na tlačítko! .
 
@@ -73,11 +73,11 @@ Možnost integrace vykreslení části stránky je integrována do technologie A
 ([Kliknutím zobrazit obrázek v plné velikosti](understanding-partial-page-updates-with-asp-net-ajax/_static/image3.png))
 
 
-1. *Známý problém:*při instalaci sady Visual Studio 2008 do počítače, který již má nainstalované s ASP.NET 2.0 AJAX rozšíření Visual Studio 2005, Visual Studio 2008 naimportuje položek sady nástrojů rozšíření AJAX. Můžete určit, zda je tomu tak, že prověří popis komponenty; musí se, že verze 3.5.0.0. Pokud říká verzi 2.0.0.0, pak jste naimportovali vaše staré položky panelu nástrojů a bude třeba je ručně importovat pomocí dialogu Výběr položek sady nástrojů v sadě Visual Studio. Nebude možné k přidávání ovládacích prvků verze 2 pomocí návrháře.
+1. <em>Známý problém:</em>při instalaci sady Visual Studio 2008 do počítače, který již má nainstalované s ASP.NET 2.0 AJAX rozšíření Visual Studio 2005, Visual Studio 2008 naimportuje položek sady nástrojů rozšíření AJAX. Můžete určit, zda je tomu tak, že prověří popis komponenty; musí se, že verze 3.5.0.0. Pokud říká verzi 2.0.0.0, pak jste naimportovali vaše staré položky panelu nástrojů a bude třeba je ručně importovat pomocí dialogu Výběr položek sady nástrojů v sadě Visual Studio. Nebude možné k přidávání ovládacích prvků verze 2 pomocí návrháře.
 
-1. Před `<asp:Label>` začne značky, vytvořte řádek z prázdných znaků a dvakrát klikněte na ovládací prvek UpdatePanel v panelu nástrojů. Všimněte si, že nový `@Register` – direktiva je zahrnuta v horní části stránky, která určuje, že by měly být naimportovány ovládací prvky v rámci oboru názvů System.Web.UI pomocí `asp:` předponu.
-2. Přetáhněte ukončovací `</asp:UpdatePanel>` označovat za koncem prvku tlačítko tak, aby element s ovládací prvky popisek a tlačítko zabalené je ve správném formátu.
-3. Po otevření `<asp:UpdatePanel>` značky, začněte otevřením novou značku. Všimněte si, že IntelliSense, vyzve vás dvě možnosti. V takovém případě vytvořit `<ContentTemplate>` značky. Ujistěte se, že obtékat kolem tlačítko a popisku této značky, tak, aby kód je ve správném formátu.
+2. Před `<asp:Label>` začne značky, vytvořte řádek z prázdných znaků a dvakrát klikněte na ovládací prvek UpdatePanel v panelu nástrojů. Všimněte si, že nový `@Register` – direktiva je zahrnuta v horní části stránky, která určuje, že by měly být naimportovány ovládací prvky v rámci oboru názvů System.Web.UI pomocí `asp:` předponu.
+3. Přetáhněte ukončovací `</asp:UpdatePanel>` označovat za koncem prvku tlačítko tak, aby element s ovládací prvky popisek a tlačítko zabalené je ve správném formátu.
+4. Po otevření `<asp:UpdatePanel>` značky, začněte otevřením novou značku. Všimněte si, že IntelliSense, vyzve vás dvě možnosti. V takovém případě vytvořit `<ContentTemplate>` značky. Ujistěte se, že obtékat kolem tlačítko a popisku této značky, tak, aby kód je ve správném formátu.
 
 
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image5.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image4.png)
@@ -116,14 +116,14 @@ Povolená značka vlastnosti:
 
 | **Název vlastnosti** | **Typ** | **Popis** |
 | --- | --- | --- |
-| AllowCustomErrors přesměrování | BOOL | Určuje, zda chcete použít vlastní chybové části souboru web.config se budou zpracovávat chyby. |
+| AllowCustomErrors-Redirect | BOOL | Určuje, zda chcete použít vlastní chybové části souboru web.config se budou zpracovávat chyby. |
 | AsyncPostBackError – zpráva | String | Získá nebo nastaví chybovou zprávu odeslat klientovi, pokud je vyvolána chyba. |
-| AsyncPostBack vypršení časového limitu | Int32 | Získá nebo nastaví výchozí dobu, čas, kdy by měl klient pro asynchronní požadavek dokončit. |
+| AsyncPostBack-Timeout | Int32 | Získá nebo nastaví výchozí dobu, čas, kdy by měl klient pro asynchronní požadavek dokončit. |
 | EnableScript globalizace | BOOL | Získá nebo nastaví, zda je povoleno skriptu globalization. |
 | Lokalizace EnableScript | BOOL | Získá nebo nastaví, zda je povoleno lokalizace skriptu. |
 | ScriptLoadTimeout | Int32 | Určuje počet sekund, které jsou povoleny pro načtení skripty do klienta |
 | ScriptMode | Výčet (automaticky, ladění, verzi, dědí) | Získá nebo nastaví, zda se k vykreslení verze skriptů |
-| scriptPath | String | Získá nebo nastaví kořenovou cestu k umístění souborů skriptů k odeslání do klienta. |
+| ScriptPath | String | Získá nebo nastaví kořenovou cestu k umístění souborů skriptů k odeslání do klienta. |
 
 Vlastnosti jen kódu:
 
@@ -132,7 +132,7 @@ Vlastnosti jen kódu:
 | AuthenticationService | AuthenticationService Manager | Získá informace o proxy služby ověřování ASP.NET, která odešle klientovi. |
 | IsDebuggingEnabled | BOOL | Získá jestli skript a ladění kódu je povolena. |
 | IsInAsyncPostback | BOOL | Zjistí, zda stránka je aktuálně v asynchronní požadavek post zpět. |
-| ProfileService | ProfileService Manager | Získá informace o proxy služby profilace ASP.NET, která odešle klientovi. |
+| ProfileService | ProfileService-Manager | Získá informace o proxy služby profilace ASP.NET, která odešle klientovi. |
 | Skripty | Kolekce&lt;odkaz na skript&gt; | Získá kolekci odkazům na skript, které se budou odesílat do klienta. |
 | Služby | Kolekce&lt;odkaz na službu&gt; | Získá kolekci odkazů na proxy webové služby, které budou odeslány do klienta. |
 | SupportsPartialRendering | BOOL | Zjistí, zda aktuální klient podporuje částečné vykreslování. Pokud je tato vlastnost vrací **false**, pak všechny požadavky na stránku standardní postback. |
@@ -150,9 +150,9 @@ Následníky značek:
 | &lt;AuthenticationService&gt; | Poskytuje podrobnosti o proxy serveru k ověřovací službě ASP.NET. |
 | &lt;ProfileService&gt; | Poskytuje podrobnosti o proxy serveru s technologií ASP.NET profilace služby. |
 | &lt;Skripty&gt; | Poskytuje odkazy na další skripty. |
-| &lt;ASP: ScriptReference&gt; | Označuje odkaz specifického skriptu. |
-| &lt;Služby&gt; | Poskytuje další odkazy na webové služby, kteří budou mít generované třídy proxy serveru. |
-| &lt;ASP: ServiceReference&gt; | Označuje konkrétní odkaz webové služby. |
+| &lt;asp:ScriptReference&gt; | Označuje odkaz specifického skriptu. |
+| &lt;Service&gt; | Poskytuje další odkazy na webové služby, kteří budou mít generované třídy proxy serveru. |
+| &lt;asp:ServiceReference&gt; | Označuje konkrétní odkaz webové služby. |
 
 Ovládací prvek ScriptManager je nezbytné základní pro rozšíření ASP.NET AJAX. Poskytuje přístup ke knihovně skriptu (včetně systém typů rozsáhlé skript na straně klienta), podporuje částečné vykreslování a poskytuje rozsáhlou podporu pro další služby ASP.NET (například ověřování a profilace, ale také jiné webové služby). Ovládací prvek ScriptManager taky poskytuje podporu pro skripty klienta globalizace a lokalizace.
 
@@ -200,7 +200,7 @@ Vlastnosti jen kódu:
 | --- | --- | --- |
 | IsInPartialRendering | bool | Zjistí, zda UpdatePanel je podpora částečným vykreslením pro aktuální požadavek. |
 | ContentTemplate | ITemplate | Získá šablonu značek pro žádost o aktualizaci. |
-| Objekt ContentTemplateContainer | Ovládací prvek | Získá programový šablonu pro žádost o aktualizaci. |
+| ContentTemplateContainer | Ovládací prvek | Získá programový šablonu pro žádost o aktualizaci. |
 | Aktivační procedury | UpdatePanel - TriggerCollection | Získá seznam aktivačních událostí přidružených aktuální UpdatePanel. |
 
 Veřejné kód metody:
@@ -214,9 +214,9 @@ Následníky značek:
 | **Značka** | **Popis** |
 | --- | --- |
 | &lt;ContentTemplate&gt; | Určuje kód, který se má použít k vykreslení výsledek částečné vykreslování. Podřízená položka &lt;asp: UpdatePanel&gt;. |
-| &lt;Aktivační události&gt; | Určuje kolekci  *n*  ovládací prvky přidružené k aktualizaci této UpdatePanel. Podřízená položka &lt;asp: UpdatePanel&gt;. |
-| &lt;ASP: AsyncPostBackTrigger&gt; | Určuje aktivační událost, která volá vykreslování částečná stránka pro danou UpdatePanel. To mohou nebo nemusí být ovládacího prvku jako následníka UpdatePanel nejistá. Podrobné název události. Podřízená položka &lt;aktivační události&gt;. |
-| &lt;ASP: PostBackTrigger&gt; | Určuje ovládací prvek, který způsobí, že celá stránka aktualizovat. To mohou nebo nemusí být ovládacího prvku jako následníka UpdatePanel nejistá. Podrobné k objektu. Podřízená položka &lt;aktivační události&gt;. |
+| &lt;Triggery&gt; | Určuje kolekci *n* ovládací prvky přidružené k aktualizaci této UpdatePanel. Podřízená položka &lt;asp: UpdatePanel&gt;. |
+| &lt;asp:AsyncPostBackTrigger&gt; | Určuje aktivační událost, která volá vykreslování částečná stránka pro danou UpdatePanel. To mohou nebo nemusí být ovládacího prvku jako následníka UpdatePanel nejistá. Podrobné název události. Podřízená položka &lt;aktivační události&gt;. |
+| &lt;asp:PostBackTrigger&gt; | Určuje ovládací prvek, který způsobí, že celá stránka aktualizovat. To mohou nebo nemusí být ovládacího prvku jako následníka UpdatePanel nejistá. Podrobné k objektu. Podřízená položka &lt;aktivační události&gt;. |
 
 `UpdatePanel` Ovládací prvek je ovládací prvek, který vymezuje serverové obsah, který se účastní funkci částečným vykreslením rozšíření AJAX. Neexistuje žádné omezení počtu UpdatePanel ovládací prvky, které mohou být na stránce, a mohou být použity. Každý UpdatePanel je izolovaný, tak, aby každý může nezávisle pracovat (může mít dvě komponenty UpdatePanel ve stejnou dobu, systémem vykreslování nezávisle na stránku postback různé části stránky).
 
@@ -285,7 +285,7 @@ Povolená značka vlastnosti:
 
 | **Název vlastnosti** | **Typ** | **Popis** |
 | --- | --- | --- |
-| AssociatedUpdate PanelID | String | Určuje ID UpdatePanel, který by měl tento UpdateProgress sestavy. |
+| AssociatedUpdate-PanelID | String | Určuje ID UpdatePanel, který by měl tento UpdateProgress sestavy. |
 | DisplayAfter | celá čísla | Určuje časový limit v milisekundách, než po zahájí Asynchronní požadavek, zobrazí se tento ovládací prvek. |
 | DynamicLayout | bool | Určuje, zda je proces dynamicky vykreslen. |
 
@@ -317,5 +317,5 @@ Tyto nástroje společně, usnadní vytváření bohatý a bezproblémové uživ
 
 Scott Dikovat pracuje s technologií Microsoft Web od 1997 a je ředitel myKB.com ([www.myKB.com](http://www.myKB.com)) kde mu se specializuje na psaní ASP.NET na základě aplikací, které jsou zaměřené na řešení softwaru znalostní báze Knowledge Base. Scott nelze kontaktovat prostřednictvím e-mailu v [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) nebo jeho blog na [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Další](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [!div class="step-by-step"]
+> [Next](understanding-asp-net-ajax-updatepanel-triggers.md)

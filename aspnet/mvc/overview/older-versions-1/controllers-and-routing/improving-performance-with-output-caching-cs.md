@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
-title: "Vylepšení výkonu pomocí výstupní mezipaměti (C#) | Microsoft Docs"
+title: Vylepšení výkonu pomocí výstupní mezipaměti (C#) | Microsoft Docs
 author: microsoft
-description: "V tomto kurzu zjistíte, jak může výrazně zvýšit výkon webových aplikací ASP.NET MVC a využívají k ukládání výstupu do mezipaměti. Můžete..."
+description: V tomto kurzu zjistíte, jak může výrazně zvýšit výkon webových aplikací ASP.NET MVC a využívají k ukládání výstupu do mezipaměti. Můžete...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 47f0aa976c5876991ccc2406fb8f7402e59ec556
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8958caa5a0ccad669ca861bed261102625be5cb6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="improving-performance-with-output-caching-c"></a>Vylepšení výkonu pomocí ukládání výstupu do mezipaměti (C#)
 ====================
@@ -39,7 +39,7 @@ Povolíte ukládání výstupu do mezipaměti přidáním atribut [OutputCache] 
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample1.cs)]
 
-V Beta verzím rozhraní ASP.NET MVC, ukládání výstupu do mezipaměti nefunguje pro adresu URL podobnou [http://www.MySite.com/](http://www.mysite.com/). Místo toho musíte zadat adresu URL jako [http://www.MySite.com/Home/Index](http://www.mysite.com/Home/Index). 
+V Beta verzím rozhraní ASP.NET MVC, ukládání výstupu do mezipaměti nefunguje pro adresu URL podobnou [ http://www.MySite.com/ ](http://www.mysite.com/). Místo toho musíte zadat adresu URL jako [ http://www.MySite.com/Home/Index ](http://www.mysite.com/Home/Index). 
 
 Výpis 1 výstup Index() akce je do mezipaměti 10 sekund. Pokud dáváte přednost, můžete zadat mnohem delší dobu mezipaměti. Například pokud chcete pro ukládání do mezipaměti výstup akce kontroleru pro jeden den je můžete zadat dobu trvání mezipaměti 86400 sekund (60 sekund \* 60 minut \* 24 hodin).
 
@@ -47,7 +47,7 @@ Neexistuje žádná záruka, že obsahu bude do mezipaměti pro množství času
 
 Domovské řadiče v výpis 1 vrátí zobrazení indexu v výpis 2. Není co speciální o tomto zobrazení. Zobrazení indexu jednoduše zobrazí aktuální čas (viz obrázek 1).
 
-**Výpis 2 – Views\Home\Index.aspx**
+**Listing 2 – Views\Home\Index.aspx**
 
 [!code-aspx[Main](improving-performance-with-output-caching-cs/samples/sample2.aspx)]
 
@@ -132,7 +132,7 @@ Je důležité pochopit, že pomocí výsledky vlastnost VaryByParam v další u
 
 Vlastnost VaryByParam můžete nastavit následující hodnoty:
 
-> \*= Vytvořte jinou verzi v mezipaměti vždy, když se liší parametr řetězce formátu nebo dotazu.
+> \* = Vytvořte jinou verzi v mezipaměti vždy, když se liší parametr řetězce formátu nebo dotazu.
 > 
 > žádné = nikdy vytvořit různé verze uložené v mezipaměti
 > 
@@ -165,6 +165,6 @@ Pokud vyvolání akce Index() vystavené řadiče v výpis 7 pak ve stejnou dobu
 
 Ukládání výstupu do mezipaměti umožňuje velmi snadno metoda výrazně zlepšit výkon aplikací ASP.NET MVC. V tomto kurzu jste zjistili, jak používat atribut [OutputCache] pro ukládání do mezipaměti výstup akce kontroleru. Také jste zjistili, jak upravit vlastnosti atributu [OutputCache], jako je například doba trvání a VaryByParam vlastnosti, které chcete upravit, jak získá obsah uložený v mezipaměti. Nakonec jste zjistili, jak definovat profily mezipaměti v konfiguračním souboru webu.
 
->[!div class="step-by-step"]
-[Předchozí](understanding-action-filters-cs.md)
-[další](adding-dynamic-content-to-a-cached-page-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](understanding-action-filters-cs.md)
+> [další](adding-dynamic-content-to-a-cached-page-cs.md)

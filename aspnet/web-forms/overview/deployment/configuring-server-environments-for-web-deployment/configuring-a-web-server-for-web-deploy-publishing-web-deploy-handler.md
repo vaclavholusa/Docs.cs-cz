@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
-title: "Konfigurace webového serveru pro Web nasazení publikování (Web Deploy obslužné rutiny) | Microsoft Docs"
+title: Konfigurace webového serveru pro Web nasazení publikování (Web Deploy obslužné rutiny) | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje postup konfigurace webovém serveru Internetové informační služby (IIS) pro podporu nasazení pomocí Hanu nasazení webové služby IIS a publikování na webu..."
+description: Toto téma popisuje postup konfigurace webovém serveru Internetové informační služby (IIS) pro podporu nasazení pomocí Hanu nasazení webové služby IIS a publikování na webu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: 81848c683fb9ddaa8942f030a520847a3c89fde0
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d98be2859181e014ad332298ee3a572ad4235649
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>Konfigurace webového serveru pro Web nasazení publikování (Web Deploy obslužné rutiny)
 ====================
@@ -108,7 +108,7 @@ V takovém případě musíte nainstalovat tyto věci:
 9. V **2.1 nástroj pro nasazení webového** řádek, klikněte na tlačítko **přidat**.
 10. V **služby IIS: základní ověřování** řádek, klikněte na tlačítko **přidat**.
 11. V **služby IIS: Služba správy** řádek, klikněte na tlačítko **přidat**.
-12. Klikněte na tlačítko **nainstalovat**. Instalace webové platformy zobrazí seznam produktů & #x 2014; společně s všechny přidružené závislosti & #x 2014; nainstalována a zobrazí výzvu k potvrzení licenčních podmínek.
+12. Klikněte na tlačítko **nainstalovat**. Instalace webové platformy zobrazí seznam produktů&#x2014;spolu s případnými přidružené závislosti&#x2014;k instalaci a zobrazí výzvu k potvrzení licenčních podmínek.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image2.png)
 13. Přečtěte si licenční podmínky a pokud vyjadřujete svůj souhlas s podmínkami, klikněte na **souhlasím**.
@@ -232,11 +232,11 @@ I když není co můžete zastavit z nasazení obsahu na výchozí web ve služb
     > [!NOTE]
     > Ukázkové řešení vyžaduje rozhraní .NET Framework 4.0. Toto není požadavek pro nasazení webu obecně.
 
-V pořadí pro svůj web pro práci s obsahem identita fondu aplikací musí mít oprávnění ke čtení místní složky, která uloží obsah. Ve službě IIS 7.5 spusťte fondy aplikací s identitou fondu aplikací jedinečný ve výchozím nastavení (na rozdíl od předchozí verze služby IIS, kde by fondy aplikací obvykle běží pod účtem síťové služby). Identita fondu aplikací není skutečné uživatelský účet a nezobrazuje na všechny seznamy uživatelů nebo skupin & #x 2014; místo toho je vytvořen v dynamicky při spuštění fondu aplikací. Každý identita fondu aplikací se přidá do místní **IIS\_IUSRS** skupiny zabezpečení jako skrytá položka.
+V pořadí pro svůj web pro práci s obsahem identita fondu aplikací musí mít oprávnění ke čtení místní složky, která uloží obsah. Ve službě IIS 7.5 spusťte fondy aplikací s identitou fondu aplikací jedinečný ve výchozím nastavení (na rozdíl od předchozí verze služby IIS, kde by fondy aplikací obvykle běží pod účtem síťové služby). Identita fondu aplikací není skutečné uživatelský účet a nezobrazuje na všechny seznamy uživatelů nebo skupin&#x2014;místo toho se vytváří v dynamicky při spuštění fondu aplikací. Každý identita fondu aplikací se přidá do místní **IIS\_IUSRS** skupiny zabezpečení jako skrytá položka.
 
 Abyste mohli udělit oprávnění k souboru nebo složce identity fondu aplikací, máte dvě možnosti:
 
-- Přiřadit oprávnění k identitě fondu aplikací přímo, formátu **IIS AppPool\***[název fondu aplikací] * (například **IIS AppPool\DemoSite**).
+- Přiřadit oprávnění k identitě fondu aplikací přímo, formátu <strong>IIS AppPool\</ strong ><em>[název fondu aplikací]</em>(například <strong>IIS AppPool\DemoSite</strong>).
 - Přidělování oprávnění k **IIS\_IUSRS** skupiny.
 
 Většina běžný postup je přiřadit oprávnění k místní **IIS\_IUSRS** skupiny, protože tento přístup umožňuje změnit fondy aplikací bez nutnosti měnit oprávnění systému souborů. Následující postup používá tento přístup na základě skupiny.
@@ -254,8 +254,8 @@ Většina běžný postup je přiřadit oprávnění k místní **IIS\_IUSRS** s
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image15.png)
 5. V **vybrat uživatele nebo skupiny** dialogové okno, typ **IIS\_IUSRS**, klikněte na tlačítko **Kontrola názvů**a potom klikněte na **OK**.
-6. V **oprávnění pro *** [název složky]* dialogové okno, Všimněte si, že byl přiřazen do nové skupiny **čtení &amp; provést**, **zobrazovat obsah složky**, a **Čtení** oprávnění ve výchozím nastavení. Nechte beze změny a klikněte na tlačítko **OK**.
-7. Klikněte na tlačítko **OK** zavřete *[název složky] *** vlastnosti** dialogové okno.
+6. V <strong>oprávnění pro</strong><em>[název složky]</em> dialogové okno, Všimněte si, že byl přiřazen do nové skupiny <strong>čtení &amp; provést</strong>, <strong>složku seznamu obsah</strong>, a <strong>čtení</strong> oprávnění ve výchozím nastavení. Nechte beze změny a klikněte na tlačítko <strong>OK</strong>.
+7. Klikněte na tlačítko <strong>OK</strong> zavřete <em>[název složky]</em><strong>vlastnosti</strong> dialogové okno.
 
 Jako poslední úlohy je nutné udělit příslušná oprávnění k uživatel není správcem, jehož pověření, které použijete k nasazení obsahu. Tento uživatel vyžaduje oprávnění pro nasazení obsahu vzdáleně na váš web.
 
@@ -306,6 +306,6 @@ Váš webový server by teď měly být připravena přijímat vzdálené nasaze
 
 Informace o tom, jak nakonfigurovat vlastní soubory projektu Microsoft Build Engine (MSBuild) k nasazení webových balíčků do obslužné rutiny nasazení webu, najdete v části [konfigurace vlastnosti nasazení pro cílové prostředí](configuring-deployment-properties-for-a-target-environment.md).
 
->[!div class="step-by-step"]
-[Předchozí](configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
-[další](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
+> [další](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)

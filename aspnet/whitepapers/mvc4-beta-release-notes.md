@@ -8,15 +8,15 @@ manager: wpickett
 ms.date: 09/09/2011
 ms.topic: article
 ms.assetid: 666407bb-81de-4319-89ba-0302c382a208
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: d6797d1dbacff7503f74782d325ff5a9598970c0
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: d29f09d726e835c1eb1fc38e643a4bfe7f00f61c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -139,7 +139,7 @@ Rozhraní ASP.NET Web API zahrnuje podporu pro následující funkce:
 - **Konfigurace založená na kódu:** výhradně prostřednictvím kódu se provádí konfiguraci webového rozhraní API, a vaše konfigurace vyčistit soubory.
 - **Hostování na vlastním:** webová rozhraní API je možné hostovat v vlastního procesu kromě služby IIS, při použití stále potenciál trasy a další funkce webového rozhraní API.
 
-Pro další informace o rozhraní ASP.NET Web API naleznete [https://www.asp.net/web-api](../web-api/index.md).
+Pro další informace o rozhraní ASP.NET Web API naleznete [ https://www.asp.net/web-api ](../web-api/index.md).
 
 <a id="_Toc317096198"></a>
 ### <a name="aspnet-single-page-application"></a>Aplikace ASP.NET jedné stránky
@@ -150,7 +150,7 @@ ASP.NET MVC 4 nyní zahrnuje časné prostředí pro vytváření aplikací jedi
 - Další součásti webového rozhraní API pro jednotku práce a podpora vrstvy DAL
 - K šabloně projektu MVC pomocí generování uživatelského rozhraní, abyste mohli rychle začít
 
-Pro další informace o jedné stránky aplikace podporují v architektuře ASP.NET MVC 4, navštivte [https://www.asp.net/single-page-application](../single-page-application/index.md).
+Pro další informace o jedné stránky aplikace podporují v architektuře ASP.NET MVC 4, navštivte [ https://www.asp.net/single-page-application ](../single-page-application/index.md).
 
 <a id="_Toc303253808"></a>
 ### <a name="enhancements-to-default-project-templates"></a>Vylepšení výchozí šablony projektů
@@ -219,7 +219,7 @@ Konvence pro optimalizované mobilní webové stránky je přidat odkaz, jejíž
 
 Pokud návštěvníky klikněte na odkaz, budou se přepnout do plochy verzi stejné stránce.
 
-Protože vaše plochy rozložení nebude obsahovat přepínači zobrazení ve výchozím nastavení, nebude mít návštěvníky způsob, jak získat pro režim mobilní. Chcete-li povolit, přidejte následující odkaz na  *\_ViewSwitcher* na vaší ploše rozložení právě uvnitř  *&lt;textu&gt;*  element:
+Protože vaše plochy rozložení nebude obsahovat přepínači zobrazení ve výchozím nastavení, nebude mít návštěvníky způsob, jak získat pro režim mobilní. Chcete-li povolit, přidejte následující odkaz na  *\_ViewSwitcher* na vaší ploše rozložení právě uvnitř *&lt;textu&gt;* element:
 
 [!code-cshtml[Main](mvc4-beta-release-notes/samples/sample7.cshtml)]
 
@@ -280,9 +280,9 @@ ASP.NET MVC 4 Beta podporuje září 2011 1.5 verzi sady Windows Azure SDK.
     Element vazby sestavení v souboru web.config upravené by měla vypadat takto:
 
     [!code-xml[Main](mvc4-beta-release-notes/samples/sample12.xml)]
-- **Šablony položky "Přidat kontroler" v projektech Visual Basic generuje nesprávný obor názvů při vyvolání *** z uvnitř oblasti.** Když přidáte řadič oblasti v projektu aplikace ASP.NET MVC, která používá jazyka Visual Basic, šablony položky vloží do řadičem nesprávný obor názvů. Výsledkem je chyba "soubor nebyl nalezen", když přejdete na všechny akce v kontroleru.  
+- <strong>Šablony položky "Přidat kontroler" v projektech Visual Basic generuje nesprávný obor názvů při vyvolání</strong><strong>z uvnitř oblasti.</strong> Když přidáte řadič oblasti v projektu aplikace ASP.NET MVC, která používá jazyka Visual Basic, šablony položky vloží do řadičem nesprávný obor názvů. Výsledkem je chyba "soubor nebyl nalezen", když přejdete na všechny akce v kontroleru.  
   
- Vygenerovaný obor názvů vynechá všechno, co po kořenového oboru názvů. Například je obor názvů vygenerované *RootNamespace* ale měl by být *RootNamespace.Areas.AreaName.Controllers* .
+  Vygenerovaný obor názvů vynechá všechno, co po kořenového oboru názvů. Například je obor názvů vygenerované *RootNamespace* ale měl by být *RootNamespace.Areas.AreaName.Controllers* .
 - **Nejnovější změny ve zobrazovací modul Razor.** Jako součást přepsání analyzátor Razor, byly odebrány následující typy z *System.Web.Mvc.Razor*: 
 
     - *ModelSpan*
@@ -290,7 +290,7 @@ ASP.NET MVC 4 Beta podporuje září 2011 1.5 verzi sady Windows Azure SDK.
     - *MvcCSharpRazorCodeGenerator*
     - *MvcVBRazorCodeParser*
 
- Také byly odebrány následující metody: 
+  Také byly odebrány následující metody: 
 
     - *MvcCSharpRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
     - *MvcWebPageRazorHost.DecorateCodeGenerator(System.Web.Razor.Generator.RazorCodeGenerator)*
@@ -305,15 +305,15 @@ ASP.NET MVC 4 Beta podporuje září 2011 1.5 verzi sady Windows Azure SDK.
 
     **Požadované aktualizace**
 
-    1. V kořenovém souboru Web.config, přidejte nový  *&lt;appSettings&gt;*  položka s klíčem *webPages:Version* a hodnotu *1.0.0.0*.
+  1. V kořenovém souboru Web.config, přidejte nový *&lt;appSettings&gt;* položka s klíčem *webPages:Version* a hodnotu *1.0.0.0*.
 
-        [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
-    2. V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a pak vyberte Uvolnit projekt. Potom znovu klikněte pravým tlačítkem a vyberte Upravit *ProjectName*.csproj.
-    3. Vyhledejte následující odkazy na sestavení: 
+      [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
+  2. V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a pak vyberte Uvolnit projekt. Potom znovu klikněte pravým tlačítkem a vyberte Upravit *ProjectName*.csproj.
+  3. Vyhledejte následující odkazy na sestavení: 
 
-        [!code-xml[Main](mvc4-beta-release-notes/samples/sample15.xml)]
+      [!code-xml[Main](mvc4-beta-release-notes/samples/sample15.xml)]
 
-        Nahraďte je následující:
+      Nahraďte je následující:
 
-        [!code-xml[Main](mvc4-beta-release-notes/samples/sample16.xml)]
-    4. Uložte změny, zavřete soubor projektu (.csproj) byly úpravy a potom klikněte pravým tlačítkem na projekt a vyberte znovu načíst.
+      [!code-xml[Main](mvc4-beta-release-notes/samples/sample16.xml)]
+  4. Uložte změny, zavřete soubor projektu (.csproj) byly úpravy a potom klikněte pravým tlačítkem na projekt a vyberte znovu načíst.

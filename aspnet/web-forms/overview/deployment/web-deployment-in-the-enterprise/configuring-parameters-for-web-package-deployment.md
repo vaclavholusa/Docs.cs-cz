@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
-title: "Konfigurace parametrů pro nasazení webového balíčku | Microsoft Docs"
+title: Konfigurace parametrů pro nasazení webového balíčku | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak nastavit hodnoty parametrů, jako jsou názvy webových aplikací Internetové informační služby (IIS), připojovací řetězce a koncové body služby..."
+description: Toto téma popisuje, jak nastavit hodnoty parametrů, jako jsou názvy webových aplikací Internetové informační služby (IIS), připojovací řetězce a koncové body služby...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 12a4ba8ad30df43e7192500ad4514dfa9679f899
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7be08f1a1fb7232911a44cf64e2e784dbb95ff48
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>Konfigurace parametrů pro nasazení webového balíčku
 ====================
@@ -92,7 +92,7 @@ Pokud ručně nainstalovat balíček pro nasazení, Správce služby IIS zobraz�
 
 ## <a name="modifying-the-setparametersxml-file"></a>Úprava souboru SetParameters.xml
 
-Pokud plánujete nasadit balíček webových aplikací ručně & #x 2014; buď spuštěním *. deploy.cmd* souboru nebo spuštěním MSDeploy.exe z příkazového řádku & #x 2014; není co vám ruční úpravy *SetParameters.xml* soubor před nasazení. Ale pokud pracujete v rámci řešení podnikovém měřítku, můžete nasadit balíček webových aplikací jako součást větší, automatizované procesu sestavení a nasazení. V tomto scénáři budete potřebovat Microsoft Build Engine (MSBuild) Chcete-li upravit *SetParameters.xml* souboru pro vás. Můžete to provést pomocí MSBuild **xmlpoke –** úloh.
+Pokud plánujete nasadit balíček webových aplikací ručně&#x2014;buď spuštěním *. deploy.cmd* souboru nebo spuštěním MSDeploy.exe z příkazového řádku&#x2014;není co vám ruční úpravy  *SetParameters.xml* soubor před nasazení. Ale pokud pracujete v rámci řešení podnikovém měřítku, můžete nasadit balíček webových aplikací jako součást větší, automatizované procesu sestavení a nasazení. V tomto scénáři budete potřebovat Microsoft Build Engine (MSBuild) Chcete-li upravit *SetParameters.xml* souboru pro vás. Můžete to provést pomocí MSBuild **xmlpoke –** úloh.
 
 [Obraťte se na správce ukázkové řešení](the-contact-manager-solution.md) znázorňuje tento proces. Příklady kódu, které byly upraveny a zobrazit pouze podrobnosti, které jsou relevantní pro tento příklad.
 
@@ -148,6 +148,6 @@ Informace o tom, jak vytvořit webových balíčků najdete v tématu [budova a 
 
 Další obecné informace o Parametrizace v nasazení webu, najdete v části [Parametrizace webového nasazení v akci](https://go.microsoft.com/?linkid=9805119) (příspěvek na blogu).
 
->[!div class="step-by-step"]
-[Předchozí](building-and-packaging-web-application-projects.md)
-[další](deploying-web-packages.md)
+> [!div class="step-by-step"]
+> [Předchozí](building-and-packaging-web-application-projects.md)
+> [další](deploying-web-packages.md)

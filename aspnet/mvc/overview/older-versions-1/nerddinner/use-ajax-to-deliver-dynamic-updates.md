@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
-title: "Používat k poskytování dynamické aktualizace AJAX | Microsoft Docs"
+title: Používat k poskytování dynamické aktualizace AJAX | Microsoft Docs
 author: microsoft
-description: "Krok 10 implementuje podporu pro přihlášeného uživatele k zasílání zpráv rysy jejich zájmu účastí večeři, pomocí integrované v rámci podrobností večeři přístup na základě Ajax na..."
+description: Krok 10 implementuje podporu pro přihlášeného uživatele k zasílání zpráv rysy jejich zájmu účastí večeři, pomocí integrované v rámci podrobností večeři přístup na základě Ajax na...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: 7b75f8c6cf08112eb77d1a9a40222ed1425ef3a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7cea3ee2ec52261521941efac484e91a53f6310b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-ajax-to-deliver-dynamic-updates"></a>Používat k poskytování dynamické aktualizace AJAX
 ====================
@@ -115,9 +115,9 @@ Použít jQuery nejprve přidáme odkaz na skript k němu. Vzhledem k tomu, že 
 
 [!code-html[Main](use-ajax-to-deliver-dynamic-updates/samples/sample9.html)]
 
-*Tip: Ujistěte se, že jste nainstalovali opravu hotfix JavaScript intellisense pro VS 2008 SP1, která umožňuje bohatší podporu technologie intellisense pro soubory JavaScript (včetně jQuery). Si můžete stáhnout z: http://tinyurl.com/vs2008javascripthotfix*
+*Tip: Ujistěte se, že jste nainstalovali opravu hotfix JavaScript intellisense pro VS 2008 SP1, která umožňuje bohatší podporu technologie intellisense pro soubory JavaScript (včetně jQuery). Můžete stáhnout z: http://tinyurl.com/vs2008javascripthotfix*
 
-Kód napsaný pomocí JQuery často používá globální $ ()"metodu JavaScript, který načte jeden nebo více elementů HTML pomocí selektor šablon stylů CSS. Například *$("#rsvpmsg")* vybere libovolný prvek HTML s id rsvpmsg, zatímco *$(".something")* by vybrat všechny elementy s "něco co" šablon stylů CSS název třídy. Je také možné zapsat složitější dotazy jako "vrátí všechny zaškrtnuté přepínačů" pomocí dotazu pro výběr jako: *$("vstup [@type= přepínač] [@checked]")*.
+Kód napsaný pomocí JQuery často používá globální $ ()"metodu JavaScript, který načte jeden nebo více elementů HTML pomocí selektor šablon stylů CSS. Například <em>$("#rsvpmsg")</em> vybere libovolný prvek HTML s id rsvpmsg, zatímco <em>$(".something")</em> by vybrat všechny elementy s "něco co" šablon stylů CSS název třídy. Je také možné zapsat složitější dotazy jako "vrátí všechny zaškrtnuté přepínačů" pomocí dotazu pro výběr jako: <em>$("vstup [@type= přepínač] [@checked]")</em>.
 
 Po dokončení výběru prvky, můžete volat metody na jejich provedení akce, jako je skrytí: *$("#rsvpmsg").hide();*
 
@@ -153,6 +153,6 @@ Díky tomu kód čisticí ke čtení a údržbu.
 
 Nyní podíváme, jak jsme můžete použít i další AJAX a přidat podporu interaktivní mapování do naší aplikace.
 
->[!div class="step-by-step"]
-[Předchozí](secure-applications-using-authentication-and-authorization.md)
-[další](use-ajax-to-implement-mapping-scenarios.md)
+> [!div class="step-by-step"]
+> [Předchozí](secure-applications-using-authentication-and-authorization.md)
+> [další](use-ajax-to-implement-mapping-scenarios.md)

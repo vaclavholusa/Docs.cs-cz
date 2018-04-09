@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
-title: "Úprava Z-Index DropShadow (C#) | Microsoft Docs"
+title: Úprava Z-Index DropShadow (C#) | Microsoft Docs
 author: wenz
-description: "DropShadow ovládacího prvku Toolkitu AJAX rozšiřuje panelu s stínu. Ale tento stínové někdy je v konfliktu s další ovládací prvky pro Nainstalo..."
+description: DropShadow ovládacího prvku Toolkitu AJAX rozšiřuje panelu s stínu. Ale tento stínové někdy je v konfliktu s další ovládací prvky pro Nainstalo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 161f02daa5dd1f0e21853c1b7c1a65c1a9aa5d03
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 82add8427c8e574b213b67315e69bb4c28846095
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adjusting-the-z-index-of-a-dropshadow-c"></a>Úprava Z-Index DropShadow (C#)
 ====================
@@ -68,5 +68,5 @@ Předtím: Položka nabídky není viditelné ([Kliknutím zobrazit obrázek v p
 
 Po: Zobrazí se položka nabídky ([Kliknutím zobrazit obrázek v plné velikosti](adjusting-the-z-index-of-a-dropshadow-cs/_static/image6.png))
 
->[!div class="step-by-step"]
-[Další](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [!div class="step-by-step"]
+> [Next](manipulating-dropshadow-properties-from-client-code-cs.md)

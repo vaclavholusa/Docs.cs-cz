@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s NSwag"
+title: Začínáme s NSwag a ASP.NET Core
 author: zuckerthoben
-description: "V tomto kurzu poskytuje návod k přidávání NSwag generovat dokumentaci a stránky pro aplikaci pomocí webového rozhraní API."
+description: Další informace o použití NSwag generovat dokumentaci a stránky pro aplikace ASP.NET Core webového rozhraní API.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/get-started-with-nswag
-ms.openlocfilehash: 62b729feabf12e3428e58ed3cb6ed1864bd6171c
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 80e6a9e1702d8f68d139d2ff9c3a01a27c40cecb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="get-started-with-nswag"></a>Začínáme s NSwag
+# <a name="get-started-with-nswag-and-aspnet-core"></a>Začínáme s NSwag a ASP.NET Core
 
 Podle [Christoph Nienaber](https://twitter.com/zuckerthoben) a [Portoriku Suter](https://rsuter.com)
 
@@ -88,7 +88,7 @@ using NJsonSchema;
 
 V `Startup.Configure` metoda, povolit middleware pro obsluhující generovaného specifikace Swagger a uživatelské rozhraní Swagger:
 
-[!code-cs[](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi.NSwag/Startup.cs?name=snippet_Configure&highlight=4,7-10)]
+[!code-cs[](../tutorials/web-api-help-pages-using-swagger/samples/TodoApi.NSwag/Startup.cs?name=snippet_Configure&highlight=4,7-10)]
 
 Spusťte aplikaci. Přejděte na `/swagger` Chcete-li zobrazit uživatelské rozhraní Swagger. Přejděte na `/swagger/v1/swagger.json` zobrazíte specifikace Swagger.
 
@@ -146,28 +146,24 @@ Můžete generovat kód jinými způsoby, další vhodné do pracovního postupu
 
 XML – komentáře jsou povolené pomocí následujících postupů:
 
-# <a name="visual-studiotabvisual-studio-xml"></a>[Visual Studio](#tab/visual-studio-xml)
-
+#### <a name="visual-studiotabvisual-studio-xml"></a>[Visual Studio](#tab/visual-studio-xml/)
 * Klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **vlastnosti**
 * Zkontrolujte **souborů dokumentace XML** pole v části **výstup** části **sestavení** karty:
 
 ![Sestavení projektu vlastností](web-api-help-pages-using-swagger/_static/swagger-xml-comments.png)
 
-# <a name="visual-studio-for-mactabvisual-studio-mac-xml"></a>[Visual Studio for Mac](#tab/visual-studio-mac-xml)
-
+#### <a name="visual-studio-for-mactabvisual-studio-mac-xml"></a>[Visual Studio for Mac](#tab/visual-studio-mac-xml/)
 * Otevřete **možnosti projektu** dialogové okno > **sestavení** > **kompilátoru**
 * Zkontrolujte **generování dokumentace xml** pole v části **Obecné možnosti** části:
 
 ![Obecné možnosti část možnosti projektu](web-api-help-pages-using-swagger/_static/swagger-xml-comments-mac.png)
 
-# <a name="visual-studio-codetabvisual-studio-code-xml"></a>[Visual Studio Code](#tab/visual-studio-code-xml)
-
+#### <a name="visual-studio-codetabvisual-studio-code-xml"></a>[Visual Studio Code](#tab/visual-studio-code-xml/)
 Ručně přidejte následující fragment k *.csproj* souboru:
 
-[!code-xml[](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi.NSwag/TodoApiNSwag.csproj?range=7-9)]
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/TodoApi.NSwag/TodoApiNSwag.csproj?range=7-9)]
 
----
-
+* * *
 ## <a name="data-annotations"></a>Datové poznámky
 
 Používá NSwag [reflexe](/dotnet/csharp/programming-guide/concepts/reflection), a doporučený postup pro akce webového rozhraní API je vrátit [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult). V důsledku toho NSwag nelze odvodit činnosti akci a návratovou hodnotu. Podívejte se na následující příklad:

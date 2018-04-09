@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/routing/aspnet-4-quick-hit-declarative-webforms-routing
-title: "ASP.NET 4 rychlé dosáhl - deklarativní WebForms směrování"
+title: ASP.NET 4 rychlé dosáhl - deklarativní WebForms směrování
 author: JoeStagner
-description: "V tomto videu se dozvíte, jak to provést WebForms směrování deklarativně pomocí značek."
+description: V tomto videu se dozvíte, jak to provést WebForms směrování deklarativně pomocí značek.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/11/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/routing/aspnet-4-quick-hit-declarative-webforms-routing
 msc.type: video
-ms.openlocfilehash: 8b0edd95644ff2b86ddc38e8fd011634bc37726c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27fdd978fc96c842e235888a370d0efa9842265a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-quick-hit---declarative-webforms-routing"></a>ASP.NET 4 "Rychlý zasáhnout" - deklarativní WebForms směrování
 ====================
@@ -24,8 +24,8 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 
 V tomto videu se dozvíte, jak to provést WebForms směrování deklarativně pomocí značek. 
 
-[&#9654; Podívejte se na video (14 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-declarative-webforms-routing)
+[&#9654;Podívejte se na video (14 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-declarative-webforms-routing)
 
->[!div class="step-by-step"]
-[Předchozí](aspnet-4-quick-hit-imperative-webforms-routing.md)
-[další](aspnet-4-quick-hit-outbound-webforms-routing.md)
+> [!div class="step-by-step"]
+> [Předchozí](aspnet-4-quick-hit-imperative-webforms-routing.md)
+> [další](aspnet-4-quick-hit-outbound-webforms-routing.md)

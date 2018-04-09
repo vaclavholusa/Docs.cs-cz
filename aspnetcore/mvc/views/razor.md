@@ -1,7 +1,7 @@
 ---
 title: Reference syntaxe Razor pro ASP.NET Core
 author: rick-anderson
-description: "Další informace o syntaxi Razor kód pro vložení kódu na serveru do webové stránky."
+description: Další informace o syntaxi Razor kód pro vložení kódu na serveru do webové stránky.
 manager: wpickett
 ms.author: riande
 ms.date: 10/18/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 3528965cc65d2d5ec21df40cbeb71d1333839e1a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 168bd04585c5d7a2834cb97755dbf04b7b43767e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pro ASP.NET Core
+# <a name="razor-syntax-reference-for-aspnet-core"></a>Reference syntaxe Razor pro ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Luke Latham](https://github.com/guardrex), [Taylora MÜLLENA](https://twitter.com/ntaylormullen), a [Vicarel Dana](https://github.com/Rabadash8820)
 
@@ -118,10 +118,10 @@ Explicitní výrazy můžete použít k vykreslení výstupu z obecné metody v 
 
 Předchozí kód vygeneruje chybu kompilátoru podobně jako jednu z těchto možností:
 
- * Element "int" nebyla uzavřena. Všechny elementy musí být buď samoobslužné zavírání nebo koncová značka.
- *  Metoda skupiny 'GenericMethod' bez delegátem typu 'objekt' nelze převést. Opravdu chcete vyvolat metodu? " 
+* Element "int" nebyla uzavřena. Všechny elementy musí být buď samoobslužné zavírání nebo koncová značka.
+* Metoda skupiny 'GenericMethod' bez delegátem typu 'objekt' nelze převést. Opravdu chcete vyvolat metodu? " 
  
- Následující kód ukazuje zápisu správný způsob, jak tento kód. Kód je zapsána jako explicitní výrazu:
+  Následující kód ukazuje zápisu správný způsob, jak tento kód. Kód je zapsána jako explicitní výrazu:
 
 ```cshtml
 <p>@(GenericMethod<int>())</p>
@@ -517,7 +517,7 @@ Pokud "rick@contoso.com" je předán v modelu zobrazení generuje následující
 
 ### <a name="functions"></a>@functions
 
-`@functions` – Direktiva umožňuje přidat obsah na úrovni funkce do zobrazení Razor stránky:
+`@functions` – Direktiva povolí Přidat blok kódu jazyka C# do zobrazení Razor stránky:
 
 ```cshtml
 @functions { // C# Code }

@@ -1,7 +1,7 @@
 ---
-title: "Struktura adresářů ASP.NET Core"
+title: Struktura adresářů ASP.NET Core
 author: guardrex
-description: "V tématu strukturu adresáře publikovaných aplikací ASP.NET Core."
+description: V tématu strukturu adresáře publikovaných aplikací ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,23 +10,25 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: 55e1e0dac32609446243098dbb4a4373f06b4212
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2a6ee4fefcc6d23b1c893a40b7b1be9edfcf9732
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="directory-structure-of-published-aspnet-core-apps"></a>Struktura adresářů publikované aplikace ASP.NET Core
+# <a name="aspnet-core-directory-structure"></a>Struktura adresářů ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
 V ASP.NET Core, adresář aplikace *publikování*, se skládá z souborů aplikace, konfigurační soubory, statické prostředky, balíčky a modul runtime (pro samostatný aplikace).
 
-| Typ aplikace                       | Struktura adresářů |
-| ------------------------------ | ------------------- |
-| Nasazení závislé na Framework | <ul><li>publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Moduly runtime\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>myapp.deps.json</li><li>myapp.dll</li><li>myapp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>myapp.runtimeconfig.json</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul> |
-| Samostatná nasazení      | <ul><li>publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>myapp.deps.json</li><li>myapp.exe</li><li>myapp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>myapp.runtimeconfig.json</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul> |
-\*Určuje adresář
+
+|            Typ aplikace            |                                                                                                                                                                                                                                                     Struktura adresářů                                                                                                                                                                                                                                                      |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Nasazení závislé na Framework | <ul><li>Publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Moduly runtime\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>myapp.deps.json</li><li>myapp.dll</li><li>myapp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>myapp.runtimeconfig.json</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul> |
+|   Samostatná nasazení    |          <ul><li>Publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>myapp.deps.json</li><li>myapp.exe</li><li>myapp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>myapp.runtimeconfig.json</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul>           |
+
+\* Určuje adresář
 
 Obsah *publikování* představuje adresář *obsahu kořenovou cestu*, také zavolat *základní cesty aplikace*, nasazení. Jakýkoli název je uveden *publikování* directory v nasazení, její umístění slouží jako serveru fyzickou cestu k hostované aplikace. *Wwwroot* adresáře, pokud existuje, obsahuje pouze statické prostředky. *Protokoly* adresář může být součástí nasazení ve vytváření projektu a přidání `<Target>` element uvedené níže, aby vaše *.csproj* souboru nebo fyzicky vytváření adresáře na Server.
 

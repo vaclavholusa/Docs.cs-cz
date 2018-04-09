@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/aspnet4/breaking-changes
-title: "ASP.NET 4 nejnovější změny | Microsoft Docs"
+title: ASP.NET 4 nejnovější změny | Microsoft Docs
 author: rick-anderson
-description: "Tento dokument popisuje změny, které byly provedeny pro verzi rozhraní .NET Framework verze 4, který může potenciálně ovlivnit aplikace, které byly vytvořené pomocí..."
+description: Tento dokument popisuje změny, které byly provedeny pro verzi rozhraní .NET Framework verze 4, který může potenciálně ovlivnit aplikace, které byly vytvořené pomocí...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: d68723b52ae1ee80142fb1aca3b0b10de34332d1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7eea51add6b05684357314e3d6aa5087383c6408
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 nejnovější změny
 ====================
@@ -180,7 +180,7 @@ V tomto scénáři nativní konfiguračního systému služby IIS 7 a IIS 7.5 vr
 
 Alternativní řešení pro první scénář je aktualizovat na úroveň aplikace `Web.config` zahrnutím standardní konfigurace text ze souboru `Web.config` soubor, který byl automaticky vytvořen systémem Visual Studio 2008.
 
-Alternativní řešení pro první scénář je pro instalaci aktualizací Service Pack 2 pro Vista nebo Windows Server 2008 ve vašem počítači nebo nainstalujte opravu hotfix KB958854 ([https://support.microsoft.com/kb/958854](https://support.microsoft.com/kb/958854)) opravit nesprávném Konfigurace sloučení chování systému konfigurace služby IIS. Však po provedení některé z těchto akcí, aplikace bude pravděpodobně dojde k chybě konfigurace z důvodu problému pro druhý scénář popisuje.
+Alternativní řešení pro první scénář je pro instalaci aktualizací Service Pack 2 pro Vista nebo Windows Server 2008 ve vašem počítači nebo nainstalujte opravu hotfix KB958854 ([https://support.microsoft.com/kb/958854](https://support.microsoft.com/kb/958854)) opravit nesprávné konfigurace sloučení chování Systému konfigurace služby IIS. Však po provedení některé z těchto akcí, aplikace bude pravděpodobně dojde k chybě konfigurace z důvodu problému pro druhý scénář popisuje.
 
 Alternativní řešení pro druhý scénář je odstranit nebo komentář všechny **system.web.extensions** definice oddílu konfigurace a konfigurační oddíl skupinu definice z úrovni aplikace `Web.config` souboru. V horní části úrovni aplikace jsou obvykle tyto definice `Web.config` souborů a lze identifikovat podle **configSections** elementu a jeho podřízených položek.
 
@@ -192,8 +192,8 @@ Pro oba scénáře, se doporučuje, aby také ručně odstranit **system.codedom
 
 ASP.NET 4 aplikace, které jsou nakonfigurovány jako podřízené objekty aplikace, které běží starší verze technologie ASP.NET se pravděpodobně nezdaří z důvodu chyby konfigurace nebo kompilace. Následující příklad ukazuje do struktury adresářů pro ovlivněné aplikaci.
 
-`/parentwebapp`(nakonfigurované na používání technologie ASP.NET 2.0 nebo ASP.NET 3.5)  
-`/childwebapp`(nakonfigurován pro použití technologie ASP.NET 4)
+`/parentwebapp` (nakonfigurované na používání technologie ASP.NET 2.0 nebo ASP.NET 3.5)  
+`/childwebapp` (nakonfigurován pro použití technologie ASP.NET 4)
 
 Aplikace `childwebapp` složky nebude možné spustit na službě IIS 7 nebo IIS 7.5 a sestava bude k chybě konfigurace. Text chyby bude zahrnovat zpráva podobná následující:
 
@@ -323,13 +323,13 @@ Pokud není praktické přemapování webu na technologii ASP.NET 2.0 nebo chcet
 
 ## <a name="event-handlers-might-not-be-not-raised-in-a-default-document-in-iis-7-or-iis-75-integrated-mode"></a>Obslužné rutiny událostí může není není vyvolána v výchozí dokument v IIS 7 nebo IIS 7.5 integrovaný režim
 
-Technologie ASP.NET 4 obsahuje změny, které mění jak **akce** atribut HTML **formuláře** prvek je vykreslovaný při přeloží adresu URL bez přípony na výchozí dokument. Jedná se například adresy URL bez přípony přeložit na výchozí dokument [http://contoso.com/](http://contoso.com/), což v požadavku na [http://contoso.com/Default.aspx](http://contoso.com/Default.aspx).
+Technologie ASP.NET 4 obsahuje změny, které mění jak **akce** atribut HTML **formuláře** prvek je vykreslovaný při přeloží adresu URL bez přípony na výchozí dokument. Jedná se například adresy URL bez přípony přeložit na výchozí dokument [ http://contoso.com/ ](http://contoso.com/), což v požadavku na [ http://contoso.com/Default.aspx ](http://contoso.com/Default.aspx).
 
-Rozhraní ASP.NET 4 nyní vykreslí HTML **formuláře** elementu **akce** při požadavku na adresu URL bez přípony, který má výchozí dokument k němu mapována hodnota atributu jako prázdný řetězec. Například ve starších verzích technologie ASP.NET, požadavek na [http://contoso.com](http://contoso.com) by způsobilo požadavek na `Default.aspx`. V tomto dokumentu, otevření **formuláře** vykreslená značka jako v následujícím příkladu:
+Rozhraní ASP.NET 4 nyní vykreslí HTML **formuláře** elementu **akce** při požadavku na adresu URL bez přípony, který má výchozí dokument k němu mapována hodnota atributu jako prázdný řetězec. Například ve starších verzích technologie ASP.NET, požadavek na [ http://contoso.com ](http://contoso.com) by způsobilo požadavek na `Default.aspx`. V tomto dokumentu, otevření **formuláře** vykreslená značka jako v následujícím příkladu:
 
 `<form action="Default.aspx" />`
 
-V technologii ASP.NET 4, požadavek na [http://contoso.com](http://contoso.com) žádost, aby výsledkem také `Default.aspx`. Ale nyní ASP.NET vykreslí otevírání HTML **formuláře** značky jako v následujícím příkladu:
+V technologii ASP.NET 4, požadavek na [ http://contoso.com ](http://contoso.com) žádost, aby výsledkem také `Default.aspx`. Ale nyní ASP.NET vykreslí otevírání HTML **formuláře** značky jako v následujícím příkladu:
 
 `<form action="" />`
 
@@ -370,7 +370,7 @@ Při navrácení starší verze modelu certifikační Autority, jsou povolené n
 - Několik sad různých oprávnění v jediné doméně aplikace jsou povoleny.
 - Kontrolní výrazy výslovná oprávnění nejsou požadována pro sestavení v mezipaměti GAC, které jsou vyvolány, pokud je v zásobníku pouze ASP.NET nebo jiný kód, rozhraní .NET Framework.
 
-Jeden scénář nelze vrátit zpět v rozhraní .NET Framework 4: jiných webových částečně důvěryhodné aplikace můžou zavolat už určitých rozhraní API v System.Web.dll a System.Web.Extensions.dll. V předchozích verzích rozhraní .NET Framework bylo možné pro jiné webové částečným vztahem důvěryhodnosti aplikace explicitně udělit oprávnění **AspNetHostingPermission** oprávnění. Tyto aplikace pak může použít **System.Web.HttpUtility**, typy, které do **System.Web.ClientServices.\***  obory názvů a typy související s členství, role a profily. Tyto typy volání z aplikace s částečnou důvěryhodností mimo Web není podporován v rozhraní .NET Framework 4.
+Jeden scénář nelze vrátit zpět v rozhraní .NET Framework 4: jiných webových částečně důvěryhodné aplikace můžou zavolat už určitých rozhraní API v System.Web.dll a System.Web.Extensions.dll. V předchozích verzích rozhraní .NET Framework bylo možné pro jiné webové částečným vztahem důvěryhodnosti aplikace explicitně udělit oprávnění <strong>AspNetHostingPermission</strong> oprávnění. Tyto aplikace pak může použít <strong>System.Web.HttpUtility</strong>, typy, které do <strong>System.Web.ClientServices.\< / strong > * obory názvů a typy související s členství, role a profily. Tyto typy volání z aplikace s částečnou důvěryhodností mimo Web není podporován v rozhraní .NET Framework 4.
 
 > [!NOTE]
 > **HtmlEncode** a **HtmlDecode** funkce **System.Web.HttpUtility** třída byla přesunuta do nové rozhraní .NET Framework 4  **System.Net.WebUtility** třídy. Pokud pouze funkce ASP.NET, která se používá, který byl, upravit kód aplikace s novým **WebUtility** třídy místo.

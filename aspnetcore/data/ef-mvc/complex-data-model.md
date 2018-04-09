@@ -1,7 +1,7 @@
 ---
-title: "Jádro ASP.NET MVC s EF Core - Model dat – 5 10"
+title: Jádro ASP.NET MVC s EF Core - Model dat – 5 10
 author: tdykstra
-description: "V tomto kurzu přidejte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověření a pravidla mapování."
+description: V tomto kurzu přidejte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověření a pravidla mapování.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 9f5354837672920158232b301cfe7be358dbc0f3
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: ab3d4221b498bb2987105fb36f2c6803f8fe6125
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Vytvoření modelu komplexní data - základní EF s kurz k ASP.NET MVC jádra (5 10)
+# <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>Jádro ASP.NET MVC s EF Core - Model dat – 5 10
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -495,6 +495,6 @@ Klikněte pravým tlačítkem myši **CourseAssignment** tabulky a vyberte **Dat
 
 Nyní máte složitější datový model a příslušné databáze. V následujícím kurzu se dozvíte informace o tom, jak získat přístup k datům související.
 
->[!div class="step-by-step"]
-[Předchozí](migrations.md)
-[další](read-related-data.md)  
+> [!div class="step-by-step"]
+> [Předchozí](migrations.md)
+> [další](read-related-data.md)  

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3
-title: "Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 3 | Microsoft Docs"
+title: Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 3 | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 1ec8891c4ccf71494389ba562fdfb4b88055d12f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 654f3556af5d05ec186e1811421966bbaffd2e21
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-3"></a>Začínáme s databáze Entity Framework 4.0 nejprve a 4 webových formulářů ASP.NET - část 3
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 > Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET pomocí sady Visual Studio 2010 a Entity Framework 4.0. Informace o kurzu řady najdete v tématu [první kurz v řadě](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
@@ -184,6 +184,6 @@ Do textového pole zadejte písmeno "g" a klikněte na **vyhledávání**. Zobra
 
 Jste nyní zobrazí, aktualizovat, filtrovat, řazení a seskupené dat z jednotlivých tabulek. V dalším kurzu budete začít pracovat s souvisejících dat (scénáře hlavní podrobné).
 
->[!div class="step-by-step"]
-[Předchozí](the-entity-framework-and-aspnet-getting-started-part-2.md)
-[další](the-entity-framework-and-aspnet-getting-started-part-4.md)
+> [!div class="step-by-step"]
+> [Předchozí](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [další](the-entity-framework-and-aspnet-getting-started-part-4.md)

@@ -1,7 +1,7 @@
 ---
-title: "Přidání vyhledávání"
+title: Přidání vyhledávání
 author: rick-anderson
-description: "Ukazuje, jak přidat hledání do jednoduchou aplikaci ASP.NET MVC jádra"
+description: Ukazuje, jak přidat hledání do jednoduchou aplikaci ASP.NET MVC jádra
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/search
-ms.openlocfilehash: 3ab9086275ec4c3651383c4c845e40db55f67f4c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 772409f11a43e1d130265d8bba3bad1da5a41b86
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/search1.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/search1.md)]
 
 Můžete rychle přejmenovat `searchString` parametru `id` s **přejmenovat** příkaz. Klikněte pravým tlačítkem na `searchString` **> přejmenujte**.
 
@@ -29,7 +29,7 @@ Změňte parametr pro `id` a všechny výskyty `searchString` změnit na `id`.
 
 ![Editor kódu zobrazuje proměnná se změnil na id](search/_static/rename3.png)
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/search2.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/search2.md)]
 
 Všimněte si, jak intelliSense pomáhá nám aktualizovat kód.
 
@@ -41,8 +41,8 @@ Všimněte si rozlišovací písma v `<form>` značky. Rozlišovací písma ozna
 
 ![Formulářová značka fialové textem.](search/_static/th_font.png)
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/search3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/search3.md)]
 
->[!div class="step-by-step"]
-[Předchozí](controller-methods-views.md)
-[další](new-field.md)  
+> [!div class="step-by-step"]
+> [Předchozí](controller-methods-views.md)
+> [další](new-field.md)  

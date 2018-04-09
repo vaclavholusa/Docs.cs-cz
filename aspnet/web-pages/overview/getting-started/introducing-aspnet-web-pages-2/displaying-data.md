@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
-title: "Představení technologie ASP.NET Web Pages – zobrazení dat | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages – zobrazení dat | Microsoft Docs
 author: tfitzmac
-description: "Tento kurz ukazuje, jak vytvořit databázi ve službě WebMatrix a postup zobrazení dat z databáze na stránce, pokud používáte rozhraní ASP.NET Web Pages (Razor). Předpokládá y..."
+description: Tento kurz ukazuje, jak vytvořit databázi ve službě WebMatrix a postup zobrazení dat z databáze na stránce, pokud používáte rozhraní ASP.NET Web Pages (Razor). Předpokládá y...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
 msc.type: authoredcontent
-ms.openlocfilehash: fdb9af0ba87c7802c63451ac7aa422e0020b5719
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6c66e5fb0a1a49da411286e19c7954f83055c3fd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---displaying-data"></a>Představení technologie ASP.NET Web Pages – zobrazení dat
 ====================
@@ -36,7 +36,7 @@ podle [tní FitzMacken](https://github.com/tfitzmac)
 > Funkce nebo technologie popsané:
 > 
 > - Databázové nástroje WebMatrix.
-> - `WebGrid`pomocné rutiny.
+> - `WebGrid` pomocné rutiny.
 
 
 ## <a name="what-youll-build"></a>Co budete sestavení
@@ -338,6 +338,6 @@ V dalším kurzu budete Další informace o použití kódu Razor a C# pro získ
 
 - [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
 
->[!div class="step-by-step"]
-[Předchozí](intro-to-web-pages-programming.md)
-[další](form-basics.md)
+> [!div class="step-by-step"]
+> [Předchozí](intro-to-web-pages-programming.md)
+> [další](form-basics.md)

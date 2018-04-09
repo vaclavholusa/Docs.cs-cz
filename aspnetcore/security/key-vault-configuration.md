@@ -1,18 +1,18 @@
 ---
-title: "Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core"
+title: Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core
 author: guardrex
-description: "Další informace o použití konfigurace zprostředkovatele služby Azure klíč trezoru pro konfiguraci aplikace pomocí dvojice název hodnota načíst za běhu."
+description: Další informace o použití konfigurace zprostředkovatele služby Azure klíč trezoru pro konfiguraci aplikace pomocí dvojice název hodnota načíst za běhu.
 manager: wpickett
 ms.author: riande
 ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: e1a4be77417f0a74182f1b123bfba429737d4330
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 09f28ec3792cf137fbcfdecc593e27ce6b2e7e09
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core
 
@@ -54,20 +54,21 @@ Zprostředkovatel je přidán do `ConfigurationBuilder` s `AddAzureKeyVault` roz
 
 ## <a name="creating-key-vault-secrets-and-loading-configuration-values-basic-sample"></a>Vytvoření trezoru klíčů tajných klíčů a načítání hodnoty konfigurace (basic – ukázka)
 1. Vytvoření trezoru klíčů a nastavení Azure Active Directory (Azure AD) pro aplikaci následující pokyny v [Začínáme s Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
-  * Přidat tajné klíče do trezoru klíčů pomocí [modulu PowerShell trezoru klíč AzureRM](/powershell/module/azurerm.keyvault) dostupné z [Galerie prostředí PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [REST API služby Azure Key Vault](/rest/api/keyvault/), nebo [Portál azure](https://portal.azure.com/). Tajné klíče byly vytvořeny jako buď *ruční* nebo *certifikát* tajných klíčů. *Certifikát* tajné klíče jsou certifikáty používané aplikace a služby, ale nejsou podporovány ve zprostředkovateli konfigurace. Měli byste použít *ruční* možnost vytvořit tajné klíče dvojice název hodnota pro použití se zprostředkovatelem konfigurace.
-    * Jednoduché tajné klíče jsou vytvořené jako dvojice název hodnota. Azure Key Vault názvů tajných klíčů jsou omezeny na alfanumerické znaky a spojovníky.
-    * Hierarchická hodnoty (konfigurační oddíly) použijte `--` (dvě pomlčky) jako oddělovač v ukázce. Použití dvojteček, které se obvykle používají pro vymezení části z podklíč v [konfigurace ASP.NET Core](xref:fundamentals/configuration/index), nejsou povoleny v názvů tajných klíčů. Proto jsou dvě pomlčky používá a vzájemně zaměněny pro dvojtečkou při těchto tajných klíčů jsou načteny do konfigurace aplikace.
-    * Vytvořte dvě *ruční* tajných klíčů s následující páry název hodnota. První tajný klíč je jednoduchý název a hodnotu a druhý tajný klíč vytvoří tajná hodnota s části a podklíč v tajný název:
-      * `SecretName`: `secret_value_1`
-      * `Section--SecretName`: `secret_value_2`
-  * Ukázková aplikace zaregistrujte v Azure Active Directory.
-  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
+   * Přidat tajné klíče do trezoru klíčů pomocí [modulu PowerShell trezoru klíč AzureRM](/powershell/module/azurerm.keyvault) dostupné z [Galerie prostředí PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [REST API služby Azure Key Vault](/rest/api/keyvault/), nebo [Portál azure](https://portal.azure.com/). Tajné klíče byly vytvořeny jako buď *ruční* nebo *certifikát* tajných klíčů. *Certifikát* tajné klíče jsou certifikáty používané aplikace a služby, ale nejsou podporovány ve zprostředkovateli konfigurace. Měli byste použít *ruční* možnost vytvořit tajné klíče dvojice název hodnota pro použití se zprostředkovatelem konfigurace.
+     * Jednoduché tajné klíče jsou vytvořené jako dvojice název hodnota. Azure Key Vault názvů tajných klíčů jsou omezeny na alfanumerické znaky a spojovníky.
+     * Hierarchická hodnoty (konfigurační oddíly) použijte `--` (dvě pomlčky) jako oddělovač v ukázce. Použití dvojteček, které se obvykle používají pro vymezení části z podklíč v [konfigurace ASP.NET Core](xref:fundamentals/configuration/index), nejsou povoleny v názvů tajných klíčů. Proto jsou dvě pomlčky používá a vzájemně zaměněny pro dvojtečkou při těchto tajných klíčů jsou načteny do konfigurace aplikace.
+     * Vytvořte dvě *ruční* tajných klíčů s následující páry název hodnota. První tajný klíč je jednoduchý název a hodnotu a druhý tajný klíč vytvoří tajná hodnota s části a podklíč v tajný název:
+       * `SecretName`: `secret_value_1`
+       * `Section--SecretName`: `secret_value_2`
+   * Ukázková aplikace zaregistrujte v Azure Active Directory.
+   * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
+
 2. Aktualizace aplikace služby *appSettings.JSON určený* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
 3. Spuštění ukázkové aplikace, která získává jeho hodnoty konfigurace z `IConfigurationRoot` se stejným názvem jako tajný název.
-  * Hierarchická bez hodnoty: hodnota `SecretName` se získávají pomocí `config["SecretName"]`.
-  * Hierarchická hodnoty (oddíly): použití `:` zápis (dvojtečka) nebo `GetSection` metoda rozšíření. Použijte jednu z těchto přístupů k získání hodnoty konfigurace:
-    * `config["Section:SecretName"]`
-    * `config.GetSection("Section")["SecretName"]`
+   * Hierarchická bez hodnoty: hodnota `SecretName` se získávají pomocí `config["SecretName"]`.
+   * Hierarchická hodnoty (oddíly): použití `:` zápis (dvojtečka) nebo `GetSection` metoda rozšíření. Použijte jednu z těchto přístupů k získání hodnoty konfigurace:
+     * `config["Section:SecretName"]`
+     * `config.GetSection("Section")["SecretName"]`
 
 Při spuštění aplikace zobrazuje webová stránka načtená tajný hodnoty:
 
@@ -97,13 +98,14 @@ Při implementaci tohoto přístupu:
 > Můžete taky zadat vlastní `KeyVaultClient` implementace k `AddAzureKeyVault`. Zadávání vlastního klienta můžete sdílet jednu instanci klienta mezi zprostředkovatele konfigurace a dalších částí vaší aplikace.
 
 1. Vytvoření trezoru klíčů a nastavení Azure Active Directory (Azure AD) pro aplikaci následující pokyny v [Začínáme s Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
-  * Přidat tajné klíče do trezoru klíčů pomocí [modulu PowerShell trezoru klíč AzureRM](/powershell/module/azurerm.keyvault) dostupné z [Galerie prostředí PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [REST API služby Azure Key Vault](/rest/api/keyvault/), nebo [Portál azure](https://portal.azure.com/). Tajné klíče byly vytvořeny jako buď *ruční* nebo *certifikát* tajných klíčů. *Certifikát* tajné klíče jsou certifikáty používané aplikace a služby, ale nejsou podporovány ve zprostředkovateli konfigurace. Měli byste použít *ruční* možnost vytvořit tajné klíče dvojice název hodnota pro použití se zprostředkovatelem konfigurace.
-    * Hierarchická hodnoty (konfigurační oddíly) použijte `--` (dvě pomlčky) jako oddělovač.
-    * Vytvořte dvě *ruční* tajných klíčů s následující páry název hodnota:
-      * `5000-AppSecret`: `5.0.0.0_secret_value`
-      * `5100-AppSecret`: `5.1.0.0_secret_value`
-  * Ukázková aplikace zaregistrujte v Azure Active Directory.
-  * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
+   * Přidat tajné klíče do trezoru klíčů pomocí [modulu PowerShell trezoru klíč AzureRM](/powershell/module/azurerm.keyvault) dostupné z [Galerie prostředí PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [REST API služby Azure Key Vault](/rest/api/keyvault/), nebo [Portál azure](https://portal.azure.com/). Tajné klíče byly vytvořeny jako buď *ruční* nebo *certifikát* tajných klíčů. *Certifikát* tajné klíče jsou certifikáty používané aplikace a služby, ale nejsou podporovány ve zprostředkovateli konfigurace. Měli byste použít *ruční* možnost vytvořit tajné klíče dvojice název hodnota pro použití se zprostředkovatelem konfigurace.
+     * Hierarchická hodnoty (konfigurační oddíly) použijte `--` (dvě pomlčky) jako oddělovač.
+     * Vytvořte dvě *ruční* tajných klíčů s následující páry název hodnota:
+       * `5000-AppSecret`: `5.0.0.0_secret_value`
+       * `5100-AppSecret`: `5.1.0.0_secret_value`
+   * Ukázková aplikace zaregistrujte v Azure Active Directory.
+   * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
+
 2. Aktualizace aplikace služby *appSettings.JSON určený* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
 3. Spuštění ukázkové aplikace, která získává jeho hodnoty konfigurace z `IConfigurationRoot` se stejným názvem jako předponou tajný název. V této ukázce předponu je verze aplikace, která jste zadali na `PrefixKeyVaultSecretManager` když jste přidali poskytovatel konfigurace Azure Key Vault. Hodnota `AppSecret` se získávají pomocí `config["AppSecret"]`. Webová stránka generované aplikace zobrazuje načíst hodnotu:
 

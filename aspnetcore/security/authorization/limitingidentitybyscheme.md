@@ -1,7 +1,7 @@
 ---
-title: "Autorizaci s konkrétní schéma - ASP.NET Core"
+title: Autorizaci s konkrétní schéma v ASP.NET Core
 author: rick-anderson
-description: "Tento článek vysvětluje, jak omezit identity pro konkrétní schéma při práci s více metod ověřování."
+description: Tento článek vysvětluje, jak omezit identity pro konkrétní schéma při práci s více metod ověřování.
 manager: wpickett
 ms.author: riande
 ms.date: 10/12/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/limitingidentitybyscheme
-ms.openlocfilehash: dd044a0829382f9f7f0c3256c6e669340f2d5240
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 81a01d7de8221fcb3bf90a108d9df6633ca2b696
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="authorize-with-a-specific-scheme"></a>Autorizaci s konkrétní schéma
+# <a name="authorize-with-a-specific-scheme-in-aspnet-core"></a>Autorizaci s konkrétní schéma v ASP.NET Core
 
 V některých případech, například jednostránkové aplikace (SPA) je běžné použít více metod ověřování. Aplikace může například použít ověřování založené na soubor cookie k přihlášení a ověřování nosiče JWT pro JavaScript požadavky. V některých případech aplikace může mít více instancí obslužnou rutinu ověřování. Například dvě souboru cookie obslužné rutiny, kde jeden obsahuje základní identity a jedna se vytvoří při použití služby Multi-Factor authentication (MFA) byla spuštěna. MFA mohou být vyvolány, protože uživatel si vyžádal, operace, která vyžaduje další bezpečnostní.
 

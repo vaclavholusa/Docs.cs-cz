@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/setting-up-database
-title: "Začínáme s Entity Framework 6 Database First pomocí MVC 5 | Microsoft Docs"
+title: Začínáme s Entity Framework 6 Database First pomocí MVC 5 | Microsoft Docs
 author: tfitzmac
-description: "Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri..."
+description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: cb979333131cc6ac87fd640bf7c96931054a1814
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ae60b5c808d2522c66dc17ccf7d16fefdc65d552
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Začínáme s Entity Framework 6 Database First pomocí MVC 5
 ====================
@@ -111,5 +111,5 @@ Zobrazí se upravitelné zobrazení dat v tabulce.
 
 Vaše databáze je nyní nastavení a naplněný daty. V dalším kurzu vytvoříte webovou aplikaci pro databázi.
 
->[!div class="step-by-step"]
-[Next](creating-the-web-application.md)
+> [!div class="step-by-step"]
+> [Next](creating-the-web-application.md)

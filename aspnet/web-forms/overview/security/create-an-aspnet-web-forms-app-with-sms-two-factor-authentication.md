@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
-title: "Vytvořit rozhraní ASP.NET Web Forms aplikace pomocí SMS dvoufaktorové ověřování (C#) | Microsoft Docs"
+title: Vytvořit rozhraní ASP.NET Web Forms aplikace pomocí SMS dvoufaktorové ověřování (C#) | Microsoft Docs
 author: Erikre
-description: "V tomto kurzu se dozvíte, jak vytvářet aplikace webových formulářů ASP.NET pomocí Dvojúrovňového ověřování. Tento kurz byl navržen jako doplněk kurzu s názvem Cr..."
+description: V tomto kurzu se dozvíte, jak vytvářet aplikace webových formulářů ASP.NET pomocí Dvojúrovňového ověřování. Tento kurz byl navržen jako doplněk kurzu s názvem Cr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: b1f0ec0fdefa12eb7f7b2714dbc224fef735f4bb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6c040fd3e0592b8cfd230dcd85ed3293f0a22ba7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>Vytvořit rozhraní ASP.NET Web Forms aplikace pomocí SMS dvoufaktorové ověřování (C#)
 ====================
@@ -63,12 +63,12 @@ Tento kurz používá Twilio, ale mohou využívat kteréhokoli zprostředkovate
 2. Z **řídicí panel** kartě svého účtu Twilio kopie **SID účtu** a **ověření tokenu.** Přidáte je do vaší aplikace později.
 3. Z **čísla** kartě, zkopírujte vaše Twilio **telefonní číslo** také.
 4. Ujistěte se, Twilio **SID účtu**, **Auth Token** a **telefonní číslo** k dispozici pro aplikaci. Pro zjednodušení se uloží v tyto hodnoty *web.config* souboru. Když nasadíte do Azure, můžete ukládat bezpečně v hodnoty **appSettings** karta Konfigurace části na webu. Navíc při přidávání telefonní číslo, používejte pouze čísla.   
- Všimněte si, že můžete také přidat přihlašovací údaje sendgrid vám umožňuje. Sendgrid vám umožňuje je služba oznámení e-mailu. Podrobnosti o tom, jak povolit Sendgridu, naleznete v části "háku až Sendgridu, kurzu s názvem [vytvoření zabezpečeného ASP.NET webové formuláře aplikace s registrací uživatele, e-mailem potvrzení a heslo resetovat.](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md)
+   Všimněte si, že můžete také přidat přihlašovací údaje sendgrid vám umožňuje. Sendgrid vám umožňuje je služba oznámení e-mailu. Podrobnosti o tom, jak povolit Sendgridu, naleznete v části "háku až Sendgridu, kurzu s názvem [vytvoření zabezpečeného ASP.NET webové formuláře aplikace s registrací uživatele, e-mailem potvrzení a heslo resetovat.](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md)
 
     [!code-xml[Main](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/samples/sample1.xml?highlight=2,6-10)]
 
     > [!WARNING]
-    > Zabezpečení – nikdy úložiště citlivá data ve zdrojovém kódu. V tomto příkladu účet a přihlašovací údaje uložené v **appSettings** části *Web.config* souboru. V Azure, můžete bezpečně uložit tyto hodnoty na  **[konfigurace](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**  na portálu Azure. Další informace naleznete v tématu Rick Anderson s názvem [osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a do Azure](https://go.microsoft.com/fwlink/?LinkId=513141).
+    > Zabezpečení – nikdy úložiště citlivá data ve zdrojovém kódu. V tomto příkladu účet a přihlašovací údaje uložené v **appSettings** části *Web.config* souboru. V Azure, můžete bezpečně uložit tyto hodnoty na **[konfigurace](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** na portálu Azure. Další informace naleznete v tématu Rick Anderson s názvem [osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a do Azure](https://go.microsoft.com/fwlink/?LinkId=513141).
 5. Konfigurace `SmsService` třídy v *aplikace\_Start\IdentityConfig.cs* zvýrazněných v žlutý změně souboru tím, že provedete následující: 
 
     [!code-csharp[Main](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/samples/sample2.cs?highlight=5-17)]
@@ -85,7 +85,7 @@ Tento kurz používá Twilio, ale mohou využívat kteréhokoli zprostředkovate
 
     [!code-csharp[Main](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/samples/sample6.cs?highlight=3-4,13)]
 
- Tím, že ve výše uvedeném kódu změňte, nebude "Zprostředkovatele" rozevírací seznam, který obsahuje možnosti ověřování nastavena na první hodnota. To vám umožní uživateli úspěšně vybrat všechny možnosti pro použití při ověřování, nikoli jen na prvním.
+   Tím, že ve výše uvedeném kódu změňte, nebude "Zprostředkovatele" rozevírací seznam, který obsahuje možnosti ověřování nastavena na první hodnota. To vám umožní uživateli úspěšně vybrat všechny možnosti pro použití při ověřování, nikoli jen na prvním.
 10. V **Průzkumníku řešení**, klikněte pravým tlačítkem na *Default.aspx* a vyberte **nastavit jako úvodní stránku**.
 11. Testování vaší aplikace, nejprve sestavení aplikace (**Ctrl**+**Shift**+**B**) a pak spusťte aplikaci (**F5**) a Vyberte buď **zaregistrovat** vytvořit nový uživatelský účet nebo vybrat **přihlásit** Pokud uživatelský účet je již zaregistrován.
 12. Jakmile přihlásili vám (jako uživatel), klikněte na ID uživatele (e-mailovou adresu) na navigačním panelu zobrazíte **spravovat účet** stránky (Manage.aspx).  
@@ -94,7 +94,7 @@ Tento kurz používá Twilio, ale mohou využívat kteréhokoli zprostředkovate
     ![](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/_static/image3.png)
 14. Telefonní číslo, kde (jako uživatel) chcete přijímat zprávy SMS (textových zpráv) a klikněte na tlačítko Přidat **odeslání** tlačítko.   
     ![](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/_static/image4.png)  
- V tomto okamžiku aplikace bude používat přihlašovací údaje z *Web.config* kontaktovat Twilio. SMS zpráva (SMS) odešle do telefonu přidružené k účtu uživatele. Můžete ověřit, že Twilio zpráva byla odeslána pomocí zobrazení řídicího panelu Twilio.
+    V tomto okamžiku aplikace bude používat přihlašovací údaje z *Web.config* kontaktovat Twilio. SMS zpráva (SMS) odešle do telefonu přidružené k účtu uživatele. Můžete ověřit, že Twilio zpráva byla odeslána pomocí zobrazení řídicího panelu Twilio.
 15. Během pár sekund získají phone přidružené k účtu uživatele textovou zprávu obsahující ověřovací kód. Zadejte ověřovací kód a stiskněte klávesu **odeslání**.  
      ![](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication/_static/image5.png)
 

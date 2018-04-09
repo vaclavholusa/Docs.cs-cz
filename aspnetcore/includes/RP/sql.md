@@ -20,7 +20,7 @@ Existuje mnoho nástroje třetích stran, si můžete stáhnout spravovat a zobr
 
 Vytvořte novou třídu s názvem `SeedData` v *modely* složky. Generovaného kódu nahraďte následujícím textem:
 
-[!code-csharp[](code\Models\SeedData.cs)]
+[!code-csharp[](code/Models/SeedData.cs)]
 
 Pokud jsou všechny filmy v databázi, vrátí inicializátoru počáteční hodnoty.
 
@@ -36,7 +36,7 @@ if (context.Movie.Any())
 
 Přidat inicializátoru počáteční hodnoty do `Main` metoda v *Program.cs* souboru:
 
-[!code-csharp[](../../tutorials/razor-pages\razor-pages-start\sample\RazorPagesMovie\Program.cs)]
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Program.cs)]
 
 ### <a name="test-the-app"></a>Testování aplikace
 

@@ -1,24 +1,24 @@
 ---
-title: "Stránky Razor s EF jádra ASP.NET Core - řazení, filtru, stránkování - 3 8"
+title: Stránky Razor s EF jádra ASP.NET Core - řazení, filtru, stránkování - 3 8
 author: rick-anderson
-description: "V tomto kurzu přidáte třídění, filtrování a stránkování funkce na stránku pomocí ASP.NET Core a Entity Framework Core."
+description: V tomto kurzu přidáte třídění, filtrování a stránkování funkce na stránku pomocí ASP.NET Core a Entity Framework Core.
 ms.author: riande
 ms.date: 10/22/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 851391c5d00f9204ee4237d4869859cfeee5a9b4
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: be7d55bf1a5d3da63ff137ed86f71984dc897eff
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - řazení, filtru, stránkování - 3 8
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Rick Anderson](https://twitter.com/RickAndMSFT), a [Jon P Smith](https://twitter.com/thereformedprog)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 Tento kurz, řazení, filtrování, seskupování a stránkování se přidá funkce.
 
@@ -283,6 +283,6 @@ Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené
 
 V dalším kurzu aplikace používá migrace aktualizovat data modelu.
 
->[!div class="step-by-step"]
-[Předchozí](xref:data/ef-rp/crud)
-[další](xref:data/ef-rp/migrations)
+> [!div class="step-by-step"]
+> [Předchozí](xref:data/ef-rp/crud)
+> [další](xref:data/ef-rp/migrations)

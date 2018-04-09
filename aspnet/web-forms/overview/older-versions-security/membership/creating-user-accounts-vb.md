@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/creating-user-accounts-vb
-title: "Vytváření uživatelských účtů (VB) | Microsoft Docs"
+title: Vytváření uživatelských účtů (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu se podíváme na použití rozhraní členství (prostřednictvím SqlMembershipProvider) k vytvoření nových uživatelských účtů. Zjistíme, jak vytvořit nový nám..."
+description: V tomto kurzu se podíváme na použití rozhraní členství (prostřednictvím SqlMembershipProvider) k vytvoření nových uživatelských účtů. Zjistíme, jak vytvořit nový nám...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 61621ffaae98ac74c16b2ff014ba9d85c2c10b3a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d665e7ba43401da76a88a904c10a587aa4576d4b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-user-accounts-vb"></a>Vytváření uživatelských účtů (VB)
 ====================
@@ -31,7 +31,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
 V <a id="_msoanchor_1"> </a> [předchozí kurzu](creating-the-membership-schema-in-sql-server-vb.md) jsme nainstalovali schématu aplikací služby v databázi, která přidání tabulek, zobrazení a uložené procedury vyžaduje `SqlMembershipProvider` a `SqlRoleProvider`. To vytvoří infrastrukturu, je nutné zadat pro zbývající z této série kurzů. V tomto kurzu se podíváme na použití rozhraní členství (prostřednictvím `SqlMembershipProvider`) k vytvoření nových uživatelských účtů. Postup vytvoření nové uživatele prostřednictvím kódu programu a prostřednictvím ASP jsme se zobrazí. NET na integrované CreateUserWizard řízení.
 
-Kromě naučit, jak vytváření nových uživatelských účtů, bude také je potřeba aktualizovat ukázkový web jsme vytvořili nejprve v  *<a id="_msoanchor_2"> </a> [Přehled ověřování založené na formulářích](../introduction/an-overview-of-forms-authentication-vb.md)*  kurz a pak v rozšířené  *<a id="_msoanchor_3"> </a> [konfiguraci ověřování formulářů a rozšířené témata](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)*  kurzu. Naše ukázkové webové aplikace má přihlašovací stránku, která ověřuje přihlašovací údaje uživatelů s páry pevně uživatelského jména a hesla. Kromě toho `Global.asax` zahrnuje kód, který vytvoří vlastní `IPrincipal` a `IIdentity` objekty pro ověřené uživatele. Budeme aktualizovat přihlašovací stránku k ověření pověření uživatele pro rozhraní členství a odebrat vlastní logiky zabezpečení a identity.
+Kromě naučit, jak vytváření nových uživatelských účtů, bude také je potřeba aktualizovat ukázkový web jsme vytvořili nejprve v *<a id="_msoanchor_2"> </a> [Přehled ověřování založené na formulářích](../introduction/an-overview-of-forms-authentication-vb.md)* kurz a pak v rozšířené *<a id="_msoanchor_3"> </a> [konfiguraci ověřování formulářů a rozšířené témata](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)* kurzu. Naše ukázkové webové aplikace má přihlašovací stránku, která ověřuje přihlašovací údaje uživatelů s páry pevně uživatelského jména a hesla. Kromě toho `Global.asax` zahrnuje kód, který vytvoří vlastní `IPrincipal` a `IIdentity` objekty pro ověřené uživatele. Budeme aktualizovat přihlašovací stránku k ověření pověření uživatele pro rozhraní členství a odebrat vlastní logiky zabezpečení a identity.
 
 Můžeme začít!
 
@@ -40,7 +40,7 @@ Můžeme začít!
 Než začneme práci s rozhraní členství, Podívejme se na chvíli ke kontrole důležité kroky, které jsme provedli k dosažení tohoto bodu. Pokud používáte framework členství s `SqlMembershipProvider` ve scénáři ověřování pomocí formulářů, musí být provedeny před jejich implementací funkce členství ve webové aplikaci následující kroky:
 
 1. **Povolte ověřování pomocí formulářů.** Jak již bylo zmíněno  *<a id="_msoanchor_4"> </a> [Přehled ověřování založené na formulářích](../introduction/an-overview-of-forms-authentication-vb.md)*, ověřování pomocí formulářů je povoleno úpravou `Web.config` a nastavení `<authentication>` elementu `mode` atribut `Forms`. S povolit ověřování pomocí formulářů, je zkontrolován každého příchozího požadavku pro *forms lístek ověřování*, která, pokud existuje, identifikuje žadatel.
-2. **Přidejte služby schématu aplikací k příslušné databázi.** Při použití `SqlMembershipProvider` potřebujeme nainstalovat schématu aplikací služby k databázi. Obvykle toto schéma se přidá do stejné databáze, která obsahuje model dat aplikace. *<a id="_msoanchor_5"> </a> [Vytváření schématu členství v systému SQL Server](creating-the-membership-schema-in-sql-server-vb.md)*  kurzu hledá pomocí `aspnet_regsql.exe` nástroj toho chcete dosáhnout.
+2. **Přidejte služby schématu aplikací k příslušné databázi.** Při použití `SqlMembershipProvider` potřebujeme nainstalovat schématu aplikací služby k databázi. Obvykle toto schéma se přidá do stejné databáze, která obsahuje model dat aplikace. *<a id="_msoanchor_5"> </a> [Vytváření schématu členství v systému SQL Server](creating-the-membership-schema-in-sql-server-vb.md)* kurzu hledá pomocí `aspnet_regsql.exe` nástroj toho chcete dosáhnout.
 3. **Upravte nastavení webové aplikace tak, aby odkazovaly databázi z kroku 2.** *Vytváření schématu členství v systému SQL Server* kurz vám ukázal, dva způsoby konfigurace webové aplikace tak, aby `SqlMembershipProvider` by použít databázi vybrané v kroku 2: změnou `LocalSqlServer` název připojovacího řetězce; nebo přidáním nového registrované zprostředkovatele do seznamu zprostředkovatelů členství framework a přizpůsobení tohoto nového poskytovatele chcete použít databázi z kroku 2.
 
 Při vytváření webové aplikace, které používá `SqlMembershipProvider` a ověřování pomocí formulářů, budete muset provést tyto tři kroky před použitím `Membership` třídu nebo ovládací prvky ASP.NET – webové přihlášení. Vzhledem k tomu, že jsme již provést tyto kroky v předchozí kurzy, jsme připraveni začít používat rozhraní členství!
@@ -69,7 +69,7 @@ Každé stránce měli v tomto okamžiku dva ovládací prvky obsahu, jeden pro 
 
 [!code-aspx[Main](creating-user-accounts-vb/samples/sample1.aspx)]
 
-Odvolat, který `LoginContent` ContentPlaceHolder na výchozí značka zobrazí odkaz na přihlášení a odhlášení lokality, v závislosti na tom, jestli je uživatel ověřený. Přítomnost `Content2` ovládací prvek obsahu, ale přepíše značek výchozí stránky předlohy. Jak již bylo zmíněno  *<a id="_msoanchor_6"> </a> [Přehled ověřování založené na formulářích](../introduction/an-overview-of-forms-authentication-vb.md)*  kurzu, to je užitečné v stránky, kde jsme nechcete zobrazit související s přihlášením možnosti v levém sloupci.
+Odvolat, který `LoginContent` ContentPlaceHolder na výchozí značka zobrazí odkaz na přihlášení a odhlášení lokality, v závislosti na tom, jestli je uživatel ověřený. Přítomnost `Content2` ovládací prvek obsahu, ale přepíše značek výchozí stránky předlohy. Jak již bylo zmíněno *<a id="_msoanchor_6"> </a> [Přehled ověřování založené na formulářích](../introduction/an-overview-of-forms-authentication-vb.md)* kurzu, to je užitečné v stránky, kde jsme nechcete zobrazit související s přihlášením možnosti v levém sloupci.
 
 Těchto pět stránek, ale chceme zobrazit kód výchozí stránky předlohy pro `LoginContent` ContentPlaceHolder. Proto odebrat deklarativní `Content2` obsahu ovládacího prvku. Až to uděláte, každý z pěti stránce značek by měl obsahovat pouze jeden prvek obsahu.
 
@@ -107,7 +107,7 @@ Výše uvedený kód lokality mapy definuje hierarchii znázorněný na obrázku
 
 Technologie ASP.NET obsahuje řadu souvisejících s navigací webových ovládacích prvků pro návrh uživatelského rozhraní. Mezi ně patří, v nabídce, TreeView a ovládací prvky SiteMapPath. Nabídky a TreeView – ovládací prvky vykreslení struktury mapy webu v nabídce nebo strom, v uvedeném pořadí, zatímco SiteMapPath zobrazí zobrazení cesty, která ukazuje na aktuálním uzlu a také jeho předchůdců přístupu. Data mapy webu mohou být vázány na další data webové ovládací prvky pomocí SiteMapDataSource a je možné programově přistupovat prostřednictvím `SiteMap` třídy.
 
-Vzhledem k tomu, že vyčerpávající diskusi o rozhraní mapy webu a ovládací prvky pro navigaci je nad rámec tohoto kurzu řad, spíš než věnovat času věnujte vlastní navigační uživatelské rozhraní umožňuje místo toho půjčit používaný v mé  *[ Práce s daty v technologii ASP.NET 2.0](../../data-access/index.md)*  kurz řady, která používá prvku Repeater pro zobrazení seznamu s odrážkami dva přímým navigační odkazy, jak je znázorněno na obrázku 4.
+Vzhledem k tomu, že vyčerpávající diskusi o rozhraní mapy webu a ovládací prvky pro navigaci je nad rámec tohoto kurzu řad, spíš než věnovat času věnujte vlastní navigační uživatelské rozhraní umožňuje místo toho půjčit používaný v mé *[ Práce s daty v technologii ASP.NET 2.0](../../data-access/index.md)* kurz řady, která používá prvku Repeater pro zobrazení seznamu s odrážkami dva přímým navigační odkazy, jak je znázorněno na obrázku 4.
 
 ### <a name="adding-a-two-level-list-of-links-in-the-left-column"></a>Přidání dvojúrovňové seznam odkazů v levém sloupci
 
@@ -143,7 +143,7 @@ Obrázek 5 ukazuje výstup SiteMapPath při návštěvě `~/Membership/CreatingU
 
 ## <a name="step-4-removing-the-custom-principal-and-identity-logic"></a>Krok 4: Odebrání vlastní objekt zabezpečení a logiku Identity
 
-V  *<a id="_msoanchor_7"> </a> [konfiguraci ověřování formulářů a rozšířené témata](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)*  kurzu jsme viděli postup přidružení vlastní objekty zabezpečení a identity k ověřenému uživateli. Jsme to vyřešit vytvořením obslužné rutiny události v `Global.asax` pro danou aplikaci `PostAuthenticateRequest` událost, která aktivuje se po `FormsAuthenticationModule` ověření uživatele. V této obslužné rutiny události jsme nahradit `GenericPrincipal` a `FormsIdentity` objektů přidaných `FormsAuthenticationModule` s `CustomPrincipal` a `CustomIdentity` objekty jsme vytvořili v tomto kurzu.
+V *<a id="_msoanchor_7"> </a> [konfiguraci ověřování formulářů a rozšířené témata](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)* kurzu jsme viděli postup přidružení vlastní objekty zabezpečení a identity k ověřenému uživateli. Jsme to vyřešit vytvořením obslužné rutiny události v `Global.asax` pro danou aplikaci `PostAuthenticateRequest` událost, která aktivuje se po `FormsAuthenticationModule` ověření uživatele. V této obslužné rutiny události jsme nahradit `GenericPrincipal` a `FormsIdentity` objektů přidaných `FormsAuthenticationModule` s `CustomPrincipal` a `CustomIdentity` objekty jsme vytvořili v tomto kurzu.
 
 Při vlastní objekty zabezpečení a identity jsou užitečné v některých scénářích, ve většině případů `GenericPrincipal` a `FormsIdentity` postačí objekty. V důsledku toho je pravděpodobné, že je smysl se vraťte do výchozí chování. Tuto změnu provést odebráním nebo komentářů se `PostAuthenticateRequest` obslužné rutiny události nebo odstraněním `Global.asax` celý soubor.
 
@@ -164,17 +164,17 @@ Chcete-li vytvořit nový uživatelský účet prostřednictvím použití frame
 
 Tyto čtyři přetížení se liší na množství informací, které jsou shromážděny. První přetížení, například vyžaduje pouze uživatelské jméno a heslo pro nový uživatelský účet, zatímco druhý taky vyžaduje e-mailovou adresu uživatele.
 
-Tato přetížení existovat, protože informace potřebné k vytvoření nového uživatelského účtu, závisí na nastavení konfigurace zprostředkovatele členství. V  *<a id="_msoanchor_8"> </a> [vytváření schématu členství v systému SQL Server](creating-the-membership-schema-in-sql-server-vb.md)*  kurzu jsme se zaměřili na zadání nastavení konfigurace pro zprostředkovatele členství v `Web.config`. Tabulka 2 zahrnuty úplný seznam nastavení konfigurace.
+Tato přetížení existovat, protože informace potřebné k vytvoření nového uživatelského účtu, závisí na nastavení konfigurace zprostředkovatele členství. V *<a id="_msoanchor_8"> </a> [vytváření schématu členství v systému SQL Server](creating-the-membership-schema-in-sql-server-vb.md)* kurzu jsme se zaměřili na zadání nastavení konfigurace pro zprostředkovatele členství v `Web.config`. Tabulka 2 zahrnuty úplný seznam nastavení konfigurace.
 
 Jeden takový členství zprostředkovatele nastavení konfigurace, které ovlivňuje, co `CreateUser` přetížení lze je `requiresQuestionAndAnswer` nastavení. Pokud `requiresQuestionAndAnswer` je nastaven na `true` (výchozí), pak při vytváření nového uživatelského účtu jsme musíte zadat bezpečnostní otázku a odpověď. Tyto informace se později používá, když uživatel potřebuje můžete resetovat nebo změnit své heslo. Konkrétně v té době jsou uvedené na bezpečnostní otázku a jejich musíte zadat správný odpovědí, aby bylo možné resetovat nebo změnit své heslo. V důsledku toho pokud `requiresQuestionAndAnswer` je nastaven na `true` pak buď první dvě volání `CreateUser` přetížení má za následek výjimku, protože chybí bezpečnostní otázku a odpověď. Vzhledem k tomu, že naše aplikace je aktuálně konfigurována tak, aby vyžadovala bezpečnostní otázku a odpověď, budeme muset použijte jednu z druhé dvě přetížení při vytváření uživatele prostřednictvím kódu programu.
 
 Pro ilustraci použití `CreateUser` metoda, můžeme vytvořit uživatelské rozhraní, ve kterých jsme požádat uživatele o jejich jméno, heslo, e-mailu a odpověď na předem definované bezpečnostní otázku. Otevřete `CreatingUserAccounts.aspx` stránku `Membership` složky a přidejte následující ovládací prvky webového do ovládacího prvku obsahu:
 
-- Textové pole s názvem`Username`
-- Textové pole s názvem `Password`, jejichž `TextMode` je nastavena na`Password`
-- Textové pole s názvem`Email`
+- Textové pole s názvem `Username`
+- Textové pole s názvem `Password`, jejichž `TextMode` je nastavena na `Password`
+- Textové pole s názvem `Email`
 - Štítek s názvem `SecurityQuestion` s jeho `Text` vlastnost bylo vymazáno
-- Textové pole s názvem`SecurityAnswer`
+- Textové pole s názvem `SecurityAnswer`
 - Tlačítko s názvem `CreateAccountButton` jejichž `Text` vlastnost nastavena na vytvořit uživatelský účet
 - Ovládací prvek popisek s názvem `CreateAccountResults` s jeho `Text` vlastnost bylo vymazáno
 
@@ -196,7 +196,7 @@ Dále vytvořte obslužnou rutinu události pro `CreateAccountButton'` s `Click`
 
 [!code-vb[Main](creating-user-accounts-vb/samples/sample6.vb)]
 
-`Click` Obslužné rutiny události spustí definováním proměnné s názvem `createStatus` typu [ `MembershipCreateStatus` ](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx). `MembershipCreateStatus`je výčet, který označuje stav `CreateUser` operaci. Například, pokud uživatelský účet je úspěšně vytvořen, výsledná `MembershipCreateStatus` instance bude nastavena na hodnotu `Success;` na druhé straně, pokud se operace nezdaří, protože už existuje uživatele se stejným uživatelským jménem, nastaví se na hodnotu `DuplicateUserName`. V `CreateUser` přetížení používáme, musíme předat `MembershipCreateStatus` instance do metody. Tento parametr je nastaven na odpovídající hodnotu v rámci `CreateUser` metoda a My můžete zkontrolovat jeho hodnotu po volání metody k určení, zda uživatelský účet byl úspěšně vytvořen.
+`Click` Obslužné rutiny události spustí definováním proměnné s názvem `createStatus` typu [ `MembershipCreateStatus` ](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx). `MembershipCreateStatus` je výčet, který označuje stav `CreateUser` operaci. Například, pokud uživatelský účet je úspěšně vytvořen, výsledná `MembershipCreateStatus` instance bude nastavena na hodnotu `Success;` na druhé straně, pokud se operace nezdaří, protože už existuje uživatele se stejným uživatelským jménem, nastaví se na hodnotu `DuplicateUserName`. V `CreateUser` přetížení používáme, musíme předat `MembershipCreateStatus` instance do metody. Tento parametr je nastaven na odpovídající hodnotu v rámci `CreateUser` metoda a My můžete zkontrolovat jeho hodnotu po volání metody k určení, zda uživatelský účet byl úspěšně vytvořen.
 
 Po volání `CreateUser`a předejte `createStatus`, `Select Case` příkaz slouží k vypsání odpovídající zprávu v závislosti na hodnotu přiřazenou `createStatus`. Následující obrázky 7 zobrazuje výstup, když nového uživatele byla úspěšně vytvořena. Následující obrázky 8 a 9 zobrazit výstup při uživatelský účet není vytvořena. Na obrázku 8 návštěvníka zadali heslo pět písmenem, který nesplňuje požadavky na heslo sílu vyjádřeny v nastavení konfigurace zprostředkovatele členství. Na obrázku 9 se pokouší návštěvníka vytvořit uživatelský účet s existující uživatelské jméno (jeden, vytvořit na obrázku 7).
 
@@ -231,7 +231,7 @@ Po vytvoření jen několik uživatelských účtů, ověřte, že účty se vyt
 Zatímco úložiště uživatele členství teď obsahuje informace o Bruce a Tito na účtu, musíme ještě implementovat funkce, které umožňuje Bruce nebo Tito pro přihlášení k webu. V současné době `Login.aspx` ověřuje přihlašovací údaje uživatele s pevně zakódovaným sada párů uživatelského jména a hesla - nemá *není* ověřit zadaná pověření proti rozhraní členství. Pro nyní zobrazuje nové uživatelské účty v `aspnet_Users` a `aspnet_Membership` tabulky bude muset stačit. V dalším kurzu  *<a id="_msoanchor_9"> </a> [ověřování uživatele pověření proti členství uživatel uložit](validating-user-credentials-against-the-membership-user-store-vb.md)*, budeme aktualizovat přihlašovací stránku k ověření vůči úložišti členství.
 
 > [!NOTE]
-> Pokud nevidíte všechny uživatele ve vaší `SecurityTutorials.mdf` databázi, může to být proto vaší webové aplikaci používá výchozí zprostředkovatel členství `AspNetSqlMembershipProvider`, které používá `ASPNETDB.mdf` databáze jako své úložiště uživatele. Pokud chcete zjistit, pokud se jedná o problém, klikněte na tlačítko Aktualizovat v Průzkumníku řešení. Pokud databáze s názvem `ASPNETDB.mdf` byl přidán do `App_Data` složky, jedná o problém. Vrátit do kroku 4  *<a id="_msoanchor_10"> </a> [vytváření schématu členství v systému SQL Server](creating-the-membership-schema-in-sql-server-vb.md)*  kurz pokyny o tom, jak správně nakonfigurovat zprostředkovatele členství.
+> Pokud nevidíte všechny uživatele ve vaší `SecurityTutorials.mdf` databázi, může to být proto vaší webové aplikaci používá výchozí zprostředkovatel členství `AspNetSqlMembershipProvider`, které používá `ASPNETDB.mdf` databáze jako své úložiště uživatele. Pokud chcete zjistit, pokud se jedná o problém, klikněte na tlačítko Aktualizovat v Průzkumníku řešení. Pokud databáze s názvem `ASPNETDB.mdf` byl přidán do `App_Data` složky, jedná o problém. Vrátit do kroku 4 *<a id="_msoanchor_10"> </a> [vytváření schématu členství v systému SQL Server](creating-the-membership-schema-in-sql-server-vb.md)* kurz pokyny o tom, jak správně nakonfigurovat zprostředkovatele členství.
 
 
 Ve většině vytvořit uživatele scénáře účtu, zobrazí návštěvníka některé rozhraní zadat svoje uživatelské jméno, heslo, e-mailu a další nezbytné informace v tomto okamžiku se vytvoří nový účet. V tomto kroku jsme zvážení vytvoření takového rozhraní ručně a pak viděli, jak používat `Membership.CreateUser` na vstupy uživatele na základě metod programově přidat nový uživatelský účet. Naše kód, ale právě vytvořili nový uživatelský účet. Není provedli všechny následné akce, například přihlášení uživatele k webu pomocí právě vytvořeného uživatelského účtu nebo odesílání e-mailu s potvrzením pro uživatele. Tyto další kroky by vyžadovaly další kód na tlačítku `Click` obslužné rutiny události.
@@ -350,7 +350,7 @@ Snímek obrazovky ukazuje obrázek 15 `CreatingUserAccounts.aspx` když uživate
 
 
 > [!NOTE]
-> Vidíte příklad použití prvku CreateUserWizard `CreatedUser` událost v  *<a id="_msoanchor_11"> </a> [ukládání Další informace o uživateli](storing-additional-user-information-vb.md)*  kurzu.
+> Vidíte příklad použití prvku CreateUserWizard `CreatedUser` událost v *<a id="_msoanchor_11"> </a> [ukládání Další informace o uživateli](storing-additional-user-information-vb.md)* kurzu.
 
 
 ## <a name="summary"></a>Souhrn
@@ -367,7 +367,7 @@ Radostí programování!
 
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
-- [`CreateUser`Technická dokumentace](https://msdn.microsoft.com/library/system.web.security.membershipprovider.createuser.aspx)
+- [`CreateUser` Technická dokumentace](https://msdn.microsoft.com/library/system.web.security.membershipprovider.createuser.aspx)
 - [Přehled ovládacího prvku CreateUserWizard](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/createuserwizard.aspx)
 - [Vytvoření zprostředkovatele mapy souboru založené na systému lokality](http://aspnet.4guysfromrolla.com/articles/020106-1.aspx)
 - [Vytváření pomocí ovládacího prvku ASP.NET 2.0 průvodce krok za krokem uživatelské rozhraní](http://aspnet.4guysfromrolla.com/articles/061406-1.aspx)
@@ -377,12 +377,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com).
 
->[!div class="step-by-step"]
-[Předchozí](creating-the-membership-schema-in-sql-server-vb.md)
-[další](validating-user-credentials-against-the-membership-user-store-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-the-membership-schema-in-sql-server-vb.md)
+> [další](validating-user-credentials-against-the-membership-user-store-vb.md)

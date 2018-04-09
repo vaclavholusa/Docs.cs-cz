@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do produkčního prostředí | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do produkčního prostředí | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: abd3f3f78dd9a9e6394e2f61aa9bd692810ca875
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f3b3898bd003ace100ba05619f2c45ca808462df
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do produkčního prostředí
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -144,10 +144,10 @@ Teď, když jste vytvořili webovou aplikaci a databázi pro pracovní prostřed
 9. 1. Vyberte **aktualizace databáze**.
 
         **Vzdáleného připojovací řetězec** pole přímo pod **objekt DefaultConnection** obsahuje připojovací řetězec ze souboru .publishsettings. Připojovací řetězec obsahuje pověření systému SQL Server, které jsou uloženy v prostém textu v *.pubxml* souboru. Pokud nechcete uložit je trvale existuje, můžete je odebrat z profilu publikování po nasazení databáze a uložit je do Azure. Další informace najdete v tématu [jak zabezpečit vaše databáze ASP.NET připojovací řetězce při nasazení do Azure ze zdroje](http://www.hanselman.com/blog/HowToKeepYourASPNETDatabaseConnectionStringsSecureWhenDeployingToAzureFromSource.aspx) na Scotta Hanselmana.
-    2. Klikněte na tlačítko **konfigurovat aktualizace databáze**.
-    3. V **konfigurovat aktualizace databáze** dialogové okno, klikněte na tlačítko **přidat skript SQL**.
-    4. V **přidat skript SQL** pole, přejděte *aspnet. data prod.sql* skript, který jste předtím uložili ve složce řešení a potom klikněte na **otevřete**.
-    5. Zavřít **konfigurovat aktualizace databáze** dialogové okno.
+      2. Klikněte na tlačítko **konfigurovat aktualizace databáze**.
+      3. V **konfigurovat aktualizace databáze** dialogové okno, klikněte na tlačítko **přidat skript SQL**.
+      4. V **přidat skript SQL** pole, přejděte *aspnet. data prod.sql* skript, který jste předtím uložili ve složce řešení a potom klikněte na **otevřete**.
+      5. Zavřít **konfigurovat aktualizace databáze** dialogové okno.
 10. V části **SchoolContext** v **databáze** vyberte **spustit migrace Code First (spuštěno při spuštění aplikace)**.
 
     Visual Studio zobrazí **spustit migrace Code First** místo **aktualizace databáze** pro `DbContext` třídy. Pokud chcete použít poskytovatele dbDacFx místo migrace nasazení databáze, které máte přístup k pomocí `DbContext` třídy najdete v tématu [jak nasadit Code First databáze bez migrace?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) v nejčastějších Dotazech webové nasazení pro Visual Studio a ASP.NET na webu MSDN.
@@ -296,11 +296,11 @@ V dalším kurzu budete aktualizovat kód aplikace a nasazení změn do prostře
 
 > [!NOTE]
 > Když aplikaci právě používá v produkčním prostředí by měla implementace plánu obnovení. To znamená můžete by měl být pravidelně zálohování databází z na produkční aplikaci do umístění zabezpečeného úložiště a musí zachovat několika generací takové záloh. Při aktualizaci databáze byste měli vytvořit záložní kopii z bezprostředně před provedením změny. Poté Pokud došlo k chybě a nebudete zjistit až po jeho nasazení do produkčního prostředí, bude stále budete moci obnovit databázi do stavu, ve kterém se nacházel před jeho poškozením. Další informace najdete v tématu [zálohy databáze SQL Azure a obnovení](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx).
-
-
+> 
+> 
 > [!NOTE]
 > V tomto kurzu systému SQL Server je edici, která nasazujete do Azure SQL Database. Během procesu nasazení je podobná jiné edice systému SQL Server, skutečné produkční aplikace by mohla vyžadovat zvláštní kód pro Azure SQL Database v některých scénářích. Další informace najdete v tématu [práce s Azure SQL Database](../../../../whitepapers/aspnet-data-access-content-map.md#ssdb) a [výběr mezi SQL serverem a Azure SQL Database](../../../../whitepapers/aspnet-data-access-content-map.md#ssdbchoosing).
-
->[!div class="step-by-step"]
-[Předchozí](setting-folder-permissions.md)
-[další](deploying-a-code-update.md)
+> 
+> [!div class="step-by-step"]
+> [Předchozí](setting-folder-permissions.md)
+> [další](deploying-a-code-update.md)

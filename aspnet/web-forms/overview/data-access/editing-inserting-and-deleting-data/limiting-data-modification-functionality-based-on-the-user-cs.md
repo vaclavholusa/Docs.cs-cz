@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
-title: "Omezení dat úpravy funkce na základě uživatele (C#) | Microsoft Docs"
+title: Omezení dat úpravy funkce na základě uživatele (C#) | Microsoft Docs
 author: rick-anderson
-description: "Ve webové aplikaci, která umožňuje uživatelům upravovat data může mít různé uživatelské účty různých dat úpravy oprávnění. V tomto kurzu podíváme jak t..."
+description: Ve webové aplikaci, která umožňuje uživatelům upravovat data může mít různé uživatelské účty různých dat úpravy oprávnění. V tomto kurzu podíváme jak t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 44d0c192e082a7ad123096acb57fd053f6dcaeb1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b056536eeaa86ef2c73debe23dd38861f41b2a69
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="limiting-data-modification-functionality-based-on-the-user-c"></a>Omezení funkce změny dat na základě uživatele (C#)
 ====================
@@ -246,8 +246,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](adding-client-side-confirmation-when-deleting-cs.md)
-[další](an-overview-of-inserting-updating-and-deleting-data-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-client-side-confirmation-when-deleting-cs.md)
+> [další](an-overview-of-inserting-updating-and-deleting-data-vb.md)

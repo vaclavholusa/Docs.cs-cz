@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/project-properties
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: vlastnosti projektu | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: vlastnosti projektu | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
-ms.openlocfilehash: 85b6dbcc8d40c168a49513ef6b549f9ec7fa5097
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: fba3f089bf1693eec873b08b4bc50e3accba06ee
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: vlastnosti projektu
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -68,6 +68,6 @@ V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *Elmah* slož
 
 Teď jste dokončili všechny úlohy, nastavení nasazení. V dalším kurzu budete nasazení webu společnosti Contoso univerzity do testovacího prostředí a otestovat ji.
 
->[!div class="step-by-step"]
-[Předchozí](web-config-transformations.md)
-[další](deploying-to-iis.md)
+> [!div class="step-by-step"]
+> [Předchozí](web-config-transformations.md)
+> [další](deploying-to-iis.md)

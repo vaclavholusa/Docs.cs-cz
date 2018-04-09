@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
-title: "Principy procesu sestavení | Microsoft Docs"
+title: Principy procesu sestavení | Microsoft Docs
 author: jrjlee
-description: "Toto téma obsahuje návod sestavení a nasazení procesu podnikovém měřítku. Postup popsaný v tomto tématu používá vlastní Microsoft sestavení Engin..."
+description: Toto téma obsahuje návod sestavení a nasazení procesu podnikovém měřítku. Postup popsaný v tomto tématu používá vlastní Microsoft sestavení Engin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
 msc.type: authoredcontent
-ms.openlocfilehash: 3efcefc40dc135ff42f55911036f8b38b5aa13b1
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4544a5e6212ea9b1247062dc35edc135ff7ca354
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-the-build-process"></a>Principy procesu sestavení
 ====================
@@ -30,9 +30,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > > Předchozí téma [vysvětlení souboru projektu](understanding-the-project-file.md), popsané klíčové komponenty soubor projektu nástroje MSBuild a zavádí koncept rozdělení souborů projektu pro podporu nasazení na několika cílové prostředí. Pokud už nejste obeznámeni s následujícími základními pojmy, měli byste zkontrolovat [vysvětlení souboru projektu](understanding-the-project-file.md) než začnete pracovat prostřednictvím tohoto tématu.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](understanding-the-project-file.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](understanding-the-project-file.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="build-and-deployment-overview"></a>Sestavení a nasazení – přehled
 
@@ -50,16 +50,16 @@ Předtím, než se podíváte na tyto soubory podrobněji, Podívejme se na fung
 
 ![](understanding-the-build-process/_static/image2.png)
 
-První věc, kterou se stane, je, že jsou obě projektu soubory & #x 2014; jeden obsahující universal sestavení a pokyny k nasazení a jeden obsahující nastavení pro konkrétní prostředí & #x 2014; jsou sloučeny do jediného souboru projektu. MSBuild funguje pak pomocí pokynů v souboru projektu. Sestaví všechny projekty v řešení pomocí souboru projektu pro každý projekt. Potom zavolá jiných nástrojů, jako je nasazení webu (MSDeploy.exe) a nástroj VSDBCMD k nasazení webového obsahu a databází na cílovém prostředí.
+První věc, kterou se stane, je, že dva soubory projektu&#x2014;jednomu obsahující universal pokyny k sestavení a nasazení a jeden, který obsahuje nastavení pro konkrétní prostředí&#x2014;jsou sloučeny do jediného souboru projektu. MSBuild funguje pak pomocí pokynů v souboru projektu. Sestaví všechny projekty v řešení pomocí souboru projektu pro každý projekt. Potom zavolá jiných nástrojů, jako je nasazení webu (MSDeploy.exe) a nástroj VSDBCMD k nasazení webového obsahu a databází na cílovém prostředí.
 
 Proces sestavení a nasazení od začátku do konce, provádí tyto úlohy:
 
 1. Odstraní obsah výstupního adresáře v rámci přípravy čerstvé sestavení.
 2. Sestavuje jednotlivých projektů v řešení:
 
-    1. Pro webové projekty & #x 2014; v takovém případě webová aplikace ASP.NET MVC a službou WCF webové služby & #x 2014; procesu sestavení vytvoří balíčku pro nasazení webu pro každý projekt.
+    1. Pro webové projekty&#x2014;v takovém případě webová aplikace ASP.NET MVC a službou WCF webovou službu&#x2014;procesu sestavení vytvoří balíček nasazení webu pro každý projekt.
     2. Proces sestavení pro databázové projekty, vytvoří nasazení manifestu (soubor .deploymanifest) pro každý projekt.
-3. Nástroj VSDBCMD.exe používá k nasazení jednotlivé databáze projekty v řešení, pomocí různé vlastnosti z soubory projektu & #x 2014; cílový připojovací řetězec a název databáze & #x 2014; společně s .deploymanifest soubor.
+3. Používá nástroj VSDBCMD.exe nasazení každý projekt databáze v řešení pomocí různých vlastností ze souborů projektu&#x2014;cílový připojovací řetězec a název databáze&#x2014;společně s .deploymanifest souboru.
 4. Nástroj MSDeploy.exe používá pro nasazení jednotlivých webového projektu v řešení pomocí různých vlastností ze souborů projektu k řízení procesu nasazení.
 
 Ukázkové řešení můžete použít ke sledování tohoto procesu podrobněji.
@@ -102,9 +102,9 @@ Na další prvek, který zjistí MSBuild je skupina jednu položku, obsahující
 [!code-xml[Main](understanding-the-build-process/samples/sample4.xml)]
 
 
-MSBuild zpracuje tento pokyn podle budovy seznamu položek s názvem **ProjectsToBuild**. V takovém případě seznamu položek obsahuje jednu hodnotu & #x 2014; cestu a název souboru, řešení.
+MSBuild zpracuje tento pokyn podle budovy seznamu položek s názvem **ProjectsToBuild**. V takovém případě obsahuje jednu hodnotu v seznamu položek&#x2014;cestu a název souboru, řešení.
 
-V tomto okamžiku zbývající prvky jsou cíle. Cíle jsou zpracovávány jinak z vlastností a položek & #x 2014; v podstatě nejsou zpracovány cíle, pokud jsou buď explicitně specifikovaných uživatelem nebo vyvolané jiné konstrukce v souboru projektu. Odvolat, otevření **projektu** zahrnuje značky **defaulttargets –** atribut.
+V tomto okamžiku zbývající prvky jsou cíle. Cíle jsou zpracovávány jinak z vlastností a položek&#x2014;v podstatě nejsou zpracovány cíle, pokud jsou buď explicitně specifikovaných uživatelem nebo vyvolané jiné konstrukce v souboru projektu. Odvolat, otevření **projektu** zahrnuje značky **defaulttargets –** atribut.
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample5.xml)]
@@ -173,7 +173,7 @@ Pokud, abyste si prostudovali **GatherPackagesForPublishing** cíl, můžete si 
 
 Tyto položky odkazovat na balíčky nasazení, které byly vytvořeny při zpracování **BuildProjects** target byla spuštěna. Nelze definujete tyto položky staticky v souboru projektu, protože soubory, na které odkazují položky neexistují až **BuildProjects** cíl se spustí. Místo toho položky musí být definován dynamicky v rámci cíl, který není vyvolána, dokud nebude po **BuildProjects** cíl se spustí.
 
-Nepoužívají se položky v rámci této cílové & #x 2014; tento cíl jednoduše vytvoří položky a budou metadata spojená s každou hodnotu položky. Po zpracování tyto prvky jsou **PublishPackages** položka bude obsahovat dvě hodnoty, cesta k *ContactManager.Mvc.deploy.cmd* souboru a cesta k  *ContactManager.Service.deploy.cmd* souboru. Nasazení webu vytvoří tyto soubory jako součást webového balíčku pro každý projekt, a jsou to soubory, které je nutné vyvolat na cílovém serveru, aby bylo možné nasadit balíčky. Pokud otevřete si některý z těchto souborů uvidíte v podstatě příkaz MSDeploy.exe s různými hodnotami parametrů specifické pro sestavení.
+Položky nejsou použity uvnitř tohoto cíle&#x2014;tento cíl jednoduše vytvoří položky a budou metadata spojená s každou hodnotu položky. Po zpracování tyto prvky jsou **PublishPackages** položka bude obsahovat dvě hodnoty, cesta k *ContactManager.Mvc.deploy.cmd* souboru a cesta k  *ContactManager.Service.deploy.cmd* souboru. Nasazení webu vytvoří tyto soubory jako součást webového balíčku pro každý projekt, a jsou to soubory, které je nutné vyvolat na cílovém serveru, aby bylo možné nasadit balíčky. Pokud otevřete si některý z těchto souborů uvidíte v podstatě příkaz MSDeploy.exe s různými hodnotami parametrů specifické pro sestavení.
 
 **DbPublishPackages** položka bude obsahovat jednu hodnotu, cesta k *ContactManager.Database.deploymanifest* souboru.
 
@@ -199,7 +199,7 @@ Toto je příklad *dávkování cíle*. V souborech projektu nástroje MSBuild d
 - Spusťte cíl jednou na jednu dávku.
 
 > [!NOTE]
-> **Identity** je jedním z [hodnoty předdefinovaných metadat](https://msdn.microsoft.com/library/ms164313.aspx) přiřazené každá položka na vytvoření. Odkazuje na hodnotu **zahrnout** atribut **položky** element & #x 2014; jinými slovy, cestu a název položky.
+> **Identity** je jedním z [hodnoty předdefinovaných metadat](https://msdn.microsoft.com/library/ms164313.aspx) přiřazené každá položka na vytvoření. Odkazuje na hodnotu **zahrnout** atribut **položky** element&#x2014;jinými slovy, cesta a název položky.
 
 
 V takovém případě nikdy by měl být více než jednu položku se stejným cesta a název souboru, v podstatě Pracujeme s velikostí batch jedné. Cíl se spustí jednou pro každý balíček databáze.
@@ -251,6 +251,6 @@ Toto téma poskytuje návod, jak se soubory projektu rozdělení slouží k ří
 
 Podrobnější Úvod do souborů projektu a jako, najdete v části [uvnitř Microsoft Build Engine: pomocí nástroje MSBuild a Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi a William Bartholomew, ISBN: 978-0-7356-4524-0.
 
->[!div class="step-by-step"]
-[Předchozí](understanding-the-project-file.md)
-[další](building-and-packaging-web-application-projects.md)
+> [!div class="step-by-step"]
+> [Předchozí](understanding-the-project-file.md)
+> [další](building-and-packaging-web-application-projects.md)

@@ -1,7 +1,7 @@
 ---
-title: "Použití Gulp v ASP.NET Core"
+title: Použití Gulp v ASP.NET Core
 author: rick-anderson
-description: "Další informace o použití Gulp v ASP.NET Core."
+description: Další informace o použití Gulp v ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: 0a3443e8187d46992f55dc537d0f400c6771c50c
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: f776b2025b6ebfeff28d3903aaeac4d7d89665b3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="introduction-to-using-gulp-in-aspnet-core"></a>Úvod do používání Gulp v ASP.NET Core 
+# <a name="use-gulp-in-aspnet-core"></a>Použití Gulp v ASP.NET Core
 
 Podle [Erik Reitan](https://github.com/Erikre), [Scott Addie](https://scottaddie.com), [ADAM Roth](https://github.com/danroth27), a [Shayne Boyer](https://twitter.com/spboyer)
 
@@ -183,6 +183,9 @@ Pokud jste ještě nevytvořili novou webovou aplikaci, vytvořte nový projekt 
     **Průzkumník Spouštěče úloh** zobrazuje seznam Gulp úlohy. (Možná budete muset klikněte **aktualizovat** tlačítko, které se zobrazí nalevo od názvu projektu.)
     
     ![Průzkumník Spouštěče úloh](using-gulp/_static/03-TaskRunnerExplorer.png)
+    
+    > [!IMPORTANT]
+    > **Průzkumník Spouštěče úloh** položky kontextové nabídky se zobrazí jenom v případě *gulpfile.js* je v kořenovém adresáři projektu.
 
 4.  Pod **úlohy** v **Průzkumník Spouštěče úloh**, klikněte pravým tlačítkem na **čisté**a vyberte **spustit** z místní nabídky.
 
@@ -228,7 +231,7 @@ Chcete-li definovat nové úlohy Gulp, změňte *gulpfile.js*.
 
     ![Průzkumník Spouštěče úloh spustit první úlohu](using-gulp/_static/06-TaskRunner-First.png)
 
-    Uvidíte, že se zobrazí text výstupu. Pokud vás zajímá v příkladech podle běžný scénář, najdete v části Gulp recepty.
+    Zobrazí se text výstupu. Příklady založené na běžné scénáře, najdete v sekci [Gulp recepty](#gulp-recipes).
 
 ## <a name="defining-and-running-tasks-in-a-series"></a>Definování a spuštění úloh v řadě
 
@@ -323,7 +326,7 @@ Chcete-li přepnout mezi kompilování v různých prostředích, změňte **ASP
 
     Všimněte si, že šablony stylů odkazují na nezmenšenou verze souborů šablon stylů CSS.
 
-Další informace související s prostředím v ASP.NET Core najdete v tématu [práce s několika prostředí](../fundamentals/environments.md).
+Další informace související s prostředím v ASP.NET Core najdete v tématu [pracovat s několika prostředí](../fundamentals/environments.md).
 
 ## <a name="task-and-module-details"></a>Podrobnosti úlohy a modulu
 

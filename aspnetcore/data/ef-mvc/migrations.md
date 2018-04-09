@@ -1,21 +1,21 @@
 ---
-title: "Jádro ASP.NET MVC s EF Core - Migrations - 4 10"
+title: Jádro ASP.NET MVC s EF Core - Migrations - 4 10
 author: tdykstra
-description: "V tomto kurzu začnete používat funkci migrace EF jádra pro správu změn datových modelů v aplikaci MVC rozhraní ASP.NET Core."
+description: V tomto kurzu začnete používat funkci migrace EF jádra pro správu změn datových modelů v aplikaci MVC rozhraní ASP.NET Core.
 manager: wpickett
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.date: 03/15/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 0959ebc0f566540ea8a43d4889bb0e4fa041bfd6
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: f3f14d6dab1eb03e0ead5edaa9d7ba41a10b21e9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>Migrace – základní EF s kurz k ASP.NET MVC jádra (4 10)
+# <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>Jádro ASP.NET MVC s EF Core - Migrations - 4 10
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -99,15 +99,13 @@ Tento kód je pro počáteční migrace, která byla vytvořena, když jste zada
 
 Pokud jste vytvořili počáteční migrace, když databáze již existuje, se vygeneruje kód pro vytvoření databáze, ale nemá spustit, protože databáze již odpovídá datový model. Když nasadíte aplikaci do jiného prostředí, kde databáze ještě neexistuje, tento kód spustí k vytvoření databáze, proto je vhodné se nejdřív otestovat. To je důvod, proč jste změnili název databáze v připojovacím řetězci dříve – tak, aby migrace můžete vytvořit novou od začátku.
 
-## <a name="examine-the-data-model-snapshot"></a>Zkontrolujte snímku modelu dat
+## <a name="the-data-model-snapshot"></a>Snímek dat modelu
 
-Migrace taky vytvoří *snímku* z aktuální schéma databáze v *Migrations/SchoolContextModelSnapshot.cs*. Tady je tento kód vypadá takto:
+Vytvoří migrace *snímku* z aktuální schéma databáze v *Migrations/SchoolContextModelSnapshot.cs*. Když přidáte migrace, EF Určuje, co se změnilo tak, že porovnáte datový model, který soubor snímku.
 
-[!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
+Při odstraňování migrace, použijte [odebrat dotnet ef migrace](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) příkaz. `dotnet ef migrations remove` Odstraní migrace a zajišťuje, že je správně obnovení snímku.
 
-Vzhledem k tomu, že aktuální schéma databáze je reprezentována v kódu, EF základní nemusí pracovat s databází pro vytvoření migrace. Když přidáte migrace, EF Určuje, co se změnilo tak, že porovnáte datový model, který soubor snímku. EF komunikuje s databází jenom v případě, že má k aktualizaci databáze. 
-
-Soubor snímku musí být synchronizovány s migrací, které vytvářejí, takže nelze odebrat migrace právě odstraněním soubor s názvem  *\<časové razítko > _\<migrationname > .cs*. Pokud odstraníte tento soubor, zbývající migrace bude synchronizován s soubor snímku databáze. Chcete-li odstranit poslední migrace, který jste přidali, použijte [odebrat dotnet ef migrace](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) příkaz.
+V tématu [EF základní migrace v prostředích Team](/ef/core/managing-schemas/migrations/teams) Další informace o tom, jak se používá soubor snímku.
 
 ## <a name="apply-the-migration-to-the-database"></a>Použití migrace k databázi
 
@@ -167,6 +165,6 @@ Další informace o příkazech pomocí PMC najdete v tématu [Konzola správce 
 
 V tomto kurzu jste viděli, jak vytvořit a použít první migrace. V dalším kurzu brzy prohlížení pokročilejší témata rozšířením datový model. Na této cestě můžete vytvářet a použijte další migrace.
 
->[!div class="step-by-step"]
-[Předchozí](sort-filter-page.md)
-[další](complex-data-model.md)  
+> [!div class="step-by-step"]
+> [Předchozí](sort-filter-page.md)
+> [další](complex-data-model.md)  

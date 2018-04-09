@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
-title: "Interakci se stránkou předlohy ze stránky obsahu (VB) | Microsoft Docs"
+title: Interakci se stránkou předlohy ze stránky obsahu (VB) | Microsoft Docs
 author: rick-anderson
-description: "Prozkoumá tom, jak volat metody, nastavte vlastnosti, atd. hlavní stránky z kódu na stránce obsahu."
+description: Prozkoumá tom, jak volat metody, nastavte vlastnosti, atd. hlavní stránky z kódu na stránce obsahu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a9020115e6348d30350f8fff493efe88bd0d4c37
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7e92e7abbc69a0998d7563db0d5b206d7ba3d6be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>Interakci se stránkou předlohy ze stránky obsahu (VB)
 ====================
@@ -261,18 +261,18 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 - [Přístup k informacím a aktualizace dat v technologii ASP.NET](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
 - [ASP.NET hlavní stránky: Tipy, triky a depeše](http://www.odetocode.com/articles/450.aspx)
-- [`@MasterType`v technologii ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
+- [`@MasterType` v technologii ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
 - [Předávání informací mezi obsah a stránky předlohy](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [Práce s daty v kurzech ASP.NET](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Zack Petr. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Zack Petr. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](control-id-naming-in-content-pages-vb.md)
-[další](interacting-with-the-content-page-from-the-master-page-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](control-id-naming-in-content-pages-vb.md)
+> [další](interacting-with-the-content-page-from-the-master-page-vb.md)

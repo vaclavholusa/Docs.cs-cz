@@ -1,7 +1,7 @@
 ---
-title: "Klíče šifrování v klidovém stavu"
+title: Šifrování klíče v klidovém stavu uložených v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument popisuje podrobnosti implementace ASP.NET Core data protection klíče šifrování v klidovém stavu."
+description: Další podrobnosti implementace ochrany dat ASP.NET Core klíče šifrování v klidovém stavu.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,20 +9,20 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: c66430bfe547cf061e9e79a703ac665a968bbe0b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9247b141a44c958f34529e5a42a0ddc8c8893cb0
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-encryption-at-rest"></a>Klíče šifrování v klidovém stavu
+# <a name="key-encryption-at-rest-in-aspnet-core"></a>Šifrování klíče v klidovém stavu uložených v ASP.NET Core
 
 <a name="data-protection-implementation-key-encryption-at-rest"></a>
 
 Ve výchozím nastavení systému ochrany dat [využívá Heuristika](xref:security/data-protection/configuration/default-settings) k určení jak kryptografických materiál klíče by měla být v zašifrované podobě. Vývojář můžete přepsat heuristiky a ručně zadat, jak klíče by měla být v zašifrované podobě.
 
 > [!NOTE]
-> Pokud zadáte explicitní klíče šifrování v mechanismus rest, bude systém ochrany dat zrušení registrace výchozího mechanismu úložiště klíčů, které poskytuje heuristiky. Je nutné [zadejte mechanismus explicitní úložiště klíčů](key-storage-providers.md#data-protection-implementation-key-storage-providers), jinak systému ochrany dat, nebude možné spustit.
+> Pokud zadáte explicitní klíče šifrování v mechanismus rest, bude systém ochrany dat zrušení registrace výchozího mechanismu úložiště klíčů, které poskytuje heuristiky. Je nutné [zadejte mechanismus explicitní úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers), jinak systému ochrany dat, nebude možné spustit.
 
 <a name="data-protection-implementation-key-encryption-at-rest-providers"></a>
 
@@ -95,7 +95,7 @@ V tomto scénáři je zodpovědný za distribuci šifrovací klíče, který pou
 
 ## <a name="certificate-based-encryption-with-windows-dpapi-ng"></a>Šifrování založené na certifikátech s Windows DPAPI-NG
 
-Pokud používáte systém na Windows 8.1 nebo Windows Server 2012 R2 nebo novější, můžete použít Windows DPAPI-NG k provedení na základě certifikátu šifrování, i v případě, že je aplikace spuštěna [.NET Core](https://www.microsoft.com/net/core). Abyste mohli využívat tohoto objektu, použijte řetězce popisovače pravidla "certifikát = HashId:thumbprint", kde je kryptografický otisk kódováním šestnáctkově SHA1 kryptografický otisk certifikátu pro použití. Níže najdete příklad.
+Pokud používáte systém na Windows 8.1 nebo Windows Server 2012 R2 nebo novější, můžete použít Windows DPAPI-NG k provedení na základě certifikátu šifrování, i když aplikace běží na .NET Core. Abyste mohli využívat tohoto objektu, použijte řetězce popisovače pravidla "certifikát = HashId:thumbprint", kde je kryptografický otisk kódováním šestnáctkově SHA1 kryptografický otisk certifikátu pro použití. Níže najdete příklad.
 
 ```csharp
 sc.AddDataProtection()

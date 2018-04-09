@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
-title: "Zpracování výjimek BLL a DAL úroveň na stránku ASP.NET (VB) | Microsoft Docs"
+title: Zpracování výjimek BLL a DAL úroveň na stránku ASP.NET (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu zjistíme, jak zobrazit popisné a informativní chybová zpráva by dojít k výjimce během vložení, aktualizaci nebo odstranění operace..."
+description: V tomto kurzu zjistíme, jak zobrazit popisné a informativní chybová zpráva by dojít k výjimce během vložení, aktualizaci nebo odstranění operace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2269458cbc41fd3a483aaade0f07288ee805bdd1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b76554b6e8c00dbe3b33de8158b925d7314afb72
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-vb"></a>Zpracování výjimek BLL a DAL úroveň na stránku ASP.NET (VB)
 ====================
@@ -155,9 +155,9 @@ Vytvoření této obslužné rutiny události bude do třídy kódu stránky ASP
 
 Druhý vstupní parametr této obslužné rutiny události je objekt typu [GridViewUpdatedEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx), který má tři vlastnosti týkající se zpracování výjimky:
 
-- `Exception`odkaz na vyvolaná výjimka; Pokud žádné došlo k výjimce, tato vlastnost bude mít hodnotu`null`
-- `ExceptionHandled`Logická hodnota, která označuje, zda bylo zpracováno výjimka v `RowUpdated` obslužné rutiny události; Pokud `false` (výchozí), výjimka je znovu vyvolána, percolating až modulem runtime ASP.NET
-- `KeepInEditMode`Pokud nastavena na `true` upravená řádek GridView zůstane v režimu úprav; Pokud `false` (výchozí), řádek GridView vrátí zpět na jeho režimu jen pro čtení
+- `Exception` odkaz na vyvolaná výjimka; Pokud žádné došlo k výjimce, tato vlastnost bude mít hodnotu `null`
+- `ExceptionHandled` Logická hodnota, která označuje, zda bylo zpracováno výjimka v `RowUpdated` obslužné rutiny události; Pokud `false` (výchozí), výjimka je znovu vyvolána, percolating až modulem runtime ASP.NET
+- `KeepInEditMode` Pokud nastavena na `true` upravená řádek GridView zůstane v režimu úprav; Pokud `false` (výchozí), řádek GridView vrátí zpět na jeho režimu jen pro čtení
 
 Naše kód, pak by měla zkontrolovat Pokud `Exception` není `null`, což znamená, že při provádění operace došlo k výjimce. Pokud je to tento případ, chceme:
 
@@ -224,12 +224,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Liz Shulok. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
-[další](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
+> [další](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)

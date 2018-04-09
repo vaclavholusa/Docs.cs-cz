@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
-title: "Přidání vrstvu obchodní logiky do projektu, který používá vazby modelu a webové formuláře | Microsoft Docs"
+title: Přidání vrstvu obchodní logiky do projektu, který používá vazby modelu a webové formuláře | Microsoft Docs
 author: tfitzmac
-description: "Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-..."
+description: Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
-ms.openlocfilehash: ca50690052cca73a718342a9725c8096a72f1187
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 25e887bdc316abf65c780bb6c8d075e938e85064
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>Přidání vrstvu obchodní logiky do projektu, který používá vazby modelu a webové formuláře
 ====================
@@ -67,7 +67,7 @@ Soubory kódu pro studenty, AddStudent a kurzy odstranit nebo komentář násled
 - studentsGrid\_GetData
 - studentsGrid\_UpdateItem
 - studentsGrid\_DeleteItem
-- addStudentForm\_metody InsertItem
+- addStudentForm\_InsertItem
 - coursesGrid\_GetData
 
 Nyní byste měli mít příslušné žádný kód v souboru kódu, který se vztahují na data operací.
@@ -80,7 +80,7 @@ V souboru kódu na pozadí pro Students.aspx definujte obslužné rutiny událos
 
 [!code-csharp[Main](adding-business-logic-layer/samples/sample3.cs)]
 
-V AddStudent.aspx proveďte podobné změny.
+In AddStudent.aspx, make similar changes.
 
 [!code-aspx[Main](adding-business-logic-layer/samples/sample4.aspx?highlight=3-4)]
 
@@ -98,5 +98,5 @@ Spusťte aplikaci a Všimněte si, že všechny stránky fungovat jako měly dř
 
 V tomto kurzu znovu strukturovaná aplikace k používání vrstva přístupu k datům a vrstvu obchodní logiky. Zadali jste, že ovládací prvky datových používat objekt, který není na aktuální stránce pro operace dat.
 
->[!div class="step-by-step"]
-[Předchozí](using-query-string-values-to-retrieve-data.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-query-string-values-to-retrieve-data.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
-title: "Díky nástroji Page Inspector v sadě Visual Studio 2012 | Microsoft Docs"
+title: Díky nástroji Page Inspector v sadě Visual Studio 2012 | Microsoft Docs
 author: rick-anderson
-description: "V tomto testovacím prostředí Hands-on bude zjišťovat nové nástroj, který najít a opravit problémy, webová stránka v sadě Visual Studio – nástroj Page Inspector. Nástroj Page Inspector je nový nástroj této b..."
+description: V tomto testovacím prostředí Hands-on bude zjišťovat nové nástroj, který najít a opravit problémy, webová stránka v sadě Visual Studio – nástroj Page Inspector. Nástroj Page Inspector je nový nástroj této b...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 1a9e093faae2cea1c27c582e22aebc908f78addb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 052d29dba170d403c2b1c1667c55fc2c34045615
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-page-inspector-in-visual-studio-2012"></a>Díky nástroji Page Inspector v sadě Visual Studio 2012
 ====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
 > V tomto testovacím prostředí Hands-on bude zjišťovat nové nástroj, který najít a opravit problémy, webová stránka v sadě Visual Studio – nástroj Page Inspector.
 > 
@@ -38,7 +38,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > Tato laboratoř vás provede procesem vylepšení a nových funkcí popsaných výše použitím malých změn na ukázkové webové aplikaci ve zdrojové složce zadané.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
 
 
 <a id="Objectives"></a>
@@ -96,12 +96,12 @@ V této úloze se dozvíte, jak používat nástroj Page Inspector v kontextu pr
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex1-MVC4/počáteční/** složky.
 
-    1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. V Průzkumníku řešení vyhledejte **Index.cshtml** zobrazit v části **nebo zobrazení, domácí** projektu složky, pravým tlačítkem myši a vyberte **zobrazení v nástroj Page Inspector**.
 
     ![Vyberte soubor, který chcete zobrazit náhled v nástroj Page Inspector](using-page-inspector-in-visual-studio-2012/_static/image1.png "vyberete soubor, který chcete zobrazit náhled v nástroj Page Inspector")
@@ -121,7 +121,7 @@ V této úloze se dozvíte, jak používat nástroj Page Inspector v kontextu pr
 
     Zobrazí se všechny zdrojové soubory, které jsou skládání indexovou stránku. Tato funkce vám pomůže identifikovat všechny elementy v kostce, zejména v případě, že pracujete s částečné zobrazení a šablony. Všimněte si, že můžete otevřít také každý ze souborů Pokud kliknutím na odkazy.
 
-    ![Kartě soubory](using-page-inspector-in-visual-studio-2012/_static/image3.png)
+    ![The-Files-tab](using-page-inspector-in-visual-studio-2012/_static/image3.png)
 
     *Na kartě soubory*
 5. Klikněte **přepnout režim kontroly** tlačítko, které se nachází v levé části karty.
@@ -221,7 +221,7 @@ V této úloze budete používat nástroj Page inspector a opravit některé pro
 2. Přepnout režim kontroly vybraný klikněte na Zavřít, ale ne, registrace odkazu k otevření jeho kód.
 
     Všimněte si, že se nachází zdrojový kód z odkazů v  **\_LoginPartial.cshtml** souboru, ne Index.cshtml ani \_Layout.cshtml, které jsou na místech může vypadat na prvním místě. Můžete byly umístěny přímo v souboru správný zdroj.
-3. V **styly** , vyhledejte a klikněte  **<section> #login</section>**  položku, která je kontejner HTML pro tyto odkazy.
+3. V **styly** , vyhledejte a klikněte **<section> #login</section>** položku, která je kontejner HTML pro tyto odkazy.
 
     Všimněte si, že **#login** styl automaticky nachází v **Site.css** po kliknutí na tlačítko. Kromě toho je nyní zvýrazněný kód.
 
@@ -242,7 +242,7 @@ V této úloze budete používat nástroj Page inspector a opravit některé pro
     ![Aktualizovanou stránku](using-page-inspector-in-visual-studio-2012/_static/image18.png)
 
     *Aktualizovanou stránku*
-6. Pomocí režimu kontroly, vyberte některé z  **&lt;li&gt;**  položky, které obsahují &quot;zaregistrovat&quot; a &quot;přihlásit&quot; odkazy. Potom klikněte  **&lt;části&gt; #login** položky pro přístup k **Styles.css** kódu.
+6. Pomocí režimu kontroly, vyberte některé z **&lt;li&gt;** položky, které obsahují &quot;zaregistrovat&quot; a &quot;přihlásit&quot; odkazy. Potom klikněte  **&lt;části&gt; #login** položky pro přístup k **Styles.css** kódu.
 
     ![Hledání styl](using-page-inspector-in-visual-studio-2012/_static/image19.png "hledání styl")
 
@@ -287,12 +287,12 @@ V této úloze se dozvíte, jak používat nástroj Page Inspector funkce v kont
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex2-WebForms/počáteční/** složky.
 
-    1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. V Průzkumníku řešení vyhledejte **Default.aspx** , pravým tlačítkem myši a vyberte **zobrazení v nástroj Page Inspector**.
 
     ![Otevírání Default.aspx s nástrojem Page Inspector](using-page-inspector-in-visual-studio-2012/_static/image24.png "otevření Default.aspx s nástrojem Page Inspector.")
@@ -433,7 +433,7 @@ V této úloze použijete nástroj Page inspector pro opravit některé problém
     ![Aktualizovanou stránku](using-page-inspector-in-visual-studio-2012/_static/image41.png)
 
     *Aktualizovanou stránku*
-6. Pomocí režimu kontroly, vyberte některé z  **&lt;li&gt;**  položky, které obsahují &quot;zaregistrovat&quot; a &quot;přihlásit&quot; odkazy. Potom klikněte  **&lt;části&gt; #login** položky pro přístup k **Styles.css** kódu.
+6. Pomocí režimu kontroly, vyberte některé z **&lt;li&gt;** položky, které obsahují &quot;zaregistrovat&quot; a &quot;přihlásit&quot; odkazy. Potom klikněte  **&lt;části&gt; #login** položky pro přístup k **Styles.css** kódu.
 
     ![Hledání styl](using-page-inspector-in-visual-studio-2012/_static/image42.png "hledání styl")
 
@@ -474,9 +474,9 @@ Provedením tohoto testovacího prostředí Hands-On mít dozvědět, jak použ�
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Příloha A: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze  **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)** . Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *Visual Studio Express 2012 pro Web se sadou Windows Azure SDK*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 

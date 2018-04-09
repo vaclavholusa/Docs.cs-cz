@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
-title: "Seznámení s aktivační události pro ASP.NET AJAX UpdatePanel | Microsoft Docs"
+title: Seznámení s aktivační události pro ASP.NET AJAX UpdatePanel | Microsoft Docs
 author: scottcate
-description: "Při práci se v editoru kódu v sadě Visual Studio, můžete si povšimnout (z IntelliSense), jsou dva podřízené elementy ovládací prvek UpdatePanel. Jeden z shod..."
+description: Při práci se v editoru kódu v sadě Visual Studio, můžete si povšimnout (z IntelliSense), jsou dva podřízené elementy ovládací prvek UpdatePanel. Jeden z shod...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/12/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: 1338ef0763d9bfab451bc30cafa39f715200153d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f30f2ead402d2f49a89b2caf47cc30b6445d4cfb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>Seznámení s ASP.NET AJAX UpdatePanel aktivační události
 ====================
@@ -35,7 +35,7 @@ Tento dokument White Paper prozkoumá XML aktivace funkce technologie ASP.NET AJ
 
 Tento dokument White Paper je založen na beta verzi 2 verzi rozhraní .NET Framework 3.5 a Visual Studio 2008. Rozšíření ASP.NET AJAX, dříve sestavení rozšíření zaměřený na technologii ASP.NET 2.0, jsou teď integrované do knihovně tříd rozhraní .NET Framework Base. Tento dokument White Paper také předpokládá, že budou pracovat se Visual Studio 2008, není Visual Web Developer Express a poskytne návody podle uživatelského rozhraní sady Visual Studio (i když bude zcela kompatibilní bez ohledu na to výpis kódu vývojové prostředí).
 
-## <a name="triggers"></a>*Aktivační události*
+## <a name="triggers"></a>*Triggery*
 
 Aktivační události pro danou UpdatePanel, ve výchozím nastavení, automaticky zahrnout všechny podřízené ovládací prvky, které vyvolají zpětné volání, včetně (například) ovládací prvky textové pole, které mají své `AutoPostBack` vlastnost nastavena na hodnotu **true**. Ale aktivační události může být také součástí deklarativně pomocí značek; To se provádí v rámci `<triggers>` části deklarace UpdatePanel ovládacího prvku. I když aktivační události je přístupná prostřednictvím `Triggers` vlastnost kolekce se doporučuje registraci žádné aktivační události částečné vykreslování za běhu (například pokud ovládací prvek není k dispozici v době návrhu) pomocí `RegisterAsyncPostBackControl(Control)` metodu Pro vaše stránky v objektu ScriptManager `Page_Load` událostí. Mějte na paměti, jsou bezstavové stránky, a proto byste měli znovu zaregistrovat tyto ovládací prvky pokaždé, když jejich vytvoření.
 
@@ -59,8 +59,8 @@ Podobně `<asp:PostBackTrigger>` element slouží k vykreslení částečná str
 
 | **Značka** | **Popis** |
 | --- | --- |
-| &lt;ASP: AsyncPostBackTrigger&gt; | Určuje, řízení a událost, která způsobí, že částečná stránka aktualizace pro UpdatePanel, který obsahuje odkaz na tento aktivační události. |
-| &lt;ASP: PostBackTrigger&gt; | Určuje, řízení a událost, která způsobí, že celou stránku aktualizace (aktualizace celou stránku). Tato značka slouží k vynucení úplné aktualizace, když ovládacího prvku by jinak aktivovat částečným vykreslením. |
+| &lt;asp:AsyncPostBackTrigger&gt; | Určuje, řízení a událost, která způsobí, že částečná stránka aktualizace pro UpdatePanel, který obsahuje odkaz na tento aktivační události. |
+| &lt;asp:PostBackTrigger&gt; | Určuje, řízení a událost, která způsobí, že celou stránku aktualizace (aktualizace celou stránku). Tato značka slouží k vynucení úplné aktualizace, když ovládacího prvku by jinak aktivovat částečným vykreslením. |
 
 ## <a name="walkthrough-cross-updatepanel-triggers"></a>*Návod: Mezi UpdatePanel aktivační události*
 
@@ -151,10 +151,10 @@ Prověřením vnitřního chodu formuláře ASP.NET AJAX konečná modelu zachyc
 
 ## <a name="bio"></a>Bio
 
-Rob Paveza je senior vývojář aplikace .NET v Terralever ([www.terralever.com](http://www.terralever.com)), počáteční interaktivní marketing firma v Tempe, AZ. Dosažitelný v [ robpaveza@gmail.com ](mailto:robpaveza@gmail.com), a se nachází v tomto blogu [http://geekswithblogs.net/robp/](http://geekswithblogs.net/robp/).
+Rob Paveza je senior vývojář aplikace .NET v Terralever ([www.terralever.com](http://www.terralever.com)), počáteční interaktivní marketing firma v Tempe, AZ. Dosažitelný v [ robpaveza@gmail.com ](mailto:robpaveza@gmail.com), a se nachází v tomto blogu [ http://geekswithblogs.net/robp/ ](http://geekswithblogs.net/robp/).
 
 Scott Dikovat pracuje s technologií Microsoft Web od 1997 a je ředitel myKB.com ([www.myKB.com](http://www.myKB.com)) kde mu se specializuje na psaní ASP.NET na základě aplikací, které jsou zaměřené na řešení softwaru znalostní báze Knowledge Base. Scott nelze kontaktovat prostřednictvím e-mailu v [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) nebo jeho blog na [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Předchozí](understanding-partial-page-updates-with-asp-net-ajax.md)
-[další](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+> [!div class="step-by-step"]
+> [Předchozí](understanding-partial-page-updates-with-asp-net-ajax.md)
+> [další](understanding-asp-net-ajax-authentication-and-profile-application-services.md)

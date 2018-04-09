@@ -1,7 +1,7 @@
 ---
-title: "Použití Grunt v ASP.NET Core"
+title: Použití Grunt v ASP.NET Core
 author: rick-anderson
-description: 
+description: ''
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-grunt
-ms.openlocfilehash: c23f170b36ac1b9623835337020f2b5ac9514971
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 169552e9b5dd811884ce1c65952677ba83626b58
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="using-grunt-in-aspnet-core"></a>Použití Grunt v ASP.NET Core 
+# <a name="use-grunt-in-aspnet-core"></a>Použití Grunt v ASP.NET Core
 
 Podle [Noel rýže](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/)
 
-Grunt je Spouštěče úloh JavaScript, který automatizuje minimalizaci skriptů, kompilaci TypeScript, nástrojů pro "hadříkem" kvality kódu, před procesory šablon stylů CSS a téměř žádné opakovaných případě vyžadující, chcete-li podporu vývoje klienta. Grunt je plně podporovaný v sadě Visual Studio, i když šablony projektu ASP.NET ve výchozím nastavení používá Gulp (viz [pomocí Gulp](using-gulp.md)).
+Grunt je Spouštěče úloh JavaScript, který automatizuje minimalizaci skriptů, kompilaci TypeScript, nástrojů pro "hadříkem" kvality kódu, před procesory šablon stylů CSS a téměř žádné opakovaných případě vyžadující, chcete-li podporu vývoje klienta. Grunt je plně podporovaný v sadě Visual Studio, i když šablony projektu ASP.NET ve výchozím nastavení používá Gulp (viz [použít Gulp](using-gulp.md)).
 
 Tento příklad používá prázdný projekt ASP.NET Core jako výchozí bod, jak k automatizaci procesu sestavení klienta od začátku.
 
@@ -129,16 +129,16 @@ Balíčky pro každou položku devDependencies stáhne společně s všechny sou
 
 Grunt je konfigurován pomocí manifestu s názvem *Gruntfile.js* který definuje, načte a zaregistruje úlohy, které lze spustit ručně nebo nakonfigurovat tak, aby spustit automaticky v závislosti na události v sadě Visual Studio.
 
-1.  Klikněte pravým tlačítkem na projekt a vyberte **Přidat > Nová položka**. Vyberte **Grunt konfigurační soubor** možnost, ponechte výchozí název *Gruntfile.js*a klikněte na tlačítko **přidat** tlačítko.
+1. Klikněte pravým tlačítkem na projekt a vyberte **Přidat > Nová položka**. Vyberte **Grunt konfigurační soubor** možnost, ponechte výchozí název *Gruntfile.js*a klikněte na tlačítko **přidat** tlačítko.
 
-    Počáteční kód obsahuje definici modulu a `grunt.initConfig()` metoda. `initConfig()` Se používá k nastavení možností pro každý balíček a bude zbytek modul načíst a zaregistrovat úlohy.
+   Počáteční kód obsahuje definici modulu a `grunt.initConfig()` metoda. `initConfig()` Se používá k nastavení možností pro každý balíček a bude zbytek modul načíst a zaregistrovat úlohy.
     
-    ```javascript
-    module.exports = function (grunt) {
-      grunt.initConfig({
-      });
-    };
-    ```
+   ```javascript
+   module.exports = function (grunt) {
+     grunt.initConfig({
+     });
+   };
+   ```
 
 2. Uvnitř `initConfig()` metoda, možnosti pro přidání `clean` úkolů, jak je znázorněno v příkladu *Gruntfile.js* níže. Úloha vyčištění přijímá pole řetězců adresáře. Tato úloha odebere soubory z wwwroot/lib a odebere celý/dočasného adresáře.
 
@@ -207,16 +207,16 @@ Grunt je konfigurován pomocí manifestu s názvem *Gruntfile.js* který definuj
     > [!NOTE]
     > Možnost "-W069" je chybu produkovaný jshint při JavaScript používá závorka syntaxe přiřazení vlastnosti místo zápisu s tečkou, tj. `Tastes["Sweet"]` místo `Tastes.Sweet`. Možnost vypne upozornění umožňující zbytek procesu pokračovat.
 
-10.  Přidat `uglify` úloh pomocí kódu níže.
+10. Přidat `uglify` úloh pomocí kódu níže.
 
     Minifikuje úlohu *combined.js* soubor najde v adresáři temp a vytvoří soubor s výsledky v wwwroot/lib následující standardní zásady vytváření názvů  *\<název souboru\>. min.js*.
     
     ```javascript
     uglify: {
-      all: {
-        src: ['temp/combined.js'],
-        dest: 'wwwroot/lib/combined.min.js'
-      }
+     all: {
+       src: ['temp/combined.js'],
+       dest: 'wwwroot/lib/combined.min.js'
+     }
     },
     ```
 
@@ -241,7 +241,7 @@ Grunt je konfigurován pomocí manifestu s názvem *Gruntfile.js* který definuj
     ![Průzkumník řešení po všech úloh.](using-grunt/_static/solution-explorer-after-all-tasks.png)
     
     > [!NOTE]
-    > Další informace o možnostech pro každý balíček, najdete v článku [https://www.npmjs.com/](https://www.npmjs.com/) a vyhledávací název balíčku do vyhledávacího pole na hlavní stránce. Například můžete vyhledat grunt contrib vyčistit balíčku k načtení dokumentace odkaz, který vysvětluje všechny její parametry.
+    > Další informace o možnostech pro každý balíček, najdete v článku [ https://www.npmjs.com/ ](https://www.npmjs.com/) a vyhledávací název balíčku do vyhledávacího pole na hlavní stránce. Například můžete vyhledat grunt contrib vyčistit balíčku k načtení dokumentace odkaz, který vysvětluje všechny její parametry.
 
 ### <a name="all-together-now"></a>Nyní je vše pohromadě
 

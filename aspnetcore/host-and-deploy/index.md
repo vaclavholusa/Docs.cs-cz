@@ -1,7 +1,7 @@
 ---
-title: "Hostování a nasazení základní technologie ASP.NET"
+title: Hostování a nasazení základní technologie ASP.NET
 author: tdykstra
-description: "Zjistěte, jak nastavit hostitelská prostředí a nasazení aplikací ASP.NET Core."
+description: Zjistěte, jak nastavit hostitelská prostředí a nasazení aplikací ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/index
-ms.openlocfilehash: baa77eba837ff8b86ad543a74ebeee51ace4c25d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 515589e38a1ba121d365427b5fddac1b0e845b1f
+ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="host-and-deploy-aspnet-core"></a>Hostování a nasazení základní technologie ASP.NET
 
@@ -58,6 +58,10 @@ Pokud aplikace používá [Kestrel](xref:fundamentals/servers/kestrel) webový s
 Pokud aplikace používá [Kestrel](xref:fundamentals/servers/kestrel) webový server a bude přístup k Internetu, použijte [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), nebo [IIS](xref:host-and-deploy/iis/index) jako reverzní proxy server. Reverzní proxy server přijímá požadavky HTTP z Internetu a předává je Kestrel po některé předběžné zpracování. Hlavním důvodem pro používání reverzní proxy server je zabezpečení. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel?tabs=aspnetcore1x#when-to-use-kestrel-with-a-reverse-proxy).
 
 ---
+
+## <a name="proxy-server-and-load-balancer-scenarios"></a>Proxy server a scénáře pro vyrovnávání zatížení
+
+Další konfigurace může být potřeba pro aplikace, které jsou hostovány za proxy servery a nástroje pro vyrovnávání zatížení. Bez další konfigurace nemusí aplikace mít přístup k schématu (HTTP či HTTPS) a IP adresu vzdáleného kde žádost pochází. Další informace najdete v tématu [konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
 
 ## <a name="using-visual-studio-and-msbuild-to-automate-deployment"></a>Pomocí sady Visual Studio a nástroje MSBuild k automatizaci nasazení
 

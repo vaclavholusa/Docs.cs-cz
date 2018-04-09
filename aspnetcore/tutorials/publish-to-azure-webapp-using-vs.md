@@ -1,7 +1,7 @@
 ---
-title: "Publikování aplikace ASP.NET Core do Azure pomocí sady Visual Studio"
+title: Publikování aplikace ASP.NET Core do Azure pomocí sady Visual Studio
 author: rick-anderson
-description: "Zjistěte, jak publikovat aplikaci ASP.NET Core Azure App Service pomocí sady Visual Studio."
+description: Zjistěte, jak publikovat aplikaci ASP.NET Core Azure App Service pomocí sady Visual Studio.
 manager: wpickett
 ms.author: riande
 ms.date: 12/16/2017
@@ -9,19 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 7291a67af77b959965652ad385e193680df840c0
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: e5c213a682c9bf7c64c40fad630cacfff24e23bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>Publikování webové aplikace ASP.NET Core Azure App Service pomocí sady Visual Studio
+# <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>Publikování aplikace ASP.NET Core do Azure pomocí sady Visual Studio
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](https://github.com/cesarbs), a [Rachel Appel](https://twitter.com/rachelappel)
 
-[!INCLUDE[Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 V tématu [publikovat do Azure ze sady Visual Studio pro Mac](https://blog.xamarin.com/publish-azure-visual-studio-mac/) při práci v systému macOS.
+
+Chcete-li vyřešit problém nasazení služby App Service, najdete v části [řešení potíží s ASP.NET Core v Azure App Service](xref:host-and-deploy/azure-apps/troubleshoot).
 
 ## <a name="set-up"></a>Nastavení
 
@@ -102,7 +104,7 @@ V **publikovat** dialogové okno:
 
 * Vyberte **služby** a vytvořit novou databázi.
 
-* Vyberte zeleným  **+**  vytvořte novou databázi SQL.
+* Vyberte zeleným **+** vytvořte novou databázi SQL.
 
 ![Novou databázi SQL.](publish-to-azure-webapp-using-vs/_static/sql.png)
 
@@ -187,3 +189,4 @@ Po dokončení testování aplikace, přejděte na [portál Azure](https://porta
 * [Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
 * [Skupiny prostředků Azure.](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
 * [Databáze Azure SQL](https://docs.microsoft.com/azure/sql-database/)
+* [Řešení potíží s ASP.NET Core ve službě Azure App Service](xref:host-and-deploy/azure-apps/troubleshoot)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení dalších souborů | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení dalších souborů | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/23/2015
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: 46e18ba81c3db8bb04c5cb997bcc1607e4e38bae
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5cefcedde7715844a7d7a9db1455193564ef9805
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení dalších souborů
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -104,6 +104,6 @@ Děkujeme, že následující osob, které významně přispěli k obsahu tento 
 - [Srđan Božović, Serbia](http://msforge.net/blogs/zmajcek/)
 - [Vishal Joshi, Microsoft](http://vishaljoshi.blogspot.com/) (twitter: [ @vishalrjoshi ](http://twitter.com/vishalrjoshi))
 
->[!div class="step-by-step"]
-[Předchozí](command-line-deployment.md)
-[další](troubleshooting.md)
+> [!div class="step-by-step"]
+> [Předchozí](command-line-deployment.md)
+> [další](troubleshooting.md)

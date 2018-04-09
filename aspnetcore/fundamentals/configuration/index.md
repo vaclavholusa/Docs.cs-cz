@@ -1,7 +1,7 @@
 ---
 title: Konfigurace v ASP.NET Core
 author: rick-anderson
-description: "Použijte rozhraní API konfigurace pro konfiguraci aplikace ASP.NET Core několik metod."
+description: Použijte rozhraní API konfigurace pro konfiguraci aplikace ASP.NET Core několik metod.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 7c41621db835b452c9aad9463a9ffccdf0c06484
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: f272f9629ab1f9e7f7643cafd0d45f19340d5284
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configure-an-aspnet-core-app"></a>Konfigurace aplikace ASP.NET Core
+# <a name="configuration-in-aspnet-core"></a>Konfigurace v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [označit Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [ADAM Roth](https://github.com/danroth27), a [Luke Latham](https://github.com/guardrex)
 
@@ -48,7 +48,7 @@ Aplikace načte a zobrazí následující nastavení:
 
 [!code-json[](index/sample/ConfigJson/appsettings.json)]
 
-Konfigurace se skládá z hierarchický seznam dvojic název hodnota, ve kterých jsou uzly oddělené dvojtečkou. Pokud chcete načíst hodnotu, přístup k `Configuration` indexer klíčem odpovídající položky:
+Konfigurace se skládá z hierarchický seznam dvojic název hodnota, ve kterých jsou uzly oddělené dvojtečkou (`:`). Pokud chcete načíst hodnotu, přístup k `Configuration` indexer klíčem odpovídající položky:
 
 [!code-csharp[](index/sample/ConfigJson/Program.cs?range=21-22)]
 
@@ -105,15 +105,15 @@ Pokud se nastaví prostředí `Staging`, následující `Configure` metoda pře�
 
 [!code-csharp[](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
 
-
-V prostředí se obvykle nastavuje na `Development`, `Staging`, nebo `Production`. Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments).
+V prostředí se obvykle nastavuje na `Development`, `Staging`, nebo `Production`. Další informace najdete v tématu [pracovat s několika prostředí](xref:fundamentals/environments).
 
 Požadavky na konfiguraci:
 
-* `IOptionsSnapshot` můžete znovu načíst konfigurační data, kdy se změní. Další informace najdete v tématu [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot).,
+* [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot) můžete znovu načíst konfigurační data, kdy se změní.
 * Konfigurace klíče jsou **není** malá a velká písmena.
-* **Nikdy** ukládání hesel nebo jiných citlivých dat. kód zprostředkovatele konfigurace nebo v konfiguračních souborech na prostý text. Nechcete používat produkční tajných klíčů v vývoj nebo testovací prostředí. Zadejte tajné klíče mimo projekt tak, že nemohou být omylem zavazuje úložiště zdrojového kódu. Další informace o [práce s několika prostředí](xref:fundamentals/environments) a správu [bezpečného úložiště tajné klíče aplikace během vývoje](xref:security/app-secrets).
-* Pokud dvojtečkou (`:`) nelze použít v seznamu proměnných prostředí v systému, nahraďte dvojtečkou (`:`) s dvojité podtržítko (`__`).
+* **Nikdy** ukládání hesel nebo jiných citlivých dat. kód zprostředkovatele konfigurace nebo v konfiguračních souborech na prostý text. Nechcete používat produkční tajných klíčů v vývoj nebo testovací prostředí. Zadejte tajné klíče mimo projekt tak, že nemohou být omylem zavazuje úložiště zdrojového kódu. Další informace o [jak pracovat s několika prostředí](xref:fundamentals/environments) a správu [bezpečného úložiště tajné klíče aplikace v vývoj](xref:security/app-secrets).
+* Pro hierarchické konfigurace hodnoty zadané v seznamu proměnných prostředí, dvojtečka (`:`) nemusí fungovat na všech platformách. Dvojité podtržítko (`__`) podporuje všechny platformy.
+* Při interakci s konfigurací rozhraní API, dvojtečka (`:`) funguje na všech platformách.
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>Zprostředkovatel v paměti a vazbu na třídu objektů POCO
 
@@ -234,8 +234,7 @@ key3=value_from_json_3
 
 ### <a name="setup-and-use-the-commandline-configuration-provider"></a>Instalační program a používají zprostředkovatele konfigurace příkazového řádku
 
-# <a name="basic-configurationtabbasicconfiguration"></a>[Základní konfigurace](#tab/basicconfiguration)
-
+#### <a name="basic-configurationtabbasicconfiguration"></a>[Základní konfigurace](#tab/basicconfiguration/)
 Chcete-li aktivovat konfigurace příkazového řádku, zavolejte `AddCommandLine` rozšiřující metody na instanci [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder):
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program.cs?highlight=18,21)]
@@ -264,8 +263,7 @@ Chcete-li přepsat konfiguraci poskytované jiných poskytovatelů konfigurace s
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?range=11-16&highlight=1,5)]
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Typická aplikace ASP.NET Core 2.x použít metodu statické pohodlí `CreateDefaultBuilder` k sestavení hostitele:
 
 [!code-csharp[](index/sample_snapshot//Program.cs?highlight=12)]
@@ -282,14 +280,12 @@ Pokud jsou splněny všechny předchozí podmínky, se přepíšou argumenty př
 
 Můžete použít aplikaci ASP.NET Core 2.x [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) místo `CreateDefaultBuilder`. Při použití `WebHostBuilder`, je nutné ručně nastavit konfiguraci s [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder). V tématu kartě ASP.NET Core 1.x pro další informace.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Vytvoření [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) a volání `AddCommandLine` metodu použít poskytovatele konfigurace příkazového řádku. Poslední volání zprostředkovatele umožňuje dříve názvem argumenty příkazového řádku předaný běhu přepsat konfiguraci nastavit pomocí jiných poskytovatelů konfigurace. Použít konfiguraci [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) s `UseConfiguration` metoda:
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?highlight=11,15,19)]
 
----
-
+* * *
 ### <a name="arguments"></a>Arguments
 
 Argumenty předávané na příkazovém řádku musí odpovídat jednomu ze dvou formátů uvedené v následující tabulce:
@@ -413,9 +409,52 @@ Left: 1988
 
 A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Express. Nastavení v *web.config* povolit [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) spusťte aplikaci a nakonfigurovat další nastavení služby IIS a modulů. Pokud *web.config* soubor není přítomen a zahrnuje soubor projektu `<Project Sdk="Microsoft.NET.Sdk.Web">`, publikování projektu vytvoří *web.config* souboru v publikované výstup ( *publikování* složku). Další informace najdete v tématu [hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#webconfig-file).
 
-## <a name="accessing-configuration-during-startup"></a>Přístup k konfigurace při spuštění
+## <a name="access-configuration-during-startup"></a>Konfigurace přístupu při spuštění
 
 Získat přístup ke konfiguraci v rámci `ConfigureServices` nebo `Configure` během spouštění, podívejte se na příklady v [spuštění aplikace](xref:fundamentals/startup) tématu.
+
+## <a name="access-configuration-in-a-razor-page-or-mvc-view"></a>Konfigurace přístupu v zobrazení stránky Razor nebo MVC
+
+Chcete-li získat přístup k nastavení konfigurace v stránky Razor stránky nebo zobrazení MVC, přidejte [using – direktiva](xref:mvc/views/razor#using) ([referenční dokumentace jazyka C#: using – direktiva](/dotnet/csharp/language-reference/keywords/using-directive)) pro [Microsoft.Extensions.Configuration obor názvů ](/dotnet/api/microsoft.extensions.configuration) a vložit [parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) do stránky nebo zobrazení.
+
+Na stránce pro stránky Razor:
+
+```cshtml
+@page
+@model IndexModel
+
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index Page</title>
+</head>
+<body>
+    <h1>Access configuration in a Razor Pages page</h1>
+    <p>Configuration[&quot;key&quot;]: @Configuration["key"]</p>
+</body>
+</html>
+```
+
+V zobrazení MVC:
+
+```cshtml
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index View</title>
+</head>
+<body>
+    <h1>Access configuration in an MVC view</h1>
+    <p>Configuration[&quot;key&quot;]: @Configuration["key"]</p>
+</body>
+</html>
+```
 
 ## <a name="additional-notes"></a>Další poznámky
 
@@ -430,7 +469,7 @@ Získat přístup ke konfiguraci v rámci `ConfigureServices` nebo `Configure` b
 
 * [Možnosti](xref:fundamentals/configuration/options)
 * [Práce s několika prostředí](xref:fundamentals/environments)
-* [Bezpečné úložiště tajných částí aplikace při vývoji](xref:security/app-secrets)
+* [Bezpečné úložiště tajné klíče aplikace v vývoj](xref:security/app-secrets)
 * [Hostování v ASP.NET Core](xref:fundamentals/hosting)
 * [Injektáž závislostí](xref:fundamentals/dependency-injection)
 * [Zprostředkovatel konfigurace služby Azure Key Vault](xref:security/key-vault-configuration)

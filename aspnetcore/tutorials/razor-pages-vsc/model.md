@@ -1,7 +1,7 @@
 ---
-title: "Přidání modelu do aplikace pro stránky Razor pomocí sady Visual Studio pro Mac"
+title: Přidat model do aplikace ASP.NET Core Razor stránky pomocí sady Visual Studio pro Mac
 author: rick-anderson
-description: "Přidání modelu do aplikace stránky Razor ve ASP.NET Core pomocí sady Visual Studio pro Mac"
+description: Zjistěte, jak přidat model do aplikace pro stránky Razor v ASP.NET Core pomocí sady Visual Studio for Mac.
 manager: wpickett
 ms.author: riande
 ms.date: 08/27/2017
@@ -9,15 +9,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-vsc/model
-ms.openlocfilehash: 8d88fdaeca6f02be677b2a5bc162535df0f0977c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4222b16e6a71913665bf03eee5973316b8218ad4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core-with-visual-studio-code"></a>Přidání modelu do aplikace stránky Razor ve ASP.NET Core s kódem jazyka Visual Studio
+# <a name="add-a-model-to-an-aspnet-core-razor-pages-app-with-visual-studio-for-mac"></a>Přidat model do aplikace ASP.NET Core Razor stránky pomocí sady Visual Studio pro Mac
 
-[!INCLUDE[model1](../../includes/RP/model1.md)]
+[!INCLUDE [model1](../../includes/RP/model1.md)]
 
 ## <a name="add-a-data-model"></a>Přidat datový model
 
@@ -25,8 +25,9 @@ ms.lasthandoff: 03/15/2018
 * Přidání třídy k *modely* složku s názvem *Movie.cs*.
 * Přidejte následující kód, který *Models/Movie.cs* souboru:
 
-[!INCLUDE[model 2](../../includes/RP/model2.md)]
-[!INCLUDE[model 2a](../../includes/RP/model2a.md)]
+[!INCLUDE [model 2](../../includes/RP/model2.md)]
+
+[!INCLUDE [model 2a](../../includes/RP/model2a.md)]
 
 [!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
 
@@ -43,7 +44,7 @@ Upravit *RazorPagesMovie.csproj* souboru:
 
 [!code-xml[](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj)]
 
-[!INCLUDE[model 3](../../includes/RP/model3.md)]
+[!INCLUDE [model 3](../../includes/RP/model3.md)]
 
 <a name="scaffold"></a>
 ### <a name="scaffold-the-movie-model"></a>Vygenerované uživatelské rozhraní film modelu
@@ -72,9 +73,10 @@ Pokud dojde k chybě:
 
 Visual Studio ukončete a spusťte příkaz znovu.
 
-[!INCLUDE[model 4](../../includes/RP/model4.md)]
+[!INCLUDE [model 4](../../includes/RP/model4.md)]
+
 Další kurz vysvětluje souborů vytvořených pomocí generování uživatelského rozhraní.
 
->[!div class="step-by-step"]
-[Předchozí: Začínáme](xref:tutorials/razor-pages-vsc/razor-pages-start)
-[Další: vygeneroval stránky Razor](xref:tutorials/razor-pages-vsc/page)
+> [!div class="step-by-step"]
+> [Předchozí: Začínáme](xref:tutorials/razor-pages-vsc/razor-pages-start)
+> [Další: vygeneroval stránky Razor](xref:tutorials/razor-pages-vsc/page)

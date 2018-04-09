@@ -1,7 +1,7 @@
 ---
-title: "Vzor možnosti v ASP.NET Core"
+title: Vzor možnosti v ASP.NET Core
 author: guardrex
-description: "Zjistit, jak používat možnosti vzor k reprezentování skupiny související nastavení v aplikacích ASP.NET Core."
+description: Zjistit, jak používat možnosti vzor k reprezentování skupiny související nastavení v aplikacích ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 1b6b6275633364701c27b66b1dfa55a2a037572b
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 660ee2365e2e186dd93d57ec79628e0bd7d24d52
+ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-Vzor možnosti používá k reprezentování skupiny související nastavení možnosti třídy. Při nastavení konfigurace jsou izolované funkce do třídy samostatné možnosti, aplikace dodržuje zásady dvě důležité inženýrství softwaru:
+Vzor možnosti používá k reprezentování skupiny související nastavení třídy. Při nastavení konfigurace jsou izolované funkce do samostatné třídy, aplikace dodržuje zásady dvě důležité inženýrství softwaru:
 
 * [Rozhraní oddělení princip (ISP)](http://deviq.com/interface-segregation-principle/): funkce (třídy), které závisí na nastavení konfigurace závisí na nastavení konfigurace, která používají jenom.
 * [Oddělené oblasti zájmu](http://deviq.com/separation-of-concerns/): nastavení pro různé části aplikace nejsou závislé nebo párované jednu na druhou.

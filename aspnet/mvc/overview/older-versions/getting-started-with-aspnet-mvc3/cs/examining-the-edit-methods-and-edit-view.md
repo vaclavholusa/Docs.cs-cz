@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view
-title: "Zkoumání upravit metody a zobrazení (C#) | Microsoft Docs"
+title: Zkoumání upravit metody a zobrazení (C#) | Microsoft Docs
 author: Rick-Anderson
-description: "V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je..."
+description: V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 137254be69344f31e65e1b4d1318a107ff9d6d47
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 581138bb25b95ef9002a2bd97d1fa28797d96bfa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-c"></a>Zkoumání upravit metody a zobrazení (C#)
 ====================
@@ -220,6 +220,6 @@ Spusťte aplikaci a přejděte do */filmy/SearchIndex*. Zkuste hledání genre, 
 
 V této části posouzení metody akce CRUD a zobrazení generované rozhraní. Můžete vytvořit metody akce vyhledávání a zobrazení, která umožní uživatelům vyhledávat podle názvu film a genre. V další části se budete podíváte na tom, jak přidat vlastnost, která má `Movie` modelu a postup přidání inicializátoru, který se automaticky vytvoří testovací databáze.
 
->[!div class="step-by-step"]
-[Předchozí](accessing-your-models-data-from-a-controller.md)
-[další](adding-a-new-field.md)
+> [!div class="step-by-step"]
+> [Předchozí](accessing-your-models-data-from-a-controller.md)
+> [další](adding-a-new-field.md)

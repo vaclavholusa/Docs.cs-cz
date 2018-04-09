@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
-title: "Model 2.0 stránky ASP.NET | Microsoft Docs"
+title: Model 2.0 stránky ASP.NET | Microsoft Docs
 author: microsoft
-description: "V technologii ASP.NET 1.x, vývojáři měli volba mezi model vloženého kódu a model kódu kódu. Kódu může být implementovaná pomocí buď Line Src..."
+description: V technologii ASP.NET 1.x, vývojáři měli volba mezi model vloženého kódu a model kódu kódu. Kódu může být implementovaná pomocí buď Line Src...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: e008f197cf08bec81c560018f2d42306598f9e6d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fda85ec03f845cafa7720382bf85652937932c44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-aspnet-20-page-model"></a>Model 2.0 stránky ASP.NET
 ====================
@@ -65,7 +65,7 @@ ASP.NET 2.0 přidá nové atributy mnoho @ Page – direktiva. Následující at
 
 Atribut asynchronní umožňuje nakonfigurovat stránky se spustí asynchronně. Dobře titulní asynchronní stránky později v tomto modulu.
 
-## <a name="asynctimeout"></a>Hodnota vlastnosti AsyncTimeout
+## <a name="asynctimeout"></a>AsyncTimeout
 
 Zadaný časový limit pro asynchronní stránky. Výchozí hodnota je 45 sekund.
 
@@ -135,7 +135,7 @@ Další nová funkce @ Page – direktiva v technologii ASP.NET 2.0 je možnost 
 ![](the-asp-net-2-0-page-model/_static/image1.png)
 
 
-[Otevřete Video přes celou obrazovku](the-asp-net-2-0-page-model/_static/setprop1.wmv)
+[Open Full-Screen Video](the-asp-net-2-0-page-model/_static/setprop1.wmv)
 
 
 ## <a name="new-public-properties-of-the-page-class"></a>Nové veřejné vlastnosti třídy stránky
@@ -144,13 +144,13 @@ Následující veřejné vlastnosti jsou v technologii ASP.NET 2.0 nové.
 
 ## <a name="apprelativetemplatesourcedirectory"></a>AppRelativeTemplateSourceDirectory
 
-Vrací aplikace relativní cestu k stránka nebo ovládací prvek. Například pro stránku, který se nachází na http://app/folder/page.aspx, vlastnost vrací ~ / složky /.
+Vrací aplikace relativní cestu k stránka nebo ovládací prvek. Například pro stránku se nachází na http://app/folder/page.aspx, vrátí vlastnost ~ / složky /.
 
 ## <a name="apprelativevirtualpath"></a>AppRelativeVirtualPath
 
-Vrátí cesta relativní virtuálního adresáře na stránce nebo ovládací prvek. Například pro stránku, který se nachází na http://app/folder/page.aspx, vlastnost vrací ~ / folder/page.aspx.
+Vrátí cesta relativní virtuálního adresáře na stránce nebo ovládací prvek. Například pro stránku nacházející se v http://app/folder/page.aspx, vrátí vlastnost ~ / folder/page.aspx.
 
-## <a name="asynctimeout"></a>Hodnota vlastnosti AsyncTimeout
+## <a name="asynctimeout"></a>AsyncTimeout
 
 Získá nebo nastaví časový limit použitý pro zpracování asynchronní stránky. (Asynchronní stránky bude zmínka v dalších částech tohoto modulu.)
 
@@ -230,7 +230,7 @@ Určuje vzhledu technologii ASP.NET 2.0 pro použití na stránku.
 
 Tato vlastnost získá nebo nastaví šablony stylů, který se použije na stránku.
 
-## <a name="templatecontrol"></a>Třída TemplateControl
+## <a name="templatecontrol"></a>TemplateControl
 
 Vrátí odkaz na nadřazeného ovládacího prvku pro stránku.
 
@@ -372,7 +372,7 @@ Níže je návod, zpětné volání mezi stránkami.
 ![](the-asp-net-2-0-page-model/_static/image2.png)
 
 
-[Otevřete Video přes celou obrazovku](the-asp-net-2-0-page-model/_static/xpage1.wmv)
+[Open Full-Screen Video](the-asp-net-2-0-page-model/_static/xpage1.wmv)
 
 
 ## <a name="more-details-on-cross-page-postbacks"></a>Další informace o postback mezi stránkami
@@ -430,7 +430,7 @@ Níže je návod, požadavek asynchronní stránky.
 ![](the-asp-net-2-0-page-model/_static/image3.png)
 
 
-[Otevřete Video přes celou obrazovku](the-asp-net-2-0-page-model/_static/async1.wmv)
+[Open Full-Screen Video](the-asp-net-2-0-page-model/_static/async1.wmv)
 
 
 > [!NOTE]
@@ -529,7 +529,7 @@ Po dokončení výše uvedené kroky, jste připraveni k provedení skriptu zpě
 ![](the-asp-net-2-0-page-model/_static/image4.png)
 
 
-[Otevřete Video přes celou obrazovku](the-asp-net-2-0-page-model/_static/callback1.wmv)
+[Open Full-Screen Video](the-asp-net-2-0-page-model/_static/callback1.wmv)
 
 
 Zpětná volání skriptu v technologii ASP.NET jsou podporovány v žádný prohlížeč, který podporuje vytváření volání XMLHttp. Který zahrnuje všechny moderní prohlížeče ve použití ještě dnes. Internet Explorer používá objekt XMLHttp ActiveX při vnitřní objekt XMLHttp používat další moderní prohlížeče (včetně nadcházející aplikaci Internet Explorer 7). K určení prostřednictvím kódu programu, pokud prohlížeč podporuje zpětná volání, můžete použít **Request.Browser.SupportCallback** vlastnost. Tato vlastnost vrátí **true** Pokud klienta, který podporuje zpětná volání skriptu.
@@ -600,11 +600,13 @@ Použijte metodu IsStartupScriptRegistered k určení, pokud již byl zaregistro
 
 Zde jsou některé další užitečné metody třídy ClientScriptManager.
 
-| **GetCallbackEventReference** | Viz zpětná volání skriptu dříve v tomto modulu. |
-| --- | --- |
-| **GetPostBackClientHyperlink** | Získá referenční dokumentace technologie JavaScript (javascript:&lt;volání&gt;), lze použít ke zveřejnění zpět z událostí na straně klienta. |
-| **GetPostBackEventReference** | Získá řetězec, který slouží k zahájení post zpět od klienta. |
-| **GetWebResourceUrl** | Vrátí adresu URL k prostředku, který je součástí sestavení. Musí použít ve spojení s **RegisterClientScriptResource**. |
-| **RegisterClientScriptResource** | Registruje prostředek webové stránky. Toto jsou prostředky vložené do sestavení a zpracovávat nové WebResource.axd obslužnou rutinou. |
-| **RegisterHiddenField** | Zaregistruje skryté pole formuláře se stránkou. |
-| **RegisterOnSubmitStatement** | Zaregistruje kód na straně klienta, který se spustí po odeslání formuláře HTML. |
+
+|  <strong>GetCallbackEventReference</strong>   |                                                 Viz zpětná volání skriptu dříve v tomto modulu.                                                 |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+|  <strong>GetPostBackClientHyperlink</strong>  |                Získá referenční dokumentace technologie JavaScript (javascript:&lt;volání&gt;), lze použít ke zveřejnění zpět z událostí na straně klienta.                 |
+|  <strong>GetPostBackEventReference</strong>   |                                   Získá řetězec, který slouží k zahájení post zpět od klienta.                                    |
+|      <strong>GetWebResourceUrl</strong>       | Vrátí adresu URL k prostředku, který je součástí sestavení. Musí použít ve spojení s <strong>RegisterClientScriptResource</strong>. |
+| <strong>RegisterClientScriptResource</strong> |     Registruje prostředek webové stránky. Toto jsou prostředky vložené do sestavení a zpracovávat nové WebResource.axd obslužnou rutinou.      |
+|     <strong>RegisterHiddenField</strong>      |                                                 Zaregistruje skryté pole formuláře se stránkou.                                                 |
+|  <strong>RegisterOnSubmitStatement</strong>   |                                  Zaregistruje kód na straně klienta, který se spustí po odeslání formuláře HTML.                                   |
+

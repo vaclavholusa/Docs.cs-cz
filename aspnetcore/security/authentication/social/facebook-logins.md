@@ -1,7 +1,7 @@
 ---
-title: "Instalační program externí přihlášení sítě Facebook v ASP.NET Core"
+title: Instalační program externí přihlášení sítě Facebook v ASP.NET Core
 author: rick-anderson
-description: "Tento kurz představuje integraci ověřování uživatele účet Facebook do existující aplikace ASP.NET Core."
+description: Tento kurz představuje integraci ověřování uživatele účet Facebook do existující aplikace ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 08/01/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 283de1df68c45fa1b41ed75710fe9eb7925f815f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 70a4b2e53be335b8854b0aef3cfbf8f4e21e6ebe
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configuring-facebook-authentication"></a>Konfigurace ověřování Facebook
+# <a name="facebook-external-login-setup-in-aspnet-core"></a>Instalační program externí přihlášení sítě Facebook v ASP.NET Core
 
 Podle [Valeriy Novytskyy](https://github.com/01binary) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V tomto kurzu se dozvíte, jak povolit uživatelům se přihlásit pomocí účtu sítě Facebook pomocí projekt ASP.NET 2.0 základní ukázka vytvořený na [předchozí stránce](index.md). Začneme vytvořením ID aplikace pro Facebook podle [oficiální kroky](https://developers.facebook.com).
+V tomto kurzu se dozvíte, jak povolit uživatelům se přihlásit pomocí účtu sítě Facebook pomocí projekt ASP.NET 2.0 základní ukázka vytvořený na [předchozí stránce](xref:security/authentication/social/index). Začneme vytvořením ID aplikace pro Facebook podle [oficiální kroky](https://developers.facebook.com).
 
 ## <a name="create-the-app-in-facebook"></a>Vytvoření aplikace ve službě Facebook.
 
@@ -36,7 +36,7 @@ V tomto kurzu se dozvíte, jak povolit uživatelům se přihlásit pomocí účt
 * Na **vybrat produkt** klikněte na tlačítko **nastavit až** na **Facebook přihlášení** karty.
 
    ![Stránka instalační program produktu](index/_static/FBProductSetup.png)
-  
+
 * **Rychlý Start** průvodce se spustí s **vybrat platformu** jako první stránka. Vynechat Průvodce prozatím kliknutím **nastavení** odkaz v nabídce na levé straně:
 
    ![Přeskočit rychlý Start](index/_static/FBSkipQuickStart.png)
@@ -70,8 +70,7 @@ dotnet user-secrets set Authentication:Facebook:AppSecret <app-secret>
 
 ## <a name="configure-facebook-authentication"></a>Konfigurace ověřování Facebook
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Přidání služby Facebook `ConfigureServices` metoda v *Startup.cs* souboru:
 
 ```csharp
@@ -86,10 +85,9 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 });
 ```
 
-[!INCLUDE[default settings configuration](includes/default-settings.md)]
+[!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Nainstalujte [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) balíčku.
 
 * Chcete-li nainstalovat tento balíček s Visual Studio 2017, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**.
@@ -107,8 +105,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 });
 ```
 
----
-
+* * *
 Najdete v článku [FacebookOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.facebookoptions) referenční dokumentace rozhraní API pro další informace o možnostech konfigurace nepodporuje ověřování Facebook. Možnosti konfigurace umožňuje:
 
 * Žádost různé informace o uživateli.
@@ -141,7 +138,7 @@ Nyní jste se přihlásili pomocí přihlašovacích údajů Facebook:
 
 ## <a name="next-steps"></a>Další kroky
 
-* Tento článek vám ukázal, jak můžete ověřit pomocí služby Facebook. Můžete postupovat podle podobný postup k ověření pomocí jiných poskytovatelů uvedené na [předchozí stránce](index.md).
+* Tento článek vám ukázal, jak můžete ověřit pomocí služby Facebook. Můžete postupovat podle podobný postup k ověření pomocí jiných poskytovatelů uvedené na [předchozí stránce](xref:security/authentication/social/index).
 
 * Jakmile budete publikovat web vaší webové aplikace Azure, byste měli obnovit `AppSecret` v portálu pro vývojáře Facebook.
 

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/readme/overview
-title: "Služba WebMatrix Readme | Microsoft Docs"
+title: Služba WebMatrix Readme | Microsoft Docs
 author: rick-anderson
-description: "Služba WebMatrix a ASP.NET Web Pages (Razor) verzi 1.0 – soubor Readme"
+description: Služba WebMatrix a ASP.NET Web Pages (Razor) verzi 1.0 – soubor Readme
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: b8402aa3db1b2566878c4d56212facbbb2925eec
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c65ee58b8c13b0b4acb6e7c9b631c8235e791506
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="webmatrix-readme"></a>Soubor Readme pro službu WebMatrix
 ====================
@@ -126,7 +126,7 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 
 - [Změny](#Changes)
 - [Problémy](#Issues)
 
-#### <a id="NewFeatures"></a>Nové funkce
+#### <a id="NewFeatures"></a>  Nové funkce
 
 #### <a name="new-configuration-setting-added-to-disable-the-package-manager"></a>Nové: Konfigurace nastavení přidáno zakázat Správce balíčků
 
@@ -135,14 +135,14 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 
 > [!code-xml[Main](overview/samples/sample1.xml)]
 
 
-#### <a id="Changes"></a>Změny
+#### <a id="Changes"></a>  Změny
 
 #### <a name="change-webpagesadminfoldervirtualpath-key-renamed-to-aspadminfoldervirtualpath"></a>Změnit: "webPages:AdminFolderVirtualPath" klíč přejmenován na "asp: AdminFolderVirtualPath"
 
 > `webPages:AdminFolderVirtualPath` Klíč, který lze přidat do *web.config* souboru k zadání umístění správce balíčků byl přejmenován na použití `asp:` obor názvů místo `webPages` oboru názvů. Pokud jste použili tento prvek, je třeba přejmenovat v konfiguračním souboru.
 
 
-#### <a id="Issues"></a>Známé problémy
+#### <a id="Issues"></a>  Známé problémy
 
 #### <a name="issue-passwords-for-membership-users-no-longer-recognized"></a>Problém: Hesla uživatelů se členstvím už rozpoznána
 
@@ -226,7 +226,7 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 
 > Pokud odinstalujete rozhraní .NET Framework verze 4 a znovu ji nainstalovat, technologie ASP.NET Web Pages se syntaxí Razor je zakázané. Stránky s *.cshtml* rozšíření se nespustí správně. Rozhraní ASP.NET Web Pages zaregistruje sestavení v kořenu počítač *web.config* soubor odebrán souboru a odebrání rozhraní .NET Framework. Opětovné instalace rozhraní .NET Framework nainstaluje novou verzi konfiguračního souboru, ale nepřidá odkaz na sestavení pro ASP.NET Web Pages.
 > 
 > **Alternativní řešení** po opětovné instalaci rozhraní .NET Framework, přeinstalujte rozhraní ASP.NET Web Pages se syntaxí Razor. Tím se přidá následující elementu, který chcete *web.config* soubor v kořenu počítač, který je obvykle v následujícím umístění:  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config (32-bit)`  
 > `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config (64-bit)`
 > 
@@ -236,9 +236,9 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>Problém: Adresy URL bez přípony nenašli.cshtml/.vbhtml soubory na službě IIS 7 nebo IIS 7.5
 
 > Na službě IIS 7 nebo IIS 7.5, nejsou schopna najít stránky, které mají požadavky s adresou URL takto *.cshtml* nebo *.vbhtml* rozšíření:  
->   
+> 
 > `http://www.example.com/ExampleSite/ExampleFile`  
->   
+> 
 > Tento problém nastane, protože přepisování adres URL není povoleno ve výchozím nastavení pro službu IIS 7 nebo IIS 7.5. Nejpravděpodobnějším scénář je, že se nezobrazí problém při testování místně pomocí služby IIS Express, ale dojde při nasazení webu k hostování webu.
 > 
 > **Alternativní řešení**
@@ -257,10 +257,11 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 
 > 
 > 1. Zkopírujte sestavení modulu databáze, které chcete *Bin* složky (a její podsložky) aplikace na cílovém počítači:  
 > 
->     - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
->         **k** *\Bin*
->     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\****to***\Bin\x86*
->     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to***\Bin\amd64*
+>    - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>        **k** *\Bin*
+>    - Copy <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\</em><strong><em>to</em></strong>\Bin\x86*
+>    - Copy <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\</em>* <strong>to</strong><em>\Bin\amd64</em>
+> 
 > 2. V kořenové složce webové stránky, vytvořit nebo otevřít *web.config* souboru. (Ve službě WebMatrix 1.0 je k dispozici, pokud kliknete na tento typ souboru **všechny** v **vyberte typ souboru** dialogové okno.)
 > 3. Přidejte následující prvek jako podřízenou `<configuration>` – element (mimo `<system.web>` element):
 > 
@@ -412,7 +413,7 @@ Systém SQL Server Compact má svůj vlastní soubor readme, který je k dispozi
 
 Informace o problémech, které zahrnují instalaci systému SQL Server Compact jako součást nástroje WebMatrix, najdete v tématu [problémy instalace služby WebMatrix](#Known_Issues_Installation) dříve v tomto dokumentu.
 
-### <a id="Known_Issues_Installing_Applications"></a>Instalace aplikace
+### <a id="Known_Issues_Installing_Applications"></a>  Instalace aplikace
 
 #### <a name="issue-installing-an-application-can-take-a-long-time-if-the-users-my-documents-folder-is-redirected-to-a-network-share"></a>Problém: Instalace aplikace může trvat dlouhou dobu. Pokud je přesměrování složky Dokumenty uživatele do sdílené síťové složky
 
@@ -420,7 +421,7 @@ Informace o problémech, které zahrnují instalaci systému SQL Server Compact 
 > Žádné Aplikace může trvat, než k instalaci, ale nainstaluje správně.
 
 
-### <a id="Known_Issues_Publishing_Applications"></a>Publikování aplikací
+### <a id="Known_Issues_Publishing_Applications"></a>  Publikování aplikací
 
 #### <a name="issue-required-permissions-cannot-be-acquired-error-when-publishing-a-sql-compact-database"></a>Problém: "požadované oprávnění nelze získat" Chyba při publikování databáze SQL Compact
 

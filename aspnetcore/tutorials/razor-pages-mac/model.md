@@ -1,7 +1,7 @@
 ---
-title: "Přidání modelu do aplikace pro stránky Razor pomocí sady Visual Studio pro Mac"
+title: Přidat model do aplikace ASP.NET Core Razor stránky pomocí sady Visual Studio pro Mac
 author: rick-anderson
-description: "Přidání modelu do aplikace stránky Razor ve ASP.NET Core pomocí sady Visual Studio pro Mac"
+description: Zjistěte, jak přidat model do aplikace pro stránky Razor v ASP.NET Core pomocí sady Visual Studio for Mac.
 manager: wpickett
 ms.author: riande
 ms.date: 08/27/2017
@@ -9,15 +9,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/model
-ms.openlocfilehash: 792b98a79f193972cce56d3ad388b9fa9c58ac9c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 16b2cfa872d89ba1b78d1abc43765ad4319673a9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core-with-visual-studio-for-mac"></a>Přidání modelu do aplikace stránky Razor ve ASP.NET Core pomocí sady Visual Studio pro Mac
+# <a name="add-a-model-to-an-aspnet-core-razor-pages-app-with-visual-studio-for-mac"></a>Přidat model do aplikace ASP.NET Core Razor stránky pomocí sady Visual Studio pro Mac
 
-[!INCLUDE[model1](../../includes/RP/model1.md)]
+[!INCLUDE [model1](../../includes/RP/model1.md)]
 
 ## <a name="add-a-data-model"></a>Přidat datový model
 
@@ -29,8 +29,9 @@ ms.lasthandoff: 03/15/2018
   * Vyberte **prázdné třídy** v problémové center.
   * Název třídy **film** a vyberte **nový**.
 
-[!INCLUDE[model 2](../../includes/RP/model2.md)]
-[!INCLUDE[model 2a](../../includes/RP/model2a.md)]
+[!INCLUDE [model 2](../../includes/RP/model2.md)]
+
+[!INCLUDE [model 2a](../../includes/RP/model2a.md)]
 
 [!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
 
@@ -58,21 +59,22 @@ Přidat `Microsoft.EntityFrameworkCore.Tools.DotNet` nástroj odkaz na druhý  *
 
 V době psaní byly správné číslo verze vidět v následujícím kódu.
 
-[!INCLUDE[model3](../../includes/RP/model3.md)]
-[!INCLUDE[model 4x](../../includes/RP/model4x.md)]
+[!INCLUDE [model3](../../includes/RP/model3.md)]
 
-[!INCLUDE[model 4 exit](../../includes/RP/model4exit.md)]
+[!INCLUDE [model 4x](../../includes/RP/model4x.md)]
 
-[!INCLUDE[model 4](../../includes/RP/model4.md)]
+[!INCLUDE [model 4 exit](../../includes/RP/model4exit.md)]
+
+[!INCLUDE [model 4](../../includes/RP/model4.md)]
 
 ### <a name="add-the-pagesmovies-files-to-the-project"></a>Do projektu přidejte tyto stránek nebo filmy soubory
 
 * V sadě Visual Studio, klikněte pravým tlačítkem myši *stránky* složky a vyberte **Přidat > Přidat existující složku**.
 * Vyberte *filmy* složky.
-* V *Chosse soubory pro zahrnutí do projektu* dialogovém okně, vyberte **zahrnují všechny**.
+* V *vyberte soubory, které chcete zahrnout do projektu* dialogovém okně, vyberte **zahrnují všechny**.
 
 Další kurz vysvětluje souborů vytvořených pomocí generování uživatelského rozhraní.
 
->[!div class="step-by-step"]
-[Předchozí: Začínáme](xref:tutorials/razor-pages-mac/razor-pages-start)
-[Další: vygeneroval stránky Razor](xref:tutorials/razor-pages-mac/page)
+> [!div class="step-by-step"]
+> [Předchozí: Začínáme](xref:tutorials/razor-pages-mac/razor-pages-start)
+> [Další: vygeneroval stránky Razor](xref:tutorials/razor-pages-mac/page)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
-title: "Nasazení webových balíčků | Microsoft Docs"
+title: Nasazení webových balíčků | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak můžete publikovat balíčky nasazení webu na vzdálený server pomocí Internetové informační služby (IIS) nástroj pro nasazení webu (webové..."
+description: Toto téma popisuje, jak můžete publikovat balíčky nasazení webu na vzdálený server pomocí Internetové informační služby (IIS) nástroj pro nasazení webu (webové...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: cd2bfa07262155b68ac4605fc7e9748d276d3193
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5d3af0fdcc6e7ae20194ba658e0cf72ad22c1234
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-web-packages"></a>Nasazení webových balíčků
 ====================
@@ -43,10 +43,10 @@ podle [Jason Lee](https://github.com/jrjlee)
 
 Spuštění [*název projektu*]*. deploy.cmd* soubor je nejjednodušší způsob, jak nasadit webový balíček. Konkrétně pomocí *. deploy.cmd* souboru nabízí tyto výhody oproti použití MSDeploy.exe přímo:
 
-- Nemusíte zadejte umístění balíčku pro nasazení webu & #x 2014; *. deploy.cmd* souboru již ví, kde je.
-- Nemusíte zadejte umístění *SetParameters.xml* #x 2014; & souborů *. deploy.cmd* souboru již ví, kde je.
-- Nemusíte zadejte zdrojový a cílový MSDeploy zprostředkovatelé & #x 2014; *. deploy.cmd* souboru již zná hodnot, které chcete použít.
-- Zadejte nastavení operace MSDeploy & #x 2014; nemusíte *. deploy.cmd* souboru přidá nejčastěji požadované hodnoty k příkazu MSDeploy.exe automaticky.
+- Nemusíte zadejte umístění balíčku pro nasazení webu&#x2014; *. deploy.cmd* souboru již ví, kde je.
+- Nemusíte zadejte umístění *SetParameters.xml* soubor&#x2014; *. deploy.cmd* souboru již ví, kde je.
+- Nemusíte určit zdrojový a cílový zprostředkovatele MSDeploy&#x2014; *. deploy.cmd* souboru již zná hodnot, které chcete použít.
+- Nemusíte určit nastavení operace MSDeploy&#x2014; *. deploy.cmd* souboru přidá nejčastěji požadované hodnoty k příkazu MSDeploy.exe automaticky.
 
 Před použitím *. deploy.cmd* souboru k nasazení webového balíčku, ujistěte se, že:
 
@@ -92,7 +92,7 @@ Předpokládejme, že chcete nasadit ContactManager.Mvc projekt webové aplikace
 V tomto příkladu:
 
 - **/Y** příznak určuje, že chcete skutečném nasazení balíčku, spíše než to bezplatnou zkušební verzí spustit.
-- **/M** příznak označuje, že chcete nasadit balíček na serveru s názvem TESTWEB1. Od této hodnoty MSDeploy.exe se pokusí balíček nasadit do vzdáleného agenta nasazení webové služby v http://TESTWEB1/MSDeployAgentService.
+- **/M** příznak označuje, že chcete nasadit balíček na serveru s názvem TESTWEB1. Od této hodnoty MSDeploy.exe pokusí balíček nasadit do vzdáleného agenta nasazení webové služby v http://TESTWEB1/MSDeployAgentService.
 - **/A** příznak určuje, zda chcete použít ověřování NTLM. Nemusíte jako takový, zadejte uživatelské jméno a heslo.
 
 Pro ilustraci jak pomocí *. deploy.cmd* souboru zjednodušuje proces nasazení, podívejte se na příkaz MSDeploy.exe, který získá generovány a provést při spuštění *ContactManager.Mvc.deploy.cmd* pomocí možnosti uvedené výše.
@@ -117,7 +117,7 @@ Pokud používáte MSDeploy.exe, potřebujete poskytovat tři důležité inform
 - A **– cíle** parametr, který určuje, kde se bude vaše data.
 - A **– příkaz** parametr, který určuje [operace](https://technet.microsoft.com/library/dd568989(WS.10).aspx) chcete provést.
 
-MSDeploy.exe spoléhá na [Web Deploy zprostředkovatelé](https://technet.microsoft.com/library/dd569040(WS.10).aspx) proces zdrojové a cílové data. Nasazení webu obsahuje mnoho poskytovatelů, které představují řadu aplikací a zdrojů dat, můžete pracovat s & #x 2014, například existuje poskytovatelů pro databáze systému SQL Server, webové servery služby IIS, certifikáty, sestavení sestavení v globální mezipaměti (aktivit GAC), různé jiné konfigurační soubory a spoustu dalších typů dat. Obě **– zdroj** parametr a **– cíle** parametr musí zprostředkovatele, zadejte ve tvaru **– zdroj**: [*providerName*] = [*umístění*]. Když nasazujete balíček webu na web služby IIS, měli byste použít tyto hodnoty:
+MSDeploy.exe spoléhá na [Web Deploy zprostředkovatelé](https://technet.microsoft.com/library/dd569040(WS.10).aspx) proces zdrojové a cílové data. Nasazení webu obsahuje mnoho poskytovatelů, které představují řadu aplikací a zdrojů dat, můžete pracovat s&#x2014;například existuje poskytovatelů pro databáze systému SQL Server, webové servery služby IIS, certifikáty, sestavení sestavení v globální mezipaměti (aktivit GAC), různé jiné konfigurační soubory a spoustu dalších typů dat. Obě **– zdroj** parametr a **– cíle** parametr musí zprostředkovatele, zadejte ve tvaru **– zdroj**: [*providerName*] = [*umístění*]. Když nasazujete balíček webu na web služby IIS, měli byste použít tyto hodnoty:
 
 - **– Zdroj** zprostředkovatele je vždy [balíček](https://technet.microsoft.com/library/dd569019(WS.10).aspx). Příklad:
 
@@ -213,6 +213,6 @@ Toto téma popisuje, jak nasadit webový balíček buď spuštěním *. deploy.c
 
 Informace o tom, jak vytvořit a Parametrizace balíčku pro nasazení webu, najdete v části [budova a projekty webových aplikací balení](building-and-packaging-web-application-projects.md) a [parametry konfigurace pro nasazení webového balíčku](configuring-parameters-for-web-package-deployment.md). Pokyny k vytváření a nasazování webových balíčků z instance Team Foundation Server (TFS) najdete v tématu [konfigurace Team Foundation Server pro nasazení webu automatizované](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Informace o tom, jak přizpůsobit a řešení potíží s procesu nasazení najdete v tématu [vyloučení souborů a složek z nasazení](../advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment.md).
 
->[!div class="step-by-step"]
-[Předchozí](configuring-parameters-for-web-package-deployment.md)
-[další](deploying-database-projects.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-parameters-for-web-package-deployment.md)
+> [další](deploying-database-projects.md)

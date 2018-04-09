@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
-title: "Správa životního cyklu aplikací: Z vývojového do produkčního prostředí | Microsoft Docs"
+title: 'Správa životního cyklu aplikací: Z vývojového do produkčního prostředí | Microsoft Docs'
 author: jrjlee
-description: "Toto téma ukazuje, jak fiktivní společnost spravuje nasazení webové aplikace ASP.NET pomocí prostředí testovací, přípravné nebo produkční prostředí jako nominální..."
+description: Toto téma ukazuje, jak fiktivní společnost spravuje nasazení webové aplikace ASP.NET pomocí prostředí testovací, přípravné nebo produkční prostředí jako nominální...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: f7ffff1c3434ce98c70265e4bf64047fd44252d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8beeffb374df09c6695a1845199d30006ddcc1b7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="application-lifecycle-management-from-development-to-production"></a>Správa životního cyklu aplikací: Z vývojového do produkčního prostředí
 ====================
@@ -26,7 +26,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 
 > Toto téma ukazuje, jak fiktivní společnost spravuje nasazení webové aplikace ASP.NET prostřednictvím prostředí testovací, přípravné nebo produkční prostředí jako součást procesu průběžné vývoj. V rámci tématu jsou uvedeny odkazy na další informace a návody o tom, jak provádět určité úlohy.
 > 
-> Téma je určená k poskytnutí přehled pro [série kurzů](deploying-web-applications-in-enterprise-scenarios.md) na nasazení webu v podnikové síti. Nemusíte si dělat starosti, pokud si nejste obeznámeni s některé koncepty, které jsou zde popsané & #x 2014; kurzy, které následují poskytují podrobné informace na všech těchto úloh a techniky.
+> Téma je určená k poskytnutí přehled pro [série kurzů](deploying-web-applications-in-enterprise-scenarios.md) na nasazení webu v podnikové síti. Nemusíte si dělat starosti, pokud si nejste obeznámeni s některé koncepty, které jsou zde popsané&#x2014;kurzy, které následují poskytují podrobné informace na všech těchto úloh a techniky.
 > 
 > > [!NOTE]
 > > Forthe zájmu jednoduchost, v tomto tématu se nezabývá aktualizace databáze jako součást procesu nasazení. Ale provedením přírůstkové aktualizace databáze funkce se vyžaduje mnoho podnikových scénářích nasazení a najdete pokyny o tom, jak to provést později z této série kurzu. Další informace najdete v tématu [nasazení databázové projekty](../web-deployment-in-the-enterprise/deploying-database-projects.md).
@@ -95,7 +95,7 @@ Pokud chcete spustit nasazení, uživatel provede *Publish.proj* souborů pomoc�
 
 > [!NOTE]
 > Způsob práce tyto soubory vlastních projektů je nezávislé mechanismu, který používáte pro vyvolání nástroje MSBuild. Například můžete v příkazovém řádku MSBuild přímo, jak je popsáno v [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Soubory projektu můžete spustit z příkazového řádku, jak je popsáno v [vytvořte a spusťte soubor příkazů nasazení](../web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file.md). Alternativně můžete spustit soubory projektu z definice sestavení v sadě TFS, jak je popsáno v [vytváření definici sestavení toto nasazení podporuje](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).  
-> V každém případě konečným výsledkem bude stejná & #x 2014; MSBuild provede souboru sloučené projektu a nasadí řešení na cílovém prostředí. To poskytuje značnou flexibilitu v tom, jak aktivovat váš proces publikování.
+> V každém případě je konečný výsledek stejný&#x2014;MSBuild provede souboru sloučené projektu a nasadí řešení na cílovém prostředí. To poskytuje značnou flexibilitu v tom, jak aktivovat váš proces publikování.
 
 
 Po vytvoření vlastních projektů soubory mu má Matt přidá je do složky řešení a zkontroluje je do správy zdrojového kódu.
@@ -185,7 +185,7 @@ Toto je proces vysoké úrovně pro nasazení, který je pracovní prostředí:
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample3.cmd)]
 
 
-V rámci *Publish.proj* souboru **WhatIf** vlastnost určuje, zda všechny prostředky nasazení je nutné ji publikovat v režimu "Co když". Jinými slovy soubory protokolu jsou generovány, jako kdyby měl článek zmizel nasazení, ale ve skutečnosti nic se změní v cílovém prostředí. To umožňuje hodnotit dopad navrhované nasazení & #x 2014; zejména, co bude se přidají, co bude aktualizovat a co bude odstraněn & #x 2014; předtím, než je ve skutečnosti provést všechny změny.
+V rámci *Publish.proj* souboru **WhatIf** vlastnost určuje, zda všechny prostředky nasazení je nutné ji publikovat v režimu "Co když". Jinými slovy soubory protokolu jsou generovány, jako kdyby měl článek zmizel nasazení, ale ve skutečnosti nic se změní v cílovém prostředí. To umožňuje hodnotit dopad navrhované nasazení&#x2014;v konkrétní, co bude se přidají, co bude aktualizovat, a co bude odstraněn&#x2014;před skutečně provést žádné změny.
 
 > [!NOTE]
 > Další informace o tom, jak nakonfigurovat "Co když" nasazení najdete v tématu [provádění nasazení "Co když"](../advanced-enterprise-web-deployment/performing-a-what-if-deployment.md).
@@ -227,5 +227,5 @@ Toto téma je součástí ze série kurzů, které poskytují informace o různ�
 - [Konfigurace serveru Team Foundation Server pro automatizované nasazení webu](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Tento kurz obsahuje pokyny o tom, jak integrovat logiku nasazení do sady TFS sestavení procesy.
 - [Pokročilé nasazení webu Enterprise](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Tento kurz obsahuje pokyny o tom, jak splnit některé problémy složitější nasazení vzhled této organizace.
 
->[!div class="step-by-step"]
-[Předchozí](enterprise-web-deployment-scenario-overview.md)
+> [!div class="step-by-step"]
+> [Předchozí](enterprise-web-deployment-scenario-overview.md)

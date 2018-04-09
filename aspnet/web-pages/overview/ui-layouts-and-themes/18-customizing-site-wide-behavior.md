@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/18-customizing-site-wide-behavior
-title: "Přizpůsobení chování na webu pro ASP.NET Web Pages lokalit (Razor) | Microsoft Docs"
+title: Přizpůsobení chování na webu pro ASP.NET Web Pages lokalit (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tato kapitola vysvětluje, jak nakonfigurovat nastavení pro celý web nebo celou složku, nikoli jen na stránce."
+description: Tato kapitola vysvětluje, jak nakonfigurovat nastavení pro celý web nebo celou složku, nikoli jen na stránce.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/18-customizing-site-wide-behavior
 msc.type: authoredcontent
-ms.openlocfilehash: b1caa26a23517bd976addfefac89375ae965eb91
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4457318bcf1d2886eb8ed68fdd795eea7905368b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="customizing-site-wide-behavior-for-aspnet-web-pages-razor-sites"></a>Přizpůsobení chování na webu pro ASP.NET – webové stránky (Razor) servery
 ====================
@@ -93,20 +93,20 @@ Tento postup ukazuje, jak nastavit `WebMail` nastavení globálně. (Další inf
 
     Upravit následující související nastavení v kódu e-mailu:
 
-    - Nastavit `your-SMTP-host` na název serveru SMTP, který máte přístup.
-    - Nastavit `your-user-name-here` na uživatelské jméno pro svůj účet serveru SMTP.
-    - Nastavit `your-account-password` na heslo pro svůj účet serveru SMTP.
-    - Nastavit `your-email-address-here` vlastní e-mailovou adresu. Toto je e-mailovou adresu, které je zpráva odeslána z. (Někteří poskytovatelé e-mailu Nenechte si můžete nastavit jinou `From` adres a bude používat vaše uživatelské jméno jako `From` adresu.)
+   - Nastavit `your-SMTP-host` na název serveru SMTP, který máte přístup.
+   - Nastavit `your-user-name-here` na uživatelské jméno pro svůj účet serveru SMTP.
+   - Nastavit `your-account-password` na heslo pro svůj účet serveru SMTP.
+   - Nastavit `your-email-address-here` vlastní e-mailovou adresu. Toto je e-mailovou adresu, které je zpráva odeslána z. (Někteří poskytovatelé e-mailu Nenechte si můžete nastavit jinou `From` adres a bude používat vaše uživatelské jméno jako `From` adresu.)
 
-    Další informace o nastavení SMTP, najdete v části [konfigurace nastavení e-mailu](https://go.microsoft.com/fwlink/?LinkID=202899#configuring_email_settings) v článku [odesílání e-mailu z webových stránek ASP.NET (Razor) stránky](https://go.microsoft.com/fwlink/?LinkID=202899) a [problémy s odesílání e-mailu](https://go.microsoft.com/fwlink/?LinkId=253001#email)v [ASP.NET Web Pages Průvodce řešením potíží (Razor)](https://go.microsoft.com/fwlink/?LinkId=253001).
-- Uložit  *\_AppStart.cshtml* souboru a zavřete ho.
-- V kořenové složce webu, vytvořte novou stránku s názvem *TestEmail.cshtml*.
-- Nahradí existující obsah s následujícími službami: 
+     Další informace o nastavení SMTP, najdete v části [konfigurace nastavení e-mailu](https://go.microsoft.com/fwlink/?LinkID=202899#configuring_email_settings) v článku [odesílání e-mailu z webových stránek ASP.NET (Razor) stránky](https://go.microsoft.com/fwlink/?LinkID=202899) a [problémy s odesílání e-mailu](https://go.microsoft.com/fwlink/?LinkId=253001#email)v [ASP.NET Web Pages Průvodce řešením potíží (Razor)](https://go.microsoft.com/fwlink/?LinkId=253001).
+4. Uložit  *\_AppStart.cshtml* souboru a zavřete ho.
+5. V kořenové složce webu, vytvořte novou stránku s názvem *TestEmail.cshtml*.
+6. Nahradí existující obsah s následujícími službami: 
 
-    [!code-cshtml[Main](18-customizing-site-wide-behavior/samples/sample4.cshtml)]
-- Spustit *TestEmail.cshtml* stránku v prohlížeči.
-- Vyplňte pole odeslat sami e-mailovou zprávu a pak klikněte na **odeslat**.
-- Zkontrolujte e-mailu a ujistěte se, že jste, že jste podmínky zprávy.
+     [!code-cshtml[Main](18-customizing-site-wide-behavior/samples/sample4.cshtml)]
+7. Spustit *TestEmail.cshtml* stránku v prohlížeči.
+8. Vyplňte pole odeslat sami e-mailovou zprávu a pak klikněte na **odeslat**.
+9. Zkontrolujte e-mailu a ujistěte se, že jste, že jste podmínky zprávy.
 
 Důležitou součástí v tomto příkladu je, že nastavení, která obvykle neměnit – jako název serveru SMTP a přihlašovacích údajů e-mailu – jsou nastavené  *\_AppStart.cshtml* souboru. Tímto způsobem, nemusíte je znovu nastavit v každé stránce, kde odeslání e-mailu. (I když Pokud z nějakého důvodu potřebujete změnit tato nastavení, můžete nastavit je samostatně na stránce.) Na stránce můžete nastavit pouze hodnoty, které obvykle změnit pokaždé, když, jako je příjemce a tělo e-mailové zprávy.
 

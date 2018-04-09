@@ -1,7 +1,7 @@
 ---
-title: "Pomocí souboru Cookie ověřování bez ASP.NET Core Identity"
+title: Používala ověřování souborů cookie bez ASP.NET Core Identity
 author: rick-anderson
-description: "Vysvětlení pomocí souboru cookie ověřování bez ASP.NET Core Identity"
+description: Vysvětlení pomocí souboru cookie ověřování bez ASP.NET Core Identity
 manager: wpickett
 ms.author: riande
 ms.date: 10/11/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: bbc49a0d3ede66ad07ec3f1dea055cae5fec39ff
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 26101d46557c64047f3d121083fe34ad34ff99ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="using-cookie-authentication-without-aspnet-core-identity"></a>Pomocí souboru Cookie ověřování bez ASP.NET Core Identity
+# <a name="use-cookie-authentication-without-aspnet-core-identity"></a>Používala ověřování souborů cookie bez ASP.NET Core Identity
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Luke Latham](https://github.com/guardrex)
 
@@ -23,12 +23,11 @@ Protože jste viděli v dřívější ověřování témata, [ASP.NET Core Ident
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/cookie/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-Informace o migraci na základě souboru cookie ověřování z ASP.NET Core 1.x k 2.0, najdete v části [migrace ověřování a identita na technologii ASP.NET 2.0 základní téma (ověřování na základě souborů Cookie)](xref:migration/1x-to-2x/identity-2x#cookie-based-authentication).
+Informace o migraci na základě souboru cookie ověřování z ASP.NET Core 1.x k 2.0, najdete v části [migrovat ověřování a identita na technologii ASP.NET 2.0 základní téma (ověřování na základě souborů Cookie)](xref:migration/1x-to-2x/identity-2x#cookie-based-authentication).
 
 ## <a name="configuration"></a>Konfigurace
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Pokud nepoužíváte [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage), instalace verze 2.0 + [Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/) balíček NuGet.
 
 V `ConfigureServices` metoda, vytvořit službu Middleware ověřování s `AddAuthentication` a `AddCookie` metody:
@@ -78,8 +77,7 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Soubor cookie používá ASP.NET Core 1.x [middleware](xref:fundamentals/middleware/index) který serializuje hlavní název uživatele do šifrovaného souboru cookie. Na následné žádosti, se ověří souboru cookie a znovu vytvořit a přiřadit k objektu zabezpečení `HttpContext.User` vlastnost.
 
 Nainstalujte [Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/) balíček NuGet do projektu. Tento balíček obsahuje middlewaru souboru cookie.
@@ -124,8 +122,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 });
 ```
 
----
-
+* * *
 ## <a name="cookie-policy-middleware"></a>Middlewaru souboru cookie zásad.
 
 [Middleware zásady souborů cookie](/dotnet/api/microsoft.aspnetcore.cookiepolicy.cookiepolicymiddleware) povoluje možnosti zásad souborů cookie v aplikaci. Přidání middleware aplikace zpracování kanálu je pořadí citlivé; ovlivňuje pouze komponenty registrované po ho v kanálu.
@@ -167,14 +164,12 @@ Nastavení zásad middlewaru souboru Cookie pro `MinimumSameSitePolicy` může m
 
 Pokud chcete vytvořit soubor cookie, která uchovává informace o uživateli, je nutné vytvořit [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal). Informace o uživateli se serializovat a uloží do souboru cookie. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Vytvoření [ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity) s jakékoli požadované [deklarace identity](/dotnet/api/system.security.claims.claim)s a volání [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0) k přihlášení uživatele:
 
 [!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet1)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Volání [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signinasync?view=aspnetcore-1.1) k přihlášení uživatele:
 
 ```csharp
@@ -183,22 +178,19 @@ await HttpContext.Authentication.SignInAsync(
     new ClaimsPrincipal(claimsIdentity));
 ```
 
----
-
+* * *
 `SignInAsync` Vytvoří šifrovaného souboru cookie a přidává ji k aktuální odpovědi. Pokud neurčíte `AuthenticationScheme`, se používá výchozí schéma.
 
 V pozadí, je šifrování, které používá ASP.NET Core [ochrany dat](xref:security/data-protection/using-data-protection#security-data-protection-getting-started) systému. Pokud jste hostování aplikace na více počítačů, Vyrovnávání zatížení napříč aplikací nebo pomocí webové farmy, pak musíte [konfigurovat ochranu dat](xref:security/data-protection/configuration/overview) pro stejný klíč prstenec a identifikátor aplikace.
 
 ## <a name="signing-out"></a>Odhlásit
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Odhlásit se aktuálního uživatele a odstranit jejich souboru cookie, volání [SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signoutasync?view=aspnetcore-2.0):
 
 [!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet2)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Odhlásit se aktuálního uživatele a odstranit jejich souboru cookie, volání [SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signoutasync?view=aspnetcore-1.1):
 
 ```csharp
@@ -206,8 +198,7 @@ await HttpContext.Authentication.SignOutAsync(
     CookieAuthenticationDefaults.AuthenticationScheme);
 ```
 
----
-
+* * *
 Pokud nepoužíváte `CookieAuthenticationDefaults.AuthenticationScheme` (nebo "soubory cookie.) jako schéma (například" ContosoCookie"), zadejte schéma, které jste použili při konfiguraci zprostředkovatele ověřování. Jinak je použit výchozí schéma.
 
 ## <a name="reacting-to-back-end-changes"></a>Reaguje na změny back-end

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
-title: "Ukládání dat v architektuře (VB) | Microsoft Docs"
+title: Ukládání dat v architektuře (VB) | Microsoft Docs
 author: rick-anderson
-description: "V předchozích kurzu jsme zjistili, jak použít ukládání do mezipaměti na prezentační vrstvy. V tomto kurzu jsme zjistěte, jak využívat naše vrstveného architectu..."
+description: V předchozích kurzu jsme zjistili, jak použít ukládání do mezipaměti na prezentační vrstvy. V tomto kurzu jsme zjistěte, jak využívat naše vrstveného architectu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1aca89b022bb3bb7e4154ab575b5bb5513144cd5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 08f83c129d589859723249becb818386bfff19bf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching-data-in-the-architecture-vb"></a>Ukládání dat v architektuře (VB)
 ====================
@@ -50,7 +50,7 @@ Na další samostatné této aplikace CL třídy od třídy DAL a BLL umožňuj�
 
 ![Přidat novou složku s názvem CL a třídy s názvem ProductsCL.vb](caching-data-in-the-architecture-vb/_static/image2.png)
 
-**Obrázek 2**: přidejte novou složku s názvem `CL` a třídy s názvem`ProductsCL.vb`
+**Obrázek 2**: přidejte novou složku s názvem `CL` a třídy s názvem `ProductsCL.vb`
 
 
 `ProductsCL` Třída by měla obsahovat stejnou sadu dat přístup a úpravy metody, jak se nachází v jeho odpovídající třídě vrstvu obchodní logiky (`ProductsBLL`). Místo vytváření všechny tyto metody umožňují s jenom sestavení několik zde podívat, pro vzory používá CL. Konkrétně přidáme `GetProducts()` a `GetProductsByCategoryID(categoryID)` metody v kroku 3 a `UpdateProduct` přetížení v kroku 4. Můžete přidat zbývající `ProductsCL` metody a `CategoriesCL`, `EmployeesCL`, a `SuppliersCL` třídy ve volném čase.
@@ -62,7 +62,7 @@ ObjectDataSource ukládání do mezipaměti funkce prozkoumali v předchozím ku
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample1.vb)]
 
-[ `Cache` Třída](https://msdn.microsoft.com/library/system.web.caching.cache.aspx) s [ `Insert` metoda](https://msdn.microsoft.com/library/system.web.caching.cache.insert.aspx) má několik přetížení. `Cache("key") = value`a `Cache.Insert(key, value)` jsou synonyma a jak přidat položku do mezipaměti pomocí zadaného klíče bez definované vypršení platnosti. Obvykle chceme zadejte vypršela platnost při přidání položky do mezipaměti, buď jako závislost, na základě času vypršení platnosti nebo obojí. Použijte jednu z dalších `Insert` přetížení metody s poskytnout informace na základě závislostí nebo čas vypršení platnosti.
+[ `Cache` Třída](https://msdn.microsoft.com/library/system.web.caching.cache.aspx) s [ `Insert` metoda](https://msdn.microsoft.com/library/system.web.caching.cache.insert.aspx) má několik přetížení. `Cache("key") = value` a `Cache.Insert(key, value)` jsou synonyma a jak přidat položku do mezipaměti pomocí zadaného klíče bez definované vypršení platnosti. Obvykle chceme zadejte vypršela platnost při přidání položky do mezipaměti, buď jako závislost, na základě času vypršení platnosti nebo obojí. Použijte jednu z dalších `Insert` přetížení metody s poskytnout informace na základě závislostí nebo čas vypršení platnosti.
 
 Ukládání do mezipaměti vrstvu, kterou s metody muset nejdřív zkontrolujte, zda požadovaná data jsou v mezipaměti a pokud ano, vrátí se z ní. Pokud není požadovaná data v mezipaměti, odpovídající metodu BLL musí být volána. Vrácená hodnota by měla do mezipaměti a poté vrácen, jak ukazuje následující diagram pořadí.
 
@@ -113,7 +113,7 @@ V `GetProducts()` a `GetProductsByCategoryID(categoryID)` metody, s daty vrácen
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample6.vb)]
 
-`GetCacheItem(key)`nepoužívá *klíč* hodnotu jako zadaný, ale volání `GetCacheKey(key)` metoda, která vrátí hodnotu *klíč* přidá jako předpona s ProductsCache-. `MasterCacheKeyArray`, Který obsahuje řetězec ProductsCache, také používány `AddCacheItem(key, value)` metoda, jak jsme se zobrazí na okamžik.
+`GetCacheItem(key)` nepoužívá *klíč* hodnotu jako zadaný, ale volání `GetCacheKey(key)` metoda, která vrátí hodnotu *klíč* přidá jako předpona s ProductsCache-. `MasterCacheKeyArray`, Který obsahuje řetězec ProductsCache, také používány `AddCacheItem(key, value)` metoda, jak jsme se zobrazí na okamžik.
 
 Ze třídy kódu stránky s technologie ASP.NET datovou mezipaměť je přístupná pomocí `Page` třídu s [ `Cache` vlastnost](https://msdn.microsoft.com/library/system.web.ui.page.cache.aspx)a umožňuje syntaxe jako `Cache("key") = value`, jak je popsáno v kroku 2. Od třídy, v rámci architekturu, datovou mezipaměť je přístupná pomocí `HttpRuntime.Cache` nebo `HttpContext.Current.Cache`. [Petr Janíček](https://weblogs.asp.net/pjohnson/default.aspx)na položce blogu [HttpRuntime.Cache vs. HttpContext.Current.Cache](https://weblogs.asp.net/pjohnson/httpruntime-cache-vs-httpcontext-current-cache) poznámky k výhodu v podobě malého výkonu pomocí `HttpRuntime` místo `HttpContext.Current`; v důsledku toho `ProductsCL` používá `HttpRuntime`.
 
@@ -126,7 +126,7 @@ Pokud položka není nalezena v mezipaměti, `ProductsCL` metody třídy s získ
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample7.vb)]
 
-`DateTime.Now.AddSeconds(CacheDuration)`Určuje na základě času vypršení platnosti 60 sekund budoucí chvíli [ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx) označuje tom, že s žádné klouzavé vypršení platnosti. Když je tento `Insert` přetížení metody má vstupní parametry pro obě absolutní a klouzavé vypršení platnosti, můžete jenom zadat jednu ze dvou. Pokud se pokusíte zadejte absolutní čas a časové období, `Insert` vyvolá metoda výjimku `ArgumentException` výjimka.
+`DateTime.Now.AddSeconds(CacheDuration)` Určuje na základě času vypršení platnosti 60 sekund budoucí chvíli [ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx) označuje tom, že s žádné klouzavé vypršení platnosti. Když je tento `Insert` přetížení metody má vstupní parametry pro obě absolutní a klouzavé vypršení platnosti, můžete jenom zadat jednu ze dvou. Pokud se pokusíte zadejte absolutní čas a časové období, `Insert` vyvolá metoda výjimku `ArgumentException` výjimka.
 
 > [!NOTE]
 > Tato implementace `AddCacheItem(key, value)` metoda má aktuálně některé nedostatků. Jsme budete adresy a vyřešit tyto problémy v kroku 4.
@@ -150,7 +150,7 @@ Aktualizace umožňují s `AddCacheItem(key, value)` metoda tak, aby každá pol
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample9.vb)]
 
-`MasterCacheKeyArray`pole řetězců obsahující jednu hodnotu, ProductsCache je. Nejprve položku mezipaměti je přidán do mezipaměti a přiřazené k aktuálnímu datu a času. Pokud položku mezipaměti, která již existuje, je aktualizována. V dalším kroku se vytvoří závislost mezipaměti. [ `CacheDependency` Třída](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx) konstruktor s má několik přetížení, ale ten používá sem očekává dva `String` pole vstupy. První z nich určuje sadu souborů má být použit jako závislosti. Vzhledem k tomu, že jsme nejsou zobrazeny t chcete použít všechny závislosti na základě souborů, hodnota `Nothing` se používá pro první vstupní parametr. Druhý vstupní parametr určuje sadu mezipaměti klíče k použití jako závislosti. Zde jsme naše jeden závislostí, zadejte `MasterCacheKeyArray`. `CacheDependency` Pak předá do `Insert` metoda.
+`MasterCacheKeyArray` pole řetězců obsahující jednu hodnotu, ProductsCache je. Nejprve položku mezipaměti je přidán do mezipaměti a přiřazené k aktuálnímu datu a času. Pokud položku mezipaměti, která již existuje, je aktualizována. V dalším kroku se vytvoří závislost mezipaměti. [ `CacheDependency` Třída](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx) konstruktor s má několik přetížení, ale ten používá sem očekává dva `String` pole vstupy. První z nich určuje sadu souborů má být použit jako závislosti. Vzhledem k tomu, že jsme nejsou zobrazeny t chcete použít všechny závislosti na základě souborů, hodnota `Nothing` se používá pro první vstupní parametr. Druhý vstupní parametr určuje sadu mezipaměti klíče k použití jako závislosti. Zde jsme naše jeden závislostí, zadejte `MasterCacheKeyArray`. `CacheDependency` Pak předá do `Insert` metoda.
 
 Pomocí této změny `AddCacheItem(key, value)`, invaliding mezipaměti je jednoduché, odebráním závislosti.
 
@@ -198,12 +198,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](caching-data-with-the-objectdatasource-vb.md)
-[další](caching-data-at-application-startup-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](caching-data-with-the-objectdatasource-vb.md)
+> [další](caching-data-at-application-startup-vb.md)

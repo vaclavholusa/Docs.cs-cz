@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-view
-title: "Přidání zobrazení | Microsoft Docs"
+title: Přidání zobrazení | Microsoft Docs
 author: Rick-Anderson
-description: "Poznámka: Aktualizovanou verzi tohoto kurzu je k dispozici, která používá ASP.NET MVC 5 a Visual Studio 2013. Je bezpečnější, mnohem jednodušší a postupujte podle ukázku..."
+description: 'Poznámka: Aktualizovanou verzi tohoto kurzu je k dispozici, která používá ASP.NET MVC 5 a Visual Studio 2013. Je bezpečnější, mnohem jednodušší a postupujte podle ukázku...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 60374ddc6754f7e312ad08b420268308a9935bb4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 61a93c1430e9e39543c69b84901a50ceb710a5ae
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view"></a>Přidání zobrazení
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > > [!NOTE]
 > > Je k dispozici aktualizovaná verze tohoto kurzu [sem](../../getting-started/introduction/getting-started.md) používající ASP.NET MVC 5 a Visual Studio 2013. Je bezpečnější, postupujte podle mnohem jednodušší a ukazuje další funkce.
@@ -78,7 +78,7 @@ První, kterou chcete změnit &quot;vaše logo zde.&quot; nadpis v horní část
 
 ![_LayoutCshtml](adding-a-view/_static/image7.png)
 
-Šablony rozložení umožňují zadat rozložení kontejneru HTML vašeho webu na jednom místě a pak ho použít na více stránkách ve vaší lokalitě. Najít `@RenderBody()` řádku. `RenderBody`je zástupný symbol kde všechny na zobrazení konkrétní stránky, můžete vytvořit zobrazení, &quot;zabalené&quot; na stránce rozložení. Například, pokud vyberete o odkaz *Views\Home\About.cshtml* zobrazení vykresleno uvnitř `RenderBody` metoda.
+Šablony rozložení umožňují zadat rozložení kontejneru HTML vašeho webu na jednom místě a pak ho použít na více stránkách ve vaší lokalitě. Najít `@RenderBody()` řádku. `RenderBody` je zástupný symbol kde všechny na zobrazení konkrétní stránky, můžete vytvořit zobrazení, &quot;zabalené&quot; na stránce rozložení. Například, pokud vyberete o odkaz *Views\Home\About.cshtml* zobrazení vykresleno uvnitř `RenderBody` metoda.
 
 Změnit záhlaví název webu v šabloně rozložení z &quot;zde bude vaše logo&quot; k &quot;MVC film&quot;.
 
@@ -116,7 +116,7 @@ Před jsme přejděte k databázi a mluvit o modely, ale umožňuje nejprve mluv
 
 V současné době `Welcome` metodu akce v `HelloWorldController` třídy trvá `name` a `numTimes` parametr a potom výstupy hodnoty přímo do prohlížeče. Místo mít řadič vykreslení této odpovědi jako řetězec, umožňuje změnit řadič místo toho použít šablonu zobrazení. Zobrazit šablonu způsobí vygenerování dynamických odpovědí, která znamená, že potřebujete předat příslušné bits dat z řadiče zobrazení za účelem vygenerování odpovědi. To provedete tak, že řadiče put dynamických dat (parametry), která vyžaduje zobrazení šablony `ViewBag` objekt, který šablona zobrazení můžete poté přistoupit.
 
-Vraťte se do *HelloWorldController.cs* soubor a změňte `Welcome` metody přidat `Message` a `NumTimes` hodnotu `ViewBag` objektu. `ViewBag`je to dynamický objekt, což znamená, že všechno můžete vložit do ní; `ViewBag` objekt nemá žádné definované vlastnosti, dokud vložíte něco uvnitř ho. [Systému vazby modelu ASP.NET MVC](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) automaticky mapuje pojmenované parametry (`name` a `numTimes`) z řetězce dotazu v panelu Adresa parametry ve své metodě. Kompletní *HelloWorldController.cs* soubor vypadá takto:
+Vraťte se do *HelloWorldController.cs* soubor a změňte `Welcome` metody přidat `Message` a `NumTimes` hodnotu `ViewBag` objektu. `ViewBag` je to dynamický objekt, což znamená, že všechno můžete vložit do ní; `ViewBag` objekt nemá žádné definované vlastnosti, dokud vložíte něco uvnitř ho. [Systému vazby modelu ASP.NET MVC](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) automaticky mapuje pojmenované parametry (`name` a `numTimes`) z řetězce dotazu v panelu Adresa parametry ve své metodě. Kompletní *HelloWorldController.cs* soubor vypadá takto:
 
 [!code-csharp[Main](adding-a-view/samples/sample7.cs)]
 
@@ -148,6 +148,6 @@ V ukázce výše jsme použili `ViewBag` objekt, který chcete předat data z ř
 
 Také, který byl typ služby &quot;M&quot; modelu, ale není typ databáze. Podívejme se, co jsme jste se naučili a vytvořit databázi filmy.
 
->[!div class="step-by-step"]
-[Předchozí](adding-a-controller.md)
-[další](adding-a-model.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-a-controller.md)
+> [další](adding-a-model.md)

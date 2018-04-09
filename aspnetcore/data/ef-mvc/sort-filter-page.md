@@ -1,20 +1,20 @@
 ---
-title: "Jádro ASP.NET MVC s EF Core - řazení, filtru, stránkování - 3 10"
+title: Jádro ASP.NET MVC s EF Core - řazení, filtru, stránkování - 3 10
 author: tdykstra
-description: "V tomto kurzu přidáte třídění, filtrování a stránkování funkce na stránku pomocí ASP.NET Core a Entity Framework Core."
+description: V tomto kurzu přidáte třídění, filtrování a stránkování funkce na stránku pomocí ASP.NET Core a Entity Framework Core.
 ms.author: tdykstra
 ms.date: 03/15/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: d5a9ac83b30a8173f9229e512bf843d93c11baea
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: d4fe6386318210a751d1248c87299d414ab563a3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>Řazení, filtrování, stránkování a seskupení – základní EF s kurz k ASP.NET MVC jádra (3 10)
+# <a name="aspnet-core-mvc-with-ef-core---sort-filter-paging---3-of-10"></a>Jádro ASP.NET MVC s EF Core - řazení, filtru, stránkování - 3 10
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -247,6 +247,6 @@ Spusťte aplikaci a přejděte na stránku o. Počet studenty pro každé datum 
 
 V tomto kurzu jste se seznámili jak provádět, řazení, filtrování, stránkování a seskupení. V dalším kurzu budete zjistěte, jak zpracovávat změn datových modelů pomocí migrace.
 
->[!div class="step-by-step"]
-[Předchozí](crud.md)
-[další](migrations.md)  
+> [!div class="step-by-step"]
+> [Předchozí](crud.md)
+> [další](migrations.md)  

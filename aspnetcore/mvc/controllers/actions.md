@@ -1,7 +1,7 @@
 ---
-title: "Zpracování žádostí s řadiči v ASP.NET MVC jádra"
+title: Obslužná rutina požadavky řadiče v aplikaci ASP.NET MVC jádra
 author: ardalis
-description: 
+description: ''
 manager: wpickett
 ms.author: riande
 ms.date: 07/03/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/actions
-ms.openlocfilehash: 1223eacfb88e1e6adb6edaf5ea4ba2b653292850
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c2f37bc7999b4c4ccc985d25d2ef009954d8f3f0
+ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Zpracování žádostí s řadiči v ASP.NET MVC jádra
+# <a name="handle-requests-with-controllers-in-aspnet-core-mvc"></a>Obslužná rutina požadavky řadiče v aplikaci ASP.NET MVC jádra
 
 Podle [Steve Smith](https://ardalis.com/) a [Scott Addie](https://github.com/scottaddie)
 
@@ -76,7 +76,7 @@ Existují dva typy výsledků v rámci této kategorie: přesměrování a stavo
 
 Většina pomocné metody této kategorie patří `ContentType` vlastnosti, což umožňuje, abyste nastavili `Content-Type` hlavičku odpovědi k popisu text odpovědi.
 
-Existují dva typy výsledků v rámci této kategorie: [zobrazení](xref:mvc/views/overview) a [formátu odpovědi](xref:mvc/models/formatting).
+Existují dva typy výsledků v rámci této kategorie: [zobrazení](xref:mvc/views/overview) a [formátu odpovědi](xref:web-api/advanced/formatting).
 
 * **View**
 
@@ -90,7 +90,7 @@ Existují dva typy výsledků v rámci této kategorie: [zobrazení](xref:mvc/vi
 
 #### <a name="3-methods-resulting-in-a-non-empty-response-body-formatted-in-a-content-type-negotiated-with-the-client"></a>3. Metody, které jsou výsledkem text odpovědi neprázdné hodnoty ve formátu v vyjedná se klient pro typ obsahu.
 
-Tato kategorie se nazývá lépe **vyjednávání obsahu**. [Vyjednávání obsahu](xref:mvc/models/formatting#content-negotiation) platí vždy, když akce vrátí [ObjectResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.objectresult) typu nebo něco jiného než [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) implementace. Akce, která vrátí jinou hodnotu než`IActionResult` implementace (například `object`) také vrátí hodnotu formátu odpovědi.
+Tato kategorie se nazývá lépe **vyjednávání obsahu**. [Vyjednávání obsahu](xref:web-api/advanced/formatting#content-negotiation) platí vždy, když akce vrátí [ObjectResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.objectresult) typu nebo něco jiného než [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) implementace. Akce, která vrátí jinou hodnotu než`IActionResult` implementace (například `object`) také vrátí hodnotu formátu odpovědi.
 
 Některé metody helper tohoto typu zahrnují `BadRequest`, `CreatedAtRoute`, a `Ok`. Příklady těchto metod `return BadRequest(modelState);`, `return CreatedAtRoute("routename", values, newobject);`, a `return Ok(value);`, v uvedeném pořadí. Všimněte si, že `BadRequest` a `Ok` provedení vyjednávání obsahu pouze v případě, že je předaná hodnota; bez předávány hodnotu, místo toho slouží jako typy výsledků stavový kód HTTP. `CreatedAtRoute` Metody na druhé straně vždy provede vyjednávání obsahu od jeho přetížení všechny vyžadují předat hodnotu.
 

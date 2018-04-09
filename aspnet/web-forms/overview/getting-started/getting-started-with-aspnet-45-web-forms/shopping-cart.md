@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
-title: "Nákupní košík | Microsoft Docs"
+title: Nákupní košík | Microsoft Docs
 author: Erikre
-description: "Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme..."
+description: Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: 9fe6f28685d6a423b03f9c7abe753283b89344e1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a8e96da7737cdf649575711a464c4f7726cb6ded
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="shopping-cart"></a>Nákupní košík
 ====================
@@ -66,7 +66,7 @@ Dříve v této série kurz definované schéma pro data kategorie a produktu vy
     ![Nákupní košík - přidat novou položku – dialogové okno](shopping-cart/_static/image2.png)
 3. Název tato nová třída *CartItem.cs*.
 4. Klikněte na tlačítko **přidat**.  
- Nový soubor třídy se zobrazí v editoru.
+   Nový soubor třídy se zobrazí v editoru.
 5. Ve výchozím kódu nahraďte následujícím kódem:   
 
     [!code-csharp[Main](shopping-cart/samples/sample1.cs)]
@@ -136,7 +136,7 @@ Jak už bylo zmíněno dříve, vytvoříte zpracování stránky s názvem *Add
 #### <a name="to-create-the-add-to-cart-functionality"></a>Chcete-li vytvořit přidat do košíku funkce:
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **Northwind**projektu, klikněte na tlačítko **přidat**  - &gt; **novou položku**.  
- **Přidat novou položku** se zobrazí dialogové okno.
+   **Přidat novou položku** se zobrazí dialogové okno.
 2. Přidat standardní novou stránku (webového formuláře) pro aplikaci s názvem *AddToCart.aspx*. 
 
     ![Nákupní košík – přidání webového formuláře](shopping-cart/_static/image4.png)
@@ -154,7 +154,7 @@ Jak už jsme zmínili, uživatel `ID` slouží k identifikaci produkty, které j
 *ShoppingCart.aspx* stránky se zobrazí produkty, které uživatel přidal do jejich nákupní košík. Také zajistí možnost přidat, odebrat a aktualizaci položky v nákupní košík.
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Northwind**, klikněte na tlačítko **přidat**  - &gt; **novou položku**.  
- **Přidat novou položku** se zobrazí dialogové okno.
+   **Přidat novou položku** se zobrazí dialogové okno.
 2. Přidat novou stránku (webového formuláře) zahrnující hlavní stránky tak, že vyberete **webového formuláře pomocí stránky předlohy**. Zadejte název nové stránky *ShoppingCart.aspx*.
 3. Vyberte **Site.Master** připojit stránky předlohy pro nově vytvořený *.aspx* stránky.
 4. V *ShoppingCart.aspx* stránky, nahraďte existující kód následující kód:   
@@ -323,6 +323,6 @@ Nákupní košík podporuje přidávání, odstraňování a aktualizaci položk
 
 [Přehled stavu relace ASP.NET](https://msdn.microsoft.com/library/ms178581.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](display_data_items_and_details.md)
-[další](checkout-and-payment-with-paypal.md)
+> [!div class="step-by-step"]
+> [Předchozí](display_data_items_and_details.md)
+> [další](checkout-and-payment-with-paypal.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
-title: "Vytvoření týmového projektu v sadě TFS | Microsoft Docs"
+title: Vytvoření týmového projektu v sadě TFS | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje postup vytvoření nového týmového projektu v Team Foundation Server (TFS) 2010."
+description: Toto téma popisuje postup vytvoření nového týmového projektu v Team Foundation Server (TFS) 2010.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: ef8cddb7733c1f8cacd24c5cf341a42741d25a95
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 79c069a601c0eafd84ae142241895428052acd29
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-team-project-in-tfs"></a>Vytvoření týmového projektu v sadě TFS
 ====================
@@ -27,7 +27,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma popisuje postup vytvoření nového týmového projektu v Team Foundation Server (TFS) 2010.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
 ## <a name="task-overview"></a>Přehled úloh
 
@@ -107,11 +107,11 @@ Dále musíte poskytnout oprávnění uživatele k vytvoření nových lokalit t
 
     ![](creating-a-team-project-in-tfs/_static/image9.png)
 
-    > [!NOTE]
-    > Může se zobrazit **HTTP 404 nebyl nalezen** chyba z důvodu dvojité kódování chyb HTTP. Pokud k tomu dojde, nahraďte adresu URL s tímto:   
-    > [*URL kolekce webů*] /\_layouts/permsetup.aspx  
-    > Příklad:  
-    > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
+   > [!NOTE]
+   > Může se zobrazit <strong>HTTP 404 nebyl nalezen</strong> chyba z důvodu dvojité kódování chyb HTTP. Pokud k tomu dojde, nahraďte adresu URL s tímto:   
+   > [<em>URL kolekce webů</em>] /\_layouts/permsetup.aspx  
+   > Příklad:  
+   > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
 8. Na **nastavit skupiny pro tento web** přidejte uživatele, který vytvoří týmové projekty k **vlastníky** skupiny a pak klikněte na tlačítko **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
@@ -202,6 +202,6 @@ Dalším tématu [přidávání obsahu do správy zdrojového kódu](adding-cont
 
 Širší pokyny týkající se vytváření týmových projektů sady TFS najdete v tématu [vytvoření týmového projektu](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx). Další informace o povolení uživatelům vytvářet nové týmové projekty v rámci kolekce týmového projektu, najdete v části [nastavit oprávnění správce pro kolekce týmových projektů](https://msdn.microsoft.com/library/dd547204.aspx). Další informace o přidávání uživatelů do týmových projektů najdete v tématu [přidání uživatelů do týmových projektů](https://msdn.microsoft.com/library/bb558971.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](configuring-team-foundation-server-for-web-deployment.md)
-[další](adding-content-to-source-control.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-team-foundation-server-for-web-deployment.md)
+> [další](adding-content-to-source-control.md)

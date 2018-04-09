@@ -1,7 +1,7 @@
 ---
-title: "Přidat stránku ASP.NET Razor základní ověřování"
+title: Přidat stránku ASP.NET Razor základní ověřování
 author: rick-anderson
-description: "Zjistit, jak přidat ověřování do stránky Razor v ASP.NET Core."
+description: Zjistit, jak přidat ověřování do stránky Razor v ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: b07aa55d37b2d8ae65ec60f52142a8491dc46b59
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 271a5ce517ae550845d96e3969b39b1eda6ae51b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>Přidat stránku ASP.NET Razor základní ověřování
 
@@ -143,8 +143,8 @@ V tématu [publikování webové aplikace ASP.NET Core Azure App Service pomocí
 * [Práce s formuláři](xref:mvc/views/working-with-forms)
 * [Globalizace a lokalizace](xref:fundamentals/localization)
 * [Úvod do pomocné rutiny značky](xref:mvc/views/tag-helpers/intro)
-* [Vytváření Pomocníci značky](xref:mvc/views/tag-helpers/authoring)
+* [Autor značky pomocné rutiny](xref:mvc/views/tag-helpers/authoring)
 
->[!div class="step-by-step"]
-[Předchozí: Přidání nové pole](xref:tutorials/razor-pages/new-field)
-[Další: nahrávání souborů](xref:tutorials/razor-pages/uploading-files)
+> [!div class="step-by-step"]
+> [Předchozí: Přidání nové pole](xref:tutorials/razor-pages/new-field)
+> [Další: nahrávání souborů](xref:tutorials/razor-pages/uploading-files)

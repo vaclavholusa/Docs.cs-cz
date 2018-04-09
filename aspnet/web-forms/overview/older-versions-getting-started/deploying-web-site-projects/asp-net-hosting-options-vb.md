@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
-title: "ASP.NET (VB) možnosti hostování | Microsoft Docs"
+title: ASP.NET (VB) možnosti hostování | Microsoft Docs
 author: rick-anderson
-description: "Webové aplikace ASP.NET obvykle jsou navržené tak, vytvořili a testovány v místní vývojové prostředí a je nutné nasadit až produkčního prostředí o..."
+description: Webové aplikace ASP.NET obvykle jsou navržené tak, vytvořili a testovány v místní vývojové prostředí a je nutné nasadit až produkčního prostředí o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 54bac82a96a35d871d764849856c8e31f6570666
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0e99423ec803927d0f621c88f3d814578fec11f5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-hosting-options-vb"></a>Hostování prostředí ASP.NET (VB) možnosti
 ====================
@@ -61,7 +61,7 @@ Informace o konfiguraci pro webovou aplikaci se obvykle nachází v `Web.config`
 Kromě změny konfigurace webové aplikace krok 1 také může mít za následek konfigurace pro webový server a databáze. Například pokud stránku ASP.NET vytvoří nebo odstraní soubory z adresáře na webovém serveru pak webového serveru musí být nakonfigurována tak, aby tyto úpravy systému souborů. Podobně může být nastavení oprávnění nebo ověřování, které je potřeba provést k databázi.
 
 
-Krok 2 zahrnuje synchronizaci sadu nezbytné stránek ASP.NET a podpůrné soubory mezi vývoj a produkční prostředí. Konkrétní sada ASP. NET související soubory, které musí být synchronizovány mezi těmito dvěma prostředími závisí na typu projektu jste vytvořili v sadě Visual Studio a je diskuse v dalším kurzu  *[určení co soubory musí být nasazeny](determining-what-files-need-to-be-deployed-vb.md)*. Třetí a čtvrtý kurzy -  *[nasazení vaše lokality pomocí protokolu FTP](deploying-your-site-using-an-ftp-client-vb.md)*a  *[nasazení vaše lokality pomocí sady Visual Studio](deploying-your-site-using-visual-studio-vb.md)*  -zkontrolujte různé nástroje a techniky pro synchronizaci těchto souborů.
+Krok 2 zahrnuje synchronizaci sadu nezbytné stránek ASP.NET a podpůrné soubory mezi vývoj a produkční prostředí. Konkrétní sada ASP. NET související soubory, které musí být synchronizovány mezi těmito dvěma prostředími závisí na typu projektu jste vytvořili v sadě Visual Studio a je diskuse v dalším kurzu  <em>[určení co soubory musí být nasazeny](determining-what-files-need-to-be-deployed-vb.md)</em>. Třetí a čtvrtý kurzy -  <em>[nasazení vaše lokality pomocí protokolu FTP](deploying-your-site-using-an-ftp-client-vb.md)</em>a <em>[nasazení vaše lokality pomocí sady Visual Studio](deploying-your-site-using-visual-studio-vb.md)</em> -zkontrolujte různé nástroje a techniky pro synchronizaci těchto souborů.
 
 Při vytváření datové aplikace, které jsou obvykle dvě databáze používá: jeden pro vývoj a druhý na produkční. Během vývoje schéma databáze vývoj může upravit tak, aby zahrnují nové tabulky, sloupce, uložených procedur a aktivačních událostí, nebo může upravit tak, aby neodeberete nebo nepřejmenujete stávající databázové objekty. Mezi ve chvíli, tyto změny jsou vytvářeny a čas, kdy aplikace je nasazená do produkčního prostředí vývoj a provozní databáze nejsou synchronizovány. Tento asynchrony je potřeba opravit během procesu nasazení. Tyto problémy prozkoumá v budoucnu kurzy.
 
@@ -95,6 +95,6 @@ Radostí programování!
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Předchozí](users-and-roles-on-the-production-website-cs.md)
-[další](determining-what-files-need-to-be-deployed-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](users-and-roles-on-the-production-website-cs.md)
+> [další](determining-what-files-need-to-be-deployed-vb.md)

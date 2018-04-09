@@ -1,7 +1,7 @@
 ---
-title: "Bezpečné úložiště tajné klíče aplikace během vývoje v ASP.NET Core"
+title: Bezpečné úložiště tajné klíče aplikace v vývoj v ASP.NET Core
 author: rick-anderson
-description: "Ukazuje, jak bezpečně uložit tajné klíče během vývoje"
+description: Ukazuje, jak bezpečně uložit tajné klíče během vývoje
 manager: wpickett
 ms.author: riande
 ms.date: 09/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: a23c9dc9ee1e20c0e0551a372e1cd706bb82070e
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 166111696a9c4244ede44fca8878dd3725bb3099
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Bezpečné úložiště tajné klíče aplikace během vývoje v ASP.NET Core
+# <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Bezpečné úložiště tajné klíče aplikace v vývoj v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [ADAM Roth](https://github.com/danroth27), a [Scott Addie](https://scottaddie.com) 
 
@@ -34,15 +34,14 @@ Například pokud vytvoříte novou webovou aplikaci ASP.NET Core s jednotlivýc
 
 ## <a name="secret-manager"></a>Tajný klíč správce
 
-Nástroj tajný klíč správce ukládá citlivá data pro vývojové práci mimo váš projekt stromu. Nástroj Správce tajný klíč je nástroj projektu, který slouží k uložení tajné klíče pro [.NET Core](https://www.microsoft.com/net/core) projektu během vývoje. Pomocí nástroje Správce tajný klíč můžete přidružit konkrétní projekt tajné klíče aplikace a sdílet je ve více projektech.
+Nástroj tajný klíč správce ukládá citlivá data pro vývojové práci mimo váš projekt stromu. Nástroj Správce tajný klíč je nástroj projektu, který slouží k uložení tajné klíče pro projekt .NET Core během vývoje. Pomocí nástroje Správce tajný klíč můžete přidružit konkrétní projekt tajné klíče aplikace a sdílet je ve více projektech.
 
 >[!WARNING]
 > Nástroj tajný klíč správce nemá zašifrování těchto tajných klíčů uložených a nesmí být považované za důvěryhodné úložiště. Je jenom pro účely vývoje. Klíče a hodnoty jsou uložené v konfiguračním souboru JSON v adresáři profilu uživatele.
 
 ## <a name="installing-the-secret-manager-tool"></a>Instalace nástroje Správce tajný klíč
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-
+#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 Klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte **upravit \<název_projektu\>.csproj** v místní nabídce. Přidejte zvýrazněný řádek na *.csproj* souboru a uložte obnovit přidruženého balíčku NuGet:
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -59,8 +58,7 @@ Ukládání upravenou *.csproj* také soubor otevře `secrets.json` soubor v tex
 }
 ```
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
-
+#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 Přidat `Microsoft.Extensions.SecretManager.Tools` k *.csproj* souboru a spusťte [dotnet obnovení](/dotnet/core/tools/dotnet-restore). Stejný postup můžete použít k instalaci nástroje Správce tajný klíč pomocí příkazového řádku.
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -89,15 +87,14 @@ dotnet user-secrets set MySecret ValueOfMySecret
 ```
 
 Můžete spustit nástroj Správce tajný klíč z dalších adresářů, ale je nutné použít `--project` možnost předat v cestě k *.csproj* souboru:
- 
+
 ```console
 dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\webapp1
 ```
 
 Můžete také nástroj Správce tajný klíč do seznamu, odebrat a vymazat tajné klíče aplikace.
 
------
-
+* * *
 ## <a name="accessing-user-secrets-via-configuration"></a>Přístup k tajné klíče uživatele prostřednictvím konfigurace
 
 Tajné klíče tajný klíč správce přistupujete prostřednictvím systému konfigurace. Přidat `Microsoft.Extensions.Configuration.UserSecrets` balíček a spusťte [dotnet obnovení](/dotnet/core/tools/dotnet-restore).

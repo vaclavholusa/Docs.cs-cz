@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
-title: "Ovládací prvky zobrazení binární Data v dat webu (C#) | Microsoft Docs"
+title: Ovládací prvky zobrazení binární Data v dat webu (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu podíváme na možnosti pro binární data k dispozici na webové stránce, včetně zobrazení souboru bitové kopie a poskytování odkaz 'Stažení' f..."
+description: V tomto kurzu podíváme na možnosti pro binární data k dispozici na webové stránce, včetně zobrazení souboru bitové kopie a poskytování odkaz 'Stažení' f...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d66079f784792a2514eefabf57f70826aab5dcf1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c5b56fc45ea8fb5aee934530fc62e23b9d364242
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-c"></a>Zobrazení binární Data v ovládací prvky webového dat (C#)
 ====================
@@ -89,7 +89,7 @@ Místo zobrazení textu `BrochurePath` sloupce, chceme vytvořit odkaz – pří
 
 ![Přidání HyperLinkField pro BrochurePath](displaying-binary-data-in-the-data-web-controls-cs/_static/image6.gif)
 
-**Obrázek 6**: přidejte HyperLinkField pro`BrochurePath`
+**Obrázek 6**: přidejte HyperLinkField pro `BrochurePath`
 
 
 Sloupec odkazů se přidá do GridView, jak je vidět na obrázku 7. Kliknutím na odkaz zobrazit – příručka se přímo v prohlížeči zobrazit PDF nebo vyzvat uživatele k stažení souboru, v závislosti na tom, jestli je nainstalovaná čtečka PDF a prohlížeč s nastavení.
@@ -226,12 +226,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Teresy Murphy a Dave Gardner. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](uploading-files-cs.md)
-[další](including-a-file-upload-option-when-adding-a-new-record-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](uploading-files-cs.md)
+> [další](including-a-file-upload-option-when-adding-a-new-record-cs.md)

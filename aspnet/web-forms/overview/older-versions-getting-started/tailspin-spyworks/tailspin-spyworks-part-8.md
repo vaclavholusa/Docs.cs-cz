@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
-title: "Část 8: Poslední stránky, výjimek a uzavření | Microsoft Docs"
+title: 'Část 8: Poslední stránky, výjimek a uzavření | Microsoft Docs'
 author: JoeStagner
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 8 přidá kontaktní stránky, o stránku a výjimky..."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 8 přidá kontaktní stránky, o stránku a výjimky...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: fce1a20f9d1093b6c60542d8a786ddf54fdc922c
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: f82294aab0616012393cf3e10f932f6d1ad0cdb6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>Část 8: Poslední stránky, výjimek a uzavření
 ====================
@@ -27,7 +27,7 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 > Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 8 přidá kontaktní stránky, o stránku a výjimek. Toto je uzavření řady.
 
 
-## <a id="_Toc260221680"></a>Obraťte se na stránce (odesílající e-mailu z prostředí ASP.NET)
+## <a id="_Toc260221680"></a>  Obraťte se na stránce (odesílající e-mailu z prostředí ASP.NET)
 
 Vytvořit novou stránku s názvem ContactUs.aspx
 
@@ -43,11 +43,11 @@ Tento kód vyžaduje, aby souboru web.config obsahuje položku v konfiguračním
 
 [!code-xml[Main](tailspin-spyworks-part-8/samples/sample2.xml)]
 
-## <a id="_Toc260221681"></a>O stránku
+## <a id="_Toc260221681"></a>  O stránku
 
 Vytvořte stránku s názvem AboutUs.aspx a přidejte libovolný obsah se vám líbí.
 
-## <a id="_Toc260221682"></a>Globální obslužné rutiny výjimek
+## <a id="_Toc260221682"></a>  Globální obslužné rutiny výjimek
 
 Nakonec v celé aplikaci jsme mít vyvolání výjimky a existují nepředvídatelnými to cold také příčina neošetřené výjimky v našem webové aplikace.
 
@@ -75,11 +75,11 @@ Nyní na stránce\_načíst extrakce obslužné rutiny událostí chybové zprá
 
 [!code-csharp[Main](tailspin-spyworks-part-8/samples/sample6.cs)]
 
-## <a id="_Toc260221683"></a>Uzavření
+## <a id="_Toc260221683"></a>  Uzavření
 
 Jste viděli, že webových formulářů ASP.NET umožňuje snadno vytvořit sofistikované web s přístupem k databázi, členství, AJAX, atd. poměrně rychle.
 
 Zpravidla v tomto kurzu jste obdrželi nástroje, které potřebujete, abyste mohli začít vytváření vlastních webových formulářů ASP.NET aplikací!
 
->[!div class="step-by-step"]
-[Předchozí](tailspin-spyworks-part-7.md)
+> [!div class="step-by-step"]
+> [Předchozí](tailspin-spyworks-part-7.md)

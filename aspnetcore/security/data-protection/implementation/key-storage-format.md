@@ -1,7 +1,7 @@
 ---
-title: "Formát úložiště klíčů"
+title: Formát úložiště klíčů v základní technologie ASP.NET
 author: tdykstra
-description: "Tento dokument vysvětluje podrobnosti implementace formát úložiště klíčů ochrany dat ASP.NET Core."
+description: Další podrobnosti implementace formátu úložiště klíčů ochrany dat ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-storage-format
-ms.openlocfilehash: 66783eb7264a4551eafdd9d5c7d99b014701a6de
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: abe23da3de70107aa4f4d84f4da27aadfe7b2061
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-storage-format"></a>Formát úložiště klíčů
+# <a name="key-storage-format-in-aspnet-core"></a>Formát úložiště klíčů v základní technologie ASP.NET
 
 <a name="data-protection-implementation-key-storage-format"></a>
 
@@ -66,7 +66,7 @@ Konkrétní formát \<popisovač > element závisí na implementaci ověřené m
 
 ## <a name="the-encryptedsecret-element"></a>\<EncryptedSecret > elementu
 
-<encryptedSecret> Element, který obsahuje šifrované podobě tajné klíče materiálu mohou být přítomné Pokud [je povolené šifrování tajných klíčů v klidovém stavu](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest). Atribut decryptorType bude sestavení kvalifikovaný název typu, který implementuje IXmlDecryptor. Tento typ je zodpovědná za čtení vnitřní <encryptedKey> elementu a dešifrování ji chcete obnovit původní ve formátu prostého textu.
+<encryptedSecret> Element, který obsahuje šifrované podobě tajné klíče materiálu mohou být přítomné Pokud [je povolené šifrování tajných klíčů v klidovém stavu](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest). Atribut decryptorType bude sestavení kvalifikovaný název typu, který implementuje IXmlDecryptor. Tento typ je zodpovědná za čtení vnitřní <encryptedKey> elementu a dešifrování ji chcete obnovit původní ve formátu prostého textu.
 
 Stejně jako u \<popisovač >, konkrétní formát <encryptedSecret> element závisí na mechanismu šifrování na rest používán. V předchozím příkladu je hlavní klíč šifrované pomocí rozhraní Windows DPAPI na komentář.
 

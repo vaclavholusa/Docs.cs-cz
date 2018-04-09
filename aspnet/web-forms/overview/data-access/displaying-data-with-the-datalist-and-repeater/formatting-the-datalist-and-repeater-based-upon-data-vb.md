@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
-title: "Formátování DataList a opakovače na základě údajů o (VB) | Microsoft Docs"
+title: Formátování DataList a opakovače na základě údajů o (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme projdete kroky příklady, jak jsme formátování vzhledu DataList ovládacích prvků a opakovače, buď pomocí formátování funkce s..."
+description: V tomto kurzu jsme projdete kroky příklady, jak jsme formátování vzhledu DataList ovládacích prvků a opakovače, buď pomocí formátování funkce s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 460fc36062f3338ffd178aceda2b3b224752a089
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 174a68cf0785b33c85139d57ede9717ce7e135e0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a>Formátování DataList a opakovače na základě údajů o (VB)
 ====================
@@ -42,19 +42,19 @@ Obě tyto formátování techniky jsou k dispozici s ovládacími prvky DataList
 
 Data je vázána k DataList, buď z prvku zdroje dat, nebo prostřednictvím prostřednictvím kódu programu přiřazování dat k ovládacímu prvku s `DataSource` vlastnost a volání jeho `DataBind()` metoda DataList s `DataBinding` aktivuje událost, výčet, zdroj dat a každý záznam dat je vázána DataList. Pro každý záznam ve zdroji dat prvku DataList vytvoří [ `DataListItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.aspx) objektu, který je pak vázána na aktuální záznam. Během tohoto procesu DataList vyvolává dvě události:
 
-- **`ItemCreated`**Aktivuje se po `DataListItem` byla vytvořena
-- **`ItemDataBound`**Aktivuje se po záznam na aktuální záznam byla svázána se`DataListItem`
+- **`ItemCreated`** Aktivuje se po `DataListItem` byla vytvořena
+- **`ItemDataBound`** Aktivuje se po záznam na aktuální záznam byla svázána se `DataListItem`
 
 Následující kroky popisují proces vytváření vazby dat pro ovládací prvek DataList.
 
 1. DataList s [ `DataBinding` událostí](https://msdn.microsoft.com/library/system.web.ui.control.databinding.aspx) aktivuje
 2. Data je vázána DataList  
   
- Pro každý záznam ve zdroji dat. 
+   Pro každý záznam ve zdroji dat. 
 
     1. Vytvoření `DataListItem` objektu
     2. Ještě efektivněji [ `ItemCreated` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
-    3. Záznam, který chcete vytvořit vazbu`DataListItem`
+    3. Záznam, který chcete vytvořit vazbu `DataListItem`
     4. Ještě efektivněji [ `ItemDataBound` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
     5. Přidat `DataListItem` k `Items` kolekce
 
@@ -172,7 +172,7 @@ S formátování funkce přidané do Naše třída kódu stránky s ASP.NET, zb�
 
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-vb/samples/sample5.aspx)]
 
-V DataList s `ItemTemplate` `ProductNameLabel` ovládací prvek popisek webu aktuálně zobrazuje název produktu s přiřazením jeho `Text` vlastnost výsledek z `<%# Eval("ProductName") %>`. Aby bylo možné používat, se zobrazí název a text [nákup UKONČEN], v případě potřeby, aktualizujte deklarativní syntaxi tak, aby místo toho přiřadí `Text` hodnotu vlastnosti o `DisplayProductNameAndDiscontinuedStatus` metoda. Pokud to uděláte, jsme musí předat název produktu s a – starší formáty hodnot pomocí `Eval("columnName")` syntaxe. `Eval`Vrátí hodnotu typu `Object`, ale `DisplayProductNameAndDiscontinuedStatus` metoda očekává vstupní parametry typu `String` a `Boolean`; proto jsme hodnot vrácených přetypovat `Eval` metodu pro typy očekávané vstupní parametr, například takto:
+V DataList s `ItemTemplate` `ProductNameLabel` ovládací prvek popisek webu aktuálně zobrazuje název produktu s přiřazením jeho `Text` vlastnost výsledek z `<%# Eval("ProductName") %>`. Aby bylo možné používat, se zobrazí název a text [nákup UKONČEN], v případě potřeby, aktualizujte deklarativní syntaxi tak, aby místo toho přiřadí `Text` hodnotu vlastnosti o `DisplayProductNameAndDiscontinuedStatus` metoda. Pokud to uděláte, jsme musí předat název produktu s a – starší formáty hodnot pomocí `Eval("columnName")` syntaxe. `Eval` Vrátí hodnotu typu `Object`, ale `DisplayProductNameAndDiscontinuedStatus` metoda očekává vstupní parametry typu `String` a `Boolean`; proto jsme hodnot vrácených přetypovat `Eval` metodu pro typy očekávané vstupní parametr, například takto:
 
 
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-vb/samples/sample6.aspx)]
@@ -200,12 +200,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Yaakov Ellis Randy Schmidt a Liz Shulok. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](displaying-data-with-the-datalist-and-repeater-controls-vb.md)
-[další](showing-multiple-records-per-row-with-the-datalist-control-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](displaying-data-with-the-datalist-and-repeater-controls-vb.md)
+> [další](showing-multiple-records-per-row-with-the-datalist-control-vb.md)

@@ -1,7 +1,7 @@
 ---
-title: "Přidání nové pole do stránky Razor v ASP.NET Core"
+title: Přidat nové pole na stránku Razor v ASP.NET Core
 author: rick-anderson
-description: "Ukazuje, jak přidat nové pole na stránku Razor základní Entity Framework"
+description: Ukazuje, jak přidat nové pole na stránku Razor základní Entity Framework
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,13 +9,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: c9494fe4b07590f76095d58b37290a9dc9e6e009
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 2652aea2bc587074da5101e3de2bdf55d032214a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="adding-a-new-field-to-a-razor-page-in-aspnet-core"></a>Přidání nové pole do stránky Razor v ASP.NET Core
+# <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>Přidat nové pole na stránku Razor v ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -102,6 +102,6 @@ Název "Hodnocení" libovolný a slouží k názvu souboru migrace. Je vhodné p
 
 Spusťte aplikaci a ověřte, můžete vytvořit, upravit nebo zobrazení filmy s `Rating` pole. Pokud není nasadí databázi, zastavte službu IIS Express a pak spusťte aplikaci.
 
->[!div class="step-by-step"]
-[Předchozí: Přidání vyhledávací](xref:tutorials/razor-pages/search)
-[Další: Přidání ověření](xref:tutorials/razor-pages/validation)
+> [!div class="step-by-step"]
+> [Předchozí: Přidání vyhledávací](xref:tutorials/razor-pages/search)
+> [Další: Přidání ověření](xref:tutorials/razor-pages/validation)

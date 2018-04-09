@@ -1,8 +1,8 @@
 ---
 uid: web-pages/readme/beta3
-title: "Webový matice a ASP.NET Web Pages (Razor) Beta 3 verze Readme | Microsoft Docs"
+title: Webový matice a ASP.NET Web Pages (Razor) Beta 3 verze Readme | Microsoft Docs
 author: rick-anderson
-description: "Web Matrix a rozhraní ASP.NET Web Pages (Razor) Beta 3 verze Readme"
+description: Web Matrix a rozhraní ASP.NET Web Pages (Razor) Beta 3 verze Readme
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/10/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: def2f4b3e54c8de539e10c1b526a1dababeca8fb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5ef7a6f44758cf94fc19d6fbab3cc4b7bce8e8e5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix a rozhraní ASP.NET Web Pages (Razor) Beta 3 verze Readme
 ====================
@@ -283,9 +283,9 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy ve verzi
 > Pokud odinstalujete rozhraní .NET Framework verze 4 a znovu ji nainstalovat, technologie ASP.NET Web Pages se syntaxí Razor je zakázané. Stránky s *.cshtml* rozšíření se nespustí správně. Rozhraní ASP.NET Web Pages zaregistruje sestavení v kořenu počítač *Web.config* soubor odebrán souboru a odebrání rozhraní .NET Framework. Opětovné instalace rozhraní .NET Framework nainstaluje novou verzi konfiguračního souboru, ale nepřidá odkaz na sestavení pro ASP.NET Web Pages.
 > 
 > **Alternativní řešení** po opětovné instalaci rozhraní .NET Framework, přeinstalujte rozhraní ASP.NET Web Pages se syntaxí Razor. Tím se přidá následující elementu, který chcete *Web.config* soubor v kořenu počítač, který je obvykle v následujícím umístění:  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config (32-bit)`  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config (64-bit)`
 > 
 > [!code-xml[Main](beta3/samples/sample6.xml)]
@@ -302,9 +302,9 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy ve verzi
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>Problém: Adresy URL bez přípony nenašli.cshtml/.vbhtml soubory na službě IIS 7 nebo IIS 7.5
 
 > Na službě IIS 7 nebo IIS 7.5, nejsou schopna najít stránky, které mají požadavky s adresou URL takto *.cshtml* nebo *.vbhtml* rozšíření:  
->   
+> 
 > `http://www.example.com/ExampleSite/ExampleFile`  
->   
+> 
 > Tento problém nastane, protože přepisování adres URL není povoleno ve výchozím nastavení pro službu IIS 7 nebo IIS 7.5. Nejpravděpodobnějším scénář je, že se nezobrazí problém při testování místně pomocí služby IIS Express, ale dojde při nasazení webu k hostování webu.
 > 
 > **Alternativní řešení**
@@ -344,7 +344,7 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy ve verzi
 >     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **to** *\Bin\x86*
 >     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to** *\Bin\amd64*
 > 2. V kořenové složce webové stránky, vytvořit nebo otevřít *Web.config* souboru. (Ve službě WebMatrix Beta 3, je k dispozici, pokud kliknete na tento typ souboru **všechny** v **vyberte typ souboru** dialogové okno.)
-> 3. Přidejte následující prvek jako podřízenou  **&lt;konfigurace&gt;**  – element (mimo  **&lt;system.web&gt;**  element):
+> 3. Přidejte následující prvek jako podřízenou **&lt;konfigurace&gt;** – element (mimo **&lt;system.web&gt;** element):
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]
@@ -366,21 +366,21 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy ve verzi
 > 
 > **Alternativní řešení**  
 > Použití `Encryption Mode` vlastnost `SqlCeConnection` třída k zašifrování souborů databáze systému SQL Server Compact 4.0. Následující příklad ukazuje, jak vytvořit k šifrované SQL Server Compact 4.0 databáze pomocí `Encryption Mode` vlastnost:
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample11.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample12.vb)]
 > 
 > Chcete-li změnit režim šifrování existující databázi SQL Server Compact 4.0, postupujte takto:
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample13.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample14.vb)]
 > 
 > K šifrování nezašifrované databázi systému SQL Server Compact 4.0, postupujte takto:
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample15.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample16.vb)]
 
 
@@ -537,7 +537,7 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy ve verzi
 > Explicitně nastavit na datový typ pro parametry, jako `SqlDbType` nebo `DbType`. Je to nezbytné v případě datové typy objektů BLOB (`image` a `ntext`). Použijte kód takto:
 > 
 > [!code-sql[Main](beta3/samples/sample20.sql)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample21.vb)]
 
 

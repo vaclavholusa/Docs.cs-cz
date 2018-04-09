@@ -1,7 +1,7 @@
 ---
-title: "Přehled ASP.NET Core MVC"
+title: Přehled ASP.NET Core MVC
 author: ardalis
-description: "Zjistěte, jak je bohaté rozhraní pro vytváření webových aplikací ASP.NET MVC jádra a rozhraní API pomocí Model-View-Controller návrh vzor."
+description: Zjistěte, jak je bohaté rozhraní pro vytváření webových aplikací ASP.NET MVC jádra a rozhraní API pomocí Model-View-Controller návrh vzor.
 manager: wpickett
 ms.author: riande
 ms.date: 01/08/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/overview
-ms.openlocfilehash: 16fd1b5e71cde4364f02640f504d42218ed680df
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1cf48499d3bc0ba63e2f0667740668fad0b13c28
+ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Přehled ASP.NET Core MVC
 
@@ -185,13 +185,13 @@ Můžete také použít aplikaci [vkládání závislostí v zobrazení souborů
 
 Kromě toho, představuje vynikající platformu pro tvorbu webů, má technologie ASP.NET MVC základní podpory pro vytváření webových rozhraní API. Můžete vytvářet služby, které využity širokou škálou klientů včetně prohlížečů a mobilních zařízení.
 
-Rozhraní framework zahrnuje podporu pro vyjednávání obsahu HTTP s integrovanou podporu pro [formátování dat](models/formatting.md) jako XML nebo JSON. Zápis [vlastní formátování](advanced/custom-formatters.md) přidání podpory pro vlastní formáty.
+Rozhraní framework zahrnuje podporu pro vyjednávání obsahu HTTP s integrovanou podporu pro [formátování dat](xref:web-api/advanced/formatting) jako XML nebo JSON. Zápis [vlastní formátování](xref:web-api/advanced/custom-formatters) přidání podpory pro vlastní formáty.
 
 Povolení podpory pro hypermédií pomocí generování odkazů. Snadno povolit podporu pro [(CORS) pro sdílení prostředků různého původu](http://www.w3.org/TR/cors/) tak, aby webová rozhraní API můžete sdílet mezi několika webových aplikací.
 
 ### <a name="testability"></a>Možnosti testování
 
-Použití rozhraní framework rozhraní a vkládání závislostí proveďte ho vhodným testování částí a funkcí (např. TestHost a InMemory zprostředkovatele Entity Framework), které zahrnuje rozhraní [testování integrace](../testing/integration-testing.md) rychlé a snadno také. Další informace o [testování řadiče logiku](controllers/testing.md).
+Použití rozhraní framework rozhraní a vkládání závislostí proveďte ho vhodným testování částí a funkcí (např. TestHost a InMemory zprostředkovatele Entity Framework), které zahrnuje rozhraní [integrace testy](../testing/integration-testing.md) rychlý a snadno také. Další informace o [testování řadiče logiku](controllers/testing.md).
 
 ### <a name="razor-view-engine"></a>Zobrazovací modul Razor
 

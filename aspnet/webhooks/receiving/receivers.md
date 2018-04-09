@@ -1,20 +1,20 @@
 ---
 uid: webhooks/receiving/receivers
-title: "Příjemci Webhooky ASP.NET | Microsoft Docs"
+title: Příjemci Webhooky ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Příjemci Webhooky ASP.NET"
+description: Příjemci Webhooky ASP.NET
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: 6cdea089-15b2-4732-8c68-921ca561a8f1
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
-ms.openlocfilehash: 8c42db4056dd7a6ef77c7bcbc0eca3b5bf7c87e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a8e42521f201f88b0ed433550e8786411b4487b0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-webhooks-receivers"></a>Příjemci Webhooky ASP.NET
 
@@ -24,7 +24,7 @@ Přijetí Webhooky závisí na to, kdo je odesílatele. Někdy existují další
 
 Příjemce Webhooku je zodpovědná za přijímání a ověření Webhooky od určitého odesílatele. Webhooku příjemce může podporovat libovolný počet Webhooků, každou s vlastní konfigurace. WebHook Githubu příjemce může například přijmout Webhooky z různých úložišť GitHub.
 
-## <a name="webhook-receiver-uris"></a>Identifikátory URI Webhooku příjemce
+## <a name="webhook-receiver-uris"></a>WebHook Receiver URIs
 
 Nainstalováním Microsoft ASP.NET WebHooks získáte obecné Webhooku řadiči, který přijímá požadavky Webhooku od zprostředkovává počet služeb. Pokud dorazí požadavek, vybere odpovídající příjemce, který jste nainstalovali pro zpracování určitého Webhooku odesílatele.
 
@@ -36,7 +36,7 @@ https://<host>/api/webhooks/incoming/<receiver>/{id}
 
 Z bezpečnostních důvodů mnoho Webhooku příjemci vyžadují, aby identifikátor URI *https* URI a v některých případech musí také obsahovat parametrem další dotaz, který slouží k vynucení, jenom zamýšlený strany může odesílat Webhooky na výše uvedené identifikátor URI .
 
- *<receiver>*  Součást je název příjemce, například *githubu* nebo *slack*.
+<em> <receiver> </em> Součást je název příjemce, například <em>githubu</em> nebo <em>slack</em>.
 
 *{Id}* je volitelné identifikátor, který slouží k identifikaci konkrétní konfigurací Webhooku příjemce. To slouží k registraci N Webhooky s konkrétní příjemce. Například následující tři identifikátory URI slouží k registraci pro tři nezávislá Webhooky:
 

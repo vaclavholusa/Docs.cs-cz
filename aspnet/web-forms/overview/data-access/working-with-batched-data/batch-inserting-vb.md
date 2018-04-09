@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/batch-inserting-vb
-title: "Dávkové vložení (VB) | Microsoft Docs"
+title: Dávkové vložení (VB) | Microsoft Docs
 author: rick-anderson
-description: "Naučte se vložit více záznamů databáze v rámci jedné operace. V uživatelské rozhraní vrstvě rozšiřujeme GridView umožňující uživateli zadat více n..."
+description: Naučte se vložit více záznamů databáze v rámci jedné operace. V uživatelské rozhraní vrstvě rozšiřujeme GridView umožňující uživateli zadat více n...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f09b5fd86c1cc6641fb42a466b07da161c1dd35
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a25c889784ccc6cee3ae01df59bd489b48114e74
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="batch-inserting-vb"></a>Dávkové vložení (VB)
 ====================
@@ -203,7 +203,7 @@ V dalším kroku vytváření obslužných rutin událostí pro přidání produ
 
 [!code-vb[Main](batch-inserting-vb/samples/sample5.vb)]
 
-Obě `Click` jednoduše volání obslužné rutiny událostí `ReturnToDisplayInterface` metoda, i když se vrátíme k produktům přidat z dodávky `Click` obslužné rutiny událostí v kroku 4 a přidejte kód pro uložení produkty. `ReturnToDisplayInterface`Spustí vrácením `Suppliers` a `Categories` DropDownLists jejich první možnosti. Dvě konstanty `firstControlID` a `lastControlID` označit počáteční a koncové hodnoty řízení indexu v názvu produktu název a jednotka cena textových polí v vkládání rozhraní a jsou použity v hranice `For` smyčky, která nastaví `Text`vlastností ovládacích prvků textového pole zpět na prázdný řetězec. Nakonec panelů `Visible` se obnoví tak, aby rozhraní vkládání skrytá a rozhraní zobrazení zobrazí.
+Obě `Click` jednoduše volání obslužné rutiny událostí `ReturnToDisplayInterface` metoda, i když se vrátíme k produktům přidat z dodávky `Click` obslužné rutiny událostí v kroku 4 a přidejte kód pro uložení produkty. `ReturnToDisplayInterface` Spustí vrácením `Suppliers` a `Categories` DropDownLists jejich první možnosti. Dvě konstanty `firstControlID` a `lastControlID` označit počáteční a koncové hodnoty řízení indexu v názvu produktu název a jednotka cena textových polí v vkládání rozhraní a jsou použity v hranice `For` smyčky, která nastaví `Text`vlastností ovládacích prvků textového pole zpět na prázdný řetězec. Nakonec panelů `Visible` se obnoví tak, aby rozhraní vkládání skrytá a rozhraní zobrazení zobrazí.
 
 Za chvíli k otestování této stránce v prohlížeči. Při první návštěvě stránky zobrazení rozhraní vám ukáže, jak je vidět na obrázku 5. Klikněte na tlačítko procesu dodávky produktu. Bude odeslat zpět na stránku a měli byste vidět vkládání rozhraní, jak ukazuje obrázek 12. Buď přidejte produkty z tlačítka dodávky nebo instalaci zrušte kliknutím na tlačítko se vrátíte do rozhraní zobrazení.
 
@@ -269,11 +269,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Hilton Giesenow a S ren Jakub Lauritsen. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](batch-deleting-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](batch-deleting-vb.md)

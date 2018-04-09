@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
-title: "Ověřování uživatelského vstupu v rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs"
+title: Ověřování uživatelského vstupu v rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tento článek popisuje, jak ověřit informace získáte od uživatelů &mdash; to znamená, abyste měli jistotu, že uživatelé zadat platné informace ve formátu HTML forms v přihlašovacím..."
+description: Tento článek popisuje, jak ověřit informace získáte od uživatelů &mdash; to znamená, abyste měli jistotu, že uživatelé zadat platné informace ve formátu HTML forms v přihlašovacím...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 3bde2a4ea69577ebcbe3e9e89a7ee07e6ece8dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 34f703e6db70ac79c22f4a50d4cfd4e2326b4c74
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>Ověřování uživatelského vstupu v lokalitách rozhraní ASP.NET Web Pages (Razor)
 ====================
@@ -83,15 +83,15 @@ V technologii ASP.NET Web Pages 2, můžete použít `Validator` pomocná rutina
     Chcete-li vyhledat povinná pole, použijte `Validation.RequireField(field, [error message])` (pro jednotlivá pole) nebo `Validation.RequireFields(field1, field2, ...))` (pro seznam polí). Pro jiné typy ověřování, použijte `Validation.Add(field, ValidationType)`. Pro `ValidationType`, můžete použít tyto možnosti:
 
     `Validator.DateTime ([error message])`  
-`Validator.Decimal([error message])`  
-`Validator.EqualsTo(otherField [, error message])`  
-`Validator.Float([error message])`  
-`Validator.Integer([error message])`  
-`Validator.Range(min, max [, error message])`  
-`Validator.RegEx(pattern [, error message])`  
-`Validator.Required([error message])`  
-`Validator.StringLength(length)`  
-`Validator.Url([error message])`
+   `Validator.Decimal([error message])`  
+   `Validator.EqualsTo(otherField [, error message])`  
+   `Validator.Float([error message])`  
+   `Validator.Integer([error message])`  
+   `Validator.Range(min, max [, error message])`  
+   `Validator.RegEx(pattern [, error message])`  
+   `Validator.Required([error message])`  
+   `Validator.StringLength(length)`  
+   `Validator.Url([error message])`
 3. Při odeslání stránky, zkontrolujte, zda byla ověření úspěšná kontrolou `Validation.IsValid`:
 
     [!code-csharp[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample1.cs)]
@@ -122,7 +122,7 @@ Můžete přidat podporu k provedení ověření v klientského skriptu. V takov
 
     [!code-html[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample3.html)]
 
- Dva knihoven jsou načíst z síti pro doručování obsahu (CDN), takže nemusíte nutně mít je na počítači nebo serveru. Ale musí mít místní kopii *jquery.validate.unobtrusive.js*. Pokud dosud nepracujete pomocí služby WebMatrix šablony (jako je **Starter Site** ), který obsahuje knihovny, vytvořit web webové stránky, který je založen na **Starter Site**. Zkopírujte *.js* souboru k aktuální lokalitě.
+   Dva knihoven jsou načíst z síti pro doručování obsahu (CDN), takže nemusíte nutně mít je na počítači nebo serveru. Ale musí mít místní kopii *jquery.validate.unobtrusive.js*. Pokud dosud nepracujete pomocí služby WebMatrix šablony (jako je **Starter Site** ), který obsahuje knihovny, vytvořit web webové stránky, který je založen na **Starter Site**. Zkopírujte *.js* souboru k aktuální lokalitě.
 2. V kód pro každý element, který jste se ověřování, že přidáte volání `Validation.For(field)`. Tato metoda vysílá atributy, které používají ověřování na straně klienta. (Místo generování skutečný kód jazyka JavaScript, metoda vysílá atributů, například `data-val-...`. Ověření nerušivého klienta, který používá jQuery pro práci podporu těchto atributů.)
 
 Na následující stránce ukazuje, jak přidat funkce ověření klienta v příkladu uvedena výše.

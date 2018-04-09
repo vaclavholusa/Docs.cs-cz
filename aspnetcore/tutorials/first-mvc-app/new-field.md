@@ -1,7 +1,7 @@
 ---
-title: "Přidání nové pole"
+title: Přidejte nové pole do aplikace ASP.NET Core
 author: rick-anderson
-description: 
+description: Další informace o použití migrace Entity Framework Code First přidávají nové pole do modelu a migrovat tato změna k databázi.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: 7b92d1b50311cedbae2bdf30a2dc19204c5b81d1
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: a314115459fedb9561694604509856503c023a5c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="adding-a-new-field"></a>Přidání nové pole
+# <a name="add-a-new-field-to-an-aspnet-core-app"></a>Přidejte nové pole do aplikace ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -86,6 +86,6 @@ Pokud odstraníte všechny záznamy v databázi, bude inicializovat počátečn�
 
 Spusťte aplikaci a ověřte, můžete vytvořit, upravit nebo zobrazení filmy s `Rating` pole. Měli byste také přidat `Rating` do `Edit`, `Details`, a `Delete` zobrazí šablony.
 
->[!div class="step-by-step"]
-[Předchozí](search.md)
-[další](validation.md)  
+> [!div class="step-by-step"]
+> [Předchozí](search.md)
+> [další](validation.md)  

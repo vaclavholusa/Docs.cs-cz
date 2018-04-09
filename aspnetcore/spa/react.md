@@ -1,7 +1,7 @@
 ---
-title: "Pomocí šablony projektu reagují"
+title: Šablona projektu reagují pomocí ASP.NET Core
 author: SteveSandersonMS
-description: "Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro reagují a vytvořit aplikaci reagují."
+description: Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro reagují a vytvořit aplikaci reagují.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: cda9f52d1f5fa1d240e210488bf1bd5c76e49be7
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 4dcfef2bbb99873a9d716a4942f39123944f495c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="use-the-react-project-template"></a>Pomocí šablony projektu reagují
+# <a name="use-the-react-project-template-with-aspnet-core"></a>Šablona projektu reagují pomocí ASP.NET Core
 
 > [!NOTE]
 > Tato dokumentace není o šablona projektu reagují součástí technologie ASP.NET 2.0 jádra. Jde o šabloně novější reagují, do kterého můžete ručně aktualizovat. Šablona je součástí 2.1 jádro ASP.NET ve výchozím nastavení.

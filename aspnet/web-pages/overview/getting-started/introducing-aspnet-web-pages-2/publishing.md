@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
-title: "Představení technologie ASP.NET Web Pages – publikování webu pomocí služby WebMatrix | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages – publikování webu pomocí služby WebMatrix | Microsoft Docs
 author: tfitzmac
-description: "V tomto kurzu je poslední část v sadě kurz, který představuje rozhraní ASP.NET Web Pages a Microsoft WebMatrix. Popisuje, jak publikování webu t..."
+description: V tomto kurzu je poslední část v sadě kurz, který představuje rozhraní ASP.NET Web Pages a Microsoft WebMatrix. Popisuje, jak publikování webu t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 1e718c92a2f94df50fcf7af6859917746a4982ac
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7b9bffac5cc72e1bea3f1b211cc03be2ccb8e499
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Představení technologie ASP.NET Web Pages – publikování webu pomocí služby WebMatrix
 ====================
@@ -32,7 +32,7 @@ podle [tní FitzMacken](https://github.com/tfitzmac)
 
 ## <a name="about-publishing-your-site"></a>O publikování webu
 
-Až nyní kroky dokončíte všechnu práci na místním počítači, včetně testování vaší stránky. Ke spuštění vaší*.cshtml* stránky, jste použili webový server, který je integrovaný do služby WebMatrix, a to služba IIS Express. Můžete ale samozřejmě nikdo můžete zobrazit na server, který jste vytvořili s výjimkou je. Umožníte dalším uživatelům práci s webem musíte publikovat na Internetu.
+Až nyní kroky dokončíte všechnu práci na místním počítači, včetně testování vaší stránky. Ke spuštění vaší<em>.cshtml</em> stránky, jste použili webový server, který je integrovaný do služby WebMatrix, a to služba IIS Express. Můžete ale samozřejmě nikdo můžete zobrazit na server, který jste vytvořili s výjimkou je. Umožníte dalším uživatelům práci s webem musíte publikovat na Internetu.
 
 Pokud již máte přístup k veřejné webovému serveru, publikování znamená, že budete mít tak, aby měl účet s *Cloudová platforma* nebo *poskytovatele hostitelských služeb*. Cloudové platformy, jako je Microsoft Azure poskytuje infrastrukturu na vyžádání pro vaše aplikace. Poskytovatel hostingu je společnosti, který je vlastníkem veřejně přístupná webové servery a který bude pronajímat, můžete místo pro svůj web. Hostování plány spustit z několika dolarů za měsíc (nebo i volné) pro malé weby na mnoho stovky dolarů za měsíc pro vysoký počet komerčních webů.
 
@@ -53,7 +53,7 @@ Tento kurz obsahuje čtyři části:
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>Nastavení výchozí stránka
 
-Když uživatel přejde na základní adresa pro svůj web, se uživateli zobrazí výchozí stránku pro váš web. Například pokud Default.htm je nastaven jako výchozí stránky pro lokalitu na www.contoso.com, přejděte do **www.contoso.com** je stejný jako přejdete na **www.contoso.com/Default.htm**.
+Když uživatel přejde na základní adresa pro svůj web, se uživateli zobrazí výchozí stránku pro váš web. Například pokud Default.htm je nastaven jako výchozí stránky pro lokalitu na www.contoso.com, přejděte do <strong>www.contoso.com</strong> je stejný jako přejdete na <strong>www.contoso.com/Default.htm</strong>.
 
 V současné době váš web používá **Default.cshtml** jako výchozí stránky. Tato stránka je vhodná pro výchozí stránku, ale v tomto kurzu jste nepřidali žádný obsah na této stránce, by se zobrazily prázdné stránky. Otevřete stránku Default.cshtml a nahradí obsah následujícím kódem.
 
@@ -219,5 +219,5 @@ Přejděte na web za provozu (můžete kliknout na odkaz ve zprávě úspěch Po
 
 - [Fórum služby WebMatrix rozhraní ASP.NET Web Pages ASP.NET](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages), skvělým místem pro zveřejňování otázky a odpovědi.
 
->[!div class="step-by-step"]
-[Předchozí](layouts.md)
+> [!div class="step-by-step"]
+> [Předchozí](layouts.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
-title: "Forms konfiguraci ověřování a pokročilá témata (C#) | Microsoft Docs"
+title: Forms konfiguraci ověřování a pokročilá témata (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme prozkoumá různých nastavení ověřování pomocí formulářů a zjistit, jak je upravit pomocí prvku formuláře. To vede podrobné..."
+description: V tomto kurzu jsme prozkoumá různých nastavení ověřování pomocí formulářů a zjistit, jak je upravit pomocí prvku formuláře. To vede podrobné...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c57722965b510ac4f5cf0c06c7c01c8cea26384f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d6578737478fb86f64be261925becc3adec33247
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-c"></a>Konfigurace ověřování formulářů a pokročilá témata (C#)
 ====================
@@ -41,19 +41,20 @@ Systém ověřování formulářů technologie ASP.NET nabízí řadu nastavení
 
 Tabulka 1 shrnuje vlastnosti, které lze přizpůsobit pomocí &lt;forms&gt; elementu. Vzhledem k tomu, že soubor Web.config je soubor XML, názvy atributů v levém sloupci je malá a velká písmena.
 
-| **Atribut** | **Popis** |
-| --- | --- |
-| bez souborů cookie | Tento atribut určuje, za jakých podmínek lístek ověřování je uložen v souboru cookie a jeho vkládání v adrese URL. Povolené hodnoty jsou: UseCookies; UseUri; Automatické rozpoznání; a UseDeviceProfile (výchozí). Krok 2 prozkoumá podrobněji toto nastavení. |
-| defaultUrl | Určuje adresu URL, kterou uživatelé přesměrovaní na po přihlášení z přihlašovací stránky, pokud není žádná hodnota RedirectUrl zadaný v řetězci dotazu. Výchozí hodnota je default.aspx. |
-| doména | Při použití lístků pro ověřování na základě souborů cookie, toto nastavení určuje hodnota domény souboru cookie. Výchozí hodnota je řetězec prázdný, což způsobí, že prohlížeči domény, ze kterého byl vydán (například www.yourdomain.com). V takovém případě bude soubor cookie **není** zasílá po provedení žádosti subdomény, jako je například admin.yourdomain.com. Pokud chcete soubor cookie, které mají být předány všechny subdomény, budete muset přizpůsobit nastavení na vase_domena.com atribut domény. |
-| enableCrossAppRedirects | Logická hodnota, která určuje, zda ověřené uživatele uloží, když přesměrován na adresy URL v jiných webových aplikací na stejném serveru. Výchozí hodnota je false. |
-| loginUrl | Adresa URL přihlašovací stránky. Výchozí hodnota je login.aspx. |
-| name | Při použití lístků pro ověřování na základě souborů cookie, název souboru cookie. Výchozí hodnota je. ASPXAUTH. |
-| cesta | Při použití lístků pro ověřování na základě souborů cookie, toto nastavení určuje atribut cesta k souboru cookie. Atribut path umožňuje vývojáři k omezení oboru soubor cookie pro konkrétní adresář hierarchie. Výchozí hodnota je /, která informuje prohlížeč odeslat lístek ověřovacího souboru cookie na všechny žádosti do domény. |
-| ochrana | Určuje, jaké postupy se používají k ochraně lístek pro ověřování pomocí formulářů. Povolené hodnoty jsou: všechny (výchozí); Šifrování; None; a ověření. Tato nastavení jsou podrobněji v kroku 3. |
-| requireSSL | Logická hodnota, která určuje, jestli přenos ověřovacího souboru cookie vyžaduje připojení SSL. Výchozí hodnota je False. |
-| parametr slidingExpiration | Logická hodnota, která určuje, že zda vypršení časového limitu ověřovacího souboru cookie se vynuluje pokaždé, když uživatel navštíví web během jedné relace. Výchozí hodnota je true. Zásady ověřování lístkem časový limit je podrobněji popsána v zadání části hodnotu časového limitu lístku. |
-| Časový limit | Určuje dobu v minutách, po kterém vyprší platnost ověřovacího lístku souboru cookie. Výchozí hodnota je 30. Zásady ověřování lístkem časový limit je podrobněji popsána v zadání části hodnotu časového limitu lístku. |
+
+| <strong>Atribut</strong> |                                                                                                                                                                                                                                     <strong>Popis</strong>                                                                                                                                                                                                                                      |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         bez souborů cookie         |                                                                                                                Tento atribut určuje, za jakých podmínek lístek ověřování je uložen v souboru cookie a jeho vkládání v adrese URL. Povolené hodnoty jsou: UseCookies; UseUri; Automatické rozpoznání; a UseDeviceProfile (výchozí). Krok 2 prozkoumá podrobněji toto nastavení.                                                                                                                |
+|         defaultUrl         |                                                                                                                                                         Určuje adresu URL, kterou uživatelé přesměrovaní na po přihlášení z přihlašovací stránky, pokud není žádná hodnota RedirectUrl zadaný v řetězci dotazu. Výchozí hodnota je default.aspx.                                                                                                                                                         |
+|           doména           | Při použití lístků pro ověřování na základě souborů cookie, toto nastavení určuje hodnota domény souboru cookie. Výchozí hodnota je řetězec prázdný, což způsobí, že prohlížeči domény, ze kterého byl vydán (například www.yourdomain.com). V takovém případě bude soubor cookie <strong>není</strong> zasílá po provedení žádosti subdomény, jako je například admin.yourdomain.com. Pokud chcete soubor cookie, které mají být předány všechny subdomény, budete muset přizpůsobit nastavení na vase_domena.com atribut domény. |
+|  enableCrossAppRedirects   |                                                                                                                                                                   Logická hodnota, která určuje, zda ověřené uživatele uloží, když přesměrován na adresy URL v jiných webových aplikací na stejném serveru. Výchozí hodnota je false.                                                                                                                                                                   |
+|          loginUrl          |                                                                                                                                                                                                                      Adresa URL přihlašovací stránky. Výchozí hodnota je login.aspx.                                                                                                                                                                                                                      |
+|            name            |                                                                                                                                                                                                   Při použití lístků pro ověřování na základě souborů cookie, název souboru cookie. Výchozí hodnota je. ASPXAUTH.                                                                                                                                                                                                   |
+|            cesta            |                                                                             Při použití lístků pro ověřování na základě souborů cookie, toto nastavení určuje atribut cesta k souboru cookie. Atribut path umožňuje vývojáři k omezení oboru soubor cookie pro konkrétní adresář hierarchie. Výchozí hodnota je /, která informuje prohlížeč odeslat lístek ověřovacího souboru cookie na všechny žádosti do domény.                                                                              |
+|         ochrana         |                                                                                                                                            Určuje, jaké postupy se používají k ochraně lístek pro ověřování pomocí formulářů. Povolené hodnoty jsou: všechny (výchozí); Šifrování; None; a ověření. Tato nastavení jsou podrobněji v kroku 3.                                                                                                                                            |
+|         requireSSL         |                                                                                                                                                                                Logická hodnota, která určuje, jestli přenos ověřovacího souboru cookie vyžaduje připojení SSL. Výchozí hodnota je False.                                                                                                                                                                                |
+|     parametr slidingExpiration      |                                                                                                 Logická hodnota, která určuje, že zda vypršení časového limitu ověřovacího souboru cookie se vynuluje pokaždé, když uživatel navštíví web během jedné relace. Výchozí hodnota je true. Zásady ověřování lístkem časový limit je podrobněji popsána v zadání části hodnotu časového limitu lístku.                                                                                                 |
+|          Časový limit           |                                                                                                                               Určuje dobu v minutách, po kterém vyprší platnost ověřovacího lístku souboru cookie. Výchozí hodnota je 30. Zásady ověřování lístkem časový limit je podrobněji popsána v zadání části hodnotu časového limitu lístku.                                                                                                                               |
 
 **Tabulka 1**: Souhrn A &lt;forms&gt; atributy elementu
 
@@ -166,7 +167,7 @@ Uložit změny do Default.aspx a potom navštivte prostřednictvím prohlížeč
 
 `http://localhost:2448/ASPNET\_Security\_Tutorial\_03\_CS/(F(jaIOIDTJxIr12xYS-VVgkqKCVAuIoW30Bu0diWi6flQC-FyMaLXJfow\_Vd9GZkB2Cv-rfezq0gKadKX0YPZCkA2))/SomePage.aspx`
 
-Adresa URL SomePage.aspx v odkazu byla automaticky převést na adresu URL, která zahrnuté lístek ověřování - nebyly k dispozici pro zápis na ikonu kódu! Lístek ověřování formuláře budou vloženy automaticky adresu URL pro všechny hypertextové odkazy, které není začínat http:// nebo /. Není důležité, pokud se zobrazí hypertextový odkaz v volání Response.Redirect, v ovládacím prvku hypertextový odkaz nebo v element anchor HTML (tj, &lt;href = "..."&gt;... &lt;/a&gt;). Adresa URL není něco jako http://www.someserver.com/SomePage.aspx nebo /SomePage.aspx, budou vloženy lístek pro ověřování pomocí formulářů pro nás.
+Adresa URL SomePage.aspx v odkazu byla automaticky převést na adresu URL, která zahrnuté lístek ověřování - nebyly k dispozici pro zápis na ikonu kódu! Lístek ověřování formuláře budou vloženy automaticky adresu URL pro všechny hypertextové odkazy, které není začínat http:// nebo /. Není důležité, pokud se zobrazí hypertextový odkaz v volání Response.Redirect, v ovládacím prvku hypertextový odkaz nebo v element anchor HTML (tj, &lt;href = "..."&gt;... &lt;/a&gt;). Adresa URL není něco podobného jako http://www.someserver.com/SomePage.aspx nebo /SomePage.aspx, formuláře budou vloženy ověřovací lístek pro nás.
 
 > [!NOTE]
 > Lístků pro ověřování pomocí formulářů bez souborů cookie splňovat stejné zásady vypršení časového limitu jako lístků pro ověřování na základě souboru cookie. Ověřování bez souborů cookie lístků jsou však více náchylné k útoky opakováním vzhledem k tomu, že lístek ověřování vložené přímo v adrese URL. Představte si uživatel, který navštíví nějaký web, přihlášení a pak vloží adresu URL v e-mail s kolegy. Pokud kolegu klikne na tento odkaz před dosažením vypršení platnosti, budou se být přihlášení jako uživatel, který poslal e-mailu!
@@ -432,12 +433,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Alicja Maziarz. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com).
 
->[!div class="step-by-step"]
-[Předchozí](an-overview-of-forms-authentication-cs.md)
-[další](security-basics-and-asp-net-support-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](an-overview-of-forms-authentication-cs.md)
+> [další](security-basics-and-asp-net-support-vb.md)

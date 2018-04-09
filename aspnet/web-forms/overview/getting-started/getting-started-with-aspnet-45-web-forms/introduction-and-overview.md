@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
-title: "Začínáme s 4.5 webových formulářů ASP.NET a Visual Studio 2013 | Microsoft Docs"
+title: Začínáme s 4.5 webových formulářů ASP.NET a Visual Studio 2013 | Microsoft Docs
 author: Erikre
-description: "Tento podrobný kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Expres..."
+description: Tento podrobný kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Expres...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 572b263a5f968b473457771a1dd4075910218c01
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>Začínáme s 4.5 webových formulářů ASP.NET a Visual Studio 2013
 ====================
@@ -177,9 +177,9 @@ Po instalaci požadavky, jste připraveni se začne vytvářet nový webový pro
 
 [Začínáme s 4.5 webových formulářů ASP.NET a Visual Studio 2013 – adresář Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) 
 
-Stažení *.zip* souboru. Zobrazíte dokončený projekt, který vytvoří tento kurz řady, vyhledejte a vyberte *C#*složku *.zip* souboru. Uložit *C#* folderto složky použijete při práci s projekty sady Visual Studio 2013. Ve výchozím nastavení složka projektů Visual Studio 2013 je následující:
+Stažení <em>.zip</em> souboru. Zobrazíte dokončený projekt, který vytvoří tento kurz řady, vyhledejte a vyberte <em>C#</em>složku <em>.zip</em> souboru. Uložit <em>C#</em> folderto složky použijete při práci s projekty sady Visual Studio 2013. Ve výchozím nastavení složka projektů Visual Studio 2013 je následující:
 
-**C:\Users\*****&lt;username&gt;*****\Documents\Visual Studio 2013\Projects**
+<strong>C:\Users\</strong><strong><em>&lt;username&gt;</em></strong><strong>\Documents\Visual Studio 2013\Projects</strong>
 
 Přejmenujte ***C#*** složku pro ***Northwind***.
 
@@ -197,5 +197,5 @@ Komentáře k tento kurz řady jsou úvodní a při aktualizaci tento kurz řady
 
 Když dojde k chybě během vývoje nebo na webu nefunguje správně, chybové zprávy, které může poskytnout komplexní různá vodítka na zdroj problému nebo nemusí vysvětlují, jak ji odstranit. Abychom vám pomohli s některé běžné scénáře problém, můžete také použít [ASP.NET fóra](https://forums.asp.net/) nebo části otázky a A součástí [Začínáme s webovými formuláři ASP.NET 4.5 a Visual Studio 2013 – adresář Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) () C#) ukázka. Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, jak projděte následující kurzy, nezapomeňte zkontrolovat výše uvedené umístění.
 
->[!div class="step-by-step"]
-[Next](create-the-project.md)
+> [!div class="step-by-step"]
+> [Next](create-the-project.md)

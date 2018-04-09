@@ -1,7 +1,7 @@
 ---
-title: "Stránky Razor s EF jádra ASP.NET Core - CRUD - 2 8"
+title: Stránky Razor s EF jádra ASP.NET Core - CRUD - 2 8
 author: rick-anderson
-description: "Ukazuje, jak vytvořit, číst, aktualizovat, odstraňovat s EF jádra"
+description: Ukazuje, jak vytvořit, číst, aktualizovat, odstraňovat s EF jádra
 manager: wpickett
 ms.author: riande
 ms.date: 10/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/crud
-ms.openlocfilehash: d46292e07b65322d85f8f0fb43c8be4af4ccb47e
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 6c24eaae7073e479bbad3b670f22ace35ac787f6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - CRUD - 2 8
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 V tomto kurzu vygenerované CRUD (vytvořit, číst, aktualizovat, odstraňovat) kód je zkontrolovat a upravit.
 
@@ -242,6 +242,6 @@ Ověřte stránky Razor obsahuje správné `@page` – direktiva. Například by
 
 Musí zahrnovat každé stránce Razor `@page` – direktiva.
 
->[!div class="step-by-step"]
-[Předchozí](xref:data/ef-rp/intro)
-[další](xref:data/ef-rp/sort-filter-page)
+> [!div class="step-by-step"]
+> [Předchozí](xref:data/ef-rp/intro)
+> [další](xref:data/ef-rp/sort-filter-page)

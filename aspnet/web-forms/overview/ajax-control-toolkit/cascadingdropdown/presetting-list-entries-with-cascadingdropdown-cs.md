@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs
-title: "Předvolba seznamu položek s CascadingDropDown (C#) | Microsoft Docs"
+title: Předvolba seznamu položek s CascadingDropDown (C#) | Microsoft Docs
 author: wenz
-description: "Ovládací prvek CascadingDropDown v Toolkitu AJAX rozšiřuje ovládací prvek rozevírací seznam tak, aby změny v jedné rozevírací seznam zatížení přidružené hodnoty v anoth..."
+description: Ovládací prvek CascadingDropDown v Toolkitu AJAX rozšiřuje ovládací prvek rozevírací seznam tak, aby změny v jedné rozevírací seznam zatížení přidružené hodnoty v anoth...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d86c5887a8b175a60c32a0970482266b7d690162
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d87da6c19f6dbdff70eff410ba7573c3e26884fb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="presetting-list-entries-with-cascadingdropdown-c"></a>Předvolba seznamu položek s CascadingDropDown (C#)
 ====================
@@ -60,6 +60,6 @@ Při načítání stránky v prohlížeči naplní rozevíracího seznamu s tři
 
 Seznam se naplní a předem vybrali automaticky ([Kliknutím zobrazit obrázek v plné velikosti](presetting-list-entries-with-cascadingdropdown-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](using-cascadingdropdown-with-a-database-cs.md)
-[další](using-auto-postback-with-cascadingdropdown-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-cascadingdropdown-with-a-database-cs.md)
+> [další](using-auto-postback-with-cascadingdropdown-cs.md)

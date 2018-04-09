@@ -1,7 +1,7 @@
 ---
-title: "Ovladač HTTP.sys webového serveru implementace v ASP.NET Core"
+title: Ovladač HTTP.sys webového serveru implementace v ASP.NET Core
 author: tdykstra
-description: "Další informace o HTTP.sys, webový server pro ASP.NET Core v systému Windows. Založený na režimu jádra ovladač HTTP.sys, ovladač HTTP.sys je alternativa k Kestrel, který lze použít pro přímé připojení k Internetu bez služby IIS."
+description: Další informace o HTTP.sys, webový server pro ASP.NET Core v systému Windows. Založený na režimu jádra ovladač HTTP.sys, ovladač HTTP.sys je alternativa k Kestrel, který lze použít pro přímé připojení k Internetu bez služby IIS.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: d7ae6c070c7eecfd714086e15f32eff96c0943d9
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 1ec309a00b6cb156b0d11ad085eda3b7a772ac94
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Ovladač HTTP.sys webového serveru implementace v ASP.NET Core
 
@@ -65,7 +65,7 @@ Ovladač HTTP.sys je Vyspělá technologie, která chrání před mnoho typů ú
 
 1. Odkaz balíčku v souboru projektu není povinné, při použití [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage) ([nuget.org](https://www.nuget.org/packages/Microsoft.AspNetCore.All/)) (jádro ASP.NET 2.0 nebo novější). Pokud nepoužíváte `Microsoft.AspNetCore.All` metapackage, přidejte odkaz na balíček [Microsoft.AspNetCore.Server.HttpSys](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.HttpSys/).
 
-1. Volání [UseHttpSys](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderhttpsysextensions.usehttpsys) rozšíření metoda při vytváření webového hostitele, zadáte požadované [HTTP.sys možnosti](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions):
+2. Volání [UseHttpSys](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderhttpsysextensions.usehttpsys) rozšíření metoda při vytváření webového hostitele, zadáte požadované [HTTP.sys možnosti](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions):
 
    [!code-csharp[](httpsys/sample/Program.cs?name=snippet1&highlight=4-12)]
 
@@ -93,7 +93,7 @@ Ovladač HTTP.sys je Vyspělá technologie, která chrání před mnoho typů ú
    Maximální povolená velikost všech obsahu žádosti v bajtech. Pokud nastavíte hodnotu `null`, požadavek na maximální velikost obsahu neomezená. Tento limit nemá žádný vliv na upgradovaný připojení, které jsou vždy neomezená.
 
    Doporučené metody přepsat omezení v aplikaci ASP.NET MVC jádra pro jeden `IActionResult` je použití [RequestSizeLimitAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requestsizelimitattribute) atribut na metodu akce:
-   
+
    ```csharp
    [RequestSizeLimit(100000000)]
    public IActionResult MyActionMethod()
@@ -105,7 +105,7 @@ Ovladač HTTP.sys je Vyspělá technologie, která chrání před mnoho typů ú
 
    [!code-csharp[](httpsys/sample/Startup.cs?name=snippet1&highlight=6-7)]
 
-1. Pokud pomocí sady Visual Studio, ujistěte se, že aplikace není nakonfigurovaná pro spuštění služby IIS nebo IIS Express.
+3. Pokud pomocí sady Visual Studio, ujistěte se, že aplikace není nakonfigurovaná pro spuštění služby IIS nebo IIS Express.
 
    V sadě Visual Studio je výchozí profil spuštění pro službu IIS Express. Chcete-li spustit projekt jako konzolovou aplikaci, ručně změňte vybraný profil, jak je znázorněno na následujícím snímku obrazovky:
 
@@ -115,10 +115,10 @@ Ovladač HTTP.sys je Vyspělá technologie, která chrání před mnoho typů ú
 
 1. Pokud je aplikace [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd), nainstalujte .NET Core a rozhraní .NET Framework (Pokud je aplikace k aplikaci .NET Core cílení na rozhraní .NET Framework).
 
-   * **.NET core** &ndash; Pokud aplikace vyžaduje .NET Core, získání a spuštění instalačního programu .NET Core z [.NET stáhne](https://www.microsoft.com/net/download/windows).
-   * **Rozhraní .NET framework** &ndash; Pokud aplikace vyžaduje rozhraní .NET Framework, najdete v části [rozhraní .NET Framework: Průvodce instalací](/dotnet/framework/install/) najít pokyny k instalaci. Instalace vyžaduje rozhraní .NET Framework. Instalační program pro nejnovější rozhraní .NET Framework naleznete na adrese [.NET stáhne](https://www.microsoft.com/net/download/windows).
+   * **.NET core** &ndash; Pokud aplikace vyžaduje .NET Core, získání a spuštění instalačního programu .NET Core z [.NET všechny soubory ke stažení](https://www.microsoft.com/net/download/all).
+   * **Rozhraní .NET framework** &ndash; Pokud aplikace vyžaduje rozhraní .NET Framework, najdete v části [rozhraní .NET Framework: Průvodce instalací](/dotnet/framework/install/) najít pokyny k instalaci. Instalace vyžaduje rozhraní .NET Framework. Instalační program pro nejnovější rozhraní .NET Framework naleznete na adrese [.NET všechny soubory ke stažení](https://www.microsoft.com/net/download/all).
 
-1. Konfigurace adresy URL a portů pro aplikaci.
+2. Konfigurace adresy URL a portů pro aplikaci.
 
    Ve výchozím nastavení, ASP.NET Core váže k `http://localhost:5000`. Konfigurace předpony adres URL a portů, tyto možnosti, pomocí:
 
@@ -140,7 +140,7 @@ Ovladač HTTP.sys je Vyspělá technologie, která chrání před mnoho typů ú
    > [!WARNING]
    > Vazby nejvyšší úrovně zástupný znak (`http://*:80/` a `http://+:80`) by měl **není** použít. Vazby nejvyšší úrovně zástupný znak můžete otevřít vaší aplikaci k ohrožení zabezpečení. To platí pro silné a slabé zástupné znaky. Použijte explicitní hostitele názvy místo zástupných znaků. Vazba subdomény zástupný znak (například `*.mysub.com`) nemá toto bezpečnostní riziko, pokud řízení celého nadřazené domény (Naproti tomu `*.com`, což je snadno napadnutelný). V tématu [rfc7230 části-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) Další informace.
 
-1. Preregister předpony adres URL pro svázání ovladače HTTP.sys a nastavit certifikáty x.509.
+3. Preregister předpony adres URL pro svázání ovladače HTTP.sys a nastavit certifikáty x.509.
 
    Pokud v systému Windows nejsou preregistered předpony adres URL, spusťte aplikaci s oprávněními správce. Jedinou výjimkou je při vazbě na místního hostitele pomocí protokolu HTTP (nikoli HTTPS) se číslo portu větší než 1024. V takovém případě se vyžaduje oprávnění správce.
 
@@ -164,11 +164,16 @@ Ovladač HTTP.sys je Vyspělá technologie, která chrání před mnoho typů ú
       * [Příkazy Netsh pro Hypertext Transfer Protocol (HTTP)](https://technet.microsoft.com/library/cc725882.aspx)
       * [UrlPrefix řetězce](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
 
-   1. Certifikáty podepsané svým držitelem X.509, v případě potřeby vytvořte.
+   2. Certifikáty podepsané svým držitelem X.509, v případě potřeby vytvořte.
 
-     [!INCLUDE[How to make an X.509 cert](../../includes/make-x509-cert.md)]
+      [!INCLUDE [How to make an X.509 cert](../../includes/make-x509-cert.md)]
 
-1. Otevřete porty brány firewall umožňující přenos k dosažení ovladače HTTP.sys. Použití *netsh.exe* nebo [rutiny prostředí PowerShell](https://technet.microsoft.com/library/jj554906).
+
+4. Otevřete porty brány firewall umožňující přenos k dosažení ovladače HTTP.sys. Použití *netsh.exe* nebo [rutiny prostředí PowerShell](https://technet.microsoft.com/library/jj554906).
+
+## <a name="proxy-server-and-load-balancer-scenarios"></a>Proxy server a scénáře pro vyrovnávání zatížení
+
+Pro aplikace hostované ovladače HTTP.sys, které se s požadavky z Internetu nebo podnikové síti můžou požadovat další konfigurace, při hostování za proxy servery a nástroje pro vyrovnávání zatížení. Další informace najdete v tématu [konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
 
 ## <a name="additional-resources"></a>Další zdroje
 

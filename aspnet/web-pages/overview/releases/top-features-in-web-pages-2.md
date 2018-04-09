@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/top-features-in-web-pages-2
 msc.type: authoredcontent
-ms.openlocfilehash: e8fc758936953970ff3e9ba289516925dee9ef45
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: f0d32edd3ab54c55aa06c803cd91e01cbbb8f08a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-top-features-in-aspnet-web-pages-2"></a>Hlavní funkce v rozhraní ASP.NET Web Pages 2
 ====================
@@ -62,9 +62,9 @@ K instalaci webové stránky, můžete použít Microsoft webové platformy, kte
     Pokud používáte Internet Explorer, přejděte k dalšímu kroku. Pokud používáte jiný prohlížeč jako Mozilla Firefox nebo Google Chrome, zobrazí se výzva k uložení *Webmatrix.exe* soubor do počítače. Uložte soubor a klikněte na něj spustíte instalační program.
 3. Spusťte instalační program a vybrat **nainstalovat** tlačítko. Tím se nainstaluje službu WebMatrix a webové stránky.
 
-## <a id="New_and_Enhanced_Features"></a>Nové a vylepšené funkce
+## <a id="New_and_Enhanced_Features"></a>  Nové a vylepšené funkce
 
-### <a id="Changes_for_the_RC_Version"></a>Změny pro verzi RC (červen 2012)
+### <a id="Changes_for_the_RC_Version"></a>  Změny pro verzi RC (červen 2012)
 
 Verze RC verze v červen 2012 obsahuje několik změny z aktualizace Beta verze, která byla vydána v březnu 2012. Tyto změny jsou:
 
@@ -94,8 +94,8 @@ Beta verze vydané v únoru 2012 má pouze několik změn z verze Beta, která b
     `<a href="~/Default.cshtml">Home</a>`
 - `Scripts` Pomocné rutiny pro správu prostředků (prostředků) se nahradil údajem `Assets` pomocné rutiny, která má mírně odlišné metody, jako jsou následující:
 
-    - Pro `Scripts.Add`, použijte`Assets.AddScript`
-    - Pro `Scripts.GetScriptTags`, použijte`Assets.GetScripts`
+  - Pro `Scripts.Add`, použijte `Assets.AddScript`
+  - Pro `Scripts.GetScriptTags`, použijte `Assets.GetScripts`
 
     Toto je narušující změně; `Scripts` třída není k dispozici ve verzi Beta. Příklady kódu v tomto dokumentu, které používají správu asset byly aktualizovány s tuto změnu.
 
@@ -106,7 +106,7 @@ Beta verze vydané v únoru 2012 má pouze několik změn z verze Beta, která b
 
 - Vykreslování stránky mobilní zařízení. Pomocí stylů CSS a `@media` selektoru **Starter Site** poskytuje lepší vykreslování stránek na menších obrazovkách, včetně mobilních zařízení obrazovky.
 - Vylepšené možnosti členství a ověřování. Můžete je nechat protokolu uživatele na váš web pomocí účtů z jiných sociálních sítí, jako je například Twitteru, Facebooku a Windows Live. Další informace najdete v tématu [povolení přihlášení ze sítě Facebook a další lokality pomocí OAuth a OpenID](#oauthsetup) části.
-- Elementy jazyka HTML5.
+- HTML5 elements.
 
 Nové **osobní stránku** šablona umožňuje vytvořit web, který obsahuje osobní blog, stránka s fotografiemi a na stránce služby Twitter. Web na základě můžete přizpůsobit **osobní stránku** šablony pomocí těchto kroků:
 
@@ -149,13 +149,13 @@ Chcete-li zobrazit souhrn (`<ul>` seznamu) všech chyb na stránce `Html.Validat
 
 Tyto kroky jsou dost implementovat ověřování na straně serveru. Pokud chcete přidat ověřování na straně klienta, kromě toho proveďte následující kroky.
 
-Přidejte následující odkazy na soubor skriptu uvnitř `<head>` část webové stránky. První dva odkazům na skript, přejděte na vzdálených souborů na serveru doručování obsahu (CDN) sítě. Odkaz na třetí odkazuje na soubor skriptu místní.
+Přidejte následující odkazy na soubor skriptu uvnitř `<head>` část webové stránky. První dva odkazům na skript, přejděte na vzdálených souborů na serveru doručování obsahu (CDN) sítě. Odkaz na třetí odkazuje na soubor skriptu místní. Když není k dispozici CDN produkční aplikace by měla implementovat zálohu. Test záložní.
 
 [!code-html[Main](top-features-in-web-pages-2/samples/sample5.html)]
 
 Nejjednodušší způsob, jak získat místní kopii *jquery.validate.unobtrusive.min.js* knihovna je vytvoření nové webové stránky lokality na základě jedné z šablony webů (například Starter Site). Zahrnuje webu vytvořených šablonou *jquery.validate.unobtrusive.js* souboru ve složce jeho skripty, ze kterého můžete zkopírovat ho na server.
 
-Pokud váš web používá*\_SiteLayout* stránky k řízení rozložení stránky, můžete zahrnout tyto odkazy skript v této stránce tak, aby ověření je k dispozici pro všechny stránky obsahu. Pokud chcete provést ověření pouze na konkrétní stránky, můžete pro registraci skriptů na pouze stránky, správce prostředků. Chcete-li to provést, volejte `Assets.AddScript(path)` na stránce, který chcete ověřit a odkazovat na každý ze souborů skriptu. Pak přidejte volání `Assets.GetScripts` v  *\_SiteLayout* stránky k vykreslení zaregistrovanou `<script>` značky. Další informace najdete v části [skripty registrace pomocí Správce prostředků](#resmanagement).
+Pokud váš web používá<em>\_SiteLayout</em> stránky k řízení rozložení stránky, můžete zahrnout tyto odkazy skript v této stránce tak, aby ověření je k dispozici pro všechny stránky obsahu. Pokud chcete provést ověření pouze na konkrétní stránky, můžete pro registraci skriptů na pouze stránky, správce prostředků. Chcete-li to provést, volejte `Assets.AddScript(path)` na stránce, který chcete ověřit a odkazovat na každý ze souborů skriptu. Pak přidejte volání `Assets.GetScripts` v  <em>\_SiteLayout</em> stránky k vykreslení zaregistrovanou `<script>` značky. Další informace najdete v části [skripty registrace pomocí Správce prostředků](#resmanagement).
 
 Volání do kódu pro jednotlivý prvek `Validation.For` metoda. Tato metoda vysílá atributy této jQuery můžete připojit k ověřování na straně klienta. Příklad:
 
@@ -172,15 +172,15 @@ Následující příklad ukazuje na stránku, která ověřuje uživatelský vst
 
 Zde je stránka, když uživatel odešle platný vstup:
 
-[![topSeven platný 1](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
+[![topSeven-valid-1](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
 
 Když uživatel odešle s povinné pole prázdné, zde je stránka:
 
-[![topSeven platný 2](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
+[![topSeven-valid-2](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
 
 Zde je stránka, když uživatel odešle s něco jiného než celé číslo **kredity** pole:
 
-[![topSeven platný 3](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
+[![topSeven-valid-3](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
 
 Další informace najdete v následujících příspěvcích na blogu:
 
@@ -207,7 +207,7 @@ Následující příklad ukazuje, jak funguje správce prostředků. Kód obsahu
 
 - Vlastního pomocného objektu s názvem `MakeNote`. Tato pomocná vykreslí řetězec v poli nástrojem pro zabalení `div` element kolem něj, naformátovat ohraničením a přidáním &quot;Poznámka:&quot; k němu. Pomocné rutiny také voláním soubor JavaScript, který přidá běhového chování pro poznámku. Místo reference skriptu pomocí `<script>` značky, pomocné rutiny zaregistruje skript voláním `Assets.AddScript` .
 - Soubor JavaScript. Toto je soubor, který volá pomocné rutiny a dočasně zvětšuje velikost písma položek Poznámka během `mouseover` událostí.
-- Stránky obsahu, která odkazuje*\_SiteLayout* stránku, vykreslí obsah v textu a pak zavolá `MakeNote` pomocné rutiny.
+- Stránky obsahu, která odkazuje<em>\_SiteLayout</em> stránku, vykreslí obsah v textu a pak zavolá `MakeNote` pomocné rutiny.
 - A  *\_SiteLayout* stránky. Tato stránka obsahuje hlavičku běžné a strukturou rozložení stránky. Zahrnuje také volání `Assets.GetScripts`, což je, jak správce prostředků vykreslí skript volá na stránce.
 
 Spustit ukázku:
@@ -447,7 +447,7 @@ Zde jsou některé věci na mějte na paměti, když instalujete na používán�
 - Pokud chcete spustit a lokalitě používající verzi aplikace Web Pages 1 (namísto výchozí, jako v předchozím bodu), můžete nakonfigurovat k tomuto webu. Pokud váš web již nemá *web.config* souboru v kořenovém adresáři serveru, vytvořte novou a zkopírujte následující kód XML do ní, přepsání existujícího obsahu. Pokud lokalita již obsahuje *web.config* soubor, přidejte `<appSettings>` element stejný, jako je následující k `<configuration>` oddílu.
 
     [!code-xml[Main](top-features-in-web-pages-2/samples/sample22.xml)]
-' – Pokud nezadáte verzi v *web.config* soubor, lokalitu je nasadit jako webový server verze 2. (Verze 2 sestavení se zkopírují do *bin* složku v nasazené lokalitě.)
+  ' – Pokud nezadáte verzi v *web.config* soubor, lokalitu je nasadit jako webový server verze 2. (Verze 2 sestavení se zkopírují do *bin* složku v nasazené lokalitě.)
 - Nové aplikace, kterou vytvoříte pomocí šablony webů v Web Matrix verzi 2 Beta zahrnout sestavení verze 2 webové stránky na webu *bin* složky.
 
 Obecně platí, můžete vždy řídit kterou verzi webové stránky pro použití s vaší lokality pomocí NuGet pro instalaci příslušné sestavení do lokality *bin* složky. Balíčky naleznete [NuGet.org](http://NuGet.org).
@@ -459,7 +459,7 @@ Web Pages 2 umožňuje vytvářet vlastní zobrazení pro vykreslování obsah n
 
 `System.Web.WebPages` Obor názvů obsahuje následující třídy, které umožňují pracovat s režimy zobrazení: `DefaultDisplayMode`, `DisplayInfo`, a `DisplayModes`. Můžete používat tyto třídy přímo a napsat kód, který vykreslí správné výstup pro konkrétní zařízení.
 
-Alternativně můžete vytvořit stránek specifických pro zařízení s použitím vzor pojmenovávání souborů takto: *FileName.* *Mobile**.cshtml*. Například můžete vytvořit dvě verze stránky, jednu s názvem *MyFile.cshtml* a jednu s názvem *MyFile.Mobile.cshtml*. V době, kdy požadavky na mobilní zařízení spuštění *MyFile.cshtml*, webové stránky vykreslí obsah z *MyFile.Mobile.cshtml*. V opačném *MyFile.cshtml* je vykreslen.
+Alternativně můžete vytvořit stránek specifických pro zařízení s použitím vzor pojmenovávání souborů takto: <em>FileName.</em> <em>Mobile</em><em>.cshtml</em>. Například můžete vytvořit dvě verze stránky, jednu s názvem <em>MyFile.cshtml</em> a jednu s názvem <em>MyFile.Mobile.cshtml</em>. V době, kdy požadavky na mobilní zařízení spuštění <em>MyFile.cshtml</em>, webové stránky vykreslí obsah z <em>MyFile.Mobile.cshtml</em>. V opačném <em>MyFile.cshtml</em> je vykreslen.
 
 Následující příklad ukazuje, jak můžete povolit mobilní vykreslování přidáním stránky obsahu pro mobilní zařízení. *Page1.cshtml* obsahuje obsah a bočním panelu navigace. *Page1.Mobile.cshtml* obsahuje stejný obsah, ale vynechá na bočním panelu.
 

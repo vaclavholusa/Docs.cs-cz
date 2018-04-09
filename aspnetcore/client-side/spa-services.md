@@ -1,7 +1,7 @@
 ---
-title: "K vytvoření jednostránkové aplikace v ASP.NET Core použijte JavaScriptServices"
+title: K vytvoření jednostránkové aplikace v ASP.NET Core použijte JavaScriptServices
 author: scottaddie
-description: "Seznamte se s výhodami JavaScriptServices vytvořit jedné stránce aplikace (SPA) zajišťoval ASP.NET Core."
+description: Seznamte se s výhodami JavaScriptServices vytvořit jedné stránce aplikace (SPA) zajišťoval ASP.NET Core.
 manager: wpickett
 ms.author: scaddie
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: c962fc160cf39ad1c69f4269616c993fde420035
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 05b0d7f31e167e620f2d168109ffd907ba120a49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>K vytvoření jednostránkové aplikace v ASP.NET Core použijte JavaScriptServices
 
@@ -62,7 +62,7 @@ Tyto součástí infrastruktury zvýšit souhrnně, pracovní postup vývoje a p
 
 Chcete-li pracovat s SpaServices, nainstalujte následující:
 * [Node.js](https://nodejs.org/) (verze 6 nebo novější) s npm
-    * Pokud chcete ověřit tyto součásti jsou nainstalovány a možné najít, spusťte z příkazového řádku následující:
+  * Pokud chcete ověřit tyto součásti jsou nainstalovány a možné najít, spusťte z příkazového řádku následující:
 
     ```console
     node -v && npm -v
@@ -70,8 +70,9 @@ Chcete-li pracovat s SpaServices, nainstalujte následující:
 
 Poznámka: Pokud nasazujete webovou stránku Azure, nemusíte dělat nic zde &mdash; Node.js je nainstalovaná a k dispozici v serverových prostředích.
 
-* [.NET core SDK](https://www.microsoft.com/net/download/core) 1.0 (nebo novější)
-    * Pokud jste v systému Windows, instalaci je možné provést tak, že vyberete Visual Studio 2017 **vývoj pro různé platformy .NET Core** zatížení.
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
+
+  * Pokud jste v systému Windows pomocí Visual Studio 2017, sada SDK je nainstalován výběrem **vývoj pro různé platformy .NET Core** zatížení.
 
 * [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) balíček NuGet
 
@@ -262,7 +263,7 @@ Existují dva režimy primární runtime konfigurace:
     * Vyloučí zdroj mapy.
     * Optimalizuje kód klienta prostřednictvím sdružování a minimalizace.
 
-ASP.NET Core používá proměnnou prostředí s názvem `ASPNETCORE_ENVIRONMENT` k uložení konfigurace režimu. V tématu  **[nastavení prostředí](xref:fundamentals/environments#setting-the-environment)**  Další informace.
+ASP.NET Core používá proměnnou prostředí s názvem `ASPNETCORE_ENVIRONMENT` k uložení konfigurace režimu. V tématu **[nastavení prostředí](xref:fundamentals/environments#setting-the-environment)** Další informace.
 
 ### <a name="running-with-net-core-cli"></a>Spuštění s .NET Core rozhraní příkazového řádku
 

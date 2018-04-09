@@ -1,7 +1,7 @@
 ---
-title: "Zkoumání podrobnosti a odstraňte metody"
+title: Zkontrolujte podrobnosti a odstraňte metody aplikace ASP.NET Core
 author: rick-anderson
-description: "Metoda kontroleru podrobnosti a zobrazení v základní aplikaci ASP.NET MVC jádra."
+description: Další informace o metodě řadiče podrobnosti a zobrazit v základní aplikaci ASP.NET MVC jádra.
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: 4bb2489def9eb8fb3f0fd16814803877489899ed
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 3691801c2d48b7f635bee844fdf2392f2f3445de
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="examining-the-details-and-delete-methods"></a>Zkoumání podrobnosti a odstraňte metody
+# <a name="examine-the-details-and-delete-methods-of-an-aspnet-core-app"></a>Zkontrolujte podrobnosti a odstraňte metody aplikace ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -60,5 +60,5 @@ V tématu [publikování webové aplikace ASP.NET Core Azure App Service pomocí
 
 Děkujeme, že dokončení tento úvod do architektury ASP.NET MVC jádra. Děkujeme za jakékoli komentáře, která zůstanou. [Začínáme s MVC a EF základní](xref:data/ef-mvc/intro) je vynikající postupujte podle kroků až tento kurz.
 
->[!div class="step-by-step"]
-[Předchozí](validation.md)
+> [!div class="step-by-step"]
+> [Předchozí](validation.md)

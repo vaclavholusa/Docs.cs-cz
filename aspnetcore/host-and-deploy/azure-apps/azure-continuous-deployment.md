@@ -1,7 +1,7 @@
 ---
-title: "Průběžné nasazování do Azure pomocí sady Visual Studio a Git s ASP.NET Core"
+title: Průběžné nasazování do Azure pomocí sady Visual Studio a Git s ASP.NET Core
 author: rick-anderson
-description: "Naučte se vytvářet webové aplikace ASP.NET Core pomocí sady Visual Studio a nasadíte ho do Azure App Service pro průběžné nasazování pomocí Git."
+description: Naučte se vytvářet webové aplikace ASP.NET Core pomocí sady Visual Studio a nasadíte ho do Azure App Service pro průběžné nasazování pomocí Git.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 7302de1ace62dba53b317039aac7f4763314aa19
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4de1893e8c1f7f2f4d9af7278a110067ea777c61
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>Průběžné nasazování do Azure pomocí sady Visual Studio a Git s ASP.NET Core
 
 Podle [Erik Reitan](https://github.com/Erikre)
 
-[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 Tento kurz ukazuje, jak webová aplikace ASP.NET Core pomocí sady Visual Studio vytvořte a nasaďte ho ze sady Visual Studio do služby Azure App Service pomocí průběžné nasazování.
 
@@ -34,7 +34,7 @@ Viz také [služby VSTS použít při vytváření a publikování do webové ap
 V tomto kurzu se předpokládá, že je nainstalován následující software:
 
 * [Visual Studio](https://www.visualstudio.com)
-* [.NET core SDK](https://www.microsoft.com/net/download/core) (runtime a nástrojů)
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * [Git](https://git-scm.com/downloads) pro Windows
 
 ## <a name="create-an-aspnet-core-web-app"></a>Vytvoření webové aplikace ASP.NET Core

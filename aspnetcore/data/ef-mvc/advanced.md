@@ -1,7 +1,7 @@
 ---
-title: "Jádro ASP.NET MVC s EF Core - rozšířené – 10 z 10"
+title: Jádro ASP.NET MVC s EF Core - rozšířené – 10 z 10
 author: tdykstra
-description: "Tento kurz představuje užitečné témata pro více než se základy vývoje webové aplikace ASP.NET Core, které používají Entity Framework Core."
+description: Tento kurz představuje užitečné témata pro více než se základy vývoje webové aplikace ASP.NET Core, které používají Entity Framework Core.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: d4631765b3742a076f6d7f0dbf72770a9dbf5a09
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: bc0f42cc387a51f9ae2cea6f5d63c50c4555c918
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Pokročilá témata – Základní EF s kurz k ASP.NET MVC jádra (10 10)
+# <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>Jádro ASP.NET MVC s EF Core - rozšířené – 10 z 10
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -149,7 +149,7 @@ Celá řada vývojářů napsat kód pro implementaci úložiště a jednotky pr
 
 Informace o tom, jak implementovat úložiště a jednotky pracovních vzorů najdete v tématu [verze Entity Framework 5 tohoto kurzu řady](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application).
 
-Entity Framework Core implementuje poskytovatele databáze v paměti, který lze použít pro testování. Další informace najdete v tématu [testování pomocí InMemory](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory).
+Entity Framework Core implementuje poskytovatele databáze v paměti, který lze použít pro testování. Další informace najdete v tématu [testu s InMemory](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory).
 
 ## <a name="automatic-change-detection"></a>Detekce automatických změn
 
@@ -169,7 +169,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a>Plány Entity Framework Core zdrojového kódu a vývoj
 
-Zdroj Entity Framework Core je v [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). Úložiště EF základní obsahuje noční sestavení, sledování problémů, funkce specifikace, návrh poznámky, ze schůzky a [plán pro budoucí vývoj](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap). Můžete soubor nebo najít chyby a přispívat.
+Zdroj Entity Framework Core je v [ https://github.com/aspnet/EntityFrameworkCore ](https://github.com/aspnet/EntityFrameworkCore). Úložiště EF základní obsahuje noční sestavení, sledování problémů, funkce specifikace, návrh poznámky, ze schůzky a [plán pro budoucí vývoj](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap). Můžete soubor nebo najít chyby a přispívat.
 
 I když zdrojový kód je otevřená, Entity Framework Core je plně podporovaný jako produkt společnosti Microsoft. Týmem Microsoft Entity Framework udržuje řízení, po kterou jsou přijímány příspěvky a otestuje všechny změny kódu k zajištění kvality jednotlivými verzemi.
 
@@ -244,5 +244,5 @@ Chybová zpráva:
 
 Zkontrolujte připojovací řetězec. Pokud jste odstranili ručně databázový soubor, změňte název databáze v řetězci konstrukce začít znovu s novou databázi.
 
->[!div class="step-by-step"]
-[Předchozí](inheritance.md)
+> [!div class="step-by-step"]
+> [Předchozí](inheritance.md)

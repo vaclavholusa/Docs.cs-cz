@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
-title: "Část 2: Data Access Layer | Microsoft Docs"
+title: 'Část 2: Data Access Layer | Microsoft Docs'
 author: JoeStagner
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 2 popisuje přidání vrstva přístupu k datům."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 2 popisuje přidání vrstva přístupu k datům.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 8b07b320640c1bb0074a4d3a04ca7c5b7e7bb6cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9f734b04a0f4cec3c33bc5b42ef283ea64cdb463
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-data-access-layer"></a>Část 2: Data Access Layer
 ====================
@@ -27,7 +27,7 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 > Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 2 popisuje přidání vrstva přístupu k datům.
 
 
-## <a id="_Toc260221668"></a>Přidání Data Access Layer
+## <a id="_Toc260221668"></a>  Přidání Data Access Layer
 
 Naše aplikace pro elektronické obchodování bude záviset na dvě databáze.
 
@@ -57,6 +57,6 @@ Uložit a sestavit.
 
 Nyní jsme připraveni přidat naše první funkce – Kategorie nabídky produktů.
 
->[!div class="step-by-step"]
-[Předchozí](tailspin-spyworks-part-1.md)
-[další](tailspin-spyworks-part-3.md)
+> [!div class="step-by-step"]
+> [Předchozí](tailspin-spyworks-part-1.md)
+> [další](tailspin-spyworks-part-3.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
-title: "Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení pro službu IIS v testovacím prostředí - 5 12 | Microsoft Docs"
+title: 'Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení pro službu IIS v testovacím prostředí - 5 12 | Microsoft Docs'
 author: tdykstra
-description: "Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného..."
+description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a7995844ee6ed19efa130c4f6c019214d6652ea7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16050455c161c8ced1f954bfce9c2d9a44c522b4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení pro službu IIS v testovacím prostředí - 5 12
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -250,6 +250,6 @@ Informace o spuštění služby IIS nebo IIS Express v sadě Visual Studio najde
 
 Informace o problémech, které mohou se vyskytnout při spuštění aplikace v úrovni medium trust, najdete v části [hostování aplikací ASP.NET ve střední důvěryhodnosti](http://www.4guysfromrolla.com/articles/100307-1.aspx) na 4 nepřetržitého z Rolla lokality.
 
->[!div class="step-by-step"]
-[Předchozí](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)
-[další](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
+> [!div class="step-by-step"]
+> [Předchozí](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)
+> [další](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)

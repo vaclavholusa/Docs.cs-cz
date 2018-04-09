@@ -1,7 +1,7 @@
 ---
-title: "Přidání modelu do aplikace ASP.NET MVC jádra."
+title: Přidat model do aplikace ASP.NET MVC jádra
 author: rick-anderson
-description: "Přidáte model do jednoduchou aplikaci ASP.NET Core."
+description: Přidáte model do jednoduchou aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 09/18/2017
@@ -9,13 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/adding-model
-ms.openlocfilehash: 180258444c3cca169470fd5f13d0d0fcec539f5f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 77750ba0df7775d6a0e4744811848bfe9782d995
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model1](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>Přidat model do aplikace ASP.NET MVC jádra
+
+[!INCLUDE [adding-model1](../../includes/mvc-intro/adding-model1.md)]
 
 * Přidání třídy k *modely* složku s názvem *Movie.cs*.
 * Přidejte následující kód, který *Models/Movie.cs* souboru:
@@ -64,9 +66,9 @@ Modul generování uživatelského rozhraní vytvoří následující:
 
 Automatické vytváření [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (vytvářet, číst, aktualizovat a odstranit) metody akce a zobrazení se označuje jako *generování uživatelského rozhraní*. Brzy budete mít funkční webovou aplikaci, která vám umožní spravovat film databáze.
 
-[!INCLUDE[adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
+[!INCLUDE [adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
 Nyní máte databázi a stránkami zobrazit, upravit, aktualizovat a odstranit data. V dalším kurzu jsme budete pracovat s databází.
 
@@ -75,6 +77,6 @@ Nyní máte databázi a stránkami zobrazit, upravit, aktualizovat a odstranit d
 * [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)
 * [Globalizace a lokalizace](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[Předchozí - přidat zobrazení](adding-view.md)
-[další – práce s SQLite](working-with-sql.md)
+> [!div class="step-by-step"]
+> [Předchozí - přidat zobrazení](adding-view.md)
+> [další – práce s SQLite](working-with-sql.md)

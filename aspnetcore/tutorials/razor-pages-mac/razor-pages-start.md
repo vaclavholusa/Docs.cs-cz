@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s stránky Razor v ASP.NET Core v systému macOS"
+title: Začínáme s stránky Razor v ASP.NET Core v systému macOS pomocí sady Visual Studio pro Mac
 author: rick-anderson
-description: "Zjistit, jak začít pracovat s stránky Razor v ASP.NET Core pomocí sady Visual Studio for Mac."
+description: Zjistit, jak začít pracovat s stránky Razor v ASP.NET Core pomocí sady Visual Studio for Mac.
 manager: wpickett
 ms.author: riande
 ms.date: 07/27/2017
@@ -9,13 +9,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/razor-pages-start
-ms.openlocfilehash: 7db2e01fad616b366f67a9a9435190891a39d584
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 6d9233c952c632022c0b37ef1ea6a5320e4eeb6d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="get-started-with-razor-pages-in-aspnet-core-with-visual-studio-for-mac"></a>Začínáme s stránky Razor v ASP.NET Core pomocí sady Visual Studio pro Mac
+# <a name="get-started-with-razor-pages-in-aspnet-core-on-macos-with-visual-studio-for-mac"></a>Začínáme s stránky Razor v ASP.NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -23,10 +23,7 @@ V tomto kurzu se dozvíte, jaké základní informace o vytváření webové apl
 
 ## <a name="prerequisites"></a>Požadavky
 
-Nainstalujte následující:
-
-* [.NET core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější
-* [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
+[!INCLUDE [](~/includes/net-core-prereqs-macos.md)]
 
 ## <a name="create-a-razor-web-app"></a>Vytvoření webové aplikace Razor
 
@@ -38,11 +35,11 @@ cd RazorPagesMovie
 dotnet run
 ```
 
-Předchozí příkazy použijte [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu stránky Razor. Otevřete v prohlížeči na http://localhost: 5000 zobrazení aplikace.
+Předchozí příkazy použijte [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu stránky Razor. Otevřete prohlížeč na http://localhost:5000 zobrazíte aplikace.
 
 ![Index nebo Domovská stránka](../razor-pages/razor-pages-start/_static/home.png)
 
-[!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
+[!INCLUDE [razor-pages-start](../../includes/RP/razor-pages-start.md)]
 
 ## <a name="open-the-project"></a>Otevřete projekt
 
@@ -56,5 +53,5 @@ V sadě Visual Studio, vyberte **spustit > Spustit bez ladění** spusťte aplik
 
 V dalším kurzu přidáme modelu do projektu.
 
->[!div class="step-by-step"]
-[Další krok: Přidání modelu](xref:tutorials/razor-pages-mac/model)
+> [!div class="step-by-step"]
+> [Další krok: Přidání modelu](xref:tutorials/razor-pages-mac/model)

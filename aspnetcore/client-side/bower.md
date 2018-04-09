@@ -1,7 +1,7 @@
 ---
-title: "Pomocí Boweru v ASP.NET Core"
+title: Spravovat balíčky klienta s Bower v ASP.NET Core
 author: rick-anderson
-description: "Spravovat balíčky klienta s Bower."
+description: Spravovat balíčky klienta s Bower.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: 67695843846cfaf1619db11a7bffcc65802e0f69
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 81244cfb71194876071c64899d627c296aad3802
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Spravovat balíčky klienta s Bower v ASP.NET Core
 
@@ -39,7 +39,7 @@ V tomto kurzu přidáme podpora [písma Super](http://fontawesome.io). Bower bal
 
 * V **Bower: \<název projektu\>**  okně klikněte na kartu "Browse" a pak filtrovat seznam balíčků zadáním `font-awesome` do vyhledávacího pole:
 
- ![Správa balíčků bower](bower/_static/manage-bower-packages.png)
+  ![Správa balíčků bower](bower/_static/manage-bower-packages.png)
 
 * Potvrďte, že "uložit změny do *bower.json*" je zaškrtnuté políčko. V rozevíracím seznamu vyberte verzi a klikněte na tlačítko **nainstalovat** tlačítko. **Výstup** okně se zobrazí podrobné informace o instalaci.
 
@@ -100,9 +100,9 @@ Jakmile seznam balíčků v *bower.json* je se stažení souboru, Visual Studio.
 
 * Uložit *bower.json* souboru.
 
- Ověřte, tento projekt zahrnuje *bootstrap* a *jQuery* adresářů v *wwwroot/lib*. Bower používá *.bowerrc* instalace prostředků v souboru *wwwroot/lib*.
+  Ověřte, tento projekt zahrnuje *bootstrap* a *jQuery* adresářů v *wwwroot/lib*. Bower používá *.bowerrc* instalace prostředků v souboru *wwwroot/lib*.
 
- Poznámka: Rozhraní "Správa balíčků Bower" poskytuje alternativu k ruční souboru úpravy.
+  Poznámka: Rozhraní "Správa balíčků Bower" poskytuje alternativu k ruční souboru úpravy.
 
 ### <a name="enable-static-files"></a>Povolte statické soubory
 
@@ -115,12 +115,12 @@ Jakmile seznam balíčků v *bower.json* je se stažení souboru, Visual Studio.
 
 V této části vytvoříte stránky HTML a ověří, zda má přístup k nasazených balíčků.
 
-* Přidat novou stránku HTML s názvem *Index.html* k *wwwroot* složky. Poznámka: Je nutné přidat soubor HTML *wwwroot* složky. Ve výchozím nastavení, nelze zpracovat statický obsah mimo *wwwroot*. V tématu [práce s statické soubory](xref:fundamentals/static-files) Další informace.
+* Přidat novou stránku HTML s názvem *Index.html* k *wwwroot* složky. Poznámka: Je nutné přidat soubor HTML *wwwroot* složky. Ve výchozím nastavení, nelze zpracovat statický obsah mimo *wwwroot*. V tématu [pracovat s statické soubory](xref:fundamentals/static-files) Další informace.
 
- Nahraďte obsah *Index.html* s následující kód:
+  Nahraďte obsah *Index.html* s následující kód:
 
 [!code-html[](bower/sample/Index.html)]
 
 * Spusťte aplikaci a přejděte do `http://localhost:<port>/Index.html`. Alternativně s *Index.html* otevřené, stiskněte `Ctrl+Shift+W`. Ověřte, že se použije jumbotron stylů, kód jazyka jQuery odpovídá při kliknutí na tlačítko a že zavedení tlačítko se změní stav.
 
- ![Styl jumbotron použitý](bower/_static/jumbotron.png)
+  ![Styl jumbotron použitý](bower/_static/jumbotron.png)

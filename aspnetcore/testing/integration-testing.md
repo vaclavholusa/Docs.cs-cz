@@ -1,7 +1,7 @@
 ---
-title: "Integrace testování v ASP.NET Core"
+title: Integrace testů v ASP.NET Core
 author: ardalis
-description: "Jak používat ASP.NET Core integrace testování pro zajištění, že součásti aplikace fungovat správně."
+description: Jak používat ASP.NET Core integrace testování pro zajištění, že součásti aplikace fungovat správně.
 manager: wpickett
 ms.author: riande
 ms.date: 09/25/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 8c28f1b4f66433eaebd9e474e784ecf3f1ac271b
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 3c618b2bd5919f6536601631eb4d21359a6bc03a
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="integration-testing-in-aspnet-core"></a>Integrace testování v ASP.NET Core
+# <a name="integration-tests-in-aspnet-core"></a>Integrace testů v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/)
 
@@ -151,4 +151,4 @@ Následující tento refaktoring jste jisti, že webové aplikace stále funguje
 
 * [Testování jednotek](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [Middleware](xref:fundamentals/middleware/index)
-* [Testování kontrolerů](xref:mvc/controllers/testing)
+* [Testovací kontrolery](xref:mvc/controllers/testing)

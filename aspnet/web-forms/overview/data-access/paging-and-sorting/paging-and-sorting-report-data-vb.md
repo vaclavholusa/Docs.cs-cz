@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
-title: "Sestava stránkování a řazení dat (VB) | Microsoft Docs"
+title: Sestava stránkování a řazení dat (VB) | Microsoft Docs
 author: rick-anderson
-description: "Stránkování a řazení jsou dvě velmi běžné funkce při zobrazení dat v aplikaci online. V tomto kurzu provedeme první pohled na přidání řazení a..."
+description: Stránkování a řazení jsou dvě velmi běžné funkce při zobrazení dat v aplikaci online. V tomto kurzu provedeme první pohled na přidání řazení a...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 23dbd63110092b2e91b7f3f9f6b602ef917c5527
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c5e7e110d436caa7b7526eae105fde601367007a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="paging-and-sorting-report-data-vb"></a>Stránkování a řazení dat sestavy (VB)
 ====================
@@ -115,13 +115,13 @@ Ovládací prvky DetailsView i FormView zobrazit pouze jeden záznam na stránce
 
 Tato rutina GridView DetailsView a FormView rozhraní stránkování s lze přizpůsobit pomocí následujících vlastností:
 
-- `PagerStyle`Určuje styl informace o rozhraní stránkování; můžete zadat nastavení jako `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`a tak dále.
-- `PagerSettings`obsahuje bevy vlastností, které můžete přizpůsobit funkce rozhraní stránkování; `PageButtonCount` určuje maximální počet v stránkování rozhraní (výchozí hodnota je 10) čísla číselné stránek; [ `Mode` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) Určuje, jak funguje rozhraní stránkování a může být nastaven na: 
+- `PagerStyle` Určuje styl informace o rozhraní stránkování; můžete zadat nastavení jako `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`a tak dále.
+- `PagerSettings` obsahuje bevy vlastností, které můžete přizpůsobit funkce rozhraní stránkování; `PageButtonCount` určuje maximální počet v stránkování rozhraní (výchozí hodnota je 10) čísla číselné stránek; [ `Mode` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) Určuje, jak funguje rozhraní stránkování a může být nastaven na: 
 
-    - `NextPrevious`Zobrazí se další a předchozí tlačítka, které uživateli umožňují krok dopředný nebo zpětné jednu stránku současně
-    - `NextPreviousFirstLast`kromě tlačítka Další a předchozí první a poslední tlačítka jsou taky součástí, které uživateli umožňují rychle přesunout na první nebo poslední stránku dat
-    - `Numeric`Zobrazuje sérii čísel stránek, které uživateli umožňují okamžitě přejít na libovolnou stránku
-    - `NumericFirstLast`Kromě číslo stránky obsahuje první a poslední tlačítka, které uživateli umožňují rychle přesunout na první nebo poslední stránku dat; tlačítka prvním či posledním se zobrazují pouze, pokud se nemůže vejít všechna čísla číselné stránky
+    - `NextPrevious` Zobrazí se další a předchozí tlačítka, které uživateli umožňují krok dopředný nebo zpětné jednu stránku současně
+    - `NextPreviousFirstLast` kromě tlačítka Další a předchozí první a poslední tlačítka jsou taky součástí, které uživateli umožňují rychle přesunout na první nebo poslední stránku dat
+    - `Numeric` Zobrazuje sérii čísel stránek, které uživateli umožňují okamžitě přejít na libovolnou stránku
+    - `NumericFirstLast` Kromě číslo stránky obsahuje první a poslední tlačítka, které uživateli umožňují rychle přesunout na první nebo poslední stránku dat; tlačítka prvním či posledním se zobrazují pouze, pokud se nemůže vejít všechna čísla číselné stránky
 
 Kromě toho GridView, DetailsView a FormView všech nabízet `PageIndex` a `PageCount` vlastnosti, které označují aktuální stránky zobrazení a celkový počet stránek dat, v uvedeném pořadí. `PageIndex` Vlastnost je indexovaný začínající na 0, znamená to, že při prohlížení na první stránku dat `PageIndex` se rovnat 0. `PageCount`, na druhé straně spustí počítání v 1, znamená to, že `PageIndex` je omezená na hodnoty mezi 0 a `PageCount - 1`.
 
@@ -245,7 +245,7 @@ Všechny GridView polí BoundField, vlastnost CheckBoxField, TemplateField a tak
 
 1. Rutina GridView s [událost Sorting](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) aktivuje
 2. Rutina GridView s [ `SortExpression` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) je nastaven na `SortExpression` pole jejíž řazení hlavička LinkButton označeného kliknutím
-3. ObjectDataSource znovu načte všechna data z BLL a potom seřadí data pomocí GridView s`SortExpression`
+3. ObjectDataSource znovu načte všechna data z BLL a potom seřadí data pomocí GridView s `SortExpression`
 4. Rutina GridView s `PageIndex` vlastnost nastaven na hodnotu 0, znamená to, že při řazení uživatele se vrátí na první stránku dat (za předpokladu, že byl implementován podporu stránkování)
 5. Rutina GridView s [ `Sorted` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) aktivuje
 
@@ -306,8 +306,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-customized-sorting-user-interface-cs.md)
-[další](efficiently-paging-through-large-amounts-of-data-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-customized-sorting-user-interface-cs.md)
+> [další](efficiently-paging-through-large-amounts-of-data-vb.md)

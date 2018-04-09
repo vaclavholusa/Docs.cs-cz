@@ -1,7 +1,7 @@
 ---
-title: "Nastavení Microsoft Account externí přihlášení"
+title: Nastavení Microsoft Account externí přihlášení pomocí ASP.NET Core
 author: rick-anderson
-description: "Tento kurz představuje integraci ověřování uživatele účtu Microsoft do existující aplikace ASP.NET Core."
+description: Tento kurz představuje integraci ověřování uživatele účtu Microsoft do existující aplikace ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 08/24/2017
@@ -9,21 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: d57647da978f7edaaddedba7c9f4c1de8dc07405
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: aabbbe66aee8c8b93140bcc4181b432017cec1d7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configuring-microsoft-account-authentication"></a>Konfigurace ověřování Account Microsoft
+# <a name="microsoft-account-external-login-setup-with-aspnet-core"></a>Nastavení Microsoft Account externí přihlášení pomocí ASP.NET Core
 
 Podle [Valeriy Novytskyy](https://github.com/01binary) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V tomto kurzu se dozvíte, jak povolit uživatelům přihlásit se pomocí svého účtu Microsoft pomocí projektu ASP.NET 2.0 základní ukázka na vytvořit [předchozí stránce](index.md).
+V tomto kurzu se dozvíte, jak povolit uživatelům přihlásit se pomocí svého účtu Microsoft pomocí projektu ASP.NET 2.0 základní ukázka na vytvořit [předchozí stránce](xref:security/authentication/social/index).
 
 ## <a name="create-the-app-in-microsoft-developer-portal"></a>Vytvoření aplikace v portálu pro vývojáře společnosti Microsoft
 
-* Přejděte na [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com) a vytvořte nebo se přihlaste účtem Microsoft:
+* Přejděte na [ https://apps.dev.microsoft.com ](https://apps.dev.microsoft.com) a vytvořte nebo se přihlaste účtem Microsoft:
 
 ![Přihlaste se dialogové okno](index/_static/MicrosoftDevLogin.png)
 
@@ -63,7 +63,7 @@ Pokud nemáte účet Microsoft, klepněte na  **[vytvořit!](https://signup.live
 
 ![Dialogové okno Nový hesla generovaného](index/_static/MicrosoftDevPassword.png)
 
-Odkaz citlivá nastavení, jako je Microsoft `Application ID` a `Password` do konfigurace vaší aplikace pomocí [tajný klíč správce](../../app-secrets.md). Pro účely tohoto kurzu, název tokeny `Authentication:Microsoft:ApplicationId` a `Authentication:Microsoft:Password`.
+Odkaz citlivá nastavení, jako je Microsoft `Application ID` a `Password` do konfigurace vaší aplikace pomocí [tajný klíč správce](xref:security/app-secrets). Pro účely tohoto kurzu, název tokeny `Authentication:Microsoft:ApplicationId` a `Authentication:Microsoft:Password`.
 
 ## <a name="configure-microsoft-account-authentication"></a>Konfigurovat ověřování účet Microsoft
 
@@ -74,8 +74,7 @@ Odkaz citlivá nastavení, jako je Microsoft `Application ID` a `Password` do ko
 
    `dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount`
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Přidání služby Account Microsoft `ConfigureServices` metoda v *Startup.cs* souboru:
 
 ```csharp
@@ -90,10 +89,9 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 });
 ```
 
-[!INCLUDE[default settings configuration](includes/default-settings.md)]
+[!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Přidat middlewaru Microsoft Account v `Configure` metoda v *Startup.cs* souboru:
 
 ```csharp
@@ -104,8 +102,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 });
 ```
 
----
-
+* * *
 I když tyto tokeny názvy technologiím použitým na portál pro vývojáře společnosti Microsoft `ApplicationId` a `Password`, že zveřejněné jako `ClientId` a `ClientSecret` v konfiguraci rozhraní API.
 
 Najdete v článku [MicrosoftAccountOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.microsoftaccountoptions) referenční dokumentace rozhraní API pro další informace o možností konfigurace podporovanou Account Microsoft ověřování. To slouží k požadavku na jiné informace o uživateli.
@@ -136,7 +133,7 @@ Nyní jste se přihlásili pomocí přihlašovacích údajů společnosti Micros
 
 ## <a name="next-steps"></a>Další kroky
 
-* Tento článek vám ukázal, jak můžete ověřovat se společností Microsoft. Můžete postupovat podle podobný postup k ověření pomocí jiných poskytovatelů uvedené na [předchozí stránce](index.md).
+* Tento článek vám ukázal, jak můžete ověřovat se společností Microsoft. Můžete postupovat podle podobný postup k ověření pomocí jiných poskytovatelů uvedené na [předchozí stránce](xref:security/authentication/social/index).
 
 * Jakmile budete publikovat web vaší webové aplikace Azure, měli byste vytvořit nový `Password` v portálu pro vývojáře společnosti Microsoft.
 

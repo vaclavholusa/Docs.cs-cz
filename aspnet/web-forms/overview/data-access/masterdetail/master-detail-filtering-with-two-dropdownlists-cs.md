@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-cs
-title: "Filtrování s dvěma DropDownLists (C#) podrobností | Microsoft Docs"
+title: Filtrování s dvěma DropDownLists (C#) podrobností | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu rozšíří vztahu seznam podrobnosti k přidání třetí vrstvy, pomocí dvou ovládacích prvků rozevírací seznam a vyberte požadované nadřazených a nadřazený recor..."
+description: V tomto kurzu rozšíří vztahu seznam podrobnosti k přidání třetí vrstvy, pomocí dvou ovládacích prvků rozevírací seznam a vyberte požadované nadřazených a nadřazený recor...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c3898158f251daf0fac899fe7c18ac03322114b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d971dcb3814dc088202c3a3e4addb03375049ca0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-c"></a>Seznam podrobnosti filtrování s dvěma DropDownLists (C#)
 ====================
@@ -102,12 +102,12 @@ Vzhledem k tomu `ProductsByCategory` rozevírací seznam zobrazit pouze tyto pro
 **Obrázek 9**: Konfigurace ObjectDataSource pro použití `GetProductsByCategoryID(categoryID)` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-two-dropdownlists-cs/_static/image27.png))
 
 
-V posledním kroku průvodce, je potřeba zadat hodnotu  *`categoryID`*  parametr. Tento parametr přiřadit vybrané položky ze `Categories` rozevírací seznam.
+V posledním kroku průvodce, je potřeba zadat hodnotu *`categoryID`* parametr. Tento parametr přiřadit vybrané položky ze `Categories` rozevírací seznam.
 
 
 [![Hodnota parametru categoryID pro vyžádání obsahu z rozevírací seznam kategorií](master-detail-filtering-with-two-dropdownlists-cs/_static/image29.png)](master-detail-filtering-with-two-dropdownlists-cs/_static/image28.png)
 
-**Obrázek 10**: pro vyžádání obsahu  *`categoryID`*  hodnota parametru `Categories` rozevírací seznam ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-two-dropdownlists-cs/_static/image30.png))
+**Obrázek 10**: pro vyžádání obsahu *`categoryID`* hodnota parametru `Categories` rozevírací seznam ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-two-dropdownlists-cs/_static/image30.png))
 
 
 S ObjectDataSource nakonfigurované zbývá určit, jaké pole zdroje dat se používají pro zobrazení a hodnoty rozevírací seznam položky. Zobrazení `ProductName` pole a použít `ProductID` pole jako hodnotu.
@@ -141,7 +141,7 @@ Aktuálně `productsByCategory` rozevírací seznam, pokud změněn, nemá *nen�
 
 ## <a name="step-3-using-a-detailsview-to-display-details-for-the-selected-product"></a>Krok 3: Použití DetailsView si můžete zobrazit podrobnosti pro vybranou produktu
 
-Posledním krokem je zobrazíte podrobnosti vybrané produktu v DetailsView. DetailsView dosáhnout, přidat na stránku, nastavte jeho `ID` vlastnost `ProductDetails`a vytvořit nové ObjectDataSource pro ni. Konfigurace této ObjectDataSource načítat data z `ProductsBLL` třídy `GetProductByProductID(productID)` metoda pomocí vybrané hodnoty `ProductsByCategory` rozevírací seznam pro hodnotu  *`productID`*  parametr.
+Posledním krokem je zobrazíte podrobnosti vybrané produktu v DetailsView. DetailsView dosáhnout, přidat na stránku, nastavte jeho `ID` vlastnost `ProductDetails`a vytvořit nové ObjectDataSource pro ni. Konfigurace této ObjectDataSource načítat data z `ProductsBLL` třídy `GetProductByProductID(productID)` metoda pomocí vybrané hodnoty `ProductsByCategory` rozevírací seznam pro hodnotu *`productID`* parametr.
 
 
 [![Rozhodnete použít ProductsBLL – třída](master-detail-filtering-with-two-dropdownlists-cs/_static/image44.png)](master-detail-filtering-with-two-dropdownlists-cs/_static/image43.png)
@@ -156,7 +156,7 @@ Posledním krokem je zobrazíte podrobnosti vybrané produktu v DetailsView. Det
 
 [![ProductID hodnota parametru pro vyžádání obsahu z ProductsByCategory rozevírací seznam](master-detail-filtering-with-two-dropdownlists-cs/_static/image50.png)](master-detail-filtering-with-two-dropdownlists-cs/_static/image49.png)
 
-**Obrázek 17**: pro vyžádání obsahu  *`productID`*  hodnota parametru `ProductsByCategory` rozevírací seznam ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-two-dropdownlists-cs/_static/image51.png))
+**Obrázek 17**: pro vyžádání obsahu *`productID`* hodnota parametru `ProductsByCategory` rozevírací seznam ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-two-dropdownlists-cs/_static/image51.png))
 
 
 Můžete zobrazit všechny dostupné polí v ovládacím prvku DetailsView. Jste se rozhodli odebrat `ProductID`, `SupplierID`, a `CategoryID` polí a přeuspořádány a formátu zbývající pole. Kromě toho vymazán out prvku DetailsView `Height` a `Width` vlastnosti, což DetailsView rozšiřovat na šířku potřebné pro nejlepší zobrazení data, místo aby je omezené na zadanou velikost. Úplný kód se zobrazí níže:
@@ -215,12 +215,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Hilton Giesenow. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](master-detail-filtering-with-a-dropdownlist-cs.md)
-[další](master-detail-filtering-across-two-pages-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](master-detail-filtering-with-a-dropdownlist-cs.md)
+> [další](master-detail-filtering-across-two-pages-cs.md)

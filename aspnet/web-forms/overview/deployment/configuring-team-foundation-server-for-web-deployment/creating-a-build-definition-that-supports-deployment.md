@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
-title: "Vytvoření definice sestavení, který podporuje nasazení | Microsoft Docs"
+title: Vytvoření definice sestavení, který podporuje nasazení | Microsoft Docs
 author: jrjlee
-description: "Pokud chcete provádět jakékoliv sestavení v Team Foundation Server (TFS) 2010, musíte vytvořit definici sestavení v týmových projektech. Toto téma des..."
+description: Pokud chcete provádět jakékoliv sestavení v Team Foundation Server (TFS) 2010, musíte vytvořit definici sestavení v týmových projektech. Toto téma des...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: e5610753968328e5d0f1dba4cbbfed08480fd773
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c5ea0bd9f01bb57b96abd349741f304c0093d887
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a>Vytvoření definice sestavení, který podporuje nasazení
 ====================
@@ -27,9 +27,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Pokud chcete provádět jakékoliv sestavení v Team Foundation Server (TFS) 2010, musíte vytvořit definici sestavení v týmových projektech. Toto téma popisuje, jak vytvořit novou definici sestavení v sadě TFS a postup řízení nasazení webu jako součást procesu sestavení v sestavení Team.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na soubor projektu rozdělení metody uvedené v [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které dva soubory projektu & #x 2014 je řízena procesem sestavení a nasazení; o Ne, obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve kterém je řízena procesem sestavení a nasazení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="task-overview"></a>Přehled úloh
 
@@ -62,7 +62,7 @@ To je znázorněn proces:
 V další části vysvětluje, jak implementovat tento proces vytvořením nové definice buildu.
 
 > [!NOTE]
-> Tento postup & #x 2014; ve kterém jeden automatizovaného procesu sestavení, testy a nasadí řešení & #x 2014; je pravděpodobně být nejvhodnější pro nasazení na testovací prostředí. Pro pracovní a provozní prostředí budete mnohem víc pravděpodobně chcete nasadit obsah z předchozího sestavení, který jste již ověřit a ověřit v testovacím prostředí. Tento postup je popsaný v dalším tématu [nasazení konkrétní sestavení](deploying-a-specific-build.md).
+> Tento postup&#x2014;v které jedné automatizované procesu sestavení, testuje a nasadí řešení&#x2014;může být nejvhodnější pro nasazení na testovací prostředí. Pro pracovní a provozní prostředí budete mnohem víc pravděpodobně chcete nasadit obsah z předchozího sestavení, který jste již ověřit a ověřit v testovacím prostředí. Tento postup je popsaný v dalším tématu [nasazení konkrétní sestavení](deploying-a-specific-build.md).
 
 
 ### <a name="who-performs-this-procedure"></a>Kdo provádí tento postup?
@@ -133,7 +133,7 @@ Pokud jste nakonfigurovali vaší definice sestavení používat položek konfig
 
     ![](creating-a-build-definition-that-supports-deployment/_static/image10.png)
 
-Chcete-li zkontrolovat průběh a výsledek sestavení & #x 2014; bez ohledu na to, zda byla aktivována ručně nebo automaticky & #x 2014; klikněte dvakrát na definici sestavení v **Team Explorer** okno. Tím se otevře **Průzkumník sestavení** kartě.
+Chcete-li zkontrolovat průběh a výsledek sestavení&#x2014;bez ohledu na to, zda byla aktivována ručně nebo automaticky&#x2014;dvakrát klikněte na definici sestavení v **Team Explorer** okno. Tím se otevře **Průzkumník sestavení** kartě.
 
 ![](creating-a-build-definition-that-supports-deployment/_static/image11.png)
 
@@ -161,6 +161,6 @@ Aby automatického nasazení na úspěšné jako součást procesu sestavení bu
 
 Další informace o vytváření definic sestavení, najdete v části [vytvoření základní definice sestavení](https://msdn.microsoft.com/library/ms181716.aspx) a [definovat proces vaše sestavení](https://msdn.microsoft.com/library/ms181715.aspx). Další pokyny k sestavení služby Řízení front, najdete v části [fronty sestavení](https://msdn.microsoft.com/library/ms181722.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](configuring-a-tfs-build-server-for-web-deployment.md)
-[další](deploying-a-specific-build.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-a-tfs-build-server-for-web-deployment.md)
+> [další](deploying-a-specific-build.md)

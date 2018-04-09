@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/releases/whats-new-in-aspnet-web-pages-32
-title: "Co je nového v rozhraní ASP.NET Web Pages 3.2 | Microsoft Docs"
+title: Co je nového v rozhraní ASP.NET Web Pages 3.2 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/30/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/whats-new-in-aspnet-web-pages-32
 msc.type: authoredcontent
-ms.openlocfilehash: cdb0e259bbf27d1d3dcf6ada11e6636c9cefcc9c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 80421018e0508d430b6142cd3cee1727d1d17b7e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-aspnet-web-pages-32"></a>Co je nového v rozhraní ASP.NET Web Pages 3.2
 ====================
@@ -40,7 +40,7 @@ Můžete instalovat nebo aktualizovat balíčky NuGet vydaná pomocí konzoly Sp
 
 Jsme pevné jeden chyb a k vylepšení jeden dílčí funkce v této verzi. Můžete vyhledat dotaz pro stejné [zde](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&amp;status=Closed&amp;type=All&amp;priority=All&amp;release=v5.2%20RC|v5.2%20RTM&amp;assignedTo=All&amp;component=Web%20Pages%2FRazor&amp;sortField=Id&amp;sortDirection=Descending&amp;page=0&amp;reasonClosed=Fixed).
 
-## <a name="aspnet-web-pages-322"></a>Rozhraní ASP.NET Web Pages 3.2.2
+## <a name="aspnet-web-pages-322"></a>ASP.NET Web Pages 3.2.2
 
 Tato verze zobrazí souhrn up změn [rozhraní ASP.NET Web Pages 3.2.1 betaverze](https://blogs.msdn.com/b/webdev/archive/2014/07/28/announcing-the-beta-release-of-web-pages-3-2-1.aspx) který poskytuje zlepšování významně zvýšit výkon při vykreslování stránky velké razor. V tématu[webu Codeplex problém 585](https://aspnetwebstack.codeplex.com/workitem/585). Toto vydání zarovnaná s MVC 5.2.2 balíčky, které teď bude záviset na tuto verzi.
 
@@ -50,7 +50,7 @@ Výsledek na serveru je navíc využití procesoru, delší uchování paměti a
 
 Níže je tabulka demonstraci výsledky analýzy [nástroje perfview](https://channel9.msdn.com/Series/PerfView-Tutorial) spustit. Procesor trvá konstantní v 68 % při vykreslení velkých stránek. V tabulce jsou téměř úplně eliminace počet kolekcí, 2. generace, a výsledkem je vyšší rychlost požadavků a významnou snížení pozastaví kvůli uvolnění paměti.
 
-| **Oblasti** | **Před (3.2)** | **Po (3.2.1)** | **% Rozdílů** |
+| **Oblasti** | **Před (3.2)** | **Po (3.2.1)** | **Delta %** |
 | --- | --- | --- | --- |
 | Celkový počet požadavku (počet) | 26,986 | 32,591 | <font style="background-color: #4bacc6">20.80%</font> |
 | Doba trvání trasování (sekundy) | 196.20 | 198.60 | 1.20% |
@@ -65,7 +65,8 @@ Níže je tabulka demonstraci výsledky analýzy [nástroje perfview](https://ch
 | Využití procesoru / požadavku (ukázky/req) | 19.73 | 16.47 | -16.50% |
 
 | Barevné kódování: | <font style="background-color: #00ff00">Zlepšování jádra</font> | <font style="background-color: #4bacc6">Kladné dopad na výkon</font> |
-| --- | --- | --- |
+|---------------|-----------------------------------------------------------------|-------------------------------------------------------------------------------|
+|               |                                                                 |                                                                               |
 
 ## <a name="aspnet-web-pages-323-beta1"></a>ASP.NET Web Pages 3.2.3 beta1
 

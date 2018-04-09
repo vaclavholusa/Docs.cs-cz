@@ -1,7 +1,7 @@
 ---
-title: "Správa klíčů"
+title: Správa klíčů v základní technologie ASP.NET
 author: rick-anderson
-description: "Tento dokument popisuje podrobnosti implementace ASP.NET Core data protection klíče rozhraní API pro správu."
+description: Další podrobnosti implementace správy klíčů na ochranu dat ASP.NET jádra rozhraní API.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: a1fd7c55ec94d5def569bb407c064f4fd2fe9695
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 1b073d8779547a828c17e825b0663b26efb61d14
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-management"></a>Správa klíčů
+# <a name="key-management-in-aspnet-core"></a>Správa klíčů v základní technologie ASP.NET
 
 <a name="data-protection-implementation-key-management"></a>
 
@@ -29,7 +29,7 @@ Systém ochrany dat automaticky spravuje životnost hlavního klíče, které sl
 
 * Odvolat - klíč dojde k ohrožení a nesmí se používat pro nových operací chránit.
 
-Všechny vytvořené, aktivní a vypršela platnost klíče může používat se odemknout příchozí datové části. Odvolané klíče ve výchozím nastavení se nedá použít k odemknutí datových částí, ale může vývojář aplikace [toto chování potlačit](../consumer-apis/dangerous-unprotect.md#data-protection-consumer-apis-dangerous-unprotect) v případě potřeby.
+Všechny vytvořené, aktivní a vypršela platnost klíče může používat se odemknout příchozí datové části. Odvolané klíče ve výchozím nastavení se nedá použít k odemknutí datových částí, ale může vývojář aplikace [toto chování potlačit](xref:security/data-protection/consumer-apis/dangerous-unprotect#data-protection-consumer-apis-dangerous-unprotect) v případě potřeby.
 
 >[!WARNING]
 > Vývojář může být tendenci odstranění klíče z okruhu klíč (například odstraněním odpovídající soubor ze systému souborů). V tomto okamžiku je trvale undecipherable všechna data chráněná pomocí klíče a není žádné nouzový potlačení stejně, jako je odvolané klíče. Odstranění klíče je opravdu škodlivý chování a v důsledku toho systému ochrany dat zveřejňuje žádné první třídy rozhraní API k provedení této operace.
@@ -83,6 +83,6 @@ Následující ukázka ukazuje, jak pomocí `IKeyManager` rozhraní ke kontrole 
 
 Systém ochrany dat má Heuristika které pokusí se automaticky odvodit umístění příslušné úložiště klíčů a šifrování na mechanismus rest. Toto je konfigurovatelná vývojáře aplikace. Tyto dokumenty popisují implementace v poli z těchto mechanismů:
 
-* [Pole poskytovatelů úložiště klíčů](key-storage-providers.md#data-protection-implementation-key-storage-providers)
+* [Pole poskytovatelů úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers)
 
-* [Pole klíče šifrování v rest zprostředkovatelé](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers)
+* [Pole klíče šifrování v rest zprostředkovatelé](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
-title: "Běžné konfigurace rozdíly mezi vývojovým týmem a produkční (C#) | Microsoft Docs"
+title: Běžné konfigurace rozdíly mezi vývojovým týmem a produkční (C#) | Microsoft Docs
 author: rick-anderson
-description: "V dřívějších kurzy jsme nasadili náš web tak, že zkopírujete všechny relevantní soubory z vývojového prostředí do produkčního prostředí. Ale i..."
+description: V dřívějších kurzy jsme nasadili náš web tak, že zkopírujete všechny relevantní soubory z vývojového prostředí do produkčního prostředí. Ale i...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 092362e3811213047820dab08efc16e1a1e75020
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2694e0dba774a5bca13b9acc6b14c3e47226a064
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="common-configuration-differences-between-development-and-production-c"></a>Běžné konfigurace rozdíly mezi vývojovým týmem a produkční (C#)
 ====================
@@ -53,7 +53,7 @@ Když je navštívené stránky ASP.NET pro první (nebo při prvním po se změ
 Atribut ladění je jedním z nejdůležitějších atributů `<compilation>` elementu. Pokud `debug` atribut je nastaven na hodnotu true, pak kompilované sestavení obsahovat symboly ladění, které jsou potřeba při ladění aplikace v sadě Visual Studio. Ale symboly ladění zvětšete velikost sestavení a stanovit požadavky další paměť při spuštění kódu. Kromě toho, když `debug` atribut je nastaven na hodnotu true, žádný obsah vrácený `WebResource.axd` není v mezipaměti, což znamená, že pokaždé, když uživatel navštíví stránky, bude nutné znovu stáhnout statický obsah vrácený `WebResource.axd`.
 
 > [!NOTE]
-> `WebResource.axd`je integrované obslužná rutina HTTP zavedená v technologii ASP.NET 2.0, ovládací prvky serveru použít k načtení vložené prostředky, jako jsou soubory skriptu, bitové kopie, soubory šablon stylů CSS a jiný obsah. Další informace o tom, `WebResource.axd` funguje a jak můžete použít pro přístup vložené prostředky ze vaše vlastní serverové ovládací prvky, najdete v části [přístup k vložených prostředků prostřednictvím adresu URL pomocí `WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx).
+> `WebResource.axd` je integrované obslužná rutina HTTP zavedená v technologii ASP.NET 2.0, ovládací prvky serveru použít k načtení vložené prostředky, jako jsou soubory skriptu, bitové kopie, soubory šablon stylů CSS a jiný obsah. Další informace o tom, `WebResource.axd` funguje a jak můžete použít pro přístup vložené prostředky ze vaše vlastní serverové ovládací prvky, najdete v části [přístup k vložených prostředků prostřednictvím adresu URL pomocí `WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx).
 
 
 `<compilation>` Elementu `debug` je obvykle nastavena na hodnotu "true" ve vývojovém prostředí. Ve skutečnosti tento atribut musí být nastaven na hodnotu true, pokud chcete ladit webové aplikace; Pokud se pokusíte ladění aplikace ASP.NET v sadě Visual Studio a `debug` atribut je nastaven na hodnotu "false", Visual Studio se zobrazí zpráva vysvětlení, že nemůžete dokud ladit aplikace `debug` je nastavena na hodnotu "true" a bude nabídka, aby pro vás provedl tuto změnu.
@@ -136,6 +136,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Projekty nasazení webu 2008 VS](https://weblogs.asp.net/scottgu/archive/2005/11/06/429723.aspx) | [VS 2008 webového projektu podpora nasazení vydání](https://weblogs.asp.net/scottgu/archive/2008/01/28/vs-2008-web-deployment-project-support-released.aspx)
 - [Projekty nasazení webu](https://msdn.microsoft.com/magazine/cc163448.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](deploying-your-site-using-visual-studio-cs.md)
-[další](core-differences-between-iis-and-the-asp-net-development-server-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-your-site-using-visual-studio-cs.md)
+> [další](core-differences-between-iis-and-the-asp-net-development-server-cs.md)

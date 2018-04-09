@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/caching
-title: "Ukládání do mezipaměti | Microsoft Docs"
+title: Ukládání do mezipaměti | Microsoft Docs
 author: microsoft
-description: "Představu o ukládání do mezipaměti je důležité pro dobře provádění aplikaci ASP.NET. ASP.NET 1.x nabízí tři různé možnosti pro ukládání do mezipaměti; ukládání výstupu do mezipaměti..."
+description: Představu o ukládání do mezipaměti je důležité pro dobře provádění aplikaci ASP.NET. ASP.NET 1.x nabízí tři různé možnosti pro ukládání do mezipaměti; ukládání výstupu do mezipaměti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 9b229de60e09b94189f62a6bb6fa61a9973d637b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 90faaae75cc85585efa05e6e50eabe8c990d076e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching"></a>Caching
 ====================
@@ -59,7 +59,7 @@ Zneplatní položce, který byl vložen výše, stačí odstraňte položku, kte
 
 Všimněte si klíč položky, který funguje jako klíč mezipaměti musí být stejná jako hodnota přidat do pole klíče mezipaměti.
 
-## <a name="polling-based-sql-cache-dependenciesalso-called-table-based-dependencies"></a>Na základě dotazování závislosti mezipaměti SQL*(také nazývané cyklické závislosti)*
+## <a name="polling-based-sql-cache-dependenciesemalso-called-table-based-dependenciesem"></a>Na základě dotazování závislosti mezipaměti SQL<em>(také nazývané cyklické závislosti)</em>
 
 SQL Server 7 a 2000 pomocí modelu na základě dotazování pro závislosti mezipaměti SQL. Na tabulku databáze, která se aktivuje při změně dat v tabulce používá model na základě cyklického dotazování aktivační událost. Který aktivovat aktualizace **changeId** v tabulce oznámení, která pravidelně kontroluje ASP.NET. Pokud **changeId** pole se aktualizovala, ASP.NET ví, že data změnily a by způsobila neplatnost data uložená v mezipaměti.
 
@@ -144,7 +144,7 @@ Následující příklad kódu ukazuje, jak správně nakonfigurovat výjimek p�
 
 [!code-csharp[Main](caching/samples/sample11.cs)]
 
-More Information: [https://msdn.microsoft.com/library/t9x04ed2.aspx](https://msdn.microsoft.com/library/t9x04ed2.aspx)
+Další informace: [https://msdn.microsoft.com/library/t9x04ed2.aspx](https://msdn.microsoft.com/library/t9x04ed2.aspx)
 
 ## <a name="query-based-sql-cache-dependencies-sql-server-2005-only"></a>Závislosti mezipaměti na základě dotazů SQL (pouze SQL Server 2005)
 
@@ -170,7 +170,7 @@ Další metodou konfiguraci závislosti mezipaměti na základě dotazů SQL je 
 
 [!code-csharp[Main](caching/samples/sample14.cs)]
 
-More Information: [https://msdn.microsoft.com/library/default.asp?url=/library/enus/dnvs05/html/querynotification.asp](https://msdn.microsoft.com/library/default.asp?url=/library/enus/dnvs05/html/querynotification.asp)
+Další informace: [https://msdn.microsoft.com/library/default.asp?url=/library/enus/dnvs05/html/querynotification.asp](https://msdn.microsoft.com/library/default.asp?url=/library/enus/dnvs05/html/querynotification.asp)
 
 ## <a name="post-cache-substitution"></a>Substituce mezipaměti
 
@@ -237,12 +237,13 @@ Následující atributy jsou k dispozici v &lt;mezipaměti&gt; element:
 
 Následující atributy jsou k dispozici pro &lt;outputCache&gt; elementu.
 
-| **Atribut** | **Popis** |
-| --- | --- |
-| **enableOutputCache** | Volitelné **Boolean** atribut. Povolí nebo zakáže výstupní mezipaměti stránky. Pokud zakázané, jsou bez ohledu na nastavení programový nebo deklarativní mezipaměti žádné stránky. Výchozí hodnota je **true**. |
-| **enableFragmentCache** | Volitelné **Boolean** atribut. Povolí nebo zakáže mezipaměť fragmentu aplikace. Pokud zakázané, se žádné stránky do mezipaměti, bez ohledu na to [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) – direktiva nebo ukládání do mezipaměti profil. Zahrnuje typu cache-control záhlaví označující, že nadřazený proxy serverů, jakož i klienty prohlížeče neměli výstup stránky do mezipaměti. Výchozí hodnota je **false**. |
-| **sendCacheControlHeader** | Volitelné **Boolean** atribut. Získá nebo nastaví hodnotu, která určuje zda **mezipaměti – ovládací prvek: privátní** záhlaví odesílají modul výstupní mezipaměti ve výchozím nastavení. Výchozí hodnota je **false**. |
-| **omitVaryStar** | Volitelné **Boolean** atribut. Povolí nebo zakáže odesílání Http "**měnit: \*** " hlavičky v odpovědi. S výchozím nastavením false, "**měnit: \*** " záhlaví je odeslána pro stránky výstupu do mezipaměti. Při odeslání měnit hlavičky umožňuje pro různé verze ukládat do mezipaměti na základě zadaných v hlavičce měnit. Například *měnit: uživatel-agenty* uloží různé verze na základě uživatelského agenta vydání žádosti o stránky. Výchozí hodnota je **false**. |
+
+|       <strong>Atribut</strong>        |                                                                                                                                                                                                                                                       <strong>Popis</strong>                                                                                                                                                                                                                                                       |
+|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   <strong>enableOutputCache</strong>    |                                                                                                                                                          Volitelné <strong>Boolean</strong> atribut. Povolí nebo zakáže výstupní mezipaměti stránky. Pokud zakázané, jsou bez ohledu na nastavení programový nebo deklarativní mezipaměti žádné stránky. Výchozí hodnota je <strong>true</strong>.                                                                                                                                                           |
+|  <strong>enableFragmentCache</strong>   |                                                Volitelné <strong>Boolean</strong> atribut. Povolí nebo zakáže mezipaměť fragmentu aplikace. Pokud zakázané, se žádné stránky do mezipaměti, bez ohledu na to [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) – direktiva nebo ukládání do mezipaměti profil. Zahrnuje typu cache-control záhlaví označující, že nadřazený proxy serverů, jakož i klienty prohlížeče neměli výstup stránky do mezipaměti. Výchozí hodnota je <strong>false</strong>.                                                 |
+| <strong>sendCacheControlHeader</strong> |                                                                                                                                                      Volitelné <strong>Boolean</strong> atribut. Získá nebo nastaví hodnotu, která určuje zda <strong>mezipaměti – ovládací prvek: privátní</strong> záhlaví odesílají modul výstupní mezipaměti ve výchozím nastavení. Výchozí hodnota je <strong>false</strong>.                                                                                                                                                      |
+|      <strong>omitVaryStar</strong>      | Volitelné <strong>Boolean</strong> atribut. Povolí nebo zakáže odesílání Http "<strong>měnit: \</ strong ><em>" hlavičky v odpovědi. S výchozím nastavením false, "</em>* měnit: \* <strong>" záhlaví je odeslána pro stránky výstupu do mezipaměti. Při odeslání měnit hlavičky umožňuje pro různé verze ukládat do mezipaměti na základě zadaných v hlavičce měnit. Například <em>měnit: uživatel-agenty</em> uloží různé verze na základě uživatelského agenta vydání žádosti o stránky. Výchozí hodnota je ** false</strong>. |
 
 ### <a name="the-ltoutputcachesettingsgt-element"></a>&lt;OutputCacheSettings&gt; – Element
 

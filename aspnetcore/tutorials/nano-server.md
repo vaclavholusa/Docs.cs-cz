@@ -1,7 +1,7 @@
 ---
-title: "Jádro ASP.NET na Nano Server"
+title: Jádro ASP.NET na Nano Server
 author: shirhatti
-description: "Zjistěte, jak chcete využít stávající aplikace ASP.NET Core a nasaďte ho do instance Nano Server služby IIS."
+description: Zjistěte, jak chcete využít stávající aplikace ASP.NET Core a nasaďte ho do instance Nano Server služby IIS.
 manager: wpickett
 ms.author: riande
 ms.date: 11/04/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/nano-server
-ms.openlocfilehash: 3f234c84d2354a312ad6136b43d8c29aa346ae10
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: a5ea323b6f5e141143529e69e83abcc081a2337e
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="aspnet-core-with-iis-on-nano-server"></a>Jádro ASP.NET se službou IIS na Nano Server
+# <a name="aspnet-core-on-nano-server"></a>Jádro ASP.NET na Nano Server
 
 Podle [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
@@ -104,7 +104,7 @@ Chcete-li rychle ověřit, pokud služba IIS je nastavena správně, můžete na
 
 ## <a name="install-the-aspnet-core-module"></a>Instalace modulu ASP.NET Core
 
-Základní modul ASP.NET je službu IIS 7.5 + modul, který je zodpovědný za správu proces naslouchacího procesu ASP.NET Core HTTP a na požadavky na proxy pro procesy, které spravuje. V tuto chvíli je ruční proces instalace technologie ASP.NET základní modul pro službu IIS. Nainstalujte [.NET jádra Windows serveru, který hostuje sady](https://aka.ms/dotnetcore-2-windowshosting) na běžný (ne Nano) počítače. Po instalaci sady regulární počítač, zkopírujte následující soubory do sdílené složky, kterou jsme vytvořili předtím.
+Základní modul ASP.NET je službu IIS 7.5 + modul, který je zodpovědný za správu proces naslouchacího procesu ASP.NET Core HTTP a na požadavky na proxy pro procesy, které spravuje. V tuto chvíli je ruční proces instalace technologie ASP.NET základní modul pro službu IIS. Nainstalujte [.NET jádra Windows serveru, který hostuje sady](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle) na běžný (ne Nano) počítače. Po instalaci sady regulární počítač, zkopírujte následující soubory do sdílené složky, kterou jsme vytvořili předtím.
 
 Na server regular (ne Nano) se službou IIS spusťte následující příkazy pro kopírování:
 

@@ -1,7 +1,7 @@
 ---
-title: "Úvod do stránky Razor v ASP.NET Core"
+title: Úvod do stránky Razor v ASP.NET Core
 author: Rick-Anderson
-description: "Zjistěte, jak stránky Razor v ASP.NET Core Díky kódování zaměřené na stránce scénáře jednodušší a zvýšit produktivitu než použití MVC."
+description: Zjistěte, jak stránky Razor v ASP.NET Core Díky kódování zaměřené na stránce scénáře jednodušší a zvýšit produktivitu než použití MVC.
 manager: wpickett
 ms.author: riande
 ms.date: 09/12/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: cb80c38fd0284d5153aebfe7bb515722623a4a34
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 532799d013f26869da03fe1062072f55dcce35f8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -25,16 +25,9 @@ Pokud hledáte kurz, který používá Model-View-Controller přístup, najdete 
 
 Tento dokument obsahuje úvod do stránky Razor. Není návod krok za krokem. Pokud některá z částí příliš advanced najdete v tématu [začít pracovat s stránky Razor](xref:tutorials/razor-pages/razor-pages-start). Přehled ASP.NET Core, najdete [Úvod do ASP.NET Core](xref:index).
 
-<a name="prerequisites"></a>
+## <a name="prerequisites"></a>Požadavky
 
-## <a name="aspnet-core-20-prerequisites"></a>Jádro ASP.NET 2.0 požadavky
-
-Nainstalujte [.NET Core](https://www.microsoft.com/net/core) 2.0.0 nebo novější.
-
-Pokud používáte Visual Studio, nainstalujte [Visual Studio](https://www.visualstudio.com/vs/) 2017 verze 15.3 nebo novější s následující úlohy:
-
-* **ASP.NET a vývoje**
-* **Vývoj pro různé platformy .NET core**
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 <a name="rpvs17"></a>
 
@@ -44,7 +37,7 @@ Pokud používáte Visual Studio, nainstalujte [Visual Studio](https://www.visua
 
 V tématu [začít pracovat s stránky Razor](xref:tutorials/razor-pages/razor-pages-start) podrobné pokyny o tom, jak vytvářet stránky Razor projektu pomocí sady Visual Studio.
 
-#   <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 Spustit `dotnet new razor` z příkazového řádku.
 
@@ -54,7 +47,7 @@ Otevřete vygenerovaného *.csproj* soubor ze sady Visual Studio for Mac.
 
 Spustit `dotnet new razor` z příkazového řádku.
 
-#   <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli) 
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli) 
 
 Spustit `dotnet new razor` z příkazového řádku.
 
@@ -175,7 +168,11 @@ Kódu *Index.cshtml.cs* souboru:
 
 [!code-cshtml[](index/sample/RazorPagesContacts/Pages/Edit.cshtml?highlight=1)]
 
-První řádek obsahuje `@page "{id:int}"` – direktiva. Omezení směrování`"{id:int}"` informuje stránky tak, aby přijímal požadavky na stránku, které obsahují `int` směrovat data. Pokud požadavek na stránku neobsahuje data trasy, která lze převést na `int`, modul runtime vrátí chybu HTTP 404 (není nalezena).
+První řádek obsahuje `@page "{id:int}"` – direktiva. Omezení směrování`"{id:int}"` informuje stránky tak, aby přijímal požadavky na stránku, které obsahují `int` směrovat data. Pokud požadavek na stránku neobsahuje data trasy, která lze převést na `int`, modul runtime vrátí chybu HTTP 404 (není nalezena). Chcete-li nastavit ID volitelný, připojte `?` pro dané omezení trasy:
+
+ ```cshtml
+@page "{id:int?}"
+```
 
 *Pages/Edit.cshtml.cs* souboru:
 
@@ -317,7 +314,7 @@ Generování adresy URL pro stránky podporuje relativních názvů. Následují
 | RedirectToPage("../Index") | *Pages/Index* |
 | RedirectToPage("Index")  | *Pages/Customers/Index* |
 
-`RedirectToPage("Index")`, `RedirectToPage("./Index")`, a `RedirectToPage("../Index")` jsou *relativních názvů*. `RedirectToPage` Parametr *kombinaci* cestou k aktuální stránce k výpočtu název cílové stránky.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page. -- page name, not page path -->
+`RedirectToPage("Index")`, `RedirectToPage("./Index")`, a `RedirectToPage("../Index")` jsou <em>relativních názvů</em>. `RedirectToPage` Parametr <em>kombinaci</em> cestou k aktuální stránce k výpočtu název cílové stránky.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page. -- page name, not page path -->
 
 Relativní název propojení je užitečné, při vytváření lokalit se strukturou komplexní. Pokud používáte relativních názvů propojení mezi stránkami ve složce, můžete přejmenovat této složky. Všechny odkazy na i nadále fungovat, (protože jejich nezahrnuli název složky).
 
@@ -423,4 +420,4 @@ services.AddMvc()
 * [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Konvence autorizace stránky Razor](xref:security/authorization/razor-pages-authorization)
 * [Syntaxe Razor stránky vlastní trasy a stránka zprostředkovatele modelu](xref:mvc/razor-pages/razor-pages-convention-features)
-* [Jednotka stránky Razor a testování integrace](xref:testing/razor-pages-testing)
+* [Testy jednotek a integrace stránky Razor](xref:testing/razor-pages-testing)

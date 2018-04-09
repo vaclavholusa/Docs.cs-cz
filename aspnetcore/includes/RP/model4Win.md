@@ -12,7 +12,7 @@ Pokud dojde k chybě:
 No executable found matching command "dotnet-aspnet-codegenerator"
   ```
 
-Otevřete příkazové prostředí do adresáře projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory).
+Chyba který předchází se stane, když se do nesprávného adresáře. Otevřete příkazové prostředí do adresáře projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory), a poté spusťte příkaz který předchází.
 
 Pokud dojde k chybě:
   ```

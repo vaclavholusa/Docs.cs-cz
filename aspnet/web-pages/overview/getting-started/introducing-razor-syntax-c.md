@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-c
-title: "Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor (C#) | Microsoft Docs"
+title: Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor (C#) | Microsoft Docs
 author: tfitzmac
-description: "Tato kapitola obsahuje přehled programování pomocí webových stránek ASP.NET pomocí syntaxe Razor. ASP.NET je technologie společnosti Microsoft pro spuštění dynamického webového pa..."
+description: Tato kapitola obsahuje přehled programování pomocí webových stránek ASP.NET pomocí syntaxe Razor. ASP.NET je technologie společnosti Microsoft pro spuštění dynamického webového pa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 32cdd8d524d783d7ccc3ab076de636ce4a868132
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 430033c06df74cc3661c40ca7f7bd9244cd257c9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor (C#)
 ====================
@@ -122,7 +122,7 @@ Zde je výsledkem použití obě tyto příklady na stránce:
 
 ### <a name="6-code-is-case-sensitive"></a>6. Kód je malá a velká písmena
 
-V jazyce C#, klíčová slova (jako je `var`, `true`, a `if`) a názvy proměnných jsou velká a malá písmena. Následující řádky kódu vytvoření dvou různých proměnných, `lastName` a`LastName.`
+V jazyce C#, klíčová slova (jako je `var`, `true`, a `if`) a názvy proměnných jsou velká a malá písmena. Následující řádky kódu vytvoření dvou různých proměnných, `lastName` a `LastName.`
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample8.cshtml)]
 
@@ -134,7 +134,7 @@ Pokud je deklarovat proměnnou jako `var lastName = "Smith";` a pokud se pokusí
 
 ### <a name="7-much-of-your-coding-involves-objects"></a>7. Velká část kódování zahrnuje objekty
 
-*Objekt* představuje věcí, kterou můžete programu s &#8212; na stránce textové pole, soubor, bitovou kopii, webové žádosti, e-mailovou zprávu, záznam zákazníka (řádku databáze), atd. Objekty mají vlastnosti, které popisují jejich vlastnosti a, abyste si přečetli nebo změnu &#8212; má objekt textové pole `Text` vlastnost (mimo jiné), má objekt žádosti `Url` vlastnost, má e-mailovou zprávu `From` vlastnost a objekt zákazník má `FirstName` vlastnost. Objekty mají metody, které jsou také &quot;příkazy&quot; mohou provádět. Mezi příklady patří objektu soubor `Save` metoda, objekt image `Rotate` metoda a objekt e-mailu `Send` metoda.
+*Objekt* představuje věcí, kterou můžete programu s &#8212; stránky textové pole, soubor, bitovou kopii, webové žádosti, e-mailovou zprávu, záznam zákazníka (řádku databáze), atd. Objekty mají vlastnosti, které popisují jejich vlastnosti a že můžou číst nebo změnit &#8212; má objekt textové pole `Text` vlastnost (mimo jiné), má objekt žádosti `Url` vlastnost, má e-mailovou zprávu `From` vlastnost a má objekt zákazníka `FirstName` vlastnost. Objekty mají metody, které jsou také &quot;příkazy&quot; mohou provádět. Mezi příklady patří objektu soubor `Save` metoda, objekt image `Rotate` metoda a objekt e-mailu `Send` metoda.
 
 Často budete pracovat `Request` objektu, který nabízí informace jako hodnoty textová pole (polí formuláře) na stránce, jaký typ prohlížeče požadavek, adresu URL stránky, identita uživatele, atd. Následující příklad ukazuje, jak pro přístup k vlastnostem `Request` objekt a jak volat `MapPath` metodu `Request` objekt, který vám dává absolutní cesta ke stránce na serveru:
 
@@ -199,7 +199,7 @@ Ale první, málo technické pozadí.
 
 Syntaxe Razor je jednoduchý programovací syntaxi pro vkládání serverový kód na webové stránce. Na webové stránce, která používá syntaxi Razor, existují dva typy obsahu: obsah a server kódu klienta. Obsah klienta je vy jste zvyklí ve webových stránkách: Značka jazyka HTML (prvky), styl informace, jako je šablon stylů CSS, možná některé klientského skriptu, jako je JavaScript a prostý text.
 
-Syntaxe Razor můžete přidat serverový kód k tomuto obsahu klienta. Pokud je na stránce kód serveru, na serveru běží nejprve tento kód tak, než odešle stránku v prohlížeči uvedené. Spuštěním na serveru, kód můžete provádět úlohy, které mohou být mnohem složitější provedete použitím klienta obsahu samostatně, jako je přístup na serveru databáze. Co je nejdůležitější kódu serveru můžete vytvořit dynamicky klienta obsah &#8212; může generovat kód HTML nebo jiného obsahu za chodu a potom ji odešlete do prohlížeče spolu s všechny statické HTML, které může obsahovat stránky. Z hlediska prohlížeče je obsah klienta, který je generovaný kód serveru nejsou jiné než žádný jiný obsah klienta. Jak už jste viděli, kód serveru, které je nutné je poměrně jednoduché.
+Syntaxe Razor můžete přidat serverový kód k tomuto obsahu klienta. Pokud je na stránce kód serveru, na serveru běží nejprve tento kód tak, než odešle stránku v prohlížeči uvedené. Spuštěním na serveru, kód můžete provádět úlohy, které mohou být mnohem složitější provedete použitím klienta obsahu samostatně, jako je přístup na serveru databáze. Co je nejdůležitější kódu serveru můžete dynamicky vytvořit obsah klienta &#8212; může generovat kód HTML nebo jiného obsahu za chodu a potom ji odešlete do prohlížeče spolu s statické jazyka HTML, který stránky může obsahovat. Z hlediska prohlížeče je obsah klienta, který je generovaný kód serveru nejsou jiné než žádný jiný obsah klienta. Jak už jste viděli, kód serveru, které je nutné je poměrně jednoduché.
 
 Webové stránky ASP.NET, jež obsahují syntaxi Razor mají příponu speciální (*.cshtml* nebo *.vbhtml*). Server rozpozná tato rozšíření, spustí kód, který je označen se syntaxí Razor a poté odešle stránce v prohlížeči.
 
@@ -224,7 +224,7 @@ Syntaxe Razor vám dává všechny ASP.NET, ale pomocí zjednodušenou syntaxi, 
 
 ## <a name="basic-syntax"></a>Základní syntaxe
 
-Dříve jste viděli základních příkladů jak vytvořit stránku ASP.NET Web Pages a přidání serverový kód pro kód HTML. Zde se dozvíte základní informace o psaní kódu serveru ASP.NET pomocí syntaxe Razor &#8212; To znamená, programovací jazyk pravidla.
+Dříve jste viděli základních příkladů jak vytvořit stránku ASP.NET Web Pages a přidání serverový kód pro kód HTML. Zde se dozvíte základní informace o psaní kódu serveru ASP.NET pomocí syntaxe Razor &#8212; tedy programovací jazyk pravidla.
 
 Pokud máte zkušenosti s programováním (obzvláště pokud jste použili C, C++, C#, Visual Basic nebo JavaScript), většinu si přečíst zde bude seznámit. Pravděpodobně budete muset Seznamte se jenom s jak kód serveru je přidán do značek v *.cshtml* soubory.
 
@@ -249,7 +249,7 @@ V serveru bloky kódu často chcete výstup textu nebo značek (nebo obě) na st
     V prvním příkladu opakuje předchozí příklad, ale používá jednu dvojici `<text>` značek k uzavřete text k vykreslení. V druhém příkladu `<text>` a `</text>` značky uzavřete tři řádky, které mají všechny některé uncontained text a neodpovídající značky HTML (`<br />`), spolu s kódu serveru a odpovídající značky HTML. Znovu, může také předcházet každý řádek jednotlivě s `@:` operátor; buď způsob, jak funguje.
 
     > [!NOTE]
-    > Pokud výstupní text jak je znázorněno v této části &#8212; pomocí prvku HTML `@:` operátor, nebo `<text>` element &#8212; Technologie ASP.NET není kódování HTML výstup. (Jak je uvedeno výše, ASP.NET kódování výstup výrazy kódu serveru a bloky kódu serveru, které jsou označeny `@`, s výjimkou ve zvláštních případech uvedených v této části.)
+    > Pokud výstup text jak je znázorněno v této části &#8212; pomocí prvku HTML `@:` operátor, nebo `<text>` element &#8212; ASP.NET nepodporuje kódování HTML výstup. (Jak je uvedeno výše, ASP.NET kódování výstup výrazy kódu serveru a bloky kódu serveru, které jsou označeny `@`, s výjimkou ve zvláštních případech uvedených v této části.)
 
 ### <a name="whitespace"></a>Whitespace
 
@@ -343,33 +343,35 @@ K převodu hodnoty na celá čísla, zavoláte `AsInt` metoda. Pokud převod ús
 
 Následující tabulka uvádí některé běžné převod a testování metody pro proměnné.
 
-| **– Metoda** | **Popis** | **Příklad** |
-| --- | --- | --- |
-| `AsInt(), IsInt()` | Převede řetězec, který představuje celé číslo (např. "593") na celé číslo. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)] |
-| `AsBool(), IsBool()` | Převede řetězec jako &quot;true&quot; nebo &quot;false&quot; typu Boolean. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)] |
-| `AsFloat(), IsFloat()` | Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)] |
-| `AsDecimal(), IsDecimal()` | Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET, je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)] |
-| `AsDateTime(), IsDateTime()` | Převede řetězec představující hodnotu data a času ASP.NET `DateTime` typu. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)] |
-| `ToString()` | Převede ostatních typů dat na řetězec. | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)] |
+
+|   <strong>– Metoda</strong>    |                                                                              <strong>Popis</strong>                                                                              |                         <strong>Příklad</strong>                         |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+|      `AsInt(), IsInt()`      |                                                      Převede řetězec, který představuje celé číslo (např. "593") na celé číslo.                                                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]   |
+|     `AsBool(), IsBool()`     |                                                    Převede řetězec jako &quot;true&quot; nebo &quot;false&quot; typu Boolean.                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]   |
+|    `AsFloat(), IsFloat()`    |                                    Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]   |
+|  `AsDecimal(), IsDecimal()`  | Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET, je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]   |
+| `AsDateTime(), IsDateTime()` |                                                Převede řetězec představující hodnotu data a času ASP.NET `DateTime` typu.                                                 |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]   |
+|         `ToString()`         |                                                                       Převede ostatních typů dat na řetězec.                                                                        | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)] |
 
 ## <a name="operators"></a>Operátory
 
 Operátor je – klíčové slovo nebo znak, který sděluje ASP.NET, jaký druh příkaz k provedení ve výrazu. Jazyk C# (a syntaxe Razor, který je založený na něm) podporuje mnoho operátory, ale potřebujete rozpoznat pár začít pracovat. Následující tabulka shrnuje nejběžnější operátory.
 
-| **Operátor** | **Popis** | **Příklady** |
-| --- | --- | --- |
-| `+` `-` `*` `/` | Matematické operátory použít ve výrazech číselná. | [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)] |
-| `=` | Přiřazení. Hodnota na pravé straně příkazu přiřadí objekt na levé straně. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)] |
-| `==` | Rovnosti. Vrátí `true` Pokud jsou hodnoty stejné. (Všimněte si rozdíl mezi `=` operátor a `==` operátor.) | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)] |
-| `!=` | Nerovnosti. Vrátí `true` Pokud hodnoty nejsou shodné. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)] |
-| `< > <= >=` | Menší – než, více – než menší než nebo rovno a větší než nebo rovno. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)] |
-| `+` | Zřetězení, který se používá pro připojení řetězce. ASP.NET zná rozdíl mezi tento operátor a operátor sčítání na základě typu dat, z výrazu. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)] |
-| `+=``-=` | Přírůstek a snížení operátory, které sčítání a odečítání 1 (v uvedeném pořadí) z proměnné. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)] |
-| `.` | Tečkou. Používá k rozlišení objekty a jejich vlastnosti a metody. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)] |
-| `()` | Závorky. Použít na výrazy skupiny a předat parametry metody. | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)] |
-| `[]` | Závorky. Použít pro přístup k hodnot v polích nebo kolekce. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)] |
-| `!` | Není. Obrátí `true` hodnotu `false` a naopak. Obvykle se používá jako sdružená způsob, jak otestovat `false` (který je pro není `true`). | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)] |
-| `&&`<code>&#124;&#124;</code> | Logické a a, nebo které se používají k propojení podmínky společně. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)] |
+
+|   <strong>Operátor</strong>    |                                                                     <strong>Popis</strong>                                                                     |                        <strong>Příklady</strong>                         |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+|        `+` `-` `*` `/`         |                                                            Matematické operátory použít ve výrazech číselná.                                                             |    [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]    |
+|              `=`               |                                    Přiřazení. Hodnota na pravé straně příkazu přiřadí objekt na levé straně.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]   |
+|              `==`              |                      Rovnosti. Vrátí `true` Pokud jsou hodnoty stejné. (Všimněte si rozdíl mezi `=` operátor a `==` operátor.)                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]   |
+|              `!=`              |                                                       Nerovnosti. Vrátí `true` Pokud hodnoty nejsou shodné.                                                        |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]   |
+|          `< > <= >=`           |                                               Menší – než, více – než menší než nebo rovno a větší než nebo rovno.                                                |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]   |
+|              `+`               | Zřetězení, který se používá pro připojení řetězce. ASP.NET zná rozdíl mezi tento operátor a operátor sčítání na základě typu dat, z výrazu. |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]   |
+|           `+=``-=`            |                                   Přírůstek a snížení operátory, které sčítání a odečítání 1 (v uvedeném pořadí) z proměnné.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]   |
+|              `.`               |                                                  Tečkou. Používá k rozlišení objekty a jejich vlastnosti a metody.                                                  |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]   |
+|              `()`              |                                              Závorky. Použít na výrazy skupiny a předat parametry metody.                                               | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)] |
+|              `[]`              |                                                    Závorky. Použít pro přístup k hodnot v polích nebo kolekce.                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]   |
+|              `!`               |               Není. Obrátí `true` hodnotu `false` a naopak. Obvykle se používá jako sdružená způsob, jak otestovat `false` (který je pro není `true`).               |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]   |
+| `&&`<code>&#124;&#124;</code> |                                                   Logické a a, nebo které se používají k propojení podmínky společně.                                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]   |
 
 <a id="ID_WorkingWithFileAndFolderPaths"></a>
 ## <a name="working-with-file-and-folder-paths-in-code"></a>Práce s souboru a cesty ke složce zadat v kódu
@@ -515,7 +517,7 @@ A *kolekce* je skupina objekty stejného typu, například v kolekci `Customer` 
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample59.cshtml)]
 
-S poli, je třeba deklarovat určité datového typu, `string`, `int`, nebo `DateTime`. K označení, proměnná může obsahovat pole, přidat závorky deklarace (například `string[]` nebo `int[]`). Dostanete položky v poli pomocí jejich polohu (index) nebo pomocí `foreach` příkaz. Pole indexy jsou od nuly &#8212; To znamená první položka je v umístění 0, druhý položka je na pozici 1 a tak dále.
+S poli, je třeba deklarovat určité datového typu, `string`, `int`, nebo `DateTime`. K označení, proměnná může obsahovat pole, přidat závorky deklarace (například `string[]` nebo `int[]`). Dostanete položky v poli pomocí jejich polohu (index) nebo pomocí `foreach` příkaz. Indexy pole jsou od nuly &#8212; tedy první položka je v umístění 0, druhý položka je na pozici 1 a tak dále.
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample60.cshtml)]
 

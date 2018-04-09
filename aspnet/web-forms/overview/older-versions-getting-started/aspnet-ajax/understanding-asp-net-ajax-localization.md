@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
-title: "Seznámení s ASP.NET AJAX lokalizace | Microsoft Docs"
+title: Seznámení s ASP.NET AJAX lokalizace | Microsoft Docs
 author: scottcate
-description: "Lokalizace je proces návrhu a integraci podporu pro konkrétní jazyk a jazykovou verzi do aplikace nebo určité součásti aplikace. Povinná kontrola úrovně důvěryhodnosti..."
+description: Lokalizace je proces návrhu a integraci podporu pro konkrétní jazyk a jazykovou verzi do aplikace nebo určité součásti aplikace. Povinná kontrola úrovně důvěryhodnosti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: 5b801586ea77af78284f780fe47fe09cafb984af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 565b0294f57b784bc592b286b3d8b28504110415
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-localization"></a>Principy ASP.NET AJAX lokalizace
 ====================
@@ -64,9 +64,9 @@ Následující tabulka shrnuje soubor s příklady konvence vytváření názvů
 | Název souboru | Význam |
 | --- | --- |
 | Script.js | Skript neutrální jazykové verze, prodejní verzi. |
-| Script.Debug.js | Ladicí verze skript neutrální jazykové verze. |
-| Script.en US.js | Vydání verze Angličtina, USA skript. |
-| Script.Debug.ES CO.js | Ladicí verze španělské, Columbia skript. |
+| Script.debug.js | Ladicí verze skript neutrální jazykové verze. |
+| Script.en-US.js | Vydání verze Angličtina, USA skript. |
+| Script.debug.es-CO.js | Ladicí verze španělské, Columbia skript. |
 
 ## <a name="walkthrough-create-an-localized-embedded-script"></a>Návod: Vytvoření lokalizované, vloženého skriptu
 
@@ -153,6 +153,6 @@ Rozhraní .NET Framework vnitřně podporuje bohaté lokalizace framework, využ
 
 Scott Dikovat pracuje s technologií Microsoft Web od 1997 a je ředitel myKB.com ([www.myKB.com](http://www.myKB.com)) kde mu se specializuje na psaní ASP.NET na základě aplikací, které jsou zaměřené na řešení softwaru znalostní báze Knowledge Base. Scott nelze kontaktovat prostřednictvím e-mailu v [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) nebo jeho blog na [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Předchozí](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
-[další](understanding-asp-net-ajax-web-services.md)
+> [!div class="step-by-step"]
+> [Předchozí](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+> [další](understanding-asp-net-ajax-web-services.md)

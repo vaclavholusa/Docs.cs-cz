@@ -1,7 +1,7 @@
 ---
-title: "Stránky Razor Entity Framework základní v ASP.NET Core - kurz 1 8"
+title: Stránky Razor Entity Framework základní v ASP.NET Core - kurz 1 8
 author: rick-anderson
-description: "Ukazuje, jak vytvořit aplikaci stránky Razor pomocí Entity Framework Core"
+description: Ukazuje, jak vytvořit aplikaci stránky Razor pomocí Entity Framework Core
 manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: 1b0fdb9be83530323f2dc7e3bcb26df26c597c1b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: be8162de1c839ef619e2ccd32253c6c3e5330301
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Stránky Razor Entity Framework základní v ASP.NET Core - kurz 1 8
 
@@ -27,7 +27,7 @@ Ukázková aplikace je web pro fiktivní vysoké školy Contoso. Obsahuje funkce
 
 ## <a name="prerequisites"></a>Požadavky
 
-[!INCLUDE[install 2.0](../../includes/install2.0.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 Znalost [stránky Razor](xref:mvc/razor-pages/index). By se měla dokončit programátory [začít pracovat s stránky Razor](xref:tutorials/razor-pages/razor-pages-start) před zahájením této série.
 
@@ -100,7 +100,7 @@ Vytvoření *modely* složky. V *modely* složky, vytvořte soubor třídy s ná
 
 [!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
 
-`ID` Vlastnost stane sloupec primárního klíče tabulky databáze (databáze), která odpovídá této třídy. Ve výchozím nastavení, EF základní interpretuje vlastnost s názvem `ID` nebo `classnameID` jako primární klíč.
+`ID` Vlastnost stane sloupec primárního klíče tabulky databáze (databáze), která odpovídá této třídy. Ve výchozím nastavení, EF základní interpretuje vlastnost s názvem `ID` nebo `classnameID` jako primární klíč. V `classnameID`, `classname` , jako je název třídy, `Student` v předchozím příkladu.
 
 `Enrollments` Je navigační vlastnost. Navigační vlastnosti propojit s dalšími subjekty, které se vztahují k této entity. V takovém případě `Enrollments` vlastnost `Student entity` obsahuje všechny `Enrollment` entit, které se vztahují k které `Student`. Například pokud studentů řádek v databázi existují dvě související registrace řádky, `Enrollments` navigační vlastnost obsahuje tyto dvě `Enrollment` entity. Související `Enrollment` řádek je řádek, který obsahuje hodnotu primárního klíče tohoto Studentova v `StudentID` sloupce. Předpokládejme například, student s ID = 1, má dva řádky v `Enrollment` tabulky. `Enrollment` Tabulka má dva řádky s `StudentID` = 1. `StudentID` cizí klíč v `Enrollment` tabulku, která určuje studenty ve `Student` tabulky.
 
@@ -254,7 +254,7 @@ Sestavte projekt. Sestavení generuje chyby takto:
 
  Globálně změnit `_context.Student` k `_context.Students` (tedy "s" přidat do `Student`). 7 výskytů jsou vyhledána a aktualizovat. Doufáme, opravte [této chyby](https://github.com/aspnet/Scaffolding/issues/633) v příští verzi.
 
-[!INCLUDE[model4tbl](../../includes/RP/model4tbl.md)]
+[!INCLUDE [model4tbl](../../includes/RP/model4tbl.md)]
 
  <a name="test"></a>
 ### <a name="test-the-app"></a>Testování aplikace
@@ -276,7 +276,7 @@ Rozbalte **tabulky** uzlu.
 
 Klikněte pravým tlačítkem myši **Student** tabulky a klikněte na tlačítko **Data zobrazení** zobrazíte vytvořit sloupce a řádky vloženy do tabulky.
 
-*.Mdf* a *.ldf* soubory databáze jsou v *C:\Users\\ <yourusername>*  složky.
+<em>.Mdf</em> a <em>.ldf</em> soubory databáze jsou v <em>C:\Users\\ <yourusername> </em> složky.
 
 `EnsureCreated` je volána při spuštění aplikace, která umožňuje následující pracovní postup:
 
@@ -296,7 +296,7 @@ Kvůli použití konvence nebo předpoklady, které umožňuje v EF základní j
 
 * Vlastnosti entity, které jsou s názvem ID nebo classnameID jsou rozpoznat jako vlastnosti primárního klíče.
 
-* Vlastnost interpretována jako vlastností cizího klíče, pokud je název  *<navigation property name> <primary key property name>*  (například `StudentID` pro `Student` navigační vlastnost, protože `Student` je primární klíč entity `ID`). Může mít název vlastnosti cizího klíče  *<primary key property name>*  (například `EnrollmentID` vzhledem k tomu `Enrollment` je primární klíč entity `EnrollmentID`).
+* Vlastnost interpretována jako vlastností cizího klíče, pokud je název *<navigation property name> <primary key property name>* (například `StudentID` pro `Student` navigační vlastnost, protože `Student` je primární klíč entity `ID`). Může mít název vlastnosti cizího klíče *<primary key property name>* (například `EnrollmentID` vzhledem k tomu `Enrollment` je primární klíč entity `EnrollmentID`).
 
 Konvenční chování lze přepsat. Například názvy tabulek lze explicitně zadat, jak je znázorněno v tomto kurzu. Názvy sloupců může být explicitně nastaveny. Primární a cizí klíče může být explicitně nastaveny.
 
@@ -335,5 +335,5 @@ Další informace o asynchronní programování v rozhraní .NET najdete v téma
 
 V dalším kurzu základní CRUD (vytvořit, číst, aktualizovat, odstraňovat) byla.
 
->[!div class="step-by-step"]
-[Next](xref:data/ef-rp/crud)
+> [!div class="step-by-step"]
+> [Next](xref:data/ef-rp/crud)

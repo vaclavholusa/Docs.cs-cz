@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
-title: "Zobrazení mapy v rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs"
+title: Zobrazení mapy v rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tento článek vysvětluje, jak zobrazit interaktivní mapy na stránkách na webu technologie ASP.NET Web Pages (Razor) podle mapování služeb poskytovaných Bing, Google, Ma..."
+description: Tento článek vysvětluje, jak zobrazit interaktivní mapy na stránkách na webu technologie ASP.NET Web Pages (Razor) podle mapování služeb poskytovaných Bing, Google, Ma...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 6f3e6a0cfb8c08cd971e88986d0f059dd8237aab
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 608dab8760bad7b877ab6fd4f89b21e980f5b1db
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>Zobrazení mapy v Web Pages (Razor) technologie ASP.NET
 ====================
@@ -89,9 +89,9 @@ Následující příklad ukazuje, jak vytvořit stránku, která vykreslí mapu 
         > [!NOTE]
         > Pokud používáte jinou verzi knihovny jQuery, ujistěte se, že nastavíte ukazatel na příslušnou verzi správně.
     - Volání `@Maps.GetGoogleHtml` v těle stránky. Chcete-li mapování adresy, musíte zadat řetězec adresy. Metody pro jiné moduly mapy fungovat podobným způsobem (`@Maps.GetYahooHtml`, `@Maps.GetMapQuestHtml`).
-- Spuštění stránky a zadejte adresu. Na stránce zobrazuje mapě, podle Google Maps, který ukazuje umístění, které jste zadali.
+3. Spuštění stránky a zadejte adresu. Na stránce zobrazuje mapě, podle Google Maps, který ukazuje umístění, které jste zadali.
 
-    ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
+     ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
 
 ## <a name="creating-a-map-based-on-latitude-and-longitude-coordinates-using-bing"></a>Vytváření mapy podle zeměpisnou šířku a délku koordinuje (pomocí Bing)
 
@@ -103,12 +103,12 @@ Tento příklad ukazuje postup vytvoření mapy podle souřadnice. Tento příkl
 2. Nahraďte `your-key-here` klíčem mapy Bing, který jste vygenerovali dříve.
 3. Spustit *MapCoordinates.cshtml* zadejte zeměpisné šířky a délky a pak klikněte na tlačítko **mapy ji!** tlačítko. (Pokud neznáte žádné souřadnice, zkuste následující postup. Toto je umístění v Redmondu Microsoft kanceláře.)
 
-    - Zeměpisná šířka: 47.6781005859375
-    - Zeměpisná délka:-122.158317565918
+   - Zeměpisná šířka: 47.6781005859375
+   - Zeměpisná délka:-122.158317565918
 
-    Stránka se zobrazí pomocí souřadnice, které jste zadali.
+     Stránka se zobrazí pomocí souřadnice, které jste zadali.
 
-    ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
+     ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Další prostředky

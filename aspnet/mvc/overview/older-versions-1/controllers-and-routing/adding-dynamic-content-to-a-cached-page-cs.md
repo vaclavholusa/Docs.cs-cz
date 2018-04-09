@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
-title: "Přidání dynamický obsah v mezipaměti stránku (C#) | Microsoft Docs"
+title: Přidání dynamický obsah v mezipaměti stránku (C#) | Microsoft Docs
 author: microsoft
-description: "Zjistěte, jak kombinovat dynamické a uložené v mezipaměti obsahu na stejné stránce. Nahrazení po mezipaměti umožňuje zobrazit dynamický obsah, jako je například o banner oznámení o inzerovaném programu..."
+description: Zjistěte, jak kombinovat dynamické a uložené v mezipaměti obsahu na stejné stránce. Nahrazení po mezipaměti umožňuje zobrazit dynamický obsah, jako je například o banner oznámení o inzerovaném programu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bee7e17ee16d75419c215558b1deb7d6f0d79448
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9f91cc07bc531cfb3edf577ab79e91fd94a57a3c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-dynamic-content-to-a-cached-page-c"></a>Přidání dynamický obsah v mezipaměti stránku (C#)
 ====================
@@ -47,7 +47,7 @@ Představte si například, že chcete náhodně zobrazit různé příspěvků 
 
 Abyste mohli využívat mezipaměti po nahrazení, zavolejte metodu HttpResponse.WriteSubstitution(). Metoda WriteSubstitution() nastaví kód tak, aby oblasti v mezipaměti stránku nahraďte dynamický obsah. Metoda WriteSubstitution() slouží k zobrazení položky náhodných zpráv v zobrazení v výpis 2.
 
-**Výpis 2 – Views\Home\Index.aspx**
+**Listing 2 – Views\Home\Index.aspx**
 
 [!code-aspx[Main](adding-dynamic-content-to-a-cached-page-cs/samples/sample2.aspx)]
 
@@ -101,6 +101,6 @@ Využít výhod ukládání do mezipaměti, kdykoli je to možné – ho může 
 
 ## 
 
->[!div class="step-by-step"]
-[Předchozí](improving-performance-with-output-caching-cs.md)
-[další](creating-a-controller-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](improving-performance-with-output-caching-cs.md)
+> [další](creating-a-controller-cs.md)

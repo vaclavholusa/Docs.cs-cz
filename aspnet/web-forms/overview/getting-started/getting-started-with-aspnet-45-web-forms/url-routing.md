@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
-title: "Směrování adres URL | Microsoft Docs"
+title: Směrování adres URL | Microsoft Docs
 author: Erikre
-description: "Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme..."
+description: Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 279617e4ebb475d935c0d1e01e08a3a2def0f9e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a195b36517bcae4bbeaf43fe7386e7787fd00212
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="url-routing"></a>Směrování adres URL
 ====================
@@ -82,7 +82,7 @@ Druhý parametr trasy, která zahrnuje dynamické hodnoty zadané ve složených
 
 > [!NOTE] 
 > 
-> **Volitelné**
+> **Optional**
 > 
 > Může být snadněji spravovat váš kód přesunutím `RegisterCustomRoutes` metodu pro samostatné třídy. V *logiku* složky, vytvořte samostatné `RouteActions` třídy. Přesunout výše `RegisterCustomRoutes` metoda z *Global.asax.cs* souboru do nové `RoutesActions` třídy. Použití `RoleActions` třídy a `createAdmin` jako příklad toho, jak volat metodu `RegisterCustomRoutes` metoda z *Global.asax.cs* souboru.
 
@@ -153,6 +153,6 @@ V tomto kurzu jste přidali trasy pro kategorií a produkty. Jste se naučili, j
 [Nasazení aplikace zabezpečení rozhraní ASP.NET Web Forms členství, OAuth a databáze SQL Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
 [Microsoft Azure – bezplatná zkušební verze](https://azure.microsoft.com/pricing/free-trial/)
 
->[!div class="step-by-step"]
-[Předchozí](membership-and-administration.md)
-[další](aspnet-error-handling.md)
+> [!div class="step-by-step"]
+> [Předchozí](membership-and-administration.md)
+> [další](aspnet-error-handling.md)

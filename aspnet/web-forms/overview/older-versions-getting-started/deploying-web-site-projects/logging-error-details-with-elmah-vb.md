@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
-title: "Podrobnosti o chybě protokolování s ELMAH (VB) | Microsoft Docs"
+title: Podrobnosti o chybě protokolování s ELMAH (VB) | Microsoft Docs
 author: rick-anderson
-description: "Chyba protokolování moduly a obslužné rutiny (ELMAH) nabízí další způsob, jak protokolování chyby za běhu v produkčním prostředí. ELMAH je bezplatný chyba..."
+description: Chyba protokolování moduly a obslužné rutiny (ELMAH) nabízí další způsob, jak protokolování chyby za běhu v produkčním prostředí. ELMAH je bezplatný chyba...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b4bba02449debff17422f6b7008247fdf61856c8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 584791a944c9e8eb0113da68719292f448573980
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="logging-error-details-with-elmah-vb"></a>Podrobnosti o chybě protokolování s ELMAH (VB)
 ====================
@@ -70,9 +70,9 @@ Dále otevřete Visual Studio a sestavení do projektu přidejte kliknutím prav
 
 - **Vytváření modulů HTTP v** -modulu HTTP je třída, která definuje obslužné rutiny události pro `HttpApplication` události, například `Error` událostí. ELMAH obsahuje více modulů HTTP, tři nejvíce podstatný ty, které se: 
 
-    - `ErrorLogModule`-Zdroj protokolu v protokolech neošetřených výjimek.
-    - `ErrorMailModule`-odešle podrobnosti k neošetřené výjimce v e-mailovou zprávu.
-    - `ErrorFilterModule`-vztahuje zadaný vývojáře filtrů určit, jaké výjimky jsou protokolovány a co ty, které jsou ignorovány.
+    - `ErrorLogModule` -Zdroj protokolu v protokolech neošetřených výjimek.
+    - `ErrorMailModule` -odešle podrobnosti k neošetřené výjimce v e-mailovou zprávu.
+    - `ErrorFilterModule` -vztahuje zadaný vývojáře filtrů určit, jaké výjimky jsou protokolovány a co ty, které jsou ignorovány.
 - **Obslužné rutiny HTTP** – obslužné rutiny HTTP je třída, která je zodpovědná za generování kódu pro konkrétní typ požadavku. ELMAH zahrnuje obslužné rutiny HTTP, která vykreslit podrobnosti o chybě jako webovou stránku, jako informačního kanálu RSS nebo jako soubor s oddělovači (CSV).
 - **Chyba protokolu zdroje** – předinstalované ELMAH můžete protokolovat chyby do paměti, do databáze Microsoft SQL Server, k databázi Microsoft Access k databázi Oracle do souboru XML, databáze SQLite, nebo do databáze Vista DB. Architektura ELMAH na jako je stav monitorování systému, bylo vytvořeno pomocí zprostředkovatele modelu, což znamená, že můžete vytvořit a v případě potřeby se hladce integrují zdroj vlastní vlastní protokol zprostředkovatele.
 
@@ -257,6 +257,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [K vytvoření komponentů modulární ASP.NET pomocí modulů HTTP a obslužné rutiny](https://msdn.microsoft.com/library/aa479332.aspx)
 - [Kurzy zabezpečení webu](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
->[!div class="step-by-step"]
-[Předchozí](logging-error-details-with-asp-net-health-monitoring-vb.md)
-[další](precompiling-your-website-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](logging-error-details-with-asp-net-health-monitoring-vb.md)
+> [další](precompiling-your-website-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
-title: "Aktualizace, odstraňování a vytváření dat pomocí vazby modelu a webové formuláře | Microsoft Docs"
+title: Aktualizace, odstraňování a vytváření dat pomocí vazby modelu a webové formuláře | Microsoft Docs
 author: tfitzmac
-description: "Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-..."
+description: Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 18c065b44524e7738c048b5908fa50c592188064
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e6536f7858afde5faf3aedd34f3cbe95c5ed0d53
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>Aktualizace, odstraňování a vytváření dat pomocí vazby modelu a webové formuláře
 ====================
@@ -133,6 +133,6 @@ V tomto kurzu jste povolili, aktualizaci, odstranění a vytvoření data. Můž
 
 V dalším [kurzu](sorting-paging-and-filtering-data.md) této série povolíte řazení, stránkování a filtrování dat.
 
->[!div class="step-by-step"]
-[Předchozí](retrieving-data.md)
-[další](sorting-paging-and-filtering-data.md)
+> [!div class="step-by-step"]
+> [Předchozí](retrieving-data.md)
+> [další](sorting-paging-and-filtering-data.md)

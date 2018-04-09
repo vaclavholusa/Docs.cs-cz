@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
-title: "Strategie pro vývoj databází a nasazení (VB) | Microsoft Docs"
+title: Strategie pro vývoj databází a nasazení (VB) | Microsoft Docs
 author: rick-anderson
-description: "Při nasazení aplikace datové poprvé můžete zkopírovat databázi slepě ve vývojovém prostředí do produkčního prostředí. B..."
+description: Při nasazení aplikace datové poprvé můžete zkopírovat databázi slepě ve vývojovém prostředí do produkčního prostředí. B...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 877056dc74e0b5a64d6e0f11d63ed9f642b0a2cd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 26e6537b7cba704d3513a2e4ae32f9266834e6d3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>Strategie pro vývoj databází a nasazení (VB)
 ====================
@@ -160,6 +160,6 @@ V tomto kurzu se ukončí soustředili na nasazení aplikace řízené daty. Dal
 
 Radostí programování!
 
->[!div class="step-by-step"]
-[Předchozí](configuring-a-website-that-uses-application-services-vb.md)
-[další](displaying-a-custom-error-page-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-a-website-that-uses-application-services-vb.md)
+> [další](displaying-a-custom-error-page-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
-title: "Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: migrace na SQL Server – 10 12 | Microsoft Docs"
+title: 'Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: migrace na SQL Server – 10 12 | Microsoft Docs'
 author: tdykstra
-description: "Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného..."
+description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: b97834e3e287645151bf927996fde63d93ae8356
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 25a829f1d3c730c7bb3b174f075ce8163999e482
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: migrace na SQL Server – 10 12
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -242,7 +242,7 @@ V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt ContosoU
 
 Vyberte **profil** kartě.
 
-Vyberte  **&lt;nové... &gt;**  z rozevíracího seznamu a zadejte "Test" jako název profilu.
+Vyberte **&lt;nové... &gt;** z rozevíracího seznamu a zadejte "Test" jako název profilu.
 
 V **adresa URL služby** zadejte *localhost*.
 
@@ -268,7 +268,7 @@ Visual Studio nasadí aplikaci a otevře prohlížeč na domovské stránce webu
 
 Teď, když máte ukázku nasazenou do testovacího prostředí, jste připravení nastavit nasazení do produkčního prostředí. Můžete začít, jako jste to udělali pro testovací prostředí, tak, že vytvoříte databázi k nasazení. Jak si Vzpomínáte z přehledu, Cytanium Lite hostingový plán umožňuje použití jenom jedné databáze systému SQL Server, tak nastavíte pouze jedna databáze není dva. Všechny tabulky a data z členství a školní SQL Server Compact databází se nasadí do jedné databáze systému SQL Server v provozním prostředí.
 
-Přejděte do ovládacích panelů Cytanium v [http://panel.cytanium.com](http://panel.cytanium.com). Ukazatelem myši na **databáze** a pak klikněte na **systému SQL Server 2008**.
+Přejděte do ovládacích panelů Cytanium v [ http://panel.cytanium.com ](http://panel.cytanium.com). Ukazatelem myši na **databáze** a pak klikněte na **systému SQL Server 2008**.
 
 [![Selecting_Databases_in_Control_Panel](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image22.png)](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image21.png)
 
@@ -380,7 +380,7 @@ V reálné aplikaci ve kterém při aktualizaci databáze v produkčním prostř
 
 V **publikování webu jedním kliknutím** nástrojů, ujistěte se, že **produkční** profilu je vybrána a potom klikněte na **publikovat**.
 
-Pokud jste nahráli *aplikace\_offline.htm* před publikováním, budete muset použít **Správce souborů** nástroj v Ovládacích panelech Cytanium odstranit *aplikace\_offline.* htm před zahájením testovacího. Můžete také ve stejnou dobu odstranit *SDF* souborů z *aplikace\_Data* složky.
+Pokud jste nahráli <em>aplikace\_offline.htm</em> před publikováním, budete muset použít <strong>Správce souborů</strong> nástroj v Ovládacích panelech Cytanium odstranit <em>aplikace\_offline.</em> htm před zahájením testovacího. Můžete také ve stejnou dobu odstranit <em>SDF</em> souborů z <em>aplikace\_Data</em> složky.
 
 Teď můžete otevřít prohlížeč a přejděte na adresu URL na veřejném webu k testování aplikace stejným způsobem jako jste to udělali po nasazení do testovacího prostředí.
 
@@ -450,6 +450,6 @@ Postupujte stejným způsobem, chcete-li odinstalovat **SqlServerCompact** balí
 
 Jste teď úspěšně migrovali do systému SQL Server Express a plnou instalaci systému SQL Server. V dalším kurzu budete provedete jiné změny databáze a zobrazí nasazení změny v databázi, pokud vaše testovací a produkční databáze systému SQL Server Express a plnou instalaci systému SQL Server použít.
 
->[!div class="step-by-step"]
-[Předchozí](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
-[další](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
+> [!div class="step-by-step"]
+> [Předchozí](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
+> [další](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

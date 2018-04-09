@@ -1,7 +1,7 @@
 ---
 title: Kurzy ASP.NET Core
 author: rick-anderson
-description: "Seznam podrobné návody pro naučit vyvíjet aplikace ASP.NET Core."
+description: Seznam podrobné návody pro naučit vyvíjet aplikace ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2017
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/xplat
-ms.openlocfilehash: b8b10b9aaf1ef68f42fbf61982b8b2f21ab1183a
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 097d63d5be5bd83c688a7f377d8ed45ffdd43ff8
+ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="aspnet-core-cross-platform-tutorials"></a>Kurzy a platformy ASP.NET Core
+# <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
 
 K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET Core:
 
 ## <a name="build-web-apps"></a>Vytvoření webové aplikace
 
-[Stránky Razor](xref:mvc/razor-pages/index) se o doporučený postup pro vytvoření nové aplikace webového uživatelského rozhraní s prostředím ASP.NET 2.0 jádra.
+[Stránky Razor](xref:mvc/razor-pages/index) se o doporučený postup pro vytvoření nové aplikace webového uživatelského rozhraní s prostředím ASP.NET 2.0 jádra a novější.
 
 * [Úvod do stránky Razor v ASP.NET Core](xref:mvc/razor-pages/index)
 * Vytvoření stránky Razor webové aplikace s ASP.NET Core

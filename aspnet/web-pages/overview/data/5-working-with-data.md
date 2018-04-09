@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/5-working-with-data
-title: "Úvod k práci s databází v rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs"
+title: Úvod k práci s databází v rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tato kapitola popisuje, jak přistupovat k datům z databáze a zobrazit ji pomocí rozhraní ASP.NET Web Pages."
+description: Tato kapitola popisuje, jak přistupovat k datům z databáze a zobrazit ji pomocí rozhraní ASP.NET Web Pages.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: 460af471a1b0650f8d782d582ce6cd9a06664d5c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 563074cf3e60717c2e6c336a2c282b4203f73b8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Úvod k práci s databází v rozhraní ASP.NET Web Pages lokalit (Razor)
 ====================
@@ -361,7 +361,7 @@ V této části ukazuje, jak uživatelům odstranit z produktu *produktu* datab�
 6. Klikněte **odstranit** odkaz pro jeden z produktů. *DeleteProduct.cshtml* zobrazí se stránka pro potvrzení, že chcete odstranit tento záznam.
 7. Klikněte **odstranit** tlačítko. Odstranění záznamu produktu a aktualizaci stránky k výpisu aktualizované produktu.
 
-> [!TIP] 
+> [!TIP]
 > 
 > <a id="SB_ConnectingToADatabase"></a>
 > ### <a name="connecting-to-a-database"></a>Připojení k databázi

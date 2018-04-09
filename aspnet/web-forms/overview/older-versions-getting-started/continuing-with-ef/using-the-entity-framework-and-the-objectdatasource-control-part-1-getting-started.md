@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
-title: "Pomocí rozhraní Entity Framework 4.0 a ovládacího prvku ObjectDataSource, část 1: Začínáme | Microsoft Docs"
+title: 'Pomocí rozhraní Entity Framework 4.0 a ovládacího prvku ObjectDataSource, část 1: Začínáme | Microsoft Docs'
 author: tdykstra
-description: "Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený Začínáme s řadou kurz Entity Framework. Pokud je..."
+description: Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený Začínáme s řadou kurz Entity Framework. Pokud je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 83fe815af9030aee10a5204718b00c79925e9126
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6584767418c898913777b3b1549a816679c8430d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>Pomocí rozhraní Entity Framework 4.0 a ovládacího prvku ObjectDataSource, část 1: Začínáme
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 > Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený [Začínáme s Entity Framework 4.0](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md) kurz řady. Pokud nebyla dokončena starší kurzy, jako výchozí bod pro účely tohoto kurzu můžete [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , kterou by jste vytvořili. Můžete také [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) vytvořené dokončení kurzu řady.
 > 
@@ -311,7 +311,7 @@ Obslužná rutina pro `Init` události uloží odkaz na `DropDownList` ovládac�
 Použití *DepartmentsAdd.aspx* stránky přidat nové oddělení, a poté spusťte *Departments.aspx* a klikněte na tlačítko **upravit** na řádek, který jste přidali.
 
 > [!NOTE]
-> Nebudete moci upravit řádky, které jste nepřidali (to znamená, které již byly v databázi), protože neplatná data v databázi. Správci řádků, které byly vytvořeny s databází jsou studenty. Pokud se pokusíte upravit jeden z nich, obdržíte chybovou stránku, který nahlásí chybu jako`'InstructorsDropDownList' has a SelectedValue which is invalid because it does not exist in the list of items.`
+> Nebudete moci upravit řádky, které jste nepřidali (to znamená, které již byly v databázi), protože neplatná data v databázi. Správci řádků, které byly vytvořeny s databází jsou studenty. Pokud se pokusíte upravit jeden z nich, obdržíte chybovou stránku, který nahlásí chybu jako `'InstructorsDropDownList' has a SelectedValue which is invalid because it does not exist in the list of items.`
 
 
 [![Image10](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image36.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image35.png)
@@ -324,5 +324,5 @@ Změnit hodnotu pole nebo vyberte jiný správce a klikněte na tlačítko **akt
 
 Tím dokončíte Úvod k použití `ObjectDataSource` řízení pro základní CRUD (vytvořit, číst, aktualizovat, odstraňovat) operací s rozhraní Entity Framework. Když jste sestavili jednoduchou aplikaci n vrstvá, ale vrstvu obchodní logiky je stále úzce párované do vrstvy přístup k datům, což ztěžuje automatizované testování částí. V následujícím kurzu uvidíte, jak implementovat použitému vzoru usnadňuje testování částí.
 
->[!div class="step-by-step"]
-[Next](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+> [!div class="step-by-step"]
+> [Next](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
-title: "Ukládání informací o uživatelích další (VB) | Microsoft Docs"
+title: Ukládání informací o uživatelích další (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme tuto otázku odpovědět podle budovy vyloženě jen základní návštěv aplikace. Při tom se podíváme na různé možnosti pro modeli..."
+description: V tomto kurzu jsme tuto otázku odpovědět podle budovy vyloženě jen základní návštěv aplikace. Při tom se podíváme na různé možnosti pro modeli...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a40238605e8fb3e26d80264af9156eec634affbe
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 9a8673e764ae94b12fbc01f81ef12ea4c133b7d5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="storing-additional-user-information-vb"></a>Ukládání informací o uživatelích další (VB)
 ====================
@@ -107,13 +107,13 @@ Pokud chcete uložit omezení cizího klíče, klikněte na tlačítko Zavřít 
 
 Nyní potřebujeme přidružit každý uživatelský účet k uložení uživatele domácí města, domovskou stránku a podpisu, který se zobrazí v jeho návštěv komentáře tři sloupce. Existují různé způsoby, jak dosáhnout počet:
 
-- **Přidat nové sloupce ***`aspnet_Users`*** nebo ***`aspnet_Membership`*** tabulky.** Protože upravuje schéma používá I nebude doporučujeme tento přístup `SqlMembershipProvider`. Toto rozhodnutí může se vraťte k haunt jste dolů na cestách. Například v co v případě, budoucí verzi technologie ASP.NET používá jiné `SqlMembershipProvider` schématu. Microsoft může zahrnovat nástroj pro migraci technologii ASP.NET 2.0 `SqlMembershipProvider` dat na nové schéma, ale pokud jste upravili technologii ASP.NET 2.0 `SqlMembershipProvider` schématu, takový převod nemusí být možné.
+- <strong>Přidat nové sloupce</strong><strong>`aspnet_Users`</strong><strong>nebo</strong><strong>`aspnet_Membership`</strong><strong>tabulky.</strong> Protože upravuje schéma používá I nebude doporučujeme tento přístup `SqlMembershipProvider`. Toto rozhodnutí může se vraťte k haunt jste dolů na cestách. Například v co v případě, budoucí verzi technologie ASP.NET používá jiné `SqlMembershipProvider` schématu. Microsoft může zahrnovat nástroj pro migraci technologii ASP.NET 2.0 `SqlMembershipProvider` dat na nové schéma, ale pokud jste upravili technologii ASP.NET 2.0 `SqlMembershipProvider` schématu, takový převod nemusí být možné.
 
 - **Pomocí prostředí ASP. Na NET profil framework, definování vlastnosti profilu pro domácí města, domovskou stránku a podpis.** Technologie ASP.NET obsahuje profil rozhraní, které je určen k ukládání další uživatelská data. Jako rozhraní členství je rozhraní profil vytvořené na modelu poskytovatelů. Rozhraní .NET Framework se dodává s `SqlProfileProvider` která uloží profilová data v databázi systému SQL Server. Ve skutečnosti naše databáze již obsahuje tabulky používané `SqlProfileProvider` (`aspnet_Profile`), jak byl přidán, když jsme přidali aplikačních služeb zpátky [ *vytváření schématu členství v systému SQL Server* ](creating-the-membership-schema-in-sql-server-vb.md)kurzu.   
- Hlavní výhodou rozhraní profilu je, že umožňuje vývojářům k definování vlastností profilu v `Web.config` – žádný kód potřeba zapsat k serializaci dat profilu do a z příslušné datové úložiště. Stručně řečeno je velmi snadno definovat sadu vlastností profilu a pokud s nimi pracovat v kódu. Ale profil systému opustí mnoho pro potřeby, pokud jde o správu verzí, takže pokud máte aplikaci, kde byste měli nové vlastnosti specifické pro uživatele přidat později, nebo existující na odebrat nebo změnit, a potom rozhraní profil nemusí být  nejlepší možnost. Kromě toho `SqlProfileProvider` ukládá vlastnosti profilu vysoce nenormalizované způsobem, což další možné ke spouštění dotazů na data profilu (například počet uživatelů, kteří mají domácí městě v New Yorku) přímo.   
- Další informace o rozhraní profilu najdete v části "Další odečty" na konci tohoto kurzu.
+  Hlavní výhodou rozhraní profilu je, že umožňuje vývojářům k definování vlastností profilu v `Web.config` – žádný kód potřeba zapsat k serializaci dat profilu do a z příslušné datové úložiště. Stručně řečeno je velmi snadno definovat sadu vlastností profilu a pokud s nimi pracovat v kódu. Ale profil systému opustí mnoho pro potřeby, pokud jde o správu verzí, takže pokud máte aplikaci, kde byste měli nové vlastnosti specifické pro uživatele přidat později, nebo existující na odebrat nebo změnit, a potom rozhraní profil nemusí být  nejlepší možnost. Kromě toho `SqlProfileProvider` ukládá vlastnosti profilu vysoce nenormalizované způsobem, což další možné ke spouštění dotazů na data profilu (například počet uživatelů, kteří mají domácí městě v New Yorku) přímo.   
+  Další informace o rozhraní profilu najdete v části "Další odečty" na konci tohoto kurzu.
 
-- **Přidat tyto tři sloupce do nové tabulky v databázi a vytvořit relace mezi této tabulky a ***`aspnet_Users`***.** Tento postup zahrnuje trochu další práci, než s použitím profilu framework, ale nabízí nejvyšší flexibilitu v tom, jak jsou modelovány vlastnosti další uživatele v databázi. Tato možnost, kterou použijeme v tomto kurzu se.
+- <strong>Přidat tyto tři sloupce do nové tabulky v databázi a vytvořit relace mezi této tabulky a</strong><strong>`aspnet_Users`</strong><strong>.</strong> Tento postup zahrnuje trochu další práci, než s použitím profilu framework, ale nabízí nejvyšší flexibilitu v tom, jak jsou modelovány vlastnosti další uživatele v databázi. Tato možnost, kterou použijeme v tomto kurzu se.
 
 Vytvoříme nové tabulky `UserProfiles` uložte domácí města, domovskou stránku a podpis pro každého uživatele. Klikněte pravým tlačítkem na složku tabulky v okně Průzkumníka databáze a vytvořit novou tabulku. Název první sloupec `UserId` a nastavte její typ `uniqueidentifier`. Zakáže `NULL` hodnoty a označte sloupec jako primární klíč. V dalším kroku přidat sloupce s názvem: `HomeTown` typu `nvarchar(50)`; `HomepageUrl` typu `nvarchar(100)`; a podpis typu `nvarchar(500)`. Každý z těchto tří sloupců může přijmout `NULL` hodnotu.
 
@@ -131,7 +131,7 @@ Teď, když máme datový model, který vytvořili, jsme připravení ho použí
 
 Existuje mnoho různých způsobů, jak povolit aktuálně přihlášeného uživatele k zobrazení a úprava jeho domácí města, domovskou stránku a podpis informací. Ovládací prvky popisek nebo jsme může používat jeden z datových ovládacích prvků, jako je třeba Správa DetailsView a jsme ručně vytvořit uživatelské rozhraní s textového pole. K provedení databáze `SELECT` a `UPDATE` příkazy jsme ADO.NET napsat kód na naší stránce kódu třídy nebo alternativně využívat deklarativní přístup s SqlDataSource. Naše aplikace v ideálním případě by obsahovat vrstvené architekturu, která jsme může buď vyvolat prostřednictvím kódu programu z třídy kódu stránky nebo deklarativně prostřednictvím ovládacího prvku ObjectDataSource.
 
-Vzhledem k tomu, že tato řada kurz se zaměřuje na ověřování pomocí formulářů, ověřování, uživatelské účty a rolí, nebude vyčerpávající diskusi o tyto možnosti přístupu různých datových nebo proč vrstvené architektura je upřednostňovaný přes přímo provádění příkazů SQL ze stránky ASP.NET. Přechod do provede pomocí DetailsView a SqlDataSource – možnost nejrychlejší a nejjednodušší – ale určitě Principy probírané lze použít pro alternativní webové ovládací prvky a data logiku přístup. Další informace o práci s daty v technologii ASP.NET, najdete v části Moje  *[práci s daty v technologii ASP.NET 2.0](../../data-access/index.md)*  kurz řady.
+Vzhledem k tomu, že tato řada kurz se zaměřuje na ověřování pomocí formulářů, ověřování, uživatelské účty a rolí, nebude vyčerpávající diskusi o tyto možnosti přístupu různých datových nebo proč vrstvené architektura je upřednostňovaný přes přímo provádění příkazů SQL ze stránky ASP.NET. Přechod do provede pomocí DetailsView a SqlDataSource – možnost nejrychlejší a nejjednodušší – ale určitě Principy probírané lze použít pro alternativní webové ovládací prvky a data logiku přístup. Další informace o práci s daty v technologii ASP.NET, najdete v části Moje *[práci s daty v technologii ASP.NET 2.0](../../data-access/index.md)* kurz řady.
 
 Otevřete `AdditionalUserInfo.aspx` stránku `Membership` složky a přidání ovládacího prvku DetailsView na stránku nastavení vlastnosti jeho ID na `UserProfile` a vymazání jeho `Width` a `Height` vlastnosti. Rozbalte DetailsView inteligentních značek a vyberte pro vytvoření vazby na ovládací prvek nové datové zdroje. Tím se spustí Průvodce konfigurací zdroje dat (viz obrázek 7). Prvním krokem žádostí o zadání typu zdrojového data. Vzhledem k tomu, že jsme se chystáte připojit přímo na `SecurityTutorials` databázi, zvolte ikonu databáze určení `ID` jako `UserProfileDataSource`.
 
@@ -428,9 +428,9 @@ První `WizardStep`, `CreateUserWizardStep`, vykreslí rozhraní, které zobraz�
 
 Chcete-li přizpůsobit rozhraní CreateUserWizard ovládacího prvku pro zahrnutí polí další formuláře, můžeme:
 
-- **Vytvořte jeden nebo více nových ***`WizardStep`*** s tak, aby obsahovala další prvky uživatelského rozhraní**. Chcete-li přidat nový `WizardStep` chcete CreateUserWizard, klikněte na tlačítko "Přidat nebo odebrat `WizardStep` s" odkaz z jeho inteligentních značek ke spuštění `WizardStep` Editor kolekce. Odtud můžete přidat, odebrat nebo změnit pořadí kroků v průvodci. Toto je přístupů, které budeme používat pro účely tohoto kurzu.
+- <strong>Vytvořte jeden nebo více nových</strong><strong>`WizardStep`</strong><strong>s tak, aby obsahovala další prvky uživatelského rozhraní</strong>. Chcete-li přidat nový `WizardStep` chcete CreateUserWizard, klikněte na tlačítko "Přidat nebo odebrat `WizardStep` s" odkaz z jeho inteligentních značek ke spuštění `WizardStep` Editor kolekce. Odtud můžete přidat, odebrat nebo změnit pořadí kroků v průvodci. Toto je přístupů, které budeme používat pro účely tohoto kurzu.
 
-- **Převést ***`CreateUserWizardStep`*** do upravitelné ***`WizardStep`***.** Tím se nahradí `CreateUserWizardStep` s ekvivalentní `WizardStep` jejichž poznámky definuje uživatelské rozhraní, které odpovídá `CreateUserWizardStep`' s. Převedením `CreateUserWizardStep` do `WizardStep` jsme můžete změnit umístění ovládacích prvků nebo přidat další prvky uživatelského rozhraní pro tento krok. Převést `CreateUserWizardStep` nebo `CompleteWizardStep` do upravitelné `WizardStep`, klikněte "upravit vytvořit uživateli krok" nebo "Přizpůsobit kroku dokončení" odkaz z inteligentní značky ovládacího prvku.
+- <strong>Převést</strong><strong>`CreateUserWizardStep`</strong><strong>do upravitelné</strong><strong>`WizardStep`</strong><strong>.</strong> Tím se nahradí `CreateUserWizardStep` s ekvivalentní `WizardStep` jejichž poznámky definuje uživatelské rozhraní, které odpovídá `CreateUserWizardStep`' s. Převedením `CreateUserWizardStep` do `WizardStep` jsme můžete změnit umístění ovládacích prvků nebo přidat další prvky uživatelského rozhraní pro tento krok. Převést `CreateUserWizardStep` nebo `CompleteWizardStep` do upravitelné `WizardStep`, klikněte "upravit vytvořit uživateli krok" nebo "Přizpůsobit kroku dokončení" odkaz z inteligentní značky ovládacího prvku.
 
 - **Pomocí některé kombinace výše uvedených dvou možností.**
 
@@ -527,11 +527,11 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování...
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Předchozí](user-based-authorization-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](user-based-authorization-vb.md)

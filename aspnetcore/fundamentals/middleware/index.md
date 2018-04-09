@@ -1,7 +1,7 @@
 ---
 title: Middleware ASP.NET Core
 author: rick-anderson
-description: "Další informace o ASP.NET Core middleware a kanál požadavku."
+description: Další informace o ASP.NET Core middleware a kanál požadavku.
 manager: wpickett
 ms.author: riande
 ms.date: 01/22/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 186faa4c02275ae1f4be53f4a2dd4f8325397bd2
-ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
+ms.openlocfilehash: 3312b27f936340a73243224c1a716fe421f178bc
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="aspnet-core-middleware"></a>Middleware ASP.NET Core
 
@@ -32,7 +32,7 @@ Delegáti požadavku se používají k vytvoření kanálu požadavku. Delegáti
 
 Žádosti o Delegáti jsou konfigurováni pomocí [spustit](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions), [mapy](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions), a [použití](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions) rozšiřující metody. Delegáta individuální žádosti může být zadaný v řádku jako anonymní metody (nazývané v řádku middleware), nebo může být definováno v třídě opakovaně použitelné. Tyto opakovaně použitelné třídy a metody anonymní v řádku jsou *middleware*, nebo *komponenty middlewaru*. Jednotlivé komponenty middleware v kanálu požadavku zodpovídá za vyvolání další komponenta v kanálu nebo krátká smyčka řetězu v případě potřeby.
 
-[Migrace modulů HTTP s Middlewarem](xref:migration/http-modules) najdete vysvětlení rozdílu mezi požadavek kanály v ASP.NET Core a ASP.NET 4.x a poskytuje další middleware ukázky.
+[Migrovat vytváření modulů HTTP v middlewaru](xref:migration/http-modules) najdete vysvětlení rozdílu mezi požadavek kanály v ASP.NET Core a ASP.NET 4.x a poskytuje další middleware ukázky.
 
 ## <a name="creating-a-middleware-pipeline-with-iapplicationbuilder"></a>Vytvoření kanálu middlewaru s IApplicationBuilder
 
@@ -109,7 +109,7 @@ public void Configure(IApplicationBuilder app)
 
 Ve výše, kódu `UseExceptionHandler` je první komponenta middlewaru přidané do kanálu – tedy zachytávalo jakékoli výjimky, které se vyskytují v pozdější volání.
 
-Middleware se statickými soubory se nazývá již v rané fázi v kanálu, aby mohl zpracovávat požadavky a krátká smyčka – bez průchodu přes zbývající součásti. Poskytuje middleware se statickými soubory **žádné** kontroly autorizace. Všechny soubory obsluhovat, včetně těch na *wwwroot*, jsou veřejně dostupné. V tématu [práce s statické soubory](xref:fundamentals/static-files) pro přístup k zabezpečení statické soubory.
+Middleware se statickými soubory se nazývá již v rané fázi v kanálu, aby mohl zpracovávat požadavky a krátká smyčka – bez průchodu přes zbývající součásti. Poskytuje middleware se statickými soubory **žádné** kontroly autorizace. Všechny soubory obsluhovat, včetně těch na *wwwroot*, jsou veřejně dostupné. V tématu [pracovat s statické soubory](xref:fundamentals/static-files) pro přístup k zabezpečení statické soubory.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -261,7 +261,7 @@ public class MyMiddleware
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Migrace modulů HTTP k middlewaru.](xref:migration/http-modules)
+* [Migrovat vytváření modulů HTTP v middlewaru.](xref:migration/http-modules)
 * [Spuštění aplikace](xref:fundamentals/startup)
 * [Funkce požadavků](xref:fundamentals/request-features)
 * [Aktivace na základě Factory middlewaru](xref:fundamentals/middleware/extensibility)

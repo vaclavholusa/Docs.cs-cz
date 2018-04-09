@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
-title: "Vyloučení souborů a složek z nasazení | Microsoft Docs"
+title: Vyloučení souborů a složek z nasazení | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak můžete vyloučit soubory a složky z balíčku pro nasazení webu při sestavování a balíček projekt webové aplikace."
+description: Toto téma popisuje, jak můžete vyloučit soubory a složky z balíčku pro nasazení webu při sestavování a balíček projekt webové aplikace.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 80810415bac473a58f60110fb9d08772e0627bd5
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c435448bf057bbef9127d66ffda24a07729f2322
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>Vyloučení souborů a složek z nasazení
 ====================
@@ -27,9 +27,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma popisuje, jak můžete vyloučit soubory a složky z balíčku pro nasazení webu při sestavování a balíček projekt webové aplikace.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="overview"></a>Přehled
 
@@ -74,7 +74,7 @@ I když může upravit soubory projektu vyloučit konkrétní soubory a složky,
 1. Vytvořte soubor vlastní projektu s názvem *[název projektu].wpp.targets* ve stejné složce jako soubor projektu.
 
     > [!NOTE]
-    > *. Wpp.targets* souboru patřit do stejné složky jako soubor projektu webové aplikace & #x 2014; například *ContactManager.Mvc.csproj*& #x 2014; místo ve stejné složce jako kterákoli soubory projektu vlastní slouží k řízení sestavení a proces nasazení.
+    > *. Wpp.targets* souboru patřit do stejné složky jako soubor projektu webové aplikace&#x2014;například *ContactManager.Mvc.csproj*&#x2014;spíše než ve stejné složce jako vlastní soubory projektu, které můžete použít k řízení procesu sestavení a nasazení.
 2. V *. wpp.targets* soubor, přidejte **ItemGroup** element.
 3. V **ItemGroup** elementu, přidejte **ExcludeFromPackageFolders** a **ExcludeFromPackageFiles** položky vyloučit konkrétní soubory a složky podle potřeby.
 
@@ -106,16 +106,16 @@ Následující postup ukazuje, jak přidat *. wpp.targets* souborů projektu web
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample2.xml)]
 6. Pokud chcete vyloučení složek z webového balíčku, přidejte **ExcludeFromPackageFolders** elementu, který chcete **ItemGroup** element:
 
-    1. V **zahrnout** atribut, zadejte středníky oddělený seznam složek, které chcete vyloučit.
-    2. V **FromTarget** element metadat, zadejte smysluplný hodnotu indikující, proč jsou vyloučeny složky, jako je třeba název *. wpp.targets* souboru.
+   1. V **zahrnout** atribut, zadejte středníky oddělený seznam složek, které chcete vyloučit.
+   2. V **FromTarget** element metadat, zadejte smysluplný hodnotu indikující, proč jsou vyloučeny složky, jako je třeba název *. wpp.targets* souboru.
 
-    [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
+      [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
 7. Pokud chcete vyloučit soubory z webového balíčku, přidejte **ExcludeFromPackageFiles** elementu, který chcete **ItemGroup** element:
 
-    1. V **zahrnout** atribut, zadejte středníky oddělený seznam souborů, které chcete vyloučit.
-    2. V **FromTarget** element metadat, zadejte smysluplný hodnotu indikující, proč jsou vyloučeny soubory, jako je třeba název *. wpp.targets* souboru.
+   1. V **zahrnout** atribut, zadejte středníky oddělený seznam souborů, které chcete vyloučit.
+   2. V **FromTarget** element metadat, zadejte smysluplný hodnotu indikující, proč jsou vyloučeny soubory, jako je třeba název *. wpp.targets* souboru.
 
-    [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
+      [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
 8. *[Název projektu].wpp.targets* soubor by měl nyní vypadat takto:
 
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample5.xml)]
@@ -131,6 +131,6 @@ Toto téma popisuje postup při sestavování webový balíček, tak, že vytvo�
 
 Další informace o používání vlastních souborů projektu Microsoft Build Engine (MSBuild) k řízení procesu nasazení najdete v tématu [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md) a [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Další informace o balení a nasazení procesu naleznete v tématu [budova a projekty webových aplikací balení](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md), [parametry konfigurace pro nasazení webového balíčku](../web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment.md), a [ Nasazení webových balíčků](../web-deployment-in-the-enterprise/deploying-web-packages.md).
 
->[!div class="step-by-step"]
-[Předchozí](deploying-membership-databases-to-enterprise-environments.md)
-[další](taking-web-applications-offline-with-web-deploy.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-membership-databases-to-enterprise-environments.md)
+> [další](taking-web-applications-offline-with-web-deploy.md)

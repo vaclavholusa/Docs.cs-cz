@@ -1,7 +1,7 @@
 ---
-title: "Povolení generování kód QR pro aplikace v ASP.NET Core"
+title: Povolit generování kód QR pro aplikace v ASP.NET Core
 author: rick-anderson
-description: "Zjistit, jak povolit generování kódu QR pro ověřovací aplikace, které pracovat s ASP.NET Core dvoufaktorové ověřování."
+description: Zjistit, jak povolit generování kódu QR pro ověřovací aplikace, které pracovat s ASP.NET Core dvoufaktorové ověřování.
 manager: wpickett
 ms.author: riande
 ms.date: 09/24/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: dd326bb32565b743d21e196bcb616a716d7994bf
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c61918d42b407b01484b67d740edc7a682c3a4b0
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Povolení generování kód QR pro aplikace v ASP.NET Core
+# <a name="enable-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Povolit generování kód QR pro aplikace v ASP.NET Core
 
 Poznámka: Toto téma se vztahuje na ASP.NET Core 2.x
 

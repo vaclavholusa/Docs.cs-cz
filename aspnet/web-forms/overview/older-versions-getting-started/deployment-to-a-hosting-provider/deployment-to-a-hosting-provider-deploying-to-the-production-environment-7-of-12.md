@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
-title: "Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení do produkčního prostředí - 7 12 | Microsoft Docs"
+title: 'Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení do produkčního prostředí - 7 12 | Microsoft Docs'
 author: tdykstra
-description: "Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného..."
+description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 4aa6766c2c7765f499f5c5380962a5fe443e8c9d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ab3b7ba332deddae7d04fc37c7aabc72bdb2d17e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení do produkčního prostředí - 7 12
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -125,7 +125,7 @@ V **importu nastavení publikování** dialogové okno, vyberte *.publishsetting
 
 ![Publikování webové kartě připojení Průvodce](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image26.png)
 
-Soubor .publishsettings vloží plánované trvalé adresa URL webu do pole cílová adresa URL, ale pokud jste si nezakoupili tuto doménu ještě, nahraďte hodnotu dočasnou adresu URL. V tomto příkladu se adresa URL je  *[http://contosouniversity.com.vserver01.cytanium.com](http://contosouniversity.com.vserver01.cytanium.com).* Jediným účelem: Toto políčko je určit, jaké adresy URL v prohlížeči se otevře s automaticky po úspěšně po nasazení. Pokud pole ponecháte prázdné, pouze důsledkem je, že v prohlížeči se automaticky spouštět nebude po nasazení.
+Soubor .publishsettings vloží plánované trvalé adresa URL webu do pole cílová adresa URL, ale pokud jste si nezakoupili tuto doménu ještě, nahraďte hodnotu dočasnou adresu URL. V tomto příkladu se adresa URL je  *[ http://contosouniversity.com.vserver01.cytanium.com ](http://contosouniversity.com.vserver01.cytanium.com).* Jediným účelem: Toto políčko je určit, jaké adresy URL v prohlížeči se otevře s automaticky po úspěšně po nasazení. Pokud pole ponecháte prázdné, pouze důsledkem je, že v prohlížeči se automaticky spouštět nebude po nasazení.
 
 Klikněte na tlačítko **ověřit připojení** k ověřte, zda jsou nastavení správná, a můžete připojit k serveru. Jak už jste viděli dříve, zelená značka zaškrtnutí ověřuje, že je připojení úspěšné.
 
@@ -137,9 +137,9 @@ Klikněte na tlačítko **Další**.
 
 V **databáze** části **nastavení** zadejte stejné hodnoty, které jste zadali pro Test profilu publikování. Připojovací řetězce, které potřebujete najdete v rozevíracích seznamech.
 
-- V poli připojovací řetězec pro **SchoolContext,** vyberte`Data Source=|DataDirectory|School-Prod.sdf`
+- V poli připojovací řetězec pro **SchoolContext,** vyberte `Data Source=|DataDirectory|School-Prod.sdf`
 - V části **SchoolContext**, vyberte **použít migrace Code First**.
-- V poli připojovací řetězec pro **objekt DefaultConnection**, vyberte možnost`Data Source=|DataDirectory|aspnet-Prod.sdf`
+- V poli připojovací řetězec pro **objekt DefaultConnection**, vyberte možnost `Data Source=|DataDirectory|aspnet-Prod.sdf`
 - V části **objekt DefaultConnection**, nechte **aktualizace databáze** vymazán.
 
 ![Karta nastavení průvodce webové publikování](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image28.png)
@@ -252,6 +252,6 @@ Vytvoření druhého hostování účtu je přístup k práci s testovacím pros
 
 V dalším kurzu budete aktualizaci kódu aplikace a nasazení změny do testovací a produkční prostředí.
 
->[!div class="step-by-step"]
-[Předchozí](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
-[další](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
+> [!div class="step-by-step"]
+> [Předchozí](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
+> [další](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)

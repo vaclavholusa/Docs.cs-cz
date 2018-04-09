@@ -1,7 +1,7 @@
 ---
-title: "Použití reagují s-– obnovení šablony projektu"
+title: Pomocí reagují s-– obnovení v šabloně projektů ASP.NET Core
 author: SteveSandersonMS
-description: "Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro reagují s Redux a vytvořit aplikaci reagují."
+description: Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro reagují s Redux a vytvořit aplikaci reagují.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react-with-redux
-ms.openlocfilehash: f52f4a866b8bb2adeee19548df32f3e7a91761d1
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 9abfbfe5be69d3145de453d9d9e56ea35eec64ed
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="use-the-react-with-redux-project-template"></a>Použití reagují s-– obnovení šablony projektu
+# <a name="use-the-react-with-redux-project-template-with-aspnet-core"></a>Pomocí reagují s-– obnovení v šabloně projektů ASP.NET Core
 
 > [!NOTE]
 > Tato dokumentace není o reagují s-– obnovení šablona projektu součástí technologie ASP.NET 2.0 jádra. Jde o novější reagují s-– obnovení šablony, do kterého můžete ručně aktualizovat. Šablona je součástí 2.1 jádro ASP.NET ve výchozím nastavení.

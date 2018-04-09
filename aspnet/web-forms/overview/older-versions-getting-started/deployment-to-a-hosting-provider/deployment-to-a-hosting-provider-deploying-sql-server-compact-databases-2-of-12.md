@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
-title: "Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení databáze SQL Server Compact - 2 12 | Microsoft Docs"
+title: 'Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení databáze SQL Server Compact - 2 12 | Microsoft Docs'
 author: tdykstra
-description: "Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného..."
+description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 5296bc1ca3fd0b24123bd79a550a7e2cffc34a44
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7e2d430bd8e07ed7d97d11a00c61d90beeac005f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení databáze SQL Server Compact - 2 12
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -190,7 +190,7 @@ Přihlaste se jako "admin" pomocí hesla "Pa$ w0rd" (Všimněte si číslo nula 
 Při prvním nasazení lokality, je běžné vyloučit většinu nebo všechny uživatelské účty, které vytvoříte pro testování. V takovém případě budete nasazovat účtu správce a žádné uživatelské účty. Místo ručním odstranění testovací účty, vytvoříte novou databázi členství, který má jenom jeden správce uživatelský účet, který je nutné v produkčním prostředí.
 
 > [!NOTE]
-> Databáze členství ukládá hodnotu hash hesla účtů. Abyste mohli nasadit účty z jednoho počítače do druhého, ujistěte se, že hash rutiny negenerovat různé hodnoty hash na cílovém serveru, než na zdrojovém počítači. Stejné hodnoty hash se generují při použití balíčku ASP.NET Universal Providers tak dlouho, dokud Neměnit výchozí algoritmus. Výchozí algoritmus HMACSHA256 a je určena v **ověření** atribut  **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)**  element v souboru Web.config.
+> Databáze členství ukládá hodnotu hash hesla účtů. Abyste mohli nasadit účty z jednoho počítače do druhého, ujistěte se, že hash rutiny negenerovat různé hodnoty hash na cílovém serveru, než na zdrojovém počítači. Stejné hodnoty hash se generují při použití balíčku ASP.NET Universal Providers tak dlouho, dokud Neměnit výchozí algoritmus. Výchozí algoritmus HMACSHA256 a je určena v **ověření** atribut **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** element v souboru Web.config.
 
 
 Databáze členství není spravován migrace Code First a neexistuje žádný automatické inicializátoru, který doplňuje databáze s účty testů (jako je pro databázi škola). Proto aby testovací data k dispozici budete vytvořit kopii testovací databáze před vytvořením nového.
@@ -245,6 +245,6 @@ Systém SQL Server Compact databázový stroj a obě databáze je teď připrave
 
 Další informace o NuGet najdete v tématu [spravovat projektu knihovny s NuGet](https://msdn.microsoft.com/magazine/hh547106.aspx) a [NuGet dokumentaci](http://docs.nuget.org/docs/start-here/overview). Pokud nechcete použít NuGet, budete potřebovat další informace o analýze balíčku NuGet k určení, jak funguje, když je nainstalovaná. (Například může nakonfigurovat *Web.config* transformace, konfigurovat skripty prostředí PowerShell, aby se spouštěla v čase vytvoření buildu atd.) Další informace o tom, jak NuGet funguje, najdete v části hlavně [vytváření a publikování balíčku](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) a [konfigurační soubor a zdrojový kód transformace](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
 
->[!div class="step-by-step"]
-[Předchozí](deployment-to-a-hosting-provider-introduction-1-of-12.md)
-[další](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12.md)
+> [!div class="step-by-step"]
+> [Předchozí](deployment-to-a-hosting-provider-introduction-1-of-12.md)
+> [další](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12.md)

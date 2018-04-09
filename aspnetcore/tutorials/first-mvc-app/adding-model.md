@@ -1,7 +1,7 @@
 ---
-title: "Přidání modelu do aplikace ASP.NET MVC jádra"
+title: Přidat model do aplikace ASP.NET MVC jádra
 author: rick-anderson
-description: "Přidáte model do jednoduchou aplikaci ASP.NET Core."
+description: Přidáte model do jednoduchou aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 12/8/2017
@@ -9,13 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 171b2a03378c14e956ab4ee7395d481e0ff89236
-ms.sourcegitcommit: 6fa546140575b3eb279eabae12d9acad966f70e0
+ms.openlocfilehash: 4204d4e2d474db51692d42751a9f82373e9f0c0d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>Přidat model do aplikace ASP.NET MVC jádra
+
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 Poznámka: Šablony ASP.NET 2.0 základní obsahují *modely* složky.
 
@@ -45,7 +47,7 @@ V **přidat vygenerované uživatelské rozhraní** dialogové okno, klepněte n
 Dokončení **přidat kontroler** dialogové okno:
 
 * **Třída modelu:** *Movie (MvcMovie.Models)*
-* **Třída kontextu dat:** vyberte  **+**  ikonu a přidejte výchozí **MvcMovie.Models.MvcMovieContext**
+* **Třída kontextu dat:** vyberte **+** ikonu a přidejte výchozí **MvcMovie.Models.MvcMovieContext**
 
 ![Přidat kontextu dat](adding-model/_static/dc.png)
 
@@ -59,7 +61,7 @@ Visual Studio vytvoří:
 
 * Entity Framework Core [databáze třída kontextu](xref:data/ef-mvc/intro#create-the-database-context) (*Data/MvcMovieContext.cs*)
 * Řadič filmy (*Controllers/MoviesController.cs*)
-* Zobrazení syntaxe Razor soubory vytvořit, odstranit, podrobnosti, Edit a Index stránky (*zobrazení nebo filmy nebo&ast;.cshtml*)
+* Zobrazení syntaxe Razor soubory vytvořit, odstranit, podrobnosti, Edit a Index stránky (<em>zobrazení nebo filmy nebo&ast;.cshtml</em>)
 
 Automatické vytváření kontext databáze a [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (vytvářet, číst, aktualizovat a odstranit) metody akce a zobrazení se označuje jako *generování uživatelského rozhraní*. Brzy budete mít funkční webovou aplikaci, která vám umožní spravovat film databáze.
 
@@ -116,18 +118,18 @@ Update-Database
   Pokud spustíte aplikaci a zobrazí chybová zpráva:
   
   ```text
-SqlException: Cannot open database "Movie" requested by the login.
-The login failed.
-Login failed for user 'user name'.
-```
+  SqlException: Cannot open database "Movie" requested by the login.
+  The login failed.
+  Login failed for user 'user name'.
+  ```
 
 Pravděpodobně nebyl spuštěn ` dotnet ef database update`.
   
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
 [!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model4.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model4.md)]
 
 ![Kontextové nabídky IntelliSense pro položku modelu, seznam dostupných vlastností pro ID, ceny, datum vydání a název](adding-model/_static/ints.png)
 
@@ -136,6 +138,6 @@ Pravděpodobně nebyl spuštěn ` dotnet ef database update`.
 * [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)
 * [Globalizace a lokalizace](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[Předchozí přidávání zobrazení](adding-view.md)
-[další práci s SQL](working-with-sql.md)  
+> [!div class="step-by-step"]
+> [Předchozí přidávání zobrazení](adding-view.md)
+> [další práci s SQL](working-with-sql.md)  

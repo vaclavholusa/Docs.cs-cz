@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/16-adding-security-and-membership
-title: "Přidání členství a zabezpečení do rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs"
+title: Přidání členství a zabezpečení do rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tato kapitola se dozvíte, jak zabezpečit svůj web tak, aby některé stránky jsou k dispozici jenom uživatelům přihlásit. (Dozvíte se taky, jak vytvořit stránky zadaná..."
+description: Tato kapitola se dozvíte, jak zabezpečit svůj web tak, aby některé stránky jsou k dispozici jenom uživatelům přihlásit. (Dozvíte se taky, jak vytvořit stránky zadaná...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: af2eeb128cff554e7ae3d903e2117861087344e9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 351368a356a71e85d4abfdceac8d4f84e0b217f4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>Přidání členství a zabezpečení na web rozhraní ASP.NET Web Pages (Razor)
 ====================
@@ -47,7 +47,7 @@ podle [tní FitzMacken](https://github.com/tfitzmac)
 > - ASP.NET – webové pomocné knihovny
 
 
-Váš web můžete nastavit tak, aby uživatelé mohli přihlásit do Vyb &#8212; To znamená, že lokalita podporuje *členství*. To může být užitečné z mnoha důvodů. Například možná váš web stránek, které by měly být dostupné pouze pro členy. V některých případech může vyžadovat, aby bylo možné je odeslat zpětnou vazbu nebo komentář přihlášení uživatelů.
+Váš web můžete nastavit tak, aby uživatelé mohli přihlásit do ní &#8212; tedy tak, aby lokalita podporuje *členství*. To může být užitečné z mnoha důvodů. Například možná váš web stránek, které by měly být dostupné pouze pro členy. V některých případech může vyžadovat, aby bylo možné je odeslat zpětnou vazbu nebo komentář přihlášení uživatelů.
 
 I v případě, že váš web podporuje členství, uživatelé nejsou nezbytně potřeba přihlášení, než používají některé stránky na webu. Uživatelé, kteří nejsou přihlášeni se označují jako *anonymní uživatelé*.
 
@@ -88,26 +88,26 @@ Následující postup popisuje, jak vytvořit webu a nakonfigurovat ho.
     Pokud nechcete nastavit potvrzení e-mailu, můžete přeskočit tento krok a dalším krokem. Pokud nejsou nastavené hodnoty SMTP, nový účet je ihned k dispozici bez e-mailu s potvrzením.
 6. Upravte následující nastavení související s e-mailu v kódu:
 
-    - Nastavit `WebMail.SmtpServer` na název serveru SMTP, který máte přístup.
-    - Nechte `WebMail.EnableSsl` nastavena na `true`. Toto nastavení slouží k zabezpečení přihlašovacích údajů, které se odesílají na SMTP server šifrováním.
-    - Nastavit `WebMail.UserName` na uživatelské jméno pro svůj účet serveru SMTP.
-    - Nastavit `WebMail.Password` na heslo pro svůj účet serveru SMTP.
-    - Nastavit `WebMail.From` vlastní e-mailovou adresu. Toto je e-mailovou adresu, které je zpráva odeslána z.
+   - Nastavit `WebMail.SmtpServer` na název serveru SMTP, který máte přístup.
+   - Nechte `WebMail.EnableSsl` nastavena na `true`. Toto nastavení slouží k zabezpečení přihlašovacích údajů, které se odesílají na SMTP server šifrováním.
+   - Nastavit `WebMail.UserName` na uživatelské jméno pro svůj účet serveru SMTP.
+   - Nastavit `WebMail.Password` na heslo pro svůj účet serveru SMTP.
+   - Nastavit `WebMail.From` vlastní e-mailovou adresu. Toto je e-mailovou adresu, které je zpráva odeslána z.
 
-    > [!NOTE] 
-    > 
-    > **Tip** Další informace o hodnotách těchto vlastností najdete v tématu [konfigurace nastavení e-mailu](https://go.microsoft.com/fwlink/?LinkID=202906#configuring_email_settings) v [přizpůsobení chování na webu pro webové stránky ASP.NET](https://go.microsoft.com/fwlink/?LinkID=202906).
+     > [!NOTE] 
+     > 
+     > **Tip** Další informace o hodnotách těchto vlastností najdete v tématu [konfigurace nastavení e-mailu](https://go.microsoft.com/fwlink/?LinkID=202906#configuring_email_settings) v [přizpůsobení chování na webu pro webové stránky ASP.NET](https://go.microsoft.com/fwlink/?LinkID=202906).
 7. Uložte a zavřete  *\_AppStart.cshtml*.
 8. Spustit *Default.cshtml* stránku v prohlížeči.
 
     ![security-membership-2](16-adding-security-and-membership/_static/image1.png)
 
-    > [!NOTE]
-    > Pokud se zobrazí chyba oznamující, že vlastnost musí být instance `ExtendedMembershipProvider`, nemusí být konfigurována webu použít systém členství technologie ASP.NET Web Pages (SimpleMembership). Někdy může dojít v případě poskytovatele hostingu server je nakonfigurován jinak než místní server. Pokud chcete odstranit tento problém, přidejte následující element do lokality *Web.config* souboru:
-    > 
-    > [!code-xml[Main](16-adding-security-and-membership/samples/sample2.xml)]
-    > 
-    > Přidejte tento prvek jako podřízenou `<configuration>` elementu a jako partnerské zařízení `<system.web>` elementu.
+   > [!NOTE]
+   > Pokud se zobrazí chyba oznamující, že vlastnost musí být instance `ExtendedMembershipProvider`, nemusí být konfigurována webu použít systém členství technologie ASP.NET Web Pages (SimpleMembership). Někdy může dojít v případě poskytovatele hostingu server je nakonfigurován jinak než místní server. Pokud chcete odstranit tento problém, přidejte následující element do lokality *Web.config* souboru:
+   > 
+   > [!code-xml[Main](16-adding-security-and-membership/samples/sample2.xml)]
+   > 
+   > Přidejte tento prvek jako podřízenou `<configuration>` elementu a jako partnerské zařízení `<system.web>` elementu.
 9. V pravém horním rohu stránky, klikněte na **zaregistrovat** odkaz. *Register.cshtml* zobrazí se stránka.
 10. Zadejte uživatelské jméno a heslo a potom klikněte na **zaregistrovat**.
 
@@ -120,14 +120,14 @@ Následující postup popisuje, jak vytvořit webu a nakonfigurovat ho.
 12. Klikněte na odkaz aktivovat svůj účet. Potvrzení hypertextový odkaz otevře potvrzovací stránku registrace.
 
     ![security-membership-5](16-adding-security-and-membership/_static/image4.png)
-- Klikněte **přihlášení** propojit a pak se přihlaste pomocí účtu, který je zaregistrovaný.
+13. Klikněte **přihlášení** propojit a pak se přihlaste pomocí účtu, který je zaregistrovaný.
 
-    Po přihlášení se **přihlášení** a **zaregistrovat** se nahrazují odkazy **odhlášení** odkaz. Vaše přihlašovací jméno se zobrazí jako odkaz. (Tento odkaz umožňuje přejděte na stránku, kde můžete změnit heslo.)
+      Po přihlášení se **přihlášení** a **zaregistrovat** se nahrazují odkazy **odhlášení** odkaz. Vaše přihlašovací jméno se zobrazí jako odkaz. (Tento odkaz umožňuje přejděte na stránku, kde můžete změnit heslo.)
 
-    ![security-membership-6](16-adding-security-and-membership/_static/image5.png)
+      ![security-membership-6](16-adding-security-and-membership/_static/image5.png)
 
-    > [!NOTE]
-    > Ve výchozím nastavení rozhraní ASP.NET web pages poslat přihlašovací údaje serveru ve formátu prostého textu (jako čitelný text). Produkční lokality by měl používat zabezpečený protokol HTTP (https://, také známé jako *zabezpečení SSL* nebo SSL) k šifrování citlivých informací, které se vyměňují se serverem. Můžete požadované e-mailu odesílání zpráv pomocí protokolu SSL nastavením `WebMail.EnableSsl=true` jako v předchozím příkladu. Další informace o SSL najdete v tématu [zabezpečení komunikace webových: certifikáty SSL a https://](https://go.microsoft.com/fwlink/?LinkId=208660).
+      > [!NOTE]
+      > Ve výchozím nastavení rozhraní ASP.NET web pages poslat přihlašovací údaje serveru ve formátu prostého textu (jako čitelný text). Produkční lokality by měl používat zabezpečený protokol HTTP (https://, také známé jako *zabezpečení SSL* nebo SSL) k šifrování citlivých informací, které se vyměňují se serverem. Můžete požadované e-mailu odesílání zpráv pomocí protokolu SSL nastavením `WebMail.EnableSsl=true` jako v předchozím příkladu. Další informace o SSL najdete v tématu [zabezpečení komunikace webových: certifikáty SSL a https://](https://go.microsoft.com/fwlink/?LinkId=208660).
 
 ## <a name="additional-membership-functionality-in-the-site"></a>Funkce další členství v této lokalitě
 
@@ -165,12 +165,12 @@ V tomto postupu vytvoříte složku, která bude obsahovat stránky, které jsou
     (Číslo portu (38366) bude pravděpodobně lišit v svoji adresu URL.)
 
     Budete přesměrováni na *Login.cshtml* stránky, protože nejste přihlášeni.
-- Přihlaste se pomocí účtu, který jste vytvořili dříve. Budete přesměrováni zpět *MembersInformation* stránky. Vzhledem k tomu, že jste přihlášeni, tentokrát uvidíte obsah stránky.
+7. Přihlaste se pomocí účtu, který jste vytvořili dříve. Budete přesměrováni zpět *MembersInformation* stránky. Vzhledem k tomu, že jste přihlášeni, tentokrát uvidíte obsah stránky.
 
 Zabezpečený přístup k více stránek, můžete to udělat:
 
 - Kontrola zabezpečení přidáte na každou stránku.
-- Vytvoření  *\_PageStart.cshtml* stránku ve složce, kde můžete ponechat chráněné stránky a přidat kontrola zabezpečení existuje. *\_PageStart.cshtml* stránky funguje jako globální stránky pro všechny stránky ve složce. Tento postup je vysvětlené podrobněji v [přizpůsobení chování na webu pro webové stránky ASP.NET](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access).
+- Vytvoření  *\_PageStart.cshtml* stránku ve složce, kde můžete ponechat chráněné stránky a přidat kontrola zabezpečení existuje.  *\_PageStart.cshtml* stránky funguje jako globální stránky pro všechny stránky ve složce. Tento postup je vysvětlené podrobněji v [přizpůsobení chování na webu pro webové stránky ASP.NET](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access).
 
 ## <a name="creating-security-for-groups-of-users-roles"></a>Vytváření zabezpečení pro skupiny uživatelů (role)
 
@@ -227,10 +227,10 @@ Na přihlašovací stránku neukončí automatizovaným programům (někdy ozna�
 7. Nahraďte `PUBLIC_KEY` váš klíč.
 8. Pokud už je nebyly odebrat, odeberte `<div>` element, který obsahuje text, který začíná "Povolit ověřování CAPTCHA...". (Odeberte celý `<div>` elementu a jeho obsah.)
 
-1. Spustit *Default.cshtml* v prohlížeči. Pokud jste se přihlásili do lokality, klikněte **odhlášení** odkaz.
-2. Klikněte **zaregistrovat** propojení a testování registraci pomocí testu CAPTCHA.
+9. Spustit *Default.cshtml* v prohlížeči. Pokud jste se přihlásili do lokality, klikněte **odhlášení** odkaz.
+10. Klikněte **zaregistrovat** propojení a testování registraci pomocí testu CAPTCHA.
 
-    ![security-membership-10](16-adding-security-and-membership/_static/image9.png)
+     ![security-membership-10](16-adding-security-and-membership/_static/image9.png)
 
 Další informace o `ReCaptcha` pomocné rutiny, najdete v části [pomocí CATPCHA zabránit automatizované programy (robotů) z pomocí vašeho webu ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251967).
 

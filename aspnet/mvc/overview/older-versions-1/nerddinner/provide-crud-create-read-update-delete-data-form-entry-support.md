@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
-title: "Zadejte CRUD (vytvořit, číst, aktualizovat, odstraňovat) Data tvoří položka podporu | Microsoft Docs"
+title: Zadejte CRUD (vytvořit, číst, aktualizovat, odstraňovat) Data tvoří položka podporu | Microsoft Docs
 author: microsoft
-description: "Krok 5 ukazuje, jak povolit podporu pro úpravy, vytváření a odstraňování večeří s ním také vám umožní Naše třída DinnersController Další."
+description: Krok 5 ukazuje, jak povolit podporu pro úpravy, vytváření a odstraňování večeří s ním také vám umožní Naše třída DinnersController Další.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
-ms.openlocfilehash: 5a314a1761527d8a2273166a743e3deac012a557
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bd906282db5c620476966ffbe09cecb5ade66ee4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>Zadejte CRUD (vytvořit, číst, aktualizovat, odstraňovat) Data tvoří položka podpory
 ====================
@@ -39,16 +39,16 @@ Jsme zavedená kontrolery a zobrazení a zahrnutých jejich použití k implemen
 
 Metody akce jsme dříve přidány do DinnersController, která implementována podporu dvou adres URL: */Dinners* a */Dinners/podrobnosti / [id]*.
 
-| **ADRESA URL** | **PŘÍKAZ** | **Účel** |
+| **URL** | **VERB** | **Účel** |
 | --- | --- | --- |
 | */Dinners/* | GET | Zobrazí seznam nadcházející večeří HTML. |
 | */Dinners/podrobnosti / [id]* | GET | Zobrazit podrobnosti o konkrétní večeři. |
 
-Teď přidáme akce metody k implementaci tři další adresy URL: */Dinners/Edit / [id], nebo večeří nebo vytvořit,*a*/Dinners/odstranění / [id]*. Tyto adresy URL se povoluje podporu pro úpravu stávající večeří, vytvoření nové večeří nebo odstranění večeří.
+Teď přidáme akce metody k implementaci tři další adresy URL: <em>/Dinners/Edit / [id], nebo večeří nebo vytvořit,</em>a<em>/Dinners/odstranění / [id]</em>. Tyto adresy URL se povoluje podporu pro úpravu stávající večeří, vytvoření nové večeří nebo odstranění večeří.
 
 Podporujeme HTTP GET a POST protokolu HTTP příkaz interakce s těmito novými adresami URL. Požadavky HTTP GET pro tyto adresy URL se zobrazí počáteční zobrazení HTML dat (formuláře naplněný daty večeři v případě "upravit", prázdného formuláře v případě "vytvořit" a obrazovka s potvrzením odstranit v případě "odstranit"). Požadavky HTTP POST na tyto adresy URL se uložit, aktualizace nebo odstranění večeři data v našem DinnerRepository (a z ní k databázi).
 
-| **ADRESA URL** | **PŘÍKAZ** | **Účel** |
+| **URL** | **VERB** | **Účel** |
 | --- | --- | --- |
 | */Dinners/edit / [id]* | GET | Zobrazte upravitelné naplněný daty večeři formuláře HTML. |
 | POST | Uložte změny formuláře pro konkrétní večeři do databáze. |
@@ -107,7 +107,7 @@ Případně pokud se vám najít prohlášení "použití" přístupu nepřiroze
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample4.aspx)]
 
-Volání metody Html.BeginForm() bez parametrů způsobí, že k vypsání element formuláře, který nemá HTTP POST na adresu URL aktuální žádosti. To znamená, proč generuje naše zobrazení  *&lt;akci formuláře = "/ večeří/Edit/1" metoda = "post"&gt;*  element. Jsme může být případně předaný explicitní parametry Html.BeginForm() jsme chtěli post na jinou adresu URL.
+Volání metody Html.BeginForm() bez parametrů způsobí, že k vypsání element formuláře, který nemá HTTP POST na adresu URL aktuální žádosti. To znamená, proč generuje naše zobrazení *&lt;akci formuláře = "/ večeří/Edit/1" metoda = "post"&gt;* element. Jsme může být případně předaný explicitní parametry Html.BeginForm() jsme chtěli post na jinou adresu URL.
 
 ##### <a name="htmltextbox-helper-method"></a>Html.TextBox() Pomocná metoda
 
@@ -115,7 +115,7 @@ Naše Edit.aspx zobrazení používá metodu helper Html.TextBox() výstup &lt;t
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample5.aspx)]
 
-Výše uvedené Html.TextBox() metoda přebírá jediný parametr – sloužící k určení atributy id nebo název služby &lt;typ vstupu = "text" /&gt; element výstup, stejně jako vlastnost modelu k naplnění hodnotu pole textbox z. Například bylo na večeři objekt jsme předaná do zobrazení upravit hodnotu vlastnosti "Title" služby ".NET Futures", a proto volání metody naše Html.TextBox("Title") výstup:  *&lt;vstupní id = "Title" name = "Title" type = "text" value = ".NET Futures" /&gt;* .
+Výše uvedené Html.TextBox() metoda přebírá jediný parametr – sloužící k určení atributy id nebo název služby &lt;typ vstupu = "text" /&gt; element výstup, stejně jako vlastnost modelu k naplnění hodnotu pole textbox z. Například bylo na večeři objekt jsme předaná do zobrazení upravit hodnotu vlastnosti "Title" služby ".NET Futures", a proto volání metody naše Html.TextBox("Title") výstup: *&lt;vstupní id = "Title" name = "Title" type = "text" value = ".NET Futures" /&gt;*.
 
 První parametr Html.TextBox() jsme Alternativně můžete použít pro zadejte id nebo název elementu a poté explicitně předat hodnoty, které chcete použít jako druhý parametr:
 
@@ -141,7 +141,7 @@ Začneme budete přidáním přetížené metody akce "Upravit" do našich Dinne
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample9.cs)]
 
-Při použití metody přetížené akce atribut [AcceptVerbs], ASP.NET MVC automaticky zpracovává odesílající požadavky na vhodnou metodu v závislosti na příchozí příkaz HTTP. Požadavky HTTP POST do */Dinners/Edit / [id]* adresy URL přejde na výše uvedené metoda úprav, při všech ostatních požadavků HTTP příkaz k */Dinners/Edit / [id]*adresy URL přejde na první metoda úprav jsme (které nebyla implementována nemá atribut [AcceptVerbs]).
+Při použití metody přetížené akce atribut [AcceptVerbs], ASP.NET MVC automaticky zpracovává odesílající požadavky na vhodnou metodu v závislosti na příchozí příkaz HTTP. Požadavky HTTP POST do <em>/Dinners/Edit / [id]</em> adresy URL přejde na výše uvedené metoda úprav, při všech ostatních požadavků HTTP příkaz k <em>/Dinners/Edit / [id]</em>adresy URL přejde na první metoda úprav jsme (které nebyla implementována nemá atribut [AcceptVerbs]).
 
 | **Téma straně: Proč rozlišit pomocí příkazů HTTP?** |
 | --- |
@@ -231,7 +231,7 @@ Pomocná metoda Html.ValidationMessage() také podporuje druhý parametr, který
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample18.aspx)]
 
-Ve výše uvedeném kódu výstupy:  *&lt;span – třída = "pole validation-error"&gt;\*&lt;/span&gt;*místo text výchozí chyby, pokud je k dispozici pro chybu Vlastnost EventDate.
+Ve výše uvedeném kódu výstupy:  <em>&lt;span – třída = "pole validation-error"&gt;\*&lt;/span&gt;</em>místo text výchozí chyby, pokud je k dispozici pro chybu Vlastnost EventDate.
 
 ##### <a name="htmlvalidationsummary-helper-method"></a>Html.ValidationSummary() Pomocná metoda
 
@@ -427,6 +427,6 @@ Nyní je základní podpora CRUD (vytvoření, čtení, aktualizaci a odstraňov
 
 Nyní podíváme, jak můžete použít třídy ViewData a ViewModel povolit i bohatší uživatelského rozhraní na našem formulářů.
 
->[!div class="step-by-step"]
-[Předchozí](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
-[další](use-viewdata-and-implement-viewmodel-classes.md)
+> [!div class="step-by-step"]
+> [Předchozí](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+> [další](use-viewdata-and-implement-viewmodel-classes.md)

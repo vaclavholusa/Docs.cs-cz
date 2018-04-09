@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
-title: "Řazení dat v DataList nebo prvku Repeater (VB) | Microsoft Docs"
+title: Řazení dat v DataList nebo prvku Repeater (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu podíváme, jak se zahrnuje řazení podpora v DataList a opakovače, jakož i konstruování DataList nebo opakovače, jejichž data můžete..."
+description: V tomto kurzu podíváme, jak se zahrnuje řazení podpora v DataList a opakovače, jakož i konstruování DataList nebo opakovače, jejichž data můžete...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0133a74454a7754f4f7087e2121c7387a1aef8a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 66d6833e69a91aef39cc4a202ef662ecaeeee839
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>Řazení dat v DataList nebo prvku Repeater (VB)
 ====================
@@ -231,9 +231,9 @@ Při první návštěvě stránky, data jsou seřazená podle abecedy podle náz
 
 Příklad DataList zkontrolován v kroku 5 stránky prostřednictvím svá data pomocí techniky stránkování neefektivní výchozí. Při procházení dostatečně velké objemy dat, je nutné použít vlastní stránkování. Zpět v [efektivně stránkování prostřednictvím velké objemy dat](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb.md) a [řazení dat vlastní stránkovaného](../paging-and-sorting/sorting-custom-paged-data-vb.md) kurzy, jsme se zaměřili na rozdíly mezi výchozími a vlastní stránkování a vytvořený metody v BLL pro Použití vlastní stránkování a řazení vlastní stránkové data. Konkrétně v těchto dvou předchozí kurzy, jsme přidali následující tři metody, které `ProductsBLL` třídy:
 
-- `GetProductsPaged(startRowIndex, maximumRows)`Vrátí podmnožinu záznamy začínající na konkrétní *startRowIndex* a nejvýše *maximumRows*.
-- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)`Vrátí podmnožinu konkrétní záznamů seřazené podle zadaného *sortExpression* vstupní parametr.
-- `TotalNumberOfProducts()`poskytuje celkový počet záznamů v `Products` databázové tabulky.
+- `GetProductsPaged(startRowIndex, maximumRows)` Vrátí podmnožinu záznamy začínající na konkrétní *startRowIndex* a nejvýše *maximumRows*.
+- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)` Vrátí podmnožinu konkrétní záznamů seřazené podle zadaného *sortExpression* vstupní parametr.
+- `TotalNumberOfProducts()` poskytuje celkový počet záznamů v `Products` databázové tabulky.
 
 Tyto metody slouží k efektivní stránky a řazení prostřednictvím dat pomocí ovládacího prvku DataList nebo opakovače. Pro znázornění je umožnit s začněte tím, že vytvoření ovládacího prvku opakovače s vlastní podporu stránkování; potom přidáme možnosti řazení.
 
@@ -390,11 +390,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl David Suru. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](paging-report-data-in-a-datalist-or-repeater-control-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](paging-report-data-in-a-datalist-or-repeater-control-vb.md)

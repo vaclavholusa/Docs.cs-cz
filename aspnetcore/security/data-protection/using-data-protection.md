@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s rozhraními API ochrany dat."
+title: Začínáme s rozhraním API ochrany dat v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument vysvětluje, jak používat ochranu dat ASP.NET Core rozhraní API pro ochranu a při rušení dat v aplikaci."
+description: Naučte se používat ochranu dat ASP.NET Core rozhraní API pro ochranu a při rušení dat v aplikaci.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/using-data-protection
-ms.openlocfilehash: ff72773fce28ba75aa8777eea321ed2bfb8f7e54
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 3a69abd2b58e02f87ccaf2317b0a8a2a7e9d7b4a
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="get-started-with-the-data-protection-apis"></a>Začínáme s rozhraními API ochrany dat.
+# <a name="get-started-with-the-data-protection-apis-in-aspnet-core"></a>Začínáme s rozhraním API ochrany dat v ASP.NET Core
 
 <a name="security-data-protection-getting-started"></a>
 
@@ -31,7 +31,7 @@ Většina architektury a modely aplikace, jako je například technologie ASP.NE
 
 [!code-csharp[](../../security/data-protection/using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
 
-Když vytvoříte ochranného zařízení je nutné zadat jednu nebo více [účel řetězce](consumer-apis/purpose-strings.md). Řetězec účel zajišťuje izolaci mezi příjemci. Například ochranného zařízení vytvořené pomocí účel řetězec "green" nebude moct zrušení ochrany dat poskytované ochranného zařízení s účelem "Fialová".
+Když vytvoříte ochranného zařízení je nutné zadat jednu nebo více [účel řetězce](xref:security/data-protection/consumer-apis/purpose-strings). Řetězec účel zajišťuje izolaci mezi příjemci. Například ochranného zařízení vytvořené pomocí účel řetězec "green" nebude moct zrušení ochrany dat poskytované ochranného zařízení s účelem "Fialová".
 
 >[!TIP]
 > Instance `IDataProtectionProvider` a `IDataProtector` jsou bezpečné pro přístup z více vláken pro více volající. Rozhraní má který určeno po získá odkaz na komponentu `IDataProtector` prostřednictvím volání `CreateProtector`, tento odkaz se bude používat pro několik volání `Protect` a `Unprotect`.

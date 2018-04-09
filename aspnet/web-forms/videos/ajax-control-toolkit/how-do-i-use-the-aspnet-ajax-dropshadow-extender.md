@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropshadow-extender
-title: "[Jak na:] Použití ASP.NET AJAX DropShadow rozšíření? | Microsoft Docs"
+title: '[Jak na:] Použití ASP.NET AJAX DropShadow rozšíření? | Microsoft Docs'
 author: JoeStagner
-description: "Můžete zjistit, jak ke zlepšení úpravy ASP.NET lokalit pomocí ovládacího prvku rozšiřujícího objektu AJAX DropShadow přidat neprůhledné, zaokrouhlí rohu stíny do oblasti o..."
+description: Můžete zjistit, jak ke zlepšení úpravy ASP.NET lokalit pomocí ovládacího prvku rozšiřujícího objektu AJAX DropShadow přidat neprůhledné, zaokrouhlí rohu stíny do oblasti o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/01/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropshadow-extender
 msc.type: video
-ms.openlocfilehash: 77bedfb77ba8e6c7b137c6e39c67ecc1a12056ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2e5738f6ada455e50652741674cc9f0c778400eb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-aspnet-ajax-dropshadow-extender"></a>[Jak na:] Použití ASP.NET AJAX DropShadow rozšíření?
 ====================
@@ -24,8 +24,8 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 
 Můžete zjistit, jak ke zlepšení úpravy ASP.NET lokalit pomocí ovládacího prvku rozšiřujícího objektu AJAX DropShadow přidat neprůhledné, zaokrouhlí rohu stíny do oblastí stránek.
 
-[&#9654; Podívejte se na video (2 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-dropshadow-extender)
+[&#9654;Podívejte se na video (2 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-dropshadow-extender)
 
->[!div class="step-by-step"]
-[Předchozí](how-do-i-use-the-aspnet-ajax-togglebutton-extender.md)
-[další](how-do-i-use-the-aspnet-ajax-passwordstrength-extender.md)
+> [!div class="step-by-step"]
+> [Předchozí](how-do-i-use-the-aspnet-ajax-togglebutton-extender.md)
+> [další](how-do-i-use-the-aspnet-ajax-passwordstrength-extender.md)

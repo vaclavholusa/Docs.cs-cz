@@ -1,7 +1,7 @@
 ---
-title: "Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x a novější"
+title: Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x a novější
 author: Rick-Anderson
-description: "Microsoft.AspNetCore.All metapackage zahrnuje všechny podporované balíčků ASP.NET Core a Entity Framework Core, spolu s jejich závislosti."
+description: Microsoft.AspNetCore.All metapackage zahrnuje všechny podporované balíčků ASP.NET Core a Entity Framework Core, spolu s jejich závislosti.
 manager: wpickett
 ms.author: riande
 ms.date: 09/20/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: 4cbb4f4068c65df586adb1a42b946f8971873352
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 69a1683feb66f9da5fe61378c4a4ed55e08d39ac
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-#<a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x
+# <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x
 
 Tato funkce vyžaduje rozhraní .NET zaměřená na aplikace ASP.NET Core 2.x základní 2.x.
 
@@ -35,4 +35,4 @@ Proces oříznutí balíčku můžete odebrat balíčky, které nepoužíváte. 
 
 Následující *.csproj* souboru odkazy `Microsoft.AspNetCore.All` metapackage pro ASP.NET Core:
 
-[!code-xml[](..\mvc\views\view-compilation\sample\MvcRazorCompileOnPublish2.csproj?highlight=9)]
+[!code-xml[](../mvc/views/view-compilation/sample/MvcRazorCompileOnPublish2.csproj?highlight=9)]

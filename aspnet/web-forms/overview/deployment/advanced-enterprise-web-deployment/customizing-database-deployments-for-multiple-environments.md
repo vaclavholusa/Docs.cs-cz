@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
-title: "Přizpůsobení nasazení databáze pro prostředí s více | Microsoft Docs"
+title: Přizpůsobení nasazení databáze pro prostředí s více | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak můžete nastavit vlastnosti databáze pro konkrétní cíl prostředí jako součást procesu nasazení. Poznámka: Tématu předpokládá tý..."
+description: 'Toto téma popisuje, jak můžete nastavit vlastnosti databáze pro konkrétní cíl prostředí jako součást procesu nasazení. Poznámka: Tématu předpokládá tý...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: f3ca344c2466d9d538f55cd8ff0a5bf5b7bac808
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 06f22bc9a3068ee5621df62ee5ed1bea06d7e9e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>Přizpůsobení nasazení databáze pro prostředí s více
 ====================
@@ -35,9 +35,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > V projektu sady Visual Studio 2010 databáze jsou nastavení nasazení obsažené v souboru konfigurace (.sqldeployment) nasazení. Toto téma vám ukáže, jak vytvořit soubory konfigurace nasazení konkrétní prostředí a určit, které chcete použít jako parametr VSDBCMD.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="task-overview"></a>Přehled úloh
 
@@ -146,6 +146,6 @@ Tyto články na webu MSDN poskytovat další obecné informace o nasazení data
 - [Sestavení a nasazení databází do prostředí izolované vývoj](https://msdn.microsoft.com/library/dd193409.aspx)
 - [Sestavení a nasazení databází k pracovním nebo produkčním prostředí](https://msdn.microsoft.com/library/dd193413.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](performing-a-what-if-deployment.md)
-[další](deploying-database-role-memberships-to-test-environments.md)
+> [!div class="step-by-step"]
+> [Předchozí](performing-a-what-if-deployment.md)
+> [další](deploying-database-role-memberships-to-test-environments.md)

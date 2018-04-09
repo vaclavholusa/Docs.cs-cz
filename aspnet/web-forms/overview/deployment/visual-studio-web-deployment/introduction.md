@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/introduction
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: Úvod | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: Úvod | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET pomocí webové aplikace Azure App Service Web Apps nebo poskytovatele hostingu třetích stran, pomocí V..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET pomocí webové aplikace Azure App Service Web Apps nebo poskytovatele hostingu třetích stran, pomocí V...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: a7c5b348e44a88a56680237b0cac75c999901ec3
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 1ff4cc3b0fa6ce7e6cdc833a0c2f7fea2050c4e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: Úvod
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -202,5 +202,5 @@ Následující funkce aplikace budou mít vliv nasazení nebo co musíte udělat
 
 V tomto prvním kurzu v řadě byly staženy ukázkový projekt sady Visual Studio a zkontrolovat lokality funkce, které ovlivňují nasazení aplikace. V následujících kurzech připravíte nasazení nastavením některé z těchto věcí automaticky zpracovávat. Ostatní můžete postará o ručně.
 
->[!div class="step-by-step"]
-[Next](preparing-databases.md)
+> [!div class="step-by-step"]
+> [Next](preparing-databases.md)

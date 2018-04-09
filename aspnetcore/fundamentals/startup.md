@@ -1,7 +1,7 @@
 ---
-title: "Spuštění aplikace v ASP.NET Core"
+title: Spuštění aplikace v ASP.NET Core
 author: ardalis
-description: "Zjistit, jak třída při spuštění v ASP.NET Core nakonfiguruje služby a aplikace požadavku kanálu."
+description: Zjistit, jak třída při spuštění v ASP.NET Core nakonfiguruje služby a aplikace požadavku kanálu.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: 6526fe8d00aace19d1225e5dcb1ed1dc3b73b0eb
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: bad1bc986be3e8681dacdf48fe7d20ab660ebcb0
+ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -44,7 +44,7 @@ Zadejte `Startup` třídy s [WebHostBuilderExtensions](/dotnet/api/Microsoft.Asp
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-Alternativu k vložení `IHostingEnvironment` , je použít přístup na základě konvence. Aplikace můžete definovat samostatné `Startup` třídy pro různá prostředí (například `StartupDevelopment`), a v době běhu je vybraná třída odpovídající při spuštění. Třída, jehož příponu názvu odpovídá aktuální prostředí prioritu. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v tématu [práce s několika prostředí](xref:fundamentals/environments#startup-conventions).
+Alternativu k vložení `IHostingEnvironment` , je použít přístup na základě konvence. Aplikace můžete definovat samostatné `Startup` třídy pro různá prostředí (například `StartupDevelopment`), a v době běhu je vybraná třída odpovídající při spuštění. Třída, jehož příponu názvu odpovídá aktuální prostředí prioritu. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v tématu [pracovat s několika prostředí](xref:fundamentals/environments#startup-conventions).
 
 Další informace o `WebHostBuilder`, najdete v článku [hostitelský](xref:fundamentals/hosting) tématu. Informace o zpracování chyb během spouštění najdete v tématu [spuštění zpracování výjimek](xref:fundamentals/error-handling#startup-exception-handling).
 
@@ -76,11 +76,13 @@ Webový hostitel poskytuje některé služby, které jsou k dispozici `Startup` 
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
 
-Každý `Use` metoda rozšíření přidá do kanálu požadavku komponenta middlewaru. Například `UseMvc` přidá metody rozšíření [směrování middleware](xref:fundamentals/routing) do kanálu požadavku a nakonfiguruje [MVC](xref:mvc/overview) jako výchozí obslužnou rutinu.
+Každý `Use` metoda rozšíření přidá do kanálu požadavku komponenta middlewaru. Například `UseMvc` přidá metody rozšíření [směrování Middleware](xref:fundamentals/routing) do kanálu požadavku a nakonfiguruje [MVC](xref:mvc/overview) jako výchozí obslužnou rutinu. 
+
+Jednotlivé komponenty middleware v kanálu požadavku zodpovídá za vyvolání další komponenta v kanálu nebo krátká smyčka řetězu, v případě potřeby. Pokud krátká smyčka neprobíhá podél řetězu middleware, má každý middleware druhý příležitosti pro zpracování požadavku před odesláním do klienta.
 
 Další služby, jako například `IHostingEnvironment` a `ILoggerFactory`, můžete také zadat v podpis metody. -Li zadána, jsou vložit další služby, pokud jsou k dispozici.
 
-Další informace o tom, jak používat `IApplicationBuilder`, najdete v části [Middleware](xref:fundamentals/middleware/index).
+Další informace o tom, jak používat `IApplicationBuilder` a pořadí zpracování middleware, najdete v části [Middleware](xref:fundamentals/middleware/index).
 
 ## <a name="convenience-methods"></a>Usnadňující metody
 
@@ -92,7 +94,7 @@ Další informace o tom, jak používat `IApplicationBuilder`, najdete v části
 
 Použití [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter) pro konfiguraci middlewaru na začátku nebo na konci aplikace [konfigurace](#the-configure-method) middlewaru v řadě. `IStartupFilter` je užitečné k zajištění, že middleware běží před nebo po middleware přidal knihovny na začátku nebo na konci kanálu zpracování žádostí aplikace.
 
-`IStartupFilter` implementuje jedné metody [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure), který obdrží a vrátí `Action<IApplicationBuilder>`. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) definuje třída ke konfiguraci aplikace požadavku kanálu. Další informace najdete v tématu [vytváření middlewaru v řadě s IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder).
+`IStartupFilter` implementuje jedné metody [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure), který obdrží a vrátí `Action<IApplicationBuilder>`. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) definuje třída ke konfiguraci aplikace požadavku kanálu. Další informace najdete v tématu [vytvoření kanálu middlewaru s IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder).
 
 Každý `IStartupFilter` implementuje jeden nebo více middlewares v kanálu požadavku. Filtry je vyvolán v pořadí, ve kterém byly přidány do kontejneru služby. Filtry může přidat middleware před nebo po úspěšném řízení další filtru, proto se připojit k začátku nebo na konci kanálu aplikace.
 
@@ -120,7 +122,7 @@ Pořadí spuštění middlewaru je nastavena podle pořadí podle `IStartupFilte
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Hostování](xref:fundamentals/hosting)
-* [Práce s několika prostředí](xref:fundamentals/environments)
+* [Práce v různých prostředích](xref:fundamentals/environments)
 * [Middleware](xref:fundamentals/middleware/index)
 * [Protokolování](xref:fundamentals/logging/index)
 * [Konfigurace](xref:fundamentals/configuration/index)

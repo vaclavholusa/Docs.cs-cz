@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
-title: "Nasazení webové aplikace v podnikové scénáře použití sady Visual Studio 2010 | Microsoft Docs"
+title: Nasazení webové aplikace v podnikové scénáře použití sady Visual Studio 2010 | Microsoft Docs
 author: jrjlee
-description: "Tato sada kurzů popisuje nástroje a techniky, které můžete použít k nasazení webové aplikace v různých podnikových scénářích. Vysvětluje, jak nejlépe použít..."
+description: Tato sada kurzů popisuje nástroje a techniky, které můžete použít k nasazení webové aplikace v různých podnikových scénářích. Vysvětluje, jak nejlépe použít...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/03/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: 99bab371dd34b30f3554843e49bbec7f57c3f96c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 921b1ccd8a1f2109a51f3f75149588422fefb91d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-web-applications-in-enterprise-scenarios-using-visual-studio-2010"></a>Nasazení webové aplikace v podnikové scénáře použití sady Visual Studio 2010
 ====================
@@ -36,7 +36,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 > > Při tyto kurzy popisují použití sady TFS jako CI server, je snadno přizpůsobit pokyny k žádnému serveru položek konfigurace. Nepotřebujete podrobné údaje o TFS pochopit a využívat kurzů k.
 > 
 > 
-> Italská překlad tyto kurzy, najdete v článku [http://www.lucamorelli.it](http://www.lucamorelli.it).
+> Italská překlad tyto kurzy, najdete v článku [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
 ## <a name="about-the-authors"></a>O autorů
@@ -58,7 +58,7 @@ Postupujte podle názorné postupy a provádět úlohy, které popisují tyto ku
 - Rozhraní .NET framework 3.5 s aktualizací Service Pack 1
 - ASP.NET MVC 3.0
 - Služba IIS 7.5 Express
-- Systém SQL Server Express 2008 R2
+- SQL Server Express 2008 R2
 
 Pokud chcete provést nasazení kroků popsaných v rámci tyto postupy, musíte mít přístup k ukázkové webové aplikace nasazení prostředí. Nejlepších výsledků dosáhnete by měla odpovídat těchto prostředích vzor nasazení enterprise vaší organizace. Poté můžete upravit návody uvedených v této dokumentaci tak, aby odrážela nasazení prostředí a požadavky vaší vlastní organizaci.
 
@@ -80,5 +80,5 @@ Tato úvodní část zahrnuje dva další témata. Tyto jsou určená k poskytnu
 
 Tato sada kurzy používá ukázkové řešení s úrovní realistické složitější, společně s scénář nasazení fiktivních enterprise, a zadejte odkaz na implementaci a dát úlohy a návody pro běžné kontextu. Dalším tématu [Enterprise nasazení webu: přehled scénářů](enterprise-web-deployment-scenario-overview.md), představuje scénář a ukázkové řešení. Odtud můžete pracovat prostřednictvím kurzy a témata, které nejvíce odpovídají vašim potřebám.
 
->[!div class="step-by-step"]
-[Další](enterprise-web-deployment-scenario-overview.md)
+> [!div class="step-by-step"]
+> [Next](enterprise-web-deployment-scenario-overview.md)

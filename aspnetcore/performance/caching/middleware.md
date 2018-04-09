@@ -1,7 +1,7 @@
 ---
-title: "Ukládání do mezipaměti Middleware v ASP.NET Core odpovědi"
+title: Ukládání do mezipaměti Middleware v ASP.NET Core odpovědi
 author: guardrex
-description: "Zjistěte, jak konfigurovat a používat Middleware ukládání do mezipaměti odpovědi v ASP.NET Core."
+description: Zjistěte, jak konfigurovat a používat Middleware ukládání do mezipaměti odpovědi v ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -9,11 +9,11 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: e9a74d8f6c3945b1bc8c62d0ab21145a7c5717fb
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: ff92b032fe8bbbcb7bc26a34fdfbc56a0fcc0e2c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Ukládání do mezipaměti Middleware v ASP.NET Core odpovědi
 
@@ -88,7 +88,7 @@ Ukládání odpovědí do mezipaměti middleware je nakonfigurován pomocí hlav
 | Záhlaví | Podrobnosti |
 | ------ | ------- |
 | Autorizace | Odpověď není v mezipaměti, pokud existuje hlavička. |
-| Cache-Control | Middleware uvažuje pouze ukládání do mezipaměti odpovědi, které jsou označené jako `public` direktiva mezipaměti. Řízení ukládání do mezipaměti s následujícími parametry:<ul><li>Maximální stáří</li><li>max-stale&#8224;</li><li>čerstvě min.</li><li>must-revalidate</li><li>no-cache</li><li>Ne – úložiště</li><li>pouze v případě mezipaměti</li><li>private</li><li>public</li><li>s maxage</li><li>proxy-revalidate&#8225;</li></ul>&#8224; Pokud není zadáno žádné omezení na `max-stale`, middleware neprovede žádnou akci.<br>&#8225; `proxy-revalidate` má stejný účinek jako `must-revalidate`.<br><br>Další informace najdete v tématu [RFC 7231: požadavku direktivy Cache-Control](https://tools.ietf.org/html/rfc7234#section-5.2.1). |
+| Cache-Control | Middleware uvažuje pouze ukládání do mezipaměti odpovědi, které jsou označené jako `public` direktiva mezipaměti. Řízení ukládání do mezipaměti s následujícími parametry:<ul><li>Maximální stáří</li><li>max-stale&#8224;</li><li>čerstvě min.</li><li>must-revalidate</li><li>no-cache</li><li>Ne – úložiště</li><li>pouze v případě mezipaměti</li><li>private</li><li>public</li><li>s maxage</li><li>proxy-revalidate&#8225;</li></ul>&#8224;Pokud není zadáno žádné omezení na `max-stale`, middleware neprovede žádnou akci.<br>&#8225;`proxy-revalidate`má stejný účinek jako `must-revalidate`.<br><br>Další informace najdete v tématu [RFC 7231: požadavku direktivy Cache-Control](https://tools.ietf.org/html/rfc7234#section-5.2.1). |
 | Direktiva pragma | A `Pragma: no-cache` hlavičky v požadavku vytváří stejného efektu jako `Cache-Control: no-cache`. Tuto hlavičku je přepsat relevantní direktivy v `Cache-Control` záhlaví, pokud je k dispozici. Za pro zpětnou kompatibilitu s HTTP/1.0. |
 | Set-Cookie | Odpověď není v mezipaměti, pokud existuje hlavička. |
 | lišit | `Vary` Záhlaví slouží k odlišení odpověď uložená v mezipaměti jiné záhlaví. Například pomocí kódování zahrnutím do mezipaměti odpovědi `Vary: Accept-Encoding` hlavičky, která ukládá do mezipaměti odpovědi pro požadavky s hlavičky `Accept-Encoding: gzip` a `Accept-Encoding: text/plain` samostatně. Odpověď se hodnota hlavičky `*` nikdy neuloží. |
@@ -105,8 +105,8 @@ Middleware respektuje pravidla [ukládání do mezipaměti HTTP 1.1 specifikace]
 
 Pro větší kontrolu nad chování ukládání do mezipaměti prozkoumejte jiné funkce ukládání do mezipaměti ASP.NET Core. Najdete v následujících tématech:
 
-* [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
-* [Práce s distribuované mezipaměti](xref:performance/caching/distributed)
+* [Mezipaměti v paměti](xref:performance/caching/memory)
+* [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
 * [Značka Pomocník jádro ASP.NET MVC do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
 
@@ -142,8 +142,8 @@ Při testování a řešení potíží s chování ukládání do mezipaměti, p
 
 * [Spuštění aplikace](xref:fundamentals/startup)
 * [Middleware](xref:fundamentals/middleware/index)
-* [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
-* [Práce s distribuované mezipaměti](xref:performance/caching/distributed)
+* [Mezipaměti v paměti](xref:performance/caching/memory)
+* [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
 * [Detekovat změny s tokeny změn](xref:fundamentals/primitives/change-tokens)
 * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
 * [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)

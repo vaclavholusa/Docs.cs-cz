@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
-title: "Část 7: Přidávání funkcí | Microsoft Docs"
+title: 'Část 7: Přidávání funkcí | Microsoft Docs'
 author: JoeStagner
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 7 přidává další funkce, jako je například účet revie..."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 7 přidává další funkce, jako je například účet revie...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 5280de44b3e75f9d1ae85e0248bc3ef6d5444f6d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 17f068155f6726047901e2f7d580d375a4e07c87
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-adding-features"></a>Část 7: Přidání funkcí
 ====================
@@ -27,7 +27,7 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 > Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 7 přidává další funkce, jako je například účet kontrolní, recenzemi produktů a "Oblíbené položky" a "také zakoupených" uživatelské ovládací prvky.
 
 
-## <a id="_Toc260221673"></a>Přidávání funkcí
+## <a id="_Toc260221673"></a>  Přidávání funkcí
 
 Když uživatelé procházet naše katalogu, umístěte položek do nákupního košíku a dokončete proces najdete v článku věnovaném, se, že počet podpora funkce, že jsme bude obsahovat vylepšit náš web neexistují.
 
@@ -40,7 +40,7 @@ Když uživatelé procházet naše katalogu, umístěte položek do nákupního 
 7. Přidat o stránce.
 8. Globální chyby
 
-## <a id="_Toc260221674"></a>Zkontrolujte účet
+## <a id="_Toc260221674"></a>  Zkontrolujte účet
 
 Ve složce "Účet" vytvořte dvě stránky .aspx jednu s názvem OrderList.aspx a dalších pojmenované OrderDetails.aspx
 
@@ -56,7 +56,7 @@ Všimněte si také tyto parametry v HyperlinkField prvku GridView:
 
 Tyto zadejte odkaz na zobrazení podrobností pořadí pro každý produkt zadat jako parametr řetězce dotazu na stránku OrderDetails.aspx pole OrderID.
 
-## <a id="_Toc260221675"></a>OrderDetails.aspx
+## <a id="_Toc260221675"></a>  OrderDetails.aspx
 
 Ovládací prvek EntityDataSource budeme používat pro přístup k objednávky a FormView zobrazují data pořadí a jiné EntityDataSource s GridView pro zobrazení všech pořadí položek řádku.
 
@@ -72,7 +72,7 @@ Také potřebujeme k výpočtu a celkový počet položek řádku pořadí zobra
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample5.cs)]
 
-## <a id="_Toc260221676"></a>Domovská stránka
+## <a id="_Toc260221676"></a>  Domovská stránka
 
 Přidejme nějaký statický obsah na stránku Default.aspx.
 
@@ -82,7 +82,7 @@ Do dolní zástupného textu stránky Default.aspx přidejte následující kód
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample6.aspx)]
 
-## <a id="_Toc260221677"></a>Recenzemi produktů
+## <a id="_Toc260221677"></a>  Recenzemi produktů
 
 Nejprve přidáme tlačítko s odkazem na formulář, který jsme můžete použít k zadání kontrolu produktu.
 
@@ -94,7 +94,7 @@ Všimněte si, že jsme předali ProductID v řetězci dotazu
 
 Další přidejme stránku s názvem ReviewAdd.aspx
 
-Tato stránka bude používat sadu ovládacího prvku ASP.NET AJAX. Pokud jste již neučinili, si můžete stáhnout z [DevExpress](http://devexpress.com/act) a pokyny o nastavení sady nástrojů pro použití se sadou Visual Studio zde [https://www.asp.net/learn/ajax-videos/video-76.aspx](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
+Tato stránka bude používat sadu ovládacího prvku ASP.NET AJAX. Pokud jste již neučinili, si můžete stáhnout z [DevExpress](http://devexpress.com/act) a pokyny o nastavení sady nástrojů pro použití se sadou Visual Studio zde [ https://www.asp.net/learn/ajax-videos/video-76.aspx ](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
 
 V režimu návrhu přetáhněte ovládací prvky a validátory z panelu nástrojů a sestavení formuláře podobná té následující.
 
@@ -114,7 +114,7 @@ Spuštěné aplikace teď a přejdete na produkt zobrazuje informace o produktu 
 
 ![](tailspin-spyworks-part-7/_static/image3.jpg)
 
-## <a id="_Toc260221678"></a>Oblíbené položky ovládacího prvku (vytvoření uživatelské ovládací prvky)
+## <a id="_Toc260221678"></a>  Oblíbené položky ovládacího prvku (vytvoření uživatelské ovládací prvky)
 
 Chcete-li zvýšit prodej na svém webu přidáme několik funkcí do oblíbených nebo souvisejících produktů "sugestivní prodává".
 
@@ -156,7 +156,7 @@ Nyní když jsme spuštění aplikace na domovskou stránku, zobrazí se větši
 
 ![](tailspin-spyworks-part-7/_static/image6.jpg)
 
-## <a id="_Toc260221679"></a>"Taky zakoupili" řízení (uživatelské ovládací prvky s parametry)
+## <a id="_Toc260221679"></a>  "Taky zakoupili" řízení (uživatelské ovládací prvky s parametry)
 
 Druhý uživatelský ovládací prvek, který vytvoříme bude trvat sugestivní prodávané na další úroveň přidáním kontextu specifické podobě.
 
@@ -236,6 +236,6 @@ Pokud jsme sestavit a spustit nyní a přejděte do produktu jsme viděli polož
 
 ![](tailspin-spyworks-part-7/_static/image7.jpg)
 
->[!div class="step-by-step"]
-[Předchozí](tailspin-spyworks-part-6.md)
-[další](tailspin-spyworks-part-8.md)
+> [!div class="step-by-step"]
+> [Předchozí](tailspin-spyworks-part-6.md)
+> [další](tailspin-spyworks-part-8.md)

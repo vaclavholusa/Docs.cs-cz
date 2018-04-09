@@ -16,4 +16,4 @@ Pokyny:
 1. Přihlášení uživatele k některé z tři aplikací. Ověřovacího souboru cookie je sdílena mezi aplikacemi. Všimněte si, že je uživatel přihlášený automaticky do dalších dvou aplikací.
 1. Odhlaste uživatele ze všech aplikací. Všimněte si, že je uživatel přihlášený automaticky mimo dalších dvou aplikací.
 
-Tento příklad znázorňuje funkce popsané v [sdílení souborů cookie mezi aplikací](https://docs.microsoft.com/aspnet/core/security/cookie-sharing) tématu.
+Tento příklad znázorňuje funkce popsané v [sdílet soubory cookie mezi aplikací](https://docs.microsoft.com/aspnet/core/security/cookie-sharing) tématu.

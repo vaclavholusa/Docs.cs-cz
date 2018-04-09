@@ -1,7 +1,7 @@
 ---
-title: "Spustit nástroj webové rozhraní pro platformu .NET (OWIN) s ASP.NET Core"
+title: Spustit nástroj webové rozhraní pro platformu .NET (OWIN) s ASP.NET Core
 author: ardalis
-description: "Zjistit, jak ASP.NET Core podporuje Open Web Interface pro .NET (OWIN), což umožňuje webových aplikací pro být odděleno od webové servery."
+description: Zjistit, jak ASP.NET Core podporuje Open Web Interface pro .NET (OWIN), což umožňuje webových aplikací pro být odděleno od webové servery.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/owin
-ms.openlocfilehash: 358046e87ffefcf568c8d432a5614a110ea16f22
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7c379ddbcc1f66ba9f7a4d0a50a4607394fed0af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>Spustit nástroj webové rozhraní pro platformu .NET (OWIN) s ASP.NET Core
 
@@ -162,7 +162,6 @@ namespace NowinSample
         }
     }
 }
-
 ```
 
 Další informace o ASP.NET [servery](servers/index.md).

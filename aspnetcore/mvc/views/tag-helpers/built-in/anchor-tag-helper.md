@@ -1,7 +1,7 @@
 ---
-title: "Pomocník značka ukotvení ASP.NET Core"
+title: Pomocník značka ukotvení ASP.NET Core
 author: pkellner
-description: "Zjistit ASP.NET pomocné rutiny značka ukotvení základní atributy a roli, kterou každý atribut hraje v rozšíření chování značky HTML anchor."
+description: Zjistit ASP.NET pomocné rutiny značka ukotvení základní atributy a roli, kterou každý atribut hraje v rozšíření chování značky HTML anchor.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 9aca2d2263285de36efe12e6e267778d54149e9e
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 31ff62b6bedb5e577a51f341c89d241d06a83ad3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a>Pomocník značka ukotvení ASP.NET Core
 

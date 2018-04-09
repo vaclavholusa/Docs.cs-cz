@@ -1,5 +1,5 @@
 ---
-title: Konfigurace ochrany dat v ASP.NET Core
+title: Konfigurovat ochranu dat ASP.NET Core
 author: rick-anderson
 description: Informace o konfiguraci ochrany dat v ASP.NET Core.
 manager: wpickett
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 0fe1fd7b81a0e5aa00ae14c7e6fdbd9cc88ec4fe
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3a19cec2ce4387ca44ca120f031a072269b93454
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="configuring-data-protection-in-aspnet-core"></a>Konfigurace ochrany dat v ASP.NET Core
+# <a name="configure-aspnet-core-data-protection"></a>Konfigurovat ochranu dat ASP.NET Core
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Při inicializaci systému ochrany dat, se vztahuje [výchozí nastavení](xref:security/data-protection/configuration/default-settings) na základě provozní prostředí. Tato nastavení jsou obecně vhodné pro aplikace běžící na jednom počítači. Existují případy, kdy vývojář chtít možná změnit výchozí nastavení, protože jejich aplikace je rozdělena mezi několika počítači, nebo kvůli dodržování předpisů. Pro tyto scénáře ochrany dat systému nabízí bohaté konfigurační rozhraní API.
 
-Metody rozšíření je [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) , který vrací [IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder). `IDataProtectionBuilder`zpřístupní metody rozšíření, můžete společně zřetězit ke konfiguraci ochrany dat možnosti.
+Metody rozšíření je [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) , který vrací [IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder). `IDataProtectionBuilder` zpřístupní metody rozšíření, můžete společně zřetězit ke konfiguraci ochrany dat možnosti.
 
 ## <a name="persistkeystofilesystem"></a>PersistKeysToFileSystem
 

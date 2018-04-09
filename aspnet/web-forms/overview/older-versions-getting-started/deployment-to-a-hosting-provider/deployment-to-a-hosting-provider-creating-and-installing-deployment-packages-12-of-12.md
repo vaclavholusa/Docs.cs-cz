@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
-title: "Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: řešení potíží (12 12) | Microsoft Docs"
+title: 'Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: řešení potíží (12 12) | Microsoft Docs'
 author: tdykstra
-description: "Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného..."
+description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: d8c4931a1d26af49ee61c896897fa6ddf12fccea
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2a8342f026498a7cf3ff4a3c158ed177c15b7111
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-troubleshooting-12-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: řešení potíží (12 12)
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -290,7 +290,7 @@ Publikování selže s chybou, že jste označuje nemáte oprávnění k nastave
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud víte, že výchozí oprávnění na webu složky jsou správné a není potřeba nastavit, že zakážete toto chování přidáním  **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx). 
+Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud víte, že výchozí oprávnění na webu složky jsou správné a není potřeba nastavit, že zakážete toto chování přidáním **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx). 
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>Když se aplikace pokusí o zápis do složky aplikace chyby odepření přístupu
 
@@ -300,7 +300,7 @@ Vaše aplikace chyby při pokusu o vytvoření nebo úprava soubor v jednom ze s
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud aplikace potřebuje přístup k zápisu do podsložky, můžete nastavit oprávnění pro tuto složku, jak je znázorněno [nastavení oprávnění ke složkám](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md) a [nasazení do produkčního prostředí](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) kurzy. Pokud aplikace potřebuje přístup k zápisu do kořenové složky webu, budete muset zabránit jeho nastavení jen pro čtení v kořenové složce přidáním  **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx). <a id="aspnet45error"></a>
+Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud aplikace potřebuje přístup k zápisu do podsložky, můžete nastavit oprávnění pro tuto složku, jak je znázorněno [nastavení oprávnění ke složkám](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md) a [nasazení do produkčního prostředí](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) kurzy. Pokud aplikace potřebuje přístup k zápisu do kořenové složky webu, budete muset zabránit jeho nastavení jen pro čtení v kořenové složce přidáním **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx). <a id="aspnet45error"></a>
 
 ## <a name="configuration-error---targetframework-attribute-references-a-version-that-is-later-than-the-installed-version-of-the-net-framework"></a>Chyba konfigurace - atribut targetFramework odkazuje na verzi, která je novější než nainstalovaná verze rozhraní .NET Framework
 
@@ -320,5 +320,5 @@ Server nepodporuje technologii ASP.NET 4.5. Obraťte se na poskytovatele hosting
 
 Projekt **vlastnosti** systém windows obsahuje cílový framework rozevírací seznam, ale tento problém nelze vyřešit změnou právě, z **rozhraní .NET Framework 4.5** k **rozhraní .NET Framework 4**. Pokud je na starší verzi framework změnit cílový framework, budou mít dál odkazy na sestavení novější verze framework projektu a nespustí. Budete muset ručně změnit tyto odkazy nebo vytvořte nový projekt, který cílí rozhraní .NET Framework 4 nebo dřívější. Další informace najdete v tématu [rozhraní .NET Framework cílení pro weby](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx).
 
->[!div class="step-by-step"]
-[Předchozí](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
+> [!div class="step-by-step"]
+> [Předchozí](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

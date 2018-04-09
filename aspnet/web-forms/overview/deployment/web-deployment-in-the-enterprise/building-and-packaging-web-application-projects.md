@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
-title: "Vytváření a balení projekty webových aplikací | Microsoft Docs"
+title: Vytváření a balení projekty webových aplikací | Microsoft Docs
 author: jrjlee
-description: "Pokud chcete nasadit projekt webové aplikace v prostředí vzdáleného serveru, je první úlohou se projekt sestavil a generovat XPSpolečnost nasazení webové..."
+description: Pokud chcete nasadit projekt webové aplikace v prostředí vzdáleného serveru, je první úlohou se projekt sestavil a generovat XPSpolečnost nasazení webové...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
 msc.type: authoredcontent
-ms.openlocfilehash: c05f725c9e6b493a6af8f5b5d20dbc9ff73a1ef8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d630e1776607bd0bd7c61e1f0f7234ef58c7533b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-and-packaging-web-application-projects"></a>Vytváření a balení projekty webových aplikací
 ====================
@@ -59,8 +59,8 @@ Tento cíl se používá **MSBuild** úloh k vytvoření různých projektů. Up
 **Balíček** cíl je definován v *Microsoft.Web.Publishing.targets* souboru. Tento cíl v podstatě trvá výstup sestavení projektu webové aplikace a převede ji balíčku pro nasazení webu, která může být publikována na webovém serveru IIS.
 
 > [!NOTE]
-> Chcete-li zobrazit soubor projektu (například *ContactManager.Mvc.csproj*) v sadě Visual Studio 2010, je nutné nejprve uvolnit projekt z vašeho řešení. V **Průzkumníku řešení** oken, klikněte pravým tlačítkem na uzel projektu a pak klikněte na tlačítko **uvolnit projekt**. Znovu klikněte pravým tlačítkem na uzel projektu a pak klikněte na **upravit***[soubor projektu]*). Soubor projektu se otevřou v jeho základním formátu XML. Nezapomeňte projekt znovu načíst, když jste hotovi.  
-> Další informace o cíle MSBuild, úlohy, a **Import** příkazy, najdete v části [vysvětlení souboru projektu](understanding-the-project-file.md). Podrobnější Úvod do souborů projektu a jako, najdete v části [uvnitř Microsoft Build Engine: pomocí nástroje MSBuild a Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi a William Bartholomew, ISBN: 978-0-7356-4524-0.
+> Chcete-li zobrazit soubor projektu (například <em>ContactManager.Mvc.csproj</em>) v sadě Visual Studio 2010, je nutné nejprve uvolnit projekt z vašeho řešení. V <strong>Průzkumníku řešení</strong> oken, klikněte pravým tlačítkem na uzel projektu a pak klikněte na tlačítko <strong>uvolnit projekt</strong>. Znovu klikněte pravým tlačítkem na uzel projektu a pak klikněte na <strong>upravit</strong><em>[soubor projektu]</em>). Soubor projektu se otevřou v jeho základním formátu XML. Nezapomeňte projekt znovu načíst, když jste hotovi.  
+> Další informace o cíle MSBuild, úlohy, a <strong>Import</strong> příkazy, najdete v části [vysvětlení souboru projektu](understanding-the-project-file.md). Podrobnější Úvod do souborů projektu a jako, najdete v části [uvnitř Microsoft Build Engine: pomocí nástroje MSBuild a Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi a William Bartholomew, ISBN: 978-0-7356-4524-0.
 
 
 ## <a name="what-is-a-web-deployment-package"></a>Co je balíčku pro nasazení webu?
@@ -104,6 +104,6 @@ Další témata v tomto kurzu [parametry konfigurace pro nasazení webového bal
 
 Podrobnější Úvod do souborů projektu a jako, najdete v části [uvnitř Microsoft Build Engine: pomocí nástroje MSBuild a Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi a William Bartholomew, ISBN: 978-0-7356-4524-0.
 
->[!div class="step-by-step"]
-[Předchozí](understanding-the-build-process.md)
-[další](configuring-parameters-for-web-package-deployment.md)
+> [!div class="step-by-step"]
+> [Předchozí](understanding-the-build-process.md)
+> [další](configuring-parameters-for-web-package-deployment.md)

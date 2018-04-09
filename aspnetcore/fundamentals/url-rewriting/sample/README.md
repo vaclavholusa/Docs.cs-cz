@@ -33,11 +33,13 @@ using Microsoft.Extensions.FileProviders;
 PhysicalFileProvider fileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory());
 ```
 ## <a name="secure-redirection-extensions"></a>Zabezpečené rozšíření přesměrování
-Tato ukázka obsahuje `WebHostBuilder` konfigurace pro aplikaci, aby používala adresy URL (**https://localhost:5001**, **https://localhost**) a testovací certifikát (**testCert.pfx**) pomoct v těchto zkoumat přesměrování metody. Přidat kterýkoliv z nich k `RewriteOptions()` v **Startup.cs** studovat jejich chování.
+Tato ukázka obsahuje `WebHostBuilder` konfigurace pro aplikaci, aby používala adresy URL (**https://localhost:5001**, **https://localhost**) a testovací certifikát (**testCert.pfx**) na v těchto zkoumat přesměrovat metody Assist. Přidat kterýkoliv z nich k `RewriteOptions()` v **Startup.cs** studovat jejich chování.
 
-Metoda | Stavový kód | port
---- | :---: | :---:
-`.AddRedirectToHttpsPermanent()` | 301 | Null (465)
-`.AddRedirectToHttps()` | 302 | Null (465)
-`.AddRedirectToHttps(301)` | 301 | Null (465)
-`.AddRedirectToHttps(301, 5001)` | 301 | 5001
+
+|              Metoda              | Stavový kód |    port    |
+|----------------------------------|:-----------:|:----------:|
+| `.AddRedirectToHttpsPermanent()` |     301     | Null (465) |
+|     `.AddRedirectToHttps()`      |     302     | Null (465) |
+|    `.AddRedirectToHttps(301)`    |     301     | Null (465) |
+| `.AddRedirectToHttps(301, 5001)` |     301     |    5001    |
+

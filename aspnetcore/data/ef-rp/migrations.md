@@ -1,7 +1,7 @@
 ---
-title: "Stránky Razor s EF jádra ASP.NET Core - Migrations - 4 8"
+title: Stránky Razor s EF jádra ASP.NET Core - Migrations - 4 8
 author: rick-anderson
-description: "V tomto kurzu začnete používat funkci migrace EF jádra pro správu změn datových modelů v aplikaci ASP.NET MVC jádra."
+description: V tomto kurzu začnete používat funkci migrace EF jádra pro správu změn datových modelů v aplikaci ASP.NET MVC jádra.
 manager: wpickett
 ms.author: riande
 ms.date: 10/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 4aafb52be611d4088e47f64f83d25cf85dc5ca08
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4e9b747a3369bbb608c3b3832c865745a2322142
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - Migrations - 4 8
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 V tomto kurzu se používá funkci EF základní migrace pro správu změn datových modelů.
 
@@ -115,15 +115,13 @@ Pokud chcete aplikaci nasadit do nového prostředí, pro vytvoření databáze 
 
 Připojovací řetězec dříve bylo změněno používat nový název databáze. Zadaná databáze neexistuje, vytvoří migrace databáze.
 
-### <a name="examine-the-data-model-snapshot"></a>Zkontrolujte snímku modelu dat
+### <a name="the-data-model-snapshot"></a>Snímek dat modelu
 
-Vytvoří migrace *snímku* z aktuální schéma databáze v *Migrations/SchoolContextModelSnapshot.cs*:
+Vytvoří migrace *snímku* z aktuální schéma databáze v *Migrations/SchoolContextModelSnapshot.cs*. Když přidáte migrace, EF Určuje, co se změnilo tak, že porovnáte datový model, který soubor snímku.
 
-[!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
+Při odstraňování migrace, použijte [odebrat dotnet ef migrace](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) příkaz. `dotnet ef migrations remove` Odstraní migrace a zajišťuje, že je správně obnovení snímku.
 
-Vzhledem k tomu, že aktuální schéma databáze je reprezentována v kódu, EF základní nemá pro interakci s DB vytvořit migrace. Když přidáte migrace, EF základní Určuje, co se změnilo tak, že porovnáte datový model, který soubor snímku. Základní EF komunikuje s databáze jenom v případě, že má k aktualizaci databáze.
-
-Soubor snímku musí být synchronizována s migrací, která ji vytvořila. Migrace nelze odebrat odstraněním soubor s názvem  *\<časové razítko > _\<migrationname > .cs*. Pokud daný soubor odstraněn, zbývající migrace nejsou synchronizované s soubor snímku databáze. Chcete-li odstranit poslední migrace přidali, použijte [odebrat dotnet ef migrace](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) příkaz.
+V tématu [EF základní migrace v prostředích Team](/ef/core/managing-schemas/migrations/teams) Další informace o tom, jak se používá soubor snímku.
 
 ## <a name="remove-ensurecreated"></a>Remove EnsureCreated
 
@@ -187,7 +185,7 @@ Použití **Průzkumník objektů systému SQL Server** Kontrola databáze. Vši
 
 Spusťte aplikaci a ověřte, že všechno funguje.
 
-## <a name="appling-migrations-in-production"></a>Migrace appling v produkčním prostředí
+## <a name="applying-migrations-in-production"></a>Použití migrace v produkčním prostředí
 
 Doporučujeme, abyste měli produkční aplikace **není** volání [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) při spuštění aplikace. `Migrate` nelze volat z aplikace v serverové farmě. Například pokud aplikace bylo cloudové nasazení se Škálováním na více systémů (více instancí aplikace běží).
 
@@ -236,6 +234,6 @@ Pokud `update` příkaz vrátí chybu "Sestavení se nezdařilo.":
 * Příkaz spusťte znovu.
 * Ponechte zprávu v dolní části stránky.
 
->[!div class="step-by-step"]
-[Předchozí](xref:data/ef-rp/sort-filter-page)
-[další](xref:data/ef-rp/complex-data-model)
+> [!div class="step-by-step"]
+> [Předchozí](xref:data/ef-rp/sort-filter-page)
+> [další](xref:data/ef-rp/complex-data-model)

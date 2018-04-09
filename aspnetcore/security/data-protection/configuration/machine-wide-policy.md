@@ -1,7 +1,7 @@
 ---
-title: "Podpora zásad celého systému ochrany dat v ASP.NET Core"
+title: Podpora zásad celého systému ochrany dat v ASP.NET Core
 author: rick-anderson
-description: "Další informace o podpoře pro nastavení zásad celého systému výchozí pro všechny aplikace, které využívají ochranu dat ASP.NET Core."
+description: Další informace o podpoře pro nastavení zásad celého systému výchozí pro všechny aplikace, které využívají ochranu dat ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: 53ded37e9fd5f1a2eaa37935d1c52efb1e9231ac
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c2d5760cd18f4e3ecaf0261f36414c9298e3f4c5
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>Podpora zásad celého systému ochrany dat v ASP.NET Core
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Při spuštění v systému Windows, ochrany dat systému má omezenou podporu pro nastavení zásad celého systému výchozí pro všechny aplikace, které využívají ochranu dat ASP.NET Core. Obecné cílem je, Správce může chcete změnit výchozí nastavení, například používá algoritmy nebo životnosti klíče, aniž by bylo nutné ručně aktualizovat všechny aplikace na počítači.
 
@@ -71,4 +71,4 @@ Když EncryptionType spravované, systém je nakonfigurován pro použití sprav
 Pokud EncryptionType jakoukoli jinou hodnotu než null nebo prázdný, ochrany dat systému vyvolá výjimku při spuštění.
 
 > [!WARNING]
-> Při konfiguraci nastavení výchozích zásad, které zahrnuje názvy typů (EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks), typy musí být k dispozici pro aplikaci. To znamená, že pro aplikace běžící na ploše CLR, sestavení, které obsahují tyto typy by měla být v globální mezipaměti sestavení (GAC). ASP.NET Core aplikací běžících na [.NET Core](https://www.microsoft.com/net/core), balíčky, které obsahují tyto typy by měly být nainstalovány.
+> Při konfiguraci nastavení výchozích zásad, které zahrnuje názvy typů (EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks), typy musí být k dispozici pro aplikaci. To znamená, že pro aplikace běžící na ploše CLR, sestavení, které obsahují tyto typy by měla být v globální mezipaměti sestavení (GAC). ASP.NET Core aplikací běžících na .NET Core by měly být nainstalovány balíčky, které obsahují tyto typy.

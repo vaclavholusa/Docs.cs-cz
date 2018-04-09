@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-vb
-title: "Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor (Visual Basic) | Microsoft Docs"
+title: Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor (Visual Basic) | Microsoft Docs
 author: tfitzmac
-description: "Tento dodatek poskytuje přehled programování s webovými stránkami ASP.NET v jazyce Visual Basic pomocí syntaxe Razor."
+description: Tento dodatek poskytuje přehled programování s webovými stránkami ASP.NET v jazyce Visual Basic pomocí syntaxe Razor.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8f5d223a5944d8adb9fe65c89e87829d18d1c7ee
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 715e52715fb22b92f94d3d602ec58c29a913426c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor (Visual Basic)
 ====================
@@ -125,7 +125,7 @@ Výsledek zobrazí v prohlížeči:
 
 ### <a name="7-much-of-your-coding-involves-working-with-objects"></a>7. Velká část kódování zahrnuje pracovat s objekty
 
-Představuje objekt věcí, kterou můžete programu s &#8212; na stránce textové pole, soubor, bitovou kopii, webové žádosti, e-mailovou zprávu, záznam zákazníka (řádku databáze), atd. Objekty mají vlastnosti, které popisují jejich charakteristikami &#8212; má objekt textové pole `Text` vlastnost, má objekt žádosti `Url` vlastnost, má e-mailovou zprávu `From` vlastnost a objekt zákazník má `FirstName` vlastnost. Objekty mají metody, které jsou také &quot;příkazy&quot; mohou provádět. Mezi příklady patří objektu soubor `Save` metoda, objekt image `Rotate` metoda a objekt e-mailu `Send` metoda.
+Představuje objekt věcí, kterou můžete programu s &#8212; stránky textové pole, soubor, bitovou kopii, webové žádosti, e-mailovou zprávu, záznam zákazníka (řádku databáze), atd. Objekty mají vlastnosti, které popisují jejich charakteristikami &#8212; má objekt textové pole `Text` vlastnost, má objekt žádosti `Url` vlastnost, má e-mailovou zprávu `From` vlastnost a objekt zákazník má `FirstName` Vlastnost. Objekty mají metody, které jsou také &quot;příkazy&quot; mohou provádět. Mezi příklady patří objektu soubor `Save` metoda, objekt image `Rotate` metoda a objekt e-mailu `Send` metoda.
 
 Často budete pracovat `Request` objekt, který nabízí informace jako hodnoty formuláře polí na stránce (textová pole, atd.), jaký typ prohlížeče požadavek, adresu URL stránky, identita uživatele, atd. Tento příklad ukazuje, jak pro přístup k vlastnostem `Request` objekt a jak volat `MapPath` metodu `Request` objekt, který vám dává absolutní cesta ke stránce na serveru:
 
@@ -180,11 +180,11 @@ Tento postup ukazuje, jak vytvořit stránku, která ukazuje základní programo
 
 ## <a name="visual-basic-language-and-syntax"></a>Jazyk Visual Basic a syntaxe
 
-Dříve jste viděli základních příkladů jak vytvořit webovou stránku ASP.NET a přidání serverový kód pro kód HTML. Zde se dozvíte základní informace o použití jazyka Visual Basic pro psaní kódu serveru ASP.NET pomocí syntaxe Razor &#8212; To znamená, programovací jazyk pravidla.
+Dříve jste viděli základních příkladů jak vytvořit webovou stránku ASP.NET a přidání serverový kód pro kód HTML. Zde se dozvíte základní informace o použití jazyka Visual Basic pro psaní kódu serveru ASP.NET pomocí syntaxe Razor &#8212; tedy programovací jazyk pravidla.
 
 Pokud máte zkušenosti s programováním (obzvláště pokud jste použili C, C++, C#, Visual Basic nebo JavaScript), většinu si přečíst zde bude seznámit. Pravděpodobně budete muset Seznamte se jenom s jak služba WebMatrix kód je přidán do značek v *.vbhtml* soubory.
 
-### <a id="BM_CombiningTextMarkupAndCode"></a>Kombinování text, značek a kódu v bloky kódu
+### <a id="BM_CombiningTextMarkupAndCode"></a>  Kombinování text, značek a kódu v bloky kódu
 
 V blocích kód serveru budete často chtít výstup text a značku na stránku. Pokud blok serverového kódu obsahuje text, který není kódu a který místo toho má být vykreslen jako je, musí být schopen rozlišit tento text z kódu ASP.NET. Chcete-li to provést několika způsoby.
 
@@ -207,7 +207,7 @@ V blocích kód serveru budete často chtít výstup text a značku na stránku.
     [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample14.vbhtml)]
 
     > [!NOTE]
-    > Pokud výstupní text jak je znázorněno v této části &#8212; pomocí prvku HTML `@:` operátor, nebo `<text>` element &#8212; Technologie ASP.NET není kódování HTML výstup. (Jak je uvedeno výše, ASP.NET kódování výstup výrazy kódu serveru a bloky kódu serveru, které jsou označeny `@`, s výjimkou ve zvláštních případech uvedených v této části.)
+    > Pokud výstup text jak je znázorněno v této části &#8212; pomocí prvku HTML `@:` operátor, nebo `<text>` element &#8212; ASP.NET nepodporuje kódování HTML výstup. (Jak je uvedeno výše, ASP.NET kódování výstup výrazy kódu serveru a bloky kódu serveru, které jsou označeny `@`, s výjimkou ve zvláštních případech uvedených v této části.)
 
 ### <a name="whitespace"></a>Whitespace
 
@@ -275,31 +275,33 @@ K převodu hodnoty na celá čísla, zavoláte `AsInt` metoda. Pokud převod ús
 
 Následující tabulka uvádí některé běžné převod a testování metody pro proměnné.
 
-| **– Metoda** | **Popis** | **Příklad** |
-| --- | --- | --- |
-| `AsInt(), IsInt()` | Převede řetězec, který představuje celé číslo (například &quot;593&quot;) na celé číslo. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)] |
-| `AsBool(), IsBool()` | Převede řetězec jako &quot;true&quot; nebo &quot;false&quot; typu Boolean. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)] |
-| `AsFloat(), IsFloat()` | Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)] |
-| `AsDecimal(), IsDecimal()` | Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET, je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)] |
-| `AsDateTime(), IsDateTime()` | Převede řetězec představující hodnotu data a času ASP.NET `DateTime` typu. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)] |
-| `ToString()` | Převede ostatních typů dat na řetězec. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)] |
+
+|   <strong>– Metoda</strong>    |                                                                              <strong>Popis</strong>                                                                              |                     <strong>Příklad</strong>                      |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+|      `AsInt(), IsInt()`      |                                                 Převede řetězec, který představuje celé číslo (například &quot;593&quot;) na celé číslo.                                                 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)] |
+|     `AsBool(), IsBool()`     |                                                    Převede řetězec jako &quot;true&quot; nebo &quot;false&quot; typu Boolean.                                                     | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)] |
+|    `AsFloat(), IsFloat()`    |                                    Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou.                                    | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)] |
+|  `AsDecimal(), IsDecimal()`  | Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET, je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)] |
+| `AsDateTime(), IsDateTime()` |                                                Převede řetězec představující hodnotu data a času ASP.NET `DateTime` typu.                                                 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)] |
+|         `ToString()`         |                                                                       Převede ostatních typů dat na řetězec.                                                                        | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)] |
 
 ## <a name="operators"></a>Operátory
 
 Operátor je – klíčové slovo nebo znak, který sděluje ASP.NET, jaký druh příkaz k provedení ve výrazu. Podporuje mnoho operátory jazyka Visual Basic, ale potřebujete rozpoznat mají-li začít s vývojem webových stránek ASP.NET. Následující tabulka shrnuje nejběžnější operátory.
 
-| **Operátor** | **Popis** | **Příklady** |
-| --- | --- | --- |
-| `+ - * /` | Matematické operátory použít ve výrazech číselná. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)] |
-| `=` | Přiřazení a rovnosti. V závislosti na kontextu buď hodnota na pravé straně příkazu přiřadí objekt na levé straně nebo kontroluje hodnoty rovnosti. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)] |
-| `<>` | Nerovnosti. Vrátí `True` Pokud hodnoty nejsou shodné. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)] |
-| `< > <= >=` | Menší než větší, menší nebo rovna a větší než nebo rovno. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)] |
-| `&` | Zřetězení, který se používá pro připojení řetězce. | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)] |
-| `+= -=` | Přírůstek a snížení operátory, které sčítání a odečítání 1 (v uvedeném pořadí) z proměnné. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)] |
-| `.` | Tečkou. Používá k rozlišení objekty a jejich vlastnosti a metody. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)] |
-| `()` | Závorky. Použít na výrazy skupiny předat parametry metody a členy přístup pole a kolekcí. | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)] |
-| `Not` | Není. Obrátí hodnotu true na false a naopak. Obvykle se používá jako sdružená způsob, jak otestovat `False` (který je pro není `True`). | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)] |
-| `AndAlso OrElse` | Logické a a, nebo které se používají k propojení podmínky společně. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)] |
+
+| <strong>Operátor</strong> |                                                                        <strong>Popis</strong>                                                                         |                         <strong>Příklady</strong>                         |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+|         `+ - * /`         |                                                                Matematické operátory použít ve výrazech číselná.                                                                |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]     |
+|            `=`            | Přiřazení a rovnosti. V závislosti na kontextu buď hodnota na pravé straně příkazu přiřadí objekt na levé straně nebo kontroluje hodnoty rovnosti. |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]     |
+|           `<>`            |                                                           Nerovnosti. Vrátí `True` Pokud hodnoty nejsou shodné.                                                           |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]     |
+|        `< > <= >=`        |                                                   Menší než větší, menší nebo rovna a větší než nebo rovno.                                                   |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]     |
+|            `&`            |                                                                Zřetězení, který se používá pro připojení řetězce.                                                                | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)] |
+|          `+= -=`          |                                       Přírůstek a snížení operátory, které sčítání a odečítání 1 (v uvedeném pořadí) z proměnné.                                       |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]     |
+|            `.`            |                                                     Tečkou. Používá k rozlišení objekty a jejich vlastnosti a metody.                                                      |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]     |
+|           `()`            |                           Závorky. Použít na výrazy skupiny předat parametry metody a členy přístup pole a kolekcí.                           | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)] |
+|           `Not`           |                    Není. Obrátí hodnotu true na false a naopak. Obvykle se používá jako sdružená způsob, jak otestovat `False` (který je pro není `True`).                     |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]     |
+|     `AndAlso OrElse`      |                                                       Logické a a, nebo které se používají k propojení podmínky společně.                                                       |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]     |
 
 ## <a name="working-with-file-and-folder-paths-in-code"></a>Práce s souboru a cesty ke složce zadat v kódu
 
@@ -443,7 +445,7 @@ Kolekce je pro skupinu objektů stejného typu, například v kolekci `Customer`
 
 [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample52.vbhtml)]
 
-S poli, je třeba deklarovat určité datového typu, `String`, `Integer`, nebo `DateTime`. K označení, proměnná může obsahovat pole, je závorkách přidat k názvu proměnné v deklaraci (například `Dim myVar() As String`). Dostanete položky v poli pomocí jejich polohu (index) nebo pomocí `For Each` příkaz. Pole indexy jsou od nuly &#8212; To znamená první položka je v umístění 0, druhý položka je na pozici 1 a tak dále.
+S poli, je třeba deklarovat určité datového typu, `String`, `Integer`, nebo `DateTime`. K označení, proměnná může obsahovat pole, je závorkách přidat k názvu proměnné v deklaraci (například `Dim myVar() As String`). Dostanete položky v poli pomocí jejich polohu (index) nebo pomocí `For Each` příkaz. Indexy pole jsou od nuly &#8212; tedy první položka je v umístění 0, druhý položka je na pozici 1 a tak dále.
 
 [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample53.vbhtml)]
 

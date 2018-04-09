@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
-title: "Princip ověřování pomocí technologie ASP.NET AJAX a profil aplikačních služeb | Microsoft Docs"
+title: Princip ověřování pomocí technologie ASP.NET AJAX a profil aplikačních služeb | Microsoft Docs
 author: scottcate
-description: "Služba ověřování umožňuje uživatelům zadat přihlašovací údaje, aby bylo možné přijímat souboru cookie pro ověřování a se službou Brána, aby umožňovala vlastní uživatelské..."
+description: Služba ověřování umožňuje uživatelům zadat přihlašovací údaje, aby bylo možné přijímat souboru cookie pro ověřování a se službou Brána, aby umožňovala vlastní uživatelské...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 182276f9f91b99beb1ce0fc40dcda1f19376669a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0bf6538d0c4ae9488e6ac29ccba6d4b243cf070e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>Princip ověřování pomocí technologie ASP.NET AJAX a profil aplikačních služeb
 ====================
@@ -43,7 +43,7 @@ Ověřovací služby umožňuje uživatelům zadat přihlašovací údaje, aby b
 
 Profil služby umožňuje automatické integrace a úložiště dat uživatele na základě členství jako poskytovaný službou ověřování. Uložená data je uvedené v souboru web.config a různé profilování poskytovatelé služeb zpracovat data správy. Stejně jako u ověřovací služby, je kompatibilní s standardní profilovou službou ASP.NET AJAX profilovou službou, tak, aby stránky aktuálně zařadit funkce profilu ASP.NET služby by neměl přerušený zahrnutím podporu AJAX.
 
-Ověřování pomocí technologie ASP.NET a služby profilování, sami zapojení do aplikace je mimo rozsah tohoto dokumentu. Další informace v tématu naleznete v knihovně MSDN odkazovat článku Správa uživatelů pomocí členství v [https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx). ASP.NET obsahuje také nástroj automaticky nastavit členství se systémem SQL Server, který je výchozím zprostředkovatelem služeb ověřování pro členství technologie ASP.NET. Další informace najdete v článku ASP.NET nástroj pro registraci serveru SQL Server (Aspnet\_regsql.exe) v [https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
+Ověřování pomocí technologie ASP.NET a služby profilování, sami zapojení do aplikace je mimo rozsah tohoto dokumentu. Další informace v tématu naleznete v knihovně MSDN odkazovat článku Správa uživatelů pomocí členství v [ https://msdn.microsoft.com/library/tw292whz.aspx ](https://msdn.microsoft.com/library/tw292whz.aspx). ASP.NET obsahuje také nástroj automaticky nastavit členství se systémem SQL Server, který je výchozím zprostředkovatelem služeb ověřování pro členství technologie ASP.NET. Další informace najdete v článku ASP.NET nástroj pro registraci serveru SQL Server (Aspnet\_regsql.exe) v [ https://msdn.microsoft.com/library/ms229862(vs.80).aspx ](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*Pomocí služby ověřování ASP.NET AJAX*
 
@@ -131,7 +131,7 @@ Odkaz na funkce této vlastnosti musí mít následující podpis:
 
 | **Název parametru** | **Význam** |
 | --- | --- |
-| validCredentials | Určuje, zda uživatel zadat platné přihlašovací údaje. `true`Pokud uživatel úspěšně přihlášen; v opačném případě `false`. |
+| validCredentials | Určuje, zda uživatel zadat platné přihlašovací údaje. `true` Pokud uživatel úspěšně přihlášen; v opačném případě `false`. |
 | userContext | Určuje informace o kontextu uživatele zadané při volání funkce přihlášení. |
 | MethodName | Název volání metody. |
 
@@ -345,6 +345,6 @@ Kromě toho vytvořením implementací zjednodušené webové služby s podpisy 
 
 Scott Dikovat pracuje s technologií Microsoft Web od 1997 a je ředitel myKB.com ([www.myKB.com](http://www.myKB.com)) kde mu se specializuje na psaní ASP.NET na základě aplikací, které jsou zaměřené na řešení softwaru znalostní báze Knowledge Base. Scott nelze kontaktovat prostřednictvím e-mailu v [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) nebo jeho blog na [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Předchozí](understanding-asp-net-ajax-updatepanel-triggers.md)
-[další](understanding-asp-net-ajax-localization.md)
+> [!div class="step-by-step"]
+> [Předchozí](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [další](understanding-asp-net-ajax-localization.md)

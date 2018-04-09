@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/advanced-enterprise-web-deployment
-title: "Pokročilé nasazení webu Enterprise | Microsoft Docs"
+title: Pokročilé nasazení webu Enterprise | Microsoft Docs
 author: jrjlee
-description: "Tento kurz vám ukáže, jak provádět různé úlohy, které jsou požadované, nebo žádoucí v spoustu podnikové scénáře nasazení. Pro italská translati..."
+description: Tento kurz vám ukáže, jak provádět různé úlohy, které jsou požadované, nebo žádoucí v spoustu podnikové scénáře nasazení. Pro italská translati...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/advanced-enterprise-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c3cb7f63cf7c0246a0c4da6038a65a6ac43a7b59
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 892e494b6fde994c4d04952382e4d618d73cad5c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="advanced-enterprise-web-deployment"></a>Nasazení webu pokročilé Enterprise
 ====================
@@ -29,9 +29,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Italská překlad tyto kurzy, najdete v článku [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
-To je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) řešení & #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+To je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) řešení&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="scenario-overview"></a>Přehled scénáře
 
@@ -43,7 +43,7 @@ Tento scénář vysoké úrovně pro tyto kurzy je popsaná v [Enterprise nasaze
 - Tento kurz obsahuje následující témata:
 - [Provádění nasazení "Co když"](performing-a-what-if-deployment.md). V celá řada možných scénářů budete chtít určit dopad navrhované nasazení v cílovém prostředí nebo existující obsah před skutečně provést žádné změny. Toto téma popisuje, jak můžete spustit nasazení "Co když" ke generování skriptů pro aktualizaci databáze a souborů protokolu, jako v případě, že obsah byl nasazen na cílové prostředí bez provedení změn ve skutečnosti. Analýza tyto prostředky můžete rozpoznat všechny potenciální problémy předem za provozu nasazení.
 - [Přizpůsobení nasazení databáze pro prostředí s více](customizing-database-deployments-for-multiple-environments.md). Když nasadíte projekt databáze na více míst, můžete často přizpůsobit vlastnosti nasazení pro každé cílové prostředí. Například v testovacích prostředích je by obvykle znovu vytvořit databázi na každém nasazení, že v pracovním nebo produkčním prostředí by bylo mnohem vyšší pravděpodobnost, chcete-li zachovat data přírůstkové aktualizace. Toto téma popisuje, jak začlenit tyto změny vlastností do logika nasazení tak, že vytvoříte soubor konfigurace (.sqldeployment) konkrétní prostředí nasazení pro každé cílové prostředí.
-- Nasazení databáze členství v rolích pro testovací prostředí. Když znovu vytvořit databázi na každou nasazení & #x 2014, například jako součást sestavení průběžnou integraci (CI) a nasadit do testovacího prostředí & #x 2014; musíte obvykle konfigurace pokaždé, když databáze členství v rolích. Například je obvykle potřeba udělit oprávnění k identitě fondu aplikací přidružené k webové aplikaci. Toto téma popisuje, jak tento proces můžete automatizovat přidáním SQL skriptu po nasazení do logiky nasazení.
+- Nasazení databáze členství v rolích pro testovací prostředí. Když je znovu vytvořit databázi při každém nasazení&#x2014;například jako součást průběžnou integraci (CI) vytvořit a nasadit do testovacího prostředí&#x2014;obvykle budete muset nakonfigurovat pokaždé, když databáze členství v rolích. Například je obvykle potřeba udělit oprávnění k identitě fondu aplikací přidružené k webové aplikaci. Toto téma popisuje, jak tento proces můžete automatizovat přidáním SQL skriptu po nasazení do logiky nasazení.
 - [Nasazení databáze členství do podnikových prostředích](deploying-membership-databases-to-enterprise-environments.md). Databáze členství ASP.NET mají různé vlastnosti, které může zkomplikovat procesu nasazení. Například pouze pro schéma nasazení bude ponechat databázi ve stavu, nefunkční. Ve většině scénářů je vhodnější k vytvoření databáze členství přímo v každém cílovém prostředí. Ale pokud máte nasazení databáze členství, toto téma popisuje některé z přístupů, které můžete použít k nápravě vyplývajících.
 - [Vyloučení souborů a složek z nasazení](excluding-files-and-folders-from-deployment.md). V některých scénářích budete chtít přizpůsobit obsah do webového balíčku do určité cílové prostředí. Například můžete chtít zahrnují úplné verze knihoven jazyka JavaScript, při nasazení v testovacím prostředí, podpora ladění na straně klienta, ale minifikovaný verze knihoven můžete použít při nasazování k pracovním nebo produkčním prostředí. Toto téma popisuje, jak můžete vyloučit konkrétní soubory a složky z proces vytvoření balíčku.
 - [Nasazení pořízení webových aplikací do offline režimu s Web](taking-web-applications-offline-with-web-deploy.md). Když nasadíte řešení k pracovním nebo produkčním prostředí, budete často chtít využít vaší webové aplikace do režimu offline po dobu trvání procesu nasazení. Toto téma popisuje, jak můžete přidat *aplikace\_offline.htm* souboru k vaší webové aplikaci na začátku procesu nasazení a odeberte jej na konci. Při *aplikace\_offline.htm* soubor je na místě, uživatelé, kteří přejděte do webové aplikace automaticky přesměrováni na *aplikace\_offline.htm* souboru.
@@ -69,5 +69,5 @@ To je součástí ze série kurzů pět v podnikovém měřítku nasazení webu.
 - [Konfigurace serveru prostředí pro nasazení webu](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). Tento kurz popisuje postup konfigurace serverů Windows na podporu různých scénářů nasazení, včetně nasazení balíčku vzdáleném webovém pomocí agenta služba pro nasazení webu (vzdáleného agenta) nebo obslužné rutiny nasazení webu a nasazení vzdálené databáze. Na výběr metody nasazení pro vaše vlastní prostředí obsahuje pokyny a popisuje, jak použít k replikaci nasazených webových aplikací ve všech webových serverech ve farmě serverů webové farmy Framework (WFF).
 - [Konfigurace serveru Team Foundation Server pro nasazení webu](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Tento kurz popisuje, jak nakonfigurovat produktu TFS na podporu různých scénářů nasazení, včetně automatického nasazení v rámci procesu položek konfigurace a ručně spustí nasazení konkrétní sestavení.
 
->[!div class="step-by-step"]
-[Next](performing-a-what-if-deployment.md)
+> [!div class="step-by-step"]
+> [Next](performing-a-what-if-deployment.md)

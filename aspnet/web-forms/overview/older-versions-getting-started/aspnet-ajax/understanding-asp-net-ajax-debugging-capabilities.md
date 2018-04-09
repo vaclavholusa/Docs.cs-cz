@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
-title: "Principy prvku ASP.NET AJAX ladění možnosti | Microsoft Docs"
+title: Principy prvku ASP.NET AJAX ladění možnosti | Microsoft Docs
 author: scottcate
-description: "Možnost ladění kódu je odborností, která by měla mít každý vývojář v jejich arsenál bez ohledu na to, které používají technologii. Když se celá řada vývojářů..."
+description: Možnost ladění kódu je odborností, která by měla mít každý vývojář v jejich arsenál bez ohledu na to, které používají technologii. Když se celá řada vývojářů...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 426d0182978faf7fc7516203fcc84ef0152790ba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f082e2206f5e691579670e42634f30b57e3b3593
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>Seznámení s možností ladění prvku ASP.NET AJAX
 ====================
@@ -58,7 +58,7 @@ Obrázek 1 ukazuje jaké v Internet Exploreru, dialogové okno Upřesnit by měl
 
 Jakmile ladění je zapnutý, zobrazí se nová položka nabídky se zobrazí v nabídce zobrazení s názvem Script Debugger. Má dvě možnosti, které jsou k dispozici včetně otevřete a zalomení v další příkaz. Pokud je vybrána otevřete budete vyzváni k ladění stránka v sadě Visual Studio 2008 (Všimněte si, že Visual Web Developer Express lze také použít pro ladění). Pokud Visual Studio .NET je aktuálně spuštěna, můžete použít tuto instanci nebo vytvořte novou instanci. Pokud je vybrána konec na další příkaz budete vyzváni k ladění stránku při spuštění kódu JavaScript. Pokud se provede kódu jazyka JavaScript v události při načtení stránky můžete obnovit stránku k aktivaci na relaci ladění. Pokud kód jazyka JavaScript se spouští po stisknutí tlačítka ladicí program se spustí hned po kliknutí na tlačítko.
 
-> *>[!NOTE] Pokud jsou spuštěné v systému Windows Vista s přístup řízení Uživatelských účtů povoleno a máte Visual Studio 2008 spuštěn jako správce, Visual Studio se nepodaří připojit k procesu. Po zobrazení výzvy k připojení. Chcete-li tento problém obejít, první spuštění sady Visual Studio a použít tuto instanci k ladění.*
+> *> [!NOTE] Pokud používáte v systému Windows Vista s přístup řízení Uživatelských účtů povoleno a máte Visual Studio 2008 spuštěn jako správce, Visual Studio se nepodaří připojit k procesu, když se zobrazí výzva k připojení. Chcete-li tento problém obejít, první spuštění sady Visual Studio a použít tuto instanci k ladění.*
 
 
 I když v další části ukazují, jak ladit stránku ASP.NET AJAX přímo z v sadě Visual Studio 2008, pomocí možnosti Internet Explorer Script Debugger je užitečné, když je již otevřeno stránky a chcete podrobněji zkontrolovat.
@@ -101,7 +101,7 @@ Po spuštění relace ladění a začnete s návodem kódu pomocí výchozí F11
 
 Toto dialogové okno se zobrazí, protože sady Visual Studio .NET není se, jak získat ke zdrojovému kódu některých skriptů odkazuje na stránku. Když to může být poměrně frustrující zpočátku je jednoduchý oprava. Po spuštění na relaci ladění a stiskněte tlačítko zarážku, přejít do okna ladění skriptu Průzkumníka Windows v nabídce sady Visual Studio 2008, nebo použijte klávesovou zkratku Ctrl + Alt + N.
 
-> *>[!NOTE] Pokud nevidíte v nabídce Průzkumník skriptu uvedené, přejděte na nástroje* *přizpůsobit* *příkazů v nabídce sady Visual Studio .NET. V části kategorie vyhledejte položku ladění a klikněte na něj zobrazíte všechny položky nabídky k dispozici. V seznamu příkazů, posuňte se dolů a Průzkumník skriptu a přetáhněte ji na ladění* *nabídky systému Windows v uvedených výše. Díky tomuto budou položku nabídky Průzkumník skriptu k dispozici při každém spuštění sady Visual Studio .NET.*
+> *> [!NOTE] Pokud se nezobrazí v nabídce Průzkumník skriptu uvedené, přejděte k nástroje* *přizpůsobit* *příkazů v nabídce sady Visual Studio .NET. V části kategorie vyhledejte položku ladění a klikněte na něj zobrazíte všechny položky nabídky k dispozici. V seznamu příkazů, posuňte se dolů a Průzkumník skriptu a přetáhněte ji na ladění* *nabídky systému Windows v uvedených výše. Díky tomuto budou položku nabídky Průzkumník skriptu k dispozici při každém spuštění sady Visual Studio .NET.*
 
 
 Průzkumník skriptu lze použít k zobrazení všech skriptů, které se použije na stránce a je otevře v editoru kódu. Jakmile otevřete Průzkumník skriptu, dvakrát klikněte na právě laděn a otevře se v okně editoru kódu stránky .aspx. Proveďte stejné akce pro všechny ostatní skripty zobrazí v Průzkumníku skriptu. Jakmile všechny skripty jsou v okně Kód můžete otevřít stisknutím klávesy F11 (a použití jiných ladění zkratky) krokovat kód. Obrázek 3 ukazuje příklad Průzkumníka skriptu. Vypíše aktuální soubor laděné (Demo.aspx) a také dva vlastní skripty a dva skripty dynamicky vloženy do stránce ScriptManager AJAX technologie ASP.NET.
@@ -116,11 +116,11 @@ Některé další systému windows slouží také k poskytují užitečné infor
 
 V průběhu kódu pomocí ladicího programu můžete myší proměnných v kódu zobrazíte hodnotu, která jsou přiřazena. Však nástroj script debugger příležitostně nezobrazí se nic jako myší dané proměnné jazyka JavaScript. A zobrazit tak hodnotu, zvýrazněte příkaz nebo proměnnou, kterou zkoušíte zobrazit v okně editoru kódu a pak myši nad ním. I když tento postup nefunguje v každé situaci, kolikrát bude moci zobrazit tak hodnotu bez nutnosti Hledat v různých ladění okna například místní hodnoty – okno.
 
-Video návod demonstraci některé funkce popsané v tomto poli lze zobrazit v [http://www.xmlforasp.net](http://www.xmlforasp.net).
+Video návod demonstraci některé funkce popsané v tomto poli lze zobrazit v [ http://www.xmlforasp.net ](http://www.xmlforasp.net).
 
 ## <a name="debugging-with-web-development-helper"></a>Ladění pomocí Pomocníka pro vývoj pro Web
 
-I když Visual Studio 2008 (a Visual Web Developer Express 2008) jsou velmi podporující nástroje pro ladění, existují další možnosti, které lze použít také které jsou více šedé. Jedním z nejnovější nástroje potřebné k uvolnění je pomocná vývoj pro Web. Nikhil Kothari společnosti Microsoft, (jeden z klíčů architekty prvku ASP.NET AJAX v Microsoftu) napsali tohoto vynikající nástroje, které můžete provést celou řadu různých úloh z jednoduchého ladění při zobrazení zprávy požadavku a odpovědi protokolu HTTP. Vývoj webové pomocné rutiny si můžete stáhnout tady [http://projects.nikhilk.net/Projects/WebDevHelper.aspx](http://projects.nikhilk.net/Projects/WebDevHelper.aspx).
+I když Visual Studio 2008 (a Visual Web Developer Express 2008) jsou velmi podporující nástroje pro ladění, existují další možnosti, které lze použít také které jsou více šedé. Jedním z nejnovější nástroje potřebné k uvolnění je pomocná vývoj pro Web. Nikhil Kothari společnosti Microsoft, (jeden z klíčů architekty prvku ASP.NET AJAX v Microsoftu) napsali tohoto vynikající nástroje, které můžete provést celou řadu různých úloh z jednoduchého ladění při zobrazení zprávy požadavku a odpovědi protokolu HTTP. Vývoj webové pomocné rutiny si můžete stáhnout tady [ http://projects.nikhilk.net/Projects/WebDevHelper.aspx ](http://projects.nikhilk.net/Projects/WebDevHelper.aspx).
 
 Vývoj webové pomocné rutiny lze přímo v aplikaci Internet Explorer, takže je vhodné používat. Je spuštěno výběrem pomocné rutiny vývoj webových nástrojů v nabídce aplikace Internet Explorer. Otevře se nástroj v dolní části Prohlížeč, který je dobrý, protože nemáte nechte prohlížeče provést několik úloh, jako je například protokolování zpráv žádostí a odpovědí HTTP. Obrázek 4 ukazuje, jak webové vývoj pomocná vypadá v akci.
 
@@ -201,11 +201,11 @@ Prohlížeč protokolu HTTP automaticky analyzuje objekty JSON a zobrazí je pom
 **Obrázek 8**: zpráva odpovědi UpdatePanel zobrazit pomocí prohlížeče protokolu HTTP.  ([Kliknutím zobrazit obrázek v plné velikosti](understanding-asp-net-ajax-debugging-capabilities/_static/image24.png))
 
 
-Existuje několik dalších nástrojů, které lze použít k zobrazení zpráv žádostí a odpovědí kromě vývoj webové pomocné rutiny. Dobrý další možnost spočívá v aplikaci Fiddler, která je k dispozici zdarma v [http://www.fiddlertool.com](http://www.fiddlertool.com). I když aplikaci Fiddler nebude tady popisovaných, je také vhodný když potřebujete důkladně zkontrolovat hlavičky zpráv a data.
+Existuje několik dalších nástrojů, které lze použít k zobrazení zpráv žádostí a odpovědí kromě vývoj webové pomocné rutiny. Dobrý další možnost spočívá v aplikaci Fiddler, která je k dispozici zdarma v [ http://www.fiddlertool.com ](http://www.fiddlertool.com). I když aplikaci Fiddler nebude tady popisovaných, je také vhodný když potřebujete důkladně zkontrolovat hlavičky zpráv a data.
 
 ## <a name="debugging-with-firefox-and-firebug"></a>Ladění pomocí prohlížeče Firefox a Firebug
 
-Při aplikaci Internet Explorer je stále nejčastěji používané prohlížeče, jiné prohlížeče, jako je například Firefox mít stane velmi oblíbenou a jsou používány více. Výsledkem je budete chtít zobrazit a ladění vaší stránky ASP.NET AJAX v Firefox a také aplikace Internet Explorer zajistit, že vaše aplikace fungovat správně. Přestože Firefox nelze zapojení přímo do sady Visual Studio 2008 pro ladění, má rozšíření názvem Firebug, který slouží k ladění stránek. FireBug lze stáhnout zdarma přechodem na [http://www.getfirebug.com](http://www.getfirebug.com).
+Při aplikaci Internet Explorer je stále nejčastěji používané prohlížeče, jiné prohlížeče, jako je například Firefox mít stane velmi oblíbenou a jsou používány více. Výsledkem je budete chtít zobrazit a ladění vaší stránky ASP.NET AJAX v Firefox a také aplikace Internet Explorer zajistit, že vaše aplikace fungovat správně. Přestože Firefox nelze zapojení přímo do sady Visual Studio 2008 pro ladění, má rozšíření názvem Firebug, který slouží k ladění stránek. FireBug lze stáhnout zdarma přechodem na [ http://www.getfirebug.com ](http://www.getfirebug.com).
 
 FireBug nabízí plnohodnotné prostředí ladění kterého lze jednotlivé řádky kódu kroky, přístup všechny skripty použité v rámci stránky, zobrazit DOM struktury, zobrazení stylů CSS a i sledování událostí, ke kterým došlo na stránce. Po instalaci Firebug přístupná výběrem otevřete Firebug Firebug nástrojů v nabídce Firefox. Jako webové vývoj pomocné rutiny slouží Firebug přímo v prohlížeči, i když můžete použít také jako samostatné aplikace.
 
@@ -355,5 +355,5 @@ Dana Wahlin (Microsoft nejvíc hodí v situaci Professional pro technologii ASP.
 
 Scott Dikovat pracuje s technologií Microsoft Web od 1997 a je ředitel myKB.com ([www.myKB.com](http://www.myKB.com)) kde mu se specializuje na psaní ASP.NET na základě aplikací, které jsou zaměřené na řešení softwaru znalostní báze Knowledge Base. Scott nelze kontaktovat prostřednictvím e-mailu v [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) nebo jeho blog na [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Předchozí](understanding-asp-net-ajax-web-services.md)
+> [!div class="step-by-step"]
+> [Předchozí](understanding-asp-net-ajax-web-services.md)

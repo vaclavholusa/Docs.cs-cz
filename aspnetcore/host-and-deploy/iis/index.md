@@ -1,7 +1,7 @@
 ---
-title: "Jádro ASP.NET hostitele v systému Windows pomocí služby IIS"
+title: Jádro ASP.NET hostitele v systému Windows pomocí služby IIS
 author: guardrex
-description: "Zjistěte, jak hostovat aplikace ASP.NET Core na Windows serveru Internetové informační služby (IIS)."
+description: Zjistěte, jak hostovat aplikace ASP.NET Core na Windows serveru Internetové informační služby (IIS).
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: fa9e60c52f143b20dbf179679fc4932e838a9137
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 64eb85f75a6c2e10bf8c39f32eeda5311744f2a2
+ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Jádro ASP.NET hostitele v systému Windows pomocí služby IIS
 
@@ -85,6 +85,10 @@ services.Configure<IISOptions>(options =>
 | `AuthenticationDisplayName`    | `null`  | Nastaví zobrazovaný název zobrazovat uživatelům na přihlašovací stránky. |
 | `ForwardClientCertificate`     | `true`  | Pokud `true` a `MS-ASPNETCORE-CLIENTCERT` nachází hlavička požadavku `HttpContext.Connection.ClientCertificate` se naplní. |
 
+### <a name="proxy-server-and-load-balancer-scenarios"></a>Proxy server a scénáře pro vyrovnávání zatížení
+
+Middlewaru integrační služby IIS, který konfiguruje předávaných Middleware hlavičky a základní modul ASP.NET se tak, aby předával schématu (HTTP či HTTPS) a vzdálené IP adrese, kde tato žádost pochází. Další konfigurace může být potřeba pro aplikace, které jsou hostovány za další proxy servery a nástroje pro vyrovnávání zatížení. Další informace najdete v tématu [konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
+
 ### <a name="webconfig-file"></a>web.config file
 
 *Web.config* nakonfiguruje souboru [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Vytváření, transformace a publikování *web.config* zpracováván pomocí .NET SDK webového jádra (`Microsoft.NET.Sdk.Web`). Sada SDK je nastavena v horní části souboru projektu:
@@ -97,7 +101,7 @@ Pokud *web.config* soubor není přítomen projektu, se vytvoří soubor s sprá
 
 Pokud *web.config* souboru se nacházejí v projektu, převede soubor s správný *processPath* a *argumenty* konfigurace modulu jádra ASP.NET a přesunut do publikované výstup. Transformace není změnit nastavení konfigurace služby IIS v souboru.
 
-*Web.config* soubor může poskytovat další nastavení konfigurace služby IIS, která řídí aktivní moduly služby IIS. Informace o moduly služby IIS, které podporují zpracování požadavků s aplikacemi ASP.NET Core, najdete v článku [moduly služby IIS pomocí](xref:host-and-deploy/iis/modules) tématu.
+*Web.config* soubor může poskytovat další nastavení konfigurace služby IIS, která řídí aktivní moduly služby IIS. Informace o moduly služby IIS, které podporují zpracování požadavků s aplikacemi ASP.NET Core, najdete v článku [moduly služby IIS](xref:host-and-deploy/iis/modules) tématu.
 
 Abyste zabránili transformace sady SDK webové *web.config* soubor, použijte  **\<IsTransformWebConfigDisabled >** vlastnost v souboru projektu:
 
@@ -167,7 +171,11 @@ Povolit **konzoly pro správu služby IIS** a **webové služby**.
 
 ## <a name="install-the-net-core-windows-server-hosting-bundle"></a>Instalaci sady hostování v rozhraní .NET Core systému Windows Server
 
-1. Nainstalujte [.NET jádra Windows serveru, který hostuje sady](https://aka.ms/dotnetcore-2-windowshosting) v hostitelském systému. Sada nainstaluje rozhraní .NET Core Runtime, základní knihovny .NET a [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel server. Pokud systém nemá připojení k Internetu, získejte a nainstalujte [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840) před instalací sady hostování v rozhraní .NET Core systému Windows Server.
+1. Nainstalujte *.NET jádra Windows serveru, který hostuje sady* v hostitelském systému. Sada nainstaluje rozhraní .NET Core Runtime, základní knihovny .NET a [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel server. Pokud systém nemá připojení k Internetu, získejte a nainstalujte [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840) před instalací sady hostování v rozhraní .NET Core systému Windows Server.
+
+   1. Přejděte na [.NET všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
+   1. Vyberte ze seznamu na nejnovější .NET Core runtime bez preview (**.NET Core** > **Runtime** > **.NET Core Runtime x.y.z**). Pokud máte v úmyslu pracovat s software verze preview, vyhněte se moduly runtime, které mají slovo "náhled" v jejich text odkazu.
+   1. Na .NET Core runtime stránce v části stažení **Windows**, vyberte **instalační program hostování serveru** odkaz ke stažení *.NET jádra Windows serveru, který hostuje sady*.
 
    **Důležité!** Pokud sadu hostování je nainstalována před službou IIS, je nutné opravit instalaci sady. Spusťte instalační program hostování sady znovu po instalaci služby IIS.
    
@@ -278,7 +286,7 @@ Pokud prstenec klíče jsou uloženy v paměti po restartování aplikace:
 
 * Všechny tokeny na základě souboru cookie ověřování jsou zneplatněny. 
 * Uživatelé musí znovu přihlásit na jejich další požadavek. 
-* Všechna data chráněné pomocí prstenec klíč lze už dešifrovat. To může zahrnovat [tokeny proti útokům CSRF](xref:security/anti-request-forgery#how-does-aspnet-core-mvc-address-csrf) a [soubory cookie tempdata ASP.NET MVC základní](xref:fundamentals/app-state#tempdata).
+* Všechna data chráněné pomocí prstenec klíč lze už dešifrovat. To může zahrnovat [tokeny proti útokům CSRF](xref:security/anti-request-forgery#aspnet-core-antiforgery-configuration) a [soubory cookie ASP.NET Core MVC TempData](xref:fundamentals/app-state#tempdata).
 
 Ke konfiguraci ochrany dat v rámci služby IIS k uchování prstenec klíč, použijte **jeden** z následujících postupů:
 
@@ -288,7 +296,7 @@ Ke konfiguraci ochrany dat v rámci služby IIS k uchování prstenec klíč, po
 
   Pro samostatné instalace služby IIS – webová farma [skript prostředí PowerShell AutoGenKeys.ps1 zřízení ochrany dat](https://github.com/aspnet/DataProtection/blob/dev/Provision-AutoGenKeys.ps1) lze použít pro každý fond aplikací používat s aplikací ASP.NET Core. Tento skript vytvoří klíč registru v registru HKLM, které je přístupné pouze pro účet pracovního procesu fondu aplikací aplikace. Klíče jsou zašifrovaná přinejmenším pomocí rozhraní DPAPI klíčem celého systému.
 
-  Ve scénářích webové farmy lze nastavit pomocí cesty UNC ukládat její prstenec klíč ochrany dat aplikace. Ve výchozím nastavení nejsou klíče ochrany dat šifrována. Zkontrolujte, zda jsou omezená na účet systému Windows, které aplikace běží v části oprávnění pro sdílené síťové složce. X509 certifikát můžete použít k ochraně klíče v klidovém stavu. Vezměte v úvahu mechanismus, aby uživatelé mohli nahrát certifikátů: místní certifikáty do důvěryhodného certifikátu uživatele, ukládání a ujistěte se, jsou k dispozici na všech počítačích, kde je spuštěna aplikace uživatele. V tématu [konfiguraci ochrany dat](xref:security/data-protection/configuration/overview) podrobnosti.
+  Ve scénářích webové farmy lze nastavit pomocí cesty UNC ukládat její prstenec klíč ochrany dat aplikace. Ve výchozím nastavení nejsou klíče ochrany dat šifrována. Zkontrolujte, zda jsou omezená na účet systému Windows, které aplikace běží v části oprávnění pro sdílené síťové složce. X509 certifikát můžete použít k ochraně klíče v klidovém stavu. Vezměte v úvahu mechanismus, aby uživatelé mohli nahrát certifikátů: místní certifikáty do důvěryhodného certifikátu uživatele, ukládání a ujistěte se, jsou k dispozici na všech počítačích, kde je spuštěna aplikace uživatele. V tématu [Konfigurace ochrany dat ASP.NET Core](xref:security/data-protection/configuration/overview) podrobnosti.
 
 * **Nakonfigurujte fond aplikací služby IIS načíst profil uživatele**
 
@@ -348,7 +356,7 @@ Další informace o konfiguraci technologie ASP.NET základní modul, najdete v 
 
 Konfigurace služby IIS je ovlivněno  **\<system.webServer >** části *web.config* pro tyto funkce služby IIS, která se týkají konfigurace reverzní proxy server. Pokud je služba IIS konfigurována na úrovni serveru použití dynamické komprese  **\<urlCompression >** element v dané aplikaci *web.config* souboru ji můžete vypnout.
 
-Další informace najdete v tématu [odkaz Konfigurace pro \<system.webServer >](/iis/configuration/system.webServer/), [odkazu na modul Konfigurace ASP.NET Core](xref:host-and-deploy/aspnet-core-module), a [pomocí moduly služby IIS s prostředím ASP. Základní NET](xref:host-and-deploy/iis/modules). Nastavení proměnných prostředí pro jednotlivé aplikace spuštěných ve fondech izolované aplikace (podporuje pro IIS 10.0 nebo novější), najdete v článku *příkazu AppCmd.exe* části [proměnné prostředí \< environmentVariables >](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) téma v IIS referenční dokumentace.
+Další informace najdete v tématu [odkaz Konfigurace pro \<system.webServer >](/iis/configuration/system.webServer/), [odkazu na modul Konfigurace ASP.NET Core](xref:host-and-deploy/aspnet-core-module), a [moduly služby IIS s technologií ASP.NET Základní](xref:host-and-deploy/iis/modules). Nastavení proměnných prostředí pro jednotlivé aplikace spuštěných ve fondech izolované aplikace (podporuje pro IIS 10.0 nebo novější), najdete v článku *příkazu AppCmd.exe* části [proměnné prostředí \< environmentVariables >](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) téma v IIS referenční dokumentace.
 
 ## <a name="configuration-sections-of-webconfig"></a>Konfigurační oddíly souboru Web.config
 
@@ -407,7 +415,7 @@ Další informace najdete v tématu [icacls](/windows-server/administration/wind
 * [Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
 * [Úvod do modulu ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
 * [Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
-* [Moduly služby IIS pomocí ASP.NET Core](xref:host-and-deploy/iis/modules)
+* [Moduly IIS s ASP.NET Core](xref:host-and-deploy/iis/modules)
 * [Úvod do ASP.NET Core](../index.md)
 * [Lokality oficiální Microsoft IIS](https://www.iis.net/)
 * [Microsoft TechNet Library: Windows Server](/windows-server/windows-server-versions)

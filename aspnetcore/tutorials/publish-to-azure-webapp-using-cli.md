@@ -1,7 +1,7 @@
 ---
-title: "Publikování aplikace ASP.NET Core do Azure pomocí pomocí nástroje příkazového řádku"
+title: Publikování aplikace ASP.NET Core do Azure pomocí nástroje příkazového řádku
 author: camsoper
-description: "Zjistěte, jak publikovat aplikaci ASP.NET Core Azure App Service pomocí příkazového řádku klienta Git."
+description: Zjistěte, jak publikovat aplikaci ASP.NET Core Azure App Service pomocí příkazového řádku klienta Git.
 manager: wpickett
 ms.author: casoper
 ms.custom: mvc
@@ -12,17 +12,17 @@ ms.technology: aspnet
 ms.topic: get-started-article
 services: multiple
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 0e87fbc7f5b5489f20e095be3180d87284e79c4e
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 0462a4cf18bba23643ed3b1b4e6b76bdbceb24a8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a>Nasazení aplikace ASP.NET Core do služby Azure App Service z příkazového řádku
+# <a name="publish-an-aspnet-core-app-to-azure-with-command-line-tools"></a>Publikování aplikace ASP.NET Core do Azure pomocí nástroje příkazového řádku
 
 Podle [Soper kamera](https://twitter.com/camsoper)
 
-[!INCLUDE[Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 Tento kurz vám ukáže, jak vytvářet a nasazovat aplikaci ASP.NET Core ke službě Microsoft Azure App Service pomocí nástrojů příkazového řádku.  Po dokončení, budete mít webovou aplikaci v ASP.NET MVC Core hostované jako webová aplikace Azure App Service.  V tomto kurzu je zapsána pomocí nástroje příkazového řádku Windows, ale můžete použít a Linux prostředí také systému macOS.  
 
@@ -37,7 +37,7 @@ V tomto kurzu zjistíte, jak:
 K dokončení tohoto kurzu, budete potřebovat:
 
 * A [předplatné Microsoft Azure](https://azure.microsoft.com/free/)
-* [.NET Core](https://www.microsoft.com/net/download/core)
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * [Git](https://www.git-scm.com/) klienta příkazového řádku
 
 ## <a name="create-a-web-application"></a>Vytvoření webové aplikace
@@ -71,7 +71,7 @@ dotnet run
 
 ![Výstup příkazového řádku](publish-to-azure-webapp-using-cli/_static/new_prj.png)
 
-Testování aplikace procházením http://localhost: 5000.
+Testování aplikace procházením http://localhost:5000.
 
 ![Web spuštěn místně](publish-to-azure-webapp-using-cli/_static/app_test.png)
 

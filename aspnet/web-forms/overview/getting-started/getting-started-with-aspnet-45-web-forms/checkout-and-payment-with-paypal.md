@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
-title: "Najdete v článku věnovaném a platbu se PayPal | Microsoft Docs"
+title: Najdete v článku věnovaném a platbu se PayPal | Microsoft Docs
 author: Erikre
-description: "Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme..."
+description: Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
-ms.openlocfilehash: dd975850a3ed3e7b1746d5123572065675a88656
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0dba613594686a28b82bc6d7701cda6e24b82e2e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="checkout-and-payment-with-paypal"></a>Najdete v článku věnovaném a platbu se PayPal
 ====================
@@ -55,7 +55,7 @@ V tomto kurzu vytvoříte dva nové třídy sledovat data z pořadí, ve kterém
 Dříve v této série kurz definované schéma pro kategorie produktů, a nákupní košík položky tak, že vytvoříte `Category`, `Product`, a `CartItem` třídy v *modely* složky. Nyní přidejte dva nové třídy definovat schéma pro produkt pořadí a podrobnosti o pořadí.
 
 1. V **modely** složky, přidejte novou třídu s názvem *Order.cs*.   
- Nový soubor třídy se zobrazí v editoru.
+   Nový soubor třídy se zobrazí v editoru.
 2. Ve výchozím kódu nahraďte následujícím textem:   
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample1.cs)]
@@ -107,7 +107,7 @@ Nyní vytvoříte *najdete v článku věnovaném* složku a stránky v něm, kt
 Přidáním nové *Web.config* do souboru *najdete v článku věnovaném* složky, bude možné omezit přístup na všechny stránky obsažené ve složce.
 
 1. Klikněte pravým tlačítkem myši *najdete v článku věnovaném* složky a vyberte **přidat**  - &gt; **novou položku**.  
- **Přidat novou položku** se zobrazí dialogové okno.
+   **Přidat novou položku** se zobrazí dialogové okno.
 2. Vyberte **Visual C#**  - &gt; **webové** skupiny šablony na levé straně. Pak v prostředním podokně, vyberte **soubor webové konfigurace**, přijměte výchozí název *Web.config*a potom vyberte **přidat**.
 3. Nahradit existující obsah XML *Web.config* soubor s následující:  
 
@@ -162,32 +162,32 @@ Následující postup vám umožní přidat zprostředkovatele ověřování Goo
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample5.cs)]
 3. Přejděte na [konzole pro vývojáře Google](https://console.developers.google.com/). Musíte se také k přihlášení pomocí účtu Google developer e-mailu (gmail.com). Pokud nemáte účet Google, vyberte **vytvoření účtu** odkaz.   
- V dalším kroku se zobrazí **konzole pro vývojáře Google**.   
+   V dalším kroku se zobrazí **konzole pro vývojáře Google**.   
     ![Konzole pro vývojáře Google](checkout-and-payment-with-paypal/_static/image8.png)
 4. Klikněte **vytvoření projektu** tlačítko a zadejte název projektu a ID (můžete použít výchozí hodnoty). Potom klikněte **políčko smlouvy** a **vytvořit** tlačítko.  
 
     ![Google – nový projekt](checkout-and-payment-with-paypal/_static/image9.png)
 
- Během pár sekund se vytvoří nový projekt a prohlížeč zobrazí stránku pro nové projekty.
+   Během pár sekund se vytvoří nový projekt a prohlížeč zobrazí stránku pro nové projekty.
 5. V levé kartě klikněte na **rozhraní API &amp; auth**a potom klikněte na **pověření**.
 6. Klikněte **vytvořit nové ID klienta** pod **OAuth**.   
- **Vytvořit ID klienta** zobrazí se dialogové okno.   
+   **Vytvořit ID klienta** zobrazí se dialogové okno.   
     ![Google - vytvořit ID klienta](checkout-and-payment-with-paypal/_static/image10.png)
 7. V **vytvořit ID klienta** dialogové okno, ponechte výchozí **webové aplikace** pro typ aplikace.
 8. Nastavte **oprávnění zdroje JavaScript** na adresu URL SSL, který jste použili v tomto kurzu (`https://localhost:44300/` Pokud jste vytvořili další projekty SSL).   
- Tato adresa URL je zdrojem pro vaši aplikaci. Tato ukázka se pouze zadejte testovací adresu URL místního hostitele. Můžete však zadat více adres URL pro účet pro místního hostitele a provozu.
+   Tato adresa URL je zdrojem pro vaši aplikaci. Tato ukázka se pouze zadejte testovací adresu URL místního hostitele. Můžete však zadat více adres URL pro účet pro místního hostitele a provozu.
 9. Nastavte **oprávnění identifikátor URI pro přesměrování** pro následující: 
 
     [!code-html[Main](checkout-and-payment-with-paypal/samples/sample6.html)]
 
- Tato hodnota je identifikátor URI tohoto ASP.NET OAuth uživatelům komunikovat se serverem google OAuth. Mějte na paměti, adresu URL SSL jste použili výše ( `https://localhost:44300/` Pokud jste vytvořili další projekty SSL).
+   Tato hodnota je identifikátor URI tohoto ASP.NET OAuth uživatelům komunikovat se serverem google OAuth. Mějte na paměti, adresu URL SSL jste použili výše ( `https://localhost:44300/` Pokud jste vytvořili další projekty SSL).
 10. Klikněte **vytvořit ID klienta** tlačítko.
 11. V levé nabídce konzoly Google vývojáře, klikněte na tlačítko **souhlasu obrazovky** položky nabídky, nastavte vaše e-mailovou adresu a název produktu. Pokud jste vyplnili formulář, klikněte na tlačítko **Uložit**.
 12. Klikněte **rozhraní API** položky nabídky, přejděte dolů a klikněte na **vypnout** vedle položky **rozhraní API Google +**.   
- Přijetí této možnosti povolíte rozhraní API Google +.
+    Přijetí této možnosti povolíte rozhraní API Google +.
 13. Také musíte aktualizovat **Microsoft.Owin** balíček NuGet verzi 3.0.0.   
- Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet** a pak vyberte **spravovat balíčky NuGet pro řešení**.  
- Z **spravovat balíčky NuGet** oken, najít a aktualizace **Microsoft.Owin** balíček verze 3.0.0.
+    Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet** a pak vyberte **spravovat balíčky NuGet pro řešení**.  
+    Z **spravovat balíčky NuGet** oken, najít a aktualizace **Microsoft.Owin** balíček verze 3.0.0.
 14. V sadě Visual Studio, aktualizovat `UseGoogleAuthentication` metodu *Startup.Auth.cs* stránky tak, že kopírování a vkládání **ID klienta** a **tajný klíč klienta** do metody. **ID klienta** a **tajný klíč klienta** hodnoty zobrazené níže jsou příklady a nebude fungovat. 
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample7.cs?highlight=64-65)]
@@ -258,7 +258,7 @@ PayPal je založené na webu fakturace platforma, která přijímá plateb podle
 Použít PayPal testovacím prostředí, musíte vytvořit a ověřit test vývojářského účtu. Testovací účet vývojáře použije k vytvoření kupujících testovací účet a testovací účet prodejce. Přihlašovací údaje vývojář testovací účtu také umožní adresář Wingtip Toys ukázkovou aplikaci pro přístup k testovacím prostředí PayPal.
 
 1. V prohlížeči přejděte na vývojáře PayPal testování webu:   
-    [https://Developer.PayPal.com](https://developer.paypal.com/)
+    [https://developer.paypal.com](https://developer.paypal.com/)
 2. Pokud nemáte účet služby PayPal pro vývojáře, vytvořit nový účet kliknutím na tlačítko **zaregistrovat**a následující kroky registrace. Pokud máte stávající účet vývojáře PayPal, přihlaste se kliknutím na **protokolu v**. Budete potřebovat vývojářského účtu PayPal otestovat vzorovou aplikaci adresář Wingtip Toys později v tomto kurzu.
 3. Pokud jste právě zaregistrovali do služby pro vývojářského účtu PayPal, musíte ověřit vývojářského účtu PayPal s PayPal. Pomocí následujících kroků, které PayPal posílat e-mailový účet, můžete ověřit váš účet. Jakmile si ověříte vývojářského účtu PayPal, přihlaste se zpět k vývojáře PayPal testování webu.
 4. Poté, co jste přihlášení k webu pro vývojáře PayPal s vývojářský účet služby PayPal, že potřebujete vytvořit účet služby PayPal kupujících testu, pokud to neuděláte již mít jeden. Chcete vytvořit účet testovací kupujících na webu služby PayPal, klikněte na tlačítko **aplikace** a pak klikněte **izolovaného prostoru účty**.   
@@ -293,11 +293,11 @@ Zobrazené klasické rozhraní API testu pověření (uživatelské jméno, hesl
 Umístíte většinu kódu PayPal do jediné třídy. Tato třída obsahuje metody, používaný ke komunikaci s PayPal. Navíc přidáte přihlašovacích údajů služby PayPal pro tuto třídu.
 
 1. V adresář Wingtip Toys ukázkovou aplikaci v sadě Visual Studio, klikněte pravým tlačítkem **logiku** složku a potom vyberte **přidat**  - &gt; **novou položku**.   
- **Přidat novou položku** se zobrazí dialogové okno.
+   **Přidat novou položku** se zobrazí dialogové okno.
 2. V části **Visual C#** z **nainstalovaná** podokna na levé straně vyberte **kód**.
 3. V prostředním podokně, vyberte **třída**. Název tato nová třída **PayPalFunctions.cs**.
 4. Klikněte na tlačítko **přidat**.  
- Nový soubor třídy se zobrazí v editoru.
+   Nový soubor třídy se zobrazí v editoru.
 5. Ve výchozím kódu nahraďte následujícím kódem:  
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample12.cs)]
@@ -312,9 +312,9 @@ Umístíte většinu kódu PayPal do jediné třídy. Tato třída obsahuje meto
 
 Třída NVPAPICaller obsahuje většinu funkcí služby PayPal. Kód ve třídě, poskytuje metody, třeba změnit testu zakoupit od PayPal testovacího prostředí. Následující tři služby PayPal funkce slouží k nákupech:
 
-- `SetExpressCheckout`funkce
-- `GetExpressCheckoutDetails`funkce
-- `DoExpressCheckoutPayment`funkce
+- `SetExpressCheckout` Funkce
+- `GetExpressCheckoutDetails` Funkce
+- `DoExpressCheckoutPayment` Funkce
 
 `ShortcutExpressCheckout` Metoda shromažďuje testovací informace a produktu podrobnosti o nákupu z nákupní košík a volání `SetExpressCheckout` funkce PayPal. `GetCheckoutDetails` Metoda potvrdí podrobnosti o nákupu a volání `GetExpressCheckoutDetails` PayPal funkce před provedením testovací nákupu. `DoCheckoutPayment` Metoda dokončení nákupu testů z testovacího prostředí voláním `DoExpressCheckoutPayment` funkce PayPal. Zbývající kód podporuje PayPal metody a procesu, jako je například kódování řetězce, dekódování řetězců, zpracování pole a určit, přihlašovací údaje.
 
@@ -359,14 +359,14 @@ Teď, když primární funkce PayPal byly přidány k ukázkové aplikaci, můž
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample18.cs?highlight=18)]
 6. Uložte změny do obou *ShoppingCart.aspx* souboru a *ShoppingCart.aspx.cs* souboru.
 7. V nabídce vyberte **ladění**-&gt;**sestavení Northwind**.  
- Projekt bude znovu vytvořen s nově přidaný **ImageButton** ovládacího prvku.
+   Projekt bude znovu vytvořen s nově přidaný **ImageButton** ovládacího prvku.
 
 ### <a name="send-purchase-details-to-paypal"></a>Poslat podrobnosti o nákupu PayPal
 
 Když uživatel klikne **najdete v článku věnovaném** tlačítko na stránce nákupní košík (*ShoppingCart.aspx*), budou brzy procesu nákupu. Následující kód zavolá funkci první PayPal potřebné k nákupu produkty.
 
 1. Z *najdete v článku věnovaném* složku, otevřete soubor modelu code-behind s názvem *CheckoutStart.aspx.cs*.   
- Ujistěte se, že otevřete soubor kódu.
+   Ujistěte se, že otevřete soubor kódu.
 2. Nahraďte stávající kód s následujícími službami:   
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample19.cs)]
@@ -439,20 +439,20 @@ Zpracování chyb během procesu nákupu pomocí *CheckoutError.aspx* stránky. 
 Spusťte aplikaci najdete v tom, jak zakoupit produkty. Všimněte si, že budete používat v PayPal testovacím prostředí. Žádný skutečný peníze se vyměňují.
 
 1. Zajistěte, aby všechny vaše soubory jsou uloženy v sadě Visual Studio.
-2. Otevřete webový prohlížeč a přejděte do [https://developer.paypal.com](https://developer.paypal.com/).
+2. Otevřete webový prohlížeč a přejděte do [ https://developer.paypal.com ](https://developer.paypal.com/).
 3. Přihlášení pomocí vývojářského účtu PayPal, kterou jste vytvořili dříve v tomto kurzu.  
- Pro izolovaný prostor PayPal pro vývojáře, musíte být přihlášení v [https://developer.paypal.com](https://developer.paypal.com/) k testování express checkout. To platí jenom pro společnosti PayPal izolovaného prostoru testování nechcete za provozu prostředí společnosti PayPal.
+   Pro izolovaný prostor PayPal pro vývojáře, musíte být přihlášení v [ https://developer.paypal.com ](https://developer.paypal.com/) k testování express checkout. To platí jenom pro společnosti PayPal izolovaného prostoru testování nechcete za provozu prostředí společnosti PayPal.
 4. V sadě Visual Studio, stiskněte klávesu **F5** ke spuštění ukázkové aplikace adresář Wingtip Toys.  
- Po znovu sestaví databáze, bude v prohlížeči otevřít a zobrazit *Default.aspx* stránky.
+   Po znovu sestaví databáze, bude v prohlížeči otevřít a zobrazit *Default.aspx* stránky.
 5. Přidejte tři různé produkty do nákupního košíku výběrem kategorie produktů, jako je například "Aut" a potom kliknutím na **přidat do košíku** vedle každého produktu.  
- Nákupní košík se zobrazí na produkt, který jste vybrali.
+   Nákupní košík se zobrazí na produkt, který jste vybrali.
 6. Klikněte **PayPal** tlačítko checkout. 
 
     ![Najdete v článku věnovaném a platbu se PayPal – košíku](checkout-and-payment-with-paypal/_static/image20.png)
 
- Rezervování bude vyžadovat, že máte účet uživatele pro ukázkovou aplikaci adresář Wingtip Toys.
+   Rezervování bude vyžadovat, že máte účet uživatele pro ukázkovou aplikaci adresář Wingtip Toys.
 7. Klikněte **Google** odkaz na pravé straně stránky se přihlásit existující e-mailový účet gmail.com.  
- Pokud nemáte účet gmail.com, můžete vytvořit jeden pro testování v [www.gmail.com](https://www.gmail.com/). Můžete také standardní místní účet kliknutím na tlačítko "Register". 
+   Pokud nemáte účet gmail.com, můžete vytvořit jeden pro testování v [www.gmail.com](https://www.gmail.com/). Můžete také standardní místní účet kliknutím na tlačítko "Register". 
 
     ![Najdete v článku věnovaném a platbu se PayPal – přihlášení](checkout-and-payment-with-paypal/_static/image21.png)
 8. Přihlaste se pomocí vaší gmail účet a heslo. 
@@ -465,7 +465,7 @@ Spusťte aplikaci najdete v tom, jak zakoupit produkty. Všimněte si, že budet
 
     ![Najdete v článku věnovaném a platbu se PayPal – PayPal přihlášení](checkout-and-payment-with-paypal/_static/image24.png)
 11. Souhlas s PayPal zásad a klikněte na **Agree a pokračovat** tlačítko.  
- Všimněte si, že je tato stránka jenom zobrazí při prvním použití tohoto účtu PayPal. Znovu Všimněte si, že toto je účet test se vyměňují žádné skutečné peníze. 
+    Všimněte si, že je tato stránka jenom zobrazí při prvním použití tohoto účtu PayPal. Znovu Všimněte si, že toto je účet test se vyměňují žádné skutečné peníze. 
 
     ![Najdete v článku věnovaném a platbu se PayPal – PayPal zásad](checkout-and-payment-with-paypal/_static/image25.png)
 12. Zkontrolujte informace o objednávce na PayPal testování prostředí kontrolní stránku a klikněte na tlačítko **pokračovat**. 
@@ -518,6 +518,6 @@ V tomto kurzu jste přidali pořadí a schémata podrobností pořadí sledován
 
 Tento kurz obsahuje ukázkový kód. Takové ukázkový kód je poskytován "tak, jak je" bez záruky jakéhokoli druhu. Podle toho společnost Microsoft nezaručuje, přesnost, integritu nebo kvalitu ukázkový kód. Souhlasíte s tím, že používáte ukázkový kód na vlastní nebezpečí. Za žádných okolností bude Microsoft za vám žádným způsobem žádné ukázkový kód, obsah, včetně, ale nikoli výhradně, všechny chyby nebo opomenutí v jakékoli ukázkový kód, obsah, nebo ke ztrátě nebo poškození jakéhokoli druhu vzniklých v důsledku použití jakékoli ukázkový kód. Tímto upozorněni a souhlasí s tím zbavuje odpovědnosti, uložit a uložení neškodné z a proti ztrátě všechny deklarace identity ke ztrátě, poškození nebo poškození jakéhokoli druhu včetně bez omezení, ty způsobené nebo vzniklých materiál, který účtování, Microsoft přenášet, použijte nebo spoléhají na mimo jiné včetně názory vyjádřené v něm.
 
->[!div class="step-by-step"]
-[Předchozí](shopping-cart.md)
-[další](membership-and-administration.md)
+> [!div class="step-by-step"]
+> [Předchozí](shopping-cart.md)
+> [další](membership-and-administration.md)

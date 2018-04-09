@@ -1,7 +1,7 @@
 ---
-title: "Migrace obslužné rutiny HTTP a moduly, které middleware ASP.NET Core"
+title: Migrovat obslužné rutiny HTTP a modulů ASP.NET Core middlewaru
 author: rick-anderson
-description: 
+description: ''
 manager: wpickett
 ms.author: tdykstra
 ms.date: 12/07/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: 7f08e155491b56933ae183818e9b9ee562ad8286
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e02f3a75269e5e4a4794d1979d3a5add21fe38be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrace obslužné rutiny HTTP a moduly, které middleware ASP.NET Core 
+# <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrovat obslužné rutiny HTTP a modulů ASP.NET Core middlewaru
 
 Podle [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
@@ -81,7 +81,7 @@ Kromě moduly, obslužné rutiny pro události životního cyklu, které přidá
 
    * Pořadí middleware pro odpovědi je zpětného od pro požadavky, zatímco pořadí modulů je stejný pro požadavky a odpovědi
 
-   * V tématu [vytváření middlewaru v řadě s IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)
+   * V tématu [vytvoření kanálu middlewaru s IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)
 
 ![Middleware](http-modules/_static/middleware.png)
 
@@ -173,17 +173,17 @@ Nové [konfigurační systém](xref:fundamentals/configuration/index) vám dáv�
 
 * Použití [možnosti vzor](xref:fundamentals/configuration/options):
 
-1.  Vytvoření třídy k umístění middleware možnosti, například:
+1. Vytvoření třídy k umístění middleware možnosti, například:
 
-    [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
+   [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
 
-2.  Uložení možnost hodnot
+2. Uložení možnost hodnot
 
-    Konfigurace systému umožňuje ukládat hodnoty možnosti kdekoli chcete. Ale většina lokality použijte *appSettings.JSON určený*, takže provedeme tohoto přístupu:
+   Konfigurace systému umožňuje ukládat hodnoty možnosti kdekoli chcete. Ale většina lokality použijte *appSettings.JSON určený*, takže provedeme tohoto přístupu:
 
-    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
+   [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
 
-    *MyMiddlewareOptionsSection* následuje název oddílu. Nemusí to být stejný jako název třídy vaše možnosti.
+   *MyMiddlewareOptionsSection* následuje název oddílu. Nemusí to být stejný jako název třídy vaše možnosti.
 
 3. Hodnoty možnosti přidružit možnosti – třída
 
@@ -191,25 +191,25 @@ Nové [konfigurační systém](xref:fundamentals/configuration/index) vám dáv�
 
     Aktualizace vašeho `Startup` třídy:
 
-    1.  Pokud používáte *appSettings.JSON určený*, přidejte ho do Tvůrce konfigurace v `Startup` konstruktor:
+   1. Pokud používáte *appSettings.JSON určený*, přidejte ho do Tvůrce konfigurace v `Startup` konstruktor:
 
       [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Ctor&highlight=5-6)]
 
-    2.  Konfigurovat službu možnosti:
+   2. Konfigurovat službu možnosti:
 
       [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
 
-    3.  Možnosti přidružte třídě možnosti:
+   3. Možnosti přidružte třídě možnosti:
 
       [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=6-8)]
 
-4.  Vložit možnosti do vaší konstruktor middlewaru. Toto je podobná vložení možnosti do kontroleru.
+4. Vložit možnosti do vaší konstruktor middlewaru. Toto je podobná vložení možnosti do kontroleru.
 
-  [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
+   [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
 
-  [UseMiddleware](#http-modules-usemiddleware) metody rozšíření, která přidá vaše middlewaru, který má `IApplicationBuilder` postará vkládání závislostí.
+   [UseMiddleware](#http-modules-usemiddleware) metody rozšíření, která přidá vaše middlewaru, který má `IApplicationBuilder` postará vkládání závislostí.
 
-  Tato akce není omezen na `IOptions` objekty. Tímto způsobem může vložit jakýkoliv jiný objekt, který vyžaduje vlastního middlewaru.
+   Tato akce není omezen na `IOptions` objekty. Tímto způsobem může vložit jakýkoliv jiný objekt, který vyžaduje vlastního middlewaru.
 
 ## <a name="loading-middleware-options-through-direct-injection"></a>Možnosti middlewaru prostřednictvím přímé vkládání načítání
 
@@ -219,21 +219,21 @@ To rozpis ale pokud chcete použít stejné middleware dvakrát, s různými mo�
 
 Řešení je získat možnosti objekty s hodnotami skutečné možnosti ve vaší `Startup` třídy a předejte těch, které přímo ke každé instanci vlastního middlewaru.
 
-1.  Přidat druhý klíč do *appSettings.JSON určený*
+1. Přidat druhý klíč do *appSettings.JSON určený*
 
-    Chcete-li přidat druhý sadu možností a *appSettings.JSON určený* soubor, použijte nový klíč k jeho jednoznačné identifikaci:
+   Chcete-li přidat druhý sadu možností a *appSettings.JSON určený* soubor, použijte nový klíč k jeho jednoznačné identifikaci:
 
-    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
+   [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
 
-2.  Načíst hodnoty možností a předejte middleware. `Use...` – Metoda rozšíření (která vlastního middlewaru přidá do kanálu) je logické místo, kde můžete předat hodnoty možnosti: 
+2. Načíst hodnoty možností a předejte middleware. `Use...` – Metoda rozšíření (která vlastního middlewaru přidá do kanálu) je logické místo, kde můžete předat hodnoty možnosti: 
 
-    [!code-csharp[](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
+   [!code-csharp[](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
 
-4.  Povolí middleware má provést parametrem možnosti. Zadejte přetížení `Use...` metoda rozšíření (která přebírá parametr možnosti a předává jej do `UseMiddleware`). Když `UseMiddleware` je volána s parametry, předává parametry do vaší konstruktor middlewaru při vytvoření instance objektu middleware.
+3. Povolí middleware má provést parametrem možnosti. Zadejte přetížení `Use...` metoda rozšíření (která přebírá parametr možnosti a předává jej do `UseMiddleware`). Když `UseMiddleware` je volána s parametry, předává parametry do vaší konstruktor middlewaru při vytvoření instance objektu middleware.
 
-    [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
+   [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
 
-    Všimněte si, jak to zabalí objekt možnosti v `OptionsWrapper` objektu. To implementuje `IOptions`, podle očekávání tím konstruktor middlewaru.
+   Všimněte si, jak to zabalí objekt možnosti v `OptionsWrapper` objektu. To implementuje `IOptions`, podle očekávání tím konstruktor middlewaru.
 
 ## <a name="migrating-to-the-new-httpcontext"></a>Migrace na nové HttpContext
 

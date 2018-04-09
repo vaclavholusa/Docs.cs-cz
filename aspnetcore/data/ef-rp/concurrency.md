@@ -1,7 +1,7 @@
 ---
-title: "Stránky Razor s EF jádra ASP.NET Core - souběžnosti - 8 8"
+title: Stránky Razor s EF jádra ASP.NET Core - souběžnosti - 8 8
 author: rick-anderson
-description: "Tento kurz ukazuje způsobu řešení konfliktů, když se více uživatelů aktualizace stejné entity ve stejnou dobu."
+description: Tento kurz ukazuje způsobu řešení konfliktů, když se více uživatelů aktualizace stejné entity ve stejnou dobu.
 manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 3921abe0b3741e906ff09b3dfd969214933ff83c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 1a5d1bdcb20da8270a0605c3937af2a8700a4e7f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 en-us /
 
@@ -21,7 +21,7 @@ en-us /
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [tní Dykstra](https://github.com/tdykstra), a [Jon P Smith](https://twitter.com/thereformedprog)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 Tento kurz ukazuje způsobu řešení konfliktů při více uživatelů aktualizovat entitu, souběžně (ve stejnou dobu). Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené aplikace pro tuto fázi](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part8).
 
@@ -57,19 +57,19 @@ Optimistickou metodu souběžného zahrnuje následující možnosti:
 
 * Můžete udržovat přehled o vlastností, které uživatel změnil a aktualizovat na odpovídající sloupce v databázi.
 
- Ve scénáři bude ztracena žádná data. Různé vlastnosti byly aktualizovány dva uživatelé. Při příštím někdo umožňuje anglické oddělení, uvidí Jana i Jan pro změny. Tato metoda aktualizace může snížit počet konfliktům, ke kterým může dojít ke ztrátě dat. Tento postup: * nelze nedošlo ke ztrátě dat. Pokud konkurenční změn stejnou vlastnost.
+  Ve scénáři bude ztracena žádná data. Různé vlastnosti byly aktualizovány dva uživatelé. Při příštím někdo umožňuje anglické oddělení, uvidí Jana i Jan pro změny. Tato metoda aktualizace může snížit počet konfliktům, ke kterým může dojít ke ztrátě dat. Tento postup: * nelze nedošlo ke ztrátě dat. Pokud konkurenční změn stejnou vlastnost.
         * Je obecně není praktické ve webové aplikaci. To vyžaduje údržbu významné stavu k uchovávání informací o všech načtených hodnoty a nové hodnoty. Správa velkých objemů stavu může ovlivnit výkon aplikace.
         * Může zvýšit složitost aplikace ve srovnání s detekce souběžnosti na entitu.
 
 * Můžete je nechat Jan pro změnu Jana změna přepsána.
 
- Při příštím někdo umožňuje anglické oddělení, zobrazí se 9/1/2013 a načtených $350,000.00 hodnotu. Tato metoda se nazývá *klienta Wins* nebo *poslední ve službě Wins* scénář. (Všechny hodnoty z klienta přednost co je v úložišti.) Pokud neprovedete žádné kódování pro zpracování souběžnosti, Wins, klient se automaticky.
+  Při příštím někdo umožňuje anglické oddělení, zobrazí se 9/1/2013 a načtených $350,000.00 hodnotu. Tato metoda se nazývá *klienta Wins* nebo *poslední ve službě Wins* scénář. (Všechny hodnoty z klienta přednost co je v úložišti.) Pokud neprovedete žádné kódování pro zpracování souběžnosti, Wins, klient se automaticky.
 
 * Jan pro změnu může zabránit aktualizaci v databázi. Obvykle se aplikace by: * Zobrazí se chybová zpráva.
         * Zobrazit aktuální stav data.
         * Povolí uživateli znovu použít změny.
 
- Tento postup se nazývá *Wins úložiště* scénář. (Hodnoty úložiště dat mají přednost před odeslané klientem hodnoty.) V tomto kurzu implementujete scénář úložiště služby Wins. Tato metoda zajišťuje, že žádné změny budou přepsána bez uživatele se zobrazí upozornění.
+  Tento postup se nazývá *Wins úložiště* scénář. (Hodnoty úložiště dat mají přednost před odeslané klientem hodnoty.) V tomto kurzu implementujete scénář úložiště služby Wins. Tato metoda zajišťuje, že žádné změny budou přepsána bez uživatele se zobrazí upozornění.
 
 ## <a name="handling-concurrency"></a>Zpracování souběžnosti 
 
@@ -158,9 +158,9 @@ Předchozí příkazy:
 * Otevřete okno příkazového řádku v adresáři projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory).
 * Spusťte následující příkaz:
 
- ```console
-dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outDir Pages\Departments --referenceScriptLibraries
- ```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outDir Pages\Departments --referenceScriptLibraries
+  ```
 
 Předchozí příkaz scaffold `Department` modelu. Otevřete projekt v sadě Visual Studio.
 
@@ -306,7 +306,7 @@ V tématu [dědičnosti](xref:data/ef-mvc/inheritance) o tom, jak dědit datový
 ### <a name="additional-resources"></a>Další zdroje
 
 * [Tokeny souběžnosti v EF jádra](https://docs.microsoft.com/ef/core/modeling/concurrency)
-* [Zpracování souběžnost v EF jádra](https://docs.microsoft.com/ef/core/saving/concurrency)
+* [Popisovač souběžnost v EF jádra](https://docs.microsoft.com/ef/core/saving/concurrency)
 
->[!div class="step-by-step"]
-[Předchozí](xref:data/ef-rp/update-related-data)
+> [!div class="step-by-step"]
+> [Předchozí](xref:data/ef-rp/update-related-data)

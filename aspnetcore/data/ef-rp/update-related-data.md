@@ -1,7 +1,7 @@
 ---
-title: "Stránky Razor s EF jádra ASP.NET Core - aktualizace související Data - 7, 8"
+title: Stránky Razor s EF jádra ASP.NET Core - aktualizace související Data - 7, 8
 author: rick-anderson
-description: "V tomto kurzu aktualizujete souvisejících dat tím, že aktualizuje polí cizího klíče a navigační vlastnosti."
+description: V tomto kurzu aktualizujete souvisejících dat tím, že aktualizuje polí cizího klíče a navigační vlastnosti.
 manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: fe76405c67297891351aba2495a4d7ce22c6195b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d793a7ca3635108ed7941ccc8578572afd79c305
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - aktualizace související Data - 7, 8
 
 Podle [tní Dykstra](https://github.com/tdykstra), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 Tento kurz představuje aktualizaci související data. Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené aplikace pro tuto fázi](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part7).
 
@@ -230,6 +230,6 @@ Předchozí kód provede tyto změny:
 
 * Pokud lektorem k odstranění je přiřazen jako správce všech oddělení, odebere přiřazení lektorem z těchto oddělení.
 
->[!div class="step-by-step"]
-[Předchozí](xref:data/ef-rp/read-related-data)
-[další](xref:data/ef-rp/concurrency)
+> [!div class="step-by-step"]
+> [Předchozí](xref:data/ef-rp/read-related-data)
+> [další](xref:data/ef-rp/concurrency)

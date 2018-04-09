@@ -1,7 +1,7 @@
 ---
-title: "Jádro ASP.NET hostitele ve službě Windows"
+title: Jádro ASP.NET hostitele ve službě Windows
 author: tdykstra
-description: "Zjistěte, jak hostovat aplikace ASP.NET Core ve službě Windows."
+description: Zjistěte, jak hostovat aplikace ASP.NET Core ve službě Windows.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: f3455e47cfc06a4492dc4e34871b348184c6ecfb
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: b0b27f274de1ca88b20bf582127132527b553ce0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Jádro ASP.NET hostitele ve službě Windows
 
@@ -40,25 +40,23 @@ Tato část popisuje minimální změny, které jsou nezbytné k nastavení exis
 
 1. Nainstalujte balíček NuGet [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/).
 
-1. Proveďte následující změny v `Program.Main`:
-  
+2. Proveďte následující změny v `Program.Main`:
+
    * Volání `host.RunAsService` místo `host.Run`.
-  
+
    * Pokud kód volá `UseContentRoot`, použijte cestu k umístění pro publikování místo `Directory.GetCurrentDirectory()`.
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
    [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,12)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,14)]
 
-   ---
+   * * *
 
-1. Publikujte aplikaci do složky. Použití [dotnet publikování](/dotnet/articles/core/tools/dotnet-publish) nebo [profil publikování se Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) který publikuje do složky.
+3. Publikujte aplikaci do složky. Použití [dotnet publikování](/dotnet/articles/core/tools/dotnet-publish) nebo [profil publikování se Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) který publikuje do složky.
 
-1. Otestujte vytváření a spouštění služby.
+4. Otestujte vytváření a spouštění služby.
 
    Otevřete příkazové okno s oprávněním správce k použití [sc.exe](https://technet.microsoft.com/library/bb490995) nástroj příkazového řádku k vytvoření a spuštění služby. Pokud je služba Moje_služba, publikovány do `c:\svc`, a s názvem AspNetCoreService, jsou příkazy:
 
@@ -79,16 +77,13 @@ Tato část popisuje minimální změny, které jsou nezbytné k nastavení exis
 
 Je snazší testování a ladění při spuštění mimo službu, takže se obvykle přidávat kód, který volá `RunAsService` pouze za určitých podmínek. Například můžete spouštět aplikace jako konzolové aplikace s `--console` argument příkazového řádku nebo pokud je připojen ladicí program:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOrConsole)]
 
----
-
+* * *
 ## <a name="handle-stopping-and-starting-events"></a>Zpracování ukončení a spuštění události
 
 Pro zpracování `OnStarting`, `OnStarted`, a `OnStopping` události, proveďte následující další změny:
@@ -97,25 +92,26 @@ Pro zpracování `OnStarting`, `OnStarted`, a `OnStopping` události, proveďte 
 
    [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=NoLogging)]
 
-1. Vytvoření metody rozšíření pro `IWebHost` , předá vlastní `WebHostService` k `ServiceBase.Run`:
+2. Vytvoření metody rozšíření pro `IWebHost` , předá vlastní `WebHostService` k `ServiceBase.Run`:
 
    [!code-csharp[](windows-service/sample/WebHostServiceExtensions.cs?name=ExtensionsClass)]
 
-1. V `Program.Main`, zavolejte metodu nové rozšíření, `RunAsCustomService`, místo `RunAsService`:
+3. V `Program.Main`, zavolejte metodu nové rozšíření, `RunAsCustomService`, místo `RunAsService`:
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
    [!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=24)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=26)]
 
-   ---
-
+   * * *
 Pokud vlastní `WebHostService` kódu vyžaduje službu z vkládání závislostí (například protokolovač), získat ze `Services` vlastnost `IWebHost`:
 
 [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
+
+## <a name="proxy-server-and-load-balancer-scenarios"></a>Proxy server a scénáře pro vyrovnávání zatížení
+
+Služby, které interakci s požadavky z Internetu nebo podnikové síti a jsou za proxy server nebo službu Vyrovnávání zatížení může vyžadovat další konfiguraci. Další informace najdete v tématu [konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
 
 ## <a name="acknowledgments"></a>Potvrzování
 

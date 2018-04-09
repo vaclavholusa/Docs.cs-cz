@@ -1,7 +1,7 @@
 ---
-title: "Stránky Razor s EF jádra ASP.NET Core - číst související Data - 6, 8"
+title: Stránky Razor s EF jádra ASP.NET Core - číst související Data - 6, 8
 author: rick-anderson
-description: "V tomto kurzu číst a zobrazení souvisejících dat – to znamená, data, která rozhraní Entity Framework se načte do navigační vlastnosti."
+description: V tomto kurzu číst a zobrazení souvisejících dat – to znamená, data, která rozhraní Entity Framework se načte do navigační vlastnosti.
 manager: wpickett
 ms.author: riande
 ms.date: 11/05/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 44db7b49aef6bff1e57d10d569ffa9c73930b774
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 55d9b6743c7d97dc9a354bae218b1fac69d7b6bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - číst související Data - 6, 8
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 V tomto kurzu související data načíst a zobrazit. Související data jsou data, která načte EF základní do navigační vlastnosti.
 
@@ -37,22 +37,22 @@ Následující ilustrace znázorňuje dokončené stránky v tomto kurzu:
 
 * [Přes načítání](https://docs.microsoft.com/ef/core/querying/related-data#eager-loading). Přes načítání je při dotazu pro jeden typ entity také načtení entit v relaci. Při čtení je entita, související data načtena. To obvykle vede jednoho připojení dotaz, který načte všechna data, která je potřeba. Základní EF vydá pro některé typy přes načítání více dotazů. Vydání více dotazů může být efektivnější než v případě pro některé dotazy v EF6 natolik, že jeden dotaz. Je zadaný přes načítání `Include` a `ThenInclude` metody.
 
- ![Příklad přes načítání](read-related-data/_static/eager-loading.png)
+  ![Příklad přes načítání](read-related-data/_static/eager-loading.png)
  
- Při navigaci kolekce je součástí, odešle přes načítání více dotazů:
+  Při navigaci kolekce je součástí, odešle přes načítání více dotazů:
 
- * Jeden dotaz pro hlavní dotaz 
- * Jeden dotaz pro každou kolekci "edge" ve stromové struktuře zatížení.
+  * Jeden dotaz pro hlavní dotaz 
+  * Jeden dotaz pro každou kolekci "edge" ve stromové struktuře zatížení.
 
 * Samostatné dotazy s `Load`: v samostatné dotazy může být načtena data a základní EF "oprav" navigační vlastnosti. "opravy nahoru" znamená, že základní EF automaticky naplní navigační vlastnosti. Samostatné dotazy s `Load` se víc podobá explict načítání než přes načítání.
 
- ![Příklad samostatné dotazy](read-related-data/_static/separate-queries.png)
+  ![Příklad samostatné dotazy](read-related-data/_static/separate-queries.png)
 
- Poznámka: Základní EF automaticky opravuje navigační vlastností s jinými entitami, které byly dříve načteny do instance kontextu. I když se data pro navigační vlastnost *není* výslovně zahrnuty, vlastnost pořád naplněný, pokud některé nebo všechny související entity byly dříve načteny.
+  Poznámka: Základní EF automaticky opravuje navigační vlastností s jinými entitami, které byly dříve načteny do instance kontextu. I když se data pro navigační vlastnost *není* výslovně zahrnuty, vlastnost pořád naplněný, pokud některé nebo všechny související entity byly dříve načteny.
 
 * [Explicitní načítání](https://docs.microsoft.com/ef/core/querying/related-data#explicit-loading). Když je nejdřív přečíst entity, není načíst související data. Kód musí být zapsané do načíst související data, když je to potřeba. Explicitní načítání s samostatné dotazy za následek více dotazů odesílaných do databáze. S explicitní načítání, určuje kód navigační vlastnosti, které mají být načtena. Použití `Load` metoda udělat explicitní načítání. Příklad:
 
- ![Příklad explicitní načítání](read-related-data/_static/explicit-loading.png)
+  ![Příklad explicitní načítání](read-related-data/_static/explicit-loading.png)
 
 * [Opožděného načítání](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [Základní EF aktuálně nepodporuje opožděného načítání](https://github.com/aspnet/EntityFrameworkCore/issues/3797). Když je nejdřív přečíst entity, není načíst související data. Při prvním přístupu k navigační vlastnost, lze data potřebná pro tuto navigační vlastnost je automaticky načte. K databázi. pokaždé, když navigační vlastnost přistupuje poprvé bude odeslán dotaz.
 
@@ -76,9 +76,9 @@ Zobrazí se název přiřazené oddělení v seznamu kurzů:
 * Otevřete okno příkazového řádku v adresáři projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory).
 * Spusťte následující příkaz:
 
- ```console
-dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
- ```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
+  ```
 
 Předchozí příkaz scaffold `Course` modelu. Otevřete projekt v sadě Visual Studio.
 
@@ -165,9 +165,9 @@ V *SchoolViewModels* složku vytvořit *InstructorIndexData.cs* následujícím 
 * Otevřete okno příkazového řádku v adresáři projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory).
 * Spusťte následující příkaz:
 
- ```console
-dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
- ```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
+  ```
 
 Předchozí příkaz scaffold `Instructor` modelu. Otevřete projekt v sadě Visual Studio.
 

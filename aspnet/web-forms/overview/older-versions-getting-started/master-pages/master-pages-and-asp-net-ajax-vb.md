@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb
-title: "AJAX stránky předlohy a ASP.NET (VB) | Microsoft Docs"
+title: AJAX stránky předlohy a ASP.NET (VB) | Microsoft Docs
 author: rick-anderson
-description: "Popisuje možnosti pomocí prvku ASP.NET AJAX a stránky předlohy. Vypadá v použití třídy ScriptManagerProxy; Popisuje, jak jsou různé soubory JS načíst dependi..."
+description: Popisuje možnosti pomocí prvku ASP.NET AJAX a stránky předlohy. Vypadá v použití třídy ScriptManagerProxy; Popisuje, jak jsou různé soubory JS načíst dependi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b25234f82c46437d853d1ab5b240f8a688995ccc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c7d8477d6d9d235749d88d0b657d60454298e53
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="master-pages-and-aspnet-ajax-vb"></a>AJAX stránky předlohy a ASP.NET (VB)
 ====================
@@ -184,9 +184,9 @@ Chcete-li přidat ScriptManager související přizpůsobení na základě po st
 
 Zobrazíte ScriptManagerProxy ovládacího prvku akce umožňuje posílení UpdatePanel v `ShowRandomProduct.aspx` zahrnout tlačítko, které používá klientský skript pozastavení nebo obnovení ovládacího prvku časovače. Ovládací prvek časovače má tři metody na straně klienta, které jsme můžete použít k dosažení této požadované funkce:
 
-- `_startTimer()`-spustí časovač ovládací prvek
-- `_raiseTick()`-způsobí, že ovládacího prvku časovače pro "značek," a publikování zpět a vyvolá událost jeho značek na serveru
-- `_stopTimer()`-Zastaví ovládacího prvku časovače
+- `_startTimer()` -spustí časovač ovládací prvek
+- `_raiseTick()` -způsobí, že ovládacího prvku časovače pro "značek," a publikování zpět a vyvolá událost jeho značek na serveru
+- `_stopTimer()` -Zastaví ovládacího prvku časovače
 
 Umožňuje vytvořit soubor JavaScript se proměnné s názvem `timerEnabled` a funkce s názvem `ToggleTimer`. `timerEnabled` Proměnná Určuje, zda je ovládací prvek časovače aktuálně povoleno nebo zakázáno; je standardně nastavena na hodnotu true. `ToggleTimer` Funkce přijímá dva vstupní parametry: odkaz na tlačítko pozastavit nebo obnovit a na straně klienta `id` hodnota časovače ovládacího prvku. Tato funkce přepíná hodnotu `timerEnabled`, získá odkaz na ovládací prvek časovače, spuštění nebo zastavení časovač (v závislosti na hodnotě `timerEnabled`) a aktualizuje na tlačítko zobrazovaný text na "Pozastavení" nebo "Pokračování". Tato funkce bude volána, když po kliknutí na tlačítko pozastavit nebo obnovit.
 
@@ -228,7 +228,7 @@ Můžete teď říkáme `ToggleTimer` funkci definovanou v `TimerScript.js` z kl
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-vb/samples/sample10.aspx)]
 
-Zobrazí tlačítko s textem "Pozastavení". Vždy, když se po kliknutí na, funkce JavaScript, která `ToggleTimer` je volána, předávání v odkaz na tlačítko a `id` hodnota časovače ovládacího prvku (`ProductTimer`). Všimněte si syntaxe pro získání `id` hodnota časovače ovládacího prvku. `<%=ProductTimer.ClientID%>`vysílá hodnotu `ProductTimer` ovládacího prvku Timer `ClientID` vlastnost. V pojmenování řízení ID v kurzu stránky obsahu [SKM3] jsme probrali rozdíly mezi na straně serveru `ID` hodnota a výsledný na straně klienta `id` hodnotu a jak `ClientID` vrátí na straně klienta `id`.
+Zobrazí tlačítko s textem "Pozastavení". Vždy, když se po kliknutí na, funkce JavaScript, která `ToggleTimer` je volána, předávání v odkaz na tlačítko a `id` hodnota časovače ovládacího prvku (`ProductTimer`). Všimněte si syntaxe pro získání `id` hodnota časovače ovládacího prvku. `<%=ProductTimer.ClientID%>` vysílá hodnotu `ProductTimer` ovládacího prvku Timer `ClientID` vlastnost. V pojmenování řízení ID v kurzu stránky obsahu [SKM3] jsme probrali rozdíly mezi na straně serveru `ID` hodnota a výsledný na straně klienta `id` hodnotu a jak `ClientID` vrátí na straně klienta `id`.
 
 Obrázek 11 ukazuje této stránce, když nejdřív navštívili prostřednictvím prohlížeče. Časovač běží v současné době a aktualizuje informace zobrazené produktu každých 15 sekund. Obrázek 12 znázorňuje obrazovky po bylo stisknuto tlačítko Pozastavit. Klepnutím na tlačítko Pozastavit zastaví časovač a aktualizuje na tlačítko text "Obnovit". Informace o produktu aktualizujte (a pokračovat v aktualizaci každých 15 sekund) po kliknutí na tlačítko Pokračovat.
 
@@ -264,12 +264,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](interacting-with-the-content-page-from-the-master-page-vb.md)
-[další](specifying-the-master-page-programmatically-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](interacting-with-the-content-page-from-the-master-page-vb.md)
+> [další](specifying-the-master-page-programmatically-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
-title: "Představení technologie ASP.NET Web Pages – Začínáme | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages – Začínáme | Microsoft Docs
 author: tfitzmac
-description: "Služba WebMatrix se už doporučuje jako integrované vývojové prostředí pro ASP.NET Web Pages. Pomocí sady Visual Studio nebo Visual Studio Code. Tyto pokyny..."
+description: Služba WebMatrix se už doporučuje jako integrované vývojové prostředí pro ASP.NET Web Pages. Pomocí sady Visual Studio nebo Visual Studio Code. Tyto pokyny...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: a6789ee75b4ca6e9443681cc7ec0bd3ab94cedcd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5fd67a230f76774e102094f42426b8bb126c0cc6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>Představení technologie ASP.NET Web Pages – Začínáme
 ====================
@@ -289,5 +289,5 @@ V dalším kurzu této série prozkoumejte další programování technologie AS
 
 [Vytvoření webu ASP.NET od začátku](https://www.microsoft.com/web/post/create-an-aspnet-website-from-scratch). Kurz, který je konkrétně se jedná o pomocí služby WebMatrix (ne webové stránky ASP.NET). Přejde do trochu další podrobnosti o některých dalších funkcí služby WebMatrix, který nebude nabídneme v tomto kurzu.
 
->[!div class="step-by-step"]
-[Next](intro-to-web-pages-programming.md)
+> [!div class="step-by-step"]
+> [Next](intro-to-web-pages-programming.md)

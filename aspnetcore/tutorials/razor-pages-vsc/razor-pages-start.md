@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s ASP.NET Core Razor stránky v kódu Visual Studio"
+title: Začínáme s ASP.NET Core Razor stránky v kódu Visual Studio
 author: rick-anderson
-description: "Přečtěte si základní informace o vytváření webové aplikace ASP.NET Core Razor stránky s kódem jazyka Visual Studio."
+description: Přečtěte si základní informace o vytváření webové aplikace ASP.NET Core Razor stránky s kódem jazyka Visual Studio.
 manager: wpickett
 ms.author: riande
 ms.date: 08/27/2017
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-vsc/razor-pages-start
-ms.openlocfilehash: ab14937508ad68f3ffc9c9ba797119b3c83fd743
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 11164fda108e7cc87791e777a66e58f33fe558ae
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a>Začínáme s ASP.NET Core Razor stránky v kódu Visual Studio
 
@@ -23,11 +23,7 @@ V tomto kurzu se dozvíte, jaké základní informace o vytváření webové apl
 
 ## <a name="prerequisites"></a>Požadavky
 
-Nainstalujte následující:
-
-* [.NET core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější
-* [Visual Studio Code](https://code.visualstudio.com)
-* VS Code [rozšíření C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) 
+[!INCLUDE [](~/includes/net-core-prereqs-vscode.md)]
 
 ## <a name="create-a-razor-web-app"></a>Vytvoření webové aplikace Razor
 
@@ -39,11 +35,11 @@ cd RazorPagesMovie
 dotnet run
 ```
 
-Předchozí příkazy použijte [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu stránky Razor. Otevřete v prohlížeči na http://localhost: 5000 zobrazení aplikace.
+Předchozí příkazy použijte [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu stránky Razor. Otevřete prohlížeč na http://localhost:5000 zobrazíte aplikace.
 
 ![Index nebo Domovská stránka](../razor-pages/razor-pages-start/_static/home.png)
 
-[!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
+[!INCLUDE [razor-pages-start](../../includes/RP/razor-pages-start.md)]
 
 ## <a name="open-the-project"></a>Otevřete projekt
 
@@ -60,5 +56,5 @@ Stisknutím kombinace kláves Ctrl + F5 a spusťte aplikaci bez ladění. Může
 
 V dalším kurzu přidáme modelu do projektu. 
 
->[!div class="step-by-step"]
-[Další krok: Přidání modelu](xref:tutorials/razor-pages-vsc/model)  
+> [!div class="step-by-step"]
+> [Další krok: Přidání modelu](xref:tutorials/razor-pages-vsc/model)  

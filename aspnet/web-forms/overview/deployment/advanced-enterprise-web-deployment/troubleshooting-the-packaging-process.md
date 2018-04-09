@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/troubleshooting-the-packaging-process
-title: "Řešení potíží s proces balení | Microsoft Docs"
+title: Řešení potíží s proces balení | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak můžete shromáždit podrobné informace o vytváření balíčku pomocí vlastnosti EnablePackageProcessLoggingAndAssert v M..."
+description: Toto téma popisuje, jak můžete shromáždit podrobné informace o vytváření balíčku pomocí vlastnosti EnablePackageProcessLoggingAndAssert v M...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/troubleshooting-the-packaging-process
 msc.type: authoredcontent
-ms.openlocfilehash: 977077357eb5774193a40c55fabee9733dd5ab2f
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 816ab77c44b52c6449a139475f2ef8546bd38071
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="troubleshooting-the-packaging-process"></a>Řešení potíží s proces balení
 ====================
@@ -38,9 +38,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > > **EnablePackageProcessLoggingAndAssert** vlastnost funguje jenom v případě, že vytvoříte projekt pomocí **ladění** konfigurace. Vlastnost je ignorován v ostatní konfigurace.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="understanding-the-enablepackageprocessloggingandassert-property"></a>Principy vlastnost EnablePackageProcessLoggingAndAssert
 
@@ -115,5 +115,5 @@ Toto téma popisuje, jak můžete použít **EnablePackageProcessLoggingAndAsser
 
 Další informace o používání vlastních souborů projektu nástroje MSBuild k řízení procesu nasazení najdete v tématu [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md) a [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Další informace o jako a jak se spravuje proces balení, najdete v části [budova a projekty webových aplikací balení](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md). Pokyny o tom, jak vyloučit konkrétní soubory a složky balíčky webového nasazení najdete v tématu [vyloučení souborů a složek z nasazení](excluding-files-and-folders-from-deployment.md).
 
->[!div class="step-by-step"]
-[Předchozí](running-windows-powershell-scripts-from-msbuild-project-files.md)
+> [!div class="step-by-step"]
+> [Předchozí](running-windows-powershell-scripts-from-msbuild-project-files.md)

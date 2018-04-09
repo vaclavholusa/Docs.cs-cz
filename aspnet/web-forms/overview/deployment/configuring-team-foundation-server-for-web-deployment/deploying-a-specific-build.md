@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
-title: "Nasazení konkrétní sestavení | Microsoft Docs"
+title: Nasazení konkrétní sestavení | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje postup nasazení webových balíčků a databázové skripty z konkrétní předchozího sestavení do nového cíle, jako je pracovním nebo produkčním enviro..."
+description: Toto téma popisuje postup nasazení webových balíčků a databázové skripty z konkrétní předchozího sestavení do nového cíle, jako je pracovním nebo produkčním enviro...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: be1000f0cbc2f509f5014789c2bc47ce2b12fb2f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 271d084b3c69016df5be28ada032973bf7fd5a49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-a-specific-build"></a>Nasazení konkrétní sestavení
 ====================
@@ -27,9 +27,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma popisuje postup nasazení webových balíčků a databázové skripty z konkrétní předchozího sestavení do nového cíle, jako je pracovním nebo produkčním prostředí.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na soubor projektu rozdělení metody uvedené v [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které dva soubory projektu & #x 2014 je řízena procesem sestavení a nasazení; o Ne, obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve kterém je řízena procesem sestavení a nasazení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="task-overview"></a>Přehled úloh
 
@@ -54,13 +54,13 @@ V [ukázkové řešení](../web-deployment-in-the-enterprise/the-contact-manager
 [!code-xml[Main](deploying-a-specific-build/samples/sample1.xml)]
 
 
-Pokud chcete soubor projektu do nasazení webových balíčků a databázové skripty z jiného umístění & #x 2014; jako výstupy předchozí TFS build & #x 2014; jednoduše je potřeba přepsat **OutputRoot** vlastnost. Na serveru Team Build byste měli nastavit hodnotu vlastnosti ke složce relevantní sestavení. MSBuild spustili z příkazového řádku, můžete zadat hodnotu pro **OutputRoot** jako argument příkazového řádku:
+Pokud chcete soubor projektu do nasazení webových balíčků a databáze skripty z jiného umístění&#x2014;jako výstupy předchozí sestavení TFS&#x2014;jednoduše je potřeba přepsat **OutputRoot** vlastnost. Na serveru Team Build byste měli nastavit hodnotu vlastnosti ke složce relevantní sestavení. MSBuild spustili z příkazového řádku, můžete zadat hodnotu pro **OutputRoot** jako argument příkazového řádku:
 
 
 [!code-console[Main](deploying-a-specific-build/samples/sample2.cmd)]
 
 
-V praxi však by také chcete přeskočit **sestavení** cíl & #x 2014; neexistuje bod při vytváření řešení, pokud nemáte v úmyslu použít výstupy sestavení. Může to uděláte tak, že zadáte cíle, které chcete spustit z příkazového řádku:
+V praxi však by také chcete přeskočit **sestavení** cíl&#x2014;neexistuje bod při vytváření řešení, pokud nemáte v úmyslu použít výstupy sestavení. Může to uděláte tak, že zadáte cíle, které chcete spustit z příkazového řádku:
 
 
 [!code-console[Main](deploying-a-specific-build/samples/sample3.cmd)]
@@ -72,7 +72,7 @@ Ale ve většině případů budete chtít vytvořit logika nasazení do definic
 
 Následující postup popisuje, jak k vytvoření definice sestavení, která umožní uživatelům aktivační událost nasazení pro pracovní prostředí s jedním příkazem.
 
-V takovém případě nechcete definici sestavení ve skutečnosti sestavit nic & #x 2014; je právě má být spuštěna v souboru projektu vlastní logiky nasazení. *Publish.proj* soubor obsahuje podmíněnou logiku, který přeskočí **sestavení** cíle, pokud soubor běží v Team Build. Dělá to pomocí vyhodnocení integrované **BuildingInTeamBuild** vlastnosti, která se automaticky nastaví na **true** při spuštění souboru projektu v Team Build. V důsledku toho můžete přeskočit procesu sestavení a jednoduše spusťte soubor projektu nasazení existující sestavení.
+V takovém případě nechcete definici sestavení ve skutečnosti sestavit nic&#x2014;chcete být spuštěna v souboru projektu vlastní logiky nasazení. *Publish.proj* soubor obsahuje podmíněnou logiku, který přeskočí **sestavení** cíle, pokud soubor běží v Team Build. Dělá to pomocí vyhodnocení integrované **BuildingInTeamBuild** vlastnosti, která se automaticky nastaví na **true** při spuštění souboru projektu v Team Build. V důsledku toho můžete přeskočit procesu sestavení a jednoduše spusťte soubor projektu nasazení existující sestavení.
 
 **K vytvoření definice sestavení pro ruční aktivaci nasazení**
 
@@ -133,6 +133,6 @@ Toto téma popisuje postup publikování materiály pro nasazení, jako je webov
 
 Další informace o vytváření definic sestavení, najdete v části [vytvoření základní definice sestavení](https://msdn.microsoft.com/library/ms181716.aspx) a [definovat proces vaše sestavení](https://msdn.microsoft.com/library/ms181715.aspx). Další pokyny k sestavení služby Řízení front, najdete v části [fronty sestavení](https://msdn.microsoft.com/library/ms181722.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-build-definition-that-supports-deployment.md)
-[další](configuring-permissions-for-team-build-deployment.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-build-definition-that-supports-deployment.md)
+> [další](configuring-permissions-for-team-build-deployment.md)

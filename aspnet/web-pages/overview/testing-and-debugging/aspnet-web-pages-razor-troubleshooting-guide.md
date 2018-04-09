@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
-title: "ASP.NET – webové stránky průvodce řešením potíží (Razor) | Microsoft Docs"
+title: ASP.NET – webové stránky průvodce řešením potíží (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tento článek popisuje problémy, které by mohly mít při práci s webových stránek ASP.NET (Razor) a některé navrhovanými řešeními. Verze softwaru ASP.NET Web Pag..."
+description: Tento článek popisuje problémy, které by mohly mít při práci s webových stránek ASP.NET (Razor) a některé navrhovanými řešeními. Verze softwaru ASP.NET Web Pag...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: 2e25e9c7cea937016301e0f11919adb9647ca216
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ec51169ccea0016712de3fdb28a16a174150a8bd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET – webové stránky průvodce řešením potíží (Razor)
 ====================
@@ -144,12 +144,12 @@ Nahraďte příslušnými hodnotami pro `your-SMTP-server-name`a tak dále. Něk
     *Pokus o připojení se nezdařila, protože připojená strana nereagovala správně po určitou dobu nebo navázané připojení se nezdařila, protože připojení hostitele se nepodařilo reagovat*
 
     Tato chyba obvykle znamená, že aplikace se nemůže připojit k serveru SMTP. Zkontrolujte název serveru a číslo portu.
-- *Poštovní schránky k dispozici. Odpověď serveru: 5.1.0 &lt; someuser@invaliddomain &gt; odesílatele odmítl: Neplatný odesílatele domény*
+- <em>Poštovní schránky k dispozici. Odpověď serveru: 5.1.0 &lt; someuser@invaliddomain &gt; odesílatele odmítl: Neplatný odesílatele domény</em>
 
     Tuto zprávu můžete určit, že `From` adresa není správná nebo chybí.
 - *Zadaný řetězec není ve formátu požadované pro e-mailovou adresu.*
 
-    Tato chyba může znamenat, hodnota `To` nebo `From` vlastnosti nejsou rozpoznány jako e-mailové adresy. (ASP.NET nelze zkontrolovat, že e-mailová adresa je platná, pouze to je ve správném formátu, jako je třeba  *name@domain.com* .)
+    Tato chyba může znamenat, hodnota `To` nebo `From` vlastnosti nejsou rozpoznány jako e-mailové adresy. (ASP.NET nelze zkontrolovat, že e-mailová adresa je platná, pouze to je ve správném formátu, jako je třeba *name@domain.com*.)
 
 > [!NOTE]
 > Odeberte kód, který se zobrazí chyba (`@errorMessage`) před publikováním stránky k lokalitě za provozu. Není vhodné tak, aby uživatelé zobrazit chybové zprávy, které jste získali ze serveru.

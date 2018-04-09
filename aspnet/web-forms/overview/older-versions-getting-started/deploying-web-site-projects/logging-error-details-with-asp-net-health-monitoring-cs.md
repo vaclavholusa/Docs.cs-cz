@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
-title: "Podrobnosti o chybě protokolování s ASP.NET stavu monitorování (C#) | Microsoft Docs"
+title: Podrobnosti o chybě protokolování s ASP.NET stavu monitorování (C#) | Microsoft Docs
 author: rick-anderson
-description: "Systém monitorování stavu společnosti Microsoft poskytuje snadný a přizpůsobit způsob do protokolu různé události web, včetně neošetřených výjimek. V tomto kurzu provede p..."
+description: Systém monitorování stavu společnosti Microsoft poskytuje snadný a přizpůsobit způsob do protokolu různé události web, včetně neošetřených výjimek. V tomto kurzu provede p...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5bbba0e4e8660dbc60b9f9ad220c923274144b89
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 370f19b36628a9811a31e263e468453897cb7d92
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>Podrobnosti o chybě protokolování s ASP.NET stavu monitorování (C#)
 ====================
@@ -154,6 +154,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Postupy: Použití sledování stavu technologie ASP.NET](https://msdn.microsoft.com/library/ms998306.aspx)
 - [Stav monitorování technologie ASP.NET](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](processing-unhandled-exceptions-cs.md)
-[další](logging-error-details-with-elmah-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](processing-unhandled-exceptions-cs.md)
+> [další](logging-error-details-with-elmah-cs.md)

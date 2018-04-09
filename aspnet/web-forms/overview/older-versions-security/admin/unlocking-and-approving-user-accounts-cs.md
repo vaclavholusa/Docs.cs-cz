@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
-title: "Odemknutí a schválení uživatelské účty (C#) | Microsoft Docs"
+title: Odemknutí a schválení uživatelské účty (C#) | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz ukazuje, jak vytvořit webovou stránku pro správce ke správě uživatelů uzamčen a stavy, které jsou schváleny. Také jsme uvidí schválení o nové uživatele..."
+description: Tento kurz ukazuje, jak vytvořit webovou stránku pro správce ke správě uživatelů uzamčen a stavy, které jsou schváleny. Také jsme uvidí schválení o nové uživatele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f22a745f42dae66cd64dc38df28c59b910c17070
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8b3d69e96513192bc73a2a6a7cbb4c6e33eb610b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="unlocking-and-approving-user-accounts-c"></a>Odemykání a schvalujícím uživatelské účty (C#)
 ====================
@@ -208,12 +208,12 @@ Radostí programování!
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování...
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](recovering-and-changing-passwords-cs.md)
-[další](building-an-interface-to-select-one-user-account-from-many-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](recovering-and-changing-passwords-cs.md)
+> [další](building-an-interface-to-select-one-user-account-from-many-vb.md)

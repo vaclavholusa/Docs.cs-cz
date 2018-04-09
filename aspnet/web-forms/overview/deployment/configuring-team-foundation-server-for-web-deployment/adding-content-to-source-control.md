@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
-title: "Přidávání obsahu do správy zdrojového kódu | Microsoft Docs"
+title: Přidávání obsahu do správy zdrojového kódu | Microsoft Docs
 author: jrjlee
-description: "Toto téma vysvětluje, jak přidávat obsah do správy zdrojového kódu v Team Foundation Server (TFS) 2010. Popisuje postup přidání řešení a projekty do týmu proje..."
+description: Toto téma vysvětluje, jak přidávat obsah do správy zdrojového kódu v Team Foundation Server (TFS) 2010. Popisuje postup přidání řešení a projekty do týmu proje...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: d46e2697d10ca27f8e08533350a6e7f2354b4a43
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c9c3a506d2745a6793661453a293732429d3e46e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-content-to-source-control"></a>Přidávání obsahu do správy zdrojového kódu
 ====================
@@ -27,7 +27,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma vysvětluje, jak přidávat obsah do správy zdrojového kódu v Team Foundation Server (TFS) 2010. Popisuje postup přidání řešení a projekty do týmového projektu v sadě TFS, a vysvětluje postup přidání externí závislosti, jako je rozhraní nebo sestavení do správy zdrojového kódu.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
 ## <a name="task-overview"></a>Přehled úloh
 
@@ -157,6 +157,6 @@ Dalším tématu [konfigurace serveru TFS sestavení pro nasazení webu](configu
 
 Další informace o práci se správa zdrojového kódu v sadě TFS naleznete v tématu [pomocí verzí](https://msdn.microsoft.com/library/ms181368.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-team-project-in-tfs.md)
-[další](configuring-a-tfs-build-server-for-web-deployment.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-team-project-in-tfs.md)
+> [další](configuring-a-tfs-build-server-for-web-deployment.md)

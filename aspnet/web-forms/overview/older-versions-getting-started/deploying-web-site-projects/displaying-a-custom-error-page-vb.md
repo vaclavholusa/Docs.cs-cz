@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-vb
-title: "Zobrazení vlastní chybovou stránku (VB) | Microsoft Docs"
+title: Zobrazení vlastní chybovou stránku (VB) | Microsoft Docs
 author: rick-anderson
-description: "Co uživatel uvidí když dojde k chybě za běhu ve webové aplikaci ASP.NET? Odpověď závisí na tom webu &lt;customErrors&gt; konfigurace..."
+description: Co uživatel uvidí když dojde k chybě za běhu ve webové aplikaci ASP.NET? Odpověď závisí na tom webu &lt;customErrors&gt; konfigurace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e8a2f88490de08f731f9737d15237ae445c5ec0d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: eda7ceeac174f0d1697cb95d2eab4127f124011e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-custom-error-page-vb"></a>Zobrazení vlastní chybovou stránku (VB)
 ====================
@@ -60,7 +60,7 @@ Všimněte si informace o výjimce uvedené v **obrázek 1**. Zpráva o výjimce
 
 Jiný typ YSOD je YSOD chyba Runtime a zobrazen v **na obrázku 2**. Návštěvník, který došlo k chybě spuštění informuje YSOD chyby za běhu, ale neobsahuje žádné informace o výjimku, která byla vyvolána. (Ji, ale poskytují pokyny o tom, chcete-li zobrazit podrobnosti o chybě změnou `Web.config` souboru, který je součástí díky takové YSOD, neprofesionálně.)
 
-Ve výchozím nastavení, YSOD chyby za běhu, je zobrazena uživatelům, kteří navštíví vzdáleně (prostřednictvím http://www.yoursite.com), jako formu cenných adresu URL v adresním řádku prohlížeče v **na obrázku 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`. Existují dva různé YSOD obrazovky se vývojáři dozvědět podrobnosti o chybě, protože tyto informace by neměly být uváděny na živý web může odhalit, potenciální ohrožení zabezpečení nebo jiných citlivých informací všem uživatelům, kteří navštíví váš lokalita.
+Ve výchozím nastavení, YSOD chyba Runtime se zobrazí uživatelům, kteří navštíví vzdáleně (prostřednictvím http://www.yoursite.com), jak vyjádřených adresu URL v adresním řádku prohlížeče v **na obrázku 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`. Existují dva různé YSOD obrazovky se vývojáři dozvědět podrobnosti o chybě, protože tyto informace by neměly být uváděny na živý web může odhalit, potenciální ohrožení zabezpečení nebo jiných citlivých informací všem uživatelům, kteří navštíví váš lokalita.
 
 > [!NOTE]
 > Pokud postupujete podle a používají DiscountASP.NET jako webového hostitele, můžete si všimnout, že YSOD chyba Runtime nezobrazí při návštěvě webu za provozu. Je to proto DiscountASP.NET má své servery ve výchozím nastavení nakonfigurované zobrazíte YSOD podrobnosti o výjimce. Dobrá zpráva je, že toto výchozí chování můžete přepsat tak, že přidáte `<customErrors>` části k vaší `Web.config` souboru. V části "Konfigurace které stránky se zobrazí chyba" prověří `<customErrors>` části podrobně.
@@ -89,11 +89,11 @@ Které tři možné chybové stránky se zobrazí je založena na dvě proměnn�
 
 [ `<customErrors>` Části](https://msdn.microsoft.com/library/h0hfz6fc.aspx) v `Web.config` má dva atributy, které ovlivňují, jaké chybová stránka se zobrazí: `defaultRedirect` a `mode`. `defaultRedirect` Atribut je volitelný. Pokud je zadán, určuje adresu URL vlastní chybové stránky a určuje, že má být zobrazena vlastní chybovou stránku místo YSOD chyba modulu Runtime. `mode` Atribut je povinný a přijímá jednu ze tří hodnot: `On`, `Off`, nebo `RemoteOnly`. Tyto hodnoty mají následující chování:
 
-- `On`-Určuje, že vlastní chybovou stránku nebo YSOD chyba Runtime se zobrazí všechny návštěvníky, bez ohledu na to, zda jsou místní nebo vzdálené.
-- `Off`-Určuje, že je pro všechny návštěvníky, bez ohledu na to, zda jsou místní nebo vzdálené zobrazí YSOD podrobnosti o výjimce.
-- `RemoteOnly`-Určuje, že vlastní chybovou stránku nebo YSOD chyba Runtime se zobrazí vzdálené návštěvníky při YSOD podrobnosti výjimky se zobrazí místní návštěvníky.
+- `On` -Určuje, že vlastní chybovou stránku nebo YSOD chyba Runtime se zobrazí všechny návštěvníky, bez ohledu na to, zda jsou místní nebo vzdálené.
+- `Off` -Určuje, že je pro všechny návštěvníky, bez ohledu na to, zda jsou místní nebo vzdálené zobrazí YSOD podrobnosti o výjimce.
+- `RemoteOnly` -Určuje, že vlastní chybovou stránku nebo YSOD chyba Runtime se zobrazí vzdálené návštěvníky při YSOD podrobnosti výjimky se zobrazí místní návštěvníky.
 
-Pokud neurčíte jinak, ASP.NET chová, jako měl nastavte atribut režimu na `RemoteOnly` a nebyl zadán `defaultRedirect` hodnotu. Jinými slovy výchozí chování je, že YSOD podrobnosti výjimky se zobrazí místní návštěvníky při vzdálené návštěvníky se zobrazí YSOD chyby za běhu. Toto výchozí chování můžete přepsat tak, že přidáte `<customErrors>` části k vaší webové aplikaci`Web.config file.`
+Pokud neurčíte jinak, ASP.NET chová, jako měl nastavte atribut režimu na `RemoteOnly` a nebyl zadán `defaultRedirect` hodnotu. Jinými slovy výchozí chování je, že YSOD podrobnosti výjimky se zobrazí místní návštěvníky při vzdálené návštěvníky se zobrazí YSOD chyby za běhu. Toto výchozí chování můžete přepsat tak, že přidáte `<customErrors>` části k vaší webové aplikaci `Web.config file.`
 
 ## <a name="using-a-custom-error-page"></a>Pomocí vlastní chybové stránky.
 
@@ -143,7 +143,7 @@ Díky této změně zavedené vždy, když uživatel navštěvující vzdáleně
 > Podívejte se na [404 chybové stránky, další jednou](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/) pokyny k vytváření efektivní 404 chybové stránky.
 
 
-[![](displaying-a-custom-error-page-vb/_static/image19.png)](displaying-a-custom-error-page-vb/_static/image18.png)**Obrázek 7**: vlastní 404 chybovou stránku zobrazí zprávu cílenější než`Oops.aspx`  
+[![](displaying-a-custom-error-page-vb/_static/image19.png)](displaying-a-custom-error-page-vb/_static/image18.png)**Obrázek 7**: vlastní 404 chybovou stránku zobrazí zprávu cílenější než `Oops.aspx`  
  ([Kliknutím zobrazit obrázek v plné velikosti](displaying-a-custom-error-page-vb/_static/image20.png)) 
 
 Vzhledem k tomu, že víte, že `404.aspx` stránky je dosaženo, pouze když uživatel odešle žádost pro stránku, který nebyl nalezen, můžete vylepšit tento vlastní chybovou stránku zahrnout funkce, které pomůžou uživatele adres konkrétního typu chyby. Například můžete vytvořit tabulku databáze, která mapuje známé chybný adresy URL na dobrý adresy URL a pak `404.aspx` vlastní chybovou stránku spuštění dotazu na tabulky a navrhněte stránky uživatel pokouší připojit.
@@ -172,6 +172,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Zpracování a generování výjimek](https://msdn.microsoft.com/library/5b2yeyab.aspx)
 - [Správně pomocí vlastní chybové stránky technologie ASP.NET](http://professionalaspnet.com/archive/2007/09/30/Properly-Using-Custom-Error-Pages-in-ASP.NET.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](strategies-for-database-development-and-deployment-vb.md)
-[další](processing-unhandled-exceptions-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](strategies-for-database-development-and-deployment-vb.md)
+> [další](processing-unhandled-exceptions-vb.md)

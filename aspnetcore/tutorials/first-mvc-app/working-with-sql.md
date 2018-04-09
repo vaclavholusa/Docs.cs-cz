@@ -1,7 +1,7 @@
 ---
-title: "Práce s LocalDB serveru SQL"
+title: Práce s LocalDB serveru SQL v ASP.NET Core
 author: rick-anderson
-description: "Použití SQL serveru LocalDB s jednoduchou aplikaci MVC"
+description: Další informace o použití SQL serveru LocalDB v jednoduchou aplikaci ASP.NET MVC jádra.
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 7b4bb3a36326eca2a0eacaa1d0c9ea995e87f3c4
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 3f69657cb21e163bdf00fb1faea98889046e9b45
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="working-with-sql-server-localdb"></a>Práce s LocalDB serveru SQL
+# <a name="work-with-sql-server-localdb-in-aspnet-core"></a>Práce s LocalDB serveru SQL v ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -69,20 +69,17 @@ if (context.Movie.Any())
 <a name="si"></a>
 ### <a name="add-the-seed-initializer"></a>Přidat inicializátoru počáteční hodnoty
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Přidat inicializátoru počáteční hodnoty do `Main` metoda v *Program.cs* souboru:
 
 [!code-csharp[](start-mvc/sample/MvcMovie/Program.cs?highlight=6,14-32)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Přidejte na konec inicializátoru počáteční hodnoty `Configure` metoda v *Startup.cs* souboru.
 
 [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?highlight=9&name=snippet_seed)]
 
----
-
+* * *
 Testování aplikace
 
 * Odstraňte všechny záznamy v databázi. Můžete provést s odstranit odkazy v prohlížeči nebo z SSOX.
@@ -94,13 +91,13 @@ Testování aplikace
 
     ![Kontextové nabídky](working-with-sql/_static/stopIIS.png)
 
-   * Pokud VS byly spuštěny v režimu bez ladění, stisknutím klávesy F5 spusťte v režimu ladění
-   * Pokud VS byly spuštěny v režimu ladění, zastavení ladicího programu a stisknutím klávesy F5
-   
+    * Pokud VS byly spuštěny v režimu bez ladění, stisknutím klávesy F5 spusťte v režimu ladění
+    * Pokud VS byly spuštěny v režimu ladění, zastavení ladicího programu a stisknutím klávesy F5
+
 Aplikace zobrazuje dosazená data.
 
 ![Aplikace MVC film otevřete v Microsoft Edge znázorňující film data](working-with-sql/_static/m55.png)
 
->[!div class="step-by-step"]
-[Předchozí](adding-model.md)
-[další](controller-methods-views.md)  
+> [!div class="step-by-step"]
+> [Předchozí](adding-model.md)
+> [další](controller-methods-views.md)  

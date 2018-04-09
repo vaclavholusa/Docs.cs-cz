@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
-title: "Představení technologie ASP.NET Web Pages – základy formuláře HTML | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages – základy formuláře HTML | Microsoft Docs
 author: tfitzmac
-description: "Tento kurz ukazuje základy toho, jak vytvořit vstupní formulář a jak se zpracovat vstup uživatele při použití technologie ASP.NET Web Pages (Razor). A teď kterou jste..."
+description: Tento kurz ukazuje základy toho, jak vytvořit vstupní formulář a jak se zpracovat vstup uživatele při použití technologie ASP.NET Web Pages (Razor). A teď kterou jste...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 68056759b2e80230e5fd2c0f9b2d2a89b549cf37
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6f44f74774c2fa6338524987779e15f3940d1830
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>Představení technologie ASP.NET Web Pages – základy formuláře HTML
 ====================
@@ -88,11 +88,11 @@ Když tento kód spustí na stránce, vytvoří jednoduchý formulář, který v
 
 Většina elementy vstupu uživatele jsou HTML `<input>` elementy. Zobrazují se jako `<input type="type" name="name">,` kde *typ* určuje druh uživatele vstupního ovládacího prvku chcete. Tyto prvky jsou běžné těm, které jsou:
 
-- Textové pole:`<input type="text">`
-- Zaškrtněte políčko:`<input type="check">`
-- Přepínač:`<input type="radio">`
-- Tlačítko:`<input type="button">`
-- Tlačítko odešlete:`<input type="submit">`
+- Textové pole: `<input type="text">`
+- Zaškrtněte políčko: `<input type="check">`
+- Přepínač: `<input type="radio">`
+- tlačítko: `<input type="button">`
+- Tlačítko odešlete: `<input type="submit">`
 
 Můžete také `<textarea>` elementu, který chcete vytvořit víceřádkové textové pole a `<select>` elementu, který chcete vytvořit rozevíracím seznamu nebo posuvný seznamu. (Další informace o HTML formuláři elementy najdete v části [formuláře HTML a vstup](http://www.w3schools.com/html/html_forms.asp) na webu W3Schools.)
 
@@ -169,9 +169,9 @@ Tento blok nastaví fázi pro vytvoření dotazu, který používá hledaný ter
 > 
 > `Request` Objekt ve skutečnosti poskytuje několik podmnožin. Příklad:
 > 
-> - `Request.Form`poskytuje hodnoty z elementů uvnitř odeslané `<form>` element, je-li žádost `POST` požadavku.
-> - `Request.QueryString`vám právě hodnot v řetězci dotazu adresu URL. (V adrese URL jako `http://mysite/myapp/page?searchGenre=action&page=2`, `?searchGenre=action&page=2` část adresy URL je řetězec dotazu.)
-> - `Request.Cookies`kolekce umožňuje přístup k soubory cookie, které prohlížeč odeslal.
+> - `Request.Form` poskytuje hodnoty z elementů uvnitř odeslané `<form>` element, je-li žádost `POST` požadavku.
+> - `Request.QueryString` vám právě hodnot v řetězci dotazu adresu URL. (V adrese URL jako `http://mysite/myapp/page?searchGenre=action&page=2`, `?searchGenre=action&page=2` část adresy URL je řetězec dotazu.)
+> - `Request.Cookies` kolekce umožňuje přístup k soubory cookie, které prohlížeč odeslal.
 > 
 > Chcete-li získat hodnotu, která víte, je v odeslané podobě, můžete použít `Request["name"]`. Alternativně můžete použít více konkrétních verzí `Request.Form["name"]` (pro `POST` požadavky) nebo `Request.QueryString["name"]` (pro `GET` požadavky). Samozřejmě *název* je název položky získat.
 > 
@@ -363,6 +363,6 @@ V dalším kurzu vytvoříte stránky, která používá formuláře tak, aby u�
 - [Klauzule WHERE SQL](http://www.w3schools.com/sql/sql_where.asp) na webu W3Schools
 - [Metoda definice](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) článku na webu W3C
 
->[!div class="step-by-step"]
-[Předchozí](displaying-data.md)
-[další](entering-data.md)
+> [!div class="step-by-step"]
+> [Předchozí](displaying-data.md)
+> [další](entering-data.md)

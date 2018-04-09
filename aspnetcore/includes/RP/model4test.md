@@ -4,7 +4,7 @@
 * Spusťte aplikaci a připojit `/Movies` na adresu URL v prohlížeči (`http://localhost:port/movies`).
 * Testovací **vytvořit** odkaz.
 
- ![Vytvoření stránky](../../tutorials/razor-pages/model/_static/conan.png)
+  ![Vytvoření stránky](../../tutorials/razor-pages/model/_static/conan.png)
 
 <a name="scaffold"></a>
 

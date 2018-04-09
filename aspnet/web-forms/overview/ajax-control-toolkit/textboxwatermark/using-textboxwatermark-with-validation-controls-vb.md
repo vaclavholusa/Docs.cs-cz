@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb
-title: "Pomocí ovládacích prvků pro ověřování (VB) TextBoxWatermark | Microsoft Docs"
+title: Pomocí ovládacích prvků pro ověřování (VB) TextBoxWatermark | Microsoft Docs
 author: wenz
-description: "TextBoxWatermark ovládacího prvku Toolkitu AJAX rozšiřuje textové pole tak, aby text se zobrazí v rámci pole. Když uživatel klikne do pole, je možné..."
+description: TextBoxWatermark ovládacího prvku Toolkitu AJAX rozšiřuje textové pole tak, aby text se zobrazí v rámci pole. Když uživatel klikne do pole, je možné...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 09236481b6e51cc22a4034aa22e7c491ce27a510
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0ca1a4af62af1d65525e59d0b7bc47245dd01476
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-textboxwatermark-with-validation-controls-vb"></a>Pomocí TextBoxWatermark ovládací prvky pro ověřování (VB)
 ====================
@@ -56,5 +56,5 @@ Nakonec přidejte některé kódu na straně serveru k vypsání text v poli, po
 
 Validátor complains, že neexistuje žádný text v poli ([Kliknutím zobrazit obrázek v plné velikosti](using-textboxwatermark-with-validation-controls-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](using-textboxwatermark-in-a-formview-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-textboxwatermark-in-a-formview-vb.md)

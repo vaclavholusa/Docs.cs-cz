@@ -1,7 +1,7 @@
 ---
-title: "Práce s SQL Server LocalDB a ASP.NET Core"
+title: Práce s SQL Server LocalDB a ASP.NET Core
 author: rick-anderson
-description: "Vysvětluje práci s SQL Server LocalDB a ASP.NET Core."
+description: Vysvětluje práci s SQL Server LocalDB a ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,13 +9,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 408072fbe83eadb0ae3c35c2789bda8ecaac58c0
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e5fa552f80f7ee0876fe31dd87a1ddbd5fe567dd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="working-with-sql-server-localdb-and-aspnet-core"></a>Práce s SQL Server LocalDB a ASP.NET Core
+# <a name="work-with-sql-server-localdb-and-aspnet-core"></a>Práce s SQL Server LocalDB a ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Audette Jan](https://twitter.com/joeaudette) 
 
@@ -82,8 +82,8 @@ Testování aplikace
 
     ![Kontextové nabídky](sql/_static/stopIIS.png)
 
-   * Pokud VS byly spuštěny v režimu bez ladění, stisknutím klávesy F5 spusťte v režimu ladění.
-   * Pokud VS byly spuštěny v režimu ladění, zastavení ladicího programu a stisknutím klávesy F5.
+    * Pokud VS byly spuštěny v režimu bez ladění, stisknutím klávesy F5 spusťte v režimu ladění.
+    * Pokud VS byly spuštěny v režimu ladění, zastavení ladicího programu a stisknutím klávesy F5.
    
 Aplikace zobrazuje dosazená data:
 
@@ -91,6 +91,6 @@ Aplikace zobrazuje dosazená data:
 
 V dalším kurzu se vyčistit prezentaci dat.
 
->[!div class="step-by-step"]
-[Předchozí: Vygeneroval stránky Razor](xref:tutorials/razor-pages/page)
-[Další: aktualizace stránky](xref:tutorials/razor-pages/da1)
+> [!div class="step-by-step"]
+> [Předchozí: Vygeneroval stránky Razor](xref:tutorials/razor-pages/page)
+> [Další: aktualizace stránky](xref:tutorials/razor-pages/da1)

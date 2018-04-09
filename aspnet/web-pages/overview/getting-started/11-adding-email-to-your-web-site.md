@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/11-adding-email-to-your-web-site
-title: "Odesílání e-mailu z rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs"
+title: Odesílání e-mailu z rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tato kapitola vysvětluje postup odesílání automatizovaných e-mailovou zprávu z webu."
+description: Tato kapitola vysvětluje postup odesílání automatizovaných e-mailovou zprávu z webu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/11-adding-email-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: c5878c3bc468daef050dcebee99f64441066409a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9be242d238c627a9557fe7ff7e596974e5b7d1c8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sending-email-from-an-aspnet-web-pages-razor-site"></a>Odesílání e-mailu z webové stránky ASP.NET s stránky (Razor)
 ====================
@@ -86,23 +86,23 @@ V tomto postupu vytvoříte dvě stránky. Na první stránku má formulář, kt
 
     Upravit následující související nastavení v kódu e-mailu:
 
-    - Nastavit `your-SMTP-host` na název serveru SMTP, který máte přístup.
-    - Nastavit `your-user-name-here` na uživatelské jméno pro svůj účet serveru SMTP.
-    - Nastavit `your-account-password` na heslo pro svůj účet serveru SMTP.
-    - Nastavit `your-email-address-here` vlastní e-mailovou adresu. Toto je e-mailovou adresu, které je zpráva odeslána z. (Někteří poskytovatelé e-mailu Nenechte si můžete nastavit jinou `From` adres a bude používat vaše uživatelské jméno jako `From` adresu.)
+   - Nastavit `your-SMTP-host` na název serveru SMTP, který máte přístup.
+   - Nastavit `your-user-name-here` na uživatelské jméno pro svůj účet serveru SMTP.
+   - Nastavit `your-account-password` na heslo pro svůj účet serveru SMTP.
+   - Nastavit `your-email-address-here` vlastní e-mailovou adresu. Toto je e-mailovou adresu, které je zpráva odeslána z. (Někteří poskytovatelé e-mailu Nenechte si můžete nastavit jinou `From` adres a bude používat vaše uživatelské jméno jako `From` adresu.)
 
-    > [!TIP] 
-    > 
-    > <a id="configuring_email_settings"></a>
-    > ### <a name="configuring-email-settings"></a>Konfigurace nastavení e-mailu
-    > 
-    > Může být složité někdy zkontrolujte, zda že máte správné nastavení pro server SMTP, číslo portu a tak dále. Zde je několik tipů.
-    > 
-    > - Název serveru SMTP je často něco podobného jako `smtp.provider.com` nebo `smtp.provider.net`. Pokud však publikování webu k poskytovateli hostingu, název serveru SMTP v daném okamžiku může být `localhost`. Je to proto, že když jste publikovali a vaše lokalita běží na serveru poskytovatele, e-mailový server může být místní z hlediska vaší aplikace. Tuto změnu v hodnotě názvů serverů může znamenat, že budete muset změnit název serveru SMTP jako součást procesu publikování.
-    > - Číslo portu je obvykle 25. Ale někteří poskytovatelé vyžadovat použití portu 587 nebo některé port.
-    > - Ujistěte se, že používáte správné přihlašovací údaje. Pokud váš web jste publikovali do poskytovatele hostitelských služeb, použijte přihlašovací údaje, které zprostředkovatel má konkrétně označil jsou e-mailu. To může být liší od přihlašovacích údajů, které můžete použít k publikování.
-    > - Někdy vůbec nepotřebujete přihlašovací údaje. Pokud odesíláte e-mailu pomocí osobní poskytovatel internetových služeb, může poskytovatel e-mailu již znáte svoje přihlašovací údaje. Po publikování, možná budete muset použít jiné pověření než při testování v místním počítači.
-    > - Pokud váš poskytovatel e-mailu používá šifrování, budete muset nastavit `WebMail.EnableSsl` k `true`.
+     > [!TIP] 
+     > 
+     > <a id="configuring_email_settings"></a>
+     > ### <a name="configuring-email-settings"></a>Konfigurace nastavení e-mailu
+     > 
+     > Může být složité někdy zkontrolujte, zda že máte správné nastavení pro server SMTP, číslo portu a tak dále. Zde je několik tipů.
+     > 
+     > - Název serveru SMTP je často něco podobného jako `smtp.provider.com` nebo `smtp.provider.net`. Pokud však publikování webu k poskytovateli hostingu, název serveru SMTP v daném okamžiku může být `localhost`. Je to proto, že když jste publikovali a vaše lokalita běží na serveru poskytovatele, e-mailový server může být místní z hlediska vaší aplikace. Tuto změnu v hodnotě názvů serverů může znamenat, že budete muset změnit název serveru SMTP jako součást procesu publikování.
+     > - Číslo portu je obvykle 25. Ale někteří poskytovatelé vyžadovat použití portu 587 nebo některé port.
+     > - Ujistěte se, že používáte správné přihlašovací údaje. Pokud váš web jste publikovali do poskytovatele hostitelských služeb, použijte přihlašovací údaje, které zprostředkovatel má konkrétně označil jsou e-mailu. To může být liší od přihlašovacích údajů, které můžete použít k publikování.
+     > - Někdy vůbec nepotřebujete přihlašovací údaje. Pokud odesíláte e-mailu pomocí osobní poskytovatel internetových služeb, může poskytovatel e-mailu již znáte svoje přihlašovací údaje. Po publikování, možná budete muset použít jiné pověření než při testování v místním počítači.
+     > - Pokud váš poskytovatel e-mailu používá šifrování, budete muset nastavit `WebMail.EnableSsl` k `true`.
 4. Spustit *EmailRequest.cshtml* stránku v prohlížeči. (Ujistěte se, že je vybraný stránky v **soubory** pracovního prostoru, než ji spustit.)
 5. Zadejte název a popis problému a poté klikněte **odeslání** tlačítko. Budete přesměrováni na *ProcessRequest.cshtml* stránky, která potvrdí zprávu a které vám pošle e-mailovou zprávu. 
 

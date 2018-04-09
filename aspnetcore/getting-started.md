@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s ASP.NET Core"
+title: Začínáme s ASP.NET Core
 author: rick-anderson
-description: "Rychlý kurz, který vytvoří a spustí jednoduchou aplikaci Hello World pomocí ASP.NET Core."
+description: Rychlý kurz, který vytvoří a spustí jednoduchou aplikaci Hello World pomocí ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/18/2017
@@ -9,18 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: getting-started
-ms.openlocfilehash: f772bd922d9e474d5ad99c08af19c90fe06027af
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c2f18c69901a5a6503314d508a776e6985872681
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="get-started-with-aspnet-core"></a>Začínáme s ASP.NET Core
 
 > [!NOTE]
-> Tyto pokyny jsou určeny nejnovější verzi ASP.NET Core. Hledáte začít pracovat se starší verzí? V tématu [1.1 verzi v tomto kurzu](xref:getting-started-1.1).
+> Tyto pokyny jsou určeny nejnovější verzi ASP.NET Core. V tématu [Začínáme s ASP.NET Core 1.1](xref:getting-started-1.1) 1.1 verze tohoto dokumentu.
 
-1. Nainstalujte [.NET Core](https://www.microsoft.com/net/core/).
+1. Nainstalujte [!INCLUDE [](~/includes/net-core-sdk-download-link.md)].
 
 2. Vytvoření nového projektu .NET Core.
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 03/15/2018
     dotnet new razor -o aspnetcoreapp
     ```
     
-4. Spusťte aplikaci.
+3. Spusťte aplikaci.
 
     Ke spuštění aplikace použijte následující příkazy:
 
@@ -39,13 +39,13 @@ ms.lasthandoff: 03/15/2018
     dotnet run
     ```
 
-5. Přejděte do [http://localhost: 5000](http://localhost:5000)
+4. Přejděte na [http://localhost:5000](http://localhost:5000)
 
-6. Otevřete *Pages/About.cshtml* a upravte stránku a zobrazí se zpráva "Hello, world! Je čas na serveru @DateTime.Now ":
+5. Otevřete <em>Pages/About.cshtml</em> a upravte stránku a zobrazí se zpráva "Hello, world! Je čas na serveru @DateTime.Now ":
 
     [!code-html[](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 
-7. Přejděte do [http://localhost: 5000/o](http://localhost:5000/About) a ověřit změny.
+6. Přejděte do [ http://localhost:5000/About ](http://localhost:5000/About) a ověřit změny.
 
 ### <a name="next-steps"></a>Další kroky
 

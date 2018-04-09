@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s ASP.NET MVC jádra a sady Visual Studio"
+title: Začínáme s ASP.NET MVC jádra a sady Visual Studio
 author: rick-anderson
-description: "Zjistěte, jak začít pracovat s ASP.NET MVC jádra a sady Visual Studio."
+description: Zjistěte, jak začít pracovat s ASP.NET MVC jádra a sady Visual Studio.
 manager: wpickett
 ms.author: riande
 ms.date: 10/07/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 609cd25a3e249bb6e2498325ef286c937c64a206
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5302cd5e8eebb3601aa64ac946c356b54521b198
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>Začínáme s ASP.NET MVC jádra a sady Visual Studio
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](../../includes/razor.md)]
 
 Existují 3 verze tohoto kurzu:
 
@@ -29,12 +29,10 @@ Existují 3 verze tohoto kurzu:
 
 ## <a name="install-visual-studio-and-net-core"></a>Instalace sady Visual Studio a .NET Core
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-[!INCLUDE[install 2.0](../../includes/install2.0.md)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Nainstalujte Visual Studio Community 2017. Vyberte stahování komunity. Tento krok přeskočte, pokud máte Visual Studio 2017 nainstalována.
 
 * [Instalační program Visual Studio 2017 domovské stránky](https://www.visualstudio.com/)
@@ -48,8 +46,7 @@ Spusťte instalační program a vyberte následující úlohy:
 
 ![* *.NET základní cross-cross-platfrom vývoj ** (v části ** ostatní modulové **)](start-mvc/_static/x_plat_wl.png)
 
----
-
+* * *
 ## <a name="create-a-web-app"></a>Vytvoření webové aplikace
 
 Ze sady Visual Studio, vyberte **soubor > Nový > projekt**.
@@ -113,5 +110,5 @@ Pokud byla spuštěna v režimu ladění, klepněte na **Shift + F5** Zastavit l
 
 V další části tohoto kurzu jsme vám další informace o MVC a zahájit zápis nějaký kód.
 
->[!div class="step-by-step"]
-[Next](adding-controller.md)  
+> [!div class="step-by-step"]
+> [Next](adding-controller.md)  

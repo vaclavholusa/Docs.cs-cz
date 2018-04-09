@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/13-adding-social-networking-to-your-web-site
-title: "Přidání sociálních sítí k rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs"
+title: Přidání sociálních sítí k rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tato kapitola vysvětluje, jak integrovat svůj web se služby sociálních sítí. V této kapitole se dozvíte, jak uživatelům záložku/propojení webu umožňuje..."
+description: Tato kapitola vysvětluje, jak integrovat svůj web se služby sociálních sítí. V této kapitole se dozvíte, jak uživatelům záložku/propojení webu umožňuje...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/13-adding-social-networking-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: 2c43fa7d286e43f3a4581662ce421c7435e1871f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2d1f0074edf473c4be06adaa32598dd828a7552c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-social-networking-to-aspnet-web-pages-razor-sites"></a>Přidání sociální sítě na webové stránky ASP.NET lokalit (Razor)
 ====================
@@ -57,10 +57,10 @@ Chcete-li zobrazit tyto glyfů, přidejte `LinkSharecode` pomocná na stránku. 
     [!code-cshtml[Main](13-adding-social-networking-to-your-web-site/samples/sample1.cshtml)]
 
     V tomto příkladu když `LinkShare` spustí pomocné rutiny, název stránky se předá jako parametr, který pak předá název stránky na web sociálních sítí. Však může předávat v libovolný řetězec, který má být. Tento příklad také určuje, které weby sociálních sítí pro zahrnutí do seznamu. Můžete určit weby sociálních sítí, které jsou relevantní pro váš web.
-- Spustit *ListLinkShare.cshtml* stránku v prohlížeči. (Ujistěte se, že je vybraný stránky v **soubory** pracovního prostoru, než ji spustit.)
-- Klikněte na tlačítko glyf jeden z webů, které jste si pro přihlášení. Odkaz vás zavede na stránku na webu vybrané sociálních sítí, kde můžete sdílet odkaz. Například pokud kliknete na odkaz Reddit, jste jste udělali na `submit to reddit` na Reddit webu.
+2. Spustit *ListLinkShare.cshtml* stránku v prohlížeči. (Ujistěte se, že je vybraný stránky v **soubory** pracovního prostoru, než ji spustit.)
+3. Klikněte na tlačítko glyf jeden z webů, které jste si pro přihlášení. Odkaz vás zavede na stránku na webu vybrané sociálních sítí, kde můžete sdílet odkaz. Například pokud kliknete na odkaz Reddit, jste jste udělali na `submit to reddit` na Reddit webu.
 
-    ![Obrázek 2](13-adding-social-networking-to-your-web-site/_static/image2.jpg)
+     ![Obrázek 2](13-adding-social-networking-to-your-web-site/_static/image2.jpg)
 
 <a id="Adding_a_Twitter_Feed"></a>
 ## <a name="adding-a-twitter-feed"></a>Přidání Twitter kanálu
@@ -81,7 +81,7 @@ Následující zvýrazněný kód je kód, který byl získán z tlačítko jako
 <a id="Rendering_a_Gravatar_Image"></a>
 ## <a name="rendering-a-gravatar-image"></a>Vykreslování obrázku Gravatar
 
-A *Gravatar* ( &quot;globálně rozpoznaný miniatury&quot;) je image, které lze použít na více webech, jako miniatury &#8212; který je obrázek, který představuje můžete. Například můžete Gravatar identifikaci osoby v příspěvek ve fóru v blogu komentář a tak dále. (Můžete zaregistrovat vlastní Gravatar na webu Gravatar na [http://www.gravatar.com/](http://www.gravatar.com/).) Pokud chcete pro zobrazení obrázků vedle jména nebo e-mailové adresy uživatelů na vašem webu, můžete použít Gravatar pomocné rutiny.
+A *Gravatar* ( &quot;globálně rozpoznaný miniatury&quot;) je obrázek, který lze použít na více webech jako miniatury &#8212; tedy obrázek, který představuje můžete. Například můžete Gravatar identifikaci osoby v příspěvek ve fóru v blogu komentář a tak dále. (Můžete zaregistrovat vlastní Gravatar na webu Gravatar na [ http://www.gravatar.com/ ](http://www.gravatar.com/).) Pokud chcete pro zobrazení obrázků vedle jména nebo e-mailové adresy uživatelů na vašem webu, můžete použít Gravatar pomocné rutiny.
 
 V tomto příkladu používáte jeden Gravatar, který představuje sami. Další způsob použití Gravatar je umožnit osoby, zadejte jeho adresu Gravatar po jejich registraci na váš web. (Můžete naučit umožníte uživatelům zaregistrovat v [členství na web webových stránek ASP.NET a přidání zabezpečení](https://go.microsoft.com/fwlink/?LinkId=202904).) Potom vždy, když zobrazíte informace pro tohoto uživatele, můžete přidat Gravatar právě kde zobrazit uživatelské jméno.
 

@@ -1,7 +1,7 @@
 ---
-title: "Vkládání závislostí v ASP.NET Core"
+title: Vkládání závislostí v ASP.NET Core
 author: ardalis
-description: "Zjistěte, jak ASP.NET Core implementuje vkládání závislostí a způsobu jeho použití."
+description: Zjistěte, jak ASP.NET Core implementuje vkládání závislostí a způsobu jeho použití.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: df9ae2b784e8b7b21a471f465998f09bbacbef75
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 0cab1f8b16979f55d550115920807b192d3a5c56
+ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
@@ -47,7 +47,6 @@ ASP.NET Core obsahuje jednoduché předdefinované kontejner (reprezentována `I
 Konstruktor vkládání vyžaduje, aby v konstruktoru *veřejné*. Jinak vyvolá výjimku aplikace `InvalidOperationException`:
 
 > Nepodařilo se najít vhodný konstruktor pro typ 'YourType'. Zkontrolujte typ je konkrétní a služby jsou registrované pro všechny parametry veřejný konstruktor.
-
 
 Konstruktor vkládání vyžaduje, že pouze jeden použít konstruktor neexistuje. Konstruktor přetížení jsou podporované, ale může existovat jenom jeden přetížení, jejichž argumenty lze všechny splnit vkládání závislostí. Pokud existuje více než jeden, vyvolá výjimku aplikace `InvalidOperationException`:
 
@@ -98,7 +97,7 @@ Dole je příklad toho, jak přidat další služby ke kontejneru s počtem roz�
 
 Funkce a middleware technologii ASP.NET, jako je například MVC, postupujte podle konvence použití jedné přidat*ServiceName* metody rozšíření pro všechny služby, tato funkce vyžaduje registraci.
 
->[!TIP]
+> [!TIP]
 > Můžete požádat o určité zadaný framework služby v rámci `Startup` najdete v části metody prostřednictvím jejich seznamy parametrů - [spuštění aplikace](startup.md) další podrobnosti.
 
 ## <a name="registering-services"></a>Registrace služby
@@ -138,7 +137,7 @@ V takovém případě obě `ICharacterRepository` a naopak `ApplicationDbContext
 
 Kontexty Entity Framework musí být přidaní do ke kontejneru služby pomocí `Scoped` životního cyklu. To se stará automaticky Pokud používáte metody helper, jak je uvedeno výše. Úložiště, které bude nutné používat rozhraní Entity Framework by měli používat stejnou dobu životnosti.
 
->[!WARNING]
+> [!WARNING]
 > Je řešení hlavní nebezpečí k věnujte pozornost `Scoped` služby z typu singleton. Je pravděpodobné, v případě, že služby budou mít nesprávný stav při zpracování následných žádostí.
 
 Služby, které mají závislosti na jejich měli zaregistrovat v kontejneru. Pokud služby konstruktor vyžaduje primitivní, například `string`, to může vložit pomocí [konfigurace](xref:fundamentals/configuration/index) a [možnosti vzor](xref:fundamentals/configuration/options).
@@ -155,7 +154,10 @@ Přechodný životního cyklu služeb vytvářejí pokaždé, když, kterou jste
 
 Vymezená životního cyklu služeb se vytvoří jednou na základě požadavku.
 
-singleton
+> [!WARNING]
+> Pokud používáte vymezené služby v middleware, Vložit službu do `Invoke` nebo `InvokeAsync` metoda. Prostřednictvím vkládání konstruktor není vložit, protože vynutí služba se bude chovat, jako je typu singleton.
+
+**singleton**
 
 Singleton životního cyklu služeb se vytvoří při prvním jste požadovali (nebo když `ConfigureServices` se spustí, pokud existuje instance zadáte) a potom budou všechny následné žádosti o použít stejnou instanci. Pokud vaše aplikace vyžaduje chování typu singleton, povolení kontejneru služby pro správu životního cyklu služby se doporučuje namísto singleton vzor návrhu implementace a správa životního cyklu vaší objekt ve třídě sami.
 
@@ -193,6 +195,35 @@ Sledovat, které `OperationId` hodnoty se liší v rámci požadavku a mezi pož
 
 * *Singleton* objekty jsou stejné pro všechny objekty a všechny žádosti o (bez ohledu na to, jestli je součástí instance `ConfigureServices`)
 
+## <a name="resolve-a-scoped-service-within-the-application-scope"></a>Překlad vymezené služby v rámci oboru aplikace
+
+Vytvoření [IServiceScope](/dotnet/api/microsoft.extensions.dependencyinjection.iservicescope) s [IServiceScopeFactory.CreateScope](/dotnet/api/microsoft.extensions.dependencyinjection.iservicescopefactory.createscope) překlad vymezené služby v rámci oboru aplikace. Tento přístup je užitečný pro přístup k oboru služby při spuštění ke spuštění úlohy inicializace. Následující příklad ukazuje, jak získat kontext pro `MyScopedService` v `Program.Main`:
+
+```csharp
+public static void Main(string[] args)
+{
+    var host = BuildWebHost(args);
+
+    using (var serviceScope = host.Services.CreateScope())
+    {
+        var services = serviceScope.ServiceProvider;
+
+        try
+        {
+            var serviceContext = services.GetRequiredService<MyScopedService>();
+            // Use the context here
+        }
+        catch (Exception ex)
+        {
+            var logger = services.GetRequiredService<ILogger<Program>>();
+            logger.LogError(ex, "An error occurred.");
+        }
+    }
+
+    host.Run();
+}
+```
+
 ## <a name="scope-validation"></a>Ověření oboru
 
 Když aplikace běží ve vývojovém prostředí na technologii ASP.NET Core 2.0 nebo novější, výchozím zprostředkovatelem služeb provádí kontroly ověřit, jestli:
@@ -214,7 +245,7 @@ Další informace najdete v tématu [obor ověření v tomto tématu hostitelsk�
 
 Žádost o služby představují služby nakonfigurovat a požadavků v rámci vaší aplikace. Pokud vašich objektů určení závislostí, tyto jsou splněna typy najít v `RequestServices`, nikoli `ApplicationServices`.
 
-Obecně byste neměli používat tyto vlastnosti přímo, upřednostňují místo toho k vyžádání typy tříd, které vyžadujete prostřednictvím konstruktoru třídy a, takže rozhraní vložit tyto závislosti. Dostaneme třídy, které se snadněji testování (viz [testování](../testing/index.md)) a jsou více volně vázány.
+Obecně byste neměli používat tyto vlastnosti přímo, upřednostňují místo toho k vyžádání typy tříd, které vyžadujete prostřednictvím konstruktoru třídy a, takže rozhraní vložit tyto závislosti. Dostaneme třídy, které se snadněji testování (najdete v části [Test a ladění](../testing/index.md)) a jsou více volně vázány.
 
 > [!NOTE]
 > Dáváte přednost požaduje závislosti jako parametry konstruktor přístup `RequestServices` kolekce.
@@ -328,7 +359,7 @@ Pamatujte si, že je vkládání závislostí *alternativní* na static, globál
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Spuštění aplikace](xref:fundamentals/startup)
-* [Testování](xref:testing/index)
+* [Testování a ladění](xref:testing/index)
 * [Aktivace na základě Factory middlewaru](xref:fundamentals/middleware/extensibility)
 * [Psaní kódu vyčištění v ASP.NET Core pomocí vkládání závislostí (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Návrh aplikace spravované kontejneru, Prelude: Kde podporuje, patří kontejneru?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)

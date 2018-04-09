@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s ASP.NET MVC jádra a sady Visual Studio pro Mac"
+title: Začínáme s ASP.NET MVC jádra a sady Visual Studio pro Mac
 author: rick-anderson
-description: "Zjistěte, jak začít pracovat s ASP.NET MVC jádra a sady Visual Studio"
+description: Zjistěte, jak začít pracovat s ASP.NET MVC jádra a sady Visual Studio
 manager: wpickett
 ms.author: riande
 ms.date: 8/23/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/first-mvc-app-mac/start-mvc
-ms.openlocfilehash: 7d2729969a65cf2050d0eac390169898a4102de1
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: ffa620f07251c52c785672d8fbeefacac31ed4c1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Začínáme s ASP.NET MVC jádra a sady Visual Studio pro Mac
 
@@ -21,7 +21,7 @@ podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V tomto kurzu se dozvíte, jaké základní informace o vytváření ASP.NET MVC základní webové aplikace pomocí [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/). 
 
-[!INCLUDE[consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](../../includes/razor.md)]
 
 Existují 3 verze tohoto kurzu:
 
@@ -31,12 +31,7 @@ Existují 3 verze tohoto kurzu:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Tento kurz vyžaduje [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější.
-
-Nainstalujte následující:
-
-- [.NET core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější
-- [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
+[!INCLUDE [](~/includes/net-core-prereqs-macos.md)]
 
 ## <a name="create-a-web-app"></a>Vytvoření webové aplikace
 
@@ -67,5 +62,5 @@ Výchozí šablony vám **domácí o** a **kontaktujte** odkazy. Na obrázku pro
 
 V další části tohoto kurzu Další informace o MVC a zahájit zápis nějaký kód.
 
->[!div class="step-by-step"]
-[Next](adding-controller.md)  
+> [!div class="step-by-step"]
+> [Next](adding-controller.md)  

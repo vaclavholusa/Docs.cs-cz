@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
-title: "Zadáte název, značky Meta a dalších hlavičky HTML stránka předlohy (VB) | Microsoft Docs"
+title: Zadáte název, značky Meta a dalších hlavičky HTML stránka předlohy (VB) | Microsoft Docs
 author: rick-anderson
-description: "Vypadá na různých techniky pro definování roztříděné &lt;head&gt; prvky na hlavní stránce ze stránky obsahu."
+description: Vypadá na různých techniky pro definování roztříděné &lt;head&gt; prvky na hlavní stránce ze stránky obsahu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6d004a0ee0b46e2984aec8d0a99835dbf414ed9d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b8bf9d32eee3e35ffc84521f7f82f7beecc99a0c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb"></a>Zadáte název, značky Meta a dalších hlavičky HTML stránka předlohy (VB)
 ====================
@@ -130,7 +130,7 @@ Naše první úloha je pro vytvoření třídy základní stránky, která je t�
 
 ![Přidat složku App_Code a třídy s názvem BasePage](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image4.png)
 
-**Obrázek 04**: Přidejte `App_Code` složku a třídy s názvem`BasePage`
+**Obrázek 04**: Přidejte `App_Code` složku a třídy s názvem `BasePage`
 
 
 > [!NOTE]
@@ -279,7 +279,7 @@ Aktualizace `BasePage` třídy `OnLoadComplete` tak, aby zahrnoval následujíc�
 
 Jako předtím `OnLoadComplete` metoda spustí tak, že určíte, zda byla explicitně nastavit nadpis stránky. Pokud `Page.Title` je `Nothing`, prázdný řetězec, nebo je přiřadit hodnotu "Bez názvu stránka", pak kód automaticky přiřadí hodnota `Page.Title`.
 
-K určení názvu používat, kód spustí odkazem [ `SiteMap` třída](https://msdn.microsoft.com/library/system.web.sitemap.aspx)na [ `CurrentNode` vlastnost](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx). `CurrentNode`Vrátí [ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) instance na mapě webu, která odpovídá aktuálně požadované stránky. Za předpokladu, že se aktuálně požadovaná stránka nachází v rámci mapy webu `SiteMapNode`na `Title` vlastnost je přiřazená k titulu stránky. Pokud aktuálně požadované stránky není v mapě webu `CurrentNode` vrátí `Nothing` a název souboru k požadované stránce slouží jako název (jako tomu bylo v kroku 2).
+K určení názvu používat, kód spustí odkazem [ `SiteMap` třída](https://msdn.microsoft.com/library/system.web.sitemap.aspx)na [ `CurrentNode` vlastnost](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx). `CurrentNode` Vrátí [ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) instance na mapě webu, která odpovídá aktuálně požadované stránky. Za předpokladu, že se aktuálně požadovaná stránka nachází v rámci mapy webu `SiteMapNode`na `Title` vlastnost je přiřazená k titulu stránky. Pokud aktuálně požadované stránky není v mapě webu `CurrentNode` vrátí `Nothing` a název souboru k požadované stránce slouží jako název (jako tomu bylo v kroku 2).
 
 Obrázek 12 znázorňuje `MultipleContentPlaceHolders.aspx` v případě, že zobrazit pomocí prohlížeče. Vzhledem k tomu, že název této stránky není explicitně nastavena, bude místo něj použita jeho odpovídající uzel mapy webu na název.
 
@@ -345,12 +345,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Zack Petr a Suchi Banerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Předchozí](multiple-contentplaceholders-and-default-content-vb.md)
-[další](urls-in-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](multiple-contentplaceholders-and-default-content-vb.md)
+> [další](urls-in-master-pages-vb.md)

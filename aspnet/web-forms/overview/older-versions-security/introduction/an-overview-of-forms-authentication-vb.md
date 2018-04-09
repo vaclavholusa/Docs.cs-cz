@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
-title: "Přehled ověřování pomocí formulářů (VB) | Microsoft Docs"
+title: Přehled ověřování pomocí formulářů (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme se změní z pouhé diskusi k implementaci; Konkrétně se podíváme na implementace ověřování pomocí formulářů. W webové aplikace..."
+description: V tomto kurzu jsme se změní z pouhé diskusi k implementaci; Konkrétně se podíváme na implementace ověřování pomocí formulářů. W webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 90bcff91d0642e6af66f43fd807b253cc516d277
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6482b10a470b50a1fc6f163ee2d59682e83f5a2b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>Přehled ověřování pomocí formulářů (VB)
 ====================
@@ -103,7 +103,7 @@ Do lokality v kořenovém adresáři s názvem Site.master přidáte další, no
 **Obrázek 03**: Přidání webu hlavní stránku s názvem Site.master ([Kliknutím zobrazit obrázek v plné velikosti](an-overview-of-forms-authentication-vb/_static/image9.png))
 
 
-Zadejte sem rozložení stránky na webu na hlavní stránce. Můžete použít zobrazení návrhu a přidat libovolnou rozložení a webové kontroly je nutné, nebo můžete ručně přidat kód ručně v zobrazení zdroje. I strukturovaná rozložení Moje hlavní stránky tak, aby napodoboval rozložení použít v mé  *[práci s daty v technologii ASP.NET 2.0](../../data-access/index.md)*  kurz řady (viz obrázek 4). Hlavní stránka používá [kaskádových stylů](http://www.w3schools.com/css/default.asp) pro umístění a stylů CSS nastavení definované v souboru Style.css (která je obsažena v tomto kurzu přidružené ke stažení). Při nelze zjistit z značek vidíte níže, jsou definovaná pravidla šablon stylů CSS tak, aby navigaci &lt;div&gt;na obsah je absolutně nastavený tak, aby se zobrazí na levé straně a má pevnou šířku 200 pixelů.
+Zadejte sem rozložení stránky na webu na hlavní stránce. Můžete použít zobrazení návrhu a přidat libovolnou rozložení a webové kontroly je nutné, nebo můžete ručně přidat kód ručně v zobrazení zdroje. I strukturovaná rozložení Moje hlavní stránky tak, aby napodoboval rozložení použít v mé *[práci s daty v technologii ASP.NET 2.0](../../data-access/index.md)* kurz řady (viz obrázek 4). Hlavní stránka používá [kaskádových stylů](http://www.w3schools.com/css/default.asp) pro umístění a stylů CSS nastavení definované v souboru Style.css (která je obsažena v tomto kurzu přidružené ke stažení). Při nelze zjistit z značek vidíte níže, jsou definovaná pravidla šablon stylů CSS tak, aby navigaci &lt;div&gt;na obsah je absolutně nastavený tak, aby se zobrazí na levé straně a má pevnou šířku 200 pixelů.
 
 [!code-aspx[Main](an-overview-of-forms-authentication-vb/samples/sample1.aspx)]
 
@@ -221,7 +221,7 @@ Nyní potřebujeme implementovat úloha 2 kliknutím na tlačítko obslužná ru
 
 Před aplikaci ASP.NET 2.0 se vývojáři zodpovědná za implementace i vlastní úložiště uživatele a psaní kódu k ověření zadané přihlašovací údaje pro Windows store. Většina vývojářů by implementovat úložiště uživatele v databázi, vytvoření tabulky s názvem uživatelé s sloupce jako uživatelské jméno, heslo, e-mailu, LastLoginDate a tak dále. Tuto tabulku, pak by mít jeden záznam na uživatelský účet. Ověření zadané přihlašovací údaje uživatele by zahrnovat dotaz na databázi k vyhledání uživatelského jména a pak zajistit, aby odpovídaly hesla v databázi zadané heslo.
 
-S prostředím ASP.NET 2.0 vývojáři měli jednoho z poskytovatelů členství ke správě používat úložiště uživatele. Tento kurz série použijeme SqlMembershipProvider, která používá databázi systému SQL Server pro úložiště uživatelů. Při použití SqlMembershipProvider musíme implementovat schéma konkrétní databáze, které obsahuje tabulky, zobrazení a uložených procedur očekává zprostředkovatelem. Vyzkoušíme jak implementovat v tomto schématu  *[vytváření schématu členství v systému SQL Server](../membership/creating-the-membership-schema-in-sql-server-vb.md)*  kurzu. S zprostředkovatel členství v místní ověřování přihlašovacích údajů uživatele je jednoduché, volání [třída členství](https://msdn.microsoft.com/library/system.web.security.membership.aspx)na [ValidateUser (*uživatelské jméno*, *heslo*) Metoda](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx), která vrací logickou hodnotu, která určuje zda platnost *uživatelské jméno* a *heslo* kombinaci. Zjistíte, jak jsme nebyla ještě implementována úložiště uživatele SqlMembershipProvider, nemůžeme použít metoda ValidateUser třída členství v tuto chvíli.
+S prostředím ASP.NET 2.0 vývojáři měli jednoho z poskytovatelů členství ke správě používat úložiště uživatele. Tento kurz série použijeme SqlMembershipProvider, která používá databázi systému SQL Server pro úložiště uživatelů. Při použití SqlMembershipProvider musíme implementovat schéma konkrétní databáze, které obsahuje tabulky, zobrazení a uložených procedur očekává zprostředkovatelem. Vyzkoušíme jak implementovat v tomto schématu *[vytváření schématu členství v systému SQL Server](../membership/creating-the-membership-schema-in-sql-server-vb.md)* kurzu. S zprostředkovatel členství v místní ověřování přihlašovacích údajů uživatele je jednoduché, volání [třída členství](https://msdn.microsoft.com/library/system.web.security.membership.aspx)na [ValidateUser (*uživatelské jméno*, *heslo*) Metoda](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx), která vrací logickou hodnotu, která určuje zda platnost *uživatelské jméno* a *heslo* kombinaci. Zjistíte, jak jsme nebyla ještě implementována úložiště uživatele SqlMembershipProvider, nemůžeme použít metoda ValidateUser třída členství v tuto chvíli.
 
 Místo čekat na sestavení vlastní vlastní uživatelé databázové tabulky (to by být zastaralé, jakmile implementovali jsme SqlMembershipProvider), můžeme místo pevně stránky platné přihlašovací údaje v rámci přihlášení sám sebe. V LoginButton klikněte na obslužnou rutinu události, přidejte následující kód:
 
@@ -241,7 +241,7 @@ Za předpokladu, že zadané přihlašovací údaje jsou platné, je potřeba vy
 
 - [GetAuthCookie (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.getauthcookie.aspx) -vytvoří ověřovací lístek pro zadaný název *uživatelské jméno*. Dále tato metoda vytvoří a vrátí objekt HttpCookie, který obsahuje obsah lístek ověřování. Pokud *persistCookie* má hodnotu True, je vytvoření trvalého souboru cookie.
 - [SetAuthCookie (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) -volá GetAuthCookie (*uživatelské jméno*, *persistCookie*) Metoda pro generování souboru cookie ověřování pomocí formulářů. Tato metoda pak přidá soubor cookie vrácený GetAuthCookie ke kolekci souborů cookie (za předpokladu, že ověřování pomocí formulářů na základě souborů cookie se použít; jinak, tato metoda volá interní třída, která zpracovává logiku bez souborů cookie lístku).
-- [RedirectFromLoginPage (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -tato metoda volá SetAuthCookie (*uživatelské jméno*, *persistCookie* ) a pak přesměruje uživatele na příslušnou stránku.
+- [RedirectFromLoginPage (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -tato metoda volá SetAuthCookie (*uživatelské jméno*, *persistCookie*) a pak přesměruje uživatele na příslušnou stránku.
 
 GetAuthCookie je užitečné, když budete muset upravit lístek ověřování před zápisem soubor cookie ke kolekci souborů cookie. SetAuthCookie je užitečné, pokud chcete vytvořit lístek pro ověřování formuláře a přidat jej do kolekce souborů cookie, ale nechcete přesměruje uživatele na příslušnou stránku. Možná budete chtít zachovat jejich na přihlašovací stránku nebo poslat některé alternativní stránku.
 
@@ -470,12 +470,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu zahrnují Alicja Maziarz, Jan Suru a Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com).
 
->[!div class="step-by-step"]
-[Předchozí](security-basics-and-asp-net-support-vb.md)
-[další](forms-authentication-configuration-and-advanced-topics-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](security-basics-and-asp-net-support-vb.md)
+> [další](forms-authentication-configuration-and-advanced-topics-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
-title: "Představení technologie ASP.NET Web Pages – vytváření konzistentního rozložení | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages – vytváření konzistentního rozložení | Microsoft Docs
 author: tfitzmac
-description: "V tomto kurzu se dozvíte, jak používat rozložení k vytvoření konzistentního vzhledu stránky na webu, který používá rozhraní ASP.NET Web Pages. Předpokládá, že jste dokončili..."
+description: V tomto kurzu se dozvíte, jak používat rozložení k vytvoření konzistentního vzhledu stránky na webu, který používá rozhraní ASP.NET Web Pages. Předpokládá, že jste dokončili...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: 692adc5a03892f27c91fe8868c8eab6ce08f49cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c2d5c4d8ed8a71979c16d484ab90d283a45de537
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>Představení technologie ASP.NET Web Pages – vytváření konzistentního rozložení
 ====================
@@ -149,7 +149,7 @@ Otevřete *Movies.cshtml* stránku znovu. V kódu v horní části přidejte ná
 
 `Page` Objekt je k dispozici na všech *.cshtml* stránky a je pro tento účel, a to sdílení informací mezi stránky a jeho rozložení.
 
-Otevřete*\_Layout.cshtml* stránky. Změna `<title>` element tak, aby vypadá jako tento kód:
+Otevřete<em>\_Layout.cshtml</em> stránky. Změna `<title>` element tak, aby vypadá jako tento kód:
 
 [!code-html[Main](layouts/samples/sample9.html)]
 
@@ -237,6 +237,6 @@ V dalším kurzu dozvíte, jak publikovat vaší lokality k Internetu, takže ji
 - [Vytváření konzistentní vypadat](https://go.microsoft.com/fwlink/?LinkID=202891) – článek, který obsahuje některé další podrobnosti o práci s rozložení. Také popisuje, jak předat hodnotu ke stránce rozložení, který zobrazí nebo skryje část obsahu.
 - [Vnořené rozložení stránky s jádrem Razor](http://www.mikesdotnetting.com/Article/164/Nested-Layout-Pages-with-Razor) – Karel Brind blogy příklad toho, jak lze vnořit rozložení stránky. (Včetně stažení stránek.)
 
->[!div class="step-by-step"]
-[Předchozí](deleting-data.md)
-[další](publishing.md)
+> [!div class="step-by-step"]
+> [Předchozí](deleting-data.md)
+> [další](publishing.md)

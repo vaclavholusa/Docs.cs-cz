@@ -1,7 +1,7 @@
 ---
-title: "Kontext hlavičky"
+title: Kontext hlavičky v ASP.NET Core
 author: rick-anderson
-description: "Tento dokument popisuje podrobnosti implementace hlaviček kontextu ochrany dat ASP.NET Core."
+description: Další podrobnosti implementace hlaviček kontextu ochrany dat ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: c047c54efdcdb6192e4d38d2822c1077ee0a73e1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5ba247a74e11408145e1f6e87c7cfa251c66707f
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="context-headers"></a>Kontext hlavičky
+# <a name="context-headers-in-aspnet-core"></a>Kontext hlavičky v ASP.NET Core
 
 <a name="data-protection-implementation-context-headers"></a>
 
@@ -27,7 +27,7 @@ Většina systémů, které podporují kryptografická flexibilita tomu včetně
 
 Krokování s zpět, jsme se rozhodli, že jsme se blíží problém z nesprávný směr. Identifikátor OID řekne, co je algoritmus, ale nemůžeme nezáleží ve skutečnosti to. Pokud je potřeba použít jednu hodnotu entropic bezpečně v dva různé algoritmy, není nutné abychom věděli, jaké algoritmy ve skutečnosti. Co skutečně záleží nám je jejich chování. Libovolný dostatečnou symetrický bloku šifrovací algoritmus je také silné pseudonáhodných Permutace (PRP): Opravte vstupy (klíč, řetězení režimu, IV, ve formátu prostého textu) a výstup ciphertext se s zahltí pravděpodobnosti budou lišit od jiných bloku symetrický šifrovací algoritmus zadané stejnými vstupy. Podobně všechny funkce dostatečnou algoritmus hash je také silné Pseudonáhodná funkce (PRF) a daný vstupní sadu pevné její výstup převážné budou liší od jakýchkoli jiných algoritmus hash – funkce.
 
-Tento koncept silné PRPs a PRFs používáme vybudovat hlavičku kontextu. Tuto hlavičku kontextu v podstatě funguje jako stabilní kryptografický otisk přes algoritmy používán pro všechny danou operaci, a poskytuje kryptografická flexibilita systému ochrany dat. Tuto hlavičku je reprodukovatelnou a se později používá jako součást [podklíčů odvození proces](subkeyderivation.md#data-protection-implementation-subkey-derivation). Vytvoření kontextu hlavičky v závislosti na režimů operace základní algoritmů dvěma různými způsoby.
+Tento koncept silné PRPs a PRFs používáme vybudovat hlavičku kontextu. Tuto hlavičku kontextu v podstatě funguje jako stabilní kryptografický otisk přes algoritmy používán pro všechny danou operaci, a poskytuje kryptografická flexibilita systému ochrany dat. Tuto hlavičku je reprodukovatelnou a se později používá jako součást [podklíčů odvození proces](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation). Vytvoření kontextu hlavičky v závislosti na režimů operace základní algoritmů dvěma různými způsoby.
 
 ## <a name="cbc-mode-encryption--hmac-authentication"></a>Režimu CBC šifrování + ověřování klíčem HMAC
 

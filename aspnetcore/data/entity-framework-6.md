@@ -1,7 +1,7 @@
 ---
-title: "Začínáme s ASP.NET Core a Entity Framework 6"
+title: Začínáme s ASP.NET Core a Entity Framework 6
 author: tdykstra
-description: "Tento článek ukazuje, jak používat Entity Framework 6 v aplikaci ASP.NET Core."
+description: Tento článek ukazuje, jak používat Entity Framework 6 v aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 02/24/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: data/entity-framework-6
-ms.openlocfilehash: c1e8dcc828a2608a9aac4017b553003cda6212d4
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 2ea51d01718adb785fd621421bc5f04d11e61199
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="get-started-with-aspnet-core-and-entity-framework-6"></a>Začínáme s ASP.NET Core a Entity Framework 6
 

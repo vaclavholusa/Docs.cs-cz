@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
-title: "Pomocí rozhraní Entity Framework 4.0 a ovládacího prvku ObjectDataSource, část 2: Přidání vrstvu obchodní logiky a testování částí | Microsoft Docs"
+title: 'Pomocí rozhraní Entity Framework 4.0 a ovládacího prvku ObjectDataSource, část 2: Přidání vrstvu obchodní logiky a testování částí | Microsoft Docs'
 author: tdykstra
-description: "Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený Začínáme s řadou kurz Entity Framework 4.0. I..."
+description: Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený Začínáme s řadou kurz Entity Framework 4.0. I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: df37acd8901b457f7887afe767d42d53e45e4815
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ecdfb2bdc546f55778ec4cc1f61aa66e129134ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>Pomocí rozhraní Entity Framework 4.0 a ovládacího prvku ObjectDataSource, část 2: Přidání vrstvu obchodní logiky a testy jednotek
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 > Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený [Začínáme s Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) kurz řady. Pokud nebyla dokončena starší kurzy, jako výchozí bod pro účely tohoto kurzu můžete [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , kterou by jste vytvořili. Můžete také [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) vytvořené dokončení kurzu řady. Pokud máte dotazy týkající se kurzy, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx).
 
@@ -225,6 +225,6 @@ Tím dokončíte Úvod k implementaci použitému vzoru pro použití `ObjectDat
 
 V následujícím kurzu uvidíte, jak přidat řazení a filtrování funkce do aplikace.
 
->[!div class="step-by-step"]
-[Předchozí](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-[další](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+> [další](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)

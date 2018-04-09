@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení aktualizace kódu | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení aktualizace kódu | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: f6861c702c1ccb19e5a4eee484a622079e205f86
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: dd02b5c627fbfbb0034030f4c21207d24f6aabce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení aktualizace kódu
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -207,6 +207,6 @@ Nyní jste viděli několik způsobů, jak nasadit aktualizace aplikace, která 
 
 V dalším kurzu se dozvíte, jak nasadit změnu databáze: přidáte datum narození pole do databáze a na stránku vyučující.
 
->[!div class="step-by-step"]
-[Předchozí](deploying-to-production.md)
-[další](deploying-a-database-update.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-to-production.md)
+> [další](deploying-a-database-update.md)

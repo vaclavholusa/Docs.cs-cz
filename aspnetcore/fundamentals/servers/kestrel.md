@@ -1,7 +1,7 @@
 ---
-title: "Kestrel webového serveru implementace v ASP.NET Core"
+title: Kestrel webového serveru implementace v ASP.NET Core
 author: tdykstra
-description: "Představuje Kestrel, a platformy webového serveru pro ASP.NET Core podle libuv."
+description: Představuje Kestrel, a platformy webového serveru pro ASP.NET Core podle libuv.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: be465c9e8803e4d348cdd14181b4ea147f75e1a0
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c93c3d5cc69cd36cf6606904b5028af506f49664
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>Kestrel webového serveru implementace v ASP.NET Core
 
@@ -80,8 +80,7 @@ I když není požadovaných reverzní proxy server, pomocí jednoho může být
 
 ## <a name="how-to-use-kestrel-in-aspnet-core-apps"></a>Jak používat Kestrel v aplikacích ASP.NET Core
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) je součástí balíčku [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage).
 
 Šablony projektů ASP.NET Core pomocí Kestrel ve výchozím nastavení. V *Program.cs*, kód zavolá metodu šablony `CreateDefaultBuilder`, který volá [UseKestrel](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions#Microsoft_AspNetCore_Hosting_WebHostBuilderKestrelExtensions_UseKestrel_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) na pozadí.
@@ -92,20 +91,17 @@ Pokud potřebujete nakonfigurovat možnosti Kestrel, zavolejte `UseKestrel` v *P
 
 [!code-csharp[](kestrel/sample2/Program.cs?name=snippet_DefaultBuilder&highlight=9-16)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Nainstalujte [Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) balíček NuGet.
 
 Volání [UseKestrel](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions#Microsoft_AspNetCore_Hosting_WebHostBuilderKestrelExtensions_UseKestrel_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) rozšiřující metody na `WebHostBuilder` v vaše `Main` metoda, zadání žádné [Kestrel možnosti](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.server.kestrel.kestrelserveroptions) , které potřebujete, jak je znázorněno v následujícím oddílu.
 
 [!code-csharp[](kestrel/sample1/Program.cs?name=snippet_Main&highlight=13-19)]
 
----
-
+* * *
 ### <a name="kestrel-options"></a>Možnosti kestrel
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Kestrel webového serveru obsahuje možnosti konfigurace omezení, které jsou užitečné zejména v internetových nasazení. Zde naleznete některá omezení, které můžete zadat:
 
 - Maximální počet klientských připojení
@@ -142,7 +138,7 @@ Tady je příklad, který ukazuje, jak nakonfigurovat omezení pro celou aplikac
 Můžete přepsat nastavení konkrétního požadavku v middlewaru.:
 
 [!code-csharp[](kestrel/sample2/Startup.cs?name=snippet_Limits&highlight=3-4)]
- 
+
 Pokud se pokusíte nakonfigurovat limit na požadavek po spuštění aplikace čtení požadavku, je vyvolána výjimka. Je `IsReadOnly` vlastnost, která se dozvíte, pokud `MaxRequestBodySize` vlastnost je ve stavu jen pro čtení, tzn. je příliš pozdě Konfigurace limitu.
 
 **Minimální požadavek textu přenosová rychlost**
@@ -167,16 +163,13 @@ Informace o dalších možnostech Kestrel najdete v tématu následující tří
 * [KestrelServerLimits](https://github.com/aspnet/KestrelHttpServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.Kestrel.Core/KestrelServerLimits.cs)
 * [ListenOptions](https://github.com/aspnet/KestrelHttpServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.Kestrel.Core/ListenOptions.cs)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Informace o možnostech Kestrel najdete v tématu [KestrelServerOptions třída](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.server.kestrel.kestrelserveroptions).
 
----
-
+* * *
 ### <a name="endpoint-configuration"></a>Konfigurace koncového bodu
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Ve výchozím nastavení ASP.NET Core váže k `http://localhost:5000`. Konfigurace předpony adres URL a portů pro Kestrel tak, aby naslouchala na voláním `Listen` nebo `ListenUnixSocket` metody na `KestrelServerOptions`. (`UseUrls`, `urls` argument příkazového řádku a proměnnou prostředí ASPNETCORE_URLS také pracovní ale mají omezení uvedeno [dále v tomto článku](#useurls-limitations).)
 
 **Vytvoření vazby na soket TCP**
@@ -187,7 +180,7 @@ Ve výchozím nastavení ASP.NET Core váže k `http://localhost:5000`. Konfigur
 
 Všimněte si, jak tento příklad konfiguruje SSL pro koncový bod konkrétní pomocí [ListenOptions](https://github.com/aspnet/KestrelHttpServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.Kestrel.Core/ListenOptions.cs). Konfigurovat další nastavení Kestrel pro konkrétní koncové body, můžete použít stejné rozhraní API.
 
-[!INCLUDE[How to make an X.509 cert](../../includes/make-x509-cert.md)]
+[!INCLUDE [How to make an X.509 cert](../../includes/make-x509-cert.md)]
 
 **Vytvoření vazby na soket systému Unix**
 
@@ -214,18 +207,15 @@ Koncové body můžete nakonfigurovat pomocí volání `UseUrls` metoda nebo pom
 
 Pokud používáte službu IIS, vazby adresu URL pro službu IIS přepsat žádné vazby, která jste nastavili voláním buď `Listen` nebo `UseUrls`. Další informace najdete v tématu [Úvod k modulu jádra ASP.NET](aspnet-core-module.md).
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 Ve výchozím nastavení ASP.NET Core váže k `http://localhost:5000`. Můžete nakonfigurovat předpony adres URL a portů pro Kestrel tak, aby naslouchala na pomocí `UseUrls` metoda rozšíření `urls` argument příkazového řádku nebo konfigurační systém ASP.NET Core. Další informace o těchto metodách v tématu [hostitelský](../../fundamentals/hosting.md). Informace o fungování vazby adresy URL při použití IIS jako reverzní proxy server, najdete v článku [ASP.NET Core modulu](aspnet-core-module.md). 
 
----
-
+* * *
 ### <a name="url-prefixes"></a>Předpony adres URL
 
 Když zavoláte `UseUrls` nebo použít `urls` argument příkazového řádku nebo proměnná prostředí ASPNETCORE_URLS předpony adres URL může být v některém z následujících formátů. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Pouze předpony adres URL protokolu HTTP jsou platné; Kestrel nepodporuje SSL při konfiguraci adresy URL vazby pomocí `UseUrls`.
 
 * Adresu IPv4 s číslo portu
@@ -268,8 +258,7 @@ Pouze předpony adres URL protokolu HTTP jsou platné; Kestrel nepodporuje SSL p
 
   Když `localhost` není zadaný, Kestrel se pokusí vytvořit vazbu na rozhraní zpětné smyčky protokolu IPv4 a IPv6. Pokud požadovaný port je používán jinou službou buď rozhraní zpětné smyčky, Kestrel se nepodaří spustit. Pokud buď rozhraní zpětné smyčky je k dispozici z jiného důvodu (Většina běžně, protože protokol IPv6 není podporován), Kestrel protokoly upozornění. 
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 * Adresu IPv4 s číslo portu
 
   ```
@@ -344,10 +333,9 @@ var host = new WebHostBuilder()
 > [!NOTE]
 > Protokol HTTPS a HTTP nemůže být hostovaná na stejném portu.
 
-[!INCLUDE[How to make an X.509 cert](../../includes/make-x509-cert.md)]
+[!INCLUDE [How to make an X.509 cert](../../includes/make-x509-cert.md)]
 
----
-
+* * *
 ## <a name="host-filtering"></a>Filtrování hostitele
 
 I když Kestrel podporuje konfigurace, například podle předpony `http://example.com:5000`, z velké části ignoruje název hostitele. Localhost je zvláštní případ použité pro vazbu na adresy zpětné smyčky. Žádný hostitel, jiné než explicitní IP adresu se váže k všechny veřejné IP adresy. Žádná z těchto informací se používá k ověření hlavičky hostitele požadavku.

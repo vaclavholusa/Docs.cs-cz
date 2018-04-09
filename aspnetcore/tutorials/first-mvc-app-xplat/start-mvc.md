@@ -1,7 +1,7 @@
 ---
-title: "Úvod do architektury ASP.NET MVC jádra v systému macOS, Linux nebo Windows"
+title: Úvod do architektury ASP.NET MVC jádra v systému macOS, Linux nebo Windows
 author: rick-anderson
-description: "Zjistěte, jak začít pracovat s ASP.NET MVC jádra a Visual Studio Code v systému macOS, Linux a Windows"
+description: Zjistěte, jak začít pracovat s ASP.NET MVC jádra a Visual Studio Code v systému macOS, Linux a Windows
 manager: wpickett
 ms.author: riande
 ms.date: 07/07/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: a612d9b09e58fdc8071378ade15f1bdcafc9c9a6
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 50fbd54c6b0cc1146271afda7e45a0dab590dd7d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="introduction-to-aspnet-core-mvc-on-macos-linux-or-windows"></a>Úvod do architektury ASP.NET MVC jádra v systému macOS, Linux nebo Windows
 
@@ -21,7 +21,7 @@ podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V tomto kurzu naučit, základní informace o vytváření ASP.NET MVC základní webové aplikace pomocí [Visual Studio Code](https://code.visualstudio.com) (VS Code). Kurz předpokládá familarity kódem VS. V tématu [Začínáme s VS Code](https://code.visualstudio.com/docs) a [Visual Studio Code nápovědy](#visual-studio-code-help) Další informace. 
 
-[!INCLUDE[consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](../../includes/razor.md)]
 
 Existují 3 verze tohoto kurzu:
 
@@ -29,15 +29,9 @@ Existují 3 verze tohoto kurzu:
 * Windows: [vytvořit základní ASP.NET MVC aplikace pomocí sady Visual Studio](xref:tutorials/first-mvc-app/start-mvc)
 * systému macOS, Linux a Windows: [vytvořit aplikaci ASP.NET MVC jádra s kódem jazyka Visual Studio](xref:tutorials/first-mvc-app-xplat/start-mvc) 
 
-## <a name="install-vs-code-and-net-core"></a>Instalace VS Code a .NET Core
+## <a name="prerequisites"></a>Požadavky
 
-Tento kurz vyžaduje [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější. V tématu [pdf](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf) pro verzi ASP.NET Core 1.1.
-
-Nainstalujte následující:
-
-* [.NET core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější.
-* [Visual Studio Code](https://code.visualstudio.com)
-* VS Code [rozšíření C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) 
+[!INCLUDE [](~/includes/net-core-prereqs-vscode.md)]
 
 ## <a name="create-a-web-app-with-dotnet"></a>Vytvoření webové aplikace s dotnet.
 
@@ -79,5 +73,5 @@ V další části tohoto kurzu jsme vám další informace o MVC a zahájit záp
   - [Linux klávesové zkratky](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
   - [Klávesové zkratky systému Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
->[!div class="step-by-step"]
-[Další – Přidání kontroleru](adding-controller.md)
+> [!div class="step-by-step"]
+> [Další – Přidání kontroleru](adding-controller.md)

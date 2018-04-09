@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
-title: "Stránkování Data sestavy v DataList nebo prvku Repeater (C#) | Microsoft Docs"
+title: Stránkování Data sestavy v DataList nebo prvku Repeater (C#) | Microsoft Docs
 author: rick-anderson
-description: "Při řazení podporu nebo DataList ani opakovače nabídka Automatické stránkování tento kurz ukazuje, jak přidat podporu stránkování DataList nebo opakovače..."
+description: Při řazení podporu nebo DataList ani opakovače nabídka Automatické stránkování tento kurz ukazuje, jak přidat podporu stránkování DataList nebo opakovače...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4952adff752ec834b8be5f190181be98a034ccfd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 43b1370e1411858cef02bca534d082a3c105e51e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-c"></a>Data sestavy stránkování v DataList nebo prvku Repeater (C#)
 ====================
@@ -100,10 +100,10 @@ V tomto kurzu budeme zabývat implementace výchozí stránkování v DataList p
 
 Přidejte metodu k `ProductsBLL` třídu s názvem `GetProductsAsPagedDataSource` který přebírá dva vstupní parametry celé číslo:
 
-- `pageIndex`index stránky, které chcete zobrazit, indexované na nule, a
-- `pageSize`počet záznamů zobrazených na stránce.
+- `pageIndex` index stránky, které chcete zobrazit, indexované na nule, a
+- `pageSize` počet záznamů zobrazených na stránce.
 
-`GetProductsAsPagedDataSource`Spustí načtením *všechny* záznamy z `GetProducts()`. Ta poté vytvoří `PagedDataSource` objektu, nastavení jeho `CurrentPageIndex` a `PageSize` vlastnosti na hodnoty předané `pageIndex` a `pageSize` parametry. Metoda ukončí vrácení nakonfigurovaný `PagedDataSource`:
+`GetProductsAsPagedDataSource` Spustí načtením *všechny* záznamy z `GetProducts()`. Ta poté vytvoří `PagedDataSource` objektu, nastavení jeho `CurrentPageIndex` a `PageSize` vlastnosti na hodnoty předané `pageIndex` a `pageSize` parametry. Metoda ukončí vrácení nakonfigurovaný `PagedDataSource`:
 
 
 [!code-csharp[Main](paging-report-data-in-a-datalist-or-repeater-control-cs/samples/sample2.cs)]
@@ -275,11 +275,11 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Liz Shulok, Ken Pespisa a Bernadette Leigh. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Next](sorting-data-in-a-datalist-or-repeater-control-cs.md)
+> [!div class="step-by-step"]
+> [Next](sorting-data-in-a-datalist-or-repeater-control-cs.md)

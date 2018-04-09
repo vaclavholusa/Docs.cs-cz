@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
-title: "Tím se maximalizuje výkon s rozhraní Entity Framework 4.0 4 webové aplikace ASP.NET | Microsoft Docs"
+title: Tím se maximalizuje výkon s rozhraní Entity Framework 4.0 4 webové aplikace ASP.NET | Microsoft Docs
 author: tdykstra
-description: "Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený Začínáme s řadou kurz Entity Framework 4.0. I..."
+description: Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený Začínáme s řadou kurz Entity Framework 4.0. I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 40a53a110115e5f6342d2a97d21b64470450fd3c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b85645eebf2822b33df944692736ea9d9b69b9aa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Tím se maximalizuje výkon s rozhraní Entity Framework 4.0 4 webové aplikace technologie ASP.NET
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 > Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený [Začínáme s Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) kurz řady. Pokud nebyla dokončena starší kurzy, jako výchozí bod pro účely tohoto kurzu můžete [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , kterou by jste vytvořili. Můžete také [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) vytvořené dokončení kurzu řady. Pokud máte dotazy týkající se kurzy, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx).
 
@@ -76,7 +76,7 @@ Obecně platí Pokud víte, je třeba souvisejících dat pro každou entitu, kt
 
 Ve webové aplikaci opožděného načítání může být poměrně málo hodnota přesto provést, protože provést akce uživatele, které ovlivňují potřebu souvisejících dat v prohlížeči, který nemá připojení k kontext objektu, který vykreslí stránku. Na druhé straně když jste databind ovládacího prvku, obvykle víte, jaká data je třeba a proto je obecně osvědčené zvolit přes načítání nebo odložené načítání na základě co je vhodná v každém scénáři.
 
-Kromě toho může u ovládacího prvku pomocí objektu entity, po uvolnění objektu kontextu, má. V takovém případě dojde k selhání pokusu o opožděné zatížení navigační vlastnost. Je zřejmé, které se zobrazí chybová zpráva:&quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
+Kromě toho může u ovládacího prvku pomocí objektu entity, po uvolnění objektu kontextu, má. V takovém případě dojde k selhání pokusu o opožděné zatížení navigační vlastnost. Je zřejmé, které se zobrazí chybová zpráva: &quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
 
 `EntityDataSource` Řízení zakáže opožděného načítání ve výchozím nastavení. Pro `ObjectDataSource` řízení, které používáte pro aktuální kurz (nebo pokud máte přístup k objektu kontextu z kódu stránky), existuje několik způsobů, které můžete provést opožděného načítání ve výchozím nastavení zakázaná. Ji můžete vypnout, pokud doložit kontextu objektu. Například přidejte následující řádek na konstruktor metodu `SchoolRepository` třídy:
 
@@ -266,6 +266,6 @@ Tím dokončíte Úvod ke zlepšení výkonu ve webové aplikaci ASP.NET, který
 
 V dalším kurzu zkontroluje některé důležité vylepšení na rozhraní Entity Framework, které nově jsou v verze 4.
 
->[!div class="step-by-step"]
-[Předchozí](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
-[další](what-s-new-in-the-entity-framework-4.md)
+> [!div class="step-by-step"]
+> [Předchozí](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [další](what-s-new-in-the-entity-framework-4.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
-title: "Členství a správu | Microsoft Docs"
+title: Členství a správu | Microsoft Docs
 author: Erikre
-description: "Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme..."
+description: Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: a10dbfe1ca49baee1604aac8dd9a1f93ccfcb7f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 166bc642ea2083f455be0648e424f0b0ae3b082c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="membership-and-administration"></a>Členství a Správa
 ====================
@@ -66,14 +66,14 @@ Pomocí ASP.NET Identity, můžete přidat vlastní role a přiřaďte uživatel
 
     [!code-csharp[Main](membership-and-administration/samples/sample2.cs?highlight=11,26-28)]
 6. Všimněte si, že `AddUserAndRole` je podtržený červeně. Dvakrát klikněte na kód AddUserAndRole.  
- Bude podtržené písmeno "A" na začátku zvýrazněná metoda.
+   Bude podtržené písmeno "A" na začátku zvýrazněná metoda.
 7. Pozastavte ukazatel myši nad písmenem "A" a klikněte na uživatelské rozhraní, které vám umožní generovat metoda zástupnou proceduru pro `AddUserAndRole` metoda. 
 
     ![Členství a Advministration - generovat Stub – metoda](membership-and-administration/_static/image1.png)
 8. Klikněte na možnost s názvem:  
     `Generate method stub for "AddUserAndRole" in "WingtipToys.Logic.RoleActions"`
 9. Otevřete *RoleActions.cs* souboru z *logiku* složky.  
- `AddUserAndRole` Metoda byla přidána do souboru třídy.
+   `AddUserAndRole` Metoda byla přidána do souboru třídy.
 10. Změnit *RoleActions.cs* souboru odebráním `NotImplementedeException` a přidávání kódu zvýrazněných v žlutý, tak, aby se následujícím způsobem:  
 
     [!code-csharp[Main](membership-and-administration/samples/sample3.cs?highlight=5-7,15-51)]
@@ -120,8 +120,8 @@ V dalším kroku vytvoříte složku s názvem *správce* pro uživatele "canEdi
 1. Klikněte pravým tlačítkem na název projektu (**adresář Wingtip Toys**) v **Průzkumníku řešení** a vyberte **přidat**  - &gt; **novou složku**.
 2. Název nové složky *správce*.
 3. Klikněte pravým tlačítkem myši *správce* složku a potom vyberte **přidat**  - &gt; **novou položku**.   
- **Přidat novou položku** se zobrazí dialogové okno.
-4. Vyberte **Visual C#** - &gt; **webové** skupiny šablony na levé straně. Vyberte ze seznamu střední **webové formuláře se stránkou předlohy**, pojmenujte ji *AdminPage.aspx***,** a pak vyberte **přidat**.
+   **Přidat novou položku** se zobrazí dialogové okno.
+4. Vyberte <strong>Visual C#</strong> - &gt; <strong>webové</strong> skupiny šablony na levé straně. Vyberte ze seznamu střední <strong>webové formuláře se stránkou předlohy</strong>, pojmenujte ji <em>AdminPage.aspx</em><strong>,</strong> a pak vyberte <strong>přidat</strong>.
 5. Vyberte *Site.Master* souboru jako stránky předlohy a potom vyberte **OK**.
 
 #### <a name="add-a-webconfig-file"></a>Přidá soubor Web.config
@@ -129,8 +129,8 @@ V dalším kroku vytvoříte složku s názvem *správce* pro uživatele "canEdi
 Přidáním *Web.config* do souboru *správce* složky, můžete omezit přístup na stránku obsažené ve složce.
 
 1. Klikněte pravým tlačítkem myši *správce* složky a vyberte **přidat**  - &gt; **novou položku**.  
- **Přidat novou položku** se zobrazí dialogové okno.
-2. V seznamu webové šablony Visual C# vyberte **soubor webové konfigurace**ze seznamu střední přijměte výchozí název *Web.config***,** a pak vyberte **Přidat**.
+   **Přidat novou položku** se zobrazí dialogové okno.
+2. V seznamu webové šablony Visual C# vyberte <strong>soubor webové konfigurace</strong>ze seznamu střední přijměte výchozí název <em>Web.config</em><strong>,</strong> a pak vyberte <strong>Přidat</strong>.
 3. Nahradit existující obsah XML *Web.config* soubor s následující:  
 
     [!code-xml[Main](membership-and-administration/samples/sample4.xml)]
@@ -167,9 +167,9 @@ Zatím jste vytvořili roli "hodnoty canEdit" a přidali uživatele s "canEditUs
 V kódu, který jste zadali pro *AdminPage.aspx.cs* souboru kódu na pozadí, třídu s názvem `AddProducts` ve skutečnosti zajišťuje zpracování přidávání produkty do databáze. Tato třída, dosud neexistuje, můžete ji nyní vytvoří.
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *logiku* složku a potom vyberte **přidat**  - &gt; **novou položku**.   
- **Přidat novou položku** se zobrazí dialogové okno.
+   **Přidat novou položku** se zobrazí dialogové okno.
 2. Vyberte **Visual C#**  - &gt; **kód** skupiny šablony na levé straně. Pak vyberte **třída**ze středu seznamu a pojmenujte ji *AddProducts.cs*.   
- Zobrazí se nový soubor třídy.
+   Zobrazí se nový soubor třídy.
 3. Nahraďte stávající kód s následujícími službami:  
 
     [!code-csharp[Main](membership-and-administration/samples/sample9.cs)]
@@ -235,15 +235,15 @@ Když *AdminPage.aspx* stránky zavážky, `Page_Load` událost je volána.
 Můžete spustit nyní aplikaci zobrazíte přidání, odstranění a aktualizace položek v nákupní košík. Celkový počet nákupního košíku se projeví celkové náklady na všechny položky v nákupní košík.
 
 1. V Průzkumníku řešení, stiskněte klávesu **F5** ke spuštění ukázkové aplikace adresář Wingtip Toys.  
- Otevře se prohlížeč a ukazuje *Default.aspx* stránky.
+   Otevře se prohlížeč a ukazuje *Default.aspx* stránky.
 2. Klikněte **přihlásit** odkaz v horní části stránky. 
 
     ![Členství a správu - protokolu v odkazu](membership-and-administration/_static/image2.png)
 
- *Login.aspx* zobrazí se stránka.
+   *Login.aspx* zobrazí se stránka.
 3. Použijte následující uživatelské jméno a heslo:  
- Uživatelské jméno:canEditUser@wingtiptoys.com  
- Heslo: Pa$ $word1 
+   Uživatelské jméno: canEditUser@wingtiptoys.com  
+   Heslo: Pa$ $word1 
 
     ![Na stránce protokol členství a správu-](membership-and-administration/_static/image3.png)
 4. Klikněte **přihlásit** tlačítko v dolní části stránky.
@@ -254,7 +254,7 @@ Můžete spustit nyní aplikaci zobrazíte přidání, odstranění a aktualizac
 
     ![Členství a správu - stránky pro správu](membership-and-administration/_static/image5.png)
 
- Všimněte si, že jsou zobrazené zprávy povinné pole.
+   Všimněte si, že jsou zobrazené zprávy povinné pole.
 7. Přidat podrobnosti o novém produktu a klikněte **přidat produktu** tlačítko. 
 
     ![Členství a správu – přidání produktu](membership-and-administration/_static/image6.png)
@@ -268,7 +268,7 @@ Můžete spustit nyní aplikaci zobrazíte přidání, odstranění a aktualizac
     ![Členství a správu - odebrat produktu](membership-and-administration/_static/image8.png)
 12. Vyberte **produkty** v horním navigačním panelu nabídce potvrďte, že produkt byl odebrán.
 13. Klikněte na tlačítko **Odhlásit** existovat režim pro správu.   
- Všimněte si, že se již nenachází v horním navigačním podokně **správce** položku nabídky.
+    Všimněte si, že se již nenachází v horním navigačním podokně **správce** položku nabídky.
 
 ## <a name="summary"></a>Souhrn
 
@@ -281,6 +281,6 @@ V tomto kurzu přidat vlastní roli a uživatele patřícího k roli vlastní om
 [Nasazení aplikace zabezpečené rozhraní ASP.NET Web Forms s členství, OAuth a SQL Database k webovému serveru Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
 [Microsoft Azure – bezplatná zkušební verze](https://azure.microsoft.com/pricing/free-trial/)
 
->[!div class="step-by-step"]
-[Předchozí](checkout-and-payment-with-paypal.md)
-[další](url-routing.md)
+> [!div class="step-by-step"]
+> [Předchozí](checkout-and-payment-with-paypal.md)
+> [další](url-routing.md)

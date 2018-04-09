@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
-title: "Konfigurace serveru prostředí pro nasazení webu | Microsoft Docs"
+title: Konfigurace serveru prostředí pro nasazení webu | Microsoft Docs
 author: jrjlee
-description: "Tento kurz vám ukáže, jak nastavit prostředí server pro podporu jedním kliknutím nebo automatizované, nasazení webu a publikování v různých různých scen..."
+description: Tento kurz vám ukáže, jak nastavit prostředí server pro podporu jedním kliknutím nebo automatizované, nasazení webu a publikování v různých různých scen...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 8a07d283e3e4344e5513152cf760ac90481d9f4b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ff6118be618a170ac76d66a9de24a7b5cc2d840a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-server-environments-for-web-deployment"></a>Konfigurace serveru prostředí pro nasazení webu
 ====================
@@ -28,21 +28,21 @@ podle [Jason Lee](https://github.com/jrjlee)
 > 
 > Tento kurz používá scénář nasazení společnosti Fabrikam, Inc., který je popsaný v [Enterprise nasazení webu: přehled scénářů](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md) jako referenční bod příklady a síťové infrastruktury.
 > 
-> Italská překlad tyto kurzy, najdete v článku [http://www.lucamorelli.it](http://www.lucamorelli.it).
+> Italská překlad tyto kurzy, najdete v článku [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
 Tento kurz obsahuje následující témata:
 
-- [Výběr správný přístup k nasazení webu](choosing-the-right-approach-to-web-deployment.md)
+- [Výběr správného přístupu k nasazení webu](choosing-the-right-approach-to-web-deployment.md)
 - [Scénář: Konfigurace testovacího prostředí pro nasazení webu](scenario-configuring-a-test-environment-for-web-deployment.md)
-- [Scénář: Konfigurace pracovní prostředí pro nasazení webu](scenario-configuring-a-staging-environment-for-web-deployment.md)
-- [Scénář: Konfigurace produkčním prostředí pro nasazení webu](scenario-configuring-a-production-environment-for-web-deployment.md)
-- [Konfigurace webového serveru pro nasazení webu publikování (vzdáleného agenta)](configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
-- [Konfigurace webového serveru pro Web nasazení publikování (Web Deploy obslužné rutiny)](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
-- [Konfigurace webového serveru pro nasazení webu publikování (Offline nasazení)](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
-- [Konfigurace databáze serveru pro publikování nasazení webu](configuring-a-database-server-for-web-deploy-publishing.md)
-- [Vytvoření serverové farmy pomocí rozhraní Web Farm Framework](creating-a-server-farm-with-the-web-farm-framework.md)
-- [Konfigurace vlastnosti nasazení pro cílové prostředí](configuring-deployment-properties-for-a-target-environment.md)
+- [Scénář: Konfigurace přípravného prostředí pro nasazení webu](scenario-configuring-a-staging-environment-for-web-deployment.md)
+- [Scénář: Konfigurace provozního prostředí pro nasazení webu](scenario-configuring-a-production-environment-for-web-deployment.md)
+- [Konfigurace webového serveru pro publikování nasazeného webu (vzdálený agent)](configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
+- [Konfigurace webového serveru pro publikování nasazeného webu (obslužná rutina nasazení webu)](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
+- [Konfigurace webového serveru pro publikování nasazeného webu (offline nasazení)](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
+- [Konfigurace databázového serveru pro publikování nasazeného webu](configuring-a-database-server-for-web-deploy-publishing.md)
+- [Vytvoření serverové farmy na platformě Web Farm Framework](creating-a-server-farm-with-the-web-farm-framework.md)
+- [Konfigurace vlastností nasazeného cílového prostředí](configuring-deployment-properties-for-a-target-environment.md)
 
 První téma [výběr práva přístup k nasazení webu](choosing-the-right-approach-to-web-deployment.md), popisuje hlavní přístupy, můžete použít k publikování webových aplikací pomocí Internetové informační služby (IIS) nástroj pro nasazení webu, které je (Web Deploy) 2.0. Také identifikuje scénáře, které jsou mapovány na každý přístup. Z tohoto místa každý scénář téma obsahuje souhrnné informace o úlohách, které potřebujete k dokončení a identifikuje témata, které budete potřebovat fungovat prostřednictvím vám pomohou dokončit tyto úlohy.
 
@@ -68,5 +68,5 @@ To je součástí ze série kurzů pět v podnikovém měřítku nasazení webu.
 - [Konfigurace serveru Team Foundation Server pro nasazení webu](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Tento kurz popisuje, jak nakonfigurovat Team Foundation Server (TFS) pro podporu různých scénářů nasazení, včetně automatického nasazení v rámci procesu průběžnou integraci (CI) a ručně spustí nasazení konkrétní sestavení.
 - [Pokročilé nasazení webu Enterprise](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Tento kurz popisuje, jak k provádění různých dalších pokročilých úloh nasazení, jako vlastní nastavení nasazení databáze pro prostředí s více, vyloučení souborů a složek z nasazení a přepnutím do režimu offline webové aplikace během procesu nasazení .
 
->[!div class="step-by-step"]
-[Další](choosing-the-right-approach-to-web-deployment.md)
+> [!div class="step-by-step"]
+> [Next](choosing-the-right-approach-to-web-deployment.md)

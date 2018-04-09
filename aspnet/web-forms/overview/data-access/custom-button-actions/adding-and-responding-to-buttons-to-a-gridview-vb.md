@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
-title: "Přidání a reagovat na tlačítka na GridView (VB) | Microsoft Docs"
+title: Přidání a reagovat na tlačítka na GridView (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu budeme zabývat postup přidání vlastních tlačítek do šablony i na pole GridView nebo DetailsView ovládacího prvku. Konkrétně jsme budete bui..."
+description: V tomto kurzu budeme zabývat postup přidání vlastních tlačítek do šablony i na pole GridView nebo DetailsView ovládacího prvku. Konkrétně jsme budete bui...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8a642a9a8e25d64028df0b5d8741da3008700652
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 58b570c897810eeaa182a201616a182c02e9d92c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-vb"></a>Přidání a reagovat na tlačítka na GridView (VB)
 ====================
@@ -129,7 +129,7 @@ Vzhledem k tomu `GetProductsBySupplierID(supplierID)` metoda přijímá vstupní
 
 [![Označuje pole supplierID parametr musí pocházet z ovládacího prvku FormView dodavatelů](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image24.png)
 
-**Obrázek 10**: označuje, že  *`supplierID`*  parametr musí pocházet z `Suppliers` FormView řízení ([Kliknutím zobrazit obrázek v plné velikosti](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image26.png))
+**Obrázek 10**: označuje, že *`supplierID`* parametr musí pocházet z `Suppliers` FormView řízení ([Kliknutím zobrazit obrázek v plné velikosti](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image26.png))
 
 
 Po dokončení Průvodce ObjectDataSource, bude GridView obsahovat BoundField nebo vlastnost CheckBoxField pro každý produkt s datová pole. Umožňují s to trim dolů k zobrazení jenom na `ProductName` a `UnitPrice` BoundFields spolu s `Discontinued` Vlastnost CheckBoxField; kromě toho mohli formátu s `UnitPrice` BoundField tak, aby jeho text je formátován jako měny. Vaše GridView a `SuppliersProductsDataSource` ObjectDataSource s deklarativní by měl vypadat podobně jako následující kód:
@@ -157,7 +157,7 @@ Jak je uvedeno v v našem předchozí kurzy, použijeme přístupu zdola nahoru,
 **Obrázek 12**: vytvoření DAL metoda pomocí příkazu SQL Ad-Hoc ([Kliknutím zobrazit obrázek v plné velikosti](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image32.png))
 
 
-Dále požádáni o nám, jaký typ dotaz k vytvoření. Vzhledem k tomu, `DiscontinueAllProductsForSupplier(supplierID)` metoda bude nutné provést aktualizaci `Products` databázové tabulky, nastavení `Discontinued` pole 1 pro všechny produkty, které poskytuje zadaný  *`supplierID`* , musíme vytvořit dotaz, který aktualizuje data.
+Dále požádáni o nám, jaký typ dotaz k vytvoření. Vzhledem k tomu, `DiscontinueAllProductsForSupplier(supplierID)` metoda bude nutné provést aktualizaci `Products` databázové tabulky, nastavení `Discontinued` pole 1 pro všechny produkty, které poskytuje zadaný *`supplierID`*, musíme vytvořit dotaz, který aktualizuje data.
 
 
 [![Vyberte typ dotazu aktualizace](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image34.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image33.png)
@@ -183,7 +183,7 @@ Pomocí `DiscontinueAllProductsForSupplier(supplierID)` metoda vytvořené v Dat
 
 [!code-vb[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample5.vb)]
 
-Tato metoda jednoduše volá dolů na `DiscontinueAllProductsForSupplier(supplierID)` metoda v vrstvy DAL předávání podél poskytnutého  *`supplierID`*  hodnota parametru. Kdyby všechny obchodních pravidel, která je povoleno pouze dodavatele s produkty přerušeny za určitých okolností by měl být tato pravidla zde prováděn BLL.
+Tato metoda jednoduše volá dolů na `DiscontinueAllProductsForSupplier(supplierID)` metoda v vrstvy DAL předávání podél poskytnutého *`supplierID`* hodnota parametru. Kdyby všechny obchodních pravidel, která je povoleno pouze dodavatele s produkty přerušeny za určitých okolností by měl být tato pravidla zde prováděn BLL.
 
 > [!NOTE]
 > Na rozdíl od `UpdateProduct` přetížení v `ProductsBLL` třídy, `DiscontinueAllProductsForSupplier(supplierID)` podpis metody nezahrnuje `DataObjectMethodAttribute` atribut (`<System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, Boolean)>`). To vylučuje `DiscontinueAllProductsForSupplier(supplierID)` z rozevíracího seznamu ObjectDataSource s s Průvodce konfigurace zdroje dat na kartě aktualizace. I sunout vynechána tento atribut, protože jsme budete volání `DiscontinueAllProductsForSupplier(supplierID)` metoda přímo z obslužné rutiny události v naší stránce s ASP.NET.
@@ -203,7 +203,7 @@ Když po kliknutí na tlačítko tak, že uživatel navštívíte, vyplývá str
 
 Vzhledem k tomu `ItemCommand` aktivuje se bez ohledu na to, jaké po kliknutí na tlačítko, v případě, že obslužná rutina budeme potřebovat způsob, jak určit, pokud bylo stisknuto tlačítko ukončí všechny produkty, nebo pokud se jednalo o některé další tlačítko. K tomu, jsme můžete nastavit ovládací prvek tlačítko webového s `CommandName` vlastnost některé identifikační hodnotu. Pokud po kliknutí na tlačítko, to `CommandName` do byla předána hodnota `ItemCommand` obslužné rutiny události, povolení ke zjištění, zda byla tlačítko ukončí všechny produkty kliknutí na tlačítko. Nastavit ukončí všechny produkty tlačítko s `CommandName` vlastnost DiscontinueProducts.
 
-Nakonec umožní s pomůže zajistit, že opravdu chce uživatel ukončí vybrané dodavatele s produkty dialogového okna potvrdit na straně klienta. Jak jsme viděli v [přidání Client-Side potvrzení při odstranění](../editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb.md) kurz, můžete to provést pomocí verze jazyka JavaScript. Konkrétně nastavte vlastnost tlačítko webové ovládací prvek s OnClientClick na`return confirm('This will mark _all_ of this supplier\'s products as discontinued. Are you certain you want to do this?');`
+Nakonec umožní s pomůže zajistit, že opravdu chce uživatel ukončí vybrané dodavatele s produkty dialogového okna potvrdit na straně klienta. Jak jsme viděli v [přidání Client-Side potvrzení při odstranění](../editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb.md) kurz, můžete to provést pomocí verze jazyka JavaScript. Konkrétně nastavte vlastnost tlačítko webové ovládací prvek s OnClientClick na `return confirm('This will mark _all_ of this supplier\'s products as discontinued. Are you certain you want to do this?');`
 
 Po provedení těchto změn, deklarativní syntaxi s FormView by měl vypadat následovně:
 
@@ -312,7 +312,7 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](adding-and-responding-to-buttons-to-a-gridview-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-and-responding-to-buttons-to-a-gridview-cs.md)

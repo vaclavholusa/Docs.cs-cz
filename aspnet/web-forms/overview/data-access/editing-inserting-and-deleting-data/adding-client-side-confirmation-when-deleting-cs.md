@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
-title: "Přidání potvrzení na straně klienta při odstraňování (C#) | Microsoft Docs"
+title: Přidání potvrzení na straně klienta při odstraňování (C#) | Microsoft Docs
 author: rick-anderson
-description: "V rozhraní, které vytvořili jsme dosavadní práce můžete uživatele omylem odstranit data kliknutím na tlačítko Odstranit při jejich určená klikněte na tlačítko Upravit. V této t..."
+description: V rozhraní, které vytvořili jsme dosavadní práce můžete uživatele omylem odstranit data kliknutím na tlačítko Odstranit při jejich určená klikněte na tlačítko Upravit. V této t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c5e8ee76224a48d3132597016b81099bd70a1776
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72b15d498e45cc519a14ecfe39111b224db88c30
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-client-side-confirmation-when-deleting-c"></a>Přidání potvrzení na straně klienta při odstraňování (C#)
 ====================
@@ -75,7 +75,7 @@ Tyto změny máme plně funkční webové stránky, která umožňuje uživatel�
 
 ## <a name="step-2-calling-the-confirmstring-function-from-the-delete-buttons-client-side-onclick-event"></a>Krok 2: Volání funkce confirm(string) z onclick odstranit tlačítka Client-Side událostí
 
-S FormView vytvořen, posledním krokem je konfigurace tlačítko odstranit takové který po jeho s klikli návštěvníkem JavaScript `confirm(string)` je volána funkce. Přidávání do tlačítko, LinkButton nebo ImageButton s klientský skript na straně klienta `onclick` událostí lze provést prostřednictvím `OnClientClick property`, což je pro technologii ASP.NET 2.0 nové. Vzhledem k tomu, že chceme mají hodnotu `confirm(string)` funkce vrátila, stačí tuto vlastnost nastavit na:`return confirm('Are you certain that you want to delete this product?');`
+S FormView vytvořen, posledním krokem je konfigurace tlačítko odstranit takové který po jeho s klikli návštěvníkem JavaScript `confirm(string)` je volána funkce. Přidávání do tlačítko, LinkButton nebo ImageButton s klientský skript na straně klienta `onclick` událostí lze provést prostřednictvím `OnClientClick property`, což je pro technologii ASP.NET 2.0 nové. Vzhledem k tomu, že chceme mají hodnotu `confirm(string)` funkce vrátila, stačí tuto vlastnost nastavit na: `return confirm('Are you certain that you want to delete this product?');`
 
 Po této změně deklarativní syntaxi s odstranit LinkButton by měl vypadat podobně jako:
 
@@ -156,8 +156,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](implementing-optimistic-concurrency-cs.md)
-[další](limiting-data-modification-functionality-based-on-the-user-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](implementing-optimistic-concurrency-cs.md)
+> [další](limiting-data-modification-functionality-based-on-the-user-cs.md)

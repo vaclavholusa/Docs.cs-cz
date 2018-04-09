@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
-title: "Vytvoření serverové farmy pomocí rozhraní Web Farm Framework | Microsoft Docs"
+title: Vytvoření serverové farmy pomocí rozhraní Web Farm Framework | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje postup použijte k vytvoření a konfigurace webové farmy serveru z kolekce serverů webové farmy Framework (WFF) 2.0."
+description: Toto téma popisuje postup použijte k vytvoření a konfigurace webové farmy serveru z kolekce serverů webové farmy Framework (WFF) 2.0.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: c592ed78a7332834923ce2290af77919fb3c7576
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 53a91660953795f2c55edcd795b053641d308dfe
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-server-farm-with-the-web-farm-framework"></a>Vytvoření serverové farmy pomocí rozhraní Web Farm Framework
 ====================
@@ -27,7 +27,7 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma popisuje postup použijte k vytvoření a konfigurace webové farmy serveru z kolekce serverů webové farmy Framework (WFF) 2.0.
 
 
-WFF umožňuje synchronizovat produkty webové platformy a součásti webové aplikace, weby a nastavení konfigurace více Vyrovnávání zatížení sítě webových serverů. Ve scénářích, kde je nutné více než jeden webového serveru, jako pracovní a provozní prostředí to může významně zjednodušit proces nasazení a konfigurace. Můžete nasadit webovou aplikaci pro jeden server & #x 2014; *primární server*& #x 2014; a WFF bude automaticky replikovat této webové aplikace na všechny další webové servery v serverové farmě.
+WFF umožňuje synchronizovat produkty webové platformy a součásti webové aplikace, weby a nastavení konfigurace více Vyrovnávání zatížení sítě webových serverů. Ve scénářích, kde je nutné více než jeden webového serveru, jako pracovní a provozní prostředí to může významně zjednodušit proces nasazení a konfigurace. Můžete nasadit webovou aplikaci na jednom serveru&#x2014; *primární server*&#x2014;a WFF bude automaticky replikovat této webové aplikace na všechny další webové servery v serverové farmě.
 
 ## <a name="understanding-the-web-farm-framework"></a>Vysvětlení rozhraní Web Farm Framework
 
@@ -51,7 +51,7 @@ Než začnete konfigurovat vaše pracovní a provozní prostředí, doporučujem
 
 ## <a name="task-overview"></a>Přehled úloh
 
-Pokud chcete provést postupy v tomto tématu a úlohy, budete potřebovat aspoň tři servery & #x 2014; jeden řadič WFF, jeden primární webový server pro serverovou farmu a jeden nebo více sekundárních webových serverů pro serverové farmy. Kdykoli můžete přidat další sekundární servery do farmy serverů WFF. Na vysoké úrovni, vytvoření a konfigurace serverové farmy WFF ve vašem pracovním nebo produkčním prostředí, které budete muset:
+Pokud chcete provést postupy v tomto tématu a úlohy, budete potřebovat aspoň tři servery&#x2014;jeden řadič WFF, jeden primární webový server pro serverovou farmu a jeden nebo více sekundárních webových serverů pro serverové farmy. Kdykoli můžete přidat další sekundární servery do farmy serverů WFF. Na vysoké úrovni, vytvoření a konfigurace serverové farmy WFF ve vašem pracovním nebo produkčním prostředí, které budete muset:
 
 - Vytvoření řadiče serveru Internetové informační služby (IIS) 7.5 a WFF 2.0.
 - Připravte primární a sekundární servery vytvořením společného účtu správce a konfigurace výjimek brány firewall.
@@ -78,7 +78,7 @@ Vytvoření serveru řadiče WFF, budete muset nainstalovat službu IIS 7 nebo n
 2. V horní části **webové platformy verze 3.0** okně klikněte na tlačítko **produkty**.
 3. Na levé straně okna, v navigačním podokně klikněte na tlačítko **Server**.
 4. V **IIS 7 doporučená konfigurace** řádek, klikněte na tlačítko **přidat**.
-5. V **webové farmy Framework 2. *** x* řádek, klikněte na tlačítko **přidat**.
+5. V <strong>webové farmy Framework 2.</strong> <em>x</em> řádek, klikněte na tlačítko <strong>přidat</strong>.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image2.png)
 6. Klikněte na tlačítko **nainstalovat**. Všimněte si, že instalace webové platformy přidala nástroj pro nasazení webu, společně s různé další závislosti, do seznamu instalace.
@@ -96,7 +96,7 @@ Než vytvoříte WFF serverové farmy, můžete provést některé přípravy ú
 
 Další informace o tom, jak konfigurovat tyto výjimky brány firewall v bráně Windows Firewall najdete v tématu [systému a požadavky na platformu pro Web Farm Framework 2.0 pro službu IIS 7](https://go.microsoft.com/?linkid=9805128). Pro jiné systémy brány firewall vyhledejte v dokumentaci produktu.
 
-Další postup slouží k přidání účtu domény do místní skupiny administrators v systému Windows Server 2008 R2. Tento postup proveďte na každém serveru, který chcete přidat do serverové farmy & #x 2014; jinými slovy, stejný účet domény přidat do místní skupiny administrators na primárním serveru a na každém sekundárním serveru.
+Další postup slouží k přidání účtu domény do místní skupiny administrators v systému Windows Server 2008 R2. Tento postup proveďte na každém serveru, který chcete přidat do farmy serverů&#x2014;jinými slovy, stejný účet domény přidat do místní skupiny administrators na primárním serveru a na každém sekundárním serveru.
 
 **Přidat účet domény do místní skupiny administrators**
 
@@ -111,7 +111,7 @@ Další postup slouží k přidání účtu domény do místní skupiny administ
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image5.png)
 6. V **správci vlastnosti** dialogové okno, klikněte na tlačítko **OK**.
 
-Vaše servery jsou nyní připraveny pro přidání do serverové farmy. V případě primární server, můžete nastavit server podle požadavků vaší aplikace před nebo po vytvoření serverové farmy & #x 2014; v obou případech bude WFF synchronizovat servery nasazením stejné produkty, součásti, nebo konfigurace na sekundární servery. Z důvodu zjednodušení tento kurz předpokládá, že po dokončení vytvoření serverové farmy nakonfigurujete primární server.
+Vaše servery jsou nyní připraveny pro přidání do serverové farmy. V případě primární server, můžete nastavit server podle požadavků vaší aplikace před nebo po vytvoření serverové farmy&#x2014;v obou případech bude WFF synchronizovat servery nasazením stejné produkty, součásti nebo konfigurace na sekundární servery. Z důvodu zjednodušení tento kurz předpokládá, že po dokončení vytvoření serverové farmy nakonfigurujete primární server.
 
 ## <a name="create-the-wff-server-farm"></a>Vytvoření serverové farmy WFF
 
@@ -225,12 +225,12 @@ Kdykoli pomocí Správce služby IIS na serveru řadiče můžete monitorovat st
 
 ## <a name="conclusion"></a>Závěr
 
-Serverové farmy WFF by teď měly být spuštěná. Primární server pro podporu libovolného přístupu nasazení spočívá dáváte přednost & #x 2014 můžete nakonfigurovat, najdete v části Další čtení podrobnosti & #x 2014; a konfiguraci bude replikován na každém sekundárním serveru v serverové farmě.
+Serverové farmy WFF by teď měly být spuštěná. Můžete nastavit primární server pro podporu v obou případech nasazení dáváte přednost&#x2014;najdete v části Další čtení podrobnosti&#x2014;a konfiguraci bude replikován na každém sekundárním serveru v serverové farmě.
 
 ## <a name="further-reading"></a>Další čtení
 
 Další informace o všech aspektech konfiguraci a použití WFF najdete v části [Microsoft Web Farm Framework 2.0 pro službu IIS 7](https://go.microsoft.com/?linkid=9805129) webu.
 
->[!div class="step-by-step"]
-[Předchozí](configuring-a-database-server-for-web-deploy-publishing.md)
-[další](configuring-deployment-properties-for-a-target-environment.md)
+> [!div class="step-by-step"]
+> [Předchozí](configuring-a-database-server-for-web-deploy-publishing.md)
+> [další](configuring-deployment-properties-for-a-target-environment.md)

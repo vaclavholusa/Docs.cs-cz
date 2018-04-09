@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
-title: "Vytvořit rozhraní REST API s atribut směrování v rozhraní ASP.NET Web API 2 | Microsoft Docs"
+title: Vytvořit rozhraní REST API s atribut směrování v rozhraní ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: c1d0b3e1644ef7f9ebb4be74c3fdf3df90cf3537
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f1e90544c9dd8439a522f2196d81d020ea2f4f2
+ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/28/2018
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Vytvořit rozhraní REST API s atributem směrování v rozhraní ASP.NET Web API 2
 ====================
@@ -184,7 +184,7 @@ Pokud si vyžádáte `/api/books/1/details`, odpověď bude vypadat takto:
 
 ## <a name="get-books-by-genre"></a>Získání seznamů pomocí Genre
 
-Chcete-li získat seznam seznamů v konkrétní genre, klient odešle požadavek GET na `/api/books/genre`, kde *genre* je název genre. (Například `/get/books/fantasy`.)
+Chcete-li získat seznam seznamů v konkrétní genre, klient odešle požadavek GET na `/api/books/genre`, kde *genre* je název genre. (Například `/api/books/fantasy`.)
 
 Přidejte následující metodu do `BooksController`.
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
-title: "Vytvoření číselný nahoru/dolů ovládacího prvku pomocí webové služby back-end (VB) | Microsoft Docs"
+title: Vytvoření číselný nahoru/dolů ovládacího prvku pomocí webové služby back-end (VB) | Microsoft Docs
 author: wenz
-description: "Místo uživatele zadejte hodnotu do zaškrtávacího políčka, by mohly být číselný nahoru/dolů ovládací prvek (který existuje ve Windows a jinými operačními systémy) jako další c..."
+description: Místo uživatele zadejte hodnotu do zaškrtávacího políčka, by mohly být číselný nahoru/dolů ovládací prvek (který existuje ve Windows a jinými operačními systémy) jako další c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5ceefd6c18761c2abe3f3a4298d340642a0951d6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 690fd89c552407ec5d77419aae2488e4832efe44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-numeric-updown-control-with-a-web-service-backend-vb"></a>Vytvoření číselný nahoru/dolů ovládacího prvku pomocí webové služby back-end (VB)
 ====================
@@ -45,10 +45,10 @@ Tato ukázka číselný nahoru/dolů řízení pouze povolit hodnoty, které jso
 
 Nakonec vytvořte novou stránku ASP.NET. Obvyklým způsobem, budete potřebovat `ScriptManager` řízení, `TextBox` řízení a `NumericUpDownExtender` ovládacího prvku. K tomu je nutné zadat informace o webové služby:
 
-- `ServiceDownMethod`název na nabídku webové metody nebo stránky – metoda
-- `ServiceDownPath`Cesta k webové službě s dolů metody služby; vynechat, pokud používáte metodu stránky
-- `ServiceUpMethod`Název nahoru webové metody nebo stránky – metoda
-- `ServiceUpPath`Cesta k webové službě s aktuálním metody služby; vynechat, pokud používáte metodu stránky
+- `ServiceDownMethod` název na nabídku webové metody nebo stránky – metoda
+- `ServiceDownPath` Cesta k webové službě s dolů metody služby; vynechat, pokud používáte metodu stránky
+- `ServiceUpMethod` Název nahoru webové metody nebo stránky – metoda
+- `ServiceUpPath` Cesta k webové službě s aktuálním metody služby; vynechat, pokud používáte metodu stránky
 
 Tady je kompletní kód pro stránky:
 
@@ -61,5 +61,5 @@ Pokud spustíte stránky, Všimněte si, jak se hodnota v textovém poli vždy z
 
 Zobrazí pouze čísla, které jsou power 2 ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)

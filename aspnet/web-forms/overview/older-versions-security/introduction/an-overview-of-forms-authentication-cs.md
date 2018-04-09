@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
-title: "Přehled ověřování pomocí formulářů (C#) | Microsoft Docs"
+title: Přehled ověřování pomocí formulářů (C#) | Microsoft Docs
 author: rick-anderson
-description: "Vytváření vlastních tras"
+description: Vytváření vlastních tras
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d386a3b6328675fe21f989f8fd36bfc91fc08b32
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f64384d403f3cf81ffa3327a81b635bc71e2b44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-forms-authentication-c"></a>Přehled ověřování pomocí formulářů (C#)
 ====================
@@ -43,8 +43,8 @@ Když modulem runtime ASP.NET zpracovává žádost o prostředek ASP.NET, např
 
 *Vytváření modulů HTTP v* jsou spravované třídy, jejichž kód se spustí v reakci na určité události v průběhu životního cyklu požadavku. ASP.NET se dodává s počtem modulů HTTP, který provádění základních úloh na pozadí. Dva integrované moduly HTTP, které jsou obzvláště důležité pro tato diskuse se:
 
-- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)**– ověřuje uživatele zkontrolováním lístek ověřování pomocí formulářů, který je obvykle součástí kolekce souborů cookie uživatele. Pokud je k dispozici žádné ověřovací lístek, je anonymní uživatel.
-- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)**– Určuje, zda je aktuální uživatel oprávnění pro přístup k požadované adresy URL. Tento modul určuje oprávnění na základě konzultace ohledně autorizační pravidla, zadaný v konfiguračních souborech aplikace. Technologie ASP.NET obsahuje také [ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) který určuje autoritu podle konzultace ohledně požadované soubory seznamy ACL.
+- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)** – ověřuje uživatele zkontrolováním lístek ověřování pomocí formulářů, který je obvykle součástí kolekce souborů cookie uživatele. Pokud je k dispozici žádné ověřovací lístek, je anonymní uživatel.
+- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)** – Určuje, zda je aktuální uživatel oprávnění pro přístup k požadované adresy URL. Tento modul určuje oprávnění na základě konzultace ohledně autorizační pravidla, zadaný v konfiguračních souborech aplikace. Technologie ASP.NET obsahuje také [ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) který určuje autoritu podle konzultace ohledně požadované soubory seznamy ACL.
 
 `FormsAuthenticationModule` Pokus o ověření uživatelů před verzí `UrlAuthorizationModule` (a `FileAuthorizationModule`) provádění. Pokud uživatel zadal žádost nemá oprávnění k přístupu k požadovanému zdroji, modul autorizace ukončí požadavek a vrátí [HTTP 401 neoprávněný](http://www.checkupdown.com/status/E401.html) stavu. Ve scénářích ověřování systému Windows je vrácen stav HTTP 401 do prohlížeče. Tento kód stavu způsobí, že prohlížeč zobrazí výzva k zadání přihlašovacích údajů prostřednictvím modální dialogové okno. Ověřování pomocí formulářů, ale HTTP 401 Unauthorized status je nikdy odeslán do prohlížeče vzhledem k tomu, že FormsAuthenticationModule zjistí tento stav a upraví ho přesměruje uživatele na přihlašovací stránku místo (prostřednictvím [HTTP 302 přesměrování](http://www.checkupdown.com/status/E302.html) stav).
 
@@ -103,7 +103,7 @@ Do lokality v kořenovém adresáři s názvem Site.master přidáte další, no
 **Obrázek 3**: Přidání webu hlavní stránku s názvem Site.master ([Kliknutím zobrazit obrázek v plné velikosti](an-overview-of-forms-authentication-cs/_static/image7.png))
 
 
-Zadejte sem rozložení stránky na webu na hlavní stránce. Můžete použít zobrazení návrhu a přidat libovolnou rozložení a webové kontroly je nutné, nebo můžete ručně přidat kód ručně v zobrazení zdroje. I strukturovaná rozložení Moje hlavní stránky tak, aby napodoboval rozložení použít v mé  *[práci s daty v technologii ASP.NET 2.0](../../data-access/index.md)*  kurz řady (viz obrázek 4). Hlavní stránka používá [kaskádových stylů](http://www.w3schools.com/css/default.asp) pro umístění a stylů CSS nastavení definované v souboru Style.css (která je obsažena v tomto kurzu přidružené ke stažení). Při nelze zjistit z značek vidíte níže, jsou definovaná pravidla šablon stylů CSS tak, aby navigaci &lt;div&gt;na obsah je absolutně nastavený tak, aby se zobrazí na levé straně a má pevnou šířku 200 pixelů.
+Zadejte sem rozložení stránky na webu na hlavní stránce. Můžete použít zobrazení návrhu a přidat libovolnou rozložení a webové kontroly je nutné, nebo můžete ručně přidat kód ručně v zobrazení zdroje. I strukturovaná rozložení Moje hlavní stránky tak, aby napodoboval rozložení použít v mé *[práci s daty v technologii ASP.NET 2.0](../../data-access/index.md)* kurz řady (viz obrázek 4). Hlavní stránka používá [kaskádových stylů](http://www.w3schools.com/css/default.asp) pro umístění a stylů CSS nastavení definované v souboru Style.css (která je obsažena v tomto kurzu přidružené ke stažení). Při nelze zjistit z značek vidíte níže, jsou definovaná pravidla šablon stylů CSS tak, aby navigaci &lt;div&gt;na obsah je absolutně nastavený tak, aby se zobrazí na levé straně a má pevnou šířku 200 pixelů.
 
 [!code-aspx[Main](an-overview-of-forms-authentication-cs/samples/sample1.aspx)]
 
@@ -240,7 +240,7 @@ Za předpokladu, že zadané přihlašovací údaje jsou platné, je potřeba vy
 
 - [GetAuthCookie (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.getauthcookie.aspx) – vytvoří ověřovací lístek pro zadaný název *uživatelské jméno*. Dále tato metoda vytvoří a vrátí objekt HttpCookie, který obsahuje obsah lístek ověřování. Pokud *persistCookie* má hodnotu true, je vytvoření trvalého souboru cookie.
 - [SetAuthCookie (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) – volá GetAuthCookie (*uživatelské jméno*, *persistCookie*) Metoda pro generování souboru cookie ověřování pomocí formulářů. Tato metoda pak přidá soubor cookie vrácený GetAuthCookie ke kolekci souborů cookie (za předpokladu, že ověřování pomocí formulářů na základě souborů cookie se použít; jinak, tato metoda volá interní třída, která zpracovává logiku bez souborů cookie lístku).
-- [RedirectFromLoginPage (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) – tato metoda volá SetAuthCookie (*uživatelské jméno*, *persistCookie* ) a pak přesměruje uživatele na příslušnou stránku.
+- [RedirectFromLoginPage (*uživatelské jméno*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) – tato metoda volá SetAuthCookie (*uživatelské jméno*, *persistCookie*) a pak přesměruje uživatele na příslušnou stránku.
 
 GetAuthCookie je užitečné, když budete muset upravit lístek ověřování před zápisem soubor cookie ke kolekci souborů cookie. SetAuthCookie je užitečné, pokud chcete vytvořit lístek pro ověřování formuláře a přidat jej do kolekce souborů cookie, ale nechcete přesměruje uživatele na příslušnou stránku. Možná budete chtít zachovat jejich na přihlašovací stránku nebo poslat některé alternativní stránku.
 
@@ -459,7 +459,7 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Ovládací prvky ASP.NET přihlášení](https://msdn.microsoft.com/library/d51ttbhx.aspx)
 - [Professional ASP.NET 2.0 zabezpečení, členství a Role správy](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
 - [`<authentication>` – Element](https://msdn.microsoft.com/library/532aee0e.aspx)
-- [`<forms>` Element pro`<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
+- [`<forms>` Element pro `<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Video školení na témata, které jsou obsažené v tomto kurzu
 
@@ -467,12 +467,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování...
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl tento kurz, který byl řady zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu zahrnují Alicja Maziarz, Jan Suru a Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](security-basics-and-asp-net-support-cs.md)
-[další](forms-authentication-configuration-and-advanced-topics-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](security-basics-and-asp-net-support-cs.md)
+> [další](forms-authentication-configuration-and-advanced-topics-cs.md)

@@ -2,21 +2,21 @@
 uid: whitepapers/mvc4-release-notes
 title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: "Tento dokument popisuje verzi rozhraní ASP.NET MVC 4."
+description: Tento dokument popisuje verzi rozhraní ASP.NET MVC 4.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/09/2011
 ms.topic: article
 ms.assetid: f014524f-25c0-4094-b8e1-886d99536f00
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: bea6f6112388290a2c6b5ed267626ba28fc36671
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: dbcea6090a0376b8732e02c0891721672bfe50f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -103,7 +103,7 @@ Rozhraní ASP.NET Web API zahrnuje podporu pro následující funkce:
 - **Šablona projektu webového rozhraní API:** vyberte nový formulář průvodce Nový projekt MVC 4 s rozhraním ASP.NET Web API rychle získat nastavení a spuštění projektu webového rozhraní API.
 - **Generování uživatelského rozhraní:** použití **přidat kontroler** dialogovém okně můžete rychle vygenerovat řadič webového rozhraní API, která je založena na Entity Framework na základě typu modelu.
 
-Pro další informace o rozhraní ASP.NET Web API naleznete [https://www.asp.net/web-api](../web-api/index.md).
+Pro další informace o rozhraní ASP.NET Web API naleznete [ https://www.asp.net/web-api ](../web-api/index.md).
 
 <a id="_Toc303253808"></a>
 ### <a name="enhancements-to-default-project-templates"></a>Vylepšení výchozí šablony projektů
@@ -230,11 +230,11 @@ Hlavní změny z Release Candidate. ASP.NET MVC 4 v této verzi jsou shrnuté n�
 - **Za trasy obslužné rutiny zpráv:** nyní můžete určit popisovač poslední zpráv v řetězci žádost pro danou trasu. To umožňuje podporu podél pravé architektury, pokud chcete používat směrování k odeslání do svých vlastních (jinou hodnotu než*IHttpController*) koncových bodů.
 - **Průběhu oznámení:** *ProgressMessageHandler* generuje oznámení o průběhu pro odesílané entity požadavků i pro stahované entity odpovědí. Pomocí této obslužné rutiny je možné udržovat přehled o tom, jak daleko jsou nahrávání textu žádosti nebo stahování text odpovědi.
 - **Push obsah:** *PushStreamContent* třída umožňuje scénáře, kde chce poskytovatel dat zapisovat přímo do požadavku nebo odpovědi (synchronně nebo nesynchronně) pomocí datového proudu. Když *PushStreamContent* je připravena přijímat data, zavolá delegáta akce s do výstupního datového proudu. Vývojář může pak zápisu do datového proudu pro stejně dlouho jako potřebné a zavřít datový proud při zápisu byla dokončena. *PushStreamContent* zjistí ukončovací datového proudu a dokončení základní asynchronní *úloh* pro vypsání obsah.
-- **Vytváření chybové odpovědi:** použití *HttpError* typ konzistentně představují informace o chybě z například ověření chyby a výjimky stále respektováním *IncludeErrorDetailPolicy* . Použít novou *CreateErrorResponse* rozšiřující metody snadno vytvářet chybové odpovědi s *HttpError* jako obsah. *HttpError* obsah je plně obsahu vyjednal.
+- **Vytváření chybové odpovědi:** použití *HttpError* typ konzistentně představují informace o chybě z například ověření chyby a výjimky stále respektováním *IncludeErrorDetailPolicy*. Použít novou *CreateErrorResponse* rozšiřující metody snadno vytvářet chybové odpovědi s *HttpError* jako obsah. *HttpError* obsah je plně obsahu vyjednal.
 - **Odebrat MediaRangeMapping:** vyjednavač obsahu výchozí teď zpracovává rozsahy typu média.
 - **Výchozí parametr vazby parametrů jednoduchého typu je nyní [FromUri]:** v předchozích verzích rozhraní ASP.NET Web API výchozí parametr vazby pro jednoduchý typ. parametry použít vazby modelu. Výchozí parametr vazby parametrů jednoduchého typu je nyní *[FromUri]*.
 - **Výběr akce ctí požadované parametry:** výběr akce v rozhraní ASP.NET Web API nyní pouze vybere akci. Pokud jsou k dispozici všechny požadované parametry, které pocházejí z identifikátoru URI. Parametr lze zadat jako volitelné tím, že poskytuje výchozí hodnotu argumentu ve podpis metody akce.
-- **Upravit vazby parametru HTTP:** použít *ParameterBindingAttribute* přizpůsobit vazbu parametru pro parametr určité akce nebo použít *ParameterBindingRules* na *HttpConfiguration* k přizpůsobení vazby parametrů více široce.
+- **Přizpůsobení vazby parametru HTTP:** použít *ParameterBindingAttribute* přizpůsobit vazbu parametru pro parametr určité akce nebo použít *ParameterBindingRules* na *HttpConfiguration* k přizpůsobení vazby parametrů více široce.
 - **Vylepšení objekt MediaTypeFormatter:** formátovací moduly mají nyní přístup k kompletní *HttpContent* instance.
 - **Ukládání do vyrovnávací paměti výběr zásad hostitele:** implementace a konfigurace *IHostBufferPolicySelector* služby v rozhraní ASP.NET Web API umožňující hostiteli k určení zásad pro ukládání do vyrovnávací paměti po který se má použít.
 - **Přístup klientské certifikáty, bez rozpoznání hostitele:** použití *GetClientCertificate* metodu rozšíření k získání zadaný certifikát klienta z zprávu požadavku.
@@ -245,7 +245,7 @@ Hlavní změny z Release Candidate. ASP.NET MVC 4 v této verzi jsou shrnuté n�
 - **Odkaz vylepšení generování:** *UrlHelper* už závisí na *HttpControllerContext*. Nyní máte přístup *UrlHelper* z jakékoli kontextu kde *HttpRequestMessage* je k dispozici.
 - **Změna pořadí spuštění obslužné rutiny zpráv:** obslužné rutiny zpráv jsou nyní spouštěny v pořadí, které jsou nakonfigurované místo v obráceném pořadí.
 - **Pomocník pro zapojení do obslužné rutiny zpráv:** nové *HttpClientFactory* , můžete se propojit *DelegatingHandlers* a vytvoření *HttpClient* s jste připraveni... požadované kanál. Také poskytuje funkce pro zapojení až s alternativní vnitřní obslužné rutiny (výchozí hodnota je *HttpClientHandler*) a také udělá spojení při použití *HttpMessageInvoker* nebo jiný  *DelegatingHandler* místo *HttpClient* jako původce volání top.
-- **Podpora pro sítím CDN v optimalizaci webů ASP.NET:** optimalizaci webů ASP.NET teď poskytuje podporu pro sady další adresu URL, která odkazuje na stejný prostředku v síti pro doručování obsahu CDN umožňuje pro každé zadejte alternativní cesty. Podpora sítím CDN umožňuje získat váš skript a stylu sady geograficky blíže k příjemce end webových aplikací.
+- **Podpora pro sítím CDN v optimalizaci webů ASP.NET:** optimalizaci webů ASP.NET teď poskytuje podporu pro sady další adresu URL, která odkazuje na stejný prostředku v síti pro doručování obsahu CDN umožňuje pro každé zadejte alternativní cesty. Podpora sítím CDN umožňuje získat váš skript a stylu sady geograficky blíže k příjemce end webových aplikací. Když není k dispozici CDN produkční aplikace by měla implementovat zálohu. Test záložní.
 - **Rozhraní ASP.NET Web API tras a konfigurace přesunut do *WebApiConfig.Register* statickou metodu, která může být resused v testovací kód.** Rozhraní ASP.NET Web API trasy byly dříve přidány v *RouteConfig.RegisterRoutes* společně s standardní MVC tras. Výchozí směrování ASP.NET Web API a konfigurace jsou nyní zpracovávány v samostatném *WebApiConfig.Register* metoda usnadňuje testování.
 
 <a id="_Toc303253815"></a>
@@ -261,7 +261,7 @@ Hlavní změny z Release Candidate. ASP.NET MVC 4 v této verzi jsou shrnuté n�
     - *MvcCSharpRazorCodeGenerator*
     - *MvcVBRazorCodeParser*
 
- Také byly odebrány následující metody: 
+  Také byly odebrány následující metody: 
 
     - *MvcCSharpRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
     - *MvcWebPageRazorHost.DecorateCodeGenerator(System.Web.Razor.Generator.RazorCodeGenerator)*
@@ -275,22 +275,23 @@ Hlavní změny z Release Candidate. ASP.NET MVC 4 v této verzi jsou shrnuté n�
 
     **Požadované aktualizace**
 
-    1. V kořenovém souboru Web.config, přidejte nový  *&lt;appSettings&gt;*  položka s klíčem *webPages:Version* a hodnotu *1.0.0.0*. 
+  1. V kořenovém souboru Web.config, přidejte nový *&lt;appSettings&gt;* položka s klíčem *webPages:Version* a hodnotu *1.0.0.0*. 
 
-        [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
-    2. V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a pak vyberte Uvolnit projekt. Potom znovu klikněte pravým tlačítkem a vyberte Upravit *ProjectName*.csproj.
-    3. Vyhledejte následující odkazy na sestavení: 
+      [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
+  2. V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a pak vyberte Uvolnit projekt. Potom znovu klikněte pravým tlačítkem a vyberte Upravit *ProjectName*.csproj.
+  3. Vyhledejte následující odkazy na sestavení: 
 
-        [!code-xml[Main](mvc4-release-notes/samples/sample8.xml)]
+      [!code-xml[Main](mvc4-release-notes/samples/sample8.xml)]
 
-        Nahraďte je následující:
+      Nahraďte je následující:
 
-        [!code-xml[Main](mvc4-release-notes/samples/sample9.xml)]
-    4. Uložte změny, zavřete soubor projektu (.csproj) byly úpravy a potom klikněte pravým tlačítkem na projekt a vyberte znovu načíst.
+      [!code-xml[Main](mvc4-release-notes/samples/sample9.xml)]
+  4. Uložte změny, zavřete soubor projektu (.csproj) byly úpravy a potom klikněte pravým tlačítkem na projekt a vyberte znovu načíst.
+
 - **Změna projektu ASP.NET MVC 4 k cíli 4.0, 4.5 nelze aktualizovat odkaz na sestavení EntityFramework:** Pokud změníte projektu ASP.NET MVC 4 k cíli 4.0 po které se budou zaměřovat 4.5 odkaz na sestavení EntityFramework budou i nadále odkazovat verze 4.5. Chcete-li vyřešit tento problém odinstalovat a znovu nainstalujte balíček EntityFramework NuGet.
-- **403 Zakázáno při spuštění aplikace ASP.NET MVC 4 v Azure po změně cíl 4.0, 4.5:** Pokud změníte projektu ASP.NET MVC 4 k cíli 4.0, po které se budou zaměřovat 4.5 a nasadit do Azure, mohou se zobrazit chybou 403 Zakázáno za běhu. Chcete-li vyřešit tento problém, přidejte následující do souboru web.config:`<modules runAllManagedModulesForAllRequests="true" />`
+- **403 Zakázáno při spuštění aplikace ASP.NET MVC 4 v Azure po změně cíl 4.0, 4.5:** Pokud změníte projektu ASP.NET MVC 4 k cíli 4.0, po které se budou zaměřovat 4.5 a nasadit do Azure, mohou se zobrazit chybou 403 Zakázáno za běhu. Chcete-li vyřešit tento problém, přidejte následující do souboru web.config: `<modules runAllManagedModulesForAllRequests="true" />`
 - **Visual Studio 2012, dojde k chybě při zadávání '\' v řetězcový literál v souboru nástroje Razor.** Postup řešení problému zadejte uvozovky literálu řetězce první.
-- **Procházení k &quot;účet nebo spravovat&quot; ve výsledcích Internet šablony v chybě modulu runtime pro jazyky, CHS, TRK a CHT.** Vyřešte problém upravit stránce oddělit  *@User.Identity.Name*  umístěním jako jediný obsah v rámci  *&lt;silné&gt;*  značky.
+- <strong>Procházení k &quot;účet nebo spravovat&quot; ve výsledcích Internet šablony v chybě modulu runtime pro jazyky, CHS, TRK a CHT.</strong> Vyřešte problém upravit stránce oddělit <em>@User.Identity.Name</em> umístěním jako jediný obsah v rámci <em>&lt;silné&gt;</em> značky.
 - **Nepodporují se zprostředkovatelé Google a LinkedIn v rámci webů Azure.** Zprostředkovatelé alternativní ověřování používejte při nasazování na weby Azure.
 - **Při použití UriPathExtensionMapping 8 služby IIS Express nebo IIS, by se při pokusu o použití rozšíření přijímat chyb 404 nebyl nalezen.** Obslužné rutiny statických souborů koliduje s požadavky na webové rozhraní API, která použít *UriPathExtensionMappings*. Nastavit *runAllManagedModulesForAllRequests = true* v souboru web.config. Chcete-li vyřešit tento problém.
 - **Už je volána metoda Controller.Execute.** Všechny řadiče MVC jsou nyní vždycky spustí asynchronně.

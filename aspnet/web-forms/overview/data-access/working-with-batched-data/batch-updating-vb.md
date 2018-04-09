@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
-title: "Dávkové aktualizace (VB) | Microsoft Docs"
+title: Dávkové aktualizace (VB) | Microsoft Docs
 author: rick-anderson
-description: "Zjistěte, jak aktualizovat více záznamů databáze v rámci jedné operace. V uživatelské rozhraní vrstvě využijeme GridView, kde je každý řádek upravovat. V datech..."
+description: Zjistěte, jak aktualizovat více záznamů databáze v rámci jedné operace. V uživatelské rozhraní vrstvě využijeme GridView, kde je každý řádek upravovat. V datech...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bcfdf734de0b4a4aa0a11f35bd6e40d6b97719cf
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2c5119410057b39e7b9a03eca3a2dbdbc315ce00
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="batch-updating-vb"></a>Dávkové aktualizace (VB)
 ====================
@@ -185,7 +185,7 @@ Jeden poslední problém zůstane: Pokud máte t nemá produktu `CategoryID` zad
 Poznámka: Jak `<asp:ListItem Value="">` – vyberte jednu – má jeho `Value` atribut explicitně nastavit na prázdný řetězec. Odkazovat zpět [přizpůsobení rozhraní pro úpravu dat](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md) kurz podrobnější diskuzi na Proč je potřeba tato další položka rozevírací seznam pro zpracování `NULL` případu a proč přiřazení `Value` je nezbytné vlastnosti na prázdný řetězec.
 
 > [!NOTE]
-> Potenciální výkon a škálovatelnost problém tady, je důležité zmínit, není k dispozici. Vzhledem k tomu, že každý řádek obsahuje rozevírací seznam, který používá `CategoriesDataSource` jako svůj zdroj dat `CategoriesBLL` třídu s `GetCategories` bude volána metoda  *n*  navštěvovat za stránky, kde  *n*  je počet řádků v prvku GridView. Tyto  *n*  volání `GetCategories` za následek  *n*  dotazy do databáze. Tento dopad na databázi může dojít ke snížení za pomocí ukládání do mezipaměti vrácený kategorií v mezipaměti na požadavek nebo prostřednictvím vrstvě ukládání do mezipaměti pomocí ukládání do mezipaměti závislosti nebo velmi založené na krátkou dobu vypršení platnosti SQL. Další informace o za požadavek ukládání do mezipaměti možnost, najdete v části [ `HttpContext.Items` mezipaměť za požadavku](http://aspnet.4guysfromrolla.com/articles/060904-1.aspx).
+> Potenciální výkon a škálovatelnost problém tady, je důležité zmínit, není k dispozici. Vzhledem k tomu, že každý řádek obsahuje rozevírací seznam, který používá `CategoriesDataSource` jako svůj zdroj dat `CategoriesBLL` třídu s `GetCategories` bude volána metoda *n* navštěvovat za stránky, kde *n* je počet řádky v GridView. Tyto *n* volání `GetCategories` za následek *n* dotazy do databáze. Tento dopad na databázi může dojít ke snížení za pomocí ukládání do mezipaměti vrácený kategorií v mezipaměti na požadavek nebo prostřednictvím vrstvě ukládání do mezipaměti pomocí ukládání do mezipaměti závislosti nebo velmi založené na krátkou dobu vypršení platnosti SQL. Další informace o za požadavek ukládání do mezipaměti možnost, najdete v části [ `HttpContext.Items` mezipaměť za požadavku](http://aspnet.4guysfromrolla.com/articles/060904-1.aspx).
 
 
 ## <a name="step-4-completing-the-editing-interface"></a>Krok 4: Dokončení úprav rozhraní
@@ -270,7 +270,7 @@ Pro tyto typy situacích zvažte použití následujících `BatchUpdateAlternat
 
 [!code-vb[Main](batch-updating-vb/samples/sample7.vb)]
 
-`BatchMethodAlternate`začne tím, že vytvoříte nový prázdný `ProductsDataTable` s názvem `products`. Následně kroky prostřednictvím GridView s `Rows` kolekce a pro každý řádek získá informace o konkrétním produktu pomocí BLL s `GetProductByProductID(productID)` metoda. Načtený `ProductsRow` instance má jeho vlastnosti aktualizovat stejným způsobem jako `BatchUpdate`, ale po aktualizaci řádku je importovat do `products` `ProductsDataTable` prostřednictvím DataTable s [ `ImportRow(DataRow)` metoda](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
+`BatchMethodAlternate` začne tím, že vytvoříte nový prázdný `ProductsDataTable` s názvem `products`. Následně kroky prostřednictvím GridView s `Rows` kolekce a pro každý řádek získá informace o konkrétním produktu pomocí BLL s `GetProductByProductID(productID)` metoda. Načtený `ProductsRow` instance má jeho vlastnosti aktualizovat stejným způsobem jako `BatchUpdate`, ale po aktualizaci řádku je importovat do `products` `ProductsDataTable` prostřednictvím DataTable s [ `ImportRow(DataRow)` metoda](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
 
 Po `For Each` dokončení smyčky `products` obsahuje jeden `ProductsRow` instance pro každý řádek v GridView. Od těchto `ProductsRow` instance jsou přidané do `products` (místo aktualizaci), pokud jsme slepě předejte ji do `UpdateWithTransaction` metoda `ProductsTableAdatper` se pokusí každý záznam vložit do databáze. Místo toho je potřeba zadat, že všechny tyto řádky se změnila (není přidáno).
 
@@ -289,12 +289,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Teresy Murphy a David Suru. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](wrapping-database-modifications-within-a-transaction-vb.md)
-[další](batch-deleting-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](wrapping-database-modifications-within-a-transaction-vb.md)
+> [další](batch-deleting-vb.md)

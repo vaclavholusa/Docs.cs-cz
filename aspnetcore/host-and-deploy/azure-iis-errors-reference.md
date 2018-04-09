@@ -1,7 +1,7 @@
 ---
-title: "Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core"
+title: Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core
 author: guardrex
-description: "Rozlišení běžných chyb při hostování aplikace ASP.NET Core v Azure aplikace služby a služby IIS."
+description: Rozlišení běžných chyb při hostování aplikace ASP.NET Core v Azure aplikace služby a služby IIS.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: cd9f8fc310ba0258477db51aa416c03debadeffe
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: fb833ef8797ea7851cbaf53bb5681df248d07a49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core
 
@@ -30,19 +30,19 @@ Shromážděte následující informace:
 
 Porovnávání informací o následující běžné chyby. Pokud je nalezena shoda, postupujte podle pomoc při řešení potíží.
 
-[!INCLUDE[Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 ## <a name="installer-unable-to-obtain-vc-redistributable"></a>Instalační program nemohl získat VC ++ Redistributable
 
 * **Instalační program výjimka:** 0x80072efd nebo 0x80072f76 - Nespecifikovaná chyba
 
-* **Instalační program protokolu výjimka &#8224;:** Chyba 0x80072efd nebo 0x80072f76: spuštění EXE balíčku se nezdařilo
+* **Instalační program protokolu výjimka&#8224;:** Chyba 0x80072efd nebo 0x80072f76: spuštění EXE balíčku se nezdařilo
 
-  &#8224; V protokolu je umístěn v C:\Users\\{USER}\AppData\Local\Temp\dd_DotNetCoreWinSvrHosting__{timestamp}.log.
+  &#8224;V protokolu je umístěn v C:\Users\\{USER}\AppData\Local\Temp\dd_DotNetCoreWinSvrHosting__{timestamp}.log.
 
 Řešení potíží:
 
-* Pokud systém nemá přístup k Internetu při instalaci serveru pro hostování sady, tato výjimka nastane, když se instalační program nemůže získat *Microsoft Visual C++ 2015 Redistributable*. Získání Instalační program z [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840). Pokud instalační program selže, nemusí server dostat na .NET Core runtime potřebná pro Hosting nasazení závislé na framework (chyba). Pokud hostování disketové jednotky, zkontrolujte, zda je modul runtime nainstalovány v programech &amp; funkce. V případě potřeby získat za běhu instalačního programu z [.NET stáhne](https://www.microsoft.com/net/download/core). Po instalaci modulu runtime, restartování systému nebo restartujte službu IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
+* Pokud systém nemá přístup k Internetu při instalaci serveru pro hostování sady, tato výjimka nastane, když se instalační program nemůže získat *Microsoft Visual C++ 2015 Redistributable*. Získání Instalační program z [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840). Pokud instalační program selže, nemusí server dostat na .NET Core runtime potřebná pro Hosting nasazení závislé na framework (chyba). Pokud hostování disketové jednotky, zkontrolujte, zda je modul runtime nainstalovány v programech &amp; funkce. V případě potřeby získat za běhu instalačního programu z [.NET všechny soubory ke stažení](https://www.microsoft.com/net/download/all). Po instalaci modulu runtime, restartování systému nebo restartujte službu IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
 
 ## <a name="os-upgrade-removed-the-32-bit-aspnet-core-module"></a>Upgrade operačního systému odebrat modul 32-bit ASP.NET Core
 
@@ -138,7 +138,7 @@ Porovnávání informací o následující běžné chyby. Pokud je nalezena sho
 
 * Disketové jednotky nasazení a nainstalovat .NET Core bez restartování služby IIS. Restartujte server, nebo restartujte službu IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
 
-* Disketové jednotky může mít nasazenou bez instalace na .NET Core runtime v hostitelském systému. Pokud na .NET Core runtime nebyla nainstalována, spusťte **hostování v rozhraní .NET Core systému Windows Server instalační program sady** v systému. V tématu [instalaci sady .NET jádra Windows serveru, který hostuje](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle). Pokud došlo k pokusu o instalaci na .NET Core runtime v systému bez připojení k Internetu, získat modul runtime z [.NET stáhne](https://www.microsoft.com/net/download/core) a spusťte instalační program hostování sady nainstalovat modul ASP.NET Core. Dokončete instalaci restartováním systému nebo restartování služby IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
+* Disketové jednotky může mít nasazenou bez instalace na .NET Core runtime v hostitelském systému. Pokud na .NET Core runtime nebyla nainstalována, spusťte **hostování v rozhraní .NET Core systému Windows Server instalační program sady** v systému. V tématu [instalaci sady .NET jádra Windows serveru, který hostuje](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle). Pokud došlo k pokusu o instalaci na .NET Core runtime v systému bez připojení k Internetu, získat modul runtime z [.NET všechny soubory ke stažení](https://www.microsoft.com/net/download/all) a spusťte instalační program hostování sady nainstalovat modul ASP.NET Core. Dokončete instalaci restartováním systému nebo restartování služby IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
 
 * Byla nasazena disketové jednotky a *Microsoft Visual C++ 2015 Redistributable (x64)* není nainstalovaná v systému. Získání Instalační program z [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840).
 
@@ -211,6 +211,18 @@ Poradce při potížích
 Poradce při potížích
 
 * Potvrďte, že dílčí aplikace *web.config* soubor neobsahuje `<handlers>` části.
+
+## <a name="stdout-log-path-incorrect"></a>Cesta k protokolu STDOUT nesprávný
+
+* **Prohlížeč:** aplikace reaguje normálně.
+
+* **Protokolu aplikace:** upozornění: Nepodařilo se vytvořit stdoutLogFile \\? \C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log, kód chyby = - 2147024893.
+
+* **ASP.NET Core modulu protokolu:** vytvoření souboru protokolu
+
+Poradce při potížích
+
+* `stdoutLogFile` Cesta zadaná v `<aspNetCore>` element *web.config* neexistuje. Další informace najdete v tématu [vytvoření a přesměrování protokolu](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection) tématu referenční konfigurace modulu jádra ASP.NET.
 
 ## <a name="application-configuration-general-issue"></a>Obecné problém konfigurace aplikace
 

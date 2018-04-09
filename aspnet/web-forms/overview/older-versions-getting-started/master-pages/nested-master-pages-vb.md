@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
-title: "Vnořené hlavní stránky (VB) | Microsoft Docs"
+title: Vnořené hlavní stránky (VB) | Microsoft Docs
 author: rick-anderson
-description: "Ukazuje, jak lze vnořit jednu stránku předlohy v rámci jiného."
+description: Ukazuje, jak lze vnořit jednu stránku předlohy v rámci jiného.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9059e358311cc80b6a64aa3ee1168f4ffcd4e94c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8c0123c12bb653a7f680154e2155eae0eb129428
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="nested-master-pages-vb"></a>Vnořené hlavní stránky (VB)
 ====================
@@ -94,7 +94,7 @@ Tento kód zobrazí odkaz s názvem "Vnořené hlavní stránky (jednoduchý)" v
 
 ## <a name="step-2-creating-a-simple-nested-master-page"></a>Krok 2: Vytvoření jednoduché vnořené hlavní stránky
 
-`Simple.master`obsahuje dvou ovládacích prvků ContentPlaceHolder: `MainContent` ContentPlaceHolder jsme přidali v rámci ve webovém formuláři spolu s `head` ContentPlaceHolder v `<head>` elementu. Pokud se k vytvoření stránky obsahu a navázat jej na `Simple.master` stránky obsahu by měla mít dva ovládací prvky obsahu odkazující na dvě ContentPlaceHolders. Podobně pokud jsme vytvoření vnořené hlavní stránky a navázat jej na `Simple.master` pak vnořené hlavní stránky bude mít dva ovládací prvky obsahu.
+`Simple.master` obsahuje dvou ovládacích prvků ContentPlaceHolder: `MainContent` ContentPlaceHolder jsme přidali v rámci ve webovém formuláři spolu s `head` ContentPlaceHolder v `<head>` elementu. Pokud se k vytvoření stránky obsahu a navázat jej na `Simple.master` stránky obsahu by měla mít dva ovládací prvky obsahu odkazující na dvě ContentPlaceHolders. Podobně pokud jsme vytvoření vnořené hlavní stránky a navázat jej na `Simple.master` pak vnořené hlavní stránky bude mít dva ovládací prvky obsahu.
 
 Umožňuje přidat nové vnořené hlavní stránky k `NestedMasterPages` složku s názvem `SimpleNested.master`. Klikněte pravým tlačítkem na `NestedMasterPages` složky a vyberte Přidat novou položku. Otevře dialogové okno Přidat novou položku, na obrázku 2. Vyberte typ šablony stránky předlohy a zadejte název nové stránky předlohy. K označení, že nová stránka předlohy by měla být vnořené hlavní stránky, zaškrtněte políčko "Vyberte stránku předlohy".
 
@@ -126,7 +126,7 @@ Aktualizujte tento vnořené hlavní stránky tak, aby se zobrazí text "Hello, 
 
 [!code-aspx[Main](nested-master-pages-vb/samples/sample4.aspx)]
 
-Po provedení tohoto přidání, uložte vnořené hlavní stránky a pak přidejte novou stránku obsahu, aby `NestedMasterPages` složku s názvem `Default.aspx`a navázat jej na `SimpleNested.master` stránky předlohy. Po přidání této stránky může být Překvapený obsahovat žádné ovládací prvky obsahu, (viz obrázek 4)! Stránky obsahu přístup jenom k jeho *nadřazené* hlavní stránky ContentPlaceHolders. `SimpleNested.master`neobsahuje všechny ovládací prvky ContentPlaceHolder; proto všechny stránky obsahu vázána na tuto stránku předlohy nemůže obsahovat všechny ovládací prvky obsahu.
+Po provedení tohoto přidání, uložte vnořené hlavní stránky a pak přidejte novou stránku obsahu, aby `NestedMasterPages` složku s názvem `Default.aspx`a navázat jej na `SimpleNested.master` stránky předlohy. Po přidání této stránky může být Překvapený obsahovat žádné ovládací prvky obsahu, (viz obrázek 4)! Stránky obsahu přístup jenom k jeho *nadřazené* hlavní stránky ContentPlaceHolders. `SimpleNested.master` neobsahuje všechny ovládací prvky ContentPlaceHolder; proto všechny stránky obsahu vázána na tuto stránku předlohy nemůže obsahovat všechny ovládací prvky obsahu.
 
 
 [![Nová stránka obsahu obsahuje žádné ovládací prvky obsahu](nested-master-pages-vb/_static/image11.png)](nested-master-pages-vb/_static/image10.png)
@@ -258,7 +258,7 @@ Obrázek 10 ukazuje `AdminNested.master` vnořené hlavní stránky při zobraze
 
 Kdykoliv přidáme do části Správa musíme vytvořte mu vazbu k nové stránky obsahu `AdminNested.master` stránky předlohy jsme právě vytvořili. Ale co o existující stránky obsahu? V současné době jsou odvozeny od všechny stránky obsahu v lokalitě `BasePage` třídy, která prostřednictvím kódu programu nastaví hlavní stránky obsahu stránce za běhu. Nejedná se o chování, které má být obsah stránky v části Správa. Místo toho chceme, aby tyto stránek obsahu vždy nutné použít `AdminNested.master` stránky. Je zodpovědností vnořené hlavní stránky zvolte právo nejvyšší úrovně obsahu stránce za běhu.
 
-Nejlepší způsob, jak dosáhnout to požadovaných chování je vytvořte novou třídu vlastní základní stránky s názvem `AdminBasePage` který rozšiřuje `BasePage` třídy. `AdminBasePage`potom můžete přepsat `SetMasterPageFile` a nastavte `Page` objektu `MasterPageFile` na hodnotu pevně "~ / Admin/AdminNested.master". Tímto způsobem žádné stránce, která je odvozena od `AdminBasePage` použije `AdminNested.master`, zatímco žádné stránce, která je odvozena od `BasePage` bude mít jeho `MasterPageFile` vlastnost nastavit dynamicky buď "~ / Site.master" nebo "~ / Alternate.master" založené na hodnotu `MyMasterPage` Proměnné relace.
+Nejlepší způsob, jak dosáhnout to požadovaných chování je vytvořte novou třídu vlastní základní stránky s názvem `AdminBasePage` který rozšiřuje `BasePage` třídy. `AdminBasePage` potom můžete přepsat `SetMasterPageFile` a nastavte `Page` objektu `MasterPageFile` na hodnotu pevně "~ / Admin/AdminNested.master". Tímto způsobem žádné stránce, která je odvozena od `AdminBasePage` použije `AdminNested.master`, zatímco žádné stránce, která je odvozena od `BasePage` bude mít jeho `MasterPageFile` vlastnost nastavit dynamicky buď "~ / Site.master" nebo "~ / Alternate.master" založené na hodnotu `MyMasterPage` Proměnné relace.
 
 Začněte přidáním nového souboru třídy `App_Code` složku s názvem `AdminBasePage.vb`. Mít `AdminBasePage` rozšířit `BasePage` a potom přepsáním `SetMasterPageFile` metoda. V dané metody přiřadit `MasterPageFile` hodnota "~ / Admin/AdminNested.master". Po provedení těchto změn třídě soubor by měl vypadat podobně jako následující:
 
@@ -358,11 +358,11 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](specifying-the-master-page-programmatically-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](specifying-the-master-page-programmatically-vb.md)

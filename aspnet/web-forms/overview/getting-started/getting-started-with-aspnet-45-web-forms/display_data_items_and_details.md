@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
-title: "Zobrazení dat položky a podrobnosti | Microsoft Docs"
+title: Zobrazení dat položky a podrobnosti | Microsoft Docs
 author: Erikre
-description: "Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme..."
+description: Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
 msc.type: authoredcontent
-ms.openlocfilehash: 809d7a9c21a3ddf5dfd07d079eb8fe0d1d81712d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5fea654aa5116193cb7496c1b9020ed8e25fc06f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="display-data-items-and-details"></a>Zobrazení dat položky a podrobnosti
 ====================
@@ -131,7 +131,7 @@ Tento kód používá **FormView** ovládací prvek zobrazí podrobnosti o jedno
 Výše uvedený kód připojit k databázi, je nutné přidat další kód pro *ProductDetails.aspx* kódu.
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na *ProductDetails.aspx* a pak klikněte na **kód zobrazení**.  
- *ProductDetails.aspx.cs* souboru se zobrazí.
+   *ProductDetails.aspx.cs* souboru se zobrazí.
 2. Existujícího kódu nahraďte následujícím kódem:   
 
     [!code-csharp[Main](display_data_items_and_details/samples/sample6.cs)]
@@ -160,6 +160,6 @@ V tomto kurzu řady mají přidáte značek a kódu, pokud chcete zobrazit sezna
 
 [Načítání a zobrazování dat pomocí vazby modelu a webové formuláře](../../presenting-and-managing-data/model-binding/retrieving-data.md)
 
->[!div class="step-by-step"]
-[Předchozí](ui_and_navigation.md)
-[další](shopping-cart.md)
+> [!div class="step-by-step"]
+> [Předchozí](ui_and_navigation.md)
+> [další](shopping-cart.md)

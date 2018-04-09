@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
-title: "Představení technologie ASP.NET Web Pages – aktualizace dat databáze | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages – aktualizace dat databáze | Microsoft Docs
 author: tfitzmac
-description: "V tomto kurzu se dozvíte, jak aktualizovat položku (změnit) existující databáze při použití technologie ASP.NET Web Pages (Razor). Předpokládá, že jste dokončili řady tý..."
+description: V tomto kurzu se dozvíte, jak aktualizovat položku (změnit) existující databáze při použití technologie ASP.NET Web Pages (Razor). Předpokládá, že jste dokončili řady tý...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/02/2018
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: b016231975bf8d359f4c390b0b478edc383117d4
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: e889cd27e2267a08f7b6ea708c92e35edbdd7a1a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>Představení technologie ASP.NET Web Pages – aktualizace dat databáze
 ====================
@@ -108,7 +108,7 @@ Jakmile víte o `format` vlastnost, je jednodušší zjistit, jak nové **upravi
 
 Sloupec obsahuje *pouze* z kódu, který vykreslí odkaz, plus některé informace (ID), je extrahována ze záznamů databáze pro řádek.
 
-> [!TIP] 
+> [!TIP]
 > 
 > **Poziční parametry pro metodu a pojmenované parametry**
 > 
@@ -173,7 +173,7 @@ Kód používá `Request.QueryString["id"]` získat ID, která je předána na s
 
 Tento kód ukazuje jiný způsob, jak ověřit informace. V tomto kurzu předchozí pracoval s `Validation` pomocné rutiny. Registrovaných pole k ověření a automaticky se ověřování ASP.NET a zobrazí chyby pomocí `Html.ValidationMessage` a `Html.ValidationSummary`. V takovém případě však můžete jste ověřování není skutečně uživatelského vstupu. Místo toho že ověřování hodnotu, která byla předána na stránku z jinde. `Validation` Pomocné rutiny, která není to pro vás.
 
-Proto byste zkontrolovat hodnotu sami, vyzkoušejte s `if(!Request.QueryString["ID"].IsEmpty()`). Pokud dojde k potížím, můžete zobrazit chyba pomocí `Html.ValidationSummary`, stejně jako `Validation` pomocné rutiny. Chcete-li to udělat, zavolejte `Validation.AddFormError` a předejte ji zprávu zobrazíte. `Validation.AddFormError`je integrované metoda, která umožňuje definovat vlastní zprávy, které se pomocí ověřování systému, které jste již obeznámeni s svázání. (Později v tomto kurzu budeme mluvit o tom, aby tento proces ověření trochu robustnější.)
+Proto byste zkontrolovat hodnotu sami, vyzkoušejte s `if(!Request.QueryString["ID"].IsEmpty()`). Pokud dojde k potížím, můžete zobrazit chyba pomocí `Html.ValidationSummary`, stejně jako `Validation` pomocné rutiny. Chcete-li to udělat, zavolejte `Validation.AddFormError` a předejte ji zprávu zobrazíte. `Validation.AddFormError` je integrované metoda, která umožňuje definovat vlastní zprávy, které se pomocí ověřování systému, které jste již obeznámeni s svázání. (Později v tomto kurzu budeme mluvit o tom, aby tento proces ověření trochu robustnější.)
 
 Po provedení se, že je ID videa, kód čte databázi, hledá pouze položku jedné databáze. (Pravděpodobně jste si všimli obecné vzor pro databázové operace: Otevřete databázi, definovat příkazu jazyka SQL a spusťte příkaz.) Tentokrát SQL `Select` příkaz obsahuje `WHERE ID = @0`. Protože ID je jedinečný, se může vracet jenom jeden záznam.
 
@@ -311,6 +311,6 @@ V dalším kurzu se zobrazí, jak odstranit záznam film.
 - [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](../../getting-started/introducing-razor-syntax-c.md)
 - [Prohlášení aktualizace SQL](http://www.w3schools.com/sql/sql_update.asp) na webu W3Schools
 
->[!div class="step-by-step"]
-[Předchozí](entering-data.md)
-[další](deleting-data.md)
+> [!div class="step-by-step"]
+> [Předchozí](entering-data.md)
+> [další](deleting-data.md)

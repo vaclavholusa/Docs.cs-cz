@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/aspnet4/overview
-title: "ASP.NET 4 a Visual Studio 2010 Web Development přehled | Microsoft Docs"
+title: ASP.NET 4 a Visual Studio 2010 Web Development přehled | Microsoft Docs
 author: rick-anderson
-description: "Tento dokument obsahuje přehled mnoha nových funkcí pro technologii ASP.NET, které jsou zahrnuté v rozhraní.NET Framework 4 a Visual Studio 2010."
+description: Tento dokument obsahuje přehled mnoha nových funkcí pro technologii ASP.NET, které jsou zahrnuté v rozhraní.NET Framework 4 a Visual Studio 2010.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 29d5b2f4c04b899b900427ac202c0a4f57f8076f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6ce52c387ff835eda46bc1882b8b974889e2d4af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 a Visual Studio 2010 Web Development přehled
 ====================
@@ -27,8 +27,8 @@ ms.lasthandoff: 01/30/2018
 
 **Obsah**
 
-**[Základní služby](#0.2__Toc253429238 "_Toc253429238")**  
-[Soubor Web.config refaktoring](#0.2__Toc253429239 "_Toc253429239")  
+**[Core Services](#0.2__Toc253429238 "_Toc253429238")**  
+[Web.config File Refactoring](#0.2__Toc253429239 "_Toc253429239")  
 [Ukládání do mezipaměti výstup pro Extensible](#0.2__Toc253429240 "_Toc253429240")  
 [Automatické spuštění webové aplikace](#0.2__Toc253429241 "_Toc253429241")  
 [Trvalé přesměrování stránky](#0.2__Toc253429242 "_Toc253429242")  
@@ -38,25 +38,25 @@ ms.lasthandoff: 01/30/2018
 [Objekt ukládání do mezipaměti a rozšiřitelnost ukládání objektů](#0.2__Toc253429246 "_Toc253429246")  
 [Rozšiřitelné HTML, adresy URL a kódování hlaviček protokolu HTTP](#0.2__Toc253429247 "_Toc253429247")  
 [Monitorování výkonu pro jednotlivé aplikace v rámci jednoho pracovního procesu](#0.2__Toc253429248 "_Toc253429248")  
-[Cílení na více](#0.2__Toc253429249 "_Toc253429249")
+[Multi-Targeting](#0.2__Toc253429249 "_Toc253429249")
 
-**[AJAX](#0.2__Toc253429250 "_Toc253429250")**  
+**[Ajax](#0.2__Toc253429250 "_Toc253429250")**  
 [jQuery zahrnuté s webovými formuláři a MVC](#0.2__Toc253429251 "_Toc253429251")  
 [Podpora sítě doručování obsahu](#0.2__Toc253429252 "_Toc253429252")  
-[Explicitní skripty ScriptManager](#0.2__Toc253429253 "_Toc253429253")
+[ScriptManager Explicit Scripts](#0.2__Toc253429253 "_Toc253429253")
 
-**[Webové formuláře](#0.2__Toc253429256 "_Toc253429256")**  
+**[Web Forms](#0.2__Toc253429256 "_Toc253429256")**  
 [Nastavení značek Meta pomocí Page.MetaKeywords a vlastnosti Page.MetaDescription](#0.2__Toc253429257 "_Toc253429257")  
 [Povolení zobrazení stavu jednotlivých ovládacích prvků](#0.2__Toc253429258 "_Toc253429258")  
 [Změny možnosti prohlížeče](#0.2__Toc253429259 "_Toc253429259")  
 [Směrování v technologii ASP.NET 4](#0.2__Toc253429260 "_Toc253429260")  
 [Nastavení ID klienta](#0.2__Toc253429261 "_Toc253429261")  
 [Zachování výběru řádku v ovládacích prvcích dat](#0.2__Toc253429262 "_Toc253429262")  
-[Ovládací prvek ASP.NET graf](#0.2__Toc253429263 "_Toc253429263")  
+[ASP.NET Chart Control](#0.2__Toc253429263 "_Toc253429263")  
 [Filtrování dat pomocí ovládacího prvku QueryExtender](#0.2__Toc253429264 "_Toc253429264")  
-[Kódovaný výrazy kódu HTML](#0.2__Toc253429265 "_Toc253429265")  
+[Html Encoded Code Expressions](#0.2__Toc253429265 "_Toc253429265")  
 [Změny v šabloně projektu](#0.2__Toc253429266 "_Toc253429266")  
-[Vylepšení šablon stylů CSS](#0.2__Toc253429267 "_Toc253429267")  
+[CSS Improvements](#0.2__Toc253429267 "_Toc253429267")  
 [Skrytí div elementy kolem skryté pole](#0.2__Toc253429268 "_Toc253429268")  
 [Vykreslování vnější tabulky pro ovládací prvky podle šablony](#0.2__Toc253429269 "_Toc253429269")  
 [ListView – ovládací prvek vylepšení](#0.2__Toc253429270 "_Toc253429270")  
@@ -65,13 +65,13 @@ ms.lasthandoff: 01/30/2018
 [Průvodce a ovládací prvky CreateUserWizard 56](#0.2__Toc253429273 "_Toc253429273")
 
 **[ASP.NET MVC](#0.2__Toc253429274 "_Toc253429274")**  
-[Oblasti podpory](#0.2__Toc253429275 "_Toc253429275")  
+[Areas Support](#0.2__Toc253429275 "_Toc253429275")  
 [Podpora ověřování atributů datové poznámky](#0.2__Toc253429276 "_Toc253429276")  
-[Objekty se šablonami za](#0.2__Toc253429277 "_Toc253429277")
+[Templated Helpers](#0.2__Toc253429277 "_Toc253429277")
 
-**[Dynamická Data](#0.2__Toc253429278 "_Toc253429278")**  
+**[Dynamic Data](#0.2__Toc253429278 "_Toc253429278")**  
 [Povolení dynamické Data pro existující projekty](#0.2__Toc253429279 "_Toc253429279")  
-[Syntaxe deklarativní ovládacího prvku DynamicDataManager](#0.2__Toc253429280 "_Toc253429280")  
+[Declarative DynamicDataManager Control Syntax](#0.2__Toc253429280 "_Toc253429280")  
 [Šablony entit](#0.2__Toc253429281 "_Toc253429281")  
 [Nové šablony polí pro adresy URL a e-mailové adresy](#0.2__Toc253429282 "_Toc253429282")  
 [Vytváření odkazů pomocí ovládacího prvku DynamicHyperLink](#0.2__Toc253429283 "_Toc253429283")  
@@ -80,19 +80,19 @@ ms.lasthandoff: 01/30/2018
 [Nové atributy pro řízení zobrazení a výčty podporu](#0.2__Toc253429286 "_Toc253429286")  
 [Rozšířenou podporu pro filtry](#0.2__Toc253429287 "_Toc253429287")
 
-**[Visual Studio 2010 Web Development vylepšení](#0.2__Toc253429288 "_Toc253429288")**  
+**[Visual Studio 2010 Web Development Improvements](#0.2__Toc253429288 "_Toc253429288")**  
 [Vylepšené Kompatibilita šablon stylů CSS](#0.2__Toc253429289 "_Toc253429289")  
 [Fragmenty HTML a JavaScript](#0.2__Toc253429290 "_Toc253429290")  
-[Rozšíření JavaScript IntelliSense](#0.2__Toc253429291 "_Toc253429291")
+[JavaScript IntelliSense Enhancements](#0.2__Toc253429291 "_Toc253429291")
 
 **[Nasazení aplikací pomocí sady Visual Studio 2010 webové](#0.2__Toc253429292 "_Toc253429292")**  
-[Webové balení](#0.2__Toc253429293 "_Toc253429293")  
-[Transformace Web.config](#0.2__Toc253429294 "_Toc253429294")  
+[Web Packaging](#0.2__Toc253429293 "_Toc253429293")  
+[Web.config Transformation](#0.2__Toc253429294 "_Toc253429294")  
 [Nasazení databáze](#0.2__Toc253429295 "_Toc253429295")  
 [Publikování jedním kliknutím pro webové aplikace](#0.2__Toc253429296 "_Toc253429296")  
-[Prostředky](#0.2__Toc253429297 "_Toc253429297")
+[Resources](#0.2__Toc253429297 "_Toc253429297")
 
-**[Právní omezení](#0.2__Toc253429298 "_Toc253429298")**
+**[Disclaimer](#0.2__Toc253429298 "_Toc253429298")**
 
 <a id="0.2__Toc224729018"></a><a id="0.2__Toc253429238"></a><a id="0.2__Toc243304612"></a>
 
@@ -199,13 +199,13 @@ ASP.NET 4 zavádí nové možnosti pro rozšíření velikost adresy URL aplikac
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-Chcete-li povolit delší nebo kratší cesty (část adresy URL, která neobsahuje protokol, název serveru a řetězce dotazu), změňte  *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  atribut. Povolit řetězce dotazu delší nebo kratší, upravte hodnotu  *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  atribut.
+Chcete-li povolit delší nebo kratší cesty (část adresy URL, která neobsahuje protokol, název serveru a řetězce dotazu), změňte *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* atribut. Povolit řetězce dotazu delší nebo kratší, upravte hodnotu *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* atribut.
 
 ASP.NET 4 můžete také nakonfigurovat znaky, které se používají znak kontrolou adresy URL. Když ASP.NET vyhledá neplatný znak v části cesty adresy URL, odmítne žádost a vyvolá chybu HTTP 400. V předchozích verzích technologie ASP.NET byla omezena na pevnou sadu znaků kontroly znaků adresy URL. V technologii ASP.NET 4, můžete přizpůsobit sadu platné znaky pomocí nové *requestPathInvalidChars* atribut *httpRuntime* konfigurační element, jak je znázorněno v následujícím příkladu:
 
 [!code-xml[Main](overview/samples/sample11.xml)]
 
-Ve výchozím nastavení *requestPathInvalidChars* atribut definuje osm znaků jako neplatný. (V řetězci, který je přiřazen k *requestPathInvalidChars* ve výchozím nastavení*,*menší než (&lt;), je větší než (&gt;) a ampersand (&amp;) se znaky kódování, protože `Web.config` soubor je soubor XML.) Podle potřeby můžete přizpůsobit sadu neplatné znaky.
+Ve výchozím nastavení <em>requestPathInvalidChars</em> atribut definuje osm znaků jako neplatný. (V řetězci, který je přiřazen k <em>requestPathInvalidChars</em> ve výchozím nastavení<em>,</em>menší než (&lt;), je větší než (&gt;) a ampersand (&amp;) se znaky kódování, protože `Web.config` soubor je soubor XML.) Podle potřeby můžete přizpůsobit sadu neplatné znaky.
 
 > [!NOTE]
 > Poznámka: ASP.NET 4 vždy odmítne cest URL, které obsahují znaky v rozsahu ASCII 0x00 až 0x1F, protože ty jsou neplatné znaky adresy URL, jak jsou definovány v dokumentu RFC 2396 sdružení IETF ([http://www.ietf.org/rfc/rfc2396.txt](http://www.ietf.org/rfc/rfc2396.txt)). Ve verzích systému Windows Server, na kterých běží služby IIS 6 nebo vyšší, ovladač http.sys protokolu zařízení automaticky odmítne adresy URL se tyto znaky.
@@ -296,7 +296,7 @@ Vezměte na vědomí následující skutečnosti související cílení na konkr
 
 <a id="0.2__Toc224729023"></a><a id="0.2__Toc253429250"></a><a id="0.2__Toc243304624"></a>
 
-## <a name="ajax"></a>AJAX
+## <a name="ajax"></a>Ajax
 
 <a id="0.2__Toc253429251"></a><a id="0.2__Toc243304625"></a>
 
@@ -326,9 +326,11 @@ Využitím Microsoft Ajax CDN, může výrazně zlepšit výkon aplikací Ajax. 
 
 Microsoft Ajax Content Delivery Network podporuje protokol SSL (HTTPS), v případě, že budete muset poskytnout webovou stránku pomocí protokolu Secure Sockets Layer.
 
+Implementujte zálohu, když není k dispozici CDN. Test záložní.
+
 Další informace o Microsoft Ajax CDN, naleznete na následujícím webu:
 
-[https://www.ASP.NET/ajaxlibrary/CDN.ashx](../../ajax/cdn/overview.md)
+[https://www.asp.net/ajaxlibrary/CDN.ashx](../../ajax/cdn/overview.md)
 
 ASP.NET ScriptManager podporuje Microsoft Ajax CDN. Jednoduše tak, že nastavení jednu vlastnost, vlastnost EnableCdn můžete načíst všechny soubory JavaScript framework ASP.NET od CDN:
 
@@ -412,13 +414,13 @@ Jak vidíte, kód zakáže stav zobrazení ovládacího prvku PlaceHolder1. Pod�
 
 Účinek těchto nastavení je, že při prvním načtení stránky, následující výstup se zobrazí v prohlížeči:
 
-Zakázané`: [DynamicValue]`
+zakázáno `: [DynamicValue]`
 
 Povoleno:`[DynamicValue]`
 
 Po zpětné volání ale tento výstup se zobrazí:
 
-Zakázané`: [DeclaredValue]`
+zakázáno `: [DeclaredValue]`
 
 Povoleno:`[DynamicValue]`
 
@@ -444,17 +446,17 @@ ASP.NET určuje možnosti prohlížeče, který uživatel používá k procháze
 
 Následující seznam obsahuje nový prohlížeč definiční soubory:
 
-- *BlackBerry.Browser*
-- *Chrome.Browser*
-- *Default.Browser*
-- *Firefox.Browser*
-- *Gateway.Browser*
-- *Generic.Browser*
-- *IE.Browser*
-- *iemobile.Browser*
-- *iPhone.Browser*
-- *Opera.Browser*
-- *Safari.Browser*
+- *blackberry.browser*
+- *chrome.browser*
+- *Default.browser*
+- *firefox.browser*
+- *gateway.browser*
+- *generic.browser*
+- *ie.browser*
+- *iemobile.browser*
+- *iphone.browser*
+- *opera.browser*
+- *safari.browser*
 
 #### <a name="using-browser-capabilities-providers"></a>Pomocí poskytovatelé možností prohlížeče
 
@@ -629,7 +631,7 @@ Při spuštění stránky, která obsahuje tento ovládací prvek, je hodnota "s
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
-V takovém případě se hodnota searchterm parametru trasy se použije pro @companyname parametr ve *vyberte* příkaz.
+V takovém případě se hodnota searchterm parametru trasy se použije pro @companyname parametr ve <em>vyberte</em> příkaz.
 
 <a id="0.2__Toc224729037"></a><a id="0.2__Toc253429261"></a><a id="0.2__Toc243304635"></a>
 
@@ -983,10 +985,10 @@ Potom můžete definovat třídu CSS, která se vztahuje pouze *Skrytá* prvky, 
 Ve výchozím nastavení jsou následující ovládacích prvků ASP.NET Web server, které nepodporují šablony automaticky uzavřen do vnější tabulky, který se používá k aplikování vložené styly:
 
 - *FormView*
-- *Přihlášení*
+- *přihlášení*
 - *PasswordRecovery*
 - *Změna hesla byla*
-- *Průvodce*
+- *Wizard*
 - *CreateUserWizard*
 
 Novou vlastnost s názvem *RenderOuterTable* byl přidán do těchto ovládacích prvků, které umožňuje vnější tabulka, která se odeberou z značku. Představte si třeba na následující příklad *FormView* ovládacího prvku:
@@ -1137,7 +1139,7 @@ Objekty se šablonami za umožňují automaticky přidružit upravit a zobrazit 
 
 <a id="0.2__Toc253429278"></a><a id="0.2__Toc243304649"></a>
 
-## <a name="dynamic-data"></a>Dynamická Data
+## <a name="dynamic-data"></a>Dynamic Data
 
 Dynamická Data byla zavedena ve verzi rozhraní .NET Framework 3.5 SP1 v polovině roku 2008. Tato funkce poskytuje mnoho vylepšení pro vytvoření datové aplikace, včetně následujících:
 
@@ -1288,7 +1290,7 @@ Další fragmenty si můžete stáhnout, nebo můžete napsat vlastní fragmenty
 
 <a id="0.2__Toc224729054"></a><a id="0.2__Toc253429291"></a><a id="0.2__Toc243304662"></a>
 
-### <a name="javascript-intellisense-enhancements"></a>Rozšíření JavaScript IntelliSense
+### <a name="javascript-intellisense-enhancements"></a>JavaScript IntelliSense Enhancements
 
 V sadě Visual Studio 2010 jsme přepracovali JavaScript IntelliSense zajistit i bohatší úpravy prostředí. Technologie IntelliSense nyní rozpoznává objekty, které byly vytvořeny dynamicky metodami, jako *registerNamespace* a podle podobných technik používaných jinými rámci jazyka JavaScript. Zvýšení výkonu, k analýze velkých knihoven skriptů a zobrazení IntelliSense s minimální nebo žádnou prodleva zpracování. Kompatibilita značně zvýšilo pro podporu téměř všechny knihovny třetích stran a pro podporu různých stylů psaní kódu. Dokumentační komentáře jsou nyní přeložena jako typ a okamžitě využity technologii IntelliSense.
 
@@ -1362,10 +1364,10 @@ Další informace najdete v tématu [postupy: nasazení webové aplikace projekt
 Na následujících webech poskytují další informace o technologii ASP.NET 4 a Visual Studio 2010.
 
 - [ASP.NET 4](https://msdn.microsoft.com/library/ee532866%28VS.100%29.aspx) – oficiální dokumentaci pro technologii ASP.NET 4 na webu MSDN.
-- [https://www.ASP.NET/](https://www.asp.net/) – ASP.NET týmu vlastní webové stránky.
-- [https://www.ASP.NET/DynamicData/](https://msdn.microsoft.com/library/cc488545.aspx) a [obsahu mapy Dynamická Data technologie ASP.NET](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx) – prostředků Online na webu technologie ASP.NET a v oficiální dokumentaci pro dynamická Data technologie ASP.NET.
-- [https://www.ASP.NET/AJAX/](../../ajax/index.md) – hlavní webové prostředky pro vývoj prvku ASP.NET Ajax.
-- [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) – blog The týmu Visual Web Developer, který obsahuje informace o funkcích v sadě Visual Studio 2010.
+- [https://www.asp.net/](https://www.asp.net/) – ASP.NET týmu vlastní webové stránky.
+- [https://www.asp.net/dynamicdata/](https://msdn.microsoft.com/library/cc488545.aspx) a [obsahu mapy Dynamická Data technologie ASP.NET](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx) – prostředků Online na webu technologie ASP.NET a v oficiální dokumentaci pro dynamická Data technologie ASP.NET.
+- [https://www.asp.net/ajax/](../../ajax/index.md) – Hlavní webovým prostředkům pro vývoj prvku ASP.NET Ajax.
+- [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) – Blog v týmu Visual Web Developer, který obsahuje informace o funkcích v sadě Visual Studio 2010.
 - [Skvělá webová sada ASP.NET](https://github.com/aspnet/AspNetWebStack) – hlavní webovým prostředkům pro verze preview technologie ASP.NET.
 
 <a id="0.2__Toc224729061"></a><a id="0.2__Toc253429298"></a><a id="0.2__Toc243304669"></a>

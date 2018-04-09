@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
-title: "Konfigurace sady TFS sestavení serveru pro nasazení webu | Microsoft Docs"
+title: Konfigurace sady TFS sestavení serveru pro nasazení webu | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje postup přípravy serveru Team Foundation Server (TFS) sestavení pro sestavení a nasadit řešení pomocí Team Build a Internetu Informat..."
+description: Toto téma popisuje postup přípravy serveru Team Foundation Server (TFS) sestavení pro sestavení a nasadit řešení pomocí Team Build a Internetu Informat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: de31a9dffb95b863a4ec38b74fd2c6e03f287a7f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7b3130ca7d36ffec457e1871fa62c1077b5e3174
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>Konfigurace serveru TFS sestavení pro nasazení webu
 ====================
@@ -27,9 +27,9 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma popisuje postup přípravy serveru Team Foundation Server (TFS) sestavení pro sestavení a nasadit řešení pomocí Team Build a nástroj pro nasazení Internetové informační služby (IIS) webu (Web Deploy).
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz series používá ukázkové řešení & #x 2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3 systému Windows Komunikační služby Foundation (WCF) a projekt databáze.
+Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva projektu soubory & #x 2014; jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
 
 ## <a name="task-overview"></a>Přehled úloh
 
@@ -100,7 +100,7 @@ Nejlepší způsob, jak nainstalovat běžné komponenty webové platformy má p
 7. V **ASP.NET MVC 3 (Visual Studio 2010)** řádek, klikněte na tlačítko **přidat**.
 8. V navigačním podokně klikněte na tlačítko **Server**.
 9. V **2.1 nástroj pro nasazení webového** řádek, klikněte na tlačítko **přidat**.
-10. Klikněte na tlačítko **nainstalovat**. Instalace webové platformy zobrazí seznam produktů & #x 2014; společně s všechny přidružené závislosti & #x 2014; nainstalována a zobrazí výzvu k potvrzení licenčních podmínek.
+10. Klikněte na tlačítko **nainstalovat**. Instalace webové platformy zobrazí seznam produktů&#x2014;spolu s případnými přidružené závislosti&#x2014;k instalaci a zobrazí výzvu k potvrzení licenčních podmínek.
 11. Přečtěte si licenční podmínky a pokud vyjadřujete svůj souhlas s podmínkami, klikněte na **souhlasím**.
 12. Po dokončení instalace klikněte na tlačítko **Dokončit**a pak zavřete **webové platformy verze 3.0** okno.
 
@@ -116,6 +116,6 @@ V tomto okamžiku je váš server sestavení chtít začít vytvářet a nasazov
 
 Další obecné pokyny o práci s Team Build najdete v tématu [správu Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx).
 
->[!div class="step-by-step"]
-[Předchozí](adding-content-to-source-control.md)
-[další](creating-a-build-definition-that-supports-deployment.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-content-to-source-control.md)
+> [další](creating-a-build-definition-that-supports-deployment.md)

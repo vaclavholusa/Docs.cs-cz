@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
-title: "Nasazení webu Enterprise: Přehled scénářů | Microsoft Docs"
+title: 'Nasazení webu Enterprise: Přehled scénářů | Microsoft Docs'
 author: jrjlee
-description: "Tato sada kurzy používá ukázkové řešení s úrovní realistické složitější, společně s scénář nasazení fiktivních enterprise, k poskytování ref..."
+description: Tato sada kurzy používá ukázkové řešení s úrovní realistické složitější, společně s scénář nasazení fiktivních enterprise, k poskytování ref...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/03/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
 msc.type: authoredcontent
-ms.openlocfilehash: f90db22bf98456661c530e728e854ce109aec6fd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 20f6e206d6aa4bebb4936246468f5ada0e213236
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="enterprise-web-deployment-scenario-overview"></a>Podnikového nasazení webu: Přehled scénáře
 ====================
@@ -122,6 +122,6 @@ Kromě toho Správa nasazení, když jsou často a přírůstkové aktualizace v
 - Chcete protokolovat aktivity nasazení. Proces nasazení by měli poslat e-mailové oznámení o úspěšném nebo neúspěšném nasazení určeným příjemcům.
 - Pokud automatického nasazení selže, proces nasazení by měl opakovat aktuální nasazení nebo místo toho nasadit předchozí webového balíčku.
 
->[!div class="step-by-step"]
-[Předchozí](deploying-web-applications-in-enterprise-scenarios.md)
-[další](application-lifecycle-management-from-development-to-production.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-web-applications-in-enterprise-scenarios.md)
+> [další](application-lifecycle-management-from-development-to-production.md)

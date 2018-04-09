@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
-title: "Představení technologie ASP.NET Web Pages – zadávání dat databáze pomocí formulářů | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages – zadávání dat databáze pomocí formulářů | Microsoft Docs
 author: tfitzmac
-description: "V tomto kurzu se dozvíte, jak vytvořit formuláře položky a pak zadejte data, která můžete získat z formuláře do databázové tabulky při použití technologie ASP.NET Web Pages (..."
+description: V tomto kurzu se dozvíte, jak vytvořit formuláře položky a pak zadejte data, která můžete získat z formuláře do databázové tabulky při použití technologie ASP.NET Web Pages (...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: b74eecb16b2c4695bb417816b90f701f724cc9d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bbccf8134e90c19e29efaa5afe1e46e15320c189
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Představení technologie ASP.NET Web Pages – zadávání dat databáze pomocí formulářů
 ====================
@@ -121,7 +121,7 @@ Ve stromovém zobrazení souborů ve službě WebMatrix, klikněte pravým tlač
 
 !['Přidat film' stránku v prohlížeči](entering-data/_static/image2.png)
 
-(Pokud skončili na jinou stránku v prohlížeči, ujistěte se, že adresa URL je `http://localhost:nnnnn/AddMovie`), kde  *nnnnn*  je číslo portu, který používáte.)
+(Pokud skončili na jinou stránku v prohlížeči, ujistěte se, že adresa URL je `http://localhost:nnnnn/AddMovie`), kde *nnnnn* je číslo portu, který používáte.)
 
 Obdrželi jste chybovou stránku? Pokud ano, pečlivě si přečtěte a ujistěte se, že vypadá kód přesně co byl uveden výše.
 
@@ -145,7 +145,7 @@ V takovém případě nebyla ve skutečnosti vyvolat databáze (nebo *throw*) k 
 
 Samozřejmě nechcete umožnit uživatelům zadání půl prázdný film informace do databáze. Řešení je k ověření vstupu uživatele. Na začátku ověření bude jednoduše Ujistěte se, že uživatel zadal hodnotu pro všechna pole (to znamená, že žádný z nich obsahuje prázdný řetězec).
 
-> [!TIP] 
+> [!TIP]
 > 
 > **Hodnotu Null, prázdný řetězec**
 > 
@@ -157,7 +157,7 @@ Samozřejmě nechcete umožnit uživatelům zadání půl prázdný film informa
 > 
 > Teď a potom je důležité si uvědomit, přesně když je hodnota null a kdy je právě prázdný řetězec. V kódu *AddMovie* , dostanete hodnoty do textových polí pomocí `Request.Form["title"]` a tak dále. Při prvním spuštění stránky (před kliknutím na tlačítko), hodnota `Request.Form["title"]` má hodnotu null. Ale při odeslání formuláře, `Request.Form["title"]` získá hodnotu `title` textové pole. Informace o tom, ale není null; prázdné textové pole právě v ní má prázdný řetězec. Proto při spuštění kódu v reakci na tlačítko klikněte, `Request.Form["title"]` se nachází prázdný řetězec.
 > 
-> Proč je důležité tento rozdíl? Pokud jste vytvořili *filmy* tabulce explicitně uvedli jste, že žádné pole může mít hodnotu null. Ale zde máte formuláře položky pro nové filmy a pole jste ponechat prázdné. To bude přiměřeně by uživatel očekával databázi stěžovat si při pokusu o uložení nové filmy, které nebyly k dispozici hodnoty pro genre nebo rok. Je to bodem ale &mdash; i v případě, že tyto textová pole ponecháte prázdné, nejsou hodnoty null; jsou prázdné řetězce. Výsledkem je, budete moci ukládat nové filmy do databáze s těmito sloupci prázdný &mdash; , ale není null! &mdash;hodnoty. Proto je nutné provést se, že si uživatelé odeslat řetězec prázdný, což lze provést pomocí ověřování vstupu uživatele.
+> Proč je důležité tento rozdíl? Pokud jste vytvořili *filmy* tabulce explicitně uvedli jste, že žádné pole může mít hodnotu null. Ale zde máte formuláře položky pro nové filmy a pole jste ponechat prázdné. To bude přiměřeně by uživatel očekával databázi stěžovat si při pokusu o uložení nové filmy, které nebyly k dispozici hodnoty pro genre nebo rok. Je to bodem ale &mdash; i v případě, že tyto textová pole ponecháte prázdné, nejsou hodnoty null; jsou prázdné řetězce. Výsledkem je, budete moci ukládat nové filmy do databáze s těmito sloupci prázdný &mdash; , ale není null! &mdash; hodnoty. Proto je nutné provést se, že si uživatelé odeslat řetězec prázdný, což lze provést pomocí ověřování vstupu uživatele.
 
 
 ### <a name="the-validation-helper"></a>Pomocná rutina pro ověření
@@ -260,6 +260,6 @@ V dalším kurzu budete zjistěte, jak umožnit uživatelům upravit data, kter�
 - [Vložit do příkazu SQL](http://www.w3schools.com/sql/sql_insert.asp) na webu W3Schools
 - [Ověřování uživatelského vstupu v rozhraní ASP.NET Web Pages lokality](https://go.microsoft.com/fwlink/?LinkId=253002). Další informace o práci s `Validation` pomocné rutiny.
 
->[!div class="step-by-step"]
-[Předchozí](form-basics.md)
-[další](updating-data.md)
+> [!div class="step-by-step"]
+> [Předchozí](form-basics.md)
+> [další](updating-data.md)

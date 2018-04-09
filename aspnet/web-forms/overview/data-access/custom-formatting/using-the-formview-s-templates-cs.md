@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
-title: "Pomocí šablony FormView (C#) | Microsoft Docs"
+title: Pomocí šablony FormView (C#) | Microsoft Docs
 author: rick-anderson
-description: "Na rozdíl od DetailsView není FormView skládá z pole. Místo toho FormView je vykreslen pomocí šablony. V tomto kurzu podíváme, pomocí F...."
+description: Na rozdíl od DetailsView není FormView skládá z pole. Místo toho FormView je vykreslen pomocí šablony. V tomto kurzu podíváme, pomocí F....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 18e76a763e22c0d1046acc60e095bbd11960c5e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0e1b36f0bfc244e39bb620c1c066b3e2403722cb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-formviews-templates-c"></a>Pomocí šablony FormView (C#)
 ====================
@@ -33,12 +33,12 @@ V posledních dvou kurzech jsme viděli, jak přizpůsobit pomocí TemplateField
 
 Na rozdíl od DetailsView není FormView skládá z pole. Nelze přidat BoundField nebo TemplateField k FormView. Místo toho FormView je vykreslen pomocí šablony. FormView si můžete představit jako DetailsView ovládací prvek, který obsahuje jeden TemplateField. FormView podporuje následujících šablon:
 
-- `ItemTemplate`použít k vykreslení konkrétní záznam zobrazí ve třídě FormView
-- `HeaderTemplate`slouží k zadání řádku volitelné záhlaví
-- `FooterTemplate`slouží k zadání řádek volitelné zápatí
-- `EmptyDataTemplate`Když FormView `DataSource` nemá žádné záznamy `EmptyDataTemplate` slouží místě `ItemTemplate` pro vykreslení značek ovládacího prvku
-- `PagerTemplate`slouží k přizpůsobení rozhraní stránkování pro FormViews, které mají povoleno stránkování
-- `EditItemTemplate` / `InsertItemTemplate`použít pro přizpůsobení úpravy rozhraní nebo vkládání rozhraní FormViews, která podporuje tyto funkce
+- `ItemTemplate` použít k vykreslení konkrétní záznam zobrazí ve třídě FormView
+- `HeaderTemplate` slouží k zadání řádku volitelné záhlaví
+- `FooterTemplate` slouží k zadání řádek volitelné zápatí
+- `EmptyDataTemplate` Když FormView `DataSource` nemá žádné záznamy `EmptyDataTemplate` slouží místě `ItemTemplate` pro vykreslení značek ovládacího prvku
+- `PagerTemplate` slouží k přizpůsobení rozhraní stránkování pro FormViews, které mají povoleno stránkování
+- `EditItemTemplate` / `InsertItemTemplate` použít pro přizpůsobení úpravy rozhraní nebo vkládání rozhraní FormViews, která podporuje tyto funkce
 
 V tomto kurzu podíváme pomocí ovládacího prvku FormView k dispozici méně pevné zobrazení produktů. Místo pole pro název, kategorie, dodavatele a tak dále, FormView na `ItemTemplate` zobrazí tyto hodnoty pomocí kombinace header element a `<table>` (viz obrázek 1).
 
@@ -111,12 +111,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Pro tento kurz byl E.R. vést kontrolora Gilmore. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](using-templatefields-in-the-detailsview-control-cs.md)
-[další](displaying-summary-information-in-the-gridview-s-footer-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-templatefields-in-the-detailsview-control-cs.md)
+> [další](displaying-summary-information-in-the-gridview-s-footer-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
-title: "Určení stránky předlohy prostřednictvím kódu programu (VB) | Microsoft Docs"
+title: Určení stránky předlohy prostřednictvím kódu programu (VB) | Microsoft Docs
 author: rick-anderson
-description: "Vypadá na hlavní stránce obsahu stránce prostřednictvím kódu programu prostřednictvím obslužné rutiny události PreInit nastavení."
+description: Vypadá na hlavní stránce obsahu stránce prostřednictvím kódu programu prostřednictvím obslužné rutiny události PreInit nastavení.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 191de7546e2ba913fda0c8c8a8bfd3531b53336e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4ba2981e627199da89a25b0b59840f66521f2e78
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="specifying-the-master-page-programmatically-vb"></a>Určení stránky předlohy prostřednictvím kódu programu (VB)
 ====================
@@ -282,12 +282,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Suchi Banerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Suchi Banerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](master-pages-and-asp-net-ajax-vb.md)
-[další](nested-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](master-pages-and-asp-net-ajax-vb.md)
+> [další](nested-master-pages-vb.md)

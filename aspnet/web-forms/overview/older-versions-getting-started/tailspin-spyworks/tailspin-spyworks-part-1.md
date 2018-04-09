@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
-title: "Část 1: Soubor -> Nový projekt | Microsoft Docs"
+title: 'Část 1: Soubor -> Nový projekt | Microsoft Docs'
 author: JoeStagner
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 1 obsahuje přehled a soubor nebo nový projekt."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 1 obsahuje přehled a soubor nebo nový projekt.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: bd840f9f3f5d723e6bc1bb35955a7770634e9483
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a1b9681516e626b6a0eec420b168a74e05d88afb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-1-file--new-project"></a>Část 1: Soubor -> Nový projekt
 ====================
@@ -27,7 +27,7 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 > Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 1 obsahuje přehled a soubor nebo nový projekt.
 
 
-## <a id="_Toc260221666"></a>Přehled
+## <a id="_Toc260221666"></a>  Přehled
 
 Tento kurz je určen Úvod do webových formulářů ASP.NET. Jsme budete od pomalu, takže vývoj webů úrovni začátečník prostředí je to v pořádku.
 
@@ -61,11 +61,11 @@ Po změně pořadí, uvidí jednoduché potvrzovací obrazovce:
 
 Budete začneme vytvořením nového projektu ASP.NET WebForms v sadě Visual Studio 2010 a přidáme přírůstkově funkce k vytvoření kompletní funkční aplikaci. Na této cestě jsme zaměříme přístup k databázi, zobrazení seznamu a mřížky, stránky aktualizace dat, ověření dat pomocí stránky předlohy pro rozložení konzistentní stránky, AJAX, ověření, členství uživatele a další.
 
-Můžete absolvovat krok za krokem, nebo si můžete stáhnout hotová aplikace z [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
+Můžete absolvovat krok za krokem, nebo si můžete stáhnout z hotová aplikace [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
 
-Můžete použít Visual Studio 2010 nebo bezplatné Visual Web Developer 2010 z [https://www.microsoft.com/express/Web/](https://www.microsoft.com/express/Web/). Jestli Pokud chcete vytvářet aplikace, můžete použít SQL Server nebo volné SQL Server Express na hostitele databáze.
+Můžete použít Visual Studio 2010 nebo bezplatné Visual Web Developer 2010 z [ https://www.microsoft.com/express/Web/ ](https://www.microsoft.com/express/Web/). Jestli Pokud chcete vytvářet aplikace, můžete použít SQL Server nebo volné SQL Server Express na hostitele databáze.
 
-## <a id="_Toc260221667"></a>Soubor nový projekt
+## <a id="_Toc260221667"></a>  Soubor nový projekt
 
 Začneme výběrem nový projekt v sadě Visual Studio v nabídce Soubor. Otevře dialogové okno Nový projekt.
 
@@ -105,5 +105,5 @@ Vytvoříme také přemístit na adresáři stylů stránky předlohy. I když t
 
 Po této budeme potřebovat změnit hlavní stránce odkazy v všechny soubory .aspx generována výchozí stránky webových formulářů ASP.NET.
 
->[!div class="step-by-step"]
-[Další](tailspin-spyworks-part-2.md)
+> [!div class="step-by-step"]
+> [Next](tailspin-spyworks-part-2.md)

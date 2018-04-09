@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6
-title: "Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 6 | Microsoft Docs"
+title: Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 6 | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 164c2002a119420555d2c7065c5a79a5f433a725
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b76be25501275ba676c9a9acca8e73333439ee70
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-6"></a>Začínáme s databáze Entity Framework 4.0 nejprve a 4 webových formulářů ASP.NET - část 6
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 > Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET pomocí sady Visual Studio 2010 a Entity Framework 4.0. Informace o kurzu řady najdete v tématu [první kurz v řadě](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
@@ -57,7 +57,7 @@ Vzory dědičnosti TPH obecně doručování lepší výkon ve rozhraní Entity 
 
 ## <a name="adding-instructor-and-student-entities"></a>Přidání lektorem a Student entity
 
-Otevřete *SchoolModel.edmx* souboru, klikněte pravým tlačítkem na oblast neobsazeného v Návrháři vyberte **přidat**, pak vyberte **Entity***.*
+Otevřete <em>SchoolModel.edmx</em> souboru, klikněte pravým tlačítkem na oblast neobsazeného v Návrháři vyberte <strong>přidat</strong>, pak vyberte <strong>Entity</strong><em>.</em>
 
 [![image01](the-entity-framework-and-aspnet-getting-started-part-6/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image5.png)
 
@@ -161,6 +161,6 @@ V důsledku těchto změn jste vylepšené aplikace Contoso univerzity udržovat
 
 Nyní jste viděli jeden způsob, jak implementovat dědičnosti vzor v rozhraní Entity Framework. V následujícím kurzu dozvíte, jak používat uložené procedury, chcete-li mít větší kontrolu nad jak rozhraní Entity Framework přistupuje k databázi.
 
->[!div class="step-by-step"]
-[Předchozí](the-entity-framework-and-aspnet-getting-started-part-5.md)
-[další](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [!div class="step-by-step"]
+> [Předchozí](the-entity-framework-and-aspnet-getting-started-part-5.md)
+> [další](the-entity-framework-and-aspnet-getting-started-part-7.md)

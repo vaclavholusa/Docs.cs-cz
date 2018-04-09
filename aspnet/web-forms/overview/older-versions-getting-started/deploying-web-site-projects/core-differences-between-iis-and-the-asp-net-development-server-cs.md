@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
-title: "Základní rozdíly mezi službou IIS a ASP.NET Development Server (C#) | Microsoft Docs"
+title: Základní rozdíly mezi službou IIS a ASP.NET Development Server (C#) | Microsoft Docs
 author: rick-anderson
-description: "Při testování aplikací ASP.NET místně, pravděpodobné, že používáte webový vývojový Server ASP.NET. Produkční webu je však pravděpodobně pow..."
+description: Při testování aplikací ASP.NET místně, pravděpodobné, že používáte webový vývojový Server ASP.NET. Produkční webu je však pravděpodobně pow...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 79f06707cadf027baa03652dc722cab31f494b09
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e343a6eac39d7959718cb791012cfa3b931ae33f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>Základní rozdíly mezi službou IIS a ASP.NET Development Server (C#)
 ====================
@@ -94,7 +94,7 @@ Pomocí:
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-cs/samples/sample4.xml)]
 
-Pomocí vývojový Server ASP.NET, přejděte na web a zadejte adresu URL přímé jeden ze souborů PDF v panelu Adresa prohlížeče. Pokud jste si stáhli web přidružený tento kurz, který se adresa URL by měla vypadat podobně jako:`http://localhost:portNumber/PrivateDocs/aspnet_tutorial01_Basics_vb.pdf`
+Pomocí vývojový Server ASP.NET, přejděte na web a zadejte adresu URL přímé jeden ze souborů PDF v panelu Adresa prohlížeče. Pokud jste si stáhli web přidružený tento kurz, který se adresa URL by měla vypadat podobně jako: `http://localhost:portNumber/PrivateDocs/aspnet_tutorial01_Basics_vb.pdf`
 
 Zadáte tuto adresu URL do adresního řádku způsobí, že prohlížeč odeslat požadavek na vývojový Server ASP.NET pro soubor. Vývojový Server ASP.NET rukou vypnout modulem runtime ASP.NET pro zpracování požadavku. Vzhledem k tomu, že jsme ještě nepřihlásili a protože `Web.config` v `PrivateDocs` je konfigurována tak, aby odepřel anonymní přístup, modulem runtime ASP.NET automaticky přesměruje na přihlašovací stránku nám `Login.aspx` (viz obrázek 3). Když uživatel přesměrování na přihlašovací stránky, zahrnuje ASP.NET `ReturnUrl` parametr řetězce dotazu, který určuje stránce uživatel se pokoušel o zobrazení. Po úspěšném přihlášení uživatele mohou být vráceny na tuto stránku.
 
@@ -140,6 +140,6 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Fóra ověřování ASP.NET pomocí všech typů obsahu ve službě IIS 7](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx) (Video)
 - [Webové servery v aplikaci Visual Web Developer](https://msdn.microsoft.com/library/58wxa9w5.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](common-configuration-differences-between-development-and-production-cs.md)
-[další](deploying-a-database-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](common-configuration-differences-between-development-and-production-cs.md)
+> [další](deploying-a-database-cs.md)

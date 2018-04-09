@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
-title: "ASP.NET MVC 4 modely a přístup k datům | Microsoft Docs"
+title: ASP.NET MVC 4 modely a přístup k datům | Microsoft Docs
 author: rick-anderson
-description: "Poznámka: Toto testovací prostředí Hands-on předpokládá, že máte základní znalosti o architektuře ASP.NET MVC. Pokud jste nepoužili ASP.NET MVC před, doporučujeme si projít ASP.NET MVC 4..."
+description: 'Poznámka: Toto testovací prostředí Hands-on předpokládá, že máte základní znalosti o architektuře ASP.NET MVC. Pokud jste nepoužili ASP.NET MVC před, doporučujeme si projít ASP.NET MVC 4...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 353419077422516761df56f730352b19b5db5ff2
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 081a71ef67a6eee6c84058c30f9e15301afbed23
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 modely a přístup k datům
 
@@ -112,12 +112,12 @@ V této úloze budete přidávat již vytvořené databáze s hlavní tabulky Mu
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex1-AddingADatabaseDBFirst/počáteční/** složky.
 
-    1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Přidat **MvcMusicStore** soubor databáze. V tomto testovacím prostředí Hands-on budete používat již vytvořené databáze názvem **MvcMusicStore.mdf**. To lze provést, klikněte pravým tlačítkem na **aplikace\_Data** složku, přejděte na příkaz **přidat** a pak klikněte na **existující položka**. Přejděte do **\Source\Assets** a vyberte **MvcMusicStore.mdf** souboru.
 
     ![Přidat existující položku](aspnet-mvc-4-models-and-data-access/_static/image2.png "přidání existující položky")
@@ -186,8 +186,8 @@ V této úloze vytvoří datový model pro interakci s databází přidali v př
 
     *Entity diagram*
 
-> [!NOTE]
-> Šablony T4 (.tt) spustit kód vygenerovat třídy entity a přepíše existující třídy se stejným názvem. V tomto příkladu třídy &quot;Album&quot;, &quot;Genre&quot; a &quot;umělcem&quot; měla přepsat generovaného kódu.
+    > [!NOTE]
+    > Šablony T4 (.tt) spustit kód vygenerovat třídy entity a přepíše existující třídy se stejným názvem. V tomto příkladu třídy &quot;Album&quot;, &quot;Genre&quot; a &quot;umělcem&quot; měla přepsat generovaného kódu.
 
 
 <a id="Ex1Task3"></a>
@@ -225,30 +225,38 @@ V této úloze tak, aby místo použití pevně zakódované data, se bude dotaz
     (Code fragment kódu - *modely a přístup k datům - Ex1 storeDB*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
+~~~
 2. **MusicStoreEntities** třída zpřístupňuje vlastnost kolekce pro každou tabulku v databázi. Aktualizace **Procházet** metody akce k načtení Genre se všemi **alb**.
 
     (Code fragment kódu - *modely a přístup k datům - Ex1 úložiště Procházet*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
 
-    > [!NOTE]
-    > Používáte funkce .NET názvem **LINQ** (language-integrated query) pro zápis výrazy silného typu dotazů vůči tyto kolekce – které bude spouštění kódu v databázi a vrátit objekty, které můžete naprogramovat proti.
-    > 
-    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
+> [!NOTE]
+> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
+> 
+> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
+~~~
 3. Aktualizace **Index** metody akce k načtení všech žánry.
 
     (Code fragment kódu - *modely a Data Access – Index úložiště Ex1*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
+~~~
 4. Aktualizace **Index** metody akce k načtení všech žánry a transformace kolekce do seznamu.
 
     (Code fragment kódu - *modely a přístup k datům - Ex1 úložiště GenreMenu*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
+~~~
 
 <a id="Ex1Task5"></a>
 
@@ -291,12 +299,12 @@ V této úloze bude naplnit databázi s ukázkovými daty při výchozímu vytvo
 
 1. Otevřete **začít** řešení nacházející se v **zdroj/Ex2-CreatingADatabaseCodeFirst/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Přidat **SampleData.cs** do souboru **modely** složky. To lze provést, klikněte pravým tlačítkem na **modely** složku, přejděte na příkaz **přidat** a pak klikněte na **existující položka**. Přejděte do **\Source\Assets** a vyberte **SampleData.cs** souboru.
 
     ![Ukázková data naplnit kódu](aspnet-mvc-4-models-and-data-access/_static/image18.png "ukázkových dat naplnit kódu")
@@ -307,13 +315,17 @@ V této úloze bude naplnit databázi s ukázkovými daty při výchozímu vytvo
     (Code fragment kódu - *modely a přístup k datům - Ex2 globální direktiv Using Asax*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
+~~~
 4. V **aplikace\_Start()** metoda přidejte následující řádek k nastavení inicializátoru databáze.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 globální Asax SetInitializer*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
+~~~
 
 <a id="Ex2Task2"></a>
 
@@ -322,14 +334,16 @@ V této úloze bude naplnit databázi s ukázkovými daty při výchozímu vytvo
 
 Teď, když databáze jste už přidali do našich projektu, budete psát **Web.config** souboru připojovací řetězec.
 
-1. Přidat připojovací řetězec v **Web.config**. Uděláte to tak, že otevřete **Web.config** v kořenu projektu a nahraďte připojovací řetězec s názvem objekt DefaultConnection se tento řádek ve  **&lt;connectionStrings&gt;**  části:
+1. Přidat připojovací řetězec v **Web.config**. Uděláte to tak, že otevřete **Web.config** v kořenu projektu a nahraďte připojovací řetězec s názvem objekt DefaultConnection se tento řádek ve **&lt;connectionStrings&gt;** části:
 
     ![Umístění souboru Web.config](aspnet-mvc-4-models-and-data-access/_static/image19.png "umístění souboru Web.config")
 
     *umístění souboru Web.config*
 
 
-    [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
+~~~
+[!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
+~~~
 
 <a id="Ex2Task3"></a>
 
@@ -338,7 +352,7 @@ Teď, když databáze jste už přidali do našich projektu, budete psát **Web.
 
 Teď, když už jste nakonfigurovali připojení k databázi, propojíte model s databázových tabulek. V této úloze vytvoříte třídu, která propojí do databáze s Code First. Mějte na paměti, že je existující třídy modelu objektů POCO, které by měl být upraven.
 
-> [!NOTE]
+   > [!NOTE]
 > Pokud jste dokončili cvičení 1, Všimněte si, že se tento krok provést pomocí průvodce. Pomocí tohoto postupu Code First, ručně vytvoříte třídy, které budou propojené s dat entity.
 
 
@@ -347,24 +361,30 @@ Teď, když už jste nakonfigurovali připojení k databázi, propojíte model s
     (Code fragment kódu - *modely a přístup k datům - Ex2 kód první Genre*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
 
-    > [!NOTE]
-    > Pro práci s Code First názvů, třídy Genre musí mít vlastnost primárního klíče, který bude automaticky zjistit.
-    > 
-    > Další informace o první pravidla týkající se kódu v tomto [článku na webu msdn](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
+> [!NOTE]
+> To work with Code First conventions, the class Genre must have a primary key property that will be automatically detected.
+> 
+> You can read more about Code First Conventions in this [msdn article](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
+~~~
 2. Nyní otevřete třídu modelu objektů POCO **Album** z **modely** projektu složky a zahrnují cizí klíče, vytvoření vlastností s názvy **GenreId** a  **ArtistId**. Tato třída už máte **GenreId** pro primární klíč.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 kód prvního alba*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
+~~~
 3. Otevřete třídu modelu objektů POCO **umělcem** a zahrnout **ArtistId** vlastnost.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 kód první umělcem*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
+~~~
 4. Klikněte pravým tlačítkem myši **modely** složky projektu a vyberte **přidat | Třída**. Název souboru **MusicStoreEntities.cs**. Potom klikněte na **přidat.**
 
     ![Přidání třídy](aspnet-mvc-4-models-and-data-access/_static/image20.png "přidání třídy")
@@ -377,16 +397,20 @@ Teď, když už jste nakonfigurovali připojení k databázi, propojíte model s
 5. Třída jste právě vytvořili, otevřete **MusicStoreEntities.cs**a přidají obory názvů **System.Data.Entity** a **System.Data.Entity.Infrastructure**.
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
+~~~
 6. Nahraďte deklaraci třídy rozšířit **DbContext** – třída: deklarovat veřejné **DBSet** a přepsání **OnModelCreating** metoda. Po provedení tohoto kroku budete mít domény třídu, která odkaz modelu pomocí rozhraní Entity Framework. Aby bylo možné provést, nahraďte kód třídy následující:
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 kód první MusicStoreEntities*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
-    > [!NOTE]
-    > S platformou Entity Framework **DbContext** a **DBSet** bude moci dotazovat třídu objektů POCO Genre. Tím, že rozšíří **OnModelCreating** metoda, určíte v **kód** mapovány Genre do databázové tabulky. Další informace o DBContext a DBSet najdete v tomto článku msdn: [odkaz](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
+> [!NOTE]
+> With Entity Framework **DbContext** and **DBSet** you will be able to query the POCO class Genre. By extending **OnModelCreating** method, you are specifying in the **code** how Genre will be mapped to a database table. You can find more information about DBContext and DBSet in this msdn article: [link](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
+~~~
 
 <a id="Ex2Task4"></a>
 
@@ -406,30 +430,38 @@ V této úloze bude aktualizace třídy pro StoreController tak, aby místo pou�
     (Code fragment kódu - *modely a přístup k datům - Ex1 storeDB*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
+~~~
 2. **MusicStoreEntities** třída zpřístupňuje vlastnost kolekce pro každou tabulku v databázi. Aktualizace **Procházet** metody akce k načtení Genre se všemi **alb**.
 
     (Code fragment kódu - *modely a přístup k datům - procházet úložiště Ex2*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
 
-    > [!NOTE]
-    > Používáte funkce .NET názvem **LINQ** (language-integrated query) pro zápis výrazy silného typu dotazů vůči tyto kolekce – které bude spouštění kódu v databázi a vrátit objekty, které můžete naprogramovat proti.
-    > 
-    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
+> [!NOTE]
+> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
+> 
+> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
+~~~
 3. Aktualizace **Index** metody akce k načtení všech žánry.
 
     (Code fragment kódu - *modely a Data Access – Index úložiště Ex2*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
+~~~
 4. Aktualizace **Index** metody akce k načtení všech žánry a transformace kolekce do seznamu.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 úložiště GenreMenu*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
+~~~
 
 <a id="Ex2Task5"></a>
 
@@ -470,26 +502,28 @@ V této úloze se změní **StoreController** třídy pro přístup k databázi 
 
 1. Otevřete **začít** řešení nacházející se v **Source\Ex3 QueryingTheDatabaseWithParametersCodeFirst\Begin** složky, pokud chcete použít první kód nebo **Source\ EX3. QueryingTheDatabaseWithParametersDBFirst\Begin** složky, pokud chcete použít první databáze. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
 
-    1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-    2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
-    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
+   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
-    > [!NOTE]
-    > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+      > [!NOTE]
+      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
 2. Otevřete **StoreController** třída změnit **Procházet** metody akce. Chcete-li to provést, v **Průzkumníku řešení**, rozbalte **řadiče** složku a dvojím kliknutím **StoreController.cs**.
 3. Změna **Procházet** metody akce k načtení alb pro konkrétní genre. Chcete-li to provést, nahraďte následujícím kódem:
 
     (Code fragment kódu - *modely a přístup k datům - EX3. StoreController BrowseMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
 
-    > [!NOTE]
-    > K naplnění kolekce entit, budete muset použít **zahrnout** metoda k určení, můžete obnovit alb příliš. Můžete použít. **Single()** rozšíření v technologii LINQ protože v takovém případě je očekávána pouze jedna genre pro album. **Single()** metoda přebírá jako parametr, který v tomto případě Určuje jeden objekt Genre tak, aby jeho název odpovídá definovanou hodnotu výrazu Lambda.
-    > 
-    > Bude využít výhod funkce, která umožňuje určit další, které chcete také načíst, když je načíst objekt Genre entit v relaci. Tato funkce je volána **Shaping výsledek dotazu**a umožňuje snížit počet pokusů, které jsou potřebné pro přístup k databázi k načtení informací. V tomto scénáři můžete předem načíst alba pro Genre je načíst.
-    > 
-    > Dotaz obsahuje **Genres.Include (&quot;alb&quot;)** k označení, že chcete také související alb. Výsledkem bude efektivnější aplikaci, vzhledem k tomu, že ho načte Genre a Album data v požadavku jedné databáze.
+> [!NOTE]
+> To populate a collection of the entity, you need to use the **Include** method to specify you want to retrieve the albums too. You can use the .**Single()** extension in LINQ because in this case only one genre is expected for an album. The **Single()** method takes a Lambda expression as a parameter, which in this case specifies a single Genre object such that its name matches the value defined.
+> 
+> You will take advantage of a feature that allows you to indicate other related entities you want loaded as well when the Genre object is retrieved. This feature is called **Query Result Shaping**, and enables you to reduce the number of times needed to access the database to retrieve information. In this scenario, you will want to pre-fetch the Albums for the Genre you retrieve.
+> 
+> The query includes **Genres.Include(&quot;Albums&quot;)** to indicate that you want related albums as well. This will result in a more efficient application, since it will retrieve both Genre and Album data in a single database request.
+~~~
 
 <a id="Ex3Task2"></a>
 
@@ -518,7 +552,9 @@ V této úloze bude opakujte předchozí postup k získání alb podle jejich Id
     (Code fragment kódu - *modely a přístup k datům - EX3. StoreController DetailsMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
+~~~
 
 <a id="Ex3Task4"></a>
 
@@ -558,9 +594,9 @@ Pomocí dokončení tohoto testovacího prostředí Hands-on jste se naučili z�
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Příloha A: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze  **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)** . Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; *Visual Studio Express 2012 pro Web se sadou Windows Azure SDK*&quot;.
+1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
 3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
 
@@ -704,14 +740,14 @@ Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vyt
     *Konfigurace nasazení webu*
 5. Připojení k databázi nakonfigurujte následujícím způsobem:
 
-    - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
-    - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
-    - V **heslo** zadejte přihlašovací heslo správce serveru.
-    - Zadejte nový název databáze.
+   - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
+   - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
+   - V **heslo** zadejte přihlašovací heslo správce serveru.
+   - Zadejte nový název databáze.
 
-    ![Konfigurace cílový připojovací řetězec](aspnet-mvc-4-models-and-data-access/_static/image47.png "konfigurace cílový připojovací řetězec")
+     ![Konfigurace cílový připojovací řetězec](aspnet-mvc-4-models-and-data-access/_static/image47.png "konfigurace cílový připojovací řetězec")
 
-    *Konfigurace cílový připojovací řetězec*
+     *Konfigurace cílový připojovací řetězec*
 6. Pak klikněte na tlačítko **OK**. Po zobrazení výzvy k vytvoření databáze, klikněte na tlačítko **Ano**.
 
     ![Vytvoření databáze](aspnet-mvc-4-models-and-data-access/_static/image48.png "vytváření řetězec databáze")

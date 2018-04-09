@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
-title: "Vytvoření a správy rolí (VB) | Microsoft Docs"
+title: Vytvoření a správy rolí (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu prověří kroky nezbytné pro konfiguraci role framework. Následující, vytvoříme vytvářet a odstraňovat role webové stránky."
+description: V tomto kurzu prověří kroky nezbytné pro konfiguraci role framework. Následující, vytvoříme vytvářet a odstraňovat role webové stránky.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/24/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b1132c6d782cd85edb8cbee98c8ab95a15171ac
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 75ca9b1c36f9a74d755ef05717f03d139d0b29ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-and-managing-roles-vb"></a>Vytvoření a správy rolí (VB)
 ====================
@@ -96,10 +96,10 @@ Poskytovatele `connectionStringName` Určuje atribut role úložiště, který s
 
 V důsledku toho pokud jednoduše povolíte rozhraní role bez zadání žádné informace o poskytovateli v naší aplikaci `Web.config` soubor, aplikace použije výchozí zaregistrovaný zprostředkovatel rolí, `AspNetSqlRoleProvider`. Pokud `~/App_Data/aspnet.mdf` databáze neexistuje, bude modulem runtime ASP.NET automaticky vytvořit a přidat schématu služby aplikací. Jsme ale nechcete použít `aspnet.mdf` databáze; místo toho chcete použít `SecurityTutorials.mdf` databáze, který jsme už máte vytvořené a přidat schéma služby aplikace tak, aby. Tato úprava se dá udělat v jednom ze dvou způsobů:
 
-- **Zadejte hodnotu ***`LocalSqlServer`*** název připojovacího řetězce v ***`Web.config`***.** Přepsáním `LocalSqlServer` hodnota název připojovacího řetězce v `Web.config`, můžeme použít výchozí zaregistrovaný zprostředkovatel rolí (`AspNetSqlRoleProvider`) a mějte ho správně pracovat `SecurityTutorials.mdf` databáze. Další informace o této technice najdete v tématu [Scott Guthrie](https://weblogs.asp.net/scottgu/)na příspěvku na blogu [konfigurace služby ASP.NET 2.0 pomocí SQL Server 2000 nebo SQL Server 2005 aplikace](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx).
-- **Přidat nové registrovaný poskytovatel typu ***`SqlRoleProvider`*** a nakonfigurujte jeho ***`connectionStringName`*** nastavení tak, aby odkazoval ***`SecurityTutorials.mdf`*** databáze.** Toto je doporučená a použít v přístup <a id="_msoanchor_7"> </a> [ *vytváření schématu členství v systému SQL Server* ](../membership/creating-the-membership-schema-in-sql-server-vb.md) kurzu a je přístup použiji v tomto kurzu také.
+- <strong>Zadejte hodnotu</strong><strong>`LocalSqlServer`</strong><strong>název připojovacího řetězce v</strong><strong>`Web.config`</strong><strong>.</strong> Přepsáním `LocalSqlServer` hodnota název připojovacího řetězce v `Web.config`, můžeme použít výchozí zaregistrovaný zprostředkovatel rolí (`AspNetSqlRoleProvider`) a mějte ho správně pracovat `SecurityTutorials.mdf` databáze. Další informace o této technice najdete v tématu [Scott Guthrie](https://weblogs.asp.net/scottgu/)na příspěvku na blogu [konfigurace služby ASP.NET 2.0 pomocí SQL Server 2000 nebo SQL Server 2005 aplikace](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx).
+- <strong>Přidat nového poskytovatele registrované typu</strong><strong>`SqlRoleProvider`</strong><strong>a nakonfigurujte jeho</strong><strong>`connectionStringName`</strong><strong>nastavení tak, aby odkazoval</strong> <strong>`SecurityTutorials.mdf`</strong> <strong>databáze.</strong> Toto je doporučená a použít v přístup <a id="_msoanchor_7"> </a> [ *vytváření schématu členství v systému SQL Server* ](../membership/creating-the-membership-schema-in-sql-server-vb.md) kurzu a je přístup použiji v tomto kurzu také.
 
-Přidejte následující značku konfiguraci role na `Web.config` souboru. Tento kód zaregistruje nového poskytovatele s názvem`SecurityTutorialsSqlRoleProvider.`
+Přidejte následující značku konfiguraci role na `Web.config` souboru. Tento kód zaregistruje nového poskytovatele s názvem `SecurityTutorialsSqlRoleProvider.`
 
 [!code-xml[Main](creating-and-managing-roles-vb/samples/sample5.xml)]
 
@@ -187,7 +187,7 @@ GridView zobrazí jedinou sloupec s názvem položky, protože rutina GridView `
 
 Při zobrazení dat pomocí GridView, raději nechci explicitně definovat Moje sloupců, nikoli je implicitně generované GridView mají. Explicitně definováním sloupce je mnohem snazší formátování data, změna uspořádání sloupců a provádět další běžné úlohy. Proto budeme aktualizovat prvku GridView deklarativní tak, aby její sloupce nejsou explicitně definovány.
 
-Začněte tím, že nastavení prvku GridView `AutoGenerateColumns` vlastnost na hodnotu False. Dále přidejte TemplateField do mřížky, nastavte jeho `HeaderText` vlastnost rolí a nakonfigurujte jeho `ItemTemplate` tak, aby se zobrazí obsah pole. K tomu, přidání ovládacího prvku popisek Web s názvem `RoleNameLabel` k `ItemTemplate` a vytvořte vazbu jeho `Text` vlastnosti`Container.DataItem.`
+Začněte tím, že nastavení prvku GridView `AutoGenerateColumns` vlastnost na hodnotu False. Dále přidejte TemplateField do mřížky, nastavte jeho `HeaderText` vlastnost rolí a nakonfigurujte jeho `ItemTemplate` tak, aby se zobrazí obsah pole. K tomu, přidání ovládacího prvku popisek Web s názvem `RoleNameLabel` k `ItemTemplate` a vytvořte vazbu jeho `Text` vlastnosti `Container.DataItem.`
 
 Tyto vlastnosti a `ItemTemplate`na obsah je možné nastavit deklarativně nebo prostřednictvím dialogové okno pole prvku GridView a upravit šablony rozhraní. K dosažení pole dialogové okno, klikněte na odkaz Upravit sloupce v prvku GridView inteligentních značek. V dalším kroku, zrušte zaškrtnutí políčka automaticky generovat pole nastavit `AutoGenerateColumns` vlastnost na hodnotu False a přidejte TemplateField do GridView, nastavení jeho `HeaderText` vlastnost k roli. Chcete-li definovat `ItemTemplate`na obsah, zvolte možnost Upravit šablony z prvku GridView inteligentních značek. Přetáhněte ovládací prvek popisek webové na `ItemTemplate`, nastavte jeho `ID` vlastnost `RoleNameLabel`a nakonfigurujte jeho vazby dat tak, aby jeho `Text` vlastnost je vázána na `Container.DataItem`.
 
@@ -215,8 +215,8 @@ Teď, když uživatel přidá novou roli `RoleList` GridView zobrazuje roli prá
 
 V tomto okamžiku může uživatel vytvořit novou roli a zobrazit všechny existující role z `ManageRoles.aspx` stránky. Umožňuje povolit uživatelům taky odstranění rolí. `Roles.DeleteRole` Metoda má dva přetížení:
 
-- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx)-Odstraní roli *roleName*. Pokud role obsahuje jeden nebo více členů, je vyvolána výjimka.
-- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx)-Odstraní roli *roleName*. Pokud *throwOnPopulateRole* je `True`, pak je vyvolána výjimka, pokud role obsahuje jeden nebo více členů. Pokud *throwOnPopulateRole* je `False`, role je odstraněn, zda obsahuje žádné členy, nebo ne. Interně `DeleteRole(roleName)` volání metod `DeleteRole(roleName, True)`.
+- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx) -Odstraní roli *roleName*. Pokud role obsahuje jeden nebo více členů, je vyvolána výjimka.
+- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx) -Odstraní roli *roleName*. Pokud *throwOnPopulateRole* je `True`, pak je vyvolána výjimka, pokud role obsahuje jeden nebo více členů. Pokud *throwOnPopulateRole* je `False`, role je odstraněn, zda obsahuje žádné členy, nebo ne. Interně `DeleteRole(roleName)` volání metod `DeleteRole(roleName, True)`.
 
 `DeleteRole` Metoda také vyvolá výjimku, pokud se *roleName* je `Nothing` nebo prázdný řetězec nebo, pokud *roleName* obsahuje čárkami. Pokud *roleName* neexistuje v systému, `DeleteRole` selže tiše, bez vyvolání k výjimce.
 
@@ -263,12 +263,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu zahrnují Alicja Maziarz, Suchi Banerjee a Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu zahrnují Alicja Maziarz, Suchi Banerjee a Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](role-based-authorization-cs.md)
-[další](assigning-roles-to-users-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](role-based-authorization-cs.md)
+> [další](assigning-roles-to-users-vb.md)

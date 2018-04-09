@@ -1,7 +1,7 @@
 ---
-title: "Směrování v ASP.NET Core"
+title: Směrování v ASP.NET Core
 author: ardalis
-description: "Zjistit, jak je zodpovědná za mapování příchozího požadavku na obslužnou rutinu trasy funkci směrování ASP.NET Core."
+description: Zjistit, jak je zodpovědná za mapování příchozího požadavku na obslužnou rutinu trasy funkci směrování ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: 1ff08ee6389ce7b12d74b162b990ddaaadc05ea8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 51f667352f7d92ab8c73d958c821c6acf5eb7529
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -22,7 +22,7 @@ Podle [Ryan Nowak](https://github.com/rynowak), [Steve Smith](https://ardalis.co
 Funkci směrování je zodpovědná za mapování příchozího požadavku na obslužnou rutinu trasy. Trasy definované v aplikaci ASP.NET a nakonfiguruje při spuštění aplikace. Trasa může volitelně získat hodnoty z adresy URL obsažené v požadavku a potom tyto hodnoty lze použít pro zpracování požadavku. Pomocí informací trasy z aplikace ASP.NET, funkci směrování je také možné k vygenerování adres URL, které mapují na obslužné rutiny trasy. Proto směrování najdete na základě adresy URL nebo adresa URL odpovídající obslužná rutina trasy na základě informací o směrování obslužné rutiny obslužná rutina trasy.
 
 >[!IMPORTANT]
-> Tento dokument popisuje nízké úrovni ASP.NET Core směrování. ASP.NET MVC základní směrování, najdete v části [směrování do akce Kontroleru](../mvc/controllers/routing.md)
+> Tento dokument popisuje nízké úrovni ASP.NET Core směrování. ASP.NET MVC základní směrování, najdete v části [trasy, která má akce kontroleru](../mvc/controllers/routing.md)
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
@@ -88,7 +88,7 @@ Směrování poskytuje `Route` třída jako standardní implementace `IRouter`. 
 
 Většina aplikací bude vytvářet trasy voláním `MapRoute` nebo jeden z podobné rozšiřující metody definované na `IRouteBuilder`. Všechny tyto metody se vytvořit instanci `Route` a přidat jej do kolekce tras.
 
-Poznámka: `MapRoute` neberou parametr obslužná rutina trasy – přidá jenom trasy, která bude zpracovávat `DefaultHandler`. Vzhledem k tomu, že je výchozí obslužnou rutinu `IRouter`, mohou rozhodnout není pro zpracování požadavku. ASP.NET MVC je například typicky nakonfigurován jako výchozí obslužnou rutinu, která zpracovává jenom požadavky které odpovídají k dispozici kontroleru a akce. Další informace o směrování do MVC naleznete v tématu [směrování do akce Kontroleru](../mvc/controllers/routing.md).
+Poznámka: `MapRoute` neberou parametr obslužná rutina trasy – přidá jenom trasy, která bude zpracovávat `DefaultHandler`. Vzhledem k tomu, že je výchozí obslužnou rutinu `IRouter`, mohou rozhodnout není pro zpracování požadavku. ASP.NET MVC je například typicky nakonfigurován jako výchozí obslužnou rutinu, která zpracovává jenom požadavky které odpovídají k dispozici kontroleru a akce. Další informace o směrování do MVC naleznete v tématu [trasy, která má akce kontroleru](../mvc/controllers/routing.md).
 
 Toto je příklad `MapRoute` volání používané typické definice trasy ASP.NET MVC:
 

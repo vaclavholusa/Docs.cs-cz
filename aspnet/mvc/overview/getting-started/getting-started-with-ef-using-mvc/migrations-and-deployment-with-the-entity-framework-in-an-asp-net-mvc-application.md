@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Migrace a nasazení pomocí rozhraní Entity Framework v aplikaci ASP.NET MVC nejprve kódu | Microsoft Docs"
+title: Migrace a nasazení pomocí rozhraní Entity Framework v aplikaci ASP.NET MVC nejprve kódu | Microsoft Docs
 author: tdykstra
-description: "Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 5 s použitím Entity Framework 6 Code First a Visual Studio..."
+description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 5 s použitím Entity Framework 6 Code First a Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 2294f2aba3f765d7849d1f407e85f424dc8b2518
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04d393edca0469df140f06a7d083a48aa8f84b65
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="code-first-migrations-and-deployment-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Nejprve kódu migrace a nasazení pomocí rozhraní Entity Framework v aplikaci ASP.NET MVC
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stáhnout PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
@@ -125,7 +125,7 @@ Pokud jste vytvořili počáteční migrace, když databáze již existuje, se v
     ![](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
     `update-database` Příkaz spustí `Up` metodu pro vytvoření databáze a pak se spustí `Seed` metoda k naplnění databáze. Stejný postup se spustí automaticky v produkčním prostředí poté, co nasadíte aplikaci, jak uvidíte v následující části.
-- Použití **Průzkumníka serveru** kontrolovat databázi, stejně jako v prvním kurzu a spuštění aplikace k ověření, že všechno stále funguje stejně jako předtím.
+2. Použití **Průzkumníka serveru** kontrolovat databázi, stejně jako v prvním kurzu a spuštění aplikace k ověření, že všechno stále funguje stejně jako předtím.
 
 ## <a name="deploy-to-azure"></a>Nasazení do Azure
 
@@ -153,7 +153,7 @@ Databáze budete nasazovat do Azure SQL Database. Databáze SQL je služba rela�
 
     ![Tlačítko Nový na portálu pro správu](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/CreateWeb-Sql.png)
 
- **Novou webovou aplikaci a SQL - vytvořit** otevře se průvodce.
+   **Novou webovou aplikaci a SQL - vytvořit** otevře se průvodce.
 
 2. V okně zadejte řetězec ve **název aplikace** pole, které chcete použít jako jedinečnou adresu URL pro vaši aplikaci. Úplná adresa URL bude obsahovat co zadáte plus výchozí doménu služby Azure App Services (. azurewebsites.net). Pokud **název aplikace** už používá, průvodce bude oznámíme vám to červený *název aplikace není k dispozici* zprávy. Pokud **název aplikace** je k dispozici, zobrazí se zeleného zaškrtnutí.
 
@@ -175,9 +175,9 @@ Databáze budete nasazovat do Azure SQL Database. Databáze SQL je služba rela�
 10. Upravit [kolace](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support) podle potřeby.
 11. Zadejte správce **uživatelské jméno správce SQL** a **heslo správce SQL**. Pokud jste vybrali **novou databázi SQL serveru**nezadáváte existující jméno a heslo, zadáváte nové jméno a heslo, které teď definujete pro pozdější použití při přístupu k databázi. Pokud jste vybrali serveru, který jste vytvořili dříve, budete zadejte přihlašovací údaje pro tento server.
 12. Kolekce telemetrie lze povolit pro službu App Service pomocí Application Insights. Application Insights s malým množstvím konfigurací shromažďuje cenné událostí, výjimky, závislostí, žádost a informace o trasování. Další informace o Application Insights, začněte [dokumentace Azure](https://azure.microsoft.com/services/application-insights/).
-12. Klikněte na tlačítko **vytvořit** v dolní části okna znamenat, že budete hotovi.
+13. Klikněte na tlačítko **vytvořit** v dolní části okna znamenat, že budete hotovi.
   
- Vrátí portálu pro správu na stránku řídicí panely a **oznámení** vytvoření webu se zobrazí okno v horní části stránky. Po chvíli (obvykle během méně než minuty) bude oznámení, že nasazení bylo úspěšné. Na navigačním panelu na levé straně nové **služby App Service** se zobrazí v *App Services* části a nové **SQL Database** se zobrazí v *databáze SQL*  části.
+    Vrátí portálu pro správu na stránku řídicí panely a **oznámení** vytvoření webu se zobrazí okno v horní části stránky. Po chvíli (obvykle během méně než minuty) bude oznámení, že nasazení bylo úspěšné. Na navigačním panelu na levé straně nové **služby App Service** se zobrazí v *App Services* části a nové **SQL Database** se zobrazí v *databáze SQL*  části.
 
 ### <a name="deploy-the-application-to-azure"></a>Nasaďte aplikaci do Azure
 
@@ -195,30 +195,30 @@ Databáze budete nasazovat do Azure SQL Database. Databáze SQL je služba rela�
 5. Po nakonfigurovaný profil, **připojení** se zobrazí karta. Klikněte na tlačítko **ověřit připojení** a ujistěte se, zda jsou správné nastavení
 
     ![Ověření připojení](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Connection.png)
-7. Při připojení byl ověřen, je vedle zobrazí zelená značka zaškrtnutí **ověřit připojení** tlačítko. Klikněte na tlačítko **Další**.
+6. Při připojení byl ověřen, je vedle zobrazí zelená značka zaškrtnutí **ověřit připojení** tlačítko. Klikněte na tlačítko **Další**.
   
     ![Úspěšně ověřená připojení](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-SettingsValidated.png)
-8. Otevřete **vzdáleného připojovací řetězec** rozevíracím seznamu v části **SchoolContext** a vyberte připojovací řetězec pro databázi, který jste vytvořili.
-9. Vyberte **aktualizace databáze**.
+7. Otevřete **vzdáleného připojovací řetězec** rozevíracím seznamu v části **SchoolContext** a vyberte připojovací řetězec pro databázi, který jste vytvořili.
+8. Vyberte **aktualizace databáze**.
 
     ![Karta nastavení](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Settings.png)
 
     Toto nastavení způsobí, že proces nasazení pro automatickou konfiguraci aplikace *Web.config* souboru na cílovém serveru tak, aby používala Code First `MigrateDatabaseToLatestVersion` inicializátoru třídy.
-10. Klikněte na tlačítko **Další**.
-11. V **Preview** , klikněte na **spustit Náhled**.
+9. Klikněte na tlačítko **Další**.
+10. V **Preview** , klikněte na **spustit Náhled**.
   
     ![Tlačítko StartPreview na kartě Preview](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Preview.png)
   
- Na kartě zobrazí seznam souborů, které se zkopírují na serveru. Zobrazení náhledu není vyžadován pro publikování aplikace, ale je užitečné funkce znát. V takovém případě nemusíte dělat nic s seznam souborů, který se zobrazí. Pouze soubory, které se změnily při příštím nasadit tuto aplikaci, bude v tomto seznamu.
+    Na kartě zobrazí seznam souborů, které se zkopírují na serveru. Zobrazení náhledu není vyžadován pro publikování aplikace, ale je užitečné funkce znát. V takovém případě nemusíte dělat nic s seznam souborů, který se zobrazí. Pouze soubory, které se změnily při příštím nasadit tuto aplikaci, bude v tomto seznamu.
     ![Výstup souboru StartPreview](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-PreviewLoaded.png)
 
-12. Klikněte na tlačítko **publikování**.
- Visual Studio spustí proces kopírování souborů na Azure server.
-13. **Výstup** okno zobrazuje, jaké akce nasazení byly provedeny a hlásí úspěšné dokončení nasazení.
+11. Klikněte na tlačítko **publikování**.
+    Visual Studio spustí proces kopírování souborů na Azure server.
+12. **Výstup** okno zobrazuje, jaké akce nasazení byly provedeny a hlásí úspěšné dokončení nasazení.
   
     ![Výstup – okno hlášením úspěšného nasazení](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-BuildOutput.png)
-14. Po úspěšném nasazení na adresu URL nasazené webové stránky automaticky otevře výchozí prohlížeč.
- Aplikace, kterou jste vytvořili je nyní spuštěna v cloudu. 
+13. Po úspěšném nasazení na adresu URL nasazené webové stránky automaticky otevře výchozí prohlížeč.
+    Aplikace, kterou jste vytvořili je nyní spuštěna v cloudu. 
   
     ![Students_index_page_with_paging](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Site.png)
 
@@ -258,6 +258,6 @@ Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může z
 
 Odkazy na další zdroje Entity Framework najdete v [přístup k datům ASP.NET - doporučené prostředky](xref:whitepapers/aspnet-data-access-content-map).
 
->[!div class="step-by-step"]
-[Předchozí](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
-[další](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application)
+> [!div class="step-by-step"]
+> [Předchozí](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
+> [další](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application)

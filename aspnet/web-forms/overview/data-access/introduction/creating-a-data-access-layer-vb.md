@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
-title: "Vytváření Data Access Layer (VB) | Microsoft Docs"
+title: Vytváření Data Access Layer (VB) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme budete začít od samého začátku a vytvořit Data přístup Layer (DAL), pomocí typové datové sady, pro přístup k informacím v databázi."
+description: V tomto kurzu jsme budete začít od samého začátku a vytvořit Data přístup Layer (DAL), pomocí typové datové sady, pro přístup k informacím v databázi.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/05/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ad578d5d5fb1ef0ac63d3cbde3f307535ea3d98c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5cf1a430d6fe94174a877beb04b930409bdbf084
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-data-access-layer-vb"></a>Vytváření Data Access Layer (VB)
 ====================
@@ -77,7 +77,7 @@ Při práci s jednou z možností dat je pro vložení logice specifické pro da
 
 Všechny kódu, které jsou specifické pro daný zdroj dat. například vytvoření připojení k databázi, vydání `SELECT`, `INSERT`, `UPDATE`, a `DELETE` příkazy a tak dále, musí se nacházet ve DAL. Prezentační vrstvy nesmí obsahovat všechny odkazy na takový kód přístup data, ale měli místo toho provádět volání do vrstvy DAL pro data všech žádostí. Datové vrstvy přístup obvykle obsahují metody pro přístup k základní data databáze. Databázi Northwind, například má `Products` a `Categories` tabulky, které zaznamenávají produktů pro prodej a kategorie, do kterých patří. V našem DAL máme metody, třeba:
 
-- `GetCategories(),`které vrátí informace o všech kategorií
+- `GetCategories(),` které vrátí informace o všech kategorií
 - `GetProducts()`, který vrátí informace o všech produktů
 - `GetProductsByCategoryID(categoryID)`, která vrátí všechny produkty, které patří do zadané kategorii
 - `GetProductByProductID(productID)`, který vrátí informace o konkrétním produktu
@@ -403,48 +403,48 @@ Trvat několik minut pro vytvoření následující TableAdapters a metod pomoc�
 
 - **ProductsTableAdapter**
 
-    - **GetProducts**: 
+  - **GetProducts**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample10.sql)]
-    - **GetProductsByCategoryID**: 
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample10.sql)]
+  - **GetProductsByCategoryID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample11.sql)]
-    - **GetProductsBySupplierID**: 
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample11.sql)]
+  - **GetProductsBySupplierID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample12.sql)]
-    - **GetProductByProductID**: 
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample12.sql)]
+  - **GetProductByProductID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample13.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample13.sql)]
 - **CategoriesTableAdapter**
 
-    - **GetCategories**: 
+  - **GetCategories**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample14.sql)]
-    - **GetCategoryByCategoryID**: 
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample14.sql)]
+  - **GetCategoryByCategoryID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample15.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample15.sql)]
 - **SuppliersTableAdapter**
 
-    - **GetSuppliers**: 
+  - **GetSuppliers**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample16.sql)]
-    - **GetSuppliersByCountry**: 
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample16.sql)]
+  - **GetSuppliersByCountry**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample17.sql)]
-    - **GetSupplierBySupplierID**: 
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample17.sql)]
+  - **GetSupplierBySupplierID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample18.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample18.sql)]
 - **EmployeesTableAdapter**
 
-    - **GetEmployees**: 
+  - **GetEmployees**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample19.sql)]
-    - **GetEmployeesByManager**: 
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample19.sql)]
+  - **GetEmployeesByManager**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample20.sql)]
-    - **GetEmployeeByEmployeeID**: 
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample20.sql)]
+  - **GetEmployeeByEmployeeID**: 
 
-        [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample21.sql)]
+      [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample21.sql)]
 
 
 [![Po přidání čtyři TableAdapters návrháře DataSet](creating-a-data-access-layer-vb/_static/image84.png)](creating-a-data-access-layer-vb/_static/image83.png)
@@ -537,12 +537,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu bylo Ron zelený, Hilton Giesenow, společnosti Dennis Patterson, Liz Shulok, opisek Gomez a Carlos Santos. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](master-pages-and-site-navigation-cs.md)
-[další](creating-a-business-logic-layer-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](master-pages-and-site-navigation-cs.md)
+> [další](creating-a-business-logic-layer-vb.md)

@@ -1,7 +1,7 @@
 ---
-title: "Vytvoření webové rozhraní API pomocí ASP.NET Core a VS Code"
+title: Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio Code
 author: rick-anderson
-description: "Sestavení webového rozhraní API v systému macOS, Linux nebo Windows s ASP.NET MVC jádra a Visual Studio Code"
+description: Sestavení webového rozhraní API v systému macOS, Linux nebo Windows s ASP.NET MVC jádra a Visual Studio Code
 manager: wpickett
 ms.author: riande
 ms.date: 09/22/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: 12b1c3cea5101b4da673a1ad82cc1ad461f2a38d
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 705524a62018b9f0fbd8c40fa1b70d4c62ee236e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-code-on-linux-macos-and-windows"></a>Vytvoření webového rozhraní API s ASP.NET MVC jádra a Visual Studio Code v systému Windows, Linux a systému macOS
+# <a name="create-a-web-api-with-aspnet-core-and-visual-studio-code"></a>Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio Code
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Wasson Jan](https://github.com/mikewasson)
 
@@ -29,14 +29,11 @@ Existují 3 verze tohoto kurzu:
 
 <!-- WARNING: The code AND images in this doc are used by uid: tutorials/web-api-vsc, tutorials/first-web-api-mac and tutorials/first-web-api. If you change any code/images in this tutorial, update uid: tutorials/web-api-vsc -->
 
-[!INCLUDE[template files](../includes/webApi/intro.md)]
+[!INCLUDE [template files](../includes/webApi/intro.md)]
 
-## <a name="set-up-your-development-environment"></a>Nastavení vývojového prostředí
+## <a name="prerequisites"></a>Požadavky
 
-Stáhněte a nainstalujte:
-- [.NET core 2.0.0 SDK](https://www.microsoft.com/net/core) nebo novější.
-- [Visual Studio Code](https://code.visualstudio.com)
-- Visual Studio Code [rozšíření C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+[!INCLUDE [](~/includes/net-core-prereqs-vscode.md)]
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
@@ -57,7 +54,7 @@ Otevřete *TodoApi* složky v kódu pro Visual Studio (VS kódu) a vyberte *Star
 
 !['TodoApi' chybí VS Code s varování požadované prostředky pro sestavení a ladění. Je přidat? Nezobrazovat dotaz dalších, teď ne Ano](web-api-vsc/_static/vsc_restore.png)
 
-Stiskněte klávesu **ladění** (F5) sestavení a spuštění programu. V prohlížeči přejděte na http://localhost: 5000/api/hodnoty. Zobrazí se:
+Stiskněte klávesu **ladění** (F5) sestavení a spuštění programu. V prohlížeči přejděte na http://localhost:5000/api/values . Zobrazí se:
 
 `["value1","value2"]`
 
@@ -89,19 +86,19 @@ Přidat `TodoContext` třídy v *modely* složky:
 
 [!code-csharp[](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
 
-[!INCLUDE[Register the database context](../includes/webApi/register_dbContext.md)]
+[!INCLUDE [Register the database context](../includes/webApi/register_dbContext.md)]
 
 ## <a name="add-a-controller"></a>Přidání kontroleru
 
 V *řadiče* složky, vytvořte třídu s názvem `TodoController`. Přidejte následující kód:
 
-[!INCLUDE[code and get todo items](../includes/webApi/getTodoItems.md)]
+[!INCLUDE [code and get todo items](../includes/webApi/getTodoItems.md)]
 
 ### <a name="launch-the-app"></a>Spusťte aplikaci
 
-V produktu VS Code stisknutím klávesy F5 spusťte aplikaci. Přejděte na http://localhost: 5000/api/todo ( `Todo` řadiče jsme právě vytvořili).
+V produktu VS Code stisknutím klávesy F5 spusťte aplikaci. Přejděte na http://localhost:5000/api/todo ( `Todo` řadiče jsme právě vytvořili).
 
-[!INCLUDE[last part of web API](../includes/webApi/end.md)]
+[!INCLUDE [last part of web API](../includes/webApi/end.md)]
 
 ## <a name="visual-studio-code-help"></a>Visual Studio Code nápovědy
 
@@ -114,6 +111,5 @@ V produktu VS Code stisknutím klávesy F5 spusťte aplikaci. Přejděte na http
   - [Linux klávesové zkratky](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
   - [Klávesové zkratky systému Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
-[!INCLUDE[next steps](../includes/webApi/next.md)]
-
+[!INCLUDE [next steps](../includes/webApi/next.md)]
 

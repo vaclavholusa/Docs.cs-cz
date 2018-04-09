@@ -1,7 +1,7 @@
 ---
-title: "Jádro ASP.NET MVC s EF Core - aktualizace související Data – 10 7"
+title: Jádro ASP.NET MVC s EF Core - aktualizace související Data – 10 7
 author: tdykstra
-description: "V tomto kurzu aktualizujete souvisejících dat tím, že aktualizuje polí cizího klíče a navigační vlastnosti."
+description: V tomto kurzu aktualizujete souvisejících dat tím, že aktualizuje polí cizího klíče a navigační vlastnosti.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: ac9dc6f08bbcd890c5848e7cc5cb4ee93713a559
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 2501f4c4abdadd47b4910909205a5c798f1b938f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Aktualizace souvisejících dat – základní EF s kurz k ASP.NET MVC jádra (7 10)
+# <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>Jádro ASP.NET MVC s EF Core - aktualizace související Data – 10 7
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -295,6 +295,6 @@ Jak je popsáno v [CRUD kurzu](crud.md), rozhraní Entity Framework implicitně 
 
 Teď jste dokončili úvod k práci s související data. V dalším kurzu se zobrazí způsobu řešení konfliktů souběžnosti.
 
->[!div class="step-by-step"]
-[Předchozí](read-related-data.md)
-[další](concurrency.md)  
+> [!div class="step-by-step"]
+> [Předchozí](read-related-data.md)
+> [další](concurrency.md)  

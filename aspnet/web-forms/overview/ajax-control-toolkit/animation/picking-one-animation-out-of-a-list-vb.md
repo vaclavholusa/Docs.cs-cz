@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-vb
-title: "Výběr jednoho animace mimo seznam (VB) | Microsoft Docs"
+title: Výběr jednoho animace mimo seznam (VB) | Microsoft Docs
 author: wenz
-description: "V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Rozhraní framework také povolit..."
+description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Rozhraní framework také povolit...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-vb
 msc.type: authoredcontent
-ms.openlocfilehash: dd2cfd512b03fa1d1f7754d9f86d080c1977695d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f2bd1b3cc72595da7e8901786ea8415d7c1c524a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="picking-one-animation-out-of-a-list-vb"></a>Výběr jednoho animace mimo seznam (VB)
 ====================
@@ -45,7 +45,7 @@ Související třídy CSS pro panel definovat barvu pozadí dobrý a také nasta
 
 [!code-css[Main](picking-one-animation-out-of-a-list-vb/samples/sample3.css)]
 
-Poté, přidejte `AnimationExtender` na stránku, poskytuje `ID`, `TargetControlID` atribut a povinný údaj`runat="server":`
+Poté, přidejte `AnimationExtender` na stránku, poskytuje `ID`, `TargetControlID` atribut a povinný údaj `runat="server":`
 
 [!code-aspx[Main](picking-one-animation-out-of-a-list-vb/samples/sample4.aspx)]
 
@@ -60,6 +60,6 @@ Následující kód definuje tři subanimations: Změna velikosti šířku, změ
 
 Jedním z možných tři animací: panelu získá širší ([Kliknutím zobrazit obrázek v plné velikosti](picking-one-animation-out-of-a-list-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](animation-depending-on-a-condition-vb.md)
-[další](animating-in-response-to-user-interaction-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](animation-depending-on-a-condition-vb.md)
+> [další](animating-in-response-to-user-interaction-vb.md)

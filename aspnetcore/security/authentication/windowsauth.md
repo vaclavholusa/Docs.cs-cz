@@ -1,7 +1,7 @@
 ---
-title: "Konfigurovat ověřování systému Windows v ASP.NET Core"
+title: Konfigurovat ověřování systému Windows v ASP.NET Core
 author: ardalis
-description: "Tento článek popisuje postup konfigurace ověřování systému Windows v ASP.NET Core, pomocí služby IIS Express, IIS, ovladač HTTP.sys a WebListener."
+description: Tento článek popisuje postup konfigurace ověřování systému Windows v ASP.NET Core, pomocí služby IIS Express, IIS, ovladač HTTP.sys a WebListener.
 manager: wpickett
 ms.author: riande
 ms.date: 10/24/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: f6efd838d7b6c837c75f36591a49eab812f9d54c
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: ff47519db4e9d1c5aea8811fef24c84bb564e80e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configure-windows-authentication-in-an-aspnet-core-app"></a>Konfigurovat ověřování systému Windows v aplikaci ASP.NET Core
+# <a name="configure-windows-authentication-in-aspnet-core"></a>Konfigurovat ověřování systému Windows v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com) a [Scott Addie](https://twitter.com/Scott_Addie)
 
@@ -84,20 +84,17 @@ Spusťte aplikaci a ověří, zda je funkční ověřování systému Windows.
 
 ## <a name="enable-windows-authentication-with-httpsys-or-weblistener"></a>Povolení ověřování systému Windows pomocí ovladače HTTP.sys nebo WebListener
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 I když Kestrel nepodporuje ověřování systému Windows, můžete použít [HTTP.sys](xref:fundamentals/servers/httpsys) podporu vlastním hostováním scénářů v systému Windows. Následující příklad konfiguruje hostitel webové aplikace používat ovladač HTTP.sys pomocí ověřování systému Windows:
 
 [!code-csharp[](windowsauth/sample/Program2x.cs?highlight=9-14)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 I když Kestrel nepodporuje ověřování systému Windows, můžete použít [WebListener](xref:fundamentals/servers/weblistener) podporu vlastním hostováním scénářů v systému Windows. Následující příklad konfiguruje hostitel webové aplikace používat WebListener pomocí ověřování systému Windows:
 
 [!code-csharp[](windowsauth/sample/Program1x.cs?highlight=6-11)]
 
----
-
+* * *
 ## <a name="work-with-windows-authentication"></a>Práce s ověřováním systému Windows
 
 Stav konfigurace anonymního přístupu určuje, jakým způsobem `[Authorize]` a `[AllowAnonymous]` atributy se používají v aplikaci. Následující dvě části popisují způsob zpracování konfigurace zakázaných a povolených stavy anonymní přístup.

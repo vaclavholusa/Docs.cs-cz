@@ -1,7 +1,7 @@
 ---
-title: "Stránky Razor s EF jádra ASP.NET Core - Model dat – 5 8"
+title: Stránky Razor s EF jádra ASP.NET Core - Model dat – 5 8
 author: rick-anderson
-description: "V tomto kurzu přidejte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověření a pravidla mapování."
+description: V tomto kurzu přidejte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověření a pravidla mapování.
 manager: wpickett
 ms.author: riande
 ms.date: 10/25/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 12c863c6eb4b4774853a94cf3001870b0d22e936
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: bf643cab3b82a9e2138403c6c61d1c15c85abfbd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - Model dat – 5 8
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 Předchozí kurzy pracovali s základní datový model, který se skládá z tři entity. V tomto kurzu:
 
@@ -572,12 +572,12 @@ Kód v aktualizaci `DbInitializer` přidá počáteční hodnoty dat pro nové e
 
 * Můžete taky odstraňte pomocí DB:
 
-    * **SQL Server Object Explorer** (SSOX).
-    * `database drop` Rozhraní příkazového řádku příkaz:
+  * **SQL Server Object Explorer** (SSOX).
+  * `database drop` Rozhraní příkazového řádku příkaz:
 
-   ```console
-   dotnet ef database drop
-   ```
+    ```console
+    dotnet ef database drop
+    ```
 
 Spustit `database update` v příkazovém okně:
 
@@ -642,6 +642,6 @@ Produkční aplikace bude:
 
 Další kurz se zaměřuje na související data.
 
->[!div class="step-by-step"]
-[Předchozí](xref:data/ef-rp/migrations)
-[další](xref:data/ef-rp/read-related-data)
+> [!div class="step-by-step"]
+> [Předchozí](xref:data/ef-rp/migrations)
+> [další](xref:data/ef-rp/read-related-data)

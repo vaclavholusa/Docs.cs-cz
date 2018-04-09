@@ -1,7 +1,7 @@
 ---
-title: "Značka Pomocník jádro ASP.NET MVC do mezipaměti"
+title: Značka Pomocník jádro ASP.NET MVC do mezipaměti
 author: pkellner
-description: "Ukazuje, jak pracovat s pomocná značky mezipaměti"
+description: Ukazuje, jak pracovat s pomocná značky mezipaměti
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 51811ee1669a24a0fc4ce9bc67e782b61bff655c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6f19a989c9bdfddea7609c5571cdd49de29e036b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Značka Pomocník jádro ASP.NET MVC do mezipaměti
 
@@ -60,10 +60,9 @@ Příklad:
 
 ### <a name="expires-on"></a>expires-on 
 
-| Typ atributu    | Příklad hodnoty     |
-|----------------   |----------------   |
-| DateTimeOffset    | "@new DateTime(2025,1,29,17,02,0)"    |
-
+| Typ atributu |           Příklad hodnoty            |
+|----------------|------------------------------------|
+| DateTimeOffset | "@new DateTime(2025,1,29,17,02,0)" |
 
 Nastaví datum vypršení platnosti absolutní. V následujícím příkladu bude ukládat do mezipaměti obsah pomocná značky mezipaměti až 17:02:00 na 29 leden 2025.
 
@@ -79,10 +78,9 @@ Příklad:
 
 ### <a name="expires-after"></a>expires-after
 
-| Typ atributu    | Příklad hodnoty     |
-|----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(120)"    |
-
+| Typ atributu |        Příklad hodnoty         |
+|----------------|------------------------------|
+|    TimeSpan    | "@TimeSpan.FromSeconds(120)" |
 
 Nastaví dobu od prvního požadavku pro ukládání do mezipaměti obsah. 
 
@@ -98,10 +96,9 @@ Příklad:
 
 ### <a name="expires-sliding"></a>expires-sliding
 
-| Typ atributu    | Příklad hodnoty     |
-|----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(60)"     |
-
+| Typ atributu |        Příklad hodnoty        |
+|----------------|-----------------------------|
+|    TimeSpan    | "@TimeSpan.FromSeconds(60)" |
 
 Nastaví dobu, která by měla být vyřazena položku mezipaměti, pokud není přístup.
 
@@ -169,7 +166,7 @@ routes.MapRoute(
     name: "default",
     template: "{controller=Home}/{action=Index}/{Make?}/{Model?}");
 ```
-  
+
 *Index.cshtml*
 
 ```cshtml
@@ -224,10 +221,9 @@ Pomocí tohoto atributu udržuje obsah v mezipaměti prostřednictvím cyklus p�
 
 ### <a name="vary-by"></a>se liší podle
 
-| Typ atributu    | Příklad hodnoty                |
-|----------------   |----------------               |
-| String             | "@Model"                 |
-
+| Typ atributu | Příklad hodnoty |
+|----------------|----------------|
+|     String     |    "@Model"    |
 
 Umožňuje přizpůsobení získá jaké data uložena do mezipaměti. Při aktualizaci objektu odkazuje atributu řetězec hodnotu změny, obsah pomocná značky mezipaměti. Zřetězení řetězců modelu hodnot často jsou přiřazeny tomuto atributu.  Efektivní, to znamená, že aktualizace zřetězených hodnot zruší platnost mezipaměti.
 
@@ -277,11 +273,11 @@ Příklad:
 </cache>
 ```
 
-`priority` Atribut není zaručit konkrétní úroveň mezipaměti uchování. `CacheItemPriority`je pouze návrhu. Nastavení tohoto atributu na `NeverRemove` nezaručuje, že budou vždy zachována mezipaměti. V tématu [další prostředky](#additional-resources) Další informace.
+`priority` Atribut není zaručit konkrétní úroveň mezipaměti uchování. `CacheItemPriority` je pouze návrhu. Nastavení tohoto atributu na `NeverRemove` nezaručuje, že budou vždy zachována mezipaměti. V tématu [další prostředky](#additional-resources) Další informace.
 
 Pomocník značky mezipaměti je závislá na [služby mezipaměti paměti](xref:performance/caching/memory). Pomocník značky mezipaměti přidá službu, pokud nebyl přidán.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Ukládání do mezipaměti webového serveru](xref:performance/caching/memory)
+* [Mezipaměti v paměti](xref:performance/caching/memory)
 * [Úvod do systému Identity](xref:security/authentication/identity)

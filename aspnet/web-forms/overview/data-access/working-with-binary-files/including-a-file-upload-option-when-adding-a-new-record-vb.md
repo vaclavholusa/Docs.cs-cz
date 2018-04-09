@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
-title: "Včetně soubor nahrát možnost, při přidávání nového záznamu (VB) | Microsoft Docs"
+title: Včetně soubor nahrát možnost, při přidávání nového záznamu (VB) | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz ukazuje, jak vytvořit webové rozhraní, která umožňuje uživatelům zadejte textová data i nahrát binární soubory. Pro ilustraci t dostupné možnosti..."
+description: Tento kurz ukazuje, jak vytvořit webové rozhraní, která umožňuje uživatelům zadejte textová data i nahrát binární soubory. Pro ilustraci t dostupné možnosti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eb462a0e8ce88037855ea12d00c1afc0419fa04e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 39608eef7cc88be56ef6e21820e4afcfaa4ffd8d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>Při přidávání nového záznamu (VB) včetně řešením nahrávání souborů
 ====================
@@ -280,12 +280,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Dave Gardner, Teresy Murphy a Bernadette Leigh. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](displaying-binary-data-in-the-data-web-controls-vb.md)
-[další](updating-and-deleting-existing-binary-data-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](displaying-binary-data-in-the-data-web-controls-vb.md)
+> [další](updating-and-deleting-existing-binary-data-vb.md)

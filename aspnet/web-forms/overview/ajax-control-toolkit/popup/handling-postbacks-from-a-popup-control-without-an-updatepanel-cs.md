@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-cs
-title: "Zpracování postback z ovládacího prvku místní nabídka bez UpdatePanel (C#) | Microsoft Docs"
+title: Zpracování postback z ovládacího prvku místní nabídka bez UpdatePanel (C#) | Microsoft Docs
 author: wenz
-description: "Rozšiřujícího objektu PopupControl v Toolkitu AJAX nabízí snadný způsob, jak aktivovat místní okno, pokud je aktivován další ovládací prvek. Zpětné volání při výskytu v su..."
+description: Rozšiřujícího objektu PopupControl v Toolkitu AJAX nabízí snadný způsob, jak aktivovat místní okno, pokud je aktivován další ovládací prvek. Zpětné volání při výskytu v su...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: df43052950b6186908fe1baf04808f40cb926f69
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 59ffa05945289de6e01e2c21dd5a0f82ca1fa374
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-c"></a>Zpracování postback z ovládacího prvku místní nabídka bez UpdatePanel (C#)
 ====================
@@ -61,6 +61,6 @@ Kalendář se zobrazí, když uživatel klikne do textového pole ([Kliknutím z
 
 Kliknutím na datum vloží ho do textového pole ([Kliknutím zobrazit obrázek v plné velikosti](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/_static/image6.png))
 
->[!div class="step-by-step"]
-[Předchozí](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)
-[další](using-multiple-popup-controls-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)
+> [další](using-multiple-popup-controls-vb.md)

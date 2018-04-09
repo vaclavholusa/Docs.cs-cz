@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/testing-and-debugging/introduction-to-debugging
-title: "Úvod do ladění rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs"
+title: Úvod do ladění rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Ladění je proces vyhledávání a opravy chyb ve znakových stránkách. Tato kapitola se dozvíte, některé nástroje a techniky, které můžete použít k ladění a analyz..."
+description: Ladění je proces vyhledávání a opravy chyb ve znakových stránkách. Tato kapitola se dozvíte, některé nástroje a techniky, které můžete použít k ladění a analyz...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 0b6b5a886efe515b434948dade1ae840ddaecd42
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c28d63acda6e585f4aa64f294049c1790faac850
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>Úvod do ladění rozhraní ASP.NET Web Pages lokalit (Razor)
 ====================
@@ -33,7 +33,7 @@ podle [tní FitzMacken](https://github.com/tfitzmac)
 > Toto jsou nové v článku funkce ASP.NET:
 > 
 > - `ServerInfo` Pomocné rutiny.
-> - `ObjectInfo`pomocné rutiny.
+> - `ObjectInfo` pomocné rutiny.
 >   
 > 
 > ## <a name="software-versions"></a>Verze softwaru
@@ -66,12 +66,12 @@ Důležitou součást řešení potíží s chybami a problémy ve vašem kódu 
 
     `ServerInfo` Pomocník zobrazí čtyři tabulky informace na stránce:
 
-    - Konfigurace serveru. Tato část obsahuje informace o hostování webovém serveru, včetně názvu počítače, verze technologie ASP.NET, které používáte, název domény a čas serveru.
-    - Proměnné serveru technologie ASP.NET. Tato část obsahuje podrobné informace o mnoho podrobnosti protokolu HTTP (volané proměnné HTTP) a hodnoty, které jsou součástí každého požadavku na webovou stránku.
-    - Informace o běhu programu HTTP. Tato část obsahuje podrobnosti o která verze rozhraní Microsoft .NET Framework je spuštěno webové stránky, cesta, údaje o mezipaměti a tak dále. (Vytvořeným v [Úvod do ASP.NET webové programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkId=202890), pomocí syntaxe jsou postaveny na společnosti Microsoft ASP.NET technologii webového serveru, který je sám založený na rozsáhlé softwaru syntaxi Razor rozhraní ASP.NET Web Pages. vývoj knihovny volá rozhraní .NET Framework).
-    - Proměnné prostředí. Tato část obsahuje seznam všech proměnných v místním prostředí a jejich hodnoty na webovém serveru.
+   - Konfigurace serveru. Tato část obsahuje informace o hostování webovém serveru, včetně názvu počítače, verze technologie ASP.NET, které používáte, název domény a čas serveru.
+   - Proměnné serveru technologie ASP.NET. Tato část obsahuje podrobné informace o mnoho podrobnosti protokolu HTTP (volané proměnné HTTP) a hodnoty, které jsou součástí každého požadavku na webovou stránku.
+   - Informace o běhu programu HTTP. Tato část obsahuje podrobnosti o která verze rozhraní Microsoft .NET Framework je spuštěno webové stránky, cesta, údaje o mezipaměti a tak dále. (Vytvořeným v [Úvod do ASP.NET webové programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkId=202890), pomocí syntaxe jsou postaveny na společnosti Microsoft ASP.NET technologii webového serveru, který je sám založený na rozsáhlé softwaru syntaxi Razor rozhraní ASP.NET Web Pages. vývoj knihovny volá rozhraní .NET Framework).
+   - Proměnné prostředí. Tato část obsahuje seznam všech proměnných v místním prostředí a jejich hodnoty na webovém serveru.
 
-    Úplný popis všech informací serveru a požadavek je nad rámec tohoto článku, ale můžete uvidíte, že `ServerInfo` helper vrátí spoustu diagnostické informace. Další informace o hodnotách který `ServerInfo` vrátí, najdete v části [rozpoznána proměnné prostředí](https://technet.microsoft.com/library/dd560744(WS.10).aspx) na webu Microsoft TechNet a [proměnné serveru IIS](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) na webu MSDN.
+     Úplný popis všech informací serveru a požadavek je nad rámec tohoto článku, ale můžete uvidíte, že `ServerInfo` helper vrátí spoustu diagnostické informace. Další informace o hodnotách který `ServerInfo` vrátí, najdete v části [rozpoznána proměnné prostředí](https://technet.microsoft.com/library/dd560744(WS.10).aspx) na webu Microsoft TechNet a [proměnné serveru IIS](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) na webu MSDN.
 
 ## <a name="embedding-output-expressions-to-display-page-values"></a>Vnoření výstup výrazy k zobrazení hodnot stránky
 
@@ -115,10 +115,10 @@ Jiný způsob, jak zobrazit, co se děje ve vašem kódu je vložení výrazů v
 
     V tomto příkladu `ObjectInfo` Pomocník zobrazí dvě položky:
 
-    - Typ Pro proměnnou první typ je `DayOfWeek`. Pro proměnnou druhý typ je `String`.
-    - Hodnota V takovém případě již zobrazují hodnotu proměnné pozdravu na stránce, hodnota se zobrazí znovu při předání proměnnou `ObjectInfo`.
+   - Typ Pro proměnnou první typ je `DayOfWeek`. Pro proměnnou druhý typ je `String`.
+   - Hodnota V takovém případě již zobrazují hodnotu proměnné pozdravu na stránce, hodnota se zobrazí znovu při předání proměnnou `ObjectInfo`.
 
-    Pro složitější objekty `ObjectInfo` pomocné rutiny můžete zobrazit další informace o &#8212; v podstatě, můžete zobrazit typy a hodnoty všech vlastností objektu.
+     Pro složitější objekty `ObjectInfo` pomocné rutiny můžete zobrazit další informace &#8212; v podstatě, můžete zobrazit typy a hodnoty všech vlastností objektu.
 
 ## <a name="using-debugging-tools-in-visual-studio"></a>Pomocí ladicích nástrojů v sadě Visual Studio
 

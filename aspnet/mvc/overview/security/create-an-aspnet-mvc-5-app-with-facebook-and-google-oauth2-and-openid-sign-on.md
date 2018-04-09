@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
-title: "Vytvoření MVC 5 aplikace pomocí služby Facebook, Twitter, LinkedIn a Google OAuth2 přihlašování (C#) | Microsoft Docs"
+title: Vytvoření MVC 5 aplikace pomocí služby Facebook, Twitter, LinkedIn a Google OAuth2 přihlašování (C#) | Microsoft Docs
 author: Rick-Anderson
-description: "V tomto kurzu se dozvíte, jak vytvořit webovou aplikaci ASP.NET MVC 5, který umožňuje uživatelům přihlásit pomocí OAuth 2.0 přihlašovací údaje z externí authenti..."
+description: V tomto kurzu se dozvíte, jak vytvořit webovou aplikaci ASP.NET MVC 5, který umožňuje uživatelům přihlásit pomocí OAuth 2.0 přihlašovací údaje z externí authenti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 8dc2221ea19a33f1d34ba3aae8c60e365423e140
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c289c209b50f0c2c1f2d8b15a3aedeaebf671d0b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Vytvoření aplikace ASP.NET MVC 5 s Facebook, Twitter, LinkedIn a Google OAuth2 přihlašování (C#)
 ====================
@@ -34,7 +34,7 @@ podle [Rick Anderson](https://github.com/Rick-Anderson)
 <a id="start"></a>
 ## <a name="getting-started"></a>Začínáme
 
-Začněte tím, že instalace a spuštění [Visual Studio Express 2013 pro Web](https://go.microsoft.com/fwlink/?LinkId=299058) nebo [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566). Instalaci sady Visual Studio [2013 s aktualizací 3](https://go.microsoft.com/fwlink/?LinkId=390521) nebo vyšší. Pomoc s Dropbox, Githubu, Linkedin, Instagram, vyrovnávací paměť, salesforce, datový proud, zásobník Exchange, Tripit, twitch, Twitter, Yahoo a další najdete v tématu to [jeden stop průvodce](http://www.oauthforaspnet.com/).
+Začněte tím, že instalace a spuštění [Visual Studio Express 2013 pro Web](https://go.microsoft.com/fwlink/?LinkId=299058) nebo [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566). Instalaci sady Visual Studio [2013 s aktualizací 3](https://go.microsoft.com/fwlink/?LinkId=390521) nebo vyšší. Pomoc s Dropbox, Githubu, Linkedin, Instagram, vyrovnávací paměť, Salesforce, datový proud, zásobník Exchange, Tripit, Twitch, Twitter, Yahoo! a další najdete v tématu to [ukázkový projekt](https://github.com/matthewdunsdon/oauthforaspnet).
 
 > [!NOTE]
 > Je nutné nainstalovat Visual Studio [2013 s aktualizací 3](https://go.microsoft.com/fwlink/?LinkId=390521) nebo vyšší pro použijte Google OAuth 2 a ladění místně bez upozornění týkající se SSL.
@@ -118,9 +118,9 @@ Pro připojení k zprostředkovatele ověřování, jako je Google a Facebook, m
 > Aktuální Google OAuth pokyny najdete v tématu [ověřování Google konfigurace v ASP.NET Core](/aspnet/core/security/authentication/social/google-logins).
 
 1. Přejděte na [konzole pro vývojáře Google](https://console.developers.google.com/).
-1. Pokud jste dosud nevytvořili projektu před, vyberte **pověření** v levé kartě a potom vyberte **vytvořit**.
-1. V levé kartě klikněte na **pověření**.
-1. Klikněte na tlačítko **vytvořit přihlašovací údaje** pak **ID klienta OAuth**. 
+2. Pokud jste dosud nevytvořili projektu před, vyberte **pověření** v levé kartě a potom vyberte **vytvořit**.
+3. V levé kartě klikněte na **pověření**.
+4. Klikněte na tlačítko **vytvořit přihlašovací údaje** pak **ID klienta OAuth**. 
 
     1. V **vytvořit ID klienta** dialogové okno, ponechte výchozí **webové aplikace** pro typ aplikace.
     2. Nastavte **oprávnění JavaScript** zdroje na adresu URL SSL, který jste použili výše (`https://localhost:44300/` Pokud jste vytvořili další projekty SSL)
@@ -131,7 +131,7 @@ Pro připojení k zprostředkovatele ověřování, jako je Google a Facebook, m
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image15.png)  
   
- Následující obrázek ukazuje povoleno rozhraní API.  
+   Následující obrázek ukazuje povoleno rozhraní API.  
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image16.png)
 7. Z Google rozhraní API rozhraní API Správce, přejděte **pověření** kartě získat **ID klienta**. Stáhněte si uložte soubor JSON s tajné klíče aplikace. Zkopírujte a vložte **ClientId** a **ClientSecret** do `UseGoogleAuthentication` nalezena metoda v *Startup.Auth.cs* v soubor *App_Start* složky. **ClientId** a **ClientSecret** hodnoty zobrazené níže jsou příklady a nefungují.
@@ -148,8 +148,8 @@ Pro připojení k zprostředkovatele ověřování, jako je Google a Facebook, m
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image18.png)
 
     > [!NOTE]
-    > V případě, že byste zapomněli na některý z výše uvedených kroků zobrazí se chyba HTTP 401. Znovu zkontrolujte vaše kroky uvedené výše. Pokud přeskočíte požadované nastavení (například **název produktu**), přidejte chybějící položky a uložte, může trvat několik minut, než ověřování pracovat.
-10. Budete přesměrováni na web google, kde bude zadejte svoje přihlašovací údaje.   
+    > V případě, že byste zapomněli na některý z výše uvedených kroků zobrazí se chyba HTTP 401. Znovu zkontrolujte vaše kroky uvedené výše. Pokud přeskočíte požadované nastavení (například **název produktu**), přidejte položku chybějící a uložte; může trvat několik minut, než ověřování pracovat.
+10. Budete přesměrováni na web Google, kde bude zadejte svoje přihlašovací údaje.   
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image19.png)
 11. Po zadání přihlašovacích údajů, zobrazí se výzva k udělit oprávnění k webové aplikaci, kterou jste právě vytvořili:
@@ -167,14 +167,14 @@ Pro připojení k zprostředkovatele ověřování, jako je Google a Facebook, m
 
 Pro ověřování sítě Facebook OAuth2 musíte zkopírovat do projektu některá nastavení z aplikace, která vytvoříte ve službě Facebook.
 
-1. V prohlížeči přejděte na [https://developers.facebook.com/apps](https://developers.facebook.com/apps) a přihlaste se zadáním přihlašovacích údajů služby Facebook.
+1. V prohlížeči přejděte na [ https://developers.facebook.com/apps ](https://developers.facebook.com/apps) a přihlaste se zadáním přihlašovacích údajů služby Facebook.
 2. Pokud nejsou už registrovaný jako vývojář Facebook, klikněte na tlačítko **zaregistrujte se jako vývojář** a postupujte podle pokynů k registraci.
 3. Na **aplikace** , klikněte na **vytvořit novou aplikaci**.
 
     ![Vytvoření nové aplikace](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image22.png)
 4. Zadejte **název aplikace** a **kategorie**, pak klikněte na tlačítko **vytvořit aplikaci**.
 
-    Toto musí být jedinečný mezi Facebook. **Aplikace Namespace** je součástí adresu URL, kterou vaše aplikace bude používat pro přístup k aplikaci Facebook pro ověření (například https://apps.facebook.com/ {aplikace Namespace}). Pokud neurčíte **aplikace Namespace**, **ID aplikace** se použije pro adresu URL. **ID aplikace** je číslo dlouho generované systémem, který se zobrazí v dalším kroku.
+    Toto musí být jedinečný mezi Facebook. <strong>Aplikace Namespace</strong> je součástí adresu URL, kterou vaše aplikace bude používat pro přístup k aplikaci Facebook pro ověření (například https://apps.facebook.com/{App Namespace}). Pokud neurčíte <strong>aplikace Namespace</strong>, <strong>ID aplikace</strong> se použije pro adresu URL. <strong>ID aplikace</strong> je číslo dlouho generované systémem, který se zobrazí v dalším kroku.
 
     ![Vytvořit novou aplikaci dialogové okno](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
 5. Odešlete kontrola zabezpečení Standardní.

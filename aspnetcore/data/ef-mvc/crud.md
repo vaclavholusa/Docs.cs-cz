@@ -1,7 +1,7 @@
 ---
-title: "Jádro ASP.NET MVC s EF Core - CRUD - 2 10"
+title: Jádro ASP.NET MVC s EF Core - CRUD - 2 10
 author: tdykstra
-description: 
+description: ''
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/crud
-ms.openlocfilehash: a586fdde07ecf349d7523d43a623501af62257a2
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 54f25733126c6de5a3704664bda7c7942a3643a1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Vytvářet, číst, aktualizovat a odstraňovat – základní EF s kurz k ASP.NET MVC jádra (2 10)
+# <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>Jádro ASP.NET MVC s EF Core - CRUD - 2 10
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -44,7 +44,7 @@ V *Controllers/StudentsController.cs*, metoda akce podrobnosti o zobrazení pou�
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Details&highlight=8-12)]
 
-`Include` a `ThenInclude` metody způsobit kontext k načtení `Student.Enrollments` navigační vlastnost a v rámci každé registrace `Enrollment.Course` navigační vlastnost.  Dozvíte více o těchto metodách v [čtení souvisejících dat](read-related-data.md) kurzu.
+`Include` a `ThenInclude` metody způsobit kontext k načtení `Student.Enrollments` navigační vlastnost a v rámci každé registrace `Enrollment.Course` navigační vlastnost.  Dozvíte více o těchto metodách v [číst data v relaci](read-related-data.md) kurzu.
 
 `AsNoTracking` Metoda zlepšuje výkon v situacích, kde entity vrátil nebude aktualizován v aktuálním kontextu životnosti. Získáte další informace o `AsNoTracking` na konci tohoto kurzu.
 
@@ -296,6 +296,6 @@ Další informace najdete v tématu [sledování vs. Ne sledování](https://doc
 
 Nyní máte úplnou sadu stránek, které provádějí jednoduché operace CRUD pro studenty entity. V dalším kurzu budete rozbalte funkce **Index** tak, že přidáte řazení, filtrování a stránkování.
 
->[!div class="step-by-step"]
-[Předchozí](intro.md)
-[další](sort-filter-page.md)  
+> [!div class="step-by-step"]
+> [Předchozí](intro.md)
+> [další](sort-filter-page.md)  

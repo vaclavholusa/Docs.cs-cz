@@ -1,7 +1,7 @@
 ---
-title: "Sdružování a minimalizace v ASP.NET Core"
+title: Sady a minifiy statické prostředky v ASP.NET Core
 author: scottaddie
-description: "Informace o optimalizaci statické prostředky ve webové aplikaci ASP.NET Core použitím sdružování a minimalizace techniky."
+description: Informace o optimalizaci statické prostředky ve webové aplikaci ASP.NET Core použitím sdružování a minimalizace techniky.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 6c233d0957ce9974adbc6112e6194c072aab0b41
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a155422c0fd638f46fe4a9d8a77faebc0b2a5681
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="bundling-and-minification"></a>Sdružování a minimalizace
+# <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>Sady a minifiy statické prostředky v ASP.NET Core
 
 Podle [Scott Addie](https://twitter.com/Scott_Addie)
 
@@ -77,9 +77,9 @@ Projektu šablony MVC a stránky syntaxe Razor poskytují *bundleconfig.json* ko
 
 Možnosti konfigurace patří:
 
-* `outputFileName`: Název souboru kompletu na výstup. Může obsahovat relativní cestu z *bundleconfig.json* souboru. **požadované**
+* `outputFileName`: Název souboru kompletu na výstup. Může obsahovat relativní cestu z *bundleconfig.json* souboru. **Požadované**
 * `inputFiles`: Pole soubory sady společně. Jedná se o relativní cesty k souboru konfigurace. **volitelné**, * prázdnou hodnotu výsledkem prázdná výstupního souboru. [režim expanze](http://www.tldp.org/LDP/abs/html/globbingref.html) vzory jsou podporovány.
-* `minify`: Možnosti minimalizace typ výstupu. **volitelné**, *výchozí –`minify: { enabled: true }`*
+* `minify`: Možnosti minimalizace typ výstupu. **volitelné**, *výchozí – `minify: { enabled: true }`*
   * Možnosti konfigurace jsou k dispozici na typ výstupního souboru.
     * [Minifikátor šablon stylů CSS](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
     * [Minifikátor JavaScript](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
@@ -220,28 +220,22 @@ Zadejte soubory, které chcete zahrnout do vaší stránky pomocí [pomocná zna
 
 Následující `environment` značky vykreslí nezpracované soubory šablon stylů CSS při spuštění v `Development` prostředí:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=21-24)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=9-12)]
 
----
-
+* * *
 Následující `environment` značky vykreslí souborů CSS připojené a minifikovaný při spuštění v prostředí s jiným než `Development`. Například běžet `Production` nebo `Staging` aktivuje vykreslování těchto šablon:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=5&range=25-30)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=13-18)]
 
----
-
+* * *
 ## <a name="consume-bundleconfigjson-from-gulp"></a>Využívat bundleconfig.json z Gulp
 
 Existují případy, ve kterých aplikace sdružování a minimalizace pracovní postup vyžaduje další zpracování. Mezi příklady patří Optimalizace bitové kopie, nejnovějších mezipaměti a zpracování asset CDN. Splňovat tyto požadavky, můžete převést sdružování a minimalizace pracovní postup použít Gulp.

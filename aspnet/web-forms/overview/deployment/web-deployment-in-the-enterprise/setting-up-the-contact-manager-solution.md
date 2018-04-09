@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
-title: "Nastavení řešení obraťte se na správce | Microsoft Docs"
+title: Nastavení řešení obraťte se na správce | Microsoft Docs
 author: jrjlee
-description: "Toto téma popisuje, jak stáhnout a nakonfigurovat spustit místně na pracovní stanici vývojáře řešení obraťte se na správce."
+description: Toto téma popisuje, jak stáhnout a nakonfigurovat spustit místně na pracovní stanici vývojáře řešení obraťte se na správce.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: b8176b3b8622e21187a91647323322e55582373c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e8fb24f5b2d96d864d1aa6bc0f78644773de00ab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="setting-up-the-contact-manager-solution"></a>Nastavení řešení obraťte se na správce
 ====================
@@ -125,6 +125,6 @@ Obraťte se na správce řešení v tomto okamžiku by měl být plně nakonfigu
 
 Dalším tématu [vysvětlení souboru projektu](understanding-the-project-file.md), vysvětluje, jak můžete použít vlastní soubory projektu Microsoft Build Engine (MSBuild) v rámci řešení obraťte se na správce pro řízení procesu nasazení.
 
->[!div class="step-by-step"]
-[Předchozí](the-contact-manager-solution.md)
-[další](understanding-the-project-file.md)
+> [!div class="step-by-step"]
+> [Předchozí](the-contact-manager-solution.md)
+> [další](understanding-the-project-file.md)

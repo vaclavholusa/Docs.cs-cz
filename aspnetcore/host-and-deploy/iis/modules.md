@@ -1,7 +1,7 @@
 ---
-title: "Moduly služby IIS pomocí ASP.NET Core"
+title: Moduly služby IIS s ASP.NET Core
 author: guardrex
-description: "Zjistit aktivní i neaktivní moduly služby IIS pro aplikace ASP.NET Core a jak spravovat moduly služby IIS."
+description: Zjistit aktivní i neaktivní moduly služby IIS pro aplikace ASP.NET Core a jak spravovat moduly služby IIS.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: a6610e33abdc3eafb5908728b3299e95e6e7183f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: d9b3de915df333153255f91649f9169f76ba2fe0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="using-iis-modules-with-aspnet-core"></a>Moduly služby IIS pomocí ASP.NET Core
+# <a name="iis-modules-with-aspnet-core"></a>Moduly služby IIS s ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
@@ -58,7 +58,7 @@ Aplikace ASP.NET Core jsou hostované službou IIS v konfiguraci reverzní proxy
 | **Autorizace adres URL**<br>`UrlAuthorizationModule` | Ano | [Jádro ASP.NET Identity](xref:security/authentication/identity) |
 | **Ověřování systému Windows**<br>`WindowsAuthenticationModule` | Ano | |
 
-&#8224; Adresa URL přepisování modulu `isFile` a `isDirectory` typům nefungují s aplikacemi ASP.NET Core z důvodu změn v [adresářovou strukturu](xref:host-and-deploy/directory-structure).
+&#8224;Adresa URL přepisování modulu `isFile` a `isDirectory` typům nefungují s aplikacemi ASP.NET Core z důvodu změn v [adresářovou strukturu](xref:host-and-deploy/directory-structure).
 
 ## <a name="managed-modules"></a>Spravované moduly
 
@@ -106,21 +106,21 @@ Pokud vyjádření výslovného odebrat modul s nastavením v *web.config*, odem
 
 1. Odemkněte modul na úrovni serveru. Ve Správci služby IIS vyberte server služby IIS **připojení** bočním panelu. Otevřete **moduly** v **IIS** oblasti. Vyberte modul, v seznamu. V **akce** bočním panelu na pravé straně, vyberte **odemčení**. Odemknout libovolný počet modulů, jak máte v úmyslu odebrat z *web.config* později.
 
-1. Nasazení aplikace bez  **\<moduly >** kapitoly *web.config*. Pokud je aplikace nasazena pomocí *web.config* obsahující  **\<moduly >** vyvolá výjimku, část bez nutnosti odemčený části nejprve v Správce služby IIS, nástroje Configuration Manager Při pokusu odemknout oddíl. Proto nasazení aplikace bez  **\<moduly >** části.
+2. Nasazení aplikace bez  **\<moduly >** kapitoly *web.config*. Pokud je aplikace nasazena pomocí *web.config* obsahující  **\<moduly >** vyvolá výjimku, část bez nutnosti odemčený části nejprve v Správce služby IIS, nástroje Configuration Manager Při pokusu odemknout oddíl. Proto nasazení aplikace bez  **\<moduly >** části.
 
-1. Odemknutí  **\<moduly >** části *web.config*. V **připojení** bočním panelu, vyberte web, v **lokality**. V **správy** oblast, otevřete **Editor konfigurací**. Vyberte pomocí ovládacích prvků navigace `system.webServer/modules` oddílu. V **akce** bočním panelu na pravé straně, vyberte možnost **odemčení** části.
+3. Odemknutí  **\<moduly >** části *web.config*. V **připojení** bočním panelu, vyberte web, v **lokality**. V **správy** oblast, otevřete **Editor konfigurací**. Vyberte pomocí ovládacích prvků navigace `system.webServer/modules` oddílu. V **akce** bočním panelu na pravé straně, vyberte možnost **odemčení** části.
 
-1. V tomto okamžiku  **\<moduly >** části lze přidat do *web.config* soubor s  **\<odebrat >** elementu, který chcete odebrat modul z aplikace. Více  **\<odebrat >** elementy lze přidat k odebrání více modulů. Pokud *web.config* změn na serveru, okamžitě provést stejné změny do projektu *web.config* soubor místně. Odebrání modul tímto způsobem nebude mít vliv na používání modulu s jinými aplikacemi na serveru.
+4. V tomto okamžiku  **\<moduly >** části lze přidat do *web.config* soubor s  **\<odebrat >** elementu, který chcete odebrat modul z aplikace. Více  **\<odebrat >** elementy lze přidat k odebrání více modulů. Pokud *web.config* změn na serveru, okamžitě provést stejné změny do projektu *web.config* soubor místně. Odebrání modul tímto způsobem nebude mít vliv na používání modulu s jinými aplikacemi na serveru.
 
-  ```xml
-  <configuration> 
+   ```xml
+   <configuration> 
     <system.webServer> 
       <modules> 
         <remove name="MODULE_NAME" /> 
       </modules> 
     </system.webServer> 
-  </configuration>
-  ```
+   </configuration>
+   ```
 
 Pro instalaci služby IIS s moduly výchozí nainstalovaný, použijte následující  **\<modulu >** , odinstalujte výchozí moduly.
 

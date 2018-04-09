@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-vb
-title: "Obnovení a změna hesel (VB) | Microsoft Docs"
+title: Obnovení a změna hesel (VB) | Microsoft Docs
 author: rick-anderson
-description: "Technologie ASP.NET obsahuje dva ovládací prvky webového asistence s obnovením a změny hesla. Ovládací prvek PasswordRecovery umožňuje návštěvníka k obnovení jeho ztraceny pa..."
+description: Technologie ASP.NET obsahuje dva ovládací prvky webového asistence s obnovením a změny hesla. Ovládací prvek PasswordRecovery umožňuje návštěvníka k obnovení jeho ztraceny pa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b78469858483a9501a0f73d1c894e29ae0a99122
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cffe07eaea5144df82e56c989b0cde7cfd3d194a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="recovering-and-changing-passwords-vb"></a>Obnovení a změna hesel (VB)
 ====================
@@ -86,7 +86,7 @@ Před zahájením testovacího této stránce, je poslední část konfigurace d
 Konfigurace doručování e-mailu se specifikuje prostřednictvím [ `<system.net>` element](https://msdn.microsoft.com/library/6484zdc1.aspx)na [ `<mailSettings>` element](https://msdn.microsoft.com/library/w355a94k.aspx). Použití [ `<smtp>` element](https://msdn.microsoft.com/library/ms164240.aspx) udávajících metodu doručení a ve výchozím nastavení z adresy. Následující kód konfiguruje nastavení e-mailu, síti SMTP serveru s názvem `smtp.example.com` na port 25 a s uživatelským jménem a heslem přihlašovací údaje uživatelského jména a hesla.
 
 > [!NOTE]
-> `<system.net>`je podřízený prvek kořenového `<configuration>` elementu a na stejné úrovni jako `<system.web>`. Proto nevkládejte `<system.net>` v rámci `<system.web>` element; namísto toho uložte na stejné úrovni.
+> `<system.net>` je podřízený prvek kořenového `<configuration>` elementu a na stejné úrovni jako `<system.web>`. Proto nevkládejte `<system.net>` v rámci `<system.web>` element; namísto toho uložte na stejné úrovni.
 
 
 [!code-xml[Main](recovering-and-changing-passwords-vb/samples/sample1.xml)]
@@ -125,7 +125,7 @@ Vraťte se k webu a přihlaste se pomocí následujících informací.
 
 Uživatelské jméno: *uživatelské jméno*
 
-heslo: *heslo*
+Heslo: *heslo*
 
 Tuto zprávu lze přizpůsobit prostřednictvím kódu programu prostřednictvím obslužné rutiny události pro ovládací prvek PasswordRecovery [ `SendingMail` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.sendingmail.aspx), nebo deklarativně pomocí [ `MailDefinition` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.maildefinition.aspx). Podíváme se na obě tyto možnosti.
 
@@ -165,8 +165,8 @@ Odeslat e-mail ve formátu HTML nastavit [ `IsBodyHtml` ](https://msdn.microsoft
 
 Při resetování hesla uživatele PasswordRecovery řízení volání `MembershipUser` objektu [ `ResetPassword` metoda](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx). Tato metoda má dva přetížení:
 
-- **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)**-Resetuje heslo uživatele. Toto přetížení použijte, pokud `RequiresQuestionAndAnswer` je False.
-- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)**-Obnoví jenom Pokud heslo uživatele zadaných *securityAnswer* je správný. Toto přetížení použijte, pokud `RequiresQuestionAndAnswer` má hodnotu True.
+- **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)** -Resetuje heslo uživatele. Toto přetížení použijte, pokud `RequiresQuestionAndAnswer` je False.
+- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)** -Obnoví jenom Pokud heslo uživatele zadaných *securityAnswer* je správný. Toto přetížení použijte, pokud `RequiresQuestionAndAnswer` má hodnotu True.
 
 Obě přetížení vrátí nové, náhodně vygenerované heslo.
 
@@ -300,16 +300,16 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Změna hesla byla řízení – elementy QuickStart](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/changepassword.aspx)
 - [Ovládací prvek PasswordRecovery – elementy QuickStart](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/passwordrecovery.aspx)
 - [Odesílání e-mailu v technologii ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
-- [`System.Net.Mail`Nejčastější dotazy](http://www.systemnetmail.com/)
+- [`System.Net.Mail` Nejčastější dotazy](http://www.systemnetmail.com/)
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu zahrnují Michael Emmings a Suchi Banerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu zahrnují Michael Emmings a Suchi Banerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](building-an-interface-to-select-one-user-account-from-many-vb.md)
-[další](unlocking-and-approving-user-accounts-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](building-an-interface-to-select-one-user-account-from-many-vb.md)
+> [další](unlocking-and-approving-user-accounts-vb.md)

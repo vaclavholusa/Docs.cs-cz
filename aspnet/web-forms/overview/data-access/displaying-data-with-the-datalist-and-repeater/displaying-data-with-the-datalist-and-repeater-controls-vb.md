@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
-title: "Zobrazení dat s ovládacími prvky opakovače (VB) a DataList | Microsoft Docs"
+title: Zobrazení dat s ovládacími prvky opakovače (VB) a DataList | Microsoft Docs
 author: rick-anderson
-description: "V předchozím kurzech jsme použili prvek GridView zobrazujících data. Od v tomto kurzu se podíváme na vytváření běžných vzorů vytváření sestav s..."
+description: V předchozím kurzech jsme použili prvek GridView zobrazujících data. Od v tomto kurzu se podíváme na vytváření běžných vzorů vytváření sestav s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 20a092ee2886932664705c22c3aa88d8a2f7f0ef
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6aa7cb76295d18711d88dd9855b43b259b558060
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>Zobrazení dat s ovládacími prvky opakovače (VB) a DataList
 ====================
@@ -161,12 +161,12 @@ Přidání tento soubor vzhledu vzhled s DataList aktualizován v Návrháři (p
 
 Kromě `ItemTemplate`, prvku DataList podporuje šesti další volitelné šablony:
 
-- `HeaderTemplate`Pokud je zadán, přidá do výstupu řádek záhlaví a slouží k vykreslení tento řádek
-- `AlternatingItemTemplate`použít k vykreslení střídání položek
-- `SelectedItemTemplate`použít k vykreslení vybrané položce. Vybraná položka je položek, jejichž index odpovídá DataList s [ `SelectedIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
-- `EditItemTemplate`použít k vykreslení upravované položky
-- `SeparatorTemplate`Pokud je zadán, přidá oddělovač mezi každou položku a slouží k vykreslení tento oddělovače
-- `FooterTemplate`-Pokud je zadán, přidá do výstupu řádek zápatí a slouží k vykreslení tento řádek
+- `HeaderTemplate` Pokud je zadán, přidá do výstupu řádek záhlaví a slouží k vykreslení tento řádek
+- `AlternatingItemTemplate` použít k vykreslení střídání položek
+- `SelectedItemTemplate` použít k vykreslení vybrané položce. Vybraná položka je položek, jejichž index odpovídá DataList s [ `SelectedIndex` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `EditItemTemplate` použít k vykreslení upravované položky
+- `SeparatorTemplate` Pokud je zadán, přidá oddělovač mezi každou položku a slouží k vykreslení tento oddělovače
+- `FooterTemplate` -Pokud je zadán, přidá do výstupu řádek zápatí a slouží k vykreslení tento řádek
 
 Při zadávání `HeaderTemplate` nebo `FooterTemplate`, prvku DataList přidá další řádek záhlaví nebo zápatí stránky vykreslené výstupu. Jako s GridView s záhlaví a zápatí řádků, záhlaví a zápatí v DataList nejsou vázání na data. Proto všechny Syntaxe datové vazby v `HeaderTemplate` nebo `FooterTemplate` , pokusy o přístup k datům vázané vrátí prázdný řetězec.
 
@@ -210,11 +210,11 @@ Pokud uděláte zobrazení/zdroj z prohlížeče při návštěvě příklad Dat
 
 Co když neuděláte chcete t emitování HTML `<table>`, ačkoli? Celkový počet a dokončení kontrolu nad značek generované ovládacího prvku webového data musí používáme ovládacím prvku opakovače. Jako DataList opakovače sestavený na základě šablony. Opakovače, ale pouze nabízí následujících pět šablon:
 
-- `HeaderTemplate`Pokud je zadán, přidá zadaný kód před položky
-- `ItemTemplate`použít k vykreslení položky
-- `AlternatingItemTemplate`Pokud je zadán, použije k vykreslení střídání položek
-- `SeparatorTemplate`Pokud je zadán, přidá zadaný kód mezi každou položku
-- `FooterTemplate`-Pokud je zadán, přidá zadaný kód za položky
+- `HeaderTemplate` Pokud je zadán, přidá zadaný kód před položky
+- `ItemTemplate` použít k vykreslení položky
+- `AlternatingItemTemplate` Pokud je zadán, použije k vykreslení střídání položek
+- `SeparatorTemplate` Pokud je zadán, přidá zadaný kód mezi každou položku
+- `FooterTemplate` -Pokud je zadán, přidá zadaný kód za položky
 
 V technologii ASP.NET 1.x, opakovače kontrolu byl nejčastěji používaných k zobrazení seznamu s odrážkami, jejichž data pocházejí z některých zdrojů dat. V takovém případě `HeaderTemplate` a `FooterTemplates` by obsahovala otevření a zavření `<ul>` značky, respektive při `ItemTemplate` by obsahovat `<li>` elementů pomocí syntaxe datové vazby. Tento postup můžete použít stále v technologii ASP.NET 2.0, jako jsme viděli v dva příklady v [hlavní stránky a webové navigace](../introduction/master-pages-and-site-navigation-vb.md) kurzu:
 
@@ -312,12 +312,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Yaakov Ellis, Liz Shulok, Randy Schmidt a Stacy parku. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](nested-data-web-controls-cs.md)
-[další](formatting-the-datalist-and-repeater-based-upon-data-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](nested-data-web-controls-cs.md)
+> [další](formatting-the-datalist-and-repeater-based-upon-data-vb.md)

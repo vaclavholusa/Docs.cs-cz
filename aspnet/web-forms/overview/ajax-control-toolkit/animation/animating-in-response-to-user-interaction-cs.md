@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
-title: "Animace v reakci na zásah uživatele (C#) | Microsoft Docs"
+title: Animace v reakci na zásah uživatele (C#) | Microsoft Docs
 author: wenz
-description: "V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Můžete hvězdičkami animací..."
+description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Můžete hvězdičkami animací...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: efb9c34c317ec56b43c498f40a857a9b47fa50b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 783563f4e33087e99a071cf829ca6bab246ba3b0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animating-in-response-to-user-interaction-c"></a>Animace v reakci na zásah uživatele (C#)
 ====================
@@ -51,11 +51,11 @@ Poté, přidejte `AnimationExtender` na stránku, poskytuje `ID`, `TargetControl
 
 V rámci `<Animations>` uzlu pět způsobů, jak pro spuštění animace prostřednictvím zásah uživatele (chybí element je `<OnLoad>` který je proveden po celé stránky se načetl plně):
 
-- `<OnClick>`(myši klikněte na ovládací prvek)
-- `<OnHoverOut>`(ukazatel myši opustí ovládací prvek)
-- `<OnHoverOver>`(ukazatel myši nachází ovládacího prvku zastavení `<OnHoverOut>` animace)
-- `<OnMouseOut>`(myši ponechá ovládací prvek)
-- `<OnMouseOver>`(ukazatel myši nachází ovládacího prvku není zastavení `<OnMouseOut>` animace)
+- `<OnClick>` (myši klikněte na ovládací prvek)
+- `<OnHoverOut>` (ukazatel myši opustí ovládací prvek)
+- `<OnHoverOver>` (ukazatel myši nachází ovládacího prvku zastavení `<OnHoverOut>` animace)
+- `<OnMouseOut>` (myši ponechá ovládací prvek)
+- `<OnMouseOver>` (ukazatel myši nachází ovládacího prvku není zastavení `<OnMouseOut>` animace)
 
 V tomto scénáři `<OnClick>` se používá. Když uživatel klikne na panelu, se změnila velikost a setmívá ve stejnou dobu.
 
@@ -66,6 +66,6 @@ V tomto scénáři `<OnClick>` se používá. Když uživatel klikne na panelu, 
 
 Animace bude spuštěna, klikněte na tlačítko myši ([Kliknutím zobrazit obrázek v plné velikosti](animating-in-response-to-user-interaction-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Předchozí](picking-one-animation-out-of-a-list-cs.md)
-[další](disabling-actions-during-animation-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](picking-one-animation-out-of-a-list-cs.md)
+> [další](disabling-actions-during-animation-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-vb
-title: "Aktualizace pro použití TableAdapter spojí (VB) | Microsoft Docs"
+title: Aktualizace pro použití TableAdapter spojí (VB) | Microsoft Docs
 author: rick-anderson
-description: "Při práci s databází je běžné pro data požadavku, která je rozdělena mezi více tabulek. Načíst data ze dvou různých tabulek můžeme použít buď..."
+description: Při práci s databází je běžné pro data požadavku, která je rozdělena mezi více tabulek. Načíst data ze dvou různých tabulek můžeme použít buď...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2e0698269c0a29c234f03dc56f7b63e7bc83d032
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 91d700f3de02dc78692e933644e221e2ac8175a1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-the-tableadapter-to-use-joins-vb"></a>Aktualizace pro použití TableAdapter spojí (VB)
 ====================
@@ -54,7 +54,7 @@ Alternativně `JOIN` lze použít k vrácení každý název dodavatele a katego
 A `JOIN` slučuje záznamy z jedné tabulky se záznamy z jiné tabulky, na základě některé kritérií. Ve výše uvedeném dotazu, například `LEFT JOIN Categories ON Categories.CategoryID = Products.CategoryID` SQL serveru pokyn ke sloučení každý záznam produktu v kategorii záznam, jehož `CategoryID` hodnota odpovídá produktu s `CategoryID` hodnotu. Sloučené výsledek umožňuje pracovat s odpovídající pole kategorií každého produktu (například `CategoryName`).
 
 > [!NOTE]
-> `JOIN`s běžně se používají při dotazování na data z relační databáze. Pokud jste ještě `JOIN` syntaxe nebo potřeba zdokonalit v práci s trochu jeho využití, doporučujeme I d [kurzu připojení k SQL](http://www.w3schools.com/sql/sql_join.asp) v [škol W3](http://www.w3schools.com/). Také vhodné čtení jsou [ `JOIN` Základy](https://msdn.microsoft.com/library/ms191517.aspx) a [poddotazu Základy](https://msdn.microsoft.com/library/ms189575.aspx) části [dokumentaci knihy Online SQL](https://msdn.microsoft.com/library/ms130214.aspx).
+> `JOIN` s běžně se používají při dotazování na data z relační databáze. Pokud jste ještě `JOIN` syntaxe nebo potřeba zdokonalit v práci s trochu jeho využití, doporučujeme I d [kurzu připojení k SQL](http://www.w3schools.com/sql/sql_join.asp) v [škol W3](http://www.w3schools.com/). Také vhodné čtení jsou [ `JOIN` Základy](https://msdn.microsoft.com/library/ms191517.aspx) a [poddotazu Základy](https://msdn.microsoft.com/library/ms189575.aspx) části [dokumentaci knihy Online SQL](https://msdn.microsoft.com/library/ms130214.aspx).
 
 
 Vzhledem k tomu `JOIN` s a korelační poddotazy obě slouží k načtení dat v relaci z jiné tabulky, celá řada vývojářů nezbývají hrabání jejich oznámení a vás zajímá, jaký přístup k použití. Všechny SQL gurus I sunout mluvili do mají uvedená zhruba samé, to nemá t skutečně vás performance-wise spojitá plány zhruba identické spuštění systému SQL Server. Jejich poradenství, pak je pomocí technik, které vám a vašemu týmu jsou nejvíce vyhovuje. Ho věci poznamenat, že po vodorovně tuto žádost tyto odborníky okamžitě express jejich předvolbu `JOIN` s přes korelační poddotazy.
@@ -260,12 +260,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři pro účely tohoto kurzu byly Hilton Geisenow David Suru a Teresy Murphy. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
-[další](adding-additional-datatable-columns-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
+> [další](adding-additional-datatable-columns-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
-title: "Předávání dat zobrazit stránky předlohy (VB) | Microsoft Docs"
+title: Předávání dat zobrazit stránky předlohy (VB) | Microsoft Docs
 author: microsoft
-description: "Cílem tohoto kurzu je vysvětlují, jak můžete předat data z řadiče na hlavní stránku zobrazení. Jsme zkontrolujte dvě strategie pro předávání dat zobrazení m..."
+description: Cílem tohoto kurzu je vysvětlují, jak můžete předat data z řadiče na hlavní stránku zobrazení. Jsme zkontrolujte dvě strategie pro předávání dat zobrazení m...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d92a1afe46af124e835b3d59f2b2093402742bbd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fcd7c5baacc00490720d1f82252d81e40c097c88
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="passing-data-to-view-master-pages-vb"></a>Předání dat zobrazit stránky předlohy (VB)
 ====================
@@ -53,7 +53,7 @@ Začněme nejjednodušší řešení předávání zobrazení dat z řadiče zob
 
 Vezměte v úvahu řadiče v výpis 1. Poskytuje dvě akce s názvem `Index()` a `Details()`. `Index()` Metoda akce vrací každých film filmy databázové tabulky. `Details()` Metoda akce vrací každých film v konkrétní film kategorii.
 
-**Výpis 1 –`Controllers\HomeController.vb`**
+**Výpis 1 – `Controllers\HomeController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample1.vb)]
 
@@ -69,13 +69,13 @@ Všimněte si, že jak `Index()` a `Details()` dvě položky k zobrazení dat p�
 
 Zobrazení indexu je obsažený v výpis 2. Ho jednoduše prochází seznam filmy reprezentována filmy položky v dat zobrazení.
 
-**Výpis 2 –`Views\Home\Index.aspx`**
+**Výpis 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-vb/samples/sample2.aspx)]
 
 Hlavní stránka zobrazení je součástí výpis 3. Hlavní stránka zobrazení opakuje a vykreslí všechny kategorie film reprezentována kategorie položku z dat zobrazení.
 
-**Výpis 3 –`Views\Shared\Site.master`**
+**Výpis 3 – `Views\Shared\Site.master`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-vb/samples/sample3.aspx)]
 
@@ -91,7 +91,7 @@ Třída ApplicationController je součástí výpis 4.
 
 Třída ApplicationController je součástí výpis 4.
 
-**Výpis 4 –`Controllers\ApplicationController.vb`**
+**Výpis 4 – `Controllers\ApplicationController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample4.vb)]
 
@@ -103,7 +103,7 @@ Třetí Všimněte si, že řadič aplikace obsahuje konstruktor, který se při
 
 Řadič filmy v výpis 5 dědí z aplikace řadiče.
 
-**Výpis 5 –`Controllers\MoviesController.vb`**
+**Výpis 5 – `Controllers\MoviesController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample5.vb)]
 
@@ -117,5 +117,5 @@ V tomto kurzu jsme probrali dva přístupy k předávání dat zobrazení z řad
 
 V dalším kroku jsme se zaměřili mnohem lepší strategie pro přidání dat vyžaduje zobrazení stránky předlohy pro zobrazení dat. Místo přidávání zobrazení dat v každé akce kontroleru, jsme přidali zobrazení dat pouze jednou v rámci řadič aplikace. Tímto způsobem, při předávání dat na hlavní stránku zobrazení v aplikaci ASP.NET MVC se můžete vyhnout duplicitní kódu.
 
->[!div class="step-by-step"]
-[Předchozí](creating-page-layouts-with-view-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-page-layouts-with-view-master-pages-vb.md)

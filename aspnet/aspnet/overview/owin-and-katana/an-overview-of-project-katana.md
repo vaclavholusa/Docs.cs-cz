@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/an-overview-of-project-katana
-title: "Přehled Katana projekt | Microsoft Docs"
+title: Přehled Katana projekt | Microsoft Docs
 author: howarddierking
-description: "Rozhraní ASP.NET je k dispozici více než deset let a platformou aktivoval vývoj obrovském množství webů a služeb. Jako webové aplikace..."
+description: Rozhraní ASP.NET je k dispozici více než deset let a platformou aktivoval vývoj obrovském množství webů a služeb. Jako webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/30/2013
 ms.topic: article
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: ceb7d3a7d1cb1685c0f1e62698f508c9a73e77c2
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3c2bcbbc6e506af759f6d77af17d015278cc0bdf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-project-katana"></a>Přehled Katana projektu
 ====================
@@ -144,7 +144,7 @@ Z příkazového řádku, můžeme pak přejděte do kořenové složky projektu
 - Správa v podkladovém procesu.
 - Orchestrace pracovního postupu, který je výsledkem výběr serveru a konstrukce kanálu OWIN prostřednictvím které požadavky se budou zpracovávat.
 
- V současné době jsou 3 primární možnosti hostování aplikací založených na Katana:  
+  V současné době jsou 3 primární možnosti hostování aplikací založených na Katana:  
   
 **IIS/ASP.NET**: pomocí standardní typy HTTP a httpHandlers, OWIN kanály můžete spustit ve službě IIS jako součást tok požadavku ASP.NET. Hostování podporu technologie ASP.NET je povoleno pomocí instalace balíčku Microsoft.AspNet.Host.SystemWeb NuGet do projektu webové aplikace. Kromě toho IIS funguje jako hostitel a server, je v tomto balíčku NuGet, což znamená, že pokud se používá hostitel SystemWeb, vývojář nelze nahradit implementace alternativní server conflated rozdíl hostitele nebo server OWIN.  
   
@@ -221,7 +221,7 @@ Pro Katana 2.0 jsou komponenty middlewaru primárně zaměřuje na zajištění 
 
 ## <a name="for-more-information-about-katana"></a>Další informace o Katana
 
-- Katana projektu na Githubu: [https://github.com/aspnet/AspNetKatana/](https://github.com/aspnet/AspNetKatana/).
+- Katana projektu na Githubu: [ https://github.com/aspnet/AspNetKatana/ ](https://github.com/aspnet/AspNetKatana/).
 - Video: [Katana projekt – OWIN pro technologii ASP.NET](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET), podle Howard Dierking.
 
 ## <a name="acknowledgements"></a>Potvrzení

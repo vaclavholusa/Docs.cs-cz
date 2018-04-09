@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/generating-views
-title: "Databázi EF nejprve s architekturou ASP.NET MVC: generování zobrazení | Microsoft Docs"
+title: 'Databázi EF nejprve s architekturou ASP.NET MVC: generování zobrazení | Microsoft Docs'
 author: tfitzmac
-description: "Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri..."
+description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/29/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 5fccb3c56af0945ec448becff777a3e92dc160d7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b60e89a187a879255eb051dc87241714cef6fa63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-generating-views"></a>Databázi EF nejprve s architekturou ASP.NET MVC: generování zobrazení
 ====================
@@ -109,6 +109,6 @@ Kromě toho ověření zadaných hodnot se automaticky použity na základě dat
 
 Jste ověřili, že zobrazení automaticky generované umožnit uživatelům pracovat s daty v databázi. V dalším kurzu této série se aktualizovat databázi a provést odpovídající změny ve webové aplikaci.
 
->[!div class="step-by-step"]
-[Předchozí](creating-the-web-application.md)
-[další](changing-the-database.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-the-web-application.md)
+> [další](changing-the-database.md)

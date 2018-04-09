@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
-title: "Přidání ověřování do modelu (VB) | Microsoft Docs"
+title: Přidání ověřování do modelu (VB) | Microsoft Docs
 author: Rick-Anderson
-description: "V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je..."
+description: V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: cac86760b90c90a0ea2fad16268f60b5ccf61299
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 86058530aa00ecbc00aeebc6ed7b5cf019fdad72
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-to-the-model-vb"></a>Přidání ověřování do modelu (VB)
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > V tomto kurzu naučit se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, který je bezplatnou verzi sady Microsoft Visual Studio. Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže. Kliknutím na následující odkaz můžete nainstalovat všechny z nich: [instalačního programu webové platformy](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativně můžete nainstalovat jednotlivě požadavky pomocí následujících odkazů:
 > 
@@ -123,6 +123,6 @@ Spusťte aplikaci a přejděte do `Movies` řadiče.
 
 V další části řady, jsme budete zkontrolujte, zda aplikace a některá vylepšení pro automaticky generované `Details` a `Delete` metody...
 
->[!div class="step-by-step"]
-[Předchozí](adding-a-new-field.md)
-[další](improving-the-details-and-delete-methods.md)
+> [!div class="step-by-step"]
+> [Předchozí](adding-a-new-field.md)
+> [další](improving-the-details-and-delete-methods.md)

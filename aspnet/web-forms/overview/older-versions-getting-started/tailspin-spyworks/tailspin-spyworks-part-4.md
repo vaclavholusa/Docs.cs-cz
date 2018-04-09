@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
-title: "Část 4: Výpis produkty | Microsoft Docs"
+title: 'Část 4: Výpis produkty | Microsoft Docs'
 author: JoeStagner
-description: "Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 4 obsahuje výpis produkty s sml GridView..."
+description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 4 obsahuje výpis produkty s sml GridView...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 420cdbcc002bcbfff619d399a7a374009999d754
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69b26344e6dcdbf27e94da90ad5d6cd79f27ccd3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-4-listing-products"></a>Část 4: Seznam produktů
 ====================
@@ -27,7 +27,7 @@ podle [Stagner Jan](https://github.com/JoeStagner)
 > Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 4 obsahuje výpis produkty pomocí ovládacího prvku GridView.
 
 
-## <a id="_Toc260221670"></a>Výpis produkty pomocí ovládacího prvku GridView
+## <a id="_Toc260221670"></a>  Výpis produkty pomocí ovládacího prvku GridView
 
 Začněme implementace naší stránce s ProductsList.aspx kliknutím pravým tlačítkem"" na naše řešení a výběr "Přidat" a "Nová položka".
 
@@ -100,6 +100,6 @@ Naše databáze obsahuje tabulku s názvem "ShoppingCart". Když jsme datového 
 
 Je také vhodné poznamenat, že budeme vytvářet jednoduché nákupní košík a vkládání logice nákupní košík s hodnotou display nákupní košík. Také jsme možné implementovat naše řešení nákupního košíku zcela oddělenou obchodní vrstvy.
 
->[!div class="step-by-step"]
-[Předchozí](tailspin-spyworks-part-3.md)
-[další](tailspin-spyworks-part-5.md)
+> [!div class="step-by-step"]
+> [Předchozí](tailspin-spyworks-part-3.md)
+> [další](tailspin-spyworks-part-5.md)

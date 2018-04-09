@@ -1,7 +1,7 @@
 ---
-title: "Metody kontroleru a zobrazení v aplikaci ASP.NET MVC jádra"
+title: Metody kontroleru a zobrazení v aplikaci ASP.NET MVC jádra
 author: rick-anderson
-description: "Práce s metody kontroleru, zobrazení a DataAnnotations"
+description: Práce s metody kontroleru, zobrazení a DataAnnotations
 manager: wpickett
 ms.author: riande
 ms.date: 04/07/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-mac/controller-methods-views
-ms.openlocfilehash: 154ff861161c5b96f80fe1496e91b68fe17767fe
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 7a6a965d99742e7e06e6da82999dc60264cac6c8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="controller-methods-and-views-in-an-aspnet-core-mvc-app"></a>Metody kontroleru a zobrazení v aplikaci ASP.NET MVC jádra
 
@@ -34,8 +34,8 @@ Sestavte a spusťte aplikaci.
 
  -->
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/controller-methods-views.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/controller-methods-views.md)]
 
->[!div class="step-by-step"]
-[Předchozí - práce s SQLite](working-with-sql.md)
-[další – přidání vyhledávání](search.md)
+> [!div class="step-by-step"]
+> [Předchozí - práce s SQLite](working-with-sql.md)
+> [další – přidání vyhledávání](search.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
-title: "Pomocí hodnoty řetězců dotazu pro filtrování dat pomocí vazby modelu a webových formulářů | Microsoft Docs"
+title: Pomocí hodnoty řetězců dotazu pro filtrování dat pomocí vazby modelu a webových formulářů | Microsoft Docs
 author: tfitzmac
-description: "Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-..."
+description: Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: 2e5328ccda019462163b984da3661f7322b738df
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 03d20decf0eeff6062fbc6f8dd66f644b405c7cc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>Hodnoty řetězců dotazu pro filtrování dat pomocí vazby modelu a webové formuláře
 ====================
@@ -85,6 +85,6 @@ V tomto kurzu jste přidali odkaz s hodnotou řetězce dotazu. Tuto hodnotu řet
 
 V dalším [kurzu](adding-business-logic-layer.md), kód se přesune ze souborů kódu do vrstvy obchodní logiky a vrstva přístupu k datům.
 
->[!div class="step-by-step"]
-[Předchozí](integrating-jquery-ui.md)
-[další](adding-business-logic-layer.md)
+> [!div class="step-by-step"]
+> [Předchozí](integrating-jquery-ui.md)
+> [další](adding-business-logic-layer.md)

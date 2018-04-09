@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
-title: "Nasazení databázové projekty | Microsoft Docs"
+title: Nasazení databázové projekty | Microsoft Docs
 author: jrjlee
-description: "Poznámka: V mnoha podnikové scénáře nasazení, je třeba možnost publikovat přírůstkové aktualizace nasazené databáze. Alternativou je znovu vytvořit..."
+description: 'Poznámka: V mnoha podnikové scénáře nasazení, je třeba možnost publikovat přírůstkové aktualizace nasazené databáze. Alternativou je znovu vytvořit...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: 9b1f9a19c76e33b5d996cb4d562cf0c1a3e2f83b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a0b3871ea098b549271bce2b9d5f0c24f9ca8a9c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-database-projects"></a>Databázové projekty nasazení
 ====================
@@ -92,8 +92,8 @@ V tomto případě:
 
 - **/A** (nebo **/Action**) přepínač určuje, co chcete udělat VSDBCMD. Můžete nastavit na **Import** nebo **nasadit**. **Import** možnost se používá ke generování souboru .dbschema z existující databáze a **nasadit** možnost se používá k nasazení souboru .dbschema na cílovou databázi.
 - **/Manifest** (nebo **/ManifestFile**) přepínač identifikuje .deploymanifest soubor, který chcete nasadit. Pokud chcete místo toho použijte soubor .dbschema, byste použili **/modelu** (nebo **/ModelFile**) přepínače.
-- **/Cs** (nebo **/ConnectionString**) přepínač poskytuje připojovací řetězec pro cílový server databáze. Všimněte si, že to neobsahuje název databáze & #x 2014; VSDBCMD potřebuje připojit k serveru k vytvoření databáze; není třeba připojení k databázi jednotlivých. Pokud vaše .deploymanifest soubor obsahuje připojovací řetězec, můžete vynechat tento přepínač. Pokud chcete přesto použít přepínač, hodnota přepínače přepíše hodnotu .deploymanifest.
-- **/P:TargetDatabase** vlastnost poskytuje název, kterou chcete přiřadit k cílové databázi na vytvoření. Přepíše hodnotu **TargetDatabase** vlastnost v souboru .deploymanifest. Můžete použít **/p:** *[název vlastnosti]*syntaxe nastavit celou řadu vlastností nasazení a přepsat všechny proměnné SQLCMD deklarován v souboru .sqlcmdvars.
+- **/Cs** (nebo **/ConnectionString**) přepínač poskytuje připojovací řetězec pro cílový server databáze. Všimněte si, že to neobsahuje název databáze&#x2014;VSDBCMD potřebuje připojit k serveru k vytvoření databáze; není třeba připojení k databázi jednotlivých. Pokud vaše .deploymanifest soubor obsahuje připojovací řetězec, můžete vynechat tento přepínač. Pokud chcete přesto použít přepínač, hodnota přepínače přepíše hodnotu .deploymanifest.
+- <strong>/P:TargetDatabase</strong> vlastnost poskytuje název, kterou chcete přiřadit k cílové databázi na vytvoření. Přepíše hodnotu <strong>TargetDatabase</strong> vlastnost v souboru .deploymanifest. Můžete použít <strong>/p:</strong> <em>[název vlastnosti]</em>syntaxe nastavit celou řadu vlastností nasazení a přepsat všechny proměnné SQLCMD deklarován v souboru .sqlcmdvars.
 - **/Dd+** (nebo **/DeployToDatabase+**) přepínač označuje, že chcete vytvořit nasazení a nasadíte ho do cílové prostředí. Pokud zadáte **/dd-**, nebo vynechejte přepínač, VSDBCMD vygeneruje skript nasazení, ale nebude nasazení na cílovém prostředí. Tento přepínač je často zdroji záměny a je vysvětlené podrobněji v další části.
 - **/Script** (nebo **/DeploymentScriptFile**) přepínač určuje, kde chcete vygenerovat skript nasazení. Tato hodnota nemá vliv na proces nasazení.
 
@@ -150,6 +150,6 @@ Tato témata na webu MSDN poskytují širší pokyny a obecné informace o sadě
 - [Postupy: Příprava databáze pro nasazení z příkazového řádku pomocí VSDBCMD. SOUBOR EXE](https://msdn.microsoft.com/library/dd193258.aspx)
 - [Přehled databáze sestavení a nasazení](https://msdn.microsoft.com/library/aa833165.aspx)
 
->[!div class="step-by-step"]
-[Předchozí](deploying-web-packages.md)
-[další](creating-and-running-a-deployment-command-file.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-web-packages.md)
+> [další](creating-and-running-a-deployment-command-file.md)

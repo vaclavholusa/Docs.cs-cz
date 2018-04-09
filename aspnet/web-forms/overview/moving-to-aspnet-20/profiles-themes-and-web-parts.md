@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
-title: "Profily, motivů a webové části | Microsoft Docs"
+title: Profily, motivů a webové části | Microsoft Docs
 author: microsoft
-description: "Existují hlavní změny v konfiguraci a instrumentaci v technologii ASP.NET 2.0. Nové rozhraní API ASP.NET konfigurace umožňuje provedení pr změn konfigurace..."
+description: Existují hlavní změny v konfiguraci a instrumentaci v technologii ASP.NET 2.0. Nové rozhraní API ASP.NET konfigurace umožňuje provedení pr změn konfigurace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 2c6ba11799a5a9be3d8c0037fad5d79d8177c0e8
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: b749ed093fbaacf45b60f2826a2c20bac219a5c7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="profiles-themes-and-web-parts"></a>Profily, motivů a webové části
 ====================
@@ -341,19 +341,19 @@ V této části průvodce vytvoříte stránky, který používá webové část
 4. Umístěte kurzor před `<div>` značky na návrhovou plochu a potom stiskněte klávesu ENTER, chcete-li přidat nový řádek. Umístěte kurzor před znak nového řádku, klikněte na tlačítko **Formát bloku** rozevíracího seznamu řízení v nabídce a vyberte **Nadpis 1** možnost. V záhlaví, přidejte text **Ukázková stránka webových částí**.
 5. Z **webové části** karty z panelu nástrojů, přetáhněte **WebPartManager** ovládacího prvku na stránku, umístěte ho bezprostředně za znak nového řádku a před `<div>`značky.   
   
- **WebPartManager** prvek nezobrazuje žádný výstup, takže se jeví jako šedé pole na plochu návrháře.
+   **WebPartManager** prvek nezobrazuje žádný výstup, takže se jeví jako šedé pole na plochu návrháře.
 6. Umístěte kurzor do `<div>` značky.
 7. V **rozložení** nabídky, klikněte na tlačítko **Vložit tabulku**a vytvořit novou tabulku, která obsahuje jeden řádek a tři sloupce. Klikněte na tlačítko **vlastnosti buněk** tlačítko, vyberte **horní** z **svislé zarovnání** rozevíracího seznamu, klikněte na tlačítko **OK**a klikněte na tlačítko **OK** znovu a vytvořit v tabulce.
 8. Přetáhněte ovládací prvek WebPartZone do levého sloupce tabulky. Klikněte pravým tlačítkem myši **WebPartZone** řídit, zvolte **vlastnosti**a nastavte následující vlastnosti:   
   
- ID: SidebarZone   
+   ID: SidebarZone   
   
- HeaderText: Sidebar
+   HeaderText: Sidebar
 9. Přetáhněte druhý **WebPartZone** řízení do sloupce střední tabulky a nastavte následující vlastnosti:   
   
- ID: MainZone   
+   ID: MainZone   
   
- HeaderText: Main
+   HeaderText: Main
 10. Uložte soubor.
 
 Stránka nyní obsahuje dvě odlišné zóny, které můžete řídit samostatně. Ani zóny však nemá žádný obsah, takže vytváření obsahu je dalším krokem. V tomto návodu pracujete s webovými částmi, které zobrazují jenom statický obsah.
@@ -462,10 +462,10 @@ Nyní můžete otestovat možnost upravovat stránky a změna rozložení.
 2. Chcete-li ukazují, že přizpůsobení funguje, zavřete prohlížeč a pak načtení stránky. Provedené změny se uloží pro budoucí relace prohlížeče.
 3. Z **režim zobrazení** nabídce vyberte možnost **upravit**.   
   
- Každý ovládací prvek na stránce se nyní zobrazí s klesající šipku v záhlaví, který obsahuje příkazy rozevírací nabídky.
+   Každý ovládací prvek na stránce se nyní zobrazí s klesající šipku v záhlaví, který obsahuje příkazy rozevírací nabídky.
 4. Klikněte na šipku zobrazení nabídky operací na **odkazy** ovládacího prvku. Klikněte **upravit** operaci.   
   
- **EditorZone** ovládací prvek se zobrazuje, zobrazení EditorPart ovládací prvky jste přidali.
+   **EditorZone** ovládací prvek se zobrazuje, zobrazení EditorPart ovládací prvky jste přidali.
 5. V **vzhled** části ovládacích prvků pro úpravy, změny **název** do oblíbených, použijte **Chrome typ** rozevíracího seznamu vyberte **pouze název**a potom klikněte na **použít**. Na následujícím snímku obrazovky zobrazuje stránku v režimu úprav.
 
 ### <a name="web-parts-demo-page-in-edit-mode"></a>Webové části ukázkové stránky v režimu úprav
@@ -496,7 +496,7 @@ Můžete také umožňují uživatelům přidávat webové části na jejich str
 1. Otevřete stránku WebPartsDemo.aspx a přejděte do **návrhu** zobrazení.
 2. Z **webové části** karty na panelu nástrojů, přetáhněte ovládací prvek CatalogZone do pravém sloupci tabulky, ybrat **EditorZone** ovládacího prvku.   
   
- Obě ovládacích prvků může být ve stejné tabulce buňku, protože se nezobrazí ve stejnou dobu.
+   Obě ovládacích prvků může být ve stejné tabulce buňku, protože se nezobrazí ve stejnou dobu.
 3. V podokně vlastností přiřadit řetězec **přidat webové části** na vlastnost HeaderText **CatalogZone** ovládacího prvku.
 4. Z **webové části** části na panelu nástrojů, přetáhněte ovládací prvek DeclarativeCatalogPart do oblasti obsahu **CatalogZone** ovládacího prvku.
 5. Klikněte na šipku v pravém horním rohu **DeclarativeCatalogPart** řídit k zobrazení jeho nabídky úkolů a potom vyberte **upravit šablony**.
@@ -504,7 +504,7 @@ Můžete také umožňují uživatelům přidávat webové části na jejich str
 7. Přepnout na **zdroj** zobrazení. Zkontrolujte zdrojový kód &lt;asp: catalogzone&gt; elementu. Všimněte si, že **DeclarativeCatalogPart** obsahuje ovládací prvek &lt;webpartstemplate&gt; elementu pomocí dvou ovládacích prvků závorkách serveru, které budou moct přidat na stránku z katalogu.
 8. Přidat **název** vlastnost všechny ovládací prvky, které jste přidali do katalogu pomocí zobrazí hodnotu řetězce pro každý název v následujícím příkladu kódu. Přestože název se nenachází ve vlastnosti můžete obvykle nastavit tyto dvě serverové ovládací prvky v době návrhu, pokud uživatel přidá tyto ovládací prvky **WebPartZone** zóny z katalogu v době běhu, že se každý je uzavřen do  **GenericWebPart** ovládacího prvku. To umožňuje, aby fungoval jako webové části, tak budou moci zobrazit názvy.   
   
- Kód pro dvou ovládacích prvků, které jsou součástí **DeclarativeCatalogPart** ovládacího prvku by měla vypadat takto. 
+   Kód pro dvou ovládacích prvků, které jsou součástí **DeclarativeCatalogPart** ovládacího prvku by měla vypadat takto. 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample26.aspx)]
 9. Uložte stránky.
@@ -516,12 +516,12 @@ Nyní můžete otestovat katalogu.
 1. Načtěte stránku v prohlížeči.
 2. Klikněte **režim zobrazení** rozevírací nabídky a vyberte **katalogu**.   
   
- Katalog s názvem **přidat webové části** se zobrazí.
+   Katalog s názvem **přidat webové části** se zobrazí.
 3. Přetáhněte **oblíbených** řízení ze zóny hlavní zpět na začátek bočním panelu zóny a umístěte jej.
 4. V **přidat webové části** katalogu, vyberte obě políčka a pak vyberte **hlavní** ze seznamu rozevírací seznam obsahující dostupná zóny.
 5. Klikněte na tlačítko **přidat** v katalogu. Ovládací prvky jsou přidány do hlavní zóny. Pokud chcete, můžete přidat více instancí ovládacích prvků z katalogu na stránku.   
   
- Na následujícím snímku obrazovky zobrazuje stránku s ovládací prvek pro uložení souboru a kalendář v hlavní zóny. 
+   Na následujícím snímku obrazovky zobrazuje stránku s ovládací prvek pro uložení souboru a kalendář v hlavní zóny. 
 
 ![Ovládací prvky přidané do zóny hlavní z katalogu](profiles-themes-and-web-parts/_static/image7.gif)
 

@@ -1,26 +1,26 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
-title: "Předá na testovacím: udržovatelný weby Azure: Správa změn a škálování | Microsoft Docs"
+title: 'Předá na testovacím: udržovatelný weby Azure: Správa změn a škálování | Microsoft Docs'
 author: rick-anderson
-description: "V tomto testovacím prostředí zjistěte, jak Microsoft Azure umožňuje snadno vytvářet a nasazovat weby do produkčního prostředí."
+description: V tomto testovacím prostředí zjistěte, jak Microsoft Azure umožňuje snadno vytvářet a nasazovat weby do produkčního prostředí.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 4bce02b2c592ff04e0dbce78d18004c69268e4fd
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a79921681b4e742b5cd23f7119d19f4dd74c3f83
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Předá na testovacím: udržovatelný weby Azure: Správa změn a škálování
 ====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
 [Stažení webové táborech cvičení Kit](http://aka.ms/webcamps-training-kit)
 
@@ -34,7 +34,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > U databází SQL je důležité k zachování aktualizovaného stavu databáze produktivitu při nasazování nové verze aplikace. Poděkování **migrace Entity Framework Code First**, vývoj a nasazení datový model je jednodušší aktualizovat vaše prostředí v minutách. Toto praktické cvičení se zobrazí v různých tématech, ke kterým může dojít při nasazování webové aplikace do produkčního prostředí v Microsoft Azure.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
 > 
 > Další podrobné pokrytí tohoto tématu, najdete v článku [vytváření reálných cloudových aplikací pomocí Azure elektronická kniha](building-real-world-cloud-apps-with-windows-azure/introduction.md).
 
@@ -281,13 +281,13 @@ V této úloze, vytvoříte webovou aplikaci v **Azure App Service** z portálu 
     *Přizpůsobení nové webové aplikace*
 5. Zadejte následující informace pro nastavení databáze:
 
-    - V **název** textové pole, zadejte název databáze (například *geekquiz\_db*)
-    - Na serveru **rozevíracího seznamu** seznamu, vyberte **nové SQL databázový server**. Alternativně můžete vybrat existující server.
-    - V **uživatelské jméno** a **heslo k databázi** polí zadejte uživatelské jméno správce a heslo pro server databáze SQL. Pokud zvolíte možnost server již jste vytvořili, zobrazí se výzva k zadání hesla.
+   - V **název** textové pole, zadejte název databáze (například *geekquiz\_db*)
+   - Na serveru **rozevíracího seznamu** seznamu, vyberte **nové SQL databázový server**. Alternativně můžete vybrat existující server.
+   - V **uživatelské jméno** a **heslo k databázi** polí zadejte uživatelské jméno správce a heslo pro server databáze SQL. Pokud zvolíte možnost server již jste vytvořili, zobrazí se výzva k zadání hesla.
 
-    ![Zadání nastavení databáze](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
+     ![Zadání nastavení databáze](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
 
-    *Zadání nastavení databáze*
+     *Zadání nastavení databáze*
 6. Klikněte na tlačítko **Další** pokračujte.
 7. Vyberte **úložiště místní Git** pro zdrojového kódu použít a klikněte na tlačítko **Další**.
 
@@ -687,7 +687,7 @@ V této úloze budete používat v okně Průzkumníka serveru Visual Studio pro
 
 V této úloze nakonfigurujete **GeekQuiz** řešení využívat image nahrané do Azure Blob Storage (namísto bitovou kopii umístěné ve webové aplikaci) tak, že přidáte pravidlo přepsání adresy URL technologie ASP.NET v **web.config**souboru.
 
-1. V sadě Visual Studio, otevřete **Web.config** souboru uvnitř **GeekQuiz** projektu a najděte  **&lt;system.webServer&gt;**  element.
+1. V sadě Visual Studio, otevřete **Web.config** souboru uvnitř **GeekQuiz** projektu a najděte **&lt;system.webServer&gt;** element.
 2. Přidejte následující kód do přidat adresu URL přepisování pravidlo, aktualizace zástupného textu s názvem svého účtu úložiště.
 
     (Code fragment kódu - *WebSitesInProduction - Ex4 - UrlRewriteRule*)
@@ -785,7 +785,7 @@ Teď, když **škálování** byl nakonfigurován, vytvoříte **výkonu webu a 
     ![Žádost o přidání do WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image81.png "žádost o přidání do WebTest1")
 
     *Žádost o přidání do WebTest1*
-4. V **vlastnosti** okno uzlu novou žádost o aktualizaci **Url** vlastnost tak, aby odkazoval na adresu URL webové aplikace (například  *[http://geek-quiz.azurewebsites.net/](http://geek-quiz.azurewebsites.net/)* ).
+4. V **vlastnosti** okno uzlu novou žádost o aktualizaci **Url** vlastnost tak, aby odkazoval na adresu URL webové aplikace (například *[ http://geek-quiz.azurewebsites.net/ ](http://geek-quiz.azurewebsites.net/)*).
 
     ![Změna vlastnosti adresy Url](maintainable-azure-websites-managing-change-and-scale/_static/image82.png "Změna vlastnosti adresy Url")
 
@@ -797,13 +797,13 @@ Teď, když **škálování** byl nakonfigurován, vytvoříte **výkonu webu a 
     *Přidání smyčky do WebTest1*
 6. V **přidat podmíněné pravidlo a položek smyčky** dialogové okno, vyberte **cyklu For** pravidla a upravit následující vlastnosti.
 
-    1. **Hodnota se ukončuje:** 1000
-    2. **Název parametru kontextu:** iterátorů
-    3. **Hodnota přírůstku:** 1
+   1. **Hodnota se ukončuje:** 1000
+   2. **Název parametru kontextu:** iterátorů
+   3. **Hodnota přírůstku:** 1
 
-    ![Vyberte toto pravidlo pro smyčky a aktualizace vlastností](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "vyberte toto pravidlo pro smyčky a aktualizace vlastností")
+      ![Vyberte toto pravidlo pro smyčky a aktualizace vlastností](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "vyberte toto pravidlo pro smyčky a aktualizace vlastností")
 
-    *Vyberte toto pravidlo pro smyčky a aktualizace vlastností*
+      *Vyberte toto pravidlo pro smyčky a aktualizace vlastností*
 7. V části **položky ve smyčce** vyberte žádosti, které jste předtím vytvořili jako první a poslední položku smyčky. Klikněte na tlačítko **OK** pokračujte.
 
     ![Výběr položek první a poslední smyčky](maintainable-azure-websites-managing-change-and-scale/_static/image85.png "výběr položek první a poslední smyčky")

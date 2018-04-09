@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/installing-helpers
-title: "Instalace pomocné rutiny v rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs"
+title: Instalace pomocné rutiny v rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tento článek popisuje postup instalace pomocné rutiny na webu technologie ASP.NET Web Pages (Razor). Pomocné rutiny je opakovaně použitelné komponenty, která obsahuje kód a kód do za..."
+description: Tento článek popisuje postup instalace pomocné rutiny na webu technologie ASP.NET Web Pages (Razor). Pomocné rutiny je opakovaně použitelné komponenty, která obsahuje kód a kód do za...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/installing-helpers
 msc.type: authoredcontent
-ms.openlocfilehash: 842c5a56d14314217c1e6ad6d48ded28d3cc5b4e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 766fbb87ae8bcb8917eb8fa7f552c00792242cf6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>Instalace pomocné rutiny v Web Pages (Razor) technologie ASP.NET
 ====================
@@ -49,10 +49,10 @@ ASP.NET – webové stránky má několik Pomocníci součástí. Mnoho pomocné
 2. Tím se spustí Správce balíčků NuGet a zobrazí se dostupné balíčky. Do vyhledávacího pole zadejte klíčové slovo pomocné rutiny, které chcete nainstalovat.
 
     ![Dialogové okno Galerie NuGet ve službě WebMatrix](installing-helpers/_static/image2.png)
-- Vyberte balíček a pak klikněte na tlačítko **nainstalovat**. Klikněte na tlačítko **Ano** když se zobrazí dotaz, pokud chcete nainstalovat balíček a uvést, že souhlasíte s podmínkami.
+3. Vyberte balíček a pak klikněte na tlačítko **nainstalovat**. Klikněte na tlačítko **Ano** když se zobrazí dotaz, pokud chcete nainstalovat balíček a uvést, že souhlasíte s podmínkami.
 
-    Pokud je to první, kdy jste nainstalovali pomocné rutiny, vytvoří NuGet složek ve vašem webu pro kód, který tvoří pomocné rutiny.
-- Chcete-li odinstalovat pomocné rutiny, klikněte na tlačítko **Galerie** tlačítko, klikněte na tlačítko **nainstalovaná** kartě a vyberte balíček, který chcete odinstalovat.
+     Pokud je to první, kdy jste nainstalovali pomocné rutiny, vytvoří NuGet složek ve vašem webu pro kód, který tvoří pomocné rutiny.
+4. Chcete-li odinstalovat pomocné rutiny, klikněte na tlačítko **Galerie** tlačítko, klikněte na tlačítko **nainstalovaná** kartě a vyberte balíček, který chcete odinstalovat.
 
 ## <a name="installing-the-twitter-helper"></a>Instalace Pomocníka služby Twitter.
 

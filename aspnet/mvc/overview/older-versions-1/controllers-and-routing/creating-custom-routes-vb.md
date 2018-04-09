@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-vb
-title: "Vytváření vlastní trasy (VB) | Microsoft Docs"
+title: Vytváření vlastní trasy (VB) | Microsoft Docs
 author: microsoft
-description: "Zjistěte, jak přidat vlastní trasy pro aplikace ASP.NET MVC. V tomto kurzu zjistěte, jak změnit výchozí směrovací tabulka v souboru Global.asax."
+description: Zjistěte, jak přidat vlastní trasy pro aplikace ASP.NET MVC. V tomto kurzu zjistěte, jak změnit výchozí směrovací tabulka v souboru Global.asax.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3d3161bd1bf74df425d3c53873875a1abcfbfa05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e827725ab7ce54c86ae9f4193d0a8a7ef4af8512
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-custom-routes-vb"></a>Vytváření vlastní trasy (VB)
 ====================
@@ -73,6 +73,6 @@ Všimněte si, že metoda Entry() v výpis 2 přijímá parametr typu data a ča
 
 Cílem tohoto kurzu bylo ukazují, jak můžete vytvořit vlastní trasy. Jste zjistili, jak přidat vlastní trasy do směrovací tabulky v souboru Global.asax, která představuje položky blogu. Jsme probrali jak mapovat požadavky pro položky blogu řadič ArchiveController a s názvem Entry() akce kontroleru.
 
->[!div class="step-by-step"]
-[Předchozí](asp-net-mvc-controller-overview-vb.md)
-[další](creating-a-route-constraint-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](asp-net-mvc-controller-overview-vb.md)
+> [další](creating-a-route-constraint-vb.md)

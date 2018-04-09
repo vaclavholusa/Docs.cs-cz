@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
-title: "Určení stránky předlohy prostřednictvím kódu programu (C#) | Microsoft Docs"
+title: Určení stránky předlohy prostřednictvím kódu programu (C#) | Microsoft Docs
 author: rick-anderson
-description: "Vypadá na hlavní stránce obsahu stránce prostřednictvím kódu programu prostřednictvím obslužné rutiny události PreInit nastavení."
+description: Vypadá na hlavní stránce obsahu stránce prostřednictvím kódu programu prostřednictvím obslužné rutiny události PreInit nastavení.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15efb8e2f38b7a405da0c0e12e447e5c3146f025
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2294ee2e58e55901d77958e7cf45dd74fc2a1187
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="specifying-the-master-page-programmatically-c"></a>Určení stránky předlohy prostřednictvím kódu programu (C#)
 ====================
@@ -139,7 +139,7 @@ Dál přidejte následující deklarativní k `Alternate.master`. Jak vidíte, `
 
 ### <a name="testing-the-new-master-page"></a>Testování nová stránka předlohy
 
-K testování této nové aktualizace stránky předlohy `BasePage` třídy `OnPreInit` metoda tak, aby `MasterPageFile` vlastnost je přiřazena hodnota "~ / Alternate.maser" a pak přejděte na webovou stránku. Každé stránce by měla fungovat bez chyba s výjimkou dva: `~/Admin/AddProduct.aspx` a `~/Admin/Products.aspx`. Přidání produktu DetailsView v `~/Admin/AddProduct.aspx` výsledkem `NullReferenceException` z řádku kódu, který se pokouší nastavit stránky předlohy `GridMessageText` vlastnost. Při návštěvě `~/Admin/Products.aspx` `InvalidCastException` je vyvolána při načtení stránky se zprávou: "nelze vrátit objekt typu ' ASP.alternate\_hlavní ' na typ" ASP.site\_hlavní '. "
+K testování této nové aktualizace stránky předlohy `BasePage` třídy `OnPreInit` metoda tak, aby `MasterPageFile` vlastnost je přiřazena hodnota "~ / Alternate.master" a pak přejděte na webovou stránku. Každé stránce by měla fungovat bez chyba s výjimkou dva: `~/Admin/AddProduct.aspx` a `~/Admin/Products.aspx`. Přidání produktu DetailsView v `~/Admin/AddProduct.aspx` výsledkem `NullReferenceException` z řádku kódu, který se pokouší nastavit stránky předlohy `GridMessageText` vlastnost. Při návštěvě `~/Admin/Products.aspx` `InvalidCastException` je vyvolána při načtení stránky se zprávou: "nelze vrátit objekt typu ' ASP.alternate\_hlavní ' na typ" ASP.site\_hlavní '. "
 
 K těmto chybám, protože `Site.master` kódu třída zahrnuje veřejné události, vlastnosti a metody, které nejsou definovány v `Alternate.master`. Mít značek část tyto dvě stránky `@MasterType` direktiva, která odkazuje `Site.master` stránky předlohy.
 
@@ -282,12 +282,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Suchi Banerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Suchi Banerjee. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](master-pages-and-asp-net-ajax-cs.md)
-[další](nested-master-pages-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](master-pages-and-asp-net-ajax-cs.md)
+> [další](nested-master-pages-cs.md)

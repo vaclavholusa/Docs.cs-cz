@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
-title: "Ověřování s idataerrorinfo – rozhraní (C#) | Microsoft Docs"
+title: Ověřování s idataerrorinfo – rozhraní (C#) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther ukazuje způsob zobrazení chybové zprávy ověření na vlastní implementací rozhraní idataerrorinfo – ve třídu modelu."
+description: Stephen Walther ukazuje způsob zobrazení chybové zprávy ověření na vlastní implementací rozhraní idataerrorinfo – ve třídu modelu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c04088c576481e4a91676d7e6962c03b56e7a8a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5028b2e07c4144efa59824885ce96cd8b037dff
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-with-the-idataerrorinfo-interface-c"></a>Ověřování s idataerrorinfo – rozhraní (C#)
 ====================
@@ -161,6 +161,6 @@ Všimněte si, že automaticky ověření DateReleased hodnoty. Vzhledem k tomu,
 
 V tomto kurzu jste se naučili idataerrorinfo – rozhraní použít ke generování chybových zpráv ověření. Nejdřív jsme vytvořili částečné film třídu, která rozšiřuje funkce film třídu generované rozhraní Entity Framework. V dalším kroku jsme přidali logiku ověření film třída OnTitleChanging() a OnDirectorChanging() částečné metody. Nakonec implementovali jsme idataerrorinfo – rozhraní tak, aby získal tyto zprávy ověření na rozhraní ASP.NET MVC.
 
->[!div class="step-by-step"]
-[Předchozí](performing-simple-validation-cs.md)
-[další](validating-with-a-service-layer-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](performing-simple-validation-cs.md)
+> [další](validating-with-a-service-layer-cs.md)

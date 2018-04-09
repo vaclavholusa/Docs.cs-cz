@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio: řešení potíží s | Microsoft Docs"
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: řešení potíží s | Microsoft Docs'
 author: tdykstra
-description: "Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin..."
+description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/01/2015
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: a7a66e7e67539e4b075da6fc054a7b53984b6ce1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 15bda09c59afaf9e5449c68c5206bb28de245541
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: řešení potíží
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 [Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -292,8 +292,8 @@ Kód nejprve se pokouší vytvořit databázi, ale aplikace\_dat složka neexist
 
 Byly úspěšně jedním kliknutím publikování pro nasazení aplikace a pak spusťte získávání této chybě:
 
-Úloha nasazení webu se nezdařilo. (Nemohl dokončit požadavek na adresu URL vzdáleného agenta 'https://serverurl.com/msdeploy.axd?site=sitename'.)  
- Nelze dokončit žádost na adresu URL vzdáleného agenta 'https://url/msdeploy.axd?site=sitename'.  
+Úloha nasazení webu se nezdařilo. (Nemohl dokončit požadavek na adresu URL vzdáleného agenta '<https://serverurl.com/msdeploy.axd?site=sitename>'.)  
+ Nelze dokončit požadavek na adresu URL vzdáleného agenta '<https://url/msdeploy.axd?site=sitename>'.  
 Požadavek byl přerušen: požadavek byl zrušen.  
 Objekt modelu COM, který má rozdělené z jeho základní RCW nelze použít.
 
@@ -309,7 +309,7 @@ Publikování selže s chybou, že jste označuje nemáte oprávnění k nastave
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud víte, že výchozí oprávnění na webu složky jsou správné a není potřeba nastavit, že zakážete toto chování přidáním  **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx).
+Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud víte, že výchozí oprávnění na webu složky jsou správné a není potřeba nastavit, že zakážete toto chování přidáním **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx).
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>Když se aplikace pokusí o zápis do složky aplikace chyby odepření přístupu
 
@@ -319,7 +319,7 @@ Vaše aplikace chyby při pokusu o vytvoření nebo úprava soubor v jednom ze s
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud aplikace potřebuje přístup k zápisu do podsložky, můžete nastavit oprávnění pro tuto složku jako uvedené v nastavení oprávnění ke složkám a nasazení do této série kurzů k produkčním prostředí. Pokud aplikace potřebuje přístup k zápisu do kořenové složky webu, budete muset zabránit jeho nastavení jen pro čtení v kořenové složce přidáním  **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx).
+Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud aplikace potřebuje přístup k zápisu do podsložky, můžete nastavit oprávnění pro tuto složku jako uvedené v nastavení oprávnění ke složkám a nasazení do této série kurzů k produkčním prostředí. Pokud aplikace potřebuje přístup k zápisu do kořenové složky webu, budete muset zabránit jeho nastavení jen pro čtení v kořenové složce přidáním **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx).
 
 <a id="aspnet45error"></a>
 
@@ -377,5 +377,5 @@ Požadovaný obsah pravděpodobně skript který nebude obslužnou rutinou stati
 
 ASP.NET 4.5 nejspíš nejsou nainstalované ve vašem počítači. Jako kurzu této série, která vysvětlují, jak nainstalovat technologii ASP.NET 4.5 testovacím prostředí najdete v části kroky v části nasazení do služby IIS.
 
->[!div class="step-by-step"]
-[Předchozí](deploying-extra-files.md)
+> [!div class="step-by-step"]
+> [Předchozí](deploying-extra-files.md)

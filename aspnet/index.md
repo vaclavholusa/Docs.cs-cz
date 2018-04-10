@@ -3,12 +3,12 @@ uid: index
 layout: HubPage
 ms.topic: hub-page
 title: Dokumentace k ASP.NET | Microsoft Docs
-description: 
-ms.openlocfilehash: 4ab928b65bc91a24d02cd0450e143cd6bd3b639b
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+description: ''
+ms.openlocfilehash: cc887183fba9d3c46fbb1068d13d612a3e1806e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/08/2018
                             <li>
                                 <div class="container intro">
                                     <p>ASP.NET Core je nové open-source rozhraní .NET určené pro různé platformy, které umožňuje vytvářet moderní cloudové webové aplikace pro systémy Windows, Mac a Linux.</p>
-                                    <p>[Přečtěte si o výhodách rozhraní ASP.NET Core a ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework) a vyberte si z nich to, které je pro vás nejvhodnější.</p>
+                                    <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">Přečtěte si o výhodách rozhraní ASP.NET Core a ASP.NET</a> a vyberte si z nich to, které je pro vás nejvhodnější.</p>
                                 </div>
                             </li>
                             <li>
@@ -153,7 +153,7 @@ ms.lasthandoff: 03/08/2018
                         <ul id="core_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
-                                    <p>Vybrané kurzy | [Zobrazit všechny kurzy k ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/)</p>
+                                    <p>Vybrané kurzy | <a href="https://docs.microsoft.com/aspnet/core/tutorials/" data-raw-source="[View all ASP.NET Core tutorials](https://docs.microsoft.com/aspnet/core/tutorials/)">Zobrazit všechny kurzy k ASP.NET Core</a></p>
                                 </div>
                             </li>
                             <li>
@@ -291,7 +291,7 @@ ms.lasthandoff: 03/08/2018
                             <li>
                                 <div class="container intro">
                                     <p>ASP.NET je vyspělá webová platforma, která poskytuje všechny služby nezbytné k sestavování podnikových webových aplikací založených na serveru pomocí rozhraní .NET ve Windows.</p>
-                                    <p>[Přečtěte si o výhodách rozhraní ASP.NET Core a ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework) a vyberte si z nich to, které je pro vás nejvhodnější.</p>
+                                    <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">Přečtěte si o výhodách rozhraní ASP.NET Core a ASP.NET</a> a vyberte si z nich to, které je pro vás nejvhodnější.</p>
                                 </div>
                             </li>
                             <li>
@@ -568,7 +568,7 @@ ms.lasthandoff: 03/08/2018
                         <ul id="aspnet_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
-                                    <p>Vybrané kurzy | [Zobrazit všechny kurzy k ASP.NET](https://docs.microsoft.com/aspnet/tutorials/)</p>
+                                    <p>Vybrané kurzy | <a href="https://docs.microsoft.com/aspnet/tutorials/" data-raw-source="[View all ASP.NET tutorials](https://docs.microsoft.com/aspnet/tutorials/)">Zobrazit všechny kurzy k ASP.NET</a></p>
                                 </div>
                             </li>
                             <li>

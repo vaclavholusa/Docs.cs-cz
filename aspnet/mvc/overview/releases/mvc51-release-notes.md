@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/releases/mvc51-release-notes
-title: "Co je nového v architektuře ASP.NET MVC 5.1 | Microsoft Docs"
+title: Co je nového v architektuře ASP.NET MVC 5.1 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -13,14 +13,14 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/releases/mvc51-release-notes
 msc.type: authoredcontent
 ms.openlocfilehash: be10486c9fd39738f44cdda4fedb409058017601
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/10/2018
 ---
 <a name="whats-new-in-aspnet-mvc-51"></a>Co je nového v architektuře ASP.NET MVC 5.1
 ====================
-podle [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 Toto téma popisuje, co je nového pro ASP.NET Web MVC 5.1.
 
@@ -54,7 +54,7 @@ Můžete instalovat nebo aktualizovat balíčky NuGet vydaná pomocí konzoly Sp
 <a id="documentation"></a>
 ## <a name="documentation"></a>Dokumentace
 
-Kurzy a další informace o ASP.NET MVC 5.1 RTM jsou dostupné na webu technologie ASP.NET (https://www.asp.net). 
+Kurzy a další informace o ASP.NET MVC 5.1 RTM jsou dostupné na webu technologie ASP.NET ( https://www.asp.net). 
 
 <a id="new-features"></a>
 ## <a name="new-features-in-aspnet-mvc-51"></a>Nové funkce v architektuře ASP.NET MVC 5.1

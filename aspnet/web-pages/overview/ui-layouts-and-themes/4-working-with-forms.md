@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/4-working-with-forms
-title: "Práce s formuláře HTML na webech ASP.NET Web Pages (Razor) | Microsoft Docs"
+title: Práce s formuláře HTML na webech ASP.NET Web Pages (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Formulář je část dokumentu HTML, kam jste umístili ovládací prvky vstup uživatele, jako textová pole, zaškrtněte políčka, přepínače a rozevírací seznamy. Použití formulářů shod..."
+description: Formulář je část dokumentu HTML, kam jste umístili ovládací prvky vstup uživatele, jako textová pole, zaškrtněte políčka, přepínače a rozevírací seznamy. Použití formulářů shod...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
 ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>Práce s formuláře HTML na webech ASP.NET – webové stránky (Razor)
 ====================
@@ -73,7 +73,7 @@ Při zpracování formuláře, přidáte kód, který čte hodnoty odeslaná pol
 
     ![Snímek obrazovky, který zobrazuje hodnoty, které jste zadali na stránku.](4-working-with-forms/_static/image2.jpg)
 
-    Podívejte se na kód pro stránku. Prvním použití `IsPost` metoda k určení, jestli je stránka vrácena &#8212; to znamená, zda uživatel klikli **odeslání** tlačítko. Pokud je to příspěvku na `IsPost` vrací hodnotu true. To je standardní způsob na webových stránkách ASP.NET k určení, zda pracujete s úvodního požadavku (požadavek GET) nebo zpětné volání (požadavek POST). (Další informace o GET a POST, najdete v části "HTTP GET a POST a IsPost Property" na bočním panelu v [Úvod k technologii ASP.NET Web Pages programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost).)
+    Podívejte se na kód pro stránku. Prvním použití `IsPost` metoda k určení, zda je odeslání stránky &#8212; to znamená, zda uživatel klikli **odeslání** tlačítko. Pokud je to příspěvku na `IsPost` vrací hodnotu true. To je standardní způsob na webových stránkách ASP.NET k určení, zda pracujete s úvodního požadavku (požadavek GET) nebo zpětné volání (požadavek POST). (Další informace o GET a POST, najdete v části "HTTP GET a POST a IsPost Property" na bočním panelu v [Úvod k technologii ASP.NET Web Pages programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost).)
 
     Teď se dostáváte hodnoty, které uživatel vyplněno z `Request.Form` objekt a umístí je do proměnných pro pozdější. `Request.Form` Objekt obsahuje všechny hodnoty, které byly odeslány s hledanou stránkou, každý se identifikovanou pomocí klíče. Klíč se o ekvivalent `name` atribut pole formuláře, které chcete číst. Například pro čtení `companyname` pole (textového pole), můžete použít `Request.Form["companyname"]`.
 
@@ -89,7 +89,7 @@ Při zpracování formuláře, přidáte kód, který čte hodnoty odeslaná pol
 > 
 > Kódování HTML nahradí kód, který prohlížeče interpretovat jako správný symbol tyto vyhrazené znaky. Například `<` se nahradí znak `&lt;` a `>` se nahradí znak `&gt;`. V prohlížeči vykreslí jako znaků, které chcete zobrazit tyto náhradní řetězce.
 > 
-> Je vhodné používat kódování kdykoli zobrazit řetězce v jazyce HTML (vstup) jste získali od uživatele. Pokud to neuděláte, uživatel může pokusit o webovou stránku, spustit skript nebo dělejte něco jiného, ohrožuje zabezpečení vašeho webu nebo který je právě není to, co chcete získat. (To je zvlášť důležité, pokud pořídíte uživatelský vstup, uložte ho někde a následně se zobrazí později &#8212; například jako komentář blog uživatele zkontrolovat, nebo něco jako, který.)
+> Je vhodné používat kódování kdykoli zobrazit řetězce v jazyce HTML (vstup) jste získali od uživatele. Pokud to neuděláte, uživatel může pokusit o webovou stránku, spustit skript nebo dělejte něco jiného, ohrožuje zabezpečení vašeho webu nebo který je právě není to, co chcete získat. (To je zvlášť důležité, pokud trvat uživatelský vstup, uložte ho někde a zobrazit později &#8212; například jako komentář blog, zkontrolujte uživatele nebo něco podobného jako který.)
 > 
 > Aby se zabránilo tyto problémy, rozhraní ASP.NET Web Pages automaticky umístí kódování HTML jakýkoli text obsahu, které výstup z vašeho kódu. Například při zobrazení obsahu proměnné nebo výraz pomocí kódu, například `@MyVar`, rozhraní ASP.NET Web Pages automaticky kóduje výstup.
 

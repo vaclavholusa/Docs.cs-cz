@@ -16,7 +16,7 @@ ms.openlocfilehash: 0bfe9cdc215226457ccfafff2b85ace87325b91b
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 04/06/2018
 - [Dokumentace](#documentation)
 - [Podpora](#support)
 - [Upgrade projektu aplikace ASP.NET MVC 2 do architektury ASP.NET MVC 3 nástroje aktualizace](#upgrading)
-- [ASP.NET MVC 3 nástroje pro aktualizaci (12. dubna 2011)](#tu-changes)
+- [ASP.NET MVC 3 Tools Update (April 12, 2011)](#tu-changes)
 
     - [Dialogové okno "Přidat řadič" teď můžete vygenerovat řadiče kódem přístup k zobrazení a data](#tu-AddControllerDialog)
     - [Vylepšení "rozhraní ASP.NET MVC 3 nový projekt" dialogové okno](#tu-ImprovementsNewDialogBox)
@@ -35,7 +35,7 @@ ms.lasthandoff: 04/06/2018
     - [Šablony projektů nyní zahrnují ADO.NET Entity Framework 4.1 jako balíčku NuGet, předem nainstalovaná](#tu-EF)
     - [Šablony projektů zahrnují knihovny JavaScript jako předem nainstalované balíčky NuGet](#tu-JavaScriptLibsNuget)
     - [Známé problémy](#tu-KI)
-- [ASP.NET MVC 3 RTM (13. ledna 2011)](#MVC3RTM)
+- [ASP.NET MVC 3 RTM (January 13, 2011)](#MVC3RTM)
 
     - [Změna: Aktualizovat verzi jQuery uživatelského rozhraní na 1.8.7](#RTM-1)
     - [Změny: Změnit výchozí ModelMetadataProvider zpět do DataAnnotationsModelMetadataProvider](#RTM-2)
@@ -186,7 +186,7 @@ Pokud chcete ručně upgradovat stávající aplikace ASP.NET MVC 2 do verze 3, 
 11. V kořenovém souboru Web.config aplikace, přidejte následující nastavení, která *sestavení* části. 
 
     [!code-xml[Main](mvc3-release-notes/samples/sample3.xml)]
-12. Pokud projekt odkazuje na knihovny jakékoli třetí strany, kompilovaná pomocí ASP.NET MVC 2, přidejte následující zvýrazněnou *bindingRedirect* element v souboru Web.config v kořenovém adresáři aplikace v rámci  *konfigurace* části: 
+12. Pokud projekt odkazuje na knihovny jakékoli třetí strany, kompilovaná pomocí ASP.NET MVC 2, přidejte následující zvýrazněnou *bindingRedirect* element v souboru Web.config v kořenovém adresáři aplikace v rámci * konfigurace* části: 
 
     [!code-xml[Main](mvc3-release-notes/samples/sample4.xml)]
 
@@ -303,7 +303,7 @@ JQuery zahrnuje číslo verze v názvu souboru, a proto jQuery aktualizaci na ne
 - Vytvoření nového projektu ASP.NET MVC 3 ve složce řešení příčiny *NullReferenceException* chyby. Alternativní řešení je vytvoření projektu ASP.NET MVC 3 v kořenové složky řešení a pak přesuňte jej do složky řešení.
 - IntelliSense pro syntaxi Razor nefunguje, pokud je nainstalován ReSharper. Pokud máte nainstalovaný ReSharper a chcete využít výhod podpory technologie IntelliSense pro Razor v architektuře ASP.NET MVC 3, naleznete v příspěvku [Razor Intellisense a ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) na blogu Hadi Hariri níž se probírá, jak je používat společně ještě dnes.
 - Během instalace se zobrazí dialogové okno přijetí smlouvy EULA licenční podmínky v okně, které je menší než určená.
-- Při úpravách zobrazení syntaxe Razor (cshtml nebo. *vbhtml* soubor), zobrazení. ASP.NET MVC 3 nezahrnuje všechny fragmenty pro zobrazení syntaxe Razor... aspxselecting fragmentu kódu pro architekturu ASP.NET MVC zobrazí fragmenty
+- Při úpravách zobrazení syntaxe Razor (cshtml nebo.* vbhtml* soubor), zobrazení. ASP.NET MVC 3 nezahrnuje všechny fragmenty pro zobrazení syntaxe Razor... aspxselecting fragmentu kódu pro architekturu ASP.NET MVC zobrazí fragmenty
 - Pokud nainstalujete ASP.NET MVC 3 pro aplikaci Visual Web Developer Express na počítači, kde není nainstalovaná sada Visual Studio a pak instalaci sady Visual Studio, je třeba přeinstalovat ASP.NET MVC 3. Visual Studio a Visual Web Developer Express sdílet součásti, které jsou aktualizovány pomocí ASP.NET MVC 3 Instalační služby. Stejný problém platí při instalaci ASP.NET MVC 3 pro sadu Visual Studio v počítači, který nepodporuje mít Visual Web Developer Express a pak později nainstalujete Visual Web Developer Express.
 
 <a id="MVC3RTM"></a>
@@ -438,7 +438,7 @@ Když *Html.ValidationMessage* metoda zobrazí ověřovací zprávu, přeskočí
 <a id="_Toc2_10"></a>
 ### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>Opravené @model deklarace není prázdné přidat do dokumentu
 
-V dřívějších verzích <em>@model</em> deklarace v horní části zobrazení přidat prázdný řádek do vykreslené výstupu protokolu HTML. Tato chyba byla opravena tak, aby deklaraci nezavádí prázdný znak.
+V dřívějších verzích <em> @model </em> deklarace v horní části zobrazení přidat prázdný řádek do vykreslené výstupu protokolu HTML. Tato chyba byla opravena tak, aby deklaraci nezavádí prázdný znak.
 
 <a id="_Toc2_11"></a>
 ### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>Vlastnost přidané "FileExtensions" pro moduly zobrazení pro podporu názvy souborů specifické pro modul
@@ -465,7 +465,7 @@ V dřívějších verzích, explicitní hodnoty, které byly předány *RenderAc
 - V předchozích verzích rozhraní ASP.NET MVC byly filtry akce vytvořeny každý požadavek s výjimkou v několika případech. Toto chování bylo nikdy zaručenou chování, ale jenom podrobností implementace a smlouvu pro filtry vzít v úvahu je bezstavové. V architektuře ASP.NET MVC 3 filtry jsou uložené v mezipaměti důkladnějšímu. Proto všechny filtry vlastní akce, které nesprávně ukládají stav instance může být poškozený.
 - Došlo ke změně pořadí zpracování pro filtry výjimek pro filtry výjimek, které mají stejnou *pořadí* hodnotu. ASP.NET MVC 2 a starší, filtry výjimky na řadiči, který měl stejné *pořadí* hodnoty jako na metodu akce byly spuštěny před filtry výjimek na metodu akce. To může obvykle být tento případ, kdy byly použity filtry výjimek bez zadané *pořadí* hodnotu. V architektuře ASP.NET MVC 3 Tento pořadí změněno tak, aby se nejprve provede nejvíce konkrétní obslužná rutina výjimky. Jako v předchozích verzích Pokud *pořadí* explicitně zadána vlastnost, filtry jsou spuštěny v uvedeném pořadí.
 - Novou vlastnost s názvem *FileExtensions* byl přidán do *VirtualPathProviderViewEngine* základní třídy. Pokud technologie ASP.NET vyhledá zobrazení cestou (ne podle názvu), jsou považovány za jenom zobrazení s příponou souboru obsažené v této nové vlastnosti seznamu. Toto je narušující změně v aplikacích, kde vlastní sestavovací zprostředkovatel registroval Chcete-li povolit vlastní příponu souboru pro zobrazení webové formuláře a kde zprostředkovatele odkazuje na tato zobrazeními pomocí úplnou cestu, nikoli název. Řešením je změnit hodnotu *FileExtensions* vlastnost, aby zahrnovala vlastního souboru rozšíření.
-- Implementace objektu pro vytváření vlastní zařízení, které přímo implementovat <em>IControllerFactory</em> rozhraní musí poskytnout implementaci nového <em>GetControllerSessionBehavior</em>  <em>Metoda, která byla přidána do rozhraní v této verzi</em>. Obecně je doporučeno, není toto rozhraní implementovat přímo a místo toho jsou odvozeny třídě z <em>DefaultControllerFactory</em>.
+- Implementace objektu pro vytváření vlastní zařízení, které přímo implementovat <em>IControllerFactory</em> rozhraní musí poskytnout implementaci nového <em>GetControllerSessionBehavior</em> <em> Metoda, která byla přidána do rozhraní v této verzi</em>. Obecně je doporučeno, není toto rozhraní implementovat přímo a místo toho jsou odvozeny třídě z <em>DefaultControllerFactory</em>.
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>Známé problémy
@@ -512,7 +512,7 @@ Výchozí šablony jsou následující:
 
 Prázdný. Obsahuje minimální sadu souborů pro projekt ASP.NET MVC, včetně výchozí strukturu adresáře pro projekty ASP.NET MVC Site.css soubor, který obsahuje výchozí styly ASP.NET MVC a skripty adresář, který obsahuje výchozí soubory JavaScript.
 
-Internetové aplikace. Obsahuje ukázkové funkce, které ukazuje, jak používat zprostředkovatel členství s architekturou ASP.NET MVC.
+Internet Application. Obsahuje ukázkové funkce, které ukazuje, jak používat zprostředkovatel členství s architekturou ASP.NET MVC.
 
 Seznam šablon projektu, který se zobrazí v dialogovém okně je uvedený v registru systému Windows.
 
@@ -577,7 +577,7 @@ Když tento kód běží, je výsledkem volání Html.Action("GetDate") uložen�
 
 Když přidáte zobrazení se silnými typy, dialogové okno Přidat zobrazení nyní filtruje více nepoužitelné typy než v předchozích verzích, jako je například mnoho typů rozhraní .NET Framework core. Navíc tento seznam je řazen nyní, pomocí názvu třídy a ne plně kvalifikovaný název typu, takže je snazší najít typy. Název typu se nyní zobrazí jako v následujícím příkladu:
 
-ClassName (namespace)
+Název třídy (obor názvů)
 
 V dřívějších verzích to by byla zobrazena jako následující:
 
@@ -625,7 +625,7 @@ Případně, chcete-li vypnout ověření žádosti pro každou vlastnost modelu
 - Při úpravách zobrazení syntaxe Razor (cshtml soubor), přejděte do řadiče položky nabídky v sadě Visual Studio nebude k dispozici, a neexistují žádné fragmenty kódu.
 
 <a id="TOC_ASP_NET_3_Beta"></a>
-## <a name="aspnet-mvc-3-beta"></a>Beta verze rozhraní ASP.NET MVC 3
+## <a name="aspnet-mvc-3-beta"></a>ASP.NET MVC 3 Beta
 
 ASP.NET MVC 3 Beta byla vydána 6 říjen 2010. Následující poznámky jsou specifické pro betaverzi a podléhají všechny aktualizace nebo změny odkazuje v oddíle ASP.NET MVC 3 Release Candidate výše.
 
@@ -653,7 +653,7 @@ Výchozí šablony jsou následující:
 
 Prázdný. Obsahuje minimální sadu souborů pro projekt ASP.NET MVC, včetně výchozí strukturu adresáře pro projekty ASP.NET MVC, malé Site.css soubor, který obsahuje výchozí styly ASP.NET MVC a skripty adresář, který obsahuje výchozí soubory JavaScript.
 
-Internetové aplikace. Obsahuje ukázkové funkce, které ukazuje, jak používat zprostředkovatel členství v rámci rozhraní ASP.NET MVC.
+Internet Application. Obsahuje ukázkové funkce, které ukazuje, jak používat zprostředkovatel členství v rámci rozhraní ASP.NET MVC.
 
 ### <a id="0.1__Toc274034218"></a>  Jednodušší způsob, jak určit silně typované modely v zobrazení syntaxe Razor
 

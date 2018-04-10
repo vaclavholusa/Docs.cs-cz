@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn
 msc.type: content
 ms.openlocfilehash: bc5f40746ad6b1ed8a74bcb75def9ff8f08fb789
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="microsoft-ajax-content-delivery-network"></a>Sítě pro doručování obsahu Microsoft Ajax
 ====================
@@ -68,14 +68,14 @@ CDN hostitelem následující knihovny skriptů třetích stran, které byly ode
 - jQuery UI (www.jqueryui.com)
 - jQuery Mobile (www.jquerymobile.com)
 - jQuery ověření (www.jquery.com)
-- jQuery cyklus (www.malsup.com/jquery/cycle/)
+- jQuery Cycle (www.malsup.com/jquery/cycle/)
 - jQuery DataTables (http://datatables.net/)
 
 Microsoft Ajax CDN také zahrnuje následující knihovny, které byly odeslány společnosti Microsoft:
 
-- Technologie ASP.NET Ajax
-- Soubory JavaScript rozhraní ASP.NET MVC
-- Soubory ASP.NET SignalR JavaScript
+- ASP.NET Ajax
+- ASP.NET MVC JavaScript Files
+- ASP.NET SignalR JavaScript Files
 
 Microsoft nenárokuje vlastnictví všech knihoven jiných výrobců hostované na této CDN. Tyto knihovny pro vás jsou licencování autorským vlastníky knihoven. Žádná práva, které možná budete muset stáhnout a použít tyto knihovny jsou udělit výhradně pomocí příslušných vlastníků autorských práv. Protože se nejedná knihovny Microsoft, společnost Microsoft poskytuje žádné záruky ani licence právy duševního vlastnictví (včetně žádné předpokládané patentová práva) pro hostované na této CDN knihovny třetích stran.
 
@@ -607,21 +607,21 @@ Následující verze knihovny uživatelského rozhraní jQuery jsou hostované n
 Následující verze knihovny jQuery ověření jsou hostované na této CDN. Klepnutím na odkaz zobrazit skutečný seznam souborů.
 
 - [jQuery ověřením 1.17.0](jquery-validate/cdnjqueryvalidate1170.md "jQuery ověření 1.17.0")
-- [jQuery ověřením 1.16.0](jquery-validate/cdnjqueryvalidate1160.md "jQuery ověření 1.16.0")
+- [jQuery Validate 1.16.0](jquery-validate/cdnjqueryvalidate1160.md "jQuery Validation 1.16.0")
 - [jQuery ověřením 1.15.1](jquery-validate/cdnjqueryvalidate1151.md "jQuery ověření 1.15.1")
 - [jQuery ověřením 1.15.0](jquery-validate/cdnjqueryvalidate1150.md "jQuery ověření 1.15.0")
 - [jQuery ověřením 1.14.0](jquery-validate/cdnjqueryvalidate1140.md "jQuery ověření 1.14.0")
 - [jQuery ověřením 1.13.1](jquery-validate/cdnjqueryvalidate1131.md "jQuery ověření 1.13.1")
-- [jQuery ověřením 1.13.0](jquery-validate/cdnjqueryvalidate1130.md "jQuery ověření 1.13.0")
-- [jQuery ověřením 1.12.0](jquery-validate/cdnjqueryvalidate1120.md "jQuery ověření 1.12.0")
+- [jQuery Validate 1.13.0](jquery-validate/cdnjqueryvalidate1130.md "jQuery Validation 1.13.0")
+- [jQuery Validate 1.12.0](jquery-validate/cdnjqueryvalidate1120.md "jQuery Validation 1.12.0")
 - [jQuery ověřením 1.11.1](jquery-validate/cdnjqueryvalidate1111.md "jQuery ověření 1.11.1")
-- [jQuery ověřením 1.11.0](jquery-validate/cdnjqueryvalidate111.md "jQuery ověření 1.11.0")
+- [jQuery Validate 1.11.0](jquery-validate/cdnjqueryvalidate111.md "jQuery Validation 1.11.0")
 - [jQuery ověřením 1.10.0](jquery-validate/cdnjqueryvalidate110.md "jQuery ověření 1.10.0")
 - [jQuery Validate 1.9](jquery-validate/cdnjqueryvalidate19.md "jquery.validate version 1.9")
 - [jQuery Validate 1.8.1](jquery-validate/cdnjqueryvalidate181.md "jquery.validate version 1.8.1")
-- [jQuery ověřením 1.8](jquery-validate/cdnjqueryvalidate18.md "jquery.validate verze 1.8")
+- [jQuery Validate 1.8](jquery-validate/cdnjqueryvalidate18.md "jquery.validate version 1.8")
 - [jQuery Validate 1.7](jquery-validate/cdnjqueryvalidate17.md "jquery.validate version 1.7")
-- [jQuery ověřením 1.6](jquery-validate/cdnjqueryvalidate16.md "jQuery ověřením 1.6")
+- [jQuery Validate 1.6](jquery-validate/cdnjqueryvalidate16.md "jQuery Validate 1.6")
 - [jQuery ověřením 1.5.5](jquery-validate/cdnjqueryvalidate155.md "jQuery ověřením 1.5.5")
 
 <a id="jQuery_Mobile_Releases_on_the_CDN_4"></a>
@@ -662,9 +662,9 @@ Následující verze modulu plug-in jQuery šablony jsou hostovány na tento CDN
 
 Následující verze modulu plug-in jQuery cyklus jsou hostované na této CDN. Klepnutím na odkaz zobrazit skutečný seznam souborů.
 
-- [jQuery cyklus 2.99](jquery-cycle/cdnjquerycycle299.md "jQuery 2.99 cyklu")
-- [jQuery cyklus 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery 2.94 cyklu")
-- [jQuery cyklus 2,88](jquery-cycle/cdnjquerycycle288.md "jQuery 2,88 cyklu")
+- [jQuery Cycle 2.99](jquery-cycle/cdnjquerycycle299.md "jQuery Cycle 2.99")
+- [jQuery Cycle 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery Cycle 2.94")
+- [jQuery Cycle 2.88](jquery-cycle/cdnjquerycycle288.md "jQuery Cycle 2.88")
 
 <a id="jQuery_DataTables_Releases_on_the_CDN_7"></a>
 
@@ -674,7 +674,7 @@ Následující verze modulu plug-in jQuery DataTables jsou hostované na této C
 
 - [jQuery DataTables 1.10.5](jquery-datatables/cdnjquerydatatables105.md "jQuery DataTables 1.10.5")
 - [jQuery DataTables 1.10.4](jquery-datatables/cdnjquerydatatables104.md "jQuery DataTables 1.10.4")
-- [jQuery DataTables otázku 1.9.4](jquery-datatables/cdnjquerydatatables194.md "jQuery DataTables otázku 1.9.4")
+- [jQuery DataTables 1.9.4](jquery-datatables/cdnjquerydatatables194.md "jQuery DataTables 1.9.4")
 - [jQuery DataTables 1.9.3](jquery-datatables/cdnjquerydatatables193.md "jQuery DataTables 1.9.3")
 - [jQuery DataTables 1.9.2](jquery-datatables/cdnjquerydatatables192.md "jQuery DataTables 1.9.2")
 - [jQuery DataTables 1.9.1](jquery-datatables/cdnjquerydatatables191.md "jQuery DataTables 1.9.1")
@@ -1124,22 +1124,22 @@ Následující soubory ASP.NET MVC JavaScript jsou hostované na této CDN:
 
 Následující soubory ASP.NET SignalR JavaScript jsou hostované na této CDN:
 
-#### <a name="aspnet-signalr-222"></a>Funkce SignalR technologie ASP.NET 2.2.2
+#### <a name="aspnet-signalr-222"></a>ASP.NET SignalR 2.2.2
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.js
 
-#### <a name="aspnet-signalr-221"></a>Funkce SignalR technologie ASP.NET 2.2.1
+#### <a name="aspnet-signalr-221"></a>ASP.NET SignalR 2.2.1
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.1.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.1.js
 
-#### <a name="aspnet-signalr-220"></a>Funkce SignalR technologie ASP.NET 2.2.0
+#### <a name="aspnet-signalr-220"></a>ASP.NET SignalR 2.2.0
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.js
 
-#### <a name="aspnet-signalr-210"></a>Funkce SignalR technologie ASP.NET 2.1.0
+#### <a name="aspnet-signalr-210"></a>ASP.NET SignalR 2.1.0
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.1.0.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.1.0.js
@@ -1149,42 +1149,42 @@ Následující soubory ASP.NET SignalR JavaScript jsou hostované na této CDN:
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.0.3.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.0.3.js
 
-#### <a name="aspnet-signalr-202"></a>Funkce SignalR technologie ASP.NET bodu 2.0.2
+#### <a name="aspnet-signalr-202"></a>ASP.NET SignalR 2.0.2
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.0.2.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.0.2.js
 
-#### <a name="aspnet-signalr-201"></a>Funkce SignalR technologie ASP.NET 2.0.1
+#### <a name="aspnet-signalr-201"></a>ASP.NET SignalR 2.0.1
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.0.1.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.0.1.js
 
-#### <a name="aspnet-signalr-200"></a>Funkce SignalR technologie ASP.NET 2.0.0
+#### <a name="aspnet-signalr-200"></a>ASP.NET SignalR 2.0.0
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.0.0.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.0.0.js
 
-#### <a name="aspnet-signalr-113"></a>Funkce SignalR technologie ASP.NET 1.1.3
+#### <a name="aspnet-signalr-113"></a>ASP.NET SignalR 1.1.3
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.1.3.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.1.3.js
 
-#### <a name="aspnet-signalr-112"></a>Funkce SignalR technologie ASP.NET 1.1.2
+#### <a name="aspnet-signalr-112"></a>ASP.NET SignalR 1.1.2
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.1.2.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.1.2.js
 
-#### <a name="aspnet-signalr-111"></a>Funkce SignalR technologie ASP.NET 1.1.1
+#### <a name="aspnet-signalr-111"></a>ASP.NET SignalR 1.1.1
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.1.1.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.1.1.js
 
-#### <a name="aspnet-signalr-110"></a>Funkce SignalR technologie ASP.NET 1.1.0
+#### <a name="aspnet-signalr-110"></a>ASP.NET SignalR 1.1.0
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.1.0.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.1.0.js
 
-#### <a name="aspnet-signalr-101"></a>Funkce SignalR technologie ASP.NET 1.0.1
+#### <a name="aspnet-signalr-101"></a>ASP.NET SignalR 1.0.1
 
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.0.1.min.js
 - https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-1.0.1.js

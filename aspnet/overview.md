@@ -1,22 +1,22 @@
 ---
 uid: overview
-title: "Přehled technologie ASP.NET | Microsoft Docs"
+title: Přehled technologie ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Úvod k technologii ASP.NET, volné architektura pro vytváření webů, webových aplikací a webových rozhraní API."
+description: Úvod k technologii ASP.NET, volné architektura pro vytváření webů, webových aplikací a webových rozhraní API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/12/2010
 ms.topic: article
 ms.assetid: 3a309468-f1ca-4e51-b9c3-536af79d7a8b
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
-msc.legacyurl: 
+msc.legacyurl: ''
 msc.type: content
 ms.openlocfilehash: 0ba7814d4004b17e678eab9a2a41a6d6f34773e1
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="aspnet-overview"></a>Přehled technologie ASP.NET
 
@@ -38,7 +38,7 @@ Dole je přehled o každé rozhraní a některé doporučení, jak vybrat mezi n
 
 |   | Pokud máte zkušenosti | Vývoj styl | Znalosti | 
 |-----------|----------------------|-----------------------------------------------------|----------------|
-| webové formuláře | Win formuláře WPF, rozhraní .NET | Rychlý vývoj pomocí bohaté knihovny ovládacích prvků, které zapouzdření značka jazyka HTML | Střední úroveň, pokročilé RAD |
+| webové formuláře | Win Forms, WPF, .NET | Rychlý vývoj pomocí bohaté knihovny ovládacích prvků, které zapouzdření značka jazyka HTML | Střední úroveň, pokročilé RAD |
 | MVC       | Ruby, na které, rozhraní .NET  | Plnou kontrolu nad značka jazyka HTML, kód a značek oddělených a usnadňují zápis testů. Nejlepší volbou pro mobilní a jednostránkové aplikace (SPA). | Střední úroveň, Upřesnit |
 | Webové stránky  | Klasické ASP, PHP     | Kód HTML a váš kód společně ve stejném souboru | Nové, střední úrovně |
 

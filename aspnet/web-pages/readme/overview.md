@@ -16,9 +16,9 @@ ms.openlocfilehash: c65ee58b8c13b0b4acb6e7c9b631c8235e791506
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
-<a name="webmatrix-readme"></a>Soubor Readme pro službu WebMatrix
+<a name="webmatrix-readme"></a>WebMatrix Readme
 ====================
 13. ledna 2011
 
@@ -258,9 +258,9 @@ Tato část dokumentu popisuje nové funkce, změny a známé problémy s verzi 
 > 1. Zkopírujte sestavení modulu databáze, které chcete *Bin* složky (a její podsložky) aplikace na cílovém počítači:  
 > 
 >    - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
->        **k** *\Bin*
+>        **to** *\Bin*
 >    - Copy <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\</em><strong><em>to</em></strong>\Bin\x86*
->    - Copy <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\</em>* <strong>to</strong><em>\Bin\amd64</em>
+>    - Kopírování <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\</em>* <strong>k</strong><em>\Bin\amd64</em>
 > 
 > 2. V kořenové složce webové stránky, vytvořit nebo otevřít *web.config* souboru. (Ve službě WebMatrix 1.0 je k dispozici, pokud kliknete na tento typ souboru **všechny** v **vyberte typ souboru** dialogové okno.)
 > 3. Přidejte následující prvek jako podřízenou `<configuration>` – element (mimo `<system.web>` element):
@@ -397,7 +397,7 @@ Tato část dokumentu popisuje známé problémy pro vývojové prostředí WebM
 
 
 <a id="Known_Issues_IISExpress"></a>
-### <a name="iis-express"></a>Služby IIS Express
+### <a name="iis-express"></a>IIS Express
 
 Služba IIS Express má svůj vlastní soubor readme, který je k dispozici na následující adrese URL:
 

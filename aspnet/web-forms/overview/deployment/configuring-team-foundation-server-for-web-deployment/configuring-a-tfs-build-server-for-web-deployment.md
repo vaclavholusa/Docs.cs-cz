@@ -16,7 +16,7 @@ ms.openlocfilehash: 7b3130ca7d36ffec457e1871fa62c1077b5e3174
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>Konfigurace serveru TFS sestavení pro nasazení webu
 ====================
@@ -72,7 +72,7 @@ K povolení sestavení serveru k vytvoření řešení, musíte nainstalovat vš
 
 Nejlepší způsob, jak nainstalovat běžné komponenty webové platformy má používat [instalačního programu webové platformy](https://go.microsoft.com/?linkid=9805118). To zajišťuje, že instalujete nejnovější verzi každého produktu a taky automaticky rozpozná a nainstaluje všechny požadavky pro jednotlivé produkty. U [obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) řešení, používejte služby instalace webové platformy nainstalovat tyto produkty a součásti:
 
-- **Rozhraní .NET framework 4.0**. To je nutné ke spuštění aplikací, které byly vytvořené v této verzi rozhraní .NET Framework.
+- **.NET Framework 4.0**. To je nutné ke spuštění aplikací, které byly vytvořené v této verzi rozhraní .NET Framework.
 - **Webové nástroje pro nasazení 2.1 nebo vyšší**. Tím se nainstaluje Web Deploy (a její základní spustitelný soubor MSDeploy.exe) na serveru. V rámci tohoto procesu se nainstaluje a spustí služba agenta pro nasazení webu. Tato služba umožňuje nasadit webovou balíčky ze vzdáleného počítače.
 - **ASP.NET MVC 3**. Tím se nainstaluje sestavení, je nutné spouštět aplikace ASP.NET MVC 3.
 

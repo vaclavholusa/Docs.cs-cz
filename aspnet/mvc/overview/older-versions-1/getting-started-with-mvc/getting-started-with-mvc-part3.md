@@ -16,7 +16,7 @@ ms.openlocfilehash: 978d7980274c072ed559b54ed69ab86245b6c5a7
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="adding-a-view"></a>Přidání zobrazení
 ====================
@@ -77,7 +77,7 @@ Tady je Site.Master v celé jeho šíři s naše změněn název:
 
 Nyní změňte název indexovou stránku.
 
-Open /HelloWorld/Index.aspx. Není k dispozici dvě místa, chcete-li změnit. Nejprve: název, které se zobrazí v prohlížeči, pak se sekundární záhlaví -, který je také H2 - názvu. I budete je každý mírně lišit, abyste viděli, které malou část kódu, kterou část aplikace změny provést.
+Otevřete /HelloWorld/Index.aspx. Není k dispozici dvě místa, chcete-li změnit. Nejprve: název, které se zobrazí v prohlížeči, pak se sekundární záhlaví -, který je také H2 - názvu. I budete je každý mírně lišit, abyste viděli, které malou část kódu, kterou část aplikace změny provést.
 
 [!code-aspx[Main](getting-started-with-mvc-part3/samples/sample7.aspx)]
 
@@ -112,7 +112,7 @@ Přidejte tento kód v části &lt;h2&gt; ve vaší nové Welcome.aspx. Jsme bud
 
 Všimněte si také, při zadávání, protože to nám sdělili zobrazení o WelcomeViewModel (jsou vdaná, mějte na paměti,?), aby se nám získat užitečné Intellisense pokaždé, když jsme odkazovat na našem modelu objektu jako zobrazené na snímku obrazovky níže:
 
-[![NumTime zdrojového kódu](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
+[![NumTime Source Code](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
 
 Spusťte aplikaci a navštivte `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4` znovu. Teď přesměrováváme data z adresy URL, ho je předán do Kontroleru automaticky, Kontroleru zabalí dat do ViewModel a předá objekt do našich zobrazení. Zobrazení, než se zobrazí data jako kód HTML pro uživatele.
 

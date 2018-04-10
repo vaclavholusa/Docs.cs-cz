@@ -16,7 +16,7 @@ ms.openlocfilehash: 6ce52c387ff835eda46bc1882b8b974889e2d4af
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 a Visual Studio 2010 Web Development přehled
 ====================
@@ -30,7 +30,7 @@ ms.lasthandoff: 04/06/2018
 **[Core Services](#0.2__Toc253429238 "_Toc253429238")**  
 [Web.config File Refactoring](#0.2__Toc253429239 "_Toc253429239")  
 [Ukládání do mezipaměti výstup pro Extensible](#0.2__Toc253429240 "_Toc253429240")  
-[Automatické spuštění webové aplikace](#0.2__Toc253429241 "_Toc253429241")  
+[Auto-Start Web Applications](#0.2__Toc253429241 "_Toc253429241")  
 [Trvalé přesměrování stránky](#0.2__Toc253429242 "_Toc253429242")  
 [Zmenšení stav relace](#0.2__Toc253429243 "_Toc253429243")  
 [Rozšíření rozsahu povolených adres URL](#0.2__Toc253429244 "_Toc253429244")  
@@ -42,26 +42,26 @@ ms.lasthandoff: 04/06/2018
 
 **[Ajax](#0.2__Toc253429250 "_Toc253429250")**  
 [jQuery zahrnuté s webovými formuláři a MVC](#0.2__Toc253429251 "_Toc253429251")  
-[Podpora sítě doručování obsahu](#0.2__Toc253429252 "_Toc253429252")  
+[Content Delivery Network Support](#0.2__Toc253429252 "_Toc253429252")  
 [ScriptManager Explicit Scripts](#0.2__Toc253429253 "_Toc253429253")
 
 **[Web Forms](#0.2__Toc253429256 "_Toc253429256")**  
 [Nastavení značek Meta pomocí Page.MetaKeywords a vlastnosti Page.MetaDescription](#0.2__Toc253429257 "_Toc253429257")  
 [Povolení zobrazení stavu jednotlivých ovládacích prvků](#0.2__Toc253429258 "_Toc253429258")  
 [Změny možnosti prohlížeče](#0.2__Toc253429259 "_Toc253429259")  
-[Směrování v technologii ASP.NET 4](#0.2__Toc253429260 "_Toc253429260")  
-[Nastavení ID klienta](#0.2__Toc253429261 "_Toc253429261")  
+[Routing in ASP.NET 4](#0.2__Toc253429260 "_Toc253429260")  
+[Setting Client IDs](#0.2__Toc253429261 "_Toc253429261")  
 [Zachování výběru řádku v ovládacích prvcích dat](#0.2__Toc253429262 "_Toc253429262")  
 [ASP.NET Chart Control](#0.2__Toc253429263 "_Toc253429263")  
 [Filtrování dat pomocí ovládacího prvku QueryExtender](#0.2__Toc253429264 "_Toc253429264")  
 [Html Encoded Code Expressions](#0.2__Toc253429265 "_Toc253429265")  
-[Změny v šabloně projektu](#0.2__Toc253429266 "_Toc253429266")  
+[Project Template Changes](#0.2__Toc253429266 "_Toc253429266")  
 [CSS Improvements](#0.2__Toc253429267 "_Toc253429267")  
 [Skrytí div elementy kolem skryté pole](#0.2__Toc253429268 "_Toc253429268")  
 [Vykreslování vnější tabulky pro ovládací prvky podle šablony](#0.2__Toc253429269 "_Toc253429269")  
 [ListView – ovládací prvek vylepšení](#0.2__Toc253429270 "_Toc253429270")  
 [Třídy CheckBoxList a vylepšení ovládací prvek RadioButtonList](#0.2__Toc253429271 "_Toc253429271")  
-[Vylepšení řízení nabídky](#0.2__Toc253429272 "_Toc253429272")  
+[Menu Control Improvements](#0.2__Toc253429272 "_Toc253429272")  
 [Průvodce a ovládací prvky CreateUserWizard 56](#0.2__Toc253429273 "_Toc253429273")
 
 **[ASP.NET MVC](#0.2__Toc253429274 "_Toc253429274")**  
@@ -70,9 +70,9 @@ ms.lasthandoff: 04/06/2018
 [Templated Helpers](#0.2__Toc253429277 "_Toc253429277")
 
 **[Dynamic Data](#0.2__Toc253429278 "_Toc253429278")**  
-[Povolení dynamické Data pro existující projekty](#0.2__Toc253429279 "_Toc253429279")  
+[Enabling Dynamic Data for Existing Projects](#0.2__Toc253429279 "_Toc253429279")  
 [Declarative DynamicDataManager Control Syntax](#0.2__Toc253429280 "_Toc253429280")  
-[Šablony entit](#0.2__Toc253429281 "_Toc253429281")  
+[Entity Templates](#0.2__Toc253429281 "_Toc253429281")  
 [Nové šablony polí pro adresy URL a e-mailové adresy](#0.2__Toc253429282 "_Toc253429282")  
 [Vytváření odkazů pomocí ovládacího prvku DynamicHyperLink](#0.2__Toc253429283 "_Toc253429283")  
 [Podpora pro dědičnosti v datovém modelu](#0.2__Toc253429284 "_Toc253429284")  
@@ -88,7 +88,7 @@ ms.lasthandoff: 04/06/2018
 **[Nasazení aplikací pomocí sady Visual Studio 2010 webové](#0.2__Toc253429292 "_Toc253429292")**  
 [Web Packaging](#0.2__Toc253429293 "_Toc253429293")  
 [Web.config Transformation](#0.2__Toc253429294 "_Toc253429294")  
-[Nasazení databáze](#0.2__Toc253429295 "_Toc253429295")  
+[Database Deployment](#0.2__Toc253429295 "_Toc253429295")  
 [Publikování jedním kliknutím pro webové aplikace](#0.2__Toc253429296 "_Toc253429296")  
 [Resources](#0.2__Toc253429297 "_Toc253429297")
 
@@ -344,7 +344,7 @@ Můžete nastavit cestu k CDN pro své vlastní soubory JavaScript pomocí atrib
 
 <a id="0.2__Toc253429253"></a><a id="0.2__Toc243304627"></a>
 
-### <a name="scriptmanager-explicit-scripts"></a>Explicitní skripty ScriptManager
+### <a name="scriptmanager-explicit-scripts"></a>ScriptManager Explicit Scripts
 
 V minulosti Pokud jste použili ASP.NET ScriptManger pak jste museli načíst celou knihovnu monolitický ASP.NET Ajax. Využitím nové vlastnosti ScriptManager.AjaxFrameworkMode, můžete řídit přesně součástí knihovny ASP.NET Ajax, které jsou načteny a načíst pouze komponenty knihovny ASP.NET Ajax, které potřebujete.
 
@@ -448,7 +448,7 @@ Následující seznam obsahuje nový prohlížeč definiční soubory:
 
 - *blackberry.browser*
 - *chrome.browser*
-- *Default.browser*
+- *Default.Browser*
 - *firefox.browser*
 - *gateway.browser*
 - *generic.browser*
@@ -722,7 +722,7 @@ Trvalou výběr byl původně podporován jenom v projektech dynamických dat v 
 
 <a id="0.2__Toc253429263"></a><a id="0.2__Toc243304637"></a>
 
-### <a name="aspnet-chart-control"></a>Ovládací prvek ASP.NET grafu
+### <a name="aspnet-chart-control"></a>ASP.NET Chart Control
 
 Technologie ASP.NET *grafu* řízení rozšíří nabídky vizualizace dat v rozhraní .NET Framework. Pomocí *grafu* ovládací prvek, můžete vytvořit stránek ASP.NET, které mají intuitivní a vizuálně poutavé grafy pro komplexní statistické nebo finanční analýzu. Technologie ASP.NET *grafu* řízení bylo zavedeno jako doplněk verze rozhraní .NET Framework verze 3.5 SP1 a je součástí verze rozhraní .NET Framework 4.
 
@@ -987,8 +987,8 @@ Ve výchozím nastavení jsou následující ovládacích prvků ASP.NET Web ser
 - *FormView*
 - *přihlášení*
 - *PasswordRecovery*
-- *Změna hesla byla*
-- *Wizard*
+- *ChangePassword*
+- *Průvodce*
 - *CreateUserWizard*
 
 Novou vlastnost s názvem *RenderOuterTable* byl přidán do těchto ovládacích prvků, které umožňuje vnější tabulka, která se odeberou z značku. Představte si třeba na následující příklad *FormView* ovládacího prvku:
@@ -1139,7 +1139,7 @@ Objekty se šablonami za umožňují automaticky přidružit upravit a zobrazit 
 
 <a id="0.2__Toc253429278"></a><a id="0.2__Toc243304649"></a>
 
-## <a name="dynamic-data"></a>Dynamic Data
+## <a name="dynamic-data"></a>Dynamická Data
 
 Dynamická Data byla zavedena ve verzi rozhraní .NET Framework 3.5 SP1 v polovině roku 2008. Tato funkce poskytuje mnoho vylepšení pro vytvoření datové aplikace, včetně následujících:
 

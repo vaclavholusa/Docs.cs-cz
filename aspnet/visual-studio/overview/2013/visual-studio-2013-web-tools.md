@@ -1,26 +1,26 @@
 ---
 uid: visual-studio/overview/2013/visual-studio-2013-web-tools
-title: "Rukou na testovacím: 2013 webové nástroje sady Visual Studio | Microsoft Docs"
+title: 'Rukou na testovacím: 2013 webové nástroje sady Visual Studio | Microsoft Docs'
 author: rick-anderson
-description: "Visual Studio je vynikající vývoj prostředí pro. Na základě NET Windows a webové projekty. Zahrnuje výkonné textový editor, který lze snadno použít k..."
+description: Visual Studio je vynikající vývoj prostředí pro. Na základě NET Windows a webové projekty. Zahrnuje výkonné textový editor, který lze snadno použít k...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
 ms.openlocfilehash: ef8ab82f9043ef9da3a3e6a146a97f083149534d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/10/2018
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>Rukou na testovacího prostředí: Visual Studio 2013 nástroje pro Web
 ====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
 [Stažení webové táborech cvičení Kit](http://aka.ms/webcamps-training-kit)
 
@@ -30,7 +30,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > Všechna tato napájení je k dispozici pro rozšíření, což jednoduše rozšiřitelný editory nové funkce, aby vyhovovaly potřebám vaší. Web Essentials je kolekce (většinou) týkající se webu vylepšení pro Visual Studio. Obsahuje velké množství nové dokončování IntelliSense (hlavně u šablon stylů CSS), nové funkce Browser Link, automatické soubory JSHint pro jazyk JavaScript, nové upozornění pro HTML a CSS a řadu dalších funkcí, které jsou pro vývoj moderních webových aplikací.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
 
 
 <a id="Overview"></a>
@@ -51,7 +51,7 @@ V tomto testovacím prostředí praktických se dozvíte, jak:
 
 Pro dokončení této praktické cvičení je vyžadován následující text:
 
-- [Microsoft Visual Studio Professional 2013](https://www.microsoft.com/visualstudio/) nebo vyšší
+- [Microsoft Visual Studio Professional 2013](https://www.microsoft.com/visualstudio/) or greater
 - [Web Essentials 2013](http://vswebessentials.com/)
 - [Google Chrome](https://www.google.com/chrome/)
 
@@ -105,7 +105,7 @@ V tomto cvičení bude prozkoumávat některé z funkcí podporovaných **Web Es
 
 V této úloze nakonfigurujete webové aplikace na spouštění v několika prohlížeče najednou, což je užitečné pro testování různých prohlížečích.
 
-1. Otevřete **sady Microsoft Visual Studio**.
+1. Open **Microsoft Visual Studio**.
 2. V **soubor** nabídce vyberte možnost **otevřete | Projekt nebo řešení...**  a přejděte do **Ex1 WorkingwithBrowserLinkandWebEssentials\Begin** v **zdroj** složky laboratoře (C:\WebCampsTK\HOL\VSWebTooling\Source). Vyberte **Begin.sln** a klikněte na tlačítko **otevřete**.
 3. Na panelu nástrojů Visual Studio rozbalte nabídku prohlížeče a vyberte **procházet s...** .
 
@@ -144,7 +144,7 @@ V tomto cvičení použije k vygenerování tlačítka HTML, která představuj�
 
 1. Přepněte zpátky na Visual Studio.
 2. Otevřete **Index.cshtml** soubor umístěný ve **zobrazení** | **Domů** složky.
-3. Nahraďte  **&lt;!--TODO: Přidat zde – možnosti&gt;**  komentář s následující kód a stiskněte klávesu **KARTĚ**.
+3. Nahraďte **&lt;!--TODO: Přidat zde – možnosti&gt;** komentář s následující kód a stiskněte klávesu **KARTĚ**.
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample1.css)]
 4. Kód by měl rozšířit, aby HTML.
@@ -307,7 +307,7 @@ V této úloze budete používat Browser Link **režimu návrhu** funkce Upravit
     ![Otázka upravit](visual-studio-2013-web-tools/_static/image29.png "otázku upravit")
 
     *Upravit dotaz*
-4. Přepněte zpět do Visual Studio a otevřete **Index.cshtml**, pokud ještě není otevřené. Všimněte si, že vnitřní text  **&lt;p&gt;**  element se aktualizovala.
+4. Přepněte zpět do Visual Studio a otevřete **Index.cshtml**, pokud ještě není otevřené. Všimněte si, že vnitřní text **&lt;p&gt;** element se aktualizovala.
 
     ![Aktualizované otázku na stránce HTML](visual-studio-2013-web-tools/_static/image30.png "aktualizované otázku na stránce HTML")
 
@@ -323,7 +323,7 @@ V této úloze budete používat Browser Link **režimu návrhu** funkce Upravit
     ![Chyba v zobrazení seznamu nabídky](visual-studio-2013-web-tools/_static/image31.png "seznam chyb v nabídce zobrazení")
 
     *Chyba v zobrazení seznamu nabídky*
-2. Všimněte si, že je SEO upozornění s informací, které  **&lt;meta&gt;**  značky pro popis stránky chybí. Dvakrát klikněte na položku upozornění optimalizace pro vyhledávací weby a opravte ji.
+2. Všimněte si, že je SEO upozornění s informací, které **&lt;meta&gt;** značky pro popis stránky chybí. Dvakrát klikněte na položku upozornění optimalizace pro vyhledávací weby a opravte ji.
 
     ![Okno Seznam chyb](visual-studio-2013-web-tools/_static/image32.png "v okně Seznam chyb")
 
@@ -333,7 +333,7 @@ V této úloze budete používat Browser Link **režimu návrhu** funkce Upravit
     ![Dialogové okno Essentials web](visual-studio-2013-web-tools/_static/image33.png "dialogové okno Web Essentials")
 
     *Dialogové okno Essentials Web*
-4. Editor pro  **\_Layout.cshtml** otevře a  **&lt;meta&gt;**  značky je automaticky přidán do **head** části Soubor HTML.
+4. Editor pro  **\_Layout.cshtml** otevře a **&lt;meta&gt;** značky je automaticky přidán do **head** části Soubor HTML.
 
     ![Značka META automaticky přidá stránce _Layout](visual-studio-2013-web-tools/_static/image34.png "metaznačku automaticky přidány _Layout stránku")
 
@@ -354,7 +354,7 @@ V této úloze vytvoříte nový element formuláře HTML obsahující štítky 
 
 1. Otevřete **Visual Studio Express 2013 pro Web** a **Begin.sln** řešení umístěný v **zdroj/Ex2-TakingAdvantageofCodeSnippetsandIntelliSense/Begin** složky. Alternativně můžete pokračovat v řešení jste získali v předchozím cvičení.
 2. V **Průzkumníku řešení**, otevřete **Index.cshtml** soubor umístěný ve **zobrazení** | **Domů** složky.
-3. Přidejte následující formulář uvnitř  **&lt;části&gt;**  element.
+3. Přidejte následující formulář uvnitř **&lt;části&gt;** element.
 
     (Code fragment kódu - *VisualStudio2013WebTooling* - *Ex2* - *formuláře*)
 
@@ -362,19 +362,19 @@ V této úloze vytvoříte nový element formuláře HTML obsahující štítky 
 4. Vstupní značky musí předcházet popisek nějaké popis pole. Přidejte následující popisku před vstupní značka.
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample5.html)]
-5. **Pro** atribut  **&lt;popisek&gt;**  Určuje, který element formuláře a popisku je vázán k. Hodnota atributu musí být roven id související elementu. Přidat **pro** atribut  **&lt;popisek&gt;**  element. Jak je znázorněno na následujícím obrázku &quot;název&quot; hodnotu objeví v dialogovém okně IntelliSense na základě id elementů v rámci stejného oboru (uzavření  **&lt;formuláře&gt;**).
+5. **Pro** atribut **&lt;popisek&gt;** Určuje, který element formuláře a popisku je vázán k. Hodnota atributu musí být roven id související elementu. Přidat **pro** atribut **&lt;popisek&gt;** element. Jak je znázorněno na následujícím obrázku &quot;název&quot; hodnotu objeví v dialogovém okně IntelliSense na základě id elementů v rámci stejného oboru (uzavření  **&lt;formuláře&gt;**).
 
     ![Zobrazení v IntelliSense id](visual-studio-2013-web-tools/_static/image35.png "id zobrazení v IntelliSense")
 
     *Id zobrazení v IntelliSense*
-6. Odstranit nedávno přidané  **&lt;formuláře&gt;**  elementu a jeho obsah.
+6. Odstranit nedávno přidané **&lt;formuláře&gt;** elementu a jeho obsah.
 
 <a id="Ex2Task2"></a>
 #### <a name="task-2---using-html-code-snippets"></a>Úloha 2 – pomocí fragmenty kódu HTML
 
 HTML5 zavedl víc než 25 nové sémantického značky. Visual Studio již obsahuje podporu technologie IntelliSense pro tyto značky, ale Visual Studio 2013 je rychlejší a snazší psát kód přidáním nové fragmenty kódu. I když tyto značky nejsou složitá, jsou součástí pár malých odlišnosti, jako je například přidávání případech přejít správný kodek pro *zvuk* značky. V této úloze uvidíte fragmenty kódu HTML pro zvuk značku.
 
-1. V **Index.cshtml** souboru, zadejte  **&lt;oblast** uvnitř  **&lt;části&gt;**  element, jak je znázorněno na následujícím obrázku.
+1. V **Index.cshtml** souboru, zadejte  **&lt;oblast** uvnitř **&lt;části&gt;** element, jak je znázorněno na následujícím obrázku.
 
     ![Vkládání audio element](visual-studio-2013-web-tools/_static/image36.png "vkládání audio element")
 
@@ -385,7 +385,7 @@ HTML5 zavedl víc než 25 nové sémantického značky. Visual Studio již obsah
 
     > [!NOTE]
     > Stisknutím kombinace kláves **KARTĚ** klíče dvakrát fragmentu kódu je vložen. Zvuk fragment kódu ukazuje standardní využití *zvuk* značky s dvěma zdrojové soubory pro lepší podporu.
-3. Odstraňte na druhém řádku a aktualizace zdroje prvního řádku s použitím na následující odkaz k zobrazení WebCampsTV Katana: [http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3). Výsledný kód je uveden níže.
+3. Odstraňte na druhém řádku a aktualizace zdroje prvního řádku s použitím na následující odkaz k zobrazení WebCampsTV Katana: [ http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3 ](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3). Výsledný kód je uveden níže.
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample7.html)]
 
@@ -437,9 +437,9 @@ S Web Essentials 2013 šablony stylů a stránky HTML vytvořit seznam ID a tř�
     > *Init.js souboru vytvořeného v obsah zahrnutý*
 6. Otevřete **Index.cshtml** soubor a zkontrolujte, zda byl nahrazen značky script s odkazem na **init.js** souboru.
 
-    ![Referenční dokumentace html Init.js](visual-studio-2013-web-tools/_static/image42.png "Init.js html odkaz")
+    ![Init.js html reference](visual-studio-2013-web-tools/_static/image42.png "Init.js html reference")
 
-    *Odkaz na Init.js html*
+    *Init.js html reference*
 7. Přejděte na **Průzkumníku řešení** a Všimněte si, že **init.js** souboru je automaticky zahrnutý v řešení.
 
     ![Soubor Init.js součástí řešení](visual-studio-2013-web-tools/_static/image43.png "Init.js soubor zahrnutý v řešení")
@@ -465,7 +465,7 @@ S Web Essentials 2013 šablony stylů a stránky HTML vytvořit seznam ID a tř�
     ![Zobrazení technologie IntelliSense pro metodu getElementByTagName](visual-studio-2013-web-tools/_static/image45.png "zobrazující IntelliSense pro metodu getElementByTagName")
 
     *Zobrazení technologie IntelliSense pro metodu getElementsByTagName*
-13. Vyberte  **&quot;zvuk&quot;**  ze seznamu a stiskněte klávesu **ENTER**. Výsledkem je znázorněno na následujícím obrázku.
+13. Vyberte **&quot;zvuk&quot;** ze seznamu a stiskněte klávesu **ENTER**. Výsledkem je znázorněno na následujícím obrázku.
 
     ![Načítání zvuku elementy](visual-studio-2013-web-tools/_static/image46.png "načítání zvuku elementy")
 
@@ -501,7 +501,7 @@ S Web Essentials 2013 šablony stylů a stránky HTML vytvořit seznam ID a tř�
 
     ![Microsoft Visual Studio upozornění](visual-studio-2013-web-tools/_static/image51.png "upozornění Microsoft Visual Studio")
 
-    *Microsoft Visual Studio upozornění*
+    *Microsoft Visual Studio warning*
 19. Přepnout zpět **init.min.js** souboru a ověřte, že soubor byl aktualizován s novým kódem.
 
     ![Aktualizovat soubor Init.min.js](visual-studio-2013-web-tools/_static/image52.png "Init.min.js soubor aktualizovat")

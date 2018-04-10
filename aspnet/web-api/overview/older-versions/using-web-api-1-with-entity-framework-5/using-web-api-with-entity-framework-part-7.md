@@ -16,7 +16,7 @@ ms.openlocfilehash: 2c378e68a1e6600daf655c19afbfe355e89496d4
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="part-7-creating-the-main-page"></a>Část 7: Vytvoření hlavní stránky
 ====================
@@ -86,7 +86,7 @@ To iteruje nad pole produkty a zobrazuje název a ceny. Tlačítko "Přidat do p
 
 Volání tlačítko "Přidat do pořadí" `addItemToCart` na `ProductViewModel` instance pro produkt. Tento příklad ukazuje dobrý funkce Knockout.js: když model zobrazení obsahuje jinými modely zobrazení, můžete použít vazby pro vnitřní modelu. V tomto příkladu vazby v rámci `foreach` jsou použitá pro každé z `ProductViewModel` instance. Tento přístup je mnohem čisticí než uvedení všechny funkce do jednoho zobrazení modelu.
 
-**Košíku**
+**Cart**
 
 Zde jsou vazby u košíku:
 
@@ -116,7 +116,7 @@ V tomto kurzu jste vytvořili aplikaci, která používá rozhraní Entity Frame
 
 Další zdroje informací:
 
-- [Mapa obsahu přístupu k Data technologie ASP.NET](https://msdn.microsoft.com/library/6759sth4.aspx)
+- [ASP.NET Data Access Content Map](https://msdn.microsoft.com/library/6759sth4.aspx)
 - [Středisko pro vývojáře Entity Framework](https://msdn.microsoft.com/data/ef)
 
 > [!div class="step-by-step"]

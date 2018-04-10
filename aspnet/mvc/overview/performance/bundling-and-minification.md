@@ -16,7 +16,7 @@ ms.openlocfilehash: 001ebf89cda66a50cddcd7e4944f27b9396d4450
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="bundling-and-minification"></a>Sdružování a minimalizace
 ====================
@@ -55,7 +55,7 @@ Po minimalizaci je funkce snížen na následující:
 
 Kromě odebírání komentářů a nepotřebné prázdné znaky, tyto parametry a proměnné názvy byly přejmenovány (zkrátit) následujícím způsobem:
 
-| **Original** | **Renamed** |
+| **Původní** | **Přejmenovat** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | t |
@@ -65,11 +65,11 @@ Kromě odebírání komentářů a nepotřebné prázdné znaky, tyto parametry 
 
 Následující tabulka uvádí několik důležitých rozdílů mezi výpis všechny prostředky samostatně a pomocí sdružování a minimalizace (B/M) v ukázka programu.
 
-|  | **Pomocí B/M** | **Bez B/M** | **změnit** |
+|  | **Pomocí B/M** | **Bez B/M** | **Change** |
 | --- | --- | --- | --- |
 | **Požadavky na soubory** | 9 | 34 | 256% |
-| **Odeslat KB** | 3.26 | 11.92 | 266% |
-| **Přijaté KB** | 388.51 | 530 | 36% |
+| **KB Sent** | 3.26 | 11.92 | 266% |
+| **KB Received** | 388.51 | 530 | 36% |
 | **Čas načtení** | 510 MS | 780 MS | 53% |
 
 Počet odeslaných bajtů došlo k výraznému snížení s sdružování jsou poměrně podrobné s hlavičky protokolu HTTP, které se vztahují na požadavky prohlížeče. Přijaté bajty snížení není tak velké, protože největší soubory (*Scripts\jquery-ui-1.8.11.min.js* a *Scripts\jquery-1.7.1.min.js*) jsou již minifikovaný. Poznámka: Časování na ukázkový program použitý [Fiddler](http://www.fiddler2.com/fiddler2/) nástroj k simulaci pomalé síti. (Z aplikaci Fiddler **pravidla** nabídce vyberte možnost **výkonu** pak **simulovat rychlostí**.)
@@ -170,11 +170,11 @@ Následující tabulka uvádí soubory přidané do sady pomocí zástupného, j
 
 | **Volání** | **Přidat soubory nebo byla vyvolána výjimka** |
 | --- | --- |
-| Zahrnout ("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
-| Zahrnout ("~/Scripts/Common/T\*.js") | Neplatný vzor výjimka. Zástupný znak je povolena pouze u předponu nebo příponu. |
-| Zahrnout ("~/Scripts/Common/\*og.\*") | Neplatný vzor výjimka. Je povolen pouze jeden zástupný znak. |
-| "Zahrnují (" ~/Scripts/Common/T\*") | *ToggleDiv.js, ToggleImg.js* |
-| "Zahrnují (" ~/Scripts/Common/\*") | Neplatný vzor výjimka. Segment čistý zástupný znak není platný. |
+| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
+| Include("~/Scripts/Common/T\*.js") | Neplatný vzor výjimka. Zástupný znak je povolena pouze u předponu nebo příponu. |
+| Include("~/Scripts/Common/\*og.\*") | Neplatný vzor výjimka. Je povolen pouze jeden zástupný znak. |
+| "Include("~/Scripts/Common/T\*") | *ToggleDiv.js, ToggleImg.js* |
+| "Include("~/Scripts/Common/\*") | Neplatný vzor výjimka. Segment čistý zástupný znak není platný. |
 | IncludeDirectory ("~/Scripts/Common", "T\*") | *ToggleDiv.js, ToggleImg.js* |
 | IncludeDirectory ("~/Scripts/Common", "T\*", true) | *ToggleDiv.js, ToggleImg.js, ToggleLinks.js* |
 

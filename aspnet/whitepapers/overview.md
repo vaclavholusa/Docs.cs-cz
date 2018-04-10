@@ -2,28 +2,28 @@
 uid: whitepapers/overview
 title: Dokumenty White Paper | Microsoft Docs
 author: rick-anderson
-description: "Na této stránce najdete dokumenty White Paper můžete nainstalovat a nakonfigurovat ASP.NET a při pro psaní zabezpečené, rychlé a flexibilní aplikací ASP.NET."
+description: Na této stránce najdete dokumenty White Paper můžete nainstalovat a nakonfigurovat ASP.NET a při pro psaní zabezpečené, rychlé a flexibilní aplikací ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2011
 ms.topic: article
 ms.assetid: d5e79470-01f2-4d65-8077-11c3e10a6784
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers
 msc.type: content
 ms.openlocfilehash: ba9fda509605025754dc9753266f86585f38b089
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="whitepapers"></a>Dokumenty white paper
 ====================
 > Na této stránce najdete dokumenty White Paper můžete nainstalovat a nakonfigurovat ASP.NET a při pro psaní zabezpečené, rychlé a flexibilní aplikací ASP.NET.
 > 
 > - [ASP.NET 4](#aspnet4)
-> - [Dokumenty White Paper zabezpečení ASP.NET](#security)
+> - [ASP.NET Security Whitepapers](#security)
 > - [Instalace a nastavení dokumenty White Paper](#setup)
 > - [SQL Server dokumenty White Paper](#sql)
 > - [Dokumenty White Paper obecné](#general)
@@ -34,11 +34,11 @@ ms.lasthandoff: 01/24/2018
 
 Informace týkající se rozhraní ASP.NET 4 a Visual Studio 2010.
 
-[Poznámky k verzi ASP.NET MVC 4](mvc4-beta-release-notes.md "mvc4 poznámky")
+[ASP.NET MVC 4 Release Notes](mvc4-beta-release-notes.md "mvc4-release-notes")
 
 Tento dokument popisuje nové funkce a vylepšení ASP.NET MVC 4 Developer Preview pro sadu Visual Studio 2010, jakož i poznámky k instalaci a známé problémy.
 
-[Poznámky k verzi ASP.NET MVC 3](mvc3-release-notes.md "mvc3 poznámky")
+[ASP.NET MVC 3 Release Notes](mvc3-release-notes.md "mvc3-release-notes")
 
 Tento dokument popisuje nové funkce a vylepšení, která byla zavedená v architektuře ASP.NET MVC 3, a také poznámky k instalaci a známé problémy.
 
@@ -59,7 +59,7 @@ Tento dokument popisuje nové funkce a vylepšení, která byla zavedená v ASP.
 ASP.NET MVC 2 lze nainstalovat node souběžně s ASP.NET MVC 1,0 na stejném serveru. To dává flexibilní vývojáři aplikace při volbě, když chcete upgradovat aplikaci ASP.NET MVC 1,0 ASP.NET MVC 2. Tato popisuje dokument obou postup upgradu ručně a pomocí Průvodce aplikace Visual...
 
 <a id="security"></a>
-## <a name="aspnet-security-whitepapers"></a>Dokumenty White Paper zabezpečení ASP.NET
+## <a name="aspnet-security-whitepapers"></a>ASP.NET Security Whitepapers
 
 Zabezpečení je důležitým aspektem internetových aplikací a tyto dokumenty White Paper popisují postup návrhu a implementaci zabezpečení aplikace ASP.NET.
 

@@ -16,7 +16,7 @@ ms.openlocfilehash: 4073f349c7965a89b39a4b1b672f0e84fc96f287
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="user-based-authorization-vb"></a>Ověření na základě uživatele (VB)
 ====================
@@ -401,7 +401,7 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Přidávání do obchodní a datové vrstvy pomocí autorizačních pravidel `PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
-- [Autorizaci ASP.NET](https://msdn.microsoft.com/library/wce3kxhd.aspx)
+- [ASP.NET Authorization](https://msdn.microsoft.com/library/wce3kxhd.aspx)
 - [Změny mezi služby IIS 6 a službu IIS7 zabezpečení](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
 - [Konfigurace konkrétní soubory a podadresáře](https://msdn.microsoft.com/library/6hbkh9s7.aspx)
 - [Omezení funkce změny dat na základě uživatele](../../data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb.md)

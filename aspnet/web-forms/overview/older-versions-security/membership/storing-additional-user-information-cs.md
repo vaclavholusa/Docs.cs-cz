@@ -16,7 +16,7 @@ ms.openlocfilehash: e484f63a82ad9ecf1f376143bdc1924e231e0801
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="storing-additional-user-information-c"></a>Ukládání informací o další uživatele (C#)
 ====================
@@ -511,7 +511,7 @@ Radostí programování!
 Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Přístup k informacím a aktualizace dat v technologii ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
-- [Ovládací prvek ASP.NET 2.0 Průvodce](https://weblogs.asp.net/scottgu/archive/2006/02/21/438732.aspx)
+- [ASP.NET 2.0 Wizard Control](https://weblogs.asp.net/scottgu/archive/2006/02/21/438732.aspx)
 - [Vytváření pomocí ovládacího prvku ASP.NET 2.0 průvodce krok za krokem uživatelské rozhraní](http://aspnet.4guysfromrolla.com/articles/061406-1.aspx)
 - [Vytváření vlastní zdroj dat ovládacího prvku parametrů](http://aspnet.4guysfromrolla.com/articles/110106-1.aspx)
 - [Přizpůsobení ovládacího prvku CreateUserWizard](http://aspnet.4guysfromrolla.com/articles/070506-1.aspx)

@@ -16,11 +16,11 @@ ms.openlocfilehash: 9b273f6827cad2078b581d6da7b127198dfddaa5
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>Vytváření MVC 3 aplikace s Razor a Nerušivý JavaScript
 ====================
-podle [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > Seznam uživatelů ukázkovou webovou aplikaci ukazuje, jak jednoduché je vytvoření aplikace ASP.NET MVC 3 pomocí zobrazovací modul Razor. Ukázkovou aplikaci ukazuje, jak používat nový zobrazovací modul Razor s architekturou ASP.NET MVC verze 3 a Visual Studio 2010 k vytvoření fiktivních webu seznam uživatelů, která zahrnuje funkce, jako je vytváření, zobrazení, úpravy a odstraňování uživatelů.
 > 

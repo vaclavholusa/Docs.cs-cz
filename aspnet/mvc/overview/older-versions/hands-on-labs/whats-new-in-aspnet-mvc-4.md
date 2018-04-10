@@ -16,7 +16,7 @@ ms.openlocfilehash: 977a6b5a84825ebd087752dcc2ebc0c5410e1657
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>Co je nového v architektuře ASP.NET MVC 4
 
@@ -179,7 +179,7 @@ V tomto cvičení zaměříte vylepšení v šablonách projektu ASP.NET MVC 4. 
 
    *Šablona projektu ASP.NET MVC 4 Internetové aplikace*
 
-   - **HTML 5 Markup**
+   - **HTML 5 značek**
 
        Procházejte šablony zobrazení a zjistěte, kód nový motiv.
 
@@ -227,7 +227,7 @@ ASP.NET MVC 4 usnadňuje vývoj webů pro mobilní a tablet prohlížeče. Tato 
 
     *Projekt šablony stránky v mobilních zařízení*
 8. Nová šablona používá také **zobrazení metaznačku**. Většina mobilních prohlížečů definovat šířku pro okno virtuální prohlížeče nebo &quot;zobrazení&quot;, která je větší než skutečná šířka mobilního zařízení. To umožňuje mobilní prohlížeče zobrazíte celou webovou stránku uvnitř virtuální zobrazení. **Zobrazení metaznačku** umožňuje vývojářům webů nastavení šířky, výšky a škále oblasti prohlížeče na mobilních zařízeních **.** Šablony ASP.NET MVC 4 pro mobilní aplikace nastaví zobrazení na šířku zařízení (&quot;šířka = šířkou zařízení&quot;) v šabloně rozložení (*Views\Shared\_Layout.cshtml*) tak, aby všechny stránky budou mít jejich zobrazení nastavena na šířku obrazovky zařízení. Všimněte si, že zobrazení metaznačku nedojde ke změně zobrazení výchozí prohlížeč.
-9. Otevřete  **\_Layout.cshtml**, který je umístěn v **zobrazení | Sdílené** složky a komentář metaznačku zobrazení. Spuštění aplikace, není-li již otevřít a podívejte se na rozdíly.
+9. Otevřete ** \_Layout.cshtml**, který je umístěn v **zobrazení | Sdílené** složky a komentář metaznačku zobrazení. Spuštění aplikace, není-li již otevřít a podívejte se na rozdíly.
 
 
 ~~~
@@ -260,7 +260,7 @@ Pomocí adaptivního vykreslování techniku, bude web **zobrazí správně, bez
 > Je základní formát media dotaz: @media \[oboru: všechny | kapesních | tisku | projekce | obrazovky\] ([vlastnost: hodnota] a... [vlastnost: hodnota])
 
 
-Příklady dotazů média: &gt;  <strong>@media všechny a (max-width: 1000px) a (min-width: 700px) {}:</strong> pro všechny rozlišení mezi 700px a 1000px.
+Příklady dotazů média: &gt; <strong> @media všechny a (max-width: 1000px) a (min-width: 700px) {}:</strong> pro všechny rozlišení mezi 700px a 1000px.
 
 > <strong>@media obrazovky a (min-width: 400 px) a (max-width: 700px) {...}:</strong> pouze pro obrazovky. Řešení musí být v rozsahu od 400 do 700px.
 > 
@@ -273,7 +273,7 @@ Bude nyní prozkoumat, jak funguje adaptivního vykreslování, zlepšení čite
 
 1. Otevřete **PhotoGallery.sln** řešení, které jste vytvořili v úloze 1 a vyberte **Fotogalerie** projektu. Stiskněte klávesu **F5** ke spuštění řešení.
 2. Změnit šířku prohlížeče, nastavení windows polovina nebo méně než čtvrtletí původní velikosti. Všimněte si, co se stane s položkami v hlavičce: některé prvky se nezobrazí v oblasti viditelné hlavičky.
-3. Otevřete <strong>Site.css</strong> soubor v Průzkumníku řešení Visual Studio, umístěný v <strong>obsahu</strong> složce projektu. Stiskněte klávesu <strong>kombinaci kláves CTRL + F</strong> otevřete Visual Studio integrované hledání a zapisovat <strong>@media</strong> najít <strong>šablon stylů CSS media dotaz</strong>.
+3. Otevřete <strong>Site.css</strong> soubor v Průzkumníku řešení Visual Studio, umístěný v <strong>obsahu</strong> složce projektu. Stiskněte klávesu <strong>kombinaci kláves CTRL + F</strong> otevřete Visual Studio integrované hledání a zapisovat <strong> @media </strong> najít <strong>šablon stylů CSS media dotaz</strong>.
 
     Tímto způsobem lze použít média dotazu podmínka, která je definována v této šabloně: když je velikost okna prohlížeče pod **850 px**, použita pravidla stylu CSS jsou ty, které jsou definované v tomto bloku média.
 
@@ -444,7 +444,7 @@ Jednou z klíčových aktualizací v architektuře ASP.NET MVC 4 je podpora pro 
 
     Si všimnete, že aplikace bude vypadat různých v emulátoru Windows Phone, jako jQuery.Mobile.MVC vytvořil nové prostředky ve vašem projektu, který zobrazí zobrazení optimalizované pro mobilní zařízení.
 
-    Všimněte si zpráv v horní části telefonu, zobrazuje odkaz, který se přepne do zobrazení plochy. Kromě toho  **\_Layout.Mobile.cshtml** rozložení, který byl vytvořen jste nainstalovali balíček je včetně rozložení v aplikaci.
+    Všimněte si zpráv v horní části telefonu, zobrazuje odkaz, který se přepne do zobrazení plochy. Kromě toho ** \_Layout.Mobile.cshtml** rozložení, který byl vytvořen jste nainstalovali balíček je včetně rozložení v aplikaci.
 
     > [!NOTE]
     > Zatím není žádný odkaz na mobilní zobrazení nelze vrátit zpět. Mají být zahrnuty v novějších verzích.
@@ -509,7 +509,7 @@ jQuery Mobile výchozí motiv zahrnuje 5 vzorník, které jsou uvedeny písmena 
 V této úloze aktualizujte mobilní rozložení používat jiný než výchozí motiv.
 
 1. Přepněte zpátky na Visual Studio.
-2. Otevřete  **\_Layout.Mobile.cshtml** soubor umístěný ve **Views\Shared**.
+2. Otevřete ** \_Layout.Mobile.cshtml** soubor umístěný ve **Views\Shared**.
 3. Najít div element k roli dat nastavena na &quot;stránky&quot; a aktualizovat **data-theme** k &quot; **e**&quot;.
 
 
@@ -526,7 +526,7 @@ V této úloze aktualizujte mobilní rozložení používat jiný než výchozí
 <a id="Task_4_-_Using_the_View-Switcher_Component_and_the_Browser_Overriding_Features"></a>
 #### <a name="task-4---using-the-view-switcher-component-and-the-browser-overriding-features"></a>Úloha 4 – pomocí komponentu přepínači zobrazení a prohlížeče přepisování funkcí
 
-Konvence pro optimalizované mobilní webové stránky je přidat odkaz, jejíž text je něco jako zobrazení plochy nebo režim plnou verzi webu, který umožňuje uživatelům přepnout na ploše verzi stránky. Balíček jQuery.Mobile.MVC obsahuje ukázkový **přepínači zobrazení** součásti pro tento účel použít v  **\_Layout.Mobile.cshtml** zobrazení.
+Konvence pro optimalizované mobilní webové stránky je přidat odkaz, jejíž text je něco jako zobrazení plochy nebo režim plnou verzi webu, který umožňuje uživatelům přepnout na ploše verzi stránky. Balíček jQuery.Mobile.MVC obsahuje ukázkový **přepínači zobrazení** součásti pro tento účel použít v ** \_Layout.Mobile.cshtml** zobrazení.
 
 ![Odkaz na přepnout na zobrazení plochy](whats-new-in-aspnet-mvc-4/_static/image28.png "odkaz na přepnout na zobrazení plochy")
 
@@ -537,12 +537,12 @@ K přepínači zobrazení používá novou funkci s názvem **přepsání prohl�
 V této úloze bude prozkoumat ukázkové implementace přepínači zobrazení přidal jQuery.Mobile.MVC a nový prohlížeč přepisování funkce v rozhraní ASP.NET MVC 4.
 
 1. Přepněte zpátky na Visual Studio.
-2. Otevřete  **\_Layout.Mobile.cshtml** zobrazení umístěná **Views\Shared** složky a Všimněte si komponentu přepínači zobrazení, který je odkazováno jako částečné zobrazení.
+2. Otevřete ** \_Layout.Mobile.cshtml** zobrazení umístěná **Views\Shared** složky a Všimněte si komponentu přepínači zobrazení, který je odkazováno jako částečné zobrazení.
 
     ![Mobilní rozložení pomocí součásti přepínači zobrazení](whats-new-in-aspnet-mvc-4/_static/image29.png "mobilní rozložení pomocí součásti přepínači zobrazení")
 
     *Mobilní rozložení pomocí součásti přepínači zobrazení*
-3. Otevřete  **\_ViewSwitcher.cshtml** částečné zobrazení.
+3. Otevřete ** \_ViewSwitcher.cshtml** částečné zobrazení.
 
     Částečné zobrazení používá nová metoda **ViewContext.HttpContext.GetOverriddenBrowser()** zobrazit na odpovídající odkaz přepnout buď zobrazení Desktop nebo Mobile a určení původu webového požadavku.
 
@@ -567,8 +567,8 @@ V této úloze aktualizujte plochy rozložení zahrnout k přepínači zobrazen�
 
 1. Aktualizujte lokality v **emulátoru Windows Phone**.
 2. Klikněte na **zobrazení plochy** odkaz v horní části galerie. Všimněte si, že v zobrazení plochy tak, aby umožnily že vrátíte na mobilní zobrazení žádné přepínači zobrazení.
-3. Přejděte zpět na Visual Studio a otevřete  **\_Layout.cshtml** zobrazení.
-4. Najít oddíl přihlášení a vložení volání k vykreslení  **\_ViewSwitcher** částečné zobrazení níže  **\_LogOnPartial** částečné zobrazení. Potom stiskněte klávesu **kombinaci kláves CTRL + S** a uložte změny.
+3. Přejděte zpět na Visual Studio a otevřete ** \_Layout.cshtml** zobrazení.
+4. Najít oddíl přihlášení a vložení volání k vykreslení ** \_ViewSwitcher** částečné zobrazení níže ** \_LogOnPartial** částečné zobrazení. Potom stiskněte klávesu **kombinaci kláves CTRL + S** a uložte změny.
 
 
 ~~~
@@ -622,8 +622,8 @@ After this code runs, when an iPhone browser generates a request, your applicati
 > [!NOTE]
 > This way of testing the request for iPhone has been simplified for demo purposes and might not work as expected for every iPhone user agent string (for example test is case sensitive).
 ~~~
-4. Vytvořit kopii  **\_Layout.Mobile.cshtml** v soubor **Views\Shared** složku a přejmenujte kopírovat do &quot; **\_Layout.iPhone.csthml**&quot;.
-5. Otevřete  **\_Layout.iPhone.csthml** jste vytvořili v předchozím kroku.
+4. Vytvořit kopii ** \_Layout.Mobile.cshtml** v soubor **Views\Shared** složku a přejmenujte kopírovat do &quot; ** \_Layout.iPhone.csthml **&quot;.
+5. Otevřete ** \_Layout.iPhone.csthml** jste vytvořili v předchozím kroku.
 6. Najít div element s atribut data-role nastaven na **stránky** a změňte **data-theme** atribut &quot; **a**&quot;.
 
 
@@ -700,7 +700,7 @@ Tento postup vysvětluje základy asynchronní operace v rozhraní ASP.NET MVC 4
 ~~~
 7. Změnit kód pokračujte s asynchronní implementace nahrazením řádky s novým kódem, jak je uvedeno níže
 
-    (Code fragment kódu - *architektury ASP.NET MVC 4 laboratoř - Ex04 - ReadAsStringAsync*)
+    (Code Snippet - *ASP.NET MVC 4 Lab - Ex04 - ReadAsStringAsync*)
 
 
 ~~~
@@ -737,7 +737,7 @@ Asynchronní akce metody, které vracejí instance úloh může také podporovat
 ~~~
 [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample25.cs)]
 ~~~
-5. Uspořádání *Index* metoda s **hodnota vlastnosti AsyncTimeout** atributu nastavena na 500 milisekund a **HandleError** atributu nakonfigurovaného pro zpracování  **TaskCanceledException** přesměrováním na **TimedOut** zobrazení.
+5. Uspořádání *Index* metoda s **hodnota vlastnosti AsyncTimeout** atributu nastavena na 500 milisekund a **HandleError** atributu nakonfigurovaného pro zpracování ** TaskCanceledException** přesměrováním na **TimedOut** zobrazení.
 
     (Code fragment kódu - *atributy architektury ASP.NET MVC 4 laboratoř - Ex04 -*)
 
@@ -842,7 +842,7 @@ S fragmenty kódu máte všechny kód, který je nutné na dosah ruky. Dokument 
 <a id="Appendix_B_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-b-installing-visual-studio-express-2012-for-web"></a>Příloha B: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze ** [instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx) **. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
 1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
 2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.

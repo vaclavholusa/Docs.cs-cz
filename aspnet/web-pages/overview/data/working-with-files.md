@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/working-with-files
-title: "Práce se soubory v stránku ASP.NET Web Pages (Razor) | Microsoft Docs"
+title: Práce se soubory v stránku ASP.NET Web Pages (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tato kapitola vysvětluje, jak číst, zapisovat, připojení, odstranění a nahrání souborů."
+description: Tato kapitola vysvětluje, jak číst, zapisovat, připojení, odstranění a nahrání souborů.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
 ms.openlocfilehash: 0f119f8fb4873e55292203f21a2efd8f26793ae4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>Práce se soubory v Web Pages (Razor) technologie ASP.NET
 ====================
@@ -133,7 +133,7 @@ Tento postup ukazuje, jak ke čtení a zobrazení data, která jste vytvořili v
 
     Kód k tomu je uvnitř `if` příkaz. Pokud chcete přečíst soubor, je vhodné použít `File.Exists` metoda nejprve určit, zda je soubor k dispozici. Kód také zkontroluje, zda je soubor prázdný.
 
-    Tělo stránky obsahuje dva `foreach` cyklu, jeden vnořený do druhého. Vnější `foreach` smyčky získá jeden řádek v čase z datového souboru. V takovém případě jsou definovány řádky konců řádků v souboru &#8212; Každá položka dat je na samostatném řádku. Vytvoří novou položku vnější smyčky (`<li>` element) uvnitř uspořádaného seznamu (`<ol>` element).
+    Tělo stránky obsahuje dva `foreach` cyklu, jeden vnořený do druhého. Vnější `foreach` smyčky získá jeden řádek v čase z datového souboru. V takovém případě jsou definovány řádky konce řádků v souboru &#8212; každá položka dat je na samostatném řádku. Vytvoří novou položku vnější smyčky (`<li>` element) uvnitř uspořádaného seznamu (`<ol>` element).
 
     Vnitřní smyčky rozdělí každý řádek dat na položky (pole) pomocí čárky jako oddělovač. (Založená na předchozí příklad, to znamená, že každý řádek obsahuje tři pole &#8212; křestní jméno, příjmení a e-mailovou adresu, oddělených čárkami.) Vnitřní smyčky také vytvoří `<ul>` položky seznamu a zobrazí jeden seznam pro každé pole v řádku data.
 
@@ -194,7 +194,7 @@ Chcete-li odstranit soubory z vašeho webu, můžete použít `File.Delete` meto
 
     Vlastnosti, které jste vytvořili `FileUpload` pomocníka zadejte má jediné pole pro soubor k odeslání a že chcete tlačítko Odeslat ke čtení **nahrát**. (Další polí přidáte později v článku.)
 
-    Když uživatel klikne na **nahrát**, kód v horní části stránky získá souboru a jeho uložení. `Request` Také obsahuje objekt, který běžně slouží k získání hodnoty z pole formuláře `Files` pole, která obsahuje soubor (nebo soubory), byly odeslány. Můžete získat jednotlivé soubory z konkrétní pozici v poli &#8212; například první nahrávaný soubor získáte získáte `Request.Files[0]`, abyste získali druhý soubor, můžete získat `Request.Files[1]`a tak dále. (Nezapomeňte, že při programování, počítání obvykle začíná od nuly.)
+    Když uživatel klikne na **nahrát**, kód v horní části stránky získá souboru a jeho uložení. `Request` Také obsahuje objekt, který běžně slouží k získání hodnoty z pole formuláře `Files` pole, která obsahuje soubor (nebo soubory), byly odeslány. Můžete získat jednotlivé soubory z konkrétní pozici v poli &#8212; například získat první nahrávaný soubor, získat `Request.Files[0]`, abyste získali druhý soubor, získáte `Request.Files[1]`a tak dále. (Nezapomeňte, že při programování, počítání obvykle začíná od nuly.)
 
     Při načítání nahrávaný soubor jste ji vložili do proměnné (zde `uploadedFile`) tak, že je můžete používat. K určení názvu uloženého souboru, právě získáte jeho `FileName` vlastnost. Ale když uživatel odešle soubor, `FileName` obsahuje název původního uživatele, který zahrnuje celou cestu. Ho může vypadat například takto:
 
@@ -238,7 +238,7 @@ V předchozím příkladu umožníte uživatelům odeslat jeden soubor. Ale mů�
 
     ![[Obrázek]](working-with-files/_static/image11.jpg)
 
-    Zpracovat soubory, které uživatel odešle, kód používá stejný základní postup, který jste použili v předchozí příklad &#8212; získat soubor z `Request.Files` a pak ho uložte. (Včetně různých věcí musíte udělat správný název souboru a cesty.) Inovace této doby je, že uživatel může být odesílání několik souborů a neznáte mnoho. Pokud chcete zjistit, můžete získat `Request.Files.Count`.
+    Zpracovat soubory, které uživatel odešle, kód používá stejný základní postup, který jste použili v předchozím příkladu &#8212; získat soubor z `Request.Files` a pak ho uložte. (Včetně různých věcí musíte udělat správný název souboru a cesty.) Inovace této doby je, že uživatel může být odesílání několik souborů a neznáte mnoho. Pokud chcete zjistit, můžete získat `Request.Files.Count`.
 
     S tímto číslem v dolním, které můžete projít `Request.Files`, zase načíst každý soubor a uložte ho. Pokud chcete cykly pouze známé počet opakování v kolekci, můžete použít `for` smyčky, například takto:
 

@@ -16,11 +16,11 @@ ms.openlocfilehash: 90faaae75cc85585efa05e6e50eabe8c990d076e
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="caching"></a>Caching
 ====================
-podle [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > Představu o ukládání do mezipaměti je důležité pro dobře provádění aplikaci ASP.NET. ASP.NET 1.x nabízí tři různé možnosti pro ukládání do mezipaměti; ukládání výstupu do mezipaměti, fragment ukládání do mezipaměti a mezipaměti rozhraní API.
 
@@ -249,13 +249,13 @@ Následující atributy jsou k dispozici pro &lt;outputCache&gt; elementu.
 
 &lt;OutputCacheSettings&gt; element umožňuje pro vytvoření profilů mezipaměti výše popsané. Pouze podřízený element pro &lt;outputCacheSettings&gt; elementu je &lt;outputCacheProfiles&gt; element pro konfiguraci profilů mezipaměti.
 
-### <a name="the-ltsqlcachedependencygt-element"></a>&lt;SqlCacheDependency&gt; – Element
+### <a name="the-ltsqlcachedependencygt-element"></a>The &lt;sqlCacheDependency&gt; Element
 
 Následující atributy jsou k dispozici pro &lt;sqlCacheDependency&gt; elementu.
 
 | **Atribut** | **Popis** |
 | --- | --- |
-| **povoleno** | Požadované **Boolean** atribut. Určuje, zda jsou změny dotazován na. |
+| **enabled** | Požadované **Boolean** atribut. Určuje, zda jsou změny dotazován na. |
 | **pollTime** | Volitelné **Int32** atribut. Nastaví frekvenci, se kterým SqlCacheDependency dotazuje na změny v tabulce databáze. Tato hodnota odpovídá počet milisekund, po mezi po sobě následujících dotazech. Nejde ji nastavit na míň než 500 milisekund. Výchozí hodnota je 1 minuta. |
 
 ### <a name="more-information"></a>Další informace
@@ -290,7 +290,7 @@ Existuje nějaké další informace, které byste měli znát z o konfiguraci me
 7. Otevřete cache.xml a přidejte následující kód: 
 
     [!code-xml[Main](caching/samples/sample17.xml)]
-8. Uložte cache.xml.
+8. Save cache.xml.
 9. Aktualizujte webový prohlížeč. Co říká čas?
 10. Vysvětlit, proč čas aktualizovat místo zobrazení uložené v mezipaměti hodnoty:
 

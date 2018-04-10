@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
-title: "Prevence XSRF/proti útokům CSRF v architektuře ASP.NET MVC a webových stránek | Microsoft Docs"
+title: Prevence XSRF/proti útokům CSRF v architektuře ASP.NET MVC a webových stránek | Microsoft Docs
 author: Rick-Anderson
-description: "Padělání požadavku posílaného mezi weby (také označované jako XSRF nebo proti útokům CSRF) je útok na hostované webové aplikace, při kterém se škodlivý web mohou mít vliv Interakti..."
+description: Padělání požadavku posílaného mezi weby (také označované jako XSRF nebo proti útokům CSRF) je útok na hostované webové aplikace, při kterém se škodlivý web mohou mít vliv Interakti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2013
@@ -13,14 +13,14 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
 ms.openlocfilehash: 6cf30daa7ed966b11405cec715c5bc803b567249
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>Prevence XSRF/proti útokům CSRF v architektuře ASP.NET MVC a webových stránek
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Padělání (také označované jako XSRF nebo proti útokům CSRF) je útok na hostované webové aplikace, které můžete vytvořit web ovlivnit interakce mezi klientského prohlížeče a webu důvěryhodný prohlížeč tohoto webů požadavek. Tyto útoky jsou možné, protože webových prohlížečů bude odesílat tokeny ověřování automaticky s každou žádost na web. V kanonickém tvaru příkladu je soubor cookie ověřování, jako je například ASP. Lístek ověřování pomocí formulářů pro Asp.net. Tyto útoky však může být cílem weby, které používají všechny trvalé ověřovací mechanismus (například ověřování systému Windows, Basic a tak dále).
 > 
@@ -86,7 +86,7 @@ Datových částí tokeny anti-XSRF se šifrovaný a podepsaný, tak při použi
 Ke generování tokenů anti-XSRF, volání [ @Html.AntiForgeryToken ](https://msdn.microsoft.com/library/dd470175.aspx) metoda ze zobrazení MVC nebo @AntiForgery.GetHtml() ze stránky Razor. Modul runtime pak provede následující kroky:
 
 1. Pokud aktuální žádost HTTP již obsahuje token anti-XSRF relace (soubor cookie anti-XSRF \_ \_RequestVerificationToken), se z něj extrahuje token zabezpečení. Pokud požadavek HTTP neobsahuje token anti-XSRF relace nebo pokud extrakce tokenu zabezpečení se nezdařila, vygeneruje se nový token anti-XSRF náhodné.
-2. Token anti-XSRF pole je generována pomocí tokenu zabezpečení z kroku (1) a totožnosti aktuálně přihlášeného uživatele. (Další informace o určení identity uživatele, najdete v článku  **[scénáře s podporou speciální](#_Scenarios_with_special)**  části.) Kromě toho pokud [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx) je nakonfigurována, bude volat modulu runtime jeho [GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx) metoda a zahrnout do pole token vrácený řetězec. (Viz  **[konfigurace a rozšíření](#_Configuration_and_extensibility)**  části Další informace.)
+2. Token anti-XSRF pole je generována pomocí tokenu zabezpečení z kroku (1) a totožnosti aktuálně přihlášeného uživatele. (Další informace o určení identity uživatele, najdete v článku **[scénáře s podporou speciální](#_Scenarios_with_special)** části.) Kromě toho pokud [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx) je nakonfigurována, bude volat modulu runtime jeho [GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx) metoda a zahrnout do pole token vrácený řetězec. (Viz **[konfigurace a rozšíření](#_Configuration_and_extensibility)** části Další informace.)
 3. Pokud nový token anti-XSRF se vygeneroval v kroku (1), token novou relaci pro ji obsahují se vytvoří a bude přidán ke kolekci souborů cookie odchozí HTTP. Pole tokenu z kroku (2) bude uzavřen do `<input type="hidden" />` elementu a tento kód HTML se vrátí hodnotu, která `Html.AntiForgeryToken()` nebo `AntiForgery.GetHtml()`.
 
 ## <a name="validating-the-tokens"></a>Ověřování tokenů
@@ -108,9 +108,9 @@ Od verze ASP.NET Web zásobníku Runtime v2, všechny *HttpAntiForgeryException*
 - Token relace a pole token byly vzájemně zaměněny.
 - Token relace a pole token obsahovat tokeny neodpovídající zabezpečení.
 - Vložená do tokenu pole uživatelské jméno neodpovídá uživatelské jméno aktuálního přihlášeného uživatele.
-- *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)*  metoda vrátí *false*.
+- *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)* metoda vrátí *false*.
 
-Anti-XSRF zařízení může také provést další kontrolu během ověření nebo generování tokenů a selhání během těchto kontrol může vést k výjimkám hlášeny. Najdete v článku [WIF / ACS / založené na deklaracích identity ověřování](#_WIF_ACS) a  **[konfigurace a rozšíření](#_Configuration_and_extensibility)**  částech Další informace.
+Anti-XSRF zařízení může také provést další kontrolu během ověření nebo generování tokenů a selhání během těchto kontrol může vést k výjimkám hlášeny. Najdete v článku [WIF / ACS / založené na deklaracích identity ověřování](#_WIF_ACS) a **[konfigurace a rozšíření](#_Configuration_and_extensibility)** částech Další informace.
 
 <a id="_Scenarios_with_special"></a>
 
@@ -139,10 +139,10 @@ Mnoho nasazení, které používají ověřování založené na deklaracích po
 
 Při generování nebo ověření tokenu, bude modulem Runtime ASP.NET Web zásobníku v době běhu zkuste vazby pro typy:
 
-- `Microsoft.IdentityModel.Claims.IClaimsIdentity, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35`(Pro sadu SDK WIF.)
-- `System.Security.Claims.ClaimsIdentity`(Pro .NET 4.5).
+- `Microsoft.IdentityModel.Claims.IClaimsIdentity, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35` (Pro sadu SDK WIF.)
+- `System.Security.Claims.ClaimsIdentity` (For .NET 4.5).
 
-Pokud tyto typy existují a pokud aktuální uživatel *IIIIdentity* implementuje nebo podtřídy jednu z těchto typů, anti-XSRF zařízení bude používat (zprostředkovatele identity, identifikátor jména) řazené kolekce členů namísto uživatelského jména, při generování a ověřování tokenů. Pokud je k dispozici žádný takový řazené kolekce členů, požadavek se nezdaří s chybou popisující pro vývojáře, jak nakonfigurovat systém anti-XSRF a zjistěte, konkrétní založené na deklaracích ověřovací mechanismus používá. Najdete v článku  **[konfigurace a rozšíření](#_Configuration_and_extensibility)**  části Další informace.
+Pokud tyto typy existují a pokud aktuální uživatel *IIIIdentity* implementuje nebo podtřídy jednu z těchto typů, anti-XSRF zařízení bude používat (zprostředkovatele identity, identifikátor jména) řazené kolekce členů namísto uživatelského jména, při generování a ověřování tokenů. Pokud je k dispozici žádný takový řazené kolekce členů, požadavek se nezdaří s chybou popisující pro vývojáře, jak nakonfigurovat systém anti-XSRF a zjistěte, konkrétní založené na deklaracích ověřovací mechanismus používá. Najdete v článku **[konfigurace a rozšíření](#_Configuration_and_extensibility)** části Další informace.
 
 ### <a name="oauth--openid-authentication"></a>OAuth / OpenID ověřování
 
@@ -167,7 +167,7 @@ Vývojář může konfigurovat systém anti-XSRF z aplikace\_spustit. Konfigurac
 | --- | --- |
 | **AdditionalDataProvider** | [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) , poskytuje dodatečná data během generování tokenů a odebírá další data během ověření tokenu. Výchozí hodnota je *null*. Další informace najdete v tématu [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) části. |
 | **CookieName** | Řetězec, který poskytuje název souboru cookie HTTP, který se používá k ukládání tokenu anti-XSRF relace. Pokud tato hodnota není nastavená, název budou automaticky generovány podle nasazené virtuální cestu aplikace. Výchozí hodnota je *null*. |
-| **RequireSsl** | Logická hodnota, která určuje, jestli tokeny anti-XSRF se vyžadují k odeslání přes kanál zabezpečené protokolem SSL. Pokud je tato hodnota *true*, všechny soubory cookie automaticky generované bude mít nastaven příznak "zabezpečení" a rozhraní API anti-XSRF vyvolá výjimku, pokud je volána v rámci žádosti, které není odeslána prostřednictvím protokolu SSL. Výchozí hodnota je *false*. |
+| **requireSsl** | Logická hodnota, která určuje, jestli tokeny anti-XSRF se vyžadují k odeslání přes kanál zabezpečené protokolem SSL. Pokud je tato hodnota *true*, všechny soubory cookie automaticky generované bude mít nastaven příznak "zabezpečení" a rozhraní API anti-XSRF vyvolá výjimku, pokud je volána v rámci žádosti, které není odeslána prostřednictvím protokolu SSL. Výchozí hodnota je *false*. |
 | **SuppressIdentityHeuristicChecks** | Logická hodnota, která určuje, zda by měl systém anti-XSRF deaktivovat podporuje založené na deklaracích identity. Pokud je tato hodnota *true*, systém bude předpokládat, že *IIdentity.Name* je vhodné pro použití jako identifikátor jedinečná uživatelská a nebude pokoušet zvláštní případ *IClaimsIdentity*nebo *ClClaimsIdentity* jak je popsáno v [WIF / ACS / založené na deklaracích identity ověřování](#_WIF_ACS) části. Výchozí hodnota je `false`. |
 | **UniqueClaimTypeIdentifier** | Řetězec, který určuje, které deklarace identity typu je vhodná pro použití jako identifikátor jedinečný jednotlivé uživatele. Pokud tato hodnota je sada a aktuální *identita* je založené na deklaracích, systém se pokusí o extrahování deklarace identity typu určeného *UniqueClaimTypeIdentifier*, a budou použity s odpovídající hodnotou místo při generování token pole uživatelské jméno. Pokud není nalezen typ deklarace identity, systém nesplní žádost. Výchozí hodnota je *null*, což naznačuje, že systém má použít (zprostředkovatele identity, identifikátor jména) podle předchozích pokynů namísto uživatelského jména uživatele řazené kolekce členů. |
 
@@ -175,7 +175,7 @@ Vývojář může konfigurovat systém anti-XSRF z aplikace\_spustit. Konfigurac
 
 ### <a name="iantiforgeryadditionaldataprovider"></a>IAntiForgeryAdditionalDataProvider
 
-*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)*  typ mohou vývojáři rozšířit chování systému anti-XSRF odezvy další data v každý token. *GetAdditionalData* metoda je volána pokaždé, když se vygeneruje token pole a vložené návratovou hodnotu v rámci vygenerovaný token. Implementátor může vrátit časové razítko, hodnotu nonce nebo jakoukoli jinou hodnotu, které Jana, které z této metody.
+*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)* typ mohou vývojáři rozšířit chování systému anti-XSRF odezvy další data v každý token. *GetAdditionalData* metoda je volána pokaždé, když se vygeneruje token pole a vložené návratovou hodnotu v rámci vygenerovaný token. Implementátor může vrátit časové razítko, hodnotu nonce nebo jakoukoli jinou hodnotu, které Jana, které z této metody.
 
 Podobně *ValidateAdditionalData* metoda je volána pokaždé, když se ověří token pole a je "Další data" řetězec, který byl vložen v rámci token předaný metodě. Rutiny ověřování může implementovat vypršení časového limitu (kontrolou aktuální čas na dobu, která byla uložená, když byl vytvořen token), hodnotu nonce zaškrtnutím rutiny nebo jakékoliv potřeby logiku.
 

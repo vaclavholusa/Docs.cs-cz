@@ -16,7 +16,7 @@ ms.openlocfilehash: d29f09d726e835c1eb1fc38e643a4bfe7f00f61c
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 04/06/2018
     - [Webové rozhraní API v ASP.NET](#_Toc317096197)
     - [Aplikace ASP.NET jedné stránky](#_Toc317096198)
     - [Vylepšení výchozí šablony projektů](#_Toc303253808)
-    - [Šablona projektu mobilní](#_Toc303253809)
+    - [Mobile Project Template](#_Toc303253809)
     - [Režimy zobrazení](#_Toc303253810)
     - [jQuery Mobile, přepínači zobrazení a přepsání prohlížeče](#_Toc303253811)
     - [Recepty pro generování kódu v sadě Visual Studio](#_Toc303253812)
@@ -112,7 +112,7 @@ Pokud chcete ručně upgradovat do verze 4 existující aplikaci ASP.NET MVC 3, 
 4. V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a pak vyberte Uvolnit projekt. Potom znovu klikněte pravým tlačítkem a vyberte Upravit *ProjectName*.csproj.
 5. Vyhledejte *ProjectTypeGuids* elementu a nahraďte {E3E379DF-F4C6-4180-9B81-6769533ABE47} {E53F8FEA-EAE0-44A6-8774-FFD645390401}.
 6. Uložte změny, zavřete soubor projektu (.csproj), kterou jste upravovali, klikněte pravým tlačítkem na projekt a potom vyberte znovu načíst projekt.
-7. Pokud projekt odkazuje na knihovny jakékoli třetí strany, kompilovaná pomocí předchozích verzích rozhraní ASP.NET MVC, otevřete v kořenovém souboru Web.config a přidejte následující tři *bindingRedirect* elementů v rámci  *konfigurace* části: 
+7. Pokud projekt odkazuje na knihovny jakékoli třetí strany, kompilovaná pomocí předchozích verzích rozhraní ASP.NET MVC, otevřete v kořenovém souboru Web.config a přidejte následující tři *bindingRedirect* elementů v rámci * konfigurace* části: 
 
     [!code-xml[Main](mvc4-beta-release-notes/samples/sample4.xml)]
 
@@ -170,7 +170,7 @@ Další vylepšení výchozí šablona projektu je použití JavaScript zajistit
 ![](mvc4-beta-release-notes/_static/image3.png)
 
 <a id="_Toc303253809"></a>
-### <a name="mobile-project-template"></a>Šablona projektu mobilní
+### <a name="mobile-project-template"></a>Mobile Project Template
 
 Pokud se spuštění nového projektu a chcete vytvořit web speciálně pro mobilní a tablet prohlížeče, můžete v šabloně projektů nové mobilní aplikace. To je založené na technologii jQuery Mobile, knihovny open source pro vytváření dotykovým uživatelského rozhraní:
 
@@ -219,7 +219,7 @@ Konvence pro optimalizované mobilní webové stránky je přidat odkaz, jejíž
 
 Pokud návštěvníky klikněte na odkaz, budou se přepnout do plochy verzi stejné stránce.
 
-Protože vaše plochy rozložení nebude obsahovat přepínači zobrazení ve výchozím nastavení, nebude mít návštěvníky způsob, jak získat pro režim mobilní. Chcete-li povolit, přidejte následující odkaz na  *\_ViewSwitcher* na vaší ploše rozložení právě uvnitř *&lt;textu&gt;* element:
+Protože vaše plochy rozložení nebude obsahovat přepínači zobrazení ve výchozím nastavení, nebude mít návštěvníky způsob, jak získat pro režim mobilní. Chcete-li povolit, přidejte následující odkaz na * \_ViewSwitcher* na vaší ploše rozložení právě uvnitř * &lt;textu&gt; * element:
 
 [!code-cshtml[Main](mvc4-beta-release-notes/samples/sample7.cshtml)]
 
@@ -305,7 +305,7 @@ ASP.NET MVC 4 Beta podporuje září 2011 1.5 verzi sady Windows Azure SDK.
 
     **Požadované aktualizace**
 
-  1. V kořenovém souboru Web.config, přidejte nový *&lt;appSettings&gt;* položka s klíčem *webPages:Version* a hodnotu *1.0.0.0*.
+  1. V kořenovém souboru Web.config, přidejte nový * &lt;appSettings&gt; * položka s klíčem *webPages:Version* a hodnotu *1.0.0.0*.
 
       [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
   2. V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a pak vyberte Uvolnit projekt. Potom znovu klikněte pravým tlačítkem a vyberte Upravit *ProjectName*.csproj.

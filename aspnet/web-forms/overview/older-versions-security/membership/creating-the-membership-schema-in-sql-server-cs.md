@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs
-title: "Vytvoření schématu členství v systému SQL Server (C#) | Microsoft Docs"
+title: Vytvoření schématu členství v systému SQL Server (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu spustí prověřením techniky pro přidání schéma potřebné k databázi chcete-li použít SqlMembershipProvider. Následující, jsme wi..."
+description: V tomto kurzu spustí prověřením techniky pro přidání schéma potřebné k databázi chcete-li použít SqlMembershipProvider. Následující, jsme wi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 38fc60b79a348ab198069a9a80a085e0dc4bcb88
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4fa0476ca8336b56340dd177f9816acbe015ef7d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-the-membership-schema-in-sql-server-c"></a>Vytvoření schématu členství v systému SQL Server (C#)
 ====================
@@ -158,9 +158,9 @@ Druhý krok v Průvodci zjistím, jestli chcete přidat aplikační služby nebo
 
 Třetí krok vyzve k zadání informace o databázi: název serveru, informace o ověřování a název databáze. Pokud jste byli po společně s tohoto kurzu a přidali `SecurityTutorials.mdf` do databáze `App_Data`, připojit se k `localhost\InstanceName`a přejmenoval jej na `SecurityTutorialsDatabase`, potom použijte následující hodnoty:
 
-- Server:`localhost\InstanceName`
+- Server: `localhost\InstanceName`
 - Ověřování systému Windows
-- Databáze:`SecurityTutorialsDatabase`
+- Databáze: `SecurityTutorialsDatabase`
 
 
 [![Zadejte informace o databázi](creating-the-membership-schema-in-sql-server-cs/_static/image26.png)](creating-the-membership-schema-in-sql-server-cs/_static/image25.png)
@@ -204,7 +204,7 @@ Rozhraní členství a role jsou navrženy tak, že jedno úložiště uživatel
 **Obrázek 11**: uživatelské účty může být rozdělena na oddíly napříč více aplikacemi ([Kliknutím zobrazit obrázek v plné velikosti](creating-the-membership-schema-in-sql-server-cs/_static/image33.png))
 
 
-`aspnet_Applications` Tabulka je co definuje tyto oddíly. Každá aplikace, která používá databázi k ukládání informací o uživatelském účtu je reprezentována řádek v této tabulce. `aspnet_Applications` Tabulka obsahuje čtyři sloupce: `ApplicationId`, `ApplicationName`, `LoweredApplicationName`, a `Description`. `ApplicationId`je typu [ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx) a je primární klíč v tabulce; `ApplicationName` poskytuje jedinečný lidské popisný název pro každou aplikaci.
+`aspnet_Applications` Tabulka je co definuje tyto oddíly. Každá aplikace, která používá databázi k ukládání informací o uživatelském účtu je reprezentována řádek v této tabulce. `aspnet_Applications` Tabulka obsahuje čtyři sloupce: `ApplicationId`, `ApplicationName`, `LoweredApplicationName`, a `Description`. `ApplicationId` je typu [ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx) a je primární klíč v tabulce; `ApplicationName` poskytuje jedinečný lidské popisný název pro každou aplikaci.
 
 Členství a Role související tabulky propojit zpět `ApplicationId` pole `aspnet_Applications`. Například `aspnet_Users` tabulky a který obsahuje záznam pro každý uživatelský účet, má `ApplicationId` pole cizího klíče; viz výše pro `aspnet_Roles` tabulky. `ApplicationId` Pole v těchto tabulkách určuje oddílu aplikace uživatelský účet nebo role patří.
 
@@ -216,7 +216,7 @@ Informace o uživatelském účtu je umístěna ve dvou tabulek: `aspnet_Users` 
 - `UserName`
 - `ApplicationId`
 
-`UserId`je primární klíč (a typu `uniqueidentifier`). `UserName`je typu `nvarchar(256)` a společně s heslo, tvoří přihlašovacích údajů uživatele. (Heslo uživatele je uložený v `aspnet_Membership` tabulku.) `ApplicationId` odkazuje na uživatelský účet na konkrétní aplikace v `aspnet_Applications`. Je složené [ `UNIQUE` omezení](https://msdn.microsoft.com/library/ms191166.aspx) na `UserName` a `ApplicationId` sloupce. To zajistí, že v dané aplikaci každé uživatelské jméno je jedinečný, ale umožňuje pro stejné `UserName` pro použití v různých aplikací.
+`UserId` je primární klíč (a typu `uniqueidentifier`). `UserName` je typu `nvarchar(256)` a společně s heslo, tvoří přihlašovacích údajů uživatele. (Heslo uživatele je uložený v `aspnet_Membership` tabulku.) `ApplicationId` odkazuje na uživatelský účet na konkrétní aplikace v `aspnet_Applications`. Je složené [ `UNIQUE` omezení](https://msdn.microsoft.com/library/ms191166.aspx) na `UserName` a `ApplicationId` sloupce. To zajistí, že v dané aplikaci každé uživatelské jméno je jedinečný, ale umožňuje pro stejné `UserName` pro použití v různých aplikací.
 
 `aspnet_Membership` Tabulka obsahuje další informace o uživatelském účtu, jako je heslo uživatele, e-mailovou adresu, poslední přihlášení datum a čas a tak dále. Je mezi záznamy v souvislosti `aspnet_Users` a `aspnet_Membership` tabulky. Tento vztah je zajištěna `UserId` pole `aspnet_Membership`, který slouží jako primární klíč tabulky. Podobně jako `aspnet_Users` tabulky, `aspnet_Membership` zahrnuje `ApplicationId` pole, která sváže tyto informace do oddílu aplikace.
 
@@ -230,7 +230,7 @@ Heslo informace jsou uloženy v `aspnet_Membership` tabulky. `SqlMembershipProvi
 
 Použitá metoda heslo úložiště závisí na `SqlMembershipProvider` nastavení zadané v `Web.config`. Přizpůsobení se podíváme `SqlMembershipProvider` nastavení v kroku 4. Výchozí chování je uložení hodnoty hash hesla.
 
-Sloupce zodpovědná za uložení hesla `Password`, `PasswordFormat`, a `PasswordSalt`. `PasswordFormat`je pole typu `int` techniku, používá se pro ukládání heslo označuje, jehož hodnota: 0 pro zaškrtnutí, 1 pro Hashed; 2 pro šifrovaný. `PasswordSalt`je přiřazen náhodně generované řetězec bez ohledu na to technika úložiště heslo, používat; Hodnota `PasswordSalt` se používá pouze při výpočtu hodnoty hash hesla. Nakonec `Password` sloupec obsahuje data vlastní heslo, je jej heslo v prostém textu, hodnota hash hesla nebo zašifrované heslo.
+Sloupce zodpovědná za uložení hesla `Password`, `PasswordFormat`, a `PasswordSalt`. `PasswordFormat` je pole typu `int` techniku, používá se pro ukládání heslo označuje, jehož hodnota: 0 pro zaškrtnutí, 1 pro Hashed; 2 pro šifrovaný. `PasswordSalt` je přiřazen náhodně generované řetězec bez ohledu na to technika úložiště heslo, používat; Hodnota `PasswordSalt` se používá pouze při výpočtu hodnoty hash hesla. Nakonec `Password` sloupec obsahuje data vlastní heslo, je jej heslo v prostém textu, hodnota hash hesla nebo zašifrované heslo.
 
 Tabulka 1 ukazuje, jak tyto tři sloupce může vypadat pro různé postupy úložiště při ukládání hesel MySecret! .
 
@@ -254,7 +254,7 @@ Rozhraní framework role vývojářům umožňuje definovat sadu rolí a určit,
 - `RoleName`
 - `ApplicationId`
 
-`RoleId`je primární klíč (a typu `uniqueidentifier`). `RoleName`je typu `nvarchar(256)`. A `ApplicationId` odkazuje na uživatelský účet na konkrétní aplikace v `aspnet_Applications`. Je složené `UNIQUE` omezení `RoleName` a `ApplicationId` sloupců, zajišťující, že v dané aplikaci je jedinečný název každé role.
+`RoleId` je primární klíč (a typu `uniqueidentifier`). `RoleName` je typu `nvarchar(256)`. A `ApplicationId` odkazuje na uživatelský účet na konkrétní aplikace v `aspnet_Applications`. Je složené `UNIQUE` omezení `RoleName` a `ApplicationId` sloupců, zajišťující, že v dané aplikaci je jedinečný název každé role.
 
 `aspnet_UsersInRoles` Tabulka slouží jako mapování mezi uživateli a role. Jsou pouze dva sloupce - `UserId` a `RoleId` - a společně tvoří složené primární klíč.
 
@@ -313,8 +313,8 @@ Jak vidíte, definuje tento připojovací řetězec SQL 2005 Express Edition se 
 
 Pokud jsme nezadali žádné informace o poskytovateli členství v naší aplikaci `Web.config` soubor, aplikace použije výchozí zaregistrovaný zprostředkovatel členství, `AspNetSqlMembershipProvider`. Pokud `~/App_Data/aspnet.mdf` databáze neexistuje, bude modulem runtime ASP.NET automaticky vytvořit a přidat schématu služby aplikací. Jsme ale nechcete použít `aspnet.mdf` databáze; místo toho chcete použít `SecurityTutorials.mdf` databáze jsme vytvořili v kroku 2. Tato úprava se dá udělat v jednom ze dvou způsobů:
 
-- **Zadejte hodnotu ***`LocalSqlServer`*** název připojovacího řetězce v ***`Web.config`***.** Přepsáním `LocalSqlServer` hodnota název připojovacího řetězce v `Web.config`, můžeme použít výchozí zaregistrovaný zprostředkovatel členství (`AspNetSqlMembershipProvider`) a mějte ho správně pracovat `SecurityTutorials.mdf` databáze. Tento přístup je v pořádku, pokud obsahu s nastavením konfigurace určeného `AspNetSqlMembershipProvider`. Další informace o této technice najdete v tématu [Scott Guthrie](https://weblogs.asp.net/scottgu/)na příspěvku na blogu [konfigurace služby ASP.NET 2.0 pomocí SQL Server 2000 nebo SQL Server 2005 aplikace](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx).
-- **Přidat nové registrovaný poskytovatel typu ***`SqlMembershipProvider`*** a nakonfigurujte jeho ***`connectionStringName`*** nastavení tak, aby odkazoval ***`SecurityTutorials.mdf`*** databáze.** Tento přístup je užitečný ve scénářích, kde chcete přizpůsobit další vlastnosti konfigurace kromě připojovací řetězec databáze. V projektech pro vlastní I vždy tuto metodu použijte, z důvodu jeho flexibilitu a přehlednosti.
+- <strong>Zadejte hodnotu</strong><strong>`LocalSqlServer`</strong><strong>název připojovacího řetězce v</strong><strong>`Web.config`</strong><strong>.</strong> Přepsáním `LocalSqlServer` hodnota název připojovacího řetězce v `Web.config`, můžeme použít výchozí zaregistrovaný zprostředkovatel členství (`AspNetSqlMembershipProvider`) a mějte ho správně pracovat `SecurityTutorials.mdf` databáze. Tento přístup je v pořádku, pokud obsahu s nastavením konfigurace určeného `AspNetSqlMembershipProvider`. Další informace o této technice najdete v tématu [Scott Guthrie](https://weblogs.asp.net/scottgu/)na příspěvku na blogu [konfigurace služby ASP.NET 2.0 pomocí SQL Server 2000 nebo SQL Server 2005 aplikace](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx).
+- <strong>Přidat nového poskytovatele registrované typu</strong><strong>`SqlMembershipProvider`</strong><strong>a nakonfigurujte jeho</strong><strong>`connectionStringName`</strong><strong>nastavení tak, aby odkazoval</strong> <strong>`SecurityTutorials.mdf`</strong> <strong>databáze.</strong> Tento přístup je užitečný ve scénářích, kde chcete přizpůsobit další vlastnosti konfigurace kromě připojovací řetězec databáze. V projektech pro vlastní I vždy tuto metodu použijte, z důvodu jeho flexibilitu a přehlednosti.
 
 Před přidáním nové registrované zprostředkovatele, který odkazuje `SecurityTutorials.mdf` databáze, nejprve musíme přidejte hodnotu řetězce odpovídající připojení v `<connectionStrings>` v tématu `Web.config`. Následující kód přidá nový připojovací řetězec s názvem `SecurityTutorialsConnectionString` odkazující SQL Server 2005 Express Edition `SecurityTutorials.mdf` databáze `App_Data` složky.
 
@@ -357,7 +357,7 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [`<membership>` – Element](https://msdn.microsoft.com/library/1b9hw62f.aspx)
 - [`<providers>` Element pro členství](https://msdn.microsoft.com/library/6d4936ht.aspx)
 - [Pomocí `<clear />` při přidání zprostředkovatelů](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)
-- [Práce přímo se`SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
+- [Práce přímo se `SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Video školení na témata, které jsou obsažené v tomto kurzu
 
@@ -367,11 +367,11 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Alicja Maziarz. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com).
 
->[!div class="step-by-step"]
-[Next](creating-user-accounts-cs.md)
+> [!div class="step-by-step"]
+> [Next](creating-user-accounts-cs.md)

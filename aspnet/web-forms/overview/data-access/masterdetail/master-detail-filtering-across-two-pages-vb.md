@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
-title: "Filtrování napříč dvěma stránkami (VB) podrobností | Microsoft Docs"
+title: Filtrování napříč dvěma stránkami (VB) podrobností | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jsme budete implementovat tento vzor pomocí GridView seznam dodavatelů v databázi. Každý řádek dodavatele GridView bude obsahovat Vie..."
+description: V tomto kurzu jsme budete implementovat tento vzor pomocí GridView seznam dodavatelů v databázi. Každý řádek dodavatele GridView bude obsahovat Vie...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d8d43475ae2f05d83d51c53d76de4f07db70ca7a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b8250c0f8d1befacf66d6be517514aad8bc31b09
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>Filtrování napříč dvěma stránkami (VB) podrobností
 ====================
@@ -35,7 +35,7 @@ V tomto kurzu jsme budete implementovat tento vzor pomocí GridView seznam dodav
 
 ## <a name="step-1-addingsupplierlistmasteraspxandproductsforsupplierdetailsaspxpages-to-thefilteringfolder"></a>Krok 1: Přidání`SupplierListMaster.aspx`a`ProductsForSupplierDetails.aspx`stránky k`Filtering`složky
 
-Při definování rozložení stránky v třetí kurzu jsme přidali počet stránek "počáteční" v `BasicReporting`, `Filtering`, a `CustomFormatting` složek. Ale jsme nepřidali úvodní stránky pro tento kurz v daném čase, takže pozorně přidejte dva nové stránky k `Filtering` složky: `SupplierListMaster.aspx` a `ProductsForSupplierDetails.aspx`. `SupplierListMaster.aspx`Zobrazí seznam záznamů "hlavní" (dodavatelů) při `ProductsForSupplierDetails.aspx` zobrazí produkty pro vybrané dodavatele.
+Při definování rozložení stránky v třetí kurzu jsme přidali počet stránek "počáteční" v `BasicReporting`, `Filtering`, a `CustomFormatting` složek. Ale jsme nepřidali úvodní stránky pro tento kurz v daném čase, takže pozorně přidejte dva nové stránky k `Filtering` složky: `SupplierListMaster.aspx` a `ProductsForSupplierDetails.aspx`. `SupplierListMaster.aspx` Zobrazí seznam záznamů "hlavní" (dodavatelů) při `ProductsForSupplierDetails.aspx` zobrazí produkty pro vybrané dodavatele.
 
 Při vytváření těchto dvou nových stránek být jistý, a přiřadit je pomocí `Site.master` stránky předlohy.
 
@@ -87,7 +87,7 @@ HyperLinkField lze nakonfigurovat k využívání stejný text nebo adresa URL h
 **Obrázek 5**: nastavte HyperLinkField `Text` vlastnost zobrazit produkty ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-across-two-pages-vb/_static/image13.png))
 
 
-Nastavit text nebo adresa URL hodnoty byl založen na základní data vázaná na GridView řádek, zadejte data pole text nebo hodnoty adresa URL by měla být stažen z v `DataTextField` nebo `DataNavigateUrlFields` vlastnosti. `DataTextField`můžete nastavit pouze na jedno datové pole; `DataNavigateUrlFields`, ale může být nastaven na seznam s položkami oddělenými čárkou datová pole. Musíme často základní text nebo adresy URL na kombinaci hodnotu pole na aktuálním řádku dat a některé statické značek. V tomto kurzu, například chceme adresu URL odkazy HyperLinkField být `ProductsForSupplierDetails.aspx?SupplierID=supplierID`, kde  *`supplierID`*  je každý GridView řádek `SupplierID` hodnotu. Všimněte si, že potřebujeme statické a datové hodnoty zde: `ProductsForSupplierDetails.aspx?SupplierID=` část adresy URL, na odkaz je statická, zatímco  *`supplierID`*  část je řízené daty jako jeho hodnota může být každý řádek na vlastní `SupplierID` hodnotu.
+Nastavit text nebo adresa URL hodnoty byl založen na základní data vázaná na GridView řádek, zadejte data pole text nebo hodnoty adresa URL by měla být stažen z v `DataTextField` nebo `DataNavigateUrlFields` vlastnosti. `DataTextField` můžete nastavit pouze na jedno datové pole; `DataNavigateUrlFields`, ale může být nastaven na seznam s položkami oddělenými čárkou datová pole. Musíme často základní text nebo adresy URL na kombinaci hodnotu pole na aktuálním řádku dat a některé statické značek. V tomto kurzu, například chceme adresu URL odkazy HyperLinkField být `ProductsForSupplierDetails.aspx?SupplierID=supplierID`, kde *`supplierID`* je každý GridView řádek `SupplierID` hodnotu. Všimněte si, že potřebujeme statické a datové hodnoty zde: `ProductsForSupplierDetails.aspx?SupplierID=` část adresy URL, na odkaz je statická, zatímco *`supplierID`* část je řízené daty jako jeho hodnota může být každý řádek na vlastní `SupplierID` hodnotu.
 
 Pokud chcete zadat kombinaci statických a datové hodnoty, použijte `DataTextFormatString` a `DataNavigateUrlFormatString` vlastnosti. V těchto vlastností zadejte kód statické podle potřeby a potom pomocí značky `{0}` místo hodnotě zadané v pole `DataTextField` nebo `DataNavigateUrlFields` vlastnosti, které chcete zobrazit. Pokud `DataNavigateUrlFields` vlastnost má více polí zadané použití `{0}` tam, kde chcete vložit, první hodnota pole `{1}` pro druhý hodnota pole a tak dále.
 
@@ -132,12 +132,12 @@ V tomto okamžiku `SupplierListMaster.aspx` stránky odesílá uživatelům `Pro
 **Obrázek 10**: mít ObjectDataSource vyvolání `GetProductsBySupplierID(supplierID)` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-across-two-pages-vb/_static/image28.png))
 
 
-Posledním kroku průvodce Konfigurace zdroje dat požádá, abychom mohli poskytovat zdroj `GetProductsBySupplierID(supplierID)` metody  *`supplierID`*  parametr. Pokud chcete použít hodnotu řetězce dotazu, nastavte parametr zdroj do řetězce dotazu a zadejte název hodnoty řetězce dotazu pro použití v textové pole vlastnost QueryStringField (`SupplierID`).
+Posledním kroku průvodce Konfigurace zdroje dat požádá, abychom mohli poskytovat zdroj `GetProductsBySupplierID(supplierID)` metody *`supplierID`* parametr. Pokud chcete použít hodnotu řetězce dotazu, nastavte parametr zdroj do řetězce dotazu a zadejte název hodnoty řetězce dotazu pro použití v textové pole vlastnost QueryStringField (`SupplierID`).
 
 
 [![Naplnění KódDodavatele hodnota parametru z hodnoty řetězce dotazu KódDodavatele](master-detail-filtering-across-two-pages-vb/_static/image30.png)](master-detail-filtering-across-two-pages-vb/_static/image29.png)
 
-**Obrázek 11**: naplnění  *`supplierID`*  hodnota parametru `SupplierID` hodnotu řetězce dotazu ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-across-two-pages-vb/_static/image31.png))
+**Obrázek 11**: naplnění *`supplierID`* hodnota parametru `SupplierID` hodnotu řetězce dotazu ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-across-two-pages-vb/_static/image31.png))
 
 
 To je všechno je k němu! Obrázek 12 znázorňuje `ProductsForSupplierDetails.aspx` stránky po návštěvě kliknutím na odkaz Tokio Traders z `SupplierListMaster.aspx`.
@@ -165,12 +165,12 @@ Začněte přidáním FormView výše produkty GridView. Vytvoření nového ovl
 **Obrázek 14**: mít ObjectDataSource vyvolání `GetSupplierBySupplierID(supplierID)` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-across-two-pages-vb/_static/image40.png))
 
 
-Stejně jako u `ProductsBySupplierDataSource`, mají  *`supplierID`*  parametr přiřadí hodnota `SupplierID` hodnotu řetězce dotazu.
+Stejně jako u `ProductsBySupplierDataSource`, mají *`supplierID`* parametr přiřadí hodnota `SupplierID` hodnotu řetězce dotazu.
 
 
 [![Naplnění KódDodavatele hodnota parametru z hodnoty řetězce dotazu KódDodavatele](master-detail-filtering-across-two-pages-vb/_static/image42.png)](master-detail-filtering-across-two-pages-vb/_static/image41.png)
 
-**Obrázek 15**: naplnění  *`supplierID`*  hodnota parametru z `SupplierID` hodnotu řetězce dotazu ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-across-two-pages-vb/_static/image43.png))
+**Obrázek 15**: naplnění *`supplierID`* hodnota parametru z `SupplierID` hodnotu řetězce dotazu ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-across-two-pages-vb/_static/image43.png))
 
 
 Při vytváření vazby FormView pro ObjectDataSource v zobrazení návrhu, vytvoří sada Visual Studio automaticky FormView `ItemTemplate`, `InsertItemTemplate`, a `EditItemTemplate` s popisek a textové pole webové ovládací prvky pro každé datové pole vrácené ObjectDataSource. Vzhledem k tomu, že my chceme jenom zobrazit dodavatele informace o chování volné odebrat `InsertItemTemplate` a `EditItemTemplate`. Potom upravte ItemTemplate tak, aby zobrazil název společnosti dodavatele v `<h3>` elementu a adresu, města, země a telefonní číslo pod název společnosti. Alternativně můžete ručně nastavit FormView `DataSourceID` a vytvořte `ItemTemplate` značek, jako jsme to udělali zpět v "[zobrazení dat pomocí ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md)" kurzu.
@@ -212,7 +212,7 @@ Ve výchozím nastavení zadejte všechny dodavatelé v databázi Lhota alespoň
 
 Při a podrobností sestavy můžete zobrazit hlavní i podrobné záznamy na jedné stránce, v mnoha webů budou odděleny mezi dvěma webové stránky. V tomto kurzu jsme se podívali na tom, jak implementovat a podrobností sestavu tak, že jsou uvedené v GridView na webové stránce "hlavní" dodavatelů a přidružené produkty uvedené na stránce "Podrobnosti". Každý řádek dodavatele hlavní webové stránky obsahovala odkaz na stránku podrobností, které se předají na řádku `SupplierID` hodnotu. Tyto odkazy specifické pro řádek lze snadno přidat pomocí prvku GridView HyperLinkField.
 
-Na stránce podrobností načítání těchto produktů pro zadaný dodavatele dosáhlo vyvoláním `ProductsBLL` třídy `GetProductsBySupplierID(supplierID)` metoda. *`supplierID`*  Byla zadána hodnota parametru deklarativně pomocí řetězce dotazu jako zdroj parametru. Také jsme se podívali na tom, jak zobrazit podrobnosti dodavatele na stránce Podrobnosti o použití FormView.
+Na stránce podrobností načítání těchto produktů pro zadaný dodavatele dosáhlo vyvoláním `ProductsBLL` třídy `GetProductsBySupplierID(supplierID)` metoda. *`supplierID`* Byla zadána hodnota parametru deklarativně pomocí řetězce dotazu jako zdroj parametru. Také jsme se podívali na tom, jak zobrazit podrobnosti dodavatele na stránce Podrobnosti o použití FormView.
 
 Naše [další kurz](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md) je poslední v sestavách a podrobností. Podíváme jak zobrazit seznam produktů v GridView, kde má každý řádek vyberte tlačítko. Kliknutím na tlačítko vyberte zobrazí podrobnosti o tomto produktu v ovládacím prvku DetailsView na stejné stránce.
 
@@ -220,12 +220,12 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Hilton Giesenow. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](master-detail-filtering-with-two-dropdownlists-vb.md)
-[další](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](master-detail-filtering-with-two-dropdownlists-vb.md)
+> [další](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)

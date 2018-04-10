@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
-title: "Používání ovládacího prvku ComboBox (VB) | Microsoft Docs"
+title: Používání ovládacího prvku ComboBox (VB) | Microsoft Docs
 author: microsoft
-description: "Pole se seznamem je ovládací prvek ASP.NET AJAX, který kombinuje flexibilitu textové pole se seznamem možnosti, ze kterých můžete vybírat uživatelé."
+description: Pole se seznamem je ovládací prvek ASP.NET AJAX, který kombinuje flexibilitu textové pole se seznamem možnosti, ze kterých můžete vybírat uživatelé.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 54e36cf275dcc4b85253dc3b8bb5b0dbb027af77
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e42844e326cb190502a51c5a85195b4752d7e827
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-combobox-control-vb"></a>Používání ovládacího prvku ComboBox (VB)
 ====================
@@ -119,7 +119,7 @@ Představte si, že chcete zobrazit seznam filmy v komponentě ComboBox. Chcete-
 
 Po dokončení kroků výše komponenty ComboBox je vázána na SqlDataSource ovládací prvek, který představuje videa z tabulky databáze filmy. Zdroj pro stránku vypadá výpis 2 (I vyčistit formátování chvíli).
 
-**Výpis 2 - Movies.aspx**
+**Listing 2 - Movies.aspx**
 
 [!code-aspx[Main](how-do-i-use-the-combobox-control-vb/samples/sample2.aspx)]
 
@@ -172,5 +172,5 @@ Chcete-li určit, co se stane, když někdo typy text do komponenty ComboBox pom
 
 V tomto kurzu jste zjistili, jak používat ComboBox – ovládací prvek zobrazíte pevnou sadu položek. Jsme vázán ComboBox – ovládací prvek, jak do statického sada položek a do databázové tabulky. Nakonec jste zjistili, jak změnit chování komponenty ComboBox nastavením jeho DropDownStyle a vlastnost AutoCompleteMode vlastnosti.
 
->[!div class="step-by-step"]
-[Předchozí](how-do-i-use-the-combobox-control-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](how-do-i-use-the-combobox-control-cs.md)

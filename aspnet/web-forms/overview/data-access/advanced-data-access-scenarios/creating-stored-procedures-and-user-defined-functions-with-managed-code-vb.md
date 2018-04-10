@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
-title: "Vytváření uložené procedury a uživatelem definované funkce s spravovaného kódu (VB) | Microsoft Docs"
+title: Vytváření uložené procedury a uživatelem definované funkce s spravovaného kódu (VB) | Microsoft Docs
 author: rick-anderson
-description: "Microsoft SQL Server 2005 se integruje s Common Language Runtime rozhraní .NET umožňuje vývojářům vytvářet databázové objekty pomocí spravovaného kódu. V tomto kurzu..."
+description: Microsoft SQL Server 2005 se integruje s Common Language Runtime rozhraní .NET umožňuje vývojářům vytvářet databázové objekty pomocí spravovaného kódu. V tomto kurzu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e30df9ddc094d0390d9e5985ec676713b57feaf4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cb676313b04fab9c7cf9c6d08d08d07852ee1fcb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>Vytváření uložené procedury a funkce definované uživatelem se spravovaným kódem (VB)
 ====================
@@ -31,7 +31,7 @@ podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
 Použít databází jako s Microsoft SQL Server 2005 [Transact-Structured dotazovací jazyk (T-SQL)](http://en.wikipedia.org/wiki/Transact-SQL) pro vložení, úpravy a načítání dat. Většina systémů databáze patří konstrukce pro seskupení řady příkazů SQL, které lze provést jako jeden, opakovaně použitelný jednotku. Uložené procedury jsou jedním z příkladů. Další je *funkce definované uživatelem*(UDF), konstruktor, který jsme prozkoumá podrobněji v kroku 9.
 
-Jádro aplikace SQL je určená pro práci s datových sad. `SELECT`, `UPDATE`, A `DELETE` příkazy ze své podstaty platí pro všechny záznamy v příslušné tabulce a jsou omezena pouze jejich `WHERE` klauzule. Ještě existuje mnoho funkcí jazyka, které jsou navrženy pro práci s jedním záznamem najednou a manipulace s daty skalární. [`CURSOR`s](http://www.sqlteam.com/item.asp?ItemID=553) povolit pro sadu záznamů být smyčce prostřednictvím jednoho najednou. Řetězec funkce pro zpracování jako `LEFT`, `CHARINDEX`, a `PATINDEX` pracovní skalární daty. SQL také zahrnuje řízení toku příkazy, jako je třeba `IF` a `WHILE`.
+Jádro aplikace SQL je určená pro práci s datových sad. `SELECT`, `UPDATE`, A `DELETE` příkazy ze své podstaty platí pro všechny záznamy v příslušné tabulce a jsou omezena pouze jejich `WHERE` klauzule. Ještě existuje mnoho funkcí jazyka, které jsou navrženy pro práci s jedním záznamem najednou a manipulace s daty skalární. [`CURSOR` s](http://www.sqlteam.com/item.asp?ItemID=553) povolit pro sadu záznamů být smyčce prostřednictvím jednoho najednou. Řetězec funkce pro zpracování jako `LEFT`, `CHARINDEX`, a `PATINDEX` pracovní skalární daty. SQL také zahrnuje řízení toku příkazy, jako je třeba `IF` a `WHILE`.
 
 Před Microsoft SQL Server 2005 uložené procedury a funkce UDF může definovat pouze jako kolekci příkazů T-SQL. SQL Server 2005, byla však určená k poskytnutí integrace s [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), což je modul runtime používá všechna sestavení .NET. V důsledku toho uložené procedury a funkce UDF v databázi systému SQL Server 2005 lze vytvořit pomocí spravovaného kódu. To znamená můžete vytvořit uložené procedury nebo UDF jako metodu v třídě jazyka Visual Basic. To umožňuje tyto uložené procedury a funkce UDF, abyste mohli využívat funkce v rozhraní .NET Framework a z vlastní třídy.
 
@@ -424,8 +424,8 @@ Nyní, že byla vytvořena spravované UDF, jsme připravení nasadit k databáz
 
 Jakmile jste nasadili projekt, vraťte se na SQL Server Management Studio a aktualizovat složku funkce vracející skalární hodnota. Teď byste měli vidět dvě položky:
 
-- `dbo.udf_ComputeInventoryValue`-T-SQL UDF vytvořené v kroku 9, a
-- `dbo.udf ComputeInventoryValue_Managed`-spravované UDF vytvořené v kroku 10, který byl právě nasazen.
+- `dbo.udf_ComputeInventoryValue` -T-SQL UDF vytvořené v kroku 9, a
+- `dbo.udf ComputeInventoryValue_Managed` -spravované UDF vytvořené v kroku 10, který byl právě nasazen.
 
 K testování této spravované UDF, spusťte následující dotaz ze studia správy:
 
@@ -569,11 +569,11 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz se S ren Jakub Lauritsen. Kromě kontroly tohoto článku, S ren také vytvořit projekt Visual C# Express Edition zahrnuté v tomto článku s ke stažení ručně kompilaci spravovaného databázové objekty. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Předchozí](debugging-stored-procedures-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](debugging-stored-procedures-vb.md)

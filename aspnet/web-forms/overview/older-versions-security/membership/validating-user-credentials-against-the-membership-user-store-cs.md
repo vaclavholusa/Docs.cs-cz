@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
-title: "Probíhá ověřování pověření uživatele pro úložiště uživatele členství (C#) | Microsoft Docs"
+title: Probíhá ověřování pověření uživatele pro úložiště uživatele členství (C#) | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu vyzkoušíme postup ověření přihlašovacích údajů uživatele proti úložišti uživatele členství pomocí programový znamená a ovládací prvek pro přihlášení..."
+description: V tomto kurzu vyzkoušíme postup ověření přihlašovacích údajů uživatele proti úložišti uživatele členství pomocí programový znamená a ovládací prvek pro přihlášení...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f8f4db63ba8c1f1c1df7c1c5c1f92184bf6841d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 484a0f16265ee2d887ee08f6ae7ada47047f1f04
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-c"></a>Probíhá ověřování pověření uživatele pro úložiště uživatele členství (C#)
 ====================
@@ -39,9 +39,9 @@ V tomto kurzu vyzkoušíme postup ověření přihlašovacích údajů uživatel
 
 Pro webové servery, které používají ověřování pomocí formulářů přihlášení uživatele na web návštěvou přihlašovací stránku a zadat své přihlašovací údaje. Tyto přihlašovací údaje se pak porovnávají úložiště uživatele. Pokud jsou platné, uživateli je udělen lístek ověřování formulářů, což je token zabezpečení, který označuje identity a jejich pravost návštěvníka.
 
-K ověření uživatele vůči rozhraní členství, použijte `Membership` třídy [ `ValidateUser` metoda](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx). `ValidateUser` Metoda přebírá dva vstupní parametry -  *`username`*  a  *`password`*  - a vrátí logickou hodnotu udávající, zda byly přihlašovací údaje platná. Upozorňujeme `CreateUser` metoda jsme se zaměřili na v tomto kurzu předchozí `ValidateUser` metoda deleguje samotné ověření do nakonfigurovaného zprostředkovatele členství.
+K ověření uživatele vůči rozhraní členství, použijte `Membership` třídy [ `ValidateUser` metoda](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx). `ValidateUser` Metoda přebírá dva vstupní parametry - *`username`* a *`password`* - a vrátí logickou hodnotu udávající, zda byly přihlašovací údaje platná. Upozorňujeme `CreateUser` metoda jsme se zaměřili na v tomto kurzu předchozí `ValidateUser` metoda deleguje samotné ověření do nakonfigurovaného zprostředkovatele členství.
 
-`SqlMembershipProvider` Ověřuje zadaná pověření tak, že získání hesla zadaného uživatele prostřednictvím `aspnet_Membership_GetPasswordWithFormat` uložené procedury. Odvolat, který `SqlMembershipProvider` ukládá hesla uživatelů ke službám pomocí jedné ze tří formátů: clear, šifrovaná, nebo s použitím algoritmu hash. `aspnet_Membership_GetPasswordWithFormat` Uložené procedury vrátí heslo v jeho nezpracovaném formátu. Pro šifrovaná, nebo hodnotu hash hesla `SqlMembershipProvider` transformuje  *`password`*  hodnoty předané `ValidateUser` metoda do ekvivalentu šifrovat nebo stavu s použitím algoritmu hash a porovná je s co byla vrácena z databáze. Pokud heslo, které jsou uloženy v databázi odpovídá formátovaný heslo zadané uživatelem, jsou pověření platná.
+`SqlMembershipProvider` Ověřuje zadaná pověření tak, že získání hesla zadaného uživatele prostřednictvím `aspnet_Membership_GetPasswordWithFormat` uložené procedury. Odvolat, který `SqlMembershipProvider` ukládá hesla uživatelů ke službám pomocí jedné ze tří formátů: clear, šifrovaná, nebo s použitím algoritmu hash. `aspnet_Membership_GetPasswordWithFormat` Uložené procedury vrátí heslo v jeho nezpracovaném formátu. Pro šifrovaná, nebo hodnotu hash hesla `SqlMembershipProvider` transformuje *`password`* hodnoty předané `ValidateUser` metoda do ekvivalentu šifrovat nebo stavu s použitím algoritmu hash a porovná je s co byla vrácena z databáze. Pokud heslo, které jsou uloženy v databázi odpovídá formátovaný heslo zadané uživatelem, jsou pověření platná.
 
 Umožňuje aktualizovat naše přihlašovací stránku (~ /`Login.aspx`) tak, aby ověřuje zadaná pověření proti úložiště framework uživatele členství. Jsme vytvořili této přihlašovací stránce zpět v <a id="Tutorial02"> </a> [ *Přehled ověřování založené na formulářích* ](../introduction/an-overview-of-forms-authentication-cs.md) kurzu, vytváření rozhraní se dvě textová pole pro uživatelské jméno a heslo, Zapamatovat uživatele zaškrtávací políčko a tlačítko pro přihlášení (viz obrázek 1). Kód ověřuje zadaná pověření proti pevně seznamu párů uživatelské jméno a heslo (Scott a hesla, Jisun a hesla a Sam a hesla). V <a id="Tutorial03"> </a> [ *konfiguraci ověřování formulářů a rozšířené témata* ](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md) kurzu aktualizovali jsme přihlašovací stránky kód pro uložení dalších informací ve formulářích lístek ověřování `UserData` vlastnost.
 
@@ -71,8 +71,8 @@ Návštěvník dosáhne přihlašovací stránku a odešle přihlašovacích úd
 
 Pokud chcete zabránit takové útoky hrubou silou, členství v rámci zamezí uživatele Pokud je počet pokusů o neúspěšných přihlášení v časovém období. Přesné parametry se dají konfigurovat prostřednictvím následující nastavení konfigurace dvou zprostředkovatele členství:
 
-- `maxInvalidPasswordAttempts`-Určuje, kolik neplatné heslo pokusy jsou povoleny pro uživatele během časového období před zablokováním účtu. Výchozí hodnota je 5.
-- `passwordAttemptWindow`-Určuje časové období v minutách, během které způsobí zadaný počet neplatných pokusů o přihlášení, účet bude uzamčen. Výchozí hodnota je 10.
+- `maxInvalidPasswordAttempts` -Určuje, kolik neplatné heslo pokusy jsou povoleny pro uživatele během časového období před zablokováním účtu. Výchozí hodnota je 5.
+- `passwordAttemptWindow` -Určuje časové období v minutách, během které způsobí zadaný počet neplatných pokusů o přihlášení, účet bude uzamčen. Výchozí hodnota je 10.
 
 Pokud uživatel byl uzamčen, nelze se přihlásit, dokud správce odemkne svůj účet. Pokud je uživatel uzamčen, `ValidateUser` metoda bude *vždy* vrátit `false`i v případě, že jsou zadané platné přihlašovací údaje. Když toto chování snižuje pravděpodobnost, že se hacker se rozdělit na váš web prostřednictvím metody hrubou silou, se můžou skončit uzamykání platný uživatel, který jednoduše zapomněl svoje heslo nebo omylem má klávesy Caps Lock na či má chybný zadáním den.
 
@@ -110,10 +110,10 @@ A máme Hotovo! Při kliknutí na tlačítko přihlásit přihlášení ovládac
 
 Ovládací prvek pro přihlášení pomocí čtyř faktorů zjistí na příslušnou stránku a přesměruje uživatele na po úspěšném přihlášení:
 
-- Zda je ovládací prvek pro přihlášení na přihlašovací stránce podle definice `loginUrl` nastavení v konfiguraci ověřování formulářů; toto nastavení výchozí hodnota je`Login.aspx`
+- Zda je ovládací prvek pro přihlášení na přihlašovací stránce podle definice `loginUrl` nastavení v konfiguraci ověřování formulářů; toto nastavení výchozí hodnota je `Login.aspx`
 - Přítomnost `ReturnUrl` parametr řetězce dotazu
 - Hodnota prvku přihlášení [ `DestinationUrl` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
-- `defaultUrl` Zadána hodnota ve formulářích nastavení konfigurace ověřování; toto nastavení výchozí hodnota je`Default.aspx`
+- `defaultUrl` Zadána hodnota ve formulářích nastavení konfigurace ověřování; toto nastavení výchozí hodnota je `Default.aspx`
 
 Jak znázorňuje obrázek 4 ovládací prvek pro přihlášení používá tyto čtyři parametry přijaty ve své rozhodnutí příslušnou stránku.
 
@@ -230,7 +230,7 @@ Jak je vidět `Authenticate` obslužné rutiny události se předá objekt typu 
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>Určení a ověřování zadané přihlašovací údaje
 
-Použití ovládacího prvku přihlášení [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) a [ `Password` vlastnosti](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) určit uživatelské jméno a heslo přihlašovací údaje zadané uživatelem. Aby bylo možné zjistit hodnot zadaných do jakékoli další ovládací prvky webového (například `Email` TextBox jsme přidali v předchozím kroku), použijte  *`LoginControlID`*  `.FindControl`(" *`controlID`* ") k získání programové odkaz na ovládací prvek webu v šabloně, jehož `ID` vlastnost rovná  *`controlID`* . Chcete-li třeba `Email` textovému poli, použijte následující kód:
+Použití ovládacího prvku přihlášení [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) a [ `Password` vlastnosti](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) určit uživatelské jméno a heslo přihlašovací údaje zadané uživatelem. Aby bylo možné zjistit hodnot zadaných do jakékoli další ovládací prvky webového (například `Email` TextBox jsme přidali v předchozím kroku), použijte *`LoginControlID`* `.FindControl`("*`controlID`*") k získání programové odkaz na ovládací prvek webu v šabloně, jehož `ID` vlastnost rovná *`controlID`*. Chcete-li třeba `Email` textovému poli, použijte následující kód:
 
 `TextBox EmailTextBox = myLogin.FindControl("Email") as TextBox;`
 
@@ -310,12 +310,12 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 
 ### <a name="about-the-author"></a>O autorovi
 
-Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Meisnerová, vytvořit více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, má byla od 1998 práce s technologií Microsoft Web. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k  *[Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott lze dosáhnout za [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Zvláštní poděkování
 
 Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Teresy Murphy a Michael Olivero. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com).
 
->[!div class="step-by-step"]
-[Předchozí](creating-user-accounts-cs.md)
-[další](user-based-authorization-cs.md)
+> [!div class="step-by-step"]
+> [Předchozí](creating-user-accounts-cs.md)
+> [další](user-based-authorization-cs.md)

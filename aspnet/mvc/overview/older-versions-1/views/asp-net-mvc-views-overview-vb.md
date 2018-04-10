@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb
-title: "ASP.NET MVC zobrazení přehled (VB) | Microsoft Docs"
+title: ASP.NET MVC zobrazení přehled (VB) | Microsoft Docs
 author: StephenWalther
-description: "Co je zobrazení ASP.NET MVC a jak ho se liší od stránku HTML? V tomto kurzu Stephen Walther vás seznámí s zobrazení a ukazuje, jak můžete t..."
+description: Co je zobrazení ASP.NET MVC a jak ho se liší od stránku HTML? V tomto kurzu Stephen Walther vás seznámí s zobrazení a ukazuje, jak můžete t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c85b969aa4457d0326b4a16da218db9e11d01e10
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a64c70851d13b923964dfd1cf3bad55612ae0d0f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-views-overview-vb"></a>Zobrazení ASP.NET MVC (VB) – přehled
 ====================
@@ -78,19 +78,19 @@ Zobrazení je standard (dokumentu HTML, která může obsahovat skripty X). Pomo
 
 Zobrazení v výpis 2 se například zobrazí aktuální datum a čas.
 
-**Výpis 2 - \Views\Home\Index.aspx**
+**Listing 2 - \Views\Home\Index.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample2.aspx)]
 
 Všimněte si, že tělo stránky HTML v výpis 2 obsahuje následující skript:
 
-&lt;% Response.Write(DateTime.Now) %&gt;
+&lt;% Response.Write(DateTime.Now)%&gt;
 
 Použít oddělovače skriptu &lt;% a %&gt; označit začátek a konec skriptu. Tento skript je napsán v jazyce Visual basic. Zobrazí aktuální datum a čas voláním metody Response.Write() k vykreslení obsahu v prohlížeči. Oddělovače skriptu &lt;% a %&gt; lze použít k provedení jednoho nebo více příkazů.
 
 Vzhledem k tomu, že zavoláte Response.Write() tak často, Microsoft vám poskytne zástupce pro volání metody Response.Write(). Zobrazení v výpis 3 používá oddělovače &lt;% = a %&gt; jako zástupce pro volání Response.Write().
 
-**Výpis 3 - Views\Home\Index2.aspx**
+**Listing 3 - Views\Home\Index2.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample3.aspx)]
 
@@ -102,7 +102,7 @@ Aby bylo snazší přidání obsahu do zobrazení, můžete využít výhod takz
 
 Například zobrazení v výpis 4 trvá výhod tři pomocné rutiny HTML--BeginForm(), TextBox() a Password() pomocníky – ke generování přihlášení formuláři (viz obrázek 1).
 
-**Výpis 4 – \Views\Home\Login.aspx**
+**Listing 4 -- \Views\Home\Login.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample4.aspx)]
 
@@ -118,7 +118,7 @@ Všimněte si, že používáte oddělovače skriptu &lt;% = a %&gt; při volán
 
 Pomocí metody HTML Helper je volitelný. Jejich usnadnit vám život snížením HTML a skript, který budete muset napsat. Zobrazení v výpis 5 vykreslí přesný stejného formuláře jako zobrazení v výpis 4 bez použití pomocné rutiny HTML.
 
-**Výpis 5 – \Views\Home\Login.aspx**
+**Listing 5 -- \Views\Home\Login.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample5.aspx)]
 
@@ -136,7 +136,7 @@ Zobrazení dat slouží k předávání dat z řadiče zobrazení. Vezměte v ú
 
 Zobrazení v výpis 7 načte zprávu z dat zobrazení a vykreslí zprávu, která se v prohlížeči.
 
-**Výpis 7 – \Views\Product\Index.aspx**
+**Listing 7 -- \Views\Product\Index.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample7.aspx)]
 
@@ -152,6 +152,6 @@ Máte také možnost předat data silného typu zobrazení z řadiče zobrazení
 
 V tomto kurzu poskytuje stručný úvod do architektury ASP.NET MVC zobrazení, data zobrazení a pomocné rutiny HTML. V první části jste zjistili, jak přidat nové zobrazení do projektu. Jste zjistili, že je nutné přidat zobrazení do správné složky k volání z určitý kontroler. V dalším kroku jsme popsané v tématu pomocné rutiny HTML. Jste se dozvěděli, jak pomocné objekty HTML umožňují snadno vygenerovat standardní obsah HTML. Nakonec jste zjistili, jak chcete využít výhod předat data z řadiče zobrazení dat zobrazení.
 
->[!div class="step-by-step"]
-[Předchozí](passing-data-to-view-master-pages-cs.md)
-[další](creating-custom-html-helpers-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](passing-data-to-view-master-pages-cs.md)
+> [další](creating-custom-html-helpers-vb.md)

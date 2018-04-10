@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
-title: "Vytvoření vlastní AJAX ovládacího prvku rozšiřujícího objektu řízení Toolkit (C#) | Microsoft Docs"
+title: Vytvoření vlastní AJAX ovládacího prvku rozšiřujícího objektu řízení Toolkit (C#) | Microsoft Docs
 author: microsoft
-description: "Vlastní Extender umožňují přizpůsobit a rozšířit možnosti ovládacích prvků technologie ASP.NET, aniž by bylo nutné vytvořit nové třídy."
+description: Vlastní Extender umožňují přizpůsobit a rozšířit možnosti ovládacích prvků technologie ASP.NET, aniž by bylo nutné vytvořit nové třídy.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2ae03484dd1161c65b77f4718bb8cedb5abfdd82
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dc058d1d19df880109352caf2dc7d1860121a104
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>Vytváření AJAX vlastní ovládací prvek řízení Toolkit rozšiřujícího objektu (C#)
 ====================
@@ -198,7 +198,7 @@ Dále je potřeba vytvořit novou stránku ASP.NET. Postupujte podle těchto kro
 2. Přetáhněte ovládací prvek ScriptManager na stránku.
 3. Přetáhněte ovládací prvek textové pole na stránce.
 4. Přetáhněte ovládací prvek tlačítko na stránce.
-5. V okně vlastností změňte na hodnotu vlastnosti ID tlačítko *btnSave* a vlastnost Text na hodnotu *Uložit\**.
+5. V okně vlastností změňte na hodnotu vlastnosti ID tlačítko <em>btnSave</em> a vlastnost Text na hodnotu *Uložit\**.
   
 
 Na stránce jsme vytvořili pomocí standardního ovládacího prvku ASP.NET TextBox a tlačítko.
@@ -238,6 +238,6 @@ Při spuštění stránky (s stále mačkat F5), ovládacího prvku tlačítko p
 
 Cílem tohoto kurzu bylo vysvětlují, jak můžete rozšířit Toolkitu AJAX s rozšiřující vlastní ovládací prvky. V tomto kurzu jsme vytvořili jednoduché rozšiřujícího objektu prostředí DisabledButton ovládacího prvku. Implementovali jsme tento rozšiřujícího objektu vytvořením třídy DisabledButtonExtender, chování DisabledButtonBehavior JavaScript a třídu DisabledButtonDesigner. Pokaždé, když vytvoříte vlastní ovládací prvek extender provedením podobnou sadu kroků.
 
->[!div class="step-by-step"]
-[Předchozí](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
-[další](get-started-with-the-ajax-control-toolkit-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
+> [další](get-started-with-the-ajax-control-toolkit-vb.md)

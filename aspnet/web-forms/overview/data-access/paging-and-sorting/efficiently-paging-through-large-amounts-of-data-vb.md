@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
-title: "Efektivní stránkování prostřednictvím velké objemy dat (VB) | Microsoft Docs"
+title: Efektivní stránkování prostřednictvím velké objemy dat (VB) | Microsoft Docs
 author: rick-anderson
-description: "Při práci s velkými objemy dat, jako jeho základní retriev řízení zdroje dat není vhodná výchozí možnost stránkování ovládacího prvku prezentace dat..."
+description: Při práci s velkými objemy dat, jako jeho základní retriev řízení zdroje dat není vhodná výchozí možnost stránkování ovládacího prvku prezentace dat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9a1b7fbb1e60c9f1bc6a26ccaeb7d14b4c95219d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 00057f9bfd9b1c479e500ac591db694388a5d358
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>Efektivní stránkování prostřednictvím velké objemy dat (VB)
 ====================
@@ -122,9 +122,9 @@ Existují dvě obecné postupy používané k efektivní přidružit index řád
 - **Pomocí systému SQL Server 2005 s `ROW_NUMBER()` – klíčové slovo** nový SQL Server 2005, `ROW_NUMBER()` – klíčové slovo přidruží hodnoticí každý vrácený záznam podle pořadí. Toto pořadí slouží jako index řádku pro každý řádek.
 - **Pomocí proměnné tabulky a `SET ROWCOUNT`**  systému SQL Server s [ `SET ROWCOUNT` příkaz](https://msdn.microsoft.com/library/ms188774.aspx) umožňuje určit počet celkový počet záznamů dotaz by měl zpracovat před ukončením; [tabulky proměnné](http://www.sqlteam.com/item.asp?ItemID=9454) jsou místní proměnné T-SQL, které mohou být uloženy tabulková data akin k [dočasných tabulek](http://www.sqlteam.com/item.asp?ItemID=2029). Tento postup funguje stejně dobře s Microsoft SQL Server 2005 a SQL Server 2000 (vzhledem k tomu `ROW_NUMBER()` přístup pracuje pouze s SQL Server 2005).  
   
- Rada tady je vytvoření proměnné tabulky, která má `IDENTITY` sloupce a sloupce pro primární klíče v tabulce, jejichž data se prostřednictvím stránkování. V dalším kroku obsah tabulky, jejichž data je stránkování prostřednictvím vypsána do proměnné tabulky, a tím přidružení sekvenční řádek indexu (prostřednictvím `IDENTITY` sloupec) pro každý záznam v tabulce. Po naplnění proměnnou tabulky `SELECT` příkaz na proměnnou tabulky spojena s podkladové tabulce, mohou být provedeny vysunout konkrétní záznamy. `SET ROWCOUNT` Se použije příkaz inteligentně omezit počet záznamů, které je třeba uložit do proměnné tabulky.  
+  Rada tady je vytvoření proměnné tabulky, která má `IDENTITY` sloupce a sloupce pro primární klíče v tabulce, jejichž data se prostřednictvím stránkování. V dalším kroku obsah tabulky, jejichž data je stránkování prostřednictvím vypsána do proměnné tabulky, a tím přidružení sekvenční řádek indexu (prostřednictvím `IDENTITY` sloupec) pro každý záznam v tabulce. Po naplnění proměnnou tabulky `SELECT` příkaz na proměnnou tabulky spojena s podkladové tabulce, mohou být provedeny vysunout konkrétní záznamy. `SET ROWCOUNT` Se použije příkaz inteligentně omezit počet záznamů, které je třeba uložit do proměnné tabulky.  
   
- Této efektivity přístup s je založena na číslo stránky, které jsou požadovány, jako `SET ROWCOUNT` hodnota je přiřazena na hodnotu Index řádku spustit a maximální počet řádků. Při procházení nízká číslované stránky, jako je například první několik stránek dat. Tento přístup je velmi efektivní. Ale vykazuje výkonu stránkování jako výchozí při načítání stránky poblíž konce.
+  Této efektivity přístup s je založena na číslo stránky, které jsou požadovány, jako `SET ROWCOUNT` hodnota je přiřazena na hodnotu Index řádku spustit a maximální počet řádků. Při procházení nízká číslované stránky, jako je například první několik stránek dat. Tento přístup je velmi efektivní. Ale vykazuje výkonu stránkování jako výchozí při načítání stránky poblíž konce.
 
 V tomto kurzu implementuje pomocí vlastní stránkování `ROW_NUMBER()` – klíčové slovo. Další informace o používání proměnnou tabulky a `SET ROWCOUNT` techniku, najdete v části [A Další efektivní metodu pro stránkování prostřednictvím velkých sad výsledků dotazu](http://www.4guysfromrolla.com/webtech/042606-1.shtml).
 
@@ -133,7 +133,7 @@ V tomto kurzu implementuje pomocí vlastní stránkování `ROW_NUMBER()` – kl
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample3.sql)]
 
-`ROW_NUMBER()`vrátí číselnou hodnotu, která určuje pořadí pro každý záznam s ohledem na uvedené řazení. Například zobrazíte pořadí pro jednotlivé produkty, seřazené z nejvíc nákladné nejmenší, můžeme použít následující dotaz:
+`ROW_NUMBER()` vrátí číselnou hodnotu, která určuje pořadí pro každý záznam s ohledem na uvedené řazení. Například zobrazíte pořadí pro jednotlivé produkty, seřazené z nejvíc nákladné nejmenší, můžeme použít následující dotaz:
 
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample4.sql)]
@@ -147,7 +147,7 @@ Obrázek 5 ukazuje tento dotaz s výsledky při spuštění pomocí okna dotazu 
 
 
 > [!NOTE]
-> `ROW_NUMBER()`je jen jednou z mnoha nových funkcí hodnocení k dispozici v systému SQL Server 2005. Podrobnější diskuzi o `ROW_NUMBER()`, spolu s dalšími funkcemi hodnocení, přečtěte si [vrácení seřazeny výsledků s Microsoft SQL Server 2005](http://www.4guysfromrolla.com/webtech/010406-1.shtml).
+> `ROW_NUMBER()` je jen jednou z mnoha nových funkcí hodnocení k dispozici v systému SQL Server 2005. Podrobnější diskuzi o `ROW_NUMBER()`, spolu s dalšími funkcemi hodnocení, přečtěte si [vrácení seřazeny výsledků s Microsoft SQL Server 2005](http://www.4guysfromrolla.com/webtech/010406-1.shtml).
 
 
 Při řazení výsledků k zadanému `ORDER BY` sloupec v `OVER` – klauzule (`UnitPrice`, v předchozím příkladu), SQL Server musí řazení výsledků. To je rychlý operace v případě clusterovaného indexu přes sloupcům, které jsou právě výsledky seřazené podle, nebo pokud je zahrnut indexu, ale může být dražší jinak. Zlepšení výkonu pro dotazy na dostatečně velký, zvažte přidání neclusterovaný index pro sloupec, podle kterého jsou výsledky seřazené podle. V tématu [řazení funkcí a výkonu v systému SQL Server 2005](http://www.sql-server-performance.com/ak_ranking_functions.asp) pro podrobnější pohled na důležité informace o výkonu.
@@ -163,7 +163,7 @@ Rozšíření tento koncept trochu další, můžeme využívat tuto metodu pro 
 [!code-html[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample6.html)]
 
 > [!NOTE]
-> Jak jsme se zobrazí později v tomto kurzu  *`StartRowIndex`*  poskytl ObjectDataSource je indexovaný začínající na nule, zatímco `ROW_NUMBER()` hodnoty vrácené systému SQL Server 2005 je indexovaný začínajícím hodnotou 1. Proto `WHERE` klauzule vrací tyto záznamy kde `PriceRank` striktně větší než  *`StartRowIndex`*  a menší než nebo rovno  *`StartRowIndex`*   +  *`MaximumRows`*.
+> Jak jsme se zobrazí později v tomto kurzu *`StartRowIndex`* poskytl ObjectDataSource je indexovaný začínající na nule, zatímco `ROW_NUMBER()` hodnoty vrácené systému SQL Server 2005 je indexovaný začínajícím hodnotou 1. Proto `WHERE` klauzule vrací tyto záznamy kde `PriceRank` striktně větší než *`StartRowIndex`* a menší než nebo rovno *`StartRowIndex`*  +  *`MaximumRows`*.
 
 
 Nyní který jsme sunout popsané jak `ROW_NUMBER()` lze použít k načtení konkrétní stránky data hodnoty Start Index řádku a maximální počet řádků, teď musíme implementovat tuto logiku jako metody v DAL a BLL.
@@ -188,7 +188,7 @@ Po vytvoření uložené procedury, pozorně otestování. Klikněte pravým tla
 
 ![Zadejte hodnotu @startRowIndex a @maximumRows parametry](efficiently-paging-through-large-amounts-of-data-vb/_static/image7.png)
 
-**Obrázek 7**: Zadejte hodnotu @startRowIndex a @maximumRows parametry
+<strong>Obrázek 7</strong>: Zadejte hodnotu @startRowIndex a @maximumRows parametry
 
 
 Po výběru těchto vstupních hodnot parametrů, ve výstupním okně se zobrazí výsledky. Obrázek 8 ukazuje výsledky při předávání v 10 pro oba `@startRowIndex` a `@maximumRows` parametry.
@@ -276,9 +276,9 @@ Protože ObjectDataSource aktuálně používá 0 jako hodnoty pro obě chybí G
 Chcete-li to opravit, je potřeba nakonfigurovat ObjectDataSource používat vlastní stránkování. Můžete to provést v následujících krocích:
 
 1. **Nastavit ObjectDataSource s `EnablePaging` vlastnost `true`**  tím je oznámeno ObjectDataSource, který je nutné předat `SelectMethod` dva další parametry: jeden k určení Index řádku spustit ([ `StartRowIndexParameterName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx)) a jeden, který zadejte maximální počet řádků ([`MaximumRowsParameterName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx)).
-2. **Nastavit ObjectDataSource s `StartRowIndexParameterName` a `MaximumRowsParameterName` vlastnosti odpovídajícím způsobem** `StartRowIndexParameterName` a `MaximumRowsParameterName` vlastnosti označují názvy vstupní parametry předané do `SelectMethod` pro vlastní účely stránkování . Ve výchozím nastavení, jsou tyto názvy parametrů `startIndexRow` a `maximumRows`, což je důvod, proč, při vytváření `GetProductsPaged` metoda v BLL, lze použít tyto hodnoty pro vstupní parametry. Pokud jste se rozhodli použít jiný parametr názvy BLL s `GetProductsPaged` metoda jako `startIndex` a `maxRows`pro příklad by bylo potřeba nastavit ObjectDataSource s `StartRowIndexParameterName` a `MaximumRowsParameterName` vlastnosti odpovídajícím způsobem (například počáteční index pro `StartRowIndexParameterName` a maxRows pro `MaximumRowsParameterName`).
+2. **Nastavit ObjectDataSource s `StartRowIndexParameterName` a `MaximumRowsParameterName` vlastnosti odpovídajícím způsobem** `StartRowIndexParameterName` a `MaximumRowsParameterName` vlastnosti označují názvy vstupní parametry předané do `SelectMethod` pro vlastní účely stránkování. Ve výchozím nastavení, jsou tyto názvy parametrů `startIndexRow` a `maximumRows`, což je důvod, proč, při vytváření `GetProductsPaged` metoda v BLL, lze použít tyto hodnoty pro vstupní parametry. Pokud jste se rozhodli použít jiný parametr názvy BLL s `GetProductsPaged` metoda jako `startIndex` a `maxRows`pro příklad by bylo potřeba nastavit ObjectDataSource s `StartRowIndexParameterName` a `MaximumRowsParameterName` vlastnosti odpovídajícím způsobem (například počáteční index pro `StartRowIndexParameterName` a maxRows pro `MaximumRowsParameterName`).
 3. **Nastavit ObjectDataSource s [ `SelectCountMethod` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx) na název metody, která vrátí celkový počet z záznamy se stránkovaného prostřednictvím (`TotalNumberOfProducts`)** odvolat, který `ProductsBLL` třídu s `TotalNumberOfProducts`metoda vrátí celkový počet záznamů stránkování prostřednictvím DAL metodu, která provede `SELECT COUNT(*) FROM Products` dotazu. Tyto informace je třeba pomocí ObjectDataSource správně vykreslení rozhraní stránkování.
-4. **Odeberte `startRowIndex` a `maximumRows` `<asp:Parameter>` elementy z ObjectDataSource s deklarativní** při konfiguraci ObjectDataSource prostřednictvím průvodce, Visual Studio automaticky přidá dva `<asp:Parameter>` prvky `GetProductsPaged` metoda s vstupní parametry. Nastavením `EnablePaging` k `true`, tyto parametry se předají automaticky, pokud se zobrazí také v deklarativní syntaxi, bude ObjectDataSource pokus předat *čtyři* parametry, které `GetProductsPaged` – metoda a dva parametry pro `TotalNumberOfProducts` metoda. Pokud zapomenete pro jejich odebrání `<asp:Parameter>` prvky, pokud na stránce prostřednictvím prohlížeče získáte chybovou zprávu jako: *ObjectDataSource 'ObjectDataSource1' nelze najít neobecnou metodu 'TotalNumberOfProducts', který má Parametry: startRowIndex maximumRows*.
+4. **Odeberte `startRowIndex` a `maximumRows` `<asp:Parameter>` elementy z ObjectDataSource s deklarativní** při konfiguraci ObjectDataSource prostřednictvím průvodce, Visual Studio automaticky přidá dva `<asp:Parameter>` elementy pro `GetProductsPaged` metoda s vstupní parametry. Nastavením `EnablePaging` k `true`, tyto parametry se předají automaticky, pokud se zobrazí také v deklarativní syntaxi, bude ObjectDataSource pokus předat *čtyři* parametry, které `GetProductsPaged` – metoda a dva parametry pro `TotalNumberOfProducts` metoda. Pokud zapomenete pro jejich odebrání `<asp:Parameter>` prvky, pokud na stránce prostřednictvím prohlížeče získáte chybovou zprávu jako: *ObjectDataSource 'ObjectDataSource1' nelze najít neobecnou metodu 'TotalNumberOfProducts', který má Parametry: startRowIndex maximumRows*.
 
 Po provedení těchto změn, deklarativní syntaxi s ObjectDataSource by měl vypadat následovně:
 
@@ -326,7 +326,7 @@ Pokud jste povolení odstraňování funkcí v GridView, jejichž data se strán
 Při odstraňování poslední produktu GridView *by měl* automaticky přejít na stránku osmého a takové funkce je vystavených s výchozí stránkování. S vlastní stránkování, ale po odstranění poslední produktu na poslední stránce GridView jednoduše zmizí z obrazovky úplně. Přesné příčině *proč* tomu, že je trochu nad rámec tohoto kurzu, zjistit [odstranění poslední záznam na poslední stránce z GridView s vlastní stránkování](http://scottonwriting.net/sowblog/posts/7326.aspx) nízké úrovně podrobnosti, zdroj Tento problém. V souhrnu ho s z důvodu následující posloupnosti kroků, které provádí GridView při kliknutí na tlačítko Odstranit:
 
 1. Odstranit záznam
-2. Získání příslušných záznamů má být zobrazen pro zadaný `PageIndex` a`PageSize`
+2. Získání příslušných záznamů má být zobrazen pro zadaný `PageIndex` a `PageSize`
 3. Zkontrolujte, ujistěte se, že `PageIndex` není delší než počet stránek dat ve zdroji dat; pokud ji, automaticky snížení GridView s `PageIndex` vlastnost
 4. Rutina GridView pomocí záznamy získané v kroku 2 vytvořit vazbu na příslušnou stránku dat
 
@@ -377,8 +377,8 @@ Radostí programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Předchozí](paging-and-sorting-report-data-vb.md)
-[další](sorting-custom-paged-data-vb.md)
+> [!div class="step-by-step"]
+> [Předchozí](paging-and-sorting-report-data-vb.md)
+> [další](sorting-custom-paged-data-vb.md)

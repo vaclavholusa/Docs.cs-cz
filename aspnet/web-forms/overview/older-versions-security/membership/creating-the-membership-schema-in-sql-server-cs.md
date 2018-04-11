@@ -16,7 +16,7 @@ ms.openlocfilehash: 4fa0476ca8336b56340dd177f9816acbe015ef7d
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="creating-the-membership-schema-in-sql-server-c"></a>Vytvoření schématu členství v systému SQL Server (C#)
 ====================
@@ -234,7 +234,7 @@ Sloupce zodpovědná za uložení hesla `Password`, `PasswordFormat`, a `Passwor
 
 Tabulka 1 ukazuje, jak tyto tři sloupce může vypadat pro různé postupy úložiště při ukládání hesel MySecret! .
 
-| **Úložiště technika&lt;\_o3a\_p /&gt;** | **Heslo&lt;\_o3a\_p /&gt;** | **PasswordFormat&lt;\_o3a\_p /&gt;** | **PasswordSalt&lt;\_o3a\_p /&gt;** |
+| **Storage Technique&lt;\_o3a\_p /&gt;** | **Heslo&lt;\_o3a\_p /&gt;** | **PasswordFormat&lt;\_o3a\_p /&gt;** | **PasswordSalt&lt;\_o3a\_p /&gt;** |
 | --- | --- | --- | --- |
 | Zrušte zaškrtnutí | MySecret! | 0 | tTnkPlesqissc2y2SMEygA== |
 | S použitím algoritmu hash | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM= | 1 | wFgjUfhdUFOCKQiI61vtiQ== |

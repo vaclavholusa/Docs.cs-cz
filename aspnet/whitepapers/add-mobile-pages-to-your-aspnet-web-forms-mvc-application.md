@@ -16,7 +16,7 @@ ms.openlocfilehash: a8358b91ca424f4f3e576057ab43d850081dda60
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>Postupy: Přidání mobilních stránek do svých formulářů technologie ASP.NET nebo aplikace MVC
 ====================
@@ -116,7 +116,7 @@ Webové formuláře ASP.NET a MVC vývojáři mohou okamžitě zjistit důležit
 - Request.Browser.MobileDeviceManufacturer, Request.Browser.MobileDeviceModel
 - Request.Browser.ScreenPixelsWidth
 - Request.Browser.SupportsXmlHttp
-- .. a mnoho dalších
+- ...a mnoho dalších
 
 Na pozadí, platformu ASP.NET odpovídá příchozí *User-Agent* hlavičky protokolu HTTP (uživatelský Agent) proti regulárních výrazů v sadě souborů XML definice prohlížeče. Ve výchozím nastavení platforma obsahuje definice pro mnoho běžných mobilních zařízení a ostatní uživatelé, který si přejete rozpoznat můžete přidat vlastní soubory definicí prohlížeče. Další podrobnosti najdete v tématu stránce MSDN [ovládací prvky webového serveru technologie ASP.NET a možnosti prohlížeče](https://msdn.microsoft.com/library/x3k2ssx2.aspx).
 
@@ -365,4 +365,4 @@ Seznam mobilních zařízení emulátorů a simulátorů, můžete použít k te
 ## <a name="credits"></a>Kredity
 
 - Primárního autora: Steven Sanderson
-- Kontroloři / další obsahu zapisovače: James Rosewell, Mikael Söderström, Scott Hanselman, Scott Hunter
+- Reviewers / additional content writers: James Rosewell, Mikael Söderström, Scott Hanselman, Scott Hunter

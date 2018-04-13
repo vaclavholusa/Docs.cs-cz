@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
-title: "Představení technologie ASP.NET Web Pages – odstranění dat z databáze | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages – odstranění dat z databáze | Microsoft Docs
 author: tfitzmac
-description: "V tomto kurzu se dozvíte, jak odstranit položku jednotlivé databáze. Předpokládá se, že jste dokončili řady prostřednictvím aktualizace dat databáze v adrese poskytovatele. technologie ASP.NET..."
+description: V tomto kurzu se dozvíte, jak odstranit položku jednotlivé databáze. Předpokládá se, že jste dokončili řady prostřednictvím aktualizace dat databáze v adrese poskytovatele. technologie ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/02/2018
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: 5bc92b5d40e7a55dcd730d552c71031d913b277e
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 146199e862cd6fa2607671d31633476b1cb67021
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Představení technologie ASP.NET Web Pages – odstranění dat z databáze
 ====================
@@ -137,7 +137,7 @@ Druhou podmínku, která je `!Request["buttonDelete"].IsEmpty()`, což znamená,
   
  AND  
   
-*Tlačítko* `buttonDelete` *byl tlačítko odeslání formuláře.*
+** `buttonDelete`*Tlačítko byl tlačítko odeslání formuláře.*
 
 Tento formulář (v faktu, tato stránka) obsahuje pouze jedno tlačítko, takže další test pro `buttonDelete` není technicky povinný. Stále Chystáte se provést operaci, která bude trvale odebrat data. Chcete proto ujistěte se, co nejblíže se jenom v případě, že uživatel ji explicitně vyžaduje provedení operace. Předpokládejme například, rozšířit tuto stránku později a do ní přidat další tlačítka. Dokonce i pak kód, který odstraní videa se spustí pouze v případě `buttonDelete` bylo stisknuto tlačítko.
 
@@ -172,6 +172,6 @@ V dalším kurzu se dozvíte, jak poskytnout všechny stránky na svém webu bě
 - [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](../introducing-razor-syntax-c.md)
 - [Příkaz DELETE SQL](http://www.w3schools.com/sql/sql_delete.asp) na webu W3Schools
 
->[!div class="step-by-step"]
-[Předchozí](updating-data.md)
-[další](layouts.md)
+> [!div class="step-by-step"]
+> [Předchozí](updating-data.md)
+> [další](layouts.md)

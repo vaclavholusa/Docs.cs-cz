@@ -1,19 +1,20 @@
 ---
-title: "Syntaxe Razor stránky trasy a aplikace konvence funkce ASP.NET Core"
+title: Syntaxe Razor stránky trasy a aplikace konvence funkce ASP.NET Core
 author: guardrex
-description: "Zjistit, jak trasy a aplikací modelu zprostředkovatele konvence funkce vám pomohou ovládací prvek stránky směrování, zjišťování a zpracování."
+description: Zjistit, jak trasy a aplikací modelu zprostředkovatele konvence funkce vám pomohou ovládací prvek stránky směrování, zjišťování a zpracování.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 10/23/2017
+ms.date: 04/12/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/razor-pages/razor-pages-convention-features
-ms.openlocfilehash: 5105935a8f5b9e9f258fe84f839d17f6948bab1d
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: 0d8dc4e236d82de6c59add8aa949c28e9435f8fa
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="razor-pages-route-and-app-convention-features-in-aspnet-core"></a>Syntaxe Razor stránky trasy a aplikace konvence funkce ASP.NET Core
 
@@ -23,20 +24,50 @@ Naučte se používat stránky [trasy a aplikací modelu konvencí zprostředkov
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/razor-pages-convention-features/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
+::: moniker range="= aspnetcore-2.0"
 | Funkce | Ukázka ukazuje... |
 | -------- | --------------------------- |
-| [Konvence modelu trasy a aplikací](#add-route-and-app-model-conventions)<br><br>Conventions.Add<ul><li>IPageRouteModelConvention</li><li>IPageApplicationModelConvention</li></ul> | Přidání šablonu trasy a záhlaví stránkám aplikace. |
-| [Stránka trasy akce konvence](#page-route-action-conventions)<ul><li>AddFolderRouteModelConvention</li><li>AddPageRouteModelConvention</li><li>AddPageRoute</li></ul> | Přidání šablonu trasy na stránky ve složce a na jednu stránku. |
-| [Stránka modelu akce konvence](#page-model-action-conventions)<ul><li>AddFolderApplicationModelConvention</li><li>AddPageApplicationModelConvention</li><li>ConfigureFilter (filtru třídu, výrazu lambda nebo filtr factory)</li></ul> | Přidání hlavičky na stránky ve složce, přidání hlavičky na jednu stránku a konfigurací [rodiny filtru](xref:mvc/controllers/filters#ifilterfactory) přidat hlavičku stránkám aplikace. |
-| [Výchozí stránka aplikace model zprostředkovatele](#replace-the-default-page-app-model-provider) | Nahrazení výchozího zprostředkovatele modelu stránky Chcete-li změnit konvence pro pojmenování obslužné rutiny. |
+| [Konvence modelu](#model-conventions)<br><br>Conventions.Add<ul><li>IPageRouteModelConvention</li><li>IPageApplicationModelConvention</li></ul> | Přidáte šablonu trasy a záhlaví stránkám aplikace. |
+| [Stránka trasy akce konvence](#page-route-action-conventions)<ul><li>AddFolderRouteModelConvention</li><li>AddPageRouteModelConvention</li><li>AddPageRoute</li></ul> | Přidáte šablonu trasy na stránky ve složce a na jednu stránku. |
+| [Stránka modelu akce konvence](#page-model-action-conventions)<ul><li>AddFolderApplicationModelConvention</li><li>AddPageApplicationModelConvention</li><li>ConfigureFilter (filtru třídu, výrazu lambda nebo filtr factory)</li></ul> | Přidat hlavičku do stránky ve složce, zadejte hlavičku na jednu stránku a nakonfigurovat [rodiny filtru](xref:mvc/controllers/filters#ifilterfactory) přidat hlavičku stránkám aplikace. |
+| [Výchozí stránka aplikace model zprostředkovatele](#replace-the-default-page-app-model-provider) | Nahraďte výchozího zprostředkovatele modelu stránky Chcete-li změnit konvence pro názvy obslužné rutiny. |
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+| Funkce | Ukázka ukazuje... |
+| -------- | --------------------------- |
+| [Konvence modelu](#model-conventions)<br><br>Conventions.Add<ul><li>IPageRouteModelConvention</li><li>IPageApplicationModelConvention</li><li>IPageHandlerModelConvention</li></ul> | Přidáte šablonu trasy a záhlaví stránkám aplikace. |
+| [Stránka trasy akce konvence](#page-route-action-conventions)<ul><li>AddFolderRouteModelConvention</li><li>AddPageRouteModelConvention</li><li>AddPageRoute</li></ul> | Přidáte šablonu trasy na stránky ve složce a na jednu stránku. |
+| [Stránka modelu akce konvence](#page-model-action-conventions)<ul><li>AddFolderApplicationModelConvention</li><li>AddPageApplicationModelConvention</li><li>ConfigureFilter (filtru třídu, výrazu lambda nebo filtr factory)</li></ul> | Přidat hlavičku do stránky ve složce, zadejte hlavičku na jednu stránku a nakonfigurovat [rodiny filtru](xref:mvc/controllers/filters#ifilterfactory) přidat hlavičku stránkám aplikace. |
+| [Výchozí stránka aplikace model zprostředkovatele](#replace-the-default-page-app-model-provider) | Nahraďte výchozího zprostředkovatele modelu stránky Chcete-li změnit konvence pro názvy obslužné rutiny. |
+::: moniker-end
 
-## <a name="add-route-and-app-model-conventions"></a>Přidat trasy a aplikaci konvence modelu
+Konvence pro stránky Razor přidají a nakonfigurovat pomocí [AddRazorPagesOptions](/dotnet/api/microsoft.extensions.dependencyinjection.mvcrazorpagesmvcbuilderextensions.addrazorpagesoptions) metody rozšíření pro [AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc) na kolekci služby v `Startup` – třída. Později v tomto tématu jsou vysvětleny v následujících příkladech konvence:
 
-Přidat delegáta pro [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) přidat [trasy a aplikací modelu konvence](xref:mvc/controllers/application-model#conventions) která platí pro stránky Razor.
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc()
+        .AddRazorPagesOptions(options =>
+            {
+                options.Conventions.Add( ... );
+                options.Conventions.AddFolderRouteModelConvention("/OtherPages", model => { ... });
+                options.Conventions.AddPageRouteModelConvention("/About", model => { ... });
+                options.Conventions.AddPageRoute("/Contact", "TheContactPage/{text?}");
+                options.Conventions.AddFolderApplicationModelConvention("/OtherPages", model => { ... });
+                options.Conventions.AddPageApplicationModelConvention("/About", model => { ... });
+                options.Conventions.ConfigureFilter(model => { ... });
+                options.Conventions.ConfigureFilter( ... );
+            });
+}
+```
+
+## <a name="model-conventions"></a>Konvence modelu
+
+Přidat delegáta pro [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) přidat [modelu konvence](xref:mvc/controllers/application-model#conventions) která platí pro stránky Razor.
 
 **Přidat na všechny stránky modelu konvencí směrování**
 
-Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention) do kolekce [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se používají při modelu trasy a stránky konstrukce.
+Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention) do kolekce [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se používají při model trasy stránky konstrukce.
 
 Ukázková aplikace přidá `{globalTemplate?}` šablonu trasy na všechny stránky v aplikaci:
 
@@ -55,7 +86,7 @@ Požadavek vzorku o stránku v `localhost:5000/About/GlobalRouteValue` a zkontro
 
 **Přidat modelu konvencí aplikace na všechny stránky**
 
-Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageApplicationModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageapplicationmodelconvention) do kolekce [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se používají při trasy a stránky vytváření modelu.
+Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageApplicationModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageapplicationmodelconvention) do kolekce [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se používají při modelu stránky aplikace konstrukce.
 
 K předvedení tato a další konvence později v tomto tématu, obsahuje ukázkovou aplikaci `AddHeaderAttribute` třídy. Přijímá konstruktoru třídy `name` řetězec a `values` pole řetězců. Tyto hodnoty jsou použity v jeho `OnResultExecuting` metodu a nastavit tak hlavičky odpovědi. Úplné třídy se zobrazí v [stránky modelu akce konvence](#page-model-action-conventions) dále v tomto tématu.
 
@@ -70,6 +101,35 @@ Použití ukázkové aplikace `AddHeaderAttribute` třída přidat hlavičku, `G
 Požadavek vzorku o stránku v `localhost:5000/About` a zkontrolovat hlavičky zobrazíte výsledek:
 
 ![Hlavičky odpovědi stránky o ukazují, že byl přidán GlobalHeader.](razor-pages-convention-features/_static/about-page-global-header.png)
+
+::: moniker range=">= aspnetcore-2.1"
+**Přidat na všechny stránky modelu konvencí obslužné rutiny**
+
+[!INCLUDE[](~/includes/2.1.md)]
+
+Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageHandlerModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipagehandlermodelconvention) do kolekce [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se používají při model obslužná rutina stránky konstrukce.
+
+```csharp
+public class GlobalPageHandlerModelConvention 
+    : IPageHandlerModelConvention
+{
+    public void Apply(PageHandlerModel model)
+    {
+        ...
+    }
+}
+```
+
+`Startup.ConfigureServices`:
+
+```csharp
+services.AddMvc()
+    .AddRazorPagesOptions(options =>
+        {
+            options.Conventions.Add(new GlobalPageHandlerModelConvention());
+        });
+```
+::: moniker-end
 
 ## <a name="page-route-action-conventions"></a>Stránka trasy akce konvence
 
@@ -280,19 +340,7 @@ Poznamenejte si názvy obslužná rutina součástí *Index.cshtml* odpovídat `
 
 MVC [filtrů Akce](xref:mvc/controllers/filters#action-filters) ignorují pomocí stránky Razor, protože stránky Razor použít metody obslužné rutiny. Jiné typy filtrů MVC jsou k dispozici pro použití: [autorizace](xref:mvc/controllers/filters#authorization-filters), [výjimka](xref:mvc/controllers/filters#exception-filters), [prostředků](xref:mvc/controllers/filters#resource-filters), a [výsledek](xref:mvc/controllers/filters#result-filters). Další informace najdete v tématu [filtry](xref:mvc/controllers/filters) tématu.
 
-Filtr stránek ([IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter)) je filtr, který se vztahuje na stránky Razor. Ho obklopuje provádění metody obslužná rutina stránky. Umožňuje zpracovat vlastní kód ve fázích provádění metoda obslužná rutina stránky. Tady je příklad z ukázkové aplikace:
-
-[!code-csharp[](razor-pages-convention-features/sample/Filters/ReplaceRouteValueFilterAttribute.cs?name=snippet1)]
-
-Tento filtr vyhledává `globalTemplate` směrování hodnotu "TriggerValue" a záměna v "Zastaralá".
-
-`ReplaceRouteValueFilter` Atribut lze použít přímo na `PageModel`:
-
-[!code-csharp[](razor-pages-convention-features/sample/Pages/OtherPages/Page3.cshtml.cs?range=10-12&highlight=1)]
-
-Požadavek stránku Page3 z ukázkové aplikace s v `localhost:5000/OtherPages/Page3/TriggerValue`. Všimněte si, jak filtr nahradí hodnotu trasy:
-
-![Žádost o OtherPages nebo Page3 s výsledků segment směrování TriggerValue ve filtru nahrazení hodnoty trasy zastaralá.](razor-pages-convention-features/_static/otherpages-page3-filter-replacement-value.png)
+Filtr stránek ([IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter)) je filtr, který se vztahuje na stránky Razor. Další informace najdete v tématu [filtrovat metody pro stránky Razor](xref:mvc/razor-pages/filter).
 
 ## <a name="see-also"></a>Viz také
 

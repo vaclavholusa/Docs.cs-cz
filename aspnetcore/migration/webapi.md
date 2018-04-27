@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 2b9d6ac41266e0e6085153e1302d84a34ee85257
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2f1d0b43f565dbf6189406bfd65158f809e1f18f
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>Migrace z rozhraní ASP.NET Web API na jádro ASP.NET
 
@@ -66,7 +66,7 @@ Odstranit `Project_Readme.html` soubor z nového projektu. Řešení by měl nyn
 
 Už používá ASP.NET Core *Global.asax*, *web.config*, nebo *App_Start* složky. Místo toho jsou všechny spuštění úlohy provádějí *Startup.cs* v kořenovém adresáři projektu (viz [spuštění aplikace](../fundamentals/startup.md)). V aplikaci ASP.NET MVC jádra, na základě atributů směrování je nyní zahrnutá ve výchozím nastavení při `UseMvc()` nazývá; a toto je doporučený postup pro konfiguraci tras webového rozhraní API (a je jak starter projekt webového rozhraní API zpracovává směrování).
 
-[!code-none[](../migration/webapi/sample/ProductsCore/Startup.cs?highlight=40)]
+[!code-csharp[](../migration/webapi/sample/ProductsCore/Startup.cs?highlight=40)]
 
 Za předpokladu, že chcete použít atribut směrování ve vašem projektu do budoucna, je potřeba žádná další konfigurace. Jednoduše použít atributy podle potřeby řadiče a akce, jak se provádí v ukázce `ValuesController` třídu, která je součástí starter projekt webového rozhraní API:
 
@@ -99,7 +99,7 @@ Poslední krok v procesu migrace pro tento jednoduchý projekt webového rozhran
 
 * *Objektu ApiController* neexistuje
 
-* *System.Web.Http* namespace does not exist
+* *System.Web.Http* obor názvů neexistuje.
 
 * *IHttpActionResult* neexistuje
 

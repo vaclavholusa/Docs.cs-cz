@@ -1,7 +1,7 @@
 ---
-title: "Odkaz na konfiguraci základní modul ASP.NET"
+title: Odkaz na konfiguraci základní modul ASP.NET
 author: guardrex
-description: "Postup konfigurace modulu jádra ASP.NET pro hostování aplikací ASP.NET Core."
+description: Postup konfigurace modulu jádra ASP.NET pro hostování aplikací ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 5aac5cf2b8fd4bc53ba7201645b9bb02a5d1ecae
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 954841a1b1465c80e60d5745ad9e22294a88fdf4
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Odkaz na konfiguraci základní modul ASP.NET
 
@@ -65,6 +65,7 @@ V tématu [dílčí aplikace konfigurace](xref:host-and-deploy/iis/index#sub-app
 
 ### <a name="attributes-of-the-aspnetcore-element"></a>Atributy elementu aspNetCore
 
+::: moniker range="<= aspnetcore-2.0"
 | Atribut | Popis | Výchozí |
 | --------- | ----------- | :-----: |
 | `arguments` | <p>Volitelný řetězec atributu.</p><p>Argumenty pro spustitelný soubor určený v **processPath**.</p>| |
@@ -72,11 +73,26 @@ V tématu [dílčí aplikace konfigurace](xref:host-and-deploy/iis/index#sub-app
 | `forwardWindowsAuthToken` | Hodnota true nebo false</p><p>V případě hodnoty true token se předají do podřízeného procesu naslouchání na ASPNETCORE_PORT % jako hlavičku, MS-ASPNETCORE-WINAUTHTOKEN' každý požadavek. Je zodpovědností procesu pro volání funkce CloseHandle na tento token na základě požadavku.</p> | `true` |
 | `processPath` | <p>Požadovaný atribut typu string.</p><p>Cesta ke spustitelnému souboru, který spustí proces naslouchání požadavkům HTTP. Jsou podporovány relativní cesty. Pokud cesta začíná `.`, cesta se považuje za relativní vůči kořenovému adresáři webu.</p> | |
 | `rapidFailsPerMinute` | <p>Atribut volitelné celé číslo.</p><p>Určuje, kolikrát proces zadaný v **processPath** je dovoleno havárií za minutu. Pokud je tento limit překročen, modul zastaví spuštění procesu pro zbytek minutu.</p> | `10` |
-| `requestTimeout` | <p>Atribut volitelné časový interval.</p><p>Určuje dobu, pro který modul ASP.NET jádra čeká na odpověď z procesu naslouchání na ASPNETCORE_PORT %.</p><p>`requestTimeout` Musí být zadaná v celé minut, v opačném případě výchozí hodnota 2 minuty.</p> | `00:02:00` |
+| `requestTimeout` | <p>Atribut volitelné časový interval.</p><p>Určuje dobu, pro který modul ASP.NET jádra čeká na odpověď z procesu naslouchání na ASPNETCORE_PORT %.</p><p>Ve verzích ASP.NET základní modul, který dodává s verzí technologie ASP.NET 2.0 jádra nebo dřívější `requestTimeout` musí být zadaná v celé minut, v opačném případě výchozí hodnota 2 minuty.</p> | `00:02:00` |
 | `shutdownTimeLimit` | <p>Atribut volitelné celé číslo.</p><p>Doba v sekundách, kterou čeká modul pro spustitelný soubor řádně vypnutí při *app_offline.htm* je detekován soubor.</p> | `10` |
 | `startupTimeLimit` | <p>Atribut volitelné celé číslo.</p><p>Doba v sekundách, kterou čeká modul pro spuštění procesu naslouchání na portu spustitelný soubor. Pokud je tento časový limit překročen, modul ukončí proces. Modul se pokusí spustit proces, při přijetí nového požadavku a pokračuje v pokusí restartovat proces na následné příchozí žádosti, pokud se nepodaří spustit aplikaci **rapidFailsPerMinute** počet, kolikrát za posledních vrácení minutu.</p> | `120` |
 | `stdoutLogEnabled` | <p>Volitelný logický atribut.</p><p>V případě hodnoty true **stdout** a **stderr** pro proces zadaný v **processPath** přesměrováni na soubor zadaný v **stdoutLogFile**.</p> | `false` |
 | `stdoutLogFile` | <p>Volitelný řetězec atributu.</p><p>Určuje cestu k souboru relativní nebo absolutní, pro kterou **stdout** a **stderr** z procesu zadaný v **processPath** přihlášeni. Relativní cesty jsou relativní vůči kořenovému adresáři webu. Jakoukoli cestu, počínaje `.` jsou relativní vzhledem k webu kořenové a všechny ostatní cesty jsou považovány za absolutní cesty. Všechny složky zadaná v cestě musí existovat v pořadí pro modul pro vytvoření souboru protokolu. Pomocí oddělovače podtržítko, časové razítko, ID procesu a přípona souboru (*.log*) jsou přidány na poslední segment **stdoutLogFile** cesta. Pokud `.\logs\stdout` je zadaný jako hodnota, je uložený protokol příklad stdout jako *stdout_20180205194132_1934.log* v *protokoly* složky při ukládání na 2/5/2018 na 19:41:32 s ID procesu sady 1934.</p> | `aspnetcore-stdout` |
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+| Atribut | Popis | Výchozí |
+| --------- | ----------- | :-----: |
+| `arguments` | <p>Volitelný řetězec atributu.</p><p>Argumenty pro spustitelný soubor určený v **processPath**.</p>| |
+| `disableStartUpErrorPage` | Hodnota true nebo false</p><p>V případě hodnoty true **502.5 - selhání procesu** potlačeno stránky a stav 502 znaková stránka konfigurované v *web.config* má přednost před.</p> | `false` |
+| `forwardWindowsAuthToken` | Hodnota true nebo false</p><p>V případě hodnoty true token se předají do podřízeného procesu naslouchání na ASPNETCORE_PORT % jako hlavičku, MS-ASPNETCORE-WINAUTHTOKEN' každý požadavek. Je zodpovědností procesu pro volání funkce CloseHandle na tento token na základě požadavku.</p> | `true` |
+| `processPath` | <p>Požadovaný atribut typu string.</p><p>Cesta ke spustitelnému souboru, který spustí proces naslouchání požadavkům HTTP. Jsou podporovány relativní cesty. Pokud cesta začíná `.`, cesta se považuje za relativní vůči kořenovému adresáři webu.</p> | |
+| `rapidFailsPerMinute` | <p>Atribut volitelné celé číslo.</p><p>Určuje, kolikrát proces zadaný v **processPath** je dovoleno havárií za minutu. Pokud je tento limit překročen, modul zastaví spuštění procesu pro zbytek minutu.</p> | `10` |
+| `requestTimeout` | <p>Atribut volitelné časový interval.</p><p>Určuje dobu, pro který modul ASP.NET jádra čeká na odpověď z procesu naslouchání na ASPNETCORE_PORT %.</p><p>Ve verzích ASP.NET základní modul, který dodaný ve verzi ASP.NET Core 2.1 nebo novější `requestTimeout` je uveden v hodiny, minuty a sekundy.</p> | `00:02:00` |
+| `shutdownTimeLimit` | <p>Atribut volitelné celé číslo.</p><p>Doba v sekundách, kterou čeká modul pro spustitelný soubor řádně vypnutí při *app_offline.htm* je detekován soubor.</p> | `10` |
+| `startupTimeLimit` | <p>Atribut volitelné celé číslo.</p><p>Doba v sekundách, kterou čeká modul pro spuštění procesu naslouchání na portu spustitelný soubor. Pokud je tento časový limit překročen, modul ukončí proces. Modul se pokusí spustit proces, při přijetí nového požadavku a pokračuje v pokusí restartovat proces na následné příchozí žádosti, pokud se nepodaří spustit aplikaci **rapidFailsPerMinute** počet, kolikrát za posledních vrácení minutu.</p> | `120` |
+| `stdoutLogEnabled` | <p>Volitelný logický atribut.</p><p>V případě hodnoty true **stdout** a **stderr** pro proces zadaný v **processPath** přesměrováni na soubor zadaný v **stdoutLogFile**.</p> | `false` |
+| `stdoutLogFile` | <p>Volitelný řetězec atributu.</p><p>Určuje cestu k souboru relativní nebo absolutní, pro kterou **stdout** a **stderr** z procesu zadaný v **processPath** přihlášeni. Relativní cesty jsou relativní vůči kořenovému adresáři webu. Jakoukoli cestu, počínaje `.` jsou relativní vzhledem k webu kořenové a všechny ostatní cesty jsou považovány za absolutní cesty. Všechny složky zadaná v cestě musí existovat v pořadí pro modul pro vytvoření souboru protokolu. Pomocí oddělovače podtržítko, časové razítko, ID procesu a přípona souboru (*.log*) jsou přidány na poslední segment **stdoutLogFile** cesta. Pokud `.\logs\stdout` je zadaný jako hodnota, je uložený protokol příklad stdout jako *stdout_20180205194132_1934.log* v *protokoly* složky při ukládání na 2/5/2018 na 19:41:32 s ID procesu sady 1934.</p> | `aspnetcore-stdout` |
+::: moniker-end
 
 ### <a name="setting-environment-variables"></a>Nastavení proměnných prostředí
 
@@ -113,11 +129,15 @@ Základní modul ASP.NET selže-li spustit proces back-end nebo spustí proces b
 
 ## <a name="log-creation-and-redirection"></a>Vytvoření protokolu a přesměrování
 
-Základní modul ASP.NET přesměruje `stdout` a `stderr` protokoly na disk v případě `stdoutLogEnabled` a `stdoutLogFile` atributy `aspNetCore` element jsou nastavené. Všechny složky aplikace `stdoutLogFile` cesta, musí existovat v pořadí pro modul pro vytvoření souboru protokolu. Časové razítko a soubor rozšíření se automaticky přidá, když se vytvoří soubor protokolu. Protokoly nejsou otáčet, pokud dojde k recyklování procesů nebo restartování. Je zodpovědností hostitel k omezení místa na disku, které využívají protokol. Pomocí `stdout` protokolu doporučujeme pouze pro řešení potíží při spuštění aplikace. Nepoužívejte stdout protokolu pro účely protokolování obecné aplikace. Pro běžné protokolování v aplikaci ASP.NET Core, použijte knihovnu protokolování, který omezuje velikost souboru protokolu a otočí protokoly. Další informace najdete v tématu [poskytovatelů třetích stran protokolování](xref:fundamentals/logging/index#third-party-logging-providers).
+Modul ASP.NET Core přesměruje protokolů stdout a stderr na disk, pokud `stdoutLogEnabled` a `stdoutLogFile` atributy `aspNetCore` element jsou nastavené. Všechny složky aplikace `stdoutLogFile` cesta, musí existovat v pořadí pro modul pro vytvoření souboru protokolu. Fond aplikací musí mít oprávnění k zápisu do umístění, kde se protokoly zapisují (použijte `IIS AppPool\<app_pool_name>` poskytnout oprávnění k zápisu).
 
-Název souboru protokolu se skládá připojením časové razítko, ID procesu a přípona souboru (*.log*) na poslední segment `stdoutLogFile` cesta (obvykle *stdout*) oddělená podtržítka. Pokud `stdoutLogFile` cesta končí *stdout*, má název souboru protokolu pro aplikace pomocí PID 1934 na 2/5/2018 vytvořit na 19:42:32 *stdout_20180205194132_1934.log*.
+Protokoly nejsou otáčet, pokud dojde k recyklování procesů nebo restartování. Je zodpovědností hostitel k omezení místa na disku, které využívají protokol.
 
-Následující ukázka `aspNetCore` element konfiguruje `stdout` protokolování pro aplikaci hostovanou v Azure App Service. Místní cestu nebo cestu sdílené síťové složky je přijatelné pro místní protokolování. Zkontrolujte, jestli uživatel identita fondu aplikací má oprávnění k zápisu do zadané cestě.
+Použití protokolu stdout se doporučuje jenom pro řešení potíží při spuštění aplikace. Nepoužívejte stdout protokolu pro účely protokolování obecné aplikace. Pro běžné protokolování v aplikaci ASP.NET Core, použijte knihovnu protokolování, který omezuje velikost souboru protokolu a otočí protokoly. Další informace najdete v tématu [poskytovatelů třetích stran protokolování](xref:fundamentals/logging/index#third-party-logging-providers).
+
+Časové razítko a soubor rozšíření se automaticky přidá, když se vytvoří soubor protokolu. Název souboru protokolu se skládá připojením časové razítko, ID procesu a přípona souboru (*.log*) na poslední segment `stdoutLogFile` cesta (obvykle *stdout*) oddělená podtržítka. Pokud `stdoutLogFile` cesta končí *stdout*, má název souboru protokolu pro aplikace pomocí PID 1934 na 2/5/2018 vytvořit na 19:42:32 *stdout_20180205194132_1934.log*.
+
+Následující ukázka `aspNetCore` element konfiguruje stdout protokolování pro aplikaci hostovanou v Azure App Service. Místní cestu nebo cestu sdílené síťové složky je přijatelné pro místní protokolování. Zkontrolujte, jestli uživatel identita fondu aplikací má oprávnění k zápisu do zadané cestě.
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -153,7 +173,7 @@ Chcete-li zjistit verzi nainstalovaný modul jádro ASP.NET:
 1. Klikněte pravým tlačítkem na soubor a vyberte **vlastnosti** v kontextové nabídce.
 1. Vyberte **podrobnosti** kartě. **Verze souboru** a **verze produktu** představují nainstalovaná verze modulu.
 
-Hostování v systému Windows Server protokoly instalační program sady pro modul se nacházejí v *C:\\uživatelé\\% UserName %\\data aplikací\\místní\\Temp*. Název souboru *dd_DotNetCoreWinSvrHosting__\<časové razítko > _000_AspNetCoreModule_x64.log*.
+Instalační protokoly hostování sady pro modul se nacházejí v *C:\\uživatelé\\% UserName %\\data aplikací\\místní\\Temp*. Název souboru *dd_DotNetCoreWinSvrHosting__\<časové razítko > _000_AspNetCoreModule_x64.log*.
 
 ## <a name="module-schema-and-configuration-file-locations"></a>Umístění souborů modulu, schémat a konfigurace
 
@@ -165,7 +185,7 @@ Hostování v systému Windows Server protokoly instalační program sady pro mo
 
    * %windir%\SysWOW64\inetsrv\aspnetcore.dll
 
-**IIS Express (x86/amd64):**
+**Služba IIS Express (x86 nebo amd64):**
 
    * %ProgramFiles%\IIS Express\aspnetcore.dll
 
@@ -173,21 +193,21 @@ Hostování v systému Windows Server protokoly instalační program sady pro mo
 
 ### <a name="schema"></a>Schéma
 
-**IIS**
+**SLUŽBY IIS**
 
    * %windir%\System32\inetsrv\config\schema\aspnetcore_schema.xml
 
-**IIS Express**
+**Služby IIS Express**
 
    * %ProgramFiles%\IIS Express\config\schema\aspnetcore_schema.xml
 
 ### <a name="configuration"></a>Konfigurace
 
-**IIS**
+**SLUŽBY IIS**
 
    * %windir%\System32\inetsrv\config\applicationHost.config
 
-**IIS Express**
+**Služby IIS Express**
 
    * .vs\config\applicationHost.config
 

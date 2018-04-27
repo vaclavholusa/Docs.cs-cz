@@ -3,17 +3,18 @@ title: Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x a novější
 author: Rick-Anderson
 description: Microsoft.AspNetCore.All metapackage zahrnuje všechny podporované balíčků ASP.NET Core a Entity Framework Core, spolu s jejich závislosti.
 manager: wpickett
+monikerRange: = aspnetcore-2.0
 ms.author: riande
 ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: 69a1683feb66f9da5fe61378c4a4ed55e08d39ac
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4c11f15e659565325bfe8b8d91188b62177b251d
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x
 
@@ -25,7 +26,7 @@ Tato funkce vyžaduje rozhraní .NET zaměřená na aplikace ASP.NET Core 2.x z�
 * Všechny podporované balíčků základní Entity Framework. 
 * Interní a 3. stran závislosti používané ASP.NET Core a Entity Framework Core. 
 
-Všechny funkce ASP.NET Core 2.x a Entity Framework Core 2.x jsou součástí `Microsoft.AspNetCore.All` balíčku. Tento balíček použít výchozí šablony projektů.
+Všechny funkce ASP.NET Core 2.x a Entity Framework Core 2.x jsou součástí `Microsoft.AspNetCore.All` balíčku. Tento balíček použít výchozí šablony projektů cílení na technologii ASP.NET 2.0 jádra.
 
 Číslo verze `Microsoft.AspNetCore.All` metapackage představuje ASP.NET Core verze a verze Entity Framework Core (v souladu s verze .NET Core).
 

@@ -1,22 +1,22 @@
 ---
 uid: signalr/overview/getting-started/supported-platforms
-title: "Podporované platformy | Microsoft Docs"
+title: Podporované platformy | Microsoft Docs
 author: pfletcher
-description: "Tento článek popisuje, jaké klienty a servery jsou podporované systémem SignalR."
+description: Tento článek popisuje, jaké klienty a servery jsou podporované systémem SignalR.
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 06/10/2014
+ms.date: 04/18/2018
 ms.topic: article
 ms.assetid: eac31beb-0f46-4afa-9def-e80904dea4f0
 ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: 1379b9fb638f67896d88d7aa4312d95280ef7318
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4d3dc028ff67d0a9cfa03627b5f98f6541ecfff8
+ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/19/2018
 ---
 <a name="supported-platforms"></a>Podporované platformy
 ====================
@@ -37,8 +37,9 @@ Součást serveru SignalR může být hostovaný na celou řadu konfigurací ser
 
 ### <a name="supported-server-operating-systems"></a>Podporované serverové operační systémy
 
-Součást serveru SignalR může být hostovaný v následujících operačních systémů serveru nebo klienta. Všimněte si, že pro SignalR Websocket používat Windows Server 2012 nebo Windows 8 požadované (protokolu WebSocket lze použít na weby systému Windows Azure, dokud v lokalitě verze rozhraní .NET framework je nastavená na 4.5 a webové sokety je povolená na stránce konfigurace lokality).
+Součást serveru SignalR může být hostovaný v následujících operačních systémů serveru nebo klienta. Všimněte si, že pro SignalR Websocket používat Windows Server 2012, Windows Server 2016 nebo Windows 8 požadované (protokolu WebSocket lze použít na weby systému Windows Azure, dokud v lokalitě verze rozhraní .NET framework je nastavená na 4.5 a webové sokety je povolená na webu Stránka Konfigurace).
 
+- Windows Server 2016
 - Windows Server 2012
 - Windows Server 2008 r2
 - Windows 10
@@ -89,7 +90,7 @@ Kromě nutnosti některé prohlížeče, různé přenosy, které používá Sig
 | Přenos | Internet Explorer | Chrome (Windows nebo iOS) | Firefox | Safari (OSX nebo iOS) | Android |
 | --- | --- | --- | --- | --- | --- |
 | Technologie WebSockets | 10+ | aktuální - 1 | aktuální - 1 | aktuální - 1 | Není k dispozici |
-| Server-Sent Events | Není k dispozici | aktuální - 1 | aktuální - 1 | aktuální - 1 | Není k dispozici |
+| Události odeslané serverem | Není k dispozici | aktuální - 1 | aktuální - 1 | aktuální - 1 | Není k dispozici |
 | ForeverFrame | 8+ | Není k dispozici | Není k dispozici | Není k dispozici | 4.1 |
 | Dlouhým dotazováním | 8+ | aktuální - 1 | aktuální - 1 | aktuální - 1 | 4.1 |
 
@@ -114,7 +115,7 @@ Kromě operačního systému a požadavky na rozhraní .NET framework přenosy, 
 | --- | --- | --- |
 | Webové sokety | Windows 8 + a rozhraní .NET 4.5 + | Není k dispozici |
 | Navždy rámce | Není k dispozici | Není k dispozici |
-| Server-Sent Events | .NET 4+ | 5+ |
+| Události odeslané serverem | .NET 4+ | 5+ |
 | Dlouhým dotazováním | .NET 4+ | 5+ |
 
 <a id="android"></a>
@@ -129,7 +130,7 @@ Aplikace pro Windows Store a v aplikacích Windows Phone 8 lze SignalR. Podporov
 | --- | --- | --- | --- | --- |
 | Technologie WebSockets | Není k dispozici | Win8 + | 8+ | Není k dispozici |
 | Navždy rámce | Není k dispozici | Win8 + | 7.5+ | Není k dispozici |
-| Server-Sent Events | Win8 + | Není k dispozici | Není k dispozici | 8+ |
+| Události odeslané serverem | Win8 + | Není k dispozici | Není k dispozici | 8+ |
 | Dlouhým dotazováním | Win8 + | Win8 + | 7.5+ | 8+ |
 
 <a id="updates"></a>

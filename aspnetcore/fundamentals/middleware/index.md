@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 3312b27f936340a73243224c1a716fe421f178bc
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: a410d686b6140a487efb9962e94f64cfbec245f2
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="aspnet-core-middleware"></a>Middleware ASP.NET Core
 
@@ -88,7 +88,7 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -116,7 +116,7 @@ Middleware se statickými soubory se nazývá již v rané fázi v kanálu, aby 
 
 Pokud požadavek není zpracováván middleware se statickými soubory, je předána Identity middleware (`app.UseAuthentication`), který provádí ověřování. Identita není krátká smyčka neověřené požadavky. I když žádosti o ověření Identity autorizace (a odmítání) nastane pouze po MVC vybere konkrétní stránky Razor nebo kontroleru a akce.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Pokud požadavek není zpracováván middleware se statickými soubory, je předána Identity middleware (`app.UseIdentity`), který provádí ověřování. Identita není krátká smyčka neověřené požadavky. I když žádosti o ověření Identity autorizace (a odmítání) nastane pouze po MVC vybere konkrétní kontroleru a akce.
 
@@ -149,7 +149,7 @@ V následující tabulce jsou uvedeny požadavky a odpovědi z `http://localhost
 | Požadavek | Odpověď |
 | --- | --- |
 | localhost:1234 | Hello z jiných mapy delegáta.  |
-| localhost:1234/map1 | Mapa Test 1 |
+| localhost:1234 / map1 | Mapa Test 1 |
 | localhost:1234/map2 | Mapa testu 2 |
 | localhost:1234/map3 | Hello z jiných mapy delegáta.  |
 
@@ -241,7 +241,7 @@ Komponenty middlewaru lze vyřešit závislé z vkládání závislostí prostř
 
 Protože middlewaru je vytvořený při spuštění aplikace, není požadavků, *obor* služby životního cyklu, které middleware konstruktory používá nejsou sdílené s jinými typy vložit závislostí při každé žádosti. Pokud je nutné sdílet *obor* služby mezi vlastního middlewaru a jinými typy, přidejte tyto služby `Invoke` podpis metody. `Invoke` Metoda může přijímat další parametry, které jsou naplněny pomocí vkládání závislostí. Příklad:
 
-```c#
+```csharp
 public class MyMiddleware
 {
     private readonly RequestDelegate _next;

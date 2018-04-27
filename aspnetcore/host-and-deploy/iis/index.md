@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 64eb85f75a6c2e10bf8c39f32eeda5311744f2a2
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.openlocfilehash: 9f164b6e1f3cc520b704cbb5ffdaadb99cebdc57
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Jádro ASP.NET hostitele v systému Windows pomocí služby IIS
 
@@ -25,9 +25,7 @@ Podle [Luke Latham](https://github.com/guardrex) a [Rick Anderson](https://twitt
 Podporovány jsou následující operační systémy:
 
 * Windows 7 nebo novější
-* Windows Server 2008 R2 nebo novější&#8224;
-
-&#8224;Koncepčně konfigurace služby IIS, které jsou popsané v tomto dokumentu platí také pro hostování aplikací ASP.NET Core na Nano Server IIS. Specifické pro Nano Server pokyny najdete v tématu [ASP.NET Core pomocí služby IIS na serveru Nano](xref:tutorials/nano-server) kurzu.
+* Windows Server 2008 R2 nebo novější
 
 [Ovladač HTTP.sys serveru](xref:fundamentals/servers/httpsys) (dříve se označovaly jako [WebListener](xref:fundamentals/servers/weblistener)) nefunguje v konfiguraci reverzní proxy server se službou IIS. Použití [Kestrel server](xref:fundamentals/servers/kestrel).
 
@@ -45,9 +43,9 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-Základní modul ASP.NET generuje dynamický port přiřadit pro proces back-end. `UseIISIntegration` Metoda převezme dynamický port a nakonfiguruje Kestrel tak, aby naslouchala na `http://locahost:{dynamicPort}/`. Přepíše ostatní konfigurace adresy URL, například volání `UseUrls` nebo [API naslouchat na Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration). Proto volání `UseUrls` nebo na Kestrel `Listen` při použití modulu nejsou požadované rozhraní API. Pokud `UseUrls` nebo `Listen` nazývá Kestrel sleduje na port zadaný při spuštění aplikace bez služby IIS.
+Základní modul ASP.NET generuje dynamický port přiřadit pro proces back-end. `UseIISIntegration` Metoda převezme dynamický port a nakonfiguruje Kestrel tak, aby naslouchala na `http://localhost:{dynamicPort}/`. Přepíše ostatní konfigurace adresy URL, například volání `UseUrls` nebo [API naslouchat na Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration). Proto volání `UseUrls` nebo na Kestrel `Listen` při použití modulu nejsou požadované rozhraní API. Pokud `UseUrls` nebo `Listen` nazývá Kestrel sleduje na port zadaný při spuštění aplikace bez služby IIS.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Zahrnout závislost na [Microsoft.AspNetCore.Server.IISIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/) balíček v závislosti aplikaci. Pomocí integrace služby IIS middleware přidáním [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) rozšíření metodu [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder):
 
@@ -89,7 +87,7 @@ services.Configure<IISOptions>(options =>
 
 Middlewaru integrační služby IIS, který konfiguruje předávaných Middleware hlavičky a základní modul ASP.NET se tak, aby předával schématu (HTTP či HTTPS) a vzdálené IP adrese, kde tato žádost pochází. Další konfigurace může být potřeba pro aplikace, které jsou hostovány za další proxy servery a nástroje pro vyrovnávání zatížení. Další informace najdete v tématu [konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
 
-### <a name="webconfig-file"></a>web.config file
+### <a name="webconfig-file"></a>soubor Web.config
 
 *Web.config* nakonfiguruje souboru [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Vytváření, transformace a publikování *web.config* zpracováván pomocí .NET SDK webového jádra (`Microsoft.NET.Sdk.Web`). Sada SDK je nastavena v horní části souboru projektu:
 
@@ -97,7 +95,7 @@ Middlewaru integrační služby IIS, který konfiguruje předávaných Middlewar
 <Project Sdk="Microsoft.NET.Sdk.Web">
 ```
 
-Pokud *web.config* soubor není přítomen projektu, se vytvoří soubor s správný *processPath* a *argumenty* nakonfigurovat [ASP.NET Core Modul](xref:fundamentals/servers/aspnet-core-module) a přesunut do [publikovaná výstup](xref:host-and-deploy/directory-structure).
+Pokud *web.config* souboru se nacházejí v projektu, se vytvoří soubor s správný *processPath* a *argumenty* nakonfigurovat [ASP.NET Core Modul](xref:fundamentals/servers/aspnet-core-module) a přesunut do [publikovaná výstup](xref:host-and-deploy/directory-structure).
 
 Pokud *web.config* souboru se nacházejí v projektu, převede soubor s správný *processPath* a *argumenty* konfigurace modulu jádra ASP.NET a přesunut do publikované výstup. Transformace není změnit nastavení konfigurace služby IIS v souboru.
 
@@ -169,15 +167,15 @@ Povolit **konzoly pro správu služby IIS** a **webové služby**.
 
 ---
 
-## <a name="install-the-net-core-windows-server-hosting-bundle"></a>Instalaci sady hostování v rozhraní .NET Core systému Windows Server
+## <a name="install-the-net-core-hosting-bundle"></a>Nainstalujte rozhraní .NET základní hostování sady
 
-1. Nainstalujte *.NET jádra Windows serveru, který hostuje sady* v hostitelském systému. Sada nainstaluje rozhraní .NET Core Runtime, základní knihovny .NET a [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel server. Pokud systém nemá připojení k Internetu, získejte a nainstalujte [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840) před instalací sady hostování v rozhraní .NET Core systému Windows Server.
+1. Nainstalujte *sady hostování rozhraní .NET Core* v hostitelském systému. Sada nainstaluje rozhraní .NET Core Runtime, základní knihovny .NET a [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel server. Pokud systém nemá připojení k Internetu, získejte a nainstalujte [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840) před instalací sady hostování rozhraní .NET Core.
 
    1. Přejděte na [.NET všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
    1. Vyberte ze seznamu na nejnovější .NET Core runtime bez preview (**.NET Core** > **Runtime** > **.NET Core Runtime x.y.z**). Pokud máte v úmyslu pracovat s software verze preview, vyhněte se moduly runtime, které mají slovo "náhled" v jejich text odkazu.
-   1. Na .NET Core runtime stránce v části stažení **Windows**, vyberte **instalační program hostování serveru** odkaz ke stažení *.NET jádra Windows serveru, který hostuje sady*.
+   1. Na .NET Core runtime stránce v části stažení **Windows**, vyberte **hostování instalační program sady** odkaz ke stažení *sady hostování rozhraní .NET Core*.
 
-   **Důležité!** Pokud sadu hostování je nainstalována před službou IIS, je nutné opravit instalaci sady. Spusťte instalační program hostování sady znovu po instalaci služby IIS.
+   **Důležité!** Pokud je sada hostování nainstalovaná před službou IIS, je nutné opravit instalaci sady. Spusťte instalační program sady hostování znovu po instalaci služby IIS.
    
    Instalační program zabránit instalaci x86 balíčků na x64 OS, spusťte instalační program z příkazového řádku s přepínačem správce `OPT_NO_X86=1`.
 
@@ -196,7 +194,8 @@ Při nasazování aplikací na servery s [Web Deploy](/iis/publish/using-web-dep
 
 1. V rámci do nové složky, vytvořte *protokoly* složku pro uložení protokoly stdout ASP.NET základní modul, pokud je povoleno protokolování stdout. Pokud je aplikace nasazena pomocí *protokoly* složku v datové části, tento krok přeskočit. Pokyny k povolení nástroje MSBuild k vytvoření *protokoly* najdete v části složky automaticky, když místně, sestavení projektu [adresářovou strukturu](xref:host-and-deploy/directory-structure) tématu.
 
-   **Důležité!** Protokol stdout lze použijte pouze k řešení chyb při spuštění aplikace. Nikdy nepoužívejte stdout protokolování pro běžné aplikace protokolování. Neexistuje žádné omezení velikosti souboru protokolu nebo počet soubory protokolů vytvořené. Další informace o protokolu stdout najdete v tématu [vytvoření a přesměrování protokolu](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection). Informace o protokolování v aplikaci ASP.NET Core, najdete v článku [protokolování](xref:fundamentals/logging/index) tématu.
+   > [!IMPORTANT]
+   > Protokol stdout lze použijte pouze k řešení chyb při spuštění aplikace. Nikdy nepoužívejte stdout protokolování pro běžné aplikace protokolování. Neexistuje žádné omezení velikosti souboru protokolu nebo počet soubory protokolů vytvořené. Fond aplikací, musí mít oprávnění k zápisu do umístění, kde se zapisují protokoly. Musí existovat všechny složky na cestu k umístění protokolu. Další informace o protokolu stdout najdete v tématu [vytvoření a přesměrování protokolu](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection). Informace o protokolování v aplikaci ASP.NET Core, najdete v článku [protokolování](xref:fundamentals/logging/index) tématu.
 
 1. V **Správce služby IIS**, otevřete uzel serveru v **připojení** panelu. Klikněte pravým tlačítkem myši **lokality** složky. Vyberte **přidat web** v kontextové nabídce.
 
@@ -242,6 +241,8 @@ Najdete v článku [profilů publikování sady Visual Studio pro nasazování a
 
 Přesunout aplikaci k hostování systému, jako je ruční kopírování, Xcopy, Robocopy nebo prostředí PowerShell můžete použijte některou z několika metod.
 
+Další informace o nasazení základní technologie ASP.NET do služby IIS najdete v tématu [materiály pro nasazení pro správce služby IIS](#deployment-resources-for-iis-administrators) části.
+
 ## <a name="browse-the-website"></a>Přejděte na web
 
 ![V prohlížeči Microsoft Edge načetl úvodní stránce služby IIS.](index/_static/browsewebsite.png)
@@ -250,7 +251,7 @@ Přesunout aplikaci k hostování systému, jako je ruční kopírování, Xcopy
 
 Soubory ve složce nasazení jsou zamčené, když aplikace běží. Během nasazení nejde přepsat uzamčení souborů. Chcete-li uvolnit uzamčení soubory v nasazení, zastavit fond aplikace pomocí **jeden** z následujících postupů:
 
-* Použití nástroje nasazení webu a odkazu `Microsoft.NET.Sdk.Web` v souboru projektu. *App_offline.htm* soubor je umístěn v kořenovém adresáři webové aplikace. Když se soubor nachází, modul ASP.NET Core řádně ukončí aplikaci a slouží *app_offline.htm* souboru během nasazení. Další informace najdete v tématu [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module#appofflinehtm).
+* Použití nástroje nasazení webu a odkazu `Microsoft.NET.Sdk.Web` v souboru projektu. *App_offline.htm* soubor je umístěn v kořenovém adresáři webové aplikace. Když se soubor nachází, modul ASP.NET Core řádně ukončí aplikaci a slouží *app_offline.htm* souboru během nasazení. Další informace najdete v tématu [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module#app_offlinehtm).
 * Ručně zastavte fond aplikací ve Správci služby IIS na serveru.
 * Pomocí prostředí PowerShell zastavte a restartujte fond aplikací (vyžaduje rozhraní PowerShell 5 nebo novější):
 
@@ -364,7 +365,7 @@ Konfigurační oddíly aplikací ASP.NET 4.x v *web.config* nejsou používány 
 
 * **\<system.web>**
 * **\<appSettings>**
-* **\<connectionStrings>**
+* **\<connectionStrings >**
 * **\<umístění >**
 
 Aplikace ASP.NET Core jsou konfigurováni pomocí jiných poskytovatelů konfigurace. Další informace najdete v tématu [konfigurace](xref:fundamentals/configuration/index).
@@ -409,13 +410,34 @@ ICACLS C:\sites\MyWebApp /grant "IIS AppPool\DefaultAppPool":F
 
 Další informace najdete v tématu [icacls](/windows-server/administration/windows-commands/icacls) tématu.
 
+## <a name="deployment-resources-for-iis-administrators"></a>Materiály pro nasazení pro správce služby IIS
+
+Další informace o službě IIS podrobný v dokumentaci služby IIS.  
+[Dokumentace ke službě IIS](/iis)
+
+Další informace o modelech nasazení aplikace .NET Core.  
+[Nasazení aplikace .NET core](/dotnet/core/deploying/)
+
+Zjistěte, jak modul základní technologie ASP.NET umožňuje Kestrel webového serveru použít jako reverzní proxy server služby IIS nebo IIS Express.  
+[Modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
+
+Postup konfigurace modulu jádra ASP.NET pro hostování aplikací ASP.NET Core.  
+[Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
+
+Další informace o struktura adresářů publikované aplikace ASP.NET Core.  
+[Adresářová struktura](xref:host-and-deploy/directory-structure)
+
+Zjistit aktivní i neaktivní moduly služby IIS pro aplikace ASP.NET Core a jak spravovat moduly služby IIS.  
+[Moduly služby IIS](xref:host-and-deploy/iis/troubleshoot)
+
+Zjistěte, jak diagnostikovat problémy s IIS nasazení aplikací ASP.NET Core.  
+[Řešení potíží](xref:host-and-deploy/iis/troubleshoot)
+
+Rozlišení běžných chyb při hostování aplikace ASP.NET Core ve službě IIS.  
+[Referenční informace k běžným chybám u služeb Azure App Service a IIS](xref:host-and-deploy/azure-iis-errors-reference)
+
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Řešení potíží s ASP.NET Core ve službě IIS](xref:host-and-deploy/iis/troubleshoot)
-* [Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
-* [Úvod do modulu ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
-* [Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
-* [Moduly IIS s ASP.NET Core](xref:host-and-deploy/iis/modules)
-* [Úvod do ASP.NET Core](../index.md)
+* [Úvod do ASP.NET Core](xref:index)
 * [Lokality oficiální Microsoft IIS](https://www.iis.net/)
-* [Microsoft TechNet Library: Windows Server](/windows-server/windows-server-versions)
+* [Technické knihovně obsahu systému Windows Server](/windows-server/windows-server)

@@ -3,17 +3,18 @@ title: Úvod do stránky Razor v ASP.NET Core
 author: Rick-Anderson
 description: Zjistěte, jak stránky Razor v ASP.NET Core Díky kódování zaměřené na stránce scénáře jednodušší a zvýšit produktivitu než použití MVC.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/12/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 532799d013f26869da03fe1062072f55dcce35f8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5e2b53a4771a97b0a4091f593720b9c0e4e345bf
+ms.sourcegitcommit: c4a31aaf902f2e84aaf4a9d882ca980fdf6488c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -291,7 +292,7 @@ Aplikace má následující strukturu souboru nebo složky:
 * */ Stránky*
 
   * *Index.cshtml*
-  * *Nebo smlouvy zákazníka*
+  * */ Odběratele.*
 
     * *Create.cshtml*
     * *Edit.cshtml*
@@ -309,12 +310,12 @@ Generování adresy URL pro stránky podporuje relativních názvů. Následují
 
 | RedirectToPage(x)| Stránka |
 | ----------------- | ------------ |
-| RedirectToPage("/Index") | *Pages/Index* |
-| RedirectToPage("./Index"); | *Pages/Customers/Index* |
-| RedirectToPage("../Index") | *Pages/Index* |
-| RedirectToPage("Index")  | *Pages/Customers/Index* |
+| RedirectToPage("/Index") | *Stránky/indexu* |
+| RedirectToPage("./Index"); | *Stránky nebo zákazníků nebo indexu* |
+| RedirectToPage(".. / Indexu) | *Stránky/indexu* |
+| RedirectToPage("Index")  | *Stránky nebo zákazníků nebo indexu* |
 
-`RedirectToPage("Index")`, `RedirectToPage("./Index")`, a `RedirectToPage("../Index")` jsou <em>relativních názvů</em>. `RedirectToPage` Parametr <em>kombinaci</em> cestou k aktuální stránce k výpočtu název cílové stránky.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page. -- page name, not page path -->
+`RedirectToPage("Index")`, `RedirectToPage("./Index")`, a `RedirectToPage("../Index")` jsou <em>relativních názvů</em>. `RedirectToPage` Parametr <em>kombinaci</em> cestou k aktuální stránce k výpočtu název cílové stránky.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
 
 Relativní název propojení je užitečné, při vytváření lokalit se strukturou komplexní. Pokud používáte relativních názvů propojení mezi stránkami ve složce, můžete přejmenovat této složky. Všechny odkazy na i nadále fungovat, (protože jejich nezahrnuli název složky).
 
@@ -417,6 +418,7 @@ services.AddMvc()
 ## <a name="see-also"></a>Viz také
 
 * [Úvod do ASP.NET Core](xref:index)
+* [Syntaxe Razor](xref:mvc/views/razor)
 * [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Konvence autorizace stránky Razor](xref:security/authorization/razor-pages-authorization)
 * [Syntaxe Razor stránky vlastní trasy a stránka zprostředkovatele modelu](xref:mvc/razor-pages/razor-pages-convention-features)

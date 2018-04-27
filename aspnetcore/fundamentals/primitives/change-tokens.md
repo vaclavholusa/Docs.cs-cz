@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: fd57683506e809fd68ba8c02ad184b5f8afe53a2
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3055eec91adc412b596d4cc73e8523e18ff63331
+ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>Detekovat změny s tokeny změn v ASP.NET Core
 
@@ -59,16 +59,16 @@ Změna tokeny se používají v hlavní oblasti ASP.NET Core změny provedené u
 
 Ve výchozím nastavení, použijte šablony ASP.NET Core [konfigurační soubory JSON](xref:fundamentals/configuration/index#json-configuration) (*appSettings.JSON určený*, *appsettings. Development.JSON*, a *appsettings. Production.JSON*) se načíst konfigurační nastavení aplikace.
 
-Tyto soubory jsou konfigurováni pomocí [AddJsonFile (IConfigurationBuilder, řetězec, logická hodnota, logická hodnota)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) rozšiřující metody na [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) který přijme `reloadOnChange` parametr (ASP.NET Základní 1.1 nebo novější). `reloadOnChange` Označuje, pokud by měl znovu načíst konfiguraci na změny souboru. Toto nastavení najdete v článku [tomuto webovému hostiteli](/dotnet/api/microsoft.aspnetcore.webhost) pohodlí metoda [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) ([odkaz na zdroj](https://github.com/aspnet/MetaPackages/blob/rel/2.0.3/src/Microsoft.AspNetCore/WebHost.cs#L152-L193)):
+Tyto soubory jsou konfigurováni pomocí [AddJsonFile (IConfigurationBuilder, řetězec, logická hodnota, logická hodnota)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) rozšiřující metody na [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) který přijme `reloadOnChange` parametr (ASP.NET Základní 1.1 nebo novější). `reloadOnChange` Označuje, pokud by měl znovu načíst konfiguraci na změny souboru. Toto nastavení najdete v článku [tomuto webovému hostiteli](/dotnet/api/microsoft.aspnetcore.webhost) pohodlí metoda [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder):
 
 ```csharp
 config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
       .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
 ```
 
-Konfigurace na základě souborů je reprezentována [FileConfigurationSource](/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource). `FileConfigurationSource` používá [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider) ([odkaz na zdroj](https://github.com/aspnet/FileSystem/blob/patch/2.0.1/src/Microsoft.Extensions.FileProviders.Abstractions/IFileProvider.cs)) ke sledování souborů.
+Konfigurace na základě souborů je reprezentována [FileConfigurationSource](/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource). `FileConfigurationSource` používá [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider) sledování souborů.
 
-Ve výchozím nastavení `IFileMonitor` zajišťuje [PhysicalFileProvider](/dotnet/api/microsoft.extensions.fileproviders.physicalfileprovider) ([odkaz na zdroj](https://github.com/aspnet/Configuration/blob/patch/2.0.1/src/Microsoft.Extensions.Configuration.FileExtensions/FileConfigurationSource.cs#L82)), které používá [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher) pro monitorování konfiguračního souboru změny.
+Ve výchozím nastavení `IFileMonitor` zajišťuje [PhysicalFileProvider](/dotnet/api/microsoft.extensions.fileproviders.physicalfileprovider), které používá [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher) ke sledování změn konfigurace.
 
 Ukázková aplikace ukazuje dva implementace pro sledování změn konfigurace. Pokud buď *appSettings.JSON určený* změny souborů nebo prostředí verzi souboru se změní, každá implementace provede vlastní kód. Ukázková aplikace zapíše zprávu do konzoly.
 
@@ -174,7 +174,7 @@ Model stránka načte obsah souboru pomocí služby (*Pages/Index.cshtml.cs*):
 
 ## <a name="compositechangetoken-class"></a>CompositeChangeToken – třída
 
-Pro představující jednu nebo více `IChangeToken` instancí v jednom objektu, použijte [CompositeChangeToken](/dotnet/api/microsoft.extensions.primitives.compositechangetoken) – třída ([odkaz na zdroj](https://github.com/aspnet/Common/blob/patch/2.0.1/src/Microsoft.Extensions.Primitives/CompositeChangeToken.cs)).
+Pro představující jednu nebo více `IChangeToken` instancí v jednom objektu, použijte [CompositeChangeToken](/dotnet/api/microsoft.extensions.primitives.compositechangetoken) třídy.
 
 ```csharp
 var firstCancellationTokenSource = new CancellationTokenSource();

@@ -1,5 +1,5 @@
 ---
-title: Configure ASP.NET Core Data Protection
+title: Konfigurovat ochranu dat ASP.NET Core
 author: rick-anderson
 description: Informace o konfiguraci ochrany dat v ASP.NET Core.
 manager: wpickett
@@ -9,19 +9,27 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 3a19cec2ce4387ca44ca120f031a072269b93454
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 300feb42dff7f1bb86bab6fedf3f657273ced8be
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="configure-aspnet-core-data-protection"></a>Configure ASP.NET Core Data Protection
+# <a name="configure-aspnet-core-data-protection"></a>Konfigurovat ochranu dat ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Při inicializaci systému ochrany dat, se vztahuje [výchozí nastavení](xref:security/data-protection/configuration/default-settings) na základě provozní prostředí. Tato nastavení jsou obecně vhodné pro aplikace běžící na jednom počítači. Existují případy, kdy vývojář chtít možná změnit výchozí nastavení, protože jejich aplikace je rozdělena mezi několika počítači, nebo kvůli dodržování předpisů. Pro tyto scénáře ochrany dat systému nabízí bohaté konfigurační rozhraní API.
+Při inicializaci systému ochrany dat, se vztahuje [výchozí nastavení](xref:security/data-protection/configuration/default-settings) na základě provozní prostředí. Tato nastavení jsou obecně vhodné pro aplikace běžící na jednom počítači. Existují případy, kdy vývojář chtít změnit výchozí nastavení:
 
-Metody rozšíření je [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) , který vrací [IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder). `IDataProtectionBuilder` zpřístupní metody rozšíření, můžete společně zřetězit ke konfiguraci ochrany dat možnosti.
+* Aplikace je rozdělena mezi více počítačů.
+* Kvůli dodržování předpisů.
+
+Pro tyto scénáře ochrany dat systému nabízí bohaté konfigurační rozhraní API.
+
+> [!WARNING]
+> Podobně jako konfigurační soubory, prstenec klíč ochrany dat je třeba chránit pomocí příslušná oprávnění. Můžete šifrovat klíče v klidovém stavu, ale to není zabránit útočníkům ve vytváření nových klíčů. V důsledku toho je dopad na zabezpečení vaší aplikace. Umístění úložiště, který je nakonfigurovaný s ochranou dat by měl mít přístup omezené na sebe, podobně jako by chránit konfigurační soubory aplikace. Pokud zvolíte možnost prstenec váš klíč uložit na disk, například pomocí oprávnění systému souborů. Ujistěte se, jenom identitě v rámci kterého běží vaše webová aplikace má ke čtení, zápisu a vytvořte přístup do adresáře. Pokud používáte Azure Table Storage, webové aplikace musí mít možnost čtení, zápisu nebo vytvořit nové položky v tabulce úložiště atd.
+>
+> Metody rozšíření [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) vrátí [IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder). `IDataProtectionBuilder` zpřístupní metody rozšíření, můžete společně zřetězit ke konfiguraci ochrany dat možnosti.
 
 ## <a name="persistkeystofilesystem"></a>PersistKeysToFileSystem
 
@@ -109,7 +117,7 @@ Pokud není zadaný systému ochrany dat ASP.NET Core hostitelů v (například 
 
 Ochrana dat zásobníku umožňuje změnit výchozí algoritmus používaný nově vygenerované klíče. Nejjednodušší způsob, jak to udělat je volat [UseCryptographicAlgorithms](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.usecryptographicalgorithms) ze zpětného volání konfigurace:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
 ```csharp
 services.AddDataProtection()
@@ -146,7 +154,7 @@ Můžete ručně zadat implementace prostřednictvím volání [UseCustomCryptog
 
 ### <a name="specifying-custom-managed-algorithms"></a>Určení vlastních spravované algoritmy
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
 Pokud chcete zadat vlastní spravované algoritmů, vytvářet [ManagedAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.managedauthenticatedencryptorconfiguration) instance, která odkazuje na typy implementace:
 
@@ -195,7 +203,7 @@ Obecně \*typ vlastnosti musí odkazovat na konkrétní, instantiable (prostřed
 
 ### <a name="specifying-custom-windows-cng-algorithms"></a>Určení vlastních algoritmy Windows CNG
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
 Chcete-li zadat vlastní Windows CNG algoritmus HMAC s klíčem ověření pomocí režimu CBC šifrování, vytvořte [CngCbcAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cngcbcauthenticatedencryptorconfiguration) instance, který obsahuje algoritmické informace:
 
@@ -244,7 +252,7 @@ services.AddDataProtection()
 > [!NOTE]
 > Šifrovací algoritmus symetrického bloku musí mít délku klíče > = 128 bitů, velikost bloku > = 64 bitů, a musí podporovat režimu CBC šifrování s odsazení PKCS #7. Algoritmus hash musí mít velikost digest > = 128 bitů a musí podporovat otevíráte s BCRYPT\_ALG\_zpracování\_HMAC\_příznak příznak. \*Lze nastavit vlastnosti zprostředkovatele hodnoty null lze použít výchozího poskytovatele pro zadaný algoritmus. Najdete v článku [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) Další informace naleznete v dokumentaci.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
 Chcete-li zadat vlastní Windows CNG algoritmus šifrování Galois/čítač režimu pomocí ověření, vytvořte [CngGcmAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cnggcmauthenticatedencryptorconfiguration) instance, který obsahuje algoritmické informace:
 

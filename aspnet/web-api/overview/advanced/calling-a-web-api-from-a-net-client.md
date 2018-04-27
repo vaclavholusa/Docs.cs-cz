@@ -11,17 +11,17 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: a243eeb982ba581e237263c4e31e130d634aff0e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fdb74b0eb74ce7f387f49a0b25ceebd3fc389da9
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>Volání webového rozhraní API z klienta .NET (C#)
 ====================
 podle [Karel Wasson](https://github.com/MikeWasson) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[Stáhněte si dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)
+[Stáhněte si dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Pokyny ke stahování](/aspnet/core/tutorials/#how-to-download-a-sample). 
 
 Tento kurz ukazuje způsob volání webového rozhraní API z aplikace .NET, pomocí [System.Net.Http.HttpClient.](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
@@ -29,10 +29,10 @@ V tomto kurzu je zapsán klientskou aplikaci, která využívá následující w
 
 | Akce | Metoda HTTP | Relativní identifikátor URI |
 | --- | --- | --- |
-| Získání ID produktu | GET | /api/products/*id* |
+| Získání ID produktu | GET | /API/produkty/*id* |
 | Vytvoření nového produktu | POST | / api/produkty |
-| Aktualizace produktu | PUT | /api/products/*id* |
-| Odstranit produktu | DELETE | /api/products/*id* |
+| Aktualizace produktu | PUT | /API/produkty/*id* |
+| Odstranit produktu | DELETE | /API/produkty/*id* |
 
 Pokud chcete dozvědět, jak implementovat toto rozhraní API s rozhraním ASP.NET Web API, přečtěte si téma [vytváření webového rozhraní API této operace CRUD podporuje](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 ).
@@ -167,7 +167,7 @@ Následující kód odešle požadavek DELETE k odstranění produktu:
 
 K testování aplikace klienta:
 
-1. [Stáhněte si](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) a spuštění aplikace serveru. [Pokyny ke stahování](https://docs.microsoft.com/aspnet/core/tutorials/#how-to-download-a-sample). Ověřte, zda že je funkční aplikace serveru. Pro exaxmple `http://localhost:64195/api/products` by měla vrátit seznam produktů.
+1. [Stáhněte si](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) a spuštění aplikace serveru. [Pokyny ke stahování](/aspnet/core/tutorials/#how-to-download-a-sample). Ověřte, zda že je funkční aplikace serveru. Pro exaxmple `http://localhost:64195/api/products` by měla vrátit seznam produktů.
 2. Nastaví základní identifikátor URI pro požadavky HTTP. Změňte číslo portu na port použitý při aplikace serveru.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

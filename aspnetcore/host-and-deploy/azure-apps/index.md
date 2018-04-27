@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: c2675f73880a41ee75f6ec13155419945387e109
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f53f77d342cc59094a80e8667db6ef345a6e8305
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Jádro ASP.NET hostitele v Azure App Service
 
@@ -95,14 +95,13 @@ Další informace najdete v tématu [klíče poskytovatelů úložiště](xref:s
 
 Aplikace ASP.NET Core preview můžete nasadit do služby Azure App Service pomocí následujících postupů:
 
-* [Instalace rozšíření lokality preview](#site-x)
-* [Nasaďte aplikaci vlastní obsažené](#self)
-* [Pomocí Docker s webovými aplikacemi pro kontejnery](#docker)
+* [Nainstalujte rozšíření lokality preview](#install-the-preview-site-extension)
+* [Nasazení aplikace samostatný](#deploy-the-app-self-contained)
+* [Pomocí Docker s webovými aplikacemi pro kontejnery](#use-docker-with-web-apps-for-containers)
 
-Pokud máte potíže pomocí rozšíření lokality preview, otevřete problém na [Githubu](https://github.com/aspnet/azureintegration/issues/new).
+Pokud dojde k potížím s pomocí rozšíření lokality preview, otevřete problém na [Githubu](https://github.com/aspnet/azureintegration/issues/new).
 
-<a name="site-x"></a>
-### <a name="install-the-preview-site-extention"></a>Instalace rozšíření lokality preview
+### <a name="install-the-preview-site-extension"></a>Nainstalujte rozšíření lokality preview
 
 * Z portálu Azure přejděte do okna služby App Service.
 * Do vyhledávacího pole zadejte "ex".
@@ -111,10 +110,10 @@ Pokud máte potíže pomocí rozšíření lokality preview, otevřete problém 
 
 ![Azure okně aplikace s předchozích krocích](index/_static/x1.png)
 
-* Vyberte **rozšíření modulu Runtime ASP.NET Core**.
-* Vyberte **OK** > **OK**.
+* Vyberte **Runtime ASP.NET Core 2.1 (x 86)** nebo **Runtime ASP.NET Core 2.1 (x 64)**.
+* Vyberte **OK**. Vyberte **OK** znovu.
 
-Po dokončení operací přidání je nainstalovaná nejnovější verze preview .NET Core 2.1. Instalaci můžete ověřit spuštěním `dotnet --info` v konzole. V okně App Service:
+Po dokončení operací přidání, je nainstalována nejnovější verze preview .NET Core 2.1. Ověření instalace spuštěním `dotnet --info` v konzole. Z **služby App Service** okno:
 
 * Zadejte "con" do vyhledávacího pole.
 * Vyberte **konzoly**.
@@ -126,26 +125,24 @@ Předchozí obrázek byl aktuální v době, kdy to byla zapsána. Může se zob
 
 `dotnet --info` Zobrazí cestu k rozšíření webu, na kterém je nainstalovaný ve verzi Preview. Zobrazuje aplikace běží z rozšíření webu místo výchozího *ProgramFiles* umístění. Pokud se zobrazí *ProgramFiles*, restartujte lokalitu a spustit `dotnet --info`.
 
-#### <a name="use-the-preview-site-extention-with-an-arm-template"></a>Rozšíření lokality preview pomocí šablony ARM
+**Rozšíření verze preview webu pomocí šablony ARM**
 
-Pokud používáte šablonu ARM k vytvoření a nasazení aplikace můžete použít `siteextensions` typ prostředku pro přidání rozšíření lokality do webové aplikace. Příklad:
+Pokud šablonu ARM se používá k vytvoření a nasazení aplikací `siteextensions` typ prostředku můžete použít k přidání rozšíření lokality do webové aplikace. Příklad:
 
 [!code-json[Main](index/sample/arm.json?highlight=2)]
 
-<a name="self"></a>
-### <a name="deploy-the-app-self-contained"></a>Nasaďte aplikaci vlastní obsažené
+### <a name="deploy-the-app-self-contained"></a>Nasazení aplikace samostatný
 
-Můžete nasadit [nezávislý aplikace](/dotnet/core/deploying/#self-contained-deployments-scd) , představuje preview runtime s ním při nasazení. Při nasazování aplikace Samoobslužné obsažené:
+A [nezávislý aplikace](/dotnet/core/deploying/#self-contained-deployments-scd) mohou být nasazeny, představuje preview runtime v nasazení. Při nasazování nezávislý aplikace:
 
-* Nemusíte připravit váš web.
-* Vyžaduje, abyste pro publikování aplikace jinak než při nasazení aplikace po instalaci sady SDK na serveru.
+* Lokality není nutné, abyste byli připraveni.
+* Aplikace musí být publikován jinak než při publikování pro nasazení závislé na framework sdílený modul runtime a hostitele na serveru.
 
-Samostatný aplikace jsou možnost pro všechny aplikace .NET Core.
+Samostatný aplikace jsou možnost u všech aplikací ASP.NET Core.
 
-<a name="docker"></a>
 ### <a name="use-docker-with-web-apps-for-containers"></a>Pomocí Docker s webovými aplikacemi pro kontejnery
 
-[Úložiště Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/) obsahuje nejnovější imagí Dockeru 2.1 preview. Můžete používat jako základní bitové kopie a nasazení do webové aplikace pro kontejnery běžným způsobem.
+[Úložiště Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/) obsahuje nejnovější imagí Dockeru 2.1 preview. Bitové kopie slouží jako základní bitová kopie. Použít bitovou kopii a nasazení do webové aplikace pro kontejnery normálně.
 
 ## <a name="additional-resources"></a>Další zdroje
 

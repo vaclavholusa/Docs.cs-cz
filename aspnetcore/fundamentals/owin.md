@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/owin
-ms.openlocfilehash: 7c379ddbcc1f66ba9f7a4d0a50a4607394fed0af
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3ff7b6e02284b4f6c61bf5d31013b4edfe8f7f29
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>Spustit nástroj webové rozhraní pro platformu .NET (OWIN) s ASP.NET Core
 
@@ -80,10 +80,10 @@ Můžete nakonfigurovat další akce provést v rámci kanálu OWIN.
 ```csharp
 app.UseOwin(pipeline =>
 {
-    pipeline(next =>
+    pipeline(async (next) =>
     {
         // do something before
-        return OwinHello;
+        await OwinHello(new OwinEnvironment(HttpContext));
         // do something after
     });
 });
@@ -134,10 +134,9 @@ namespace Microsoft.AspNetCore.Hosting
 }
 ```
 
-Pomocí této na místě, všechny možnosti, které je potřeba spustit aplikaci ASP.NET pomocí tento vlastní server volat rozšíření v *Program.cs*:
+S tímto zavedené vyvolat rozšíření v *Program.cs* spouštět aplikace ASP.NET Core pomocí tento vlastní server:
 
 ```csharp
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -222,7 +221,7 @@ To [ukázka](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/
 
 ## <a name="owin-environment"></a>Prostředí OWIN
 
-Můžete vytvořit pomocí prostředí OWIN `HttpContext`.
+Můžete vytvořit prostředí OWIN pomocí `HttpContext`.
 
 ```csharp
 
@@ -239,26 +238,26 @@ OWIN závisí na `IDictionary<string,object>` objekt ke sdělování informací 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
 | owin.RequestScheme | `String` |  |
-| owin.RequestMethod  | `String` | |    
+| owin. RequestMethod  | `String` | |    
 | owin.RequestPathBase  | `String` | |    
 | owin.RequestPath | `String` | |     
 | owin.RequestQueryString  | `String` | |    
 | owin.RequestProtocol  | `String` | |    
-| owin.RequestHeaders | `IDictionary<string,string[]>`  | |
-| owin.RequestBody | `Stream`  | |
+| owin. RequestHeaders | `IDictionary<string,string[]>`  | |
+| owin. RequestBody | `Stream`  | |
 
 ### <a name="request-data-owin-v110"></a>Data požadavku (OWIN v1.1.0)
 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
-| owin.RequestId | `String` | Nepovinné |
+| owin. ID žádosti | `String` | Nepovinné |
 
 ### <a name="response-data-owin-v100"></a>Data odpovědi (OWIN v1.0.0)
 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
 | owin. ResponseStatusCode | `int` | Nepovinné |
-| owin.ResponseReasonPhrase | `String` | Nepovinné |
+| owin. ResponseReasonPhrase | `String` | Nepovinné |
 | owin. ResponseHeaders | `IDictionary<string,string[]>`  | |
 | owin. ResponseBody | `Stream`  | |
 
@@ -267,18 +266,18 @@ OWIN závisí na `IDictionary<string,object>` objekt ke sdělování informací 
 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
-| owin.CallCancelled | `CancellationToken` |  |
-| owin.Version  | `String` | |   
+| owin. CallCancelled | `CancellationToken` |  |
+| owin. Verze  | `String` | |   
 
 
 ### <a name="common-keys"></a>Běžné klíče
 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
-| ssl.ClientCertificate | `X509Certificate` |  |
+| protokol SSL. ClientCertificate | `X509Certificate` |  |
 | ssl.LoadClientCertAsync  | `Func<Task>` | |    
-| server.RemoteIpAddress  | `String` | |    
-| server.RemotePort | `String` | |     
+| Server. Vzdálená_adresa_ip  | `String` | |    
+| Server. Vzdálený port | `String` | |     
 | server.LocalIpAddress  | `String` | |    
 | server.LocalPort  | `String` | |    
 | server.IsLocal  | `bool` | |    
@@ -297,22 +296,22 @@ OWIN závisí na `IDictionary<string,object>` objekt ke sdělování informací 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
 | opaque.Version | `String` |  |
-| opaque.Upgrade | `OpaqueUpgrade` | V tématu [podpisu delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
+| neprůhledné. Upgrade | `OpaqueUpgrade` | V tématu [podpisu delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
 | opaque.Stream | `Stream` |  |
 | neprůhledné. CallCancelled | `CancellationToken` |  |
 
 
-### <a name="websocket-v030"></a>WebSocket v0.3.0
+### <a name="websocket-v030"></a>V0.3.0 protokolu WebSocket
 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
-| websocket.Version | `String` |  |
+| protokol websocket. Verze | `String` |  |
 | protokol websocket. Přijmout | `WebSocketAccept` | V tématu [podpisu delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
 | protokol websocket. AcceptAlt |  | Bez specifikace |
 | protokol websocket. SubProtocol | `String` | V tématu [RFC6455 části 4.2.2](https://tools.ietf.org/html/rfc6455#section-4.2.2) krok 5,5 |
-| websocket.SendAsync | `WebSocketSendAsync` | V tématu [podpisu delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
+| protokol websocket. SendAsync | `WebSocketSendAsync` | V tématu [podpisu delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
 | websocket.ReceiveAsync | `WebSocketReceiveAsync` | V tématu [podpisu delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
-| websocket.CloseAsync | `WebSocketCloseAsync` | V tématu [podpisu delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
+| protokol websocket. CloseAsync | `WebSocketCloseAsync` | V tématu [podpisu delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
 | protokol websocket. CallCancelled | `CancellationToken` |  |
 | protokol websocket. ClientCloseStatus | `int` | Nepovinné |
 | protokol websocket. ClientCloseDescription | `String` | Nepovinné |

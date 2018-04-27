@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: 142a997fa46f37545ea04971ab6593bff053b1ef
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: a11ed13c709830795ebfd0e658d3f2fd2fd5a458
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>Vytvořit Krásný a pohotově reagujících weby s Bootstrap a ASP.NET Core
 
@@ -81,7 +81,7 @@ Výchozí šablona používá sadu `<div>` elementy pro vykreslení horní navig
 </button>
 ```
 
-Zahrnuje také název aplikace, která se zobrazí v levé horní části. Hlavní navigační nabídce je vykreslen metodou `<ul>` v rámci druhého div a obsahuje odkazy na Domů, o a obraťte se na. Další odkazy pro registrace a přihlášení se přidá řádek _LoginPartial v řádku 29. Níže navigaci, hlavní části každé stránce vykreslením v jiném `<div>`označené jako s třídami "kontejner" a "obsah". V souboru _Layout jednoduché výchozí vidět tady jsou obsahu stránce vykreslen zobrazením konkrétní přidružené stránce a pak jednoduchou `<footer>` se přidá na konec `<div>` elementu. Uvidíte, jak zobrazuje integrované o stránku pomocí této šablony:
+Zahrnuje také název aplikace, která se zobrazí v levé horní části. Hlavní navigační nabídce je vykreslen metodou `<ul>` v rámci druhého div a obsahuje odkazy na Domů, o a obraťte se na. Níže navigaci, hlavní části každé stránce vykreslením v jiném `<div>`označené jako s třídami "kontejner" a "obsah". V souboru _Layout jednoduché výchozí vidět tady jsou obsahu stránce vykreslen zobrazením konkrétní přidružené stránce a pak jednoduchou `<footer>` se přidá na konec `<div>` elementu. Uvidíte, jak zobrazuje integrované o stránku pomocí této šablony:
 
 ![O stránku](bootstrap/_static/about-page-wide.png)
 
@@ -116,8 +116,8 @@ V dalším kroku přidejte další `<div>` prvky pro každý sloupec a zadat po�
 Předpona šablon stylů CSS – třída | Vrstva zařízení | Šířka
 :---: | :---: | :---:
 col-xs- | Telefony | < 768px
-col-sm- | Tablety | >= 768px
-col-md- | Stolní počítače | >= 992px
+sloupec-sm - | Tablety | >= 768px
+sloupec-md – | Stolní počítače | >= 992px
 sloupec-kontaktní skupina - | Zobrazí větší plochy | >= 1200px
 
 Při zadávání dva sloupce obou se "sloupec md – 6" výsledné rozložení bude dva sloupce plochy rozlišení, ale tyto dva sloupce se svisle zásobníku při vykreslení v menší zařízení (nebo užší okno prohlížeče na ploše), což umožňuje uživatelům snadno zobrazit obsah, aniž by bylo nutné vodorovný posun.
@@ -146,7 +146,7 @@ Výchozí tlačítko třídy a jejich barvy jsou uvedené v následující obrá
 
 ### <a name="badges"></a>Odznaky
 
-Odznaky naleznete malé, obvykle číselné popisky vedle položky navigace. Můžete indikuje počet zpráv nebo oznámení čekání nebo přítomnosti aktualizací. Určení takové odznaky je jednoduché, přidávání <span> obsahující text, s třídou "BADGE":
+Odznaky naleznete malé, obvykle číselné popisky vedle položky navigace. Můžete indikuje počet zpráv nebo oznámení čekání nebo přítomnosti aktualizací. Určení takové odznaky je jednoduché, přidávání `<span>` obsahující text, s třídou "BADGE":
 
 ![odznaky s motivu](bootstrap/_static/theme-badges.png)
 
@@ -158,7 +158,7 @@ Potřebujete zobrazí nějaké oznámení, upozornění nebo chybovou zprávu u�
 
 ### <a name="navbars-and-menus"></a>Navbars a nabídek
 
-Naše rozložení už obsahuje standardní navigační panel, ale motivu spuštění, který podporuje možnosti dalšími styly. Nemůžeme se můžete také snadno rozhodnout pro zobrazení navigační panel svisle místo vodorovně Pokud, která obsahuje upřednostňované, také přidání dílčí navigační se položky v nabídkách plovoucím panelem. Jednoduché navigační nabídky, jako je karta proužky jsou postavený na <ul> elementy. Ty lze vytvořit velmi jednoduše tak, že právě poskytovat jim třídy CSS "nav" a "nav karty":
+Naše rozložení už obsahuje standardní navigační panel, ale motivu spuštění, který podporuje možnosti dalšími styly. Nemůžeme se můžete také snadno rozhodnout pro zobrazení navigační panel svisle místo vodorovně Pokud, která obsahuje upřednostňované, také přidání dílčí navigační se položky v nabídkách plovoucím panelem. Jednoduché navigační nabídky, jako je karta proužky jsou postavený na `<ul>` elementy. Ty lze vytvořit velmi jednoduše tak, že právě poskytovat jim třídy CSS "nav" a "nav karty":
 
 ![motivu tabstrips](bootstrap/_static/theme-tabstrips.png)
 

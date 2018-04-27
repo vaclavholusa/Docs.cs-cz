@@ -5,16 +5,16 @@ description: Zjistit, jak třída při spuštění v ASP.NET Core nakonfiguruje 
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 12/08/2017
+ms.date: 4/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: bad1bc986be3e8681dacdf48fe7d20ab660ebcb0
-ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
+ms.openlocfilehash: 8dd632a2c888e65c6420e0fed7acf6fa15173b3d
+ms.sourcegitcommit: c4a31aaf902f2e84aaf4a9d882ca980fdf6488c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -52,17 +52,55 @@ Další informace o `WebHostBuilder`, najdete v článku [hostitelský](xref:fun
 
 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) metoda je:
 
-* Volitelné.
+* Nepovinné
 * Je voláno hostitelem webové před `Configure` metoda konfigurace služby pro aplikace.
 * Kde [možnosti konfigurace](xref:fundamentals/configuration/index) jsou nastaveny podle konvence.
 
 Přidání služeb do kontejneru služby jsou dostupné v rámci aplikace a v `Configure` metoda. Služby jsou vyřešeny prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection) nebo z [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
 
-Webového hostitele může konfigurovat některé služby před `Startup` metody jsou volány. Podrobnosti najdete v [hostitelský](xref:fundamentals/hosting) tématu. 
+Webového hostitele může konfigurovat některé služby před `Startup` metody jsou volány. Podrobnosti najdete v [hostitelský](xref:fundamentals/hosting) tématu.
 
 Pro funkce, které vyžadují významné instalace, jsou `Add[Service]` rozšiřující metody na [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Typické webové aplikace se zaregistruje services pro rozhraní Entity Framework, Identity a MVC:
 
 [!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
+
+::: moniker range=">= aspnetcore-2.1" 
+
+<a name="setcompatibilityversion"></a>
+### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>SetCompatibilityVersion pro jádro ASP.NET MVC 
+
+`SetCompatibilityVersion` Metoda umožňuje aplikacím výslovný souhlas nebo výslovný nesouhlas s potenciálně nejnovější změny chování byla zavedená v ASP.NET MVC Core 2.1 +. Tyto potenciálně nejnovější změny chování jsou obecně ve jak se chová subsystém MVC a jak **kódu** nazývá modulem runtime. Tím výslovným souhlasem, získáte nejnovější chování a dlouhodobé chování ASP.NET Core.
+
+Následující kód nastaví režim kompatibility ASP.NET Core 2.1:
+
+[!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]
+
+Doporučujeme, abyste testování aplikace pomocí nejnovější verze (`CompatibilityVersion.Version_2_1`). Očekáváme, že většina aplikací nebudou mít nejnovější změny chování pomocí nejnovější verze. 
+
+Aplikace, které volají `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)` chráněná před potenciálně nejnovější změny chování byla zavedená v ASP.NET MVC 2.1 jádra a novější verze 2.x. Tato ochrana:
+
+* Nelze použít na všechny změny, 2.1 nebo novější, je určen potenciálně nejnovější změny chování ASP.NET Core runtime v subsystému MVC.
+* Nevztahuje se na další hlavní verzi.
+
+Výchozí kompatibilitu pro ASP.NET Core 2.1 a novější 2.x aplikace, které provádějí **není** volání `SetCompatibilityVersion` je 2.0 kompatibility. To znamená, není volání `SetCompatibilityVersion` je stejný jako volání `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`.
+
+Následující kód nastaví režim kompatibility ASP.NET Core 2.1, s výjimkou následující chování:
+
+* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+
+[!code-csharp[Main](startup/sampleCompatibility/Startup2.cs?name=snippet1)]
+
+Pro aplikace, dojde k nejnovější změny chování, pomocí přepínačů odpovídající kompatibility:
+
+* Umožňuje, abyste používali nejnovější verzi a vyjádření výslovného nesouhlasu s konkrétní nejnovější změny chování.
+* Získáte čas na aktualizovat aplikaci tím, takže pracuje s nejnovější změny.
+
+[MvcOptions](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) třída zdroje komentáře mají dobrou vysvětlení, co se změnilo a proč změny jsou zlepšení pro většinu uživatelů.
+
+V některých budoucí datum, bude [verzi ASP.NET Core 3.0](https://github.com/aspnet/Home/wiki/Roadmap). Staré chování nepodporuje kompatibility přepínače se odeberou ve verzi 3.0. Domníváme, že se jedná o pozitivní změny využívání téměř všechny uživatele. Zavedením nyní tyto změny, nyní využívat většinu aplikací a ostatní bude mít čas aktualizace aplikací.
+
+::: moniker-end
 
 ## <a name="services-available-in-startup"></a>K dispozici v spuštění služby
 
@@ -76,7 +114,7 @@ Webový hostitel poskytuje některé služby, které jsou k dispozici `Startup` 
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
 
-Každý `Use` metoda rozšíření přidá do kanálu požadavku komponenta middlewaru. Například `UseMvc` přidá metody rozšíření [směrování Middleware](xref:fundamentals/routing) do kanálu požadavku a nakonfiguruje [MVC](xref:mvc/overview) jako výchozí obslužnou rutinu. 
+Každý `Use` metoda rozšíření přidá do kanálu požadavku komponenta middlewaru. Například `UseMvc` přidá metody rozšíření [směrování Middleware](xref:fundamentals/routing) do kanálu požadavku a nakonfiguruje [MVC](xref:mvc/overview) jako výchozí obslužnou rutinu.
 
 Jednotlivé komponenty middleware v kanálu požadavku zodpovídá za vyvolání další komponenta v kanálu nebo krátká smyčka řetězu, v případě potřeby. Pokud krátká smyčka neprobíhá podél řetězu middleware, má každý middleware druhý příležitosti pro zpracování požadavku před odesláním do klienta.
 

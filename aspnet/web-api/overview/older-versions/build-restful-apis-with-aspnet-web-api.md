@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 320409cd395384a608a07307a56d18105d45de14
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ded549109ca6e7ad806f1c3f53387766527e5a94
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>Sestavení rozhraní RESTful API s rozhraním ASP.NET Web API
 ====================
@@ -25,7 +25,7 @@ Podle [webové táborech Team](https://twitter.com/webcamps)
 > V posledních letech se stal jasné, že HTTP není je jen pro poskytovat stránky HTML. Je také efektivní platformu pro sestavování rozhraní Web API, například pomocí několik příkazů (GET, POST a tak dále) plus pár jednoduchými koncepty *identifikátory URI* a *hlavičky*. Rozhraní ASP.NET Web API je sada komponent, které zjednodušují programování HTTP. Protože je založen na modul runtime rozhraní ASP.NET MVC, webového rozhraní API automaticky zpracovává podrobnosti nízké úrovně přenos HTTP. Současně zpřístupní webového rozhraní API přirozeně programovací model protokolu HTTP. Ve skutečnosti jeden cílem webového rozhraní API je *není* abstraktní rychle když ve skutečnosti HTTP. V důsledku toho webového rozhraní API je flexibilní a snadné rozšíření. V tomto testovacím prostředí praktických použije k vytvoření jednoduché rozhraní REST API pro kontaktujte správce aplikace webového rozhraní API. Pokud vytvoříte klienta využívají rozhraní API. Styl architektury REST ukázal jako efektivní způsob, jak využít HTTP -, i když není určitě pouze platný přístup k protokolu HTTP. Kontaktujte správce zveřejní dosáhl standardu RESTful pro výpis, přidávání a odebírání kontakty, mimo jiné. Toto testovací prostředí vyžaduje základní znalosti protokolu HTTP, REST a předpokládá, že máte základní praktické znalosti jazyka HTML, JavaScript a jQuery.
 > 
 > > [!NOTE]
-> > Má oblast vyhrazený pro rozhraní ASP.NET Web API na webu technologie ASP.NET [ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api). Tento web bude pokračovat v poskytování nejnovější informace, ukázky a zprávy související s webového rozhraní API, tak to zkuste ho často Pokud byste chtěli pustíte hlubší do obrázky vytváření vlastní webová rozhraní API k dispozici pro prakticky libovolný zařízení nebo vývojovém prostředí.
+> > Má oblast vyhrazený pro rozhraní ASP.NET Web API na webu technologie ASP.NET [ https://asp.net/web-api ](https://asp.net/web-api). Tento web bude pokračovat v poskytování nejnovější informace, ukázky a zprávy související s webového rozhraní API, tak to zkuste ho často Pokud byste chtěli pustíte hlubší do obrázky vytváření vlastní webová rozhraní API k dispozici pro prakticky libovolný zařízení nebo vývojovém prostředí.
 > > 
 > > Rozhraní ASP.NET Web API, podobné technologie ASP.NET MVC 4, má flexibilitu z hlediska oddělení vrstvě služby z řadičů budete moci použít některé z dostupných vkládání závislostí architektury velmi snadná. Je dobré vzorku v MSDN, který ukazuje způsob použití Ninject pro vkládání závislostí v projektu webového rozhraní API ASP.NET, které si můžete stáhnout z [zde](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7).
 > 

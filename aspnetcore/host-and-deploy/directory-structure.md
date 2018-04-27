@@ -1,48 +1,56 @@
 ---
 title: Struktura adresářů ASP.NET Core
 author: guardrex
-description: V tématu strukturu adresáře publikovaných aplikací ASP.NET Core.
+description: Další informace o struktura adresářů publikované aplikace ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/15/2017
+ms.date: 04/09/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: 2a6ee4fefcc6d23b1c893a40b7b1be9edfcf9732
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ac9b777bcc7f4a8634161fc1347a4d0fdc3b4784
+ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="aspnet-core-directory-structure"></a>Struktura adresářů ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-V ASP.NET Core, adresář aplikace *publikování*, se skládá z souborů aplikace, konfigurační soubory, statické prostředky, balíčky a modul runtime (pro samostatný aplikace).
+V ASP.NET Core, adresáři publikované aplikace *publikování*, se skládá z souborů aplikace, konfigurační soubory, statické prostředky, balíčky a modul runtime (pro [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd)).
 
 
-|            Typ aplikace            |                                                                                                                                                                                                                                                     Struktura adresářů                                                                                                                                                                                                                                                      |
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Nasazení závislé na Framework | <ul><li>Publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Moduly runtime\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>myapp.deps.json</li><li>myapp.dll</li><li>myapp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>myapp.runtimeconfig.json</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul> |
-|   Samostatná nasazení    |          <ul><li>Publikování\*<ul><li>protokoly\* (Pokud je součástí publishOptions)</li><li>odolný systém souborů\*</li><li>Zobrazení\* (Pokud je součástí publishOptions)</li><li>Wwwroot\* (Pokud je součástí publishOptions)</li><li>soubory .dll</li><li>myapp.deps.json</li><li>myapp.exe</li><li>myapp.pdb</li><li>Moje aplikace. PrecompiledViews.dll (Pokud předkompilace zobrazení syntaxe Razor)</li><li>Moje aplikace. PrecompiledViews.pdb (Pokud předkompilace zobrazení syntaxe Razor)</li><li>myapp.runtimeconfig.json</li><li>soubor Web.config (Pokud je součástí publishOptions)</li></ul></li></ul>           |
+| Typ aplikace | Struktura adresářů |
+| -------- | ------------------- |
+| [Nasazení závislé na Framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>Publikování&dagger;<ul><li>protokoly&dagger; (volitelné, pokud se vyžaduje pro příjem protokoly stdout)</li><li>Zobrazení&dagger; (aplikace MVC; Pokud nejsou předkompilovaných zobrazení)</li><li>Stránky&dagger; (MVC nebo stránky Razor aplikace; Pokud nejsou předkompilovaných stránky)</li><li>Wwwroot&dagger;</li><li>*\.soubory knihoven DLL</li><li>\<název sestavení >. deps.json</li><li>\<název sestavení > .dll</li><li>\<název sestavení > pdb</li><li>\<název sestavení >. PrecompiledViews.dll</li><li>\<název sestavení >. PrecompiledViews.pdb</li><li>\<název sestavení >. runtimeconfig.json</li><li>soubor Web.config (nasazení služby IIS)</li></ul></li></ul> |
+| [Samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>Publikování&dagger;<ul><li>protokoly&dagger; (volitelné, pokud se vyžaduje pro příjem protokoly stdout)</li><li>odolný systém souborů&dagger;</li><li>Zobrazení&dagger; (aplikace MVC; Pokud nejsou předkompilovaných zobrazení)</li><li>Stránky&dagger; (MVC nebo stránky Razor aplikace; Pokud nejsou předkompilovaných stránky)</li><li>Wwwroot&dagger;</li><li>\*soubory .dll</li><li>\<název sestavení >. deps.json</li><li>\<název sestavení > .exe</li><li>\<název sestavení > pdb</li><li>\<název sestavení >. PrecompiledViews.dll</li><li>\<název sestavení >. PrecompiledViews.pdb</li><li>\<název sestavení >. runtimeconfig.json</li><li>soubor Web.config (nasazení služby IIS)</li></ul></li></ul> |
 
-\* Určuje adresář
+&dagger;Určuje adresář
 
-Obsah *publikování* představuje adresář *obsahu kořenovou cestu*, také zavolat *základní cesty aplikace*, nasazení. Jakýkoli název je uveden *publikování* directory v nasazení, její umístění slouží jako serveru fyzickou cestu k hostované aplikace. *Wwwroot* adresáře, pokud existuje, obsahuje pouze statické prostředky. *Protokoly* adresář může být součástí nasazení ve vytváření projektu a přidání `<Target>` element uvedené níže, aby vaše *.csproj* souboru nebo fyzicky vytváření adresáře na Server.
+*Publikování* představuje adresář *obsahu kořenovou cestu*, také zavolat *základní cesty aplikace*, nasazení. Jakýkoli název je uveden *publikování* adresáře aplikace nasazené na serveru, její umístění slouží jako serveru fyzickou cestu k hostované aplikace.
 
-```xml
-<Target Name="CreateLogsFolder" AfterTargets="Publish">
-  <MakeDir Directories="$(PublishDir)Logs" 
-           Condition="!Exists('$(PublishDir)Logs')" />
-  <WriteLinesToFile File="$(PublishDir)Logs\.log" 
-                    Lines="Generated file" 
-                    Overwrite="True" 
-                    Condition="!Exists('$(PublishDir)Logs\.log')" />
-</Target>
-```
+*Wwwroot* adresáře, pokud existuje, obsahuje pouze statické prostředky.
 
-`<MakeDir>` Element vytvoří prázdnou *protokoly* složky v publikované výstup. Element používá `PublishDir` vlastnosti k určení cílové umístění pro vytvoření složky. Několik metod nasazení, jako je nasazení webu, přeskočte prázdné složky během nasazení. `<WriteLinesToFile>` Element generuje soubor v *protokoly* složky, která zaručí nasazení složky na server. Všimněte si, že vytvoření složky může nezdaří, pokud pracovní proces nemá oprávnění k zápisu do cílové složky.
+Stdout *protokoly* adresář můžete vytvořit pomocí jedné z následujících dvou přístupů nasazení:
 
-Adresář nasazení vyžaduje oprávnění ke čtení nebo spouštění při *protokoly* directory vyžaduje oprávnění pro čtení a zápis. Další adresáře, kam budou zapsány prostředky vyžadují oprávnění pro čtení a zápis.
+* Přidejte následující `<Target>` element souboru projektu:
+
+   ```xml
+   <Target Name="CreateLogsFolder" AfterTargets="Publish">
+     <MakeDir Directories="$(PublishDir)Logs" 
+              Condition="!Exists('$(PublishDir)Logs')" />
+     <WriteLinesToFile File="$(PublishDir)Logs\.log" 
+                       Lines="Generated file" 
+                       Overwrite="True" 
+                       Condition="!Exists('$(PublishDir)Logs\.log')" />
+   </Target>
+   ```
+
+   `<MakeDir>` Element vytvoří prázdnou *protokoly* složky v publikované výstup. Element používá `PublishDir` vlastnosti k určení cílové umístění pro vytvoření složky. Několik metod nasazení, jako je nasazení webu, přeskočte prázdné složky během nasazení. `<WriteLinesToFile>` Element generuje soubor v *protokoly* složky, která zaručí nasazení složky na server. Všimněte si, že vytvoření složky může nezdaří, pokud pracovní proces nemá oprávnění k zápisu do cílové složky.
+
+* Fyzicky vytvořit *protokoly* adresář na serveru v nasazení.
+
+Adresář nasazení vyžaduje oprávnění pro čtení nebo spouštění. *Protokoly* directory vyžaduje oprávnění pro čtení a zápis. Další adresáře, kde se zapisují soubory vyžadují oprávnění pro čtení a zápis.

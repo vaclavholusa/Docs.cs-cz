@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: 2ebb975e1ea17698cee13ca00d3f5df4a5135e38
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 0509bebe430c6ba213031a2cb7cb91bb7a39566d
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="enforce-https-in-an-aspnet-core"></a>Vynutit HTTPS v ASP.NET Core
 
@@ -30,7 +30,31 @@ Tento dokument ukazuje, jak:
 >* Nelze naslouchat na protokolu HTTP.
 >* Ukončení připojení se stavovým kódem 400 (Chybný požadavek) a není požadavek vyřídit.
 
+<a name="require"></a>
 ## <a name="require-https"></a>Vyžadovat protokol HTTPS
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!INCLUDE[](~/includes/2.1.md)]
+
+Doporučujeme všechny ASP.NET Core volání webové aplikace `UseHttpsRedirection` přesměrovat všechny požadavky HTTP do HTTPS. Pokud `UseHsts` je volána v aplikaci, musí být volána před provedením `UseHttpsRedirection`.
+
+Následující kód volání `UseHttpsRedirection` v `Startup` třídy:
+
+[!code-csharp[sample](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=13)]
+
+
+Následující kód:
+
+[!code-csharp[sample](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=14-99)]
+
+* Nastaví `RedirectStatusCode`.
+* Nastaví HTTPS port 5001.
+
+::: moniker-end
+
+
+::: moniker range="< aspnetcore-2.1"
 
 [RequireHttpsAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.RequireHttpsAttribute) se používá k vyžadují protokol HTTPS. `[RequireHttpsAttribute]` můžete uspořádání řadiče nebo metod, nebo mohou být použity globálně. Použít atribut globálně, přidejte následující kód do `ConfigureServices` v `Startup`:
 
@@ -43,3 +67,63 @@ Předchozí zvýrazněný vyžaduje všechny požadavky používat `HTTPS`; prot
 Další informace najdete v tématu [URL přepisování Middleware](xref:fundamentals/url-rewriting).
 
 Globálně vyžadujících protokol HTTPS (`options.Filters.Add(new RequireHttpsAttribute());`) je nejlepším postupem zabezpečení. Použití `[RequireHttps]` atribut na všechny řadiče nebo Razor stránky se nepovažuje za bezpečnou jako jako globální vyžadujících protokol HTTPS. Nebudete moct zaručit `[RequireHttps]` atribut se používá, když se přidají nové řadiče a stránky Razor.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+<a name="hsts"></a>
+## <a name="http-strict-transport-security-protocol-hsts"></a>Protokol zabezpečení striktní přenos HTTP (HSTS)
+
+Za [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project), [striktní přenos HTTP zabezpečení (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) je určený parametrem webové aplikace prostřednictvím hlavičky odpovědi speciální vylepšení zabezpečení opt-in. Jakmile podporovaného prohlížeče obdrží tuto hlavičku prohlížeč tohoto zabrání veškerou komunikaci odesílání prostřednictvím protokolu HTTP k zadané doméně a místo toho odešle veškerou komunikaci přes protokol HTTPS. Rovněž zamezí klikněte na protokol HTTPS přes výzvy v prohlížečích.
+
+Technologie ASP.NET pro základní 2.1 preview1 nebo později implementuje HSTS s `UseHsts` metoda rozšíření. Následující kód volání `UseHsts` Pokud aplikace není v [režimu pro vývoj](xref:fundamentals/environments):
+
+[!code-csharp[sample](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=10)]
+
+`UseHsts` není doporučujeme při vývoji protože záhlaví HSTS je vysoce cachable pomocí prohlížeče. Ve výchozím nastavení vyloučí UseHsts adresu místní smyčky.
+
+Následující kód:
+
+[!code-csharp[sample](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=5-12)]
+
+* Nastaví parametr přednačtení záhlaví zabezpečení přenosu Strict. Předběžného načítání není součástí [specifikaci RFC HSTS](https://tools.ietf.org/html/rfc6797), ale podporuje webových prohlížečů přednačtení HSTS weby na čerstvou instalaci. V tématu [ https://hstspreload.org/ ](https://hstspreload.org/) Další informace.
+* Umožňuje [includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2), které se vztahují zásady HSTS na hostiteli subdomény. 
+* Explicitně nastaví parametr maximální stáří zabezpečení přenosu Strict hlavičky k na 60 dnů. Pokud není nastavena, výchozí hodnota je 30 dní. Najdete v článku [maximální stáří direktiva](https://tools.ietf.org/html/rfc6797#section-6.1.1) Další informace.
+* Přidá `example.com` do seznamu hostitelů, které chcete vyloučit.
+
+`UseHsts` vyloučí následující zpětné smyčky hostitele:
+
+* `localhost` : IPv4 adresu zpětné smyčky.
+* `127.0.0.1` : IPv4 adresu zpětné smyčky.
+* `[::1]` : IPv6 adresu zpětné smyčky.
+
+Předchozí příklad ukazuje, jak přidat další hostitele.
+::: moniker-end
+
+
+::: moniker range=">= aspnetcore-2.1"
+<a name="https"></a>
+## <a name="opt-out-of-https-on-project-creation"></a>Výslovný nesouhlas s HTTPS na vytvoření projektu
+
+ASP.NET Core 2.1 a novější šablony webové aplikace (ze sady Visual Studio nebo pomocí příkazového řádku dotnet) umožňují [HTTPS přesměrování](#require) a [HSTS](#hsts). Pro nasazení, které nevyžadují protokol HTTPS které můžete výslovný nesouhlas s protokolu HTTPS. Například není potřeba některé služby back-end, kde HTTPS je zpracovanou externě na okraji a pomocí protokolu HTTPS v každém uzlu.
+
+Vyjádřit výslovný nesouhlas protokolu HTTPS:
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+Zrušte zaškrtnutí políčka **konfigurace pro protokol HTTPS** zaškrtávací políčko.
+
+![Entity diagram](enforcing-ssl/_static/out.png)
+
+
+#   <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli) 
+
+Použití `--no-https` možnost. Příklad
+
+```cli
+dotnet new razor --no-https
+```
+
+------
+
+::: moniker-end

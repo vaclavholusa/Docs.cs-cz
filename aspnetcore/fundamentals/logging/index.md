@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 4cb2cf5b22ed9f5b84638b5f8c4b07d99a17ce1c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: aab1190467c13ae121625c377d0908eac2fe8d95
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -25,7 +25,7 @@ Jádro ASP.NET podporuje protokolování rozhraní API, která funguje s různý
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample2) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
@@ -58,7 +58,7 @@ Výchozí šablona projektu umožňuje protokolování pomocí [CreateDefaultBui
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Zprostředkovatel protokolování přijímá zprávy, které vytvoříte pomocí `ILogger` objektu a zobrazuje nebo je uloží. Například konzola poskytovatel zprávy zobrazí v konzole a zprostředkovatele služby Azure App Service je uložit do úložiště objektů blob Azure.
 
 Pro použití poskytovatele, nainstalujte jeho balíček NuGet a volání metody rozšíření poskytovatele na instanci `ILoggerFactory`, jak je znázorněno v následujícím příkladu.
@@ -146,7 +146,7 @@ ASP.NET Core definuje následující [protokolu úrovně](/dotnet/api/microsoft.
 
   Pro informace, které je vhodné pouze pro vývojáře, ladění problém. Tyto zprávy mohou obsahovat citlivé aplikaci data a nemělo by být povolené v produkčním prostředí. *Zakázané ve výchozím nastavení.* Příklad: `Credentials: {"User":"someuser", "Password":"P@ssword"}`
 
-* Debug = 1
+* Ladění = 1
 
   Informace, která má krátkodobou užitečnost při vývoji a ladění. Příklad: `Entering method Configure with flag set to true.` obvykle nebude povolit `Debug` úroveň protokolů v produkčním prostředí, pokud řešíte, kvůli velkému počtu protokoly.
 
@@ -344,7 +344,7 @@ Můžete napsat kód ve funkci filtru pro použití pravidel filtrování. Pro v
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Někteří poskytovatelé protokolování umožňují určit, kdy by měla být protokoly na médium úložiště nebo ignorovat na základě úroveň protokolu a kategorie.
 
 `AddConsole` a `AddDebug` metody rozšíření poskytují přetížení, které umožňují předat kritéria filtrování. Následující vzorový kód způsobí, že konzola poskytovatel ignorovat protokoly níže `Warning` úroveň, při ladění zprostředkovatele ignoruje protokoly, které vytvoří rozhraní.
@@ -380,7 +380,7 @@ V *Program.cs*:
 > [!NOTE]
 > Konfigurace `IncludeScopes` možnost protokolovacího nástroje Konzola je potřeba povolit protokolování obor. Konfigurace `IncludeScopes` pomocí *appsettings* konfigurační soubory bude k dispozici ve verzi ASP.NET Core 2.1.
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 V *Startup.cs*:
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_Scopes&highlight=6)]
@@ -406,7 +406,7 @@ ASP.NET Core dodává tyto zprostředkovatele:
 * [EventSource](#eventsource)
 * [EventLog](#eventlog)
 * [TraceSource](#tracesource)
-* [Azure App Service](#appservice)
+* [Aplikační služba Azure](#appservice)
 
 <a id="console"></a>
 ### <a name="the-console-provider"></a>Zprostředkovatel konzoly
@@ -418,7 +418,7 @@ ASP.NET Core dodává tyto zprostředkovatele:
 logging.AddConsole()
 ```
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 ```csharp
 loggerFactory.AddConsole()
 ```
@@ -453,7 +453,7 @@ V systému Linux, tohoto zprostředkovatele zapisuje protokoly do */var/log/mess
 logging.AddDebug()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddDebug()
@@ -474,7 +474,7 @@ Pro aplikace, které cílí ASP.NET Core 1.1.0 nebo vyšší, [Microsoft.Extensi
 logging.AddEventSourceLogger()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddEventSourceLogger()
@@ -488,37 +488,6 @@ Konfigurace nástroje PerfView pro shromažďování události zapsané podle to
 
 ![Další poskytovatele nástroje Perfview](index/_static/perfview-additional-providers.png)
 
-Zachycení událostí na Nano Server vyžaduje některé další nastavení:
-
-* Připojení k serveru Nano vzdálenou komunikaci prostředí PowerShell:
-
-  ```powershell
-  Enter-PSSession [name]
-  ```
-
-* Vytvoření relace trasování událostí pro Windows:
-
-  ```powershell
-  New-EtwTraceSession -Name "MyAppTrace" -LocalFilePath C:\trace.etl
-  ```
-
-* Přidat zprostředkovatele trasování událostí pro Windows pro [CLR](/dotnet/framework/performance/clr-etw-providers), ASP.NET Core a dalších podle potřeby. Zprostředkovatel ASP.NET Core GUID je `3ac73b97-af73-50e9-0822-5da4367920d0`. 
-
-  ```powershell
-  Add-EtwTraceProvider -Guid "{e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}" -SessionName MyAppTrace
-  Add-EtwTraceProvider -Guid "{3ac73b97-af73-50e9-0822-5da4367920d0}" -SessionName MyAppTrace
-  ```
-
-* Spuštění tohoto webu a provést libovolné akce chcete informace o trasování pro.
-
-* Ukončit relaci trasování, až budete hotoví:
-
-  ```powershell
-  Stop-EtwTraceSession -Name "MyAppTrace"
-  ```
-
-Výsledná *C:\trace.etl* soubor může být analyzována pomocí nástroje PerfView jako v jiných edicích systému Windows.
-
 <a id="eventlog"></a>
 ### <a name="the-windows-eventlog-provider"></a>Zprostředkovatel protokolu událostí systému Windows
 
@@ -530,7 +499,7 @@ Výsledná *C:\trace.etl* soubor může být analyzována pomocí nástroje Perf
 logging.AddEventLog()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddEventLog()
@@ -551,7 +520,7 @@ loggerFactory.AddEventLog()
 logging.AddTraceSource(sourceSwitchName);
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddTraceSource(sourceSwitchName);
@@ -582,7 +551,7 @@ Pokud cílení na rozhraní .NET Framework, do projektu přidejte balíček zpro
 logging.AddAzureWebAppDiagnostics();
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddAzureWebAppDiagnostics();

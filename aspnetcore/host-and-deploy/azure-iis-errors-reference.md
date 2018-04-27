@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: fb833ef8797ea7851cbaf53bb5681df248d07a49
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1500f026c245f80de4120d6db4901cb117552966
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core
 
@@ -42,7 +42,7 @@ Porovnávání informací o následující běžné chyby. Pokud je nalezena sho
 
 Řešení potíží:
 
-* Pokud systém nemá přístup k Internetu při instalaci serveru pro hostování sady, tato výjimka nastane, když se instalační program nemůže získat *Microsoft Visual C++ 2015 Redistributable*. Získání Instalační program z [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840). Pokud instalační program selže, nemusí server dostat na .NET Core runtime potřebná pro Hosting nasazení závislé na framework (chyba). Pokud hostování disketové jednotky, zkontrolujte, zda je modul runtime nainstalovány v programech &amp; funkce. V případě potřeby získat za běhu instalačního programu z [.NET všechny soubory ke stažení](https://www.microsoft.com/net/download/all). Po instalaci modulu runtime, restartování systému nebo restartujte službu IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
+* Pokud systém nemá přístup k Internetu při instalaci sady hostování, tato výjimka nastane, když se instalační program nemůže získat *Microsoft Visual C++ 2015 Redistributable*. Získání Instalační program z [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840). Pokud instalační program selže, nemusí server dostat na .NET Core runtime potřebná pro Hosting nasazení závislé na framework (chyba). Pokud hostování disketové jednotky, zkontrolujte, zda je modul runtime nainstalovány v programech &amp; funkce. V případě potřeby získat za běhu instalačního programu z [.NET všechny soubory ke stažení](https://www.microsoft.com/net/download/all). Po instalaci modulu runtime, restartování systému nebo restartujte službu IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
 
 ## <a name="os-upgrade-removed-the-32-bit-aspnet-core-module"></a>Upgrade operačního systému odebrat modul 32-bit ASP.NET Core
 
@@ -50,7 +50,7 @@ Porovnávání informací o následující běžné chyby. Pokud je nalezena sho
 
 Řešení potíží:
 
-* Soubory s non-OS **C:\Windows\SysWOW64\inetsrv** directory nezachovají se během operační systém upgradu. Pokud je nainstalován modul ASP.NET Core starších než upgrade operačního systému a potom všechny fondu aplikací je spuštěn v režimu 32-bit po upgradu operačního systému, zjistil se tento problém. Po upgradu operačního systému opravte modul ASP.NET Core. V tématu [instalaci sady .NET jádra Windows serveru, který hostuje](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle). Vyberte **Repair** spuštění Instalační služby.
+* Soubory s non-OS **C:\Windows\SysWOW64\inetsrv** directory nezachovají se během operační systém upgradu. Pokud je nainstalován modul ASP.NET Core starších než upgrade operačního systému a potom všechny fondu aplikací je spuštěn v režimu 32-bit po upgradu operačního systému, zjistil se tento problém. Po upgradu operačního systému opravte modul ASP.NET Core. V tématu [instalaci sady hostování rozhraní .NET Core](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle). Vyberte **Repair** spuštění Instalační služby.
 
 ## <a name="platform-conflicts-with-rid"></a>Platformy je v konfliktu s identifikátorů RID
 
@@ -114,7 +114,7 @@ Porovnávání informací o následující běžné chyby. Pokud je nalezena sho
 
 * Zkontrolujte, zda je povoleno správné roli. V tématu [konfigurace služby IIS](xref:host-and-deploy/iis/index#iis-configuration).
 
-* Zkontrolujte **programy &amp; funkce** a ověřte, že **Microsoft ASP.NET Core modulu** byl nainstalován. Pokud **Microsoft ASP.NET Core modulu** není uvedena v seznamu nainstalovaných programů, nainstalujte modul. V tématu [instalaci sady .NET jádra Windows serveru, který hostuje](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle).
+* Zkontrolujte **programy &amp; funkce** a ověřte, že **Microsoft ASP.NET Core modulu** byl nainstalován. Pokud **Microsoft ASP.NET Core modulu** není uvedena v seznamu nainstalovaných programů, nainstalujte modul. V tématu [instalaci .NET Core hostování sady](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle).
 
 * Ujistěte se, že **fond aplikací** > **Model procesu** > **Identity** je nastaven na **ApplicationPoolIdentity** nebo vlastní identity má správná oprávnění pro přístup do složky pro nasazení aplikace.
 
@@ -138,7 +138,7 @@ Porovnávání informací o následující běžné chyby. Pokud je nalezena sho
 
 * Disketové jednotky nasazení a nainstalovat .NET Core bez restartování služby IIS. Restartujte server, nebo restartujte službu IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
 
-* Disketové jednotky může mít nasazenou bez instalace na .NET Core runtime v hostitelském systému. Pokud na .NET Core runtime nebyla nainstalována, spusťte **hostování v rozhraní .NET Core systému Windows Server instalační program sady** v systému. V tématu [instalaci sady .NET jádra Windows serveru, který hostuje](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle). Pokud došlo k pokusu o instalaci na .NET Core runtime v systému bez připojení k Internetu, získat modul runtime z [.NET všechny soubory ke stažení](https://www.microsoft.com/net/download/all) a spusťte instalační program hostování sady nainstalovat modul ASP.NET Core. Dokončete instalaci restartováním systému nebo restartování služby IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
+* Disketové jednotky může mít nasazenou bez instalace na .NET Core runtime v hostitelském systému. Pokud na .NET Core runtime nebyla nainstalována, spusťte **instalační program rozhraní .NET Core hostování sady** v systému. V tématu [instalaci .NET Core hostování sady](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle). Pokud došlo k pokusu o instalaci na .NET Core runtime v systému bez připojení k Internetu, získat modul runtime z [.NET všechny soubory ke stažení](https://www.microsoft.com/net/download/all) a spusťte instalační program sady hostování nainstalovat modul ASP.NET Core. Dokončete instalaci restartováním systému nebo restartování služby IIS tak, že spustíte **net stop byl /y** následuje **net start w3svc** z příkazového řádku.
 
 * Byla nasazena disketové jednotky a *Microsoft Visual C++ 2015 Redistributable (x64)* není nainstalovaná v systému. Získání Instalační program z [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840).
 

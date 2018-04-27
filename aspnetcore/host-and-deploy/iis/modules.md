@@ -5,16 +5,16 @@ description: Zjistit aktivní i neaktivní moduly služby IIS pro aplikace ASP.N
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/15/2018
+ms.date: 04/04/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: d9b3de915df333153255f91649f9169f76ba2fe0
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e88526d997618658f58488adb37ae1e519ea3f59
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="iis-modules-with-aspnet-core"></a>Moduly služby IIS s ASP.NET Core
 
@@ -24,8 +24,10 @@ Aplikace ASP.NET Core jsou hostované službou IIS v konfiguraci reverzní proxy
 
 ## <a name="native-modules"></a>Nativní moduly
 
-| Modul | Aktivní základní rozhraní .NET | ASP.NET jádra |
-| ------ | :--------------: | ------------------- |
+Tabulka udává nativní moduly služby IIS, které jsou funkční na reverzní proxy server požadavky na aplikace ASP.NET Core.
+
+| Modul | Funkční s aplikacemi ASP.NET Core | ASP.NET jádra |
+| ------ | :-------------------------------: | ------------------- |
 | **Anonymní ověřování**<br>`AnonymousAuthenticationModule` | Ano | |
 | **Základní ověřování**<br>`BasicAuthenticationModule` | Ano | |
 | **Ověřování pomocí mapování klientských certifikační**<br>`CertificateMappingAuthenticationModule` | Ano | |
@@ -40,8 +42,8 @@ Aplikace ASP.NET Core jsou hostované službou IIS v konfiguraci reverzní proxy
 | **Trasování**<br>`FailedRequestsTracingModule` | Ano | [ASP.NET Core protokolování](xref:fundamentals/logging/index#the-tracesource-provider) |
 | **Ukládání souborů do mezipaměti**<br>`FileCacheModule` | Ne | [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware) |
 | **Ukládání do mezipaměti HTTP**<br>`HttpCacheModule` | Ne | [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware) |
-| **HTTP Logging**<br>`HttpLoggingModule` | Ano | [ASP.NET Core protokolování](xref:fundamentals/logging/index)<br>Implementace: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
-| **HTTP Redirection**<br>`HttpRedirectionModule` | Ano | [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting) |
+| **Funkce protokolování HTTP**<br>`HttpLoggingModule` | Ano | [ASP.NET Core protokolování](xref:fundamentals/logging/index)<br>Implementace: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
+| **Přesměrování protokolu HTTP**<br>`HttpRedirectionModule` | Ano | [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting) |
 | **Ověřování pomocí mapování certifikátu klienta služby IIS**<br>`IISCertificateMappingAuthenticationModule` | Ano | |
 | **Omezení domény a IP**<br>`IpRestrictionModule` | Ano | |
 | **Filtry ISAPI**<br>`IsapiFilterModule` | Ano | [Middleware](xref:fundamentals/middleware/index) |
@@ -62,21 +64,23 @@ Aplikace ASP.NET Core jsou hostované službou IIS v konfiguraci reverzní proxy
 
 ## <a name="managed-modules"></a>Spravované moduly
 
-| Modul                  | Aktivní základní rozhraní .NET | ASP.NET jádra |
-| ----------------------- | :--------------: | ------------------- |
-| AnonymousIdentification | Ne               | |
-| DefaultAuthentication   | Ne               | |
-| FileAuthorization       | Ne               | |
-| Ověřování pomocí formulářů     | Ne               | [Middleware ověřování souborů cookie](xref:security/authentication/cookie) |
-| OutputCache             | Ne               | [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware) |
-| Profil                 | Ne               | |
-| RoleManager             | Ne               | |
-| ScriptModule-4.0        | Ne               | |
-| Relace                 | Ne               | [Middleware relace](xref:fundamentals/app-state) |
-| UrlAuthorization        | Ne               | |
-| UrlMappingsModule       | Ne               | [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting) |
-| UrlRoutingModule-4.0    | Ne               | [Jádro ASP.NET Identity](xref:security/authentication/identity) |
-| WindowsAuthentication   | Ne               | |
+Spravované moduly jsou *není* funkční hostované aplikace ASP.NET Core verze modulu .NET CLR fond aplikací je nastavena na **bez spravovaného kódu**. ASP.NET Core nabízí alternativy middlewaru v několika případech.
+
+| Modul                  | ASP.NET jádra |
+| ----------------------- | ------------------- |
+| AnonymousIdentification | |
+| DefaultAuthentication   | |
+| FileAuthorization       | |
+| Ověřování pomocí formulářů     | [Middleware ověřování souborů cookie](xref:security/authentication/cookie) |
+| OutputCache             | [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware) |
+| Profil                 | |
+| RoleManager             | |
+| ScriptModule 4.0        | |
+| Relace                 | [Middleware relace](xref:fundamentals/app-state) |
+| UrlAuthorization        | |
+| UrlMappingsModule       | [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting) |
+| UrlRoutingModule 4.0    | [Jádro ASP.NET Identity](xref:security/authentication/identity) |
+| WindowsAuthentication   | |
 
 ## <a name="iis-manager-application-changes"></a>Změny aplikace Správce služby IIS
 
@@ -88,7 +92,7 @@ Pokud modul služby IIS je nakonfigurována na úrovni serveru, který musí bý
 
 ### <a name="module-deactivation"></a>Deaktivace modulu
 
-Mnoho modulů nabízejí nastavení konfigurace, které umožňuje, aby zakázán bez odebrání modul z aplikace. Toto je nejjednodušší a nejrychlejší způsob deaktivovat modul. Například je třeba zakázat modul přepisování adres URL služby IIS pomocí  **\<httpRedirect >** element v *web.config*:
+Mnoho modulů nabízejí nastavení konfigurace, které umožňuje, aby zakázán bez odebrání modul z aplikace. Toto je nejjednodušší a nejrychlejší způsob deaktivovat modul. Například modul Přesměrování protokolu HTTP lze zakázat pomocí  **\<httpRedirect >** element v *web.config*:
 
 ```xml
 <configuration>
@@ -122,22 +126,6 @@ Pokud vyjádření výslovného odebrat modul s nastavením v *web.config*, odem
    </configuration>
    ```
 
-Pro instalaci služby IIS s moduly výchozí nainstalovaný, použijte následující  **\<modulu >** , odinstalujte výchozí moduly.
-
-```xml
-<modules>
-  <remove name="CustomErrorModule" />
-  <remove name="DefaultDocumentModule" />
-  <remove name="DirectoryListingModule" />
-  <remove name="HttpCacheModule" />
-  <remove name="HttpLoggingModule" />
-  <remove name="ProtocolSupportModule" />
-  <remove name="RequestFilteringModule" />
-  <remove name="StaticCompressionModule" /> 
-  <remove name="StaticFileModule" /> 
-</modules>
-```
-
 Modul služby IIS může být odebrán také s *Appcmd.exe*. Zadejte `MODULE_NAME` a `APPLICATION_NAME` v příkazu:
 
 ```console
@@ -156,10 +144,14 @@ Pouze moduly potřebnými pro spuštění aplikace ASP.NET Core jsou modul anony
 
 ![Správce služby IIS otevřete moduly s minimální konfigurací modulů zobrazí](modules/_static/modules.png)
 
+Modul ukládání do mezipaměti identifikátorů URI (`UriCacheModule`) umožňuje konfiguraci webu mezipaměti na úrovni adresy URL služby IIS. Bez tohoto modulu musí IIS číst a analyzovat konfiguraci u každého požadavku i v případě, že opakovaně požadavku na stejnou adresu URL. Analýza konfigurace snížení výkonu významné výsledkem každou žádost. *I když modul ukládání do mezipaměti identifikátorů URI není nezbytně nutné pro hostované aplikace ASP.NET Core ke spuštění, doporučujeme, aby byl povolen modul ukládání do mezipaměti identifikátorů URI pro všechna nasazení základní technologie ASP.NET.*
+
+Ukládání do mezipaměti modulu protokolu HTTP (`HttpCacheModule`) implementuje výstupní mezipaměť služby IIS a také logiku pro ukládání do mezipaměti položky v mezipaměti ovladače HTTP.sys. Bez tohoto modulu obsah je už uložený v mezipaměti v režimu jádra a mezipaměti profily jsou ignorovány. Obvykle odstranění modulu HTTP ukládání do mezipaměti nemá negativní vliv na výkon a využití prostředků. *I když modul ukládání do mezipaměti HTTP není nezbytně nutné pro hostované aplikace ASP.NET Core ke spuštění, doporučujeme povolení ukládání do mezipaměti modulu protokolu HTTP pro všechna nasazení základní technologie ASP.NET.*
+
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Hostování ve Windows se službou IIS](xref:host-and-deploy/iis/index)
 * [Úvod do architektury služby IIS: modulů ve službě IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#modules-in-iis)
 * [Přehled moduly služby IIS](/iis/get-started/introduction-to-iis/iis-modules-overview)
 * [Přizpůsobení služby IIS 7.0 role a moduly](https://technet.microsoft.com/library/cc627313.aspx)
-* [IIS `<system.webServer>`](/iis/configuration/system.webServer/)
+* [SLUŽBY IIS `<system.webServer>`](/iis/configuration/system.webServer/)

@@ -1,7 +1,7 @@
 ---
 title: Kurzy ASP.NET Core
 author: rick-anderson
-description: "Seznam podrobné návody pro naučit vyvíjet aplikace ASP.NET Core."
+description: Seznam podrobné návody pro naučit vyvíjet aplikace ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: fd58a6a3e35a706d503603790fa1c726e6c865d6
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 9cd14a47a512c2a887614e617dd914dbdb25cb9d
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
 
@@ -32,55 +32,54 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
 
 * Vytvoření webové aplikace ASP.NET MVC jádra
 
-   * [Webovou aplikaci pomocí sady Visual Studio pro Windows](first-mvc-app/index.md)
-   * [Webovou aplikaci pomocí sady Visual Studio pro Mac](first-mvc-app-mac/index.md)
-   * [Webové aplikace s kódem jazyka Visual Studio v systému macOS nebo Linux](first-mvc-app-xplat/index.md)
+   * [Webovou aplikaci pomocí sady Visual Studio pro Windows](xref:tutorials/first-mvc-app/index)
+   * [Webovou aplikaci pomocí sady Visual Studio pro Mac](xref:tutorials/first-mvc-app-mac/index)
+   * [Webové aplikace s kódem jazyka Visual Studio v systému macOS nebo Linux](xref:tutorials/first-mvc-app-xplat/index)
 
-* [Začínáme s technologiemi ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](../data/ef-mvc/index.md)
-* [Vytváření pomocných rutin značek](../mvc/views/tag-helpers/authoring.md)
-* [Vytvoření jednoduchého zobrazení komponenty](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
-* [Vývoj aplikací ASP.NET Core sledovat dotnet.](dotnet-watch.md)
+* [Začínáme s technologiemi ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](xref:data/ef-mvc/index)
+* [Vytváření pomocných rutin značek](xref:mvc/views/tag-helpers/authoring)
+* [Vytvoření jednoduchého zobrazení komponenty](xref:mvc/views/view-components#walkthrough-creating-a-simple-view-component)
+* [Vývoj aplikací ASP.NET Core sledovat dotnet.](xref:tutorials/dotnet-watch)
 
 ## <a name="build-web-apis"></a>Vytvoření rozhraní Web API
 * Vytvoření webové rozhraní API pomocí ASP.NET Core
 
-  * [Webové rozhraní API pomocí sady Visual Studio pro Windows](first-web-api.md)
+  * [Webové rozhraní API pomocí sady Visual Studio pro Windows](xref:tutorials/first-web-api)
   * [Web API se sadou Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
-  * [Web API s editorem Visual Studio Code](web-api-vsc.md)
+  * [Web API s editorem Visual Studio Code](xref:tutorials/web-api-vsc)
 
 * [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](xref:tutorials/web-api-help-pages-using-swagger)
   * [Začínáme s NSwag](xref:tutorials/get-started-with-nswag)
   * [Začínáme s Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
 
-* [Vytvoření back-endu webové služby pro nativní mobilní aplikace](../mobile/native-mobile-backend.md)
+* [Vytvoření back-endu webové služby pro nativní mobilní aplikace](xref:mobile/native-mobile-backend)
 
 ## <a name="data-access-and-storage"></a>Přístup k datům a úložiště
 * [Začínáme s stránky Razor a základní EF pomocí sady Visual Studio](xref:data/ef-rp/intro)
-* [Začínáme s ASP.NET MVC jádra a základní EF pomocí sady Visual Studio](../data/ef-mvc/index.md)
-* [Jádro ASP.NET MVC s EF Core - novou databázi](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
-* [Jádro ASP.NET MVC s EF Core - existující databázi](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
+* [Začínáme s ASP.NET MVC jádra a základní EF pomocí sady Visual Studio](xref:data/ef-mvc/index)
+* [Jádro ASP.NET MVC s EF Core - novou databázi](/ef/core/get-started/aspnetcore/new-db)
+* [Jádro ASP.NET MVC s EF Core - existující databázi](/ef/core/get-started/aspnetcore/existing-db)
 
 ## <a name="authentication-and-authorization"></a>Ověřování a autorizace
-* [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](../security/authentication/social/index.md)
-* [Potvrzení účtu a obnovení hesla](../security/authentication/accconfirm.md)
-* [Dvoufaktorové ověřování přes SMS](../security/authentication/2fa.md)
+* [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](xref:security/authentication/social/index)
+* [Potvrzení účtu a obnovení hesla](xref:security/authentication/accconfirm)
+* [Dvoufaktorové ověřování přes SMS](xref:security/authentication/2fa)
 
 ## <a name="client-side-development"></a>Vývoj klientské strany
-* [Použití nástroje Gulp](../client-side/using-gulp.md)
-* [Použití nástroje Grunt](../client-side/using-grunt.md)
-* [Správa balíčků na straně klienta nástrojem Bower](../client-side/bower.md)
-* [Tvorba interaktivních webů pomocí sady nástrojů Bootstrap](../client-side/bootstrap.md)
+* [Použití nástroje Gulp](xref:client-side/using-gulp)
+* [Použití nástroje Grunt](xref:client-side/using-grunt)
+* [Správa balíčků na straně klienta nástrojem Bower](xref:client-side/bower)
+* [Tvorba interaktivních webů pomocí sady nástrojů Bootstrap](xref:client-side/bootstrap)
 
 ## <a name="test"></a>Test
-* [Testování v .NET Core pomocí dotnet testů jednotek](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [Testování v .NET Core pomocí dotnet testů jednotek](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 
-## <a name="publish-and-deploy"></a>Publikování a nasazení
-* [Nasazení webové aplikace ASP.NET Core do Azure pomocí sady Visual Studio](publish-to-azure-webapp-using-vs.md)
-* [Nasazení webové aplikace ASP.NET Core pomocí příkazového řádku Azure](publish-to-azure-webapp-using-cli.md)
+## <a name="host-and-deploy"></a>Hostování a nasazení
+* [Nasazení webové aplikace ASP.NET Core do Azure pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)
+* [Nasazení webové aplikace ASP.NET Core pomocí příkazového řádku Azure](xref:tutorials/publish-to-azure-webapp-using-cli)
 * [Publikovat do webové aplikace Azure s průběžné nasazování.](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
-* [Nasaďte kontejner ASP.NET vzdáleného hostitele Docker](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
-* [Jádro ASP.NET na Nano Server](nano-server.md)
-* [Jádro ASP.NET a Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-add-a-web-frontend)
+* [Nasaďte kontejner ASP.NET vzdáleného hostitele Docker](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
+* [Jádro ASP.NET a Azure Service Fabric](/azure/service-fabric/service-fabric-add-a-web-frontend)
 
 <a name="download"></a> 
 ## <a name="how-to-download-a-sample"></a>Jak stáhnout ukázku

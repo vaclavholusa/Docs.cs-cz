@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 430033c06df74cc3661c40ca7f7bd9244cd257c9
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 48f49f40a6fc0c6a0c664873879f9f61080132ea
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor (C#)
 ====================
@@ -58,11 +58,11 @@ Další informace o většinu těchto programátorských technik, naleznete dál
 
 Toto je, jak tyto příkazy vypadat při spuštění stránky v prohlížeči:
 
-![Razor-Img1](introducing-razor-syntax-c/_static/image1.jpg)
+![Razor Img1](introducing-razor-syntax-c/_static/image1.jpg)
 
 > [!TIP] 
 > 
-> **HTML Encoding**
+> **Kódování HTML**
 > 
 > Při zobrazení obsahu stránce pomocí `@` znak, jako v předchozích příkladech ASP.NET umístí kódování HTML výstup. Tím se nahradí vyhrazené znaky HTML (například `<` a `>` a `&`) s kódy, které umožňují znaků, který má být zobrazen jako znaků na webové stránce nebude interpretován jako značky HTML nebo entity. Bez kódování HTML výstup z vašeho kódu serveru se nemusí zobrazit správně a mohla vystavit stránky na bezpečnostní rizika.
 > 
@@ -79,7 +79,7 @@ A *blok kódu* obsahuje jeden nebo více příkazů kódu a je uzavřené do slo
 
 Výsledek zobrazí v prohlížeči:
 
-![Razor-Img2](introducing-razor-syntax-c/_static/image2.jpg)
+![Razor Img2](introducing-razor-syntax-c/_static/image2.jpg)
 
 ### <a name="3-inside-a-block-you-end-each-code-statement-with-a-semicolon"></a>3. Uvnitř bloku vám stát, že každý příkaz kódu středníkem
 
@@ -95,7 +95,7 @@ Hodnoty v lze ukládat *proměnná*, včetně řetězce, čísla a kalendářní
 
 Výsledek zobrazí v prohlížeči:
 
-![Razor-Img3](introducing-razor-syntax-c/_static/image3.jpg)
+![Razor Img3](introducing-razor-syntax-c/_static/image3.jpg)
 
 <a id="ID_StringLiterals"></a>
 ### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5. Uzavřete řetězcového literálu hodnoty v uvozovkách
@@ -142,7 +142,7 @@ Pokud je deklarovat proměnnou jako `var lastName = "Smith";` a pokud se pokusí
 
 Výsledek zobrazí v prohlížeči:
 
-![Razor-Img5](introducing-razor-syntax-c/_static/image5.jpg)
+![Razor Img5](introducing-razor-syntax-c/_static/image5.jpg)
 
 ### <a name="8-you-can-write-code-that-makes-decisions"></a>8. Můžete napsat kód, který uskutečňuje rozhodnutí
 
@@ -187,7 +187,7 @@ Tento postup ukazuje, jak vytvořit stránku, která ukazuje základní programo
     - `<form>` Zahrnuje značky `method="post"` atribut. To určuje, že když uživatel klikne **přidat**, stránky odešle na server pomocí metody POST protokolu HTTP. Při odeslání stránky `if(IsPost)` testovací vyhodnocena jako true a podmínku kód běží, zobrazení výsledkem přidání čísla.
 3. Uložit stránky a spusťte ji v prohlížeči. (Ujistěte se, že je vybraný stránky v **soubory** pracovního prostoru, než ji spustit.) Zadejte dvě celá čísla a poté klikněte **přidat** tlačítko. 
 
-    ![Razor-Img7](introducing-razor-syntax-c/_static/image7.jpg)
+    ![Razor Img7](introducing-razor-syntax-c/_static/image7.jpg)
 
 ## <a name="basic-programming-concepts"></a>Základní koncepty programování
 
@@ -209,7 +209,7 @@ Syntaxe Razor je založena na technologii Microsoft názvem ASP.NET, která zase
 
 Syntaxe Razor vám dává všechny ASP.NET, ale pomocí zjednodušenou syntaxi, která je jednodušší zjistit, zda jste začátečník a který zpřístupňuje můžete zvýšit produktivitu Pokud jste odborník. I když tato syntaxe je snadno použitelný, jeho rodiny relaci ASP.NET a rozhraní .NET Framework znamená, že vaše weby jsou složitější, nutné power větší rozhraní, které jsou k dispozici.
 
-![Razor-Img8](introducing-razor-syntax-c/_static/image8.jpg)
+![Razor Img8](introducing-razor-syntax-c/_static/image8.jpg)
 
 > [!TIP] 
 > 
@@ -251,7 +251,7 @@ V serveru bloky kódu často chcete výstup textu nebo značek (nebo obě) na st
     > [!NOTE]
     > Pokud výstup text jak je znázorněno v této části &#8212; pomocí prvku HTML `@:` operátor, nebo `<text>` element &#8212; ASP.NET nepodporuje kódování HTML výstup. (Jak je uvedeno výše, ASP.NET kódování výstup výrazy kódu serveru a bloky kódu serveru, které jsou označeny `@`, s výjimkou ve zvláštních případech uvedených v této části.)
 
-### <a name="whitespace"></a>Whitespace
+### <a name="whitespace"></a>Prázdné znaky
 
 Mezery v příkazu (a mimo řetězcový literál) není ovlivňují příkaz:
 
@@ -325,7 +325,7 @@ Následující příklad ukazuje některé typické použití proměnných na we
 
 Pokud kombinujete v předchozích příkladech na stránce, zobrazí tento zobrazený v prohlížeči:
 
-![Razor-Img9](introducing-razor-syntax-c/_static/image9.jpg)
+![Razor Img9](introducing-razor-syntax-c/_static/image9.jpg)
 
 ### <a name="converting-and-testing-data-types"></a>Převod a testování datové typy
 
@@ -343,35 +343,84 @@ K převodu hodnoty na celá čísla, zavoláte `AsInt` metoda. Pokud převod ús
 
 Následující tabulka uvádí některé běžné převod a testování metody pro proměnné.
 
-
-|   <strong>– Metoda</strong>    |                                                                              <strong>Popis</strong>                                                                              |                         <strong>Příklad</strong>                         |
-|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-|      `AsInt(), IsInt()`      |                                                      Převede řetězec, který představuje celé číslo (např. "593") na celé číslo.                                                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]   |
-|     `AsBool(), IsBool()`     |                                                    Převede řetězec jako &quot;true&quot; nebo &quot;false&quot; typu Boolean.                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]   |
-|    `AsFloat(), IsFloat()`    |                                    Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]   |
-|  `AsDecimal(), IsDecimal()`  | Převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET, je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]   |
-| `AsDateTime(), IsDateTime()` |                                                Převede řetězec představující hodnotu data a času ASP.NET `DateTime` typu.                                                 |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]   |
-|         `ToString()`         |                                                                       Převede ostatních typů dat na řetězec.                                                                        | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)] |
+::: řádek:::::: sloupec::: <strong>metoda</strong> ::: column-end:::::: sloupec::: <strong>popis</strong> ::: column-end:::::: sloupec::: <strong>příklad</strong> ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `AsInt(), IsInt()` ::: column-end:::::: sloupec::: převede řetězec, který představuje celé číslo (např. "593") na celé číslo.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `AsBool(), IsBool()` ::: column-end:::::: sloupec::: převede řetězec jako &quot;true&quot; nebo &quot;false&quot; typu Boolean.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `AsFloat(), IsFloat()` ::: column-end:::::: sloupec::: převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `AsDecimal(), IsDecimal()` ::: column-end:::::: sloupec::: převede řetězec, který má hodnotu decimal jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET, je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) ::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `AsDateTime(), IsDateTime()` ::: column-end:::::: sloupec::: převede řetězec představující hodnotu data a času ASP.NET `DateTime` typu.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `ToString()` ::: column-end:::::: sloupec::: převede ostatních typů dat na řetězec.
+::: column-end:::::: sloupec::: [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
+    ::: column-end:::::: řádek end:::
 
 ## <a name="operators"></a>Operátory
 
 Operátor je – klíčové slovo nebo znak, který sděluje ASP.NET, jaký druh příkaz k provedení ve výrazu. Jazyk C# (a syntaxe Razor, který je založený na něm) podporuje mnoho operátory, ale potřebujete rozpoznat pár začít pracovat. Následující tabulka shrnuje nejběžnější operátory.
 
 
-|   <strong>Operátor</strong>    |                                                                     <strong>Popis</strong>                                                                     |                        <strong>Příklady</strong>                         |
-|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-|        `+` `-` `*` `/`         |                                                            Matematické operátory použít ve výrazech číselná.                                                             |    [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]    |
-|              `=`               |                                    Přiřazení. Hodnota na pravé straně příkazu přiřadí objekt na levé straně.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]   |
-|              `==`              |                      Rovnosti. Vrátí `true` Pokud jsou hodnoty stejné. (Všimněte si rozdíl mezi `=` operátor a `==` operátor.)                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]   |
-|              `!=`              |                                                       Nerovnosti. Vrátí `true` Pokud hodnoty nejsou shodné.                                                        |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]   |
-|          `< > <= >=`           |                                               Menší – než, více – než menší než nebo rovno a větší než nebo rovno.                                                |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]   |
-|              `+`               | Zřetězení, který se používá pro připojení řetězce. ASP.NET zná rozdíl mezi tento operátor a operátor sčítání na základě typu dat, z výrazu. |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]   |
-|           `+=``-=`            |                                   Přírůstek a snížení operátory, které sčítání a odečítání 1 (v uvedeném pořadí) z proměnné.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]   |
-|              `.`               |                                                  Tečkou. Používá k rozlišení objekty a jejich vlastnosti a metody.                                                  |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]   |
-|              `()`              |                                              Závorky. Použít na výrazy skupiny a předat parametry metody.                                               | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)] |
-|              `[]`              |                                                    Závorky. Použít pro přístup k hodnot v polích nebo kolekce.                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]   |
-|              `!`               |               Není. Obrátí `true` hodnotu `false` a naopak. Obvykle se používá jako sdružená způsob, jak otestovat `false` (který je pro není `true`).               |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]   |
-| `&&`<code>&#124;&#124;</code> |                                                   Logické a a, nebo které se používají k propojení podmínky společně.                                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]   |
+::: řádek:::::: sloupec::: <strong>operátor</strong> ::: column-end:::::: sloupec::: <strong>popis</strong> ::: column-end:::::: sloupec::: <strong>příklady</strong> ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `+` `-` `*` `/` ::: column-end:::::: sloupec::: matematické operátory použít ve výrazech číselná.
+::: column-end:::::: sloupec::: [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `=` ::: column-end:::::: sloupec::: přiřazení. Hodnota na pravé straně příkazu přiřadí objekt na levé straně.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `==` ::: column-end:::::: sloupec::: rovnosti. Vrátí `true` Pokud jsou hodnoty stejné. (Všimněte si rozdíl mezi `=` operátor a `==` operátor.)::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `!=` ::: column-end:::::: sloupec::: nerovnosti. Vrátí `true` Pokud hodnoty nejsou shodné.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `< > <= >=` ::: column-end:::::: sloupec::: menší – než, více – než menší než nebo rovno a větší než nebo rovno.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `+` ::: column-end:::::: sloupec::: zřetězení, který se používá pro připojení řetězce. ASP.NET zná rozdíl mezi tento operátor a operátor sčítání na základě typu dat, z výrazu.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `+=` `-=` ::: column-end:::::: sloupec::: přírůstek a snížení operátory, které sčítání a odečítání 1 (v uvedeném pořadí) z proměnné.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `.` ::: column-end:::::: sloupec::: tečkou. Používá k rozlišení objekty a jejich vlastnosti a metody.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `()` ::: column-end:::::: sloupec::: závorek. Použít na výrazy skupiny a předat parametry metody.
+::: column-end:::::: sloupec::: [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `[]` ::: column-end:::::: sloupec::: závorky. Použít pro přístup k hodnot v polích nebo kolekce.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `!` ::: column-end:::::: sloupec::: není. Obrátí `true` hodnotu `false` a naopak. Obvykle se používá jako sdružená způsob, jak otestovat `false` (který je pro není `true`).
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
+    ::: column-end:::::: řádek end:::
+* * *
+::: řádek:::::: sloupec::: `&&` <code>&#124;&#124;</code> ::: column-end:::::: sloupec::: logické a a, nebo které se používají k propojení podmínky společně.
+::: column-end:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
+    ::: column-end:::::: řádek end:::
 
 <a id="ID_WorkingWithFileAndFolderPaths"></a>
 ## <a name="working-with-file-and-folder-paths-in-code"></a>Práce s souboru a cesty ke složce zadat v kódu
@@ -453,7 +502,7 @@ Hodnota k testování je v závorkách (v příkladu `weekday` proměnné). Pou�
 
 Výsledek posledních dvou podmíněné bloky zobrazený v prohlížeči:
 
-![Razor-Img10](introducing-razor-syntax-c/_static/image10.jpg)
+![Razor Img10](introducing-razor-syntax-c/_static/image10.jpg)
 
 ### <a name="looping-code"></a>Ve smyčce kódu
 
@@ -469,7 +518,7 @@ Smyčky začíná `for` – klíčové slovo, za nímž následuje tři příkaz
 
 Uvnitř závorek je kód, který se spustí pro každou iteraci smyčky. Kód vytvoří nový odstavec (`<p>` element) každou čas a přidá řádek do výstupu zobrazení hodnotu `i` (Čítač). Při spuštění této stránce v příkladu se vytváří 11 řádky zobrazení výstupu s textem do každého řádku, která určuje počet položek.
 
-![Razor-Img11](introducing-razor-syntax-c/_static/image11.jpg)
+![Razor Img11](introducing-razor-syntax-c/_static/image11.jpg)
 
 Pokud pracujete s kolekce nebo pole, často používají `foreach` smyčky. Kolekce je skupina podobné objekty a `foreach` cykly umožňuje provádět úlohy na každou položku v kolekci. Tento typ smyčky je vhodné pro kolekce, protože na rozdíl od `for` smyčky, nemusíte zvýší čítače nebo nastavit limit. Místo toho `foreach` smyčky kód jednoduše pokračuje prostřednictvím kolekce, dokud se nedokončí jeho.
 
@@ -479,7 +528,7 @@ Například následující kód vrátí položky v `Request.ServerVariables` kol
 
 `foreach` – Klíčové slovo následuje závorkách kde deklarace proměnné, která představuje jednu položku v kolekci (v příkladu `var item`), za nímž následují `in` – klíčové slovo, za nímž následuje kolekce, kterou chcete projít. V textu `foreach` smyčky, dostanete s aktuální položkou použitím proměnné, kterou jste předtím deklarován.
 
-![Razor-Img12](introducing-razor-syntax-c/_static/image12.jpg)
+![Razor Img12](introducing-razor-syntax-c/_static/image12.jpg)
 
 Chcete-li vytvořit více pro obecné účely smyčku, použijte `while` příkaz:
 
@@ -525,7 +574,7 @@ Můžete určit počet položek v matici získáním jeho `Length` vlastnost. Po
 
 Výstupní kód pole řetězec, který je zobrazený v prohlížeči:
 
-![Razor-Img13](introducing-razor-syntax-c/_static/image13.jpg)
+![Razor Img13](introducing-razor-syntax-c/_static/image13.jpg)
 
 Slovník je kolekce dvojic klíč/hodnota, kde zadáte klíč (nebo název) nastavit nebo načíst s odpovídající hodnotou:
 
@@ -577,7 +626,7 @@ Příkazy často budete mít ve svém kódu, který může selhat z důvodů mim
 
 Programovací podmínky, se nazývají těchto situacích *výjimky*. Pokud váš kód zjistí výjimku, generuje (vyvolává) chybovou zprávu to je v nejlépe obtěžování uživatelům:
 
-![Razor-Img14](introducing-razor-syntax-c/_static/image14.jpg)
+![Razor Img14](introducing-razor-syntax-c/_static/image14.jpg)
 
 V situacích, kde kódu setkat výjimky a aby se zabránilo chybové zprávy tohoto typu, můžete použít `try/catch` příkazy. V `try` prohlášení, můžete spustit kód, který při kontrole. V jedné nebo více `catch` příkazy, můžete vyhledat konkrétní chyby (konkrétní typy výjimek), jež mohly nastat. Můžete zahrnout tolik `catch` příkazy, jako je třeba vyhledejte chyby, které se očekává.
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: 05b0d7f31e167e620f2d168109ffd907ba120a49
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fd893b7c62f38442bf5633a956786983763e6f9f
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>K vytvoření jednostránkové aplikace v ASP.NET Core použijte JavaScriptServices
 
@@ -166,7 +166,7 @@ Middleware Webpack vývojářů je zaregistrovat do kanálu požadavku HTTP pře
 
 ## <a name="hot-module-replacement"></a>Nahrazení aktivního modulu
 
-Představte si, že je Webpack [aktivního modulu nahrazení](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) funkce (HMR) jako vývoje [Webpack Dev Middleware](#webpack-dev-middleware). HMR zavádí stejné výhody, ale další zjednodušuje pracovní postup vývoje tím, že automaticky aktualizuje obsah stránky po kompilování změny. Nepleťte si to s aktualizaci prohlížeče, což by narušilo aktuální stav v paměti a ladicí relace SPA. Je aktivní propojení mezi službou Middleware Webpack vývojářů a prohlížeče, což znamená, že změny budou přesunuty do prohlížeče.
+Představte si, že je Webpack [aktivního modulu nahrazení](https://webpack.js.org/concepts/hot-module-replacement/) funkce (HMR) jako vývoje [Webpack Dev Middleware](#webpack-dev-middleware). HMR zavádí stejné výhody, ale další zjednodušuje pracovní postup vývoje tím, že automaticky aktualizuje obsah stránky po kompilování změny. Nepleťte si to s aktualizaci prohlížeče, což by narušilo aktuální stav v paměti a ladicí relace SPA. Je aktivní propojení mezi službou Middleware Webpack vývojářů a prohlížeče, což znamená, že změny budou přesunuty do prohlížeče.
 
 ### <a name="prerequisites"></a>Požadavky
 
@@ -226,7 +226,7 @@ Tip: Trasy jsou vyhodnocovány v pořadí, ve kterém máte nakonfigurované. V 
 
 ## <a name="creating-a-new-project"></a>Vytvoření nového projektu
 
-JavaScriptServices poskytuje šablony předem nakonfigurovaných aplikací. SpaServices se používá v těchto šablon ve spojení s jinou architektury a knihovny, například úhlová, Aurelia, Knockout, reagují a Vue.
+JavaScriptServices poskytuje šablony předem nakonfigurovaných aplikací. SpaServices se používá v těchto šablon ve spojení s jinou architektury a knihovny, například úhlová, reagují a Redux.
 
 Tyto šablony lze nainstalovat prostřednictvím rozhraní příkazového řádku .NET Core spuštěním následujícího příkazu:
 
@@ -239,11 +239,8 @@ Zobrazí se seznam dostupných šablon SPA:
 | Šablony                                 | Krátký název | Jazyk | Značky        |
 |:------------------------------------------|:-----------|:---------|:------------|
 | Jádro ASP.NET MVC s úhlová             | úhlová    | [C#]     | Web/MVC/SPA |
-| Jádro ASP.NET MVC s Aurelia             | aurelia    | [C#]     | Web/MVC/SPA |
-| Jádro ASP.NET MVC s Knockout.js         | Knockout   | [C#]     | Web/MVC/SPA |
 | Jádro ASP.NET MVC s React.js            | Reagovat      | [C#]     | Web/MVC/SPA |
 | Jádro ASP.NET MVC s React.js a – obnovení  | reactredux | [C#]     | Web/MVC/SPA |
-| Jádro ASP.NET MVC s Vue.js              | VUE        | [C#]     | Web/MVC/SPA | 
 
 Pokud chcete vytvořit nový projekt pomocí jedné z šablon SPA, obsahovat **krátký název** šablony v [dotnet nové](/dotnet/core/tools/dotnet-new) příkaz. Následující příkaz vytvoří úhlová aplikace s ASP.NET MVC základní nakonfigurovaná na straně serveru:
 
@@ -295,7 +292,7 @@ Jako příklad použijeme úhlová aplikace, dvě Jasmine testovacích případ�
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
 
-Otevřete příkazový řádek v kořenovém adresáři projektu a spusťte následující příkaz:
+Otevřete příkazový řádek v *ClientApp* adresáře. Spusťte následující příkaz:
 
 ```console
 npm test

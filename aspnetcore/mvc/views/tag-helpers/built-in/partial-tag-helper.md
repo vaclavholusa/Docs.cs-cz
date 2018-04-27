@@ -3,22 +3,25 @@ title: Pomocník částečné značky ASP.NET Core
 author: scottaddie
 description: Zjistit pomocná částečné značky ASP.NET Core a roli každý z jeho atributy hrát v vykreslení částečného zobrazení.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 02/23/2018
+ms.date: 04/13/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: 4573409720ccba524c0d5d05696e0fb3468ff338
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.openlocfilehash: 670663b963f4207da793afff44d55b85ba58b7f8
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>Pomocník částečné značky ASP.NET Core
 
 Podle [Scott Addie](https://github.com/scottaddie)
+
+[!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
@@ -47,21 +50,29 @@ Následuje inventář atributy částečné pomocná značky.
 
 `name` Atribut je vyžadován. Označuje název nebo cesta částečné zobrazení k vykreslení. Pokud je zadaný název částečného zobrazení, [zobrazení zjišťování](xref:mvc/views/overview#view-discovery) proces je zahájen. Pokud je k dispozici explicitní cestu přeskočí tohoto procesu.
 
-Následující kód používá explicitní cestu, která znamená, že *_ProductPartial.cshtml* je třeba načíst z *sdílené* složky. Pomocí [asp-pro](#asp-for) atribut model je předán částečné zobrazení pro vazbu.
+Následující kód používá explicitní cestu, která znamená, že *_ProductPartial.cshtml* je třeba načíst z *sdílené* složky. Pomocí [pro](#for) atribut model je předán částečné zobrazení pro vazbu.
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Product.cshtml?name=snippet_Name)]
 
-## <a name="asp-for"></a>ASP-pro
+## <a name="for"></a>pro
 
-`asp-for` Atribut přiřadí [ModelExpression](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.modelexpression) má být porovnán s aktuální model. A `ModelExpression` odvodí, že `@Model.` syntaxe. Například `asp-for="Product"` lze použít místo `asp-for="@Model.Product"`. Toto výchozí chování odvození je přepsat pomocí `@` symbol definovat výraz vložené.
+`for` Atribut přiřadí [ModelExpression](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.modelexpression) má být porovnán s aktuální model. A `ModelExpression` odvodí, že `@Model.` syntaxe. Například `for="Product"` lze použít místo `for="@Model.Product"`. Toto výchozí chování odvození je přepsat pomocí `@` symbol definovat výraz vložené. `for` Atributu nelze použít s [modelu](#model) atribut.
 
 Následující kód načte *_ProductPartial.cshtml*:
 
-[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Product.cshtml?name=snippet_AspFor)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Product.cshtml?name=snippet_For)]
 
 Částečné zobrazení je vázán k modelu přidružené stránky `Product` vlastnost:
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Pages/Product.cshtml.cs?highlight=8)]
+
+## <a name="model"></a>model
+
+`model` Atribut přiřadí instanci modelu mají být předána do částečného zobrazení. `model` Atributu nelze použít s [pro](#for) atribut.
+
+V následující kód nový `Product` objekt je vytvořena instance a předán `model` atribut pro vazbu:
+
+[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Product.cshtml?name=snippet_Model)]
 
 ## <a name="view-data"></a>view-data
 

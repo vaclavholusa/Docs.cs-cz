@@ -25,7 +25,7 @@ Název hledání můžete nyní předat jako data trasy (segment adresy URL) mí
 
 ![Index zobrazení s neodstraněných Wordu přidat adresu Url a vrácený film seznam dvou filmy, Ghostbusters a Ghostbusters 2](../../tutorials/first-mvc-app/search/_static/g2.png)
 
-Nelze však budou uživatelé chcete upravit adresu URL pokaždé, když chtějí hledat film. Proto nyní přidáte uživatelského rozhraní na jejich filtrovat filmy. Pokud jste změnili podpis `Index` metoda k testování jak předat trasy vázané `ID` nastavte zpátky tak, aby trvá parametr s názvem, parametr `searchString`:
+Nelze však budou uživatelé chcete upravit adresu URL pokaždé, když chtějí hledat film. Proto nyní přidáte prvky uživatelského rozhraní na jejich filtrovat filmy. Pokud jste změnili podpis `Index` metoda k testování jak předat trasy vázané `ID` nastavte zpátky tak, aby trvá parametr s názvem, parametr `searchString`:
 
 [!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?highlight=1&name=snippet_1stSearch)]
 

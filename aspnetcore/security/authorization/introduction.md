@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/introduction
-ms.openlocfilehash: 7ba1966dcaf1ce0510f489cfe0ff11501faffa56
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f969cb26d1fcddeac967b1e3d13e3c06ebc7631f
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-authorization-in-aspnet-core"></a>Úvod do autorizace v ASP.NET Core
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/22/2018
 
 Autorizace odkazuje na proces, který určuje, co je uživatel moct provádět. Administrativní uživatel může například vytvořit knihovnu dokumentů, přidat dokumenty, upravovat dokumenty a je odstranit. Práce s knihovnou uživatele bez oprávnění správce je pouze oprávnění číst dokumenty.
 
-Autorizace je ortogonální a nezávislé na ověřování, což je proces pro zjišťování, který je uživatel. Ověřování může vytvořit jeden nebo více identit pro aktuálního uživatele.
+Autorizace je ortogonální a nezávislé na ověřování. Autorizace však vyžaduje ověřovací mechanismus. Ověřování je proces zjišťování, který je uživatel. Ověřování může vytvořit jeden nebo více identit pro aktuálního uživatele.
 
 ## <a name="authorization-types"></a>Typy autorizace
 

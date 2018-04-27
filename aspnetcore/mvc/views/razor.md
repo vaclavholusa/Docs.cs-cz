@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 168bd04585c5d7a2834cb97755dbf04b7b43767e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6dd78e1c4d0e3373719f24ac3615af4b6943acb8
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>Reference syntaxe Razor pro ASP.NET Core
 
@@ -212,7 +212,7 @@ K definování část bloku kódu, který by měl vykreslení HTML, uzavřete zn
 
 Tuto metodu použijte k vykreslení HTML, který není obklopená značky jazyka HTML. Bez značku HTML nebo Razor nastane běhová chyba syntaxe Razor.
 
- **\<Text >** značka je vhodné pro řízení prázdných znaků při vykreslování obsahu:
+**\<Text >** značka je vhodné pro řízení prázdných znaků při vykreslování obsahu:
 
 * Pouze obsah, mezi  **\<text >** je vykreslen. 
 * Žádné prázdné před nebo po  **\<text >** značky se zobrazí ve výstupu protokolu HTML.
@@ -439,6 +439,7 @@ public class _Views_Something_cshtml : RazorPage<dynamic>
 
 Dále v tomto článku v části [zobrazení třídy Razor C# vytvořené pro zobrazení](#viewing-the-razor-c-class-generated-for-a-view) vysvětluje, jak zobrazit tento vygenerované třídy.
 
+<a name="using"></a>
 ### <a name="using"></a>@using
 
 `@using` – Direktiva přidá jazyka C# `using` direktivy generované zobrazení:
@@ -471,7 +472,7 @@ Zpřístupní Razor `Model` vlastnost pro přístup k modelu předaná do zobraz
 <div>The Login Email: @Model.Email</div>
 ```
 
-`@model` – Direktiva Určuje typ této vlastnosti. Direktiva Určuje `T` v `RazorPage<T>` že generované třídy, zobrazení je odvozena z. Pokud `@model` – direktiva není zadán, `Model` vlastnost je typu `dynamic`. Hodnota modelu se z řadiče předaná do zobrazení. Další informace najdete v tématu [silného typu modely a @model – klíčové slovo.
+`@model` – Direktiva Určuje typ této vlastnosti. Direktiva Určuje `T` v `RazorPage<T>` že generované třídy, zobrazení je odvozena z. Pokud `@model` – direktiva není zadán, `Model` vlastnost je typu `dynamic`. Hodnota modelu se z řadiče předaná do zobrazení. Další informace najdete v tématu [silného typu modely a &commat;modelu – klíčové slovo](xref:tutorials/first-mvc-app/adding-model#strongly-typed-models-and-the--keyword).
 
 ### <a name="inherits"></a>@inherits
 
@@ -547,9 +548,9 @@ Existují tři direktivy, které se týkají [značky Pomocníci](xref:mvc/views
 
 | – Direktiva | Funkce |
 | --------- | -------- |
-| [@addTagHelper](xref:mvc/views/tag-helpers/intro#add-helper-label) | Zpřístupní Pomocníci značky k zobrazení. |
-| [@removeTagHelper](xref:mvc/views/tag-helpers/intro#remove-razor-directives-label) | Odebere značky Pomocníci dříve přidány ze zobrazení. |
-| [@tagHelperPrefix](xref:mvc/views/tag-helpers/intro#prefix-razor-directives-label) | Určuje předponu značky, chcete-li povolit podporu pomocníků značky a vytvoření značky pomocná využití explicitní. |
+| [&commat;addTagHelper](xref:mvc/views/tag-helpers/intro#add-helper-label) | Zpřístupní Pomocníci značky k zobrazení. |
+| [&commat;removeTagHelper](xref:mvc/views/tag-helpers/intro#remove-razor-directives-label) | Odebere značky Pomocníci dříve přidány ze zobrazení. |
+| [&commat;tagHelperPrefix](xref:mvc/views/tag-helpers/intro#prefix-razor-directives-label) | Určuje předponu značky, chcete-li povolit podporu pomocníků značky a vytvoření značky pomocná využití explicitní. |
 
 ## <a name="razor-reserved-keywords"></a>Klíčová slova Razor vyhrazena
 

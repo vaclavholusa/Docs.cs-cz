@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/aspnet-core-module
-ms.openlocfilehash: d99a4b446b53c431b11bfe083b1bb6133f8e0078
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 4e842544f861c3704ba7798fa693b36435d54731
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="aspnet-core-module"></a>Modul ASP.NET Core
 
@@ -25,9 +25,7 @@ Základní modul ASP.NET umožňuje ASP.NET Core aplikace pro spouštění za sl
 Podporované verze systému Windows:
 
 * Windows 7 nebo novější
-* Windows Server 2008 R2 nebo novější&#8224;
-
-&#8224;Koncepčně používání modulu jádra ASP.NET se službou IIS, které jsou popsané v tomto dokumentu platí také pro hostování aplikací ASP.NET Core na Nano Server IIS. Specifické pro Nano Server pokyny najdete v tématu [ASP.NET Core pomocí služby IIS na serveru Nano](xref:tutorials/nano-server) kurzu.
+* Windows Server 2008 R2 nebo novější
 
 Základní modul ASP.NET pracuje pouze s Kestrel. Modul není kompatibilní s [HTTP.sys](xref:fundamentals/servers/httpsys) (dříve se označovaly jako [WebListener](xref:fundamentals/servers/weblistener)).
 
@@ -50,7 +48,7 @@ Po Kestrel převezme žádost z modulu, požadavek se posune do ASP.NET Core mid
 Základní modul ASP.NET obsahuje několik dalších funkcí. Modul může:
 
 * Nastavení proměnných prostředí pro pracovní proces.
-* Protokol `stdout` výstup do souboru úložiště pro řešení potíží při spuštění.
+* Přihlaste se stdout výstup do souboru úložiště pro řešení potíží při spuštění.
 * Předat dál tokeny ověřování systému Windows.
 
 ## <a name="how-to-install-and-use-the-aspnet-core-module"></a>Jak nainstalovat a použít modul jádro ASP.NET

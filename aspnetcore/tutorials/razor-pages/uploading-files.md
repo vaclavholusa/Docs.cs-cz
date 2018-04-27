@@ -3,17 +3,18 @@ title: Nahrání souborů do stránky Razor v ASP.NET Core
 author: guardrex
 description: Zjistěte, jak k nahrání souborů do stránky Razor.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/12/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 6f229ef625b1c7ddaffb9cb3bc7945cc31e5263c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5f86164b3d227e55e11244da7600394809b6a4a7
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="upload-files-to-a-razor-page-in-aspnet-core"></a>Nahrání souborů do stránky Razor v ASP.NET Core
 
@@ -59,16 +60,40 @@ Nechcete duplicity kód pro zpracování souborů nahrané plán, přidejte nejp
 
 ### <a name="save-the-file-to-disk"></a>Uložte soubor na disku
 
-Ukázková aplikace uloží obsah souboru do pole databáze. Pokud chcete uložit obsah souboru na disk, použijte [FileStream](/dotnet/api/system.io.filestream):
+Ukázková aplikace uloží odeslané soubory do pole databáze. Chcete-li uložit soubor na disku, použijte [FileStream](/dotnet/api/system.io.filestream). V následujícím příkladu se zkopíruje soubor držené `FileUpload.UploadPublicSchedule` k `FileStream` v `OnPostAsync` metoda. `FileStream` Zapíše soubor na disku `<PATH-AND-FILE-NAME>` poskytuje:
 
 ```csharp
-using (var fileStream = new FileStream(filePath, FileMode.Create))
+public async Task<IActionResult> OnPostAsync()
 {
-    await formFile.CopyToAsync(fileStream);
+    // Perform an initial check to catch FileUpload class attribute violations.
+    if (!ModelState.IsValid)
+    {
+        return Page();
+    }
+
+    var filePath = "<PATH-AND-FILE-NAME>";
+
+    using (var fileStream = new FileStream(filePath, FileMode.Create))
+    {
+        await FileUpload.UploadPublicSchedule.CopyToAsync(fileStream);
+    }
+
+    return RedirectToPage("./Index");
 }
 ```
 
 Pracovní proces musí mít oprávnění k zápisu do určeného umístění `filePath`.
+
+> [!NOTE]
+> `filePath` *Musí* patří název souboru. Pokud není zadán název souboru, [UnauthorizedAccessException](/dotnet/api/system.unauthorizedaccessexception) je vyvolána za běhu.
+
+> [!WARNING]
+> Nikdy zachovat odeslané soubory ve stejném stromu pro adresář jako aplikace.
+>
+> Ukázka kódu neposkytuje žádnou serverové ochranu proti nahrávání souborů škodlivý. Informace o omezení útoku při přijetí soubory od uživatelů najdete v následujících zdrojích informací:
+>
+> * [Nahrávání neomezený souborů](https://www.owasp.org/index.php/Unrestricted_File_Upload)
+> * [Zabezpečení Azure: Ujistěte se, že příslušný ovládací prvky jsou zavedené při přijetí soubory od uživatelů](/azure/security/azure-security-threat-modeling-tool-input-validation#controls-users)
 
 ### <a name="save-the-file-to-azure-blob-storage"></a>Uložte soubor do Azure Blob Storage
 

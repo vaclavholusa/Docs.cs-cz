@@ -10,18 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: 81244cfb71194876071c64899d627c296aad3802
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ada8120189baf036296b83f91d20b364ee90d074
+ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Spravovat balíčky klienta s Bower v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel rýže](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/), a [Scott Addie](https://scottaddie.com) 
 
 > [!IMPORTANT]
-> A udržovat Bower jeho údržby programu doporučujeme používat jiné řešení. Yarn s Webpack je jeden oblíbenou alternativu, pro kterou [pokyny k migraci](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) jsou k dispozici.
+> A udržovat Bower jeho údržby programu doporučujeme používat jiné řešení. [Správce knihovny](https://blogs.msdn.microsoft.com/webdev/2018/04/18/what-happened-to-bower/) (LibMan pro zkrácení) je nový systém správy obsahu statické klienta Visual Studio. Yarn s Webpack je jeden oblíbenou alternativu, pro kterou [pokyny k migraci](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) jsou k dispozici.
 
 [Bower](https://bower.io/) volá sám sebe "Správce balíčků pro web". V ekosystému .NET zaplňování void zanechaný NuGet neschopnost poskytovat statické soubory obsahu. Pro projekty ASP.NET Core, jsou tyto statické soubory systému na straně klienta knihovny jako [jQuery](http://jquery.com/) a [Bootstrap](http://getbootstrap.com/). Pro knihovny .NET, můžete dál používat [NuGet](https://www.nuget.org/) Správce balíčků.
 

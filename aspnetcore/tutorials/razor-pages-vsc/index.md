@@ -3,17 +3,18 @@ title: Vytvoření stránky Razor webové aplikace s ASP.NET Core a Visual Studi
 author: rick-anderson
 description: Vytvoření stránky Razor webové aplikace s ASP.NET Core a EF jádra.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/26/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-vsc/index
-ms.openlocfilehash: 577a4a1cb28c40a92058ed5ae5c065bd99fdf867
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0d8f049d62cf1e79e3715b01f6eb1edb336ca188
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core-and-visual-studio-code"></a>Vytvoření stránky Razor webové aplikace s ASP.NET Core a Visual Studio Code
 
@@ -23,7 +24,7 @@ Tato řada vysvětluje základy vytváření stránky Razor webové aplikace s A
 
 1. [Začínáme s stránky Razor kódem VS](xref:tutorials/razor-pages-vsc/razor-pages-start)
 2. [Přidat model do aplikace pro stránky Razor](xref:tutorials/razor-pages-vsc/model)
-3. [Vygenerované Razor stránky]         (xref:tutorials / razor stránky-virtuální čipové karty nebo stránky)
+3. [Vygenerované stránky Razor](xref:tutorials/razor-pages-vsc/page)
 4. [Práce s SQLite](xref:tutorials/razor-pages-vsc/sql)
 5. [Aktualizace stránek](xref:tutorials/razor-pages-vsc/da1)
 6. [Přidání vyhledávání](xref:tutorials/razor-pages-vsc/search)

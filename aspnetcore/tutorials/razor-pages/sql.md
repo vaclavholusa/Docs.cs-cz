@@ -3,17 +3,18 @@ title: Práce s SQL Server LocalDB a ASP.NET Core
 author: rick-anderson
 description: Vysvětluje práci s SQL Server LocalDB a ASP.NET Core.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: e5fa552f80f7ee0876fe31dd87a1ddbd5fe567dd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d1a345fe8c61f6e07ebbe53de6d53e18d6f4c851
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="work-with-sql-server-localdb-and-aspnet-core"></a>Práce s SQL Server LocalDB a ASP.NET Core
 
@@ -29,7 +30,7 @@ ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čten
 
 Když nasadíte aplikaci k testu nebo produkčním serveru, můžete použít proměnné prostředí nebo jiný přístup k nastavení připojovacího řetězce k skutečné systému SQL Server. V tématu [konfigurace](xref:fundamentals/configuration/index) Další informace.
 
-## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
+## <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
 
 LocalDB je Odlehčená verze SQL serveru Express databázového stroje je cílová pro vývoj programu. LocalDB spustí na vyžádání a běží v uživatelském režimu, takže není žádná komplexní konfigurace. Ve výchozím nastavení, vytvoří databáze LocalDB "\*.mdf" soubory *C: či uživatelů nebo\<uživatele\>*  adresáře.
 

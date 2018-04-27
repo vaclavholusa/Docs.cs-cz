@@ -1,0 +1,12 @@
+# <a name="aspnet-core-web-api-controller-sample"></a><span data-ttu-id="97d32-101">Ukázka kontroler API webové jádro ASP.NET</span><span class="sxs-lookup"><span data-stu-id="97d32-101">ASP.NET Core Web API Controller Sample</span></span>
+
+<span data-ttu-id="97d32-102">Tato ukázková aplikace se skládá z následujících projektech:</span><span class="sxs-lookup"><span data-stu-id="97d32-102">This sample app consists of the following projects:</span></span>
+
+- <span data-ttu-id="97d32-103">**WebApiSample.Api**: ASP.NET Core 2.1 projektu cílení na rozhraní .NET Core 2.1.</span><span class="sxs-lookup"><span data-stu-id="97d32-103">**WebApiSample.Api**: An ASP.NET Core 2.1 project targeting .NET Core 2.1.</span></span>
+- <span data-ttu-id="97d32-104">**WebApiSample.Api.Pre21**: cílení na rozhraní .NET 2.0 základní projekt technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="97d32-104">**WebApiSample.Api.Pre21**: An ASP.NET Core 2.0 project targeting .NET Core 2.0.</span></span>
+- <span data-ttu-id="97d32-105">**WebApiSample.DataAccess**: knihovny tříd A rozhraní .NET 2.0 standardní slouží jako úroveň přístupu dat pro 2 projekty webového rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="97d32-105">**WebApiSample.DataAccess**: A .NET Standard 2.0 class library serving as a data access tier for the 2 Web API projects.</span></span>
+
+<span data-ttu-id="97d32-106">Tato ukázka znázorňuje variace vytvoření kontroleru webového rozhraní API:</span><span class="sxs-lookup"><span data-stu-id="97d32-106">This sample illustrates variations of Web API controller creation:</span></span>
+
+- [<span data-ttu-id="97d32-107">Odvození třídy z ControllerBase</span><span class="sxs-lookup"><span data-stu-id="97d32-107">Derive class from ControllerBase</span></span>](https://docs.microsoft.com/en-us/aspnet/core/web-api/define-controller#derive-class-from-controllerbase)
+- [<span data-ttu-id="97d32-108">Přidání poznámek ke třídě pomocí ApiControllerAttribute</span><span class="sxs-lookup"><span data-stu-id="97d32-108">Annotate class with ApiControllerAttribute</span></span>](https://docs.microsoft.com/en-us/aspnet/core/web-api/define-controller#annotate-class-with-apicontrollerattribute)

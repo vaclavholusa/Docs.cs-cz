@@ -226,6 +226,7 @@
 ## [Začínáme](xref:signalr/get-started)
 ## [Centra](xref:signalr/hubs)
 ## [Klient JavaScriptu](xref:signalr/javascript-client)
+## [Publikování do Azure](xref:signalr/publish-to-azure-web-app)
 ## [Podporované platformy](xref:signalr/supported-platforms)
 
 # [Mobilní zařízení](xref:mobile/index)

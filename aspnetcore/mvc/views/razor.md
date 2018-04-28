@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 6dd78e1c4d0e3373719f24ac3615af4b6943acb8
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 9c96ea34071bf3009f1ec53ed9af9206439aa229
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>Reference syntaxe Razor pro ASP.NET Core
 
@@ -109,19 +109,7 @@ Explicitní výrazy můžete použít ke zřetězení textu pomocí výsledek v�
 
 Bez explicitního výrazu `<p>Age@joe.Age</p>` je považován za e-mailovou adresu a `<p>Age@joe.Age</p>` je vykreslen. Když k zapsání jako výraz explicitní `<p>Age33</p>` je vykreslen.
 
-
-Explicitní výrazy můžete použít k vykreslení výstupu z obecné metody v *.cshtml* soubory. Ve výrazu implicitní znaků v závorkách (`<>`) se interpretují jako značky jazyka HTML. Následující kód je **není** platný Razor:
-
-```cshtml
-<p>@GenericMethod<int>()</p>
-```
-
-Předchozí kód vygeneruje chybu kompilátoru podobně jako jednu z těchto možností:
-
-* Element "int" nebyla uzavřena. Všechny elementy musí být buď samoobslužné zavírání nebo koncová značka.
-* Metoda skupiny 'GenericMethod' bez delegátem typu 'objekt' nelze převést. Opravdu chcete vyvolat metodu? " 
- 
-  Následující kód ukazuje zápisu správný způsob, jak tento kód. Kód je zapsána jako explicitní výrazu:
+Explicitní výrazy můžete použít k vykreslení výstupu z obecné metody v *.cshtml* soubory. Následující kód ukazuje, jak chybu opravit chyby, zobrazí dříve způsobené hranatých závorkách obecného C#. Kód je zapsána jako explicitní výrazu:
 
 ```cshtml
 <p>@(GenericMethod<int>())</p>

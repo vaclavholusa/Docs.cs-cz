@@ -4,41 +4,63 @@ V následujících částech `Create`, `Update`, a `Delete` metody jsou přidán
 
 ### <a name="create"></a>Create
 
-Přidejte následující `Create` metoda.
+Přidejte následující `Create` metoda:
 
-[!code-csharp[](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Předchozí kód je metoda HTTP POST, uvedené [ `[HttpPost]` ](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. [ `[FromBody]` ](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) Atribut informuje MVC k získání hodnoty položky úkolů z textu požadavku HTTP.
+Předchozí kód je metoda HTTP POST, jak [[HttpPost]](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. [[FromBody]](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) atribut informuje MVC k získání hodnoty položky úkolů z textu požadavku HTTP.
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
+
+Předchozí kód je metoda HTTP POST, jak [[HttpPost]](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. MVC získá hodnotu položky úkolů z textu požadavku HTTP.
+::: moniker-end
 
 `CreatedAtRoute` Metoda:
 
 * Vrátí 201 odpověď. HTTP 201 je standardní odpověď pro metodu POST protokolu HTTP, která vytvoří nový prostředek na serveru.
-* Přidá do odpovědi hlavičku umístění. Hlavička umístění Určuje identifikátor URI položky nově vytvořený úkolů. V tématu [10.2.2 201 vytvořit](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+* Přidá do odpovědi hlavičku umístění. Hlavička umístění Určuje identifikátor URI položky nově vytvořený úkolů. V tématu [10.2.2 201 vytvořit](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 * Vytvoří adresu URL pomocí "GetTodo" s názvem trasy. "GetTodo" s názvem trasy je definována v `GetById`:
 
-[!code-csharp[](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_GetByID&highlight=1-2)]
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_GetByID&highlight=1-2)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_GetByID&highlight=1-2)]
+::: moniker-end
 
 ### <a name="use-postman-to-send-a-create-request"></a>Použití Postman k odeslání požadavku na vytvořit
 
+* Spusťte aplikaci.
+* Otevřete Postman.
+
 ![Konzole postman](../../tutorials/first-web-api/_static/pmc.png)
 
-* Nastavte jako metodu HTTP `POST`
-* Vyberte **textu** přepínač
-* Vyberte **nezpracovaná** přepínač
-* Nastavte typ do formátu JSON
-* V editoru klíč hodnota zadejte položky Todo
+* Aktualizujte číslo portu v adrese URL místního hostitele.
+* Nastavte jako metodu HTTP *POST*.
+* Klikněte **textu** kartě.
+* Vyberte **nezpracovaná** přepínač.
+* Nastavte typ na *JSON (application/json)*.
+* Zadejte obsah žádosti s úkol podobné následujícím kódu JSON:
 
 ```json
 {
-    "name":"walk dog",
-    "isComplete":true
+  "name":"walk dog",
+  "isComplete":true
 }
 ```
 
-* Vyberte **odeslat**
-* Vyberte kartu hlavičky v dolním podokně a zkopírujte **umístění** hlavičky:
+* Klikněte **odeslat** tlačítko.
 
-![Karta hlavičky konzoly Postman](../../tutorials/first-web-api/_static/pmget.png)
+::: moniker range=">= aspnetcore-2.1"
+> [!TIP]
+> Pokud žádná odpověď zobrazí po kliknutí na **odeslat**, zakažte **SSL certifikační ověření** možnost. To je v části **soubor** > **nastavení**. Klikněte **odeslat** tlačítko znovu po zakázání nastavení.
+::: moniker-end
+
+Klikněte na tlačítko **hlavičky** ve **odpovědi** podokně a zkopírujte **umístění** hodnota hlavičky:
+
+![Karta hlavičky konzoly Postman](../../tutorials/first-web-api/_static/pmc2.png)
 
 Hlavička umístění URI slouží pro přístup k novou položku.
 
@@ -46,9 +68,16 @@ Hlavička umístění URI slouží pro přístup k novou položku.
 
 Přidejte následující `Update` metoda:
 
-[!code-csharp[](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker-end
 
-`Update` je podobná `Create`, ale používá HTTP PUT. Odpověď [204 (ne obsahu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). Podle specifikace protokolu HTTP vyžaduje požadavek PUT klientovi umožní odeslat celý aktualizovanou entitu, nikoli pouze rozdíly. Chcete-li podporovat částečné aktualizace, použijte HTTP PATCH.
+`Update` je podobná `Create`, s výjimkou používá HTTP PUT. Odpověď [204 (ne obsahu)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). Podle specifikace protokolu HTTP vyžaduje požadavek PUT klientovi umožní odeslat celý aktualizovanou entitu, nikoli pouze rozdíly. Chcete-li podporovat částečné aktualizace, použijte HTTP PATCH.
+
+Použijte Postman k aktualizaci název položky úkolů vás "cat":
 
 ![Postman konzola znázorňující 204 odpovědi (ne obsahu)](../../tutorials/first-web-api/_static/pmcput.png)
 
@@ -56,10 +85,10 @@ Přidejte následující `Update` metoda:
 
 Přidejte následující `Delete` metoda:
 
-[!code-csharp[](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
+[!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
 
-`Delete` Odpověď je [204 (ne obsahu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
+`Delete` Odpověď je [204 (ne obsahu)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
 
-Test `Delete`: 
+Pomocí Postman odstranit položku seznamu úkolů:
 
 ![Postman konzola znázorňující 204 odpovědi (ne obsahu)](../../tutorials/first-web-api/_static/pmd.png)

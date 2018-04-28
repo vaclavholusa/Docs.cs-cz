@@ -4,16 +4,17 @@ author: rick-anderson
 description: Sestavení webového rozhraní API s ASP.NET MVC jádra a Visual Studio pro Windows
 manager: wpickett
 ms.author: riande
-ms.date: 08/15/2017
+ms.custom: mvc
+ms.date: 04/27/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api
-ms.openlocfilehash: 92b1b28205584d2f08a5dc8124e5c50aa938c80f
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 71f1e10dee9fbae8cf76733d33533be832fb5769
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio pro Windows
 
@@ -21,7 +22,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Wasson Jan](https://gi
 
 V tomto kurzu sestavení webového rozhraní API pro správu "úkolů" položek seznamu. Uživatelské rozhraní (UI) se nevytvoří.
 
-Existují 3 verze tohoto kurzu:
+Existují tři verze tohoto kurzu:
 
 * Windows: Webové rozhraní API s Visual Studio pro Windows (Tento kurz)
 * systému macOS: [webového rozhraní API pomocí sady Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
@@ -29,45 +30,46 @@ Existují 3 verze tohoto kurzu:
 
 <!-- WARNING: The code AND images in this doc are used by uid: tutorials/web-api-vsc, tutorials/first-web-api-mac and tutorials/first-web-api. If you change any code/images in this tutorial, update uid: tutorials/web-api-vsc -->
 
-[!INCLUDE [intro to web API](../includes/webApi/intro.md)]
+[!INCLUDE[intro to web API](../includes/webApi/intro.md)]
 
 ## <a name="prerequisites"></a>Požadavky
 
-[!INCLUDE [](~/includes/net-core-prereqs-windows.md)]
+[!INCLUDE[](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
 Ze sady Visual Studio, vyberte **soubor** nabídce > **nový** > **projektu**.
 
-Vyberte **.NET Core** > **webové aplikace ASP.NET Core** šablona projektu. Název projektu `TodoApi` a vyberte **OK**.
+Vyberte **.NET Core** > **webové aplikace ASP.NET Core** šablona projektu. Název projektu *TodoApi* a vyberte **OK**.
 
 ![Dialogové okno Nový projekt](first-web-api/_static/new-project.png)
 
-V **nové základní webové aplikace ASP.NET - TodoApi** dialogovém okně, vyberte **rozhraní API** šablony. Vyberte **OK**. Proveďte **není** vyberte **povolení podpory Docker**.
+V **nové základní webové aplikace ASP.NET - TodoApi** dialogovém okně, vyberte verzi ASP.NET Core. Vyberte **rozhraní API** šablony. Vyberte **OK**. Proveďte **není** vyberte **povolení podpory Docker**.
 
 ![Dialogové okno nové webové aplikace ASP.NET pomocí šablony projektu webového rozhraní API vybrané ze šablon jádro ASP.NET](first-web-api/_static/web-api-project.png)
 
 ### <a name="launch-the-app"></a>Spusťte aplikaci
 
-V sadě Visual Studio stiskněte CTRL + F5 a spusťte aplikaci. Visual Studio spustí prohlížeč a přejde na `http://localhost:port/api/values`, kde *portu* je náhodně vybraný port číslo. Chrome, Microsoft Edge a Firefox zobrazí následující výstup:
+V sadě Visual Studio stiskněte CTRL + F5 a spusťte aplikaci. Visual Studio spustí prohlížeč a přejde na `http://localhost:<port>/api/values`, kde `<port>` je náhodně vybraný port číslo. Chrome, Microsoft Edge a Firefox zobrazí následující výstup:
 
-```
+```json
 ["value1","value2"]
 ```
 
 ### <a name="add-a-model-class"></a>Přidejte třídu modelu
 
-Model je objekt, který představuje data v aplikaci. V takovém případě je pouze model položku seznamu úkolů.
+Model je objekt reprezentující data v aplikaci. V takovém případě je pouze model položku seznamu úkolů.
 
-Přidáte složku s názvem "Modely". V Průzkumníku řešení klikněte pravým tlačítkem na projekt. Vyberte **přidat** > **novou složku**. Název složky *modely*.
+V Průzkumníku řešení klikněte pravým tlačítkem na projekt. Vyberte **přidat** > **novou složku**. Název složky *modely*.
 
-Poznámka: Třídy modelu přejděte kdekoli v projektu. *Modely* složky používají konvence pro třídy modelu.
+> [!NOTE]
+> Třídy modelu můžete přejít kdekoli v projektu. *Modely* složky používají konvence pro třídy modelu.
 
-Přidat `TodoItem` třídy. Klikněte pravým tlačítkem myši *modely* složky a vyberte **přidat** > **třída**. Název třídy `TodoItem` a vyberte **přidat**.
+V Průzkumníku řešení klikněte pravým tlačítkem myši *modely* složky a vyberte **přidat** > **třída**. Název třídy *TodoItem* a klikněte na tlačítko **přidat**.
 
 Aktualizace `TodoItem` třídy následujícím kódem:
 
-[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Models/TodoItem.cs)]
 
 Generuje databázi `Id` při `TodoItem` je vytvořena.
 
@@ -75,31 +77,30 @@ Generuje databázi `Id` při `TodoItem` je vytvořena.
 
 *Kontext databáze* je hlavní třída, která koordinuje funkcí rozhraní Entity Framework pro daný datový model. Tato třída se vytvoří odvozené z `Microsoft.EntityFrameworkCore.DbContext` třídy.
 
-Přidat `TodoContext` třídy. Klikněte pravým tlačítkem myši *modely* složky a vyberte **přidat** > **třída**. Název třídy `TodoContext` a vyberte **přidat**.
+V Průzkumníku řešení klikněte pravým tlačítkem myši *modely* složky a vyberte **přidat** > **třída**. Název třídy *TodoContext* a klikněte na tlačítko **přidat**.
 
 Třída nahraďte následujícím kódem:
 
-[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Models/TodoContext.cs)]
 
 [!INCLUDE [Register the database context](../includes/webApi/register_dbContext.md)]
 
 ### <a name="add-a-controller"></a>Přidání kontroleru
 
-V Průzkumníku řešení klikněte pravým tlačítkem myši *řadiče* složky. Vyberte **přidat** > **novou položku**. V **přidat novou položku** dialogovém okně, vyberte **třída Kontroleru rozhraní Web API** šablony. Název třídy `TodoController`.
+V Průzkumníku řešení klikněte pravým tlačítkem myši *řadiče* složky. Vyberte **přidat** > **novou položku**. V **přidat novou položku** dialogovém okně, vyberte **třída Kontroleru rozhraní API** šablony. Název třídy *TodoController*a klikněte na tlačítko **přidat**.
 
 ![Přidání nové položky dialogové okno s řadiče v vyhledávací pole a webové rozhraní API řadič vybrané](first-web-api/_static/new_controller.png)
 
 Třída nahraďte následujícím kódem:
 
-[!INCLUDE [code and get todo items](../includes/webApi/getTodoItems.md)]
+[!INCLUDE[code and get todo items](../includes/webApi/getTodoItems.md)]
 
 ### <a name="launch-the-app"></a>Spusťte aplikaci
 
-V sadě Visual Studio stiskněte CTRL + F5 a spusťte aplikaci. Visual Studio spustí prohlížeč a přejde na `http://localhost:port/api/values`, kde *portu* je náhodně vybraný port číslo. Přejděte na `Todo` ovladač na `http://localhost:port/api/todo`.
+V sadě Visual Studio stiskněte CTRL + F5 a spusťte aplikaci. Visual Studio spustí prohlížeč a přejde na `http://localhost:<port>/api/values`, kde `<port>` je náhodně vybraný port číslo. Přejděte na `Todo` ovladač na `http://localhost:<port>/api/todo`.
 
-[!INCLUDE [last part of web API](../includes/webApi/end.md)]
+[!INCLUDE[last part of web API](../includes/webApi/end.md)]
 
-[!INCLUDE[Javascript Jquery](../includes/add-javascript-jquery/index.md)]
+[!INCLUDE[jQuery](../includes/webApi/add-jquery.md)]
 
 [!INCLUDE[next steps](../includes/webApi/next.md)]
-

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: web-api/advanced/formatting
-ms.openlocfilehash: b9ce4b84c745d73e8490c96e50a14f40b9e6cb8d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f25705bcd3a704de12ea24c3e196de1ba1afd492
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="format-response-data-in-aspnet-core-web-api"></a>Formát data odpovědi v webového rozhraní API ASP.NET Core
 
@@ -22,7 +22,7 @@ Podle [Steve Smith](https://ardalis.com/)
 
 Jádro ASP.NET MVC má integrovanou podporu pro formátování data odpovědi pomocí pevné formáty nebo v reakci na požadavky klienta.
 
-[Zobrazení nebo stažení ukázky z webu GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/models/formatting/sample).
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/formatting/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="format-specific-action-results"></a>Výsledky akce specifické pro formát
 

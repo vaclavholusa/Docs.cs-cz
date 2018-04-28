@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: web-api/advanced/custom-formatters
-ms.openlocfilehash: 6530459afe5cc3987ace938af77151fdd74f07b3
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.openlocfilehash: 45d64feea9b3466d32088b5949b33d3fec3b3a41
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="custom-formatters-in-aspnet-core-web-api"></a>Vlastní formátování v webového rozhraní API ASP.NET Core
 
@@ -21,7 +21,7 @@ Podle [tní Dykstra](https://github.com/tdykstra)
 
 Jádro ASP.NET MVC má integrovanou podporu pro výměnu dat ve webové rozhraní API pomocí formátu JSON, XML nebo prostý text. Tento článek ukazuje, jak přidat podporu dalších formátech tak, že vytvoříte vlastní formátování.
 
-[Zobrazení nebo stažení ukázky z webu GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/custom-formatters/sample).
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="when-to-use-custom-formatters"></a>Kdy použít vlastní formátování
 
@@ -65,7 +65,7 @@ V konstruktoru, určete přidáním do platné médium typy a kódování `Suppo
 > [!NOTE]
 > Nelze provést konstruktor vkládání závislostí v třída formátovacího modulu. Například nelze získat protokolovacího nástroje přidáním protokolovacího nástroje parametr konstruktoru. Pro přístup ke službám, budete muset použít objektu context, který získá předané do vaší metody. Příklad kódu [pod](#read-write) ukazuje, jak to udělat.
 
-### <a name="override-canreadtypecanwritetype"></a>Override CanReadType/CanWriteType
+### <a name="override-canreadtypecanwritetype"></a>Přepsání CanReadType/CanWriteType
 
 Zadejte typ můžete deserializovat do nebo z serializovat přepsáním `CanReadType` nebo `CanWriteType` metody. Například může být pouze nebudete moct vytvořit soubor vCard text ze `Contact` a naopak.
 

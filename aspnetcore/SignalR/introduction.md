@@ -1,21 +1,21 @@
 ---
 title: Úvod do základní ASP.NET SignalR
 author: rachelappel
-description: Zjistěte, jak knihovny ASP.NET Core SignalR zjednodušuje přidávání funkce webu v reálném čase do aplikací.
+description: Zjistěte, jak knihovny ASP.NET Core SignalR zjednodušuje přidání funkcí v reálném čase do aplikací.
 manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 03/07/2018
+ms.date: 04/25/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/introduction
-ms.openlocfilehash: fa9b10201b5dc0e67bcd6d1321a3737e2025fda4
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 190dfe9eac95be646b458870ac4ee95f681f45d7
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>Úvod do základní ASP.NET SignalR
 
@@ -51,20 +51,17 @@ Připojení mezi klientem a serverem je trvalé, na rozdíl od připojení HTTP.
 
 SignalR přehledů v rámci počtu techniky pro vytváření aplikací webu v reálném čase. [Technologie WebSockets](https://tools.ietf.org/html/rfc7118) je optimální přenos, ale jinými technikami, jako je Server-Sent události a dlouhé dotazování lze použít při těch, které nejsou k dispozici. SignalR automaticky rozpozná a inicializaci odpovídající přenos podle funkce podporovány na serveru a klienta.
 
-## <a name="hubs-and-endpoints"></a>Koncové body a rozbočovače
+## <a name="hubs"></a>Rozbočovače
 
-SignalR používá koncové body centra a ke komunikaci mezi klienty a servery. Rozhraní API centra pokrývá většinu scénářů.
+SignalR centra používá ke komunikaci mezi klienty a servery.
 
-Rozbočovač je založena na koncový bod rozhraní API umožňující klient a server pro volání metody na sobě navzájem vysoké úrovně kanálu. SignalR zpracovává odeslání mezi různými počítači automaticky, které klientům umožňuje volat metody na serveru jako snadno jako místní metody a naopak. Centra povolit předání silného typu parametry metody, která umožňuje vazby modelu. Funkce SignalR poskytuje dva předdefinované rozbočovače protokoly: protokol text na základě JSON a binární protokol založený na [MessagePack](https://msgpack.org/).  MessagePack obvykle vytvoří zpráv menší než při použití formátu JSON. Starší prohlížeče musí podporovat [XHR úroveň 2](https://caniuse.com/#feat=xhr2) poskytovat podporu protokolu MessagePack.
+Rozbočovač je nejdůležitější kanál, který umožňuje klient a server pro volání metody na sobě navzájem. SignalR zpracovává odeslání mezi různými počítači automaticky, které klientům umožňuje volat metody na serveru jako snadno jako místní metody a naopak. Centra povolit předání silného typu parametry metody, která umožňuje vazby modelu. Funkce SignalR poskytuje dva předdefinované rozbočovače protokoly: protokol text na základě JSON a binární protokol založený na [MessagePack](https://msgpack.org/).  MessagePack obvykle vytvoří zpráv menší než při použití formátu JSON. Starší prohlížeče musí podporovat [XHR úroveň 2](https://caniuse.com/#feat=xhr2) poskytovat podporu protokolu MessagePack.
 
 Odesílání zpráv pomocí aktivní přenos rozbočovače pro volání kódu na straně klienta. Zprávy obsahují název a parametry metody na straně klienta. Objekty odeslán jako parametry metody jsou deserializovat pomocí nakonfigurované protokolu. Klient se pokusí shodovat s názvem na metodu v kódu na straně klienta. Pokud je shoda se stane, metodu klienta běží, pomocí dat deserializovat parametru.
 
-Koncové body zadejte nezpracovaná rozhraní API soketu jako povolením číst a zapisovat z klienta. Je to na vývojáře pro zpracování seskupení, všesměrové vysílání a další funkce. Rozhraní API centra je postavená na vrstvě koncové body.
+## <a name="additional-resources"></a>Další zdroje
 
-Následující diagram znázorňuje vztah mezi rozbočovače, koncových bodů a klienty.
-
-![Mapa SignalR](introduction/_static/signalr-core-architecture.png)
-
-## <a name="related-resources"></a>Související informační zdroje
-
-[Začínáme s SignalR pro ASP.NET Core](xref:signalr/get-started)
+* [Začínáme s SignalR pro ASP.NET Core](xref:signalr/get-started)
+* [Podporované platformy](xref:signalr/supported-platforms)
+* [Centra](xref:signalr/hubs)
+* [Klient JavaScriptu](xref:signalr/javascript-client)

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: f272f9629ab1f9e7f7643cafd0d45f19340d5284
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 8325776597eab9c673a4847edf87ae0d9e0d3efb
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="configuration-in-aspnet-core"></a>Konfigurace v ASP.NET Core
 
@@ -280,7 +280,7 @@ Pokud jsou splněny všechny předchozí podmínky, se přepíšou argumenty př
 
 Můžete použít aplikaci ASP.NET Core 2.x [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) místo `CreateDefaultBuilder`. Při použití `WebHostBuilder`, je nutné ručně nastavit konfiguraci s [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder). V tématu kartě ASP.NET Core 1.x pro další informace.
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Vytvoření [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) a volání `AddCommandLine` metodu použít poskytovatele konfigurace příkazového řádku. Poslední volání zprostředkovatele umožňuje dříve názvem argumenty příkazového řádku předaný běhu přepsat konfiguraci nastavit pomocí jiných poskytovatelů konfigurace. Použít konfiguraci [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) s `UseConfiguration` metoda:
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?highlight=11,15,19)]
@@ -316,7 +316,7 @@ Příklad:
 dotnet run key1=value1 -key2=value2 --key3=value3 /key4=value4
 ```
 
-Poznámka: Pokud `-key1` není součástí [přepínač mapování](#switch-mappings) předaná zprostředkovateli konfigurace `FormatException` je vyvolána výjimka.
+Poznámka: Pokud `-key2` není součástí [přepínač mapování](#switch-mappings) předaná zprostředkovateli konfigurace `FormatException` je vyvolána výjimka.
 
 **Pořadí dva argumenty**
 
@@ -405,7 +405,7 @@ MachineName: ChadPC
 Left: 1988
 ```
 
-## <a name="webconfig-file"></a>web.config file
+## <a name="webconfig-file"></a>soubor Web.config
 
 A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Express. Nastavení v *web.config* povolit [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) spusťte aplikaci a nakonfigurovat další nastavení služby IIS a modulů. Pokud *web.config* soubor není přítomen a zahrnuje soubor projektu `<Project Sdk="Microsoft.NET.Sdk.Web">`, publikování projektu vytvoří *web.config* souboru v publikované výstup ( *publikování* složku). Další informace najdete v tématu [hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#webconfig-file).
 
@@ -469,7 +469,7 @@ V zobrazení MVC:
 
 * [Možnosti](xref:fundamentals/configuration/options)
 * [Práce s několika prostředí](xref:fundamentals/environments)
-* [Bezpečné úložiště tajné klíče aplikace v vývoj](xref:security/app-secrets)
+* [Bezpečné ukládání tajných kódů aplikace při vývoji](xref:security/app-secrets)
 * [Hostování v ASP.NET Core](xref:fundamentals/hosting)
 * [Injektáž závislostí](xref:fundamentals/dependency-injection)
 * [Zprostředkovatel konfigurace služby Azure Key Vault](xref:security/key-vault-configuration)

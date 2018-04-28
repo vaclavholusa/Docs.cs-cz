@@ -5,16 +5,17 @@ description: Vytvoření webové rozhraní API s jádro ASP.NET MVC a Visual Stu
 helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Service, HTTP Service
 manager: wpickett
 ms.author: riande
-ms.date: 09/15/2017
+ms.custom: mvc
+ms.date: 04/27/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: 9d548ae0046785e8ffac059d6fa585ec86ce292d
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 9fca43e809720c22d87b963925bc009dc6c51831
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-mac"></a>Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio pro Mac
 
@@ -22,7 +23,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Wasson Jan](https://gi
 
 V tomto kurzu sestavení webového rozhraní API pro správu "úkolů" položek seznamu. Rozhraní není vytvořená.
 
-Existují 3 verze tohoto kurzu:
+Existují tři verze tohoto kurzu:
 
 * systému macOS: webové rozhraní API pomocí sady Visual Studio pro Mac (Tento kurz)
 * Windows: [webové rozhraní API pomocí sady Visual Studio pro Windows](xref:tutorials/first-web-api)
@@ -30,62 +31,63 @@ Existují 3 verze tohoto kurzu:
 
 <!-- WARNING: The code AND images in this doc are used by uid: tutorials/web-api-vsc, tutorials/first-web-api-mac and tutorials/first-web-api. If you change any code/images in this tutorial, update uid: tutorials/web-api-vsc -->
 
-[!INCLUDE [template files](../includes/webApi/intro.md)]
+[!INCLUDE[template files](../includes/webApi/intro.md)]
 
 V tématu [Úvod do rozhraní ASP.NET MVC jádra v systému macOS nebo Linux](xref:tutorials/first-mvc-app-xplat/index) pro příklad, který používá trvalé databáze.
 
 ## <a name="prerequisites"></a>Požadavky
 
-[!INCLUDE [](~/includes/net-core-prereqs-macos.md)]
+[!INCLUDE[](~/includes/net-core-prereqs-macos.md)]
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
-Ze sady Visual Studio, vyberte **soubor > Nový řešení**.
+Ze sady Visual Studio, vyberte **soubor** > **nové řešení**.
 
 ![systému macOS nové řešení](first-web-api-mac/_static/sln.png)
 
-Vyberte **aplikace .NET Core > ASP.NET Core webového rozhraní API > Další**.
+Vyberte **aplikace .NET Core** > **ASP.NET Core webového rozhraní API** > **Další**.
 
 ![systému macOS dialogové okno Nový projekt](first-web-api-mac/_static/1.png)
 
-Zadejte **TodoApi** pro **název projektu**a vyberte možnost vytvořit.
+Zadejte *TodoApi* pro **název projektu**a potom klikněte na **vytvořit**.
 
 ![Dialogové okno Konfigurace](first-web-api-mac/_static/2.png)
 
 ### <a name="launch-the-app"></a>Spusťte aplikaci
 
-V sadě Visual Studio, vyberte **spustit > spustit s ladění** spusťte aplikaci. Visual Studio spustí prohlížeč a přejde na `http://localhost:5000`. Zobrazí chyba HTTP 404 (není nalezena).  Změňte adresu URL na `http://localhost:port/api/values`. `ValuesController` Data se zobrazí:
+V sadě Visual Studio, vyberte **spustit** > **spustit s ladění** spusťte aplikaci. Visual Studio spustí prohlížeč a přejde na `http://localhost:5000`. Zobrazí chyba HTTP 404 (není nalezena). Změňte adresu URL na `http://localhost:<port>/api/values`. `ValuesController` Se zobrazí data:
 
-```
+```json
 ["value1","value2"]
 ```
 
 ### <a name="add-support-for-entity-framework-core"></a>Přidání podpory pro Entity Framework Core
 
-Nainstalujte [Entity Framework Core InMemory](https://docs.microsoft.com/ef/core/providers/in-memory/) zprostředkovatel databáze. Tento poskytovatel databáze umožňuje Entity Framework Core pro použití s databázi v paměti.
+Nainstalujte [Entity Framework Core InMemory](/ef/core/providers/in-memory/) zprostředkovatel databáze. Tento poskytovatel databáze umožňuje Entity Framework Core pro použití s databázi v paměti.
 
-* Z **projektu** nabídce vyberte možnost **přidání balíčků NuGet**. 
+* Z **projektu** nabídce vyberte možnost **přidání balíčků NuGet**.
 
-  *  Alternativně můžete můžete kliknout pravým tlačítkem **závislosti**a potom vyberte **přidat balíčky**.
+  * Alternativně můžete můžete kliknout pravým tlačítkem **závislosti**a potom vyberte **přidat balíčky**.
 
 * Zadejte `EntityFrameworkCore.InMemory` do vyhledávacího pole.
 * Vyberte `Microsoft.EntityFrameworkCore.InMemory`a potom vyberte **přidat balíček**.
 
 ### <a name="add-a-model-class"></a>Přidejte třídu modelu
 
-Model je objekt, který představuje data ve vaší aplikaci. V takovém případě je pouze model položku seznamu úkolů.
+Model je objekt reprezentující data v aplikaci. V takovém případě je pouze model položku seznamu úkolů.
 
-Přidat složku s názvem *modely*. V Průzkumníku řešení klikněte pravým tlačítkem na projekt. Vyberte **přidat** > **novou složku**. Název složky *modely*.
+V Průzkumníku řešení klikněte pravým tlačítkem na projekt. Vyberte **přidat** > **novou složku**. Název složky *modely*.
 
 ![Nová složka](first-web-api-mac/_static/folder.png)
 
-Poznámka: Můžete umístit třídy modelu kdekoli v projektu, ale *modely* složky se používá podle konvence.
+> [!NOTE]
+> Třídy modelu můžete umístit kdekoli v projektu, ale *modely* složky se používá podle konvence.
 
-Přidat `TodoItem` třídy. Klikněte pravým tlačítkem myši *modely* složky a vyberte **Přidat > Nový soubor > Obecné > prázdné třídy**. Název třídy `TodoItem`a potom vyberte **nový**.
+Klikněte pravým tlačítkem myši *modely* složky a vyberte **přidat** > **nový soubor** > **Obecné**  >  **Prázdná třída**. Název třídy *TodoItem*a potom klikněte na **nový**.
 
 Nahraďte generovaný kód:
 
-[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Models/TodoItem.cs)]
 
 Generuje databázi `Id` při `TodoItem` je vytvořena.
 
@@ -95,82 +97,99 @@ Generuje databázi `Id` při `TodoItem` je vytvořena.
 
 Přidat `TodoContext` třídy k *modely* složky.
 
-[!code-csharp[](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Models/TodoContext.cs)]
 
-[!INCLUDE [Register the database context](../includes/webApi/register_dbContext.md)]
+[!INCLUDE[Register the database context](../includes/webApi/register_dbContext.md)]
 
 ## <a name="add-a-controller"></a>Přidání kontroleru
 
 V Průzkumníku řešení v *řadiče* složky, přidejte třídu `TodoController`.
 
-Nahradit následující generovaný kód (a přidejte uzavírací závorky):
+Generovaného kódu nahraďte následujícím textem:
 
-[!INCLUDE [code and get todo items](../includes/webApi/getTodoItems.md)]
+[!INCLUDE[code and get todo items](../includes/webApi/getTodoItems.md)]
 
 ### <a name="launch-the-app"></a>Spusťte aplikaci
 
-V sadě Visual Studio, vyberte **spustit > spustit s ladění** spusťte aplikaci. Visual Studio spustí prohlížeč a přejde na `http://localhost:port`, kde *portu* je náhodně vybraný port číslo. Zobrazí chyba HTTP 404 (není nalezena).  Změňte adresu URL na `http://localhost:port/api/values`. `ValuesController` Data se zobrazí:
+V sadě Visual Studio, vyberte **spustit** > **spustit s ladění** spusťte aplikaci. Visual Studio spustí prohlížeč a přejde na `http://localhost:<port>`, kde `<port>` je náhodně vybraný port číslo. Zobrazí chyba HTTP 404 (není nalezena). Změňte adresu URL na `http://localhost:<port>/api/values`. `ValuesController` Se zobrazí data:
 
-```
+```json
 ["value1","value2"]
 ```
 
-Přejděte na `Todo` ovladač na`http://localhost:port/api/todo`:
+Přejděte na `Todo` ovladač na `http://localhost:<port>/api/todo`:
 
-```
+```json
 [{"key":1,"name":"Item1","isComplete":false}]
 ```
 
 ## <a name="implement-the-other-crud-operations"></a>Implementace dalších operací CRUD
 
-Přidáme `Create`, `Update`, a `Delete` metody pro kontroler. Tyto jsou varianty motiv, tak I budete jenom zobrazit kód a zvýrazněte hlavní rozdíly. Sestavení projektu po přidání nebo změna kódu.
+Přidáme `Create`, `Update`, a `Delete` metody pro kontroler. Tyto metody jsou varianty motiv, tak I budete jenom zobrazit kód a zvýrazněte hlavní rozdíly. Sestavení projektu po přidání nebo změna kódu.
 
 ### <a name="create"></a>Create
 
-[!code-csharp[](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Toto je metoda HTTP POST, uvedené [ `[HttpPost]` ](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. [ `[FromBody]` ](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) Atribut informuje MVC k získání hodnoty položky úkolů z textu požadavku HTTP.
+Předchozí postup odpoví na HTTP POST, jak [[HttpPost]](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. [[FromBody]](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) atribut informuje MVC k získání hodnoty položky úkolů z textu požadavku HTTP.
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-`CreatedAtRoute` Metoda vrátí odpověď 201, což je standardní odpověď pro metodu POST protokolu HTTP, která vytvoří nový prostředek na serveru. `CreatedAtRoute` také přidá do odpovědi hlavičku umístění. Hlavička umístění Určuje identifikátor URI položky nově vytvořený úkolů. V tématu [10.2.2 201 vytvořit](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+Předchozí postup odpoví na HTTP POST, jak [[HttpPost]](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. MVC získá hodnotu položky úkolů z textu požadavku HTTP.
+::: moniker-end
+
+`CreatedAtRoute` Metoda vrátí 201 odpověď. Je standardní odpověď pro metodu POST protokolu HTTP, která vytvoří nový prostředek na serveru. `CreatedAtRoute` také přidá do odpovědi hlavičku umístění. Hlavička umístění Určuje identifikátor URI položky nově vytvořený úkolů. V tématu [10.2.2 201 vytvořit](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
 ### <a name="use-postman-to-send-a-create-request"></a>Použití Postman k odeslání požadavku na vytvořit
 
-* Spusťte aplikaci (**spustit > spustit s laděním**).
-* Spusťte Postman.
+* Spusťte aplikaci (**spustit** > **začínat ladění**).
+* Otevřete Postman.
 
 ![Konzole postman](first-web-api/_static/pmc.png)
 
-* Nastavte jako metodu HTTP `POST`
-* Vyberte **textu** přepínač
-* Vyberte **nezpracovaná** přepínač
-* Nastavte typ do formátu JSON
-* V editoru klíč hodnota zadejte položky Todo
+* Aktualizujte číslo portu v adrese URL místního hostitele.
+* Nastavte jako metodu HTTP *POST*.
+* Klikněte **textu** kartě.
+* Vyberte **nezpracovaná** přepínač.
+* Nastavte typ na *JSON (application/json)*.
+* Zadejte obsah žádosti s úkol podobné následujícím kódu JSON:
 
 ```json
 {
-    "name":"walk dog",
-    "isComplete":true
+  "name":"walk dog",
+  "isComplete":true
 }
 ```
 
-* Vyberte **odeslat**
+* Klikněte **odeslat** tlačítko.
 
-* Vyberte kartu hlavičky v dolním podokně a zkopírujte **umístění** hlavičky:
+::: moniker range=">= aspnetcore-2.1"
+> [!TIP]
+> Pokud žádná odpověď zobrazí po kliknutí na **odeslat**, zakažte **SSL certifikační ověření** možnost. To je v části **soubor** > **nastavení**. Klikněte **odeslat** tlačítko znovu po zakázání nastavení.
+::: moniker-end
 
-![Karta hlavičky konzoly Postman](first-web-api/_static/pmget.png)
+Klikněte na tlačítko **hlavičky** ve **odpovědi** podokně a zkopírujte **umístění** hodnota hlavičky:
 
-Hlavička umístění URI můžete použít pro přístup k prostředku, který jste právě vytvořili. Odvolat `GetById` vytvořili `"GetTodo"` s názvem trasy:
+![Karta hlavičky konzoly Postman](first-web-api/_static/pmc2.png)
+
+Hlavička umístění URI můžete použít pro přístup k prostředku, kterou jste vytvořili. `Create` Metoda vrátí [CreatedAtRoute](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdatroute#Microsoft_AspNetCore_Mvc_ControllerBase_CreatedAtRoute_System_String_System_Object_System_Object_). První parametr předaný `CreatedAtRoute` představuje pojmenovanou trasu sloužící ke generování adresy URL. Odvolat, který `GetById` vytvořili `"GetTodo"` s názvem trasy:
 
 ```csharp
 [HttpGet("{id}", Name = "GetTodo")]
-public IActionResult GetById(string id)
 ```
 
 ### <a name="update"></a>Aktualizace
 
-[!code-csharp[](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker-end
 
-`Update` je podobná `Create`, ale používá HTTP PUT. Odpověď [204 (ne obsahu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). Podle specifikace protokolu HTTP vyžaduje požadavek PUT klientovi umožní odeslat celý aktualizovanou entitu, nikoli pouze rozdíly. Chcete-li podporovat částečné aktualizace, použijte HTTP PATCH.
+`Update` je podobná `Create`, ale používá HTTP PUT. Odpověď [204 (ne obsahu)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). Podle specifikace protokolu HTTP vyžaduje požadavek PUT klientovi umožní odeslat celý aktualizovanou entitu, nikoli pouze rozdíly. Chcete-li podporovat částečné aktualizace, použijte HTTP PATCH.
 
 ```json
 {
@@ -184,18 +203,12 @@ public IActionResult GetById(string id)
 
 ### <a name="delete"></a>Odstranit
 
-[!code-csharp[](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
 
-Odpověď [204 (ne obsahu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
+Odpověď [204 (ne obsahu)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
 
 ![Postman konzola znázorňující 204 odpovědi (ne obsahu)](first-web-api/_static/pmd.png)
 
-[!INCLUDE[Javascript Jquery](../includes/add-javascript-jquery/index.md)]
+[!INCLUDE[jQuery](../includes/webApi/add-jquery.md)]
 
-## <a name="next-steps"></a>Další kroky
-
-* [Směrování na akce kontroleru](xref:mvc/controllers/routing)
-* Informace o nasazení rozhraní API najdete v tématu [hostitele a nasazení](xref:host-and-deploy/index).
-* [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
-* [Postman](https://www.getpostman.com/)
-* [Fiddler](https://www.telerik.com/download/fiddler)
+[!INCLUDE[next steps](../includes/webApi/next.md)]

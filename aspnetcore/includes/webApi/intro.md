@@ -10,8 +10,6 @@ V tomto kurzu vytvoří následující rozhraní API:
 |UVEĎTE /api/todo / {id} | Aktualizace stávající položku &nbsp; | Položky seznamu úkolů | Žádné |
 |Odstranit /api/todo / {id} &nbsp; &nbsp; | Odstranit položku &nbsp; &nbsp; | Žádné | Žádné|
 
-<br>
-
 Následující diagram znázorňuje základní návrhu aplikace.
 
 ![Klient je reprezentována pole na levé straně a odešle žádost a obdrží odpověď z aplikace, pole vykreslovat na pravé straně. V dialogovém okně aplikace představují tři pole kontroleru, model a vrstva přístupu k datům. Žádost přichází do aplikace řadiče a operace čtení a zápisu dochází ke mezi řadičem a vrstva přístupu k datům. Model je serializované a vrátí klientovi v odpovědi.](../../tutorials/first-web-api/_static/architecture.png)

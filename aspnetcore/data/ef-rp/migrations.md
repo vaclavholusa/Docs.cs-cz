@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 4e9b747a3369bbb608c3b3832c865745a2322142
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4578a84adad668f1d60e202d7895cd67d451dc51
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - Migrations - 4 8
 
@@ -106,7 +106,7 @@ Migrace volání `Up` metody k implementaci změny modelu dat pro migraci. Když
 
 Předchozí kód je počáteční migrace. Tento kód byl vytvořen, když `migrations add InitialCreate` byl spuštěn příkaz. Parametr name migrace ("InitialCreate" v příkladu) se používá pro název souboru. Název migrace může být jakýkoli název platný soubor. Doporučujeme vybrat slovo nebo frázi, která shrnuje, co probíhá při migraci. Například migrace, který přidat tabulku oddělení může být například "AddDepartmentTable."
 
-Pokud se vytvoří počáteční migrace a ukončí databáze:
+Pokud počáteční migrace je vytvořen a existuje databáze:
 
 * Generování kódu vytvoření databáze.
 * Kód pro vytvoření databáze není nutné spustit, protože databáze již odpovídá datový model. Pokud kód vytvoření DB běží, nemá proveďte požadované změny, protože databáze již odpovídá datový model.
@@ -123,7 +123,7 @@ Při odstraňování migrace, použijte [odebrat dotnet ef migrace](https://docs
 
 V tématu [EF základní migrace v prostředích Team](/ef/core/managing-schemas/migrations/teams) Další informace o tom, jak se používá soubor snímku.
 
-## <a name="remove-ensurecreated"></a>Remove EnsureCreated
+## <a name="remove-ensurecreated"></a>Odebrat EnsureCreated
 
 Pro včasné vývoj `EnsureCreated` příkaz nebyl použit. V tomto kurzu se používá migrace. `EnsureCreated` má následující omezení:
 

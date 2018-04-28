@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/validation
-ms.openlocfilehash: befbec393c089ec1f4dfdac5dbbdc3bdc7ddbf69
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 06526848dc84472c8629e6e1700a74312442f67c
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Ověření modelu v aplikaci ASP.NET MVC jádra
 
@@ -192,7 +192,7 @@ $.get({
 
 ## <a name="iclientmodelvalidator"></a>IClientModelValidator
 
-Můžete vytvořit logiku straně klienta pro vaše vlastní atribut a [nerušivý ověření](http://jqueryvalidation.org/documentation/) se spustí na klienta pro vás automaticky jako součást ověření. Prvním krokem je řídí, jaké atributy datového přidají implementací `IClientModelValidator` rozhraní, jak je vidět tady:
+Můžete vytvořit logiku straně klienta pro vaše vlastní atribut a [nerušivý ověření](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html) vytváří adaptér pro [k ověřování jquery] (http://jqueryvalidation.org/documentation/) se spustí na klienta pro vás automaticky jako součást ověření. Prvním krokem je řídí, jaké atributy datového přidají implementací `IClientModelValidator` rozhraní, jak je vidět tady:
 
 [!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=30-42)]
 
@@ -207,7 +207,7 @@ Atributy, které toto rozhraní implementovat můžete přidat atributy HTML gen
     id="ReleaseDate" name="ReleaseDate" value="" />
 ```
 
-Nerušivý ověření používá data v `data-` atributy, které mají zobrazovat chybové zprávy. Ale jQuery nebude vědět o pravidlech nebo zprávy, dokud je nepřidáte do jQuery na `validator` objektu. To je znázorněno v následujícím příkladu, který přidává metodu s názvem `classicmovie` obsahující vlastního ověřovacího kódu do jQuery `validator` objektu.
+Nerušivý ověření používá data v `data-` atributy, které mají zobrazovat chybové zprávy. Ale jQuery nebude vědět o pravidlech nebo zprávy, dokud je nepřidáte do jQuery na `validator` objektu. To je znázorněno v následujícím příkladu, který přidává metodu s názvem `classicmovie` obsahující vlastního ověřovacího kódu do jQuery `validator` objektu. Vysvětlení metodu unobtrusive.adapters.add naleznete [sem](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)
 
 [!code-javascript[](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
 

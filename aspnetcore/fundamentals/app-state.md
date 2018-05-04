@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: ca77db7bd498289b448475fc6cadeea622b4a606
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3a9463e5c501b5f32471f002ecab5ad7a81a5c4a
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="session-and-application-state-in-aspnet-core"></a>Stav relace a aplikace v ASP.NET Core
 
@@ -38,7 +38,7 @@ Zprostředkovatel relací v paměti ukládá data relace na místním serveru. P
 <a name="temp"></a>
 ## <a name="tempdata"></a>TempData
 
-ASP.NET MVC základní zpřístupní [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) vlastnost [řadiče](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0). Tato vlastnost ukládá data, dokud je pro čtení. `Keep` a `Peek` metody můžete použít k prozkoumání dat bez odstranění. `TempData` je obzvláště užitečné pro přesměrování, pokud dat je potřeba pro více než jeden požadavek. `TempData` je implementováno modulem TempData poskytovatelů, například pomocí souborů cookie nebo stav relace.
+ASP.NET MVC základní zpřístupní [TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) vlastnost [řadiče](/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0). Tato vlastnost ukládá data, dokud je pro čtení. `Keep` a `Peek` metody můžete použít k prozkoumání dat bez odstranění. `TempData` je obzvláště užitečné pro přesměrování, pokud dat je potřeba pro více než jeden požadavek. `TempData` je implementováno modulem TempData poskytovatelů, například pomocí souborů cookie nebo stav relace.
 
 <a name="tempdata-providers"></a>
 ### <a name="tempdata-providers"></a>Zprostředkovatelé TempData
@@ -47,9 +47,9 @@ ASP.NET MVC základní zpřístupní [TempData](https://docs.microsoft.com/dotne
 
 V technologii ASP.NET Core 2.0 nebo novější TempData zprostředkovatele na základě souborů cookie se používá ve výchozím nastavení pro ukládání TempData v souborech cookie.
 
-Cookie data je zakódovaných pomocí [Base64UrlTextEncoder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0). Vzhledem k tomu, že soubor cookie je šifrovaný a blokové, velikost jednoho souboru cookie limit v ASP.NET Core 1.x doporučení se netýká nalezen. Není komprimována cookie data, protože kompresi šifrovaná data může způsobit problémy se zabezpečením, jako [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) a [porušení](https://wikipedia.org/wiki/BREACH_(security_exploit)) útoky. Další informace o poskytovateli TempData na základě souborů cookie najdete v tématu [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
+Cookie data je zakódovaných pomocí [Base64UrlTextEncoder](/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0). Vzhledem k tomu, že soubor cookie je šifrovaný a blokové, velikost jednoho souboru cookie limit v ASP.NET Core 1.x doporučení se netýká nalezen. Není komprimována cookie data, protože kompresi šifrovaná data může způsobit problémy se zabezpečením, jako [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) a [porušení](https://wikipedia.org/wiki/BREACH_(security_exploit)) útoky. Další informace o poskytovateli TempData na základě souborů cookie najdete v tématu [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 TempData poskytovatele stavu relace ASP.NET Core 1.0 a 1.1, je výchozí.
 
@@ -75,7 +75,7 @@ Ve výchozím nastavení je povolen TempData zprostředkovatel na základě soub
 
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,6,11)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Následující `Startup` kód třídy nakonfiguruje TempData zprostředkovatele na bázi relace:
 
 [!code-csharp[](app-state/sample/src/WebAppSession/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,9)]
@@ -117,16 +117,16 @@ Ukládání do mezipaměti je účinný způsob, jak ukládat a načítat data. 
 
 `Microsoft.AspNetCore.Session` Balíček poskytuje middleware pro správu stavu relace. Povolit middleware relace `Startup` musí obsahovat:
 
-- Některé z [IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache) mezipaměti paměti. `IDistributedCache` Implementace slouží jako úložiště zálohování pro relaci.
-- [AddSession](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.dependencyinjection.sessionservicecollectionextensions#Microsoft_Extensions_DependencyInjection_SessionServiceCollectionExtensions_AddSession_Microsoft_Extensions_DependencyInjection_IServiceCollection_) volání, což vyžaduje, aby balíček NuGet "Microsoft.AspNetCore.Session".
-- [UseSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.sessionmiddlewareextensions#methods_) volání.
+- Některé z [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) mezipaměti paměti. `IDistributedCache` Implementace slouží jako úložiště zálohování pro relaci.
+- [AddSession](/dotnet/api/microsoft.extensions.dependencyinjection.sessionservicecollectionextensions#Microsoft_Extensions_DependencyInjection_SessionServiceCollectionExtensions_AddSession_Microsoft_Extensions_DependencyInjection_IServiceCollection_) volání, což vyžaduje, aby balíček NuGet "Microsoft.AspNetCore.Session".
+- [UseSession](/dotnet/api/microsoft.aspnetcore.builder.sessionmiddlewareextensions#methods_) volání.
 
 Následující kód ukazuje, jak nastavit Zprostředkovatel relací v paměti.
 
 #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/Startup.cs?highlight=11-19,24)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](app-state/sample/src/WebAppSession/Startup.cs?highlight=11-19,24)]
 
 * * *
@@ -138,9 +138,9 @@ Pokud se pokusíte vytvořit novou `Session` (tedy bez souboru cookie relace byl
 
 ### <a name="loading-session-asynchronously"></a>Asynchronní načítání relace 
 
-Výchozí zprostředkovatel relace v ASP.NET Core načte záznam relace ze základní [IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache) asynchronně jenom Pokud úložiště [ISession.LoadAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) metoda je explicitně volána před provedením  `TryGetValue`, `Set`, nebo `Remove` metody. Pokud `LoadAsync` není jako první, základní záznam relace je načtena synchronně, což může potenciálně ovlivnit aplikace škálování.
+Výchozí zprostředkovatel relace v ASP.NET Core načte záznam relace ze základní [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) asynchronně jenom Pokud úložiště [ISession.LoadAsync](/dotnet/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) metoda je explicitně volána před provedením  `TryGetValue`, `Set`, nebo `Remove` metody. Pokud `LoadAsync` není jako první, základní záznam relace je načtena synchronně, což může potenciálně ovlivnit aplikace škálování.
 
-Pokud chcete, aby aplikace vynutit tento vzor, zabalení [DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore) a [DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession) implementace s verzemi, které způsobí výjimku, pokud `LoadAsync` není – metoda volá se před `TryGetValue`, `Set`, nebo `Remove`. Zaregistrujte zabalené verze v kontejneru služby.
+Pokud chcete, aby aplikace vynutit tento vzor, zabalení [DistributedSessionStore](/dotnet/api/microsoft.aspnetcore.session.distributedsessionstore) a [DistributedSession](/dotnet/api/microsoft.aspnetcore.session.distributedsession) implementace s verzemi, které způsobí výjimku, pokud `LoadAsync` není – metoda volá se před `TryGetValue`, `Set`, nebo `Remove`. Zaregistrujte zabalené verze v kontejneru služby.
 
 ### <a name="implementation-details"></a>Podrobnosti implementace
 
@@ -151,7 +151,7 @@ Chcete-li přepsat výchozí hodnoty relace, použijte `SessionOptions`:
 #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](app-state/sample/src/WebAppSession/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
 * * *
@@ -161,7 +161,7 @@ Protože `Session` je *bez uzamčení*, pokud dva požadavky obou pokusí změni
 
 ### <a name="setting-and-getting-session-values"></a>Nastavení a získání hodnoty relace
 
-Relace je přístupné přes `Session` vlastnost `HttpContext`. Tato vlastnost je [ISession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession) implementace.
+Relace je přístupné přes `Session` vlastnost `HttpContext`. Tato vlastnost je [ISession](/dotnet/api/microsoft.aspnetcore.http.isession) implementace.
 
 Následující příklad ukazuje nastavení a získání int a řetězec:
 

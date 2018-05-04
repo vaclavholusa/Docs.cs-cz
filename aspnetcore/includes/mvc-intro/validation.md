@@ -65,7 +65,7 @@ Níže uvádíme část *Create.cshtml* zobrazit šablonu, která vygeneroval d�
 
 [!code-HTML[](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Views/Movies/CreateRatingBrevity.cshtml)]
 
-[Vstupní značka pomocná](xref:mvc/views/working-with-forms) používá [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) atributů a atributů HTML, které jsou potřebné pro architekturu jQuery ověření na straně klienta vytváří. [Pomocná rutina pro ověření značky](xref:mvc/views/working-with-forms#the-validation-tag-helpers) zobrazí chyby ověření. V tématu [ověření](xref:mvc/models/validation) Další informace.
+[Vstupní značka pomocná](xref:mvc/views/working-with-forms) používá [DataAnnotations](/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) atributů a atributů HTML, které jsou potřebné pro architekturu jQuery ověření na straně klienta vytváří. [Pomocná rutina pro ověření značky](xref:mvc/views/working-with-forms#the-validation-tag-helpers) zobrazí chyby ověření. V tématu [ověření](xref:mvc/models/validation) Další informace.
 
 Co je skutečně dobrý o tento přístup je, že ani řadičem ani `Create` zobrazit šablonu zná nic o skutečné ověřovacích pravidel vynucován nebo o specifické chybové zprávy zobrazují. Ověřovací pravidla a řetězce chyby se zadávají pouze v `Movie` třídy. Tyto stejné ověřovací pravidla budou automaticky použita pro `Edit` zobrazení a jakékoli další zobrazení šablony můžete vytvořit které upravit modelu.
 

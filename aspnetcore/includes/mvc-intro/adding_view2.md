@@ -46,7 +46,7 @@ Zkontrolujte *Views/_ViewStart.cshtml* souboru:
 
 Změňte název `Index` zobrazení.
 
-Open *Views/HelloWorld/Index.cshtml*. Existují dvě místa změnit:
+Otevřete *Views/HelloWorld/Index.cshtml*. Existují dvě místa změnit:
 
    * Text, který se zobrazí v názvu prohlížeče.
    * Sekundární hlavičky (`<h2>` element).
@@ -73,7 +73,7 @@ Budete je provedete mírně lišit, abyste viděli, které bit kódu změní kte
 
 Uložte změny a přejděte do `http://localhost:xxxx/HelloWorld`. Všimněte si, že došlo ke změně záhlaví prohlížeče, záhlaví primární a sekundární záhlaví. (Pokud nevidíte změny v prohlížeči, může být zobrazil obsah uložený v mezipaměti. Stisknutím kláves Ctrl + F5 v prohlížeči na vynucení odpovědi ze serveru načíst.) Záhlaví prohlížeče je vytvořena s `ViewData["Title"]` nastaví *Index.cshtml* zobrazit šablony a další "-filmová aplikace" přidat v souboru rozložení.
 
-Všimněte si také jak obsah *Index.cshtml* zobrazit šablonu se sloučil s *Views/Shared/_Layout.cshtml* zobrazit šablonu a odpověď o jedné HTML byl odeslán do prohlížeče. Šablony rozložení skutečně usnadňují provést změny, které platí pro všechny stránky v aplikaci. Další informace najdete v další [rozložení](../../mvc/views/layout.md).
+Všimněte si také jak obsah *Index.cshtml* zobrazit šablonu se sloučil s *Views/Shared/_Layout.cshtml* zobrazit šablonu a odpověď o jedné HTML byl odeslán do prohlížeče. Šablony rozložení skutečně usnadňují provést změny, které platí pro všechny stránky v aplikaci. Další informace najdete v další [rozložení](xref:mvc/views/layout).
 
 ![Zobrazení seznamu filmu](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
 

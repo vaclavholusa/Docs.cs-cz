@@ -1,6 +1,6 @@
-* Startup.cs: [třída při spuštění](../fundamentals/startup.md) -třída nakonfiguruje kanál požadavku, která zpracovává všechny požadavky vytvořené pro aplikaci.
-* Program.cs: [třídy Program](../fundamentals/index.md) obsahující hlavní vstupní bod aplikace.
-* firstapp.csproj: [soubor projektu](https://docs.microsoft.com/dotnet/articles/core/preview3/tools/csproj) formát souboru projektu nástroje MSBuild pro aplikace ASP.NET Core. Obsahuje odkazy na projekt na projekt, odkazů NuGet a další související položky projektu.
+* Startup.cs: [třída při spuštění](xref:fundamentals/startup) -třída nakonfiguruje kanál požadavku, která zpracovává všechny požadavky vytvořené pro aplikaci.
+* Program.cs: [třídy Program](xref:fundamentals/index) obsahující hlavní vstupní bod aplikace.
+* firstapp.csproj: [soubor projektu](/dotnet/articles/core/preview3/tools/csproj) formát souboru projektu nástroje MSBuild pro aplikace ASP.NET Core. Obsahuje odkazy na projekt na projekt, odkazů NuGet a další související položky projektu.
 * appSettings.JSON určený / appsettings. Development.JSON: Prostředí základní aplikace nastavení konfigurační soubor. [Najdete v části konfigurace](xref:fundamentals/configuration/index).
 * bower.JSON: Bower závislosti balíčků pro projekt.
 * .bowerrc: bower konfigurační soubor, který definuje vhodného místa pro instalaci součástí při stahování Bower prostředky.

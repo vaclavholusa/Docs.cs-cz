@@ -8,11 +8,11 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 09f28ec3792cf137fbcfdecc593e27ce6b2e7e09
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 78a00e04e260863af17d7888ca6bf77d3f915ce1
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core
 
@@ -25,7 +25,7 @@ Zobrazit nebo stáhnout ukázkový kód pro 2.x:
 * [Základní ukázka](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/2.x) ([stažení](xref:tutorials/index#how-to-download-a-sample))-čte tajný hodnoty do aplikace.
 * [Název klíče předponu ukázkové](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x) ([stažení](xref:tutorials/index#how-to-download-a-sample)) – čtení tajný hodnoty pomocí předpony název klíče, který představuje verzi aplikace, což vám umožní načíst jinou sadu tajný hodnoty pro každou verzi aplikace.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Zobrazit nebo stáhnout ukázkový kód pro 1.x:
 
@@ -161,4 +161,4 @@ Jakmile se aplikace se nepodaří načíst konfiguraci pomocí poskytovatele, ch
 * [Microsoft Azure: Trezor klíčů](https://azure.microsoft.com/services/key-vault/)
 * [Microsoft Azure: Dokumentaci k trezoru klíčů](https://docs.microsoft.com/azure/key-vault/)
 * [Klíče postup generování a přenos chráněných pomocí HSM pro Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys)
-* [KeyVaultClient – třída](https://docs.microsoft.com/dotnet/api/microsoft.azure.keyvault.keyvaultclient)
+* [KeyVaultClient – třída](/dotnet/api/microsoft.azure.keyvault.keyvaultclient)

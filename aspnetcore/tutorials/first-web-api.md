@@ -10,15 +10,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api
-ms.openlocfilehash: 71f1e10dee9fbae8cf76733d33533be832fb5769
-ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
+ms.openlocfilehash: 962c24a7e654328df7e8893e589e45b19e87b931
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio pro Windows
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Wasson Jan](https://github.com/mikewasson)
+
+::: moniker range="= aspnetcore-2.1"
+[!INCLUDE[](~/includes/2.1.md)]
+::: moniker-end
 
 V tomto kurzu sestavení webového rozhraní API pro správu "úkolů" položek seznamu. Uživatelské rozhraní (UI) se nevytvoří.
 
@@ -38,15 +42,11 @@ Existují tři verze tohoto kurzu:
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
-Ze sady Visual Studio, vyberte **soubor** nabídce > **nový** > **projektu**.
+Pomocí těchto kroků v sadě Visual Studio:
 
-Vyberte **.NET Core** > **webové aplikace ASP.NET Core** šablona projektu. Název projektu *TodoApi* a vyberte **OK**.
-
-![Dialogové okno Nový projekt](first-web-api/_static/new-project.png)
-
-V **nové základní webové aplikace ASP.NET - TodoApi** dialogovém okně, vyberte verzi ASP.NET Core. Vyberte **rozhraní API** šablony. Vyberte **OK**. Proveďte **není** vyberte **povolení podpory Docker**.
-
-![Dialogové okno nové webové aplikace ASP.NET pomocí šablony projektu webového rozhraní API vybrané ze šablon jádro ASP.NET](first-web-api/_static/web-api-project.png)
+* Z **soubor** nabídce vyberte možnost **nový** > **projektu**.
+* Vyberte **webové aplikace ASP.NET Core** šablony. Název projektu *TodoApi* a klikněte na tlačítko **OK**.
+* V **nové základní webové aplikace ASP.NET - TodoApi** dialogovém okně, vyberte verzi ASP.NET Core. Vyberte **rozhraní API** šablonu a klikněte na tlačítko **OK**. Proveďte **není** vyberte **povolení podpory Docker**.
 
 ### <a name="launch-the-app"></a>Spusťte aplikaci
 

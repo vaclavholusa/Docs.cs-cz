@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: b74870c93ea0120e43931bb75f47bab19a6de201
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d5b74e213828d1a1f7e09810e5cc72773a821dab
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
@@ -27,7 +27,7 @@ Aplikace ASP.NET Core je konzolovou aplikaci, která vytvoří webovým serverem
 
 `IWebHostBuilder`, návratový typ `WebHost.CreateDefaultBuilder` volání, nabízí mnoho způsobů volitelné. Některé z těchto metod zahrnují `UseHttpSys` pro hostování aplikace v HTTP.sys a `UseContentRoot` pro zadání kořenový adresář s obsahem. `Build` a `Run` metody sestavení `IWebHost` objekt, který je hostitelem aplikace a začne naslouchat požadavkům HTTP.
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs)]
 
 `Main` Používá metoda `WebHostBuilder`, který odpovídá vzorci Tvůrce vytvořit hostitel webové aplikace. Tvůrce obsahuje metody, které definují webového serveru (například `UseKestrel`) a třída při spuštění (`UseStartup`). V předchozím příkladu [Kestrel](xref:fundamentals/servers/kestrel) se používá webový server. Další webové servery, jako například [WebListener](xref:fundamentals/servers/weblistener), mohou být využívána volání metody odpovídající rozšíření. `UseStartup` je vysvětleno v následující části Další.
@@ -42,7 +42,7 @@ Aplikace ASP.NET Core je konzolovou aplikaci, která vytvoří webovým serverem
 #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs?highlight=10&range=6-17)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs?highlight=7&range=6-17)]
 
 * * *
@@ -98,6 +98,10 @@ ASP.NET Core obsahuje bohatou sadu předdefinovaných middleware:
 [OWIN](http://owin.org)– na základě middlewaru je k dispozici pro aplikace ASP.NET Core a můžete napsat vlastní vlastní middleware.
 
 Další informace najdete v tématu [Middleware](xref:fundamentals/middleware/index) a [Open Web Interface pro .NET (OWIN)](xref:fundamentals/owin).
+
+## <a name="initiate-http-requests"></a>Inicializace požadavků HTTP
+
+Informace o používání `IHttpClientFactory` pro přístup k `HttpClient` instancí, aby požadavky HTTP, najdete v části [požadavky HTTP zahájit](xref:fundamentals/http-requests).
 
 ## <a name="environments"></a>Prostředí
 

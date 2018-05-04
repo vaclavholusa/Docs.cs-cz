@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: e02f3a75269e5e4a4794d1979d3a5add21fe38be
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: cbdef871ffc3269e3118d23ed20306a71b9df030
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrovat obslužné rutiny HTTP a modulů ASP.NET Core middlewaru
 
 Podle [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-Tento článek ukazuje, jak migrovat existující ASP.NET [modulů HTTP a obslužné rutiny z system.webserver](https://docs.microsoft.com/iis/configuration/system.webserver/) na jádro ASP.NET [middleware](xref:fundamentals/middleware/index).
+Tento článek ukazuje, jak migrovat existující ASP.NET [modulů HTTP a obslužné rutiny z system.webserver](/iis/configuration/system.webserver/) na jádro ASP.NET [middleware](xref:fundamentals/middleware/index).
 
 ## <a name="modules-and-handlers-revisited"></a>Moduly a obslužné rutiny kdykoli znovu spustit.
 
@@ -29,15 +29,15 @@ Před pokračováním ASP.NET Core middleware, můžeme nejprve recap jak funguj
 
 **Obslužné rutiny jsou:**
 
-   * Třídy implementující [IHttpHandler](https://docs.microsoft.com/dotnet/api/system.web.ihttphandler)
+   * Třídy implementující [IHttpHandler](/dotnet/api/system.web.ihttphandler)
 
    * Umožňuje zpracování požadavků daného názvu souboru nebo rozšíření, jako například *.report*
 
-   * [Nakonfigurované](https://docs.microsoft.com//iis/configuration/system.webserver/handlers/) v *souboru Web.config*
+   * [Nakonfigurované](/iis/configuration/system.webserver/handlers/) v *souboru Web.config*
 
 **Moduly jsou:**
 
-   * Třídy implementující [IHttpModule](https://docs.microsoft.com/dotnet/api/system.web.ihttpmodule)
+   * Třídy implementující [IHttpModule](/dotnet/api/system.web.ihttpmodule)
 
    * Volá se pro každý požadavek
 
@@ -45,11 +45,11 @@ Před pokračováním ASP.NET Core middleware, můžeme nejprve recap jak funguj
 
    * Možné přidat do odpovědi HTTP ani vytvářet své vlastní
 
-   * [Nakonfigurované](https://docs.microsoft.com//iis/configuration/system.webserver/modules/) v *souboru Web.config*
+   * [Nakonfigurované](/iis/configuration/system.webserver/modules/) v *souboru Web.config*
 
 **Pořadí modulů zpracovat příchozí žádosti, ve kterém je určený:**
 
-   1. [Životního cyklu aplikace](https://msdn.microsoft.com/library/ms227673.aspx), což je řady událostí, aktivováno technologií ASP.NET: [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest)atd. Každý modul můžete vytvořit obslužnou rutinu pro jeden nebo více událostí.
+   1. [Životního cyklu aplikace](https://msdn.microsoft.com/library/ms227673.aspx), což je řady událostí, aktivováno technologií ASP.NET: [BeginRequest](/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](/dotnet/api/system.web.httpapplication.authenticaterequest)atd. Každý modul můžete vytvořit obslužnou rutinu pro jeden nebo více událostí.
 
    2. Pro stejnou událost, pořadí, ve které jste nakonfigurovali v *Web.config*.
 
@@ -243,9 +243,9 @@ Už jste viděli dříve, `Invoke` metoda v vlastního middlewaru přebírá par
 public async Task Invoke(HttpContext context)
 ```
 
-`HttpContext` výrazně se změnilo v ASP.NET Core. V této části ukazuje, jak převede nejčastěji používané vlastnosti [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) do nového `Microsoft.AspNetCore.Http.HttpContext`.
+`HttpContext` výrazně se změnilo v ASP.NET Core. V této části ukazuje, jak převede nejčastěji používané vlastnosti [System.Web.HttpContext](/dotnet/api/system.web.httpcontext) do nového `Microsoft.AspNetCore.Http.HttpContext`.
 
-### <a name="httpcontext"></a>HttpContext
+### <a name="httpcontext"></a>Položka HttpContext
 
 **HttpContext.Items** přeloží na:
 
@@ -263,7 +263,7 @@ Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do p
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Method)]
 
-**HttpContext.Request.QueryString** translates to:
+**HttpContext.Request.QueryString** přeloží na:
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Query)]
 
@@ -271,11 +271,11 @@ Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do p
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Url)]
 
-**HttpContext.Request.IsSecureConnection** translates to:
+**HttpContext.Request.IsSecureConnection** přeloží na:
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Secure)]
 
-**HttpContext.Request.UserHostAddress** translates to:
+**HttpContext.Request.UserHostAddress** přeloží na:
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Host)]
 
@@ -283,23 +283,23 @@ Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do p
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Cookies)]
 
-**HttpContext.Request.RequestContext.RouteData** translates to:
+**HttpContext.Request.RequestContext.RouteData** přeloží na:
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Route)]
 
-**HttpContext.Request.Headers** translates to:
+**HttpContext.Request.Headers** přeloží na:
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Headers)]
 
-**HttpContext.Request.UserAgent** translates to:
+**HttpContext.Request.UserAgent** přeloží na:
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Agent)]
 
-**HttpContext.Request.UrlReferrer** translates to:
+**HttpContext.Request.UrlReferrer** přeloží na:
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Referrer)]
 
-**HttpContext.Request.ContentType** translates to:
+**HttpContext.Request.ContentType** přeloží na:
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Type)]
 
@@ -310,7 +310,7 @@ Poskytuje jedinečné id pro každý požadavek. Velmi užitečné zahrnout do p
 > [!WARNING]
 > Čtení hodnot formuláře, pouze v případě, že je typ obsahu dílčí *x--www-form-urlencoded* nebo *data formuláře*.
 
-**HttpContext.Request.InputStream** translates to:
+**HttpContext.Request.InputStream** přeloží na:
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Input)]
 

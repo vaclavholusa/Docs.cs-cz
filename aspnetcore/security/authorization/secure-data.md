@@ -1,7 +1,7 @@
 ---
-title: "Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace"
+title: Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace
 author: rick-anderson
-description: "Postup vytvoření aplikace pro stránky Razor s uživatelskými daty chráněn autorizace. Zahrnuje protokol HTTPS, ověřování, zabezpečení, ASP.NET Core Identity."
+description: Postup vytvoření aplikace pro stránky Razor s uživatelskými daty chráněn autorizace. Zahrnuje protokol HTTPS, ověřování, zabezpečení, ASP.NET Core Identity.
 manager: wpickett
 ms.author: riande
 ms.date: 01/24/2018
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 5acb65be078fd39b9e7a17ce2d8167b8f7b7db22
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e42f299efcae7c6a0e3d20b157c591eed98c99d0
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace
 
@@ -102,7 +102,7 @@ Přidat [IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostinge
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_env)]
 
-V `ConfigureServices` metodu *Startup.cs* soubor, přidejte [RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute) filtr autorizace:
+V `ConfigureServices` metodu *Startup.cs* soubor, přidejte [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) filtr autorizace:
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
 
@@ -182,7 +182,7 @@ Vytvoření `ContactAdministratorsAuthorizationHandler` třídy v *autorizace* s
 
 ## <a name="register-the-authorization-handlers"></a>Registraci obslužných rutin autorizace
 
-Musí být pro registrované služby pomocí Entity Framework Core [vkládání závislostí](xref:fundamentals/dependency-injection) pomocí [AddScoped](/aspnet/core/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions). `ContactIsOwnerAuthorizationHandler` Používá ASP.NET Core [Identity](xref:security/authentication/identity), který je založený na Entity Framework Core. Registraci obslužných rutin s kolekcí služby, takže jsou k dispozici na `ContactsController` prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection). Přidejte následující kód do konce `ConfigureServices`:
+Musí být pro registrované služby pomocí Entity Framework Core [vkládání závislostí](xref:fundamentals/dependency-injection) pomocí [AddScoped](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions). `ContactIsOwnerAuthorizationHandler` Používá ASP.NET Core [Identity](xref:security/authentication/identity), který je založený na Entity Framework Core. Registraci obslužných rutin s kolekcí služby, takže jsou k dispozici na `ContactsController` prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection). Přidejte následující kód do konce `ConfigureServices`:
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 

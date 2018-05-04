@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 31ab125462da032d30ef25b45cf81a0d18212bc1
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: 8f7aeadc7a1218bf203575add8c82c95faf137b4
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="application-parts-in-aspnet-core"></a>Částí aplikace v ASP.NET Core
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/30/2018
 
 ## <a name="introducing-application-parts"></a>Představení částí aplikace
 
-Aplikace MVC načíst jejich funkce z [částí aplikace](/aspnet/core/api/microsoft.aspnetcore.mvc.applicationparts.applicationpart). Konkrétně [AssemblyPart](/aspnet/core/api/microsoft.aspnetcore.mvc.applicationparts.assemblypart#Microsoft_AspNetCore_Mvc_ApplicationParts_AssemblyPart) třída reprezentuje z části aplikace, kterou je zajištěna sestavení. Tyto třídy můžete použít ke zjištění a načíst MVC funkcí, jako jsou řadiče, zobrazení součásti, pomocné rutiny značky a razor kompilace zdrojů. [ApplicationPartManager](/aspnet/core/api/microsoft.aspnetcore.mvc.applicationparts.applicationpartmanager) zodpovídá za sledování částí aplikace a poskytovatelů funkcí, které jsou k dispozici v aplikaci MVC. Můžete pracovat s `ApplicationPartManager` v `Startup` při konfiguraci MVC:
+Aplikace MVC načíst jejich funkce z [částí aplikace](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpart). Konkrétně [AssemblyPart](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.assemblypart#Microsoft_AspNetCore_Mvc_ApplicationParts_AssemblyPart) třída reprezentuje z části aplikace, kterou je zajištěna sestavení. Tyto třídy můžete použít ke zjištění a načíst MVC funkcí, jako jsou řadiče, zobrazení součásti, pomocné rutiny značky a razor kompilace zdrojů. [ApplicationPartManager](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpartmanager) zodpovídá za sledování částí aplikace a poskytovatelů funkcí, které jsou k dispozici v aplikaci MVC. Můžete pracovat s `ApplicationPartManager` v `Startup` při konfiguraci MVC:
 
 ```csharp
 // create an assembly part from a class's assembly
@@ -64,10 +64,10 @@ Kromě sestavení projektu a jeho závislá sestavení `ApplicationPartManager` 
 
 Zprostředkovatele funkce aplikace zkontrolujte částí aplikace a poskytují funkce pro ty části. Existuje poskytovatelů integrované funkce pro následující funkce MVC:
 
-* [Kontrolery](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
-* [Odkaz na metadata](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
-* [Pomocné rutiny značek](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
-* [Zobrazení součásti](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
+* [Kontrolery](/dotnet/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
+* [Odkaz na metadata](/dotnet/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
+* [Pomocné rutiny značek](/dotnet/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
+* [Zobrazení součásti](/dotnet/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
 
 Zprostředkovatelé funkce dědit z `IApplicationFeatureProvider<T>`, kde `T` je typ funkce. Můžete implementovat vlastní funkce, kterou zprostředkovatele pro jakýkoli z typů funkce MVC uvedené výše. Pořadí poskytovatelů funkce v `ApplicationPartManager.FeatureProviders` kolekce může být důležité, protože novější zprostředkovatelé může reagovat na akce provedené předchozí poskytovatelů.
 

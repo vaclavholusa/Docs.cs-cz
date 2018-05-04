@@ -4,4 +4,4 @@ V tomto kurzu se dozvíte, jaké vývoj webů ASP.NET MVC jádra s kontrolery a 
 * Je snazší postupujte podle.
 * Popisuje další funkce.
 
-Pokud se rozhodnete v tomto kurzu přes [stránky Razor](xref:tutorials/razor-pages/razor-pages-start) verze, nechejte prosím Poznámka vysvětlením, proč.
+Pokud se rozhodnete v tomto kurzu přes [stránky Razor](xref:tutorials/razor-pages/razor-pages-start) verze, řekněte nám, proč v [potíže Githubu](https://github.com/aspnet/Docs/issues/6146).

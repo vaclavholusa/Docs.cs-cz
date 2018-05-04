@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 5e2b53a4771a97b0a4091f593720b9c0e4e345bf
-ms.sourcegitcommit: c4a31aaf902f2e84aaf4a9d882ca980fdf6488c0
+ms.openlocfilehash: 08866543d5b510b86c6af1896a9bd41ae0053ecf
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -207,6 +207,38 @@ Protože `handler` je `delete` v tomto příkladu `OnPostDeleteAsync` metoda obs
 * Pokud je nalezen kontaktování zákazníků, budou se odebrat ze seznamu kontaktů zákazníka. Databáze se aktualizuje.
 * Volání `RedirectToPage` přesměrovat na indexovou stránku kořenové (`/Index`).
 
+::: moniker range=">= aspnetcore-2.1"
+## <a name="manage-head-requests-with-the-onget-handler"></a>Spravovat požadavky HEAD s obslužnou rutinou OnGet
+
+Obslužná rutina HEAD obvykle žádá se vytvoří a volat pro požadavky HEAD:
+
+```csharp
+public void OnHead()
+{
+    HttpContext.Response.Headers.Add("HandledBy", "Handled by OnHead!");
+}
+```
+
+Pokud žádná obslužná rutina HEAD (`OnHead`) je definován, stránky Razor spadne zpět na volání obslužné rutině GET stránky (`OnGet`) v ASP.NET Core 2.1 nebo novější. Vyjádřit výslovný souhlas pro toto chování se [SetCompatibilityVersion metoda](xref:fundamentals/startup#setcompatibilityversion-for-aspnet-core-mvc) v `Startup.Configure` pro ASP.NET Core 2.1 k 2.x:
+
+```csharp
+services.AddMvc()
+    .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+```
+
+`SetCompatibilityVersion` nastavuje možnosti stránky Razor `AllowMappingHeadRequestsToGetHandler` k `true`. Chování je výslovný souhlas dokud verzi ASP.NET Core 3.0 Preview 1 nebo novější. Každou hlavní verzi ASP.NET Core přijme všechny chování vydání opravy předchozí verze.
+
+Chování globální výslovný souhlas pro oprava verze 2.1 k 2.x se vyhnout s konfigurací aplikace, která mapuje požadavky HEAD obslužná rutina GET. Nastavte `AllowMappingHeadRequestsToGetHandler` stránky Razor možnost k `true` bez volání `SetCompatibilityVersion` v `Startup.Configure`:
+
+```csharp
+services.AddMvc()
+    .AddRazorPagesOptions(options =>
+    {
+        options.AllowMappingHeadRequestsToGetHandler = true;
+    });
+```
+::: moniker-end
+
 <a name="xsrf"></a>
 
 ## <a name="xsrfcsrf-and-razor-pages"></a>XSRF/proti útokům CSRF a stránky Razor
@@ -321,7 +353,7 @@ Relativní název propojení je užitečné, při vytváření lokalit se strukt
 
 ## <a name="tempdata"></a>TempData
 
-ASP.NET Core zpřístupní [TempData](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) vlastnost [řadič](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller). Tato vlastnost ukládá data, dokud je pro čtení. `Keep` a `Peek` metody můžete použít k prozkoumání dat bez odstranění. `TempData` jsou užitečné pro přesměrování, pokud se data potřebná pro více než jeden požadavek.
+ASP.NET Core zpřístupní [TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) vlastnost [řadič](/dotnet/api/microsoft.aspnetcore.mvc.controller). Tato vlastnost ukládá data, dokud je pro čtení. `Keep` a `Peek` metody můžete použít k prozkoumání dat bez odstranění. `TempData` jsou užitečné pro přesměrování, pokud se data potřebná pro více než jeden požadavek.
 
 `[TempData]` Atribut je nového v technologii ASP.NET 2.0 jádra a je podporovaná v řadičích a stránky.
 
@@ -364,6 +396,8 @@ Předchozí kód používá *s názvem metody obslužná rutina*. Metody s názv
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?range=12-13)]
 
 Použití předcházející code cesty URL, kterou odesílá `OnPostJoinListAsync` je `http://localhost:5000/Customers/CreateFATH?handler=JoinList`. Cesty URL, kterou odesílá `OnPostJoinListUCAsync` je `http://localhost:5000/Customers/CreateFATH?handler=JoinListUC`.
+
+
 
 ## <a name="customizing-routing"></a>Přizpůsobení směrování
 

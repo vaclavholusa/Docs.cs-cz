@@ -1,5 +1,12 @@
 # <a name="custom-model-binding-demo"></a>Ukázkový Model vlastní vazby
 
-Můžete otestovat `ByteArrayModelBinder` spuštěním aplikace a publikování řetězec s kódováním base64, pomocí ke koncovému bodu ImageController (/ api/image /). Proparties souboru a název souboru musí určit v žádosti subjekt jako data formuláře (s použitím Postman nebo podobného nástroje). Můžete použít [tento řetězec ukázka](Base64String.txt). Výsledek se uloží do složky wwwroot nebo bitové kopie nebo odeslání se název souboru, který jste zadali.
+Test `ByteArrayModelBinder` spuštěním aplikace a publikování řetězec s kódováním base64 tak, aby `ImageController` koncový bod (`/api/image/`). Zadejte soubor a název souboru proparties v textu žádosti jako data formuláře (pomocí [Postman](https://www.getpostman.com/) nebo podobného nástroje). Můžete použít [tento řetězec ukázka](Base64String.txt). Výsledek je uložen v *wwwroot nebo bitové kopie nebo nahráváte* složku s zadaný název souboru.
 
-K testování v příkladu vlastní vazby, zkuste následující koncové body: /api/authors/1 /api/authors/2 (není NALEZENA) /api/boundauthors/1 /api/boundauthors/2 (není NALEZENA) /api/boundauthors/get/1 /api/boundauthors/get/2 (ne obsahu) – Tato akce neohlásí pro Hodnota Null a vrátí, nebyl nalezen
+K testování v příkladu vlastní vazby, zkuste následující koncové body:
+
+* /API/authors/1
+* /API/authors/2 (není NALEZENA)
+* /API/boundauthors/1
+* /API/boundauthors/2 (není NALEZENA)
+* /API/boundauthors/Get/1
+* /API/boundauthors/Get/2 (ne obsahu) &ndash; tato akce neohlásí pro hodnotu null a vrátí *404 nebyl nalezen*.

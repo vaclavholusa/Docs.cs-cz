@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: web-api/index
-ms.openlocfilehash: 017bcc1ed65b1baa92408db07201d1c7bab2849d
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: f0368258d078673ab5eab21c5ce07f2437cb8ea4
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>Sestavení webového rozhraní API pomocí ASP.NET Core
 
@@ -75,6 +75,9 @@ Zdrojový atribut vazby definuje umístění, ve kterém je hodnota parametru ak
 |**[[FromRoute]](/dotnet/api/microsoft.aspnetcore.mvc.fromrouteattribute)**   | Data trasy z aktuální žádosti |
 |**[[FromServices]](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices)** | Žádost o službu vložit jako parametru akce |
 
+> [!NOTE]
+> Proveďte **není** použít `[FromRoute]` při může obsahovat hodnoty `%2f` (který je `/`) protože `%2f` nebude znaků bez řídících k `/`. Použití `[FromQuery]` Pokud hodnota může obsahovat `%2f`.
+
 Bez `[ApiController]` atribut, vytvoření vazby zdroje explicitně definovaných atributech. V následujícím příkladu `[FromQuery]` atribut znamená, že `discontinuedOnly` je zadána hodnota parametru v adrese URL žádosti řetězec dotazu:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_BindingSourceAttributes&highlight=2)]
@@ -112,8 +115,8 @@ Akce jsou nedostupné prostřednictvím [konvenční trasy](xref:mvc/controllers
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Návratové typy akce kontroleru](xref:web-api/action-return-types)
+* [Návratové typy akcí kontroleru](xref:web-api/action-return-types)
 * [Vlastní formátovací moduly](xref:web-api/advanced/custom-formatters)
 * [Formátování dat odpovědi](xref:web-api/advanced/formatting)
-* [Stránky nápovědy pomocí Swagger](xref:tutorials/web-api-help-pages-using-swagger)
+* [Stránky nápovědy používající Swagger](xref:tutorials/web-api-help-pages-using-swagger)
 * [Směrování na akce kontroleru](xref:mvc/controllers/routing)

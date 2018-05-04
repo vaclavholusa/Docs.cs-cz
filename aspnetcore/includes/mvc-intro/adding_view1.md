@@ -10,4 +10,4 @@ Aktuálně `Index` metoda vrátí řetězec s zprávu, která je pevně zakódov
 
 [!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_4)]
 
-Vrátí předchozí kód `View` objektu. Zobrazit šablonu používá ke generování odpovědi HTML do prohlížeče. Metody kontroleru (také známé jako metody akce), jako `Index` metody popsané výše, obecně vrátit [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) (nebo třídy odvozené od `ActionResult`), není typu jako řetězec.
+Vrátí předchozí kód `View` objektu. Zobrazit šablonu používá ke generování odpovědi HTML do prohlížeče. Metody kontroleru (také známé jako metody akce), jako `Index` metody popsané výše, obecně vrátit [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult) (nebo třídy odvozené od `ActionResult`), není typu jako řetězec.

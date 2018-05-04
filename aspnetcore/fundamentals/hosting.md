@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/hosting
-ms.openlocfilehash: 9d9b35153e8d771086e3171a224cb62d5d9cc14e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 344bf5f0917f4c33d67eeb14176ff2aae3ae75da
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>Hostování v ASP.NET Core
 
@@ -49,7 +49,7 @@ Další informace o konfiguraci aplikace, najdete v části [konfigurace v ASP.N
 > [!NOTE]
 > Jako alternativu k použití statických `CreateDefaultBuilder` metody vytvoření hostitele z [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) je podporované přístup pomocí ASP.NET Core 2.x. Další informace najdete v tématu kartě 1.x ASP.NET Core.
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder). Vytvoření hostitele se obvykle provádí v vstupní bod aplikace, `Main` metoda. V rámci šablon projektu `Main` se nachází v *Program.cs*:
 
 [!code-csharp[](../common/samples/WebApplication1/Program.cs)]
@@ -58,7 +58,7 @@ Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspn
 
 *Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC. Výchozí kořen obsahu se získávají pro `UseContentRoot` podle [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1). Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu. Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).
 
-Chcete-li použít jako reverzní proxy server služby IIS, volejte [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) jako součást sestavení hostitele. `UseIISIntegration` neprovede konfiguraci *server*, například [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) nepodporuje. `UseIISIntegration` Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) vytvořit reverzní proxy server mezi Kestrel a služby IIS. Použití služby IIS s ASP.NET Core `UseKestrel` a `UseIISIntegration` musí být zadán. `UseIISIntegration` aktivuje pouze při spuštění za služby IIS nebo IIS Express. Další informace najdete v tématu [Úvod k modulu jádra ASP.NET](xref:fundamentals/servers/aspnet-core-module) a [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module).
+Chcete-li použít jako reverzní proxy server služby IIS, volejte [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) jako součást sestavení hostitele. `UseIISIntegration` neprovede konfiguraci *server*, například [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) nepodporuje. `UseIISIntegration` Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) vytvořit reverzní proxy server mezi Kestrel a služby IIS. Použití služby IIS s ASP.NET Core `UseKestrel` a `UseIISIntegration` musí být zadán. `UseIISIntegration` aktivuje pouze při spuštění za služby IIS nebo IIS Express. Další informace najdete v tématu [Úvod k modulu jádra ASP.NET](xref:fundamentals/servers/aspnet-core-module) a [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module).
 
 Minimální implementace, které konfiguruje hostitele (a aplikace ASP.NET Core) zahrnuje určení serveru a konfiguraci kanálu žádostí aplikace:
 
@@ -107,7 +107,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -137,7 +137,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -167,7 +167,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -197,7 +197,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -229,13 +229,13 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Tato funkce není k dispozici v ASP.NET Core 1.x.
 
 ---
 
-### <a name="prefer-hosting-urls"></a>Prefer Hosting URLs
+### <a name="prefer-hosting-urls"></a>Dáváte přednost hostování adresy URL
 
 Určuje, zda hostitel naslouchat požadavkům na adresy URL nakonfigurované `WebHostBuilder` místo nastavení nakonfigurovaného pomocí `IServer` implementace.
 
@@ -255,7 +255,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Tato funkce není k dispozici v ASP.NET Core 1.x.
 
@@ -281,7 +281,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Tato funkce není k dispozici v ASP.NET Core 1.x.
 
@@ -309,7 +309,7 @@ WebHost.CreateDefaultBuilder(args)
 
 Kestrel má svůj vlastní koncový bod rozhraní API konfigurace. Další informace najdete v tématu [Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel?tabs=aspnetcore2x#endpoint-configuration).
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -346,7 +346,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Tato funkce není k dispozici v ASP.NET Core 1.x.
 
@@ -378,7 +378,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -412,7 +412,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 var host = new WebHostBuilder()
@@ -467,7 +467,7 @@ public class Program
 }
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 *hosting.json*:
 
@@ -690,7 +690,7 @@ using (var host = WebHost.StartWith("http://localhost:8080", app =>
 
 Stejný výsledek jako **StartWith (akce<IApplicationBuilder> aplikace)**, s výjimkou aplikace reaguje na `http://localhost:8080`.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 **Spustit**
 
@@ -737,7 +737,7 @@ using (host)
 
 ## <a name="ihostingenvironment-interface"></a>IHostingEnvironment rozhraní
 
-[IHostingEnvironment rozhraní](/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) poskytuje informace o hostování prostředí webové aplikace. Použít [konstruktor vkládání](xref:fundamentals/dependency-injection) získat `IHostingEnvironment` Chcete-li použít její vlastnosti a metody rozšíření:
+[IHostingEnvironment rozhraní](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) poskytuje informace o hostování prostředí webové aplikace. Použít [konstruktor vkládání](xref:fundamentals/dependency-injection) získat `IHostingEnvironment` Chcete-li použít její vlastnosti a metody rozšíření:
 
 ```csharp
 public class CustomFileReader
@@ -828,7 +828,7 @@ public async Task Invoke(HttpContext context, IHostingEnvironment env)
 
 ## <a name="iapplicationlifetime-interface"></a>IApplicationLifetime rozhraní
 
-[IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) umožňuje po spuštění a vypnutí aktivity. Zrušení tokenů použitá pro zaregistrování jsou tři vlastnosti na rozhraní `Action` metody, které definují události spuštění a vypnutí.
+[IApplicationLifetime](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime) umožňuje po spuštění a vypnutí aktivity. Zrušení tokenů použitá pro zaregistrování jsou tři vlastnosti na rozhraní `Action` metody, které definují události spuštění a vypnutí.
 
 | Token zrušení    | Při aktivaci&#8230; |
 | --------------------- | --------------------- |
@@ -927,7 +927,7 @@ Pokud hostitel je integrovaný tímto způsobem, může dojít k následující 
 Unhandled Exception: System.ArgumentException: A valid non-empty application name must be provided.
 ```
 
-K tomu dochází, protože [applicationName(ApplicationKey)](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey) (aktuální sestavení) je nutná ke kontrole pro `HostingStartupAttributes`. Pokud aplikace ručně vloží `IStartup` do kontejneru pro vkládání závislosti, přidejte následující volání `WebHostBuilder` se zadaným názvem sestavení:
+K tomu dochází, protože [applicationName(ApplicationKey)](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey) (aktuální sestavení) je nutná ke kontrole pro `HostingStartupAttributes`. Pokud aplikace ručně vloží `IStartup` do kontejneru pro vkládání závislosti, přidejte následující volání `WebHostBuilder` se zadaným názvem sestavení:
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)

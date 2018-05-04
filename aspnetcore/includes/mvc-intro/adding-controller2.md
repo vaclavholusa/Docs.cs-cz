@@ -12,7 +12,7 @@ Spuštění aplikace v režimu bez ladění a připojte "HelloWorld" na cestu v 
 
 ![Okno prohlížeče zobrazující odpověď aplikací tohoto objektu je můj výchozí akci.](../../tutorials/first-mvc-app/adding-controller/_static/hell1.png)
 
-Rozhraní MVC volá třídy controller (a metody akce v nich), v závislosti na adresy URL příchozích. Výchozí hodnota [směrování URL logic](../../mvc/controllers/routing.md) používá MVC používá tento formát pro určení kódu, která bude vyvolána:
+Rozhraní MVC volá třídy controller (a metody akce v nich), v závislosti na adresy URL příchozích. Výchozí hodnota [směrování URL logic](xref:mvc/controllers/routing) používá MVC používá tento formát pro určení kódu, která bude vyvolána:
 
 `/[Controller]/[ActionName]/[Parameters]`
 
@@ -36,13 +36,13 @@ Předchozí kód:
 
 * Používá funkci volitelný parametr C# k označení, že `numTimes` parametr výchozí hodnotu 1, pokud pro tento parametr není předána žádná hodnota.
 * Používá`HtmlEncoder.Default.Encode` k ochraně aplikace před zlými úmysly vstup (konkrétně JavaScript). 
-* Používá [interpolované řetězce](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/keywords/interpolated-strings).
+* Používá [interpolované řetězce](/dotnet/articles/csharp/language-reference/keywords/interpolated-strings).
 
 Spuštění aplikace a přejděte do:
 
    `http://localhost:xxxx/HelloWorld/Welcome?name=Rick&numtimes=4`
 
-(Nahraďte xxxx vaše číslo portu.) Můžete použít různé hodnoty pro `name` a `numtimes` v adrese URL. MVC [model vazby](../../mvc/models/model-binding.md) systému automaticky mapuje pojmenované parametry z řetězce dotazu v panelu Adresa parametry ve své metodě. V tématu [vazby modelu](../../mvc/models/model-binding.md) Další informace.
+(Nahraďte xxxx vaše číslo portu.) Můžete použít různé hodnoty pro `name` a `numtimes` v adrese URL. MVC [model vazby](xref:mvc/models/model-binding) systému automaticky mapuje pojmenované parametry z řetězce dotazu v panelu Adresa parametry ve své metodě. V tématu [vazby modelu](xref:mvc/models/model-binding) Další informace.
 
 ![Okno prohlížeče zobrazující odpověď aplikace z Hello Rick, je NumTimes: 4](../../tutorials/first-mvc-app/adding-controller/_static/rick4.png)
 

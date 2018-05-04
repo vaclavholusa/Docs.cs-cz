@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/testing
-ms.openlocfilehash: b80f92b815439796693528b314b521c1484ba661
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 51b7a02c697807c9e3504b70f89370126ee0e781
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>Testování řadiče logiku v ASP.NET Core
 
@@ -40,12 +40,12 @@ Typické řadiče zodpovědnosti:
 
 ## <a name="unit-testing"></a>Testování jednotek
 
-[Testování částí](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) zahrnuje testování součástí aplikace izolovaně od jeho infrastruktury a závislosti. Při testování řadiče logiku, obsah jenom jednu akci testování částí, není chování jeho závislé součásti nebo rozhraní sám sebe. Jako jednotku můžete otestovat vaše akce kontroleru, ujistěte se, že byste se zaměřit jenom na své chování. Testování částí řadiče zabraňuje třeba [filtry](filters.md), [směrování](../../fundamentals/routing.md), nebo [model vazby](../models/model-binding.md). Se zaměříte na testování právě jednou z věcí, testy jednotek jsou obecně jednoduché k zápisu a rychlé spuštění. Kvalitně sadu testů jednotek se může spouštět často bez mnoho zásahů. Testy jednotek však není rozpoznat problémy v interakci mezi součástmi, což je účelem [integrace testy](xref:mvc/controllers/testing#integration-testing).
+[Testování částí](/dotnet/articles/core/testing/unit-testing-with-dotnet-test) zahrnuje testování součástí aplikace izolovaně od jeho infrastruktury a závislosti. Při testování řadiče logiku, obsah jenom jednu akci testování částí, není chování jeho závislé součásti nebo rozhraní sám sebe. Jako jednotku můžete otestovat vaše akce kontroleru, ujistěte se, že byste se zaměřit jenom na své chování. Testování částí řadiče zabraňuje třeba [filtry](filters.md), [směrování](../../fundamentals/routing.md), nebo [model vazby](../models/model-binding.md). Se zaměříte na testování právě jednou z věcí, testy jednotek jsou obecně jednoduché k zápisu a rychlé spuštění. Kvalitně sadu testů jednotek se může spouštět často bez mnoho zásahů. Testy jednotek však není rozpoznat problémy v interakci mezi součástmi, což je účelem [integrace testy](xref:mvc/controllers/testing#integration-testing).
 
 Pokud píšete vlastní filtry, tras atd., měli byste testování částí je, ale nikoli jako součást testy na určitý kontroler akce. Musí být testovány v izolaci.
 
 > [!TIP]
-> [Vytvoření a spuštění testů jednotek pomocí sady Visual Studio](https://docs.microsoft.com/visualstudio/test/unit-test-your-code).
+> [Vytvoření a spuštění testů jednotek pomocí sady Visual Studio](/visualstudio/test/unit-test-your-code).
 
 K předvedení testování částí, zkontrolujte následující řadiče. Zobrazí seznam Debata relací a umožňuje nové Debata relací se vytvoří s příspěvku na:
 

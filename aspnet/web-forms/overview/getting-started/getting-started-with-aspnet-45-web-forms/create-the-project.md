@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: b42e62b560e01d592c9f4cb61ea6199a15dc8bb6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7cfceb38204b6cfd3589a082761273e54ac122ca
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 <a name="create-the-project"></a>Vytvoření projektu
 ====================
@@ -52,7 +52,10 @@ V tomto kurzu vytvoříte, přečtěte si a spustit výchozí projekt v sadě Vi
 
     > [!NOTE]
     > Název projektu v řadě tento kurz je **Northwind**. Doporučuje se použít toto *přesný* projektu název tak, aby kód poskytovaná v kurzu řady funkcí podle očekávání.
-6. Potom vyberte **webových formulářů** šablony a zvolte **vytvoření projektu** tlačítko.  
+
+6. Klikněte **změna ověřování** tlačítko. Vyberte **jednotlivé uživatelské účty** a klikněte na **OK** tlačítko.
+
+7. Vyberte **webových formulářů** šablonu a klikněte na **OK** tlačítko.
 
     ![Vytvoření projektu – nové šablony projektu](create-the-project/_static/image3.png)
 

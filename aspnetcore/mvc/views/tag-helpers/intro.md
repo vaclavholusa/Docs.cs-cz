@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: 27246ece3eaaecb708f922bcaaf05658034bce82
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0c66b700f9bb3e6349fe2e0c8a7e254b8e7903a5
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>Pomocné rutiny značky v ASP.NET Core
 
@@ -161,7 +161,7 @@ Jakmile je zadán pomocný značka atribut, značky a atribut písem změnit. Po
 
 ![obrázek](intro/_static/labelaspfor2.png)
 
-Můžete zadat sady Visual Studio *CompleteWord* zástupce (Ctrl + mezerník je [výchozí](https://docs.microsoft.com/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio) uvnitř dvojitých uvozovek (""), a je nyní v jazyce C#, stejně, jako by byl v třídě C#. IntelliSense zobrazí všechny metody a vlastnosti v modelu stránky. Metody a vlastnosti jsou k dispozici, protože je vlastnost typu `ModelExpression`. Na obrázku níže I mě úpravy `Register` zobrazení, proto `RegisterViewModel` je k dispozici.
+Můžete zadat sady Visual Studio *CompleteWord* zástupce (Ctrl + mezerník je [výchozí](/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio) uvnitř dvojitých uvozovek (""), a je nyní v jazyce C#, stejně, jako by byl v třídě C#. IntelliSense zobrazí všechny metody a vlastnosti v modelu stránky. Metody a vlastnosti jsou k dispozici, protože je vlastnost typu `ModelExpression`. Na obrázku níže I mě úpravy `Register` zobrazení, proto `RegisterViewModel` je k dispozici.
 
 ![obrázek](intro/_static/intellemail.png)
 
@@ -179,7 +179,7 @@ Pomocníci značky přiřadit elementů HTML v zobrazení syntaxe Razor, zatímc
 @Html.Label("FirstName", "First Name:", new {@class="caption"})
 ```
 
-Na (`@`) symbol informuje Razor začátek kódu. Následující dva parametry ("FirstName" a "křestní jméno:") jsou řetězce, takže [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) nemůže pomoct. Poslední argument:
+Na (`@`) symbol informuje Razor začátek kódu. Následující dva parametry ("FirstName" a "křestní jméno:") jsou řetězce, takže [IntelliSense](/visualstudio/ide/using-intellisense) nemůže pomoct. Poslední argument:
 
 ```cshtml
 new {@class="caption"}
@@ -249,13 +249,13 @@ Editoru Visual Studio umožňuje zapsat **všechny** z kódu v metodě značky p
 
 * Ovládací prvky webového serveru zahrnují automatickou detekci prohlížeče. Pomocníci značky nemají žádné informace o prohlížeči.
 
-* Více Pomocníci značka může fungovat u stejného elementu (v tématu [zabraňující pomocná značky konflikty](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/authoring#avoiding-tag-helper-conflicts) ) při obvykle nelze vytvořit ovládací prvky webového serveru.
+* Více Pomocníci značka může fungovat u stejného elementu (v tématu [zabraňující pomocná značky konflikty](xref:mvc/views/tag-helpers/authoring#avoid-tag-helper-conflicts) ) při obvykle nelze vytvořit ovládací prvky webového serveru.
 
 * Značka pomocné rutiny můžete upravit značku a obsah prvků HTML, kterou jste rozsah, ale nemáte upravit přímo cokoliv jiného na stránce. Ovládací prvky webového serveru mají méně konkrétní obor a můžou provádět akce, které ovlivňují dalších částí vaší stránky; povolení nezamýšleným vedlejší účinky.
 
 * Ovládací prvky webového serveru pomocí převaděče typu převod řetězců na objekty. S značky podpůrných rutin pracujete nativně v jazyce C#, takže nemusíte typ – převod.
 
-* Ovládací prvky webového serveru pomocí [System.ComponentModel](https://docs.microsoft.com/dotnet/api/system.componentmodel) k implementaci chování za běhu a návrhu součásti a ovládacích prvků. `System.ComponentModel` obsahuje základní třídy a rozhraní pro implementace atributů, převaděčů typů vazeb na zdroje dat a licencování součásti. Kontrastu, do pomocné rutiny značky, které obvykle odvozena od `TagHelper`a `TagHelper` základní třída zpřístupňuje pouze dvě metody, `Process` a `ProcessAsync`.
+* Ovládací prvky webového serveru pomocí [System.ComponentModel](/dotnet/api/system.componentmodel) k implementaci chování za běhu a návrhu součásti a ovládacích prvků. `System.ComponentModel` obsahuje základní třídy a rozhraní pro implementace atributů, převaděčů typů vazeb na zdroje dat a licencování součásti. Kontrastu, do pomocné rutiny značky, které obvykle odvozena od `TagHelper`a `TagHelper` základní třída zpřístupňuje pouze dvě metody, `Process` a `ProcessAsync`.
 
 ## <a name="customizing-the-tag-helper-element-font"></a>Přizpůsobení písma elementu značky pomocné rutiny
 

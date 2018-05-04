@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: d793a7ca3635108ed7941ccc8578572afd79c305
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2eff6cd5f4bb737cb79875c9b04c889914376cd0
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - aktualizace související Data - 7, 8
 
@@ -36,7 +36,7 @@ Stránky kurzy a vytvořit a kurzy či upravit třeba seznam názvů oddělení.
 
 [!code-csharp[](intro/samples/cu/Pages/Courses/DepartmentNamePageModel.cshtml.cs?highlight=9,11,20-21)]
 
-Předchozí kód vytvoří [SelectList](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.rendering.selectlist?view=aspnetcore-2.0) obsahovat seznam názvů oddělení. Pokud `selectedDepartment` není zadaný, oddělení je vybrána v `SelectList`.
+Předchozí kód vytvoří [SelectList](/dotnet/api/microsoft.aspnetcore.mvc.rendering.selectlist?view=aspnetcore-2.0) obsahovat seznam názvů oddělení. Pokud `selectedDepartment` není zadaný, oddělení je vybrána v `SelectList`.
 
 Vytvořit a upravit třídy modelu stránky odvodí z `DepartmentNamePageModel`.
 
@@ -103,7 +103,7 @@ Otestujte aktualizovaný kódu. Vytvářet, upravovat a odstraňovat kurzu.
 
 ## <a name="add-asnotracking-to-the-details-and-delete-page-models"></a>Podrobnosti o přidání AsNoTracking a odstraňovat modely stránky
 
-[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) můžete zvýšit výkon při sledování není povinné. Přidat `AsNoTracking` stránky modelu odstranit a podrobnosti. Následující kód ukazuje v aktualizovaném modelu. odstranění stránky:
+[AsNoTracking](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) můžete zvýšit výkon při sledování není povinné. Přidat `AsNoTracking` stránky modelu odstranit a podrobnosti. Následující kód ukazuje v aktualizovaném modelu. odstranění stránky:
 
 [!code-csharp[](intro/samples/cu/Pages/Courses/Delete.cshtml.cs?name=snippet&highlight=21,23,40,41)]
 
@@ -178,7 +178,7 @@ Vytvořte *Pages/Instructors/InstructorCoursesPageModel.cshtml.cs* základní t�
 
 [!code-csharp[](intro/samples/cu/Pages/Instructors/InstructorCoursesPageModel.cshtml.cs)]
 
-`InstructorCoursesPageModel` Je základní třídou budete používat pro úpravy a vytváření modelů stránky. `PopulateAssignedCourseData` načte všechny `Course` entity k naplnění `AssignedCourseDataList`. Pro každý kurz nastaví kód `CourseID`, název a zda je lektorem přiřazen ke kurzu. A [HashSet](https://docs.microsoft.com/dotnet/api/system.collections.generic.hashset-1) se používá k vytvoření efektivní vyhledávání.
+`InstructorCoursesPageModel` Je základní třídou budete používat pro úpravy a vytváření modelů stránky. `PopulateAssignedCourseData` načte všechny `Course` entity k naplnění `AssignedCourseDataList`. Pro každý kurz nastaví kód `CourseID`, název a zda je lektorem přiřazen ke kurzu. A [HashSet](/dotnet/api/system.collections.generic.hashset-1) se používá k vytvoření efektivní vyhledávání.
 
 ### <a name="instructors-edit-page-model"></a>Model stránky upravit vyučující
 

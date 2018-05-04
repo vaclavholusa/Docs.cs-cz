@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 70a4b2e53be335b8854b0aef3cfbf8f4e21e6ebe
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1798c310f36073e90a4e3521cfd1447bc94af666
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>Instalační program externí přihlášení sítě Facebook v ASP.NET Core
 
@@ -87,7 +87,7 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 
 [!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Nainstalujte [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) balíčku.
 
 * Chcete-li nainstalovat tento balíček s Visual Studio 2017, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**.
@@ -106,7 +106,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 ```
 
 * * *
-Najdete v článku [FacebookOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.facebookoptions) referenční dokumentace rozhraní API pro další informace o možnostech konfigurace nepodporuje ověřování Facebook. Možnosti konfigurace umožňuje:
+Najdete v článku [FacebookOptions](/dotnet/api/microsoft.aspnetcore.builder.facebookoptions) referenční dokumentace rozhraní API pro další informace o možnostech konfigurace nepodporuje ověřování Facebook. Možnosti konfigurace umožňuje:
 
 * Žádost různé informace o uživateli.
 * Přidejte argumenty řetězce dotazu přizpůsobit přihlašovací prostředí.

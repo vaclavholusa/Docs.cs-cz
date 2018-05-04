@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 166111696a9c4244ede44fca8878dd3725bb3099
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0a04f5762a35426f342b58b8b60288c66c057ae7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Bezpečné úložiště tajné klíče aplikace v vývoj v ASP.NET Core
 
@@ -21,7 +21,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [ADAM Roth](https://gith
 
 Tento dokument ukazuje, jak pomocí nástroje Správce tajný klíč v vývoj zachovat tajné klíče z vašeho kódu. Nejdůležitější bod je ve zdrojovém kódu by nikdy neukládají hesla nebo dalších citlivých dat, a tajné klíče produkční byste neměli používat v režimu pro vývoj a testování. Místo toho můžete [konfigurace](xref:fundamentals/configuration/index) systému a přečtěte si tyto hodnoty z proměnné prostředí nebo z hodnot uložených pomocí tajný klíč správce nástroje. Nástroj tajný klíč správce pomáhá zabránit citlivá data z kontroly do správy zdrojového kódu. [Konfigurace](xref:fundamentals/configuration/index) systému může číst tajné klíče uložené pomocí nástroje Správce tajný klíč popsané v tomto článku.
 
-Nástroj Správce tajný klíč se používá pouze v vývoj. Můžete zabezpečit Azure testovací a produkční tajných klíčů s [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) poskytovatele konfigurace. V tématu [poskytovatele konfigurace Azure Key Vault](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration) Další informace.
+Nástroj Správce tajný klíč se používá pouze v vývoj. Můžete zabezpečit Azure testovací a produkční tajných klíčů s [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) poskytovatele konfigurace. V tématu [poskytovatele konfigurace Azure Key Vault](xref:security/key-vault-configuration) Další informace.
 
 ## <a name="environment-variables"></a>Proměnné prostředí
 

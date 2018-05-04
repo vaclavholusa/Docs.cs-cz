@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: 711a96b17fd41847619ade21eb643af845705c79
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: b4ac500888ce134e8f4f0d4bf16efa4e95f24c15
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Co je nového v technologii ASP.NET 2.0 jádra
 
@@ -38,7 +38,7 @@ Další informace najdete v tématu [Microsoft.AspNetCore.All metapackage pro te
 
 Aplikace, které používají `Microsoft.AspNetCore.All` metapackage automaticky využít výhod nové úložiště .NET Core Runtime. Úložiště obsahuje všechny prostředky runtime potřebné ke spuštění aplikace ASP.NET 2.0 jádra. Při použití `Microsoft.AspNetCore.All` metapackage žádné prostředky z odkazované balíčky ASP.NET Core NuGet nasazených s aplikací, protože se již nacházejí v cílovém systému. Prostředky v úložišti Runtime jsou také předkompilovaných ke zlepšení času spuštění aplikace.
 
-Další informace najdete v tématu [Runtime úložiště](https://docs.microsoft.com/dotnet/core/deploying/runtime-store)
+Další informace najdete v tématu [Runtime úložiště](/dotnet/core/deploying/runtime-store)
 
 ## <a name="net-standard-20"></a>Rozhraní .NET standard 2.0
 

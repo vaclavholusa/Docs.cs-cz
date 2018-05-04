@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: dce7668d06bd810f12bdb763143a003bee49e8f8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 85809a0f7bfe0adcf535c2be7f5b77e8abd947fd
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>Autor značky pomocné rutiny v ASP.NET Core
 
@@ -92,8 +92,6 @@ Přidání značka pomocné rutiny zobrazení pomocí FQN, je nejprve přidat FQ
    [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml?highlight=15,16&range=1-17)]
 
 4. Spusťte aplikaci a pomocí oblíbeném prohlížeči zobrazíte zdrojový kód HTML a ověřte značek e-mailu jsou nahrazeny značka ukotvení (například `<a>Support</a>`). *Podpora* a *Marketing* se vykresluje jako odkazy, ale nemají `href` atribut tak, aby byly funkční. To jsme budete opravíme v další části.
-
-Poznámka: Jako značky HTML a atributy, značky, názvy tříd a atributů v Razor a C# nejsou malá a velká písmena.
 
 ## <a name="setattribute-and-setcontent"></a>SetAttribute a SetContent
 

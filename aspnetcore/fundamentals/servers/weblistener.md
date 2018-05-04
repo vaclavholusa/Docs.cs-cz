@@ -1,7 +1,7 @@
 ---
-title: "WebListener webového serveru implementace v ASP.NET Core"
+title: WebListener webového serveru implementace v ASP.NET Core
 author: rick-anderson
-description: "Další informace o WebListener, webový server pro ASP.NET Core v systému Windows, který lze použít pro přímé připojení k Internetu bez služby IIS."
+description: Další informace o WebListener, webový server pro ASP.NET Core v systému Windows, který lze použít pro přímé připojení k Internetu bez služby IIS.
 manager: wpickett
 ms.author: riande
 ms.date: 03/13/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: 13555becb76b9df37728f78a7a8bc112d8de682f
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: cd2e477824d916afcf1a7901e935dd465a466922
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>WebListener webového serveru implementace v ASP.NET Core
 
@@ -78,7 +78,7 @@ Existují také [nastavení registru Http.Sys](https://support.microsoft.com/kb/
 
 * Nainstalujte balíček NuGet [Microsoft.AspNetCore.Server.WebListener](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.WebListener/). Tím se nainstaluje taky [Microsoft.Net.Http.Server](https://www.nuget.org/packages/Microsoft.Net.Http.Server/) jako závislost.
 
-* Volání `UseWebListener` rozšiřující metody na [WebHostBuilder](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilder) ve vaší `Main` metodu s uvedením všech WebListener [možnosti](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.AspNetCore.Server.WebListener/WebListenerOptions.cs) a [nastavení](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.Net.Http.Server/WebListenerSettings.cs) , které potřebujete , jak je znázorněno v následujícím příkladu:
+* Volání `UseWebListener` rozšiřující metody na [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) ve vaší `Main` metodu s uvedením všech WebListener [možnosti](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.AspNetCore.Server.WebListener/WebListenerOptions.cs) a [nastavení](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.Net.Http.Server/WebListenerSettings.cs) , které potřebujete , jak je znázorněno v následujícím příkladu:
 
   [!code-csharp[](weblistener/sample/Program.cs?name=snippet_Main&highlight=13-17)]
 
@@ -170,7 +170,7 @@ Tady jsou některé nástroje třetích stran, které se dají použít jednodu�
 
 Pro generování certifikátů SSL podepsaných svým držitelem, společnost Microsoft poskytuje nástroje pro příkazový řádek: [MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/aa386968) a rutiny prostředí PowerShell [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pki/new-selfsignedcertificate). Existují také uživatelského rozhraní nástroje třetích stran, které bylo snazší pro vygenerování certifikáty podepsané svým držitelem SSL:
 
-* [SelfCert](https://www.pluralsight.com/blog/software-development/selfcert-create-a-self-signed-certificate-interactively-gui-or-programmatically-in-net)
+* [Nástroje SelfCert](https://www.pluralsight.com/blog/software-development/selfcert-create-a-self-signed-certificate-interactively-gui-or-programmatically-in-net)
 * [MakeCert uživatelského rozhraní](http://makecertui.codeplex.com/)
 
 ## <a name="next-steps"></a>Další kroky

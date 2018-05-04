@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 33a88b8c1ba0704e5361399c672025e1c1ff49ff
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: 9155bd54bc211c8be0678065e857f73d8a139365
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>Pomocníci značky ve formulářích v ASP.NET Core
 
@@ -59,7 +59,7 @@ Modul runtime rozhraní MVC vygeneruje `action` hodnotu atributu ze atributů po
 
 [!code-HTML[](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterRoute.cshtml)]
 
-Řadu zobrazení *zobrazení nebo účet* složky (vygeneruje, když vytvoříte novou webovou aplikaci s *jednotlivé uživatelské účty*) obsahují [asp. trasy returnurl](https://docs.microsoft.com/aspnet/core/mvc/views/working-with-forms) atribut:
+Řadu zobrazení *zobrazení nebo účet* složky (vygeneruje, když vytvoříte novou webovou aplikaci s *jednotlivé uživatelské účty*) obsahují [asp. trasy returnurl](xref:mvc/views/working-with-forms) atribut:
 
 ```cshtml
 <form asp-controller="Account" asp-action="Login"
@@ -84,11 +84,11 @@ Pomocník vstupní značky:
 
 * Generuje `id` a `name` atributy HTML pro název výraz zadaný v `asp-for` atribut. `asp-for="Property1.Property2"` je ekvivalentní `m => m.Property1.Property2`. Název výrazu se bude používat pro `asp-for` hodnota atributu. Najdete v článku [názvy výrazů](#expression-names) části Další informace.
 
-* Nastaví HTML `type` atribut hodnotu na základě typu modelu a [datové poznámky](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy použité na vlastnost modelu
+* Nastaví HTML `type` atribut hodnotu na základě typu modelu a [datové poznámky](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy použité na vlastnost modelu
 
 * Nedojde k přepsání HTML `type` hodnota atributu, pokud byl zadán jeden
 
-* Generuje [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) atributy ověření ze [datové poznámky](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy použité na vlastnosti modelu
+* Generuje [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) atributy ověření ze [datové poznámky](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy použité na vlastnosti modelu
 
 * Obsahuje funkci pomocné rutiny HTML, které se překrývají s `Html.TextBoxFor` a `Html.EditorFor`. Najdete v článku **pomocné rutiny HTML alternativy vstupní značka pomocná** podrobnosti.
 
@@ -110,22 +110,22 @@ Type expected
 |Typ formátu .NET|Typ vstupu|
 |---|---|
 |BOOL|type=”checkbox”|
-|String|type=”text”|
+|String|typ = "text"|
 |DateTime|type=”datetime”|
 |Byte|typ = "number"|
 |celá čísla|typ = "number"|
 |Jednoduché, Double|typ = "number"|
 
 
-Následující tabulka uvádí některé běžné [datových poznámek](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy, které pomocné rutiny vstupní značka se mapování na konkrétní typy vstupu (ne každý atribut ověření je uvedena):
+Následující tabulka uvádí některé běžné [datových poznámek](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributy, které pomocné rutiny vstupní značka se mapování na konkrétní typy vstupu (ne každý atribut ověření je uvedena):
 
 
 |Atribut|Typ vstupu|
 |---|---|
-|[EmailAddress]|type=”email”|
-|[Url]|type=”url”|
-|[HiddenInput]|type=”hidden”|
-|[Phone]|type=”tel”|
+|[EmailAddress]|typ = "e-mailu"|
+|[Url]|typ = "url"|
+|[HiddenInput]|typ = "skrytá"|
+|[Phone]|typ = "Telefon"|
 |[DataType(DataType.Password)]| typ = "password"|
 |[DataType(DataType.Date)]| type=”date”|
 |[DataType(DataType.Time)]| typ = "čas"|
@@ -244,7 +244,7 @@ Následující syntaxe Razor ukazuje, jak iterace v kolekci:
 
 [!code-HTML[](working-with-forms/sample/final/Views/Demo/Edit.cshtml)]
 
-The *Views/Shared/EditorTemplates/ToDoItem.cshtml* template:
+*Views/Shared/EditorTemplates/ToDoItem.cshtml* šablony:
 
 [!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: ff47519db4e9d1c5aea8811fef24c84bb564e80e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 876e1ab67fd283a9a8788bb2c7ef0ec111075794
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>Konfigurovat ověřování systému Windows v ASP.NET Core
 
@@ -25,7 +25,7 @@ Ověřování systému Windows lze konfigurovat pro aplikace ASP.NET Core hostov
 
 Ověřování systému Windows závisí na operačním systému k ověřování uživatelů aplikace ASP.NET Core. Pokud váš server běží v podnikové síti pomocí identity domény služby Active Directory nebo jiné účty systému Windows k identifikaci uživatelů, můžete použít ověřování systému Windows. Ověřování systému Windows je nejvhodnější pro prostředí intranetu, ve kterých uživatelů, klientské aplikace a webové servery patří do stejné domény systému Windows.
 
-[Další informace o ověřování systému Windows a instalaci pro službu IIS](https://docs.microsoft.com/iis/configuration/system.webServer/security/authentication/windowsAuthentication/).
+[Další informace o ověřování systému Windows a instalaci pro službu IIS](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/).
 
 ## <a name="enable-windows-authentication-in-an-aspnet-core-app"></a>Povolit ověřování systému Windows v aplikaci ASP.NET Core
 
@@ -33,7 +33,7 @@ Ověřování systému Windows závisí na operačním systému k ověřování 
 
 ### <a name="use-the-windows-authentication-app-template"></a>Použití šablony aplikace ověřování systému Windows
 
-In Visual Studio:
+V sadě Visual Studio:
 1. Vytvořte novou webovou aplikaci ASP.NET Core. 
 1. Vyberte webovou aplikaci ze seznamu šablon.
 1. Vyberte **změna ověřování** tlačítko a vyberte **ověřování systému Windows**. 
@@ -89,7 +89,7 @@ I když Kestrel nepodporuje ověřování systému Windows, můžete použít [H
 
 [!code-csharp[](windowsauth/sample/Program2x.cs?highlight=9-14)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 I když Kestrel nepodporuje ověřování systému Windows, můžete použít [WebListener](xref:fundamentals/servers/weblistener) podporu vlastním hostováním scénářů v systému Windows. Následující příklad konfiguruje hostitel webové aplikace používat WebListener pomocí ověřování systému Windows:
 
 [!code-csharp[](windowsauth/sample/Program1x.cs?highlight=6-11)]

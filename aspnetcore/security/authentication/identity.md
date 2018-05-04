@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: b3bfae665403162db1fb012fac227275b1dfd6c9
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f9215767bf9a7c8b43b474848ba7dff7c3ddaf24
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity na jádro ASP.NET
 
@@ -23,7 +23,7 @@ Identita ASP.NET Core je systém členství, který umožňuje přidat funkce p�
 
 Můžete nakonfigurovat ASP.NET Identity Core ukládat uživatelská jména, hesla a data profilu do databáze serveru SQL Server. Alternativně můžete použít vlastní trvalého úložiště, například Azure Table Storage. Tento dokument obsahuje pokyny pro sadu Visual Studio a pro používání rozhraní příkazového řádku.
 
-[Zobrazení nebo stažení ukázkového kódu.](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(Postup stažení)](https://docs.microsoft.com/aspnet/core/tutorials/index#how-to-download-a-sample)
+[Zobrazení nebo stažení ukázkového kódu.](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(Postup stažení)](xref:tutorials/index#how-to-download-a-sample)
 
 ## <a name="overview-of-identity"></a>Přehled identity
 
@@ -68,7 +68,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
 
-   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-33)]
 
    Tyto služby jsou k dispozici pro aplikace prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection).
@@ -129,7 +129,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
    #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-42)]
 
-   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-33)]
 
    * * *

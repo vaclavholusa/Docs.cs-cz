@@ -11,15 +11,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: 9fca43e809720c22d87b963925bc009dc6c51831
-ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
+ms.openlocfilehash: 46050f4bbd6ae821c03d92c8750e839d491328cd
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-mac"></a>Vytvoření webové rozhraní API pomocí ASP.NET Core a Visual Studio pro Mac
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Wasson Jan](https://github.com/mikewasson)
+
+::: moniker range="= aspnetcore-2.1"
+[!INCLUDE[](~/includes/2.1.md)]
+::: moniker-end
 
 V tomto kurzu sestavení webového rozhraní API pro správu "úkolů" položek seznamu. Rozhraní není vytvořená.
 
@@ -132,12 +136,12 @@ Přidáme `Create`, `Update`, a `Delete` metody pro kontroler. Tyto metody jsou 
 ::: moniker range="<= aspnetcore-2.0"
 [!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Předchozí postup odpoví na HTTP POST, jak [[HttpPost]](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. [[FromBody]](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) atribut informuje MVC k získání hodnoty položky úkolů z textu požadavku HTTP.
+Předchozí postup odpoví na HTTP POST, jak [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) atribut informuje MVC k získání hodnoty položky úkolů z textu požadavku HTTP.
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
 [!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Předchozí postup odpoví na HTTP POST, jak [[HttpPost]](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. MVC získá hodnotu položky úkolů z textu požadavku HTTP.
+Předchozí postup odpoví na HTTP POST, jak [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) atribut. MVC získá hodnotu položky úkolů z textu požadavku HTTP.
 ::: moniker-end
 
 `CreatedAtRoute` Metoda vrátí 201 odpověď. Je standardní odpověď pro metodu POST protokolu HTTP, která vytvoří nový prostředek na serveru. `CreatedAtRoute` také přidá do odpovědi hlavičku umístění. Hlavička umístění Určuje identifikátor URI položky nově vytvořený úkolů. V tématu [10.2.2 201 vytvořit](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).

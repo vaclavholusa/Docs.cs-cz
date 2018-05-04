@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: 980c7f595e8276ed58e15f296dba69663384168d
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 24e754daa68d5247fa444e87ba733891c908d32c
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="filters-in-aspnet-core"></a>Filtry v ASP.NET Core
 
@@ -283,13 +283,13 @@ Zde je ukázka filtr akce:
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Filters/SampleActionFilter.cs?name=snippet_ActionFilter)]
 
-[ActionExecutingContext](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.filters.actionexecutingcontext) poskytuje následujících vlastností:
+[ActionExecutingContext](/dotnet/api/microsoft.aspnetcore.mvc.filters.actionexecutingcontext) poskytuje následujících vlastností:
 
 * `ActionArguments` – umožňuje pracovat s vstupů pro akci.
 * `Controller` – umožňuje pracovat s instance kontroleru. 
 * `Result` -nastavení zkratům provádění metody akce a filtrů následné akce. Došlo k výjimce také zabrání spuštění metody akce a následné filtry, ale je považován za selhání místo úspěšný výsledek.
 
-[ActionExecutedContext](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.filters.actionexecutedcontext) poskytuje `Controller` a `Result` plus následující vlastnosti:
+[ActionExecutedContext](/dotnet/api/microsoft.aspnetcore.mvc.filters.actionexecutedcontext) poskytuje `Controller` a `Result` plus následující vlastnosti:
 
 * `Canceled` -bude hodnota true, pokud provádění akce byla zkratována jiný filtr.
 * `Exception` -bude obsahovat hodnotu null, pokud akci nebo filtr následné akce došlo k výjimce. Nastavení této vlastnosti na hodnotu null, efektivně 'zpracovává' výjimku, a `Result` bude proveden, jako kdyby se vrátil metody akce normálně.

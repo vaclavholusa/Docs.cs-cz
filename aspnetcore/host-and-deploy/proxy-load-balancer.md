@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/proxy-load-balancer
-ms.openlocfilehash: b153a7406ae1b31a2aa453135c6bd0e5ce0b2997
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: f18a5c518edc739e0fe667f3aef6ffd38c06366c
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a>Konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení
 
@@ -34,8 +34,8 @@ Podle konvence proxy předávat informace v hlavičkách protokolu HTTP.
 | Záhlaví | Popis |
 | ------ | ----------- |
 | X-předávaných pro | Obsahuje informace o klientovi, který spustil požadavků a následné proxy v řetězu serverů proxy. Tento parametr může obsahovat IP adresy (a volitelně čísla portů). V řetězu proxy servery určuje první parametr klienta, kde byl nejprve požadavek. Postupujte podle následujících proxy identifikátory. Poslední proxy server v řetězu není v seznamu parametrů. Poslední proxy IP adresu a volitelně číslo portu, jsou k dispozici jako vzdálené IP adresy v přenosové vrstvě. |
-| X-Forwarded-Proto | Hodnota původní schématu (HTTP či HTTPS). Hodnota může být také seznam schémat, pokud požadavek projde více proxy serverů. |
-| X-Forwarded-Host | Původní hodnotu pole hlavičky hostitele. Obvykle proxy Neupravovat hlavičku hostitele. V tématu [Microsoft Security Advisory CVE-2018-0787](https://github.com/aspnet/Announcements/issues/295) informace o zvýšení oprávnění ohrožení zabezpečení, která má vliv na systémy, kde není ověření proxy serveru nebo hlavičky hostitele restict známé dobré hodnoty. |
+| X předávaných Proto | Hodnota původní schématu (HTTP či HTTPS). Hodnota může být také seznam schémat, pokud požadavek projde více proxy serverů. |
+| X předávaných hostitele | Původní hodnotu pole hlavičky hostitele. Obvykle proxy Neupravovat hlavičku hostitele. V tématu [Microsoft Security Advisory CVE-2018-0787](https://github.com/aspnet/Announcements/issues/295) informace o zvýšení oprávnění ohrožení zabezpečení, která má vliv na systémy, kde není ověření proxy serveru nebo hlavičky hostitele restict známé dobré hodnoty. |
 
 Middleware hlavičky předávány z [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) balíčků, čte tyto hlavičky a vyplní přidružené pole na [HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext). 
 
@@ -110,6 +110,7 @@ services.Configure<ForwardedHeadersOptions>(options =>
 });
 ```
 
+::: moniker range="<= aspnetcore-2.0"
 | Možnost | Popis |
 | ------ | ----------- |
 | [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | Použít header této vlastnosti místo určenému [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername).<br><br>Výchozí hodnota je `X-Forwarded-For`. |
@@ -123,6 +124,23 @@ services.Configure<ForwardedHeadersOptions>(options =>
 | [OriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalhostheadername) | Použít header této vlastnosti místo určenému [ForwardedHeadersDefaults.XOriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalhostheadername).<br><br>Výchozí hodnota je `X-Original-Host`. |
 | [OriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalprotoheadername) | Použít header této vlastnosti místo určenému [ForwardedHeadersDefaults.XOriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalprotoheadername).<br><br>Výchozí hodnota je `X-Original-Proto`. |
 | [RequireHeaderSymmetry](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.requireheadersymmetry) | Vyžadovat počet hodnot hlavičky byly synchronizované mezi [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) zpracovává.<br><br>Výchozí hodnota v ASP.NET Core je 1.x `true`. Výchozí hodnota v technologii ASP.NET Core 2.0 nebo novější je `false`. |
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+| Možnost | Popis |
+| ------ | ----------- |
+| AllowedHosts | Omezuje hostitelů pomocí `X-Forwarded-Host` hlavičky k zadanými hodnotami.<ul><li>Porovnání hodnot pomocí pořadí ignorovat případu.</li><li>Čísla portů musí být vyloučeny.</li><li>Pokud je seznam prázdný, jsou povoleny všechny hostitele.</li><li>Nejvyšší úrovně zástupný znak `*` umožňuje všichni hostitelé není prázdný.</li><li>Subdomény zástupné znaky jsou povolené, ale kořenové domény se neshodují. Například `*.contoso.com` odpovídá subdoméně `foo.contoso.com` , ale není kořenová doména `contoso.com`.</li><li>Názvy hostitelů ve formátu Unicode jsou povolené, ale jsou převedeny na [Punycode](https://tools.ietf.org/html/rfc3492) k porovnání.</li><li>[Adresy IPv6](https://tools.ietf.org/html/rfc4291) musí obsahovat ohraničujícího závorky a být ve [konvenční formuláře](https://tools.ietf.org/html/rfc4291#section-2.2) (například `[ABCD:EF01:2345:6789:ABCD:EF01:2345:6789]`). IPv6 adresy nejsou zvláštní použita ke kontrole rovnosti logické mezi různými formáty a žádné kanonizace se provádí.</li><li>Selhání omezit povolený hostitele může útočníkovi umožnit zfalšovat odkazy vygenerované službou.</li></ul>Výchozí hodnota je prázdná [IList\<řetězec >](/dotnet/api/system.collections.generic.ilist-1). |
+| [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | Použít header této vlastnosti místo určenému [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername).<br><br>Výchozí hodnota je `X-Forwarded-For`. |
+| [ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) | Určuje, které servery pro předávání, měla by být zpracována. Najdete v článku [ForwardedHeaders výčtu](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders) pro seznam polí, které se vztahují. Typické hodnoty přiřazený k této vlastnosti jsou <code>ForwardedHeaders.XForwardedFor &#124; ForwardedHeaders.XForwardedProto</code>.<br><br>Výchozí hodnota je [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders). |
+| [ForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedhostheadername) | Použít header této vlastnosti místo určenému [ForwardedHeadersDefaults.XForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedhostheadername).<br><br>Výchozí hodnota je `X-Forwarded-Host`. |
+| [ForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedprotoheadername) | Použít header této vlastnosti místo určenému [ForwardedHeadersDefaults.XForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedprotoheadername).<br><br>Výchozí hodnota je `X-Forwarded-Proto`. |
+| [ForwardLimit](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardlimit) | Omezuje počet položek v hlavičkách, které jsou zpracovány. Nastavte na `null` zakázat tento limit, ale to lze provádět pouze pokud `KnownProxies` nebo `KnownNetworks` jsou nakonfigurované.<br><br>Výchozí hodnota je 1. |
+| [KnownNetworks](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownnetworks) | Rozsahy známé serverů proxy tak, aby přijímal přesměrovaná hlaviček z adres. Zadejte rozsahy IP adres pomocí notace CIDR (Classless Interdomain Routing) zápisu.<br><br>Výchozí hodnota je [IList](/dotnet/api/system.collections.generic.ilist-1)\<[třídu IPNetwork](/dotnet/api/microsoft.aspnetcore.httpoverrides.ipnetwork)> obsahující jeden záznam pro `IPAddress.Loopback`. |
+| [KnownProxies](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownproxies) | Adresy známé proxy tak, aby přijímal přesměrovaná hlaviček z. Použití `KnownProxies` nastavit přesnou adresu IP odpovídá.<br><br>Výchozí hodnota je [IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPAddress](/dotnet/api/system.net.ipaddress)> obsahující jeden záznam pro `IPAddress.IPv6Loopback`. |
+| [OriginalForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalforheadername) | Použít header této vlastnosti místo určenému [ForwardedHeadersDefaults.XOriginalForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalforheadername).<br><br>Výchozí hodnota je `X-Original-For`. |
+| [OriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalhostheadername) | Použít header této vlastnosti místo určenému [ForwardedHeadersDefaults.XOriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalhostheadername).<br><br>Výchozí hodnota je `X-Original-Host`. |
+| [OriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalprotoheadername) | Použít header této vlastnosti místo určenému [ForwardedHeadersDefaults.XOriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalprotoheadername).<br><br>Výchozí hodnota je `X-Original-Proto`. |
+| [RequireHeaderSymmetry](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.requireheadersymmetry) | Vyžadovat počet hodnot hlavičky byly synchronizované mezi [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) zpracovává.<br><br>Výchozí hodnota v ASP.NET Core je 1.x `true`. Výchozí hodnota v technologii ASP.NET Core 2.0 nebo novější je `false`. |
+::: moniker-end
 
 ## <a name="scenarios-and-use-cases"></a>Scénáře a případy použití
 

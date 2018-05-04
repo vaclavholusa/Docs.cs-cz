@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/validation
-ms.openlocfilehash: 06526848dc84472c8629e6e1700a74312442f67c
-ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
+ms.openlocfilehash: 1ab19fad90eab9f2da58b4d62615a85d71894218
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Ověření modelu v aplikaci ASP.NET MVC jádra
 
@@ -55,7 +55,7 @@ Pravidla týkající se dat pro tuto aplikaci, usnadnit zachování kód jednodu
 
 * `[Url]`: Ověří vlastnost má formát adresy URL.
 
-MVC podporuje všechny atributy, které je odvozena z `ValidationAttribute` pro účely ověření. Mnoho atributů užitečné ověření najdete v [System.ComponentModel.DataAnnotations](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations) oboru názvů.
+MVC podporuje všechny atributy, které je odvozena z `ValidationAttribute` pro účely ověření. Mnoho atributů užitečné ověření najdete v [System.ComponentModel.DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) oboru názvů.
 
 Mohou existovat instance, kde je nutné více funkcí než nabízejí integrované atributy. Pro tyto dobu, můžete vytvořit vlastního ověřování atributy odvozené z `ValidationAttribute` nebo změna modelu k implementaci `IValidatableObject`.
 
@@ -65,7 +65,7 @@ Hodnotu Null [typů hodnot](/dotnet/csharp/language-reference/keywords/value-typ
 
 Vazby modelu MVC, která není problémem ověření a atributů ověření, odmítne odeslání formuláře pole obsahující chybějící hodnoty nebo prázdných znaků pro hodnotu Null typu. Chybí `BindRequired` atributu pro vlastnost target vazby modelu ignoruje chybějící data pro použití hodnot Null typy, kde chybí pole formuláře z příchozích dat formuláře.
 
-[BindRequired atribut](/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute) (viz také [přizpůsobit chování vazby modelu s atributy](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes)) je užitečné pro zajištění dokončení dat formuláře. Při použití na vlastnost, systém vazba modelu vyžaduje hodnotu pro tuto vlastnost. Při použití typu, systém vazba modelu vyžaduje hodnoty pro všechny vlastnosti tohoto typu.
+[BindRequired atribut](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute) (viz také [přizpůsobit chování vazby modelu s atributy](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes)) je užitečné pro zajištění dokončení dat formuláře. Při použití na vlastnost, systém vazba modelu vyžaduje hodnotu pro tuto vlastnost. Při použití typu, systém vazba modelu vyžaduje hodnoty pro všechny vlastnosti tohoto typu.
 
 Při použití [Nullable\<T > typ](/dotnet/csharp/programming-guide/nullable-types/) (například `decimal?` nebo `System.Nullable<decimal>`) a označte ji `Required`, se provádí kontrolu ověření na straně serveru, jako kdyby měla vlastnost standardní typ s možnou hodnotou Null (pro Příklad, `string`).
 
@@ -192,7 +192,7 @@ $.get({
 
 ## <a name="iclientmodelvalidator"></a>IClientModelValidator
 
-Můžete vytvořit logiku straně klienta pro vaše vlastní atribut a [nerušivý ověření](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html) vytváří adaptér pro [k ověřování jquery] (http://jqueryvalidation.org/documentation/) se spustí na klienta pro vás automaticky jako součást ověření. Prvním krokem je řídí, jaké atributy datového přidají implementací `IClientModelValidator` rozhraní, jak je vidět tady:
+Můžete vytvořit logiku straně klienta pro vaše vlastní atribut a [nerušivý ověření](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html) vytváří adaptér pro [k ověřování jquery](http://jqueryvalidation.org/documentation/) se spustí na klienta pro vás automaticky jako součást ověření. Prvním krokem je řídí, jaké atributy datového přidají implementací `IClientModelValidator` rozhraní, jak je vidět tady:
 
 [!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=30-42)]
 

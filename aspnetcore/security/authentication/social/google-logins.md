@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/google-logins
-ms.openlocfilehash: ab49eb1c45d69ff918b25190d7b94a105ff13972
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: aba12a94a573db35eadaa6a38f2fcf074b7b64c2
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="google-external-login-setup-in-aspnet-core"></a>Instalační program externí přihlášení Google v ASP.NET Core
 
@@ -103,7 +103,7 @@ services.AddAuthentication().AddGoogle(googleOptions =>
 
 [!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Šablona projektu použili v tomto kurzu zajistí, že [Microsoft.AspNetCore.Authentication.Google](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) balíček nainstalován.
 
  * Chcete-li nainstalovat tento balíček s Visual Studio 2017, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**.
@@ -122,7 +122,7 @@ app.UseGoogleAuthentication(new GoogleOptions()
 ```
 
 * * *
-Najdete v článku [GoogleOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.googleoptions) referenční dokumentace rozhraní API pro další informace o možnostech konfigurace nepodporuje ověřování Google. To slouží k požadavku na jiné informace o uživateli.
+Najdete v článku [GoogleOptions](/dotnet/api/microsoft.aspnetcore.builder.googleoptions) referenční dokumentace rozhraní API pro další informace o možnostech konfigurace nepodporuje ověřování Google. To slouží k požadavku na jiné informace o uživateli.
 
 ## <a name="sign-in-with-google"></a>Přihlaste se pomocí služby Google
 

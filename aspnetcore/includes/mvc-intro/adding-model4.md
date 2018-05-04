@@ -1,4 +1,4 @@
-Zvýrazněných code výš ukazuje kontext databáze film, který se přidává do [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru (v *Startup.cs* souboru). `services.AddDbContext<MvcMovieContext>(options =>` Určuje použití a připojovací řetězec databáze. `=>` je [lambda operátor](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/operators/lambda-operator).
+Zvýrazněných code výš ukazuje kontext databáze film, který se přidává do [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru (v *Startup.cs* souboru). `services.AddDbContext<MvcMovieContext>(options =>` Určuje použití a připojovací řetězec databáze. `=>` je [lambda operátor](/dotnet/articles/csharp/language-reference/operators/lambda-operator).
 
 Otevřete *Controllers/MoviesController.cs* soubor a zkontrolujte konstruktoru:
 
@@ -30,9 +30,9 @@ Můžete také předáte `id` s dotazem řetězec následujícím způsobem:
 
 `http://localhost:1234/movies/details?id=1`
 
-`id` Parametr je definován jako [typ s možnou hodnotou Null](https://docs.microsoft.com/dotnet/csharp/programming-guide/nullable-types/index) (`int?`) v případě, že hodnotu ID není zadaný.
+`id` Parametr je definován jako [typ s možnou hodnotou Null](/dotnet/csharp/programming-guide/nullable-types/index) (`int?`) v případě, že hodnotu ID není zadaný.
 
-A [výrazu lambda](https://docs.microsoft.com/dotnet/articles/csharp/programming-guide/statements-expressions-operators/lambda-expressions) je předané do `SingleOrDefaultAsync` vyberte film entit, které odpovídají hodnotě trasy dat nebo dotaz, řetězec.
+A [výrazu lambda](/dotnet/articles/csharp/programming-guide/statements-expressions-operators/lambda-expressions) je předané do `SingleOrDefaultAsync` vyberte film entit, které odpovídají hodnotě trasy dat nebo dotaz, řetězec.
 
 ```csharp
 var movie = await _context.Movie

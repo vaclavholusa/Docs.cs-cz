@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: be8162de1c839ef619e2ccd32253c6c3e5330301
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 99a8d158c896566c2f6e6c22e4b37b1956e21cbf
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Stránky Razor Entity Framework základní v ASP.NET Core - kurz 1 8
 
@@ -175,9 +175,9 @@ Otevřete *appSettings.JSON určený* souboru a přidat připojovací řetězec,
 
 [!code-json[](./intro/samples/cu/appsettings1.json?highlight=2-4)]
 
-Předchozí připojovací řetězec používá `ConnectRetryCount=0` aby [SQLClient](https://docs.microsoft.com/dotnet/framework/data/adonet/ef/sqlclient-for-the-entity-framework) z ukotvených.
+Předchozí připojovací řetězec používá `ConnectRetryCount=0` aby [SQLClient](/dotnet/framework/data/adonet/ef/sqlclient-for-the-entity-framework) z ukotvených.
 
-### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
+### <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
 
 Určuje připojovací řetězec databáze SQL Server LocalDB DB. LocalDB je Odlehčená verze SQL Server Express Database Engine a je určen pro vývoj aplikací, není použití v provozním prostředí. LocalDB spustí na vyžádání a běží v uživatelském režimu, takže není žádná komplexní konfigurace. Ve výchozím nastavení, vytvoří instanci LocalDB *.mdf* DB soubory `C:/Users/<user>` adresáře.
 
@@ -315,7 +315,7 @@ V následujícím kódu `async` – klíčové slovo, `Task<T>` vrátit hodnotu,
 * `async` – Klíčové slovo instruuje kompilátor, aby:
 
   * Generovat zpětných volání pro části těla metody.
-  * Automaticky vytvářet [úloh](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task?view=netframework-4.7) objekt, který je vrácen. Další informace najdete v tématu [úloh návratového typu](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/async-return-types#BKMK_TaskReturnType).
+  * Automaticky vytvářet [úloh](/dotnet/api/system.threading.tasks.task?view=netframework-4.7) objekt, který je vrácen. Další informace najdete v tématu [úloh návratového typu](/dotnet/csharp/programming-guide/concepts/async/async-return-types#BKMK_TaskReturnType).
 
 * Implicitní návratový typ `Task` reprezentuje probíhající práce.
 
@@ -331,7 +331,7 @@ Třeba mít na paměti při zápisu asynchronní kód, který používá základ
 
 * Abyste mohli využívat výhod výkonu asynchronní kódu, ověřte, že knihovna balíčky (například pro stránkování) používat asynchronní, pokud volají EF základní metody, které odesílají dotazy do databáze.
 
-Další informace o asynchronní programování v rozhraní .NET najdete v tématu [přehled asynchronních](https://docs.microsoft.com/dotnet/articles/standard/async).
+Další informace o asynchronní programování v rozhraní .NET najdete v tématu [přehled asynchronních](/dotnet/articles/standard/async).
 
 V dalším kurzu základní CRUD (vytvořit, číst, aktualizovat, odstraňovat) byla.
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 5302cd5e8eebb3601aa64ac946c356b54521b198
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b7036b92e8f25613917cfc4112389be81c12f614
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>Začínáme s ASP.NET MVC jádra a sady Visual Studio
 
@@ -32,7 +32,7 @@ Existují 3 verze tohoto kurzu:
 #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Nainstalujte Visual Studio Community 2017. Vyberte stahování komunity. Tento krok přeskočte, pokud máte Visual Studio 2017 nainstalována.
 
 * [Instalační program Visual Studio 2017 domovské stránky](https://www.visualstudio.com/)
@@ -73,7 +73,7 @@ Dokončení **nové základní webové aplikace ASP.NET (.NET Core) – MvcMovie
 
 ![Dialogové okno Nový projekt, .net core v levém podokně, web ASP.NET Core ](start-mvc/_static/new_project22.png)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Dokončení **nové základní webové aplikace ASP.NET (.NET Core) – MvcMovie** dialogové okno:
 
@@ -92,7 +92,7 @@ Klepněte na **F5** a spusťte aplikaci v režimu ladění nebo **Ctrl + F5** v 
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->
 ![spuštění aplikace](start-mvc/_static/1.png)
 
-* Visual Studio spustí [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) a spustí aplikace. Všimněte si, že se zobrazí na panelu Adresa `localhost:port#` a není něco jako `example.com`. Je to způsobeno `localhost` je standardní název hostitele místního počítače. Když Visual Studio vytvoří webový projekt, náhodný port se používá pro webový server. Na obrázku výše je číslo portu 5 000. Adresu URL v prohlížeči zobrazí `localhost:5000`. Při spuštění aplikace se zobrazí jiné číslo portu.
+* Visual Studio spustí [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) a spustí aplikace. Všimněte si, že se zobrazí na panelu Adresa `localhost:port#` a není něco jako `example.com`. Je to způsobeno `localhost` je standardní název hostitele místního počítače. Když Visual Studio vytvoří webový projekt, náhodný port se používá pro webový server. Na obrázku výše je číslo portu 5 000. Adresu URL v prohlížeči zobrazí `localhost:5000`. Při spuštění aplikace se zobrazí jiné číslo portu.
 * Spuštění aplikace s **Ctrl + F5** (režim bez ladění) umožňuje provádět změny kódu, uložte soubor, aktualizujte stránku prohlížeče a podívejte se změny kódu. Celá řada vývojářů dávají přednost používání režimu bez ladění k rychlému spusťte aplikaci a zobrazit změny.
 * Můžete spustit aplikaci v ladění nebo režim bez ladění z **ladění** položky nabídky:
 

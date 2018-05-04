@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: ada8120189baf036296b83f91d20b364ee90d074
-ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
+ms.openlocfilehash: 2d6cc526b5a0890103e2856a0ca4b58c5f162c79
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Spravovat balíčky klienta s Bower v ASP.NET Core
 
@@ -107,7 +107,7 @@ Jakmile seznam balíčků v *bower.json* je se stažení souboru, Visual Studio.
 ### <a name="enable-static-files"></a>Povolte statické soubory
 
 * Přidat `Microsoft.AspNetCore.StaticFiles` balíček NuGet do projektu.
-* Povolte statické soubory ke zpracování s [middleware se statickými soubory](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions). Přidejte volání [UseStaticFiles](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions) k `Configure` metodu `Startup`.
+* Povolte statické soubory ke zpracování s [middleware se statickými soubory](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions). Přidejte volání [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions) k `Configure` metodu `Startup`.
 
 [!code-csharp[](bower/sample/Startup.cs?highlight=9)]
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: db47055aecc5252dbb3991f29a8255b946deaeb7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ce654492dc7bab6c031c9f82555f877f642171ce
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>Konfigurace Identity primární klíče datový typ v ASP.NET Core
 
@@ -21,11 +21,11 @@ Jádro ASP.NET Identity můžete konfigurovat datový typ, který používá k r
 
 ## <a name="customize-the-primary-key-data-type"></a>Přizpůsobení primární klíče datový typ
 
-1. Vytvořit vlastní implementaci [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1) třídy. Představuje typ, který má být použit pro vytvoření uživatelské objekty. V následujícím příkladu, výchozí `string` se nahradí typ `Guid`.
+1. Vytvořit vlastní implementaci [IdentityUser](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1) třídy. Představuje typ, který má být použit pro vytvoření uživatelské objekty. V následujícím příkladu, výchozí `string` se nahradí typ `Guid`.
 
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4&range=7-13)]
 
-2. Vytvořit vlastní implementaci [IdentityRole](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1) třídy. Představuje typ, který se má použít pro vytváření objektů role. V následujícím příkladu, výchozí `string` se nahradí typ `Guid`.
+2. Vytvořit vlastní implementaci [IdentityRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1) třídy. Představuje typ, který se má použít pro vytváření objektů role. V následujícím příkladu, výchozí `string` se nahradí typ `Guid`.
 
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3&range=7-12)]
 
@@ -40,7 +40,7 @@ Jádro ASP.NET Identity můžete konfigurovat datový typ, který používá k r
 
     [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
 
-   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
     `AddEntityFrameworkStores` Metoda přijímá `TKey` argument označující typ dat primární klíč.
 
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: 26101d46557c64047f3d121083fe34ad34ff99ea
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b251aa3ff0b4d0c08f9885cd73a111b7c2008766
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>Používala ověřování souborů cookie bez ASP.NET Core Identity
 
@@ -77,7 +77,7 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     });
 ```
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Soubor cookie používá ASP.NET Core 1.x [middleware](xref:fundamentals/middleware/index) který serializuje hlavní název uživatele do šifrovaného souboru cookie. Na následné žádosti, se ověří souboru cookie a znovu vytvořit a přiřadit k objektu zabezpečení `HttpContext.User` vlastnost.
 
 Nainstalujte [Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/) balíček NuGet do projektu. Tento balíček obsahuje middlewaru souboru cookie.
@@ -162,14 +162,14 @@ Nastavení zásad middlewaru souboru Cookie pro `MinimumSameSitePolicy` může m
 
 ## <a name="creating-an-authentication-cookie"></a>Vytvoření souboru cookie pro ověřování
 
-Pokud chcete vytvořit soubor cookie, která uchovává informace o uživateli, je nutné vytvořit [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal). Informace o uživateli se serializovat a uloží do souboru cookie. 
+Pokud chcete vytvořit soubor cookie, která uchovává informace o uživateli, je nutné vytvořit [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal). Informace o uživateli se serializovat a uloží do souboru cookie. 
 
 #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 Vytvoření [ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity) s jakékoli požadované [deklarace identity](/dotnet/api/system.security.claims.claim)s a volání [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0) k přihlášení uživatele:
 
 [!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet1)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Volání [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signinasync?view=aspnetcore-1.1) k přihlášení uživatele:
 
 ```csharp
@@ -190,7 +190,7 @@ Odhlásit se aktuálního uživatele a odstranit jejich souboru cookie, volání
 
 [!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet2)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Odhlásit se aktuálního uživatele a odstranit jejich souboru cookie, volání [SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhandler-1.signoutasync?view=aspnetcore-1.1):
 
 ```csharp
@@ -286,7 +286,7 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 services.AddScoped<CustomCookieAuthenticationEvents>();
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 K přepsání pro implementaci `ValidateAsync` událostí, zápisu a metoda podpisem následující:
 
@@ -363,7 +363,7 @@ await HttpContext.SignInAsync(
 
 [AuthenticationProperties](/dotnet/api/microsoft.aspnetcore.authentication.authenticationproperties?view=aspnetcore-2.0) třída se nachází v `Microsoft.AspNetCore.Authentication` oboru názvů.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 await HttpContext.Authentication.SignInAsync(
@@ -398,7 +398,7 @@ await HttpContext.SignInAsync(
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 await HttpContext.Authentication.SignInAsync(

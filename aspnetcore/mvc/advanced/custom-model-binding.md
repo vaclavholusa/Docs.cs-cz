@@ -1,7 +1,7 @@
 ---
-title: "Vlastní Model vazby v ASP.NET Core"
+title: Vlastní Model vazby v ASP.NET Core
 author: ardalis
-description: "Zjistěte, jak vazby modelu umožňuje akce kontroleru pracovat přímo s typy modelu v ASP.NET Core."
+description: Zjistěte, jak vazby modelu umožňuje akce kontroleru pracovat přímo s typy modelu v ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 04/10/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: 941aa9e3ff4e4a75714e11b79d913418d0514d1e
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a687753083d3b11898e9ff35828780a5ad240854
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="custom-model-binding-in-aspnet-core"></a>Vlastní Model vazby v ASP.NET Core
 
@@ -31,7 +31,7 @@ Vazače modelů výchozí podporují většinu běžné typy dat .NET Core a by 
 
 Vazby modelu používá pro typy, které funguje na určité definice. A *jednoduchý typ* je převést z jednoho řetězce ve vstupu. A *komplexní typ* je převést z více vstupních hodnot. Rozhraní framework určuje rozdíl podle existenci `TypeConverter`. Doporučujeme vytvořit převaděč typu, pokud máte jednoduchou `string`  ->  `SomeType` mapování, která nevyžaduje externím prostředkům.
 
-Před vytvořením vlastní vlastní vazač modelu, je vhodné prostudovali jak existující model jsou implementované vazače. Vezměte v úvahu [ByteArrayModelBinder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinder) kterých jde převést kódováním base64 řetězce na pole bajtů. Bajtová pole jsou často uložené jako soubory nebo pole objektů BLOB databáze.
+Před vytvořením vlastní vlastní vazač modelu, je vhodné prostudovali jak existující model jsou implementované vazače. Vezměte v úvahu [ByteArrayModelBinder](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinder) kterých jde převést kódováním base64 řetězce na pole bajtů. Bajtová pole jsou často uložené jako soubory nebo pole objektů BLOB databáze.
 
 ### <a name="working-with-the-bytearraymodelbinder"></a>Práce ByteArrayModelBinder
 
@@ -45,7 +45,7 @@ Malá část řetězec s kódováním je znázorněno na následujícím obrázk
 
 Postupujte podle pokynů [tohoto příkladu README](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/advanced/custom-model-binding/sample/CustomModelBindingSample/README.md) převést řetězec s kódováním base64 do souboru.
 
-Můžete využít řetězce kódováním base64 a používat rozhraní ASP.NET MVC jádra `ByteArrayModelBinder` ji převést do bajtového pole. [ByteArrayModelBinderProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider) které implementuje [IModelBinderProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider) mapuje `byte[]` argumenty, které mají `ByteArrayModelBinder`:
+Můžete využít řetězce kódováním base64 a používat rozhraní ASP.NET MVC jádra `ByteArrayModelBinder` ji převést do bajtového pole. [ByteArrayModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider) které implementuje [IModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider) mapuje `byte[]` argumenty, které mají `ByteArrayModelBinder`:
 
 ```csharp
 public IModelBinder GetBinder(ModelBinderProviderContext context)
@@ -64,7 +64,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 }
 ```
 
-Při vytváření vlastní vlastní vazač modelu, můžete implementovat vlastní `IModelBinderProvider` zadejte, nebo použijte [ModelBinderAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinderattribute).
+Při vytváření vlastní vlastní vazač modelu, můžete implementovat vlastní `IModelBinderProvider` zadejte, nebo použijte [ModelBinderAttribute](/dotnet/api/microsoft.aspnetcore.mvc.modelbinderattribute).
 
 Následující příklad ukazuje, jak používat `ByteArrayModelBinder` převést řetězec s kódováním base64 tak, aby `byte[]` a výsledek uložit do souboru:
 
@@ -135,4 +135,4 @@ Přidání poskytovatele na konec kolekce může mít za následek vazač modelu
 Vazače modelů vlastní:
 - Neměli nastavit stavové kódy, nebo může vracet výsledky (například 404 není nalezena). V případě selhání vazby modelu [filtr akce](xref:mvc/controllers/filters) nebo logiky v rámci samotné metoda akce by měla řídit tyto chyby.
 - Jsou velmi užitečné k odstranění opakovaných kódu a mezi vyjímání obavy z metody akce.
-- Obvykle nepoužívejte převést řetězec do vlastního typu, [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter) je obvykle lepší volbou.
+- Obvykle nepoužívejte převést řetězec do vlastního typu, [ `TypeConverter` ](/dotnet/api/system.componentmodel.typeconverter) je obvykle lepší volbou.

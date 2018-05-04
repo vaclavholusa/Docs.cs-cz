@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: web-api/advanced/custom-formatters
-ms.openlocfilehash: 45d64feea9b3466d32088b5949b33d3fec3b3a41
-ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
+ms.openlocfilehash: dbe42a6943dbf615c4227356271053329f01e34b
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="custom-formatters-in-aspnet-core-web-api"></a>Vlastní formátování v webového rozhraní API ASP.NET Core
 
@@ -35,7 +35,7 @@ Zde jsou kroky, jak vytvořit a používat vlastní formátování:
 
 * Vytvořte třídu formátování výstupu, pokud chcete serializovat data k odeslání do klienta.
 * Vytvořte třídu vstupní formátovací modul, pokud chcete k deserializaci data přijatá z klienta.
-* Přidání instance formátovací moduly, které `InputFormatters` a `OutputFormatters` kolekcí v [MvcOptions](/aspnet/core/api/microsoft.aspnetcore.mvc.mvcoptions).
+* Přidání instance formátovací moduly, které `InputFormatters` a `OutputFormatters` kolekcí v [MvcOptions](/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions).
 
 Následující části obsahují pokyny a příklady kódu pro každý z těchto kroků.
 
@@ -50,11 +50,11 @@ Pokud chcete vytvořit formátování:
   
 ### <a name="derive-from-the-appropriate-base-class"></a>Odvozena od příslušné základní třídy
 
-Text typy médií (například soubor vCard), jsou odvozeny od [TextInputFormatter](/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.textinputformatter) nebo [TextOutputFormatter](/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.textoutputformatter) základní třídy.
+Text typy médií (například soubor vCard), jsou odvozeny od [TextInputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.textinputformatter) nebo [TextOutputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.textoutputformatter) základní třídy.
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=classdef)]
 
-Pro binární typy jsou odvozeny od [InputFormatter](/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.inputformatter) nebo [OutputFormatter](/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.outputformatter) základní třídy.
+Pro binární typy jsou odvozeny od [InputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.inputformatter) nebo [OutputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.outputformatter) základní třídy.
 
 ### <a name="specify-valid-media-types-and-encodings"></a>Zadejte platné médium typy a kódování
 
@@ -79,7 +79,7 @@ V některých případech je nutné přepsat `CanWriteResult` místo `CanWriteTy
 * Existují odvozené třídy, které může být vrácena za běhu.
 * Je třeba vědět za běhu, který odvozené, že byla vrácena třída akce.
 
-Předpokládejme například, vrátí podpis metody akce `Person` typ, ale může vrátit `Student` nebo `Instructor` typ odvozený z `Person`. Pokud chcete, aby vaše formátování, které bude zpracovávat jenom `Student` objekty, zkontrolujte typ [objekt](/aspnet/core/api/microsoft.aspnetcore.mvc.formatters.outputformattercanwritecontext#Microsoft_AspNetCore_Mvc_Formatters_OutputFormatterCanWriteContext_Object) v kontextu objektu poskytnuté `CanWriteResult` metoda. Všimněte si, že není potřeba použít `CanWriteResult` při vrácení metody akce `IActionResult`; v takovém případě `CanWriteType` metoda přijímá typ modulu runtime.
+Předpokládejme například, vrátí podpis metody akce `Person` typ, ale může vrátit `Student` nebo `Instructor` typ odvozený z `Person`. Pokud chcete, aby vaše formátování, které bude zpracovávat jenom `Student` objekty, zkontrolujte typ [objekt](/dotnet/api/microsoft.aspnetcore.mvc.formatters.outputformattercanwritecontext#Microsoft_AspNetCore_Mvc_Formatters_OutputFormatterCanWriteContext_Object) v kontextu objektu poskytnuté `CanWriteResult` metoda. Všimněte si, že není potřeba použít `CanWriteResult` při vrácení metody akce `IActionResult`; v takovém případě `CanWriteType` metoda přijímá typ modulu runtime.
 
 <a id="read-write"></a>
 ### <a name="override-readrequestbodyasyncwriteresponsebodyasync"></a>Override ReadRequestBodyAsync/WriteResponseBodyAsync

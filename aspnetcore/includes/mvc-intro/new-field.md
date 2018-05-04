@@ -4,7 +4,7 @@ podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Přidá nové pole do tohoto kurzu `Movies` tabulky. Jsme budete vyřaďte databázi a vytvořte novou, když nám změnit schéma (Přidat nové pole). Tento pracovní postup funguje dobře časná ve vývoj při nemáme žádná data produkční do opraveny.
 
-Po nasazení vaší aplikace a máte data, která budete muset opraveny, nelze vyřadit vaší databáze, když potřebujete změnit schéma. Rozhraní Entity Framework [migrace Code First](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) vám umožní aktualizovat schéma a migraci databáze bez ztráty dat. Migrace je oblíbených funkce při použití SQL serveru, ale SQLlite nepodporuje mnoho schématu operací migrace, takže jenom velmi jednoduše migrace se možná. V tématu [SQLite omezení](https://docs.microsoft.com/ef/core/providers/sqlite/limitations) Další informace.
+Po nasazení vaší aplikace a máte data, která budete muset opraveny, nelze vyřadit vaší databáze, když potřebujete změnit schéma. Rozhraní Entity Framework [migrace Code First](/ef/core/get-started/aspnetcore/new-db) vám umožní aktualizovat schéma a migraci databáze bez ztráty dat. Migrace je oblíbených funkce při použití SQL serveru, ale SQLlite nepodporuje mnoho schématu operací migrace, takže jenom velmi jednoduše migrace se možná. V tématu [SQLite omezení](/ef/core/providers/sqlite/limitations) Další informace.
 
 ## <a name="adding-a-rating-property-to-the-movie-model"></a>Přidání vlastnosti hodnocení filmu modelu
 

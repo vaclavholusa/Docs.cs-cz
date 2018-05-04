@@ -6,22 +6,24 @@ manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 03/30/2018
+ms.date: 05/01/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: 7da0c4832b1aa6a844172bf751a46b280a02f37a
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: e23d7ef6d5e5e93d5fc69ad4c845a6a896836170
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Použití centra v systému SignalR pro ASP.NET Core
 
 Podle [Rachel Appel](https://twitter.com/rachelappel) a [kevina Griffin](https://twitter.com/1kevgriff)
 
 [!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
+
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubs/sample/ ) [(jak ke stažení)](xref:tutorials/index#how-to-download-a-sample)
 
 ## <a name="what-is-a-signalr-hub"></a>Co je rozbočovače SignalR
 
@@ -31,17 +33,17 @@ Rozhraní API rozbočovače SignalR umožňuje volat metody pro připojené klie
 
 SignalR middleware vyžaduje některé služby, které jsou nakonfigurované voláním `services.AddSignalR`.
 
-[!code-csharp[Configure service](hubs/sample/startup.cs?range=35)]
+[!code-csharp[Configure service](hubs/sample/startup.cs?range=37)]
 
 Při přidávání funkce SignalR do aplikace ASP.NET Core, instalační program SignalR trasy voláním `app.UseSignalR` v `Startup.Configure` metoda.
 
-[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=55-58)]
+[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=56-59)]
 
 ## <a name="create-and-use-hubs"></a>Vytváření a používání centra
 
 Vytvoření rozbočovač deklarováním třídy, která dědí z `Hub`a přidejte do ní veřejné metody. Klienti mohou volat metody, které jsou definovány jako `public`.
 
-[!code-csharp[Create and use hubs](hubs/sample/chathub.cs?range=10-13)]
+[!code-csharp[Create and use hubs](hubs/sample/hubs/chathub.cs?range=8-37)]
 
 Můžete zadat návratový typ a parametry, včetně komplexní typy a pole, jako byste v libovolné metody C#. SignalR zpracovává serializace a deserializace komplexní objekty a pole v parametry a návratové hodnoty.
 
@@ -75,20 +77,19 @@ Každé vlastnosti nebo metody v předchozích tabulkách vrátí objekt s `Send
 
 Volání na konkrétní klienty, použijte vlastnosti `Clients` objektu. V následujícím v následujícím příkladu `SendMessageToCaller` metoda ukazuje odesílání zprávy připojení, která volá metodu rozbočovače. `SendMessageToGroups` Metoda odešle zprávu do skupin, které jsou uložené v `List` s názvem `groups`.
 
-[!code-csharp[Send messages](hubs/sample/chathub.cs?range=15-24)]
+[!code-csharp[Send messages](hubs/sample/hubs/chathub.cs?range=15-24)]
 
 ## <a name="handle-events-for-a-connection"></a>Zpracování událostí pro připojení
 
 Poskytuje rozhraní API rozbočovače SignalR `OnConnectedAsync` a `OnDisconnectedAsync` virtuální metody ke správě a sledování připojení. Přepsání `OnConnectedAsync` virtuální metoda k provádění akcí, když se klient připojí k rozbočovači, jako je například přidávání do skupiny.
 
-[!code-csharp[Handle events](hubs/sample/chathub.cs?range=26-30)]
+[!code-csharp[Handle events](hubs/sample/hubs/chathub.cs?range=26-36)]
 
 ## <a name="handle-errors"></a>Zpracování chyb
 
 Výjimky vzniklé v metodách vašeho centra se posílají klientovi, který volá metodu. Na straně klienta JavaScript `invoke` metoda vrátí [JavaScript Promise](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises). Když klient obdrží chybu s obslužnou rutinou připojené pomocí promise `catch`, má vyvolat a předá jako JavaScriptu `Error` objektu.
 
-[!code-javascript[Error](hubs/sample/chat.js?range=20)]
-[!code-javascript[Error](hubs/sample/chat.js?range=16-18)]
+[!code-javascript[Error](hubs/sample/wwwroot/js/chat.js?range=22)]
 
 ## <a name="related-resources"></a>Související informační zdroje
 

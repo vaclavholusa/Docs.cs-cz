@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: 3ae73cb40b4db492883f302aeb559b9606aa8ee7
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: b81926f81fdfb832ff6ae3bd65c00fa09412fec4
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -21,7 +21,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Damien překážka](htt
 
 Vytvoření vícejazyčné webu pomocí ASP.NET Core vám umožní vaší lokality k dosažení širší cílovou skupinu. Základní technologie ASP.NET poskytuje služby a middleware pro lokalizace do různých jazyků a kultur.
 
-Internacionalizace zahrnuje [globalizace](https://docs.microsoft.com/dotnet/api/system.globalization) a [lokalizace](https://docs.microsoft.com/dotnet/standard/globalization-localization/localization). Globalizace je proces návrhu aplikace, které podporují různé jazykové verze. Globalizace přidává podporu pro vstup, zobrazení a výstupní sada skripty jazyka, které se vztahují k určité geografické oblasti.
+Internacionalizace zahrnuje [globalizace](/dotnet/api/system.globalization) a [lokalizace](/dotnet/standard/globalization-localization/localization). Globalizace je proces návrhu aplikace, které podporují různé jazykové verze. Globalizace přidává podporu pro vstup, zobrazení a výstupní sada skripty jazyka, které se vztahují k určité geografické oblasti.
 
 Lokalizace je proces přizpůsobení globalizovaná aplikaci, která již byl zpracován lokalizovatelnosti na konkrétní jazykové verze nebo národní prostředí. Další informace najdete v části **globalizace a lokalizace podmínky** téměř na konci tohoto dokumentu.
 
@@ -35,7 +35,7 @@ Lokalizace aplikací zahrnuje následující:
 
 ## <a name="make-the-apps-content-localizable"></a>Aby lokalizovatelný obsah aplikace
 
-Byla zavedená v ASP.NET Core `IStringLocalizer` a `IStringLocalizer<T>` byly navržen k zvýšení produktivity při vývoji lokalizované aplikace. `IStringLocalizer` používá [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager) a [ResourceReader](https://docs.microsoft.com/dotnet/api/system.resources.resourcereader) k poskytnutí prostředků specifické pro jazykovou verzi za běhu. Jednoduché rozhraní má indexer a `IEnumerable` pro vrácení lokalizovaných řetězců. `IStringLocalizer` nevyžaduje ukládání řetězce výchozí jazyk v souboru prostředků. Můžete vyvíjet aplikace cílené na lokalizace a není nutné vytvářet soubory prostředků v rané fázi vývoj. Následující kód ukazuje, jak zabalit řetězec "Title o" pro lokalizaci.
+Byla zavedená v ASP.NET Core `IStringLocalizer` a `IStringLocalizer<T>` byly navržen k zvýšení produktivity při vývoji lokalizované aplikace. `IStringLocalizer` používá [ResourceManager](/dotnet/api/system.resources.resourcemanager) a [ResourceReader](/dotnet/api/system.resources.resourcereader) k poskytnutí prostředků specifické pro jazykovou verzi za běhu. Jednoduché rozhraní má indexer a `IEnumerable` pro vrácení lokalizovaných řetězců. `IStringLocalizer` nevyžaduje ukládání řetězce výchozí jazyk v souboru prostředků. Můžete vyvíjet aplikace cílené na lokalizace a není nutné vytvářet soubory prostředků v rané fázi vývoj. Následující kód ukazuje, jak zabalit řetězec "Title o" pro lokalizaci.
 
 [!code-csharp[](localization/sample/Localization/Controllers/AboutController.cs)]
 
@@ -63,7 +63,7 @@ Někteří vývojáři použít `Startup` třídy tak, aby obsahovala globální
 
 ## <a name="view-localization"></a>Lokalizace zobrazení
 
-`IViewLocalizer` Služba poskytuje lokalizované řetězce pro [zobrazení](https://docs.microsoft.com/aspnet/core). `ViewLocalizer` Třída implementuje toto rozhraní a vyhledá umístění prostředků z cesty k souboru zobrazení. Následující kód ukazuje, jak používat výchozí implementaci `IViewLocalizer`:
+`IViewLocalizer` Služba poskytuje lokalizované řetězce pro [zobrazení](xref:mvc/views/overview). `ViewLocalizer` Třída implementuje toto rozhraní a vyhledá umístění prostředků z cesty k souboru zobrazení. Následující kód ukazuje, jak používat výchozí implementaci `IViewLocalizer`:
 
 [!code-cshtml[](localization/sample/Localization/Views/Home/About.cshtml)]
 
@@ -120,7 +120,7 @@ V kódu, který předchází `SharedResource` je třída odpovídající resx, k
 
 ### <a name="supportedcultures-and-supporteduicultures"></a>SupportedCultures a SupportedUICultures
 
-ASP.NET Core můžete zadat hodnoty dvou jazykové verze, `SupportedCultures` a `SupportedUICultures`. [CultureInfo](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo) objekt pro `SupportedCultures` určuje výsledky funkcí závislých na jazykové verzi, jako je například datum, čas, číslo a formátování měny. `SupportedCultures` také určuje pořadí řazení textu, konvence velká a malá písmena a porovnání řetězců. V tématu [CultureInfo.CurrentCulture](https://docs.microsoft.com/dotnet/api/system.stringcomparer.currentculture#System_StringComparer_CurrentCulture) Další informace o tom, jak server získá jazykovou verzi. `SupportedUICultures` Určuje, který překládá řetězce (z *RESX* soubory) jsou vyhledávat pomocí [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager). `ResourceManager` Jednoduše vyhledá specifické pro jazykovou verzi řetězce, které je dáno `CurrentUICulture`. Každé vlákno v rozhraní .NET má `CurrentCulture` a `CurrentUICulture` objekty. ASP.NET Core zkontroluje tyto hodnoty při vykreslování funkcí závislých na jazykové verzi. Pokud jazykové verze aktuálního vlákna je nastavena na "en US" (angličtina, USA), například `DateTime.Now.ToLongDateString()` zobrazí "Čtvrtek, února 18 2016", ale pokud `CurrentCulture` je nastaven na "es-ES" (španělština, Španělsko) bude výstup "jueves, de smluvních 18 de 2016".
+ASP.NET Core můžete zadat hodnoty dvou jazykové verze, `SupportedCultures` a `SupportedUICultures`. [CultureInfo](/dotnet/api/system.globalization.cultureinfo) objekt pro `SupportedCultures` určuje výsledky funkcí závislých na jazykové verzi, jako je například datum, čas, číslo a formátování měny. `SupportedCultures` také určuje pořadí řazení textu, konvence velká a malá písmena a porovnání řetězců. V tématu [CultureInfo.CurrentCulture](/dotnet/api/system.stringcomparer.currentculture#System_StringComparer_CurrentCulture) Další informace o tom, jak server získá jazykovou verzi. `SupportedUICultures` Určuje, který překládá řetězce (z *RESX* soubory) jsou vyhledávat pomocí [ResourceManager](/dotnet/api/system.resources.resourcemanager). `ResourceManager` Jednoduše vyhledá specifické pro jazykovou verzi řetězce, které je dáno `CurrentUICulture`. Každé vlákno v rozhraní .NET má `CurrentCulture` a `CurrentUICulture` objekty. ASP.NET Core zkontroluje tyto hodnoty při vykreslování funkcí závislých na jazykové verzi. Pokud jazykové verze aktuálního vlákna je nastavena na "en US" (angličtina, USA), například `DateTime.Now.ToLongDateString()` zobrazí "Čtvrtek, února 18 2016", ale pokud `CurrentCulture` je nastaven na "es-ES" (španělština, Španělsko) bude výstup "jueves, de smluvních 18 de 2016".
 
 ## <a name="resource-files"></a>Soubory prostředků
 
@@ -310,7 +310,7 @@ Nelze připojit *_SelectLanguagePartial.cshtml* na ukázkový kód pro tento pro
 
 Proces lokalizace aplikace taky vyžaduje základní znalost relevantní znakových sad, které jsou běžně používaný v vývoj moderních softwaru a pochopení problémů, souvisejících s nimi. I když všechny počítače ukládání textu čísla (kódy), uložení různých systémů stejný text použití různých čísel. Proces lokalizace odkazuje na překladu aplikace uživatelského rozhraní (UI) pro konkrétní jazykové verze nebo národní prostředí.
 
-[Lokalizovatelnost](https://docs.microsoft.com/dotnet/standard/globalization-localization/localizability-review) je dílčí proces pro ověření, že globalizovaná aplikace je připravena k lokalizaci.
+[Lokalizovatelnost](/dotnet/standard/globalization-localization/localizability-review) je dílčí proces pro ověření, že globalizovaná aplikace je připravena k lokalizaci.
 
 [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) formátu pro název jazykové verze je `<languagecode2>-<country/regioncode2>`, kde `<languagecode2>` je kód jazyka a `<country/regioncode2>` je subkulturu kód. Například `es-CL` pro španělština (základě), `en-US` pro angličtinu (Spojené státy), a `en-AU` pro angličtinu (Austrálie). [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) je kombinací ISO 639 malá jazykovou verzi dvoupísmenným kódem související s jazykem a ISO 3166 velká subkulturu dvoupísmenným kódem přidružené zemi či oblasti. V tématu [název jazykové verze jazyka](https://msdn.microsoft.com/library/ee825488(v=cs.20).aspx).
 
@@ -330,6 +330,6 @@ Podmínky:
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Projekt Localization.StarterWeb](https://github.com/aspnet/entropy) použít v článku.
-* [Soubory prostředků v sadě Visual Studio](https://docs.microsoft.com/cpp/windows/resource-files-visual-studio)
-* [Prostředky v soubory RESX](https://docs.microsoft.com/dotnet/framework/resources/working-with-resx-files-programmatically)
+* [Soubory prostředků v sadě Visual Studio](/cpp/windows/resource-files-visual-studio)
+* [Prostředky v soubory RESX](/dotnet/framework/resources/working-with-resx-files-programmatically)
 * [Sada nástrojů pro vícejazyčné aplikace](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)

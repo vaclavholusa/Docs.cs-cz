@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 4578a84adad668f1d60e202d7895cd67d451dc51
-ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
+ms.openlocfilehash: 690beaabeab098cf9b764730b1bf1bd04bf6b003
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - Migrations - 4 8
 
@@ -187,7 +187,7 @@ Spusťte aplikaci a ověřte, že všechno funguje.
 
 ## <a name="applying-migrations-in-production"></a>Použití migrace v produkčním prostředí
 
-Doporučujeme, abyste měli produkční aplikace **není** volání [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) při spuštění aplikace. `Migrate` nelze volat z aplikace v serverové farmě. Například pokud aplikace bylo cloudové nasazení se Škálováním na více systémů (více instancí aplikace běží).
+Doporučujeme, abyste měli produkční aplikace **není** volání [Database.Migrate](/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) při spuštění aplikace. `Migrate` nelze volat z aplikace v serverové farmě. Například pokud aplikace bylo cloudové nasazení se Škálováním na více systémů (více instancí aplikace běží).
 
 V rámci nasazení a řízené způsobem se má provést migrace databáze. Provozní databáze migrace přístupy patří:
 

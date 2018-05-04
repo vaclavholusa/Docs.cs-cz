@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 16369a14dbe97778724632317a82e11de5a8faed
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 0653906996f9f37d436ebefc6a738d2603788d53
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a>Migrujte na technologii ASP.NET 2.0 základní ověřování a identita
 
@@ -238,7 +238,7 @@ Proveďte následující změny v *Startup.cs*:
     ```
 
 ### <a name="setting-default-authentication-schemes"></a>Schémat ověřování výchozí nastavení
-V 1.x `AutomaticAuthenticate` a `AutomaticChallenge` vlastnosti [AuthenticationOptions](https://docs.microsoft.com/dotnet/api/Microsoft.AspNetCore.Builder.AuthenticationOptions?view=aspnetcore-1.1) základní třída měla má nastavit na jedno schéma ověřování. Došlo k dispozici žádné dobrý způsob, jak to vynucovat.
+V 1.x `AutomaticAuthenticate` a `AutomaticChallenge` vlastnosti [AuthenticationOptions](/dotnet/api/Microsoft.AspNetCore.Builder.AuthenticationOptions?view=aspnetcore-1.1) základní třída měla má nastavit na jedno schéma ověřování. Došlo k dispozici žádné dobrý způsob, jak to vynucovat.
 
 V rámci 2.0, byly odebrány tyto dvě vlastnosti jako vlastnosti na jednotlivých `AuthenticationOptions` instance. Lze nastavit v `AddAuthentication` volání metody v rámci `ConfigureServices` metodu *Startup.cs*:
 

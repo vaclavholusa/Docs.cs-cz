@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: 51f667352f7d92ab8c73d958c821c6acf5eb7529
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2e1257639ec41f657093439c5245b50adbad34dc
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -28,7 +28,7 @@ Funkci směrování je zodpovědná za mapování příchozího požadavku na ob
 
 ## <a name="routing-basics"></a>Směrování – základy
 
-Směrování používá *trasy* (implementace [IRouter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.routing.irouter)) na:
+Směrování používá *trasy* (implementace [IRouter](/dotnet/api/microsoft.aspnetcore.routing.irouter)) na:
 
 * mapování příchozích požadavků do *směrovat obslužné rutiny*
 
@@ -236,7 +236,7 @@ Následující tabulka obsahuje odpovědi s danou identifikátory URI.
 | /Package/sledovat / | \<Přejít, nebyla zjištěna shoda > |
 | ZÍSKAT /hello/Joe | Dobrý den, Jan! |
 | POST /hello/Joe | \<Přejít, odpovídá jenom metody GET protokolu HTTP > |
-| GET /hello/Joe/Smith | \<Přejít, nebyla zjištěna shoda > |
+| ZÍSKAT /hello/Joe/Smith | \<Přejít, nebyla zjištěna shoda > |
 
 Pokud konfigurujete jednu trasu, zavolejte `app.UseRouter` předávání v `IRouter` instance. Nebudete muset volat `RouteBuilder`.
 
@@ -279,7 +279,7 @@ Následující tabulka ukazuje některé šablony trasy a jejich chování.
 | {Stránky = Domů} | / | Odpovídá a nastaví `Page` na `Home` |
 | {Stránky = Domů}  | / Kontakt  | Odpovídá a nastaví `Page` na `Contact` |
 | {controller} / {action} / {id}? | / / Seznam produktů | Se mapuje na `Products` řadiče a `List` akce |
-| {controller} / {action} / {id}? | /Products/Details/123  |  Se mapuje na `Products` řadiče a `Details` akce.  `id` Nastavte na 123 |
+| {controller} / {action} / {id}? | / Produkty/podrobnosti/123  |  Se mapuje na `Products` řadiče a `Details` akce.  `id` Nastavte na 123 |
 | {controller=Home}/{action=Index}/{id?} | /  |  Se mapuje na `Home` řadiče a `Index` metoda; `id` je ignorována. |
 
 Pomocí šablony je obecně nejjednodušším přístupem při směrování. Omezení a výchozí nastavení můžete také uvést mimo šablonu trasy.
@@ -321,7 +321,7 @@ Následující tabulka ukazuje některé omezení trasy a jejich očekávané ch
 
 ## <a name="regular-expressions"></a>Regulární výrazy 
 
-Přidá rozhraní ASP.NET Core `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant` konstruktoru regulární výraz. V tématu [výčtu RegexOptions](https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions) popis těchto členů.
+Přidá rozhraní ASP.NET Core `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant` konstruktoru regulární výraz. V tématu [výčtu RegexOptions](/dotnet/api/system.text.regularexpressions.regexoptions) popis těchto členů.
 
 Regulární výrazy použít oddělovače a tokeny, které jsou podobné těm, které jsou používané směrování a jazyka C#. Regulární výraz tokeny, je nutné uvést. Například použijte regulární výraz `^\d{3}-\d{2}-\d{4}$` ve směrování, musí mít `\` znaků zadali jako `\\` v C# zdrojový soubor, který vyhnuli `\` řídicí znak řetězce (Pokud používáte [typu verbatim textové literály](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string). `{` , `}` , ' [' A ']' znaky musí být uvozena předchozího je řídicí znaky oddělovač parametr směrování.  Následující tabulka uvádí regulární výraz a uvozený verze.
 
@@ -363,10 +363,10 @@ Hodnoty explicitně nezadá, ale které se neshodují. nic se přidají do řet�
 
 | Vedlejším hodnoty | Explicitní hodnoty | Výsledek |
 | -------------   | -------------- | ------ |
-| controller="Home" | akce = "O" | `/Home/About` |
-| controller="Home" | Řadič = "Order", akce = "O" | `/Order/About` |
-| controller="Home",color="Red" | akce = "O" | `/Home/About` |
-| controller="Home" | akce = "O", barva = "Red" | `/Home/About?color=Red`
+| Řadič = "Domů" | akce = "O" | `/Home/About` |
+| Řadič = "Domů" | Řadič = "Order", akce = "O" | `/Order/About` |
+| Řadič = "Domů", color = "Red" | akce = "O" | `/Home/About` |
+| Řadič = "Domů" | akce = "O", barva = "Red" | `/Home/About?color=Red`
 
 Pokud trasa má výchozí hodnotu, která neodpovídá parametr a explicitně zadat tuto hodnotu, musí se shodovat výchozí hodnota. Příklad:
 

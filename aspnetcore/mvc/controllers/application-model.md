@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 9fbf81b382b76c108769204b4003f6e9f1b47d2c
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f61d04f6cf0aa054566d9f48a030cf268f2ba72a
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="work-with-the-application-model-in-aspnet-core"></a>Práce s model v aplikaci ASP.NET Core
 
@@ -39,18 +39,18 @@ Každou úroveň modelu má přístup k společného `Properties` umožňuje př
 
 ### <a name="iapplicationmodelprovider"></a>IApplicationModelProvider
 
-Jádro ASP.NET MVC načte model aplikace pomocí zprostředkovatele vzoru, definovaného [IApplicationModelProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelprovider) rozhraní. Tato část popisuje některé z interní implementace podrobnosti o tom, tato funkce zprostředkovatele. To je rozšířená – většinu aplikací, které využívají model aplikace by to udělat ve spolupráci s konvence.
+Jádro ASP.NET MVC načte model aplikace pomocí zprostředkovatele vzoru, definovaného [IApplicationModelProvider](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelprovider) rozhraní. Tato část popisuje některé z interní implementace podrobnosti o tom, tato funkce zprostředkovatele. To je rozšířená – většinu aplikací, které využívají model aplikace by to udělat ve spolupráci s konvence.
 
 Implementace `IApplicationModelProvider` rozhraní "wrap" jiné, s každou implementaci volání `OnProvidersExecuting` ve vzestupném pořadí podle jeho `Order` vlastnost. `OnProvidersExecuted` Metoda je volána poté v obráceném pořadí. Rozhraní framework definuje několik poskytovatelů:
 
 První (`Order=-1000`):
 
-* [`DefaultApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.internal.defaultapplicationmodelprovider)
+* [`DefaultApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.internal.defaultapplicationmodelprovider)
 
 Potom (`Order=-990`):
 
-* [`AuthorizationApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.internal.authorizationapplicationmodelprovider)
-* [`CorsApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
+* [`AuthorizationApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.internal.authorizationapplicationmodelprovider)
+* [`CorsApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
 
 > [!NOTE]
 > Pořadí, ve které dva poskytovatelé se stejnou hodnotou pro `Order` se nazývají není definován a proto se spolehnout.
@@ -66,7 +66,7 @@ Potom (`Order=-990`):
 * Přidání parametrů metody akce v kontextu
 * Použití trasy a další atributy
 
-Některé integrované chování jsou implementované `DefaultApplicationModelProvider`. Tento zprostředkovatel je zodpovědný za vytváření [ `ControllerModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel), která zase odkazuje [ `ActionModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel), [ `PropertyModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel), a [ `ParameterModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel) instance. `DefaultApplicationModelProvider` Třída je podrobnosti implementace interní framework, která může a bude v budoucnu změnit. 
+Některé integrované chování jsou implementované `DefaultApplicationModelProvider`. Tento zprostředkovatel je zodpovědný za vytváření [ `ControllerModel` ](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel), která zase odkazuje [ `ActionModel` ](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel), [ `PropertyModel` ](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel), a [ `ParameterModel` ](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel) instance. `DefaultApplicationModelProvider` Třída je podrobnosti implementace interní framework, která může a bude v budoucnu změnit. 
 
 `AuthorizationApplicationModelProvider` Zodpovídá za použití chování přidružené `AuthorizeFilter` a `AllowAnonymousFilter` atributy. [Další informace o těchto atributů](xref:security/authorization/simple).
 
@@ -78,10 +78,10 @@ Aplikační model definuje abstrakce konvence, které poskytují jednodušší z
 
 K dispozici jsou následující konvence:
 
-* [`IApplicationModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelconvention)
-* [`IControllerModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.icontrollermodelconvention)
-* [`IActionModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
-* [`IParameterModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
+* [`IApplicationModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelconvention)
+* [`IControllerModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.icontrollermodelconvention)
+* [`IActionModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
+* [`IParameterModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
 
 Konvence použijí přidáním možnosti MVC nebo implementací `Attribute`s a jejich použití k řadiče, akcí nebo parametrů akcí (podobně jako [ `Filters` ](xref:mvc/controllers/filters)). Na rozdíl od filtrů jsou konvence spustit pouze při spouštění aplikace, nikoli jako součást každý požadavek.
 
@@ -144,7 +144,7 @@ Tento atribut se používá pro metodu akce v `HomeController`:
 I když je název metody `SomeName`, atribut přepsání konvence MVC pomocí názvu metody a nahradí název akce s `MyCoolAction`. Proto trasy použité k dosažení této akce je `/Home/MyCoolAction`.
 
 > [!NOTE]
-> V tomto příkladu je v podstatě stejný jako pomocí integrovaných [název akce](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.actionnameattribute) atribut.
+> V tomto příkladu je v podstatě stejný jako pomocí integrovaných [název akce](/dotnet/api/microsoft.aspnetcore.mvc.actionnameattribute) atribut.
 
 ### <a name="sample-custom-routing-convention"></a>Ukázka: Vlastní směrování konvence
 
@@ -178,10 +178,10 @@ services.AddMvc().AddWebApiConventions();
 
 Konvence poskytované shimu se použije pouze na části aplikace, které předtím určité atributy použité k nim. Následující čtyři atributy se používají řídit, která řadiče by měl mít jejich konvence upraveném shim konvence:
 
-* [UseWebApiActionConventionsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiactionconventionsattribute)
-* [UseWebApiOverloadingAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapioverloadingattribute)
-* [UseWebApiParameterConventionsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiparameterconventionsattribute)
-* [UseWebApiRoutesAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiroutesattribute)
+* [UseWebApiActionConventionsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiactionconventionsattribute)
+* [UseWebApiOverloadingAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapioverloadingattribute)
+* [UseWebApiParameterConventionsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiparameterconventionsattribute)
+* [UseWebApiRoutesAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiroutesattribute)
 
 ### <a name="action-conventions"></a>Konvence akce
 
@@ -203,7 +203,7 @@ Kromě sadu konvence, balíček kompatibility obsahuje `System.Web.Http.ApiContr
 
 ## <a name="using-apiexplorer-to-document-your-app"></a>Pomocí ApiExplorer do dokumentů aplikace
 
-Zpřístupní aplikačního modelu [ `ApiExplorer` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.apiexplorermodel) vlastnost na každé úrovni, který slouží k procházení struktury aplikace. To může být slouží jako [generování stránky nápovědy pro vaše webové rozhraní API pomocí nástroje, například Swagger](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger). `ApiExplorer` Zpřístupňuje vlastnost `IsVisible` vlastnost, která můžete nastavit k určení, které části modelu vaše aplikace by měly být vystaveny. Můžete nakonfigurovat toto nastavení používá konvence:
+Zpřístupní aplikačního modelu [ `ApiExplorer` ](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.apiexplorermodel) vlastnost na každé úrovni, který slouží k procházení struktury aplikace. To může být slouží jako [generování stránky nápovědy pro vaše webové rozhraní API pomocí nástroje, například Swagger](xref:tutorials/web-api-help-pages-using-swagger). `ApiExplorer` Zpřístupňuje vlastnost `IsVisible` vlastnost, která můžete nastavit k určení, které části modelu vaše aplikace by měly být vystaveny. Můžete nakonfigurovat toto nastavení používá konvence:
 
 [!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/EnableApiExplorerApplicationConvention.cs)]
 

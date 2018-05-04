@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: a410d686b6140a487efb9962e94f64cfbec245f2
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 4c44063fb3385fc625c35c8a3cf06a35b5b0afb7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aspnet-core-middleware"></a>Middleware ASP.NET Core
 
@@ -30,7 +30,7 @@ Middleware je software, který je sestavit do kanálu určité aplikace pro zpra
 
 Delegáti požadavku se používají k vytvoření kanálu požadavku. Delegáti požadavek zpracovat každý požadavek HTTP.
 
-Žádosti o Delegáti jsou konfigurováni pomocí [spustit](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions), [mapy](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions), a [použití](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions) rozšiřující metody. Delegáta individuální žádosti může být zadaný v řádku jako anonymní metody (nazývané v řádku middleware), nebo může být definováno v třídě opakovaně použitelné. Tyto opakovaně použitelné třídy a metody anonymní v řádku jsou *middleware*, nebo *komponenty middlewaru*. Jednotlivé komponenty middleware v kanálu požadavku zodpovídá za vyvolání další komponenta v kanálu nebo krátká smyčka řetězu v případě potřeby.
+Žádosti o Delegáti jsou konfigurováni pomocí [spustit](/dotnet/api/microsoft.aspnetcore.builder.runextensions), [mapy](/dotnet/api/microsoft.aspnetcore.builder.mapextensions), a [použití](/dotnet/api/microsoft.aspnetcore.builder.useextensions) rozšiřující metody. Delegáta individuální žádosti může být zadaný v řádku jako anonymní metody (nazývané v řádku middleware), nebo může být definováno v třídě opakovaně použitelné. Tyto opakovaně použitelné třídy a metody anonymní v řádku jsou *middleware*, nebo *komponenty middlewaru*. Jednotlivé komponenty middleware v kanálu požadavku zodpovídá za vyvolání další komponenta v kanálu nebo krátká smyčka řetězu v případě potřeby.
 
 [Migrovat vytváření modulů HTTP v middlewaru](xref:migration/http-modules) najdete vysvětlení rozdílu mezi požadavek kanály v ASP.NET Core a ASP.NET 4.x a poskytuje další middleware ukázky.
 
@@ -46,9 +46,9 @@ Nejjednodušší možné aplikace ASP.NET Core nastaví delegáta jedné žádos
 
 [!code-csharp[](index/sample/Middleware/Startup.cs)]
 
-První [aplikace. Spustit](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions) delegáta ukončí kanálu.
+První [aplikace. Spustit](/dotnet/api/microsoft.aspnetcore.builder.runextensions) delegáta ukončí kanálu.
 
-Můžete řetězu více delegátů žádost společně s [aplikace. Použití](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions). `next` Parametr představuje další delegát v kanálu. (Mějte na paměti, že může krátká smyčka kanálu pomocí *není* volání *Další* parametru.) Můžete obvykle provádět akce před i po další delegáta, jak ukazuje tento příklad:
+Můžete řetězu více delegátů žádost společně s [aplikace. Použití](/dotnet/api/microsoft.aspnetcore.builder.useextensions). `next` Parametr představuje další delegát v kanálu. (Mějte na paměti, že může krátká smyčka kanálu pomocí *není* volání *Další* parametru.) Můžete obvykle provádět akce před i po další delegáta, jak ukazuje tento příklad:
 
 [!code-csharp[](index/sample/Chain/Startup.cs?name=snippet1)]
 
@@ -57,7 +57,7 @@ Můžete řetězu více delegátů žádost společně s [aplikace. Použití](h
 > - Může způsobit narušení protokolu. Například zápis více než deklarovaným `content-length`.
 > - Může dojít k poškození formátu textu. Například zápatí HTML zápis do souboru CSS.
 >
-> [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted) je užitečné nápovědu k označení, pokud byly odeslány hlavičky nebo text byl proveden zápis.
+> [HttpResponse.HasStarted](/dotnet/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted) je užitečné nápovědu k označení, pokud byly odeslány hlavičky nebo text byl proveden zápis.
 
 ## <a name="ordering"></a>Řazení
 
@@ -122,7 +122,7 @@ Pokud požadavek není zpracováván middleware se statickými soubory, je před
 
 -----------
 
-Následující příklad ukazuje, kde zpracovává požadavky pro statické soubory middleware se statickými soubory před middleware komprese odpovědi řazení middleware. Statické soubory nejsou komprimované s toto uspořádání middleware. Z odpovědi MVC [UseMvcWithDefaultRoute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_) lze komprimovat.
+Následující příklad ukazuje, kde zpracovává požadavky pro statické soubory middleware se statickými soubory před middleware komprese odpovědi řazení middleware. Statické soubory nejsou komprimované s toto uspořádání middleware. Z odpovědi MVC [UseMvcWithDefaultRoute](/dotnet/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_) lze komprimovat.
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -140,7 +140,7 @@ public void Configure(IApplicationBuilder app)
 
 Můžete nakonfigurovat pomocí kanálu HTTP `Use`, `Run`, a `Map`. `Use` Metoda může krátká smyčka kanálu (tj. Pokud není volání `next` delegáta požadavek). `Run` je konvence, a může vystavit některé komponenty middlewaru `Run[Middleware]` metody, které běží na konci kanálu.
 
-`Map*` rozšíření jsou použity jako konvence pro vytvoření větve kanálu. [Mapa](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) větví kanálu požadavku podle odpovídá zadanou cestu požadavku. Pokud cesta požadavku začíná zadané cestě, je proveden větev.
+`Map*` rozšíření jsou použity jako konvence pro vytvoření větve kanálu. [Mapa](/dotnet/api/microsoft.aspnetcore.builder.mapextensions) větví kanálu požadavku podle odpovídá zadanou cestu požadavku. Pokud cesta požadavku začíná zadané cestě, je proveden větev.
 
 [!code-csharp[](index/sample/Chain/StartupMap.cs?name=snippet1)]
 
@@ -155,7 +155,7 @@ V následující tabulce jsou uvedeny požadavky a odpovědi z `http://localhost
 
 Když `Map` se používá, segment(s) odpovídající cesta se odeberou z `HttpRequest.Path` a připojením k `HttpRequest.PathBase` pro každý požadavek.
 
-[MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions) větví kanál požadavku na základě výsledku daného predikátu. Všechny predikát typu `Func<HttpContext, bool>` lze použít k mapování požadavků na nové větve kanálu. V následujícím příkladu predikát slouží k detekci přítomnosti proměnné řetězce dotazu `branch`:
+[MapWhen](/dotnet/api/microsoft.aspnetcore.builder.mapwhenextensions) větví kanál požadavku na základě výsledku daného predikátu. Všechny predikát typu `Func<HttpContext, bool>` lze použít k mapování požadavků na nové větve kanálu. V následujícím příkladu predikát slouží k detekci přítomnosti proměnné řetězce dotazu `branch`:
 
 [!code-csharp[](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
 
@@ -225,7 +225,7 @@ Následující kód přesune delegáta middleware na třídu:
 > [!NOTE]
 > V ASP.NET Core 1.x, middleware `Task` název metody musí být `Invoke`. V technologii ASP.NET Core 2.0 nebo novější, název může být buď `Invoke` nebo `InvokeAsync`.
 
-Zpřístupní metodu rozšíření middleware prostřednictvím [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder):
+Zpřístupní metodu rozšíření middleware prostřednictvím [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder):
 
 [!code-csharp[](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
 
@@ -235,7 +235,7 @@ Následující kód volá middleware z `Configure`:
 
 Postupujte podle middleware [explicitní závislosti Princip](http://deviq.com/explicit-dependencies-principle/) díky zpřístupnění jeho závislé součásti v jeho konstruktoru. Middleware je vytvořený jednou za *životního cyklu aplikace*. V tématu *požadavků závislosti* níže v případě, je potřeba sdílet s middlewaru v rámci žádost o služby.
 
-Komponenty middlewaru lze vyřešit závislé z vkládání závislostí prostřednictvím parametrů konstruktor. [`UseMiddleware<T>`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary) Můžete také přijímat další parametry, přímo.
+Komponenty middlewaru lze vyřešit závislé z vkládání závislostí prostřednictvím parametrů konstruktor. [`UseMiddleware<T>`](/dotnet/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary) Můžete také přijímat další parametry, přímo.
 
 ### <a name="per-request-dependencies"></a>Závislosti na žádost
 

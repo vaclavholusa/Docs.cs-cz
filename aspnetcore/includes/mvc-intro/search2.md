@@ -33,7 +33,7 @@ Otevřete *Views/Movies/Index.cshtml* souboru a přidejte `<form>` značek zvýr
 
 [!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexForm1.cshtml?highlight=10-16&range=4-21)]
 
-HTML `<form>` značku používá [pomocná značku formuláře](../../mvc/views/working-with-forms.md), takže při odesílání formuláře řetězec filtru je odeslána do `Index` akce filmy řadiče. Uložte změny a pak testování filtru.
+HTML `<form>` značku používá [pomocná značku formuláře](xref:mvc/views/working-with-forms), takže při odesílání formuláře řetězec filtru je odeslána do `Index` akce filmy řadiče. Uložte změny a pak testování filtru.
 
 ![Index zobrazení s neodstraněných word zadali do textového pole Název filtru](../../tutorials/first-mvc-app/search/_static/filter.png)
 
@@ -53,6 +53,6 @@ Ale i v případě, přidejte tuto `[HttpPost]` verzi `Index` metoda, existuje o
 
 ![Síťové kartě nástrojů pro vývojáře v Microsoft Edge zobrazující textu žádosti s hodnotou searchString neodstraněných](../../tutorials/first-mvc-app/search/_static/f12_rb.png)
 
-Můžete zobrazit parametr vyhledávání a [XSRF](../../security/anti-request-forgery.md) tokenu v textu požadavku. Všimněte si, jak je uvedeno v předchozí kurz [pomocná značku formuláře](../../mvc/views/working-with-forms.md) generuje [XSRF](../../security/anti-request-forgery.md) token proti padělání. Jsme nejsou úpravy dat, takže potřebujeme si ověřit token v metodě řadiče.
+Můžete zobrazit parametr vyhledávání a [XSRF](xref:security/anti-request-forgery) tokenu v textu požadavku. Všimněte si, jak je uvedeno v předchozí kurz [pomocná značku formuláře](xref:mvc/views/working-with-forms) generuje [XSRF](xref:security/anti-request-forgery) token proti padělání. Jsme nejsou úpravy dat, takže potřebujeme si ověřit token v metodě řadiče.
 
 Protože parametr vyhledávání je v těle žádosti a nikoliv adresu URL, nemůže zaznamenat tyto informace vyhledávání záložku nebo sdílet s ostatními. Tuto opravu jsme budete udělat tak, že zadáte, by měl být požadavek `HTTP GET`.

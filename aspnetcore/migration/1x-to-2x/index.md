@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 4b7a13b31340f01c4f1527f602b925d3ac4e8241
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: c462f38ba345a9eaf648967524cadd1ba45aee19
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-from-aspnet-core-1x-to-20"></a>Migrace z ASP.NET Core 1.x na 2.0
 
 Podle [Scott Addie](https://github.com/scottaddie)
 
-V tomto článku vás provedeme prostřednictvím aktualizace existujícího projektu ASP.NET Core 1.x na technologii ASP.NET 2.0 jádra. Migrace vaší aplikace na technologii ASP.NET Core 2.0 umožňuje využít výhod [mnoho nových funkcí a vylepšení výkonu](https://docs.microsoft.com/aspnet/core/aspnetcore-2.0). 
+V tomto článku vás provedeme prostřednictvím aktualizace existujícího projektu ASP.NET Core 1.x na technologii ASP.NET 2.0 jádra. Migrace vaší aplikace na technologii ASP.NET Core 2.0 umožňuje využít výhod [mnoho nových funkcí a vylepšení výkonu](xref:aspnetcore-2.0). 
 
 Stávající aplikace ASP.NET Core 1.x vycházejí z šablony projektů specifické pro verzi. Jako rozhraní ASP.NET Core zpracovaní, takže udělat šablony projektů a počáteční kód v nich obsažené. Kromě aktualizace rozhraní ASP.NET Core, budete muset aktualizovat kód pro vaši aplikaci.
 
@@ -44,7 +44,7 @@ Projekty cílení na rozhraní .NET Framework by měli používat TFM verze vět
 
 <a name="global-json"></a>
 
-## <a name="update-net-core-sdk-version-in-globaljson"></a>Update .NET Core SDK version in global.json
+## <a name="update-net-core-sdk-version-in-globaljson"></a>Verze rozhraní .NET Core SDK aktualizace v global.json
 Pokud vaše řešení závisí na [ *global.json* ](https://docs.microsoft.com/dotnet/core/tools/global-json) souboru chcete zacílit na konkrétní verzi rozhraní .NET Core SDK, aktualizujte jeho `version` vlastnost na používání verze 2.0, který je nainstalovaný na počítači:
 
 [!code-json[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/global.json?highlight=3)]

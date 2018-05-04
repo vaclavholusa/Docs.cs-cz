@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 1a5d1bdcb20da8270a0605c3937af2a8700a4e7f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b6a8354bf438895f5188290013afefd883c4dd0a
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 en-us /
 
@@ -75,20 +75,20 @@ Optimistickou metodu souběžného zahrnuje následující možnosti:
 
 Pokud je vlastnost nakonfigurovaný jako [token souběžnosti](https://docs.microsoft.com/ef/core/modeling/concurrency):
 
-* EF základní ověřuje, že vlastnost neupravoval po se načetla. Kontrola dojde při [SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) nebo [SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) je volána.
-* Pokud vlastnost byla změněna od jeho tabulky se načetla, [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0) je vyvolána výjimka. 
+* EF základní ověřuje, že vlastnost neupravoval po se načetla. Kontrola dojde při [SaveChanges](/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) nebo [SaveChangesAsync](/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) je volána.
+* Pokud vlastnost byla změněna od jeho tabulky se načetla, [DbUpdateConcurrencyException](/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0) je vyvolána výjimka. 
 
 Databáze a datového modelu musí být nakonfigurované pro podporu vyvolání `DbUpdateConcurrencyException`.
 
 ### <a name="detecting-concurrency-conflicts-on-a-property"></a>Zjišťování konfliktů souběžnosti u vlastnosti
 
-Může být zjistil konflikt souběžnosti na úrovni vlastnost s [ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) atribut. Atribut je použít pro více vlastností v modelu. Další informace najdete v tématu [Data poznámky-ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations).
+Může být zjistil konflikt souběžnosti na úrovni vlastnost s [ConcurrencyCheck](/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) atribut. Atribut je použít pro více vlastností v modelu. Další informace najdete v tématu [Data poznámky-ConcurrencyCheck](/ef/core/modeling/concurrency#data-annotations).
 
 `[ConcurrencyCheck]` Atribut není použit v tomto kurzu.
 
 ### <a name="detecting-concurrency-conflicts-on-a-row"></a>Zjišťování konfliktů souběžnosti na řádek
 
-Ke zjišťování konfliktů souběžnosti, [rowversion](https://docs.microsoft.com/sql/t-sql/data-types/rowversion-transact-sql) sledování sloupce se přidá do modelu.  `rowversion` :
+Ke zjišťování konfliktů souběžnosti, [rowversion](/sql/t-sql/data-types/rowversion-transact-sql) sledování sloupce se přidá do modelu.  `rowversion` :
 
 * SQL Server se konkrétní. Ostatní databáze nemusí poskytují podobné funkce.
 * Slouží k určení, že entita nebyla změněna od načtení z databáze. 
@@ -107,7 +107,7 @@ V *Models/Department.cs*, přidejte sledování vlastnost s názvem RowVersion:
 
 [!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
 
-[Časové razítko](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.timestampattribute) atribut určuje, zda je tento sloupec součástí `Where` klauzuli `Update` a `Delete` příkazy. Atribut se nazývá `Timestamp` protože předchozí verze systému SQL Server používá SQL `timestamp` datového typu než SQL `rowversion` typ nahradí ji.
+[Časové razítko](/dotnet/api/system.componentmodel.dataannotations.timestampattribute) atribut určuje, zda je tento sloupec součástí `Where` klauzuli `Update` a `Delete` příkazy. Atribut se nazývá `Timestamp` protože předchozí verze systému SQL Server používá SQL `timestamp` datového typu než SQL `rowversion` typ nahradí ji.
 
 Rozhraní fluent API můžete také určit vlastnosti sledování:
 
@@ -127,7 +127,7 @@ Následující zvýrazněný kód ukazuje T-SQL, která ověřuje, že byla aktu
 
 [!code-sql[](intro/samples/sql.txt?highlight=4-6)]
 
-[@@ROWCOUNT ](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql) vrátí počet řádků, které jsou ovlivněné poslední příkaz. V žádné řádky jsou aktualizovány, vyvolá EF jádra `DbUpdateConcurrencyException`.
+[@@ROWCOUNT ](/sql/t-sql/functions/rowcount-transact-sql) vrátí počet řádků, které jsou ovlivněné poslední příkaz. V žádné řádky jsou aktualizovány, vyvolá EF jádra `DbUpdateConcurrencyException`.
 
 Uvidíte, že generuje základní EF T-SQL v okně výstupu sady Visual Studio.
 
@@ -193,7 +193,7 @@ Aktualizace *pages\departments\edit.cshtml.cs* následujícím kódem:
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet)]
 
-Ke zjištění problémem souběžnosti [původní hodnota](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue) je aktualizován `rowVersion` hodnotu z entity se načetla. Základní EF generuje příkazu SQL UPDATE s klauzulí WHERE, která obsahuje původní `RowVersion` hodnota. Pokud se příkaz UPDATE žádné řádky (žádné řádky mají původní `RowVersion` hodnotu), `DbUpdateConcurrencyException` je vyvolána výjimka.
+Ke zjištění problémem souběžnosti [původní hodnota](/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue) je aktualizován `rowVersion` hodnotu z entity se načetla. Základní EF generuje příkazu SQL UPDATE s klauzulí WHERE, která obsahuje původní `RowVersion` hodnota. Pokud se příkaz UPDATE žádné řádky (žádné řádky mají původní `RowVersion` hodnotu), `DbUpdateConcurrencyException` je vyvolána výjimka.
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_rv&highlight=24-999)]
 
@@ -305,8 +305,8 @@ V tématu [dědičnosti](xref:data/ef-mvc/inheritance) o tom, jak dědit datový
 
 ### <a name="additional-resources"></a>Další zdroje
 
-* [Tokeny souběžnosti v EF jádra](https://docs.microsoft.com/ef/core/modeling/concurrency)
-* [Popisovač souběžnost v EF jádra](https://docs.microsoft.com/ef/core/saving/concurrency)
+* [Tokeny souběžnosti v EF jádra](/ef/core/modeling/concurrency)
+* [Popisovač souběžnost v EF jádra](/ef/core/saving/concurrency)
 
 > [!div class="step-by-step"]
 > [Předchozí](xref:data/ef-rp/update-related-data)

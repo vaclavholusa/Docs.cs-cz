@@ -1,9 +1,9 @@
 
-Budeme se zabývat těmito tématy [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) v dalším kurzu. [Zobrazit](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.metadata.displaymetadata) atribut určuje, co má být zobrazen pro název pole (v tomto případě "Datum vydání" místo "ReleaseDate"). [Datový typ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.internal.datatypeattributeadapter) atribut určuje typ dat (datum), a proto není zobrazit čas informace uložené v poli.
+Budeme se zabývat těmito tématy [DataAnnotations](/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) v dalším kurzu. [Zobrazit](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.metadata.displaymetadata) atribut určuje, co má být zobrazen pro název pole (v tomto případě "Datum vydání" místo "ReleaseDate"). [Datový typ](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.internal.datatypeattributeadapter) atribut určuje typ dat (datum), a proto není zobrazit čas informace uložené v poli.
 
 Vyhledejte `Movies` řadiče a podržte ukazatel myši nad **upravit** odkaz zobrazíte cílová adresa URL.
 
-![Okno prohlížeče s myši přes odkaz pro úpravy a odkaz Adresa Url http://localhost:1234 nebo filmy/Edit/5 jsou uvedené.](../../tutorials/first-mvc-app/controller-methods-views/_static/edit7.png)
+![Okno prohlížeče s myši přes odkaz pro úpravy a odkaz Url http://localhost:1234/Movies/Edit/5 se zobrazí](../../tutorials/first-mvc-app/controller-methods-views/_static/edit7.png)
 
 **Upravit**, **podrobnosti**, a **odstranit** základní MVC ukotvení značky Pomocník generované odkazy *Views/Movies/Index.cshtml* souboru.
 
@@ -35,7 +35,7 @@ Následující kód ukazuje `HTTP POST Edit` metoda, která zpracovává odeslan
 
 [!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
 
-`[Bind]` Atribut je jedním ze způsobů pro ochranu proti [typu overpost](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). Vlastnosti v by měl obsahovat jenom `[Bind]` atribut, který chcete změnit. V tématu [chránit řadiči z přečerpání příspěvků](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application) Další informace. [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/) poskytnout alternativní způsob zabráníte přečerpání účtování.
+`[Bind]` Atribut je jedním ze způsobů pro ochranu proti [typu overpost](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). Vlastnosti v by měl obsahovat jenom `[Bind]` atribut, který chcete změnit. V tématu [chránit řadiči z přečerpání příspěvků](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application) Další informace. [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/) poskytnout alternativní způsob zabráníte přečerpání účtování.
 
 Všimněte si, druhý `Edit` předchází metody akce `[HttpPost]` atribut.
 
@@ -89,7 +89,7 @@ Všechny `HttpGet` metody v kontroleru film podle podobný Princip. Získají ob
 * [Úvod do pomocné rutiny značky](xref:mvc/views/tag-helpers/intro)
 * [Autor značky pomocné rutiny](xref:mvc/views/tag-helpers/authoring)
 * [Ochrana proti padělání požadavků](xref:security/anti-request-forgery)
-* Chránit řadiči z [typu overpost](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application)
+* Chránit řadiči z [typu overpost](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application)
 * [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/)
 * [Pomocník značku formuláře](xref:mvc/views/working-with-forms)
 * [Pomocník vstupní značky](xref:mvc/views/working-with-forms)

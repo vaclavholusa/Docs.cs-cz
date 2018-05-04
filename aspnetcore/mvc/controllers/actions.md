@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/actions
-ms.openlocfilehash: c2f37bc7999b4c4ccc985d25d2ef009954d8f3f0
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.openlocfilehash: 187ac69322545685380ad8f810bb65208c093d82
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="handle-requests-with-controllers-in-aspnet-core-mvc"></a>Obslužná rutina požadavky řadiče v aplikaci ASP.NET MVC jádra
 
@@ -54,7 +54,7 @@ Akce vrátí nic, ale často vrátit instanci třídy `IActionResult` (nebo `Tas
 
 ### <a name="controller-helper-methods"></a>Metody Helper kontroleru
 
-Řadiče obvykle dědí [řadič](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller), i když to není nutné. Odvozování z `Controller` poskytuje přístup k tří kategorií pomocné metody:
+Řadiče obvykle dědí [řadič](/dotnet/api/microsoft.aspnetcore.mvc.controller), i když to není nutné. Odvozování z `Controller` poskytuje přístup k tří kategorií pomocné metody:
 
 #### <a name="1-methods-resulting-in-an-empty-response-body"></a>1. Metody, což vede prázdný odpovědi
 
@@ -66,7 +66,7 @@ Existují dva typy výsledků v rámci této kategorie: přesměrování a stavo
 
     Tento typ vrátí stavový kód HTTP. Několik pomocné metody tohoto typu jsou `BadRequest`, `NotFound`, a `Ok`. Například `return BadRequest();` vytváří 400 stavový kód při spuštění. Když metody, jako `BadRequest`, `NotFound`, a `Ok` jsou přetížený, už kvalifikují jako respondéry stavový kód protokolu HTTP, protože probíhající vyjednávání obsahu.
 
-* **Redirect**
+* **přesměrování**
 
     Tento typ vrátí přesměrování na akci nebo cílové (pomocí `Redirect`, `LocalRedirect`, `RedirectToAction`, nebo `RedirectToRoute`). Například `return RedirectToAction("Complete", new {id = 123});` přesměruje na `Complete`, předá anonymní objekt.
 
@@ -78,7 +78,7 @@ Většina pomocné metody této kategorie patří `ContentType` vlastnosti, což
 
 Existují dva typy výsledků v rámci této kategorie: [zobrazení](xref:mvc/views/overview) a [formátu odpovědi](xref:web-api/advanced/formatting).
 
-* **View**
+* **Zobrazení**
 
     Tento typ vrací zobrazení, která používá model k vykreslení HTML. Například `return View(customer);` předá zobrazení pro datové vazby modelu.
 
@@ -90,7 +90,7 @@ Existují dva typy výsledků v rámci této kategorie: [zobrazení](xref:mvc/vi
 
 #### <a name="3-methods-resulting-in-a-non-empty-response-body-formatted-in-a-content-type-negotiated-with-the-client"></a>3. Metody, které jsou výsledkem text odpovědi neprázdné hodnoty ve formátu v vyjedná se klient pro typ obsahu.
 
-Tato kategorie se nazývá lépe **vyjednávání obsahu**. [Vyjednávání obsahu](xref:web-api/advanced/formatting#content-negotiation) platí vždy, když akce vrátí [ObjectResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.objectresult) typu nebo něco jiného než [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) implementace. Akce, která vrátí jinou hodnotu než`IActionResult` implementace (například `object`) také vrátí hodnotu formátu odpovědi.
+Tato kategorie se nazývá lépe **vyjednávání obsahu**. [Vyjednávání obsahu](xref:web-api/advanced/formatting#content-negotiation) platí vždy, když akce vrátí [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult) typu nebo něco jiného než [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult) implementace. Akce, která vrátí jinou hodnotu než`IActionResult` implementace (například `object`) také vrátí hodnotu formátu odpovědi.
 
 Některé metody helper tohoto typu zahrnují `BadRequest`, `CreatedAtRoute`, a `Ok`. Příklady těchto metod `return BadRequest(modelState);`, `return CreatedAtRoute("routename", values, newobject);`, a `return Ok(value);`, v uvedeném pořadí. Všimněte si, že `BadRequest` a `Ok` provedení vyjednávání obsahu pouze v případě, že je předaná hodnota; bez předávány hodnotu, místo toho slouží jako typy výsledků stavový kód HTTP. `CreatedAtRoute` Metody na druhé straně vždy provede vyjednávání obsahu od jeho přetížení všechny vyžadují předat hodnotu.
 
@@ -101,7 +101,7 @@ Aplikace obvykle sdílet části svých pracovních postupů. Mezi příklady pa
 Většina filtrovat atributy, jako například `[Authorize]`, lze použít na úrovni kontroler nebo akce v závislosti na požadované úrovni členitosti.
 
 Zpracování chyb a ukládání odpovědí do mezipaměti, jsou často mezi vyjímání otázky:
-   * [Zpracování chyb](xref:mvc/controllers/filters#exception-filters)
+   * [Ošetření chyb](xref:mvc/controllers/filters#exception-filters)
    * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
 
 Mnoho mezi vyjímání otázky můžete ke zpracování pomocí filtrů nebo vlastní [middleware](xref:fundamentals/middleware/index).

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/view-components
-ms.openlocfilehash: 41c220c8db4e560f8d144982589eba6220f17980
-ms.sourcegitcommit: 664c5150e2f6bfa16aefb236daf9e32ecf6ab2e9
+ms.openlocfilehash: a3614024c7f776e4502bc049180ae1c965e31db4
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="view-components-in-aspnet-core"></a>Zobrazení součásti v ASP.NET Core
 
@@ -40,7 +40,7 @@ Zobrazení součásti jsou určeny kdekoli, že máte opakovaně použitelné vy
 * Obsah bočním panelu na typické blogu
 * Přihlášení panel, který by být vykreslen na každé stránce a zobrazovat odkazy na odhlášení nebo přihlášení, v závislosti na protokolu ve stavu uživatele
 
-Součást zobrazení se skládá ze dvou částí: třídy (obvykle odvozené od [ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)) a výsledek vrátí (obvykle zobrazení). Jako řadiče, může být součást zobrazení objektů POCO, ale Většina vývojářů chtít využívat výhod metody a vlastnosti, které jsou k dispozici odvozené z `ViewComponent`.
+Součást zobrazení se skládá ze dvou částí: třídy (obvykle odvozené od [ViewComponent](/dotnet/api/microsoft.aspnetcore.mvc.viewcomponent)) a výsledek vrátí (obvykle zobrazení). Jako řadiče, může být součást zobrazení objektů POCO, ale Většina vývojářů chtít využívat výhod metody a vlastnosti, které jsou k dispozici odvozené z `ViewComponent`.
 
 ## <a name="creating-a-view-component"></a>Vytvoření zobrazení komponenty
 
@@ -202,7 +202,7 @@ Kopírování *Views/Shared/Components/PriorityList/Default.cshtml* soubor k zob
 
 [!code-cshtml[](../../mvc/views/view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/PVC.cshtml?highlight=3)]
 
-Update *Views/TodoList/Index.cshtml*:
+Aktualizace *Views/TodoList/Index.cshtml*:
 
 <!-- Views/TodoList/Index.cshtml is never imported, so change to test tutorial -->
 

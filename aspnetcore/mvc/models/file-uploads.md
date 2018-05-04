@@ -1,7 +1,7 @@
 ---
-title: "Nahrávání souborů v ASP.NET Core"
+title: Nahrávání souborů v ASP.NET Core
 author: ardalis
-description: "Jak používat vazby modelu a vysílání datového proudu k nahrání souborů v rozhraní ASP.NET MVC jádra."
+description: Jak používat vazby modelu a vysílání datového proudu k nahrání souborů v rozhraní ASP.NET MVC jádra.
 manager: wpickett
 ms.author: riande
 ms.date: 07/05/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/file-uploads
-ms.openlocfilehash: bfcbddb208fedaa4de46df782336176d97ea5bdc
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 7ba4f6d9e3901c310fe9fa7a70382d9243d8b347
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="file-uploads-in-aspnet-core"></a>Nahrávání souborů v ASP.NET Core
 
@@ -47,7 +47,7 @@ Aby bylo možné podporovat nahrávání souborů, musí zadat formuláře HTML 
 
 ![Soubor odeslání formuláře](file-uploads/_static/upload-form.png)
 
-Jednotlivé soubory, které jsou odeslány na server, je možné přistupovat prostřednictvím [vazby modelu](xref:mvc/models/model-binding) pomocí [IFormFile](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.iformfile) rozhraní. `IFormFile` má následující strukturu:
+Jednotlivé soubory, které jsou odeslány na server, je možné přistupovat prostřednictvím [vazby modelu](xref:mvc/models/model-binding) pomocí [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) rozhraní. `IFormFile` má následující strukturu:
 
 ```csharp
 public interface IFormFile
@@ -195,7 +195,7 @@ Ve výchozím nastavení je `30000000`, což je přibližně 28.6 MB. Hodnota lz
 </system.webServer>
 ```
 
-Toto nastavení platí jenom pro službu IIS. Při hostování na Kestrel chování nedojde ve výchozím nastavení. Další informace najdete v tématu [omezení počtu požadavků \<requestLimits\>](https://docs.microsoft.com/iis/configuration/system.webServer/security/requestFiltering/requestLimits/).
+Toto nastavení platí jenom pro službu IIS. Při hostování na Kestrel chování nedojde ve výchozím nastavení. Další informace najdete v tématu [omezení počtu požadavků \<requestLimits\>](/iis/configuration/system.webServer/security/requestFiltering/requestLimits/).
 
 ### <a name="null-reference-exception-with-iformfile"></a>Výjimka odkazu s hodnotou Null IFormFile
 

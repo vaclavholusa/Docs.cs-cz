@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: bf643cab3b82a9e2138403c6c61d1c15c85abfbd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2cec45afbf08e5dd379a54e780e4218bfc86d13f
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - Model dat – 5 8
 
@@ -44,14 +44,14 @@ Aktualizace *Models/Student.cs* s následujícími službami zvýrazněná kódu
 
 [!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-[Datový typ](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) atribut určuje datový typ, který je specifičtější než vnitřní typ databáze. V tomto případě kterou má být zobrazen pouze data, není datum a čas. [Datový typ výčtu](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1) poskytuje pro mnoho typů dat, jako je například datum, čas, telefonní číslo, měny, EmailAddress, atd. `DataType` Atributu můžete také povolit aplikaci automaticky získávat specifické pro typ funkce. Příklad:
+[Datový typ](/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) atribut určuje datový typ, který je specifičtější než vnitřní typ databáze. V tomto případě kterou má být zobrazen pouze data, není datum a čas. [Datový typ výčtu](/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1) poskytuje pro mnoho typů dat, jako je například datum, čas, telefonní číslo, měny, EmailAddress, atd. `DataType` Atributu můžete také povolit aplikaci automaticky získávat specifické pro typ funkce. Příklad:
 
 * `mailto:` Propojení se automaticky vytvoří pro `DataType.EmailAddress`.
 * Je k dispozici pro výběr data `DataType.Date` ve většině prohlížečů.
 
 `DataType` Atribut vysílá standardu HTML 5 `data-` (výrazný data dash) atributy, které využívají standardu HTML 5 prohlížeče. `DataType` Atributy neposkytují ověření.
 
-`DataType.Date` neuvádí formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole datum podle výchozích formátů podle serveru [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
+`DataType.Date` neuvádí formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole datum podle výchozích formátů podle serveru [CultureInfo](xref:fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
 
 `DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
 
@@ -74,13 +74,13 @@ Spusťte aplikaci. Přejděte na stránku studenty Index. Časy se už nezobrazu
 
 ### <a name="the-stringlength-attribute"></a>Atribut StringLength
 
-S atributy lze zadat pravidla ověření dat a chybové zprávy ověření. [StringLength](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=netframework-4.7.1) atribut určuje minimální a maximální délku znaků, které jsou v datovém poli. `StringLength` Atribut poskytuje také ověření na straně klienta a na straně serveru. Minimální hodnota nemá žádný vliv na schéma databáze.
+S atributy lze zadat pravidla ověření dat a chybové zprávy ověření. [StringLength](/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=netframework-4.7.1) atribut určuje minimální a maximální délku znaků, které jsou v datovém poli. `StringLength` Atribut poskytuje také ověření na straně klienta a na straně serveru. Minimální hodnota nemá žádný vliv na schéma databáze.
 
 Aktualizace `Student` modelu s následujícím kódem:
 
 [!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
-Předchozí kód omezuje názvy k více než 50 znaků. `StringLength` Atribut nemá uživatel zabránit v přechodu do prázdných znaků pro název. [Regulární výraz](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) atribut se používá k aplikování omezení na vstup. Například následující kód vyžaduje první znak, který má být velkými písmeny a zbývající znaků, které mají být abecední:
+Předchozí kód omezuje názvy k více než 50 znaků. `StringLength` Atribut nemá uživatel zabránit v přechodu do prázdných znaků pro název. [Regulární výraz](/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) atribut se používá k aplikování omezení na vstup. Například následující kód vyžaduje první znak, který má být velkými písmeny a zbývající znaků, které mají být abecední:
 
 ```csharp
 [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
@@ -572,7 +572,7 @@ Kód v aktualizaci `DbInitializer` přidá počáteční hodnoty dat pro nové e
 
 * Můžete taky odstraňte pomocí DB:
 
-  * **SQL Server Object Explorer** (SSOX).
+  * **Průzkumník objektů systému SQL Server** (SSOX).
   * `database drop` Rozhraní příkazového řádku příkaz:
 
     ```console

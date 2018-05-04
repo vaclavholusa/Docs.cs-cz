@@ -9,106 +9,106 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 5302cd5e8eebb3601aa64ac946c356b54521b198
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b7036b92e8f25613917cfc4112389be81c12f614
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a><span data-ttu-id="61c08-103">Začínáme s ASP.NET MVC jádra a sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="61c08-103">Get started with ASP.NET Core MVC and Visual Studio</span></span>
+# <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a><span data-ttu-id="08a92-103">Začínáme s ASP.NET MVC jádra a sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="08a92-103">Get started with ASP.NET Core MVC and Visual Studio</span></span>
 
-<span data-ttu-id="61c08-104">podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="61c08-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="08a92-104">podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="08a92-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
 [!INCLUDE [consider RP](../../includes/razor.md)]
 
-<span data-ttu-id="61c08-105">Existují 3 verze tohoto kurzu:</span><span class="sxs-lookup"><span data-stu-id="61c08-105">There are 3 versions of this tutorial:</span></span>
+<span data-ttu-id="08a92-105">Existují 3 verze tohoto kurzu:</span><span class="sxs-lookup"><span data-stu-id="08a92-105">There are 3 versions of this tutorial:</span></span>
 
-* <span data-ttu-id="61c08-106">systému macOS: [vytvořit aplikaci ASP.NET MVC základní pomocí sady Visual Studio pro Mac](xref:tutorials/first-mvc-app-mac/start-mvc)</span><span class="sxs-lookup"><span data-stu-id="61c08-106">macOS: [Create an ASP.NET Core MVC app with Visual Studio for Mac](xref:tutorials/first-mvc-app-mac/start-mvc)</span></span>
-* <span data-ttu-id="61c08-107">Windows: [vytvořit základní ASP.NET MVC aplikace pomocí sady Visual Studio](xref:tutorials/first-mvc-app/start-mvc)</span><span class="sxs-lookup"><span data-stu-id="61c08-107">Windows: [Create an ASP.NET Core MVC app with Visual Studio](xref:tutorials/first-mvc-app/start-mvc)</span></span>
-* <span data-ttu-id="61c08-108">systému macOS, Linux a Windows: [vytvořit aplikaci ASP.NET MVC jádra s kódem jazyka Visual Studio](xref:tutorials/first-mvc-app-xplat/start-mvc)</span><span class="sxs-lookup"><span data-stu-id="61c08-108">macOS, Linux, and Windows: [Create an ASP.NET Core MVC app with Visual Studio Code](xref:tutorials/first-mvc-app-xplat/start-mvc)</span></span>
+* <span data-ttu-id="08a92-106">systému macOS: [vytvořit aplikaci ASP.NET MVC základní pomocí sady Visual Studio pro Mac](xref:tutorials/first-mvc-app-mac/start-mvc)</span><span class="sxs-lookup"><span data-stu-id="08a92-106">macOS: [Create an ASP.NET Core MVC app with Visual Studio for Mac](xref:tutorials/first-mvc-app-mac/start-mvc)</span></span>
+* <span data-ttu-id="08a92-107">Windows: [vytvořit základní ASP.NET MVC aplikace pomocí sady Visual Studio](xref:tutorials/first-mvc-app/start-mvc)</span><span class="sxs-lookup"><span data-stu-id="08a92-107">Windows: [Create an ASP.NET Core MVC app with Visual Studio](xref:tutorials/first-mvc-app/start-mvc)</span></span>
+* <span data-ttu-id="08a92-108">systému macOS, Linux a Windows: [vytvořit aplikaci ASP.NET MVC jádra s kódem jazyka Visual Studio](xref:tutorials/first-mvc-app-xplat/start-mvc)</span><span class="sxs-lookup"><span data-stu-id="08a92-108">macOS, Linux, and Windows: [Create an ASP.NET Core MVC app with Visual Studio Code](xref:tutorials/first-mvc-app-xplat/start-mvc)</span></span>
 
-## <a name="install-visual-studio-and-net-core"></a><span data-ttu-id="61c08-109">Instalace sady Visual Studio a .NET Core</span><span class="sxs-lookup"><span data-stu-id="61c08-109">Install Visual Studio and .NET Core</span></span>
+## <a name="install-visual-studio-and-net-core"></a><span data-ttu-id="08a92-109">Instalace sady Visual Studio a .NET Core</span><span class="sxs-lookup"><span data-stu-id="08a92-109">Install Visual Studio and .NET Core</span></span>
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="61c08-110">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="61c08-110">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="08a92-110">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="08a92-110">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="61c08-111">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="61c08-111">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
-<span data-ttu-id="61c08-112">Nainstalujte Visual Studio Community 2017.</span><span class="sxs-lookup"><span data-stu-id="61c08-112">Install Visual Studio Community 2017.</span></span> <span data-ttu-id="61c08-113">Vyberte stahování komunity.</span><span class="sxs-lookup"><span data-stu-id="61c08-113">Select the Community download.</span></span> <span data-ttu-id="61c08-114">Tento krok přeskočte, pokud máte Visual Studio 2017 nainstalována.</span><span class="sxs-lookup"><span data-stu-id="61c08-114">Skip this step if you have Visual Studio 2017 installed.</span></span>
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="08a92-111">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="08a92-111">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+<span data-ttu-id="08a92-112">Nainstalujte Visual Studio Community 2017.</span><span class="sxs-lookup"><span data-stu-id="08a92-112">Install Visual Studio Community 2017.</span></span> <span data-ttu-id="08a92-113">Vyberte stahování komunity.</span><span class="sxs-lookup"><span data-stu-id="08a92-113">Select the Community download.</span></span> <span data-ttu-id="08a92-114">Tento krok přeskočte, pokud máte Visual Studio 2017 nainstalována.</span><span class="sxs-lookup"><span data-stu-id="08a92-114">Skip this step if you have Visual Studio 2017 installed.</span></span>
 
-* [<span data-ttu-id="61c08-115">Instalační program Visual Studio 2017 domovské stránky</span><span class="sxs-lookup"><span data-stu-id="61c08-115">Visual Studio 2017 Home page installer</span></span>](https://www.visualstudio.com/)
+* [<span data-ttu-id="08a92-115">Instalační program Visual Studio 2017 domovské stránky</span><span class="sxs-lookup"><span data-stu-id="08a92-115">Visual Studio 2017 Home page installer</span></span>](https://www.visualstudio.com/)
 
-<span data-ttu-id="61c08-116">Spusťte instalační program a vyberte následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="61c08-116">Run the installer and select the following workloads:</span></span>
+<span data-ttu-id="08a92-116">Spusťte instalační program a vyberte následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="08a92-116">Run the installer and select the following workloads:</span></span>
 
-* <span data-ttu-id="61c08-117">**Vývoj pro ASP.NET a webové** (v části **Web a Cloud**)</span><span class="sxs-lookup"><span data-stu-id="61c08-117">**ASP.NET and web development** (under **Web & Cloud**)</span></span>
-* <span data-ttu-id="61c08-118">**Vývoj pro různé platformy .NET core** (v části **ostatní modulové**)</span><span class="sxs-lookup"><span data-stu-id="61c08-118">**.NET Core cross-platform development** (under **Other Toolsets**)</span></span>
+* <span data-ttu-id="08a92-117">**Vývoj pro ASP.NET a webové** (v části **Web a Cloud**)</span><span class="sxs-lookup"><span data-stu-id="08a92-117">**ASP.NET and web development** (under **Web & Cloud**)</span></span>
+* <span data-ttu-id="08a92-118">**Vývoj pro různé platformy .NET core** (v části **ostatní modulové**)</span><span class="sxs-lookup"><span data-stu-id="08a92-118">**.NET Core cross-platform development** (under **Other Toolsets**)</span></span>
 
 ![**ASP.NET a webové vývoj ** (v části ** Web a Cloud **)](start-mvc/_static/web_workload.png)
 
 ![* *.NET základní cross-cross-platfrom vývoj ** (v části ** ostatní modulové **)](start-mvc/_static/x_plat_wl.png)
 
 * * *
-## <a name="create-a-web-app"></a><span data-ttu-id="61c08-121">Vytvoření webové aplikace</span><span class="sxs-lookup"><span data-stu-id="61c08-121">Create a web app</span></span>
+## <a name="create-a-web-app"></a><span data-ttu-id="08a92-121">Vytvoření webové aplikace</span><span class="sxs-lookup"><span data-stu-id="08a92-121">Create a web app</span></span>
 
-<span data-ttu-id="61c08-122">Ze sady Visual Studio, vyberte **soubor > Nový > projekt**.</span><span class="sxs-lookup"><span data-stu-id="61c08-122">From Visual Studio, select  **File > New > Project**.</span></span>
+<span data-ttu-id="08a92-122">Ze sady Visual Studio, vyberte **soubor > Nový > projekt**.</span><span class="sxs-lookup"><span data-stu-id="08a92-122">From Visual Studio, select  **File > New > Project**.</span></span>
 
 ![Soubor > Nový > Projekt](start-mvc/_static/alt_new_project.png)
 
-<span data-ttu-id="61c08-124">Dokončení **nový projekt** dialogové okno:</span><span class="sxs-lookup"><span data-stu-id="61c08-124">Complete the **New Project** dialog:</span></span>
+<span data-ttu-id="08a92-124">Dokončení **nový projekt** dialogové okno:</span><span class="sxs-lookup"><span data-stu-id="08a92-124">Complete the **New Project** dialog:</span></span>
 
-* <span data-ttu-id="61c08-125">V levém podokně, klepněte na **.NET Core**</span><span class="sxs-lookup"><span data-stu-id="61c08-125">In the left pane, tap **.NET Core**</span></span>
-* <span data-ttu-id="61c08-126">V prostředním podokně, klepněte na **webové aplikace ASP.NET Core (.NET Core)**</span><span class="sxs-lookup"><span data-stu-id="61c08-126">In the center pane, tap **ASP.NET Core Web Application (.NET Core)**</span></span>
-* <span data-ttu-id="61c08-127">Název projektu "MvcMovie" (je třeba název projektu "MvcMovie", při kopírování kód se bude shodovat s oboru názvů.)</span><span class="sxs-lookup"><span data-stu-id="61c08-127">Name the project "MvcMovie" (It's important to name the project "MvcMovie" so when you copy code, the namespace will match.)</span></span>
-* <span data-ttu-id="61c08-128">Klepněte na **OK**</span><span class="sxs-lookup"><span data-stu-id="61c08-128">Tap **OK**</span></span>
+* <span data-ttu-id="08a92-125">V levém podokně, klepněte na **.NET Core**</span><span class="sxs-lookup"><span data-stu-id="08a92-125">In the left pane, tap **.NET Core**</span></span>
+* <span data-ttu-id="08a92-126">V prostředním podokně, klepněte na **webové aplikace ASP.NET Core (.NET Core)**</span><span class="sxs-lookup"><span data-stu-id="08a92-126">In the center pane, tap **ASP.NET Core Web Application (.NET Core)**</span></span>
+* <span data-ttu-id="08a92-127">Název projektu "MvcMovie" (je třeba název projektu "MvcMovie", při kopírování kód se bude shodovat s oboru názvů.)</span><span class="sxs-lookup"><span data-stu-id="08a92-127">Name the project "MvcMovie" (It's important to name the project "MvcMovie" so when you copy code, the namespace will match.)</span></span>
+* <span data-ttu-id="08a92-128">Klepněte na **OK**</span><span class="sxs-lookup"><span data-stu-id="08a92-128">Tap **OK**</span></span>
 
-![<span data-ttu-id="61c08-129">Dialogové okno Nový projekt, .net core v levém podokně, web ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="61c08-129">New project dialog, .Net core in left pane, ASP.NET Core web</span></span> ](start-mvc/_static/new_project2.png)
+![<span data-ttu-id="08a92-129">Dialogové okno Nový projekt, .net core v levém podokně, web ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="08a92-129">New project dialog, .Net core in left pane, ASP.NET Core web</span></span> ](start-mvc/_static/new_project2.png)
 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="61c08-130">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="61c08-130">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="08a92-130">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="08a92-130">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="61c08-131">Dokončení **nové základní webové aplikace ASP.NET (.NET Core) – MvcMovie** dialogové okno:</span><span class="sxs-lookup"><span data-stu-id="61c08-131">Complete the **New ASP.NET Core Web Application (.NET Core) - MvcMovie** dialog:</span></span>
+<span data-ttu-id="08a92-131">Dokončení **nové základní webové aplikace ASP.NET (.NET Core) – MvcMovie** dialogové okno:</span><span class="sxs-lookup"><span data-stu-id="08a92-131">Complete the **New ASP.NET Core Web Application (.NET Core) - MvcMovie** dialog:</span></span>
 
-* <span data-ttu-id="61c08-132">V poli verze selektor rozevíracího seznamu vyberte **ASP.NET Core 2.-**</span><span class="sxs-lookup"><span data-stu-id="61c08-132">In the version selector drop-down box select **ASP.NET Core 2.-**</span></span>
-* <span data-ttu-id="61c08-133">Vyberte **webové Application(Model-View-Controller)**</span><span class="sxs-lookup"><span data-stu-id="61c08-133">Select **Web Application(Model-View-Controller)**</span></span>
-* <span data-ttu-id="61c08-134">Klepněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="61c08-134">Tap **OK**.</span></span>
+* <span data-ttu-id="08a92-132">V poli verze selektor rozevíracího seznamu vyberte **ASP.NET Core 2.-**</span><span class="sxs-lookup"><span data-stu-id="08a92-132">In the version selector drop-down box select **ASP.NET Core 2.-**</span></span>
+* <span data-ttu-id="08a92-133">Vyberte **webové Application(Model-View-Controller)**</span><span class="sxs-lookup"><span data-stu-id="08a92-133">Select **Web Application(Model-View-Controller)**</span></span>
+* <span data-ttu-id="08a92-134">Klepněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="08a92-134">Tap **OK**.</span></span>
 
-![<span data-ttu-id="61c08-135">Dialogové okno Nový projekt, .net core v levém podokně, web ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="61c08-135">New project dialog, .Net core in left pane, ASP.NET Core web</span></span> ](start-mvc/_static/new_project22.png)
+![<span data-ttu-id="08a92-135">Dialogové okno Nový projekt, .net core v levém podokně, web ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="08a92-135">New project dialog, .Net core in left pane, ASP.NET Core web</span></span> ](start-mvc/_static/new_project22.png)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="61c08-136">ASP.NET základní 1.x</span><span class="sxs-lookup"><span data-stu-id="61c08-136">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="08a92-136">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="08a92-136">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="61c08-137">Dokončení **nové základní webové aplikace ASP.NET (.NET Core) – MvcMovie** dialogové okno:</span><span class="sxs-lookup"><span data-stu-id="61c08-137">Complete the **New ASP.NET Core Web Application (.NET Core) - MvcMovie** dialog:</span></span>
+<span data-ttu-id="08a92-137">Dokončení **nové základní webové aplikace ASP.NET (.NET Core) – MvcMovie** dialogové okno:</span><span class="sxs-lookup"><span data-stu-id="08a92-137">Complete the **New ASP.NET Core Web Application (.NET Core) - MvcMovie** dialog:</span></span>
 
-* <span data-ttu-id="61c08-138">V klepnutí rozevíracího seznamu pro výběr verze **ASP.NET Core 1.1**</span><span class="sxs-lookup"><span data-stu-id="61c08-138">In the version selector drop-down box tap **ASP.NET Core 1.1**</span></span>
-* <span data-ttu-id="61c08-139">Klepněte na **webové aplikace**</span><span class="sxs-lookup"><span data-stu-id="61c08-139">Tap **Web Application**</span></span>
-* <span data-ttu-id="61c08-140">Ponechte výchozí **bez ověřování**</span><span class="sxs-lookup"><span data-stu-id="61c08-140">Keep the default **No Authentication**</span></span>
-* <span data-ttu-id="61c08-141">Klepněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="61c08-141">Tap **OK**.</span></span>
+* <span data-ttu-id="08a92-138">V klepnutí rozevíracího seznamu pro výběr verze **ASP.NET Core 1.1**</span><span class="sxs-lookup"><span data-stu-id="08a92-138">In the version selector drop-down box tap **ASP.NET Core 1.1**</span></span>
+* <span data-ttu-id="08a92-139">Klepněte na **webové aplikace**</span><span class="sxs-lookup"><span data-stu-id="08a92-139">Tap **Web Application**</span></span>
+* <span data-ttu-id="08a92-140">Ponechte výchozí **bez ověřování**</span><span class="sxs-lookup"><span data-stu-id="08a92-140">Keep the default **No Authentication**</span></span>
+* <span data-ttu-id="08a92-141">Klepněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="08a92-141">Tap **OK**.</span></span>
 
 ![Nové webové aplikace ASP.NET Core](start-mvc/_static/p3.png)
 
 ---
 
-<span data-ttu-id="61c08-143">Visual Studio použít výchozí šablonu pro projekt MVC, který jste právě vytvořili.</span><span class="sxs-lookup"><span data-stu-id="61c08-143">Visual Studio used a default template for the MVC project you just created.</span></span> <span data-ttu-id="61c08-144">Zadáním název projektu a výběrem možnosti několik Teď máte aplikaci práci.</span><span class="sxs-lookup"><span data-stu-id="61c08-144">You have a working app right now by entering a project name and selecting a few options.</span></span> <span data-ttu-id="61c08-145">Toto je jednoduchá starter projektu a je dobrým místem, kde začít,</span><span class="sxs-lookup"><span data-stu-id="61c08-145">This is a simple starter project, and it's a good place to start,</span></span>
+<span data-ttu-id="08a92-143">Visual Studio použít výchozí šablonu pro projekt MVC, který jste právě vytvořili.</span><span class="sxs-lookup"><span data-stu-id="08a92-143">Visual Studio used a default template for the MVC project you just created.</span></span> <span data-ttu-id="08a92-144">Zadáním název projektu a výběrem možnosti několik Teď máte aplikaci práci.</span><span class="sxs-lookup"><span data-stu-id="08a92-144">You have a working app right now by entering a project name and selecting a few options.</span></span> <span data-ttu-id="08a92-145">Toto je jednoduchá starter projektu a je dobrým místem, kde začít,</span><span class="sxs-lookup"><span data-stu-id="08a92-145">This is a simple starter project, and it's a good place to start,</span></span>
 
-<span data-ttu-id="61c08-146">Klepněte na **F5** a spusťte aplikaci v režimu ladění nebo **Ctrl + F5** v režimu bez ladění.</span><span class="sxs-lookup"><span data-stu-id="61c08-146">Tap **F5** to run the app in debug mode or **Ctrl-F5** in non-debug mode.</span></span>
+<span data-ttu-id="08a92-146">Klepněte na **F5** a spusťte aplikaci v režimu ladění nebo **Ctrl + F5** v režimu bez ladění.</span><span class="sxs-lookup"><span data-stu-id="08a92-146">Tap **F5** to run the app in debug mode or **Ctrl-F5** in non-debug mode.</span></span>
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->
 ![spuštění aplikace](start-mvc/_static/1.png)
 
-* <span data-ttu-id="61c08-148">Visual Studio spustí [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) a spustí aplikace.</span><span class="sxs-lookup"><span data-stu-id="61c08-148">Visual Studio starts [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) and runs your app.</span></span> <span data-ttu-id="61c08-149">Všimněte si, že se zobrazí na panelu Adresa `localhost:port#` a není něco jako `example.com`.</span><span class="sxs-lookup"><span data-stu-id="61c08-149">Notice that the address bar shows `localhost:port#` and not something like `example.com`.</span></span> <span data-ttu-id="61c08-150">Je to způsobeno `localhost` je standardní název hostitele místního počítače.</span><span class="sxs-lookup"><span data-stu-id="61c08-150">That's because `localhost` is the standard hostname for your local computer.</span></span> <span data-ttu-id="61c08-151">Když Visual Studio vytvoří webový projekt, náhodný port se používá pro webový server.</span><span class="sxs-lookup"><span data-stu-id="61c08-151">When Visual Studio creates a web project, a random port is used for the web server.</span></span> <span data-ttu-id="61c08-152">Na obrázku výše je číslo portu 5 000.</span><span class="sxs-lookup"><span data-stu-id="61c08-152">In the image above, the port number is 5000.</span></span> <span data-ttu-id="61c08-153">Adresu URL v prohlížeči zobrazí `localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="61c08-153">The URL in the browser shows `localhost:5000`.</span></span> <span data-ttu-id="61c08-154">Při spuštění aplikace se zobrazí jiné číslo portu.</span><span class="sxs-lookup"><span data-stu-id="61c08-154">When you run the app, you'll see a different port number.</span></span>
-* <span data-ttu-id="61c08-155">Spuštění aplikace s **Ctrl + F5** (režim bez ladění) umožňuje provádět změny kódu, uložte soubor, aktualizujte stránku prohlížeče a podívejte se změny kódu.</span><span class="sxs-lookup"><span data-stu-id="61c08-155">Launching the app with **Ctrl+F5** (non-debug mode) allows you to make code changes, save the file, refresh the browser, and see the code changes.</span></span> <span data-ttu-id="61c08-156">Celá řada vývojářů dávají přednost používání režimu bez ladění k rychlému spusťte aplikaci a zobrazit změny.</span><span class="sxs-lookup"><span data-stu-id="61c08-156">Many developers prefer to use non-debug mode to quickly launch the app and view changes.</span></span>
-* <span data-ttu-id="61c08-157">Můžete spustit aplikaci v ladění nebo režim bez ladění z **ladění** položky nabídky:</span><span class="sxs-lookup"><span data-stu-id="61c08-157">You can launch the app in debug or non-debug mode from the **Debug** menu item:</span></span>
+* <span data-ttu-id="08a92-148">Visual Studio spustí [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) a spustí aplikace.</span><span class="sxs-lookup"><span data-stu-id="08a92-148">Visual Studio starts [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) and runs your app.</span></span> <span data-ttu-id="08a92-149">Všimněte si, že se zobrazí na panelu Adresa `localhost:port#` a není něco jako `example.com`.</span><span class="sxs-lookup"><span data-stu-id="08a92-149">Notice that the address bar shows `localhost:port#` and not something like `example.com`.</span></span> <span data-ttu-id="08a92-150">Je to způsobeno `localhost` je standardní název hostitele místního počítače.</span><span class="sxs-lookup"><span data-stu-id="08a92-150">That's because `localhost` is the standard hostname for your local computer.</span></span> <span data-ttu-id="08a92-151">Když Visual Studio vytvoří webový projekt, náhodný port se používá pro webový server.</span><span class="sxs-lookup"><span data-stu-id="08a92-151">When Visual Studio creates a web project, a random port is used for the web server.</span></span> <span data-ttu-id="08a92-152">Na obrázku výše je číslo portu 5 000.</span><span class="sxs-lookup"><span data-stu-id="08a92-152">In the image above, the port number is 5000.</span></span> <span data-ttu-id="08a92-153">Adresu URL v prohlížeči zobrazí `localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="08a92-153">The URL in the browser shows `localhost:5000`.</span></span> <span data-ttu-id="08a92-154">Při spuštění aplikace se zobrazí jiné číslo portu.</span><span class="sxs-lookup"><span data-stu-id="08a92-154">When you run the app, you'll see a different port number.</span></span>
+* <span data-ttu-id="08a92-155">Spuštění aplikace s **Ctrl + F5** (režim bez ladění) umožňuje provádět změny kódu, uložte soubor, aktualizujte stránku prohlížeče a podívejte se změny kódu.</span><span class="sxs-lookup"><span data-stu-id="08a92-155">Launching the app with **Ctrl+F5** (non-debug mode) allows you to make code changes, save the file, refresh the browser, and see the code changes.</span></span> <span data-ttu-id="08a92-156">Celá řada vývojářů dávají přednost používání režimu bez ladění k rychlému spusťte aplikaci a zobrazit změny.</span><span class="sxs-lookup"><span data-stu-id="08a92-156">Many developers prefer to use non-debug mode to quickly launch the app and view changes.</span></span>
+* <span data-ttu-id="08a92-157">Můžete spustit aplikaci v ladění nebo režim bez ladění z **ladění** položky nabídky:</span><span class="sxs-lookup"><span data-stu-id="08a92-157">You can launch the app in debug or non-debug mode from the **Debug** menu item:</span></span>
 
 ![Ladění nabídky](start-mvc/_static/debug_menu.png)
 
-* <span data-ttu-id="61c08-159">Aplikace můžete ladit, klepnutím **IIS Express** tlačítko</span><span class="sxs-lookup"><span data-stu-id="61c08-159">You can debug the app by tapping the **IIS Express** button</span></span>
+* <span data-ttu-id="08a92-159">Aplikace můžete ladit, klepnutím **IIS Express** tlačítko</span><span class="sxs-lookup"><span data-stu-id="08a92-159">You can debug the app by tapping the **IIS Express** button</span></span>
 
 ![Služby IIS Express](start-mvc/_static/iis_express.png)
 
-<span data-ttu-id="61c08-161">Výchozí šablony vám práce **domácí o** a **kontaktujte** odkazy.</span><span class="sxs-lookup"><span data-stu-id="61c08-161">The default template gives you working **Home, About** and **Contact** links.</span></span> <span data-ttu-id="61c08-162">Na obrázku prohlížeče výše nezobrazí tyto odkazy.</span><span class="sxs-lookup"><span data-stu-id="61c08-162">The browser image above doesn't show these links.</span></span> <span data-ttu-id="61c08-163">V závislosti na velikosti prohlížeče možná budete muset klikněte na ikonu navigace je chcete zobrazit.</span><span class="sxs-lookup"><span data-stu-id="61c08-163">Depending on the size of your browser, you might need to click the navigation icon to show them.</span></span>
+<span data-ttu-id="08a92-161">Výchozí šablony vám práce **domácí o** a **kontaktujte** odkazy.</span><span class="sxs-lookup"><span data-stu-id="08a92-161">The default template gives you working **Home, About** and **Contact** links.</span></span> <span data-ttu-id="08a92-162">Na obrázku prohlížeče výše nezobrazí tyto odkazy.</span><span class="sxs-lookup"><span data-stu-id="08a92-162">The browser image above doesn't show these links.</span></span> <span data-ttu-id="08a92-163">V závislosti na velikosti prohlížeče možná budete muset klikněte na ikonu navigace je chcete zobrazit.</span><span class="sxs-lookup"><span data-stu-id="08a92-163">Depending on the size of your browser, you might need to click the navigation icon to show them.</span></span>
 
 ![v pravé horní části ikonu Navigace](start-mvc/_static/2.png)
 
-<span data-ttu-id="61c08-165">Pokud byla spuštěna v režimu ladění, klepněte na **Shift + F5** Zastavit ladění.</span><span class="sxs-lookup"><span data-stu-id="61c08-165">If you were running in debug mode, tap **Shift-F5** to stop debugging.</span></span>
+<span data-ttu-id="08a92-165">Pokud byla spuštěna v režimu ladění, klepněte na **Shift + F5** Zastavit ladění.</span><span class="sxs-lookup"><span data-stu-id="08a92-165">If you were running in debug mode, tap **Shift-F5** to stop debugging.</span></span>
 
-<span data-ttu-id="61c08-166">V další části tohoto kurzu jsme vám další informace o MVC a zahájit zápis nějaký kód.</span><span class="sxs-lookup"><span data-stu-id="61c08-166">In the next part of this tutorial, we'll learn about MVC and start writing some code.</span></span>
+<span data-ttu-id="08a92-166">V další části tohoto kurzu jsme vám další informace o MVC a zahájit zápis nějaký kód.</span><span class="sxs-lookup"><span data-stu-id="08a92-166">In the next part of this tutorial, we'll learn about MVC and start writing some code.</span></span>
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="61c08-167">Next</span><span class="sxs-lookup"><span data-stu-id="61c08-167">Next</span></span>](adding-controller.md)  
+> [<span data-ttu-id="08a92-167">Next</span><span class="sxs-lookup"><span data-stu-id="08a92-167">Next</span></span>](adding-controller.md)  

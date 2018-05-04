@@ -9,23 +9,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/roles
-ms.openlocfilehash: 7bc7ed35ef0496e855b024f92c915eb85b55511b
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f1e7209cae1e2a58ad536547d655dd744ca0d3f7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="role-based-authorization-in-aspnet-core"></a><span data-ttu-id="2ba98-103">Autorizace na základě rolí v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="2ba98-103">Role-based authorization in ASP.NET Core</span></span>
+# <a name="role-based-authorization-in-aspnet-core"></a><span data-ttu-id="7472e-103">Autorizace na základě rolí v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7472e-103">Role-based authorization in ASP.NET Core</span></span>
 
 <a name="security-authorization-role-based"></a>
 
-<span data-ttu-id="2ba98-104">Při vytvoření identity může patřit do jedné nebo více rolí.</span><span class="sxs-lookup"><span data-stu-id="2ba98-104">When an identity is created it may belong to one or more roles.</span></span> <span data-ttu-id="2ba98-105">Například Tracy může patřit do role správce a uživatele, a přitom Scott lze přiřadit pouze k roli uživatele.</span><span class="sxs-lookup"><span data-stu-id="2ba98-105">For example, Tracy may belong to the Administrator and User roles whilst Scott may only belong to the User role.</span></span> <span data-ttu-id="2ba98-106">Jak jsou tyto role vytvořit a spravovat závisí na základní úložiště proces autorizace.</span><span class="sxs-lookup"><span data-stu-id="2ba98-106">How these roles are created and managed depends on the backing store of the authorization process.</span></span> <span data-ttu-id="2ba98-107">Role jsou viditelné na vývojáře prostřednictvím [IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole) metodu [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) třídy.</span><span class="sxs-lookup"><span data-stu-id="2ba98-107">Roles are exposed to the developer through the [IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole) method on the [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) class.</span></span>
+<span data-ttu-id="7472e-104">Při vytvoření identity může patřit do jedné nebo více rolí.</span><span class="sxs-lookup"><span data-stu-id="7472e-104">When an identity is created it may belong to one or more roles.</span></span> <span data-ttu-id="7472e-105">Například Tracy může patřit do role správce a uživatele, a přitom Scott lze přiřadit pouze k roli uživatele.</span><span class="sxs-lookup"><span data-stu-id="7472e-105">For example, Tracy may belong to the Administrator and User roles whilst Scott may only belong to the User role.</span></span> <span data-ttu-id="7472e-106">Jak jsou tyto role vytvořit a spravovat závisí na základní úložiště proces autorizace.</span><span class="sxs-lookup"><span data-stu-id="7472e-106">How these roles are created and managed depends on the backing store of the authorization process.</span></span> <span data-ttu-id="7472e-107">Role jsou viditelné na vývojáře prostřednictvím [IsInRole](/dotnet/api/system.security.principal.genericprincipal.isinrole) metodu [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal) třídy.</span><span class="sxs-lookup"><span data-stu-id="7472e-107">Roles are exposed to the developer through the [IsInRole](/dotnet/api/system.security.principal.genericprincipal.isinrole) method on the [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal) class.</span></span>
 
-## <a name="adding-role-checks"></a><span data-ttu-id="2ba98-108">Přidání role kontroly</span><span class="sxs-lookup"><span data-stu-id="2ba98-108">Adding role checks</span></span>
+## <a name="adding-role-checks"></a><span data-ttu-id="7472e-108">Přidání role kontroly</span><span class="sxs-lookup"><span data-stu-id="7472e-108">Adding role checks</span></span>
 
-<span data-ttu-id="2ba98-109">Kontroly autorizace na základě rolí jsou deklarativní&mdash;vývojář vloží je v rámci svůj kód proti kontroler nebo akce v kontroleru, určení rolí, které má aktuální uživatel musí být členem skupiny k přístupu k požadovanému zdroji.</span><span class="sxs-lookup"><span data-stu-id="2ba98-109">Role-based authorization checks are declarative&mdash;the developer embeds them within their code, against a controller or an action within a controller, specifying roles which the current user must be a member of to access the requested resource.</span></span>
+<span data-ttu-id="7472e-109">Kontroly autorizace na základě rolí jsou deklarativní&mdash;vývojář vloží je v rámci svůj kód proti kontroler nebo akce v kontroleru, určení rolí, které má aktuální uživatel musí být členem skupiny k přístupu k požadovanému zdroji.</span><span class="sxs-lookup"><span data-stu-id="7472e-109">Role-based authorization checks are declarative&mdash;the developer embeds them within their code, against a controller or an action within a controller, specifying roles which the current user must be a member of to access the requested resource.</span></span>
 
-<span data-ttu-id="2ba98-110">Například následující kód omezuje přístup na všechny akce na `AdministrationController` uživatelům, kteří jsou členy `Administrator` role:</span><span class="sxs-lookup"><span data-stu-id="2ba98-110">For example, the following code limits access to any actions on the `AdministrationController` to users who are a member of the `Administrator` role:</span></span>
+<span data-ttu-id="7472e-110">Například následující kód omezuje přístup na všechny akce na `AdministrationController` uživatelům, kteří jsou členy `Administrator` role:</span><span class="sxs-lookup"><span data-stu-id="7472e-110">For example, the following code limits access to any actions on the `AdministrationController` to users who are a member of the `Administrator` role:</span></span>
 
 ```csharp
 [Authorize(Roles = "Administrator")]
@@ -34,7 +34,7 @@ public class AdministrationController : Controller
 }
 ```
 
-<span data-ttu-id="2ba98-111">Více rolí můžete zadat jako seznam oddělený čárkami:</span><span class="sxs-lookup"><span data-stu-id="2ba98-111">You can specify multiple roles as a comma separated list:</span></span>
+<span data-ttu-id="7472e-111">Více rolí můžete zadat jako seznam oddělený čárkami:</span><span class="sxs-lookup"><span data-stu-id="7472e-111">You can specify multiple roles as a comma separated list:</span></span>
 
 ```csharp
 [Authorize(Roles = "HRManager,Finance")]
@@ -43,9 +43,9 @@ public class SalaryController : Controller
 }
 ```
 
-<span data-ttu-id="2ba98-112">Tento řadič pouze bude přístupný pro uživatele, kteří jsou členy z `HRManager` role nebo `Finance` role.</span><span class="sxs-lookup"><span data-stu-id="2ba98-112">This controller would be only accessible by users who are members of the `HRManager` role or the `Finance` role.</span></span>
+<span data-ttu-id="7472e-112">Tento řadič pouze bude přístupný pro uživatele, kteří jsou členy z `HRManager` role nebo `Finance` role.</span><span class="sxs-lookup"><span data-stu-id="7472e-112">This controller would be only accessible by users who are members of the `HRManager` role or the `Finance` role.</span></span>
 
-<span data-ttu-id="2ba98-113">Pokud použijete více atributů uživatele s přístupem musí být členem všech rolí zadaný; Následující příklad vyžaduje, že uživatel musí být členem skupiny i `PowerUser` a `ControlPanelUser` role.</span><span class="sxs-lookup"><span data-stu-id="2ba98-113">If you apply multiple attributes then an accessing user must be a member of all the roles specified; the following sample requires that a user must be a member of both the `PowerUser` and `ControlPanelUser` role.</span></span>
+<span data-ttu-id="7472e-113">Pokud použijete více atributů uživatele s přístupem musí být členem všech rolí zadaný; Následující příklad vyžaduje, že uživatel musí být členem skupiny i `PowerUser` a `ControlPanelUser` role.</span><span class="sxs-lookup"><span data-stu-id="7472e-113">If you apply multiple attributes then an accessing user must be a member of all the roles specified; the following sample requires that a user must be a member of both the `PowerUser` and `ControlPanelUser` role.</span></span>
 
 ```csharp
 [Authorize(Roles = "PowerUser")]
@@ -55,7 +55,7 @@ public class ControlPanelController : Controller
 }
 ```
 
-<span data-ttu-id="2ba98-114">Můžete dále omezit přístup s použitím atributů autorizace další role na úrovni akce:</span><span class="sxs-lookup"><span data-stu-id="2ba98-114">You can further limit access by applying additional role authorization attributes at the action level:</span></span>
+<span data-ttu-id="7472e-114">Můžete dále omezit přístup s použitím atributů autorizace další role na úrovni akce:</span><span class="sxs-lookup"><span data-stu-id="7472e-114">You can further limit access by applying additional role authorization attributes at the action level:</span></span>
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -72,9 +72,9 @@ public class ControlPanelController : Controller
 }
 ```
 
-<span data-ttu-id="2ba98-115">V předchozí kód fragment kódu členů `Administrator` role nebo `PowerUser` role přístup řadičem a `SetTime` akce, ale pouze členové `Administrator` role přístup `ShutDown` akce.</span><span class="sxs-lookup"><span data-stu-id="2ba98-115">In the previous code snippet members of the `Administrator` role or the `PowerUser` role can access the controller and the `SetTime` action, but only members of the `Administrator` role can access the `ShutDown` action.</span></span>
+<span data-ttu-id="7472e-115">V předchozí kód fragment kódu členů `Administrator` role nebo `PowerUser` role přístup řadičem a `SetTime` akce, ale pouze členové `Administrator` role přístup `ShutDown` akce.</span><span class="sxs-lookup"><span data-stu-id="7472e-115">In the previous code snippet members of the `Administrator` role or the `PowerUser` role can access the controller and the `SetTime` action, but only members of the `Administrator` role can access the `ShutDown` action.</span></span>
 
-<span data-ttu-id="2ba98-116">Můžete taky zablokovat řadič, ale povolit neověřená anonymní přístup k jednotlivým akcím.</span><span class="sxs-lookup"><span data-stu-id="2ba98-116">You can also lock down a controller but allow anonymous, unauthenticated access to individual actions.</span></span>
+<span data-ttu-id="7472e-116">Můžete taky zablokovat řadič, ale povolit neověřená anonymní přístup k jednotlivým akcím.</span><span class="sxs-lookup"><span data-stu-id="7472e-116">You can also lock down a controller but allow anonymous, unauthenticated access to individual actions.</span></span>
 
 ```csharp
 [Authorize]
@@ -93,9 +93,9 @@ public class ControlPanelController : Controller
 
 <a name="security-authorization-role-policy"></a>
 
-## <a name="policy-based-role-checks"></a><span data-ttu-id="2ba98-117">Kontroly rolí na základě zásad</span><span class="sxs-lookup"><span data-stu-id="2ba98-117">Policy based role checks</span></span>
+## <a name="policy-based-role-checks"></a><span data-ttu-id="7472e-117">Kontroly rolí na základě zásad</span><span class="sxs-lookup"><span data-stu-id="7472e-117">Policy based role checks</span></span>
 
-<span data-ttu-id="2ba98-118">Požadavky na role může být vyjádřený také pomocí nové zásady syntaxe, kde vývojář zaregistruje zásady při spuštění jako součást konfigurace služby autorizace.</span><span class="sxs-lookup"><span data-stu-id="2ba98-118">Role requirements can also be expressed using the new Policy syntax, where a developer registers a policy at startup as part of the Authorization service configuration.</span></span> <span data-ttu-id="2ba98-119">K tomu obvykle dochází v `ConfigureServices()` ve vaší *Startup.cs* souboru.</span><span class="sxs-lookup"><span data-stu-id="2ba98-119">This normally occurs in `ConfigureServices()` in your *Startup.cs* file.</span></span>
+<span data-ttu-id="7472e-118">Požadavky na role může být vyjádřený také pomocí nové zásady syntaxe, kde vývojář zaregistruje zásady při spuštění jako součást konfigurace služby autorizace.</span><span class="sxs-lookup"><span data-stu-id="7472e-118">Role requirements can also be expressed using the new Policy syntax, where a developer registers a policy at startup as part of the Authorization service configuration.</span></span> <span data-ttu-id="7472e-119">K tomu obvykle dochází v `ConfigureServices()` ve vaší *Startup.cs* souboru.</span><span class="sxs-lookup"><span data-stu-id="7472e-119">This normally occurs in `ConfigureServices()` in your *Startup.cs* file.</span></span>
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -109,7 +109,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-<span data-ttu-id="2ba98-120">Zásady se použijí, pomocí `Policy` vlastnost na `AuthorizeAttribute` atribut:</span><span class="sxs-lookup"><span data-stu-id="2ba98-120">Policies are applied using the `Policy` property on the `AuthorizeAttribute` attribute:</span></span>
+<span data-ttu-id="7472e-120">Zásady se použijí, pomocí `Policy` vlastnost na `AuthorizeAttribute` atribut:</span><span class="sxs-lookup"><span data-stu-id="7472e-120">Policies are applied using the `Policy` property on the `AuthorizeAttribute` attribute:</span></span>
 
 ```csharp
 [Authorize(Policy = "RequireAdministratorRole")]
@@ -119,11 +119,11 @@ public IActionResult Shutdown()
 }
 ```
 
-<span data-ttu-id="2ba98-121">Pokud chcete zadat víc povolených rolí v požadavek, pak je můžete zadat jako parametry, které `RequireRole` metoda:</span><span class="sxs-lookup"><span data-stu-id="2ba98-121">If you want to specify multiple allowed roles in a requirement then you can specify them as parameters to the `RequireRole` method:</span></span>
+<span data-ttu-id="7472e-121">Pokud chcete zadat víc povolených rolí v požadavek, pak je můžete zadat jako parametry, které `RequireRole` metoda:</span><span class="sxs-lookup"><span data-stu-id="7472e-121">If you want to specify multiple allowed roles in a requirement then you can specify them as parameters to the `RequireRole` method:</span></span>
 
 ```csharp
 options.AddPolicy("ElevatedRights", policy =>
                   policy.RequireRole("Administrator", "PowerUser", "BackupAdministrator"));
 ```
 
-<span data-ttu-id="2ba98-122">Tento příklad autorizuje uživatele, kteří patří do `Administrator`, `PowerUser` nebo `BackupAdministrator` role.</span><span class="sxs-lookup"><span data-stu-id="2ba98-122">This example authorizes users who belong to the `Administrator`, `PowerUser` or `BackupAdministrator` roles.</span></span>
+<span data-ttu-id="7472e-122">Tento příklad autorizuje uživatele, kteří patří do `Administrator`, `PowerUser` nebo `BackupAdministrator` role.</span><span class="sxs-lookup"><span data-stu-id="7472e-122">This example authorizes users who belong to the `Administrator`, `PowerUser` or `BackupAdministrator` roles.</span></span>

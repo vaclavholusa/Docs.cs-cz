@@ -1,3 +1,0 @@
-Pro generování certifikáty podepsané svým držitelem SSL v systému Windows, můžete použít rutinu prostředí PowerShell [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps). Nástroj třetí strany, který usnadňuje generování certifikáty podepsané svým držitelem, najdete v části [nástroje SelfCert](https://www.pluralsight.com/blog/software-development/selfcert-create-a-self-signed-certificate-interactively-gui-or-programmatically-in-net).
-
-V systému macOS a Linux můžete vytvořit certifikát podepsaný svým držitelem pomocí [OpenSSL](https://www.openssl.org/).

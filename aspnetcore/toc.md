@@ -132,6 +132,7 @@
 ### [HTTP.sys](fundamentals/servers/httpsys.md)
 ## [Globalizace a lokalizace](xref:fundamentals/localization)
 ### [Konfigurace lokalizačních souborů Portable Object pomocí Orchard Core](xref:fundamentals/portable-object-localization)
+## [Iniciování požadavků HTTP](xref:fundamentals/http-requests)
 ## [Funkce požadavků](fundamentals/request-features.md)
 ## [Úlohy na pozadí s hostovanými službami](xref:fundamentals/hosted-services)
 ## [Primitiva](xref:fundamentals/primitives/index)
@@ -143,9 +144,11 @@
 ## [Výběr mezi ASP.NET Core a ASP.NET](choose-aspnet-framework.md)
 
 # [Stránky Razor](xref:mvc/razor-pages/index)
-## [Funkce směrování a aplikačních konvencí](xref:mvc/razor-pages/razor-pages-convention-features)
 ## [Metody filtrování pro Razor Pages](xref:mvc/razor-pages/filter)
+## [Vytvoření knihovny tříd Razor](xref:mvc/razor-pages/ui-class)
+## [Funkce směrování a aplikačních konvencí](xref:mvc/razor-pages/razor-pages-convention-features)
 ## [Sada Razor SDK](xref:mvc/razor-pages/sdk)
+
 
 # [MVC](mvc/overview.md)
 ## [Vazby modelu](mvc/models/model-binding.md)
@@ -355,7 +358,7 @@
 ## [Z ASP.NET Core 1.x do 2.0](xref:migration/1x-to-2x/index)
 ### [Ověřování a identita](xref:migration/1x-to-2x/identity-2x)
 
-# [Referenční dokumentace ke knihovně API](https://docs.microsoft.com/dotnet/api/?view=aspnetcore-2.0)
+# [Referenční dokumentace ke knihovně API](/dotnet/api/?view=aspnetcore-2.0)
 
 # [Poznámky k verzi 2.0](aspnetcore-2.0.md)
 ## [Poznámky k verzi 1.1](aspnetcore-1.1.md)

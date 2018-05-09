@@ -12,20 +12,17 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 44bf29e099583bf9d49f2715d3ff4f748728ad8b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9b2dc05089126fd5f4c1b0a0bd85b8a39f3041dc
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>Vývoj aplikací ASP.NET se službou Azure Active Directory
 ====================
 podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Nástroje Microsoft ASP.NET pro Azure Active Directory usnadňuje povolení ověřování pro webové aplikace hostované na [Azure](https://www.windowsazure.com/home/features/web-sites/). Ověřování Azure můžete použít k ověření uživatele služeb Office 365 z vaší organizace, podnikové účty synchronizované z vaší místní službou Active Directory nebo uživatelé vytvoření ve vlastní domény Azure Active Directory. Povolení ověřování systému Windows Azure nakonfiguruje aplikace k ověření uživatelů pomocí jedné [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) klienta.
-> 
->  V tomto kurzu napsal Rick Anderson [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
-
+Nástroje Microsoft ASP.NET pro Azure Active Directory zjednodušuje povolení ověřování pro webové aplikace hostované na [Azure](https://www.windowsazure.com/home/features/web-sites/). Ověřování Azure můžete použít k ověření uživatele služeb Office 365 z vaší organizace, podnikové účty synchronizované z vaší místní službou Active Directory nebo uživatelé vytvoření ve vlastní domény Azure Active Directory. Povolení ověřování systému Windows Azure nakonfiguruje aplikace k ověření uživatelů pomocí jedné [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) klienta.
 
 Tento kurz vám ukáže, jak vytvořit aplikaci ASP.NET, který je nakonfigurován pro přihlašování pomocí [Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (Azure AD). Také se naučíte, jak zavolat rozhraní Graph API k načtení informací o aktuálně přihlášeného uživatele a jak nasadit aplikaci do Azure.
 

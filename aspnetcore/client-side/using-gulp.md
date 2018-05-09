@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: 7a3d7807484b76e40e9728e0c750fa1383cc271f
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 13f30be7670983bd65f8402404b841039bdacb09
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="use-gulp-in-aspnet-core"></a>Použití Gulp v ASP.NET Core
 
@@ -326,7 +326,7 @@ Chcete-li přepnout mezi kompilování v různých prostředích, změňte **ASP
 
     Všimněte si, že šablony stylů odkazují na nezmenšenou verze souborů šablon stylů CSS.
 
-Další informace související s prostředím v ASP.NET Core najdete v tématu [pracovat s několika prostředí](../fundamentals/environments.md).
+Další informace související s prostředím v ASP.NET Core najdete v tématu [použijte prostředí s více](../fundamentals/environments.md).
 
 ## <a name="task-and-module-details"></a>Podrobnosti úlohy a modulu
 

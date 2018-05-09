@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: f9215767bf9a7c8b43b474848ba7dff7c3ddaf24
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: cf63766dc4ae94d784190d6dbc7b5beb57342f42
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity na jádro ASP.NET
 
@@ -49,7 +49,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
    # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
-   Pokud používáte rozhraní příkazového řádku .NET Core, vytvořte nový projekt pomocí ``dotnet new mvc --auth Individual``. Tento příkaz vytvoří nový projekt se stejným kódem šablony Identity, které sada Visual Studio vytvoří.
+   Pokud používáte rozhraní příkazového řádku .NET Core, vytvořte nový projekt pomocí `dotnet new mvc --auth Individual`. Tento příkaz vytvoří nový projekt se stejným kódem šablony Identity, které sada Visual Studio vytvoří.
 
    Vytvořený projekt obsahuje `Microsoft.AspNetCore.Identity.EntityFrameworkCore` balíček, která ukládá data identit a schématu na SQL Server pomocí [Entity Framework Core](https://docs.microsoft.com/ef/).
 
@@ -88,30 +88,30 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
    ![Použití migrace webové stránky](identity/_static/apply-migrations.png)
 
-   Alternativně můžete otestovat pomocí ASP.NET Core Identity s vaší aplikací bez trvalé databáze pomocí databáze v paměti. Chcete-li používat databázi v paměti, přidejte ``Microsoft.EntityFrameworkCore.InMemory`` balíčku do vaší aplikace a upravit volání vaší aplikace ``AddDbContext`` v ``ConfigureServices`` následujícím způsobem:
+   Alternativně můžete otestovat pomocí ASP.NET Core Identity s vaší aplikací bez trvalé databáze pomocí databáze v paměti. Chcete-li používat databázi v paměti, přidejte `Microsoft.EntityFrameworkCore.InMemory` balíčku do vaší aplikace a upravit volání vaší aplikace `AddDbContext` v `ConfigureServices` následujícím způsobem:
 
    ```csharp
    services.AddDbContext<ApplicationDbContext>(options =>
        options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
    ```
 
-   Když uživatel klikne **zaregistrovat** odkaz, ``Register`` akce je volána v ``AccountController``. ``Register`` Akce vytvoří uživatele voláním `CreateAsync` na `_userManager` objektu (poskytované ``AccountController`` pomocí vkládání závislostí):
+   Když uživatel klikne **zaregistrovat** odkaz, `Register` akce je volána v `AccountController`. `Register` Akce vytvoří uživatele voláním `CreateAsync` na `_userManager` objektu (poskytované `AccountController` pomocí vkládání závislostí):
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
-   Pokud byl uživatel vytvořen úspěšně, uživatel je přihlášen pomocí volání ``_signInManager.SignInAsync``.
+   Pokud byl uživatel vytvořen úspěšně, uživatel je přihlášen pomocí volání `_signInManager.SignInAsync`.
 
    **Poznámka:** najdete v části [účet potvrzení](xref:security/authentication/accconfirm#prevent-login-at-registration) kroky, aby se zabránilo okamžitou přihlášení při registraci.
 
 4. Přihlásit se.
 
-   Uživatelé se mohou přihlásit kliknutím **přihlásit** odkaz v horní části webu, nebo se může přesměrováni na stránku přihlášení Pokud pokus o přístup k součástí lokality, která vyžaduje ověření. Když uživatel odešle formulář na přihlašovací stránku, ``AccountController`` ``Login`` akce je volána.
+   Uživatelé se mohou přihlásit kliknutím **přihlásit** odkaz v horní části webu, nebo se může přesměrováni na stránku přihlášení Pokud pokus o přístup k součástí lokality, která vyžaduje ověření. Když uživatel odešle formulář na přihlašovací stránku, `AccountController` `Login` akce je volána.
 
-   ``Login`` Volání akce ``PasswordSignInAsync`` na ``_signInManager`` objektu (poskytované ``AccountController`` pomocí vkládání závislostí).
+   `Login` Volání akce `PasswordSignInAsync` na `_signInManager` objektu (poskytované `AccountController` pomocí vkládání závislostí).
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
 
-   Základní ``Controller`` třídy zpřístupňuje ``User`` vlastnost, která je přístupné z metody kontroleru. Například můžete vytvořit výčet `User.Claims` a autorizační rozhodnutí. Další informace najdete v tématu [autorizace](xref:security/authorization/index).
+   Základní `Controller` třídy zpřístupňuje `User` vlastnost, která je přístupné z metody kontroleru. Například můžete vytvořit výčet `User.Claims` a autorizační rozhodnutí. Další informace najdete v tématu [autorizace](xref:security/authorization/index).
 
 5. Odhlaste.
 
@@ -149,7 +149,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
     Výchozí hodnota *webové aplikace ASP.NET Core* šablona projektu umožňuje uživatelům přístup k veškeré akce v aplikaci bez nutnosti k přihlášení. Chcete-li ověřit, že ASP.NET Identity funguje, přidejte`[Authorize]` atribut `About` akce `Home` řadiče.
 
-    ```cs
+    ```csharp
     [Authorize]
     public IActionResult About()
     {
@@ -166,7 +166,7 @@ V tomto tématu budete Naučte se používat ASP.NET Core Identity k přidání 
 
     Otevřete okno příkazového řádku a přejděte do projektu kořenový adresář obsahující `.csproj` souboru. Spustit [dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz ke spuštění aplikace:
 
-    ```cs
+    ```csharp
     dotnet run 
     ```
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/preventing-open-redirects
-ms.openlocfilehash: 4a210b8bb8091e7c036d4bc98306e3b3f90d7d46
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 9ac6b311170dbbc27dd388842c071bc64add6f08
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>Zabránit útokům otevřete přesměrování v ASP.NET Core
 
@@ -29,18 +29,18 @@ Vzhledem k tomu, že cílová adresa URL je zadána v řetězci dotazu požadavk
 
 ### <a name="an-example-attack"></a>Příklad útoku
 
-Uživatel se zlými úmysly může vyvíjet útok díky uživatel se zlými úmysly přístup k pověření uživatele nebo citlivé informace ve vaší aplikaci. Zahájit útoku, jejich přimět kliknutím na odkaz na přihlašovací stránku vašeho webu, s uživateli `returnUrl` hodnotu querystring adresu URL. Například [NerdDinner.com](http://nerddinner.com) ukázkovou aplikaci (napsané pro rozhraní ASP.NET MVC) zahrnuje takové přihlašovací stránky zde: ``http://nerddinner.com/Account/LogOn?returnUrl=/Home/About``. Útoku pak postupujte podle následujících kroků:
+Uživatel se zlými úmysly může vyvíjet útok díky uživatel se zlými úmysly přístup k pověření uživatele nebo citlivé informace ve vaší aplikaci. Zahájit útoku, jejich přimět kliknutím na odkaz na přihlašovací stránku vašeho webu, s uživateli `returnUrl` hodnotu querystring adresu URL. Například [NerdDinner.com](http://nerddinner.com) ukázkovou aplikaci (napsané pro rozhraní ASP.NET MVC) zahrnuje takové přihlašovací stránky zde: `http://nerddinner.com/Account/LogOn?returnUrl=/Home/About`. Útoku pak postupujte podle následujících kroků:
 
-1. Uživatel klikne na odkaz ``http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn`` (Všimněte si, druhý adresa URL je nerddi**n**če, není nerddi**nn**če).
+1. Uživatel klikne na odkaz `http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn` (Všimněte si, druhý adresa URL je nerddi**n**če, není nerddi**nn**če).
 2. Uživatel se přihlásí úspěšně.
-3. Uživatel je přesměrován (lokalitou) na ``http://nerddiner.com/Account/LogOn`` (škodlivé weby, které vypadá skutečné lokality).
+3. Uživatel je přesměrován (lokalitou) na `http://nerddiner.com/Account/LogOn` (škodlivé weby, které vypadá skutečné lokality).
 4. Uživatel znovu přihlásí (poskytnutí škodlivý lokality své přihlašovací údaje) a je přesměrován zpět na web skutečné.
 
 Uživatel se pravděpodobně domníváte jejich první pokus o přihlášení se nezdařilo a jejich druhý byla úspěšná. S největší pravděpodobností zůstanou nebere v úvahu ohrožený přihlašovacích údajů.
 
 ![Proces útoku otevřete přesměrování](preventing-open-redirects/_static/open-redirection-attack-process.png)
 
-Některé servery kromě přihlašovací stránky, zadejte přesměrování stránky nebo koncové body. Představte si aplikace se zobrazí stránka s otevřete přesměrování, ``/Home/Redirect``. Útočník by mohl vytvořit, například pomocí odkazu v e-mailu, který přejde na ``[yoursite]/Home/Redirect?url=http://phishingsite.com/Home/Login``. Běžný uživatel na adrese URL a zjistit, že začíná název vaší lokality. Důvěřující, který, bude kliknutím na odkaz. Otevřete přesměrování by uživatel pak pošlete do lokality phishing, která vypadá totožná s tímto počítačem, a uživatel by pravděpodobně přihlášení, které budou věřit je váš web.
+Některé servery kromě přihlašovací stránky, zadejte přesměrování stránky nebo koncové body. Představte si aplikace se zobrazí stránka s otevřete přesměrování, `/Home/Redirect`. Útočník by mohl vytvořit, například pomocí odkazu v e-mailu, který přejde na `[yoursite]/Home/Redirect?url=http://phishingsite.com/Home/Login`. Běžný uživatel na adrese URL a zjistit, že začíná název vaší lokality. Důvěřující, který, bude kliknutím na odkaz. Otevřete přesměrování by uživatel pak pošlete do lokality phishing, která vypadá totožná s tímto počítačem, a uživatel by pravděpodobně přihlášení, které budou věřit je váš web.
 
 ## <a name="protecting-against-open-redirect-attacks"></a>Ochrana proti útokům na otevřete přesměrování
 
@@ -48,7 +48,7 @@ Při vývoji webových aplikací, považovat za nedůvěryhodným všechna data 
 
 ### <a name="localredirect"></a>LocalRedirect
 
-Použití ``LocalRedirect`` Pomocná metoda od základní `Controller` třídy:
+Použití `LocalRedirect` Pomocná metoda od základní `Controller` třídy:
 
 ```csharp
 public IActionResult SomeAction(string redirectUrl)
@@ -57,7 +57,7 @@ public IActionResult SomeAction(string redirectUrl)
 }
 ```
 
-``LocalRedirect`` bude vyvolána výjimka, pokud je zadaná adresa URL není místní. Jinak se chová podobně jako ``Redirect`` metoda.
+`LocalRedirect` bude vyvolána výjimka, pokud je zadaná adresa URL není místní. Jinak se chová podobně jako `Redirect` metoda.
 
 ### <a name="islocalurl"></a>IsLocalUrl
 

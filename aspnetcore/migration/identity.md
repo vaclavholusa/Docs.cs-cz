@@ -9,52 +9,49 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/identity
-ms.openlocfilehash: 320f5e079316114832e639d62c780a0639df0c61
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2a80274e9056b41e370f199c7d41865db5fcedd7
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core"></a>Migrace ověřování a identita na jádro ASP.NET
 
-<a name="migration-identity"></a>
-
 Podle [Steve Smith](https://ardalis.com/)
 
-V předchozím článku jsme [migrovat konfigurace z projektu aplikace ASP.NET MVC rozhraní ASP.NET MVC základní](configuration.md). V tomto článku jsme migrovat funkce správy registrace, přihlášení a uživatele.
+V předchozím článku jsme [migrovat konfigurace z projektu aplikace ASP.NET MVC rozhraní ASP.NET MVC základní](xref:migration/configuration). V tomto článku jsme migrovat funkce správy registrace, přihlášení a uživatele.
 
 ## <a name="configure-identity-and-membership"></a>Nakonfigurujte identitu a členství
 
-Ověřování a identita funkcí v architektuře ASP.NET MVC je nakonfigurována pomocí ASP.NET Identity v Startup.Auth.cs a IdentityConfig.cs, umístěný ve složce App_Start. V aplikaci ASP.NET MVC jádra, tyto funkce jsou nakonfigurované v *Startup.cs*.
+V architektuře ASP.NET MVC, ověřování a identita funkcí je nakonfigurována pomocí ASP.NET Identity v *Startup.Auth.cs* a *IdentityConfig.cs*, který je umístěn v *App_Start* složka. V aplikaci ASP.NET MVC jádra, tyto funkce jsou nakonfigurované v *Startup.cs*.
 
 Nainstalujte `Microsoft.AspNetCore.Identity.EntityFrameworkCore` a `Microsoft.AspNetCore.Authentication.Cookies` balíčky NuGet.
 
-Potom otevřete Startup.cs a aktualizací `ConfigureServices()` metoda použít službu pro rozhraní Entity Framework a Identity:
+Potom otevřete *Startup.cs* a aktualizovat `Startup.ConfigureServices` metoda použít službu pro rozhraní Entity Framework a Identity:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-  // Add EF services to the services container.
-  services.AddEntityFramework(Configuration)
-    .AddSqlServer()
-    .AddDbContext<ApplicationDbContext>();
+    // Add EF services to the services container.
+    services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-  // Add Identity services to the services container.
-  services.AddIdentity<ApplicationUser, IdentityRole>(Configuration)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    services.AddIdentity<ApplicationUser, IdentityRole>()
+        .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders();
 
-  services.AddMvc();
+     services.AddMvc();
 }
 ```
 
-V tomto okamžiku existují dva typy odkazovaný ve výše uvedený kód, který jsme nebyly migrovány z projektu ASP.NET MVC: `ApplicationDbContext` a `ApplicationUser`. Vytvořte novou *modely* složky v ASP.NET Core projektu a přidejte do ní odpovídající tyto typy dvou tříd. Zjistíte, ASP.NET MVC verzích tyto třídy ve `/Models/IdentityModels.cs`, ale budeme používat jeden soubor pro třídy migrované projektu, protože se trochu objasnit.
+V tomto okamžiku existují dva typy odkazovaný ve výše uvedený kód, který jsme nebyly migrovány z projektu ASP.NET MVC: `ApplicationDbContext` a `ApplicationUser`. Vytvořte novou *modely* složky v ASP.NET Core projektu a přidejte do ní odpovídající tyto typy dvou tříd. Zjistíte, ASP.NET MVC verzích tyto třídy ve */Models/IdentityModels.cs*, ale budeme používat jeden soubor pro třídy migrované projektu, protože se trochu objasnit.
 
-ApplicationUser.cs:
+*ApplicationUser.cs*:
 
 ```csharp
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace NewMvc6Project.Models
+namespace NewMvcProject.Models
 {
   public class ApplicationUser : IdentityUser
   {
@@ -62,47 +59,52 @@ namespace NewMvc6Project.Models
 }
 ```
 
-ApplicationDbContext.cs:
+*ApplicationDbContext.cs*:
 
 ```csharp
 using Microsoft.AspNetCore.Identity.EntityFramework;
 using Microsoft.Data.Entity;
 
-namespace NewMvc6Project.Models
+namespace NewMvcProject.Models
 {
-  public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-  {
-    public ApplicationDbContext()
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-      Database.EnsureCreated();
-    }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        {
+        }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-    {
-      options.UseSqlServer();
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            // Customize the ASP.NET Identity model and override the defaults if needed.
+            // For example, you can rename the ASP.NET Identity table names and more.
+            // Add your customizations after calling base.OnModelCreating(builder);
+        }
     }
-  }
 }
 ```
 
-ASP.NET Core MVC Starter webového projektu neobsahuje mnohem přizpůsobení uživatelů nebo ApplicationDbContext. Při migraci reálné aplikaci, budete také muset migrovat všechny vlastní vlastnosti a metody uživatelů vaší aplikace a třídy DbContext, jakož i další, které vaše aplikace využívá (například pokud má vaše DbContext DbSettřídymodelu<Album>, samozřejmě je nutné migrovat třídě alb).
+ASP.NET Core MVC Starter webového projektu neobsahuje mnohem přizpůsobení uživatelů, nebo `ApplicationDbContext`. Při migraci skutečné aplikace, musíte taky migrovat všechny vlastní vlastnosti a metody uživatele vaší aplikace a `DbContext` třídy a také další třídy modelu, vaše aplikace využívá. Například pokud vaše `DbContext` má `DbSet<Album>`, budete muset migrovat `Album` třídy.
 
-S těmito soubory na místě, můžete provést souboru Startup.cs zkompilovat aktualizací jeho pomocí příkazů:
+S těmito soubory na místě *Startup.cs* souboru můžete provedeny zkompilovat aktualizací jeho `using` příkazy:
 
 ```csharp
-using Microsoft.Framework.ConfigurationModel;
-using Microsoft.AspNetCore.Hosting;
-using NewMvc6Project.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 ```
 
-Naše aplikace je teď připravený na podporu ověřování a identita služby – pouze musí mít tyto funkce dostupná uživatelům.
+Naše aplikace je teď připravený na podporu ověřování a identita služby. Pouze musí mít tyto funkce dostupná uživatelům.
 
-## <a name="migrate-registration-and-login-logic"></a>Migrace registrace a přihlášení logiky
+## <a name="migrate-registration-and-login-logic"></a>Migrace logiku registrace a přihlášení
 
-Pomocí identity služby nakonfigurovat pro aplikaci a nakonfigurovat pomocí rozhraní Entity Framework a SQL Server přístup k datům jsme jste připraveni přidat podporu registrace a přihlášení do aplikace. Odvolat, [výše v procesu migrace](mvc.md#migrate-layout-file) jsme označeno jako komentář odkaz na _LoginPartial v _Layout.cshtml. Nyní je čas vrátit kódu, Odkomentujte ho a přidejte v zobrazení pro podporu funkcí přihlášení a potřeby řadiče.
+Nakonfigurované pro aplikaci služby Identita a přístup k datům nakonfigurovat pomocí rozhraní Entity Framework a SQL Server jsme připraveni přidat podporu registrace a přihlášení do aplikace. Odvolat, [výše v procesu migrace](xref:migration/mvc#migrate-the-layout-file) jsme označeno jako komentář odkaz na *_LoginPartial* v *_Layout.cshtml*. Nyní je čas vrátit kódu, Odkomentujte ho a přidejte v zobrazení pro podporu funkcí přihlášení a potřeby řadiče.
 
-Aktualizace _Layout.cshtml; Zrušením komentáře u @Html.Partial řádku:
+Zrušením komentáře u `@Html.Partial` řádek v *_Layout.cshtml*:
 
 ```cshtml
       <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -112,23 +114,23 @@ Aktualizace _Layout.cshtml; Zrušením komentáře u @Html.Partial řádku:
 </div>
 ```
 
-Nyní přidejte novou stránku zobrazení MVC s názvem _LoginPartial do zobrazení nebo sdílené složky:
+Nyní, přidat nové zobrazení syntaxe Razor s názvem *_LoginPartial* k *zobrazení a sdílených* složky:
 
-Aktualizovat _LoginPartial.cshtml následujícím kódem (Nahraďte veškerý jeho obsah):
+Aktualizace *_LoginPartial.cshtml* následujícím kódem (Nahraďte veškerý jeho obsah):
 
 ```cshtml
-@inject SignInManager<User> SignInManager
-@inject UserManager<User> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li>
                 <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
             </li>
             <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
             </li>
         </ul>
     </form>
@@ -146,4 +148,4 @@ V tomto okamžiku byste měli být schopni obnovit stránku v prohlížeči.
 
 ## <a name="summary"></a>Souhrn
 
-ASP.NET Core zavádí změny funkce ASP.NET Identity. V tomto článku jste viděli, jak migrovat funkcím pro správu ověřování a uživatel ASP.NET identity do ASP.NET Core.
+ASP.NET Core zavádí změny funkce ASP.NET Identity. V tomto článku jste viděli, jak migrovat funkce správy ověřování a uživatele v identitě ASP.NET Identity do ASP.NET Core.

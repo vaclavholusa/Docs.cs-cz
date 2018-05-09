@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 08866543d5b510b86c6af1896a9bd41ae0053ecf
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f9484d4806a7430177878b462209ba6608cfdd7d
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Ryan Nowak](https://github.com/rynowak)
 
-Stránky Razor je nová funkce rozhraní ASP.NET MVC jádra, která vytváří kódování zaměřené na stránce scénáře jednodušší a zvýšit produktivitu.
+Stránky Razor je nové aspekt rozhraní ASP.NET MVC jádra, která vytváří kódování zaměřené na stránce scénáře jednodušší a zvýšit produktivitu.
 
 Pokud hledáte kurz, který používá Model-View-Controller přístup, najdete v části [Začínáme s ASP.NET MVC základní](xref:tutorials/first-mvc-app/start-mvc).
 
@@ -92,7 +92,7 @@ Poznámky:
 
 ## <a name="writing-a-basic-form"></a>Zápis základní formulář
 
-Funkce stránky Razor jsou navrženy tak, aby se používají u webových prohlížečů snadno běžných vzorů. [Model vazby](xref:mvc/models/model-binding), [značky Pomocníci](xref:mvc/views/tag-helpers/intro)a všechny pomocné rutiny HTML *právě pracovní* s vlastnostmi definovaný ve třídě stránky Razor. Vezměte v úvahu stránky, který implementuje "kontaktujte nás" formuláři pro základní `Contact` modelu:
+Stránky Razor je navržené tak, aby běžných vzorů, které se používají u webových prohlížečů snadno implementovat při vytváření aplikace. [Model vazby](xref:mvc/models/model-binding), [značky Pomocníci](xref:mvc/views/tag-helpers/intro)a všechny pomocné rutiny HTML *právě pracovní* s vlastnostmi definovaný ve třídě stránky Razor. Vezměte v úvahu stránky, který implementuje "kontaktujte nás" formuláři pro základní `Contact` modelu:
 
 Pro ukázky v tomto dokumentu `DbContext` je inicializován v [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16) souboru.
 
@@ -147,7 +147,7 @@ Když odeslaného formuláře došlo k chybám ověřování, (které jsou před
 Stránky Razor, ve výchozím nastavení, vazbu vlastnosti jenom s příkazy nebo GET. Vazba na vlastnosti může snížit množství kód, který máte k zápisu. Vazba snižuje kódu pomocí stejné vlastnosti k vykreslení pole formuláře (`<input asp-for="Customer.Name" />`) a přijměte vstupu.
 
 > [!NOTE]
-> Z bezpečnostních důvodů musí se přihlášení k vytvoření vazby dat požadavek GET na stránce Vlastnosti modelu. Ověřte vstup uživatele před mapování vlastností. Vyjádření výslovného souhlasu s toto chování je užitečné při vytváření funkcí, které jsou závislé na hodnoty dotazu řetězec nebo trasy.
+> Z bezpečnostních důvodů musí se přihlášení k vytvoření vazby dat požadavek GET na stránce Vlastnosti modelu. Ověřte vstup uživatele před mapování vlastností. Vyjádření výslovného souhlasu s toto chování je užitečné, když adresování scénáře, které jsou závislé na hodnoty dotazu řetězec nebo trasy.
 >
 > Chcete-li vytvořit vazbu vlastnosti pro požadavky GET, nastavte `[BindProperty]` atributu `SupportsGet` vlastnost `true`: `[BindProperty(SupportsGet = true)]`
 
@@ -248,9 +248,9 @@ Nemáte psaní jakéhokoli kódu pro [antiforgery ověření](xref:security/anti
 <a name="layout"></a>
 ## <a name="using-layouts-partials-templates-and-tag-helpers-with-razor-pages"></a>Pomocí stránky Razor rozložení, částečné., šablony a pomocníky značky
 
-Stránky fungovat se všemi funkcemi zobrazovací modul Razor. Rozložení, šablony, a částečné značka Pomocníci *soubor _ViewStart.cshtml*, *_ViewImports.cshtml* pracovní stejným způsobem, tak pro běžné zobrazení syntaxe Razor.
+Stránky fungovat se všemi funkcemi nástroje zobrazovací modul Razor. Rozložení, šablony, a částečné značka Pomocníci *soubor _ViewStart.cshtml*, *_ViewImports.cshtml* pracovní stejným způsobem, tak pro běžné zobrazení syntaxe Razor.
 
-Tato stránka umožňuje declutter díky některé z těchto funkcí.
+Tato stránka umožňuje declutter díky některé z těchto možností.
 
 Přidat [rozložení stránky](xref:mvc/views/layout) k *Pages/_Layout.cshtml*:
 
@@ -336,7 +336,7 @@ Aplikace má následující strukturu souboru nebo složky:
 * `<a asp-page="/Index">My Index Page</a>`
 * `RedirectToPage("/Index")`
 
-Název stránky je cesta na stránku z kořenového adresáře */stránky* složky (včetně jako úvodní `/`, například `/Index`). Předchozí ukázky generování adresy URL jsou mnohem víc bohaté funkce než jenom hardcoding adresu URL. Generování adresy URL používá [směrování](xref:mvc/controllers/routing) a vygenerovat a kódování parametry podle jak trasy, která je definována v cílovou cestu.
+Název stránky je cesta na stránku z kořenového adresáře */stránky* složky včetně jako úvodní `/` (například `/Index`). Předchozí ukázky generování adresy URL nabízí rozšířené možnosti a funkční možnosti přes hardcoding adresu URL. Generování adresy URL používá [směrování](xref:mvc/controllers/routing) a vygenerovat a kódování parametry podle jak trasy, která je definována v cílovou cestu.
 
 Generování adresy URL pro stránky podporuje relativních názvů. Následující tabulka uvádí, které Index vybrány jiné `RedirectToPage` parametry z *Pages/Customers/Create.cshtml*:
 
@@ -455,5 +455,5 @@ services.AddMvc()
 * [Syntaxe Razor](xref:mvc/views/razor)
 * [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Konvence autorizace stránky Razor](xref:security/authorization/razor-pages-authorization)
-* [Syntaxe Razor stránky vlastní trasy a stránka zprostředkovatele modelu](xref:mvc/razor-pages/razor-pages-convention-features)
+* [Syntaxe Razor stránky vlastní trasy a stránka zprostředkovatele modelu](xref:mvc/razor-pages/razor-pages-conventions)
 * [Testy jednotek a integrace stránky Razor](xref:testing/razor-pages-testing)

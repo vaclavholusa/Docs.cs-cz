@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-browserlink
-ms.openlocfilehash: a75a896dd7ebc488e3e9344ec705c24201924375
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 0496f9df35956b8fe7ca9fcc7c03df33437d5a87
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="browser-link-in-aspnet-core"></a>Browser Link v ASP.NET Core
 
@@ -28,7 +28,7 @@ Browser Link je funkce v sadě Visual Studio, který vytváří komunikační ka
 
 ASP.NET Core 2.x **webové aplikace**, **prázdný**, a **webového rozhraní API** šablony projektů, použití [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) Meta balíček, který obsahuje odkaz na balíček pro [Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/). Proto pomocí `Microsoft.AspNetCore.All` metabalíček vyžadována žádná další akce, chcete-li k dispozici pro použití odkazů prohlížeče.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ASP.NET Core 1.x **webové aplikace** šablona projektu obsahuje odkaz na balíček pro [Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/) balíčku. **Prázdný** nebo **webového rozhraní API** šablony projektů vyžadují, abyste přidat odkaz na balíček `Microsoft.VisualStudio.Web.BrowserLink`.
 
@@ -66,7 +66,7 @@ if (env.IsDevelopment())
 }
 ```
 
-Další informace najdete v tématu [pracovat s několika prostředí](xref:fundamentals/environments).
+Další informace najdete v tématu [použijte prostředí s více](xref:fundamentals/environments).
 
 ## <a name="how-to-use-browser-link"></a>Postup použití Browser Link
 
@@ -112,15 +112,15 @@ Browser Link funguje taky s prohlížeče, které spusťte mimo aplikaci Visual 
 
 Z rozevírací nabídky ke správě připojení pomocí prohlížeče otevřete Browser Link otevřete řídicím panelu odkazů prohlížeče:
 
-![open-browserslink-dashboard](using-browserlink/_static/open-browserlink-dashboard.png)
+![Otevřete browserslink-řídicí panel](using-browserlink/_static/open-browserlink-dashboard.png)
 
 Pokud je připojený žádný prohlížeč, můžete spustit relaci – ladění výběrem *zobrazit v prohlížeči* odkaz:
 
-![browserlink-dashboard-no-connections](using-browserlink/_static/browserlink-dashboard-no-connections.png)
+![browserlink řídicí panel žádné připojení](using-browserlink/_static/browserlink-dashboard-no-connections.png)
 
 Jinak hodnota cesta ke stránce, který se zobrazuje každým prohlížečem, který zobrazuje připojené prohlížeče:
 
-![browserlink-dashboard-two-connections](using-browserlink/_static/browserlink-dashboard-two-connections.png)
+![browserlink řídicí panel dvě připojení](using-browserlink/_static/browserlink-dashboard-two-connections.png)
 
 Pokud chcete, můžete kliknutím na název uvedené prohlížeče aktualizujte tohoto jednoho prohlížeče.
 

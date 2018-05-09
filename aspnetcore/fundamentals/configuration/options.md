@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 660ee2365e2e186dd93d57ec79628e0bd7d24d52
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: 800ff2039e7cc1fa37315ed55a77711dc9f47504
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -35,7 +35,7 @@ Třída možností musí být neabstraktní s konstruktor public bez parametrů.
 
 [!code-csharp[](options/sample/Models/MyOptions.cs?name=snippet1)]
 
-`MyOptions` Třída je přidat do kontejneru služby s [IConfigureOptions&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.iconfigureoptions-1) a vázaný k konfigurace:
+`MyOptions` Třída je přidat do kontejneru služby s [konfigurace&lt;TOptions&gt;(IServiceCollection, parametry IConfiguration)](/dotnet/api/microsoft.extensions.dependencyinjection.optionsconfigurationservicecollectionextensions.configure#Microsoft_Extensions_DependencyInjection_OptionsConfigurationServiceCollectionExtensions_Configure__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_) a vázaný k konfigurace:
 
 [!code-csharp[](options/sample/Startup.cs?name=snippet_Example1)]
 
@@ -177,7 +177,7 @@ S názvem podporu možnosti s [IConfigureNamedOptions](/dotnet/api/microsoft.ext
 
 *Vyžaduje základní technologie ASP.NET 2.0 nebo novější.*
 
-*S názvem možnosti* podpory umožňuje aplikaci k rozlišení mezi pojmenované možnosti konfigurace. V ukázkové aplikace, jsou pojmenované možnosti deklarovat s [ConfigureNamedOptions&lt;TOptions&gt;. Konfigurace](/dotnet/api/microsoft.extensions.options.configurenamedoptions-1.configure) metoda:
+*S názvem možnosti* podpory umožňuje aplikaci k rozlišení mezi pojmenované možnosti konfigurace. V ukázkové aplikace, jsou pojmenované možnosti deklarovat s [OptionsServiceCollectionExtensions.Configure&lt;TOptions&gt;(IServiceCollection řetězce akce&lt;TOptions&gt;)](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configure)která volá metodu rozšíření [ConfigureNamedOptions&lt;TOptions&gt;. Konfigurace](/dotnet/api/microsoft.extensions.options.configurenamedoptions-1.configure) metoda:
 
 [!code-csharp[](options/sample/Startup.cs?name=snippet_Example6)]
 

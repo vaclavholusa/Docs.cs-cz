@@ -8,11 +8,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: be7d55bf1a5d3da63ff137ed86f71984dc897eff
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 26f516716864bdce81cf3acdacb0f9d2f98407b7
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - řazení, filtru, stránkování - 3 8
 
@@ -58,7 +58,7 @@ První řádek určuje, kdy `sortOrder` má hodnotu null nebo prázdná, `NameSo
 
 `?: operator` Je také označován jako Ternární operátor.
 
-Tyto dva příkazy zapnutí zobrazení nastavit sloupec hypertextové odkazy záhlaví následujícím způsobem:
+Tyto dva příkazy povolit stránky lze nastavit sloupec hypertextové odkazy záhlaví následujícím způsobem:
 
 | Aktuální řazení | Poslední název hypertextový odkaz | Datum hypertextový odkaz |
 |:--------------------:|:-------------------:|:--------------:|
@@ -77,7 +77,7 @@ Metoda používá k určení tento sloupec seřadit podle technologie LINQ to En
 
 `OnGetAsync` může získat podrobné s velkým počtem sloupců.
 
-### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>Přidejte hypertextové odkazy záhlaví sloupců do zobrazení indexu studenty
+### <a name="add-column-heading-hyperlinks-to-the-student-index-page"></a>Přidat hypertextové odkazy záhlaví sloupce na stránku Student indexu
 
 Nahraďte kód v *Students/Index.cshtml*, s následujícími službami zvýrazněná kódu:
 
@@ -122,7 +122,7 @@ Předchozí kód:
 
 Poznámka: Předchozí kód volání `Where` metodu `IQueryable` objekt a filtr zpracování na serveru. V některých scénářích může být aplikace zadaná volání `Where` metoda jako metody rozšíření na kolekci v paměti. Předpokládejme například, `_context.Students` změní z EF základní `DbSet` metodě úložiště, který vrací `IEnumerable` kolekce. Výsledek by za normálních okolností stejné, ale v některých případech může být odlišné.
 
-Například rozhraní .NET Framework implementace `Contains` provádí malá a velká písmena porovnání ve výchozím nastavení. V systému SQL Server `Contains` rozlišování je určen podle nastavení kolace instance systému SQL Server. SQL používat výchozí hodnoty na velká a malá písmena. `ToUpper` může být volána aby test explicitně velká a malá písmena:
+Například rozhraní .NET Framework implementace `Contains` provádí malá a velká písmena porovnání ve výchozím nastavení. V systému SQL Server `Contains` rozlišování je určen podle nastavení kolace instance systému SQL Server. SQL Server ve výchozím nastavení na velká a malá písmena. `ToUpper` může být volána aby test explicitně velká a malá písmena:
 
 `Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())`
 
@@ -133,9 +133,9 @@ Předchozí kód by zajistěte, aby byly výsledky velká a malá písmena Pokud
 
 Je snížení výkonu pro volání `ToUpper`. `ToUpper` Kód přidá funkce v klauzuli WHERE příkazu TSQL SELECT. Přidaná funkce bránit v použití indexu okně Optimalizace. Vzhledem k tomu, že SQL je nainstalován velká a malá písmena, je vyhýbat se `ToUpper` volat, když není potřeba.
 
-### <a name="add-a-search-box-to-the-student-index-view"></a>Vyhledávací pole, přidejte do zobrazení indexu studenty
+### <a name="add-a-search-box-to-the-student-index-page"></a>Přidat vyhledávací pole na stránku Student indexu
 
-V *Views/Student/Index.cshtml*, přidejte následující zvýrazněný kód k vytvoření **vyhledávání** tlačítko) a chrome (různé.
+V *Pages/Students/Index.cshtml*, přidejte následující zvýrazněný kód k vytvoření **vyhledávání** tlačítko) a chrome (různé.
 
 [!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
@@ -267,7 +267,7 @@ Poznámka: LINQ `group` příkaz není aktuálně podporována EF jádra. V pře
 
 ### <a name="modify-the-about-razor-page"></a>Upravit o stránky Razor
 
-Nahraďte kód v *Views/Home/About.cshtml* soubor s následujícím kódem:
+Nahraďte kód v *Pages/About.cshtml* soubor s následujícím kódem:
 
 [!code-html[](intro/samples/cu/Pages/About.cshtml)]
 

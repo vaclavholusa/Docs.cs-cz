@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: 8dd632a2c888e65c6420e0fed7acf6fa15173b3d
-ms.sourcegitcommit: c4a31aaf902f2e84aaf4a9d882ca980fdf6488c0
+ms.openlocfilehash: a61f78b2d0e5c6c171a26690fcce256462a82508
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -44,7 +44,7 @@ Zadejte `Startup` třídy s [WebHostBuilderExtensions](/dotnet/api/Microsoft.Asp
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-Alternativu k vložení `IHostingEnvironment` , je použít přístup na základě konvence. Aplikace můžete definovat samostatné `Startup` třídy pro různá prostředí (například `StartupDevelopment`), a v době běhu je vybraná třída odpovídající při spuštění. Třída, jehož příponu názvu odpovídá aktuální prostředí prioritu. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v tématu [pracovat s několika prostředí](xref:fundamentals/environments#startup-conventions).
+Alternativu k vložení `IHostingEnvironment` , je použít přístup na základě konvence. Aplikace můžete definovat samostatné `Startup` třídy pro různá prostředí (například `StartupDevelopment`), a v době běhu je vybraná třída odpovídající při spuštění. Třída, jehož příponu názvu odpovídá aktuální prostředí prioritu. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v tématu [použijte prostředí s více](xref:fundamentals/environments#startup-conventions).
 
 Další informace o `WebHostBuilder`, najdete v článku [hostitelský](xref:fundamentals/hosting) tématu. Informace o zpracování chyb během spouštění najdete v tématu [spuštění zpracování výjimek](xref:fundamentals/error-handling#startup-exception-handling).
 
@@ -64,9 +64,10 @@ Pro funkce, které vyžadují významné instalace, jsou `Add[Service]` rozšiř
 
 [!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
 
-::: moniker range=">= aspnetcore-2.1" 
+::: moniker range=">= aspnetcore-2.1"
 
 <a name="setcompatibilityversion"></a>
+
 ### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>SetCompatibilityVersion pro jádro ASP.NET MVC 
 
 `SetCompatibilityVersion` Metoda umožňuje aplikacím výslovný souhlas nebo výslovný nesouhlas s potenciálně nejnovější změny chování byla zavedená v ASP.NET MVC Core 2.1 +. Tyto potenciálně nejnovější změny chování jsou obecně ve jak se chová subsystém MVC a jak **kódu** nazývá modulem runtime. Tím výslovným souhlasem, získáte nejnovější chování a dlouhodobé chování ASP.NET Core.
@@ -157,10 +158,14 @@ Pořadí spuštění middlewaru je nastavena podle pořadí podle `IStartupFilte
 * Více `IStartupFilter` implementace může komunikovat s objekty stejné. Pokud pořadí je důležité, pořadí jejich `IStartupFilter` služby registrace tak, aby odpovídala pořadí, ve kterém se má spustit jejich middlewares.
 * Knihovny může přidávat middlewaru s jedním nebo více `IStartupFilter` implementací, které spustit před nebo po dalším middlewarem aplikace zaregistrována `IStartupFilter`. K vyvolání `IStartupFilter` middleware před middleware přidal knihovny `IStartupFilter`, umístěte registrace služby před knihovny je přidat do kontejneru služby. K vyvolání následně, umístěte registrace služby po přidání knihovny.
 
+## <a name="adding-configuration-at-startup-from-an-external-assembly"></a>Přidává se konfigurace při spuštění z externí sestavení
+
+[IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup) implementace umožňuje přidání vylepšení do aplikace při spuštění z externí sestavení mimo aplikace `Startup` třídy. Další informace najdete v tématu [vylepšení aplikace z externí sestavení](xref:fundamentals/configuration/platform-specific-configuration).
+
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Hostování](xref:fundamentals/hosting)
-* [Práce v různých prostředích](xref:fundamentals/environments)
+* [Pomocí několika prostředí](xref:fundamentals/environments)
 * [Middleware](xref:fundamentals/middleware/index)
 * [Protokolování](xref:fundamentals/logging/index)
 * [Konfigurace](xref:fundamentals/configuration/index)

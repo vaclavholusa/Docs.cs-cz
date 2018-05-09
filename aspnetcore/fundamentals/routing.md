@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: 2e1257639ec41f657093439c5245b50adbad34dc
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: d9d5a26b08f67fe4ee39d6b974027826a93e5d5f
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -74,7 +74,7 @@ Trasy především používat hodnoty trasy poskytované `Values` a `AmbientValu
 
 Tip: Zamyslet nad `Values` jako sadu přepsání `AmbientValues`. Generování adresy URL se pokusí znovu použít hodnoty trasy z aktuální žádosti, abyste usnadnili snadnou k vygenerování adres URL pro odkazy pomocí stejného postupu nebo hodnoty trasy.
 
-Výstup `GetVirtualPath` je `VirtualPathData`. `VirtualPathData` je paralelní z `RouteData`; obsahuje `VirtualPath` pro adresu URL výstup, jakož i některé další vlastnosti, které by měla být nastavena trasy.
+Výstup `GetVirtualPath` je `VirtualPathData`. `VirtualPathData` je paralelní z `RouteData`; obsahuje `VirtualPath` pro adresu URL výstup a některé další vlastnosti, které by měla být nastavena trasy.
 
 `VirtualPathData.VirtualPath` Vlastnost obsahuje *virtuální cestu* vyprodukované trasy. Podle potřeby můžete zpracovat další cestu. Například pokud chcete vykreslit vygenerovaná adresa URL ve formátu HTML budete muset předřazení základní cesta aplikace.
 

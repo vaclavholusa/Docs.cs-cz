@@ -10,17 +10,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: mvc/razor-pages/sdk
-ms.openlocfilehash: 2cbebb12ccd1098e1950aa7eeb22fab4ffc689e6
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: acc049a69574968d1e304d6c504cb89243387d6c
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="aspnet-core-razor-sdk"></a>Jádro ASP.NET Razor SDK
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-[!INCLUDE[](~/includes/2.1.md)]
 
 [!INCLUDE [](~/includes/2.1-SDK.md)] Zahrnuje `Microsoft.NET.Sdk.Razor` MSBuild SDK (Razor SDK). Razor SDK:
 
@@ -66,7 +64,7 @@ Následující vlastnosti a položky se používají ke konfiguraci vstupy a vý
 | ------------                                  | -------------                                                                 |
 | RazorGenerate                                 | Položka elementy (*.cshtml* soubory), které jsou vstupy k cílům generování kódu. |
 | RazorCompile                                  | Položka elementům (soubory .cs) vstupy k cílům kompilace Razor. Pomocí této ItemGroup můžete určit další soubory, které sestavují v sestavení Razor. |
-| RazorAssemblyAttribute                        | Položka prvky používané ke kódu generovat atributy pro sestavení Razor. Příklad:  <br />`<RazorAssemblyAttribute ` <br />  `Include="System.Reflection.AssemblyMetadataAttribute"`<br />`  _Parameter1="BuildSource" _Parameter2="https://docs.asp.net/">` |
+| RazorTargetAssemblyAttribute                  | Položka prvky používané ke kódu generovat atributy pro sestavení Razor. Příklad:  <br />`<RazorAssemblyAttribute ` <br />  `Include="System.Reflection.AssemblyMetadataAttribute"`<br />`  _Parameter1="BuildSource" _Parameter2="https://docs.asp.net/">` |
 | RazorEmbeddedResource                         | Položka elementy přidané jako vložené prostředky do vygenerované sestavení Razor |
 
 | Vlastnost                                      | Popis                                                                   |

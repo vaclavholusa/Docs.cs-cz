@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: 3e2c990a6451c13e03baafa343df156b2d46d219
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 60115dd06a27bf856427953de29e993194afb991
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a>Představení technologie ASP.NET Web Pages – základy programování
 ====================
@@ -207,7 +207,7 @@ Spuštění stránky a klikněte na tlačítko **odeslání**. Tentokrát nejen 
 
 ### <a name="testing-the-value-of-a-query-string"></a>Testování hodnota řetězce dotazu
 
-Jeden další test. Tentokrát přidáte pokud blok, který porovnává hodnotu s názvem show, která mohla být předána v řetězci dotazu. (Podobné výjimky: %http://localhost:43097/TestRazorPart2.cshtml`?show=true`) změníte stránky tak, aby zpráva vám jste se zobrazení ("Toto je prvním...", atd.) se zobrazí jenom v případě zobrazit hodnotu true.
+Jeden další test. Tentokrát přidáte pokud blok, který porovnává hodnotu s názvem show, která mohla být předána v řetězci dotazu. (Jako jsou to: `http://localhost:43097/TestRazorPart2.cshtml?show=true`) změníte stránky tak, aby zpráva vám jste se zobrazení ("Toto je prvním...", atd.) se zobrazí jenom v případě zobrazit hodnotu true.
 
 V dolní (ale uvnitř) přidejte následující blok kódu v horní části stránky:
 

@@ -10,21 +10,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: advanced
 uid: mvc/razor-pages/ui-class
-ms.openlocfilehash: 731d37a8f4983b18ded114f05470f8a408deb7cd
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 44091ab8ab5d69a5975e191fd00fca1d1d957238
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>Vytvořte opakovaně použitelné uživatelské rozhraní v projektu knihovny tříd Razor ASP.NET Core.
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Zobrazení syntaxe Razor, stránky, řadiče, modely stránky a datové modely se dají vytvářet do třídy Library(RCL) syntaxe Razor. RCL může být zabalené a znovu použít. Aplikace může obsahovat RCL a přepsání, zobrazení a stránky, které obsahuje. Když najde zobrazení, částečná zobrazení nebo stránky Razor ve webové aplikaci a RCL, kód Razor (*.cshtml* souboru) ve webové aplikaci, dostane přednost.
+Zobrazení syntaxe Razor, stránky, řadiče, modely stránky a datové modely se dají vytvářet do knihovny tříd Razor (RCL). RCL můžete zabalené a znovu použít. Aplikace může obsahovat RCL a přepsání, zobrazení a stránky, které obsahuje. Když najde zobrazení, částečná zobrazení nebo stránky Razor ve webové aplikaci a RCL, kód Razor (*.cshtml* souboru) ve webové aplikaci, dostane přednost.
 
 Tato funkce vyžaduje [!INCLUDE[](~/includes/2.1-SDK.md)]
-
-[!INCLUDE[](~/includes/2.1.md)]
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/ui-class/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 

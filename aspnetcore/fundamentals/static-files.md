@@ -1,5 +1,5 @@
 ---
-title: Práce s statické soubory v ASP.NET Core
+title: Statické soubory v ASP.NET Core
 author: rick-anderson
 description: Zjistěte, jak a zabezpečení statické soubory a nakonfigurovat statický soubor, který je hostitelem chování middlewaru ve webové aplikaci ASP.NET Core.
 manager: wpickett
@@ -11,13 +11,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/static-files
-ms.openlocfilehash: 46e868910661024ea3b950e78ced02a095896be1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 11856abe6e1f26a806e4fdb2d2d9757576f3593a
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="work-with-static-files-in-aspnet-core"></a>Práce s statické soubory v ASP.NET Core
+# <a name="static-files-in-aspnet-core"></a>Statické soubory v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Scott Addie](https://twitter.com/Scott_Addie)
 
@@ -36,7 +36,7 @@ Hostitel webové aplikace musí být upozorněni obsahu kořenového adresáře.
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=9)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Nastavit kořenu obsahu k aktuálnímu adresáři vyvoláním [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseContentRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) uvnitř `Program.Main`:
 
 [!code-csharp[](static-files/samples/1x/Program.cs?name=snippet_ProgramClass&highlight=7)]
@@ -45,7 +45,7 @@ Nastavit kořenu obsahu k aktuálnímu adresáři vyvoláním [UseContentRoot](/
 Statické soubory jsou přístupné prostřednictvím cesta relativní vůči kořenovému adresáři web. Například **webové aplikace** šablona projektu obsahuje několik složek v rámci *wwwroot* složky:
 
 * **wwwroot**
-  * **css**
+  * **šablon stylů CSS**
   * **Bitové kopie**
   * **js**
 
@@ -55,7 +55,7 @@ Pro přístup k souboru ve formátu URI *bitové kopie* je podsložka *http://\<
 
 Pokud cílení na rozhraní .NET Framework, přidejte [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) balíčku do projektu. Pokud cílení na .NET Core [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage) zahrnuje tento balíček.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Přidat [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) balíčku do projektu.
 
@@ -78,7 +78,7 @@ Bezparametrový `UseStaticFiles` přetížení metody označí soubory v kořeno
 Vezměte v úvahu hierarchie adresářů, ve kterém obsluhovat statické soubory nacházejí mimo kořenový web:
 
 * **wwwroot**
-  * **css**
+  * **šablon stylů CSS**
   * **Bitové kopie**
   * **js**
 * **MyStaticFiles**
@@ -177,7 +177,7 @@ app.UseFileServer(enableDirectoryBrowsing: true);
 Vezměte v úvahu následující hierarchii:
 
 * **wwwroot**
-  * **css**
+  * **šablon stylů CSS**
   * **Bitové kopie**
   * **js**
 * **MyStaticFiles**

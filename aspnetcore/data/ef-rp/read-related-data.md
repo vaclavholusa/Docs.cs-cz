@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 55d9b6743c7d97dc9a354bae218b1fac69d7b6bc
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: bd739abe4737e0fb9e4da6011c5810d7b05a3a22
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - číst související Data - 6, 8
 
@@ -67,7 +67,7 @@ Zobrazí se název přiřazené oddělení v seznamu kurzů:
 * Získat `Name` vlastnost z `Department` entity.
 * `Department` Entity pochází z `Course.Department` navigační vlastnost.
 
-![ourse.Department](read-related-data/_static/dep-crs.png)
+![ourse. Oddělení](read-related-data/_static/dep-crs.png)
 
 <a name="scaffold"></a>
 ### <a name="scaffold-the-course-model"></a>Vygenerované uživatelské rozhraní během modelu
@@ -249,6 +249,10 @@ Klikněte na **vyberte** odkaz. Změny styl řádku.
 Aktualizace `OnGetAsync` metoda v *Pages/Instructors/Index.cshtml.cs* následujícím kódem:
 
 [!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_OnGetAsync&highlight=1,8,16-999)]
+
+Přidat `public int CourseID { get; set; }`
+
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_1&highlight=12)]
 
 Zkontrolujte aktualizované dotazu:
 

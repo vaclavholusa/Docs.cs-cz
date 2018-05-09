@@ -2,7 +2,7 @@
 
 V této části se přidá stránku HTML, která používá jQuery k volání webového rozhraní API. jQuery zahájí požadavek a aktualizuje stránce s podrobnostmi z odpovědi rozhraní API.
 
-Konfigurace projektu chcete poskytovat statické soubory a povolit výchozí mapování souboru. To se provádí volání [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) a [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) rozšiřující metody v *Startup.Configure*. Další informace najdete v tématu [pracovat s statické soubory v ASP.NET Core](xref:fundamentals/static-files).
+Konfigurace projektu chcete poskytovat statické soubory a povolit výchozí mapování souboru. To se provádí volání [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) a [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) rozšiřující metody v *Startup.Configure*. Další informace najdete v tématu [statické soubory](xref:fundamentals/static-files).
 
 [!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Startup2.cs?name=snippet_Configure&highlight=3-4)]
 

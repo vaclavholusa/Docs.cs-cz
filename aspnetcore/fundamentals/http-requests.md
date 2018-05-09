@@ -11,17 +11,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/http-requests
-ms.openlocfilehash: 30ac239a38376feecffc3010387ec5e0009b6db6
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 1f2c7522a10220cd9520d78846d2e897115447c2
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="initiate-http-requests"></a>Inicializace požadavků HTTP
 
 Podle [Glenn Condron](https://github.com/glennc), [Ryan Nowak](https://github.com/rynowak), a [Steve Gordon](https://github.com/stevejgordon)
-
-[!INCLUDE[](~/includes/2.1.md)]
 
 `IHttpClientFactory` Můžete zaregistrovat a použít ke konfiguraci a vytvořit [HttpClient](/dotnet/api/system.net.http.httpclient) instancí v aplikaci. Nabízí následující výhody:
 
@@ -77,7 +75,7 @@ Typový klient přijme `HttpClient` parametr v jeho konstruktoru:
 
 [!code-csharp[](http-requests/samples/GitHub/GitHubService.cs?name=snippet1&highlight=5)]
 
-V předchozí kód konfigurace přesunutí typový klient. `HttpClient` Objektu je zpřístupněná jako veřejné vlastnosti. Je možné definovat metody specifické pro rozhraní API, které zveřejňují `HttpClient` funkce. `GetLatestDocsIssue` Metoda zapouzdřuje kód potřebný k dotazu a analyzovat na nejnovější vydání z úložiště Githubu.
+V předchozí kód konfigurace přesunutí typový klient. `HttpClient` Objektu je zpřístupněná jako veřejné vlastnosti. Je možné definovat metody specifické pro rozhraní API, které zveřejňují `HttpClient` funkce. `GetAspNetDocsIssues` Metoda zapouzdřuje kód potřebný k dotazu a analyzovat na nejnovější otevřené problémy z úložiště Githubu.
 
 K registraci typový klient, Obecné `AddHttpClient` rozšíření metodu je možné použít v rámci `ConfigureServices`, specifikace typový klient třídy:
 

@@ -3,23 +3,24 @@ title: Dvoufaktorové ověřování pomocí SMS v ASP.NET Core
 author: rick-anderson
 description: Zjistěte, jak nastavit dvoufaktorové ověřování (2FA) s aplikací ASP.NET Core.
 manager: wpickett
+monikerRange: < aspnetcore-2.0
 ms.author: riande
 ms.date: 08/15/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: 1c4acc4e4be593051d30793b7f73ad90ce727283
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 20f00c2307e140d81e716304c96a143340d934d0
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>Dvoufaktorové ověřování pomocí SMS v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [mezi Devs](https://github.com/Swiss-Devs)
 
-V tomto kurzu platí pro ASP.NET Core pouze 1.x. V tématu [vygenerovat kód QR povolit pro aplikace v ASP.NET Core](xref:security/authentication/identity-enable-qrcodes) pro technologii ASP.NET 2.0 jádra a novější.
+V tématu [vygenerovat kód QR povolit pro aplikace v ASP.NET Core](xref:security/authentication/identity-enable-qrcodes) pro technologii ASP.NET 2.0 jádra a novější.
 
 Tento kurz ukazuje, jak nastavit dvoufaktorové ověřování (2FA) pomocí serveru SMS. Jsou uvedeny pokyny pro [twilio](https://www.twilio.com/) a [ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/), ale můžete použít další poskytovatele serveru SMS. Doporučujeme, abyste dokončení [potvrzení účtu a heslo pro obnovení](xref:security/authentication/accconfirm) před zahájením tohoto kurzu.
 

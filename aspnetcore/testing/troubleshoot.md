@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: testing/troubleshoot
-ms.openlocfilehash: a75dc666621600e1e2fe36c29acbe7484bae9229
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: f2c785bfe27ddd67db0313b8ee1c077a8cc06e05
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>Řešení potíží s projekty ASP.NET Core
 
@@ -29,8 +29,8 @@ Následující odkazy obsahují pokyny k odstraňování problémů:
 <a name="sdk"></a>
 ## <a name="net-core-sdk-warnings"></a>Upozornění na .NET core SDK
 
-### <a name="both-the-32-and-64-bit-versions-of-the-net-core-sdk-are-installed"></a>Obě 32 až 64 bit verze rozhraní .NET Core SDK jsou nainstalovány.
-V **nový projekt** dialogové okno pro ASP.NET Core, může se zobrazit následující varování zobrazí v horní části: 
+### <a name="both-the-32-bit-and-64-bit-versions-of-the-net-core-sdk-are-installed"></a>Instalaci 32bitové a 64bitové verze rozhraní .NET Core SDK
+V **nový projekt** dialogové okno pro ASP.NET Core, může se zobrazit následující varování: 
 
     Both 32 and 64 bit versions of the .NET Core SDK are installed. Only templates from the 64 bit version(s) installed at C:\Program Files\dotnet\sdk\" will be displayed.
 
@@ -45,12 +45,24 @@ Toto upozornění se zobrazí, když (x86) 32bitovou i 64bitovou (x 64) verze [.
 Odinstalujte 32bitová verze rozhraní .NET Core SDK aby toto upozornění. Odinstalovat z **ovládací panely** > **programy a funkce** > **odinstalovat nebo změnit program**. Pokud budete rozumět tomu, proč dochází upozornění a jeho dopad, můžete upozornění ignorovat.
 
 ### <a name="the-net-core-sdk-is-installed-in-multiple-locations"></a>.NET Core SDK je nainstalován na více místech
-V **nový projekt** dialogové okno pro ASP.NET Core, mohou se zobrazit následující upozornění se zobrazí v horní části: 
+V **nový projekt** dialogové okno pro ASP.NET Core může se zobrazit následující varování: 
 
  .NET Core SDK je nainstalována na více místech. Pouze šablony z SDK(s) nainstalovaným v "C:\Program Files\dotnet\sdk\' se zobrazí.
 
 ![Snímek obrazovky dialogového okna OneASP.NET zobrazující upozornění](troubleshoot/_static/multiplelocations.png)
 
-Tato zpráva se zobrazuje, protože máte alespoň jedna instalace rozhraní .NET Core SDK v adresáři mimo * C:\Program Files\dotnet\sdk\*. Obvykle k tomu dojde, když .NET Core SDK nasazený na počítači použití, kopírování a vkládání namísto Instalační služby MSI.
+Se zobrazí tato zpráva, když máte alespoň jedna instalace rozhraní .NET Core SDK v adresáři mimo * C:\Program Files\dotnet\sdk\*. Obvykle k tomu dojde, když .NET Core SDK nasazený na počítači použití, kopírování a vkládání namísto Instalační služby MSI.
 
 Odinstalujte 32bitová verze rozhraní .NET Core SDK aby toto upozornění. Odinstalovat z **ovládací panely** > **programy a funkce** > **odinstalovat nebo změnit program**. Pokud budete rozumět tomu, proč dochází upozornění a jeho dopad, můžete upozornění ignorovat.
+
+### <a name="no-net-core-sdks-were-detected"></a>Nebyly zjištěny žádné .NET Core SDK
+V **nový projekt** dialogové okno pro ASP.NET Core může se zobrazit následující varování: 
+
+**Nebyly zjištěny žádné .NET Core SDK, ujistěte se, že jsou zahrnuty v proměnné prostředí 'PATH'**
+
+![Snímek obrazovky dialogového okna OneASP.NET zobrazující upozornění](troubleshoot/_static/NoNetCore.png)
+
+Toto upozornění se zobrazí, když proměnnou prostředí `PATH` neodkazuje na žádné rozhraní .NET Core SDK na počítači. Chcete-li tento problém vyřešit:
+
+* Nainstalujte nebo ověřte, že je nainstalováno rozhraní .NET Core SDK.
+* Ověřte `PATH` proměnnou prostředí odkazuje na umístění, je nainstalována sada SDK. Instalační program za normálních okolností nastaví `PATH`.

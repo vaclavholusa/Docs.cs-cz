@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: b1c2b734a2e9b274792b597bfd222c31e661b0d7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 4637ff6312f32f5887ff0f7a6e74d10f5beb0ca5
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuration-in-aspnet-core"></a>Konfigurace v ASP.NET Core
 
@@ -105,13 +105,13 @@ Pokud se nastaví prostředí `Staging`, následující `Configure` metoda pře�
 
 [!code-csharp[](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
 
-V prostředí se obvykle nastavuje na `Development`, `Staging`, nebo `Production`. Další informace najdete v tématu [pracovat s několika prostředí](xref:fundamentals/environments).
+V prostředí se obvykle nastavuje na `Development`, `Staging`, nebo `Production`. Další informace najdete v tématu [použijte prostředí s více](xref:fundamentals/environments).
 
 Požadavky na konfiguraci:
 
 * [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot) můžete znovu načíst konfigurační data, kdy se změní.
 * Konfigurace klíče jsou **není** malá a velká písmena.
-* **Nikdy** ukládání hesel nebo jiných citlivých dat. kód zprostředkovatele konfigurace nebo v konfiguračních souborech na prostý text. Nechcete používat produkční tajných klíčů v vývoj nebo testovací prostředí. Zadejte tajné klíče mimo projekt tak, že nemohou být omylem zavazuje úložiště zdrojového kódu. Další informace o [jak pracovat s několika prostředí](xref:fundamentals/environments) a správu [bezpečného úložiště tajné klíče aplikace v vývoj](xref:security/app-secrets).
+* **Nikdy** ukládání hesel nebo jiných citlivých dat. kód zprostředkovatele konfigurace nebo v konfiguračních souborech na prostý text. Nechcete používat produkční tajných klíčů v vývoj nebo testovací prostředí. Zadejte tajné klíče mimo projekt tak, že nemohou být omylem zavazuje úložiště zdrojového kódu. Další informace o [postup používání prostředí s více](xref:fundamentals/environments) a správu [bezpečného úložiště tajné klíče aplikace v vývoj](xref:security/app-secrets).
 * Pro hierarchické konfigurace hodnoty zadané v seznamu proměnných prostředí, dvojtečka (`:`) nemusí fungovat na všech platformách. Dvojité podtržítko (`__`) podporuje všechny platformy.
 * Při interakci s konfigurací rozhraní API, dvojtečka (`:`) funguje na všech platformách.
 
@@ -413,6 +413,10 @@ A *web.config* soubor je požadován při hostování aplikace v IIS nebo IIS Ex
 
 Získat přístup ke konfiguraci v rámci `ConfigureServices` nebo `Configure` během spouštění, podívejte se na příklady v [spuštění aplikace](xref:fundamentals/startup) tématu.
 
+## <a name="adding-configuration-from-an-external-assembly"></a>Přidání konfigurace z externí sestavení
+
+[IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup) implementace umožňuje přidání vylepšení do aplikace při spuštění z externí sestavení mimo aplikace `Startup` třídy. Další informace najdete v tématu [vylepšení aplikace z externí sestavení](xref:fundamentals/configuration/platform-specific-configuration).
+
 ## <a name="access-configuration-in-a-razor-page-or-mvc-view"></a>Konfigurace přístupu v zobrazení stránky Razor nebo MVC
 
 Chcete-li získat přístup k nastavení konfigurace v stránky Razor stránky nebo zobrazení MVC, přidejte [using – direktiva](xref:mvc/views/razor#using) ([referenční dokumentace jazyka C#: using – direktiva](/dotnet/csharp/language-reference/keywords/using-directive)) pro [Microsoft.Extensions.Configuration obor názvů ](/dotnet/api/microsoft.extensions.configuration) a vložit [parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) do stránky nebo zobrazení.
@@ -468,7 +472,7 @@ V zobrazení MVC:
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Možnosti](xref:fundamentals/configuration/options)
-* [Práce s několika prostředí](xref:fundamentals/environments)
+* [Pomocí několika prostředí](xref:fundamentals/environments)
 * [Bezpečné ukládání tajných kódů aplikace při vývoji](xref:security/app-secrets)
 * [Hostování v ASP.NET Core](xref:fundamentals/hosting)
 * [Injektáž závislostí](xref:fundamentals/dependency-injection)

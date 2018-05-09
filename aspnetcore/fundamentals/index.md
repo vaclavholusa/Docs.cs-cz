@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: d5b74e213828d1a1f7e09810e5cc72773a821dab
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 223b1906ef9941084e18e0698f007d9564e81f09
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
@@ -107,7 +107,7 @@ Informace o používání `IHttpClientFactory` pro přístup k `HttpClient` inst
 
 Prostředí, jako je například "Vývoj" a "Provozní", jsou hodnoty první třídy v ASP.NET Core a se dá nastavit pomocí proměnné prostředí.
 
-Další informace najdete v tématu [pracovat s několika prostředí](xref:fundamentals/environments).
+Další informace najdete v tématu [použijte prostředí s více](xref:fundamentals/environments).
 
 ## <a name="configuration"></a>Konfigurace
 
@@ -143,7 +143,7 @@ Další informace najdete v tématu [souboru zprostředkovatelé](xref:fundament
 
 Statické soubory middleware poskytuje statické soubory, jako je například HTML, CSS, image a JavaScript.
 
-Další informace najdete v tématu [pracovat s statické soubory](xref:fundamentals/static-files).
+Další informace najdete v tématu [statické soubory](xref:fundamentals/static-files).
 
 ## <a name="hosting"></a>Hostování
 

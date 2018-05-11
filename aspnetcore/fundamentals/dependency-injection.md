@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 8a105f835dddfcd0e9f32059e644f60dc1fdbbe1
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 700ceb081b2067f932ce8ed08c45c62058775e33
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
@@ -351,13 +351,15 @@ Při práci s vkládání závislostí, mějte následující doporučení:
 
 * Vyhněte se statickou přístup k `HttpContext`.
 
-> [!NOTE]
-> Jako všech sad doporučení mohou nastat situace, kdy je potřeba jeden je ignorována. Našli jsme výjimky třeba výjimečných – většinou velmi zvláštních případech v rámci samotného.
+Jako všech sad doporučení mohou nastat situace, kdy je potřeba jeden je ignorována. Našli jsme výjimky třeba výjimečných – většinou velmi zvláštních případech v rámci samotného.
 
-Pamatujte si, že je vkládání závislostí *alternativní* na static, globální objekt přístupové vzorce. Nebudete moci pochopit výhody DI Pokud kombinujete statické objektu přístup.
+Vkládání závislostí je *alternativní* na static, globální objekt přístupové vzorce. Nebudete moci pochopit výhody DI Pokud kombinujete statické objektu přístup.
 
 ## <a name="additional-resources"></a>Další zdroje
 
+* [Injektáž závislostí do zobrazení](xref:mvc/views/dependency-injection)
+* [Injektáž závislostí do kontrolerů](xref:mvc/controllers/dependency-injection)
+* [Injektáž závislostí v obslužných rutinách požadavků](xref:security/authorization/dependencyinjection)
 * [Spuštění aplikace](xref:fundamentals/startup)
 * [Testování a ladění](xref:testing/index)
 * [Aktivace na základě Factory middlewaru](xref:fundamentals/middleware/extensibility)

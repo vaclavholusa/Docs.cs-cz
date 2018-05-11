@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: 9af08d8fcbd91a9189fe1f4c6cedd644361773f7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: b9947de03942bd71616e4bf12263befd9f784915
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Zobrazení v jádro ASP.NET MVC
 
@@ -21,7 +21,7 @@ Podle [Steve Smith](https://ardalis.com/) a [Luke Latham](https://github.com/gua
 
 Tento dokument popisuje zobrazení použitých v aplikacích ASP.NET MVC jádra. Informace na stránkách Razor najdete v tématu [Úvod do stránky Razor](xref:mvc/razor-pages/index).
 
-V **M**odelu -**V**obrazit -**C**vzor ontroller (MVC), *zobrazení* zpracovává data aplikace prezentace a uživatelské interakce. Zobrazení je šablony HTML s vložených [kódu Razor](xref:mvc/views/razor). Značka Razor je kód, který komunikuje s kódu HTML, který vytvoří webovou stránku, která je odeslána do klienta.
+Ve vzoru Model-View-Controller (MVC) *zobrazení* zpracovává data aplikace prezentace a uživatelské interakce. Zobrazení je šablony HTML s vložených [kódu Razor](xref:mvc/views/razor). Značka Razor je kód, který komunikuje s kódu HTML, který vytvoří webovou stránku, která je odeslána do klienta.
 
 V aplikaci ASP.NET MVC jádra, jsou zobrazení *.cshtml* soubory, které používají [programovací jazyk C#](/dotnet/csharp/) v kódu Razor. Obvykle jsou seskupené zobrazit soubory do složky s názvem pro jednotlivé aplikace [řadiče](xref:mvc/controllers/actions). Složky jsou uložené v *zobrazení* složku v kořenovém adresáři aplikace:
 
@@ -37,7 +37,7 @@ Použití [rozložení](xref:mvc/views/layout) k poskytování části konzisten
 
 ## <a name="benefits-of-using-views"></a>Výhody použití zobrazení
 
-Zobrazení nápovědy k vytvoření [ **S**eparation **o**f **C**oncerns (SoC) návrhu](http://deviq.com/separation-of-concerns/) v aplikaci MVC oddělením kód uživatelské rozhraní z dalších částí aplikace. Následující SoC návrhu, bude vaše aplikace modulární, který nabízí několik výhod:
+Zobrazení nápovědy k vytvoření [oddělení obavy (SoC) návrhu](http://deviq.com/separation-of-concerns/) v aplikaci MVC oddělením kód rozhraní uživatelů z dalších částí aplikace. Následující SoC návrhu, bude vaše aplikace modulární, který nabízí několik výhod:
 
 * Tato aplikace je snazší správa, protože je lépe uspořádány. Zobrazení jsou obecně seskupené podle funkce aplikace. Díky tomu je snazší najít související zobrazení při práci na funkce.
 * Součástí aplikace jsou volně vázány. Můžete vytvářet a aktualizovat zobrazení aplikace odděleně od komponenty obchodní logiku a data access. Zobrazení aplikace můžete upravit aniž byste museli mít aktualizovat dalších částí aplikace.
@@ -123,7 +123,16 @@ Postupujte podle osvědčený postup, uspořádání strukturu souborů pro zobr
 
 ## <a name="passing-data-to-views"></a>Předávání dat zobrazení
 
-Můžete předat data do zobrazení pomocí několik přístupů. Většina robustní přístupu slouží k zadání [modelu](xref:mvc/models/model-binding) typu v zobrazení. Tento model se často označuje jako *viewmodel*. Instance typu viewmodel předáte do zobrazení z akce.
+Předejte data do zobrazení několika přístupy:
+
+* Data silného typu: viewmodel
+* Slabě typovaná dat
+  - `ViewData` (`ViewDataAttribute`)
+  - `ViewBag`
+
+### <a name="strongly-typed-data-viewmodel"></a>Silného typu dat (viewmodel)
+
+Většina robustní přístupu slouží k zadání [modelu](xref:mvc/models/model-binding) typu v zobrazení. Tento model se často označuje jako *viewmodel*. Instance typu viewmodel předáte do zobrazení z akce.
 
 Použití viewmodel k předávání dat do zobrazení umožňuje zobrazit využívat výhod *silné* kontrola typu. *Silného typování* (nebo *silného typu*) znamená, že všechny proměnné a konstanta nemá explicitně definovaný typ (například `string`, `int`, nebo `DateTime`). V době kompilace se kontroluje platnost typy používané v zobrazení.
 
@@ -162,7 +171,7 @@ public IActionResult Contact()
 }
 ```
 
-Neexistují žádná omezení na modelu typy, které můžete zadat do zobrazení. Doporučujeme používat **P**rostý **O**ld **C**LR **O**viewmodels bject (objektů POCO) s minimální nebo žádnou chování (metody) definované. Obvykle jsou viewmodel třídy buď uložena v *modely* složku nebo samostatné *ViewModels* složku v kořenovém adresáři aplikace. *Adresu* viewmodel použít v předchozím příkladu je objektů POCO viewmodel, uložené v souboru s názvem *Address.cs*:
+Neexistují žádná omezení na modelu typy, které můžete zadat do zobrazení. Doporučujeme používat viewmodels prostý staré CLR objektů POCO () s minimální nebo žádnou chování (metody) definované. Obvykle jsou viewmodel třídy buď uložena v *modely* složku nebo samostatné *ViewModels* složku v kořenovém adresáři aplikace. *Adresu* viewmodel použít v předchozím příkladu je objektů POCO viewmodel, uložené v souboru s názvem *Address.cs*:
 
 ```csharp
 namespace WebApplication1.ViewModels
@@ -178,15 +187,13 @@ namespace WebApplication1.ViewModels
 }
 ```
 
-> [!NOTE]
-> Nic brání použití stejné tříd pro vaše viewmodel typy a typy modelu vaší firmy. Použití samostatných modelů však umožňuje zobrazení k odlišení nezávisle z obchodní logiku a data přístup částí aplikace. Oddělení modely a viewmodels také nabízí výhody zabezpečení při použití modelů [model vazby](xref:mvc/models/model-binding) a [ověření](xref:mvc/models/validation) pro data odesílaná do aplikace uživatelem.
-
+Nic brání použití stejné tříd pro vaše viewmodel typy a typy modelu vaší firmy. Použití samostatných modelů však umožňuje zobrazení k odlišení nezávisle z obchodní logiku a data přístup částí aplikace. Oddělení modely a viewmodels také nabízí výhody zabezpečení při použití modelů [model vazby](xref:mvc/models/model-binding) a [ověření](xref:mvc/models/validation) pro data odesílaná do aplikace uživatelem.
 
 <a name="VD_VB"></a>
 
-### <a name="weakly-typed-data-viewdata-and-viewbag"></a>Slabě typované data (ViewData a ViewBag)
+### <a name="weakly-typed-data-viewdata-viewdata-attribute-and-viewbag"></a>Slabě typované dat (ViewData, ViewData atribut a ViewBag)
 
-Poznámka: `ViewBag` není k dispozici na stránkách Razor.
+`ViewBag` *není k dispozici na stránkách Razor.*
 
 Kromě zobrazení silného typu zobrazení mají přístup k *slabě typované* (také nazývané *volného typu*) shromažďování dat. Na rozdíl od silné typy *slabé typy* (nebo *ztrátě typy*) znamená, že jste si deklarovat explicitně typu dat, který používáte. Shromažďování dat o slabě typované můžete použít pro předávání malé množství dat a deaktivovat kontrolery a zobrazení.
 
@@ -199,7 +206,6 @@ Kromě zobrazení silného typu zobrazení mají přístup k *slabě typované* 
 Tuto kolekci lze odkazovat pomocí buď `ViewData` nebo `ViewBag` vlastnosti kontrolery a zobrazení. `ViewData` Vlastnost je slovník slabě typované objektů. `ViewBag` Vlastnost je obálku kolem `ViewData` poskytuje dynamické vlastnosti základní `ViewData` kolekce.
 
 `ViewData` a `ViewBag` jsou vyřešeny dynamicky za běhu. Vzhledem k tomu, že nemáte nabízejí kontrolu typu kompilaci, jak jsou obecně více náchylné než použití viewmodel. Z tohoto důvodu někteří vývojáři radši chtěli použít minimálně nebo nikdy `ViewData` a `ViewBag`.
-
 
 <a name="VD"></a>
 
@@ -243,9 +249,49 @@ Práce s daty v zobrazení:
 </address>
 ```
 
+::: moniker range=">= aspnetcore-2.1"
+**Atribut viewData**
+
+Jiná možnost, která používá [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) je [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute). Vlastnosti v kontrolerech a modelech stránky Razor označených pomocí `[ViewData]` jejich hodnoty uložené a načíst ze slovníku.
+
+V následujícím příkladu obsahuje řadičem domovské `Title` vlastnost označených pomocí `[ViewData]`. `About` Metoda nastaví název o zobrazení:
+
+```csharp
+public class HomeController : Controller
+{
+    [ViewData]
+    public string Title { get; set; }
+
+    public IActionResult About()
+    {
+        Title = "About Us";
+        ViewData["Message"] = "Your application description page.";
+
+        return View();
+    }
+}
+```
+
+V zobrazení o přístup `Title` vlastnost jako vlastnost modelu:
+
+```cshtml
+<h1>@Model.Title</h1>
+```
+
+V rozložení je název číst ze slovníku ViewData:
+
+```cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - WebApplication</title>
+    ...
+```
+::: moniker-end
+
 **ViewBag**
 
-Poznámka: `ViewBag` není k dispozici na stránkách Razor.
+`ViewBag` *není k dispozici na stránkách Razor.*
 
 `ViewBag` je [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) objekt, který poskytuje dynamické přístup k objektům, které jsou uložené v `ViewData`. `ViewBag` může být pohodlnější můžete pracovat, protože nevyžaduje přetypování. Následující příklad ukazuje, jak používat `ViewBag` se stejné výsledky jako pomocí `ViewData` výše:
 
@@ -278,7 +324,7 @@ public IActionResult SomeAction()
 
 **Pomocí ViewData a ViewBag současně**
 
-Poznámka: `ViewBag` není k dispozici na stránkách Razor.
+`ViewBag` *není k dispozici na stránkách Razor.*
 
 Vzhledem k tomu `ViewData` a `ViewBag` odkazovat na stejnou základní `ViewData` kolekce, můžete je používat `ViewData` a `ViewBag` a kombinovat a párovat mezi nimi při čtení a zápis hodnoty.
 

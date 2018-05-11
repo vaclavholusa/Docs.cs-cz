@@ -4,16 +4,17 @@ author: rick-anderson
 description: Rychlý kurz, který vytvoří a spustí jednoduchou aplikaci Hello World pomocí ASP.NET Core.
 manager: wpickett
 ms.author: riande
-ms.date: 10/18/2017
+ms.custom: mvc
+ms.date: 05/10/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: getting-started
-ms.openlocfilehash: 327936f5951309afbbce5f6f5a1020445aa73ce6
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: e814277663ff5a964171a71ebb6e0f094e0ddc60
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="get-started-with-aspnet-core"></a>Začínáme s ASP.NET Core
 
@@ -28,35 +29,26 @@ ms.lasthandoff: 05/07/2018
     ```terminal
     dotnet new razor -o aspnetcoreapp
     ```
-    
-3. Spusťte aplikaci.
 
-    Ke spuštění aplikace použijte následující příkazy:
+3. Spusťte aplikaci pomocí následujících příkazů:
 
     ```terminal
     cd aspnetcoreapp
     dotnet run
     ```
 
-4. Přejděte na [http://localhost:5000](http://localhost:5000)
+4. Přejděte do [ http://localhost:5000 ](http://localhost:5000).
 
-5. Otevřete <em>Pages/About.cshtml</em> a upravte stránku a zobrazí se zpráva "Hello, world! Je čas na serveru @DateTime.Now ":
+5. Otevřete *Pages/About.cshtml* a upravte stránku a zobrazí se zpráva "Hello, world! Je čas na serveru @DateTime.Now":
 
-    [!code-html[](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
+    [!code-cshtml[](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 
 6. Přejděte do [ http://localhost:5000/About ](http://localhost:5000/About) a ověřit změny.
 
-### <a name="next-steps"></a>Další kroky
-
-Kurzy Začínáme najdete v části [kurzy jádro ASP.NET](tutorials/index.md)
-
-Úvod do ASP.NET základní koncepty a architektury, najdete v části [ASP.NET Core ÚVOD](index.md) a [ASP.NET Core Základy](fundamentals/index.md).
-
-Aplikace ASP.NET Core pomocí .NET Core nebo základní rozhraní .NET Framework – knihovna tříd a modulu runtime. Další informace najdete v tématu [výběru mezi .NET Core a rozhraní .NET Framework](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server).
-
+[!INCLUDE[next steps](~/includes/getting-started/next-steps.md)]
 ::: moniker-end
 
-::: moniker range=">= aspnetcore-1.0"
+::: moniker range="<= aspnetcore-1.1"
 
 1. Instalace .NET Core **instalační program sady SDK** pro sadu SDK 1.0.4 z [.NET Core všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
 
@@ -69,7 +61,7 @@ Aplikace ASP.NET Core pomocí .NET Core nebo základní rozhraní .NET Framework
    cd aspnetcoreapp
    ```
 
-2. Pokud jste nainstalovali novější verze sady SDK na váš počítač, vytvořte *global.json* soubor a vyberte 1.0.4 SDK.
+3. Pokud jste nainstalovali novější verze sady SDK na váš počítač, vytvořte *global.json* soubor a vyberte 1.0.4 SDK.
 
    ```json
    {
@@ -77,36 +69,27 @@ Aplikace ASP.NET Core pomocí .NET Core nebo základní rozhraní .NET Framework
    }
    ```
 
-2. Vytvoření nového projektu .NET Core.
+4. Vytvoření nového projektu .NET Core.
 
    ```terminal
    dotnet new web
    ```
-   
-3.  Obnovení balíčků.
+
+5. Obnovení balíčků.
 
     ```terminal
     dotnet restore
     ```
 
-4. Spusťte aplikaci.
-
-   [Dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz sestavení aplikace nejprve v případě potřeby.
+6. Spusťte aplikaci.
 
    ```terminal
    dotnet run
    ```
 
-5. Přejděte na `http://localhost:5000`
+   [Dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz sestavení aplikace nejprve v případě potřeby.
 
-<!-- H3 to avoid a single-entry internal TOC -->
-### <a name="next-steps"></a>Další kroky
+7. Přejděte do `http://localhost:5000`.
 
-Kurzy Začínáme najdete v části [kurzy jádro ASP.NET](tutorials/index.md)
-
-Úvod do ASP.NET základní koncepty a architektury, najdete v části [ASP.NET Core ÚVOD](index.md) a [ASP.NET Core Základy](fundamentals/index.md).
-
-Aplikace ASP.NET Core pomocí .NET Core nebo základní rozhraní .NET Framework – knihovna tříd a modulu runtime. Další informace najdete v tématu [výběru mezi .NET Core a rozhraní .NET Framework](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server).
-
-
+[!INCLUDE[next steps](~/includes/getting-started/next-steps.md)]
 ::: moniker-end

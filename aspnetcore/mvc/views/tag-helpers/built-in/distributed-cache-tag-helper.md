@@ -9,23 +9,21 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
-ms.openlocfilehash: 929156633048b8ee68a66290f44b12026a08c8c9
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 9c1d91fc185a0afecf59af8927ddf6f25eff29ab
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="distributed-cache-tag-helper-in-aspnet-core"></a>Distribuované mezipaměti značky Pomocník ASP.NET Core
 
 Podle [Petr Kellner](http://peterkellner.net) 
 
-
 Pomocník pro značku distribuované mezipaměti umožňuje výrazně zlepšit výkon vaší aplikace ASP.NET Core pomocí ukládání do mezipaměti jeho obsah ke zdroji distribuované mezipaměti.
 
-Pomocník distribuované mezipaměti značky dědí ze stejné základní třídy jako pomocný značky mezipaměti.  Všechny atributy, které jsou spojené s pomocnou rutinou značky mezipaměti budou také fungovat na pomocná distribuované značky.
+Pomocník distribuované mezipaměti značky dědí ze stejné základní třídy jako pomocný značky mezipaměti. Všechny atributy, které jsou spojené s pomocnou rutinou značky mezipaměti budou také fungovat na pomocná distribuované značky.
 
-
-Pomocník distribuované mezipaměti značka odpovídá **explicitní závislosti Princip** známé jako **konstruktor vkládání**.  Konkrétně `IDistributedCache` rozhraní kontejneru je předána do distribuované mezipaměti značky pomocné rutiny pro konstruktor.  Pokud žádné konkrétní konkrétní implementaci `IDistributedCache` byla vytvořena v `ConfigureServices`, obvykle najít v souboru startup.cs, pak pomocná distribuované mezipaměti značky použije stejný zprostředkovatel v paměti pro ukládání data uložená v mezipaměti jako základní značky pomocná mezipaměti.
+Pomocník distribuované mezipaměti značka odpovídá **explicitní závislosti Princip** známé jako **konstruktor vkládání**. Konkrétně `IDistributedCache` rozhraní kontejneru je předána do distribuované mezipaměti značky pomocné rutiny pro konstruktor. Pokud žádné konkrétní konkrétní implementaci `IDistributedCache` byla vytvořena v `ConfigureServices`, obvykle najít v souboru startup.cs, pak pomocná distribuované mezipaměti značky použije stejný zprostředkovatel v paměti pro ukládání data uložená v mezipaměti jako základní značky pomocná mezipaměti.
 
 ## <a name="distributed-cache-tag-helper-attributes"></a>Distribuované mezipaměti atributů pomocná značky
 
@@ -43,7 +41,7 @@ Definice naleznete v tématu Pomocník značky mezipaměti. Pomocník značky di
 |----------------   |----------------   |
 | odkazy řetězců    | "my-distributed-cache-unique-key-101"     |
 
-Požadované `name` atribut slouží jako klíč do této mezipaměti uložené pro každou instanci pomocná značky distribuované mezipaměti.  Na rozdíl od základní pomocná značky mezipaměti, který přiřazuje klíč každý mezipaměti značky pomocná instance na základě názvu stránky Razor a umístění pomocníka značky, na stránce razor pomocná distribuované mezipaměti značky pouze základny jeho klíče na atributu `name`
+Požadované `name` atribut slouží jako klíč do této mezipaměti uložené pro každou instanci pomocná značky distribuované mezipaměti. Na rozdíl od základní pomocná značky mezipaměti, který přiřazuje klíč každý mezipaměti značky pomocná instance na základě názvu stránky Razor a umístění pomocníka značky, na stránce razor pomocná distribuované mezipaměti značky pouze základny svůj klíč na atributu `name`
 
 Příklad použití:
 
@@ -53,17 +51,11 @@ Příklad použití:
 </distributed-cache>
 ```
 
-## <a name="distributed-cache-tag-helper-idistributedcache-implementations"></a>Distribuované mezipaměti značky pomocná IDistributedCache implementace
+## <a name="distributed-cache-tag-helper-idistributedcache-implementations"></a>Implementace distribuované mezipaměti značky pomocná IDistributedCache
 
-Existují dvě implementace `IDistributedCache` součástí ASP.NET Core.  Je na základě **systému Sql Server** a druhý je založena na **Redis**. Podrobnosti o těchto implementace lze najít na prostředek dále pojmenovaný "pracovní s distribuované mezipaměti". Obě implementace zahrnovat nastavení instanci `IDistributedCache` v ASP.NET Core **startup.cs**.
+Existují dvě implementace `IDistributedCache` součástí ASP.NET Core. Jeden je založený na systému SQL Server a druhý je založena na Redis. Podrobnosti o těchto implementace naleznete na adrese <xref:performance/caching/distributed>. Obě implementace zahrnovat nastavení instanci `IDistributedCache` v ASP.NET Core *Startup.cs*.
 
 Neexistují žádné atributů značky konkrétně související s používáním žádnou konkrétní implementaci `IDistributedCache`.
-
-
-
-- - -
-
-
 
 ## <a name="additional-resources"></a>Další zdroje
 

@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: 5ed5e1c5cfa6fcb80b14a8874824a503d1abf732
-ms.sourcegitcommit: 3eaad370829c2360104053b452168f4ba087279c
+ms.openlocfilehash: 786c333980db89a9a5a60dc70c0bd1998ca159cd
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>Pomocník částečné značky ASP.NET Core
 
@@ -87,4 +87,4 @@ V tomto příkladu hodnota `ViewData["IsNumberReadOnly"]` Určuje, zda *číslo*
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Částečná zobrazení](xref:mvc/views/partial)
-* [Slabě typovaná data (ViewData a ViewBag)](xref:mvc/views/overview#weakly-typed-data-viewdata-and-viewbag)
+* [Slabě typované dat (ViewData, ViewData atribut a ViewBag)](xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag)

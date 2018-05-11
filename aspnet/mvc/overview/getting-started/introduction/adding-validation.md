@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: d084c5c7e232b92c8cfe2230e076752d42d8da5d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 946d4d5e5a506fb437232f9f4440c98e33a1a9b3
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 <a name="adding-validation"></a>Přidání ověřování
 ====================
@@ -134,7 +134,7 @@ Otevřete *Movie.cs* soubor a zkontrolujte `Movie` třídy. [ `System.ComponentM
 
 [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy pouze poskytovat pro modul zobrazení pro zobrazení dat (a zadejte atributy, jako `<a>` pro adresy URL a `<a href="mailto:EmailAddress.com">` e-mailu. Můžete použít [regulární výraz](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut pro ověření formátu dat. [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atribut slouží k určení datový typ, který je specifičtější než vnitřní typ databáze, jsou ***není*** atributů ověření. V tomto případě chceme jenom udržování přehledu o datum, není datum a čas. [Datový typ výčtu](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) poskytuje pro mnoho typů dat, jako například *datum, čas, telefonní číslo, měny, EmailAddress* a další. `DataType` Atributu můžete také povolit aplikace automaticky poskytnout konkrétní typ funkce. Například `mailto:` může vytvořit odkaz pro [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), a datum selektor lze zadat pro [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) v prohlížečích podporujících [HTML5](http://html5.org/). [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy vysílá standardu HTML 5 [data -](http://ejohn.org/blog/html-5-data-attributes/) (vyslovováno *data dash*) atributy, které můžete porozumět standardu HTML 5 prohlížeče. [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy neposkytují žádné ověření.
 
-`DataType.Date` neurčuje formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole dat podle výchozích formátů podle serveru[CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
+`DataType.Date` neurčuje formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole dat podle výchozích formátů podle serveru [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
 
 `DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
 
@@ -147,17 +147,17 @@ Otevřete *Movie.cs* soubor a zkontrolujte `Movie` třídy. [ `System.ComponentM
 Můžete použít [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut podle sám sebe, ale obecně je vhodné používat [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) také atribut. `DataType` Přenese tak atribut *sémantiku* dat, jako byl proti na tom, jak vykreslit ho na obrazovce a nabízí následující výhody, které není dostupná s `DisplayFormat`:
 
 - V prohlížeči můžete povolit funkce HTML5 (např. k zobrazení ovládacího prvku kalendář, symbolu měny vhodné národního prostředí, e-mailu odkazy, atd.).
-- Ve výchozím nastavení, prohlížeč bude vykreslovat data správný formát na základě vaší[národního prostředí](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx).
-- [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributu můžete povolit MVC na výběr šablony pravé pole k poskytnutí dat ( [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) pokud používá samotné používá šablonu řetězec). Další informace najdete v tématu Brad Wilson[ASP.NET MVC 2 šablony](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (I když napsané pro MVC 2, tento článek stále platí pro aktuální verzi ASP.NET MVC.)
+- Ve výchozím nastavení, prohlížeč bude vykreslovat data správný formát na základě vaší [národního prostředí](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx).
+- [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributu můžete povolit MVC na výběr šablony pravé pole k poskytnutí dat ( [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) pokud používá samotné používá šablonu řetězec). Další informace najdete v tématu Brad Wilson [ASP.NET MVC 2 šablony](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (I když napsané pro MVC 2, tento článek stále platí pro aktuální verzi ASP.NET MVC.)
 
 Pokud použijete `DataType` atribut s poli data, budete muset určit `DisplayFormat` atribut také, aby se zajistilo, že pole správně vykreslení v prohlížeči Chrome. Další informace najdete v tématu [tohoto podprocesu StackOverflow](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie).
 
 > [!NOTE]
-> k ověřování jQuery nefunguje s[rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut a[data a času](https://msdn.microsoft.com/library/system.datetime.aspx). Například následující kód bude vždy zobrazovat chyby ověření straně klienta, i v případě, že datum je v zadaném rozsahu:
+> k ověřování jQuery nefunguje s [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut a [data a času](https://msdn.microsoft.com/library/system.datetime.aspx). Například následující kód bude vždy zobrazovat chyby ověření straně klienta, i v případě, že datum je v zadaném rozsahu:
 > 
 > [!code-csharp[Main](adding-validation/samples/sample9.cs)]
 > 
-> Budete muset zakázat ověřování jQuery datum používat [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut s[data a času](https://msdn.microsoft.com/library/system.datetime.aspx). Je obecně není vhodné zkompilovat pevného data v modely, takže pomocí[rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut a[data a času](https://msdn.microsoft.com/library/system.datetime.aspx) se nedoporučuje.
+> Budete muset zakázat ověřování jQuery datum používat [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut s [data a času](https://msdn.microsoft.com/library/system.datetime.aspx). Je obecně není vhodné zkompilovat pevného data v modely, takže pomocí [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut a [data a času](https://msdn.microsoft.com/library/system.datetime.aspx) se nedoporučuje.
 
 
 Následující kód ukazuje kombinování atributy na jeden řádek:

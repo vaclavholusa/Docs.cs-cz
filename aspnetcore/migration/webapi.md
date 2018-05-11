@@ -4,16 +4,16 @@ author: ardalis
 description: Zjistěte, jak migrovat implementace webového rozhraní API z rozhraní ASP.NET Web API ASP.NET MVC jádra.
 manager: wpickett
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 05/10/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 059e1bc54c57e502ad01fd50d9899dfd0671037f
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 8d842877e49e317323d453e71ebb3302245f388d
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>Migrace z rozhraní ASP.NET Web API na jádro ASP.NET
 
@@ -116,6 +116,37 @@ Jakmile se tyto změny byly učiněna a nepoužívané pomocí příkazů odebra
 [!code-csharp[](../migration/webapi/sample/ProductsCore/Controllers/ProductsController.cs?highlight=1,2,6,8,9,27)]
 
 Teď by měla být moci spustit migrované projekt a přejděte do */api/produkty*; a měli byste vidět úplný seznam produktů 3. Přejděte do */api/products/1* a měli byste vidět první produktu.
+
+## <a name="microsoftaspnetcoremvcwebapicompatshim"></a>Microsoft.AspNetCore.Mvc.WebApiCompatShim
+
+Je užitečné nástroje při migraci rozhraní ASP.NET Web API projektů ASP.NET Core [Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim) knihovny. Shim kompatibility rozšiřuje základní technologie ASP.NET povolíte počet různých pravidel webovém rozhraní API 2 má být použit. Ukázka, která je součástí dříve v tomto dokumentu je dostatečně základní, že shim kompatibility není nezbytné. U větších projektů pomocí shimu kompatibility může být užitečná pro dočasně přemostění rozhraní API mezera mezi ASP.NET Core a ASP.NET Web API 2.
+
+Shim kompatibility webového rozhraní API je určen pro použití jako dočasné opatření ke zjednodušení migrace velké projekty webového rozhraní API pro ASP.NET Core. V čase je třeba aktualizovat projekty využít ASP.NET Core sítích, aniž byste museli spoléhat na shim kompatibility. 
+
+Kompatibilita funkce obsažené v Microsoft.AspNetCore.Mvc.WebApiCompatShim patří:
+
+* Přidá `ApiController` zadejte tak, aby základních typů řadičů není třeba aktualizovat.
+* Umožňuje webové rozhraní API-style vazby modelu. Jádro ASP.NET MVC model vazby funkcí podobně MVC 5, ve výchozím nastavení. Změny shim kompatibility model vazby více podobný konvence vazby modelu webovém rozhraní API 2. Komplexní typy jsou automaticky svázané z textu požadavku.
+* Rozšiřuje vazby modelu tak, aby akce kontroleru může trvat parametrů typu `HttpRequestMessage`.
+* Přidá formátování zpráv umožňuje akce vracet výsledky typu `HttpResponseMessage`.
+* Přidá další odpovědi metody, které webové rozhraní API 2 akce může mít používají k obsluze odpovědí:
+    * Objekt HttpResponseMessage generátory:
+        * `CreateResponse<T>`
+        * `CreateErrorResponse`
+    * Výsledek metody akce:
+        * `BadResuestErrorMessageResult`
+        * `ExceptionResult`
+        * `InternalServerErrorResult`
+        * `InvalidModelStateResult`
+        * `NegotiatedContentResult`
+        * `ResponseMessageResult`
+* Přidá instanci `IContentNegotiator` do kontejneru DI aplikace a související vyjednávání typů z obsahu díky [Microsoft.AspNet.WebApi.Client](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client/) k dispozici. To zahrnuje typy jako `DefaultContentNegotiator`, `MediaTypeFormatter`atd.
+
+Pokud chcete používat shim kompatibility, budete muset:
+
+* Odkaz [Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim) balíček NuGet.
+* Registrace služby shim kompatibility s kontejnerem aplikace DI voláním `services.AddWebApiConventions()` do aplikace `Startup.ConfigureServices` metoda.
+* Definování tras specifické pro webové rozhraní API pomocí `MapWebApiRoute` na `IRouteBuilder` do aplikace `IApplicationBuilder.UseMvc` volání.
 
 ## <a name="summary"></a>Souhrn
 

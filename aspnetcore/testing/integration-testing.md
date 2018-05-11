@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 3c618b2bd5919f6536601631eb4d21359a6bc03a
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ac3a9e00edfd4c736ee1e7d5c0c724c3e52d0b6b
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="integration-tests-in-aspnet-core"></a>Integrace testů v ASP.NET Core
 
@@ -43,7 +43,7 @@ Pokud chcete získat nastavena tak, aby integrace spuštění testů, budete pot
 
 ### <a name="the-test-host"></a>Testovacího hostitele
 
-ASP.NET Core zahrnuje hostitele test, který lze přidat do projektů testování integrace a používané k hostiteli ASP.NET Core aplikace, slouží test požadavky bez nutnosti skutečné webového hostitele. Zadaný vzorek zahrnuje integrace testovacího projektu, na který byl nakonfigurován na použití [xUnit](https://xunit.github.io) a otestovat hostitele. Použije `Microsoft.AspNetCore.TestHost` balíček NuGet.
+ASP.NET Core zahrnuje hostitele test, který lze přidat do projektů testování integrace a používané k hostiteli ASP.NET Core aplikace, slouží test požadavky bez nutnosti skutečné webového hostitele. Zadaný vzorek zahrnuje integrace testovacího projektu, na který byl nakonfigurován na použití [xUnit](https://xunit.github.io) a otestovat hostitele. Použije [Microsoft.AspNetCore.TestHost](https://www.nuget.org/packages/Microsoft.AspNetCore.TestHost/) balíček NuGet.
 
 Jednou `Microsoft.AspNetCore.TestHost` balíčku je zahrnutý v projektu, budete moct vytvořit a nakonfigurovat `TestServer` v testy. Následující test ukazuje, jak ověřit, že požadavku odeslaného do kořenového adresáře webu vrátí "Hello, World!" a je třeba provést úspěšně u výchozí šablonu ASP.NET Core prázdný Web vytvořili pomocí sady Visual Studio.
 

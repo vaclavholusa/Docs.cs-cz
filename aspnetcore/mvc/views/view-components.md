@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/view-components
-ms.openlocfilehash: a3614024c7f776e4502bc049180ae1c965e31db4
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: cdf44fc15ac64497b2589e8b7b289beb94c5b2c4
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="view-components-in-aspnet-core"></a>Zobrazení součásti v ASP.NET Core
 
@@ -21,9 +21,11 @@ podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="introducing-view-components"></a>Představení součásti zobrazení
+## <a name="view-components"></a>Zobrazení součásti
 
-Nové do architektury ASP.NET MVC jádra, zobrazení součásti jsou podobná částečné zobrazení, ale jsou mnohem silnější. Součásti zobrazení nemáte použít modelovou vazbu a pouze závisí na data zadaná při volání do ní. Součást zobrazení:
+Zobrazení součásti jsou podobná částečné zobrazení, ale jsou mnohem silnější. Součásti zobrazení nemáte použít modelovou vazbu a pouze závisí na data zadaná při volání do ní. Tento článek byl napsané v ASP.NET MVC jádra, ale součásti zobrazení také pracovat se stránky Razor.
+
+Součást zobrazení:
 
 * Vykreslí bloku dat, nikoli celý odpovědi.
 * Zahrnuje stejné oddělení z otázky a výhody testovatelnosti nalezen mezi řadiče a zobrazení.

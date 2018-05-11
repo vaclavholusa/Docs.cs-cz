@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: web-api/action-return-types
-ms.openlocfilehash: 88c8e61960982f405275c429087c7dd0c61abb8d
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 6734153eab699bb951400baa5c40968019c35b2c
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="controller-action-return-types-in-aspnet-core-web-api"></a>Návratové typy akce kontroleru v webového rozhraní API ASP.NET Core
 
@@ -58,7 +58,7 @@ Vezměte v úvahu následující synchronní akce, ve kterém jsou dvě možné 
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.Api.Pre21/Controllers/ProductsController.cs?name=snippet_GetById&highlight=8,11)]
 
-V předchozí akce, je vrácena 404 stavový kód, pokud produkt reprezentována `id` v příslušné úložiště dat neexistuje. [NotFound](/dotnet/api/system.web.http.apicontroller.notfound) metodu helper je vyvolána jako zástupce `return new NotFoundResult();`. Pokud produkt neexistuje, `Product` objekt představující datové části je vrácen s 200 stavový kód. [Ok](/dotnet/api/system.web.http.apicontroller.ok) metodu helper je vyvolána jako sdružená formu `return new OkObjectResult(product);`.
+V předchozí akce, je vrácena 404 stavový kód, pokud produkt reprezentována `id` v příslušné úložiště dat neexistuje. [NotFound](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.notfound) metodu helper je vyvolána jako zástupce `return new NotFoundResult();`. Pokud produkt neexistuje, `Product` objekt představující datové části je vrácen s 200 stavový kód. [Ok](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok) metodu helper je vyvolána jako sdružená formu `return new OkObjectResult(product);`.
 
 ### <a name="asynchronous-action"></a>Asynchronní akce
 
@@ -66,16 +66,16 @@ Vezměte v úvahu následující asynchronní akce, ve kterém jsou dvě možné
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.Api.Pre21/Controllers/ProductsController.cs?name=snippet_CreateAsync&highlight=8,13)]
 
-V předchozí akce, je vrácena 400 stavový kód, pokud selže ověření modelu a [struktura BadRequest](/dotnet/api/system.web.http.apicontroller.badrequest) Pomocná metoda je volána. Například následující modelu označuje, že musí poskytnout požadavky `Name` vlastnosti a hodnotu. Proto nejsou-li správnou `Name` v požadavku způsobí selhání ověření modelu.
+V předchozí akce, je vrácena 400 stavový kód, pokud selže ověření modelu a [struktura BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) Pomocná metoda je volána. Například následující modelu označuje, že musí poskytnout požadavky `Name` vlastnosti a hodnotu. Proto nejsou-li správnou `Name` v požadavku způsobí selhání ověření modelu.
 
 [!code-csharp[](../web-api/action-return-types/samples/WebApiSample.DataAccess/Models/Product.cs?name=snippet_ProductClass&highlight=5-6)]
 
-Předchozí akce jiných známým návratový kód je 201, což je generován [CreatedAtRoute](/dotnet/api/system.web.http.apicontroller.createdatroute) metodu helper. V této cestě `Product` se vrátí objekt.
+Předchozí akce jiných známým návratový kód je 201, což je generován [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction) metodu helper. V této cestě `Product` se vrátí objekt.
 
 ::: moniker range=">= aspnetcore-2.1"
 ## <a name="actionresultt-type"></a>ActionResult\<T > typ
 
-Zavádí ASP.NET Core 2.1 `ActionResult<T>` návratový typ pro akce kontroleru webového rozhraní API. Umožní vám vrátit typ odvozování z [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult) , nebo může vracet [konkrétního typu](#specific-type). `ActionResult<T>` nabízí následující výhody přes [IActionResult typ](#iactionresult-type):
+Zavádí ASP.NET Core 2.1 [ActionResult\<T >](/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1) návratový typ pro akce kontroleru webového rozhraní API. Umožní vám vrátit typ odvozování z [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult) , nebo může vracet [konkrétního typu](#specific-type). `ActionResult<T>` nabízí následující výhody přes [IActionResult typ](#iactionresult-type):
 
 * [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) atributu `Type` vlastnost můžete vyloučit.
 * [Operátory přetypování implicitní](/dotnet/csharp/language-reference/keywords/implicit) podporují převod obou `T` a `ActionResult` k `ActionResult<T>`. `T` převede na [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult), což znamená `return new ObjectResult(T);` je zjednodušenou `return T;`.

@@ -5,16 +5,16 @@ description: Zjistěte, jak stránky Razor v ASP.NET Core Díky kódování zam�
 manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/12/2017
+ms.date: 5/12/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: f9484d4806a7430177878b462209ba6608cfdd7d
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: c848c5d66a9e8141d9d737e8ce9c994587b04916
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -208,6 +208,13 @@ Protože `handler` je `delete` v tomto příkladu `OnPostDeleteAsync` metoda obs
 * Volání `RedirectToPage` přesměrovat na indexovou stránku kořenové (`/Index`).
 
 ::: moniker range=">= aspnetcore-2.1"
+
+## <a name="mark-page-properties-required"></a>Požadované vlastnosti stránky značky
+
+Vlastnosti `PageModel` může být doplněny pomocí [požadované](/dotnet/api/system.componentmodel.dataannotations.requiredattribute) atribut:
+
+[!code-cs[](index/sample/Create.cshtml.cs?highlight=3,15-16)]
+
 ## <a name="manage-head-requests-with-the-onget-handler"></a>Spravovat požadavky HEAD s obslužnou rutinou OnGet
 
 Obslužná rutina HEAD obvykle žádá se vytvoří a volat pro požadavky HEAD:
@@ -226,9 +233,10 @@ services.AddMvc()
     .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 ```
 
-`SetCompatibilityVersion` nastavuje možnosti stránky Razor `AllowMappingHeadRequestsToGetHandler` k `true`. Chování je výslovný souhlas dokud verzi ASP.NET Core 3.0 Preview 1 nebo novější. Každou hlavní verzi ASP.NET Core přijme všechny chování vydání opravy předchozí verze.
+`SetCompatibilityVersion` nastavuje možnosti stránky Razor `AllowMappingHeadRequestsToGetHandler` k `true`.
 
-Chování globální výslovný souhlas pro oprava verze 2.1 k 2.x se vyhnout s konfigurací aplikace, která mapuje požadavky HEAD obslužná rutina GET. Nastavte `AllowMappingHeadRequestsToGetHandler` stránky Razor možnost k `true` bez volání `SetCompatibilityVersion` v `Startup.Configure`:
+Místo vyjádření výslovného do všech 2.1 chování s `SetCompatibilityVersion`, vám může explicitně výslovný souhlas pro konkrétní chování. Následující kód požádá do Požadavky HEAD mapování na obslužnou rutinu GET.
+
 
 ```csharp
 services.AddMvc()
@@ -267,7 +275,7 @@ V tématu [rozložení stránky](xref:mvc/views/layout) Další informace.
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
 
-**Poznámka:** rozložení je v *stránky* složky. Stránky vyhledejte další zobrazení (rozložení, šablony, částečné.) hierarchicky, spouštění ve stejné složce jako aktuální stránku. Rozložení v *stránky* složky lze z libovolné stránky Razor pod *stránky* složky.
+Rozložení je v *stránky* složky. Stránky vyhledejte další zobrazení (rozložení, šablony, částečné.) hierarchicky, spouštění ve stejné složce jako aktuální stránku. Rozložení v *stránky* složky lze z libovolné stránky Razor pod *stránky* složky.
 
 Doporučujeme **není** chápat rozložení souboru *zobrazení a sdílených* složky. *Zobrazení a sdílených* je zobrazení vzor MVC. Stránky Razor jsou určené spoléhají na hierarchii složek, není cesta konvence.
 
@@ -299,7 +307,7 @@ Například kódu na pozadí *Pages/Customers/Edit.cshtml.cs* explicitně nastav
 
 Vygenerovaný obor názvů pro *Pages/Customers/Edit.cshtml* Razor stránky je stejná jako souboru kódu. `@namespace` – Direktiva v byla navržená tak, třídy C# přidán do projektu a kód generovaný stránky *právě pracovní* bez nutnosti přidání `@using` direktivy pro souboru kódu.
 
-**Poznámka:** `@namespace` funguje taky s konvenční zobrazení syntaxe Razor.
+`@namespace` *taky spolupracuje se službou konvenční zobrazení syntaxe Razor.*
 
 Původní *Pages/Create.cshtml* zobrazení souboru:
 
@@ -350,6 +358,42 @@ Generování adresy URL pro stránky podporuje relativních názvů. Následují
 `RedirectToPage("Index")`, `RedirectToPage("./Index")`, a `RedirectToPage("../Index")` jsou <em>relativních názvů</em>. `RedirectToPage` Parametr <em>kombinaci</em> cestou k aktuální stránce k výpočtu název cílové stránky.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
 
 Relativní název propojení je užitečné, při vytváření lokalit se strukturou komplexní. Pokud používáte relativních názvů propojení mezi stránkami ve složce, můžete přejmenovat této složky. Všechny odkazy na i nadále fungovat, (protože jejich nezahrnuli název složky).
+
+::: moniker range=">= aspnetcore-2.1"
+## <a name="viewdata-attribute"></a>Atribut viewData
+
+Data mohou být předána na stránku s [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute). Vlastnosti v kontrolerech a modelech stránky Razor označených pomocí `[ViewData]` hodnoty uložené a načíst z být [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary).
+
+V následujícím příkladu `AboutModel` obsahuje `Title` vlastnost označených pomocí `[ViewData]`. `Title` Je nastavena na název stránky o:
+
+```csharp
+public class AboutModel : PageModel
+{
+    [ViewData]
+    public string Title { get; } = "About";
+
+    public void OnGet()
+    {
+    }
+}
+```
+
+Na stránce o přístup `Title` vlastnost jako vlastnost modelu:
+
+```cshtml
+<h1>@Model.Title</h1>
+```
+
+V rozložení je název číst ze slovníku ViewData:
+
+```cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - WebApplication</title>
+    ...
+```
+::: moniker-end
 
 ## <a name="tempdata"></a>TempData
 

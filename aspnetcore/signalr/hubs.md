@@ -11,17 +11,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: d9e06c75692b68c4147b775e5eb77ef000578b2e
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: cfe9f7a7321094b8f901687d91745df2247e1da6
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Použití centra v systému SignalR pro ASP.NET Core
 
 Podle [Rachel Appel](https://twitter.com/rachelappel) a [kevina Griffin](https://twitter.com/1kevgriff)
-
-[!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubs/sample/ ) [(jak ke stažení)](xref:tutorials/index#how-to-download-a-sample)
 
@@ -33,11 +31,11 @@ Rozhraní API rozbočovače SignalR umožňuje volat metody pro připojené klie
 
 SignalR middleware vyžaduje některé služby, které jsou nakonfigurované voláním `services.AddSignalR`.
 
-[!code-csharp[Configure service](hubs/sample/startup.cs?range=37)]
+[!code-csharp[Configure service](hubs/sample/startup.cs?range=38)]
 
 Při přidávání funkce SignalR do aplikace ASP.NET Core, instalační program SignalR trasy voláním `app.UseSignalR` v `Startup.Configure` metoda.
 
-[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=56-59)]
+[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=57-60)]
 
 ## <a name="create-and-use-hubs"></a>Vytváření a používání centra
 
@@ -93,4 +91,6 @@ Výjimky vzniklé v metodách vašeho centra se posílají klientovi, který vol
 
 ## <a name="related-resources"></a>Související informační zdroje
 
-[Úvod do základní ASP.NET SignalR](xref:signalr/introduction)
+* [Úvod do základní ASP.NET SignalR](xref:signalr/introduction)
+* [Klient JavaScriptu](xref:signalr/javascript-client)
+* [Publikování do Azure](xref:signalr/publish-to-azure-web-app)

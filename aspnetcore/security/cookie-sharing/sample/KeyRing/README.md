@@ -1,7 +1,7 @@
-# <a name="data-protection-key-folder"></a><span data-ttu-id="f2376-101">Klíče složky ochrany dat</span><span class="sxs-lookup"><span data-stu-id="f2376-101">Data protection key folder</span></span>
+# <a name="data-protection-key-folder"></a>Klíče složky ochrany dat
 
-<span data-ttu-id="f2376-102">Tento soubor je zástupný symbol pro vytvoření sdílené složky pro data protection klíče.</span><span class="sxs-lookup"><span data-stu-id="f2376-102">This file is a placeholder to create a shared folder for data protection keys.</span></span>
+Tento soubor je zástupný symbol pro vytvoření sdílené složky pro data protection klíče.
 
-<span data-ttu-id="f2376-103">V produkčním nasazení umístěte do správy zdrojového kódu klíče mimo vývoj kořenový a nikdy vrácení se změnami soubory v tomto adresáři.</span><span class="sxs-lookup"><span data-stu-id="f2376-103">In a production deployment, place the keys outside of the development root and never check-in files in this directory into source control.</span></span> <span data-ttu-id="f2376-104">Ochrana klíče ochrany dat v souborech s DPAPI nebo certifikátu x 509.</span><span class="sxs-lookup"><span data-stu-id="f2376-104">Protect data protection keys in the files with DPAPI or an X509Certificate.</span></span>
+V produkčním nasazení umístěte do správy zdrojového kódu klíče mimo vývoj kořenový a nikdy vrácení se změnami soubory v tomto adresáři. Ochrana klíče ochrany dat v souborech s DPAPI nebo certifikátu x 509.
 
-<span data-ttu-id="f2376-105">V tématu [ochrany dat v ASP.NET Core: rozhraní API pro příjemce, konfiguraci, rozšiřitelnost rozhraní API a implementace](https://docs.microsoft.com/aspnet/core/security/data-protection/) Další informace.</span><span class="sxs-lookup"><span data-stu-id="f2376-105">See [Data Protection in ASP.NET Core: Consumer APIs, configuration, extensibility APIs and implementation](https://docs.microsoft.com/aspnet/core/security/data-protection/) for more information.</span></span>
+V tématu [ochrany dat v ASP.NET Core: rozhraní API pro příjemce, konfiguraci, rozšiřitelnost rozhraní API a implementace](https://docs.microsoft.com/aspnet/core/security/data-protection/) Další informace.

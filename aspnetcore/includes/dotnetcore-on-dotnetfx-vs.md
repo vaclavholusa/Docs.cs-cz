@@ -1,4 +1,4 @@
   > [!NOTE]
-  > <span data-ttu-id="1cf0d-101">Chcete-li ASP.NET Core pomocí rozhraní .NET Framework, je nutné nejprve vybrat **rozhraní .NET Framework** krajní levé rozevíracího seznamu v dialogovém okně, pak můžete vybrat požadovanou verzi ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="1cf0d-101">To use ASP.NET Core with .NET Framework, you must first select **.NET Framework** from the leftmost drop-down in the dialog, then you can select the desired ASP.NET Core version.</span></span>
+  > Chcete-li ASP.NET Core pomocí rozhraní .NET Framework, je nutné nejprve vybrat **rozhraní .NET Framework** krajní levé rozevíracího seznamu v dialogovém okně, pak můžete vybrat požadovanou verzi ASP.NET Core.
 
   ![Webové aplikace (stránky Razor)](../tutorials/razor-pages/razor-pages-start/_static/np2.png)

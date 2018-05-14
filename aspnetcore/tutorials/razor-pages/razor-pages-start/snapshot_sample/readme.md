@@ -1,1 +1,1 @@
-<span data-ttu-id="8e8f4-101">Kód v této složce se snímky v čase z řady stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="8e8f4-101">The code in this folder is snapshots in time from the Razor Pages series.</span></span>
+Kód v této složce se snímky v čase z řady stránky Razor.

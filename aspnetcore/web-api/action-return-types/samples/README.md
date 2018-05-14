@@ -1,11 +1,11 @@
-# <a name="aspnet-core-web-api-sample"></a><span data-ttu-id="88abb-101">Ukázka základní webového rozhraní API technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="88abb-101">ASP.NET Core Web API sample</span></span>
+# <a name="aspnet-core-web-api-sample"></a>Ukázka základní webového rozhraní API technologie ASP.NET
 
-<span data-ttu-id="88abb-102">Následující tabulka obsahuje popis různých složek tvořících ukázkové řešení:</span><span class="sxs-lookup"><span data-stu-id="88abb-102">The following table provides a description of the various folders making up the sample solution:</span></span>
+Následující tabulka obsahuje popis různých složek tvořících ukázkové řešení:
 
 
-|              <span data-ttu-id="88abb-103">Folder</span><span class="sxs-lookup"><span data-stu-id="88abb-103">Folder</span></span>              |                                        <span data-ttu-id="88abb-104">Účel</span><span class="sxs-lookup"><span data-stu-id="88abb-104">Purpose</span></span>                                        |
+|              Folder              |                                        Účel                                        |
 |----------------------------------|---------------------------------------------------------------------------------------|
-|   <span data-ttu-id="88abb-105"><em>WebApiSample.Api.21</em></span><span class="sxs-lookup"><span data-stu-id="88abb-105"><em>WebApiSample.Api.21</em></span></span>   |                         <span data-ttu-id="88abb-106">Projekt ASP.NET Core 2.1 webového rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="88abb-106">An ASP.NET Core 2.1 Web API project.</span></span>                          |
-| <span data-ttu-id="88abb-107"><em>WebApiSample.Api.Pre21</em></span><span class="sxs-lookup"><span data-stu-id="88abb-107"><em>WebApiSample.Api.Pre21</em></span></span>  |                         <span data-ttu-id="88abb-108">Projekt ASP.NET Core 2.0 webového rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="88abb-108">An ASP.NET Core 2.0 Web API project.</span></span>                          |
-| <span data-ttu-id="88abb-109"><em>WebApiSample.DataAccess</em></span><span class="sxs-lookup"><span data-stu-id="88abb-109"><em>WebApiSample.DataAccess</em></span></span> | <span data-ttu-id="88abb-110">Rozhraní .NET 2.0 standardní data přístup vrstvy projekt, který je používán oba projekty webového rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="88abb-110">A .NET Standard 2.0 data access layer project which is used by both Web API projects.</span></span> |
+|   <em>WebApiSample.Api.21</em>   |                         Projekt ASP.NET Core 2.1 webového rozhraní API.                          |
+| <em>WebApiSample.Api.Pre21</em>  |                         Projekt ASP.NET Core 2.0 webového rozhraní API.                          |
+| <em>WebApiSample.DataAccess</em> | Rozhraní .NET 2.0 standardní data přístup vrstvy projekt, který je používán oba projekty webového rozhraní API. |
 

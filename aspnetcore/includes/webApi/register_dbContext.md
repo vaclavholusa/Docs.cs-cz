@@ -1,12 +1,17 @@
-## <a name="register-the-database-context"></a><span data-ttu-id="fde2b-101">Zaregistrovat kontext databáze</span><span class="sxs-lookup"><span data-stu-id="fde2b-101">Register the database context</span></span>
+## <a name="register-the-database-context"></a>Zaregistrovat kontext databáze
 
-<span data-ttu-id="fde2b-102">V tomto kroku není zaregistrována kontext databáze [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru.</span><span class="sxs-lookup"><span data-stu-id="fde2b-102">In this step, the database context is registered with the [dependency injection](xref:fundamentals/dependency-injection) container.</span></span> <span data-ttu-id="fde2b-103">Služby (například kontext databáze), které jsou registrovány kontejneru pro vkládání (DI) závislosti jsou dostupné v řadičích.</span><span class="sxs-lookup"><span data-stu-id="fde2b-103">Services (such as the DB context) that are registered with the dependency injection (DI) container are available to the controllers.</span></span>
+V tomto kroku není zaregistrována kontext databáze [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru. Služby (například kontext databáze), které jsou registrovány kontejneru pro vkládání (DI) závislosti jsou dostupné v řadičích.
 
-<span data-ttu-id="fde2b-104">Zaregistrovat kontext databáze kontejneru služby pomocí integrovanou podporu pro [vkládání závislostí](xref:fundamentals/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="fde2b-104">Register the DB context with the service container using the built-in support for [dependency injection](xref:fundamentals/dependency-injection).</span></span> <span data-ttu-id="fde2b-105">Nahraďte obsah *Startup.cs* soubor s následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="fde2b-105">Replace the contents of the *Startup.cs* file with the following code:</span></span>
+Zaregistrovat kontext databáze kontejneru služby pomocí integrovanou podporu pro [vkládání závislostí](xref:fundamentals/dependency-injection). Nahraďte obsah *Startup.cs* soubor s následujícím kódem:
 
+::: moniker range="<= aspnetcore-2.0"
 [!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Startup.cs?highlight=2,4,12-13)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Startup.cs?highlight=3,5,13-14)]
+::: moniker-end
 
-<span data-ttu-id="fde2b-106">Předchozí kód:</span><span class="sxs-lookup"><span data-stu-id="fde2b-106">The preceding code:</span></span>
+Předchozí kód:
 
-* <span data-ttu-id="fde2b-107">Odebere kód nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="fde2b-107">Removes the unused code.</span></span>
-* <span data-ttu-id="fde2b-108">Určuje, že databázi v paměti je vloženy do kontejneru služby.</span><span class="sxs-lookup"><span data-stu-id="fde2b-108">Specifies an in-memory database is injected into the service container.</span></span>
+* Odebere kód nepoužívá.
+* Určuje, že databázi v paměti je vloženy do kontejneru služby.

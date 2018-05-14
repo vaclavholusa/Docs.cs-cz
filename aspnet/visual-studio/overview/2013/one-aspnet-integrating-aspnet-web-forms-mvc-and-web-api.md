@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
-title: "Rukou na testovacím: Jeden ASP.NET: integrace webové formuláře ASP.NET, MVC a webových rozhraní API | Microsoft Docs"
+title: 'Rukou na testovacím: Jeden ASP.NET: integrace webové formuláře ASP.NET, MVC a webových rozhraní API | Microsoft Docs'
 author: rick-anderson
-description: "ASP.NET je architektura pro vytváření webů, aplikacím a službám pomocí speciální technologie jako MVC, Web API a dalších. Rozšiřující ASP.NET h..."
+description: ASP.NET je architektura pro vytváření webů, aplikacím a službám pomocí speciální technologie jako MVC, Web API a dalších. Rozšiřující ASP.NET h...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
@@ -161,7 +161,7 @@ V této úloze se spustit generovaného řešení, prozkoumat aplikace a někter
     *Přátelské adresy URL*
 
     > [!NOTE]
-    > Jak vidíte, se změní adresa URL pro **/obraťte se na**. Od **ASP.NET 4**, možnosti směrování URL byly přidány do webových formulářů, takže můžete napsat adresy URL jako  *[http://www.mysite.com/products/software](http://www.mysite.com/products/software)*  místo  *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. Další informace najdete v části [směrování adres URL](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md).
+    > Jak vidíte, se změní adresa URL pro **/obraťte se na**. Od **ASP.NET 4**, možnosti směrování URL byly přidány do webových formulářů, takže můžete napsat adresy URL jako *[http://www.mysite.com/products/software](http://www.mysite.com/products/software)* místo  *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. Další informace najdete v části [směrování adres URL](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md).
 3. Nyní zaměříte tok ověřování integrovaná do aplikace. Chcete-li to provést, klikněte na tlačítko **zaregistrovat** v pravém horním rohu stránky.
 
     ![Registrace nového uživatele](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)

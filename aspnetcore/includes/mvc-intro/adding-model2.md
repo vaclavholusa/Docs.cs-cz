@@ -1,8 +1,8 @@
-## <a name="add-initial-migration-and-update-the-database"></a>Přidejte počáteční migrace a aktualizaci databáze
+## <a name="add-initial-migration-and-update-the-database"></a><span data-ttu-id="84306-101">Přidejte počáteční migrace a aktualizaci databáze</span><span class="sxs-lookup"><span data-stu-id="84306-101">Add initial migration and update the database</span></span>
 
-* Otevřete příkazový řádek a přejděte do adresáře projektu. (Obsahující adresář *Startup.cs* souboru).
+* <span data-ttu-id="84306-102">Otevřete příkazový řádek a přejděte do adresáře projektu.</span><span class="sxs-lookup"><span data-stu-id="84306-102">Open a command prompt and navigate to the project directory.</span></span> <span data-ttu-id="84306-103">(Obsahující adresář *Startup.cs* souboru).</span><span class="sxs-lookup"><span data-stu-id="84306-103">(The directory containing the *Startup.cs* file).</span></span>
 
-* V příkazovém řádku spusťte následující příkazy:
+* <span data-ttu-id="84306-104">V příkazovém řádku spusťte následující příkazy:</span><span class="sxs-lookup"><span data-stu-id="84306-104">Run the following commands in the command prompt:</span></span>
 
   ```console
   dotnet restore
@@ -10,10 +10,10 @@
   dotnet ef database update
   ```
   
-  [.NET core](/dotnet/core/tools/index) je implementace a platformy .NET. Tady je co dělat, tyto příkazy:
+  <span data-ttu-id="84306-105">[.NET core](/dotnet/core/tools/index) je implementace a platformy .NET.</span><span class="sxs-lookup"><span data-stu-id="84306-105">[.NET Core](/dotnet/core/tools/index) is a cross-platform implementation of .NET.</span></span> <span data-ttu-id="84306-106">Tady je co dělat, tyto příkazy:</span><span class="sxs-lookup"><span data-stu-id="84306-106">Here is what these commands do:</span></span>
 
-  * [obnovení DotNet](/dotnet/core/tools/dotnet-restore): stáhne balíčky NuGet zadaný v *.csproj* souboru.
-  * `dotnet ef migrations add Initial` Spustí příkaz migrace Entity Framework .NET Core rozhraní příkazového řádku a vytvoří počáteční migrace. Parametr po "Přidat" je název, který přiřadíte k migraci. Zde můžete jste pojmenování migrace "Počáteční" vzhledem k tomu, že je migrace počáteční databáze. Tato operace vytvoří *dat nebo migrace nebo\<datum a čas > _Initial.cs* souboru, který obsahuje příkazy migrace pro přidání *film* tabulky do databáze.
-  * `dotnet ef database update`  Aktualizuje databázi pomocí migrace, který jsme právě vytvořili.
+  * <span data-ttu-id="84306-107">[obnovení DotNet](/dotnet/core/tools/dotnet-restore): stáhne balíčky NuGet zadaný v *.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="84306-107">[dotnet restore](/dotnet/core/tools/dotnet-restore): Downloads the NuGet packages specified in the *.csproj* file.</span></span>
+  * <span data-ttu-id="84306-108">`dotnet ef migrations add Initial` Spustí příkaz migrace Entity Framework .NET Core rozhraní příkazového řádku a vytvoří počáteční migrace.</span><span class="sxs-lookup"><span data-stu-id="84306-108">`dotnet ef migrations add Initial` Runs the Entity Framework .NET Core CLI migrations command and creates the initial migration.</span></span> <span data-ttu-id="84306-109">Parametr po "Přidat" je název, který přiřadíte k migraci.</span><span class="sxs-lookup"><span data-stu-id="84306-109">The parameter after "add" is a name that you assign to the migration.</span></span> <span data-ttu-id="84306-110">Zde můžete jste pojmenování migrace "Počáteční" vzhledem k tomu, že je migrace počáteční databáze.</span><span class="sxs-lookup"><span data-stu-id="84306-110">Here you're naming the migration "Initial" because it's the initial database migration.</span></span> <span data-ttu-id="84306-111">Tato operace vytvoří *dat nebo migrace nebo\<datum a čas > _Initial.cs* souboru, který obsahuje příkazy migrace pro přidání *film* tabulky do databáze.</span><span class="sxs-lookup"><span data-stu-id="84306-111">This operation creates the *Data/Migrations/\<date-time>_Initial.cs* file containing the migration commands to add the *Movie* table to the database.</span></span>
+  * <span data-ttu-id="84306-112">`dotnet ef database update`  Aktualizuje databázi pomocí migrace, který jsme právě vytvořili.</span><span class="sxs-lookup"><span data-stu-id="84306-112">`dotnet ef database update`  Updates the database with the migration we just created.</span></span>
 
-V dalším kurzu získáte informace o databázi a připojovací řetězec. Získáte informace o změn datových modelů v [přidat pole](xref:tutorials/first-mvc-app/new-field) kurzu.
+<span data-ttu-id="84306-113">V dalším kurzu získáte informace o databázi a připojovací řetězec.</span><span class="sxs-lookup"><span data-stu-id="84306-113">You'll learn about the database and connection string in the next tutorial.</span></span> <span data-ttu-id="84306-114">Získáte informace o změn datových modelů v [přidat pole](xref:tutorials/first-mvc-app/new-field) kurzu.</span><span class="sxs-lookup"><span data-stu-id="84306-114">You'll learn about data model changes in the [Add a field](xref:tutorials/first-mvc-app/new-field) tutorial.</span></span>

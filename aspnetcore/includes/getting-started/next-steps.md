@@ -1,7 +1,7 @@
-### <a name="next-steps"></a>Další kroky
+### <a name="next-steps"></a><span data-ttu-id="58e49-101">Další kroky</span><span class="sxs-lookup"><span data-stu-id="58e49-101">Next steps</span></span>
 
-Získání kurzy Začínáme, najdete v části [ASP.NET Core kurzy](xref:tutorials/index).
+<span data-ttu-id="58e49-102">Získání kurzy Začínáme, najdete v části [ASP.NET Core kurzy](xref:tutorials/index).</span><span class="sxs-lookup"><span data-stu-id="58e49-102">For getting started tutorials, see [ASP.NET Core Tutorials](xref:tutorials/index).</span></span>
 
-Úvod do ASP.NET základní koncepty a architektury, najdete v části [ASP.NET Core ÚVOD](xref:index) a [ASP.NET Core Základy](xref:fundamentals/index).
+<span data-ttu-id="58e49-103">Úvod do ASP.NET základní koncepty a architektury, najdete v části [ASP.NET Core ÚVOD](xref:index) a [ASP.NET Core Základy](xref:fundamentals/index).</span><span class="sxs-lookup"><span data-stu-id="58e49-103">For an introduction to ASP.NET Core concepts and architecture, see [ASP.NET Core Introduction](xref:index) and [ASP.NET Core Fundamentals](xref:fundamentals/index).</span></span>
 
-Aplikace ASP.NET Core pomocí .NET Core nebo základní rozhraní .NET Framework – knihovna tříd a modulu runtime. Další informace najdete v tématu [výběru mezi .NET Core a rozhraní .NET Framework](/dotnet/articles/standard/choosing-core-framework-server).
+<span data-ttu-id="58e49-104">Aplikace ASP.NET Core pomocí .NET Core nebo základní rozhraní .NET Framework – knihovna tříd a modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="58e49-104">An ASP.NET Core app can use the .NET Core or .NET Framework Base Class Library and runtime.</span></span> <span data-ttu-id="58e49-105">Další informace najdete v tématu [výběru mezi .NET Core a rozhraní .NET Framework](/dotnet/articles/standard/choosing-core-framework-server).</span><span class="sxs-lookup"><span data-stu-id="58e49-105">For more information, see [Choosing between .NET Core and .NET Framework](/dotnet/articles/standard/choosing-core-framework-server).</span></span>

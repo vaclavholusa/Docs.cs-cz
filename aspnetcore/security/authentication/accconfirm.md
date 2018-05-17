@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 8ad2a63ce007a68eac3b607db454c6b4fc834444
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e0bca48fcaa9a29847fdda714698ed8562d30707
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Potvrzení účtu a obnovení hesla v ASP.NET Core
 
@@ -45,7 +45,7 @@ cd WebPWrecover
 * V systému Windows, přidejte `-uld` možnost. Určuje, že místo SQLite by použít LocalDB.
 * Spustit `new mvc --help` získání nápovědy na tento příkaz.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Pokud používáte rozhraní příkazového řádku nebo SQLite, spusťte následující příkazy v příkazovém okně:
 
@@ -138,13 +138,16 @@ Obsah *secrets.json* soubor není zašifrován. *Secrets.json* souboru je uveden
 
 Přidat `AuthMessageSenderOptions` ke kontejneru služby na konci `ConfigureServices` metoda v *Startup.cs* souboru:
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
 
-* * *
+---
+
 ### <a name="configure-the-authmessagesender-class"></a>Konfigurovat třídu AuthMessageSender
 
 Tento kurz ukazuje, jak přidat e-mailová oznámení prostřednictvím [sendgrid vám umožňuje](https://sendgrid.com/), ale můžete odesílat e-mailu pomocí protokolu SMTP a další mechanismy.
@@ -163,22 +166,26 @@ V tématu [začněte sendgridu zadarmo](https://sendgrid.com/free/) zaregistrova
 
 #### <a name="configure-sendgrid"></a>Konfigurace sendgrid vám umožňuje
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+
 Ke konfiguraci Sendgridu, přidejte kód podobný následujícímu v *Services/EmailSender.cs*:
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 * Přidejte kód v *Services/MessageServices.cs* podobný následujícímu konfigurace sendgrid vám umožňuje:
 
 [!code-csharp[](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
 
-* * *
+---
+
 ## <a name="enable-account-confirmation-and-password-recovery"></a>Povolit obnovení potvrzení a heslo účtu
 
 Šablona má kód pro obnovení potvrzení a heslo účtu. Najít `OnPostAsync` metoda v *Pages/Account/Register.cshtml.cs*.
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+
 Nově zaregistrovaný uživatelům zabránit v automaticky přihlášený při psaní komentářů následující řádek:
 
 ```csharp
@@ -189,7 +196,8 @@ Kompletní metoda je zobrazena změněné řádek zvýrazněna:
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 Chcete-li povolit potvrzení účtu, zrušte komentář u následující kód:
 
 [!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
@@ -208,7 +216,8 @@ Zrušením komentáře u prvku formuláře v *Views/Account/ForgotPassword.cshtm
 
 [!code-cshtml[](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
 
-* * *
+---
+
 ## <a name="register-confirm-email-and-reset-password"></a>Zaregistrovat, potvrďte e-mailu a resetování hesla
 
 Spusťte webovou aplikaci a testování potvrzení účtu a heslo pro obnovení toku.
@@ -236,7 +245,7 @@ Zobrazí se stránka Správa s **profil** vybrána karta. **E-mailu** zobrazí z
 
 ![Stránka Správa](accconfirm/_static/rick2.png)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 To je uvedeno dále v tomto kurzu.
 ![Stránka Správa](accconfirm/_static/rick2.png)

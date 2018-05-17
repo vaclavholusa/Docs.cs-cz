@@ -107,7 +107,7 @@ Filtr se rozšířit **ActionFilterAttributeClass** a přepsání **OnActionExec
 
 Toto řešení úložiště Hudba má do nové tabulky datového modelu pro protokolování serveru **ActionLog**, s následující pole: název kontroleru, který přijal žádost, volané akce, IP adresa klienta a časové razítko.
 
-![Datový model. Tabulka ActionLog. ] (aspnet-mvc-4-custom-action-filters/_static/image1.png "Datového modelu. Tabulka ActionLog.")
+![Datový model. Tabulka ActionLog. ](aspnet-mvc-4-custom-action-filters/_static/image1.png "Datového modelu. Tabulka ActionLog.")
 
 *Datový model - ActionLog tabulky*
 

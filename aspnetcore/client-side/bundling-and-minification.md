@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 381025d1c4a9951349e242482ca9b780c461e588
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: a3d49315fbb62eb1a42eb1b30885dc19a81c0a91
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>Sady a minifiy statické prostředky v ASP.NET Core
 
@@ -220,22 +220,28 @@ Zadejte soubory, které chcete zahrnout do vaší stránky pomocí [pomocná zna
 
 Následující `environment` značky vykreslí nezpracované soubory šablon stylů CSS při spuštění v `Development` prostředí:
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=21-24)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=9-12)]
 
-* * *
+---
+
 Následující `environment` značky vykreslí souborů CSS připojené a minifikovaný při spuštění v prostředí s jiným než `Development`. Například běžet `Production` nebo `Staging` aktivuje vykreslování těchto šablon:
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=5&range=25-30)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=13-18)]
 
-* * *
+---
+
 ## <a name="consume-bundleconfigjson-from-gulp"></a>Využívat bundleconfig.json z Gulp
 
 Existují případy, ve kterých aplikace sdružování a minimalizace pracovní postup vyžaduje další zpracování. Mezi příklady patří Optimalizace bitové kopie, nejnovějších mezipaměti a zpracování asset CDN. Splňovat tyto požadavky, můžete převést sdružování a minimalizace pracovní postup použít Gulp.
@@ -313,5 +319,5 @@ Průzkumník Spouštěče úloh sady Visual Studio lze případně vázat Gulp �
 
 * [Použití nástroje Gulp](xref:client-side/using-gulp)
 * [Použití nástroje Grunt](xref:client-side/using-grunt)
-* [Pomocí několika prostředí](xref:fundamentals/environments)
+* [Používání více prostředí](xref:fundamentals/environments)
 * [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)

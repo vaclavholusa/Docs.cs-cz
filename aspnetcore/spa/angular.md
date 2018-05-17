@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: e3956bedbc243578f6dfdc09f5f043327de7c66b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b4e48f40c3d4e3167e7fdb3534d2c33b3544592c
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>Použít šablonu úhlová projekt pomocí ASP.NET Core
 
@@ -39,12 +39,14 @@ cd my-new-app
 
 Spusťte aplikaci v sadě Visual Studio nebo .NET Core rozhraní příkazového řádku:
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 Otevřete vygenerovaného *.csproj* souboru a spuštění aplikace jako normální odtud.
 
 Proces sestavení obnoví npm závislosti během prvního spuštění, což může trvat několik minut. Následující sestavení je mnohem rychlejší.
 
-#### <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli/)
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli/)
+
 Zajistěte, abyste měli proměnné prostředí s názvem `ASPNETCORE_Environment` s hodnotou `Development`. V systému Windows (v výzvy – prostředí PowerShell), spusťte `SET ASPNETCORE_Environment=Development`. V systému macOS nebo Linux, spusťte `export ASPNETCORE_Environment=Development`.
 
 Spustit [dotnet sestavení](/dotnet/core/tools/dotnet-build) k ověření aplikace sestavení správně. Při prvním spuštění procesu sestavení obnoví npm závislosti, které může trvat několik minut. Následující sestavení je mnohem rychlejší.
@@ -57,9 +59,10 @@ Now listening on: http://localhost:<port>
 
 Přejděte na tuto adresu URL v prohlížeči.
 
-Spuštění aplikace instanci serveru úhlová rozhraní příkazového řádku na pozadí. Je zaznamenána zpráva podobná následující: <em>NG Live vývojový Server naslouchá na localhost:&lt;otherport&gt;, otevřete prohlížeč na http://localhost: &lt;otherport&gt; /</em> . Tuto zprávu ignorovat&mdash;má <strong>není</strong> adresu URL pro kombinované aplikace ASP.NET Core a úhlová příkazového řádku.
+Spuštění aplikace instanci serveru úhlová rozhraní příkazového řádku na pozadí. Je zaznamenána zpráva podobná následující: <em>NG Live vývojový Server naslouchá na localhost:&lt;otherport&gt;, otevřete prohlížeč na http://localhost:&lt; otherport&gt; /</em>  . Tuto zprávu ignorovat&mdash;má <strong>není</strong> adresu URL pro kombinované aplikace ASP.NET Core a úhlová příkazového řádku.
 
-* * *
+---
+
 Šablona projektu vytvoří aplikace ASP.NET Core a úhlová aplikace. Aplikace ASP.NET Core se má použít pro přístup k datům, autorizaci a další otázky straně serveru. Úhlová aplikace, které se nacházejí v *ClientApp* podadresáři, je určena k použití pro všechny otázky uživatelského rozhraní.
 
 ## <a name="add-pages-images-styles-modules-etc"></a>Přidání stránky, obrázky, styly, moduly, atd.

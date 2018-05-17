@@ -1,6 +1,6 @@
 ---
 title: Implementace webového serveru v ASP.NET Core
-author: tdykstra
+author: rick-anderson
 description: Zjištění webové servery Kestrel a ovladače HTTP.sys pro ASP.NET Core. Zjistěte, jak vybrat server a kdy použít reverzní proxy server.
 manager: wpickett
 ms.author: tdykstra
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/index
-ms.openlocfilehash: cdf6fafce644f424d3cd58395e1fa91e5e6fa2cb
-ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
+ms.openlocfilehash: 38af9d0206d66ac7fd2dc13a5a8245e8f66df41e
+ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implementace webového serveru v ASP.NET Core
 
@@ -24,13 +24,12 @@ Aplikace ASP.NET Core spustí se v procesu implementaci serveru HTTP. Implementa
 
 ASP.NET Core dodává dvě implementace serveru:
 
-* [Kestrel](xref:fundamentals/servers/kestrel) je na základě server HTTP napříč platformami [libuv](https://github.com/libuv/libuv), knihovny a platformy asynchronní vstupně-výstupní operace.
-
+* [Kestrel](xref:fundamentals/servers/kestrel) je výchozí, server HTTP a platformy pro ASP.NET Core.
 * [Ovladač HTTP.sys](xref:fundamentals/servers/httpsys) je na základě protokolu HTTP pouze pro systém Windows server [ovladač HTTP.sys jádra a rozhraní API serveru HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx). (Ovladač HTTP.sys nazývá [WebListener](xref:fundamentals/servers/weblistener) v ASP.NET Core 1.x.)
 
-## <a name="kestrel"></a>Kestrel
+## <a name="kestrel"></a>kestrel
 
-Kestrel je webový server, který je zahrnut ve výchozím nastavení v šablonách nový projekt ASP.NET Core. 
+Kestrel je součástí šablony projektů ASP.NET Core výchozí webový server.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -44,7 +43,7 @@ Buď konfiguraci &mdash; s nebo bez reverzní proxy server &mdash; lze také pou
 
 Informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Aplikaci jenom přijímá požadavky od k interní síti, lze nastavit Kestrel samostatně.
 
@@ -86,7 +85,7 @@ Ovladač HTTP.sys mohou sloužit také pro aplikace, které jsou přístupné po
 
 ![Ovladač HTTP.sys komunikuje přímo s interní sítě](httpsys/_static/httpsys-to-internal.png)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Ovladač HTTP.sys jmenuje [WebListener](xref:fundamentals/servers/weblistener) v ASP.NET Core 1.x. Pokud aplikace ASP.NET Core spouštějí v systému Windows, je WebListener alternativu pro scénáře, kde není k dispozici pro hostitele aplikace služby IIS.
 

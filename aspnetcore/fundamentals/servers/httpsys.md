@@ -1,6 +1,6 @@
 ---
 title: Ovladač HTTP.sys webového serveru implementace v ASP.NET Core
-author: tdykstra
+author: rick-anderson
 description: Další informace o HTTP.sys, webový server pro ASP.NET Core v systému Windows. Založený na režimu jádra ovladač HTTP.sys, ovladač HTTP.sys je alternativa k Kestrel, který lze použít pro přímé připojení k Internetu bez služby IIS.
 manager: wpickett
 ms.author: tdykstra
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 1ec309a00b6cb156b0d11ad085eda3b7a772ac94
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
-ms.translationtype: MT
+ms.openlocfilehash: ce4edf6f07808d3958c919a1d81561ce020fe52b
+ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Ovladač HTTP.sys webového serveru implementace v ASP.NET Core
 
@@ -156,7 +156,7 @@ Ovladač HTTP.sys je Vyspělá technologie, která chrání před mnoho typů ú
       Následující příklad ukazuje, jak přiřadit certifikát X.509:
 
       ```console
-      netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid={00000000-0000-0000-0000-000000000000}"
+      netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid="{00000000-0000-0000-0000-000000000000}"
       ```
 
       Referenční dokumentace pro *netsh.exe*:
@@ -177,6 +177,6 @@ Pro aplikace hostované ovladače HTTP.sys, které se s požadavky z Internetu n
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [HTTP Server API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)
+* [Rozhraní API serveru HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)
 * [úložiště GitHub ASPNET/HttpSysServer (zdrojový kód)](https://github.com/aspnet/HttpSysServer/)
 * [Hostování](xref:fundamentals/hosting)

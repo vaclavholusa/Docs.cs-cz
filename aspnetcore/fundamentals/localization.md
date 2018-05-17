@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: b81926f81fdfb832ff6ae3bd65c00fa09412fec4
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 929c73c314a15e7003853d3996158d1328e597cb
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -141,14 +141,6 @@ Soubor prostředků je užitečné mechanismus pro oddělení lokalizovatelný �
     Visual Studio zobrazí *Welcome.es.resx* souboru.
 
     ![Průzkumník řešení zobrazující souboru prostředků úvodní Španělština (es)](localization/_static/se.png)
-
-<a name="error"></a>
-
-Pokud používáte verzi sady Visual Studio 2017 Preview 15.3, získáte v editoru prostředků indikátor chyby. Odeberte *ResXFileCodeGenerator* z hodnoty *Custom Tool* mřížky vlastnosti, aby se tato chybová zpráva:
-
-![Resx editoru](localization/_static/err.png)
-
-Alternativně můžete tuto chybu ignorovat. Věříme, chcete-li v příští verzi.
 
 ## <a name="resource-file-naming"></a>Pojmenovávání souborů prostředků
 

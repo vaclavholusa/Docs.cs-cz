@@ -1,6 +1,6 @@
 ---
 title: Jádro ASP.NET MVC s Entity Framework Core - kurz 1 10
-author: tdykstra
+author: rick-anderson
 description: ''
 manager: wpickett
 ms.author: tdykstra
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/intro
-ms.openlocfilehash: eaa3070e182b161087185bbb9007e8067052d95c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0eef084c656f68fb1cad9fc0f5cfeee31ff96a30
+ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Jádro ASP.NET MVC s Entity Framework Core - kurz 1 10
 
@@ -202,7 +202,7 @@ Otevřete *appSettings.JSON určený* souboru a přidat připojovací řetězec,
 
 [!code-json[](./intro/samples/cu/appsettings1.json?highlight=2-4)]
 
-### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
+### <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
 
 Připojovací řetězec Určuje databázi SQL serveru LocalDB. LocalDB je Odlehčená verze SQL Server Express Database Engine a je určena pro vývoj aplikací, není použití v provozním prostředí. LocalDB spustí na vyžádání a běží v uživatelském režimu, takže není žádná komplexní konfigurace. Ve výchozím nastavení, vytvoří instanci LocalDB *.mdf* soubory v databáze `C:/Users/<user>` adresáře.
 

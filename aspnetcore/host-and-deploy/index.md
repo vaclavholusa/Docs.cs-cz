@@ -1,6 +1,6 @@
 ---
 title: Hostování a nasazení základní technologie ASP.NET
-author: tdykstra
+author: rick-anderson
 description: Zjistěte, jak nastavit hostitelská prostředí a nasazení aplikací ASP.NET Core.
 manager: wpickett
 ms.author: riande
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/index
-ms.openlocfilehash: 515589e38a1ba121d365427b5fddac1b0e845b1f
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: 6364f54ede43b8eec070166a75b4552d896644f3
+ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="host-and-deploy-aspnet-core"></a>Hostování a nasazení základní technologie ASP.NET
 
@@ -44,7 +44,7 @@ Aplikace ASP.NET Core je konzolovou aplikaci, která musí být spuštěna, kdy�
   * [Nginx](xref:host-and-deploy/linux-nginx)
   * [Apache](xref:host-and-deploy/linux-apache)
 * Windows
-  * [IIS](xref:host-and-deploy/iis/index)
+  * [SLUŽBY IIS](xref:host-and-deploy/iis/index)
   * [Windows Service](xref:host-and-deploy/windows-service)
 
 ## <a name="set-up-a-reverse-proxy"></a>Nastavit reverzní proxy server
@@ -53,7 +53,7 @@ Aplikace ASP.NET Core je konzolovou aplikaci, která musí být spuštěna, kdy�
 
 Pokud aplikace používá [Kestrel](xref:fundamentals/servers/kestrel) webový server, [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), nebo [IIS](xref:host-and-deploy/iis/index) slouží jako reverzní proxy server. Reverzní proxy server přijímá požadavky HTTP z Internetu a předává je Kestrel po některé předběžné zpracování. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel?tabs=aspnetcore2x#when-to-use-kestrel-with-a-reverse-proxy).
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Pokud aplikace používá [Kestrel](xref:fundamentals/servers/kestrel) webový server a bude přístup k Internetu, použijte [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), nebo [IIS](xref:host-and-deploy/iis/index) jako reverzní proxy server. Reverzní proxy server přijímá požadavky HTTP z Internetu a předává je Kestrel po některé předběžné zpracování. Hlavním důvodem pro používání reverzní proxy server je zabezpečení. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel?tabs=aspnetcore1x#when-to-use-kestrel-with-a-reverse-proxy).
 

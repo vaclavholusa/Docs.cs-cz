@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 3f69657cb21e163bdf00fb1faea98889046e9b45
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6190c6dd958c62299aea89db398e691c1650af02
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="work-with-sql-server-localdb-in-aspnet-core"></a>Práce s LocalDB serveru SQL v ASP.NET Core
 
@@ -29,7 +29,7 @@ ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čten
 
 Když nasadíte aplikaci k testu nebo produkčním serveru, můžete použít proměnné prostředí nebo jiný přístup k nastavení připojovacího řetězce k skutečné systému SQL Server. V tématu [konfigurace](xref:fundamentals/configuration/index) Další informace.
 
-## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
+## <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
 
 LocalDB je Odlehčená verze SQL serveru Express databázového stroje je cílová pro vývoj programu. LocalDB spustí na vyžádání a běží v uživatelském režimu, takže není žádná komplexní konfigurace. Ve výchozím nastavení, vytvoří databáze LocalDB "\*.mdf" soubory *C: či uživatelů nebo\<uživatele\>*  adresáře.
 
@@ -69,17 +69,20 @@ if (context.Movie.Any())
 <a name="si"></a>
 ### <a name="add-the-seed-initializer"></a>Přidat inicializátoru počáteční hodnoty
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+
 Přidat inicializátoru počáteční hodnoty do `Main` metoda v *Program.cs* souboru:
 
 [!code-csharp[](start-mvc/sample/MvcMovie/Program.cs?highlight=6,14-32)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 Přidejte na konec inicializátoru počáteční hodnoty `Configure` metoda v *Startup.cs* souboru.
 
 [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?highlight=9&name=snippet_seed)]
 
-* * *
+---
+
 Testování aplikace
 
 * Odstraňte všechny záznamy v databázi. Můžete provést s odstranit odkazy v prohlížeči nebo z SSOX.

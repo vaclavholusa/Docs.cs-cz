@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 3055eec91adc412b596d4cc73e8523e18ff63331
-ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
+ms.openlocfilehash: 06751e713fbd579a944333cc3c3b2c0c0ad51eba
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>Detekovat změny s tokeny změn v ASP.NET Core
 
@@ -108,7 +108,7 @@ Konstruktor implementované třídy `ConfigurationMonitor`, zaregistruje zpětn�
 
 [!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet2)]
 
-`config.GetReloadToken()` poskytuje token. `InvokeChanged` je metoda zpětného volání. `state` v této instanci je řetězec, který popisuje monitorování stavu. Dvě vlastnosti se používají:
+`config.GetReloadToken()` poskytuje token. `InvokeChanged` je metoda zpětného volání. `state` v této instanci je odkaz na `IConfigurationMonitor` instanci, která se používá pro přístup k monitorování stavu. Dvě vlastnosti se používají:
 
 * `MonitoringEnabled` Určuje, pokud zpětné volání se budou spouštět jeho vlastní kód.
 * `CurrentState` Popisuje aktuální monitorování stavu pro použití v uživatelském rozhraní.
@@ -116,7 +116,6 @@ Konstruktor implementované třídy `ConfigurationMonitor`, zaregistruje zpětn�
 `InvokeChanged` Metoda je podobná starší přístup, s výjimkou, že:
 
 * Nefunguje jeho kód, pokud `MonitoringEnabled` je `true`.
-* Nastaví `CurrentState` vlastnost řetězec, který má popisný zprávu, která zaznamenává dobu, která byla spuštěna kód.
 * Poznámky k aktuální `state` v jeho `WriteConsole` výstup.
 
 [!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet3)]
@@ -199,9 +198,8 @@ var compositeChangeToken =
 
 ## <a name="see-also"></a>Viz také
 
-* [Mezipaměti v paměti](xref:performance/caching/memory)
+* [Mezipaměť v paměti](xref:performance/caching/memory)
 * [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
-* [Detekovat změny s tokeny změn](xref:fundamentals/primitives/change-tokens)
 * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
 * [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
 * [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)

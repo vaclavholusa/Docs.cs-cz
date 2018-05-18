@@ -1,3 +1,4 @@
-[Visual Studio pro Windows](https://www.microsoft.com/net/download/windows)
-* **Vývoj pro ASP.NET a webové** pracovního vytížení
-* **Vývoj pro různé platformy .NET core** pracovního vytížení
+[<span data-ttu-id="4b212-101">Visual Studio pro Windows</span><span class="sxs-lookup"><span data-stu-id="4b212-101">Visual Studio for Windows</span></span>](https://www.microsoft.com/net/download/windows)
+* <span data-ttu-id="4b212-102">**Vývoj pro ASP.NET a webové** pracovního vytížení</span><span class="sxs-lookup"><span data-stu-id="4b212-102">**ASP.NET and web development** workload</span></span>
+* <span data-ttu-id="4b212-103">**Vývoj pro různé platformy .NET core** pracovního vytížení</span><span class="sxs-lookup"><span data-stu-id="4b212-103">**.NET Core cross-platform development** workload</span></span>
+* <span data-ttu-id="4b212-104">Certifikát X.509 zabezpečení</span><span class="sxs-lookup"><span data-stu-id="4b212-104">X.509 security certificate</span></span>

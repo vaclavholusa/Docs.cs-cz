@@ -1,39 +1,70 @@
 ---
-title: Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x a novější
+title: Microsoft.AspNetCore.All metapackage pro technologii ASP.NET 2.0 jádra a novější
 author: Rick-Anderson
 description: Microsoft.AspNetCore.All metapackage zahrnuje všechny podporované balíčků ASP.NET Core a Entity Framework Core, spolu s jejich závislosti.
 manager: wpickett
-monikerRange: = aspnetcore-2.0
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: 4c11f15e659565325bfe8b8d91188b62177b251d
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: ce40a7eff00faa407233a55bbb92f029b8633e5c
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a><span data-ttu-id="f68cb-103">Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="f68cb-103">Microsoft.AspNetCore.All metapackage for ASP.NET Core 2.x</span></span>
+# <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a><span data-ttu-id="980f7-103">Microsoft.AspNetCore.All metapackage pro technologii ASP.NET 2.0 jádra</span><span class="sxs-lookup"><span data-stu-id="980f7-103">Microsoft.AspNetCore.All metapackage for ASP.NET Core 2.0</span></span>
 
-<span data-ttu-id="f68cb-104">Tato funkce vyžaduje rozhraní .NET zaměřená na aplikace ASP.NET Core 2.x základní 2.x.</span><span class="sxs-lookup"><span data-stu-id="f68cb-104">This feature requires ASP.NET Core 2.x targeting .NET Core 2.x.</span></span>
+> [!NOTE]
+> <span data-ttu-id="980f7-104">Doporučujeme aplikací pro ASP.NET Core 2.1 a později [Microsoft.AspNetCore.App](xref:fundamentals/metapackage) místo tohoto balíčku.</span><span class="sxs-lookup"><span data-stu-id="980f7-104">We recommend applications targeting ASP.NET Core 2.1 and later use the [Microsoft.AspNetCore.App](xref:fundamentals/metapackage) rather than this package.</span></span> <span data-ttu-id="980f7-105">V tématu [migrace z Microsoft.AspNetCore.All na Microsoft.AspNetCore.App](#migrate) v tomto článku.</span><span class="sxs-lookup"><span data-stu-id="980f7-105">See [Migrating from Microsoft.AspNetCore.All to Microsoft.AspNetCore.App](#migrate) in this article.</span></span>
 
-<span data-ttu-id="f68cb-105">[Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) metapackage pro ASP.NET Core zahrnuje:</span><span class="sxs-lookup"><span data-stu-id="f68cb-105">The [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) metapackage for ASP.NET Core includes:</span></span>
+<span data-ttu-id="980f7-106">Tato funkce vyžaduje rozhraní .NET zaměřená na aplikace ASP.NET Core 2.x základní 2.x.</span><span class="sxs-lookup"><span data-stu-id="980f7-106">This feature requires ASP.NET Core 2.x targeting .NET Core 2.x.</span></span>
 
-* <span data-ttu-id="f68cb-106">Všechny podporované balíčky tým ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="f68cb-106">All supported packages by the ASP.NET Core team.</span></span>
-* <span data-ttu-id="f68cb-107">Všechny podporované balíčků základní Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="f68cb-107">All supported packages by the Entity Framework Core.</span></span> 
-* <span data-ttu-id="f68cb-108">Interní a 3. stran závislosti používané ASP.NET Core a Entity Framework Core.</span><span class="sxs-lookup"><span data-stu-id="f68cb-108">Internal and 3rd-party dependencies used by ASP.NET Core and Entity Framework Core.</span></span> 
+<span data-ttu-id="980f7-107">[Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) metapackage pro ASP.NET Core zahrnuje:</span><span class="sxs-lookup"><span data-stu-id="980f7-107">The [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) metapackage for ASP.NET Core includes:</span></span>
 
-<span data-ttu-id="f68cb-109">Všechny funkce ASP.NET Core 2.x a Entity Framework Core 2.x jsou součástí `Microsoft.AspNetCore.All` balíčku.</span><span class="sxs-lookup"><span data-stu-id="f68cb-109">All the features of ASP.NET Core 2.x and Entity Framework Core 2.x are included in the `Microsoft.AspNetCore.All` package.</span></span> <span data-ttu-id="f68cb-110">Tento balíček použít výchozí šablony projektů cílení na technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="f68cb-110">The default project templates targeting ASP.NET Core 2.0 use this package.</span></span>
+* <span data-ttu-id="980f7-108">Všechny podporované balíčky tým ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="980f7-108">All supported packages by the ASP.NET Core team.</span></span>
+* <span data-ttu-id="980f7-109">Všechny podporované balíčků základní Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="980f7-109">All supported packages by the Entity Framework Core.</span></span> 
+* <span data-ttu-id="980f7-110">Interní a 3. stran závislosti používané ASP.NET Core a Entity Framework Core.</span><span class="sxs-lookup"><span data-stu-id="980f7-110">Internal and 3rd-party dependencies used by ASP.NET Core and Entity Framework Core.</span></span> 
 
-<span data-ttu-id="f68cb-111">Číslo verze `Microsoft.AspNetCore.All` metapackage představuje ASP.NET Core verze a verze Entity Framework Core (v souladu s verze .NET Core).</span><span class="sxs-lookup"><span data-stu-id="f68cb-111">The version number of the `Microsoft.AspNetCore.All` metapackage represents the ASP.NET Core version and Entity Framework Core version (aligned with the .NET Core version).</span></span>
+<span data-ttu-id="980f7-111">Všechny funkce ASP.NET Core 2.x a Entity Framework Core 2.x jsou součástí `Microsoft.AspNetCore.All` balíčku.</span><span class="sxs-lookup"><span data-stu-id="980f7-111">All the features of ASP.NET Core 2.x and Entity Framework Core 2.x are included in the `Microsoft.AspNetCore.All` package.</span></span> <span data-ttu-id="980f7-112">Tento balíček použít výchozí šablony projektů cílení na technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="980f7-112">The default project templates targeting ASP.NET Core 2.0 use this package.</span></span>
 
-<span data-ttu-id="f68cb-112">Aplikace, které používají `Microsoft.AspNetCore.All` metapackage automaticky využívat výhod [.NET Core Runtime úložiště](https://docs.microsoft.com/dotnet/core/deploying/runtime-store).</span><span class="sxs-lookup"><span data-stu-id="f68cb-112">Applications that use the `Microsoft.AspNetCore.All` metapackage automatically take advantage of the [.NET Core Runtime Store](https://docs.microsoft.com/dotnet/core/deploying/runtime-store).</span></span> <span data-ttu-id="f68cb-113">Modul Runtime úložiště obsahuje všechny prostředky potřebné ke spuštění 2.x aplikace ASP.NET Core runtime.</span><span class="sxs-lookup"><span data-stu-id="f68cb-113">The Runtime Store contains all the runtime assets needed to run ASP.NET Core 2.x applications.</span></span> <span data-ttu-id="f68cb-114">Při použití `Microsoft.AspNetCore.All` metapackage, **žádné** prostředky z odkazované balíčky ASP.NET Core NuGet nasazených aplikací &mdash; úložiště .NET Core Runtime obsahuje tyto prostředky.</span><span class="sxs-lookup"><span data-stu-id="f68cb-114">When you use the `Microsoft.AspNetCore.All` metapackage, **no** assets from the referenced ASP.NET Core NuGet packages are deployed with the application &mdash; the .NET Core Runtime Store contains these assets.</span></span> <span data-ttu-id="f68cb-115">Prostředky v úložišti Runtime jsou předkompilovaných ke zlepšení času spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="f68cb-115">The assets in the Runtime Store are precompiled to improve application startup time.</span></span>
+<span data-ttu-id="980f7-113">Číslo verze `Microsoft.AspNetCore.All` metapackage představuje ASP.NET Core verze a verze Entity Framework Core.</span><span class="sxs-lookup"><span data-stu-id="980f7-113">The version number of the `Microsoft.AspNetCore.All` metapackage represents the ASP.NET Core version and Entity Framework Core version.</span></span>
 
-<span data-ttu-id="f68cb-116">Proces oříznutí balíčku můžete odebrat balíčky, které nepoužíváte.</span><span class="sxs-lookup"><span data-stu-id="f68cb-116">You can use the package trimming process to remove packages that you don't use.</span></span> <span data-ttu-id="f68cb-117">Oříznutý balíčky jsou vyloučeny ve výstupu publikované aplikace.</span><span class="sxs-lookup"><span data-stu-id="f68cb-117">Trimmed packages are excluded in published application output.</span></span>
+<span data-ttu-id="980f7-114">Aplikace, které používají `Microsoft.AspNetCore.All` metapackage automaticky využívat výhod [.NET Core Runtime úložiště](https://docs.microsoft.com/dotnet/core/deploying/runtime-store).</span><span class="sxs-lookup"><span data-stu-id="980f7-114">Applications that use the `Microsoft.AspNetCore.All` metapackage automatically take advantage of the [.NET Core Runtime Store](https://docs.microsoft.com/dotnet/core/deploying/runtime-store).</span></span> <span data-ttu-id="980f7-115">Modul Runtime úložiště obsahuje všechny prostředky potřebné ke spuštění 2.x aplikace ASP.NET Core runtime.</span><span class="sxs-lookup"><span data-stu-id="980f7-115">The Runtime Store contains all the runtime assets needed to run ASP.NET Core 2.x applications.</span></span> <span data-ttu-id="980f7-116">Při použití `Microsoft.AspNetCore.All` metapackage, **žádné** prostředky z odkazované balíčky ASP.NET Core NuGet nasazených aplikací &mdash; úložiště .NET Core Runtime obsahuje tyto prostředky.</span><span class="sxs-lookup"><span data-stu-id="980f7-116">When you use the `Microsoft.AspNetCore.All` metapackage, **no** assets from the referenced ASP.NET Core NuGet packages are deployed with the application &mdash; the .NET Core Runtime Store contains these assets.</span></span> <span data-ttu-id="980f7-117">Prostředky v úložišti Runtime jsou předkompilovaných ke zlepšení času spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="980f7-117">The assets in the Runtime Store are precompiled to improve application startup time.</span></span>
 
-<span data-ttu-id="f68cb-118">Následující *.csproj* souboru odkazy `Microsoft.AspNetCore.All` metapackage pro ASP.NET Core:</span><span class="sxs-lookup"><span data-stu-id="f68cb-118">The following *.csproj* file references the `Microsoft.AspNetCore.All` metapackage for ASP.NET Core:</span></span>
+<span data-ttu-id="980f7-118">Proces oříznutí balíčku můžete odebrat balíčky, které nepoužíváte.</span><span class="sxs-lookup"><span data-stu-id="980f7-118">You can use the package trimming process to remove packages that you don't use.</span></span> <span data-ttu-id="980f7-119">Oříznutý balíčky jsou vyloučeny ve výstupu publikované aplikace.</span><span class="sxs-lookup"><span data-stu-id="980f7-119">Trimmed packages are excluded in published application output.</span></span>
+
+<span data-ttu-id="980f7-120">Následující *.csproj* souboru odkazy `Microsoft.AspNetCore.All` metapackage pro ASP.NET Core:</span><span class="sxs-lookup"><span data-stu-id="980f7-120">The following *.csproj* file references the `Microsoft.AspNetCore.All` metapackage for ASP.NET Core:</span></span>
 
 [!code-xml[](../mvc/views/view-compilation/sample/MvcRazorCompileOnPublish2.csproj?highlight=9)]
+
+<a name="migrate"></a>
+## <a name="migrating-from-microsoftaspnetcoreall-to-microsoftaspnetcoreapp"></a><span data-ttu-id="980f7-121">Migrace z Microsoft.AspNetCore.All na Microsoft.AspNetCore.App</span><span class="sxs-lookup"><span data-stu-id="980f7-121">Migrating from Microsoft.AspNetCore.All to Microsoft.AspNetCore.App</span></span>
+
+<span data-ttu-id="980f7-122">Následující balíčky jsou součástí `Microsoft.AspNetCore.All` ale ne `Microsoft.AspNetCore.App` balíčku.</span><span class="sxs-lookup"><span data-stu-id="980f7-122">The following packages are included in `Microsoft.AspNetCore.All` but not the `Microsoft.AspNetCore.App` package.</span></span> 
+
+* `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`
+* `Microsoft.AspNetCore.AzureAppServices.HostingStartup`
+* `Microsoft.AspNetCore.AzureAppServicesIntegration`
+* `Microsoft.AspNetCore.DataProtection.AzureKeyVault`
+* `Microsoft.AspNetCore.DataProtection.AzureStorage`
+* `Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv`
+* `Microsoft.AspNetCore.SignalR.Redis`
+* `Microsoft.Data.Sqlite`
+* `Microsoft.Data.Sqlite.Core`
+* `Microsoft.EntityFrameworkCore.Sqlite`
+* `Microsoft.EntityFrameworkCore.Sqlite.Core`
+* `Microsoft.Extensions.Caching.Redis`
+* `Microsoft.Extensions.Configuration.AzureKeyVault`
+* `Microsoft.Extensions.Logging.AzureAppServices`
+* `Microsoft.VisualStudio.Web.BrowserLink`
+
+<span data-ttu-id="980f7-123">Pro přesun z `Microsoft.AspNetCore.All` k `Microsoft.AspNetCore.App`, pokud vaše aplikace používá žádné rozhraní API z výše uvedených balíčky nebo balíčky nebude těchto balíčků, přidejte odkazy na tyto balíčky v projektu.</span><span class="sxs-lookup"><span data-stu-id="980f7-123">To move from `Microsoft.AspNetCore.All` to `Microsoft.AspNetCore.App`, if your app uses any APIs from the above packages, or packages brought in by those packages, add references to those packages in your project.</span></span>
+
+<span data-ttu-id="980f7-124">Všechny závislosti z předchozí balíčky, které jinak nejsou závislostí `Microsoft.AspNetCore.App` implicitně nejsou zahrnuty.</span><span class="sxs-lookup"><span data-stu-id="980f7-124">Any dependencies of the preceding packages that otherwise aren't dependencies of `Microsoft.AspNetCore.App` are not included implicitly.</span></span> <span data-ttu-id="980f7-125">Příklad:</span><span class="sxs-lookup"><span data-stu-id="980f7-125">For example:</span></span>
+
+* <span data-ttu-id="980f7-126">`StackExchange.Redis` jako závislosti `Microsoft.Extensions.Caching.Redis`</span><span class="sxs-lookup"><span data-stu-id="980f7-126">`StackExchange.Redis` as a dependency of `Microsoft.Extensions.Caching.Redis`</span></span>
+* <span data-ttu-id="980f7-127">`Microsoft.ApplicationInsights` jako závislosti `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`</span><span class="sxs-lookup"><span data-stu-id="980f7-127">`Microsoft.ApplicationInsights` as a dependency of `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`</span></span>

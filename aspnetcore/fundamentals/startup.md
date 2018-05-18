@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: a61f78b2d0e5c6c171a26690fcce256462a82508
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 58ced0ae11f462bc309526b7db7bda7897c33009
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -46,7 +46,7 @@ Zadejte `Startup` třídy s [WebHostBuilderExtensions](/dotnet/api/Microsoft.Asp
 
 Alternativu k vložení `IHostingEnvironment` , je použít přístup na základě konvence. Aplikace můžete definovat samostatné `Startup` třídy pro různá prostředí (například `StartupDevelopment`), a v době běhu je vybraná třída odpovídající při spuštění. Třída, jehož příponu názvu odpovídá aktuální prostředí prioritu. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v tématu [použijte prostředí s více](xref:fundamentals/environments#startup-conventions).
 
-Další informace o `WebHostBuilder`, najdete v článku [hostitelský](xref:fundamentals/hosting) tématu. Informace o zpracování chyb během spouštění najdete v tématu [spuštění zpracování výjimek](xref:fundamentals/error-handling#startup-exception-handling).
+Další informace o `WebHostBuilder`, najdete v článku [hostitelský](xref:fundamentals/host/index) tématu. Informace o zpracování chyb během spouštění najdete v tématu [spuštění zpracování výjimek](xref:fundamentals/error-handling#startup-exception-handling).
 
 ## <a name="the-configureservices-method"></a>Metoda ConfigureServices
 
@@ -58,7 +58,7 @@ Další informace o `WebHostBuilder`, najdete v článku [hostitelský](xref:fun
 
 Přidání služeb do kontejneru služby jsou dostupné v rámci aplikace a v `Configure` metoda. Služby jsou vyřešeny prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection) nebo z [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
 
-Webového hostitele může konfigurovat některé služby před `Startup` metody jsou volány. Podrobnosti najdete v [hostitelský](xref:fundamentals/hosting) tématu.
+Webového hostitele může konfigurovat některé služby před `Startup` metody jsou volány. Podrobnosti najdete v [hostitele v ASP.NET Core](xref:fundamentals/host/index) tématu.
 
 Pro funkce, které vyžadují významné instalace, jsou `Add[Service]` rozšiřující metody na [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Typické webové aplikace se zaregistruje services pro rozhraní Entity Framework, Identity a MVC:
 
@@ -164,8 +164,8 @@ Pořadí spuštění middlewaru je nastavena podle pořadí podle `IStartupFilte
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Hostování](xref:fundamentals/hosting)
-* [Pomocí několika prostředí](xref:fundamentals/environments)
+* [Hostování](xref:fundamentals/host/index)
+* [Používání více prostředí](xref:fundamentals/environments)
 * [Middleware](xref:fundamentals/middleware/index)
 * [Protokolování](xref:fundamentals/logging/index)
 * [Konfigurace](xref:fundamentals/configuration/index)

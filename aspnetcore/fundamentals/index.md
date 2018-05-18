@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: ce79118fa025f912d7f04e2c9bff481a04489674
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
-ms.translationtype: HT
+ms.openlocfilehash: 97c0b289b259332d57f8175e05020fe03d505723
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
@@ -155,7 +155,7 @@ Další informace najdete v tématu [statické soubory](xref:fundamentals/static
 
 Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*, která je zodpovědná za spuštění a životního cyklu správy aplikací.
 
-Další informace najdete v tématu [hostitelský](xref:fundamentals/hosting).
+Další informace najdete v tématu [hostitele v ASP.NET Core](xref:fundamentals/host/index).
 
 ## <a name="session-and-application-state"></a>Stav relace a aplikace
 
@@ -189,7 +189,7 @@ Další informace najdete v tématu [žádosti o funkce](xref:fundamentals/reque
 
 Úlohy na pozadí jsou implementované jako *hostovaných služeb*. Hostovaná služba je třída s pozadí úloh logiky, která implementuje [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) rozhraní.
 
-Další informace najdete v tématu [pozadí úlohy s hostované služby](xref:fundamentals/hosted-services).
+Další informace najdete v tématu [pozadí úlohy s hostované služby](xref:fundamentals/host/hosted-services).
 
 ## <a name="open-web-interface-for-net-owin"></a>Spustit nástroj webové rozhraní pro platformu .NET (OWIN)
 

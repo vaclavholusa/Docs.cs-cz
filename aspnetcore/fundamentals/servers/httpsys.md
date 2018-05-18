@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: ce4edf6f07808d3958c919a1d81561ce020fe52b
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
-ms.translationtype: HT
+ms.openlocfilehash: 89d9a51334bdd50b72213d32fa194808ac6a93b9
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Ovladač HTTP.sys webového serveru implementace v ASP.NET Core
 
@@ -133,7 +133,7 @@ Ovladač HTTP.sys je Vyspělá technologie, která chrání před mnoho typů ú
 
    Výhodou `UrlPrefixes` se okamžitě vytvoří chybová zpráva pro nesprávně naformátovaný předpony.
 
-   Nastavení v `UrlPrefixes` přepsat `UseUrls` / `urls` / `ASPNETCORE_URLS` nastavení. Proto výhoda `UseUrls`, `urls`a `ASPNETCORE_URLS` – proměnná prostředí je snadnější přepínat mezi Kestrel a ovladače HTTP.sys. Další informace o `UseUrls`, `urls`, a `ASPNETCORE_URLS`, najdete v části [hostitelský](xref:fundamentals/hosting).
+   Nastavení v `UrlPrefixes` přepsat `UseUrls` / `urls` / `ASPNETCORE_URLS` nastavení. Proto výhoda `UseUrls`, `urls`a `ASPNETCORE_URLS` – proměnná prostředí je snadnější přepínat mezi Kestrel a ovladače HTTP.sys. Další informace o `UseUrls`, `urls`, a `ASPNETCORE_URLS`, najdete v článku [hostitele v ASP.NET Core](xref:fundamentals/host/index) tématu.
 
    Používá ovladače HTTP.sys [formáty řetězců UrlPrefix rozhraní API serveru HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx).
 
@@ -179,4 +179,4 @@ Pro aplikace hostované ovladače HTTP.sys, které se s požadavky z Internetu n
 
 * [Rozhraní API serveru HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)
 * [úložiště GitHub ASPNET/HttpSysServer (zdrojový kód)](https://github.com/aspnet/HttpSysServer/)
-* [Hostování](xref:fundamentals/hosting)
+* [Hostitel v ASP.NET Core](xref:fundamentals/host/index)

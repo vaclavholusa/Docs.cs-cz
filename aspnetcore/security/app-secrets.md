@@ -1,129 +1,262 @@
 ---
 title: Bezpečné úložiště tajné klíče aplikace v vývoj v ASP.NET Core
 author: rick-anderson
-description: Ukazuje, jak bezpečně uložit tajné klíče během vývoje
+description: Zjistěte, jak k ukládání a načítání citlivé informace jako tajné klíče aplikace během vývoje aplikace ASP.NET Core.
 manager: wpickett
-ms.author: riande
-ms.date: 09/15/2017
+ms.author: scaddie
+ms.custom: mvc
+ms.date: 05/16/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: a268fd76a303dc1185b451e4f678fc2fe761e80a
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
-ms.translationtype: HT
+ms.openlocfilehash: 4db09d3d41b705597f93d05af91077f2b9236b7e
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Bezpečné úložiště tajné klíče aplikace v vývoj v ASP.NET Core
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [ADAM Roth](https://github.com/danroth27), a [Scott Addie](https://scottaddie.com) 
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [ADAM Roth](https://github.com/danroth27), a [Scott Addie](https://github.com/scottaddie)
 
-Tento dokument ukazuje, jak pomocí nástroje Správce tajný klíč v vývoj zachovat tajné klíče z vašeho kódu. Nejdůležitější bod je ve zdrojovém kódu by nikdy neukládají hesla nebo dalších citlivých dat, a tajné klíče produkční byste neměli používat v režimu pro vývoj a testování. Místo toho můžete [konfigurace](xref:fundamentals/configuration/index) systému a přečtěte si tyto hodnoty z proměnné prostředí nebo z hodnot uložených pomocí tajný klíč správce nástroje. Nástroj tajný klíč správce pomáhá zabránit citlivá data z kontroly do správy zdrojového kódu. [Konfigurace](xref:fundamentals/configuration/index) systému může číst tajné klíče uložené pomocí nástroje Správce tajný klíč popsané v tomto článku.
+::: moniker range="<= aspnetcore-1.1"
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/1.1) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/2.1) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+::: moniker-end
 
-Nástroj Správce tajný klíč se používá pouze v vývoj. Můžete zabezpečit Azure testovací a produkční tajných klíčů s [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) poskytovatele konfigurace. V tématu [poskytovatele konfigurace Azure Key Vault](xref:security/key-vault-configuration) Další informace.
+Tento dokument popisuje techniky pro ukládání a načítání citlivá data během vývoje aplikace ASP.NET Core. Ve zdrojovém kódu by nikdy neukládají hesla nebo dalších citlivých dat, a nesmí použít produkční tajných klíčů v vývoj nebo testování režimu. Můžete ukládat a chránit Azure testovací a produkční tajných klíčů s [poskytovatele konfigurace Azure Key Vault](xref:security/key-vault-configuration).
 
 ## <a name="environment-variables"></a>Proměnné prostředí
 
-Abyste se vyhnuli ukládání tajné klíče aplikace v kódu nebo v místní konfigurační soubory, ukládat tajné klíče v seznamu proměnných prostředí. Můžete nastavit [konfigurace](xref:fundamentals/configuration/index) framework čtení hodnoty z proměnných prostředí voláním `AddEnvironmentVariables`. Proměnné prostředí poté můžete přepsat hodnoty konfigurace pro všechny zdroje dříve zadané konfigurace.
+Proměnné prostředí se používají k ukládání tajné klíče aplikace v kódu nebo v místní konfigurační soubory vyhnete. Proměnné prostředí přepsat hodnoty konfigurace pro všechny zdroje dříve zadané konfigurace.
 
-Například pokud vytvoříte novou webovou aplikaci ASP.NET Core s jednotlivých uživatelských účtů, přidá výchozí připojovacího řetězce, který *appSettings.JSON určený* v projektu s klíčem `DefaultConnection`. Výchozí připojovací řetězec je LocalDB, který běží v uživatelském režimu a nevyžaduje heslo pomocí instalačního programu. Když nasadíte aplikaci k testu nebo produkčním serveru, můžete přepsat `DefaultConnection` hodnotu klíče s nastavení proměnné prostředí, který obsahuje připojovací řetězec (s citlivé přihlašovací údaje) pro testovací nebo provozní databázi Server.
+::: moniker range="<= aspnetcore-1.1"
+Čtení hodnot proměnných prostředí nakonfigurovat voláním [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables) v `Startup` konstruktor:
 
->[!WARNING]
-> Proměnné prostředí jsou obecně uložené ve formátu prostého textu a nejsou šifrována. Když počítač nebo proces ohrožení, pak proměnné prostředí jsou přístupné nedůvěryhodné strany. Další opatření, aby se zabránilo úniku tajné klíče uživatele může být stále nutný.
+[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=10)]
+::: moniker-end
+
+Vezměte v úvahu webové aplikace ASP.NET Core, ve kterém **jednotlivé uživatelské účty** je zabezpečená. Připojovací řetězec databáze výchozí je zahrnut do projektu *appSettings.JSON určený* soubor s klíčem `DefaultConnection`. Výchozí připojovací řetězec je pro LocalDB, který běží v uživatelském režimu a nevyžaduje heslo. Během nasazení aplikace `DefaultConnection` klíče hodnotu je možné přepsat hodnotou proměnné prostředí. Proměnné prostředí může ukládat úplný připojovací řetězec s citlivé údaje.
+
+> [!WARNING]
+> Proměnné prostředí jsou obecně uložené v nešifrované prostého textu. Když počítač nebo proces ohrožení, proměnné prostředí jsou přístupné nedůvěryhodné strany. Další opatření, aby se zabránilo úniku tajné klíče uživatele může být požadováno.
 
 ## <a name="secret-manager"></a>Tajný klíč správce
 
-Nástroj tajný klíč správce ukládá citlivá data pro vývojové práci mimo váš projekt stromu. Nástroj Správce tajný klíč je nástroj projektu, který slouží k uložení tajné klíče pro projekt .NET Core během vývoje. Pomocí nástroje Správce tajný klíč můžete přidružit konkrétní projekt tajné klíče aplikace a sdílet je ve více projektech.
+Nástroj tajný klíč správce ukládá citlivá data během vývoje projektu ASP.NET Core. V tomto kontextu je úsek citlivých dat tajný klíč aplikace. Tajné klíče aplikace jsou uložené v samostatné umístění ze stromu projektu. Tajné klíče aplikace jsou spojené s konkrétní projekt nebo sdílená mezi několika projekty. Tajné klíče aplikace nejsou změnami do správy zdrojového kódu.
 
->[!WARNING]
+> [!WARNING]
 > Nástroj tajný klíč správce nemá zašifrování těchto tajných klíčů uložených a nesmí být považované za důvěryhodné úložiště. Je jenom pro účely vývoje. Klíče a hodnoty jsou uložené v konfiguračním souboru JSON v adresáři profilu uživatele.
 
-## <a name="installing-the-secret-manager-tool"></a>Instalace nástroje Správce tajný klíč
+## <a name="how-the-secret-manager-tool-works"></a>Jak funguje nástroj Správce tajný klíč
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+Nástroj tajný klíč správce abstrahuje rychle podrobnosti implementace, jako je například kde a jak jsou uložené hodnoty. Nástroj můžete použít bez znalosti tyto podrobnosti implementace. Hodnoty jsou uloženy v [JSON](https://json.org/) konfigurační soubor ve složce profil systému chráněný uživatel v místním počítači:
 
-Klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte **upravit \<název_projektu\>.csproj** v místní nabídce. Přidejte zvýrazněný řádek na *.csproj* souboru a uložte obnovit přidruženého balíčku NuGet:
+* Windows: `%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
+* & Systému macOS Linux: `~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
 
-[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
+V předchozím cesty k souboru, nahraďte `<user_secrets_id>` s `UserSecretsId` hodnoty zadané ve *.csproj* souboru.
 
-Znovu klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte **spravovat tajné klíče uživatele** v místní nabídce. Přidá nový tento gesto `UserSecretsId` uzel v rámci `PropertyGroup` z *.csproj* souboru, jak je znázorněno v následující ukázce:
+Nemusíte psát kód, který závisí na umístění nebo formát data uložená pomocí nástroje Správce tajný klíč. Tyto podrobnosti implementace může změnit. Například tajný hodnoty nejsou zašifrované, ale může být v budoucnu.
 
-[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+::: moniker range="<= aspnetcore-2.0"
+## <a name="install-the-secret-manager-tool"></a>Nainstalujte nástroj Správce tajný klíč
 
-Ukládání upravenou *.csproj* také soubor otevře `secrets.json` soubor v textovém editoru. Nahraďte obsah `secrets.json` soubor s následujícím kódem:
+Nástroj Správce tajný klíč je instalován s rozhraní příkazového řádku .NET Core v rozhraní .NET Core SDK 2.1. Pro rozhraní .NET Core SDK 2.0 a starší je nutné instalaci nástroje.
 
-```json
-{
-    "MySecret": "ValueOfMySecret"
-}
-```
+Nainstalujte [Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) balíček NuGet do projektu ASP.NET Core:
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_CsprojFile&highlight=13-14)]
 
-Přidat `Microsoft.Extensions.SecretManager.Tools` k *.csproj* souboru a spusťte [dotnet obnovení](/dotnet/core/tools/dotnet-restore). Stejný postup můžete použít k instalaci nástroje Správce tajný klíč pomocí příkazového řádku.
-
-[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
-
-Testovací nástroje tajný klíč Manager tak, že spustíte následující příkaz:
+Spusťte následující příkaz v příkazovém řádku ověření instalace nástroje:
 
 ```console
 dotnet user-secrets -h
 ```
 
-Nástroj tajný klíč správce se zobrazí, využití, možnosti a nápovědu k příkazu.
+Nástroj tajný klíč správce zobrazí využití vzorků, možnosti a nápovědu k příkazu:
+
+```console
+Usage: dotnet user-secrets [options] [command]
+
+Options:
+  -?|-h|--help                        Show help information
+  --version                           Show version information
+  -v|--verbose                        Show verbose output
+  -p|--project <PROJECT>              Path to project. Defaults to searching the current directory.
+  -c|--configuration <CONFIGURATION>  The project configuration to use. Defaults to 'Debug'.
+  --id                                The user secret ID to use.
+
+Commands:
+  clear   Deletes all the application secrets
+  list    Lists all the application secrets
+  remove  Removes the specified user secret
+  set     Sets the user secret to the specified value
+
+Use "dotnet user-secrets [command] --help" for more information about a command.
+```
 
 > [!NOTE]
-> Musí být ve stejném adresáři jako *.csproj* spuštění nástroje definované v souboru *.csproj* souboru `DotNetCliToolReference` uzlů.
+> Musí být ve stejném adresáři jako *.csproj* spuštění nástroje definované v souboru *.csproj* souboru `DotNetCliToolReference` elementy.
+::: moniker-end
 
-Nástroj tajný klíč Manager funguje v nastavení konfigurace specifických projektu, které jsou uložené v profilu uživatele. Chcete-li použít tajné klíče uživatele, musíte zadat projektu `UserSecretsId` hodnotu v jeho *.csproj* souboru. Hodnota `UserSecretsId` je volitelný, ale je obecně jedinečné do projektu. Vývojáři obvykle generovat identifikátor GUID pro `UserSecretsId`.
+## <a name="set-a-secret"></a>Nastavit tajný klíč
 
-Přidat `UserSecretsId` pro svůj projekt v *.csproj* souboru:
+Nástroj tajný klíč Manager funguje v nastavení projektu specifické konfigurace uložené v profilu uživatele. Pokud chcete použít tajné klíče uživatele, zadejte `UserSecretsId` v rámci `PropertyGroup` z *.csproj* souboru. Hodnota `UserSecretsId` je volitelný, ale je jedinečné pro projekt. Vývojáři obvykle generovat identifikátor GUID pro `UserSecretsId`.
 
-[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+::: moniker range="<= aspnetcore-1.1"
+[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+[!code-xml[](app-secrets/samples/2.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
+::: moniker-end
 
-Chcete-li nastavit tajného klíče pomocí nástroje Správce tajný klíč. Například v příkazovém okně z adresáře projektu, zadejte následující příkaz:
+> [!TIP]
+> V sadě Visual Studio, klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte **spravovat tajné klíče uživatele** v místní nabídce. Přidá tento gesto `UserSecretsId` elementu, naplní na identifikátor GUID *.csproj* souboru. Otevře se Visual Studio *secrets.json* soubor v textovém editoru. Nahraďte obsah *secrets.json* s páry klíč hodnota k uložení. Například: [!INCLUDE[secrets.json file](~/includes/app-secrets/secrets-json-file.md)]
+
+Definujte tajný klíč aplikace, který se skládá z klíče a jeho hodnotu. Tajný klíč je přidružen k projektu `UserSecretsId` hodnotu. Například spusťte následující příkaz z adresáře, ve kterém *.csproj* soubor existuje:
 
 ```console
-dotnet user-secrets set MySecret ValueOfMySecret
+dotnet user-secrets set "Movies:ServiceApiKey" "12345"
 ```
 
-Můžete spustit nástroj Správce tajný klíč z dalších adresářů, ale je nutné použít `--project` možnost předat v cestě k *.csproj* souboru:
+V předchozím příkladu, který označuje dvojtečkou `Movies` je literál s objektem `ServiceApiKey` vlastnost.
+
+Nástroj Správce tajný klíč lze z dalších adresářů příliš. Použití `--project` možnost zadat cesta v souborovém systému, kdy *.csproj* soubor existuje. Příklad:
 
 ```console
-dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\webapp1
+dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp1\src\WebApp1"
 ```
 
-Můžete také nástroj Správce tajný klíč do seznamu, odebrat a vymazat tajné klíče aplikace.
+## <a name="set-multiple-secrets"></a>Nastavit více tajné klíče
 
----
+Tím JSON pro lze nastavit dávky tajné klíče `set` příkaz. V následujícím příkladu *input.json* jeho obsah se přesměruje do `set` příkazu v systému Windows:
 
-## <a name="accessing-user-secrets-via-configuration"></a>Přístup k tajné klíče uživatele prostřednictvím konfigurace
+```console
+type .\input.json | dotnet user-secrets set
+```
 
-Tajné klíče tajný klíč správce přistupujete prostřednictvím systému konfigurace. Přidat `Microsoft.Extensions.Configuration.UserSecrets` balíček a spusťte [dotnet obnovení](/dotnet/core/tools/dotnet-restore).
+V systému macOS a Linux použijte následující příkaz:
 
-Přidat zdroj konfigurace tajné klíče uživatele na `Startup` metoda:
+```console
+cat ./input.json | dotnet user-secrets set
+```
 
-[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=16-19)]
+## <a name="access-a-secret"></a>Přístup a tajný klíč
 
-Tajné klíče uživatele prostřednictvím rozhraní API konfigurace se můžete dostat:
+[Rozhraní API ASP.NET základní konfigurace](xref:fundamentals/configuration/index) poskytuje přístup k tajné klíče tajný klíč správce. Pokud cílení na .NET Core 1.x nebo rozhraní .NET Framework, nainstalujte [Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) balíček NuGet.
 
-[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=26-29)]
+::: moniker range="<= aspnetcore-1.1"
+Přidat uživatelský zdroj konfigurace tajné klíče na `Startup` konstruktor:
 
-## <a name="how-the-secret-manager-tool-works"></a>Jak funguje nástroj Správce tajný klíč
+[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]
+::: moniker-end
 
-Nástroj tajný klíč správce abstrahuje rychle podrobnosti implementace, jako je například kde a jak jsou uložené hodnoty. Nástroj můžete použít bez znalosti tyto podrobnosti implementace. V aktuální verzi, hodnoty jsou uloženy v [JSON](http://json.org/) konfigurační soubor v adresáři profilu uživatele:
+Tajné klíče uživatele lze načíst prostřednictvím `Configuration` rozhraní API:
 
-* Windows: `%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`
+::: moniker range="<= aspnetcore-1.1"
+[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=23)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=14)]
+::: moniker-end
 
-* Linux: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
+## <a name="string-replacement-with-secrets"></a>Náhradní řetězec obsahující tajné údaje
 
-* macOS: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
+Ukládání hesel ve formátu prostého textu je rizikové. Například připojovací řetězec databáze uložené v *appSettings.JSON určený* může zahrnovat heslo pro zadaného uživatele:
 
-Hodnota `userSecretsId` pochází z hodnoty zadané ve *.csproj* souboru.
+[!code-json[](app-secrets/samples/2.1/UserSecrets/appsettings-unsecure.json?highlight=3)]
 
-Neměli psát kód, který závisí na umístění nebo formát dat pomocí nástroje Správce tajný klíč uložit jako, může se měnit tyto podrobnosti implementace. Například tajný hodnoty jsou aktuálně *není* šifruje dnes, ale může být jednou budete.
+Bezpečnější přístup je uložit heslo jako tajný klíč. Příklad:
+
+```console
+dotnet user-secrets set "DbPassword" "pass123"
+```
+
+Nahraďte heslo v *appSettings.JSON určený* s zástupný symbol. V následujícím příkladu `{0}` slouží jako zástupný symbol pro formulář [složené řetězec formátu](/dotnet/standard/base-types/composite-formatting#composite-format-string).
+
+[!code-json[](app-secrets/samples/2.1/UserSecrets/appsettings.json?highlight=3)]
+
+Hodnota tajného klíče může vložit do zástupný symbol pro dokončení připojovací řetězec:
+
+::: moniker range="<= aspnetcore-1.1"
+[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=23-25)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-16)]
+::: moniker-end
+
+## <a name="list-the-secrets"></a>Seznam těchto tajných klíčů
+
+[!INCLUDE[secrets.json file](~/includes/app-secrets/secrets-json-file-and-text.md)]
+
+Spusťte následující příkaz z adresáře, ve kterém *.csproj* soubor existuje:
+
+```console
+dotnet user-secrets list
+```
+
+Zobrazí se následující výstup:
+
+```console
+Movies:ServiceApiKey = 12345
+Movies:ConnectionString = Server=(localdb)\mssqllocaldb;Database=Movie-1;Trusted_Connection=True;MultipleActiveResultSets=true
+```
+
+V předchozím příkladu, dvojtečka v názvy klíčů označuje hierarchie objektů v rámci *secrets.json*.
+
+## <a name="remove-a-single-secret"></a>Odeberte jeden tajný klíč
+
+[!INCLUDE[secrets.json file](~/includes/app-secrets/secrets-json-file-and-text.md)]
+
+Spusťte následující příkaz z adresáře, ve kterém *.csproj* soubor existuje:
+
+```console
+dotnet user-secrets remove "Movies:ConnectionString"
+```
+
+Aplikace *secrets.json* úpravy souboru odebrat přidružené dvojice klíč hodnota `MoviesConnectionString` klíč:
+
+```json
+{
+  "Movies": {
+    "ServiceApiKey": "12345"
+  }
+}
+```
+
+Spuštění `dotnet user-secrets list` zobrazí následující zprávu:
+
+```console
+Movies:ServiceApiKey = 12345
+```
+
+## <a name="remove-all-secrets"></a>Odebrání všech tajných klíčů
+
+[!INCLUDE[secrets.json file](~/includes/app-secrets/secrets-json-file-and-text.md)]
+
+Spusťte následující příkaz z adresáře, ve kterém *.csproj* soubor existuje:
+
+```console
+dotnet user-secrets clear
+```
+
+Všechny tajné klíče uživatele pro aplikaci byl odstraněn z *secrets.json* souboru:
+
+```json
+{}
+```
+
+Spuštění `dotnet user-secrets list` zobrazí následující zprávu:
+
+```console
+No secrets configured for this application.
+```
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Konfigurace](xref:fundamentals/configuration/index)
+* <xref:fundamentals/configuration/index>
+* <xref:security/key-vault-configuration>

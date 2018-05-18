@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: testing/troubleshoot
-ms.openlocfilehash: f2c785bfe27ddd67db0313b8ee1c077a8cc06e05
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 3bba085c69ee96b5725331b14dcf15350d66e4a4
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>Řešení potíží s projekty ASP.NET Core
 
@@ -66,3 +66,15 @@ Toto upozornění se zobrazí, když proměnnou prostředí `PATH` neodkazuje na
 
 * Nainstalujte nebo ověřte, že je nainstalováno rozhraní .NET Core SDK.
 * Ověřte `PATH` proměnnou prostředí odkazuje na umístění, je nainstalována sada SDK. Instalační program za normálních okolností nastaví `PATH`.
+
+::: moniker range=">= aspnetcore-2.1"
+
+### <a name="use-of-ihtmlhelperpartial-may-result-in-application-deadlocks"></a>Použití IHtmlHelper.Partial může vést k zablokování aplikace
+
+V technologii ASP.NET Core 2.1 nebo novější, volání `Html.Partial` vede upozornění analyzátor kvůli možným zablokování. Upozornění je:
+
+*Použití IHtmlHelper.Partial může vést k zablokování aplikace. Zvažte použití `<partial>` pomocná značka nebo `IHtmlHelper.PartialAsync`.*
+
+Volání `@Html.Partial` by měl být nahrazen `@await Html.PartialAsync` nebo částečné značky pomocná `<partial name="_Partial" />`.
+
+::: moniker-end

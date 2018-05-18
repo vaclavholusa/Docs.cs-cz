@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: a1162da01fad67f3e8ccb1e70bd646b39c38997f
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
-ms.translationtype: HT
+ms.openlocfilehash: 251385b268e75cfadb815c293be52176297ed3e4
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>Kestrel webového serveru implementace v ASP.NET Core
 
@@ -276,7 +276,7 @@ Určení adres URL pomocí:
 * `urls` Klíč konfigurace hostitele.
 * `UseUrls` metody rozšíření.
 
-Další informace najdete v tématu [adresy URL serveru](xref:fundamentals/hosting#server-urls) a [konfigurace přepíše](xref:fundamentals/hosting#overriding-configuration).
+Další informace najdete v tématu [adresy URL serveru](xref:fundamentals/host/web-host#server-urls) a [konfigurace přepisování](xref:fundamentals/host/web-host#override-configuration).
 
 Hodnota zadaná pomocí těchto přístupů může být jeden nebo více HTTP a HTTPS koncových bodů (HTTPS Pokud je k dispozici certifikát výchozí). Nakonfigurovat hodnotu jako seznam oddělený středníkem (například `"Urls": "http://localhost:8000;http://localhost:8001"`).
 
@@ -489,7 +489,7 @@ Ve výchozím nastavení, ASP.NET Core váže k `http://localhost:5000`. Konfigu
 * `urls` Klíč konfigurace hostitele
 * ASP.NET Core konfigurace systému, včetně `ASPNETCORE_URLS` proměnné prostředí
 
-Další informace o těchto metodách v tématu [hostitelský](xref:fundamentals/hosting).
+Další informace o těchto metodách v tématu [hostitelský](xref:fundamentals/host/index).
 
 **Konfigurace koncového bodu služby IIS**
 

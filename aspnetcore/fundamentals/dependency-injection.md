@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 700ceb081b2067f932ce8ed08c45c62058775e33
-ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
+ms.openlocfilehash: 067d9bd09f6d5e54bbafd953eea169d2df2be34e
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
@@ -72,7 +72,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 ## <a name="using-framework-provided-services"></a>Pomocí služby poskytované framework
 
-`ConfigureServices` Metoda v `Startup` třída je odpovědná za definici služby, aplikace bude používat, včetně funkcí platformy jako Entity Framework Core a ASP.NET Core MVC. Standardně `IServiceCollection` poskytované `ConfigureServices` má následující služby definované (v závislosti na [konfigurace hostitele](xref:fundamentals/hosting)):
+`ConfigureServices` Metoda v `Startup` třída je odpovědná za definici služby, aplikace bude používat, včetně funkcí platformy jako Entity Framework Core a ASP.NET Core MVC. Standardně `IServiceCollection` poskytované `ConfigureServices` má následující služby definované (v závislosti na [konfigurace hostitele](xref:fundamentals/host/index)):
 
 | Typ služby | Doba platnosti |
 | ----- | ------- |
@@ -235,7 +235,7 @@ Kořenového poskytovatele služby se vytvoří při [BuildServiceProvider](/dot
 
 Vymezená služby jsou zapomenuty kontejnerem, který je vytvořil. Pokud vymezené služby se vytvoří v kořenovém kontejneru, životnost služby je efektivně povýšen na singleton, protože jejich pouze likvidace podle Kořenový kontejner při ukončení aplikace nebo serveru. Ověřování služby Obory zachytí těchto situacích při `BuildServiceProvider` je volána.
 
-Další informace najdete v tématu [obor ověření v tomto tématu hostitelský](xref:fundamentals/hosting#scope-validation).
+Další informace najdete v tématu [obor ověření v tomto tématu webového hostitele](xref:fundamentals/host/web-host#scope-validation).
 
 ## <a name="request-services"></a>Žádost o služby
 
@@ -245,7 +245,7 @@ Další informace najdete v tématu [obor ověření v tomto tématu hostitelsk�
 
 Žádost o služby představují služby nakonfigurovat a požadavků v rámci vaší aplikace. Pokud vašich objektů určení závislostí, tyto jsou splněna typy najít v `RequestServices`, nikoli `ApplicationServices`.
 
-Obecně byste neměli používat tyto vlastnosti přímo, upřednostňují místo toho k vyžádání typy tříd, které vyžadujete prostřednictvím konstruktoru třídy a, takže rozhraní vložit tyto závislosti. Dostaneme třídy, které se snadněji testování (najdete v části [Test a ladění](../testing/index.md)) a jsou více volně vázány.
+Obecně byste neměli používat tyto vlastnosti přímo, upřednostňují místo toho k vyžádání typy tříd, které vyžadujete prostřednictvím konstruktoru třídy a, takže rozhraní vložit tyto závislosti. Dostaneme třídy, které se snadněji testování (najdete v části [Test a ladění](xref:testing/index)) a jsou více volně vázány.
 
 > [!NOTE]
 > Dáváte přednost požaduje závislosti jako parametry konstruktor přístup `RequestServices` kolekce.

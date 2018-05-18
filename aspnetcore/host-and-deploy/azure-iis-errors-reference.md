@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: 1500f026c245f80de4120d6db4901cb117552966
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 995890a5e6b0cc1d9cebc21486917a7a39587076
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core
 
@@ -198,7 +198,7 @@ Poradce při potížích
   * Middleware integrační služby IIS je referencedby volání `UseIISIntegration` metodu aplikace `WebHostBuilder` (ASP.NET Core 1.x)
   * Aplikace používá `CreateDefaultBuilder` – metoda (ASP.NET Core 2.x).
   
-  V tématu [hostování v ASP.NET Core](xref:fundamentals/hosting) podrobnosti.
+  V tématu [hostitele v ASP.NET Core](xref:fundamentals/host/index) podrobnosti.
 
 ## <a name="sub-application-includes-a-handlers-section"></a>Obsahuje dílčí aplikace \<obslužné rutiny\> části
 

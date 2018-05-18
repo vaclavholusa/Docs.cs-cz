@@ -1,22 +1,25 @@
 ---
-title: Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x a novější
+title: Microsoft.AspNetCore.All metapackage pro technologii ASP.NET 2.0 jádra a novější
 author: Rick-Anderson
 description: Microsoft.AspNetCore.All metapackage zahrnuje všechny podporované balíčků ASP.NET Core a Entity Framework Core, spolu s jejich závislosti.
 manager: wpickett
-monikerRange: = aspnetcore-2.0
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: 4c11f15e659565325bfe8b8d91188b62177b251d
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: ce40a7eff00faa407233a55bbb92f029b8633e5c
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>Microsoft.AspNetCore.All metapackage pro ASP.NET Core 2.x
+# <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>Microsoft.AspNetCore.All metapackage pro technologii ASP.NET 2.0 jádra
+
+> [!NOTE]
+> Doporučujeme aplikací pro ASP.NET Core 2.1 a později [Microsoft.AspNetCore.App](xref:fundamentals/metapackage) místo tohoto balíčku. V tématu [migrace z Microsoft.AspNetCore.All na Microsoft.AspNetCore.App](#migrate) v tomto článku.
 
 Tato funkce vyžaduje rozhraní .NET zaměřená na aplikace ASP.NET Core 2.x základní 2.x.
 
@@ -28,7 +31,7 @@ Tato funkce vyžaduje rozhraní .NET zaměřená na aplikace ASP.NET Core 2.x z�
 
 Všechny funkce ASP.NET Core 2.x a Entity Framework Core 2.x jsou součástí `Microsoft.AspNetCore.All` balíčku. Tento balíček použít výchozí šablony projektů cílení na technologii ASP.NET 2.0 jádra.
 
-Číslo verze `Microsoft.AspNetCore.All` metapackage představuje ASP.NET Core verze a verze Entity Framework Core (v souladu s verze .NET Core).
+Číslo verze `Microsoft.AspNetCore.All` metapackage představuje ASP.NET Core verze a verze Entity Framework Core.
 
 Aplikace, které používají `Microsoft.AspNetCore.All` metapackage automaticky využívat výhod [.NET Core Runtime úložiště](https://docs.microsoft.com/dotnet/core/deploying/runtime-store). Modul Runtime úložiště obsahuje všechny prostředky potřebné ke spuštění 2.x aplikace ASP.NET Core runtime. Při použití `Microsoft.AspNetCore.All` metapackage, **žádné** prostředky z odkazované balíčky ASP.NET Core NuGet nasazených aplikací &mdash; úložiště .NET Core Runtime obsahuje tyto prostředky. Prostředky v úložišti Runtime jsou předkompilovaných ke zlepšení času spuštění aplikace.
 
@@ -37,3 +40,31 @@ Proces oříznutí balíčku můžete odebrat balíčky, které nepoužíváte. 
 Následující *.csproj* souboru odkazy `Microsoft.AspNetCore.All` metapackage pro ASP.NET Core:
 
 [!code-xml[](../mvc/views/view-compilation/sample/MvcRazorCompileOnPublish2.csproj?highlight=9)]
+
+<a name="migrate"></a>
+## <a name="migrating-from-microsoftaspnetcoreall-to-microsoftaspnetcoreapp"></a>Migrace z Microsoft.AspNetCore.All na Microsoft.AspNetCore.App
+
+Následující balíčky jsou součástí `Microsoft.AspNetCore.All` ale ne `Microsoft.AspNetCore.App` balíčku. 
+
+* `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`
+* `Microsoft.AspNetCore.AzureAppServices.HostingStartup`
+* `Microsoft.AspNetCore.AzureAppServicesIntegration`
+* `Microsoft.AspNetCore.DataProtection.AzureKeyVault`
+* `Microsoft.AspNetCore.DataProtection.AzureStorage`
+* `Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv`
+* `Microsoft.AspNetCore.SignalR.Redis`
+* `Microsoft.Data.Sqlite`
+* `Microsoft.Data.Sqlite.Core`
+* `Microsoft.EntityFrameworkCore.Sqlite`
+* `Microsoft.EntityFrameworkCore.Sqlite.Core`
+* `Microsoft.Extensions.Caching.Redis`
+* `Microsoft.Extensions.Configuration.AzureKeyVault`
+* `Microsoft.Extensions.Logging.AzureAppServices`
+* `Microsoft.VisualStudio.Web.BrowserLink`
+
+Pro přesun z `Microsoft.AspNetCore.All` k `Microsoft.AspNetCore.App`, pokud vaše aplikace používá žádné rozhraní API z výše uvedených balíčky nebo balíčky nebude těchto balíčků, přidejte odkazy na tyto balíčky v projektu.
+
+Všechny závislosti z předchozí balíčky, které jinak nejsou závislostí `Microsoft.AspNetCore.App` implicitně nejsou zahrnuty. Příklad:
+
+* `StackExchange.Redis` jako závislosti `Microsoft.Extensions.Caching.Redis`
+* `Microsoft.ApplicationInsights` jako závislosti `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`

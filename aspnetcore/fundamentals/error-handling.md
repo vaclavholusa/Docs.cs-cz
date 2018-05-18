@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 5443cbeb1ef95c579e5fc12b625babbfa27c7ec2
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3ff3a17d14d9ed7c438399191ffe3cf93d555d49
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Zpracování chyb v ASP.NET Core
 
@@ -26,14 +26,14 @@ Tento článek popisuje běžné appoaches pro zpracování chyb v aplikacích A
 
 ## <a name="the-developer-exception-page"></a>Stránka výjimka vývojáře
 
-Konfigurace aplikace pro zobrazení stránky, které jsou uvedeny podrobné informace o výjimkách, nainstalujte `Microsoft.AspNetCore.Diagnostics` NuGet balíček a přidat čáru, která [konfigurace metody ve třídě spuštění](startup.md):
+Konfigurace aplikace pro zobrazení stránky, které jsou uvedeny podrobné informace o výjimkách, nainstalujte `Microsoft.AspNetCore.Diagnostics` NuGet balíček a přidat čáru, která [konfigurace metody ve třídě spuštění](xref:fundamentals/startup):
 
 [!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
 Uveďte `UseDeveloperExceptionPage` před veškerý middleware chcete zachytit výjimky, jako například `app.UseMvc`.
 
 >[!WARNING]
-> Povolit výjimky stránce vývojáře **jenom když aplikace běží ve vývojovém prostředí**. Nechcete sdílet informace podrobné výjimky veřejně při spuštění aplikace v produkčním prostředí. [Další informace o konfiguraci prostředí](environments.md).
+> Povolit výjimky stránce vývojáře **jenom když aplikace běží ve vývojovém prostředí**. Nechcete sdílet informace podrobné výjimky veřejně při spuštění aplikace v produkčním prostředí. [Další informace o konfiguraci prostředí](xref:fundamentals/environments).
 
 Pokud chcete zobrazit stránku výjimka vývojáře, spusťte ukázkovou aplikaci s prostředím nastavena na `Development`a přidejte `?throw=true` pro základní adresu URL aplikace. Stránka obsahuje několik karet s informacemi o výjimku a požadavek. Na první kartě zahrnuje trasování zásobníku. 
 
@@ -114,11 +114,11 @@ Navíc mějte na paměti, že po odeslání hlaviček pro odpovědi, nelze změn
 
 ## <a name="server-exception-handling"></a>Zpracování výjimek serveru
 
-Kromě zpracování logiky aplikace, výjimek [server](servers/index.md) hostování vaší aplikace provádí některé výjimek. Pokud server výjimku zachytí před odesláním hlavičky, server odešle *500 – Vnitřní chyba serveru* odpověď se žádný text. Pokud server výjimku zachytí po odeslání hlaviček, server se ukončí připojení. Žádosti, které nejsou zpracovávány aplikace jsou zpracovávány serverem. Jakékoli výjimky jsou zpracována výjimka serveru zpracování. Žádné nakonfigurovat vlastní chybové stránky nebo middleware výjimek nebo filtry toto chování neovlivňuje.
+Kromě zpracování logiky aplikace, výjimek [server](xref:fundamentals/servers/index) hostování vaší aplikace provádí některé výjimek. Pokud server výjimku zachytí před odesláním hlavičky, server odešle *500 – Vnitřní chyba serveru* odpověď se žádný text. Pokud server výjimku zachytí po odeslání hlaviček, server se ukončí připojení. Žádosti, které nejsou zpracovávány aplikace jsou zpracovávány serverem. Jakékoli výjimky jsou zpracována výjimka serveru zpracování. Žádné nakonfigurovat vlastní chybové stránky nebo middleware výjimek nebo filtry toto chování neovlivňuje.
 
 ## <a name="startup-exception-handling"></a>Spuštění zpracování výjimek
 
-Pouze vrstvě hostingu může zpracovávat výjimky, které se uskuteční během spuštění aplikace. Můžete [konfigurace hostitele chování v reakci na chyby během spuštění](hosting.md#detailed-errors) pomocí `captureStartupErrors` a `detailedErrors` klíč.
+Pouze vrstvě hostingu může zpracovávat výjimky, které se uskuteční během spuštění aplikace. Pomocí [webového hostitele](xref:fundamentals/host/web-host), můžete [konfigurace hostitele chování v reakci na chyby během spuštění](xref:fundamentals/host/web-host#detailed-errors) s `captureStartupErrors` a `detailedErrors` klíče.
 
 Hostování můžete jenom zobrazit chybovou stránku pro spuštění zaznamenané chyby, pokud dojde k chybě po adresu nebo port hostitele vazby. Pokud z nějakého důvodu selže žádné vazby, vrstvě hostování protokoly ke kritické výjimce dotnet procesu havárií, a žádná chybová stránka se zobrazí, když aplikace běží [Kestrel](xref:fundamentals/servers/kestrel) serveru.
 
@@ -130,16 +130,16 @@ Při spuštění [IIS](/iis) nebo [IIS Express](/iis/extensions/introduction-to-
 
 ### <a name="exception-filters"></a>Filtry výjimek
 
-Filtry výjimek lze nastavit globálně nebo na základě-controller nebo na akce v aplikaci MVC. Tyto filtry zpracovat všechny neošetřené výjimky během provádění akce kontroleru nebo jiný filtr a nejsou s názvem jinak. Další informace o filtry výjimek v [filtry](../mvc/controllers/filters.md).
+Filtry výjimek lze nastavit globálně nebo na základě-controller nebo na akce v aplikaci MVC. Tyto filtry zpracovat všechny neošetřené výjimky během provádění akce kontroleru nebo jiný filtr a nejsou s názvem jinak. Další informace o filtry výjimek v [filtry](xref:mvc/controllers/filters).
 
 >[!TIP]
 > Filtry výjimek jsou vhodné pro soutisku výjimky, které se vyskytují v akce MVC, jsou ale není tak účinná jako chyba zpracování middleware. Dáváte přednost middleware pro obecné případ a použít filtry, pouze pokud potřebujete udělat zpracování chyb *jinak* podle MVC akci, která jste vybrali.
 
 ### <a name="handling-model-state-errors"></a>Stav modelu zpracování chyb
 
-[Ověření modelu](../mvc/models/validation.md) probíhá před vyvoláním každou akci kontroleru a metoda akce odpovídá kontrola `ModelState.IsValid` a náležitě reagovat.
+[Ověření modelu](xref:mvc/models/validation) probíhá před vyvoláním každou akci kontroleru a metoda akce odpovídá kontrola `ModelState.IsValid` a náležitě reagovat.
 
-Některé aplikace se rozhodnete v takovém případě postupujte podle standardní konvence pro řešení chyb při ověřování modelu, [filtru](../mvc/controllers/filters.md) může být příslušné místo pro implementaci tato zásada. Měli byste otestovat chování vaše akce se stavy neplatný model. Další informace v [testování řadiče logiku](../mvc/controllers/testing.md).
+Některé aplikace se rozhodnete v takovém případě postupujte podle standardní konvence pro řešení chyb při ověřování modelu, [filtru](xref:mvc/controllers/filters) může být příslušné místo pro implementaci tato zásada. Měli byste otestovat chování vaše akce se stavy neplatný model. Další informace v [testování řadiče logiku](xref:mvc/controllers/testing).
 
 
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: b328b733914b20b0aa3fe529c9a9f999349171ec
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7887d81366cc166ad89308b22ad7cc6af0263111
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="mvc-recommended-resources"></a>Doporučené prostředky MVC
 ====================
@@ -42,7 +42,6 @@ podle [Rick Anderson](https://github.com/Rick-Anderson)
 ## <a name="new-featured-content"></a>Nový vybraný obsah
 
 - [Výběr jazykové verze pro lokalizaci technologie ASP.NET](http://weblog.west-wind.com/posts/2014/Mar/27/Auto-Selecting-Cultures-for-Localization-in-ASPNET)
-- [Rozložení vnoření v MVC](http://astutelogic.com/nesting-layouts-in-mvc/) podle Rostislav Waite
 - [Vytvoření aplikace ASP.NET MVC 5 s Facebook a přihlašování Google OAuth2](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)
 - [Principy technologie ASP.NET MVC filtry a atributy](http://www.dotnet-tricks.com/Tutorial/mvc/b11a280114-Understanding-ASP.NET-MVC-Filters-and-Attributes.html)
 - [Životní cyklus aplikace ASP.NET MVC 5](lifecycle-of-an-aspnet-mvc-5-application.md) (PDF)
@@ -208,7 +207,7 @@ podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 <a id="jQueryAjaxJSON"></a>
 
-## <a name="jquery-ajax-json-javascript"></a>jQuery, Ajax, JSON, JavaScript
+## <a name="jquery-ajax-json-javascript"></a>jQuery JavaScript Ajax, JSON,
 
 - [Vytvoření JavascriptResult pro architekturu ASP.NET MVC](http://tostring.it/2014/01/14/create-a-javascriptresult-for-asp-net-mvc/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+override%2Ftostring%2Fit+%28override.tostring.it%29)
 - [Předání dat na straně serveru .NET JavaScript](http://blog.mariusschulz.com/2014/02/05/passing-net-server-side-data-to-javascript) podle Marius Schulz
@@ -306,7 +305,7 @@ podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 <a id="fb"></a>
 
-## <a name="twitter-facebook"></a>Twitter, Facebook
+## <a name="twitter-facebook"></a>Twitteru, Facebooku
 
 - [Nové šablony aplikace Facebook a knihovny pro architekturu ASP.NET MVC](https://blogs.msdn.com/b/webdev/archive/2012/12/13/the-new-facebook-application-template-and-library-for-asp.net-mvc.aspx)
 - [Twitter.Bootstrap.MVC4](http://lostechies.com/erichexter/2012/12/24/twitter-bootstrap-mvc4-new-release-1-0-71/)

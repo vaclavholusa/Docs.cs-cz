@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 4db09d3d41b705597f93d05af91077f2b9236b7e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 88b4ee9a963543f8cc97cb66271628a14fe657de
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Bezpečné úložiště tajné klíče aplikace v vývoj v ASP.NET Core
 
@@ -55,8 +55,25 @@ Nástroj tajný klíč správce ukládá citlivá data během vývoje projektu A
 
 Nástroj tajný klíč správce abstrahuje rychle podrobnosti implementace, jako je například kde a jak jsou uložené hodnoty. Nástroj můžete použít bez znalosti tyto podrobnosti implementace. Hodnoty jsou uloženy v [JSON](https://json.org/) konfigurační soubor ve složce profil systému chráněný uživatel v místním počítači:
 
-* Windows: `%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
-* & Systému macOS Linux: `~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+Cesta v souborovém systému:
+
+`%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+Cesta v souborovém systému:
+
+`~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+Cesta v souborovém systému:
+
+`~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+
+---
 
 V předchozím cesty k souboru, nahraďte `<user_secrets_id>` s `UserSecretsId` hodnoty zadané ve *.csproj* souboru.
 
@@ -133,17 +150,33 @@ dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp
 
 ## <a name="set-multiple-secrets"></a>Nastavit více tajné klíče
 
-Tím JSON pro lze nastavit dávky tajné klíče `set` příkaz. V následujícím příkladu *input.json* jeho obsah se přesměruje do `set` příkazu v systému Windows:
+Tím JSON pro lze nastavit dávky tajné klíče `set` příkaz. V následujícím příkladu *input.json* jeho obsah se přesměruje do `set` příkaz.
 
-```console
-type .\input.json | dotnet user-secrets set
-```
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-V systému macOS a Linux použijte následující příkaz:
+Otevřete příkazové okno a spusťte následující příkaz:
 
-```console
-cat ./input.json | dotnet user-secrets set
-```
+  ```console
+  type .\input.json | dotnet user-secrets set
+  ```
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+Otevřete příkazové okno a spusťte následující příkaz:
+
+  ```console
+  cat ./input.json | dotnet user-secrets set
+  ```
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+Otevřete příkazové okno a spusťte následující příkaz:
+
+  ```console
+  cat ./input.json | dotnet user-secrets set
+  ```
+
+---
 
 ## <a name="access-a-secret"></a>Přístup a tajný klíč
 

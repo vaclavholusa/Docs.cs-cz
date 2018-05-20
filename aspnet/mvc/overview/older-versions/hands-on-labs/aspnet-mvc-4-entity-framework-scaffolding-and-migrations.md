@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 548afe1926eed49841251832d54dc213da0cb753
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 42a12ee39223a06054382dbe9b4784196a706216
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework generování uživatelského rozhraní a migrace
 
@@ -108,10 +108,7 @@ V tomto cvičení se dozvíte, jak generování uživatelského rozhraní ASP.NE
 
     (Code fragment kódu - *architektury ASP.NET MVC 4 a Entity Framework migrace - Ex1 osoba vlastnosti*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
 6. Klikněte na tlačítko **sestavení | Vytvoření řešení** uložte změny a sestavte projekt.
 
     ![Vytváření aplikace](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image3.png "vytváření aplikace")
@@ -181,7 +178,7 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
 1. Otevřete konzolu Správce balíčků. Vyberte **nástroje | Správce balíčků knihoven | Konzola správce balíčků**.
 2. V konzole Správce balíčků zadejte následující příkaz:
 
-    PMC
+    POMOCÍ PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample2.ps1)]
 
@@ -196,16 +193,10 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
     *Složku migrations*
 3. Otevřete **Configuration.cs** soubor ve složce migrace. Vyhledejte konstruktoru třídy a změňte **AutomaticMigrationsEnabled** hodnotu *true*.
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
 4. Otevřete osoba třídu a přidejte atribut pro křestní jméno osoby. Pomocí tohoto nového atributu změníte model.
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
 5. Vyberte **sestavení | Vytvoření řešení** v nabídce pro sestavení aplikace.
 
     ![Vytváření aplikace](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image13.png "vytváření aplikace")
@@ -213,7 +204,7 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
     *Vytváření aplikace*
 6. V konzole Správce balíčků zadejte následující příkaz:
 
-    PMC
+    POMOCÍ PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample5.ps1)]
 
@@ -224,7 +215,7 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
     *Přidání křestní jméno*
 7. (Volitelné) Spuštěním následujícího příkazu vygenerovat skript SQL s rozdílové aktualizace. To vám umožní aktualizovat databázi ručně (v takovém případě není nutné), nebo použít změny v ostatních databázích:
 
-    PMC
+    POMOCÍ PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample6.ps1)]
 
@@ -237,7 +228,7 @@ V této úloze zaktualizuje databázi pomocí Entity Framework migrace. Zjistít
     *Skript SQL aktualizace*
 8. V konzole Správce balíčků zadejte následující příkaz k aktualizaci databáze:
 
-    PMC
+    POMOCÍ PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample7.ps1)]
 

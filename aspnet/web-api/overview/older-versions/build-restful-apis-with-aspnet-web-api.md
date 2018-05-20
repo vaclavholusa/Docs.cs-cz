@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: ded549109ca6e7ad806f1c3f53387766527e5a94
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: cb02288e93be801a1e55852741ed1443d8d3617d
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>Sestavení rozhraní RESTful API s rozhraním ASP.NET Web API
 ====================
@@ -171,10 +171,7 @@ V této úloze vytvoří řadič třídy, ve kterých se bude nacházet metody r
 
     (Code fragment kódu - *webové rozhraní API prostředí - Ex01 - kontaktní třída*)
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
 4. V **ContactController** třídy, vyberte slovo **řetězec** v definici metoda **získat** metoda a zadejte slovo *kontaktujte*. Po slovo je zadán v, slouží jako ukazatel zobrazí na začátku slova **kontaktujte**. Buď podržte stisknutou **Ctrl** klíče a stiskněte klávesu tečka (.) nebo klikněte na ikonu pomocí myši otevřete dialog pomoc v editoru kódu vyplnit automaticky **pomocí** direktivy pro modely obor názvů.
 
     ![Pomocí Intellisense pomoc pro deklarace oborů názvů](build-restful-apis-with-aspnet-web-api/_static/image12.png)
@@ -222,10 +219,7 @@ Tato úloha bude ukazují, jak funkce do vrstvy služby pro vývojáře k odděl
     *Vytvoření souboru třída obsahuje kód pro vrstvu služby úložiště kontakt*
 4. Přidat pomocí direktivy k **ContactRepository.cs** souboru obor názvů modelů.
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
 5. Přidejte následující zvýrazněný kód, který **ContactRepository.cs** souboru k implementaci GetAllContacts metoda.
 
     (Code fragment kódu - *webové rozhraní API prostředí - Ex01 - kontaktní úložiště*)
@@ -234,10 +228,7 @@ Tato úloha bude ukazují, jak funkce do vrstvy služby pro vývojáře k odděl
 6. Otevřete **ContactController.cs** soubor, pokud ještě není otevřené.
 7. Přidejte následující příkaz using do části deklarace oboru názvů souboru.
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
 8. Přidejte následující zvýrazněný kód, který **ContactController.cs** třída přidat soukromé pole představující instanci úložiště, tak, aby zbývající členy provádět třídy používat implementace služby.
 
     (Code fragment kódu - *webové rozhraní API prostředí - Ex01 - kontaktní řadiče*)
@@ -356,16 +347,10 @@ V této úloze budete upravovat výchozí zobrazení indexu webové aplikace pro
 3. Otevřete **Index.cshtml** soubor umístěný ve **zobrazení Domů** složky.
 4. Nahraďte kód HTML v rámci div element id **textu** tak, aby vypadal jako následující kód.
 
-
-~~~
-[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
-~~~
+    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
 5. Přidejte následující kód v JavaScriptu v dolní části souboru k provedení této žádosti HTTP do webového rozhraní API.
 
-
-~~~
-[!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
-~~~
+    [!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
 6. Otevřete **ContactController.cs** soubor, pokud ještě není otevřené.
 7. Umístěte zarážku na **získat** metodu **ContactController** třídy.
 
@@ -400,17 +385,11 @@ V této úloze bude pokračovat ke změně zobrazení indexu aplikace MVC. Formu
 
     (Code fragment kódu - *webové rozhraní API prostředí - Ex03 - metodu Post*)
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
 3. Otevřete **Index.cshtml** souborů v sadě Visual Studio, pokud ještě není otevřené.
 4. Kód HTML níže přidejte do souboru právě po neuspořádaného seznamu, které jste přidali v předchozí úloze.
 
-
-~~~
-[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
-~~~
+    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
 5. V rámci elementu skript v dolní části dokumentu přidejte následující zvýrazněný kód pro zpracování událostí kliknutí na tlačítko, které bude odeslána data do webového rozhraní API pomocí volání HTTP POST.
 
     [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample17.html)]

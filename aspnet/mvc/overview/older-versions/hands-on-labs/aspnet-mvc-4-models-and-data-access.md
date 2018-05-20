@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 57477cf15bf6755523f28356d5384517bea24982
-ms.sourcegitcommit: 5ae0c125ee3bbd324edef3818d1d160f4dd84602
+ms.openlocfilehash: 88b3316b116962dd35031f4b971dbfe31ed0e010
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 modely a přístup k datům
 
@@ -224,41 +224,27 @@ V této úloze tak, aby místo použití pevně zakódované data, se bude dotaz
 
     (Code fragment kódu - *modely a přístup k datům - Ex1 storeDB*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
 2. **MusicStoreEntities** třída zpřístupňuje vlastnost kolekce pro každou tabulku v databázi. Aktualizace **Procházet** metody akce k načtení Genre se všemi **alb**.
 
     (Code fragment kódu - *modely a přístup k datům - Ex1 úložiště Procházet*)
 
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
-~~~
-
-> [!NOTE]
-> Používáte funkce .NET názvem **LINQ** (language-integrated query) pro zápis výrazy silného typu dotazů vůči tyto kolekce – které bude spouštění kódu v databázi a vrátit objekty, které můžete naprogramovat proti.
-> 
-> Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
-
-
+    > [!NOTE]
+    > Používáte funkce .NET názvem **LINQ** (language-integrated query) pro zápis výrazy silného typu dotazů vůči tyto kolekce – které bude spouštění kódu v databázi a vrátit objekty, které můžete naprogramovat proti.
+    > 
+    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
 3. Aktualizace **Index** metody akce k načtení všech žánry.
 
     (Code fragment kódu - *modely a Data Access – Index úložiště Ex1*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
 4. Aktualizace **Index** metody akce k načtení všech žánry a transformace kolekce do seznamu.
 
     (Code fragment kódu - *modely a přístup k datům - Ex1 úložiště GenreMenu*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
 
 <a id="Ex1Task5"></a>
 
@@ -316,18 +302,12 @@ V této úloze bude naplnit databázi s ukázkovými daty při výchozímu vytvo
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 globální direktiv Using Asax*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
 4. V **aplikace\_Start()** metoda přidejte následující řádek k nastavení inicializátoru databáze.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 globální Asax SetInitializer*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
 
 <a id="Ex2Task2"></a>
 
@@ -342,10 +322,7 @@ Teď, když databáze jste už přidali do našich projektu, budete psát **Web.
 
     *umístění souboru Web.config*
 
-
-~~~
-[!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
-~~~
+    [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
 
 <a id="Ex2Task3"></a>
 
@@ -354,39 +331,29 @@ Teď, když databáze jste už přidali do našich projektu, budete psát **Web.
 
 Teď, když už jste nakonfigurovali připojení k databázi, propojíte model s databázových tabulek. V této úloze vytvoříte třídu, která propojí do databáze s Code First. Mějte na paměti, že je existující třídy modelu objektů POCO, které by měl být upraven.
 
-   > [!NOTE]
+> [!NOTE]
 > Pokud jste dokončili cvičení 1, Všimněte si, že se tento krok provést pomocí průvodce. Pomocí tohoto postupu Code First, ručně vytvoříte třídy, které budou propojené s dat entity.
-
 
 1. Otevřete třídu modelu objektů POCO **Genre** z **modely** projektu složky a obsahovat identifikátor. Použít interní vlastnost s názvem **GenreId**.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 kód první Genre*)
 
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
-
-> [!NOTE]
-> To work with Code First conventions, the class Genre must have a primary key property that will be automatically detected.
-> 
-> You can read more about Code First Conventions in this [msdn article](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
-~~~
+    > [!NOTE]
+    > Pro práci s Code First názvů, třídy Genre musí mít vlastnost primárního klíče, který bude automaticky zjistit.
+    > 
+    > Další informace o první pravidla týkající se kódu v tomto [článku na webu msdn](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
 2. Nyní otevřete třídu modelu objektů POCO **Album** z **modely** projektu složky a zahrnují cizí klíče, vytvoření vlastností s názvy **GenreId** a  **ArtistId**. Tato třída už máte **GenreId** pro primární klíč.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 kód prvního alba*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
 3. Otevřete třídu modelu objektů POCO **umělcem** a zahrnout **ArtistId** vlastnost.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 kód první umělcem*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
 4. Klikněte pravým tlačítkem myši **modely** složky projektu a vyberte **přidat | Třída**. Název souboru **MusicStoreEntities.cs**. Potom klikněte na **přidat.**
 
     ![Přidání třídy](aspnet-mvc-4-models-and-data-access/_static/image20.png "přidání třídy")
@@ -398,21 +365,15 @@ Teď, když už jste nakonfigurovali připojení k databázi, propojíte model s
     *Přidání třídy*
 5. Třída jste právě vytvořili, otevřete **MusicStoreEntities.cs**a přidají obory názvů **System.Data.Entity** a **System.Data.Entity.Infrastructure**.
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
 6. Nahraďte deklaraci třídy rozšířit **DbContext** – třída: deklarovat veřejné **DBSet** a přepsání **OnModelCreating** metoda. Po provedení tohoto kroku budete mít domény třídu, která odkaz modelu pomocí rozhraní Entity Framework. Aby bylo možné provést, nahraďte kód třídy následující:
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 kód první MusicStoreEntities*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
 > [!NOTE]
-> With Entity Framework **DbContext** and **DBSet** you will be able to query the POCO class Genre. By extending **OnModelCreating** method, you are specifying in the **code** how Genre will be mapped to a database table. You can find more information about DBContext and DBSet in this msdn article: [link](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
-~~~
+> S platformou Entity Framework **DbContext** a **DBSet** bude moci dotazovat třídu objektů POCO Genre. Tím, že rozšíří **OnModelCreating** metoda, určíte v **kód** mapovány Genre do databázové tabulky. Další informace o DBContext a DBSet najdete v tomto článku msdn: [odkaz](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
 
 <a id="Ex2Task4"></a>
 
@@ -431,39 +392,27 @@ V této úloze bude aktualizace třídy pro StoreController tak, aby místo pou�
 
     (Code fragment kódu - *modely a přístup k datům - Ex1 storeDB*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
 2. **MusicStoreEntities** třída zpřístupňuje vlastnost kolekce pro každou tabulku v databázi. Aktualizace **Procházet** metody akce k načtení Genre se všemi **alb**.
 
     (Code fragment kódu - *modely a přístup k datům - procházet úložiště Ex2*)
 
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
-
-> [!NOTE]
-> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
-> 
-> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
-~~~
+    > [!NOTE]
+    > Používáte funkce .NET názvem **LINQ** (language-integrated query) pro zápis výrazy silného typu dotazů vůči tyto kolekce – které bude spouštění kódu v databázi a vrátit objekty, které můžete naprogramovat proti.
+    > 
+    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
 3. Aktualizace **Index** metody akce k načtení všech žánry.
 
     (Code fragment kódu - *modely a Data Access – Index úložiště Ex2*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
 4. Aktualizace **Index** metody akce k načtení všech žánry a transformace kolekce do seznamu.
 
     (Code fragment kódu - *modely a přístup k datům - Ex2 úložiště GenreMenu*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
 
 <a id="Ex2Task5"></a>
 
@@ -494,7 +443,6 @@ V tomto cvičení se dozvíte, jak k dotazování databáze pomocí parametrů a
 > [!NOTE]
 > Další informace o Shaping výsledek dotazu naleznete na následujícím [článku na webu msdn](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
 
-
 <a id="Ex3Task1"></a>
 
 <a id="Task_1_-_Modifying_StoreController_to_Retrieve_Albums_from_Database"></a>
@@ -515,17 +463,14 @@ V této úloze se změní **StoreController** třídy pro přístup k databázi 
 
     (Code fragment kódu - *modely a přístup k datům - EX3. StoreController BrowseMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
 
 > [!NOTE]
-> To populate a collection of the entity, you need to use the **Include** method to specify you want to retrieve the albums too. You can use the .**Single()** extension in LINQ because in this case only one genre is expected for an album. The **Single()** method takes a Lambda expression as a parameter, which in this case specifies a single Genre object such that its name matches the value defined.
+> K naplnění kolekce entit, budete muset použít **zahrnout** metoda k určení, můžete obnovit alb příliš. Můžete použít. **Single()** rozšíření v technologii LINQ protože v takovém případě je očekávána pouze jedna genre pro album. **Single()** metoda přebírá jako parametr, který v tomto případě Určuje jeden objekt Genre tak, aby jeho název odpovídá definovanou hodnotu výrazu Lambda.
 > 
-> You will take advantage of a feature that allows you to indicate other related entities you want loaded as well when the Genre object is retrieved. This feature is called **Query Result Shaping**, and enables you to reduce the number of times needed to access the database to retrieve information. In this scenario, you will want to pre-fetch the Albums for the Genre you retrieve.
+> Bude využít výhod funkce, která umožňuje určit další, které chcete také načíst, když je načíst objekt Genre entit v relaci. Tato funkce je volána **Shaping výsledek dotazu**a umožňuje snížit počet pokusů, které jsou potřebné pro přístup k databázi k načtení informací. V tomto scénáři můžete předem načíst alba pro Genre je načíst.
 > 
-> The query includes **Genres.Include(&quot;Albums&quot;)** to indicate that you want related albums as well. This will result in a more efficient application, since it will retrieve both Genre and Album data in a single database request.
-~~~
+> Dotaz obsahuje **Genres.Include (&quot;alb&quot;)** k označení, že chcete také související alb. Výsledkem bude efektivnější aplikaci, vzhledem k tomu, že ho načte Genre a Album data v požadavku jedné databáze.
 
 <a id="Ex3Task2"></a>
 
@@ -553,10 +498,7 @@ V této úloze bude opakujte předchozí postup k získání alb podle jejich Id
 
     (Code fragment kódu - *modely a přístup k datům - EX3. StoreController DetailsMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
 
 <a id="Ex3Task4"></a>
 
@@ -574,7 +516,6 @@ V této úloze se spustit aplikaci ve webovém prohlížeči a získat podrobnos
 
 > [!NOTE]
 > Kromě toho můžete nasadit tuto aplikaci do následující weby systému Windows Azure [příloha B: publikování aplikace ASP.NET MVC 4 pomocí nástroje nasazení webu](#AppendixB).
-
 
 * * *
 

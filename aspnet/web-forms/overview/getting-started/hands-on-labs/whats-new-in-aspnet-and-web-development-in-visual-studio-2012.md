@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 00b43cc548df44edded925521991a095ed856494
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f447dc0108dffb36ed6d627fb83b3117fd22c94c
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Co je nového v technologii ASP.NET a vývoj webů v sadě Visual Studio 2012
 ====================
@@ -259,10 +259,7 @@ Visual Studio nyní aktualizuje HTML otevírání nebo při zavření značky el
 
 1. Na **Default.aspx** přidejte **H3** element s názvem (například Visual Studio 2012 skály!).
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
 2. Změna **H3** značky a typ **H2** nebo **H1.**
 
     Všimněte si, že koncová značka automaticky aktualizuje. Můžete také upravit koncovou značku, pokud chcete zobrazit, že počáteční značky se aktualizuje příliš.
@@ -288,13 +285,10 @@ Visual Studio teď obsahuje několik fragmenty kódu jazyka HTML5. V této úloz
     *Vkládání HTML5 fragmenty kódu*
 3. Aktualizujte zdroj zvuku tak, aby odkazoval na existující zvukový soubor.
 
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
 
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
-
-> [!NOTE]
-> You will need to add the audio file to the solution.
-~~~
+    > [!NOTE]
+    > Musíte přidat zvukový soubor k řešení.
 4. Stiskněte klávesu **F5** přehrávání zvuku a spuštění tohoto webu.
 
     ![Spuštěním ovládacího prvku zvuk](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image29.png "systémem zvuk ovládacího prvku")
@@ -549,37 +543,25 @@ V této úloze se dozvíte, jak povolit odkazovat připojené a minifikovaný so
 
     Všimněte si, že nové **Microsoft.Web.Optimization** obor názvů je označeno jako komentář na začátku souboru. Zrušením komentáře u použití direktiva k obsahují sdružování a minimalizace funkce.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
 4. Vyhledejte **aplikace\_spustit** metoda.
 
     Tato metoda zrušte komentář u volání EnableDefaultBundles, jak je znázorněno v následujícím fragmentu. To umožňuje nám tak, aby odkazovaly připojené kolekce souborů CSS ve složce pomocí cesty ke složce, a &quot;šablon stylů CSS&quot; nebo &quot;JS&quot; příponu.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
 5. Otevřete **Optimization.aspx** souborů a vyhledejte obsahu ovládací prvek pro **HeadContent**.
 
     Všimněte si, že soubory šablon stylů CSS a soubory JS mít jedinou značku odkazované.
 
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
 
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
-
-> [!NOTE]
-> This code is for demo purposes. Ideally, you will reference the bundles in the Site.Master file. In this sample code, you will find that some of the bundled files are also being referenced by the Site.Master file, making this last reference redundant.
-~~~
+    > [!NOTE]
+    > Tento kód je pro účely ukázky. V ideálním případě bude odkazovat sad v souboru Site.Master. V ukázkový kód zjistíte, že některé připojené soubory jsou také se na ně odkazovat soubor Site.Master provádění tohoto odkazu na poslední redundantní.
 6. Všimněte si, že odkazy používají instalujícího názvů v **href** atribut k získání souborů CSS nebo JS ze styly a Scripts\custom složku v uvedeném pořadí.
 
     Cestu můžete použít **skripty nebo vlastní/JS** jak je uvedeno dále sady a všechny soubory JS uvnitř minifikaci **skripty nebo vlastní** složky. Toto je výchozí chování na výchozí sady.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
 7. Otevřete **Styles\Site.css** souboru.
 
     Všimněte si, že původní soubor CSS obsahuje zobrazují odsazené kód, mezery a komentáře, které zvětšit soubor. (Také soubor JavaScript obsahuje mezery a komentáře).
@@ -620,18 +602,12 @@ V této úloze nakonfigurujete sady statické definovat určitou sadu souborů s
 
     Všimněte si, že nejsou soubory umístěné na stejném místě; To je Další výhodou přes výchozí sdružování.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
 4. Otevřete **Optimization.aspx** souboru.
 
     Všimněte si, že odkaz na **statické JS sady** je pomocí cesty deklarujete při konfiguraci sady statické v souboru Global.asax.cs: **/StaticBundle**.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
 5. Stiskněte klávesu **F5** aplikaci spustit, a potom přejděte na **optimalizace** stránky.
 6. Klikněte na **statické JS sady** odkazu k otevření souboru.
 
@@ -656,10 +632,7 @@ V tomto příkladu se dozvíte, jak používat **DynamicFolderBundle** třídy z
 
     Definování sady dynamické složky, který bude používat **CoffeeMinify** vlastní minimalizace procesor, které se vztahuje pouze na soubory s &quot; **.coffee** &quot; (rozšíření CoffeeScript soubory). Všimněte si, že vzor hledání můžete vybrat soubory sady ve složce, jako je třeba se\*.coffee'.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
 3. Otevřete konzolu Správce balíčků NuGet. Chcete-li to provést, použijte nabídku **zobrazení** | **ostatní okna** | **Konzola správce balíčků**.
 4. V **Konzola správce balíčků** typ **Install-Package CoffeeSharp** a stiskněte klávesu **ENTER**.
 5. Klikněte **zobrazit všechny soubory** tlačítka na **Průzkumníku řešení** okno
@@ -676,10 +649,7 @@ V tomto příkladu se dozvíte, jak používat **DynamicFolderBundle** třídy z
 
     Tato třída dědí od JsMinify k minifikaci vyplývající z CoffeeScript kompilace kódu JavaScript výstup. Zavolá CoffeeScript kompilátoru nejprve generovat kód jazyka JavaScript a pak se odešle do metodu JsMinify.Process k minifikaci výsledný kód.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
 8. Otevřete **Script1.coffee** a **Script2.coffee** souborů z **skripty nebo sady** složky.
 
     Tyto soubory bude obsahovat kód CoffeScript sestavují při provádění sdružování pomocí třídy CoffeeMinify.
@@ -696,10 +666,7 @@ V tomto příkladu se dozvíte, jak používat **DynamicFolderBundle** třídy z
 
     Všimněte si, že odkaz na **dynamické sady JS** odkazuje **skripty nebo sady** složky pomocí **/kávy** přípon, které jste nakonfigurovali pro sadu složek dynamické.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
 10. Stiskněte klávesu **F5** aplikaci spustit, a potom přejděte na **optimalizace** stránky.
 11. Klikněte na **dynamické sady JS** odkazu k otevření vygenerovaný soubor.
 

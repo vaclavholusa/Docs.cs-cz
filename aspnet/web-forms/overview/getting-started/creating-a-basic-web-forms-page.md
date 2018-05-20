@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 0dbd3063c9be3564637fad34e60f62c1662dcc07
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0d44a8f607df3a45ef312820f85f269c7a2c9c1e
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>Vytvoření základní technologie ASP.NET 4.5 webové stránky formuláře v sadě Visual Studio 2013
 ====================
@@ -55,7 +55,7 @@ V této části průvodce vytvoříte projekt webové aplikace a do ní přidejt
 
 ### <a name="to-create-a-web-application-project"></a>Chcete-li vytvořit projekt webové aplikace
 
-1. Open Microsoft Visual Studio.
+1. Otevřete sadu Microsoft Visual Studio.
 2. Na **soubor** nabídce vyberte možnost **nový projekt**.  
     ![Nabídka Soubor](creating-a-basic-web-forms-page/_static/image1.png)
 
@@ -83,7 +83,7 @@ Před pokračováním úpravou stránky, je vhodné se seznámit s vývojovém p
 
  Prostředí sady Visual Studio
 
-![Visual Studio Environment](creating-a-basic-web-forms-page/_static/image5.png)
+![Prostředí sady Visual Studio](creating-a-basic-web-forms-page/_static/image5.png)
 
 ### <a name="familiarize-yourself-with-the-web-designer"></a>Seznamte se s návrhářem webu
 
@@ -315,15 +315,12 @@ V této části, bude program [kalendáře](https://msdn.microsoft.com/library/s
     Novou obslužnou rutinu události se vytvoří a zobrazí v souboru kódu s názvem *FirstWebPage.aspx.cs*.
 2. Dokončit [SelectionChanged](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selectionchanged.aspx) obslužné rutiny události s následujícím kódem.
 
-
-~~~
-[!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
+    [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
 
 
-[!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
-~~~
+    [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
 
- Ve výše uvedeném kódu nastaví textový popisek ovládacího prvku na vybraným datem ovládacího prvku kalendář.
+    Ve výše uvedeném kódu nastaví textový popisek ovládacího prvku na vybraným datem ovládacího prvku kalendář.
 
 
 ### <a name="running-the-page"></a>Spuštění stránky

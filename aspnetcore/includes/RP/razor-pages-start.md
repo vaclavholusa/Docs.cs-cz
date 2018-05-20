@@ -13,7 +13,7 @@ Následující tabulka uvádí soubory a složky v projektu. V tomto kurzu *Star
 | Wwwroot | Obsahuje statické soubory. V tématu [statické soubory](xref:fundamentals/static-files). |
 | Stránky | Složka pro [stránky Razor](xref:mvc/razor-pages/index). | 
 | *appsettings.json* | [Konfigurace](xref:fundamentals/configuration/index) |
-| *Program.cs* | [Hostitelé](xref:fundamentals/hosting) aplikace ASP.NET Core.|
+| *Program.cs* | [Hostitelé](xref:fundamentals/host/index) aplikace ASP.NET Core.|
 | *Startup.cs* | Nakonfiguruje služby a kanál požadavku. V tématu [spuštění](xref:fundamentals/startup).|
 
 ### <a name="the-pages-folder"></a>Složka stránek

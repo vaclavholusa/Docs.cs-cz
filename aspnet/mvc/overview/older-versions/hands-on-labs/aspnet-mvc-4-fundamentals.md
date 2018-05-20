@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: a0dd32280321938aba84a2aed5273d80750ed774
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 225dff4663e0e556cfb8966f1078848b4c2b47a5
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>Základy architektury ASP.NET MVC 4
 
@@ -191,10 +191,7 @@ V této úloze přidáte řadič třídu, která bude zpracovávat adresy URL na
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex1 HomeController Index*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample1.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample1.cs)]
 
 <a id="Ex1Task4"></a>
 
@@ -259,18 +256,12 @@ Tato úloha slouží k úpravě řadiče metody, které se nazývají **akce**. 
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex2 StoreController Index*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample2.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample2.cs)]
 2. Přidat **Procházet** a **podrobnosti** metody. K tomu, přidejte následující kód, který **StoreController**:
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex2 StoreController BrowseAndDetails*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample3.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample3.cs)]
 
 <a id="Ex2Task3"></a>
 
@@ -319,15 +310,12 @@ V této úloze budete používat **řetězce dotazu** odeslat parametry, které 
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - EX3. StoreController BrowseMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample4.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample4.cs)]
 
 > [!NOTE]
-> You are using the **HttpUtility.HtmlEncode** utility method to prevents users from injecting Javascript into the View with a link like **/Store/Browse?Genre=&lt;script&gt;window.location='[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;**.
+> Používáte **HttpUtility.HtmlEncode** nástroj metodu zabraňuje uživatelům vložení Javascript do zobrazení s odkazem jako   **/úložiště/Procházet? Genre =&lt;skriptu&gt;window.location='[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;**.
 > 
-> For further explanation, please visit [this msdn article](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx).
-~~~
+> Další vysvětlení, navštivte [tohoto článku na webu msdn](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx).
 
 <a id="Ex3Task2"></a>
 
@@ -341,7 +329,7 @@ V této úloze, můžete vyzkoušet na aplikaci ve webovém prohlížeči a pou�
 
     ![Procházení StoreBrowseGenre = Disco](aspnet-mvc-4-fundamentals/_static/image10.png "procházení StoreBrowseGenre = Disco")
 
-    *Browsing /Store/Browse?Genre=Disco*
+    *Procházení /Store/Browse? Genre = Disco*
 3. Zavřete prohlížeč.
 
 <a id="Ex3Task3"></a>
@@ -355,10 +343,7 @@ V této úloze budete používat **URL** předat **Id** parametru **podrobnosti*
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - EX3. StoreController DetailsMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample5.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample5.cs)]
 
 <a id="Ex3Task4"></a>
 
@@ -441,10 +426,7 @@ V této úloze budete přidávat šablony zobrazení pro generování odpovědi 
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex4 HomeController Index*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample9.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample9.cs)]
 2. Teď je potřeba přidat šablonu odpovídající zobrazení. K tomu, **klikněte pravým tlačítkem na** uvnitř **Index** metody akce a vyberte **přidat zobrazení**. Tím se otevře **přidat zobrazení** dialogové okno.
 
     ![Přidání zobrazení z v rámci metody Index](aspnet-mvc-4-fundamentals/_static/image13.png "přidávání zobrazení v aplikaci Index – metoda")
@@ -469,10 +451,7 @@ V této úloze budete přidávat šablony zobrazení pro generování odpovědi 
     > Tímto způsobem, ASP.NET MVC zabraňuje nutnosti explicitně určovat název nebo umístění zobrazení šablony při použití této zásady vytváření názvů lze vrátit zobrazení.
 5. Je na základě vygenerované šablony zobrazení  **\_layout.cshtml** dříve definované šablony. Aktualizovat vlastnosti ViewBag.Title **Domů**a změnit hlavní obsahu **Toto je domovská stránka**, jak je znázorněno v následujícím kódu:
 
-
-~~~
-[!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample10.cshtml)]
-~~~
+    [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample10.cshtml)]
 6. Vyberte **MvcMusicStore** projekt v Průzkumníku řešení a stiskněte klávesu **F5** ke spuštění aplikace.
 
 <a id="Ex4Task4"></a>
@@ -550,13 +529,10 @@ V této úloze přidáte tyto 2 vlastnosti, které chcete **StoreIndexViewModel*
 
     (Code fragment kódu - *ASP.NET MVC 4 základy – vlastnosti Ex5 StoreIndexViewModel*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample11.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample11.cs)]
 
 > [!NOTE]
-> The **{ get; set; }** notation makes use of C#'s auto-implemented properties feature. It provides the benefits of a property without requiring us to declare a backing field.
-~~~
+> **{Získat; nastavit;}**  zápis využívá jazyka C# na funkce automaticky implementované vlastnosti. Poskytuje výhody vlastnosti bez nutnosti nám základní pole deklarovat.
 
 <a id="Ex5Task3"></a>
 
@@ -576,10 +552,7 @@ V této úloze budete aktualizovat **StoreController** používat **StoreIndexVi
 
     (Code fragment kódu - *ASP.NET MVC 4 základy - Ex5 StoreIndexViewModel pomocí ViewModels*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample12.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample12.cs)]
 3. Změna **StoreController**na **Index** metody akce, které se vytvoří a naplní **StoreIndexViewModel** objektu a předává je pro šablonu zobrazení generování odpovědi HTML s ním.
 
     > [!NOTE]
@@ -590,13 +563,10 @@ V této úloze budete aktualizovat **StoreController** používat **StoreIndexVi
 
     (Code fragment kódu - *ASP.NET MVC 4 základy – metoda Ex5 StoreController Index*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample13.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample13.cs)]
 
 > [!NOTE]
-> If you're unfamiliar with C#, you may assume that using **var** means that the **viewModel** variable is late-bound. That's not correct - the C# compiler is using type-inference based on what you assign to the variable to determine that **viewModel** is of type **StoreIndexViewModel**. Also, by compiling the local **viewModel** variable as a **StoreIndexViewModel** type you get compile-time checking and Visual Studio code-editor support.
-~~~
+> Pokud jste obeznámeni s C#, může předpokládat to pomocí **var** znamená, že **viewModel** proměnná je pozdní vazbu. Není správný – kompilátor jazyka C# používá odvození typu podle přiřadit proměnnou k určení, který **viewModel** je typu **StoreIndexViewModel**. Také pomocí kompilování místní **viewModel** jako proměnnou **StoreIndexViewModel** typ kontrolu kompilaci get a Visual Studio – podpora editor kódu.
 
 <a id="Ex5Task4"></a>
 
@@ -633,24 +603,20 @@ V této úloze aktualizujte zobrazení šablony vytvořené v posledním úkolem
 > [!NOTE]
 > Budete používat @ syntaxe (často označované jako &quot;code útržky&quot;) ke spouštění kódu v rámci šablony zobrazení.
 
-
 1. V **Index.cshtml** v souboru **úložiště** složky, jeho kódu nahraďte následujícím kódem:
 
-
-~~~
 [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample14.cshtml)]
 
-> [!NOTE]
-> As soon as you finish typing the period after the word **Model**, Visual Studio's Intellisense will show a list of possible properties and methods to choose from.
-> 
-> ![](aspnet-mvc-4-fundamentals/_static/image25.png)
-> 
-> *Getting Model properties and methods with Visual Studio's IntelliSense*
-> 
-> The **Model** property references the **StoreIndexViewModel** object that the Controller passed to the View template. This means that you can access all of the data passed from the Controller to the View template via the **Model** property, and format it into an appropriate HTML response within the View template.
-> 
-> You can just select the **NumberOfGenres** property from the Intellisense list rather than typing it in and then it will auto-complete it by pressing the **tab key**.
-~~~
+    > [!NOTE]
+    > As soon as you finish typing the period after the word **Model**, Visual Studio's Intellisense will show a list of possible properties and methods to choose from.
+    > 
+    > ![](aspnet-mvc-4-fundamentals/_static/image25.png)
+    > 
+    > *Getting Model properties and methods with Visual Studio's IntelliSense*
+    > 
+    > The **Model** property references the **StoreIndexViewModel** object that the Controller passed to the View template. This means that you can access all of the data passed from the Controller to the View template via the **Model** property, and format it into an appropriate HTML response within the View template.
+    > 
+    > You can just select the **NumberOfGenres** property from the Intellisense list rather than typing it in and then it will auto-complete it by pressing the **tab key**.
 2. Smyčky přes seznamu genre v **StoreIndexViewModel** a vytvořit HTML **&lt;ul&gt;** seznamu pomocí **foreach** smyčky.
    (C#)
 
@@ -698,19 +664,13 @@ Na rozdíl od ViewModels, které vytváří jenom k předání informací z řad
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex6 Genre*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample16.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample16.cs)]
 5. Stejný postup jako předtím, přidejte **Album** třídy. Chcete-li to provést, klikněte pravým tlačítkem **modely** složky v **Průzkumníku řešení**, vyberte **přidat** a potom **nová položka** možnost. V části **kód**, vyberte **– třída** položky a název souboru *Album.cs*, pak klikněte na tlačítko **přidat**.
 6. Přidejte dvě vlastnosti do třídy alb: **Genre** a **název**. Chcete-li to provést, přidejte následující kód:
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex6 Album*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample17.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample17.cs)]
 
 <a id="Ex6Task2"></a>
 
@@ -724,25 +684,19 @@ A **StoreBrowseViewModel** se použije k zobrazení alb, které odpovídají vyb
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex6 UsingModel*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample18.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample18.cs)]
 3. Přidat dvě vlastnosti do **StoreBrowseViewModel** – třída: **Genre** a **alb**. Chcete-li to provést, přidejte následující kód:
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex6 ModelProperties*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample19.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample19.cs)]
 
 > [!NOTE]
-> What is **List&lt;Album&gt;** ?: This definition is using the **List&lt;T&gt;** type, where **T** constrains the type to which elements of this **List** belong to, in this case **Album** (or any of its descendants).
+> Co je **seznamu&lt;Album&gt;**  ?: používá tuto definici **seznamu&lt;T&gt;**  typu, kde **T** omezí typ, na které elementy tohoto **seznamu** patří, v takovém případě **Album** (nebo některého z jejich potomků).
 > 
-> This ability to design classes and methods that defer the specification of one or more types until the class or method is declared and instantiated by client code is a feature of the C# language called **Generics**.
+> Tato schopnost třídy a metody, které odložení specifikace jeden nebo více typů, dokud třída nebo metoda je deklarován a vytvoření instance kódem na straně klienta je funkce jazyka C# návrhu názvem **obecné typy**.
 > 
-> **List&lt;T&gt;** is the generic equivalent of the **ArrayList** type and is available in the **System.Collections.Generic** namespace. One of the benefits of using **generics** is that since the type is specified, you do not need to take care of type checking operations such as casting the elements into **Album** as you would do with an **ArrayList**.
-~~~
+> **Seznam&lt;T&gt;**  je obecný ekvivalent **ArrayList** zadejte a je k dispozici v **System.Collections.Generic** obor názvů. Jednou z výhod použití **obecné typy** je, že vzhledem k tomu, že je zadaný typ, není nutné provádět kontroly operací, jako je přetypování elementy do typu **Album** jako by se **ArrayList**.
 
 <a id="Ex6Task3"></a>
 
@@ -755,26 +709,17 @@ V této úloze budete upravovat **StoreController**na **Procházet** a **podrobn
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex6 UsingModelInController*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample20.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample20.cs)]
 2. Nahraďte **Procházet** metoda akce se má použít **StoreViewBrowseController** třídy. Vytvoříte Genre a dvě nové objekty alb s fiktivní dat (v testovacím prostředí další Hands-on vám bude spotřebovávat reálná data z databáze). Chcete-li to provést, nahraďte **Procházet** metoda následujícím kódem:
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex6 BrowseMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample21.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample21.cs)]
 3. Nahraďte **podrobnosti** metoda akce se má použít **StoreViewBrowseController** třídy. Vytvoří nový **Album** objekt, který má být vrácen **zobrazení**. Chcete-li to provést, nahraďte **podrobnosti** metoda následujícím kódem:
 
     (Code fragment kódu - *Základy architektury ASP.NET MVC 4 - Ex6 DetailsMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample22.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample22.cs)]
 
 <a id="Ex6Task4"></a>
 
@@ -854,7 +799,7 @@ V této úloze, přidáte pomocí odkazu v zobrazení úložiště tak, aby měl
    > [!NOTE]
    > jiná možnost by propojení přímo na stránku s kódem takto:
    > 
-   > &lt;a href=&quot;/Store/Browse?genre=@genreName&quot;&gt;@genreName&lt;/a&gt;
+   > &lt;href =&quot;/úložiště/procházet? genre =@genreName&quot;&gt;@genreName&lt;/a&gt;
    > 
    > I když tento přístup funguje, závisí na řetězci pevně zakódované. Pokud přejmenujete později Kontroleru, je nutné tento pokyn ručně změnit. Lepší alternativou je použít **pomocné rutiny HTML** metoda. ASP.NET MVC zahrnuje metodu pomocné rutiny HTML, která je k dispozici pro takové úlohy. **Html.ActionLink()** Pomocná metoda usnadňuje sestavení HTML **&lt;&gt;** odkazy, a ujistěte se, cest URL jsou správně kódovaná adresou URL.
    > 
@@ -889,13 +834,10 @@ Teď použijete dynamické kolekce položek ViewBag předat seznam &quot; **Star
 
 1. Zavřete prohlížeč v případě potřeby se vraťte do okna Visual Studio. Otevřete **StoreController.cs** a upravovat **Index** metodu pro vytvoření seznamu starred žánry do kolekce ViewModel:
 
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample26.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample26.cs)]
-
-> [!NOTE]
-> You could also use the syntax **ViewBag[&quot;Starred&quot;]** to access the properties.
-~~~
+    > [!NOTE]
+    > Můžete také použít syntaxi **ViewBag [&quot;Starred&quot;]** pro přístup k vlastnosti.
 2. Na ikonu hvězdičky **&quot;starred.png&quot;** je součástí **Source\Assets\Images** složky tohoto testovacího prostředí. Chcete-li přidat ji do aplikace, přetáhněte obsah z **Průzkumníka Windows** okno na **Průzkumníku řešení** v aplikaci Visual Web Developer Express, jak je uvedeno níže:
 
     ![Přidání hvězdičkami bitovou kopii do řešení](aspnet-mvc-4-fundamentals/_static/image34.png "přidání hvězdičkami bitovou kopii do řešení")

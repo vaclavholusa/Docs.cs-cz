@@ -1,71 +1,97 @@
 ---
-title: Kompilace zobrazení syntaxe Razor a předkompilaci v ASP.NET Core
+title: Kompilace souboru Razor a předkompilaci v ASP.NET Core
 author: rick-anderson
-description: Informace o povolení zobrazení kompilace MVC Razor a předkompilaci v aplikacích ASP.NET Core.
+description: Další informace o výhodách předkompilace soubory Razor a o způsobech Razor předkompilaci souboru v aplikaci ASP.NET Core.
 manager: wpickett
+monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
-ms.date: 12/13/2017
+ms.custom: mvc
+ms.date: 05/17/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 013ca0d149c6415b5e6825aa5a48e93ae48f6728
-ms.sourcegitcommit: 0063338c2e130409081bb60fcffa0c3f190cd46a
+ms.openlocfilehash: 03b11116a15c291452acd878e32cd015dc553dcc
+ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/20/2018
 ---
-# <a name="razor-file-cshtml-compilation-in-aspnet-core"></a><span data-ttu-id="dc000-103">Syntaxe Razor (cshtml) souboru kompilace v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="dc000-103">Razor file (.cshtml) compilation in ASP.NET Core</span></span>
+# <a name="razor-file-compilation-in-aspnet-core"></a><span data-ttu-id="9c492-103">Kompilace souboru Razor v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="9c492-103">Razor file compilation in ASP.NET Core</span></span>
 
-<span data-ttu-id="dc000-104">podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="dc000-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="9c492-104">podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="9c492-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="dc000-105">Při vyvolání zobrazení zobrazení syntaxe Razor kompilované za běhu.</span><span class="sxs-lookup"><span data-stu-id="dc000-105">Razor views are compiled at runtime when the view is invoked.</span></span> <span data-ttu-id="dc000-106">ASP.NET Core 2.1.0 nebo novější kompilace zobrazení v sestavení a publikování současně pomocí [Razor Sdk](/aspnetcore/mvc/razor-pages/sdk).</span><span class="sxs-lookup"><span data-stu-id="dc000-106">ASP.NET Core 2.1.0 or later compile views at build and publish time using [Razor Sdk](/aspnetcore/mvc/razor-pages/sdk).</span></span> <span data-ttu-id="dc000-107">V ASP.NET Core 1.1 a ASP.NET Core 2.0, můžete volitelně mělo být zobrazení kompilovat při publikování a nasazen s aplikací &mdash; pomocí tool předkompilace.</span><span class="sxs-lookup"><span data-stu-id="dc000-107">In ASP.NET Core 1.1, and ASP.NET Core 2.0, views can optionally be compiled at publish and deployed with the app &mdash; using the precompilation tool.</span></span> 
+::: moniker range="= aspnetcore-1.1"
+<span data-ttu-id="9c492-105">Při vyvolání přidružené zobrazení MVC v době běhu kompiluje souboru nástroje Razor.</span><span class="sxs-lookup"><span data-stu-id="9c492-105">A Razor file is compiled at runtime, when the associated MVC view is invoked.</span></span> <span data-ttu-id="9c492-106">Publikování souboru Razor čase vytvoření buildu není podporováno.</span><span class="sxs-lookup"><span data-stu-id="9c492-106">Build-time Razor file publishing is unsupported.</span></span> <span data-ttu-id="9c492-107">Soubory Razor můžete volitelně zkompilovat na publikování čas a nasazen s aplikací&mdash;pomocí tool předkompilace.</span><span class="sxs-lookup"><span data-stu-id="9c492-107">Razor files can optionally be compiled at publish time and deployed with the app&mdash;using the precompilation tool.</span></span>
+::: moniker-end
+::: moniker range="= aspnetcore-2.0"
+<span data-ttu-id="9c492-108">Při vyvolání přidružené zobrazení stránky Razor nebo MVC v době běhu kompiluje souboru nástroje Razor.</span><span class="sxs-lookup"><span data-stu-id="9c492-108">A Razor file is compiled at runtime, when the associated Razor Page or MVC view is invoked.</span></span> <span data-ttu-id="9c492-109">Publikování souboru Razor čase vytvoření buildu není podporováno.</span><span class="sxs-lookup"><span data-stu-id="9c492-109">Build-time Razor file publishing is unsupported.</span></span> <span data-ttu-id="9c492-110">Soubory Razor můžete volitelně zkompilovat na publikování čas a nasazen s aplikací&mdash;pomocí tool předkompilace.</span><span class="sxs-lookup"><span data-stu-id="9c492-110">Razor files can optionally be compiled at publish time and deployed with the app&mdash;using the precompilation tool.</span></span>
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+<span data-ttu-id="9c492-111">Při vyvolání přidružené zobrazení stránky Razor nebo MVC v době běhu kompiluje souboru nástroje Razor.</span><span class="sxs-lookup"><span data-stu-id="9c492-111">A Razor file is compiled at runtime, when the associated Razor Page or MVC view is invoked.</span></span> <span data-ttu-id="9c492-112">Syntaxe Razor soubory kompilované za obě sestavení a publikování současně pomocí [Razor SDK](xref:mvc/razor-pages/sdk).</span><span class="sxs-lookup"><span data-stu-id="9c492-112">Razor files are compiled at both build and publish time using the [Razor SDK](xref:mvc/razor-pages/sdk).</span></span>
+::: moniker-end
 
+## <a name="precompilation-considerations"></a><span data-ttu-id="9c492-113">Předkompilace aspekty</span><span class="sxs-lookup"><span data-stu-id="9c492-113">Precompilation considerations</span></span>
 
+<span data-ttu-id="9c492-114">Tady jsou vedlejší účinky předkompilace Razor soubory:</span><span class="sxs-lookup"><span data-stu-id="9c492-114">The following are side effects of precompiling Razor files:</span></span>
 
-<span data-ttu-id="dc000-108">Předkompilace aspekty:</span><span class="sxs-lookup"><span data-stu-id="dc000-108">Precompilation considerations:</span></span>
+* <span data-ttu-id="9c492-115">Menší publikované sady</span><span class="sxs-lookup"><span data-stu-id="9c492-115">A smaller published bundle</span></span>
+* <span data-ttu-id="9c492-116">Rychlejší čas spuštění</span><span class="sxs-lookup"><span data-stu-id="9c492-116">A faster startup time</span></span>
+* <span data-ttu-id="9c492-117">Nelze upravit soubory Razor&mdash;chybí související obsah ze sady publikované.</span><span class="sxs-lookup"><span data-stu-id="9c492-117">You can't edit Razor files&mdash;the associated content is absent from the published bundle.</span></span>
 
-* <span data-ttu-id="dc000-109">Předkompilace zobrazení následek menší publikované sady a rychlejší čas spuštění.</span><span class="sxs-lookup"><span data-stu-id="dc000-109">Precompiling views results in a smaller published bundle and faster startup time.</span></span>
-* <span data-ttu-id="dc000-110">Soubory Razor předkompilovat zobrazení nelze upravit.</span><span class="sxs-lookup"><span data-stu-id="dc000-110">You can't edit Razor files after you precompile views.</span></span> <span data-ttu-id="dc000-111">Upravená zobrazení nebudou existovat v publikované sady.</span><span class="sxs-lookup"><span data-stu-id="dc000-111">The edited views won't be present in the published bundle.</span></span> 
+## <a name="deploy-precompiled-files"></a><span data-ttu-id="9c492-118">Nasazení předkompilovaných souborů</span><span class="sxs-lookup"><span data-stu-id="9c492-118">Deploy precompiled files</span></span>
 
-<span data-ttu-id="dc000-112">Nasazení předkompilovaných zobrazení:</span><span class="sxs-lookup"><span data-stu-id="dc000-112">To deploy precompiled views:</span></span>
+::: moniker range=">= aspnetcore-2.1"
+<span data-ttu-id="9c492-119">Kompilace sestavení a publikování běhu Razor souborů je povoleno ve výchozím nastavení SDK Razor.</span><span class="sxs-lookup"><span data-stu-id="9c492-119">Build- and publish-time compilation of Razor files is enabled by default by the Razor SDK.</span></span> <span data-ttu-id="9c492-120">Úprava souborů Razor po jejich jste aktualizaci je podporována v čase vytvoření buildu.</span><span class="sxs-lookup"><span data-stu-id="9c492-120">Editing Razor files after they're updated is supported at build time.</span></span> <span data-ttu-id="9c492-121">Ve výchozím nastavení pouze zkompilovaný *Views.dll* a žádné *.cshtml* soubory jsou nasazeny s vaší aplikací.</span><span class="sxs-lookup"><span data-stu-id="9c492-121">By default, only the compiled *Views.dll* and no *.cshtml* files are deployed with your app.</span></span>
 
-# <a name="aspnet-core-21tabaspnetcore21"></a>[<span data-ttu-id="dc000-113">ASP.NET Core 2.1</span><span class="sxs-lookup"><span data-stu-id="dc000-113">ASP.NET Core 2.1</span></span>](#tab/aspnetcore21/)
-<span data-ttu-id="dc000-114">Sestavení a publikování v době kompilace Razor souborů je standardně SDK Razor.</span><span class="sxs-lookup"><span data-stu-id="dc000-114">Build and publish time compilation of Razor files is enabled by default by the Razor Sdk.</span></span> <span data-ttu-id="dc000-115">Úprava souborů Razor po jejich aktualizací je podporován v čase vytvoření buildu.</span><span class="sxs-lookup"><span data-stu-id="dc000-115">Editing Razor files after they are updated is supported at build time.</span></span> <span data-ttu-id="dc000-116">Ve výchozím nastavení pouze zkompilovaný *Views.dll* a žádné soubory cshtml nasazených s vaší aplikací.</span><span class="sxs-lookup"><span data-stu-id="dc000-116">By default, only the compiled *Views.dll* and no cshtml files are deployed with your application.</span></span> 
-    
 > [!IMPORTANT]
-> <span data-ttu-id="dc000-117">Sadu Sdk Razor je platná, pouze pokud žádné předkompilace konkrétní vlastnosti, které jsou nastavené v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="dc000-117">The Razor Sdk is only effective when no precompilation specific properties are set in your project file.</span></span> <span data-ttu-id="dc000-118">Například nastavení `MvcRazorCompileOnPublish` ve vaší *.csproj* souboru vypne Razor Sdk.</span><span class="sxs-lookup"><span data-stu-id="dc000-118">For instance, setting `MvcRazorCompileOnPublish` in your *.csproj* file will disable the Razor Sdk.</span></span>
+> <span data-ttu-id="9c492-122">Razor SDK je platná pouze v případě, že žádné vlastnosti specifické pro předkompilaci jsou nastavené v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="9c492-122">The Razor SDK is effective only when no precompilation-specific properties are set in the project file.</span></span> <span data-ttu-id="9c492-123">Například nastavení *.csproj* souboru `MvcRazorCompileOnPublish` vlastnost `true` zakáže Razor SDK.</span><span class="sxs-lookup"><span data-stu-id="9c492-123">For instance, setting the *.csproj* file's `MvcRazorCompileOnPublish` property to `true` disables the Razor SDK.</span></span>
+::: moniker-end
 
-# <a name="aspnet-core-20tabaspnetcore20"></a>[<span data-ttu-id="dc000-119">Jádro ASP.NET 2.0</span><span class="sxs-lookup"><span data-stu-id="dc000-119">ASP.NET Core 2.0</span></span>](#tab/aspnetcore20/)
+::: moniker range="= aspnetcore-2.0"
+<span data-ttu-id="9c492-124">Pokud je cílem vašeho projektu je .NET Framework, nainstalujte [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/) balíček NuGet:</span><span class="sxs-lookup"><span data-stu-id="9c492-124">If your project targets .NET Framework, install the [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/) NuGet package:</span></span>
 
-<span data-ttu-id="dc000-120">Pokud je cílem vašeho projektu je .NET Framework, obsahovat odkaz na balíček [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/):</span><span class="sxs-lookup"><span data-stu-id="dc000-120">If your project targets .NET Framework, include a package reference to [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/):</span></span>
+<span data-ttu-id="9c492-125">[!code-xml[](view-compilation/sample/DotNetFrameworkProject.csproj?name=snippet_ViewCompilationPackage)]</span><span class="sxs-lookup"><span data-stu-id="9c492-125">[!code-xml[](view-compilation/sample/DotNetFrameworkProject.csproj?name=snippet_ViewCompilationPackage)]</span></span>
 
-```xml
-<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="2.0.0" PrivateAssets="All" />
-```
+<span data-ttu-id="9c492-126">Pokud je cílem vašeho projektu je .NET Core, jsou nezbytné žádné změny.</span><span class="sxs-lookup"><span data-stu-id="9c492-126">If your project targets .NET Core, no changes are necessary.</span></span>
 
-<span data-ttu-id="dc000-121">Pokud je cílem vašeho projektu je .NET Core, jsou nezbytné žádné změny.</span><span class="sxs-lookup"><span data-stu-id="dc000-121">If your project targets .NET Core, no changes are necessary.</span></span>
+<span data-ttu-id="9c492-127">Šablony projektů ASP.NET Core 2.x implicitně nastavit `MvcRazorCompileOnPublish` vlastnost `true` ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="9c492-127">The ASP.NET Core 2.x project templates implicitly set the `MvcRazorCompileOnPublish` property to `true` by default.</span></span> <span data-ttu-id="9c492-128">V důsledku toho tento element může bezpečně odebrat z *.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="9c492-128">Consequently, this element can be safely removed from the *.csproj* file.</span></span>
 
-<span data-ttu-id="dc000-122">Šablony projektů ASP.NET Core 2.x implicitně nastaví `MvcRazorCompileOnPublish` k `true` ve výchozím nastavení, což znamená, můžete z bezpečně odebrat tento uzel *.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="dc000-122">The ASP.NET Core 2.x project templates implicitly sets `MvcRazorCompileOnPublish` to `true` by default, which means this node can be safely removed from the *.csproj* file.</span></span>
-    
 > [!IMPORTANT]
-> <span data-ttu-id="dc000-123">Předkompilace zobrazení syntaxe Razor v není k dispozici při provádění [samostatná nasazení (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="dc000-123">Razor view precompilation in not available when performing a [self-contained deployment (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) in ASP.NET Core 2.0.</span></span> 
+> <span data-ttu-id="9c492-129">Předkompilace Razor soubor není k dispozici při provádění [samostatná nasazení (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) v technologii ASP.NET 2.0 jádra.</span><span class="sxs-lookup"><span data-stu-id="9c492-129">Razor file precompilation is unavailable when performing a [self-contained deployment (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) in ASP.NET Core 2.0.</span></span>
+::: moniker-end
 
-<span data-ttu-id="dc000-124">Příprava aplikace pro [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd) s [publikování .NET Core rozhraní příkazového řádku příkaz](/dotnet/core/tools/dotnet-publish).</span><span class="sxs-lookup"><span data-stu-id="dc000-124">Prepare the app for a [framework-dependent deployment](/dotnet/core/deploying/#framework-dependent-deployments-fdd) with the [.NET Core CLI publish command](/dotnet/core/tools/dotnet-publish).</span></span> <span data-ttu-id="dc000-125">Například spusťte následující příkaz v kořenovém adresáři projektu:</span><span class="sxs-lookup"><span data-stu-id="dc000-125">For example, execute the following command at the project root:</span></span>
+::: moniker range="= aspnetcore-1.1"
+<span data-ttu-id="9c492-130">Nastavte `MvcRazorCompileOnPublish` vlastnost `true`a nainstalujte [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/) balíček NuGet.</span><span class="sxs-lookup"><span data-stu-id="9c492-130">Set the `MvcRazorCompileOnPublish` property to `true`, and install the [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/) NuGet package.</span></span> <span data-ttu-id="9c492-131">Následující *.csproj* ukázka označuje tato nastavení:</span><span class="sxs-lookup"><span data-stu-id="9c492-131">The following *.csproj* sample highlights these settings:</span></span>
+
+<span data-ttu-id="9c492-132">[!code-xml[](view-compilation/sample/MvcRazorCompileOnPublish.csproj?highlight=4,10)]</span><span class="sxs-lookup"><span data-stu-id="9c492-132">[!code-xml[](view-compilation/sample/MvcRazorCompileOnPublish.csproj?highlight=4,10)]</span></span>
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
+<span data-ttu-id="9c492-133">Příprava aplikace pro [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd) s [publikování .NET Core rozhraní příkazového řádku příkaz](/dotnet/core/tools/dotnet-publish).</span><span class="sxs-lookup"><span data-stu-id="9c492-133">Prepare the app for a [framework-dependent deployment](/dotnet/core/deploying/#framework-dependent-deployments-fdd) with the [.NET Core CLI publish command](/dotnet/core/tools/dotnet-publish).</span></span> <span data-ttu-id="9c492-134">Například spusťte následující příkaz v kořenovém adresáři projektu:</span><span class="sxs-lookup"><span data-stu-id="9c492-134">For example, execute the following command at the project root:</span></span>
 
 ```console
 dotnet publish -c Release
 ```
 
-<span data-ttu-id="dc000-126">A *< název_projektu >. PrecompiledViews.dll* obsahující kompilované zobrazení syntaxe Razor vytváří při předkompilaci úspěšné.</span><span class="sxs-lookup"><span data-stu-id="dc000-126">A *<project_name>.PrecompiledViews.dll* file, containing the compiled Razor views, is produced when precompilation succeeds.</span></span> <span data-ttu-id="dc000-127">Například následující snímek obrazovky znázorňuje obsah *Index.cshtml* uvnitř *WebApplication1.PrecompiledViews.dll*:</span><span class="sxs-lookup"><span data-stu-id="dc000-127">For example, the screenshot below depicts the contents of *Index.cshtml* inside of *WebApplication1.PrecompiledViews.dll*:</span></span>
+<span data-ttu-id="9c492-135">A *< název_projektu >. PrecompiledViews.dll* obsahující zkompilované soubory Razor vytváří při předkompilaci úspěšné.</span><span class="sxs-lookup"><span data-stu-id="9c492-135">A *<project_name>.PrecompiledViews.dll* file, containing the compiled Razor files, is produced when precompilation succeeds.</span></span> <span data-ttu-id="9c492-136">Například následující snímek obrazovky znázorňuje obsah *Index.cshtml* v rámci *WebApplication1.PrecompiledViews.dll*:</span><span class="sxs-lookup"><span data-stu-id="9c492-136">For example, the screenshot below depicts the contents of *Index.cshtml* within *WebApplication1.PrecompiledViews.dll*:</span></span>
 
 ![Zobrazení syntaxe Razor uvnitř knihovny DLL](view-compilation/_static/razor-views-in-dll.png)
+::: moniker-end
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="dc000-129">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="dc000-129">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+## <a name="additional-resources"></a><span data-ttu-id="9c492-138">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="9c492-138">Additional resources</span></span>
 
-<span data-ttu-id="dc000-130">Nastavit `MvcRazorCompileOnPublish` k `true` a obsahovat odkaz na balíček `Microsoft.AspNetCore.Mvc.Razor.ViewCompilation`.</span><span class="sxs-lookup"><span data-stu-id="dc000-130">Set `MvcRazorCompileOnPublish` to `true` and include a package reference to `Microsoft.AspNetCore.Mvc.Razor.ViewCompilation`.</span></span> <span data-ttu-id="dc000-131">Následující *.csproj* ukázka označuje tato nastavení:</span><span class="sxs-lookup"><span data-stu-id="dc000-131">The following *.csproj* sample highlights these settings:</span></span>
+::: moniker range="= aspnetcore-1.1"
+* <xref:mvc/views/overview>
+::: moniker-end
 
-[!code-xml[](view-compilation/sample/MvcRazorCompileOnPublish.csproj?highlight=5,12)]
+::: moniker range="= aspnetcore-2.0"
+* <xref:mvc/razor-pages/index>
+* <xref:mvc/views/overview>
+::: moniker-end
 
----
-
+::: moniker range=">= aspnetcore-2.1"
+* <xref:mvc/razor-pages/index>
+* <xref:mvc/views/overview>
+* <xref:mvc/razor-pages/sdk>
+::: moniker-end

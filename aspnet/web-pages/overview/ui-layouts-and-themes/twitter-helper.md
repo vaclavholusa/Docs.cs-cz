@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/twitter-helper
-title: "Pomocník s webovými stránkami ASP.NET Twitter | Microsoft Docs"
+title: Pomocník s webovými stránkami ASP.NET Twitter | Microsoft Docs
 author: tfitzmac
-description: "Toto téma a aplikace ukazují, jak přidat do projektu služby WebMatrix 3 pomocné rutiny služby Twitter. Obsahuje kód Pomocník Twitter a ukazuje způsob volání pomocné rutiny..."
+description: Toto téma a aplikace ukazují, jak přidat do projektu služby WebMatrix 3 pomocné rutiny služby Twitter. Obsahuje kód Pomocník Twitter a ukazuje způsob volání pomocné rutiny...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/twitter-helper
 msc.type: authoredcontent
 ms.openlocfilehash: 07d9c4d485c42b78a42c54c9740af5f67cb44763
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 05/25/2018
 ---
 <a name="twitter-helper-with-aspnet-web-pages"></a>Pomocník s webovými stránkami ASP.NET Twitter
 ====================
@@ -67,24 +67,24 @@ Výše uvedený kód vytvoří následující tlačítka a pomůcky. Tato tlač�
 
 ### <a name="follow-button"></a>Použijte tlačítko
 
-[Postupujte podle @aspnet)](https://twitter.com/aspnet)<script>! – funkce (d, s, id) {var js, fjs = d.getElementsByTagName(s) [0], p = /^http:/.test(d.location)? "http": "https"; Pokud (! d.getElementById(id)) {js = d.createElement(s); js.id = id; js.src = p + ': / / se platform.twitter.com/widgets.js; fjs.parentNode.insertBefore (js, fjs);}} (dokument, 'skriptu', 'twitter-wjs');</script>
+[Postupujte podle @aspnet)](https://twitter.com/aspnet)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
 
 ### <a name="tweet-button"></a>Tlačítko tweet
 
-[Tweet](https://twitter.com/share)<script>! – funkce (d, s, id) {var js, fjs = d.getElementsByTagName(s) [0], p = /^http:/.test(d.location)? "http": "https"; Pokud (! d.getElementById(id)) {js = d.createElement(s); js.id = id; js.src = p + ': / / se platform.twitter.com/widgets.js; fjs.parentNode.insertBefore (js, fjs);}} (dokument, 'skriptu', 'twitter-wjs');</script>
+[Tweet](https://twitter.com/share)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
 
 ### <a name="user-timeline-profile"></a>Časová osa uživatele (profil)
 
-[Tweetů podle @aspnet ](https://twitter.com/aspnet) <script>! – funkce (d, s, id) {var js, fjs = d.getElementsByTagName(s) [0], p = /^http:/.test(d.location)? "http": "https"; Pokud (! d.getElementById(id)) {js = d.createElement(s); js.id = id; js.src = p + ": / / platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore (js, fjs);}} (dokument, "skript", "twitter-wjs");</script>
+[Tweetů podle @aspnet](https://twitter.com/aspnet)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
 
 ### <a name="favorites"></a>Oblíbené položky
 
-[Oblíbené položky Tweetů podle @Microsoft ](https://twitter.com/Microsoft/favorites) <script>! – funkce (d, s, id) {var js, fjs = d.getElementsByTagName(s) [0], p = /^http:/.test(d.location)? "http": "https"; Pokud (! d.getElementById(id)) {js = d.createElement(s); js.id = id; js.src = p + ": / / platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore (js, fjs);}} (dokument, "skript", "twitter-wjs");</script>
+[Pomocí Oblíbené Tweetů @Microsoft](https://twitter.com/Microsoft/favorites)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
 
 ### <a name="list"></a>Seznam
 
-[Tweetů z @Microsoft/MS \_příjemce\_pruhy](https://twitter.com/microsoft/ms-consumer-brands/)<script>! – funkce (d, s, id) {var js, fjs = d.getElementsByTagName(s) [0], p = /^http:/.test(d.location)? "http": "https"; Pokud (! d.getElementById(id)) {js = d.createElement(s); js.id = id; js.src = p + ": / / platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore (js, fjs);}} (dokument, "skript", "twitter-wjs");</script>
+[Tweetů z @Microsoft/MS \_příjemce\_pruhy](https://twitter.com/microsoft/ms-consumer-brands/)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
 
 ### <a name="search"></a>Hledat
 
-[Tweety o &quot;#asp.net&quot;](https://twitter.com/search?q=%23asp.net)<script>! – funkce (d, s, id) {var js, fjs = d.getElementsByTagName(s) [0], p = /^http:/.test(d.location)? "http": "https"; Pokud (! d.getElementById(id)) {js = d.createElement(s); js.id = id; js.src = p + ": / / platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore (js, fjs);}} (dokument, "skript", "twitter-wjs");</script>
+[Tweety o &quot;#asp.net&quot;](https://twitter.com/search?q=%23asp.net)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>

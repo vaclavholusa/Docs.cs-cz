@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/working-with-ssl-in-web-api
-title: "Práce s protokolem SSL v rozhraní Web API | Microsoft Docs"
+title: Práce s protokolem SSL v rozhraní Web API | Microsoft Docs
 author: MikeWasson
-description: "Ukazuje, jak používat protokol SSL s rozhraním ASP.NET Web API, včetně používání certifikátů SSL klienta."
+description: Ukazuje, jak používat protokol SSL s rozhraním ASP.NET Web API, včetně používání certifikátů SSL klienta.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/12/2012

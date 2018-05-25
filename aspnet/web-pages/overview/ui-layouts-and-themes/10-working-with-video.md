@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/10-working-with-video
-title: "Zobrazení Video v rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs"
+title: Zobrazení Video v rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tato kapitola vysvětluje postup zobrazení videa na webových stránkách ASP.NET stránky syntaxe Razor."
+description: Tato kapitola vysvětluje postup zobrazení videa na webových stránkách ASP.NET stránky syntaxe Razor.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014

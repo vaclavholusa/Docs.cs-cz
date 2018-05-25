@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr
-title: "Kurz: Začínáme s SignalR 2 | Microsoft Docs"
+title: 'Kurz: Začínáme s SignalR 2 | Microsoft Docs'
 author: pfletcher
-description: "V tomto kurzu se naučíte používat funkci SignalR k vytvoření aplikace pro chatování v reálném čase. Přidáte SignalR prázdnou webovou aplikaci ASP.NET a vytvoření pa HTML..."
+description: V tomto kurzu se naučíte používat funkci SignalR k vytvoření aplikace pro chatování v reálném čase. Přidáte SignalR prázdnou webovou aplikaci ASP.NET a vytvoření pa HTML...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014

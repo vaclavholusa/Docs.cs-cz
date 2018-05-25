@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/deployment/using-signalr-with-azure-web-sites
-title: "Pomocí funkce SignalR webové aplikace v Azure App Service | Microsoft Docs"
+title: Pomocí funkce SignalR webové aplikace v Azure App Service | Microsoft Docs
 author: pfletcher
-description: "Tento dokument popisuje, jak nakonfigurovat aplikaci SignalR, která běží na Microsoft Azure. V tomto kurzu použili verze softwaru, Visual Studio 2013 nebo Vis...."
+description: Tento dokument popisuje, jak nakonfigurovat aplikaci SignalR, která běží na Microsoft Azure. V tomto kurzu použili verze softwaru, Visual Studio 2013 nebo Vis....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2015

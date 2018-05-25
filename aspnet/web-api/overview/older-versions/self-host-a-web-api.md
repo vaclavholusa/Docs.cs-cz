@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/self-host-a-web-api
-title: "Hostování na vlastním rozhraní ASP.NET Web API 1 (C#) | Microsoft Docs"
+title: Hostování na vlastním rozhraní ASP.NET Web API 1 (C#) | Microsoft Docs
 author: MikeWasson
-description: "Rozhraní ASP.NET Web API nevyžaduje službu IIS. V procesu hostitele, může hostovat samoobslužné webové rozhraní API. Tento kurz ukazuje, jak k hostování webové rozhraní API uvnitř konzoly applic..."
+description: Rozhraní ASP.NET Web API nevyžaduje službu IIS. V procesu hostitele, může hostovat samoobslužné webové rozhraní API. Tento kurz ukazuje, jak k hostování webové rozhraní API uvnitř konzoly applic...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2012

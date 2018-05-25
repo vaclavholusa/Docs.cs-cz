@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
-title: "Kurz: Začínáme s SignalR 2 a MVC 5 | Microsoft Docs"
+title: 'Kurz: Začínáme s SignalR 2 a MVC 5 | Microsoft Docs'
 author: pfletcher
-description: "Tento kurz ukazuje, jak vytvořit v reálném čase chatovací aplikace pomocí ASP.NET SignalR 2. SignalR přidáte do aplikace MVC 5 a vytvořit zobrazení chat..."
+description: Tento kurz ukazuje, jak vytvořit v reálném čase chatovací aplikace pomocí ASP.NET SignalR 2. SignalR přidáte do aplikace MVC 5 a vytvořit zobrazení chat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014

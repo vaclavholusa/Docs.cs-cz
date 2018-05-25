@@ -1,7 +1,7 @@
 ---
-title: "Visual Studio Tools pro Docker základní technologie ASP.NET"
+title: Visual Studio Tools pro Docker základní technologie ASP.NET
 author: spboyer
-description: "Zjistěte, jak pomocí nástrojů Visual Studio 2017 a Docker pro systém Windows containerize aplikace ASP.NET Core."
+description: Zjistěte, jak pomocí nástrojů Visual Studio 2017 a Docker pro systém Windows containerize aplikace ASP.NET Core.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
-title: "Začínáme s rozhraním ASP.NET Web API 2 (C#)"
+title: Začínáme s rozhraním ASP.NET Web API 2 (C#)
 author: MikeWasson
-description: "HTTP není právě pro poskytovat webové stránky. Je také efektivní platformu pro sestavování rozhraní API, která vystavit služby a data. HTTP je jednoduchý, flexibilní a ubiq..."
+description: HTTP není právě pro poskytovat webové stránky. Je také efektivní platformu pro sestavování rozhraní API, která vystavit služby a data. HTTP je jednoduchý, flexibilní a ubiq...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/28/2017
@@ -126,7 +126,7 @@ ms.lasthandoff: 03/15/2018
 
 ![](tutorial-your-first-web-api/_static/image9.png)
 
-<span data-ttu-id="ff185-183">V **přidat novou položku** dialogovém okně, vyberte **webové** pod uzlem **Visual C#**a pak vyberte **stránku HTML** položky.</span><span class="sxs-lookup"><span data-stu-id="ff185-183">In the **Add New Item** dialog, select the **Web** node under **Visual C#**, and then select the **HTML Page** item.</span></span> <span data-ttu-id="ff185-184">Název stránky &quot;index.html&quot;.</span><span class="sxs-lookup"><span data-stu-id="ff185-184">Name the page &quot;index.html&quot;.</span></span>
+<span data-ttu-id="ff185-183">V **přidat novou položku** dialogovém okně, vyberte **webové** pod uzlem **Visual C#** a pak vyberte **stránku HTML** položky.</span><span class="sxs-lookup"><span data-stu-id="ff185-183">In the **Add New Item** dialog, select the **Web** node under **Visual C#**, and then select the **HTML Page** item.</span></span> <span data-ttu-id="ff185-184">Název stránky &quot;index.html&quot;.</span><span class="sxs-lookup"><span data-stu-id="ff185-184">Name the page &quot;index.html&quot;.</span></span>
 
 ![](tutorial-your-first-web-api/_static/image10.png)
 

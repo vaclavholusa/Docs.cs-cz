@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/performance/using-signalr-performance-counters-in-an-azure-web-role
-title: "Pomocí čítače výkonu SignalR webové role Azure | Microsoft Docs"
+title: Pomocí čítače výkonu SignalR webové role Azure | Microsoft Docs
 author: guardrex
-description: "Jak nainstalovat a používat čítače výkonu SignalR webové role Azure."
-keywords: "Čítač ASP.NET,signalr,Performance, webové role azure"
+description: Jak nainstalovat a používat čítače výkonu SignalR webové role Azure.
+keywords: Čítač ASP.NET,signalr,Performance, webové role azure
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/11/2017

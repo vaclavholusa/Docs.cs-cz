@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
-title: "Rukou na testovacím: Sestavení jednostránkové aplikace (SPA) s rozhraním ASP.NET Web API a Angular.js | Microsoft Docs"
+title: 'Rukou na testovacím: Sestavení jednostránkové aplikace (SPA) s rozhraním ASP.NET Web API a Angular.js | Microsoft Docs'
 author: rick-anderson
-description: "V tradiční webových aplikací klient (prohlížeč) inicializuje komunikaci se serverem tím, že požádá stránky. Server pak zpracuje požadavek..."
+description: V tradiční webových aplikací klient (prohlížeč) inicializuje komunikaci se serverem tím, že požádá stránky. Server pak zpracuje požadavek...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/30/2015
@@ -153,13 +153,13 @@ V této úloze se spustit vytvoření nového projektu ASP.NET MVC pomocí podpo
 
     > [!NOTE]
     > **Autorizovat** filtrovat kontroluje, pokud je uživatel ověřený. Pokud není uživatel ověřen, vrátí stavový kód HTTP 401 (Neautorizováno) bez vyvolání akce. Můžete použít filtr globálně, na úrovni kontroleru, nebo na úrovni jednotlivých akcí.
-9. Rozložení webové stránky a branding bude nyní přizpůsobit. Chcete-li to provést, otevřete  **\_Layout.cshtml** souboru uvnitř **zobrazení | Sdílené** složky a aktualizovat obsah  **&lt;název&gt;**  element nahrazením *Moje aplikace technologie ASP.NET* s *Geek kvízu* .
+9. Rozložení webové stránky a branding bude nyní přizpůsobit. Chcete-li to provést, otevřete  **\_Layout.cshtml** souboru uvnitř **zobrazení | Sdílené** složky a aktualizovat obsah **&lt;název&gt;** element nahrazením *Moje aplikace technologie ASP.NET* s *Geek kvízu* .
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample4.cshtml)]
 10. Ve stejném souboru aktualizovat odebráním navigačním panelu *o* a *kontaktujte* odkazy a přejmenování *Domů* propojit *přehrání*. Kromě toho přejmenovat *název aplikace* propojit *Geek kvízu*. Kód HTML pro navigační panel by měl vypadat jako následující kód.
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample5.cshtml)]
-11. Aktualizovat zápatí stránky rozložení nahrazením *Moje aplikace technologie ASP.NET* s *Geek kvízu*. Chcete-li to provést, nahradí obsah  **&lt;zápatí&gt;**  element s následující zvýrazněný kód.
+11. Aktualizovat zápatí stránky rozložení nahrazením *Moje aplikace technologie ASP.NET* s *Geek kvízu*. Chcete-li to provést, nahradí obsah **&lt;zápatí&gt;** element s následující zvýrazněný kód.
 
     [!code-html[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample6.html)]
 
@@ -421,7 +421,7 @@ V této úloze bude používat CSS3 vlastnosti k provedení bohaté animací př
 5. Vyhledejte **Skrýt zadní podokně během překlopit** komentář. Styl níže tento komentář skryje na druhé straně ploch, když budou jsou od prohlížeč nastavením **backface viditelnost** vlastnost CSS, která má *Skrytá*.
 
     [!code-css[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample23.css)]
-6. Otevřete **BundleConfig.cs** souboru uvnitř **aplikace\_spustit** složky a přidat odkaz na **Flip.css** v soubor  **&quot;~/Content/css&quot;**  styl sady
+6. Otevřete **BundleConfig.cs** souboru uvnitř **aplikace\_spustit** složky a přidat odkaz na **Flip.css** v soubor **&quot;~/Content/css&quot;** styl sady
 
     [!code-csharp[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample24.cs)]
 7. Stiskněte klávesu **F5** ke spuštění řešení a přihlaste se pomocí přihlašovacích údajů.

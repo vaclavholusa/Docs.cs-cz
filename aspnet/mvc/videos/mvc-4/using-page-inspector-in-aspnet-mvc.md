@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-4/using-page-inspector-in-aspnet-mvc
-title: "Díky nástroji Page Inspector v architektuře ASP.NET MVC | Microsoft Docs"
+title: Díky nástroji Page Inspector v architektuře ASP.NET MVC | Microsoft Docs
 author: rick-anderson
-description: "Jsou zde popsány videím využití nástroje Page Inspector ve webových aplikací ASP.NET MVC. Přečtěte si kurz"
+description: Jsou zde popsány videím využití nástroje Page Inspector ve webových aplikací ASP.NET MVC. Přečtěte si kurz
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/04/2012
@@ -24,4 +24,4 @@ podle Tim Ammann
 
 Jsou zde popsány videím využití nástroje Page Inspector ve webových aplikací ASP.NET MVC. [Přečtěte si kurz](../../overview/views/using-page-inspector-in-aspnet-mvc.md)
 
-[&#9654; Podívejte se na video (6 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/using-page-inspector-in-aspnet-mvc)
+[& #9654; Podívejte se na video (6 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/using-page-inspector-in-aspnet-mvc)

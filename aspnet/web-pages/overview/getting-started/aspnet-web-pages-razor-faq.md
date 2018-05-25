@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/aspnet-web-pages-razor-faq
-title: "ASP.NET Web Pages – nejčastější dotazy (Razor) | Microsoft Docs"
+title: ASP.NET Web Pages – nejčastější dotazy (Razor) | Microsoft Docs
 author: tfitzmac
-description: "V tomto článku jsou uvedené některé nejčastější dotazy týkající se rozhraní ASP.NET Web Pages (Razor) a službě WebMatrix. Použité v kurzu ASP.NET webové stránky (R... verze softwaru"
+description: V tomto článku jsou uvedené některé nejčastější dotazy týkající se rozhraní ASP.NET Web Pages (Razor) a službě WebMatrix. Použité v kurzu ASP.NET webové stránky (R... verze softwaru
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014

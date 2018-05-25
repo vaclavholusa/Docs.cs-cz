@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/media-formatters
-title: "Formátovací moduly pro média v rozhraní ASP.NET Web API 2 | Microsoft Docs"
+title: Formátovací moduly pro média v rozhraní ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -12,24 +12,24 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 9103574597df126a22e21a2f51815f608e46f47f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1cb1c7e0f832a0a0160276fbd41facc017e2ae3e
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/22/2018
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>Formátovací moduly pro média v rozhraní ASP.NET Web API 2
 ====================
 podle [Wasson Jan](https://github.com/MikeWasson)
 
-Tento kurz ukazuje jak podporují formátů médií s další v rozhraní ASP.NET Web API.
+Tento kurz ukazuje, jak pro podporu formátů médií s další v rozhraní ASP.NET Web API.
 
 ## <a name="internet-media-types"></a>Typy médií Internetu
 
 Typ média, označované taky jako typ MIME, identifikuje formát část data. V protokolu HTTP popisují typy médií formátu textu zprávy. Typ média se skládá z dva řetězce, typ a podtyp. Příklad:
 
 - text/html
-- image/png
+- bitové kopie nebo png
 - Application/json
 
 Když zprávy HTTP obsahuje obsah entity, určuje hlavičku Content-Type formát textu zprávy. Tato hodnota informuje příjemce jak analyzovat obsah textu zprávy.

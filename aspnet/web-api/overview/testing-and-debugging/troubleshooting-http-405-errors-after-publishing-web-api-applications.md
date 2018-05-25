@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
-title: "Řešení potíží s HTTP 405 chyby po publikování webové rozhraní API 2 aplikace | Microsoft Docs"
+title: Řešení potíží s HTTP 405 chyby po publikování webové rozhraní API 2 aplikace | Microsoft Docs
 author: rmcmurray
-description: "Tento kurz popisuje, jak k řešení chyb HTTP 405 po publikování aplikace webového rozhraní API na produkční webový server."
+description: Tento kurz popisuje, jak k řešení chyb HTTP 405 po publikování aplikace webového rozhraní API na produkční webový server.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2014

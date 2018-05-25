@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions
-title: "Podpora v rozhraní ASP.NET Web API 2 OData akce | Microsoft Docs"
+title: Podpora v rozhraní ASP.NET Web API 2 OData akce | Microsoft Docs
 author: MikeWasson
-description: "V prostředí OData akce jsou způsob, jak přidat serverové chování, které nejsou snadno definován jako operace CRUD na entity. Některé použití akce patří: implementace..."
+description: 'V prostředí OData akce jsou způsob, jak přidat serverové chování, které nejsou snadno definován jako operace CRUD na entity. Některé použití akce patří: implementace...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014

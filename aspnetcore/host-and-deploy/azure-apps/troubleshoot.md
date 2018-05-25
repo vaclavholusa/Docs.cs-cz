@@ -35,7 +35,7 @@ Pracovní proces se nezdaří. Aplikaci nelze spustit.
 
 ![Okno prohlížeče zobrazující stránku 502.5 selhání procesu](troubleshoot/_static/process-failure-page.png)
 
-**500 Internal Server Error**  
+**500 vnitřní chybu serveru**  
 Spuštění aplikace, ale chybu brání splnění požadavku server.
 
 Při spuštění nebo při vytváření odpovědi, k této chybě dojde v kódu aplikace. Odpovědi může obsahovat žádný obsah, nebo se může zobrazit odpověď *500 – Vnitřní chyba serveru* v prohlížeči. V protokolu událostí aplikace obvykle stavy normálně spustil aplikaci. Z hlediska serveru, který je správná. Aplikace se spustit, ale nemůže generovat platnou odpověď. [Spusťte aplikaci v konzole Kudu](#run-the-app-in-the-kudu-console) nebo [povolit protokol stdout ASP.NET Core modulu](#aspnet-core-module-stdout-log) k vyřešení tohoto problému.

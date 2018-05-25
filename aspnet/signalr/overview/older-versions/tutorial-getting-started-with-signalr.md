@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr
-title: "Kurz: Začínáme s SignalR 1.x | Microsoft Docs"
+title: 'Kurz: Začínáme s SignalR 1.x | Microsoft Docs'
 author: pfletcher
-description: "Sestavení aplikace chat v reálném čase na stránce HTML pomocí funkce SignalR technologie ASP.NET."
+description: Sestavení aplikace chat v reálném čase na stránce HTML pomocí funkce SignalR technologie ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013

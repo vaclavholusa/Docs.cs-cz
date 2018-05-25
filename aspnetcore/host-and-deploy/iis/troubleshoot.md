@@ -29,7 +29,7 @@ V sadě Visual Studio, výchozí projekt ASP.NET Core [IIS Express](/iis/extensi
 [Řešení potíží s ASP.NET Core ve službě Azure App Service](xref:host-and-deploy/azure-apps/troubleshoot)  
 I když používá služby App Service [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) a služby IIS pro hostitele aplikace v tématu vyhrazené pokyny, které jsou specifické pro aplikaci služby.
 
-[Zpracování chyb](xref:fundamentals/error-handling)  
+[Ošetření chyb](xref:fundamentals/error-handling)  
 Můžete zjistit, jak se budou zpracovávat chyby v aplikacích ASP.NET Core během vývoje v místním systému.
 
 [Další informace k ladění pomocí sady Visual Studio](/visualstudio/debugger/getting-started-with-the-debugger)  
@@ -46,7 +46,7 @@ Základní modul technologie ASP.NET pokusí spustit pracovní proces, ale se ne
 
 ![Okno prohlížeče zobrazující stránku 502.5 selhání procesu](troubleshoot/_static/process-failure-page.png)
 
-**500 Internal Server Error**  
+**500 vnitřní chybu serveru**  
 Spuštění aplikace, ale chybu brání splnění požadavku server.
 
 Při spuštění nebo při vytváření odpovědi, k této chybě dojde v kódu aplikace. Odpovědi může obsahovat žádný obsah, nebo se může zobrazit odpověď *500 – Vnitřní chyba serveru* v prohlížeči. V protokolu událostí aplikace obvykle stavy normálně spustil aplikaci. Z hlediska serveru, který je správná. Aplikace se spustit, ale nemůže generovat platnou odpověď. [Spuštění aplikace příkazového řádku](#run-the-app-at-a-command-prompt) na serveru nebo [povolit protokol stdout ASP.NET Core modulu](#aspnet-core-module-stdout-log) k vyřešení tohoto problému.

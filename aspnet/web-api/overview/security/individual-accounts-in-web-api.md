@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/individual-accounts-in-web-api
-title: "Zabezpečení webového rozhraní API s jednotlivých účtů a místní přihlášení v rozhraní ASP.NET Web API 2.2 | Microsoft Docs"
+title: Zabezpečení webového rozhraní API s jednotlivých účtů a místní přihlášení v rozhraní ASP.NET Web API 2.2 | Microsoft Docs
 author: MikeWasson
-description: "Toto téma ukazuje, jak zabezpečit webové rozhraní API pomocí OAuth2 k ověřování na základě databáze členství. Použité v kurzu Visual Studio 201 verze softwaru..."
+description: Toto téma ukazuje, jak zabezpečit webové rozhraní API pomocí OAuth2 k ověřování na základě databáze členství. Použité v kurzu Visual Studio 201 verze softwaru...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/15/2014

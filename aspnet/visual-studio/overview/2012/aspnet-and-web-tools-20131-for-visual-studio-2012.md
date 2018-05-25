@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
-title: "Poznámky k verzi pro ASP.NET a nástroje pro Web 2013.1 pro sadu Visual Studio 2012 | Microsoft Docs"
+title: Poznámky k verzi pro ASP.NET a nástroje pro Web 2013.1 pro sadu Visual Studio 2012 | Microsoft Docs
 author: microsoft
-description: "Tento dokument popisuje verzi technologie ASP.NET a webové nástroje 2013.1 pro sadu Visual Studio 2012."
+description: Tento dokument popisuje verzi technologie ASP.NET a webové nástroje 2013.1 pro sadu Visual Studio 2012.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2013
 ms.topic: article
 ms.assetid: ca26e5bb-630e-41d2-8512-2a9386c431cb
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
@@ -181,7 +181,7 @@ Po provedení této změny, výběr F5 přejde do kořenového adresáře aplika
 
 Po upgradu na ASP.NET Razor 3 nebo ASP.NET MVC 5, zápis tilde(~) může již nebude fungovat správně, pokud používáte přepisů adresy URL. Přepisování adres URL ovlivňuje tilde(~) zápis v elementů HTML jako &lt;A /&gt;, &lt;skriptu nebo&gt;, &lt;odkaz nebo&gt;, a v důsledku tilda už mapuje na kořenový adresář.
 
-Například, pokud přepsání žádosti o **asp.net/content** k **asp.net**, atribut href v &lt;A href = "~/content/" /&gt; přeloží na **/content/ obsah nebo** místo  **/** . Chcete-li potlačit tuto změnu, můžete nastavit **IIS\_WasUrlRewritten** kontext, který má hodnotu false na každé webové stránce nebo v **aplikace\_BeginRequest** v souboru Global.asax.
+Například, pokud přepsání žádosti o **asp.net/content** k **asp.net**, atribut href v &lt;A href = "~/content/" /&gt; přeloží na **/content/ obsah nebo** místo **/**. Chcete-li potlačit tuto změnu, můžete nastavit **IIS\_WasUrlRewritten** kontext, který má hodnotu false na každé webové stránce nebo v **aplikace\_BeginRequest** v souboru Global.asax.
 
 <a id="templateissue"></a>
 ### <a name="templates"></a>Šablony

@@ -1,29 +1,29 @@
 ---
 title: Hostování v systému Linux s Nginx ASP.NET Core
 author: rick-anderson
-description: Popisuje, jak nastavit jako reverzní proxy server na Ubuntu 16.04 pro přenos dat protokolu HTTP do webové aplikace ASP.NET Core systémem Kestrel Nginx.
+description: Zjistěte, jak nastavit jako reverzní proxy server na Ubuntu 16.04 pro přenos dat protokolu HTTP do webové aplikace ASP.NET Core systémem Kestrel Nginx.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 05/22/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: fe772203e5e3fceb7489e0a5866f60ea914b7329
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: cf8965131669b681e9477113953ed40cd81df884
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Hostování v systému Linux s Nginx ASP.NET Core
 
 Podle [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
-Tato příručka vysvětluje na serveru 16.04 Ubuntu nastavení prostředí ASP.NET Core produkční prostředí.
+Tato příručka vysvětluje nastavení prostředí ASP.NET Core produkční prostředí na Ubuntu 16.04 server. Tyto pokyny pravděpodobně pracovat s novější verze Ubuntu, ale pokynů nebyly testovány s novější verzí.
 
 > [!NOTE]
-> Pro Ubuntu 14.04 *supervisord* se doporučuje jako řešení pro sledování, zpracovávají Kestrel. *systemd* na Ubuntu 14.04 není dostupný. [Viz předchozí verze tohoto dokumentu](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md).
+> Pro Ubuntu 14.04 *supervisord* se doporučuje jako řešení pro sledování, zpracovávají Kestrel. *systemd* na Ubuntu 14.04 není dostupný. Ubuntu 14.04 pokyny najdete v tématu [předchozí verzi tohoto tématu](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md).
 
 Tato příručka:
 
@@ -34,23 +34,47 @@ Tato příručka:
 
 ## <a name="prerequisites"></a>Požadavky
 
-1. Přístup k serveru 16.04 Ubuntu s standardní uživatelský účet s oprávněním sudo
-1. Stávající aplikace ASP.NET Core
+1. Přístup k serveru Ubuntu 16.04 s standardní uživatelský účet s oprávněním sudo.
+1. Nainstalujte na .NET Core runtime na serveru.
+   1. Přejděte [.NET Core všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
+   1. Vyberte ze seznamu v části nejnovější modul runtime bez preview **Runtime**.
+   1. Vyberte a postupujte podle pokynů pro Ubuntu, které odpovídají verzi Ubuntu server.
+1. Stávající aplikace ASP.NET Core.
 
-## <a name="copy-over-the-app"></a>Kopírování prostřednictvím aplikace
+## <a name="publish-and-copy-over-the-app"></a>Publikování a zkopírujte přes aplikace
 
-Spustit [dotnet publikování](/dotnet/core/tools/dotnet-publish) z prostředí vývojářů pro zabalení aplikace do samostatný adresář, který můžete spustit na serveru.
+Konfigurace aplikace pro [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd).
 
-Kopie aplikace ASP.NET Core k serveru pomocí ať nástroj integruje do pracovního postupu organizace (například spojovací bod služby, FTP). Testování aplikace, například:
+Spustit [dotnet publikování](/dotnet/core/tools/dotnet-publish) z vývojového prostředí pro zabalení aplikace do adresáře (například *Koš a verze nebo&lt;target_framework_moniker&gt;/ publikovat*), můžete Spusťte na serveru:
 
-* Z příkazového řádku, spusťte `dotnet <app_assembly>.dll`.
-* V prohlížeči přejděte na `http://<serveraddress>:<port>` k ověření, že aplikace funguje v systému Linux. 
- 
+```console
+dotnet publish --configuration Release
+```
+
+Aplikace lze také publikovat jako [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd) Pokud nechcete udržovat na .NET Core runtime na serveru.
+
+Zkopírujte aplikace ASP.NET Core k serveru pomocí nástroje, který se integruje do pracovního postupu organizace (například spojovací bod služby, pomocí protokolu SFTP). Je běžné najít webové aplikace v rámci *var* directory (například *aspnetcore/var/hellomvc*).
+
+> [!NOTE]
+> V části nasazení produkční scénář průběžnou integraci pracovní postup funguje publikování aplikace a kopírování prostředků na server.
+
+Testovací aplikace:
+
+1. Z příkazového řádku, spusťte aplikaci: `dotnet <app_assembly>.dll`.
+1. V prohlížeči přejděte na `http://<serveraddress>:<port>` k ověření, že aplikace funguje v systému Linux místně.
+
 ## <a name="configure-a-reverse-proxy-server"></a>Konfigurace serveru reverzní proxy server
 
 Reverzní proxy server je běžné instalační program pro obsluhující dynamické webové aplikace. Reverzní proxy server ukončí požadavek HTTP a předává do aplikace ASP.NET Core.
 
-### <a name="why-use-a-reverse-proxy-server"></a>Proč používat reverzní proxy server?
+::: moniker range=">= aspnetcore-2.0"
+
+> [!NOTE]
+> Buď konfiguraci&mdash;s nebo bez reverzní proxy server&mdash;je platný a podporované konfigurace hostování pro technologii ASP.NET Core 2.0 nebo novější. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
+
+::: moniker-end
+
+### <a name="use-a-reverse-proxy-server"></a>Použít reverzní proxy server
 
 Kestrel je skvělá pro obsluhující dynamický obsah z ASP.NET Core. Však nejsou webové funkce slouží jako bohaté funkce jako servery, například služby IIS, Apache nebo Nginx. Reverzní proxy server můžete přesměrovat pracovní například statický obsah obsluhuje, ukládání do mezipaměti požadavky, komprese požadavků a ukončení protokolu SSL ze serveru HTTP. Reverzní proxy server může být na vyhrazeném počítači nebo může být nasazeny společně se HTTP server.
 
@@ -99,20 +123,28 @@ Další konfigurace může být potřeba pro aplikace, které jsou hostovány za
 
 ### <a name="install-nginx"></a>Nainstalujte Nginx
 
+Použití `apt-get` k instalaci Nginx. Instalační program vytvoří *systemd* init skript, který spouští Nginx jako démon na spuštění systému. 
+
 ```bash
-sudo apt-get install nginx
+sudo -s
+nginx=stable # use nginx=development for latest development version
+add-apt-repository ppa:nginx/$nginx
+apt-get update
+apt-get install nginx
 ```
 
-> [!NOTE]
-> Pokud se nainstalují volitelné moduly Nginx, může být potřeba vytváření Nginx ze zdroje.
+Ubuntu osobní balíček archivu (zásad pro posuzování projektů) je možný díky dobrovolníků a není distribuovat [nginx.org](https://nginx.org/). Další informace najdete v tématu [Nginx: binární verze: balíčky oficiální Debian/Ubuntu](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages).
 
-Použití `apt-get` k instalaci Nginx. Instalační program vytvoří skript init V systému, který spouští Nginx jako démon na spuštění systému. Vzhledem k tomu, že Nginx byla nainstalována poprvé, explicitně spusťte ji spuštěním:
+> [!NOTE]
+> Pokud volitelné moduly Nginx, může být potřeba vytváření Nginx ze zdroje.
+
+Vzhledem k tomu, že Nginx byla nainstalována poprvé, explicitně spusťte ji spuštěním:
 
 ```bash
 sudo service nginx start
 ```
 
-Ověřte, zda že prohlížeč zobrazí výchozí úvodní stránka pro Nginx.
+Ověřte, zda že prohlížeč zobrazí výchozí úvodní stránka pro Nginx. Cílová stránka je dostupný v `http://<server_IP_address>/index.nginx-debian.html`.
 
 ### <a name="configure-nginx"></a>Konfigurace Nginx
 
@@ -127,7 +159,7 @@ server {
         proxy_http_version 1.1;
         proxy_set_header   Upgrade $http_upgrade;
         proxy_set_header   Connection keep-alive;
-        proxy_set_header   Host $http_host;
+        proxy_set_header   Host $host;
         proxy_cache_bypass $http_upgrade;
     }
 }
@@ -149,6 +181,21 @@ S předchozím konfigurační soubor a výchozí server, Nginx přijímá veřej
 > Nepodařilo se určit správný [název_serveru direktiva](https://nginx.org/docs/http/server_names.html) zpřístupní v aplikaci ohrožení zabezpečení. Vazba subdomény zástupný znak (například `*.example.com`) nemá představovat toto bezpečnostní riziko, pokud řízení celého nadřazené domény (Naproti tomu `*.com`, což je snadno napadnutelný). V tématu [rfc7230 části-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) Další informace.
 
 Po vytvoření konfigurace Nginx spustit `sudo nginx -t` syntaxi konfigurační soubory. Pokud se test souboru konfigurace je úspěšné, vynutit Nginx mohla vybrat změny spuštěním `sudo nginx -s reload`.
+
+Pro přímé spouštění aplikace na serveru:
+
+1. Přejděte do adresáře aplikace.
+1. Spustit spustitelný soubor aplikace: `./<app_executable>`.
+
+Pokud dojde k chybě oprávnění ke změně oprávnění:
+
+```console
+chmod u+x <app_executable>
+```
+
+Pokud aplikace běží na serveru, ale přestane reagovat přes Internet, zkontrolujte brány firewall serveru a ověřte, zda je otevřený port 80. Pokud používáte virtuálního počítače s Ubuntu Azure, přidejte pravidlo skupina zabezpečení sítě (NSG), které umožní příchozí port 80 komunikaci. Jako odchozí provoz je automaticky přiděleno, pokud je povolena příchozí pravidlo, není třeba povolit pravidlo odchozí port 80.
+
+Po dokončení testování aplikace vypněte aplikace s `Ctrl+C` na příkazovém řádku.
 
 ## <a name="monitoring-the-app"></a>Monitorování aplikace
 
@@ -182,8 +229,9 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 WantedBy=multi-user.target
 ```
 
-**Poznámka:** Pokud uživatel *www-data* nepoužívá konfigurace, uživatelsky definované v tomto poli musí být nejprve a pro soubory zadané správné vlastnictví.
-**Poznámka:** Linux má systém souborů malá a velká písmena. Nastavení ASPNETCORE_ENVIRONMENT "Výroba" hledání konfiguračního souboru *appsettings. Production.JSON*, nikoli *appsettings.production.json*.
+Pokud uživatel *www-data* nepoužívá konfigurace, uživatelsky definované v tomto poli musí být nejprve a pro soubory zadané správné vlastnictví.
+
+Linux má systém souborů malá a velká písmena. Nastavení ASPNETCORE_ENVIRONMENT "Výroba" hledání konfiguračního souboru *appsettings. Production.JSON*, nikoli *appsettings.production.json*.
 
 > [!NOTE]
 > Některé hodnoty (například připojovací řetězce SQL), je nutné uvést pro zprostředkovatele konfigurace pro čtení proměnné prostředí. Použijte následující příkaz k vygenerování správně uvozený hodnoty pro použití v konfiguračním souboru:
@@ -257,20 +305,6 @@ sudo ufw allow 443/tcp
 
 ### <a name="securing-nginx"></a>Zabezpečení Nginx
 
-Výchozí distribuci Nginx není povolit protokol SSL. Pokud chcete povolit další funkce zabezpečení, sestavení ze zdroje.
-
-#### <a name="download-the-source-and-install-the-build-dependencies"></a>Stáhnout zdrojovou verzi a instalaci závislostí sestavení
-
-```bash
-# Install the build dependencies
-sudo apt-get update
-sudo apt-get install build-essential zlib1g-dev libpcre3-dev libssl-dev libxslt1-dev libxml2-dev libgd2-xpm-dev libgeoip-dev libgoogle-perftools-dev libperl-dev
-
-# Download Nginx 1.10.0 or latest
-wget http://www.nginx.org/download/nginx-1.10.0.tar.gz
-tar zxf nginx-1.10.0.tar.gz
-```
-
 #### <a name="change-the-nginx-response-name"></a>Změňte název Nginx odpovědi
 
 Edit *src/http/ngx_http_header_filter_module.c*:
@@ -280,20 +314,9 @@ static char ngx_http_server_string[] = "Server: Web Server" CRLF;
 static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 ```
 
-#### <a name="configure-the-options-and-build"></a>Nakonfigurujte možnosti a sestavení
+#### <a name="configure-options"></a>Konfigurace možností
 
-Knihovna PCRE je vyžadována pro regulární výrazy. Regulární výrazy se používají v direktivě umístění pro ngx_http_rewrite_module. Http_ssl_module přidává podporu protokolu HTTPS.
-
-Zvažte použití brány firewall webových aplikací jako *ModSecurity* k posílení zabezpečení aplikace.
-
-```bash
-./configure
---with-pcre=../pcre-8.38
---with-zlib=../zlib-1.2.8
---with-http_ssl_module
---with-stream
---with-mail=dynamic
-```
+Konfigurace serveru s další požadované moduly. Zvažte použití brány firewall webových aplikací, jako například [ModSecurity](https://www.modsecurity.org/), k posílení zabezpečení aplikace.
 
 #### <a name="configure-ssl"></a>Konfigurace protokolu SSL
 
@@ -335,3 +358,7 @@ sudo nano /etc/nginx/nginx.conf
 ```
 
 Přidejte řádek `add_header X-Content-Type-Options "nosniff";` a uložte soubor a pak znovu spusťte Nginx.
+
+## <a name="additional-resources"></a>Další zdroje
+
+* [Nginx: Binární verze: oficiální Debian/Ubuntu balíčky](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)

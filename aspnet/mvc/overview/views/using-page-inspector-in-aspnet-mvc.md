@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/views/using-page-inspector-in-aspnet-mvc
-title: "Díky nástroji Page Inspector v architektuře ASP.NET MVC | Microsoft Docs"
+title: Díky nástroji Page Inspector v architektuře ASP.NET MVC | Microsoft Docs
 author: rick-anderson
-description: "Nástroj Page Inspector v sadě Visual Studio 2012 je nástroj pro vývoj webů s integrované prohlížeče. Vyberte libovolný element v integrovaném prohlížeči a nástroj Page Inspector i..."
+description: Nástroj Page Inspector v sadě Visual Studio 2012 je nástroj pro vývoj webů s integrované prohlížeče. Vyberte libovolný element v integrovaném prohlížeči a nástroj Page Inspector i...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -202,7 +202,7 @@ Teď změňte hodnotu `background-color` na "red". Změny se okamžitě zobrazí
 
 Editor šablon stylů CSS v sadě Visual Studio 2012 má výběr barvy, která usnadňuje zvolte a vložit barvy. Výběr barvy obsahuje standardní paletu barev, podporuje názvy standardní barev, kódů hash, barvy RGB, RGBA, HSL a HSLA a udržuje seznam barev, které byly naposledy použity v dokumentu.
 
-V předchozí části, můžete změnit hodnotu `background-color` vlastnost. K vyvolání volby barev, umístěte kurzor po název vlastnosti a typ  **#**  nebo **rgb (**.
+V předchozí části, můžete změnit hodnotu `background-color` vlastnost. K vyvolání volby barev, umístěte kurzor po název vlastnosti a typ **#** nebo **rgb (**.
 
 ![Na panelu Výběr barev šablon stylů CSS](using-page-inspector-in-aspnet-mvc/_static/image36.png)
 

@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/working-with-groups
-title: "Práce se skupinami v systému SignalR | Microsoft Docs"
+title: Práce se skupinami v systému SignalR | Microsoft Docs
 author: pfletcher
-description: "Toto téma popisuje, jak uchovávat informace o členství ve skupině s rozhraním API rozbočovače."
+description: Toto téma popisuje, jak uchovávat informace o členství ve skupině s rozhraním API rozbočovače.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014

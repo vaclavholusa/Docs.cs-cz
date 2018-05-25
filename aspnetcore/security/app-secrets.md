@@ -10,22 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 88b4ee9a963543f8cc97cb66271628a14fe657de
-ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
-ms.translationtype: MT
+ms.openlocfilehash: 9e9b548e5572da2c347bc874c473a02d8691e738
+ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Bezpečné úložiště tajné klíče aplikace v vývoj v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [ADAM Roth](https://github.com/danroth27), a [Scott Addie](https://github.com/scottaddie)
 
-::: moniker range="<= aspnetcore-1.1"
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/1.1) ([stažení](xref:tutorials/index#how-to-download-a-sample))
-::: moniker-end
-::: moniker range=">= aspnetcore-2.0"
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/2.1) ([stažení](xref:tutorials/index#how-to-download-a-sample))
-::: moniker-end
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 Tento dokument popisuje techniky pro ukládání a načítání citlivá data během vývoje aplikace ASP.NET Core. Ve zdrojovém kódu by nikdy neukládají hesla nebo dalších citlivých dat, a nesmí použít produkční tajných klíčů v vývoj nebo testování režimu. Můžete ukládat a chránit Azure testovací a produkční tajných klíčů s [poskytovatele konfigurace Azure Key Vault](xref:security/key-vault-configuration).
 
@@ -36,7 +31,7 @@ Proměnné prostředí se používají k ukládání tajné klíče aplikace v k
 ::: moniker range="<= aspnetcore-1.1"
 Čtení hodnot proměnných prostředí nakonfigurovat voláním [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables) v `Startup` konstruktor:
 
-[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=10)]
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=10)]
 ::: moniker-end
 
 Vezměte v úvahu webové aplikace ASP.NET Core, ve kterém **jednotlivé uživatelské účty** je zabezpečená. Připojovací řetězec databáze výchozí je zahrnut do projektu *appSettings.JSON určený* soubor s klíčem `DefaultConnection`. Výchozí připojovací řetězec je pro LocalDB, který běží v uživatelském režimu a nevyžaduje heslo. Během nasazení aplikace `DefaultConnection` klíče hodnotu je možné přepsat hodnotou proměnné prostředí. Proměnné prostředí může ukládat úplný připojovací řetězec s citlivé údaje.
@@ -86,7 +81,7 @@ Nástroj Správce tajný klíč je instalován s rozhraní příkazového řádk
 
 Nainstalujte [Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) balíček NuGet do projektu ASP.NET Core:
 
-[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_CsprojFile&highlight=13-14)]
+[!code-xml[](app-secrets/samples/1.x/UserSecrets/UserSecrets.csproj?name=snippet_CsprojFile&highlight=13-14)]
 
 Spusťte následující příkaz v příkazovém řádku ověření instalace nástroje:
 
@@ -125,10 +120,10 @@ Use "dotnet user-secrets [command] --help" for more information about a command.
 Nástroj tajný klíč Manager funguje v nastavení projektu specifické konfigurace uložené v profilu uživatele. Pokud chcete použít tajné klíče uživatele, zadejte `UserSecretsId` v rámci `PropertyGroup` z *.csproj* souboru. Hodnota `UserSecretsId` je volitelný, ale je jedinečné pro projekt. Vývojáři obvykle generovat identifikátor GUID pro `UserSecretsId`.
 
 ::: moniker range="<= aspnetcore-1.1"
-[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
+[!code-xml[](app-secrets/samples/1.x/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.0"
-[!code-xml[](app-secrets/samples/2.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
+[!code-xml[](app-secrets/samples/2.x/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
 ::: moniker-end
 
 > [!TIP]
@@ -180,28 +175,39 @@ Otevřete příkazové okno a spusťte následující příkaz:
 
 ## <a name="access-a-secret"></a>Přístup a tajný klíč
 
-[Rozhraní API ASP.NET základní konfigurace](xref:fundamentals/configuration/index) poskytuje přístup k tajné klíče tajný klíč správce. Pokud cílení na .NET Core 1.x nebo rozhraní .NET Framework, nainstalujte [Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) balíček NuGet.
-
 ::: moniker range="<= aspnetcore-1.1"
-Přidat uživatelský zdroj konfigurace tajné klíče na `Startup` konstruktor:
+[Rozhraní API ASP.NET základní konfigurace](xref:fundamentals/configuration/index) poskytuje přístup k tajné klíče tajný klíč správce. Nainstalujte [Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) balíček NuGet.
 
-[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]
+Přidat uživatelský zdroj konfigurace tajných klíčů s volání [AddUserSecrets](/dotnet/api/microsoft.extensions.configuration.usersecretsconfigurationextensions.addusersecrets) v `Startup` konstruktor:
+
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+[Rozhraní API ASP.NET základní konfigurace](xref:fundamentals/configuration/index) poskytuje přístup k tajné klíče tajný klíč správce. Pokud je cílem vašeho projektu je .NET Framework, nainstalujte [Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) balíček NuGet.
+
+V technologii ASP.NET Core 2.0 nebo novější, zdroj konfigurace tajné klíče uživatele se automaticky přidá v režimu pro vývoj při volání projektu [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) k inicializaci nové instance hostitele s předem nakonfigurované výchozí hodnoty. `CreateDefaultBuilder` volání [AddUserSecrets](/dotnet/api/microsoft.extensions.configuration.usersecretsconfigurationextensions.addusersecrets) při [EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname) je [vývoj](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development):
+
+[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Program.cs?name=snippet_CreateWebHostBuilder&highlight=2)]
+
+Když `CreateDefaultBuilder` není volá se během vytváření hostitele, přidejte zdroj konfigurace tajné klíče uživatele pomocí volání [AddUserSecrets](/dotnet/api/microsoft.extensions.configuration.usersecretsconfigurationextensions.addusersecrets) v `Startup` konstruktor:
+
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]
 ::: moniker-end
 
 Tajné klíče uživatele lze načíst prostřednictvím `Configuration` rozhraní API:
 
 ::: moniker range="<= aspnetcore-1.1"
-[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=23)]
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=23)]
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.0"
-[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=14)]
+[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=14)]
 ::: moniker-end
 
 ## <a name="string-replacement-with-secrets"></a>Náhradní řetězec obsahující tajné údaje
 
 Ukládání hesel ve formátu prostého textu je rizikové. Například připojovací řetězec databáze uložené v *appSettings.JSON určený* může zahrnovat heslo pro zadaného uživatele:
 
-[!code-json[](app-secrets/samples/2.1/UserSecrets/appsettings-unsecure.json?highlight=3)]
+[!code-json[](app-secrets/samples/2.x/UserSecrets/appsettings-unsecure.json?highlight=3)]
 
 Bezpečnější přístup je uložit heslo jako tajný klíč. Příklad:
 
@@ -211,15 +217,15 @@ dotnet user-secrets set "DbPassword" "pass123"
 
 Nahraďte heslo v *appSettings.JSON určený* s zástupný symbol. V následujícím příkladu `{0}` slouží jako zástupný symbol pro formulář [složené řetězec formátu](/dotnet/standard/base-types/composite-formatting#composite-format-string).
 
-[!code-json[](app-secrets/samples/2.1/UserSecrets/appsettings.json?highlight=3)]
+[!code-json[](app-secrets/samples/2.x/UserSecrets/appsettings.json?highlight=3)]
 
 Hodnota tajného klíče může vložit do zástupný symbol pro dokončení připojovací řetězec:
 
 ::: moniker range="<= aspnetcore-1.1"
-[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=23-25)]
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=23-25)]
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.0"
-[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-16)]
+[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-16)]
 ::: moniker-end
 
 ## <a name="list-the-secrets"></a>Seznam těchto tajných klíčů

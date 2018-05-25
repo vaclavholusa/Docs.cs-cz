@@ -139,7 +139,7 @@ Všimněte si, že cíl zahrnuje **ItemGroup** element. Když definujete vlastno
 > Měly také směřovat předejdete deklarace položky, které se nikdy používat. Pokud máte položky, které budou používat jenom konkrétní cíl, zvažte umístění je uvnitř cíl, který má odeberte všechny nepotřebné režijní náklady na proces sestavení.
 
 
-Dynamické položky z produkce, **Vyčistit** cíl je poměrně jednoduché a využívá integrované **zpráva**, **odstranit**, a **removedir –**úkolů:
+Dynamické položky z produkce, **Vyčistit** cíl je poměrně jednoduché a využívá integrované **zpráva**, **odstranit**, a **removedir –** úkolů:
 
 1. Odešle zprávu do protokolovacího nástroje.
 2. Vytvoříte seznam souborů k odstranění.
@@ -210,7 +210,7 @@ Zobrazí se podobné zápis ve  **\_Cmd** vlastnosti, která vytvoří příkaz 
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
 
-V takovém případě **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, a **%(DbPublishPackages.FullPath)** všechny odkazovat na metadata hodnoty **DbPublishPackages** kolekce položek.  **\_Cmd** vlastnost je používána **Exec** úkol, který volá příkaz.
+V takovém případě **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, a **%(DbPublishPackages.FullPath)** všechny odkazovat na metadata hodnoty **DbPublishPackages** kolekce položek. **\_Cmd** vlastnost je používána **Exec** úkol, který volá příkaz.
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]

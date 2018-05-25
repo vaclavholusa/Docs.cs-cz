@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
-title: "Vytvoření zabezpečeného webové aplikace ASP.NET MVC 5 se přihlásit, e-mailem potvrzení a heslo resetovat (C#) | Microsoft Docs"
+title: Vytvoření zabezpečeného webové aplikace ASP.NET MVC 5 se přihlásit, e-mailem potvrzení a heslo resetovat (C#) | Microsoft Docs
 author: Rick-Anderson
-description: "Tento kurz ukazuje, jak sestavit webové aplikace ASP.NET MVC 5 s potvrzení e-mailu a resetování hesla pomocí systému členství ASP.NET Identity. Můžete certifikační autority..."
+description: Tento kurz ukazuje, jak sestavit webové aplikace ASP.NET MVC 5 s potvrzení e-mailu a resetování hesla pomocí systému členství ASP.NET Identity. Můžete certifikační autority...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: d55b34135d5bab98ab8de31cc4b12dcc272cbc0a
-ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
+ms.openlocfilehash: bfa5d52019be81374c7a544e255ab7ffb301fa7b
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 05/22/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>Vytvoření zabezpečeného webové aplikace ASP.NET MVC 5 se přihlásit, e-mailem potvrzení a heslo resetovat (C#)
 ====================
@@ -62,7 +62,7 @@ Obvykle budete chtít zabránit noví uživatelé předtím, než byl potvrzen e
 
 I když tento kurz ukazuje jenom postup přidání e-mailové oznámení prostřednictvím [sendgrid vám umožňuje](http://sendgrid.com/), můžete odeslat e-mailu pomocí protokolu SMTP a další mechanismy (viz [další prostředky](#addRes)).
 
-1. V konzole Správce balíčků, zadejte následující příkaz: 
+1. V konzole Správce balíčků zadejte následující příkaz: 
 
     [!code-console[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample1.cmd)]
 2. Přejděte na [sendgrid vám umožňuje Azure registrační stránku](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409) a zaregistrovat bezplatný účet sendgrid vám umožňuje. Sendgrid vám umožňuje nakonfigurovat tak, že přidáte kód, podobně jako v následujícím *App_Start/IdentityConfig.cs*:
@@ -78,7 +78,7 @@ Pro zjednodušení této ukázku, uložíme nastavení aplikace v *web.config* s
 [!code-xml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample4.xml)]
 
 > [!WARNING]
-> Zabezpečení – nikdy úložiště citlivá data ve zdrojovém kódu. Účet a přihlašovací údaje jsou uloženy v appSetting. V Azure, můžete bezpečně uložit tyto hodnoty na  **[konfigurace](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**  na portálu Azure. V tématu [osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a do Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
+> Zabezpečení – nikdy úložiště citlivá data ve zdrojovém kódu. Účet a přihlašovací údaje jsou uloženy v appSetting. V Azure, můžete bezpečně uložit tyto hodnoty na **[konfigurace](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** na portálu Azure. V tématu [osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a do Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
 
 
 ### <a name="enable-email-confirmation-in-the-account-controller"></a>Povolit potvrzení e-mailu v kontroleru účtu
@@ -108,7 +108,7 @@ Vytvoření `Views\Shared\Info.cshtml` souboru a přidejte následující kód r
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample8.cshtml)]
 
-Přidat [autorizovat atribut](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) k `Contact` metody akce kontroleru domovské. Můžete kliknutím na **kontaktujte** odkaz ověřte anonymní uživatelé nemají přístup k a ověření uživatelé mají přístup.
+Přidat [autorizovat atribut](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) k `Contact` metody akce kontroleru domovské. Kliknutím na **kontaktujte** odkaz ověřte anonymní uživatelé nemají přístup k a ověření uživatelé mají přístup.
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample9.cs?highlight=1)]
 
@@ -148,18 +148,18 @@ Aktualizujte metodu registrace k použití nového pomocníka:
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample15.cs?highlight=17)]
 
-Aktualizujte metodu přihlášení k opětovnému odeslání hesla při Pokud nebyl potvrzen uživatelský účet:
+Aktualizujte metodu přihlášení o odeslání hesla, pokud nebyla potvrzena uživatelský účet:
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample16.cs?highlight=20)]
 
 <a id="combine"></a>
 ## <a name="combine-social-and-local-login-accounts"></a>Kombinování sociálních a místní přihlášení účtů
 
-Kliknutím na odkaz na vaši e-mailu můžete kombinovat místní a sociálních účty. V tomto pořadí  **RickAndMSFT@gmail.com**  je poprvé vytvořen jako místní přihlášení, ale můžete vytvořit účet jako sociálních protokolu v prvním a pak přidejte místní přihlášení.
+Kliknutím na odkaz na vaši e-mailu můžete kombinovat místní a sociálních účty. V tomto pořadí **RickAndMSFT@gmail.com** je poprvé vytvořen jako místní přihlášení, ale můžete vytvořit účet jako sociálních protokolu v prvním a pak přidejte místní přihlášení.
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image5.png)
 
-Klikněte na **spravovat** odkaz. Poznámka: externí 0 (sociální přihlášení) spojené s tímto účtem.
+Klikněte na **spravovat** odkaz. Poznámka: **externích přihlášení: 0** spojené s tímto účtem.
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image6.png)
 

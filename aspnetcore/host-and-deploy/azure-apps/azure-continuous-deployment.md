@@ -232,4 +232,4 @@ Zobrazení aktualizované webové aplikace tak, že vyberete **Procházet** v ok
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Použití služby VSTS vytvářet a publikovat do webové aplikace Azure s průběžné nasazování.](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic)
-* [Project Kudu](https://github.com/projectkudu/kudu/wiki)
+* [Kudu projektu](https://github.com/projectkudu/kudu/wiki)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-vb
-title: "Principy modely, zobrazení a Kontrolery (VB) | Microsoft Docs"
+title: Principy modely, zobrazení a Kontrolery (VB) | Microsoft Docs
 author: StephenWalther
-description: "Nerozumíte o modely, zobrazení a Kontrolery? V tomto kurzu Stephen Walther vás seznámí s různé části aplikaci ASP.NET MVC."
+description: Nerozumíte o modely, zobrazení a Kontrolery? V tomto kurzu Stephen Walther vás seznámí s různé části aplikaci ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008

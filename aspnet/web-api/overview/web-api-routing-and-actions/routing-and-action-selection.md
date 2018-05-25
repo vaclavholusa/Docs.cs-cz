@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-and-action-selection
-title: "Směrování a výběr akce v rozhraní ASP.NET Web API | Microsoft Docs"
+title: Směrování a výběr akce v rozhraní ASP.NET Web API | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2012

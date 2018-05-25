@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
-title: "Podpora možnosti dotazu OData v rozhraní ASP.NET Web API 2 | Microsoft Docs"
+title: Podpora možnosti dotazu OData v rozhraní ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/04/2013
@@ -26,7 +26,7 @@ OData definuje parametry, které lze použít k úpravě dotaz OData. Klient ode
 
 `http://localhost/Products?$orderby=Name`
 
-Specifikace prostředí OData volá tyto parametry *možnosti dotazu*. Možnosti dotazu OData pro každý kontroler Web API můžete povolit v projektu &#8212; řadičem nemusí být koncový bod OData. To vám dává pohodlný způsob, jak přidat funkce, jako je například filtrování a řazení pro všechny aplikace webového rozhraní API.
+Specifikace prostředí OData volá tyto parametry *možnosti dotazu*. Možnosti dotazu OData pro každý kontroler Web API můžete povolit v projektu & #8212; řadičem nemusí být koncový bod OData. To vám dává pohodlný způsob, jak přidat funkce, jako je například filtrování a řazení pro všechny aplikace webového rozhraní API.
 
 Před povolením možnosti dotazu, přečtěte si téma [doprovodné materiály zabezpečení OData](odata-security-guidance.md).
 

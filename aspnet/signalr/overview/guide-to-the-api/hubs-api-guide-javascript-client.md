@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
-title: "Funkce SignalR technologie ASP.NET centra API Průvodce – klienta JavaScript | Microsoft Docs"
+title: Funkce SignalR technologie ASP.NET centra API Průvodce – klienta JavaScript | Microsoft Docs
 author: pfletcher
-description: "Tento dokument obsahuje úvod do používání centra rozhraní API pro SignalR verze 2 v klientech JavaScript, například s prohlížeči a applicat Windows Store (WinJS)..."
+description: Tento dokument obsahuje úvod do používání centra rozhraní API pro SignalR verze 2 v klientech JavaScript, například s prohlížeči a applicat Windows Store (WinJS)...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2015

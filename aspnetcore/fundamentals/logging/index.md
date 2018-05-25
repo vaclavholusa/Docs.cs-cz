@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 7e2a4657211b0142ec87fd792d013f7ef397de2b
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 8b53a19f4958e97198175d6acea4017d54f827bb
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -583,21 +583,22 @@ Zprostředkovatel funguje pouze při spuštění projektu v prostředí Azure. N
 
 ## <a name="third-party-logging-providers"></a>Zprostředkovatelé třetí strany protokolování
 
-Zde jsou některé rozhraní protokolování třetích stran, které pracují s ASP.NET Core:
+Rozhraní protokolování třetích stran, které pracují s ASP.NET Core:
 
-* [elmah.IO](https://github.com/elmahio/Elmah.Io.Extensions.Logging) -zprostředkovatele pro službu Elmah.Io
-
-* [JSNLog](http://jsnlog.com) -protokoly výjimek jazyka JavaScript a dalších událostí na straně klienta pomocí protokolu na straně serveru.
-
-* [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging) -zprostředkovatele pro službu Loggr
-
-* [NLog](https://github.com/NLog/NLog.Extensions.Logging) -zprostředkovatele pro knihovnu NLog
-
-* [Serilog](https://github.com/serilog/serilog-extensions-logging) -zprostředkovatele pro knihovnu Serilog
+* [elmah.IO](https://elmah.io/) ([úložiště GitHub](https://github.com/elmahio/Elmah.Io.Extensions.Logging))
+* [JSNLog](http://jsnlog.com/) ([úložiště GitHub](https://github.com/mperdeck/jsnlog))
+* [Loggr](http://loggr.net/) ([úložiště GitHub](https://github.com/imobile3/Loggr.Extensions.Logging))
+* [NLog](http://nlog-project.org/) ([úložiště GitHub](https://github.com/NLog/NLog.Extensions.Logging))
+* [Serilog](https://serilog.net/) ([úložiště GitHub](https://github.com/serilog/serilog-extensions-logging))
 
 Můžete provést některé architektury třetích stran [sémantické protokolování, také známé jako strukturovaný protokolování](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
 
-Pomocí rozhraní třetích stran je podobná pomocí jedné z předdefinované zprostředkovatele: Přidejte balíček NuGet do projektu a volání metody rozšíření na `ILoggerFactory`. Další informace najdete v dokumentaci k každý framework.
+Použití rozhraní třetích stran je podobná pomocí jedné z předdefinované zprostředkovatele:
+
+1. Přidejte balíček NuGet do projektu.
+1. Volání metody rozšíření na `ILoggerFactory`.
+
+Další informace najdete v dokumentaci k každý framework.
 
 ## <a name="azure-log-streaming"></a>Streamování protokolů Azure
 

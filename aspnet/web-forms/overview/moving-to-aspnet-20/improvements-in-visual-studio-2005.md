@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
-title: "Vylepšení v sadě Visual Studio 2005 | Microsoft Docs"
+title: Vylepšení v sadě Visual Studio 2005 | Microsoft Docs
 author: microsoft
-description: "Visual Studio 2005 poskytuje webové aplikace vývojářům dlouhý seznam vylepšení a vylepšení, které webové projekty."
+description: Visual Studio 2005 poskytuje webové aplikace vývojářům dlouhý seznam vylepšení a vylepšení, které webové projekty.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -445,7 +445,7 @@ Jako weve již popsané Visual Studio 2005 se dodává s názvem vývojový Serv
 
 Vývojový Server ASP.NET je omezená webového serveru. Neumožňuje vzdáleného připojení, není možné všechny žádosti, z libovolného uživatele než uživatele, který webový server. Také nemá schopnost poskytovat služby na stránkách ASP. Zpracovává jenom ASP.NET prostředky a prostředky HTML (včetně obrázků, souborů CSS atd.).
 
-Vývojový Server ASP.NET může být spuštěn prostřednictvím příkazového řádku spuštěním souboru WebDev.WebServer.exe nacházející se v c:/Windows/Microsoft.NET/Framework/v2.0./ */*  /  */*/*. Následující dialogové okno zobrazí parametry, které jsou k dispozici.
+Vývojový Server ASP.NET může být spuštěn prostřednictvím příkazového řádku spuštěním souboru WebDev.WebServer.exe nacházející se v c:/Windows/Microsoft.NET/Framework/v2.0./*/* /  */*/*. Následující dialogové okno zobrazí parametry, které jsou k dispozici.
 
 
 ![](improvements-in-visual-studio-2005/_static/image11.jpg)

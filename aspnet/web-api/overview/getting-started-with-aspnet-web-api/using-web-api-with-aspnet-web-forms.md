@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms
-title: "Použití rozhraní Web API s webovými formuláři ASP.NET | Microsoft Docs"
+title: Použití rozhraní Web API s webovými formuláři ASP.NET | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2012

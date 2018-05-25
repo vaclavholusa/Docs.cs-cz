@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
-title: "Směrování v rozhraní ASP.NET Web API | Microsoft Docs"
+title: Směrování v rozhraní ASP.NET Web API | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/11/2012

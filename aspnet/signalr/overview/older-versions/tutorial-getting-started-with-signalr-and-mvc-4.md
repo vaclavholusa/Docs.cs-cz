@@ -76,7 +76,7 @@ V této části ukazuje, jak vytvořit aplikaci ASP.NET MVC 4, přidejte knihovn
       6. Klikněte pravým tlačítkem myši **Hubs** složku, klikněte na tlačítko **přidat | Třída**a vytvořte novou třídu C#, s názvem **ChatHub.cs**. Tato třída použije jako server rozbočovače SignalR zasílání zpráv na všechny klienty.
 
 > [!NOTE]
-> Pokud používáte Visual Studio 2012 a nainstalovaný [ASP.NET a webové nástroje 2012.2 aktualizace](../../../visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw.md#_Installation), můžete použít novou šablonu SignalR položku pro vytvoření třídy rozbočovače. To lze provést, klikněte pravým tlačítkem myši **centra** složku, klikněte na tlačítko **přidat | Nová položka**, vyberte **třídy rozbočovače SignalR (v1)**a název třídy **ChatHub.cs**.
+> Pokud používáte Visual Studio 2012 a nainstalovaný [ASP.NET a webové nástroje 2012.2 aktualizace](../../../visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw.md#_Installation), můžete použít novou šablonu SignalR položku pro vytvoření třídy rozbočovače. To lze provést, klikněte pravým tlačítkem myši **centra** složku, klikněte na tlačítko **přidat | Nová položka**, vyberte **třídy rozbočovače SignalR (v1)** a název třídy **ChatHub.cs**.
 
 
 1. Nahraďte kód v **ChatHub** třídy následujícím kódem.

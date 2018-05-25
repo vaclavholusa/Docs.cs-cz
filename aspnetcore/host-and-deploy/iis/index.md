@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 3a9479dc1bb09218ebb4a5a76078ea514041d751
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 6b2c3334798861ebdb14787205480422d7d536ea
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Jádro ASP.NET hostitele v systému Windows pomocí služby IIS
 
@@ -113,7 +113,7 @@ Při zakazování sady SDK webové z transformaci souboru *processPath* a *argum
 
 ### <a name="webconfig-file-location"></a>umístění souboru Web.config
 
-Aplikace ASP.NET Core jsou hostované v reverzní proxy server mezi službou IIS a Kestrel server. Chcete-li vytvořit reverzní proxy server, *web.config* souboru musí být přítomné v obsahu kořenovou cestu (obvykle aplikace základní cesta) nasazené aplikace. Jde o stejné umístění jako fyzická cesta k webu poskytované služby IIS. *Web.config* soubor je vyžadován v kořenovém adresáři aplikace, aby se daly publikovat víc aplikací pomocí nástroje nasazení webu.
+Chcete-li vytvořit reverzní proxy server mezi službou IIS a serveru Kestrel *web.config* souboru musí být přítomné v obsahu kořenovou cestu (obvykle aplikace základní cesta) nasazené aplikace. Jde o stejné umístění jako fyzická cesta k webu poskytované služby IIS. *Web.config* soubor je vyžadován v kořenovém adresáři aplikace, aby se daly publikovat víc aplikací pomocí nástroje nasazení webu.
 
 Citlivé soubory existují na fyzickou cestu aplikace, například  *\<sestavení >. runtimeconfig.json*,  *\<sestavení > .xml* (komentáře dokumentace XML) a  *\<sestavení >. deps.json*. Když *web.config* je soubor k dispozici a a lokality spustí běžným způsobem, služba IIS nebude poskytovat tyto důvěrné soubory, pokud jste požadovali. Pokud *web.config* soubor nebyl nalezen, nesprávně s názvem, nebo nebylo možné konfigurace lokality k normálnímu spuštění, služba IIS může poskytovat citlivé soubory veřejně.
 
@@ -172,7 +172,7 @@ Povolit **konzoly pro správu služby IIS** a **webové služby**.
 1. Nainstalujte *sady hostování rozhraní .NET Core* v hostitelském systému. Sada nainstaluje rozhraní .NET Core Runtime, základní knihovny .NET a [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel server. Pokud systém nemá připojení k Internetu, získejte a nainstalujte [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840) před instalací sady hostování rozhraní .NET Core.
 
    1. Přejděte na [.NET všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
-   1. Vyberte ze seznamu na nejnovější .NET Core runtime bez preview (**.NET Core** > **Runtime** > **.NET Core Runtime x.y.z**). Pokud máte v úmyslu pracovat s software verze preview, vyhněte se moduly runtime, které mají slovo "náhled" v jejich text odkazu.
+   1. Vyberte ze seznamu na nejnovější .NET Core runtime bez preview (**.NET Core** > **Runtime** > **.NET Core Runtime x.y.z**). Pokud máte v úmyslu pracovat s software verze preview, brání v jeho text odkazu modulu runtime slovem "náhled" nebo "rc" (Release Candidate).
    1. Na .NET Core runtime stránce v části stažení **Windows**, vyberte **hostování instalační program sady** odkaz ke stažení *sady hostování rozhraní .NET Core*.
 
    **Důležité!** Pokud je sada hostování nainstalovaná před službou IIS, je nutné opravit instalaci sady. Spusťte instalační program sady hostování znovu po instalaci služby IIS.

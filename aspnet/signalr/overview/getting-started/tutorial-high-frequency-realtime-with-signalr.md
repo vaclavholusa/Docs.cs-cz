@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
-title: "Kurz: Vysoká frekvence v reálném čase s SignalR 2 | Microsoft Docs"
+title: 'Kurz: Vysoká frekvence v reálném čase s SignalR 2 | Microsoft Docs'
 author: pfletcher
-description: "Tento kurz ukazuje, jak vytvořit webovou aplikaci, která používá funkce SignalR technologie ASP.NET poskytuje funkce zasílání zpráv vysoká frekvence. Vysoká frekvence zasílání zpráv v..."
+description: Tento kurz ukazuje, jak vytvořit webovou aplikaci, která používá funkce SignalR technologie ASP.NET poskytuje funkce zasílání zpráv vysoká frekvence. Vysoká frekvence zasílání zpráv v...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014

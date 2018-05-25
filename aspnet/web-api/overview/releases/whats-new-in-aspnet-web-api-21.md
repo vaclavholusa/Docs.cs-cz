@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/releases/whats-new-in-aspnet-web-api-21
-title: "Co je nového v rozhraní ASP.NET Web API 2.1 | Microsoft Docs"
+title: Co je nového v rozhraní ASP.NET Web API 2.1 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
-title: "Podpora vztahy entit v prostředí s Web API 2 OData v3 | Microsoft Docs"
+title: Podpora vztahy entit v prostředí s Web API 2 OData v3 | Microsoft Docs
 author: MikeWasson
-description: "Většina datových sad definovat vztahy mezi entitami: Zákazníci mají objednávky; knihy mít autoři; produkty mít dodavatelů. Použití protokolu OData, klienti můžete přejít přes..."
+description: 'Většina datových sad definovat vztahy mezi entitami: Zákazníci mají objednávky; knihy mít autoři; produkty mít dodavatelů. Použití protokolu OData, klienti můžete přejít přes...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2014
@@ -68,7 +68,7 @@ Pro podporu této žádosti, přidejte následující metodu do `ProductsControl
 
 [!code-csharp[Main](working-with-entity-relations/samples/sample6.cs)]
 
-*Klíč* parametr je klíč produktu. Metoda vrátí související entity &#8212;v takovém případě `Supplier` instance. Název metody a název parametru jsou důležité. Obecně platí Pokud navigační vlastnost s názvem "X", budete muset přidat metodu s názvem "GetX". Metoda vyžaduje parametr s názvem "*klíč*" odpovídající datový typ klíče nadřazeného objektu.
+*Klíč* parametr je klíč produktu. Metoda vrátí související entity & #8212 v takovém případě `Supplier` instance. Název metody a název parametru jsou důležité. Obecně platí Pokud navigační vlastnost s názvem "X", budete muset přidat metodu s názvem "GetX". Metoda vyžaduje parametr s názvem "*klíč*" odpovídající datový typ klíče nadřazeného objektu.
 
 Je také důležité zahrnout **[FromOdataUri]** atribut *klíč* parametr. Tento atribut určuje webového rozhraní API používat OData syntaxe pravidla v případě, že analyzuje klíč z identifikátoru URI požadavku.
 

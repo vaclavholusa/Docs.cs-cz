@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
-title: "Příručka rozhraní API SignalR 1.x centra – klienta JavaScript | Microsoft Docs"
+title: Příručka rozhraní API SignalR 1.x centra – klienta JavaScript | Microsoft Docs
 author: pfletcher
-description: "Tento dokument obsahuje úvod do používání centra rozhraní API pro SignalR verze 1.1 v klientech JavaScript, například s prohlížeči a Windows Store (WinJS) applic..."
+description: Tento dokument obsahuje úvod do používání centra rozhraní API pro SignalR verze 1.1 v klientech JavaScript, například s prohlížeči a Windows Store (WinJS) applic...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/17/2013

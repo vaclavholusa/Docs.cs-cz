@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
-title: "Konvencí směrování v rozhraní ASP.NET Web API 2 Odata | Microsoft Docs"
+title: Konvencí směrování v rozhraní ASP.NET Web API 2 Odata | Microsoft Docs
 author: MikeWasson
-description: "Tento článek popisuje konvencí směrování, která webového rozhraní API používá koncových bodů protokolu OData."
+description: Tento článek popisuje konvencí směrování, která webového rozhraní API používá koncových bodů protokolu OData.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/31/2013
@@ -147,7 +147,7 @@ Předdefinované konvence aktuálně nepokrývají všechny možné identifikát
 
 Pro obě metody Pokud konvence se nevztahuje na tuto žádost, metoda by měla vrátit hodnotu null.
 
-**ODataPath** parametr představuje Analyzovaná cesta prostředku OData. Obsahuje seznam  **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)**  instance, jednu pro každý segment cesty prostředku. **ODataPathSegment** je abstraktní třída; každý typ segmentu je reprezentována třídu odvozenou z **ODataPathSegment**.
+**ODataPath** parametr představuje Analyzovaná cesta prostředku OData. Obsahuje seznam **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** instance, jednu pro každý segment cesty prostředku. **ODataPathSegment** je abstraktní třída; každý typ segmentu je reprezentována třídu odvozenou z **ODataPathSegment**.
 
 **ODataPath.TemplatePath** vlastnost je řetězec, který představuje zřetězení všechny segmenty cesty. Například pokud je identifikátor URI `/Products(1)/Supplier`, je šablona cesty &quot;~/entityset/key/navigation&quot;. Všimněte si, zda není přímo na URI segmenty odpovídají segmentů. Například klíč entity (1) je reprezentován jako vlastní **ODataPathSegment**.
 
@@ -169,7 +169,7 @@ Poznámky:
 
 1. Jsou odvozeny od **EntitySetRoutingConvention**, protože **SelectController** metody v dané třídě je vhodný pro tento nový konvencí směrování. To znamená, že nemusíte znovu implementovat **SelectController**.
 2. Konvence platí jenom pro požadavky GET, a jenom v případě, že je šablona cesty &quot;~/entityset/key/navigation/key&quot;.
-3. Je název akce &quot;získat {EntityType}&quot;, kde *{EntityType}* je typem navigace kolekce. Například &quot;GetSupplier&quot;. Můžete použít všechny zásady vytváření názvů, který chcete &#8212; Ujistěte se však vaše akce kontroleru odpovídají.
+3. Je název akce &quot;získat {EntityType}&quot;, kde *{EntityType}* je typem navigace kolekce. Například &quot;GetSupplier&quot;. Můžete použít všechny zásady vytváření názvů, který chcete & #8212; Ujistěte se však vaše akce kontroleru odpovídají.
 4. Akce přebírá dva parametry s názvem *klíč* a *relatedKey*. (Seznam některé názvy předdefinované parametrů najdete v tématu [ODataRouteConstants](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatarouteconstants.aspx).)
 
 Dalším krokem je přidání nové konvence do seznamu konvencí směrování. K tomu dojde během konfigurace, jak je znázorněno v následujícím kódu:

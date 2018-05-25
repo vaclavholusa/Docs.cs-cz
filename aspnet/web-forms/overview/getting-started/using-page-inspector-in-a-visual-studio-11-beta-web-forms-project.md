@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
-title: "Díky nástroji Page Inspector pro sadu Visual Studio 2012 v rozhraní ASP.NET Web Forms | Microsoft Docs"
+title: Díky nástroji Page Inspector pro sadu Visual Studio 2012 v rozhraní ASP.NET Web Forms | Microsoft Docs
 author: rick-anderson
-description: "Nástroj Page Inspector pro sadu Visual Studio 2012 je nástroj pro vývoj webů s integrované prohlížeče. Vyberte libovolný element v integrovaném prohlížeči a nástroj Page Inspector..."
+description: Nástroj Page Inspector pro sadu Visual Studio 2012 je nástroj pro vývoj webů s integrované prohlížeče. Vyberte libovolný element v integrovaném prohlížeči a nástroj Page Inspector...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -249,7 +249,7 @@ Když zadáte první znak každého slova ve vlastnosti oddělené pomlčkou jak
 
 ![IntelliSense filtrované hodnoty](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image24.png)
 
-Nyní zadejte středník. Když to uděláte, vloží se název vlastnosti úplné barvu pozadí. Typ  **#**  nebo **rgb (**, a zobrazí se na panelu Výběr barev:
+Nyní zadejte středník. Když to uděláte, vloží se název vlastnosti úplné barvu pozadí. Typ **#** nebo **rgb (**, a zobrazí se na panelu Výběr barev:
 
 ![Na panelu Výběr barev šablon stylů CSS](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image25.png)
 

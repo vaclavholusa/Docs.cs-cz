@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: web-api/advanced/custom-formatters
-ms.openlocfilehash: 8f4c7cb5ac7d518f2d51ab5ff078a2c7c32ea4cc
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: ec38a988a73278481de6535c627b2479a9805387
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="custom-formatters-in-aspnet-core-web-api"></a>Vlastní formátování v webového rozhraní API ASP.NET Core
 
@@ -98,7 +98,7 @@ Formátovací moduly jsou vyhodnocovány v pořadí, v jakém že jste je vloži
 
 ## <a name="next-steps"></a>Další kroky
 
-Najdete v článku [ukázkové aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/custom-formatters/sample), který implementuje jednoduchý soubor vCard vstup a výstup formátování.  Aplikace čte a zapisuje vCard, který vypadat podobně jako v následujícím příkladu:
+Najdete v článku [ukázkové aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample), který implementuje jednoduchý soubor vCard vstup a výstup formátování. Aplikace čte a zapisuje vCard, který vypadat podobně jako v následujícím příkladu:
 
 ```
 BEGIN:VCARD

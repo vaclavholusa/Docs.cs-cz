@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/9-working-with-images
-title: "Práce s obrázky v stránku ASP.NET Web Pages (Razor) | Microsoft Docs"
+title: Práce s obrázky v stránku ASP.NET Web Pages (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tato kapitola ukazuje, jak přidat, zobrazit a pracovat s obrázky (Změna velikosti, převrácení a přidejte vodoznaky) ve vašem webu."
+description: Tato kapitola ukazuje, jak přidat, zobrazit a pracovat s obrázky (Změna velikosti, převrácení a přidejte vodoznaky) ve vašem webu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -58,7 +58,7 @@ Pokud bitová kopie je již k dispozici na webu a chcete zobrazit na stránce, m
 
 [!code-html[Main](9-working-with-images/samples/sample1.html)]
 
-V některých případech ale musíte být schopni zobrazit obrázky dynamicky &#8212; To znamená, že nevíte, jaké bitovou kopii k zobrazení až stránce běží.
+V některých případech ale musíte být schopni zobrazit obrázky dynamicky & #8212; To znamená, že nevíte, jaké bitovou kopii k zobrazení až stránce běží.
 
 Postup v této části ukazuje, jak zobrazit bitovou kopii za chodu, kde uživatelé zadat název souboru bitové kopie ze seznamu názvů bitové kopie. Výběrem název bitovou kopii z rozevíracího seznamu a při odeslání stránky, se zobrazí obrázek, který se vybrali.
 
@@ -109,7 +109,7 @@ Předchozí příklad ukázal, jak zobrazit dynamicky bitovou kopii, ale to šlo
 
     *C:\Users\Joe\Pictures\SamplePhoto1.jpg*
 
-    Všechny tyto informace cestu, ale nechcete &#8212; Chcete se jejich název (*SamplePhoto1.jpg*). Můžete pruhu se právě souboru z cesty pomocí `Path.GetFileName` metoda takto:
+    Všechny tyto informace cestu, ale nechcete & #8212; Chcete se jejich název (*SamplePhoto1.jpg*). Můžete pruhu se právě souboru z cesty pomocí `Path.GetFileName` metoda takto:
 
     [!code-csharp[Main](9-working-with-images/samples/sample4.cs)]
 

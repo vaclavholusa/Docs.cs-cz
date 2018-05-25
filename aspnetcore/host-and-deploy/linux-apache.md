@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 473585f1be180645395c14a154c9c017ca50edab
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: b073f00469ada915244a2db71540fd7c971d55ea
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Hostování v systému Linux s Apache ASP.NET Core
 
@@ -24,15 +24,29 @@ Pomocí tohoto průvodce, zjistěte, jak nastavit [Apache](https://httpd.apache.
 
 ## <a name="prerequisites"></a>Požadavky
 
-1. Serveru se systémem CentOS 7 a standardní uživatelský účet s oprávněním sudo
-2. Aplikace ASP.NET Core
+1. Server se službou CentOS 7 s standardní uživatelský účet s oprávněním sudo.
+1. Nainstalujte na .NET Core runtime na serveru.
+   1. Přejděte [.NET Core všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
+   1. Vyberte ze seznamu v části nejnovější modul runtime bez preview **Runtime**.
+   1. Vyberte a postupujte podle pokynů pro CentOS nebo Oracle.
+1. Stávající aplikace ASP.NET Core.
 
-## <a name="publish-the-app"></a>Publikování aplikace
+## <a name="publish-and-copy-over-the-app"></a>Publikování a zkopírujte přes aplikace
 
-Publikování aplikace jako [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd) v rámci konfigurace verze pro modul runtime CentOS 7 (`centos.7-x64`). Zkopírujte obsah *bin/Release/netcoreapp2.0/centos.7-x64/publish* složky na serveru pomocí spojovací bod služby, FTP nebo jiné metody přenosu.
+Konfigurace aplikace pro [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd).
+
+Spustit [dotnet publikování](/dotnet/core/tools/dotnet-publish) z vývojového prostředí pro zabalení aplikace do adresáře (například *Koš a verze nebo&lt;target_framework_moniker&gt;/ publikovat*), můžete Spusťte na serveru:
+
+```console
+dotnet publish --configuration Release
+```
+
+Aplikace lze také publikovat jako [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd) Pokud nechcete udržovat na .NET Core runtime na serveru.
+
+Zkopírujte aplikace ASP.NET Core k serveru pomocí nástroje, který se integruje do pracovního postupu organizace (například spojovací bod služby, pomocí protokolu SFTP). Je běžné najít webové aplikace v rámci *var* directory (například *aspnetcore/var/hellomvc*).
 
 > [!NOTE]
-> V části nasazení produkční scénář průběžnou integraci pracovní postup funguje publikování aplikace a kopírování prostředků na server. 
+> V části nasazení produkční scénář průběžnou integraci pracovní postup funguje publikování aplikace a kopírování prostředků na server.
 
 ## <a name="configure-a-proxy-server"></a>Konfigurace proxy serveru
 
@@ -43,6 +57,11 @@ Proxy server je takovou, která předá požadavky klientů na jiný server mís
 Protože požadavky jsou předávány podle reverzní proxy server, použijte hlavičky Middleware předávány z [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) balíčku. Middleware aktualizace `Request.Scheme`pomocí `X-Forwarded-Proto` záhlaví, tak, že přesměrování identifikátory URI a jiné zásady zabezpečení pracovat správně.
 
 Při použití jakéhokoli typu middleware ověřování, musíte spustit první Middleware předávaných hlavičky. Toto uspořádání zajistí, že ověřovací middleware může spotřebovávat hodnoty hlavičky a generovat správné přesměrování identifikátory URI.
+
+::: moniker range=">= aspnetcore-2.0"
+> [!NOTE]
+> Buď konfiguraci&mdash;s nebo bez reverzní proxy server&mdash;je platný a podporované konfigurace hostování pro technologii ASP.NET Core 2.0 nebo novější. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
+::: moniker-end
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -157,7 +176,6 @@ sudo systemctl enable httpd
 ## <a name="monitoring-the-app"></a>Monitorování aplikace
 
 Apache je teď instalace předávat požadavky na `http://localhost:80` systémem Kestrel v aplikaci ASP.NET Core `http://127.0.0.1:5000`.  Apache není však nastavit ke správě procesu Kestrel. Použití *systemd* a vytvořte soubor služby spuštění a sledování základní webové aplikace. *systemd* je init systém, který poskytuje mnoho výkonné funkce pro spouštění, zastavování a Správa procesů. 
-
 
 ### <a name="create-the-service-file"></a>Vytvoření souboru služby
 

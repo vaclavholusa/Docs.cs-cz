@@ -3,6 +3,7 @@ title: Použít šablonu úhlová projekt pomocí ASP.NET Core
 author: SteveSandersonMS
 description: Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro úhlová a úhlová příkazového řádku.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/21/2018
@@ -11,16 +12,20 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: b4e48f40c3d4e3167e7fdb3534d2c33b3544592c
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 244fece83279ae4d9ead9b345fcdd66ad6ed4225
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/27/2018
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>Použít šablonu úhlová projekt pomocí ASP.NET Core
 
+::: moniker range="= aspnetcore-2.0"
+
 > [!NOTE]
 > Tato dokumentace není o šablona úhlová projektu součástí technologie ASP.NET 2.0 jádra. Jde o novější úhlová šablony, do kterého můžete ručně aktualizovat. Šablona je součástí 2.1 jádro ASP.NET ve výchozím nastavení.
+
+::: moniker-end
 
 Šablona aktualizované úhlová projektu poskytuje příhodný výchozí bod pro ASP.NET Core použití úhlová a úhlová příkazového řádku k implementaci bohatou a klientské uživatelské rozhraní (UI) aplikace.
 
@@ -59,7 +64,7 @@ Now listening on: http://localhost:<port>
 
 Přejděte na tuto adresu URL v prohlížeči.
 
-Spuštění aplikace instanci serveru úhlová rozhraní příkazového řádku na pozadí. Je zaznamenána zpráva podobná následující: <em>NG Live vývojový Server naslouchá na localhost:&lt;otherport&gt;, otevřete prohlížeč na http://localhost:&lt; otherport&gt; /</em>  . Tuto zprávu ignorovat&mdash;má <strong>není</strong> adresu URL pro kombinované aplikace ASP.NET Core a úhlová příkazového řádku.
+Spuštění aplikace instanci serveru úhlová rozhraní příkazového řádku na pozadí. Je zaznamenána zpráva podobná následující: *NG Live vývojový Server naslouchá na localhost:&lt;otherport&gt;, otevřete prohlížeč na http://localhost:&lt; otherport&gt; /*  . Tuto zprávu ignorovat&mdash;má **není** adresu URL pro kombinované aplikace ASP.NET Core a úhlová příkazového řádku.
 
 ---
 
@@ -137,7 +142,7 @@ V *spuštění* třídy, *po* řádek, který konfiguruje `spa.Options.SourcePat
 
 [!code-csharp[](sample/AngularServerSideRendering/Startup.cs?name=snippet_Call_UseSpa&highlight=5-12)]
 
-V režimu pro vývoj, tento kód pokusí vytvořit sadu SSR spuštěním skriptu `build:ssr`, která je definována v *ClientApp\package.json*. Toto sestavení úhlová aplikaci s názvem `ssr`, který ještě není definován. 
+V režimu pro vývoj, tento kód pokusí vytvořit sadu SSR spuštěním skriptu `build:ssr`, která je definována v *ClientApp\package.json*. Toto sestavení úhlová aplikaci s názvem `ssr`, který ještě není definován.
 
 Na konci `apps` pole v *ClientApp/.angular-cli.json*, definovat další aplikaci s názvem `ssr`. Pomocí následujících možností:
 
@@ -149,7 +154,7 @@ Přidat nový soubor s názvem *tsconfig.server.json* uvnitř *ClientApp/src* (s
 
 [!code-json[](sample/AngularServerSideRendering/ClientApp/src/tsconfig.server.json)]
 
-Tento soubor nakonfiguruje na úhlová AoT kompilátoru hledání modul s názvem `app.server.module`. Přidejte tuto tak, že vytvoříte nový soubor v *ClientApp/src/app/app.server.module.ts* (společně se stávající *app.module.ts*) obsahující následující: 
+Tento soubor nakonfiguruje na úhlová AoT kompilátoru hledání modul s názvem `app.server.module`. Přidejte tuto tak, že vytvoříte nový soubor v *ClientApp/src/app/app.server.module.ts* (společně se stávající *app.module.ts*) obsahující následující:
 
 [!code-typescript[](sample/AngularServerSideRendering/ClientApp/src/app/app.server.module.ts)]
 
@@ -159,7 +164,7 @@ Odvolat, nové `ssr` položku v *.angular cli.json* odkazovaný soubor vstupní 
 
 [!code-typescript[](sample/AngularServerSideRendering/ClientApp/src/main.server.ts)]
 
-Tento soubor kód je co ASP.NET Core provede pro každý požadavek, když je spuštěna `UseSpaPrerendering` middlewaru, který jste přidali do *spuštění* třídy. Má zacházet s přijetím `params` z kódu .NET (například se požadovanou adresu URL) a volání rozhraní API úhlová SSR získat výsledné HTML. 
+Tento soubor kód je co ASP.NET Core provede pro každý požadavek, když je spuštěna `UseSpaPrerendering` middlewaru, který jste přidali do *spuštění* třídy. Má zacházet s přijetím `params` z kódu .NET (například se požadovanou adresu URL) a volání rozhraní API úhlová SSR získat výsledné HTML.
 
 Výhradně platí, že toto je dostačující k povolení SSR v režimu pro vývoj. Je nezbytné k provedení jednoho poslední změny tak, aby vaše aplikace funguje správně, při publikování. V hlavním vaší aplikace *.csproj* souboru, nastavte `BuildServerSideRenderer` hodnotu vlastnosti na `true`:
 

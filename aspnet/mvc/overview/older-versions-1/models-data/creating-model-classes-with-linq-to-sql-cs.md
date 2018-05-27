@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f30ff6c97e565059c57c55f26d2dff477774aeb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9a56ceb9eab5774906ecc89ce9da570d4f691a82
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/27/2018
 ---
 <a name="creating-model-classes-with-linq-to-sql-c"></a>Vytvoření třídy modelu pomocí technologie LINQ to SQL (C#)
 ====================
@@ -149,7 +149,7 @@ Po přidání některé záznamy databáze `tblMovies` tabulky a spusťte aplika
 
 ## <a name="using-the-repository-pattern"></a>Použití vzoru úložiště
 
-V předchozí části jsme použili LINQ SQL tříd přímo v rámci akce kontroleru. Použili jsme `MovieDataContex` t třídy přímo z `Index()` akce kontroleru. Není co se v takovém případě jednoduchou aplikaci. Práce přímo se technologie LINQ to SQL v třídě controller však vytvoří problémy, když potřebujete vytvořit složitější aplikaci.
+V předchozí části jsme použili LINQ SQL tříd přímo v rámci akce kontroleru. Použili jsme `MovieDataContext` třídy přímo z `Index()` akce kontroleru. Není co se v takovém případě jednoduchou aplikaci. Práce přímo se technologie LINQ to SQL v třídě controller však vytvoří problémy, když potřebujete vytvořit složitější aplikaci.
 
 Pomocí technologie LINQ to SQL v rámci třídy kontroleru, je obtížné přepínače technologie pro přístup k datům v budoucnu. Například můžete se rozhodnout přepínat pomocí Microsoft LINQ to SQL k použití jako data přístup technologie Microsoft Entity Framework. V takovém případě bude muset přepisování každý řadič, který přistupuje k databázi v rámci vaší aplikace.
 

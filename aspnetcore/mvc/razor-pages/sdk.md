@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: mvc/razor-pages/sdk
-ms.openlocfilehash: acc049a69574968d1e304d6c504cb89243387d6c
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: cf0e1873c7ce500ce3b8ad2b3367555bdc41a576
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/27/2018
 ---
 # <a name="aspnet-core-razor-sdk"></a>Jádro ASP.NET Razor SDK
 
@@ -63,7 +63,7 @@ Následující vlastnosti a položky se používají ke konfiguraci vstupy a vý
 | Položky                                         | Popis                                                                   |
 | ------------                                  | -------------                                                                 |
 | RazorGenerate                                 | Položka elementy (*.cshtml* soubory), které jsou vstupy k cílům generování kódu. |
-| RazorCompile                                  | Položka elementům (soubory .cs) vstupy k cílům kompilace Razor. Pomocí této ItemGroup můžete určit další soubory, které sestavují v sestavení Razor. |
+| RazorCompile                                  | Položka elementům (soubory .cs) vstupy k cílům kompilace Razor. Pomocí této ItemGroup můžete určit další soubory, které se zkompiluje do sestavení Razor. |
 | RazorTargetAssemblyAttribute                  | Položka prvky používané ke kódu generovat atributy pro sestavení Razor. Příklad:  <br />`<RazorAssemblyAttribute ` <br />  `Include="System.Reflection.AssemblyMetadataAttribute"`<br />`  _Parameter1="BuildSource" _Parameter2="https://docs.asp.net/">` |
 | RazorEmbeddedResource                         | Položka elementy přidané jako vložené prostředky do vygenerované sestavení Razor |
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: edc2e9460eb68febe25e8dd60e3872e5ab28e9e9
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 49e51a867e47ce375a5048cae5979360c4103365
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/27/2018
 ---
 # <a name="filters-in-aspnet-core"></a>Filtry v ASP.NET Core
 
@@ -66,7 +66,7 @@ Synchronní filtry, které můžete spustit kód před a po jejich fáze kanálu
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Filters/SampleActionFilter.cs?name=snippet1)]
 
-Asynchronní filtry definovat jeden na*fáze*ExecutionAsync metoda. Tato metoda přebírá *FilterType*ExecutionDelegate delegáta, který provede fáze kanálu se filtr. Například `ActionExecutionDelegate` volání metody akce a může spustit kód před a po jeho volání.
+Asynchronní filtry definovat jeden na*fáze*ExecutionAsync metoda. Tato metoda přebírá *FilterType*ExecutionDelegate delegáta, který provede fáze kanálu se filtr. Například `ActionExecutionDelegate` volání metody akce nebo další akce filtru a může spustit kód s před a po jeho volání.
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Filters/SampleAsyncActionFilter.cs?highlight=6,8-10,13)]
 
@@ -171,7 +171,7 @@ Pokud máte stejné 3 filtrů akce uvedené v předchozí příklad ale sadu `Or
 | 5 | Řadiče | 1  | `OnActionExecuted` |
 | 6 | Metoda | 0  | `OnActionExecuted` |
 
-`Order` Vlastnost trumfy oboru při určení pořadí, ve kterém budou spouštět filtry. Filtry jsou seřazeny nejprve podle pořadí a oboru se používá k přerušení ties. Všechny z předdefinovaných filtrů implementovat `IOrderedFilter` a nastavte výchozí `Order` hodnotu na 0. Integrované filtry FIR, obor určuje pořadí Pokud nastavíte `Order` na hodnotu nula.
+`Order` Vlastnost trumfy oboru při určení pořadí, ve kterém budou spouštět filtry. Filtry jsou seřazeny nejprve podle pořadí a oboru se používá k přerušení ties. Všechny z předdefinovaných filtrů implementovat `IOrderedFilter` a nastavte výchozí `Order` hodnotu na 0. Rozsah pro integrované filtry, určuje pořadí, není-li nastavena `Order` na hodnotu nula.
 
 ## <a name="cancellation-and-short-circuiting"></a>Zrušení a krátký circuiting
 

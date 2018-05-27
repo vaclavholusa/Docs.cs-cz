@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/hosted-services
-ms.openlocfilehash: ace7fc8622864099b7c0e36e4a914de340d4d4e9
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: cc39d125b639719599eca68d627fda014fb107e0
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/27/2018
 ---
 # <a name="background-tasks-with-hosted-services-in-aspnet-core"></a>Úlohy na pozadí s hostované služby v ASP.NET Core
 
@@ -27,6 +27,15 @@ Ve ASP.NET Core, se dají implementovat úlohy na pozadí jako *hostovaných slu
 * Úlohy na pozadí zařazených do fronty, které spouští sekvenčně.
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/hosted-services/samples/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+
+::: moniker range=">= aspnetcore-2.1"
+
+Ukázková aplikace je zadáno ve dvou verzích:
+
+* Webové hostitele &ndash; The webového hostitele je užitečné pro hostování webových aplikací. Příklad kódu ukazuje v tomto tématu je z verze webového hostitele vzorku. Další informace najdete v tématu [webového hostitele](xref:fundamentals/host/web-host) tématu.
+* Obecné hostitele &ndash; obecné hostitel je v technologii ASP.NET Core 2.1 nového. Další informace najdete v tématu [obecné hostitele](xref:fundamentals/host/generic-host) tématu.
+
+::: moniker-end
 
 ## <a name="ihostedservice-interface"></a>IHostedService rozhraní
 
@@ -42,11 +51,11 @@ Hostovaná služba je typu singleton, která se aktivuje jednou při spuštění
 
 Úlohy na pozadí vypršel využívá [System.Threading.Timer](/dotnet/api/system.threading.timer) třídy. Časovač se aktivuje úkolu `DoWork` metoda. Časovač je zakázána na `StopAsync` a uvolněno při uvolnění má v kontejneru služby `Dispose`:
 
-[!code-csharp[](hosted-services/samples/2.x/Services/TimedHostedService.cs?name=snippet1&highlight=15-16,30,37)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/TimedHostedService.cs?name=snippet1&highlight=15-16,30,37)]
 
 Služba je zaregistrován v `Startup.ConfigureServices`:
 
-[!code-csharp[](hosted-services/samples/2.x/Startup.cs?name=snippet1)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet1)]
 
 ## <a name="consuming-a-scoped-service-in-a-background-task"></a>Využívání vymezené služby v úlohy na pozadí
 
@@ -54,37 +63,37 @@ Použití oboru služeb v rámci `IHostedService`, vytvoření oboru. Žádný o
 
 Vymezená pozadí úloh služby obsahuje logiku úloha běžící na pozadí. V následujícím příkladu [objektu ILogger](/dotnet/api/microsoft.extensions.logging.ilogger) je vložit do služby:
 
-[!code-csharp[](hosted-services/samples/2.x/Services/ScopedProcessingService.cs?name=snippet1)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/ScopedProcessingService.cs?name=snippet1)]
 
 Hostovaná služba vytvoří obor překlad služby úloh vymezená pozadí volat jeho `DoWork` metoda:
 
-[!code-csharp[](hosted-services/samples/2.x/Services/ConsumeScopedServiceHostedService.cs?name=snippet1&highlight=29-36)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/ConsumeScopedServiceHostedService.cs?name=snippet1&highlight=29-36)]
 
 Služby jsou zaregistrovány v `Startup.ConfigureServices`:
 
-[!code-csharp[](hosted-services/samples/2.x/Startup.cs?name=snippet2)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet2)]
 
 ## <a name="queued-background-tasks"></a>Úlohy na pozadí ve frontě
 
 Fronty úloh na pozadí je založena na rozhraní .NET 4.x [QueueBackgroundWorkItem](/dotnet/api/system.web.hosting.hostingenvironment.queuebackgroundworkitem) ([předběžně naplánované jako integrované pro ASP.NET Core 2.2](https://github.com/aspnet/Hosting/issues/1280)):
 
-[!code-csharp[](hosted-services/samples/2.x/Services/BackgroundTaskQueue.cs?name=snippet1)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/BackgroundTaskQueue.cs?name=snippet1)]
 
 V `QueueHostedService`, úlohy na pozadí (`workItem`) ve frontě jsou vyjmutou a jsou prováděny:
 
-[!code-csharp[](hosted-services/samples/2.x/Services/QueuedHostedService.cs?name=snippet1&highlight=30-31,35)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/QueuedHostedService.cs?name=snippet1&highlight=30-31,35)]
 
 Služby jsou zaregistrovány v `Startup.ConfigureServices`:
 
-[!code-csharp[](hosted-services/samples/2.x/Startup.cs?name=snippet3)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet3)]
 
 Ve třídě Index stránky modelu `IBackgroundTaskQueue` se vložit do konstruktoru a přiřadí do `Queue`:
 
-[!code-csharp[](hosted-services/samples/2.x/Pages/Index.cshtml.cs?name=snippet1)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Pages/Index.cshtml.cs?name=snippet1)]
 
 Když **přidat úloha** výběru tlačítka na indexovou stránku, `OnPostAddTask` spuštění metody. `QueueBackgroundWorkItem` je volána zařadit do fronty pracovní položku:
 
-[!code-csharp[](hosted-services/samples/2.x/Pages/Index.cshtml.cs?name=snippet2)]
+[!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Pages/Index.cshtml.cs?name=snippet2)]
 
 ## <a name="additional-resources"></a>Další zdroje
 

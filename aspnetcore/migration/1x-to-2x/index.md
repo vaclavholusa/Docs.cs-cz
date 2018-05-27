@@ -9,24 +9,24 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: c462f38ba345a9eaf648967524cadd1ba45aee19
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f96b38e9f0368e04198c849bb3585674183a92b1
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/27/2018
 ---
 # <a name="migrate-from-aspnet-core-1x-to-20"></a>Migrace z ASP.NET Core 1.x na 2.0
 
 Podle [Scott Addie](https://github.com/scottaddie)
 
-V tomto článku vás provedeme prostřednictvím aktualizace existujícího projektu ASP.NET Core 1.x na technologii ASP.NET 2.0 jádra. Migrace vaší aplikace na technologii ASP.NET Core 2.0 umožňuje využít výhod [mnoho nových funkcí a vylepšení výkonu](xref:aspnetcore-2.0). 
+V tomto článku jsme vás provede procesem aktualizace existujícího projektu ASP.NET Core 1.x na technologii ASP.NET 2.0 jádra. Migrace vaší aplikace na technologii ASP.NET Core 2.0 umožňuje využít výhod [mnoho nových funkcí a vylepšení výkonu](xref:aspnetcore-2.0). 
 
 Stávající aplikace ASP.NET Core 1.x vycházejí z šablony projektů specifické pro verzi. Jako rozhraní ASP.NET Core zpracovaní, takže udělat šablony projektů a počáteční kód v nich obsažené. Kromě aktualizace rozhraní ASP.NET Core, budete muset aktualizovat kód pro vaši aplikaci.
 
 <a name="prerequisites"></a>
 
 ## <a name="prerequisites"></a>Požadavky
-Najdete v tématu [Začínáme s ASP.NET Core](xref:getting-started).
+V tématu [Začínáme s ASP.NET Core](xref:getting-started).
 
 <a name="tfm"></a>
 

@@ -11,166 +11,167 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: fb448f22db5bb624083f07cefaad29d6d58331ef
-ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
+ms.openlocfilehash: eb14fbf42f5c18ccdc3ca42af8fd8bcfaa15c623
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34688585"
 ---
-# <a name="get-started-with-signalr-on-aspnet-core"></a><span data-ttu-id="18fa7-103">Začínáme s funkce SignalR technologie ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="18fa7-103">Get started with SignalR on ASP.NET Core</span></span>
+# <a name="get-started-with-signalr-on-aspnet-core"></a><span data-ttu-id="691e3-103">Začínáme s funkce SignalR technologie ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="691e3-103">Get started with SignalR on ASP.NET Core</span></span>
 
-<span data-ttu-id="18fa7-104">Podle [Rachel Appel](https://twitter.com/rachelappel)</span><span class="sxs-lookup"><span data-stu-id="18fa7-104">By [Rachel Appel](https://twitter.com/rachelappel)</span></span>
+<span data-ttu-id="691e3-104">Podle [Rachel Appel](https://twitter.com/rachelappel)</span><span class="sxs-lookup"><span data-stu-id="691e3-104">By [Rachel Appel](https://twitter.com/rachelappel)</span></span>
 
-<span data-ttu-id="18fa7-105">V tomto kurzu se dozvíte, jaké základní informace o vytváření v reálném čase aplikace pomocí funkce SignalR pro ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="18fa7-105">This tutorial teaches the basics of building a real-time app using SignalR for ASP.NET Core.</span></span>
+<span data-ttu-id="691e3-105">V tomto kurzu se dozvíte, jaké základní informace o vytváření v reálném čase aplikace pomocí funkce SignalR pro ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="691e3-105">This tutorial teaches the basics of building a real-time app using SignalR for ASP.NET Core.</span></span>
 
    ![Řešení](get-started/_static/signalr-get-started-finished.png)
 
-<span data-ttu-id="18fa7-107">Tento kurz ukazuje vývoj SignalR následující:</span><span class="sxs-lookup"><span data-stu-id="18fa7-107">This tutorial demonstrates the following SignalR development tasks:</span></span>
+<span data-ttu-id="691e3-107">Tento kurz ukazuje vývoj SignalR následující:</span><span class="sxs-lookup"><span data-stu-id="691e3-107">This tutorial demonstrates the following SignalR development tasks:</span></span>
 
 > [!div class="checklist"]
-> * <span data-ttu-id="18fa7-108">Vytvořte SignalR na webovou aplikaci ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="18fa7-108">Create a SignalR on ASP.NET Core web app.</span></span>
-> * <span data-ttu-id="18fa7-109">Vytvořte rozbočovače SignalR tak, aby nabízel obsah pro klienty.</span><span class="sxs-lookup"><span data-stu-id="18fa7-109">Create a SignalR hub to push content to clients.</span></span>
-> * <span data-ttu-id="18fa7-110">Upravit `Startup` třídy a konfigurace aplikace.</span><span class="sxs-lookup"><span data-stu-id="18fa7-110">Modify the `Startup` class and configure the app.</span></span>
+> * <span data-ttu-id="691e3-108">Vytvořte SignalR na webovou aplikaci ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="691e3-108">Create a SignalR on ASP.NET Core web app.</span></span>
+> * <span data-ttu-id="691e3-109">Vytvořte rozbočovače SignalR tak, aby nabízel obsah pro klienty.</span><span class="sxs-lookup"><span data-stu-id="691e3-109">Create a SignalR hub to push content to clients.</span></span>
+> * <span data-ttu-id="691e3-110">Upravit `Startup` třídy a konfigurace aplikace.</span><span class="sxs-lookup"><span data-stu-id="691e3-110">Modify the `Startup` class and configure the app.</span></span>
 
-<span data-ttu-id="18fa7-111">[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/get-started/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="18fa7-111">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/get-started/sample/) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
+<span data-ttu-id="691e3-111">[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/get-started/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="691e3-111">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/get-started/sample/) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
 
-# <a name="prerequisites"></a><span data-ttu-id="18fa7-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="18fa7-112">Prerequisites</span></span>
+# <a name="prerequisites"></a><span data-ttu-id="691e3-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="691e3-112">Prerequisites</span></span>
 
-<span data-ttu-id="18fa7-113">Nainstalujte následující software:</span><span class="sxs-lookup"><span data-stu-id="18fa7-113">Install the following software:</span></span>
+<span data-ttu-id="691e3-113">Nainstalujte následující software:</span><span class="sxs-lookup"><span data-stu-id="691e3-113">Install the following software:</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="18fa7-114">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="18fa7-114">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="691e3-114">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="691e3-114">Visual Studio</span></span>](#tab/visual-studio)
 
-* <span data-ttu-id="18fa7-115">[.NET core 2.1.0 RC 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-rc1) nebo novější</span><span class="sxs-lookup"><span data-stu-id="18fa7-115">[.NET Core 2.1.0 RC 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-rc1) or later</span></span>
-* <span data-ttu-id="18fa7-116">[Visual Studio 2017](https://www.visualstudio.com/downloads/) verze 15.7 nebo novější s **ASP.NET a webové vývoj** pracovního vytížení</span><span class="sxs-lookup"><span data-stu-id="18fa7-116">[Visual Studio 2017](https://www.visualstudio.com/downloads/) version 15.7 or later with the **ASP.NET and web development** workload</span></span>
-* [<span data-ttu-id="18fa7-117">npm</span><span class="sxs-lookup"><span data-stu-id="18fa7-117">npm</span></span>](https://www.npmjs.com/get-npm)
+* [<span data-ttu-id="691e3-115">.NET core SDK 2.1 nebo novější</span><span class="sxs-lookup"><span data-stu-id="691e3-115">.NET Core SDK 2.1 or later</span></span>](https://www.microsoft.com/net/download/all)
+* <span data-ttu-id="691e3-116">[Visual Studio 2017](https://www.visualstudio.com/downloads/) verze 15.7 nebo novější s **ASP.NET a webové vývoj** pracovního vytížení</span><span class="sxs-lookup"><span data-stu-id="691e3-116">[Visual Studio 2017](https://www.visualstudio.com/downloads/) version 15.7 or later with the **ASP.NET and web development** workload</span></span>
+* [<span data-ttu-id="691e3-117">npm</span><span class="sxs-lookup"><span data-stu-id="691e3-117">npm</span></span>](https://www.npmjs.com/get-npm)
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="18fa7-118">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="18fa7-118">Visual Studio Code</span></span>](#tab/visual-studio-code)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="691e3-118">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="691e3-118">Visual Studio Code</span></span>](#tab/visual-studio-code)
 
-* <span data-ttu-id="18fa7-119">[.NET core 2.1.0 RC 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-rc1) nebo novější</span><span class="sxs-lookup"><span data-stu-id="18fa7-119">[.NET Core 2.1.0 RC 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-rc1) or later</span></span>
-* [<span data-ttu-id="18fa7-120">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="18fa7-120">Visual Studio Code</span></span>](https://code.visualstudio.com/download)
-* [<span data-ttu-id="18fa7-121">C# pro Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="18fa7-121">C# for Visual Studio Code</span></span>](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-* [<span data-ttu-id="18fa7-122">npm</span><span class="sxs-lookup"><span data-stu-id="18fa7-122">npm</span></span>](https://www.npmjs.com/get-npm)
+* [<span data-ttu-id="691e3-119">.NET core SDK 2.1 nebo novější</span><span class="sxs-lookup"><span data-stu-id="691e3-119">.NET Core SDK 2.1 or later</span></span>](https://www.microsoft.com/net/download/all)
+* [<span data-ttu-id="691e3-120">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="691e3-120">Visual Studio Code</span></span>](https://code.visualstudio.com/download)
+* [<span data-ttu-id="691e3-121">C# pro Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="691e3-121">C# for Visual Studio Code</span></span>](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+* [<span data-ttu-id="691e3-122">npm</span><span class="sxs-lookup"><span data-stu-id="691e3-122">npm</span></span>](https://www.npmjs.com/get-npm)
 
 -----
 
-## <a name="create-an-aspnet-core-project-that-hosts-signalr-client-and-server"></a><span data-ttu-id="18fa7-123">Vytvoření projektu ASP.NET Core, který je hostitelem SignalR klienta a serveru</span><span class="sxs-lookup"><span data-stu-id="18fa7-123">Create an ASP.NET Core project that hosts SignalR client and server</span></span>
+## <a name="create-an-aspnet-core-project-that-hosts-signalr-client-and-server"></a><span data-ttu-id="691e3-123">Vytvoření projektu ASP.NET Core, který je hostitelem SignalR klienta a serveru</span><span class="sxs-lookup"><span data-stu-id="691e3-123">Create an ASP.NET Core project that hosts SignalR client and server</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="18fa7-124">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="18fa7-124">Visual Studio</span></span>](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="691e3-124">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="691e3-124">Visual Studio</span></span>](#tab/visual-studio/)
 
-1. <span data-ttu-id="18fa7-125">Použití **soubor** > **nový projekt** nabídky možnost a zvolte **webové aplikace ASP.NET Core**.</span><span class="sxs-lookup"><span data-stu-id="18fa7-125">Use the **File** > **New Project** menu option and choose **ASP.NET Core Web Application**.</span></span> <span data-ttu-id="18fa7-126">Název projektu *SignalRChat*.</span><span class="sxs-lookup"><span data-stu-id="18fa7-126">Name the project *SignalRChat*.</span></span>
+1. <span data-ttu-id="691e3-125">Použití **soubor** > **nový projekt** nabídky možnost a zvolte **webové aplikace ASP.NET Core**.</span><span class="sxs-lookup"><span data-stu-id="691e3-125">Use the **File** > **New Project** menu option and choose **ASP.NET Core Web Application**.</span></span> <span data-ttu-id="691e3-126">Název projektu *SignalRChat*.</span><span class="sxs-lookup"><span data-stu-id="691e3-126">Name the project *SignalRChat*.</span></span>
 
    ![Dialogové okno Nový projekt v sadě Visual Studio](get-started/_static/signalr-new-project-dialog.png)
 
-2. <span data-ttu-id="18fa7-128">Vyberte **webové aplikace** k vytvoření projektu pomocí stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="18fa7-128">Select **Web Application** to create a project using Razor Pages.</span></span> <span data-ttu-id="18fa7-129">Potom vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="18fa7-129">Then select **OK**.</span></span> <span data-ttu-id="18fa7-130">Ujistěte se, který **ASP.NET Core 2.1** se vybere z modulu pro výběr framework, i když SignalR běží ve starších verzích rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="18fa7-130">Be sure that **ASP.NET Core 2.1** is selected from the framework selector, though SignalR runs on older versions of .NET.</span></span>
+2. <span data-ttu-id="691e3-128">Vyberte **webové aplikace** k vytvoření projektu pomocí stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="691e3-128">Select **Web Application** to create a project using Razor Pages.</span></span> <span data-ttu-id="691e3-129">Potom vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="691e3-129">Then select **OK**.</span></span> <span data-ttu-id="691e3-130">Ujistěte se, který **ASP.NET Core 2.1** se vybere z modulu pro výběr framework, i když SignalR běží ve starších verzích rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="691e3-130">Be sure that **ASP.NET Core 2.1** is selected from the framework selector, though SignalR runs on older versions of .NET.</span></span>
 
    ![Dialogové okno Nový projekt v sadě Visual Studio](get-started/_static/signalr-new-project-choose-type.png)
 
-<span data-ttu-id="18fa7-132">Visual Studio obsahuje `Microsoft.AspNetCore.SignalR` balíček obsahující jeho server knihoven jako součást jeho **webové aplikace ASP.NET Core** šablony.</span><span class="sxs-lookup"><span data-stu-id="18fa7-132">Visual Studio includes the `Microsoft.AspNetCore.SignalR` package containing its server libraries as part of its **ASP.NET Core Web Application** template.</span></span> <span data-ttu-id="18fa7-133">Ale knihovny JavaScript klienta pro SignalR musí být nainstalovaný pomocí *npm*.</span><span class="sxs-lookup"><span data-stu-id="18fa7-133">However, the JavaScript client library for SignalR must be installed using *npm*.</span></span>
+<span data-ttu-id="691e3-132">Visual Studio obsahuje `Microsoft.AspNetCore.SignalR` balíček obsahující jeho server knihoven jako součást jeho **webové aplikace ASP.NET Core** šablony.</span><span class="sxs-lookup"><span data-stu-id="691e3-132">Visual Studio includes the `Microsoft.AspNetCore.SignalR` package containing its server libraries as part of its **ASP.NET Core Web Application** template.</span></span> <span data-ttu-id="691e3-133">Ale knihovny JavaScript klienta pro SignalR musí být nainstalovaný pomocí *npm*.</span><span class="sxs-lookup"><span data-stu-id="691e3-133">However, the JavaScript client library for SignalR must be installed using *npm*.</span></span>
 
-3. <span data-ttu-id="18fa7-134">Spusťte následující příkazy **Konzola správce balíčků** okno z kořenového adresáře projektu:</span><span class="sxs-lookup"><span data-stu-id="18fa7-134">Run the following commands in the **Package Manager Console** window, from the project root:</span></span>
+3. <span data-ttu-id="691e3-134">Spusťte následující příkazy **Konzola správce balíčků** okno z kořenového adresáře projektu:</span><span class="sxs-lookup"><span data-stu-id="691e3-134">Run the following commands in the **Package Manager Console** window, from the project root:</span></span>
 
     ```console
     npm init -y
     npm install @aspnet/signalr
     ```     
 
-4. <span data-ttu-id="18fa7-135">Kopírování *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  k *lib* složku ve vašem projektu.</span><span class="sxs-lookup"><span data-stu-id="18fa7-135">Copy the *signalr.js* file from *node_modules\\@aspnet\signalr\dist\browser* to the *lib* folder in your project.</span></span>
+4. <span data-ttu-id="691e3-135">Kopírování *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  k *lib* složku ve vašem projektu.</span><span class="sxs-lookup"><span data-stu-id="691e3-135">Copy the *signalr.js* file from *node_modules\\@aspnet\signalr\dist\browser* to the *lib* folder in your project.</span></span>
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="18fa7-136">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="18fa7-136">Visual Studio Code</span></span>](#tab/visual-studio-code/)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="691e3-136">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="691e3-136">Visual Studio Code</span></span>](#tab/visual-studio-code/)
 
-1. <span data-ttu-id="18fa7-137">Z **integrované Terminálové**, spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="18fa7-137">From the **Integrated Terminal**, run the following command:</span></span>
+1. <span data-ttu-id="691e3-137">Z **integrované Terminálové**, spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="691e3-137">From the **Integrated Terminal**, run the following command:</span></span>
 
     ```console
-    dotnet new razor -o SignalRChat
+    dotnet new webapp -o SignalRChat
     ```
 
-2. <span data-ttu-id="18fa7-138">Instalace pomocí knihovny JavaScript klienta *npm*.</span><span class="sxs-lookup"><span data-stu-id="18fa7-138">Install the JavaScript client library using *npm*.</span></span>
+2. <span data-ttu-id="691e3-138">Instalace pomocí knihovny JavaScript klienta *npm*.</span><span class="sxs-lookup"><span data-stu-id="691e3-138">Install the JavaScript client library using *npm*.</span></span>
 
     ```console
     npm init -y
     npm install @aspnet/signalr
     ```
 
-3. <span data-ttu-id="18fa7-139">Kopírování *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  k *lib* složku ve vašem projektu.</span><span class="sxs-lookup"><span data-stu-id="18fa7-139">Copy the *signalr.js* file from *node_modules\\@aspnet\signalr\dist\browser* to the *lib* folder in your project.</span></span>
+3. <span data-ttu-id="691e3-139">Kopírování *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  k *lib* složku ve vašem projektu.</span><span class="sxs-lookup"><span data-stu-id="691e3-139">Copy the *signalr.js* file from *node_modules\\@aspnet\signalr\dist\browser* to the *lib* folder in your project.</span></span>
 
 -----
 
-## <a name="create-the-signalr-hub"></a><span data-ttu-id="18fa7-140">Vytvoření centra SignalR</span><span class="sxs-lookup"><span data-stu-id="18fa7-140">Create the SignalR Hub</span></span>
+## <a name="create-the-signalr-hub"></a><span data-ttu-id="691e3-140">Vytvoření centra SignalR</span><span class="sxs-lookup"><span data-stu-id="691e3-140">Create the SignalR Hub</span></span>
 
-<span data-ttu-id="18fa7-141">Rozbočovač je třída, která slouží jako podrobný kanál, který umožňuje klientovi a serveru, volání metod na sobě navzájem.</span><span class="sxs-lookup"><span data-stu-id="18fa7-141">A hub is a class that serves as a high-level pipeline that allows the client and server to call methods on each other.</span></span>
+<span data-ttu-id="691e3-141">Rozbočovač je třída, která slouží jako podrobný kanál, který umožňuje klientovi a serveru, volání metod na sobě navzájem.</span><span class="sxs-lookup"><span data-stu-id="691e3-141">A hub is a class that serves as a high-level pipeline that allows the client and server to call methods on each other.</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="18fa7-142">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="18fa7-142">Visual Studio</span></span>](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="691e3-142">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="691e3-142">Visual Studio</span></span>](#tab/visual-studio/)
 
-1. <span data-ttu-id="18fa7-143">Do projektu přidejte třídu výběrem **soubor** > **nový** > **soubor** a výběrem **Visual C# – třída**.</span><span class="sxs-lookup"><span data-stu-id="18fa7-143">Add a class to the project by choosing **File** > **New** > **File** and selecting **Visual C# Class**.</span></span>
+1. <span data-ttu-id="691e3-143">Do projektu přidejte třídu výběrem **soubor** > **nový** > **soubor** a výběrem **Visual C# – třída**.</span><span class="sxs-lookup"><span data-stu-id="691e3-143">Add a class to the project by choosing **File** > **New** > **File** and selecting **Visual C# Class**.</span></span>
 
-2. <span data-ttu-id="18fa7-144">Dědit z `Microsoft.AspNetCore.SignalR.Hub`.</span><span class="sxs-lookup"><span data-stu-id="18fa7-144">Inherit from `Microsoft.AspNetCore.SignalR.Hub`.</span></span> <span data-ttu-id="18fa7-145">`Hub` Třída obsahuje vlastnosti a události pro správu připojení a skupin, jakož i přijímající a odesílající data.</span><span class="sxs-lookup"><span data-stu-id="18fa7-145">The `Hub` class contains properties and events for managing connections and groups, as well as sending and receiving data.</span></span>
+2. <span data-ttu-id="691e3-144">Dědit z `Microsoft.AspNetCore.SignalR.Hub`.</span><span class="sxs-lookup"><span data-stu-id="691e3-144">Inherit from `Microsoft.AspNetCore.SignalR.Hub`.</span></span> <span data-ttu-id="691e3-145">`Hub` Třída obsahuje vlastnosti a události pro správu připojení a skupin, jakož i přijímající a odesílající data.</span><span class="sxs-lookup"><span data-stu-id="691e3-145">The `Hub` class contains properties and events for managing connections and groups, as well as sending and receiving data.</span></span>
 
-3. <span data-ttu-id="18fa7-146">Vytvořte `SendMessage` metoda, která odešle zprávu do všech klientů připojených konverzace.</span><span class="sxs-lookup"><span data-stu-id="18fa7-146">Create the `SendMessage` method that sends a message to all connected chat clients.</span></span> <span data-ttu-id="18fa7-147">Všimněte si, vrátí hodnotu [úloh](https://msdn.microsoft.com/library/system.threading.tasks.task(v=vs.110).aspx), protože SignalR je asynchronní.</span><span class="sxs-lookup"><span data-stu-id="18fa7-147">Notice it returns a [Task](https://msdn.microsoft.com/library/system.threading.tasks.task(v=vs.110).aspx), because SignalR is asynchronous.</span></span> <span data-ttu-id="18fa7-148">Asynchronní kódu poskytuje lepší škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="18fa7-148">Asynchronous code scales better.</span></span>
+3. <span data-ttu-id="691e3-146">Vytvořte `SendMessage` metoda, která odešle zprávu do všech klientů připojených konverzace.</span><span class="sxs-lookup"><span data-stu-id="691e3-146">Create the `SendMessage` method that sends a message to all connected chat clients.</span></span> <span data-ttu-id="691e3-147">Všimněte si, vrátí hodnotu [úloh](https://msdn.microsoft.com/library/system.threading.tasks.task(v=vs.110).aspx), protože SignalR je asynchronní.</span><span class="sxs-lookup"><span data-stu-id="691e3-147">Notice it returns a [Task](https://msdn.microsoft.com/library/system.threading.tasks.task(v=vs.110).aspx), because SignalR is asynchronous.</span></span> <span data-ttu-id="691e3-148">Asynchronní kódu poskytuje lepší škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="691e3-148">Asynchronous code scales better.</span></span>
 
    [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs)]
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="18fa7-149">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="18fa7-149">Visual Studio Code</span></span>](#tab/visual-studio-code/)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="691e3-149">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="691e3-149">Visual Studio Code</span></span>](#tab/visual-studio-code/)
 
-1. <span data-ttu-id="18fa7-150">Otevřete *SignalRChat* složky ve Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="18fa7-150">Open the *SignalRChat* folder in Visual Studio Code.</span></span>
+1. <span data-ttu-id="691e3-150">Otevřete *SignalRChat* složky ve Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="691e3-150">Open the *SignalRChat* folder in Visual Studio Code.</span></span>
 
-2. <span data-ttu-id="18fa7-151">Do projektu přidejte třídu výběrem **soubor** > **nový soubor** z nabídky.</span><span class="sxs-lookup"><span data-stu-id="18fa7-151">Add a class to the project by selecting **File** > **New File** from the menu.</span></span>
+2. <span data-ttu-id="691e3-151">Do projektu přidejte třídu výběrem **soubor** > **nový soubor** z nabídky.</span><span class="sxs-lookup"><span data-stu-id="691e3-151">Add a class to the project by selecting **File** > **New File** from the menu.</span></span>
 
-3. <span data-ttu-id="18fa7-152">Dědit z `Microsoft.AspNetCore.SignalR.Hub`.</span><span class="sxs-lookup"><span data-stu-id="18fa7-152">Inherit from `Microsoft.AspNetCore.SignalR.Hub`.</span></span> <span data-ttu-id="18fa7-153">`Hub` Třída obsahuje vlastnosti a události pro správu připojení a skupin, jakož i příjem a odesílání dat do klientů.</span><span class="sxs-lookup"><span data-stu-id="18fa7-153">The `Hub` class contains properties and events for managing connections and groups, as well as sending and receiving data to clients.</span></span>
+3. <span data-ttu-id="691e3-152">Dědit z `Microsoft.AspNetCore.SignalR.Hub`.</span><span class="sxs-lookup"><span data-stu-id="691e3-152">Inherit from `Microsoft.AspNetCore.SignalR.Hub`.</span></span> <span data-ttu-id="691e3-153">`Hub` Třída obsahuje vlastnosti a události pro správu připojení a skupin, jakož i příjem a odesílání dat do klientů.</span><span class="sxs-lookup"><span data-stu-id="691e3-153">The `Hub` class contains properties and events for managing connections and groups, as well as sending and receiving data to clients.</span></span>
 
-4. <span data-ttu-id="18fa7-154">Přidat `SendMessage` metody pro třídu.</span><span class="sxs-lookup"><span data-stu-id="18fa7-154">Add a `SendMessage` method to the class.</span></span> <span data-ttu-id="18fa7-155">`SendMessage` Metoda odešle zprávu do všech klientů připojených konverzace.</span><span class="sxs-lookup"><span data-stu-id="18fa7-155">The `SendMessage` method sends a message to all connected chat clients.</span></span> <span data-ttu-id="18fa7-156">Všimněte si, vrátí hodnotu [úloh](/dotnet/api/system.threading.tasks.task), protože SignalR je asynchronní.</span><span class="sxs-lookup"><span data-stu-id="18fa7-156">Notice it returns a [Task](/dotnet/api/system.threading.tasks.task), because SignalR is asynchronous.</span></span> <span data-ttu-id="18fa7-157">Asynchronní kódu poskytuje lepší škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="18fa7-157">Asynchronous code scales better.</span></span>
+4. <span data-ttu-id="691e3-154">Přidat `SendMessage` metody pro třídu.</span><span class="sxs-lookup"><span data-stu-id="691e3-154">Add a `SendMessage` method to the class.</span></span> <span data-ttu-id="691e3-155">`SendMessage` Metoda odešle zprávu do všech klientů připojených konverzace.</span><span class="sxs-lookup"><span data-stu-id="691e3-155">The `SendMessage` method sends a message to all connected chat clients.</span></span> <span data-ttu-id="691e3-156">Všimněte si, vrátí hodnotu [úloh](/dotnet/api/system.threading.tasks.task), protože SignalR je asynchronní.</span><span class="sxs-lookup"><span data-stu-id="691e3-156">Notice it returns a [Task](/dotnet/api/system.threading.tasks.task), because SignalR is asynchronous.</span></span> <span data-ttu-id="691e3-157">Asynchronní kódu poskytuje lepší škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="691e3-157">Asynchronous code scales better.</span></span>
 
    [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=6-12)]
 
 -----
 
-## <a name="configure-the-project-to-use-signalr"></a><span data-ttu-id="18fa7-158">Konfigurace projektu pro použití funkce SignalR</span><span class="sxs-lookup"><span data-stu-id="18fa7-158">Configure the project to use SignalR</span></span>
+## <a name="configure-the-project-to-use-signalr"></a><span data-ttu-id="691e3-158">Konfigurace projektu pro použití funkce SignalR</span><span class="sxs-lookup"><span data-stu-id="691e3-158">Configure the project to use SignalR</span></span>
 
-<span data-ttu-id="18fa7-159">SignalR server musí být konfigurován tak, aby věděl, že může předat požadavky SignalR.</span><span class="sxs-lookup"><span data-stu-id="18fa7-159">The SignalR server must be configured so that it knows to pass requests to SignalR.</span></span>
+<span data-ttu-id="691e3-159">SignalR server musí být konfigurován tak, aby věděl, že může předat požadavky SignalR.</span><span class="sxs-lookup"><span data-stu-id="691e3-159">The SignalR server must be configured so that it knows to pass requests to SignalR.</span></span>
 
-1. <span data-ttu-id="18fa7-160">Chcete-li konfigurovat projekt SignalR, změňte projektu `Startup.ConfigureServices` metoda.</span><span class="sxs-lookup"><span data-stu-id="18fa7-160">To configure a SignalR project, modify the project's `Startup.ConfigureServices` method.</span></span>
+1. <span data-ttu-id="691e3-160">Chcete-li konfigurovat projekt SignalR, změňte projektu `Startup.ConfigureServices` metoda.</span><span class="sxs-lookup"><span data-stu-id="691e3-160">To configure a SignalR project, modify the project's `Startup.ConfigureServices` method.</span></span>
 
-   <span data-ttu-id="18fa7-161">`services.AddSignalR` Přidá SignalR jako součást [middleware](xref:fundamentals/middleware/index) kanálu.</span><span class="sxs-lookup"><span data-stu-id="18fa7-161">`services.AddSignalR` adds SignalR as part of the [middleware](xref:fundamentals/middleware/index) pipeline.</span></span>
+   <span data-ttu-id="691e3-161">`services.AddSignalR` Přidá SignalR jako součást [middleware](xref:fundamentals/middleware/index) kanálu.</span><span class="sxs-lookup"><span data-stu-id="691e3-161">`services.AddSignalR` adds SignalR as part of the [middleware](xref:fundamentals/middleware/index) pipeline.</span></span>
 
-2. <span data-ttu-id="18fa7-162">Konfigurace směrování, aby vaše centra pomocí `UseSignalR`.</span><span class="sxs-lookup"><span data-stu-id="18fa7-162">Configure routes to your hubs using `UseSignalR`.</span></span>
+2. <span data-ttu-id="691e3-162">Konfigurace směrování, aby vaše centra pomocí `UseSignalR`.</span><span class="sxs-lookup"><span data-stu-id="691e3-162">Configure routes to your hubs using `UseSignalR`.</span></span>
 
 
    [!code-csharp[Startup](get-started/sample/Startup.cs?highlight=37,57-60)]
 
 
-## <a name="create-the-signalr-client-code"></a><span data-ttu-id="18fa7-163">Vytvoření kódu klienta SignalR</span><span class="sxs-lookup"><span data-stu-id="18fa7-163">Create the SignalR client code</span></span>
+## <a name="create-the-signalr-client-code"></a><span data-ttu-id="691e3-163">Vytvoření kódu klienta SignalR</span><span class="sxs-lookup"><span data-stu-id="691e3-163">Create the SignalR client code</span></span>
 
-1. <span data-ttu-id="18fa7-164">Nahraďte obsah *Pages\Index.cshtml* následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="18fa7-164">Replace the content in *Pages\Index.cshtml* with the following code:</span></span>
+1. <span data-ttu-id="691e3-164">Nahraďte obsah *Pages\Index.cshtml* následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="691e3-164">Replace the content in *Pages\Index.cshtml* with the following code:</span></span>
 
    [!code-cshtml[Index](get-started/sample/Pages/Index.cshtml)]
 
-   <span data-ttu-id="18fa7-165">Předchozí HTML zobrazí název a zpráva pole a tlačítko pro odeslání.</span><span class="sxs-lookup"><span data-stu-id="18fa7-165">The preceding HTML displays name and message fields, and a submit button.</span></span> <span data-ttu-id="18fa7-166">Všimněte si odkazům na skript v dolní části: odkaz na SignalR a *chat.js*.</span><span class="sxs-lookup"><span data-stu-id="18fa7-166">Notice the script references at the bottom: a reference to SignalR and *chat.js*.</span></span>
+   <span data-ttu-id="691e3-165">Předchozí HTML zobrazí název a zpráva pole a tlačítko pro odeslání.</span><span class="sxs-lookup"><span data-stu-id="691e3-165">The preceding HTML displays name and message fields, and a submit button.</span></span> <span data-ttu-id="691e3-166">Všimněte si odkazům na skript v dolní části: odkaz na SignalR a *chat.js*.</span><span class="sxs-lookup"><span data-stu-id="691e3-166">Notice the script references at the bottom: a reference to SignalR and *chat.js*.</span></span>
 
-2. <span data-ttu-id="18fa7-167">Přidejte soubor JavaScript s názvem *chat.js*do *wwwroot\js* složky.</span><span class="sxs-lookup"><span data-stu-id="18fa7-167">Add a JavaScript file, named *chat.js*, to the *wwwroot\js* folder.</span></span> <span data-ttu-id="18fa7-168">Přidejte do ní následující kód:</span><span class="sxs-lookup"><span data-stu-id="18fa7-168">Add the following code to it:</span></span>
+2. <span data-ttu-id="691e3-167">Přidejte soubor JavaScript s názvem *chat.js*do *wwwroot\js* složky.</span><span class="sxs-lookup"><span data-stu-id="691e3-167">Add a JavaScript file, named *chat.js*, to the *wwwroot\js* folder.</span></span> <span data-ttu-id="691e3-168">Přidejte do ní následující kód:</span><span class="sxs-lookup"><span data-stu-id="691e3-168">Add the following code to it:</span></span>
 
    [!code-javascript[Index](get-started/sample/wwwroot/js/chat.js)]
 
-## <a name="run-the-app"></a><span data-ttu-id="18fa7-169">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="18fa7-169">Run the app</span></span>
+## <a name="run-the-app"></a><span data-ttu-id="691e3-169">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="691e3-169">Run the app</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="18fa7-170">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="18fa7-170">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="691e3-170">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="691e3-170">Visual Studio</span></span>](#tab/visual-studio)
 
-1. <span data-ttu-id="18fa7-171">Vyberte **ladění** > **spustit bez ladění** a spustí prohlížeč a nahrajte webu místně.</span><span class="sxs-lookup"><span data-stu-id="18fa7-171">Select **Debug** > **Start without debugging** to launch a browser and load the website locally.</span></span> <span data-ttu-id="18fa7-172">Zkopírujte adresu URL z panelu Adresa.</span><span class="sxs-lookup"><span data-stu-id="18fa7-172">Copy the URL from the address bar.</span></span>
+1. <span data-ttu-id="691e3-171">Vyberte **ladění** > **spustit bez ladění** a spustí prohlížeč a nahrajte webu místně.</span><span class="sxs-lookup"><span data-stu-id="691e3-171">Select **Debug** > **Start without debugging** to launch a browser and load the website locally.</span></span> <span data-ttu-id="691e3-172">Zkopírujte adresu URL z panelu Adresa.</span><span class="sxs-lookup"><span data-stu-id="691e3-172">Copy the URL from the address bar.</span></span>
 
-1. <span data-ttu-id="18fa7-173">Otevřete jinou instanci prohlížeče (libovolného prohlížeče) a vložte adresu URL na panelu Adresa.</span><span class="sxs-lookup"><span data-stu-id="18fa7-173">Open another browser instance (any browser) and paste the URL in the address bar.</span></span>
+1. <span data-ttu-id="691e3-173">Otevřete jinou instanci prohlížeče (libovolného prohlížeče) a vložte adresu URL na panelu Adresa.</span><span class="sxs-lookup"><span data-stu-id="691e3-173">Open another browser instance (any browser) and paste the URL in the address bar.</span></span>
 
-1. <span data-ttu-id="18fa7-174">Vyberte buď prohlížeče, zadejte název a zpráv a klikněte **odeslat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="18fa7-174">Choose either browser, enter a name and message, and click the **Send** button.</span></span> <span data-ttu-id="18fa7-175">Název a zpráva se zobrazí na obou stránkách okamžitě.</span><span class="sxs-lookup"><span data-stu-id="18fa7-175">The name and message are displayed on both pages instantly.</span></span>
+1. <span data-ttu-id="691e3-174">Vyberte buď prohlížeče, zadejte název a zpráv a klikněte **odeslat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="691e3-174">Choose either browser, enter a name and message, and click the **Send** button.</span></span> <span data-ttu-id="691e3-175">Název a zpráva se zobrazí na obou stránkách okamžitě.</span><span class="sxs-lookup"><span data-stu-id="691e3-175">The name and message are displayed on both pages instantly.</span></span>
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="18fa7-176">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="18fa7-176">Visual Studio Code</span></span>](#tab/visual-studio-code)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="691e3-176">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="691e3-176">Visual Studio Code</span></span>](#tab/visual-studio-code)
 
-1. <span data-ttu-id="18fa7-177">Stiskněte klávesu **ladění** (F5) sestavení a spuštění programu.</span><span class="sxs-lookup"><span data-stu-id="18fa7-177">Press **Debug** (F5) to build and run the program.</span></span> <span data-ttu-id="18fa7-178">Spuštění programu otevře okno prohlížeče.</span><span class="sxs-lookup"><span data-stu-id="18fa7-178">Running the program opens a browser window.</span></span>
+1. <span data-ttu-id="691e3-177">Stiskněte klávesu **ladění** (F5) sestavení a spuštění programu.</span><span class="sxs-lookup"><span data-stu-id="691e3-177">Press **Debug** (F5) to build and run the program.</span></span> <span data-ttu-id="691e3-178">Spuštění programu otevře okno prohlížeče.</span><span class="sxs-lookup"><span data-stu-id="691e3-178">Running the program opens a browser window.</span></span>
 
-1. <span data-ttu-id="18fa7-179">Otevře další okno prohlížeče a webu místně v zatížení.</span><span class="sxs-lookup"><span data-stu-id="18fa7-179">Open another browser window and load the website locally in it.</span></span>
+1. <span data-ttu-id="691e3-179">Otevře další okno prohlížeče a webu místně v zatížení.</span><span class="sxs-lookup"><span data-stu-id="691e3-179">Open another browser window and load the website locally in it.</span></span>
 
-1. <span data-ttu-id="18fa7-180">Vyberte buď prohlížeče, zadejte název a zpráv a klikněte **odeslat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="18fa7-180">Choose either browser, enter a name and message, and click the **Send** button.</span></span> <span data-ttu-id="18fa7-181">Název a zpráva se zobrazí na obou stránkách okamžitě.</span><span class="sxs-lookup"><span data-stu-id="18fa7-181">The name and message are displayed on both pages instantly.</span></span>
+1. <span data-ttu-id="691e3-180">Vyberte buď prohlížeče, zadejte název a zpráv a klikněte **odeslat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="691e3-180">Choose either browser, enter a name and message, and click the **Send** button.</span></span> <span data-ttu-id="691e3-181">Název a zpráva se zobrazí na obou stránkách okamžitě.</span><span class="sxs-lookup"><span data-stu-id="691e3-181">The name and message are displayed on both pages instantly.</span></span>
 
 ---
 
   ![Řešení](get-started/_static/signalr-get-started-finished.png)
 
-## <a name="related-resources"></a><span data-ttu-id="18fa7-183">Související informační zdroje</span><span class="sxs-lookup"><span data-stu-id="18fa7-183">Related resources</span></span>
+## <a name="related-resources"></a><span data-ttu-id="691e3-183">Související informační zdroje</span><span class="sxs-lookup"><span data-stu-id="691e3-183">Related resources</span></span>
 
-[<span data-ttu-id="18fa7-184">Úvod do základní ASP.NET SignalR</span><span class="sxs-lookup"><span data-stu-id="18fa7-184">Introduction to ASP.NET Core SignalR</span></span>](introduction.md)
+[<span data-ttu-id="691e3-184">Úvod do základní ASP.NET SignalR</span><span class="sxs-lookup"><span data-stu-id="691e3-184">Introduction to ASP.NET Core SignalR</span></span>](introduction.md)

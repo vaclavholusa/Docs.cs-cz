@@ -9,15 +9,14 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 93fa42be9c551f5bbdf3851aec1d9e01139fdb76
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: dc6ec61519c200901cc8af03853e7381c1d4cad0
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34688961"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Facebook, Google a externího poskytovatele ověřování v ASP.NET Core
-
-<a name="security-authentication-social-logins"></a>
 
 Podle [Valeriy Novytskyy](https://github.com/01binary) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -78,13 +77,15 @@ Ke konfiguraci aplikace pomocí příslušného zprostředkovatele použijte v n
 * [Microsoft](xref:security/authentication/microsoft-logins) pokyny
 * [Ostatní poskytovatele](xref:security/authentication/otherlogins) pokyny
 
+[!INCLUDE[](~/includes/chain-auth-providers.md)]
+
 ## <a name="optionally-set-password"></a>Volitelně můžete nastavit heslo
 
 Při registraci prostřednictvím poskytovatele externí přihlášení nemáte heslo zaregistrována aplikace. To nebude můžete vytvářet a zapamatování hesla pro lokalitu, ale také udržuje je závislá na na externího zprostředkovatele přihlášení. Pokud není k dispozici na externího zprostředkovatele přihlášení, nebudete moct přihlásit k webu.
 
 Vytvořte heslo a přihlaste se pomocí e-mailu nastavený během v procesu přihlašování s externí zprostředkovatele:
 
-* Klepněte na **Hello <email alias>**  v pravém horním rohu přejděte na odkaz **spravovat** zobrazení.
+* Klepněte na **Hello &lt;e-mailový alias&gt;**  v pravém horním rohu přejděte na odkaz **spravovat** zobrazení.
 
 ![Zobrazení Správa webové aplikace](index/_static/pass1a.png)
 

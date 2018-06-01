@@ -10,23 +10,24 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/web-host
-ms.openlocfilehash: ced2a766359894b9b83164c12a3ab69aa13c93a0
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: ce95599ec8e940635ca63c3bf9a3c28784a3f371
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34687487"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core webového hostitele
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*. Hostitel je zodpovědná za spuštění a životního cyklu správy aplikací. Minimálně hostitele nakonfiguruje server a kanálu zpracování požadavků. Toto téma popisuje ASP.NET Core Web Host ([WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)), což je užitečné pro hostování webových aplikací. Pro pokrytí obecné hostitele .NET ([HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder)), najdete v článku [obecné hostitele](xref:fundamentals/host/generic-host) tématu.
+Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*. Hostitel je zodpovědná za spuštění a životního cyklu správy aplikací. Minimálně hostitele nakonfiguruje server a kanálu zpracování požadavků. Toto téma popisuje ASP.NET Core Web Host ([IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)), což je užitečné pro hostování webových aplikací. Pro pokrytí obecné hostitele .NET ([IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder)), najdete v článku [obecné hostitele](xref:fundamentals/host/generic-host) tématu.
 
 ## <a name="set-up-a-host"></a>Nastavení hostitele
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 
-Vytvořit pomocí instance hostitele [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder). To se obvykle provádí v vstupní bod aplikace, `Main` metoda. V rámci šablon projektu `Main` se nachází v *Program.cs*. Typické *Program.cs* volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) zahájíte nastavení hostitele:
+Vytvořit pomocí instance hostitele [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder). To se obvykle provádí v vstupní bod aplikace, `Main` metoda. V rámci šablon projektu `Main` se nachází v *Program.cs*. Typické *Program.cs* volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) zahájíte nastavení hostitele:
 
 ```csharp
 public class Program
@@ -44,12 +45,12 @@ public class Program
 
 `CreateDefaultBuilder` provádí následující úlohy:
 
-* Nakonfiguruje [Kestrel](xref:fundamentals/servers/kestrel) jako webový server. Výchozí možnosti Kestrel najdete v tématu [Kestrel možnosti části Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).
+* Nakonfiguruje [Kestrel](xref:fundamentals/servers/kestrel) jako webový server a nakonfiguruje server pomocí poskytovatelů hostingu konfigurace aplikace. Výchozí možnosti Kestrel najdete v tématu [Kestrel možnosti části Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).
 * Nastaví obsahu kořenovou cestu vrácený [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).
-* Načítání z volitelné konfigurace:
+* Načítání volitelné [parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) z:
   * *appsettings.json*.
   * *appsettings.{Environment}.json*.
-  * [Tajné klíče uživatele](xref:security/app-secrets) při spuštění aplikace `Development` prostředí.
+  * [Tajné klíče uživatele](xref:security/app-secrets) při spuštění aplikace `Development` prostředí pomocí položky sestavení.
   * Proměnné prostředí.
   * Argumenty příkazového řádku.
 * Nakonfiguruje [protokolování](xref:fundamentals/logging/index) konzoly a ladění výstupu. Zahrnuje protokolování [filtrování protokolu](xref:fundamentals/logging/index#log-filtering) pravidla stanovená v části Konfigurace protokolování *appSettings.JSON určený* nebo *appsettings. { Prostředí} .json* souboru.

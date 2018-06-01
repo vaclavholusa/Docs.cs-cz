@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 336a097c2186bc195854bd54211d4554a577ed14
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: a021c1e133bac6676859f5bf8eb01f3a7a8c63ed
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34689045"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware v ASP.NET Core přepisování adres URL
 
@@ -22,15 +23,16 @@ Podle [Luke Latham](https://github.com/guardrex) a [Mikael Mengistu](https://git
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 Přepisování adres URL je v rámci úprava požadavek adresy URL založené na jeden nebo více předdefinovaných pravidel. Přepisování adres URL vytváří abstrakci mezi umístění prostředků a jejich adres, takže umístění a adresy nejsou propojené úzce. Existuje několik situací, kdy je vhodné přepisování adres URL:
-* Přesunutí nebo výměna prostředky serveru dočasně nebo trvale při zachování stabilní lokátory pro tyto prostředky
-* Rozdělení přes různé aplikace nebo přes oblasti jednu aplikaci se zpracováním požadavků
-* Odebrání, přidání nebo změna uspořádání segmenty adres URL na příchozí požadavky
-* Optimalizace veřejné adresy URL pro hledání modul optimalizace (SEO)
-* Umožňuje použití popisný veřejné adresy URL pro přehledné předpovědi obsah, který bude najít klepnutím na odkaz
-* Přesměrování nezabezpečené požadavky na zabezpečení koncových bodů
-* Brání hotlinking bitové kopie
 
-Můžete definovat pravidla pro změny adresy URL několika způsoby, včetně regex, Apache mod_rewrite modulu pravidla a pravidla modul služby IIS a pomocí vlastního pravidla logiku. Toto téma představuje přepisování adres URL s pokyny, jak používat Middleware přepisování adresy URL v aplikacích ASP.NET Core.
+* Přesunutí nebo výměna prostředky serveru dočasně nebo trvale při zachování stabilní lokátory pro tyto prostředky.
+* Rozdělení požadavek zpracování přes různé aplikace nebo přes oblasti jednu aplikaci.
+* Odebrání, přidání nebo změna uspořádání segmenty adres URL na příchozí požadavky.
+* Optimalizace veřejné adresy URL pro hledání modul optimalizace (SEO).
+* Umožňuje použití popisný veřejné adresy URL pro přehledné předpovědi obsah, který bude najít klepnutím na odkaz.
+* Přesměrování nezabezpečené požadavky na zabezpečení koncových bodů.
+* Brání hotlinking bitové kopie.
+
+Můžete definovat pravidla pro změny adresy URL několika způsoby, včetně Regex Apache mod_rewrite modulu pravidla a pravidla modul služby IIS a pomocí vlastního pravidla logiku. Toto téma představuje přepisování adres URL s pokyny, jak používat Middleware přepisování adresy URL v aplikacích ASP.NET Core.
 
 > [!NOTE]
 > Přepisování adres URL může snížit výkon aplikace. Kde je to vhodné, měli byste omezit počet a složitost pravidel.
@@ -127,8 +129,8 @@ Je volána pro část výrazu uvést v uvozovkách *skupiny zachycení*. Tečky 
 
 V řetězci nahrazení zaznamenané skupiny jsou vloženy do řetězce s znak dolaru (`$`) následuje pořadové číslo zachytávání. Získá první hodnota skupiny zachycení s `$1`, sekundu s `$2`, a budou pokračovat v pořadí pro zachycení skupiny ve vašem regulární výraz. Je jenom jedna skupina zaznamenané regex pravidlo přesměrování v ukázkové aplikace, takže jenom jedné skupiny vloženého v řetězci nahrazení, který je `$1`. Když se pravidlo se použije, stane se adresa URL `/redirected/1234/5678`.
 
-<a name="url-redirect-to-secure-endpoint"></a>
 ### <a name="url-redirect-to-a-secure-endpoint"></a>Adresa URL přesměrování na zabezpečený koncový bod
+
 Použití `AddRedirectToHttps` pro přesměrování požadavků HTTP na stejné hostitele a cestu pomocí protokolu HTTPS (`https://`). Pokud je stavový kód není zadaný, middleware výchozí 302 (Found). Pokud není port zadaný, middleware výchozí `null`, což znamená, že protokol změny `https://` a klient přistupuje k prostředku na portu 443. Tento příklad ukazuje, jak nastavit stavový kód na 301 (trvale přesunut) a změnit na 5001.
 
 ```csharp
@@ -153,13 +155,16 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-Ukázková aplikace je schopen který ukazuje, jak používat `AddRedirectToHttps` nebo `AddRedirectToHttpsPermanent`. Add – metoda rozšíření pro `RewriteOptions`. Proveďte požadavek nezabezpečené aplikace na všechny adresy URL. Zavřete zabezpečení prohlížeče upozornění, že není důvěryhodný certifikát podepsaný svým držitelem.
+> [!NOTE]
+> Při přesměrování na HTTPS na portu 443 bez nutnosti další přesměrování pravidla, doporučujeme používat protokol HTTPS přesměrování Middleware. Další informace najdete v tématu [vynutit HTTPS](xref:security/enforcing-ssl#require-https) tématu.
 
-Původní žádosti o pomocí `AddRedirectToHttps(301, 5001)`: `/secure`
+Ukázková aplikace je schopen který ukazuje, jak používat `AddRedirectToHttps` nebo `AddRedirectToHttpsPermanent`. Add – metoda rozšíření pro `RewriteOptions`. Proveďte požadavek nezabezpečené aplikace na všechny adresy URL. Zavření prohlížeče zabezpečení upozornění, že není důvěryhodný certifikát podepsaný svým držitelem nebo vytvořte výjimku důvěřovat certifikátu.
+
+Původní žádosti o pomocí `AddRedirectToHttps(301, 5001)`: `http://localhost:5000/secure`
 
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_redirect_to_https.png)
 
-Původní žádosti o pomocí `AddRedirectToHttpsPermanent`: `/secure`
+Původní žádosti o pomocí `AddRedirectToHttpsPermanent`: `http://localhost:5000/secure`
 
 ![Okno prohlížeče pomocí nástrojů pro vývojáře, sledování požadavků a odpovědí](url-rewriting/_static/add_redirect_to_https_permanent.png)
 
@@ -254,6 +259,7 @@ Původní žádost: `/apache-mod-rules-redirect/1234`
 ##### <a name="supported-server-variables"></a>Podporované serverových proměnných
 
 Middleware podporuje následující proměnné serveru Apache mod_rewrite:
+
 * CONN_REMOTE_ADDR
 * HTTP_ACCEPT
 * HTTP_CONNECTION
@@ -325,6 +331,7 @@ Pokud máte aktivní přepisování modulu IIS s nakonfigurovaná pravidla úrov
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
 Middleware vydané s ASP.NET Core 2.x nepodporuje následující funkce modul přepisování adres URL služby IIS:
+
 * Odchozí pravidla
 * Vlastní serverové proměnné
 * Zástupné znaky
@@ -333,6 +340,7 @@ Middleware vydané s ASP.NET Core 2.x nepodporuje následující funkce modul p�
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Middleware vydané s ASP.NET Core 1.x nepodporuje následující funkce modul přepisování adres URL služby IIS:
+
 * Globální pravidla
 * Odchozí pravidla
 * Přepište mapy
@@ -347,6 +355,7 @@ Middleware vydané s ASP.NET Core 1.x nepodporuje následující funkce modul p�
 #### <a name="supported-server-variables"></a>Podporované serverových proměnných
 
 Middleware podporuje následující proměnné serveru modul přepisování adres URL služby IIS:
+
 * CONTENT_LENGTH
 * TYP_OBSAHU
 * HTTP_ACCEPT

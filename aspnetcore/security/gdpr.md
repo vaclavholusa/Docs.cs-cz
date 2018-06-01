@@ -10,17 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/gdpr
-ms.openlocfilehash: dc1724e8a78c25d3697d14ad784ce853737681f2
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 92a7000f4f8e4c2097065cb530fe106ef0e98545
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34688624"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>Podpora Evropa obecné Data Protection nařízení (GDPR) v ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Základní technologie ASP.NET poskytuje rozhraní API a šablony, které vám pomůžou splňovat některé [UE obecné Data Protection nařízení (GDPR)](https://www.eugdpr.org/) požadavky:
+Základní technologie ASP.NET poskytuje rozhraní API a šablony, které vám pomůžou splňovat některé [Evropa obecné Data Protection nařízení (GDPR)](https://www.eugdpr.org/) požadavky:
 
 * Šablony projektů zahrnují body rozšíření a provizorní značek, které můžete nahradit zásady používání souborů cookie a osobních údajů.
 * Funkce souhlasu soubor cookie umožňuje požádat o (a sledovat) souhlasu od uživatelů pro ukládání osobní údaje. Pokud uživatel nedala souhlas shromažďování dat a aplikace je nastaven s [CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded?view=aspnetcore-2.1#Microsoft_AspNetCore_Builder_CookiePolicyOptions_CheckConsentNeeded) k `true`, nebude odeslána nepotřebných souborů cookie v prohlížeči.
@@ -38,7 +39,7 @@ Stránky Razor a MVC projekty vytvořené pomocí šablony projektu zahrnují n�
 
 * [CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions?view=aspnetcore-2.0) a [UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_CookiePolicyAppBuilderExtensions_UseCookiePolicy_Microsoft_AspNetCore_Builder_IApplicationBuilder_) se nastavují v `Startup`.
 * *_CookieConsentPartial.cshtml* [částečné zobrazení](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper).
-* *Pages/Privacy.cshtml* nebo *Home/rivacy.cshtml* zobrazení stránky podrobností zásady ochrany osobních údajů pro váš web poskytuje. *_CookieConsentPartial.cshtml* souboru generuje odkaz na stránce o ochraně osobních údajů.
+* *Pages/Privacy.cshtml* nebo *Home/Privacy.cshtml* zobrazení stránky podrobností zásady ochrany osobních údajů pro váš web poskytuje. *_CookieConsentPartial.cshtml* souboru generuje odkaz na stránce o ochraně osobních údajů.
 * Pro aplikace vytvořené s jednotlivých uživatelských účtů, spravovat stránka obsahuje odkazy na stažení a odstranění [osobních uživatelských dat](#pd).
 
 ### <a name="cookiepolicyoptions-and-usecookiepolicy"></a>CookiePolicyOptions a UseCookiePolicy

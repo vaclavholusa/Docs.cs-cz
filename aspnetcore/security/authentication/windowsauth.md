@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: a481951812e3498a1172dea98aaa162149b86f2b
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: dbcef095561fe656bdd28c4fa6560c6b269a2db0
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34689006"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>Konfigurovat ověřování systému Windows v ASP.NET Core
 
@@ -56,7 +57,7 @@ Můžete taky tyto dvě vlastnosti se dá nakonfigurovat v *launchSettings.json*
 
 ## <a name="enable-windows-authentication-with-iis"></a>Povolit ověřování systému Windows pomocí služby IIS
 
-Služba IIS použije [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) do hostitele aplikací ASP.NET Core. V modulu toky ověřování systému Windows do služby IIS ve výchozím nastavení. Ověřování systému Windows je konfigurován ve službě IIS, ne aplikace. Následující části vysvětlují, jak pomocí Správce služby IIS ke konfiguraci aplikace ASP.NET Core pomocí ověřování systému Windows.
+Služba IIS použije [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) do hostitele aplikací ASP.NET Core. Modul umožňuje ověřování systému Windows, které jsou předávány do služby IIS ve výchozím nastavení. Ověřování systému Windows je konfigurován ve službě IIS, ne aplikace. Následující části vysvětlují, jak pomocí Správce služby IIS ke konfiguraci aplikace ASP.NET Core pomocí ověřování systému Windows.
 
 ### <a name="create-a-new-iis-site"></a>Vytvoří nový web služby IIS
 

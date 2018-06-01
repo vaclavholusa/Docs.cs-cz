@@ -12,11 +12,12 @@ ms.technology: aspnet
 ms.topic: get-started-article
 services: multiple
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 0462a4cf18bba23643ed3b1b4e6b76bdbceb24a8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a393e9dc80fdbf646c52342b13e3cda5c725aa93
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34688254"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-command-line-tools"></a>Publikování aplikace ASP.NET Core do Azure pomocí nástroje příkazového řádku
 
@@ -24,13 +25,13 @@ Podle [Soper kamera](https://twitter.com/camsoper)
 
 [!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
-Tento kurz vám ukáže, jak vytvářet a nasazovat aplikaci ASP.NET Core ke službě Microsoft Azure App Service pomocí nástrojů příkazového řádku.  Po dokončení, budete mít webovou aplikaci v ASP.NET MVC Core hostované jako webová aplikace Azure App Service.  V tomto kurzu je zapsána pomocí nástroje příkazového řádku Windows, ale můžete použít a Linux prostředí také systému macOS.  
+Tento kurz vám ukáže, jak vytvářet a nasazovat aplikaci ASP.NET Core do Microsoft Azure App Service pomocí nástrojů příkazového řádku. Po dokončení, budete mít stránky Razor, webové aplikace, které jsou součástí ASP.NET Core hostované jako webová aplikace Azure App Service. V tomto kurzu je zapsána pomocí nástroje příkazového řádku Windows, ale můžete použít a Linux prostředí také systému macOS.
 
-V tomto kurzu zjistíte, jak:
+V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
 > * Vytvoření webu k službě Azure App Service pomocí rozhraní příkazového řádku Azure
-> * Nasazení aplikace ASP.NET Core Azure App Service pomocí nástroje příkazového řádku Git
+> * Nasazení aplikace ASP.NET Core do Azure App Service pomocí nástroje příkazového řádku Git
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -40,41 +41,81 @@ K dokončení tohoto kurzu, budete potřebovat:
 * [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * [Git](https://www.git-scm.com/) klienta příkazového řádku
 
-## <a name="create-a-web-application"></a>Vytvoření webové aplikace
+## <a name="create-a-web-app"></a>Vytvoření webové aplikace
 
-Vytvořte nový adresář pro webovou aplikaci, vytvořte novou aplikaci ASP.NET MVC jádra a poté spuštěn místně na webu.
+Vytvořte nový adresář pro webovou aplikaci, vytvořte novou aplikaci ASP.NET Core Razor stránky a poté spuštěn místně na webu.
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
-```cmd
-REM Create a new ASP.NET Core MVC application
+
+::: moniker range=">= aspnetcore-2.1"
+
+```console
+REM Create a new ASP.NET Core Razor Pages app
+dotnet new webapp -o MyApplication
+
+REM Change to the new directory that was just created
+cd MyApplication
+
+REM Run the app
+dotnet run
+```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+```console
+REM Create a new ASP.NET Core Razor Pages app
 dotnet new razor -o MyApplication
 
 REM Change to the new directory that was just created
 cd MyApplication
 
-REM Run the application
+REM Run the app
 dotnet run
 ```
 
+::: moniker-end
+
 # <a name="othertabother"></a>[Jiné](#tab/other)
+
+::: moniker range=">= aspnetcore-2.1"
+
 ```bash
-# Create a new ASP.NET Core MVC application
+# Create a new ASP.NET Core Razor Pages app
+dotnet new webapp -o MyApplication
+
+# Change to the new directory that was just created
+cd MyApplication
+
+# Run the app
+dotnet run
+```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+```bash
+# Create a new ASP.NET Core Razor Pages app
 dotnet new razor -o MyApplication
 
 # Change to the new directory that was just created
 cd MyApplication
 
-# Run the application
+# Run the app
 dotnet run
 ```
+
+::: moniker-end
+
 ---
 
 ![Výstup příkazového řádku](publish-to-azure-webapp-using-cli/_static/new_prj.png)
 
-Testování aplikace procházením http://localhost:5000.
+Testování aplikací procházením `http://localhost:5000`.
 
 ![Web spuštěn místně](publish-to-azure-webapp-using-cli/_static/app_test.png)
-
 
 ## <a name="create-the-azure-app-service-instance"></a>Vytvoření instance služby Azure App Service
 
@@ -101,14 +142,15 @@ Před nasazením nastavte přihlašovací údaje nasazení úrovni účtu, pomoc
 az webapp deployment user set --user-name <desired user name> --password <desired password>
 ```
 
-Adresa URL nasazení je potřeba k nasazení aplikace pomocí Git.  Získat adresu URL takto.
+Adresa URL nasazení je potřeba k nasazení aplikace pomocí Git. Získat adresu URL takto.
 
 ```azurecli-interactive
 az webapp deployment source config-local-git -n $webappname -g DotNetAzureTutorial --query [url] -o tsv
 ```
+
 Poznámka: na uvedené adrese URL končící na `.git`. Používá se v dalším kroku.
 
-## <a name="deploy-the-application-using-git"></a>Nasazení aplikace pomocí Git
+## <a name="deploy-the-app-using-git"></a>Nasazení aplikace pomocí Git
 
 Jste připraveni k nasazení z místního počítače pomocí Git.
 
@@ -116,6 +158,7 @@ Jste připraveni k nasazení z místního počítače pomocí Git.
 > Je bezpečné ignorovat všechna upozornění z Git o konce řádků.
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
 ```cmd
 REM Initialize the local Git repository
 git init
@@ -134,6 +177,7 @@ git push azure master
 ```
 
 # <a name="othertabother"></a>[Jiné](#tab/other)
+
 ```bash
 # Initialize the local Git repository
 git init
@@ -150,15 +194,16 @@ git remote add azure <THE GIT URL YOU NOTED EARLIER>
 # Push the local repository to the remote
 git push azure master
 ```
+
 ---
 
 Git vyzve k zadání přihlašovacích údajů k nasazení, které byly dříve nastavené. Po ověření, aplikace bude se instaluje do vzdáleného umístění, vytvořené a nasazené.
 
 ![Výstup nasazení Git](publish-to-azure-webapp-using-cli/_static/post_deploy.png)
 
-## <a name="test-the-application"></a>Testování aplikace
+## <a name="test-the-app"></a>Testování aplikace
 
-Testování aplikace procházením `https://<web app name>.azurewebsites.net`.  Chcete-li zobrazit adresu v prostředí cloudu (nebo Azure CLI), použijte následující:
+Testování aplikací procházením `https://<web app name>.azurewebsites.net`. Chcete-li zobrazit adresu v prostředí cloudu (nebo Azure CLI), použijte následující:
 
 ```azurecli-interactive
 az webapp show -n $webappname -g DotNetAzureTutorial --query defaultHostName -o tsv
@@ -180,7 +225,7 @@ V tomto kurzu jste se dozvěděli, jak:
 
 > [!div class="checklist"]
 > * Vytvoření webu k službě Azure App Service pomocí rozhraní příkazového řádku Azure
-> * Nasazení aplikace ASP.NET Core Azure App Service pomocí nástroje příkazového řádku Git
+> * Nasazení aplikace ASP.NET Core do Azure App Service pomocí nástroje příkazového řádku Git
 
 Dále se naučíte, jak nasadit webovou aplikaci, která používá CosmosDB pomocí příkazového řádku.
 

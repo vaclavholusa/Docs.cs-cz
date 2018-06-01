@@ -10,17 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: advanced
 uid: mvc/razor-pages/ui-class
-ms.openlocfilehash: 44091ab8ab5d69a5975e191fd00fca1d1d957238
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: b6658186adf5ccd74e1d0f0e925627f50bad250c
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34687548"
 ---
 # <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>Vytvořte opakovaně použitelné uživatelské rozhraní v projektu knihovny tříd Razor ASP.NET Core.
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Zobrazení syntaxe Razor, stránky, řadiče, modely stránky a datové modely se dají vytvářet do knihovny tříd Razor (RCL). RCL můžete zabalené a znovu použít. Aplikace může obsahovat RCL a přepsání, zobrazení a stránky, které obsahuje. Když najde zobrazení, částečná zobrazení nebo stránky Razor ve webové aplikaci a RCL, kód Razor (*.cshtml* souboru) ve webové aplikaci, dostane přednost.
+Zobrazení syntaxe Razor, stránky, řadiče, stránka modely [zobrazení součásti](xref:mvc/views/view-components), a datové modely jde integrovat přímo do knihovny tříd Razor (RCL). RCL můžete zabalené a znovu použít. Aplikace může obsahovat RCL a přepsání, zobrazení a stránky, které obsahuje. Když najde zobrazení, částečná zobrazení nebo stránky Razor ve webové aplikaci a RCL, kód Razor (*.cshtml* souboru) ve webové aplikaci, dostane přednost.
 
 Tato funkce vyžaduje [!INCLUDE[](~/includes/2.1-SDK.md)]
 
@@ -188,8 +189,8 @@ Spusťte aplikaci.
 
 Vytvoření stránky Razor webové aplikace a řešení obsahující stránky Razor aplikace a knihovny tříd Razor:
 
-``` CLI
-dotnet new razor -o WebApp1
+```console
+dotnet new webapp -o WebApp1
 dotnet new sln
 dotnet sln add WebApp1
 dotnet sln add RazorUIClassLib
@@ -198,12 +199,12 @@ dotnet add WebApp1 reference RazorUIClassLib
 
 Sestavení a spuštění webové aplikace:
 
-``` CLI
+```console
 cd WebApp1
 dotnet run
 ```
 
-------
+---
 
 <a name="test"></a>
 

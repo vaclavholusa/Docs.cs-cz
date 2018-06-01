@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 6190c6dd958c62299aea89db398e691c1650af02
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: b00d709f3009f63431becf24797269ad5988a20b
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34688371"
 ---
 # <a name="work-with-sql-server-localdb-in-aspnet-core"></a>Práce s LocalDB serveru SQL v ASP.NET Core
 
@@ -21,7 +22,12 @@ podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 `MvcMovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi. Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Startup.cs?name=ConfigureServices&highlight=13-99)]
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+::: moniker-end
 
 ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čtení `ConnectionString`. Pro místní vývoj, získá připojovací řetězec z *appSettings.JSON určený* souboru:
 
@@ -69,6 +75,11 @@ if (context.Movie.Any())
 <a name="si"></a>
 ### <a name="add-the-seed-initializer"></a>Přidat inicializátoru počáteční hodnoty
 
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Program.cs)]
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 
 Přidat inicializátoru počáteční hodnoty do `Main` metoda v *Program.cs* souboru:
@@ -82,6 +93,7 @@ Přidejte na konec inicializátoru počáteční hodnoty `Configure` metoda v *S
 [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?highlight=9&name=snippet_seed)]
 
 ---
+::: moniker-end
 
 Testování aplikace
 

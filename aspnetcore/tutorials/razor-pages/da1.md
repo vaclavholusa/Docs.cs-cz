@@ -5,16 +5,17 @@ description: Zjistěte, jak aktualizovat generovaného stránky v aplikaci ASP.N
 manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 08/07/2017
+ms.date: 5/30/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: 5c188799b7a42bcd5e9d5eab8dfe8cdad8002fe5
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: e36982f2b14ec65feb6be0c7f9e942c7a3c9e9ca
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34688425"
 ---
 # <a name="update-the-generated-pages-in-an-aspnet-core-app"></a>Aktualizovat generovaného stránky v aplikaci ASP.NET Core
 
@@ -28,9 +29,15 @@ Máme správné spuštění na filmová aplikace, ale není ideální prezentaci
 
 Otevřete *Models/Movie.cs* souboru a přidejte následující kód ukazuje zvýrazněné řádky:
 
-[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDate.cs?name=snippet_1&highlight=10-11)]
+::: moniker range="= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/MovieDate.cs?name=snippet_1&highlight=10-11)]
+::: moniker-end
 
-Klikněte pravým tlačítkem na červenou vlnovkou řádku > ** rychlé akce a refaktoring **.
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/MovieDate.cs?name=snippet_1&highlight=10-11,15)]
+::: moniker-end
+
+Klikněte pravým tlačítkem na červenou vlnovkou řádku > **rychlé akce a refaktoring**.
 
   ![Kontextové nabídky ukazuje ** > rychlé akce a refaktoring **.](da1/qa.png)
 
@@ -40,7 +47,7 @@ Vyberte `using System.ComponentModel.DataAnnotations;`
 
   Visual studio. přidá `using System.ComponentModel.DataAnnotations;`.
 
-[!INCLUDE [model1](../../includes/RP/da2.md)]
+[!INCLUDE [model1](~/includes/RP/da2.md)]
 
 > [!div class="step-by-step"]
 > [Předchozí: Práce s SQL Server LocalDB](xref:tutorials/razor-pages/sql)

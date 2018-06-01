@@ -9,27 +9,40 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 4204d4e2d474db51692d42751a9f82373e9f0c0d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 802cb458cb05579b97256022b56d6f97a03d2f1a
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34687789"
 ---
 # <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>Přidat model do aplikace ASP.NET MVC jádra
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
-
-Poznámka: Šablony ASP.NET 2.0 základní obsahují *modely* složky.
+[!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model1.md)]
 
 Klikněte pravým tlačítkem myši *modely* složky > **přidat** > **třída**. Název třídy **film** a přidejte následující vlastnosti:
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 `ID` Pole je vyžadováno pro databázi pro primární klíč. 
 
 Sestavte projekt a ověřte, že nemáte žádné chyby. Nyní máte **M**odelu ve vaší **M**VC aplikace.
 
 ## <a name="scaffolding-a-controller"></a>Řadič generování uživatelského rozhraní
+
+::: moniker range=">= aspnetcore-2.1"
+
+V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *řadiče* složky **> Přidat > novou vygenerovanou položku**.
+
+![zobrazení výše krok](adding-model/_static/add_controller21.png)
+
+V **přidat vygenerované uživatelské rozhraní** dialogové okno, klepněte na **kontroler MVC se zobrazeními s využitím nástroje Entity Framework > Přidat**.
+
+![Přidat vygenerované uživatelské rozhraní – dialogové okno](adding-model/_static/add_scaffold21.png)
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
 
 V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *řadiče* složky **> Přidat > řadiče**.
 
@@ -43,6 +56,8 @@ Pokud **přidat závislosti MVC** otevře se dialogové okno:
 V **přidat vygenerované uživatelské rozhraní** dialogové okno, klepněte na **kontroler MVC se zobrazeními s využitím nástroje Entity Framework > Přidat**.
 
 ![Přidat vygenerované uživatelské rozhraní – dialogové okno](adding-model/_static/add_scaffold2.png)
+
+::: moniker-end
 
 Dokončení **přidat kontroler** dialogové okno:
 
@@ -67,7 +82,7 @@ Automatické vytváření kontext databáze a [CRUD](https://wikipedia.org/wiki/
 
 Pokud spustíte aplikaci a klikněte na **Mvc film** odkaz, dojde k chybě podobný následujícímu:
 
-```
+``` error
 An unhandled exception occurred while processing the request.
 
 SqlException: Cannot open database "MvcMovieContext-<GUID removed>" requested by the login. The login failed.
@@ -93,6 +108,20 @@ Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet > Konzola 
 
 Pomocí PMC zadejte následující příkazy:
 
+::: moniker range=">= aspnetcore-2.1"
+``` PMC
+Add-Migration Initial
+Update-Database
+```
+
+Ignorovat se následující chybová zpráva, jsme opravte v dalším kurzu:
+
+*Microsoft.EntityFrameworkCore.Model.Validation[30000]*  
+      *Žádný typ byla zadána decimal sloupce "Cenou" u typu entity, film'. To způsobí, že hodnoty, které mají být bezobslužně zkrácen, pokud jejich se nevejdou do výchozí přesnost a měřítko. Explicitně zadáte typ sloupce serveru SQL, který zvládne všechny hodnoty pomocí 'ForHasColumnType()'.*
+
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+
 ``` PMC
 Install-Package Microsoft.EntityFrameworkCore.Tools
 Add-Migration Initial
@@ -100,6 +129,8 @@ Update-Database
 ```
 
 **Poznámka:** Pokud obdržíte chybu s `Install-Package` příkaz, otevřete Správce balíčků NuGet a vyhledejte `Microsoft.EntityFrameworkCore.Tools` balíčku. To vám umožňuje nainstalovat balíček nebo zkontrolujte, zda je již nainstalován. Můžete si také přečíst [rozhraní příkazového řádku přístup](#cli) Pokud máte problémy s pomocí PMC.
+
+::: moniker-end
 
 `Add-Migration` Příkaz vytvoří kód k vytvoření schématu počáteční databáze. Schéma je založena na zadaný ve model `DbContext`(v *Data/MvcMovieContext.cs* souboru). `Initial` Argument se používá k pojmenování byla migrace. Můžete použít libovolný název, ale podle konvence zvolte název, který popisuje migraci. V tématu [Úvod do migrace](xref:data/ef-mvc/migrations#introduction-to-migrations) Další informace.
 
@@ -113,23 +144,28 @@ Update-Database
   ```console
   dotnet ef migrations add Initial
   dotnet ef database update
-  ```     
-  
+  ```
+
   Pokud spustíte aplikaci a zobrazí chybová zpráva:
-  
+
   ```text
   SqlException: Cannot open database "Movie" requested by the login.
   The login failed.
   Login failed for user 'user name'.
   ```
 
-Pravděpodobně nebyl spuštěn ` dotnet ef database update`.
-  
-[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
+Pravděpodobně nebyl spuštěn `dotnet ef database update`.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+[!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model3.md)]
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model4.md)]
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Startup.cs?name=ConfigureServices&highlight=13-99)]
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+::: moniker-end
+
+[!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model4.md)]
 
 ![Kontextové nabídky IntelliSense pro položku modelu, seznam dostupných vlastností pro ID, ceny, datum vydání a název](adding-model/_static/ints.png)
 

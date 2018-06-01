@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 9cd14a47a512c2a887614e617dd914dbdb25cb9d
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 019224e86f1f5583ce0f212d8be70e8829274c7e
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34688429"
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
 
@@ -39,7 +40,7 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
 * [Začínáme s technologiemi ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](xref:data/ef-mvc/index)
 * [Vytváření pomocných rutin značek](xref:mvc/views/tag-helpers/authoring)
 * [Vytvoření jednoduchého zobrazení komponenty](xref:mvc/views/view-components#walkthrough-creating-a-simple-view-component)
-* [Vývoj aplikací ASP.NET Core sledovat dotnet.](xref:tutorials/dotnet-watch)
+* [Vývoj aplikací sledovacích procesů souboru](xref:tutorials/dotnet-watch)
 
 ## <a name="build-web-apis"></a>Vytvoření rozhraní Web API
 * Vytvoření webové rozhraní API pomocí ASP.NET Core
@@ -49,13 +50,13 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
   * [Web API s editorem Visual Studio Code](xref:tutorials/web-api-vsc)
 
 * [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](xref:tutorials/web-api-help-pages-using-swagger)
-  * [Začínáme s NSwag](xref:tutorials/get-started-with-nswag)
-  * [Začínáme s Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
+  * [Začínáme se službou NSwag](xref:tutorials/get-started-with-nswag)
+  * [Začínáme se službou Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
 
 * [Vytvoření back-endu webové služby pro nativní mobilní aplikace](xref:mobile/native-mobile-backend)
 
 ## <a name="data-access-and-storage"></a>Přístup k datům a úložiště
-* [Začínáme s stránky Razor a základní EF pomocí sady Visual Studio](xref:data/ef-rp/intro)
+* [Začínáme s Razor Pages a EF Core pomocí sady Visual Studio](xref:data/ef-rp/intro)
 * [Začínáme s ASP.NET MVC jádra a základní EF pomocí sady Visual Studio](xref:data/ef-mvc/index)
 * [Jádro ASP.NET MVC s EF Core - novou databázi](/ef/core/get-started/aspnetcore/new-db)
 * [Jádro ASP.NET MVC s EF Core - existující databázi](/ef/core/get-started/aspnetcore/existing-db)

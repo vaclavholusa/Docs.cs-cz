@@ -1,12 +1,23 @@
+::: moniker range=">= aspnetcore-2.1"
+Klikněte pravým tlačítkem na červenou vlnovkou řádku > **rychlé akce a refaktoring** na `[Column]` atribute a vyberte `using System.ComponentModel.DataAnnotations.Schema;`
+
+`[Column(TypeName = "decimal(18, 2)")]` Datové poznámky se vyžaduje, takže můžete Entity Framework Core správně namapovat `Price` měnu v databázi. Další informace najdete v tématu [datové typy](/ef/core/modeling/relational/data-types).
+
+Dokončené modelu:
+
+[!code-csharp[Main](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateFixed.cs?name=snippet_1)]
+
+::: moniker-end
+
 Budeme se zabývat těmito tématy [DataAnnotations](/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) v dalším kurzu. [Zobrazit](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.metadata.displaymetadata) atribut určuje, co má být zobrazen pro název pole (v tomto případě "Datum vydání" místo "ReleaseDate"). [Datový typ](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.internal.datatypeattributeadapter) atribut určuje typ dat (datum), a proto není zobrazit čas informace uložené v poli.
 
 Přejděte na stránkách nebo filmy a najeďte myší **upravit** odkaz zobrazíte cílová adresa URL.
 
-![Okno prohlížeče s myši přes odkaz pro úpravy a odkaz Url http://localhost:1234/Movies/Edit/5 se zobrazí](../../tutorials/razor-pages/da1/edit7.png)
+![Okno prohlížeče s myši přes odkaz pro úpravy a odkaz Url http://localhost:1234/Movies/Edit/5 se zobrazí](~/tutorials/razor-pages/da1/edit7.png)
 
 **Upravit**, **podrobnosti**, a **odstranit** generované odkazy [pomocná značka ukotvení](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) v *stránkách nebo filmy nebo Index.cshtml* souboru.
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
 
 [Pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) umožňují, aby se kód na straně serveru v souborech Razor podílel na vytváření a vykreslování prvků HTML. V předchozí kód `AnchorTagHelper` dynamicky vygeneruje HTML `href` hodnotu atributu ze stránky Razor (trasy, která je relativní), `asp-page`a id trasy (`asp-route-id`). V tématu [generování adresy URL pro stránky](xref:mvc/razor-pages/index#url-generation-for-pages) Další informace.
 
@@ -38,11 +49,13 @@ Požadavek na stránku s šablonou cesty "{id: int}", která nemá **není** zah
 @page "{id:int?}"
 ```
 
+::: moniker range="= aspnetcore-2.0"
+
 ### <a name="update-concurrency-exception-handling"></a>Aktualizace souběžného zpracování výjimek
 
 Aktualizace `OnPostAsync` metoda v *Pages/Movies/Edit.cshtml.cs* souboru. Následující zvýrazněný kód ukazuje změny:
 
-[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet1&highlight=16-23)]
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet1&highlight=16-23)]
 
 Při první souběžných klientských odstraní film a druhý souběžných klientských odešle změny na film, předchozí kód zjišťuje pouze výjimky souběžnosti.
 
@@ -55,9 +68,21 @@ K testování `catch` bloku:
 
 Produkčním kódu by obvykle zjistit konfliktů souběžnosti Pokud dvě nebo víc klientů současně aktualizovat záznam. V tématu [zpracování konfliktů souběžnosti](xref:data/ef-rp/concurrency) Další informace.
 
+::: moniker-end
+
 ### <a name="posting-and-binding-review"></a>Publikování a vazbu zkontrolujte
 
-Zkontrolujte *Pages/Movies/Edit.cshtml.cs* souboru: [!code-csharp[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
+Zkontrolujte *Pages/Movies/Edit.cshtml.cs* souboru:
+
+::: moniker range="= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit21.cshtml.cs?name=snippet2)]
+
+::: moniker-end
 
 Když se provádí požadavek HTTP GET na stránku filmy či upravit (například `http://localhost:5000/Movies/Edit/2`):
 

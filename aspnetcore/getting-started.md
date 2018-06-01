@@ -10,15 +10,47 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: getting-started
-ms.openlocfilehash: e814277663ff5a964171a71ebb6e0f094e0ddc60
-ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
+ms.openlocfilehash: 1b4d765c08c67a65a8752e7f650d4e61ec0d2fbf
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34687454"
 ---
 # <a name="get-started-with-aspnet-core"></a>Začínáme s ASP.NET Core
 
-::: moniker range=">= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.1"
+
+1. Nainstalujte [!INCLUDE [](~/includes/2.1-SDK.md)].
+
+2. Vytvoření nového projektu .NET Core.
+
+   V systému macOS a Linux otevřete okno terminálu. V systému Windows otevřete příkazový řádek. Zadejte následující příkaz:
+
+    ```terminal
+    dotnet new webapp -o aspnetcoreapp
+    ```
+
+3. Spusťte aplikaci pomocí následujících příkazů:
+
+    ```terminal
+    cd aspnetcoreapp
+    dotnet run
+    ```
+
+4. Přejděte do [ http://localhost:5000 ](http://localhost:5000).
+
+5. Otevřete *Pages/About.cshtml* a upravte stránku a zobrazí se zpráva "Hello, world! Je čas na serveru @DateTime.Now":
+
+    [!code-cshtml[](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
+
+6. Přejděte do [ http://localhost:5000/About ](http://localhost:5000/About) a ověřit změny.
+
+[!INCLUDE[next steps](~/includes/getting-started/next-steps.md)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 1. Nainstalujte [!INCLUDE [](~/includes/net-core-sdk-download-link.md)].
 
@@ -46,6 +78,7 @@ ms.lasthandoff: 05/10/2018
 6. Přejděte do [ http://localhost:5000/About ](http://localhost:5000/About) a ověřit změny.
 
 [!INCLUDE[next steps](~/includes/getting-started/next-steps.md)]
+
 ::: moniker-end
 
 ::: moniker range="<= aspnetcore-1.1"

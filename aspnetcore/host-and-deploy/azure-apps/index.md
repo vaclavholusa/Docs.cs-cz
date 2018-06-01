@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 9e438cef9db61e725b5385da53e8aa2b407218c3
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 4cf81a3e269500a5108f280348fbddd172df10a0
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34687500"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Jádro ASP.NET hostitele v Azure App Service
 
@@ -103,25 +104,29 @@ Pokud dojde k potížím s pomocí rozšíření lokality preview, otevřete pro
 
 ### <a name="install-the-preview-site-extension"></a>Nainstalujte rozšíření lokality preview
 
-* Z portálu Azure přejděte do okna služby App Service.
-* Do vyhledávacího pole zadejte "ex".
-* Vyberte **rozšíření**.
-* Vyberte možnost "Přidat".
+1. Z portálu Azure přejděte do okna služby App Service.
+1. Vyberte webovou aplikaci.
+1. Do vyhledávacího pole zadejte "ex" nebo přejděte dolů v seznamu správy podokna na **nástroje pro vývoj**.
+1. Vyberte **nástroje pro vývoj** > **rozšíření**.
+1. Vyberte **přidat**.
 
-![Azure okně aplikace s předchozích krocích](index/_static/x1.png)
+   ![Azure okně aplikace s předchozích krocích](index/_static/x1.png)
 
-* Vyberte **Runtime ASP.NET Core 2.1 (x 86)** nebo **Runtime ASP.NET Core 2.1 (x 64)**.
-* Vyberte **OK**. Vyberte **OK** znovu.
+1. Vyberte **rozšíření ASP.NET Core**.
+1. Vyberte **OK** přijměte právní podmínky.
+1. Vyberte **OK** k instalaci rozšíření.
 
-Po dokončení operací přidání, je nainstalována nejnovější verze preview .NET Core 2.1. Ověření instalace spuštěním `dotnet --info` v konzole. Z **služby App Service** okno:
+Po dokončení operací přidání, je nainstalována nejnovější verze preview .NET Core. Ověření instalace spuštěním `dotnet --info` v konzole. Z **služby App Service** okno:
 
-* Zadejte "con" do vyhledávacího pole.
-* Vyberte **konzoly**.
-* Zadejte `dotnet --info` v konzole.
+1. Zadejte "con" v poli vyhledávání nebo přejděte dolů v seznamu správy podokna na **nástroje pro vývoj**.
+1. Vyberte **nástroje pro vývoj** > **konzoly**.
+1. Zadejte `dotnet --info` v konzole.
+
+Pokud verze `2.1.300-preview1-008174` je na nejnovější verzi preview je následující výstup získaném spuštěním `dotnet --info` na příkazovém řádku:
 
 ![Azure okně aplikace s předchozích krocích](index/_static/cons.png)
 
-Předchozí obrázek byl aktuální v době, kdy to byla zapsána. Může se zobrazit různé verze.
+Verzi ASP.NET Core viz předchozí obrázek `2.1.300-preview1-008174`, je příklad. Nejnovější verzi preview ASP.NET Core během rozšíření lokality je nakonfigurovaný se zobrazí, když spustíte `dotnet --info`.
 
 `dotnet --info` Zobrazí cestu k rozšíření webu, na kterém je nainstalovaný ve verzi Preview. Zobrazuje aplikace běží z rozšíření webu místo výchozího *ProgramFiles* umístění. Pokud se zobrazí *ProgramFiles*, restartujte lokalitu a spustit `dotnet --info`.
 
@@ -142,7 +147,7 @@ Samostatný aplikace jsou možnost u všech aplikací ASP.NET Core.
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>Pomocí Docker s webovými aplikacemi pro kontejnery
 
-[Úložiště Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/) obsahuje nejnovější imagí Dockeru 2.1 preview. Bitové kopie slouží jako základní bitová kopie. Použít bitovou kopii a nasazení do webové aplikace pro kontejnery normálně.
+[Úložiště Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/) obsahuje nejnovější verzi preview imagí Dockeru. Bitové kopie slouží jako základní bitová kopie. Použít bitovou kopii a nasazení do webové aplikace pro kontejnery normálně.
 
 ## <a name="additional-resources"></a>Další zdroje
 

@@ -1,21 +1,21 @@
 <!--
-[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_1stSearch)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_1stSearch)]
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchNull)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchNull)]
 
-![Index view](../../tutorials/first-mvc-app/search/_static/ghost.png)
+![Index view](~/tutorials/first-mvc-app/search/_static/ghost.png)
 
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?highlight=5&name=snippet_1)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?highlight=5&name=snippet_1)]
 
 --> 
 
 Teď při odesílání vyhledávání, adresa URL obsahuje řetězec dotazu. Hledání budou také moct `HttpGet Index` metody akce, i když máte `HttpPost Index` metoda.
 
-![Okno prohlížeče zobrazující hledaný_řetězec = neodstraněných adresu Url a vrátí, filmy Ghostbusters a Ghostbusters 2, obsahovat neodstraněných aplikace word](../../tutorials/first-mvc-app/search/_static/search_get.png)
+![Okno prohlížeče zobrazující hledaný_řetězec = neodstraněných adresu Url a vrátí, filmy Ghostbusters a Ghostbusters 2, obsahovat neodstraněných aplikace word](~/tutorials/first-mvc-app/search/_static/search_get.png)
 
 Následující kód ukazuje změnu `form` značky:
 
@@ -27,7 +27,7 @@ Následující kód ukazuje změnu `form` značky:
 
 Přidejte následující `MovieGenreViewModel` třídy k *modely* složky:
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieGenreViewModel.cs)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieGenreViewModel.cs)]
 
 Model film genre zobrazení bude obsahovat:
 
@@ -37,11 +37,11 @@ Model film genre zobrazení bude obsahovat:
 
 Nahraďte `Index` metoda v `MoviesController.cs` následujícím kódem:
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchGenre)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchGenre)]
 
 Následující kód je `LINQ` dotaz, který načte všechny žánry z databáze.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_LINQ)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_LINQ)]
 
 `SelectList` z žánry vytvoří projekce odlišné žánry (jsme nechcete, aby naše seznamu výběru tak, aby měl duplicitní žánry).
 
@@ -53,7 +53,7 @@ movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync())
 
 Aktualizace `Index.cshtml` následujícím způsobem:
 
-[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexFormGenreNoRating.cshtml?highlight=1,15,16,17,28,31,34,37,43)]
+[!code-HTML[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexFormGenreNoRating.cshtml?highlight=1,15,16,17,28,31,34,37,43)]
 
 Zkontrolujte výrazu lambda použít v následujících pomocné rutiny HTML:
 

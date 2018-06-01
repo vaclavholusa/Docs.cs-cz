@@ -16,7 +16,12 @@ Otevřete *Movie.cs* souboru. DataAnnotations poskytuje integrovanou sadu atribu
 
 Aktualizace `Movie` třída využít předdefinované `Required`, `StringLength`, `RegularExpression`, a `Range` atributů ověření.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc//sample/MvcMovie21/Models/MovieDateRatingDA.cs?name=snippet1)]
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
+::: moniker-end
 
 Atributy ověření zadejte chování, které chcete vynutit ve vlastnostech modelu, který jste použili na. `Required` a `MinimumLength` atributy znamená, že vlastnost musí mít hodnotu; ale nic zabrání zadat mezer splňovat toto ověření uživatele. `RegularExpression` Atribut se používá k omezení znaků, může být vstup. Ve výše, kódu `Genre` a `Rating` musí používat pouze písmena (bílé místo, číslice a speciální znaky nejsou povoleny). `Range` Atribut omezuje hodnota v zadaném rozsahu. `StringLength` Atribut umožňuje nastavit maximální délka ve vlastnosti string a volitelně jeho minimální délka. Typů hodnot (například `decimal`, `int`, `float`, `DateTime`) jsou ze své podstaty potřeba a nepotřebujete `[Required]` atribut.
 
@@ -28,7 +33,7 @@ Spusťte aplikaci a přejděte na filmy kontroleru.
 
 Klepněte **vytvořit nový** odkaz na přidání nové videa. Vyplňte formulář s některé neplatné hodnoty. Jakmile jQuery ověřování na straně klienta zjistí chybu, zobrazí chybovou zprávu.
 
-![Film zobrazit formulář s více chyby ověření klienta straně jQuery](../../tutorials/first-mvc-app/validation/_static/val.png)
+![Film zobrazit formulář s více chyby ověření klienta straně jQuery](~/tutorials/first-mvc-app/validation/_static/val.png)
 
 > [!NOTE]
 > Nemusí být možné je zadat desetinné čárky ve `Price` pole. Pro podporu [k ověřování jQuery](https://jqueryvalidation.org/) pro neanglická národní prostředí, které používají čárkou (",") pro desetinné čárky a formát data neanglických USA, musíte provést kroky globalizace aplikace. To [potíže Githubu 4076](https://github.com/aspnet/Docs/issues/4076#issuecomment-326590420) postup pro přidání desetinnou čárkou. 
@@ -43,7 +48,7 @@ Data formuláře není odesílat na server, dokud nejsou žádné chyby ověřen
 
 Může vás zajímat, jak byl vygenerován ověření uživatelské rozhraní bez jakýchkoli aktualizací kód v kontroleru nebo zobrazení. Následující kód ukazuje dva `Create` metody.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Controllers/MoviesController.cs?name=snippetCreate)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Controllers/MoviesController.cs?name=snippetCreate)]
 
 První (HTTP GET) `Create` metoda akce zobrazí počáteční vytvořit formulář. Druhý (`[HttpPost]`) verze zpracovává post formuláře. Druhý `Create` – metoda ( `[HttpPost]` verze) volání `ModelState.IsValid` zkontrolujte, zda video má všechny chyby ověření. Voláním této metody vyhodnotí všechny atributy ověřování, které byly použity k objektu. Pokud objekt má chyby ověření, `Create` metoda znovu zobrazí formulář. Pokud nejsou žádné chyby, metoda nové film uloží v databázi. V našem příkladu film formuláře není odeslána na server po ověření chyb zjištěných na straně klienta; druhý `Create` metoda je volána nikdy, když jsou chyby ověření straně klienta. Pokud zakážete JavaScript v prohlížeči, ověření klienta je zakázán a můžete otestovat HTTP POST `Create` metoda `ModelState.IsValid` zjišťování všechny chyby ověření.
 
@@ -51,19 +56,19 @@ Můžete nastavit bod přerušení v `[HttpPost] Create` metoda a ověřte nikdy
 
 Následující obrázek ukazuje, jak zakázat JavaScript v prohlížeči FireFox.
 
-![Firefox:, Zrušte zaškrtnutí políčka Povolit Javascript na kartě Možnosti v obsahu.](../../tutorials/first-mvc-app/validation/_static/ff.png)
+![Firefox:, Zrušte zaškrtnutí políčka Povolit Javascript na kartě Možnosti v obsahu.](~/tutorials/first-mvc-app/validation/_static/ff.png)
 
 Následující obrázek ukazuje, jak zakázat JavaScript v prohlížeči Chrome.
 
-![Google Chrome: Část v Javascript v nastavení obsahu a vyberte zakázat libovolnou lokalitu spouštět JavaScript.](../../tutorials/first-mvc-app/validation/_static/chrome.png)
+![Google Chrome: Část v Javascript v nastavení obsahu a vyberte zakázat libovolnou lokalitu spouštět JavaScript.](~/tutorials/first-mvc-app/validation/_static/chrome.png)
 
 Po zakázání JavaScript post neplatná data a projděte ladicího programu.
 
-![Při ladění na post neplatných dat, Intellisense v ModelState.IsValid ukazuje, že je hodnota false.](../../tutorials/first-mvc-app/validation/_static/ms.png)
+![Při ladění na post neplatných dat, Intellisense v ModelState.IsValid ukazuje, že je hodnota false.](~/tutorials/first-mvc-app/validation/_static/ms.png)
 
 Níže uvádíme část *Create.cshtml* zobrazit šablonu, která vygeneroval dříve v tomto kurzu. Použije se uvedené výše obě metody akce k zobrazení původního formuláře a znovu ji zobrazit v případě chyby.
 
-[!code-HTML[](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Views/Movies/CreateRatingBrevity.cshtml)]
+[!code-HTML[](~/tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Views/Movies/CreateRatingBrevity.cshtml)]
 
 [Vstupní značka pomocná](xref:mvc/views/working-with-forms) používá [DataAnnotations](/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) atributů a atributů HTML, které jsou potřebné pro architekturu jQuery ověření na straně klienta vytváří. [Pomocná rutina pro ověření značky](xref:mvc/views/working-with-forms#the-validation-tag-helpers) zobrazí chyby ověření. V tématu [ověření](xref:mvc/models/validation) Další informace.
 
@@ -75,7 +80,7 @@ Pokud potřebujete změnit logiku ověření, můžete tak učinit na jednom mí
 
 Otevřete *Movie.cs* soubor a zkontrolujte `Movie` třídy. `System.ComponentModel.DataAnnotations` Obor názvů poskytuje atributy formátování kromě integrovanou sadu atributů ověření. Provedli jsme již `DataType` Výčtová hodnota, datum vydání a pole cena. Následující kód ukazuje `ReleaseDate` a `Price` vlastnosti s příslušnou `DataType` atribut.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?highlight=2,6&name=snippet2)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?highlight=2,6&name=snippet2)]
 
 `DataType` Atributy pouze poskytovat pro modul zobrazení pro zobrazení dat (a poskytuje elementy nebo atributy, jako `<a>` pro adresy URL a `<a href="mailto:EmailAddress.com">` e-mailu. Můžete použít `RegularExpression` atribut pro ověření formátu dat. `DataType` Atribut slouží k určení datový typ, který je specifičtější než vnitřní typ databáze, že nejste atributů ověření. V tomto případě chceme jenom udržování přehledu o datum, není čas. `DataType` Výčtu poskytuje pro mnoho typů dat, jako je například datum, čas, telefonní číslo, měny, EmailAddress a další. `DataType` Atributu můžete také povolit aplikace automaticky poskytnout konkrétní typ funkce. Například `mailto:` může vytvořit odkaz pro `DataType.EmailAddress`, a datum selektor lze zadat pro `DataType.Date` v prohlížečích podporujících HTML5. `DataType` Atributy vysílá standardu HTML 5 `data-` (výrazný data dash) atributy, které můžete porozumět standardu HTML 5 prohlížeče. `DataType` Atributy provést **není** žádné ověřování.
 
@@ -109,7 +114,14 @@ Budete muset zakázat ověřování jQuery datum používat `Range` atribut s `D
 
 Následující kód ukazuje kombinování atributy na jeden řádek:
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc//sample/MvcMovie21/Models/MovieDateRatingDAmult.cs?name=snippet1)]
+
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
+
+::: moniker-end
 
 V další části řady, jsme budete zkontrolujte, zda aplikace a některá vylepšení pro automaticky generované `Details` a `Delete` metody.
 

@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/razor-pages/razor-pages-conventions
-ms.openlocfilehash: 15bb0687ffef777b82ea9374fdc3b92f3af7818b
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: eba3422fbf46ac181a783b7f8cc605c2a549b4b7
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729740"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>Konvence trasy a aplikaci stránky Razor v ASP.NET Core
 
@@ -104,8 +105,6 @@ Požadavek vzorku o stránku v `localhost:5000/About` a zkontrolovat hlavičky z
 
 ::: moniker range=">= aspnetcore-2.1"
 **Přidat na všechny stránky modelu konvencí obslužné rutiny**
-
-
 
 Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageHandlerModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipagehandlermodelconvention) do kolekce [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se používají při model obslužná rutina stránky konstrukce.
 
@@ -342,6 +341,6 @@ MVC [filtrů Akce](xref:mvc/controllers/filters#action-filters) ignorují pomoc�
 
 Filtr stránek ([IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter)) je filtr, který se vztahuje na stránky Razor. Další informace najdete v tématu [filtrovat metody pro stránky Razor](xref:mvc/razor-pages/filter).
 
-## <a name="see-also"></a>Viz také
+## <a name="additional-resources"></a>Další zdroje
 
 * [Konvence autorizace stránky Razor](xref:security/authorization/razor-pages-authorization)

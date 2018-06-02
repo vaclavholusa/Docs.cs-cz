@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 651d47ce20f3269340f0796f487e2f1a2a155710
-ms.sourcegitcommit: 0063338c2e130409081bb60fcffa0c3f190cd46a
+ms.openlocfilehash: c8611ef9218711410cde9e142202fa25c3e51862
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729455"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -40,17 +41,47 @@ V tématu [začít pracovat s stránky Razor](xref:tutorials/razor-pages/razor-p
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
+::: moniker range=">= aspnetcore-2.1"
+
+Spustit `dotnet new webapp` z příkazového řádku.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 Spustit `dotnet new razor` z příkazového řádku.
+
+::: moniker-end
 
 Otevřete vygenerovaného *.csproj* soubor ze sady Visual Studio for Mac.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code) 
 
+::: moniker range=">= aspnetcore-2.1"
+
+Spustit `dotnet new webapp` z příkazového řádku.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 Spustit `dotnet new razor` z příkazového řádku.
+
+::: moniker-end
 
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli) 
 
+::: moniker range=">= aspnetcore-2.1"
+
+Spustit `dotnet new webapp` z příkazového řádku.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 Spustit `dotnet new razor` z příkazového řádku.
+
+::: moniker-end
 
 ---
 
@@ -116,7 +147,7 @@ Kontext databáze:
 
 Podle konvence `PageModel` třídy se nazývá `<PageName>Model` a je v stejného oboru názvů jako stránky.
 
-`PageModel` Třída umožňuje oddělení logiku stránky od jeho prezentaci. Definuje stránky obslužné rutiny pro požadavky odeslané na stránku a data použitá k vykreslení stránky. Toto oddělení vám umožní spravovat stránky závislosti prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection) a [testování částí](xref:testing/razor-pages-testing) stránky.
+`PageModel` Třída umožňuje oddělení logiku stránky od jeho prezentaci. Definuje stránky obslužné rutiny pro požadavky odeslané na stránku a data použitá k vykreslení stránky. Toto oddělení vám umožní spravovat stránky závislosti prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection) a [testování částí](xref:test/razor-pages-tests) stránky.
 
 Na stránce `OnPostAsync` *metoda obslužná rutina*, která se spouští `POST` požadavků (když uživatel odešle formulář). Můžete přidat metody obslužné rutiny pro všechny akce HTTP. Nejběžnější obslužné rutiny jsou:
 
@@ -495,11 +526,11 @@ services.AddMvc()
     .WithRazorPagesRoot("/path/to/razor/pages");
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 * [Úvod do ASP.NET Core](xref:index)
 * [Syntaxe Razor](xref:mvc/views/razor)
 * [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Konvence autorizace stránky Razor](xref:security/authorization/razor-pages-authorization)
 * [Syntaxe Razor stránky vlastní trasy a stránka zprostředkovatele modelu](xref:mvc/razor-pages/razor-pages-conventions)
-* [Testy jednotek a integrace stránky Razor](xref:testing/razor-pages-testing)
+* [Testování částí stránky Razor](xref:test/razor-pages-tests)

@@ -1,7 +1,7 @@
 ---
-title: "Aktivace na základě Factory middlewaru v ASP.NET Core"
+title: Aktivace na základě Factory middlewaru v ASP.NET Core
 author: guardrex
-description: "Další informace o použití silného typu middlewaru s implementací aktivaci založenou na objektu pro vytváření v ASP.NET Core."
+description: Další informace o použití silného typu middlewaru s implementací aktivaci založenou na objektu pro vytváření v ASP.NET Core.
 ms.author: riande
 manager: wpickett
 ms.custom: mvc
@@ -10,11 +10,12 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility
-ms.openlocfilehash: 76ba257abfb11e0c2950b974f837c6ae5818a6a1
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 8cec5b3b498f5a23463d8c3cd5901e14f22f6eab
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729113"
 ---
 # <a name="factory-based-middleware-activation-in-aspnet-core"></a>Aktivace na základě Factory middlewaru v ASP.NET Core
 
@@ -69,11 +70,11 @@ public static IApplicationBuilder UseIMiddlewareMiddleware(
 
 Middleware factory aktivuje je přidat do kontejneru integrované v *Startup.cs*:
 
-[!code-csharp[](extensibility/sample/Startup.cs?name=snippet1&highlight=6)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet1&highlight=12)]
 
 Obě middlewares jsou zaregistrovány v kanálu zpracování požadavku v `Configure`:
 
-[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=12-13)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=13-14)]
 
 ## <a name="imiddlewarefactory"></a>IMiddlewareFactory
 

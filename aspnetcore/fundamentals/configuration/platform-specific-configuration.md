@@ -11,11 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: 793169b491596cd7326d747a3f19d7fdaf7e2b65
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 618cb4349dcff696db37012af3aee844b82974f2
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729048"
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>Vylepšení aplikace z externí sestavení v ASP.NET Core s IHostingStartup
 
@@ -68,7 +69,7 @@ Zobrazí se jenom část souboru. Název sestavení v příkladu je `StartupEnha
 
 ### <a name="update-the-dependencies-file"></a>Aktualizovat soubor závislosti
 
-Modul runtime umístění je určeno v  *\*. deps.json* souboru. Na aktivní vylepšení `runtime` element musíte zadat umístění vylepšení modulu runtime sestavení. Předpony `runtime` umístění s `lib/netcoreapp2.0/`:
+Modul runtime umístění je určeno v  *\*. deps.json* souboru. Na aktivní vylepšení `runtime` element musíte zadat umístění vylepšení modulu runtime sestavení. Předpony `runtime` umístění s `lib/<TARGET_FRAMEWORK_MONIKER>/`:
 
 [!code-json[](platform-specific-configuration/snapshot_sample/StartupEnhancement2.deps.json?range=2-13&highlight=8)]
 
@@ -83,13 +84,13 @@ V ukázkové aplikace, změna  *\*. deps.json* souboru provádí [prostředí Po
 Pro použití na uživatele umístíte v úložišti runtime profil uživatele v sestavení:
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\store\x64\netcoreapp2.0\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\netcoreapp2.0\
+<DRIVE>\Users\<USER>\.dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
 ```
 
 Pro globální použití umístíte sestavení v instalaci .NET Core runtime úložiště:
 
 ```
-<DRIVE>\Program Files\dotnet\store\x64\netcoreapp2.0\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\netcoreapp2.0\
+<DRIVE>\Program Files\dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
 ```
 
 Při nasazování sestavení do úložiště modulu runtime, soubor symboly může také nasadit, ale není nutné u vylepšení pracovat.
@@ -101,16 +102,16 @@ Implementace rozhraní  *\*. deps.json* soubor musí být na dostupném místě.
 Pro použití na uživatele, umístěte soubor v `additonalDeps` složku profilu uživatele `.dotnet` nastavení: 
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\
+<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
 ```
 
 Pro globální použití, umístěte soubor v `additonalDeps` do složky instalace .NET Core:
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
 ```
 
-Všimněte si, jeho verzi, `2.0.0`, odpovídat verzi aplikace sdílený modul runtime, který používá cílové aplikace. Sdílený modul runtime se zobrazí v  *\*. runtimeconfig.json* souboru. V ukázkové aplikace je sdílený modul runtime specifikován v *HostingStartupSample.runtimeconfig.json* souboru.
+Všimněte si, jeho verzi, `2.1.0`, odpovídat verzi aplikace sdílený modul runtime, který používá cílové aplikace. Sdílený modul runtime se zobrazí v  *\*. runtimeconfig.json* souboru. V ukázkové aplikace je sdílený modul runtime specifikován v *HostingStartupSample.runtimeconfig.json* souboru.
 
 **Proměnné prostředí sady**
 
@@ -135,7 +136,7 @@ Pokud soubor je umístěn v profilu uživatele *.dotnet* složku pro použití n
 Pokud soubor je umístěn v instalaci .NET Core pro globální použití, zadejte úplnou cestu k souboru:
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
 ```
 
 Ukázková aplikace nastavuje tuto hodnotu:

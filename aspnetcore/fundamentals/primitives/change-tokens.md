@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 06751e713fbd579a944333cc3c3b2c0c0ad51eba
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 9fd76ea1c6d746ecf1897c70ee719ea4f4517872
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729152"
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>Detekovat změny s tokeny změn v ASP.NET Core
 
@@ -26,7 +27,7 @@ A *změnit token* je použít ke sledování změn stavební blok pro obecné ú
 
 ## <a name="ichangetoken-interface"></a>IChangeToken rozhraní
 
-[IChangeToken](/dotnet/api/microsoft.extensions.primitives.ichangetoken) šíří oznámení, že došlo ke změně. `IChangeToken` se nachází v [Microsoft.Extensions.Primitives](/dotnet/api/microsoft.extensions.primitives) oboru názvů. Pro aplikace, které nepoužívají [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage, odkaz [Microsoft.Extensions.Primitives](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/) balíček NuGet v souboru projektu.
+[IChangeToken](/dotnet/api/microsoft.extensions.primitives.ichangetoken) šíří oznámení, že došlo ke změně. `IChangeToken` se nachází v [Microsoft.Extensions.Primitives](/dotnet/api/microsoft.extensions.primitives) oboru názvů. Pro aplikace, které nepoužívají [Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) metapackage, odkaz [Microsoft.Extensions.Primitives](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/) balíček NuGet v souboru projektu.
 
 `IChangeToken` má dvě vlastnosti:
 
@@ -37,9 +38,10 @@ Rozhraní má jednu metodu [RegisterChangeCallback (akce&lt;objekt&gt;, objekt)]
 
 ## <a name="changetoken-class"></a>ChangeToken – třída
 
-`ChangeToken` slouží k šíření oznámení, že došlo ke změně statická třída. `ChangeToken` se nachází v [Microsoft.Extensions.Primitives](/dotnet/api/microsoft.extensions.primitives) oboru názvů. Pro aplikace, které nepoužívají [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage, odkaz [Microsoft.Extensions.Primitives](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/) balíček NuGet v souboru projektu.
+`ChangeToken` slouží k šíření oznámení, že došlo ke změně statická třída. `ChangeToken` se nachází v [Microsoft.Extensions.Primitives](/dotnet/api/microsoft.extensions.primitives) oboru názvů. Pro aplikace, které nepoužívají [Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) metapackage, odkaz [Microsoft.Extensions.Primitives](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/) balíček NuGet v souboru projektu.
 
 `ChangeToken` [Při změně (Func&lt;IChangeToken&gt;, akce)](/dotnet/api/microsoft.extensions.primitives.changetoken.onchange?view=aspnetcore-2.0#Microsoft_Extensions_Primitives_ChangeToken_OnChange_System_Func_Microsoft_Extensions_Primitives_IChangeToken__System_Action_) metoda registruje `Action` volat při každé změně token:
+
 * `Func<IChangeToken>` vytvoří token.
 * `Action` je volána, když se změní token.
 
@@ -196,7 +198,7 @@ var compositeChangeToken =
 
 `HasChanged` na složené tokenu sestavy `true` Pokud žádné reprezentované token `HasChanged` je `true`. `ActiveChangeCallbacks` na složené tokenu sestavy `true` Pokud žádné reprezentované token `ActiveChangeCallbacks` je `true`. Pokud dojde k události více souběžných změny, je vyvolána zpětného volání kompozitních změn přesně jednou.
 
-## <a name="see-also"></a>Viz také
+## <a name="additional-resources"></a>Další zdroje
 
 * [Mezipaměť v paměti](xref:performance/caching/memory)
 * [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)

@@ -1,31 +1,32 @@
 ---
-title: Vývoj aplikací ASP.NET Core sledovat dotnet.
+title: Vývoj aplikací ASP.NET Core sledovacích procesů souboru
 author: rick-anderson
 description: Tento kurz ukazuje, jak nainstalovat a používat nástroje sledovacích procesů (dotnet kukátko) souborů .NET Core CLI v aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: riande
-ms.date: 10/05/2017
+ms.date: 05/31/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/dotnet-watch
-ms.openlocfilehash: c3ece3a5b936b2ea7b7772eee10e598cb557b361
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 29890640223fe533cca82fb8d39a5ef26e8c6639
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729973"
 ---
-# <a name="develop-aspnet-core-apps-using-dotnet-watch"></a>Vývoj aplikací ASP.NET Core sledovat dotnet.
+# <a name="develop-aspnet-core-apps-using-a-file-watcher"></a>Vývoj aplikací ASP.NET Core sledovacích procesů souboru
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Victor Hurdugaci](https://twitter.com/victorhurdugaci)
 
 `dotnet watch` je nástroj, který běží [.NET Core rozhraní příkazového řádku](/dotnet/core/tools) příkaz Pokud zdrojové soubory změn. Změna souboru můžete například aktivovat kompilace, spuštění testu nebo nasazení.
 
-V tomto kurzu budeme používat existující aplikace webového rozhraní API s dva koncové body: jeden, který vrátí součet a jeden, který vrací produktu. Metoda produkt obsahuje chybu, která jsme budete opravit v rámci tohoto kurzu.
+Tento kurz používá existující webové rozhraní API s dva koncové body: jeden, který vrátí součet a jeden, který vrací produktu. Metoda produkt obsahuje chyby, která je stanovena v tomto kurzu.
 
-Stažení [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/dotnet-watch/sample). Obsahuje dva projekty: *WebApp* (pro ASP.NET Core Web API) a *WebAppTests* (testy částí pro rozhraní Web API).
+Stažení [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/dotnet-watch/sample). Skládá se ze dvou projektů: *WebApp* (ASP.NET Core webového rozhraní API) a *WebAppTests* (testy částí pro webové rozhraní API).
 
-V příkazovém řádku přejděte do *WebApp* složky a spusťte následující příkaz:
+V příkazovém řádku přejděte do *WebApp* složky. Spusťte následující příkaz:
 
 ```console
 dotnet run
@@ -43,25 +44,31 @@ Application started. Press Ctrl+C to shut down.
 
 Ve webovém prohlížeči, přejděte na `http://localhost:<port number>/api/math/sum?a=4&b=5`. Měli byste vidět výsledek `9`.
 
-Přejděte do produktu rozhraní API (`http://localhost:<port number>/api/math/product?a=4&b=5`). Vrátí `9`, nikoli `20` jako byste očekávali. To jsme budete opravíme později v tomto kurzu.
+Přejděte do produktu rozhraní API (`http://localhost:<port number>/api/math/product?a=4&b=5`). Vrátí `9`, nikoli `20` jako byste očekávali. Tento problém vyřešen později v tomto kurzu.
+
+::: moniker range="<= aspnetcore-2.0"
 
 ## <a name="add-dotnet-watch-to-a-project"></a>Přidat `dotnet watch` do projektu
+
+`dotnet watch` Souboru sledovacích procesů nástroj je součástí verze 2.1.300 .NET Core SDK. Následující kroky jsou požadovány při používání dřívější verzi rozhraní .NET Core SDK.
 
 1. Přidat `Microsoft.DotNet.Watcher.Tools` odkaz na balíček *.csproj* souboru:
 
     ```xml
     <ItemGroup>
         <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
-    </ItemGroup> 
+    </ItemGroup>
     ```
 
 1. Nainstalujte `Microsoft.DotNet.Watcher.Tools` balíček spuštěním následujícího příkazu:
-    
+
     ```console
     dotnet restore
     ```
 
-## <a name="running-net-core-cli-commands-using-dotnet-watch"></a>Spuštění příkazů .NET Core rozhraní příkazového řádku pomocí `dotnet watch`
+::: moniker-end
+
+## <a name="run-net-core-cli-commands-using-dotnet-watch"></a>Spusťte příkazy .NET Core rozhraní příkazového řádku pomocí `dotnet watch`
 
 Všechny [.NET Core rozhraní příkazového řádku příkaz](/dotnet/core/tools#cli-commands) lze spustit s `dotnet watch`. Příklad:
 
@@ -74,7 +81,7 @@ Všechny [.NET Core rozhraní příkazového řádku příkaz](/dotnet/core/tool
 
 Spustit `dotnet watch run` v *WebApp* složky. Určuje, bude výstup konzoly `watch` bylo zahájeno.
 
-## <a name="making-changes-with-dotnet-watch"></a>Provedení změn pomocí `dotnet watch`
+## <a name="make-changes-with-dotnet-watch"></a>Proveďte změny s `dotnet watch`
 
 Zajistěte, aby `dotnet watch` běží.
 
@@ -84,19 +91,19 @@ Opravte chyby v `Product` metodu *MathController.cs* tak, aby vracel produktu a 
 public static int Product(int a, int b)
 {
   return a * b;
-} 
+}
 ```
 
 Uložte soubor. Výstup konzoly znamená, že `dotnet watch` zjištěna změna souboru a restartování aplikace.
 
 Ověřte `http://localhost:<port number>/api/math/product?a=4&b=5` vrátí výsledek ve správné.
 
-## <a name="running-tests-using-dotnet-watch"></a>Spouštění testů pomocí aplikace `dotnet watch`
+## <a name="run-tests-using-dotnet-watch"></a>Spouštění testů pomocí `dotnet watch`
 
-1. Změna `Product` metodu *MathController.cs* zpět do vrací součet a soubor uložte.
+1. Změna `Product` metodu *MathController.cs* zpět na vrácení součet. Uložte soubor.
 1. V příkazovém řádku přejděte do *WebAppTests* složky.
 1. Spustit [dotnet obnovení](/dotnet/core/tools/dotnet-restore).
-1. Run `dotnet watch test`. Její výstup označuje, že test se nezdařil a že sledovací proces čeká na změny souboru:
+1. Run `dotnet watch test`. Její výstup označuje, že testu se nezdařila a že sledovací proces čeká na změny souboru:
 
      ```console
      Total tests: 2. Passed: 1. Failed: 1. Skipped: 0.

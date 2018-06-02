@@ -9,21 +9,24 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/index
-ms.openlocfilehash: 46e98bc0de19ca09921c7505aa0a2f075887cd64
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 84ccaee9bc9e6af0b420de9a35caa36f49d8f6bb
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729805"
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-on-windows-with-visual-studio"></a>Vytvoření webové aplikace s ASP.NET MVC jádra v systému Windows pomocí sady Visual Studio
 
-[!INCLUDE [consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](~/includes/razor.md)]
 
 Existují 3 verze tohoto kurzu:
 
 * Windows: Tato řada
 * systému macOS: [vytvořit aplikaci ASP.NET MVC základní pomocí sady Visual Studio pro Mac](xref:tutorials/first-mvc-app-mac/start-mvc)
-* systému macOS, Linux a Windows: [vytvořit aplikaci ASP.NET MVC jádra s Visual Studio Code](xref:tutorials/first-mvc-app-xplat/start-mvc) kurz řady zahrnují následující:
+* systému macOS, Linux a Windows: [vytvořit aplikaci ASP.NET MVC jádra s kódem jazyka Visual Studio](xref:tutorials/first-mvc-app-xplat/start-mvc)
+
+Kurz řady zahrnuje následující položky:
 
 1. [Začínáme](start-mvc.md)
 1. [Přidání kontroleru](adding-controller.md)

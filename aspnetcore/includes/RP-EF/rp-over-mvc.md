@@ -6,3 +6,5 @@ V tomto kurzu se dozvíte, jaké technologie ASP.NET MVC jádra a Entity Framewo
 * Je více aktuální pomocí nejnovější rozhraní API.
 * Popisuje další funkce.
 * Je žádoucí pro nový vývoj aplikací.
+
+Pokud se rozhodnete v tomto kurzu přes [stránky Razor](xref:data/ef-rp/intro) verze, dejte nám vědět, proč v [potíže Githubu](https://github.com/aspnet/Docs/issues/6146).

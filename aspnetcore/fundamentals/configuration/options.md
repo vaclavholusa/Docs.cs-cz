@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 800ff2039e7cc1fa37315ed55a77711dc9f47504
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 176ba346a8950169beb8e3a2530939408873df77
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728996"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -49,7 +50,7 @@ Následující stránka používá model [vkládání závislostí konstruktor](
 
 Ukázkových *appSettings.JSON určený* soubor Určuje hodnoty pro `option1` a `option2`:
 
-[!code-json[](options/sample/appsettings.json)]
+[!code-json[](options/sample/appsettings.json?highlight=2-3)]
 
 Pokud aplikace běží a model stránky `OnGet` metoda vrátí řetězec zobrazující třída hodnoty možnosti:
 
@@ -99,7 +100,7 @@ V následujícím kódu, třetí `IConfigureOptions<TOptions>` služby se přid�
 
 [!code-csharp[](options/sample/Startup.cs?name=snippet_Example3)]
 
-`GetSection` Rozšíření metoda vyžaduje, [Microsoft.Extensions.Options.ConfigurationExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/) balíček NuGet. Pokud aplikace používá [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage, tento balíček je automaticky zahrnuty.
+`GetSection` Rozšíření metoda vyžaduje, [Microsoft.Extensions.Options.ConfigurationExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/) balíček NuGet. Pokud aplikace používá [Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) metapackage, tento balíček je automaticky zahrnuty.
 
 Ukázkových *appSettings.JSON určený* soubor definuje `subsection` člena s klíči pro `suboption1` a `suboption2`:
 
@@ -265,6 +266,6 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 
 Vzhledem k tomu, že možnosti jsou obvykle načteny z konfigurace, konfigurace mohou být používány spuštění v obou `Configure` a `ConfigureServices`. Příklady použití konfigurace při spuštění, najdete v článku [spuštění aplikace](xref:fundamentals/startup) tématu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 * [Konfigurace](xref:fundamentals/configuration/index)

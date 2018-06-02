@@ -3,17 +3,20 @@ title: Middleware komprese odpovědi pro ASP.NET Core
 author: guardrex
 description: Další informace o odpovědi komprese a jak používat Middleware komprese odpovědi v aplikacích ASP.NET Core.
 manager: wpickett
+monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
+ms.custom: mvc
 ms.date: 08/20/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: cae81a04e41dc7fcbacec975e63171f633fccecf
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 152799500577dd09247bcee8c87cde39ca20aa79
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729571"
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware komprese odpovědi pro ASP.NET Core
 
@@ -44,7 +47,7 @@ Obvykle všechny odpovědi komprimované nativně využívat výhod komprese odp
 Když klient může zpracovat komprimovaného obsahu, klient musí uvědomit serveru její možnosti `Accept-Encoding` hlavičky v požadavku. Když server odešle komprimovaného obsahu, musí obsahovat informace v `Content-Encoding` záhlaví na tom, jak je zakódován zkomprimovanou odpověď. V následující tabulce jsou uvedeny obsahu kódování označení nepodporuje middleware.
 
 | `Accept-Encoding` hodnoty hlavičky | Podporované middlewaru. | Popis                                                 |
-| :-----------------------------: | :------------------: | ----------------------------------------------------------- |
+| ------------------------------- | :------------------: | ----------------------------------------------------------- |
 | `br`                            | Ne                   | Formát Brotli komprimovaná Data                               |
 | `compress`                      | Ne                   | Formát dat "komprimovat" systému UNIX                                 |
 | `deflate`                       | Ne                   | "deflate" komprimovaná data uvnitř formát dat "zlib"     |
@@ -80,21 +83,42 @@ Můžete prozkoumat funkce middlewaru komprese odpovědi s [ukázkovou aplikaci]
 
 ## <a name="package"></a>Balíček
 
-Zahrnout middleware projekt, přidejte odkaz na [ `Microsoft.AspNetCore.ResponseCompression` ](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) balíček nebo použít [ `Microsoft.AspNetCore.All` ](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) balíčku. Tato funkce je k dispozici pro aplikace, které cílí ASP.NET Core 1.1 nebo novější.
+::: moniker range="< aspnetcore-2.0"
+
+Zahrnout middleware projekt, přidejte odkaz na [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) balíčku. Tato funkce je k dispozici pro aplikace, které cílí ASP.NET Core 1.1 nebo novější.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+Zahrnout middleware projekt, přidejte odkaz na [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) balíček nebo použít [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage).
+
+::: moniker-end
+
+::: moniker range="> aspnetcore-2.0"
+
+Zahrnout middleware projekt, přidejte odkaz na [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) balíček nebo použít [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app).
+
+::: moniker-end
 
 ## <a name="configuration"></a>Konfigurace
 
 Následující kód ukazuje, jak povolit kompresi gzip výchozí a pro typy MIME výchozí Middleware komprese odpovědi.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+```csharp
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddResponseCompression();
+    }
 
-[!code-csharp[](response-compression/samples/2.x/StartupBasic.cs?name=snippet1&highlight=4,8)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-
-[!code-csharp[](response-compression/samples/1.x/StartupBasic.cs?name=snippet1&highlight=3,8)]
-
----
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        app.UseResponseCompression();
+    }
+}
+```
 
 > [!NOTE]
 > Pomocí některého nástroje, například [Fiddler](http://www.telerik.com/fiddler), [Firebug](http://getfirebug.com/), nebo [Postman](https://www.getpostman.com/) nastavit `Accept-Encoding` hlavička požadavku a prostudovali hlavičky odpovědi, velikost a text.
@@ -111,29 +135,30 @@ Odeslat žádost o vzorovou aplikaci s `Accept-Encoding: gzip` záhlaví a zjist
 
 ### <a name="gzipcompressionprovider"></a>GzipCompressionProvider
 
-Použití `GzipCompressionProvider` kompresi odpovědí s gzip. Toto je výchozí zprostředkovatel komprese-li zadán žádný. Komprese můžete nastavit úroveň s `GzipCompressionProviderOptions`. 
+Použití [GzipCompressionProvider](/dotnet/api/microsoft.aspnetcore.responsecompression.gzipcompressionprovider) kompresi odpovědí s gzip. Toto je výchozí zprostředkovatel komprese-li zadán žádný. Komprese můžete nastavit úroveň s [GzipCompressionProviderOptions](/dotnet/api/microsoft.aspnetcore.responsecompression.gzipcompressionprovideroptions).
 
-Výchozí zprostředkovatel kompresi gzip nejrychlejší úroveň komprese (`CompressionLevel.Fastest`), který nemusí vracet nejúčinnější komprese. Pokud se požaduje nejúčinnější komprese, můžete nakonfigurovat middleware pro optimální komprese.
+Výchozí zprostředkovatel kompresi gzip nejrychlejší úroveň komprese ([CompressionLevel.Fastest](/dotnet/api/system.io.compression.compressionlevel)), který nemusí vracet nejúčinnější komprese. Pokud se požaduje nejúčinnější komprese, můžete nakonfigurovat middleware pro optimální komprese.
 
-| Úroveň komprese                | Popis                                                                                                   |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `CompressionLevel.Fastest`       | Komprese co nejrychleji provést i v případě, že výsledný výstup není komprimována optimálně. |
-| `CompressionLevel.NoCompression` | Je třeba provést bez komprese.                                                                           |
-| `CompressionLevel.Optimal`       | Odpovědi musí být optimálně komprimován, i v případě, že komprese trvá déle.                |
+| Úroveň komprese | Popis |
+| ----------------- | ----------- |
+| [CompressionLevel.Fastest](/dotnet/api/system.io.compression.compressionlevel) | Komprese co nejrychleji provést i v případě, že výsledný výstup není komprimována optimálně. |
+| [CompressionLevel.NoCompression](/dotnet/api/system.io.compression.compressionlevel) | Je třeba provést bez komprese. |
+| [CompressionLevel.Optimal](/dotnet/api/system.io.compression.compressionlevel) | Odpovědi musí být optimálně komprimován, i v případě, že komprese trvá déle. |
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 
-[!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=3,8-11)]
+[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=5,12-15)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 
-[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5,10-13)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5,12-15)]
 
 ---
 
 ## <a name="mime-types"></a>typy MIME
 
 Middleware určuje sadu výchozích typů standardu MIME pro kompresi:
+
 * `text/plain`
 * `text/css`
 * `application/javascript`
@@ -147,29 +172,29 @@ Můžete nahradit nebo připojit typy MIME s možnosti middlewaru komprese odpov
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 
-[!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=5)]
+[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=7-9)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 
-[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=7)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=7-9)]
 
 ---
 
 ### <a name="custom-providers"></a>Vlastní zprostředkovatelé
 
-Můžete vytvořit vlastní komprese implementace s `ICompressionProvider`. `EncodingName` Reprezentuje obsah, který tato kódování `ICompressionProvider` vytváří. Middleware používá tuto informaci k vyberte poskytovatele správy na základě zadané v seznamu `Accept-Encoding` hlavičky žádosti.
+Můžete vytvořit vlastní komprese implementace s [ICompressionProvider](/dotnet/api/microsoft.aspnetcore.responsecompression.icompressionprovider). [EncodingName](/dotnet/api/microsoft.aspnetcore.responsecompression.icompressionprovider.encodingname) reprezentuje obsah, který tato kódování `ICompressionProvider` vytváří. Middleware používá tuto informaci k vyberte poskytovatele správy na základě zadané v seznamu `Accept-Encoding` hlavičky žádosti.
 
 Použití ukázkové aplikace, klient odešle žádost s `Accept-Encoding: mycustomcompression` záhlaví. Middleware použije implementace vlastní komprese a vrátí odpověď se `Content-Encoding: mycustomcompression` záhlaví. Klient musí umět dekomprimovat vlastní kódování v pořadí pro implementaci vlastní komprese pracovat.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 
-[!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=4)]
+[!code-csharp[](response-compression/samples/2.x/Startup.cs?name=snippet1&highlight=5,12-15)]
 
 [!code-csharp[](response-compression/samples/2.x/CustomCompressionProvider.cs?name=snippet1)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 
-[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=6)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5,12-15)]
 
 [!code-csharp[](response-compression/samples/1.x/CustomCompressionProvider.cs?name=snippet1)]
 
@@ -185,11 +210,19 @@ Komprimované odpovědi prostřednictvím zabezpečeného připojení se dá ř�
 
 ## <a name="adding-the-vary-header"></a>Přidání měnit hlavičky
 
-Při kompresi odpovědí na základě `Accept-Encoding` záhlaví, existují potenciálně více komprimované verze odpovědi a nekomprimované verze. Chcete-li pokyn mezipaměti klienta a serveru proxy, několik verzí existují a by měla být uložena, `Vary` záhlaví se přidá s `Accept-Encoding` hodnotu. V ASP.NET Core 1.x, přidání `Vary` hlavičky odpovědi dosahuje ručně. V ASP.NET Core 2.x, přidá middleware `Vary` záhlaví automaticky, když zkomprimovanou odpověď.
+::: moniker range=">= aspnetcore-2.0"
 
-**ASP.NET základní pouze 1.x**
+Při kompresi odpovědí na základě `Accept-Encoding` záhlaví, existují potenciálně více komprimované verze odpovědi a nekomprimované verze. Chcete-li pokyn mezipaměti klienta a serveru proxy, několik verzí existují a by měla být uložena, `Vary` záhlaví se přidá s `Accept-Encoding` hodnotu. V technologii ASP.NET Core 2.0 nebo novější, přidá middleware `Vary` záhlaví automaticky, když zkomprimovanou odpověď.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+Při kompresi odpovědí na základě `Accept-Encoding` záhlaví, existují potenciálně více komprimované verze odpovědi a nekomprimované verze. Chcete-li pokyn mezipaměti klienta a serveru proxy, několik verzí existují a by měla být uložena, `Vary` záhlaví se přidá s `Accept-Encoding` hodnotu. V ASP.NET Core 1.x, přidání `Vary` hlavičky odpovědi dosahuje ručně:
 
 [!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet1)]
+
+::: moniker-end
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Middleware problém při za Nginx reverzní proxy server
 
@@ -204,7 +237,7 @@ Pokud máte aktivní IIS dynamické komprese modul nakonfigurována na úrovni s
 Pomocí některého nástroje, například [Fiddler](http://www.telerik.com/fiddler), [Firebug](http://getfirebug.com/), nebo [Postman](https://www.getpostman.com/), které umožňují nastavit `Accept-Encoding` hlavička požadavku a prostudovali hlavičky odpovědi, velikost a text. Middleware komprese odpovědi komprimaci odpovědi, které splňují následující podmínky:
 
 * `Accept-Encoding` Záhlaví nachází s hodnotou `gzip`, `*`, nebo vlastní kódování, který odpovídá komprese vlastní zprostředkovatele, který jste vytvořili. Hodnota nesmí být `identity` nebo obsahovat hodnotu kvality (qvalue, `q`) nastavení 0 (nula).
-* Typ MIME (`Content-Type`) musí být nastavená a nakonfigurovaná na typ MIME se musí shodovat `ResponseCompressionOptions`.
+* Typ MIME (`Content-Type`) musí být nastavená a nakonfigurovaná na typ MIME se musí shodovat [ResponseCompressionOptions](/dotnet/api/microsoft.aspnetcore.responsecompression.responsecompressionoptions).
 * Nesmí zahrnovat požadavek `Content-Range` záhlaví.
 * Pokud zabezpečeného protokolu (https) je nakonfigurován v možnosti middlewaru komprese odpovědi, musíte použít požadavek nezabezpečené protokol (http). *Všimněte si nebezpečí [popsané výše](#compression-with-secure-protocol) při povolování zabezpečené komprese obsahu.*
 

@@ -10,16 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: c0d7d7fb5f41a91f8d881dd7880d8adcaa478968
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: fbb76f41f3178ddc4e51faa14edece1869a30cd0
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729074"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>Microsoft.AspNetCore.All metapackage pro technologii ASP.NET 2.0 jádra
 
 > [!NOTE]
-> Doporučujeme aplikací pro ASP.NET Core 2.1 a později [Microsoft.AspNetCore.App](xref:fundamentals/metapackage) místo tohoto balíčku. V tématu [migrace z Microsoft.AspNetCore.All na Microsoft.AspNetCore.App](#migrate) v tomto článku.
+> Doporučujeme aplikací pro ASP.NET Core 2.1 a později [Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) místo tohoto balíčku. V tématu [migrace z Microsoft.AspNetCore.All na Microsoft.AspNetCore.App](#migrate) v tomto článku.
 
 Tato funkce vyžaduje rozhraní .NET zaměřená na aplikace ASP.NET Core 2.x základní 2.x.
 

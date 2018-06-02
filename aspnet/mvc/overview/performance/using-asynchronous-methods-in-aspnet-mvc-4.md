@@ -12,11 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: cee5fded4d8005df6054ab921f39882c3e5f21b8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5b3b9b82fa64155c1dfd2a49649def10d7dae87e
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729178"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>Použití asynchronních metod v architektuře ASP.NET MVC 4
 ====================
@@ -43,7 +44,7 @@ Toto nemusí být problém, protože fond vláken můžete provedeny dostatečn�
 
 ## <a name="processing-asynchronous-requests"></a>Asynchronní zpracování požadavků
 
-Ve webové aplikace, které se zobrazí velký počet souběžných požadavků na spuštění nebo má shlukovým přenosem zatížení (kde souběžnosti najednou zvyšuje) provedení asynchronní těchto volání webové služby se zvyšuje rychlost reakce aplikace. Asynchronní požadavek trvá stejné množství času na zpracování jako synchronní požadavek. Například pokud žádost o provede webové služby volání, které vyžaduje dva sekund dokončení požadavku trvá dvou sekund zda probíhá synchronně nebo asynchronně. Ale při asynchronním volání, není vlákno blokováno reagovat na požadavky na jiné během čekání na dokončení první žádosti. Proto asynchronní požadavky zabránit růstu žádosti o služby Řízení front a vlákno fondu při mnoho souběžných požadavků, které vyvolají dlouhotrvající operace.
+Ve webové aplikace, které najdete v části velký počet souběžných požadavků na spuštění nebo má shlukovým přenosem zatížení (kde souběžnosti najednou zvyšuje) provedení asynchronní těchto volání webové služby se zvyšuje rychlost reakce aplikace. Asynchronní požadavek trvá stejné množství času na zpracování jako synchronní požadavek. Například pokud žádost o provede webové služby volání, které vyžaduje dva sekund dokončení požadavku trvá dvou sekund zda probíhá synchronně nebo asynchronně. Ale při asynchronním volání, není vlákno blokováno reagovat na požadavky na jiné během čekání na dokončení první žádosti. Proto asynchronní požadavky zabránit růstu žádosti o služby Řízení front a vlákno fondu při mnoho souběžných požadavků, které vyvolají dlouhotrvající operace.
 
 ## <a id="ChoosingSyncVasync"></a>  Výběr metody synchronní nebo asynchronní akce
 
@@ -61,7 +62,7 @@ Obecně platí používejte synchronní metody byly splněny následující podm
 - Operace, které jsou vázané na síti nebo I/čítači místo vázané na procesor.
 - Paralelismus je důležitější než jednoduchost kódu.
 - Chcete zadat mechanismus, který umožňuje uživatelům zrušit žádost o časově náročné.
-- Výhodou přepínání vláken se provede při náklady na kontext přepínače. Obecně platí měl by metodu asynchronní Pokud synchronní metoda čeká na vlákno žádost ASP.NET přitom žádné kroky. Tím, že volání asynchronní, není vlákno žádost ASP.NET zastaveno, provádění žádné pracovní, kdy čeká k dokončení žádosti webové služby.
+- Když výhodou přepínání vláken převáží náklady na kontext přepínače. Obecně platí měl by metodu asynchronní Pokud synchronní metoda čeká na vlákno žádost ASP.NET přitom žádné kroky. Tím, že volání asynchronní, není vlákno žádost ASP.NET zastaveno, provádění žádné pracovní, kdy čeká k dokončení žádosti webové služby.
 - Testování ukazuje, že blokování operace jsou úzkým místem v výkonu webu a že služby IIS můžete další žádosti o služby s použitím pro tyto blokování volání asynchronních metod.
 
   Ke stažení ukázkové ukazuje, jak efektivně používat metody asynchronní akce. Ukázka poskytuje byla určená k poskytnutí jednoduché ukázka asynchronního programování v architektuře ASP.NET MVC 4 pomocí rozhraní .NET 4.5. Ukázka neměla být referenční architektura pro asynchronní programování v architektuře ASP.NET MVC. Ukázka programu volání [rozhraní ASP.NET Web API](../../../web-api/index.md) metody, které pak volání [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) k simulaci volání dlouho běžící webové služby. Většina aplikací produkční nezobrazí takové zřejmé výhody metody asynchronní akce.   
@@ -169,7 +170,7 @@ Pochopit výhody asynchronní webové aplikace, může být nutné provést něk
 
     - Otevřete Správce služby IIS a přejděte do podokna fondů aplikací.
     - Klikněte pravým tlačítkem na cílový fond aplikací a vyberte **Upřesnit nastavení**.  
-        ![advanced](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
+        ![Upřesnit](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
     - V **Upřesnit nastavení** dialogové okno, změna *délka fronty* od 1 do 5 000 000.  
         ![Délka fronty](using-asynchronous-methods-in-aspnet-mvc-4/_static/image5.png)  
   

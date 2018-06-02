@@ -1,7 +1,7 @@
 ---
-title: "Vysoce výkonné protokolování s LoggerMessage v ASP.NET Core"
+title: Vysoce výkonné protokolování s LoggerMessage v ASP.NET Core
 author: guardrex
-description: "Další informace o použití LoggerMessage vytvořit Uložitelný delegáti, které vyžadují méně objekt přidělení pro scénáře protokolování vysoce výkonné."
+description: Další informace o použití LoggerMessage vytvořit Uložitelný delegáti, které vyžadují méně objekt přidělení pro scénáře protokolování vysoce výkonné.
 manager: wpickett
 ms.author: riande
 ms.date: 11/03/2017
@@ -9,17 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: 24a75cfacfa61ca66e78deeb743baa75718dfb76
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 5b5bd03b6cb5da693f046653a09ba400ee6ff585
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729191"
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>Vysoce výkonné protokolování s LoggerMessage v ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) funkce vytvořit delegáti lze uložit do mezipaměti, které vyžadují méně přidělování objektů a snižuje nároky na výpočetní výkon než [metody rozšíření protokolovače](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions), jako například `LogInformation`, `LogDebug`a `LogError`. Pro scénáře protokolování vysoce výkonné, použijte `LoggerMessage` vzor.
+[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) funkce vytvořit Uložitelný delegáti, které vyžadují méně přidělování objektů a menší režijní náklady na výpočetní ve srovnání s [metody rozšíření protokolovače](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions), jako například `LogInformation`, `LogDebug`, a `LogError`. Pro scénáře protokolování vysoce výkonné, použijte `LoggerMessage` vzor.
 
 `LoggerMessage` nabízí následující výhody výkonu přes protokoly rozšiřující metody:
 
@@ -143,13 +144,9 @@ Definování [protokolu oboru](xref:fundamentals/logging/index#log-scopes) chcet
 
 Ukázková aplikace má **Vymazat vše** tlačítko pro odstranění všechna uvozovky v databázi. Uvozovky jsou odstraněny je odstranit jednu najednou. Pokaždé, když je odstraněn v uvozovkách, `QuoteDeleted` metoda je volána v protokolovacího nástroje. Obor protokolu se přidá do těchto zpráv protokolu.
 
-Povolit `IncludeScopes` v možnostech protokolovacího nástroje konzoly:
+Povolit `IncludeScopes` v části protokoly konzoly *appSettings.JSON určený*:
 
-[!code-csharp[](loggermessage/sample/Program.cs?name=snippet1&highlight=10)]
-
-Nastavení `IncludeScopes` je nutný v aplikacích ASP.NET 2.0 jádra pro povolení protokolu obory. Nastavení `IncludeScopes` prostřednictvím *appsettings* konfiguračních souborů je funkce, která má pro verzi ASP.NET Core 2.1.
-
-Ukázková aplikace vymaže jiných poskytovatelů a přidá filtry ke snížení výstup protokolování. Díky tomu je snazší zprávy protokolu ukázka, která ukazují zobrazíte `LoggerMessage` funkce.
+[!code-csharp[](loggermessage/sample/appsettings.json?highlight=3-5)]
 
 Pokud chcete vytvořit obor protokolu, přidání pole pro uložení `Func` delegovat pro obor. Ukázková aplikace vytvoří pole s názvem `_allQuotesDeletedScope` (*Internal/LoggerExtensions.cs*):
 
@@ -181,6 +178,6 @@ info: LoggerMessageSample.Pages.IndexModel[4]
       Quote deleted (Quote = 'Quote 3' Id = 4)
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="additional-resources"></a>Další zdroje
 
 * [Protokolování](xref:fundamentals/logging/index)

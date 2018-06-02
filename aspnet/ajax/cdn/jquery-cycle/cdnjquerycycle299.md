@@ -12,19 +12,20 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/jquery-cycle/cdnjquerycycle299
 msc.type: content
-ms.openlocfilehash: 2ff92f6c14294e8d0a0b6d3a2976789c12a77665
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: 2b22ffbca92c81dd10115131006e65711c9f88bf
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728931"
 ---
 <a name="jquery-cycle-299"></a>Cyklus JQuery 2.99
 ====================
 Následující soubory cyklus jQuery jsou hostované na této CDN:
 
-- https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.all.js &mdash; Plnou verzi modulu plug-in jQuery cyklu. Obsahuje více než dvacet zvláštní efekty a všechny možnosti.
-- https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.all.min.js &mdash; Minifikovaný verze souboru výše. Pomocí této verze pro výrobní aplikace lze zlepšit výkon webu.
-- https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.js &mdash; Tato verze modulu plug-in jQuery cyklus je menší a obsahuje pouze efekt přechodu "Objevování".
-- https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.min.js &mdash; Minifikovaný verze souboru výše. Pomocí této verze pro výrobní aplikace lze zlepšit výkon webu.
-- https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.lite.js &mdash; I menší verze modulu plug-in jQuery cyklus, který obsahuje pouze přechodu "Objevování" bez všechny možnosti.
-- https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.lite.min.js &mdash; Minifikovaný verze souboru výše. Pomocí této verze pro výrobní aplikace lze zlepšit výkon webu.
+- [https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.all.js](https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.all.js) &mdash; Plnou verzi modulu plug-in jQuery cyklu. Obsahuje více než dvacet zvláštní efekty a všechny možnosti.
+- [https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.all.min.js](https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.all.min.js) &mdash; Minifikovaný verze souboru výše. Pomocí této verze pro výrobní aplikace lze zlepšit výkon webu.
+- [https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.js](https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.js)  &mdash; Tato verze modulu plug-in jQuery cyklus je menší a obsahuje pouze efekt přechodu "Objevování".
+- [https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.min.js](https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.min.js) &mdash; Minifikovaný verze souboru výše. Pomocí této verze pro výrobní aplikace lze zlepšit výkon webu.
+- [https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.lite.js](https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.lite.js) &mdash; I menší verze modulu plug-in jQuery cyklus, který obsahuje pouze přechodu "Objevování" bez všechny možnosti.
+- [https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.lite.min.js](https://ajax.aspnetcdn.com/ajax/jquery.cycle/2.99/jquery.cycle.lite.min.js) &mdash; Minifikovaný verze souboru výše. Pomocí této verze pro výrobní aplikace lze zlepšit výkon webu.

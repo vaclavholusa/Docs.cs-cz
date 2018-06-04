@@ -1,7 +1,7 @@
 ---
-title: "Middleware aktivaci s použitím kontejner třetích stran v ASP.NET Core"
+title: Middleware aktivaci s použitím kontejner třetích stran v ASP.NET Core
 author: guardrex
-description: "Další informace o použití silného typu middleware aktivace prostřednictvím objektu pro vytváření a kontejner třetích stran v ASP.NET Core."
+description: Další informace o použití silného typu middleware aktivace prostřednictvím objektu pro vytváření a kontejner třetích stran v ASP.NET Core.
 ms.author: riande
 manager: wpickett
 ms.custom: mvc
@@ -10,11 +10,12 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility-third-party-container
-ms.openlocfilehash: b6fd02d1863efe571bafe1344fb34939883e6cb5
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c55075fd3c6fda4073d26925eab823c35d8656f5
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729889"
 ---
 # <a name="middleware-activation-with-a-third-party-container-in-aspnet-core"></a>Middleware aktivaci s použitím kontejner třetích stran v ASP.NET Core
 
@@ -61,7 +62,7 @@ Vytvoření rozšíření pro middleware (*Middleware/MiddlewareExtensions.cs*):
 
 Middleware je zaregistrován v kanálu zpracování požadavku v `Startup.Configure`:
 
-[!code-csharp[](extensibility-third-party-container/sample/Startup.cs?name=snippet2&highlight=12)]
+[!code-csharp[](extensibility-third-party-container/sample/Startup.cs?name=snippet2&highlight=13)]
 
 ## <a name="additional-resources"></a>Další zdroje
 

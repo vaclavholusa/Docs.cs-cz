@@ -1,5 +1,9 @@
 # [Úvod](index.md)
 
+# [Co je nového](xref:aspnetcore-2.1)
+# [Co je nového](xref:aspnetcore-2.0)
+# [Co je nového](xref:aspnetcore-1.1)
+
 # [Začínáme](getting-started.md)
 ## [Vytvoření webové aplikace](xref:mvc/razor-pages/index)
 ## [Vytvoření webového rozhraní API](xref:tutorials/first-web-api)
@@ -104,6 +108,8 @@
 ### [Web API se sadou Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
 ### [Web API s editorem Visual Studio Code](xref:tutorials/web-api-vsc)
 
+## [Vývoj aplikací sledovacích procesů souboru](xref:tutorials/dotnet-watch)
+
 ## [Vytváření back-endových služeb pro mobilní aplikace](mobile/native-mobile-backend.md)
 
 # [Základy](fundamentals/index.md)
@@ -164,15 +170,15 @@
 #### [Vytváření pomocných rutin značek](xref:mvc/views/tag-helpers/authoring)
 #### [Použití pomocných rutin značek ve formulářích](xref:mvc/views/working-with-forms)
 #### [Integrované pomocné rutiny značek](xref:mvc/views/tag-helpers/builtin-th/Index)
-##### [Pomocná rutina značky ukotvení](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)
-##### [Pomocná rutina značky mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-##### [Pomocná rutina značky distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+##### [Ukotvení pomocné rutiny značky](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)
+##### [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+##### [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
 ##### [Pomocná rutina značky prostředí](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)
 ##### [Pomocná rutina značky formuláře](mvc/views/working-with-forms.md#the-form-tag-helper)
 ##### [Pomocná rutina značky obrázku](xref:mvc/views/tag-helpers/builtin-th/image-tag-helper)
 ##### [Pomocná rutina značky vstupu](mvc/views/working-with-forms.md#the-input-tag-helper)
 ##### [Pomocná rutina značky popisku](mvc/views/working-with-forms.md#the-label-tag-helper)
-##### [Pomocná rutina značky částečného zobrazení](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)
+##### [Pomocná rutina částečné značky](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)
 ##### [Pomocná rutina značky výběru](mvc/views/working-with-forms.md#the-select-tag-helper)
 ##### [Pomocná rutina značky textového pole](mvc/views/working-with-forms.md#the-textarea-tag-helper)
 ##### [Pomocná rutina značky ověřovací zprávy](mvc/views/working-with-forms.md#the-validation-message-tag-helper)
@@ -198,15 +204,15 @@
 ### [Vlastní formátovací moduly](xref:web-api/advanced/custom-formatters)
 ### [Formátování dat odpovědi](xref:web-api/advanced/formatting)
 
-# [Testování, ladění a řešení problémů](xref:testing/index)
+# [Testování, ladění a řešení problémů](xref:test/index)
 ## [Testování jednotek](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-## [Integrační testy](xref:testing/integration-testing)
-## [Testování stránek Razor](xref:testing/razor-pages-testing)
+## [Integrační testy](xref:test/integration-tests)
+## [Testování částí stránky Razor](xref:test/razor-pages-tests)
 ## [Testovací kontrolery](xref:mvc/controllers/testing)
 ## [Vzdálené ladění](/visualstudio/debugger/remote-debugging-azure)
 ## [Ladění snímků](/azure/application-insights/app-insights-snapshot-debugger)
 ## [Ladění snímků v sadě Visual Studio](/visualstudio/debugger/debug-live-azure-applications)
-## [Řešení potíží](xref:testing/troubleshoot)
+## [Řešení potíží](xref:test/troubleshoot)
 
 # [Přístup k datům pomocí EF Core a Azure](data/index.md)
 ## [Začínáme s Razor Pages a EF Core pomocí sady Visual Studio](xref:data/ef-rp/intro)
@@ -361,6 +367,7 @@
 ## [Middleware pro kompresi odpovědí](xref:performance/response-compression)
 
 # [Migrace](xref:migration/index)
+## [Jádro ASP.NET 2.0 na 2.1](xref:migration/20_21)
 ## [Z ASP.NET do ASP.NET Core](xref:migration/proper-to-2x/index)
 ### [MVC](xref:migration/mvc)
 ### [Webové rozhraní API](xref:migration/webapi)
@@ -372,11 +379,6 @@
 ## [Z ASP.NET Core 1.x do 2.0](xref:migration/1x-to-2x/index)
 ### [Ověřování a identita](xref:migration/1x-to-2x/identity-2x)
 
-# [Referenční dokumentace ke knihovně API](/dotnet/api/?view=aspnetcore-2.0)
-
-# [Poznámky k verzi 2.0](aspnetcore-2.0.md)
-## [Poznámky k verzi 1.1](aspnetcore-1.1.md)
-## [Poznámky ke starším verzím](https://github.com/aspnet/home/releases)
-## [Dokumentace k VS 2015/project.json](https://docs.microsoft.com/dotnet/articles/project-json)
+# [Referenční dokumentace rozhraní API](/dotnet/api/?view=aspnetcore-2.0)
 
 # [Psaní příspěvků](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)

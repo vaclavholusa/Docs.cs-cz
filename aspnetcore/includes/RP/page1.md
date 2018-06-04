@@ -130,7 +130,7 @@ Předchozí element anchor je [značky pomocná](xref:mvc/views/tag-helpers/intr
 
 Uložte změny a aplikaci otestovat a kliknutím na **RpMovie** odkaz. Najdete v článku [_Layout.cshtml](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml) souboru na Githubu.
 
-### <a name="the-create-page-modelthe-create-page-model"></a>Vytvoření stránky modelThe vytvořit stránku model
+### <a name="the-create-page-model"></a>Vytvořit model stránky
 
 Zkontrolujte *Pages/Movies/Create.cshtml.cs* model stránky:
 

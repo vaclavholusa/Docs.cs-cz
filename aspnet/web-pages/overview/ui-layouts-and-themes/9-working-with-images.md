@@ -63,7 +63,7 @@ V některých případech ale musíte být schopni zobrazit obrázky dynamicky &
 
 Postup v této části ukazuje, jak zobrazit bitovou kopii za chodu, kde uživatelé zadat název souboru bitové kopie ze seznamu názvů bitové kopie. Výběrem název bitovou kopii z rozevíracího seznamu a při odeslání stránky, se zobrazí obrázek, který se vybrali.
 
-![[Obrázek] ] (9-working-with-images/_static/image1.jpg "ch9images 1.jpg")
+![[Obrázek] ](9-working-with-images/_static/image1.jpg "ch9images 1.jpg")
 
 1. Ve službě WebMatrix vytvoření nového webu.
 2. Přidat novou stránku s názvem *DynamicImage.cshtml*.
@@ -93,7 +93,7 @@ Postup v této části ukazuje, jak zobrazit bitovou kopii za chodu, kde uživat
 
 Předchozí příklad ukázal, jak zobrazit dynamicky bitovou kopii, ale to šlo jenom s obrázky, které již byly na vašem webu. Tento postup ukazuje, jak umožnit uživatelům odeslat bitovou kopii, která se následně zobrazí na stránce. V technologii ASP.NET, můžete upravit obrázků pomocí `WebImage` pomocné rutiny, která má metody, která umožňují vytvořit, upravit a uložit bitové kopie. `WebImage` Pomocná podporuje všechny běžné webové image typy souborů, včetně *.jpg*, *.png*, a *.bmp*. V tomto článku budete používat *.jpg* bitové kopie, ale můžete použít jakýkoli z typů bitové kopie.
 
-![[Obrázek] ] (9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
+![[Obrázek] ](9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
 
 1. Přidat novou stránku a pojmenujte ji *UploadImage.cshtml*.
 2. Nahradí existující obsah na stránce s následujícími službami: 
@@ -145,7 +145,7 @@ Pokud váš web přijímá Image od uživatele, můžete změnit velikost bitov�
 
 Tento postup ukazuje, jak změnit velikost image nahrané vytvořit miniaturu a poté uložte miniaturu a původní bitové kopie na webu. Můžete zobrazit na stránce miniaturu a používat hypertextový odkaz přesměrovat uživatele na bitovou kopii plné velikosti.
 
-![[Obrázek] ] (9-working-with-images/_static/image3.jpg "ch9images 3.jpg")
+![[Obrázek] ](9-working-with-images/_static/image3.jpg "ch9images 3.jpg")
 
 1. Přidat novou stránku s názvem *Thumbnail.cshtml*.
 2. V *bitové kopie* složce vytvořit podsložku s názvem *palec*.
@@ -166,7 +166,7 @@ Tento postup ukazuje, jak změnit velikost image nahrané vytvořit miniaturu a 
 
 `WebImage` Pomocník umožňuje také překlopit a otáčení obrázků. Tento postup ukazuje, jak získat bitovou kopii ze serveru, překlopit bitovou kopii obráceně (svisle), uložit jej a následně na stránce se zobrazí přetočený obrázek. V tomto příkladu právě používáte soubor už máte na serveru (*Photo2.jpg*). V reálné aplikaci byste pravděpodobně překlopit image s názvem získáte dynamicky, stejně jako v předchozích příkladech.
 
-![[Obrázek] ] (9-working-with-images/_static/image4.jpg "ch9images 4.jpg")
+![[Obrázek] ](9-working-with-images/_static/image4.jpg "ch9images 4.jpg")
 
 1. Přidat novou stránku s názvem *FlipImage.cshtml*.
 2. Nahradí existující obsah na stránce s následujícími službami: 
@@ -190,7 +190,7 @@ Otočit bitovou kopii, můžete použít stejný kód, vyjma toho, že místo vo
 
 Když přidáváte bitových kopií na váš web, můžete chtít přidat vodoznak na bitovou kopii, než ji uložit nebo zobrazit na stránce. Lidé často používají vodoznaky chcete přidat informace o autorských právech pro bitovou kopii nebo inzerovat jejich název firmy.
 
-![[Obrázek] ] (9-working-with-images/_static/image5.jpg "ch9images 5.jpg")
+![[Obrázek] ](9-working-with-images/_static/image5.jpg "ch9images 5.jpg")
 
 1. Přidat novou stránku s názvem *Watermark.cshtml*.
 2. Nahradí existující obsah na stránce s následujícími službami: 
@@ -207,7 +207,7 @@ Když přidáváte bitových kopií na váš web, můžete chtít přidat vodozn
 
 Místo použití text pro vodoznak, můžete použít jiné image. Bitové kopie, jako je logo společnosti osoby někdy použít jako vodoznak, nebo použít vodoznak místo textu pro informace o autorských právech.
 
-![[Obrázek] ] (9-working-with-images/_static/image6.jpg "ch9images 6.jpg")
+![[Obrázek] ](9-working-with-images/_static/image6.jpg "ch9images 6.jpg")
 
 1. Přidat novou stránku s názvem *ImageWatermark.cshtml*.
 2. Přidejte bitovou kopii *bitové kopie* složky, můžete použít jako logo a přejmenovat *MyCompanyLogo.jpg*. Tato bitová kopie by měl být obrázek, který se zobrazí jasně když je nastavená na 80 pixelů a 20 pixelů.

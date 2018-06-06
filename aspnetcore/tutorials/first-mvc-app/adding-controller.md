@@ -10,32 +10,32 @@ ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-controller
 ms.openlocfilehash: 3aa0275ae37eaef3a0dca8be70c701a50ccd7d48
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34687763"
 ---
-# <a name="add-a-controller-to-an-aspnet-core-mvc-app"></a><span data-ttu-id="cc9ff-103">Přidat řadič do aplikace ASP.NET MVC jádra</span><span class="sxs-lookup"><span data-stu-id="cc9ff-103">Add a controller to an ASP.NET Core MVC app</span></span>
+# <a name="add-a-controller-to-an-aspnet-core-mvc-app"></a><span data-ttu-id="8f67e-103">Přidat řadič do aplikace ASP.NET MVC jádra</span><span class="sxs-lookup"><span data-stu-id="8f67e-103">Add a controller to an ASP.NET Core MVC app</span></span>
 
-<span data-ttu-id="cc9ff-104">podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="cc9ff-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="8f67e-104">podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="8f67e-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
 [!INCLUDE [adding-controller1](~/includes/mvc-intro/adding-controller1.md)]
 
-* <span data-ttu-id="cc9ff-105">V **Průzkumníku řešení**, klikněte pravým tlačítkem na **řadiče > Přidat > novou položku**</span><span class="sxs-lookup"><span data-stu-id="cc9ff-105">In **Solution Explorer**, right-click **Controllers > Add > New Item**</span></span>
+* <span data-ttu-id="8f67e-105">V **Průzkumníku řešení**, klikněte pravým tlačítkem na **řadiče > Přidat > novou položku**</span><span class="sxs-lookup"><span data-stu-id="8f67e-105">In **Solution Explorer**, right-click **Controllers > Add > New Item**</span></span>
 
 ![Kontextové nabídky](adding-controller/_static/add_controller.png)
 
-* <span data-ttu-id="cc9ff-107">Vyberte **třídy Kontroleru**</span><span class="sxs-lookup"><span data-stu-id="cc9ff-107">Select **Controller Class**</span></span>
-* <span data-ttu-id="cc9ff-108">V **přidat novou položku** dialogové okno, zadejte **HelloWorldController**.</span><span class="sxs-lookup"><span data-stu-id="cc9ff-108">In the **Add New Item** dialog, enter **HelloWorldController**.</span></span>
+* <span data-ttu-id="8f67e-107">Vyberte **třídy Kontroleru**</span><span class="sxs-lookup"><span data-stu-id="8f67e-107">Select **Controller Class**</span></span>
+* <span data-ttu-id="8f67e-108">V **přidat novou položku** dialogové okno, zadejte **HelloWorldController**.</span><span class="sxs-lookup"><span data-stu-id="8f67e-108">In the **Add New Item** dialog, enter **HelloWorldController**.</span></span>
 
 ![Přidat řadič MVC a pojmenujte ji](adding-controller/_static/ac.png)
 
 [!INCLUDE [adding-controller2](~/includes/mvc-intro/adding-controller2.md)]
 
-<span data-ttu-id="cc9ff-110">V sadě Visual Studio v režimu bez ladění (Ctrl + F5), nemusíte vytvářet aplikace po změně kódu.</span><span class="sxs-lookup"><span data-stu-id="cc9ff-110">In Visual Studio, in non-debug mode (Ctrl+F5), you don't need to build the app after changing  code.</span></span> <span data-ttu-id="cc9ff-111">Stačí uložit soubor aktualizujte webový prohlížeč a tyto změny zobrazily.</span><span class="sxs-lookup"><span data-stu-id="cc9ff-111">Just save the file, refresh your browser and you can see the changes.</span></span>
+<span data-ttu-id="8f67e-110">V sadě Visual Studio v režimu bez ladění (Ctrl + F5), nemusíte vytvářet aplikace po změně kódu.</span><span class="sxs-lookup"><span data-stu-id="8f67e-110">In Visual Studio, in non-debug mode (Ctrl+F5), you don't need to build the app after changing  code.</span></span> <span data-ttu-id="8f67e-111">Stačí uložit soubor aktualizujte webový prohlížeč a tyto změny zobrazily.</span><span class="sxs-lookup"><span data-stu-id="8f67e-111">Just save the file, refresh your browser and you can see the changes.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="cc9ff-112">[Předchozí](start-mvc.md)
-> [další](adding-view.md)</span><span class="sxs-lookup"><span data-stu-id="cc9ff-112">[Previous](start-mvc.md)
+> <span data-ttu-id="8f67e-112">[Předchozí](start-mvc.md)
+> [další](adding-view.md)</span><span class="sxs-lookup"><span data-stu-id="8f67e-112">[Previous](start-mvc.md)
 [Next](adding-view.md)</span></span>

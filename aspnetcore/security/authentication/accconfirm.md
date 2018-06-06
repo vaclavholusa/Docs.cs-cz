@@ -9,33 +9,33 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 397d8bf04abf6be811ad8c91d52565251ac61678
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: b6dbe234973431448c18d3cc82a6ac98d4f53a3b
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "34688967"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34730448"
 ---
-# <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a><span data-ttu-id="a8afb-103">Potvrzení účtu a obnovení hesla v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="a8afb-103">Account confirmation and password recovery in ASP.NET Core</span></span>
+# <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a><span data-ttu-id="19285-103">Potvrzení účtu a obnovení hesla v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="19285-103">Account confirmation and password recovery in ASP.NET Core</span></span>
 
-<span data-ttu-id="a8afb-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Audette Jan](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="a8afb-104">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span>
+<span data-ttu-id="19285-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Audette Jan](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="19285-104">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span>
 
-<span data-ttu-id="a8afb-105">Tento kurz ukazuje, jak vytvořit aplikaci ASP.NET Core pomocí e-mailu potvrzení a heslo resetovat.</span><span class="sxs-lookup"><span data-stu-id="a8afb-105">This tutorial shows you how to build an ASP.NET Core app with email confirmation and password reset.</span></span> <span data-ttu-id="a8afb-106">Tento kurz je určen **není** začátku tématu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-106">This tutorial is **not** a beginning topic.</span></span> <span data-ttu-id="a8afb-107">Měli byste se seznámit s:</span><span class="sxs-lookup"><span data-stu-id="a8afb-107">You should be familiar with:</span></span>
+<span data-ttu-id="19285-105">Tento kurz ukazuje, jak vytvořit aplikaci ASP.NET Core pomocí e-mailu potvrzení a heslo resetovat.</span><span class="sxs-lookup"><span data-stu-id="19285-105">This tutorial shows you how to build an ASP.NET Core app with email confirmation and password reset.</span></span> <span data-ttu-id="19285-106">Tento kurz je určen **není** začátku tématu.</span><span class="sxs-lookup"><span data-stu-id="19285-106">This tutorial is **not** a beginning topic.</span></span> <span data-ttu-id="19285-107">Měli byste se seznámit s:</span><span class="sxs-lookup"><span data-stu-id="19285-107">You should be familiar with:</span></span>
 
-* [<span data-ttu-id="a8afb-108">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="a8afb-108">ASP.NET Core</span></span>](xref:tutorials/first-mvc-app/start-mvc)
-* [<span data-ttu-id="a8afb-109">Ověřování</span><span class="sxs-lookup"><span data-stu-id="a8afb-109">Authentication</span></span>](xref:security/authentication/index)
-* [<span data-ttu-id="a8afb-110">Potvrzení účtu a obnovení hesla</span><span class="sxs-lookup"><span data-stu-id="a8afb-110">Account Confirmation and Password Recovery</span></span>](xref:security/authentication/accconfirm)
-* [<span data-ttu-id="a8afb-111">Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="a8afb-111">Entity Framework Core</span></span>](xref:data/ef-mvc/intro)
+* [<span data-ttu-id="19285-108">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="19285-108">ASP.NET Core</span></span>](xref:tutorials/first-mvc-app/start-mvc)
+* [<span data-ttu-id="19285-109">Ověřování</span><span class="sxs-lookup"><span data-stu-id="19285-109">Authentication</span></span>](xref:security/authentication/index)
+* [<span data-ttu-id="19285-110">Potvrzení účtu a obnovení hesla</span><span class="sxs-lookup"><span data-stu-id="19285-110">Account Confirmation and Password Recovery</span></span>](xref:security/authentication/accconfirm)
+* [<span data-ttu-id="19285-111">Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="19285-111">Entity Framework Core</span></span>](xref:data/ef-mvc/intro)
 
-<span data-ttu-id="a8afb-112">V tématu [tento PDF soubor](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) pro verze ASP.NET Core MVC 1.1 a 2.x.</span><span class="sxs-lookup"><span data-stu-id="a8afb-112">See [this PDF file](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) for the ASP.NET Core MVC 1.1 and 2.x versions.</span></span>
+<span data-ttu-id="19285-112">V tématu [tento PDF soubor](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) pro verze ASP.NET Core MVC 1.1 a 2.x.</span><span class="sxs-lookup"><span data-stu-id="19285-112">See [this PDF file](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) for the ASP.NET Core MVC 1.1 and 2.x versions.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="a8afb-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a8afb-113">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="19285-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="19285-113">Prerequisites</span></span>
 
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-## <a name="create-a-new-aspnet-core-project-with-the-net-core-cli"></a><span data-ttu-id="a8afb-114">Vytvořte nový projekt ASP.NET Core pomocí rozhraní příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="a8afb-114">Create a new ASP.NET Core project with the .NET Core CLI</span></span>
+## <a name="create-a-new-aspnet-core-project-with-the-net-core-cli"></a><span data-ttu-id="19285-114">Vytvořte nový projekt ASP.NET Core pomocí rozhraní příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="19285-114">Create a new ASP.NET Core project with the .NET Core CLI</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a8afb-115">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-115">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="19285-115">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="19285-115">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -55,91 +55,91 @@ cd WebPWrecover
 
 ::: moniker-end
 
-* <span data-ttu-id="a8afb-116">`--auth Individual` Určuje šablonu projektu na jednotlivé uživatelské účty.</span><span class="sxs-lookup"><span data-stu-id="a8afb-116">`--auth Individual` specifies the Individual User Accounts project template.</span></span>
-* <span data-ttu-id="a8afb-117">V systému Windows, přidejte `-uld` možnost.</span><span class="sxs-lookup"><span data-stu-id="a8afb-117">On Windows, add the `-uld` option.</span></span> <span data-ttu-id="a8afb-118">Určuje, že místo SQLite by použít LocalDB.</span><span class="sxs-lookup"><span data-stu-id="a8afb-118">It specifies LocalDB should be used instead of SQLite.</span></span>
-* <span data-ttu-id="a8afb-119">Spustit `new mvc --help` získání nápovědy na tento příkaz.</span><span class="sxs-lookup"><span data-stu-id="a8afb-119">Run `new mvc --help` to get help on this command.</span></span>
+* <span data-ttu-id="19285-116">`--auth Individual` Určuje šablonu projektu na jednotlivé uživatelské účty.</span><span class="sxs-lookup"><span data-stu-id="19285-116">`--auth Individual` specifies the Individual User Accounts project template.</span></span>
+* <span data-ttu-id="19285-117">V systému Windows, přidejte `-uld` možnost.</span><span class="sxs-lookup"><span data-stu-id="19285-117">On Windows, add the `-uld` option.</span></span> <span data-ttu-id="19285-118">Určuje, že místo SQLite by použít LocalDB.</span><span class="sxs-lookup"><span data-stu-id="19285-118">It specifies LocalDB should be used instead of SQLite.</span></span>
+* <span data-ttu-id="19285-119">Spustit `new mvc --help` získání nápovědy na tento příkaz.</span><span class="sxs-lookup"><span data-stu-id="19285-119">Run `new mvc --help` to get help on this command.</span></span>
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a8afb-120">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-120">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="19285-120">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="19285-120">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="a8afb-121">Pokud používáte rozhraní příkazového řádku nebo SQLite, spusťte následující příkazy v příkazovém okně:</span><span class="sxs-lookup"><span data-stu-id="a8afb-121">If you're using the CLI or SQLite, run the following in a command window:</span></span>
+<span data-ttu-id="19285-121">Pokud používáte rozhraní příkazového řádku nebo SQLite, spusťte následující příkazy v příkazovém okně:</span><span class="sxs-lookup"><span data-stu-id="19285-121">If you're using the CLI or SQLite, run the following in a command window:</span></span>
 
 ```console
 dotnet new mvc --auth Individual
 ```
 
-* <span data-ttu-id="a8afb-122">`--auth Individual` Určuje šablonu projektu na jednotlivé uživatelské účty.</span><span class="sxs-lookup"><span data-stu-id="a8afb-122">`--auth Individual` specifies the Individual User Accounts project template.</span></span>
-* <span data-ttu-id="a8afb-123">V systému Windows, přidejte `-uld` možnost.</span><span class="sxs-lookup"><span data-stu-id="a8afb-123">On Windows, add the `-uld` option.</span></span> <span data-ttu-id="a8afb-124">Určuje, že místo SQLite by použít LocalDB.</span><span class="sxs-lookup"><span data-stu-id="a8afb-124">It specifies LocalDB should be used instead of SQLite.</span></span>
-* <span data-ttu-id="a8afb-125">Spustit `new mvc --help` získání nápovědy na tento příkaz.</span><span class="sxs-lookup"><span data-stu-id="a8afb-125">Run `new mvc --help` to get help on this command.</span></span>
+* <span data-ttu-id="19285-122">`--auth Individual` Určuje šablonu projektu na jednotlivé uživatelské účty.</span><span class="sxs-lookup"><span data-stu-id="19285-122">`--auth Individual` specifies the Individual User Accounts project template.</span></span>
+* <span data-ttu-id="19285-123">V systému Windows, přidejte `-uld` možnost.</span><span class="sxs-lookup"><span data-stu-id="19285-123">On Windows, add the `-uld` option.</span></span> <span data-ttu-id="19285-124">Určuje, že místo SQLite by použít LocalDB.</span><span class="sxs-lookup"><span data-stu-id="19285-124">It specifies LocalDB should be used instead of SQLite.</span></span>
+* <span data-ttu-id="19285-125">Spustit `new mvc --help` získání nápovědy na tento příkaz.</span><span class="sxs-lookup"><span data-stu-id="19285-125">Run `new mvc --help` to get help on this command.</span></span>
 
 ---
 
-<span data-ttu-id="a8afb-126">Alternativně můžete vytvořit nový projekt ASP.NET Core pomocí sady Visual Studio:</span><span class="sxs-lookup"><span data-stu-id="a8afb-126">Alternatively, you can create a new ASP.NET Core project with Visual Studio:</span></span>
+<span data-ttu-id="19285-126">Alternativně můžete vytvořit nový projekt ASP.NET Core pomocí sady Visual Studio:</span><span class="sxs-lookup"><span data-stu-id="19285-126">Alternatively, you can create a new ASP.NET Core project with Visual Studio:</span></span>
 
-* <span data-ttu-id="a8afb-127">V sadě Visual Studio vytvořte novou **webové aplikace** projektu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-127">In Visual Studio, create a new **Web Application** project.</span></span>
-* <span data-ttu-id="a8afb-128">Vyberte **jádro ASP.NET 2.0**.</span><span class="sxs-lookup"><span data-stu-id="a8afb-128">Select **ASP.NET Core 2.0**.</span></span> <span data-ttu-id="a8afb-129">**.NET core** je vybrána na následujícím obrázku, ale můžete vybrat **rozhraní .NET Framework**.</span><span class="sxs-lookup"><span data-stu-id="a8afb-129">**.NET Core** is selected in the following image, but you can select **.NET Framework**.</span></span>
-* <span data-ttu-id="a8afb-130">Vyberte **změna ověřování** a nastavte na **jednotlivé uživatelské účty**.</span><span class="sxs-lookup"><span data-stu-id="a8afb-130">Select **Change Authentication** and set to **Individual User Accounts**.</span></span>
-* <span data-ttu-id="a8afb-131">Ponechte výchozí **úložiště uživatelských účtů v aplikaci**.</span><span class="sxs-lookup"><span data-stu-id="a8afb-131">Keep the default **Store user accounts in-app**.</span></span>
+* <span data-ttu-id="19285-127">V sadě Visual Studio vytvořte novou **webové aplikace** projektu.</span><span class="sxs-lookup"><span data-stu-id="19285-127">In Visual Studio, create a new **Web Application** project.</span></span>
+* <span data-ttu-id="19285-128">Vyberte **jádro ASP.NET 2.0**.</span><span class="sxs-lookup"><span data-stu-id="19285-128">Select **ASP.NET Core 2.0**.</span></span> <span data-ttu-id="19285-129">**.NET core** je vybrána na následujícím obrázku, ale můžete vybrat **rozhraní .NET Framework**.</span><span class="sxs-lookup"><span data-stu-id="19285-129">**.NET Core** is selected in the following image, but you can select **.NET Framework**.</span></span>
+* <span data-ttu-id="19285-130">Vyberte **změna ověřování** a nastavte na **jednotlivé uživatelské účty**.</span><span class="sxs-lookup"><span data-stu-id="19285-130">Select **Change Authentication** and set to **Individual User Accounts**.</span></span>
+* <span data-ttu-id="19285-131">Ponechte výchozí **úložiště uživatelských účtů v aplikaci**.</span><span class="sxs-lookup"><span data-stu-id="19285-131">Keep the default **Store user accounts in-app**.</span></span>
 
 ![Dialogové okno Nový projekt zobrazující "Jednotlivých uživatelských účtů radio" vybrali](accconfirm/_static/2.png)
 
-## <a name="test-new-user-registration"></a><span data-ttu-id="a8afb-133">Otestovat novou registraci uživatele</span><span class="sxs-lookup"><span data-stu-id="a8afb-133">Test new user registration</span></span>
+## <a name="test-new-user-registration"></a><span data-ttu-id="19285-133">Otestovat novou registraci uživatele</span><span class="sxs-lookup"><span data-stu-id="19285-133">Test new user registration</span></span>
 
-<span data-ttu-id="a8afb-134">Spuštění aplikace, vyberte **zaregistrovat** propojit a zaregistrovat uživatele.</span><span class="sxs-lookup"><span data-stu-id="a8afb-134">Run the app, select the **Register** link, and register a user.</span></span> <span data-ttu-id="a8afb-135">Postupujte podle pokynů ke spuštění migrace Entity Framework Core.</span><span class="sxs-lookup"><span data-stu-id="a8afb-135">Follow the instructions to run Entity Framework Core migrations.</span></span> <span data-ttu-id="a8afb-136">V tomto okamžiku je pouze ověření na e-mailu [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) atribut.</span><span class="sxs-lookup"><span data-stu-id="a8afb-136">At this point, the only validation on the email is with the [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) attribute.</span></span> <span data-ttu-id="a8afb-137">Po odeslání registrace, jste přihlášení do aplikace.</span><span class="sxs-lookup"><span data-stu-id="a8afb-137">After submitting the registration, you are logged into the app.</span></span> <span data-ttu-id="a8afb-138">Později v tomto kurzu se kód aktualizuje, nelze noví uživatelé přihlásit, dokud ověřena e-mailu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-138">Later in the tutorial, the code is updated so new users can't log in until their email has been validated.</span></span>
+<span data-ttu-id="19285-134">Spuštění aplikace, vyberte **zaregistrovat** propojit a zaregistrovat uživatele.</span><span class="sxs-lookup"><span data-stu-id="19285-134">Run the app, select the **Register** link, and register a user.</span></span> <span data-ttu-id="19285-135">Postupujte podle pokynů ke spuštění migrace Entity Framework Core.</span><span class="sxs-lookup"><span data-stu-id="19285-135">Follow the instructions to run Entity Framework Core migrations.</span></span> <span data-ttu-id="19285-136">V tomto okamžiku je pouze ověření na e-mailu [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) atribut.</span><span class="sxs-lookup"><span data-stu-id="19285-136">At this point, the only validation on the email is with the [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) attribute.</span></span> <span data-ttu-id="19285-137">Po odeslání registrace, jste přihlášení do aplikace.</span><span class="sxs-lookup"><span data-stu-id="19285-137">After submitting the registration, you are logged into the app.</span></span> <span data-ttu-id="19285-138">Později v tomto kurzu se kód aktualizuje, nelze noví uživatelé přihlásit, dokud ověřena e-mailu.</span><span class="sxs-lookup"><span data-stu-id="19285-138">Later in the tutorial, the code is updated so new users can't log in until their email has been validated.</span></span>
 
-## <a name="view-the-identity-database"></a><span data-ttu-id="a8afb-139">Zobrazení Identity databáze</span><span class="sxs-lookup"><span data-stu-id="a8afb-139">View the Identity database</span></span>
+## <a name="view-the-identity-database"></a><span data-ttu-id="19285-139">Zobrazení Identity databáze</span><span class="sxs-lookup"><span data-stu-id="19285-139">View the Identity database</span></span>
 
-<span data-ttu-id="a8afb-140">V tématu [pracovat s SQLite v projektu ASP.NET MVC základní](xref:tutorials/first-mvc-app-xplat/working-with-sql) pokyny o tom, jak zobrazit databáze SQLite.</span><span class="sxs-lookup"><span data-stu-id="a8afb-140">See [Work with SQLite in an ASP.NET Core MVC project](xref:tutorials/first-mvc-app-xplat/working-with-sql) for instructions on how to view the SQLite database.</span></span>
+<span data-ttu-id="19285-140">V tématu [pracovat s SQLite v projektu ASP.NET MVC základní](xref:tutorials/first-mvc-app-xplat/working-with-sql) pokyny o tom, jak zobrazit databáze SQLite.</span><span class="sxs-lookup"><span data-stu-id="19285-140">See [Work with SQLite in an ASP.NET Core MVC project](xref:tutorials/first-mvc-app-xplat/working-with-sql) for instructions on how to view the SQLite database.</span></span>
 
-<span data-ttu-id="a8afb-141">Pro sadu Visual Studio:</span><span class="sxs-lookup"><span data-stu-id="a8afb-141">For Visual Studio:</span></span>
+<span data-ttu-id="19285-141">Pro sadu Visual Studio:</span><span class="sxs-lookup"><span data-stu-id="19285-141">For Visual Studio:</span></span>
 
-* <span data-ttu-id="a8afb-142">Z **zobrazení** nabídce vyberte možnost **Průzkumník objektů systému SQL Server** (SSOX).</span><span class="sxs-lookup"><span data-stu-id="a8afb-142">From the **View** menu, select **SQL Server Object Explorer** (SSOX).</span></span>
-* <span data-ttu-id="a8afb-143">Přejděte na **(localdb) MSSQLLocalDB (SQL Server 13)**.</span><span class="sxs-lookup"><span data-stu-id="a8afb-143">Navigate to **(localdb)MSSQLLocalDB(SQL Server 13)**.</span></span> <span data-ttu-id="a8afb-144">Klikněte pravým tlačítkem na **dbo. AspNetUsers** > **zobrazení dat**:</span><span class="sxs-lookup"><span data-stu-id="a8afb-144">Right-click on **dbo.AspNetUsers** > **View Data**:</span></span>
+* <span data-ttu-id="19285-142">Z **zobrazení** nabídce vyberte možnost **Průzkumník objektů systému SQL Server** (SSOX).</span><span class="sxs-lookup"><span data-stu-id="19285-142">From the **View** menu, select **SQL Server Object Explorer** (SSOX).</span></span>
+* <span data-ttu-id="19285-143">Přejděte na **(localdb) MSSQLLocalDB (SQL Server 13)**.</span><span class="sxs-lookup"><span data-stu-id="19285-143">Navigate to **(localdb)MSSQLLocalDB(SQL Server 13)**.</span></span> <span data-ttu-id="19285-144">Klikněte pravým tlačítkem na **dbo. AspNetUsers** > **zobrazení dat**:</span><span class="sxs-lookup"><span data-stu-id="19285-144">Right-click on **dbo.AspNetUsers** > **View Data**:</span></span>
 
 ![Kontextové nabídky pro tabulku AspNetUsers v Průzkumníku objektů systému SQL Server](accconfirm/_static/ssox.png)
 
-<span data-ttu-id="a8afb-146">Poznámka: v tabulce `EmailConfirmed` pole je `False`.</span><span class="sxs-lookup"><span data-stu-id="a8afb-146">Note the table's `EmailConfirmed` field is `False`.</span></span>
+<span data-ttu-id="19285-146">Poznámka: v tabulce `EmailConfirmed` pole je `False`.</span><span class="sxs-lookup"><span data-stu-id="19285-146">Note the table's `EmailConfirmed` field is `False`.</span></span>
 
-<span data-ttu-id="a8afb-147">Můžete chtít tento e-mail znovu použít v dalším kroku při aplikace odešle e-mail s potvrzením.</span><span class="sxs-lookup"><span data-stu-id="a8afb-147">You might want to use this email again in the next step when the app sends a confirmation email.</span></span> <span data-ttu-id="a8afb-148">Klikněte pravým tlačítkem myši na řádek a vyberte **odstranit**.</span><span class="sxs-lookup"><span data-stu-id="a8afb-148">Right-click on the row and select **Delete**.</span></span> <span data-ttu-id="a8afb-149">Odstranění e-mailový alias usnadní v následujících krocích.</span><span class="sxs-lookup"><span data-stu-id="a8afb-149">Deleting the email alias makes it easier in the following steps.</span></span>
+<span data-ttu-id="19285-147">Můžete chtít tento e-mail znovu použít v dalším kroku při aplikace odešle e-mail s potvrzením.</span><span class="sxs-lookup"><span data-stu-id="19285-147">You might want to use this email again in the next step when the app sends a confirmation email.</span></span> <span data-ttu-id="19285-148">Klikněte pravým tlačítkem myši na řádek a vyberte **odstranit**.</span><span class="sxs-lookup"><span data-stu-id="19285-148">Right-click on the row and select **Delete**.</span></span> <span data-ttu-id="19285-149">Odstranění e-mailový alias usnadní v následujících krocích.</span><span class="sxs-lookup"><span data-stu-id="19285-149">Deleting the email alias makes it easier in the following steps.</span></span>
 
 ---
 
-## <a name="require-https"></a><span data-ttu-id="a8afb-150">Vyžadovat protokol HTTPS</span><span class="sxs-lookup"><span data-stu-id="a8afb-150">Require HTTPS</span></span>
+## <a name="require-https"></a><span data-ttu-id="19285-150">Vyžadovat protokol HTTPS</span><span class="sxs-lookup"><span data-stu-id="19285-150">Require HTTPS</span></span>
 
-<span data-ttu-id="a8afb-151">V tématu [vyžadují protokol HTTPS](xref:security/enforcing-ssl).</span><span class="sxs-lookup"><span data-stu-id="a8afb-151">See [Require HTTPS](xref:security/enforcing-ssl).</span></span>
+<span data-ttu-id="19285-151">V tématu [vyžadují protokol HTTPS](xref:security/enforcing-ssl).</span><span class="sxs-lookup"><span data-stu-id="19285-151">See [Require HTTPS](xref:security/enforcing-ssl).</span></span>
 
 <a name="prevent-login-at-registration"></a>
-## <a name="require-email-confirmation"></a><span data-ttu-id="a8afb-152">Požadovat potvrzení e-mailu</span><span class="sxs-lookup"><span data-stu-id="a8afb-152">Require email confirmation</span></span>
+## <a name="require-email-confirmation"></a><span data-ttu-id="19285-152">Požadovat potvrzení e-mailu</span><span class="sxs-lookup"><span data-stu-id="19285-152">Require email confirmation</span></span>
 
-<span data-ttu-id="a8afb-153">Je osvědčeným postupem potvrďte e-mailu nové registrace uživatele.</span><span class="sxs-lookup"><span data-stu-id="a8afb-153">It's a best practice to confirm the email of a new user registration.</span></span> <span data-ttu-id="a8afb-154">E-mailem potvrzení pomáhá ověřte, že nejsou zosobnění někdo jiný (to znamená, že nebyly zaregistrována někoho jiného e-mailu).</span><span class="sxs-lookup"><span data-stu-id="a8afb-154">Email confirmation helps to verify they're not impersonating someone else (that is, they haven't registered with someone else's email).</span></span> <span data-ttu-id="a8afb-155">Předpokládejme, že jste měli diskusní fórum, a chcete zabránit "yli@example.com"od registrace jako"nolivetto@contoso.com."</span><span class="sxs-lookup"><span data-stu-id="a8afb-155">Suppose you had a discussion forum, and you wanted to prevent "yli@example.com" from registering as "nolivetto@contoso.com."</span></span> <span data-ttu-id="a8afb-156">Bez potvrzení e-mailu "nolivetto@contoso.com" může přijímat nežádoucí e-mailu z vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="a8afb-156">Without email confirmation, "nolivetto@contoso.com" could receive unwanted email from your app.</span></span> <span data-ttu-id="a8afb-157">Předpokládejme, že uživatel omylem zaregistrován jako "ylo@example.com" a kdyby zaznamenali chyby v pravopisu systému "yli".</span><span class="sxs-lookup"><span data-stu-id="a8afb-157">Suppose the user accidentally registered as "ylo@example.com" and hadn't noticed the misspelling of "yli".</span></span> <span data-ttu-id="a8afb-158">Se nebudou moci používat obnovení hesla, protože aplikace nemá správnou e-mailovou.</span><span class="sxs-lookup"><span data-stu-id="a8afb-158">They wouldn't be able to use password recovery because the app doesn't have their correct email.</span></span> <span data-ttu-id="a8afb-159">Potvrzení e-mailu poskytuje jen omezenou ochrany ze robotů.</span><span class="sxs-lookup"><span data-stu-id="a8afb-159">Email confirmation provides only limited protection from bots.</span></span> <span data-ttu-id="a8afb-160">Potvrzení e-mailu neposkytuje ochranu z uživatelé se zlými úmysly s mnoha e-mailové účty.</span><span class="sxs-lookup"><span data-stu-id="a8afb-160">Email confirmation doesn't provide protection from malicious users with many email accounts.</span></span>
+<span data-ttu-id="19285-153">Je osvědčeným postupem potvrďte e-mailu nové registrace uživatele.</span><span class="sxs-lookup"><span data-stu-id="19285-153">It's a best practice to confirm the email of a new user registration.</span></span> <span data-ttu-id="19285-154">E-mailem potvrzení pomáhá ověřte, že nejsou zosobnění někdo jiný (to znamená, že nebyly zaregistrována někoho jiného e-mailu).</span><span class="sxs-lookup"><span data-stu-id="19285-154">Email confirmation helps to verify they're not impersonating someone else (that is, they haven't registered with someone else's email).</span></span> <span data-ttu-id="19285-155">Předpokládejme, že jste měli diskusní fórum, a chcete zabránit "yli@example.com"od registrace jako"nolivetto@contoso.com".</span><span class="sxs-lookup"><span data-stu-id="19285-155">Suppose you had a discussion forum, and you wanted to prevent "yli@example.com" from registering as "nolivetto@contoso.com".</span></span> <span data-ttu-id="19285-156">Bez potvrzení e-mailu "nolivetto@contoso.com" může přijímat nežádoucí e-mailu z vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="19285-156">Without email confirmation, "nolivetto@contoso.com" could receive unwanted email from your app.</span></span> <span data-ttu-id="19285-157">Předpokládejme, že uživatel omylem zaregistrován jako "ylo@example.com" a kdyby zaznamenali chyby v pravopisu systému "yli".</span><span class="sxs-lookup"><span data-stu-id="19285-157">Suppose the user accidentally registered as "ylo@example.com" and hadn't noticed the misspelling of "yli".</span></span> <span data-ttu-id="19285-158">Se nebudou moci používat obnovení hesla, protože aplikace nemá správnou e-mailovou.</span><span class="sxs-lookup"><span data-stu-id="19285-158">They wouldn't be able to use password recovery because the app doesn't have their correct email.</span></span> <span data-ttu-id="19285-159">Potvrzení e-mailu poskytuje jen omezenou ochrany ze robotů.</span><span class="sxs-lookup"><span data-stu-id="19285-159">Email confirmation provides only limited protection from bots.</span></span> <span data-ttu-id="19285-160">Potvrzení e-mailu neposkytuje ochranu z uživatelé se zlými úmysly s mnoha e-mailové účty.</span><span class="sxs-lookup"><span data-stu-id="19285-160">Email confirmation doesn't provide protection from malicious users with many email accounts.</span></span>
 
-<span data-ttu-id="a8afb-161">Obvykle budete chtít zabránit noví uživatelé publikování všechna data na webové stránky, než budou mít potvrzené e-mailu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-161">You generally want to prevent new users from posting any data to your web site before they have a confirmed email.</span></span>
+<span data-ttu-id="19285-161">Obvykle budete chtít zabránit noví uživatelé publikování všechna data na webové stránky, než budou mít potvrzené e-mailu.</span><span class="sxs-lookup"><span data-stu-id="19285-161">You generally want to prevent new users from posting any data to your web site before they have a confirmed email.</span></span>
 
-<span data-ttu-id="a8afb-162">Aktualizace `ConfigureServices` tak, aby vyžadovala potvrzen e-mailu:</span><span class="sxs-lookup"><span data-stu-id="a8afb-162">Update `ConfigureServices` to require a confirmed email:</span></span>
+<span data-ttu-id="19285-162">Aktualizace `ConfigureServices` tak, aby vyžadovala potvrzen e-mailu:</span><span class="sxs-lookup"><span data-stu-id="19285-162">Update `ConfigureServices` to require a confirmed email:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet1&highlight=12-17)]
 
-<span data-ttu-id="a8afb-163">`config.SignIn.RequireConfirmedEmail = true;` zabraňuje registrovaní uživatelé přihlásit, dokud je potvrzen e-mailu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-163">`config.SignIn.RequireConfirmedEmail = true;` prevents registered users from logging in until their email is confirmed.</span></span>
+<span data-ttu-id="19285-163">`config.SignIn.RequireConfirmedEmail = true;` zabraňuje registrovaní uživatelé přihlásit, dokud je potvrzen e-mailu.</span><span class="sxs-lookup"><span data-stu-id="19285-163">`config.SignIn.RequireConfirmedEmail = true;` prevents registered users from logging in until their email is confirmed.</span></span>
 
-### <a name="configure-email-provider"></a><span data-ttu-id="a8afb-164">Nakonfigurujte poskytovatele tak e-mailu</span><span class="sxs-lookup"><span data-stu-id="a8afb-164">Configure email provider</span></span>
+### <a name="configure-email-provider"></a><span data-ttu-id="19285-164">Nakonfigurujte poskytovatele tak e-mailu</span><span class="sxs-lookup"><span data-stu-id="19285-164">Configure email provider</span></span>
 
-<span data-ttu-id="a8afb-165">V tomto kurzu se sendgrid vám umožňuje používá k odesílání e-mailu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-165">In this tutorial, SendGrid is used to send email.</span></span> <span data-ttu-id="a8afb-166">Musíte sendgrid vám umožňuje účtu a klíč k odeslání e-mailu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-166">You need a SendGrid account and key to send email.</span></span> <span data-ttu-id="a8afb-167">Můžete vytvořit další poskytovatele e-mailu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-167">You can use other email providers.</span></span> <span data-ttu-id="a8afb-168">ASP.NET Core 2.x zahrnuje `System.Net.Mail`, který umožňuje odeslat e-mailu z vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="a8afb-168">ASP.NET Core 2.x includes `System.Net.Mail`, which allows you to send email from your app.</span></span> <span data-ttu-id="a8afb-169">Doporučujeme, aby že použití sendgrid vám umožňuje nebo jinou e-mailovou službu pro odeslání e-mailu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-169">We recommend you use SendGrid or another email service to send email.</span></span> <span data-ttu-id="a8afb-170">SMTP je obtížné zabezpečení a nastavit správně.</span><span class="sxs-lookup"><span data-stu-id="a8afb-170">SMTP is difficult to secure and set up correctly.</span></span>
+<span data-ttu-id="19285-165">V tomto kurzu se sendgrid vám umožňuje používá k odesílání e-mailu.</span><span class="sxs-lookup"><span data-stu-id="19285-165">In this tutorial, SendGrid is used to send email.</span></span> <span data-ttu-id="19285-166">Musíte sendgrid vám umožňuje účtu a klíč k odeslání e-mailu.</span><span class="sxs-lookup"><span data-stu-id="19285-166">You need a SendGrid account and key to send email.</span></span> <span data-ttu-id="19285-167">Můžete vytvořit další poskytovatele e-mailu.</span><span class="sxs-lookup"><span data-stu-id="19285-167">You can use other email providers.</span></span> <span data-ttu-id="19285-168">ASP.NET Core 2.x zahrnuje `System.Net.Mail`, který umožňuje odeslat e-mailu z vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="19285-168">ASP.NET Core 2.x includes `System.Net.Mail`, which allows you to send email from your app.</span></span> <span data-ttu-id="19285-169">Doporučujeme, aby že použití sendgrid vám umožňuje nebo jinou e-mailovou službu pro odeslání e-mailu.</span><span class="sxs-lookup"><span data-stu-id="19285-169">We recommend you use SendGrid or another email service to send email.</span></span> <span data-ttu-id="19285-170">SMTP je obtížné zabezpečení a nastavit správně.</span><span class="sxs-lookup"><span data-stu-id="19285-170">SMTP is difficult to secure and set up correctly.</span></span>
 
-<span data-ttu-id="a8afb-171">[Možnosti vzor](xref:fundamentals/configuration/options) se používá pro přístup k účtu a klíč nastavení uživatele.</span><span class="sxs-lookup"><span data-stu-id="a8afb-171">The [Options pattern](xref:fundamentals/configuration/options) is used to access the user account and key settings.</span></span> <span data-ttu-id="a8afb-172">Další informace najdete v tématu [konfigurace](xref:fundamentals/configuration/index).</span><span class="sxs-lookup"><span data-stu-id="a8afb-172">For more information, see [configuration](xref:fundamentals/configuration/index).</span></span>
+<span data-ttu-id="19285-171">[Možnosti vzor](xref:fundamentals/configuration/options) se používá pro přístup k účtu a klíč nastavení uživatele.</span><span class="sxs-lookup"><span data-stu-id="19285-171">The [Options pattern](xref:fundamentals/configuration/options) is used to access the user account and key settings.</span></span> <span data-ttu-id="19285-172">Další informace najdete v tématu [konfigurace](xref:fundamentals/configuration/index).</span><span class="sxs-lookup"><span data-stu-id="19285-172">For more information, see [configuration](xref:fundamentals/configuration/index).</span></span>
 
-<span data-ttu-id="a8afb-173">Vytvořte třídu načíst klíč zabezpečení e-mailu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-173">Create a class to fetch the secure email key.</span></span> <span data-ttu-id="a8afb-174">Tato ukázka `AuthMessageSenderOptions` je v vytvořit třídu *Services/AuthMessageSenderOptions.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="a8afb-174">For this sample, the `AuthMessageSenderOptions` class is created in the *Services/AuthMessageSenderOptions.cs* file:</span></span>
+<span data-ttu-id="19285-173">Vytvořte třídu načíst klíč zabezpečení e-mailu.</span><span class="sxs-lookup"><span data-stu-id="19285-173">Create a class to fetch the secure email key.</span></span> <span data-ttu-id="19285-174">Tato ukázka `AuthMessageSenderOptions` je v vytvořit třídu *Services/AuthMessageSenderOptions.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="19285-174">For this sample, the `AuthMessageSenderOptions` class is created in the *Services/AuthMessageSenderOptions.cs* file:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
-<span data-ttu-id="a8afb-175">Nastavte `SendGridUser` a `SendGridKey` s [nástroj tajný klíč správce](xref:security/app-secrets).</span><span class="sxs-lookup"><span data-stu-id="a8afb-175">Set the `SendGridUser` and `SendGridKey` with the [secret-manager tool](xref:security/app-secrets).</span></span> <span data-ttu-id="a8afb-176">Příklad:</span><span class="sxs-lookup"><span data-stu-id="a8afb-176">For example:</span></span>
+<span data-ttu-id="19285-175">Nastavte `SendGridUser` a `SendGridKey` s [nástroj tajný klíč správce](xref:security/app-secrets).</span><span class="sxs-lookup"><span data-stu-id="19285-175">Set the `SendGridUser` and `SendGridKey` with the [secret-manager tool](xref:security/app-secrets).</span></span> <span data-ttu-id="19285-176">Příklad:</span><span class="sxs-lookup"><span data-stu-id="19285-176">For example:</span></span>
 
 ```console
 C:\WebAppl\src\WebApp1>dotnet user-secrets set SendGridUser RickAndMSFT
 info: Successfully saved SendGridUser = RickAndMSFT to the secret store.
 ```
 
-<span data-ttu-id="a8afb-177">V systému Windows, tajný klíč správce ukládá páry klíčů/hodnota v *secrets.json* v soubor `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` adresáře.</span><span class="sxs-lookup"><span data-stu-id="a8afb-177">On Windows, Secret Manager stores keys/value pairs in a *secrets.json* file in the `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` directory.</span></span>
+<span data-ttu-id="19285-177">V systému Windows, tajný klíč správce ukládá páry klíčů/hodnota v *secrets.json* v soubor `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` adresáře.</span><span class="sxs-lookup"><span data-stu-id="19285-177">On Windows, Secret Manager stores keys/value pairs in a *secrets.json* file in the `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` directory.</span></span>
 
-<span data-ttu-id="a8afb-178">Obsah *secrets.json* soubor není zašifrován.</span><span class="sxs-lookup"><span data-stu-id="a8afb-178">The contents of the *secrets.json* file aren't encrypted.</span></span> <span data-ttu-id="a8afb-179">*Secrets.json* souboru je uveden níže ( `SendGridKey` hodnota byla odebrána.)</span><span class="sxs-lookup"><span data-stu-id="a8afb-179">The *secrets.json* file is shown below (the `SendGridKey` value has been removed.)</span></span>
+<span data-ttu-id="19285-178">Obsah *secrets.json* soubor není zašifrován.</span><span class="sxs-lookup"><span data-stu-id="19285-178">The contents of the *secrets.json* file aren't encrypted.</span></span> <span data-ttu-id="19285-179">*Secrets.json* souboru je uveden níže ( `SendGridKey` hodnota byla odebrána.)</span><span class="sxs-lookup"><span data-stu-id="19285-179">The *secrets.json* file is shown below (the `SendGridKey` value has been removed.)</span></span>
 
  ```json
   {
@@ -148,166 +148,166 @@ info: Successfully saved SendGridUser = RickAndMSFT to the secret store.
   }
   ```
 
-### <a name="configure-startup-to-use-authmessagesenderoptions"></a><span data-ttu-id="a8afb-180">Konfigurace spuštění používat AuthMessageSenderOptions</span><span class="sxs-lookup"><span data-stu-id="a8afb-180">Configure startup to use AuthMessageSenderOptions</span></span>
+### <a name="configure-startup-to-use-authmessagesenderoptions"></a><span data-ttu-id="19285-180">Konfigurace spuštění používat AuthMessageSenderOptions</span><span class="sxs-lookup"><span data-stu-id="19285-180">Configure startup to use AuthMessageSenderOptions</span></span>
 
-<span data-ttu-id="a8afb-181">Přidat `AuthMessageSenderOptions` ke kontejneru služby na konci `ConfigureServices` metoda v *Startup.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="a8afb-181">Add `AuthMessageSenderOptions` to the service container at the end of the `ConfigureServices` method in the *Startup.cs* file:</span></span>
+<span data-ttu-id="19285-181">Přidat `AuthMessageSenderOptions` ke kontejneru služby na konci `ConfigureServices` metoda v *Startup.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="19285-181">Add `AuthMessageSenderOptions` to the service container at the end of the `ConfigureServices` method in the *Startup.cs* file:</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a8afb-182">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-182">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="19285-182">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="19285-182">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a8afb-183">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-183">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="19285-183">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="19285-183">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
 
 [!code-csharp[](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
 
 ---
 
-### <a name="configure-the-authmessagesender-class"></a><span data-ttu-id="a8afb-184">Konfigurovat třídu AuthMessageSender</span><span class="sxs-lookup"><span data-stu-id="a8afb-184">Configure the AuthMessageSender class</span></span>
+### <a name="configure-the-authmessagesender-class"></a><span data-ttu-id="19285-184">Konfigurovat třídu AuthMessageSender</span><span class="sxs-lookup"><span data-stu-id="19285-184">Configure the AuthMessageSender class</span></span>
 
-<span data-ttu-id="a8afb-185">Tento kurz ukazuje, jak přidat e-mailová oznámení prostřednictvím [sendgrid vám umožňuje](https://sendgrid.com/), ale můžete odesílat e-mailu pomocí protokolu SMTP a další mechanismy.</span><span class="sxs-lookup"><span data-stu-id="a8afb-185">This tutorial shows how to add email notifications through [SendGrid](https://sendgrid.com/), but you can send email using SMTP and other mechanisms.</span></span>
+<span data-ttu-id="19285-185">Tento kurz ukazuje, jak přidat e-mailová oznámení prostřednictvím [sendgrid vám umožňuje](https://sendgrid.com/), ale můžete odesílat e-mailu pomocí protokolu SMTP a další mechanismy.</span><span class="sxs-lookup"><span data-stu-id="19285-185">This tutorial shows how to add email notifications through [SendGrid](https://sendgrid.com/), but you can send email using SMTP and other mechanisms.</span></span>
 
-<span data-ttu-id="a8afb-186">Nainstalujte `SendGrid` balíček NuGet:</span><span class="sxs-lookup"><span data-stu-id="a8afb-186">Install the `SendGrid` NuGet package:</span></span>
+<span data-ttu-id="19285-186">Nainstalujte `SendGrid` balíček NuGet:</span><span class="sxs-lookup"><span data-stu-id="19285-186">Install the `SendGrid` NuGet package:</span></span>
 
-* <span data-ttu-id="a8afb-187">Z příkazového řádku:</span><span class="sxs-lookup"><span data-stu-id="a8afb-187">From the command line:</span></span>
+* <span data-ttu-id="19285-187">Z příkazového řádku:</span><span class="sxs-lookup"><span data-stu-id="19285-187">From the command line:</span></span>
 
     `dotnet add package SendGrid`
 
-* <span data-ttu-id="a8afb-188">Z konzoly Správce balíčků zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="a8afb-188">From the Package Manager Console, enter the following command:</span></span>
+* <span data-ttu-id="19285-188">Z konzoly Správce balíčků zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="19285-188">From the Package Manager Console, enter the following command:</span></span>
 
   `Install-Package SendGrid`
 
-<span data-ttu-id="a8afb-189">V tématu [začněte sendgridu zadarmo](https://sendgrid.com/free/) zaregistrovat bezplatný účet sendgrid vám umožňuje.</span><span class="sxs-lookup"><span data-stu-id="a8afb-189">See [Get Started with SendGrid for Free](https://sendgrid.com/free/) to register for a free SendGrid account.</span></span>
+<span data-ttu-id="19285-189">V tématu [začněte sendgridu zadarmo](https://sendgrid.com/free/) zaregistrovat bezplatný účet sendgrid vám umožňuje.</span><span class="sxs-lookup"><span data-stu-id="19285-189">See [Get Started with SendGrid for Free](https://sendgrid.com/free/) to register for a free SendGrid account.</span></span>
 
-#### <a name="configure-sendgrid"></a><span data-ttu-id="a8afb-190">Konfigurace sendgrid vám umožňuje</span><span class="sxs-lookup"><span data-stu-id="a8afb-190">Configure SendGrid</span></span>
+#### <a name="configure-sendgrid"></a><span data-ttu-id="19285-190">Konfigurace sendgrid vám umožňuje</span><span class="sxs-lookup"><span data-stu-id="19285-190">Configure SendGrid</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a8afb-191">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-191">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="19285-191">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="19285-191">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
 
-<span data-ttu-id="a8afb-192">Ke konfiguraci Sendgridu, přidejte kód podobný následujícímu v *Services/EmailSender.cs*:</span><span class="sxs-lookup"><span data-stu-id="a8afb-192">To configure SendGrid, add code similar to the following in *Services/EmailSender.cs*:</span></span>
+<span data-ttu-id="19285-192">Ke konfiguraci Sendgridu, přidejte kód podobný následujícímu v *Services/EmailSender.cs*:</span><span class="sxs-lookup"><span data-stu-id="19285-192">To configure SendGrid, add code similar to the following in *Services/EmailSender.cs*:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a8afb-193">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-193">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="19285-193">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="19285-193">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
 
-* <span data-ttu-id="a8afb-194">Přidejte kód v *Services/MessageServices.cs* podobný následujícímu konfigurace sendgrid vám umožňuje:</span><span class="sxs-lookup"><span data-stu-id="a8afb-194">Add code in *Services/MessageServices.cs* similar to the following to configure SendGrid:</span></span>
+* <span data-ttu-id="19285-194">Přidejte kód v *Services/MessageServices.cs* podobný následujícímu konfigurace sendgrid vám umožňuje:</span><span class="sxs-lookup"><span data-stu-id="19285-194">Add code in *Services/MessageServices.cs* similar to the following to configure SendGrid:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
 
 ---
 
-## <a name="enable-account-confirmation-and-password-recovery"></a><span data-ttu-id="a8afb-195">Povolit obnovení potvrzení a heslo účtu</span><span class="sxs-lookup"><span data-stu-id="a8afb-195">Enable account confirmation and password recovery</span></span>
+## <a name="enable-account-confirmation-and-password-recovery"></a><span data-ttu-id="19285-195">Povolit obnovení potvrzení a heslo účtu</span><span class="sxs-lookup"><span data-stu-id="19285-195">Enable account confirmation and password recovery</span></span>
 
-<span data-ttu-id="a8afb-196">Šablona má kód pro obnovení potvrzení a heslo účtu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-196">The template has the code for account confirmation and password recovery.</span></span> <span data-ttu-id="a8afb-197">Najít `OnPostAsync` metoda v *Pages/Account/Register.cshtml.cs*.</span><span class="sxs-lookup"><span data-stu-id="a8afb-197">Find the `OnPostAsync` method in *Pages/Account/Register.cshtml.cs*.</span></span>
+<span data-ttu-id="19285-196">Šablona má kód pro obnovení potvrzení a heslo účtu.</span><span class="sxs-lookup"><span data-stu-id="19285-196">The template has the code for account confirmation and password recovery.</span></span> <span data-ttu-id="19285-197">Najít `OnPostAsync` metoda v *Pages/Account/Register.cshtml.cs*.</span><span class="sxs-lookup"><span data-stu-id="19285-197">Find the `OnPostAsync` method in *Pages/Account/Register.cshtml.cs*.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a8afb-198">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-198">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="19285-198">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="19285-198">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
 
-<span data-ttu-id="a8afb-199">Nově zaregistrovaný uživatelům zabránit v automaticky přihlášený při psaní komentářů následující řádek:</span><span class="sxs-lookup"><span data-stu-id="a8afb-199">Prevent newly registered users from being automatically logged on by commenting out the following line:</span></span>
+<span data-ttu-id="19285-199">Nově zaregistrovaný uživatelům zabránit v automaticky přihlášený při psaní komentářů následující řádek:</span><span class="sxs-lookup"><span data-stu-id="19285-199">Prevent newly registered users from being automatically logged on by commenting out the following line:</span></span>
 
 ```csharp
 await _signInManager.SignInAsync(user, isPersistent: false);
 ```
 
-<span data-ttu-id="a8afb-200">Kompletní metoda je zobrazena změněné řádek zvýrazněna:</span><span class="sxs-lookup"><span data-stu-id="a8afb-200">The complete method is shown with the changed line highlighted:</span></span>
+<span data-ttu-id="19285-200">Kompletní metoda je zobrazena změněné řádek zvýrazněna:</span><span class="sxs-lookup"><span data-stu-id="19285-200">The complete method is shown with the changed line highlighted:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a8afb-201">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-201">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="19285-201">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="19285-201">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
 
-<span data-ttu-id="a8afb-202">Chcete-li povolit potvrzení účtu, zrušte komentář u následující kód:</span><span class="sxs-lookup"><span data-stu-id="a8afb-202">To enable account confirmation, uncomment the following code:</span></span>
+<span data-ttu-id="19285-202">Chcete-li povolit potvrzení účtu, zrušte komentář u následující kód:</span><span class="sxs-lookup"><span data-stu-id="19285-202">To enable account confirmation, uncomment the following code:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
 
-<span data-ttu-id="a8afb-203">**Poznámka:** kód znemožňuje nově zaregistrovaný uživatele automaticky přihlášený při psaní komentářů následující řádek:</span><span class="sxs-lookup"><span data-stu-id="a8afb-203">**Note:** The code is preventing a newly registered user from being automatically logged on by commenting out the following line:</span></span>
+<span data-ttu-id="19285-203">**Poznámka:** kód znemožňuje nově zaregistrovaný uživatele automaticky přihlášený při psaní komentářů následující řádek:</span><span class="sxs-lookup"><span data-stu-id="19285-203">**Note:** The code is preventing a newly registered user from being automatically logged on by commenting out the following line:</span></span>
 
 ```csharp
 //await _signInManager.SignInAsync(user, isPersistent: false);
 ```
 
-<span data-ttu-id="a8afb-204">Povolit obnovení hesla uncommenting kód `ForgotPassword` akce *Controllers/AccountController.cs*:</span><span class="sxs-lookup"><span data-stu-id="a8afb-204">Enable password recovery by uncommenting the code in the `ForgotPassword` action of *Controllers/AccountController.cs*:</span></span>
+<span data-ttu-id="19285-204">Povolit obnovení hesla uncommenting kód `ForgotPassword` akce *Controllers/AccountController.cs*:</span><span class="sxs-lookup"><span data-stu-id="19285-204">Enable password recovery by uncommenting the code in the `ForgotPassword` action of *Controllers/AccountController.cs*:</span></span>
 
 [!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=17-23&name=snippet_ForgotPassword)]
 
-<span data-ttu-id="a8afb-205">Zrušením komentáře u prvku formuláře v *Views/Account/ForgotPassword.cshtml*.</span><span class="sxs-lookup"><span data-stu-id="a8afb-205">Uncomment the form element in *Views/Account/ForgotPassword.cshtml*.</span></span> <span data-ttu-id="a8afb-206">Můžete chtít odebrat `<p> For more information on how to enable reset password ... </p>` element, který obsahuje odkaz na tohoto článku.</span><span class="sxs-lookup"><span data-stu-id="a8afb-206">You might want to remove the `<p> For more information on how to enable reset password ... </p>` element, which contains a link to this article.</span></span>
+<span data-ttu-id="19285-205">Zrušením komentáře u prvku formuláře v *Views/Account/ForgotPassword.cshtml*.</span><span class="sxs-lookup"><span data-stu-id="19285-205">Uncomment the form element in *Views/Account/ForgotPassword.cshtml*.</span></span> <span data-ttu-id="19285-206">Můžete chtít odebrat `<p> For more information on how to enable reset password ... </p>` element, který obsahuje odkaz na tohoto článku.</span><span class="sxs-lookup"><span data-stu-id="19285-206">You might want to remove the `<p> For more information on how to enable reset password ... </p>` element, which contains a link to this article.</span></span>
 
 [!code-cshtml[](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
 
 ---
 
-## <a name="register-confirm-email-and-reset-password"></a><span data-ttu-id="a8afb-207">Zaregistrovat, potvrďte e-mailu a resetování hesla</span><span class="sxs-lookup"><span data-stu-id="a8afb-207">Register, confirm email, and reset password</span></span>
+## <a name="register-confirm-email-and-reset-password"></a><span data-ttu-id="19285-207">Zaregistrovat, potvrďte e-mailu a resetování hesla</span><span class="sxs-lookup"><span data-stu-id="19285-207">Register, confirm email, and reset password</span></span>
 
-<span data-ttu-id="a8afb-208">Spusťte webovou aplikaci a testování potvrzení účtu a heslo pro obnovení toku.</span><span class="sxs-lookup"><span data-stu-id="a8afb-208">Run the web app, and test the account confirmation and password recovery flow.</span></span>
+<span data-ttu-id="19285-208">Spusťte webovou aplikaci a testování potvrzení účtu a heslo pro obnovení toku.</span><span class="sxs-lookup"><span data-stu-id="19285-208">Run the web app, and test the account confirmation and password recovery flow.</span></span>
 
-* <span data-ttu-id="a8afb-209">Spusťte aplikaci a zaregistrovat nového uživatele</span><span class="sxs-lookup"><span data-stu-id="a8afb-209">Run the app and register a new user</span></span>
+* <span data-ttu-id="19285-209">Spusťte aplikaci a zaregistrovat nového uživatele</span><span class="sxs-lookup"><span data-stu-id="19285-209">Run the app and register a new user</span></span>
 
   ![Zobrazení zaregistrovat účet webové aplikace](accconfirm/_static/loginaccconfirm1.png)
 
-* <span data-ttu-id="a8afb-211">Zkontrolujte e-mailu pro potvrzení propojení účtu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-211">Check your email for the account confirmation link.</span></span> <span data-ttu-id="a8afb-212">V tématu [ladění e-mailu](#debug) Pokud neobdržíte e-mail.</span><span class="sxs-lookup"><span data-stu-id="a8afb-212">See [Debug email](#debug) if you don't get the email.</span></span>
-* <span data-ttu-id="a8afb-213">Kliknutím na odkaz k potvrzení e-mailu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-213">Click the link to confirm your email.</span></span>
-* <span data-ttu-id="a8afb-214">Přihlaste se pomocí vaší e-mailu a heslo.</span><span class="sxs-lookup"><span data-stu-id="a8afb-214">Log in with your email and password.</span></span>
-* <span data-ttu-id="a8afb-215">Odhlaste se.</span><span class="sxs-lookup"><span data-stu-id="a8afb-215">Log off.</span></span>
+* <span data-ttu-id="19285-211">Zkontrolujte e-mailu pro potvrzení propojení účtu.</span><span class="sxs-lookup"><span data-stu-id="19285-211">Check your email for the account confirmation link.</span></span> <span data-ttu-id="19285-212">V tématu [ladění e-mailu](#debug) Pokud neobdržíte e-mail.</span><span class="sxs-lookup"><span data-stu-id="19285-212">See [Debug email](#debug) if you don't get the email.</span></span>
+* <span data-ttu-id="19285-213">Kliknutím na odkaz k potvrzení e-mailu.</span><span class="sxs-lookup"><span data-stu-id="19285-213">Click the link to confirm your email.</span></span>
+* <span data-ttu-id="19285-214">Přihlaste se pomocí vaší e-mailu a heslo.</span><span class="sxs-lookup"><span data-stu-id="19285-214">Log in with your email and password.</span></span>
+* <span data-ttu-id="19285-215">Odhlaste se.</span><span class="sxs-lookup"><span data-stu-id="19285-215">Log off.</span></span>
 
-### <a name="view-the-manage-page"></a><span data-ttu-id="a8afb-216">Zobrazení stránky Správa</span><span class="sxs-lookup"><span data-stu-id="a8afb-216">View the manage page</span></span>
+### <a name="view-the-manage-page"></a><span data-ttu-id="19285-216">Zobrazení stránky Správa</span><span class="sxs-lookup"><span data-stu-id="19285-216">View the manage page</span></span>
 
-<span data-ttu-id="a8afb-217">Vyberte jméno uživatele v prohlížeči: ![okno prohlížeče s uživatelským jménem](accconfirm/_static/un.png)</span><span class="sxs-lookup"><span data-stu-id="a8afb-217">Select your user name in the browser: ![browser window with user name](accconfirm/_static/un.png)</span></span>
+<span data-ttu-id="19285-217">Vyberte jméno uživatele v prohlížeči: ![okno prohlížeče s uživatelským jménem](accconfirm/_static/un.png)</span><span class="sxs-lookup"><span data-stu-id="19285-217">Select your user name in the browser: ![browser window with user name](accconfirm/_static/un.png)</span></span>
 
-<span data-ttu-id="a8afb-218">Možná budete muset Rozbalit navigační panel zobrazíte uživatelské jméno.</span><span class="sxs-lookup"><span data-stu-id="a8afb-218">You might need to expand the navbar to see user name.</span></span>
+<span data-ttu-id="19285-218">Možná budete muset Rozbalit navigační panel zobrazíte uživatelské jméno.</span><span class="sxs-lookup"><span data-stu-id="19285-218">You might need to expand the navbar to see user name.</span></span>
 
 ![navbar](accconfirm/_static/x.png)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a8afb-220">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-220">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="19285-220">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="19285-220">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="a8afb-221">Zobrazí se stránka Správa s **profil** vybrána karta.</span><span class="sxs-lookup"><span data-stu-id="a8afb-221">The manage page is displayed with the **Profile** tab selected.</span></span> <span data-ttu-id="a8afb-222">**E-mailu** zobrazí zaškrtávací políčko označující e-mailu, bylo potvrzeno.</span><span class="sxs-lookup"><span data-stu-id="a8afb-222">The **Email** shows a check box indicating the email has been confirmed.</span></span>
+<span data-ttu-id="19285-221">Zobrazí se stránka Správa s **profil** vybrána karta.</span><span class="sxs-lookup"><span data-stu-id="19285-221">The manage page is displayed with the **Profile** tab selected.</span></span> <span data-ttu-id="19285-222">**E-mailu** zobrazí zaškrtávací políčko označující e-mailu, bylo potvrzeno.</span><span class="sxs-lookup"><span data-stu-id="19285-222">The **Email** shows a check box indicating the email has been confirmed.</span></span>
 
 ![Stránka Správa](accconfirm/_static/rick2.png)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a8afb-224">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a8afb-224">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="19285-224">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="19285-224">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="a8afb-225">To je uvedeno dále v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-225">This is mentioned later in the tutorial.</span></span>
-<span data-ttu-id="a8afb-226">![Stránka Správa](accconfirm/_static/rick2.png)</span><span class="sxs-lookup"><span data-stu-id="a8afb-226">![manage page](accconfirm/_static/rick2.png)</span></span>
+<span data-ttu-id="19285-225">To je uvedeno dále v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="19285-225">This is mentioned later in the tutorial.</span></span>
+<span data-ttu-id="19285-226">![Stránka Správa](accconfirm/_static/rick2.png)</span><span class="sxs-lookup"><span data-stu-id="19285-226">![manage page](accconfirm/_static/rick2.png)</span></span>
 
 ---
 
-### <a name="test-password-reset"></a><span data-ttu-id="a8afb-227">Test resetování hesla</span><span class="sxs-lookup"><span data-stu-id="a8afb-227">Test password reset</span></span>
+### <a name="test-password-reset"></a><span data-ttu-id="19285-227">Test resetování hesla</span><span class="sxs-lookup"><span data-stu-id="19285-227">Test password reset</span></span>
 
-* <span data-ttu-id="a8afb-228">Pokud jste přihlášeni, vyberte **odhlášení**.</span><span class="sxs-lookup"><span data-stu-id="a8afb-228">If you're logged in, select **Logout**.</span></span>
-* <span data-ttu-id="a8afb-229">Vyberte **přihlásit** propojení a vyberte **zapomněli jste heslo?** odkaz.</span><span class="sxs-lookup"><span data-stu-id="a8afb-229">Select the **Log in** link and select the **Forgot your password?** link.</span></span>
-* <span data-ttu-id="a8afb-230">Zadejte e-mailu, které jste použili k registraci účtu.</span><span class="sxs-lookup"><span data-stu-id="a8afb-230">Enter the email you used to register the account.</span></span>
-* <span data-ttu-id="a8afb-231">Se odeslal e-mail s odkazem pro resetování hesla.</span><span class="sxs-lookup"><span data-stu-id="a8afb-231">An email with a link to reset your password is sent.</span></span> <span data-ttu-id="a8afb-232">Zkontrolujte e-mailu a klikněte na odkaz k resetování hesla.</span><span class="sxs-lookup"><span data-stu-id="a8afb-232">Check your email and click the link to reset your password.</span></span> <span data-ttu-id="a8afb-233">Po vaše heslo bylo resetováno úspěšně, můžete přihlásit e-mailu a nové heslo.</span><span class="sxs-lookup"><span data-stu-id="a8afb-233">After your password has been successfully reset, you can log in with your email and new password.</span></span>
+* <span data-ttu-id="19285-228">Pokud jste přihlášeni, vyberte **odhlášení**.</span><span class="sxs-lookup"><span data-stu-id="19285-228">If you're logged in, select **Logout**.</span></span>
+* <span data-ttu-id="19285-229">Vyberte **přihlásit** propojení a vyberte **zapomněli jste heslo?** odkaz.</span><span class="sxs-lookup"><span data-stu-id="19285-229">Select the **Log in** link and select the **Forgot your password?** link.</span></span>
+* <span data-ttu-id="19285-230">Zadejte e-mailu, které jste použili k registraci účtu.</span><span class="sxs-lookup"><span data-stu-id="19285-230">Enter the email you used to register the account.</span></span>
+* <span data-ttu-id="19285-231">Se odeslal e-mail s odkazem pro resetování hesla.</span><span class="sxs-lookup"><span data-stu-id="19285-231">An email with a link to reset your password is sent.</span></span> <span data-ttu-id="19285-232">Zkontrolujte e-mailu a klikněte na odkaz k resetování hesla.</span><span class="sxs-lookup"><span data-stu-id="19285-232">Check your email and click the link to reset your password.</span></span> <span data-ttu-id="19285-233">Po vaše heslo bylo resetováno úspěšně, můžete přihlásit e-mailu a nové heslo.</span><span class="sxs-lookup"><span data-stu-id="19285-233">After your password has been successfully reset, you can log in with your email and new password.</span></span>
 
 <a name="debug"></a>
 
-### <a name="debug-email"></a><span data-ttu-id="a8afb-234">Ladění e-mailu</span><span class="sxs-lookup"><span data-stu-id="a8afb-234">Debug email</span></span>
+### <a name="debug-email"></a><span data-ttu-id="19285-234">Ladění e-mailu</span><span class="sxs-lookup"><span data-stu-id="19285-234">Debug email</span></span>
 
-<span data-ttu-id="a8afb-235">Pokud nelze získat pracovní e-mailu:</span><span class="sxs-lookup"><span data-stu-id="a8afb-235">If you can't get email working:</span></span>
+<span data-ttu-id="19285-235">Pokud nelze získat pracovní e-mailu:</span><span class="sxs-lookup"><span data-stu-id="19285-235">If you can't get email working:</span></span>
 
-* <span data-ttu-id="a8afb-236">Vytvoření [konzolovou aplikaci k odesílání e-mailu](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html).</span><span class="sxs-lookup"><span data-stu-id="a8afb-236">Create a [console app to send email](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html).</span></span>
-* <span data-ttu-id="a8afb-237">Zkontrolujte [e-mailu aktivity](https://sendgrid.com/docs/User_Guide/email_activity.html) stránky.</span><span class="sxs-lookup"><span data-stu-id="a8afb-237">Review the [Email Activity](https://sendgrid.com/docs/User_Guide/email_activity.html) page.</span></span>
-* <span data-ttu-id="a8afb-238">Zkontrolujte složky nevyžádané pošty.</span><span class="sxs-lookup"><span data-stu-id="a8afb-238">Check your spam folder.</span></span>
-* <span data-ttu-id="a8afb-239">Zkuste jinou e-mailový alias na jinou e-mailovou zprostředkovatele (Microsoft, Yahoo, z Gmailu atd.)</span><span class="sxs-lookup"><span data-stu-id="a8afb-239">Try another email alias on a different email provider (Microsoft, Yahoo, Gmail, etc.)</span></span>
-* <span data-ttu-id="a8afb-240">Pokus o odeslání na jiné e-mailové účty.</span><span class="sxs-lookup"><span data-stu-id="a8afb-240">Try sending to different email accounts.</span></span>
+* <span data-ttu-id="19285-236">Vytvoření [konzolovou aplikaci k odesílání e-mailu](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html).</span><span class="sxs-lookup"><span data-stu-id="19285-236">Create a [console app to send email](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html).</span></span>
+* <span data-ttu-id="19285-237">Zkontrolujte [e-mailu aktivity](https://sendgrid.com/docs/User_Guide/email_activity.html) stránky.</span><span class="sxs-lookup"><span data-stu-id="19285-237">Review the [Email Activity](https://sendgrid.com/docs/User_Guide/email_activity.html) page.</span></span>
+* <span data-ttu-id="19285-238">Zkontrolujte složky nevyžádané pošty.</span><span class="sxs-lookup"><span data-stu-id="19285-238">Check your spam folder.</span></span>
+* <span data-ttu-id="19285-239">Zkuste jinou e-mailový alias na jinou e-mailovou zprostředkovatele (Microsoft, Yahoo, z Gmailu atd.)</span><span class="sxs-lookup"><span data-stu-id="19285-239">Try another email alias on a different email provider (Microsoft, Yahoo, Gmail, etc.)</span></span>
+* <span data-ttu-id="19285-240">Pokus o odeslání na jiné e-mailové účty.</span><span class="sxs-lookup"><span data-stu-id="19285-240">Try sending to different email accounts.</span></span>
 
-<span data-ttu-id="a8afb-241">**Nejlepším postupem zabezpečení** je **není** použít produkční tajných klíčů v testovacích a vývojových.</span><span class="sxs-lookup"><span data-stu-id="a8afb-241">**A security best practice** is to **not** use production secrets in test and development.</span></span> <span data-ttu-id="a8afb-242">Pokud publikujete aplikaci do Azure, můžete tajné klíče sendgrid vám umožňuje nastavit jako nastavení aplikace na portálu Azure webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="a8afb-242">If you publish the app to Azure, you can set the SendGrid secrets as application settings in the Azure Web App portal.</span></span> <span data-ttu-id="a8afb-243">Konfigurace systému je nastavený čtení klíčů z proměnných prostředí.</span><span class="sxs-lookup"><span data-stu-id="a8afb-243">The configuration system is set up to read keys from environment variables.</span></span>
+<span data-ttu-id="19285-241">**Nejlepším postupem zabezpečení** je **není** použít produkční tajných klíčů v testovacích a vývojových.</span><span class="sxs-lookup"><span data-stu-id="19285-241">**A security best practice** is to **not** use production secrets in test and development.</span></span> <span data-ttu-id="19285-242">Pokud publikujete aplikaci do Azure, můžete tajné klíče sendgrid vám umožňuje nastavit jako nastavení aplikace na portálu Azure webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="19285-242">If you publish the app to Azure, you can set the SendGrid secrets as application settings in the Azure Web App portal.</span></span> <span data-ttu-id="19285-243">Konfigurace systému je nastavený čtení klíčů z proměnných prostředí.</span><span class="sxs-lookup"><span data-stu-id="19285-243">The configuration system is set up to read keys from environment variables.</span></span>
 
-## <a name="combine-social-and-local-login-accounts"></a><span data-ttu-id="a8afb-244">Kombinování sociálních a místní přihlášení účtů</span><span class="sxs-lookup"><span data-stu-id="a8afb-244">Combine social and local login accounts</span></span>
+## <a name="combine-social-and-local-login-accounts"></a><span data-ttu-id="19285-244">Kombinování sociálních a místní přihlášení účtů</span><span class="sxs-lookup"><span data-stu-id="19285-244">Combine social and local login accounts</span></span>
 
-<span data-ttu-id="a8afb-245">K dokončení této části, musíte nejdřív povolit externí zprostředkovatel ověřování.</span><span class="sxs-lookup"><span data-stu-id="a8afb-245">To complete this section, you must first enable an external authentication provider.</span></span> <span data-ttu-id="a8afb-246">V tématu [Facebook, Google a externí zprostředkovatel ověřování](xref:security/authentication/social/index).</span><span class="sxs-lookup"><span data-stu-id="a8afb-246">See [Facebook, Google, and external provider authentication](xref:security/authentication/social/index).</span></span>
+<span data-ttu-id="19285-245">K dokončení této části, musíte nejdřív povolit externí zprostředkovatel ověřování.</span><span class="sxs-lookup"><span data-stu-id="19285-245">To complete this section, you must first enable an external authentication provider.</span></span> <span data-ttu-id="19285-246">V tématu [Facebook, Google a externí zprostředkovatel ověřování](xref:security/authentication/social/index).</span><span class="sxs-lookup"><span data-stu-id="19285-246">See [Facebook, Google, and external provider authentication](xref:security/authentication/social/index).</span></span>
 
-<span data-ttu-id="a8afb-247">Kliknutím na odkaz na vaši e-mailu můžete kombinovat místní a sociálních účty.</span><span class="sxs-lookup"><span data-stu-id="a8afb-247">You can combine local and social accounts by clicking on your email link.</span></span> <span data-ttu-id="a8afb-248">V tomto pořadí "RickAndMSFT@gmail.com" je poprvé vytvořen jako místní přihlášení; však můžete nejprve vytvořte účet jako přihlášení prostřednictvím sociální sítě a pak přidejte místní přihlášení.</span><span class="sxs-lookup"><span data-stu-id="a8afb-248">In the following sequence, "RickAndMSFT@gmail.com" is first created as a local login; however, you can create the account as a social login first, then add a local login.</span></span>
+<span data-ttu-id="19285-247">Kliknutím na odkaz na vaši e-mailu můžete kombinovat místní a sociálních účty.</span><span class="sxs-lookup"><span data-stu-id="19285-247">You can combine local and social accounts by clicking on your email link.</span></span> <span data-ttu-id="19285-248">V tomto pořadí "RickAndMSFT@gmail.com" je poprvé vytvořen jako místní přihlášení; však můžete nejprve vytvořte účet jako přihlášení prostřednictvím sociální sítě a pak přidejte místní přihlášení.</span><span class="sxs-lookup"><span data-stu-id="19285-248">In the following sequence, "RickAndMSFT@gmail.com" is first created as a local login; however, you can create the account as a social login first, then add a local login.</span></span>
 
 ![Webové aplikace: RickAndMSFT@gmail.com uživatel ověřený](accconfirm/_static/rick.png)
 
-<span data-ttu-id="a8afb-250">Klikněte na **spravovat** odkaz.</span><span class="sxs-lookup"><span data-stu-id="a8afb-250">Click on the **Manage** link.</span></span> <span data-ttu-id="a8afb-251">Poznámka: externí 0 (sociální přihlášení) spojené s tímto účtem.</span><span class="sxs-lookup"><span data-stu-id="a8afb-251">Note the 0 external (social logins) associated with this account.</span></span>
+<span data-ttu-id="19285-250">Klikněte na **spravovat** odkaz.</span><span class="sxs-lookup"><span data-stu-id="19285-250">Click on the **Manage** link.</span></span> <span data-ttu-id="19285-251">Poznámka: externí 0 (sociální přihlášení) spojené s tímto účtem.</span><span class="sxs-lookup"><span data-stu-id="19285-251">Note the 0 external (social logins) associated with this account.</span></span>
 
 ![Správa zobrazení](accconfirm/_static/manage.png)
 
-<span data-ttu-id="a8afb-253">Klikněte na odkaz na jinou službu přihlášení a přijímat žádosti o aplikaci.</span><span class="sxs-lookup"><span data-stu-id="a8afb-253">Click the link to another login service and accept the app requests.</span></span> <span data-ttu-id="a8afb-254">Na následujícím obrázku je Facebook zprostředkovatele externího ověřování:</span><span class="sxs-lookup"><span data-stu-id="a8afb-254">In the following image, Facebook is the external authentication provider:</span></span>
+<span data-ttu-id="19285-253">Klikněte na odkaz na jinou službu přihlášení a přijímat žádosti o aplikaci.</span><span class="sxs-lookup"><span data-stu-id="19285-253">Click the link to another login service and accept the app requests.</span></span> <span data-ttu-id="19285-254">Na následujícím obrázku je Facebook zprostředkovatele externího ověřování:</span><span class="sxs-lookup"><span data-stu-id="19285-254">In the following image, Facebook is the external authentication provider:</span></span>
 
 ![Spravovat seznam Facebook zobrazení externích přihlášení.](accconfirm/_static/fb.png)
 
-<span data-ttu-id="a8afb-256">Dva účty jsou spojena.</span><span class="sxs-lookup"><span data-stu-id="a8afb-256">The two accounts have been combined.</span></span> <span data-ttu-id="a8afb-257">Budete moci přihlásit pomocí obou.</span><span class="sxs-lookup"><span data-stu-id="a8afb-257">You are able to log on with either account.</span></span> <span data-ttu-id="a8afb-258">Můžete chtít uživatelům v případě, že své služby ověřování přihlášení prostřednictvím sociální sítě, jsou vypnuty nebo více pravděpodobně ztrátu přístupu k účtu mají sociálních přidat místní účty.</span><span class="sxs-lookup"><span data-stu-id="a8afb-258">You might want your users to add local accounts in case their social login authentication service is down, or more likely they've lost access to their social account.</span></span>
+<span data-ttu-id="19285-256">Dva účty jsou spojena.</span><span class="sxs-lookup"><span data-stu-id="19285-256">The two accounts have been combined.</span></span> <span data-ttu-id="19285-257">Budete moci přihlásit pomocí obou.</span><span class="sxs-lookup"><span data-stu-id="19285-257">You are able to log on with either account.</span></span> <span data-ttu-id="19285-258">Můžete chtít uživatelům v případě, že své služby ověřování přihlášení prostřednictvím sociální sítě, jsou vypnuty nebo více pravděpodobně ztrátu přístupu k účtu mají sociálních přidat místní účty.</span><span class="sxs-lookup"><span data-stu-id="19285-258">You might want your users to add local accounts in case their social login authentication service is down, or more likely they've lost access to their social account.</span></span>
 
-## <a name="enable-account-confirmation-after-a-site-has-users"></a><span data-ttu-id="a8afb-259">Povolení potvrzení účtu po lokalitu má uživatelé</span><span class="sxs-lookup"><span data-stu-id="a8afb-259">Enable account confirmation after a site has users</span></span>
+## <a name="enable-account-confirmation-after-a-site-has-users"></a><span data-ttu-id="19285-259">Povolení potvrzení účtu po lokalitu má uživatelé</span><span class="sxs-lookup"><span data-stu-id="19285-259">Enable account confirmation after a site has users</span></span>
 
-<span data-ttu-id="a8afb-260">Povolení potvrzení účtu v lokalitě s uživateli zamezí všichni stávající uživatelé.</span><span class="sxs-lookup"><span data-stu-id="a8afb-260">Enabling account confirmation on a site with users locks out all the existing users.</span></span> <span data-ttu-id="a8afb-261">Stávající uživatelé jsou uzamčen, protože nejsou potvrzen své účty.</span><span class="sxs-lookup"><span data-stu-id="a8afb-261">Existing users are locked out because their accounts aren't confirmed.</span></span> <span data-ttu-id="a8afb-262">Obejít ukončení uzamčení uživatele, použijte jednu z následujících postupů:</span><span class="sxs-lookup"><span data-stu-id="a8afb-262">To work around exiting user lockout, use one of the following approaches:</span></span>
+<span data-ttu-id="19285-260">Povolení potvrzení účtu v lokalitě s uživateli zamezí všichni stávající uživatelé.</span><span class="sxs-lookup"><span data-stu-id="19285-260">Enabling account confirmation on a site with users locks out all the existing users.</span></span> <span data-ttu-id="19285-261">Stávající uživatelé jsou uzamčen, protože nejsou potvrzen své účty.</span><span class="sxs-lookup"><span data-stu-id="19285-261">Existing users are locked out because their accounts aren't confirmed.</span></span> <span data-ttu-id="19285-262">Existující uzamčení uživatelů obejít, použijte jednu z následujících postupů:</span><span class="sxs-lookup"><span data-stu-id="19285-262">To work around existing user lockout, use one of the following approaches:</span></span>
 
-* <span data-ttu-id="a8afb-263">Aktualizace databáze k označení všichni stávající uživatelé, jako je potvrzen.</span><span class="sxs-lookup"><span data-stu-id="a8afb-263">Update the database to mark all existing users as being confirmed</span></span>
-* <span data-ttu-id="a8afb-264">Zkontrolujte stávající uživatele.</span><span class="sxs-lookup"><span data-stu-id="a8afb-264">Confirm exiting users.</span></span> <span data-ttu-id="a8afb-265">Například batch odesílání e-mailů s odkazy na potvrzení.</span><span class="sxs-lookup"><span data-stu-id="a8afb-265">For example, batch-send emails with confirmation links.</span></span>
+* <span data-ttu-id="19285-263">Aktualizace databáze k označení všichni stávající uživatelé, jako je potvrzen.</span><span class="sxs-lookup"><span data-stu-id="19285-263">Update the database to mark all existing users as being confirmed.</span></span>
+* <span data-ttu-id="19285-264">Zkontrolujte stávající uživatele.</span><span class="sxs-lookup"><span data-stu-id="19285-264">Confirm exiting users.</span></span> <span data-ttu-id="19285-265">Například batch odesílání e-mailů s odkazy na potvrzení.</span><span class="sxs-lookup"><span data-stu-id="19285-265">For example, batch-send emails with confirmation links.</span></span>

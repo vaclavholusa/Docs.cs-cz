@@ -4,17 +4,18 @@ author: rick-anderson
 description: Zjistěte, jak data v paměti jádra ASP.NET do mezipaměti.
 manager: wpickett
 ms.author: riande
-ms.custom: H1Hack27Feb2017
+ms.custom: mvc
 ms.date: 12/14/2016
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 4835e2331afca7a648abac6bc35d255ec6356067
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: eca6610caf4e0a654c9a31f89a42e2ac82e94d23
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734481"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>Ukládat do mezipaměti v paměti v ASP.NET Core
 
@@ -28,7 +29,7 @@ Ukládání do mezipaměti může výrazně zlepšit výkon a škálovatelnost a
 
 Jádro ASP.NET podporuje několik různé mezipaměti. Nejjednodušší cache je založená na [IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache), která představuje mezipaměť uložené v paměti webového serveru. Aplikace, které se spouštějí na serverové farmě několika serverů by měla zajistěte, aby byly relací trvalé při použití mezipaměti v paměti. Trvalé relace Ujistěte se, že následné žádosti z klienta všechny přejít na stejném serveru. Například použití webů Azure aplikace [směrování žádostí na aplikace](https://www.iis.net/learn/extensions/planning-for-arr) (ARR) směrovat všechny následné požadavky na stejném serveru.
 
-Vyžadovat non trvalé relací ve webové farmě [distribuované mezipaměti](distributed.md) se chcete vyhnout potížím konzistence mezipaměti. Pro některé aplikace může podporovat distribuované mezipaměti vyšší škálování než mezipaměti v paměti. Pomocí distribuované mezipaměti snižování zátěže mezipaměti paměti externího procesu. 
+Vyžadovat non trvalé relací ve webové farmě [distribuované mezipaměti](distributed.md) se chcete vyhnout potížím konzistence mezipaměti. Pro některé aplikace může podporovat distribuované mezipaměti vyšší škálování než mezipaměti v paměti. Pomocí distribuované mezipaměti snižování zátěže mezipaměti paměti externího procesu.
 
 `IMemoryCache` Mezipaměti bude vyřazení položky mezipaměti přetížena paměť, pokud [mezipaměti s prioritou](/dotnet/api/microsoft.extensions.caching.memory.cacheitempriority) je nastaven na `CacheItemPriority.NeverRemove`. Můžete nastavit `CacheItemPriority` upravit prioritu, se kterým mezipaměti vyloučí položky paměť přetížena.
 
@@ -38,13 +39,29 @@ Mezipaměť v paměti můžete ukládat jakýkoli objekt; rozhraní distribuovan
 
 Ukládání do mezipaměti v paměti je *služby* , je na něj odkazovat z vaší aplikace pomocí [vkládání závislostí](../../fundamentals/dependency-injection.md). Volání `AddMemoryCache` v `ConfigureServices`:
 
-[!code-csharp[](memory/sample/WebCache/Startup.cs?highlight=8)] 
+[!code-csharp[](memory/sample/WebCache/Startup.cs?highlight=9)]
 
 Požadavku `IMemoryCache` instance v konstruktoru:
 
-[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-999)] 
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor)]
 
-`IMemoryCache` vyžaduje balíček NuGet "Microsoft.Extensions.Caching.Memory".
+::: moniker range="< aspnetcore-2.0"
+
+`IMemoryCache` vyžaduje balíček NuGet [Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/).
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+`IMemoryCache` vyžaduje balíček NuGet [Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/), což je dostupné v [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage).
+
+::: moniker-end
+
+::: moniker range="> aspnetcore-2.0"
+
+`IMemoryCache` vyžaduje balíček NuGet [Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/), což je dostupné v [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app).
+
+::: moniker-end
 
 Následující kód používá [TryGetValue](/dotnet/api/microsoft.extensions.caching.memory.imemorycache.trygetvalue?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__) ke kontrole, pokud čas je v mezipaměti. Pokud není v mezipaměti na dobu, nový záznam je vytvořen a přidán do mezipaměti s [nastavit](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions.set?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_Microsoft_Extensions_Caching_Memory_MemoryCacheEntryOptions_).
 
@@ -74,14 +91,14 @@ Následující ukázka:
 
 - Nastaví dobu absolutní vypršení platnosti. Toto je maximální dobu, kterou můžete uložit do mezipaměti na položku a zabrání vzniku příliš zastaralá při nepřetržitě prodloužení klouzavé vypršení platnosti položky.
 - Nastaví klouzavou dobu vypršení platnosti. Hodiny klouzavé vypršení platnosti se obnoví požadavků, které přístup k této položky v mezipaměti.
-- Nastaví prioritu mezipaměti `CacheItemPriority.NeverRemove`. 
+- Nastaví prioritu mezipaměti `CacheItemPriority.NeverRemove`.
 - Nastaví [PostEvictionDelegate](/dotnet/api/microsoft.extensions.caching.memory.postevictiondelegate) , bude volána po vyřazování položku z mezipaměti. Zpětné volání je spuštěn v jiném podprocesu z kód, který odebere položku z mezipaměti.
 
-[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-20)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-21)]
 
 ## <a name="cache-dependencies"></a>Závislosti mezipaměti
 
-Následující příklad ukazuje, jak vypršení platnosti položky mezipaměti, pokud vyprší závislé položky. A `CancellationChangeToken` se přidá do položky v mezipaměti. Když `Cancel` se volá na `CancellationTokenSource`, jsou vyřazování obě položky mezipaměti. 
+Následující příklad ukazuje, jak vypršení platnosti položky mezipaměti, pokud vyprší závislé položky. A `CancellationChangeToken` se přidá do položky v mezipaměti. Když `Cancel` se volá na `CancellationTokenSource`, jsou vyřazování obě položky mezipaměti.
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ed)]
 
@@ -91,7 +108,7 @@ Použití `CancellationTokenSource` umožňuje více záznamů mezipaměti urče
 
 - Při použití zpětné volání znovu naplnit položku mezipaměti:
 
-  - Více požadavků můžete najít hodnota uložená v mezipaměti klíče prázdný protože zpětné volání nebylo dokončeno. 
+  - Více požadavků můžete najít hodnota uložená v mezipaměti klíče prázdný protože zpětné volání nebylo dokončeno.
   - Výsledkem může být několik vláken opětovného vyplnění položka v mezipaměti.
 
 - Když jedna položka v mezipaměti se používá k vytvoření druhého, podřízená zkopíruje vypršení platnosti tokenů a nastavení na základě času vypršení platnosti nadřazené položce. Podřízená není ručního odebrání vypršela platnost, nebo aktualizace nadřazené položky.

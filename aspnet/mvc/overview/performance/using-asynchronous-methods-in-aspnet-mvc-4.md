@@ -12,12 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 5b3b9b82fa64155c1dfd2a49649def10d7dae87e
-ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
+ms.openlocfilehash: 65ba01dd1b0ed5a43ca5c868608f2858f86b4b59
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
-ms.locfileid: "34729178"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734533"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>Použití asynchronních metod v architektuře ASP.NET MVC 4
 ====================
@@ -44,7 +44,7 @@ Toto nemusí být problém, protože fond vláken můžete provedeny dostatečn�
 
 ## <a name="processing-asynchronous-requests"></a>Asynchronní zpracování požadavků
 
-Ve webové aplikace, které najdete v části velký počet souběžných požadavků na spuštění nebo má shlukovým přenosem zatížení (kde souběžnosti najednou zvyšuje) provedení asynchronní těchto volání webové služby se zvyšuje rychlost reakce aplikace. Asynchronní požadavek trvá stejné množství času na zpracování jako synchronní požadavek. Například pokud žádost o provede webové služby volání, které vyžaduje dva sekund dokončení požadavku trvá dvou sekund zda probíhá synchronně nebo asynchronně. Ale při asynchronním volání, není vlákno blokováno reagovat na požadavky na jiné během čekání na dokončení první žádosti. Proto asynchronní požadavky zabránit růstu žádosti o služby Řízení front a vlákno fondu při mnoho souběžných požadavků, které vyvolají dlouhotrvající operace.
+Ve webové aplikaci, která zobrazí velký počet souběžných požadavků na spuštění nebo má shlukovým přenosem zatížení (kde souběžnosti najednou zvyšuje) provedení asynchronní volání webové služby zvyšuje rychlost reakce aplikace. Asynchronní požadavek trvá stejné množství času na zpracování jako synchronní požadavek. Pokud požadavek díky webové službě volání, které vyžaduje dvě sekundy k dokončení, požadavku trvá dvou sekund, zda je prováděno synchronně nebo asynchronně. Během asynchronního volání, ale vlákno nezablokuje z reagovat na požadavky na jiné během čekání na dokončení první žádosti. Proto asynchronní požadavky zabránit růstu žádosti o služby Řízení front a vlákno fondu při mnoho souběžných požadavků, které vyvolají dlouhotrvající operace.
 
 ## <a id="ChoosingSyncVasync"></a>  Výběr metody synchronní nebo asynchronní akce
 

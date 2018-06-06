@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 397d8bf04abf6be811ad8c91d52565251ac61678
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: b6dbe234973431448c18d3cc82a6ac98d4f53a3b
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "34688967"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34730448"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Potvrzení účtu a obnovení hesla v ASP.NET Core
 
@@ -110,7 +110,7 @@ V tématu [vyžadují protokol HTTPS](xref:security/enforcing-ssl).
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>Požadovat potvrzení e-mailu
 
-Je osvědčeným postupem potvrďte e-mailu nové registrace uživatele. E-mailem potvrzení pomáhá ověřte, že nejsou zosobnění někdo jiný (to znamená, že nebyly zaregistrována někoho jiného e-mailu). Předpokládejme, že jste měli diskusní fórum, a chcete zabránit "yli@example.com"od registrace jako"nolivetto@contoso.com." Bez potvrzení e-mailu "nolivetto@contoso.com" může přijímat nežádoucí e-mailu z vaší aplikace. Předpokládejme, že uživatel omylem zaregistrován jako "ylo@example.com" a kdyby zaznamenali chyby v pravopisu systému "yli". Se nebudou moci používat obnovení hesla, protože aplikace nemá správnou e-mailovou. Potvrzení e-mailu poskytuje jen omezenou ochrany ze robotů. Potvrzení e-mailu neposkytuje ochranu z uživatelé se zlými úmysly s mnoha e-mailové účty.
+Je osvědčeným postupem potvrďte e-mailu nové registrace uživatele. E-mailem potvrzení pomáhá ověřte, že nejsou zosobnění někdo jiný (to znamená, že nebyly zaregistrována někoho jiného e-mailu). Předpokládejme, že jste měli diskusní fórum, a chcete zabránit "yli@example.com"od registrace jako"nolivetto@contoso.com". Bez potvrzení e-mailu "nolivetto@contoso.com" může přijímat nežádoucí e-mailu z vaší aplikace. Předpokládejme, že uživatel omylem zaregistrován jako "ylo@example.com" a kdyby zaznamenali chyby v pravopisu systému "yli". Se nebudou moci používat obnovení hesla, protože aplikace nemá správnou e-mailovou. Potvrzení e-mailu poskytuje jen omezenou ochrany ze robotů. Potvrzení e-mailu neposkytuje ochranu z uživatelé se zlými úmysly s mnoha e-mailové účty.
 
 Obvykle budete chtít zabránit noví uživatelé publikování všechna data na webové stránky, než budou mít potvrzené e-mailu.
 
@@ -307,7 +307,7 @@ Dva účty jsou spojena. Budete moci přihlásit pomocí obou. Můžete chtít u
 
 ## <a name="enable-account-confirmation-after-a-site-has-users"></a>Povolení potvrzení účtu po lokalitu má uživatelé
 
-Povolení potvrzení účtu v lokalitě s uživateli zamezí všichni stávající uživatelé. Stávající uživatelé jsou uzamčen, protože nejsou potvrzen své účty. Obejít ukončení uzamčení uživatele, použijte jednu z následujících postupů:
+Povolení potvrzení účtu v lokalitě s uživateli zamezí všichni stávající uživatelé. Stávající uživatelé jsou uzamčen, protože nejsou potvrzen své účty. Existující uzamčení uživatelů obejít, použijte jednu z následujících postupů:
 
 * Aktualizace databáze k označení všichni stávající uživatelé, jako je potvrzen.
 * Zkontrolujte stávající uživatele. Například batch odesílání e-mailů s odkazy na potvrzení.

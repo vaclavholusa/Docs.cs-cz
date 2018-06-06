@@ -4,16 +4,18 @@ author: ardalis
 description: Další informace o použití ASP.NET Core distribuované ukládání do mezipaměti ke zlepšení aplikace výkon a škálovatelnost, zejména v prostředí cloudu nebo server farmy.
 manager: wpickett
 ms.author: riande
+ms.custom: mvc
 ms.date: 02/14/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: c40209e3b3f2b5bf28450bb2a88cbe40e9e23230
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 6c595572641604d241c0c8f702d4f392afe34f71
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734455"
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>Práce s distribuované mezipaměti ASP.NET Core
 
@@ -73,13 +75,13 @@ Chcete-li použít `IDistributedCache` rozhraní:
 
 Následující příklad ukazuje, jak použít instanci `IDistributedCache` v komponentě jednoduché middleware:
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/StartTimeHeader.cs)]
 
 Ve výše uvedeném kódu je hodnota uložená v mezipaměti pro čtení, ale nikdy zapsána. V této ukázce je hodnota nastavit pouze při spuštění serveru a nezmění. Ve scénáři s více serverů přepíše nejnovější serveru spusťte všechny předchozí hodnoty, které byly nastavené zásadami jiných serverů. `Get` a `Set` pomocí metody `byte[]` typu. Proto řetězcovou hodnotu převést pomocí `Encoding.UTF8.GetString` (pro `Get`) a `Encoding.UTF8.GetBytes` (pro `Set`).
 
 Následující kód z *Startup.cs* ukazuje, nastaví se hodnota:
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=2,4,5,6&range=58-66)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
 
 > [!NOTE]
 > Vzhledem k tomu `IDistributedCache` je nakonfigurovaný v `ConfigureServices` metoda, je k dispozici `Configure` metoda jako parametr. Přidání jako parametr vám umožní nakonfigurované instance poskytované prostřednictvím DI.
@@ -92,7 +94,7 @@ Konfigurace v implementaci Redis v `ConfigureServices` a k němu přístup v kó
 
 V ukázkovém kódu `RedisCache` implementace se používá, když je server nakonfigurovaný pro `Staging` prostředí. Proto `ConfigureStagingServices` metoda nakonfiguruje `RedisCache`:
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet2)]
 
 > [!NOTE]
 > Na místním počítači nainstalovat Redis, nainstalujte balíček chocolatey [ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/) a spusťte `redis-server` z příkazového řádku.
@@ -101,31 +103,42 @@ V ukázkovém kódu `RedisCache` implementace se používá, když je server nak
 
 Implementace SqlServerCache umožňuje distribuované mezipaměti používat databázi systému SQL Server jako své úložiště zálohování. Chcete-li vytvořit systému SQL Server tabulku můžete použít nástroj sql mezipaměti, nástroj vytvoří tabulku s názvem a schéma, které zadáte.
 
-Chcete-li použít nástroj sql mezipaměti, přidejte `SqlConfig.Tools` k `<ItemGroup>` element *.csproj* souboru a spusťte obnovení dotnet.
+::: moniker range="< aspnetcore-2.1"
 
-[!code-xml[](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
+Přidat `SqlConfig.Tools` k `<ItemGroup>` element souboru projektu a spusťte `dotnet restore`.
 
-Otestujte SqlConfig.Tools spuštěním následujícího příkazu
+```xml
+<ItemGroup>
+  <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools" 
+                          Version="2.0.2" />
+</ItemGroup>
+```
 
-```none
-C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create --help
-   ```
+::: moniker-end
 
-Nástroj SQL mezipaměti zobrazí využití, možnosti a příkaz nápovědy, teď můžete vytvářet tabulky do systému sql server, spuštěním příkazu "sql mezipaměti vytvořit":
+Otestujte SqlConfig.Tools spuštěním následujícího příkazu:
 
-```none
-C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
-   info: Microsoft.Extensions.Caching.SqlConfig.Tools.Program[0]
-       Table and index were created successfully.
-   ```
+```console
+dotnet sql-cache create --help
+```
+
+SqlConfig.Tools zobrazí využití, možnosti a nápovědu k příkazu.
+
+Umožňuje vytvořit tabulku v systému SQL Server spuštěna `sql-cache create` příkaz:
+
+```console
+dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
+info: Microsoft.Extensions.Caching.SqlConfig.Tools.Program[0]
+Table and index were created successfully.
+```
 
 Vytvoření tabulky má následující schéma:
 
 ![Tabulka mezipaměti SqlServer](distributed/_static/SqlServerCacheTable.png)
 
-Podobně jako všechny implementace mezipaměti, musí aplikace získávat a nastavovat hodnoty mezipaměti pomocí instance `IDistributedCache`, nikoli `SqlServerCache`. Ukázka implementuje `SqlServerCache` v `Production` prostředí (tak, že je nakonfigurovaný v `ConfigureProductionServices`).
+Podobně jako všechny implementace mezipaměti, musí aplikace získávat a nastavovat hodnoty mezipaměti pomocí instance `IDistributedCache`, nikoli `SqlServerCache`. Ukázka implementuje `SqlServerCache` v provozním prostředí (tak, že je nakonfigurovaný v `ConfigureProductionServices`).
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet3)]
 
 > [!NOTE]
 > `ConnectionString` (A volitelně `SchemaName` a `TableName`) by měl obvykle být uloženy mimo zdrojového kódu (například UserSecrets), mohou obsahovat přihlašovací údaje.

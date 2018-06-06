@@ -1,6 +1,6 @@
 Generovaný kód Identity databáze vyžaduje [Entity Framework Core migrace](/ef/core/managing-schemas/migrations/). Vytvořte migrace a aktualizaci databáze. Například spusťte následující příkazy:
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 V sadě Visual Studio **Konzola správce balíčků**:
 
@@ -18,4 +18,4 @@ dotnet ef database update
 
 ------
 
-Parametr name "CreateIdentitySchema" pro `Add-Migration` je libovolný příkaz. ""CreateIdentitySchema"popisuje migraci.
+Parametr name "CreateIdentitySchema" pro `Add-Migration` je libovolný příkaz. `"CreateIdentitySchema"` Popisuje migraci.

@@ -3,39 +3,41 @@ title: Ukládání do mezipaměti Middleware v ASP.NET Core odpovědi
 author: guardrex
 description: Zjistěte, jak konfigurovat a používat Middleware ukládání do mezipaměti odpovědi v ASP.NET Core.
 manager: wpickett
+monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 8296d535725d95682fa5904a43ab196e21b4f83c
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 7ceccffa39baf5f13d63c26e78c64a595bb42f60
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734494"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Ukládání do mezipaměti Middleware v ASP.NET Core odpovědi
 
 Podle [Luke Latham](https://github.com/guardrex) a [Luo Jan](https://github.com/JunTaoLuo)
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu ASP.NET Core 2.1](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 Tento článek vysvětluje, jak pro konfiguraci middlewaru ukládání do mezipaměti odpovědi v aplikaci ASP.NET Core. Middleware Určuje, pokud jsou odpovědi lze uložit do mezipaměti, ukládá odpovědi a slouží odpovědi z mezipaměti. Úvod do ukládání do mezipaměti HTTP a `ResponseCache` atributů najdete v tématu [ukládání odpovědí do mezipaměti](xref:performance/caching/response).
 
 ## <a name="package"></a>Balíček
 
-Pokud chcete middleware v projektu, přidejte odkaz na [ `Microsoft.AspNetCore.ResponseCaching` ](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCaching/) balíček nebo použít [ `Microsoft.AspNetCore.All` ](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) balíčku (jádro ASP.NET 2.0 nebo novější, pokud je cílem .NET Core).
+Zahrnout middleware projekt, přidejte odkaz na [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) balíček nebo použít [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app), která je k dispozici pro použití v ASP.NET Core 2.1 nebo vyšší.
 
 ## <a name="configuration"></a>Konfigurace
 
 V `ConfigureServices`, přidat middleware ke kolekci služby.
 
-[!code-csharp[](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](middleware/samples/2.x/ResponseCachingMiddleware/Startup.cs?name=snippet1&highlight=9)]
 
 Nakonfigurovat aplikaci, aby používala middlewaru s `UseResponseCaching` metoda rozšíření, která přidá middleware kanálu zpracování požadavků. Ukázková aplikace přidá [ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2) hlavičky odpovědi, který ukládá do mezipaměti odpovědi lze uložit do mezipaměti pro až 10 sekund. Odesílá vzorek [ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4) záhlaví pro konfiguraci middlewaru k obsluze odpovědi v mezipaměti pouze v případě [ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4) záhlaví následných žádostí se shoduje s původní žádost. V příkladu kódu, který následuje [CacheControlHeaderValue](/dotnet/api/microsoft.net.http.headers.cachecontrolheadervalue) a [HeaderNames](/dotnet/api/microsoft.net.http.headers.headernames) vyžadují `using` údajů [Microsoft.Net.Http.Headers](/dotnet/api/microsoft.net.http.headers) obor názvů.
 
-[!code-csharp[](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
+[!code-csharp[](middleware/samples/2.x/ResponseCachingMiddleware/Startup.cs?name=snippet2&highlight=17,21-28)]
 
 Middleware ukládání do mezipaměti odpovědi pouze ukládá do mezipaměti serveru odpovědi, jejichž výsledkem 200 stavový kód (OK). Žádné jiné reakce, včetně [chybové stránky](xref:fundamentals/error-handling), ignorují middlewarem.
 
@@ -46,10 +48,10 @@ Middleware ukládání do mezipaměti odpovědi pouze ukládá do mezipaměti se
 
 Middleware nabízí tři možnosti pro řízení ukládání do mezipaměti odpovědi.
 
-| Možnost                | Výchozí hodnota |
-| --------------------- | ------------- |
-| UseCaseSensitivePaths | Určuje, pokud jsou odpovědi ukládat do mezipaměti na malá a velká písmena cesty.</p><p>Výchozí hodnota je `false`. |
-| MaximumBodySize       | Největší velikost lze uložit do mezipaměti pro text odpovědi v bajtech.</p>Výchozí hodnota je `64 * 1024 * 1024` (64 MB). |
+| Možnost                | Popis |
+| --------------------- | ----------- |
+| UseCaseSensitivePaths | Určuje, pokud jsou odpovědi ukládat do mezipaměti na malá a velká písmena cesty. Výchozí hodnota je `false`. |
+| MaximumBodySize       | Největší velikost lze uložit do mezipaměti pro text odpovědi v bajtech. Výchozí hodnota je `64 * 1024 * 1024` (64 MB). |
 | SizeLimit             | Omezení velikosti pro middleware mezipaměti odpovědi v bajtech. Výchozí hodnota je `100 * 1024 * 1024` (100 MB). |
 
 Následující příklad konfiguruje middlewaru, který má být:

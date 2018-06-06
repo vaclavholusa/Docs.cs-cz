@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: advanced
 uid: mvc/razor-pages/ui-class
-ms.openlocfilehash: b6658186adf5ccd74e1d0f0e925627f50bad250c
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: 4370fdaf7a5c066cec7b341a6012a100f8aed3ea
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "34687548"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734546"
 ---
 # <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>Vytvořte opakovaně použitelné uživatelské rozhraní v projektu knihovny tříd Razor ASP.NET Core.
 
@@ -33,6 +33,7 @@ Tato funkce vyžaduje [!INCLUDE[](~/includes/2.1-SDK.md)]
 
 * Ze sady Visual Studio **soubor** nabídce vyberte možnost **nový** > **projektu**.
 * Vyberte **webové aplikace ASP.NET Core**.
+* Název knihovny (například "RazorClassLib") > **OK**. Abyste se vyhnuli kolize názvů souboru s knihovnou generované zobrazení, ujistěte se, není název knihovny končit `.Views`.
 * Ověřte **ASP.NET Core 2.1** nebo novější je vybrána.
 * Vyberte **knihovny tříd Razor** > **OK**.
 
@@ -44,7 +45,7 @@ Z příkazového řádku, spusťte `dotnet new razorclasslib`. Příklad:
 dotnet new razorclasslib -o RazorUIClassLib
 ```
 
-Další informace najdete v tématu [dotnet nové](/dotnet/core/tools/dotnet-new).
+Další informace najdete v tématu [dotnet nové](/dotnet/core/tools/dotnet-new). Abyste se vyhnuli kolize názvů souboru s knihovnou generované zobrazení, ujistěte se, není název knihovny končit `.Views`.
 
 ------
 Přidáte soubory Razor RCL.

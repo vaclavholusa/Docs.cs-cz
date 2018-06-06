@@ -11,10 +11,10 @@ ms.technology: aspnet
 ms.topic: article
 uid: tutorials/get-started-with-swashbuckle
 ms.openlocfilehash: eaeb27903c462ef002edbb0b84cd5a751db2bb9d
-ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34729727"
 ---
 # <a name="get-started-with-swashbuckle-and-aspnet-core"></a>Začínáme s Swashbuckle a ASP.NET Core

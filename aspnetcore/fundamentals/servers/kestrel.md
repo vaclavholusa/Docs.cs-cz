@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: abdff718dbbebec17ca4f077e206bcb547f3677b
-ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
+ms.openlocfilehash: 22311d90fb327fc1e01f82759ad62551501a10c1
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
-ms.locfileid: "34729262"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734559"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>Kestrel webového serveru implementace v ASP.NET Core
 
@@ -75,7 +75,7 @@ I když není požadovaných reverzní proxy server, pomocí reverzní proxy ser
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
 
-[Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) balíček je součástí [Microsoft.AspNetCore.App metapackage] (xref:fundamentals / metapackage aplikace).
+[Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) balíček je součástí [Microsoft.AspNetCore.App metapackage] (xref:fundamentals / metapackage aplikace) (ASP.NET Core 2.1 nebo vyšší).
 
 Šablony projektů ASP.NET Core pomocí Kestrel ve výchozím nastavení. V *Program.cs*, kód zavolá metodu šablony [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder), který volá [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) na pozadí.
 
@@ -507,7 +507,7 @@ Ve verzi ASP.NET Core 2.1 Kestrel na výchozí přenos je už podle Libuv ale na
 * [Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) (přímý odkaz na balíček)
 * [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/)
 
-Pro technologii ASP.NET Core 2.1 nebo novější projekty využívající `Microsoft.AspNetCore.App` metapackage a vyžadují použití Libuv:
+Pro technologii ASP.NET Core 2.1 nebo novější projekty využívající [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app) a vyžadují použití Libuv:
 
 * Přidat závislost [Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv/) balíčku do souboru projektu aplikace:
 
@@ -815,7 +815,7 @@ Middleware očekává `AllowedHosts` klíče v *appSettings.JSON určený*/*apps
 
 ::: moniker range=">= aspnetcore-2.1"
 
-Jako alternativní řešení použijte filtrování Middleware hostitele. Poskytuje Middleware filtrování hostitele [Microsoft.AspNetCore.HostFiltering](https://www.nuget.org/packages/Microsoft.AspNetCore.HostFiltering) balíček, který je součástí [Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) metapackage. Middleware přidává [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder), který volá [AddHostFiltering](/dotnet/api/microsoft.aspnetcore.builder.hostfilteringservicesextensions.addhostfiltering):
+Jako alternativní řešení použijte filtrování Middleware hostitele. Poskytuje Middleware filtrování hostitele [Microsoft.AspNetCore.HostFiltering](https://www.nuget.org/packages/Microsoft.AspNetCore.HostFiltering) balíček, který je součástí [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app) (ASP.NET Core 2.1 nebo vyšší). Middleware přidává [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder), který volá [AddHostFiltering](/dotnet/api/microsoft.aspnetcore.builder.hostfilteringservicesextensions.addhostfiltering):
 
 [!code-csharp[](kestrel/samples-snapshot/2.x/KestrelSample/Program.cs?name=snippet_Program&highlight=9)]
 

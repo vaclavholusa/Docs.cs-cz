@@ -280,6 +280,7 @@
 ## [Ověřování](xref:security/authentication/index)
 ### [Úvod do systému Identity](xref:security/authentication/identity)
 ### [Vygenerování identity](xref:security/authentication/scaffold-identity)
+### [Přidat vlastní uživatelská data na identitu](xref:security/authentication/add-user-data)
 ### [Možnosti ověřování z komunity OSS](xref:security/authentication/community)
 ### [Konfigurace systému Identity](xref:security/authentication/identity-configuration)
 ### [Konfigurace ověřování systému Windows](xref:security/authentication/windowsauth)

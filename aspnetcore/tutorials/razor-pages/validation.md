@@ -10,11 +10,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: bf3cfd8ce7616807bae4bcacf09b63e54c8fae55
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 39c4d8997a46472f082b234bdc8c0f12298266d4
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34582827"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>Přidat stránku ASP.NET Razor základní ověřování
 
@@ -34,7 +35,16 @@ Otevřete *Movie.cs* souboru. [DataAnnotations](https://docs.microsoft.com/aspne
 
 Aktualizace `Movie` třída využívat výhod `Required`, `StringLength`, `RegularExpression`, a `Range` atributů ověření.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
+::: moniker range="= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRatingDA.cs)]
+
+::: moniker-end
 
 Atributy ověření Určete chování, která je vynucená na vlastnosti modelu:
 
@@ -106,6 +116,10 @@ Zkontrolujte `Movie` třídy. `System.ComponentModel.DataAnnotations` Obor názv
 
 `DataType.Date` neuvádí formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole dat podle výchozích formátů podle serveru `CultureInfo`.
 
+::: moniker range=">= aspnetcore-2.1"
+`[Column(TypeName = "decimal(18, 2)")]` Datové poznámky se vyžaduje, takže můžete Entity Framework Core správně namapovat `Price` měnu v databázi. Další informace najdete v tématu [datové typy](/ef/core/modeling/relational/data-types).
+::: moniker-end
+
 `DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
 
 ```csharp
@@ -131,9 +145,17 @@ Je obecně není vhodné zkompilovat pevného data v modely, takže pomocí `Ran
 
 Následující kód ukazuje kombinování atributy na jeden řádek:
 
+::: moniker range="= aspnetcore-2.0"
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
 
-[Začínáme s stránky Razor a EF základní](xref:data/ef-rp/intro) ukazuje pokročilejší EF základních operací s stránky Razor.
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRatingDAmult.cs?name=snippet1)]
+
+::: moniker-end
+
+[Začínáme s stránky Razor a EF základní](xref:data/ef-rp/intro) ukazuje advanced EF základních operací s stránky Razor.
 
 ### <a name="publish-to-azure"></a>Publikování v Azure
 

@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 6b2c3334798861ebdb14787205480422d7d536ea
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 0cb9bc7d8bf415e5a0125c3798f2430c9e861c98
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729649"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Jádro ASP.NET hostitele v systému Windows pomocí služby IIS
 
@@ -43,7 +44,7 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-Základní modul ASP.NET generuje dynamický port přiřadit pro proces back-end. `UseIISIntegration` Metoda převezme dynamický port a nakonfiguruje Kestrel tak, aby naslouchala na `http://localhost:{dynamicPort}/`. Přepíše ostatní konfigurace adresy URL, například volání `UseUrls` nebo [API naslouchat na Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration). Proto volání `UseUrls` nebo na Kestrel `Listen` při použití modulu nejsou požadované rozhraní API. Pokud `UseUrls` nebo `Listen` nazývá Kestrel sleduje na port zadaný při spuštění aplikace bez služby IIS.
+Základní modul ASP.NET generuje dynamický port přiřadit pro proces back-end. `CreateDefaultBuilder` volání [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) metoda, která převezme dynamický port a nakonfiguruje Kestrel tak, aby naslouchala na `http://localhost:{dynamicPort}/`. Přepíše ostatní konfigurace adresy URL, například volání `UseUrls` nebo [API naslouchat na Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration). Proto volání `UseUrls` nebo na Kestrel `Listen` při použití modulu nejsou požadované rozhraní API. Pokud `UseUrls` nebo `Listen` nazývá Kestrel sleduje na port zadaný při spuštění aplikace bez služby IIS.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -89,7 +90,7 @@ Middlewaru integrační služby IIS, který konfiguruje předávaných Middlewar
 
 ### <a name="webconfig-file"></a>soubor Web.config
 
-*Web.config* nakonfiguruje souboru [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Vytváření, transformace a publikování *web.config* zpracováván pomocí .NET SDK webového jádra (`Microsoft.NET.Sdk.Web`). Sada SDK je nastavena v horní části souboru projektu:
+*Web.config* nakonfiguruje souboru [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Vytváření, transformace a publikování *web.config* souboru se zpracovává souborem cíl MSBuild (`_TransformWebConfig`) při publikování projektu. Tento cíl je součástí sady SDK webové cíle (`Microsoft.NET.Sdk.Web`). Sada SDK je nastavena v horní části souboru projektu:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -172,8 +173,9 @@ Povolit **konzoly pro správu služby IIS** a **webové služby**.
 1. Nainstalujte *sady hostování rozhraní .NET Core* v hostitelském systému. Sada nainstaluje rozhraní .NET Core Runtime, základní knihovny .NET a [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel server. Pokud systém nemá připojení k Internetu, získejte a nainstalujte [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840) před instalací sady hostování rozhraní .NET Core.
 
    1. Přejděte na [.NET všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
-   1. Vyberte ze seznamu na nejnovější .NET Core runtime bez preview (**.NET Core** > **Runtime** > **.NET Core Runtime x.y.z**). Pokud máte v úmyslu pracovat s software verze preview, brání v jeho text odkazu modulu runtime slovem "náhled" nebo "rc" (Release Candidate).
-   1. Na .NET Core runtime stránce v části stažení **Windows**, vyberte **hostování instalační program sady** odkaz ke stažení *sady hostování rozhraní .NET Core*.
+   1. V **Runtime** sloupci tabulky, vyberte ze seznamu na nejnovější .NET Core runtime bez preview (**stáhne X.Y Runtime (vX.Y.Z)**). Obsahuje nejnovější modul runtime **aktuální** popisek. Pokud máte v úmyslu pracovat s software verze preview, brání v jeho text odkazu modulu runtime slovem "náhled" nebo "rc" (Release Candidate).
+   1. Na .NET Core runtime stránce v části stažení **Windows**, vyberte **hostování instalační program sady** odkaz ke stažení *sady hostování rozhraní .NET Core* Instalační služby.
+   1. Spusťte instalační program na serveru.
 
    **Důležité!** Pokud je sada hostování nainstalovaná před službou IIS, je nutné opravit instalaci sady. Spusťte instalační program sady hostování znovu po instalaci služby IIS.
    

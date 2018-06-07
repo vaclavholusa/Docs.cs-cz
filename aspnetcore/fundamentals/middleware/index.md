@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 381c1a5cecee945559ea0dabd0aa086c8d52b43a
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: c6d362cf15b5d4611f0e544c5092a18f32ed7dfc
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729165"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819042"
 ---
 # <a name="aspnet-core-middleware"></a>Middleware ASP.NET Core
 
@@ -197,7 +197,8 @@ ASP.NET Core se dodává s následující komponenty middlewaru, jakož i popis 
 | [Ověřování](xref:security/authentication/identity) | Poskytuje podporu ověřování. | Před `HttpContext.User` je potřeba. Terminálu zpětná volání OAuth. |
 | [CORS](xref:security/cors) | Konfiguruje sdílení prostředků různého původu. | Před provedením komponent, které používají CORS. |
 | [Diagnostika](xref:fundamentals/error-handling) | Nakonfiguruje diagnostiky. | Před provedením komponent, které generují chyby. |
-| [Přesměrovaná hlavičky/HTTP přepsání](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | Předává směrovány přes proxy server hlavičky do aktuálního požadavku. | Před provedením komponent, které využívají aktualizovaná pole (příklady: schéma, hostitele, když, metoda). |
+| [Přesměrovaná hlavičky](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | Předává směrovány přes proxy server hlavičky do aktuálního požadavku. | Před provedením komponent, které využívají aktualizovaná pole (příklady: schéma, hostitele, IP adresa klienta, metoda). |
+| [Přepsání metody HTTP](/dotnet/api/microsoft.aspnetcore.builder.httpmethodoverrideextensions) | Umožňuje příchozí požadavek POST přepsat metodu. | Před provedením komponent, které využívají aktualizovaná metoda. |
 | [Přesměrování protokolu HTTPS](xref:security/enforcing-ssl#require-https) | Přesměrujte všechny požadavky HTTP do HTTPS (ASP.NET Core 2.1 nebo vyšší). | Před provedením komponent, které využívají adresu URL. |
 | [Zabezpečení striktní přenosu HTTP (HSTS)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts) | Middleware vylepšení zabezpečení, který přidá hlavičku odpovědi speciální (ASP.NET Core 2.1 nebo vyšší). | Před odesláním odpovědi a po součásti, které upravují požadavky (například předávat hlavičky, přepisování adres URL). |
 | [Ukládání odpovědí do mezipaměti](xref:performance/caching/middleware) | Poskytuje podporu pro ukládání do mezipaměti odpovědi. | Před provedením komponent, které vyžadují ukládání do mezipaměti. |

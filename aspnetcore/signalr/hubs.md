@@ -11,11 +11,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: 5c477dd64c4cf8b7d6da1f121a290b00f3864f45
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 495aa156dd5e4641d688d7b16df1e5814c9607f4
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819081"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Použití centra v systému SignalR pro ASP.NET Core
 
@@ -63,12 +64,12 @@ Kromě toho `Hub.Clients` obsahuje následující metody:
 | `AllExcept` | Volání metody na všechny připojené klienty s výjimkou zadaných připojení |
 | `Client` | Volání metody na konkrétní připojený klient |
 | `Clients` | Volání metody na konkrétní připojené klienty |
-| `Group` | Odešle zprávu do všech připojení v určené skupině  |
-| `GroupExcept` | Odešle zprávu do všech připojení v určené skupině, s výjimkou zadaných připojení |
-| `Groups` | Odešle zprávu do více skupin pro připojení  |
-| `OthersInGroup` | Odešle zprávu do připojení s výjimkou klienta, která volá metodu rozbočovače na skupinu  |
-| `User` | Odešle zprávu do všech připojení spojené s konkrétním uživatelem |
-| `Users` | Odešle zprávu do všech připojení přidružené k určení uživatelé |
+| `Group` | Volá metodu pro všechna připojení v určené skupině  |
+| `GroupExcept` | Volá metodu pro všechna připojení v určené skupině, s výjimkou zadaných připojení |
+| `Groups` | Volá metodu do několika skupin připojení  |
+| `OthersInGroup` | Volá metodu pro skupinu připojení s výjimkou klienta, která volá metodu rozbočovače  |
+| `User` | Volá metodu pro všechna připojení, které jsou spojené s konkrétním uživatelem |
+| `Users` | Volá metodu pro všechna připojení přidružené k určení uživatelé |
 
 Každé vlastnosti nebo metody v předchozích tabulkách vrátí objekt s `SendAsync` metoda. `SendAsync` Metoda umožňuje zadat název a parametry metody klienta k volání.
 

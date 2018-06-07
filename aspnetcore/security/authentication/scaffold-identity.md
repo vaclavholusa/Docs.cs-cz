@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 8933cf9c4063bd94f7f3a9ba53b5372b443eb7c8
-ms.sourcegitcommit: d4cefc0c63550c64a8040b11867cc05efcfb7e86
+ms.openlocfilehash: 6202cb4d28cc8d77c1f83c8cee8c90892deef26e
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34758749"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818974"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>Identita vygenerované uživatelské rozhraní ve projektů ASP.NET Core
 
@@ -27,7 +27,7 @@ Aplikace, které provádějí **není** zahrnují ověřování můžete použí
 
 I když scaffolder generuje většinu nezbytného kódu, budete muset aktualizovat projektu dokončí proces. Tento dokument popisuje kroky potřebné k dokončení aktualizace Identity generování uživatelského rozhraní.
 
-Při spuštění Identity scaffolder *ScaffoldingReadme.txt* soubor je vytvořen v adresáři projektu. *ScaffoldingReadme.txt* soubor obsahuje obecné pokyny, co je potřeba k dokončení aktualizace Identity generování uživatelského rozhraní. Tento dokument obsahuje podrobnější pokyny než čtení *ScaffoldingReadme.txt* souboru.
+Při spuštění Identity scaffolder *ScaffoldingReadme.txt* soubor je vytvořen v adresáři projektu. *ScaffoldingReadme.txt* soubor obsahuje obecné pokyny, co je potřeba k dokončení aktualizace Identity generování uživatelského rozhraní. Tento dokument obsahuje podrobnější pokyny, než *ScaffoldingReadme.txt* souboru.
 
 Doporučujeme používat systému správy zdrojů, které jsou uvedeny rozdíly souborů a umožňuje zpět změny mimo. Zkontrolujte změny, po spuštění Identity scaffolder.
 

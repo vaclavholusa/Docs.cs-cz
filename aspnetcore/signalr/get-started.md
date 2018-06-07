@@ -11,12 +11,12 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: 880abd87805990baf8dd977c340a60582e54d2df
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: ba1db640e5608fd9f5e7fa024283a651bf7772c2
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729494"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819055"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>Začínáme s funkce SignalR technologie ASP.NET Core
 
@@ -75,7 +75,7 @@ Visual Studio obsahuje `Microsoft.AspNetCore.SignalR` balíček obsahující jeh
     npm install @aspnet/signalr
     ```     
 
-4. Vytvořte novou složku s názvem "signalr" uvnitř *lib* složku ve vašem projektu. Zkopírujte *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  do této složky.
+4. Vytvořte novou složku s názvem "signalr" uvnitř *lib* složku ve vašem projektu. Kopírování *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  do této složky.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
@@ -92,7 +92,7 @@ Visual Studio obsahuje `Microsoft.AspNetCore.SignalR` balíček obsahující jeh
     npm install @aspnet/signalr
     ```
 
-3. Kopírování *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  k *lib* složku ve vašem projektu.
+3. Vytvořte novou složku s názvem "signalr" uvnitř *lib* složku ve vašem projektu. Kopírování *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  do této složky.
 
 -----
 
@@ -140,15 +140,16 @@ SignalR server musí být konfigurován tak, aby věděl, že může předat po�
 
 ## <a name="create-the-signalr-client-code"></a>Vytvoření kódu klienta SignalR
 
-1. Nahraďte obsah *Pages\Index.cshtml* následujícím kódem:
+1. Přidejte soubor JavaScript s názvem *chat.js*do *wwwroot\js* složky. Přidejte do ní následující kód:
+
+   [!code-javascript[Index](get-started/sample/wwwroot/js/chat.js)]
+
+2. Nahraďte obsah *Pages\Index.cshtml* následujícím kódem:
 
    [!code-cshtml[Index](get-started/sample/Pages/Index.cshtml)]
 
    Předchozí HTML zobrazí název a zpráva pole a tlačítko pro odeslání. Všimněte si odkazům na skript v dolní části: odkaz na SignalR a *chat.js*.
 
-2. Přidejte soubor JavaScript s názvem *chat.js*do *wwwroot\js* složky. Přidejte do ní následující kód:
-
-   [!code-javascript[Index](get-started/sample/wwwroot/js/chat.js)]
 
 ## <a name="run-the-app"></a>Spuštění aplikace
 

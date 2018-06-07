@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/add-user-data
-ms.openlocfilehash: 23fd792c0d93c038f31ce947e7885ad6e36d119e
-ms.sourcegitcommit: d4cefc0c63550c64a8040b11867cc05efcfb7e86
+ms.openlocfilehash: cc7b29499e9db702cab70be7c15eac53373d450d
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34758800"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819068"
 ---
 # <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>Přidat, stahování a odstraňování dat vlastní uživatele k identitě v projektu ASP.NET Core
 
@@ -116,7 +116,7 @@ Aktualizace `IdentityUser` odvozené třídy s vlastní vlastnosti. Pokud jste p
 
 Vlastnosti označených pomocí [PersonalData](/dotnet/api/microsoft.aspnetcore.identity.personaldataattribute?view=aspnetcore-2.1) atribut jsou:
 
-* Jsou odstranit, když *Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml* stránky Razor volá `UserManager.Delete`.
+* Odstranit, když *Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml* stránky Razor volá `UserManager.Delete`.
 * Součástí stažená data pomocí *Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml* stránky Razor.
 
 ### <a name="update-the-accountmanageindexcshtml-page"></a>Account/Manage/Index.cshtml stránku aktualizace

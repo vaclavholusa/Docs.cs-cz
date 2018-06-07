@@ -12,11 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: c289c209b50f0c2c1f2d8b15a3aedeaebf671d0b
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: aa4c91865f7b720846a5e8deb4281c3ca6933c8e
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819094"
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Vytvoření aplikace ASP.NET MVC 5 s Facebook, Twitter, LinkedIn a Google OAuth2 přihlašování (C#)
 ====================
@@ -174,7 +175,7 @@ Pro ověřování sítě Facebook OAuth2 musíte zkopírovat do projektu někter
     ![Vytvoření nové aplikace](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image22.png)
 4. Zadejte **název aplikace** a **kategorie**, pak klikněte na tlačítko **vytvořit aplikaci**.
 
-    Toto musí být jedinečný mezi Facebook. <strong>Aplikace Namespace</strong> je součástí adresu URL, kterou vaše aplikace bude používat pro přístup k aplikaci Facebook pro ověření (například https://apps.facebook.com/{App Namespace}). Pokud neurčíte <strong>aplikace Namespace</strong>, <strong>ID aplikace</strong> se použije pro adresu URL. <strong>ID aplikace</strong> je číslo dlouho generované systémem, který se zobrazí v dalším kroku.
+    <strong>Aplikace Namespace</strong> je součástí adresu URL, kterou vaše aplikace bude používat pro přístup k aplikaci Facebook pro ověření (například https\://apps.facebook.com/{App Namespace}). Pokud neurčíte <strong>aplikace Namespace</strong>, <strong>ID aplikace</strong> se použije pro adresu URL. <strong>ID aplikace</strong> je číslo dlouho generované systémem, který se zobrazí v dalším kroku.
 
     ![Vytvořit novou aplikaci dialogové okno](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
 5. Odešlete kontrola zabezpečení Standardní.

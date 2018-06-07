@@ -5,16 +5,17 @@ description: Zjistěte, jak k ukládání a načítání citlivé informace jako
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/16/2018
+ms.date: 05/23/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 9e9b548e5572da2c347bc874c473a02d8691e738
-ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
-ms.translationtype: HT
+ms.openlocfilehash: fd5cf5cdffd7281d7f4e0d96e8230b60be64a7c3
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819133"
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Bezpečné úložiště tajné klíče aplikace v vývoj v ASP.NET Core
 
@@ -48,7 +49,7 @@ Nástroj tajný klíč správce ukládá citlivá data během vývoje projektu A
 
 ## <a name="how-the-secret-manager-tool-works"></a>Jak funguje nástroj Správce tajný klíč
 
-Nástroj tajný klíč správce abstrahuje rychle podrobnosti implementace, jako je například kde a jak jsou uložené hodnoty. Nástroj můžete použít bez znalosti tyto podrobnosti implementace. Hodnoty jsou uloženy v [JSON](https://json.org/) konfigurační soubor ve složce profil systému chráněný uživatel v místním počítači:
+Nástroj tajný klíč správce abstrahuje rychle podrobnosti implementace, jako je například kde a jak jsou uložené hodnoty. Nástroj můžete použít bez znalosti tyto podrobnosti implementace. Hodnoty jsou uložené v konfiguračním souboru JSON ve složce profil systému chráněný uživatel v místním počítači:
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -77,9 +78,18 @@ Nemusíte psát kód, který závisí na umístění nebo formát data uložená
 ::: moniker range="<= aspnetcore-2.0"
 ## <a name="install-the-secret-manager-tool"></a>Nainstalujte nástroj Správce tajný klíč
 
-Nástroj Správce tajný klíč je instalován s rozhraní příkazového řádku .NET Core v rozhraní .NET Core SDK 2.1. Pro rozhraní .NET Core SDK 2.0 a starší je nutné instalaci nástroje.
+Nástroj Správce tajný klíč je instalován s rozhraní příkazového řádku .NET Core od verze rozhraní .NET Core SDK 2.1.300. Verze rozhraní .NET Core SDK před 2.1.300 je nutné nástroj instalace.
 
-Nainstalujte [Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) balíček NuGet do projektu ASP.NET Core:
+> [!TIP]
+> Spustit `dotnet --version` z příkazového prostředí zobrazíte číslo verze nainstalované rozhraní .NET Core SDK.
+
+Pokud se používá .NET Core SDK obsahuje nástroje, zobrazí se upozornění:
+
+```console
+The tool 'Microsoft.Extensions.SecretManager.Tools' is now included in the .NET Core SDK. Information on resolving this warning is available at (https://aka.ms/dotnetclitools-in-box).
+```
+
+Nainstalujte [Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) balíček NuGet do projektu ASP.NET Core. Příklad:
 
 [!code-xml[](app-secrets/samples/1.x/UserSecrets/UserSecrets.csproj?name=snippet_CsprojFile&highlight=13-14)]
 
@@ -205,7 +215,7 @@ Tajné klíče uživatele lze načíst prostřednictvím `Configuration` rozhran
 
 ## <a name="string-replacement-with-secrets"></a>Náhradní řetězec obsahující tajné údaje
 
-Ukládání hesel ve formátu prostého textu je rizikové. Například připojovací řetězec databáze uložené v *appSettings.JSON určený* může zahrnovat heslo pro zadaného uživatele:
+Ukládání hesel ve formátu prostého textu je nezabezpečené. Například připojovací řetězec databáze uložené v *appSettings.JSON určený* může zahrnovat heslo pro zadaného uživatele:
 
 [!code-json[](app-secrets/samples/2.x/UserSecrets/appsettings-unsecure.json?highlight=3)]
 
@@ -215,17 +225,17 @@ Bezpečnější přístup je uložit heslo jako tajný klíč. Příklad:
 dotnet user-secrets set "DbPassword" "pass123"
 ```
 
-Nahraďte heslo v *appSettings.JSON určený* s zástupný symbol. V následujícím příkladu `{0}` slouží jako zástupný symbol pro formulář [složené řetězec formátu](/dotnet/standard/base-types/composite-formatting#composite-format-string).
+Odeberte `Password` dvojice klíč hodnota z připojovacího řetězce v *appSettings.JSON určený*. Příklad:
 
 [!code-json[](app-secrets/samples/2.x/UserSecrets/appsettings.json?highlight=3)]
 
-Hodnota tajného klíče může vložit do zástupný symbol pro dokončení připojovací řetězec:
+Hodnota tajného klíče se dá nastavit na [SqlConnectionStringBuilder](/dotnet/api/system.data.sqlclient.sqlconnectionstringbuilder) objektu [heslo](/dotnet/api/system.data.sqlclient.sqlconnectionstringbuilder.password) vlastnost k dokončení připojovací řetězec:
 
 ::: moniker range="<= aspnetcore-1.1"
-[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=23-25)]
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=26-29)]
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.0"
-[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-16)]
+[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-17)]
 ::: moniker-end
 
 ## <a name="list-the-secrets"></a>Seznam těchto tajných klíčů

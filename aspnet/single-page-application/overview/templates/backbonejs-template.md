@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/backbonejs-template
-title: "Páteřní šablony | Microsoft Docs"
+title: Páteřní šablony | Microsoft Docs
 author: madskristensen
-description: "Backbone.js SPA šablony"
+description: Backbone.js SPA šablony
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2013
 ms.topic: article
 ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 3b8eabd3cefcb96dc40bbf6cc6e3ee81accb0d7c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26566308"
 ---
 <a name="backbone-template"></a>Páteřní šablony
 ====================
@@ -61,7 +62,7 @@ Pojďme začíná na straně klienta. Skripty aplikace klienta jsou umístěny v
 
 **Aplikace**
 
-`Application`je definována v application.ts. Tento objekt inicializuje aplikaci a funguje jako kořenového oboru názvů. Uchovává informace o konfiguraci a stavu, který je sdílen mezi aplikace, například zda je přihlášený uživatel.
+`Application` je definována v application.ts. Tento objekt inicializuje aplikaci a funguje jako kořenového oboru názvů. Uchovává informace o konfiguraci a stavu, který je sdílen mezi aplikace, například zda je přihlášený uživatel.
 
 `application.start` Metoda vytvoří modální zobrazení a připojí obslužné rutiny události pro události na úrovni aplikace, jako je například přihlášení uživatele. V dalším kroku vytvoří výchozí směrovač a kontroluje, zda je zadaná adresa URL žádné straně klienta. Pokud ne, je přesměrován na výchozí adresa url (#! /).
 
@@ -113,7 +114,7 @@ Modul plug-in confirm.ts nahrazuje prohlížeče potvrďte dialog, i když se po
 
 Nyní Podíváme se na straně serveru.
 
-**Řadiče**
+**Kontrolery**
 
 V aplikaci jednostránkové hraje serveru jenom malé roli v uživatelském rozhraní. Obvykle serveru vykreslí úvodní stránku a pak odesílá a přijímá JSON data.
 

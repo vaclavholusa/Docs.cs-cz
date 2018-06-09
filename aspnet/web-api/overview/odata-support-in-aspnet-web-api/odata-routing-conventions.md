@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
 msc.type: authoredcontent
 ms.openlocfilehash: 0ab99dd443040b90ffefd2f5b9261a63b91e9463
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28037318"
 ---
 <a name="routing-conventions-in-aspnet-web-api-2-odata"></a>Konvencí směrování v rozhraní ASP.NET Web API 2 Odata
 ====================
@@ -47,9 +48,9 @@ Před I popisují konvencí směrování protokolu OData v rozhraní Web API, je
 
 Pro směrování, je důležitou součástí cesta prostředku. Cesta prostředku je rozdělené do segmentů. Například `/Products(1)/Supplier` má tři segmenty:
 
-- `Products`odkazuje na sadu entit s názvem "Produktů".
-- `1`je klíč entity, výběrem jedné entity ze sady.
-- `Supplier`je navigační vlastnost, která vybere související entity.
+- `Products` odkazuje na sadu entit s názvem "Produktů".
+- `1` je klíč entity, výběrem jedné entity ze sady.
+- `Supplier` je navigační vlastnost, která vybere související entity.
 
 Tuto cestu, vybere se dodavatele produkt 1.
 
@@ -67,7 +68,7 @@ Tuto cestu, vybere se dodavatele produkt 1.
 | --- | --- | --- | --- |
 | ZÍSKAT /entityset | / Produkty | GetEntitySet nebo Get | GetProducts |
 | ZÍSKAT /entityset(key) | /Products(1) | GetEntityType nebo Get | GetProduct |
-| ZÍSKAT /entityset (klíč) / přetypování | /Products(1)/Models.Book | GetEntityType nebo Get | GetBook |
+| ZÍSKAT /entityset (klíč) / přetypování | / /Models.Book produkty (1) | GetEntityType nebo Get | GetBook |
 
 Další informace najdete v tématu [vytvořit koncový bod OData jen pro čtení](odata-v3/creating-an-odata-endpoint.md).
 
@@ -77,18 +78,18 @@ Další informace najdete v tématu [vytvořit koncový bod OData jen pro čten�
 | --- | --- | --- | --- |
 | POST /entityset | / Produkty | PostEntityType nebo Post | PostProduct |
 | UVEĎTE /entityset(key) | /Products(1) | PutEntityType nebo Put | PutProduct |
-| UVEĎTE /entityset (klíč) / přetypování | /Products(1)/Models.Book | PutEntityType nebo Put | PutBook |
+| UVEĎTE /entityset (klíč) / přetypování | / /Models.Book produkty (1) | PutEntityType nebo Put | PutBook |
 | Oprava /entityset(key) | /Products(1) | PatchEntityType nebo oprava | PatchProduct |
-| Oprava /entityset (klíč) / přetypování | /Products(1)/Models.Book | PatchEntityType nebo oprava | PatchBook |
+| Oprava /entityset (klíč) / přetypování | / /Models.Book produkty (1) | PatchEntityType nebo oprava | PatchBook |
 | Odstranit /entityset(key) | /Products(1) | DeleteEntityType nebo odstranění | DeleteProduct |
-| Odstranit /entityset (klíč) / přetypování | /Products(1)/Models.Book | DeleteEntityType nebo odstranění | DeleteBook |
+| Odstranit /entityset (klíč) / přetypování | / /Models.Book produkty (1) | DeleteEntityType nebo odstranění | DeleteBook |
 
 **Dotazování na navigační vlastnost**
 
 | Požadavek | Příklad identifikátoru URI | Název akce | Příklad akce |
 | --- | --- | --- | --- |
 | GET /entityset (klíč) nebo navigace | / Produkty (1) nebo dodavatele | GetNavigationFromEntityType nebo GetNavigation | GetSupplierFromProduct |
-| ZÍSKAT /entityset (klíč) / přetypování/navigace | /Products(1)/Models.Book/Author | GetNavigationFromEntityType nebo GetNavigation | GetAuthorFromBook |
+| ZÍSKAT /entityset (klíč) / přetypování/navigace | / /Models.Book/Author produkty (1) | GetNavigationFromEntityType nebo GetNavigation | GetAuthorFromBook |
 
 Další informace najdete v tématu [práce se vztahy entit](odata-v3/working-with-entity-relations.md).
 
@@ -109,15 +110,15 @@ Další informace najdete v tématu [práce se vztahy entit](odata-v3/working-wi
 
 | Požadavek | Příklad identifikátoru URI | Název akce | Příklad akce |
 | --- | --- | --- | --- |
-| GET /entityset (klíč) nebo vlastnost | /Products(1)/Name | GetPropertyFromEntityType nebo GetProperty – | GetNameFromProduct |
-| ZÍSKAT /entityset (klíč) nebo přetypování nebo vlastnost | /Products(1)/Models.Book/Author | GetPropertyFromEntityType nebo GetProperty – | GetTitleFromBook |
+| GET /entityset (klíč) nebo vlastnost | / Produkty (1) nebo název | GetPropertyFromEntityType nebo GetProperty – | GetNameFromProduct |
+| ZÍSKAT /entityset (klíč) nebo přetypování nebo vlastnost | / /Models.Book/Author produkty (1) | GetPropertyFromEntityType nebo GetProperty – | GetTitleFromBook |
 
 **Akce**
 
 | Požadavek | Příklad identifikátoru URI | Název akce | Příklad akce |
 | --- | --- | --- | --- |
 | /Entityset POST (klíč) nebo akce | / Produkty (1) nebo míry | ActionNameOnEntityType nebo název akce | RateOnProduct |
-| POST /entityset (klíč) nebo přetypování nebo akce | /Products(1)/Models.Book/CheckOut | ActionNameOnEntityType nebo název akce | CheckOutOnBook |
+| POST /entityset (klíč) nebo přetypování nebo akce | / /Models.Book/CheckOut produkty (1) | ActionNameOnEntityType nebo název akce | CheckOutOnBook |
 
 Další informace najdete v tématu [akcí OData](odata-v3/odata-actions.md).
 
@@ -169,7 +170,7 @@ Poznámky:
 
 1. Jsou odvozeny od **EntitySetRoutingConvention**, protože **SelectController** metody v dané třídě je vhodný pro tento nový konvencí směrování. To znamená, že nemusíte znovu implementovat **SelectController**.
 2. Konvence platí jenom pro požadavky GET, a jenom v případě, že je šablona cesty &quot;~/entityset/key/navigation/key&quot;.
-3. Je název akce &quot;získat {EntityType}&quot;, kde *{EntityType}* je typem navigace kolekce. Například &quot;GetSupplier&quot;. Můžete použít všechny zásady vytváření názvů, který chcete & #8212; Ujistěte se však vaše akce kontroleru odpovídají.
+3. Je název akce &quot;získat {EntityType}&quot;, kde *{EntityType}* je typem navigace kolekce. Například &quot;GetSupplier&quot;. Můžete použít všechny zásady vytváření názvů, který chcete &#8212; právě zajistěte, aby vaše akce kontroleru odpovídají.
 4. Akce přebírá dva parametry s názvem *klíč* a *relatedKey*. (Seznam některé názvy předdefinované parametrů najdete v tématu [ODataRouteConstants](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatarouteconstants.aspx).)
 
 Dalším krokem je přidání nové konvence do seznamu konvencí směrování. K tomu dojde během konfigurace, jak je znázorněno v následujícím kódu:

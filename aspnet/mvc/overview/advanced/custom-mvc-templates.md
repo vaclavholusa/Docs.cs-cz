@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/advanced/custom-mvc-templates
-title: "MVC vlastní šablony | Microsoft Docs"
+title: MVC vlastní šablony | Microsoft Docs
 author: joeloff
-description: "Vytvořte šablonu jako rozšíření VSIX."
+description: Vytvořte šablonu jako rozšíření VSIX.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/10/2012
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
 ms.openlocfilehash: c3ddd4e341511f520927e924b25d890088adb69e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28034604"
 ---
 <a name="custom-mvc-template"></a>Šablona vlastní MVC
 ====================
@@ -65,7 +66,7 @@ Pokud máte v úmyslu podporovat všechny Professional a vyšší skladové jedn
 
 &lt;Content Include=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicWeb.config&quot;&gt;
 
-&lt;CopyToOutputDirectory&gt;Always&lt;/CopyToOutputDirectory&gt;
+&lt;CopyToOutputDirectory&gt;vždy&lt;/CopyToOutputDirectory&gt;
 
 &lt;IncludeInVSIX&gt;true&lt;/IncludeInVSIX&gt;
 
@@ -79,9 +80,9 @@ Zavřít návrháře VSIX a potom klikněte pravým tlačítkem na **source.exte
 
 ![Otevřít v programu dialogové okno](custom-mvc-templates/_static/image7.jpg)
 
-Vytvoření  **&lt;prostředky&gt;**  elementu a přidejte  **&lt;Asset&gt;**  element pro každý soubor, který musí být obsažené ve VSIX. **Typ** atribut jednotlivých  **&lt;Asset&gt;**  element musí být nastaven na **Microsoft.VisualStudio.Mvc.Template**. Toto je vlastní obor názvů, který plně chápe pouze v Průvodci projektem MVC. Naleznete v dokumentaci VSIX 2.0 schématu pro další informace o struktuře a rozložení souboru manifestu.
+Vytvoření **&lt;prostředky&gt;** elementu a přidejte **&lt;Asset&gt;** element pro každý soubor, který musí být obsažené ve VSIX. **Typ** atribut jednotlivých **&lt;Asset&gt;** element musí být nastaven na **Microsoft.VisualStudio.Mvc.Template**. Toto je vlastní obor názvů, který plně chápe pouze v Průvodci projektem MVC. Naleznete v dokumentaci VSIX 2.0 schématu pro další informace o struktuře a rozložení souboru manifestu.
 
-Stačí přidat soubory do VSIX není dostatečná k registraci šablony pomocí Průvodce MVC. Je třeba zadat informace, jako je název šablony, popis, moduly podporované zobrazení a programovací jazyk pro Průvodce MVC. Tyto informace se provádí v vlastní atributy přidružené  **&lt;Asset&gt;**  element pro každou **vstemplate** souboru.
+Stačí přidat soubory do VSIX není dostatečná k registraci šablony pomocí Průvodce MVC. Je třeba zadat informace, jako je název šablony, popis, moduly podporované zobrazení a programovací jazyk pro Průvodce MVC. Tyto informace se provádí v vlastní atributy přidružené **&lt;Asset&gt;** element pro každou **vstemplate** souboru.
 
 &lt;Asset d:VsixSubPath=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
 
@@ -93,7 +94,7 @@ Path=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWe
 
 ProjectType=&quot;MVC&quot;
 
-Language=&quot;C#&quot;
+Jazyk =&quot;C#&quot;
 
 ViewEngine=&quot;Aspx&quot;
 
@@ -114,7 +115,7 @@ Zde jsou vysvětlení vlastních atributů, které se musí vyskytovat:
 - **Název** označí krátký popis zobrazovaný v Průvodci MVC pod Každá šablona projektu.
 - **Popis** označí více podrobný popis šablony.
 
-Poté, co jste přidali všechny soubory k manifestu a uložíte ho, si všimnete, který **prostředky** kartě v návrháři se zobrazí všechny soubory, ale není vlastní atributy, můžete přidat do  **&lt;Asset&gt;**  prvky pro **vstemplate** soubory.
+Poté, co jste přidali všechny soubory k manifestu a uložíte ho, si všimnete, který **prostředky** kartě v návrháři se zobrazí všechny soubory, ale není vlastní atributy, můžete přidat do **&lt;Asset&gt;** prvky pro **vstemplate** soubory.
 
 ![Prostředky Návrhář projektu](custom-mvc-templates/_static/image8.jpg)
 

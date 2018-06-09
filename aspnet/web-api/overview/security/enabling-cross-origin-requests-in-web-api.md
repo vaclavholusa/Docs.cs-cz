@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/enabling-cross-origin-requests-in-web-api
-title: "Povolení žádostí napříč zdroji v rozhraní ASP.NET Web API 2 | Microsoft Docs"
+title: Povolení žádostí napříč zdroji v rozhraní ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: "Ukazuje, jak pro podporu sdílení prostředků různých původů (CORS) v rozhraní ASP.NET Web API."
+description: Ukazuje, jak pro podporu sdílení prostředků různých původů (CORS) v rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/15/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/enabling-cross-origin-requests-in-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 453ad29ff4f10f9660f3aa8bab358519b4cfd48b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26566818"
 ---
 <a name="enabling-cross-origin-requests-in-aspnet-web-api-2"></a>Povolení žádostí napříč zdroji v rozhraní ASP.NET Web API 2
 ====================
@@ -51,10 +52,10 @@ Tyto dvě adresy URL mají stejný původ:
 
 Tyto adresy URL mít různého původu než předchozí dva:
 
-- `http://example.net`-Jiné domény
-- `http://example.com:9000/foo.html`-Jiný port
-- `https://example.com/foo.html`-Jiné schéma
-- `http://www.example.com/foo.html`-Různých subdomény
+- `http://example.net` -Jiné domény
+- `http://example.com:9000/foo.html` -Jiný port
+- `https://example.com/foo.html` -Jiné schéma
+- `http://www.example.com/foo.html` -Různých subdomény
 
 > [!NOTE]
 > Internet Explorer nebere v úvahu port při porovnávání zdroje.

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
-title: "Vytvoření stránky nápovědy pro rozhraní ASP.NET Web API | Microsoft Docs"
+title: Vytvoření stránky nápovědy pro rozhraní ASP.NET Web API | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2013
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
 ms.openlocfilehash: 37fd26ebaea192cb540c443eff8a07343ab8c15b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28037900"
 ---
 <a name="creating-help-pages-for-aspnet-web-api"></a>Vytvoření stránky nápovědy pro rozhraní ASP.NET Web API
 ====================
@@ -60,9 +61,9 @@ Stránky nápovědy můžete přidat do existujícího projektu webového rozhra
 
 Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a potom vyberte **Konzola správce balíčků**. V [Konzola správce balíčků](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) okno, zadejte jeden z následujících příkazů:
 
-Pro **C#** aplikace:`Install-Package Microsoft.AspNet.WebApi.HelpPage`
+Pro **C#** aplikace: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
 
-Pro **jazyka Visual Basic** aplikace:`Install-Package Microsoft.AspNet.WebApi.HelpPage.VB`
+Pro **jazyka Visual Basic** aplikace: `Install-Package Microsoft.AspNet.WebApi.HelpPage.VB`
 
 Existují dva balíčky, jeden pro jazyk C# a jeden v jazyce Visual Basic. Nezapomeňte použít ten, který odpovídá projektu.
 

@@ -1,26 +1,27 @@
 ---
 uid: visual-studio/overview/2013/creating-web-projects-in-visual-studio
-title: "Vytváření ASP.NET – webové projekty v sadě Visual Studio 2013 | Microsoft Docs"
+title: Vytváření ASP.NET – webové projekty v sadě Visual Studio 2013 | Microsoft Docs
 author: tdykstra
-description: "Toto téma vysvětluje, že možnosti pro vytváření webových projektů ASP.NET v sadě Visual Studio 2013 s aktualizací 3 tady jsou některé nové funkce pro vývoj c webové..."
+description: Toto téma vysvětluje, že možnosti pro vytváření webových projektů ASP.NET v sadě Visual Studio 2013 s aktualizací 3 tady jsou některé nové funkce pro vývoj c webové...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/01/2014
 ms.topic: article
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
 ms.openlocfilehash: aacae7a9ccf483b21d3c6796c0411d558fa3c75b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28038862"
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Vytváření webové projekty ASP.NET v sadě Visual Studio 2013
 ====================
-podle [tní Dykstra](https://github.com/tdykstra)
+Podle [tní Dykstra](https://github.com/tdykstra)
 
 > Toto téma popisuje možnosti pro vytvoření webové projekty ASP.NET v sadě Visual Studio 2013 s aktualizací 3
 > 
@@ -101,7 +102,7 @@ Další informace o tom, jak používat tento proces pro vytváření prostředk
 Zbývající část tohoto článku poskytuje další informace o dostupných šablon a jejich možnosti. V článku také zavádí Bootstrap, rozložení a motivů framework se používá v šablonách.
 
 <a id="vs2013"></a>
-## <a name="visual-studio-2013-web-project-templates"></a>Visual Studio 2013 Web Project Templates
+## <a name="visual-studio-2013-web-project-templates"></a>Šablony webových projektů Visual Studio 2013
 
 Visual Studio využívá šablony k vytvoření webové projekty. Šablona projektu můžete vytvořit soubory a složky v novém projektu, instalace balíčků NuGet a zadejte ukázkový kód pro základní funkční aplikaci. Šablony implementovat nejnovější webové standardy a jsou určeny k předvedení osvědčené postupy, jak používat technologie ASP.NET a také získáte přechod spustit na vytvoření vlastní aplikace.
 
@@ -113,7 +114,7 @@ Visual Studio 2013 poskytuje následující možnosti pro šablony webových pro
 - [Šablona webového rozhraní API](#webapi)
 - [Šablona pro jednu stránku aplikace](#spa)
 - [Šablony Azure Mobile Service](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
-- [Visual Studio 2012 Templates](#vs2012)
+- [Šablony sady Visual Studio 2012](#vs2012)
 
 Můžete taky nainstalovat rozšíření sady Visual Studio, který poskytuje [šablona pro síť Facebook](#facebook).
 
@@ -210,7 +211,7 @@ Můžete nainstalovat [rozšíření sady Visual Studio, poskytující šablonu 
 Další informace o aplikacích ASP.NET Facebook najdete v tématu [aktualizace rozhraní API sítě Facebook MVC](https://blogs.msdn.com/b/webdev/archive/2014/06/10/updating-the-mvc-facebook-api.aspx).
 
 <a id="vs2012"></a>
-### <a name="visual-studio-2012-templates"></a>Visual Studio 2012 Templates
+### <a name="visual-studio-2012-templates"></a>Šablony sady Visual Studio 2012
 
 Dialogové okno Visual Studio 2013 webový projekt vytvoření neposkytuje přístup k některé šablony, které byly k dispozici v sadě Visual Studio 2012. Pokud chcete použít jednu z těchto šablon, můžete kliknout na Visual Studio 2012 uzlu v levém podokně dialogového okna Nový projekt sady Visual Studio.
 
@@ -243,7 +244,7 @@ Další úzké okno, vodorovné horní nabídce se zobrazí ikona, která může
 
 Funkce motivů Bootstrap je také můžete snadno ovlivňuje změnu aplikace vzhled a chování. Například můžete provést následující postup Změna motivu.
 
-1. V prohlížeči přejděte na [http://Bootswatch.com](http://Bootswatch.com), zvolte jen motiv a pak klikněte na tlačítko **Stáhnout**. (Tato akce stáhne *bootstrap.min.css* ve výchozím nastavení; Pokud chcete prozkoumat kód šablon stylů CSS, získat *bootstrap.css* místo minifikovaný verzi.)
+1. V prohlížeči přejděte na [ http://Bootswatch.com ](http://Bootswatch.com), zvolte jen motiv a pak klikněte na tlačítko **Stáhnout**. (Tato akce stáhne *bootstrap.min.css* ve výchozím nastavení; Pokud chcete prozkoumat kód šablon stylů CSS, získat *bootstrap.css* místo minifikovaný verzi.)
 2. Zkopírujte obsah stažený soubor CSS.
 3. V sadě Visual Studio vytvořte novou **list stylu** soubor s názvem *bootstrap theme.css* v *obsahu* složky a vložit stažené CSS kódu do ní.
 4. Otevřete *aplikace\_Start/Bundle.config* a změňte *bootstrap.css* k *bootstrap theme.css*.
@@ -362,7 +363,7 @@ Pokud chcete vyzkoušet jednu z možností Azure AD, ale ještě nemáte účet 
 
 Tuto možnost zvolte, pokud chcete povolit ověřování pro uživatelské účty, které jsou definovány v jedné službě Azure AD [klienta](https://technet.microsoft.com/library/jj573650.aspx). Například web je contoso.com a ho bude k dispozici na zaměstnance společnosti Contoso, kteří jsou v klientovi contoso.onmicrosoft.com. Nebudete moci konfigurovat Azure AD, aby uživatelé z jiných klientů pro přístup k aplikaci.
 
-#### <a name="domain"></a>Domain
+#### <a name="domain"></a>Domény
 
 Zadejte doménu služby Azure AD, který chcete nastavit aplikaci, například: `contoso.onmicrosoft.com`. Pokud máte [vlastní domény](http://www.cloudidentity.com/blog/2013/04/14/adding-a-custom-domain-to-your-windows-azure-ad/), například `contoso.com` místo `contoso.onmicrosoft.com`, který sem můžete zadat.
 
@@ -426,4 +427,4 @@ Zadejte jedinečný identifikátor URI, který AD můžete použít k identifika
 <a id="nextsteps"></a>
 ## <a name="next-steps"></a>Další kroky
 
-Tento dokument je poskytován některé základní nápovědu pro vytvoření nového webového projektu ASP.NET v sadě Visual Studio 2013. Další informace o používání pro sadu Visual Studio pro vývoj webů najdete v tématu [https://www.asp.net/visual-studio/](../../index.md).
+Tento dokument je poskytován některé základní nápovědu pro vytvoření nového webového projektu ASP.NET v sadě Visual Studio 2013. Další informace o používání pro sadu Visual Studio pro vývoj webů najdete v tématu [ https://www.asp.net/visual-studio/ ](../../index.md).

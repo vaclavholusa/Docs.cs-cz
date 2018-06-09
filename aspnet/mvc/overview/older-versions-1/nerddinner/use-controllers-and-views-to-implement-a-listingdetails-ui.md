@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
 ms.openlocfilehash: ac3568941eeef24bd9857c5787471aadea15fc7f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30875731"
 ---
 <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>Implementace výpis/podrobnosti uživatelského rozhraní pomocí řadiče a zobrazení
 ====================
@@ -59,7 +60,7 @@ Otevře se také si novou třídu DinnersController v editoru kódu.
 
 Chceme, aby návštěvníkům používajícím naše aplikace procházet seznam nadcházející večeří a umožňuje jim klikněte na všechny večeři v seznamu zobrazíte konkrétní podrobnosti o něm. Provedeme to tím, že publikujete následující adresy URL z našich aplikace:
 
-| **URL** | **Účel** |
+| **ADRESA URL** | **Účel** |
 | --- | --- |
 | */Dinners/* | Zobrazení seznamu HTML z nadcházející večeří |
 | */Dinners/podrobnosti / [id]* | Zobrazit podrobnosti o konkrétní večeři indikován parametrem "id" vkládán adresu URL –, která bude odpovídat DinnerID večeři v databázi. Příklad: /Dinners/Details/2 by zobrazit stránku HTML s podrobnostmi o večeři, jehož hodnota DinnerID je 2. |
@@ -94,7 +95,7 @@ Výchozí pravidla směrování ASP.NET MVC jsou zaregistrovány v rámci metody
 
 Níže uvádíme tabulku, která ukazuje, jak různé adresy URL jsou mapovány pomocí výchozího "<em>/ {řadiče} / {action} / {id}"</em>pravidlo trasy:
 
-| **URL** | **Třída kontroleru** | **Metody akce** | **Parametry předané** |
+| **ADRESA URL** | **Třída kontroleru** | **Metody akce** | **Parametry předané** |
 | --- | --- | --- | --- |
 | */ Večeří/podrobnosti/2* | DinnersController | Details(ID) | id=2 |
 | */ Večeří/Edit/5* | DinnersController | Edit(ID) | id=5 |

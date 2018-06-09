@@ -1,26 +1,27 @@
 ---
 uid: identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
-title: "Osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a službě Azure App Service | Microsoft Docs"
+title: Osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a službě Azure App Service | Microsoft Docs
 author: Rick-Anderson
-description: "Tento kurz ukazuje, jak můžete kódu bezpečně ukládala a přístup k zabezpečeným informacím. Většina důležité je, že by nikdy neukládají hesla nebo dalších esílat..."
+description: Tento kurz ukazuje, jak můžete kódu bezpečně ukládala a přístup k zabezpečeným informacím. Většina důležité je, že by nikdy neukládají hesla nebo dalších esílat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2015
 ms.topic: article
 ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
 ms.openlocfilehash: 995d9a088e3095f36a01d2adb19ec08e6a6d1b3e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28033018"
 ---
 <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>Osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a službě Azure App Service
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Tento kurz ukazuje, jak můžete kódu bezpečně ukládala a přístup k zabezpečeným informacím. Nejdůležitější bod je ve zdrojovém kódu by nikdy neukládají hesla nebo dalších citlivých dat, a tajné klíče produkční byste neměli používat v režimu pro vývoj a testování.
 > 
@@ -90,7 +91,7 @@ Můžete použít `configSource` atribut nahradit celý `<connectionStrings>` zn
 
 Při nasazení webové aplikace do Azure, *AppSettingsSecrets.config* soubor nebude možné nasadit (to znamená, co chcete použít). Můžete může přejít [portálu pro správu Azure](https://azure.microsoft.com/services/management-portal/) a je nastavit ručně, k tomu:
 
-1. Přejděte na [https://portal.azure.com](https://portal.azure.com)a přihlaste se pomocí přihlašovacích údajů Azure.
+1. Přejděte na [ https://portal.azure.com ](https://portal.azure.com)a přihlaste se pomocí přihlašovacích údajů Azure.
 2. Klikněte na tlačítko **Procházet &gt; webové aplikace**, pak klikněte na název vaší webové aplikace.
 3. Klikněte na tlačítko **všechna nastavení &gt; nastavení aplikace**.
 

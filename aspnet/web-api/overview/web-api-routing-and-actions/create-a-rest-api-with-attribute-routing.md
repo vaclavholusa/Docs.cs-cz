@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
 ms.openlocfilehash: 1f1e90544c9dd8439a522f2196d81d020ea2f4f2
-ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30223259"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Vytvořit rozhraní REST API s atributem směrování v rozhraní ASP.NET Web API 2
 ====================
@@ -65,7 +66,7 @@ V **nový projekt ASP.NET** dialogovém okně, vyberte **prázdný** šablony. V
 
 Tím se vytvoří kostru projektu, který je nakonfigurován pro funkce webového rozhraní API.
 
-### <a name="domain-models"></a>Domain Models
+### <a name="domain-models"></a>Modely domény
 
 Dál přidejte třídy pro modely domény. V Průzkumníku řešení klikněte pravým tlačítkem na složku modely. Vyberte **přidat**, pak vyberte **třída**. Název třídy `Author`.
 

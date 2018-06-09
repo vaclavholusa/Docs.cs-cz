@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
 ms.openlocfilehash: 7d0486b4cab85ffe77fda87d4b34dd3ec0a9e8fe
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30874223"
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Volání webového rozhraní API z aplikace pro Windows Phone 8 (C#)
 ====================
@@ -50,7 +51,7 @@ Prvním krokem v tomto kurzu začátku do konce je vytvoření projektu webovéh
 
 1. Otevřete **Visual Studio 2013**.
 2. Klikněte na tlačítko **soubor**, pak **nové**a potom **projektu**.
-3. Když **nový projekt** se zobrazí dialogové okno, rozbalte položku **nainstalovaná**, pak **šablony**, pak **Visual C#**a potom **Webové**.
+3. Když **nový projekt** se zobrazí dialogové okno, rozbalte položku **nainstalovaná**, pak **šablony**, pak **Visual C#** a potom **Webové**.
 
 
    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image2.png)](calling-web-api-from-a-windows-phone-8-application/_static/image1.png) |
@@ -109,7 +110,7 @@ Prvním krokem v tomto kurzu začátku do konce je vytvoření projektu webovéh
 Dalším krokem tohoto začátku do konce scénáře je vytvoření katalogu aplikací pro Windows Phone 8. Tato aplikace bude používat *Windows Phone Vycentrovat aplikace* šablonu pro výchozí uživatelské rozhraní a bude používat aplikace webového rozhraní API, který jste vytvořili v [kroku 1](#STEP1) tohoto kurzu jako zdroj dat.
 
 1. Klikněte pravým tlačítkem myši **knihkupectví** řešení v v Průzkumníku řešení klikněte **přidat**a potom **nový projekt**.
-2. Když **nový projekt** se zobrazí dialogové okno, rozbalte položku **nainstalovaná**, pak **Visual C#**a potom **Windows Phone**.
+2. Když **nový projekt** se zobrazí dialogové okno, rozbalte položku **nainstalovaná**, pak **Visual C#** a potom **Windows Phone**.
 3. Zvýrazněte **Windows Phone Vycentrovat aplikace**, zadejte **BookCatalog** pro název a pak klikněte na tlačítko **OK**.
 4. Přidejte balíček Json.NET NuGet **BookCatalog** projektu:
 

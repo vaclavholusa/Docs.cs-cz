@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: c435448bf057bbef9127d66ffda24a07729f2322
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30890769"
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>Vyloučení souborů a složek z nasazení
 ====================
@@ -50,7 +51,7 @@ Pokud vyberete **pouze soubory potřebné ke spuštění této aplikace**, jako 
 
 > [!NOTE]
 > Logiky, která určuje, souborů, které chcete zahrnout je obsažené v tomto souboru:   
-> *%PROGRAMFILES%\MSBuild\Microsoft\VisualStudio\v10.0\Web\ Microsoft.Web.Publishing.OnlyFilesToRunTheApp.targets*
+> *%ProgramFiles%\MSBuild\Microsoft\VisualStudio\v10.0\Web\ Microsoft.Web.Publishing.OnlyFilesToRunTheApp.targets*
 
 
 ## <a name="excluding-specific-files-and-folders"></a>Vyloučení určitých souborů a složek

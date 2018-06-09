@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/emberjs-template
-title: "Šablona EmberJS | Microsoft Docs"
+title: Šablona EmberJS | Microsoft Docs
 author: xqiu
-description: "EmberJS šablony"
+description: EmberJS šablony
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: 04d5f142-5f62-494a-b5ea-4f3d068d34cb
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/emberjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 1fb7633aee288be648d4f9681b43c8911b7dbab9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26566344"
 ---
 <a name="emberjs-template"></a>EmberJS šablony
 ====================
@@ -134,7 +135,7 @@ TodoListRoute.js načte data pro TodoListRoute přepsáním setupController funk
 
 [!code-javascript[Main](emberjs-template/samples/sample11.js)]
 
-Členskými používá zásady vytváření názvů k přiřazení adres URL, názvy tras, řadiče a šablony. Další informace najdete v tématu [http://emberjs.com/guides/routing/defining-your-routes/](http://emberjs.com/guides/routing/defining-your-routes/) v dokumentaci EmberJS.
+Členskými používá zásady vytváření názvů k přiřazení adres URL, názvy tras, řadiče a šablony. Další informace najdete v tématu [ http://emberjs.com/guides/routing/defining-your-routes/ ](http://emberjs.com/guides/routing/defining-your-routes/) v dokumentaci EmberJS.
 
 ## <a name="templates"></a>Šablony
 
@@ -146,7 +147,7 @@ Složka šablon obsahuje čtyři šablony:
 - todoList.hbs: šablonu pro "/ todo" trasy.
 - \_navbar.HBs: Šablona definuje navigační nabídce.
 
-Šablona aplikací funguje jako hlavní stránky. Obsahuje záhlaví, zápatí a "{{výstupu}}" Chcete-li vložit další šablony v v závislosti na trasy. Další informace o šablonách aplikace v členskými najdete v tématu [http://guides.emberjs.com/v1.10.0/templates/the-application-template//](http://guides.emberjs.com/v1.10.0/templates/the-application-template/).
+Šablona aplikací funguje jako hlavní stránky. Obsahuje záhlaví, zápatí a "{{výstupu}}" Chcete-li vložit další šablony v v závislosti na trasy. Další informace o šablonách aplikace v členskými najdete v tématu [ http://guides.emberjs.com/v1.10.0/templates/the-application-template// ](http://guides.emberjs.com/v1.10.0/templates/the-application-template/).
 
 "/ TodoList" Šablona obsahuje dvou výrazů smyčky. Mimo smyčka je `{{#each controller}}`a uvnitř smyčka je `{{#each todos}}`. Následující kód ukazuje integrované `Ember.Checkbox` zobrazit, přizpůsobený `App.TodoItemEditView`a odkaz s `deleteTodo` akce.
 

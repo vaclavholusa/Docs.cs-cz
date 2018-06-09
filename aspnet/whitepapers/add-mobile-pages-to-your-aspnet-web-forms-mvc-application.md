@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
 ms.openlocfilehash: a8358b91ca424f4f3e576057ab43d850081dda60
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30898980"
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>Postupy: Přidání mobilních stránek do svých formulářů technologie ASP.NET nebo aplikace MVC
 ====================
@@ -365,4 +366,4 @@ Seznam mobilních zařízení emulátorů a simulátorů, můžete použít k te
 ## <a name="credits"></a>Kredity
 
 - Primárního autora: Steven Sanderson
-- Reviewers / additional content writers: James Rosewell, Mikael Söderström, Scott Hanselman, Scott Hunter
+- Kontroloři / další obsahu zapisovače: James Rosewell, Mikael Söderström, Scott Hanselman, Scott Hunter

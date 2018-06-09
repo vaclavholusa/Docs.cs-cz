@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
-title: "Povolení operace CRUD v ASP.NET Web API 1 | Microsoft Docs"
+title: Povolení operace CRUD v ASP.NET Web API 1 | Microsoft Docs
 author: MikeWasson
-description: "Tento kurz ukazuje, jak pro podporu operací CRUD v službě HTTP pomocí rozhraní ASP.NET Web API. Verze softwaru používány kurz Visual Studio 2012 Web Asie..."
+description: Tento kurz ukazuje, jak pro podporu operací CRUD v službě HTTP pomocí rozhraní ASP.NET Web API. Verze softwaru používány kurz Visual Studio 2012 Web Asie...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/28/2012
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
 ms.openlocfilehash: 69b7d5453b6ff36d6e28a69428b016cb8cfd06e9
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "29153005"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Povolení operace CRUD v ASP.NET Web API 1
 ====================
@@ -42,11 +43,11 @@ Následující metody zveřejní produkty rozhraní API.
 | Akce | Metoda HTTP | Relativní identifikátor URI |
 | --- | --- | --- |
 | Získání seznamu všech produktů | GET | / api/produkty |
-| Získání ID produktu | GET | /api/products/*id* |
-| Získání produktu podle kategorie | GET | /api/products?category=*category* |
+| Získání ID produktu | GET | /API/produkty/*id* |
+| Získání produktu podle kategorie | GET | produkty/api /? kategorie =*kategorie* |
 | Vytvoření nového produktu | POST | / api/produkty |
-| Aktualizace produktu | PUT | /api/products/*id* |
-| Odstranit produktu | DELETE | /api/products/*id* |
+| Aktualizace produktu | PUT | /API/produkty/*id* |
+| Odstranit produktu | DELETE | /API/produkty/*id* |
 
 Všimněte si, že některé identifikátory URI v cestě zahrnují ID produktu. Chcete-li získat produktu, jejíž ID je 28, klient odešle požadavek GET `http://hostname/api/products/28`.
 
@@ -57,7 +58,7 @@ Produkty API definuje identifikátory URI pro dva typy prostředků:
 | Prostředek | Identifikátor URI |
 | --- | --- |
 | Seznam všech produktů. | / api/produkty |
-| Jednotlivé produkty. | /api/products/*id* |
+| Jednotlivé produkty. | /API/produkty/*id* |
 
 ### <a name="methods"></a>Metody
 
@@ -158,14 +159,14 @@ Rozhraní API ProductStore zveřejní několik &quot;číst&quot; akce jako meto
 | Akce | Metoda HTTP | Relativní identifikátor URI |
 | --- | --- | --- |
 | Získání seznamu všech produktů | GET | / api/produkty |
-| Získání ID produktu | GET | /api/products/*id* |
-| Získání produktu podle kategorie | GET | /api/products?category=*category* |
+| Získání ID produktu | GET | /API/produkty/*id* |
+| Získání produktu podle kategorie | GET | produkty/api /? kategorie =*kategorie* |
 
 Chcete-li získat seznam všech produktů, přidejte tuto metodu za účelem `ProductsController` třídy:
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample6.cs)]
 
-Název metody začíná &quot;získat&quot;, takže podle konvence mapy pro požadavky GET. Navíc vzhledem k tomu, že metoda nemá žádné parametry, mapuje k identifikátoru URI, který neobsahuje  *&quot;id&quot;*  segmentu v cestě.
+Název metody začíná &quot;získat&quot;, takže podle konvence mapy pro požadavky GET. Navíc vzhledem k tomu, že metoda nemá žádné parametry, mapuje k identifikátoru URI, který neobsahuje *&quot;id&quot;* segmentu v cestě.
 
 Chcete-li získat produktu podle ID, přidejte tuto metodu za účelem `ProductsController` třídy:
 

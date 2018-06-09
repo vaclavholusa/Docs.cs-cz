@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 7e1a457c23ef659bf7ee9c15b66dc5c2d8a31416
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30891461"
 ---
 <a name="creating-a-data-access-layer-c"></a>Vytváření Data Access Layer (C#)
 ====================
@@ -114,7 +115,7 @@ Po kliknutí na tlačítko Přidat, při zobrazení výzvy k přidání datovou 
 
 Typové datové sady slouží jako silného typu kolekce dat; skládá se instancí silného typu DataTable, z nichž každý se skládá zase instancí DataRow silného typu. Pro každou základní tabulky databáze, které potřebujeme pro práci s této série kurzů vytvoříme DataTable silného typu. Začneme vytvořením DataTable pro **produkty** tabulky.
 
-Uvědomte si, že silného typu DataTables neobsahují žádné informace o tom, jak přistupovat k datům z jejich základní tabulky databáze. Aby bylo možné získat data k naplnění DataTable, použijeme TableAdapter třídy, která funguje jako naše Data Access Layer. Pro naše **produkty** DataTable, TableAdapter bude obsahovat metody **GetProducts()**, **GetProductByCategoryID (*categoryID*)**a tak dále, který jsme vám vyvolat od prezentační vrstvy. Role DataTable je sloužit jako objekty silného typu sloužící k předávání dat mezi vrstvami.
+Uvědomte si, že silného typu DataTables neobsahují žádné informace o tom, jak přistupovat k datům z jejich základní tabulky databáze. Aby bylo možné získat data k naplnění DataTable, použijeme TableAdapter třídy, která funguje jako naše Data Access Layer. Pro naše **produkty** DataTable, TableAdapter bude obsahovat metody **GetProducts()**, **GetProductByCategoryID (*categoryID*)** a tak dále, který jsme vám vyvolat od prezentační vrstvy. Role DataTable je sloužit jako objekty silného typu sloužící k předávání dat mezi vrstvami.
 
 Průvodce nastavením TableAdapter začíná požadavkem, abyste vyberte databázi, ke které pracovat. V rozevíracím seznamu uvedena tyto databáze v Průzkumníku serveru. Pokud databázi Northwind nebyla přidána do Průzkumníka serveru, můžete kliknutím na tlačítko nové připojení v tuto chvíli to udělat.
 

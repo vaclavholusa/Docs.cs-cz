@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
 ms.openlocfilehash: c11e2ef9c33b0cae1f196690533094ce1c342da5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28036424"
 ---
 <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>Poznámky k verzi pro ASP.NET a nástroje pro Web 2013.1 pro sadu Visual Studio 2012
 ====================
@@ -168,7 +169,7 @@ Chcete-li tento problém, nakonfigurujte Visual Studio Express pro práci s MSIL
 <a id="browseissue"></a>
 #### <a name="viewing-cshtml-file-withbrowse-withorf5causes-a-server-error"></a>Zobrazení withBrowse soubor cshtml WithorF5causes chyby serveru
 
-Při vytváření projektu MVC 5 v sadě Visual Studio 2012 (nebo otevřete v projektu sady Visual Studio 2012 MVC 5, který byl vytvořen v sadě Visual Studio 2013) a pokus o zobrazení souboru cshtml pomocí procházet s nebo F5, se zobrazí chyba s oznámením - **chyba serveru v Aplikace '/'**. Server se pokusí přejděte na`http://localhost:XXXX/Views/../XXXX.cshtml`
+Při vytváření projektu MVC 5 v sadě Visual Studio 2012 (nebo otevřete v projektu sady Visual Studio 2012 MVC 5, který byl vytvořen v sadě Visual Studio 2013) a pokus o zobrazení souboru cshtml pomocí procházet s nebo F5, se zobrazí chyba s oznámením - **chyba serveru v Aplikace '/'**. Server se pokusí přejděte na `http://localhost:XXXX/Views/../XXXX.cshtml`
 
 Chcete-li problém vyřešit, změňte **spustit akci** nastavení ve vašem projektu a **konkrétní stránky**. Není nutné zadat hodnotu pro stránku.
 

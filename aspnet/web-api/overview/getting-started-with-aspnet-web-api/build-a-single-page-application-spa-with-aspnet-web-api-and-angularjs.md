@@ -13,14 +13,15 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
 ms.openlocfilehash: 9a748628d53878be380869ac5327de0111d2284d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26566482"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>Rukou na testovacího prostředí: Jednostránkové aplikace (SPA) s rozhraním ASP.NET Web API a Angular.js sestavení
 ====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
 [Stažení webové táborech cvičení Kit](http://aka.ms/webcamps-training-kit)
 
@@ -32,7 +33,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > V tomto prostředí na straně bude využít výhod těchto technologií implementovat Geek kvízu, trivia web založený na SPA konceptu. Nejprve budete implementovat vrstvě služby s rozhraním ASP.NET Web API vystavit požadované koncové body načtení kvízu s časovým limitem otázky a odpovědi uložit. Pak vytvoříte bohaté a dobře reagovaly uživatelského rozhraní pomocí AngularJS a CSS3 důsledky transformace.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
 
 
 ## <a name="overview"></a>Přehled
@@ -307,7 +308,7 @@ V této úloze budete používat **AngularJS** implementovat kvízu Geek aplikac
 Začněte instalací AngularJS z konzoly Správce balíčků sady Visual Studio. Pak vytvoříte řadič zajistit chování aplikace Geek kvízu a zobrazení k vykreslení kvízu s časovým limitem otázky a odpovědi pomocí šablony modul AngularJS.
 
 > [!NOTE]
-> Další informace o AngularJS, najdete v části [ [http://angularjs.org/](http://angularjs.org/)](http://angularjs.org/).
+> Další informace o AngularJS, najdete v části [ [ http://angularjs.org/ ](http://angularjs.org/) ](http://angularjs.org/).
 
 
 1. Otevřete **Visual Studio Express 2013 pro Web** a otevřete **GeekQuiz.sln** řešení umístěný v **zdroj/Ex2-CreatingASPAInterface/Begin** složky. Alternativně můžete pokračovat v řešení jste získali v předchozím cvičení.

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/content-negotiation
-title: "Obsahu vyjednávání v rozhraní ASP.NET Web API | Microsoft Docs"
+title: Obsahu vyjednávání v rozhraní ASP.NET Web API | Microsoft Docs
 author: MikeWasson
-description: "Popisuje, jak rozhraní ASP.NET Web API implementuje vyjednávání obsahu HTTP."
+description: Popisuje, jak rozhraní ASP.NET Web API implementuje vyjednávání obsahu HTTP.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2012
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
 ms.openlocfilehash: ca373af6754e82889dc100b63f73b76aaa4e4f27
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26566410"
 ---
 <a name="content-negotiation-in-aspnet-web-api"></a>Vyjednávání obsahu v rozhraní ASP.NET Web API
 ====================

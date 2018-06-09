@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: ac5508334bf6d471471a719b98618bdcd3214fb5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30888926"
 ---
 <a name="aspnet-error-handling"></a>Zpracování chyb ASP.NET
 ====================
@@ -339,7 +340,7 @@ Děkujeme, že následující osob, které významně přispěli k obsahu tento 
 - [Alex Thissen, Nizozemsko](http://blog.alexthissen.nl/) (twitter: [ @alexthissen ](http://twitter.com/alexthissen))
 - [Andre Tournier, USA](http://andret503.wordpress.com/)
 - Apurva Joshi, Microsoft
-- [Bojan Vrhovnik, Slovenia](http://twitter.com/bvrhovnik)
+- [Bojan Vrhovnik, Slovinsko](http://twitter.com/bvrhovnik)
 - [Bruno Sonnino, Brazílie](http://msmvps.com/blogs/bsonnino) (twitter: [ @bsonnino ](http://twitter.com/bsonnino))
 - [Carlosu dos Santos, Brazílie](http://www.carloscds.net/)
 - [Dave Campbell, USA](http://www.wynapse.com/) (twitter: [ @windowsdevnews ](http://twitter.com/windowsdevnews))
@@ -348,10 +349,10 @@ Děkujeme, že následující osob, které významně přispěli k obsahu tento 
 - Jan Pope
 - [Prodejci Mitchel, USA](http://www.mitchelsellers.com/) (twitter: [ @MitchelSellers ](http://twitter.com/MitchelSellers))
 - [Paul Cociuba, Microsoft](http://linqto.me/Links/pcociuba)
-- [Paulo Morgado, Portugal](http://paulomorgado.net/)
+- [Paulo Morgado, Portugalsko](http://paulomorgado.net/)
 - [Pranav Rastogi, Microsoft](https://blogs.msdn.com/b/pranav_rastogi)
 - [Tim Ammann, Microsoft](https://blogs.iis.net/timamm/default.aspx)
-- [Tom Dykstra, Microsoft](https://blogs.msdn.com/aspnetue)
+- [Tní Dykstra, Microsoft](https://blogs.msdn.com/aspnetue)
 
 ## <a name="community-contributions"></a>Komunitní příspěvky
 

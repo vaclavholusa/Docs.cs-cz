@@ -2,7 +2,7 @@
 uid: mvc/mvc3
 title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
-description: "(zahrnuje Duben 2011 Tools – aktualizace) ASP.NET MVC 3 je rozhraní pro vytváření škálovatelných standardy webových aplikací pomocí zavedené návrhový vzor..."
+description: (zahrnuje Duben 2011 Tools – aktualizace) ASP.NET MVC 3 je rozhraní pro vytváření škálovatelných standardy webových aplikací pomocí zavedené návrhový vzor...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2010
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/mvc3
 msc.type: content
 ms.openlocfilehash: c7eee987b28a5d7f8b40fe89a7bf7517ec06646f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28034734"
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -128,8 +129,8 @@ ASP.NET MVC 3 obsahuje nový zobrazovací modul s názvem Razor, který nabízí
 
 Některé nové funkce Razor zahrnují následující:
 
-- `@model`Syntaxe pro určení typu, je předaná do zobrazení.
-- `@* *@`syntaxe komentáře.
+- `@model` Syntaxe pro určení typu, je předaná do zobrazení.
+- `@* *@` syntaxe komentáře.
 - Umožňuje zadat výchozí hodnoty (například `layoutpage`) jednou pro celý web.
 - `Html.Raw` Metodu pro zobrazení textu bez kódování HTML ho.
 - Podpora pro sdílení kódu mezi více zobrazení (*\_viewstart.cshtml* nebo  *\_viewstart.vbhtml* soubory).

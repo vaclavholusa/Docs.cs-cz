@@ -13,14 +13,15 @@ ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 55109723e566a9f7c66c1a59414377b05dbec760
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26566440"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>Rukou na testovacím: Jeden ASP.NET: integrace webové formuláře ASP.NET, MVC a webových rozhraní API
 ====================
-podle [webové táborech Team](https://twitter.com/webcamps)
+Podle [webové táborech Team](https://twitter.com/webcamps)
 
 [Stažení webové táborech cvičení Kit](http://aka.ms/webcamps-training-kit)
 
@@ -28,7 +29,7 @@ podle [webové táborech Team](https://twitter.com/webcamps)
 > 
 > Visual Studio 2013 zavádí nový systém jednotná projektu, která vám umožní sestavit aplikaci a použít všechny technologie ASP.NET v jednom projektu. Tato funkce eliminuje potřebu vyberte jeden technologie na začátku projektu a Flash disk s ním a místo toho umožňuje použití více rozhraní ASP.NET v rámci jednoho projektu.
 > 
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
 
 
 <a id="Overview"></a>
@@ -161,7 +162,7 @@ V této úloze se spustit generovaného řešení, prozkoumat aplikace a někter
     *Přátelské adresy URL*
 
     > [!NOTE]
-    > Jak vidíte, se změní adresa URL pro **/obraťte se na**. Od **ASP.NET 4**, možnosti směrování URL byly přidány do webových formulářů, takže můžete napsat adresy URL jako *[http://www.mysite.com/products/software](http://www.mysite.com/products/software)* místo  *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. Další informace najdete v části [směrování adres URL](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md).
+    > Jak vidíte, se změní adresa URL pro **/obraťte se na**. Od **ASP.NET 4**, možnosti směrování URL byly přidány do webových formulářů, takže můžete napsat adresy URL jako *[ http://www.mysite.com/products/software ](http://www.mysite.com/products/software)* místo  *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. Další informace najdete v části [směrování adres URL](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md).
 3. Nyní zaměříte tok ověřování integrovaná do aplikace. Chcete-li to provést, klikněte na tlačítko **zaregistrovat** v pravém horním rohu stránky.
 
     ![Registrace nového uživatele](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)

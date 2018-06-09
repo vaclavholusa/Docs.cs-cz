@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
-title: "Atribut směrování v rozhraní ASP.NET Web API 2 | Microsoft Docs"
+title: Atribut směrování v rozhraní ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
 ms.openlocfilehash: 173add73a150d3e13ae243d6548463da912dadee
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28038046"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Atribut směrování v rozhraní ASP.NET Web API 2
 ====================
@@ -135,7 +136,7 @@ Touto konvencí můžete přepsat pomocí architekturu metodu s jakoukoli násle
 - **[HttpDelete]**
 - **[HttpGet]**
 - **[HttpHead]**
-- **[HttpOptions]**
+- **[Httpoptions měl]**
 - **[HttpPatch]**
 - **[HttpPost]**
 - **[HttpPut]**
@@ -182,8 +183,8 @@ Následující tabulka uvádí omezení, které jsou podporovány.
 | --- | --- | --- |
 | Alpha | Odpovídá velká nebo malá písmena latinky znaky (a-z, A-Z) | {x: alpha} |
 | bool | Odpovídá logickou hodnotu. | {x: bool} |
-| Data a času | Odpovídá **data a času** hodnotu. | {x:datetime} |
-| decimal | Odpovídá desítkovou hodnotu. | {x:decimal} |
+| Data a času | Odpovídá **data a času** hodnotu. | {x: datetime} |
+| decimal | Odpovídá desítkovou hodnotu. | {x: decimal} |
 | double | Odpovídá 64bitová hodnota s plovoucí desetinnou čárkou. | {x: double} |
 | float | Odpovídá 32bitovou hodnotu s plovoucí desetinnou čárkou. | {x: float} |
 | Identifikátor GUID | Odpovídá hodnota identifikátoru GUID. | {x: guid} |
@@ -192,10 +193,10 @@ Následující tabulka uvádí omezení, které jsou podporovány.
 | long | Odpovídá hodnotě 64bitové celé číslo. | {x: dlouho} |
 | max | Odpovídá celé číslo s maximální hodnotou. | {x: max(10)} |
 | hodnota MaxLength | Odpovídá řetězec s maximální délkou. | {x: maxlength(10)} |
-| min | Odpovídá celé číslo s minimální hodnotou. | {x:min(10)} |
+| min | Odpovídá celé číslo s minimální hodnotou. | {x: min(10)} |
 | MinLength | Odpovídá řetězci s minimální délkou. | {x: minlength(10)} |
 | range | Odpovídá celé číslo v rozsahu hodnot. | {x: range(10,50)} |
-| regex | Odpovídá regulárnímu výrazu. | {x:regex(^\d{3}-\d{3}-\d{4}$)} |
+| regulární výraz | Odpovídá regulárnímu výrazu. | {x: regex(^\d{3}-\d{3}-\d{4}$)} |
 
 Všimněte si některá omezení, jako například &quot;min&quot;, trvat argumenty v závorkách. Můžete použít více omezení pro parametr oddělené dvojtečkou.
 
@@ -272,7 +273,7 @@ Tyto trasy seřazeni následujícím způsobem.
 1. objednávky nebo podrobnosti
 2. objednávky nebo {id}
 3. objednávky nebo {JménoZákazníka}
-4. orders/{\*date}
+4. objednávky nebo {\*datum}
 5. objednávky / čekající na vyřízení
 
 Všimněte si, že "Podrobnosti" je literál segment a se zobrazuje před "{id}, ale"čekající na vyřízení"zobrazí poslední, protože **RouteOrder** vlastnost je 1. (Tento příklad předpokládá existuje jsou odběratelé s názvem "Podrobnosti" nebo "čeká na vyřízení". Obecně platí pokuste se vyhnout nejednoznačný trasy. V tomto příkladu lepší šablona trasy pro `GetByCustomer` je "zákazníkům / {JménoZákazníka}")

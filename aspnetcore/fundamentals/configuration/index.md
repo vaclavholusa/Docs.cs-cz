@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: f4b0af39ea865d5d8b47a7b385de72e616c13cd7
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 1048554c78e3810206b1261371ae7c41485c436a
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252123"
 ---
 # <a name="configuration-in-aspnet-core"></a>Konfigurace v ASP.NET Core
 
@@ -36,7 +37,7 @@ Každá hodnota konfigurace se mapuje na řetězec klíč. Je dostupná podpora 
 
 Vzor možnosti používá k reprezentování skupiny související nastavení možnosti třídy. Další informace o použití vzoru možnosti najdete v tématu [možnosti](xref:fundamentals/configuration/options) tématu.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/index/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="json-configuration"></a>Konfigurace JSON
 
@@ -230,7 +231,7 @@ key3=value_from_json_3
 
 [Poskytovatele konfigurace CommandLine](/dotnet/api/microsoft.extensions.configuration.commandline.commandlineconfigurationprovider) obdrží páry klíč hodnota argument příkazového řádku pro konfiguraci za běhu.
 
-[Zobrazení nebo stažení ukázky konfigurace příkazového řádku](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/index/sample/CommandLine)
+[Zobrazení nebo stažení ukázky konfigurace příkazového řádku](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/sample/CommandLine)
 
 ### <a name="setup-and-use-the-commandline-configuration-provider"></a>Instalační program a používají zprostředkovatele konfigurace příkazového řádku
 

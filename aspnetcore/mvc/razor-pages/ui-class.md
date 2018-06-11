@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: advanced
 uid: mvc/razor-pages/ui-class
-ms.openlocfilehash: 4370fdaf7a5c066cec7b341a6012a100f8aed3ea
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 1321164d683439709ed2a219aa2d784094bae7cf
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734546"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252318"
 ---
 # <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>Vytvořte opakovaně použitelné uživatelské rozhraní v projektu knihovny tříd Razor ASP.NET Core.
 
@@ -59,12 +59,6 @@ RCL lze odkazovat pomocí:
 
 * Balíček NuGet. V tématu [balíčky NuGet vytváření](/nuget/create-packages/creating-a-package) a [dotnet. Přidejte balíček](/dotnet/core/tools/dotnet-add-package) a [vytvoření a publikování balíčku NuGet](/nuget/quickstart/create-and-publish-a-package-using-visual-studio).
 * *{Název projektu} .csproj*. V tématu [dotnet – přidat odkaz](/dotnet/core/tools/dotnet-add-reference).
-
-### <a name="partial-files-access-in-the-rcl"></a>Částečné soubory přístup v RCL
-
-Pro obsah mimo RCL runtime ASP.NET Core nehledá částečné soubory v RCL.
-
-Například v ukázkové stahování *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml* částečné zobrazení může **není** bude odkazovat ve *WebApp1\Pages\About.cshtml* . Nicméně stránky v RCL ( *RazorUIClassLib /* **můžete** přístup *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml*.
 
 ## <a name="walkthrough-create-a-razor-class-library-project-and-use-from-a-razor-pages-project"></a>Návod: Vytvoření projektu knihovny tříd Razor a použít z projektu stránky Razor
 
@@ -197,6 +191,8 @@ dotnet sln add WebApp1
 dotnet sln add RazorUIClassLib
 dotnet add WebApp1 reference RazorUIClassLib
 ```
+
+[!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 Sestavení a spuštění webové aplikace:
 

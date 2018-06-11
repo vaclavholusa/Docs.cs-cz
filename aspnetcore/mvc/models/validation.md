@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/validation
-ms.openlocfilehash: 1ab19fad90eab9f2da58b4d62615a85d71894218
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f6748ef6df865919e43cdd9ee86fcc64dbe9651a
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252357"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Ověření modelu v aplikaci ASP.NET MVC jádra
 
@@ -99,9 +100,13 @@ Atributy ověření fungovat pro většinu potřeb ověření. Některé ověřo
 
 V následující ukázce stavy obchodní pravidlo, že uživatelé nemusí nastavená genre na *Classic* pro film vydanou po 1960. `[ClassicMovie]` Atribut nejprve hledá genre, a pokud je klasický, pak zkontroluje datum vydání a zkontrolujte, že je novější než 1960. Pokud vydání po 1960, ověření se nezdaří. Atribut přijme parametrem celé číslo představující rok, můžete ověřit data. Hodnota parametru v konstruktoru atributu můžete zaznamenat, jak je vidět tady:
 
-[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=9-29)]
+[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=9-28)]
 
-`movie` Proměnné výše představuje `Movie` objekt, který obsahuje data z odeslání formuláře k ověření. V tomto případě kód ověření ověří datum a genre v `IsValid` metodu `ClassicMovieAttribute` třída podle pravidla. Po úspěšném ověření `IsValid` vrátí `ValidationResult.Success` kód, a když se ověřování nezdaří, `ValidationResult` s chybovou zprávou. Když uživatel změní `Genre` pole a formulář odešle, `IsValid` metodu `ClassicMovieAttribute` bude ověřte, zda se na video klasický. Podobně jako všechny předdefinované atribut použít `ClassicMovieAttribute` vlastnosti, jako třeba `ReleaseDate` zajistit, ověření se stane, jak je znázorněno v předchozí ukázce kódu. Vzhledem k tomu, že v příkladu pracuje pouze s `Movie` typy, lepší možností je používat `IValidatableObject` jak je znázorněno v následujícím odstavci.
+`movie` Proměnné výše představuje `Movie` objekt, který obsahuje data z odeslání formuláře k ověření. V tomto případě kód ověření ověří datum a genre v `IsValid` metodu `ClassicMovieAttribute` třída podle pravidla. Po úspěšném ověření`IsValid` vrátí `ValidationResult.Success` kódu. Když se ověřování nezdaří, `ValidationResult` s chybou je vrácená zpráva:
+
+[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=55-58)]
+
+Když uživatel změní `Genre` pole a formulář odešle, `IsValid` metodu `ClassicMovieAttribute` bude ověřte, zda se na video klasický. Podobně jako všechny předdefinované atribut použít `ClassicMovieAttribute` vlastnosti, jako třeba `ReleaseDate` zajistit, ověření se stane, jak je znázorněno v předchozí ukázce kódu. Vzhledem k tomu, že v příkladu pracuje pouze s `Movie` typy, lepší možností je používat `IValidatableObject` jak je znázorněno v následujícím odstavci.
 
 Alternativně může umístit tento stejný kód v modelu tím, že implementujete `Validate` metodu `IValidatableObject` rozhraní. Při ověřování vlastní atributy fungují dobře u ověřování jednotlivé vlastnosti, implementace `IValidatableObject` lze použít k implementaci ověření na úrovni třídy, jak je vidět tady.
 

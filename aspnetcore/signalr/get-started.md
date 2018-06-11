@@ -11,12 +11,12 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: ba1db640e5608fd9f5e7fa024283a651bf7772c2
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: c71d98f86c15a4c6fbbe400f912123419b4ad076
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819055"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252201"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>Začínáme s funkce SignalR technologie ASP.NET Core
 
@@ -85,6 +85,8 @@ Visual Studio obsahuje `Microsoft.AspNetCore.SignalR` balíček obsahující jeh
     dotnet new webapp -o SignalRChat
     ```
 
+    [!INCLUDE[](~/includes/webapp-alias-notice.md)]
+
 2. Instalace pomocí knihovny JavaScript klienta *npm*.
 
     ```console
@@ -94,7 +96,7 @@ Visual Studio obsahuje `Microsoft.AspNetCore.SignalR` balíček obsahující jeh
 
 3. Vytvořte novou složku s názvem "signalr" uvnitř *lib* složku ve vašem projektu. Kopírování *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  do této složky.
 
------
+---
 
 ## <a name="create-the-signalr-hub"></a>Vytvoření centra SignalR
 

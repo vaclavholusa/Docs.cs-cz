@@ -1,27 +1,29 @@
 # <a name="custom-webhost-service-sample"></a>Ukázka služby vlastní tomuto webovému hostiteli
 
-Tento příklad ukazuje doporučeným způsobem, jak hostovat aplikace ASP.NET Core v systému Windows bez použití služby IIS jako služby systému Windows. Tento příklad znázorňuje funkce popsané v [hostovat aplikace ASP.NET Core ve službě Windows](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).
+Tento příklad ukazuje, jak hostovat aplikace ASP.NET Core jako služby systému Windows bez použití služby IIS. Tento příklad znázorňuje podle scénáře popsaného v [hostovat aplikace ASP.NET Core ve službě Windows](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).
 
 ## <a name="instructions"></a>Pokyny
 
-Ukázková aplikace je upravit podle pokynů v jednoduché webové aplikace MVC [hostovat aplikace ASP.NET Core ve službě Windows](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).
+Ukázková aplikace je stránky Razor webové aplikace upravit podle pokynů v [hostovat aplikace ASP.NET Core ve službě Windows](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).
 
 Ke spuštění aplikace ve službě, proveďte následující kroky:
 
 1. Vytvořte složku na *c:\svc*.
 
-1. Publikujte aplikaci do složky s `dotnet publish --configuration Release --output c:\\svc`. Příkaz přesune do složky, včetně požadované prostředky aplikace `appsettings.json` souboru a `wwwroot` složku s jeho obsahem.
+1. Publikujte aplikaci do složky s `dotnet publish --configuration Release --output c:\\svc`. Příkaz přesune prostředky aplikace na *svc* složky, včetně požadované `appsettings.json` souboru a `wwwroot` složky.
 
-1. Otevřete **správce** příkazové prostředí.
+1. Otevřete **správce** příkazového řádku.
 
 1. Spuštěním následujících příkazů:
 
    ```console
-   sc create MyService binPath="c:\svc\aspnetcoreservice.exe"
+   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe"
    sc start MyService
    ```
 
-1. V prohlížeči přejděte na `http://localhost:5000` k ověření, že je služba spuštěná.
+  *Mezery mezi znaménkem rovnosti a začátkem řetězec cesty je požadovaná.*
+
+1. V prohlížeči přejděte na `http://localhost:5000` a ověřte, zda je spuštěna služba. Aplikace přesměruje na zabezpečený koncový bod `https://localhost:5001`.
 
 1. K zastavení služby, použijte příkaz:
 
@@ -29,7 +31,7 @@ Ke spuštění aplikace ve službě, proveďte následující kroky:
    sc stop MyService
    ```
 
-Pokud aplikace nelze spustit očekávaným způsobem, při spuštění ve službě, je rychlý způsob, jak zpřístupnit chybové zprávy pro přidání poskytovatele protokolování, například [zprostředkovatele protokolu událostí systému Windows](https://docs.microsoft.com/aspnet/core/fundamentals/logging/index#eventlog). Další možností je naleznete v protokolu událostí aplikace pomocí prohlížeče událostí systému. Zde je například k neošetřené výjimce FileNotFound chyby v protokolu událostí aplikace:
+Pokud aplikace se nespustí podle očekávání, je rychlý způsob, jak zpřístupnit chybové zprávy pro přidání poskytovatele protokolování, například [zprostředkovatele protokolu událostí systému Windows](https://docs.microsoft.com/aspnet/core/fundamentals/logging/index#eventlog). Další možností je naleznete v protokolu událostí aplikace pomocí prohlížeče událostí systému. Zde je například k neošetřené výjimce FileNotFound chyby v protokolu událostí aplikace:
 
 ```console
 Application: AspNetCoreService.exe

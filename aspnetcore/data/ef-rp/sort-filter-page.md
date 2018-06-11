@@ -8,11 +8,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 26f516716864bdce81cf3acdacb0f9d2f98407b7
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 1220740ca35edf75fac97d4f33eff4e221414574
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252461"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - řazení, filtru, stránkování - 3 8
 
@@ -120,7 +121,7 @@ Předchozí kód:
 * Přidá `searchString` parametru `OnGetAsync` metoda. Hodnota řetězce vyhledávání byl přijat v textovém poli, který je přidán v další části.
 * Přidat k příkazu LINQ `Where` klauzule. `Where` Klauzule vybere pouze studenty, jejichž křestní jméno nebo příjmení obsahuje řetězec pro hledání. Příkaz LINQ se spustí pouze v případě, že je hodnota pro vyhledávání.
 
-Poznámka: Předchozí kód volání `Where` metodu `IQueryable` objekt a filtr zpracování na serveru. V některých scénářích může být aplikace zadaná volání `Where` metoda jako metody rozšíření na kolekci v paměti. Předpokládejme například, `_context.Students` změní z EF základní `DbSet` metodě úložiště, který vrací `IEnumerable` kolekce. Výsledek by za normálních okolností stejné, ale v některých případech může být odlišné.
+Poznámka: Předchozí kód volání `Where` metodu `IQueryable` objekt a filtr zpracování na serveru. V některých případech může být aplikace volání `Where` metoda jako metody rozšíření na kolekci v paměti. Předpokládejme například, `_context.Students` změní z EF základní `DbSet` metodě úložiště, který vrací `IEnumerable` kolekce. Výsledek by za normálních okolností stejné, ale v některých případech může být odlišné.
 
 Například rozhraní .NET Framework implementace `Contains` provádí malá a velká písmena porovnání ve výchozím nastavení. V systému SQL Server `Contains` rozlišování je určen podle nastavení kolace instance systému SQL Server. SQL Server ve výchozím nastavení na velká a malá písmena. `ToUpper` může být volána aby test explicitně velká a malá písmena:
 

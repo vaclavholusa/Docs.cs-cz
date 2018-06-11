@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: c8611ef9218711410cde9e142202fa25c3e51862
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: d515e1354546e95553a010fa7a2143f0e529d68b
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729455"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252448"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -45,6 +45,8 @@ V tématu [začít pracovat s stránky Razor](xref:tutorials/razor-pages/razor-p
 
 Spustit `dotnet new webapp` z příkazového řádku.
 
+[!INCLUDE[](~/includes/webapp-alias-notice.md)]
+
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -61,6 +63,8 @@ Otevřete vygenerovaného *.csproj* soubor ze sady Visual Studio for Mac.
 
 Spustit `dotnet new webapp` z příkazového řádku.
 
+[!INCLUDE[](~/includes/webapp-alias-notice.md)]
+
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -74,6 +78,8 @@ Spustit `dotnet new razor` z příkazového řádku.
 ::: moniker range=">= aspnetcore-2.1"
 
 Spustit `dotnet new webapp` z příkazového řádku.
+
+[!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 ::: moniker-end
 
@@ -474,17 +480,19 @@ Předchozí kód používá *s názvem metody obslužná rutina*. Metody s názv
 
 Použití předcházející code cesty URL, kterou odesílá `OnPostJoinListAsync` je `http://localhost:5000/Customers/CreateFATH?handler=JoinList`. Cesty URL, kterou odesílá `OnPostJoinListUCAsync` je `http://localhost:5000/Customers/CreateFATH?handler=JoinListUC`.
 
-
-
 ## <a name="customizing-routing"></a>Přizpůsobení směrování
+
+Řetězec dotazu, můžete změnit `?handler=JoinList` v adrese URL trasy segmentu `/JoinList` zadáním šablonu trasy `@page "{handler?}"`.
 
 Pokud chcete řetězec dotazu `?handler=JoinList` v adrese URL, můžete změnit trasy, která má název obslužné rutiny chápat část adresy obsahující cestu adresy URL. Trasy, která můžete přizpůsobit přidáním šablonu trasy v dvojitých uvozovkách po `@page` – direktiva.
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/Customers/CreateRoute.cshtml?highlight=1)]
 
-Předchozí trasy vloží název obslužné rutiny cesty URL místo řetězec dotazu. `?` Následující `handler` znamená je volitelný parametr trasy.
+Použití předcházející code cesty URL, kterou odesílá `OnPostJoinListAsync` je `http://localhost:5000/Customers/CreateFATH/JoinList`. Cesty URL, kterou odesílá `OnPostJoinListUCAsync` je `http://localhost:5000/Customers/CreateFATH/JoinListUC`.
 
-Můžete použít `@page` a přidejte další segmenty a parametry k postupu na stránce. Ať je k dispozici má **připojí** trasu výchozí stránky. Použití absolutní nebo virtuální cesta ke změně stránky trasy (například `"~/Some/Other/Path"`) není podporován.
+`?` Následující `handler` znamená je volitelný parametr trasy.
+
+Můžete použít `@page` připojit segmentů a parametry k na stránce výchozí trasu. Použití absolutní nebo virtuální cesta ke změně stránky trasy (například `"~/Some/Other/Path"`) není podporován.
 
 ## <a name="configuration-and-settings"></a>Konfigurace a nastavení
 

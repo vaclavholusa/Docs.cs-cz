@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: 49e51a867e47ce375a5048cae5979360c4103365
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: d3b775116c126e4d6456b89b2c76ca9d9e1a004c
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2018
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252149"
 ---
 # <a name="filters-in-aspnet-core"></a>Filtry v ASP.NET Core
 
@@ -77,7 +78,7 @@ Můžete implementovat rozhraní pro několik fází filtru do jedné třídy. N
 
 ### <a name="ifilterfactory"></a>IFilterFactory
 
-`IFilterFactory` implementuje `IFilter`. Proto `IFilterFactory` instanci SQL lze použít jako `IFilter` instance kdekoli v kanálu filtru. Když rozhraní připraví vyvolání filtr, pokusí se vysílat `IFilterFactory`. Pokud tento přetypování úspěšné, `CreateInstance` metoda je volána k vytvoření `IFilter` instance, která bude volána. To poskytuje flexibilní návrhu, protože kanál přesné filtru nemusí být explicitně nastaveno při spuštění aplikace.
+[IFilterFactory](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory) implementuje [IFilterMetadata](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifiltermetadata). Proto `IFilterFactory` instanci SQL lze použít jako `IFilterMetadata` instance kdekoli v kanálu filtru. Když rozhraní připraví vyvolání filtr, pokusí se vysílat `IFilterFactory`. Pokud tento přetypování úspěšné, [CreateInstance –](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory.createinstance) metoda je volána k vytvoření `IFilterMetadata` instance, která bude volána. To poskytuje flexibilní návrhu, protože kanál přesné filtru nemusí být explicitně nastaveno při spuštění aplikace.
 
 Můžete implementovat `IFilterFactory` na vlastní atribut implementace jako další postup pro vytvoření filtrů:
 
@@ -220,7 +221,7 @@ System.InvalidOperationException: No service for type
 'FiltersSample.Filters.AddHeaderFilterWithDI' has been registered.
 ```
 
-`ServiceFilterAttribute` implementuje `IFilterFactory`. `IFilterFactory` zpřístupní `CreateInstance` metodu vytváření `IFilter` instance. `CreateInstance` Metoda načte zadaného typu z kontejneru služby (DI).
+`ServiceFilterAttribute` implementuje `IFilterFactory`. `IFilterFactory` zpřístupní `CreateInstance` metodu vytváření `IFilterMetadata` instance. `CreateInstance` Metoda načte zadaného typu z kontejneru služby (DI).
 
 ### <a name="typefilterattribute"></a>TypeFilterAttribute
 

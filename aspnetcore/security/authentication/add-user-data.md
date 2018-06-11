@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/add-user-data
-ms.openlocfilehash: cc7b29499e9db702cab70be7c15eac53373d450d
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: 005491168ba3e538991ed1bf8a53c320ecf2818d
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819068"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35251980"
 ---
 # <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>Přidat, stahování a odstraňování dat vlastní uživatele k identitě v projektu ASP.NET Core
 
@@ -50,7 +50,9 @@ Ukázkový projekt je vytvořený z stránky Razor webové aplikace, ale tyto po
 dotnet new webapp -o WebApp1
 ```
 
-------
+[!INCLUDE[](~/includes/webapp-alias-notice.md)]
+
+---
 
 ## <a name="run-the-identity-scaffolder"></a>Spustit Identity scaffolder
 

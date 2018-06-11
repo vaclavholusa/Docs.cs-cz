@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/index
-ms.openlocfilehash: 37c527718433410eede8321dd7813f0ffd6473e5
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 7f8ccff7e3da93d6e617505ac93fafc3a82ed880
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34687441"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252006"
 ---
 # <a name="host-in-aspnet-core"></a>Hostitel v ASP.NET Core
 
@@ -24,4 +24,4 @@ Konfigurace aplikace .NET a spusťte *hostitele*. Hostitel je zodpovědná za sp
 * [Webové hostitele](xref:fundamentals/host/web-host) &ndash; vhodná pro hostování webových aplikací.
 * [Obecné hostitele](xref:fundamentals/host/generic-host) (ASP.NET Core 2.1 nebo vyšší) &ndash; vhodná pro hostování jiných webových aplikací (například aplikace, které běží úlohy na pozadí). V budoucí verzi bude obecné hostitele vhodný pro hostování jakékoliv aplikace, včetně webových aplikací. Obecné hostitel nakonec nahradí webového hostitele.
 
-V tomto okamžiku by vývojáři použít [webového hostitele](xref:fundamentals/host/web-host) na základě [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) pro hostování aplikací ASP.NET Core.
+Pro hostování ASP.NET Core *webové aplikace*, vývojáři využít webového hostitele na základě [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder). Pro hostování *jiných webových aplikací*, vývojáři měli použít obecné hostitele na základě [HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder).

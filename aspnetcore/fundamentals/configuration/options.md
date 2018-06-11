@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/options
-ms.openlocfilehash: dc95d2b76277e177246a6b0e4af5bb3815dce383
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 11f3e0b0cc1356db4c5fb9a2ce948099ed9f85b5
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734572"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252383"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -26,11 +26,11 @@ Vzor možnosti používá k reprezentování skupiny související nastavení t�
 * [Rozhraní oddělení princip (ISP)](http://deviq.com/interface-segregation-principle/): funkce (třídy), které závisí na nastavení konfigurace závisí na nastavení konfigurace, která používají jenom.
 * [Oddělené oblasti zájmu](http://deviq.com/separation-of-concerns/): nastavení pro různé části aplikace nejsou závislé nebo párované jednu na druhou.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/options/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample)) Tento článek je snazší postupujte podle ukázkovou aplikaci.
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample)) Tento článek je snazší postupujte podle ukázkovou aplikaci.
 
 ## <a name="basic-options-configuration"></a>Základní možnosti konfigurace
 
-Základní možnosti konfigurace je znázorněn příklad &num;1 v [ukázkovou aplikaci](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
+Základní možnosti konfigurace je znázorněn příklad &num;1 v [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
 
 Třída možností musí být neabstraktní s konstruktor public bez parametrů. Následující třídy, `MyOptions`, má dvě vlastnosti `Option1` a `Option2`. Nastavení výchozích hodnot je nepovinný, ale konstruktoru třídy v následujícím příkladu se nastaví na výchozí hodnotu `Option1`. `Option2` Výchozí hodnota je nastavena pomocí vlastnosti inicializace přímo (*Models/MyOptions.cs*):
 
@@ -60,7 +60,7 @@ option1 = value1_from_json, option2 = -1
 
 ## <a name="configure-simple-options-with-a-delegate"></a>Jednoduché možnosti nakonfigurovat delegáta
 
-Jednoduché možnosti konfigurace s delegáta je znázorněn příklad &num;2 v [ukázkovou aplikaci](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
+Jednoduché možnosti konfigurace s delegáta je znázorněn příklad &num;2 v [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
 
 Použití delegáta pro nastavení možností hodnot. Použití ukázkové aplikace `MyOptionsWithDelegateConfig` – třída (*Models/MyOptionsWithDelegateConfig.cs*):
 
@@ -90,7 +90,7 @@ delegate_option1 = value1_configured_by_delgate, delegate_option2 = 500
 
 ## <a name="suboptions-configuration"></a>Konfigurace suboptions
 
-Konfigurace suboptions je znázorněn příklad &num;3 v [ukázkovou aplikaci](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
+Konfigurace suboptions je znázorněn příklad &num;3 v [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
 
 Aplikace by měl vytvořit možnosti třídy, které se vztahují k příslušné funkce skupiny (třídy) v aplikaci. Části aplikace, které vyžadují hodnoty konfigurace pouze měli přístup k hodnotám konfigurace, které používají.
 
@@ -126,7 +126,7 @@ subOption1 = subvalue1_from_json, subOption2 = 200
 
 ## <a name="options-provided-by-a-view-model-or-with-direct-view-injection"></a>Možnosti poskytnuté modelem zobrazení nebo pomocí vkládání přímé zobrazení
 
-Možnosti poskytnuté modelem zobrazení nebo pomocí vkládání přímé zobrazení je znázorněn příklad &num;4 v [ukázkovou aplikaci](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
+Možnosti poskytnuté modelem zobrazení nebo pomocí vkládání přímé zobrazení je znázorněn příklad &num;4 v [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
 
 Možnosti můžete zadat v zobrazení modelu nebo vložením `IOptions<TOptions>` přímo do zobrazení (*Pages/Index.cshtml.cs*):
 
@@ -146,7 +146,7 @@ Při spuštění aplikace na vykreslené stránce se zobrazuje hodnoty možnosti
 
 ## <a name="reload-configuration-data-with-ioptionssnapshot"></a>Znovu načíst data konfigurace s IOptionsSnapshot
 
-Opětovné načtení konfiguračních dat pomocí `IOptionsSnapshot` je znázorněn v příkladu &num;5 v [ukázkovou aplikaci](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
+Opětovné načtení konfiguračních dat pomocí `IOptionsSnapshot` je znázorněn v příkladu &num;5 v [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
 
 *Vyžaduje ASP.NET Core 1.1 nebo novější.*
 
@@ -174,7 +174,7 @@ snapshot option1 = value1_from_json UPDATED, snapshot option2 = 200
 
 ## <a name="named-options-support-with-iconfigurenamedoptions"></a>Možnosti podpory s IConfigureNamedOptions s názvem
 
-S názvem podporu možnosti s [IConfigureNamedOptions](/dotnet/api/microsoft.extensions.options.iconfigurenamedoptions-1) je znázorněn příklad &num;6 v [ukázkovou aplikaci](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
+S názvem podporu možnosti s [IConfigureNamedOptions](/dotnet/api/microsoft.extensions.options.iconfigurenamedoptions-1) je znázorněn příklad &num;6 v [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
 
 *Vyžaduje základní technologie ASP.NET 2.0 nebo novější.*
 

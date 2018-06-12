@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
 ms.openlocfilehash: 06f22bc9a3068ee5621df62ee5ed1bea06d7e9e6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30881354"
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>Přizpůsobení nasazení databáze pro prostředí s více
 ====================
@@ -72,12 +73,12 @@ Tato tabulka ukazuje nastavení typické nasazení pro jiné cílové prostřed�
 |  | Vývojáře/testování | Pracovní nebo integrace | Produkční |
 | --- | --- | --- | --- |
 | **Kolace porovnání nasazení** | Zdroj | cíl | cíl |
-| **Nasazení vlastnosti databáze** | True | Pouze první přihlášení | Pouze první přihlášení |
-| **Vždy znovu vytvořit databázi** | True | False | False |
-| **Blokovat přírůstkové nasazení, pokud může dojít ke ztrátě dat.** | False | Možná | True |
-| **Spustit skript nasazení v režimu jednoho uživatele** | False | True | True |
-| **Zálohování databáze před nasazením** | False | Možná | True |
-| **Generovat příkazy DROP pro objekty, které jsou v cílové databázi, ale nejsou v databázi projektu** | False | True | True |
+| **Nasazení vlastnosti databáze** | Hodnota TRUE | Pouze první přihlášení | Pouze první přihlášení |
+| **Vždy znovu vytvořit databázi** | Hodnota TRUE | False | False |
+| **Blokovat přírůstkové nasazení, pokud může dojít ke ztrátě dat.** | False | Možná | Hodnota TRUE |
+| **Spustit skript nasazení v režimu jednoho uživatele** | False | Hodnota TRUE | Hodnota TRUE |
+| **Zálohování databáze před nasazením** | False | Možná | Hodnota TRUE |
+| **Generovat příkazy DROP pro objekty, které jsou v cílové databázi, ale nejsou v databázi projektu** | False | Hodnota TRUE | Hodnota TRUE |
 | **Nepoužívejte příkaz ALTER ASSEMBLY příkazy aktualizace typů CLR** | False | False | False |
   
 

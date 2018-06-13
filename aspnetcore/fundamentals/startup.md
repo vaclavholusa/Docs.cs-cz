@@ -74,7 +74,7 @@ ms.lasthandoff: 05/17/2018
 
 <span data-ttu-id="57ec1-139">Následující kód nastaví režim kompatibility ASP.NET Core 2.1:</span><span class="sxs-lookup"><span data-stu-id="57ec1-139">The following code sets the compatibility mode to ASP.NET Core 2.1:</span></span>
 
-<span data-ttu-id="57ec1-140">[!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]</span><span class="sxs-lookup"><span data-stu-id="57ec1-140">[!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]</span></span>
+[!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]
 
 <span data-ttu-id="57ec1-141">Doporučujeme, abyste testování aplikace pomocí nejnovější verze (`CompatibilityVersion.Version_2_1`).</span><span class="sxs-lookup"><span data-stu-id="57ec1-141">We recommend you test your application using the latest version (`CompatibilityVersion.Version_2_1`).</span></span> <span data-ttu-id="57ec1-142">Očekáváme, že většina aplikací nebudou mít nejnovější změny chování pomocí nejnovější verze.</span><span class="sxs-lookup"><span data-stu-id="57ec1-142">We anticipate that most applications will not have breaking behavior changes using the latest version.</span></span> 
 

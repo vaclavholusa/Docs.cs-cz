@@ -1,9 +1,9 @@
-Nainstalujte **jeden** z následujících akcí:
+<span data-ttu-id="d23fc-101">Nainstalujte **jeden** z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="d23fc-101">Install **one** of the following:</span></span>
 
-* Nástroje příkazového řádku: Windows, Linux nebo systému macOS: [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
-* IDE/editor nástrojů
-  * Windows: [Visual Studio pro Windows](https://www.microsoft.com/net/download/windows)
-    * **Vývoj pro ASP.NET a webové** pracovního vytížení
-    * **Vývoj pro různé platformy .NET core** pracovního vytížení
-  * Linux: [Visual Studio Code](https://www.microsoft.com/net/download/linux)
-  * macOS: [Visual Studio for Mac](https://www.microsoft.com/net/download/macos)
+* <span data-ttu-id="d23fc-102">Nástroje příkazového řádku: Windows, Linux nebo systému macOS: [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]</span><span class="sxs-lookup"><span data-stu-id="d23fc-102">CLI tooling: Windows, Linux, or macOS: [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]</span></span>
+* <span data-ttu-id="d23fc-103">IDE/editor nástrojů</span><span class="sxs-lookup"><span data-stu-id="d23fc-103">IDE/editor tooling</span></span>
+  * <span data-ttu-id="d23fc-104">Windows: [Visual Studio pro Windows](https://www.microsoft.com/net/download/windows)</span><span class="sxs-lookup"><span data-stu-id="d23fc-104">Windows: [Visual Studio for Windows](https://www.microsoft.com/net/download/windows)</span></span>
+    * <span data-ttu-id="d23fc-105">**Vývoj pro ASP.NET a webové** pracovního vytížení</span><span class="sxs-lookup"><span data-stu-id="d23fc-105">**ASP.NET and web development** workload</span></span>
+    * <span data-ttu-id="d23fc-106">**Vývoj pro různé platformy .NET core** pracovního vytížení</span><span class="sxs-lookup"><span data-stu-id="d23fc-106">**.NET Core cross-platform development** workload</span></span>
+  * <span data-ttu-id="d23fc-107">Linux: [Visual Studio Code](https://www.microsoft.com/net/download/linux)</span><span class="sxs-lookup"><span data-stu-id="d23fc-107">Linux: [Visual Studio Code](https://www.microsoft.com/net/download/linux)</span></span>
+  * <span data-ttu-id="d23fc-108">systému macOS: [Visual Studio pro Mac](https://www.microsoft.com/net/download/macos)</span><span class="sxs-lookup"><span data-stu-id="d23fc-108">macOS: [Visual Studio for Mac](https://www.microsoft.com/net/download/macos)</span></span>

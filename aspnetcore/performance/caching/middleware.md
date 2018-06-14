@@ -10,12 +10,12 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 7ceccffa39baf5f13d63c26e78c64a595bb42f60
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: abf07ec2d2692a8504caea243eacead6aa6e1a62
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734494"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341701"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Ukládání do mezipaměti Middleware v ASP.NET Core odpovědi
 
@@ -27,7 +27,7 @@ Tento článek vysvětluje, jak pro konfiguraci middlewaru ukládání do mezipa
 
 ## <a name="package"></a>Balíček
 
-Zahrnout middleware projekt, přidejte odkaz na [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) balíček nebo použít [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app), která je k dispozici pro použití v ASP.NET Core 2.1 nebo vyšší.
+Zahrnout middleware projekt, přidejte odkaz na [Microsoft.AspNetCore.ResponseCaching](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCaching/) balíček nebo použít [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app), která je k dispozici pro použití v ASP. NET základní 2.1 nebo vyšší.
 
 ## <a name="configuration"></a>Konfigurace
 

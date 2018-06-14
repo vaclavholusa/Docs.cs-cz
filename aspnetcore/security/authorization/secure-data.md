@@ -9,12 +9,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 1ffa44d1816284d563b80b2d9a02b7b816116ee1
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 0b67d4aef198aa418b54fb92db76d331ffa2785a
+ms.sourcegitcommit: 0d6f151e69c159d776ed0142773279e645edbc0a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252110"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35415030"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace
 
@@ -111,7 +111,7 @@ Pokud používáte Visual Studio, povolte protokol HTTPS.
 
 Přesměrování požadavků HTTP do HTTPS, najdete v části [URL přepisování Middleware](xref:fundamentals/url-rewriting). Pokud jste pomocí Visual Studio Code nebo testování na místní platformu, která neobsahuje testovací certifikát pro protokol HTTPS:
 
-  Nastavit `"LocalTest:skipSSL": true` v *appsettings. Developement.JSON* souboru.
+  Nastavit `"LocalTest:skipHTTPS": true` v *appsettings. Developement.JSON* souboru.
 
 ### <a name="require-authenticated-users"></a>Vyžadovat ověření uživatelé
 
@@ -273,7 +273,7 @@ Aktualizace modelu stránky podrobnosti:
 
 Pokud jste pomocí Visual Studio Code nebo testování na místní platformu, která neobsahuje testovací certifikát pro protokol HTTPS:
 
-* Nastavit `"LocalTest:skipSSL": true` v *appsettings. Developement.JSON* souboru tak, aby přeskočil požadavek HTTPS. Přeskočit HTTPS pouze na vývojovém počítači.
+* Nastavit `"LocalTest:skipHTTPS": true` v *appsettings. Developement.JSON* souboru tak, aby přeskočil požadavek HTTPS. Přeskočit HTTPS pouze na vývojovém počítači.
 
 Pokud má kontaktů:
 

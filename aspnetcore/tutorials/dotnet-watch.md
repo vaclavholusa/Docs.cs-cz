@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/dotnet-watch
-ms.openlocfilehash: 29890640223fe533cca82fb8d39a5ef26e8c6639
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 016ee107ae646ed43d8a98e97fd2d5b41356910e
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729973"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341844"
 ---
 # <a name="develop-aspnet-core-apps-using-a-file-watcher"></a>Vývoj aplikací ASP.NET Core sledovacích procesů souboru
 
@@ -114,8 +114,73 @@ Ověřte `http://localhost:<port number>/api/math/product?a=4&b=5` vrátí výsl
 
 `dotnet watch` zjistí změnu souboru a znovu spustí testy. Výstup konzoly znamená, testy úspěšně.
 
-## <a name="dotnet-watch-in-github"></a>kukátko DotNet v Githubu
+## <a name="customize-files-list-to-watch"></a>Přizpůsobení seznamu souborů si chcete přehrát
 
-kukátko DotNet je součástí Githubu [DotNetTools úložiště](https://github.com/aspnet/DotNetTools/tree/dev/src/dotnet-watch).
+Ve výchozím nastavení `dotnet-watch` sleduje všechny soubory odpovídající následující glob vzorce:
 
-[MSBuild části](https://github.com/aspnet/DotNetTools/tree/dev/src/dotnet-watch#msbuild) z [dotnet sledovat ReadMe](https://github.com/aspnet/DotNetTools/blob/dev/src/dotnet-watch/README.md) vysvětluje, jak sledovat dotnet. lze konfigurovat v souboru projektu nástroje MSBuild sledovány. [Dotnet sledovat ReadMe](https://github.com/aspnet/DotNetTools/blob/dev/src/dotnet-watch/README.md) obsahuje informace o dotnet sledování nejsou zahrnuté v tomto kurzu.
+* `**/*.cs`
+* `*.csproj`
+* `**/*.resx`
+
+Další položky můžete přidat do seznamu sledování úpravou *.csproj* souboru. Položky lze zadat, samostatně nebo pomocí glob vzory.
+
+```xml
+<ItemGroup>
+    <!-- extends watching group to include *.js files -->
+    <Watch Include="**\*.js" Exclude="node_modules\**\*;**\*.js.map;obj\**\*;bin\**\*" />
+</ItemGroup>
+```
+
+## <a name="opt-out-of-files-to-be-watched"></a>Výslovný nesouhlas soubory sledovat
+
+`dotnet-watch` může být nakonfigurován pro ignorovat výchozího nastavení. Ignorovat konkrétní soubory, přidejte `Watch="false"` atribut v definici položky *.csproj* souboru:
+
+```xml
+<ItemGroup>
+    <!-- exclude Generated.cs from dotnet-watch -->
+    <Compile Include="Generated.cs" Watch="false" />
+
+    <!-- exclude Strings.resx from dotnet-watch -->
+    <EmbeddedResource Include="Strings.resx" Watch="false" />
+
+    <!-- exclude changes in this referenced project -->
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" Watch="false" />
+</ItemGroup>
+```
+
+## <a name="custom-watch-projects"></a>Vlastní sledování projekty
+
+`dotnet-watch` není omezena na projektů C#. Vlastní sledování projekty mohou být vytvořeny pro zpracování různých scénářů. Vezměte v úvahu následující rozložení projektu:
+
+* **testování nebo**
+  * *UnitTests/UnitTests.csproj*
+  * *IntegrationTests/IntegrationTests.csproj*
+
+Pokud si chcete přehrát obou projektů je cílem, vytvořte soubor vlastních projektů, který je nakonfigurován tak, aby podívejte se na obou projektů:
+
+```xml
+<Project>
+    <ItemGroup>
+        <TestProjects Include="**\*.csproj" />
+        <Watch Include="**\*.cs" />
+    </ItemGroup>
+
+    <Target Name="Test">
+        <MSBuild Targets="VSTest" Projects="@(TestProjects)" />
+    </Target>
+
+    <Import Project="$(MSBuildExtensionsPath)\Microsoft.Common.targets" />
+</Project>
+```
+
+Chcete-li spustit soubor sledováním v obou projektů, změňte nastavení na *testování* složky. Spusťte následující příkaz:
+
+```console
+dotnet watch msbuild /t:Test
+```
+
+VSTest provede, když se změní všechny soubory v buď testovacího projektu.
+
+## <a name="dotnet-watch-in-github"></a>`dotnet-watch` v Githubu
+
+`dotnet-watch` je součástí Githubu [DotNetTools úložiště](https://github.com/aspnet/DotNetTools/tree/dev/src/dotnet-watch).

@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: 35a21156c001d8703e09e604129c4c2c500fe25f
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: cd1fa7957ca50db0de71f71234f84d3fbc631f45
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734650"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341740"
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>Konvence autorizace stránky Razor v ASP.NET Core
 
@@ -23,7 +23,7 @@ Podle [Luke Latham](https://github.com/guardrex)
 
 Jedním ze způsobů k řízení přístupu ve vaší aplikaci stránky Razor je použití autorizace konvence při spuštění. Tyto konvence umožňují autorizace uživatelů a anonymní uživatelům umožní přístup k jednotlivým stránkám nebo složky stránek. Platí zásady popsané v tomto tématu automaticky [filtry autorizace](xref:mvc/controllers/filters#authorization-filters) pro řízení přístupu.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 Použití ukázkové aplikace [ověřování souborů Cookie bez ASP.NET Core Identity](xref:security/authentication/cookie). Uživatelský účet pro hypotetické uživatele Marie Rodriguez je pevně zakódované do aplikace. Použití uživatelského jména e-mailu "maria.rodriguez@contoso.com" a žádné heslo pro přihlášení uživatele. Ověření uživatele v `AuthenticateUser` metoda v *Pages/Account/Login.cshtml.cs* souboru. V příkladu reálného uživatele by ověřovány proti databázi. ASP.NET Core Identity, postupujte podle pokynů v [Úvod do identita na ASP.NET Core](xref:security/authentication/identity) tématu. Koncepty a příklady uvedené v tomto tématu platí stejně pro aplikace, které používají ASP.NET Core Identity.
 

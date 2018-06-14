@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: ad50f8b261447d40ccc24c0ee006239aa976bf20
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.openlocfilehash: 3bca96f4a2e247eeeb93140df93221371d88d4d3
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341857"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Zabránit webů požadavku padělání (XSRF/proti útokům CSRF) před útoky v ASP.NET Core
 
@@ -43,11 +44,13 @@ Příklad útoku proti útokům CSRF:
 1. Uživatel vybere tlačítko pro odeslání. Prohlížeč provede požadavek a automaticky zahrne ověřovacího souboru cookie pro požadovanou doménu `www.good-banking-site.com`.
 1. Se spouští požadavek `www.good-banking-site.com` server s kontext ověřování uživatele a mohou provádět žádnou akci, kterou ověřený uživatel může provádět.
 
-Když uživatel vybere tlačítko pro odeslání formuláře, může škodlivé weby:
+Kromě tohoto scénáře, které si uživatel vybere tlačítko pro odeslání formuláře může škodlivé weby:
 
 * Spusťte skript, který automaticky odešle formulář.
-* Odešle odeslání formuláře jako požadavek AJAX. 
-* Skrytá formuláře pomocí šablon stylů CSS. 
+* Odeslání formuláře odešlete jako požadavek AJAX.
+* Skryjte formuláři pomocí šablon stylů CSS.
+
+Tyto alternativní scénáře není zapotřebí žádné akce nebo vstup od uživatele než původně návštěvou škodlivé weby.
 
 Pomocí protokolu HTTPS nezabrání útoku proti útokům CSRF. Může odesílat škodlivé weby `https://www.good-banking-site.com/` stejným způsobem jako ho můžete odeslat požadavek nezabezpečené požadavku.
 
@@ -201,7 +204,7 @@ services.AddAntiforgery(options =>
 | [CookiePath](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.cookiepath) | Cesta, nastavte v souboru cookie. Tato vlastnost je zastaralá a bude v budoucí verzi odebrána. Doporučená alternativa je Cookie.Path. |
 | [FormFieldName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.formfieldname) | Název pole Skrytá formuláře antiforgery systém použije k vykreslení antiforgery tokeny v zobrazeních. |
 | [HeaderName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.headername) | Název hlavičky, která používá antiforgery systém. Pokud `null`, je za pouze data formuláře. |
-| [RequireSsl](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.requiressl) | Určuje, zda je požadován protokol SSL antiforgery systémem. Pokud `true`, požadavky bez SSL selžou. Použije se výchozí hodnota `false`. Tato vlastnost je zastaralá a bude v budoucí verzi odebrána. Doporučená alternativa je nastavit Cookie.SecurePolicy. |
+| [requireSsl](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.requiressl) | Určuje, zda je požadován protokol SSL antiforgery systémem. Pokud `true`, požadavky bez SSL selžou. Použije se výchozí hodnota `false`. Tato vlastnost je zastaralá a bude v budoucí verzi odebrána. Doporučená alternativa je nastavit Cookie.SecurePolicy. |
 | [SuppressXFrameOptionsHeader](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.suppressxframeoptionsheader) | Určuje, jestli se má potlačit generování `X-Frame-Options` záhlaví. Ve výchozím nastavení je generována záhlaví s hodnotou "SAMEORIGIN". Použije se výchozí hodnota `false`. |
 
 Další informace najdete v tématu [CookieAuthenticationOptions](/dotnet/api/Microsoft.AspNetCore.Builder.CookieAuthenticationOptions).

@@ -6,4 +6,4 @@ Nainstalujte **jeden** z následujících akcí:
     * **Vývoj pro ASP.NET a webové** pracovního vytížení
     * **Vývoj pro různé platformy .NET core** pracovního vytížení
   * Linux: [Visual Studio Code](https://www.microsoft.com/net/download/linux)
-  * macOS: [Visual Studio for Mac](https://www.microsoft.com/net/download/macos)
+  * systému macOS: [Visual Studio pro Mac](https://www.microsoft.com/net/download/macos)

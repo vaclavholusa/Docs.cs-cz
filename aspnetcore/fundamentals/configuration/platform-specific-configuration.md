@@ -11,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: d913d8a773d312fc4c3191926c6eae2fcb7c6a3e
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 47d3a64ce0cc543162a066eeeaa0aaaf7dc96a5f
+ms.sourcegitcommit: 0d6f151e69c159d776ed0142773279e645edbc0a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734387"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35415005"
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>Vylepšení aplikace z externí sestavení v ASP.NET Core s IHostingStartup
 
@@ -57,7 +57,7 @@ A [HostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.hostingstartupattrib
 
 [!code-csharp[](platform-specific-configuration/snapshot_sample/StartupEnhancement.cs?name=snippet1)]
 
-Implementuje třídu `IHostingStartup`. Třída [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) metoda používá [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) přidání vylepšení do aplikace:
+Implementuje třídu `IHostingStartup`. Třída [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) metoda používá [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) přidání vylepšení do aplikace. `IHostingStartup.Configure` v hostitelských spuštění sestavení nazývá modulem runtime před `Startup.Configure` v uživatelském kódu, což umožňuje přepsat všechny configruation poskytované hostování sestavení po spuštění uživatelského kódu.
 
 [!code-csharp[](platform-specific-configuration/snapshot_sample/StartupEnhancement.cs?name=snippet2&highlight=3,5)]
 
@@ -117,13 +117,15 @@ Verze sdílený framework odráží verzi sdílený modul runtime, který použ�
 
 Nastavte následující proměnné prostředí v rámci aplikaci, která používá vylepšení.
 
-ASPNETCORE\_HOSTINGSTARTUPASSEMBLIES
+ASPNETCORE_HOSTINGSTARTUPASSEMBLIES
 
 Hledat pouze hostování spuštění sestavení `HostingStartupAttribute`. Název sestavení implementace je poskytován v této proměnné prostředí. Ukázková aplikace nastavuje tuto hodnotu `StartupDiagnostics`.
 
 Hodnotu můžete nastavit také pomocí [hostování spuštění sestavení](xref:fundamentals/host/web-host#hosting-startup-assemblies) hostitele nastavení konfigurace.
 
-DOTNET\_DALŠÍ\_DEPS
+Při spuštění více hostitelských sestaví jsou k dispozici, jejich [konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) metody jsou spouštěny v pořadí, jsou uvedeny sestavení.
+
+DOTNET_ADDITIONAL_DEPS
 
 Umístění implementace  *\*. deps.json* souboru.
 

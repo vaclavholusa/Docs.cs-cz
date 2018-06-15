@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 22311d90fb327fc1e01f82759ad62551501a10c1
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 39949585dc8fce10c31045ef3013c6bc166e45ba
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734559"
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613148"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>Kestrel webového serveru implementace v ASP.NET Core
 
@@ -209,7 +209,7 @@ Ve výchozím nastavení ASP.NET Core váže k:
 Vývojový certifikát se vytvoří:
 
 * Když [.NET Core SDK](/dotnet/core/sdk) je nainstalovaná.
-* [Dev certifikátů nástroj](https://github.com/aspnet/DotNetTools/tree/dev/src/dotnet-dev-certs) se používá k vytvoření certifikátu.
+* [Dev certifikátů nástroj](xref:aspnetcore-2.1#https) se používá k vytvoření certifikátu.
 
 Některé prohlížeče vyžadují, že udělíte výslovná oprávnění do prohlížeče tak, aby důvěřoval místní vývojový certifikát.
 
@@ -395,7 +395,10 @@ options.ConfigureHttpsDefaults(httpsOptions =>
 
 Kestrel podporuje SNI prostřednictvím `ServerCertificateSelector` zpětného volání. Zpětné volání je vyvolána jednou na připojení k povolit aplikaci zkontrolujte název hostitele a vyberte příslušný certifikát.
 
-Podpora SNI nemusí spouštět na cílové rozhraní `netcoreapp2.1`. Na `netcoreapp2.0` a `net461`, zpětné volání je voláno, ale `name` je vždy `null`. `name` Je také `null` Pokud klient neposkytuje hostitele parametr name ve TLS handshake.
+Podpora SNI vyžaduje:
+
+* Spuštěná na cílové rozhraní `netcoreapp2.1`. Na `netcoreapp2.0` a `net461`, zpětné volání je voláno, ale `name` je vždy `null`. `name` Je také `null` Pokud klient neposkytuje hostitele parametr name ve TLS handshake.
+* Všechny weby na stejnou instanci Kestrel spustit. Kestrel nepodporuje sdílení adresu IP a portu ve více instancích bez reverzní proxy server.
 
 ```csharp
 WebHost.CreateDefaultBuilder()

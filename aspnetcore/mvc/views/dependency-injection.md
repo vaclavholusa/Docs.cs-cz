@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: cc34b9069ec062f08644c0026c1ccdcd00f667ac
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: d33f0253fc7c1329e8bab400ace4c4ce8d10d792
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613057"
 ---
 # <a name="dependency-injection-into-views-in-aspnet-core"></a>Vkládání závislostí do zobrazení v ASP.NET Core
 
@@ -67,8 +68,8 @@ Tyto seznamy jsou naplněny službu, která je prováděno do zobrazení:
 
 [!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/ProfileOptionsService.cs?highlight=7,13,24)]
 
->[!TIP]
-> Nezapomeňte si zaregistrovat typy bude požadovat pomocí vkládání závislostí v `ConfigureServices` metoda v *Startup.cs*.
+> [!IMPORTANT]
+> Nezapomeňte si zaregistrovat typy požadavků pomocí vkládání závislostí v `Startup.ConfigureServices`. Zrušení registrace typu vyvolá výjimku za běhu, protože poskytovatel služeb je interně dotazován prostřednictvím [GetRequiredService](/dotnet/api/microsoft.extensions.dependencyinjection.serviceproviderserviceextensions.getrequiredservice).
 
 ## <a name="overriding-services"></a>Přepsání služby
 

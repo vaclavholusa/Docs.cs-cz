@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 8b53a19f4958e97198175d6acea4017d54f827bb
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 5e7e0fe0744a8dc3f3dd6097a059d77f2c578f77
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/15/2018
+ms.locfileid: "35652198"
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -33,7 +34,7 @@ Jádro ASP.NET podporuje protokolování rozhraní API, která funguje s různý
 
 ## <a name="how-to-create-logs"></a>Postup vytvoření protokoly
 
-Pokud chcete vytvořit protokoly, získat `ILogger` objektu z [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru:
+Pokud chcete vytvořit protokoly, implementovat [objektu ILogger](/dotnet/api/microsoft.extensions.logging.ilogger) objektu z [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru:
 
 [!code-csharp[](index/sample/Controllers/TodoController.cs?name=snippet_LoggerDI&highlight=7)]
 
@@ -63,14 +64,14 @@ Výchozí šablona projektu umožňuje protokolování pomocí [CreateDefaultBui
 
 Zprostředkovatel protokolování přijímá zprávy, které vytvoříte pomocí `ILogger` objektu a zobrazuje nebo je uloží. Například konzola poskytovatel zprávy zobrazí v konzole a zprostředkovatele služby Azure App Service je uložit do úložiště objektů blob Azure.
 
-Pro použití poskytovatele, nainstalujte jeho balíček NuGet a volání metody rozšíření poskytovatele na instanci `ILoggerFactory`, jak je znázorněno v následujícím příkladu.
+Pro použití poskytovatele, nainstalujte jeho balíček NuGet a volání metody rozšíření poskytovatele na instanci [implementaci třídy ILoggerFactory](/dotnet/api/microsoft.extensions.logging.iloggerfactory), jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[](index/sample//Startup.cs?name=snippet_AddConsoleAndDebug&highlight=3,5-7)]
 
 ASP.NET Core [vkládání závislostí](xref:fundamentals/dependency-injection) (DI) poskytuje `ILoggerFactory` instance. `AddConsole` a `AddDebug` rozšiřující metody jsou definovány v [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/) a [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/) balíčky. Každá metoda rozšíření volá `ILoggerFactory.AddProvider` metodu předáním v instanci poskytovatele. 
 
 > [!NOTE]
-> Přidá zprostředkovatele protokolování v ukázkové aplikace pro tento článek `Configure` metodu `Startup` – třída. Pokud chcete získat výstup protokolu z kódu, který provede dříve, přidejte zprostředkovatele protokolování v `Startup` místo třídy konstruktor. 
+> [Ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample) Přidá zprostředkovatele protokolování v `Startup.Configure` metoda. Pokud chcete získat výstup protokolu z kódu, který spouští dříve, přidejte zprostředkovatele protokolování v `Startup` konstruktoru třídy.
 
 ---
 
@@ -372,7 +373,7 @@ Pokud chcete zabránit zápisu pro danou kategorii všechny protokoly pomocí fi
 
 Můžete seskupit sadu logické operace v rámci *oboru* Chcete-li přiřadit každý protokol, který je vytvořen jako součást této sady stejná data. Například můžete každý protokol vytvořené jako součást zpracování transakci zahrnují ID transakce.
 
-Obor je `IDisposable` typ, který je vrácený `ILogger.BeginScope<TState>` metoda a bude trvat, dokud je zrušen. Použít obor podle zabalení vaše protokoly volání metod `using` blokovat, jak je vidět tady:
+Obor je `IDisposable` typ, který je vrácený [ILogger.BeginScope&lt;TState&gt; ](/dotnet/api/microsoft.extensions.logging.ilogger.beginscope) metoda a bude trvat, dokud je zrušen. Použít obor podle zabalení vaše protokoly volání metod `using` blokovat, jak je vidět tady:
 
 [!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_Scopes&highlight=4-5,13)]
 
@@ -410,15 +411,14 @@ warn: TodoApi.Controllers.TodoController[4000]
 
 ASP.NET Core dodává tyto zprostředkovatele:
 
-* [Console](#console)
-* [Ladění](#debug)
-* [EventSource](#eventsource)
-* [EventLog](#eventlog)
-* [TraceSource](#tracesource)
-* [Aplikační služba Azure](#appservice)
+* [Console](#console-provider)
+* [Ladění](#debug-provider)
+* [EventSource](#eventsource-provider)
+* [EventLog](#windows-eventlog-provider)
+* [TraceSource](#tracesource-provider)
+* [Aplikační služba Azure](#azure-app-service-provider)
 
-<a id="console"></a>
-### <a name="the-console-provider"></a>Zprostředkovatel konzoly
+### <a name="console-provider"></a>Konzola poskytovatel
 
 [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console) balíček zprostředkovatele odesílá výstup protokolu ke konzole. 
 
@@ -452,8 +452,7 @@ Nastavení při povolení aplikace zobrazí protokoly framework limit upozorněn
 
 ---
 
-<a id="debug"></a>
-### <a name="the-debug-provider"></a>Ladění zprostředkovatele
+### <a name="debug-provider"></a>Ladění zprostředkovatele
 
 [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug) balíček zprostředkovatele zapíše výstup protokolu pomocí [System.Diagnostics.Debug](/dotnet/api/system.diagnostics.debug) – třída (`Debug.WriteLine` volání metod).
 
@@ -475,8 +474,7 @@ loggerFactory.AddDebug()
 
 ---
 
-<a id="eventsource"></a>
-### <a name="the-eventsource-provider"></a>EventSource zprostředkovatele
+### <a name="eventsource-provider"></a>EventSource zprostředkovatele
 
 Pro aplikace, které cílí ASP.NET Core 1.1.0 nebo vyšší, [Microsoft.Extensions.Logging.EventSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource) balíček zprostředkovatele můžete implementovat trasování událostí. V systému Windows, používá [ETW](https://msdn.microsoft.com/library/windows/desktop/bb968803). Zprostředkovatel je platformy, ale nejsou žádná událost shromažďování a zobrazení nástroje pro Linux nebo systému macOS ještě. 
 
@@ -500,8 +498,7 @@ Konfigurace nástroje PerfView pro shromažďování události zapsané podle to
 
 ![Další poskytovatele nástroje Perfview](index/_static/perfview-additional-providers.png)
 
-<a id="eventlog"></a>
-### <a name="the-windows-eventlog-provider"></a>Zprostředkovatel protokolu událostí systému Windows
+### <a name="windows-eventlog-provider"></a>Poskytovatel protokolu událostí systému Windows
 
 [Microsoft.Extensions.Logging.EventLog](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog) balíček zprostředkovatele odesílá výstup protokolu do protokolu událostí systému Windows.
 
@@ -521,8 +518,7 @@ loggerFactory.AddEventLog()
 
 ---
 
-<a id="tracesource"></a>
-### <a name="the-tracesource-provider"></a>TraceSource zprostředkovatele
+### <a name="tracesource-provider"></a>TraceSource zprostředkovatele
 
 [Microsoft.Extensions.Logging.TraceSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.TraceSource) používá balíček zprostředkovatele [System.Diagnostics.TraceSource](/dotnet/api/system.diagnostics.tracesource) knihovny a zprostředkovatele.
 
@@ -548,14 +544,13 @@ Následující příklad konfiguruje `TraceSource` zprostředkovatele, který pr
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_TraceSource&highlight=9-12)]
 
-<a id="appservice"></a>
-### <a name="the-azure-app-service-provider"></a>Zprostředkovatel služby Azure App Service
+### <a name="azure-app-service-provider"></a>Zprostředkovatel služby Azure App Service
 
-[Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) balíček zprostředkovatele zapisuje protokoly do textových souborů v systému souborů aplikace služby Azure App Service a na [úložiště objektů blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage) v účtu Azure Storage. Zprostředkovatel je k dispozici pouze pro aplikace, které cílí ASP.NET Core 1.1.0 nebo vyšší. 
+[Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) balíček zprostředkovatele zapisuje protokoly do textových souborů v systému souborů aplikace služby Azure App Service a na [úložiště objektů blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage) v účtu Azure Storage. Zprostředkovatel je dostupné pouze pro aplikace, které cílí ASP.NET Core 1.1 nebo novější.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-Pokud cílení na .NET Core, není nutné instalovat balíček zprostředkovatele nebo explicitně volání `AddAzureWebAppDiagnostics`. Zprostředkovatel je automaticky dostupný pro vaši aplikaci při nasazení aplikace do služby Azure App Service.
+Cílení na .NET Core, nemusíte instalovat balíček zprostředkovatele nebo explicitně volejte [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics). Zprostředkovatel je automaticky dostupný v aplikaci při nasazení aplikace do služby Azure App Service.
 
 Pokud cílení na rozhraní .NET Framework, do projektu přidejte balíček zprostředkovatele a vyvolání `AddAzureWebAppDiagnostics`:
 
@@ -569,23 +564,24 @@ logging.AddAzureWebAppDiagnostics();
 loggerFactory.AddAzureWebAppDiagnostics();
 ```
 
-`AddAzureWebAppDiagnostics` Přetížení vám umožní předat v [AzureAppServicesDiagnosticsSettings](https://github.com/aspnet/Logging/blob/c7d0b1b88668ff4ef8a86ea7d2ebb5ca7f88d3e0/src/Microsoft.Extensions.Logging.AzureAppServices/AzureAppServicesDiagnosticsSettings.cs) se kterým můžete přepsat výchozí nastavení, jako je například protokolování výstupu šablony, název objektu blob a omezení velikosti souboru. (*Výstup šablony* je šablona zprávy, který se použije pro všechny protokoly nad ten, který je zadat při volání `ILogger` metoda.)
+[AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) přetížení vám umožní předat v [AzureAppServicesDiagnosticsSettings](/dotnet/api/microsoft.extensions.logging.azureappservices.azureappservicesdiagnosticssettings) se kterým můžete přepsat výchozí nastavení, jako je například protokolování výstupu šablony, název objektu blob a souborů omezení velikosti. (*Výstup šablony* je šablona zprávy, který se použije pro všechny protokoly nad ten, který je zadat při volání `ILogger` metoda.)
 
 ---
 
-Když nasazujete do aplikace služby App Service, vaše aplikace respektuje nastavení v [diagnostické protokoly](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/#enablediag) části **služby App Service** stránce portálu Azure. Při změně těchto nastavení, změny se projeví okamžitě bez nutnosti restartovat aplikaci nebo znovu nasadit kódu do ní. 
+Když nasazujete do aplikace služby App Service, aplikace respektuje nastavení v [diagnostické protokoly](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/#enablediag) části **služby App Service** stránce portálu Azure. Když tato nastavení jsou aktualizovány, změny se projeví okamžitě bez nutnosti restartování nebo opětovné nasazení aplikace.
 
 ![Nastavení protokolování Azure](index/_static/azure-logging-settings.png)
 
-Výchozí umístění pro soubory protokolu je v *D:\\domácí\\LogFiles\\aplikace* složku a výchozí název souboru je *diagnostiky yyyymmdd.txt*. Výchozí limit velikosti souboru je 10 MB a výchozí maximální počet souborů, které uchovávají se 2. Výchozí název objektu blob je *{app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt*. Další informace o výchozí chování najdete v tématu [AzureAppServicesDiagnosticsSettings](https://github.com/aspnet/Logging/blob/c7d0b1b88668ff4ef8a86ea7d2ebb5ca7f88d3e0/src/Microsoft.Extensions.Logging.AzureAppServices/AzureAppServicesDiagnosticsSettings.cs).
+Výchozí umístění pro soubory protokolu je v *D:\\domácí\\LogFiles\\aplikace* složku a výchozí název souboru je *diagnostiky yyyymmdd.txt*. Výchozí limit velikosti souboru je 10 MB a výchozí maximální počet souborů, které uchovávají se 2. Výchozí název objektu blob je *{app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt*. Další informace o výchozí chování najdete v tématu [AzureAppServicesDiagnosticsSettings](/dotnet/api/microsoft.extensions.logging.azureappservices.azureappservicesdiagnosticssettings).
 
-Zprostředkovatel funguje pouze při spuštění projektu v prostředí Azure. Nemá žádný vliv, pokud spouštíte místně &mdash; není zapsat do místních souborů nebo vývoj pro místní úložiště pro objekty BLOB.
+Zprostředkovatel funguje pouze při spuštění projektu v prostředí Azure. Nemá žádný vliv, pokud projekt běží místně&mdash;není zapsat do místních souborů nebo vývoj pro místní úložiště pro objekty BLOB.
 
 ## <a name="third-party-logging-providers"></a>Zprostředkovatelé třetí strany protokolování
 
 Rozhraní protokolování třetích stran, které pracují s ASP.NET Core:
 
 * [elmah.IO](https://elmah.io/) ([úložiště GitHub](https://github.com/elmahio/Elmah.Io.Extensions.Logging))
+* [Gelf](http://docs.graylog.org/en/2.3/pages/gelf.html) ([úložiště GitHub](https://github.com/mattwcole/gelf-extensions-logging))
 * [JSNLog](http://jsnlog.com/) ([úložiště GitHub](https://github.com/mperdeck/jsnlog))
 * [Loggr](http://loggr.net/) ([úložiště GitHub](https://github.com/imobile3/Loggr.Extensions.Logging))
 * [NLog](http://nlog-project.org/) ([úložiště GitHub](https://github.com/NLog/NLog.Extensions.Logging))
@@ -604,22 +600,21 @@ Další informace najdete v dokumentaci k každý framework.
 
 Vysílání datového proudu protokolů Azure umožňuje zobrazit aktivitu protokolu v reálném čase z: 
 
-* Aplikační server 
+* Aplikační server
 * Webový server
-* Trasování neúspěšných žádostí 
+* Trasování neúspěšných žádostí
 
-Postup konfigurace streamování protokolů Azure: 
+Postup konfigurace streamování protokolů Azure:
 
 * Přejděte na **protokolů diagnostiky** stránky ze stránky portálu vaší aplikace
-* Nastavit **protokolování aplikací (systém souborů)** na on. 
+* Nastavit **protokolování aplikací (systém souborů)** na on.
 
 ![Stránka Azure portálu diagnostických protokolů](index/_static/azure-diagnostic-logs.png)
 
-Přejděte na **vysílání datového proudu protokolu** stránky zobrazení zpráv aplikace. Jste přihlášení pomocí aplikace prostřednictvím `ILogger` rozhraní. 
+Přejděte na **vysílání datového proudu protokolu** stránky zobrazení zpráv aplikace. Jste přihlášení pomocí aplikace prostřednictvím `ILogger` rozhraní.
 
 ![Vysílání datového proudu protokolu aplikace portálu Azure](index/_static/azure-log-streaming.png)
 
-
-## <a name="see-also"></a>Viz také
+## <a name="additional-resources"></a>Další zdroje
 
 [Vysoce výkonné protokolování s LoggerMessage](xref:fundamentals/logging/loggermessage)

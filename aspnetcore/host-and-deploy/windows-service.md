@@ -10,12 +10,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 33493e1ff674cd81544a7d14a7fd758c1e68bf9a
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 5eba685bbe55d43bb063a01798bc691a1ba0d6fc
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252344"
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613083"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Jádro ASP.NET hostitele ve službě Windows
 
@@ -29,7 +29,16 @@ Aplikace ASP.NET Core může být hostovaný v systému Windows bez použití sl
 
 Následující minimální změny jsou nezbytné pro nastavení existujícího projektu ASP.NET Core spuštění ve službě:
 
-1. Přidat odkaz na balíček pro [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/).
+1. V souboru projektu:
+
+   1. Ověřte přítomnost identifikátor runtime nebo ho přidat do  **\<PropertyGroup >** cílové rozhraní, která obsahuje:
+      ```xml
+      <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+      </PropertyGroup>
+      ```
+   1. Přidat odkaz na balíček pro [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/).
 
 1. Proveďte následující změny v `Program.Main`:
 
@@ -174,9 +183,6 @@ Pokud vlastní `WebHostService` kódu vyžaduje službu z vkládání závislost
 
 Služby, které interakci s požadavky z Internetu nebo podnikové síti a jsou za proxy server nebo službu Vyrovnávání zatížení může vyžadovat další konfiguraci. Další informace najdete v tématu [konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
 
-## <a name="acknowledgments"></a>Potvrzování
+## <a name="kestrel-endpoint-configuration"></a>Konfigurace koncového bodu kestrel
 
-Tento článek byl napsán pomocí publikovaných zdrojů:
-
-* [Hostování ASP.NET Core jako služby systému Windows](https://stackoverflow.com/questions/37346383/hosting-asp-net-core-as-windows-service/37464074)
-* [Jak hostovat vaše základní technologie ASP.NET ve službě Windows](https://dotnetthoughts.net/how-to-host-your-aspnet-core-in-a-windows-service/)
+Informace o konfiguraci koncového bodu Kestrel, včetně konfigurace protokolu HTTPS a SNI podporu, najdete v části [konfigurace koncového bodu Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration).

@@ -12,11 +12,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: c88320c628f219652a2cb63a16b494661c481ffb
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: 073259aaca7b72ca8ac61b290499c627cb6489ae
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35612963"
 ---
 # <a name="use-the-react-project-template-with-aspnet-core"></a>Šablona projektu reagují pomocí ASP.NET Core
 
@@ -33,7 +34,16 @@ Aktualizovanou šablonu projektu reagují poskytuje příhodný výchozí bod pr
 
 ## <a name="create-a-new-app"></a>Vytvoření nové aplikace
 
-Pokud používáte technologii ASP.NET 2.0 jádra, ujistěte se, když jste [nainstalovat aktualizovanou šablonu projektu reagují](xref:spa/index#installation). Pokud máte 2.1 jádro ASP.NET, není nutné ji nainstalovat.
+::: moniker range="= aspnetcore-2.0"
+
+Pokud používáte technologii ASP.NET 2.0 jádra, ujistěte se, když jste [nainstalovat aktualizovanou šablonu projektu reagují](xref:spa/index#installation).
+
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+
+Pokud máte ASP.NET Core 2.1 nainstalovaný, není nutné k instalaci v šabloně projektů reagují.
+
+::: moniker-end
 
 Vytvoření nového projektu z příkazového řádku pomocí příkazu `dotnet new react` v prázdného adresáře. Můžete například vytvořit následující příkazy v aplikaci *-nové aplikace my* adresáře a přepnete se do této složky:
 
@@ -68,7 +78,7 @@ Spustit [dotnet spustit](/dotnet/core/tools/dotnet-run) a spusťte aplikaci.
 
 Jsou drobné rozdíly mezi reagují aplikace vytvořené pomocí této šablony a jeden vytvořené CRA sama o sobě; schopnosti aplikace jsou však beze změny. Obsahuje aplikace vytvořené pomocí šablony [Bootstrap](https://getbootstrap.com/)– na základě rozložení a základní příklad směrování.
 
-## <a name="install-npm-packages"></a>Instalovat balíčky npm
+## <a name="install-npm-packages"></a>Instalace balíčků npm
 
 Chcete-li instalovat balíčky jiných výrobců npm, použijte na příkazovém řádku ve *ClientApp* podadresáři. Příklad:
 

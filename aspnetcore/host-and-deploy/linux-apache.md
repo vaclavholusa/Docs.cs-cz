@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: b073f00469ada915244a2db71540fd7c971d55ea
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 38fcbb1b6691854eb6d5930fdcb789b1c67f4c70
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/15/2018
+ms.locfileid: "35652172"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Hostování v systému Linux s Apache ASP.NET Core
 
@@ -54,9 +55,9 @@ Reverzní proxy server je běžné instalační program pro obsluhující dynami
 
 Proxy server je takovou, která předá požadavky klientů na jiný server místo splnění požadavků sám sebe. Reverzní proxy server předává dlouhodobý cíl, obvykle jménem libovolného klientů. V této příručce je Apache nakonfigurovaný jako reverzní proxy server spuštěn na stejném serveru, aby Kestrel obsluhuje aplikace ASP.NET Core.
 
-Protože požadavky jsou předávány podle reverzní proxy server, použijte hlavičky Middleware předávány z [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) balíčku. Middleware aktualizace `Request.Scheme`pomocí `X-Forwarded-Proto` záhlaví, tak, že přesměrování identifikátory URI a jiné zásady zabezpečení pracovat správně.
+Protože požadavky jsou předávány podle reverzní proxy server, použijte [předané Middleware hlavičky](xref:host-and-deploy/proxy-load-balancer) z [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) balíčku. Middleware aktualizace `Request.Scheme`pomocí `X-Forwarded-Proto` záhlaví, tak, že přesměrování identifikátory URI a jiné zásady zabezpečení pracovat správně.
 
-Při použití jakéhokoli typu middleware ověřování, musíte spustit první Middleware předávaných hlavičky. Toto uspořádání zajistí, že ověřovací middleware může spotřebovávat hodnoty hlavičky a generovat správné přesměrování identifikátory URI.
+Všechny součásti, které závisí na schéma, jako je například ověřování, generování odkazů, přesměrování a informace o zeměpisné poloze, musí být umístěny po vyvolání hlavičky Middleware předávat. Obecně platí by měla předávat Middleware hlavičky spustit před další middleware s výjimkou diagnostiky a zpracování middleware chyb. Toto uspořádání zajistí, že middleware spoléhat na informace předávané hlavičky spotřebovat hodnoty hlavičky pro zpracování.
 
 ::: moniker range=">= aspnetcore-2.0"
 > [!NOTE]
@@ -135,13 +136,17 @@ Complete!
 > [!NOTE]
 > V tomto příkladu výstupu odráží httpd.86_64 vzhledem k tomu, že verze CentOS 7 je 64bitový. Pokud chcete ověřit, kde je nainstalován Apache, spusťte `whereis httpd` z příkazového řádku.
 
-### <a name="configure-apache-for-reverse-proxy"></a>Konfigurace Apache pro reverzní proxy server
+### <a name="configure-apache"></a>Konfigurace Apache
 
 Konfigurační soubory pro Apache se nacházejí v rámci `/etc/httpd/conf.d/` adresáře. Všechny soubory s *.conf* rozšíření jsou zpracovávány v abecedním pořadí kromě souborů konfigurace modulu v `/etc/httpd/conf.modules.d/`, která obsahuje všechny konfigurační soubory nezbytné k načtení moduly.
 
 Vytvoření konfiguračního souboru s názvem *hellomvc.conf*, pro aplikaci:
 
 ```
+<VirtualHost *:*>
+    RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+</VirtualHost>
+
 <VirtualHost *:80>
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
@@ -279,7 +284,7 @@ sudo firewall-cmd --add-port=443/tcp --permanent
 
 Znovu načte nastavení brány firewall. Zkontrolujte dostupné služby a porty ve výchozí zóně. Možnosti jsou k dispozici zkontrolováním `firewall-cmd -h`.
 
-```bash 
+```bash
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
 ```
@@ -303,6 +308,7 @@ Ke konfiguraci Apache pro protokol SSL, *mod_ssl* modul se používá. Když *ht
 ```bash
 sudo yum install mod_ssl
 ```
+
 Pokud chcete vynutit SSL, nainstalujte `mod_rewrite` modulu, chcete-li povolit přepisování adres URL:
 
 ```bash
@@ -312,10 +318,14 @@ sudo yum install mod_rewrite
 Změnit *hellomvc.conf* souboru povolit přepisování adres URL a zabezpečenou komunikaci na portu 443:
 
 ```
+<VirtualHost *:*>
+    RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+</VirtualHost>
+
 <VirtualHost *:80>
     RewriteEngine On
     RewriteCond %{HTTPS} !=on
-    RewriteRule ^/?(.*) https://%{SERVER_NAME}/ [R,L]
+    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 </VirtualHost>
 
 <VirtualHost *:443>
@@ -381,7 +391,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 
 Přidejte řádek `Header set X-Content-Type-Options "nosniff"`. Uložte soubor. Restartujte Apache.
 
-### <a name="load-balancing"></a>Vyrovnávání zatížení 
+### <a name="load-balancing"></a>Vyrovnávání zatížení
 
 Tento příklad ukazuje, jak nainstalovat a nakonfigurovat Apache na CentOS 7 a Kestrel na stejném počítači instance. Chcete-li nemá jediný bod selhání; pomocí *mod_proxy_balancer* a úprava **VirtualHost** by umožňoval správu více instancí webové aplikace za proxy serverem Apache.
 
@@ -392,10 +402,14 @@ sudo yum install mod_proxy_balancer
 V konfiguračním souboru vidíte níže, další instanci `hellomvc` aplikace je ke spuštění na portu 5001 instalace. *Proxy* části nastavena konfigurace služby Vyrovnávání se dva členy pro vyrovnávání zatížení *byrequests*.
 
 ```
+<VirtualHost *:*>
+    RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+</VirtualHost>
+
 <VirtualHost *:80>
     RewriteEngine On
     RewriteCond %{HTTPS} !=on
-    RewriteRule ^/?(.*) https://%{SERVER_NAME}/ [R,L]
+    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 </VirtualHost>
 
 <VirtualHost *:443>
@@ -424,6 +438,7 @@ V konfiguračním souboru vidíte níže, další instanci `hellomvc` aplikace j
 ```
 
 ### <a name="rate-limits"></a>Omezení přenosové rychlosti
+
 Pomocí *mod_ratelimit*, který je součástí *httpd* modulu, šířku pásma klientů může být omezen:
 
 ```bash
@@ -439,3 +454,7 @@ Příklad souboru omezení šířky pásma jako 600 KB/s v části umístění k
     </Location>
 </IfModule>
 ```
+
+## <a name="additional-resources"></a>Další zdroje
+
+* [Konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer)

@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: c61918d42b407b01484b67d740edc7a682c3a4b0
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 463c1c7b3aef624622e34943f1a7a518e658a037
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613031"
 ---
 # <a name="enable-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Povolit generování kód QR pro aplikace v ASP.NET Core
 
@@ -89,4 +90,4 @@ Je k dispozici v správně formátovaného adresa URL pro kód QR:
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP klientských a serverových čas zkosení
 
-Ověření TOTP závisí na serveru a ověřovací zařízení má přesnému času. Tokeny pouze trvat 30 sekund. Pokud se nedaří přihlášení 2FA TOTP, zkontrolujte, jestli čas serveru přesné a pokud možno synchronizovány s služby přesné NTP.
+Ověření TOTP (založené na čase jednorázové heslo) závisí na serveru a ověřovací zařízení má přesnému času. Tokeny pouze trvat 30 sekund. Pokud se nedaří přihlášení 2FA TOTP, zkontrolujte, jestli čas serveru přesné a pokud možno synchronizovány s služby přesné NTP.

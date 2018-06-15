@@ -12,11 +12,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: 244fece83279ae4d9ead9b345fcdd66ad6ed4225
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: b8ee7e1b401b16a240fa0373c58f0ee6a400d9f8
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35612976"
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>Použít šablonu úhlová projekt pomocí ASP.NET Core
 
@@ -33,7 +34,16 @@ ms.lasthandoff: 05/27/2018
 
 ## <a name="create-a-new-app"></a>Vytvoření nové aplikace
 
-Pokud používáte technologii ASP.NET 2.0 jádra, ujistěte se, když jste [nainstalován v šabloně projektů aktualizované úhlová](xref:spa/index#installation). Pokud máte 2.1 jádro ASP.NET, není nutné ji nainstalovat.
+::: moniker range="= aspnetcore-2.0"
+
+Pokud používáte technologii ASP.NET 2.0 jádra, ujistěte se, když jste [nainstalovat aktualizovanou šablonu projektu reagují](xref:spa/index#installation).
+
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+
+Pokud máte ASP.NET Core 2.1 nainstalovaný, není nutné k instalaci šablona úhlová projektu.
+
+::: moniker-end
 
 Vytvoření nového projektu z příkazového řádku pomocí příkazu `dotnet new angular` v prázdného adresáře. Můžete například vytvořit následující příkazy v aplikaci *-nové aplikace my* adresáře a přepnete se do této složky:
 
@@ -88,7 +98,7 @@ Pokud máte `ng` globálně nainstalovaný nástroj, můžete spustit některý 
 
 Pokud nemáte `ng` nástroj nainstalovali, spusťte `npm run ng` místo. Například můžete spustit `npm run ng lint` nebo `npm run ng test`.
 
-## <a name="install-npm-packages"></a>Instalovat balíčky npm
+## <a name="install-npm-packages"></a>Instalace balíčků npm
 
 Chcete-li instalovat balíčky jiných výrobců npm, použijte na příkazovém řádku ve *ClientApp* podadresáři. Příklad:
 

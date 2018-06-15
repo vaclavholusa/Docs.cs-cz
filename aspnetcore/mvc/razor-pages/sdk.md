@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: mvc/razor-pages/sdk
-ms.openlocfilehash: cf0e1873c7ce500ce3b8ad2b3367555bdc41a576
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: 5217f17045a0fec09a8a67b4c9f132b1cebeaf1e
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35612876"
 ---
 # <a name="aspnet-core-razor-sdk"></a>Jádro ASP.NET Razor SDK
 
@@ -87,3 +88,9 @@ Sada SDK Razor definuje dva hlavní cíle:
 
 * `RazorGenerate` – Generuje kód *.cs* soubory z RazorGenerate položky elementy. Použití `RazorGenerateDependsOn` vlastnosti a určit další cílem, který můžete spustit před nebo po tento cíl.
 * `RazorCompile` -Zkompiluje generované *.cs* soubory do sestavení Razor. Použití `RazorCompileDependsOn` k určení dalších cíle, které můžete spustit před nebo po tento cíl.
+
+### <a name="runtime-compilation-of-razor-views"></a>Kompilace runtime zobrazení syntaxe Razor
+
+* Ve výchozím nastavení není Razor SDK publikovat referenční sestavení, která jsou potřebná k provedení kompilace runtime. Výsledkem je kompilace selhání při aplikačního modelu spoléhá na kompilace runtime&mdash;například aplikace používá vložený zobrazení nebo změny zobrazení po publikování aplikace. Nastavit `CopyRefAssembliesToPublishDirectory` k `true` můžete pokračovat v publikování referenční sestavení.
+
+* U webových aplikací, zkontrolujte cílí aplikace `Microsoft.NET.Sdk.Web` SDK.

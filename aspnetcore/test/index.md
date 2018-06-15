@@ -5,27 +5,46 @@ description: Odkazy na zdroje informací pro účely testování a ladění apli
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/24/2018
+ms.date: 06/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: test/index
-ms.openlocfilehash: 79d2d3adb806e88262cabad2cbc2d48f10d79a5b
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 61c94d71a820a89e6f6561fdacee0c2e6c129a41
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729792"
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613070"
 ---
 # <a name="test-debug-and-troubleshoot-in-aspnet-core"></a>Testování, ladění a odstraňování potíží v ASP.NET Core
 
-* [Testování jednotek](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [Integrační testy](xref:test/integration-tests)
-* [Testování částí stránky Razor](xref:test/razor-pages-tests)
-* [Testovací kontrolery](xref:mvc/controllers/testing)
-* [Ladění ASP.NET Core 2.x zdroje](https://github.com/aspnet/Docs/issues/4155)
-* [Vzdálené ladění](/visualstudio/debugger/remote-debugging-azure)
-* [Ladění snímků](/azure/application-insights/app-insights-snapshot-debugger)
-* [NDC konference (Londýn, 2018): Diagnostika problémů s v aplikacích ASP.NET Core](https://www.youtube.com/watch?v=RYI0DHoIVaA)
-* [ASP.NET Blog: Řešení potíží s problémy s výkonem ASP.NET Core](https://blogs.msdn.microsoft.com/webdev/2018/05/23/asp-net-core-performance-improvements/)
-* [Řešení potíží](xref:test/troubleshoot)
+## <a name="test"></a>Test
+
+[V .NET Core a .NET Standard testování částí](/dotnet/articles/core/testing/)  
+V tématu Jak používat v .NET Core a .NET Standard projektů testování částí.
+
+[Integrační testy](xref:test/integration-tests)  
+Zjistěte, jak integrace testy ujistit, že součásti aplikace správně fungovat na úrovni infrastruktury, včetně databáze, systém souborů a sítě.
+
+[Testování částí stránky Razor](xref:test/razor-pages-tests)  
+Zjistit, jak vytvářet testy částí pro stránky Razor aplikace.
+
+[Testovací kontrolery](xref:mvc/controllers/testing)  
+Zjistěte, jak otestovat řadiče logiku v ASP.NET Core s Moq a xUnit.
+
+## <a name="debug"></a>Ladit
+
+[Ladění ASP.NET Core 2.x zdroje](https://github.com/aspnet/Docs/issues/4155)  
+Zjistěte, jak k ladění zdroje rozhraní .NET Core a ASP.NET Core.
+
+[Vzdálené ladění](/visualstudio/debugger/remote-debugging-azure)  
+Zjistit, jak nastavit a konfigurace aplikace Visual Studio 2017 ASP.NET Core, ho nasadit do Azure pomocí služby IIS a připojení vzdáleného ladicího programu sady Visual Studio.
+
+[Ladění snímků](/azure/application-insights/app-insights-snapshot-debugger)  
+Zjistěte, jak shromažďování snímků na vaše horní vyvolání výjimky tak, aby informace, že potřebujete diagnostikovat problémy v produkčním prostředí.
+
+## <a name="troubleshoot"></a>Řešení potíží
+
+[Řešení potíží](xref:test/troubleshoot)  
+Rady pro pochopení a řešení potíží s upozornění a chyby s projekty ASP.NET Core.

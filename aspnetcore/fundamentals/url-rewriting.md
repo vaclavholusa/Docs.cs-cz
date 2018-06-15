@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: a021c1e133bac6676859f5bf8eb01f3a7a8c63ed
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: a4ffa512825fedafdc58ade9929097e255593fa9
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729249"
+ms.lasthandoff: 06/15/2018
+ms.locfileid: "35652211"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware v ASP.NET Core přepisování adres URL
 
@@ -156,7 +156,7 @@ public void Configure(IApplicationBuilder app)
 ```
 
 > [!NOTE]
-> Při přesměrování na HTTPS na portu 443 bez nutnosti další přesměrování pravidla, doporučujeme používat protokol HTTPS přesměrování Middleware. Další informace najdete v tématu [vynutit HTTPS](xref:security/enforcing-ssl#require-https) tématu.
+> Při přesměrování na HTTPS bez nutnosti další přesměrování pravidla, doporučujeme používat protokol HTTPS přesměrování Middleware. Další informace najdete v tématu [vynutit HTTPS](xref:security/enforcing-ssl#require-https) tématu.
 
 Ukázková aplikace je schopen který ukazuje, jak používat `AddRedirectToHttps` nebo `AddRedirectToHttpsPermanent`. Add – metoda rozšíření pro `RewriteOptions`. Proveďte požadavek nezabezpečené aplikace na všechny adresy URL. Zavření prohlížeče zabezpečení upozornění, že není důvěryhodný certifikát podepsaný svým držitelem nebo vytvořte výjimku důvěřovat certifikátu.
 

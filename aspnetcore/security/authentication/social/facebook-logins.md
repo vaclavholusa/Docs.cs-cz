@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: cabb5acc6e593c02c20b3403b39c601ce26a4d99
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: f9c28930c1f8a9c54792a2f689d890f16d795a55
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688980"
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613106"
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>Instalační program externí přihlášení sítě Facebook v ASP.NET Core
 
@@ -47,6 +47,9 @@ V tomto kurzu se dozvíte, jak povolit uživatelům se přihlásit pomocí účt
 ![Stránka OAuth nastavení klienta](index/_static/FBOAuthSetup.png)
 
 * Zadejte váš vývojový identifikátor URI s */signin-facebook* připojí do **identifikátory URI pro přesměrování platný OAuth** pole (například: `https://localhost:44320/signin-facebook`). Ověřování Facebook nakonfigurované později v tomto kurzu bude automaticky zpracovávat požadavky na */signin-facebook* trasy k implementaci toku OAuth.
+
+> [!NOTE]
+> Identifikátor URI */signin-facebook* je nastaven jako výchozí zpětného volání zprostředkovatele ověřování sítě Facebook. Můžete změnit výchozí identifikátor URI zpětného volání při konfiguraci middleware ověřování Facebook prostřednictvím zděděnou [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) vlastnost [FacebookOptions](/dotnet/api/microsoft.aspnetcore.authentication.facebook.facebookoptions) Třída.
 
 * Klikněte na tlačítko **uložit změny**.
 

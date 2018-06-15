@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: 69ce182855878e4d05bff95139fefb9e1312f3d5
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 48a25b7ba7affe84cfa6fe16096409239c510221
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252071"
+ms.lasthandoff: 06/15/2018
+ms.locfileid: "35652185"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>Vynutit HTTPS v ASP.NET Core
 
@@ -48,8 +48,8 @@ Následující kód volání [AddHttpsRedirection](/dotnet/api/microsoft.aspnetc
 
 Předchozí zvýrazněný kód:
 
-* Nastaví [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode).
-* Nastaví HTTPS port 5001.
+* Nastaví [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) k `Status307TemporaryRedirect`, což je výchozí hodnota. Produkční aplikace by měly volat [UseHsts](#hsts).
+* Nastaví HTTPS port 5001. Výchozí hodnota je 443.
 
 Automaticky nastavit port následujících mechanismů:
 
@@ -77,6 +77,11 @@ Pokud je nastaven žádný port:
 * Požadavky nejsou přesměrovat.
 * Middleware zaznamená upozornění.
 
+> [!NOTE]
+> Alternativu k použití protokolu HTTPS přesměrování Middleware (`UseHttpsRedirection`), je použít Middleware přepisování adresy URL (`AddRedirectToHttps`). `AddRedirectToHttps` Můžete také nastavit stavový kód a portu při přesměrování. Další informace najdete v tématu [URL přepisování Middleware](xref:fundamentals/url-rewriting).
+>
+> Při přesměrování na HTTPS bez nutnosti další přesměrování pravidla, doporučujeme používat protokol HTTPS přesměrování Middleware (`UseHttpsRedirection`) popsané v tomto tématu.
+
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.1"
@@ -89,7 +94,7 @@ Předchozí zvýrazněný vyžaduje všechny požadavky používat `HTTPS`; prot
 
 [!code-csharp[](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-999)]
 
-Další informace najdete v tématu [URL přepisování Middleware](xref:fundamentals/url-rewriting).
+Další informace najdete v tématu [URL přepisování Middleware](xref:fundamentals/url-rewriting). Middleware taky umožňuje aplikaci a nastavte stavový kód nebo kód stavu a port, když se spustí přesměrování.
 
 Globálně vyžadujících protokol HTTPS (`options.Filters.Add(new RequireHttpsAttribute());`) je nejlepším postupem zabezpečení. Použití `[RequireHttps]` atribut na všechny řadiče nebo Razor stránky se nepovažuje za bezpečnou jako jako globální vyžadujících protokol HTTPS. Nebudete moct zaručit `[RequireHttps]` atribut se používá, když se přidají nové řadiče a stránky Razor.
 

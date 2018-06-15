@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: 0c66b700f9bb3e6349fe2e0c8a7e254b8e7903a5
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: c8d5a63948aed0630d677ad3c0a40fb07ddc62af
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613122"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>Pomocné rutiny značky v ASP.NET Core
 
@@ -67,11 +68,11 @@ Značka pomocné rutiny oboru řídí kombinaci `@addTagHelper`, `@removeTagHelp
 
 ### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper` zpřístupní značky pomocné rutiny
 
-Pokud vytvoříte novou webovou aplikaci ASP.NET Core s názvem *AuthoringTagHelpers* (bez jakéhokoli ověřování), následující *Views/_ViewImports.cshtml* soubor bude přidán do projektu:
+Pokud vytvoříte novou webovou aplikaci ASP.NET Core s názvem *AuthoringTagHelpers*, následující *Views/_ViewImports.cshtml* soubor bude přidán do projektu:
 
 [!code-cshtml[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
-`@addTagHelper` – Direktiva zpřístupní Pomocníci značky k zobrazení. V takovém případě je soubor zobrazení *Views/_ViewImports.cshtml*, který ve výchozím nastavení dědí všechny soubory zobrazení v *zobrazení* složku a podadresářích; zpřístupnění značky pomocné rutiny. Výše uvedený kód používá syntaxi zástupný znak ("\*") Chcete-li určit, že všechny značky pomocníky v zadaném sestavení (*Microsoft.AspNetCore.Mvc.TagHelpers*) bude k dispozici pro každý soubor zobrazení v *zobrazení* nebo dílčí adresáři. První parametr po `@addTagHelper` určuje značky Pomocníci načíst (používáme "\*" pro všechny značky pomocníky), a druhý parametr "Microsoft.AspNetCore.Mvc.TagHelpers" Určuje sestavení obsahující pomocné rutiny značky. *Microsoft.AspNetCore.Mvc.TagHelpers* je sestavení pro předdefinované Pomocníci značky základní technologie ASP.NET.
+`@addTagHelper` – Direktiva zpřístupní Pomocníci značky k zobrazení. V takovém případě je soubor zobrazení *Pages/_ViewImports.cshtml*, který ve výchozím nastavení dědí všechny soubory v *stránky* složky a podsložky; zpřístupnění značky pomocné rutiny. Výše uvedený kód používá syntaxi zástupný znak ("\*") Chcete-li určit, že všechny značky pomocníky v zadaném sestavení (*Microsoft.AspNetCore.Mvc.TagHelpers*) bude k dispozici pro každý soubor zobrazení v *zobrazení* nebo dílčí adresáři. První parametr po `@addTagHelper` určuje značky Pomocníci načíst (používáme "\*" pro všechny značky pomocníky), a druhý parametr "Microsoft.AspNetCore.Mvc.TagHelpers" Určuje sestavení obsahující pomocné rutiny značky. *Microsoft.AspNetCore.Mvc.TagHelpers* je sestavení pro předdefinované Pomocníci značky základní technologie ASP.NET.
 
 Ke zveřejnění všechny značky Pomocníci v tomto projektu (která vytvoří sestavení s názvem *AuthoringTagHelpers*), byste použili následující:
 

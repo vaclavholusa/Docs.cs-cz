@@ -1,13 +1,13 @@
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a><span data-ttu-id="7bc10-101">Další kroky</span><span class="sxs-lookup"><span data-stu-id="7bc10-101">Next steps</span></span>
 
-* Informace o použití trvalé databáze najdete v tématu:
+* <span data-ttu-id="7bc10-102">Informace o použití trvalé databáze najdete v tématu:</span><span class="sxs-lookup"><span data-stu-id="7bc10-102">For information on using a persistent database, see:</span></span>
 
-  * [Vytvoření stránky Razor webové aplikace s ASP.NET Core](xref:tutorials/index)
-  * [Práce s daty v ASP.NET Core](xref:data/index)
+  * [<span data-ttu-id="7bc10-103">Vytvoření stránky Razor webové aplikace s ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7bc10-103">Create a Razor Pages web app with ASP.NET Core</span></span>](xref:tutorials/index)
+  * [<span data-ttu-id="7bc10-104">Práce s daty v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7bc10-104">Work with data in ASP.NET Core</span></span>](xref:data/index)
 
-* [Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger](xref:tutorials/web-api-help-pages-using-swagger)
-* [Směrování na akce kontroleru](xref:mvc/controllers/routing)
-* [Sestavení webového rozhraní API pomocí ASP.NET Core](xref:web-api/index)
-* [Návratové typy akcí kontroleru](xref:web-api/action-return-types)
-* Informace o nasazení rozhraní API, včetně do služby Azure App Service naleznete v části [hostitele a nasazení](xref:host-and-deploy/index).
-* [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/samples). V tématu [stažení](xref:tutorials/index#how-to-download-a-sample).
+* [<span data-ttu-id="7bc10-105">Stránky nápovědy k webovému rozhraní API technologie ASP.NET Core využívající Swagger</span><span class="sxs-lookup"><span data-stu-id="7bc10-105">ASP.NET Core Web API help pages using Swagger</span></span>](xref:tutorials/web-api-help-pages-using-swagger)
+* [<span data-ttu-id="7bc10-106">Směrování na akce kontroleru</span><span class="sxs-lookup"><span data-stu-id="7bc10-106">Routing to controller actions</span></span>](xref:mvc/controllers/routing)
+* [<span data-ttu-id="7bc10-107">Sestavení webového rozhraní API pomocí ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7bc10-107">Build web APIs with ASP.NET Core</span></span>](xref:web-api/index)
+* [<span data-ttu-id="7bc10-108">Návratové typy akcí kontroleru</span><span class="sxs-lookup"><span data-stu-id="7bc10-108">Controller action return types</span></span>](xref:web-api/action-return-types)
+* <span data-ttu-id="7bc10-109">Informace o nasazení rozhraní API, včetně do služby Azure App Service naleznete v části [hostitele a nasazení](xref:host-and-deploy/index).</span><span class="sxs-lookup"><span data-stu-id="7bc10-109">For information about deploying an API, including to Azure App Service, see [Host and deploy](xref:host-and-deploy/index).</span></span>
+* <span data-ttu-id="7bc10-110">[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/samples).</span><span class="sxs-lookup"><span data-stu-id="7bc10-110">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/samples).</span></span> <span data-ttu-id="7bc10-111">V tématu [stažení](xref:tutorials/index#how-to-download-a-sample).</span><span class="sxs-lookup"><span data-stu-id="7bc10-111">See [how to download](xref:tutorials/index#how-to-download-a-sample).</span></span>

@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: 48a25b7ba7affe84cfa6fe16096409239c510221
-ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
+ms.openlocfilehash: f49a7846149385125390285e2f1332d8e40642c0
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/15/2018
-ms.locfileid: "35652185"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725933"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>Vynutit HTTPS v ASP.NET Core
 
@@ -111,7 +111,7 @@ Implementuje HSTS s ASP.NET Core 2.1 nebo vyšší `UseHsts` metoda rozšířen�
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=10)]
 
-`UseHsts` není doporučujeme při vývoji protože záhlaví HSTS je vysoce cachable pomocí prohlížeče. Ve výchozím nastavení vyloučí UseHsts adresu místní smyčky.
+`UseHsts` není doporučeno, vývojem protože záhlaví HSTS je vysoce lze uložit do mezipaměti prohlížeče. Ve výchozím nastavení `UseHsts` vyloučí adresu místní smyčky.
 
 Následující kód:
 

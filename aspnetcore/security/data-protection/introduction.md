@@ -9,17 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/introduction
-ms.openlocfilehash: 5526b517ba9f1ac4b041576156b2964217460726
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 56876f43ed48b577f4d870825fd9230f526baec3
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725949"
 ---
 # <a name="aspnet-core-data-protection"></a>Ochrana dat ASP.NET Core
 
 Webové aplikace často potřebují k ukládání dat citlivé na zabezpečení. Windows poskytuje rozhraní DPAPI pro aplikací klasické pracovní plochy, ale to není vhodná pro webové aplikace. Zásobník ochrany dat ASP.NET Core poskytují jednoduchý a snadno použitelný API kryptografických vývojář může použít k ochraně dat, včetně správy klíčů a otočení.
 
-Zásobník ochrany dat ASP.NET Core slouží k sloužit jako dlouhodobé náhradou <machineKey> element technologie ASP.NET 1.x - 4.x. Byla navržená tak, aby vyřešit řadu nedostatků starý kryptografický zásobníku při současném poskytování out-of-the-box řešení pro většinu případů použití, které moderní aplikace jsou setkat.
+Zásobník ochrany dat ASP.NET Core slouží k sloužit jako dlouhodobé náhradou &lt;machineKey&gt; element technologie ASP.NET 1.x - 4.x. Byla navržená tak, aby vyřešit řadu nedostatků starý kryptografický zásobníku při současném poskytování out-of-the-box řešení pro většinu případů použití, které moderní aplikace jsou setkat.
 
 ## <a name="problem-statement"></a>Stanovení problému
 
@@ -75,6 +76,6 @@ Zásobník ochrany dat se skládá z pěti balíčky.
 
 * Microsoft.AspNetCore.DataProtection.Extensions obsahuje další rozhraní API, které vývojáři mohou být užitečné, ale které nepatří do základní balíček. Například tento balíček obsahuje jednoduché "doložit systému odkazující na adresář konkrétní úložiště klíčů se žádné nastavení vkládání závislostí" rozhraní API (Další informace o). Také obsahuje rozšiřující metody pro omezení délky trvání chráněných datových částí (Další informace o).
 
-* Microsoft.AspNetCore.DataProtection.SystemWeb lze nainstalovat do stávající aplikaci ASP.NET 4.x přesměrování jeho <machineKey> na místo toho použijte novým zásobníkem ochrany dat operací. V tématu [kompatibility](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey) Další informace.
+* Microsoft.AspNetCore.DataProtection.SystemWeb lze nainstalovat do stávající aplikaci ASP.NET 4.x přesměrování jeho &lt;machineKey&gt; na místo toho použijte novým zásobníkem ochrany dat operací. V tématu [kompatibility](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey) Další informace.
 
 * Microsoft.AspNetCore.Cryptography.KeyDerivation poskytuje implementaci pro hashování rutiny hesel PBKDF2 a mohou být využívána systémy, které je třeba zpracovat uživatelská hesla bezpečně. V tématu [hodnoty Hash hesla](xref:security/data-protection/consumer-apis/password-hashing) Další informace.

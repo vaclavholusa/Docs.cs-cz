@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: 3f59f7d1bf0280cef8f7757e8cd57d4872769b3d
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 440695f98714f33cff9e4bf97bfc09477901e14c
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688993"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725988"
 ---
 # <a name="twitter-external-login-setup-with-aspnet-core"></a>Instalační program služby Twitter externí přihlášení pomocí ASP.NET Core
 
@@ -32,7 +32,10 @@ V tomto kurzu se dozvíte, jak povolit uživatelům [přihlásit pomocí svého 
 
 ![Vytvoření stránky aplikace](index/_static/TwitterCreate.png)
 
-* Zadejte váš vývojový identifikátor URI s */signin-twitter* připojí do **identifikátory URI pro přesměrování platný OAuth** pole (například: `https://localhost:44320/signin-twitter`). Schéma ověřování služby Twitter nakonfigurované později v tomto kurzu bude automaticky zpracovávat požadavky na */signin-twitter* trasy k implementaci toku OAuth.
+* Zadejte váš vývojový identifikátor URI s `/signin-twitter` připojí do **identifikátory URI pro přesměrování platný OAuth** pole (například: `https://localhost:44320/signin-twitter`). Schéma ověřování služby Twitter nakonfigurované později v tomto kurzu bude automaticky zpracovávat požadavky na `/signin-twitter` trasy k implementaci toku OAuth.
+
+> [!NOTE]
+> Segment identifikátoru URI `/signin-twitter` je nastaven jako výchozí zpětného volání zprostředkovatele ověřování služby Twitter. Můžete změnit výchozí identifikátor URI zpětného volání při konfiguraci middleware ověřování služby Twitter prostřednictvím zděděnou [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) vlastnost [TwitterOptions](/dotnet/api/microsoft.aspnetcore.authentication.twitter.twitteroptions) Třída.
 
 * Vyplňte zbytek formuláře a klepněte na **vytvořit aplikaci služby Twitter**. Podrobnosti o nové aplikace se zobrazí:
 

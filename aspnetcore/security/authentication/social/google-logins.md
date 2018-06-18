@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/google-logins
-ms.openlocfilehash: ccb771dbefefb007aede1bdf05ab50ec363a3089
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 878c0b16e24f48a0ee84f93393af67af1728e284
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689032"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725962"
 ---
 # <a name="google-external-login-setup-in-aspnet-core"></a>Instalační program externí přihlášení Google v ASP.NET Core
 
@@ -61,7 +61,10 @@ V tomto kurzu se dozvíte, jak povolit uživatelům přihlásit se pomocí účt
 
 * Protože vytváříme projektu Google + s jedním funkcí (přihlášení), můžeme zadat stejný **název** pro ID klienta OAuth 2.0, jako jsme použili pro projekt.
 
-* Zadejte váš vývojový identifikátor URI s */signin-google* připojí do **autorizováno přesměrování identifikátory URI** pole (například: `https://localhost:44320/signin-google`). Ověřování Google nakonfigurované později v tomto kurzu bude automaticky zpracovávat požadavky na */signin-google* trasy k implementaci toku OAuth.
+* Zadejte váš vývojový identifikátor URI s `/signin-google` připojí do **autorizováno přesměrování identifikátory URI** pole (například: `https://localhost:44320/signin-google`). Ověřování Google nakonfigurované později v tomto kurzu bude automaticky zpracovávat požadavky na `/signin-google` trasy k implementaci toku OAuth.
+
+> [!NOTE]
+> Segment identifikátoru URI `/signin-google` je nastaven jako výchozí zpětného volání zprostředkovatele ověřování Google. Můžete změnit výchozí identifikátor URI zpětného volání při konfiguraci middleware ověřování Google prostřednictvím zděděnou [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) vlastnost [GoogleOptions](/dotnet/api/microsoft.aspnetcore.authentication.google.googleoptions) třídy.
 
 * Stisknutím klávesy TAB přidat **autorizováno přesměrování identifikátory URI** položku.
 

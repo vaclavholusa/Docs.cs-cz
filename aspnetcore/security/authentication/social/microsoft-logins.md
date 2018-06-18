@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: a9bf7b49b1cfdfff65c639eed1e14c94c5432350
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 46973f8a82034bd99a6e6634bbd6da06b1b14f25
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689019"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35726027"
 ---
 # <a name="microsoft-account-external-login-setup-with-aspnet-core"></a>Nastavení Microsoft Account externí přihlášení pomocí ASP.NET Core
 
@@ -46,9 +46,12 @@ Pokud nemáte účet Microsoft, klepněte na  **[vytvořit!](https://signup.live
 
 ![Přidejte platformu dialogové okno](index/_static/MicrosoftDevAppPlatform.png)
 
-* V novém **webové** platformy zadejte URL vývoj s */signin-microsoft* připojí do **adres URL pro přesměrování** pole (například: `https://localhost:44320/signin-microsoft`). Schéma ověřování Microsoft nakonfigurované později v tomto kurzu bude automaticky zpracovávat požadavky na */signin-microsoft* trasy k implementaci toku OAuth:
+* V novém **webové** platformy zadejte URL vývoj s `/signin-microsoft` připojí do **adres URL pro přesměrování** pole (například: `https://localhost:44320/signin-microsoft`). Schéma ověřování Microsoft nakonfigurované později v tomto kurzu bude automaticky zpracovávat požadavky na `/signin-microsoft` trasy k implementaci toku OAuth:
 
 ![Webové části platforma](index/_static/MicrosoftRedirectUri.png)
+
+> [!NOTE]
+> Segment identifikátoru URI `/signin-microsoft` je nastaven jako výchozí zpětného volání zprostředkovatele ověřování společnosti Microsoft. Můžete změnit výchozí identifikátor URI zpětného volání při konfiguraci middlewaru ověřování Microsoft prostřednictvím zděděnou [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) vlastnost [MicrosoftAccountOptions](/dotnet/api/microsoft.aspnetcore.authentication.microsoftaccount.microsoftaccountoptions) třídy.
 
 * Klepněte na **přidat adresu URL** aby adresa URL byla přidána.
 

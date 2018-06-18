@@ -1,7 +1,7 @@
 ---
 title: Konfigurace v ASP.NET Core
 author: rick-anderson
-description: Použijte rozhraní API konfigurace pro konfiguraci aplikace ASP.NET Core několik metod.
+description: Naučte se používat rozhraní API konfigurace ke konfiguraci aplikace ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 10653764e6fa02bdd0551e493eb5353fe0440fac
-ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
+ms.openlocfilehash: a146991945add3c1299633db2147edbc63d3bc40
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/14/2018
-ms.locfileid: "35613135"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725975"
 ---
 # <a name="configuration-in-aspnet-core"></a>Konfigurace v ASP.NET Core
 

@@ -10,18 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: e7a2cf3633ed48a0d2030739cdc092441fcae2ff
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 80cd39af61e856d3ce92db1c26e70788bcdca83d
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252032"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725816"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>Identita vygenerované uživatelské rozhraní ve projektů ASP.NET Core
 
 podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Poskytuje ASP.NET Core, 2,1 a novější [ASP.NET Core Identity](xref:security/authentication/identity) jako [knihovny tříd Razor](xref:mvc/razor-pages/ui-class). Aplikace, které zahrnují Identity můžete použít scaffolder selektivně přidat zdrojový kód obsažené v Identity Razor třídu knihovny (RCL). Můžete chtít generovat zdrojový kód, abyste mohli upravit kód a změnit chování. Například může vyzvat scaffolder ke generování kódu použít v registraci. Generovaného kódu mají přednost před stejný kód v Identity RCL.
+Poskytuje ASP.NET Core, 2,1 a novější [ASP.NET Core Identity](xref:security/authentication/identity) jako [knihovny tříd Razor](xref:mvc/razor-pages/ui-class). Aplikace, které zahrnují Identity můžete použít scaffolder selektivně přidat zdrojový kód obsažené v Identity Razor třídu knihovny (RCL). Můžete chtít generovat zdrojový kód, abyste mohli upravit kód a změnit chování. Například může vyzvat scaffolder ke generování kódu použít v registraci. Generovaného kódu mají přednost před stejný kód v Identity RCL. Pokud chcete získat úplné řízení pro uživatelské rozhraní a nechcete použít výchozí RCL, najdete v části [vytvořit úplné identity uživatelského rozhraní zdroj](#full).
 
 Aplikace, které provádějí **není** zahrnují ověřování můžete použít k přidání balíčku RCL Identity scaffolder. Máte možnost výběru Identity kódu má být vygenerován.
 
@@ -144,3 +144,24 @@ dotnet aspnet-codegenerator identity -dc MvcAuth.Data.ApplicationDbContext --fil
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
 
 Odstranit *stránky a sdílených* složky a soubory v této složce.
+
+<a name="full"></a>
+
+## <a name="create-full-identity-ui-source"></a>Vytvořte zdroj úplné identity uživatelského rozhraní
+
+Pokud chcete zachovat plnou kontrolu nad rozhraní Identity, spusťte Identity scaffolder a vyberte **přepsat všechny soubory**.
+
+Následující zvýrazněný kód ukazuje změny výchozího uživatelského rozhraní Identity nahraďte Identity ve webové aplikaci ASP.NET Core 2.1. Můžete k tomu má plnou kontrolu nad rozhraní Identity.
+
+[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet1&highlight=13-14,17-999)]
+
+Výchozí hodnota Identity je nahrazena v následujícím kódu: [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet2)]
+
+Následující kód konfiguruje ASP.NET Core autorizovat Identity stránek, které vyžadují autorizace: [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+
+Následující kód nastaví soubor cookie Identity používat správnou cestu stránky Identity.
+[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+
+Zaregistrovat `IEmailSender` implementace, například:
+
+[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet4)]

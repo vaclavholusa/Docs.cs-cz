@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control
-title: "[Jak na:] Použití řízení stavu uchovávat informace pro ovládací prvek vlastní webový Server | Microsoft Docs"
+title: '[Jak na:] Použití řízení stavu uchovávat informace pro ovládací prvek vlastní webový Server | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se Jan PEL ukazují, jak k ukládání informací souvisejících s do ovládacího prvku vlastní webový server ve stavu ovládacího prvku, což je nezávislá ViewState..."
+description: V tomto videu se Jan PEL ukazují, jak k ukládání informací souvisejících s do ovládacího prvku vlastní webový server ve stavu ovládacího prvku, což je nezávislá ViewState...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/17/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572170"
 ---
 <a name="how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control"></a><span data-ttu-id="75f9f-103">[Jak na:] Použití ovládacího prvku stavu uchovávat informace pro ovládací prvek vlastní webový Server</span><span class="sxs-lookup"><span data-stu-id="75f9f-103">[How Do I:] Use Control State to Persist Information for a Custom Web Server Control</span></span>
 ====================

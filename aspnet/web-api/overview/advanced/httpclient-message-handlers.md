@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/httpclient-message-handlers
-title: "Obslužné rutiny zpráv HttpClient v rozhraní ASP.NET Web API | Microsoft Docs"
+title: Obslužné rutiny zpráv HttpClient v rozhraní ASP.NET Web API | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566341"
 ---
 <a name="httpclient-message-handlers-in-aspnet-web-api"></a><span data-ttu-id="ef0f3-102">Obslužné rutiny zpráv HttpClient v rozhraní ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="ef0f3-102">HttpClient Message Handlers in ASP.NET Web API</span></span>
 ====================

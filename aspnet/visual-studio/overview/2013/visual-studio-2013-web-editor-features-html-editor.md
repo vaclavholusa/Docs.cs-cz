@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2013/visual-studio-2013-web-editor-features-html-editor
-title: "Visual Studio 2013 webové Editor funkce – HTML Editor | Microsoft Docs"
+title: Visual Studio 2013 webové Editor funkce – HTML Editor | Microsoft Docs
 author: madskristensen
-description: "Mads Kristensen ukazuje vypnout funkce editor HTML v sadě Visual Studio 2013, včetně úplné IntelliSense pro elementy HTML, všechny třídy CSS a ID, která ve vašem projektu..."
+description: Mads Kristensen ukazuje vypnout funkce editor HTML v sadě Visual Studio 2013, včetně úplné IntelliSense pro elementy HTML, všechny třídy CSS a ID, která ve vašem projektu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 5a6b4558-0555-4cac-99c7-06865169007f
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-html-editor
 msc.type: video
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566320"
 ---
 <a name="visual-studio-2013-web-editor-features---html-editor"></a><span data-ttu-id="9e6d0-103">Visual Studio 2013 webové Editor funkce – HTML Editor</span><span class="sxs-lookup"><span data-stu-id="9e6d0-103">Visual Studio 2013 Web Editor Features - HTML Editor</span></span>
 ====================

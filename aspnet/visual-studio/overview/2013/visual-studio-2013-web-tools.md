@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "26566443"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a><span data-ttu-id="ee2e4-104">Rukou na testovacího prostředí: Visual Studio 2013 nástroje pro Web</span><span class="sxs-lookup"><span data-stu-id="ee2e4-104">Hands On Lab: Visual Studio 2013 Web Tools</span></span>
 ====================
@@ -302,7 +303,7 @@ ms.lasthandoff: 04/10/2018
     <span data-ttu-id="ee2e4-291">![Úpravy na otázku](visual-studio-2013-web-tools/_static/image28.png "úpravy na otázku")</span><span class="sxs-lookup"><span data-stu-id="ee2e4-291">![Editing the question](visual-studio-2013-web-tools/_static/image28.png "Editing the question")</span></span>
 
     <span data-ttu-id="ee2e4-292">*Úpravy na otázku*</span><span class="sxs-lookup"><span data-stu-id="ee2e4-292">*Editing the question*</span></span>
-3. <span data-ttu-id="ee2e4-293">Kurzor by se zobrazit.</span><span class="sxs-lookup"><span data-stu-id="ee2e4-293">A cursor should appear.</span></span> <span data-ttu-id="ee2e4-294">Nahradí původní text s *jak ho vypadá při psaní delší otázku?*a potom stiskněte klávesu **ESC** ukončíte režimu návrhu.</span><span class="sxs-lookup"><span data-stu-id="ee2e4-294">Replace the original text with *What does it look like when I write a longer question?*, and then press **ESC** to exit Design Mode.</span></span>
+3. <span data-ttu-id="ee2e4-293">Kurzor by se zobrazit.</span><span class="sxs-lookup"><span data-stu-id="ee2e4-293">A cursor should appear.</span></span> <span data-ttu-id="ee2e4-294">Nahradí původní text s *jak ho vypadá při psaní delší otázku?* a potom stiskněte klávesu **ESC** ukončíte režimu návrhu.</span><span class="sxs-lookup"><span data-stu-id="ee2e4-294">Replace the original text with *What does it look like when I write a longer question?*, and then press **ESC** to exit Design Mode.</span></span>
 
     <span data-ttu-id="ee2e4-295">![Otázka upravit](visual-studio-2013-web-tools/_static/image29.png "otázku upravit")</span><span class="sxs-lookup"><span data-stu-id="ee2e4-295">![Question edited](visual-studio-2013-web-tools/_static/image29.png "Question edited")</span></span>
 

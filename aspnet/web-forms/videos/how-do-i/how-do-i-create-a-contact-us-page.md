@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-contact-us-page
-title: "Vytvoření stránka Kontaktujte nás"
+title: Vytvoření stránka Kontaktujte nás
 author: microsoft
-description: "Vytvoření webové stránky ke shromáždění informací od uživatele pomocí ovládacího prvku průvodce, ověřte, že informace a používat k odesílání nakonfi třídy System.Net.Mail..."
+description: Vytvoření webové stránky ke shromáždění informací od uživatele pomocí ovládacího prvku průvodce, ověřte, že informace a používat k odesílání nakonfi třídy System.Net.Mail...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/24/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571942"
 ---
 <a name="how-do-i-create-a-contact-us-page"></a><span data-ttu-id="6d556-103">[Jak na:] Vytvořte stránku "Kontaktujte nás"?</span><span class="sxs-lookup"><span data-stu-id="6d556-103">[How Do I:] Create a "Contact Us" Page?</span></span>
 ====================

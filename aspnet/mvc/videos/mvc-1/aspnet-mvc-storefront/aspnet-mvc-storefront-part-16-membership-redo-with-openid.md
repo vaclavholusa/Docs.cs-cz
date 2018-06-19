@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868032"
 ---
 <a name="aspnet-mvc-storefront-part-16-membership-redo-with-openid"></a><span data-ttu-id="0a637-104">Technologie ASP.NET MVC Storefront část 16: Opakování členství s OpenID</span><span class="sxs-lookup"><span data-stu-id="0a637-104">ASP.NET MVC Storefront Part 16: Membership Redo With OpenID</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/index
-title: "MVC 3 - jazyka HTML5 a kalendáře jQuery UI DatePicker | Microsoft Docs"
+title: MVC 3 - jazyka HTML5 a kalendáře jQuery UI DatePicker | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz popisuje jak pracovat s editor šablon, zobrazení šablon a kalendářem jQuery UI ovládací prvek datepicker v aplikaci ASP.NET MVC Web."
+description: Tento kurz popisuje jak pracovat s editor šablon, zobrazení šablon a kalendářem jQuery UI ovládací prvek datepicker v aplikaci ASP.NET MVC Web.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/19/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565084"
 ---
 <a name="mvc-3---the-html5-and-jquery-ui-datepicker-popup-calendar"></a><span data-ttu-id="44188-103">MVC 3 - jazyka HTML5 a kalendáře jQuery UI DatePicker</span><span class="sxs-lookup"><span data-stu-id="44188-103">MVC 3 - The HTML5 and jQuery UI Datepicker Popup Calendar</span></span>
 ====================

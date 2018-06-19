@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/models-data/index
 title: Modely (Data) | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz řady zjistěte, jak používat rozhraní ASP.NET MVC s Microsoft Entity Framework. V průběhu tohoto kurzu vytvoříte webovou aplikaci..."
+description: Tento kurz řady zjistěte, jak používat rozhraní ASP.NET MVC s Microsoft Entity Framework. V průběhu tohoto kurzu vytvoříte webovou aplikaci...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564298"
 ---
 <a name="models-data"></a><span data-ttu-id="b792a-104">Modely (Data)</span><span class="sxs-lookup"><span data-stu-id="b792a-104">Models (Data)</span></span>
 ====================

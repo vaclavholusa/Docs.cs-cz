@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868721"
 ---
 <a name="dynamically-adding-an-accordion-pane-vb"></a><span data-ttu-id="943a2-104">Dynamické přidávání podokně aplikace Accordion (VB)</span><span class="sxs-lookup"><span data-stu-id="943a2-104">Dynamically Adding An Accordion Pane (VB)</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site
-title: "[Jak na:] Pomocí role segmentu funkce na webu technologie ASP.NET | Microsoft Docs"
+title: '[Jak na:] Pomocí role segmentu funkce na webu technologie ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se Jan PEL ukazují, jak chcete maximalizovat použití rolí na webu technologie ASP.NET po nastavení členství technologie ASP.NET. Nejdřív zjistěte, jak nastavit karta..."
+description: V tomto videu se Jan PEL ukazují, jak chcete maximalizovat použití rolí na webu technologie ASP.NET po nastavení členství technologie ASP.NET. Nejdřív zjistěte, jak nastavit karta...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572263"
 ---
 <a name="how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site"></a><span data-ttu-id="298d4-104">[Jak na:] Pomocí role segmentu funkce na webu technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="298d4-104">[How Do I:] Use Roles to Segment Functionality in an ASP.NET Web Site</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/mvc-learning-sequence
-title: "MVC doporučené kurzy a články | Microsoft Docs"
+title: MVC doporučené kurzy a články | Microsoft Docs
 author: Rick-Anderson
-description: "Tato stránka obsahuje odkazy na kurzy ASP.NET MVC a navrhované pořadí k postupovat podle nich."
+description: Tato stránka obsahuje odkazy na kurzy ASP.NET MVC a navrhované pořadí k postupovat podle nich.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28032638"
 ---
 <a name="mvc-recommended-tutorials-and-articles"></a><span data-ttu-id="c57cf-103">Doporučené kurzy a články MVC</span><span class="sxs-lookup"><span data-stu-id="c57cf-103">MVC recommended tutorials and articles</span></span>
 ====================

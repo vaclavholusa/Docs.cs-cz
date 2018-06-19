@@ -2,7 +2,7 @@
 uid: web-forms/videos/aspnet-35/aspnet-ajax/index
 title: Technologie ASP.NET Ajax | Microsoft Docs
 author: rick-anderson
-description: "Tato série videí prozkoumá jak přidat funkci Ajax do aplikace ASP.NET."
+description: Tato série videí prozkoumá jak přidat funkci Ajax do aplikace ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570373"
 ---
 <a name="aspnet-ajax"></a><span data-ttu-id="35170-103">Technologie ASP.NET Ajax</span><span class="sxs-lookup"><span data-stu-id="35170-103">ASP.NET Ajax</span></span>
 ====================

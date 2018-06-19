@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/testing-and-debugging/index
-title: "Testování a ladění | Microsoft Docs"
+title: Testování a ladění | Microsoft Docs
 author: rick-anderson
-description: "Postup testování a ladění aplikací ASP.NET Web Pages."
+description: Postup testování a ladění aplikací ASP.NET Web Pages.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573160"
 ---
 <a name="testing-and-debugging"></a><span data-ttu-id="c2790-103">Testování a ladění</span><span class="sxs-lookup"><span data-stu-id="c2790-103">Testing and Debugging</span></span>
 ====================

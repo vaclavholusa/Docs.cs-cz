@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/mapping-users-to-connections
-title: "Mapování uživatelů SignalR na připojení v systému SignalR 1.x | Microsoft Docs"
+title: Mapování uživatelů SignalR na připojení v systému SignalR 1.x | Microsoft Docs
 author: pfletcher
-description: "Toto téma ukazuje, jak uchovávat informace týkající se uživatelů a jejich připojení."
+description: Toto téma ukazuje, jak uchovávat informace týkající se uživatelů a jejich připojení.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28037009"
 ---
 <a name="mapping-signalr-users-to-connections-in-signalr-1x"></a><span data-ttu-id="72df7-103">Mapování uživatelů SignalR na připojení v systému SignalR 1.x</span><span class="sxs-lookup"><span data-stu-id="72df7-103">Mapping SignalR Users to Connections in SignalR 1.x</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
-title: "[Jak na:] Části stránky ASP.NET do mezipaměti | Microsoft Docs"
+title: '[Jak na:] Části stránky ASP.NET do mezipaměti | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak pro ukládání do mezipaměti některé části stránky ASP.NET implementací OutputCache pro uživatelské ovládací prvky na stránce. První,..."
+description: V této video PEL Jan ukazuje, jak pro ukládání do mezipaměti některé části stránky ASP.NET implementací OutputCache pro uživatelské ovládací prvky na stránce. První,...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571888"
 ---
 <a name="how-do-i-cache-portions-of-an-aspnet-page"></a><span data-ttu-id="e2a31-104">[Jak na:] Části mezipaměti pro stránku ASP.NET</span><span class="sxs-lookup"><span data-stu-id="e2a31-104">[How Do I:] Cache Portions of an ASP.NET Page</span></span>
 ====================

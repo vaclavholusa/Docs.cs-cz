@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/index
-title: "Podpora v rozhraní ASP.NET Web API OData v3 | Microsoft Docs"
+title: Podpora v rozhraní ASP.NET Web API OData v3 | Microsoft Docs
 author: rick-anderson
-description: "K vytvoření koncové body, které podporují OData verze 3 použijte rozhraní ASP.NET Web API."
+description: K vytvoření koncové body, které podporují OData verze 3 použijte rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566779"
 ---
 <a name="supporting-odata-v3-in-aspnet-web-api"></a><span data-ttu-id="8b2a3-103">Podpora v rozhraní ASP.NET Web API OData v3</span><span class="sxs-lookup"><span data-stu-id="8b2a3-103">Supporting OData v3 in ASP.NET Web API</span></span>
 ====================

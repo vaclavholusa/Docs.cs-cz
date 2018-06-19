@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-precompile-an-aspnet-website
-title: "[Jak na:] Předkompilovat webu ASP.NET | Microsoft Docs"
+title: '[Jak na:] Předkompilovat webu ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Jan PEL ukazuje, jak předkompilovat webu ASP.NET, což zvyšuje výkon při prvním spuštění a posiluje zabezpečení aplikací."
+description: Jan PEL ukazuje, jak předkompilovat webu ASP.NET, což zvyšuje výkon při prvním spuštění a posiluje zabezpečení aplikací.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/18/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570814"
 ---
 <a name="how-do-i-precompile-an-aspnet-website"></a><span data-ttu-id="e7e3b-103">[Jak na:] Předkompilovat webové stránky ASP.NET</span><span class="sxs-lookup"><span data-stu-id="e7e3b-103">[How Do I:] Precompile an ASP.NET Website</span></span>
 ====================

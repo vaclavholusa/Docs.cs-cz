@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-and-use-application-level-events-in-aspnet
-title: "[Jak na:]  Vytváření a používání události na úrovni aplikace technologie ASP.NET | Microsoft Docs"
+title: '[Jak na:]  Vytváření a používání události na úrovni aplikace technologie ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí postup vytvoření – třída souboru aplikace (Global.asax), který obsahuje obslužné rutiny událostí na úrovni aplikace, například Application_S..."
+description: V této video PEL Jan zobrazí postup vytvoření – třída souboru aplikace (Global.asax), který obsahuje obslužné rutiny událostí na úrovni aplikace, například Application_S...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/28/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570658"
 ---
 <a name="how-do-i--create-and-use-application-level-events-in-aspnet"></a><span data-ttu-id="321ee-103">[Jak na:]  Vytváření a používání události na úrovni aplikace technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="321ee-103">[How Do I:]  Create and Use Application Level Events in ASP.NET</span></span>
 ====================

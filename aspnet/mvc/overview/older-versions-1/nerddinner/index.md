@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/nerddinner/index
 title: NerdDinner | Microsoft Docs
 author: rick-anderson
-description: "Postup vytvoření webu NerdDinner.com pomocí ASP.NET MVC 1. Pro verzi ASP.NET MVC 3 navštivte nerddinner na Githubu."
+description: Postup vytvoření webu NerdDinner.com pomocí ASP.NET MVC 1. Pro verzi ASP.NET MVC 3 navštivte nerddinner na Githubu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564529"
 ---
 <a name="nerddinner"></a><span data-ttu-id="3d9d3-104">NerdDinner</span><span class="sxs-lookup"><span data-stu-id="3d9d3-104">NerdDinner</span></span>
 ====================

@@ -1,14 +1,14 @@
 ---
 uid: single-page-application/index
-title: "ASP.NET jedné stránky aplikace | Microsoft Docs"
+title: ASP.NET jedné stránky aplikace | Microsoft Docs
 author: rick-anderson
-description: "Stažení aktualizace 2012 patří technologie ASP.NET a mít lepší začátku do konce pro vytváření aplikací s významné interakce na straně klienta pomocí JavaScrip..."
+description: Stažení aktualizace 2012 patří technologie ASP.NET a mít lepší začátku do konce pro vytváření aplikací s významné interakce na straně klienta pomocí JavaScrip...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2012
 ms.topic: article
 ms.assetid: 4760328c-3d73-4757-a36f-ab80a5b3f611
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application
 msc.type: categoryindex
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565993"
 ---
 <a name="aspnet-single-page-application"></a><span data-ttu-id="4129c-103">Aplikace ASP.NET jedné stránky</span><span class="sxs-lookup"><span data-stu-id="4129c-103">ASP.NET Single Page Application</span></span>
 ====================

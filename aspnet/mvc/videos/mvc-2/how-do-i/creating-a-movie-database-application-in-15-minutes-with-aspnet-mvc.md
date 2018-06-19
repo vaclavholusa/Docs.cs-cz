@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868799"
 ---
 <a name="creating-a-movie-database-application-in-15-minutes-with-aspnet-mvc"></a><span data-ttu-id="1ed06-104">Vytvoření databáze aplikace film za 15 minut s architekturou ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="1ed06-104">Creating a Movie Database Application in 15 minutes with ASP.NET MVC</span></span>
 ====================

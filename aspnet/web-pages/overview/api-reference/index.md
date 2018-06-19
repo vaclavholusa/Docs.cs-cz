@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/api-reference/index
-title: "Referenční dokumentace rozhraní API | Microsoft Docs"
+title: Referenční dokumentace rozhraní API | Microsoft Docs
 author: rick-anderson
-description: "Referenční dokumentace rozhraní API dokumentace pro technologie ASP.NET Web Pages."
+description: Referenční dokumentace rozhraní API dokumentace pro technologie ASP.NET Web Pages.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572863"
 ---
 <a name="api-reference"></a><span data-ttu-id="ab531-103">Referenční dokumentace ke knihovně API</span><span class="sxs-lookup"><span data-stu-id="ab531-103">API Reference</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740618"
 ---
 # <a name="custom-model-binding-in-aspnet-core"></a><span data-ttu-id="35c4a-103">Vlastní Model vazby v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="35c4a-103">Custom Model Binding in ASP.NET Core</span></span>
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/index
-title: "Starší verze - MVC 1 a 2 | Microsoft Docs"
+title: Starší verze - MVC 1 a 2 | Microsoft Docs
 author: rick-anderson
-description: "Prostředky pro naučit, jak program MVC 1 a 2."
+description: Prostředky pro naučit, jak program MVC 1 a 2.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564331"
 ---
 <a name="older-versions---mvc-1-and-2"></a><span data-ttu-id="f4c9c-103">Starší verze - MVC 1 a 2</span><span class="sxs-lookup"><span data-stu-id="f4c9c-103">Older Versions - MVC 1 and 2</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/index
-title: "ASP.NET MVC Začínáme | Microsoft Docs"
+title: ASP.NET MVC Začínáme | Microsoft Docs
 author: rick-anderson
-description: "Další informace o ASP.NET MVC rozhraní ASP.NET MVC poskytuje výkonné, na základě vzory způsob, jak vytvářet dynamické weby, které umožňuje čistou oddělit otázky a že g..."
+description: Další informace o ASP.NET MVC rozhraní ASP.NET MVC poskytuje výkonné, na základě vzory způsob, jak vytvářet dynamické weby, které umožňuje čistou oddělit otázky a že g...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/31/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564067"
 ---
 <a name="aspnet-mvc-getting-started"></a><span data-ttu-id="87f33-103">ASP.NET MVC Začínáme</span><span class="sxs-lookup"><span data-stu-id="87f33-103">ASP.NET MVC Getting Started</span></span>
 ====================

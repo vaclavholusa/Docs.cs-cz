@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/session-level-objects
-title: "Objekty relace úrovně | Microsoft Docs"
+title: Objekty relace úrovně | Microsoft Docs
 author: JoeStagner
-description: "Toto video bude představovat úroveň události relací a objekty a porovnejte jejich používání s jejich aplikace a stránky úrovně ekvivalenty."
+description: Toto video bude představovat úroveň události relací a objekty a porovnejte jejich používání s jejich aplikace a stránky úrovně ekvivalenty.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571801"
 ---
 <a name="session-level-objects"></a><span data-ttu-id="bbf14-103">Objekty relace úrovně</span><span class="sxs-lookup"><span data-stu-id="bbf14-103">Session Level Objects</span></span>
 ====================

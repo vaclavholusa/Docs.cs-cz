@@ -1,8 +1,8 @@
 ---
 uid: web-forms/pluralsight
-title: "Webové formuláře Video školení z Pluralsight | Microsoft Docs"
+title: Webové formuláře Video školení z Pluralsight | Microsoft Docs
 author: rick-anderson
-description: "Webové formuláře Video školení z Pluralsight tento webových formulářů ASP.NET vývoj kurzu vás seznámí několik klíčových technologiích, které potřebujete znát jako účelem rozhraní .NET..."
+description: Webové formuláře Video školení z Pluralsight tento webových formulářů ASP.NET vývoj kurzu vás seznámí několik klíčových technologiích, které potřebujete znát jako účelem rozhraní .NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/16/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570346"
 ---
 <a name="web-forms-video-training-from-pluralsight"></a><span data-ttu-id="24a59-103">Webové formuláře Video školení z Pluralsight</span><span class="sxs-lookup"><span data-stu-id="24a59-103">Web Forms Video Training from Pluralsight</span></span>
 ====================

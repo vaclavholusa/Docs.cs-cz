@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/mvc-music-store/index
 title: ASP.NET MVC 3 Hudba Store | Microsoft Docs
 author: rick-anderson
-description: "Jak vytvořit aplikaci MVC Hudba úložiště, ukázkovou aplikaci, která prodává hudebních alb online a která implementuje Správa webu přihlášení uživatele,..."
+description: Jak vytvořit aplikaci MVC Hudba úložiště, ukázkovou aplikaci, která prodává hudebních alb online a která implementuje Správa webu přihlášení uživatele,...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565039"
 ---
 <a name="aspnet-mvc-3-music-store"></a><span data-ttu-id="cd1cd-103">ASP.NET MVC 3 Hudba úložiště</span><span class="sxs-lookup"><span data-stu-id="cd1cd-103">ASP.NET MVC 3 Music Store</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/index
-title: "ASP.NET 4 – Začínáme s rozhraní Entity Framework 4 a webové formuláře | Microsoft Docs"
+title: ASP.NET 4 – Začínáme s rozhraní Entity Framework 4 a webové formuláře | Microsoft Docs
 author: rick-anderson
-description: "Základy používání rozhraní Entity Framework pro zobrazení a úpravu dat v aplikaci webových formulářů ASP.NET."
+description: Základy používání rozhraní Entity Framework pro zobrazení a úpravu dat v aplikaci webových formulářů ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26569743"
 ---
 <a name="aspnet-4---getting-started-with-entity-framework-4-and-web-forms"></a><span data-ttu-id="ab440-103">ASP.NET 4 – Začínáme s rozhraní Entity Framework 4 a webové formuláře</span><span class="sxs-lookup"><span data-stu-id="ab440-103">ASP.NET 4 - Getting Started with Entity Framework 4 and Web Forms</span></span>
 ====================

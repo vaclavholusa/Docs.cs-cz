@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/performance/index
-title: "Výkon | Microsoft Docs"
+title: Výkon | Microsoft Docs
 author: rick-anderson
-description: "Tato série videí popisuje nové způsoby za účelem optimalizace stránky webových formulářů technologie ASP.NET 4."
+description: Tato série videí popisuje nové způsoby za účelem optimalizace stránky webových formulářů technologie ASP.NET 4.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570907"
 ---
 <a name="performance"></a><span data-ttu-id="e3aa2-103">Výkon</span><span class="sxs-lookup"><span data-stu-id="e3aa2-103">Performance</span></span>
 ====================

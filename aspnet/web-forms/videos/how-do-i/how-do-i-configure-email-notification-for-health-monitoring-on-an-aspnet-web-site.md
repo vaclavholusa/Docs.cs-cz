@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site
-title: "[Jak na:] Konfigurace e-mailové oznámení pro sledování stavu na webovou stránku ASP.NET | Microsoft Docs"
+title: '[Jak na:] Konfigurace e-mailové oznámení pro sledování stavu na webovou stránku ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak nakonfigurovat e-mailové oznámení pro stavu monitorování na webu technologie ASP.NET. Nejdříve si projděte postup konfigurace odesílání e..."
+description: V této video PEL Jan ukazuje, jak nakonfigurovat e-mailové oznámení pro stavu monitorování na webu technologie ASP.NET. Nejdříve si projděte postup konfigurace odesílání e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/11/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570832"
 ---
 <a name="how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site"></a><span data-ttu-id="5c243-104">[Jak na:] Konfigurace e-mailové oznámení pro stavu monitorování na webu technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="5c243-104">[How Do I:] Configure Email Notification for Health Monitoring on an ASP.NET Web Site</span></span>
 ====================

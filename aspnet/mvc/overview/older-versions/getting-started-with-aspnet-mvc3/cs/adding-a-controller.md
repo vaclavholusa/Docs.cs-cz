@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868292"
 ---
 <a name="adding-a-controller-c"></a><span data-ttu-id="d871c-103">Přidávání řadiče (C#)</span><span class="sxs-lookup"><span data-stu-id="d871c-103">Adding a Controller (C#)</span></span>
 ====================

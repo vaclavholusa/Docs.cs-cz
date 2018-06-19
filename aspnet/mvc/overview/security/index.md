@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/index
-title: "Zabezpečení, ověřování a autorizace s architekturou ASP.NET MVC | Microsoft Docs"
+title: Zabezpečení, ověřování a autorizace s architekturou ASP.NET MVC | Microsoft Docs
 author: rick-anderson
-description: "Jak zabezpečit stránku ASP.NET a jak implementace ověřování a autorizace."
+description: Jak zabezpečit stránku ASP.NET a jak implementace ověřování a autorizace.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/10/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565267"
 ---
 <a name="security-authentication-and-authorization-with-aspnet-mvc"></a><span data-ttu-id="ca952-103">Zabezpečení, ověřování a autorizace s architekturou ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="ca952-103">Security, Authentication, and Authorization with ASP.NET MVC</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-and-use-classes-in-javascript
-title: "Jak I: vytvořit a použít třídy v jazyce JavaScript? | Microsoft Docs"
+title: 'Jak I: vytvořit a použít třídy v jazyce JavaScript? | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu Jan PEL ukazuje postup vytvoření třídy v jazyce JavaScript s funkcemi podobná jinými programovací jazyky s objektově orientované capabilitie..."
+description: V tomto videu Jan PEL ukazuje postup vytvoření třídy v jazyce JavaScript s funkcemi podobná jinými programovací jazyky s objektově orientované capabilitie...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/08/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572086"
 ---
 <a name="how-do-i-create-and-use-classes-in-javascript"></a><span data-ttu-id="34df1-104">Jak I: vytvořit a použít třídy v jazyce JavaScript?</span><span class="sxs-lookup"><span data-stu-id="34df1-104">How Do I: Create and Use Classes in JavaScript?</span></span>
 ====================

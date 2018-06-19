@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/mobile-clients/index
-title: "Webové rozhraní API, tak mobilní klienty | Microsoft Docs"
+title: Webové rozhraní API, tak mobilní klienty | Microsoft Docs
 author: rick-anderson
-description: "K dosažení nativní mobilních klientů pomocí rozhraní ASP.NET Web API."
+description: K dosažení nativní mobilních klientů pomocí rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/23/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566785"
 ---
 <a name="web-api-and-mobile-clients"></a><span data-ttu-id="a9a9e-103">Webové rozhraní API, tak mobilní klienty</span><span class="sxs-lookup"><span data-stu-id="a9a9e-103">Web API and Mobile Clients</span></span>
 ====================

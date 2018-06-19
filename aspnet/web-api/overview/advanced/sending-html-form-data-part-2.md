@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/sending-html-form-data-part-2
-title: "Odeslání dat formuláře HTML v rozhraní ASP.NET Web API: souboru nahrávání a vícedílné zprávy standardu MIME | Microsoft Docs"
+title: 'Odeslání dat formuláře HTML v rozhraní ASP.NET Web API: souboru nahrávání a vícedílné zprávy standardu MIME | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/21/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28040139"
 ---
 <a name="sending-html-form-data-in-aspnet-web-api-file-upload-and-multipart-mime"></a><span data-ttu-id="e5670-102">Odeslání dat formuláře HTML v rozhraní ASP.NET Web API: souboru nahrávání a vícedílné zprávy standardu MIME</span><span class="sxs-lookup"><span data-stu-id="e5670-102">Sending HTML Form Data in ASP.NET Web API: File Upload and Multipart MIME</span></span>
 ====================

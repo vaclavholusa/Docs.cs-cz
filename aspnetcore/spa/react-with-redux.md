@@ -17,6 +17,7 @@ ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/27/2018
+ms.locfileid: "34555219"
 ---
 # <a name="use-the-react-with-redux-project-template-with-aspnet-core"></a><span data-ttu-id="ef3fd-103">Pomocí reagují s-– obnovení v šabloně projektů ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="ef3fd-103">Use the React-with-Redux project template with ASP.NET Core</span></span>
 

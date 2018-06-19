@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site
-title: "Přihlášení pomocí externí servery v rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs"
+title: Přihlášení pomocí externí servery v rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tento článek vysvětluje, jak se přihlásit na váš web ASP.NET Web Pages (Razor) pomocí služby Facebook, Google, Twitter, Yahoo a jiných lokalitách – to znamená, jak podporovat..."
+description: Tento článek vysvětluje, jak se přihlásit na váš web ASP.NET Web Pages (Razor) pomocí služby Facebook, Google, Twitter, Yahoo a jiných lokalitách – to znamená, jak podporovat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573355"
 ---
 <a name="logging-in-using-external-sites-in-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="c066c-103">Přihlášení pomocí externí servery v Web Pages (Razor) technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="c066c-103">Logging In Using External Sites in an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

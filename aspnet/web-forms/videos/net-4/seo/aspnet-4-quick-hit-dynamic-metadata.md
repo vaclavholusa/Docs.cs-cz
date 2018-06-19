@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/seo/aspnet-4-quick-hit-dynamic-metadata
-title: "Dynamické Metadata | Microsoft Docs"
+title: Dynamické Metadata | Microsoft Docs
 author: JoeStagner
-description: "V tomto videu se dozvíte o Page.MetaKeywords a Page.MetaDescription vlastnosti, které vám umožní nastavit metadata stránky dynamicky na spuštění ti..."
+description: V tomto videu se dozvíte o Page.MetaKeywords a Page.MetaDescription vlastnosti, které vám umožní nastavit metadata stránky dynamicky na spuštění ti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570862"
 ---
 <a name="aspnet-4-quick-hit---dynamic-metadata"></a><span data-ttu-id="de78a-103">ASP.NET 4 "Rychlý zasáhnout" - dynamické metadat</span><span class="sxs-lookup"><span data-stu-id="de78a-103">ASP.NET 4 "Quick Hit" - Dynamic Metadata</span></span>
 ====================

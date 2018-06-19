@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/scaleout-with-sql-server
-title: "Škálování SignalR s SQL serverem (SignalR 1.x) | Microsoft Docs"
+title: Škálování SignalR s SQL serverem (SignalR 1.x) | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565987"
 ---
 <a name="signalr-scaleout-with-sql-server-signalr-1x"></a><span data-ttu-id="e4f94-102">Škálování SignalR s SQL serverem (SignalR 1.x)</span><span class="sxs-lookup"><span data-stu-id="e4f94-102">SignalR Scaleout with SQL Server (SignalR 1.x)</span></span>
 ====================

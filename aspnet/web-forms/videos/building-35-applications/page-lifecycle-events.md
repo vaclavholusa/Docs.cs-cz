@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/page-lifecycle-events
-title: "Události životního cyklu stránky | Microsoft Docs"
+title: Události životního cyklu stránky | Microsoft Docs
 author: JoeStagner
-description: "Technologie ASP.NET poskytuje mechanismus velmi bohaté eventing s háky do všechny důležité chronologickém instance v životním cyklu stránky ASP.NET. Toto video bude výčtu..."
+description: Technologie ASP.NET poskytuje mechanismus velmi bohaté eventing s háky do všechny důležité chronologickém instance v životním cyklu stránky ASP.NET. Toto video bude výčtu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570784"
 ---
 <a name="page-lifecycle-events"></a><span data-ttu-id="4b8aa-104">Události životního cyklu stránky</span><span class="sxs-lookup"><span data-stu-id="4b8aa-104">Page Lifecycle Events</span></span>
 ====================

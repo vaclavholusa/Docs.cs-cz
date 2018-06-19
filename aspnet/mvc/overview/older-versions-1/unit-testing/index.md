@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/unit-testing/index
-title: "Testování částí | Microsoft Docs"
+title: Testování částí | Microsoft Docs
 author: rick-anderson
-description: "Tato sada kurz ukazuje, jak vytvářet testy částí pro rozhraní ASP.NET MVC akce kontroleru."
+description: Tato sada kurz ukazuje, jak vytvářet testy částí pro rozhraní ASP.NET MVC akce kontroleru.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564520"
 ---
 <a name="unit-testing"></a><span data-ttu-id="779a1-103">Testování částí</span><span class="sxs-lookup"><span data-stu-id="779a1-103">Unit Testing</span></span>
 ====================

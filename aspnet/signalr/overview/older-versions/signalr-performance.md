@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/signalr-performance
-title: "SignalR výkonu (SignalR 1.x) | Microsoft Docs"
+title: SignalR výkonu (SignalR 1.x) | Microsoft Docs
 author: pfletcher
-description: "SignalR výkonu"
+description: SignalR výkonu
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/03/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28037149"
 ---
 <a name="signalr-performance-signalr-1x"></a><span data-ttu-id="f8be4-103">SignalR výkonu (SignalR 1.x)</span><span class="sxs-lookup"><span data-stu-id="f8be4-103">SignalR Performance (SignalR 1.x)</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-containment-in-web-api-22
-title: "Omezení v OData v4 použití rozhraní Web API 2.2 | Microsoft Docs"
+title: Omezení v OData v4 použití rozhraní Web API 2.2 | Microsoft Docs
 author: rick-anderson
-description: "Obvyklým entita může používat pouze v případě měla zapouzdřený v sadu entit. Ale OData v4 poskytuje dvě další možnosti, jednotlivý prvek a Con..."
+description: Obvyklým entita může používat pouze v případě měla zapouzdřený v sadu entit. Ale OData v4 poskytuje dvě další možnosti, jednotlivý prvek a Con...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/27/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566704"
 ---
 <a name="containment-in-odata-v4-using-web-api-22"></a><span data-ttu-id="d5d4d-104">Omezení v OData v4 použití rozhraní Web API 2.2</span><span class="sxs-lookup"><span data-stu-id="d5d4d-104">Containment in OData v4 Using Web API 2.2</span></span>
 ====================

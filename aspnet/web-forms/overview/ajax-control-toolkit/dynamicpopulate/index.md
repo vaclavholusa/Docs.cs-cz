@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/index
 title: DynamicPopulate | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz ukazuje, jak používat ovládací prvek DynamicPopulate, která volá webové služby a zobrazí výslednou hodnotu v ovládacím prvku na stránce."
+description: Tento kurz ukazuje, jak používat ovládací prvek DynamicPopulate, která volá webové služby a zobrazí výslednou hodnotu v ovládacím prvku na stránce.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26567472"
 ---
 <a name="dynamicpopulate"></a><span data-ttu-id="2aa52-103">DynamicPopulate</span><span class="sxs-lookup"><span data-stu-id="2aa52-103">DynamicPopulate</span></span>
 ====================

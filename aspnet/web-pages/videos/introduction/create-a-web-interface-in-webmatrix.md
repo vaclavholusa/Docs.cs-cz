@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/create-a-web-interface-in-webmatrix
-title: "Vytvoření rozhraní Web ve službě WebMatrix | Microsoft Docs"
+title: Vytvoření rozhraní Web ve službě WebMatrix | Microsoft Docs
 author: rick-anderson
-description: "Část 6 se dozvíte, jak vytvořit stránku, která umožní uživatelům přidání dat do databáze, takže váš web může vykreslit ho."
+description: Část 6 se dozvíte, jak vytvořit stránku, která umožní uživatelům přidání dat do databáze, takže váš web může vykreslit ho.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573226"
 ---
 <a name="create-a-web-interface-in-webmatrix"></a><span data-ttu-id="9b36a-103">Vytvoření rozhraní Web ve službě WebMatrix</span><span class="sxs-lookup"><span data-stu-id="9b36a-103">Create a Web Interface in WebMatrix</span></span>
 ====================

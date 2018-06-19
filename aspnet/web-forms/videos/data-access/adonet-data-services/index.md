@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/data-access/adonet-data-services/index
-title: "Aktualizaci služeb ADO.NET Data Services | Microsoft Docs"
+title: Aktualizaci služeb ADO.NET Data Services | Microsoft Docs
 author: rick-anderson
-description: "Tyto videa ukazují, jak vytvořit vrstva přístupu k datům pomocí typové datové sady pro jednoduchou aplikaci ASP.NET."
+description: Tyto videa ukazují, jak vytvořit vrstva přístupu k datům pomocí typové datové sady pro jednoduchou aplikaci ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/04/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571834"
 ---
 <a name="adonet-data-services"></a><span data-ttu-id="2bad8-103">ADO.NET Data Services</span><span class="sxs-lookup"><span data-stu-id="2bad8-103">ADO.NET Data Services</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868877"
 ---
 <a name="using-textboxwatermark-with-validation-controls-c"></a><span data-ttu-id="a5fab-104">Pomocí TextBoxWatermark s ovládacími prvky ověření (C#)</span><span class="sxs-lookup"><span data-stu-id="a5fab-104">Using TextBoxWatermark With Validation Controls (C#)</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-control-the-caching-of-an-aspnet-page-based-upon-custom-information
-title: "[Jak na:] Řízení ukládání do mezipaměti pro stránku ASP.NET na základě vlastních informací | Microsoft Docs"
+title: '[Jak na:] Řízení ukládání do mezipaměti pro stránku ASP.NET na základě vlastních informací | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak k řízení kritérií pro ukládání do mezipaměti na základě vlastních informací stránky ASP.NET. Vytvoření ukázkové stránky a pak e...."
+description: V této video PEL Jan ukazuje, jak k řízení kritérií pro ukládání do mezipaměti na základě vlastních informací stránky ASP.NET. Vytvoření ukázkové stránky a pak e....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/19/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572743"
 ---
 <a name="how-do-i-control-the-caching-of-an-aspnet-page-based-upon-custom-information"></a><span data-ttu-id="b176d-104">[Jak na:] Řízení ukládání do mezipaměti pro stránku ASP.NET na základě vlastních informací</span><span class="sxs-lookup"><span data-stu-id="b176d-104">[How Do I:] Control the Caching of an ASP.NET Page Based Upon Custom Information</span></span>
 ====================

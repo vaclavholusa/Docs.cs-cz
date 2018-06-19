@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-ability-to-create-groups-with-the-listview-control-for-different-data
-title: "[Jak na:] Použijte možnost vytvářet skupiny se pro různé datové ovládacího prvku ListView | Microsoft Docs"
+title: '[Jak na:] Použijte možnost vytvářet skupiny se pro různé datové ovládacího prvku ListView | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se Jan PEL ukazují, jak seskupit položky při zobrazení dat v ovládacím prvku ListView. Nejdříve si projděte základní informace o rozložení položky v ivní ovládání ListView..."
+description: V tomto videu se Jan PEL ukazují, jak seskupit položky při zobrazení dat v ovládacím prvku ListView. Nejdříve si projděte základní informace o rozložení položky v ivní ovládání ListView...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571864"
 ---
 <a name="how-do-i-use-the-ability-to-create-groups-with-the-listview-control-for-different-data"></a><span data-ttu-id="ae6de-104">[Jak na:] Použijte možnost vytvářet skupiny se pro různé datové ovládacího prvku ListView</span><span class="sxs-lookup"><span data-stu-id="ae6de-104">[How Do I:] Use the Ability to Create Groups with the ListView Control for Different Data</span></span>
 ====================

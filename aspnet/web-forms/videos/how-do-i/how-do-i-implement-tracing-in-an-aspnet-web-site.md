@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-tracing-in-an-aspnet-web-site
-title: "[Jak na:]  Implementace trasování na webu technologie ASP.NET? | Microsoft Docs"
+title: '[Jak na:]  Implementace trasování na webu technologie ASP.NET? | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu Jan PEL vám ukáže, jak implementovat trasování na webu technologie ASP.NET ke sledování nebo měřit výkon a diagnostikovat chyby. Další ho..."
+description: V tomto videu Jan PEL vám ukáže, jak implementovat trasování na webu technologie ASP.NET ke sledování nebo měřit výkon a diagnostikovat chyby. Další ho...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572272"
 ---
 <a name="how-do-i--implement-tracing-in-an-aspnet-web-site"></a><span data-ttu-id="e7144-105">[Jak na:]  Implementace trasování na webu technologie ASP.NET?</span><span class="sxs-lookup"><span data-stu-id="e7144-105">[How Do I:]  Implement Tracing in an ASP.NET Web Site?</span></span>
 ====================

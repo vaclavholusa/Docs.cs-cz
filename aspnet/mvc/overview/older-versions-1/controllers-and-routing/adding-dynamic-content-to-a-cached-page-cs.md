@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868578"
 ---
 <a name="adding-dynamic-content-to-a-cached-page-c"></a><span data-ttu-id="0a18c-104">Přidání dynamický obsah v mezipaměti stránku (C#)</span><span class="sxs-lookup"><span data-stu-id="0a18c-104">Adding Dynamic Content to a Cached Page (C#)</span></span>
 ====================

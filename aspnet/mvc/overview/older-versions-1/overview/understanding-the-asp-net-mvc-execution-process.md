@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process
-title: "Principy spuštění procesu ASP.NET MVC | Microsoft Docs"
+title: Principy spuštění procesu ASP.NET MVC | Microsoft Docs
 author: microsoft
-description: "Zjistěte, jak rozhraní ASP.NET MVC zpracovává žádost prohlížeče krok za krokem."
+description: Zjistěte, jak rozhraní ASP.NET MVC zpracovává žádost prohlížeče krok za krokem.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564523"
 ---
 <a name="understanding-the-aspnet-mvc-execution-process"></a><span data-ttu-id="c5c88-103">Principy spuštění procesu ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="c5c88-103">Understanding the ASP.NET MVC Execution Process</span></span>
 ====================

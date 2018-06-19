@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/iis/index
-title: "Obecné tipy IIS | Microsoft Docs"
+title: Obecné tipy IIS | Microsoft Docs
 author: rick-anderson
-description: "Postup konfigurace služby IIS pro práci s aplikací ASP.NET."
+description: Postup konfigurace služby IIS pro práci s aplikací ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571984"
 ---
 <a name="general-iis-tips"></a><span data-ttu-id="7923b-103">Obecné tipy služby IIS</span><span class="sxs-lookup"><span data-stu-id="7923b-103">General IIS Tips</span></span>
 ====================

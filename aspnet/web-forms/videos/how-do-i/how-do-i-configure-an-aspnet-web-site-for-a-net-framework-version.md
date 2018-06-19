@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version
-title: "[Jak na:] Konfigurovat webovou stránku ASP.NET pro rozhraní .NET Framework verze | Microsoft Docs"
+title: '[Jak na:] Konfigurovat webovou stránku ASP.NET pro rozhraní .NET Framework verze | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí jak nakonfigurovat webovou stránku ASP.NET použít konkrétní verzi ASP.NET/.NET Framework. Nejprve najdete v části Postup identifikace jaké v..."
+description: V této video PEL Jan zobrazí jak nakonfigurovat webovou stránku ASP.NET použít konkrétní verzi ASP.NET/.NET Framework. Nejprve najdete v části Postup identifikace jaké v...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571810"
 ---
 <a name="how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version"></a><span data-ttu-id="963fe-104">[Jak na:] Konfigurace webu technologie ASP.NET pro verzi rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="963fe-104">[How Do I:] Configure an ASP.NET Web Site for a .NET Framework Version</span></span>
 ====================

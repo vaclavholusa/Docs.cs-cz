@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/index
-title: "Starší verze – webové formuláře Začínáme | Microsoft Docs"
+title: Starší verze – webové formuláře Začínáme | Microsoft Docs
 author: rick-anderson
-description: "Dokumentace na rozhraní ASP.NET Web Forms 4 a starší verze."
+description: Dokumentace na rozhraní ASP.NET Web Forms 4 a starší verze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/18/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26569719"
 ---
 <a name="older-versions---web-forms-getting-started"></a><span data-ttu-id="04062-103">Starší verze – webové formuláře Začínáme</span><span class="sxs-lookup"><span data-stu-id="04062-103">Older Versions - Web Forms Getting Started</span></span>
 ====================

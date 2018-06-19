@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/index
 title: Jak mohu? | Microsoft Docs
 author: rick-anderson
-description: "Jak k provádění různých běžných úloh."
+description: Jak k provádění různých běžných úloh.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572257"
 ---
 <a name="how-do-i"></a><span data-ttu-id="6b9b4-104">Jak mohu?</span><span class="sxs-lookup"><span data-stu-id="6b9b4-104">How Do I?</span></span>
 ====================

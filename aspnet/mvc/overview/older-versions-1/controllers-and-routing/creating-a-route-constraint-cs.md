@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871204"
 ---
 <a name="creating-a-route-constraint-c"></a><span data-ttu-id="6de3c-103">Vytváření omezení trasy (C#)</span><span class="sxs-lookup"><span data-stu-id="6de3c-103">Creating a Route Constraint (C#)</span></span>
 ====================

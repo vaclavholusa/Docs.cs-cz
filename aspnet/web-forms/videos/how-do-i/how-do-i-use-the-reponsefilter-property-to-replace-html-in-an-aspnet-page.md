@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page
-title: "[Jak na:] Vlastnost Reponse.Filter použít k nahrazení HTML na stránce technologie ASP.NET | Microsoft Docs"
+title: '[Jak na:] Vlastnost Reponse.Filter použít k nahrazení HTML na stránce technologie ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak používat vlastnost Reponse.Filter zachytí a alter odesílány na stránku HTML. Ukázkové stránky se nejprve vytvoří w..."
+description: V této video PEL Jan ukazuje, jak používat vlastnost Reponse.Filter zachytí a alter odesílány na stránku HTML. Ukázkové stránky se nejprve vytvoří w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/29/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571963"
 ---
 <a name="how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page"></a><span data-ttu-id="8a0fc-104">[Jak na:] Vlastnost Reponse.Filter použít k nahrazení HTML na stránce technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="8a0fc-104">[How Do I:] Use the Reponse.Filter Property to Replace HTML in an ASP.NET Page</span></span>
 ====================

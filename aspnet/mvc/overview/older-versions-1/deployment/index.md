@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/deployment/index
-title: "Nasazení | Microsoft Docs"
+title: Nasazení | Microsoft Docs
 author: rick-anderson
-description: "V tomto kurzu jste Naučte se používat rozhraní ASP.NET MVC a směrování s různými verzemi služby IIS."
+description: V tomto kurzu jste Naučte se používat rozhraní ASP.NET MVC a směrování s různými verzemi služby IIS.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564205"
 ---
 <a name="deployment"></a><span data-ttu-id="5e0aa-103">Nasazení</span><span class="sxs-lookup"><span data-stu-id="5e0aa-103">Deployment</span></span>
 ====================

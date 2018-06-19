@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884565"
 ---
 <a name="enable-in-line-editing-in-aspnet-dynamic-data-applications"></a><span data-ttu-id="6de13-103">Povolit úpravy v řádku v aplikacích ASP.NET dynamické dat</span><span class="sxs-lookup"><span data-stu-id="6de13-103">Enable In-Line Editing in ASP.NET Dynamic Data Applications</span></span>
 ====================

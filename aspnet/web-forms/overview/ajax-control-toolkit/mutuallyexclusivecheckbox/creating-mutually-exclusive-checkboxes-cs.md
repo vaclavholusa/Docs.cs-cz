@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871802"
 ---
 <a name="creating-mutually-exclusive-checkboxes-c"></a><span data-ttu-id="ae4e8-104">Vytváření vzájemně se vylučuje zaškrtávací políčka (C#)</span><span class="sxs-lookup"><span data-stu-id="ae4e8-104">Creating Mutually Exclusive Checkboxes (C#)</span></span>
 ====================

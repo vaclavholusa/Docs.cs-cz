@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881585"
 ---
 <a name="configuring-deployment-properties-for-a-target-environment"></a><span data-ttu-id="19468-103">Konfigurace vlastnosti nasazení pro cílové prostředí</span><span class="sxs-lookup"><span data-stu-id="19468-103">Configuring Deployment Properties for a Target Environment</span></span>
 ====================

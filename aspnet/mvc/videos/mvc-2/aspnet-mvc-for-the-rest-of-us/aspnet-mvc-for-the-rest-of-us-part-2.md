@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870242"
 ---
 <a name="aspnet-mvc-for-the-rest-of-us-part-2"></a><span data-ttu-id="d3893-103">ASP.NET MVC pro zbytek nám: část 2</span><span class="sxs-lookup"><span data-stu-id="d3893-103">ASP.NET MVC For the Rest of Us: Part 2</span></span>
 ====================

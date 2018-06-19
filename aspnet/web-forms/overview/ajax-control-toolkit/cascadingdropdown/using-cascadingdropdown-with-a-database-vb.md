@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873583"
 ---
 <a name="using-cascadingdropdown-with-a-database-vb"></a><span data-ttu-id="ca8f8-103">Pomocí CascadingDropDown s databází (VB)</span><span class="sxs-lookup"><span data-stu-id="ca8f8-103">Using CascadingDropDown with a Database (VB)</span></span>
 ====================

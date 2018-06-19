@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881955"
 ---
 <a name="how-do-i-linq-to-sql-using-stored-procedures"></a><span data-ttu-id="f3d91-104">[Jak na:] Technologie LINQ to SQL: pomocí uložené procedury</span><span class="sxs-lookup"><span data-stu-id="f3d91-104">[How Do I:] LINQ to SQL: Using Stored Procedures</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870151"
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-vb"></a><span data-ttu-id="cb8fa-104">Povolení jenom určitých znaků v textovém poli (VB)</span><span class="sxs-lookup"><span data-stu-id="cb8fa-104">Allowing Only Certain Characters in a Text Box (VB)</span></span>
 ====================

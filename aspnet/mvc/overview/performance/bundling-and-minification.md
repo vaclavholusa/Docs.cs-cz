@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30877480"
 ---
 <a name="bundling-and-minification"></a><span data-ttu-id="1e3d7-104">Sdružování a minimalizace</span><span class="sxs-lookup"><span data-stu-id="1e3d7-104">Bundling and Minification</span></span>
 ====================

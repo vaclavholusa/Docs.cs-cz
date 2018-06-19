@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882374"
 ---
 <a name="two-simple-techniques-for-triggering-updates-to-update-panels"></a><span data-ttu-id="7868b-104">Dva jednoduché techniky pro spuštění aktualizace aktualizace panelů</span><span class="sxs-lookup"><span data-stu-id="7868b-104">Two Simple Techniques for Triggering Updates to Update Panels</span></span>
 ====================

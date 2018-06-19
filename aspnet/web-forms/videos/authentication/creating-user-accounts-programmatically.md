@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882512"
 ---
 <a name="creating-user-accounts-programmatically"></a><span data-ttu-id="a28b4-104">Vytváření uživatelských účtů prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="a28b4-104">Creating User Accounts Programmatically</span></span>
 ====================

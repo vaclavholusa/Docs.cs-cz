@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871035"
 ---
 <a name="aspnet-mvc-storefront-part-13-dependency-injection"></a><span data-ttu-id="9ae2f-103">ASP.NET MVC Storefront část 13: Vkládání závislostí</span><span class="sxs-lookup"><span data-stu-id="9ae2f-103">ASP.NET MVC Storefront Part 13: Dependency Injection</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867889"
 ---
 <a name="creating-an-action-vb"></a><span data-ttu-id="96f96-104">Vytváření akce (VB)</span><span class="sxs-lookup"><span data-stu-id="96f96-104">Creating an Action (VB)</span></span>
 ====================

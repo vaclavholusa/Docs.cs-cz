@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877655"
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a><span data-ttu-id="8f13b-104">Vkládání závislostí architektury ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="8f13b-104">ASP.NET MVC 4 Dependency Injection</span></span>
 

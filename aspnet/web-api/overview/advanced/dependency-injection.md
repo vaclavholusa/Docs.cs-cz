@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/dependency-injection
-title: "Vkládání závislostí v rozhraní ASP.NET Web API 2 | Microsoft Docs"
+title: Vkládání závislostí v rozhraní ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: "Tento kurz ukazuje, jak se do vašeho řadiče rozhraní ASP.NET Web API vložit závislosti. Použité v kurzu Unity aplikace bloku 2 rozhraní API webové verze softwaru..."
+description: Tento kurz ukazuje, jak se do vašeho řadiče rozhraní ASP.NET Web API vložit závislosti. Použité v kurzu Unity aplikace bloku 2 rozhraní API webové verze softwaru...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036512"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a><span data-ttu-id="d216f-104">Vkládání závislostí v rozhraní ASP.NET Web API 2</span><span class="sxs-lookup"><span data-stu-id="d216f-104">Dependency Injection in ASP.NET Web API 2</span></span>
 ====================

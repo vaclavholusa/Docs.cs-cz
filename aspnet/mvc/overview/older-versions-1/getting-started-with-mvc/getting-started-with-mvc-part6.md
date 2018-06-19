@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30867980"
 ---
 <a name="adding-a-create-method-and-create-view"></a><span data-ttu-id="6d38d-104">Přidávání vytváření metoda a vytvořit zobrazení</span><span class="sxs-lookup"><span data-stu-id="6d38d-104">Adding a Create Method and Create View</span></span>
 ====================

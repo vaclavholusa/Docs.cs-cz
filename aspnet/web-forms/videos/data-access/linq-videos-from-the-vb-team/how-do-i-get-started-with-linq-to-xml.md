@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879800"
 ---
 <a name="how-do-i-get-started-with-linq-to-xml"></a><span data-ttu-id="84d41-104">[Jak na:] Začínáme s dotazy LINQ to XML?</span><span class="sxs-lookup"><span data-stu-id="84d41-104">[How Do I:] Get Started with LINQ to XML?</span></span>
 ====================

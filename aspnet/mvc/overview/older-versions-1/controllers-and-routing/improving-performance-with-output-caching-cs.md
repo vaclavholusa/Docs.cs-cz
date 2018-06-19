@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873794"
 ---
 <a name="improving-performance-with-output-caching-c"></a><span data-ttu-id="f50dd-104">Vylepšení výkonu pomocí ukládání výstupu do mezipaměti (C#)</span><span class="sxs-lookup"><span data-stu-id="f50dd-104">Improving Performance with Output Caching (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887301"
 ---
 <a name="paging-and-sorting-report-data-c"></a><span data-ttu-id="765cf-104">Stránkování a řazení dat sestavy (C#)</span><span class="sxs-lookup"><span data-stu-id="765cf-104">Paging and Sorting Report Data (C#)</span></span>
 ====================

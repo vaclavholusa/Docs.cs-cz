@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883622"
 ---
 <a name="how-do-i-enable-inline-gridview-editing"></a><span data-ttu-id="31163-105">Povolení vložené GridView úpravy</span><span class="sxs-lookup"><span data-stu-id="31163-105">How Do I Enable Inline GridView Editing?</span></span>
 ====================

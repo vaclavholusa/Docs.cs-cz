@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883697"
 ---
 <a name="the-contact-manager-solution"></a><span data-ttu-id="36c3a-103">Obraťte se na správce řešení</span><span class="sxs-lookup"><span data-stu-id="36c3a-103">The Contact Manager Solution</span></span>
 ====================

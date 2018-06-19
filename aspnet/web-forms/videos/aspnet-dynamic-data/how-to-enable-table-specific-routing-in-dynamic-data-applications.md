@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883332"
 ---
 <a name="how-to-enable-table-specific-routing-in-dynamic-data-applications"></a><span data-ttu-id="62497-103">Postup povolení konkrétní směrování tabulky v dynamické datových aplikací</span><span class="sxs-lookup"><span data-stu-id="62497-103">How to Enable Table Specific Routing in Dynamic Data Applications</span></span>
 ====================

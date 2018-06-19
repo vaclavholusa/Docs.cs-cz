@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-secure-my-site-using-membership-and-roles
-title: "[Jak na:] Zabezpečení mého webu pomocí členství a rolí? | Microsoft Docs"
+title: '[Jak na:] Zabezpečení mého webu pomocí členství a rolí? | Microsoft Docs'
 author: microsoft
-description: "Zjistěte, jak k zabezpečení webu pomocí nové funkce členství a rolí technologie ASP.NET 2.0. Témata zahrnují registrace uživatele, obnovení hesla a restricti..."
+description: Zjistěte, jak k zabezpečení webu pomocí nové funkce členství a rolí technologie ASP.NET 2.0. Témata zahrnují registrace uživatele, obnovení hesla a restricti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/09/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572134"
 ---
 <a name="how-do-i-secure-my-site-using-membership-and-roles"></a>[Jak na:] Zabezpečení mého webu pomocí členství a rolí?
 ====================

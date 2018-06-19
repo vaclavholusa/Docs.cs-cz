@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-outputcache-to-cache-an-aspnet-page
-title: "[Jak na:] Použít OutputCache pro ukládání do mezipaměti stránku ASP.NET | Microsoft Docs"
+title: '[Jak na:] Použít OutputCache pro ukládání do mezipaměti stránku ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak využívat integrované ukládání do mezipaměti technologie ASP.NET, nemusí být znovu vykreslené stránky ukládání do mezipaměti. Nejdřív..."
+description: V této video PEL Jan ukazuje, jak využívat integrované ukládání do mezipaměti technologie ASP.NET, nemusí být znovu vykreslené stránky ukládání do mezipaměti. Nejdřív...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/05/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572164"
 ---
 <a name="how-do-i-use-outputcache-to-cache-an-aspnet-page"></a>[Jak na:] Použití OutputCache pro ukládání do mezipaměti stránku ASP.NET
 ====================

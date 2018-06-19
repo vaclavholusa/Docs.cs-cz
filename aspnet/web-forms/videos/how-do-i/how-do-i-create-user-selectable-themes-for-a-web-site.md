@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-user-selectable-themes-for-a-web-site
-title: "[Jak na:] Vytvořit uživateli vybrat motivy pro webový server | Microsoft Docs"
+title: '[Jak na:] Vytvořit uživateli vybrat motivy pro webový server | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se Jan PEL ukazují, jak vytvořit víc motivů pro webový server a pak umožnit uživateli vybrat, jaký motiv se použije k lokalitě. V tématu Jak..."
+description: V tomto videu se Jan PEL ukazují, jak vytvořit víc motivů pro webový server a pak umožnit uživateli vybrat, jaký motiv se použije k lokalitě. V tématu Jak...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/13/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571789"
 ---
 <a name="how-do-i-create-user-selectable-themes-for-a-web-site"></a>[Jak na:] Vytvořit uživateli vybrat motivy pro webový server
 ====================

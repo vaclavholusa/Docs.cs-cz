@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts
-title: "[Jak na:] Práce s vnořené hlavní stránky vytvořit standardní rozložení obsahu | Microsoft Docs"
+title: '[Jak na:] Práce s vnořené hlavní stránky vytvořit standardní rozložení obsahu | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí postup pomocí vnořené hlavní stránky můžete vytvořit jednotlivé hlavní stránky, které představují různých standardní obsahu rozložení pro w..."
+description: V této video PEL Jan zobrazí postup pomocí vnořené hlavní stránky můžete vytvořit jednotlivé hlavní stránky, které představují různých standardní obsahu rozložení pro w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572092"
 ---
 <a name="how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts"></a>[Jak na:] Práce s vnořené hlavní stránky vytvořit standardní rozložení obsahu
 ====================

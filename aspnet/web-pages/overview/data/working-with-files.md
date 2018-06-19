@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28040220"
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>Práce se soubory v Web Pages (Razor) technologie ASP.NET
 ====================

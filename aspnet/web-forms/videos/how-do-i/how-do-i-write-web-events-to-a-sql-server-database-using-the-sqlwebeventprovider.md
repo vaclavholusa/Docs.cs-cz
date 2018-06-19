@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-write-web-events-to-a-sql-server-database-using-the-sqlwebeventprovider
-title: "[Jak na:] Zapsat webové události do databáze systému SQL Server pomocí SqlWebEventProvider | Microsoft Docs"
+title: '[Jak na:] Zapsat webové události do databáze systému SQL Server pomocí SqlWebEventProvider | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak použít sledování SqlWebEventProvider stavu ASP.NET k protokolování chyb v databázi systému SQL Server webu. První, mazat..."
+description: V této video PEL Jan ukazuje, jak použít sledování SqlWebEventProvider stavu ASP.NET k protokolování chyb v databázi systému SQL Server webu. První, mazat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572266"
 ---
 <a name="how-do-i-write-web-events-to-a-sql-server-database-using-the-sqlwebeventprovider"></a>[Jak na:] Zápis do databáze systému SQL Server pomocí SqlWebEventProvider webové události
 ====================

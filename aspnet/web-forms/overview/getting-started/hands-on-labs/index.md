@@ -2,7 +2,7 @@
 uid: web-forms/overview/getting-started/hands-on-labs/index
 title: Visual Studio 2012 rukou na Labs | Microsoft Docs
 author: rick-anderson
-description: "Naučte se vyvíjet s webovými formuláři ASP.NET s tyto rukou na Labs"
+description: Naučte se vyvíjet s webovými formuláři ASP.NET s tyto rukou na Labs
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26569269"
 ---
 <a name="visual-studio-2012-hands-on-labs"></a>Visual Studio 2012 rukou na testovacích prostředích
 ====================

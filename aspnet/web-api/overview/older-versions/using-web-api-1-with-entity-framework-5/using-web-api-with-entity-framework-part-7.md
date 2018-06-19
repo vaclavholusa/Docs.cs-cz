@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30869865"
 ---
 <a name="part-7-creating-the-main-page"></a>Část 7: Vytvoření hlavní stránky
 ====================

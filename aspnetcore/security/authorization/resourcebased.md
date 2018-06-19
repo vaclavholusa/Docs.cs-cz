@@ -16,6 +16,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094279"
 ---
 # <a name="resource-based-authorization-in-aspnet-core"></a>Ověření na základě prostředků v ASP.NET Core
 

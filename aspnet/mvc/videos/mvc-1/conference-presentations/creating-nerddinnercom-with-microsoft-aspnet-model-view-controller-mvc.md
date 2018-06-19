@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/conference-presentations/creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc
-title: "Vytváření NerdDinner.com s Microsoft ASP.NET Model View Controller (MVC) | Microsoft Docs"
+title: Vytváření NerdDinner.com s Microsoft ASP.NET Model View Controller (MVC) | Microsoft Docs
 author: shanselman
-description: "Žádné snímky. Jenom kód. Začněte s nový soubor a sestavení skutečné webové stránky s ASP.NET, rozhraní ASP.NET AJAX, ověřování, autorizace, MVC, Microsoft SQL Server a..."
+description: Žádné snímky. Jenom kód. Začněte s nový soubor a sestavení skutečné webové stránky s ASP.NET, rozhraní ASP.NET AJAX, ověřování, autorizace, MVC, Microsoft SQL Server a...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565339"
 ---
 <a name="creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc"></a>Vytváření NerdDinner.com s Microsoft ASP.NET Model View Controller (MVC)
 ====================

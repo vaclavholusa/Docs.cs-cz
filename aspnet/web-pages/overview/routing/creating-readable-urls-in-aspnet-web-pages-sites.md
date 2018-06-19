@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/routing/creating-readable-urls-in-aspnet-web-pages-sites
-title: "Vytváření čitelné adresy URL v rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs"
+title: Vytváření čitelné adresy URL v rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Tento článek popisuje směrování v webu technologie ASP.NET Web Pages (Razor) a jak to vám umožní používat adresy URL, které jsou čitelnější a lepší pro SEO. Co budete..."
+description: Tento článek popisuje směrování v webu technologie ASP.NET Web Pages (Razor) a jak to vám umožní používat adresy URL, které jsou čitelnější a lepší pro SEO. Co budete...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573229"
 ---
 <a name="creating-readable-urls-in-aspnet-web-pages-razor-sites"></a>Vytváření čitelné adresy URL v lokalitách rozhraní ASP.NET Web Pages (Razor)
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/index
-title: "Zobrazení ASP.NET MVC | Microsoft Docs"
+title: Zobrazení ASP.NET MVC | Microsoft Docs
 author: rick-anderson
-description: "Tato sada kurzy poskytuje stručný úvod do architektury ASP.NET MVC zobrazení, data zobrazení a pomocné rutiny HTML."
+description: Tato sada kurzy poskytuje stručný úvod do architektury ASP.NET MVC zobrazení, data zobrazení a pomocné rutiny HTML.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564553"
 ---
 <a name="aspnet-mvc-views"></a>Zobrazení v rozhraní ASP.NET MVC
 ====================

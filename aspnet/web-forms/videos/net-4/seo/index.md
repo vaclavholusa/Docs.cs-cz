@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/seo/index
-title: "OPTIMALIZACE PRO VYHLEDÁVACÍ WEBY | Microsoft Docs"
+title: OPTIMALIZACE PRO VYHLEDÁVACÍ WEBY | Microsoft Docs
 author: rick-anderson
-description: "Toto video popisuje nové funkce pro hledání modul optimalizace weby (SEO) v rozhraní ASP.NET 4."
+description: Toto video popisuje nové funkce pro hledání modul optimalizace weby (SEO) v rozhraní ASP.NET 4.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571966"
 ---
 <a name="seo"></a>OPTIMALIZACE PRO VYHLEDÁVACÍ WEBY
 ====================

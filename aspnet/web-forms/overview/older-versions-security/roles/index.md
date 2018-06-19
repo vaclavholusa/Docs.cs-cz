@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-security/roles/index
 title: ASP.NET 3.5 - role | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz řady popisuje, jak vytvářet a odstraňovat role, jak přiřadit uživatele k rolím a jak se mají autorizovat role."
+description: Tento kurz řady popisuje, jak vytvářet a odstraňovat role, jak přiřadit uživatele k rolím a jak se mají autorizovat role.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570151"
 ---
 <a name="aspnet-35---roles"></a>ASP.NET 3.5 - role
 ====================

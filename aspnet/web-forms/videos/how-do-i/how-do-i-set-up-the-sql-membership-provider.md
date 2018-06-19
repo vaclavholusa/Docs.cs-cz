@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-set-up-the-sql-membership-provider
-title: "[Jak na:] Nastavení zprostředkovatele členství SQL | Microsoft Docs"
+title: '[Jak na:] Nastavení zprostředkovatele členství SQL | Microsoft Docs'
 author: rick-anderson
-description: "Připojte Patrik Hynds jako mu ukazuje, jak nastavit zprostředkovatel členství SQL přidat ověřování pomocí formulářů na váš web ASP.NET 2.0. Existuje několik tip..."
+description: Připojte Patrik Hynds jako mu ukazuje, jak nastavit zprostředkovatel členství SQL přidat ověřování pomocí formulářů na váš web ASP.NET 2.0. Existuje několik tip...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572131"
 ---
 <a name="how-do-i-set-up-the-sql-membership-provider"></a>[Jak na:] Nastavení zprostředkovatele členství SQL
 ====================

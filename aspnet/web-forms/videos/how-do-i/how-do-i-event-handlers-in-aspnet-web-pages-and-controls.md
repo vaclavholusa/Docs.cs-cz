@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-event-handlers-in-aspnet-web-pages-and-controls
-title: "[Jak na:] Obslužné rutiny událostí v webových stránek ASP.NET a ovládacích prvků | Microsoft Docs"
+title: '[Jak na:] Obslužné rutiny událostí v webových stránek ASP.NET a ovládacích prvků | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí postup vytváření obslužných rutin událostí pro webové stránky ASP.NET a ovládací prvky webového serveru. Nejprve Naučte se vytvořit stránku úroveň události f..."
+description: V této video PEL Jan zobrazí postup vytváření obslužných rutin událostí pro webové stránky ASP.NET a ovládací prvky webového serveru. Nejprve Naučte se vytvořit stránku úroveň události f...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/17/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572116"
 ---
 <a name="how-do-i-event-handlers-in-aspnet-web-pages-and-controls"></a>[Jak na:] Obslužné rutiny událostí v webových stránek ASP.NET a ovládacích prvků
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-error-handling-when-sending-email-with-aspnet
-title: "[Jak na:] Implementace zpracování chyb při odesílání e-mailu s technologií ASP.NET | Microsoft Docs"
+title: '[Jak na:] Implementace zpracování chyb při odesílání e-mailu s technologií ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Jan PEL ukazuje, jak implementovat zpracování chyb při odesílání e-mailu s technologií ASP.NET. Zadá vytvoří webovou stránku ASP.NET k odesílání e-mailu, ukazuje, jak nakonfigurovat & lt...."
+description: Jan PEL ukazuje, jak implementovat zpracování chyb při odesílání e-mailu s technologií ASP.NET. Zadá vytvoří webovou stránku ASP.NET k odesílání e-mailu, ukazuje, jak nakonfigurovat & lt....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572233"
 ---
 <a name="how-do-i-implement-error-handling-when-sending-email-with-aspnet"></a>[Jak na:] Implementace zpracování chyb při odesílání e-mailu pomocí technologie ASP.NET
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "26566443"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>Rukou na testovacího prostředí: Visual Studio 2013 nástroje pro Web
 ====================
@@ -302,7 +303,7 @@ V této úloze budete používat Browser Link **režimu návrhu** funkce Upravit
     ![Úpravy na otázku](visual-studio-2013-web-tools/_static/image28.png "úpravy na otázku")
 
     *Úpravy na otázku*
-3. Kurzor by se zobrazit. Nahradí původní text s *jak ho vypadá při psaní delší otázku?*a potom stiskněte klávesu **ESC** ukončíte režimu návrhu.
+3. Kurzor by se zobrazit. Nahradí původní text s *jak ho vypadá při psaní delší otázku?* a potom stiskněte klávesu **ESC** ukončíte režimu návrhu.
 
     ![Otázka upravit](visual-studio-2013-web-tools/_static/image29.png "otázku upravit")
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information
-title: "[Jak na:] Skrytá pole použít k ukládání a manipulovat s informacemi na straně klienta | Microsoft Docs"
+title: '[Jak na:] Skrytá pole použít k ukládání a manipulovat s informacemi na straně klienta | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se Jan PEL ukazují, jak používat skryté pole jako jeden ze způsobů správy jednoduché stavu na stránce technologie ASP.NET a pro komunikaci na straně klienta..."
+description: V tomto videu se Jan PEL ukazují, jak používat skryté pole jako jeden ze způsobů správy jednoduché stavu na stránce technologie ASP.NET a pro komunikaci na straně klienta...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571828"
 ---
 <a name="how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information"></a>[Jak na:] Skrytá pole použít k ukládání a manipulovat s informacemi na straně klienta
 ====================

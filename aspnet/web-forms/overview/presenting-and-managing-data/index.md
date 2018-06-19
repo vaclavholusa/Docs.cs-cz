@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/index
-title: "Práce s daty v webové formuláře ASP.NET | Microsoft Docs"
+title: Práce s daty v webové formuláře ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Jak získat přístup k datům pomocí ovládacích prvků a jak uchovávat informace mezi požadavky."
+description: Jak získat přístup k datům pomocí ovládacích prvků a jak uchovávat informace mezi požadavky.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570232"
 ---
 <a name="working-with-data-in-aspnet-web-forms"></a>Práce s daty v webové formuláře ASP.NET
 ====================

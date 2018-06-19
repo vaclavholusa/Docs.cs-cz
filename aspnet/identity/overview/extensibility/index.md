@@ -1,14 +1,14 @@
 ---
 uid: identity/overview/extensibility/index
-title: "Rozšiřitelnost ASP.NET Identity | Microsoft Docs"
+title: Rozšiřitelnost ASP.NET Identity | Microsoft Docs
 author: rick-anderson
-description: "Rozšiřitelnost"
+description: Rozšiřitelnost
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/02/2013
 ms.topic: article
 ms.assetid: d1c6e7d0-ead9-4f08-a5b9-9d7a30be78e3
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility
 msc.type: chapter
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26563644"
 ---
 <a name="aspnet-identity-extensibility"></a>Rozšiřitelnost ASP.NET Identity
 ====================

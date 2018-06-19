@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles
-title: "Jak I: vytvořit efektivní a standardizovaném přístup pro implementaci stylů CSS | Microsoft Docs"
+title: 'Jak I: vytvořit efektivní a standardizovaném přístup pro implementaci stylů CSS | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak uspořádat a implementovat stylů CSS, které poskytují standardizované vzhled a chování na web. Kromě toho se styly..."
+description: V této video PEL Jan ukazuje, jak uspořádat a implementovat stylů CSS, které poskytují standardizované vzhled a chování na web. Kromě toho se styly...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/15/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570874"
 ---
 <a name="how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles"></a>Jak I: vytvořit efektivní a standardizovaném přístup pro implementaci stylů CSS
 ====================

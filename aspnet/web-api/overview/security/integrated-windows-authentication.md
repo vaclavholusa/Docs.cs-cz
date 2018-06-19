@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/integrated-windows-authentication
-title: "Integrované ověřování systému Windows | Microsoft Docs"
+title: Integrované ověřování systému Windows | Microsoft Docs
 author: MikeWasson
-description: "Popisuje použití integrovaného ověřování systému Windows v rozhraní ASP.NET Web API."
+description: Popisuje použití integrovaného ověřování systému Windows v rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566752"
 ---
 <a name="integrated-windows-authentication"></a>Integrované ověřování systému Windows
 ====================

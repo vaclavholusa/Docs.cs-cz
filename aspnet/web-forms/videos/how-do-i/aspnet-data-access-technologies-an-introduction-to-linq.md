@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/aspnet-data-access-technologies-an-introduction-to-linq
-title: "Technologie pro přístup k Data technologie ASP.NET, úvod do LINQ | Microsoft Docs"
+title: Technologie pro přístup k Data technologie ASP.NET, úvod do LINQ | Microsoft Docs
 author: JoeStagner
-description: "LINQ je že vývojáře využívající technologii ASP.NET preferované mechanismus přístupu Data. Toto video je Úvod do programování s dotazy LINQ a porovná betwee jednoduché datové přístup..."
+description: LINQ je že vývojáře využívající technologii ASP.NET preferované mechanismus přístupu Data. Toto video je Úvod do programování s dotazy LINQ a porovná betwee jednoduché datové přístup...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571930"
 ---
 <a name="aspnet-data-access-technologies-an-introduction-to-linq"></a>Technologií přístupu Data technologie ASP.NET, úvod do LINQ
 ====================

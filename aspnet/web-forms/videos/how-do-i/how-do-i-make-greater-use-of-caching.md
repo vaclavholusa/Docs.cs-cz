@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-make-greater-use-of-caching
-title: "[Jak na:] Větší využívají ukládání do mezipaměti? | Microsoft Docs"
+title: '[Jak na:] Větší využívají ukládání do mezipaměti? | Microsoft Docs'
 author: microsoft
-description: "Podívejte se na ukázku části stránky ukládání výstupu do mezipaměti, za nímž následuje přehled rozhraní API mezipaměti, které ukazuje, jak efektivně svázat prezentace dat..."
+description: Podívejte se na ukázku části stránky ukládání výstupu do mezipaměti, za nímž následuje přehled rozhraní API mezipaměti, které ukazuje, jak efektivně svázat prezentace dat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572239"
 ---
 <a name="how-do-i-make-greater-use-of-caching"></a>[Jak na:] Větší využívají ukládání do mezipaměti?
 ====================

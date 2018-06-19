@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/read-write-and-delete-cookies-in-aspnet
-title: "Čtení, zápisu a odstraňování souborů cookie v technologii ASP.NET | Microsoft Docs"
+title: Čtení, zápisu a odstraňování souborů cookie v technologii ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "V této video PEL Jan zobrazí postup čtení, zápisu a odstraňování souborů cookie v aplikaci ASP.NET. Nejdřív zjistěte základní operace pro manipulaci s cooki..."
+description: V této video PEL Jan zobrazí postup čtení, zápisu a odstraňování souborů cookie v aplikaci ASP.NET. Nejdřív zjistěte základní operace pro manipulaci s cooki...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/10/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572215"
 ---
 <a name="read-write-and-delete-cookies-in-aspnet"></a>Čtení, zápisu a odstraňování souborů cookie v technologii ASP.NET
 ====================

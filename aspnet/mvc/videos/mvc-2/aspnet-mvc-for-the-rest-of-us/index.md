@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/index
-title: "ASP.NET MVC pro zbytek nám | Microsoft Docs"
+title: ASP.NET MVC pro zbytek nám | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC pro zbytek nám"
+description: ASP.NET MVC pro zbytek nám
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565330"
 ---
 <a name="aspnet-mvc-for-the-rest-of-us"></a>ASP.NET MVC pro zbytek nám
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/hosting-aspnet-web-api/index
-title: "Rozhraní ASP.NET Web API: Nasazení a hostování | Microsoft Docs"
+title: 'Rozhraní ASP.NET Web API: Nasazení a hostování | Microsoft Docs'
 author: rick-anderson
-description: "Jak pro hostování vašeho webového rozhraní API."
+description: Jak pro hostování vašeho webového rozhraní API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566374"
 ---
 <a name="aspnet-web-api-deployment-and-hosting"></a>Rozhraní ASP.NET Web API: Nasazení a který je hostitelem
 ====================

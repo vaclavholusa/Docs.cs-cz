@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/index
-title: "Přehled | Microsoft Docs"
+title: Přehled | Microsoft Docs
 author: rick-anderson
-description: "Zjistěte, co MVC je, jak se liší od webových formulářů a postup vytvoření aplikace ASP.NET."
+description: Zjistěte, co MVC je, jak se liší od webových formulářů a postup vytvoření aplikace ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564526"
 ---
 <a name="overview"></a>Přehled
 ====================

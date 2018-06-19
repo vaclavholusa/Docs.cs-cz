@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/hub-authorization
-title: "Ověřování a autorizace pro rozbočovače SignalR (SignalR 1.x) | Microsoft Docs"
+title: Ověřování a autorizace pro rozbočovače SignalR (SignalR 1.x) | Microsoft Docs
 author: pfletcher
-description: "Toto téma popisuje, jak omezit, které uživatelé nebo role mají přístup k metod rozbočovače."
+description: Toto téma popisuje, jak omezit, které uživatelé nebo role mají přístup k metod rozbočovače.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042872"
 ---
 <a name="authentication-and-authorization-for-signalr-hubs-signalr-1x"></a>Ověřování a autorizace pro rozbočovače SignalR (SignalR 1.x)
 ====================

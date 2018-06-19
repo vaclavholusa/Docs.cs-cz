@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883076"
 ---
 <a name="creating-a-site-with-iis7-manager"></a><span data-ttu-id="a7573-103">Vytvoření webu pomocí Správce služby IIS7</span><span class="sxs-lookup"><span data-stu-id="a7573-103">Creating a Site with IIS7 Manager</span></span>
 ====================

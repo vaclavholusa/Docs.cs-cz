@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887093"
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a><span data-ttu-id="0d5c9-104">Seznam podrobnosti filtrování napříč dvěma stránkami (C#)</span><span class="sxs-lookup"><span data-stu-id="0d5c9-104">Master/Detail Filtering Across Two Pages (C#)</span></span>
 ====================

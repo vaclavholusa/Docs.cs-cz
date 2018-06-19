@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879488"
 ---
 <a name="using-postbacks-with-reorderlist-vb"></a><span data-ttu-id="ef0fa-104">Pomocí postback ReorderList (VB)</span><span class="sxs-lookup"><span data-stu-id="ef0fa-104">Using Postbacks with ReorderList (VB)</span></span>
 ====================

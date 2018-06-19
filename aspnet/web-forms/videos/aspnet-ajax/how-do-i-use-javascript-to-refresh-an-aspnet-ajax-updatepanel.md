@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885146"
 ---
 <a name="how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel"></a><span data-ttu-id="11244-105">[Jak na:] Slouží k aktualizaci prvku ASP.NET AJAX UpdatePanel JavaScript?</span><span class="sxs-lookup"><span data-stu-id="11244-105">[How Do I:] Use JavaScript to Refresh an ASP.NET AJAX UpdatePanel?</span></span>
 ====================

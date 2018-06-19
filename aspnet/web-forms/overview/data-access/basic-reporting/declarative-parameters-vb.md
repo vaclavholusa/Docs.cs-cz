@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877408"
 ---
 <a name="declarative-parameters-vb"></a><span data-ttu-id="4d4fe-103">Deklarativní parametry (VB)</span><span class="sxs-lookup"><span data-stu-id="4d4fe-103">Declarative Parameters (VB)</span></span>
 ====================

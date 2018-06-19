@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896808"
 ---
 <a name="code-coverage-of-automated-tests"></a><span data-ttu-id="3ec92-104">Pokrytí kódu automatizovaných testů</span><span class="sxs-lookup"><span data-stu-id="3ec92-104">Code Coverage of Automated Tests</span></span>
 ====================

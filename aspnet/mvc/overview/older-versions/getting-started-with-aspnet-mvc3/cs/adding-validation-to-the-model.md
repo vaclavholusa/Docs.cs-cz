@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872543"
 ---
 <a name="adding-validation-to-the-model-c"></a><span data-ttu-id="ea202-103">Přidání ověřování do modelu (C#)</span><span class="sxs-lookup"><span data-stu-id="ea202-103">Adding Validation to the Model (C#)</span></span>
 ====================

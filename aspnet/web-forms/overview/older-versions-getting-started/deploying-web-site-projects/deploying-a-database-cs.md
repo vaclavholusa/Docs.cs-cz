@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888023"
 ---
 <a name="deploying-a-database-c"></a><span data-ttu-id="7596d-104">Nasazení databází (C#)</span><span class="sxs-lookup"><span data-stu-id="7596d-104">Deploying a Database (C#)</span></span>
 ====================

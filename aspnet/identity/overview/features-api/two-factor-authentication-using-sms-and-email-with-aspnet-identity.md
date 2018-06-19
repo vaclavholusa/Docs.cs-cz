@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876134"
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a><span data-ttu-id="aeec9-104">Dvoufaktorové ověřování pomocí SMS a e-mailu s ASP.NET Identity</span><span class="sxs-lookup"><span data-stu-id="aeec9-104">Two-factor authentication using SMS and email with ASP.NET Identity</span></span>
 ====================

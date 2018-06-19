@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879280"
 ---
 <a name="understanding-controllers-controller-actions-and-action-results"></a><span data-ttu-id="d106c-104">Vysvětlení Kontrolerů, akce Kontroleru a akce výsledky</span><span class="sxs-lookup"><span data-stu-id="d106c-104">Understanding Controllers, Controller Actions, and Action Results</span></span>
 ====================

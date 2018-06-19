@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
-title: "Rozhraní ASP.NET Web API 2 testování částí | Microsoft Docs"
+title: Rozhraní ASP.NET Web API 2 testování částí | Microsoft Docs
 author: tfitzmac
-description: "Tento pokyny a aplikace ukazují, jak vytvářet testy částí jednoduché pro vaši aplikaci webovém rozhraní API 2. Tento kurz ukazuje, jak zahrnout proj test jednotky..."
+description: Tento pokyny a aplikace ukazují, jak vytvářet testy částí jednoduché pro vaši aplikaci webovém rozhraní API 2. Tento kurz ukazuje, jak zahrnout proj test jednotky...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/05/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042742"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a><span data-ttu-id="8ce1d-104">Rozhraní ASP.NET Web API 2 testování částí</span><span class="sxs-lookup"><span data-stu-id="8ce1d-104">Unit Testing ASP.NET Web API 2</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884539"
 ---
 <a name="creating-user-accounts-with-the-create-user-wizard"></a><span data-ttu-id="c5aa7-104">Vytváření uživatelských účtů pomocí Průvodce vytvořením uživatele</span><span class="sxs-lookup"><span data-stu-id="c5aa7-104">Creating User Accounts with the Create User Wizard</span></span>
 ====================

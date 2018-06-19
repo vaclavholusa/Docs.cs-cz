@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884363"
 ---
 <a name="how-do-i-configure-the-aspnet-ajax-calendar-control"></a><span data-ttu-id="cc888-104">[Jak na:] Konfigurace ovládacího prvku ASP.NET AJAX kalendáře?</span><span class="sxs-lookup"><span data-stu-id="cc888-104">[How Do I:] Configure the ASP.NET AJAX Calendar Control?</span></span>
 ====================

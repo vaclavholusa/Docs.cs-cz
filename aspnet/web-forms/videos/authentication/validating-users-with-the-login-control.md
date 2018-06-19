@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883236"
 ---
 <a name="validating-users-with-the-login-control"></a><span data-ttu-id="7914b-103">Ověřování uživatelů pomocí ovládacího prvku přihlášení</span><span class="sxs-lookup"><span data-stu-id="7914b-103">Validating Users with the Login Control</span></span>
 ====================

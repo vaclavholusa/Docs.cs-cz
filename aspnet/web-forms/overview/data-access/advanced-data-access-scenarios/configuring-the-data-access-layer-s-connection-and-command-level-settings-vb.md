@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877174"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a><span data-ttu-id="79fab-103">Konfigurace nastavení připojení a příkaz úrovně Data Access Layer (VB)</span><span class="sxs-lookup"><span data-stu-id="79fab-103">Configuring the Data Access Layer's Connection- and Command-Level Settings (VB)</span></span>
 ====================

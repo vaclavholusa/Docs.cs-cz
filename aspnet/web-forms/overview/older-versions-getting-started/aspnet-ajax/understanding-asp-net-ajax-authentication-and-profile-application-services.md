@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892137"
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a><span data-ttu-id="ea67f-103">Princip ověřování pomocí technologie ASP.NET AJAX a profil aplikačních služeb</span><span class="sxs-lookup"><span data-stu-id="ea67f-103">Understanding ASP.NET AJAX Authentication and Profile Application Services</span></span>
 ====================

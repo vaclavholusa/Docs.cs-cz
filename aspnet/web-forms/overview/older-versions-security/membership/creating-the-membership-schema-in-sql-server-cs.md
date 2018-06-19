@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891790"
 ---
 <a name="creating-the-membership-schema-in-sql-server-c"></a>Vytvoření schématu členství v systému SQL Server (C#)
 ====================

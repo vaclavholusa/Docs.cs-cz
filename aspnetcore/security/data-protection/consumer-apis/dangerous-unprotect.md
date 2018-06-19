@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077414"
 ---
 # <a name="unprotect-payloads-whose-keys-have-been-revoked-in-aspnet-core"></a>Zrušte ochranu datových částí, jejíž klíče byly odvolány v ASP.NET Core
 

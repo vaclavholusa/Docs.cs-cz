@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891916"
 ---
 <a name="user-based-authorization-c"></a>Ověření na základě uživatele (C#)
 ====================

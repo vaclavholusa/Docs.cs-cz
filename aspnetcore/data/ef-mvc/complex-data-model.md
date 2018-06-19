@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34154540"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>Jádro ASP.NET MVC s EF Core - Model dat – 5 10
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool
-title: "[Jak na:] Nasazení webu pomocí nástroje Kopírovat web | Microsoft Docs"
+title: '[Jak na:] Nasazení webu pomocí nástroje Kopírovat web | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí postup nasazení webu pomocí nástroje Kopírovat web v sadě Visual Studio. Nejprve zjistit, jak se připojit k vzdálený webový server a..."
+description: V této video PEL Jan zobrazí postup nasazení webu pomocí nástroje Kopírovat web v sadě Visual Studio. Nejprve zjistit, jak se připojit k vzdálený webový server a...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572005"
 ---
 <a name="how-do-i-deploy-a-web-site-using-the-copy-web-site-tool"></a>[Jak na:] Nasazení webu pomocí nástroje Kopírovat web
 ====================

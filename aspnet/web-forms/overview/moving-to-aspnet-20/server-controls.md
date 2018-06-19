@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/server-controls
-title: "Ovládací prvky serveru | Microsoft Docs"
+title: Ovládací prvky serveru | Microsoft Docs
 author: microsoft
-description: "ASP.NET 2.0 vylepšuje ovládací prvky serveru mnoha způsoby. V tomhle module jsme zaměříme některé architektury změny způsob technologii ASP.NET 2.0 a Visual Studio 200..."
+description: ASP.NET 2.0 vylepšuje ovládací prvky serveru mnoha způsoby. V tomhle module jsme zaměříme některé architektury změny způsob technologii ASP.NET 2.0 a Visual Studio 200...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885190"
 ---
 <a name="server-controls"></a>Ovládací prvky serveru
 ====================

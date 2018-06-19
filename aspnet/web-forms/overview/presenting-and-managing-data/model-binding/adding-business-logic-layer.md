@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892748"
 ---
 <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>Přidání vrstvu obchodní logiky do projektu, který používá vazby modelu a webové formuláře
 ====================

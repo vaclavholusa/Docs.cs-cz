@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/index
-title: "Začínáme s MVC | Microsoft Docs"
+title: Začínáme s MVC | Microsoft Docs
 author: rick-anderson
-description: "Je toto Začátečník kurz série, která představuje rozhraní ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze."
+description: Je toto Začátečník kurz série, která představuje rozhraní ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/08/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28883293"
 ---
 <a name="getting-started-with-mvc"></a>Začínáme s MVC
 ====================

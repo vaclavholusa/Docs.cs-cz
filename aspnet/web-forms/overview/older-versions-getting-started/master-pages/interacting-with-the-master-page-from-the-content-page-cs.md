@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890841"
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-c"></a>Interakci se stránkou předlohy ze stránky obsahu (C#)
 ====================

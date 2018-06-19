@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "29793737"
 ---
 # <a name="aspnet-overview"></a>Přehled technologie ASP.NET
 

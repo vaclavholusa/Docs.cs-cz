@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/membership
-title: "Členství | Microsoft Docs"
+title: Členství | Microsoft Docs
 author: microsoft
-description: "Členství technologie ASP.NET je založený na úspěch model ověřování formulářů z ASP.NET 1.x. Ověřování pomocí formulářů technologie ASP.NET poskytuje pohodlný způsob, jak incorp..."
+description: Členství technologie ASP.NET je založený na úspěch model ověřování formulářů z ASP.NET 1.x. Ověřování pomocí formulářů technologie ASP.NET poskytuje pohodlný způsob, jak incorp...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885561"
 ---
 <a name="membership"></a>Členství
 ====================

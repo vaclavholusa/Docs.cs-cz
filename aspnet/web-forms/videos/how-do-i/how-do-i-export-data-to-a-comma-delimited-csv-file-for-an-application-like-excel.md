@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel
-title: "[Jak na:] Exportovat Data do textového souboru s oddělovači (CSV) pro aplikaci, například Excel | Microsoft Docs"
+title: '[Jak na:] Exportovat Data do textového souboru s oddělovači (CSV) pro aplikaci, například Excel | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu Jan PEL ukazuje, jak provést data z databáze nebo jiného zdroje a exportovat je do souboru s oddělovači čárkami, které mohou být používány li aplikace..."
+description: V tomto videu Jan PEL ukazuje, jak provést data z databáze nebo jiného zdroje a exportovat je do souboru s oddělovači čárkami, které mohou být používány li aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/22/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571996"
 ---
 <a name="how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel"></a>[Jak na:] Exportovat Data do textového souboru s oddělovači (CSV) pro aplikaci, například Excel
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893983"
 ---
 <a name="how-do-i-enable-code-coverage-and-profiling-in-production-applications"></a>[Jak na:] Povolit pokrytí kódu a profilování v produkční aplikace?
 ====================

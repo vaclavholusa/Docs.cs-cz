@@ -2,7 +2,7 @@
 uid: web-pages/index
 title: ASP.NET Web Pages | Microsoft Docs
 author: rick-anderson
-description: "& Stáhnout WebMatrix zjistěte, jak rychle vytvářet webové stránky v lightweight způsob kombinace kódu serveru s jazykem HTML."
+description: '& Stáhnout WebMatrix zjistěte, jak rychle vytvářet webové stránky v lightweight způsob kombinace kódu serveru s jazykem HTML.'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572902"
 ---
 <a name="aspnet-web-pages"></a>Rozhraní ASP.NET Web Pages
 ====================

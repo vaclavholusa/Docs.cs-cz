@@ -14,6 +14,7 @@ ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/28/2018
+ms.locfileid: "32078483"
 ---
 # <a name="advanced-topics-for-aspnet-core-web-api"></a>Pokročilá témata pro webové rozhraní API ASP.NET Core
 

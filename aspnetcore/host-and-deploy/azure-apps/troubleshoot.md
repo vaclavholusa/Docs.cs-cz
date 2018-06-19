@@ -15,6 +15,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897404"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Řešení potíží s ASP.NET Core v Azure App Service
 

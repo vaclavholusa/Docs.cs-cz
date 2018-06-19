@@ -1,7 +1,7 @@
 ---
 title: Primitiva v ASP.NET Core
 author: guardrex
-description: "Zjistit články v ASP.NET Core stavební bloky sdíleny framework rozšíření, které můžete použít v kódu."
+description: Zjistit články v ASP.NET Core stavební bloky sdíleny framework rozšíření, které můžete použít v kódu.
 manager: wpickett
 ms.author: riande
 ms.date: 10/28/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882708"
 ---
 # <a name="primitives-in-aspnet-core"></a>Primitiva v ASP.NET Core
 

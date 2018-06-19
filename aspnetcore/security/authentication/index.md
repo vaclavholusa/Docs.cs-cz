@@ -1,7 +1,7 @@
 ---
-title: "Ověřování v ASP.NET Core"
+title: Ověřování v ASP.NET Core
 author: rick-anderson
-description: "Zjistit témata týkající se technologií ASP.NET, základní ověřování."
+description: Zjistit témata týkající se technologií ASP.NET, základní ověřování.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29903296"
 ---
 # <a name="authentication-in-aspnet-core"></a>Ověřování v ASP.NET Core
 

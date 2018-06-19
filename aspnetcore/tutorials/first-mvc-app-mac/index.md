@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893157"
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-on-macos-with-visual-studio-for-mac"></a>Vytvoření webové aplikace s ASP.NET MVC jádra v systému macOS pomocí sady Visual Studio pro Mac
 

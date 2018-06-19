@@ -1,7 +1,7 @@
 ---
-title: "Ověření cloudu s Azure Active Directory B2C v ASP.NET Core"
+title: Ověření cloudu s Azure Active Directory B2C v ASP.NET Core
 author: camsoper
-description: "Zjistit, jak nastavit ověřování Azure Active Directory B2C pomocí ASP.NET Core."
+description: Zjistit, jak nastavit ověřování Azure Active Directory B2C pomocí ASP.NET Core.
 manager: wpickett
 ms.date: 01/25/2018
 ms.topic: tutorial
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29905072"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Ověření cloudu s Azure Active Directory B2C v ASP.NET Core
 

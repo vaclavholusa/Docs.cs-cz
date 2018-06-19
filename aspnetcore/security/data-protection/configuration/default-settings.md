@@ -1,7 +1,7 @@
 ---
-title: "Správa klíčů ochrany dat a doba platnosti v ASP.NET Core"
+title: Správa klíčů ochrany dat a doba platnosti v ASP.NET Core
 author: rick-anderson
-description: "Další informace o ochranu dat správy klíčů a doba platnosti v ASP.NET Core."
+description: Další informace o ochranu dat správy klíčů a doba platnosti v ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28887287"
 ---
 # <a name="data-protection-key-management-and-lifetime-in-aspnet-core"></a>Správa klíčů ochrany dat a doba platnosti v ASP.NET Core
 

@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/hubs-api-guide-server
-title: "Funkce SignalR technologie ASP.NET centra API Průvodce – Server (C#) | Microsoft Docs"
+title: Funkce SignalR technologie ASP.NET centra API Průvodce – Server (C#) | Microsoft Docs
 author: pfletcher
-description: "Tento dokument obsahuje úvod do programování na straně serveru rozhraní API ASP.NET SignalR centra pro SignalR verze 2, s ukázky kódu demonstraci..."
+description: Tento dokument obsahuje úvod do programování na straně serveru rozhraní API ASP.NET SignalR centra pro SignalR verze 2, s ukázky kódu demonstraci...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28039206"
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-c"></a>Funkce SignalR technologie ASP.NET centra API Průvodce – Server (C#)
 ====================

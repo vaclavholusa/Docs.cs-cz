@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30070417"
 ---
 # <a name="aspnet-core-razor-pages-with-ef-core---tutorial-series"></a>Stránky Razor ASP.NET Core EF základní – kurz řady
 

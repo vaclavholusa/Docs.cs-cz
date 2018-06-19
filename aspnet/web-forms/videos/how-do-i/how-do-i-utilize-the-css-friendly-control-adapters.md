@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-utilize-the-css-friendly-control-adapters
-title: "[Jak na:] Využívat adaptéry popisný řízení šablon stylů CSS? | Microsoft Docs"
+title: '[Jak na:] Využívat adaptéry popisný řízení šablon stylů CSS? | Microsoft Docs'
 author: rick-anderson
-description: "Ovládací prvek adaptéry popisný šablon stylů CSS umožňují změnit HTML, který je vykreslen metodou standardního ovládacího prvku serveru ASP.NET 2.0. V tomto videu jsme informace c..."
+description: Ovládací prvek adaptéry popisný šablon stylů CSS umožňují změnit HTML, který je vykreslen metodou standardního ovládacího prvku serveru ASP.NET 2.0. V tomto videu jsme informace c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/01/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/05/2018
+ms.locfileid: "28988078"
 ---
 <a name="how-do-i-utilize-the-css-friendly-control-adapters"></a>[Jak na:] Využívat adaptéry popisný řízení šablon stylů CSS?
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899175"
 ---
 <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>Ověřování uživatelského vstupu v lokalitách rozhraní ASP.NET Web Pages (Razor)
 ====================

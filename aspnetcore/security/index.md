@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30074351"
 ---
 # <a name="overview-of-aspnet-core-security"></a>Přehled zabezpečení jádra ASP.NET
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891175"
 ---
 <a name="creating-and-running-a-deployment-command-file"></a>Vytváření a spouštění soubor příkazů nasazení
 ====================
@@ -89,7 +90,7 @@ Když vytvoříte soubor příkazů pro cílové prostředí byste měli mít k 
 4. Pokud je nastaven nastavení konfigurace a testovací servery správně, okna příkazového řádku se zobrazí **sestavení bylo úspěšné** zprávu po dokončení zpracování souborů projektu nástroje MSBuild.
 
     ![](creating-and-running-a-deployment-command-file/_static/image1.png)
-5. Pokud je při prvním nasazení řešení do prostředí tohoto nástroje, budete muset přidat účet počítače serveru webového testu k **db\_datawriter** a **db\_DataReader –**rolí na **ContactManager** databáze. Tento postup je popsaný v [konfigurace databáze serveru pro webové nasazení publikování](../configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing.md).
+5. Pokud je při prvním nasazení řešení do prostředí tohoto nástroje, budete muset přidat účet počítače serveru webového testu k **db\_datawriter** a **db\_DataReader –** rolí na **ContactManager** databáze. Tento postup je popsaný v [konfigurace databáze serveru pro webové nasazení publikování](../configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing.md).
 
     > [!NOTE]
     > Potřebujete tato oprávnění přiřadit, když vytvoříte databázi. Ve výchozím nastavení, procesu sestavení nebude znovu vytvořit databázi na každé nasazení&#x2014;místo toho porovná existující databázi a schéma nejnovější a proveďte pouze požadované změny. V důsledku toho by měla pouze potřebujete namapovat tyto databázové role při prvním nasazení řešení.

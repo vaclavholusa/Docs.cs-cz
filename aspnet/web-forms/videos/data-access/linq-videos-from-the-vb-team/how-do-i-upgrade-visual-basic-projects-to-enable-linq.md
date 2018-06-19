@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892709"
 ---
 <a name="how-do-i-upgrade-visual-basic-projects-to-enable-linq"></a>[Jak na:] Upgrade projektů jazyka Visual Basic povolit LINQ?
 ====================

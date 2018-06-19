@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-provider-for-logging-health-monitoring-events
-title: "[Jak na:] Vytvoření vlastního zprostředkovatele pro protokolování událostí monitorování stavu | Microsoft Docs"
+title: '[Jak na:] Vytvoření vlastního zprostředkovatele pro protokolování událostí monitorování stavu | Microsoft Docs'
 author: rick-anderson
-description: "Jan PEL ukazuje postup vytvoření vlastního zprostředkovatele stavu ASP.NET monitorování systému, který zaznamenává události do souboru založený na textu protokolu sledování stavu. Le..."
+description: Jan PEL ukazuje postup vytvoření vlastního zprostředkovatele stavu ASP.NET monitorování systému, který zaznamenává události do souboru založený na textu protokolu sledování stavu. Le...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571795"
 ---
 <a name="how-do-i-create-a-custom-provider-for-logging-health-monitoring-events"></a>[Jak na:] Vytvoření vlastního zprostředkovatele pro protokolování událostí monitorování stavu
 ====================

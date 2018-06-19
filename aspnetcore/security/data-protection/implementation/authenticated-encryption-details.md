@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077904"
 ---
 # <a name="authenticated-encryption-details-in-aspnet-core"></a>Podrobnosti o ověřené šifrování v ASP.NET Core
 

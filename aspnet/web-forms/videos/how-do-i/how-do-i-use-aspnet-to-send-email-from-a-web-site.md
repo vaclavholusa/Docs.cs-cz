@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-aspnet-to-send-email-from-a-web-site
-title: "[Jak na:] Používat k odesílání e-mailu z webu ASP.NET | Microsoft Docs"
+title: '[Jak na:] Používat k odesílání e-mailu z webu ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak vytvořit a odeslat e-mailu na webu technologie ASP.NET. První informace o základní třídy v f obor názvů System.Net.Mail..."
+description: V této video PEL Jan ukazuje, jak vytvořit a odeslat e-mailu na webu technologie ASP.NET. První informace o základní třídy v f obor názvů System.Net.Mail...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572119"
 ---
 <a name="how-do-i-use-aspnet-to-send-email-from-a-web-site"></a>[Jak na:] Pomocí technologie ASP.NET můžete odesílat e-mailu z webu.
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/authentication-filters
-title: "Filtry ověřování v rozhraní ASP.NET Web API 2 | Microsoft Docs"
+title: Filtry ověřování v rozhraní ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: "Filtr ověřování je komponenta, která ověřuje požadavek HTTP. Rozhraní Web API 2 i MVC 5 podporovaly filtry ověřování, ale se mírně liší..."
+description: Filtr ověřování je komponenta, která ověřuje požadavek HTTP. Rozhraní Web API 2 i MVC 5 podporovaly filtry ověřování, ale se mírně liší...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/25/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29153515"
 ---
 <a name="authentication-filters-in-aspnet-web-api-2"></a>Filtry ověřování v rozhraní ASP.NET Web API 2
 ====================

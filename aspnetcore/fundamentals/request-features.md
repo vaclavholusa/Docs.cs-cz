@@ -1,7 +1,7 @@
 ---
-title: "Žádost o funkce ASP.NET Core"
+title: Žádost o funkce ASP.NET Core
 author: ardalis
-description: "Další informace o webového serveru implementace podrobnosti týkající se požadavků HTTP a odpovědí, které jsou definovány v rozhraní pro ASP.NET Core."
+description: Další informace o webového serveru implementace podrobnosti týkající se požadavků HTTP a odpovědí, které jsou definovány v rozhraní pro ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/01/2018
+ms.locfileid: "28913569"
 ---
 # <a name="request-features-in-aspnet-core"></a>Žádost o funkce ASP.NET Core
 

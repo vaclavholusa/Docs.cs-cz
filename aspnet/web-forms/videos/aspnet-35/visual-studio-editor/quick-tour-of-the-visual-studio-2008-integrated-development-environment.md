@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892605"
 ---
 <a name="quick-tour-of-the-visual-studio-2008-integrated-development-environment"></a>Stručný přehled integrované vývojové prostředí sady Visual Studio 2008
 ====================

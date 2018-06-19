@@ -15,6 +15,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072858"
 ---
 # <a name="policy-based-authorization-in-aspnet-core"></a>Na základě zásad autorizace v ASP.NET Core
 

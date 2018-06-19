@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control
-title: "[Jak na:] Ukládání a načítání zobrazit informace o stavu pro vlastní ovládací prvek webového serveru | Microsoft Docs"
+title: '[Jak na:] Ukládání a načítání zobrazit informace o stavu pro vlastní ovládací prvek webového serveru | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí postup zachovat a obnovit informace o vlastnost ViewState vlastního uživatelského ovládacího prvku. Nejdřív zjistěte, jak se zachovat jednoduché hodnotu..."
+description: V této video PEL Jan zobrazí postup zachovat a obnovit informace o vlastnost ViewState vlastního uživatelského ovládacího prvku. Nejdřív zjistěte, jak se zachovat jednoduché hodnotu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571975"
 ---
 <a name="how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control"></a>[Jak na:] Ukládání a informace o stavu zatížení zobrazení pro ovládací prvek vlastní webového serveru
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
-title: "Ověřování a autorizace v rozhraní ASP.NET Web API | Microsoft Docs"
+title: Ověřování a autorizace v rozhraní ASP.NET Web API | Microsoft Docs
 author: MikeWasson
-description: "Poskytuje obecný přehled ověřování a autorizace v rozhraní ASP.NET Web API."
+description: Poskytuje obecný přehled ověřování a autorizace v rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/27/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/02/2018
+ms.locfileid: "29726755"
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>Ověřování a autorizace v rozhraní ASP.NET Web API
 ====================

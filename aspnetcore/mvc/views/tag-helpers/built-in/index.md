@@ -1,7 +1,7 @@
 ---
-title: "Předdefinované značky Pomocníci ASP.NET Core"
+title: Předdefinované značky Pomocníci ASP.NET Core
 author: pkellner
-description: "Zjistěte, jak ASP.NET Core předdefinované značky Pomocníci zvýšení produktivity uživatelů."
+description: Zjistěte, jak ASP.NET Core předdefinované značky Pomocníci zvýšení produktivity uživatelů.
 manager: wpickett
 ms.author: riande
 ms.date: 09/13/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29903205"
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>Předdefinované značky Pomocníci ASP.NET Core
 

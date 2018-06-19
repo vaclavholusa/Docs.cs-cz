@@ -1,7 +1,7 @@
 ---
-title: "Mobilní vývoj pomocí ASP.NET Core"
+title: Mobilní vývoj pomocí ASP.NET Core
 author: rick-anderson
-description: "Zjistěte informace o tématech, které se týkají mobilní vývoj pomocí ASP.NET Core."
+description: Zjistěte informace o tématech, které se týkají mobilní vývoj pomocí ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29902276"
 ---
 # <a name="mobile-development-with-aspnet-core"></a>Mobilní vývoj pomocí ASP.NET Core
 

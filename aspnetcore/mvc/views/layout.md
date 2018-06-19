@@ -1,7 +1,7 @@
 ---
-title: "Rozložení v ASP.NET Core"
+title: Rozložení v ASP.NET Core
 author: ardalis
-description: "Naučte se používat běžné rozložení, sdílet direktivy a spustit běžné kód před vykreslování zobrazení v aplikaci ASP.NET Core."
+description: Naučte se používat běžné rozložení, sdílet direktivy a spustit běžné kód před vykreslování zobrazení v aplikaci ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29904748"
 ---
 # <a name="layout-in-aspnet-core"></a>Rozložení v ASP.NET Core
 

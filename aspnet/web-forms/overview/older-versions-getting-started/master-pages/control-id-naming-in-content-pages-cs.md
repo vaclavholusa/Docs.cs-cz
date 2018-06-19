@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891344"
 ---
 <a name="control-id-naming-in-content-pages-c"></a>ID ovládacího prvku pojmenování v obsahu stránky (C#)
 ====================

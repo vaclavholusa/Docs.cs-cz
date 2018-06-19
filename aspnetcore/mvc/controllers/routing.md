@@ -1,7 +1,7 @@
 ---
-title: "Směrování do akce kontroleru v ASP.NET Core"
+title: Směrování do akce kontroleru v ASP.NET Core
 author: rick-anderson
-description: "Zjistěte, jak technologie ASP.NET MVC základní využívá Middleware směrování odpovídající adresy URL příchozích požadavků a jejich namapování na akce."
+description: Zjistěte, jak technologie ASP.NET MVC základní využívá Middleware směrování odpovídající adresy URL příchozích požadavků a jejich namapování na akce.
 manager: wpickett
 ms.author: riande
 ms.date: 03/14/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29905202"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>Směrování do akce kontroleru v ASP.NET Core
 

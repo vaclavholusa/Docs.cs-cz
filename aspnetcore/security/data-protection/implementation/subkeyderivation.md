@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072636"
 ---
 # <a name="subkey-derivation-and-authenticated-encryption-in-aspnet-core"></a>Odvození podklíčů a ověřené šifrování v ASP.NET Core
 

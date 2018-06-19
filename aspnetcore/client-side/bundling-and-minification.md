@@ -16,6 +16,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094642"
 ---
 # <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>Sady a minifiy statické prostředky v ASP.NET Core
 

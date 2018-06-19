@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884282"
 ---
 <a name="multi-targeting-support-in-visual-studio-2008"></a>Více cílení na podporu v sadě Visual Studio 2008
 ====================

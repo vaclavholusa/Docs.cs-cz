@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/what-is-new-in-aspnet-mvc
-title: "Co je nového v architektuře ASP.NET MVC 2 | Microsoft Docs"
+title: Co je nového v architektuře ASP.NET MVC 2 | Microsoft Docs
 author: rick-anderson
-description: "Tento dokument popisuje nové funkce a vylepšení, která byla zavedená v ASP.NET MVC 2. Tento dokument je také k dispozici ke stažení."
+description: Tento dokument popisuje nové funkce a vylepšení, která byla zavedená v ASP.NET MVC 2. Tento dokument je také k dispozici ke stažení.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2010
 ms.topic: article
 ms.assetid: 69a8d6f8-4b10-4602-8822-2d6c05fc432b
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/what-is-new-in-aspnet-mvc
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885229"
 ---
 <a name="whats-new-in-aspnet-mvc-2"></a>Co je nového v architektuře ASP.NET MVC 2
 ====================

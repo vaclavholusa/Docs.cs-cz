@@ -15,6 +15,7 @@ ms.sourcegitcommit: 6fa546140575b3eb279eabae12d9acad966f70e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/09/2018
+ms.locfileid: "29841274"
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Visual Studio Tools pro Docker základní technologie ASP.NET
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-multiple-file-uploads-in-aspnet-2
-title: "[Jak na:]  Nahrávání více souborů v ASP.NET 2 | Microsoft Docs"
+title: '[Jak na:]  Nahrávání více souborů v ASP.NET 2 | Microsoft Docs'
 author: JoeStagner
-description: "V tomto videu I se ukazují nahrávání dynamicky určený počet souborů do vaší aplikace ASP.NET."
+description: V tomto videu I se ukazují nahrávání dynamicky určený počet souborů do vaší aplikace ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570718"
 ---
 <a name="how-do-i--multiple-file-uploads-in-aspnet-2"></a>[Jak na:]  Nahrávání více souborů v ASP.NET 2
 ====================

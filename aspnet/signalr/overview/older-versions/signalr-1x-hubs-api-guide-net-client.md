@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/signalr-1x-hubs-api-guide-net-client
-title: "Funkce SignalR technologie ASP.NET centra API Průvodce – klient .NET (SignalR 1.x) | Microsoft Docs"
+title: Funkce SignalR technologie ASP.NET centra API Průvodce – klient .NET (SignalR 1.x) | Microsoft Docs
 author: pfletcher
-description: "Tento dokument obsahuje úvod do používání centra rozhraní API pro SignalR verze 2 v rozhraní .NET klientů, jako jsou Windows Store (WinRT), WPF, Silverlight a nevýhody..."
+description: Tento dokument obsahuje úvod do používání centra rozhraní API pro SignalR verze 2 v rozhraní .NET klientů, jako jsou Windows Store (WinRT), WPF, Silverlight a nevýhody...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/17/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28037477"
 ---
 <a name="aspnet-signalr-hubs-api-guide---net-client-signalr-1x"></a>Funkce SignalR technologie ASP.NET centra API Průvodce – klient .NET (SignalR 1.x)
 ====================

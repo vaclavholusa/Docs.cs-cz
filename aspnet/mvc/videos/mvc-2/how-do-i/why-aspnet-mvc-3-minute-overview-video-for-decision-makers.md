@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871074"
 ---
 <a name="why-aspnet-mvc-3-minute-overview-video-for-decision-makers"></a>Proč rozhraní ASP.NET MVC? 3 minuty přehled – video pro rozhodují
 ====================

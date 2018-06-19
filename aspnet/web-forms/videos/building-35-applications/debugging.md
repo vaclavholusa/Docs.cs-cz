@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/debugging
-title: "Ladění | Microsoft Docs"
+title: Ladění | Microsoft Docs
 author: JoeStagner
-description: "Popis: Aplikaci Visual Web Developer nabízí bohaté ladění prostředí pro začátečníky a odborné vývojáře agentem. V tomto videu se prohlídka Jan prostřednictvím zobrazit můžete..."
+description: 'Popis: Aplikaci Visual Web Developer nabízí bohaté ladění prostředí pro začátečníky a odborné vývojáře agentem. V tomto videu se prohlídka Jan prostřednictvím zobrazit můžete...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/30/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572749"
 ---
 <a name="debugging"></a>Ladění
 ====================

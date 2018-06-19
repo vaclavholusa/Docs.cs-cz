@@ -15,6 +15,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153680"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>Podpora pro objekty WebSockets v ASP.NET Core
 

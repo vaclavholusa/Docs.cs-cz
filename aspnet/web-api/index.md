@@ -1,8 +1,8 @@
 ---
 uid: web-api/index
-title: "Rozhraní ASP.NET Web API | Microsoft Docs"
+title: Rozhraní ASP.NET Web API | Microsoft Docs
 author: rick-anderson
-description: "Stáhněte ASP.NET MVC 4 a sestavování služeb HTTP, které využity širokou škálou klientů."
+description: Stáhněte ASP.NET MVC 4 a sestavování služeb HTTP, které využity širokou škálou klientů.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566419"
 ---
 <a name="aspnet-web-api"></a>Rozhraní API pro ASP.NET Web
 ====================

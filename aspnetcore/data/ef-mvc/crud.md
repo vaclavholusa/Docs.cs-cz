@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153583"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>Jádro ASP.NET MVC s EF Core - CRUD - 2 10
 

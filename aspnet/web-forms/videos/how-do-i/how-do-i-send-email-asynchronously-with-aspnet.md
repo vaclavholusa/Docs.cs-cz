@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-send-email-asynchronously-with-aspnet
-title: "[Jak na:] Odesílání e-mailů asynchronně s technologií ASP.NET | Microsoft Docs"
+title: '[Jak na:] Odesílání e-mailů asynchronně s technologií ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu Jan PEL ukazuje způsob použití třídy System.Net.Mail technologie ASP.NET k odeslání asynchronní e-mailové zprávy. Nejdříve si projděte postup konfigurace webového serveru..."
+description: V tomto videu Jan PEL ukazuje způsob použití třídy System.Net.Mail technologie ASP.NET k odeslání asynchronní e-mailové zprávy. Nejdříve si projděte postup konfigurace webového serveru...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572065"
 ---
 <a name="how-do-i-send-email-asynchronously-with-aspnet"></a>[Jak na:] Odesílání e-mailů asynchronně s technologií ASP.NET
 ====================

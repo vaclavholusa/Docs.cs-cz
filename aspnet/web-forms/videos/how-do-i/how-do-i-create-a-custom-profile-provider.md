@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-profile-provider
-title: "[Jak na:] Vytvoření vlastního poskytovatele profilu? | Microsoft Docs"
+title: '[Jak na:] Vytvoření vlastního poskytovatele profilu? | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu jsme informace o vytváření vlastního profilu zprostředkovatele pro ukládání a načítání data přidružená k profilu uživatele v oddělené od t tabulek systému SQL Server..."
+description: V tomto videu jsme informace o vytváření vlastního profilu zprostředkovatele pro ukládání a načítání data přidružená k profilu uživatele v oddělené od t tabulek systému SQL Server...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572227"
 ---
 <a name="how-do-i-create-a-custom-profile-provider"></a>[Jak na:] Vytvoření vlastního poskytovatele profilu?
 ====================

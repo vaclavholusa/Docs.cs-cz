@@ -2,7 +2,7 @@
 uid: mvc/videos/mvc-2/music-store/index
 title: Hudba Store | Microsoft Docs
 author: rick-anderson
-description: "Vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště"
+description: Vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565420"
 ---
 <a name="music-store"></a>Hudba úložiště
 ====================

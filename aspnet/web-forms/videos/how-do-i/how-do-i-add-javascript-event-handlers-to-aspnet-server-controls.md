@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-add-javascript-event-handlers-to-aspnet-server-controls
-title: "[Jak na:] Přidání obslužných rutin událostí jazyka JavaScript do serverové ovládací prvky ASP.NET | Microsoft Docs"
+title: '[Jak na:] Přidání obslužných rutin událostí jazyka JavaScript do serverové ovládací prvky ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se Jan PEL ukazují, jak rozhraní metody jazyka JavaScript pomocí serverových ovládacích prvků ASP.NET zajistit na straně klienta funkce pro sml serveru..."
+description: V tomto videu se Jan PEL ukazují, jak rozhraní metody jazyka JavaScript pomocí serverových ovládacích prvků ASP.NET zajistit na straně klienta funkce pro sml serveru...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571927"
 ---
 <a name="how-do-i-add-javascript-event-handlers-to-aspnet-server-controls"></a>[Jak na:] Přidání obslužných rutin událostí jazyka JavaScript do serverové ovládací prvky ASP.NET
 ====================

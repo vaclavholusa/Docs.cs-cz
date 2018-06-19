@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-multi-lingual-site-with-localization
-title: "[Jak na:] Vytvoří vícejazyčnou web se lokalizace? | Microsoft Docs"
+title: '[Jak na:] Vytvoří vícejazyčnou web se lokalizace? | Microsoft Docs'
 author: microsoft
-description: "Naučte se vytvářet podporující jazykové verze a místního webového obsahu se žádný další kód. Použijte Editor prostředků k vytvoření úrovni stránky a úrovni aplikace..."
+description: Naučte se vytvářet podporující jazykové verze a místního webového obsahu se žádný další kód. Použijte Editor prostředků k vytvoření úrovni stránky a úrovni aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571837"
 ---
 <a name="how-do-i-create-a-multi-lingual-site-with-localization"></a>[Jak na:] Vytvoří vícejazyčnou web se lokalizace?
 ====================

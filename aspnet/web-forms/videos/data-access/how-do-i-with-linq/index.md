@@ -2,7 +2,7 @@
 uid: web-forms/videos/data-access/how-do-i-with-linq/index
 title: Jak mohu s dotazy LINQ | Microsoft Docs
 author: rick-anderson
-description: "Tato série videí vás provede procesem všechno, co potřebujete vědět, se znalosti v pomocí LINQ jako vývojář webu."
+description: Tato série videí vás provede procesem všechno, co potřebujete vědět, se znalosti v pomocí LINQ jako vývojář webu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572221"
 ---
 <a name="how-do-i-with-linq"></a>Jak mohu s dotazy LINQ
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/index
-title: "Starší verze - MVC 3 a 4 | Microsoft Docs"
+title: Starší verze - MVC 3 a 4 | Microsoft Docs
 author: rick-anderson
-description: "Odkazy na zdroje informací pro naučit se používat dřívějších verzích rozhraní ASP.NET MVC."
+description: Odkazy na zdroje informací pro naučit se používat dřívějších verzích rozhraní ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565075"
 ---
 <a name="older-versions---mvc-3-and-4"></a>Starší verze - MVC 3 a 4
 ====================

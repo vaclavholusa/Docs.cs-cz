@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/index
-title: "Úvod do webové stránky videa | Microsoft Docs"
+title: Úvod do webové stránky videa | Microsoft Docs
 author: rick-anderson
-description: "Videa, které můžete zobrazit základní informace o webových stránek a službě WebMatrix."
+description: Videa, které můžete zobrazit základní informace o webových stránek a službě WebMatrix.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573295"
 ---
 <a name="introduction-to-web-pages-videos"></a>Úvod do webové stránky videa
 ====================

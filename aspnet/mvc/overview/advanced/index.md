@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/advanced/index
-title: "ASP.NET MVC Advanced témata | Microsoft Docs"
+title: ASP.NET MVC Advanced témata | Microsoft Docs
 author: rick-anderson
-description: "Rozšířené témata pro programovací rozhraní ASP.NET MVC, včetně usnadnění, rozšíření a mezinárodní prostředí."
+description: Rozšířené témata pro programovací rozhraní ASP.NET MVC, včetně usnadnění, rozšíření a mezinárodní prostředí.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26563749"
 ---
 <a name="aspnet-mvc-advanced-topics"></a>ASP.NET MVC Advanced témata
 ====================

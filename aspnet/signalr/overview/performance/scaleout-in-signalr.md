@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/scaleout-in-signalr
-title: "Úvod do škálování v systému SignalR | Microsoft Docs"
+title: Úvod do škálování v systému SignalR | Microsoft Docs
 author: MikeWasson
-description: "Verze softwaru použitým v tomto tématu Visual Studio 2013 .NET 4.5 SignalR verze 2 předchozí verze tohoto tématu informace o předchozích verzí aplikace..."
+description: Verze softwaru použitým v tomto tématu Visual Studio 2013 .NET 4.5 SignalR verze 2 předchozí verze tohoto tématu informace o předchozích verzí aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28034591"
 ---
 <a name="introduction-to-scaleout-in-signalr"></a>Úvod do škálování v systému SignalR
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-make-html-elements-accessible-from-server-side-code
-title: "[Jak na:] Zpřístupněte elementů HTML z kódu na straně serveru | Microsoft Docs"
+title: '[Jak na:] Zpřístupněte elementů HTML z kódu na straně serveru | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí postup zpřístupněte standardní elementy HTML stránky ASPX z kódu na straně serveru, mohou být používány stránky processin..."
+description: V této video PEL Jan zobrazí postup zpřístupněte standardní elementy HTML stránky ASPX z kódu na straně serveru, mohou být používány stránky processin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570769"
 ---
 <a name="how-do-i-make-html-elements-accessible-from-server-side-code"></a>[Jak na:] Zpřístupněte elementů HTML z kódu na straně serveru
 ====================

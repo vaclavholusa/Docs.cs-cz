@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/index
-title: "Začínáme s webovými stránkami ASP.NET | Microsoft Docs"
+title: Začínáme s webovými stránkami ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Další informace o ASP.NET webové stránky ASP.NET Web Pages a Nová syntaxe Razor poskytují rychlý, schůdný a snadný způsob kombinování kódu serveru s HTML t..."
+description: Další informace o ASP.NET webové stránky ASP.NET Web Pages a Nová syntaxe Razor poskytují rychlý, schůdný a snadný způsob kombinování kódu serveru s HTML t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572881"
 ---
 <a name="getting-started-with-aspnet-web-pages"></a>Začínáme s webovými stránkami ASP.NET
 ====================

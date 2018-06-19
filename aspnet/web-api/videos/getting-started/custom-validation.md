@@ -1,8 +1,8 @@
 ---
 uid: web-api/videos/getting-started/custom-validation
-title: "Rozhraní ASP.NET Web API, část 5: Vlastního ověřování | Microsoft Docs"
+title: 'Rozhraní ASP.NET Web API, část 5: Vlastního ověřování | Microsoft Docs'
 author: jongalloway
-description: "Poznámka: Toto video obsahuje informace z Předběžná verze rozhraní ASP.NET Web API"
+description: 'Poznámka: Toto video obsahuje informace z Předběžná verze rozhraní ASP.NET Web API'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26567007"
 ---
 <a name="aspnet-web-api-part-5-custom-validation"></a>Rozhraní ASP.NET Web API, část 5: Vlastního ověřování
 ====================

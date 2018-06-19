@@ -2,7 +2,7 @@
 uid: web-forms/videos/net-4/ajax/index
 title: AJAX | Microsoft Docs
 author: rick-anderson
-description: "Tato série videí ukazuje nové funkce v technologii ASP.NET 4 pro podporu jQuery a používání jazyka JavaScript."
+description: Tato série videí ukazuje nové funkce v technologii ASP.NET 4 pro podporu jQuery a používání jazyka JavaScript.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572761"
 ---
 <a name="ajax"></a>AJAX
 ====================

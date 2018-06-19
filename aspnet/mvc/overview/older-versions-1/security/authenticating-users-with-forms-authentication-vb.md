@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870996"
 ---
 <a name="authenticating-users-with-forms-authentication-vb"></a>Ověřování uživatelů pomocí ověřování pomocí formulářů (VB)
 ====================

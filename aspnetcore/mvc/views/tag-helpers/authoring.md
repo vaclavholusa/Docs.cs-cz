@@ -15,6 +15,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740995"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>Autor značky pomocné rutiny v ASP.NET Core
 

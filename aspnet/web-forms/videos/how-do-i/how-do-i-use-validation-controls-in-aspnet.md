@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-validation-controls-in-aspnet
-title: "[Jak na:]  Ovládací prvky pro ověřování pomocí technologie ASP.NET? | Microsoft Docs"
+title: '[Jak na:]  Ovládací prvky pro ověřování pomocí technologie ASP.NET? | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu Naučte se používat ovládací prvky ověřování, která je k dispozici v technologii ASP.NET implementace ověření na webových stránkách. Všechny hlavní ověření ovládací prvky..."
+description: V tomto videu Naučte se používat ovládací prvky ověřování, která je k dispozici v technologii ASP.NET implementace ověření na webových stránkách. Všechny hlavní ověření ovládací prvky...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/26/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572089"
 ---
 <a name="how-do-i--use-validation-controls-in-aspnet"></a>[Jak na:]  Ovládací prvky pro ověřování pomocí technologie ASP.NET?
 ====================

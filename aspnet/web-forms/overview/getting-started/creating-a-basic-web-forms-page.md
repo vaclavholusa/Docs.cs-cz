@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306790"
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>Vytvoření základní technologie ASP.NET 4.5 webové stránky formuláře v sadě Visual Studio 2013
 ====================

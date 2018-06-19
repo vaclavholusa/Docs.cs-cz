@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/choosing-the-right-programming-model
-title: "Výběr správné programovací Model | Microsoft Docs"
+title: Výběr správné programovací Model | Microsoft Docs
 author: shanselman
-description: "Scott Hanselman společnosti Microsoft vám poskytne informace, které je nutné se rozhodnout, pokud je pro vás nejvhodnější webových formulářů ASP.NET, rozhraní ASP.NET MVC ani webové stránky ASP.NET."
+description: Scott Hanselman společnosti Microsoft vám poskytne informace, které je nutné se rozhodnout, pokud je pro vás nejvhodnější webových formulářů ASP.NET, rozhraní ASP.NET MVC ani webové stránky ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/10/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571936"
 ---
 <a name="choosing-the-right-programming-model"></a>Výběr správné programovací Model
 ====================

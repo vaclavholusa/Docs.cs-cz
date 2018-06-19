@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-extend-and-customize-an-aspnet-server-control-for-a-specific-purpose
-title: "[Jak na:] Rozšířit a přizpůsobit ovládacího prvku serveru technologie ASP.NET pro konkrétní účel | Microsoft Docs"
+title: '[Jak na:] Rozšířit a přizpůsobit ovládacího prvku serveru technologie ASP.NET pro konkrétní účel | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí postup standardního ovládacího prvku serveru ASP.NET rozšířit a přizpůsobit pro konkrétní účel. Ovládací prvky specializované poskytují c..."
+description: V této video PEL Jan zobrazí postup standardního ovládacího prvku serveru ASP.NET rozšířit a přizpůsobit pro konkrétní účel. Ovládací prvky specializované poskytují c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572254"
 ---
 <a name="how-do-i-extend-and-customize-an-aspnet-server-control-for-a-specific-purpose"></a>[Jak na:] Rozšířit a přizpůsobit pro konkrétní účel ovládacího prvku serveru technologie ASP.NET
 ====================

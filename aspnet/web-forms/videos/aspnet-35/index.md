@@ -2,7 +2,7 @@
 uid: web-forms/videos/aspnet-35/index
 title: ASP.NET 3.5 | Microsoft Docs
 author: rick-anderson
-description: "Jak vytvářet aplikace technologie ASP.NET 3.5, s důrazem na nové funkce."
+description: Jak vytvářet aplikace technologie ASP.NET 3.5, s důrazem na nové funkce.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570877"
 ---
 <a name="aspnet-35"></a>ASP.NET 3.5
 ====================

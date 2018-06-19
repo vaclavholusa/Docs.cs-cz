@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/signalr-performance
-title: "SignalR výkonu | Microsoft Docs"
+title: SignalR výkonu | Microsoft Docs
 author: pfletcher
-description: "SignalR výkonu"
+description: SignalR výkonu
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28041862"
 ---
 <a name="signalr-performance"></a>SignalR výkonu
 ====================

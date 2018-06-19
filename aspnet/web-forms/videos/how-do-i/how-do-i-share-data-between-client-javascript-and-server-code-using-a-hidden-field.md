@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-share-data-between-client-javascript-and-server-code-using-a-hidden-field
-title: "[Jak na:] Sdílet Data mezi JavaScript klienta a kód serveru pomocí skryté pole | Microsoft Docs"
+title: '[Jak na:] Sdílet Data mezi JavaScript klienta a kód serveru pomocí skryté pole | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí jak sdílet data mezi kódu na straně serveru a používání jazyka JavaScript pomocí skryté pole na stránce technologie ASP.NET. Dále se naučíte, jak t..."
+description: V této video PEL Jan zobrazí jak sdílet data mezi kódu na straně serveru a používání jazyka JavaScript pomocí skryté pole na stránce technologie ASP.NET. Dále se naučíte, jak t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/13/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570778"
 ---
 <a name="how-do-i-share-data-between-client-javascript-and-server-code-using-a-hidden-field"></a>[Jak na:] Sdílet Data mezi JavaScript klienta a kód serveru pomocí skryté pole
 ====================

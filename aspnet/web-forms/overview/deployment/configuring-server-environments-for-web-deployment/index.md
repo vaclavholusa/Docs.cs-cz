@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/index
-title: "ASP.NET 4 - Enterprise nasazení řady 2 konfigurace serverů | Microsoft Docs"
+title: ASP.NET 4 - Enterprise nasazení řady 2 konfigurace serverů | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz vám ukáže, jak nastavit prostředí server pro podporu jedním kliknutím nebo automatizované, nasazení webu a publikování v různých různých scen..."
+description: Tento kurz vám ukáže, jak nastavit prostředí server pro podporu jedním kliknutím nebo automatizované, nasazení webu a publikování v různých různých scen...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568873"
 ---
 <a name="aspnet-4---enterprise-deployment-series-2-configuring-servers"></a>ASP.NET 4 - Enterprise nasazení řady 2 konfigurace serverů
 ====================

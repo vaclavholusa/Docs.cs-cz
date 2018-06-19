@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/index
-title: "Zobrazení dat s DataList a opakovače | Microsoft Docs"
+title: Zobrazení dat s DataList a opakovače | Microsoft Docs
 author: rick-anderson
-description: "Tyto kurzy zobrazit alternativní způsoby, jak zobrazit data pomocí ovládacích prvků DataList a opakovače."
+description: Tyto kurzy zobrazit alternativní způsoby, jak zobrazit data pomocí ovládacích prvků DataList a opakovače.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568234"
 ---
 <a name="displaying-data-with-the-datalist-and-repeater"></a>Zobrazení dat s DataList a opakovače
 ====================

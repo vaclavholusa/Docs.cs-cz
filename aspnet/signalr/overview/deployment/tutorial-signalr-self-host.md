@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/deployment/tutorial-signalr-self-host
-title: "Kurz: SignalR hostování na vlastním serveru | Microsoft Docs"
+title: 'Kurz: SignalR hostování na vlastním serveru | Microsoft Docs'
 author: pfletcher
-description: "Tento kurz ukazuje, jak vytvořit vlastním hostováním SignalR 2: server a jak se připojit k němu pomocí jazyka JavaScript klienta. Použité v tomto kurzu V softwaru verze..."
+description: 'Tento kurz ukazuje, jak vytvořit vlastním hostováním SignalR 2: server a jak se připojit k němu pomocí jazyka JavaScript klienta. Použité v tomto kurzu V softwaru verze...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036775"
 ---
 <a name="tutorial-signalr-self-host"></a>Kurz: SignalR hostování na vlastním serveru
 ====================

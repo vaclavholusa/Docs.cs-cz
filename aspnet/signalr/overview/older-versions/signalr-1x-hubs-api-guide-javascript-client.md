@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036918"
 ---
 <a name="signalr-1x-hubs-api-guide---javascript-client"></a>Příručka rozhraní API SignalR 1.x centra – JavaScript klienta
 ====================

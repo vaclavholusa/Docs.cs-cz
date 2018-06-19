@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28035332"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>Funkce SignalR technologie ASP.NET centra API Průvodce – JavaScript klienta
 ====================

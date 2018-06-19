@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-objectdatasource-with-a-data-access-class-and-business-object
-title: "[Jak na:] Použít ObjectDataSource s třída přístup dat a obchodní objekt | Microsoft Docs"
+title: '[Jak na:] Použít ObjectDataSource s třída přístup dat a obchodní objekt | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se Jan PEL ukazují, jak používat ObjectDataSource jako zprostředkující vrstva mezi elementy data vázaná uživatelského rozhraní a vlastní data účet..."
+description: V tomto videu se Jan PEL ukazují, jak používat ObjectDataSource jako zprostředkující vrstva mezi elementy data vázaná uživatelského rozhraní a vlastní data účet...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572140"
 ---
 <a name="how-do-i-use-the-objectdatasource-with-a-data-access-class-and-business-object"></a>[Jak na:] Použití ObjectDataSource s třída přístup dat a obchodní objekt
 ====================

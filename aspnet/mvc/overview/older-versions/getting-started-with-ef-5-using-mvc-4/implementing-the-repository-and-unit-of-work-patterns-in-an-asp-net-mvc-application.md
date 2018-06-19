@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875867"
 ---
 <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>Implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC (9, 10)
 ====================

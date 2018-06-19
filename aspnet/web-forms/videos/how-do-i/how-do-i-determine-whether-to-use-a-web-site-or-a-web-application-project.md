@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-determine-whether-to-use-a-web-site-or-a-web-application-project
-title: "[Jak na:] Určení, zda se má používat na web nebo projekt webové aplikace | Microsoft Docs"
+title: '[Jak na:] Určení, zda se má používat na web nebo projekt webové aplikace | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan bude protějšek rozdíly mezi projektu webové stránky ASP.NET a projekt webové aplikace. Další důležité informace pro používání..."
+description: V této video PEL Jan bude protějšek rozdíly mezi projektu webové stránky ASP.NET a projekt webové aplikace. Další důležité informace pro používání...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/22/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570964"
 ---
 <a name="how-do-i-determine-whether-to-use-a-web-site-or-a-web-application-project"></a>[Jak na:] Určení, zda se má používat na web nebo projekt webové aplikace
 ====================

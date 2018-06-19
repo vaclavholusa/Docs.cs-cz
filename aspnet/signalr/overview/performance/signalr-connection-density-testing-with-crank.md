@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/signalr-connection-density-testing-with-crank
-title: "Hustotu připojení SignalR testování pomocí Crank | Microsoft Docs"
+title: Hustotu připojení SignalR testování pomocí Crank | Microsoft Docs
 author: tfitzmac
-description: "Hustotu připojení SignalR testování pomocí Crank"
+description: Hustotu připojení SignalR testování pomocí Crank
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/22/2015
@@ -17,6 +17,7 @@ ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/21/2017
+ms.locfileid: "26575539"
 ---
 <a name="signalr-connection-density-testing-with-crank"></a>Hustotu připojení SignalR testování pomocí Crank
 ====================

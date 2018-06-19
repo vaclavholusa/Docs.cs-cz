@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873401"
 ---
 <a name="implementing-inheritance-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-11-of-12"></a>Implementace dědičnosti s rozhraní Entity Framework 6 v aplikaci ASP.NET MVC 5 (11 12)
 ====================

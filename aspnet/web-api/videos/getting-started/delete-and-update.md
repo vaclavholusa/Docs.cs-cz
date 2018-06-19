@@ -1,8 +1,8 @@
 ---
 uid: web-api/videos/getting-started/delete-and-update
-title: "Rozhraní ASP.NET Web API, část 3: Odstraňte a aktualizovat | Microsoft Docs"
+title: 'Rozhraní ASP.NET Web API, část 3: Odstraňte a aktualizovat | Microsoft Docs'
 author: jongalloway
-description: "Poznámka: Toto video obsahuje informace z Předběžná verze rozhraní ASP.NET Web API"
+description: 'Poznámka: Toto video obsahuje informace z Předběžná verze rozhraní ASP.NET Web API'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26567010"
 ---
 <a name="aspnet-web-api-part-3-delete-and-update"></a>Rozhraní ASP.NET Web API, část 3: Odstraňte a aktualizace
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies
-title: "[Jak na:] Slučování sestavení pomocí nástroje aspnet_merge.exe | Microsoft Docs"
+title: '[Jak na:] Slučování sestavení pomocí nástroje aspnet_merge.exe | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se Jan PEL ukazují, jak používat nástroj aspnet_merge.exe kombinovat sestavení, které mají kompilovaná pomocí aspnet_compiler.exe utilit..."
+description: V tomto videu se Jan PEL ukazují, jak používat nástroj aspnet_merge.exe kombinovat sestavení, které mají kompilovaná pomocí aspnet_compiler.exe utilit...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572251"
 ---
 <a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[Jak na:] Použijte nástroj aspnet_merge.exe sloučit sestavení
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/releases/index
-title: "Verze rozhraní ASP.NET Web API | Microsoft Docs"
+title: Verze rozhraní ASP.NET Web API | Microsoft Docs
 author: rick-anderson
-description: "Co je nového v nejnovější webového rozhraní API uvolní."
+description: Co je nového v nejnovější webového rozhraní API uvolní.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/13/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566713"
 ---
 <a name="aspnet-web-api-releases"></a>Verze rozhraní ASP.NET Web API
 ====================

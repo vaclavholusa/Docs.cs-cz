@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/testing-and-debugging/enabling-signalr-tracing
-title: "Povolení trasování SignalR | Microsoft Docs"
+title: Povolení trasování SignalR | Microsoft Docs
 author: tfitzmac
-description: "Tento dokument popisuje, jak povolit a konfigurovat trasování pro SignalR servery a klienty. Trasování umožňuje zobrazit diagnostické informace o události..."
+description: Tento dokument popisuje, jak povolit a konfigurovat trasování pro SignalR servery a klienty. Trasování umožňuje zobrazit diagnostické informace o události...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28032815"
 ---
 <a name="enabling-signalr-tracing"></a>Povolení trasování SignalR
 ====================

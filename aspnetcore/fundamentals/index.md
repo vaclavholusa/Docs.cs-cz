@@ -15,6 +15,7 @@ ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34233307"
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 

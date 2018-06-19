@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/visual-studio-2010/index
-title: "Tipy pro obecné VS 2010 | Microsoft Docs"
+title: Tipy pro obecné VS 2010 | Microsoft Docs
 author: rick-anderson
-description: "Funkce sady Visual Studio 2010, včetně těch, které speciálně pro práci s technologií ASP.NET."
+description: Funkce sady Visual Studio 2010, včetně těch, které speciálně pro práci s technologií ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572245"
 ---
 <a name="general-vs-2010-tips"></a>Obecné VS 2010 tipy
 ====================

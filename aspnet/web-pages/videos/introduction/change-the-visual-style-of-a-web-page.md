@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/change-the-visual-style-of-a-web-page
-title: "Změnit vizuální styl webové stránky | Microsoft Docs"
+title: Změnit vizuální styl webové stránky | Microsoft Docs
 author: rick-anderson
-description: "Část 3 vám pomůže začít s stylů CSS a stylu, abyste měli víc Krásný stránku."
+description: Část 3 vám pomůže začít s stylů CSS a stylu, abyste měli víc Krásný stránku.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573298"
 ---
 <a name="change-the-visual-style-of-a-web-page"></a>Změnit vizuální styl webové stránky
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870112"
 ---
 <a name="part-9-registration-and-checkout"></a>Část 9: Registrace a ověření
 ====================

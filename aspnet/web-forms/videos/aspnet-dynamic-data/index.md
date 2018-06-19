@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/index
-title: "Dynamická Data technologie ASP.NET | Microsoft Docs"
+title: Dynamická Data technologie ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Jak používat Dynamická Data technologie ASP.NET pro vytvoření automaticky generovaný aplikací, které automaticky vědět, jak provádí přístup k datům."
+description: Jak používat Dynamická Data technologie ASP.NET pro vytvoření automaticky generovaný aplikací, které automaticky vědět, jak provádí přístup k datům.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571057"
 ---
 <a name="aspnet-dynamic-data"></a>Dynamická Data technologie ASP.NET
 ====================

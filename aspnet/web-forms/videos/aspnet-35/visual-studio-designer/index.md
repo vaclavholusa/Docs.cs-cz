@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-35/visual-studio-designer/index
-title: "Návrhář Visual Studio | Microsoft Docs"
+title: Návrhář Visual Studio | Microsoft Docs
 author: rick-anderson
-description: "Toto video ukazuje rozšířené funkce v sadě Visual Studio 2008 pro práci s stránky předlohy."
+description: Toto video ukazuje rozšířené funkce v sadě Visual Studio 2008 pro práci s stránky předlohy.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570463"
 ---
 <a name="visual-studio-designer"></a>Návrhář Visual Studio
 ====================

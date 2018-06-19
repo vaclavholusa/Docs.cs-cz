@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/index
-title: "Představení technologie ASP.NET Web Pages | Microsoft Docs"
+title: Představení technologie ASP.NET Web Pages | Microsoft Docs
 author: rick-anderson
-description: "Představení technologie ASP.NET Web Pages 2"
+description: Představení technologie ASP.NET Web Pages 2
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572872"
 ---
 <a name="introducing-aspnet-web-pages"></a>Představení ASP.NET – webové stránky
 ====================

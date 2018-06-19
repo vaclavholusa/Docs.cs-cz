@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/index
-title: "Stránkování a řazení | Microsoft Docs"
+title: Stránkování a řazení | Microsoft Docs
 author: rick-anderson
-description: "V těchto kurzech přidáte některé počáteční řazení a stránkování funkce data sestav."
+description: V těchto kurzech přidáte některé počáteční řazení a stránkování funkce data sestav.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568720"
 ---
 <a name="paging-and-sorting"></a>Stránkování a řazení
 ====================

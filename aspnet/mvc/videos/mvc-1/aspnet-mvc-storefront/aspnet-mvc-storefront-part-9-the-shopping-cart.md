@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871867"
 ---
 <a name="aspnet-mvc-storefront-part-9-the-shopping-cart"></a>ASP.NET MVC Storefront část 9: Nákupní košík
 ====================

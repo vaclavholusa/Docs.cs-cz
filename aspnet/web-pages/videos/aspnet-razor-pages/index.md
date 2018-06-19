@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/index
-title: "Stránky ASP.NET Razor | Microsoft Docs"
+title: Stránky ASP.NET Razor | Microsoft Docs
 author: rick-anderson
-description: "Videa, které můžete zobrazit můžete rozbalit webové stránky a službě WebMatrix."
+description: Videa, které můžete zobrazit můžete rozbalit webové stránky a službě WebMatrix.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573283"
 ---
 <a name="aspnet-web-pages"></a>Rozhraní ASP.NET Web Pages
 =================

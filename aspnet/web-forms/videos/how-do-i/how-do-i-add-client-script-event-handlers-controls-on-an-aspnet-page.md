@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-add-client-script-event-handlers-controls-on-an-aspnet-page
-title: "[Jak na to]: Přidání ovládacích prvků k klienta skriptu událost obslužné rutiny na stránku ASP.NET? | Microsoft Docs"
+title: '[Jak na to]: Přidání ovládacích prvků k klienta skriptu událost obslužné rutiny na stránku ASP.NET? | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak přidat událostí klientského skriptu do ovládacích prvků na stránce technologie ASP.NET. Nejprve několik ovládací prvky ASP.NET jsou přidány do stránky a e..."
+description: V této video PEL Jan ukazuje, jak přidat událostí klientského skriptu do ovládacích prvků na stránce technologie ASP.NET. Nejprve několik ovládací prvky ASP.NET jsou přidány do stránky a e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571852"
 ---
 <a name="how-do-i-add-client-script-event-handlers-controls-on-an-aspnet-page"></a>[Jak na to]: Přidání ovládacích prvků k klienta skriptu událost obslužné rutiny na stránku ASP.NET?
 ====================

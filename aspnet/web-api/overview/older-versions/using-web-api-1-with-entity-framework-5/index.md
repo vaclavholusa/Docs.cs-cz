@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/index
-title: "Pomocí rozhraní ASP.NET Web API 1 rozhraní Entity Framework 5 | Microsoft Docs"
+title: Pomocí rozhraní ASP.NET Web API 1 rozhraní Entity Framework 5 | Microsoft Docs
 author: rick-anderson
-description: "Postup vytvoření 1 rozhraní API webové aplikace, která používá rozhraní Entity Framework trvalosti databáze."
+description: Postup vytvoření 1 rozhraní API webové aplikace, která používá rozhraní Entity Framework trvalosti databáze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566740"
 ---
 <a name="using-aspnet-web-api-1-with-entity-framework-5"></a>Pomocí rozhraní ASP.NET Web API 1 rozhraní Entity Framework 5
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/index
-title: "Práce s daty v rozhraní ASP.NET Web API | Microsoft Docs"
+title: Práce s daty v rozhraní ASP.NET Web API | Microsoft Docs
 author: rick-anderson
-description: "Jak program CRUD (vytvořit, číst, aktualizovat, odstraňovat) operace v rozhraní Web API."
+description: Jak program CRUD (vytvořit, číst, aktualizovat, odstraňovat) operace v rozhraní Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566302"
 ---
 <a name="working-with-data-in-aspnet-web-api"></a>Práce s daty v rozhraní ASP.NET Web API
 ====================

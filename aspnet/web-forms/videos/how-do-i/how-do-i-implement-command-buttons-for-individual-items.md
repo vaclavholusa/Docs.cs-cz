@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-command-buttons-for-individual-items
-title: "[Jak na:] Příkazová tlačítka pro jednotlivé položky implementovat | Microsoft Docs"
+title: '[Jak na:] Příkazová tlačítka pro jednotlivé položky implementovat | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se zobrazí Jan PEL způsobu zpracování události související s ovládacím prvkem tlačítko v každé položky ovládacího prvku typu vázané na data jako ovládacího prvku ListView. První..."
+description: V tomto videu se zobrazí Jan PEL způsobu zpracování události související s ovládacím prvkem tlačítko v každé položky ovládacího prvku typu vázané na data jako ovládacího prvku ListView. První...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571972"
 ---
 <a name="how-do-i-implement-command-buttons-for-individual-items"></a>[Jak na:] Implementace příkazová tlačítka pro jednotlivé položky
 ====================

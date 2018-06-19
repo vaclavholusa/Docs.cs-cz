@@ -2,7 +2,7 @@
 uid: web-forms/videos/tailspin-spyworks/index
 title: Tailspin Spyworks | Microsoft Docs
 author: rick-anderson
-description: "Jak používat nové funkce v rozhraní ASP.NET 4 k sestavení online úložiště, včetně nákupy, najdete v článku věnovaném a správu."
+description: Jak používat nové funkce v rozhraní ASP.NET 4 k sestavení online úložiště, včetně nákupy, najdete v článku věnovaném a správu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571039"
 ---
 <a name="tailspin-spyworks"></a>Tailspin Spyworks
 ====================

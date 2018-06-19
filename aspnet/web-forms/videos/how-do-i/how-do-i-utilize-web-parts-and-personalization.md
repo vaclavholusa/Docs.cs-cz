@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-utilize-web-parts-and-personalization
-title: "[Jak na:] Využívat webových částí a přizpůsobení? | Microsoft Docs"
+title: '[Jak na:] Využívat webových částí a přizpůsobení? | Microsoft Docs'
 author: microsoft
-description: "Zjistěte, jak používat nové funkce webových částí a přizpůsobení k vytvoření přizpůsobitelné webové stránky, jejichž obsah a rozložení může být upraven uživatelem."
+description: Zjistěte, jak používat nové funkce webových částí a přizpůsobení k vytvoření přizpůsobitelné webové stránky, jejichž obsah a rozložení může být upraven uživatelem.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572143"
 ---
 <a name="how-do-i-utilize-web-parts-and-personalization"></a>[Jak na:] Využívat webových částí a přizpůsobení?
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet-cache-object-to-cache-application-information
-title: "[Jak na to]: použít objekt mezipaměti technologie ASP.NET pro ukládání do mezipaměti informace o aplikaci | Microsoft Docs"
+title: '[Jak na to]: použít objekt mezipaměti technologie ASP.NET pro ukládání do mezipaměti informace o aplikaci | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak použít objekt mezipaměti technologie ASP.NET pro ukládání informací o aplikaci. Ukázkové stránky je vytvořena s jednoduché uživatelské rozhraní..."
+description: V této video PEL Jan ukazuje, jak použít objekt mezipaměti technologie ASP.NET pro ukládání informací o aplikaci. Ukázkové stránky je vytvořena s jednoduché uživatelské rozhraní...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572098"
 ---
 <a name="how-do-i-use-the-aspnet-cache-object-to-cache-application-information"></a>[Jak na to]: použít objekt mezipaměti technologie ASP.NET pro ukládání do mezipaměti informace o aplikaci
 ====================

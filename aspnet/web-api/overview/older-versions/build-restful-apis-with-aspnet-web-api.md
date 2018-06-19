@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306881"
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>Sestavení rozhraní RESTful API s rozhraním ASP.NET Web API
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/action-results
-title: "Akce výsledků v rozhraní Web API 2 | Microsoft Docs"
+title: Akce výsledků v rozhraní Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/03/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036463"
 ---
 <a name="action-results-in-web-api-2"></a>Výsledky akce v rozhraní Web API 2
 ====================

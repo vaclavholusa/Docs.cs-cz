@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/advanced/dependency-injection
-title: "Vkládání závislostí v systému SignalR | Microsoft Docs"
+title: Vkládání závislostí v systému SignalR | Microsoft Docs
 author: MikeWasson
-description: "Verze softwaru použitým v tomto tématu Visual Studio 2013 .NET 4.5 SignalR verze 2 předchozí verze tohoto tématu informace o předchozích verzí aplikace..."
+description: Verze softwaru použitým v tomto tématu Visual Studio 2013 .NET 4.5 SignalR verze 2 předchozí verze tohoto tématu informace o předchozích verzí aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565558"
 ---
 <a name="dependency-injection-in-signalr"></a>Vkládání závislostí v systému SignalR
 ====================

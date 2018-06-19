@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/numericupdown/index
 title: NumericUpDown | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz ukazuje, jak pomocí ovládacího prvku NumericUpDown, která umožní uživatelům vybrat hodnotu pomocí šipek nahoru či dolů."
+description: Tento kurz ukazuje, jak pomocí ovládacího prvku NumericUpDown, která umožní uživatelům vybrat hodnotu pomocí šipek nahoru či dolů.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26567445"
 ---
 <a name="numericupdown"></a>NumericUpDown
 ====================

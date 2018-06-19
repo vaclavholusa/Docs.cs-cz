@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880307"
 ---
 <a name="lesson-6-working-with-stylesheets-and-master-pages"></a>[Lekce 6:] Práce s předlohy se styly a stránky předlohy
 ====================

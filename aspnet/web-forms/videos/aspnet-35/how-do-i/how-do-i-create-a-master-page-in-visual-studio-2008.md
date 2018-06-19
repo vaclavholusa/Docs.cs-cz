@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881718"
 ---
 <a name="how-do-i-create-a-master-page-in-visual-studio-2008"></a>[Jak na:] Vytvoření stránky předlohy v sadě Visual Studio 2008
 ====================

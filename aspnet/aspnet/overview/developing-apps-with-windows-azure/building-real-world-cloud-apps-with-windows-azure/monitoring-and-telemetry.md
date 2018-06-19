@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877356"
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Monitorování a Telemetrie (vytváření reálných cloudových aplikací s Azure)
 ====================

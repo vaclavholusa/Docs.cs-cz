@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868474"
 ---
 <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-vb"></a>Zpracování postback z ovládacího prvku místní okno s UpdatePanel (VB)
 ====================

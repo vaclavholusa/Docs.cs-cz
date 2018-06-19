@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889472"
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>Interakci s stránky obsahu ze stránky předlohy (VB)
 ====================

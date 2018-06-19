@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891032"
 ---
 <a name="how-do-i-create-excel-spreadsheets-using-linq-to-xml"></a>[Jak na:] Vytvoření tabulky aplikace Excel pomocí technologie LINQ to XML?
 ====================

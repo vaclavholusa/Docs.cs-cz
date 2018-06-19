@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875588"
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>Využitím pomocné rutiny rozevírací seznam s architekturou ASP.NET MVC
 ====================

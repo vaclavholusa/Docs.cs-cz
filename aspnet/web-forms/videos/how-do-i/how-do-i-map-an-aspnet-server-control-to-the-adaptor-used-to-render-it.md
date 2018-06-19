@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it
-title: "[Jak na:] Mapy ovládacího prvku serveru technologie ASP.NET pro adaptér použitý k vykreslení ho | Microsoft Docs"
+title: '[Jak na:] Mapy ovládacího prvku serveru technologie ASP.NET pro adaptér použitý k vykreslení ho | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí jak používat ovládací adaptéru zajistit různých omítky pro ovládací prvek ASP.NET serveru beze změny ve skutečnosti c..."
+description: V této video PEL Jan zobrazí jak používat ovládací adaptéru zajistit různých omítky pro ovládací prvek ASP.NET serveru beze změny ve skutečnosti c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572122"
 ---
 <a name="how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it"></a>[Jak na:] Mapy ovládacího prvku serveru technologie ASP.NET pro adaptér použitý k vykreslení ho
 ====================

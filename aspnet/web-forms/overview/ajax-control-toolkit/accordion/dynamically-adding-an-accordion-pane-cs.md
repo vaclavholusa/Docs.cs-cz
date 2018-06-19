@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879462"
 ---
 <a name="dynamically-adding-an-accordion-pane-c"></a>Dynamické přidávání podokně aplikace Accordion (C#)
 ====================

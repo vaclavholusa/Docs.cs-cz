@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/index
-title: "Práce se binární soubory | Microsoft Docs"
+title: Práce se binární soubory | Microsoft Docs
 author: rick-anderson
-description: "Tyto kurzy ukazují, jak umožnit uživatelům nahrát binárních souborů (například dokumenty aplikace Word nebo PDF) na server, kde se mohou být uložené ve složkách nebo v databázi."
+description: Tyto kurzy ukazují, jak umožnit uživatelům nahrát binárních souborů (například dokumenty aplikace Word nebo PDF) na server, kde se mohou být uložené ve složkách nebo v databázi.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568846"
 ---
 <a name="working-with-binary-files"></a>Práce se binární soubory
 ====================

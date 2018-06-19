@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874483"
 ---
 <a name="aspnet-mvc-storefront-part-2-the-repository-pattern"></a>ASP.NET MVC Storefront část 2: Použitému vzoru
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885975"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-togglebutton-extender"></a>[Jak na:] Použití ASP.NET AJAX přepínací tlačítko rozšíření?
 ====================

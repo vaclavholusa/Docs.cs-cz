@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet
-title: "Použití registrace nástroje ASP.NET IIS ke konfiguraci technologie ASP.NET | Microsoft Docs"
+title: Použití registrace nástroje ASP.NET IIS ke konfiguraci technologie ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak použít nástroj pro registraci aplikace ASP.NET IIS ke konfiguraci technologie ASP.NET. Nejdříve si projděte jak přípony souborů jsou mapované na ASP.NET v..."
+description: V této video PEL Jan ukazuje, jak použít nástroj pro registraci aplikace ASP.NET IIS ke konfiguraci technologie ASP.NET. Nejdříve si projděte jak přípony souborů jsou mapované na ASP.NET v...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572071"
 ---
 <a name="how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet"></a>Jak používat nástroj ASP.NET IIS Registration konfigurace ASP.NET
 ====================

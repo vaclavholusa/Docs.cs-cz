@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33840954"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Použití prostředí s více v ASP.NET Core
 

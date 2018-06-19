@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886456"
 ---
 <a name="how-do-i-converting-a-net-20-windows-forms-application-to-net-35"></a>[Jak na:] Převedení aplikace rozhraní .NET 2.0 Windows Forms aplikaci .NET 3.5
 ====================

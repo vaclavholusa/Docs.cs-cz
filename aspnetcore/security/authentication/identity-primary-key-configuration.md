@@ -14,6 +14,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094863"
 ---
 # <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>Konfigurace Identity primární klíče datový typ v ASP.NET Core
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882400"
 ---
 <a name="aspnet-4-quick-hit---imperative-javascript-syntax-for-microsoft-client-side-controls"></a>Ovládací prvky "Rychlý zasáhnout" - imperativní syntaxe jazyka JavaScript pro stranu klienta Microsoft ASP.NET 4
 ====================

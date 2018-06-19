@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879514"
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Kurz: Server všesměrového vysílání pomocí funkce SignalR technologie ASP.NET 1.x
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885013"
 ---
 <a name="how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c"></a>Implementace vlastních polí ověření s imperativní logiku v jazyce Visual Basic nebo C#
 ====================

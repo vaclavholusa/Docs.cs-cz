@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-full-featured-customer-login-portal
-title: "[Jak na:] Vytvořit přihlášení portál plné zákazníka? | Microsoft Docs"
+title: '[Jak na:] Vytvořit přihlášení portál plné zákazníka? | Microsoft Docs'
 author: microsoft
-description: "Sledovat prostřednictvím vytváření sad fiktivní zákaznický portál Další informace o hlavní stránky, motivy, členství, role, navigace na webu, uživatelské profily, a..."
+description: Sledovat prostřednictvím vytváření sad fiktivní zákaznický portál Další informace o hlavní stránky, motivy, členství, role, navigace na webu, uživatelské profily, a...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/05/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571894"
 ---
 <a name="how-do-i-create-a-full-featured-customer-login-portal"></a><span data-ttu-id="cda1a-104">[Jak na:] Vytvořit přihlášení portál plné zákazníka?</span><span class="sxs-lookup"><span data-stu-id="cda1a-104">[How Do I:] Create a Full-Featured Customer Login Portal?</span></span>
 ====================

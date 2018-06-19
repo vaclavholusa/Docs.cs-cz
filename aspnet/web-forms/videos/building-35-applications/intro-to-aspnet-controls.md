@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/intro-to-aspnet-controls
-title: "Úvod k ovládacím prvkům ASP.NET | Microsoft Docs"
+title: Úvod k ovládacím prvkům ASP.NET | Microsoft Docs
 author: JoeStagner
-description: "Ovládací prvky řízené vývoj skutečně zvýšit produktivitu vývoj. Toto video poskytuje základní informace o standardní ovládací prvky ASP.NET."
+description: Ovládací prvky řízené vývoj skutečně zvýšit produktivitu vývoj. Toto video poskytuje základní informace o standardní ovládací prvky ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570592"
 ---
 <a name="intro-to-aspnet-controls"></a><span data-ttu-id="4cf1e-104">Úvod do ovládacích prvků technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="4cf1e-104">Intro to ASP.NET Controls</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153460"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---tutorial-series"></a><span data-ttu-id="f4a91-102">Jádro ASP.NET MVC EF základní – kurz řady</span><span class="sxs-lookup"><span data-stu-id="f4a91-102">ASP.NET Core MVC with EF Core - tutorial series</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30868487"
 ---
 <a name="intro-to-aspnet-mvc"></a><span data-ttu-id="c6058-104">Úvod do architektury ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="c6058-104">Intro to ASP.NET MVC</span></span>
 ====================

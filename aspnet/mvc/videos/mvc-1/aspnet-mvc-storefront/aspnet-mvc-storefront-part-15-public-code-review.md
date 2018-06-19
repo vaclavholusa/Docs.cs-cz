@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867824"
 ---
 <a name="aspnet-mvc-storefront-part-15-public-code-review"></a><span data-ttu-id="20c13-104">ASP.NET MVC výkladní skříň část 15: Revize veřejné kódu</span><span class="sxs-lookup"><span data-stu-id="20c13-104">ASP.NET MVC Storefront Part 15: Public Code review</span></span>
 ====================

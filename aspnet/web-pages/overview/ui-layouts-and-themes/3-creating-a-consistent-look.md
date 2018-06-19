@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/3-creating-a-consistent-look
-title: "Vytváření konzistentního rozložení v rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs"
+title: Vytváření konzistentního rozložení v rozhraní ASP.NET Web Pages lokalit (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Chcete-li efektivnější k vytvoření webové stránky pro svůj web, můžete vytvořit opakovaně použitelný bloky obsahu (například záhlaví a zápatí) pro váš web i c je..."
+description: Chcete-li efektivnější k vytvoření webové stránky pro svůj web, můžete vytvořit opakovaně použitelný bloky obsahu (například záhlaví a zápatí) pro váš web i c je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573376"
 ---
 <a name="creating-a-consistent-layout-in-aspnet-web-pages-razor-sites"></a><span data-ttu-id="4ed06-103">Vytváření konzistentního rozložení v lokalitách rozhraní ASP.NET Web Pages (Razor)</span><span class="sxs-lookup"><span data-stu-id="4ed06-103">Creating a Consistent Layout in ASP.NET Web Pages (Razor) Sites</span></span>
 ====================

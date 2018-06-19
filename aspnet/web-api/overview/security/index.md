@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/index
-title: "Zabezpečení, ověřování a autorizace v rozhraní ASP.NET Web API | Microsoft Docs"
+title: Zabezpečení, ověřování a autorizace v rozhraní ASP.NET Web API | Microsoft Docs
 author: rick-anderson
-description: "Problémy se zabezpečením pro webové rozhraní API."
+description: Problémy se zabezpečením pro webové rozhraní API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/11/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566731"
 ---
 <a name="security-authentication-and-authorization-in-aspnet-web-api"></a><span data-ttu-id="2657e-103">Zabezpečení, ověřování a autorizace v rozhraní ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="2657e-103">Security, Authentication, and Authorization in ASP.NET Web API</span></span>
 ====================

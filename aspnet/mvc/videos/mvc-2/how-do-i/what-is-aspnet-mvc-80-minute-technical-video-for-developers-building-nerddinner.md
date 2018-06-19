@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868175"
 ---
 <a name="what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner"></a><span data-ttu-id="bea9c-105">Co je technologie ASP.NET MVC?</span><span class="sxs-lookup"><span data-stu-id="bea9c-105">What is ASP.NET MVC?</span></span> <span data-ttu-id="bea9c-106">80 minutu technické video pro vývojáře, vytváření NerdDinner</span><span class="sxs-lookup"><span data-stu-id="bea9c-106">80 minute technical video for developers, building NerdDinner</span></span>
 ====================

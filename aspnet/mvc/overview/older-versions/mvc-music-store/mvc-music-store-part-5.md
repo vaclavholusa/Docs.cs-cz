@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874909"
 ---
 <a name="part-5-edit-forms-and-templating"></a><span data-ttu-id="dea22-104">Část 5: Úpravy formulářů a ukázka</span><span class="sxs-lookup"><span data-stu-id="dea22-104">Part 5: Edit Forms and Templating</span></span>
 ====================

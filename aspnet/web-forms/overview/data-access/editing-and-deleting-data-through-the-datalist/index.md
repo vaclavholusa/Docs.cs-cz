@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/index
-title: "Úpravy a odstraňování dat prostřednictvím prvku DataList | Microsoft Docs"
+title: Úpravy a odstraňování dat prostřednictvím prvku DataList | Microsoft Docs
 author: rick-anderson
-description: "Tyto kurzy ukazují, jak upravit ovládacího prvku DataList tak, aby umožňuje upravovat data používá."
+description: Tyto kurzy ukazují, jak upravit ovládacího prvku DataList tak, aby umožňuje upravovat data používá.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568336"
 ---
 <a name="editing-and-deleting-data-through-the-datalist"></a><span data-ttu-id="5d183-103">Úpravy a odstraňování dat prostřednictvím prvku DataList</span><span class="sxs-lookup"><span data-stu-id="5d183-103">Editing and Deleting Data Through the DataList</span></span>
 ====================

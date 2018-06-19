@@ -15,6 +15,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741125"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a><span data-ttu-id="b8d5d-103">Pomocníci značky ve formulářích v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="b8d5d-103">Tag Helpers in forms in ASP.NET Core</span></span>
 

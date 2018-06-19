@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877837"
 ---
 <a name="aspnet-mobile-controls-tested-devices"></a><span data-ttu-id="bd2c0-104">Ovládací prvky ASP.NET Mobile otestované zařízení</span><span class="sxs-lookup"><span data-stu-id="bd2c0-104">ASP.NET Mobile Controls Tested Devices</span></span>
 ====================

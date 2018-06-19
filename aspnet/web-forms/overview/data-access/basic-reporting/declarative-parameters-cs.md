@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875936"
 ---
 <a name="declarative-parameters-c"></a><span data-ttu-id="70a86-103">Deklarativní parametrů (C#)</span><span class="sxs-lookup"><span data-stu-id="70a86-103">Declarative Parameters (C#)</span></span>
 ====================

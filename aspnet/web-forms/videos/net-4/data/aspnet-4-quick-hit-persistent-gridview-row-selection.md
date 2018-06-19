@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/data/aspnet-4-quick-hit-persistent-gridview-row-selection
-title: "Výběr trvalé GridView řádku | Microsoft Docs"
+title: Výběr trvalé GridView řádku | Microsoft Docs
 author: JoeStagner
-description: "V tomto videu se dozvíte o výběr trvalou řádků pro ovládací prvek GridView."
+description: V tomto videu se dozvíte o výběr trvalou řádků pro ovládací prvek GridView.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/16/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570913"
 ---
 <a name="aspnet-4-quick-hit--persistent-gridview-row-selection"></a><span data-ttu-id="0efe6-103">ASP.NET 4 "Rychlý zasáhnout" – výběr trvalé GridView řádku</span><span class="sxs-lookup"><span data-stu-id="0efe6-103">ASP.NET 4 "Quick Hit" – Persistent GridView Row Selection</span></span>
 ====================

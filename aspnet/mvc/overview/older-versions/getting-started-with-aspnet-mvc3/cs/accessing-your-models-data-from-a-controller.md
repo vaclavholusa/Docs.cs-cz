@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872800"
 ---
 <a name="accessing-your-models-data-from-a-controller-c"></a><span data-ttu-id="d4c8e-103">Přístup k vašemu modelu datům z řadiče (C#)</span><span class="sxs-lookup"><span data-stu-id="d4c8e-103">Accessing your Model's Data from a Controller (C#)</span></span>
 ====================

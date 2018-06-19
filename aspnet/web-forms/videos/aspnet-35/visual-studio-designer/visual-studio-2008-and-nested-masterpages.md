@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-35/visual-studio-designer/visual-studio-2008-and-nested-masterpages
-title: "Visual Studio 2008 a vnořené hlavní stránky | Microsoft Docs"
+title: Visual Studio 2008 a vnořené hlavní stránky | Microsoft Docs
 author: JoeStagner
-description: "Šablonu od oswd.org použiji k předvedení použití hlavní stránky a jak jsou podporovány v sadě Visual Studio 2008. Konkrétně I zobrazí tý..."
+description: Šablonu od oswd.org použiji k předvedení použití hlavní stránky a jak jsou podporovány v sadě Visual Studio 2008. Konkrétně I zobrazí tý...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570472"
 ---
 <a name="visual-studio-2008-and-nested-masterpages"></a><span data-ttu-id="108ed-104">Visual Studio 2008 a vnořené hlavní stránky</span><span class="sxs-lookup"><span data-stu-id="108ed-104">Visual Studio 2008 and Nested Masterpages</span></span>
 ====================

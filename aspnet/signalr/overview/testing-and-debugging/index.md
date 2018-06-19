@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/testing-and-debugging/index
-title: "SignalR testování a ladění | Microsoft Docs"
+title: SignalR testování a ladění | Microsoft Docs
 author: rick-anderson
-description: "Postup testování a ladění aplikací SignalR."
+description: Postup testování a ladění aplikací SignalR.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/19/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565963"
 ---
 <a name="signalr-testing-and-debugging"></a><span data-ttu-id="5e427-103">SignalR testování a ladění</span><span class="sxs-lookup"><span data-stu-id="5e427-103">SignalR Testing and Debugging</span></span>
 ====================

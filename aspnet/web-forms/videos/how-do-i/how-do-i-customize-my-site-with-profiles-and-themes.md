@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-customize-my-site-with-profiles-and-themes
-title: "[Jak na:] Přizpůsobení mé lokality s profily a motivů? | Microsoft Docs"
+title: '[Jak na:] Přizpůsobení mé lokality s profily a motivů? | Microsoft Docs'
 author: microsoft
-description: "Další informace o použití profilů shromáždit informace o konfiguraci jednotlivých uživatelů a použít motivy rozšířit konzistentní vzhled a chování v celém webu."
+description: Další informace o použití profilů shromáždit informace o konfiguraci jednotlivých uživatelů a použít motivy rozšířit konzistentní vzhled a chování v celém webu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572161"
 ---
 <a name="how-do-i-customize-my-site-with-profiles-and-themes"></a><span data-ttu-id="18bd3-104">[Jak na:] Přizpůsobení mé lokality s profily a motivů?</span><span class="sxs-lookup"><span data-stu-id="18bd3-104">[How Do I:] Customize my Site with Profiles and Themes?</span></span>
 ====================

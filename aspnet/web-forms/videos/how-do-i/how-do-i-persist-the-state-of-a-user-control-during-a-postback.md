@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-persist-the-state-of-a-user-control-during-a-postback
-title: "[Jak na to]: zachování stavu uživatelského ovládacího prvku během zpětné volání | Microsoft Docs"
+title: '[Jak na to]: zachování stavu uživatelského ovládacího prvku během zpětné volání | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak se zachovat stav jednoho nebo více objektů v uživatelského ovládacího prvku. Nejprve je vytvořen uživatelský ovládací prvek, který představuje abilit..."
+description: V této video PEL Jan ukazuje, jak se zachovat stav jednoho nebo více objektů v uživatelského ovládacího prvku. Nejprve je vytvořen uživatelský ovládací prvek, který představuje abilit...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/02/2009
@@ -17,8 +17,10 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572095"
 ---
-<a name="how-do-i-persist-the-state-of-a-user-control-during-a-postback"></a><span data-ttu-id="7dd3b-104">[Jak na to]: zachování stavu uživatelského ovládacího prvku během zpětné volání</span><span class="sxs-lookup"><span data-stu-id="7dd3b-104">[How Do I]: Persist the State of a User Control During a Postback</span></span>
+<a name="how-do-i-persist-the-state-of-a-user-control-during-a-postback"></a>[Jak na to]: zachování stavu uživatelského ovládacího prvku během zpětné volání
+[How Do I]: Persist the State of a User Control During a Postback
 ====================
 <span data-ttu-id="7dd3b-105">podle [PEL Jan](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="7dd3b-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 

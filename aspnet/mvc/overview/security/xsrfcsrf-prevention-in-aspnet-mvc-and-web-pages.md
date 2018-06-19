@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28033993"
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a><span data-ttu-id="5b11b-103">Prevence XSRF/proti útokům CSRF v architektuře ASP.NET MVC a webových stránek</span><span class="sxs-lookup"><span data-stu-id="5b11b-103">XSRF/CSRF Prevention in ASP.NET MVC and Web Pages</span></span>
 ====================

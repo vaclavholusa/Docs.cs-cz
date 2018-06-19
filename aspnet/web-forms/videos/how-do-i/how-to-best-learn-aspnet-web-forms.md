@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-to-best-learn-aspnet-web-forms
-title: "Tom, jak nejlépe další webových formulářů ASP.NET | Microsoft Docs"
+title: Tom, jak nejlépe další webových formulářů ASP.NET | Microsoft Docs
 author: JoeStagner
-description: "Jan Stagner společnosti Microsoft se dozvíte, co potřebujete další informace o použití webových formulářů ASP.NET pro vývoj webových aplikací."
+description: Jan Stagner společnosti Microsoft se dozvíte, co potřebujete další informace o použití webových formulářů ASP.NET pro vývoj webových aplikací.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/03/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570826"
 ---
 <a name="how-to-best-learn-aspnet-web-forms"></a><span data-ttu-id="aaf85-103">Tom, jak nejlépe další webové formuláře ASP.NET</span><span class="sxs-lookup"><span data-stu-id="aaf85-103">How to Best Learn ASP.NET Web Forms</span></span>
 ====================

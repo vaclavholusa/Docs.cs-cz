@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153651"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---read-related-data---6-of-10"></a><span data-ttu-id="903b5-103">Jádro ASP.NET MVC s EF Core - číst související Data - 6 10</span><span class="sxs-lookup"><span data-stu-id="903b5-103">ASP.NET Core MVC with EF Core - Read Related Data - 6 of 10</span></span>
 

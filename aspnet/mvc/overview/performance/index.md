@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/index
-title: "ASP.NET MVC výkonu | Microsoft Docs"
+title: ASP.NET MVC výkonu | Microsoft Docs
 author: rick-anderson
-description: "Prostředky pro optimalizaci výkonu aplikací ASP.NET MVC."
+description: Prostředky pro optimalizaci výkonu aplikací ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565258"
 ---
 <a name="aspnet-mvc-performance"></a><span data-ttu-id="10e85-103">Výkon rozhraní ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="10e85-103">ASP.NET MVC Performance</span></span>
 ====================

@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/side-by-side-with-10
-title: "Spuštění rozhraní .NET Framework 1.0 a 1.1 ASP.NET vedle sebe | Microsoft Docs"
+title: Spuštění rozhraní .NET Framework 1.0 a 1.1 ASP.NET vedle sebe | Microsoft Docs
 author: rick-anderson
-description: "Tento dokument White Paper popisuje postup instalace rozhraní .NET 1.0 a .NET 1.1 na počítači, což webovou aplikaci ASP.NET ke spuštění na jednu z verzí nástroje od..."
+description: Tento dokument White Paper popisuje postup instalace rozhraní .NET 1.0 a .NET 1.1 na počítači, což webovou aplikaci ASP.NET ke spuštění na jednu z verzí nástroje od...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573358"
 ---
 <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a><span data-ttu-id="d6012-103">Spuštění rozhraní .NET Framework 1.0 a 1.1 ASP.NET vedle sebe</span><span class="sxs-lookup"><span data-stu-id="d6012-103">ASP.NET Side-by-Side Execution of .NET Framework 1.0 and 1.1</span></span>
 ====================

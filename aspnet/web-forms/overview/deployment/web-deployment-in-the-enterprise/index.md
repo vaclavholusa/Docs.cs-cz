@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/index
-title: "ASP.NET 4 - nasazení řady Enterprise 1 | Microsoft Docs"
+title: ASP.NET 4 - nasazení řady Enterprise 1 | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz popisuje, jak splnit spoustu problémů, které se můžete setkat, když spravujete nasazení podnikovém měřítku webových aplikací na developmen..."
+description: Tento kurz popisuje, jak splnit spoustu problémů, které se můžete setkat, když spravujete nasazení podnikovém měřítku webových aplikací na developmen...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568858"
 ---
 <a name="aspnet-4---enterprise-deployment-series-1"></a><span data-ttu-id="db4c9-103">ASP.NET 4 - nasazení řady Enterprise 1</span><span class="sxs-lookup"><span data-stu-id="db4c9-103">ASP.NET 4 - Enterprise Deployment Series 1</span></span>
 ====================

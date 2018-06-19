@@ -17,6 +17,7 @@ ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/21/2018
+ms.locfileid: "30071191"
 ---
 <a name="jquery-datatables-194"></a><span data-ttu-id="4396d-102">jQuery DataTables otázku 1.9.4</span><span class="sxs-lookup"><span data-stu-id="4396d-102">jQuery DataTables 1.9.4</span></span>
 ====================

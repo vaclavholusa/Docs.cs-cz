@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-simple-file-uploads-in-aspnet
-title: "[Jak na:]  Nahrávání souborů jednoduché technologie ASP.NET | Microsoft Docs"
+title: '[Jak na:]  Nahrávání souborů jednoduché technologie ASP.NET | Microsoft Docs'
 author: JoeStagner
-description: "V tomto videu I se ukazují, použití technologie ASP.NET, odesílání jeden soubor z klientského počítače k serveru. To bude první ze série nahrávání..."
+description: V tomto videu I se ukazují, použití technologie ASP.NET, odesílání jeden soubor z klientského počítače k serveru. To bude první ze série nahrávání...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572137"
 ---
 <a name="how-do-i--simple-file-uploads-in-aspnet"></a><span data-ttu-id="a1df4-104">[Jak na:]  Nahrávání souborů jednoduché technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="a1df4-104">[How Do I:]  Simple File Uploads in ASP.NET</span></span>
 ====================

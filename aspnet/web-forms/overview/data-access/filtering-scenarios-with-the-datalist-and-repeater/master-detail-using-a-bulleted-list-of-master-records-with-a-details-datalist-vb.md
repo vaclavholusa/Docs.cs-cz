@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889017"
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a><span data-ttu-id="c79ec-103">Seznam záznamů hlavní s odrážkami pomocí podrobnosti DataList (VB) podrobností</span><span class="sxs-lookup"><span data-stu-id="c79ec-103">Master/Detail Using a Bulleted List of Master Records with a Details DataList (VB)</span></span>
 ====================

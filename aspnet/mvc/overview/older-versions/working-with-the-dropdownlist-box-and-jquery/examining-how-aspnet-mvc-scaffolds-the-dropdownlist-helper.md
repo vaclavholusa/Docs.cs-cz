@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874080"
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a><span data-ttu-id="67a24-102">Prozkoumání, jak rozhraní ASP.NET MVC scaffolds pomocná rozevírací seznam</span><span class="sxs-lookup"><span data-stu-id="67a24-102">Examining  how  ASP.NET MVC scaffolds the DropDownList Helper</span></span>
 ====================

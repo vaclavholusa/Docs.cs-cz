@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-add-controls-to-an-aspnet-web-page-programmatically
-title: "[Jak na:] Přidání ovládacích prvků na webovou stránku ASP.NET prostřednictvím kódu programu | Microsoft Docs"
+title: '[Jak na:] Přidání ovládacích prvků na webovou stránku ASP.NET prostřednictvím kódu programu | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan zobrazí postup vytvoření ovládacího prvku ASP.NET prostřednictvím kódu programu za běhu a přidat na stránku. První informace o základní koncepci..."
+description: V této video PEL Jan zobrazí postup vytvoření ovládacího prvku ASP.NET prostřednictvím kódu programu za běhu a přidat na stránku. První informace o základní koncepci...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571999"
 ---
 <a name="how-do-i-add-controls-to-an-aspnet-web-page-programmatically"></a><span data-ttu-id="9a6be-104">[Jak na:] Přidání ovládacích prvků na webovou stránku ASP.NET prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="9a6be-104">[How Do I:] Add Controls to an ASP.NET Web Page Programmatically</span></span>
 ====================

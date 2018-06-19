@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565408"
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a><span data-ttu-id="4e156-104">Díky nástroji Page Inspector v architektuře ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="4e156-104">Using Page Inspector in ASP.NET MVC</span></span>
 ====================

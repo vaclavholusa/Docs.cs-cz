@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880385"
 ---
 <a name="basic-aspnet-authentication-in-an-ajax-enabled-application"></a><span data-ttu-id="e5422-103">Aplikace s podporou ověřování Basic ASP.NET v AJAX</span><span class="sxs-lookup"><span data-stu-id="e5422-103">Basic ASP.NET Authentication in an AJAX Enabled Application</span></span>
 ====================

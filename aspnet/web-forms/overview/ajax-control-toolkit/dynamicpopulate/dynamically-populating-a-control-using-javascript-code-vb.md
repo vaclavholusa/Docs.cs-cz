@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869982"
 ---
 <a name="dynamically-populating-a-control-using-javascript-code-vb"></a><span data-ttu-id="ac0c9-103">Dynamicky naplnění ovládacího prvku s použitím kódu JavaScript (VB)</span><span class="sxs-lookup"><span data-stu-id="ac0c9-103">Dynamically Populating a Control Using JavaScript Code (VB)</span></span>
 ====================

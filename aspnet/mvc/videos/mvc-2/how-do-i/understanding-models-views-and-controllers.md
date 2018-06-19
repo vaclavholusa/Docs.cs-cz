@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870021"
 ---
 <a name="understanding-models-views-and-controllers"></a><span data-ttu-id="3c295-104">Principy modely, zobrazení a Kontrolery</span><span class="sxs-lookup"><span data-stu-id="3c295-104">Understanding Models, Views, and Controllers</span></span>
 ====================

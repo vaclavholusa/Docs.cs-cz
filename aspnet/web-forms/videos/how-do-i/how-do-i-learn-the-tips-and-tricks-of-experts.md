@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-learn-the-tips-and-tricks-of-experts
-title: "[Jak na:] Další tipy a triky odborníků? | Microsoft Docs"
+title: '[Jak na:] Další tipy a triky odborníků? | Microsoft Docs'
 author: microsoft
-description: "Zobrazit tipy a triky včetně šifrování citlivých informací, které jsou uložené v souboru web.config, odeslání obsahu na jinou stránku, což výrazně zjednodušuje komplexní adresy URL..."
+description: Zobrazit tipy a triky včetně šifrování citlivých informací, které jsou uložené v souboru web.config, odeslání obsahu na jinou stránku, což výrazně zjednodušuje komplexní adresy URL...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572032"
 ---
 <a name="how-do-i-learn-the-tips-and-tricks-of-experts"></a><span data-ttu-id="4b3b7-104">[Jak na:] Další tipy a triky odborníků?</span><span class="sxs-lookup"><span data-stu-id="4b3b7-104">[How Do I:] Learn the Tips and Tricks of Experts?</span></span>
 ====================

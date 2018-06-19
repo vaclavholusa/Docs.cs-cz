@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872751"
 ---
 <a name="authentication-and-authorization-for-signalr-hubs"></a><span data-ttu-id="c1d68-104">Ověřování a autorizace pro rozbočovače SignalR</span><span class="sxs-lookup"><span data-stu-id="c1d68-104">Authentication and Authorization for SignalR Hubs</span></span>
 ====================

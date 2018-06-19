@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/index
-title: "ASP.NET 4 - nasazení webu s SQL Server Compact pomocí sady Visual Studio | Microsoft Docs"
+title: ASP.NET 4 - nasazení webu s SQL Server Compact pomocí sady Visual Studio | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz řady ukazuje, jak vytvořit webovou aplikaci ASP.NET, který používá systém SQL Server Compact dostupné přes internet nasazením h třetích stran..."
+description: Tento kurz řady ukazuje, jak vytvořit webovou aplikaci ASP.NET, který používá systém SQL Server Compact dostupné přes internet nasazením h třetích stran...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/29/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26569734"
 ---
 <a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a><span data-ttu-id="18857-103">ASP.NET 4 - nasazení webu s SQL Server Compact pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="18857-103">ASP.NET 4 - Web Deployment with SQL Server Compact using Visual Studio</span></span>
 ====================

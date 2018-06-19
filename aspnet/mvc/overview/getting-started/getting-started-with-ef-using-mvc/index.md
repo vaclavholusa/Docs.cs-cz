@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/index
-title: "Začínáme s Entity Framework 6 Code First pomocí MVC 5 | Microsoft Docs"
+title: Začínáme s Entity Framework 6 Code First pomocí MVC 5 | Microsoft Docs
 author: rick-anderson
-description: "Základní informace o používání Entity Framework 6 pro zobrazení a úpravy dat v aplikaci ASP.NET MVC 5."
+description: Základní informace o používání Entity Framework 6 pro zobrazení a úpravy dat v aplikaci ASP.NET MVC 5.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564058"
 ---
 <a name="getting-started-with-entity-framework-6-code-first-using-mvc-5"></a><span data-ttu-id="5f114-103">Začínáme s Entity Framework 6 Code First pomocí MVC 5</span><span class="sxs-lookup"><span data-stu-id="5f114-103">Getting Started with Entity Framework 6 Code First using MVC 5</span></span>
 ====================

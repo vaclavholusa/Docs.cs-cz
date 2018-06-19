@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/index
-title: "ASP.NET 4 - pokračováním rozhraní Entity Framework 4 a webové formuláře | Microsoft Docs"
+title: ASP.NET 4 - pokračováním rozhraní Entity Framework 4 a webové formuláře | Microsoft Docs
 author: rick-anderson
-description: "Jak sestavit aplikaci Contoso U jako vícevrstvé aplikace pomocí ovládacího prvku ObjectDataSource a jak zpracovat souběžnosti a maximalizovat výkon."
+description: Jak sestavit aplikaci Contoso U jako vícevrstvé aplikace pomocí ovládacího prvku ObjectDataSource a jak zpracovat souběžnosti a maximalizovat výkon.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26569296"
 ---
 <a name="aspnet-4---continuing-with-entity-framework-4-and-web-forms"></a><span data-ttu-id="bad03-103">ASP.NET 4 - pokračováním rozhraní Entity Framework 4 a webové formuláře</span><span class="sxs-lookup"><span data-stu-id="bad03-103">ASP.NET 4 - Continuing with Entity Framework 4 and Web Forms</span></span>
 ====================

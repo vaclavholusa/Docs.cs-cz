@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/complex-type-inheritance-in-odata-v4
-title: "Komplexní typ dědičnosti v OData v4 s rozhraním ASP.NET Web API | Microsoft Docs"
+title: Komplexní typ dědičnosti v OData v4 s rozhraním ASP.NET Web API | Microsoft Docs
 author: microsoft
-description: "Podle specifikace prostředí OData v4 komplexního typu. může dědit vlastnosti z jiného komplexního typu. (Pro komplexní typ je strukturovaného typu bez klíče.) Webové rozhraní API..."
+description: Podle specifikace prostředí OData v4 komplexního typu. může dědit vlastnosti z jiného komplexního typu. (Pro komplexní typ je strukturovaného typu bez klíče.) Webové rozhraní API...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/16/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566830"
 ---
 <a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a><span data-ttu-id="f0797-104">Komplexní typ dědičnosti v OData v4 s rozhraním ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="f0797-104">Complex Type Inheritance in OData v4 with ASP.NET Web API</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site
-title: "[Jak na:] Pomocí šablon stylů CSS vzhledy pro webovou stránku ASP.NET flexibilní a udržovatelný | Microsoft Docs"
+title: '[Jak na:] Pomocí šablon stylů CSS vzhledy pro webovou stránku ASP.NET flexibilní a udržovatelný | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak vytvořit vzhledy pro serverových ovládacích prvků ASP.NET a potom je zahrnout stylů CSS řídit vzhled změnu skinu sml..."
+description: V této video PEL Jan ukazuje, jak vytvořit vzhledy pro serverových ovládacích prvků ASP.NET a potom je zahrnout stylů CSS řídit vzhled změnu skinu sml...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/07/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570835"
 ---
 <a name="how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site"></a><span data-ttu-id="b6a96-103">[Jak na:] Pomocí šablon stylů CSS vzhledy pro lokalitu flexibilní a udržovatelný technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="b6a96-103">[How Do I:] Use Skins with CSS for a Flexible and Maintainable ASP.NET Web Site</span></span>
 ====================

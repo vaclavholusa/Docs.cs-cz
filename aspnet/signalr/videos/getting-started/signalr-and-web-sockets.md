@@ -1,8 +1,8 @@
 ---
 uid: signalr/videos/getting-started/signalr-and-web-sockets
-title: "SignalR a webové sokety | Microsoft Docs"
+title: SignalR a webové sokety | Microsoft Docs
 author: shanselman
-description: "Scott Hanselman představuje SignalR a Websocket."
+description: Scott Hanselman představuje SignalR a Websocket.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565960"
 ---
 <a name="signalr-and-web-sockets"></a><span data-ttu-id="87d2f-103">SignalR a webové sokety</span><span class="sxs-lookup"><span data-stu-id="87d2f-103">SignalR and Web Sockets</span></span>
 ====================

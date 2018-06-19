@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867603"
 ---
 <a name="mvc2---stronglytyped-helpers"></a><span data-ttu-id="f0a7a-103">MVC2 - StronglyTyped pomocné rutiny</span><span class="sxs-lookup"><span data-stu-id="f0a7a-103">MVC2 - StronglyTyped Helpers</span></span>
 ====================

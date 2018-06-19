@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/performance-and-caching/index
-title: "Výkon | Microsoft Docs"
+title: Výkon | Microsoft Docs
 author: rick-anderson
-description: "Jak obsah webu mezipaměti pro dosažení vyššího výkonu."
+description: Jak obsah webu mezipaměti pro dosažení vyššího výkonu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570148"
 ---
 <a name="performance"></a><span data-ttu-id="0b1b2-103">Výkon</span><span class="sxs-lookup"><span data-stu-id="0b1b2-103">Performance</span></span>
 ====================

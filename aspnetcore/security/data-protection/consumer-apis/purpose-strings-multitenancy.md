@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30078047"
 ---
 # <a name="purpose-hierarchy-and-multi-tenancy-in-aspnet-core"></a><span data-ttu-id="5ab5e-103">Účel hierarchie a víceklientský v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="5ab5e-103">Purpose hierarchy and multi-tenancy in ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871074"
 ---
 <a name="why-aspnet-mvc-3-minute-overview-video-for-decision-makers"></a><span data-ttu-id="46d76-104">Proč rozhraní ASP.NET MVC?</span><span class="sxs-lookup"><span data-stu-id="46d76-104">Why ASP.NET MVC?</span></span> <span data-ttu-id="46d76-105">3 minuty přehled – video pro rozhodují</span><span class="sxs-lookup"><span data-stu-id="46d76-105">3 minute overview video for decision makers</span></span>
 ====================

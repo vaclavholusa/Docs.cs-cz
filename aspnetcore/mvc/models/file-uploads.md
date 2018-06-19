@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740410"
 ---
 # <a name="file-uploads-in-aspnet-core"></a><span data-ttu-id="2e477-103">Nahrávání souborů v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="2e477-103">File uploads in ASP.NET Core</span></span>
 

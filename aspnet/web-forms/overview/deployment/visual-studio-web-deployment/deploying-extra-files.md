@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881760"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a><span data-ttu-id="154f6-103">Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení dalších souborů</span><span class="sxs-lookup"><span data-stu-id="154f6-103">ASP.NET Web Deployment using Visual Studio: Deploying Extra Files</span></span>
 ====================

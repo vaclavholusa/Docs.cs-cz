@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/confirmbutton/index
 title: ConfirmButton | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz ukazuje, jak používat ConfirmButton prvek, který zobrazuje hodnota Ano/žádné místní, když uživatel klikne na tlačítko."
+description: Tento kurz ukazuje, jak používat ConfirmButton prvek, který zobrazuje hodnota Ano/žádné místní, když uživatel klikne na tlačítko.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26567406"
 ---
 <a name="confirmbutton"></a><span data-ttu-id="26bf5-103">ConfirmButton</span><span class="sxs-lookup"><span data-stu-id="26bf5-103">ConfirmButton</span></span>
 ====================

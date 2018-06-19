@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870580"
 ---
 <a name="databinding-the-slider-control-c"></a><span data-ttu-id="e7ace-104">Datové vazby v ovládacím prvku posuvník (C#)</span><span class="sxs-lookup"><span data-stu-id="e7ace-104">Databinding the Slider Control (C#)</span></span>
 ====================

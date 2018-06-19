@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-35/data-controls/index
-title: "Ovládací prvky datových | Microsoft Docs"
+title: Ovládací prvky datových | Microsoft Docs
 author: rick-anderson
-description: "Tato sada videa prozkoumá použití nových funkcí řízení dat s ASP.NET 3.5"
+description: Tato sada videa prozkoumá použití nových funkcí řízení dat s ASP.NET 3.5
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570457"
 ---
 <a name="data-controls"></a><span data-ttu-id="7dce7-103">Ovládací prvky datových</span><span class="sxs-lookup"><span data-stu-id="7dce7-103">Data Controls</span></span>
 ====================

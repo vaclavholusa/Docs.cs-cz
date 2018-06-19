@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/index
-title: "Vlastní formátování | Microsoft Docs"
+title: Vlastní formátování | Microsoft Docs
 author: rick-anderson
-description: "Tyto kurzy podívejte se na tom, jak přizpůsobit zobrazení dat během vazby dat s použitím obslužné rutiny událostí v ovládacích prvcích GridView DetailsView a FormView."
+description: Tyto kurzy podívejte se na tom, jak přizpůsobit zobrazení dat během vazby dat s použitím obslužné rutiny událostí v ovládacích prvcích GridView DetailsView a FormView.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568210"
 ---
 <a name="custom-formatting"></a><span data-ttu-id="eeb53-103">Vlastní formátování</span><span class="sxs-lookup"><span data-stu-id="eeb53-103">Custom Formatting</span></span>
 ====================

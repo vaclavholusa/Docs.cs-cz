@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/page-layout
-title: "Rozložení stránky | Microsoft Docs"
+title: Rozložení stránky | Microsoft Docs
 author: JoeStagner
-description: "Tabulky nebo předlohy se styly? Umístění relativní nebo absolutní? Toto video bude předvedení funkcí aplikace Visual Web developer, které podporují vývoji s yo..."
+description: Tabulky nebo předlohy se styly? Umístění relativní nebo absolutní? Toto video bude předvedení funkcí aplikace Visual Web developer, které podporují vývoji s yo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571924"
 ---
 <a name="page-layout"></a><span data-ttu-id="52794-105">Rozložení stránky</span><span class="sxs-lookup"><span data-stu-id="52794-105">Page Layout</span></span>
 ====================

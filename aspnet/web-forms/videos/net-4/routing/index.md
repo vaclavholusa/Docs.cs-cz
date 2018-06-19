@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/routing/index
-title: "Směrování | Microsoft Docs"
+title: Směrování | Microsoft Docs
 author: rick-anderson
-description: "Toto video ukazuje, jak vytvořit intuitivní a SEO – přátelské adresy URL pro aplikace webových formulářů."
+description: Toto video ukazuje, jak vytvořit intuitivní a SEO – přátelské adresy URL pro aplikace webových formulářů.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571921"
 ---
 <a name="routing"></a><span data-ttu-id="c0cc3-103">Směrování</span><span class="sxs-lookup"><span data-stu-id="c0cc3-103">Routing</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/database-driven-site-maps/index
-title: "Databáze řízené mapy webu | Microsoft Docs"
+title: Databáze řízené mapy webu | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz vysvětluje, jak k vytvoření mapy webu dynamicky na základě informací v databázi."
+description: Tento kurz vysvětluje, jak k vytvoření mapy webu dynamicky na základě informací v databázi.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568213"
 ---
 <a name="database-driven-site-maps"></a><span data-ttu-id="86f86-103">Mapy vycházející z databáze lokality</span><span class="sxs-lookup"><span data-stu-id="86f86-103">Database-Driven Site Maps</span></span>
 ====================

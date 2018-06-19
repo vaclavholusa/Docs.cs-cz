@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869670"
 ---
 <a name="creating-unit-tests-for-aspnet-mvc-applications-vb"></a><span data-ttu-id="28e9c-104">Vytváření testů jednotek pro aplikace ASP.NET MVC (VB)</span><span class="sxs-lookup"><span data-stu-id="28e9c-104">Creating Unit Tests for ASP.NET MVC Applications (VB)</span></span>
 ====================

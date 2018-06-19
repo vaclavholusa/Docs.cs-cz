@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/index
-title: "Obraťte se na správce | Microsoft Docs"
+title: Obraťte se na správce | Microsoft Docs
 author: rick-anderson
-description: "Jak vytvořit celou aplikaci obraťte se na správu od začátku ukončíte."
+description: Jak vytvořit celou aplikaci obraťte se na správu od začátku ukončíte.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564061"
 ---
 <a name="contact-manager"></a><span data-ttu-id="cbbac-103">Obraťte se na správce</span><span class="sxs-lookup"><span data-stu-id="cbbac-103">Contact Manager</span></span>
 ====================

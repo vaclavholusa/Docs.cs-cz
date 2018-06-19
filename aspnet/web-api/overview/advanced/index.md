@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/index
-title: "Rozšířené témata pro rozhraní ASP.NET Web API | Microsoft Docs"
+title: Rozšířené témata pro rozhraní ASP.NET Web API | Microsoft Docs
 author: rick-anderson
-description: "Pokročilejší témata pro vývoj rozhraní ASP.NET Web API, po které jste se naučili základy."
+description: Pokročilejší témata pro vývoj rozhraní ASP.NET Web API, po které jste se naučili základy.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/23/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566329"
 ---
 <a name="advanced-topics-for-aspnet-web-api"></a><span data-ttu-id="c47a0-103">Rozšířené témata pro rozhraní ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="c47a0-103">Advanced Topics for ASP.NET Web API</span></span>
 ====================

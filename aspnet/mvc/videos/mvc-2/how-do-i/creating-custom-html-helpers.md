@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872104"
 ---
 <a name="creating-custom-html-helpers"></a><span data-ttu-id="b8d0d-104">Vytváření Pomocníci vlastní HTML</span><span class="sxs-lookup"><span data-stu-id="b8d0d-104">Creating Custom HTML Helpers</span></span>
 ====================

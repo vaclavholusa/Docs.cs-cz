@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-embed-an-image-in-an-email-with-aspnet
-title: "[Jak na:] Vložit obrázek e-mailem s technologií ASP.NET | Microsoft Docs"
+title: '[Jak na:] Vložit obrázek e-mailem s technologií ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Jan PEL ukazuje, jak pro vložení bitovou kopii do e-mailu s technologií ASP.NET. Zadá vytvoří webového formuláře (s pole pro, od, předmět a text), použije AlternateView..."
+description: Jan PEL ukazuje, jak pro vložení bitovou kopii do e-mailu s technologií ASP.NET. Zadá vytvoří webového formuláře (s pole pro, od, předmět a text), použije AlternateView...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571825"
 ---
 <a name="how-do-i-embed-an-image-in-an-email-with-aspnet"></a><span data-ttu-id="43aae-104">[Jak na:] Vložit obrázek e-mailem s technologií ASP.NET</span><span class="sxs-lookup"><span data-stu-id="43aae-104">[How Do I:] Embed an Image in an Email with ASP.NET</span></span>
 ====================

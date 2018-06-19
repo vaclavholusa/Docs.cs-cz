@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site
-title: "Lokality pomocí test CAPTCHA robotů zabránit v používání vaší Razor rozhraní ASP.NET Web) | Microsoft Docs"
+title: Lokality pomocí test CAPTCHA robotů zabránit v používání vaší Razor rozhraní ASP.NET Web) | Microsoft Docs
 author: microsoft
-description: "Tento článek vysvětluje, jak používat nástroje ReCaptcha (z důvodu zabezpečení) k automatizovaným programům (robotů) bránit v provádění úloh na webových stránkách ASP.NET (Razor) jsme..."
+description: Tento článek vysvětluje, jak používat nástroje ReCaptcha (z důvodu zabezpečení) k automatizovaným programům (robotů) bránit v provádění úloh na webových stránkách ASP.NET (Razor) jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573280"
 ---
 <a name="using-a-captcha-to-prevent-bots-from-using-your-aspnet-web-razor-site"></a><span data-ttu-id="6c0b2-103">Lokality pomocí test CAPTCHA robotů zabránit v používání vaší Razor rozhraní ASP.NET Web)</span><span class="sxs-lookup"><span data-stu-id="6c0b2-103">Using a CAPTCHA to Prevent Bots from Using Your ASP.NET Web Razor) Site</span></span>
 ====================

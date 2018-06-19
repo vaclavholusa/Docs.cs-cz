@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867772"
 ---
 <a name="aspnet-mvc-controller-overview"></a><span data-ttu-id="f240b-104">Přehled rozhraní ASP.NET MVC řadiče</span><span class="sxs-lookup"><span data-stu-id="f240b-104">ASP.NET MVC Controller Overview</span></span>
 ====================

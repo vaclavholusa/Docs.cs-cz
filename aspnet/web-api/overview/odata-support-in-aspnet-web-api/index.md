@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/index
-title: "V rozhraní ASP.NET Web API OData | Microsoft Docs"
+title: V rozhraní ASP.NET Web API OData | Microsoft Docs
 author: rick-anderson
-description: "Postup vytvoření koncových bodů protokolu OData v rozhraní Web API. OData je protokol přístupu dat pro web. Poskytuje jednotným způsobem pro dotazování a zpracování datových sad. Webové rozhraní API s..."
+description: Postup vytvoření koncových bodů protokolu OData v rozhraní Web API. OData je protokol přístupu dat pro web. Poskytuje jednotným způsobem pro dotazování a zpracování datových sad. Webové rozhraní API s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/17/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566716"
 ---
 <a name="odata-in-aspnet-web-api"></a><span data-ttu-id="f3378-106">V rozhraní ASP.NET Web API OData</span><span class="sxs-lookup"><span data-stu-id="f3378-106">OData in ASP.NET Web API</span></span>
 ====================

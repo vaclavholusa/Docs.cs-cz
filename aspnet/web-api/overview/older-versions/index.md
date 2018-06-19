@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/index
-title: "Dokumentace ke starším verzím rozhraní Web API | Microsoft Docs"
+title: Dokumentace ke starším verzím rozhraní Web API | Microsoft Docs
 author: rick-anderson
-description: "Dokumentace ke starším verzím rozhraní Web API."
+description: Dokumentace ke starším verzím rozhraní Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566761"
 ---
 <a name="documentation-on-older-versions-of-web-api"></a><span data-ttu-id="319d3-103">Dokumentace ke starším verzím rozhraní Web API</span><span class="sxs-lookup"><span data-stu-id="319d3-103">Documentation on Older Versions of Web API</span></span>
 ====================

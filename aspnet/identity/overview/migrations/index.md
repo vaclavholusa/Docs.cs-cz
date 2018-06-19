@@ -1,14 +1,14 @@
 ---
 uid: identity/overview/migrations/index
-title: "Migrace na identitě ASP.NET Identity | Microsoft Docs"
+title: Migrace na identitě ASP.NET Identity | Microsoft Docs
 author: rick-anderson
-description: "Migrace na ASP.NET Identity od jiných zprostředkovatelů členství"
+description: Migrace na ASP.NET Identity od jiných zprostředkovatelů členství
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/02/2013
 ms.topic: article
 ms.assetid: 4a54fee1-d064-4d67-837a-87143a9205fd
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations
 msc.type: chapter
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26563680"
 ---
 <a name="migrating-to-aspnet-identity"></a><span data-ttu-id="ca20a-103">Migrace na identitě ASP.NET Identity</span><span class="sxs-lookup"><span data-stu-id="ca20a-103">Migrating to ASP.NET Identity</span></span>
 ====================

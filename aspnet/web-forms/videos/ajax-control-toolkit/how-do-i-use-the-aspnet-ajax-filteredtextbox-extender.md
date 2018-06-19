@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880489"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-filteredtextbox-extender"></a><span data-ttu-id="7b0d1-104">[Jak na:] Použití rozšíření FilteredTextbox ASP.NET AJAX?</span><span class="sxs-lookup"><span data-stu-id="7b0d1-104">[How Do I:] Use the ASP.NET AJAX FilteredTextbox Extender?</span></span>
 ====================

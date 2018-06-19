@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872894"
 ---
 <a name="launching-a-modal-popup-window-from-server-code-c"></a><span data-ttu-id="449c5-104">Spuštění modální automaticky otevíraném okně z kódu serveru (C#)</span><span class="sxs-lookup"><span data-stu-id="449c5-104">Launching a Modal Popup Window from Server Code (C#)</span></span>
 ====================

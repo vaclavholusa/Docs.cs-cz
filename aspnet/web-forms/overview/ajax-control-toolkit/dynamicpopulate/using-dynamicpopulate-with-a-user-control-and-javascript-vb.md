@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872998"
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a><span data-ttu-id="b4081-103">DynamicPopulate pomocí uživatelského ovládacího prvku a JavaScript (VB)</span><span class="sxs-lookup"><span data-stu-id="b4081-103">Using DynamicPopulate with a User Control And JavaScript (VB)</span></span>
 ====================

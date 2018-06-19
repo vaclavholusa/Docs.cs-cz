@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/index
-title: "Práce s daty | Microsoft Docs"
+title: Práce s daty | Microsoft Docs
 author: rick-anderson
-description: "Jak pracovat s databází a souborů ve webové stránky a jak zobrazit a aktualizovat data."
+description: Jak pracovat s databází a souborů ve webové stránky a jak zobrazit a aktualizovat data.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572866"
 ---
 <a name="working-with-data"></a><span data-ttu-id="e0e9d-103">Práce s daty</span><span class="sxs-lookup"><span data-stu-id="e0e9d-103">Working with Data</span></span>
 ====================

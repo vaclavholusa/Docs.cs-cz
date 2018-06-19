@@ -2,7 +2,7 @@
 uid: mvc/index
 title: ASP.NET MVC | Microsoft Docs
 author: rick-anderson
-description: "Stáhněte ASP.NET MVC a naučte se vytvářet webové aplikace pomocí vzoru řadiče zobrazení modelu."
+description: Stáhněte ASP.NET MVC a naučte se vytvářet webové aplikace pomocí vzoru řadiče zobrazení modelu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/24/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26563653"
 ---
 <a name="aspnet-mvc"></a><span data-ttu-id="2817a-103">ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="2817a-103">ASP.NET MVC</span></span>
 ====================

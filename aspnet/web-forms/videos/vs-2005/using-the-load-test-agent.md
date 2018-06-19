@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893274"
 ---
 <a name="using-the-load-test-agent"></a><span data-ttu-id="31d92-104">Pomocí agenta Test zatížení</span><span class="sxs-lookup"><span data-stu-id="31d92-104">Using the Load Test Agent</span></span>
 ====================

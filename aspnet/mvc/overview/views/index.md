@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/views/index
-title: "ASP.NET MVC uživatelského rozhraní, rozložení a motivů | Microsoft Docs"
+title: ASP.NET MVC uživatelského rozhraní, rozložení a motivů | Microsoft Docs
 author: rick-anderson
-description: "Syntaxe Razor a způsobu jeho použití v zobrazeních (V MVC) pro zobrazení informací."
+description: Syntaxe Razor a způsobu jeho použití v zobrazeních (V MVC) pro zobrazení informací.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/10/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565288"
 ---
 <a name="aspnet-mvc-ui-layouts-and-themes"></a><span data-ttu-id="1ca38-103">ASP.NET MVC uživatelského rozhraní, rozložení a motivů</span><span class="sxs-lookup"><span data-stu-id="1ca38-103">ASP.NET MVC UI, Layouts, and Themes</span></span>
 ====================

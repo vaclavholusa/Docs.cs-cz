@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/index
-title: "SignalR Začínáme | Microsoft Docs"
+title: SignalR Začínáme | Microsoft Docs
 author: rick-anderson
-description: "Další informace o ASP.NET SignalR funkce SignalR technologie ASP.NET je nová knihovna pro vývojáře využívající technologii ASP.NET, která usnadňuje vývoj funkce webu v reálném čase. SignalR umožňuje bi..."
+description: Další informace o ASP.NET SignalR funkce SignalR technologie ASP.NET je nová knihovna pro vývojáře využívající technologii ASP.NET, která usnadňuje vývoj funkce webu v reálném čase. SignalR umožňuje bi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/19/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565453"
 ---
 <a name="signalr-getting-started"></a><span data-ttu-id="fefce-104">SignalR Začínáme</span><span class="sxs-lookup"><span data-stu-id="fefce-104">SignalR Getting Started</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306881"
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a><span data-ttu-id="0439b-104">Sestavení rozhraní RESTful API s rozhraním ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="0439b-104">Build RESTful APIs with ASP.NET Web API</span></span>
 ====================

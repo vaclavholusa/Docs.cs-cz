@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870112"
 ---
 <a name="part-9-registration-and-checkout"></a><span data-ttu-id="c9dbc-104">Část 9: Registrace a ověření</span><span class="sxs-lookup"><span data-stu-id="c9dbc-104">Part 9: Registration and Checkout</span></span>
 ====================

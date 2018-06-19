@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-to-install-asp-net-and-tools
-title: "Postup instalace technologie ASP.NET a nástroje | Microsoft Docs"
+title: Postup instalace technologie ASP.NET a nástroje | Microsoft Docs
 author: shanselman
-description: "Scott Hanselman společnosti Microsoft se dozvíte, jak stáhnout a nainstalovat technologie ASP.NET a nástroje, abyste mohli začít, vývoj webových aplikací."
+description: Scott Hanselman společnosti Microsoft se dozvíte, jak stáhnout a nainstalovat technologie ASP.NET a nástroje, abyste mohli začít, vývoj webových aplikací.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/10/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572191"
 ---
 <a name="how-to-install-aspnet-and-tools"></a><span data-ttu-id="1f68b-103">Postup instalace technologie ASP.NET a nástroje</span><span class="sxs-lookup"><span data-stu-id="1f68b-103">How to Install ASP.NET and Tools</span></span>
 ====================

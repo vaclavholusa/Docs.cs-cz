@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/intro-to-visual-web-developer
-title: "Úvod do Visual Web Developer | Microsoft Docs"
+title: Úvod do Visual Web Developer | Microsoft Docs
 author: JoeStagner
-description: "Microsoft Visual Web Developer je bezplatnou verzi sady Visual Studio pro vývoj aplikací ASP.NET. Toto video znázorňuje, jak získat a nainstalovat ji a t..."
+description: Microsoft Visual Web Developer je bezplatnou verzi sady Visual Studio pro vývoj aplikací ASP.NET. Toto video znázorňuje, jak získat a nainstalovat ji a t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570562"
 ---
 <a name="intro-to-visual-web-developer"></a><span data-ttu-id="84dd2-104">Úvod do Visual Web Developer</span><span class="sxs-lookup"><span data-stu-id="84dd2-104">Intro to Visual Web Developer</span></span>
 ====================

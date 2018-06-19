@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/index
-title: "Serializace a vazby modelu v rozhraní ASP.NET Web API | Microsoft Docs"
+title: Serializace a vazby modelu v rozhraní ASP.NET Web API | Microsoft Docs
 author: rick-anderson
-description: "Jak rozhraní ASP.NET Web API váže zpráv protokolu HTTP domény modely a jak pracovat s média formáty v rozhraní Web API."
+description: Jak rozhraní ASP.NET Web API váže zpráv protokolu HTTP domény modely a jak pracovat s média formáty v rozhraní Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26566335"
 ---
 <a name="serialization-and-model-binding-in-aspnet-web-api"></a><span data-ttu-id="9365b-103">Serializace a vazby modelu v rozhraní ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="9365b-103">Serialization and Model Binding in ASP.NET Web API</span></span>
 ====================

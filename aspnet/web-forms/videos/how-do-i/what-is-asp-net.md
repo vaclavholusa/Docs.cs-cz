@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/what-is-asp-net
 title: Co je technologie ASP.NET? | Microsoft Docs
 author: shanselman
-description: "Scott Hanselman společnosti Microsoft poskytuje stručný přehled technologie ASP.NET."
+description: Scott Hanselman společnosti Microsoft poskytuje stručný přehled technologie ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570763"
 ---
 <a name="what-is-aspnet"></a><span data-ttu-id="ad009-104">Co je technologie ASP.NET?</span><span class="sxs-lookup"><span data-stu-id="ad009-104">What is ASP.NET?</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/conference-presentations/ninja-on-fire-black-belt-tips
-title: "Expertem na černé pásu tipy ještě efektivněji | Microsoft Docs"
+title: Expertem na černé pásu tipy ještě efektivněji | Microsoft Docs
 author: Haacked
-description: "Najdete v návodu několik tipy a triky pro maximální využití rozhraní ASP.NET MVC."
+description: Najdete v návodu několik tipy a triky pro maximální využití rozhraní ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565474"
 ---
 <a name="ninja-on-fire-black-belt-tips"></a><span data-ttu-id="9ecc6-103">Expertem na ještě efektivněji černé pásu tipy</span><span class="sxs-lookup"><span data-stu-id="9ecc6-103">Ninja on Fire Black Belt Tips</span></span>
 ====================

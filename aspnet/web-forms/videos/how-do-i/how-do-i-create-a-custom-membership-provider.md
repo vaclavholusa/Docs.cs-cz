@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-membership-provider
-title: "[Jak na:] Vytvoření vlastního poskytovatele členství? | Microsoft Docs"
+title: '[Jak na:] Vytvoření vlastního poskytovatele členství? | Microsoft Docs'
 author: rick-anderson
-description: "Zprostředkovatel členství umožňuje webovou aplikaci pro ukládání a načítání dat členství pro uživatele a předem definovat standardní používá poskytovatele členství prostředí ASP.NET..."
+description: Zprostředkovatel členství umožňuje webovou aplikaci pro ukládání a načítání dat členství pro uživatele a předem definovat standardní používá poskytovatele členství prostředí ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571960"
 ---
 <a name="how-do-i-create-a-custom-membership-provider"></a><span data-ttu-id="24cd7-104">[Jak na:] Vytvoření vlastního poskytovatele členství?</span><span class="sxs-lookup"><span data-stu-id="24cd7-104">[How Do I:] Create a Custom Membership Provider?</span></span>
 ====================

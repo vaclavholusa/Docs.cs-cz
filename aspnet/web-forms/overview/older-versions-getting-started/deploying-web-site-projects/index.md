@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/index
-title: "Nasazení webové projekty v sadě Visual Studio 2008 a starší | Microsoft Docs"
+title: Nasazení webové projekty v sadě Visual Studio 2008 a starší | Microsoft Docs
 author: rick-anderson
-description: "Webové aplikace ASP.NET obvykle jsou navržené tak, vytvořili a testovány v místní vývojové prostředí a je nutné nasadit až produkčního prostředí o..."
+description: Webové aplikace ASP.NET obvykle jsou navržené tak, vytvořili a testovány v místní vývojové prostředí a je nutné nasadit až produkčního prostředí o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26569527"
 ---
 <a name="deploying-web-site-projects-in-visual-studio-2008-and-earlier"></a><span data-ttu-id="65463-103">Nasazení webové projekty v sadě Visual Studio 2008 a starší</span><span class="sxs-lookup"><span data-stu-id="65463-103">Deploying Web Site Projects in Visual Studio 2008 and earlier</span></span>
 ====================

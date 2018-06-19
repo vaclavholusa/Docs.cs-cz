@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/index
-title: "Filtrování scénáře s DataList a opakovače | Microsoft Docs"
+title: Filtrování scénáře s DataList a opakovače | Microsoft Docs
 author: rick-anderson
-description: "V těchto kurzech v tématu Postupy: zobrazení a podrobností sestavy pomocí rozevíracích seznamů pro hlavní záznamy a ovládacího prvku DataList podrobnosti."
+description: 'V těchto kurzech v tématu Postupy: zobrazení a podrobností sestavy pomocí rozevíracích seznamů pro hlavní záznamy a ovládacího prvku DataList podrobnosti.'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568534"
 ---
 <a name="filtering-scenarios-with-the-datalist-and-repeater"></a><span data-ttu-id="ea86c-103">Filtrování scénáře s DataList a opakovače</span><span class="sxs-lookup"><span data-stu-id="ea86c-103">Filtering Scenarios with the DataList and Repeater</span></span>
 ====================

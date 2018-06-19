@@ -2,7 +2,7 @@
 uid: mvc/overview/index
 title: ASP.NET MVC pokyny | Microsoft Docs
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/23/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26564064"
 ---
 <a name="aspnet-mvc-guidance"></a><span data-ttu-id="0d71c-102">Pokyny pro rozhraní ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="0d71c-102">ASP.NET MVC Guidance</span></span>
 ====================

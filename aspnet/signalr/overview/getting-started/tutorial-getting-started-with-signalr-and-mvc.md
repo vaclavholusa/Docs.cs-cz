@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28033844"
 ---
 <a name="tutorial-getting-started-with-signalr-2-and-mvc-5"></a><span data-ttu-id="55a1a-104">Kurz: Začínáme s SignalR 2 a MVC 5</span><span class="sxs-lookup"><span data-stu-id="55a1a-104">Tutorial: Getting Started with SignalR 2 and MVC 5</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875432"
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="c05a3-104">Fronty způsob práce zaměřený (vytváření reálných cloudových aplikací s Azure)</span><span class="sxs-lookup"><span data-stu-id="c05a3-104">Queue-Centric Work Pattern (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

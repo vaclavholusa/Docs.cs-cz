@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string
-title: "[Jak na:] Předávání informací z jedné stránky na jiný pomocí řetězce dotazu | Microsoft Docs"
+title: '[Jak na:] Předávání informací z jedné stránky na jiný pomocí řetězce dotazu | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se zobrazí Jan PEL, jak můžete předávají informace z jedné stránky na jiný pomocí řetězce dotazu. Nejdříve si projděte postup vytvoření řetězce dotazu do..."
+description: V tomto videu se zobrazí Jan PEL, jak můžete předávají informace z jedné stránky na jiný pomocí řetězce dotazu. Nejdříve si projděte postup vytvoření řetězce dotazu do...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570892"
 ---
 <a name="how-do-i-pass-information-from-one-page-to-another-using-a-query-string"></a><span data-ttu-id="bb654-104">[Jak na:] Předávání informací z jedné stránky na jiný pomocí řetězce dotazu</span><span class="sxs-lookup"><span data-stu-id="bb654-104">[How Do I:] Pass Information From One Page to Another Using a Query String</span></span>
 ====================

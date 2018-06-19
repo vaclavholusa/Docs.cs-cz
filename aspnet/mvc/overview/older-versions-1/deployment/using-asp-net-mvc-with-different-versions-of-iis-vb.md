@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874028"
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-vb"></a><span data-ttu-id="3bf93-104">Pomocí technologie ASP.NET MVC s různými verzemi služby IIS (VB)</span><span class="sxs-lookup"><span data-stu-id="3bf93-104">Using ASP.NET MVC with Different Versions of IIS (VB)</span></span>
 ====================

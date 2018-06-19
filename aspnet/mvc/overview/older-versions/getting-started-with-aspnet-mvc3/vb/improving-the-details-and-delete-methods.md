@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869514"
 ---
 <a name="improving-the-details-and-delete-methods-vb"></a><span data-ttu-id="8a84a-103">Vylepšení podrobnosti a Delete metody (VB)</span><span class="sxs-lookup"><span data-stu-id="8a84a-103">Improving the Details and Delete Methods (VB)</span></span>
 ====================

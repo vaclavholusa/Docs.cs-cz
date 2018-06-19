@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/use-the-layout-features-in-webmatrix
-title: "Použití funkcí rozložení ve službě WebMatrix | Microsoft Docs"
+title: Použití funkcí rozložení ve službě WebMatrix | Microsoft Docs
 author: rick-anderson
-description: "Část 4 se dozvíte, jaké rozložení a použití rozložení ve službě WebMatrix pro společný kód mezi vaší stránky."
+description: Část 4 se dozvíte, jaké rozložení a použití rozložení ve službě WebMatrix pro společný kód mezi vaší stránky.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573235"
 ---
 <a name="use-the-layout-features-in-webmatrix"></a><span data-ttu-id="a816b-103">Použití funkce rozložení ve službě WebMatrix</span><span class="sxs-lookup"><span data-stu-id="a816b-103">Use the Layout Features in WebMatrix</span></span>
 ====================

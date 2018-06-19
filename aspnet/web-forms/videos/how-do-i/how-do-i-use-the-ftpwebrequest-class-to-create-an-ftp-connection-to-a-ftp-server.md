@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-ftpwebrequest-class-to-create-an-ftp-connection-to-a-ftp-server
-title: "[Jak na:] K vytvoření připojení k serveru FTP na FTP Server používat třídu FtpWebRequest | Microsoft Docs"
+title: '[Jak na:] K vytvoření připojení k serveru FTP na FTP Server používat třídu FtpWebRequest | Microsoft Docs'
 author: rick-anderson
-description: "V této video PEL Jan ukazuje, jak používat třídu FtpWebRequest vytvořit připojení FTP a přenos souboru. Nejprve vytvořte formuláře jako jednoduchý .aspx pro vybr..."
+description: V této video PEL Jan ukazuje, jak používat třídu FtpWebRequest vytvořit připojení FTP a přenos souboru. Nejprve vytvořte formuláře jako jednoduchý .aspx pro vybr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/18/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571945"
 ---
 <a name="how-do-i-use-the-ftpwebrequest-class-to-create-an-ftp-connection-to-a-ftp-server"></a><span data-ttu-id="cc7dc-104">[Jak na:] Použití třídy FtpWebRequest k vytvoření připojení k serveru FTP na serveru FTP</span><span class="sxs-lookup"><span data-stu-id="cc7dc-104">[How Do I:] Use the FtpWebRequest Class to Create an FTP Connection to a FTP Server</span></span>
 ====================

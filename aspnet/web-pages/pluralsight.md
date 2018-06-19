@@ -1,8 +1,8 @@
 ---
 uid: web-pages/pluralsight
-title: "Služba WebMatrix a webové stránky Video školení z Pluralsight | Microsoft Docs"
+title: Služba WebMatrix a webové stránky Video školení z Pluralsight | Microsoft Docs
 author: rick-anderson
-description: "Služba WebMatrix &amp; školení webové stránky z Pluralsight Tento podrobný kurz získáte provozu pomocí služby WebMatrix a webové stránky ASP.NET. Pokrývá everythi..."
+description: Služba WebMatrix &amp; školení webové stránky z Pluralsight Tento podrobný kurz získáte provozu pomocí služby WebMatrix a webové stránky ASP.NET. Pokrývá everythi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573250"
 ---
 <a name="webmatrix-and-web-pages-video-training-from-pluralsight"></a><span data-ttu-id="00cf9-104">Služba WebMatrix a webové stránky Video školení z Pluralsight</span><span class="sxs-lookup"><span data-stu-id="00cf9-104">WebMatrix and Web Pages Video Training from Pluralsight</span></span>
 ====================

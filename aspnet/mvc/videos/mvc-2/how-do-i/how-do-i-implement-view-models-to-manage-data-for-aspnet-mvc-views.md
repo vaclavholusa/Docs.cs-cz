@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871191"
 ---
 <a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a><span data-ttu-id="6d4fc-105">Jak na: implementace zobrazení modely, které budou spravovat Data pro zobrazení v rozhraní ASP.NET MVC?</span><span class="sxs-lookup"><span data-stu-id="6d4fc-105">How Do I: Implement View  Models to Manage Data for ASP.NET MVC Views?</span></span>
 ====================

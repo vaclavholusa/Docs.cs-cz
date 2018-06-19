@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/index
-title: "Postupy proveďte I | Microsoft Docs"
+title: Postupy proveďte I | Microsoft Docs
 author: rick-anderson
-description: "Videa v této části se věnují architektuře ASP.NET MVC, včetně toho, jak pro vytvoření aplikace celý elektronického obchodování od začátku ukončíte 'výkladní skříň,."
+description: Videa v této části se věnují architektuře ASP.NET MVC, včetně toho, jak pro vytvoření aplikace celý elektronického obchodování od začátku ukončíte 'výkladní skříň,.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565582"
 ---
 <a name="how-do-i"></a><span data-ttu-id="b19e1-103">Postupy proveďte I</span><span class="sxs-lookup"><span data-stu-id="b19e1-103">How-Do-I</span></span>
 ====================

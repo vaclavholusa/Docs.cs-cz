@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875341"
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a><span data-ttu-id="0c989-103">Odolnost připojení a zachycením příkaz s použitím Entity Framework v aplikaci ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="0c989-103">Connection Resiliency and Command Interception with the Entity Framework in an ASP.NET MVC Application</span></span>
 ====================

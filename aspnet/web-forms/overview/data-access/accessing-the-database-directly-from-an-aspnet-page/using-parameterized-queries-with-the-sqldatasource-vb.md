@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878136"
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a><span data-ttu-id="1c29f-104">Parametrizované dotazy pomocí SqlDataSource (VB)</span><span class="sxs-lookup"><span data-stu-id="1c29f-104">Using Parameterized Queries with the SqlDataSource (VB)</span></span>
 ====================

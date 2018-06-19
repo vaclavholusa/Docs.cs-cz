@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/index
-title: "Starší verze funkce SignalR | Microsoft Docs"
+title: Starší verze funkce SignalR | Microsoft Docs
 author: rick-anderson
-description: "Dokumentace, která se vztahují na starší verze funkce signalr."
+description: Dokumentace, která se vztahují na starší verze funkce signalr.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/19/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26565954"
 ---
 <a name="signalr-older-versions"></a><span data-ttu-id="35810-103">Starší verze funkce SignalR</span><span class="sxs-lookup"><span data-stu-id="35810-103">SignalR Older Versions</span></span>
 ====================

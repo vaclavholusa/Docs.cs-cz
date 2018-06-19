@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
-title: "Životní cyklus aplikace ASP.NET MVC 5 | Microsoft Docs"
+title: Životní cyklus aplikace ASP.NET MVC 5 | Microsoft Docs
 author: cephalin
-description: "Stáhněte si dokument PDF, který grafy životního cyklu aplikace ASP.NET MVC 5. Tento dokument životního cyklu poskytuje podrobný pohled životního cyklu MVC..."
+description: Stáhněte si dokument PDF, který grafy životního cyklu aplikace ASP.NET MVC 5. Tento dokument životního cyklu poskytuje podrobný pohled životního cyklu MVC...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/28/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036489"
 ---
 <a name="lifecycle-of-an-aspnet-mvc-5-application"></a>Životní cyklus aplikace ASP.NET MVC 5
 ====================

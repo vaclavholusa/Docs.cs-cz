@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
-title: "Testování řadiče v rozhraní ASP.NET Web API 2 částí | Microsoft Docs"
+title: Testování řadiče v rozhraní ASP.NET Web API 2 částí | Microsoft Docs
 author: MikeWasson
-description: "Toto téma popisuje některé konkrétní postupy pro testování řadiče ve webovém rozhraní API 2 částí. Než si přečtete Toto téma, můžete chtít přečíst kurz jednotky..."
+description: Toto téma popisuje některé konkrétní postupy pro testování řadiče ve webovém rozhraní API 2 částí. Než si přečtete Toto téma, můžete chtít přečíst kurz jednotky...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/11/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28039541"
 ---
 <a name="unit-testing-controllers-in-aspnet-web-api-2"></a>Testování řadiče v rozhraní ASP.NET Web API 2 částí
 ====================

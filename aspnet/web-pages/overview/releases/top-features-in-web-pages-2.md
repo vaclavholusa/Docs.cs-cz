@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899379"
 ---
 <a name="the-top-features-in-aspnet-web-pages-2"></a>Hlavní funkce v rozhraní ASP.NET Web Pages 2
 ====================

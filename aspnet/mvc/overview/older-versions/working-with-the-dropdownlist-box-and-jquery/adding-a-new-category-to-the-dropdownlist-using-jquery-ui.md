@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871932"
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>Přidat novou kategorii k rozevírací seznam pomocí uživatelského rozhraní jQuery
 ====================

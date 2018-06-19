@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883076"
 ---
 <a name="creating-a-site-with-iis7-manager"></a>Vytvoření webu pomocí Správce služby IIS7
 ====================

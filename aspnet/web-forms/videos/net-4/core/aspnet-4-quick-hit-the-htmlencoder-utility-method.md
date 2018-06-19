@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883947"
 ---
 <a name="aspnet-4-quick-hit--the-htmlencoder-utility-method"></a>ASP.NET 4 "Rychlý zasáhnout" – HtmlEncoder Pomocná metoda
 ====================

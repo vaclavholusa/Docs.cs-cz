@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879124"
 ---
 <a name="using-cascadingdropdown-with-a-database-c"></a><span data-ttu-id="2362d-103">Pomocí CascadingDropDown s databází (C#)</span><span class="sxs-lookup"><span data-stu-id="2362d-103">Using CascadingDropDown with a Database (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888289"
 ---
 <a name="users-and-roles-on-the-production-website-c"></a><span data-ttu-id="2c18c-103">Uživatelé a role na webu produkční (C#)</span><span class="sxs-lookup"><span data-stu-id="2c18c-103">Users and Roles On The Production Website (C#)</span></span>
 ====================

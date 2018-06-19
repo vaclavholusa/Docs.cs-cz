@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882920"
 ---
 <a name="set-up-your-development-environment-for-aspnet-20"></a><span data-ttu-id="b9a8d-103">Nastavení vývojového prostředí pro technologii ASP.NET 2.0</span><span class="sxs-lookup"><span data-stu-id="b9a8d-103">Set Up Your Development Environment for ASP.NET 2.0</span></span>
 ====================

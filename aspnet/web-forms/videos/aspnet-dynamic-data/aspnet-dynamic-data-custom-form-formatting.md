@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881022"
 ---
 <a name="aspnet-dynamic-data-custom-form-formatting"></a><span data-ttu-id="c447c-103">Dynamické ASP.NET dat vlastní formulář formátování</span><span class="sxs-lookup"><span data-stu-id="c447c-103">ASP.NET Dynamic Data Custom Form Formatting</span></span>
 ====================

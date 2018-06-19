@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899811"
 ---
 <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a><span data-ttu-id="dec4c-104">Představení technologie ASP.NET Web Pages – vytváření konzistentního rozložení</span><span class="sxs-lookup"><span data-stu-id="dec4c-104">Introducing ASP.NET Web Pages - Creating a Consistent Layout</span></span>
 ====================

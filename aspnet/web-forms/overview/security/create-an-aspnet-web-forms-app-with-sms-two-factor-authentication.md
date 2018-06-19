@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887422"
 ---
 <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a><span data-ttu-id="b90c4-104">Vytvořit rozhraní ASP.NET Web Forms aplikace pomocí SMS dvoufaktorové ověřování (C#)</span><span class="sxs-lookup"><span data-stu-id="b90c4-104">Create an ASP.NET Web Forms app with SMS Two-Factor Authentication (C#)</span></span>
 ====================

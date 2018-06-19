@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878929"
 ---
 <a name="databinding-to-an-accordion-c"></a><span data-ttu-id="2fa3e-104">Datové vazby k typu Accordion (C#)</span><span class="sxs-lookup"><span data-stu-id="2fa3e-104">Databinding to an Accordion (C#)</span></span>
 ====================

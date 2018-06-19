@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886352"
 ---
 <a name="how-to-manually-bind-a-dataset-to-a-datagrid"></a><span data-ttu-id="5e849-104">Jak ručně vytvořit vazbu datovou sadu Datagrid</span><span class="sxs-lookup"><span data-stu-id="5e849-104">How to Manually Bind a Dataset to a Datagrid</span></span>
 ====================

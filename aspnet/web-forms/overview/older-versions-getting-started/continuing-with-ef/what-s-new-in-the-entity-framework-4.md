@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889183"
 ---
 <a name="whats-new-in-the-entity-framework-40"></a><span data-ttu-id="b618f-104">Co je nového v rozhraní Entity Framework 4.0</span><span class="sxs-lookup"><span data-stu-id="b618f-104">What's New in the Entity Framework 4.0</span></span>
 ====================

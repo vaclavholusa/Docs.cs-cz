@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885894"
 ---
 <a name="how-do-i-enable-xml-intellisense-and-use-xml-namespaces"></a><span data-ttu-id="6093f-104">[Jak na:] Povolení XML IntelliSense a používat obory názvů XML?</span><span class="sxs-lookup"><span data-stu-id="6093f-104">[How Do I:] Enable XML IntelliSense and Use XML Namespaces?</span></span>
 ====================

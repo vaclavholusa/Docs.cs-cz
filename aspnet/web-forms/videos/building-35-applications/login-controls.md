@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/login-controls
-title: "Ovládací prvky pro přihlášení | Microsoft Docs"
+title: Ovládací prvky pro přihlášení | Microsoft Docs
 author: JoeStagner
-description: "V této Jan video vás seznámí s členství technologie ASP.NET ukazuje, jak používat některé z přihlašovacích ovládacích prvků technologie ASP.NET."
+description: V této Jan video vás seznámí s členství technologie ASP.NET ukazuje, jak používat některé z přihlašovacích ovládacích prvků technologie ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/04/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570580"
 ---
 <a name="login-controls"></a><span data-ttu-id="fb573-103">Ovládací prvky pro přihlášení</span><span class="sxs-lookup"><span data-stu-id="fb573-103">Login Controls</span></span>
 ====================

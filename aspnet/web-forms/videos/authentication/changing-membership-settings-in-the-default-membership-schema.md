@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886027"
 ---
 <a name="changing-membership-settings-in-the-default-membership-schema"></a><span data-ttu-id="36b12-104">Změna nastavení členství ve výchozím nastavení členství schématu</span><span class="sxs-lookup"><span data-stu-id="36b12-104">Changing Membership Settings in the Default Membership Schema</span></span>
 ====================

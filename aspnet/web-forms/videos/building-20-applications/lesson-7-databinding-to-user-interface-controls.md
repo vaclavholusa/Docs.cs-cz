@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884714"
 ---
 <a name="lesson-7-databinding-to-user-interface-controls"></a><span data-ttu-id="c0986-103">[Lekce 7:] Datové vazby k ovládacích prvků uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="c0986-103">[Lesson 7:] Databinding to User Interface Controls</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881809"
 ---
 <a name="setting-up-the-contact-manager-solution"></a><span data-ttu-id="c29c6-103">Nastavení řešení obraťte se na správce</span><span class="sxs-lookup"><span data-stu-id="c29c6-103">Setting Up the Contact Manager Solution</span></span>
 ====================

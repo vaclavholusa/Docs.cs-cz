@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876745"
 ---
 <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a><span data-ttu-id="1a7b5-103">Zadejte CRUD (vytvořit, číst, aktualizovat, odstraňovat) Data tvoří položka podpory</span><span class="sxs-lookup"><span data-stu-id="1a7b5-103">Provide CRUD (Create, Read, Update, Delete) Data Form Entry Support</span></span>
 ====================

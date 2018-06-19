@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883109"
 ---
 <a name="how-do-i-get-started-with-linq"></a><span data-ttu-id="8bb3b-104">[Jak na:] Začínáme s dotazy LINQ?</span><span class="sxs-lookup"><span data-stu-id="8bb3b-104">[How Do I:] Get Started with LINQ?</span></span>
 ====================

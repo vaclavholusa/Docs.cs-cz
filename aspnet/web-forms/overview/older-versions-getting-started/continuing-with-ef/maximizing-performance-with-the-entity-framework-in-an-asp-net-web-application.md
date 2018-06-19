@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891409"
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a><span data-ttu-id="b8c6d-104">Tím se maximalizuje výkon s rozhraní Entity Framework 4.0 4 webové aplikace technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="b8c6d-104">Maximizing Performance with the Entity Framework 4.0 in an ASP.NET 4 Web Application</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874379"
 ---
 <a name="secure-applications-using-authentication-and-authorization"></a><span data-ttu-id="a51ed-103">Zabezpečení aplikací s použitím ověřování a autorizace</span><span class="sxs-lookup"><span data-stu-id="a51ed-103">Secure Applications Using Authentication and Authorization</span></span>
 ====================

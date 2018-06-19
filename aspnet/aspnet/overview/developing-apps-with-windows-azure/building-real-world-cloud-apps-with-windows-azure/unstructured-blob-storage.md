@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872569"
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="29096-104">Úložiště objektů Blob nestrukturovaných (vytváření reálných cloudových aplikací s Azure)</span><span class="sxs-lookup"><span data-stu-id="29096-104">Unstructured Blob Storage (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

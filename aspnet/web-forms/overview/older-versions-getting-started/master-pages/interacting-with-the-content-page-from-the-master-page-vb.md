@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889472"
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-vb"></a><span data-ttu-id="e603c-103">Interakci s stránky obsahu ze stránky předlohy (VB)</span><span class="sxs-lookup"><span data-stu-id="e603c-103">Interacting with the Content Page from the Master Page (VB)</span></span>
 ====================

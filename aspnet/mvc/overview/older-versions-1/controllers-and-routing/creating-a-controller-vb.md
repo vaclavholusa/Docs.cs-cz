@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879007"
 ---
 <a name="creating-a-controller-vb"></a><span data-ttu-id="cdf96-103">Vytvoření řadiče (VB)</span><span class="sxs-lookup"><span data-stu-id="cdf96-103">Creating a Controller (VB)</span></span>
 ====================

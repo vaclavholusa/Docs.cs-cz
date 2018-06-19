@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878591"
 ---
 <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a><span data-ttu-id="f8f7c-104">Část 10: Poslední aktualizace navigace a návrhu webu, uzavření</span><span class="sxs-lookup"><span data-stu-id="f8f7c-104">Part 10: Final Updates to Navigation and Site Design, Conclusion</span></span>
 ====================

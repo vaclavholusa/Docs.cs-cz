@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877421"
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-c"></a><span data-ttu-id="e6f6b-104">Zobrazení souhrnných informací v prvku GridView zápatí (C#)</span><span class="sxs-lookup"><span data-stu-id="e6f6b-104">Displaying Summary Information in the GridView's Footer (C#)</span></span>
 ====================

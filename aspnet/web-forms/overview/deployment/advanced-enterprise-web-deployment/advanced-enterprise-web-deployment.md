@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879930"
 ---
 <a name="advanced-enterprise-web-deployment"></a><span data-ttu-id="9ff85-104">Nasazení webu pokročilé Enterprise</span><span class="sxs-lookup"><span data-stu-id="9ff85-104">Advanced Enterprise Web Deployment</span></span>
 ====================

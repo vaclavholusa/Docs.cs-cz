@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889550"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a><span data-ttu-id="af347-103">Řazení dat v DataList nebo prvku Repeater (C#)</span><span class="sxs-lookup"><span data-stu-id="af347-103">Sorting Data in a DataList or Repeater Control (C#)</span></span>
 ====================

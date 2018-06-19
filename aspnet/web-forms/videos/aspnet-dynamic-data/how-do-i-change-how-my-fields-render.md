@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882361"
 ---
 <a name="how-do-i-change-how-my-fields-render"></a><span data-ttu-id="27e67-105">Jak změnit způsob vykreslení Moje polí?</span><span class="sxs-lookup"><span data-stu-id="27e67-105">How do I Change how my Fields render?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885351"
 ---
 <a name="how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application"></a><span data-ttu-id="d6f73-104">Postup instalace a používání souborů Cookie bez ověřování v aplikaci ASP.NET</span><span class="sxs-lookup"><span data-stu-id="d6f73-104">How to Setup and Use Cookie-less Authentication in an ASP.NET Application</span></span>
 ====================

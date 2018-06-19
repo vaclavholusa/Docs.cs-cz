@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881172"
 ---
 <a name="bit-rate-throttling"></a><span data-ttu-id="bbcda-104">Omezení přenosové rychlosti</span><span class="sxs-lookup"><span data-stu-id="bbcda-104">Bit Rate Throttling</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886534"
 ---
 <a name="how-do-i-implement-the-ajax-paging-pattern"></a><span data-ttu-id="eb232-104">[Jak na:] Implementace vzoru stránkování AJAX?</span><span class="sxs-lookup"><span data-stu-id="eb232-104">[How Do I:] Implement the AJAX Paging Pattern?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30888159"
 ---
 <a name="deploying-your-site-using-an-ftp-client-vb"></a><span data-ttu-id="84965-104">Nasazení webu pomocí klienta FTP (VB)</span><span class="sxs-lookup"><span data-stu-id="84965-104">Deploying Your Site Using an FTP Client (VB)</span></span>
 ====================

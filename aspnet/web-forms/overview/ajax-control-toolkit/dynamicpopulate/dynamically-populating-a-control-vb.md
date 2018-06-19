@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879735"
 ---
 <a name="dynamically-populating-a-control-vb"></a><span data-ttu-id="2f7dd-103">Dynamicky naplnění ovládacího prvku (VB)</span><span class="sxs-lookup"><span data-stu-id="2f7dd-103">Dynamically Populating a Control (VB)</span></span>
 ====================

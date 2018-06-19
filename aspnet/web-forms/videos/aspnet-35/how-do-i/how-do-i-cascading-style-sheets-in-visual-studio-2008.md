@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881438"
 ---
 <a name="how-do-i-cascading-style-sheets-in-visual-studio-2008"></a><span data-ttu-id="5257d-104">[Jak na:] Šablony stylů CSS v sadě Visual Studio 2008</span><span class="sxs-lookup"><span data-stu-id="5257d-104">[How Do I:] Cascading Style Sheets in Visual Studio 2008</span></span>
 ====================

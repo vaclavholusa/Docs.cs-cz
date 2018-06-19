@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893492"
 ---
 <a name="enabling-full-text-search-in-your-text-data"></a><span data-ttu-id="e5624-103">Povolení fulltextového vyhledávání v textová Data</span><span class="sxs-lookup"><span data-stu-id="e5624-103">Enabling Full-Text Search in your Text Data</span></span>
 ====================

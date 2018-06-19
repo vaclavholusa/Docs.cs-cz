@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886131"
 ---
 <a name="aspnet-4-quick-hit--tableless-menu-control"></a><span data-ttu-id="b6a32-103">ASP.NET 4 "Rychlý zasáhnout" – Tableless Menu – ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="b6a32-103">ASP.NET 4 "Quick Hit" – Tableless Menu Control</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889589"
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a><span data-ttu-id="cdac2-104">Strategie pro vývoj databází a nasazení (VB)</span><span class="sxs-lookup"><span data-stu-id="cdac2-104">Strategies for Database Development and Deployment (VB)</span></span>
 ====================

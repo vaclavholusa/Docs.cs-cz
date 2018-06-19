@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885661"
 ---
 <a name="getting-started-with-the-next-version-of-aspnet"></a><span data-ttu-id="ce311-103">Začínáme s další verzi technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="ce311-103">Getting Started with the Next Version of ASP.NET</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884831"
 ---
 <a name="how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application"></a><span data-ttu-id="35172-104">Postup vytvoření tabulky konkrétní vlastní formuláře v aplikaci ASP.NET dynamické dat</span><span class="sxs-lookup"><span data-stu-id="35172-104">How to Create Table Specific Custom Forms in an ASP.NET Dynamic Data Application</span></span>
 ====================

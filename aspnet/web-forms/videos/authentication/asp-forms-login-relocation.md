@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887015"
 ---
 <a name="asp-forms-login-relocation"></a><span data-ttu-id="4f552-103">ASP Forms přihlášení přemístění</span><span class="sxs-lookup"><span data-stu-id="4f552-103">ASP Forms Login Relocation</span></span>
 ====================

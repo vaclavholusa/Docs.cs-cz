@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895201"
 ---
 <a name="working-with-data-part-2"></a><span data-ttu-id="3de2e-103">Práce s daty (část 2)</span><span class="sxs-lookup"><span data-stu-id="3de2e-103">Working with Data (Part 2)</span></span>
 ====================

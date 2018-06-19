@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886755"
 ---
 <a name="lesson-4-understanding-web-application-state"></a><span data-ttu-id="a79e4-103">[Lekce 4:] Stav Principy webové aplikace</span><span class="sxs-lookup"><span data-stu-id="a79e4-103">[Lesson 4:] Understanding Web Application State</span></span>
 ====================

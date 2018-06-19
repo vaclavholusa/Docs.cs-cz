@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875318"
 ---
 <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a><span data-ttu-id="2c92c-103">Implementace funkce základní CRUD s platformou Entity Framework v aplikaci ASP.NET MVC (2 10)</span><span class="sxs-lookup"><span data-stu-id="2c92c-103">Implementing Basic CRUD Functionality with the Entity Framework in ASP.NET MVC Application (2 of 10)</span></span>
 ====================

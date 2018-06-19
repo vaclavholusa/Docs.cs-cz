@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879826"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a><span data-ttu-id="7ace6-104">[Jak na:] Pomocí prvku ASP.NET AJAX rozevírací?</span><span class="sxs-lookup"><span data-stu-id="7ace6-104">[How Do I:] Use the ASP.NET AJAX DropDown Control?</span></span>
 ====================

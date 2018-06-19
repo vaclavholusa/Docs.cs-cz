@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884168"
 ---
 <a name="how-do-i-use-the-pagingbulletedlist-extender-control"></a><span data-ttu-id="ebbf7-105">[Jak na:] Použití ovládacího prvku rozšiřujícího objektu PagingBulletedList?</span><span class="sxs-lookup"><span data-stu-id="ebbf7-105">[How Do I:] Use the PagingBulletedList Extender Control?</span></span>
 ====================

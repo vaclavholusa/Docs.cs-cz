@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888367"
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a><span data-ttu-id="74a7a-103">Vkládání nového záznamu z prvku GridView zápatí (VB)</span><span class="sxs-lookup"><span data-stu-id="74a7a-103">Inserting a New Record from the GridView's Footer (VB)</span></span>
 ====================

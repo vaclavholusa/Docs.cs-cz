@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886183"
 ---
 <a name="set-up-your-development-environment-for-aspnet-35"></a><span data-ttu-id="59259-103">Nastavení vývojového prostředí pro technologii ASP.NET 3.5</span><span class="sxs-lookup"><span data-stu-id="59259-103">Set Up Your Development Environment for ASP.NET 3.5</span></span>
 ====================

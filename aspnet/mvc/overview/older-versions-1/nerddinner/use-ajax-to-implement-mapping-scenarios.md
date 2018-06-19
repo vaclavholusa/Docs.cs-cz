@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872712"
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a><span data-ttu-id="f6aea-103">Implementace mapování scénáře pomocí rozhraní AJAX</span><span class="sxs-lookup"><span data-stu-id="f6aea-103">Use AJAX to Implement Mapping Scenarios</span></span>
 ====================

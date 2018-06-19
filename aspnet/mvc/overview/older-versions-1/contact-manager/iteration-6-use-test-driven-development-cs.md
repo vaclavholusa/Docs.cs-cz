@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876290"
 ---
 <a name="iteration-6--use-test-driven-development-c"></a><span data-ttu-id="9984c-104">Iterace #6 – použijte testy řízený vývoj (C#)</span><span class="sxs-lookup"><span data-stu-id="9984c-104">Iteration #6 – Use test-driven development (C#)</span></span>
 ====================

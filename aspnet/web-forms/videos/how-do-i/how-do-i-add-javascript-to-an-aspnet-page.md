@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-add-javascript-to-an-aspnet-page
-title: "[Jak na:] Přidat JavaScript na stránku ASP.NET | Microsoft Docs"
+title: '[Jak na:] Přidat JavaScript na stránku ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu se Jan PEL ukazují, jak zahrnout JavaScript na stránku ASP.NET pro použití na stránce klienta a poskytuje prostředí bohatší a robustnější uživatele..."
+description: V tomto videu se Jan PEL ukazují, jak zahrnout JavaScript na stránku ASP.NET pro použití na stránce klienta a poskytuje prostředí bohatší a robustnější uživatele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/13/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26571969"
 ---
 <a name="how-do-i-add-javascript-to-an-aspnet-page"></a><span data-ttu-id="6ea43-103">[Jak na:] Přidat JavaScript na stránku ASP.NET</span><span class="sxs-lookup"><span data-stu-id="6ea43-103">[How Do I:] Add JavaScript to An ASP.NET Page</span></span>
 ====================

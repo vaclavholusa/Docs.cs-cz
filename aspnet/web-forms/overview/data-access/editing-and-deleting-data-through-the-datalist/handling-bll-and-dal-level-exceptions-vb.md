@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880099"
 ---
 <a name="handling-bll--and-dal-level-exceptions-vb"></a><span data-ttu-id="31a84-103">Zpracování výjimek úrovni BLL a DAL (VB)</span><span class="sxs-lookup"><span data-stu-id="31a84-103">Handling BLL- and DAL-Level Exceptions (VB)</span></span>
 ====================

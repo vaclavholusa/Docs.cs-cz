@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/index
-title: "Práce s daty dávkové | Microsoft Docs"
+title: Práce s daty dávkové | Microsoft Docs
 author: rick-anderson
-description: "Tyto kurzy podívejte se na aktualizaci, odstranění a vložení dávky dat pomocí transakce."
+description: Tyto kurzy podívejte se na aktualizaci, odstranění a vložení dávky dat pomocí transakce.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568732"
 ---
 <a name="working-with-batched-data"></a><span data-ttu-id="e8b4a-103">Práce s dávkové dat</span><span class="sxs-lookup"><span data-stu-id="e8b4a-103">Working with Batched Data</span></span>
 ====================

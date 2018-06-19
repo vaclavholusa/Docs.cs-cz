@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888991"
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a><span data-ttu-id="6f5d1-103">Přehled úpravy a odstraňování dat v DataList (C#)</span><span class="sxs-lookup"><span data-stu-id="6f5d1-103">An Overview of Editing and Deleting Data in the DataList (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886726"
 ---
 <a name="how-to-use-attribute-validation-in-aspnet-dynamic-data-applications"></a><span data-ttu-id="bd1d2-103">Jak používat ověřování atributů v ASP.NET dynamické datových aplikací</span><span class="sxs-lookup"><span data-stu-id="bd1d2-103">How to Use Attribute Validation in ASP.NET Dynamic Data Applications</span></span>
 ====================

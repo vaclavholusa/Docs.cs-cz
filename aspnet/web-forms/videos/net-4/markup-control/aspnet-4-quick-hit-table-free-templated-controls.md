@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885648"
 ---
 <a name="aspnet-4-quick-hit--table-free-templated-controls"></a><span data-ttu-id="ad23f-103">ASP.NET 4 "Rychlý dosáhl" – tabulky volné ovládacích prvků podle šablony</span><span class="sxs-lookup"><span data-stu-id="ad23f-103">ASP.NET 4 "Quick Hit" – Table Free Templated Controls</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881227"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-collapsable-panel-extender"></a><span data-ttu-id="e91ce-104">[Jak na:] Použití rozšíření ASP.NET AJAX sbalovací panelu?</span><span class="sxs-lookup"><span data-stu-id="e91ce-104">[How Do I:] Use the ASP.NET AJAX Collapsable Panel Extender?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882654"
 ---
 <a name="how-do-i-advance-cascading-style-sheet-features-and-management"></a><span data-ttu-id="891a1-104">[Jak na:] Posunutí kaskádových stylů funkce styl a správy</span><span class="sxs-lookup"><span data-stu-id="891a1-104">[How Do I:] Advance Cascading Style Sheet Features and Management</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889420"
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-c"></a><span data-ttu-id="6d189-103">Přidat sloupec GridView přepínačů (C#)</span><span class="sxs-lookup"><span data-stu-id="6d189-103">Adding a GridView Column of Radio Buttons (C#)</span></span>
 ====================

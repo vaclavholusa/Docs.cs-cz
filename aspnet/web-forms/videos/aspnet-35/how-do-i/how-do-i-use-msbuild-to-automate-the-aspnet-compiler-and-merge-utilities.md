@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885524"
 ---
 <a name="how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities"></a><span data-ttu-id="976a5-103">[Jak na:] Použití nástroje MSBuild k automatizaci kompilátoru technologie ASP.NET a nástroje pro sloučení</span><span class="sxs-lookup"><span data-stu-id="976a5-103">[How Do I:] Use MSBuild to Automate the ASP.NET Compiler and Merge Utilities</span></span>
 ====================

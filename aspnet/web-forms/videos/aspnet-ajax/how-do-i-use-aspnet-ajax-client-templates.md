@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886339"
 ---
 <a name="how-do-i-use-aspnet-ajax-client-templates"></a><span data-ttu-id="67526-104">Jak na: použití ASP.NET AJAX klienta šablony</span><span class="sxs-lookup"><span data-stu-id="67526-104">How Do I: Use ASP.NET AJAX Client Templates</span></span>
 ====================

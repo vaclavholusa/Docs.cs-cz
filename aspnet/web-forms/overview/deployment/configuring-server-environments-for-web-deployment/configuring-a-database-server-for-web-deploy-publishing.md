@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885569"
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a><span data-ttu-id="0404a-104">Konfigurace databáze serveru pro publikování nasazení webu</span><span class="sxs-lookup"><span data-stu-id="0404a-104">Configuring a Database Server for Web Deploy Publishing</span></span>
 ====================

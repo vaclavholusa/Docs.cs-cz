@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873453"
 ---
 <a name="drag-and-drop-via-reorderlist-c"></a><span data-ttu-id="16bd2-104">Přetáhnout myší prostřednictvím ReorderList (C#)</span><span class="sxs-lookup"><span data-stu-id="16bd2-104">Drag and Drop via ReorderList (C#)</span></span>
 ====================

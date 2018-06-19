@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886229"
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a><span data-ttu-id="4f05c-104">Filtrování napříč dvěma stránkami (VB) podrobností</span><span class="sxs-lookup"><span data-stu-id="4f05c-104">Master/Detail Filtering Across Two Pages (VB)</span></span>
 ====================

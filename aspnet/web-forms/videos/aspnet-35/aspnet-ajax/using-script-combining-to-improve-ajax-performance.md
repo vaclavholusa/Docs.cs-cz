@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886794"
 ---
 <a name="using-script-combining-to-improve-ajax-performance"></a><span data-ttu-id="e9beb-103">Pomocí kombinace skript ke zlepšení výkonu AJAX</span><span class="sxs-lookup"><span data-stu-id="e9beb-103">Using Script Combining to improve AJAX performance</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851115"
 ---
 # <a name="key-encryption-at-rest-in-aspnet-core"></a><span data-ttu-id="7281e-103">Šifrování klíče v klidovém stavu uložených v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7281e-103">Key encryption at rest in ASP.NET Core</span></span>
 

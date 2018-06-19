@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878731"
 ---
 <a name="aspnet-mvc-storefront-part-7-routing-and-ui-work"></a><span data-ttu-id="dfa36-103">ASP.NET MVC Storefront část 7: Směrování a uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="dfa36-103">ASP.NET MVC Storefront Part 7: Routing and UI Work</span></span>
 ====================

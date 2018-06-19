@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873937"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a><span data-ttu-id="ed9d5-104">Iterace #4 – zpřístupnění aplikace volně vázány (VB)</span><span class="sxs-lookup"><span data-stu-id="ed9d5-104">Iteration #4 – Make the application loosely coupled (VB)</span></span>
 ====================

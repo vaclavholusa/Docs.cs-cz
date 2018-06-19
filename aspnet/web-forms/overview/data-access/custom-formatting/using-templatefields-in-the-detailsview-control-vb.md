@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876303"
 ---
 <a name="using-templatefields-in-the-detailsview-control-vb"></a><span data-ttu-id="d3b26-104">Pomocí TemplateFields v ovládacím prvku DetailsView (VB)</span><span class="sxs-lookup"><span data-stu-id="d3b26-104">Using TemplateFields in the DetailsView Control (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881367"
 ---
 <a name="add-custom-data-to-the-authentication-method"></a><span data-ttu-id="d248a-103">Přidat vlastní Data na metody ověřování</span><span class="sxs-lookup"><span data-stu-id="d248a-103">Add Custom Data to the Authentication Method</span></span>
 ====================

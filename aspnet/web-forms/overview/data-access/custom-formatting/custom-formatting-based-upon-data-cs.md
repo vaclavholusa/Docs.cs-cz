@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876862"
 ---
 <a name="custom-formatting-based-upon-data-c"></a><span data-ttu-id="30821-104">Vlastní formátování na základě údajů o (C#)</span><span class="sxs-lookup"><span data-stu-id="30821-104">Custom Formatting Based Upon Data (C#)</span></span>
 ====================

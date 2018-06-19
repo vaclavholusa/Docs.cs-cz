@@ -17,6 +17,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33839283"
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a><span data-ttu-id="0fbd3-104">Představení technologie ASP.NET Web Pages – základy programování</span><span class="sxs-lookup"><span data-stu-id="0fbd3-104">Introducing ASP.NET Web Pages - Programming Basics</span></span>
 ====================

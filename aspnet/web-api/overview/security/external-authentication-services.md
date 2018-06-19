@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876264"
 ---
 <a name="external-authentication-services-with-aspnet-web-api-c"></a><span data-ttu-id="b2479-103">Externí ověřovací služby s rozhraním ASP.NET Web API (C#)</span><span class="sxs-lookup"><span data-stu-id="b2479-103">External Authentication Services with ASP.NET Web API (C#)</span></span>
 ====================

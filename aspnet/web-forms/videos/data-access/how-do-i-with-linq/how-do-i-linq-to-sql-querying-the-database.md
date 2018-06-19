@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882439"
 ---
 <a name="how-do-i-linq-to-sql-querying-the-database"></a><span data-ttu-id="1fa11-103">[Jak na:] Technologie LINQ to SQL: dotaz na databázi</span><span class="sxs-lookup"><span data-stu-id="1fa11-103">[How Do I:] LINQ to SQL: Querying the Database</span></span>
 ====================

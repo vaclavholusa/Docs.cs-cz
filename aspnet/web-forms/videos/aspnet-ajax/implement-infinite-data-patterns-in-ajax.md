@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883252"
 ---
 <a name="implement-infinite-data-patterns-in-ajax"></a><span data-ttu-id="e17f5-103">Implementace vzorů nekonečné Data v AJAX</span><span class="sxs-lookup"><span data-stu-id="e17f5-103">Implement Infinite Data Patterns in AJAX</span></span>
 ====================

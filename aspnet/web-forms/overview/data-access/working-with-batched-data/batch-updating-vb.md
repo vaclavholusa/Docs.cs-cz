@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888247"
 ---
 <a name="batch-updating-vb"></a><span data-ttu-id="ec56e-105">Dávkové aktualizace (VB)</span><span class="sxs-lookup"><span data-stu-id="ec56e-105">Batch Updating (VB)</span></span>
 ====================

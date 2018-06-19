@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882943"
 ---
 <a name="scenario-configuring-a-production-environment-for-web-deployment"></a><span data-ttu-id="193da-103">Scénář: Konfigurace produkčním prostředí pro nasazení webu</span><span class="sxs-lookup"><span data-stu-id="193da-103">Scenario: Configuring a Production Environment for Web Deployment</span></span>
 ====================

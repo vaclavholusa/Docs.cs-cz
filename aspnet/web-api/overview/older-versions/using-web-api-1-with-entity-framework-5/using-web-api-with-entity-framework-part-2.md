@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878578"
 ---
 <a name="part-2-creating-the-domain-models"></a><span data-ttu-id="f8c9e-102">Část 2: Vytváření modelů domény</span><span class="sxs-lookup"><span data-stu-id="f8c9e-102">Part 2: Creating the Domain Models</span></span>
 ====================

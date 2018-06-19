@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879046"
 ---
 <a name="adding-additional-datatable-columns-vb"></a><span data-ttu-id="01a34-104">Přidání další DataTable sloupců (VB)</span><span class="sxs-lookup"><span data-stu-id="01a34-104">Adding Additional DataTable Columns (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883489"
 ---
 <a name="begin-modifying-dynamic-data-applications-with-url-routing"></a><span data-ttu-id="5ef16-103">Začít upravovat Dynamická Data aplikací pomocí směrování adres URL</span><span class="sxs-lookup"><span data-stu-id="5ef16-103">Begin Modifying Dynamic Data Applications with URL Routing</span></span>
 ====================

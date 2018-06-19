@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886807"
 ---
 <a name="part-6-aspnet-membership"></a><span data-ttu-id="02e72-104">Část 6: Členství technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="02e72-104">Part 6: ASP.NET Membership</span></span>
 ====================

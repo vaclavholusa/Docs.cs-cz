@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875809"
 ---
 <a name="examining-the-edit-methods-and-edit-view-c"></a><span data-ttu-id="ef25b-103">Zkoumání upravit metody a zobrazení (C#)</span><span class="sxs-lookup"><span data-stu-id="ef25b-103">Examining the Edit Methods and Edit View (C#)</span></span>
 ====================

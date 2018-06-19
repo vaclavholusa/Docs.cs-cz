@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872582"
 ---
 <a name="know-a-library-other-than-knockout"></a><span data-ttu-id="9f741-104">Vědět, než Knockout knihovny?</span><span class="sxs-lookup"><span data-stu-id="9f741-104">Know a library other than Knockout?</span></span>
 ====================

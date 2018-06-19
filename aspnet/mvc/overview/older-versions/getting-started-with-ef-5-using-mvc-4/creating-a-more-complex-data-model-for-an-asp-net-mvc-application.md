@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877772"
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a><span data-ttu-id="8ffbe-103">Vytváření složitějších datový Model pro aplikaci ASP.NET MVC (4 10)</span><span class="sxs-lookup"><span data-stu-id="8ffbe-103">Creating a More Complex Data Model for an ASP.NET MVC Application (4 of 10)</span></span>
 ====================

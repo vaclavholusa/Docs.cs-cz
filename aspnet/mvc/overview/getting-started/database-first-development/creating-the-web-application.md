@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878773"
 ---
 <a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a><span data-ttu-id="2aa63-104">Databázi EF nejprve s architekturou ASP.NET MVC: vytvoření webové aplikace a datové modely</span><span class="sxs-lookup"><span data-stu-id="2aa63-104">EF Database First with ASP.NET MVC: Creating the Web Application and Data Models</span></span>
 ====================

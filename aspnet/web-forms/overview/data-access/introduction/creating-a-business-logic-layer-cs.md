@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886937"
 ---
 <a name="creating-a-business-logic-layer-c"></a><span data-ttu-id="cd933-103">Vytvoření vrstvy obchodní logiky (C#)</span><span class="sxs-lookup"><span data-stu-id="cd933-103">Creating a Business Logic Layer (C#)</span></span>
 ====================

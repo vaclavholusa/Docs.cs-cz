@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887280"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a><span data-ttu-id="f8890-103">Konfigurace webového serveru pro Web nasazení publikování (Web Deploy obslužné rutiny)</span><span class="sxs-lookup"><span data-stu-id="f8890-103">Configuring a Web Server for Web Deploy Publishing (Web Deploy Handler)</span></span>
 ====================

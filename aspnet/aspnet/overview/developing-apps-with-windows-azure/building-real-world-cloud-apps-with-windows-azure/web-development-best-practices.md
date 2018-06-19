@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873518"
 ---
 <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="87683-104">Vývoj webové osvědčených postupů (vytváření reálných cloudových aplikací s Azure)</span><span class="sxs-lookup"><span data-stu-id="87683-104">Web Development Best Practices (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

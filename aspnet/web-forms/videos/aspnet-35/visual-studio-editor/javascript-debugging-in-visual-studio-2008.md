@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882537"
 ---
 <a name="javascript-debugging-in-visual-studio-2008"></a><span data-ttu-id="3998e-103">Ladění jazyka JavaScript v sadě Visual Studio 2008</span><span class="sxs-lookup"><span data-stu-id="3998e-103">JavaScript Debugging in Visual Studio 2008</span></span>
 ====================

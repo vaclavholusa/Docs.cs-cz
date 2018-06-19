@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890876"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-vb"></a><span data-ttu-id="fb913-104">Vytvoření webu rozložení pomocí stránky předlohy (VB)</span><span class="sxs-lookup"><span data-stu-id="fb913-104">Creating a Site-Wide Layout Using Master Pages (VB)</span></span>
 ====================

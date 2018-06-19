@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889160"
 ---
 <a name="displaying-a-custom-error-page-vb"></a><span data-ttu-id="6616e-104">Zobrazení vlastní chybovou stránku (VB)</span><span class="sxs-lookup"><span data-stu-id="6616e-104">Displaying a Custom Error Page (VB)</span></span>
 ====================

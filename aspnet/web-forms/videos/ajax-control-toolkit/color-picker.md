@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882722"
 ---
 <a name="color-picker"></a><span data-ttu-id="1227a-103">Výběr barvy</span><span class="sxs-lookup"><span data-stu-id="1227a-103">Color Picker</span></span>
 ====================

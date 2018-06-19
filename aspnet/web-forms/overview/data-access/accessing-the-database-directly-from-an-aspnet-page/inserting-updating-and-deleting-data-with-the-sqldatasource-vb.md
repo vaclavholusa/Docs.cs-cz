@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877941"
 ---
 <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-vb"></a><span data-ttu-id="7733d-104">Vložení, aktualizace a odstranění dat pomocí SqlDataSource (VB)</span><span class="sxs-lookup"><span data-stu-id="7733d-104">Inserting, Updating, and Deleting Data with the SqlDataSource (VB)</span></span>
 ====================

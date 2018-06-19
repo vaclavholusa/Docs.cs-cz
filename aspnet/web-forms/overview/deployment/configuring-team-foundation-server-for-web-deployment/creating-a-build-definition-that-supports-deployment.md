@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30880359"
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a><span data-ttu-id="2498b-104">Vytvoření definice sestavení, který podporuje nasazení</span><span class="sxs-lookup"><span data-stu-id="2498b-104">Creating a Build Definition That Supports Deployment</span></span>
 ====================

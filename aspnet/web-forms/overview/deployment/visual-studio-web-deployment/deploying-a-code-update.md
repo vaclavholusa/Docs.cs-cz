@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881331"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a><span data-ttu-id="5c2de-103">Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení aktualizace kódu</span><span class="sxs-lookup"><span data-stu-id="5c2de-103">ASP.NET Web Deployment using Visual Studio: Deploying a Code Update</span></span>
 ====================

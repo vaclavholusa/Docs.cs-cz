@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/index
-title: "Nasazení webu ASP.NET pomocí sady Visual Studio | Microsoft Docs"
+title: Nasazení webu ASP.NET pomocí sady Visual Studio | Microsoft Docs
 author: rick-anderson
-description: "Tato řada kurz ukazuje, jak vytvořit webovou aplikaci ASP.NET, který používá systém SQL Server (není systém SQL Server Compact) k dispozici prostřednictvím Internetu nasazením t..."
+description: Tato řada kurz ukazuje, jak vytvořit webovou aplikaci ASP.NET, který používá systém SQL Server (není systém SQL Server Compact) k dispozici prostřednictvím Internetu nasazením t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26568864"
 ---
 <a name="aspnet-web-deployment-using-visual-studio"></a><span data-ttu-id="3c295-103">Nasazení webu ASP.NET pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="3c295-103">ASP.NET Web Deployment using Visual Studio</span></span>
 ====================

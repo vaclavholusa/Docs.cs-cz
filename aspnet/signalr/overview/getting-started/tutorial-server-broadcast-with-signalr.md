@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876810"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a><span data-ttu-id="75f91-104">Kurz: Server všesměrového vysílání pomocí nástroje SignalR 2</span><span class="sxs-lookup"><span data-stu-id="75f91-104">Tutorial: Server Broadcast with SignalR 2</span></span>
 ====================

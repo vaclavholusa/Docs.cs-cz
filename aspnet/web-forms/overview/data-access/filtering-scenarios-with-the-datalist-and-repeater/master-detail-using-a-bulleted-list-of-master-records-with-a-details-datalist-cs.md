@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888965"
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-c"></a><span data-ttu-id="35720-103">Seznam podrobnosti s odrážkami seznam záznamů hlavní pomocí podrobnosti DataList (C#)</span><span class="sxs-lookup"><span data-stu-id="35720-103">Master/Detail Using a Bulleted List of Master Records with a Details DataList (C#)</span></span>
 ====================

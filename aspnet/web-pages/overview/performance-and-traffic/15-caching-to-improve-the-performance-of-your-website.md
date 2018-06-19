@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website
-title: "Ukládání dat v rozhraní ASP.NET Web Pages (Razor) lokality pro dosažení vyššího výkonu | Microsoft Docs"
+title: Ukládání dat v rozhraní ASP.NET Web Pages (Razor) lokality pro dosažení vyššího výkonu | Microsoft Docs
 author: tfitzmac
-description: "Můžete urychlit web tak, že ho uložit – to znamená, mezipaměti - výsledky data, která by obvykle trvat poměrně dlouho načíst nebo zpracovat..."
+description: Můžete urychlit web tak, že ho uložit – to znamená, mezipaměti - výsledky data, která by obvykle trvat poměrně dlouho načíst nebo zpracovat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/14/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28039193"
 ---
 <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a><span data-ttu-id="874bc-103">Ukládání dat v Web Pages (Razor) technologie ASP.NET do mezipaměti pro dosažení vyššího výkonu</span><span class="sxs-lookup"><span data-stu-id="874bc-103">Caching Data in an ASP.NET Web Pages (Razor) Site for Better Performance</span></span>
 ====================

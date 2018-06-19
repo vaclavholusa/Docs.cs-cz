@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877967"
 ---
 <a name="building-a-custom-database-driven-site-map-provider-vb"></a><span data-ttu-id="31cb4-104">Vytváření mapy zprostředkovatele vlastní vycházející z databáze lokality (VB)</span><span class="sxs-lookup"><span data-stu-id="31cb4-104">Building a Custom Database-Driven Site Map Provider (VB)</span></span>
 ====================

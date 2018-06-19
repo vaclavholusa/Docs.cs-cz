@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892293"
 ---
 <a name="configuring-server-environments-for-web-deployment"></a><span data-ttu-id="95e57-103">Konfigurace serveru prostředí pro nasazení webu</span><span class="sxs-lookup"><span data-stu-id="95e57-103">Configuring Server Environments for Web Deployment</span></span>
 ====================

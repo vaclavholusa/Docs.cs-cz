@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30888094"
 ---
 <a name="uploading-files-vb"></a><span data-ttu-id="344bd-103">Nahrávání souborů (VB)</span><span class="sxs-lookup"><span data-stu-id="344bd-103">Uploading Files (VB)</span></span>
 ====================

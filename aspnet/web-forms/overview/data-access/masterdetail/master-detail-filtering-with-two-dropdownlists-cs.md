@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887249"
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-c"></a><span data-ttu-id="644f6-103">Seznam podrobnosti filtrování s dvěma DropDownLists (C#)</span><span class="sxs-lookup"><span data-stu-id="644f6-103">Master/Detail Filtering With Two DropDownLists (C#)</span></span>
 ====================

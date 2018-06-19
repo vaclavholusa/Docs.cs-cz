@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876342"
 ---
 <a name="caching-data-at-application-startup-vb"></a><span data-ttu-id="ae10e-104">Ukládání dat do mezipaměti při spuštění aplikace (VB)</span><span class="sxs-lookup"><span data-stu-id="ae10e-104">Caching Data at Application Startup (VB)</span></span>
 ====================

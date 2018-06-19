@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888588"
 ---
 <a name="common-configuration-differences-between-development-and-production-c"></a><span data-ttu-id="fa2c1-104">Běžné konfigurace rozdíly mezi vývojovým týmem a produkční (C#)</span><span class="sxs-lookup"><span data-stu-id="fa2c1-104">Common Configuration Differences Between Development and Production (C#)</span></span>
 ====================

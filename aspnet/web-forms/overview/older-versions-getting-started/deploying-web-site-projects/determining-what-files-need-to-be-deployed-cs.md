@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888666"
 ---
 <a name="determining-what-files-need-to-be-deployed-c"></a><span data-ttu-id="a84a7-103">Určení soubory musí být nasazené (C#)</span><span class="sxs-lookup"><span data-stu-id="a84a7-103">Determining What Files Need to Be Deployed (C#)</span></span>
 ====================

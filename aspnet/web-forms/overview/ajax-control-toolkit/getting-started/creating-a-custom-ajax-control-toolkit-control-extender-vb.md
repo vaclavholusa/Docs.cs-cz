@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875133"
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-vb"></a><span data-ttu-id="23ec7-103">Vytváření vlastních AJAX řízení Toolkit řízení Extender (VB)</span><span class="sxs-lookup"><span data-stu-id="23ec7-103">Creating a Custom AJAX Control Toolkit Control Extender (VB)</span></span>
 ====================

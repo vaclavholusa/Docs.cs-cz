@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884120"
 ---
 <a name="how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly"></a><span data-ttu-id="2d5da-103">[Jak na:] Přidání elementů šablon stylů CSS souboru a vytvoření nové šablony stylů CSS za chodu</span><span class="sxs-lookup"><span data-stu-id="2d5da-103">[How Do I:] Adding Elements to a CSS File and Create New CSS on the Fly</span></span>
 ====================

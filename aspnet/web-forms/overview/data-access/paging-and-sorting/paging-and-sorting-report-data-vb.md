@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887236"
 ---
 <a name="paging-and-sorting-report-data-vb"></a><span data-ttu-id="0a92d-104">Stránkování a řazení dat sestavy (VB)</span><span class="sxs-lookup"><span data-stu-id="0a92d-104">Paging and Sorting Report Data (VB)</span></span>
 ====================

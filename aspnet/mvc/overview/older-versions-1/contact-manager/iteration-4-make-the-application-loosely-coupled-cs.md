@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873976"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-c"></a><span data-ttu-id="61379-104">Iterace #4 – zpřístupnění aplikace volně vázány (C#)</span><span class="sxs-lookup"><span data-stu-id="61379-104">Iteration #4 – Make the application loosely coupled (C#)</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30076630"
 ---
 # <a name="view-based-authorization-in-aspnet-core-mvc"></a><span data-ttu-id="4660f-103">Ověření na základě zobrazení v rozhraní ASP.NET MVC jádra</span><span class="sxs-lookup"><span data-stu-id="4660f-103">View-based authorization in ASP.NET Core MVC</span></span>
 

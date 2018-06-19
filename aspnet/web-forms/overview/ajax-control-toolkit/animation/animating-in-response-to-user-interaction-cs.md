@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870944"
 ---
 <a name="animating-in-response-to-user-interaction-c"></a><span data-ttu-id="255cc-104">Animace v reakci na zásah uživatele (C#)</span><span class="sxs-lookup"><span data-stu-id="255cc-104">Animating in Response To User Interaction (C#)</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/21/2018
+ms.locfileid: "30896637"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a><span data-ttu-id="319d3-103">Začínáme s ASP.NET MVC jádra a sady Visual Studio pro Mac</span><span class="sxs-lookup"><span data-stu-id="319d3-103">Get started with ASP.NET Core MVC and Visual Studio for Mac</span></span>
 

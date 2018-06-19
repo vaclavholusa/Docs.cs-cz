@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884025"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a><span data-ttu-id="60f9a-104">Konfigurace webového serveru pro nasazení webu publikování (Offline nasazení)</span><span class="sxs-lookup"><span data-stu-id="60f9a-104">Configuring a Web Server for Web Deploy Publishing (Offline Deployment)</span></span>
 ====================

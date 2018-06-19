@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896513"
 ---
 <a name="sending-email-from-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="ebf57-103">Odesílání e-mailu z webové stránky ASP.NET s stránky (Razor)</span><span class="sxs-lookup"><span data-stu-id="ebf57-103">Sending Email from an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

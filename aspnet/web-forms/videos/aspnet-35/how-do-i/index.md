@@ -2,7 +2,7 @@
 uid: web-forms/videos/aspnet-35/how-do-i/index
 title: Jak mohu | Microsoft Docs
 author: rick-anderson
-description: "Tato vícedílné série videí ukazuje, jak chcete využít výhod nových funkcí technologie ASP.NET 3.5 a Visual Studio 2008."
+description: Tato vícedílné série videí ukazuje, jak chcete využít výhod nových funkcí technologie ASP.NET 3.5 a Visual Studio 2008.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570496"
 ---
 <a name="how-do-i"></a><span data-ttu-id="f19cd-103">Jak mohu</span><span class="sxs-lookup"><span data-stu-id="f19cd-103">How Do I</span></span>
 ====================

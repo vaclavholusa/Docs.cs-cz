@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890499"
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a><span data-ttu-id="0275c-103">Výběr správný přístup k nasazení webu</span><span class="sxs-lookup"><span data-stu-id="0275c-103">Choosing the Right Approach to Web Deployment</span></span>
 ====================

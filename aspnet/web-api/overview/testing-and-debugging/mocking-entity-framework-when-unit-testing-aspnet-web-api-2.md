@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
-title: "Rozhraní Entity Framework mocking při testování rozhraní ASP.NET Web API 2 částí | Microsoft Docs"
+title: Rozhraní Entity Framework mocking při testování rozhraní ASP.NET Web API 2 částí | Microsoft Docs
 author: tfitzmac
-description: "Tento pokyny a aplikace ukazují, jak vytvářet testy částí pro aplikace webových rozhraní API 2, který používá rozhraní Entity Framework. Ukazuje, jak upravit..."
+description: Tento pokyny a aplikace ukazují, jak vytvářet testy částí pro aplikace webových rozhraní API 2, který používá rozhraní Entity Framework. Ukazuje, jak upravit...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/13/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29152862"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a><span data-ttu-id="49dec-104">Rozhraní Entity Framework mocking při rozhraní ASP.NET Web API 2 testování částí</span><span class="sxs-lookup"><span data-stu-id="49dec-104">Mocking Entity Framework when Unit Testing ASP.NET Web API 2</span></span>
 ====================

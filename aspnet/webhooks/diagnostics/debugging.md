@@ -1,20 +1,21 @@
 ---
 uid: webhooks/diagnostics/debugging
-title: "Ladění Webhooky ASP.NET | Microsoft Docs"
+title: Ladění Webhooky ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Postup ladění ASP.NET Webhooky."
+description: Postup ladění ASP.NET Webhooky.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: 467da78b-3c35-4c51-8b08-77a32379e4a8
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 ms.openlocfilehash: 524cdf0246eda9ef213414923cd23a92a01f211e
 ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28044861"
 ---
 # <a name="aspnet-webhooks-debugging"></a><span data-ttu-id="9b293-103">ASP.NET Webhooky ladění</span><span class="sxs-lookup"><span data-stu-id="9b293-103">ASP.NET WebHooks debugging</span></span>  
 

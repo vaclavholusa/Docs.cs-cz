@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878396"
 ---
 <a name="aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal"></a><span data-ttu-id="ebcdc-105">ASP.NET MVC Storefront část 22: Změna struktury, přesměrování spojnic a PayPal</span><span class="sxs-lookup"><span data-stu-id="ebcdc-105">ASP.NET MVC Storefront Part 22: Restructuring, Rerouting, and PayPal</span></span>
 ====================

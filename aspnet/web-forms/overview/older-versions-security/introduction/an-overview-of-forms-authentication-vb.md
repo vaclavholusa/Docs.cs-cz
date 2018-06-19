@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891903"
 ---
 <a name="an-overview-of-forms-authentication-vb"></a><span data-ttu-id="86ccc-104">Přehled ověřování pomocí formulářů (VB)</span><span class="sxs-lookup"><span data-stu-id="86ccc-104">An Overview of Forms Authentication (VB)</span></span>
 ====================

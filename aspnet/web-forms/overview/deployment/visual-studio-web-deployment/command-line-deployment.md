@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890525"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a><span data-ttu-id="e0c6b-103">Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="e0c6b-103">ASP.NET Web Deployment using Visual Studio: Command Line Deployment</span></span>
 ====================

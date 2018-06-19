@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894617"
 ---
 <a name="building-and-customizing-reports-in-business-intelligence-development-studio"></a><span data-ttu-id="82fc8-104">Vytváření a přizpůsobení sestav v Business Intelligence Development Studio</span><span class="sxs-lookup"><span data-stu-id="82fc8-104">Building and Customizing Reports in Business Intelligence Development Studio</span></span>
 ====================

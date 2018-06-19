@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890574"
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a><span data-ttu-id="28853-103">Konfigurace webu, který používá aplikačních služeb (VB)</span><span class="sxs-lookup"><span data-stu-id="28853-103">Configuring a Website that Uses Application Services (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892306"
 ---
 <a name="building-and-packaging-web-application-projects"></a><span data-ttu-id="48760-103">Vytváření a balení projekty webových aplikací</span><span class="sxs-lookup"><span data-stu-id="48760-103">Building and Packaging Web Application Projects</span></span>
 ====================

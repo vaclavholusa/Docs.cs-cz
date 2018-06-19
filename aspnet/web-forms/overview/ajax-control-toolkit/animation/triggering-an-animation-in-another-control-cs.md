@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868110"
 ---
 <a name="triggering-an-animation-in-another-control-c"></a><span data-ttu-id="9bcb2-104">Spuštění animace v další ovládací prvek (C#)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-104">Triggering an Animation in another Control (C#)</span></span>
 ====================

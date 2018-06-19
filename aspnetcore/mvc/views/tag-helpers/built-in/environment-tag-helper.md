@@ -1,7 +1,7 @@
 ---
-title: "Pomocník značku prostředí ASP.NET Core"
+title: Pomocník značku prostředí ASP.NET Core
 author: pkellner
-description: "Pomocník značku prostředí ASP.NET Core definované, včetně všech vlastností"
+description: Pomocník značku prostředí ASP.NET Core definované, včetně všech vlastností
 manager: wpickett
 ms.author: riande
 ms.date: 07/14/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28887809"
 ---
 # <a name="environment-tag-helper-in-aspnet-core"></a><span data-ttu-id="3e5a0-103">Pomocník značku prostředí ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="3e5a0-103">Environment Tag Helper in ASP.NET Core</span></span>
 

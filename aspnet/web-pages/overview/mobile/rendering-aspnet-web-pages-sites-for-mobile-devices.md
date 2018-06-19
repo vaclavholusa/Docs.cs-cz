@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897316"
 ---
 <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a><span data-ttu-id="93cb2-104">Vykreslování ASP.NET – webové stránky (Razor) servery pro mobilní zařízení</span><span class="sxs-lookup"><span data-stu-id="93cb2-104">Rendering ASP.NET Web Pages (Razor) Sites for Mobile Devices</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887922"
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a><span data-ttu-id="e1a2a-104">Konfigurace webové aplikace produkční použití provozní databázi (VB)</span><span class="sxs-lookup"><span data-stu-id="e1a2a-104">Configuring the Production Web Application to Use the Production Database (VB)</span></span>
 ====================

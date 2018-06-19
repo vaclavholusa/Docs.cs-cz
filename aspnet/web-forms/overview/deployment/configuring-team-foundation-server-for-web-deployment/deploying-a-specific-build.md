@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880034"
 ---
 <a name="deploying-a-specific-build"></a><span data-ttu-id="33d12-103">Nasazení konkrétní sestavení</span><span class="sxs-lookup"><span data-stu-id="33d12-103">Deploying a Specific Build</span></span>
 ====================

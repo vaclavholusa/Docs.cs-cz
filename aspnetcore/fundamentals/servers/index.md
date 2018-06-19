@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34473184"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a><span data-ttu-id="f8064-104">Implementace webového serveru v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="f8064-104">Web server implementations in ASP.NET Core</span></span>
 

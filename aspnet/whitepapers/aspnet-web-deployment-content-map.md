@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/aspnet-web-deployment-content-map
-title: "Nasazení webu ASP.NET - doporučené prostředky | Microsoft Docs"
+title: Nasazení webu ASP.NET - doporučené prostředky | Microsoft Docs
 author: rick-anderson
-description: "Toto téma obsahuje odkazy na dokumentaci (publikovat) technologie ASP.NET web zdroje informací o tom, jak nasadit aplikace do služby IIS pomocí Visual Studio 2010, Visual Web De..."
+description: Toto téma obsahuje odkazy na dokumentaci (publikovat) technologie ASP.NET web zdroje informací o tom, jak nasadit aplikace do služby IIS pomocí Visual Studio 2010, Visual Web De...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2014
 ms.topic: article
 ms.assetid: 58b583cd-c4ab-47a3-8527-8c92c298c91f
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28048165"
 ---
 <a name="aspnet-web-deployment---recommended-resources"></a><span data-ttu-id="a22ca-103">Nasazení webu ASP.NET - doporučené prostředky</span><span class="sxs-lookup"><span data-stu-id="a22ca-103">ASP.NET Web Deployment - Recommended Resources</span></span>
 ====================

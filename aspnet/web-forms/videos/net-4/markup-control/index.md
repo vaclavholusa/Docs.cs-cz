@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/markup-control/index
-title: "Ovládací prvek značek | Microsoft Docs"
+title: Ovládací prvek značek | Microsoft Docs
 author: rick-anderson
-description: "Tato série videí ukazuje vylepšení ovládací prvky pro stránky webových formulářů technologie ASP.NET 4."
+description: Tato série videí ukazuje vylepšení ovládací prvky pro stránky webových formulářů technologie ASP.NET 4.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26572746"
 ---
 <a name="markup-control"></a><span data-ttu-id="670eb-103">Ovládací prvek značek</span><span class="sxs-lookup"><span data-stu-id="670eb-103">Markup Control</span></span>
 ====================

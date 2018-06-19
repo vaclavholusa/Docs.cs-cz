@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893557"
 ---
 # <a name="introduction-to-aspnet-core-mvc-on-macos-linux-or-windows"></a><span data-ttu-id="27caa-103">Úvod do architektury ASP.NET MVC jádra v systému macOS, Linux nebo Windows</span><span class="sxs-lookup"><span data-stu-id="27caa-103">Introduction to ASP.NET Core MVC on macOS, Linux, or Windows</span></span>
 

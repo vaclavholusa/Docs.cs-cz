@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet
-title: "[Jak na:] Odesílání podle šablony e-mailů pro sledování událostí v technologii ASP.NET stavu | Microsoft Docs"
+title: '[Jak na:] Odesílání podle šablony e-mailů pro sledování událostí v technologii ASP.NET stavu | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu Jan PEL ukazuje způsob použití TemplatedEmailWebEventProvider pro odeslání e-mailů, když dojde k události monitorování stavu, které využívají šablonu pro t..."
+description: V tomto videu Jan PEL ukazuje způsob použití TemplatedEmailWebEventProvider pro odeslání e-mailů, když dojde k události monitorování stavu, které využívají šablonu pro t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/18/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26570841"
 ---
 <a name="how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet"></a><span data-ttu-id="afccb-103">[Jak na:] Odesílání podle šablony e-mailů pro sledování událostí v technologii ASP.NET stavu</span><span class="sxs-lookup"><span data-stu-id="afccb-103">[How Do I:] Send Templated Emails for Health Monitoring Events in ASP.NET</span></span>
 ====================

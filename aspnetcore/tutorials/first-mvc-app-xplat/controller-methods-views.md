@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896936"
 ---
 # <a name="controller-methods-and-views-in-aspnet-core"></a><span data-ttu-id="a9f14-103">Metody kontroleru a zobrazení v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="a9f14-103">Controller methods and views in ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892150"
 ---
 <a name="role-based-authorization-vb"></a><span data-ttu-id="a2d5c-104">Ověření na základě role (VB)</span><span class="sxs-lookup"><span data-stu-id="a2d5c-104">Role-Based Authorization (VB)</span></span>
 ====================

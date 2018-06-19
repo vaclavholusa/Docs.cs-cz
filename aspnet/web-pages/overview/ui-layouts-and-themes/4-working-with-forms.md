@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28046427"
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a><span data-ttu-id="04c5b-104">Práce s formuláře HTML na webech ASP.NET – webové stránky (Razor)</span><span class="sxs-lookup"><span data-stu-id="04c5b-104">Working with HTML Forms in ASP.NET Web Pages (Razor) Sites</span></span>
 ====================

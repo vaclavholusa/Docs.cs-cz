@@ -1,7 +1,7 @@
 ---
-title: "Vývoj pro klienta v ASP.NET Core"
+title: Vývoj pro klienta v ASP.NET Core
 author: rick-anderson
-description: 
+description: ''
 manager: wpickett
 ms.author: riande
 ms.date: 02/21/2018
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/23/2018
+ms.locfileid: "29526402"
 ---
 # <a name="client-side-development-in-aspnet-core"></a><span data-ttu-id="d12ee-102">Vývoj pro klienta v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="d12ee-102">Client-side development in ASP.NET Core</span></span>
 

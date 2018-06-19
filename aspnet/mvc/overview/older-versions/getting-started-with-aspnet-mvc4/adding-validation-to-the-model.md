@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874545"
 ---
 <a name="adding-validation-to-the-model"></a><span data-ttu-id="46e8a-104">Přidání ověřování do modelu</span><span class="sxs-lookup"><span data-stu-id="46e8a-104">Adding Validation to the Model</span></span>
 ====================

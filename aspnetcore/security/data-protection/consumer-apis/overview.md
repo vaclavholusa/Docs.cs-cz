@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30076004"
 ---
 # <a name="consumer-apis-overview-for-aspnet-core"></a><span data-ttu-id="26de2-103">Přehled rozhraní API příjemce pro ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="26de2-103">Consumer APIs overview for ASP.NET Core</span></span>
 

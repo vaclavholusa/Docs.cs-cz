@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890486"
 ---
 <a name="part-2-data-access-layer"></a><span data-ttu-id="c220d-104">Část 2: Data Access Layer</span><span class="sxs-lookup"><span data-stu-id="c220d-104">Part 2: Data Access Layer</span></span>
 ====================

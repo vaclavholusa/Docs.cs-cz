@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893027"
 ---
 <a name="tailspin-spyworks---directory-organization"></a><span data-ttu-id="34bd1-103">Tailspin Spyworks - Directory organizace</span><span class="sxs-lookup"><span data-stu-id="34bd1-103">Tailspin Spyworks - Directory Organization</span></span>
 ====================

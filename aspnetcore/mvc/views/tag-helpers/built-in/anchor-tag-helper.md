@@ -15,6 +15,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899405"
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a><span data-ttu-id="7c334-103">Pomocník značka ukotvení ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7c334-103">Anchor Tag Helper in ASP.NET Core</span></span>
 

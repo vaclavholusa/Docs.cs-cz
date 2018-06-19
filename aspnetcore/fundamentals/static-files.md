@@ -16,6 +16,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094538"
 ---
 # <a name="static-files-in-aspnet-core"></a><span data-ttu-id="3bfd4-103">Statické soubory v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="3bfd4-103">Static files in ASP.NET Core</span></span>
 

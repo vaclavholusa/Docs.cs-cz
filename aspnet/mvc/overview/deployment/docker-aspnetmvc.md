@@ -1,7 +1,7 @@
 ---
 uid: mvc/overview/deployment/docker
-title: "Migrace aplikací ASP.NET MVC do kontejnerů s Windows"
-description: "Zjistěte, jak využít existující aplikaci ASP.NET MVC a spustíte ho v systému Windows kontejner Docker"
+title: Migrace aplikací ASP.NET MVC do kontejnerů s Windows
+description: Zjistěte, jak využít existující aplikaci ASP.NET MVC a spustíte ho v systému Windows kontejner Docker
 keywords: Windows Containers,Docker,ASP.NET MVC
 author: BillWagner
 ms.author: wiwagn
@@ -16,6 +16,7 @@ ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/11/2018
+ms.locfileid: "29143186"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a><span data-ttu-id="4b637-104">Migrace aplikací ASP.NET MVC do kontejnerů s Windows</span><span class="sxs-lookup"><span data-stu-id="4b637-104">Migrating ASP.NET MVC Applications to Windows Containers</span></span>
 

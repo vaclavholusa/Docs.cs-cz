@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/index
 title: CascadingDropdown | Microsoft Docs
 author: rick-anderson
-description: "Tento kurz ukazuje, jak používat ovládací prvek CascadingDropDown vytvořit související rozevíracího seznamu uvádí tuto aktualizaci, když uživatelé proveďte výběr."
+description: Tento kurz ukazuje, jak používat ovládací prvek CascadingDropDown vytvořit související rozevíracího seznamu uvádí tuto aktualizaci, když uživatelé proveďte výběr.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29152849"
 ---
 <a name="cascadingdropdown"></a><span data-ttu-id="0756b-103">CascadingDropdown</span><span class="sxs-lookup"><span data-stu-id="0756b-103">CascadingDropdown</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/20/2018
+ms.locfileid: "30001334"
 ---
 # <a name="compatibility-in-aspnet-core"></a><span data-ttu-id="b6184-103">Kompatibilita v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="b6184-103">Compatibility in ASP.NET Core</span></span>
 

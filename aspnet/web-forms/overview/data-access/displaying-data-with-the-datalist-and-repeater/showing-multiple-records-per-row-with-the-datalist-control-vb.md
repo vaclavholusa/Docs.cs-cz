@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889992"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a><span data-ttu-id="d1a30-103">Zobrazení více záznamů na řádek pomocí ovládacího prvku DataList (VB)</span><span class="sxs-lookup"><span data-stu-id="d1a30-103">Showing Multiple Records per Row with the DataList Control (VB)</span></span>
 ====================

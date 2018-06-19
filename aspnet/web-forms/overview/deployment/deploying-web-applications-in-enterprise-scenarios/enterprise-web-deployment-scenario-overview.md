@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890018"
 ---
 <a name="enterprise-web-deployment-scenario-overview"></a><span data-ttu-id="5d4f0-103">Podnikového nasazení webu: Přehled scénáře</span><span class="sxs-lookup"><span data-stu-id="5d4f0-103">Enterprise Web Deployment: Scenario Overview</span></span>
 ====================

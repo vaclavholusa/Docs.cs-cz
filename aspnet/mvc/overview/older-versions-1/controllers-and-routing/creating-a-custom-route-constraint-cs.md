@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874340"
 ---
 <a name="creating-a-custom-route-constraint-c"></a><span data-ttu-id="f45e5-104">Vytváření vlastní trasy omezení (C#)</span><span class="sxs-lookup"><span data-stu-id="f45e5-104">Creating a Custom Route Constraint (C#)</span></span>
 ====================

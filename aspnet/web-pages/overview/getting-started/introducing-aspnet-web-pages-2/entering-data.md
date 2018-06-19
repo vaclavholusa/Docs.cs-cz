@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897960"
 ---
 <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a><span data-ttu-id="1bd0a-103">Představení technologie ASP.NET Web Pages – zadávání dat databáze pomocí formulářů</span><span class="sxs-lookup"><span data-stu-id="1bd0a-103">Introducing ASP.NET Web Pages - Entering Database Data by Using Forms</span></span>
 ====================

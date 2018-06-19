@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30890792"
 ---
 <a name="performing-batch-updates-c"></a><span data-ttu-id="d5dce-103">Provádění dávkové aktualizace (C#)</span><span class="sxs-lookup"><span data-stu-id="d5dce-103">Performing Batch Updates (C#)</span></span>
 ====================

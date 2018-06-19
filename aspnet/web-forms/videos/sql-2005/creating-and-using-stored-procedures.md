@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893466"
 ---
 <a name="creating-and-using-stored-procedures"></a><span data-ttu-id="cf675-104">Vytváření a používání uložené procedury</span><span class="sxs-lookup"><span data-stu-id="cf675-104">Creating and Using Stored Procedures</span></span>
 ====================

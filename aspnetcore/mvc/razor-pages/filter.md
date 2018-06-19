@@ -15,6 +15,7 @@ ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/19/2018
+ms.locfileid: "31585189"
 ---
 # <a name="filter-methods-for-razor-pages-in-aspnet-core"></a><span data-ttu-id="f15e8-103">Filtr metody pro stránky Razor v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="f15e8-103">Filter methods for Razor Pages in ASP.NET Core</span></span>
 

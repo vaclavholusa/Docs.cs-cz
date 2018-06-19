@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897264"
 ---
 <a name="working-with-forms-part-2"></a><span data-ttu-id="7f464-103">Práce s formuláři (část 2)</span><span class="sxs-lookup"><span data-stu-id="7f464-103">Working with Forms (Part 2)</span></span>
 ====================

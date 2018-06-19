@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-understand-and-defend-against-script-injection-attacks-in-aspnet
-title: "Jak pochopit a obrana proti vložení skriptu útoků technologie ASP.NET | Microsoft Docs"
+title: Jak pochopit a obrana proti vložení skriptu útoků technologie ASP.NET | Microsoft Docs
 author: JoeStagner
-description: "Křížové skriptování (XSS) je možná problém způsobující nejvíce potíže zabezpečení vývojářům webů pro řešení těchto dnů. V tomto videu se Stagner Jan společnosti Microsoft pro..."
+description: Křížové skriptování (XSS) je možná problém způsobující nejvíce potíže zabezpečení vývojářům webů pro řešení těchto dnů. V tomto videu se Stagner Jan společnosti Microsoft pro...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882227"
 ---
 <a name="how-do-i-understand-and-defend-against-script-injection-attacks-in-aspnet"></a><span data-ttu-id="b2819-104">Jak pochopit a obrana proti vložení skriptu útoků technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="b2819-104">How Do I Understand and Defend Against Script Injection Attacks in ASP.NET</span></span>
 ====================

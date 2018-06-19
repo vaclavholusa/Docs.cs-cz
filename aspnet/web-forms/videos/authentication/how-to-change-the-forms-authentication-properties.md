@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881734"
 ---
 <a name="how-to-change-the-forms-authentication-properties"></a><span data-ttu-id="5bb71-104">Postup změny vlastnosti ověřování formulářů</span><span class="sxs-lookup"><span data-stu-id="5bb71-104">How to Change the Forms Authentication Properties</span></span>
 ====================

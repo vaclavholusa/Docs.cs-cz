@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890031"
 ---
 <a name="aspnet-ajax-a-demonstration-of-aspnet-ajax"></a><span data-ttu-id="d8908-103">Technologie ASP.NET AJAX: Ukázka prvku ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="d8908-103">ASP.NET AJAX: A demonstration of ASP.NET AJAX</span></span>
 ====================

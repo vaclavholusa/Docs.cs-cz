@@ -15,6 +15,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851271"
 ---
 # <a name="authorization-in-aspnet-core"></a><span data-ttu-id="b3364-103">Autorizace v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="b3364-103">Authorization in ASP.NET Core</span></span>
 

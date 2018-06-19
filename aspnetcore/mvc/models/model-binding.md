@@ -1,7 +1,7 @@
 ---
 title: Vazby modelu v ASP.NET Core
 author: rachelappel
-description: "Zjistěte, jak mapuje vazby modelu v aplikaci ASP.NET MVC základní data z požadavků HTTP pro parametry metody akce."
+description: Zjistěte, jak mapuje vazby modelu v aplikaci ASP.NET MVC základní data z požadavků HTTP pro parametry metody akce.
 manager: wpickett
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 ms.author: rachelap
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29904557"
 ---
 # <a name="model-binding-in-aspnet-core"></a><span data-ttu-id="ee0bf-103">Vazby modelu v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="ee0bf-103">Model Binding in ASP.NET Core</span></span>
 

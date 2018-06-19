@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890818"
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a><span data-ttu-id="d97bf-103">Přehled vkládání, aktualizaci a odstraňování dat (VB)</span><span class="sxs-lookup"><span data-stu-id="d97bf-103">An Overview of Inserting, Updating, and Deleting Data (VB)</span></span>
 ====================

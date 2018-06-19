@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891000"
 ---
 <a name="recovering-and-changing-passwords-c"></a><span data-ttu-id="2f8d3-104">Obnovení a změna hesel (C#)</span><span class="sxs-lookup"><span data-stu-id="2f8d3-104">Recovering and Changing Passwords (C#)</span></span>
 ====================

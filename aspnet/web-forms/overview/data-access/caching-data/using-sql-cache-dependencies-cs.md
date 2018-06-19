@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877980"
 ---
 <a name="using-sql-cache-dependencies-c"></a><span data-ttu-id="1ba44-104">Pomocí závislosti mezipaměti SQL (C#)</span><span class="sxs-lookup"><span data-stu-id="1ba44-104">Using SQL Cache Dependencies (C#)</span></span>
 ====================

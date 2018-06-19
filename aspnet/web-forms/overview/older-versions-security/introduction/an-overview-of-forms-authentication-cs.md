@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892033"
 ---
 <a name="an-overview-of-forms-authentication-c"></a><span data-ttu-id="9e507-103">Přehled ověřování pomocí formulářů (C#)</span><span class="sxs-lookup"><span data-stu-id="9e507-103">An Overview of Forms Authentication (C#)</span></span>
 ====================

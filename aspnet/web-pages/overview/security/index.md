@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/index
-title: "Zabezpečení | Microsoft Docs"
+title: Zabezpečení | Microsoft Docs
 author: rick-anderson
-description: "Postup přidání možností přihlášení do aplikace ASP.NET Web Pages a k ochraně aplikace před robotů."
+description: Postup přidání možností přihlášení do aplikace ASP.NET Web Pages a k ochraně aplikace před robotů.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26573163"
 ---
 <a name="security"></a><span data-ttu-id="f3713-103">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="f3713-103">Security</span></span>
 ====================

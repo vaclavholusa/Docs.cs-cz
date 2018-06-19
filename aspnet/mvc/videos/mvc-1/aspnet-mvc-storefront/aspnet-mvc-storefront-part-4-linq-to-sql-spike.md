@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871620"
 ---
 <a name="aspnet-mvc-storefront-part-4-linq-to-sql-spike"></a><span data-ttu-id="a3c5f-103">Storefront část rozhraní ASP.NET MVC 4: Technologie Linq To Sql Špička</span><span class="sxs-lookup"><span data-stu-id="a3c5f-103">ASP.NET MVC Storefront Part 4: Linq To Sql Spike</span></span>
 ====================

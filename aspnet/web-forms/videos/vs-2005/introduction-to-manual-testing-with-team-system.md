@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894837"
 ---
 <a name="introduction-to-manual-testing-with-team-system"></a><span data-ttu-id="e2e60-103">Úvod do manuálního testování pomocí produktu Team System</span><span class="sxs-lookup"><span data-stu-id="e2e60-103">Introduction to Manual Testing with Team System</span></span>
 ====================

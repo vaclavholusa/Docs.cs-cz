@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893843"
 ---
 <a name="custom-extraction-rules-and-coded-web-tests"></a><span data-ttu-id="6458a-103">Vlastních pravidel pro extrakci a kódované webové testy</span><span class="sxs-lookup"><span data-stu-id="6458a-103">Custom Extraction Rules and Coded Web Tests</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892079"
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a><span data-ttu-id="54238-104">Pomocí rozhraní Entity Framework 4.0 a ovládacího prvku ObjectDataSource, část 1: Začínáme</span><span class="sxs-lookup"><span data-stu-id="54238-104">Using the Entity Framework 4.0 and the ObjectDataSource Control, Part 1: Getting Started</span></span>
 ====================

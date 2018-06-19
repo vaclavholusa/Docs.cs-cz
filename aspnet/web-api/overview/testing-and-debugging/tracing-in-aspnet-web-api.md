@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
-title: "Trasování v rozhraní ASP.NET Web API 2 | Microsoft Docs"
+title: Trasování v rozhraní ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: "Ukazuje, jak povolit trasování v rozhraní ASP.NET Web API."
+description: Ukazuje, jak povolit trasování v rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28044205"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a><span data-ttu-id="db2b8-103">Trasování v rozhraní ASP.NET Web API 2</span><span class="sxs-lookup"><span data-stu-id="db2b8-103">Tracing in ASP.NET Web API 2</span></span>
 ====================

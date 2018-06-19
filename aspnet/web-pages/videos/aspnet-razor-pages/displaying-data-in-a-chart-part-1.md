@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899785"
 ---
 <a name="displaying-data-in-a-chart-part-1"></a><span data-ttu-id="a2374-103">Zobrazení dat v grafu (část 1)</span><span class="sxs-lookup"><span data-stu-id="a2374-103">Displaying Data in a Chart (Part 1)</span></span>
 ====================

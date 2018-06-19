@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874249"
 ---
 <a name="creating-mutually-exclusive-checkboxes-vb"></a><span data-ttu-id="13264-104">Vytváření vzájemně se vylučuje políček (VB)</span><span class="sxs-lookup"><span data-stu-id="13264-104">Creating Mutually Exclusive Checkboxes (VB)</span></span>
 ====================

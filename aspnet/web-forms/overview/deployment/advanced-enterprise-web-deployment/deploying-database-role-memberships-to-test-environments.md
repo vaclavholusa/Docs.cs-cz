@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892553"
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a><span data-ttu-id="2f872-104">Nasazení databáze členství v rolích do testovacího prostředí</span><span class="sxs-lookup"><span data-stu-id="2f872-104">Deploying Database Role Memberships to Test Environments</span></span>
 ====================

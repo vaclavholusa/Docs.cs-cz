@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890226"
 ---
 <a name="deploying-web-applications-in-enterprise-scenarios-using-visual-studio-2010"></a><span data-ttu-id="4a690-104">Nasazení webové aplikace v podnikové scénáře použití sady Visual Studio 2010</span><span class="sxs-lookup"><span data-stu-id="4a690-104">Deploying Web Applications in Enterprise Scenarios using Visual Studio 2010</span></span>
 ====================

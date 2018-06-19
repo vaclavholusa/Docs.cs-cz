@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30076409"
 ---
 # <a name="consumer-apis-for-aspnet-core"></a><span data-ttu-id="f136e-103">Příjemce rozhraní API pro ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="f136e-103">Consumer APIs for ASP.NET Core</span></span>
 

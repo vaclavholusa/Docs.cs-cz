@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894022"
 ---
 <a name="how-do-i-implement-continuous-integration-with-team-foundation"></a><span data-ttu-id="f85e2-104">[Jak na:] Implementovat průběžnou integraci s Team Foundation?</span><span class="sxs-lookup"><span data-stu-id="f85e2-104">[How Do I:] Implement Continuous Integration with Team Foundation?</span></span>
 ====================

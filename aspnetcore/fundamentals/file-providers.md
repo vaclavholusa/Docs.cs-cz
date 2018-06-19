@@ -1,7 +1,7 @@
 ---
-title: "Soubor zprostředkovatele v ASP.NET Core"
+title: Soubor zprostředkovatele v ASP.NET Core
 author: ardalis
-description: "Zjistěte, jak ASP.NET Core abstrahuje přístupu k systému souborů prostřednictvím poskytovatelů souboru."
+description: Zjistěte, jak ASP.NET Core abstrahuje přístupu k systému souborů prostřednictvím poskytovatelů souboru.
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/02/2018
+ms.locfileid: "29724568"
 ---
 # <a name="file-providers-in-aspnet-core"></a><span data-ttu-id="1ee6a-103">Soubor zprostředkovatele v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="1ee6a-103">File Providers in ASP.NET Core</span></span>
 

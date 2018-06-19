@@ -1,7 +1,7 @@
 ---
-title: "Scénáře využívající bez DI ochrany dat v ASP.NET Core"
+title: Scénáře využívající bez DI ochrany dat v ASP.NET Core
 author: rick-anderson
-description: "Zjistěte, jak pro podporu scénáře ochrany dat, kde nemůžete nebo nechcete použít službu poskytované vkládání závislostí."
+description: Zjistěte, jak pro podporu scénáře ochrany dat, kde nemůžete nebo nechcete použít službu poskytované vkládání závislostí.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/02/2018
+ms.locfileid: "29727243"
 ---
 # <a name="non-di-aware-scenarios-for-data-protection-in-aspnet-core"></a><span data-ttu-id="ce9cf-103">Scénáře využívající bez DI ochrany dat v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="ce9cf-103">Non-DI aware scenarios for Data Protection in ASP.NET Core</span></span>
 

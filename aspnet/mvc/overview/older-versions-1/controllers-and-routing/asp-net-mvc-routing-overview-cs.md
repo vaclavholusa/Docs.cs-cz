@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868591"
 ---
 <a name="aspnet-mvc-routing-overview-c"></a><span data-ttu-id="f8347-103">Přehled směrování rozhraní ASP.NET MVC (C#)</span><span class="sxs-lookup"><span data-stu-id="f8347-103">ASP.NET MVC Routing Overview (C#)</span></span>
 ====================

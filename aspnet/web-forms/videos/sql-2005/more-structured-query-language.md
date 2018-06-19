@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895227"
 ---
 <a name="more-structured-query-language"></a><span data-ttu-id="16a30-103">Více Structured Query Language</span><span class="sxs-lookup"><span data-stu-id="16a30-103">More Structured Query Language</span></span>
 ====================

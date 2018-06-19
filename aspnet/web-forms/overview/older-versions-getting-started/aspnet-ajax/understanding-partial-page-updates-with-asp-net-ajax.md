@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891318"
 ---
 <a name="understanding-partial-page-updates-with-aspnet-ajax"></a><span data-ttu-id="e6b7a-103">Principy částečná stránka se aktualizuje pomocí prvku ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="e6b7a-103">Understanding Partial Page Updates with ASP.NET AJAX</span></span>
 ====================

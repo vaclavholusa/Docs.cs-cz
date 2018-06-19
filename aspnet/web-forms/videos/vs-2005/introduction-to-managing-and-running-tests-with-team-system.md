@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895176"
 ---
 <a name="introduction-to-managing-and-running-tests-with-team-system"></a><span data-ttu-id="11015-104">Úvod do správy a spouštění testů pomocí produktu Team System</span><span class="sxs-lookup"><span data-stu-id="11015-104">Introduction to Managing and Running Tests with Team System</span></span>
 ====================

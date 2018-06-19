@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30076959"
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a><span data-ttu-id="7d2c1-103">Podpora zásad celého systému ochrany dat v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7d2c1-103">Data Protection machine-wide policy support in ASP.NET Core</span></span>
 

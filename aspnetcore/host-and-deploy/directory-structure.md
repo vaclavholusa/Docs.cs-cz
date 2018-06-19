@@ -15,6 +15,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33838433"
 ---
 # <a name="aspnet-core-directory-structure"></a><span data-ttu-id="7ce13-103">Struktura adresářů ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="7ce13-103">ASP.NET Core directory structure</span></span>
 

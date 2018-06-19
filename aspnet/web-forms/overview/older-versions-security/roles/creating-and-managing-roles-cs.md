@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891676"
 ---
 <a name="creating-and-managing-roles-c"></a><span data-ttu-id="9a68f-104">Vytvoření a správy rolí (C#)</span><span class="sxs-lookup"><span data-stu-id="9a68f-104">Creating and Managing Roles (C#)</span></span>
 ====================

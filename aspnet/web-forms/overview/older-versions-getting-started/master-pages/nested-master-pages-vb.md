@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891816"
 ---
 <a name="nested-master-pages-vb"></a><span data-ttu-id="e39b2-103">Vnořené hlavní stránky (VB)</span><span class="sxs-lookup"><span data-stu-id="e39b2-103">Nested Master Pages (VB)</span></span>
 ====================

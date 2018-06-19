@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899198"
 ---
 <a name="customizing-site-wide-behavior-for-aspnet-web-pages-razor-sites"></a><span data-ttu-id="ae975-103">Přizpůsobení chování na webu pro ASP.NET – webové stránky (Razor) servery</span><span class="sxs-lookup"><span data-stu-id="ae975-103">Customizing Site-Wide Behavior for ASP.NET Web Pages (Razor) Sites</span></span>
 ====================

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33850919"
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a><span data-ttu-id="0c25f-103">Dvoufaktorové ověřování pomocí SMS v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="0c25f-103">Two-factor authentication with SMS in ASP.NET Core</span></span>
 

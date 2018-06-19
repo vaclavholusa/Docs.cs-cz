@@ -15,6 +15,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897801"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a><span data-ttu-id="b04ca-104">Cloudové ověřování v rozhraní web API s Azure Active Directory B2C v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="b04ca-104">Cloud authentication in web APIs with Azure Active Directory B2C in ASP.NET Core</span></span>
 

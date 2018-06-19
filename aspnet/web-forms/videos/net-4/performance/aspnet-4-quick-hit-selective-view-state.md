@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896992"
 ---
 <a name="aspnet-4-quick-hit---selective-view-state"></a><span data-ttu-id="bb2a6-103">ASP.NET 4 "Rychlý zasáhnout" - selektivní stav zobrazení</span><span class="sxs-lookup"><span data-stu-id="bb2a6-103">ASP.NET 4 "Quick Hit" - Selective View State</span></span>
 ====================

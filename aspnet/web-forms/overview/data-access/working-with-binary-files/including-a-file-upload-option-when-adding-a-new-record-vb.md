@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888650"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a><span data-ttu-id="f03e1-104">Při přidávání nového záznamu (VB) včetně řešením nahrávání souborů</span><span class="sxs-lookup"><span data-stu-id="f03e1-104">Including a File Upload Option When Adding a New Record (VB)</span></span>
 ====================

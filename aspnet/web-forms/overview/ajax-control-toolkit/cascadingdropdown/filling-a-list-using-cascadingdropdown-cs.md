@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870970"
 ---
 <a name="filling-a-list-using-cascadingdropdown-c"></a><span data-ttu-id="091f3-103">Naplnění seznamu pomocí CascadingDropDown (C#)</span><span class="sxs-lookup"><span data-stu-id="091f3-103">Filling a List Using CascadingDropDown (C#)</span></span>
 ====================

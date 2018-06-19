@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30071799"
 ---
 # <a name="dependency-injection-into-controllers-in-aspnet-core"></a><span data-ttu-id="244a5-103">Vkládání závislostí do řadičů v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="244a5-103">Dependency injection into controllers in ASP.NET Core</span></span>
 

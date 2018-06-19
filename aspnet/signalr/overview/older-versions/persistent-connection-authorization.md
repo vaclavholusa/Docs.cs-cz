@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/persistent-connection-authorization
-title: "Ověřování a autorizace pro trvalé připojení SignalR (SignalR 1.x) | Microsoft Docs"
+title: Ověřování a autorizace pro trvalé připojení SignalR (SignalR 1.x) | Microsoft Docs
 author: pfletcher
-description: "Toto téma popisuje, jak vynutit autorizaci u na trvalé připojení. Obecné informace o integraci do aplikace pomocí SignalR zabezpečení..."
+description: Toto téma popisuje, jak vynutit autorizaci u na trvalé připojení. Obecné informace o integraci do aplikace pomocí SignalR zabezpečení...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/21/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036099"
 ---
 <a name="authentication-and-authorization-for-signalr-persistent-connections-signalr-1x"></a><span data-ttu-id="b8a5a-104">Ověřování a autorizace pro trvalé připojení SignalR (SignalR 1.x)</span><span class="sxs-lookup"><span data-stu-id="b8a5a-104">Authentication and Authorization for SignalR Persistent Connections (SignalR 1.x)</span></span>
 ====================

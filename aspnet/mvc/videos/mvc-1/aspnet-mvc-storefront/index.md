@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/index
-title: "ASP.NET MVC výkladní skříň | Microsoft Docs"
+title: ASP.NET MVC výkladní skříň | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC Storefront Startovní sady"
+description: ASP.NET MVC Storefront Startovní sady
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29153239"
 ---
 <a name="aspnet-mvc-storefront"></a><span data-ttu-id="5e245-103">Výkladní skříň rozhraní ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="5e245-103">ASP.NET MVC Storefront</span></span>
 ====================

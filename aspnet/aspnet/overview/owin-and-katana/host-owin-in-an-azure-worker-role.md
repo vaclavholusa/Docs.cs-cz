@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868422"
 ---
 <a name="host-owin-in-an-azure-worker-role"></a><span data-ttu-id="d3d1a-104">Hostitele OWIN roli pracovního procesu systému Azure</span><span class="sxs-lookup"><span data-stu-id="d3d1a-104">Host OWIN in an Azure Worker Role</span></span>
 ====================

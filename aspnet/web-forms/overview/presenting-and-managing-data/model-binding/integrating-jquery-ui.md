@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887909"
 ---
 <a name="integrating-jquery-ui-datepicker-with-model-binding-and-web-forms"></a><span data-ttu-id="aa7a6-104">Ovládací prvek Datepicker uživatelského rozhraní JQuery integrování vazby modelu a webové formuláře</span><span class="sxs-lookup"><span data-stu-id="aa7a6-104">Integrating JQuery UI Datepicker with model binding and web forms</span></span>
 ====================

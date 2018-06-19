@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892813"
 ---
 <a name="tailspin-spyworks---adding-items-to-the-shopping-cart"></a><span data-ttu-id="0d47c-103">Tailspin Spyworks - přidávání položek do nákupního košíku</span><span class="sxs-lookup"><span data-stu-id="0d47c-103">Tailspin Spyworks - Adding Items to the Shopping Cart</span></span>
 ====================

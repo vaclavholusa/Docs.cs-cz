@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893518"
 ---
 <a name="how-do-i-run-unit-tests-against-a-deployed-database"></a><span data-ttu-id="46c4f-104">[Jak na:] Spouštění testů jednotek nasazené databázi?</span><span class="sxs-lookup"><span data-stu-id="46c4f-104">[How Do I:] Run Unit Tests against a Deployed Database?</span></span>
 ====================

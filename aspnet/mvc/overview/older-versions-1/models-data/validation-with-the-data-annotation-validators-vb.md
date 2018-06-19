@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870164"
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a><span data-ttu-id="b6d08-104">Ověřování pomocí datové poznámky validátory (VB)</span><span class="sxs-lookup"><span data-stu-id="b6d08-104">Validation with the Data Annotation Validators (VB)</span></span>
 ====================

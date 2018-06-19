@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874145"
 ---
 <a name="positioning-a-modalpopup-c"></a><span data-ttu-id="a7c55-104">Umístění ModalPopup (C#)</span><span class="sxs-lookup"><span data-stu-id="a7c55-104">Positioning a ModalPopup (C#)</span></span>
 ====================

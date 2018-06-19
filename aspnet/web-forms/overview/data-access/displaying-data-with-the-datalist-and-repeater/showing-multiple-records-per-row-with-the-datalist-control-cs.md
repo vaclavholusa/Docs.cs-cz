@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891214"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a><span data-ttu-id="c8782-103">Zobrazení více záznamů na řádek pomocí ovládacího prvku DataList (C#)</span><span class="sxs-lookup"><span data-stu-id="c8782-103">Showing Multiple Records per Row with the DataList Control (C#)</span></span>
 ====================

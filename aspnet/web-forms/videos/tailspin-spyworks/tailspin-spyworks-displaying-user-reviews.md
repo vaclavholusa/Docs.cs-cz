@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895924"
 ---
 <a name="tailspin-spyworks---displaying-user-reviews"></a><span data-ttu-id="19489-103">Tailspin Spyworks - zobrazení recenze uživatele</span><span class="sxs-lookup"><span data-stu-id="19489-103">Tailspin Spyworks - Displaying User Reviews</span></span>
 ====================

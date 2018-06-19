@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894663"
 ---
 <a name="visual-studio-2010-quick-hit---multi-monitor-support"></a><span data-ttu-id="295ff-103">Visual Studio 2010 "Rychlý zasáhnout" – Podpora více monitorů</span><span class="sxs-lookup"><span data-stu-id="295ff-103">Visual Studio 2010 "Quick Hit" - Multi-Monitor Support</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-cascading-style-sheets-for-web-page-layout
-title: "[Jak na:] Pomocí kaskádových stylů pro webové stránky rozložení? | Microsoft Docs"
+title: '[Jak na:] Pomocí kaskádových stylů pro webové stránky rozložení? | Microsoft Docs'
 author: rick-anderson
-description: "V tomto videu jsme Další informace o použití &amp;lt; div&amp;gt; elementy v kombinaci s kaskádových stylů (CSS) k vytvoření robustní a vyšší výkon webové p..."
+description: V tomto videu jsme Další informace o použití &amp;lt; div&amp;gt; elementy v kombinaci s kaskádových stylů (CSS) k vytvoření robustní a vyšší výkon webové p...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/05/2018
+ms.locfileid: "28988000"
 ---
 <a name="how-do-i-use-cascading-style-sheets-for-web-page-layout"></a><span data-ttu-id="75273-104">[Jak na:] Pomocí kaskádových stylů pro webové stránky rozložení?</span><span class="sxs-lookup"><span data-stu-id="75273-104">[How Do I:] Use Cascading Style Sheets for Web Page Layout?</span></span>
 ====================

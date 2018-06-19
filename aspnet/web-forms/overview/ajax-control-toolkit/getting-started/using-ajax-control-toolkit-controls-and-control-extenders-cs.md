@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873492"
 ---
 <a name="using-ajax-control-toolkit-controls-and-control-extenders-c"></a><span data-ttu-id="59eb9-103">Pomocí ovládacích prvků Toolkit řízení AJAX a řízení Extender (C#)</span><span class="sxs-lookup"><span data-stu-id="59eb9-103">Using AJAX Control Toolkit Controls and Control Extenders (C#)</span></span>
 ====================

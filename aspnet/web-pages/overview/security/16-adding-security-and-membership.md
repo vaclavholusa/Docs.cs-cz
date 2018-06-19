@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898856"
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="63a30-104">Přidání členství a zabezpečení na web rozhraní ASP.NET Web Pages (Razor)</span><span class="sxs-lookup"><span data-stu-id="63a30-104">Adding Security and Membership to an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

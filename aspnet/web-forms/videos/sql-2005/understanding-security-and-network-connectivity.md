@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893505"
 ---
 <a name="understanding-security-and-network-connectivity"></a><span data-ttu-id="88a15-104">Principy zabezpečení a připojení k síti</span><span class="sxs-lookup"><span data-stu-id="88a15-104">Understanding Security and Network Connectivity</span></span>
 ====================

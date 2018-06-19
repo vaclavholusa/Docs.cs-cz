@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/scaleout-in-signalr
-title: "Úvod do škálování v systému SignalR 1.x | Microsoft Docs"
+title: Úvod do škálování v systému SignalR 1.x | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/29/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28043743"
 ---
 <a name="introduction-to-scaleout-in-signalr-1x"></a><span data-ttu-id="71639-102">Úvod do škálování v systému SignalR 1.x</span><span class="sxs-lookup"><span data-stu-id="71639-102">Introduction to Scaleout in SignalR 1.x</span></span>
 ====================

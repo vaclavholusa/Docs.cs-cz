@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896773"
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="97e51-104">Instalace pomocné rutiny v Web Pages (Razor) technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="97e51-104">Installing a Helper in an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

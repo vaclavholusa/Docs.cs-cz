@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868643"
 ---
 <a name="disabling-actions-during-animation-vb"></a><span data-ttu-id="43e0d-104">Zakázání akcí během animace (VB)</span><span class="sxs-lookup"><span data-stu-id="43e0d-104">Disabling Actions during Animation (VB)</span></span>
 ====================

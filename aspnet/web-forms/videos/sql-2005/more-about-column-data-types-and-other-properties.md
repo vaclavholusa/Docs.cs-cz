@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895888"
 ---
 <a name="more-about-column-data-types-and-other-properties"></a><span data-ttu-id="b1fbb-103">Další informace o datové typy sloupce a dalších vlastností</span><span class="sxs-lookup"><span data-stu-id="b1fbb-103">More about Column Data Types and Other Properties</span></span>
 ====================

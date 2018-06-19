@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893791"
 ---
 <a name="how-do-i-tune-web-application-performance-with-profiling"></a><span data-ttu-id="2e2e3-105">[Jak na:] Optimalizovat výkon webové aplikace s profilace?</span><span class="sxs-lookup"><span data-stu-id="2e2e3-105">[How Do I:] Tune Web Application Performance with Profiling?</span></span>
 ====================

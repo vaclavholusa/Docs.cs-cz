@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876498"
 ---
 <a name="debugging-stored-procedures-c"></a><span data-ttu-id="40a9a-103">Ladění uložené procedury (C#)</span><span class="sxs-lookup"><span data-stu-id="40a9a-103">Debugging Stored Procedures (C#)</span></span>
 ====================

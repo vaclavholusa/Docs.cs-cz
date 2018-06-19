@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891978"
 ---
 <a name="storing-additional-user-information-vb"></a><span data-ttu-id="01d08-104">Ukládání informací o uživatelích další (VB)</span><span class="sxs-lookup"><span data-stu-id="01d08-104">Storing Additional User Information (VB)</span></span>
 ====================

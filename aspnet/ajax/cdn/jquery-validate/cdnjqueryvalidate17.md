@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077440"
 ---
 <a name="jqueryvalidate-version-17"></a><span data-ttu-id="b2d83-102">verze jQuery.Validate 1.7</span><span class="sxs-lookup"><span data-stu-id="b2d83-102">jquery.validate version 1.7</span></span>
 ====================

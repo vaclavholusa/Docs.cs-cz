@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30076131"
 ---
 # <a name="ephemeral-data-protection-providers-in-aspnet-core"></a><span data-ttu-id="8853d-103">Ochrana zprostředkovatele dočasných dat v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="8853d-103">Ephemeral data protection providers in ASP.NET Core</span></span>
 

@@ -2,7 +2,7 @@
 uid: mvc/videos/index
 title: Videa | Microsoft Docs
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/24/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29152960"
 ---
 <a name="videos"></a><span data-ttu-id="aad28-102">Videa</span><span class="sxs-lookup"><span data-stu-id="aad28-102">Videos</span></span>
 ====================

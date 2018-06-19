@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
-title: "Otevřete typy v OData v4 s rozhraním ASP.NET Web API | Microsoft Docs"
+title: Otevřete typy v OData v4 s rozhraním ASP.NET Web API | Microsoft Docs
 author: microsoft
-description: "V prostředí OData v4 je otevřený typ stuctured typu, který obsahuje dynamické vlastnosti, kromě všechny vlastnosti, které jsou deklarované v definici typu. Otevřete..."
+description: V prostředí OData v4 je otevřený typ stuctured typu, který obsahuje dynamické vlastnosti, kromě všechny vlastnosti, které jsou deklarované v definici typu. Otevřete...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29153269"
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a><span data-ttu-id="8c9b4-104">Otevřete typy v OData v4 s rozhraním ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="8c9b4-104">Open Types in OData v4 with ASP.NET Web API</span></span>
 ====================

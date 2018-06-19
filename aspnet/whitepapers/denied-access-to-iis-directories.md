@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30070768"
 ---
 <a name="aspnet-denied-access-to-iis-directories"></a><span data-ttu-id="e7a1c-104">ASP.NET odepřen přístup do adresáře služby IIS</span><span class="sxs-lookup"><span data-stu-id="e7a1c-104">ASP.NET Denied Access to IIS Directories</span></span>
 ====================

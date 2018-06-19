@@ -1,7 +1,7 @@
 ---
-title: "Konfigurace přenosné objekt lokalizace v ASP.NET Core"
+title: Konfigurace přenosné objekt lokalizace v ASP.NET Core
 author: sebastienros
-description: "Tento článek představuje soubory přenosné objektů a popisuje kroky pro jejich používání v aplikaci ASP.NET Core s framework Orchard jádra."
+description: Tento článek představuje soubory přenosné objektů a popisuje kroky pro jejich používání v aplikaci ASP.NET Core s framework Orchard jádra.
 manager: wpickett
 ms.author: scaddie
 ms.date: 09/26/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29904544"
 ---
 # <a name="configure-portable-object-localization-in-aspnet-core"></a><span data-ttu-id="5aaff-103">Konfigurace přenosné objekt lokalizace v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="5aaff-103">Configure portable object localization in ASP.NET Core</span></span>
 

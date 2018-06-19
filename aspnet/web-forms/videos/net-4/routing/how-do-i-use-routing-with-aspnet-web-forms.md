@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896238"
 ---
 <a name="how-do-i-use-routing-with-aspnet-web-forms"></a><span data-ttu-id="0c645-105">Jak na: použití směrování s webovými formuláři ASP.NET?</span><span class="sxs-lookup"><span data-stu-id="0c645-105">How Do I: Use Routing with ASP.NET Web Forms?</span></span>
 ====================

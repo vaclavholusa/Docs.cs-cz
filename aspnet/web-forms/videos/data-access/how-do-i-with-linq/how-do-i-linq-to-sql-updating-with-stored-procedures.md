@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883960"
 ---
 <a name="how-do-i-linq-to-sql-updating-with-stored-procedures"></a><span data-ttu-id="f299e-104">Jak na: technologie LINQ to SQL: aktualizace pomocí uložené procedury</span><span class="sxs-lookup"><span data-stu-id="f299e-104">How Do I: LINQ to SQL: Updating with Stored Procedures</span></span>
 ====================

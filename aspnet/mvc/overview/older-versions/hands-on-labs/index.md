@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/index
-title: "ASP.NET MVC 4 předá na Labs | Microsoft Docs"
+title: ASP.NET MVC 4 předá na Labs | Microsoft Docs
 author: rick-anderson
-description: "Naučte se vyvíjet s architekturou ASP.NET MVC pomocí těchto rukou na Labs"
+description: Naučte se vyvíjet s architekturou ASP.NET MVC pomocí těchto rukou na Labs
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/02/2018
+ms.locfileid: "29727168"
 ---
 # <a name="aspnet-mvc-4-hands-on-labs"></a><span data-ttu-id="50440-103">ASP.NET MVC 4 předá na testovacích prostředích</span><span class="sxs-lookup"><span data-stu-id="50440-103">ASP.NET MVC 4 Hands On Labs</span></span>
 

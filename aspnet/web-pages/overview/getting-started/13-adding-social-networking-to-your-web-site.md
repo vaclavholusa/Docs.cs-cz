@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899340"
 ---
 <a name="adding-social-networking-to-aspnet-web-pages-razor-sites"></a><span data-ttu-id="3d5ef-104">Přidání sociální sítě na webové stránky ASP.NET lokalit (Razor)</span><span class="sxs-lookup"><span data-stu-id="3d5ef-104">Adding Social Networking to ASP.NET Web Pages (Razor) Sites</span></span>
 ====================

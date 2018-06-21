@@ -1,3 +1,3 @@
-Wwwroot kopírováním z... /Cu/ nebo z nového projektu stránky Razor.
+<span data-ttu-id="f810b-101">Wwwroot kopírováním z... /Cu/ nebo z nového projektu stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="f810b-101">Copy wwwroot from ../cu/ or from a new Razor Pages project.</span></span>
 
-Spustit`dotnet ef database update`
+<span data-ttu-id="f810b-102">Spustit`dotnet ef database update`</span><span class="sxs-lookup"><span data-stu-id="f810b-102">Run `dotnet ef database update`</span></span>

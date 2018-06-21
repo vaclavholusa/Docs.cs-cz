@@ -108,7 +108,7 @@
 ### [Web API se sadou Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
 ### [Web API s editorem Visual Studio Code](xref:tutorials/web-api-vsc)
 
-## [Vývoj aplikací sledovacích procesů souboru](xref:tutorials/dotnet-watch)
+## [Vývoj aplikací pomocí sledovacích procesů souborů](xref:tutorials/dotnet-watch)
 
 ## [Vytváření back-endových služeb pro mobilní aplikace](mobile/native-mobile-backend.md)
 
@@ -207,7 +207,7 @@
 # [Testování, ladění a řešení problémů](xref:test/index)
 ## [Testování jednotek](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 ## [Integrační testy](xref:test/integration-tests)
-## [Testování částí stránky Razor](xref:test/razor-pages-tests)
+## [Testy jednotek stránek Razor](xref:test/razor-pages-tests)
 ## [Testovací kontrolery](xref:mvc/controllers/testing)
 ## [Vzdálené ladění](/visualstudio/debugger/remote-debugging-azure)
 ## [Ladění snímků](/azure/application-insights/app-insights-snapshot-debugger)
@@ -246,7 +246,11 @@
 ## [Centra](xref:signalr/hubs)
 ## [Klient JavaScriptu](xref:signalr/javascript-client)
 ## [Klient .NET](xref:signalr/dotnet-client)
+## [HubContext](xref:signalr/hubcontext)
+## [Uživatelé a skupiny](xref:signalr/groups)
+## [Protokol centra MessagePack](xref:signalr/messagepackhubprotocol)
 ## [Publikování do Azure](xref:signalr/publish-to-azure-web-app)
+## [Streamování](xref:signalr/streaming)
 ## [Podporované platformy](xref:signalr/supported-platforms)
 
 # [Mobilní zařízení](xref:mobile/index)
@@ -280,7 +284,7 @@
 ## [Ověřování](xref:security/authentication/index)
 ### [Úvod do systému Identity](xref:security/authentication/identity)
 ### [Vygenerování identity](xref:security/authentication/scaffold-identity)
-### [Přidat vlastní uživatelská data na identitu](xref:security/authentication/add-user-data)
+### [Přidání vlastních uživatelských dat do Identity](xref:security/authentication/add-user-data)
 ### [Možnosti ověřování z komunity OSS](xref:security/authentication/community)
 ### [Konfigurace systému Identity](xref:security/authentication/identity-configuration)
 ### [Konfigurace ověřování systému Windows](xref:security/authentication/windowsauth)
@@ -368,7 +372,7 @@
 ## [Middleware pro kompresi odpovědí](xref:performance/response-compression)
 
 # [Migrace](xref:migration/index)
-## [Jádro ASP.NET 2.0 na 2.1](xref:migration/20_21)
+## [Upgrade ASP.NET Core 2.0 na 2.1](xref:migration/20_21)
 ## [Z ASP.NET do ASP.NET Core](xref:migration/proper-to-2x/index)
 ### [MVC](xref:migration/mvc)
 ### [Webové rozhraní API](xref:migration/webapi)

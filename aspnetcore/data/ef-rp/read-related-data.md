@@ -2,19 +2,15 @@
 title: Stránky Razor s EF jádra ASP.NET Core - číst související Data - 6, 8
 author: rick-anderson
 description: V tomto kurzu číst a zobrazení souvisejících dat – to znamená, data, která rozhraní Entity Framework se načte do navigační vlastnosti.
-manager: wpickett
 ms.author: riande
 ms.date: 11/05/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 1a63246dd81a16bbcca22ad2c50bc2010c852c4e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 4e0aa7151cc54f666202458ba60500a7c04f5ebb
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233398"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276757"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - číst související Data - 6, 8
 
@@ -184,7 +180,7 @@ Nahraďte *Pages/Instructors/Index.cshtml.cs* následujícím kódem:
 
 `OnGetAsync` Metoda přijímá data volitelné trasy pro ID vybrané lektorem.
 
-Vyhledejte dotaz na *Pages/Instructors/Index.cshtml* stránky:
+Vyhledejte v dotazu *Pages/Instructors/Index.cshtml.cs* souboru:
 
 [!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_ThenInclude)]
 
@@ -278,7 +274,7 @@ Následující kód naplní model zobrazení `Enrollments` vlastnost, pokud je v
 
 [!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_courseID)]
 
-Přidejte následující kód do konce *Pages/Courses/Index.cshtml* Razor stránky:
+Přidejte následující kód do konce *Pages/Instructors/Index.cshtml* Razor stránky:
 
 [!code-html[](intro/samples/cu/Pages/Instructors/IndexRRD.cshtml?range=60-102&highlight=7-999)]
 

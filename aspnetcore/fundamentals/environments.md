@@ -2,19 +2,15 @@
 title: Použití prostředí s více v ASP.NET Core
 author: rick-anderson
 description: Zjistěte, jak ASP.NET Core poskytuje podporu pro řízení chování aplikace ve více prostředích.
-manager: wpickett
 ms.author: riande
 ms.date: 12/25/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/environments
-ms.openlocfilehash: 2c8441db527203aeea516073dae3bc335c335565
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
-ms.translationtype: MT
+ms.openlocfilehash: 5a4caeeba045cb93dec9c73c931dae8a352bede9
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33840954"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276929"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Použití prostředí s více v ASP.NET Core
 
@@ -82,8 +78,8 @@ Když se aplikace spustí s [dotnet spustit](/dotnet/core/tools/dotnet-run):
 * *launchSettings.json* je pro čtení. Pokud je k dispozici. `environmentVariables` nastavení v *launchSettings.json* přepsat proměnné prostředí.
 * Hostování prostředí bude zobrazeno.
 
-
 Následující výstup zobrazuje aplikace spuštěna s [dotnet spustit](/dotnet/core/tools/dotnet-run):
+
 ```bash
 PS C:\Webs\WebApp1> dotnet run
 Using launch settings from C:\Webs\WebApp1\Properties\launchSettings.json...
@@ -99,8 +95,29 @@ Visual Studio **ladění** karta poskytuje grafickým uživatelským rozhraním 
 
 Změny provedené v projektu profily pravděpodobně projeví až po restartu webového serveru. Kestrel zjistí změny provedené v jeho prostředí musí být restartován.
 
->[!WARNING]
+> [!WARNING]
 > *launchSettings.json* neměli ukládat tajné klíče. [Nástroj tajný klíč správce](xref:security/app-secrets) slouží k uložení tajné klíče pro místní vývoj.
+
+Při použití [Visual Studio Code](https://code.visualstudio.com/), proměnné prostředí může být nastavena v *.vscode/launch.json* souboru. Následující příklad nastaví prostředí `Development`:
+
+```json
+{
+   "version": "0.2.0",
+   "configurations": [
+        {
+            "name": ".NET Core Launch (web)",
+
+            ... additional VS Code configuration settings ...
+
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        }
+    ]
+}
+```
+
+A *.vscode/launch.json* soubor v projektu není přečíst při spuštění aplikace s `dotnet run` stejným způsobem jako *Properties/launchSettings.json*. Při spuštění aplikace v vývoj, který nemá *launchSettings.json* souboru nastavená buď v prostředí s proměnné prostředí nebo argument příkazového řádku k `dotnet run` příkaz.
 
 ### <a name="production"></a>Produkční
 

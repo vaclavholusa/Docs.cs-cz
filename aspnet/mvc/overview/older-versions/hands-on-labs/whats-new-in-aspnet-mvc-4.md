@@ -181,7 +181,7 @@ V tomto cvičení zaměříte vylepšení v šablonách projektu ASP.NET MVC 4. 
 
        Procházejte šablony zobrazení a zjistěte, kód nový motiv.
 
-       ![Nové šablony, pomocí syntaxe Razor a HTML5 značek About.cshtml. ] (whats-new-in-aspnet-mvc-4/_static/image10.png "Novou šablonu, pomocí syntaxe Razor a HTML5 značek About.cshtml.")
+       ![Nové šablony, pomocí syntaxe Razor a HTML5 značek About.cshtml. ](whats-new-in-aspnet-mvc-4/_static/image10.png "Novou šablonu, pomocí syntaxe Razor a HTML5 značek About.cshtml.")
 
        *Nové šablony, pomocí syntaxe Razor a HTML5 značek (About.cshtml).*
    - **Aktualizované knihoven jazyka JavaScript**

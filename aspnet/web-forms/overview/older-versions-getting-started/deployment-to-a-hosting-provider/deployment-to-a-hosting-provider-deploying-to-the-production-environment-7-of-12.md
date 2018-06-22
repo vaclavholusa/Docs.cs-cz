@@ -40,7 +40,7 @@ Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, j
 
 Pro aplikace společnosti Contoso univerzity a tento kurz řady budete potřebovat zprostředkovatele, který podporuje technologii ASP.NET 4 a nasazení webu. Konkrétní hostingové společnosti jste vybrali, takže může kurzů k objasnění dokončení prostředí nasazení na živý web. Každý hostující společnost poskytuje různých funkcí a možností nasazení serverů se poněkud liší. Proces popsaný v tomto kurzu se ale typické pro celý proces. Poskytovatel hostingu používá pro účely tohoto kurzu, Cytanium.com, je jedním z mnoha, které jsou k dispozici, a jeho použití v tomto kurzu nepředstavuje ke schválení nebo doporučení.
 
-Jakmile budete připraveni k výběru vlastního poskytovatele hostitelských služeb, můžete porovnat funkce a ceny v [Galerie zprostředkovatelů](https://www.microsoft.com/web/hosting) na webu http://www.microsoft.com/web/gallery/install.aspx?appid=IISExpress.
+Jakmile budete připraveni k výběru vlastního poskytovatele hostitelských služeb, můžete porovnat funkce a ceny v [Galerie zprostředkovatelů](https://www.microsoft.com/web/hosting) na webu Microsoft.com/web.
 
 ## <a name="creating-an-account"></a>Vytvoření účtu
 

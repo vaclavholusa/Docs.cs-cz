@@ -2,23 +2,19 @@
 title: Správa klíčů ochrany dat a doba platnosti v ASP.NET Core
 author: rick-anderson
 description: Další informace o ochranu dat správy klíčů a doba platnosti v ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/configuration/default-settings
-ms.openlocfilehash: b43c14af015d5e03f46200c51a1218a581b1de0c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 54259b1e2f37cdbbd551038e80f2b0fa1d77f196
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28887287"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277801"
 ---
 # <a name="data-protection-key-management-and-lifetime-in-aspnet-core"></a>Správa klíčů ochrany dat a doba platnosti v ASP.NET Core
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="key-management"></a>Správa klíčů
 
@@ -50,6 +46,6 @@ Klíče měly životnost-90denní ve výchozím nastavení. Když vyprší platn
 
 Použitý algoritmus ochrany výchozí datové části pro utajení a HMACSHA256 je AES-256-CBC pro pravosti. Hlavní klíč 512 bitů, změnit každých 90 dní, slouží k dvě dílčí klíče používané pro tyto algoritmy na základě za datové odvozena. V tématu [podklíčů odvození](xref:security/data-protection/implementation/subkeyderivation#additional-authenticated-data-and-subkey-derivation) Další informace.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 * [Rozšiřitelnost správy klíčů](xref:security/data-protection/extensibility/key-management)

@@ -2,20 +2,16 @@
 title: Microsoft.AspNetCore.All metapackage pro technologii ASP.NET 2.0 jádra a novější
 author: Rick-Anderson
 description: Microsoft.AspNetCore.All metapackage zahrnuje všechny podporované balíčků ASP.NET Core a Entity Framework Core, spolu s jejich závislosti.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/20/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: fbb76f41f3178ddc4e51faa14edece1869a30cd0
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 2fddc59d74dce4b114b5b4ed0646f773eb66ffb9
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729074"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277806"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>Microsoft.AspNetCore.All metapackage pro technologii ASP.NET 2.0 jádra
 

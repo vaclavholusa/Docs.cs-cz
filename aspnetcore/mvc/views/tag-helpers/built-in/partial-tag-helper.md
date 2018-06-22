@@ -2,21 +2,17 @@
 title: Pomocník částečné značky ASP.NET Core
 author: scottaddie
 description: Zjistit pomocná částečné značky ASP.NET Core a roli každý z jeho atributy hrát v vykreslení částečného zobrazení.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 04/13/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: 786c333980db89a9a5a60dc70c0bd1998ca159cd
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: fea84621f185c4113147cf0dfd173704bc7b6d81
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33962591"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274398"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>Pomocník částečné značky ASP.NET Core
 

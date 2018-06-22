@@ -2,20 +2,16 @@
 title: Hostitel v ASP.NET Core
 author: guardrex
 description: Další informace o ASP.NET Core webového hostitele a obecné hostitele .NET, které jsou zodpovědní za správu spuštění a životního cyklu aplikací.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/host/index
-ms.openlocfilehash: 7f8ccff7e3da93d6e617505ac93fafc3a82ed880
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 365c679e789c07818c6eb007f40f6aef43b82c44
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252006"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276614"
 ---
 # <a name="host-in-aspnet-core"></a>Hostitel v ASP.NET Core
 

@@ -2,20 +2,16 @@
 title: Migrace z ověřování členství technologie ASP.NET na ASP.NET Core 2.0 Identity
 author: isaac2004
 description: Zjistěte, jak migrovat existující aplikace ASP.NET pomocí ověřování členství ASP.NET Core 2.0 identitě.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 04/24/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/proper-to-2x/membership-to-core-identity
-ms.openlocfilehash: f0d1099bfda01d036831350e0888ae3830ad3d58
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 3ec22713997a74b587ef5d18e71a28668a5481e2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851597"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274102"
 ---
 # <a name="migrate-from-aspnet-membership-authentication-to-aspnet-core-20-identity"></a>Migrace z ověřování členství technologie ASP.NET na ASP.NET Core 2.0 Identity
 
@@ -42,7 +38,7 @@ Nejrychlejší způsob, jak zobrazit schématu pro ASP.NET Core 2.0 Identity je 
 
 * Select **File** > **New** > **Project**.
 * Vytvořte novou **webové aplikace ASP.NET Core**a název projektu *CoreIdentitySample*.
-* Vyberte **technologii ASP.NET 2.0 základní** v rozevírací nabídce a potom vyberte **webové aplikace**. Tato šablona vytvoří [stránky Razor](xref:mvc/razor-pages/index) aplikace. Před kliknutím na tlačítko **OK**, klikněte na tlačítko **změna ověřování**.
+* Vyberte **technologii ASP.NET 2.0 základní** v rozevírací nabídce a potom vyberte **webové aplikace**. Tato šablona vytvoří [stránky Razor](xref:razor-pages/index) aplikace. Před kliknutím na tlačítko **OK**, klikněte na tlačítko **změna ověřování**.
 * Zvolte **jednotlivé uživatelské účty** pro šablony Identity. Nakonec klikněte na **OK**, pak **OK**. Visual Studio vytvoří projekt pomocí ASP.NET Core Identity šablony.
 
 Základní technologii ASP.NET 2.0 Identity používá [Entity Framework Core](/ef/core) pro interakci s databází ukládání dat ověřování. Aby nově vytvořené aplikace pro práci je potřeba pro uložení dat této databáze. Po vytvoření nové aplikace, je vytvořit databázi pomocí Entity Framework migrace nejrychlejší způsob, jak zkontrolovat na schéma v prostředí s databáze. Tento proces vytvoří databázi, buď místně nebo jinde, která napodobuje schéma této. Předchozí dokumentaci pro další informace.

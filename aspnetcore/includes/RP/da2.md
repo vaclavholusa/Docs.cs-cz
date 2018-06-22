@@ -19,7 +19,7 @@ Přejděte na stránkách nebo filmy a najeďte myší **upravit** odkaz zobraz�
 
 [!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
 
-[Pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) umožňují, aby se kód na straně serveru v souborech Razor podílel na vytváření a vykreslování prvků HTML. V předchozí kód `AnchorTagHelper` dynamicky vygeneruje HTML `href` hodnotu atributu ze stránky Razor (trasy, která je relativní), `asp-page`a id trasy (`asp-route-id`). V tématu [generování adresy URL pro stránky](xref:mvc/razor-pages/index#url-generation-for-pages) Další informace.
+[Pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) umožňují, aby se kód na straně serveru v souborech Razor podílel na vytváření a vykreslování prvků HTML. V předchozí kód `AnchorTagHelper` dynamicky vygeneruje HTML `href` hodnotu atributu ze stránky Razor (trasy, která je relativní), `asp-page`a id trasy (`asp-route-id`). V tématu [generování adresy URL pro stránky](xref:razor-pages/index#url-generation-for-pages) Další informace.
 
 Použití **zobrazit zdroj** z oblíbeném prohlížeči prozkoumat vygenerovaný kód. Část generovaný kód jazyka HTML, je zobrazena níže:
 
@@ -31,7 +31,7 @@ Použití **zobrazit zdroj** z oblíbeném prohlížeči prozkoumat vygenerovan�
 </td>
 ```
 
-Dynamicky generované odkazy předají ID film s řetězec dotazu (například `http://localhost:5000/Movies/Details?id=2` ). 
+Dynamicky generované odkazy předají ID film s řetězec dotazu (například `http://localhost:5000/Movies/Details?id=2`).
 
 Aktualizujte úpravy, podrobnosti a odstranit stránky Razor používat šablonu trasy "{id: int}". Změňte direktivu stránky pro každou tyto stránek z `@page` k `@page "{id:int}"`. Spusťte aplikaci a zobrazte zdroj. Generovaný kód HTML přidá ID část adresy obsahující cestu adresy URL:
 

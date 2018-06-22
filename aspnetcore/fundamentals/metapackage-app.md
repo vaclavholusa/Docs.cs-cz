@@ -2,20 +2,16 @@
 title: Microsoft.AspNetCore.App metapackage pro ASP.NET Core 2.1 a novější
 author: Rick-Anderson
 description: Microsoft.AspNetCore.App metapackage zahrnuje všechny podporované balíčků ASP.NET Core a Entity Framework Core.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: 7c7f69a6176d3f7982a67106cb823ff42200b50e
-ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
+ms.openlocfilehash: 4840d0a7536b1e9d8da835690b285ac2074967f5
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34306618"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277469"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>Microsoft.AspNetCore.App metapackage pro ASP.NET Core 2.1
 
@@ -63,5 +59,11 @@ Implicitní verze je nastaveno na `major.minor.0` pro přenosné aplikace. Mecha
 Zadání číslo verze na `Microsoft.AspNetCore.App` nemá odkaz na **není** zaručit, že tato verze sdílený framework nastavení bude vybrána. Předpokládejme například, je určená verze "2.1.1", ale je nainstalována "2.1.3". V takovém případě aplikace bude používat "2.1.3". I když není doporučeno, můžete zakázat dopředné posunutí (opravy a/nebo menší). Další informace o hostiteli dotnet úplné dopředné a postup konfigurace své chování najdete v tématu [dotnet hostitele dopředné posunutí](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
 
 `Microsoft.AspNetCore.App` [Metapackage](/dotnet/core/packages#metapackages) není tradiční balíček, který je aktualizována z NuGet. Podobně jako `Microsoft.NETCore.App`, `Microsoft.AspNetCore.App` představuje sdílený modul runtime, který se má zpracovat mimo NuGet sémantiku speciální správu verzí. Další informace najdete v tématu [balíčky, metapackages a architektur](/dotnet/core/packages).
+
+`<Project Sdk` musí být nastavena na `Microsoft.NET.Sdk.Web` použití implicitní verze `Microsoft.AspNetCore.App`.  Když `<Project Sdk="Microsoft.NET.Sdk">` se používá, jsou generovány následující upozornění:
+
+*Upozornění NU1604: Závislosti projektu Microsoft.AspNetCore.App neobsahuje (včetně). dolní mez. Zahrňte dolní hranice verze závislosti zajistit obnovení konzistentní výsledky.*
+
+*Upozornění NU1602: [Název projektu] neposkytuje pro závislosti Microsoft.AspNetCore.App (včetně). dolní mez. Přibližná nejlepší shody třídy Microsoft.AspNetCore.App 2.1.0 byl vyřešen.*
 
 Pokud vaše aplikace už dřív použili `Microsoft.AspNetCore.All`, najdete v části [migrace z Microsoft.AspNetCore.All na Microsoft.AspNetCore.App](xref:fundamentals/metapackage#migrate).

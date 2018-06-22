@@ -2,20 +2,16 @@
 title: Pomocník značka ukotvení ASP.NET Core
 author: pkellner
 description: Zjistit ASP.NET pomocné rutiny značka ukotvení základní atributy a roli, kterou každý atribut hraje v rozšíření chování značky HTML anchor.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 01/31/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 31ff62b6bedb5e577a51f341c89d241d06a83ad3
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6bdf71eaf38f134cb15b5950d2cae6ab67f861a4
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30899405"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273881"
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a>Pomocník značka ukotvení ASP.NET Core
 
@@ -65,7 +61,7 @@ Pokud žádné `asp-controller` atribut je určena, bude použita výchozí kont
 
 Pokud `asp-action` hodnota atributu je `Index`, pak žádná akce je připojena k adrese URL, vedoucí k vyvolání výchozí `Index` akce. Akce zadané (nebo uvedena), musí existovat v kontroleru, kterou se odkazuje v `asp-controller`.
 
-## <a name="asp-route-value"></a>asp-route-{value}
+## <a name="asp-route-value"></a>ASP - trasy-{value}
 
 [Asp - trasy-{value}](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.routevalues) atribut umožňuje předponu trasy zástupný znak. Všechny hodnoty zabírá `{value}` zástupný symbol interpretována jako potenciální parametr trasy. Pokud není nalezen výchozí trasu, připojí se tato předpona trasy k vygenerovaného `href` atribut jako parametr žádosti a hodnotu. Jinak je nahrazena v šabloně trasy.
 
@@ -137,7 +133,7 @@ Pomocník značka ukotvení vytváří trasu přímo k této akci kontroleru pom
 
 Pokud `asp-controller` nebo `asp-action` je zadán kromě `asp-route`, postupu generované nemusí být očekávat. Aby nedošlo ke konfliktu trasy `asp-route` by neměl být použit s `asp-controller` a `asp-action` atributy.
 
-## <a name="asp-all-route-data"></a>asp-all-route-data
+## <a name="asp-all-route-data"></a>ASP všechny trasy dat
 
 [Asp všechny trasy dat](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.routevalues) atribut podporuje vytváření slovník páry klíč hodnota. Klíč je název parametru a hodnota je hodnota parametru.
 
@@ -157,7 +153,7 @@ Předchozí kód generuje následující HTML:
 
 Pokud se ve slovníku všechny klíče shodují parametry trasy, tyto hodnoty jsou nahrazena v postupu podle potřeby. Neodpovídající hodnoty jsou generovány jako parametry žádosti.
 
-## <a name="asp-fragment"></a>asp-fragment
+## <a name="asp-fragment"></a>ASP fragment
 
 [Asp fragment](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.fragment) atribut definuje fragment adresy URL pro připojení k adrese URL. Pomocník značka ukotvení přidá znak hash (#). Vezměte v úvahu následující kód:
 
@@ -171,7 +167,7 @@ Generovaný kód HTML:
 
 Hodnota hash značky jsou užitečné při vytváření aplikace na straně klienta. Mohou být použity pro snadné označování a hledání v jazyce JavaScript, třeba.
 
-## <a name="asp-area"></a>asp-area
+## <a name="asp-area"></a>oblasti ASP
 
 [Asp oblasti](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.area) atribut nastaví název oblasti, použije se k nastavení odpovídající trasy. Následující příklad znázorňuje, jak atribut oblasti způsobí přemapování trasy. Nastavení `asp-area` na "Blogy" předpony adresáři *oblasti nebo blogy* pro trasy přidružené kontrolery a zobrazení pro tuto značku ukotvení.
 
@@ -201,7 +197,7 @@ Generovaný kód HTML:
 > [!TIP]
 > Pro oblasti pro práci v aplikaci MVC musí šablona trasy obsahovat odkaz na oblasti, pokud existuje. Tato šablona je reprezentována druhý parametr `routes.MapRoute` volání metody *Startup.Configure*: [!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=5)]
 
-## <a name="asp-protocol"></a>asp-protocol
+## <a name="asp-protocol"></a>protokol ASP
 
 [Asp protokol](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.protocol) atribut je pro zadání protokol (například `https`) v svoji adresu URL. Příklad:
 
@@ -215,7 +211,7 @@ Generovaný kód HTML:
 
 Název hostitele v příkladu je localhost, ale pomocný značka ukotvení používá webu veřejné domény při generování adresy URL.
 
-## <a name="asp-host"></a>asp-host
+## <a name="asp-host"></a>ASP hostitele
 
 [Asp hostitele](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.host) atribut je pro zadání názvu hostitele v svoji adresu URL. Příklad:
 
@@ -251,7 +247,7 @@ Generovaný kód HTML:
 <a href="/Attendee?attendeeid=10">View Attendee</a>
 ```
 
-## <a name="asp-page-handler"></a>asp-page-handler
+## <a name="asp-page-handler"></a>rutina stránky ASP
 
 [Rutina stránky asp](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.pagehandler) atribut se používá s stránky Razor. Je určený pro propojení na konkrétní stránky obslužné rutiny.
 
@@ -272,4 +268,4 @@ Generovaný kód HTML:
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Oblasti](xref:mvc/controllers/areas)
-* [Úvod do stránky Razor](xref:mvc/razor-pages/index)
+* [Úvod do stránky Razor](xref:razor-pages/index)

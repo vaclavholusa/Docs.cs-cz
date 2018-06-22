@@ -2,19 +2,15 @@
 title: Stránky Razor Entity Framework základní v ASP.NET Core - kurz 1 8
 author: rick-anderson
 description: Ukazuje, jak vytvořit aplikaci stránky Razor pomocí Entity Framework Core
-manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: d7cf4740f31f1e0ae56461efc4c1b3d91238270f
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: cadf36f4e1ff3776ad4139e1d7c4e9b73687bc5c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35726014"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279227"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Stránky Razor Entity Framework základní v ASP.NET Core - kurz 1 8
 
@@ -30,7 +26,7 @@ Ukázková aplikace je web pro fiktivní vysoké školy Contoso. Obsahuje funkce
 
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-Znalost [stránky Razor](xref:mvc/razor-pages/index). By se měla dokončit programátory [začít pracovat s stránky Razor](xref:tutorials/razor-pages/razor-pages-start) před zahájením této série.
+Znalost [stránky Razor](xref:razor-pages/index). By se měla dokončit programátory [začít pracovat s stránky Razor](xref:tutorials/razor-pages/razor-pages-start) před zahájením této série.
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
@@ -57,7 +53,7 @@ Styl uživatelského rozhraní této lokality je blízko co je generován integr
 * Vytvořte novou webovou aplikaci ASP.NET Core. Název projektu **ContosoUniversity**. Je třeba název projektu *ContosoUniversity* tak shoda s obory názvů, pokud kód je zkopírované a vložené.
  ![nové webové aplikace ASP.NET Core](intro/_static/np.png)
 * Vyberte **technologii ASP.NET 2.0 základní** v rozevírací nabídce a potom vyberte **webové aplikace**.
- ![Webové aplikace (stránky Razor)](../../mvc/razor-pages/index/_static/np2.png)
+ ![Webové aplikace (stránky Razor)](../../razor-pages/index/_static/np2.png)
 
 Stiskněte klávesu **F5** a spusťte aplikaci v režimu ladění nebo **Ctrl + F5** běžet bez připojení ladicího programu
 

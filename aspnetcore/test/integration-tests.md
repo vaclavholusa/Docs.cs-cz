@@ -2,20 +2,16 @@
 title: Integrace testů v ASP.NET Core
 author: guardrex
 description: Zjistěte, jak integrace testy ujistit, že součásti aplikace správně fungovat na úrovni infrastruktury, včetně databáze, systém souborů a sítě.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: test/integration-tests
-ms.openlocfilehash: a402c3f5f6a75917eba4058e6cc6926f25b214d4
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 1895b06f1af9a9eb66c14aa5c7834497fc95d583
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734718"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277693"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>Integrace testů v ASP.NET Core
 
@@ -29,9 +25,9 @@ Toto téma předpokládá základní znalosti o testování částí. Je-li obez
 
 Ukázková aplikace je aplikace stránky Razor a předpokládá základní znalosti o stránky Razor. Je-li obeznámeni s stránky Razor, najdete v následujících tématech:
 
-* [Úvod do stránky Razor](xref:mvc/razor-pages/index)
+* [Úvod do stránky Razor](xref:razor-pages/index)
 * [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
-* [Testování částí stránky Razor](xref:test/razor-pages-tests)
+* [Testy jednotek stránek Razor](xref:test/razor-pages-tests)
 
 ## <a name="introduction-to-integration-tests"></a>Úvod do integrace testů
 
@@ -314,6 +310,6 @@ Ukázková aplikace doplňuje pro databázi s tří zpráv *Utilities.cs* , test
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Testy jednotek](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [Testování částí stránky Razor](xref:test/razor-pages-tests)
+* [Testy jednotek stránek Razor](xref:test/razor-pages-tests)
 * [Middleware](xref:fundamentals/middleware/index)
 * [Testovací kontrolery](xref:mvc/controllers/testing)

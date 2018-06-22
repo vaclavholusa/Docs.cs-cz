@@ -2,18 +2,15 @@
 title: Testování řadiče logiku v ASP.NET Core
 author: ardalis
 description: Zjistěte, jak otestovat řadiče logiku v ASP.NET Core s Moq a xUnit.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/controllers/testing
-ms.openlocfilehash: 51b7a02c697807c9e3504b70f89370126ee0e781
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: fc5f10b4d5947a6af114bf00f8b1d955b083a44d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273920"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>Testování řadiče logiku v ASP.NET Core
 
@@ -74,7 +71,7 @@ Druhý test ověřuje, že když `ModelState` je platný, nový `BrainstormSessi
 
 Jiný řadič v aplikaci zobrazí informace týkající se konkrétní Debata relace. Obsahuje některé logiku pro řeší neplatné id hodnoty:
 
-[!code-csharp[](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
 
 Akce kontroleru má tři případech chcete otestovat, jeden pro každou `return` příkaz:
 
@@ -100,7 +97,7 @@ Poslední test ověřuje, že v úložišti `Update` metoda je volána. Jako jsm
 
 ## <a name="integration-testing"></a>Testování integrace
 
-[Integrace testy](../../testing/integration-testing.md) slouží k zajištění samostatné moduly v práci aplikace správně společně. Obecně platí nic, co můžete otestovat s testů jednotek, můžete také otestovat s test integrace, ale naopak není pravda. Ale integrace testů jsou obvykle mnohem nižší než testování částí. Proto je nejvhodnější pro testování ať můžete pomocí jednotkových testů a použít integrace testy pro scénáře, které zahrnují více spolupracovníci.
+[Integrace testy](xref:test/integration-tests) slouží k zajištění samostatné moduly v práci aplikace správně společně. Obecně platí nic, co můžete otestovat s testů jednotek, můžete také otestovat s test integrace, ale naopak není pravda. Ale integrace testů jsou obvykle mnohem nižší než testování částí. Proto je nejvhodnější pro testování ať můžete pomocí jednotkových testů a použít integrace testy pro scénáře, které zahrnují více spolupracovníci.
 
 I když může být stále užitečné, se v testech integrace zřídka používají mock objektů. V jednotce testování jsou mock objektů efektivní způsob, jak řídit chování spolupracovníci mimo jednotky během testování pro testovací účely. V test integrace skutečné spolupracovníci používají a ověřte, zda že celý subsystému společně správně funguje.
 

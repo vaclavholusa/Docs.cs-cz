@@ -2,19 +2,15 @@
 title: Rozšiřitelnost základní kryptografie v ASP.NET Core
 author: rick-anderson
 description: Další informace o IAuthenticatedEncryptor, IAuthenticatedEncryptorDescriptor, IAuthenticatedEncryptorDescriptorDeserializer a objektu pro vytváření nejvyšší úrovně.
-manager: wpickett
 ms.author: riande
 ms.date: 8/11/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: b5a0dbc9120a8032dbb8d8eee74684495a982ac1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 47432cfefe0a52c9f815d717f7269ec68fdb6af3
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30896823"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272893"
 ---
 # <a name="core-cryptography-extensibility-in-aspnet-core"></a>Rozšiřitelnost základní kryptografie v ASP.NET Core
 
@@ -72,7 +68,7 @@ byte[] roundTripped = encryptor2.Decrypt(new ArraySegment<byte>(ciphertext), aad
 // the 'roundTripped' and 'plaintext' buffers should be equivalent
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 **IAuthenticatedEncryptorDescriptor** rozhraní představuje typ, který umí vytvořit [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instance. Jejího rozhraní API je následující.
 
@@ -112,7 +108,7 @@ byte[] roundTripped = encryptor2.Decrypt(new ArraySegment<byte>(ciphertext), aad
 
 * ExportToXml(): XmlSerializedDescriptorInfo
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ---
 
@@ -164,7 +160,7 @@ Když je volána CreateNewDescriptor, výhradně pro toto volání se vytvoří 
 
 Typ AlgorithmConfiguration slouží jako vstupní bod pro vytvoření klíče rutiny jako [automatické klíč vrácení](xref:security/data-protection/implementation/key-management#key-expiration-and-rolling). Chcete-li změnit implementaci pro všechny budoucí klíče, nastavte vlastnost AuthenticatedEncryptorConfiguration v KeyManagementOptions.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 **IAuthenticatedEncryptorConfiguration** rozhraní představuje typ, který umí vytvořit [IAuthenticatedEncryptorDescriptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor) instance. Zpřístupňuje jediného rozhraní API.
 

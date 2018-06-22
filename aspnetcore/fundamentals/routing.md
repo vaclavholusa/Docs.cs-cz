@@ -2,19 +2,15 @@
 title: Směrování v ASP.NET Core
 author: ardalis
 description: Zjistit, jak je zodpovědná za mapování příchozího požadavku na obslužnou rutinu trasy funkci směrování ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: a23e2e1a1dd25a57e5d6189bbd5938c48078515b
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: 0bb62cad0dcf54d593171d6a40eb1510a88eb6b3
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341779"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274892"
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -285,6 +281,16 @@ Následující tabulka ukazuje některé šablony trasy a jejich chování.
 Pomocí šablony je obecně nejjednodušším přístupem při směrování. Omezení a výchozí nastavení můžete také uvést mimo šablonu trasy.
 
 Tip: Povolit [protokolování](xref:fundamentals/logging/index) zobrazíte jak součástí směrování implementace, jako například `Route`, shodovat s požadavky.
+
+## <a name="reserved-routing-names"></a>Názvy vyhrazené směrování
+
+Následující klíčová slova jsou názvy vyhrazené a nelze použít jako názvy tras nebo parametry:
+
+* `action`
+* `area`
+* `controller`
+* `handler`
+* `page`
 
 ## <a name="route-constraint-reference"></a>Odkaz na omezení trasy
 

@@ -2,18 +2,15 @@
 title: Přehled ASP.NET Core MVC
 author: ardalis
 description: Zjistěte, jak je bohaté rozhraní pro vytváření webových aplikací ASP.NET MVC jádra a rozhraní API pomocí Model-View-Controller návrh vzor.
-manager: wpickett
 ms.author: riande
 ms.date: 01/08/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/overview
-ms.openlocfilehash: 1cf48499d3bc0ba63e2f0667740668fad0b13c28
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: aca34f91e8c7efaa34263ddf830b1662a2518969
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272589"
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Přehled ASP.NET Core MVC
 
@@ -191,7 +188,7 @@ Povolení podpory pro hypermédií pomocí generování odkazů. Snadno povolit 
 
 ### <a name="testability"></a>Možnosti testování
 
-Použití rozhraní framework rozhraní a vkládání závislostí proveďte ho vhodným testování částí a funkcí (např. TestHost a InMemory zprostředkovatele Entity Framework), které zahrnuje rozhraní [integrace testy](../testing/integration-testing.md) rychlý a snadno také. Další informace o [testování řadiče logiku](controllers/testing.md).
+Použití rozhraní framework rozhraní a vkládání závislostí proveďte ho vhodným testování částí a funkcí (např. TestHost a InMemory zprostředkovatele Entity Framework), které zahrnuje rozhraní [integrace testy](xref:test/integration-tests) rychlý a snadno také. Další informace o [testování řadiče logiku](controllers/testing.md).
 
 ### <a name="razor-view-engine"></a>Zobrazovací modul Razor
 

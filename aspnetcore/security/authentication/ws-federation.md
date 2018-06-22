@@ -2,20 +2,16 @@
 title: Ověřuje uživatele pomocí protokolu WS-Federation v ASP.NET Core
 author: chlowell
 description: Tento kurz ukazuje, jak používat v aplikaci ASP.NET Core WS-Federation.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/27/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/ws-federation
-ms.openlocfilehash: d4621c7b97678903b9f2562e353da3883334b599
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 55504ed28cf8ef1095bf16c101c09a6f374f038c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30898801"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277436"
 ---
 # <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>Ověřuje uživatele pomocí protokolu WS-Federation v ASP.NET Core
 
@@ -26,7 +22,7 @@ Pro aplikace ASP.NET Core 2.0 WS-Federation podpora je k dispozici ve [Microsoft
 Ve výchozím nastavení nové middleware:
 
 * Neumožňuje nevyžádané přihlášení. Tato funkce protokolu WS-Federation je ohrožena útoky XSRF. Ale lze je aktivovat pomocí `AllowUnsolicitedLogins` možnost.
-* Neohlásí každých post formuláře pro přihlašování zprávy. Jenom žádosti `CallbackPath` zkontrolují sign in `CallbackPath` výchozí `/signin-wsfed` lze ji však změnit. Tato cesta je možné sdílet s dalších zprostředkovatelů ověřování povolením `SkipUnrecognizedRequests` možnost.
+* Neohlásí každých post formuláře pro přihlašování zprávy. Pouze žádosti `CallbackPath` zkontrolují sign in `CallbackPath` výchozí `/signin-wsfed` lze ji však změnit prostřednictvím zděděnou [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) vlastnost [ WsFederationOptions](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions) třídy. Tato cesta je možné sdílet s dalších zprostředkovatelů ověřování povolením [SkipUnrecognizedRequests](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions.skipunrecognizedrequests) možnost.
 
 ## <a name="register-the-app-with-active-directory"></a>Zaregistrovat aplikaci služby Active Directory
 
@@ -78,7 +74,7 @@ Ve výchozím nastavení nové middleware:
 
 * Klikněte na tlačítko **koncové body** a poznamenejte si **dokument federačních metadat** adresy URL. Toto je WS-Federation middleware `MetadataAddress`:
 
-![Azure Active Directory: Endpoints](ws-federation/_static/AadFederationMetadataDocument.png)
+![Azure Active Directory: koncové body](ws-federation/_static/AadFederationMetadataDocument.png)
 
 * Přejděte do nové aplikace registrace. Klikněte na tlačítko **nastavení** > **vlastnosti** a poznamenejte si **identifikátor ID URI aplikace**. Toto je WS-Federation middleware `Wtrealm`:
 

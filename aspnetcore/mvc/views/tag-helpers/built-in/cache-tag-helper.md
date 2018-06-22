@@ -2,19 +2,15 @@
 title: Značka Pomocník jádro ASP.NET MVC do mezipaměti
 author: pkellner
 description: Ukazuje, jak pracovat s pomocná značky mezipaměti
-manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 6f19a989c9bdfddea7609c5571cdd49de29e036b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 969716e21211513053f52049368a0a7190ffba47
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30898749"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276549"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Značka Pomocník jádro ASP.NET MVC do mezipaměti
 
@@ -59,7 +55,7 @@ Příklad:
 
 - - -
 
-### <a name="expires-on"></a>expires-on 
+### <a name="expires-on"></a>vyprší dne 
 
 | Typ atributu |           Příklad hodnoty            |
 |----------------|------------------------------------|
@@ -77,11 +73,11 @@ Příklad:
 
 - - -
 
-### <a name="expires-after"></a>expires-after
+### <a name="expires-after"></a>Po vypršení platnosti
 
 | Typ atributu |        Příklad hodnoty         |
 |----------------|------------------------------|
-|    TimeSpan    | "@TimeSpan.FromSeconds(120)" |
+|    Časový interval    | "@TimeSpan.FromSeconds(120)" |
 
 Nastaví dobu od prvního požadavku pro ukládání do mezipaměti obsah. 
 
@@ -95,11 +91,11 @@ Příklad:
 
 - - -
 
-### <a name="expires-sliding"></a>expires-sliding
+### <a name="expires-sliding"></a>klouzavé vypršení platnosti
 
 | Typ atributu |        Příklad hodnoty        |
 |----------------|-----------------------------|
-|    TimeSpan    | "@TimeSpan.FromSeconds(60)" |
+|    Časový interval    | "@TimeSpan.FromSeconds(60)" |
 
 Nastaví dobu, která by měla být vyřazena položku mezipaměti, pokud není přístup.
 
@@ -182,7 +178,7 @@ routes.MapRoute(
 
 | Typ atributu    | Příklad hodnoty                |
 |----------------   |----------------               |
-| String            | ".AspNetCore.Identity.Application"                |
+| String            | ". AspNetCore.Identity.Application"                |
 |                   | ". AspNetCore.Identity.Application,HairColor" |
 
 Přijme jeden záhlaví hodnotu nebo seznam hodnot hlavičky, které aktivují aktualizace mezipaměti, pokud se změní (s) hodnoty hlavičky oddělené čárkami. V následujícím příkladu vypadá v souboru cookie přidruženého ASP.NET Identity. Když je uživatel ověřen žádosti soubor cookie nastavit který aktivuje aktualizace mezipaměti.
@@ -280,5 +276,5 @@ Pomocník značky mezipaměti je závislá na [služby mezipaměti paměti](xref
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Mezipaměti v paměti](xref:performance/caching/memory)
+* [Mezipaměť v paměti](xref:performance/caching/memory)
 * [Úvod do systému Identity](xref:security/authentication/identity)

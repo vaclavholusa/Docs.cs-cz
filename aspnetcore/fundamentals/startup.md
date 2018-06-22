@@ -2,20 +2,16 @@
 title: Spuštění aplikace v ASP.NET Core
 author: ardalis
 description: Zjistit, jak třída při spuštění v ASP.NET Core nakonfiguruje služby a aplikace požadavku kanálu.
-manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: 58ced0ae11f462bc309526b7db7bda7897c33009
-ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
+ms.openlocfilehash: 75d5331ce665927b978472dc9eba29de86ce635f
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "34233167"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272958"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 

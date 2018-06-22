@@ -2,20 +2,16 @@
 title: Zabránit webů požadavku padělání (XSRF/proti útokům CSRF) před útoky v ASP.NET Core
 author: steve-smith
 description: Zjistit, jak zabránit útoky na webové aplikace, kde můžete škodlivou webovou stránku ovlivnit interakce mezi prohlížeče klienta a aplikace.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 03/19/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: 3bca96f4a2e247eeeb93140df93221371d88d4d3
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: a00bd4ff4b265a19766e54e6ad6b97b870df56c5
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341857"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279594"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Zabránit webů požadavku padělání (XSRF/proti útokům CSRF) před útoky v ASP.NET Core
 
@@ -138,7 +134,7 @@ Je možné zakázat automatické generování antiforgery tokeny pro prvků form
   ```
 
 > [!NOTE]
-> [Stránky Razor](xref:mvc/razor-pages/index) jsou automaticky chráněny před XSRF nebo proti útokům CSRF. Další informace najdete v tématu [XSRF/proti útokům CSRF a stránky Razor](xref:mvc/razor-pages/index#xsrf).
+> [Stránky Razor](xref:razor-pages/index) jsou automaticky chráněny před XSRF nebo proti útokům CSRF. Další informace najdete v tématu [XSRF/proti útokům CSRF a stránky Razor](xref:razor-pages/index#xsrf).
 
 Nejběžnější přístupem k obraně proti útokům proti útokům CSRF je použití *tokenu vzor synchronizátor* (STP). STP se používá, když uživatel požádá o stránku s dat formuláře:
 

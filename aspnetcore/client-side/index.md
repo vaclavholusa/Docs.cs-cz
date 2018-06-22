@@ -2,19 +2,15 @@
 title: Vývoj pro klienta v ASP.NET Core
 author: rick-anderson
 description: ''
-manager: wpickett
 ms.author: riande
 ms.date: 02/21/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/index
-ms.openlocfilehash: a4b42f7f4de07351e4e9a48ebc59bab2f187cedd
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 5c4efc0e3c29d9b55fbaf5d0d6bf79b4318015e2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2018
-ms.locfileid: "29526402"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278476"
 ---
 # <a name="client-side-development-in-aspnet-core"></a>Vývoj pro klienta v ASP.NET Core
 
@@ -27,7 +23,7 @@ ms.locfileid: "29526402"
 - [TypeScript](https://www.typescriptlang.org/docs/handbook/asp-net-core.html)
 - [Použití funkce Browser Link](xref:client-side/using-browserlink)
 - [Použití služeb JavaScriptServices pro jednostránkové aplikace (SPA)](xref:client-side/spa-services)
-- [Použití šablon projektu SPA](xref:spa/index)
+- [Použití projektových šablon SPA](xref:spa/index)
     - [Šablona projektu Angular](xref:spa/angular)
     - [Šablona projektu React](xref:spa/react)
     - [Šablona projektu React with Redux](xref:spa/react-with-redux)

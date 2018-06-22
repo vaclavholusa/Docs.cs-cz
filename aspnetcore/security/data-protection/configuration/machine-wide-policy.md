@@ -2,19 +2,15 @@
 title: Podpora zásad celého systému ochrany dat v ASP.NET Core
 author: rick-anderson
 description: Další informace o podpoře pro nastavení zásad celého systému výchozí pro všechny aplikace, které využívají ochranu dat ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: c2d5760cd18f4e3ecaf0261f36414c9298e3f4c5
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 70aaca7afcd3df22cebb4466fbd9845a2277688c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30076959"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275185"
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>Podpora zásad celého systému ochrany dat v ASP.NET Core
 

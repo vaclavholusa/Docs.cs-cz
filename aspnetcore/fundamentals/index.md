@@ -2,20 +2,16 @@
 title: Základy ASP.NET Core
 author: rick-anderson
 description: Zjistit základní koncepty pro vytváření aplikací ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/30/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 97c0b289b259332d57f8175e05020fe03d505723
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: b51d7b62525944d9924ecb4ce5964312f30a7835
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233307"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278866"
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
@@ -78,7 +74,7 @@ Další informace najdete v tématu [spuštění aplikace](xref:fundamentals/sta
 
 ## <a name="content-root"></a>Obsah kořenové
 
-Kořenu obsahu je základní cesta k žádný obsah používané aplikace, jako je například zobrazení, [stránky Razor](xref:mvc/razor-pages/index)a statické prostředky. Ve výchozím nastavení kořenu obsahu je stejný jako základní cesta aplikace pro spustitelný soubor, který je hostitelem aplikace.
+Kořenu obsahu je základní cesta k žádný obsah používané aplikace, jako je například zobrazení, [stránky Razor](xref:razor-pages/index)a statické prostředky. Ve výchozím nastavení kořenu obsahu je stejný jako základní cesta aplikace pro spustitelný soubor, který je hostitelem aplikace.
 
 ## <a name="web-root"></a>Kořenový web
 
@@ -106,9 +102,13 @@ ASP.NET Core obsahuje bohatou sadu předdefinovaných middleware:
 
 Další informace najdete v tématu [Middleware](xref:fundamentals/middleware/index) a [Open Web Interface pro .NET (OWIN)](xref:fundamentals/owin).
 
+::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="initiate-http-requests"></a>Inicializace požadavků HTTP
 
 Informace o používání `IHttpClientFactory` pro přístup k `HttpClient` instancí, aby požadavky HTTP, najdete v části [požadavky HTTP zahájit](xref:fundamentals/http-requests).
+
+::: moniker-end
 
 ## <a name="environments"></a>Prostředí
 
@@ -126,7 +126,7 @@ Další informace najdete v tématu [konfigurace](xref:fundamentals/configuratio
 
 Jádro ASP.NET podporuje protokolování rozhraní API, která funguje s různými zprostředkovatelů protokolování. Předdefinované zprostředkovatele podporovat odesílání protokoly na jeden nebo více míst. Můžete použít rozhraní protokolování třetích stran.
 
-[Protokolování](xref:fundamentals/logging/index)
+Další informace najdete v tématu [protokolování](xref:fundamentals/logging/index)
 
 ## <a name="error-handling"></a>Zpracování chyb
 
@@ -158,11 +158,11 @@ Aplikace ASP.NET Core nakonfigurovat a spustit *hostitele*, která je zodpovědn
 
 Další informace najdete v tématu [hostitele v ASP.NET Core](xref:fundamentals/host/index).
 
-## <a name="session-and-application-state"></a>Stav relace a aplikace
+## <a name="session-and-app-state"></a>Stav relace a aplikace
 
-Stav relace je funkce v ASP.NET Core, který můžete použít k ukládání a uchovávání dat uživatele, když uživatel prohlíží vaší webové aplikace.
+ASP.NET Core nabízí několik přístupů k zachování stavu relace a aplikace, když uživatel prohlíží webovou aplikaci.
 
-Další informace najdete v tématu [relace a stav aplikace](xref:fundamentals/app-state).
+Další informace najdete v tématu [stavu relace a aplikace](xref:fundamentals/app-state).
 
 ## <a name="servers"></a>Servery
 

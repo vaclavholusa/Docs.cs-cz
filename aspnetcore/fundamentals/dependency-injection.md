@@ -2,19 +2,16 @@
 title: Vkládání závislostí v ASP.NET Core
 author: ardalis
 description: Zjistěte, jak ASP.NET Core implementuje vkládání závislostí a způsobu jeho použití.
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 067d9bd09f6d5e54bbafd953eea169d2df2be34e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 04c52bd47d34cd2135753c469077b6a75ee02f86
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278450"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
@@ -245,7 +242,7 @@ Další informace najdete v tématu [obor ověření v tomto tématu webového h
 
 Žádost o služby představují služby nakonfigurovat a požadavků v rámci vaší aplikace. Pokud vašich objektů určení závislostí, tyto jsou splněna typy najít v `RequestServices`, nikoli `ApplicationServices`.
 
-Obecně byste neměli používat tyto vlastnosti přímo, upřednostňují místo toho k vyžádání typy tříd, které vyžadujete prostřednictvím konstruktoru třídy a, takže rozhraní vložit tyto závislosti. Dostaneme třídy, které se snadněji testování (najdete v části [Test a ladění](xref:testing/index)) a jsou více volně vázány.
+Obecně byste neměli používat tyto vlastnosti přímo, upřednostňují místo toho k vyžádání typy tříd, které vyžadujete prostřednictvím konstruktoru třídy a, takže rozhraní vložit tyto závislosti. Dostaneme třídy, které se snadněji testování (najdete v části [Test a ladění](xref:test/index)) a jsou více volně vázány.
 
 > [!NOTE]
 > Dáváte přednost požaduje závislosti jako parametry konstruktor přístup `RequestServices` kolekce.
@@ -361,7 +358,7 @@ Vkládání závislostí je *alternativní* na static, globální objekt příst
 * [Injektáž závislostí do kontrolerů](xref:mvc/controllers/dependency-injection)
 * [Injektáž závislostí v obslužných rutinách požadavků](xref:security/authorization/dependencyinjection)
 * [Spuštění aplikace](xref:fundamentals/startup)
-* [Testování a ladění](xref:testing/index)
+* [Testování a ladění](xref:test/index)
 * [Aktivace na základě Factory middlewaru](xref:fundamentals/middleware/extensibility)
 * [Psaní kódu vyčištění v ASP.NET Core pomocí vkládání závislostí (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Návrh aplikace spravované kontejneru, Prelude: Kde podporuje, patří kontejneru?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)

@@ -2,19 +2,15 @@
 title: Ověření na základě zobrazení v rozhraní ASP.NET MVC jádra
 author: rick-anderson
 description: Tento dokument ukazuje, jak využívat službu autorizace uvnitř zobrazení syntaxe Razor rozhraní ASP.NET Core a vložit.
-manager: wpickett
 ms.author: riande
 ms.date: 10/30/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/views
-ms.openlocfilehash: dad59a297efb4648755436fbd07742f95af97fb2
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f25bab61afc93ff14bfd9c36d95a6d2e54b06dfb
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30076630"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277807"
 ---
 # <a name="view-based-authorization-in-aspnet-core-mvc"></a>Ověření na základě zobrazení v rozhraní ASP.NET MVC jádra
 
@@ -38,7 +34,7 @@ Používat službu vloženého autorizace k vyvolání `AuthorizeAsync` v úpln�
 }
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```cshtml
 @if (await AuthorizationService.AuthorizeAsync(User, "PolicyName"))
@@ -61,7 +57,7 @@ V některých případech bude prostředek zobrazení modelu. Vyvolání `Author
 }
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```cshtml
 @if (await AuthorizationService.AuthorizeAsync(User, Model, Operations.Edit))

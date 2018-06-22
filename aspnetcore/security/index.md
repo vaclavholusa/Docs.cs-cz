@@ -2,19 +2,15 @@
 title: Přehled zabezpečení jádra ASP.NET
 author: rachelappel
 description: Další informace o ověřování, autorizaci a zabezpečení základy v ASP.NET Core.
-manager: wpickett
 ms.author: rachelap
 ms.date: 11/01/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/index
-ms.openlocfilehash: da3829b2d5ae5db1861c7423da5afc7acbee6697
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: a23d23cf1bf0503b59c6f5d962cecf89af37b4b3
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30074351"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278502"
 ---
 # <a name="overview-of-aspnet-core-security"></a>Přehled zabezpečení jádra ASP.NET
 
@@ -75,7 +71,7 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
         *   [Přehled rozhraní API příjemců](xref:security/data-protection/consumer-apis/overview)
         *   [Účelové řetězce](xref:security/data-protection/consumer-apis/purpose-strings)
         *   [Hierarchie účelů a víceklientská architektura](xref:security/data-protection/consumer-apis/purpose-strings-multitenancy)
-        *   [Hodnota hash hesla](xref:security/data-protection/consumer-apis/password-hashing)
+        *   [Určení hodnoty hash hesel](xref:security/data-protection/consumer-apis/password-hashing)
         *   [Omezení životnosti chráněných datových částí](xref:security/data-protection/consumer-apis/limited-lifetime-payloads)
         *   [Zrušení ochrany datových částí s odvolanými klíči](xref:security/data-protection/consumer-apis/dangerous-unprotect)
     *   [Konfigurace](xref:security/data-protection/configuration/index)
@@ -94,13 +90,13 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
         *   [Správa klíčů](xref:security/data-protection/implementation/key-management)
         *   [Zprostředkovatelé úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers)
         *   [Šifrování klíčů v klidovém stavu](xref:security/data-protection/implementation/key-encryption-at-rest)
-        *   [Klíče neměnitelnosti a nastavení](xref:security/data-protection/implementation/key-immutability)
+        *   [Neměnnost klíče a nastavení](xref:security/data-protection/implementation/key-immutability)
         *   [Formát ukládání klíčů](xref:security/data-protection/implementation/key-storage-format)
         *   [Zprostředkovatelé dočasné ochrany dat](xref:security/data-protection/implementation/key-storage-ephemeral)
     *   [Kompatibilita](xref:security/data-protection/compatibility/index)
         *   [Nahrazení <machineKey> v ASP.NET](xref:security/data-protection/compatibility/replacing-machinekey)
 *   [Vytvoření aplikace s uživatelskými daty chráněnými autorizací](xref:security/authorization/secure-data)
-*   [Bezpečné úložiště tajné klíče aplikace v vývoj](xref:security/app-secrets)
+*   [Bezpečné ukládání tajných kódů aplikace při vývoji](xref:security/app-secrets)
 *   [Zprostředkovatel konfigurace služby Azure Key Vault](xref:security/key-vault-configuration)
 *   [Vynucení SSL](xref:security/enforcing-ssl)
 *   [Ochrana proti padělání požadavků](xref:security/anti-request-forgery)

@@ -2,20 +2,16 @@
 title: Konvence autorizace stránky Razor v ASP.NET Core
 author: guardrex
 description: Zjistěte, jak řídit přístup k stránky s názvů autorizace uživatelů a anonymní uživatelům umožní přístup k stránky nebo složky stránek.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 10/27/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: cd1fa7957ca50db0de71f71234f84d3fbc631f45
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: 8856520bf43f2f62cc12c7e883485babdb43fb3e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341740"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272672"
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>Konvence autorizace stránky Razor v ASP.NET Core
 
@@ -40,7 +36,7 @@ Zadaná cesta je cesta modul zobrazení, která je relativní cesta stránky Raz
 ::: moniker range=">= aspnetcore-2.1"
 
 > [!NOTE]
-> `AuthorizeFilter` Lze použít pro třídu modelu stránky s `[Authorize]` atribut filtru. Další informace najdete v tématu [atribut filtru Autorizovat](xref:mvc/razor-pages/filter#authorize-filter-attribute).
+> `AuthorizeFilter` Lze použít pro třídu modelu stránky s `[Authorize]` atribut filtru. Další informace najdete v tématu [atribut filtru Autorizovat](xref:razor-pages/filter#authorize-filter-attribute).
 
 ::: moniker-end
 
@@ -90,5 +86,5 @@ Vyžadující ověření na stránce privátní nebude fungovat, protože při j
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Syntaxe Razor stránky vlastní trasy a stránka zprostředkovatele modelu](xref:mvc/razor-pages/razor-pages-conventions)
+* [Syntaxe Razor stránky vlastní trasy a stránka zprostředkovatele modelu](xref:razor-pages/razor-pages-conventions)
 * [PageConventionCollection](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection) – třída

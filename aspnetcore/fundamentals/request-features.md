@@ -2,19 +2,15 @@
 title: Žádost o funkce ASP.NET Core
 author: ardalis
 description: Další informace o webového serveru implementace podrobnosti týkající se požadavků HTTP a odpovědí, které jsou definovány v rozhraní pro ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/request-features
-ms.openlocfilehash: c79ad6001e106a3e3104b0f804a386fe8b0ee30a
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: d0f3ae521d1f314dd04cb581d9a921da4719273d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "28913569"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279490"
 ---
 # <a name="request-features-in-aspnet-core"></a>Žádost o funkce ASP.NET Core
 
@@ -26,34 +22,34 @@ Související podrobnosti implementace webového serveru na požadavky HTTP a od
 
 Definuje počet HTTP funkce rozhraní ASP.NET Core `Microsoft.AspNetCore.Http.Features` servery které se používají k identifikaci funkce podporují. Následující funkce rozhraní zpracování požadavků a odpovědí vrátit:
 
-`IHttpRequestFeature`Definuje strukturu požadavku HTTP, včetně protokolu, cesta, řetězec dotazu, hlavičky a text.
+`IHttpRequestFeature` Definuje strukturu požadavku HTTP, včetně protokolu, cesta, řetězec dotazu, hlavičky a text.
 
-`IHttpResponseFeature`Definuje strukturu odpovědi HTTP, včetně stavový kód, hlavičky a text odpovědi.
+`IHttpResponseFeature` Definuje strukturu odpovědi HTTP, včetně stavový kód, hlavičky a text odpovědi.
 
-`IHttpAuthenticationFeature`Definuje podpory identifikace uživatele na základě `ClaimsPrincipal` a zadání obslužnou rutinu ověřování.
+`IHttpAuthenticationFeature` Definuje podpory identifikace uživatele na základě `ClaimsPrincipal` a zadání obslužnou rutinu ověřování.
 
-`IHttpUpgradeFeature`Definuje podporu pro [HTTP upgrady](https://tools.ietf.org/html/rfc2616.html#section-14.42), které umožňují klienta k určení, které další protokoly, ho chcete použít, pokud server, které chcete přepnout protokoly.
+`IHttpUpgradeFeature` Definuje podporu pro [HTTP upgrady](https://tools.ietf.org/html/rfc2616.html#section-14.42), které umožňují klienta k určení, které další protokoly, ho chcete použít, pokud server, které chcete přepnout protokoly.
 
-`IHttpBufferingFeature`Definuje metody pro zakázání ukládání do vyrovnávací paměti požadavků a odpovědí.
+`IHttpBufferingFeature` Definuje metody pro zakázání ukládání do vyrovnávací paměti požadavků a odpovědí.
 
-`IHttpConnectionFeature`Definuje vlastnosti pro místní a vzdálené adresy a porty.
+`IHttpConnectionFeature` Definuje vlastnosti pro místní a vzdálené adresy a porty.
 
-`IHttpRequestLifetimeFeature`Definuje podporu pro přerušení připojení nebo zjišťování, pokud požadavek byl ukončen předčasně, například jako službou na odpojení klienta.
+`IHttpRequestLifetimeFeature` Definuje podporu pro přerušení připojení nebo zjišťování, pokud požadavek byl ukončen předčasně, například jako službou na odpojení klienta.
 
-`IHttpSendFileFeature`Definuje metody pro asynchronní odesílání souborů.
+`IHttpSendFileFeature` Definuje metody pro asynchronní odesílání souborů.
 
-`IHttpWebSocketFeature`Definuje rozhraní API pro podporu websocket.
+`IHttpWebSocketFeature` Definuje rozhraní API pro podporu websocket.
 
-`IHttpRequestIdentifierFeature`Přidá vlastnost, která může být implementováno k jednoznačné identifikaci požadavků.
+`IHttpRequestIdentifierFeature` Přidá vlastnost, která může být implementováno k jednoznačné identifikaci požadavků.
 
-`ISessionFeature`Definuje `ISessionFactory` a `ISession` abstrakce pro podporu uživatelských relací.
+`ISessionFeature` Definuje `ISessionFactory` a `ISession` abstrakce pro podporu uživatelských relací.
 
-`ITlsConnectionFeature`Definuje rozhraní API pro načítání klientské certifikáty.
+`ITlsConnectionFeature` Definuje rozhraní API pro načítání klientské certifikáty.
 
-`ITlsTokenBindingFeature`Definuje metody pro práci s parametry token vazbu protokolu TLS.
+`ITlsTokenBindingFeature` Definuje metody pro práci s parametry token vazbu protokolu TLS.
 
 > [!NOTE]
-> `ISessionFeature`není funkce serveru, ale je implementováno modulem `SessionMiddleware` (viz [stav aplikace pro správu](app-state.md)).
+> `ISessionFeature` není funkce serveru, ale je implementováno modulem `SessionMiddleware` (viz [stav aplikace pro správu](app-state.md)).
 
 ## <a name="feature-collections"></a>Funkce kolekce
 

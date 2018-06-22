@@ -2,20 +2,16 @@
 title: K vytvoření jednostránkové aplikace v ASP.NET Core použijte JavaScriptServices
 author: scottaddie
 description: Seznamte se s výhodami JavaScriptServices vytvořit jedné stránce aplikace (SPA) zajišťoval ASP.NET Core.
-manager: wpickett
 ms.author: scaddie
 ms.custom: H1Hack27Feb2017
 ms.date: 08/02/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: fd893b7c62f38442bf5633a956786983763e6f9f
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: c3f454ddd91fadf94e4ee4faa8930d8a89d13833
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483549"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279620"
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>K vytvoření jednostránkové aplikace v ASP.NET Core použijte JavaScriptServices
 
@@ -240,7 +236,7 @@ Zobrazí se seznam dostupných šablon SPA:
 | Šablony                                 | Krátký název | Jazyk | Značky        |
 |:------------------------------------------|:-----------|:---------|:------------|
 | Jádro ASP.NET MVC s úhlová             | úhlová    | [C#]     | Web/MVC/SPA |
-| Jádro ASP.NET MVC s React.js            | Reagovat      | [C#]     | Web/MVC/SPA |
+| Jádro ASP.NET MVC s React.js            | react      | [C#]     | Web/MVC/SPA |
 | Jádro ASP.NET MVC s React.js a – obnovení  | reactredux | [C#]     | Web/MVC/SPA |
 
 Pokud chcete vytvořit nový projekt pomocí jedné z šablon SPA, obsahovat **krátký název** šablony v [dotnet nové](/dotnet/core/tools/dotnet-new) příkaz. Následující příkaz vytvoří úhlová aplikace s ASP.NET MVC základní nakonfigurovaná na straně serveru:

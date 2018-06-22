@@ -2,18 +2,15 @@
 title: Zabránit mezi skriptování (XSS) v ASP.NET Core
 author: rick-anderson
 description: Další informace o webů Skriptování a techniky pro vyřešení této chyby zabezpečení v aplikaci ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: d9263a2c1bb6a376008b7d8a55864e4d15e77cee
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ce6bb273034c56890e0cd98b890436602b5acc69
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272445"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Zabránit mezi skriptování (XSS) v ASP.NET Core
 
@@ -60,7 +57,7 @@ Tato zobrazení výstupu obsah *untrustedInput* proměnné. Tato proměnná zahr
 
 ## <a name="javascript-encoding-using-razor"></a>Kódování JavaScript pomocí syntaxe Razor
 
-Může nastat situace, který chcete vložit hodnotu do jazyka JavaScript ke zpracování v zobrazení. Chcete-li to provést dvěma způsoby. Nejbezpečnější způsob, jak vložit jednoduchý hodnoty je hodnota umístit do atribut dat značky a načíst ve vašem JavaScript. Příklad:
+Může nastat situace, který chcete vložit hodnotu do jazyka JavaScript ke zpracování v zobrazení. Chcete-li to provést dvěma způsoby. Nejbezpečnější způsob, jak vložit hodnoty je hodnota umístit do atribut dat značky a načíst ve vašem JavaScript. Příklad:
 
 ```none
 @{
@@ -228,4 +225,4 @@ Obecné přijme, postup je, že kódování probíhá v místě výstup a kódov
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>Ověření jako zabránění techniku XSS
 
-Ověření může být užitečné nástroje omezení útoky XSS. Například jednoduché číselných řetězců obsahující pouze znaky 0-9 nespustí XSS útoku. Ověření se stane složitější měli, která chcete přijímat HTML vstup uživatele - analýza elementu input kódu HTML je obtížné, pokud není možné. Markdownu a dalších formátů text může být bezpečnější možnost pro bohaté vstup. Se nikdy spoléhají na ověření samostatně. Vždy kódování nedůvěryhodné vstup před výstup, bez ohledu na to, jaké ověření jste provedli.
+Ověření může být užitečné nástroje omezení útoky XSS. Například číselných řetězců obsahující pouze znaky 0-9 nespustí XSS útoku. Ověření se stane složitější měli, která chcete přijímat HTML vstup uživatele - analýza elementu input kódu HTML je obtížné, pokud není možné. Markdownu a dalších formátů text může být bezpečnější možnost pro bohaté vstup. Se nikdy spoléhají na ověření samostatně. Vždy kódování nedůvěryhodné vstup před výstup, bez ohledu na to, jaké ověření jste provedli.

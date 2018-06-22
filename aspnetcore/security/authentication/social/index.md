@@ -2,19 +2,15 @@
 title: Facebook, Google a externího poskytovatele ověřování v ASP.NET Core
 author: rick-anderson
 description: Tento kurz ukazuje, jak sestavit ASP.NET Core 2.x aplikaci pomocí externí zprostředkovatelé ověřování OAuth 2.0.
-manager: wpickett
 ms.author: riande
 ms.date: 11/01/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: dc6ec61519c200901cc8af03853e7381c1d4cad0
-ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
+ms.openlocfilehash: 58045504ce4588f854428273273d3ea8f181e12e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
-ms.locfileid: "34729860"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277995"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Facebook, Google a externího poskytovatele ověřování v ASP.NET Core
 

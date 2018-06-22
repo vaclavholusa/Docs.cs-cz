@@ -2,25 +2,21 @@
 title: Migrace z ASP.NET Core 1.x na 2.0
 author: scottaddie
 description: Tento článek popisuje požadavky a nejběžnější kroky migrace projektu ASP.NET Core 1.x na technologii ASP.NET 2.0 jádra.
-manager: wpickett
 ms.author: scaddie
 ms.date: 10/03/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: f96b38e9f0368e04198c849bb3585674183a92b1
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: 1052b17b433f06162325db340cd53ee61b76a184
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2018
-ms.locfileid: "34555232"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272501"
 ---
 # <a name="migrate-from-aspnet-core-1x-to-20"></a>Migrace z ASP.NET Core 1.x na 2.0
 
 Podle [Scott Addie](https://github.com/scottaddie)
 
-V tomto článku jsme vás provede procesem aktualizace existujícího projektu ASP.NET Core 1.x na technologii ASP.NET 2.0 jádra. Migrace vaší aplikace na technologii ASP.NET Core 2.0 umožňuje využít výhod [mnoho nových funkcí a vylepšení výkonu](xref:aspnetcore-2.0). 
+V tomto článku jsme vás provede procesem aktualizace existujícího projektu ASP.NET Core 1.x na technologii ASP.NET 2.0 jádra. Migrace vaší aplikace na technologii ASP.NET Core 2.0 umožňuje využít výhod [mnoho nových funkcí a vylepšení výkonu](xref:aspnetcore-2.0).
 
 Stávající aplikace ASP.NET Core 1.x vycházejí z šablony projektů specifické pro verzi. Jako rozhraní ASP.NET Core zpracovaní, takže udělat šablony projektů a počáteční kód v nich obsažené. Kromě aktualizace rozhraní ASP.NET Core, budete muset aktualizovat kód pro vaši aplikaci.
 

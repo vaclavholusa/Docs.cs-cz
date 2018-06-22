@@ -2,19 +2,15 @@
 title: Rozšíření správy klíčů v základní technologie ASP.NET
 author: rick-anderson
 description: Další informace o rozšíření ochrany dat ASP.NET Core správy klíčů.
-manager: wpickett
 ms.author: riande
 ms.date: 11/22/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: e3042b371cf7be8fa0218c1906042d2810b180e3
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3ebde889d207e02aff8c042b1d80884210a68ff4
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30074161"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274749"
 ---
 # <a name="key-management-extensibility-in-aspnet-core"></a>Rozšíření správy klíčů v základní technologie ASP.NET
 
@@ -40,7 +36,7 @@ ms.locfileid: "30074161"
 
 Kromě toho `IKey` zpřístupní `CreateEncryptor` metodu, která slouží k vytvoření [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instance vázaný na tento klíč.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Kromě toho `IKey` zpřístupní `CreateEncryptorInstance` metodu, která slouží k vytvoření [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instance vázaný na tento klíč.
 
@@ -80,7 +76,7 @@ Kromě toho `IKey` zpřístupní `CreateEncryptorInstance` metodu, která slouž
 
 * `IKeyEscrowSink` [Nepovinné], který poskytuje služby klíče úschově.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 * `IXmlRepository`, které ovládací prvky, kde jsou klíče uchovávané v úložišti.
 
@@ -100,7 +96,7 @@ Níže jsou diagramy vysoké, které označují, jak jsou tyto součásti dráto
 
 Při provádění `CreateNewKey`, `AlgorithmConfiguration` komponenta se používá k vytvoření jedinečný `IAuthenticatedEncryptorDescriptor`, který je pak serializovanou jako XML. Pokud se klíče úschově podřízený nachází, nezpracovaná XML (nezašifrované) zajišťuje jímky pro dlouhodobé uložení. Nezašifrované XML je spusťte `IXmlEncryptor` (v případě potřeby) ke generování šifrovaných dokumentu XML. Tato zašifrovaného dokumentu je trvalé do dlouhodobého úložiště prostřednictvím `IXmlRepository`. (Pokud žádné `IXmlEncryptor` je nakonfigurován, nezašifrované dokumentu je uchován v `IXmlRepository`.)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
    ![Vytvoření klíče](key-management/_static/keycreation1.png)
 
@@ -114,7 +110,7 @@ Při provádění `CreateNewKey`, `IAuthenticatedEncryptorConfiguration` kompone
 
    ![Načítání klíče](key-management/_static/keyretrieval2.png)
    
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
    ![Načítání klíče](key-management/_static/keyretrieval1.png)
 
@@ -146,7 +142,7 @@ Chcete-li změnit výchozí úložiště celou aplikaci, zaregistrovat vlastní 
    services.Configure<KeyManagementOptions>(options => options.XmlRepository = new MyCustomXmlRepository());
    ```
    
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
    ```csharp
    services.AddSingleton<IXmlRepository>(new MyCustomXmlRepository());
@@ -180,7 +176,7 @@ Chcete-li změnit výchozí klíč šifrování na rest mechanismus celou aplika
    services.Configure<KeyManagementOptions>(options => options.XmlEncryptor = new MyCustomXmlEncryptor());
    ```
    
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET základní 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
    ```csharp
    services.AddSingleton<IXmlEncryptor>(new MyCustomXmlEncryptor());

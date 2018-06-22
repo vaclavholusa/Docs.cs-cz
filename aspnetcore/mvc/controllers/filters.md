@@ -2,19 +2,15 @@
 title: Filtry v ASP.NET Core
 author: ardalis
 description: Zjistěte, jak fungují filtry a jejich použití v aplikaci ASP.NET MVC jádra.
-manager: wpickett
 ms.author: riande
 ms.date: 4/10/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: d3b775116c126e4d6456b89b2c76ca9d9e1a004c
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 24551382847fee0896fe6620d52c30a03aca69d1
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252149"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275642"
 ---
 # <a name="filters-in-aspnet-core"></a>Filtry v ASP.NET Core
 
@@ -23,10 +19,10 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [tní Dykstra](https://g
 *Filtry* v aplikaci ASP.NET MVC základní umožňují spustit kód před nebo po konkrétní fáze v kanálu zpracování požadavků.
 
 > [!IMPORTANT]
-> Toto téma neobsahuje **není** platí pro stránky Razor. ASP.NET Core 2.1 a novější podporuje [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) a [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0) pro stránky Razor. Další informace najdete v tématu [filtrovat metody pro stránky Razor](xref:mvc/razor-pages/filter).
+> Toto téma neobsahuje **není** platí pro stránky Razor. ASP.NET Core 2.1 a novější podporuje [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) a [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0) pro stránky Razor. Další informace najdete v tématu [filtrovat metody pro stránky Razor](xref:razor-pages/filter).
 
  Integrované filtry zpracování úloh, jako:
- 
+
  * Autorizace (brání přístupu k prostředkům, které uživatel není oprávněn).
  * Zajištění, že všechny požadavky používat protokol HTTPS.
  * Odpověď ukládání do mezipaměti (krátká smyčka kanál požadavku k vrácení odpovědi v mezipaměti). 

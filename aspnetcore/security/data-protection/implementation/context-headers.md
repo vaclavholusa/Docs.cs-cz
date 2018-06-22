@@ -2,19 +2,15 @@
 title: Kontext hlavičky v ASP.NET Core
 author: rick-anderson
 description: Další podrobnosti implementace hlaviček kontextu ochrany dat ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: 5ba247a74e11408145e1f6e87c7cfa251c66707f
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2343e59898c024eba420390d7fb0bce2fc82a895
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077851"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274466"
 ---
 # <a name="context-headers-in-aspnet-core"></a>Kontext hlavičky v ASP.NET Core
 
@@ -71,7 +67,7 @@ B7 92 3D BF 59 90 00 A9
 
 V dalším kroku výpočetní Enc_CBC (K_E, IV, "") pro AES-192-CBC zadané IV = 0 * a K_E, jak je uvedeno výše.
 
-result := F474B1872B3B53E4721DE19C0841DB6F
+výsledek: = F474B1872B3B53E4721DE19C0841DB6F
 
 V dalším kroku výpočetní MAC (K_H, "") pro HMACSHA256 zadané K_H jako výše.
 
@@ -122,7 +118,7 @@ výsledek: = ABB100F81E53E10E
 
 V dalším kroku výpočetní MAC (K_H, "") pro HMACSHA1 zadané K_H jako výše.
 
-result := 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
+výsledek: = 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
 
 Tímto se vytvoří hlavičku úplné kontextu, což je kryptografický otisk ověřený šifrovací pár algoritmus (šifrování 3DES. 192 CBC + HMACSHA1 ověření), vidíte níže:
 
@@ -176,7 +172,7 @@ K_E := 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
 
 V dalším kroku výpočetní ověřování značky Enc_GCM (K_E nonce, "") pro AES-256-GCM danou hodnotu nonce = 096 a K_E jak je uvedeno výše.
 
-result := E7DCCE66DF855A323A6BB7BD7A59BE45
+výsledek: = E7DCCE66DF855A323A6BB7BD7A59BE45
 
 Tímto se vytvoří hlavičku úplné kontextu níže:
 

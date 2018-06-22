@@ -9,9 +9,9 @@ Otestujte odkazy. **RazorPagesMovie** a **Domů** odkazy přejít na stránku in
 Následující tabulka uvádí soubory a složky v projektu. V tomto kurzu *Startup.cs* soubor je nejdůležitější pochopit. Není nutné prozkoumat všechny odkazy níže uvedenou. Odkazy jsou uvedeny jako odkaz, pokud budete potřebovat další informace o souboru nebo složce v projektu.
 
 | Soubor nebo složka              | Účel |
-| ----------------- | ------------ | 
+| ----------------- | ------------ |
 | Wwwroot | Obsahuje statické soubory. V tématu [statické soubory](xref:fundamentals/static-files). |
-| Stránky | Složka pro [stránky Razor](xref:mvc/razor-pages/index). | 
+| Stránky | Složka pro [stránky Razor](xref:razor-pages/index). |
 | *appsettings.json* | [Konfigurace](xref:fundamentals/configuration/index) |
 | *Program.cs* | [Hostitelé](xref:fundamentals/host/index) aplikace ASP.NET Core.|
 | *Startup.cs* | Nakonfiguruje služby a kanál požadavku. V tématu [spuštění](xref:fundamentals/startup).|

@@ -2,20 +2,17 @@
 title: Klient .NET ASP.NET Core SignalR
 author: rachelappel
 description: Informace o klientovi jádro ASP.NET SignalR rozhraní .NET
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 05/18/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
+ms.date: 05/29/2018
 uid: signalr/dotnet-client
-ms.openlocfilehash: 412d2362575789f1fb4792940df6d3dd24dbdd5a
-ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
+ms.openlocfilehash: faa4368988971a3e7fcdcd1b044971e16d70f19a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273292"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>Klient .NET ASP.NET Core SignalR
 
@@ -27,7 +24,7 @@ Klient .NET SignalR technologie ASP.NET Core lze pomocí aplikace Xamarin, WPF, 
 
 Ukázka kódu v tomto článku je WPF aplikaci, která používá klient .NET SignalR technologie ASP.NET Core.
 
-## <a name="setup-client"></a>Nastavení klienta
+## <a name="install-the-signalr-net-client-package"></a>Nainstalovat balíček klienta SignalR .NET
 
 `Microsoft.AspNetCore.SignalR.Client` Balíčku je potřeba pro klienty .NET pro připojení k rozbočovačům SignalR. Pokud chcete nainstalovat klientské knihovny, spusťte následující příkaz **Konzola správce balíčků** okno:
 

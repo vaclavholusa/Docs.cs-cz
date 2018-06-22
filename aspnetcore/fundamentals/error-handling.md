@@ -2,19 +2,16 @@
 title: Zpracování chyb v ASP.NET Core
 author: ardalis
 description: Můžete zjistit, jak se budou zpracovávat chyby v aplikacích ASP.NET Core.
-manager: wpickett
 ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
 ms.date: 11/30/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 3ff3a17d14d9ed7c438399191ffe3cf93d555d49
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 2fe46ecc32d61a7fafb2ad6e2a35456476608251
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273706"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Zpracování chyb v ASP.NET Core
 
@@ -49,17 +46,21 @@ Tento požadavek nebyly k dispozici žádné soubory cookie, ale pokud neodpoví
 
 ## <a name="configuring-a-custom-exception-handling-page"></a>Konfigurace vlastní výjimky zpracování stránky
 
-Je vhodné nakonfigurovat stránku obslužná rutina výjimky pro použití při není aplikace spuštěna `Development` prostředí.
+Nakonfigurovat stránku obslužná rutina výjimky pro použití při není aplikace spuštěna `Development` prostředí.
 
 [!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-V aplikaci MVC nemáte uspořádání explicitně metody akce obslužnou rutinu chyby s atributy metody HTTP, jako například `HttpGet`. Použití explicitní příkazů může zabránit dosažení metodu některých požadavků.
+V aplikaci pro stránky Razor [dotnet nové](/dotnet/core/tools/dotnet-new) šablona stránky Razor poskytuje chybovou stránku a `ErrorModel` stránky třídu modelu v *stránky* složky.
+
+V aplikaci MVC nemáte uspořádání metody akce obslužnou rutinu chyby s atributy metody HTTP, jako například `HttpGet`. Explicitní příkazy zabránit v dosažení metodu některých požadavků. Povolí anonymní přístup k metodě tak, aby byly schopný přijímat zobrazení chyb neověřené uživatele.
+
+Například poskytuje následující metody chyba obslužné rutiny [dotnet nové](/dotnet/core/tools/dotnet-new) šablony MVC a zobrazí se v adaptéru domovské:
 
 ```csharp
-[Route("/Error")]
-public IActionResult Index()
+[AllowAnonymous]
+public IActionResult Error()
 {
-    // Handle error here
+    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 }
 ```
 
@@ -106,6 +107,53 @@ if (statusCodePagesFeature != null)
 }
 ```
 
+Pokud se používá `UseStatusCodePages*` přetížení, směřuje na koncový bod v aplikaci, vytvořte zobrazení MVC nebo stránky Razor pro koncový bod. Například [dotnet nové](/dotnet/core/tools/dotnet-new) šablonu pro stránky Razor aplikace vytváří na následující stránku a třídu modelu stránky:
+
+*Error.cshtml*:
+
+```cshtml
+@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<h3>Development Mode</h3>
+<p>
+    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+</p>
+<p>
+    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
+</p>
+```
+
+*Error.cshtml.cs*:
+
+```csharp
+public class ErrorModel : PageModel
+{
+    public string RequestId { get; set; }
+
+    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public void OnGet()
+    {
+        RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+    }
+}
+```
+
 ## <a name="exception-handling-code"></a>Zpracování výjimek
 
 Kód v zpracování stránky výjimek můžete vyvolat výjimky. Často je vhodné pro produkční chybové stránky, které se skládají z čistě statický obsah.
@@ -132,7 +180,7 @@ Při spuštění [IIS](/iis) nebo [IIS Express](/iis/extensions/introduction-to-
 
 Filtry výjimek lze nastavit globálně nebo na základě-controller nebo na akce v aplikaci MVC. Tyto filtry zpracovat všechny neošetřené výjimky během provádění akce kontroleru nebo jiný filtr a nejsou s názvem jinak. Další informace o filtry výjimek v [filtry](xref:mvc/controllers/filters).
 
->[!TIP]
+> [!TIP]
 > Filtry výjimek jsou vhodné pro soutisku výjimky, které se vyskytují v akce MVC, jsou ale není tak účinná jako chyba zpracování middleware. Dáváte přednost middleware pro obecné případ a použít filtry, pouze pokud potřebujete udělat zpracování chyb *jinak* podle MVC akci, která jste vybrali.
 
 ### <a name="handling-model-state-errors"></a>Stav modelu zpracování chyb
@@ -140,6 +188,3 @@ Filtry výjimek lze nastavit globálně nebo na základě-controller nebo na akc
 [Ověření modelu](xref:mvc/models/validation) probíhá před vyvoláním každou akci kontroleru a metoda akce odpovídá kontrola `ModelState.IsValid` a náležitě reagovat.
 
 Některé aplikace se rozhodnete v takovém případě postupujte podle standardní konvence pro řešení chyb při ověřování modelu, [filtru](xref:mvc/controllers/filters) může být příslušné místo pro implementaci tato zásada. Měli byste otestovat chování vaše akce se stavy neplatný model. Další informace v [testování řadiče logiku](xref:mvc/controllers/testing).
-
-
-

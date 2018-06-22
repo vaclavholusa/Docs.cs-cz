@@ -2,19 +2,15 @@
 title: Jádro ASP.NET MVC s Entity Framework Core - kurz 1 10
 author: rick-anderson
 description: ''
-manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 0eef084c656f68fb1cad9fc0f5cfeee31ff96a30
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 3c418cc4e331ad19b0ec1be3207fa2cc44bef041
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34153774"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275668"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Jádro ASP.NET MVC s Entity Framework Core - kurz 1 10
 
@@ -31,8 +27,7 @@ Vzorová aplikace je web pro fiktivní vysoké školy Contoso. Obsahuje funkce, 
 Základní EF 2.0 je nejnovější verzi EF, ale ještě nemá všechny funkce EF 6.x. Informace o tom, jak zvolit EF 6.x a EF Core, najdete v části [EF základní vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/). Pokud se rozhodnete EF 6.x, najdete v části [předchozí verzi tento kurz řady](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
 > [!NOTE]
-> * Verze 1.1 jádro ASP.NET v tomto kurzu, najdete v článku [VS 2017 Update 2 verzi v tomto kurzu ve formátu PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf).
-> * Verze sady Visual Studio 2015 v tomto kurzu, najdete v článku [VS 2015 verzi ASP.NET Core dokumentaci ve formátu PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf).
+> Verze 1.1 jádro ASP.NET v tomto kurzu, najdete v článku [VS 2017 Update 2 verzi v tomto kurzu ve formátu PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf).
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -42,7 +37,7 @@ Základní EF 2.0 je nejnovější verzi EF, ale ještě nemá všechny funkce E
 
 Pokud narazíte na problém nevyřešíte, obvykle můžete najít řešení tak, že porovnáte svůj kód [dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final). Seznam běžných chyb a jak je vyřešit, najdete v části [části Poradce při potížích s poslední kurz v této sérii](advanced.md#common-errors). Pokud se nepodařilo najít, co potřebujete existuje, můžete odeslat dotaz na StackOverflow.com pro [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) nebo [EF základní](https://stackoverflow.com/questions/tagged/entity-framework-core).
 
-> [!TIP] 
+> [!TIP]
 > Toto je řadu 10 kurzy, z nichž každý je založený na co se provádí v dřívější kurzy. Zvažte možnost uložení kopie projektu po každém úspěšném dokončení kurzu. Pak pokud narazíte na problémy, můžete spustit přes z předchozí kurzu místo přejdete zpět na začátek celé řady.
 
 ## <a name="the-contoso-university-web-application"></a>Contoso univerzity webové aplikace

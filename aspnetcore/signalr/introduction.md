@@ -2,21 +2,17 @@
 title: Úvod do základní ASP.NET SignalR
 author: rachelappel
 description: Zjistěte, jak knihovny ASP.NET Core SignalR zjednodušuje přidání funkcí v reálném čase do aplikací.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 04/25/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: signalr/introduction
-ms.openlocfilehash: f05b7cbf05372dc5d5cdadaf5a534d7a9d9bfecc
-ms.sourcegitcommit: c867d7427bd4a88a78b2322e156367733b532730
+ms.openlocfilehash: 0c833acea139d22883a69a02c2357a71f3ac8db8
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33923352"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277901"
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>Úvod do základní ASP.NET SignalR
 
@@ -59,7 +55,7 @@ Odesílání zpráv pomocí aktivní přenos rozbočovače pro volání kódu na
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Začínáme s SignalR pro ASP.NET Core](xref:signalr/get-started)
+* [Začínáme s SignalR pro ASP.NET Core](xref:tutorials/signalr)
 * [Podporované platformy](xref:signalr/supported-platforms)
 * [Centra](xref:signalr/hubs)
 * [Klient JavaScriptu](xref:signalr/javascript-client)

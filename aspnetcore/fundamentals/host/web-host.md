@@ -2,20 +2,16 @@
 title: ASP.NET Core webového hostitele
 author: guardrex
 description: Další informace o webového hostitele v ASP.NET Core, která je zodpovědná za spuštění a životního cyklu správy aplikací.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
+ms.date: 06/19/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: ce95599ec8e940635ca63c3bf9a3c28784a3f371
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: a2dee270db04cf4c402cf50d2360dbd7310a5bc7
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34687487"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272835"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core webového hostitele
 
@@ -47,7 +43,10 @@ public class Program
 
 * Nakonfiguruje [Kestrel](xref:fundamentals/servers/kestrel) jako webový server a nakonfiguruje server pomocí poskytovatelů hostingu konfigurace aplikace. Výchozí možnosti Kestrel najdete v tématu [Kestrel možnosti části Kestrel webového serveru implementace v ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).
 * Nastaví obsahu kořenovou cestu vrácený [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).
-* Načítání volitelné [parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) z:
+* Načítání [konfigurace hostitele](#host-configuration-values) z:
+  * Proměnné prostředí s předponou `ASPNETCORE_` (například `ASPNETCORE_ENVIRONMENT`).
+  * Argumenty příkazového řádku.
+* Načítání z konfigurace aplikací:
   * *appsettings.json*.
   * *appsettings.{Environment}.json*.
   * [Tajné klíče uživatele](xref:security/app-secrets) při spuštění aplikace `Development` prostředí pomocí položky sestavení.
@@ -56,6 +55,41 @@ public class Program
 * Nakonfiguruje [protokolování](xref:fundamentals/logging/index) konzoly a ladění výstupu. Zahrnuje protokolování [filtrování protokolu](xref:fundamentals/logging/index#log-filtering) pravidla stanovená v části Konfigurace protokolování *appSettings.JSON určený* nebo *appsettings. { Prostředí} .json* souboru.
 * Když spustíte za služby IIS, umožňuje [integrační služby IIS](xref:host-and-deploy/iis/index). Konfiguruje základní cesta a portu server naslouchá na při použití [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module). Modul vytvoří reverzní proxy server mezi službou IIS a Kestrel. Nakonfiguruje aplikaci taky [zaznamenat chyby při spuštění](#capture-startup-errors). Výchozí možnosti služby IIS najdete v tématu [IIS možnosti oddílu hostitele ASP.NET Core v systému Windows pomocí služby IIS](xref:host-and-deploy/iis/index#iis-options).
 * Nastaví [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes) k `true` Pokud prostředí aplikace je vývoj. Další informace najdete v tématu [obor ověření](#scope-validation).
+
+Konfigurace definované `CreateDefaultBuilder` můžete přepsat a rozšířen o [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration), [ConfigureLogging](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configurelogging)a jiné metody a metodami rozšíření [ IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder). Následuje několik příkladů:
+
+* [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration) slouží k určení dalších `IConfiguration` pro aplikaci. Následující `ConfigureAppConfiguration` volání přidá delegáta, kterého patří konfigurace aplikací v *appsettings.xml* souboru. `ConfigureAppConfiguration` může volat vícekrát. Všimněte si, že tato konfigurace se nevztahuje na hostitele (například adresy URL serveru nebo prostředí). Najdete v článku [hostitele hodnoty konfigurace](#host-configuration-values) části.
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .ConfigureAppConfiguration((hostingContext, config) =>
+        {
+            config.AddXmlFile("appsettings.xml", optional: true, reloadOnChange: true);
+        })
+        ...
+    ```
+
+* Následující `ConfigureLogging` volání přidá delegát pro konfiguraci úroveň protokolování minimální ([SetMinimumLevel](/dotnet/api/microsoft.extensions.logging.loggingbuilderextensions.setminimumlevel)) k [LogLevel.Warning](/dotnet/api/microsoft.extensions.logging.loglevel). Toto nastavení potlačí nastavení v *appsettings. Development.JSON* (`LogLevel.Debug`) a *appsettings. Production.JSON* (`LogLevel.Error`) nakonfiguroval `CreateDefaultBuilder`. `ConfigureLogging` může volat vícekrát.
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .ConfigureLogging(logging => 
+        {
+            logging.SetMinimumLevel(LogLevel.Warning);
+        })
+        ...
+    ```
+
+* Následující volání do [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) přepíše výchozí [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize) 30,000,000 bajtů navázat, když Kestrel nakonfigurovaly `CreateDefaultBuilder`:
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .UseKestrel(options =>
+        {
+            options.Limits.MaxRequestBodySize = 20000000;
+        });
+        ...
+    ```
 
 *Obsahu kořenové* Určuje, kde hostitele hledá soubory obsahu, jako jsou například soubory zobrazení MVC. Když se aplikace spustí z kořenové složky projektu, projektu kořenové složky se používá jako kořenu obsahu. Toto je výchozí hodnotu použitou v [Visual Studio](https://www.visualstudio.com/) a [nové šablony dotnet](/dotnet/core/tools/dotnet-new).
 
@@ -112,7 +146,7 @@ Při nastavování hostitele, [konfigurace](/dotnet/api/microsoft.aspnetcore.hos
 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) závisí na následujících dvou přístupů k nastavení hostitelské hodnoty konfigurace:
 
 * Konfigurace hostitele tvůrce, který zahrnuje proměnné prostředí ve formátu `ASPNETCORE_{configurationKey}`. Například `ASPNETCORE_ENVIRONMENT`.
-* Explicitní metody, jako například [HostingAbstractionsWebHostBuilderExtensions.UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot).
+* Rozšíření, jako [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot) a [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) (najdete v článku [konfigurace přepisování](#override-configuration) části).
 * [UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) a přidružené klíče. Při nastavení hodnoty s `UseSetting`, je hodnota nastavena jako bez ohledu na typ řetězec.
 
 Hostitel používá. obě tyto možnosti nastaví hodnotu poslední. Další informace najdete v tématu [konfigurace přepisování](#override-configuration) v další části.
@@ -434,33 +468,25 @@ var host = new WebHostBuilder()
 
 ## <a name="override-configuration"></a>Přepsat konfiguraci
 
-Použití [konfigurace](xref:fundamentals/configuration/index) konfigurace hostitele. V následujícím příkladu je konfigurace hostitele volitelně specifikován v *hosting.json* souboru. Všechny konfigurace načtena z *hosting.json* soubor může být přepsána argumenty příkazového řádku. Integrovaný konfigurace (v `config`) se používá ke konfiguraci hostitele s `UseConfiguration`.
+Použití [konfigurace](xref:fundamentals/configuration/index) konfigurace webového hostitele. V následujícím příkladu je konfigurace hostitele volitelně specifikován v *hostsettings.json* souboru. Všechny konfigurace načtena z *hostsettings.json* soubor může být přepsána argumenty příkazového řádku. Integrovaný konfigurace (v `config`) se používá ke konfiguraci hostitele s [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration). `IWebHostBuilder` konfigurace je přidaný do konfigurace aplikace, ale konverzace není true&mdash; `ConfigureAppConfiguration` nemá vliv `IWebHostBuilder` konfigurace.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-*hosting.json*:
-
-```json
-{
-    urls: "http://*:5005"
-}
-```
-
-Přepsání zadaná podle konfigurace `UseUrls` s *hosting.json* konfigurace příkazového řádku, první argument konfigurace druhý:
+Přepsání zadaná podle konfigurace `UseUrls` s *hostsettings.json* konfigurace příkazového řádku, první argument konfigurace druhý:
 
 ```csharp
 public class Program
 {
     public static void Main(string[] args)
     {
-        BuildWebHost(args).Run();
+        CreateWebHostBuilder(args).Build().Run();
     }
 
-    public static IWebHost BuildWebHost(string[] args)
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args)
     {
         var config = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("hosting.json", optional: true)
+            .AddJsonFile("hostsettings.json", optional: true)
             .AddCommandLine(args)
             .Build();
 
@@ -477,9 +503,7 @@ public class Program
 }
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
-*hosting.json*:
+*hostsettings.JSON*:
 
 ```json
 {
@@ -487,7 +511,9 @@ public class Program
 }
 ```
 
-Přepsání zadaná podle konfigurace `UseUrls` s *hosting.json* konfigurace příkazového řádku, první argument konfigurace druhý:
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+Přepsání zadaná podle konfigurace `UseUrls` s *hostsettings.json* konfigurace příkazového řádku, první argument konfigurace druhý:
 
 ```csharp
 public class Program
@@ -496,7 +522,7 @@ public class Program
     {
         var config = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("hosting.json", optional: true)
+            .AddJsonFile("hostsettings.json", optional: true)
             .AddCommandLine(args)
             .Build();
 
@@ -516,12 +542,22 @@ public class Program
 }
 ```
 
+*hostsettings.JSON*:
+
+```json
+{
+    urls: "http://*:5005"
+}
+```
+
 ---
 
 > [!NOTE]
 > [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) metoda rozšíření není aktuálně schopen analyzovat konfigurační oddíl vrácený `GetSection` (například `.UseConfiguration(Configuration.GetSection("section"))`. `GetSection` Metoda filtry konfigurace klíče do části požadovaný, ale ponechá název oddílu na klíče (například `section:urls`, `section:environment`). `UseConfiguration` Metoda očekává klíče tak, aby odpovídala `WebHostBuilder` klíče (například `urls`, `environment`). Přítomnost názvu oddílu na klíče zabrání hodnoty v části Konfigurace hostitele. Tento problém bude vyřešen v příští verzi. Další informace a řešení, najdete v části [předávání konfigurační oddíl do WebHostBuilder.UseConfiguration používá úplné klíče](https://github.com/aspnet/Hosting/issues/839).
+>
+> `UseConfiguration` zkopíruje jen klíče ze zadaných `IConfiguration` Tvůrce konfigurace hostitele. Proto nastavení `reloadOnChange: true` pro soubory XML, JSON a INI nastavení nemá žádný vliv.
 
-Pokud chcete zadat hostiteli spustit na konkrétní adresu URL, požadovanou hodnotu lze předat ve z příkazového řádku při provádění [dotnet spustit](/dotnet/core/tools/dotnet-run). Přepíše argument příkazového řádku `urls` z hodnoty *hosting.json* souboru a server naslouchá na portu 8080:
+Pokud chcete zadat hostiteli spustit na konkrétní adresu URL, požadovanou hodnotu lze předat ve z příkazového řádku při provádění [dotnet spustit](/dotnet/core/tools/dotnet-run). Přepíše argument příkazového řádku `urls` z hodnoty *hostsettings.json* souboru a server naslouchá na portu 8080:
 
 ```console
 dotnet run --urls "http://*:8080"

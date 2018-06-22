@@ -2,19 +2,15 @@
 title: Odvození podklíčů a ověřené šifrování v ASP.NET Core
 author: rick-anderson
 description: Další podrobnosti implementace ochrany dat ASP.NET Core podklíčů odvození a ověřovat šifrování.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/subkeyderivation
-ms.openlocfilehash: 8c83da40a524896becc07c94c01d5e2b684e4386
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 37e7b01700e8a6b755b5ed16a9d7d75a9eeb970e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30072636"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275720"
 ---
 # <a name="subkey-derivation-and-authenticated-encryption-in-aspnet-core"></a>Odvození podklíčů a ověřené šifrování v ASP.NET Core
 
@@ -39,7 +35,7 @@ Většina klíčů v řetězci klíč bude obsahovat určitou formu šifrování
 
 AAD je jedinečný pro řazené kolekce členů všech tří součástí jsme můžete použít k odvození nových klíčů ze KM místo použití KM samotné ve všech našich kryptografických operací. Pro každé volání `IAuthenticatedEncryptor.Encrypt`, následující proces odvození klíče:
 
-( K_E, K_H ) = SP800_108_CTR_HMACSHA512(K_M, AAD, contextHeader || keyModifier)
+(K_E, K_H) = SP800_108_CTR_HMACSHA512 (K_M, AAD, contextHeader || keyModifier)
 
 Zde voláme KDF SP800 108 NIST v režimu čítač (viz [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), s. 5.1) s následujícími parametry:
 

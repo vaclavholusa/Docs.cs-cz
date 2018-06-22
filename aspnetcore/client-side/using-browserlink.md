@@ -2,19 +2,16 @@
 title: Browser Link v ASP.NET Core
 author: ncarandini
 description: Vysvětluje, jak Browser Link je funkce sady Visual Studio, který odkazuje vývojového prostředí s jeden nebo více webových prohlížečů.
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/22/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/using-browserlink
-ms.openlocfilehash: 0496f9df35956b8fe7ca9fcc7c03df33437d5a87
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 8808dc705ec87ebf6e7874ad69616ed5bbf61576
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274089"
 ---
 # <a name="browser-link-in-aspnet-core"></a>Browser Link v ASP.NET Core
 
@@ -26,7 +23,13 @@ Browser Link je funkce v sadě Visual Studio, který vytváří komunikační ka
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
-ASP.NET Core 2.x **webové aplikace**, **prázdný**, a **webového rozhraní API** šablony projektů, použití [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) Meta balíček, který obsahuje odkaz na balíček pro [Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/). Proto pomocí `Microsoft.AspNetCore.All` metabalíček vyžadována žádná další akce, chcete-li k dispozici pro použití odkazů prohlížeče.
+Technologii ASP.NET 2.0 základní **webové aplikace**, **prázdný**, a **webového rozhraní API** šablony projektů, použití [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage , který obsahuje odkaz na balíček pro [Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/). Proto pomocí `Microsoft.AspNetCore.All` metapackage vyžaduje, abyste měli k dispozici pro použití Browser Link žádná další akce.
+
+::: moniker range=">= aspnetcore-2.1"
+
+Při převodu projektu ASP.NET Core 2.0 a ASP.NET Core 2.1 přechodu do [Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) metapackage, je nutné nainstalovat [Microsoft.VisualStudio.Web.BrowserLink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/) balíček pro funkce BrowserLink ručně.
+
+::: moniker-end
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

@@ -2,20 +2,16 @@
 title: Testování částí stránky Razor v ASP.NET Core
 author: guardrex
 description: Naučte se vytvářet testy částí pro stránky Razor aplikace.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 11/27/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: test/razor-pages-tests
-ms.openlocfilehash: df74d8e44b2dff00e76139edba47fd8a30ce33ef
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: bde1bef78fcc7ac1d570057d54636ea0f5490de8
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252302"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274404"
 ---
 # <a name="razor-pages-unit-tests-in-aspnet-core"></a>Testování částí stránky Razor v ASP.NET Core
 
@@ -30,7 +26,7 @@ Jádro ASP.NET podporuje testování částí aplikací pro stránky Razor. Test
 
 Toto téma předpokládá, že máte základní znalosti a testování částí aplikací stránky Razor. Pokud jste obeznámeni s stránky Razor aplikace nebo testovací koncepty, najdete v následujících tématech:
 
-* [Úvod do stránky Razor](xref:mvc/razor-pages/index)
+* [Úvod do stránky Razor](xref:razor-pages/index)
 * [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Testování C# v .NET Core pomocí testovacích dotnet a xUnit částí](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 

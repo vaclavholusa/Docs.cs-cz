@@ -2,25 +2,21 @@
 title: Zobrazení v jádro ASP.NET MVC
 author: ardalis
 description: Zjistěte, jak pracovat zobrazení prezentace dat aplikace a interakce uživatelů v aplikaci ASP.NET MVC jádra.
-manager: wpickett
 ms.author: riande
 ms.date: 12/12/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: b9947de03942bd71616e4bf12263befd9f784915
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 4d5cb6288711cdef145ebb0b52e4e645c535bdf2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33965722"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278346"
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Zobrazení v jádro ASP.NET MVC
 
 Podle [Steve Smith](https://ardalis.com/) a [Luke Latham](https://github.com/guardrex)
 
-Tento dokument popisuje zobrazení použitých v aplikacích ASP.NET MVC jádra. Informace na stránkách Razor najdete v tématu [Úvod do stránky Razor](xref:mvc/razor-pages/index).
+Tento dokument popisuje zobrazení použitých v aplikacích ASP.NET MVC jádra. Informace na stránkách Razor najdete v tématu [Úvod do stránky Razor](xref:razor-pages/index).
 
 Ve vzoru Model-View-Controller (MVC) *zobrazení* zpracovává data aplikace prezentace a uživatelské interakce. Zobrazení je šablony HTML s vložených [kódu Razor](xref:mvc/views/razor). Značka Razor je kód, který komunikuje s kódu HTML, který vytvoří webovou stránku, která je odeslána do klienta.
 

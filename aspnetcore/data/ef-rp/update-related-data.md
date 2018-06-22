@@ -2,19 +2,15 @@
 title: Stránky Razor s EF jádra ASP.NET Core - aktualizace související Data - 7, 8
 author: rick-anderson
 description: V tomto kurzu aktualizujete souvisejících dat tím, že aktualizuje polí cizího klíče a navigační vlastnosti.
-manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 2eff6cd5f4bb737cb79875c9b04c889914376cd0
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: e987971f60e5c5a9fb79e30440c7c986df64447e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740371"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275291"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - aktualizace související Data - 7, 8
 
@@ -95,8 +91,6 @@ Předchozí kód provede tyto změny:
 * Zobrazí ID kurzu. Obecně se nezobrazí, primární klíč (Primárníklíč) entity. PKs jsou obvykle smysl pro uživatele. V takovém případě primárnímu Klíči je číslo kurzu.
 * Změní titulek z **DepartmentID** k **oddělení**.
 * Nahradí `"ViewBag.DepartmentID"` s `DepartmentNameSL` (ze základní třídy).
-* Přidá možnost "Vyberte oddělení". Tato změna vykreslí "Vyberte oddělení" místo první oddělení.
-* Přidá ověřovací zprávu, pokud není vybraná oddělení.
 
 Tato stránka obsahuje skryté pole (`<input type="hidden">`) pro číslo kurzu. Přidání `<label>` značky pomocnou metodu s `asp-for="Course.CourseID"` není eliminují nutnost použití skryté pole. `<input type="hidden">` je vyžadována pro kurzu číslo, které má být součástí odeslaných dat, když uživatel klikne **Uložit**.
 

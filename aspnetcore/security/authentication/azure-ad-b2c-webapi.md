@@ -3,19 +3,15 @@ title: Cloudové ověřování v rozhraní web API s Azure Active Directory B2C 
 author: camsoper
 description: Zjistit, jak nastavit ověřování Azure Active Directory B2C pomocí webového rozhraní API ASP.NET Core. Otestujte ověření webového rozhraní API s Postman.
 ms.author: casoper
-manager: wpickett
 ms.date: 01/25/2018
-ms.topic: tutorial
-ms.technology: aspnet
-ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: 621290f7e303f9157577b5c1b32646b750ed5159
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 82179e52e2c292ec3b7e618b3c61eef6494abc7c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30897801"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273415"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Cloudové ověřování v rozhraní web API s Azure Active Directory B2C v ASP.NET Core
 
@@ -74,7 +70,7 @@ Po registraci rozhraní API se zobrazí seznam aplikací a rozhraní API v klien
 
 Šablony sady Visual Studio webové aplikace lze nakonfigurovat pro ověřování pomocí klienta Azure AD B2C.
 
-In Visual Studio:
+V sadě Visual Studio:
 
 1. Vytvořte novou webovou aplikaci ASP.NET Core. 
 2. Vyberte **webového rozhraní API** ze seznamu šablon.
@@ -90,7 +86,7 @@ In Visual Studio:
 
     | Nastavení                       | Hodnota                                                 |
     |-------------------------------|-------------------------------------------------------|
-    | **Domain Name**               | *&lt;název domény vašeho klienta B2C&gt;*          |
+    | **Název domény**               | *&lt;název domény vašeho klienta B2C&gt;*          |
     | **ID aplikace**            | *&lt;Vložte ID aplikace ze schránky&gt;* |
     | **Zásady registrace nebo přihlášení** | `B2C_1_SiUpIn`                                        |
 

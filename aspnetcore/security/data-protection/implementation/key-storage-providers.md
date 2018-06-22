@@ -2,19 +2,15 @@
 title: Zprostředkovatele úložiště klíčů v základní technologie ASP.NET
 author: rick-anderson
 description: Další informace o zprostředkovatele úložiště klíčů v základní technologie ASP.NET a konfiguraci umístění úložiště klíčů.
-manager: wpickett
 ms.author: riande
 ms.date: 01/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: e8b7804e93b812c2e710ab15510c2fbaa7c4866d
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 432c2690f216325470bbea9b974ea772bcdc39ed
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077346"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273766"
 ---
 # <a name="key-storage-providers-in-aspnet-core"></a>Zprostředkovatele úložiště klíčů v základní technologie ASP.NET
 
@@ -72,7 +68,7 @@ public void ConfigureServices(IServiceCollection services)
 Najdete následující informace:
 
 - [StackExchange.Redis ConnectionMultiplexer](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Basics.md)
-- [Azure Redis Cache](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
+- [Mezipaměť Redis systému Azure](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
 - [Redis testovacího kódu](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/samples/Redis/Program.cs).
 
 ## <a name="registry"></a>Registru

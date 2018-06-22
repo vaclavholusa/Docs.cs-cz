@@ -2,19 +2,16 @@
 title: Hostování v systému Linux s Nginx ASP.NET Core
 author: rick-anderson
 description: Zjistěte, jak nastavit jako reverzní proxy server na Ubuntu 16.04 pro přenos dat protokolu HTTP do webové aplikace ASP.NET Core systémem Kestrel Nginx.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/22/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: cf8965131669b681e9477113953ed40cd81df884
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 374b13e0851cd171a7d8500a4965851a3a0eb49c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277371"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Hostování v systému Linux s Nginx ASP.NET Core
 
@@ -80,9 +77,9 @@ Kestrel je skvělá pro obsluhující dynamický obsah z ASP.NET Core. Však nej
 
 Pro účely tohoto průvodce se používá jednu instanci Nginx. Běží na stejném serveru, spolu s HTTP server. Na základě požadavků, může být zvolen jiné instalace.
 
-Protože požadavky jsou předávány podle reverzní proxy server, použijte hlavičky Middleware předávány z [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) balíčku. Middleware aktualizace `Request.Scheme`pomocí `X-Forwarded-Proto` záhlaví, tak, že přesměrování identifikátory URI a jiné zásady zabezpečení pracovat správně.
+Protože požadavky jsou předávány podle reverzní proxy server, použijte [předané Middleware hlavičky](xref:host-and-deploy/proxy-load-balancer) z [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) balíčku. Middleware aktualizace `Request.Scheme`pomocí `X-Forwarded-Proto` záhlaví, tak, že přesměrování identifikátory URI a jiné zásady zabezpečení pracovat správně.
 
-Při použití jakéhokoli typu middleware ověřování, musíte spustit první Middleware předávaných hlavičky. Toto uspořádání zajistí, že ověřovací middleware může spotřebovávat hodnoty hlavičky a generovat správné přesměrování identifikátory URI.
+Všechny součásti, které závisí na schéma, jako je například ověřování, generování odkazů, přesměrování a informace o zeměpisné poloze, musí být umístěny po vyvolání hlavičky Middleware předávat. Obecně platí by měla předávat Middleware hlavičky spustit před další middleware s výjimkou diagnostiky a zpracování middleware chyb. Toto uspořádání zajistí, že middleware spoléhat na informace předávané hlavičky spotřebovat hodnoty hlavičky pro zpracování.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
 
@@ -161,6 +158,8 @@ server {
         proxy_set_header   Connection keep-alive;
         proxy_set_header   Host $host;
         proxy_cache_bypass $http_upgrade;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
     }
 }
 ```
@@ -362,3 +361,5 @@ Přidejte řádek `add_header X-Content-Type-Options "nosniff";` a uložte soubo
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Nginx: Binární verze: oficiální Debian/Ubuntu balíčky](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)
+* [Konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer)
+* [NGINX: Hlavička předané pomocí](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)

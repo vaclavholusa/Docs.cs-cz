@@ -2,19 +2,15 @@
 title: Ověření cloudu s Azure Active Directory B2C v ASP.NET Core
 author: camsoper
 description: Zjistit, jak nastavit ověřování Azure Active Directory B2C pomocí ASP.NET Core.
-manager: wpickett
 ms.date: 01/25/2018
-ms.topic: tutorial
-ms.technology: aspnet
-ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: a7bad452a68cf7fe7aa81645d79a0ee9e7719fe7
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: caadeec57272ee2823452ed7c4b91e7aca07c3f4
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "29905072"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272419"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Ověření cloudu s Azure Active Directory B2C v ASP.NET Core
 
@@ -70,7 +66,7 @@ Nic informace lze nastavit v tuto chvíli v klientovi Azure AD B2C, ale nechat o
 
 Šablony sady Visual Studio webové aplikace lze nakonfigurovat pro ověřování pomocí klienta Azure AD B2C.
 
-In Visual Studio:
+V sadě Visual Studio:
 
 1. Vytvořte novou webovou aplikaci ASP.NET Core. 
 2. Vyberte **webové aplikace** ze seznamu šablon.
@@ -86,7 +82,7 @@ In Visual Studio:
     
     | Nastavení                       | Hodnota                                                 |
     |-------------------------------|-------------------------------------------------------|
-    | **Domain Name**               | *&lt;název domény vašeho klienta B2C&gt;*          |
+    | **Název domény**               | *&lt;název domény vašeho klienta B2C&gt;*          |
     | **ID aplikace**            | *&lt;Vložte ID aplikace ze schránky&gt;* |
     | **Cesta zpětného volání**             | *&lt;Použijte výchozí hodnotu&gt;*                       |
     | **Zásady registrace nebo přihlášení** | `B2C_1_SiUpIn`                                        |

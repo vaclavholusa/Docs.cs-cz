@@ -2,19 +2,15 @@
 title: Potvrzení účtu a obnovení hesla v ASP.NET Core
 author: rick-anderson
 description: Naučte se vytvářet aplikace ASP.NET Core pomocí e-mailu potvrzení a heslo resetovat.
-manager: wpickett
 ms.author: riande
 ms.date: 2/11/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: d7c1aea2b533fc614eb25c537b72bea773e76077
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: db41dd47518fa8b35c006b3291068e7724cf6cca
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252279"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275077"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Potvrzení účtu a obnovení hesla v ASP.NET Core
 

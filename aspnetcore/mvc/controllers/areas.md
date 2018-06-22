@@ -2,19 +2,15 @@
 title: Oblasti v ASP.NET Core
 author: rick-anderson
 description: Zjistěte, jak jsou oblasti o architektuře ASP.NET MVC funkci sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení).
-manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: 61527eb350b5aba9cb37b1de5acdeae1287bf073
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3e998af42cd6209271495dd8dd97a8aed35717a4
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30072718"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274824"
 ---
 # <a name="areas-in-aspnet-core"></a>Oblasti v ASP.NET Core
 

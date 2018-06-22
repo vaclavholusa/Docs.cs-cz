@@ -2,20 +2,16 @@
 title: Nahrání souborů do stránky Razor v ASP.NET Core
 author: guardrex
 description: Zjistěte, jak k nahrání souborů do stránky Razor.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/12/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 5f86164b3d227e55e11244da7600394809b6a4a7
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 43268e24b67279b57c990a6289922ae38d883221
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "32006125"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275954"
 ---
 # <a name="upload-files-to-a-razor-page-in-aspnet-core"></a>Nahrání souborů do stránky Razor v ASP.NET Core
 

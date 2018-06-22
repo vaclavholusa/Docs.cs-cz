@@ -2,18 +2,15 @@
 title: Jádro ASP.NET MVC s EF Core - rozšířené – 10 z 10
 author: rick-anderson
 description: Tento kurz představuje užitečné témata pro více než se základy vývoje webové aplikace ASP.NET Core, které používají Entity Framework Core.
-manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 95500686052a3f75dd71244bc9da500300416dec
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 2aced1126e3062835d9c35ef01fd3c1438f0af84
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274366"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>Jádro ASP.NET MVC s EF Core - rozšířené – 10 z 10
 
@@ -147,9 +144,9 @@ Celá řada vývojářů napsat kód pro implementaci úložiště a jednotky pr
 
 * EF obsahuje funkce pro implementaci TDD bez nutnosti psaní kódu úložiště.
 
-Informace o tom, jak implementovat úložiště a jednotky pracovních vzorů najdete v tématu [verze Entity Framework 5 tohoto kurzu řady](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application).
+Informace o tom, jak implementovat úložiště a jednotky pracovních vzorů najdete v tématu [verze Entity Framework 5 tohoto kurzu řady](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application).
 
-Entity Framework Core implementuje poskytovatele databáze v paměti, který lze použít pro testování. Další informace najdete v tématu [testu s InMemory](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory).
+Entity Framework Core implementuje poskytovatele databáze v paměti, který lze použít pro testování. Další informace najdete v tématu [testu s InMemory](/ef/core/miscellaneous/testing/in-memory).
 
 ## <a name="automatic-change-detection"></a>Detekce automatických změn
 

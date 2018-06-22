@@ -2,19 +2,16 @@
 title: Konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení
 author: guardrex
 description: Další informace o konfiguraci pro aplikace, které jsou hostovány za proxy servery a požadovat služby Vyrovnávání zatížení, které často skrývat důležité informace.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 03/26/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/proxy-load-balancer
-ms.openlocfilehash: f18a5c518edc739e0fe667f3aef6ffd38c06366c
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 1797962d6eada9c48b31cd94e2c7481380301a0d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276773"
 ---
 # <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a>Konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení
 
@@ -25,7 +22,7 @@ Doporučenou konfiguraci pro jádro ASP.NET je aplikace hostované pomocí modul
 * Pokud požadavky HTTPS jsou směrovány přes proxy server pomocí protokolu HTTP, původní schématu (HTTPS) dojde ke ztrátě a musí být přeposílán v hlavičce.
 * Protože aplikace obdrží žádost z proxy serveru a na Internetu nebo podnikové síti není true zdroj, musí v hlavičce předají zdrojovou IP adresu klienta.
 
-Tyto informace může být důležité v zpracování žádostí, například v přesměrování, ověřování, generování odkazů, vyhodnocení zásad a geoloation klienta.
+Tyto informace může být důležité v zpracování žádostí, například v přesměrování, ověřování, generování odkazů, vyhodnocení zásad a informace o zeměpisné poloze klienta.
 
 ## <a name="forwarded-headers"></a>Přesměrovaná hlavičky
 
@@ -37,7 +34,7 @@ Podle konvence proxy předávat informace v hlavičkách protokolu HTTP.
 | X předávaných Proto | Hodnota původní schématu (HTTP či HTTPS). Hodnota může být také seznam schémat, pokud požadavek projde více proxy serverů. |
 | X předávaných hostitele | Původní hodnotu pole hlavičky hostitele. Obvykle proxy Neupravovat hlavičku hostitele. V tématu [Microsoft Security Advisory CVE-2018-0787](https://github.com/aspnet/Announcements/issues/295) informace o zvýšení oprávnění ohrožení zabezpečení, která má vliv na systémy, kde není ověření proxy serveru nebo hlavičky hostitele restict známé dobré hodnoty. |
 
-Middleware hlavičky předávány z [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) balíčků, čte tyto hlavičky a vyplní přidružené pole na [HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext). 
+Middleware hlavičky předávány z [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) balíčků, čte tyto hlavičky a vyplní přidružené pole na [HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext).
 
 Middleware aktualizace:
 
@@ -66,7 +63,7 @@ Konfigurace middlewaru s [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetc
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();
-    
+
     services.Configure<ForwardedHeadersOptions>(options =>
     {
         options.ForwardedHeaders = 
@@ -96,6 +93,14 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 > [!NOTE]
 > Pokud žádné [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) jsou určené v `Startup.ConfigureServices` nebo přímo do metody rozšíření s [UseForwardedHeaders (IApplicationBuilder, ForwardedHeadersOptions)](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ForwardedHeadersExtensions_UseForwardedHeaders_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_ForwardedHeadersOptions_), výchozí jsou hlavičky předávat [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders). [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) vlastnost musí být nakonfigurované hlavičky k předávání.
+
+## <a name="nginx-configuration"></a>Konfigurace Nginx
+
+Předávání `X-Forwarded-For` a `X-Forwarded-Proto` hlavičky, najdete v části [hostitele v systému Linux s Nginx: Konfigurace Nginx](xref:host-and-deploy/linux-nginx#configure-nginx). Další informace najdete v tématu [NGINX: pomocí hlavičku předané](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/).
+
+## <a name="apache-configuration"></a>Apache konfigurace
+
+`X-Forwarded-For` je automaticky přidán (najdete v části [Apache modulu mod_proxy: Reverse záhlaví požadavku Proxy](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#x-headers)). Informace o tom, jak předávat `X-Forwarded-Proto` záhlaví, najdete v části [hostitele v systému Linux s Apache: Konfigurace Apache](xref:host-and-deploy/linux-apache#configure-apache).
 
 ## <a name="forwarded-headers-middleware-options"></a>Přesměrovaná možnosti middlewaru hlavičky
 

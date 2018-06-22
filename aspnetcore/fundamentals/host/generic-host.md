@@ -2,21 +2,17 @@
 title: Obecné hostitele rozhraní .NET
 author: guardrex
 description: Další informace o obecné hostitele v rozhraní .NET, která je zodpovědná za spuštění a životního cyklu správy aplikací.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: a851f2faf13792b2c232c124371d07710ae1fce3
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 33e5829ce4a09e132743b4174a588cf232a44775
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734468"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276254"
 ---
 # <a name="net-generic-host"></a>Obecné hostitele rozhraní .NET
 
@@ -58,7 +54,13 @@ Je k dispozici v knihovně obecné hostitele [obor názvů Microsoft.Extensions.
 
 ### <a name="configuration-builder"></a>Tvůrce konfigurace
 
-Konfigurace hostitele tvůrce vytvoří volání [ConfigureHostConfiguration](/dotnet/api/microsoft.extensions.hosting.ihostbuilder.configurehostconfiguration) na [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder) implementace. `ConfigureHostConfiguration` používá [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder) vytvořit [parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) pro hostitele. Inicializuje Tvůrce konfigurace [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment) pro použití v procesu sestavení aplikace. `ConfigureHostConfiguration` je možné volat vícekrát s sčítání výsledky. Hostitel používá. obě tyto možnosti nastaví hodnotu poslední.
+Konfigurace hostitele tvůrce vytvoří volání [ConfigureHostConfiguration](/dotnet/api/microsoft.extensions.hosting.ihostbuilder.configurehostconfiguration) na [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder) implementace. `ConfigureHostConfiguration` používá [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder) vytvořit [parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) pro hostitele. Inicializuje Tvůrce konfigurace [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment) pro použití v procesu sestavení aplikace.
+
+Ve výchozím nastavení není Přidat konfiguraci proměnné prostředí. Volání [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables) na tvůrce hostitele, který má konfigurace hostitele z proměnných prostředí. `AddEnvironmentVariables` přijme volitelné uživatelsky definovanou předponu. Ukázková aplikace používá předponu `PREFIX_`. Předpona, která je odebrat, pokud jsou přečteny proměnné prostředí. Když hostitel ukázkové aplikace je nakonfigurován, hodnota proměnné prostředí pro `PREFIX_ENVIRONMENT` stane hodnota konfigurace hostitele `environment` klíč.
+
+Během vývoje při použití [Visual Studio](https://www.visualstudio.com/) nebo spuštěné aplikace pomocí `dotnet run`, proměnné prostředí může být nastavena v *Properties/launchSettings.json* souboru. V [Visual Studio Code](https://code.visualstudio.com/), lze nastavit proměnné prostředí *.vscode/launch.json* souboru během vývoje. Další informace najdete v tématu [použijte prostředí s více](xref:fundamentals/environments).
+
+`ConfigureHostConfiguration` je možné volat vícekrát s sčítání výsledky. Hostitel používá. obě tyto možnosti nastaví hodnotu poslední.
 
 *hostsettings.JSON*:
 
@@ -83,7 +85,7 @@ Toto nastavení určuje, kde začíná hostitele hledání obsahu souborů.
 **Typ**: *řetězec*  
 **Výchozí**: výchozí složce, kde se nachází sestavení aplikace.  
 **Nastavit pomocí**: `UseContentRoot`  
-**Proměnné prostředí**: `ASPNETCORE_CONTENTROOT`
+**Proměnné prostředí**: `<PREFIX_>CONTENTROOT` (`<PREFIX_>` je [volitelné a uživatelem definovanými](#configuration-builder))
 
 Pokud cesta neexistuje, hostitel se nepodaří spustit.
 
@@ -97,9 +99,9 @@ Nastaví aplikace [prostředí](xref:fundamentals/environments).
 **Typ**: *řetězec*  
 **Výchozí**: produkční  
 **Nastavit pomocí**: `UseEnvironment`  
-**Proměnné prostředí**: `ASPNETCORE_ENVIRONMENT`
+**Proměnné prostředí**: `<PREFIX_>ENVIRONMENT` (`<PREFIX_>` je [volitelné a uživatelem definovanými](#configuration-builder))
 
-Prostředí můžete nastavit na jakoukoli hodnotu. Framework definované hodnoty zahrnují `Development`, `Staging`, a `Production`. Hodnoty nejsou velká a malá písmena. Ve výchozím nastavení *prostředí* je pro čtení z `ASPNETCORE_ENVIRONMENT` proměnné prostředí. Při použití [Visual Studio](https://www.visualstudio.com/), proměnné prostředí může být nastavena v *launchSettings.json* souboru. Další informace najdete v tématu [použijte prostředí s více](xref:fundamentals/environments).
+Prostředí můžete nastavit na jakoukoli hodnotu. Framework definované hodnoty zahrnují `Development`, `Staging`, a `Production`. Hodnoty nejsou velká a malá písmena.
 
 [!code-csharp[](generic-host/samples-snapshot/2.x/GenericHostSample/Program.cs?name=snippet_UseEnvironment)]
 

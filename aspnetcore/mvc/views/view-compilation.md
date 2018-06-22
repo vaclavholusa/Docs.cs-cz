@@ -2,21 +2,17 @@
 title: Kompilace souboru Razor a předkompilaci v ASP.NET Core
 author: rick-anderson
 description: Další informace o výhodách předkompilace soubory Razor a o způsobech Razor předkompilaci souboru v aplikaci ASP.NET Core.
-manager: wpickett
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 03b11116a15c291452acd878e32cd015dc553dcc
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: 6ef450a24f57c721021f77f6df5088574caa2645
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34336275"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274037"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>Kompilace souboru Razor v ASP.NET Core
 
@@ -29,7 +25,7 @@ Při vyvolání přidružené zobrazení MVC v době běhu kompiluje souboru ná
 Při vyvolání přidružené zobrazení stránky Razor nebo MVC v době běhu kompiluje souboru nástroje Razor. Publikování souboru Razor čase vytvoření buildu není podporováno. Soubory Razor můžete volitelně zkompilovat na publikování čas a nasazen s aplikací&mdash;pomocí tool předkompilace.
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
-Při vyvolání přidružené zobrazení stránky Razor nebo MVC v době běhu kompiluje souboru nástroje Razor. Syntaxe Razor soubory kompilované za obě sestavení a publikování současně pomocí [Razor SDK](xref:mvc/razor-pages/sdk).
+Při vyvolání přidružené zobrazení stránky Razor nebo MVC v době běhu kompiluje souboru nástroje Razor. Syntaxe Razor soubory kompilované za obě sestavení a publikování současně pomocí [Razor SDK](xref:razor-pages/sdk).
 ::: moniker-end
 
 ## <a name="precompilation-considerations"></a>Předkompilace aspekty
@@ -87,12 +83,12 @@ A *< název_projektu >. PrecompiledViews.dll* obsahující zkompilované soubory
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
-* <xref:mvc/razor-pages/index>
+* <xref:razor-pages/index>
 * <xref:mvc/views/overview>
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
-* <xref:mvc/razor-pages/index>
+* <xref:razor-pages/index>
 * <xref:mvc/views/overview>
-* <xref:mvc/razor-pages/sdk>
+* <xref:razor-pages/sdk>
 ::: moniker-end

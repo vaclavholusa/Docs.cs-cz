@@ -2,20 +2,16 @@
 title: Stránky ASP.NET Core Web API nápovědy s Swagger / Open rozhraní API
 author: rsuter
 description: V tomto kurzu poskytuje návod k přidávání Swagger ke generování dokumentaci, abyste stránky pro aplikaci pomocí webového rozhraní API.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 03/09/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: e44b491fd5265e12646efa42f12eb0662e287f04
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 56e146337ad9e94298f72abf5ede009eea65fb46
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077333"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272248"
 ---
 # <a name="aspnet-core-web-api-help-pages-with-swagger--open-api"></a>Stránky ASP.NET Core Web API nápovědy s Swagger / Open rozhraní API
 
@@ -121,5 +117,5 @@ Každá metoda veřejné akce v řadičích může být testována z uživatelsk
 
 ## <a name="next-steps"></a>Další kroky
 
-* [Začínáme s Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
-* [Začínáme s NSwag](xref:tutorials/get-started-with-nswag)
+* [Začínáme se službou Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
+* [Začínáme se službou NSwag](xref:tutorials/get-started-with-nswag)

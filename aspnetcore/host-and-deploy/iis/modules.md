@@ -2,19 +2,16 @@
 title: Moduly služby IIS s ASP.NET Core
 author: guardrex
 description: Zjistit aktivní i neaktivní moduly služby IIS pro aplikace ASP.NET Core a jak spravovat moduly služby IIS.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 04/04/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: e88526d997618658f58488adb37ae1e519ea3f59
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 1ff0fdcaae066b493eeebf6a061e383f88c81052
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272734"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>Moduly služby IIS s ASP.NET Core
 
@@ -39,7 +36,7 @@ Tabulka udává nativní moduly služby IIS, které jsou funkční na reverzní 
 | **Ověřování hodnotou hash**<br>`DigestAuthenticationModule` | Ano | |
 | **Procházení adresářů**<br>`DirectoryListingModule` | Ne | [Middleware procházení adresáře](xref:fundamentals/static-files#enable-directory-browsing) |
 | **Komprese dynamického**<br>`DynamicCompressionModule` | Ano | [Middleware pro kompresi odpovědí](xref:performance/response-compression) |
-| **Trasování**<br>`FailedRequestsTracingModule` | Ano | [ASP.NET Core protokolování](xref:fundamentals/logging/index#the-tracesource-provider) |
+| **Trasování**<br>`FailedRequestsTracingModule` | Ano | [ASP.NET Core protokolování](xref:fundamentals/logging/index#tracesource-provider) |
 | **Ukládání souborů do mezipaměti**<br>`FileCacheModule` | Ne | [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware) |
 | **Ukládání do mezipaměti HTTP**<br>`HttpCacheModule` | Ne | [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware) |
 | **Funkce protokolování HTTP**<br>`HttpLoggingModule` | Ano | [ASP.NET Core protokolování](xref:fundamentals/logging/index)<br>Implementace: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)

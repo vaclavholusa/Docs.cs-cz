@@ -4,18 +4,19 @@ author: rachelappel
 description: Zjistit témata, která se týkají ASP.NET Core SignalR.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
-ms.date: 06/18/2018
+ms.date: 06/21/2018
 uid: signalr/index
-ms.openlocfilehash: beeae7e2f00323a25ed021f876bc22f78b2e106e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6621488e68647516e9549af7c90631c363331bcc
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276679"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314055"
 ---
 # <a name="aspnet-core-signalr"></a>Jádro ASP.NET SignalR
 
 * [Úvod](xref:signalr/introduction)
+* [Začínáme](xref:tutorials/signalr)
 * [Centra](xref:signalr/hubs)
 * [Klient JavaScriptu](xref:signalr/javascript-client)
 * [Klient .NET](xref:signalr/dotnet-client)

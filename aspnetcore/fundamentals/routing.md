@@ -5,12 +5,12 @@ description: Zjistit, jak je zodpovědná za mapování příchozího požadavku
 ms.author: riande
 ms.date: 10/14/2016
 uid: fundamentals/routing
-ms.openlocfilehash: 0bb62cad0dcf54d593171d6a40eb1510a88eb6b3
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 4482c865671eb4f5decbd5f1cd6e26f2e68e5c25
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274892"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314133"
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -150,7 +150,7 @@ routes.MapRoute(
     dataTokens: new { locale = "en-US" });
 ```
 
-Tato šablona bude shodovat s cestu adresy URL jako `/Products/5` , který extrahuje hodnoty `{ controller = Products, action = Details, id = 5 }` a tokeny dat `{ locale = en-US }`.
+Tato šablona odpovídá cestu adresy URL jako `/en-US/Products/5` a extrahuje hodnoty `{ controller = Products, action = Details, id = 5 }` a tokeny dat `{ locale = en-US }`.
 
 ![Místní hodnoty – tokenů systému Windows](routing/_static/tokens.png)
 

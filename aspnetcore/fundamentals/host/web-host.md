@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/19/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: a2dee270db04cf4c402cf50d2360dbd7310a5bc7
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 98070f49c98919e7ebff41ecc69c953249977dcc
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272835"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314146"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core webového hostitele
 
@@ -802,7 +802,7 @@ public class CustomFileReader
 }
 ```
 
-A [založené na konvenci přístup](xref:fundamentals/environments#startup-conventions) můžete použít ke konfiguraci aplikace při spuštění založených na prostředí. Můžete také vložit `IHostingEnvironment` do `Startup` konstruktor pro použití v `ConfigureServices`:
+A [založené na konvenci přístup](xref:fundamentals/environments#environment-based-startup-class-and-methods) můžete použít ke konfiguraci aplikace při spuštění založených na prostředí. Můžete také vložit `IHostingEnvironment` do `Startup` konstruktor pro použití v `ConfigureServices`:
 
 ```csharp
 public class Startup

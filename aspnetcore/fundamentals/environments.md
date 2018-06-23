@@ -1,45 +1,45 @@
 ---
 title: Použití prostředí s více v ASP.NET Core
 author: rick-anderson
-description: Zjistěte, jak ASP.NET Core poskytuje podporu pro řízení chování aplikace ve více prostředích.
+description: Zjistěte, jak můžete řídit chování aplikace v prostředí s více v aplikacích ASP.NET Core.
 ms.author: riande
-ms.date: 12/25/2017
+ms.date: 06/21/2018
 uid: fundamentals/environments
-ms.openlocfilehash: 5a4caeeba045cb93dec9c73c931dae8a352bede9
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
-ms.translationtype: HT
+ms.openlocfilehash: 505f19d8b4df6e476b46a1fe7c49872d3c4acc1a
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276929"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314101"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Použití prostředí s více v ASP.NET Core
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Základní technologie ASP.NET poskytuje podporu pro nastavení chování aplikace za běhu pomocí proměnné prostředí.
+ASP.NET Core nakonfiguruje chování aplikace založené na prostředí runtime pomocí proměnné prostředí.
 
 [Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/environments/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="environments"></a>Prostředí
 
-Přečte proměnné prostředí ASP.NET Core `ASPNETCORE_ENVIRONMENT` při spuštění aplikace a úložišť, která hodnotu [IHostingEnvironment.EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName). `ASPNETCORE_ENVIRONMENT` můžete nastavit na jakoukoli hodnotu, ale [tří hodnot](/dotnet/api/microsoft.aspnetcore.hosting.environmentname?view=aspnetcore-2.0) podporuje rozhraní: [vývoj](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development?view=aspnetcore-2.0), [pracovní](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging?view=aspnetcore-2.0), a [produkční](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production?view=aspnetcore-2.0). Pokud `ASPNETCORE_ENVIRONMENT` není nastaven, bude použita výchozí `Production`.
+Přečte proměnné prostředí ASP.NET Core `ASPNETCORE_ENVIRONMENT` při spuštění aplikace a ukládá hodnotu v [IHostingEnvironment.EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname). Můžete nastavit `ASPNETCORE_ENVIRONMENT` na jakoukoli hodnotu, ale [tří hodnot](/dotnet/api/microsoft.aspnetcore.hosting.environmentname) podporuje rozhraní: [vývoj](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development), [pracovní](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging), a [produkční](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production). Pokud `ASPNETCORE_ENVIRONMENT` není nastaven, nastaví se jako výchozí `Production`.
 
 [!code-csharp[](environments/sample/WebApp1/Startup.cs?name=snippet)]
 
 Předchozí kód:
 
-* Volání [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_DeveloperExceptionPageExtensions_UseDeveloperExceptionPage_Microsoft_AspNetCore_Builder_IApplicationBuilder_) a [UseBrowserLink](/dotnet/api/microsoft.aspnetcore.builder.browserlinkextensions.usebrowserlink?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_BrowserLinkExtensions_UseBrowserLink_Microsoft_AspNetCore_Builder_IApplicationBuilder_) při `ASPNETCORE_ENVIRONMENT` je nastaven na `Development`.
-* Volání [UseExceptionHandler](/dotnet/api/microsoft.aspnetcore.builder.exceptionhandlerextensions.useexceptionhandler?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ExceptionHandlerExtensions_UseExceptionHandler_Microsoft_AspNetCore_Builder_IApplicationBuilder_) při hodnotě `ASPNETCORE_ENVIRONMENT` je nastavit jednu z následujících:
+* Volání [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) a [UseBrowserLink](/dotnet/api/microsoft.aspnetcore.builder.browserlinkextensions.usebrowserlink) při `ASPNETCORE_ENVIRONMENT` je nastaven na `Development`.
+* Volání [UseExceptionHandler](/dotnet/api/microsoft.aspnetcore.builder.exceptionhandlerextensions.useexceptionhandler) při hodnotě `ASPNETCORE_ENVIRONMENT` je nastavit jednu z následujících:
 
     * `Staging`
     * `Production`
     * `Staging_2`
 
-[Pomocná značku prostředí ](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper) používá hodnotu `IHostingEnvironment.EnvironmentName` pro zahrnutí nebo vyloučení značek v elementu:
+[Pomocná značku prostředí](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper) používá hodnotu `IHostingEnvironment.EnvironmentName` pro zahrnutí nebo vyloučení značek v elementu:
 
-[!code-html[](environments/sample/WebApp1/Pages/About.cshtml)]
+[!code-cshtml[](environments/sample-snapshot/WebApp1/Pages/About.cshtml)]
 
-Poznámka: V systémech Windows a systému macOS proměnné prostředí a hodnoty nejsou velká a malá písmena. Proměnné prostředí Linux a jejich hodnoty jsou **velká a malá písmena** ve výchozím nastavení.
+V systémech Windows a systému macOS nejsou proměnné prostředí a hodnoty velká a malá písmena. Proměnné prostředí Linux a jejich hodnoty jsou **velká a malá písmena** ve výchozím nastavení.
 
 ### <a name="development"></a>Vývoj
 
@@ -52,6 +52,7 @@ Zobrazuje tři profily z následujícím kódu JSON *launchSettings.json* soubor
 [!code-json[](environments/sample/WebApp1/Properties/launchSettings.json?highlight=10,11,18,26)]
 
 ::: moniker range=">= aspnetcore-2.1"
+
 > [!NOTE]
 > `applicationUrl` Vlastnost *launchSettings.json* můžete zadat seznam adres URL serveru. Použijte středník mezi adresy URL v seznamu:
 >
@@ -65,9 +66,10 @@ Zobrazuje tři profily z následujícím kódu JSON *launchSettings.json* soubor
 >    }
 > }
 > ```
+
 ::: moniker-end
 
-Když je aplikace spuštěna s [dotnet spustit](/dotnet/core/tools/dotnet-run), první profil s `"commandName": "Project"` se použije. Hodnota `commandName` určuje webový server ke spuštění. `commandName` může být jedna z:
+Při spuštění aplikace s [dotnet spustit](/dotnet/core/tools/dotnet-run), první profil s `"commandName": "Project"` se používá. Hodnota `commandName` určuje webový server ke spuštění. `commandName` může být některého z následujících akcí:
 
 * Služby IIS Express
 * IIS
@@ -93,7 +95,7 @@ Visual Studio **ladění** karta poskytuje grafickým uživatelským rozhraním 
 
 ![Proměnné prostředí nastavení vlastností projektu](environments/_static/project-properties-debug.png)
 
-Změny provedené v projektu profily pravděpodobně projeví až po restartu webového serveru. Kestrel zjistí změny provedené v jeho prostředí musí být restartován.
+Změny provedené v projektu profily pravděpodobně projeví až po restartu webového serveru. Kestrel může zjistit změny provedené v jeho prostředí musí být restartován.
 
 > [!WARNING]
 > *launchSettings.json* neměli ukládat tajné klíče. [Nástroj tajný klíč správce](xref:security/app-secrets) slouží k uložení tajné klíče pro místní vývoj.
@@ -131,36 +133,42 @@ Maximalizovat zabezpečení, výkonu a odolnosti aplikace musí být nakonfiguro
 
 ## <a name="setting-the-environment"></a>Nastavení prostředí
 
-Často je vhodné nastavit konkrétní prostředí pro testování. Pokud není nastavena v prostředí, bude výchozí `Production` který zakáže většinu funkcí ladění.
+Často je vhodné nastavit konkrétní prostředí pro testování. Pokud není nastavena v prostředí, je standardně `Production`, která zakáže většinu funkcí ladění. Metoda pro nastavení prostředí závisí na operačním systému.
 
-Metoda pro nastavení prostředí závisí na operačním systému.
+### <a name="azure-app-service"></a>Aplikační služba Azure
 
-### <a name="azure"></a>Azure
+Nastavení prostředí v [Azure App Service](https://azure.microsoft.com/services/app-service/), proveďte následující kroky:
 
-Pro službu Azure app service:
+1. Vyberte si aplikaci z **App Services** okno.
+1. V **nastavení** skupiny, vyberte **nastavení aplikace** okno.
+1. V **nastavení aplikace** oblasti, vyberte **přidejte nové nastavení**.
+1. Pro **zadejte název**, poskytovat `ASPNETCORE_ENVIRONMENT`. Pro **zadejte hodnotu**, poskytovat prostředí (například `Staging`).
+1. Vyberte **nastavení slotu** zaškrtávací políčko, pokud chcete nastavení prostředí zůstat s aktuální pozici, když jsou vzájemně zaměněny nasazovací sloty. Další informace najdete v tématu [dokumentaci k Azure: nastavení, které jsou vzájemně zaměněny?](/azure/app-service/web-sites-staged-publishing).
+1. Vyberte **Uložit** v horní části okna.
 
-* Vyberte **nastavení aplikace** okno.
-* Přidejte klíč a hodnotu **nastavení aplikace**.
-
+Aplikační služba Azure aplikace automaticky restartuje po nastavení aplikace (proměnnou prostředí) je přidat, změnit ani odstranit na portálu Azure.
 
 ### <a name="windows"></a>Windows
-Chcete-li nastavit `ASPNETCORE_ENVIRONMENT` pro aktuální relaci, pokud je aplikace spuštěná pomocí [dotnet spustit](/dotnet/core/tools/dotnet-run), se používají následující příkazy
+
+Chcete-li nastavit `ASPNETCORE_ENVIRONMENT` pro aktuální relaci při spuštění aplikace pomocí [dotnet spustit](/dotnet/core/tools/dotnet-run), se používají následující příkazy:
 
 **Příkazový řádek**
-```
+
+```console
 set ASPNETCORE_ENVIRONMENT=Development
 ```
+
 **PowerShell**
-```
+
+```powershell
 $Env:ASPNETCORE_ENVIRONMENT = "Development"
 ```
 
-Tyto příkazy se projeví pouze pro aktuální okno. Při zavření okna nastavení ASPNETCORE_ENVIRONMENT obnoví výchozí nastavení nebo počítač hodnotu. Chcete-li nastavit hodnotu globálně při otevření Windows **ovládací panely** > **systému** > **Upřesnit nastavení systému** a přidat nebo upravit `ASPNETCORE_ENVIRONMENT` hodnotu.
+Tyto příkazy projeví u aktuálního okna. Při zavření okna `ASPNETCORE_ENVIRONMENT` bude obnoveno výchozí nastavení nebo hodnota počítače. Chcete-li nastavit hodnotu globálně v systému Windows, otevřete **ovládací panely** > **systému** > **Upřesnit nastavení systému** a přidat nebo upravit `ASPNETCORE_ENVIRONMENT`hodnotu:
 
 ![Rozšířené vlastnosti systému](environments/_static/systemsetting_environment.png)
 
 ![Proměnné prostředí základní ASPNET](environments/_static/windows_aspnetcore_environment.png)
-
 
 **web.config**
 
@@ -168,42 +176,45 @@ Najdete v článku *nastavení proměnných prostředí* části [odkazu na modu
 
 **Fondy aplikací služby IIS**
 
-Nastavení proměnných prostředí pro jednotlivé aplikace běžící v izolované fondy aplikací (podporuje se ve službě IIS 10.0 +), najdete v článku *příkazu AppCmd.exe* části [proměnné prostředí \< environmentVariables >](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) tématu.
+Nastavení proměnných prostředí pro jednotlivé aplikace běžící v izolované fondy aplikací (podporuje se ve službě IIS 10.0 +), najdete v článku *příkazu AppCmd.exe* části [proměnné prostředí &lt; environmentVariables&gt; ](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) tématu.
 
 ### <a name="macos"></a>macOS
-Nastavení aktuální prostředí pro systému macOS lze provést v řádku při spuštění aplikace;
+
+Nastavení aktuální prostředí může být systému macOS prováděné v řádku, při kterém aplikace běží:
 
 ```bash
 ASPNETCORE_ENVIRONMENT=Development dotnet run
 ```
-nebo pomocí `export` pro ni nastavit před spuštěním aplikace.
+
+Alternativně nastavte prostředí s `export` před spuštěním aplikace:
 
 ```bash
 export ASPNETCORE_ENVIRONMENT=Development
 ```
-Proměnné prostředí úrovni počítače jsou nastaveny v *.bashrc* nebo *.bash_profile* souboru. Upravte soubor pomocí libovolného textového editoru a přidejte následující příkaz.
+
+Proměnné prostředí v úrovni počítače jsou nastavené *.bashrc* nebo *.bash_profile* souboru. Upravte soubor pomocí libovolného textového editoru. Přidejte následující příkaz:
 
 ```bash
 export ASPNETCORE_ENVIRONMENT=Development
 ```
 
 ### <a name="linux"></a>Linux
-Pro distribucích systému Linux, použijte `export` příkaz na příkazovém řádku pro relace na základě nastavení proměnné a *bash_profile* soubor pro nastavení úrovně prostředí počítače.
+
+Pro distribucích systému Linux, použijte `export` příkazu na příkazovém řádku pro nastavení proměnné na bázi relací a *bash_profile* soubor pro nastavení prostředí úrovni počítače.
 
 ### <a name="configuration-by-environment"></a>Konfigurace prostředí
 
 V tématu [konfigurace prostředí](xref:fundamentals/configuration/index#configuration-by-environment) Další informace.
 
-<a name="startup-conventions"></a>
-## <a name="environment-based-startup-class-and-methods"></a>Prostředí na základě spuštění třídy a metody
+## <a name="environment-based-startup-class-and-methods"></a>Třídy založené na prostředí pro spuštění a metody
 
-Při spuštění aplikace ASP.NET Core [třída při spuštění](xref:fundamentals/startup) bootstraps aplikace. Pokud se třída `Startup{EnvironmentName}` existuje, že třídu bude volat třída pro tento `EnvironmentName`:
+Při spuštění aplikace ASP.NET Core [třída při spuštění](xref:fundamentals/startup) bootstraps aplikace. Pokud `Startup{EnvironmentName}` třída existuje, pro který se nazývá třída `EnvironmentName`:
 
 [!code-csharp[](environments/sample/WebApp1/StartupDev.cs?name=snippet&highlight=1)]
 
-Poznámka: Volání [WebHostBuilder.UseStartup<TStartup> ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) přepsání konfigurační oddíly.
+[WebHostBuilder.UseStartup<TStartup> ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) přepsání konfigurační oddíly.
 
-[Konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_StartupBase_Configure_Microsoft_AspNetCore_Builder_IApplicationBuilder_) a [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices?view=aspnetcore-2.0) podporu prostředí konkrétních verzích formuláře `Configure{EnvironmentName}` a `Configure{EnvironmentName}Services`:
+[Konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) a [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) podporují konkrétní prostředí verzích formuláře `Configure{EnvironmentName}` a `Configure{EnvironmentName}Services`:
 
 [!code-csharp[](environments/sample/WebApp1/Startup.cs?name=snippet_all&highlight=15,37)]
 
@@ -211,4 +222,4 @@ Poznámka: Volání [WebHostBuilder.UseStartup<TStartup> ](/dotnet/api/microsoft
 
 * [Spuštění aplikace](xref:fundamentals/startup)
 * [Konfigurace](xref:fundamentals/configuration/index)
-* [IHostingEnvironment.EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName)
+* [IHostingEnvironment.EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname)

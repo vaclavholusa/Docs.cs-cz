@@ -12,17 +12,19 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations
 msc.type: chapter
-ms.openlocfilehash: 7e7b3d999bac106959017e5c9562f81fad03a7b1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6209a56ac859ca1152bfa5fe850eac6333a106ac
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26563680"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36313919"
 ---
 <a name="migrating-to-aspnet-identity"></a>Migrace na identitě ASP.NET Identity
 ====================
 > Migrace na ASP.NET Identity od jiných zprostředkovatelů členství
 
 
-- [Migrace existující web z členství SQL na identitě ASP.NET Identity](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
-- [Migrace dat Universal zprostředkovatele členství a uživatelské profily mají být ASP.NET Identity (C#)](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
+- [Migrace stávajícího webu z členství SQL na ASP.NET Identity](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [Migrace členských dat od univerzálního zprostředkovatele a uživatelských profilů na ASP.NET Identity (C#)](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
+
+[!INCLUDE[](../../../includes/identity/alter-command-exception.md)]

@@ -6,12 +6,12 @@ ms.author: casoper
 ms.date: 01/25/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: 82179e52e2c292ec3b7e618b3c61eef6494abc7c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c56efda28c668b8f88d28334705b4c26f288870f
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273415"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314159"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Cloudové ověřování v rozhraní web API s Azure Active Directory B2C v ASP.NET Core
 
@@ -117,7 +117,7 @@ Použijte následující hodnoty:
 | **Zahrnout webovou aplikaci / webové rozhraní API** | Ano                              |                                 |
 | **Povolit implicitního toku**       | Ano                              |                                 |
 | **Adresa URL odpovědi**                 | `https://getpostman.com/postman` |                                 |
-| **Identifikátor ID URI aplikace**                | *&lt;Ponechat prázdné&gt;*            | Nepožaduje se pro tento kurz. |
+| **Identifikátor ID URI aplikace**                | *&lt;ponechat prázdné&gt;*            | Nepožaduje se pro tento kurz. |
 | **Zahrnout nativního klienta**     | Ne                               |                                 |
 
 Nově zaregistrovaný webové aplikace potřebuje oprávnění pro přístup k webové rozhraní API jménem uživatele.  
@@ -173,9 +173,9 @@ Chcete-li požadavek na ověřeného webovému rozhraní API, je požadovaná to
    |      <strong>Název tokenu</strong>       |                                  <em>&lt;Název tokenu&gt;</em>                                  |                                                                                                                   Zadejte popisný název pro daný token.                                                                                                                    |
    |      <strong>Typ udělení</strong>       |                                           Implicitní                                            |                                                                                                                                                                                                                                                                              |
    |     <strong>Adresa URL zpětného volání</strong>      |                               `https://getpostman.com/postman`                                |                                                                                                                                                                                                                                                                              |
-   |       <strong>Ověřování adresy URL</strong>        | `https://login.microsoftonline.com/<tenant domain name>/oauth2/v2.0/authorize?p=B2C_1_SiUpIn` |                                                                                                  Nahraďte <em>&lt;název domény klienta&gt;</em> s názvem domény klienta.                                                                                                  |
+   |       <strong>Ověřování adresy URL</strong>        | `https://login.microsoftonline.com/tfp/<tenant domain name>/B2C_1_SiUpIn/oauth2/v2.0/authorize` |                                                                                                  Nahraďte <em>&lt;název domény klienta&gt;</em> s názvem domény klienta.                                                                                                  |
    |       <strong>ID klienta</strong>       |                <em>&lt;Zadejte aplikaci Postman <b>ID aplikace</b>&gt;</em>                 |                                                                                                                                                                                                                                                                              |
-   |     <strong>Tajný klíč klienta</strong>     |                                 <em>&lt;Ponechat prázdné&gt;</em>                                  |                                                                                                                                                                                                                                                                              |
+   |     <strong>Tajný klíč klienta</strong>     |                                 <em>&lt;ponechat prázdné&gt;</em>                                  |                                                                                                                                                                                                                                                                              |
    |         <strong>Rozsah</strong>         |         `https://<tenant domain name>/<api>/user_impersonation openid offline_access`         | Nahraďte <em>&lt;název domény klienta&gt;</em> s názvem domény klienta. Nahraďte <em>&lt;rozhraní api&gt;</em> s názvem projektu webového rozhraní API. Můžete taky ID aplikace. Vzor adresy URL je: <em>https://{tenant}.onmicrosoft.com/{app_name_or_id}/{scope název}</em>. |
    | <strong>Ověření klienta</strong> |                                Odeslání pověření klienta v textu                                |                                                                                                                                                                                                                                                                              |
 

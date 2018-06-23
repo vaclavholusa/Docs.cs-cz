@@ -12,12 +12,12 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 2790f32bc74cecf450f5a258fc1ff5b280a63923
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1766c11dabec3931ec2bfc4ae2e15332427d7855
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874990"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314010"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrace existující web z členství SQL na identitě ASP.NET Identity
 ====================
@@ -90,12 +90,12 @@ Pro ASP.NET Identity třídy pracovat předinstalované s daty stávajících u�
 | **IdentityUser** | **Typ** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | ID | odkazy řetězců | ID | RoleId | ProviderKey | ID |
-| Uživatelské jméno | odkazy řetězců | Název | ID uživatele | ID uživatele | ClaimType |
+| Uživatelské jméno | odkazy řetězců | Název | ID uživatele | ID uživatele | Typ ClaimType |
 | PasswordHash | odkazy řetězců |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | odkazy řetězců |  |  |  | Uživatel\_Id |
 | E-mailu | odkazy řetězců |  |  |  |  |
 | EmailConfirmed | bool |  |  |  |  |
-| PhoneNumber | odkazy řetězců |  |  |  |  |
+| Telefonní číslo | odkazy řetězců |  |  |  |  |
 | PhoneNumberConfirmed | bool |  |  |  |  |
 | LockoutEnabled | bool |  |  |  |  |
 | LockoutEndDate | DateTime |  |  |  |  |
@@ -107,15 +107,17 @@ Je potřeba mít tabulky se sloupci odpovídající vlastnosti pro každou z tě
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | ID |  |
 | IdentityRole | AspnetRoles | ID |  |
-| IdentityUserRole | AspnetUserRole | ID uživatele + RoleId | User\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
-| IdentityUserLogin | AspnetUserLogins | ProviderKey+UserId + LoginProvider | UserId-&gt;AspnetUsers |
-| IdentityUserClaim | AspnetUserClaims | ID | User\_Id-&gt;AspnetUsers |
+| IdentityUserRole | AspnetUserRole | ID uživatele + RoleId | Uživatel\_Id -&gt;AspnetUsers RoleId -&gt;AspnetRoles |
+| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId -&gt;AspnetUsers |
+| IdentityUserClaim | AspnetUserClaims | ID | Uživatel\_Id -&gt;AspnetUsers |
 
 Tyto informace můžeme vytvořit příkazy SQL k vytvoření nové tabulky. Nemůžeme zápisu každý příkaz samostatně nebo generovat celý skript pomocí příkazů prostředí PowerShell objektu EntityFramework, které jsme pak můžete upravit podle potřeby. To uděláte, v VS otevřete **Konzola správce balíčků** z **zobrazení** nebo **nástroje** nabídky
 
 - Spuštěním příkazu "Enable-Migrations" Povolit migrace objektu EntityFramework.
 - Spusťte příkaz "Add-migration počáteční", který vytvoří počáteční instalační kód k vytvoření databáze v jazyce C# nebo VB.
 - Posledním krokem je spuštění "Update-Database – skriptu" příkaz, který generuje skript SQL podle třídy modelu.
+
+[!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
 Tento skript generování databáze můžete použít jako počáteční kde jsme budete provádět další změny, které chcete přidat nové sloupce a zkopírovat data. To výhodou je, že se vygeneruje `_MigrationHistory` tabulky, který je používán EntityFramework k úpravám schématu databáze, kdy modelu třídy změnu pro budoucí verze Identity verzí. 
 
@@ -146,7 +148,7 @@ Tento soubor skriptu je specifická pro tuto ukázku. Pro aplikace, které mají
 
     Níže je, jak jsou informace v tabulky členství SQL mapované na nový systém identit.
 
-    aspnet\_Roles --&gt; AspNetRoles
+    ASPNET\_role –&gt; AspNetRoles
 
     ASP\_netUsers a asp\_netMembership –&gt; AspNetUsers
 

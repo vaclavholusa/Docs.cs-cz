@@ -12,12 +12,12 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: f65f93b20543d06ea70a9009b6921e297477c99e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 75d273d9fdb5d8ff0f7a910f42abe8bcce6e397d
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871568"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36313997"
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>Migrace dat Universal zprostředkovatele členství a uživatelské profily mají být ASP.NET Identity (C#)
 ====================
@@ -106,6 +106,8 @@ Vložte skript SQL z [ https://raw.github.com/suhasj/UniversalProviders-Identity
    Všimněte si, ProfileInfo je nyní vlastnost v třídě uživatele. Proto jsme můžete použít třídu uživatele přímo pracovat s daty profilu.
 
 Zkopírujte soubory v **IdentityModels** a **IdentityAccount** složek ze zdroje stahování ( [ https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations) ). Tyto mají zbývající třídy modelu a potřebné pro správu rolí pomocí rozhraní API ASP.NET Identity uživatelů a nové stránky. Metoda používaná je podobný členství SQL a naleznete podrobné vysvětlení [zde](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md).
+
+[!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
 ## <a name="copying-profile-data-to-the-new-tables"></a>Kopírování dat profilu do nové tabulky
 

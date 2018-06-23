@@ -5,20 +5,20 @@ description: Další informace o použití rozhraní IHttpClientFactory ke sprá
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/02/2018
+ms.date: 06/22/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: 540bbbf01f7f1780b2d0cce9bd51e53dccb6a336
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e56c7a3ed80cc08103f6178859a1a99f1a5ec068
+ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273258"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36327519"
 ---
 # <a name="initiate-http-requests"></a>Inicializace požadavků HTTP
 
 Podle [Glenn Condron](https://github.com/glennc), [Ryan Nowak](https://github.com/rynowak), a [Steve Gordon](https://github.com/stevejgordon)
 
-`IHttpClientFactory` Můžete zaregistrovat a použít ke konfiguraci a vytvořit [HttpClient](/dotnet/api/system.net.http.httpclient) instancí v aplikaci. Nabízí následující výhody:
+[IHttpClientFactory](/dotnet/api/system.net.http.ihttpclientfactory) můžete zaregistrovat a použít ke konfiguraci a vytvořit [HttpClient](/dotnet/api/system.net.http.httpclient) instancí v aplikaci. Nabízí následující výhody:
 
 * Poskytuje centrální umístění pro pojmenovávání a konfiguraci logické `HttpClient` instance. Například "githubu" klienta můžete zaregistrovat a nakonfigurovaná pro přístup k webu GitHub. Výchozí klienta lze zaregistrovat pro jiné účely.
 * Codifies koncept odchozí middleware prostřednictvím delegování obslužné rutiny v `HttpClient` a poskytuje rozšíření pro middleware na základě Polly využít této.
@@ -38,7 +38,7 @@ Existuje několik způsobů `IHttpClientFactory` slouží v aplikaci:
 
 ### <a name="basic-usage"></a>Základní informace o využití
 
-`IHttpClientFactory` Lze registrovat pomocí volání `AddHttpClient` rozšiřující metody na `IServiceCollection`uvnitř `ConfigureServices` metoda v souboru Startup.cs.
+`IHttpClientFactory` Lze registrovat pomocí volání `AddHttpClient` rozšiřující metody na `IServiceCollection`uvnitř `Startup.ConfigureServices` metoda.
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet1)]
 
@@ -50,7 +50,7 @@ Pomocí `IHttpClientFactory` tímto způsobem je skvělým způsobem, jak Refakt
 
 ### <a name="named-clients"></a>Klienti s názvem
 
-Pokud aplikace vyžaduje použití více jedinečných `HttpClient`, každý s jinou konfiguraci, je možnost použít **s názvem klienti**. Konfigurace pro pojmenovaná `HttpClient` lze zadat během registrace v `ConfigureServices`.
+Pokud aplikace vyžaduje použití více jedinečných `HttpClient`, každý s jinou konfiguraci, je možnost použít **s názvem klienti**. Konfigurace pro pojmenovaná `HttpClient` lze zadat během registrace v `Startup.ConfigureServices`.
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet2)]
 
@@ -74,7 +74,7 @@ Typový klient přijme `HttpClient` parametr v jeho konstruktoru:
 
 V předchozí kód konfigurace přesunutí typový klient. `HttpClient` Objektu je zpřístupněná jako veřejné vlastnosti. Je možné definovat metody specifické pro rozhraní API, které zveřejňují `HttpClient` funkce. `GetAspNetDocsIssues` Metoda zapouzdřuje kód potřebný k dotazu a analyzovat na nejnovější otevřené problémy z úložiště Githubu.
 
-K registraci typový klient, Obecné `AddHttpClient` rozšíření metodu je možné použít v rámci `ConfigureServices`, specifikace typový klient třídy:
+K registraci typový klient, Obecné `AddHttpClient` rozšíření metodu je možné použít v rámci `Startup.ConfigureServices`, specifikace typový klient třídy:
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet3)]
 
@@ -82,7 +82,7 @@ Typový klient je zaregistrován jako přechodný s DI. Typový klient můžete 
 
 [!code-csharp[](http-requests/samples/Pages/TypedClient.cshtml.cs?name=snippet1&highlight=11-14,20)]
 
-Pokud dáváte přednost, konfigurace pro typový klient lze zadat během registrace v `ConfigureServices`, a nikoli v konstruktoru typový klient:
+Pokud dáváte přednost, konfigurace pro typový klient lze zadat během registrace v `Startup.ConfigureServices`, a nikoli v konstruktoru typový klient:
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet4)]
 
@@ -171,7 +171,7 @@ Může být registrováno více obslužných rutin v pořadí, ve kterém se má
 
 `IHttpClientFactory` integruje pomocí Oblíbené knihovny třetích stran názvem [Polly](https://github.com/App-vNext/Polly). Polly je komplexní odolnost a přechodné chyby zpracování knihovna pro .NET. To umožňuje vývojářům express zásady, třeba opakování, jistič, vypršení časového limitu, přepážkovou izolace a záložního fluent a bezpečným způsobem.
 
-Metody rozšíření poskytované umožnit použití zásad Polly s nakonfigurované `HttpClient` instance. Rozšíření Polly jsou k dispozici v balíček NuGet s názvem 'Microsoft.Extensions.Http.Polly'. Tento balíček není zahrnut ve výchozím nastavení podle metapackage 'Microsoft.AspNetCore.App'. Pokud chcete používat rozšíření, PackageReference by měl být explicitně součástí projektu.
+Metody rozšíření poskytované umožnit použití zásad Polly s nakonfigurované `HttpClient` instance. Jsou k dispozici v rozšíření Polly [Microsoft.Extensions.Http.Polly](https://www.nuget.org/packages/Microsoft.Extensions.Http.Polly/) balíček NuGet. Není součástí tohoto balíčku [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app). Chcete-li používat rozšíření, explicitního `<PackageReference />` by měl být zahrnutý v projektu.
 
 [!code-csharp[](http-requests/samples/HttpClientFactorySample.csproj?highlight=9)]
 
@@ -181,7 +181,7 @@ Po obnovení tohoto balíčku, jsou k dispozici pro podporu přidání obslužn�
 
 Většina běžných chyb, které může nastat, když externí volání protokolu HTTP bude přechodný. Volána metoda vhodné rozšíření `AddTransientHttpErrorPolicy` je zahrnuta, což umožňuje definovat za účelem zpracování přechodné chyby zásad. Zásady nakonfigurované s tímto popisovačem – metoda rozšíření `HttpRequestException`, odpovědi HTTP 5xx a odpovědi protokolu HTTP 408.
 
-`AddTransientHttpErrorPolicy` Rozšíření lze použít v rámci `ConfigureServices`. Poskytuje přístup k rozšíření `PolicyBuilder` objekt pro zpracování chyby představující možné přechodná chyba nakonfigurována:
+`AddTransientHttpErrorPolicy` Rozšíření lze použít v rámci `Startup.ConfigureServices`. Poskytuje přístup k rozšíření `PolicyBuilder` objekt pro zpracování chyby představující možné přechodná chyba nakonfigurována:
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet7)]
 

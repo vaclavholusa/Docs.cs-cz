@@ -107,7 +107,7 @@ Spusťte aplikaci a otestovat odkazů v projektu (**Domů**, **o**, **kontaktujt
 
 [!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_ViewStart.cshtml)]
 
-Předchozí kód nastaví rozložení souboru *Pages/_Layout.cshtml* pro všechny soubory Razor pod *stránky* složky. V tématu [rozložení](xref:mvc/razor-pages/index#layout) Další informace.
+Předchozí kód nastaví rozložení souboru *Pages/_Layout.cshtml* pro všechny soubory Razor pod *stránky* složky. V tématu [rozložení](xref:razor-pages/index#layout) Další informace.
 
 ### <a name="update-the-layout"></a>Aktualizace rozložení
 

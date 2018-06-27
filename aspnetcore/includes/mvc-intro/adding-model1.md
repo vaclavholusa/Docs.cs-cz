@@ -1,4 +1,4 @@
-# <a name="adding-a-model-to-an-aspnet-core-mvc-app"></a>Přidání modelu do aplikace ASP.NET MVC jádra
+# <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>Přidat model do aplikace ASP.NET MVC jádra
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [tní Dykstra](https://github.com/tdykstra)
 

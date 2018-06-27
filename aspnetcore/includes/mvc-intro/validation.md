@@ -1,6 +1,6 @@
-# <a name="adding-validation"></a>Přidání ověřování
+# <a name="add-validation-to-an-aspnet-core-mvc-app"></a>Přidejte ověřování do aplikace ASP.NET MVC jádra
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V této části přidáte logiku ověření pro `Movie` modelu a budete ujistěte, že ověřovací pravidla se uplatňují vždy, když uživatel vytvoří nebo upraví film.
 

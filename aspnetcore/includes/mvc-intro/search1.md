@@ -1,6 +1,6 @@
-# <a name="adding-search-to-an-aspnet-core-mvc-app"></a>Přidání hledání do jádra ASP.NET MVC aplikace
+# <a name="add-search-to-an-aspnet-core-mvc-app"></a>Přidejte do aplikace ASP.NET MVC základní vyhledávání
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V této části můžete přidat možnosti vyhledávání `Index` metody akce, která umožňuje vyhledávání filmy podle *genre* nebo *název*.
 

@@ -1,6 +1,6 @@
-# <a name="working-with-sqlite-in-an-aspnet-core-mvc-project"></a>Práce s SQLite v projektu ASP.NET MVC jádra
+# <a name="work-with-sqlite-in-an-aspnet-core-mvc-app"></a>Práce s SQLite v základní ASP.NET MVC aplikace
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 `MvcMovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi. Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:
 

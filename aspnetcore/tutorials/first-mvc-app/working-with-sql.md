@@ -1,20 +1,20 @@
 ---
-title: Práce s LocalDB serveru SQL v ASP.NET Core
+title: Práce s LocalDB SQL Server v základní ASP.NET MVC aplikace
 author: rick-anderson
 description: Další informace o použití SQL serveru LocalDB v jednoduchou aplikaci ASP.NET MVC jádra.
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 5b8bbcd3c6590edbe199a0a52494e83fd2aa4dcf
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 05bd76038e5856d2a3e392e3b00e589dbc26fcc6
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273868"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961055"
 ---
 # <a name="work-with-sql-server-localdb-in-aspnet-core"></a>Práce s LocalDB serveru SQL v ASP.NET Core
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 `MvcMovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi. Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:
 

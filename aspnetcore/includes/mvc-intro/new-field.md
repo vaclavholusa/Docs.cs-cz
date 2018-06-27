@@ -1,7 +1,7 @@
 <!-- This include not used by windows version -->
-# <a name="adding-a-new-field"></a>Přidání nové pole
+# <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>Přidejte nové pole do aplikace ASP.NET MVC jádra
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Přidá nové pole do tohoto kurzu `Movies` tabulky. Jsme budete vyřaďte databázi a vytvořte novou, když nám změnit schéma (Přidat nové pole). Tento pracovní postup funguje dobře časná ve vývoj při nemáme žádná data produkční do opraveny.
 

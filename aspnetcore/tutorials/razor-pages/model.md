@@ -5,12 +5,12 @@ description: Zjistit, jak přidat třídy pro správu filmy v databázi pomocí 
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 508cca07fa96c20e228d2c55c9fb101f7fc3cb02
-ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
+ms.openlocfilehash: ed8faf8b3049adc7bcc7953d63ad805b0a836bd9
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36327549"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961172"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Přidat model do aplikace pro stránky Razor v ASP.NET Core
 
@@ -53,6 +53,36 @@ Dokončení **přidat stránky Razor pomocí Entity Framework (CRUD)** dialogov�
 * Vyberte **přidat**.
 
 ![Bitovou kopii z předchozích pokynů.](model/_static/arp.png)
+
+Proces vygenerované uživatelské rozhraní vytvořené a změněné následující soubory:
+
+### <a name="files-created"></a>Vytvořené soubory
+
+* *Stránky/filmy* vytvořit, odstranit, podrobnosti, úpravy, Index. Tyto stránky jsou podrobně popsané v dalším kurzu.
+* *Data/RazorPagesMovieContext.cs*
+
+### <a name="files-updates"></a>Soubory aktualizací
+
+* *Startup.cs*: změny tohoto souboru v jsou podrobně popsané v další části.
+* *appSettings.JSON určený*: Přidání připojovací řetězec použitý pro připojení k místní databázi.
+
+## <a name="examine-the-context-registered-with-dependency-injection"></a>Zkontrolujte kontext zaregistrována vkládání závislostí
+
+ASP.NET Core je vytvořené s [vkládání závislostí](xref:fundamentals/dependency-injection). Služby (například kontext databáze základní EF) jsou registrovány vkládání závislostí při spuštění aplikace. Součásti, které vyžadují tyto služby (například stránky Razor) jsou k dispozici tyto služby prostřednictvím konstruktor parametry. Později v tomto kurzu se zobrazí kód konstruktor, který získá kontext instanci databáze.
+
+Nástroj pro generování uživatelského rozhraní automaticky vytvořen kontext databáze a zaregistrována kontejneru pro vkládání závislostí.
+
+Zkontrolujte `Startup.ConfigureServices` metoda. Zvýrazněný řádek byl přidán modulem scaffolder:
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Startup.cs?name=snippet_ConfigureServices&highlight=12-13)]
+
+Hlavní třída, která koordinuje EF základní funkce pro daný datový model je třídy kontextu databáze. Data kontextu je odvozený od [Microsoft.EntityFrameworkCore.DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext). Data kontextu určuje entit, které jsou zahrnuty v datovém modelu. V tomto projektu je třída s názvem `RazorPagesMovieContext`.
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Data/RazorPagesMovieContext.cs)]
+
+Předchozí kód vytvoří [DbSet\<film >](/dotnet/api/microsoft.entityframeworkcore.dbset-1) vlastnost pro sadu entit. V terminologii rozhraní Entity Framework obvykle sadu entit odpovídá do databázové tabulky. Entity odpovídá na řádek v tabulce.
+
+Název připojovacího řetězce, je předaná do kontextu voláním metody na [DbContextOptions](/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions) objektu. Pro místní vývoj [ASP.NET Core konfigurační systém](xref:fundamentals/configuration/index) čte připojovací řetězec z *appSettings.JSON určený* souboru.
 
 <a name="pmc"></a>
 ## <a name="perform-initial-migration"></a>Provedení počáteční migrace
@@ -194,4 +224,4 @@ Další kurz vysvětluje souborů vytvořených pomocí generování uživatelsk
 
 > [!div class="step-by-step"]
 > [Předchozí: Začínáme](xref:tutorials/razor-pages/razor-pages-start)
-> [Další: vygeneroval stránky Razor](xref:tutorials/razor-pages/page)    
+> [Další: vygeneroval stránky Razor](xref:tutorials/razor-pages/page)

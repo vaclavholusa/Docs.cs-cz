@@ -3,20 +3,25 @@ title: Stránky Razor s EF jádra ASP.NET Core - řazení, filtru, stránkován�
 author: rick-anderson
 description: V tomto kurzu přidáte třídění, filtrování a stránkování funkce na stránku pomocí ASP.NET Core a Entity Framework Core.
 ms.author: riande
-ms.date: 10/22/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: abbd8337ed62428982a6c52cdaab684ea2c7d329
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 27121fd738389e8efe0ca974ff8a4a0a41b434e9
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274999"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961214"
 ---
+::: moniker range="= aspnetcore-2.0"
+ASP.NET 2.0 základní verzi v tomto kurzu lze nalézt v [tento PDF soubor](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/PDF-6-18-18.pdf).
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - řazení, filtru, stránkování - 3 8
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Rick Anderson](https://twitter.com/RickAndMSFT), a [Jon P Smith](https://twitter.com/thereformedprog)
 
-[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](~/includes/RP-EF/intro.md)]
 
 Tento kurz, řazení, filtrování, seskupování a stránkování se přidá funkce.
 
@@ -24,18 +29,17 @@ Následující obrázek znázorňuje dokončené stránky. Záhlaví sloupců js
 
 ![Studenti, kteří indexovou stránku](sort-filter-page/_static/paging.png)
 
-Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené aplikace pro tuto fázi](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part3-sorting).
+Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples).
 
 ## <a name="add-sorting-to-the-index-page"></a>Přidání řazení indexovou stránku
 
-Přidat řetězce *Students/Index.cshtml.cs* `PageModel` tak, aby obsahovala řazení paramaters:
+Přidat řetězce *Students/Index.cshtml.cs* `PageModel` tak, aby obsahovala řazení parametry:
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet1&highlight=10-13)]
-
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet1&highlight=10-13)]
 
 Aktualizace *Students/Index.cshtml.cs* `OnGetAsync` následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly)]
 
 Předchozí kód přijme `sortOrder` parametr z řetězce dotazu v adrese URL. Adresa URL (včetně řetězce dotazu) je generován [pomocná značka ukotvení](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper
 )
@@ -46,11 +50,11 @@ Pokud se požaduje indexovou stránku z **studenty** propojit, neexistuje žádn
 
 `NameSort` a `DateSort` jsou stránky Razor použít ke konfiguraci hypertextové odkazy záhlaví sloupce s řetězcové hodnoty odpovídající dotazu:
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
 
-Následující kód obsahuje jazyka C# [?: – operátor](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator):
+Následující kód obsahuje podmíněného C# [?: – operátor](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator):
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
 
 První řádek určuje, kdy `sortOrder` má hodnotu null nebo prázdná, `NameSort` je nastaven na "name_desc." Pokud `sortOrder` je **není** hodnotu null nebo prázdná, `NameSort` nastavena na prázdný řetězec.
 
@@ -65,21 +69,21 @@ Tyto dva příkazy povolit stránky lze nastavit sloupec hypertextové odkazy z�
 | Datum vzestupné       | ascending           | descending     |
 | Datum sestupném      | ascending           | ascending      |
 
-Metoda používá k určení tento sloupec seřadit podle technologie LINQ to Entities. Inicializuje kód `IQueryable<Student> ` před příkazem switch a upravuje v příkazu přepínače:
+Metoda používá k určení tento sloupec seřadit podle technologie LINQ to Entities. Inicializuje kód `IQueryable<Student>` před příkazem switch a upravuje v příkazu přepínače:
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-999)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-999)]
 
  Když`IQueryable` vytvoření nebo úpravě, odešle žádný dotaz do databáze. Dokud není spustit dotaz `IQueryable` objekt je převeden do kolekce. `IQueryable` se převedou na kolekci voláním metody `ToListAsync`. Proto `IQueryable` kódu má za následek jeden dotaz, který není provést, dokud následující příkaz:
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
 
-`OnGetAsync` může získat podrobné s velkým počtem sloupců.
+`OnGetAsync` může získat podrobné s velkým počtem řazení sloupců.
 
 ### <a name="add-column-heading-hyperlinks-to-the-student-index-page"></a>Přidat hypertextové odkazy záhlaví sloupce na stránku Student indexu
 
 Nahraďte kód v *Students/Index.cshtml*, s následujícími službami zvýrazněná kódu:
 
-[!code-html[](intro/samples/cu/Pages/Students/Index2.cshtml?highlight=17-19,25-27)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index2.cshtml?highlight=17-19,25-27)]
 
 Předchozí kód:
 
@@ -111,7 +115,7 @@ Chcete-li přidat filtrování studenty indexovou stránku:
 
 Aktualizace *Students/Index.cshtml.cs* `OnGetAsync` následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
 
 Předchozí kód:
 
@@ -135,7 +139,7 @@ Je snížení výkonu pro volání `ToUpper`. `ToUpper` Kód přidá funkce v kl
 
 V *Pages/Students/Index.cshtml*, přidejte následující zvýrazněný kód k vytvoření **vyhledávání** tlačítko) a chrome (různé.
 
-[!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
 Předchozí kód používá `<form>` [značky pomocná](xref:mvc/views/tag-helpers/intro) do textového pole pro vyhledávání a tlačítko Přidat. Ve výchozím nastavení `<form>` značky pomocná odesílat data formuláře s příspěvku na. S POST jsou předávány parametry v textu zprávy HTTP a není v adrese URL. Pokud se používá HTTP GET, data formuláře je předán v adrese URL jako řetězce dotazu. Předání dat pomocí řetězce dotazu umožňuje uživatelům bookmark adresu URL. [W3C pokyny](https://www.w3.org/2001/tag/doc/whenToUseGet.html) doporučujeme, aby GET se mají použít při akci nevede k aktualizaci.
 
@@ -158,11 +162,11 @@ Teď, když je vybraný odkaz řazení záhlaví sloupce, filtr z hodnoty **vyhl
 
 V této části `PaginatedList` třída se vytvoří pro podporu stránkování. `PaginatedList` Třídy používá `Skip` a `Take` příkazy k filtrování dat na serveru, místo načítání všechny řádky v tabulce. Následující obrázek znázorňuje tlačítka stránkování.
 
-![studenti, kteří indexovou stránku s odkazy stránkování](sort-filter-page/_static/paging.png)
+![Studenti, kteří indexu stránka s odkazy stránkování](sort-filter-page/_static/paging.png)
 
 Ve složce projektu vytvořte `PaginatedList.cs` následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/PaginatedList.cs)]
+[!code-csharp[](intro/samples/cu21/PaginatedList.cs)]
 
 `CreateAsync` Metoda v předchozí kód vezme velikost stránky a číslo stránky a použije příslušné `Skip` a `Take` příkazy `IQueryable`. Když `ToListAsync` se volá na `IQueryable`, vrací seznam obsahující pouze k požadované stránce. Vlastnosti `HasPreviousPage` a `HasNextPage` slouží k povolení nebo zakázání **předchozí** a **Další** stránkování tlačítka.
 
@@ -172,15 +176,15 @@ Ve složce projektu vytvořte `PaginatedList.cs` následujícím kódem:
 
 V *Students/Index.cshtml.cs*, aktualizujte typ `Student` z `IList<Student>` k `PaginatedList<Student>`:
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPageType)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPageType)]
 
 Aktualizace *Students/Index.cshtml.cs* `OnGetAsync` následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-999)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-999)]
 
 Předchozí kód přidá index stránky, aktuální `sortOrder`a `currentFilter` k označení metody.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage2)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage2)]
 
 Všechny parametry mají hodnotu null při:
 
@@ -201,11 +205,11 @@ Pokud řetězec pro hledání se změní při stránkování, stránky se resetu
 * Řetězec pro hledání se změní.
 * `searchString` Není parametr hodnotu null.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
 
 `PaginatedList.CreateAsync` Metoda převede student dotaz na jednu stránku studentů v typu kolekce, která podporuje stránkování. Této stránce studentů je předán na stránku Razor.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
 
 Dva otazníky v `PaginatedList.CreateAsync` představují [slučování null operátor](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator). Operátor slučování null definuje výchozí hodnotu pro typ s možnou hodnotou Null. Výraz `(pageIndex ?? 1)` znamená vrátí hodnotu `pageIndex` Pokud má hodnotu. Pokud `pageIndex` nebude mít hodnotu, vrátí 1.
 
@@ -213,15 +217,15 @@ Dva otazníky v `PaginatedList.CreateAsync` představují [slučování null ope
 
 Aktualizovat kód v *Students/Index.cshtml*. Změny se zvýrazněnou:
 
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-999)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-999)]
 
 Odkazy záhlaví sloupce používáte k průchodu aktuální hledaný řetězec na řetězec dotazu `OnGetAsync` metoda tak, aby uživatel může seřadit v rámci výsledky filtru:
 
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?range=28-31)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index.cshtml?range=28-31)]
 
 Tlačítka stránkování se zobrazí podle značky pomocné rutiny:
 
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?range=72-)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index.cshtml?range=72-)]
 
 Spusťte aplikaci a přejděte na stránku studenty.
 
@@ -242,8 +246,8 @@ Projděte ladicího programu.
 
 V tomto kroku *Pages/About.cshtml* se aktualizuje a zobrazí, kolik studenti, kteří mají zaregistrované pro každé datum registrace. Aktualizace používá seskupování a zahrnuje následující kroky:
 
-* Vytvořte třídu modelu zobrazení dat používané **o** stránky.
-* Změňte model o Razor stránky a stránky.
+* Vytvoření modelu zobrazení dat používané **o** stránky.
+* Aktualizujte stránku o použití zobrazení modelu.
 
 ### <a name="create-the-view-model"></a>Vytvoření modelu zobrazení
 
@@ -251,13 +255,13 @@ Vytvoření *SchoolViewModels* složku *modely* složky.
 
 V *SchoolViewModels* složky, přidejte *EnrollmentDateGroup.cs* následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
+[!code-csharp[](intro/samples/cu21/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
 ### <a name="update-the-about-page-model"></a>Aktualizace modelu stránky o
 
 Aktualizace *Pages/About.cshtml.cs* soubor s následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Pages/About.cshtml.cs)]
+[!code-csharp[](intro/samples/cu21/Pages/About.cshtml.cs)]
 
 Příkaz LINQ skupiny entit student datu registrace, vypočítá počet entit v každé skupině a ukládá výsledky do kolekce `EnrollmentDateGroup` zobrazit objekty modelu.
 
@@ -267,7 +271,7 @@ Poznámka: LINQ `group` příkaz není aktuálně podporována EF jádra. V pře
 
 Nahraďte kód v *Pages/About.cshtml* soubor s následujícím kódem:
 
-[!code-html[](intro/samples/cu/Pages/About.cshtml)]
+[!code-html[](intro/samples/cu21/Pages/About.cshtml)]
 
 Spusťte aplikaci a přejděte na stránku o. Počet studenty pro každé datum registrace se zobrazí v tabulce.
 
@@ -280,6 +284,7 @@ Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené
 * [Ladění ASP.NET Core 2.x zdroje](https://github.com/aspnet/Docs/issues/4155)
 
 V dalším kurzu aplikace používá migrace aktualizovat data modelu.
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Předchozí](xref:data/ef-rp/crud)

@@ -5,12 +5,12 @@ description: Naučte se používat atribut autorizovat k omezení přístupu k A
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/simple
-ms.openlocfilehash: 3c5e9d5dfd65ded40c9828a666143c1868f5562f
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6409def0508b855d3d2a4a1f4d3a3d15bfe5dd32
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272062"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961120"
 ---
 # <a name="simple-authorization-in-aspnet-core"></a>Jednoduché autorizace v ASP.NET Core
 
@@ -71,5 +71,5 @@ public class AccountController : Controller
 
 To by umožnilo pouze ověřeným uživatelům `AccountController`, s výjimkou `Login` akce, které je přístupné všem uživatelům, bez ohledu na jejich stav ověřené nebo neověřené / anonymní.
 
->[!WARNING]
-> `[AllowAnonymous]` obchází všechny příkazy autorizace. Pokud použijete zkombinujte `[AllowAnonymous]` a jakýkoli `[Authorize]` atribut pak autorizovat atributy budou vždy ignorovány. Například pokud použijete `[AllowAnonymous]` řadiči úrovně žádné `[Authorize]` atributy na stejného řadiče nebo na všechny akce v něm budou ignorovány.
+> [!WARNING]
+> `[AllowAnonymous]` obchází všechny příkazy autorizace. Pokud kombinujete `[AllowAnonymous]` a jakýkoli `[Authorize]` atribut, `[Authorize]` atributy jsou ignorovány. Například pokud použijete `[AllowAnonymous]` na úrovni kontroleru, všechny `[Authorize]` atributy ve stejném řadiči (nebo na všechny akce v něm) je ignorována.

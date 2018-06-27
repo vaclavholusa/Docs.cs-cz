@@ -12,12 +12,12 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d6578737478fb86f64be261925becc3adec33247
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 58d87bd6211ae1b1eea227d34c001239efcf5f1d
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30891777"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961396"
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-c"></a>Konfigurace ověřování formulářů a pokročilá témata (C#)
 ====================
@@ -55,7 +55,7 @@ Tabulka 1 shrnuje vlastnosti, které lze přizpůsobit pomocí &lt;forms&gt; ele
 |         ochrana         |                                                                                                                                            Určuje, jaké postupy se používají k ochraně lístek pro ověřování pomocí formulářů. Povolené hodnoty jsou: všechny (výchozí); Šifrování; None; a ověření. Tato nastavení jsou podrobněji v kroku 3.                                                                                                                                            |
 |         requireSSL         |                                                                                                                                                                                Logická hodnota, která určuje, jestli přenos ověřovacího souboru cookie vyžaduje připojení SSL. Výchozí hodnota je False.                                                                                                                                                                                |
 |     parametr slidingExpiration      |                                                                                                 Logická hodnota, která určuje, že zda vypršení časového limitu ověřovacího souboru cookie se vynuluje pokaždé, když uživatel navštíví web během jedné relace. Výchozí hodnota je true. Zásady ověřování lístkem časový limit je podrobněji popsána v zadání části hodnotu časového limitu lístku.                                                                                                 |
-|          Časový limit           |                                                                                                                               Určuje dobu v minutách, po kterém vyprší platnost ověřovacího lístku souboru cookie. Výchozí hodnota je 30. Zásady ověřování lístkem časový limit je podrobněji popsána v zadání části hodnotu časového limitu lístku.                                                                                                                               |
+|          časový limit           |                                                                                                                               Určuje dobu v minutách, po kterém vyprší platnost ověřovacího lístku souboru cookie. Výchozí hodnota je 30. Zásady ověřování lístkem časový limit je podrobněji popsána v zadání části hodnotu časového limitu lístku.                                                                                                                               |
 
 **Tabulka 1**: Souhrn A &lt;forms&gt; atributy elementu
 
@@ -168,7 +168,7 @@ Uložit změny do Default.aspx a potom navštivte prostřednictvím prohlížeč
 
 `http://localhost:2448/ASPNET\_Security\_Tutorial\_03\_CS/(F(jaIOIDTJxIr12xYS-VVgkqKCVAuIoW30Bu0diWi6flQC-FyMaLXJfow\_Vd9GZkB2Cv-rfezq0gKadKX0YPZCkA2))/SomePage.aspx`
 
-Adresa URL SomePage.aspx v odkazu byla automaticky převést na adresu URL, která zahrnuté lístek ověřování - nebyly k dispozici pro zápis na ikonu kódu! Lístek ověřování formuláře budou vloženy automaticky adresu URL pro všechny hypertextové odkazy, které není začínat http:// nebo /. Není důležité, pokud se zobrazí hypertextový odkaz v volání Response.Redirect, v ovládacím prvku hypertextový odkaz nebo v element anchor HTML (tj, &lt;href = "..."&gt;... &lt;/a&gt;). Adresa URL není něco podobného jako http://www.someserver.com/SomePage.aspx nebo /SomePage.aspx, formuláře budou vloženy ověřovací lístek pro nás.
+Adresa URL SomePage.aspx v odkazu byla automaticky převést na adresu URL, která zahrnuté lístek ověřování - nebyly k dispozici pro zápis na ikonu kódu! Lístek ověřování formuláře budou vloženy automaticky adresu URL pro všechny hypertextové odkazy, které nebudou spuštěny s `http://` nebo `/`. Není důležité, pokud se zobrazí hypertextový odkaz v volání Response.Redirect, v ovládacím prvku hypertextový odkaz nebo v element anchor HTML (tj, `<a href="...">...</a>`). Adresa URL není něco podobného jako `http://www.someserver.com/SomePage.aspx` nebo `/SomePage.aspx`, abychom budou vloženy lístek pro ověřování pomocí formulářů.
 
 > [!NOTE]
 > Lístků pro ověřování pomocí formulářů bez souborů cookie splňovat stejné zásady vypršení časového limitu jako lístků pro ověřování na základě souboru cookie. Ověřování bez souborů cookie lístků jsou však více náchylné k útoky opakováním vzhledem k tomu, že lístek ověřování vložené přímo v adrese URL. Představte si uživatel, který navštíví nějaký web, přihlášení a pak vloží adresu URL v e-mail s kolegy. Pokud kolegu klikne na tento odkaz před dosažením vypršení platnosti, budou se být přihlášení jako uživatel, který poslal e-mailu!
@@ -420,7 +420,7 @@ Další informace o tématech popsané v tomto kurzu najdete v následujících 
 - [Zabezpečení přihlašovacích ovládacích prvků](https://msdn.microsoft.com/library/ms178346.aspx)
 - [&lt;Ověřování&gt; – Element](https://msdn.microsoft.com/library/532aee0e.aspx)
 - [&lt;Forms&gt; Element pro &lt;ověřování&gt;](https://msdn.microsoft.com/library/1d3t3c61.aspx)
-- [The &lt;machineKey&gt; Element](https://msdn.microsoft.com/library/w8h3skw9.aspx)
+- [&lt;MachineKey&gt; – Element](https://msdn.microsoft.com/library/w8h3skw9.aspx)
 - [Pochopení lístek pro ověřování pomocí formulářů a souboru Cookie](https://support.microsoft.com/kb/910443)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Video školení na témata, které jsou obsažené v tomto kurzu

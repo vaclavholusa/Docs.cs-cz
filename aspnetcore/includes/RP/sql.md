@@ -1,6 +1,6 @@
-# <a name="working-with-sqlite-in-and-razor-pages"></a>Práce s SQLite v a stránky Razor
+# <a name="work-with-sqlite-in-an-aspnet-core-razor-pages-app"></a>Práce s SQLite v ASP.NET Core Razor stránky aplikace
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 `MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi. Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:
 

@@ -1,6 +1,6 @@
-# <a name="adding-search-to-a-razor-pages-app"></a>Přidání hledání do aplikace pro stránky Razor
+# <a name="add-search-to-an-aspnet-core-razor-pages-app"></a>Přidejte do aplikace ASP.NET Core Razor stránky vyhledávání
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V tomto dokumentu je přidána vyhledávací funkci na indexovou stránku, která umožňuje vyhledávání filmy podle *genre* nebo *název*.
 

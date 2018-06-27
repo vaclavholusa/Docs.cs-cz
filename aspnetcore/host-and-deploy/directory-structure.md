@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/09/2018
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: 06d3f097cd93ceb2a23b9f6516a9b7a1f3ca3089
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 8e2693397f826d0e9a36ff52aa1d1d623b31043d
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273670"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960824"
 ---
 # <a name="aspnet-core-directory-structure"></a>Struktura adresářů ASP.NET Core
 
@@ -22,8 +22,8 @@ V ASP.NET Core, adresáři publikované aplikace *publikování*, se skládá z 
 
 | Typ aplikace | Struktura adresářů |
 | -------- | ------------------- |
-| [Nasazení závislé na Framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>Publikování&dagger;<ul><li>protokoly&dagger; (volitelné, pokud se vyžaduje pro příjem protokoly stdout)</li><li>Zobrazení&dagger; (aplikace MVC; Pokud nejsou předkompilovaných zobrazení)</li><li>Stránky&dagger; (MVC nebo stránky Razor aplikace; Pokud nejsou předkompilovaných stránky)</li><li>Wwwroot&dagger;</li><li>*\.soubory knihoven DLL</li><li>\<název sestavení >. deps.json</li><li>\<název sestavení > .dll</li><li>\<název sestavení > pdb</li><li>\<název sestavení >. PrecompiledViews.dll</li><li>\<název sestavení >. PrecompiledViews.pdb</li><li>\<název sestavení >. runtimeconfig.json</li><li>soubor Web.config (nasazení služby IIS)</li></ul></li></ul> |
-| [Samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>Publikování&dagger;<ul><li>protokoly&dagger; (volitelné, pokud se vyžaduje pro příjem protokoly stdout)</li><li>odolný systém souborů&dagger;</li><li>Zobrazení&dagger; (aplikace MVC; Pokud nejsou předkompilovaných zobrazení)</li><li>Stránky&dagger; (MVC nebo stránky Razor aplikace; Pokud nejsou předkompilovaných stránky)</li><li>Wwwroot&dagger;</li><li>\*soubory .dll</li><li>\<název sestavení >. deps.json</li><li>\<název sestavení > .exe</li><li>\<název sestavení > pdb</li><li>\<název sestavení >. PrecompiledViews.dll</li><li>\<název sestavení >. PrecompiledViews.pdb</li><li>\<název sestavení >. runtimeconfig.json</li><li>soubor Web.config (nasazení služby IIS)</li></ul></li></ul> |
+| [Nasazení závislé na Framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>Publikování&dagger;<ul><li>Protokoly&dagger; (volitelné, pokud se vyžaduje pro příjem protokoly stdout)</li><li>Zobrazení&dagger; (aplikace MVC; Pokud nejsou předkompilovaných zobrazení)</li><li>Stránky&dagger; (MVC nebo stránky Razor aplikace; Pokud nejsou předkompilovaných stránky)</li><li>Wwwroot&dagger;</li><li>*\.soubory knihoven DLL</li><li>\<název sestavení >. deps.json</li><li>\<název sestavení > .dll</li><li>\<název sestavení > pdb</li><li>\<název sestavení >. PrecompiledViews.dll</li><li>\<název sestavení >. PrecompiledViews.pdb</li><li>\<název sestavení >. runtimeconfig.json</li><li>soubor Web.config (nasazení služby IIS)</li></ul></li></ul> |
+| [Samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>Publikování&dagger;<ul><li>Protokoly&dagger; (volitelné, pokud se vyžaduje pro příjem protokoly stdout)</li><li>odolný systém souborů&dagger;</li><li>Zobrazení&dagger; (aplikace MVC; Pokud nejsou předkompilovaných zobrazení)</li><li>Stránky&dagger; (MVC nebo stránky Razor aplikace; Pokud nejsou předkompilovaných stránky)</li><li>Wwwroot&dagger;</li><li>\*soubory .dll</li><li>\<název sestavení >. deps.json</li><li>\<název sestavení > .exe</li><li>\<název sestavení > pdb</li><li>\<název sestavení >. PrecompiledViews.dll</li><li>\<název sestavení >. PrecompiledViews.pdb</li><li>\<název sestavení >. runtimeconfig.json</li><li>soubor Web.config (nasazení služby IIS)</li></ul></li></ul> |
 
 &dagger;Určuje adresář
 

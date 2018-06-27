@@ -12,12 +12,12 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/releases/whats-new-in-aspnet-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: 400329dd852ca3c527387ee45e3e902b725e771b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 89b065fccd0e4864f4a24c37b4caa29a1e127840
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26566824"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961296"
 ---
 <a name="whats-new-in-aspnet-web-api-22"></a>Co je nového v rozhraní ASP.NET Web API 2.2
 ====================
@@ -131,7 +131,7 @@ Textové literály můžete například použít v prostředku cesty OData jako 
 
 Když takovou žádost hostitele se zruší řídicí obdrží služby ty řídicí sekvence před jejich předáním runtime webového rozhraní API. Je to ochrana proti útokům takto:  
   
- http://www.contoso.com/..%2f..%2f/Windows/System32/cmd.exe?/c+dir+c:
+`http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:`
 
 To způsobí, že Web API OData zásobníku vrátit chybu 404 (není nalezena). Aby se tato chyba, by měl klient používat posloupnosti zdvojených uvozovacích pro lomítko (% 252F) a zpětné lomítko (% 255C). Tato situace pro řetězce dotazů, jako je například /Employees? $filter = název eq 'Name % 2F:
 
@@ -158,7 +158,7 @@ Alternativní řešení je v konfiguraci webového rozhraní API použít násle
 Problém: Vazby modelu komplexního typu, který opatřen atributem FromUri pracuje odlišně při použití směrováním atributů.
 
 Následující odkaz ke sledování problém a obsahuje také podrobnosti o alternativní řešení.  
-[http://aspnetwebstack.CodePlex.com/workitem/1944](http://aspnetwebstack.codeplex.com/workitem/1944)
+[http://aspnetwebstack.codeplex.com/workitem/1944](http://aspnetwebstack.codeplex.com/workitem/1944)
 
 Problém: Generování uživatelského rozhraní MVC nebo webového rozhraní API do projektu s 5.2.0 balíčků balíčky má za následek 5.1.2 pro šablony, které již nejsou v projektu
 

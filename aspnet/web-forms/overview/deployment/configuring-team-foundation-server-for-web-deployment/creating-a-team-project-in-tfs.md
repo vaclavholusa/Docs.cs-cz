@@ -12,12 +12,12 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 79c069a601c0eafd84ae142241895428052acd29
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 96e0ee5fd0b74e7b22b8e346aa8462f7558a3ddc
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880424"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960691"
 ---
 <a name="creating-a-team-project-in-tfs"></a>Vytvoření týmového projektu v sadě TFS
 ====================
@@ -110,9 +110,8 @@ Dále musíte poskytnout oprávnění uživatele k vytvoření nových lokalit t
 
    > [!NOTE]
    > Může se zobrazit <strong>HTTP 404 nebyl nalezen</strong> chyba z důvodu dvojité kódování chyb HTTP. Pokud k tomu dojde, nahraďte adresu URL s tímto:   
-   > [<em>URL kolekce webů</em>] /\_layouts/permsetup.aspx  
-   > Příklad:  
-   > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
+   > `[site_collection_URL]/_layouts/permsetup.aspx` Například:  
+   > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
 8. Na **nastavit skupiny pro tento web** přidejte uživatele, který vytvoří týmové projekty k **vlastníky** skupiny a pak klikněte na tlačítko **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)

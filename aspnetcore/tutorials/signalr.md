@@ -7,12 +7,12 @@ ms.author: rachelap
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 8762a4be1032d58014dd32dfdd3707197e14c6f9
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e57fa86476dcb57a04211240a7202dcfc2e263ad
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291624"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960601"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>Začínáme s funkce SignalR technologie ASP.NET Core
 
@@ -29,7 +29,7 @@ Tento kurz ukazuje vývoj SignalR následující:
 > * Vytvořte rozbočovače SignalR tak, aby nabízel obsah pro klienty.
 > * Upravit `Startup` třídy a konfigurace aplikace.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/get-started/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 # <a name="prerequisites"></a>Požadavky
 
@@ -100,7 +100,7 @@ Rozbočovač je třída, která slouží jako podrobný kanál, který umožňuj
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
-1. Do projektu přidejte třídu výběrem **soubor** > **nový** > **soubor** a výběrem **Visual C# – třída**. Název souboru *ChatHub*.
+1. Do projektu přidejte třídu výběrem **soubor** > **nový** > **soubor** a výběrem **Visual C# – třída**. Název třídy `ChatHub` a soubor *ChatHub.cs*.
 
 2. Dědit z `Microsoft.AspNetCore.SignalR.Hub`. `Hub` Třída obsahuje vlastnosti a události pro správu připojení a skupin, jakož i přijímající a odesílající data.
 
@@ -112,13 +112,13 @@ Rozbočovač je třída, která slouží jako podrobný kanál, který umožňuj
 
 1. Otevřete *SignalRChat* složky ve Visual Studio Code.
 
-2. Do projektu přidejte třídu výběrem **soubor** > **nový soubor** z nabídky.
+2. Do projektu přidejte třídu výběrem **soubor** > **nový soubor** z nabídky. Název třídy `ChatHub` a soubor *ChatHub.cs*.
 
 3. Dědit z `Microsoft.AspNetCore.SignalR.Hub`. `Hub` Třída obsahuje vlastnosti a události pro správu připojení a skupin, jakož i příjem a odesílání dat do klientů.
 
 4. Přidat `SendMessage` metody pro třídu. `SendMessage` Metoda odešle zprávu do všech klientů připojených konverzace. Všimněte si, vrátí hodnotu [úloh](/dotnet/api/system.threading.tasks.task), protože SignalR je asynchronní. Asynchronní kódu poskytuje lepší škálovatelnost.
 
-   [!code-csharp[Startup](signalr/sample/Hubs/ChatHub.cs?range=6-12)]
+   [!code-csharp[Startup](signalr/sample/Hubs/ChatHub.cs)]
 
 -----
 

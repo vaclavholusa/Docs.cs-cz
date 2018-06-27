@@ -1,6 +1,6 @@
-# <a name="adding-a-view-to-an-aspnet-core-mvc-app"></a>Přidání zobrazení do aplikace ASP.NET MVC jádra
+# <a name="add-a-view-to-an-aspnet-core-mvc-app"></a>Přidání zobrazení do aplikace ASP.NET MVC jádra
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V této části upravíte `HelloWorldController` třídu se má použít soubory šablon do této aplikace zapouzdření proces generování odpovědi HTML klientovi zobrazení syntaxe Razor.
 

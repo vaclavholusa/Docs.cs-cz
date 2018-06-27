@@ -1,20 +1,20 @@
 ---
-title: Přidejte nové pole do aplikace ASP.NET Core
+title: Přidejte nové pole do aplikace ASP.NET MVC jádra
 author: rick-anderson
 description: Další informace o použití migrace Entity Framework Code First přidávají nové pole do modelu a migrovat tato změna k databázi.
 ms.author: riande
 ms.date: 10/14/2016
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: 0077205e0f10037c9b24eab80337cb76f027e688
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: eb98ebcde1086ad605127dddc055a18d4874c722
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278775"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961032"
 ---
-# <a name="add-a-new-field-to-an-aspnet-core-app"></a>Přidejte nové pole do aplikace ASP.NET Core
+# <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>Přidejte nové pole do aplikace ASP.NET MVC jádra
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V této části budete používat [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) migrace Code First a přidat nové pole do modelu migraci, které změnit na databázi.
 

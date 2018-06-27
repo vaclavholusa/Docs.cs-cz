@@ -1,16 +1,16 @@
 ---
-title: Práce s SQLite a základní ASP.NET MVC
+title: Práce s SQLite v základní ASP.NET MVC aplikace
 author: rick-anderson
 description: Pomocí SQLite základní aplikaci MVC
 ms.author: riande
 ms.date: 04/07/2017
 uid: tutorials/first-mvc-app-mac/working-with-sql
-ms.openlocfilehash: 71fc108655a26342bacb5ba4f8e108dfa93b4ccd
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9b2ea42a22a255b230b37e51bce800334d1b64b8
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279087"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960876"
 ---
 [!INCLUDE [adding-model](../../includes/mvc-intro/sql.md)]
 

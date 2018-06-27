@@ -1,24 +1,24 @@
 ---
-title: Přidání vyhledávání
+title: Přidejte do aplikace ASP.NET MVC základní vyhledávání
 author: rick-anderson
 description: Ukazuje, jak přidat hledání do jednoduchou aplikaci ASP.NET MVC jádra
 ms.author: riande
 ms.date: 04/07/2017
 uid: tutorials/first-mvc-app-xplat/search
-ms.openlocfilehash: dc84eb38c0487d90451979ec9572bf1641571357
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: cf4fe3806b45008f48bf5f0598057552bdcfae7c
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276003"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961435"
 ---
 [!INCLUDE [adding-model](../../includes/mvc-intro/search1.md)]
 
-<span data-ttu-id="eca3e-103">Poznámka:: SQLlite je velká a malá písmena, takže budete muset hledat "Neodstraněných" a není "neodstraněných".</span><span class="sxs-lookup"><span data-stu-id="eca3e-103">Note: SQLlite is case sensitive, so you'll need to search for "Ghost" and not "ghost".</span></span>
+<span data-ttu-id="cbb41-103">Poznámka:: SQLlite je velká a malá písmena, takže budete muset hledat "Neodstraněných" a není "neodstraněných".</span><span class="sxs-lookup"><span data-stu-id="cbb41-103">Note: SQLlite is case sensitive, so you'll need to search for "Ghost" and not "ghost".</span></span>
 
 [!INCLUDE [adding-model](../../includes/mvc-intro/search2.md)]
 
-<span data-ttu-id="eca3e-104">Změna `<form>` značky v *Views\movie\Index.cshtml* zobrazení syntaxe Razor k určení `method="get"`:</span><span class="sxs-lookup"><span data-stu-id="eca3e-104">Change the `<form>` tag in the *Views\movie\Index.cshtml* Razor view to specify `method="get"`:</span></span>
+<span data-ttu-id="cbb41-104">Změna `<form>` značky v *Views\movie\Index.cshtml* zobrazení syntaxe Razor k určení `method="get"`:</span><span class="sxs-lookup"><span data-stu-id="cbb41-104">Change the `<form>` tag in the *Views\movie\Index.cshtml* Razor view to specify `method="get"`:</span></span>
 
 ```html
 <form asp-controller="Movies" asp-action="Index" method="get">
@@ -27,6 +27,6 @@ ms.locfileid: "36276003"
 [!INCLUDE [adding-model](../../includes/mvc-intro/search3.md)]
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="eca3e-105">[Předchozí - metody Kontroleru a zobrazení](controller-methods-views.md)
-> [další – přidání polí](new-field.md)</span><span class="sxs-lookup"><span data-stu-id="eca3e-105">[Previous - Controller methods and views](controller-methods-views.md)
+> <span data-ttu-id="cbb41-105">[Předchozí - metody Kontroleru a zobrazení](controller-methods-views.md)
+> [další – přidání polí](new-field.md)</span><span class="sxs-lookup"><span data-stu-id="cbb41-105">[Previous - Controller methods and views](controller-methods-views.md)
 [Next - Add a field](new-field.md)</span></span>  

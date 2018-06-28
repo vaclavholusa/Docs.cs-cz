@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 33e5829ce4a09e132743b4174a588cf232a44775
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 40d297257895a4defeb89cef9c5ec6deea64a985
+ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276254"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37033352"
 ---
 # <a name="net-generic-host"></a>Obecné hostitele rozhraní .NET
 
@@ -394,7 +394,7 @@ Další informace najdete v tématu [použijte prostředí s více](xref:fundame
 | [ApplicationStopped](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstopped) | Hostitel je dokončení řádné vypnutí. Všechny požadavky, měla by být zpracována. Vypnutí bloky až po dokončení této události. |
 | [ApplicationStopping](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstopping) | Hostitel provádí řádné vypnutí. Může být stále aktivní žádosti. Vypnutí bloky až po dokončení této události. |
 
-Konstruktor vložit `IApplicationLifetime` služby do jakékoli třídy. [Ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/generic-host/samples/) používá contructor vkládání do `LifetimeEventsHostedService` – třída ( `IHostedService` implementace) k registraci události.
+Konstruktor vložit `IApplicationLifetime` služby do jakékoli třídy. [Ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/generic-host/samples/) používá konstruktor vkládání do `LifetimeEventsHostedService` – třída ( `IHostedService` implementace) k registraci události.
 
 *LifetimeEventsHostedService.cs*:
 

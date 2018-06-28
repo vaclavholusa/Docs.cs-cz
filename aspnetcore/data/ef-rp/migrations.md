@@ -3,15 +3,19 @@ title: Stránky Razor s EF jádra ASP.NET Core - Migrations - 4 8
 author: rick-anderson
 description: V tomto kurzu začnete používat funkci migrace EF jádra pro správu změn datových modelů v aplikaci ASP.NET MVC jádra.
 ms.author: riande
-ms.date: 10/15/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/migrations
-ms.openlocfilehash: d39e1aa40ff97d5b335f2bde6170242e89f6189a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f1776506ef15c75beb9f1a2579b0073f927b013a
+ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272345"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37033248"
 ---
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
+
+::: moniker range=">= aspnetcore-2.1"
+
 # <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - Migrations - 4 8
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog), a [Rick Anderson](https://twitter.com/RickAndMSFT)
@@ -20,8 +24,8 @@ Podle [tní Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter
 
 V tomto kurzu se používá funkci EF základní migrace pro správu změn datových modelů.
 
-Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené aplikace pro tuto fázi](
-https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations).
+Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené aplikace](
+https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples).
 
 Když je vyvinut novou aplikaci, model dat často změny. Pokaždé, když změny modelu modelu získá synchronizována s databází. Tento kurz spuštění nakonfigurováním rozhraní Entity Framework pro vytvoření databáze, pokud neexistuje. Pokaždé, když datový model změny:
 
@@ -33,71 +37,57 @@ Tento přístup k udržování databáze synchronizace s datovým modelem funguj
 
 Namísto vyřadit a znovu vytvořit databázi, když datový model změny, migrace aktualizace schématu a uchovává existující data.
 
-## <a name="entity-framework-core-nuget-packages-for-migrations"></a>Entity Framework Core NuGet balíčky pro migrace
+## <a name="drop-the-database"></a>Odpojení databáze
 
-Chcete-li pracovat s migrací, použijte **Konzola správce balíčků** (pomocí PMC) nebo rozhraní příkazového řádku (CLI). Tyto kurzy ukazují, jak používat rozhraní příkazového řádku. Informace o pomocí PMC je na [konci tohoto kurzu](#pmc).
+Použití **Průzkumník objektů systému SQL Server** (SSOX) nebo `database drop` příkaz:
 
-Nástroje EF jádra pro rozhraní příkazového řádku (CLI) jsou uvedeny v [Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet). K instalaci tohoto balíčku, přidejte ho do `DotNetCliToolReference` kolekce v *.csproj* souboru, jak je vidět. **Poznámka:** tento balíček musí být nainstalována úpravou *.csproj* souboru. `install-package` Příkaz nebo Správce balíčků grafické uživatelské rozhraní nelze použít k instalaci tohoto balíčku. Upravit *.csproj* kliknutím pravým tlačítkem myši na název projektu v souboru **Průzkumníku řešení** a výběrem **upravit ContosoUniversity.csproj**.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-Následující kód ukazuje aktualizovaný *.csproj* soubor s EF základní rozhraní příkazového řádku nástroje zvýrazněná:
+V **Konzola správce balíčků** (pomocí PMC), spusťte následující příkaz:
 
-[!code-xml[](intro/samples/cu/ContosoUniversity.csproj?highlight=12)]
-  
-Čísla verzí v předchozím příkladu byly aktuální v době kurzu byla zapsána. Použijte stejnou verzi pro EF základní rozhraní příkazového řádku nástroje v dalších balíčků.
+```PMC
+Drop-Database
+```
 
-## <a name="change-the-connection-string"></a>Změnit připojovací řetězec
+Spustit `Get-Help about_EntityFrameworkCore` z pomocí PMC získat informace nápovědy.
 
-V *appSettings.JSON určený* souboru, změňte název databáze v připojovacím řetězci ContosoUniversity2.
-
-[!code-json[](intro/samples/cu/appsettings2.json?range=1-4)]
-
-Změna názvu DB v připojovacím řetězci způsobí, že první migrace k vytvoření nové databáze. Nové databáze je vytvořit, protože s tímto názvem neexistuje. Změna připojovací řetězec není nutné u Začínáme s migrací.
-
-Alternativu ke změně názvu databáze je odstranění databáze. Použití **Průzkumník objektů systému SQL Server** (SSOX) nebo `database drop` rozhraní příkazového řádku příkaz:
-
- ```console
- dotnet ef database drop
- ```
-
-V následující části vysvětluje, jak spouštět příkazy příkazového řádku.
-
-## <a name="create-an-initial-migration"></a>Vytvoření počáteční migrace
-
-Sestavte projekt.
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
 Otevřete okno příkazového řádku a přejděte do složky projektu. Obsahuje složky projektu *Startup.cs* souboru.
 
 Zadejte v příkazovém okně:
 
+ ```console
+ dotnet ef database drop
+ ```
+
+------
+
+## <a name="create-an-initial-migration-and-update-the-db"></a>Vytváření počáteční migrace a aktualizaci databáze
+
+Sestavte projekt a vytvořte první migrace.
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+```PMC
+Add-Migration InitialCreate
+Update-Database
+```
+
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+
 ```console
 dotnet ef migrations add InitialCreate
+dotnet ef database update
 ```
 
-Příkazové okno se zobrazí podobná následující informace:
-
-```console
-info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
-      User profile is available. Using 'C:\Users\username\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
-      Entity Framework Core 2.0.0-rtm-26452 initialized 'SchoolContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
-Done. To undo this action, use 'ef migrations remove'
-```
-
-Pokud migrace selže se zprávou "*nemůže přistupovat k souboru... ContosoUniversity.dll vzhledem k tomu, že je stále používán jiným procesem.* " Zobrazí se:
-
-* Zastavte službu IIS Express.
-
-   * Ukončete a restartujte Visual Studio, nebo
-   * Najít ikonu IIS Express na hlavním panelu systému Windows.
-   * Klikněte pravým tlačítkem na ikonu služby IIS Express a pak klikněte na tlačítko **ContosoUniversity > Zastavit lokality**.
-
-Pokud chybová zpráva "sestavení se nezdařilo." Zobrazí se, spusťte příkaz znovu. Pokud se tato chyba, nechte poznámku v dolní části tohoto kurzu.
+------
 
 ### <a name="examine-the-up-and-down-methods"></a>Zkontrolujte nahoru a dolů metody
 
-Příkaz EF základní `migrations add` generovaného kódu k vytvoření databáze z. Tento kód migrace je v *migrace\<časové razítko > _InitialCreate.cs* souboru. `Up` Metodu `InitialCreate` třída vytvoří DB tabulky, které odpovídají sady dat modelu entity. `Down` Metoda odstraní, jak je znázorněno v následujícím příkladu:
+Základní EF `migrations add` příkaz vygeneruje kód k vytvoření databáze. Tento kód migrace je v *migrace\<časové razítko > _InitialCreate.cs* souboru. `Up` Metodu `InitialCreate` třída vytvoří DB tabulky, které odpovídají sady dat modelu entity. `Down` Metoda odstraní, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
+[!code-csharp[](intro/samples/cu21/Migrations/20180626224812_InitialCreate.cs?range=7-24,77-88)]
 
 Migrace volání `Up` metody k implementaci změny modelu dat pro migraci. Když zadáte příkaz k vrácení aktualizace, migrace volání `Down` metoda.
 
@@ -110,19 +100,33 @@ Pokud počáteční migrace je vytvořen a existuje databáze:
 
 Pokud chcete aplikaci nasadit do nového prostředí, pro vytvoření databáze musíte spustit kód pro vytvoření databáze.
 
-Připojovací řetězec dříve bylo změněno používat nový název databáze. Zadaná databáze neexistuje, vytvoří migrace databáze.
+Dříve databáze byla vyřazena a neexistuje, takže migrace vytvoří novou databázi.
 
 ### <a name="the-data-model-snapshot"></a>Snímek dat modelu
 
-Vytvoří migrace *snímku* z aktuální schéma databáze v *Migrations/SchoolContextModelSnapshot.cs*. Když přidáte migrace, EF Určuje, co se změnilo tak, že porovnáte datový model, který soubor snímku.
+Vytvoření migrace *snímku* z aktuální schéma databáze v *Migrations/SchoolContextModelSnapshot.cs*. Když přidáte migrace, EF Určuje, co se změnilo tak, že porovnáte datový model, který soubor snímku.
 
-Při odstraňování migrace, použijte [odebrat dotnet ef migrace](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) příkaz. `dotnet ef migrations remove` Odstraní migrace a zajišťuje, že je správně obnovení snímku.
+K odstranění migrace, použijte následující příkaz:
 
-V tématu [EF základní migrace v prostředích Team](/ef/core/managing-schemas/migrations/teams) Další informace o tom, jak se používá soubor snímku.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-## <a name="remove-ensurecreated"></a>Odebrat EnsureCreated
+Odebrat migrace
 
-Pro včasné vývoj `EnsureCreated` příkaz nebyl použit. V tomto kurzu se používá migrace. `EnsureCreated` má následující omezení:
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+
+```console
+dotnet ef migrations remove
+```
+
+Další informace najdete v tématu [odebrat dotnet ef migrace](/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove).
+
+------
+
+Příkaz remove migrace odstraní migrace a zajišťuje, že je správně obnovení snímku.
+
+### <a name="remove-ensurecreated-and-test-the-app"></a>Odeberte EnsureCreated a testování aplikací
+
+Pro včasné vývoj `EnsureCreated` byl použit. V tomto kurzu se používají migrace. `EnsureCreated` má následující omezení:
 
 * Obchází migrace a vytvoří databáze a schéma.
 * Nelze vytvořit tabulku migrace.
@@ -135,48 +139,9 @@ Odebrat následující řádek z `DbInitializer`:
 context.Database.EnsureCreated();
 ```
 
-## <a name="apply-the-migration-to-the-db-in-development"></a>Použití migrace k databázi v vývoj
+Spusťte aplikaci a ověřte, že databáze je nasadí.
 
-V okně příkazového řádku zadejte následující příkaz pro vytvoření databáze a tabulky.
-
-```console
-dotnet ef database update
-```
-
-Poznámka: Pokud `update` příkaz vrátí chybu "Sestavení se nezdařilo.":
-
-* Příkaz spusťte znovu.
-* Pokud se znovu nezdaří, Visual Studio ukončete a spusťte `update` příkaz.
-* Ponechte zprávu v dolní části stránky.
-
-Výstup z tohoto příkazu je podobná `migrations add` příkaz výstupu. V předchozím příkazu se zobrazí protokoly pro příkazy SQL, které nastavení databáze. Většina protokolů se tento parametr vynechán následující ukázkový výstup:
-
-```text
-info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
-      User profile is available. Using 'C:\Users\username\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-info: Microsoft.EntityFrameworkCore.Infrastructure[100403]
-      Entity Framework Core 2.0.0-rtm-26452 initialized 'SchoolContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
-info: Microsoft.EntityFrameworkCore.Database.Command[200101]
-      Executed DbCommand (467ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
-      CREATE DATABASE [ContosoUniversity2];
-info: Microsoft.EntityFrameworkCore.Database.Command[200101]
-      Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      CREATE TABLE [__EFMigrationsHistory] (
-          [MigrationId] nvarchar(150) NOT NULL,
-          [ProductVersion] nvarchar(32) NOT NULL,
-          CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
-      );
-
-<logs omitted for brevity>
-
-info: Microsoft.EntityFrameworkCore.Database.Command[200101]
-      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-      VALUES (N'20170816151242_InitialCreate', N'2.0.0-rtm-26452');
-Done.
-```
-
-Chcete-li snížit úroveň podrobností ve zprávách protokolu, změňte úrovní záznamu do protokolu v *appsettings. Development.JSON* souboru. Další informace najdete v tématu [Úvod k protokolování](xref:fundamentals/logging/index).
+### <a name="inspect-the-database"></a>Zkontrolujte databáze
 
 Použití **Průzkumník objektů systému SQL Server** Kontrola databáze. Všimněte si, přidání `__EFMigrationsHistory` tabulky. `__EFMigrationsHistory` Tabulky uchovává informace o migrace, které byly použity k databázi. Zobrazení dat v `__EFMigrationsHistory` tabulky, zobrazuje jeden řádek na první migraci. V poslední protokolu v předchozím příkladu výstupu rozhraní příkazového řádku se zobrazuje příkaz INSERT, která vytváří tento řádek.
 
@@ -193,27 +158,9 @@ V rámci nasazení a řízené způsobem se má provést migrace databáze. Prov
 
 Základní EF používá `__MigrationsHistory` tabulce najdete, pokud žádné migrace muset spustit. Pokud je aktuální databáze, je spustit žádné migrace.
 
-<a id="pmc"></a>
-## <a name="command-line-interface-cli-vs-package-manager-console-pmc"></a>Rozhraní příkazového řádku (CLI) vs. Konzola správce balíčků (pomocí PMC)
-
-Základní EF nástrojů pro správu migrace najdete na webu:
-
-* .NET core rozhraní příkazového řádku.
-* Rutiny prostředí PowerShell v sadě Visual Studio **Konzola správce balíčků** okno (pomocí PMC).
-
-Tento kurz ukazuje, jak používat rozhraní příkazového řádku, někteří vývojáři přednost používání pomocí PMC.
-
-Základní EF příkazů pro pomocí PMC jsou v [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) balíčku. Tento balíček je součástí [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, takže není nutné ji nainstalovat.
-
-**Důležité:** tento není stejného balíčku jako instalace pro rozhraní příkazového řádku úpravou *.csproj* souboru. Název touto končí v `Tools`, na rozdíl od název balíčku rozhraní příkazového řádku, které končí na `Tools.DotNet`.
-
-Další informace o rozhraní příkazového řádku najdete v tématu [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet).
-
-Další informace o příkazech pomocí PMC najdete v tématu [Konzola správce balíčků (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell).
-
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Stažení [dokončené aplikace pro tuto fázi](
+Stažení [dokončené aplikace](
 https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part4-migrations).
 
 Aplikace generuje následující výjimky:
@@ -226,10 +173,12 @@ Login failed for user 'user name'.
 
 Řešení: spuštění `dotnet ef database update`
 
-Pokud `update` příkaz vrátí chybu "Sestavení se nezdařilo.":
+### <a name="additional-resources"></a>Další zdroje
 
-* Příkaz spusťte znovu.
-* Ponechte zprávu v dolní části stránky.
+* [.NET core rozhraní příkazového řádku](/ef/core/miscellaneous/cli/dotnet).
+* [Konzola Správce balíčků (Visual Studio)](/ef/core/miscellaneous/cli/powershell)
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Předchozí](xref:data/ef-rp/sort-filter-page)

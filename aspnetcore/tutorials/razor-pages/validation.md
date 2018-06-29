@@ -6,16 +6,16 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 569c5b977d832aec3657321cad8d0f9520aae031
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: cabf3d955ef2eb17b3bcb40170a9de7b53ffd107
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277771"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077628"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>Přidat stránku ASP.NET Razor základní ověřování
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 V této části je do logiku ověření `Movie` modelu. Pravidla ověřování se vynucují vždy, když uživatel vytvoří nebo upraví film.
 
@@ -45,7 +45,7 @@ Aktualizace `Movie` třída využívat výhod `Required`, `StringLength`, `Regul
 Atributy ověření Určete chování, která je vynucená na vlastnosti modelu:
 
 * `Required` a `MinimumLength` atributy znamená, že vlastnost musí mít hodnotu. Ale nic zabraňuje uživateli v zadávání prázdné znaky, které by vyhovovaly omezení ověření pro typ s možnou hodnotou Null. Hodnotu Null [typů hodnot](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value-types) (například `decimal`, `int`, `float`, a `DateTime`) jsou ze své podstaty potřeba a nepotřebujete `Required` atribut.
-* `RegularExpression` Atribut omezuje znaky, které může uživatel zadat. V předchozí kód `Genre` a `Rating` musí používat pouze písmena (prázdné znaky, číslice a speciální znaky nejsou povoleny).
+* `RegularExpression` Atribut omezuje znaky, které může uživatel zadat. V předchozí kód `Genre` musí začínat jeden nebo více velkých písmen a postupujte podle s nula nebo více písmena, jednoho nebo dvojité uvozovky, prázdné znaky nebo spojovníky. `Rating` musí začínat jeden nebo více velkých písmen a postupujte podle počtu nula či více písmena, čísla, jednoduché nebo dvojité uvozovky, prázdné znaky nebo pomlčky.
 * `Range` Atribut omezuje hodnotu na zadaném rozsahu.
 * `StringLength` Atribut Nastaví maximální délku řetězce a volitelně minimální délku. 
 

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 601d6ac2cb373c40fb1de5427b0ea6c299fa1f32
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9d7d4d49dbb55e327a208df99a0e3ca744de8609
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291534"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077745"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do stránky Razor v ASP.NET Core
 
@@ -31,7 +31,7 @@ Tento dokument obsahuje úvod do stránky Razor. Není návod krok za krokem. Po
 
 ## <a name="creating-a-razor-pages-project"></a>Vytvoření projektu stránky Razor
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 V tématu [začít pracovat s stránky Razor](xref:tutorials/razor-pages/razor-pages-start) podrobné pokyny o tom, jak vytvářet stránky Razor projektu pomocí sady Visual Studio.
 
@@ -53,7 +53,7 @@ Spustit `dotnet new razor` z příkazového řádku.
 
 Otevřete vygenerovaného *.csproj* soubor ze sady Visual Studio for Mac.
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code) 
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -69,7 +69,7 @@ Spustit `dotnet new razor` z příkazového řádku.
 
 ::: moniker-end
 
-# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli) 
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -113,10 +113,10 @@ Přidružení cesty adresy URL na stránky určuje umístění stránky v systé
 
 | Název souboru a cesty               | odpovídající adresy URL |
 | ----------------- | ------------ |
-| */Pages/Index.cshtml* | `/` Nebo `/Index` |
+| */Pages/Index.cshtml* | `/` nebo `/Index` |
 | */Pages/Contact.cshtml* | `/Contact` |
 | */Pages/Store/Contact.cshtml* | `/Store/Contact` |
-| */Pages/Store/Index.cshtml* | `/Store` Nebo `/Store/Index` |
+| */Pages/Store/Index.cshtml* | `/Store` nebo `/Store/Index` |
 
 Poznámky:
 
@@ -295,7 +295,17 @@ Stránky fungovat se všemi funkcemi nástroje zobrazovací modul Razor. Rozlož
 
 Tato stránka umožňuje declutter díky některé z těchto možností.
 
+::: moniker range=">= aspnetcore-2.1"
+
+Přidat [rozložení stránky](xref:mvc/views/layout) k *Pages/Shared/_Layout.cshtml*:
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 Přidat [rozložení stránky](xref:mvc/views/layout) k *Pages/_Layout.cshtml*:
+
+::: moniker-end
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_LayoutSimple.cshtml)]
 
@@ -310,7 +320,19 @@ V tématu [rozložení stránky](xref:mvc/views/layout) Další informace.
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
 
+::: moniker range=">= aspnetcore-2.1"
+
+Rozložení je v *sdílené nebo stránky* složky. Stránky vyhledejte další zobrazení (rozložení, šablony, částečné.) hierarchicky, spouštění ve stejné složce jako aktuální stránku. Rozložení v *sdílené nebo stránky* složky lze z libovolné stránky Razor pod *stránky* složky.
+
+Rozložení souboru by měl v přejděte *stránky a sdílených* složky.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 Rozložení je v *stránky* složky. Stránky vyhledejte další zobrazení (rozložení, šablony, částečné.) hierarchicky, spouštění ve stejné složce jako aktuální stránku. Rozložení v *stránky* složky lze z libovolné stránky Razor pod *stránky* složky.
+
+::: moniker-end
 
 Doporučujeme **není** chápat rozložení souboru *zobrazení a sdílených* složky. *Zobrazení a sdílených* je zobrazení vzor MVC. Stránky Razor jsou určené spoléhají na hierarchii složek, není cesta konvence.
 

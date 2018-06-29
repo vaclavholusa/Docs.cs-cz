@@ -2,18 +2,15 @@
 title: Ukládání odpovědí do mezipaměti v ASP.NET Core
 author: rick-anderson
 description: Další informace o použití odpověď do mezipaměti pro nižší nároky na šířku pásma a zvýšit výkon aplikací ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 09/20/2017
-ms.prod: asp.net-core
-ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: e5a3877c68f8475e7dd49d44f4a92cf7b09ac7f5
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: c53ae3f6ab8d26588533772dd4fdacb36ec12059
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734507"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077761"
 ---
 # <a name="response-caching-in-aspnet-core"></a>Ukládání odpovědí do mezipaměti v ASP.NET Core
 
@@ -46,10 +43,10 @@ V následující tabulce jsou uvedeny další mezipaměti hlavičky, které hraj
 
 | Záhlaví                                                     | Funkce |
 | ---------------------------------------------------------- | -------- |
-| [stáří](https://tools.ietf.org/html/rfc7234#section-5.1)     | Odhad množství času v sekundách, protože odpověď byla vygenerována nebo úspěšně ověřen na původním serveru. |
+| [Stáří](https://tools.ietf.org/html/rfc7234#section-5.1)     | Odhad množství času v sekundách, protože odpověď byla vygenerována nebo úspěšně ověřen na původním serveru. |
 | [Vypršení platnosti](https://tools.ietf.org/html/rfc7234#section-5.3) | Datum a čas, po jejímž uplynutí je považován za odpověď zastaralých. |
 | [Direktiva pragma](https://tools.ietf.org/html/rfc7234#section-5.4)  | Pro zpětnou kompatibilitu s HTTP/1.0 ukládá do mezipaměti pro nastavení existuje `no-cache` chování. Pokud `Cache-Control` záhlaví nachází, `Pragma` záhlaví je ignorována. |
-| [lišit](https://tools.ietf.org/html/rfc7231#section-7.1.4)  | Určuje, že odpovědi v mezipaměti nesmí být odeslána, pokud všechny služby `Vary` záhlaví pole shodují v původní žádost odpověď uložená v mezipaměti a nový požadavek. |
+| [Lišit](https://tools.ietf.org/html/rfc7231#section-7.1.4)  | Určuje, že odpovědi v mezipaměti nesmí být odeslána, pokud všechny služby `Vary` záhlaví pole shodují v původní žádost odpověď uložená v mezipaměti a nový požadavek. |
 
 ## <a name="http-based-caching-respects-request-cache-control-directives"></a>Ukládání do mezipaměti ohledech založené na protokolu HTTP žádosti direktivy Cache-Control
 
@@ -92,7 +89,7 @@ Další informace najdete v tématu [distribuované mezipaměti značky pomocná
 > [!WARNING]
 > Zakážete ukládání do mezipaměti pro obsah, který obsahuje informace pro klienty ověřené. Ukládání do mezipaměti by měla povoleno pouze pro obsah, který nemění na základě identity uživatele nebo jestli je uživatel přihlášený.
 
-[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) uložené odpovědi se liší podle hodnoty daný seznam klíče dotazu. Když na jedinou hodnotu `*` je zadáno, se liší middleware odpovědí všechny žádosti o parametrů řetězce dotazu. `VaryByQueryKeys` Vyžaduje ASP.NET Core 1.1 nebo novější.
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) uložené odpovědi se liší podle hodnoty daný seznam klíče dotazu. Když na jedinou hodnotu `*` je zadáno, se liší middleware odpovědí všechny žádosti o parametrů řetězce dotazu. `VaryByQueryKeys` vyžaduje ASP.NET Core 1.1 nebo novější.
 
 Middleware ukládání do mezipaměti odpovědi musí být povoleno nastavení `VaryByQueryKeys` vlastnost; jinak, je vyvolána výjimka za běhu. Není k dispozici odpovídající hlavičku HTTP pro `VaryByQueryKeys` vlastnost. Vlastnost je funkce protokolu HTTP zpracovávaných Middlewarem ukládání do mezipaměti odpovědi. Pro middleware k obsluze odpovědi v mezipaměti řetězec dotazu a hodnotu řetězce dotazu musí odpovídat na předchozí požadavek. Představte si třeba pořadí požadavků a výsledky zobrazené v následující tabulce.
 
@@ -110,7 +107,7 @@ První požadavek je vrácená serverem a uložené v mezipaměti v middlewaru. 
 * Zapíše se příslušné hlavičky na základě vlastností nastavit `ResponseCacheAttribute`. 
 * Aktualizace odpověď do mezipaměti funkce protokolu HTTP, pokud `VaryByQueryKeys` nastavena.
 
-### <a name="vary"></a>lišit
+### <a name="vary"></a>Lišit
 
 Tuto hlavičku je zapsat, pouze když `VaryByHeader` je nastavena. Je nastaven na hodnotu `Vary` hodnotu vlastnosti. Následující ukázkové používá `VaryByHeader` vlastnost:
 

@@ -5,12 +5,12 @@ description: Další informace o rozhraní protokolování v ASP.NET Core. Zjist
 ms.author: tdykstra
 ms.date: 12/15/2017
 uid: fundamentals/logging/index
-ms.openlocfilehash: 2307df3b4b571840f31808b86b48b0e6fb2de852
-ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
+ms.openlocfilehash: 4ceb7886cc9410c3b39beec68c2b11ea3578d851
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37033310"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077774"
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -610,6 +610,10 @@ Postup konfigurace streamování protokolů Azure:
 Přejděte na **vysílání datového proudu protokolu** stránky zobrazení zpráv aplikace. Jste přihlášení pomocí aplikace prostřednictvím `ILogger` rozhraní.
 
 ![Vysílání datového proudu protokolu aplikace portálu Azure](index/_static/azure-log-streaming.png)
+
+## <a name="azure-application-insights-trace-logging"></a>Protokolování trasování Azure Application Insights
+
+[Application Insights](https://azure.microsoft.com/services/application-insights/) SDK je schopen shromažďování telemetrických dat trasování z protokolů generovaných prostřednictvím infrastruktury protokolování ASP.NET Core. Další informace najdete v tématu [Microsoft/ApplicationInsights-aspnetcore Wiki: protokolování](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging).
 
 ## <a name="additional-resources"></a>Další zdroje
 

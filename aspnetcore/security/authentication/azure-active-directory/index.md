@@ -5,12 +5,12 @@ description: Zjistit Azure Active Directory témata související s ASP.NET Core
 ms.author: riande
 ms.date: 10/4/2017
 uid: security/authentication/azure-active-directory/index
-ms.openlocfilehash: d909de78a8794a71d75c65affbeee29bf15158b6
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3a520bd8f8ad6c6afaed59960a95f531a18c9164
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272906"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077722"
 ---
 # <a name="azure-active-directory-with-aspnet-core"></a>Azure Active Directory s ASP.NET Core
 
@@ -23,10 +23,10 @@ Následující ukázky ukazují, jak integrovat Azure AD V1, uživatelé budou m
 ## <a name="azure-ad-v2-samples"></a>Ukázek Azure AD V2
 Následující ukázky ukazují, jak integrovat V2 Azure AD, uživatelé budou moct přihlásit pomocí pracovní a školní účet nebo osobní účet Microsoft (formely za provozu účet):
 * [Integrace Azure AD V2 do webové aplikace ASP.NET 2.0 základní](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2): 
-  * V tématu [toto přidružené video](https://channel9.msdn.com/Events/Build/2018/THR5000) 
+  * V tématu [toto přidružené video](https://channel9.msdn.com/Events/Build/2018/THR5001) 
 
 * [Volání ASP.NET Core 2.0 webového rozhraní API z grafického subsystému WPF aplikace pomocí Azure AD V2](https://github.com/azure-samples/active-directory-dotnet-native-aspnetcore-v2): 
-  * V tématu [toto přidružené video](https://channel9.msdn.com/Events/Build/2018/THR5001) 
+  * V tématu [toto přidružené video](https://channel9.msdn.com/Events/Build/2018/THR5000)
 
 ## <a name="azure-ad-b2c-sample"></a>Ukázka Azure AD B2C
 Tento příklad ukazuje, jak integrovat Azure AD B2C, uživatelé budou moct přihlásit pomocí sociálních identity (jako je Facebook, Google,...)

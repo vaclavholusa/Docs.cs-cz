@@ -6,18 +6,18 @@ monikerRange: < aspnetcore-2.0
 ms.author: riande
 ms.date: 08/15/2017
 uid: security/authentication/2fa
-ms.openlocfilehash: 335edfd5cd4dfbb9d223ba0ae888a6d2386cd4a5
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 0308b05ebcda1af7f6850549d7a33f1df1a912a0
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272306"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089981"
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>Dvoufaktorové ověřování pomocí SMS v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [mezi Devs](https://github.com/Swiss-Devs)
 
-V tématu [vygenerovat kód QR povolit pro aplikace v ASP.NET Core](xref:security/authentication/identity-enable-qrcodes) pro technologii ASP.NET 2.0 jádra a novější.
+ Dva faktor ověřování (2FA), použití založené na čase jednorázové heslo algoritmus (TOTP), jsou tyto aplikace doporučenému přístupu pro 2FA odvětví. 2FA pomocí TOTP je upřednostňovaný k 2FA serveru SMS. Další informace najdete v tématu [generování povolit kód QR pro TOTP aplikace v ASP.NET Core](xref:security/authentication/identity-enable-qrcodes) pro technologii ASP.NET 2.0 jádra a novější.
 
 Tento kurz ukazuje, jak nastavit dvoufaktorové ověřování (2FA) pomocí serveru SMS. Jsou uvedeny pokyny pro [twilio](https://www.twilio.com/) a [ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/), ale můžete použít další poskytovatele serveru SMS. Doporučujeme, abyste dokončení [potvrzení účtu a heslo pro obnovení](xref:security/authentication/accconfirm) před zahájením tohoto kurzu.
 
@@ -33,28 +33,24 @@ Vytvoření účtu služby SMS, například z [twilio](https://www.twilio.com/) 
 
 #### <a name="figuring-out-sms-provider-credentials"></a>Zjištění přihlašovací údaje poskytovatele služby SMS
 
-**Twilio:**  
-Na kartě řídicí panel svého účtu Twilio zkopírovat **SID účtu** a **Auth token**.
+**Twilio:** z karty řídicí panel svého účtu Twilio, zkopírujte **SID účtu** a **Auth token**.
 
-**ASPSMS:**  
-V nastavení svého účtu, přejděte na **Userkey** a zkopírujte jej společně s vaší **heslo**.
+**ASPSMS:** v nastavení svého účtu, přejděte na **Userkey** a zkopírujte jej společně s vaší **heslo**.
 
 Později jsme uloží tyto hodnoty pomocí nástroje Správce tajný klíč v rámci klíče `SMSAccountIdentification` a `SMSAccountPassword`.
 
 #### <a name="specifying-senderid--originator"></a>Zadání ID odesílatele nebo původce
 
-**Twilio:**  
-Na kartě čísla zkopírujte vaše Twilio **telefonní číslo**. 
+**Twilio:** z čísla karty, zkopírujte vaše Twilio **telefonní číslo**.
 
-**ASPSMS:**  
-V nabídce autoru odemknutí odemknutí jeden nebo více autoru nebo zvolte alfanumerické původce (nepodporuje všechny sítě). 
+**ASPSMS:** v nabídce autoru odemknutí odemknutí jeden nebo více autoru nebo vyberte alfanumerické původce (nepodporuje všechny sítě).
 
 Později jsme uloží tuto hodnotu pomocí nástroje Správce tajný klíč v rámci klíč `SMSAccountFrom`.
 
 
 ### <a name="provide-credentials-for-the-sms-service"></a>Zadejte přihlašovací údaje pro službu SMS
 
-Použijeme [možnosti vzor](xref:fundamentals/configuration/options) pro přístup k účtu a klíč nastavení uživatele. 
+Použijeme [možnosti vzor](xref:fundamentals/configuration/options) pro přístup k účtu a klíč nastavení uživatele.
 
    * Vytvořte třídu načíst zabezpečený klíč serveru SMS. Tato ukázka `SMSoptions` je v vytvořit třídu *Services/SMSoptions.cs* souboru.
 
@@ -68,21 +64,19 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 ```
 * Přidejte balíček NuGet pro poskytovatele služby SMS. Z balíček správce konzoly (pomocí PMC) spusťte:
 
-**Twilio:**  
+**Twilio:**
 `Install-Package Twilio`
 
-**ASPSMS:**  
+**ASPSMS:**
 `Install-Package ASPSMS`
 
 
 * Přidejte kód v *Services/MessageServices.cs* souboru SMS. Použijte Twilio nebo ASPSMS části:
 
 
-**Twilio:**  
-[!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_twilio.cs)]
+**Twilio:** [!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_twilio.cs)]
 
-**ASPSMS:**  
-[!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_ASPSMS.cs)]
+**ASPSMS:** [!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_ASPSMS.cs)]
 
 ### <a name="configure-startup-to-use-smsoptions"></a>Konfigurace spuštění používat `SMSoptions`
 

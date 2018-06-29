@@ -2,20 +2,17 @@
 title: Ukládání do mezipaměti Middleware v ASP.NET Core odpovědi
 author: guardrex
 description: Zjistěte, jak konfigurovat a používat Middleware ukládání do mezipaměti odpovědi v ASP.NET Core.
-manager: wpickett
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
-ms.prod: asp.net-core
-ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: abf07ec2d2692a8504caea243eacead6aa6e1a62
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: 0b33e55acc6b3112349a2a5a791f7563dbd19fb5
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341701"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077644"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Ukládání do mezipaměti Middleware v ASP.NET Core odpovědi
 
@@ -93,13 +90,13 @@ Ukládání odpovědí do mezipaměti middleware je nakonfigurován pomocí hlav
 | Cache-Control | Middleware uvažuje pouze ukládání do mezipaměti odpovědi, které jsou označené jako `public` direktiva mezipaměti. Řízení ukládání do mezipaměti s následujícími parametry:<ul><li>Maximální stáří</li><li>max-stale&#8224;</li><li>čerstvě min.</li><li>musí revalidate</li><li>Ne mezipaměti</li><li>Ne – úložiště</li><li>pouze v případě mezipaměti</li><li>private</li><li>public</li><li>s maxage</li><li>proxy-revalidate&#8225;</li></ul>&#8224;Pokud není zadáno žádné omezení na `max-stale`, middleware neprovede žádnou akci.<br>&#8225;`proxy-revalidate`má stejný účinek jako `must-revalidate`.<br><br>Další informace najdete v tématu [RFC 7231: požadavku direktivy Cache-Control](https://tools.ietf.org/html/rfc7234#section-5.2.1). |
 | Direktiva pragma | A `Pragma: no-cache` hlavičky v požadavku vytváří stejného efektu jako `Cache-Control: no-cache`. Tuto hlavičku je přepsat relevantní direktivy v `Cache-Control` záhlaví, pokud je k dispozici. Za pro zpětnou kompatibilitu s HTTP/1.0. |
 | Set-Cookie | Odpověď není v mezipaměti, pokud existuje hlavička. Veškerý middleware v kanálu zpracování požadavků, která obsahuje jeden nebo více souborů cookie brání Middleware ukládání do mezipaměti odpovědi v ukládání do mezipaměti odpovědi (například [na základě souborů cookie zprostředkovatele TempData](xref:fundamentals/app-state#tempdata)).  |
-| lišit | `Vary` Záhlaví slouží k odlišení odpověď uložená v mezipaměti jiné záhlaví. Například pomocí kódování zahrnutím do mezipaměti odpovědi `Vary: Accept-Encoding` hlavičky, která ukládá do mezipaměti odpovědi pro požadavky s hlavičky `Accept-Encoding: gzip` a `Accept-Encoding: text/plain` samostatně. Odpověď se hodnota hlavičky `*` nikdy neuloží. |
+| Lišit | `Vary` Záhlaví slouží k odlišení odpověď uložená v mezipaměti jiné záhlaví. Například pomocí kódování zahrnutím do mezipaměti odpovědi `Vary: Accept-Encoding` hlavičky, která ukládá do mezipaměti odpovědi pro požadavky s hlavičky `Accept-Encoding: gzip` a `Accept-Encoding: text/plain` samostatně. Odpověď se hodnota hlavičky `*` nikdy neuloží. |
 | Vypršení platnosti | Odpovědi, které tuto hlavičku považují za zastaralé není uložen nebo načíst, pokud není přepsána jiná `Cache-Control` hlavičky. |
 | If-None-Match | Úplnou odpověď je zpracovat z mezipaměti, pokud hodnota není `*` a `ETag` odpovědi neodpovídá zadanými hodnotami. Odpověď 304 (upraveno), jinak je zpracovat. |
 | Pokud upravit – od | Pokud `If-None-Match` hlavičky není přítomen, úplnou odpověď je zpracovat z mezipaměti, pokud je novější než hodnota zadaná data odpovědi v mezipaměti. Odpověď 304 (upraveno), jinak je zpracovat. |
 | Datum | Když obsluhující z mezipaměti, `Date` záhlaví je nastavení middleware, pokud nebyl zadán v původní odpovědi. |
 | Délka obsahu | Když obsluhující z mezipaměti, `Content-Length` záhlaví je nastavení middleware, pokud nebyl zadán v původní odpovědi. |
-| stáří | `Age` Záhlaví odeslaný v odpovědi původní je ignorována. Middleware vypočítá novou hodnotu, pokud obsluhující odpovědi v mezipaměti. |
+| Stáří | `Age` Záhlaví odeslaný v odpovědi původní je ignorována. Middleware vypočítá novou hodnotu, pokud obsluhující odpovědi v mezipaměti. |
 
 ## <a name="caching-respects-request-cache-control-directives"></a>Ukládání do mezipaměti respektuje direktivy požadavek Cache-Control
 

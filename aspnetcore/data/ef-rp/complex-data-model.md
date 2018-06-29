@@ -3,20 +3,24 @@ title: Stránky Razor s EF jádra ASP.NET Core - Model dat – 5 8
 author: rick-anderson
 description: V tomto kurzu přidejte další entity a vztahy a přizpůsobit datový model zadáním formátování, ověření a pravidla mapování.
 ms.author: riande
-ms.date: 10/25/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: a885809205f13e1090a957496710cc0d9c7257c0
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d96ce7a3f81c54d3c4c0fe26d3fb588d9ce2e0ce
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274538"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089994"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - Model dat – 5 8
 
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
+
+::: moniker range=">= aspnetcore-2.1"
+
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](~/includes/RP-EF/intro.md)]
 
 Předchozí kurzy pracovali s základní datový model, který se skládá z tři entity. V tomto kurzu:
 
@@ -27,7 +31,8 @@ Třídy entity pro dokončené datový model je vidět na následujícím obráz
 
 ![Entity diagram](complex-data-model/_static/diagram.png)
 
-Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené aplikace pro tuto fázi](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part5-complex).
+Pokud narazíte na problémy, které nelze vyřešit, stáhněte si [dokončené aplikace](
+https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples).
 
 ## <a name="customize-the-data-model-with-attributes"></a>Přizpůsobení datového modelu s atributy
 
@@ -39,7 +44,7 @@ Na stránkách student aktuálně zobrazí čas, datum registrace. Obvykle polí
 
 Aktualizace *Models/Student.cs* s následujícími službami zvýrazněná kódu:
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
 [Datový typ](/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) atribut určuje datový typ, který je specifičtější než vnitřní typ databáze. V tomto případě kterou má být zobrazen pouze data, není datum a čas. [Datový typ výčtu](/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1) poskytuje pro mnoho typů dat, jako je například datum, čas, telefonní číslo, měny, EmailAddress, atd. `DataType` Atributu můžete také povolit aplikaci automaticky získávat specifické pro typ funkce. Příklad:
 
@@ -75,7 +80,7 @@ S atributy lze zadat pravidla ověření dat a chybové zprávy ověření. [Str
 
 Aktualizace `Student` modelu s následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
 Předchozí kód omezuje názvy k více než 50 znaků. `StringLength` Atribut nemá uživatel zabránit v přechodu do prázdných znaků pro název. [Regulární výraz](/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) atribut se používá k aplikování omezení na vstup. Například následující kód vyžaduje první znak, který má být velkými písmeny a zbývající znaků, které mají být abecední:
 
@@ -107,7 +112,7 @@ Při vytváření databáze názvy vlastností na modelu se používají pro ná
 
 Aktualizace *Student.cs* soubor s následující zvýrazněný kód:
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
 S předchozí změny `Student.FirstMidName` v aplikaci mapuje `FirstName` sloupec `Student` tabulky.
 
@@ -121,12 +126,23 @@ Aktualizace databáze:
 * Sestavte projekt.
 * Otevřete okno příkazového řádku ve složce projektu. Zadejte následující příkazy k vytvoření nové migrace a aktualizaci databáze:
 
-    ```console
-    dotnet ef migrations add ColumnFirstName
-    dotnet ef database update
-    ```
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-`dotnet ef migrations add ColumnFirstName` Příkaz generuje následující upozornění:
+```PMC
+Add-Migration ColumnFirstName
+Update-Database
+```
+
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+
+```console
+dotnet ef migrations add ColumnFirstName
+dotnet ef database update
+```
+
+------
+
+`migrations add ColumnFirstName` Příkaz generuje následující upozornění:
 
 ```text
 An operation was scaffolded that may result in the loss of data.
@@ -152,7 +168,7 @@ Před použitím migrace, byl měla název sloupce typu [nvarchar(MAX)](https://
 
 Aktualizace *Models/Student.cs* následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
 ### <a name="the-required-attribute"></a>Požadovaný atribut
 
@@ -180,9 +196,7 @@ public string LastName { get; set; }
 
 Vytvoření *Models/Instructor.cs* následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
-
-Všimněte si, že několik vlastností, které jsou stejné ve `Student` a `Instructor` entity. V tomto kurzu implementace dědičnosti později z této série tento kód je teď vyčleněný eliminovat redundance.
+[!code-csharp[](intro/samples/cu21/Models/Instructor.cs)]
 
 Více atributů může být na jednom řádku. `HireDate` Atributy může zapsat takto:
 
@@ -226,7 +240,7 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 Vytvoření *Models/OfficeAssignment.cs* následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Models/OfficeAssignment.cs)]
+[!code-csharp[](intro/samples/cu21/Models/OfficeAssignment.cs)]
 
 ### <a name="the-key-attribute"></a>Klíč atributu
 
@@ -275,7 +289,7 @@ Předchozí kód určuje, že musí být související lektorem. Předchozí kó
 
 Aktualizace *Models/Course.cs* následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
+[!code-csharp[](intro/samples/cu21/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
 `Course` Entity má vlastnosti cizího klíče (Cizíklíč) `DepartmentID`. `DepartmentID` odkazuje na související `Department` entity. `Course` Entita, která má `Department` navigační vlastnost.
 
@@ -333,7 +347,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 Vytvoření *Models/Department.cs* následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
+[!code-csharp[](intro/samples/cu21/Models/Department.cs?name=snippet_Begin)]
 
 ### <a name="the-column-attribute"></a>Atribut sloupce
 
@@ -386,7 +400,7 @@ V případě potřeby obchodní pravidla `InstructorID` vlastnost mít hodnotu N
 
 Předchozí kód zakáže kaskádové odstranění v relaci lektorem oddělení.
 
-## <a name="update-the-enrollment-entity"></a>Aktualizace entity registrace
+## <a name="update-the-enrollment-entityupdate-the-enrollment-entity"></a>Aktualizace registrace entityUpdate entity registrace
 
 Záznam zápisu je jeden kurzu provedenou jeden student.
 
@@ -394,7 +408,7 @@ Záznam zápisu je jeden kurzu provedenou jeden student.
 
 Aktualizace *Models/Enrollment.cs* následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
+[!code-csharp[](intro/samples/cu21/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>Cizí klíč a navigační vlastnosti
 
@@ -436,7 +450,7 @@ Poznámka: EF 6.x podporuje implicitní spojení tabulky pro relace m: n, ale z�
 
 Vytvoření *Models/CourseAssignment.cs* následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Models/CourseAssignment.cs)]
+[!code-csharp[](intro/samples/cu21/Models/CourseAssignment.cs)]
 
 ### <a name="instructor-to-courses"></a>Lektorem kurzy
 
@@ -470,7 +484,7 @@ Složený klíč zajistí:
 
 Přidejte následující zvýrazněný kód, který *Data/SchoolContext.cs*:
 
-[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
+[!code-csharp[](intro/samples/cu21/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
 Předchozí kód přidá nové entity a nakonfiguruje `CourseAssignment` složené PK. entity
 
@@ -513,14 +527,14 @@ Následující obrázek znázorňuje diagram, který vytvoření EF výkonné n�
 Na předchozím obrázku uvádí:
 
 * Několik řádků vztah jeden mnoho (1 \*).
-* Řádek vztah jeden pro žádná nebo jedna (1-0.1) mezi `Instructor` a `OfficeAssignment` entity.
-* Řádek vztahů nula nebo 1 n (0.1 k *) mezi `Instructor` a `Department` entity.
+* Řádek vztah jeden pro žádná nebo jedna (1-0..1) mezi `Instructor` a `OfficeAssignment` entity.
+* Řádek vztahů nula nebo 1 n (0..1 k *) mezi `Instructor` a `Department` entity.
 
 ## <a name="seed-the-db-with-test-data"></a>Počáteční hodnoty databáze s testovací Data
 
 Aktualizujte kód v *Data/DbInitializer.cs*:
 
-[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
+[!code-csharp[](intro/samples/cu21/Data/DbInitializer.cs?name=snippet_Final)]
 
 Předchozí kód poskytuje data počáteční hodnoty pro nové entity. Většina tento kód vytvoří nové entity objekty a načte ukázková data. Ukázková data se používají pro testování. Předchozí kód vytvoří následující relace m: n:
 
@@ -531,11 +545,21 @@ Poznámka: [EF základní 2.1](https://github.com/aspnet/EntityFrameworkCore/wik
 
 ## <a name="add-a-migration"></a>Přidat migrace
 
-Sestavte projekt. Otevřete okno příkazového řádku ve složce projektu a zadejte následující příkaz:
+Sestavte projekt.
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+```PMC
+Add-Migration ComplexDataModel
+```
+
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
 ```console
 dotnet ef migrations add ComplexDataModel
 ```
+
+------
 
 Předchozí příkaz zobrazí varování týkající se možná ztráta dat.
 
@@ -554,42 +578,40 @@ database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 
 Pokud migrace spouštějí s existujícími daty, může být omezení cizího klíče, které nejsou splněné existujícímu daty. V tomto kurzu se vytvoří nové databáze, takže neexistují žádné narušení omezení cizího klíče. V tématu [opravě omezení cizích klíčů s starší data](#fk) pokyny o tom, jak opravit porušení cizího klíče v aktuální databázi.
 
-## <a name="change-the-connection-string-and-update-the-db"></a>Změňte připojovací řetězec a aktualizaci databáze
+### <a name="drop-and-update-the-database"></a>Vyřaďte a aktualizaci databáze
 
-Kód v aktualizaci `DbInitializer` přidá počáteční hodnoty dat pro nové entity. Chcete-li vynutit EF jádra k vytvoření nové prázdné databáze:
+Kód v aktualizaci `DbInitializer` přidá počáteční hodnoty dat pro nové entity. Chcete-li vynutit EF jádra k vytvoření nové databáze, vyřaďte a aktualizaci databáze:
 
-* Změňte název připojovacího řetězce DB v *appSettings.JSON určený* k ContosoUniversity3. Nový název musí být název, který nebyl použit v počítači.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-    ```json
-    {
-      "ConnectionStrings": {
-        "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=ContosoUniversity3;Trusted_Connection=True;MultipleActiveResultSets=true"
-      },
-    ```
+V **Konzola správce balíčků** (pomocí PMC), spusťte následující příkaz:
 
-* Můžete taky odstraňte pomocí DB:
-
-  * **Průzkumník objektů systému SQL Server** (SSOX).
-  * `database drop` Rozhraní příkazového řádku příkaz:
-
-    ```console
-    dotnet ef database drop
-    ```
-
-Spustit `database update` v příkazovém okně:
-
-```console
-dotnet ef database update
+```PMC
+Drop-Database
+Update-Database
 ```
 
-Předchozí příkaz spustí všechny migrace.
+Spustit `Get-Help about_EntityFrameworkCore` z pomocí PMC získat informace nápovědy.
+
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+
+Otevřete okno příkazového řádku a přejděte do složky projektu. Obsahuje složky projektu *Startup.cs* souboru.
+
+Zadejte v příkazovém okně:
+
+ ```console
+ dotnet ef database drop
+dotnet ef database update
+ ```
+
+------
 
 Spusťte aplikaci. Spuštění aplikace běží `DbInitializer.Initialize` metoda. `DbInitializer.Initialize` Naplní nové databáze.
 
 Otevřete databázi v SSOX:
 
-* Rozbalte **tabulky** uzlu. Zobrazí se vytvořené tabulky.
 * Pokud SSOX byl dříve otevřen, klikněte **aktualizovat** tlačítko.
+* Rozbalte **tabulky** uzlu. Zobrazí se vytvořené tabulky.
 
 ![Tabulky v SSOX](complex-data-model/_static/ssox-tables.png)
 
@@ -638,6 +660,8 @@ Produkční aplikace bude:
 * Nepoužívat oddělení "Temp" nebo výchozí hodnotu pro `Course.DepartmentID`.
 
 Další kurz se zaměřuje na související data.
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Předchozí](xref:data/ef-rp/migrations)

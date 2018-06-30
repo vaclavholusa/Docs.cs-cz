@@ -4,68 +4,68 @@ author: zuckerthoben
 description: Zjistěte, jak přidat do projektu ASP.NET Core webové rozhraní API pro integraci uživatelské rozhraní Swagger Swashbuckle.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/31/2018
+ms.date: 06/29/2018
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: 7a1fdad874211134308ea3feac3110ea38095d49
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 70a1503a1ddbfe7f569d12b0034d967b220c9c44
+ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274453"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37126245"
 ---
-# <a name="get-started-with-swashbuckle-and-aspnet-core"></a><span data-ttu-id="d0f64-103">Začínáme s Swashbuckle a ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="d0f64-103">Get started with Swashbuckle and ASP.NET Core</span></span>
+# <a name="get-started-with-swashbuckle-and-aspnet-core"></a><span data-ttu-id="b5b0b-103">Začínáme s Swashbuckle a ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="b5b0b-103">Get started with Swashbuckle and ASP.NET Core</span></span>
 
-<span data-ttu-id="d0f64-104">Podle [Shayne Boyer](https://twitter.com/spboyer) a [Scott Addie](https://twitter.com/Scott_Addie)</span><span class="sxs-lookup"><span data-stu-id="d0f64-104">By [Shayne Boyer](https://twitter.com/spboyer) and [Scott Addie](https://twitter.com/Scott_Addie)</span></span>
+<span data-ttu-id="b5b0b-104">Podle [Shayne Boyer](https://twitter.com/spboyer) a [Scott Addie](https://twitter.com/Scott_Addie)</span><span class="sxs-lookup"><span data-stu-id="b5b0b-104">By [Shayne Boyer](https://twitter.com/spboyer) and [Scott Addie](https://twitter.com/Scott_Addie)</span></span>
 
-<span data-ttu-id="d0f64-105">[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/) ([stažení](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="d0f64-105">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
+<span data-ttu-id="b5b0b-105">[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/) ([stažení](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="b5b0b-105">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
 
-<span data-ttu-id="d0f64-106">Existují tři hlavní komponenty k Swashbuckle:</span><span class="sxs-lookup"><span data-stu-id="d0f64-106">There are three main components to Swashbuckle:</span></span>
+<span data-ttu-id="b5b0b-106">Existují tři hlavní komponenty k Swashbuckle:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-106">There are three main components to Swashbuckle:</span></span>
 
-* <span data-ttu-id="d0f64-107">[Swashbuckle.AspNetCore.Swagger](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Swagger/): Swagger objektový model a middleware vystavit `SwaggerDocument` objekty jako koncové body JSON.</span><span class="sxs-lookup"><span data-stu-id="d0f64-107">[Swashbuckle.AspNetCore.Swagger](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Swagger/): a Swagger object model and middleware to expose `SwaggerDocument` objects as JSON endpoints.</span></span>
+* <span data-ttu-id="b5b0b-107">[Swashbuckle.AspNetCore.Swagger](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Swagger/): Swagger objektový model a middleware vystavit `SwaggerDocument` objekty jako koncové body JSON.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-107">[Swashbuckle.AspNetCore.Swagger](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Swagger/): a Swagger object model and middleware to expose `SwaggerDocument` objects as JSON endpoints.</span></span>
 
-* <span data-ttu-id="d0f64-108">[Swashbuckle.AspNetCore.SwaggerGen](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerGen/): Generátor Swagger, který sestaví `SwaggerDocument` objekty přímo z vašeho tras, kontrolerů a modely.</span><span class="sxs-lookup"><span data-stu-id="d0f64-108">[Swashbuckle.AspNetCore.SwaggerGen](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerGen/): a Swagger generator that builds `SwaggerDocument` objects directly from your routes, controllers, and models.</span></span> <span data-ttu-id="d0f64-109">Obvykle se zkombinuje s middlewarem koncového bodu Swaggeru automaticky vystavit JSON pro Swagger.</span><span class="sxs-lookup"><span data-stu-id="d0f64-109">It's typically combined with the Swagger endpoint middleware to automatically expose Swagger JSON.</span></span>
+* <span data-ttu-id="b5b0b-108">[Swashbuckle.AspNetCore.SwaggerGen](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerGen/): Generátor Swagger, který sestaví `SwaggerDocument` objekty přímo z vašeho tras, kontrolerů a modely.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-108">[Swashbuckle.AspNetCore.SwaggerGen](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerGen/): a Swagger generator that builds `SwaggerDocument` objects directly from your routes, controllers, and models.</span></span> <span data-ttu-id="b5b0b-109">Obvykle se zkombinuje s middlewarem koncového bodu Swaggeru automaticky vystavit JSON pro Swagger.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-109">It's typically combined with the Swagger endpoint middleware to automatically expose Swagger JSON.</span></span>
 
-* <span data-ttu-id="d0f64-110">[Swashbuckle.AspNetCore.SwaggerUI](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerUI/): embedded verzi nástroje uživatelského rozhraní Swagger.</span><span class="sxs-lookup"><span data-stu-id="d0f64-110">[Swashbuckle.AspNetCore.SwaggerUI](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerUI/): an embedded version of the Swagger UI tool.</span></span> <span data-ttu-id="d0f64-111">Interpretuje JSON pro Swagger bohaté, přizpůsobitelné prostředí pro popisující funkce webového rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="d0f64-111">It interprets Swagger JSON to build a rich, customizable experience for describing the Web API functionality.</span></span> <span data-ttu-id="d0f64-112">Zahrnuje integrovanou testovací nevodivou pro veřejné metody.</span><span class="sxs-lookup"><span data-stu-id="d0f64-112">It includes built-in test harnesses for the public methods.</span></span>
+* <span data-ttu-id="b5b0b-110">[Swashbuckle.AspNetCore.SwaggerUI](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerUI/): embedded verzi nástroje uživatelského rozhraní Swagger.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-110">[Swashbuckle.AspNetCore.SwaggerUI](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerUI/): an embedded version of the Swagger UI tool.</span></span> <span data-ttu-id="b5b0b-111">Interpretuje JSON pro Swagger bohaté, přizpůsobitelné prostředí pro popisující funkce webového rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-111">It interprets Swagger JSON to build a rich, customizable experience for describing the Web API functionality.</span></span> <span data-ttu-id="b5b0b-112">Zahrnuje integrovanou testovací nevodivou pro veřejné metody.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-112">It includes built-in test harnesses for the public methods.</span></span>
 
-## <a name="package-installation"></a><span data-ttu-id="d0f64-113">Instalace balíčku</span><span class="sxs-lookup"><span data-stu-id="d0f64-113">Package installation</span></span>
+## <a name="package-installation"></a><span data-ttu-id="b5b0b-113">Instalace balíčku</span><span class="sxs-lookup"><span data-stu-id="b5b0b-113">Package installation</span></span>
 
-<span data-ttu-id="d0f64-114">Swashbuckle lze přidat pomocí následujících postupů:</span><span class="sxs-lookup"><span data-stu-id="d0f64-114">Swashbuckle can be added with the following approaches:</span></span>
+<span data-ttu-id="b5b0b-114">Swashbuckle lze přidat pomocí následujících postupů:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-114">Swashbuckle can be added with the following approaches:</span></span>
 
-### <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="d0f64-115">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d0f64-115">Visual Studio</span></span>](#tab/visual-studio)
+### <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="b5b0b-115">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="b5b0b-115">Visual Studio</span></span>](#tab/visual-studio)
 
-* <span data-ttu-id="d0f64-116">Z **Konzola správce balíčků** okno:</span><span class="sxs-lookup"><span data-stu-id="d0f64-116">From the **Package Manager Console** window:</span></span>
-  * <span data-ttu-id="d0f64-117">Přejděte na **zobrazení** > **jinými** > **Konzola správce balíčků**</span><span class="sxs-lookup"><span data-stu-id="d0f64-117">Go to **View** > **Other Windows** > **Package Manager Console**</span></span>
-  * <span data-ttu-id="d0f64-118">Přejděte do adresáře, ve kterém *TodoApi.csproj* soubor existuje</span><span class="sxs-lookup"><span data-stu-id="d0f64-118">Navigate to the directory in which the *TodoApi.csproj* file exists</span></span>
-  * <span data-ttu-id="d0f64-119">Spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="d0f64-119">Execute the following command:</span></span>
+* <span data-ttu-id="b5b0b-116">Z **Konzola správce balíčků** okno:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-116">From the **Package Manager Console** window:</span></span>
+  * <span data-ttu-id="b5b0b-117">Přejděte na **zobrazení** > **jinými** > **Konzola správce balíčků**</span><span class="sxs-lookup"><span data-stu-id="b5b0b-117">Go to **View** > **Other Windows** > **Package Manager Console**</span></span>
+  * <span data-ttu-id="b5b0b-118">Přejděte do adresáře, ve kterém *TodoApi.csproj* soubor existuje</span><span class="sxs-lookup"><span data-stu-id="b5b0b-118">Navigate to the directory in which the *TodoApi.csproj* file exists</span></span>
+  * <span data-ttu-id="b5b0b-119">Spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-119">Execute the following command:</span></span>
 
     ```powershell
     Install-Package Swashbuckle.AspNetCore
     ```
 
-* <span data-ttu-id="d0f64-120">Z **spravovat balíčky NuGet** dialogové okno:</span><span class="sxs-lookup"><span data-stu-id="d0f64-120">From the **Manage NuGet Packages** dialog:</span></span>
-  * <span data-ttu-id="d0f64-121">Klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** > **spravovat balíčky NuGet**</span><span class="sxs-lookup"><span data-stu-id="d0f64-121">Right-click the project in **Solution Explorer** > **Manage NuGet Packages**</span></span>
-  * <span data-ttu-id="d0f64-122">Nastavte **zdroj balíčku** na "nuget.org"</span><span class="sxs-lookup"><span data-stu-id="d0f64-122">Set the **Package source** to "nuget.org"</span></span>
-  * <span data-ttu-id="d0f64-123">Do vyhledávacího pole zadejte "Swashbuckle.AspNetCore"</span><span class="sxs-lookup"><span data-stu-id="d0f64-123">Enter "Swashbuckle.AspNetCore" in the search box</span></span>
-  * <span data-ttu-id="d0f64-124">Vyberte balíček "Swashbuckle.AspNetCore" z **Procházet** a klikněte na **instalace**</span><span class="sxs-lookup"><span data-stu-id="d0f64-124">Select the "Swashbuckle.AspNetCore" package from the **Browse** tab and click **Install**</span></span>
+* <span data-ttu-id="b5b0b-120">Z **spravovat balíčky NuGet** dialogové okno:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-120">From the **Manage NuGet Packages** dialog:</span></span>
+  * <span data-ttu-id="b5b0b-121">Klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** > **spravovat balíčky NuGet**</span><span class="sxs-lookup"><span data-stu-id="b5b0b-121">Right-click the project in **Solution Explorer** > **Manage NuGet Packages**</span></span>
+  * <span data-ttu-id="b5b0b-122">Nastavte **zdroj balíčku** na "nuget.org"</span><span class="sxs-lookup"><span data-stu-id="b5b0b-122">Set the **Package source** to "nuget.org"</span></span>
+  * <span data-ttu-id="b5b0b-123">Do vyhledávacího pole zadejte "Swashbuckle.AspNetCore"</span><span class="sxs-lookup"><span data-stu-id="b5b0b-123">Enter "Swashbuckle.AspNetCore" in the search box</span></span>
+  * <span data-ttu-id="b5b0b-124">Vyberte balíček "Swashbuckle.AspNetCore" z **Procházet** a klikněte na **instalace**</span><span class="sxs-lookup"><span data-stu-id="b5b0b-124">Select the "Swashbuckle.AspNetCore" package from the **Browse** tab and click **Install**</span></span>
 
-### <a name="visual-studio-for-mactabvisual-studio-mac"></a>[<span data-ttu-id="d0f64-125">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="d0f64-125">Visual Studio for Mac</span></span>](#tab/visual-studio-mac)
+### <a name="visual-studio-for-mactabvisual-studio-mac"></a>[<span data-ttu-id="b5b0b-125">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="b5b0b-125">Visual Studio for Mac</span></span>](#tab/visual-studio-mac)
 
-* <span data-ttu-id="d0f64-126">Klikněte pravým tlačítkem myši *balíčky* složky v **řešení Pad** > **přidat balíčky...**</span><span class="sxs-lookup"><span data-stu-id="d0f64-126">Right-click the *Packages* folder in **Solution Pad** > **Add Packages...**</span></span>
-* <span data-ttu-id="d0f64-127">Nastavte **přidat balíčky** uživatele systému Windows **zdroj** rozevírací seznam pro "nuget.org"</span><span class="sxs-lookup"><span data-stu-id="d0f64-127">Set the **Add Packages** window's **Source** drop-down to "nuget.org"</span></span>
-* <span data-ttu-id="d0f64-128">Do vyhledávacího pole zadejte "Swashbuckle.AspNetCore"</span><span class="sxs-lookup"><span data-stu-id="d0f64-128">Enter "Swashbuckle.AspNetCore" in the search box</span></span>
-* <span data-ttu-id="d0f64-129">V podokně výsledků vyberte balíček "Swashbuckle.AspNetCore" a klikněte na **přidat balíček**</span><span class="sxs-lookup"><span data-stu-id="d0f64-129">Select the "Swashbuckle.AspNetCore" package from the results pane and click **Add Package**</span></span>
+* <span data-ttu-id="b5b0b-126">Klikněte pravým tlačítkem myši *balíčky* složky v **řešení Pad** > **přidat balíčky...**</span><span class="sxs-lookup"><span data-stu-id="b5b0b-126">Right-click the *Packages* folder in **Solution Pad** > **Add Packages...**</span></span>
+* <span data-ttu-id="b5b0b-127">Nastavte **přidat balíčky** uživatele systému Windows **zdroj** rozevírací seznam pro "nuget.org"</span><span class="sxs-lookup"><span data-stu-id="b5b0b-127">Set the **Add Packages** window's **Source** drop-down to "nuget.org"</span></span>
+* <span data-ttu-id="b5b0b-128">Do vyhledávacího pole zadejte "Swashbuckle.AspNetCore"</span><span class="sxs-lookup"><span data-stu-id="b5b0b-128">Enter "Swashbuckle.AspNetCore" in the search box</span></span>
+* <span data-ttu-id="b5b0b-129">V podokně výsledků vyberte balíček "Swashbuckle.AspNetCore" a klikněte na **přidat balíček**</span><span class="sxs-lookup"><span data-stu-id="b5b0b-129">Select the "Swashbuckle.AspNetCore" package from the results pane and click **Add Package**</span></span>
 
-### <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="d0f64-130">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="d0f64-130">Visual Studio Code</span></span>](#tab/visual-studio-code)
+### <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="b5b0b-130">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b5b0b-130">Visual Studio Code</span></span>](#tab/visual-studio-code)
 
-<span data-ttu-id="d0f64-131">Spusťte následující příkaz z **integrované Terminálové**:</span><span class="sxs-lookup"><span data-stu-id="d0f64-131">Run the following command from the **Integrated Terminal**:</span></span>
+<span data-ttu-id="b5b0b-131">Spusťte následující příkaz z **integrované Terminálové**:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-131">Run the following command from the **Integrated Terminal**:</span></span>
 
 ```console
 dotnet add TodoApi.csproj package Swashbuckle.AspNetCore
 ```
 
-### <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="d0f64-132">Rozhraní příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="d0f64-132">.NET Core CLI</span></span>](#tab/netcore-cli)
+### <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="b5b0b-132">Rozhraní příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="b5b0b-132">.NET Core CLI</span></span>](#tab/netcore-cli)
 
-<span data-ttu-id="d0f64-133">Spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="d0f64-133">Run the following command:</span></span>
+<span data-ttu-id="b5b0b-133">Spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-133">Run the following command:</span></span>
 
 ```console
 dotnet add TodoApi.csproj package Swashbuckle.AspNetCore
@@ -73,116 +73,162 @@ dotnet add TodoApi.csproj package Swashbuckle.AspNetCore
 
 ---
 
-## <a name="add-and-configure-swagger-middleware"></a><span data-ttu-id="d0f64-134">Přidejte a nakonfigurujte Swagger middleware</span><span class="sxs-lookup"><span data-stu-id="d0f64-134">Add and configure Swagger middleware</span></span>
+## <a name="add-and-configure-swagger-middleware"></a><span data-ttu-id="b5b0b-134">Přidejte a nakonfigurujte Swagger middleware</span><span class="sxs-lookup"><span data-stu-id="b5b0b-134">Add and configure Swagger middleware</span></span>
 
-<span data-ttu-id="d0f64-135">Přidání generátoru Swagger ke kolekci služby v `Startup.ConfigureServices` metoda:</span><span class="sxs-lookup"><span data-stu-id="d0f64-135">Add the Swagger generator to the services collection in the `Startup.ConfigureServices` method:</span></span>
+<span data-ttu-id="b5b0b-135">Přidání generátoru Swagger ke kolekci služby v `Startup.ConfigureServices` metoda:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-135">Add the Swagger generator to the services collection in the `Startup.ConfigureServices` method:</span></span>
 
 ::: moniker range="<= aspnetcore-2.0"
 
-<span data-ttu-id="d0f64-136">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup2.cs?name=snippet_ConfigureServices&highlight=8-11)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-136">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup2.cs?name=snippet_ConfigureServices&highlight=8-11)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup2.cs?name=snippet_ConfigureServices&highlight=8-11)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="d0f64-137">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup2.cs?name=snippet_ConfigureServices&highlight=9-12)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-137">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup2.cs?name=snippet_ConfigureServices&highlight=9-12)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup2.cs?name=snippet_ConfigureServices&highlight=9-12)]
 
 ::: moniker-end
 
-<span data-ttu-id="d0f64-138">Importovat následující názvů použitý `Info` třídy:</span><span class="sxs-lookup"><span data-stu-id="d0f64-138">Import the following namespace to use the `Info` class:</span></span>
+<span data-ttu-id="b5b0b-136">Importovat následující názvů použitý `Info` třídy:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-136">Import the following namespace to use the `Info` class:</span></span>
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup2.cs?name=snippet_InfoClassNamespace)]
 
-<span data-ttu-id="d0f64-139">V `Startup.Configure` metoda, povolit middleware pro obsluhující generovaného dokumentu JSON a uživatelské rozhraní Swagger:</span><span class="sxs-lookup"><span data-stu-id="d0f64-139">In the `Startup.Configure` method, enable the middleware for serving the generated JSON document and the Swagger UI:</span></span>
+<span data-ttu-id="b5b0b-137">V `Startup.Configure` metoda, povolit middleware pro obsluhující generovaného dokumentu JSON a uživatelské rozhraní Swagger:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-137">In the `Startup.Configure` method, enable the middleware for serving the generated JSON document and the Swagger UI:</span></span>
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup2.cs?name=snippet_Configure&highlight=4,8-11)]
 
-<span data-ttu-id="d0f64-140">Spusťte aplikaci a přejděte na `http://localhost:<port>/swagger/v1/swagger.json`.</span><span class="sxs-lookup"><span data-stu-id="d0f64-140">Launch the app, and navigate to `http://localhost:<port>/swagger/v1/swagger.json`.</span></span> <span data-ttu-id="d0f64-141">Vygenerovaný dokument popisující koncové body se zobrazí, jak je znázorněno v [Swagger specifikace (swagger.json)](xref:tutorials/web-api-help-pages-using-swagger#swagger-specification-swaggerjson).</span><span class="sxs-lookup"><span data-stu-id="d0f64-141">The generated document describing the endpoints appears as shown in [Swagger specification (swagger.json)](xref:tutorials/web-api-help-pages-using-swagger#swagger-specification-swaggerjson).</span></span>
+<span data-ttu-id="b5b0b-138">Spusťte aplikaci a přejděte na `http://localhost:<port>/swagger/v1/swagger.json`.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-138">Launch the app, and navigate to `http://localhost:<port>/swagger/v1/swagger.json`.</span></span> <span data-ttu-id="b5b0b-139">Vygenerovaný dokument popisující koncové body se zobrazí, jak je znázorněno v [Swagger specifikace (swagger.json)](xref:tutorials/web-api-help-pages-using-swagger#swagger-specification-swaggerjson).</span><span class="sxs-lookup"><span data-stu-id="b5b0b-139">The generated document describing the endpoints appears as shown in [Swagger specification (swagger.json)](xref:tutorials/web-api-help-pages-using-swagger#swagger-specification-swaggerjson).</span></span>
 
-<span data-ttu-id="d0f64-142">Uživatelské rozhraní Swagger naleznete na adrese `http://localhost:<port>/swagger`.</span><span class="sxs-lookup"><span data-stu-id="d0f64-142">The Swagger UI can be found at `http://localhost:<port>/swagger`.</span></span> <span data-ttu-id="d0f64-143">Prozkoumejte rozhraní API přes uživatelské rozhraní Swagger a začlenit v jiných aplikacích.</span><span class="sxs-lookup"><span data-stu-id="d0f64-143">Explore the API via Swagger UI and incorporate it in other programs.</span></span>
+<span data-ttu-id="b5b0b-140">Uživatelské rozhraní Swagger naleznete na adrese `http://localhost:<port>/swagger`.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-140">The Swagger UI can be found at `http://localhost:<port>/swagger`.</span></span> <span data-ttu-id="b5b0b-141">Prozkoumejte rozhraní API přes uživatelské rozhraní Swagger a začlenit v jiných aplikacích.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-141">Explore the API via Swagger UI and incorporate it in other programs.</span></span>
 
 > [!TIP]
-> <span data-ttu-id="d0f64-144">K obsluze rozhraní Swagger, v kořenové aplikace (`http://localhost:<port>/`), můžete nastavit `RoutePrefix` vlastnost prázdný řetězec:</span><span class="sxs-lookup"><span data-stu-id="d0f64-144">To serve the Swagger UI at the app's root (`http://localhost:<port>/`), set the `RoutePrefix` property to an empty string:</span></span>
+> <span data-ttu-id="b5b0b-142">K obsluze rozhraní Swagger, v kořenové aplikace (`http://localhost:<port>/`), můžete nastavit `RoutePrefix` vlastnost prázdný řetězec:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-142">To serve the Swagger UI at the app's root (`http://localhost:<port>/`), set the `RoutePrefix` property to an empty string:</span></span>
 >
 > [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup3.cs?name=snippet_UseSwaggerUI&highlight=4)]
 
-## <a name="customize-and-extend"></a><span data-ttu-id="d0f64-145">Přizpůsobit a rozšířit</span><span class="sxs-lookup"><span data-stu-id="d0f64-145">Customize and extend</span></span>
+## <a name="customize-and-extend"></a><span data-ttu-id="b5b0b-143">Přizpůsobit a rozšířit</span><span class="sxs-lookup"><span data-stu-id="b5b0b-143">Customize and extend</span></span>
 
-<span data-ttu-id="d0f64-146">Swagger poskytuje možnosti pro dokumentaci v objektovém modelu a přizpůsobení uživatelského rozhraní tak, aby odpovídaly vaší motivu.</span><span class="sxs-lookup"><span data-stu-id="d0f64-146">Swagger provides options for documenting the object model and customizing the UI to match your theme.</span></span>
+<span data-ttu-id="b5b0b-144">Swagger poskytuje možnosti pro dokumentaci v objektovém modelu a přizpůsobení uživatelského rozhraní tak, aby odpovídaly vaší motivu.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-144">Swagger provides options for documenting the object model and customizing the UI to match your theme.</span></span>
 
-### <a name="api-info-and-description"></a><span data-ttu-id="d0f64-147">Informace o rozhraní API a popis</span><span class="sxs-lookup"><span data-stu-id="d0f64-147">API info and description</span></span>
+### <a name="api-info-and-description"></a><span data-ttu-id="b5b0b-145">Informace o rozhraní API a popis</span><span class="sxs-lookup"><span data-stu-id="b5b0b-145">API info and description</span></span>
 
-<span data-ttu-id="d0f64-148">Akce konfigurace předaný `AddSwaggerGen` metoda přidá informace, jako autor, licence a popis:</span><span class="sxs-lookup"><span data-stu-id="d0f64-148">The configuration action passed to the `AddSwaggerGen` method adds information such as the author, license, and description:</span></span>
+<span data-ttu-id="b5b0b-146">Akce konfigurace předaný `AddSwaggerGen` metoda přidá informace, jako autor, licence a popis:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-146">The configuration action passed to the `AddSwaggerGen` method adds information such as the author, license, and description:</span></span>
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup4.cs?name=snippet_AddSwaggerGen)]
 
-<span data-ttu-id="d0f64-149">Uživatelské rozhraní Swagger zobrazí informace na verzi:</span><span class="sxs-lookup"><span data-stu-id="d0f64-149">The Swagger UI displays the version's information:</span></span>
+<span data-ttu-id="b5b0b-147">Uživatelské rozhraní Swagger zobrazí informace na verzi:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-147">The Swagger UI displays the version's information:</span></span>
 
 ![Uživatelské rozhraní swagger se informace o verzi: popis, vytvářet a další odkaz](web-api-help-pages-using-swagger/_static/custom-info.png)
 
-### <a name="xml-comments"></a><span data-ttu-id="d0f64-151">XML – komentáře</span><span class="sxs-lookup"><span data-stu-id="d0f64-151">XML comments</span></span>
+### <a name="xml-comments"></a><span data-ttu-id="b5b0b-149">XML – komentáře</span><span class="sxs-lookup"><span data-stu-id="b5b0b-149">XML comments</span></span>
 
-<span data-ttu-id="d0f64-152">XML – komentáře lze je aktivovat pomocí následujících postupů:</span><span class="sxs-lookup"><span data-stu-id="d0f64-152">XML comments can be enabled with the following approaches:</span></span>
+<span data-ttu-id="b5b0b-150">XML – komentáře lze je aktivovat pomocí následujících postupů:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-150">XML comments can be enabled with the following approaches:</span></span>
 
-# <a name="visual-studiotabvisual-studio-xml"></a>[<span data-ttu-id="d0f64-153">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d0f64-153">Visual Studio</span></span>](#tab/visual-studio-xml/)
+# <a name="visual-studiotabvisual-studio-xml"></a>[<span data-ttu-id="b5b0b-151">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="b5b0b-151">Visual Studio</span></span>](#tab/visual-studio-xml/)
 
-* <span data-ttu-id="d0f64-154">Klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **vlastnosti**</span><span class="sxs-lookup"><span data-stu-id="d0f64-154">Right-click the project in **Solution Explorer** and select **Properties**</span></span>
-* <span data-ttu-id="d0f64-155">Zkontrolujte **souborů dokumentace XML** pole v části **výstup** části **sestavení** karta</span><span class="sxs-lookup"><span data-stu-id="d0f64-155">Check the **XML documentation file** box under the **Output** section of the **Build** tab</span></span>
+::: moniker range=">= aspnetcore-2.0"
 
-# <a name="visual-studio-for-mactabvisual-studio-mac-xml"></a>[<span data-ttu-id="d0f64-156">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="d0f64-156">Visual Studio for Mac</span></span>](#tab/visual-studio-mac-xml/)
+* <span data-ttu-id="b5b0b-152">Klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **upravit < název_projektu > .csproj**.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-152">Right-click the project in **Solution Explorer** and select **Edit <project_name>.csproj**.</span></span>
+* <span data-ttu-id="b5b0b-153">Ručně přidejte zvýrazněné řádky, které se *.csproj* souboru:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-153">Manually add the highlighted lines to the *.csproj* file:</span></span>
 
-* <span data-ttu-id="d0f64-157">Otevřete **možnosti projektu** dialogové okno > **sestavení** > **kompilátoru**</span><span class="sxs-lookup"><span data-stu-id="d0f64-157">Open the **Project Options** dialog > **Build** > **Compiler**</span></span>
-* <span data-ttu-id="d0f64-158">Zkontrolujte **generování dokumentace xml** pole v části **Obecné možnosti** části</span><span class="sxs-lookup"><span data-stu-id="d0f64-158">Check the **Generate xml documentation** box under the **General Options** section</span></span>
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=1-2,4)]
 
-# <a name="visual-studio-codetabvisual-studio-code-xml"></a>[<span data-ttu-id="d0f64-159">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="d0f64-159">Visual Studio Code</span></span>](#tab/visual-studio-code-xml/)
+::: moniker-end
 
-<span data-ttu-id="d0f64-160">Ručně přidejte následující fragment k *.csproj* souboru:</span><span class="sxs-lookup"><span data-stu-id="d0f64-160">Manually add the following snippet to the *.csproj* file:</span></span>
+::: moniker range="<= aspnetcore-1.1"
 
-[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=2)]
+* <span data-ttu-id="b5b0b-154">Klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-154">Right-click the project in **Solution Explorer** and select **Properties**.</span></span>
+* <span data-ttu-id="b5b0b-155">Zkontrolujte **souborů dokumentace XML** pole v části **výstup** části **sestavení** kartě.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-155">Check the **XML documentation file** box under the **Output** section of the **Build** tab.</span></span>
+
+::: moniker-end
+
+# <a name="visual-studio-for-mactabvisual-studio-mac-xml"></a>[<span data-ttu-id="b5b0b-156">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="b5b0b-156">Visual Studio for Mac</span></span>](#tab/visual-studio-mac-xml/)
+
+::: moniker range=">= aspnetcore-2.0"
+
+* <span data-ttu-id="b5b0b-157">Z *řešení Pad*, stiskněte klávesu **řízení** a klikněte na název projektu.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-157">From the *Solution Pad*, press **control** and click the project name.</span></span> <span data-ttu-id="b5b0b-158">Přejděte na **nástroje** > **upravte soubor**.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-158">Navigate to **Tools** > **Edit File**.</span></span>
+* <span data-ttu-id="b5b0b-159">Ručně přidejte zvýrazněné řádky, které se *.csproj* souboru:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-159">Manually add the highlighted lines to the *.csproj* file:</span></span>
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=1-2,4)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+* <span data-ttu-id="b5b0b-160">Otevřete **možnosti projektu** dialogové okno > **sestavení** > **kompilátoru**</span><span class="sxs-lookup"><span data-stu-id="b5b0b-160">Open the **Project Options** dialog > **Build** > **Compiler**</span></span>
+* <span data-ttu-id="b5b0b-161">Zkontrolujte **generování dokumentace xml** pole v části **Obecné možnosti** části</span><span class="sxs-lookup"><span data-stu-id="b5b0b-161">Check the **Generate xml documentation** box under the **General Options** section</span></span>
+
+::: moniker-end
+
+# <a name="visual-studio-codetabvisual-studio-code-xml"></a>[<span data-ttu-id="b5b0b-162">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b5b0b-162">Visual Studio Code</span></span>](#tab/visual-studio-code-xml/)
+
+<span data-ttu-id="b5b0b-163">Ručně přidejte zvýrazněné řádky, které se *.csproj* souboru:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-163">Manually add the highlighted lines to the *.csproj* file:</span></span>
+
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=1-2,4)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=1-2,4)]
+
+::: moniker-end
 
 ---
 
-<span data-ttu-id="d0f64-161">Povolení komentáře XML poskytuje informace o ladění pro nedokumentovanými veřejných typů a členů.</span><span class="sxs-lookup"><span data-stu-id="d0f64-161">Enabling XML comments provides debug information for undocumented public types and members.</span></span> <span data-ttu-id="d0f64-162">Upozornění jsou označeny nedokumentovanými typy a členy.</span><span class="sxs-lookup"><span data-stu-id="d0f64-162">Undocumented types and members are indicated by the warning message.</span></span> <span data-ttu-id="d0f64-163">Například následující zpráva označuje porušení upozornění kód. 1591:</span><span class="sxs-lookup"><span data-stu-id="d0f64-163">For example, the following message indicates a violation of warning code 1591:</span></span>
+<span data-ttu-id="b5b0b-164">Povolení komentáře XML poskytuje informace o ladění pro nedokumentovanými veřejných typů a členů.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-164">Enabling XML comments provides debug information for undocumented public types and members.</span></span> <span data-ttu-id="b5b0b-165">Upozornění jsou označeny nedokumentovanými typy a členy.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-165">Undocumented types and members are indicated by the warning message.</span></span> <span data-ttu-id="b5b0b-166">Například následující zpráva označuje porušení upozornění kód. 1591:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-166">For example, the following message indicates a violation of warning code 1591:</span></span>
 
 ```text
 warning CS1591: Missing XML comment for publicly visible type or member 'TodoController.GetAll()'
 ```
 
-<span data-ttu-id="d0f64-164">Potlačení upozornění definováním seznam kódů upozornění ignorovat v oddělených středníky *.csproj* souboru:</span><span class="sxs-lookup"><span data-stu-id="d0f64-164">Suppress warnings by defining a semicolon-delimited list of warning codes to ignore in the *.csproj* file:</span></span>
+<span data-ttu-id="b5b0b-167">Potlačení upozornění definováním seznam kódů upozornění ignorovat v oddělených středníky *.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-167">Suppress warnings by defining a semicolon-delimited list of warning codes to ignore in the *.csproj* file.</span></span> <span data-ttu-id="b5b0b-168">Připojování kódy upozornění, které mají `$(NoWarn);` příliš použije výchozí hodnoty jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-168">Appending the warning codes to `$(NoWarn);` applies the C# default values too.</span></span>
 
-[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=3)]
+::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="d0f64-165">Nakonfigurujte Swagger používat generovaný soubor XML.</span><span class="sxs-lookup"><span data-stu-id="d0f64-165">Configure Swagger to use the generated XML file.</span></span> <span data-ttu-id="d0f64-166">Pro operační systémy jiný systém než Windows nebo Linux může být malá a velká písmena názvů a cest souborů.</span><span class="sxs-lookup"><span data-stu-id="d0f64-166">For Linux or non-Windows operating systems, file names and paths can be case-sensitive.</span></span> <span data-ttu-id="d0f64-167">Například *TodoApi.XML* je soubor na systém Windows, ale CentOS není platný.</span><span class="sxs-lookup"><span data-stu-id="d0f64-167">For example, a *TodoApi.XML* file is valid on Windows but not CentOS.</span></span>
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=3)]
+
+::: moniker-end
 
 ::: moniker range="<= aspnetcore-1.1"
 
-<span data-ttu-id="d0f64-168">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup1x.cs?name=snippet_ConfigureServices&highlight=30-32)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-168">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup1x.cs?name=snippet_ConfigureServices&highlight=30-32)]</span></span>
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=3)]
+
+::: moniker-end
+
+<span data-ttu-id="b5b0b-169">Nakonfigurujte Swagger používat generovaný soubor XML.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-169">Configure Swagger to use the generated XML file.</span></span> <span data-ttu-id="b5b0b-170">Pro operační systémy jiný systém než Windows nebo Linux může být malá a velká písmena názvů a cest souborů.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-170">For Linux or non-Windows operating systems, file names and paths can be case-sensitive.</span></span> <span data-ttu-id="b5b0b-171">Například *TodoApi.XML* je soubor na systém Windows, ale CentOS není platný.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-171">For example, a *TodoApi.XML* file is valid on Windows but not CentOS.</span></span>
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=31-33)]
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="d0f64-169">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=30-32)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-169">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=30-32)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=30-32)]
 
 ::: moniker-end
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range="<= aspnetcore-1.1"
 
-<span data-ttu-id="d0f64-170">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=31-33)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-170">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=31-33)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup1x.cs?name=snippet_ConfigureServices&highlight=30-32)]
 
 ::: moniker-end
 
-<span data-ttu-id="d0f64-171">V předchozí kód [reflexe](/dotnet/csharp/programming-guide/concepts/reflection) slouží k vytvoření, projekt webového rozhraní API odpovídající název souboru XML.</span><span class="sxs-lookup"><span data-stu-id="d0f64-171">In the preceding code, [Reflection](/dotnet/csharp/programming-guide/concepts/reflection) is used to build an XML file name matching that of the Web API project.</span></span> <span data-ttu-id="d0f64-172">Tento přístup zajišťuje, že generovaný název souboru XML odpovídá názvu projektu.</span><span class="sxs-lookup"><span data-stu-id="d0f64-172">This approach ensures that the generated XML file name matches the project name.</span></span> <span data-ttu-id="d0f64-173">[AppContext.BaseDirectory](/dotnet/api/system.appcontext.basedirectory#System_AppContext_BaseDirectory) vlastnost se používá pro konstrukci cestu k souboru XML.</span><span class="sxs-lookup"><span data-stu-id="d0f64-173">The [AppContext.BaseDirectory](/dotnet/api/system.appcontext.basedirectory#System_AppContext_BaseDirectory) property is used to construct a path to the XML file.</span></span>
+<span data-ttu-id="b5b0b-172">V předchozí kód [reflexe](/dotnet/csharp/programming-guide/concepts/reflection) slouží k vytvoření, projekt webového rozhraní API odpovídající název souboru XML.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-172">In the preceding code, [Reflection](/dotnet/csharp/programming-guide/concepts/reflection) is used to build an XML file name matching that of the Web API project.</span></span> <span data-ttu-id="b5b0b-173">[AppContext.BaseDirectory](/dotnet/api/system.appcontext.basedirectory#System_AppContext_BaseDirectory) vlastnost se používá pro konstrukci cestu k souboru XML.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-173">The [AppContext.BaseDirectory](/dotnet/api/system.appcontext.basedirectory#System_AppContext_BaseDirectory) property is used to construct a path to the XML file.</span></span>
 
-<span data-ttu-id="d0f64-174">Přidávání komentářů triple lomítko na akci vylepšuje uživatelské rozhraní Swagger přidáním popis do záhlaví části.</span><span class="sxs-lookup"><span data-stu-id="d0f64-174">Adding triple-slash comments to an action enhances the Swagger UI by adding the description to the section header.</span></span> <span data-ttu-id="d0f64-175">Přidat [ \<souhrnné >](/dotnet/csharp/programming-guide/xmldoc/summary) element výše `Delete` akce:</span><span class="sxs-lookup"><span data-stu-id="d0f64-175">Add a [\<summary>](/dotnet/csharp/programming-guide/xmldoc/summary) element above the `Delete` action:</span></span>
+<span data-ttu-id="b5b0b-174">Přidávání komentářů triple lomítko na akci vylepšuje uživatelské rozhraní Swagger přidáním popis do záhlaví části.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-174">Adding triple-slash comments to an action enhances the Swagger UI by adding the description to the section header.</span></span> <span data-ttu-id="b5b0b-175">Přidat [ \<souhrnné >](/dotnet/csharp/programming-guide/xmldoc/summary) element výše `Delete` akce:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-175">Add a [\<summary>](/dotnet/csharp/programming-guide/xmldoc/summary) element above the `Delete` action:</span></span>
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Delete&highlight=1-3)]
 
-<span data-ttu-id="d0f64-176">Vnitřní text předchozí kód zobrazí uživatelské rozhraní Swagger `<summary>` element:</span><span class="sxs-lookup"><span data-stu-id="d0f64-176">The Swagger UI displays the inner text of the preceding code's `<summary>` element:</span></span>
+<span data-ttu-id="b5b0b-176">Vnitřní text předchozí kód zobrazí uživatelské rozhraní Swagger `<summary>` element:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-176">The Swagger UI displays the inner text of the preceding code's `<summary>` element:</span></span>
 
 ![Zobrazuje komentáře XML odstraní konkrétní TodoItem. uživatelské rozhraní swagger](web-api-help-pages-using-swagger/_static/triple-slash-comments.png)
 
-<span data-ttu-id="d0f64-179">Uživatelské rozhraní vycházejí z generovaného schématu JSON:</span><span class="sxs-lookup"><span data-stu-id="d0f64-179">The UI is driven by the generated JSON schema:</span></span>
+<span data-ttu-id="b5b0b-179">Uživatelské rozhraní vycházejí z generovaného schématu JSON:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-179">The UI is driven by the generated JSON schema:</span></span>
 
 ```json
 "delete": {
@@ -211,33 +257,33 @@ warning CS1591: Missing XML comment for publicly visible type or member 'TodoCon
 }
 ```
 
-<span data-ttu-id="d0f64-180">Přidat [ \<Poznámky >](/dotnet/csharp/programming-guide/xmldoc/remarks) elementu, který chcete `Create` dokumentace metoda akce.</span><span class="sxs-lookup"><span data-stu-id="d0f64-180">Add a [\<remarks>](/dotnet/csharp/programming-guide/xmldoc/remarks) element to the `Create` action method documentation.</span></span> <span data-ttu-id="d0f64-181">Doplňuje informace uvedené v `<summary>` elementu a poskytuje robustnější uživatelského rozhraní Swagger.</span><span class="sxs-lookup"><span data-stu-id="d0f64-181">It supplements information specified in the `<summary>` element and provides a more robust Swagger UI.</span></span> <span data-ttu-id="d0f64-182">`<remarks>` Obsah elementu se může skládat z textu JSON a XML.</span><span class="sxs-lookup"><span data-stu-id="d0f64-182">The `<remarks>` element content can consist of text, JSON, or XML.</span></span>
+<span data-ttu-id="b5b0b-180">Přidat [ \<Poznámky >](/dotnet/csharp/programming-guide/xmldoc/remarks) elementu, který chcete `Create` dokumentace metoda akce.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-180">Add a [\<remarks>](/dotnet/csharp/programming-guide/xmldoc/remarks) element to the `Create` action method documentation.</span></span> <span data-ttu-id="b5b0b-181">Doplňuje informace uvedené v `<summary>` elementu a poskytuje robustnější uživatelského rozhraní Swagger.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-181">It supplements information specified in the `<summary>` element and provides a more robust Swagger UI.</span></span> <span data-ttu-id="b5b0b-182">`<remarks>` Obsah elementu se může skládat z textu JSON a XML.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-182">The `<remarks>` element content can consist of text, JSON, or XML.</span></span>
 
 ::: moniker range="<= aspnetcore-2.0"
 
-<span data-ttu-id="d0f64-183">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-183">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="d0f64-184">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-184">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]
 
 ::: moniker-end
 
-<span data-ttu-id="d0f64-185">Všimněte si, vylepšení uživatelského rozhraní s tyto další komentáři:</span><span class="sxs-lookup"><span data-stu-id="d0f64-185">Notice the UI enhancements with these additional comments:</span></span>
+<span data-ttu-id="b5b0b-183">Všimněte si, vylepšení uživatelského rozhraní s tyto další komentáři:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-183">Notice the UI enhancements with these additional comments:</span></span>
 
 ![Uživatelské rozhraní swagger s další komentáři zobrazí](web-api-help-pages-using-swagger/_static/xml-comments-extended.png)
 
-### <a name="data-annotations"></a><span data-ttu-id="d0f64-187">Datové poznámky</span><span class="sxs-lookup"><span data-stu-id="d0f64-187">Data annotations</span></span>
+### <a name="data-annotations"></a><span data-ttu-id="b5b0b-185">Datové poznámky</span><span class="sxs-lookup"><span data-stu-id="b5b0b-185">Data annotations</span></span>
 
-<span data-ttu-id="d0f64-188">Uspořádání model s atributy, které jsou součástí [System.ComponentModel.DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) oboru názvů, k rozvoji součásti uživatelského rozhraní Swagger.</span><span class="sxs-lookup"><span data-stu-id="d0f64-188">Decorate the model with attributes, found in the [System.ComponentModel.DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) namespace, to help drive the Swagger UI components.</span></span>
+<span data-ttu-id="b5b0b-186">Uspořádání model s atributy, které jsou součástí [System.ComponentModel.DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) oboru názvů, k rozvoji součásti uživatelského rozhraní Swagger.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-186">Decorate the model with attributes, found in the [System.ComponentModel.DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) namespace, to help drive the Swagger UI components.</span></span>
 
-<span data-ttu-id="d0f64-189">Přidat `[Required]` atribut `Name` vlastnost `TodoItem` třídy:</span><span class="sxs-lookup"><span data-stu-id="d0f64-189">Add the `[Required]` attribute to the `Name` property of the `TodoItem` class:</span></span>
+<span data-ttu-id="b5b0b-187">Přidat `[Required]` atribut `Name` vlastnost `TodoItem` třídy:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-187">Add the `[Required]` attribute to the `Name` property of the `TodoItem` class:</span></span>
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Models/TodoItem.cs?highlight=10)]
 
-<span data-ttu-id="d0f64-190">Přítomnost tento atribut se změní chování uživatelského rozhraní a mění základní schématu JSON:</span><span class="sxs-lookup"><span data-stu-id="d0f64-190">The presence of this attribute changes the UI behavior and alters the underlying JSON schema:</span></span>
+<span data-ttu-id="b5b0b-188">Přítomnost tento atribut se změní chování uživatelského rozhraní a mění základní schématu JSON:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-188">The presence of this attribute changes the UI behavior and alters the underlying JSON schema:</span></span>
 
 ```json
 "definitions": {
@@ -263,78 +309,78 @@ warning CS1591: Missing XML comment for publicly visible type or member 'TodoCon
 },
 ```
 
-<span data-ttu-id="d0f64-191">Přidat `[Produces("application/json")]` atribut kontroleru rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="d0f64-191">Add the `[Produces("application/json")]` attribute to the API controller.</span></span> <span data-ttu-id="d0f64-192">Jejím účelem je deklarovat, že akce kontroleru podporují typ obsahu odpovědi z *application/json*:</span><span class="sxs-lookup"><span data-stu-id="d0f64-192">Its purpose is to declare that the controller's actions support a response content type of *application/json*:</span></span>
+<span data-ttu-id="b5b0b-189">Přidat `[Produces("application/json")]` atribut kontroleru rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-189">Add the `[Produces("application/json")]` attribute to the API controller.</span></span> <span data-ttu-id="b5b0b-190">Jejím účelem je deklarovat, že akce kontroleru podporují typ obsahu odpovědi z *application/json*:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-190">Its purpose is to declare that the controller's actions support a response content type of *application/json*:</span></span>
 
 ::: moniker range="<= aspnetcore-2.0"
 
-<span data-ttu-id="d0f64-193">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_TodoController&highlight=1)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-193">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_TodoController&highlight=1)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_TodoController&highlight=1)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="d0f64-194">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_TodoController&highlight=1)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-194">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_TodoController&highlight=1)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_TodoController&highlight=1)]
 
 ::: moniker-end
 
-<span data-ttu-id="d0f64-195">**Typ obsahu odpovědi** rozevíracího seznamu vybere jako výchozí pro akce kontroleru GET tento typ obsahu:</span><span class="sxs-lookup"><span data-stu-id="d0f64-195">The **Response Content Type** drop-down selects this content type as the default for the controller's GET actions:</span></span>
+<span data-ttu-id="b5b0b-191">**Typ obsahu odpovědi** rozevíracího seznamu vybere jako výchozí pro akce kontroleru GET tento typ obsahu:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-191">The **Response Content Type** drop-down selects this content type as the default for the controller's GET actions:</span></span>
 
 ![Uživatelské rozhraní swagger s výchozí typ obsahu odpovědi](web-api-help-pages-using-swagger/_static/json-response-content-type.png)
 
-<span data-ttu-id="d0f64-197">Při použití datové poznámky v rozhraní Web API rostoucí, uživatelského rozhraní a rozhraní API pomohou stránky stát větší popisnosti a užitečné.</span><span class="sxs-lookup"><span data-stu-id="d0f64-197">As the usage of data annotations in the Web API increases, the UI and API help pages become more descriptive and useful.</span></span>
+<span data-ttu-id="b5b0b-193">Při použití datové poznámky v rozhraní Web API rostoucí, uživatelského rozhraní a rozhraní API pomohou stránky stát větší popisnosti a užitečné.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-193">As the usage of data annotations in the Web API increases, the UI and API help pages become more descriptive and useful.</span></span>
 
-### <a name="describe-response-types"></a><span data-ttu-id="d0f64-198">Popisují typy odezvy</span><span class="sxs-lookup"><span data-stu-id="d0f64-198">Describe response types</span></span>
+### <a name="describe-response-types"></a><span data-ttu-id="b5b0b-194">Popisují typy odezvy</span><span class="sxs-lookup"><span data-stu-id="b5b0b-194">Describe response types</span></span>
 
-<span data-ttu-id="d0f64-199">Využívání vývojáři jsou nejvíce zajímají co je vrácen&mdash;konkrétně odpovědi typy a kódy chyb (Pokud není standard).</span><span class="sxs-lookup"><span data-stu-id="d0f64-199">Consuming developers are most concerned with what's returned&mdash;specifically response types and error codes (if not standard).</span></span> <span data-ttu-id="d0f64-200">V XML komentáře a data poznámky jsou rozlišeny odpovědi typy a kódy chyb.</span><span class="sxs-lookup"><span data-stu-id="d0f64-200">The response types and error codes are denoted in the XML comments and data annotations.</span></span>
+<span data-ttu-id="b5b0b-195">Využívání vývojáři jsou nejvíce zajímají co je vrácen&mdash;konkrétně odpovědi typy a kódy chyb (Pokud není standard).</span><span class="sxs-lookup"><span data-stu-id="b5b0b-195">Consuming developers are most concerned with what's returned&mdash;specifically response types and error codes (if not standard).</span></span> <span data-ttu-id="b5b0b-196">V XML komentáře a data poznámky jsou rozlišeny odpovědi typy a kódy chyb.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-196">The response types and error codes are denoted in the XML comments and data annotations.</span></span>
 
-<span data-ttu-id="d0f64-201">`Create` Akce vrátí kód stavu HTTP 201 v případě úspěchu.</span><span class="sxs-lookup"><span data-stu-id="d0f64-201">The `Create` action returns an HTTP 201 status code on success.</span></span> <span data-ttu-id="d0f64-202">Stavový kód HTTP 400 se vrátí při textu požadavku odeslaného má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="d0f64-202">An HTTP 400 status code is returned when the posted request body is null.</span></span> <span data-ttu-id="d0f64-203">Bez správné dokumentace v uživatelském rozhraní Swagger nemá příjemce znalost těchto očekávaných výsledků.</span><span class="sxs-lookup"><span data-stu-id="d0f64-203">Without proper documentation in the Swagger UI, the consumer lacks knowledge of these expected outcomes.</span></span> <span data-ttu-id="d0f64-204">Tento problém můžete vyřešte přidáním zvýrazněné řádky v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="d0f64-204">Fix that problem by adding the highlighted lines in the following example:</span></span>
+<span data-ttu-id="b5b0b-197">`Create` Akce vrátí kód stavu HTTP 201 v případě úspěchu.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-197">The `Create` action returns an HTTP 201 status code on success.</span></span> <span data-ttu-id="b5b0b-198">Stavový kód HTTP 400 se vrátí při textu požadavku odeslaného má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-198">An HTTP 400 status code is returned when the posted request body is null.</span></span> <span data-ttu-id="b5b0b-199">Bez správné dokumentace v uživatelském rozhraní Swagger nemá příjemce znalost těchto očekávaných výsledků.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-199">Without proper documentation in the Swagger UI, the consumer lacks knowledge of these expected outcomes.</span></span> <span data-ttu-id="b5b0b-200">Tento problém můžete vyřešte přidáním zvýrazněné řádky v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-200">Fix that problem by adding the highlighted lines in the following example:</span></span>
 
 ::: moniker range="<= aspnetcore-2.0"
 
-<span data-ttu-id="d0f64-205">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-205">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="d0f64-206">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]</span><span class="sxs-lookup"><span data-stu-id="d0f64-206">[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]</span></span>
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]
 
 ::: moniker-end
 
-<span data-ttu-id="d0f64-207">Uživatelské rozhraní Swagger teď jasně dokumenty očekávané kódy odpovědi HTTP:</span><span class="sxs-lookup"><span data-stu-id="d0f64-207">The Swagger UI now clearly documents the expected HTTP response codes:</span></span>
+<span data-ttu-id="b5b0b-201">Uživatelské rozhraní Swagger teď jasně dokumenty očekávané kódy odpovědi HTTP:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-201">The Swagger UI now clearly documents the expected HTTP response codes:</span></span>
 
 ![Zobrazuje popis třídy odpovědi POST, vrátí nově vytvořená položka Todo, uživatelské rozhraní swagger a '400 - Pokud položka má hodnotu null' stavový kód a důvod pod odpovědí na zprávy](web-api-help-pages-using-swagger/_static/data-annotations-response-types.png)
 
-### <a name="customize-the-ui"></a><span data-ttu-id="d0f64-209">Přizpůsobení uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="d0f64-209">Customize the UI</span></span>
+### <a name="customize-the-ui"></a><span data-ttu-id="b5b0b-203">Přizpůsobení uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5b0b-203">Customize the UI</span></span>
 
-<span data-ttu-id="d0f64-210">Stock uživatelského rozhraní je funkční a přístupné.</span><span class="sxs-lookup"><span data-stu-id="d0f64-210">The stock UI is both functional and presentable.</span></span> <span data-ttu-id="d0f64-211">Ale stránky dokumentace k rozhraní API by měl představovat značku nebo motivu.</span><span class="sxs-lookup"><span data-stu-id="d0f64-211">However, API documentation pages should represent your brand or theme.</span></span> <span data-ttu-id="d0f64-212">Branding komponenty Swashbuckle vyžaduje přidání prostředků poskytovat statické soubory a sestavování strukturu složek pro hostování těchto souborů.</span><span class="sxs-lookup"><span data-stu-id="d0f64-212">Branding the Swashbuckle components requires adding the resources to serve static files and building the folder structure to host those files.</span></span>
+<span data-ttu-id="b5b0b-204">Stock uživatelského rozhraní je funkční a přístupné.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-204">The stock UI is both functional and presentable.</span></span> <span data-ttu-id="b5b0b-205">Ale stránky dokumentace k rozhraní API by měl představovat značku nebo motivu.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-205">However, API documentation pages should represent your brand or theme.</span></span> <span data-ttu-id="b5b0b-206">Branding komponenty Swashbuckle vyžaduje přidání prostředků poskytovat statické soubory a sestavování strukturu složek pro hostování těchto souborů.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-206">Branding the Swashbuckle components requires adding the resources to serve static files and building the folder structure to host those files.</span></span>
 
-<span data-ttu-id="d0f64-213">Pokud cílení na rozhraní .NET Framework nebo .NET Core 1.x, přidejte [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles) balíček NuGet do projektu:</span><span class="sxs-lookup"><span data-stu-id="d0f64-213">If targeting .NET Framework or .NET Core 1.x, add the [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles) NuGet package to the project:</span></span>
+<span data-ttu-id="b5b0b-207">Pokud cílení na rozhraní .NET Framework nebo .NET Core 1.x, přidejte [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles) balíček NuGet do projektu:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-207">If targeting .NET Framework or .NET Core 1.x, add the [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles) NuGet package to the project:</span></span>
 
 ```xml
 <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
 ```
 
-<span data-ttu-id="d0f64-214">Předchozí balíček NuGet je již nainstalován, pokud cílení na .NET Core 2.x a pomocí [metapackage](xref:fundamentals/metapackage).</span><span class="sxs-lookup"><span data-stu-id="d0f64-214">The preceding NuGet package is already installed if targeting .NET Core 2.x and using the [metapackage](xref:fundamentals/metapackage).</span></span>
+<span data-ttu-id="b5b0b-208">Předchozí balíček NuGet je již nainstalován, pokud cílení na .NET Core 2.x a pomocí [metapackage](xref:fundamentals/metapackage).</span><span class="sxs-lookup"><span data-stu-id="b5b0b-208">The preceding NuGet package is already installed if targeting .NET Core 2.x and using the [metapackage](xref:fundamentals/metapackage).</span></span>
 
-<span data-ttu-id="d0f64-215">Povolte middleware statické soubory:</span><span class="sxs-lookup"><span data-stu-id="d0f64-215">Enable the static files middleware:</span></span>
+<span data-ttu-id="b5b0b-209">Povolte middleware statické soubory:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-209">Enable the static files middleware:</span></span>
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup.cs?name=snippet_Configure&highlight=3)]
 
-<span data-ttu-id="d0f64-216">Získat obsah *dist* složky z [úložiště GitHub uživatelského rozhraní Swagger](https://github.com/swagger-api/swagger-ui/tree/master/dist).</span><span class="sxs-lookup"><span data-stu-id="d0f64-216">Acquire the contents of the *dist* folder from the [Swagger UI GitHub repository](https://github.com/swagger-api/swagger-ui/tree/master/dist).</span></span> <span data-ttu-id="d0f64-217">Tato složka obsahuje nezbytné prostředky pro stránka uživatelského rozhraní Swagger.</span><span class="sxs-lookup"><span data-stu-id="d0f64-217">This folder contains the necessary assets for the Swagger UI page.</span></span>
+<span data-ttu-id="b5b0b-210">Získat obsah *dist* složky z [úložiště GitHub uživatelského rozhraní Swagger](https://github.com/swagger-api/swagger-ui/tree/master/dist).</span><span class="sxs-lookup"><span data-stu-id="b5b0b-210">Acquire the contents of the *dist* folder from the [Swagger UI GitHub repository](https://github.com/swagger-api/swagger-ui/tree/master/dist).</span></span> <span data-ttu-id="b5b0b-211">Tato složka obsahuje nezbytné prostředky pro stránka uživatelského rozhraní Swagger.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-211">This folder contains the necessary assets for the Swagger UI page.</span></span>
 
-<span data-ttu-id="d0f64-218">Vytvoření *wwwroot/swagger/uživatelského rozhraní* složku a zkopírujte do ní obsah *dist* složky.</span><span class="sxs-lookup"><span data-stu-id="d0f64-218">Create a *wwwroot/swagger/ui* folder, and copy into it the contents of the *dist* folder.</span></span>
+<span data-ttu-id="b5b0b-212">Vytvoření *wwwroot/swagger/uživatelského rozhraní* složku a zkopírujte do ní obsah *dist* složky.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-212">Create a *wwwroot/swagger/ui* folder, and copy into it the contents of the *dist* folder.</span></span>
 
-<span data-ttu-id="d0f64-219">Vytvoření *custom.css* v souboru *wwwroot/swagger/uživatelského rozhraní*, s následující šablon stylů CSS, chcete-li přizpůsobit záhlaví stránky:</span><span class="sxs-lookup"><span data-stu-id="d0f64-219">Create a *custom.css* file, in *wwwroot/swagger/ui*, with the following CSS to customize the page header:</span></span>
+<span data-ttu-id="b5b0b-213">Vytvoření *custom.css* v souboru *wwwroot/swagger/uživatelského rozhraní*, s následující šablon stylů CSS, chcete-li přizpůsobit záhlaví stránky:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-213">Create a *custom.css* file, in *wwwroot/swagger/ui*, with the following CSS to customize the page header:</span></span>
 
 [!code-css[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/wwwroot/swagger/ui/custom.css)]
 
-<span data-ttu-id="d0f64-220">Referenční dokumentace *custom.css* v *index.html* souboru po další soubory šablon stylů CSS:</span><span class="sxs-lookup"><span data-stu-id="d0f64-220">Reference *custom.css* in the *index.html* file, after any other CSS files:</span></span>
+<span data-ttu-id="b5b0b-214">Referenční dokumentace *custom.css* v *index.html* souboru po další soubory šablon stylů CSS:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-214">Reference *custom.css* in the *index.html* file, after any other CSS files:</span></span>
 
 [!code-html[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/wwwroot/swagger/ui/index.html?name=snippet_SwaggerUiCss&highlight=3)]
 
-<span data-ttu-id="d0f64-221">Vyhledejte *index.html* stránky v `http://localhost:<port>/swagger/ui/index.html`.</span><span class="sxs-lookup"><span data-stu-id="d0f64-221">Browse to the *index.html* page at `http://localhost:<port>/swagger/ui/index.html`.</span></span> <span data-ttu-id="d0f64-222">Zadejte `http://localhost:<port>/swagger/v1/swagger.json` textové pole hlavičky a klikněte na **prozkoumat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="d0f64-222">Enter `http://localhost:<port>/swagger/v1/swagger.json` in the header's textbox, and click the **Explore** button.</span></span> <span data-ttu-id="d0f64-223">Výsledná stránka vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="d0f64-223">The resulting page looks as follows:</span></span>
+<span data-ttu-id="b5b0b-215">Vyhledejte *index.html* stránky v `http://localhost:<port>/swagger/ui/index.html`.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-215">Browse to the *index.html* page at `http://localhost:<port>/swagger/ui/index.html`.</span></span> <span data-ttu-id="b5b0b-216">Zadejte `http://localhost:<port>/swagger/v1/swagger.json` textové pole hlavičky a klikněte na **prozkoumat** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-216">Enter `http://localhost:<port>/swagger/v1/swagger.json` in the header's textbox, and click the **Explore** button.</span></span> <span data-ttu-id="b5b0b-217">Výsledná stránka vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="b5b0b-217">The resulting page looks as follows:</span></span>
 
 ![Uživatelské rozhraní swagger s názvem vlastní hlavičky](web-api-help-pages-using-swagger/_static/custom-header.png)
 
-<span data-ttu-id="d0f64-225">Je mnohem víc, že můžete provést pomocí stránky.</span><span class="sxs-lookup"><span data-stu-id="d0f64-225">There's much more you can do with the page.</span></span> <span data-ttu-id="d0f64-226">Najdete v části úplné možnosti pro prostředky uživatelského rozhraní na [úložiště GitHub uživatelského rozhraní Swagger](https://github.com/swagger-api/swagger-ui).</span><span class="sxs-lookup"><span data-stu-id="d0f64-226">See the full capabilities for the UI resources at the [Swagger UI GitHub repository](https://github.com/swagger-api/swagger-ui).</span></span>
+<span data-ttu-id="b5b0b-219">Je mnohem víc, že můžete provést pomocí stránky.</span><span class="sxs-lookup"><span data-stu-id="b5b0b-219">There's much more you can do with the page.</span></span> <span data-ttu-id="b5b0b-220">Najdete v části úplné možnosti pro prostředky uživatelského rozhraní na [úložiště GitHub uživatelského rozhraní Swagger](https://github.com/swagger-api/swagger-ui).</span><span class="sxs-lookup"><span data-stu-id="b5b0b-220">See the full capabilities for the UI resources at the [Swagger UI GitHub repository](https://github.com/swagger-api/swagger-ui).</span></span>

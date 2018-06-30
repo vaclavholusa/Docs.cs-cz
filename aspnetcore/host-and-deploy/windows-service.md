@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 0149039f69539b7c69d7ba45efcf09d80ffcba79
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 718cc83bb29c0cff323853d22c107e00616b1dd1
+ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275095"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37126232"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Jádro ASP.NET hostitele ve službě Windows
 
@@ -54,29 +54,39 @@ Následující minimální změny jsou nezbytné pro nastavení existujícího p
 
      ::: moniker-end
 
-1. Publikujte aplikaci do složky. Použití [dotnet publikování](/dotnet/articles/core/tools/dotnet-publish) nebo [profil publikování se Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) který publikuje do složky.
+1. Publikování aplikace. Použití [dotnet publikování](/dotnet/articles/core/tools/dotnet-publish) nebo [profil publikování se Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles).
 
    K publikování ukázkové aplikace z příkazového řádku, spusťte následující příkaz v okně konzoly ze složky projektu:
 
    ```console
-   dotnet publish --configuration Release --output c:\svc
+   dotnet publish --configuration Release
    ```
 
-1. Použití [sc.exe](https://technet.microsoft.com/library/bb490995) nástroj příkazového řádku k vytvoření služby (`sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"`). `binPath` Hodnota je cesta ke spustitelnému souboru aplikace, která zahrnuje název spustitelného souboru. **Mezera mezi znaménkem rovnosti a uvozovky, která se spouští cesta je požadovaná.**
+1. Použití [sc.exe](https://technet.microsoft.com/library/bb490995) nástroj příkazového řádku k vytvoření služby. `binPath` Hodnota je cesta ke spustitelnému souboru aplikace, která zahrnuje název spustitelného souboru. **Mezera mezi znaménkem rovnosti a uvozovky na začátku cesta je požadovaná.**
 
-   Pro ukázkovou aplikaci a příkaz, který následuje služba je:
+   ```console
+   sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"
+   ```
+
+   Pro službu publikovaná ve složce projektu, použijte cestu k *publikování* složku pro vytvoření služby. Služba je v následujícím příkladu:
 
    * S názvem **Moje_služba**.
-   * Publikovaná *c:\\svc* složky.
-   * Má aplikaci spustitelný soubor s názvem *AspNetCoreService.exe*.
+   * Publikovaná *c:\\my_services\\AspNetCoreService\\bin\\verze\\&lt;TARGET_FRAMEWORK&gt;\\publikování* složky.
+   * Reprezentována aplikaci spustitelný soubor s názvem *AspNetCoreService.exe*.
 
    Otevřete příkazové okno s oprávněními správce a spusťte následující příkaz:
 
    ```console
-   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe"
+   sc create MyService binPath= "c:\my_services\aspnetcoreservice\bin\release\<TARGET_FRAMEWORK>\publish\aspnetcoreservice.exe"
    ```
-
-   **Zajistěte, aby místo nachází mezi `binPath=` argument a její hodnotu.**
+   
+   > [!IMPORTANT]
+   > Zajistěte, aby místo nachází mezi `binPath=` argument a její hodnotu.
+   
+   K publikování a spuštění služby v jiné složce:
+   
+   1. Použití [– výstupní &lt;OUTPUT_DIRECTORY&gt; ](/dotnet/core/tools/dotnet-publish#options) možnost `dotnet publish` příkaz.
+   1. Vytvoření služby pomocí `sc.exe` příkaz pomocí cesty ke složce výstup. Zahrnout název spustitelného souboru procesu služby k zadané cestě `binPath`.
 
 1. Spusťte službu s `sc start <SERVICE_NAME>` příkaz.
 

@@ -1,6 +1,6 @@
 ::: moniker range=">= aspnetcore-2.1"
 
-V tomto kurzu nebyla upgradována, aby ASP.NET Core 2.1. Technologii ASP.NET 2.0 základní verze tohoto kurzu je k dispozici výběrem **2.0** nahoře v tabulce obsahu nebo v horní části stránky:
+V tomto kurzu nebyla upgradována, aby ASP.NET Core 2.1. Technologii ASP.NET 2.0 základní verze tohoto kurzu je k dispozici výběrem **technologii ASP.NET 2.0 základní** nahoře v tabulce obsahu nebo v horní části stránky:
 
 Stránky ASP.NET Core 2.1 Razor verzi v tomto kurzu má mnoho vylepšení verze 2.0.
 

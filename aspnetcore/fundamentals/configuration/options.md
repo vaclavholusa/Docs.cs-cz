@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 1fe05fbc5035ffa2d01bc6be55436146f1434d17
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 96d7d2956fa9bf72706cde0532ee7f4ff753b72c
+ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278541"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37126258"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -53,6 +53,20 @@ Pokud aplikace běží a model stránky `OnGet` metoda vrátí řetězec zobrazu
 ```html
 option1 = value1_from_json, option2 = -1
 ```
+
+> [!NOTE]
+> Při použití vlastní [ConfigurationBuilder](/dotnet/api/system.configuration.configurationbuilder) načíst ze souboru nastavení konfigurace možností, potvrďte, že je správně nastavena základní cesta:
+>
+> ```csharp
+> var configBuilder = new ConfigurationBuilder()
+>    .SetBasePath(Directory.GetCurrentDirectory())
+>    .AddJsonFile("appsettings.json", optional: true);
+> var config = configBuilder.Build();
+>
+> services.Configure<MyOptions>(config);
+> ```
+>
+> Explicitní nastavení základní cesta není povinné, při načítání možností konfigurace z nastavení souboru prostřednictvím [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder).
 
 ## <a name="configure-simple-options-with-a-delegate"></a>Jednoduché možnosti nakonfigurovat delegáta
 
@@ -144,7 +158,7 @@ Při spuštění aplikace na vykreslené stránce se zobrazuje hodnoty možnosti
 
 Opětovné načtení konfiguračních dat pomocí `IOptionsSnapshot` je znázorněn v příkladu &num;5 v [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample).
 
-*Vyžaduje ASP.NET Core 1.1 nebo novější.*
+*vyžaduje ASP.NET Core 1.1 nebo novější.*
 
 [IOptionsSnapshot](/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1) podporuje opětovném načtení možnosti s minimální režie zpracování. V technologii ASP.NET Core 1.1 `IOptionsSnapshot` je snímek [IOptionsMonitor&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1) a aktualizace automaticky vždy, když monitorování aktivuje na základě změny zdroj dat změny. V technologii ASP.NET Core 2.0 nebo novější možnosti se vypočítávají jednou za žádosti při přístup a uložené v mezipaměti po dobu jeho existence požadavku.
 

@@ -3,20 +3,19 @@ title: Stránky Razor s EF jádra ASP.NET Core - CRUD - 2 8
 author: rick-anderson
 description: Ukazuje, jak vytvořit, číst, aktualizovat, odstraňovat s EF jádra
 ms.author: riande
-ms.date: 10/15/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: 157257d10306ded3456cd66c186a82edf0ba5d65
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: dfc79964cc4f15851b42822bb97d14800f54b878
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36961318"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093007"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Stránky Razor s EF jádra ASP.NET Core - CRUD - 2 8
 
-::: moniker range="= aspnetcore-2.0"
-ASP.NET 2.0 základní verzi v tomto kurzu lze nalézt v [tento PDF soubor](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/PDF-6-18-18.pdf).
-::: moniker-end
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
+
 ::: moniker range=">= aspnetcore-2.1"
 
 Podle [tní Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog), a [Rick Anderson](https://twitter.com/RickAndMSFT)
@@ -48,6 +47,7 @@ Generovaný kód používá [FirstOrDefaultAsync](/dotnet/api/microsoft.entityfr
 * `FirstOrDefaultAsync` není výjimku, pokud existuje více než jedna entita, která odpovídá část filtru.
 
 <a name="FindAsync"></a>
+
 ### <a name="findasync"></a>Asynchronně vyhledá
 
 Hodně automaticky generovaný kód [asynchronně vyhledá](/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#Microsoft_EntityFrameworkCore_DbContext_FindAsync_System_Type_System_Object___) lze místě `FirstOrDefaultAsync`.
@@ -57,8 +57,9 @@ Hodně automaticky generovaný kód [asynchronně vyhledá](/dotnet/api/microsof
 * Vyhledá entitu s primární klíč (Primárníklíč). Pokud entity s primárnímu Klíči je sledován pomocí kontextu, je vrácen bez požadavek do databáze.
 * Je jednoduchý a stručné sdělení.
 * Je optimalizován pro vyhledání jedné entity.
-* Můžete mít výhody výkonu v některých situacích, ale zřídka se do play pro typické webové aplikace.
+* V některých situacích může mít výkonu výhody, ale jejich zřídka se stane pro typické webové aplikace.
 * Implicitně používá [FirstAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.firstasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_FirstAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_) místo [SingleAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.singleasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_SingleAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_).
+
 Ale pokud budete chtít `Include` jinými entitami, pak `FindAsync` již není vhodné. To znamená, že budete muset abandon `FindAsync` a přesunout do dotazu průběhu vaší aplikace.
 
 ## <a name="customize-the-details-page"></a>Stránce s podrobnostmi o přizpůsobení
@@ -114,6 +115,7 @@ Aktualizace `OnPostAsync` metoda v *Pages/Students/Create.cshtml.cs* následují
 [!code-csharp[](intro/samples/cu21/Pages/Students/Create.cshtml.cs?name=snippet_OnPostAsync)]
 
 <a name="TryUpdateModelAsync"></a>
+
 ### <a name="tryupdatemodelasync"></a>TryUpdateModelAsync
 
 Zkontrolujte [TryUpdateModelAsync](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.tryupdatemodelasync#Microsoft_AspNetCore_Mvc_ControllerBase_TryUpdateModelAsync_System_Object_System_Type_System_String_) kódu:
@@ -124,10 +126,11 @@ V předchozí kód `TryUpdateModelAsync<Student>` pokusit o aktualizaci `emptySt
 
 V předchozím příkladu:
 
-* Druhý argument (` "student", // Prefix`) je předponu používá pro vyhledávání hodnoty. Není velká a malá písmena.
+* Druhý argument (`"student", // Prefix`) je předponu používá pro vyhledávání hodnoty. Není velká a malá písmena.
 * Hodnoty odeslaného formuláře jsou převedeny na typy v `Student` model pomocí [model vazby](xref:mvc/models/model-binding#how-model-binding-works).
 
 <a id="overpost"></a>
+
 ### <a name="overposting"></a>Overposting
 
 Pomocí `TryUpdateModel` aktualizovat pole odeslaných hodnot je nejlepším postupem zabezpečení, protože zabraňuje overposting. Předpokládejme například, zahrnuje Student entity `Secret` vlastnost, která tato webová stránka nesmí aktualizovat nebo přidat:

@@ -5,14 +5,18 @@ description: V tomto kurzu začnete používat funkci migrace EF jádra pro spr�
 ms.author: tdykstra
 ms.date: 03/15/2018
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: d8b92aeedb252b93e1dc1aca424d26a377305da2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f710b33ac1a6017b0e3d7e8c3e528675a41424bb
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273582"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37092939"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>Jádro ASP.NET MVC s EF Core - Migrations - 4 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -34,7 +38,7 @@ Nástroje EF pro rozhraní příkazového řádku (CLI) jsou uvedeny v [Microsof
 
 [!code-xml[](intro/samples/cu/ContosoUniversity.csproj?range=12-15&highlight=2)]
   
-(Číslo verze v tomto příkladu byly aktuální v době kurzu byla zapsána.) 
+(Číslo verze v tomto příkladu byly aktuální v době kurzu byla zapsána.)
 
 ## <a name="change-the-connection-string"></a>Změnit připojovací řetězec
 
@@ -154,14 +158,15 @@ EF příkazů pro příkazy pomocí PMC jsou v [Microsoft.EntityFrameworkCore.To
 
 **Důležité:** tento není stejného balíčku jako instalace pro rozhraní příkazového řádku úpravou *.csproj* souboru. Název touto končí v `Tools`, na rozdíl od název balíčku rozhraní příkazového řádku, které končí na `Tools.DotNet`.
 
-Další informace o rozhraní příkazového řádku najdete v tématu [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet). 
+Další informace o rozhraní příkazového řádku najdete v tématu [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet).
 
 Další informace o příkazech pomocí PMC najdete v tématu [Konzola správce balíčků (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell).
 
 ## <a name="summary"></a>Souhrn
 
 V tomto kurzu jste viděli, jak vytvořit a použít první migrace. V dalším kurzu brzy prohlížení pokročilejší témata rozšířením datový model. Na této cestě můžete vytvářet a použijte další migrace.
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Předchozí](sort-filter-page.md)
-> [další](complex-data-model.md)  
+> [další](complex-data-model.md)

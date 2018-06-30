@@ -5,18 +5,22 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 3c418cc4e331ad19b0ec1be3207fa2cc44bef041
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 4e0bcffd1162681aa4d31c4fe74acac5a7e981f1
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275668"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093124"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Jádro ASP.NET MVC s Entity Framework Core - kurz 1 10
 
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
+
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE [RP better than MVC](../../includes/RP-EF/rp-over-mvc.md)]
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc.md)]
 
 Contoso univerzity ukázkovou webovou aplikaci ukazuje, jak vytvářet webové aplikace ASP.NET MVC 2.0 základní pomocí základní Entity Framework (EF) 2.0 a Visual Studio 2017.
 
@@ -31,7 +35,7 @@ Základní EF 2.0 je nejnovější verzi EF, ale ještě nemá všechny funkce E
 
 ## <a name="prerequisites"></a>Požadavky
 
-[!INCLUDE [](~/includes/net-core-prereqs.md)]
+[! Zahrnout [] (~/includes/net-core-prereqs.md) [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
@@ -104,7 +108,7 @@ Stiskněte klávesu CTRL + F5 a spusťte projekt nebo zvolte **ladění > Spusti
 
 Podpora jádra EF přidat do projektu, nainstalujte zprostředkovatele databáze, kterou chcete cílit. Tento kurz používá systém SQL Server a poskytovatele balíček je [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/). Tento balíček je součástí [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, takže není nutné ji nainstalovat.
 
-Tento balíček a jeho závislosti (`Microsoft.EntityFrameworkCore` a `Microsoft.EntityFrameworkCore.Relational`) poskytují podporu runtime pro EF. Bude potřeba přidat balíček nástrojů dál v [migrace](migrations.md) kurzu. 
+Tento balíček a jeho závislosti (`Microsoft.EntityFrameworkCore` a `Microsoft.EntityFrameworkCore.Relational`) poskytují podporu runtime pro EF. Bude potřeba přidat balíček nástrojů dál v [migrace](migrations.md) kurzu.
 
 Informace o dalších zprostředkovatelů databáze, které jsou k dispozici pro Entity Framework Core najdete v tématu [databáze zprostředkovatelé](https://docs.microsoft.com/ef/core/providers/).
 
@@ -358,6 +362,8 @@ Další informace o asynchronní programování v rozhraní .NET najdete v téma
 ## <a name="summary"></a>Souhrn
 
 Nyní jste vytvořili jednoduchou aplikaci, která se používá k uložení a zobrazení data Entity Framework Core a SQL Server Express LocalDB. V následujícím kurzu se dozvíte jak provádět základní CRUD (vytvořit, číst, aktualizovat, odstraňovat) operace.
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Next](crud.md)

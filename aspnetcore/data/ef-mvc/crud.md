@@ -5,14 +5,18 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/crud
-ms.openlocfilehash: e0d454ce4f2319b48b649d46c0878d6969acbc9f
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: bc02ee6933634cc5987dbc3fcf57b0cce5a93bef
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278554"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093098"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>Jádro ASP.NET MVC s EF Core - CRUD - 2 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -20,7 +24,7 @@ Contoso univerzity ukázkovou webovou aplikaci ukazuje, jak vytvářet webové a
 
 V předchozích kurzu jste vytvořili aplikaci MVC, která uchovává a zobrazí data pomocí rozhraní Entity Framework a SQL Server LocalDB. V tomto kurzu budete zkontrolujte a přizpůsobit CRUD (vytvořit, číst, aktualizovat, odstraňovat) kód, který generování uživatelského rozhraní MVC pro vás automaticky vytvoří v kontrolery a zobrazení.
 
-> [!NOTE] 
+> [!NOTE]
 > Je běžnou praxí implementovat vzor úložiště před vytvořením vrstvu abstrakce mezi řadiči a vrstva přístupu k datům. Tyto kurzy zachovat jednoduché a zaměřují se na výuky použití rozhraní Entity Framework, samotné, nepoužívejte úložiště. Informace o úložiště s EF najdete v tématu [poslední kurzu této série](advanced.md).
 
 V tomto kurzu budete pracovat s následujících webových stránek:
@@ -183,7 +187,7 @@ V důsledku těchto změn podpis metoda HttpPost `Edit` metoda je stejná jako t
 
 ### <a name="alternative-httppost-edit-code-create-and-attach"></a>Alternativní HttpPost upravit kód: Vytvořte a připojte
 
-Doporučené upravit kód HttpPost zajistí aktualizovat pouze změněné sloupce a uchovává data ve vlastnosti, které nechcete, aby zahrnuté pro vazbu modelu. Přístup pro čtení první však vyžaduje další databáze pro čtení a může mít za následek složitější kód pro zpracování konfliktů souběžnosti. Alternativou je připojit entity vytvořené vazač modelu pro kontext EF a označte ji jako upravená. (Neaktualizovat projekt s tímto kódem, ho se zobrazují pouze pro ilustraci volitelné přístup.) 
+Doporučené upravit kód HttpPost zajistí aktualizovat pouze změněné sloupce a uchovává data ve vlastnosti, které nechcete, aby zahrnuté pro vazbu modelu. Přístup pro čtení první však vyžaduje další databáze pro čtení a může mít za následek složitější kód pro zpracování konfliktů souběžnosti. Alternativou je připojit entity vytvořené vazač modelu pro kontext EF a označte ji jako upravená. (Neaktualizovat projekt s tímto kódem, ho se zobrazují pouze pro ilustraci volitelné přístup.)
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_CreateAndAttach)]
 
@@ -293,6 +297,8 @@ Další informace najdete v tématu [sledování vs. Ne sledování](https://doc
 
 Nyní máte úplnou sadu stránek, které provádějí jednoduché operace CRUD pro studenty entity. V dalším kurzu budete rozbalte funkce **Index** tak, že přidáte řazení, filtrování a stránkování.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [Předchozí](intro.md)
-> [další](sort-filter-page.md)  
+> [další](sort-filter-page.md)

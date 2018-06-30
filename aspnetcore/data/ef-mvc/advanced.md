@@ -5,14 +5,18 @@ description: Tento kurz představuje užitečné témata pro více než se zákl
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 2aced1126e3062835d9c35ef01fd3c1438f0af84
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: be44ef115ce72e1571bbdea2c609ea6c53792c59
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274366"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093072"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>Jádro ASP.NET MVC s EF Core - rozšířené – 10 z 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -195,7 +199,7 @@ Informace o dalších témat souvisejících s ASP.NET MVC jádra, jako je např
 
 Tní Dykstra a Rick Anderson (twitter @RickAndMSFT) napsali v tomto kurzu. Rowan Lukeš, Diego Vega a ostatní členové týmu rozhraní Entity Framework s asistencí s recenze kódu a pomohl ladění problémů, které vznikly při jsme byly pro kurzů k psaní kódu.
 
-## <a name="common-errors"></a>Běžné chyby  
+## <a name="common-errors"></a>Běžné chyby
 
 ### <a name="contosouniversitydll-used-by-another-process"></a>ContosoUniversity.dll využívá jiný proces
 
@@ -240,6 +244,7 @@ Chybová zpráva:
 Řešení:
 
 Zkontrolujte připojovací řetězec. Pokud jste odstranili ručně databázový soubor, změňte název databáze v řetězci konstrukce začít znovu s novou databázi.
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Předchozí](inheritance.md)

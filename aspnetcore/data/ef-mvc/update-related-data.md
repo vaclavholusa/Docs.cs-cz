@@ -5,14 +5,18 @@ description: V tomto kurzu aktualizujete souvisejících dat tím, že aktualizu
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 53f1607d96a9a1db98f4e80e9582c124cedf6c8d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ef8cb3916e5d1542e4d36cad694351462b94ed32
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272647"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093056"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>Jádro ASP.NET MVC s EF Core - aktualizace související Data – 10 7
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -134,7 +138,7 @@ Kód provede následující akce:
         "",
         i => i.FirstMidName, i => i.LastName, i => i.HireDate, i => i.OfficeAssignment))
     ```
-    
+
 -   Pokud umístění kanceláře je prázdné, nastaví vlastnost Instructor.OfficeAssignment na hodnotu null, takže související řádek v tabulce OfficeAssignment se odstraní.
 
     <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
@@ -213,7 +217,7 @@ Pokud není zaškrtnuté políčko kurzu, ale probíhá během `Instructor.Cours
 V *Views/Instructors/Edit.cshtml*, přidat **kurzy** pole s pole zaškrtávacích políček přidáním následující kód bezprostředně po `div` prvky pro **Office**  pole a před `div` element pro **Uložit** tlačítko.
 
 <a id="notepad"></a>
-> [!NOTE] 
+> [!NOTE]
 > Když vložíte kód v sadě Visual Studio, změní se tak, aby dělí kód konce řádků.  Stisknutím kombinace kláves Ctrl + Z jednou vrátit zpět, automatického formátování.  To tak, aby zobrazují se jako to, co vidíte zde opraví konce řádků. Odsazení nemusí být úplně bez chyby, ale `@</tr><tr>`, `@:<td>`, `@:</td>`, a `@:</tr>` řádky musí být na jeden řádek znázorněné nebo získáte Chyba za běhu. Blok vybrané nový kód a stiskněte klávesu Tab, třikrát na řádek kód nového existující kód. Stav tohoto problému můžete zkontrolovat [zde](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html).
 
 [!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
@@ -228,7 +232,7 @@ Spuštění aplikace, vyberte **vyučující** a klikněte na **upravit** na lek
 
 Změna některých během přiřazení a klikněte na Uložit. Provedené změny se projeví na indexovou stránku.
 
-> [!NOTE] 
+> [!NOTE]
 > Přístup zde použitý k jejich úpravě lektorem kurzu funguje dobře, pokud je omezený počet kurzy. Pro kolekce, které jsou mnohem větší by bylo zapotřebí různých uživatelského rozhraní a jinou metodu aktualizace.
 
 ## <a name="update-the-delete-page"></a>Odstranit stránku aktualizace
@@ -282,7 +286,7 @@ V *Views/Instructor/Create.cshtml*, přidejte office umístění textového pole
 
 [!code-html[](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
 
-Test spuštění aplikace a vytvoření lektorem. 
+Test spuštění aplikace a vytvoření lektorem.
 
 ## <a name="handling-transactions"></a>Zpracování transakcí
 
@@ -292,6 +296,8 @@ Jak je popsáno v [CRUD kurzu](crud.md), rozhraní Entity Framework implicitně 
 
 Teď jste dokončili úvod k práci s související data. V dalším kurzu se zobrazí způsobu řešení konfliktů souběžnosti.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [Předchozí](read-related-data.md)
-> [další](concurrency.md)  
+> [další](concurrency.md)

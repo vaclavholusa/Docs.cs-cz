@@ -5,14 +5,18 @@ description: V tomto kurzu přidáte třídění, filtrování a stránkování 
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 34097eacad16c0ffb989efb3b6a8656be4a076cd
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 1f80faf0e36332c28e8337ddc331cc8b4c4970d7
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273647"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093085"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---sort-filter-paging---3-of-10"></a>Jádro ASP.NET MVC s EF Core - řazení, filtru, stránkování - 3 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -110,7 +114,7 @@ V této fázi, pokud kliknete na odkaz řazení záhlaví sloupce ztratíte hodn
 
 Pokud chcete přidat stránkování studenty indexovou stránku, vytvoříte `PaginatedList` třídu, která využívá `Skip` a `Take` příkazy k filtrování dat na serveru, místo vždy načítání všechny řádky v tabulce. Pak budete udělat další změny v `Index` metoda a přidejte stránkování tlačítek `Index` zobrazení. Následující obrázek znázorňuje tlačítka stránkování.
 
-![studenti, kteří indexovou stránku s odkazy stránkování](sort-filter-page/_static/paging.png)
+![Studenti, kteří indexu stránka s odkazy stránkování](sort-filter-page/_static/paging.png)
 
 Ve složce projektu vytvořte `PaginatedList.cs`a pak nahraďte kód šablony s následujícím kódem.
 
@@ -191,7 +195,7 @@ Tlačítka stránkování se zobrazí podle značky pomocné rutiny:
 
 Spusťte aplikaci a přejděte na stránku studenty.
 
-![studenti, kteří indexovou stránku s odkazy stránkování](sort-filter-page/_static/paging.png)
+![Studenti, kteří indexu stránka s odkazy stránkování](sort-filter-page/_static/paging.png)
 
 Kliknutím na odkazy stránkování v jiné pořadí řazení do Ujistěte se, že funguje stránkování. Pak zadejte hledaný řetězec a zkuste to znovu a ověřte, že stránkování také funguje správně s řazení a filtrování stránkování.
 
@@ -228,7 +232,7 @@ Nahraďte `About` metoda následujícím kódem:
 [!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
 
 Příkaz LINQ skupiny entit student datu registrace, vypočítá počet entit v každé skupině a ukládá výsledky do kolekce `EnrollmentDateGroup` zobrazit objekty modelu.
-> [!NOTE] 
+> [!NOTE]
 > V 1.0 verzi Entity Framework Core celou sadu výsledků je vrácen do klienta a seskupení se provádí na straně klienta. V některých případech to může způsobit problémy s výkonu. Nezapomeňte testování výkonu s provozním objemů dat a v případě potřeby pomocí nezpracovaná SQL proveďte seskupení na serveru. Informace o tom, jak používat nezpracovaná SQL najdete v tématu [poslední kurzu této série](advanced.md).
 
 ### <a name="modify-the-about-view"></a>Upravit o zobrazení
@@ -245,6 +249,8 @@ Spusťte aplikaci a přejděte na stránku o. Počet studenty pro každé datum 
 
 V tomto kurzu jste se seznámili jak provádět, řazení, filtrování, stránkování a seskupení. V dalším kurzu budete zjistěte, jak zpracovávat změn datových modelů pomocí migrace.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [Předchozí](crud.md)
-> [další](migrations.md)  
+> [další](migrations.md)

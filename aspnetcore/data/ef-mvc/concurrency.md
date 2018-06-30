@@ -5,14 +5,18 @@ description: Tento kurz ukazuje způsobu řešení konfliktů, když se více u�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 77e5fba176835f7da9be6c7057084ed017d34bec
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9bf65621213c9657232dfff1701c9937d5105a9c
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278395"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093020"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>Jádro ASP.NET MVC s EF Core - souběžnosti - 8, 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -207,7 +211,7 @@ V *DepartmentsController.cs*, nahraďte třídy MetadataExchangeClientMode `Dele
 
 [!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
 
-Metodu je možné zadat volitelný parametr, který označuje, zda stránky se se zobrazí znovu po chybě souběžnosti. Pokud tento příznak má hodnotu true a oddělení zadaný už existuje, byla odstraněna jiným uživatelem. V takovém případě kód přesměruje na indexovou stránku.  Pokud tento příznak má hodnotu true a oddělení neexistuje, bylo změněno jiným uživatelem. V takovém případě kód odešle chybovou zprávu pomocí zobrazení `ViewData`.  
+Metodu je možné zadat volitelný parametr, který označuje, zda stránky se se zobrazí znovu po chybě souběžnosti. Pokud tento příznak má hodnotu true a oddělení zadaný už existuje, byla odstraněna jiným uživatelem. V takovém případě kód přesměruje na indexovou stránku.  Pokud tento příznak má hodnotu true a oddělení neexistuje, bylo změněno jiným uživatelem. V takovém případě kód odešle chybovou zprávu pomocí zobrazení `ViewData`.
 
 Nahraďte kód v HttpPost `Delete` – metoda (s názvem `DeleteConfirmed`) s následujícím kódem:
 
@@ -276,6 +280,8 @@ Nahraďte kód v *Views/Departments/Create.cshtml* pro přidání do rozevírac�
 
 Tím dokončíte Úvod pro zpracování konfliktů souběžnosti. Další informace o způsobu zpracování souběžnost v EF jádra najdete v tématu [konfliktů souběžnosti](https://docs.microsoft.com/ef/core/saving/concurrency). Další kurz ukazuje, jak implementovat tabulky za hierarchie dědičnosti pro lektorem a Student entity.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [Předchozí](update-related-data.md)
-> [další](inheritance.md)  
+> [další](inheritance.md)

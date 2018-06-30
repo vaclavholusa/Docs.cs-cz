@@ -5,14 +5,18 @@ description: V tomto kurzu přidejte další entity a vztahy a přizpůsobit dat
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: d89ca44917fac57febc2f8b0d632ae004ca7216c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 1d3c69c8c658b5ca2f0253b790b0dc75d44d3064
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277384"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093111"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>Jádro ASP.NET MVC s EF Core - Model dat – 5 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -351,7 +355,7 @@ Každý řádek vztahů je 1 na jeden element end a znak hvězdičky (*) v dalš
 
 Pokud v tabulce registrace nezahrnuli úrovni informace, jenom třeba, aby obsahovat dvě cizí klíče CourseID a StudentID. V takovém případě je m: n spojení tabulku bez datová část (nebo čistou vazební tabulku) v databázi. Entity lektorem a kurzu mají tento druh relace m: n a dalším krokem je vytvoření třídu entity jako tabulku spojení bez datové části.
 
-(EF 6.x podporuje implicitní spojení tabulky pro relace m: n, ale základní EF nepodporuje. Další informace najdete v tématu [diskuse v úložišti GitHub základní EF](https://github.com/aspnet/EntityFramework/issues/1368).) 
+(EF 6.x podporuje implicitní spojení tabulky pro relace m: n, ale základní EF nepodporuje. Další informace najdete v tématu [diskuse v úložišti GitHub základní EF](https://github.com/aspnet/EntityFramework/issues/1368).)
 
 ## <a name="the-courseassignment-entity"></a>CourseAssignment entity
 
@@ -437,7 +441,7 @@ V případech, kdy můžete spustit migrace s existujícími daty, je třeba vlo
 
 Chcete-li tato migrace pracovat s existujícími daty, budete muset změnit kód umožnit nového sloupce výchozí hodnotu a vytvořit se zakázaným inzerováním oddělení s názvem "Temp" tak, aby fungoval jako výchozí oddělení. V důsledku toho existující kurzu řádky budou všechny souviset oddělení "Temp" po `Up` metoda spustí.
 
-* Otevřete *{timestamp}_ComplexDataModel.cs* souboru. 
+* Otevřete *{timestamp}_ComplexDataModel.cs* souboru.
 
 * Zakomentovat řádek kódu, který přidá sloupec DepartmentID kurzu tabulky.
 
@@ -491,7 +495,8 @@ Klikněte pravým tlačítkem myši **CourseAssignment** tabulky a vyberte **Dat
 ## <a name="summary"></a>Souhrn
 
 Nyní máte složitější datový model a příslušné databáze. V následujícím kurzu se dozvíte informace o tom, jak získat přístup k datům související.
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Předchozí](migrations.md)
-> [další](read-related-data.md)  
+> [další](read-related-data.md)

@@ -5,14 +5,18 @@ description: Tento kurz vám ukáže, jak implementovat dědičnosti v datovém 
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 818af711c23d37810b29eda8915b3c195a3e48f8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a71954297f44f936893a7f1e9d3b0685f81378b9
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272851"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37092994"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---inheritance---9-of-10"></a>Jádro ASP.NET MVC s EF Core - dědičnosti - 9, 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Podle [tní Dykstra](https://github.com/tdykstra) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -50,7 +54,7 @@ TPC a TPH vzory dědičnosti obecně poskytovat lepší výkon než TPT vzory d�
 
 Tento kurz ukazuje, jak implementovat dědičnost TPH. TPH je pouze dědičnosti vzor, který podporuje základní Entity Framework.  Co můžete to udělat, je vytvořit `Person` třídy, změňte `Instructor` a `Student` odvozovat ze tříd `Person`, přidejte novou třídu do `DbContext`a vytvořte migrace.
 
-> [!TIP] 
+> [!TIP]
 > Zvažte možnost uložení kopie projektu před prováděním následujících změn.  Pak pokud narazíte na problémy je nutné začít znovu, je snazší spuštění z projektu uložený místo Prohodit kroky v tomto kurzu nebo má zpět na začátek celé řady.
 
 ## <a name="create-the-person-class"></a>Vytvořte třídu osoba
@@ -121,7 +125,7 @@ dotnet ef database update
 
 (V produkční systému by uděláte odpovídající změny `Down` metodu v případě, kdy bylo nutné použít, se vrátíte k předchozí verzi databáze. V tomto kurzu nebudete používat `Down` metoda.)
 
-> [!NOTE] 
+> [!NOTE]
 > Je možné získat další chyby při provádění změn schématu v databázi, která obsahuje stávající data. Pokud dojde k chybám migrace, které nelze vyřešit, můžete změnit název databáze v připojovacím řetězci nebo odstraňte tuto databázi. S novou databázi nejsou žádná data k migraci a příkazu update-database je pravděpodobnější dokončeno bez chyb. Pokud chcete odstranit databázi, použijte SSOX nebo spusťte `database drop` rozhraní příkazového řádku příkaz.
 
 ## <a name="test-with-inheritance-implemented"></a>Testování s použitím dědičnosti implementována
@@ -140,6 +144,8 @@ Klikněte pravým tlačítkem na tabulky osoba a pak klikněte na **zobrazit Dat
 
 Jste implementovali tabulky za hierarchie dědičnosti pro `Person`, `Student`, a `Instructor` třídy. Další informace o dědičnosti v Entity Framework Core najdete v tématu [dědičnosti](https://docs.microsoft.com/ef/core/modeling/inheritance). V dalším kurzu se zobrazí, jak bude zpracováván celou řadu relativně pokročilých scénářích rozhraní Entity Framework.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [Předchozí](concurrency.md)
-> [další](advanced.md)  
+> [další](advanced.md)

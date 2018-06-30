@@ -6,16 +6,16 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 04/05/2018
 uid: razor-pages/filter
-ms.openlocfilehash: ff2f4b4c2556e31d0261bc2c2ff47a4a6c7a1335
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 70f762f32a9e4fda01418a47e3eb7d7224639a0a
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291597"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37092845"
 ---
 # <a name="filter-methods-for-razor-pages-in-aspnet-core"></a>Filtr metody pro stránky Razor v ASP.NET Core
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Filtry stránky Razor [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) a [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0) povolit stránky Razor spustit kód před a po spuštění obslužnou rutinu stránky Razor. Filtry Razor stránce jsou podobná [filtrů Akce ASP.NET Core MVC](xref:mvc/controllers/filters#action-filters), s výjimkou je nelze použít s obslužnými rutinami jednotlivých stránek. 
 
@@ -29,7 +29,7 @@ Filtry Razor stránky:
 
 Kód můžete spustit, než obslužná rutina metoda provádí pomocí konstruktoru stránky nebo middleware, ale pouze filtry stránky Razor mít přístup k [HttpContext](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel.httpcontext?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_RazorPages_PageModel_HttpContext). Mít filtry [FilterContext](/dotnet/api/microsoft.aspnetcore.mvc.filters.filtercontext?view=aspnetcore-2.0) odvozené parametr, který poskytuje přístup k `HttpContext`. Například [implementovat atribut filtru](#ifa) ukázka přidá hlavičku odpovědi, něco, co nelze provést pomocí konstruktorů nebo middleware.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/live/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/filter/sample/PageFilter) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 Stránka filtry Razor poskytují následující metody, které lze použít globálně nebo na úrovni stránky:
 

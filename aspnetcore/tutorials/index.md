@@ -1,48 +1,49 @@
 ---
-title: Kurzy ASP.NET Core
+title: Kurzy k ASP.NET Core
 author: rick-anderson
-description: Seznam podrobné návody pro naučit vyvíjet aplikace ASP.NET Core.
+description: Seznam podrobné pokyny k tom, jak vyvíjet aplikace ASP.NET Core.
 ms.author: riande
 ms.date: 10/14/2017
 uid: tutorials/index
-ms.openlocfilehash: 2ec362ea546d7bdb493665fe836bdf9ddb68b1b3
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d103c351595f0d61e5f0ee14492f9f46b8c17e86
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279516"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144947"
 ---
-# <a name="aspnet-core-tutorials"></a>Kurzy ASP.NET Core
+# <a name="aspnet-core-tutorials"></a>Kurzy k ASP.NET Core
 
-K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET Core:
+Tyto podrobné návody pro vývoj aplikací ASP.NET Core jsou k dispozici:
 
-## <a name="build-web-apps"></a>Vytvoření webové aplikace
+## <a name="build-web-apps"></a>Tvořte webové aplikace
 
-[Stránky Razor](xref:razor-pages/index) se o doporučený postup pro vytvoření nové aplikace webového uživatelského rozhraní s prostředím ASP.NET 2.0 jádra.
+[Stránky Razor](xref:razor-pages/index) je doporučený postup pro vytvoření nové webové uživatelské rozhraní aplikace pomocí ASP.NET Core 2.0.
 
-* [Úvod do stránky Razor v ASP.NET Core](xref:razor-pages/index)
-* Vytvoření stránky Razor webové aplikace s ASP.NET Core
+* [Úvod do služby v ASP.NET Core Razor Pages](xref:razor-pages/index)
+* Vytvoření webové aplikace stránky Razor pomocí ASP.NET Core
 
-   * [Stránky Razor v systému Windows](xref:tutorials/razor-pages/index)
-   * [Stránky Razor v systému macOS](xref:tutorials/razor-pages-mac/index)
-   * [Stránky Razor kódem VS](xref:tutorials/razor-pages-vsc/index)  
+   * [Stránky Razor na Windows](xref:tutorials/razor-pages/index)
+   * [Razor Pages na macOS](xref:tutorials/razor-pages-mac/index)
+   * [Stránky Razor s VS Code](xref:tutorials/razor-pages-vsc/index)  
 
-* [Vytvoření webové aplikace v reálném čase SignalR](xref:tutorials/signalr)
+* [Vytvoření webové aplikace SignalR, která pracuje v reálném čase](xref:tutorials/signalr)
+* [Vytvoření webové aplikace SignalR s TypeScript](xref:tutorials/signalr-typescript-webpack)
 
-* Vytvoření webové aplikace ASP.NET MVC jádra
+* Vytvoření webové aplikace ASP.NET Core MVC
 
-   * [Webovou aplikaci pomocí sady Visual Studio pro Windows](xref:tutorials/first-mvc-app/index)
-   * [Webovou aplikaci pomocí sady Visual Studio pro Mac](xref:tutorials/first-mvc-app-mac/index)
-   * [Webové aplikace s kódem jazyka Visual Studio v systému macOS nebo Linux](xref:tutorials/first-mvc-app-xplat/index)
+   * [Webové aplikace pomocí sady Visual Studio pro Windows](xref:tutorials/first-mvc-app/index)
+   * [Webové aplikace pomocí sady Visual Studio pro Mac](xref:tutorials/first-mvc-app-mac/index)
+   * [Webovou aplikaci s Visual Studio Code na macOS nebo Linuxu](xref:tutorials/first-mvc-app-xplat/index)
 
 * [Začínáme s technologiemi ASP.NET Core a Entity Framework Core pomocí sady Visual Studio](xref:data/ef-mvc/index)
 * [Vytváření pomocných rutin značek](xref:mvc/views/tag-helpers/authoring)
-* [Vytvoření jednoduchého zobrazení komponenty](xref:mvc/views/view-components#walkthrough-creating-a-simple-view-component)
+* [Vytvoření jednoduché zobrazení komponenty](xref:mvc/views/view-components#walkthrough-creating-a-simple-view-component)
 * [Vývoj aplikací pomocí sledovacích procesů souborů](xref:tutorials/dotnet-watch)
 
-## <a name="build-web-apis"></a>Vytvoření rozhraní Web API
+## <a name="build-web-apis"></a>Vytváření webových rozhraní API
 
-* Vytvoření webové rozhraní API pomocí ASP.NET Core
+* Vytvoření webového rozhraní API pomocí ASP.NET Core
 
   * [Webové rozhraní API pomocí sady Visual Studio pro Windows](xref:tutorials/first-web-api)
   * [Web API se sadou Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
@@ -54,12 +55,12 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
 
 * [Vytvoření back-endu webové služby pro nativní mobilní aplikace](xref:mobile/native-mobile-backend)
 
-## <a name="data-access-and-storage"></a>Přístup k datům a úložiště
+## <a name="data-access-and-storage"></a>Přístup k datům a úložišti
 
 * [Začínáme s Razor Pages a EF Core pomocí sady Visual Studio](xref:data/ef-rp/intro)
-* [Začínáme s ASP.NET MVC jádra a základní EF pomocí sady Visual Studio](xref:data/ef-mvc/index)
-* [Jádro ASP.NET MVC s EF Core - novou databázi](/ef/core/get-started/aspnetcore/new-db)
-* [Jádro ASP.NET MVC s EF Core - existující databázi](/ef/core/get-started/aspnetcore/existing-db)
+* [Začínáme s ASP.NET Core MVC a EF Core pomocí sady Visual Studio](xref:data/ef-mvc/index)
+* [ASP.NET Core MVC s EF Core – nová databáze](/ef/core/get-started/aspnetcore/new-db)
+* [ASP.NET Core MVC s EF Core – existující databáze](/ef/core/get-started/aspnetcore/existing-db)
 
 ## <a name="authentication-and-authorization"></a>Ověřování a autorizace
 
@@ -76,19 +77,19 @@ K dispozici jsou následující podrobné návody pro vývoj aplikací ASP.NET C
 
 ## <a name="test"></a>Test
 
-* [Testování v .NET Core pomocí dotnet testů jednotek](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [Testování jednotek v .NET Core pomocí příkazu dotnet test](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 
-## <a name="host-and-deploy"></a>Hostování a nasazení
+## <a name="host-and-deploy"></a>Hostitelství a nasazení
 
 * [Nasazení webové aplikace ASP.NET Core do Azure pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)
-* [Nasazení webové aplikace ASP.NET Core pomocí příkazového řádku Azure](xref:tutorials/publish-to-azure-webapp-using-cli)
-* [Publikovat do webové aplikace Azure s průběžné nasazování.](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
-* [Nasaďte kontejner ASP.NET vzdáleného hostitele Docker](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
-* [Jádro ASP.NET a Azure Service Fabric](/azure/service-fabric/service-fabric-add-a-web-frontend)
+* [Nasazení webové aplikace ASP.NET Core do Azure pomocí příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli)
+* [Publikování do Azure webové aplikace s průběžným nasazováním](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
+* [Nasazení kontejneru ASP.NET na vzdáleného hostitele Docker](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
+* [ASP.NET Core a Azure Service Fabric](/azure/service-fabric/service-fabric-add-a-web-frontend)
 
 <a name="download"></a>
-## <a name="how-to-download-a-sample"></a>Jak stáhnout ukázku
+## <a name="how-to-download-a-sample"></a>Stažení ukázky
 
-1. [Stáhněte si soubor zip úložiště ASP.NET](https://codeload.github.com/aspnet/Docs/zip/master).
+1. [Stáhněte soubor zip úložiště ASP.NET](https://codeload.github.com/aspnet/Docs/zip/master).
 1. Rozbalte *dokumentace master.zip* souboru.
-1. Pomocí adresy URL v Ukázkový odkaz můžete přejděte do adresáře ukázka.
+1. Abychom vám pomohli vyznat k adresáři ukázkové použijte adresu URL v Ukázkový odkaz.

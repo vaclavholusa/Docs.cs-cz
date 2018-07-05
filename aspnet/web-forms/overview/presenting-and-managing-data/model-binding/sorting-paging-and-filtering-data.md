@@ -1,107 +1,106 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
-title: Řazení, stránkování a filtrování dat pomocí vazby modelu a webové formuláře | Microsoft Docs
+title: Řazení, stránkování a filtrování dat pomocí vazby modelu a webových formulářů | Dokumentace Microsoftu
 author: tfitzmac
-description: Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-...
+description: V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET. Data interakce díky vazby modelu další přímo-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
 ms.topic: article
 ms.assetid: 266e7866-e327-4687-b29d-627a0925e87d
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: d63ebecadd392877e4cb1d1dffe9db2d1d231190
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7529c811e6196327094f8f735de1bd65be76ee3a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885403"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37398304"
 ---
-<a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a><span data-ttu-id="e2f13-104">Řazení, stránkování a filtrování dat pomocí vazby modelu a webové formuláře</span><span class="sxs-lookup"><span data-stu-id="e2f13-104">Sorting, paging, and filtering data with model binding and web forms</span></span>
+<a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a><span data-ttu-id="08ece-104">Řazení, stránkování a filtrování dat pomocí vazby modelu a webové formuláře</span><span class="sxs-lookup"><span data-stu-id="08ece-104">Sorting, paging, and filtering data with model binding and web forms</span></span>
 ====================
-<span data-ttu-id="e2f13-105">podle [tní FitzMacken](https://github.com/tfitzmac)</span><span class="sxs-lookup"><span data-stu-id="e2f13-105">by [Tom FitzMacken](https://github.com/tfitzmac)</span></span>
+<span data-ttu-id="08ece-105">podle [Tom FitzMacken](https://github.com/tfitzmac)</span><span class="sxs-lookup"><span data-stu-id="08ece-105">by [Tom FitzMacken](https://github.com/tfitzmac)</span></span>
 
-> <span data-ttu-id="e2f13-106">Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu.</span><span class="sxs-lookup"><span data-stu-id="e2f13-106">This tutorial series demonstrates basic aspects of using model binding with an ASP.NET Web Forms project.</span></span> <span data-ttu-id="e2f13-107">Vazby modelu umožňuje dat interakce více jednoduché než plánování práce s daty objekty zdrojů (například ObjectDataSource nebo SqlDataSource).</span><span class="sxs-lookup"><span data-stu-id="e2f13-107">Model binding makes data interaction more straight-forward than dealing with data source objects (such as ObjectDataSource or SqlDataSource).</span></span> <span data-ttu-id="e2f13-108">Tato řada začíná úvodní informace a přesune do dalších pokročilých konceptů v dalších kurzech.</span><span class="sxs-lookup"><span data-stu-id="e2f13-108">This series starts with introductory material and moves to more advanced concepts in later tutorials.</span></span>
+> <span data-ttu-id="08ece-106">V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="08ece-106">This tutorial series demonstrates basic aspects of using model binding with an ASP.NET Web Forms project.</span></span> <span data-ttu-id="08ece-107">Vazby modelu díky dat interakce více přímočaré než pracující s daty objektů zdroje (například ObjectDataSource nebo SqlDataSource).</span><span class="sxs-lookup"><span data-stu-id="08ece-107">Model binding makes data interaction more straight-forward than dealing with data source objects (such as ObjectDataSource or SqlDataSource).</span></span> <span data-ttu-id="08ece-108">Tato série začíná úvodní materiály a přesune pokročilejších pojmech v budoucích kurzech.</span><span class="sxs-lookup"><span data-stu-id="08ece-108">This series starts with introductory material and moves to more advanced concepts in later tutorials.</span></span>
 > 
-> <span data-ttu-id="e2f13-109">Tento kurz ukazuje, jak přidat řazení, stránkování a filtrování dat pomocí vazby modelu.</span><span class="sxs-lookup"><span data-stu-id="e2f13-109">This tutorial shows how to add sorting, paging, and filtering of the data through model binding.</span></span>
+> <span data-ttu-id="08ece-109">Tento kurz ukazuje, jak přidat řazení, stránkování a filtrování dat pomocí vazby modelu.</span><span class="sxs-lookup"><span data-stu-id="08ece-109">This tutorial shows how to add sorting, paging, and filtering of the data through model binding.</span></span>
 > 
-> <span data-ttu-id="e2f13-110">V tomto kurzu vychází projektu vytvořeného v prvním [část](retrieving-data.md) řady.</span><span class="sxs-lookup"><span data-stu-id="e2f13-110">This tutorial builds on the project created in the first [part](retrieving-data.md) of the series.</span></span>
+> <span data-ttu-id="08ece-110">V tomto kurzu vychází z projektu vytvořeného v prvním [část](retrieving-data.md) řady.</span><span class="sxs-lookup"><span data-stu-id="08ece-110">This tutorial builds on the project created in the first [part](retrieving-data.md) of the series.</span></span>
 > 
-> <span data-ttu-id="e2f13-111">Můžete [Stáhnout](https://go.microsoft.com/fwlink/?LinkId=286116) dokončený projekt v jazyce C# nebo VB.</span><span class="sxs-lookup"><span data-stu-id="e2f13-111">You can [download](https://go.microsoft.com/fwlink/?LinkId=286116) the complete project in C# or VB.</span></span> <span data-ttu-id="e2f13-112">Kód ke stažení pracuje s Visual Studio 2012 nebo Visual Studio 2013.</span><span class="sxs-lookup"><span data-stu-id="e2f13-112">The downloadable code works with either Visual Studio 2012 or Visual Studio 2013.</span></span> <span data-ttu-id="e2f13-113">Používá šablony sady Visual Studio 2012, která se poněkud liší od šablony sady Visual Studio 2013 uvedené v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="e2f13-113">It uses the Visual Studio 2012 template, which is slightly different than the Visual Studio 2013 template shown in this tutorial.</span></span>
+> <span data-ttu-id="08ece-111">Je možné [Stáhnout](https://go.microsoft.com/fwlink/?LinkId=286116) dokončený projekt v jazyce C# nebo VB.</span><span class="sxs-lookup"><span data-stu-id="08ece-111">You can [download](https://go.microsoft.com/fwlink/?LinkId=286116) the complete project in C# or VB.</span></span> <span data-ttu-id="08ece-112">Ke stažení kódu funguje pomocí sady Visual Studio 2012 nebo Visual Studio 2013.</span><span class="sxs-lookup"><span data-stu-id="08ece-112">The downloadable code works with either Visual Studio 2012 or Visual Studio 2013.</span></span> <span data-ttu-id="08ece-113">Používá šablonu Visual Studio 2012, která se trochu liší od sady Visual Studio 2013 šablonu uvedenou v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="08ece-113">It uses the Visual Studio 2012 template, which is slightly different than the Visual Studio 2013 template shown in this tutorial.</span></span>
 
 
-## <a name="what-youll-build"></a><span data-ttu-id="e2f13-114">Co budete sestavení</span><span class="sxs-lookup"><span data-stu-id="e2f13-114">What you'll build</span></span>
+## <a name="what-youll-build"></a><span data-ttu-id="08ece-114">Co budete vytvářet</span><span class="sxs-lookup"><span data-stu-id="08ece-114">What you'll build</span></span>
 
-<span data-ttu-id="e2f13-115">V tomto kurzu budete:</span><span class="sxs-lookup"><span data-stu-id="e2f13-115">In this tutorial, you'll:</span></span>
+<span data-ttu-id="08ece-115">V tomto kurzu budete:</span><span class="sxs-lookup"><span data-stu-id="08ece-115">In this tutorial, you'll:</span></span>
 
-1. <span data-ttu-id="e2f13-116">Povolit řazení a stránkování dat</span><span class="sxs-lookup"><span data-stu-id="e2f13-116">Enable sorting and paging of the data</span></span>
-2. <span data-ttu-id="e2f13-117">Povolit filtrování dat na základě výběru uživatelem.</span><span class="sxs-lookup"><span data-stu-id="e2f13-117">Enable filtering of the data based on a selection by the user</span></span>
+1. <span data-ttu-id="08ece-116">Povolit řazení a stránkování dat</span><span class="sxs-lookup"><span data-stu-id="08ece-116">Enable sorting and paging of the data</span></span>
+2. <span data-ttu-id="08ece-117">Povolit filtrování dat na základě výběru uživatelem.</span><span class="sxs-lookup"><span data-stu-id="08ece-117">Enable filtering of the data based on a selection by the user</span></span>
 
-## <a name="add-sorting"></a><span data-ttu-id="e2f13-118">Přidat řazení</span><span class="sxs-lookup"><span data-stu-id="e2f13-118">Add sorting</span></span>
+## <a name="add-sorting"></a><span data-ttu-id="08ece-118">Přidání řazení</span><span class="sxs-lookup"><span data-stu-id="08ece-118">Add sorting</span></span>
 
-<span data-ttu-id="e2f13-119">Povolení řazení v GridView je velmi snadné.</span><span class="sxs-lookup"><span data-stu-id="e2f13-119">Enabling sorting in the GridView is very easy.</span></span> <span data-ttu-id="e2f13-120">V souboru Student.aspx jednoduše nastavit **AllowSorting** k **true** v GridView.</span><span class="sxs-lookup"><span data-stu-id="e2f13-120">In the Student.aspx file, simply set **AllowSorting** to **true** in the GridView.</span></span> <span data-ttu-id="e2f13-121">Není nutné nastavovat **SortExpression** hodnotu pro každý sloupec, jako DataField automaticky použije.</span><span class="sxs-lookup"><span data-stu-id="e2f13-121">You do not need to set a **SortExpression** value for each column as the DataField is automatically used.</span></span> <span data-ttu-id="e2f13-122">GridView upravuje dotazu zahrnout uspořádání dat podle vybrané hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e2f13-122">The GridView modifies the query to include ordering the data by the selected value.</span></span> <span data-ttu-id="e2f13-123">Následující zvýrazněný kód ukazuje přidání, že budete muset udělat umožňující řazení.</span><span class="sxs-lookup"><span data-stu-id="e2f13-123">The highlighted code below shows the addition you need to make to enable sorting.</span></span>
+<span data-ttu-id="08ece-119">Je velmi snadno povolit řazení v prvku GridView.</span><span class="sxs-lookup"><span data-stu-id="08ece-119">Enabling sorting in the GridView is very easy.</span></span> <span data-ttu-id="08ece-120">V souboru Student.aspx, stačí nastavit **AllowSorting** k **true** v prvku GridView.</span><span class="sxs-lookup"><span data-stu-id="08ece-120">In the Student.aspx file, simply set **AllowSorting** to **true** in the GridView.</span></span> <span data-ttu-id="08ece-121">Není nutné nastavovat **SortExpression** hodnotu pro každý sloupec jako hodnota se automaticky použije.</span><span class="sxs-lookup"><span data-stu-id="08ece-121">You do not need to set a **SortExpression** value for each column as the DataField is automatically used.</span></span> <span data-ttu-id="08ece-122">GridView upraví dotaz pro přidání řazení dat podle vybrané hodnoty.</span><span class="sxs-lookup"><span data-stu-id="08ece-122">The GridView modifies the query to include ordering the data by the selected value.</span></span> <span data-ttu-id="08ece-123">Zvýrazněný kód uvedený níže ukazuje přidání, že budete muset udělat umožňující řazení.</span><span class="sxs-lookup"><span data-stu-id="08ece-123">The highlighted code below shows the addition you need to make to enable sorting.</span></span>
 
 [!code-aspx[Main](sorting-paging-and-filtering-data/samples/sample1.aspx?highlight=5)]
 
-<span data-ttu-id="e2f13-124">Spuštění webové aplikace a testování řazení záznamů student podle hodnot v různé sloupce.</span><span class="sxs-lookup"><span data-stu-id="e2f13-124">Run the web application, and test sorting student records by the values in different columns.</span></span>
+<span data-ttu-id="08ece-124">Spuštění webové aplikace a testování řazení záznamech studentů podle hodnot v různých sloupcích.</span><span class="sxs-lookup"><span data-stu-id="08ece-124">Run the web application, and test sorting student records by the values in different columns.</span></span>
 
-![studenti, kteří řazení](sorting-paging-and-filtering-data/_static/image2.png)
+![studenti řazení](sorting-paging-and-filtering-data/_static/image2.png)
 
-## <a name="add-paging"></a><span data-ttu-id="e2f13-126">Přidat stránkování</span><span class="sxs-lookup"><span data-stu-id="e2f13-126">Add paging</span></span>
+## <a name="add-paging"></a><span data-ttu-id="08ece-126">Přidání stránkování</span><span class="sxs-lookup"><span data-stu-id="08ece-126">Add paging</span></span>
 
-<span data-ttu-id="e2f13-127">Povolení stránkování je také velmi snadné.</span><span class="sxs-lookup"><span data-stu-id="e2f13-127">Enabling paging is also very easy.</span></span> <span data-ttu-id="e2f13-128">V GridView, nastavte **AllowPaging** vlastnost **true** a nastavte **PageSize** vlastnost počet záznamů, které chcete zobrazit na každé stránce.</span><span class="sxs-lookup"><span data-stu-id="e2f13-128">In the GridView, set the **AllowPaging** property to **true** and set the **PageSize** property to the number of records you wish to display on each page.</span></span> <span data-ttu-id="e2f13-129">V tomto kurzu můžete ho nastavit na 4.</span><span class="sxs-lookup"><span data-stu-id="e2f13-129">In this tutorial, you can set it to 4.</span></span>
+<span data-ttu-id="08ece-127">Povolení stránkování je také velmi snadné.</span><span class="sxs-lookup"><span data-stu-id="08ece-127">Enabling paging is also very easy.</span></span> <span data-ttu-id="08ece-128">V prvku GridView, nastavte **vlastnost AllowPaging** vlastnost **true** a nastavit **PageSize** na počet záznamů, které chcete zobrazit na jednotlivých stránkách.</span><span class="sxs-lookup"><span data-stu-id="08ece-128">In the GridView, set the **AllowPaging** property to **true** and set the **PageSize** property to the number of records you wish to display on each page.</span></span> <span data-ttu-id="08ece-129">V tomto kurzu můžete ho nastavit na 4.</span><span class="sxs-lookup"><span data-stu-id="08ece-129">In this tutorial, you can set it to 4.</span></span>
 
 [!code-aspx[Main](sorting-paging-and-filtering-data/samples/sample2.aspx?highlight=5)]
 
-<span data-ttu-id="e2f13-130">Spusťte webovou aplikaci a Všimněte si, že teď záznamy dělí přes více stránek více než 4 záznamy, které jsou zobrazeny na jedné stránce.</span><span class="sxs-lookup"><span data-stu-id="e2f13-130">Run the web application, and notice that now the records are divided over multiple pages with no more than 4 records displayed on a single page.</span></span>
+<span data-ttu-id="08ece-130">Spusťte webovou aplikaci a Všimněte si, že teď záznamy jsou rozdělit přes více stránek s více než 4 záznamy zobrazené na jednu stránku.</span><span class="sxs-lookup"><span data-stu-id="08ece-130">Run the web application, and notice that now the records are divided over multiple pages with no more than 4 records displayed on a single page.</span></span>
 
-![Přidat stránkování](sorting-paging-and-filtering-data/_static/image4.png)
+![Přidání stránkování](sorting-paging-and-filtering-data/_static/image4.png)
 
-<span data-ttu-id="e2f13-132">Při provádění dotazu odložené ke zlepšení efektivity aplikace.</span><span class="sxs-lookup"><span data-stu-id="e2f13-132">Deferred query execution improves the application efficiency.</span></span> <span data-ttu-id="e2f13-133">Místo načítání celá sada dat, upraví GridView dotaz pro načtení záznamů pouze pro aktuální stránku.</span><span class="sxs-lookup"><span data-stu-id="e2f13-133">Instead of retrieving the entire data set, the GridView modifies the query to retrieve only the records for the current page.</span></span>
+<span data-ttu-id="08ece-132">Odložený dotaz zvyšuje efektivitu aplikace.</span><span class="sxs-lookup"><span data-stu-id="08ece-132">Deferred query execution improves the application efficiency.</span></span> <span data-ttu-id="08ece-133">Místo načtení celé datové sady, upraví prvku GridView. dotaz pro načtení záznamů pouze pro aktuální stránku.</span><span class="sxs-lookup"><span data-stu-id="08ece-133">Instead of retrieving the entire data set, the GridView modifies the query to retrieve only the records for the current page.</span></span>
 
-## <a name="filter-records-by-user-selection"></a><span data-ttu-id="e2f13-134">Filtrování záznamů pomocí výběr uživatele</span><span class="sxs-lookup"><span data-stu-id="e2f13-134">Filter records by user selection</span></span>
+## <a name="filter-records-by-user-selection"></a><span data-ttu-id="08ece-134">Záznamy filtrovaly podle výběru uživatele</span><span class="sxs-lookup"><span data-stu-id="08ece-134">Filter records by user selection</span></span>
 
-<span data-ttu-id="e2f13-135">Vazby modelu přidá několik atributů, které vám umožní určit, jak nastavit hodnotu pro parametr v metodu vazby modelu.</span><span class="sxs-lookup"><span data-stu-id="e2f13-135">Model binding adds several attributes which enable you to designate how to set the value for a parameter in a model binding method.</span></span> <span data-ttu-id="e2f13-136">Tyto atributy jsou v **System.Web.ModelBinding** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="e2f13-136">These attributes are in the **System.Web.ModelBinding** namespace.</span></span> <span data-ttu-id="e2f13-137">Mezi ně patří:</span><span class="sxs-lookup"><span data-stu-id="e2f13-137">They include:</span></span>
+<span data-ttu-id="08ece-135">Vazby modelu přidá několik atributů, které vám umožní určit, jak nastavit hodnotu pro parametr metody vazby modelu.</span><span class="sxs-lookup"><span data-stu-id="08ece-135">Model binding adds several attributes which enable you to designate how to set the value for a parameter in a model binding method.</span></span> <span data-ttu-id="08ece-136">Tyto atributy jsou v **System.Web.ModelBinding** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="08ece-136">These attributes are in the **System.Web.ModelBinding** namespace.</span></span> <span data-ttu-id="08ece-137">Mezi ně patří:</span><span class="sxs-lookup"><span data-stu-id="08ece-137">They include:</span></span>
 
-- <span data-ttu-id="e2f13-138">Ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="e2f13-138">Control</span></span>
-- <span data-ttu-id="e2f13-139">Soubor cookie</span><span class="sxs-lookup"><span data-stu-id="e2f13-139">Cookie</span></span>
-- <span data-ttu-id="e2f13-140">Formulář</span><span class="sxs-lookup"><span data-stu-id="e2f13-140">Form</span></span>
-- <span data-ttu-id="e2f13-141">Profil</span><span class="sxs-lookup"><span data-stu-id="e2f13-141">Profile</span></span>
-- <span data-ttu-id="e2f13-142">Řetězce dotazu</span><span class="sxs-lookup"><span data-stu-id="e2f13-142">QueryString</span></span>
-- <span data-ttu-id="e2f13-143">RouteData</span><span class="sxs-lookup"><span data-stu-id="e2f13-143">RouteData</span></span>
-- <span data-ttu-id="e2f13-144">Relace</span><span class="sxs-lookup"><span data-stu-id="e2f13-144">Session</span></span>
-- <span data-ttu-id="e2f13-145">UserProfile</span><span class="sxs-lookup"><span data-stu-id="e2f13-145">UserProfile</span></span>
-- <span data-ttu-id="e2f13-146">Stav zobrazení</span><span class="sxs-lookup"><span data-stu-id="e2f13-146">ViewState</span></span>
+- <span data-ttu-id="08ece-138">Ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="08ece-138">Control</span></span>
+- <span data-ttu-id="08ece-139">Soubor cookie</span><span class="sxs-lookup"><span data-stu-id="08ece-139">Cookie</span></span>
+- <span data-ttu-id="08ece-140">Formulář</span><span class="sxs-lookup"><span data-stu-id="08ece-140">Form</span></span>
+- <span data-ttu-id="08ece-141">Profil</span><span class="sxs-lookup"><span data-stu-id="08ece-141">Profile</span></span>
+- <span data-ttu-id="08ece-142">Řetězec dotazu</span><span class="sxs-lookup"><span data-stu-id="08ece-142">QueryString</span></span>
+- <span data-ttu-id="08ece-143">Parametr RouteData</span><span class="sxs-lookup"><span data-stu-id="08ece-143">RouteData</span></span>
+- <span data-ttu-id="08ece-144">Relace</span><span class="sxs-lookup"><span data-stu-id="08ece-144">Session</span></span>
+- <span data-ttu-id="08ece-145">UserProfile</span><span class="sxs-lookup"><span data-stu-id="08ece-145">UserProfile</span></span>
+- <span data-ttu-id="08ece-146">Stav zobrazení</span><span class="sxs-lookup"><span data-stu-id="08ece-146">ViewState</span></span>
 
-<span data-ttu-id="e2f13-147">V tomto kurzu použijete hodnotu ovládacího prvku pro filtrování záznamů, které se zobrazují v GridView.</span><span class="sxs-lookup"><span data-stu-id="e2f13-147">In this tutorial, you will use a control's value to filter which records are displayed in the GridView.</span></span> <span data-ttu-id="e2f13-148">Přidáte **řízení** atribut metodu dotazu, který jste vytvořili dříve.</span><span class="sxs-lookup"><span data-stu-id="e2f13-148">You will add the **Control** attribute to the query method you had created earlier.</span></span> <span data-ttu-id="e2f13-149">V [později](using-query-string-values-to-retrieve-data.md) kurzu použijete **řetězce dotazu** atribut parametr k určení, že hodnota parametru pochází z hodnotu řetězce dotazu.</span><span class="sxs-lookup"><span data-stu-id="e2f13-149">In a [later](using-query-string-values-to-retrieve-data.md) tutorial, you will apply the **QueryString** attribute to a parameter to specify that the parameter value comes from a query string value.</span></span>
+<span data-ttu-id="08ece-147">V tomto kurzu použijete hodnotu ovládacího prvku k filtrování záznamů, které se zobrazují v prvku GridView.</span><span class="sxs-lookup"><span data-stu-id="08ece-147">In this tutorial, you will use a control's value to filter which records are displayed in the GridView.</span></span> <span data-ttu-id="08ece-148">Přidáte **ovládací prvek** atributu na metodu dotazu, který jste vytvořili dříve.</span><span class="sxs-lookup"><span data-stu-id="08ece-148">You will add the **Control** attribute to the query method you had created earlier.</span></span> <span data-ttu-id="08ece-149">V [později](using-query-string-values-to-retrieve-data.md) kurz, se použijí **QueryString** atribut pro parametr určující, zda je hodnota parametru pochází od hodnotu řetězce dotazu.</span><span class="sxs-lookup"><span data-stu-id="08ece-149">In a [later](using-query-string-values-to-retrieve-data.md) tutorial, you will apply the **QueryString** attribute to a parameter to specify that the parameter value comes from a query string value.</span></span>
 
-<span data-ttu-id="e2f13-150">Nejprve přidejte výše ValidationSummary, rozevírací seznam pro filtrování, která studenti, kteří jsou zobrazeny.</span><span class="sxs-lookup"><span data-stu-id="e2f13-150">First, above the ValidationSummary, add a drop down list for filtering which students are shown.</span></span>
+<span data-ttu-id="08ece-150">Nejprve přidejte výše ValidationSummary, rozevírací seznam pro filtrování, které studenty jsou uvedeny.</span><span class="sxs-lookup"><span data-stu-id="08ece-150">First, above the ValidationSummary, add a drop down list for filtering which students are shown.</span></span>
 
 [!code-aspx[Main](sorting-paging-and-filtering-data/samples/sample3.aspx?highlight=3-11)]
 
-<span data-ttu-id="e2f13-151">V souboru kódu změňte vyberte metodu získat hodnotu z ovládacího prvku a nastavte název parametru k názvu ovládací prvek, který obsahuje hodnotu.</span><span class="sxs-lookup"><span data-stu-id="e2f13-151">In the code-behind file, modify the select method to receive a value from the control, and set the name of the parameter to the name of the control that provides the value.</span></span>
+<span data-ttu-id="08ece-151">V souboru kódu na pozadí upravte metodu vyberte získat hodnotu z ovládacího prvku a nastavte název parametru název ovládacího prvku, který obsahuje hodnotu.</span><span class="sxs-lookup"><span data-stu-id="08ece-151">In the code-behind file, modify the select method to receive a value from the control, and set the name of the parameter to the name of the control that provides the value.</span></span>
 
-<span data-ttu-id="e2f13-152">Je nutné přidat **pomocí** příkaz pro **System.Web.ModelBinding** obor názvů přeložit atribut ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="e2f13-152">You must add a **using** statement for the **System.Web.ModelBinding** namespace to resolve the Control attribute.</span></span>
+<span data-ttu-id="08ece-152">Je nutné přidat **pomocí** příkaz pro **System.Web.ModelBinding** obor názvů, chcete-li vyřešit atribut ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="08ece-152">You must add a **using** statement for the **System.Web.ModelBinding** namespace to resolve the Control attribute.</span></span>
 
 [!code-csharp[Main](sorting-paging-and-filtering-data/samples/sample4.cs)]
 
-<span data-ttu-id="e2f13-153">Následující kód ukazuje znovu fungovala vyfiltrujete vrácená data na základě hodnoty z rozevíracího seznamu vyberte metodu.</span><span class="sxs-lookup"><span data-stu-id="e2f13-153">The following code shows the select method re-worked to filter the returned data based on the value of the drop down list.</span></span> <span data-ttu-id="e2f13-154">Přidávání atribut ovládacího prvku před parametr určuje, že hodnota pro tento parametr pochází z ovládacího prvku se stejným názvem.</span><span class="sxs-lookup"><span data-stu-id="e2f13-154">Adding a control attribute before a parameter specifies that the value for this parameter comes from a control with the same name.</span></span>
+<span data-ttu-id="08ece-153">Následující kód ukazuje metody select znovu pracoval pro filtrování vrácená data na základě hodnoty z rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="08ece-153">The following code shows the select method re-worked to filter the returned data based on the value of the drop down list.</span></span> <span data-ttu-id="08ece-154">Přidání atributu ovládacího prvku před parametr určuje, že hodnota pro tento parametr pochází z ovládacího prvku se stejným názvem.</span><span class="sxs-lookup"><span data-stu-id="08ece-154">Adding a control attribute before a parameter specifies that the value for this parameter comes from a control with the same name.</span></span>
 
 [!code-csharp[Main](sorting-paging-and-filtering-data/samples/sample5.cs)]
 
-<span data-ttu-id="e2f13-155">Spuštění webové aplikace a vyberte z rozevíracího seznamu pro filtrování seznamu studenty různé hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e2f13-155">Run the web application and select different values from the drop down list to filter the list of students.</span></span>
+<span data-ttu-id="08ece-155">Spusťte webovou aplikaci a vyberte jiné hodnoty z rozevíracího seznamu pro filtrování seznamu studentů.</span><span class="sxs-lookup"><span data-stu-id="08ece-155">Run the web application and select different values from the drop down list to filter the list of students.</span></span>
 
-![studenti, kteří filtru](sorting-paging-and-filtering-data/_static/image6.png)
+![Filtr pro studenty](sorting-paging-and-filtering-data/_static/image6.png)
 
-## <a name="conclusion"></a><span data-ttu-id="e2f13-157">Závěr</span><span class="sxs-lookup"><span data-stu-id="e2f13-157">Conclusion</span></span>
+## <a name="conclusion"></a><span data-ttu-id="08ece-157">Závěr</span><span class="sxs-lookup"><span data-stu-id="08ece-157">Conclusion</span></span>
 
-<span data-ttu-id="e2f13-158">V tomto kurzu jste povolili, řazení a stránkování data.</span><span class="sxs-lookup"><span data-stu-id="e2f13-158">In this tutorial, you enabled sorting and paging of the data.</span></span> <span data-ttu-id="e2f13-159">Můžete také povolit, filtrování dat podle hodnoty ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="e2f13-159">You also enabled filtering the data by the value of a control.</span></span>
+<span data-ttu-id="08ece-158">V tomto kurzu jste povolili, řazení a stránkování dat.</span><span class="sxs-lookup"><span data-stu-id="08ece-158">In this tutorial, you enabled sorting and paging of the data.</span></span> <span data-ttu-id="08ece-159">Také jste povolili, filtrování dat podle hodnoty ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="08ece-159">You also enabled filtering the data by the value of a control.</span></span>
 
-<span data-ttu-id="e2f13-160">V dalším [kurzu](integrating-jquery-ui.md) uživatelského rozhraní se zlepšila integrací widget uživatelského rozhraní JQuery do šablony dynamická data.</span><span class="sxs-lookup"><span data-stu-id="e2f13-160">In the next [tutorial](integrating-jquery-ui.md) you will enhance the UI by integrating a JQuery UI widget into the dynamic data template.</span></span>
+<span data-ttu-id="08ece-160">V dalším [kurzu](integrating-jquery-ui.md) uživatelské rozhraní bude vylepšit integrací uživatelské rozhraní JQuery widgetu do šablony dynamická data.</span><span class="sxs-lookup"><span data-stu-id="08ece-160">In the next [tutorial](integrating-jquery-ui.md) you will enhance the UI by integrating a JQuery UI widget into the dynamic data template.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="e2f13-161">[Předchozí](updating-deleting-and-creating-data.md)
-> [další](integrating-jquery-ui.md)</span><span class="sxs-lookup"><span data-stu-id="e2f13-161">[Previous](updating-deleting-and-creating-data.md)
+> <span data-ttu-id="08ece-161">[Předchozí](updating-deleting-and-creating-data.md)
+> [další](integrating-jquery-ui.md)</span><span class="sxs-lookup"><span data-stu-id="08ece-161">[Previous](updating-deleting-and-creating-data.md)
 [Next](integrating-jquery-ui.md)</span></span>

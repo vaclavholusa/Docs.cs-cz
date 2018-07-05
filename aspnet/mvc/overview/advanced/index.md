@@ -1,27 +1,26 @@
 ---
 uid: mvc/overview/advanced/index
-title: ASP.NET MVC Advanced témata | Microsoft Docs
+title: ASP.NET MVC Pokročilá témata | Dokumentace Microsoftu
 author: rick-anderson
-description: Rozšířené témata pro programovací rozhraní ASP.NET MVC, včetně usnadnění, rozšíření a mezinárodní prostředí.
+description: Pokročilá témata pro programovací ASP.NET MVC a usnadnění přístupu, rozšíření a mezinárodní prostředí.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
 ms.topic: article
 ms.assetid: 2a8cc0dc-e21b-444b-b394-bc3dfceac16a
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/advanced
 msc.type: chapter
-ms.openlocfilehash: 5d3a39f8420abced04a96b7e3ed53590cde5ab75
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a4263fada132c26d5d97d06fc3c2e815eb5caa96
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26563749"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367946"
 ---
-<a name="aspnet-mvc-advanced-topics"></a><span data-ttu-id="42c9d-103">ASP.NET MVC Advanced témata</span><span class="sxs-lookup"><span data-stu-id="42c9d-103">ASP.NET MVC Advanced Topics</span></span>
+<a name="aspnet-mvc-advanced-topics"></a><span data-ttu-id="e0ea7-103">ASP.NET MVC Pokročilá témata</span><span class="sxs-lookup"><span data-stu-id="e0ea7-103">ASP.NET MVC Advanced Topics</span></span>
 ====================
-> <span data-ttu-id="42c9d-104">Rozšířené témata pro programovací rozhraní ASP.NET MVC, včetně usnadnění, rozšíření a mezinárodní prostředí.</span><span class="sxs-lookup"><span data-stu-id="42c9d-104">Advanced topics for programming ASP.NET MVC, including accessibility, extensibility, and internationalization.</span></span>
+> <span data-ttu-id="e0ea7-104">Pokročilá témata pro programovací ASP.NET MVC a usnadnění přístupu, rozšíření a mezinárodní prostředí.</span><span class="sxs-lookup"><span data-stu-id="e0ea7-104">Advanced topics for programming ASP.NET MVC, including accessibility, extensibility, and internationalization.</span></span>
 
 
-- [<span data-ttu-id="42c9d-105">Šablona vlastní MVC</span><span class="sxs-lookup"><span data-stu-id="42c9d-105">Custom MVC Template</span></span>](custom-mvc-templates.md)
+- [<span data-ttu-id="e0ea7-105">Vlastní šablona MVC</span><span class="sxs-lookup"><span data-stu-id="e0ea7-105">Custom MVC Template</span></span>](custom-mvc-templates.md)

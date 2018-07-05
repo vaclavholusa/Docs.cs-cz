@@ -1,33 +1,32 @@
 ---
 uid: web-forms/videos/aspnet-35/visual-studio-editor/quick-tour-of-the-visual-studio-2008-integrated-development-environment
-title: Stručný přehled Visual Studio 2008 integrované vývojové prostředí | Microsoft Docs
+title: Stručný přehled Visual Studio 2008 integrovaného vývojového prostředí | Dokumentace Microsoftu
 author: rick-anderson
-description: Prohlídka nové funkce a změny k prostředí IDE v sadě Visual Studio 2008. Najdete v editoru aktualizované webovou stránku, Návrhář formuláře WPF, editor šablon stylů CSS a další.
+description: Projděte si nové funkce a změny do integrovaného vývojového prostředí v sadě Visual Studio 2008. Zobrazit editor aktualizovaná webová stránka, Návrháře WPF, editor šablon stylů CSS a další.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2007
 ms.topic: article
 ms.assetid: f20c5f1c-e49c-4909-b18f-8b5a442eafe3
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor/quick-tour-of-the-visual-studio-2008-integrated-development-environment
 msc.type: video
-ms.openlocfilehash: 5ee3e37cd5a6fc23bc342c95840070c7210d9fb8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1d5565ba33d38bf90282dfd29d76c406b1069082
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30892605"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37374873"
 ---
-<a name="quick-tour-of-the-visual-studio-2008-integrated-development-environment"></a><span data-ttu-id="6ce0b-104">Stručný přehled integrované vývojové prostředí sady Visual Studio 2008</span><span class="sxs-lookup"><span data-stu-id="6ce0b-104">Quick Tour of the Visual Studio 2008 Integrated Development Environment</span></span>
+<a name="quick-tour-of-the-visual-studio-2008-integrated-development-environment"></a><span data-ttu-id="9f2b7-104">Stručná prohlídka integrovaného vývojového prostředí sady Visual Studio 2008</span><span class="sxs-lookup"><span data-stu-id="9f2b7-104">Quick Tour of the Visual Studio 2008 Integrated Development Environment</span></span>
 ====================
-<span data-ttu-id="6ce0b-105">podle [PEL Jan](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="6ce0b-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="9f2b7-105">podle [Chris pixelů na](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="9f2b7-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="6ce0b-106">Prohlídka nové funkce a změny k prostředí IDE v sadě Visual Studio 2008.</span><span class="sxs-lookup"><span data-stu-id="6ce0b-106">Take a tour of the new features and changes to the IDE in Visual Studio 2008.</span></span> <span data-ttu-id="6ce0b-107">Najdete v editoru aktualizované webovou stránku, Návrhář formuláře WPF, editor šablon stylů CSS a další.</span><span class="sxs-lookup"><span data-stu-id="6ce0b-107">See the updated web page editor, WPF form designer, CSS editor, and more.</span></span>
+<span data-ttu-id="9f2b7-106">Projděte si nové funkce a změny do integrovaného vývojového prostředí v sadě Visual Studio 2008.</span><span class="sxs-lookup"><span data-stu-id="9f2b7-106">Take a tour of the new features and changes to the IDE in Visual Studio 2008.</span></span> <span data-ttu-id="9f2b7-107">Zobrazit editor aktualizovaná webová stránka, Návrháře WPF, editor šablon stylů CSS a další.</span><span class="sxs-lookup"><span data-stu-id="9f2b7-107">See the updated web page editor, WPF form designer, CSS editor, and more.</span></span>
 
-[<span data-ttu-id="6ce0b-108">&#9654;Podívejte se na video (14 minut)</span><span class="sxs-lookup"><span data-stu-id="6ce0b-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/quick-tour-of-the-visual-studio-2008-integrated-development-environment)
+[<span data-ttu-id="9f2b7-108">&#9654;Podívejte se na video (14 minut)</span><span class="sxs-lookup"><span data-stu-id="9f2b7-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/quick-tour-of-the-visual-studio-2008-integrated-development-environment)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="6ce0b-109">[Předchozí](intellisense-for-jscript-and-aspnet-ajax.md)
-> [další](creating-and-modifying-a-css-file.md)</span><span class="sxs-lookup"><span data-stu-id="6ce0b-109">[Previous](intellisense-for-jscript-and-aspnet-ajax.md)
+> <span data-ttu-id="9f2b7-109">[Předchozí](intellisense-for-jscript-and-aspnet-ajax.md)
+> [další](creating-and-modifying-a-css-file.md)</span><span class="sxs-lookup"><span data-stu-id="9f2b7-109">[Previous](intellisense-for-jscript-and-aspnet-ajax.md)
 [Next](creating-and-modifying-a-css-file.md)</span></span>

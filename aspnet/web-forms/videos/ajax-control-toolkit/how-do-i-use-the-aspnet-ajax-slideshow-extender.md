@@ -1,33 +1,32 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
-title: '[Jak na:] Použití rozšíření ASP.NET AJAX prezentace? | Microsoft Docs'
+title: '[Postup:] Použít technologie ASP.NET AJAX – Extender SlideShow? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Toto video ukazuje, jak rozšiřujícího objektu prezentace z ovládacího prvku ASP.NET AJAX Toolkit se změní standardního ovládacího prvku obrázek ASP.NET plně funkční sl...
+description: Toto video ukazuje, jak extender SlideShow z technologie ASP.NET AJAX Control Toolkit se změní standardní ovládací prvek ASP.NET Image plně funkční sl...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2007
 ms.topic: article
 ms.assetid: dfc9f5bb-5e51-46ec-8e1d-2ef9942d258b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
 msc.type: video
-ms.openlocfilehash: 2a4ef518e98e1524c0f598537e86c81d6c14247f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 47b914ee8e157f4f3ae0e4123b4a54c780477e53
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30883467"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392490"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a><span data-ttu-id="6f303-104">[Jak na:] Použití rozšíření ASP.NET AJAX prezentace?</span><span class="sxs-lookup"><span data-stu-id="6f303-104">[How Do I:] Use the ASP.NET AJAX SlideShow Extender?</span></span>
+<a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a><span data-ttu-id="efc6a-104">[Postup:] Použít technologie ASP.NET AJAX – Extender SlideShow?</span><span class="sxs-lookup"><span data-stu-id="efc6a-104">[How Do I:] Use the ASP.NET AJAX SlideShow Extender?</span></span>
 ====================
-<span data-ttu-id="6f303-105">podle [Stagner Jan](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="6f303-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="efc6a-105">podle [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="efc6a-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="6f303-106">Toto video ukazuje, jak rozšiřujícího objektu prezentace z ovládacího prvku ASP.NET AJAX Toolkit se změní standardního ovládacího prvku obrázek ASP.NET plně funkční prezentace.</span><span class="sxs-lookup"><span data-stu-id="6f303-106">This video demonstrates how the SlideShow extender from the ASP.NET AJAX Control Toolkit turns the standard ASP.NET Image control in to a fully-functional slide show.</span></span> <span data-ttu-id="6f303-107">Také zjistit, jak webové služby technologie ASP.NET může vrátit pouze text a XML data, ale dokončení objekty AJAX pro ASP.NET AJAX webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="6f303-107">We also see how an ASP.NET Web service can return not only text and XML data but complete AJAX objects to be consumed by the ASP.NET AJAX Web application.</span></span> <span data-ttu-id="6f303-108">Jan také komentování výhod ukládání bitové kopie v systému souborů než databáze.</span><span class="sxs-lookup"><span data-stu-id="6f303-108">Joe also comments on the benefits of storing images in the file system rather than the database.</span></span>
+<span data-ttu-id="efc6a-106">Toto video ukazuje, jak extender SlideShow z technologie ASP.NET AJAX Control Toolkit se změní standardní ovládací prvek ASP.NET Image prezentaci plně funkční.</span><span class="sxs-lookup"><span data-stu-id="efc6a-106">This video demonstrates how the SlideShow extender from the ASP.NET AJAX Control Toolkit turns the standard ASP.NET Image control in to a fully-functional slide show.</span></span> <span data-ttu-id="efc6a-107">Vidíme také, jakým způsobem se technologie ASP.NET webové služby může vrátit pouze text a XML data, ale kompletní objektů AJAX pro aplikace technologie ASP.NET AJAX.</span><span class="sxs-lookup"><span data-stu-id="efc6a-107">We also see how an ASP.NET Web service can return not only text and XML data but complete AJAX objects to be consumed by the ASP.NET AJAX Web application.</span></span> <span data-ttu-id="efc6a-108">Jan také komentáře na výhody ukládání imagí v systému souborů, ne databáze.</span><span class="sxs-lookup"><span data-stu-id="efc6a-108">Joe also comments on the benefits of storing images in the file system rather than the database.</span></span>
 
-[<span data-ttu-id="6f303-109">&#9654;Podívejte se na video (19 minuty)</span><span class="sxs-lookup"><span data-stu-id="6f303-109">&#9654; Watch video (19 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-slideshow-extender)
+[<span data-ttu-id="efc6a-109">&#9654;Podívejte se na video (19 minuty)</span><span class="sxs-lookup"><span data-stu-id="efc6a-109">&#9654; Watch video (19 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-slideshow-extender)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="6f303-110">[Předchozí](how-do-i-use-the-aspnet-ajax-tabs-control.md)
-> [další](how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender.md)</span><span class="sxs-lookup"><span data-stu-id="6f303-110">[Previous](how-do-i-use-the-aspnet-ajax-tabs-control.md)
+> <span data-ttu-id="efc6a-110">[Předchozí](how-do-i-use-the-aspnet-ajax-tabs-control.md)
+> [další](how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender.md)</span><span class="sxs-lookup"><span data-stu-id="efc6a-110">[Previous](how-do-i-use-the-aspnet-ajax-tabs-control.md)
 [Next](how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender.md)</span></span>

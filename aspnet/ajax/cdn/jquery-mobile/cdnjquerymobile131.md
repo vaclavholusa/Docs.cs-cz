@@ -1,6 +1,6 @@
 ---
 uid: ajax/cdn/jquery-mobile/cdnjquerymobile131
-title: jQuery Mobile 1.3.1 na Microsoft Ajax CDN | Microsoft Docs
+title: jQuery Mobile 1.3.1 ve službě Microsoft Ajax CDN | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,19 +9,18 @@ ms.date: 07/23/2014
 ms.topic: article
 ms.assetid: b5c41c56-f5df-489e-9389-25e2523cdd28
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/jquery-mobile/cdnjquerymobile131
 msc.type: content
-ms.openlocfilehash: 981d0240122aaaed3df2fec02f2f340b49e34c88
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: e606f7087caebcf2e4ea78d461dc02ba44d33583
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30071613"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37375444"
 ---
-<a name="jquery-mobile-131-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="c3bb3-102">jQuery Mobile 1.3.1 na Microsoft Ajax CDN</span><span class="sxs-lookup"><span data-stu-id="c3bb3-102">jQuery Mobile 1.3.1 on the Microsoft Ajax CDN</span></span>
+<a name="jquery-mobile-131-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="e2069-102">jQuery Mobile 1.3.1 ve službě Microsoft Ajax CDN</span><span class="sxs-lookup"><span data-stu-id="e2069-102">jQuery Mobile 1.3.1 on the Microsoft Ajax CDN</span></span>
 ====================
-<span data-ttu-id="c3bb3-103">Knihovny jQuery Mobile 1.3.1 zahrnuje následující soubory:</span><span class="sxs-lookup"><span data-stu-id="c3bb3-103">The jQuery Mobile 1.3.1 library includes the following files:</span></span>
+<span data-ttu-id="e2069-103">Knihovna jQuery Mobile 1.3.1 zahrnuje následující soubory:</span><span class="sxs-lookup"><span data-stu-id="e2069-103">The jQuery Mobile 1.3.1 library includes the following files:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.1/jquery.mobile.structure-1.3.1.css
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.1/jquery.mobile.structure-1.3.1.min.css
